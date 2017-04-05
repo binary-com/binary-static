@@ -1,5 +1,6 @@
 const moment              = require('moment');
 const Client              = require('../../../../base/client');
+const Header              = require('../../../../base/header');
 const localize            = require('../../../../base/localize').localize;
 const dateValueChanged    = require('../../../../common_functions/common_functions').dateValueChanged;
 const FormManager         = require('../../../../common_functions/form_manager');
@@ -190,6 +191,9 @@ const SelfExclusion = (function() {
         showFormMessage('Your changes have been updated.', true);
         Client.set('session_start', moment().unix()); // used to handle session duration limit
         getData();
+        BinarySocket.send({ get_account_status: 1 }).then(() => {
+            Header.displayAccountStatus();
+        });
     };
 
     const showFormMessage = function(msg, is_success) {
