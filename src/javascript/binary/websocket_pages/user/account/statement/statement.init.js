@@ -1,6 +1,6 @@
 const moment               = require('moment');
 const StatementUI          = require('./statement.ui');
-const ViewPopupWS          = require('../../view_popup/view_popupws');
+const ViewPopup            = require('../../view_popup/view_popup');
 const getLanguage          = require('../../../../base/language').get;
 const localize             = require('../../../../base/localize').localize;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
@@ -9,7 +9,7 @@ const buildOauthApps       = require('../../../../common_functions/get_app_detai
 const dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
 const jpClient             = require('../../../../common_functions/country_base').jpClient;
 const toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
-const DatePicker           = require('../../../../components/date_picker').DatePicker;
+const DatePicker           = require('../../../../components/date_picker');
 
 const StatementInit = (() => {
     'use strict';
@@ -75,7 +75,7 @@ const StatementInit = (() => {
         }
 
         if (!tableExist()) {
-            StatementUI.createEmptyStatementTable().appendTo('#statement-ws-container');
+            StatementUI.createEmptyStatementTable().appendTo('#statement-container');
             $('.act, .credit').addClass('nowrap');
             StatementUI.updateStatementTable(getNextChunkStatement());
 
@@ -129,7 +129,6 @@ const StatementInit = (() => {
         transactions_consumed = 0;
 
         StatementUI.errorMessage(null);
-
         StatementUI.clearTableContent();
     };
 
@@ -162,16 +161,17 @@ const StatementInit = (() => {
                  initPage();
                  return true;
              });
-        const datepicker_inst = new DatePicker(jump_to);
-        datepicker_inst.hide();
-        datepicker_inst.show({ maxDate: 0 });
+        DatePicker.init({
+            selector: jump_to,
+            maxDate : 0,
+        });
         if ($(jump_to).attr('data-picker') !== 'native') $(jump_to).val(localize('Today'));
     };
 
     const onLoad = () => {
         initPage();
         attachDatePicker();
-        ViewPopupWS.viewButtonOnClick('#statement-ws-container');
+        ViewPopup.viewButtonOnClick('#statement-container');
     };
 
     return {

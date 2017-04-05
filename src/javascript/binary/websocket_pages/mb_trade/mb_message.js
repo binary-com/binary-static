@@ -1,14 +1,11 @@
 const MBContract          = require('./mb_contract').MBContract;
-const MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
 const MBNotifications     = require('./mb_notifications').MBNotifications;
 const MBProcess           = require('./mb_process').MBProcess;
 const MBPurchase          = require('./mb_purchase').MBPurchase;
-const MBSymbols           = require('./mb_symbols').MBSymbols;
 const MBTick              = require('./mb_tick').MBTick;
-const PortfolioWS = require('../user/account/portfolio/portfolio.init');
+const PortfolioInit = require('../user/account/portfolio/portfolio.init');
 const State  = require('../../base/storage').State;
 const GTM    = require('../../base/gtm');
-const Client = require('../../base/client');
 const processTradingTimes  = require('../trade/process').processTradingTimes;
 const forgetTradingStreams = require('../trade/process').forgetTradingStreams;
 
@@ -33,10 +30,6 @@ const MBMessage = (function () {
                 MBNotifications.hide('CONNECTION_ERROR');
                 MBContract.setContractsResponse(response);
                 MBProcess.processContract(response);
-            } else if (type === 'payout_currencies') {
-                Client.set('currencies', response.payout_currencies.join(','));
-                MBDisplayCurrencies('', false);
-                MBSymbols.getSymbols(1);
             } else if (type === 'proposal') {
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
@@ -49,11 +42,11 @@ const MBMessage = (function () {
             } else if (type === 'trading_times') {
                 processTradingTimes(response);
             } else if (type === 'portfolio') {
-                PortfolioWS.updatePortfolio(response);
+                PortfolioInit.updatePortfolio(response);
             } else if (type === 'proposal_open_contract') {
-                PortfolioWS.updateIndicative(response);
+                PortfolioInit.updateIndicative(response);
             } else if (type === 'transaction') {
-                PortfolioWS.transactionResponseHandler(response);
+                PortfolioInit.transactionResponseHandler(response);
             }
         }
     };

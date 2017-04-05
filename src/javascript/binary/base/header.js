@@ -5,7 +5,7 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
 const urlFor              = require('./url').urlFor;
-const objectNotEmpty      = require('./utility').objectNotEmpty;
+const isEmptyObject       = require('./utility').isEmptyObject;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
 const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
@@ -183,11 +183,12 @@ const Header = (() => {
     const displayAccountStatus = () => {
         BinarySocket.wait('authorize').then(() => {
             let get_account_status,
-                status;
+                status,
+                should_authenticate = false;
 
             const riskAssessment = () => {
                 if (get_account_status.risk_classification === 'high') {
-                    return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
+                    return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
                 }
                 return false;
             };
@@ -208,12 +209,13 @@ const Header = (() => {
             };
 
             const validations = {
-                authenticate: () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient(),
-                residence   : () => !Client.get('residence'),
-                risk        : () => riskAssessment(),
-                tax         : () => Client.shouldCompleteTax(),
-                tnc         : () => Client.shouldAcceptTnc(),
-                unwelcome   : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
+                authenticate: () =>
+                    (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient() && should_authenticate,
+                residence: () => !Client.get('residence'),
+                risk     : () => riskAssessment(),
+                tax      : () => Client.shouldCompleteTax(),
+                tnc      : () => Client.shouldAcceptTnc(),
+                unwelcome: () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
             };
 
             // real account checks
@@ -244,10 +246,20 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 checkStatus(check_statuses_virtual);
             } else {
-                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment').then(() => {
+                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment', 'balance').then(() => {
                     get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
                     status = get_account_status.status;
-                    checkStatus(check_statuses_real);
+                    if (/costarica/.test(Client.get('landing_company_name')) && +Client.get('balance') < 200) {
+                        BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
+                            if (response.mt5_login_list.length) {
+                                should_authenticate = true;
+                            }
+                            checkStatus(check_statuses_real);
+                        });
+                    } else {
+                        should_authenticate = true;
+                        checkStatus(check_statuses_real);
+                    }
                 });
             }
         });

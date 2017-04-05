@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-26 08:36+0000\n"
+"PO-Revision-Date: 2017-04-04 12:53+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.12\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -535,9 +535,6 @@ msgstr "<strong>Dostępność 24 godz. na dobę</strong> – Handluj wtedy, kied
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>Prowizje:</strong> Będziesz pobierać prowizje za obsługę transakcji."
 
-msgid "<strong>Duties and Responsibilities:</strong>"
-msgstr "<strong>Obowiązki</strong>"
-
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>Ryzyko kursowe</strong>: Kursy walutowe mogą zmieniać się gwałtownie ze względu na różne uwarunkowania, m.in. gospodarcze i polityczne, i w wyniku tego narażać Cię na ryzyko straty związane z takimi zmianami, które stanowi dodatkowe ryzyko, obok ryzyka straty związanego z produktem inwestycyjnym opartym na instrumencie bazowym. Jeżeli dokonujesz wpłaty środków w walucie obcej w celu zakupu Kontraktów denominowanych w innej walucie obcej, na Twoje zyski lub straty związane z inwestycją w instrument bazowy mogą wywierać wpływ zmiany kursów walutowych."
 
@@ -580,14 +577,8 @@ msgstr "<strong>Inne ryzyka</strong>: Istnieją inne rodzaje ryzyka związane z 
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "<strong>Opatentowana technologia</strong> – Handluj z pionierem w branży z opatentowaną technologią wyceny"
 
-msgid "<strong>Preferences:</strong>"
-msgstr "<strong>Preferencje:</strong>"
-
 msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "<strong>Chroń swoje zyski</strong> – Sprzedawaj swoje kontrakty długoterminowe przed ich wygaśnięciem, aby zabezpieczyć potencjalny zysk lub zminimalizować stratę"
-
-msgid "<strong>Requirements:</strong>"
-msgstr "<strong>Wymogi:</strong>"
 
 msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
 msgstr "<strong>Wzrost/spadek</strong> – Prognozuj, czy rynek zyska czy straci w stosunku do obecnego poziomu."
@@ -806,7 +797,7 @@ msgid "Acceptance"
 msgstr "Akceptacja"
 
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
-msgstr ""
+msgstr "Uzyskaj dostęp do rynków w dowolnej chwili i dowolnym miejscu, korzystając z naszych natywnych aplikacji na urządzenia z systemem iOS lub Android."
 
 msgid "Access to Personal Data"
 msgstr "Dostęp do danych osobowych"
@@ -999,6 +990,9 @@ msgstr "Wszystkie zakłady zawierane na kredyt wiążą się z wysokim poziomem 
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Wszystkie godziny są podane według czasu GMT (Greenwich Mean Time)."
+
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr "Wszystkie Twoje wpłacone środki i wypłaty są przetwarzane przez Binary.com w ciągu 24 godzin. Jednak w niektórych przypadkach Twój bank lub dostawca usług przelewów pieniężnych może wymagać dodatkowego czasu na przetworzenie."
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Klienci mogą wpłacać małe kwoty (w lokalnej walucie)"
@@ -2119,9 +2113,6 @@ msgstr "Koszty – koszty realizacji Twojego zlecenia składające się główni
 msgid "Costs and Charges"
 msgstr "Koszty i opłaty"
 
-msgid "Country Manager"
-msgstr "Dyrektor generalny na dany kraj"
-
 msgid "Country of Residence"
 msgstr "Kraj zamieszkania"
 
@@ -2308,9 +2299,6 @@ msgstr "Wpłaty i wypłaty na Twoje konto za pośrednictwem przelewu bankowego, 
 msgid "Deposit: %1 working day"
 msgstr "Wpłata: %1 dzień roboczy"
 
-msgid "Deposit: %1 working days"
-msgstr "Wpłata: %1 dni roboczych"
-
 msgid "Deposit: Instant"
 msgstr "Wpłata: błyskawiczna"
 
@@ -2441,7 +2429,7 @@ msgid "Download CSV"
 msgstr "Pobierz CSV"
 
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
-msgstr ""
+msgstr "Pobierz platformę MT5 na komputer stancjonarny lub laptop, aby uzyskać dostęp do różnorodnych funkcji i narzędzi, z których korzysta już ponad milion graczy."
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Dbanie o szybki wzrost i rozwój biznesowy w celu realizacji celów sprzedażowych i marketingowych firmy"
@@ -2463,6 +2451,9 @@ msgstr "Podczas procesu aplikacyjnego możemy poprosić Cię o informacje dotycz
 
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "Na czas trwania niniejszej Umowy udzielasz nam, na podstawie wszelkich Twoich praw własności intelektualnej, nieodpłatnie niewyłącznego, globalnego, nieodwołalnego prawa do:"
+
+msgid "Duties and Responsibilities:"
+msgstr "Obowiązki:"
 
 msgid "E-cash"
 msgstr "E-gotówka"
@@ -3184,6 +3175,9 @@ msgstr "Dołącz do lidera"
 msgid "Goes Outside"
 msgstr "Przekroczy"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr "Masz pytania? %1Skontaktuj się z nami%2, aby uzyskać pomoc."
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "Prawo właściwe i jurysdykcja"
 
@@ -3465,9 +3459,6 @@ msgstr "W przypadku braku natychmiastowej wpłaty pełnej należnej nam sumy, zg
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "Jeśli znajdziesz jakiekolwiek luki w zabezpieczeniach naszych <a target='_blank' href='%1'>kodów open-source</a>, możesz wysłać wiadomość typu pull request na GitHub."
-
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "Jeśli masz jakiekolwiek pytania, skontaktuj się z działem pomocy klienta pod adresem: <a href=\"mailto:%1\">%1</a>."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "W przypadku zawarcia więcej niż jednej pozycji otwartej na tym samym rynku jakakolwiek transakcja zawarta na tym rynku spowoduje zamknięcie pozycji otwartych w porządku chronologicznym: pozycja otwarta utworzona jako pierwsza zostaje jako pierwsza zamknięta – „pierwsze weszło, pierwsze wyszło”."
@@ -4774,9 +4765,6 @@ msgstr "Kierownicy ds. marketingu"
 msgid "Marketing Project Coordinator"
 msgstr "Koordynator projektów marketingowych"
 
-msgid "Marketing Project Manager"
-msgstr "Kierownik projektów marketingowych"
-
 msgid "Marketing and Promotion"
 msgstr "Marketing i promocja"
 
@@ -5686,8 +5674,8 @@ msgstr "Proszę wybrać przynajmniej jeden zakres"
 msgid "Please select the checkbox."
 msgstr "Proszę zaznaczyć pole wyboru."
 
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
-msgstr "Aby zweryfikować swoją tożsamość i uwierzytelnić konto, proszę przesłać dokumenty wymienione poniżej:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+msgstr "Aby zweryfikować swoją tożsamość i uwierzytelnić konto, proszę przesłać do %1 dokumenty wymienione poniżej:"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Proszę określić w minutach preferowany odstęp czasu pomiędzy kontrolami konta"
@@ -5754,6 +5742,9 @@ msgstr "Oszacuj kierunek zmian<br />i kup"
 
 msgid "Preferences"
 msgstr "Preferencje"
+
+msgid "Preferences:"
+msgstr "Preferencje:"
 
 msgid "Premier binary options trading platform"
 msgstr "Wiodąca platforma handlu opcjami binarnymi"
@@ -6094,6 +6085,9 @@ msgstr "Pokazuje maksymalną liczbę niezapłaconych kontraktów w Twoim portfol
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Pokazuje maksymalną liczbę kontraktów, które możesz nabyć w danym dniu handlowym."
 
+msgid "Requirements:"
+msgstr "Wymagania:"
+
 msgid "Resale not offered"
 msgstr "Brak możliwości odsprzedaży"
 
@@ -6241,10 +6235,8 @@ msgstr "Sobota"
 msgid "Scope and Intent"
 msgstr "Zakres i cel"
 
-#, fuzzy
-#| msgid "B. Scope"
 msgid "Scopes"
-msgstr "B. Zakres"
+msgstr "Zakresy"
 
 msgid "Score"
 msgstr "Wynik"
@@ -6611,7 +6603,7 @@ msgstr "Zlecenie Stop/ zlecenie Stop stratom &mdash; polecenie wykonania transak
 msgid "Stop Out Level"
 msgstr "Poziom Stop Out"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr ""
 
 msgid "Stop Profit Level"
@@ -7218,7 +7210,7 @@ msgid "The level of protection offered and due to each client depends on the cat
 msgstr "Poziom ochrony oferowanej i należnej klientowi zależy od kategorii, do której dany klient został zakwalifikowany. Klienci detaliczni korzystają z najwyższego poziomu ochrony."
 
 msgid "The leverage ratio refers to the number of times your margin (the amount set aside from your account balance to open and maintain a transaction) can be \"leveraged\" to enter into a Transaction. The denominator of the leverage ratio is always 1. A 50:1 leverage is equivalent to a 2% margin requirement (1 divided by 50 = 2%). The leverage ratio that we/you establish will determine the amount of margin required. As leverage is inversely proportional to margin, the lower the leverage you set for your Account, the higher the margin required to be set aside from your account balance (your margin requirement)."
-msgstr ""
+msgstr "Wskaźnik dźwigni określa ile razy można zastosować dźwignię w stosunku do Twojego depozytu zabezpieczającego (kwota odłożona z Twojego salda na koncie w celu otwarcia i utrzymania transakcji), aby zawrzeć Transakcję. Wskaźnik podawany jest zawsze w stosunku do 1. Wskaźnik dźwigni wynoszący 50:1 odpowiada 2% depozytu zabezpieczającego (1 dzielone przez 50 = 2%). Określony przez nas lub przez Ciebie wskaźnik dźwigni będzie określał kwotę wymaganego depozytu zabezpieczającego. Dźwignia jest odwrotnie proporcjonalna do depozytu zabezpieczającego: im mniejszy wskaźnik dźwigni ustawisz dla swojego Konta, tym wyższa będzie kwota wymaganego depozytu zabezpieczającego, który należy odłożyć z Twojego salda na koncie (wymóg depozytu zabezpieczającego)."
 
 msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
 msgstr "Strata 306 USD stanowi różnicę między poziomem wyjściowym i wejściowym pomnożoną przez kwotę na punkt."
@@ -7568,8 +7560,8 @@ msgstr "Czasy się zmieniają. Zwiększamy wypłaty, dzięki czemu nasi klienci 
 msgid "Title"
 msgstr "Tytuł"
 
-msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
-msgstr "Aby aplikować, prześlij swoje CV i list motywacyjny na <span id='hr_contact_eaddress'></span>."
+msgid "To apply, please submit your CV and a cover letter to %1."
+msgstr "Aby aplikować, prześlij swoje CV i list motywacyjny do %1."
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
 msgstr "Osoby ubiegające się o to ważne stanowisko zarządce muszą wykazać się pasją do technologii typu open source oraz chęcią sprawdzenia swoich talentów w dynamicznym i wymagającym środowisku pracy."
@@ -7796,10 +7788,8 @@ msgstr "Wypróbuj Binary Bot"
 msgid "Try MetaTrader 5"
 msgstr "Wypróbuj MetaTrader 5"
 
-#, fuzzy
-#| msgid "Binary Next-Gen"
 msgid "Try Next-Gen"
-msgstr "Binary Next-Gen"
+msgstr "Wypróbuj aplikację Next-Gen"
 
 msgid "Try TradingView"
 msgstr "Wypróbuj widok handlowy (TradingView)"
@@ -7955,7 +7945,7 @@ msgid "Use the opportunity provided by our website to practice for free with our
 msgstr "Korzystaj z możliwości oferowanych przez nasz portal, aby ćwiczyć za darmo na koncie z wirtualnymi pieniędzmi. Dzięki temu poznasz funkcje i zasady funkcjonowania portalu."
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
-msgstr ""
+msgstr "Korzystaj z platformy internetowej na dowolnym urządzeniu z systemem operacyjnym Windows, MacOS lub Linux – bez pobierania i instalacji."
 
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "Korzystania z Aplikacji i zawartych w niej treści w celach marketingowych, demonstracyjnych i w celu udostępniania Aplikacji Użytkownika jego klientom; oraz    "
@@ -8337,10 +8327,8 @@ msgstr "W przypadku zawarcia Kontraktu podejmiemy wszelkie stosowne kroki, aby u
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "Jeśli satysfakcjonuje Cię otrzymana cena, od razu zawrzyj zakład. Dzięki naszej wyjątkowej platformie nie będziesz borykać się z żadnymi spowolnieniami na rynkach. I co najważniejsze, nie pobieramy żadnych ukrytych opłat. Możliwe jest również odsprzedanie po dowolnej cenie każdego długoterminowego zakładu przed jego wygaśnięciem i tym samym zabezpieczenie potencjalnego zysku i zminimalizowanie strat."
 
-#, fuzzy
-#| msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
-msgstr "Po kliknięciu przycisku „Ok” handlowanie na portalu nie będzie możliwe aż do wybranej daty."
+msgstr "Po kliknięciu przycisku „OK” handlowanie na portalu nie będzie możliwe aż do wybranej daty."
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
 msgstr "Kiedy zostaniesz zatwierdzony jako nasz partner, udostępnimy Ci wszystko, czego potrzebujesz, aby od razu rozpocząć współpracę."
@@ -8498,9 +8486,6 @@ msgstr "Wypłać z"
 msgid "Withdraw: %1 working day"
 msgstr "Wypłata: %1 dzień roboczy"
 
-msgid "Withdraw: %1 working days"
-msgstr "Wypłata: %1 dni roboczych"
-
 msgid "Withdraw: Not applicable"
 msgstr "Wypłata: nie dotyczy"
 
@@ -8556,7 +8541,7 @@ msgid "Yes. Please email us at <a href=\"mailto:%1\">%1</a> for further assistan
 msgstr "Tak. Napisz do nas: <a href=\"mailto:%1\">%1</a>, aby uzyskać pomoc."
 
 msgid "You acknowledge and accept that a Transaction may be subject to market rules laid down in by-laws, rules, provisions, customs, and practices of an exchange, a market, a clearing house, a body or any other organisation involved in the execution, clearing, and/or settlement of said Transaction. Should any such organisation take decisions or measures which affect a Transaction or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) which it, at its sole discretion, considers reasonable. This clause does not apply to Volatility Indices."
-msgstr "Przyjmujesz do wiadomości i akceptujesz, że transakcja może podlegać zasadom rynkowym określonym w regulaminach, zasadach, przepisach, w tym przepisach celnych oraz"
+msgstr "Przyjmujesz do wiadomości i akceptujesz, że transakcja może podlegać zasadom rynkowym określonym w regulaminach, zasadach, przepisach, w tym przepisach celnych oraz praktykach giełdowych, rynkowych, praktykach izby rozliczeniowej, organu lub jakiejkolwiek innej organizacji zaangażowanej w realizację i rozliczanie transakcji. W przypadku, gdy taka organizacja podejmie decyzje lub środki wpływające na transakcję lub otwartą pozycję Firma jest uprawniona do podjęcia dowolnych działań (w tym zamknięcia dowolnej otwartej pozycji klienta), jakie uzna za stosowne. Niniejsza klauzula nie ma zastosowania w odniesieniu do Wskaźników zmienności."
 
 msgid "You acknowledge and accept that your Real Account will be maintained in one currency, which is the same currency maintained in your Binary Options Real Account."
 msgstr "Przyjmujesz do wiadomości i akceptujesz, że Twoje Prawdziwe konto będzie prowadzone w jednej walucie, która jest tą samą walutą, w której prowadzone jest Twoje Prawdziwe konto do opcji binarnych."
@@ -8568,7 +8553,7 @@ msgid "You acknowledge and agree that you are solely and exclusively responsible
 msgstr "Użytkownik przyjmuje do wiadomości, że spoczywa na nim wyłączna odpowiedzialność za kontrolowanie, prowadzenie i dbanie o bezpieczeństwo transakcji i połączeń wykonywanych poprzez dostęp do lub korzystanie z API %1 i wyraża na to zgodę. Przyjmuje też do wiadomości, że istnieje ryzyko związane z używaniem internetowego systemu zawierania zakładów, obejmuje to m.in. niesprawność sprzętu komputerowego, oprogramowania i połączeń internetowych. Użytkownik przyjmuje do wiadomości, że Firma nie ma wpływu na siłę sygnału, jego odbiór ani przesyłanie przez internet, konfigurację sprzętu Użytkownika czy na niezawodność jego połączenia i nie ponosi żadnej odpowiedzialności za problemy z połączeniem, przerwy w połączeniu, błędy połączenia czy opóźnienia podczas zawierania zakładów poprzez internet, korzystając z API %1."
 
 msgid "You acknowledge that a Stop or Limit Order placed on your Open Position, when executed, would be capable of closing or partly closing your Transaction. You also acknowledge that it is your responsibility to cancel the Stop or Limit Order that you placed on your Open Positions if you do not want the Stop or Limit Order to remain valid. If you close your original Transaction and fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order."
-msgstr ""
+msgstr "Przyjmujesz do wiadomości, że zlecenie Stop lub Limit złożone dla Twojej pozycji otwartej, w momencie jego realizacji może spowodować zamknięcie lub częściowe zamknięcie Twojej Transakcji. Przyjmujesz do wiadomości również fakt, że Twoim obowiązkiem jest anulowanie zlecenia Stop lub Limit, które złożyłeś/-aś dla Twoich pozycji otwartych, jeśli nie chcesz, by zlecenie Stop lub Limit pozostało wiążące. Jeśli zamkniesz swoją pierwotną Transakcję, ale nie anulujesz zlecenia Stop lub Limit, mamy prawo interpretować, według własnego uznania, zlecenie Stop lub Limit, które pozostaje wiążące, jako instrukcję zawarcia nowej Transakcji w Twoim imieniu jeśli/gdy nasze kwotowanie osiągnie poziom zlecenia Stop lub Limit lub go przekroczy."
 
 msgid "You acknowledge that it is your responsibility to monitor your Account Balance and Margin Requirement and we are not under any obligation to keep you informed (i.e., to make a Margin Call)."
 msgstr "Przyjmujesz do wiadomości, że monitorowanie stanu środków na koncie i wymogów dot. depozytu zabezpieczającego należy do Twoich obowiązków, a my nie jesteśmy w żaden sposób zobligowani do informowania Cię w tym zakresie (np. do wzywania do uzupełnienia depozytu)."
@@ -8577,7 +8562,7 @@ msgid "You acknowledge that it is your responsibility to understand the features
 msgstr "Przyjmujesz do wiadomości, że zrozumienie funkcji, cech i warunków zlecenia i konsekwencji realizacji zlecenia przed jego złożeniem należy do Twoich obowiązków."
 
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the latter, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
-msgstr ""
+msgstr "Przyjmujesz do wiadomości, że Firma wybierze, według własnego uznania, Transakcje, które zostaną zachowane w księdze firmy (księgowanie B) i Transakcje które zostaną przekazane podmiotom działającym jako dostawcy płynności w odniesieniu do Firmy (księgowanie A). W drugim przypadku Firma występuje w roli kontrahenta w tych transakcjach i występuje współzależność między zyskiem/stratą klienta a zyskiem/stratą Firmy. W dowolnej chwili możemy zawrzeć transakcję z wieloma klientami, a interes każdego z nich może różnić się od interesu pozostałych klientów. Firma może więc posiadać pozycje otwarte, które nie są zgodne z Twoimi celami lub z Twoim interesem jako indywidualnego klienta Firmy."
 
 msgid "You acknowledge that we may use, store, or otherwise process personal information provided by you in connection with the provision of margin trading services described in this Agreement. You consent to the processing and transmittal of your personal information for the purposes of performing the contract and administering the relationship between you and us."
 msgstr "Przyjmujesz do wiadomości, że możemy przechowywać lub w inny sposób przetwarzać dostarczone przez Ciebie dane osobowe w związku ze świadczeniem usług handlowania na kredyt opisanych w niniejszej Umowie. Wyrażasz zgodę na przetwarzanie i przekazywanie Twoich danych osobowych w celach związanych z realizacją kontraktu i utrzymywaniem relacji między nami."
@@ -8592,7 +8577,7 @@ msgid "You acknowledge that, in the course of dealing under these Terms, you may
 msgstr "Użytkownik przyjmuje do wiadomości, że w okresie obowiązywania niniejszej Umowy, może uzyskać dostęp do poufnych informacji dotyczących Firmy oraz jej spółki matki, jej spółek zależnych oraz innych stron trzecich. Takie poufne informacje należą wyłącznie do Firmy."
 
 msgid "You acknowledge, understand, represent and warrant that you are aware of the functional limitations of the MT5 Trading Platform (for example, Wine, which is not a fully stable application, as disclosed by the MT5 Trading Platform Licensor on their website). We have no obligation and bear no responsibility for transmissions (including, but not limited to, Orders) that are inaccurate or not received by us, due to the functional limitations of the MT5 Trading Platform."
-msgstr ""
+msgstr "Przyjmujesz do wiadomości, rozumiesz, oświadczasz i zapewniasz, że jesteś świadomy lub świadoma ograniczeń w funkcjonowaniu Platformy handlowej MT5 (np. że Wine nie jest w pełni stabilną aplikacją według oświadczenia licencjodawcy Platformy handlowej MT5 na jego stronie internetowej). Nie jesteśmy odpowiedzialni za przekazy (w tym m.in. zleceń), które są niedokładne lub nie zostały przez nas otrzymane z powodu ograniczeń w funkcjonowaniu Platformy handlowej MT5."
 
 msgid "You act in breach of any warranty or representation made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
 msgstr "Działasz w sposób naruszający dowolne zapewnienie lub oświadczenie złożone na mocy niniejszej Umowy i/lub gdy jakakolwiek informacja dostarczona nam w związku z niniejszą umową jest lub stanie się nieprawdziwa lub myląca;"
@@ -8670,7 +8655,7 @@ msgid "You can use an authorized payment agent to process deposits and withdrawa
 msgstr "Możesz skorzystać z usług autoryzowanego pośrednika płatności oferującego metody płatności i lokalne waluty nieobsługiwane przez %1. To bardzo proste."
 
 msgid "You consent to us recording any telephone conversation between you and us. All instructions receive by telephone will be binding as if received in writing. Recorded telephone conversations between you and us shall be, and remain, our sole property. You will accept recorded telephone conversations between you and us as conclusive evidence of instructions or conversations so recorded and we may deliver copies of transcripts of such recordings to any court, regulatory, or governmental authority without seeking prior consent from you."
-msgstr ""
+msgstr "Wyrażasz zgodę na wykonywanie dowolnych połączeń telefonicznych między nami. Wszelkie instrukcje otrzymane przez telefon będą tak samo wiążące jak instrukcje przekazywane w formie pisemnej. Nagrania naszych rozmów telefonicznych pozostają naszą wyłączną własnością i uznajesz je za rozstrzygający dowód przekazanych instrukcji lub przeprowadzonych rozmów. Akceptujesz też, że możemy przekazać kopie zapisu takich nagrań dowolnemu sądowi, instytucji regulującej lub organowi rządowemu bez Twojej uprzedniej zgody."
 
 msgid "You did not change anything."
 msgstr "Nic nie zostało zmienione."
@@ -8748,7 +8733,7 @@ msgid "You may earn up to 35% commission on the net revenue generated by clients
 msgstr "Możesz zarobić prowizję w wysokości nawet 35% przychodu netto generowanego przez klientów przekierowanych przez Ciebie na naszą platformę handlową."
 
 msgid "You may make Margin Payments by transferring funds from your Binary Options Real Account to your Real Account. In the event that there are insufficient funds in your Binary Options Real Account to fund your Real Account, you may make Margin Payments by funding your Binary Options Real Account and transferring the funds from your Binary Options Real Account to your Real Account."
-msgstr ""
+msgstr "Możesz uzupełnić depozyt zabezpieczający, przelewając środki ze swojego Prawdziwego konta do opcji binarnych na swoje Prawdziwe konto. W przypadku, gdy środki na Twoim Prawdziwym koncie do opcji binarnych są niewystarczające, by zasilić Twoje Prawdziwe konto, możesz uzupełnić depozyt zabezpieczający, zasilając swoje Prawdziwe konto do opcji binarnych, a następnie przelewając te środki z Prawdziwego konta do opcji binarnych na Prawdziwe konto."
 
 msgid "You may not assign rights granted in this Agreement without the Company's prior written approval."
 msgstr "Użytkownik nie może przekazywać praw nadanych mu na mocy niniejszej Umowy bez wcześniejszej pisemnej zgody Firmy."
@@ -8880,10 +8865,10 @@ msgid "You will take all reasonable steps to comply with any law, ordinance, cha
 msgstr "Podejmiesz odpowiednie kroki, aby zapewnić przestrzeganie prawa, ordynacji, statusów, uchwał i wszelkich przepisów mających zastosowanie w odniesieniu do Ciebie bądź Twojej jurysdykcji;"
 
 msgid "You will use the margin trading services described in this Agreement in good faith and you will not use any software, algorithm, or any trading strategy to manipulate or take unfair advantage of the way our bid and offer prices are quoted. You shall observe the standard of behaviour reasonably expected of persons in your position and not take any step which would cause us to fail to observe the standard of behaviour reasonably expected of persons in our position."
-msgstr ""
+msgstr "Będziesz korzystać z usług handlowania na kredyt w dobrej wierze i nie będziesz stosować żadnego oprogramowania, algorytmu ani żadnej strategii handlowej, aby manipulować sposób kwotowania naszych cen ofertowych i sprzedaży lub by czerpać nienależną korzyść. Będziesz zachowywać się zgodnie z oczekiwanym zachowaniem osoby znajdującej się na Twoim miejsiu i nie będziesz podejmować działań, które spowodują, że nie będziemy mogli zachowywać się zgodnie z oczekiwanym zachowaniem osób na naszym miejscu."
 
 msgid "You will, at all times, obtain and comply, and do all that is necessary to maintain in full force and effect, all authority, powers, consents, licences, and authorities referred to in this clause;"
-msgstr ""
+msgstr "Cały czas będziesz podejmować wszelkie starania w celu utrzymania w pełni mocy wszelkich upoważnień, uprawnień, zezwoleń, licencji i pozwoleń opisanych w niniejszej klauzuli;"
 
 msgid "You win the payout if the market price does not end in the digit you have selected."
 msgstr "Wygrywasz wypłatę, jeśli cena rynkowa nie zakończy się podaną przez Ciebie cyfrą."
@@ -8979,7 +8964,7 @@ msgid "Your debts are not settled as, and when, they fall due;"
 msgstr "Twoje długi nie zostały uregulowane w terminie ich wymagalności;"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
-msgstr ""
+msgstr "Zawierane z %1 transakcje forex i transakcje na różnice kursowe są powiązane z bazowym instrumentem finansowym i będziesz narażony/-a na zmienność cen, kursów walutowych, oprocentowania i na innego rodzaju zmienność rynku, z którym powiązany jest Twój instrument bazowy, zwłaszcza jeśli rynek podlega nieznanej Ci jurysdykcji. Handel internetowy kontraktami forex i kontraktami na różnice kursowe za pośrednictwem elektronicznej platformy handlowej podlega opóźnieniom danych mogącym skutkować opóźnieniami w wykonywaniu zleceń."
 
 msgid "Your name, email address and contact number"
 msgstr "Twoje imię i nazwisko, adres e-mail i numer telefonu"
@@ -9030,7 +9015,7 @@ msgid "Your use of the %1 API will not confer to you any title, ownership intere
 msgstr "Korzystanie z API %1 nie wiąże się z nadaniem jakiegokolwiek tytułu własności, udziału w własności, czy prawa własności intelektualnej, które należy wyłącznie do Firmy. Nasza platforma handlowa jest objęta ochroną patentową, a nasza strona internetowa i wszystkie jej treści są chronione przez prawa autorskie i pozostają naszą wyłączną własnością."
 
 msgid "Your use of the MT5 Trading Platform, whether accessed through or downloaded from our website or a third-party website, is governed by the terms of use provided by the MT5 Trading Platform Licensor to you. In the event of any conflict between the content of this Agreement and the agreement between you and the MT5 Trading Platform Licensor, the terms of this Agreement shall prevail. It is your responsibility to ensure that the information technology that you use is compatible with the required information technology to support the MT5 Trading Platform."
-msgstr ""
+msgstr "Korzystanie z Platformy handlowej MT5, niezależnie od tego czy jest to korzystanie za pośrednictwem naszej witryny internetowej czy witryny strony trzeciej, podlega warunkom użytkowania udostępnianym Ci przez Licencjodawcę Platformy handlowej MT5. W przypadku jakiejkolwiek niezgodności między treścią niniejszej Umowy a umową miedzy Tobą a Licencjodawcą Platformy handlowej MT5, postanowienia niniejszej Umowy mają pierwszeństwo. Twoim obowiązkiem jest zapewnienie, że stosowane przez Ciebie technologie informatyczne są kompatybilne z technologią informatyczną wymaganą do obsługi Platformy handlowej MT5."
 
 msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "Naruszenie przez Użytkownika jakichkolwiek przepisów prawnych, postanowień lub regulacji;"
@@ -9143,8 +9128,6 @@ msgstr "litery"
 msgid "login"
 msgstr "login"
 
-#, fuzzy
-#| msgid "Logout"
 msgid "logout"
 msgstr "Wyloguj"
 
@@ -10354,505 +10337,305 @@ msgstr "Sorry, you have failed the test, please try again after 24 hours."
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "Summary of Specifications"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_1"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_1"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_10"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_10"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_100"
-msgstr "{JAPAN ONLY},000"
+msgstr "{JAPAN ONLY}TIP_100"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_11"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_11"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_12"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_12"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_13"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_13"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_14"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_14"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_15"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_15"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_16"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_16"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_17"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_17"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_18"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_18"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_19"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_19"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_2"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_2"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_20"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_20"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_21"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_21"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_22"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_22"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_23"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_23"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_24"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_24"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_25"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_25"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_26"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_26"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_27"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_27"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_28"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_28"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_29"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_29"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_3"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_3"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_30"
-msgstr "{JAPAN ONLY},000"
+msgstr "{JAPAN ONLY}TIP_30"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_31"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_31"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_32"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_32"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_33"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_33"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_34"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_34"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_35"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_35"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_36"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_36"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_37"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_37"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_38"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_38"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_39"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_39"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_4"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_4"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_40"
-msgstr "{JAPAN ONLY},000"
+msgstr "{JAPAN ONLY}TIP_40"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_41"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_41"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_42"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_42"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_43"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_43"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_44"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_44"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_45"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_45"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_46"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{JAPAN ONLY}TIP_46"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_47"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{JAPAN ONLY}TIP_47"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_48"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_48"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_49"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_49"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_5"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_5"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_50"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_50"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_51"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_51"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_52"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_52"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_53"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_53"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_54"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_54"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_55"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_55"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_56"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_56"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_57"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_57"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_58"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_58"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_59"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_59"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_6"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_6"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_60"
-msgstr "{JAPAN ONLY},000"
+msgstr "{JAPAN ONLY}TIP_60"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_61"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_61"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_62"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_62"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_63"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_63"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_64"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_64"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_65"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_65"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_66"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{JAPAN ONLY}TIP_66"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_67"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{JAPAN ONLY}TIP_67"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_68"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_68"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_69"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_69"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_7"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_7"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_70"
-msgstr "{JAPAN ONLY},000"
+msgstr "{JAPAN ONLY}TIP_70"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_71"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_71"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_72"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_72"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_73"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_73"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_74"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{JAPAN ONLY}TIP_74"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_75"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_75"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_76"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{JAPAN ONLY}TIP_76"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_77"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{JAPAN ONLY}TIP_77"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_78"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_78"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_79"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_79"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_8"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_8"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_80"
-msgstr "{JAPAN ONLY},000"
+msgstr "{JAPAN ONLY}TIP_80"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_81"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_81"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_82"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_82"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_83"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_83"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_84"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_84"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_85"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_85"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_86"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_86"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_87"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_87"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_88"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_88"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_89"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_89"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_9"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_9"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_90"
-msgstr "{JAPAN ONLY},000"
+msgstr "{JAPAN ONLY}TIP_90"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_91"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_91"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_92"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_92"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_93"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_93"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_94"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_94"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_95"
-msgstr "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}TIP_95"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_96"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_96"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_97"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_97"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_98"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_98"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_99"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{JAPAN ONLY}TIP_99"
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "Take knowledge test"
@@ -11138,6 +10921,27 @@ msgstr "Akceptacja regulaminu"
 
 msgid "Account Limits"
 msgstr "Limity na koncie"
+
+#~ msgid "<strong>Preferences:</strong>"
+#~ msgstr "<strong>Preferencje:</strong>"
+
+#~ msgid "<strong>Requirements:</strong>"
+#~ msgstr "<strong>Wymogi:</strong>"
+
+#~ msgid "Country Manager"
+#~ msgstr "Dyrektor generalny na dany kraj"
+
+#~ msgid "Marketing Project Manager"
+#~ msgstr "Kierownik projektów marketingowych"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "Wpłata: %1 dni roboczych"
+
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "Jeśli masz jakiekolwiek pytania, skontaktuj się z działem pomocy klienta pod adresem: <a href=\"mailto:%1\">%1</a>."
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "Wypłata: %1 dni roboczych"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "Podaj poprawny %1."
@@ -17643,9 +17447,6 @@ msgstr "Limity na koncie"
 
 #~ msgid "Requirements"
 #~ msgstr "Wymagania"
-
-#~ msgid "Requirements:"
-#~ msgstr "Wymagania:"
 
 #~ msgid "Standard expiry"
 #~ msgstr "Standardowa data ważności"
