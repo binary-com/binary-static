@@ -1,12 +1,23 @@
 module.exports = function (grunt) {
     return {
-        all: {
+        main: {
             options: {
-                base: 'dist',
-                add: (grunt.option('cleanup') ? false : true),
+                add    : (grunt.option('cleanup') ? false : true),
+                base   : 'dist',
+                branch : 'gh-pages',
                 message: 'Auto-generated commit',
             },
             src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '!' + global.branch_prefix + '*/**']
-        }
+        },
+        trigger_tests: {
+            options: {
+                add    : true,
+                base   : 'dist',
+                branch : 'master',
+                repo   : 'git@github.com:binary-com/binary-static-ci.git',
+                message: 'Trigger tests',
+            },
+            src: 'version',
+        },
     }
 };
