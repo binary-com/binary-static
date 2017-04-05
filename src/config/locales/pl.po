@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-29 20:37+0000\n"
+"PO-Revision-Date: 2017-04-04 12:53+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
@@ -992,7 +992,7 @@ msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Wszystkie godziny są podane według czasu GMT (Greenwich Mean Time)."
 
 msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
-msgstr ""
+msgstr "Wszystkie Twoje wpłacone środki i wypłaty są przetwarzane przez Binary.com w ciągu 24 godzin. Jednak w niektórych przypadkach Twój bank lub dostawca usług przelewów pieniężnych może wymagać dodatkowego czasu na przetworzenie."
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Klienci mogą wpłacać małe kwoty (w lokalnej walucie)"
@@ -2452,10 +2452,8 @@ msgstr "Podczas procesu aplikacyjnego możemy poprosić Cię o informacje dotycz
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "Na czas trwania niniejszej Umowy udzielasz nam, na podstawie wszelkich Twoich praw własności intelektualnej, nieodpłatnie niewyłącznego, globalnego, nieodwołalnego prawa do:"
 
-#, fuzzy
-#| msgid "<strong>Duties and Responsibilities:</strong>"
 msgid "Duties and Responsibilities:"
-msgstr "<strong>Obowiązki</strong>"
+msgstr "Obowiązki:"
 
 msgid "E-cash"
 msgstr "E-gotówka"
@@ -3178,7 +3176,7 @@ msgid "Goes Outside"
 msgstr "Przekroczy"
 
 msgid "Got questions? %1Contact us%2 for help."
-msgstr ""
+msgstr "Masz pytania? %1Skontaktuj się z nami%2, aby uzyskać pomoc."
 
 msgid "Governing Laws and Jurisdiction"
 msgstr "Prawo właściwe i jurysdykcja"
@@ -5676,10 +5674,8 @@ msgstr "Proszę wybrać przynajmniej jeden zakres"
 msgid "Please select the checkbox."
 msgstr "Proszę zaznaczyć pole wyboru."
 
-#, fuzzy
-#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
 msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Aby zweryfikować swoją tożsamość i uwierzytelnić konto, proszę przesłać dokumenty wymienione poniżej:"
+msgstr "Aby zweryfikować swoją tożsamość i uwierzytelnić konto, proszę przesłać do %1 dokumenty wymienione poniżej:"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Proszę określić w minutach preferowany odstęp czasu pomiędzy kontrolami konta"
@@ -5747,10 +5743,8 @@ msgstr "Oszacuj kierunek zmian<br />i kup"
 msgid "Preferences"
 msgstr "Preferencje"
 
-#, fuzzy
-#| msgid "Preferences"
 msgid "Preferences:"
-msgstr "Preferencje"
+msgstr "Preferencje:"
 
 msgid "Premier binary options trading platform"
 msgstr "Wiodąca platforma handlu opcjami binarnymi"
@@ -7566,10 +7560,8 @@ msgstr "Czasy się zmieniają. Zwiększamy wypłaty, dzięki czemu nasi klienci 
 msgid "Title"
 msgstr "Tytuł"
 
-#, fuzzy
-#| msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgid "To apply, please submit your CV and a cover letter to %1."
-msgstr "Aby aplikować, prześlij swoje CV i list motywacyjny na <span id='hr_contact_eaddress'></span>."
+msgstr "Aby aplikować, prześlij swoje CV i list motywacyjny do %1."
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
 msgstr "Osoby ubiegające się o to ważne stanowisko zarządce muszą wykazać się pasją do technologii typu open source oraz chęcią sprawdzenia swoich talentów w dynamicznym i wymagającym środowisku pracy."
