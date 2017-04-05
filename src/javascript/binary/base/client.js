@@ -99,8 +99,8 @@ const Client = (() => {
     const shouldAcceptTnc = () => {
         if (get('is_virtual')) return false;
         const website_tnc_version = State.get(['response', 'website_status', 'website_status', 'terms_conditions_version']);
-        const client_tnc_status = State.get(['response', 'get_settings', 'get_settings', 'client_tnc_status']);
-        return client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version;
+        const get_settings = State.get(['response', 'get_settings', 'get_settings']);
+        return get_settings.hasOwnProperty('client_tnc_status') && get_settings.client_tnc_status !== website_tnc_version;
     };
 
     const clear = () => {
