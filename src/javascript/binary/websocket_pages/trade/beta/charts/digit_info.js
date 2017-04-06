@@ -2,7 +2,6 @@ const Symbols     = require('../../symbols').Symbols;
 const template    = require('../../../../base/utility').template;
 const localize    = require('../../../../base/localize').localize;
 const Highcharts  = require('highcharts');
-const elementInnerHtml = require('../../../../common_functions/common_functions').elementInnerHtml;
 
 require('highcharts/modules/exporting')(Highcharts);
 
@@ -29,10 +28,9 @@ const DigitInfo_Beta = function() {
             borderWidth: 1,
             formatter  : function() {
                 const that       = this,
-                    total      = $("select[name='tick_count']").val(),
+                    total      = $('#tick_count').val(),
                     percentage = (that.y / total) * 100;
-                return '<b>Digit:</b> ' + that.x + '<br/>' +
-                       '<b>Percentage:</b> ' + percentage.toFixed(1) + ' %';
+                return `<b>${localize('Digit')}:</b> ${that.x}<br/><b>${localize('Percentage')}:</b> ${percentage.toFixed(1)}%`;
             },
         },
         plotOptions: {
@@ -53,9 +51,9 @@ const DigitInfo_Beta = function() {
                         fontSize  : '10px',
                     },
                     formatter: function() {
-                        const total = $("select[name='tick_count']").val();
+                        const total = $('#tick_count').val();
                         const percentage = (this.point.y / total) * 100;
-                        return percentage.toFixed(2) + ' %';
+                        return `${percentage.toFixed(2)}%`;
                     },
                 },
             },
@@ -83,9 +81,9 @@ const DigitInfo_Beta = function() {
                 x        : 0,
                 enabled  : false,
                 formatter: function() {
-                    const total = $("select[name='tick_count']").val(),
+                    const total = $('#tick_count').val(),
                         percentage = parseInt((this.value / total) * 100);
-                    return percentage + ' %';
+                    return `${percentage}%`;
                 },
             },
         },
@@ -109,43 +107,31 @@ DigitInfo_Beta.prototype = {
             }
         });
         underlyings = underlyings.sort();
-        let elem = '<select class="smallfont" name="underlying">';
+        let elem = '';
         for (let i = 0; i < underlyings.length; i++) {
-            elem = elem + '<option value="' + underlyings[i] + '">' + localize(symbols[underlyings[i]]) + '</option>';
+            elem += `<option value="${underlyings[i]}">${localize(symbols[underlyings[i]])}</option>`;
         }
-        elem += '</select>';
-        const contentId = document.getElementById('tab_last_digit-content'),
-            content = '<div class="gr-parent">' +
-            '<div id="last_digit_histo_form" class="gr-12 gr-12-m gr-centered">' +
-            '<form class="smallfont gr-row" action="#" method="post">' +
-            '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + localize('Select market') + ':</div>' + elem + ' </div>' +
-            '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + localize('Number of ticks') + ':</div><select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>' +
-            '</form>' +
-            '</div>' +
-            '<div id="last_digit_histo" class="gr-12 gr-12-m gr-centered"></div>' +
-            '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
-            '</div>';
-        elementInnerHtml(contentId, content);
-        $('[name=underlying]').val(underlying);
+        $('#digit_underlying').html($(elem)).val(underlying);
+        $('#digit_domain').text(domain.charAt(0).toUpperCase() + domain.slice(1));
+        $('#digit_info_underlying').text($('#digit_underlying option:selected').text());
     },
     on_latest: function() {
         const that = this;
-        const tab = $('#tab_last_digit-content');
-        const form = tab.find('form:first');
-        form.on('submit', function(event) {
-            event.preventDefault();
-            return false;
-        }).addClass('unbind_later');
 
         const get_latest = function() {
-            const symbol = $('[name=underlying] option:selected').val();
+            const $digit_underlying_option = $('#digit_underlying option:selected');
+            const symbol = $digit_underlying_option.val();
+            const count = $('#tick_count').val();
+            $('#digit_info_underlying').text($digit_underlying_option.text());
+            $('#digit_info_count').text(count);
             const request = {
                 ticks_history: symbol,
                 end          : 'latest',
-                count        : $('[name=tick_count]', form).val(),
-                req_id       : 2 };
+                count        : count,
+                req_id       : 2,
+            };
             if (that.chart.series[0].name !== symbol) {
-                if ($('#underlying').find('option:selected').val() !== $('[name=underlying]', form).val()) {
+                if ($('#underlying').find('option:selected').val() !== $('#digit_underlying').val()) {
                     request.subscribe = 1;
                     request.style = 'ticks';
                 }
@@ -156,8 +142,7 @@ DigitInfo_Beta.prototype = {
             }
             BinarySocket.send(request);
         };
-        $('[name=underlying]', form).on('change', get_latest).addClass('unbind_later');
-        $('[name=tick_count]', form).on('change', get_latest).addClass('unbind_later');
+        $('#digit_underlying, #tick_count').on('change', get_latest).addClass('unbind_later');
     },
     show_chart: function(underlying, spots) {
         if (typeof spots === 'undefined' || spots.length <= 0) {
@@ -172,7 +157,7 @@ DigitInfo_Beta.prototype = {
 
         const get_title = function() {
             return {
-                text: template($('#last_digit_title').html(), [spots.length, $('[name=underlying] option:selected').text()]),
+                text: template($('#last_digit_title').html(), [spots.length, $('#digit_underlying option:selected').text()]),
             };
         };
 
@@ -259,7 +244,7 @@ DigitInfo_Beta.prototype = {
                 this.stream_id = tick.tick.id || null;
                 this.update(tick.tick.symbol, tick.tick.quote);
             } else {
-                BinarySocket.send({ forget: tick.tick.id + '' });
+                BinarySocket.send({ forget: (tick.tick.id).toString() });
             }
         } else if (!this.stream_id) {
             this.update(tick.tick.symbol, tick.tick.quote);

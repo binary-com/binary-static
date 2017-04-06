@@ -70,7 +70,7 @@ const TradingTimesUI = (() => {
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {
-            const tabID = 'market_' + (m + 1);
+            const tabID = `market_${(m + 1)}`;
 
             // contents
             const $market = $('<div/>', { id: tabID });
@@ -80,7 +80,7 @@ const TradingTimesUI = (() => {
 
                 // tabs
                 if (!is_japan_trading) {
-                    $ul.append($('<li/>').append($('<a/>', { href: '#' + tabID, text: markets[m].name, id: 'outline' })));
+                    $ul.append($('<li/>').append($('<a/>', { href: `#${tabID}`, text: markets[m].name, id: 'outline' })));
                 }
             }
         }
@@ -113,7 +113,7 @@ const TradingTimesUI = (() => {
 
             if (should_populate) {
                 // submarket table
-                const $submarket_table = createEmptyTable(market.name + '-' + s);
+                const $submarket_table = createEmptyTable(`${market.name}-${s}`);
 
                 // submarket name
                 $submarket_table.find('thead').prepend(createSubmarketHeader(submarkets[s].name))
@@ -161,7 +161,7 @@ const TradingTimesUI = (() => {
     const createEventsText = (events) => {
         let result = '';
         for (let i = 0; i < events.length; i++) {
-            result += (i > 0 ? '<br />' : '') + localize(events[i].descrip) + ': ' + localize(events[i].dates);
+            result += `${(i > 0 ? '<br />' : '')}${localize(events[i].descrip)}: ${localize(events[i].dates)}`;
         }
         return result.length > 0 ? result : '--';
     };

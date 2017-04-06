@@ -56,7 +56,7 @@ const LimitsInit = (() => {
         if (error && error.message) {
             elementInnerHtml(errorElement, error.message);
         } else {
-            elementInnerHtml(errorElement, localize('An error occured') + '.');
+            elementInnerHtml(errorElement, `${localize('An error occured')}.`);
         }
         document.getElementById('client_message').setAttribute('style', 'display:block');
     };

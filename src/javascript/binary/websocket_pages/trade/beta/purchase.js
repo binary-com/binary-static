@@ -68,8 +68,8 @@ const Purchase_Beta = (function () {
                 $(this).text('').removeAttr('class', '');
             });
             const purchase_passthrough = purchase_data.echo_req.passthrough;
-            elementTextContent(brief, $('#underlying').find('option:selected').text() + ' / ' + toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type]) +
-                (Contract_Beta.form() === 'digits' ? ' ' + purchase_passthrough.barrier : ''));
+            elementTextContent(brief, `${$('#underlying').find('option:selected').text()} / ${toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type])}
+                ${(Contract_Beta.form() === 'digits' ? ` ${purchase_passthrough.barrier}` : '')}`);
 
             const is_spread = (Contract_Beta.form() === 'spreads');
             if (is_spread) {
@@ -82,7 +82,7 @@ const Purchase_Beta = (function () {
             elementTextContent(descr, receipt.longcode);
             if (barrier_element) label_value(barrier_element, '', '', true);
             [].forEach.call(document.getElementsByClassName('contract_purchase_reference'), function(ref) {
-                elementTextContent(ref, localize('Ref.') + ' ' + receipt.transaction_id);
+                elementTextContent(ref, `${localize('Ref.')} ${receipt.transaction_id}`);
             });
 
             let payout_value,
@@ -108,7 +108,7 @@ const Purchase_Beta = (function () {
                 label_value(cost,   localize('Stake'),  addComma(cost_value));
             }
 
-            elementTextContent(balance, localize('Account balance:') + ' ' + formatMoney(Client.get('currency'), receipt.balance_after));
+            elementTextContent(balance, `${localize('Account balance:')} ${formatMoney(Client.get('currency'), receipt.balance_after)}`);
 
             if (show_chart) {
                 chart.show();
@@ -202,7 +202,7 @@ const Purchase_Beta = (function () {
 
             const digit_elem = document.createElement('div');
             digit_elem.classList.add('digit');
-            digit_elem.id = 'tick_digit_' + i;
+            digit_elem.id = `tick_digit_${i}`;
             elementInnerHtml(digit_elem, '&nbsp;');
             fragment.appendChild(digit_elem);
 
@@ -231,7 +231,7 @@ const Purchase_Beta = (function () {
         let last_digit = null;
         const replace = function(d) {
             last_digit = d;
-            return '<span class="' + (is_win(d) ? 'profit' : 'loss') + '">' + d + '</span>';
+            return `<span class="${(is_win(d) ? 'profit' : 'loss')}">${d}</span>`;
         };
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
@@ -242,10 +242,10 @@ const Purchase_Beta = (function () {
             if (isVisible(container) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
                 tick_number++;
 
-                elementTextContent(tick_elem, localize('Tick') + ' ' + tick_number);
+                elementTextContent(tick_elem, `${localize('Tick')} ${tick_number}`);
                 elementInnerHtml(spot_elem, tick_d.quote.replace(/\d$/, replace));
 
-                const this_digit_elem = document.getElementById('tick_digit_' + tick_number);
+                const this_digit_elem = document.getElementById(`tick_digit_${tick_number}`);
                 this_digit_elem.classList.add(is_win(last_digit) ? 'profit' : 'loss');
                 elementTextContent(this_digit_elem, last_digit);
 

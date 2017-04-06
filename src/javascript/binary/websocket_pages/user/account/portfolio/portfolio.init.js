@@ -52,18 +52,17 @@ const PortfolioInit = (function() {
             (jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
 
         const new_class = is_first ? '' : 'new';
-        $('#portfolio-body').prepend(
-            $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
-                '<td class="ref"><span' + GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' +
-                '<td class="payout"><strong>' + formatMoney(data.currency, data.payout) + '</strong></td>' +
-                '<td class="details">' + longCode + '</td>' +
-                '<td class="purchase"><strong>' + formatMoney(data.currency, data.buy_price) + '</strong></td>' +
-                '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' +
-                '<td class="button"><button class="button open_contract_details nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' +
-                '</tr>' +
-                '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
-                '<td colspan="6">' + longCode + '</td>' +
-                '</tr>'));
+        $('#portfolio-body')
+            .prepend(
+                $('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
+                    .append($('<td/>', { class: 'ref' }).append($(`<span ${GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id])} data-balloon-position="right">${data.transaction_id}</span>`)))
+                    .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: formatMoney(data.currency, data.payout) })))
+                    .append($('<td/>', { class: 'details', text: longCode }))
+                    .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { text: formatMoney(data.currency, data.buy_price) })))
+                    .append($('<td/>', { class: 'indicative' }).append($('<strong/>', { class: 'indicative_price', text: '--.--' })))
+                    .append($('<td/>', { class: 'button' }).append($('<button/>', { class: 'button open_contract_details nowrap', contract_id: data.contract_id, text: localize('View') }))))
+            .append(
+                $('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: longCode })));
     };
 
     const updateBalance = function() {
@@ -102,7 +101,7 @@ const PortfolioInit = (function() {
                     currency = portfolio_data.currency;
                     createPortfolioRow(portfolio_data, is_first_response);
                     setTimeout(function() {
-                        $('tr.' + c.contract_id).removeClass('new');
+                        $(`tr.${c.contract_id}`).removeClass('new');
                     }, 1000);
                 }
             });
@@ -145,7 +144,7 @@ const PortfolioInit = (function() {
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
             BinarySocket.send({ sell_expired: 1 });
         }
-        const $td = $('#' + proposal.contract_id + ' td.indicative');
+        const $td = $(`#${proposal.contract_id} td.indicative`);
 
         const old_indicative = values[proposal.contract_id].indicative || 0.00;
         values[proposal.contract_id].indicative = proposal.bid_price;
@@ -156,13 +155,14 @@ const PortfolioInit = (function() {
             removeContract(proposal.contract_id);
         } else {
             if (+proposal.is_valid_to_sell !== 1) {
-                no_resale_html = '<span>' + localize('Resale not offered') + '</span>';
+                no_resale_html = $('<span/>', { text: localize('Resale not offered') });
                 $td.addClass('no_resale');
             } else {
                 status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
                 $td.removeClass('no_resale');
             }
-            $td.html('<strong class="indicative_price' + status_class + '"">' + formatMoney(proposal.currency, values[proposal.contract_id].indicative) + '</strong>' + no_resale_html);
+            $td.html($('<strong/>', { class: `indicative_price ${status_class}`, text: formatMoney(proposal.currency, values[proposal.contract_id].indicative) })
+                .append(no_resale_html));
         }
 
         updateFooter();
@@ -175,7 +175,7 @@ const PortfolioInit = (function() {
 
     const removeContract = function(contract_id) {
         delete (values[contract_id]);
-        $('tr.' + contract_id)
+        $(`tr.${contract_id}`)
             .removeClass('new')
             .css('opacity', '0.5')
             .fadeOut(1000, function() {

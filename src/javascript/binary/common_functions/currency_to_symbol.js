@@ -23,7 +23,7 @@ const formatMoney = (currency_value, amount) => {
         updatedAmount = addComma(updatedAmount);
         const symbol = mapCurrency[currency_value];
 
-        money = symbol ? sign + symbol + updatedAmount : currency_value + ' ' + updatedAmount;
+        money = symbol ? sign + symbol + updatedAmount : `${currency_value} ${updatedAmount}`;
     }
     return money;
 };

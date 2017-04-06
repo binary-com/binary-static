@@ -86,17 +86,18 @@ const TradePage_Beta = (function() {
         let totalWidth = 0;
 
         // add seeMore tab
-        let $seeMore = $ul.find('li.' + seeMoreClass);
+        let $seeMore = $ul.find(`li.${seeMoreClass}`);
         if ($seeMore.length === 0) {
-            $seeMore = $('<li class="tm-li ' + seeMoreClass + '"><a class="tm-a" href="javascript:;"><span class="caret-down"></span></a></li>');
+            $seeMore = $('<li/>', { class: `tm-li ${seeMoreClass}` }).append($('<a/>', { class: 'tm-a', href: `${'java'}${'script:;'}` })
+                .append($('<span/>', { class: 'caret-down' })));
             $ul.append($seeMore);
         }
         $seeMore.removeClass('active');
 
         // add moreTabs container
-        let $moreTabs = $ul.find('.' + moreTabsClass);
+        let $moreTabs = $ul.find(`.${moreTabsClass}`);
         if ($moreTabs.length === 0) {
-            $moreTabs = $('<div class="' + moreTabsClass + '" />').appendTo($seeMore);
+            $moreTabs = $('<div/>', { class: moreTabsClass }).appendTo($seeMore);
         } else {
             $moreTabs.find('>li').each(function(index, tab) {
                 $(tab).insertBefore($seeMore);
@@ -111,7 +112,7 @@ const TradePage_Beta = (function() {
         });
         let resultWidth = totalWidth;
         while (resultWidth >= maxWidth) {
-            const $thisTab = $ul.find('>li:not(.' + seeMoreClass + '):visible').last();
+            const $thisTab = $ul.find(`>li:not(.${seeMoreClass}):visible`).last();
             resultWidth -= $thisTab.outerWidth(true);
             $thisTab.prependTo($moreTabs);
         }

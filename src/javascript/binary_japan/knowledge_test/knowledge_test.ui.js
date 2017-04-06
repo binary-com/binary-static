@@ -7,8 +7,8 @@ const KnowledgeTestUI = (() => {
 
     const createTrueFalseBox = (question, show_answer) => {
         const qid = question.id;
-        const true_id = qid + 'true';
-        const false_id = qid + 'false';
+        const true_id = `${qid}true`;
+        const false_id = `${qid}false`;
 
         const $true_button = $('<input />', {
             type : 'radio',
@@ -88,12 +88,12 @@ const KnowledgeTestUI = (() => {
 
     const createResultUI = (score) => {
         const $result_table = $('<table></table>', { class: 'kv-pairs' });
-        const $score_row = $('<tr></tr>').append($('<td>' + localize('Score') + '</td>')).append($('<td>' + score + '</td>'));
+        const $score_row = $('<tr/>').append($('<td/>', { text: localize('Score') })).append($('<td/>', { text: score }));
 
         const date = moment();
-        const submit_date = moment.utc(date).format('YYYY') + localize('Year') + moment.utc(date).format('MM') + localize('Month') + moment.utc(date).format('DD') + localize('Day') + ' (' + localize('Weekday') + ')';
+        const submit_date = `${moment.utc(date).format('YYYY')}${localize('Year')}${moment.utc(date).format('MM')}${localize('Month')}${moment.utc(date).format('DD')}${localize('Day')} (${localize('Weekday')})`;
 
-        const $date_row = $('<tr></tr>').append($('<td>' + localize('Date') + '</td>')).append($('<td>' + submit_date + '</td>'));
+        const $date_row = $('<tr/>').append($('<td/>', { text: localize('Date') })).append($('<td/>', { text: submit_date }));
 
         $result_table.append($score_row).append($date_row);
 

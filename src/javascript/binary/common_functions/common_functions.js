@@ -24,7 +24,7 @@ const jqueryuiTabsToDropdown = ($container) => {
         $ddl.append($('<option/>', { text: $(this).text(), value: $(this).attr('href') }));
     });
     $ddl.change(function() {
-        $container.find('li a[href="' + $(this).val() + '"]').click();
+        $container.find(`li a[href="${$(this).val()}"]`).click();
     });
     return $ddl;
 };

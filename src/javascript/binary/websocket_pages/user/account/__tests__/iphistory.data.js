@@ -49,7 +49,7 @@ describe('IPHistoryData.parseUserAgent', function() {
     ];
 
     common.forEach(function(entry) {
-        it('works for ' + entry.name, function() {
+        it(`works for ${entry.name}`, function() {
             const browser = IPHistoryData.parseUserAgent(entry.ua);
             expect(browser.name).to.equal(entry.name);
             expect(browser.version).to.equal(entry.version);

@@ -34,13 +34,13 @@ function getSocketURL() {
             });
         }
 
-        server_url = (/staging\.binary\.com/i.test(window.location.hostname) ? 'blue' :
+        server_url = `${(/staging\.binary\.com/i.test(window.location.hostname) ? 'blue' :
                 (isReal  ? (randomPercent < toGreenPercent.real       ? 'green' : 'blue') :
                  loginid ? (randomPercent < toGreenPercent.virtual    ? 'green' : 'blue') :
                            (randomPercent < toGreenPercent.logged_out ? 'green' : 'blue'))
-            ) + '.binaryws.com';
+            )}.binaryws.com`;
     }
-    return 'wss://' + server_url + '/websockets/v3';
+    return `wss://${server_url}/websockets/v3`;
 }
 
 module.exports = {

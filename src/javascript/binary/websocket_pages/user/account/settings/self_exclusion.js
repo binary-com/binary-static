@@ -49,7 +49,7 @@ const SelfExclusion = (function() {
             $form.removeClass(hidden_class);
             self_exclusion_data = response.get_self_exclusion;
             $.each(self_exclusion_data, function(key, value) {
-                fields[key] = value + '';
+                fields[key] = value.toString();
                 $form.find(`#${key}`).val(value);
             });
             bindValidation();
@@ -135,7 +135,7 @@ const SelfExclusion = (function() {
 
     const toMoment   = value  => moment(new Date(value));
     const dateFormat = elm_id => ($(elm_id).val() ? toMoment($(elm_id).val()).format('YYYY-MM-DD') : '');
-    const getTimeout = () => ($(timeout_date_id).val() ? moment((dateFormat(timeout_date_id) + ' ' + $(timeout_time_id).val()).trim()).valueOf() / 1000 : '');
+    const getTimeout = () => ($(timeout_date_id).val() ? moment((`${dateFormat(timeout_date_id)} ${$(timeout_time_id).val()}`).trim()).valueOf() / 1000 : '');
 
     const initDatePicker = function() {
         // timeout_until
@@ -193,7 +193,7 @@ const SelfExclusion = (function() {
     const showFormMessage = function(msg, is_success) {
         $('#msg_form')
             .attr('class', is_success ? 'success-msg' : error_class)
-            .html(is_success ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
+            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);

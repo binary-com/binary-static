@@ -168,7 +168,7 @@ const Durations_Beta = (function() {
             expiry_date_iso = toISOFormat(expiry_date);
 
 
-        if (moment(expiry_date_iso + ' ' + expiry_time).valueOf() < current_moment.valueOf()) {
+        if (moment(`${expiry_date_iso} ${expiry_time}`).valueOf() < current_moment.valueOf()) {
             expiry_date = current_moment;
             expiry_date_iso = toISOFormat(expiry_date);
             expiry_time = current_moment.format('HH:mm');
@@ -220,7 +220,7 @@ const Durations_Beta = (function() {
             unitMaxValue = unit.options[unit.selectedIndex].getAttribute('data-maximum');
         let unitValue = Defaults.get('duration_amount') || unitMinValue;
         unit.value = Defaults.get('duration_units') &&
-            document.querySelectorAll('select[id="duration_units"] [value="' + Defaults.get('duration_units') + '"]').length ?
+            document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
                 Defaults.get('duration_units') : unit.value;
         elementTextContent(document.getElementById('duration_minimum'), unitMinValue);
         elementTextContent(document.getElementById('duration_maximum'), unitMaxValue);
@@ -280,19 +280,19 @@ const Durations_Beta = (function() {
         // in case of having endtime as expiry_type and change the form to contract types
         // which only have duration and do not support endtime, it should change the Default value
         // to get corrected based on contract situations
-        if ($('#expiry_type').find('option[value=' + Defaults.get('expiry_type') + ']').length === 0 && target.value) {
+        if ($('#expiry_type').find(`option[value=${Defaults.get('expiry_type')}]`).length === 0 && target.value) {
             Defaults.set('expiry_type', target.value);
         }
         const current_selected = Defaults.get('expiry_type') || target.value || 'duration';
         let hideId = (current_selected === 'duration') ? 'endtime' : 'duration',
             id = current_selected;
 
-        id = document.getElementById('expiry_type_' + id);
+        id = document.getElementById(`expiry_type_${id}`);
         if (id) {
             id.style.display = 'flex';
         }
         // need to hide the non selected one
-        hideId = document.getElementById('expiry_type_' + hideId);
+        hideId = document.getElementById(`expiry_type_${hideId}`);
         if (hideId) {
             hideId.style.display = 'none';
         }
@@ -370,7 +370,7 @@ const Durations_Beta = (function() {
 
     const onStartDateChange = function(value) {
         const $dateStartSelect = $('#date_start');
-        if (!value || !$dateStartSelect.find('option[value=' + value + ']').length) {
+        if (!value || !$dateStartSelect.find(`option[value=${value}]`).length) {
             return 0;
         }
 

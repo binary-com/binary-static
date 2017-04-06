@@ -132,7 +132,7 @@ function processContract(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        elementInnerHtml(confirmation_error, contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + localize('Please reload the page') + '</a>');
+        elementInnerHtml(confirmation_error, `${contracts.error.message} <a href="javascript:;" onclick="sessionStorage.removeItem('underlying'); window.location.reload();">${localize('Please reload the page')}</a>`);
         return;
     }
 
@@ -247,7 +247,7 @@ function displaySpreads() {
         spreadContainer.show();
         elementTextContent(stopTypeDollarLabel, document.getElementById('currency').value || Defaults.get('currency'));
         if (Defaults.get('stop_type')) {
-            const el = document.querySelectorAll('input[name="stop_type"][value="' + Defaults.get('stop_type') + '"]');
+            const el = document.querySelectorAll(`input[name="stop_type"][value="${Defaults.get('stop_type')}"]`);
             if (el) {
                 el[0].setAttribute('checked', 'checked');
             }
@@ -332,7 +332,7 @@ function processTradingTimes(response) {
 
 function onExpiryTypeChange(value) {
     const $expiry_type = $('#expiry_type');
-    if (!value || !$expiry_type.find('option[value=' + value + ']').length) {
+    if (!value || !$expiry_type.find(`option[value=${value}]`).length) {
         value = 'duration';
     }
     $expiry_type.val(value);
@@ -365,7 +365,7 @@ function onExpiryTypeChange(value) {
 
 function onDurationUnitChange(value) {
     const $duration_units = $('#duration_units');
-    if (!value || !$duration_units.find('option[value=' + value + ']').length) {
+    if (!value || !$duration_units.find(`option[value=${value}]`).length) {
         return 0;
     }
 

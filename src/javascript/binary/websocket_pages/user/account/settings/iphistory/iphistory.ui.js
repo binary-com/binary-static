@@ -15,13 +15,11 @@ const IPHistoryUI = (() => {
     };
 
     const formatRow = (data) => {
-        const timestamp = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
+        const timestamp = `${moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n')} GMT`;
         const status    = localize(data.success ? 'Successful' : 'Failed');
         const action    = localize(data.action);
         const browser   = data.browser;
-        let browser_string = browser ?
-            browser.name + ' v' + browser.version :
-            'Unknown';
+        let browser_string = browser ? `${browser.name} v${browser.version}` : 'Unknown';
         const patt = /^(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium) v[0-9.]+$/i;
         if (!patt.test(browser_string) && browser_string !== 'Unknown') {
             browser_string = 'Error';
@@ -56,7 +54,7 @@ const IPHistoryUI = (() => {
     };
 
     const clean = () => {
-        $(container_selector + ' .error-msg').text('');
+        $(container_selector).find('.error-msg').text('');
         FlexTableUI.clear();
     };
 

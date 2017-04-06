@@ -87,7 +87,7 @@ const Table = (() => {
     };
 
     const clearTableBody = (id) => {
-        const tbody = document.querySelector('#' + id + '>tbody');
+        const tbody = document.querySelector(`#${id} > tbody`);
         while (tbody && tbody.firstElementChild) {
             tbody.removeChild(tbody.firstElementChild);
         }
@@ -100,7 +100,7 @@ const Table = (() => {
      * @param {Function} rowGenerator takes in one arg, and convert it into row to be append to table body
      */
     const appendTableBody = (id, data, rowGenerator) => {
-        const tbody = document.querySelector('#' + id + '>tbody');
+        const tbody = document.querySelector(`#${id} > tbody`);
         if (!tbody) return;
         const docFrag = document.createDocumentFragment();
         data.map((ele) => {

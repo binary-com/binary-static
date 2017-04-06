@@ -139,7 +139,7 @@ const Highchart = (function() {
     // type 'x' is used to draw lines such as start and end times
     // type 'y' is used to draw lines such as barrier
     const addPlotLine = function(params, type) {
-        chart[(type + 'Axis')][0].addPlotLine(HighchartUI.get_plotline_options(params, type));
+        chart[(`${type}Axis`)][0].addPlotLine(HighchartUI.get_plotline_options(params, type));
         if (user_sold()) {
             HighchartUI.replace_exit_label_with_sell(chart.subtitle.element);
         }
@@ -265,7 +265,7 @@ const Highchart = (function() {
         }
 
         const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : window.contracts_for,
-            stored_delay = sessionStorage.getItem('license.' + underlying);
+            stored_delay = sessionStorage.getItem(`license.${underlying}`);
 
         if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
             delayed_chart(contracts_response);
@@ -481,7 +481,7 @@ const Highchart = (function() {
             }
             if (!contract.sell_spot && !contract.exit_tick) {
                 if ($('#waiting_exit_tick').length === 0) {
-                    $('#trade_details_message').append('<div id="waiting_exit_tick">' + localize('Waiting for exit tick.') + '</div>');
+                    $('#trade_details_message').append($('<div/>', { id: 'waiting_exit_tick', text: localize('Waiting for exit tick.') }));
                 }
             } else {
                 $('#waiting_exit_tick').remove();
@@ -547,7 +547,7 @@ const Highchart = (function() {
     };
 
     const save_feed_license = function(save_contract, license) {
-        const regex = new RegExp('license.' + contract);
+        const regex = new RegExp(`license.${contract}`);
         let match_found = false;
 
         for (let i = 0; i < sessionStorage.length; i++) {
@@ -558,7 +558,7 @@ const Highchart = (function() {
         }
 
         if (!match_found) {
-            sessionStorage.setItem('license.' + save_contract, license);
+            sessionStorage.setItem(`license.${save_contract}`, license);
         }
     };
 

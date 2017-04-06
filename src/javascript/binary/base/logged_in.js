@@ -20,7 +20,7 @@ const LoggedInHandler = (() => {
                 const loginids = Object.keys(tokens);
                 let loginid_list = '';
                 loginids.map(function(id) {
-                    loginid_list += (loginid_list ? '+' : '') + id + ':' + (/^V/i.test(id) ? 'V' : 'R') + ':E'; // since there is not any data source to check, so assume all are enabled, disabled accounts will be handled on authorize
+                    loginid_list += `${(loginid_list ? '+' : '')}${id}:${(/^V/i.test(id) ? 'V' : 'R')}:E`; // since there is not any data source to check, so assume all are enabled, disabled accounts will be handled on authorize
                 });
                 loginid = loginids[0];
                 // set cookies
@@ -51,7 +51,7 @@ const LoggedInHandler = (() => {
             const lang_cookie = Cookies.get('language');
             const language = getLanguage();
             if (lang_cookie && lang_cookie !== language) {
-                redirect_url = redirect_url.replace(new RegExp('\/' + language + '\/', 'i'), '/' + lang_cookie.toLowerCase() + '/');
+                redirect_url = redirect_url.replace(new RegExp(`\/${language}\/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
             }
         }
         document.getElementById('loading_link').setAttribute('href', redirect_url);
@@ -76,7 +76,7 @@ const LoggedInHandler = (() => {
     };
 
     const getHashValue = (source, key) => (
-        source && source.length > 0 ? (new RegExp('^' + key).test(source.split('=')[0]) ? source.split('=')[1] : '') : ''
+        source && source.length > 0 ? (new RegExp(`^${key}`).test(source.split('=')[0]) ? source.split('=')[1] : '') : ''
     );
 
     return {

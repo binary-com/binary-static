@@ -98,7 +98,7 @@ const Price = (function() {
                 }
             }
 
-            proposal.date_expiry = moment.utc(endDate2 + ' ' + (endTime2 || '23:59:59')).unix();
+            proposal.date_expiry = moment.utc(`${endDate2} ${(endTime2 || '23:59:59')}`).unix();
             // For stopping tick trade behaviour
             proposal.duration_unit = 'm';
         }
@@ -173,7 +173,7 @@ const Price = (function() {
             return;
         }
 
-        const container = document.getElementById('price_container_' + position);
+        const container = document.getElementById(`price_container_${position}`);
         if (!container) return;
         if (!$(container).is(':visible')) {
             $(container).fadeIn(200);
@@ -192,7 +192,7 @@ const Price = (function() {
 
         const display_text = type && contractType ? contractType[type] : '';
         if (display_text) {
-            h4.setAttribute('class', 'contract_heading ' + type);
+            h4.setAttribute('class', `contract_heading ${type}`);
             if (is_spread) {
                 if (position === 'top') {
                     elementTextContent(h4, localize('Long'));
@@ -212,7 +212,7 @@ const Price = (function() {
                     elementTextContent(amount, data.display_value);
                 } else {
                     $('.stake:hidden').show();
-                    elementTextContent(stake, localize('Stake') + ': ');
+                    elementTextContent(stake, `${localize('Stake')}: `);
                     elementTextContent(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
                 }
                 $('.stake_wrapper:hidden').show();
@@ -221,7 +221,7 @@ const Price = (function() {
             }
 
             if (data.payout) {
-                elementTextContent(payout, (is_spread ? localize('Payout/point') : localize('Payout')) + ': ');
+                elementTextContent(payout, `${(is_spread ? localize('Payout/point') : localize('Payout'))}: `);
                 elementTextContent(payoutAmount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
                 $('.payout_wrapper:hidden').show();
             } else {
@@ -266,7 +266,7 @@ const Price = (function() {
             purchase.setAttribute('data-symbol', id);
             Object.keys(params).forEach(function(key) {
                 if (key && key !== 'proposal') {
-                    purchase.setAttribute('data-' + key, params[key]);
+                    purchase.setAttribute(`data-${key}`, params[key]);
                 }
             });
         }

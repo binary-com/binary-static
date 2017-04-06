@@ -17,7 +17,7 @@ const MBNotifications = (function() {
      */
     const showErrorMessage = function(options) {
         const $note_wrapper = getContainer(),
-            $this_uid     = $note_wrapper.find('#' + options.uid);
+            $this_uid     = $note_wrapper.find(`#${options.uid}`);
 
         if (!options.uid || $this_uid.length === 0) {
             $note_wrapper.prepend(generateMessage(options));
@@ -30,10 +30,10 @@ const MBNotifications = (function() {
     };
 
     const generateMessage = function(options) {
-        const $message = $('<div class="notice-msg center-text' + (options.dismissible ? ' dismissible' : '') + '"' +
-            (options.uid ? ' id="' + options.uid + '"' : '') + '>' + localize(options.text) +
-                (options.dismissible ? '<div class="notification-dismiss">x</div>' : '') +
-            '</div>');
+        const $message = $(`<div class="notice-msg center-text${(options.dismissible ? ' dismissible' : '')}"
+            ${(options.uid ? ` id="${options.uid}"` : '')}>${localize(options.text)}
+                ${(options.dismissible ? '<div class="notification-dismiss">x</div>' : '')}
+            </div>`);
 
         if (options.dismissible) {
             $message.click(function () { dismissMessage(this); });
@@ -44,7 +44,7 @@ const MBNotifications = (function() {
 
     const hideErrorMessage = function(uid) {
         if (uid) {
-            getContainer().find('#' + uid).remove();
+            getContainer().find(`#${uid}`).remove();
         }
     };
 

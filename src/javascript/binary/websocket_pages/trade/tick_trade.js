@@ -52,7 +52,7 @@ const TickDisplayClass = (function() {
                 $self.x_indicators = {
                     _0: { label: 'Entry Spot', id: 'start_tick' },
                 };
-                $self.x_indicators['_' + exit_tick_index] = {
+                $self.x_indicators[`_${exit_tick_index}`] = {
                     label: 'Exit Spot',
                     id   : 'exit_tick',
                 };
@@ -61,7 +61,7 @@ const TickDisplayClass = (function() {
                 $self.x_indicators = {
                     _0: { label: 'Entry Spot', id: 'entry_tick' },
                 };
-                $self.x_indicators['_' + $self.number_of_ticks] = {
+                $self.x_indicators[`_${$self.number_of_ticks}`] = {
                     label: 'Exit Spot',
                     id   : 'exit_tick',
                 };
@@ -70,8 +70,8 @@ const TickDisplayClass = (function() {
                 $self.x_indicators = {
                     _0: { label: 'Tick 1', id: 'start_tick' },
                 };
-                $self.x_indicators['_' + exit_tick_index] = {
-                    label: 'Tick ' + $self.number_of_ticks,
+                $self.x_indicators[`_${exit_tick_index}`] = {
+                    label: `Tick ${$self.number_of_ticks}`,
                     id   : 'last_tick',
                 };
             } else {
@@ -97,7 +97,7 @@ const TickDisplayClass = (function() {
                         const that = this;
                         const new_y = that.y.toFixed($self.display_decimals);
                         const mom = moment.utc($self.applicable_ticks[that.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
-                        return mom + '<br/>' + $self.display_symbol + ' ' + new_y;
+                        return `${mom}<br/>${$self.display_symbol} ${new_y}`;
                     },
                 },
                 xAxis: {
@@ -161,7 +161,7 @@ const TickDisplayClass = (function() {
                     let final_barrier = barrier_tick.quote + parseFloat($self.barrier);
                     // sometimes due to rounding issues, result is 1.009999 while it should
                     // be 1.01
-                    final_barrier = Number(Math.round(final_barrier + 'e' + $self.display_decimals) + 'e-' + $self.display_decimals);
+                    final_barrier = Number(`${Math.round(`${final_barrier}e${$self.display_decimals}`)}e-${$self.display_decimals}`);
 
                     barrier_tick.quote = final_barrier;
                 } else if ($self.abs_barrier) {
@@ -171,7 +171,7 @@ const TickDisplayClass = (function() {
                 $self.chart.yAxis[0].addPlotLine({
                     id    : 'tick-barrier',
                     value : barrier_tick.quote,
-                    label : { text: 'Barrier (' + barrier_tick.quote + ')', align: 'center' },
+                    label : { text: `Barrier (${barrier_tick.quote})`, align: 'center' },
                     color : 'green',
                     width : 2,
                     zIndex: 2,
@@ -194,7 +194,7 @@ const TickDisplayClass = (function() {
                     value: calc_barrier,
                     color: 'green',
                     label: {
-                        text : 'Average (' + calc_barrier + ')',
+                        text : `Average (${calc_barrier})`,
                         align: 'center',
                     },
                     width : 2,
@@ -204,7 +204,7 @@ const TickDisplayClass = (function() {
             }
             const barrier = document.getElementById('contract_purchase_barrier');
             if ($self.contract_barrier && barrier) {
-                elementInnerHtml(barrier, localize('Barrier') + ': ' + $self.contract_barrier);
+                elementInnerHtml(barrier, `${localize('Barrier')}: ${$self.contract_barrier}`);
             }
         },
         add: function(indicator) {
@@ -355,7 +355,7 @@ TickDisplay.dispatch = function(data) {
                 $self.chart.series[0].addPoint([$self.counter, tick.quote], true, false);
                 $self.applicable_ticks.push(tick);
                 $self.spots_list[tick.epoch] = tick.quote;
-                const indicator_key = '_' + $self.counter;
+                const indicator_key = `_${$self.counter}`;
                 if (typeof $self.x_indicators[indicator_key] !== 'undefined') {
                     $self.x_indicators[indicator_key].index = $self.counter;
                     $self.add($self.x_indicators[indicator_key]);

@@ -17,15 +17,15 @@ const HighchartUI = (function() {
         }
         switch (option) {
             case 'start_time':
-                return '<div style="' + common_time_style + 'border-style: solid;"></div> ' + localize('Start time') + ' ';
+                return `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start time')} `;
             case 'entry_spot':
-                return '<div style="' + common_spot_style + 'border: 3px solid orange; width: 4px; height: 4px;"></div> ' + localize('Entry spot') + ' ';
+                return  `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry spot')} `;
             case 'exit_spot':
-                return '<div style="' + common_spot_style + 'background-color: orange; width:10px; height: 10px;"></div> ' + localize('Exit spot') + ' ';
+                return `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `;
             case 'end_time':
-                return '<div style="' + common_time_style + 'border-style: dashed;"></div> ' + localize('End time') + ' ';
+                return `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `;
             case 'delay':
-                return '<span class="chart-delay"> ' + localize('Charting for this underlying is delayed') + ' </span>';
+                return `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`;
             default:
                 return null;
         }
@@ -120,7 +120,7 @@ const HighchartUI = (function() {
 
     const replace_exit_label_with_sell = function(subtitle) {
         const subtitle_length = subtitle.childNodes.length,
-            textnode = document.createTextNode(' '  + localize('Sell time') + ' ');
+            textnode = document.createTextNode(` ${localize('Sell time')} `);
         for (let i = 0; i < subtitle_length; i++) {
             const item = subtitle.childNodes[i];
             if (/End time/.test(item.nodeValue)) {
@@ -151,9 +151,7 @@ const HighchartUI = (function() {
     };
 
     const show_error = function(type, message) {
-        const el = document.getElementById('analysis_live_chart');
-        if (!el) return;
-        el.innerHTML = '<p class="error-msg">' + (type === 'missing' ? localize('Ticks history returned an empty array.') : message) + '</p>';
+        $('#analysis_live_chart').html($('<p/>', { class: 'error-msg', text: (type === 'missing' ? localize('Ticks history returned an empty array.') : message) }));
     };
 
     const get_marker_object = function(type) {

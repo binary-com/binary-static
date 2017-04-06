@@ -7,6 +7,7 @@ const updatePurchaseStatus  = require('./common').updatePurchaseStatus;
 const updateContractBalance = require('./common').updateContractBalance;
 const elementTextContent    = require('../../common_functions/common_functions').elementTextContent;
 const elementInnerHtml      = require('../../common_functions/common_functions').elementInnerHtml;
+const padLeft               = require('../../common_functions/string_util').padLeft;
 const localize              = require('../../base/localize').localize;
 
 /*
@@ -61,7 +62,7 @@ const Purchase = (function () {
             elementTextContent(heading, localize('Contract Confirmation'));
             elementTextContent(descr, receipt.longcode);
             if (barrier_element) barrier_element.textContent = '';
-            elementTextContent(reference, localize('Your transaction reference is') + ' ' + receipt.transaction_id);
+            elementTextContent(reference, `${localize('Your transaction reference is')} ${receipt.transaction_id}`);
 
             let payout_value,
                 cost_value;
@@ -76,13 +77,13 @@ const Purchase = (function () {
             const profit_value = Math.round((payout_value - cost_value) * 100) / 100;
 
             if (sessionStorage.getItem('formname') === 'spreads') {
-                elementInnerHtml(payout, localize('Stop-loss')        + ' <p>' + receipt.stop_loss_level   + '</p>');
-                elementInnerHtml(cost,   localize('Amount per point') + ' <p>' + receipt.amount_per_point  + '</p>');
-                elementInnerHtml(profit, localize('Stop-profit')      + ' <p>' + receipt.stop_profit_level + '</p>');
+                elementInnerHtml(payout, `${localize('Stop-loss')} <p>${receipt.stop_loss_level}</p>`);
+                elementInnerHtml(cost,   `${localize('Amount per point')} <p>${receipt.amount_per_point}</p>`);
+                elementInnerHtml(profit, `${localize('Stop-profit')} <p>${receipt.stop_profit_level} </p>`);
             } else {
-                elementInnerHtml(payout, localize('Potential Payout') + ' <p>' + payout_value + '</p>');
-                elementInnerHtml(cost,   localize('Total Cost')       + ' <p>' + cost_value   + '</p>');
-                elementInnerHtml(profit, localize('Potential Profit') + ' <p>' + profit_value + '</p>');
+                elementInnerHtml(payout, `${localize('Potential Payout')} <p>${payout_value}</p>`);
+                elementInnerHtml(cost,   `${localize('Total Cost')} <p>${cost_value}</p>`);
+                elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
             }
 
             updateContractBalance(receipt.balance_after);
@@ -175,7 +176,7 @@ const Purchase = (function () {
         if (spots) spots.textContent = '';
 
         let last_digit;
-        const replace = function(d) { last_digit = d; return '<b>' + d + '</b>'; };
+        const replace = function(d) { last_digit = d; return `<b>${d}</b>`; };
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
@@ -188,16 +189,16 @@ const Purchase = (function () {
 
                 const el1 = document.createElement('div');
                 el1.classList.add('col');
-                elementTextContent(el1, localize('Tick') + ' ' + (spots.getElementsByClassName('row').length + 1));
+                elementTextContent(el1, `${localize('Tick')} ${(spots.getElementsByClassName('row').length + 1)}`);
                 fragment.appendChild(el1);
 
                 const el2 = document.createElement('div');
                 el2.classList.add('col');
                 const date = new Date(tick_d.epoch * 1000);
-                const hours = date.getUTCHours() < 10 ? '0' + date.getUTCHours() : date.getUTCHours();
-                const minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes();
-                const seconds = date.getUTCSeconds() < 10 ? '0' + date.getUTCSeconds() : date.getUTCSeconds();
-                elementTextContent(el2, hours + ':' + minutes + ':' + seconds);
+                const hours   = padLeft(date.getUTCHours(), 2, '0');
+                const minutes = padLeft(date.getUTCMinutes(), 2, '0');
+                const seconds = padLeft(date.getUTCSeconds(), 2, '0');
+                elementTextContent(el2, [hours, minutes, seconds].join(':'));
                 fragment.appendChild(el2);
 
                 const tick = tick_d.quote.replace(/\d$/, replace);

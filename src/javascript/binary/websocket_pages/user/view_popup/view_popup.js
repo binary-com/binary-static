@@ -77,7 +77,7 @@ const ViewPopup = (function() {
 
         if (contract && contractType) {
             if (!document.getElementById(wrapperID)) return;
-            ViewPopup[contractType + 'Update']();
+            ViewPopup[`${contractType}Update`]();
             return;
         }
 
@@ -156,24 +156,24 @@ const ViewPopup = (function() {
             spreadRow('Stop Profit Level', 'stop_profit_level') +
             spreadRow('Current Level',     'sell_level', '', '', contract.is_ended) +
             spreadRow('Amount Per Point',  'per_point') +
-            spreadRow('Profit/Loss',       'pl_value', (contract.profit >= 0 ? 'profit' : 'loss'), ' (' + contract.currency + ')') +
+            spreadRow('Profit/Loss',       'pl_value', (contract.profit >= 0 ? 'profit' : 'loss'), ` (${contract.currency})`) +
             spreadRow('Profit/Loss (points)', 'pl_point');
 
         $table.find('tbody').append(tbody);
         $Container.append(
             $('<div/>', { id: wrapperID })
             .append($('<div/>', { id: 'spread_table' }).append($table))
-            .append($('<div/>', { id: 'errMsg', class: 'notice-msg ' + hiddenClass }))
+            .append($('<div/>', { id: 'errMsg', class: `notice-msg ${hiddenClass}` }))
             .append($('<div/>', { id: winStatusID, class: hiddenClass }))
             .append($('<div/>', { id: 'contract_sell_wrapper', class: hiddenClass })));
 
-        ViewPopupUI.show_inpage_popup('<div class="' + popupboxID + '">' + $Container.html() + '</div>', 'spread_popup', '#sell_bet_desc, #sell_content_wrapper');
+        ViewPopupUI.show_inpage_popup(`<div class="${popupboxID}">${$Container.html()}</div>`, 'spread_popup', '#sell_bet_desc, #sell_content_wrapper');
 
-        return $('#' + wrapperID);
+        return $(`#${wrapperID}`);
     };
 
     const spreadRow = function(label, id, classname, label_no_localize, isHidden) {
-        return '<tr' + (isHidden ? ' class="' + hiddenClass + '"' : '') + '><td>' + localize(label) + (label_no_localize || '') + '</td><td' + (id ? ' id="' + id + '"' : '') + (classname ? ' class="' + classname + '"' : '') + '></td></tr>';
+        return `<tr${(isHidden ? ` class="${hiddenClass}"` : '')}><td>${localize(label)}${(label_no_localize || '')}</td><td${(id ? ` id="${id}"` : '')}${(classname ? ` class="${classname}"` : '')}></td></tr>`;
     };
 
     // ===== Contract: Normal =====
@@ -211,8 +211,8 @@ const ViewPopup = (function() {
             containerSetText('trade_details_barrier_low', contract.low_barrier, '', true);
         } else if (contract.barrier) {
             containerSetText('trade_details_barrier',     contract.entry_tick_time ?
-                (contract.contract_type === 'DIGITMATCH' ? localize('Equals') + ' ' + contract.barrier :
-                    contract.contract_type === 'DIGITDIFF' ? localize('Not') + ' ' + contract.barrier :
+                (contract.contract_type === 'DIGITMATCH' ? `${localize('Equals')} ${contract.barrier}` :
+                    contract.contract_type === 'DIGITDIFF' ? `${localize('Not')} ${contract.barrier}` :
                     contract.barrier) : '-',
                 '', true);
         }
@@ -232,7 +232,7 @@ const ViewPopup = (function() {
             $('#trade_details_current_date').parent().addClass(hiddenClass);
         }
 
-        containerSetText('trade_details_ref_id',           contract.transaction_ids.buy + (contract.transaction_ids.sell ? ' - ' + contract.transaction_ids.sell : ''));
+        containerSetText('trade_details_ref_id',           contract.transaction_ids.buy + (contract.transaction_ids.sell ? ` - ${contract.transaction_ids.sell}` : ''));
         containerSetText('trade_details_indicative_price', indicative_price ? formatMoney(contract.currency, indicative_price) : '-');
 
         let profit_loss,
@@ -242,7 +242,7 @@ const ViewPopup = (function() {
             profit_loss = finalPrice - contract.buy_price;
             percentage = ((profit_loss * 100) / contract.buy_price).toFixed(2);
             containerSetText('trade_details_profit_loss',
-                formatMoney(contract.currency, profit_loss) + '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%)</span>', { class: (profit_loss >= 0 ? 'profit' : 'loss') });
+                `${formatMoney(contract.currency, profit_loss)}<span>(${(percentage > 0 ? '+' : '')}${percentage}%)</span>`, { class: (profit_loss >= 0 ? 'profit' : 'loss') });
         } else {
             containerSetText('trade_details_profit_loss', '-', { class: 'loss' });
         }
@@ -254,7 +254,7 @@ const ViewPopup = (function() {
             if (contract.entry_spot > 0) {
                 containerSetText('trade_details_entry_spot', contract.entry_spot);
             }
-            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + localize('This contract was affected by a Corporate Action event.') : '&nbsp;');
+            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? `* ${localize('This contract was affected by a Corporate Action event.')}` : '&nbsp;');
         }
 
         if (!chartStarted && !contract.tick_count) {
@@ -320,7 +320,7 @@ const ViewPopup = (function() {
                 }
                 if (document.getElementById('trade_details_live_remaining')) {
                     containerSetText('trade_details_live_remaining',
-                        (days > 0 ? days + ' ' + localize(days > 1 ? 'days' : 'day') + ', ' : '') +
+                        (days > 0 ? `${days} ${localize(days > 1 ? 'days' : 'day')}, ` : '') +
                         moment((remained) * 1000).utc().format('HH:mm:ss'));
                 }
             }
@@ -358,7 +358,7 @@ const ViewPopup = (function() {
             $contractInformationContent = $('#contract_information_content');
 
         $contractInformationTab.removeAttr('colspan');
-        $('#contract_tabs').append('<th id="corporate_action_tab">' + localize('Corporate Action') + '</th>');
+        $('#contract_tabs').append(`<th id="corporate_action_tab">${localize('Corporate Action')}</th>`);
 
         const $corporateActionTab = $('#corporate_action_tab'),
             $corporateActionContent = $('#corporate_action_content');
@@ -385,7 +385,7 @@ const ViewPopup = (function() {
     const populateCorporateAction = function(corporateAction) {
         for (let i = 0; i < corporateAction.get_corporate_actions.actions.length; i++) {
             $('#corporate_action_content').append(
-                normalRow(corporateAction.get_corporate_actions.actions[i].display_date, '', '', '', corporateAction.get_corporate_actions.actions[i].type + ' (' + corporateAction.get_corporate_actions.actions[i].value + '-' + localize('for') + '-1)'));
+                normalRow(corporateAction.get_corporate_actions.actions[i].display_date, '', '', '', `${corporateAction.get_corporate_actions.actions[i].type} (${corporateAction.get_corporate_actions.actions[i].value}-${localize('for')}-1)`));
         }
         let originalBarriers,
             adjustedBarriers;
@@ -416,47 +416,45 @@ const ViewPopup = (function() {
         const $sections = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
 
         $sections.find('#sell_details_table').append($(
-            '<table>' +
-            '<tr id="contract_tabs"><th colspan="2" id="contract_information_tab">' + localize('Contract Information') + '</th></tr><tbody id="contract_information_content">' +
-            normalRow('Contract ID', '', 'trade_details_contract_id') +
-            normalRow('Reference ID', '', 'trade_details_ref_id') +
-            normalRow('Start Time', '', 'trade_details_start_date') +
-            (!contract.tick_count ? normalRow('End Time', '', 'trade_details_end_date') +
-                normalRow('Remaining Time', '', 'trade_details_live_remaining') : '') +
-            normalRow('Entry Spot', '', 'trade_details_entry_spot') +
-            normalRow(contract.barrier_count > 1 ? 'High Barrier' :
-                /^DIGIT(MATCH|DIFF)$/.test(contract.contract_type) ? 'Target' : 'Barrier', '', 'trade_details_barrier', true) +
-            (contract.barrier_count > 1 ? normalRow('Low Barrier', '', 'trade_details_barrier_low', true) : '') +
-            normalRow('Potential Payout', '', 'trade_details_payout') +
-            normalRow('Purchase Price', '', 'trade_details_purchase_price') +
-            '</tbody><tbody id="corporate_action_content" class="invisible"></tbody>' +
-            '<th colspan="2" id="barrier_change" class="invisible">' + localize('Barrier Change') + '</th>' +
-            '<tbody id="barrier_change_content" class="invisible"></tbody>' +
-            '<tr><th colspan="2" id="trade_details_current_title">' + localize('Current') + '</th></tr>' +
-            normalRow('Spot', 'trade_details_spot_label', 'trade_details_current_spot') +
-            normalRow('Spot Time', 'trade_details_spottime_label', 'trade_details_current_date') +
-            normalRow('Current Time', '', 'trade_details_live_date') +
-            normalRow('Indicative', 'trade_details_indicative_label', 'trade_details_indicative_price') +
-            normalRow('Profit/Loss', '', 'trade_details_profit_loss') +
-            '<tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>' +
-            '</table>' +
-            '<div id="errMsg" class="notice-msg hidden"></div>' +
-            '<div id="trade_details_bottom"><div id="contract_sell_wrapper" class="' + hiddenClass + '"></div><div id="contract_sell_message"></div><div id="contract_win_status" class="' + hiddenClass + '"></div></div>'));
+            `<table>
+            <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
+            ${normalRow('Contract ID', '', 'trade_details_contract_id')}
+            ${normalRow('Reference ID', '', 'trade_details_ref_id')}
+            ${normalRow('Start Time', '', 'trade_details_start_date')}
+            ${(!contract.tick_count ? normalRow('End Time', '', 'trade_details_end_date') +
+                normalRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
+            ${normalRow('Entry Spot', '', 'trade_details_entry_spot')}
+            ${normalRow(contract.barrier_count > 1 ? 'High Barrier' :
+                /^DIGIT(MATCH|DIFF)$/.test(contract.contract_type) ? 'Target' : 'Barrier', '', 'trade_details_barrier', true)}
+            ${(contract.barrier_count > 1 ? normalRow('Low Barrier', '', 'trade_details_barrier_low', true) : '')}
+            ${normalRow('Potential Payout', '', 'trade_details_payout')}
+            ${normalRow('Purchase Price', '', 'trade_details_purchase_price')}
+            </tbody><tbody id="corporate_action_content" class="invisible"></tbody>
+            <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>
+            <tbody id="barrier_change_content" class="invisible"></tbody>
+            <tr><th colspan="2" id="trade_details_current_title">${localize('Current')}</th></tr>
+            ${normalRow('Spot', 'trade_details_spot_label', 'trade_details_current_spot')}
+            ${normalRow('Spot Time', 'trade_details_spottime_label', 'trade_details_current_date')}
+            ${normalRow('Current Time', '', 'trade_details_live_date')}
+            ${normalRow('Indicative', 'trade_details_indicative_label', 'trade_details_indicative_price')}
+            ${normalRow('Profit/Loss', '', 'trade_details_profit_loss')}
+            <tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>
+            </table>
+            <div id="errMsg" class="notice-msg hidden"></div>
+            <div id="trade_details_bottom"><div id="contract_sell_wrapper" class="${hiddenClass}"></div><div id="contract_sell_message"></div><div id="contract_win_status" class="${hiddenClass}"></div></div>`));
 
-        $sections.find('#sell_details_chart_wrapper').html('<div id="live_chart_form_wrapper" class="gr-12"></div>' +
-            '<div class="chart-notice"><div class="notice" id="delayed_feed_notice" style="display: none;">Charting for this underlying is delayed</div><div class="notice" id="not_available_notice" style="display: none;">Charting is not available for this underlying</div></div>' +
-            '<div id="' + (contract.tick_count ? 'tick_chart' : 'analysis_live_chart') + '" class="live_chart_wrapper gr-12"></div>');
+        $sections.find('#sell_details_chart_wrapper').html($('<div/>', { id: (contract.tick_count ? 'tick_chart' : 'analysis_live_chart'), class: 'live_chart_wrapper' }));
 
-        $Container.find('#' + wrapperID)
+        $Container.find(`#${wrapperID}`)
             .append($sections.html())
-            .append($('<div/>', { id: 'errMsg', class: 'notice-msg ' + hiddenClass }));
+            .append($('<div/>', { id: 'errMsg', class: `notice-msg ${hiddenClass}` }));
 
-        ViewPopupUI.show_inpage_popup('<div class="' + popupboxID + '">' + $Container.html() + '</div>', '', '#sell_bet_desc');
-        return $('#' + wrapperID);
+        ViewPopupUI.show_inpage_popup(`<div class="${popupboxID}">${$Container.html()}</div>`, '', '#sell_bet_desc');
+        return $(`#${wrapperID}`);
     };
 
     const normalRow = function(label, label_id, value_id, isHidden, value) {
-        return '<tr' + (isHidden ? ' class="' + hiddenClass + '"' : '') + '><td' + (label_id ? ' id="' + label_id + '"' : '') + '>' + localize(label) + '</td><td' + (value_id ? ' id="' + value_id + '"' : '') + '>' + (value || '') + '</td></tr>';
+        return `<tr${(isHidden ? ` class="${hiddenClass}"` : '')}><td${(label_id ? ` id="${label_id}"` : '')}>${localize(label)}</td><td${(value_id ? ` id="${value_id}"` : '')}>${(value || '')}</td></tr>`;
     };
 
     const epochToDateTime = function(epoch) {
@@ -466,10 +464,10 @@ const ViewPopup = (function() {
     // ===== Tools =====
     const containerSetText = function(id, string, attributes, isVisible) {
         if (!$Container || $Container.length === 0) {
-            $Container = $('#' + wrapperID);
+            $Container = $(`#${wrapperID}`);
         }
 
-        const $target = $Container.find('#' + id);
+        const $target = $Container.find(`#${id}`);
         if ($target && $target.length > 0) {
             $target.html(string);
             if (attributes) $target.attr(attributes);
@@ -508,7 +506,7 @@ const ViewPopup = (function() {
         $con.append(
             $('<div/>', { id: wrapperID })
             .append($('<div/>', { class: msgClass, html: localize(message) })));
-        ViewPopupUI.show_inpage_popup('<div class="' + popupboxID + '">' + $con.html() + '</div>', 'message_popup', '#sell_bet_desc');
+        ViewPopupUI.show_inpage_popup(`<div class="${popupboxID}">${$con.html()}</div>`, 'message_popup', '#sell_bet_desc');
     };
 
     const showErrorPopup = function(response, message) {
@@ -520,7 +518,7 @@ const ViewPopup = (function() {
     const sellSetVisibility = function(show) {
         const sellWrapperID = 'sell_at_market_wrapper',
             sellButtonID = 'sell_at_market';
-        const isExist = $Container.find('#' + sellWrapperID).length > 0;
+        const isExist = $Container.find(`#${sellWrapperID}`).length > 0;
         if (show) {
             if (isExist) return;
             if (contractType === 'spread') {
@@ -528,10 +526,14 @@ const ViewPopup = (function() {
                     $('<p/>', { id: sellWrapperID, class: 'button' })
                     .append($('<button/>', { id: sellButtonID, class: 'button', text: localize('Sell') })));
             } else {
-                $Container.find('#contract_sell_wrapper').removeClass(hiddenClass).append($('<div id="' + sellWrapperID + '"><span class="button"><button id="' + sellButtonID + '" class="button">' + localize('Sell at market') + '</button></span>' +
-                    '<div class="note"><strong>' + localize('Note') + ':</strong> ' + localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.') + '</div>'));
+                $Container.find('#contract_sell_wrapper').removeClass(hiddenClass)
+                    .append($('<div/>', { id: sellWrapperID })
+                        .append($('<button/>', { id: sellButtonID, class: 'button', text: localize('Sell at market') }))
+                        .append($('<div/>', { class: 'note' })
+                            .append($('<strong/>', { text: `${localize('Note')}: ` }))
+                            .append($('<span/>', { text: localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.') }))));
             }
-            $Container.find('#' + sellButtonID).unbind('click').click(function(e) {
+            $Container.find(`#${sellButtonID}`).unbind('click').click(function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 isSellClicked = true;
@@ -540,8 +542,8 @@ const ViewPopup = (function() {
             });
         } else {
             if (!isExist) return;
-            $Container.find('#' + sellButtonID).unbind('click');
-            $Container.find('#' + sellWrapperID).remove();
+            $Container.find(`#${sellButtonID}`).unbind('click');
+            $Container.find(`#${sellWrapperID}`).remove();
         }
     };
 
@@ -605,9 +607,9 @@ const ViewPopup = (function() {
         } else if (contractType === 'normal') {
             if (isSellClicked) {
                 containerSetText('contract_sell_message',
-                    localize('You have sold this contract at [_1] [_2]', [contract.currency, response.sell.sold_for]) +
-                    '<br />' +
-                    localize('Your transaction reference number is [_1]', [response.sell.transaction_id]));
+                    `${localize('You have sold this contract at [_1] [_2]', [contract.currency, response.sell.sold_for])}
+                    <br />
+                    ${localize('Your transaction reference number is [_1]', [response.sell.transaction_id])}`);
             }
             getContract('no-subscribe');
         }
@@ -644,7 +646,7 @@ const ViewPopup = (function() {
             case 'get_corporate_actions':
                 if (!isEmptyObject(response.get_corporate_actions)) {
                     corporateActionEvent = true;
-                    containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + localize('This contract was affected by a Corporate Action event.') : '&nbsp;');
+                    containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? `* ${localize('This contract was affected by a Corporate Action event.')}` : '&nbsp;');
                     populateCorporateAction(response);
                     showCorporateAction();
                 }

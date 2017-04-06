@@ -71,12 +71,12 @@ const Client = (() => {
 
     const set = (key, value) => {
         client_object[key] = value;
-        return LocalStore.set('client.' + key, value);
+        return LocalStore.set(`client.${key}`, value);
     };
 
     // use this function to get variables that have values
     const get = (key) => {
-        let value = client_object[key] || LocalStore.get('client.' + key) || '';
+        let value = client_object[key] || LocalStore.get(`client.${key}`) || '';
         if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
             value = JSON.parse(value || false);
         }
@@ -156,7 +156,7 @@ const Client = (() => {
         setCookie('email',        client_email);
         setCookie('login',        token);
         setCookie('loginid',      client_loginid);
-        setCookie('loginid_list', virtual_client ? client_loginid + ':V:E' : client_loginid + ':R:E+' + Cookies.get('loginid_list'));
+        setCookie('loginid_list', virtual_client ? `${client_loginid}:V:E` : `${client_loginid}:R:E+${Cookies.get('loginid_list')}`);
         // set local storage
         localStorage.setItem('GTM_new_account', '1');
         localStorage.setItem('active_loginid', client_loginid);
@@ -221,13 +221,13 @@ const Client = (() => {
         LocalStore.remove('client.tokens');
         const cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence'];
         const domains = [
-            '.' + document.domain.split('.').slice(-2).join('.'),
-            '.' + document.domain,
+            `.${document.domain.split('.').slice(-2).join('.')}`,
+            `.${document.domain}`,
         ];
 
         let parent_path = window.location.pathname.split('/', 2)[1];
         if (parent_path !== '') {
-            parent_path = '/' + parent_path;
+            parent_path = `/${parent_path}`;
         }
 
         cookies.forEach((c) => {

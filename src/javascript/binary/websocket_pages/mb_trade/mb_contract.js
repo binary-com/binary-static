@@ -75,7 +75,7 @@ const MBContract = (function() {
                             .locale(getLanguage().toLowerCase())
                             .format('MMM Do, HH:mm');
         if (jpClient()) {
-            text_value = text_value.replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')';
+            text_value = `${text_value.replace(/08:59/, '09:00«')} (${durationText(duration.replace('0d', '1d'))})`;
         }
         return text_value.toString();
     };
@@ -113,7 +113,7 @@ const MBContract = (function() {
             if (available_contracts[i].contract_category === selected_option) {
                 trading_period = available_contracts[i].trading_period;
                 if (!trading_period) return;
-                start_end = trading_period.date_start.epoch + '_' + trading_period.date_expiry.epoch + '_' + trading_period.duration;
+                start_end = [trading_period.date_start.epoch, trading_period.date_expiry.epoch, trading_period.duration].join('_');
                 if (trading_period_array.indexOf(start_end) < 0) {
                     trading_period_array.push(start_end);
                 }
@@ -149,15 +149,15 @@ const MBContract = (function() {
                 }
             }
             if (missing_array.length > 0) {
-                let newOption;
+                let $newOption;
                 existing_array = existing_array.concat(missing_array).sort(sortByExpiryTime);
                 for (let m = 0; m < existing_array.length; m++) {
-                    if ($periodElement.find('option[value="' + existing_array[m] + '"]').length < 1) {
-                        newOption = '<option value="' + existing_array[m] + '">' + PeriodText(existing_array[m]) + '</option>';
+                    if ($periodElement.find(`option[value="${existing_array[m]}"]`).length < 1) {
+                        $newOption = $('<option/>', { value: existing_array[m], text: PeriodText(existing_array[m]) });
                         if (m < 1) {
-                            $(newOption).insertBefore($periodElement.children().eq(m));
+                            $newOption.insertBefore($periodElement.children().eq(m));
                         } else {
-                            $(newOption).insertAfter($periodElement.children().eq(m - 1));
+                            $newOption.insertAfter($periodElement.children().eq(m - 1));
                         }
                     }
                 }
@@ -166,7 +166,7 @@ const MBContract = (function() {
             // remove periods that no longer exist
             existing_array.forEach(function(period) {
                 if (trading_period_array.indexOf(period) < 0) {
-                    $periodElement.find('option[value="' + period + '"]').remove();
+                    $periodElement.find(`option[value="${period}"]`).remove();
                 }
             });
         }

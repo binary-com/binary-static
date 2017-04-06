@@ -13,13 +13,13 @@ const Statement = (() => {
         const date_obj = new Date(statement.transaction_time * 1000),
             moment_obj = moment.utc(date_obj),
             date_str   = moment_obj.format('YYYY-MM-DD'),
-            time_str   = moment_obj.format('HH:mm:ss') + ' GMT',
+            time_str   = `${moment_obj.format('HH:mm:ss')} GMT`,
             payout  = parseFloat(statement.payout),
             amount  = parseFloat(statement.amount),
             balance = parseFloat(statement.balance_after);
 
         return {
-            date   : jp_client ? toJapanTimeIfNeeded(statement.transaction_time) : date_str + '\n' + time_str,
+            date   : jp_client ? toJapanTimeIfNeeded(statement.transaction_time) : `${date_str}\n${time_str}`,
             ref    : statement.transaction_id,
             payout : isNaN(payout) ? '-' : (jp_client ? formatMoney(currency, payout) : payout.toFixed(2)),
             action : toTitleCase(statement.action_type),
@@ -35,7 +35,7 @@ const Statement = (() => {
         const columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
             header     = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(str => (localize(str))),
             currency = Client.get('currency');
-        header.push(localize('Balance') + (jp_client || !currency ? '' : ' (' + currency + ')'));
+        header.push(localize('Balance') + (jp_client || !currency ? '' : ` (${currency})`));
         const sep = ',';
         let csv = [header.join(sep)];
         if (all_data && all_data.length > 0) {

@@ -31,7 +31,7 @@ const TradingAnalysis = (function() {
         if (formName === 'callput') {
             formName = 'higherlower';
         }
-        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
+        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation', `underlying_symbol=${$('#underlying').val()}&form_name=${formName}`));
         if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
             $('#tab_last_digit').removeClass('invisible');
         } else {
@@ -76,8 +76,8 @@ const TradingAnalysis = (function() {
         'use strict';
 
         const currentTab = getActiveTab(),
-            currentLink = document.querySelector('#' + currentTab + ' a'),
-            contentId = document.getElementById(currentTab + '-content');
+            currentLink = document.querySelector(`#${currentTab} a`),
+            contentId = document.getElementById(`${currentTab}-content`);
 
         const analysisNavElement = document.querySelector('#trading_bottom_content #betsBottomPage');
         toggleActiveNavMenuElement(analysisNavElement, currentLink.parentElement);
@@ -95,7 +95,7 @@ const TradingAnalysis = (function() {
                 const tick = $('[name=tick_count]').val() || 100;
                 BinarySocket.send({
                     ticks_history: underlying,
-                    count        : tick + '',
+                    count        : tick.toString(),
                     end          : 'latest',
                     req_id       : 1,
                 });
@@ -125,7 +125,7 @@ const TradingAnalysis = (function() {
 
         if (analysisContainer) {
             const childElements = analysisContainer.children,
-                currentTabElement = document.getElementById(currentTab + '-content'),
+                currentTabElement = document.getElementById(`${currentTab}-content`),
                 classes = currentTabElement.classList;
 
             for (let i = 0, len = childElements.length; i < len; i++) {
@@ -167,11 +167,11 @@ const TradingAnalysis = (function() {
         const $Container   = $('#tab_explanation-content');
 
         if (show_winning) {
-            $Container.find('#explanation_winning, #winning_' + form_name).removeClass(hidden_class);
+            $Container.find(`#explanation_winning, #winning_${form_name}`).removeClass(hidden_class);
         }
 
         if (show_explain) {
-            $Container.find('#explanation_explain, #explain_' + form_name).removeClass(hidden_class);
+            $Container.find(`#explanation_explain, #explain_${form_name}`).removeClass(hidden_class);
         }
 
         const images = {
@@ -214,7 +214,7 @@ const TradingAnalysis = (function() {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            const image_path = Url.urlForStatic('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
+            const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(getLanguage() === 'JA' ? 'ja/' : '')}`);
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);

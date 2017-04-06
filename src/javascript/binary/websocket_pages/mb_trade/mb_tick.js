@@ -74,7 +74,7 @@ const MBTick = (function() {
      */
     const displayPriceMovement = function(oldValue, currentValue) {
         const className = (currentValue > oldValue) ? 'up' : (currentValue < oldValue) ? 'down' : 'still';
-        $('#spot-dyn').attr('class', 'dynamics ' + className);
+        $('#spot-dyn').attr('class', `dynamics ${className}`);
     };
 
     const updateWarmChart = function() {
