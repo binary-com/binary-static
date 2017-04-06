@@ -131,8 +131,8 @@ const DepositWithdraw = (() => {
                 email   : 'Email address',
             };
         }
-        const $el = $('#' + msgID),
-            errMsg = template($el.html(), [localize(details ? errorFields[details] : 'details')]);
+        const $el = $('#' + msgID);
+        const errMsg = template($el.html(), [localize(details ? errorFields[details] : 'details')]);
         $el.html(errMsg);
         showMessage(msgID);
     };

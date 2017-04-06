@@ -6,12 +6,12 @@ const BinaryPjax = (() => {
     'use strict';
 
     let xhr;
-    const params   = {},
-        defaults = {
-            type    : 'GET',
-            dataType: 'html',
-        },
-        cache = {};
+    const params   = {};
+    const defaults = {
+        type    : 'GET',
+        dataType: 'html',
+    };
+    const cache = {};
 
     const init = (container, content_selector) => {
         if (!(window.history && window.history.pushState && window.history.replaceState &&

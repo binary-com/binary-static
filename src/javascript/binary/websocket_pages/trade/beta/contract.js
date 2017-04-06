@@ -138,8 +138,8 @@ const Contract_Beta = (() => {
     };
 
     const getContractForms = () => {
-        const contracts = Contract_Beta.contracts().contracts_for,
-            trade_contract_forms = {};
+        const contracts = Contract_Beta.contracts().contracts_for;
+        const trade_contract_forms = {};
 
         if (!contracts) return null;
 

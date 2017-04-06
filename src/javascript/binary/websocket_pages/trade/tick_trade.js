@@ -51,8 +51,8 @@ const TickDisplay = (() => {
             payout = parseFloat(data.payout);
         }
 
-        const minimize = data.show_contract_result,
-            end_time = parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * tick_frequency);
+        const minimize = data.show_contract_result;
+        const end_time = parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * tick_frequency);
 
         set_x_indicators();
         initialize_chart({

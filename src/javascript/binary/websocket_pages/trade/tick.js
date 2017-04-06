@@ -77,14 +77,14 @@ const Tick = (() => {
      * display indicative barrier
      */
     const displayIndicativeBarrier = () => {
-        const unit = document.getElementById('duration_units'),
-            current_tick = Tick.quote(),
-            indicative_barrier_tooltip = document.getElementById('indicative_barrier_tooltip'),
-            indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip'),
-            indicative_low_barrier_tooltip = document.getElementById('indicative_low_barrier_tooltip'),
-            barrier_element = document.getElementById('barrier'),
-            high_barrier_element = document.getElementById('barrier_high'),
-            low_barrier_element = document.getElementById('barrier_low');
+        const current_tick = Tick.quote();
+        const unit = document.getElementById('duration_units');
+        const indicative_barrier_tooltip      = document.getElementById('indicative_barrier_tooltip');
+        const indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
+        const indicative_low_barrier_tooltip  = document.getElementById('indicative_low_barrier_tooltip');
+        const barrier_element      = document.getElementById('barrier');
+        const high_barrier_element = document.getElementById('barrier_high');
+        const low_barrier_element  = document.getElementById('barrier_low');
         let value;
 
         const end_time = document.getElementById('expiry_date');

@@ -93,8 +93,8 @@ const DigitInfo_Beta = (() => {
                 x        : 0,
                 enabled  : false,
                 formatter: function() {
-                    const total = $("select[name='tick_count']").val(),
-                        percentage = parseInt((this.value / total) * 100);
+                    const total = $("select[name='tick_count']").val();
+                    const percentage = parseInt((this.value / total) * 100);
                     return `${percentage}%`;
                 },
             },
@@ -102,8 +102,8 @@ const DigitInfo_Beta = (() => {
     };
 
     const addContent = (underlying) => {
-        const domain = document.domain.split('.').slice(-2).join('.'),
-            symbols = Symbols.getAllSymbols();
+        const domain = document.domain.split('.').slice(-2).join('.');
+        const symbols = Symbols.getAllSymbols();
         let underlyings = [];
         Object.keys(symbols).forEach((key) => {
             if (/^(R_|RD)/.test(key)) {
@@ -116,8 +116,8 @@ const DigitInfo_Beta = (() => {
             elem = elem + '<option value="' + underlyings[i] + '">' + localize(symbols[underlyings[i]]) + '</option>';
         }
         elem += '</select>';
-        const contentId = document.getElementById('tab_last_digit-content'),
-            content = '<div class="gr-parent">' +
+        const contentId = document.getElementById('tab_last_digit-content');
+        const content = '<div class="gr-parent">' +
                 '<div id="last_digit_histo_form" class="gr-12 gr-12-m gr-centered">' +
                 '<form class="smallfont gr-row" action="#" method="post">' +
                 '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + localize('Select market') + ':</div>' + elem + ' </div>' +
@@ -209,9 +209,9 @@ const DigitInfo_Beta = (() => {
 
         // Always recompute and draw, even if theres no new data.
         // This is especially useful on first reuqest, but maybe in other ways.
-        const filtered_spots = [],
-            filterFunc = el => +el === digit,
-            min_max_counter = [];
+        const filtered_spots = [];
+        const filterFunc = el => +el === digit;
+        const min_max_counter = [];
         let digit = 10;
         while (digit--) {
             const val = spots.filter(filterFunc).length;

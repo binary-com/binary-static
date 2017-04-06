@@ -194,8 +194,8 @@ const MBProcess = (() => {
         MBPrice.increaseReqId();
         processForgetProposals();
         MBPrice.showPriceOverlay();
-        const available_contracts = MBContract.getCurrentContracts(),
-            durations = MBDefaults.get('period').split('_');
+        const available_contracts = MBContract.getCurrentContracts();
+        const durations = MBDefaults.get('period').split('_');
         const req = {
             proposal   : 1,
             subscribe  : 1,

@@ -63,8 +63,8 @@ const LoggedInHandler = (() => {
         const hash = (/acct1/i.test(window.location.hash) ? window.location.hash : window.location.search).substr(1).split('&'); // to maintain compatibility till backend change released
         const tokens = {};
         for (let i = 0; i < hash.length; i += 2) {
-            const loginid = getHashValue(hash[i], 'acct'),
-                token   = getHashValue(hash[i + 1], 'token');
+            const loginid = getHashValue(hash[i], 'acct');
+            const token   = getHashValue(hash[i + 1], 'token');
             if (loginid && token) {
                 tokens[loginid] = token;
             }

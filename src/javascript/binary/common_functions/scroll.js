@@ -49,9 +49,9 @@ const Scroll = (() => {
                 sticky_navigation();
 
                 for (let i = 0; i < length; i++) {
-                    const section = $('.section:eq(' + i + ')'),
-                        sectionOffset = section.offset(),
-                        isOffsetTop = sectionOffset && $(this).scrollTop() >= sectionOffset.top - 5;
+                    const section = $('.section:eq(' + i + ')');
+                    const sectionOffset = section.offset();
+                    const isOffsetTop = sectionOffset && $(this).scrollTop() >= sectionOffset.top - 5;
                     if (($(window).scrollTop() === 0 || isOffsetTop) && section.css('display') !== 'none') { // ignore hidden elements
                         sidebar_nav.find('li').removeClass('selected');
 

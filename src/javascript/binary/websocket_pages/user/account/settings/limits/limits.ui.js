@@ -27,10 +27,10 @@ const LimitsUI = (() => {
             $('.limit').append(' (' + currency + ')');
         }
 
-        const open_position = document.getElementById('open-positions'),
-            account_balance = document.getElementById('account-balance'),
-            payout          = document.getElementById('payout'),
-            payout_per      = document.getElementById('payout-per-symbol-and-contract-type');
+        const open_position   = document.getElementById('open-positions');
+        const account_balance = document.getElementById('account-balance');
+        const payout          = document.getElementById('payout');
+        const payout_per      = document.getElementById('payout-per-symbol-and-contract-type');
 
         elementTextContent(open_position, addComma(limits.open_positions).split('.')[0]);
         elementTextContent(account_balance, addComma(limits.account_balance).split('.')[0]);

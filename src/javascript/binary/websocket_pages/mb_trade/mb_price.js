@@ -115,10 +115,10 @@ const MBPrice = (() => {
     };
 
     const getValues = (proposal) => {
-        const barrier       = makeBarrier(proposal.echo_req),
-            payout        = proposal.echo_req.amount,
-            contract_type = proposal.echo_req.contract_type,
-            proposal_opp  = prices[barrier][contract_types[contract_type].opposite];
+        const barrier       = makeBarrier(proposal.echo_req);
+        const payout        = proposal.echo_req.amount;
+        const contract_type = proposal.echo_req.contract_type;
+        const proposal_opp  = prices[barrier][contract_types[contract_type].opposite];
         return {
             contract_type      : contract_type,
             barrier            : barrier,
@@ -140,8 +140,8 @@ const MBPrice = (() => {
     const getMovementDirection = (prev, current) => (current > prev ? 'up' : current < prev ? 'down' : '');
 
     const makePriceRow = (values, is_update) => {
-        const payout   = MBDefaults.get('payout'),
-            is_japan = jpClient();
+        const payout   = MBDefaults.get('payout');
+        const is_japan = jpClient();
         return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +

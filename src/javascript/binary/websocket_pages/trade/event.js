@@ -306,8 +306,8 @@ const TradingEvents = (() => {
          */
         $('.purchase_button').on('click dblclick', function() {
             if (!isVisible(document.getElementById('confirmation_message_container'))) {
-                const id = this.getAttribute('data-purchase-id'),
-                    ask_price = this.getAttribute('data-ask-price');
+                const id        = this.getAttribute('data-purchase-id');
+                const ask_price = this.getAttribute('data-ask-price');
 
                 const params = { buy: id, price: ask_price, passthrough: {} };
                 Object.keys(this.attributes).forEach(function(attr) {

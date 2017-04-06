@@ -15,8 +15,8 @@ const ProfitTableUI = (() => {
     let oauth_apps = {},
         currency;
 
-    const profit_table_id = 'profit-table',
-        cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
+    const profit_table_id = 'profit-table';
+    const cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
 
     const createEmptyTable = () => {
         const header = [
@@ -68,9 +68,9 @@ const ProfitTableUI = (() => {
             return previous + pl;
         }, 0);
 
-        const total = acc_total + current_total,
-            jp_client = jpClient(),
-            sub_total_type = (total >= 0) ? 'profit' : 'loss';
+        const total = acc_total + current_total;
+        const jp_client = jpClient();
+        const sub_total_type = (total >= 0) ? 'profit' : 'loss';
 
         $('#pl-day-total').find(' > .pl').text(jp_client ? formatMoney(currency, total) : addComma(Number(total).toFixed(2)))
             .removeClass('profit loss')

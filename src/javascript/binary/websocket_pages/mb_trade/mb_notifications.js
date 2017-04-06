@@ -16,8 +16,8 @@ const MBNotifications = (() => {
      * }
      */
     const showErrorMessage = (options) => {
-        const $note_wrapper = getContainer(),
-            $this_uid     = $note_wrapper.find('#' + options.uid);
+        const $note_wrapper = getContainer();
+        const $this_uid     = $note_wrapper.find('#' + options.uid);
 
         if (!options.uid || $this_uid.length === 0) {
             $note_wrapper.prepend(generateMessage(options));

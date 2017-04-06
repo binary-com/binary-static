@@ -21,22 +21,22 @@ const Purchase = (() => {
     const display = (details) => {
         purchase_data = details;
 
-        const receipt = details.buy,
-            passthrough        = details.echo_req.passthrough,
-            container          = document.getElementById('contract_confirmation_container'),
-            message_container  = document.getElementById('confirmation_message'),
-            heading            = document.getElementById('contract_purchase_heading'),
-            descr              = document.getElementById('contract_purchase_descr'),
-            barrier_element    = document.getElementById('contract_purchase_barrier'),
-            reference          = document.getElementById('contract_purchase_reference'),
-            chart              = document.getElementById('tick_chart'),
-            payout             = document.getElementById('contract_purchase_payout'),
-            cost               = document.getElementById('contract_purchase_cost'),
-            profit             = document.getElementById('contract_purchase_profit'),
-            spots              = document.getElementById('contract_purchase_spots'),
-            confirmation_error = document.getElementById('confirmation_error'),
-            contracts_list     = document.getElementById('contracts_list'),
-            button             = document.getElementById('contract_purchase_button');
+        const receipt     = details.buy;
+        const passthrough = details.echo_req.passthrough;
+        const container          = document.getElementById('contract_confirmation_container');
+        const message_container  = document.getElementById('confirmation_message');
+        const heading            = document.getElementById('contract_purchase_heading');
+        const descr              = document.getElementById('contract_purchase_descr');
+        const barrier_element    = document.getElementById('contract_purchase_barrier');
+        const reference          = document.getElementById('contract_purchase_reference');
+        const chart              = document.getElementById('tick_chart');
+        const payout             = document.getElementById('contract_purchase_payout');
+        const cost               = document.getElementById('contract_purchase_cost');
+        const profit             = document.getElementById('contract_purchase_profit');
+        const spots              = document.getElementById('contract_purchase_spots');
+        const confirmation_error = document.getElementById('confirmation_error');
+        const contracts_list     = document.getElementById('contracts_list');
+        const button             = document.getElementById('contract_purchase_button');
 
         const error = details.error;
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
@@ -212,8 +212,8 @@ const Purchase = (() => {
                     let contract_status,
                         final_price,
                         pnl;
-                    const pass_contract_type = purchase_data.echo_req.passthrough.contract_type,
-                        pass_barrier       = purchase_data.echo_req.passthrough.barrier;
+                    const pass_contract_type = purchase_data.echo_req.passthrough.contract_type;
+                    const pass_barrier       = purchase_data.echo_req.passthrough.barrier;
 
                     if (
                         (pass_contract_type === 'DIGITMATCH' && +last_digit === +pass_barrier) ||

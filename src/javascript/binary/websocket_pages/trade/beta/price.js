@@ -34,24 +34,24 @@ const Price_Beta = (() => {
             proposal : 1,
             subscribe: 1,
         };
-        const underlying = document.getElementById('underlying'),
-            contract_type = typeOfContract,
-            amount_type = document.getElementById('amount_type'),
-            currency = document.getElementById('currency'),
-            payout = document.getElementById('amount'),
-            start_time = getStartDateNode(),
-            expiry_type = document.getElementById('expiry_type'),
-            duration = document.getElementById('duration_amount'),
-            duration_unit = document.getElementById('duration_units'),
-            end_date = document.getElementById('expiry_date'),
-            barrier = document.getElementById('barrier'),
-            high_barrier = document.getElementById('barrier_high'),
-            low_barrier = document.getElementById('barrier_low'),
-            prediction = document.getElementById('prediction'),
-            amount_per_point = document.getElementById('amount_per_point'),
-            stop_type = document.querySelector('input[name="stop_type"]:checked'),
-            stop_loss = document.getElementById('stop_loss'),
-            stop_profit = document.getElementById('stop_profit');
+        const contract_type = typeOfContract;
+        const start_time    = getStartDateNode();
+        const underlying       = document.getElementById('underlying');
+        const amount_type      = document.getElementById('amount_type');
+        const currency         = document.getElementById('currency');
+        const payout           = document.getElementById('amount');
+        const expiry_type      = document.getElementById('expiry_type');
+        const duration         = document.getElementById('duration_amount');
+        const duration_unit    = document.getElementById('duration_units');
+        const end_date         = document.getElementById('expiry_date');
+        const barrier          = document.getElementById('barrier');
+        const high_barrier     = document.getElementById('barrier_high');
+        const low_barrier      = document.getElementById('barrier_low');
+        const prediction       = document.getElementById('prediction');
+        const amount_per_point = document.getElementById('amount_per_point');
+        const stop_loss        = document.getElementById('stop_loss');
+        const stop_profit      = document.getElementById('stop_profit');
+        const stop_type        = document.querySelector('input[name="stop_type"]:checked');
 
         if (payout && isVisible(payout) && payout.value) {
             proposal.amount = parseFloat(payout.value);
@@ -175,16 +175,16 @@ const Price_Beta = (() => {
             $(container).fadeIn(200, () => { $(container).css('display', 'flex'); });
         }
 
-        const h4 = container.getElementsByClassName('contract_heading')[0],
-            amount = container.getElementsByClassName('contract_amount')[0],
-            payout_amount = container.getElementsByClassName('contract_payout')[0],
-            stake = container.getElementsByClassName('stake')[0],
-            payout = container.getElementsByClassName('payout')[0],
-            purchase = container.getElementsByClassName('purchase_button')[0],
-            description = container.getElementsByClassName('contract_description')[0],
-            comment = container.getElementsByClassName('price_comment')[0],
-            error = container.getElementsByClassName('contract_error')[0],
-            currency = document.getElementById('currency');
+        const h4            = container.getElementsByClassName('contract_heading')[0];
+        const amount        = container.getElementsByClassName('contract_amount')[0];
+        const payout_amount = container.getElementsByClassName('contract_payout')[0];
+        const stake         = container.getElementsByClassName('stake')[0];
+        const payout        = container.getElementsByClassName('payout')[0];
+        const purchase      = container.getElementsByClassName('purchase_button')[0];
+        const description   = container.getElementsByClassName('contract_description')[0];
+        const comment       = container.getElementsByClassName('price_comment')[0];
+        const error         = container.getElementsByClassName('contract_error')[0];
+        const currency = document.getElementById('currency');
 
         const display_type = type ? (contract_type ? contract_type[type] : '') : '';
         if (display_type) {
@@ -251,8 +251,8 @@ const Price_Beta = (() => {
             } else {
                 commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }
-            const old_price = purchase.getAttribute('data-display_value'),
-                old_payout = purchase.getAttribute('data-payout');
+            const old_price  = purchase.getAttribute('data-display_value');
+            const old_payout = purchase.getAttribute('data-payout');
             displayPriceMovement(amount, old_price, proposal.display_value);
             displayPriceMovement(payout_amount, old_payout, proposal.payout);
             purchase.setAttribute('data-purchase-id', id);

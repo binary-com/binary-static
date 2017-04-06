@@ -70,9 +70,9 @@ const TradingAnalysis_Beta = (() => {
      * tab according to current paramerted
      */
     const loadAnalysisTab = () => {
-        const current_tab = getActiveTab(),
-            current_link = document.querySelector('#' + current_tab + ' a'),
-            content_id = document.getElementById(current_tab + '-content');
+        const current_tab = getActiveTab();
+        const current_link = document.querySelector('#' + current_tab + ' a');
+        const content_id = document.getElementById(current_tab + '-content');
 
         const analysis_nav_element = document.querySelector('#trading_analysis_content #analysis_tabs');
         commonTrading.toggleActiveNavMenuElement_Beta(analysis_nav_element, current_link.parentElement);
@@ -119,13 +119,13 @@ const TradingAnalysis_Beta = (() => {
      * toggles the active element for analysis menu
      */
     const toggleActiveAnalysisTabs = () => {
-        const current_tab = getActiveTab(),
-            analysis_container = document.getElementById('analysis_content');
+        const current_tab = getActiveTab();
+        const analysis_container = document.getElementById('analysis_content');
 
         if (analysis_container) {
-            const child_elements = analysis_container.children,
-                current_tab_element = document.getElementById(current_tab + '-content'),
-                classes = current_tab_element.classList;
+            const child_elements = analysis_container.children;
+            const current_tab_element = document.getElementById(current_tab + '-content');
+            const classes = current_tab_element.classList;
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
                 child_elements[i].classList.remove('selectedTab');

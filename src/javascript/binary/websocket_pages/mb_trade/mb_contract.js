@@ -104,10 +104,10 @@ const MBContract = (() => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         let trading_period,
             start_end;
-        const trading_period_array = [],
-            available_contracts = contracts_for_response.contracts_for.available,
-            selected_option = MBDefaults.get('category'),
-            $period_element = $('#period');
+        const trading_period_array = [];
+        const available_contracts = contracts_for_response.contracts_for.available;
+        const selected_option = MBDefaults.get('category');
+        const $period_element = $('#period');
         if (!selected_option || !available_contracts) return;
         for (let i = 0; i < available_contracts.length; i++) {
             if (available_contracts[i].contract_category === selected_option) {
@@ -189,8 +189,8 @@ const MBContract = (() => {
         } else if (time_left < 120) {
             $count_down_timer.addClass('alert');
         }
-        const remaining_time_string = [],
-            duration = moment.duration(time_left * 1000);
+        const remaining_time_string = [];
+        const duration = moment.duration(time_left * 1000);
         const all_durations = {
             month : duration.months(),
             day   : duration.days(),
@@ -209,19 +209,19 @@ const MBContract = (() => {
     };
 
     const sortByExpiryTime = (first, second) => {
-        const a = first.split('_'),
-            b = second.split('_'),
-            duration1 = a[1] - a[0],
-            duration2 = b[1] - b[0];
+        const a = first.split('_');
+        const b = second.split('_');
+        const duration1 = a[1] - a[0];
+        const duration2 = b[1] - b[0];
         return a[1] === b[1] ? duration1 - duration2 : a[1] - b[1];
     };
 
     const populateOptions = (rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         let  category;
-        const contracts_array = [],
-            available_contracts = contracts_for_response.contracts_for.available,
-            $category_element = $('#category');
+        const contracts_array = [];
+        const available_contracts = contracts_for_response.contracts_for.available;
+        const $category_element = $('#category');
         const categoryNames = {
             callput     : localize('Higher/Lower'),
             touchnotouch: localize('Touch/No Touch'),
@@ -260,9 +260,9 @@ const MBContract = (() => {
 
     const getCurrentContracts = () => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return [];
-        const contracts = [],
-            category  = MBDefaults.get('category'),
-            periods   = MBDefaults.get('period').split('_');
+        const contracts = [];
+        const category  = MBDefaults.get('category');
+        const periods   = MBDefaults.get('period').split('_');
         contracts_for_response.contracts_for.available.forEach((c) => {
             if (c.contract_category === category && c.trading_period &&
                     +c.trading_period.date_start.epoch  === +periods[0] &&
@@ -328,16 +328,16 @@ const MBContract = (() => {
     };
 
     const displayDescriptions = () => {
-        const contracts = getCurrentContracts(),
-            $desc_wrappers = $('.prices-wrapper'),
-            currency = (formatCurrency(Client.get('currency')) || formatCurrency(document.getElementById('currency').value) || '¥'),
-            payout = Number(MBDefaults.get('payout') * (jpClient() ? 1000 : 1)).toLocaleString(),
-            display_name = MBSymbols.getName(MBDefaults.get('underlying')),
-            date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, '');
+        const contracts = getCurrentContracts();
+        const $desc_wrappers = $('.prices-wrapper');
+        const currency = (formatCurrency(Client.get('currency')) || formatCurrency(document.getElementById('currency').value) || '¥');
+        const payout = Number(MBDefaults.get('payout') * (jpClient() ? 1000 : 1)).toLocaleString();
+        const display_name = MBSymbols.getName(MBDefaults.get('underlying'));
+        const date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, '');
         contracts.forEach((c) => {
-            const contract_type = c.contract_type,
-                template = getTemplate(contract_type),
-                $wrapper = $($desc_wrappers[template.order]);
+            const contract_type = c.contract_type;
+            const template = getTemplate(contract_type);
+            const $wrapper = $($desc_wrappers[template.order]);
             $wrapper.find('.contract-type').attr('class', `contract-type ${contract_type}${template.order ? ' negative-color' : ''}`).text(localize(template.name));
             $wrapper.find('.descr').html(localize(template.description, [currency, payout, display_name, date_expiry]));
         });

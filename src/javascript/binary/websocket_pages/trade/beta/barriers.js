@@ -19,29 +19,29 @@ const Barriers_Beta = (() => {
     let is_barrier_updated = false;
 
     const display = () => {
-        const barriers = Contract_Beta.barriers()[Defaults.get('underlying')],
-            form_name = Contract_Beta.form();
+        const barriers  = Contract_Beta.barriers()[Defaults.get('underlying')];
+        const form_name = Contract_Beta.form();
 
         if (barriers && form_name && Defaults.get('formname') !== 'risefall') {
             const barrier = barriers[form_name];
             if (barrier) {
-                const unit = document.getElementById('duration_units'),
-                    end_time = document.getElementById('expiry_date'),
-                    current_tick = Tick.quote(),
-                    indicative_barrier_tooltip = document.getElementById('indicative_barrier_tooltip'),
-                    indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip'),
-                    indicative_low_barrier_tooltip = document.getElementById('indicative_low_barrier_tooltip'),
-                    decimal_places = countDecimalPlaces(current_tick);
+                const unit     = document.getElementById('duration_units');
+                const end_time = document.getElementById('expiry_date');
+                const current_tick   = Tick.quote();
+                const decimal_places = countDecimalPlaces(current_tick);
+                const indicative_barrier_tooltip      = document.getElementById('indicative_barrier_tooltip');
+                const indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
+                const indicative_low_barrier_tooltip  = document.getElementById('indicative_low_barrier_tooltip');
 
                 if (barrier.count === 1) {
                     document.getElementById('high_barrier_row').style.display = 'none';
                     document.getElementById('low_barrier_row').style.display = 'none';
                     document.getElementById('barrier_row').setAttribute('style', '');
 
-                    const defaults_barrier = Defaults.get('barrier'),
-                        elm     = document.getElementById('barrier'),
-                        tooltip = document.getElementById('barrier_tooltip'),
-                        span    = document.getElementById('barrier_span');
+                    const defaults_barrier = Defaults.get('barrier');
+                    const elm     = document.getElementById('barrier');
+                    const tooltip = document.getElementById('barrier_tooltip');
+                    const span    = document.getElementById('barrier_span');
                     let barrier_def = defaults_barrier && !isNaN(defaults_barrier) ? defaults_barrier : barrier.barrier,
                         value;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
@@ -78,15 +78,15 @@ const Barriers_Beta = (() => {
                     document.getElementById('high_barrier_row').setAttribute('style', '');
                     document.getElementById('low_barrier_row').setAttribute('style', '');
 
-                    const high_elm     = document.getElementById('barrier_high'),
-                        low_elm      = document.getElementById('barrier_low'),
-                        high_tooltip = document.getElementById('barrier_high_tooltip'),
-                        high_span    = document.getElementById('barrier_high_span'),
-                        low_tooltip  = document.getElementById('barrier_low_tooltip'),
-                        low_span     = document.getElementById('barrier_low_span');
+                    const high_elm     = document.getElementById('barrier_high');
+                    const low_elm      = document.getElementById('barrier_low');
+                    const high_tooltip = document.getElementById('barrier_high_tooltip');
+                    const high_span    = document.getElementById('barrier_high_span');
+                    const low_tooltip  = document.getElementById('barrier_low_tooltip');
+                    const low_span     = document.getElementById('barrier_low_span');
 
-                    const defaults_barrier_high = Defaults.get('barrier_high'),
-                        defaults_barrier_low  = Defaults.get('barrier_low');
+                    const defaults_barrier_high = Defaults.get('barrier_high');
+                    const defaults_barrier_low  = Defaults.get('barrier_low');
                     let barrier_high = defaults_barrier_high && !isNaN(defaults_barrier_high) ?
                             defaults_barrier_high : barrier.barrier,
                         barrier_low  = defaults_barrier_low  && !isNaN(defaults_barrier_low) ?

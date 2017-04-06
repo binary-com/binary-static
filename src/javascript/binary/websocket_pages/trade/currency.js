@@ -11,9 +11,9 @@ const formatCurrency = require('../../common_functions/currency_to_symbol').form
 const displayCurrencies = () => {
     'use strict';
 
-    const target = document.getElementById('currency'),
-        fragment =  document.createDocumentFragment(),
-        currencies = Client.get('currencies').split(',');
+    const target = document.getElementById('currency');
+    const fragment = document.createDocumentFragment();
+    const currencies = Client.get('currencies').split(',');
 
     if (!target) {
         return;
@@ -25,8 +25,8 @@ const displayCurrencies = () => {
 
     if (currencies.length > 1) {
         currencies.forEach((currency) => {
-            const option = document.createElement('option'),
-                content = document.createTextNode(currency);
+            const option = document.createElement('option');
+            const content = document.createTextNode(currency);
 
             option.setAttribute('value', currency);
 

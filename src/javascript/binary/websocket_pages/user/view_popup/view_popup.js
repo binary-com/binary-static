@@ -348,16 +348,16 @@ const ViewPopup = (() => {
     };
 
     const showCorporateAction = () => {
-        const $contract_information_tab = $('#contract_information_tab'),
-            $contract_information_content = $('#contract_information_content');
+        const $contract_information_tab = $('#contract_information_tab');
+        const $contract_information_content = $('#contract_information_content');
 
         $contract_information_tab.removeAttr('colspan');
         $('#contract_tabs').append('<th id="corporate_action_tab">' + localize('Corporate Action') + '</th>');
 
-        const $corporate_action_tab = $('#corporate_action_tab'),
-            $corporate_action_content = $('#corporate_action_content');
-        const $barrier_change = $('#barrier_change'),
-            $barrier_change_content = $('#barrier_change_content');
+        const $corporate_action_tab     = $('#corporate_action_tab');
+        const $corporate_action_content = $('#corporate_action_content');
+        const $barrier_change         = $('#barrier_change');
+        const $barrier_change_content = $('#barrier_change_content');
 
         $corporate_action_tab.attr('style', 'background: #c2c2c2;');
         $('#sell_details_table').draggable({ disabled: true });
@@ -502,8 +502,8 @@ const ViewPopup = (() => {
     };
 
     const sellSetVisibility = (show) => {
-        const sell_wrapper_id = 'sell_at_market_wrapper',
-            sell_button_id = 'sell_at_market';
+        const sell_wrapper_id = 'sell_at_market_wrapper';
+        const sell_button_id  = 'sell_at_market';
         const is_exist = $container.find('#' + sell_wrapper_id).length > 0;
         if (show) {
             if (is_exist) return;

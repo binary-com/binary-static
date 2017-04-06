@@ -198,8 +198,8 @@ const TickDisplay_Beta = (() => {
                     style: { display: 'none' },
 
                     formatter: function () {
-                        const time  = moment.utc(applicable_ticks[this.x].epoch * 1000).format('HH:mm:ss'),
-                            this_price = addComma(this.y, display_decimals);
+                        const time = moment.utc(applicable_ticks[this.x].epoch * 1000).format('HH:mm:ss');
+                        const this_price = addComma(this.y, display_decimals);
                         show_values(+this.x + (is_start_on_first_tick ? 1 : 0), time, this_price);
                     },
                     events: {
@@ -262,9 +262,9 @@ const TickDisplay_Beta = (() => {
             return;
         }
 
-        const barrier_type = contract_category.match('asian') ? 'asian' : 'static',
-            line_color   = is_trading_page ? '#6b8fb9' : 'green',
-            line_width   = is_trading_page ? 1 : 2;
+        const barrier_type = contract_category.match('asian') ? 'asian' : 'static';
+        const line_color   = is_trading_page ? '#6b8fb9' : 'green';
+        const line_width   = is_trading_page ? 1 : 2;
 
         if (barrier_type === 'static') {
             const barrier_tick = applicable_ticks[0];
@@ -472,9 +472,9 @@ const TickDisplay_Beta = (() => {
             }
 
             if (is_trading_page) {
-                const is_up   = contract_sentiment === 'up',
-                    min     = chart.yAxis[0].getExtremes().min,
-                    max     = chart.yAxis[0].getExtremes().max;
+                const is_up   = contract_sentiment === 'up';
+                const min     = chart.yAxis[0].getExtremes().min;
+                const max     = chart.yAxis[0].getExtremes().max;
                 chart.yAxis[0].removePlotBand('win-area');
                 chart.yAxis[0].addPlotBand({
                     id   : 'win-area',

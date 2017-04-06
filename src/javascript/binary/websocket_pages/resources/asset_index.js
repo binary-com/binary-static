@@ -53,8 +53,8 @@ const AssetIndex = (() => {
                     };
                 }
 
-                const asset_cells = asset_item[idx.cells],
-                    values = {};
+                const asset_cells = asset_item[idx.cells];
+                const values = {};
                 for (let j = 0; j < asset_cells.length; j++) {
                     const col  = asset_cells[j][idx.cell_props.cell_name];
 

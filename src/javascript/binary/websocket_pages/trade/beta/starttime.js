@@ -28,9 +28,9 @@ const StartDates_Beta = (() => {
         const start_dates = Contract_Beta.startDates();
 
         if (start_dates && start_dates.list && start_dates.list.length) {
-            const target   = getStartDateNode(),
-                fragment =  document.createDocumentFragment(),
-                row      = document.getElementById('date_start_row');
+            const target   = getStartDateNode();
+            const fragment =  document.createDocumentFragment();
+            const row      = document.getElementById('date_start_row');
             let option,
                 content;
 

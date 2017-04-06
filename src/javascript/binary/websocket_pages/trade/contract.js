@@ -33,12 +33,12 @@ const Contract = (() => {
         barrier;
 
     const populateDurations = (current_contract) => {
-        const current_category  = current_contract.contract_category,
-            expiry_type      = current_contract.expiry_type,
-            barrier_category = current_contract.barrier_category,
-            start_type       = current_contract.start_type,
-            max_duration     = current_contract.max_contract_duration,
-            min_duration     = current_contract.min_contract_duration;
+        const current_category = current_contract.contract_category;
+        const expiry_type      = current_contract.expiry_type;
+        const barrier_category = current_contract.barrier_category;
+        const start_type       = current_contract.start_type;
+        const max_duration     = current_contract.max_contract_duration;
+        const min_duration     = current_contract.min_contract_duration;
 
         if (!durations[expiry_type]) {
             durations[expiry_type] = {};
@@ -138,8 +138,8 @@ const Contract = (() => {
     };
 
     const getContractForms = () => {
-        const contracts = Contract.contracts().contracts_for,
-            trade_contract_forms = {};
+        const contracts = Contract.contracts().contracts_for;
+        const trade_contract_forms = {};
 
         if (!contracts) return null;
 

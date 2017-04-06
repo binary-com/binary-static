@@ -23,8 +23,8 @@ const commonTrading = (() => {
      */
     const displayContractForms = (id, elements, selected) => {
         if (!id || !elements || !selected) return;
-        const target = document.getElementById(id),
-            fragment = document.createDocumentFragment();
+        const target = document.getElementById(id);
+        const fragment = document.createDocumentFragment();
 
         elementInnerHtml(target, '');
 
@@ -47,9 +47,9 @@ const commonTrading = (() => {
                         first = '';
                     for (let j = 0; j < el1[1].length; j++) {
                         const el2 = el1[1][j];
-                        const li2 = document.createElement('li'),
-                            a2 = document.createElement('a'),
-                            content2 = document.createTextNode(elements[el2]);
+                        const li2 = document.createElement('li');
+                        const a2  = document.createElement('a');
+                        const content2 = document.createTextNode(elements[el2]);
                         li2.classList.add('tm-li-2');
 
                         if (j === 0) {
@@ -75,9 +75,9 @@ const commonTrading = (() => {
                         fragment2.appendChild(li2);
                     }
                     if (fragment2.hasChildNodes()) {
-                        const ul = document.createElement('ul'),
-                            a = document.createElement('a'),
-                            content = document.createTextNode(elements[el1[0]]);
+                        const ul = document.createElement('ul');
+                        const a  = document.createElement('a');
+                        const content = document.createTextNode(elements[el1[0]]);
 
                         a.appendChild(content);
                         a.setAttribute('class', 'tm-a');
@@ -94,8 +94,8 @@ const commonTrading = (() => {
                         li.appendChild(ul);
                     }
                 } else {
-                    const content3 = document.createTextNode(elements[el1]),
-                        a3 = document.createElement('a');
+                    const content3 = document.createTextNode(elements[el1]);
+                    const a3 = document.createElement('a');
 
                     if (selected && selected === el1.toLowerCase()) {
                         a3.classList.add('a-active');
@@ -126,8 +126,8 @@ const commonTrading = (() => {
     };
 
     const displayMarkets = (id, elements, selected) => {
-        const target = document.getElementById(id),
-            fragment =  document.createDocumentFragment();
+        const target = document.getElementById(id);
+        const fragment = document.createDocumentFragment();
 
         while (target && target.firstChild) {
             target.removeChild(target.firstChild);
@@ -135,8 +135,8 @@ const commonTrading = (() => {
 
         const keys1 = Object.keys(elements).sort(submarketSort);
         for (let i = 0; i < keys1.length; i++) {
-            const key = keys1[i],
-                content = document.createTextNode(elements[key].name);
+            const key = keys1[i];
+            const content = document.createTextNode(elements[key].name);
             let option = document.createElement('option');
             option.setAttribute('value', key);
             if (selected && selected === key) {
@@ -344,9 +344,9 @@ const commonTrading = (() => {
     };
 
     const toggleActiveCatMenuElement = (nav, eventElementId) => {
-        const event_element = document.getElementById(eventElementId),
-            li_elements = nav.querySelectorAll('.active, .a-active'),
-            classes = event_element.classList;
+        const event_element = document.getElementById(eventElementId);
+        const li_elements = nav.querySelectorAll('.active, .a-active');
+        const classes = event_element.classList;
         let i,
             len;
 
@@ -374,9 +374,9 @@ const commonTrading = (() => {
      */
     const displayCommentPrice = (node, currency, type, payout) => {
         if (node && type && payout) {
-            const profit = payout - type,
-                return_percent = (profit / type) * 100,
-                comment = localize('Net profit') + ': ' + formatMoney(currency, profit) + ' | ' + localize('Return') + ' ' + return_percent.toFixed(1) + '%';
+            const profit = payout - type;
+            const return_percent = (profit / type) * 100;
+            const comment = localize('Net profit') + ': ' + formatMoney(currency, profit) + ' | ' + localize('Return') + ' ' + return_percent.toFixed(1) + '%';
 
             if (isNaN(profit) || isNaN(return_percent)) {
                 node.hide();
@@ -392,9 +392,9 @@ const commonTrading = (() => {
      */
     const displayCommentSpreads = (node, currency, point) => {
         if (node && point) {
-            const amount_per_point = document.getElementById('amount_per_point').value,
-                stop_type = document.querySelector('input[name="stop_type"]:checked').value,
-                stop_loss = document.getElementById('stop_loss').value;
+            const amount_per_point = document.getElementById('amount_per_point').value;
+            const stop_type = document.querySelector('input[name="stop_type"]:checked').value;
+            const stop_loss = document.getElementById('stop_loss').value;
             let display_amount = 0;
 
             if (isNaN(stop_loss) || isNaN(amount_per_point)) {
@@ -423,8 +423,8 @@ const commonTrading = (() => {
         let timeout;
         const delay = wait || 500;
         return function() {
-            const context = this,
-                args = arguments;
+            const context = this;
+            const args = arguments;
             const later = () => {
                 timeout = null;
                 if (!immediate) func.apply(context, args);
@@ -532,11 +532,11 @@ const commonTrading = (() => {
     };
 
     const displayTooltip = (market, symbol) => {
-        const tip = document.getElementById('symbol_tip'),
-            guide = document.getElementById('guideBtn'),
-            app = document.getElementById('androidApp'),
-            appstore = document.getElementById('appstore'),
-            markets = document.getElementById('contract_markets').value;
+        const tip      = document.getElementById('symbol_tip');
+        const guide    = document.getElementById('guideBtn');
+        const app      = document.getElementById('androidApp');
+        const appstore = document.getElementById('appstore');
+        const markets  = document.getElementById('contract_markets').value;
         if (!market || !symbol) return;
         if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
             if (guide) guide.hide();
@@ -585,9 +585,9 @@ const commonTrading = (() => {
 
     const updatePurchaseStatus = (final_price, pnl, contract_status) => {
         $('#contract_purchase_heading').text(localize(contract_status));
-        const $payout = $('#contract_purchase_payout'),
-            $cost = $('#contract_purchase_cost'),
-            $profit = $('#contract_purchase_profit');
+        const $payout = $('#contract_purchase_payout');
+        const $cost   = $('#contract_purchase_cost');
+        const $profit = $('#contract_purchase_profit');
 
         $payout.html(localize('Buy price') + '<p>' + addComma(Math.abs(pnl)) + '</p>');
         $cost.html(localize('Final price') + '<p>' + addComma(final_price) + '</p>');
@@ -696,9 +696,9 @@ const commonTrading = (() => {
         final_price = String(final_price).replace(/,/g, '') * 1;
         pnl = String(pnl).replace(/,/g, '') * 1;
         $('#contract_purchase_heading').text(localize(contract_status));
-        const payout  = document.getElementById('contract_purchase_payout'),
-            cost    = document.getElementById('contract_purchase_cost'),
-            profit  = document.getElementById('contract_purchase_profit');
+        const payout  = document.getElementById('contract_purchase_payout');
+        const cost    = document.getElementById('contract_purchase_cost');
+        const profit  = document.getElementById('contract_purchase_profit');
 
         labelValue(cost, localize('Stake'), addComma(Math.abs(pnl)));
         labelValue(payout, localize('Payout'), addComma(final_price));
@@ -710,8 +710,8 @@ const commonTrading = (() => {
     };
 
     const displayTooltip_Beta = (market, symbol) => {
-        const tip = document.getElementById('symbol_tip'),
-            markets = document.getElementById('contract_markets').value;
+        const tip     = document.getElementById('symbol_tip');
+        const markets = document.getElementById('contract_markets').value;
         if (!market || !symbol) return;
         if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
             tip.show();

@@ -112,8 +112,8 @@ const DigitInfo = (() => {
             elem += '<option value="' + underlyings[i] + '">' + localize(symbols[underlyings[i]]) + '</option>';
         }
         elem += '</select>';
-        const contentId = document.getElementById('tab_last_digit-content'),
-            content = '<div class="gr-parent">' +
+        const contentId = document.getElementById('tab_last_digit-content');
+        const content = '<div class="gr-parent">' +
                 '<div id="last_digit_histo_form" class="gr-8 gr-12-m gr-centered">' +
                 '<form class="smallfont gr-row" action="#" method="post">' +
                 '<div class="gr-6 gr-12-m">' + localize('Select market') + ' : ' + elem + ' </div>' +
@@ -208,8 +208,8 @@ const DigitInfo = (() => {
 
         // Always recompute and draw, even if theres no new data.
         // This is especially useful on first reuqest, but maybe in other ways.
-        const filtered_spots = [],
-            filterFunc = el => +el === digit;
+        const filtered_spots = [];
+        const filterFunc = el => +el === digit;
         let digit = 10;
         const min_max_counter = [];
         while (digit--) {

@@ -119,8 +119,8 @@ const HighchartUI = (() => {
     );
 
     const replaceExitLabelWithSell = (subtitle) => {
-        const subtitle_length = subtitle.childNodes.length,
-            textnode = document.createTextNode(' '  + localize('Sell time') + ' ');
+        const subtitle_length = subtitle.childNodes.length;
+        const textnode = document.createTextNode(' '  + localize('Sell time') + ' ');
         for (let i = 0; i < subtitle_length; i++) {
             const item = subtitle.childNodes[i];
             if (/End time/.test(item.nodeValue)) {

@@ -90,11 +90,11 @@ const AssetIndexUI = (() => {
     };
 
     const createSubmarketTableRow = (asset_item, symbol_info) => {
-        const cells   = [symbol_info.display_name],
-            columns = ['asset'];
+        const cells   = [symbol_info.display_name];
+        const columns = ['asset'];
 
-        const market_cols = market_columns[symbol_info.market],
-            asset_cells = asset_item[4];
+        const market_cols = market_columns[symbol_info.market];
+        const asset_cells = asset_item[4];
         for (let i = 1; i < market_cols.columns.length; i++) {
             const prop = market_cols.columns[i];
             if (prop.length > 0) {

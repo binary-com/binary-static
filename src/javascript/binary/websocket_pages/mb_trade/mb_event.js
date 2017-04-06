@@ -75,8 +75,8 @@ const MBTradingEvents = (() => {
 
         const payout_element = document.getElementById('payout');
         const payoutOnKeypress = (ev) => {
-            const key  = ev.keyCode,
-                char = String.fromCharCode(ev.which);
+            const key  = ev.keyCode;
+            const char = String.fromCharCode(ev.which);
             let is_ok = true;
             if ((char === '.' && ev.target.value.indexOf(char) >= 0) ||
                     (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys

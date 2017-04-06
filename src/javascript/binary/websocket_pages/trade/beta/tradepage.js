@@ -79,9 +79,9 @@ const TradePage_Beta = (() => {
 
     const moreTabsHandler = ($ul) => {
         if (!$ul) $ul = $('#analysis_tabs');
-        const see_more_class  = 'see-more',
-            more_tabs_class = 'more-tabs',
-            max_width      = $ul.outerWidth();
+        const see_more_class  = 'see-more';
+        const more_tabs_class = 'more-tabs';
+        const max_width       = $ul.outerWidth();
         let total_width = 0;
 
         // add seeMore tab

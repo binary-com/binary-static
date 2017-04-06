@@ -207,8 +207,8 @@ const PortfolioInit = (() => {
         if (!State.get('is_beta_trading') && !State.get('is_mb_trading')) {
             BinarySocket.init({
                 onmessage: (msg) => {
-                    const response = JSON.parse(msg.data),
-                        msg_type = response.msg_type;
+                    const response = JSON.parse(msg.data);
+                    const msg_type = response.msg_type;
 
                     switch (msg_type) {
                         case 'portfolio':

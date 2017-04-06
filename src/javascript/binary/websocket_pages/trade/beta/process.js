@@ -104,11 +104,11 @@ const Process_Beta = (() => {
     const processContract_Beta = (contracts) => {
         if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
             Price_Beta.processForgetProposals_Beta();
-            const container = document.getElementById('contract_confirmation_container'),
-                message_container = document.getElementById('confirmation_message'),
-                confirmation_error = document.getElementById('confirmation_error'),
-                confirmation_error_contents = document.getElementById('confirmation_error_contents'),
-                contracts_list = document.getElementById('contracts_list');
+            const container                   = document.getElementById('contract_confirmation_container');
+            const message_container           = document.getElementById('confirmation_message');
+            const confirmation_error          = document.getElementById('confirmation_error');
+            const confirmation_error_contents = document.getElementById('confirmation_error_contents');
+            const contracts_list              = document.getElementById('contracts_list');
             container.style.display = 'block';
             contracts_list.style.display = 'none';
             message_container.hide();
@@ -213,13 +213,13 @@ const Process_Beta = (() => {
     };
 
     const displaySpreads_Beta = () => {
-        const amount_type = document.getElementById('amount_type'),
-            amount_per_point_label = document.getElementById('amount_per_point_label'),
-            amount = document.getElementById('amount'),
-            amount_per_point = document.getElementById('amount_per_point'),
-            spread_container = document.getElementById('spread_element_container'),
-            stop_type_dollar_label = document.getElementById('stop_type_dollar_label'),
-            expiry_type_row = document.getElementById('expiry_row');
+        const amount_type            = document.getElementById('amount_type');
+        const amount_per_point_label = document.getElementById('amount_per_point_label');
+        const amount                 = document.getElementById('amount');
+        const amount_per_point       = document.getElementById('amount_per_point');
+        const spread_container       = document.getElementById('spread_element_container');
+        const stop_type_dollar_label = document.getElementById('stop_type_dollar_label');
+        const expiry_type_row        = document.getElementById('expiry_row');
 
         if (sessionStorage.getItem('formname') === 'spreads') {
             amount_type.hide();

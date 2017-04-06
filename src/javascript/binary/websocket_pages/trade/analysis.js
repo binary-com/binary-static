@@ -49,9 +49,9 @@ const TradingAnalysis = (() => {
                 if (e.target && e.target.nodeName === 'A') {
                     e.preventDefault();
 
-                    const clicked_link = e.target,
-                        clicked_element = clicked_link.parentElement,
-                        is_tab_active = clicked_element.classList.contains('active');
+                    const clicked_link = e.target;
+                    const clicked_element = clicked_link.parentElement;
+                    const is_tab_active = clicked_element.classList.contains('active');
 
                     sessionStorage.setItem('currentAnalysisTab', clicked_element.id);
 
@@ -68,9 +68,9 @@ const TradingAnalysis = (() => {
      * tab according to current paramerted
      */
     const loadAnalysisTab = () => {
-        const current_tab = getActiveTab(),
-            current_link = document.querySelector('#' + current_tab + ' a'),
-            content_id = document.getElementById(current_tab + '-content');
+        const current_tab = getActiveTab();
+        const current_link = document.querySelector('#' + current_tab + ' a');
+        const content_id = document.getElementById(current_tab + '-content');
 
         const analysis_nav_element = document.querySelector('#trading_bottom_content #betsBottomPage');
         commonTrading.toggleActiveNavMenuElement(analysis_nav_element, current_link.parentElement);
@@ -110,13 +110,13 @@ const TradingAnalysis = (() => {
      * toggle the active element for analysis menu
      */
     const toggleActiveAnalysisTabs = () => {
-        const current_tab = getActiveTab(),
-            analysis_container = document.getElementById('bet_bottom_content');
+        const current_tab = getActiveTab();
+        const analysis_container = document.getElementById('bet_bottom_content');
 
         if (analysis_container) {
-            const child_elements = analysis_container.children,
-                current_tab_element = document.getElementById(current_tab + '-content'),
-                classes = current_tab_element.classList;
+            const child_elements = analysis_container.children;
+            const current_tab_element = document.getElementById(current_tab + '-content');
+            const classes = current_tab_element.classList;
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
                 child_elements[i].classList.remove('selectedTab');

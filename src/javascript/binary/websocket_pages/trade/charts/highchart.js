@@ -70,9 +70,9 @@ const Highchart = (() => {
             // since for large arrays, data doesn't get pushed to series[0].data
             // and we can't update markers if data is empty
             time = parseInt(time);
-            const is_match_entry = time === entry_tick_time,
-                is_match_exit = time === exit_tick_time,
-                tick_type = is_match_entry ? 'entry' : 'exit';
+            const is_match_entry = time === entry_tick_time;
+            const is_match_exit = time === exit_tick_time;
+            const tick_type = is_match_entry ? 'entry' : 'exit';
             data.push({
                 x     : time * 1000,
                 y     : price * 1,
@@ -154,8 +154,8 @@ const Highchart = (() => {
     };
 
     const dispatch = (response) => {
-        const type  = response.msg_type,
-            error = response.error;
+        const type  = response.msg_type;
+        const error = response.error;
         if (type === 'contracts_for' && (!error || (error.code && error.code === 'InvalidSymbol'))) {
             delayedChart(response);
         } else if (/(history|candles|tick|ohlc)/.test(type) && !error) {
@@ -164,10 +164,10 @@ const Highchart = (() => {
             if (response_id) ViewPopupUI.storeSubscriptionID(response_id, 'chart');
             options = { title: contract.display_name };
             options[type] = response[type];
-            const history = response.history,
-                candles = response.candles,
-                tick    = response.tick,
-                ohlc    = response.ohlc;
+            const history = response.history;
+            const candles = response.candles;
+            const tick    = response.tick;
+            const ohlc    = response.ohlc;
             if (history || candles) {
                 const length = (history ? history.times : candles).length;
                 if (length === 0) {
@@ -231,9 +231,9 @@ const Highchart = (() => {
 
     const requestData = (update) => {
         const calculate_granularity = calculateGranularity();
-        const granularity = calculate_granularity[0],
-            duration    = calculate_granularity[1],
-            margin      = granularity === 0 ? Math.max(300, (30 * duration) / (60 * 60) || 0) : 3 * granularity;
+        const granularity = calculate_granularity[0];
+        const duration    = calculate_granularity[1];
+        const margin      = granularity === 0 ? Math.max(300, (30 * duration) / (60 * 60) || 0) : 3 * granularity;
 
         request = {
             ticks_history    : underlying,
@@ -261,8 +261,8 @@ const Highchart = (() => {
             request.subscribe = 1;
         }
 
-        const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : window.contracts_for,
-            stored_delay = sessionStorage.getItem('license.' + underlying);
+        const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : window.contracts_for;
+        const stored_delay = sessionStorage.getItem('license.' + underlying);
 
         if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
             delayedChart(contracts_response);
@@ -323,9 +323,9 @@ const Highchart = (() => {
 
     const drawBarrier = () => {
         if (chart.yAxis[0].plotLinesAndBands.length === 0) {
-            const barrier = contract.barrier,
-                high_barrier = contract.high_barrier,
-                low_barrier = contract.low_barrier;
+            const barrier = contract.barrier;
+            const high_barrier = contract.high_barrier;
+            const low_barrier  = contract.low_barrier;
             if (barrier) {
                 addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [barrier]),           dashStyle: 'Dot' }, 'y');
             } else if (high_barrier && low_barrier) {
@@ -422,8 +422,8 @@ const Highchart = (() => {
 
     // calculate where to display the maximum value of the x-axis of the chart for candle
     const getMaxCandle = (candles) => {
-        const end = sell_spot_time && sell_time < end_time ? sell_spot_time : end_time,
-            candle_length = candles.length;
+        const end = sell_spot_time && sell_time < end_time ? sell_spot_time : end_time;
+        const candle_length = candles.length;
         let current_candle,
             next_candle;
         if (is_settleable || is_sold) {

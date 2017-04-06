@@ -10,13 +10,13 @@ const Statement = (() => {
     'use strict';
 
     const getStatementData = (statement, currency, jp_client) => {
-        const date_obj = new Date(statement.transaction_time * 1000),
-            moment_obj = moment.utc(date_obj),
-            date_str   = moment_obj.format('YYYY-MM-DD'),
-            time_str   = moment_obj.format('HH:mm:ss') + ' GMT',
-            payout  = parseFloat(statement.payout),
-            amount  = parseFloat(statement.amount),
-            balance = parseFloat(statement.balance_after);
+        const date_obj = new Date(statement.transaction_time * 1000);
+        const moment_obj = moment.utc(date_obj);
+        const date_str   = moment_obj.format('YYYY-MM-DD');
+        const time_str   = moment_obj.format('HH:mm:ss') + ' GMT';
+        const payout  = parseFloat(statement.payout);
+        const amount  = parseFloat(statement.amount);
+        const balance = parseFloat(statement.balance_after);
 
         return {
             date   : jp_client ? toJapanTimeIfNeeded(statement.transaction_time) : date_str + '\n' + time_str,
@@ -32,9 +32,9 @@ const Statement = (() => {
     };
 
     const generateCSV = (all_data, jp_client) => {
-        const columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
-            header     = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(str => (localize(str))),
-            currency = Client.get('currency');
+        const columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'];
+        const header   = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(str => (localize(str)));
+        const currency = Client.get('currency');
         header.push(localize('Balance') + (jp_client || !currency ? '' : ' (' + currency + ')'));
         const sep = ',';
         let csv = [header.join(sep)];
