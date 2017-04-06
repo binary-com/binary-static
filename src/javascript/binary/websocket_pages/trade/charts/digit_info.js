@@ -37,10 +37,10 @@ const DigitInfo = (() => {
             formatter  : function() {
                 const total = $("select[name='tick_count']").val();
                 const percentage = (this.y / total) * 100;
-                return $('<b/>', { text: localize('Digit:') })
+                return $('<b/>', { text: `${localize('Digit')}:` })
                     .append(this.x)
                     .append($('<br/>'))
-                    .append($('<b/>', { text: localize('Percentage:') }))
+                    .append($('<b/>', { text: `${localize('Percentage')}:` }))
                     .append(`${percentage.toFixed(1)}%`);
             },
         },
