@@ -1,15 +1,15 @@
-const MBContract                = require('./mb_contract');
-const MBDefaults                = require('./mb_defaults');
-const MBNotifications           = require('./mb_notifications');
-const MBPrice                   = require('./mb_price');
-const MBSymbols                 = require('./mb_symbols');
-const MBTick                    = require('./mb_tick');
-const TradingAnalysis           = require('../trade/analysis');
-const commonTrading             = require('../trade/common');
-const processForgetTicks        = require('../trade/process').processForgetTicks;
-const Client                    = require('../../base/client');
-const localize                  = require('../../base/localize').localize;
-const jpClient                  = require('../../common_functions/country_base').jpClient;
+const MBContract         = require('./mb_contract');
+const MBDefaults         = require('./mb_defaults');
+const MBNotifications    = require('./mb_notifications');
+const MBPrice            = require('./mb_price');
+const MBSymbols          = require('./mb_symbols');
+const MBTick             = require('./mb_tick');
+const TradingAnalysis    = require('../trade/analysis');
+const commonTrading      = require('../trade/common');
+const processForgetTicks = require('../trade/process').processForgetTicks;
+const Client             = require('../../base/client');
+const localize           = require('../../base/localize').localize;
+const jpClient           = require('../../common_functions/country_base').jpClient;
 
 const MBProcess = (() => {
     'use strict';
@@ -63,8 +63,8 @@ const MBProcess = (() => {
 
     const populateUnderlyingGroups = (selected) => {
         const $underlyings = $('#underlying');
-        const allSymbols = MBSymbols.underlyings();
-        const markets    = MBSymbols.markets();
+        const all_symbols = MBSymbols.underlyings();
+        const markets     = MBSymbols.markets();
 
         $underlyings.empty();
 
@@ -73,7 +73,7 @@ const MBProcess = (() => {
             .forEach((market) => {
                 $underlyings.append(
                     $('<optgroup/>', { label: markets[market].name })
-                        .append($(commonTrading.generateUnderlyingOptions(allSymbols[market], selected))));
+                        .append($(commonTrading.generateUnderlyingOptions(all_symbols[market], selected))));
             });
     };
 

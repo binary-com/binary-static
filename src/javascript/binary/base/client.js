@@ -120,9 +120,9 @@ const Client = (() => {
         let token;
         const tokens = get('tokens');
         if (client_loginid && tokens) {
-            const tokensObj = JSON.parse(tokens);
-            if (tokensObj.hasOwnProperty(client_loginid) && tokensObj[client_loginid]) {
-                token = tokensObj[client_loginid];
+            const tokens_obj = JSON.parse(tokens);
+            if (tokens_obj.hasOwnProperty(client_loginid) && tokens_obj[client_loginid]) {
+                token = tokens_obj[client_loginid];
             }
         }
         return token;
@@ -133,16 +133,16 @@ const Client = (() => {
             return false;
         }
         const tokens = get('tokens');
-        const tokensObj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
-        tokensObj[client_loginid] = token;
-        set('tokens', JSON.stringify(tokensObj));
+        const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
+        tokens_obj[client_loginid] = token;
+        set('tokens', JSON.stringify(tokens_obj));
         return true;
     };
 
-    const setCookie = (cookieName, Value, domain) => {
+    const setCookie = (cookie_name, Value, domain) => {
         const cookie_expire = new Date();
         cookie_expire.setDate(cookie_expire.getDate() + 60);
-        const cookie = new CookieStorage(cookieName, domain);
+        const cookie = new CookieStorage(cookie_name, domain);
         cookie.write(Value, cookie_expire, true);
     };
 
@@ -208,8 +208,8 @@ const Client = (() => {
         }
     };
 
-    const sendLogoutRequest = (showLoginPage) => {
-        if (showLoginPage) {
+    const sendLogoutRequest = (show_login_page) => {
+        if (show_login_page) {
             sessionStorage.setItem('showLoginPage', 1);
         }
         BinarySocket.send({ logout: '1' });

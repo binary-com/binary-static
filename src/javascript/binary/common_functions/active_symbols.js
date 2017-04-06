@@ -110,27 +110,27 @@ const ActiveSymbols = (() => {
     };
 
     const getMarketsList = (active_symbols) => {
-        const tradeMarketsList = {};
-        extend(tradeMarketsList, getMarkets(active_symbols));
-        extend(tradeMarketsList, getSubmarkets(active_symbols));
-        return tradeMarketsList;
+        const trade_markets_list = {};
+        extend(trade_markets_list, getMarkets(active_symbols));
+        extend(trade_markets_list, getSubmarkets(active_symbols));
+        return trade_markets_list;
     };
 
     const getTradeUnderlyings = (active_symbols) => {
-        const tradeUnderlyings = {};
+        const trade_underlyings = {};
         const all_symbols = getSymbols(active_symbols);
         Object.keys(all_symbols).forEach((key) => {
             const symbol = all_symbols[key];
-            if (!tradeUnderlyings[symbol.market]) {
-                tradeUnderlyings[symbol.market] = {};
+            if (!trade_underlyings[symbol.market]) {
+                trade_underlyings[symbol.market] = {};
             }
-            if (!tradeUnderlyings[symbol.submarket]) {
-                tradeUnderlyings[symbol.submarket] = {};
+            if (!trade_underlyings[symbol.submarket]) {
+                trade_underlyings[symbol.submarket] = {};
             }
-            tradeUnderlyings[symbol.market][key] = symbol;
-            tradeUnderlyings[symbol.submarket][key] = symbol;
+            trade_underlyings[symbol.market][key] = symbol;
+            trade_underlyings[symbol.submarket][key] = symbol;
         });
-        return tradeUnderlyings;
+        return trade_underlyings;
     };
 
     const getSymbolNames = (active_symbols) => {

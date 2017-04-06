@@ -10,7 +10,7 @@ const formatCurrency = require('../../common_functions/currency_to_symbol').form
  * It process 'socket.send({payout_currencies:1})` response
  * and display them
  */
-const MBDisplayCurrencies = (selected, showClass) => {
+const MBDisplayCurrencies = (selected, show_class) => {
     'use strict';
 
     const target = document.getElementById('currency');
@@ -43,7 +43,7 @@ const MBDisplayCurrencies = (selected, showClass) => {
         MBDefaults.set('currency', target.value);
     } else {
         $('#currency').replaceWith('<span id="' + target.getAttribute('id') +
-                                    '" class="' + (showClass ? target.getAttribute('class') : '') +
+                                    '" class="' + (show_class ? target.getAttribute('class') : '') +
                                     '" value="' + currencies[0] + '">' +
                                     (State.get('is_mb_trading') && jpClient() ? '✕' : formatCurrency(currencies[0])) + '</span>');
         if ($('.payout-mult:visible').length === 0) $('#payout').width(40); // wider when there is free space

@@ -4,7 +4,7 @@ const State                  = require('../../../base/storage').State;
 const FormManager            = require('../../../common_functions/form_manager');
 
 const PaymentAgentTransfer = (() => {
-    const hiddenClass = 'invisible';
+    const hidden_class = 'invisible';
 
     let balance,
         is_authenticated_payment_agent,
@@ -32,11 +32,11 @@ const PaymentAgentTransfer = (() => {
 
         if (!currency || +balance === 0) {
             $('#pa_transfer_loading').remove();
-            $no_bal_err.removeClass(hiddenClass);
+            $no_bal_err.removeClass(hidden_class);
             return;
         }
 
-        $no_bal_err.addClass(hiddenClass);
+        $no_bal_err.addClass(hidden_class);
         setFormVisibility(true);
         PaymentAgentTransferUI.updateFormView(currency);
 
@@ -65,10 +65,10 @@ const PaymentAgentTransfer = (() => {
 
     const checkBalance = (amount) => {
         if (+amount > +balance) {
-            $insufficient_balance.removeClass(hiddenClass);
+            $insufficient_balance.removeClass(hidden_class);
             return false;
         }
-        $insufficient_balance.addClass(hiddenClass);
+        $insufficient_balance.addClass(hidden_class);
         return true;
     };
 
@@ -95,7 +95,7 @@ const PaymentAgentTransfer = (() => {
 
         if (error) {
             if (req.dry_run === 1) {
-                $('#form_error').text(error.message).removeClass(hiddenClass);
+                $('#form_error').text(error.message).removeClass(hidden_class);
                 return;
             }
             PaymentAgentTransferUI.showTransferError(error.message);
@@ -136,7 +136,7 @@ const PaymentAgentTransfer = (() => {
             PaymentAgentTransferUI.showNotes();
             PaymentAgentTransferUI.hideConfirmation();
             PaymentAgentTransferUI.hideDone();
-            $('#form_error').addClass(hiddenClass);
+            $('#form_error').addClass(hidden_class);
         });
     };
 

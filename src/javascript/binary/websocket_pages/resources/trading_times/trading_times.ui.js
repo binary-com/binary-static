@@ -70,17 +70,17 @@ const TradingTimesUI = (() => {
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {
-            const tabID = 'market_' + (m + 1);
+            const tab_id = 'market_' + (m + 1);
 
             // contents
-            const $market = $('<div/>', { id: tabID });
+            const $market = $('<div/>', { id: tab_id });
             $market.append(createMarketTables(markets[m], is_japan_trading));
             if ($market.find('table tr').length) {
                 $contents.append($market);
 
                 // tabs
                 if (!is_japan_trading) {
-                    $ul.append($('<li/>').append($('<a/>', { href: '#' + tabID, text: markets[m].name, id: 'outline' })));
+                    $ul.append($('<li/>').append($('<a/>', { href: '#' + tab_id, text: markets[m].name, id: 'outline' })));
                 }
             }
         }

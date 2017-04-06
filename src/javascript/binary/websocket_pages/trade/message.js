@@ -1,11 +1,11 @@
-const DigitInfo            = require('./charts/digit_info');
-const Notifications        = require('./notifications');
-const Process              = require('./process');
-const Purchase             = require('./purchase');
-const Tick                 = require('./tick');
-const PortfolioInit        = require('../user/account/portfolio/portfolio.init');
-const GTM                  = require('../../base/gtm');
-const State                = require('../../base/storage').State;
+const DigitInfo     = require('./charts/digit_info');
+const Notifications = require('./notifications');
+const Process       = require('./process');
+const Purchase      = require('./purchase');
+const Tick          = require('./tick');
+const PortfolioInit = require('../user/account/portfolio/portfolio.init');
+const GTM           = require('../../base/gtm');
+const State         = require('../../base/storage').State;
 
 /*
  * This Message object process the response from server and fire

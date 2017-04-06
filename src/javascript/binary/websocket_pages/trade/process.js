@@ -23,7 +23,7 @@ const Process = (() => {
     'use strict';
 
     /*
-     * process the active symbols to get markets
+     * This function process the active symbols to get markets
      * and underlying list
      */
     const processActiveSymbols = (data) => {
@@ -41,7 +41,7 @@ const Process = (() => {
 
 
     /*
-     * call when market has changed
+     * Function to call when market has changed
      */
     const processMarket = (flag) => {
         // we can get market from sessionStorage as allowed market
@@ -83,7 +83,7 @@ const Process = (() => {
         commonTrading.showFormOverlay();
 
         // forget the old tick id i.e. close the old tick stream
-        forgetTicks();
+        processForgetTicks();
         // get ticks for current underlying
         Tick.request(underlying);
 
@@ -252,14 +252,14 @@ const Process = (() => {
 
     const forgetTradingStreams = () => {
         Price.processForgetProposals();
-        forgetTicks();
+        processForgetTicks();
     };
 
     /*
      * cancel the current tick stream
      * this need to be invoked before makin
      */
-    const forgetTicks = () => {
+    const processForgetTicks = () => {
         BinarySocket.send({
             forget_all: 'ticks',
         });
@@ -357,7 +357,7 @@ const Process = (() => {
         processContract     : processContract,
         processContractForm : processContractForm,
         forgetTradingStreams: forgetTradingStreams,
-        forgetTicks         : forgetTicks,
+        processForgetTicks  : processForgetTicks,
         processTick         : processTick,
         processProposal     : processProposal,
         processTradingTimes : processTradingTimes,

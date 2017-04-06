@@ -33,9 +33,9 @@ const MBContract = (() => {
         contract_timeout = setTimeout(getContracts, 15000);
     };
 
-    const clearContractTimeout = (timoutID) => {
-        if (timoutID) {
-            clearTimeout(timoutID);
+    const clearContractTimeout = (timout_id) => {
+        if (timout_id) {
+            clearTimeout(timout_id);
         } else {
             clearTimeout(contract_timeout);
             clearTimeout(remaining_timeout);
@@ -82,7 +82,7 @@ const MBContract = (() => {
 
     // use function to generate elements and append them
     // e.g. element is select and element to append is option
-    const appendTextValueChild = (element, string, value, isSelected) => {
+    const appendTextValueChild = (element, string, value, is_selected) => {
         if (element && !element.nodeName) {
             if (typeof element === 'string') {
                 element = document.getElementById(element);
@@ -94,7 +94,7 @@ const MBContract = (() => {
         const option = document.createElement('option');
         option.text = string;
         option.value = value;
-        if (isSelected) {
+        if (is_selected) {
             option.setAttribute('selected', 'selected');
         }
         element.appendChild(option);
@@ -149,15 +149,15 @@ const MBContract = (() => {
                 }
             }
             if (missing_array.length > 0) {
-                let newOption;
+                let new_option;
                 existing_array = existing_array.concat(missing_array).sort(sortByExpiryTime);
                 for (let m = 0; m < existing_array.length; m++) {
                     if ($period_element.find('option[value="' + existing_array[m] + '"]').length < 1) {
-                        newOption = '<option value="' + existing_array[m] + '">' + PeriodText(existing_array[m]) + '</option>';
+                        new_option = '<option value="' + existing_array[m] + '">' + PeriodText(existing_array[m]) + '</option>';
                         if (m < 1) {
-                            $(newOption).insertBefore($period_element.children().eq(m));
+                            $(new_option).insertBefore($period_element.children().eq(m));
                         } else {
-                            $(newOption).insertAfter($period_element.children().eq(m - 1));
+                            $(new_option).insertAfter($period_element.children().eq(m - 1));
                         }
                     }
                 }
@@ -222,7 +222,7 @@ const MBContract = (() => {
         const contracts_array = [];
         const available_contracts = contracts_for_response.contracts_for.available;
         const $category_element = $('#category');
-        const categoryNames = {
+        const category_names = {
             callput     : localize('Higher/Lower'),
             touchnotouch: localize('Touch/No Touch'),
             endsinout   : localize('Ends In/Out'),
@@ -249,7 +249,7 @@ const MBContract = (() => {
             for (let j = 0; j < contracts_array.length; j++) {
                 appendTextValueChild(
                     'category',
-                    categoryNames[contracts_array[j]],
+                    category_names[contracts_array[j]],
                     contracts_array[j],
                     contracts_array[j] === default_value);
             }

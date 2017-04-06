@@ -138,7 +138,7 @@ const Page = (() => {
         return true;
     };
 
-    const reload = (forcedReload) => { window.location.reload(!!forcedReload); };
+    const reload = (forced_reload) => { window.location.reload(!!forced_reload); };
 
     const endpointNotification = () => {
         const server = localStorage.getItem('config.server_url');

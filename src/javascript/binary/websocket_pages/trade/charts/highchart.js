@@ -1,5 +1,5 @@
 const Highcharts  = require('highcharts/highstock');
-const HighchartUI = require('./highchart_ui');
+const HighchartUI = require('./highchart.ui');
 const MBContract  = require('../../mb_trade/mb_contract');
 const ViewPopupUI = require('../../user/view_popup/view_popup.ui');
 const localize    = require('../../../base/localize').localize;
@@ -456,12 +456,12 @@ const Highchart = (() => {
         if (!max_point) max_point = end_time;
     };
 
-    const drawLineX = (valueTime, labelName, textLeft, dash, color) => {
+    const drawLineX = (value_time, label_name, text_left, dash, color) => {
         if (chart) {
             addPlotLine({
-                value    : valueTime * 1000,
-                label    : labelName || '',
-                textLeft : textLeft === 'textLeft',
+                value    : value_time * 1000,
+                label    : label_name || '',
+                textLeft : text_left === 'textLeft',
                 dashStyle: dash || '',
                 color    : color || '',
             }, 'x');

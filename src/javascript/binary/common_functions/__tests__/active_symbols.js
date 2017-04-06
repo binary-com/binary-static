@@ -50,17 +50,17 @@ describe('ActiveSymbols', () => {
             .and.not.to.have.any.of.key('forex');
     });
     it('Should getMarketsList have major_pairs and forex as keys', () => {
-        const marketList = activeSymbols.getMarketsList(active_symbols);
-        expect(marketList).to.be.an('Object')
+        const market_list = activeSymbols.getMarketsList(active_symbols);
+        expect(market_list).to.be.an('Object')
             .and.to.have.any.of.keys(['forex', 'major_pairs']);
     });
     it('Should getTradeUnderlyings have major_pairs and forex as keys and symbols as values', () => {
-        const tradeUnderlyings = activeSymbols.getTradeUnderlyings(active_symbols);
-        expect(tradeUnderlyings).to.be.an('Object')
+        const trade_underlyings = activeSymbols.getTradeUnderlyings(active_symbols);
+        expect(trade_underlyings).to.be.an('Object')
             .and.to.have.property('forex')
             .and.to.have.property('frxEURUSD')
             .and.to.have.any.of.keys(['is_active', 'display', 'market', 'submarket']);
-        expect(tradeUnderlyings).to.have.property('major_pairs')
+        expect(trade_underlyings).to.have.property('major_pairs')
             .and.to.have.property('frxEURUSD')
             .and.to.have.any.of.keys(['is_active', 'display', 'market', 'submarket']);
     });
@@ -71,9 +71,9 @@ describe('ActiveSymbols', () => {
     });
     it.skip('Should getMarkets output match the market snapshot', () => {
         const markets = activeSymbols.getMarkets(active_symbols);
-        const deepDiff = deep(set_checks(markets), set_checks(JSON.parse(expected_markets_str)));
-        if (deepDiff) {
-            deepDiff.forEach((diff) => {
+        const deep_diff = deep(set_checks(markets), set_checks(JSON.parse(expected_markets_str)));
+        if (deep_diff) {
+            deep_diff.forEach((diff) => {
                 expect(diff).to.have.property('kind')
                     .and.not.to.be.equal('E');
             });

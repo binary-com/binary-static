@@ -118,10 +118,10 @@ const DepositWithdraw = (() => {
     };
 
     const showPersonalDetailsError = (details) => {
-        const msgID = 'personal_details_message';
-        let errorFields;
+        const msg_id = 'personal_details_message';
+        let error_fields;
         if (details) {
-            errorFields = {
+            error_fields = {
                 province: 'State/Province',
                 country : 'Country',
                 city    : 'Town/City',
@@ -131,10 +131,10 @@ const DepositWithdraw = (() => {
                 email   : 'Email address',
             };
         }
-        const $el = $('#' + msgID);
-        const errMsg = template($el.html(), [localize(details ? errorFields[details] : 'details')]);
-        $el.html(errMsg);
-        showMessage(msgID);
+        const $el = $('#' + msg_id);
+        const err_msg = template($el.html(), [localize(details ? error_fields[details] : 'details')]);
+        $el.html(err_msg);
+        showMessage(msg_id);
     };
 
     const ukgcResponseHandler = (response) => {

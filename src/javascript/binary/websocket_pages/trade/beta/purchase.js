@@ -55,9 +55,9 @@ const Purchase_Beta = (() => {
             confirmation_error.show();
             elementInnerHtml(confirmation_error_contents,  error.message);
         } else {
-            const guideBtn = document.getElementById('guideBtn');
-            if (guideBtn) {
-                guideBtn.style.display = 'none';
+            const guide_btn = document.getElementById('guideBtn');
+            if (guide_btn) {
+                guide_btn.style.display = 'none';
             }
             container.style.display = 'block';
             message_container.show();

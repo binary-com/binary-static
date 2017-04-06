@@ -29,12 +29,12 @@ const Price_Beta = (() => {
     let type_display_id_mapping = {},
         form_id = 0;
 
-    const createProposal = (typeOfContract) => {
+    const createProposal = (type_of_contract) => {
         const proposal = {
             proposal : 1,
             subscribe: 1,
         };
-        const contract_type = typeOfContract;
+        const contract_type = type_of_contract;
         const start_time    = getStartDateNode();
         const underlying       = document.getElementById('underlying');
         const amount_type      = document.getElementById('amount_type');
@@ -62,7 +62,7 @@ const Price_Beta = (() => {
         }
 
         if (contract_type) {
-            proposal.contract_type = typeOfContract;
+            proposal.contract_type = type_of_contract;
         }
 
         if (currency && (currency.value || currency.getAttribute('value'))) {
@@ -132,7 +132,7 @@ const Price_Beta = (() => {
         }
 
         if (contract_type) {
-            proposal.contract_type = typeOfContract;
+            proposal.contract_type = type_of_contract;
         }
 
         proposal.passthrough = {
@@ -277,7 +277,7 @@ const Price_Beta = (() => {
     };
 
     /*
-     * cancelling the current price proposal
+     * Function to request for cancelling the current price proposal
      */
     const processForgetProposals_Beta = () => {
         commonTrading.showPriceOverlay();
@@ -288,7 +288,7 @@ const Price_Beta = (() => {
     };
 
     /*
-     * process and calculate price based on current form
+     * Function to process and calculate price based on current form
      * parameters or change in form parameters
      */
     const processPriceRequest_Beta = () => {

@@ -23,7 +23,7 @@ const Process_Beta = (() => {
     'use strict';
 
     /*
-     * process the active symbols to get markets
+     * This function process the active symbols to get markets
      * and underlying list
      */
     const processActiveSymbols_Beta = (data) => {
@@ -41,7 +41,7 @@ const Process_Beta = (() => {
 
 
     /*
-     * call when market has changed
+     * Function to call when market has changed
      */
     const processMarket_Beta = (flag) => {
         // we can get market from sessionStorage as allowed market
@@ -83,7 +83,7 @@ const Process_Beta = (() => {
         commonTrading.showFormOverlay();
 
         // forget the old tick id i.e. close the old tick stream
-        forgetTicks_Beta();
+        processForgetTicks_Beta();
         // get ticks for current underlying
         Tick.request(underlying);
 
@@ -257,14 +257,14 @@ const Process_Beta = (() => {
 
     const forgetTradingStreams_Beta = () => {
         Price_Beta.processForgetProposals_Beta();
-        forgetTicks_Beta();
+        processForgetTicks_Beta();
     };
 
     /*
      * cancel the current tick stream
      * this need to be invoked before makin
      */
-    const forgetTicks_Beta = () => {
+    const processForgetTicks_Beta = () => {
         BinarySocket.send({
             forget_all: 'ticks',
         });
@@ -362,7 +362,7 @@ const Process_Beta = (() => {
         processContract_Beta     : processContract_Beta,
         processContractForm_Beta : processContractForm_Beta,
         forgetTradingStreams_Beta: forgetTradingStreams_Beta,
-        forgetTicks_Beta         : forgetTicks_Beta,
+        processForgetTicks_Beta  : processForgetTicks_Beta,
         processTick_Beta         : processTick_Beta,
         processProposal_Beta     : processProposal_Beta,
         processTradingTimes_Beta : processTradingTimes_Beta,

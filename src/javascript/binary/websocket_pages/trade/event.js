@@ -293,9 +293,9 @@ const TradingEvents = (() => {
         if (currency_element) {
             currency_element.addEventListener('change', (e) => {
                 Defaults.set('currency', e.target.value);
-                const stopTypeDollarLabel = document.getElementById('stop_type_dollar_label');
-                if (stopTypeDollarLabel && isVisible(stopTypeDollarLabel)) {
-                    elementTextContent(stopTypeDollarLabel, e.target.value);
+                const stop_type_dollar_label = document.getElementById('stop_type_dollar_label');
+                if (stop_type_dollar_label && isVisible(stop_type_dollar_label)) {
+                    elementTextContent(stop_type_dollar_label, e.target.value);
                 }
                 Price.processPriceRequest();
             });

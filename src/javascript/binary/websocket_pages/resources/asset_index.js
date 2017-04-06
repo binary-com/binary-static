@@ -4,9 +4,9 @@ const AssetIndex = (() => {
     let market_columns;
 
     // Search and Remove (to decrease the next search count)
-    const getSymbolInfo = (qSymbol, active_symbols) =>
+    const getSymbolInfo = (q_symbol, active_symbols) =>
         active_symbols.filter((sy, id) => {
-            if (sy.symbol === qSymbol) {
+            if (sy.symbol === q_symbol) {
                 active_symbols.splice(id, 1);
                 return true;
             }

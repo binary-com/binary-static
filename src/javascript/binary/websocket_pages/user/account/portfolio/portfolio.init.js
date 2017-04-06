@@ -47,7 +47,7 @@ const PortfolioInit = (() => {
     };
 
     const createPortfolioRow = (data, is_first) => {
-        const longCode = typeof module !== 'undefined' ?
+        const long_code = typeof module !== 'undefined' ?
             data.longcode :
             (jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
 
@@ -56,13 +56,13 @@ const PortfolioInit = (() => {
             $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
                 '<td class="ref"><span' + GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' +
                 '<td class="payout"><strong>' + formatMoney(data.currency, data.payout) + '</strong></td>' +
-                '<td class="details">' + longCode + '</td>' +
+                '<td class="details">' + long_code + '</td>' +
                 '<td class="purchase"><strong>' + formatMoney(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' +
                 '<td class="button"><button class="button open_contract_details nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' +
                 '</tr>' +
                 '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
-                '<td colspan="6">' + longCode + '</td>' +
+                '<td colspan="6">' + long_code + '</td>' +
                 '</tr>'));
     };
 

@@ -154,12 +154,12 @@ const Barriers_Beta = (() => {
     };
 
     const validateBarrier = () => {
-        const barrierElement = document.getElementById('barrier');
-        if (isVisible(barrierElement) && (isNaN(parseFloat(barrierElement.value)) ||
-                parseFloat(barrierElement.value) === 0)) {
-            barrierElement.classList.add('error-field');
+        const barrier_element = document.getElementById('barrier');
+        if (isVisible(barrier_element) && (isNaN(parseFloat(barrier_element.value)) ||
+                parseFloat(barrier_element.value) === 0)) {
+            barrier_element.classList.add('error-field');
         } else {
-            barrierElement.classList.remove('error-field');
+            barrier_element.classList.remove('error-field');
         }
     };
 

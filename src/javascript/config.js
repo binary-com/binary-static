@@ -25,10 +25,10 @@ const getSocketURL = () => {
 
         // override defaults by cookie values
         if (percentValues && percentValues.indexOf(',') > 0) {
-            const cookiePercents = percentValues.split(',');
+            const cookie_percents = percentValues.split(',');
             categoryMap.map((cat, idx) => {
-                if (cookiePercents[idx] && !isNaN(cookiePercents[idx])) {
-                    toGreenPercent[cat] = +cookiePercents[idx].trim();
+                if (cookie_percents[idx] && !isNaN(cookie_percents[idx])) {
+                    toGreenPercent[cat] = +cookie_percents[idx].trim();
                 }
             });
         }

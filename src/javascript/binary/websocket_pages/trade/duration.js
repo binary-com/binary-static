@@ -242,17 +242,17 @@ const Durations = (() => {
                 native  : false,
             });
             amount_element.change((value) => {
-                let dayDiff;
+                let day_diff;
                 const $duration_amount_val = $('#duration_amount').val();
                 if ($duration_amount_val) {
-                    dayDiff = $duration_amount_val;
+                    day_diff = $duration_amount_val;
                 } else {
                     value = value.target.getAttribute('data-value');
                     const date = value ? new Date(value) : new Date();
                     const today = window.time ? window.time.valueOf() : new Date();
-                    dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
+                    day_diff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
                 }
-                amount_element.val(dayDiff);
+                amount_element.val(day_diff);
             });
         } else {
             DatePicker.hide(duration_id);

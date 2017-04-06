@@ -356,9 +356,9 @@ const commonTrading = (() => {
     /*
      * toggle active class of menu
      */
-    const toggleActiveNavMenuElement = (nav, eventElement) => {
+    const toggleActiveNavMenuElement = (nav, event_element) => {
         const li_elements = nav.getElementsByTagName('li');
-        const classes = eventElement.classList;
+        const classes = event_element.classList;
 
         if (!classes.contains('active')) {
             for (let i = 0, len = li_elements.length; i < len; i++) {
@@ -368,8 +368,8 @@ const commonTrading = (() => {
         }
     };
 
-    const toggleActiveCatMenuElement = (nav, eventElementId) => {
-        const event_element = document.getElementById(eventElementId);
+    const toggleActiveCatMenuElement = (nav, event_element_id) => {
+        const event_element = document.getElementById(event_element_id);
         const li_elements = nav.querySelectorAll('.active, .a-active');
         const classes = event_element.classList;
         let i,
@@ -701,16 +701,16 @@ const commonTrading = (() => {
     /*
      * toggle active class of menu
      */
-    const toggleActiveNavMenuElement_Beta = (nav, eventElement) => {
-        const liElements = nav.getElementsByTagName('li');
-        const classes = eventElement.classList;
+    const toggleActiveNavMenuElement_Beta = (nav, event_element) => {
+        const li_elements = nav.getElementsByTagName('li');
+        const classes = event_element.classList;
 
         if (!classes.contains('active')) {
-            for (let i = 0, len = liElements.length; i < len; i++) {
-                liElements[i].classList.remove('active');
+            for (let i = 0, len = li_elements.length; i < len; i++) {
+                li_elements[i].classList.remove('active');
             }
             classes.add('active');
-            const parent = eventElement.parentElement.parentElement;
+            const parent = event_element.parentElement.parentElement;
             if (parent.tagName === 'LI' && !parent.classList.contains('active')) {
                 parent.classList.add('active');
             }
@@ -769,13 +769,13 @@ const commonTrading = (() => {
     };
 
     const timeIsValid = ($element) => {
-        let endDateValue = document.getElementById('expiry_date').getAttribute('data-value'),
-            startDateValue = document.getElementById('date_start').value,
-            endTimeValue = document.getElementById('expiry_time').value;
+        let end_date_value   = document.getElementById('expiry_date').getAttribute('data-value'),
+            start_date_value = document.getElementById('date_start').value,
+            end_time_value   = document.getElementById('expiry_time').value;
         const $invalid_time = $('#invalid-time');
 
-        if ($element.attr('id') === $('#expiry_time') && endTimeValue &&
-            !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(endTimeValue)) {
+        if ($element.attr('id') === $('#expiry_time') && end_time_value &&
+            !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(end_time_value)) {
             $element.addClass('error-field');
             if ($invalid_time.length === 0) {
                 $('#expiry_type_endtime').parent().append($('<p>', { class: 'error-msg', id: 'invalid-time', text: localize('Time is in the wrong format.') }));
@@ -786,11 +786,11 @@ const commonTrading = (() => {
         $element.removeClass('error-field');
         $invalid_time.remove();
 
-        endDateValue = endDateValue ? toISOFormat(Moment(endDateValue)) : toISOFormat(new Moment());
-        startDateValue = startDateValue === 'now' ? Math.floor(window.time._i / 1000) : startDateValue;
-        endTimeValue = endTimeValue || '23:59:59';
+        end_date_value = end_date_value ? toISOFormat(Moment(end_date_value)) : toISOFormat(new Moment());
+        start_date_value = start_date_value === 'now' ? Math.floor(window.time._i / 1000) : start_date_value;
+        end_time_value = end_time_value || '23:59:59';
 
-        if (Moment.utc(endDateValue + ' ' + endTimeValue).unix() <= startDateValue) {
+        if (Moment.utc(end_date_value + ' ' + end_time_value).unix() <= start_date_value) {
             $element.addClass('error-field');
             if (!document.getElementById('end_time_validation')) {
                 $('#expiry_type_endtime').append('<p class="error-msg" id="end_time_validation">' + localize('End time must be after start time.') + '</p>');

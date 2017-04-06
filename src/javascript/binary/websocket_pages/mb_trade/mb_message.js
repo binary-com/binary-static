@@ -1,12 +1,12 @@
-const MBContract           = require('./mb_contract');
-const MBNotifications      = require('./mb_notifications');
-const MBProcess            = require('./mb_process');
-const MBPurchase           = require('./mb_purchase');
-const MBTick               = require('./mb_tick');
-const Process              = require('../trade/process');
-const PortfolioInit        = require('../user/account/portfolio/portfolio.init');
-const GTM                  = require('../../base/gtm');
-const State                = require('../../base/storage').State;
+const MBContract      = require('./mb_contract');
+const MBNotifications = require('./mb_notifications');
+const MBProcess       = require('./mb_process');
+const MBPurchase      = require('./mb_purchase');
+const MBTick          = require('./mb_tick');
+const Process         = require('../trade/process');
+const PortfolioInit   = require('../user/account/portfolio/portfolio.init');
+const GTM             = require('../../base/gtm');
+const State           = require('../../base/storage').State;
 
 /*
  * This Message object process the response from server and fire

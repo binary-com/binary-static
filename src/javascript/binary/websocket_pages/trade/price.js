@@ -29,12 +29,12 @@ const Price = (() => {
     let type_display_id_mapping = {},
         form_id = 0;
 
-    const createProposal = (typeOfContract) => {
+    const createProposal = (type_of_contract) => {
         const proposal = {
             proposal : 1,
             subscribe: 1,
         };
-        const contract_type = typeOfContract;
+        const contract_type = type_of_contract;
         const start_time    = getStartDateNode();
         const underlying       = document.getElementById('underlying');
         const amount_type      = document.getElementById('amount_type');
@@ -62,7 +62,7 @@ const Price = (() => {
         }
 
         if (contract_type) {
-            proposal.contract_type = typeOfContract;
+            proposal.contract_type = type_of_contract;
         }
 
         if (currency && (currency.value || currency.getAttribute('value'))) {
@@ -132,7 +132,7 @@ const Price = (() => {
         }
 
         if (contract_type) {
-            proposal.contract_type = typeOfContract;
+            proposal.contract_type = type_of_contract;
         }
 
         proposal.passthrough = {
@@ -144,7 +144,7 @@ const Price = (() => {
         return proposal;
     };
 
-    const display = (details, contractType) => {
+    const display = (details, contract_type) => {
         const proposal = details.proposal;
         const id = proposal ? proposal.id : '';
         const params = details.echo_req;
@@ -186,7 +186,7 @@ const Price = (() => {
         const error         = container.getElementsByClassName('contract_error')[0];
         const currency = document.getElementById('currency');
 
-        const display_text = type && contractType ? contractType[type] : '';
+        const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
             h4.setAttribute('class', 'contract_heading ' + type);
             if (is_spread) {

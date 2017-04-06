@@ -4,7 +4,7 @@ const HighchartUI = (() => {
     let common_time_style,
         common_spot_style,
         txt,
-        chartOptions;
+        chart_options;
 
     const initLabels = () => {
         common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
@@ -40,7 +40,7 @@ const HighchartUI = (() => {
     };
 
     const setCartOptions = (params) => {
-        chartOptions = {
+        chart_options = {
             chart: {
                 backgroundColor: null, /* make background transparent */
                 height         : Math.max(params.height, 450),
@@ -104,7 +104,7 @@ const HighchartUI = (() => {
             rangeSelector: { enabled: false },
         };
         if (params.user_sold) {
-            chartOptions.series[0].zones.pop();
+            chart_options.series[0].zones.pop();
         }
     };
 
@@ -165,7 +165,7 @@ const HighchartUI = (() => {
         setLabels               : setLabels,
         getLabels               : getLabels,
         setCartOptions          : setCartOptions,
-        getChartOptions         : () => chartOptions,
+        getChartOptions         : () => chart_options,
         getHighchartOptions     : getHighchartOptions,
         replaceExitLabelWithSell: replaceExitLabelWithSell,
         getPlotlineOptions      : getPlotlineOptions,

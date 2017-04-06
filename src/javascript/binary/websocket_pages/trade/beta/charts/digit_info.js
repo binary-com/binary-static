@@ -116,7 +116,7 @@ const DigitInfo_Beta = (() => {
             elem = elem + '<option value="' + underlyings[i] + '">' + localize(symbols[underlyings[i]]) + '</option>';
         }
         elem += '</select>';
-        const contentId = document.getElementById('tab_last_digit-content');
+        const content_id = document.getElementById('tab_last_digit-content');
         const content = '<div class="gr-parent">' +
                 '<div id="last_digit_histo_form" class="gr-12 gr-12-m gr-centered">' +
                 '<form class="smallfont gr-row" action="#" method="post">' +
@@ -127,7 +127,7 @@ const DigitInfo_Beta = (() => {
                 '<div id="last_digit_histo" class="gr-12 gr-12-m gr-centered"></div>' +
                 '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
                 '</div>';
-        elementInnerHtml(contentId, content);
+        elementInnerHtml(content_id, content);
         $('[name=underlying]').val(underlying);
     };
 

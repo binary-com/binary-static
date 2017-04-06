@@ -157,9 +157,9 @@ const BinaryPjax = (() => {
         $.scrollTo('body', 500);
     };
 
-    const abortXHR = (xhrObj) => {
-        if (xhrObj && xhrObj.readyState < 4) {
-            xhrObj.abort();
+    const abortXHR = (xhr_obj) => {
+        if (xhr_obj && xhr_obj.readyState < 4) {
+            xhr_obj.abort();
         }
     };
 

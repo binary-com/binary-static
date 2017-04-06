@@ -48,8 +48,8 @@ const MBTick = (() => {
 
     const display = () => {
         $('#spot').fadeIn(200);
-        const spotElement = document.getElementById('spot');
-        if (!spotElement) return;
+        const spot_element = document.getElementById('spot');
+        if (!spot_element) return;
         let message = '';
         if (error_message) {
             message = error_message;
@@ -58,20 +58,20 @@ const MBTick = (() => {
         }
 
         if (parseFloat(message) !== +message) {
-            spotElement.className = 'error';
+            spot_element.className = 'error';
         } else {
-            spotElement.classList.remove('error');
-            MBTick.displayPriceMovement(parseFloat(spotElement.textContent), parseFloat(message));
+            spot_element.classList.remove('error');
+            MBTick.displayPriceMovement(parseFloat(spot_element.textContent), parseFloat(message));
         }
 
-        spotElement.textContent = message;
+        spot_element.textContent = message;
     };
 
     /*
      * Display price/spot movement variation to depict price moved up or down
      */
-    const displayPriceMovement = (oldValue, currentValue) => {
-        const className = (currentValue > oldValue) ? 'up' : (currentValue < oldValue) ? 'down' : 'still';
+    const displayPriceMovement = (old_value, current_value) => {
+        const className = (current_value > old_value) ? 'up' : (current_value < old_value) ? 'down' : 'still';
         $('#spot-dyn').attr('class', 'dynamics ' + className);
     };
 

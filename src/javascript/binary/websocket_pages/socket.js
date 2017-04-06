@@ -37,16 +37,16 @@ const Cookies              = require('../../lib/js-cookie');
 const BinarySocketClass = () => {
     'use strict';
 
-    let binarySocket,
-        bufferedSends = [],
+    let binary_socket,
+        buffered_sends = [],
         events = {},
-        authorized = false,
-        req_number = 0,
-        req_id     = 0,
-        wrongAppId = 0;
+        authorized   = false,
+        req_number   = 0,
+        req_id       = 0,
+        wrong_app_id = 0;
 
     const timeouts  = {};
-    const socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
+    const socket_url = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
     const promises  = {};
     const no_duplicate_requests = [
         'authorize',
@@ -92,13 +92,13 @@ const BinarySocketClass = () => {
         });
     };
 
-    const isReady = () => binarySocket && binarySocket.readyState === 1;
+    const isReady = () => binary_socket && binary_socket.readyState === 1;
 
-    const isClose = () => !binarySocket || binarySocket.readyState === 2 || binarySocket.readyState === 3;
+    const isClose = () => !binary_socket || binary_socket.readyState === 2 || binary_socket.readyState === 3;
 
     const sendBufferedSends = () => {
-        while (bufferedSends.length > 0) {
-            binarySocket.send(JSON.stringify(bufferedSends.shift()));
+        while (buffered_sends.length > 0) {
+            binary_socket.send(JSON.stringify(buffered_sends.shift()));
         }
     };
 
@@ -172,9 +172,9 @@ const BinarySocketClass = () => {
                 }, 10 * 1000);
             }
 
-            binarySocket.send(JSON.stringify(data));
+            binary_socket.send(JSON.stringify(data));
         } else {
-            bufferedSends.push(data);
+            buffered_sends.push(data);
             if (isClose()) {
                 init(1);
             }
@@ -192,26 +192,26 @@ const BinarySocketClass = () => {
     };
 
     const init = (es) => {
-        if (wrongAppId === getAppId()) {
+        if (wrong_app_id === getAppId()) {
             return;
         }
         if (!es) {
             events = {};
         }
         if (typeof es === 'object') {
-            bufferedSends = [];
+            buffered_sends = [];
             events = es;
             clearTimeouts();
         }
 
         if (isClose()) {
-            binarySocket = new WebSocket(socketUrl);
+            binary_socket = new WebSocket(socket_url);
         }
 
-        binarySocket.onopen = () => {
-            const apiToken = getLoginToken();
-            if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
-                binarySocket.send(JSON.stringify({ authorize: apiToken }));
+        binary_socket.onopen = () => {
+            const api_token = getLoginToken();
+            if (api_token && !authorized && localStorage.getItem('client.tokens')) {
+                binary_socket.send(JSON.stringify({ authorize: api_token }));
             } else {
                 sendBufferedSends();
             }
@@ -223,13 +223,13 @@ const BinarySocketClass = () => {
             if (isReady()) {
                 if (!Login.isLoginPages()) {
                     Client.validateLoginid();
-                    binarySocket.send(JSON.stringify({ website_status: 1 }));
+                    binary_socket.send(JSON.stringify({ website_status: 1 }));
                 }
                 Clock.startClock();
             }
         };
 
-        binarySocket.onmessage = (msg) => {
+        binary_socket.onmessage = (msg) => {
             const response = JSON.parse(msg.data);
             if (response) {
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
@@ -271,12 +271,12 @@ const BinarySocketClass = () => {
                 const error_code = getPropertyValue(response, ['error', 'code']);
                 if (type === 'authorize') {
                     if (response.error) {
-                        const isActiveTab = sessionStorage.getItem('active_tab') === '1';
-                        if (error_code === 'SelfExclusion' && isActiveTab) {
+                        const is_active_tab = sessionStorage.getItem('active_tab') === '1';
+                        if (error_code === 'SelfExclusion' && is_active_tab) {
                             sessionStorage.removeItem('active_tab');
                             window.alert(response.error.message);
                         }
-                        Client.sendLogoutRequest(isActiveTab);
+                        Client.sendLogoutRequest(is_active_tab);
                     } else if (response.authorize.loginid !== Cookies.get('loginid')) {
                         Client.sendLogoutRequest(true);
                     } else if (dispatch_to !== 'cashier_password') {
@@ -335,7 +335,7 @@ const BinarySocketClass = () => {
                         }
                         break;
                     case 'InvalidAppID':
-                        wrongAppId = getAppId();
+                        wrong_app_id = getAppId();
                         window.alert(response.error.message);
                         break;
                     // no default
@@ -347,12 +347,12 @@ const BinarySocketClass = () => {
             }
         };
 
-        binarySocket.onclose = () => {
+        binary_socket.onclose = () => {
             authorized = false;
             sent_requests = [];
             clearTimeouts();
 
-            if (wrongAppId !== getAppId()) {
+            if (wrong_app_id !== getAppId()) {
                 const toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
                                State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
                                State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
@@ -370,13 +370,13 @@ const BinarySocketClass = () => {
             }
         };
 
-        binarySocket.onerror = (error) => {
+        binary_socket.onerror = (error) => {
             console.log('socket error', error);
         };
     };
 
     const clear = () => {
-        bufferedSends = [];
+        buffered_sends = [];
         events = {};
     };
 
@@ -384,7 +384,7 @@ const BinarySocketClass = () => {
         init         : init,
         wait         : wait,
         send         : send,
-        socket       : () => binarySocket,
+        socket       : () => binary_socket,
         clear        : clear,
         clearTimeouts: clearTimeouts,
     };

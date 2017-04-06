@@ -92,9 +92,9 @@ const Tick = (() => {
             (end_time && (!isVisible(end_time) || moment(end_time.getAttribute('data-value')).isBefore(moment().add(1, 'day'), 'day')))) {
             const decimal_places = countDecimalPlaces(current_tick);
             if (indicative_barrier_tooltip && isVisible(indicative_barrier_tooltip)) {
-                const barrierValue = isNaN(parseFloat(barrier_element.value)) ? 0 : parseFloat(barrier_element.value);
+                const barrier_value = isNaN(parseFloat(barrier_element.value)) ? 0 : parseFloat(barrier_element.value);
                 indicative_barrier_tooltip.textContent =
-                    (parseFloat(current_tick) + barrierValue).toFixed(decimal_places);
+                    (parseFloat(current_tick) + barrier_value).toFixed(decimal_places);
             }
 
             if (indicative_high_barrier_tooltip && isVisible(indicative_high_barrier_tooltip)) {
