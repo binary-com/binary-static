@@ -75,22 +75,25 @@ const MBTick = (() => {
         $('#spot-dyn').attr('class', 'dynamics ' + className);
     };
 
+    const chart_config = {
+        type              : 'line',
+        lineColor         : '#606060',
+        fillColor         : false,
+        spotColor         : '#00f000',
+        minSpotColor      : '#0000f0',
+        maxSpotColor      : '#f00000',
+        highlightSpotColor: '#ffff00',
+        highlightLineColor: '#000000',
+        spotRadius        : 2,
+        width             : 200,
+        height            : 25,
+    };
+
+    let $chart;
+
     const updateWarmChart = () => {
-        const $chart = $('#trading_worm_chart');
+        $chart = $chart || $('#trading_worm_chart');
         const spots_array = Object.keys(MBTick.spots()).sort((a, b) => a - b).map(v => MBTick.spots()[v]);
-        const chart_config = {
-            type              : 'line',
-            lineColor         : '#606060',
-            fillColor         : false,
-            spotColor         : '#00f000',
-            minSpotColor      : '#0000f0',
-            maxSpotColor      : '#f00000',
-            highlightSpotColor: '#ffff00',
-            highlightLineColor: '#000000',
-            spotRadius        : 2,
-            width             : 200,
-            height            : 25,
-        };
         if ($chart && typeof $chart.sparkline === 'function') {
             $chart.sparkline(spots_array, chart_config);
             if (spots_array.length) {
@@ -139,6 +142,7 @@ const MBTick = (() => {
         clean          : ()  => {
             spots = {};
             quote = '';
+            $chart = null;
             $('#spot').fadeOut(200, () => {
                 // resets spot movement coloring, will continue on the next tick responses
                 $('#spot-dyn').removeAttr('class').text('');

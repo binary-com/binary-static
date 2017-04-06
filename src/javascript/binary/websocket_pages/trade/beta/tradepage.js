@@ -187,6 +187,7 @@ const TradePage_Beta = (() => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
         commonTrading.chartFrameCleanup();
+        commonTrading.clean();
         onLoad();
     };
 

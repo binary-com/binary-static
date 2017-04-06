@@ -295,7 +295,7 @@ const MBProcess = (() => {
         processContract        : processContract,
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
-        onUnload               : () => { clearSymbolTimeout(); MBSymbols.clearData(); },
+        onUnload               : () => { clearSymbolTimeout(); MBSymbols.clearData(); MBTick.clean(); },
     };
 })();
 

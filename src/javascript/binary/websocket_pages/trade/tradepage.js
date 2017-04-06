@@ -81,6 +81,7 @@ const TradePage = (() => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
         commonTrading.chartFrameCleanup();
+        commonTrading.clean();
         onLoad();
     };
 

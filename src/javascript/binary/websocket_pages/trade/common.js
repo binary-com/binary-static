@@ -628,20 +628,23 @@ const commonTrading = (() => {
         $('#contract_purchase_balance').text(`${localize('Account balance:')} ${formatMoney(Client.get('currency'), balance)}`);
     };
 
+    const chart_config = {
+        type              : 'line',
+        lineColor         : '#606060',
+        fillColor         : false,
+        spotColor         : '#00f000',
+        minSpotColor      : '#f00000',
+        maxSpotColor      : '#0000f0',
+        highlightSpotColor: '#ffff00',
+        highlightLineColor: '#000000',
+        spotRadius        : 1.25,
+    };
+
+    let $chart;
+
     const updateWarmChart = () => {
-        const $chart = $('#trading_worm_chart');
+        $chart = $chart || $('#trading_worm_chart');
         const spots =  Object.keys(Tick.spots()).sort((a, b) => a - b).map(v => Tick.spots()[v]);
-        const chart_config = {
-            type              : 'line',
-            lineColor         : '#606060',
-            fillColor         : false,
-            spotColor         : '#00f000',
-            minSpotColor      : '#f00000',
-            maxSpotColor      : '#0000f0',
-            highlightSpotColor: '#ffff00',
-            highlightLineColor: '#000000',
-            spotRadius        : 1.25,
-        };
         if ($chart && typeof $chart.sparkline === 'function') {
             $chart.sparkline(spots, chart_config);
             if (spots.length) {
@@ -840,6 +843,7 @@ const commonTrading = (() => {
         displayTooltip_Beta            : displayTooltip_Beta,
         labelValue                     : labelValue,
         timeIsValid                    : timeIsValid,
+        clean                          : () => { $chart = null; },
     };
 })();
 
