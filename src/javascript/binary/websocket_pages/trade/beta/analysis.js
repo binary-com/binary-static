@@ -17,7 +17,7 @@ const jpClient         = require('../../../common_functions/country_base').jpCli
  */
 
 /*
- * This is called whenever we change market, form
+ * This function is called whenever we change market, form
  * or underlying to load bet analysis for that particular event
  */
 
@@ -40,7 +40,7 @@ const TradingAnalysis_Beta = (() => {
     };
 
     /*
-     * binds event to link elements of bottom content
+     * This function bind event to link elements of bottom content
      * navigation
      */
     const bindAnalysisTabEvent = () => {
@@ -66,7 +66,7 @@ const TradingAnalysis_Beta = (() => {
     };
 
     /*
-     * handles all the functionality on how to load
+     * This function handles all the functionality on how to load
      * tab according to current paramerted
      */
     const loadAnalysisTab = () => {
@@ -116,7 +116,7 @@ const TradingAnalysis_Beta = (() => {
     };
 
     /*
-     * toggles the active element for analysis menu
+     * function to toggle the active element for analysis menu
      */
     const toggleActiveAnalysisTabs = () => {
         const current_tab = getActiveTab();

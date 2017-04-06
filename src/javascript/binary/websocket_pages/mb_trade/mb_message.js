@@ -39,7 +39,7 @@ const MBMessage = (() => {
             } else if (type === 'history') {
                 MBTick.processHistory(response);
             } else if (type === 'trading_times') {
-                Process.tradingTimes(response);
+                Process.processTradingTimes(response);
             } else if (type === 'portfolio') {
                 PortfolioInit.updatePortfolio(response);
             } else if (type === 'proposal_open_contract') {

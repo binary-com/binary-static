@@ -54,7 +54,7 @@ const RealityCheckData = (() => {
         return LocalStore.set('client.reality_check.' + key, value);
     };
 
-    // get variables that have values
+    // use this function to get variables that have values
     const get = (key) => {
         let value = reality_object[key] || LocalStore.get('client.reality_check.' + key) || '';
         if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {

@@ -1,7 +1,7 @@
 const MBTradePage          = require('./mb_trade/mb_tradepage');
 const TradePage_Beta       = require('./trade/beta/tradepage');
 const Highchart            = require('./trade/charts/highchart');
-const commonTrading        = require('./trade/common');
+const reloadPage           = require('./trade/common').reloadPage;
 const Notifications        = require('./trade/notifications');
 const TickDisplay          = require('./trade/tick_trade');
 const TradePage            = require('./trade/tradepage');
@@ -160,7 +160,7 @@ const BinarySocketClass = () => {
                 timeouts[req_number] = setTimeout(() => {
                     if (typeof reloadPage === 'function' && data.contracts_for) {
                         window.alert("The server didn't respond to the request:\n\n" + JSON.stringify(data) + '\n\n');
-                        commonTrading.reloadPage();
+                        reloadPage();
                     } else {
                         $('.price_container').hide();
                     }

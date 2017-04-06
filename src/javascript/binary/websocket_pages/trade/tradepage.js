@@ -1,19 +1,19 @@
-const TradingAnalysis   = require('./analysis');
-const commonTrading     = require('./common');
-const displayCurrencies = require('./currency');
-const Defaults          = require('./defaults');
-const TradingEvents     = require('./event');
-const Message           = require('./message');
-const Notifications     = require('./notifications');
-const Price             = require('./price');
-const Process           = require('./process');
-const Symbols           = require('./symbols');
-const ViewPopup         = require('../user/view_popup/view_popup');
-const BinaryPjax        = require('../../base/binary_pjax');
-const localize          = require('../../base/localize').localize;
-const State             = require('../../base/storage').State;
-const jpClient          = require('../../common_functions/country_base').jpClient;
-const Guide             = require('../../common_functions/guide');
+const TradingAnalysis      = require('./analysis');
+const commonTrading        = require('./common');
+const displayCurrencies    = require('./currency');
+const Defaults             = require('./defaults');
+const TradingEvents        = require('./event');
+const Message              = require('./message');
+const Notifications        = require('./notifications');
+const Price                = require('./price');
+const forgetTradingStreams = require('./process').forgetTradingStreams;
+const Symbols              = require('./symbols');
+const ViewPopup            = require('../user/view_popup/view_popup');
+const BinaryPjax           = require('../../base/binary_pjax');
+const localize             = require('../../base/localize').localize;
+const State                = require('../../base/storage').State;
+const jpClient             = require('../../common_functions/country_base').jpClient;
+const Guide                = require('../../common_functions/guide');
 
 const TradePage = (() => {
     'use strict';
@@ -71,7 +71,7 @@ const TradePage = (() => {
     const onUnload = () => {
         State.remove('is_trading');
         events_initialized = 0;
-        Process.forgetTradingStreams();
+        forgetTradingStreams();
         BinarySocket.clear();
         Defaults.clear();
         commonTrading.chartFrameCleanup();

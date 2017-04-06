@@ -7,8 +7,8 @@ const MBPrice              = require('./mb_price');
 const MBProcess            = require('./mb_process');
 const MBSymbols            = require('./mb_symbols');
 const TradingAnalysis      = require('../trade/analysis');
-const commonTrading        = require('../trade/common');
-const Process              = require('../trade/process');
+const chartFrameCleanup    = require('../trade/common').chartFrameCleanup;
+const forgetTradingStreams = require('../trade/process').forgetTradingStreams;
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
 const JapanPortfolio       = require('../../../binary_japan/trade_japan/portfolio');
@@ -53,7 +53,7 @@ const MBTradePage = (() => {
     };
 
     const onUnload = () => {
-        commonTrading.chartFrameCleanup();
+        chartFrameCleanup();
         window.chartAllowed = false;
         JapanPortfolio.hide();
         State.remove('is_mb_trading');
@@ -61,13 +61,13 @@ const MBTradePage = (() => {
         MBContract.onUnload();
         MBPrice.onUnload();
         MBProcess.onUnload();
-        Process.forgetTradingStreams();
+        forgetTradingStreams();
         BinarySocket.clear();
     };
 
     const onDisconnect = () => {
         MBPrice.showPriceOverlay();
-        commonTrading.chartFrameCleanup();
+        chartFrameCleanup();
         onLoad();
     };
 

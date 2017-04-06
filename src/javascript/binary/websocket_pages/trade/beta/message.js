@@ -25,20 +25,20 @@ const Message_Beta = (() => {
         if (response) {
             const type = response.msg_type;
             if (type === 'active_symbols') {
-                Process_Beta.activeSymbols_Beta(response);
+                Process_Beta.processActiveSymbols_Beta(response);
                 AssetIndexUI.setActiveSymbols(response);
                 TradingTimesUI.setActiveSymbols(response);
             } else if (type === 'contracts_for') {
                 Notifications.hide('CONNECTION_ERROR');
-                Process_Beta.contract_Beta(response);
+                Process_Beta.processContract_Beta(response);
                 window.contracts_for = response;
             } else if (type === 'proposal') {
-                Process_Beta.proposal_Beta(response);
+                Process_Beta.processProposal_Beta(response);
             } else if (type === 'buy') {
                 Purchase_Beta.display(response);
                 GTM.pushPurchaseData(response);
             } else if (type === 'tick') {
-                Process_Beta.tick_Beta(response);
+                Process_Beta.processTick_Beta(response);
             } else if (type === 'history') {
                 if (response.req_id === 1 || response.req_id === 2) {
                     DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
@@ -48,7 +48,7 @@ const Message_Beta = (() => {
             } else if (type === 'asset_index') {
                 AssetIndexUI.setAssetIndex(response);
             } else if (type === 'trading_times') {
-                Process_Beta.tradingTimes_Beta(response);
+                Process_Beta.processTradingTimes_Beta(response);
                 TradingTimesUI.setTradingTimes(response);
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);

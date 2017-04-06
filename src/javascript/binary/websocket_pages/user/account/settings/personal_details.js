@@ -134,7 +134,7 @@ const PersonalDetails = (() => {
                 { selector: '#hedge_asset_amount', validations: ['req', 'number'], parent_node: 'jp_settings' },
                 { selector: '#hedge_asset',        validations: ['req'], parent_node: 'jp_settings' },
             ];
-            $(form_id).find('select').each(function () {
+            $(form_id).find('select').each(function() {
                 validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
             });
         } else if (is_virtual) {

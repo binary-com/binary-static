@@ -29,7 +29,7 @@ const jqueryuiTabsToDropdown = ($container) => {
     return $ddl;
 };
 
-// generate elements and append them
+// use function to generate elements and append them
 // element is select and element to append is option
 const appendTextValueChild = (element, text, value, disabled, el_class) => {
     if (element && !element.nodeName) {
@@ -60,14 +60,14 @@ const makeOption = (text, value, disabled, el_class) => {
 };
 
 /*
- * check if element is visible or not
+ * function to check if element is visible or not
  *
  * alternative to jquery $('#id').is(':visible')
  */
 const isVisible = elem => !(!elem || (elem.offsetWidth === 0 && elem.offsetHeight === 0));
 
 /*
- * check if browser supports the type date/time
+ * function to check if browser supports the type date/time
  * send a wrong val in case browser 'pretends' to support
  */
 const checkInput = (type, wrongVal) => {
@@ -78,7 +78,7 @@ const checkInput = (type, wrongVal) => {
 };
 
 /*
- * check if new date is selected using native picker
+ * function to check if new date is selected using native picker
  * if yes, update the data-value. if no, return false.
  */
 const dateValueChanged = (element, type) => {

@@ -137,7 +137,7 @@ const TickDisplay_Beta = (() => {
             },
             credits: { enabled: false },
             tooltip: {
-                formatter: function () {
+                formatter: function() {
                     const new_y = this.y.toFixed(display_decimals);
                     const mom = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
                     return mom + '<br/>' + display_symbol + ' ' + new_y;
@@ -197,7 +197,7 @@ const TickDisplay_Beta = (() => {
                 tooltip: {
                     style: { display: 'none' },
 
-                    formatter: function () {
+                    formatter: function() {
                         const time = moment.utc(applicable_ticks[this.x].epoch * 1000).format('HH:mm:ss');
                         const this_price = addComma(this.y, display_decimals);
                         show_values(+this.x + (is_start_on_first_tick ? 1 : 0), time, this_price);

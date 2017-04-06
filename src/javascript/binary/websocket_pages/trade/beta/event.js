@@ -18,7 +18,7 @@ const onlyNumericOnKeypress          = require('../../../common_functions/event_
 const TimePicker                     = require('../../../components/time_picker');
 
 /*
- * TradingEvents object contains all the event handlers for
+ * TradingEvents object contains all the event handler function for
  * websocket trading page
  *
  * We need it as object so that we can call TradingEvent.init() only on trading
@@ -41,7 +41,7 @@ const TradingEvents_Beta = (() => {
             // it will default to proper one
             Defaults.remove('formname');
             Defaults.remove('underlying');
-            Process_Beta.market_Beta(1);
+            Process_Beta.processMarket_Beta(1);
             commonTrading.chartFrameSource();
         };
 
@@ -57,7 +57,7 @@ const TradingEvents_Beta = (() => {
          * and request for new Contract details to populate the form and request price accordingly
          */
         const contractFormEventChange = () => {
-            Process_Beta.contractForm_Beta();
+            Process_Beta.processContractForm_Beta();
             TradingAnalysis_Beta.request();
         };
 
@@ -109,7 +109,7 @@ const TradingEvents_Beta = (() => {
                     Contract_Beta.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
-                    Process_Beta.forgetTicks_Beta();
+                    Process_Beta.processForgetTicks_Beta();
                     // get ticks for current underlying
                     Tick.request(underlying);
                     commonTrading.displayTooltip_Beta(Defaults.get('market'), underlying);
@@ -306,7 +306,7 @@ const TradingEvents_Beta = (() => {
         /*
          * attach event to purchase buttons to buy the current contract
          */
-        $('.purchase_button').on('click dblclick', function () {
+        $('.purchase_button').on('click dblclick', function() {
             if (!isVisible(document.getElementById('confirmation_message_container'))) {
                 const id        = this.getAttribute('data-purchase-id');
                 const ask_price = this.getAttribute('data-ask-price');

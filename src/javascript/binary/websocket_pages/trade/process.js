@@ -66,7 +66,7 @@ const Process = (() => {
     };
 
     /*
-     * call when underlying has changed
+     * Function to call when underlying has changed
      */
     const processMarketUnderlying = () => {
         const underlying_element = document.getElementById('underlying');
@@ -352,15 +352,15 @@ const Process = (() => {
     };
 
     return {
-        activeSymbols       : processActiveSymbols,
-        market              : processMarket,
-        contract            : processContract,
-        contractForm        : processContractForm,
+        processActiveSymbols: processActiveSymbols,
+        processMarket       : processMarket,
+        processContract     : processContract,
+        processContractForm : processContractForm,
         forgetTradingStreams: forgetTradingStreams,
         forgetTicks         : forgetTicks,
-        tick                : processTick,
-        proposal            : processProposal,
-        tradingTimes        : processTradingTimes,
+        processTick         : processTick,
+        processProposal     : processProposal,
+        processTradingTimes : processTradingTimes,
         onExpiryTypeChange  : onExpiryTypeChange,
         onDurationUnitChange: onDurationUnitChange,
     };

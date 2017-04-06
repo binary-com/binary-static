@@ -18,7 +18,7 @@ const onlyNumericOnKeypress      = require('../../common_functions/event_handler
 const TimePicker                 = require('../../components/time_picker');
 
 /*
- * TradingEvents object contains all the event handlers for
+ * TradingEvents object contains all the event handler function for
  * websocket trading page
  *
  * We need it as object so that we can call TradingEvent.init() only on trading
@@ -41,7 +41,7 @@ const TradingEvents = (() => {
             // it will default to proper one
             Defaults.remove('formname');
             Defaults.remove('underlying');
-            Process.market(1);
+            Process.processMarket(1);
             commonTrading.chartFrameSource();
         };
 
@@ -57,7 +57,7 @@ const TradingEvents = (() => {
          * and request for new Contract details to populate the form and request price accordingly
          */
         const contractFormEventChange = () => {
-            Process.contractForm();
+            Process.processContractForm();
             TradingAnalysis.request();
         };
 
@@ -109,7 +109,7 @@ const TradingEvents = (() => {
                     Contract.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
-                    Process.forgetTicks();
+                    Process.processForgetTicks();
                     // get ticks for current underlying
                     Tick.request(underlying);
                     commonTrading.displayTooltip(Defaults.get('market'), underlying);

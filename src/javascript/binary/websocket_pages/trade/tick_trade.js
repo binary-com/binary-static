@@ -1,11 +1,11 @@
-const Highcharts       = require('highcharts');
-const moment           = require('moment');
-const commonTrading    = require('./common');
-const Tick             = require('./tick');
-const ViewPopupUI      = require('../user/view_popup/view_popup.ui');
-const localize         = require('../../base/localize').localize;
-const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
-const isVisible        = require('../../common_functions/common_functions').isVisible;
+const Highcharts           = require('highcharts');
+const moment               = require('moment');
+const updatePurchaseStatus = require('./common').updatePurchaseStatus;
+const Tick                 = require('./tick');
+const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
+const localize             = require('../../base/localize').localize;
+const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
+const isVisible            = require('../../common_functions/common_functions').isVisible;
 require('highcharts/modules/exporting')(Highcharts);
 
 const TickDisplay = (() => {
@@ -110,7 +110,7 @@ const TickDisplay = (() => {
             },
             credits: { enabled: false },
             tooltip: {
-                formatter: function () {
+                formatter: function() {
                     const new_y = this.y.toFixed(display_decimals);
                     const mom = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
                     return mom + '<br/>' + display_symbol + ' ' + new_y;
@@ -273,7 +273,7 @@ const TickDisplay = (() => {
     };
 
     const update_ui = (final_price, pnl, contract_status) => {
-        commonTrading.updatePurchaseStatus(final_price, final_price - pnl, contract_status);
+        updatePurchaseStatus(final_price, final_price - pnl, contract_status);
     };
 
     const socketSend = (req) => {

@@ -160,7 +160,7 @@ const AccountOpening = (() => {
         const validations = [];
         let validation,
             id;
-        $(form_id).find('select, input[type=checkbox]').each(function () {
+        $(form_id).find('select, input[type=checkbox]').each(function() {
             id = $(this).attr('id');
             if (id !== 'tnc') {
                 validation = { selector: `#${id}`, validations: ['req'] };

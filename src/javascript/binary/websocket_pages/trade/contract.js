@@ -1,7 +1,7 @@
-const commonTrading = require('./common');
-const getLanguage   = require('../../base/language').get;
-const localize      = require('../../base/localize').localize;
-const isEmptyObject = require('../../base/utility').isEmptyObject;
+const getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
+const getLanguage                = require('../../base/language').get;
+const localize                   = require('../../base/localize').localize;
+const isEmptyObject              = require('../../base/utility').isEmptyObject;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -72,7 +72,7 @@ const Contract = (() => {
         open = contracts.open;
         close = contracts.close;
 
-        const form_barrier = commonTrading.getFormNameBarrierCategory(form_name);
+        const form_barrier = getFormNameBarrierCategory(form_name);
         form = form_name = form_barrier.form_name;
         barrier = barrier_category = form_barrier.barrier_category;
 

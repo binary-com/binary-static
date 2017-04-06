@@ -66,7 +66,7 @@ const Process_Beta = (() => {
     };
 
     /*
-     * call when underlying has changed
+     * Function to call when underlying has changed
      */
     const marketUnderlying_Beta = () => {
         const underlying_element = document.getElementById('underlying');
@@ -357,15 +357,15 @@ const Process_Beta = (() => {
     };
 
     return {
-        activeSymbols_Beta       : processActiveSymbols_Beta,
-        market_Beta              : processMarket_Beta,
-        contract_Beta            : processContract_Beta,
-        contractForm_Beta        : processContractForm_Beta,
+        processActiveSymbols_Beta: processActiveSymbols_Beta,
+        processMarket_Beta       : processMarket_Beta,
+        processContract_Beta     : processContract_Beta,
+        processContractForm_Beta : processContractForm_Beta,
         forgetTradingStreams_Beta: forgetTradingStreams_Beta,
         forgetTicks_Beta         : forgetTicks_Beta,
-        tick_Beta                : processTick_Beta,
-        proposal_Beta            : processProposal_Beta,
-        tradingTimes_Beta        : processTradingTimes_Beta,
+        processTick_Beta         : processTick_Beta,
+        processProposal_Beta     : processProposal_Beta,
+        processTradingTimes_Beta : processTradingTimes_Beta,
         onExpiryTypeChange       : onExpiryTypeChange,
         onDurationUnitChange     : onDurationUnitChange,
     };

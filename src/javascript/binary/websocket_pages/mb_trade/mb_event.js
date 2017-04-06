@@ -1,15 +1,15 @@
-const MBContract         = require('./mb_contract');
-const MBDefaults         = require('./mb_defaults');
-const MBNotifications    = require('./mb_notifications');
-const MBProcess          = require('./mb_process');
-const MBTick             = require('./mb_tick');
-const TradingAnalysis    = require('../trade/analysis');
-const commonTrading      = require('../trade/common');
-const Process            = require('../trade/process');
-const jpClient           = require('../../common_functions/country_base').jpClient;
+const MBContract      = require('./mb_contract');
+const MBDefaults      = require('./mb_defaults');
+const MBNotifications = require('./mb_notifications');
+const MBProcess       = require('./mb_process');
+const MBTick          = require('./mb_tick');
+const TradingAnalysis = require('../trade/analysis');
+const debounce        = require('../trade/common').debounce;
+const Process         = require('../trade/process');
+const jpClient        = require('../../common_functions/country_base').jpClient;
 
 /*
- * TradingEvents object contains all the event handlers required for
+ * TradingEvents object contains all the event handler function required for
  * websocket trading page
  *
  * We need it as object so that we can call TradingEvent.init() only on trading
@@ -44,7 +44,7 @@ const MBTradingEvents = (() => {
                     MBContract.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
-                    Process.forgetTicks();
+                    Process.processForgetTicks();
                     // get ticks for current underlying
                     MBTick.request(underlying);
                     MBContract.displayDescriptions();
@@ -116,7 +116,7 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('payout', payout_def);
             }
             payout_element.addEventListener('keypress', payoutOnKeypress);
-            payout_element.addEventListener('input', commonTrading.debounce((e) => {
+            payout_element.addEventListener('input', debounce((e) => {
                 let payout = e.target.value;
 
                 if (!jpClient()) {

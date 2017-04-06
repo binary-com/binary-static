@@ -38,7 +38,7 @@ const Page = (() => {
         // page in all windows after switching loginid or after logout.
 
         // onLoad.queue does not work on the home page.
-        // jQuery's ready works always.
+        // jQuery's ready function works always.
         $(document).ready(() => {
             // Cookies is not always available.
             // So, fall back to a more basic solution.

@@ -6,7 +6,7 @@ const MBSymbols                 = require('./mb_symbols');
 const MBTick                    = require('./mb_tick');
 const TradingAnalysis           = require('../trade/analysis');
 const commonTrading             = require('../trade/common');
-const Process                   = require('../trade/process');
+const processForgetTicks        = require('../trade/process').processForgetTicks;
 const Client                    = require('../../base/client');
 const localize                  = require('../../base/localize').localize;
 const jpClient                  = require('../../common_functions/country_base').jpClient;
@@ -17,7 +17,7 @@ const MBProcess = (() => {
     let market_status = '',
         symbols_timeout;
     /*
-     * processes the active symbols to get markets
+     * This function processes the active symbols to get markets
      * and underlying list
      */
     const processActiveSymbols = (data) => {
@@ -93,7 +93,7 @@ const MBProcess = (() => {
     };
 
     /*
-     * call when underlying has changed
+     * Function to call when underlying has changed
      */
     const processMarketUnderlying = () => {
         const underlying_element = document.getElementById('underlying');
@@ -110,7 +110,7 @@ const MBProcess = (() => {
         commonTrading.showFormOverlay();
 
         // forget the old tick id i.e. close the old tick stream
-        Process.forgetTicks();
+        processForgetTicks();
         // get ticks for current underlying
         MBTick.request(underlying);
 
@@ -124,7 +124,7 @@ const MBProcess = (() => {
     };
 
     /*
-     * process ticks stream
+     * Function to process ticks stream
      */
     const processTick = (tick) => {
         if (tick.hasOwnProperty('error')) {
@@ -140,7 +140,7 @@ const MBProcess = (() => {
     };
 
     /*
-     * display contract form for current underlying
+     * Function to display contract form for current underlying
      */
     const processContract = (contracts) => {
         if (contracts.hasOwnProperty('error')) {

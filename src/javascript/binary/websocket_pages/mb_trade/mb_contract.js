@@ -80,7 +80,7 @@ const MBContract = (() => {
         return text_value.toString();
     };
 
-    // generates elements and append them
+    // use function to generate elements and append them
     // e.g. element is select and element to append is option
     const appendTextValueChild = (element, string, value, isSelected) => {
         if (element && !element.nodeName) {

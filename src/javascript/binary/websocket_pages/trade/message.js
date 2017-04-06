@@ -23,18 +23,18 @@ const Message = (() => {
         if (response) {
             const type = response.msg_type;
             if (type === 'active_symbols') {
-                Process.activeSymbols(response);
+                Process.processActiveSymbols(response);
             } else if (type === 'contracts_for') {
                 Notifications.hide('CONNECTION_ERROR');
-                Process.contract(response);
+                Process.processContract(response);
                 window.contracts_for = response;
             } else if (type === 'proposal') {
-                Process.proposal(response);
+                Process.processProposal(response);
             } else if (type === 'buy') {
                 Purchase.display(response);
                 GTM.pushPurchaseData(response);
             } else if (type === 'tick') {
-                Process.tick(response);
+                Process.processTick(response);
             } else if (type === 'history') {
                 if (response.req_id === 1 || response.req_id === 2) {
                     DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
@@ -42,7 +42,7 @@ const Message = (() => {
                     Tick.processHistory(response);
                 }
             } else if (type === 'trading_times') {
-                Process.tradingTimes(response);
+                Process.processTradingTimes(response);
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);
             } else if (type === 'portfolio') {
