@@ -1,8 +1,8 @@
 const moment                 = require('moment');
 const TradingTimes           = require('../trading_times');
+const localize               = require('../../../base/localize').localize;
 const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
-const localize               = require('../../../base/localize').localize;
 const Table                  = require('../../../common_functions/attach_dom/table');
 const dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
 const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
@@ -21,7 +21,7 @@ const TradingTimesUI = (() => {
         trading_times,
         is_framed;
 
-    const onLoad = function(config) {
+    const onLoad = (config) => {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
@@ -70,17 +70,17 @@ const TradingTimesUI = (() => {
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {
-            const tabID = 'market_' + (m + 1);
+            const tab_id = 'market_' + (m + 1);
 
             // contents
-            const $market = $('<div/>', { id: tabID });
+            const $market = $('<div/>', { id: tab_id });
             $market.append(createMarketTables(markets[m], is_japan_trading));
             if ($market.find('table tr').length) {
                 $contents.append($market);
 
                 // tabs
                 if (!is_japan_trading) {
-                    $ul.append($('<li/>').append($('<a/>', { href: '#' + tabID, text: markets[m].name, id: 'outline' })));
+                    $ul.append($('<li/>').append($('<a/>', { href: '#' + tab_id, text: markets[m].name, id: 'outline' })));
                 }
             }
         }
@@ -191,7 +191,7 @@ const TradingTimesUI = (() => {
             req.landing_company = 'japan';
         }
         if (should_request_active_symbols) {
-            BinarySocket.send(req).then((response) => {
+            BinarySocket.send(req, false, 'active_symbols').then((response) => {
                 TradingTimesUI.setActiveSymbols(response);
             });
         }

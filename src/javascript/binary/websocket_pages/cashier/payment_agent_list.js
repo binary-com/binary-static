@@ -7,8 +7,8 @@ const PaymentAgentList = (() => {
     let $pa_list_container,
         $agent_template;
 
-    const ddl_countries_id = '#target_country',
-        hidden_class = 'hidden';
+    const ddl_countries_id = '#target_country';
+    const hidden_class = 'hidden';
 
     const onLoad = () => {
         $(() => {

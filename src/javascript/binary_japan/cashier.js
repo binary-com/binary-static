@@ -5,7 +5,7 @@ const defaultRedirectUrl = require('../binary/base/url').defaultRedirectUrl;
 const jpClient           = require('../binary/common_functions/country_base').jpClient;
 const jpResidence        = require('../binary/common_functions/country_base').jpResidence;
 
-const CashierJP = (function() {
+const CashierJP = (() => {
     'use strict';
 
     const onLoad = (action) => {

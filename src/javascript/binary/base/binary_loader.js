@@ -7,7 +7,7 @@ const Login              = require('./login');
 const Page               = require('./page');
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 
-const BinaryLoader = (function() {
+const BinaryLoader = (() => {
     'use strict';
 
     let container,
@@ -43,7 +43,7 @@ const BinaryLoader = (function() {
         }
     };
 
-    const errorMessages = {
+    const error_messages = {
         login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [Login.loginUrl()]),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
@@ -53,16 +53,16 @@ const BinaryLoader = (function() {
         active_script = config.module;
         if (config.is_authenticated) {
             if (!Client.isLoggedIn()) {
-                displayMessage(errorMessages.login());
+                displayMessage(error_messages.login());
             } else {
                 BinarySocket.wait('authorize')
                     .then((response) => {
                         if (response.error) {
-                            displayMessage(errorMessages.login());
+                            displayMessage(error_messages.login());
                         } else if (config.only_virtual && !Client.get('is_virtual')) {
-                            displayMessage(errorMessages.only_virtual);
+                            displayMessage(error_messages.only_virtual);
                         } else if (config.only_real && Client.get('is_virtual')) {
-                            displayMessage(errorMessages.only_real);
+                            displayMessage(error_messages.only_real);
                         } else {
                             active_script.onLoad();
                         }
