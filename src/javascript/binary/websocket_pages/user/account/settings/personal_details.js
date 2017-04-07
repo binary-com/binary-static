@@ -8,7 +8,7 @@ const FormManager   = require('../../../../common_functions/form_manager');
 const moment        = require('moment');
 require('select2');
 
-const SettingsDetailsWS = (function() {
+const PersonalDetails = (() => {
     'use strict';
 
     const form_id = '#frmPersonalDetails';
@@ -134,7 +134,7 @@ const SettingsDetailsWS = (function() {
                 { selector: '#hedge_asset_amount', validations: ['req', 'number'], parent_node: 'jp_settings' },
                 { selector: '#hedge_asset',        validations: ['req'], parent_node: 'jp_settings' },
             ];
-            $(form_id).find('select').each(function () {
+            $(form_id).find('select').each(function() {
                 validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
             });
         } else if (is_virtual) {
@@ -195,8 +195,10 @@ const SettingsDetailsWS = (function() {
         const $tax_residence  = $('#tax_residence');
         if (residence_list.length > 0) {
             const $options = $('<div/>');
+            const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
                 $options.append(makeOption(res.text, res.value));
+                $options_with_disabled.append(makeOption(res.text, res.value, res.disabled));
             });
 
             if (residence) {
@@ -213,14 +215,14 @@ const SettingsDetailsWS = (function() {
             } else {
                 $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
                 const $residence = $('#residence');
-                $options.prepend($('<option/>', { text: localize('Please select a value'), value: '' }));
-                $residence.html($options.html());
+                $options_with_disabled.prepend($('<option/>', { text: localize('Please select a value'), value: '' }));
+                $residence.html($options_with_disabled.html());
                 initFormManager();
             }
         }
     };
 
-    const populateStates = function(response) {
+    const populateStates = (response) => {
         const address_state = '#address_state';
         let $field = $(address_state);
         const states = response.states_list;
@@ -229,7 +231,7 @@ const SettingsDetailsWS = (function() {
 
         if (states && states.length > 0) {
             $field.append($('<option/>', { value: '', text: localize('Please select') }));
-            states.forEach(function(state) {
+            states.forEach((state) => {
                 $field.append($('<option/>', { value: state.value, text: state.text }));
             });
         } else {
@@ -271,4 +273,4 @@ const SettingsDetailsWS = (function() {
     };
 })();
 
-module.exports = SettingsDetailsWS;
+module.exports = PersonalDetails;

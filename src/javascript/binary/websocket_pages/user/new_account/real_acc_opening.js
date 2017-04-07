@@ -3,7 +3,7 @@ const Client         = require('../../../base/client');
 const AccountOpening = require('../../../common_functions/account_opening');
 const FormManager    = require('../../../common_functions/form_manager');
 
-const RealAccOpening = (function() {
+const RealAccOpening = (() => {
     'use strict';
 
 

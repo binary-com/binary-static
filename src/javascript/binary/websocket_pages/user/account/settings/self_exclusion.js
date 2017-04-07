@@ -3,10 +3,10 @@ const Client           = require('../../../../base/client');
 const localize         = require('../../../../base/localize').localize;
 const dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
 const FormManager      = require('../../../../common_functions/form_manager');
-const DatePicker       = require('../../../../components/date_picker').DatePicker;
-const TimePicker       = require('../../../../components/time_picker').TimePicker;
+const DatePicker       = require('../../../../components/date_picker');
+const TimePicker       = require('../../../../components/time_picker');
 
-const SelfExclusion = (function() {
+const SelfExclusion = (() => {
     'use strict';
 
     let $form,
@@ -20,7 +20,7 @@ const SelfExclusion = (function() {
     const error_class      = 'errorfield';
     const hidden_class     = 'invisible';
 
-    const onLoad = function() {
+    const onLoad = () => {
         $form = $(form_id);
 
         fields = {};
@@ -48,7 +48,7 @@ const SelfExclusion = (function() {
             $('#loading').addClass(hidden_class);
             $form.removeClass(hidden_class);
             self_exclusion_data = response.get_self_exclusion;
-            $.each(self_exclusion_data, function(key, value) {
+            $.each(self_exclusion_data, (key, value) => {
                 fields[key] = value + '';
                 $form.find(`#${key}`).val(value);
             });
@@ -137,18 +137,20 @@ const SelfExclusion = (function() {
     const dateFormat = elm_id => ($(elm_id).val() ? toMoment($(elm_id).val()).format('YYYY-MM-DD') : '');
     const getTimeout = () => ($(timeout_date_id).val() ? moment((dateFormat(timeout_date_id) + ' ' + $(timeout_time_id).val()).trim()).valueOf() / 1000 : '');
 
-    const initDatePicker = function() {
+    const initDatePicker = () => {
         // timeout_until
-        new TimePicker(timeout_time_id).show();
-        new DatePicker(timeout_date_id).show({
-            minDate: 'today',
-            maxDate: 6 * 7, // 6 weeks
+        TimePicker.init({ selector: timeout_time_id });
+        DatePicker.init({
+            selector: timeout_date_id,
+            minDate : 0,
+            maxDate : 6 * 7, // 6 weeks
         });
 
         // exclude_until
-        new DatePicker(exclude_until_id).show({
-            minDate: moment().add(6, 'months').add(1, 'day').toDate(),
-            maxDate: 5 * 365, // 5 years
+        DatePicker.init({
+            selector: exclude_until_id,
+            minDate : moment().add(6, 'months').add(1, 'day').toDate(),
+            maxDate : 5 * 365, // 5 years
         });
 
         $(`${timeout_date_id}, ${exclude_until_id}`).change(function() {
@@ -172,7 +174,7 @@ const SelfExclusion = (function() {
         return is_changed && is_confirmed;
     };
 
-    const setExclusionResponse = function(response) {
+    const setExclusionResponse = (response) => {
         if (response.error) {
             const error_msg = response.error.message;
             const error_fld = response.error.field;
@@ -188,7 +190,7 @@ const SelfExclusion = (function() {
         getData();
     };
 
-    const showFormMessage = function(msg, is_success) {
+    const showFormMessage = (msg, is_success) => {
         $('#msg_form')
             .attr('class', is_success ? 'success-msg' : error_class)
             .html(is_success ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))

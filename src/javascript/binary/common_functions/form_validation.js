@@ -101,13 +101,13 @@ const Validation = (() => {
             !(new RegExp('^\\d+(\\.\\d{' + options.decimals.replace(/ /g, '') + '})?$').test(value))) {
             is_ok = false;
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
-        } else if ('min' in options && 'max' in options && (+value < +options.min || compareBigUnsignedInt(value, options.max) === 1)) {
+        } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
             is_ok = false;
             message = localize('Should be between [_1] and [_2]', [options.min, options.max]);
         } else if ('min' in options && +value < +options.min) {
             is_ok = false;
             message = localize('Should be more than [_1]', [options.min]);
-        } else if ('max' in options && compareBigUnsignedInt(value, options.max) === 1) {
+        } else if ('max' in options && isMoreThanMax(value, options)) {
             is_ok = false;
             message = localize('Should be less than [_1]', [options.max]);
         }
@@ -115,6 +115,9 @@ const Validation = (() => {
         validators_map.number.message = message;
         return is_ok;
     };
+
+    const isMoreThanMax = (value, options) =>
+        (options.type === 'float' ? +value > +options.max : compareBigUnsignedInt(value, options.max) === 1);
 
     const validators_map = {
         req          : { func: validRequired,     message: '' },

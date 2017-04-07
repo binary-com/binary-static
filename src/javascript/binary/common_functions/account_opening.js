@@ -71,14 +71,21 @@ const AccountOpening = (() => {
 
             $('#lbl_residence').html($('<strong/>', { text: residence_text }));
             $place_of_birth.html($options.html()).val(residence_value);
-            $tax_residence.html($options.html()).promise().done(() => {
-                setTimeout(() => {
-                    $tax_residence.select2()
-                        .val(residence_value).trigger('change')
-                        .removeClass('invisible');
-                }, 500);
-            });
+            if ($tax_residence) {
+                $tax_residence.html($options.html()).promise().done(() => {
+                    setTimeout(() => {
+                        $tax_residence.select2()
+                            .val(getTaxResidence() || residence_value).trigger('change')
+                            .removeClass('invisible');
+                    }, 500);
+                });
+            }
         }
+    };
+
+    const getTaxResidence = () => {
+        const tax_residence = State.get(['response', 'get_settings', 'get_settings'] || {}).tax_residence;
+        return (tax_residence ? tax_residence.split(',') : '');
     };
 
     const handleState = (states_list, form_id, getValidations) => {
@@ -153,7 +160,7 @@ const AccountOpening = (() => {
         const validations = [];
         let validation,
             id;
-        $(form_id).find('select, input[type=checkbox]').each(function () {
+        $(form_id).find('select, input[type=checkbox]').each(function() {
             id = $(this).attr('id');
             if (id !== 'tnc') {
                 validation = { selector: `#${id}`, validations: ['req'] };

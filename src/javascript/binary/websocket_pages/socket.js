@@ -1,12 +1,12 @@
 const MBTradePage          = require('./mb_trade/mb_tradepage');
 const TradePage_Beta       = require('./trade/beta/tradepage');
-const Highchart            = require('./trade/charts/highchartws').Highchart;
+const Highchart            = require('./trade/charts/highchart');
 const reloadPage           = require('./trade/common').reloadPage;
-const Notifications        = require('./trade/notifications').Notifications;
-const WSTickDisplay        = require('./trade/tick_trade').WSTickDisplay;
+const Notifications        = require('./trade/notifications');
+const TickDisplay          = require('./trade/tick_trade');
 const TradePage            = require('./trade/tradepage');
-const ViewPopupWS          = require('./user/view_popup/view_popupws');
-const ViewBalanceUI        = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
+const ViewPopup            = require('./user/view_popup/view_popup');
+const updateBalance        = require('./user/update_balance');
 const Client               = require('../base/client');
 const Clock                = require('../base/clock');
 const GTM                  = require('../base/gtm');
@@ -34,28 +34,29 @@ const Cookies              = require('../../lib/js-cookie');
  * `BinarySocket.init()` to initiate the connection
  * `BinarySocket.send({contracts_for : 1})` to send message to server
  */
-const BinarySocketClass = function() {
+const BinarySocketClass = () => {
     'use strict';
 
-    let binarySocket,
-        bufferedSends = [],
-        manualClosed = false,
+    let binary_socket,
+        buffered_sends = [],
         events = {},
-        authorized = false,
+        authorized   = false,
         is_available = true,
-        req_number = 0,
-        req_id     = 0,
-        wrongAppId = 0;
+        req_number   = 0,
+        req_id       = 0,
+        wrong_app_id = 0;
 
     const timeouts  = {};
-    const socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
+    const socket_url = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
     const promises  = {};
     const no_duplicate_requests = [
         'authorize',
         'get_settings',
         'residence_list',
         'landing_company',
+        'payout_currencies',
     ];
+    let sent_requests = [];
     const waiting_list = {
         items: {},
         add  : (msg_type, promise_obj) => {
@@ -85,24 +86,20 @@ const BinarySocketClass = function() {
         ),
     };
 
-    const clearTimeouts = function() {
-        Object.keys(timeouts).forEach(function(key) {
+    const clearTimeouts = () => {
+        Object.keys(timeouts).forEach((key) => {
             clearTimeout(timeouts[key]);
             delete timeouts[key];
         });
     };
 
-    const isReady = function () {
-        return binarySocket && binarySocket.readyState === 1;
-    };
+    const isReady = () => binary_socket && binary_socket.readyState === 1;
 
-    const isClose = function () {
-        return !binarySocket || binarySocket.readyState === 2 || binarySocket.readyState === 3;
-    };
+    const isClose = () => !binary_socket || binary_socket.readyState === 2 || binary_socket.readyState === 3;
 
-    const sendBufferedSends = function () {
-        while (bufferedSends.length > 0) {
-            binarySocket.send(JSON.stringify(bufferedSends.shift()));
+    const sendBufferedSends = () => {
+        while (buffered_sends.length > 0) {
+            binary_socket.send(JSON.stringify(buffered_sends.shift()));
         }
     };
 
@@ -126,16 +123,24 @@ const BinarySocketClass = function() {
         return promise_obj.promise;
     };
 
-    const send = function(data, force_send) {
+    const send = (data, force_send, msg_type) => {
         const promise_obj = new PromiseClass();
 
-        if (!force_send) {
-            const msg_type = no_duplicate_requests.find(c => c in data);
+        msg_type = msg_type || no_duplicate_requests.find(c => c in data);
+        if (!force_send && msg_type) {
             const last_response = State.get(['response', msg_type]);
             if (last_response) {
                 promise_obj.resolve(last_response);
                 return promise_obj.promise;
+            } else if (sent_requests.indexOf(msg_type) >= 0) {
+                return wait(msg_type).then((response) => {
+                    promise_obj.resolve(response);
+                    return promise_obj.promise;
+                });
             }
+        }
+        if (msg_type) {
+            sent_requests.push(msg_type);
         }
 
         if (!data.req_id) {
@@ -153,7 +158,7 @@ const BinarySocketClass = function() {
             // temporary check
             if ((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !State.get('is_mb_trading')) {
                 data.passthrough.req_number = ++req_number;
-                timeouts[req_number] = setTimeout(function() {
+                timeouts[req_number] = setTimeout(() => {
                     if (typeof reloadPage === 'function' && data.contracts_for) {
                         window.alert("The server didn't respond to the request:\n\n" + JSON.stringify(data) + '\n\n');
                         reloadPage();
@@ -163,14 +168,14 @@ const BinarySocketClass = function() {
                 }, 60 * 1000);
             } else if (data.contracts_for && !data.passthrough.hasOwnProperty('dispatch_to') && State.get('is_mb_trading')) {
                 data.passthrough.req_number = ++req_number;
-                timeouts[req_number] = setTimeout(function() {
+                timeouts[req_number] = setTimeout(() => {
                     MBTradePage.onDisconnect();
                 }, 10 * 1000);
             }
 
-            binarySocket.send(JSON.stringify(data));
+            binary_socket.send(JSON.stringify(data));
         } else {
-            bufferedSends.push(data);
+            buffered_sends.push(data);
             if (isClose()) {
                 init(1);
             }
@@ -180,35 +185,34 @@ const BinarySocketClass = function() {
     };
 
     const setResidence = (residence) => {
-        if (residence && !Cookies.get('residence')) {
+        if (residence) {
             Client.setCookie('residence', residence);
             Client.set('residence', residence);
             send({ landing_company: residence });
         }
     };
 
-    const init = function (es) {
-        if (wrongAppId === getAppId()) {
+    const init = (es) => {
+        if (wrong_app_id === getAppId()) {
             return;
         }
         if (!es) {
             events = {};
         }
         if (typeof es === 'object') {
-            bufferedSends = [];
-            manualClosed = false;
+            buffered_sends = [];
             events = es;
             clearTimeouts();
         }
 
         if (isClose()) {
-            binarySocket = new WebSocket(socketUrl);
+            binary_socket = new WebSocket(socket_url);
         }
 
-        binarySocket.onopen = function () {
-            const apiToken = getLoginToken();
-            if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
-                binarySocket.send(JSON.stringify({ authorize: apiToken }));
+        binary_socket.onopen = () => {
+            const api_token = getLoginToken();
+            if (api_token && !authorized && localStorage.getItem('client.tokens')) {
+                binary_socket.send(JSON.stringify({ authorize: api_token }));
             } else {
                 sendBufferedSends();
             }
@@ -220,13 +224,13 @@ const BinarySocketClass = function() {
             if (isReady()) {
                 if (!Login.isLoginPages()) {
                     Client.validateLoginid();
-                    binarySocket.send(JSON.stringify({ website_status: 1, subscribe: 1 }));
+                    binary_socket.send(JSON.stringify({ website_status: 1, subscribe: 1 }));
                 }
                 Clock.startClock();
             }
         };
 
-        binarySocket.onmessage = function(msg) {
+        binary_socket.onmessage = (msg) => {
             const response = JSON.parse(msg.data);
             if (response) {
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
@@ -239,9 +243,9 @@ const BinarySocketClass = function() {
                         delete timeouts[this_req_number];
                     } else {
                         switch (dispatch_to) {
-                            case 'ViewPopupWS':       ViewPopupWS.dispatch(response); break;
-                            case 'ViewChartWS':       Highchart.dispatch(response);   break;
-                            case 'ViewTickDisplayWS': WSTickDisplay.dispatch(response); break;
+                            case 'ViewPopup':       ViewPopup.dispatch(response);   break;
+                            case 'ViewChart':       Highchart.dispatch(response);   break;
+                            case 'ViewTickDisplay': TickDisplay.dispatch(response); break;
                             // no default
                         }
                     }
@@ -273,12 +277,12 @@ const BinarySocketClass = function() {
                     $('#site-status-message').css('display', is_available ? 'none' : 'block').find('.message').html(response.message);
                 } else if (type === 'authorize') {
                     if (response.error) {
-                        const isActiveTab = sessionStorage.getItem('active_tab') === '1';
-                        if (error_code === 'SelfExclusion' && isActiveTab) {
+                        const is_active_tab = sessionStorage.getItem('active_tab') === '1';
+                        if (error_code === 'SelfExclusion' && is_active_tab) {
                             sessionStorage.removeItem('active_tab');
                             window.alert(response.error.message);
                         }
-                        Client.sendLogoutRequest(isActiveTab);
+                        Client.sendLogoutRequest(is_active_tab);
                     } else if (response.authorize.loginid !== Cookies.get('loginid')) {
                         Client.sendLogoutRequest(true);
                     } else if (dispatch_to !== 'cashier_password') {
@@ -299,7 +303,7 @@ const BinarySocketClass = function() {
                         sendBufferedSends();
                     }
                 } else if (type === 'balance') {
-                    ViewBalanceUI.updateBalances(response);
+                    updateBalance(response);
                 } else if (type === 'logout') {
                     Client.doLogout(response);
                 } else if (type === 'landing_company') {
@@ -337,7 +341,7 @@ const BinarySocketClass = function() {
                         }
                         break;
                     case 'InvalidAppID':
-                        wrongAppId = getAppId();
+                        wrong_app_id = getAppId();
                         window.alert(response.error.message);
                         break;
                     // no default
@@ -349,17 +353,18 @@ const BinarySocketClass = function() {
             }
         };
 
-        binarySocket.onclose = function () {
+        binary_socket.onclose = () => {
             authorized = false;
+            sent_requests = [];
             clearTimeouts();
 
-            if (!manualClosed && wrongAppId !== getAppId()) {
+            if (wrong_app_id !== getAppId()) {
                 const toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
                                State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
                                State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
                 if (toCall) {
                     Notifications.show({ text: localize('Connection error: Please check your internet connection.'), uid: 'CONNECTION_ERROR', dismissible: true });
-                    timeouts.error = setTimeout(function() {
+                    timeouts.error = setTimeout(() => {
                         toCall();
                     }, 10 * 1000);
                 } else {
@@ -371,23 +376,13 @@ const BinarySocketClass = function() {
             }
         };
 
-        binarySocket.onerror = function (error) {
+        binary_socket.onerror = (error) => {
             console.log('socket error', error);
         };
     };
 
-    const close = function () {
-        manualClosed = true;
-        bufferedSends = [];
-        events = {};
-        if (binarySocket) {
-            binarySocket.close();
-        }
-    };
-
-    const clear = function() {
-        bufferedSends = [];
-        manualClosed = false;
+    const clear = () => {
+        buffered_sends = [];
         events = {};
     };
 
@@ -395,8 +390,7 @@ const BinarySocketClass = function() {
         init         : init,
         wait         : wait,
         send         : send,
-        close        : close,
-        socket       : function () { return binarySocket; },
+        socket       : () => binary_socket,
         clear        : clear,
         clearTimeouts: clearTimeouts,
     };

@@ -169,7 +169,7 @@ sub _texts {
         push @texts, localize('Please log in.');
         push @texts, localize('All markets are closed now. Please try again later.');
         push @texts, localize('Account balance:');
-        #strings for limitsws page
+        #strings for limits page
         push @texts, localize('Your account is fully authenticated and your withdrawal limits have been lifted.');
         push @texts, localize('Your withdrawal limit is [_1] [_2].');
         push @texts, localize('Your withdrawal limit is [_1] [_2] (or equivalent in other currency).');
@@ -179,10 +179,10 @@ sub _texts {
         push @texts, localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).');
         push @texts, localize('Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).');
         push @texts, localize('You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.');
-        # back-end strings for limitsws page
+        # back-end strings for limits page
         push @texts, localize('Major Pairs');
         push @texts, localize('Forex');
-        #strings for detailsws
+        #strings for personal details
         push @texts, localize('This field is required.');
         push @texts, localize('Please select the checkbox.');
         push @texts, localize('Please accept the terms and conditions.');
@@ -193,7 +193,7 @@ sub _texts {
         push @texts, localize('Sorry, an error occurred while processing your account.');
         push @texts, localize('Your changes have been updated successfully.');
         push @texts, localize('Your settings have been updated successfully.');
-        #strings for home and virtualws page
+        #strings for home and virtual account opening page
         push @texts, localize('verification token');
         push @texts, localize('email address');
         push @texts, localize('Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.');
@@ -203,17 +203,17 @@ sub _texts {
         push @texts, localize('Please [_1] to view this page');
         push @texts, localize('login');
         push @texts, localize('Your session duration limit will end in [_1] seconds.');
-        #strings for realws page
+        #strings for real account opening page
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
         push @texts, localize('Minimum of [_1] characters required.');
-        #strings for trading_timesws page
+        #strings for trading times page
         push @texts, localize('Asset');
         push @texts, localize('Opens');
         push @texts, localize('Closes');
         push @texts, localize('Settles');
         push @texts, localize('Upcoming Events');
-        # back-end strings for trading_timesws page
+        # back-end strings for trading times page
         push @texts, localize('Closes early (at 21:00)');
         push @texts, localize('Closes early (at 18:00)');
         push @texts, localize("New Year's Day");
@@ -221,7 +221,7 @@ sub _texts {
         push @texts, localize('Fridays');
         push @texts, localize('today');
         push @texts, localize('today, Fridays');
-        #strings for paymentagent_withdrawws page
+        #strings for paymentagent_withdraw page
         push @texts, localize('Please select a payment agent');
         push @texts, localize('The Payment Agent facility is currently not available in your country.');
         push @texts, localize('Invalid amount, minimum is');
@@ -229,7 +229,7 @@ sub _texts {
         push @texts, localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.');
         push @texts, localize('Only [_1] decimal points are allowed.');
         push @texts, localize('Your token has expired. Please click [_1]here[_2] to restart the verification process.');
-        #strings for api_tokenws page
+        #strings for api_token page
         push @texts, localize('New token created.');
         push @texts, localize('The maximum number of tokens ([_1]) has been reached.');
         push @texts, localize('Name');
@@ -250,10 +250,10 @@ sub _texts {
         push @texts, localize('Select your trade type');
         push @texts, localize('Adjust trade parameters');
         push @texts, localize('Predict the direction<br />and purchase');
-        #strings for top_up_virtualws
+        #strings for top_up_virtual
         push @texts, localize('Sorry, this feature is available to virtual accounts only.');
         push @texts, localize('[_1] [_2] has been credited to your Virtual money account [_3]');
-        #strings for self_exclusionws
+        #strings for self_exclusion
         push @texts, localize('years');
         push @texts, localize('months');
         push @texts, localize('weeks');
@@ -269,7 +269,7 @@ sub _texts {
         push @texts, localize('Exclude time cannot be less than 6 months.');
         push @texts, localize('Exclude time cannot be for more than 5 years.');
         push @texts, localize('When you click "OK" you will be excluded from trading on the site until the selected date.');
-        #strings for change_passwordws
+        #strings for change_password
         push @texts, localize('Old password is wrong.');
         #strings for portfolio
         push @texts, localize('Ref.');
@@ -293,7 +293,7 @@ sub _texts {
         push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
         push @texts, localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
         push @texts, localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
-        #strings for japanws page
+        #strings for japan account opening page
         push @texts, localize('Japan');
         push @texts, localize('Questions');
         push @texts, localize('True');
@@ -343,15 +343,17 @@ sub _texts {
         push @texts, localize('This symbol is not active. Please try another symbol.');
         push @texts, localize('Connection error: Please check your internet connection.');
         push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
-        #strings for digit_infows
+        #strings for digit_info
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
         push @texts, localize('Last digit stats for the latest [_1] ticks on [_2]');
-        #strings for paymentagentws
+        push @texts, localize('Percentage');
+        push @texts, localize('Digit');
+        #strings for paymentagent
         push @texts, localize('Amount');
         push @texts, localize('Deposit');
         push @texts, localize('Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.');
-        #strings for iphistoryws
+        #strings for iphistory
         push @texts, localize('Date and Time');
         push @texts, localize('Browser');
         push @texts, localize('IP Address');
@@ -364,47 +366,14 @@ sub _texts {
         push @texts, localize('Please enter a number between [_1].');
         push @texts, localize('[_1] days [_2] hours [_3] minutes');
         push @texts, localize('Your trading statistics since [_1].');
-        #strings for securityws
+        #strings for security
         push @texts, localize('Unlock Cashier');
         push @texts, localize('Your cashier is locked as per your request - to unlock it, please enter the password.');
         push @texts, localize('Lock Cashier');
         push @texts, localize('An additional password can be used to restrict access to the cashier.');
         push @texts, localize('Update');
         push @texts, localize('Sorry, you have entered an incorrect cashier password');
-        #strings for job details page
-        push @texts, localize('Information Technology');
-        push @texts, localize('DevOps Manager');
-        push @texts, localize('Senior Front-End Developer');
-        push @texts, localize('Senior Perl Developer');
-        push @texts, localize('Quality Assurance');
-        push @texts, localize('Quality Assurance Engineer');
-        push @texts, localize('Quantitative Analysis');
-        push @texts, localize('Quantitative Developer');
-        push @texts, localize('Quantitative Analyst');
-        push @texts, localize('Marketing');
-        push @texts, localize('Marketing Project Manager');
-        push @texts, localize('Social Media Executive');
-        push @texts, localize('Country Manager');
-        push @texts, localize('Graphic Designers');
-        push @texts, localize('Marketing Executives');
-        push @texts, localize('Copywriter');
-        push @texts, localize('Translator');
-        push @texts, localize('Proofreader');
-        push @texts, localize('Accounting');
-        push @texts, localize('Accounts And Payments Executive');
-        push @texts, localize('Compliance');
-        push @texts, localize('Compliance Executive');
-        push @texts, localize('Anti-Fraud Officer');
-        push @texts, localize('Global Customer Service Representatives');
-        push @texts, localize('Human Resources');
-        push @texts, localize('Human Resource Executive');
-        push @texts, localize('Administrator');
-        push @texts, localize('Administrative Executive');
-        push @texts, localize('Internal Audit');
-        push @texts, localize('Internal Auditor');
-        push @texts, localize('Marketing Project Coordinator');
-        push @texts, localize('Affiliate Manager');
-        #strings for view popup ws
+        #strings for view popup
         push @texts, localize('Start Time');
         push @texts, localize('Entry Spot');
         push @texts, localize('Low Barrier');
@@ -463,7 +432,7 @@ sub _texts {
         push @texts, localize('Corporate Action');
         # strings for financial assessment
         push @texts, localize('Please select a value');
-        # Strings for authorised_appsws
+        # Strings for authorised_apps
         push @texts, localize('You have not granted access to any applications.');
         push @texts, localize('Permissions');
         push @texts, localize('Never');
@@ -473,11 +442,11 @@ sub _texts {
         push @texts, localize('Admin');
         push @texts, localize('Read');
         push @texts, localize('Payments');
-        # Strings for lost_passwordws
+        # Strings for lost_password
         push @texts, localize('[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.');
         push @texts, localize('Your password has been successfully reset. Please log into your account using your new password.');
         push @texts, localize('Verification code format incorrect.');
-        # strings for cashierws page
+        # strings for cashier page
         push @texts, localize('details');
         push @texts, localize('Withdraw');
         push @texts, localize('Insufficient balance.');

@@ -7,10 +7,10 @@ const FormManager   = require('../../../common_functions/form_manager');
 const TrafficSource = require('../../../common_functions/traffic_source');
 const Cookies       = require('../../../../lib/js-cookie');
 
-const VirtualAccOpening = (function() {
+const VirtualAccOpening = (() => {
     const form = '#virtual-form';
 
-    const onLoad = function() {
+    const onLoad = () => {
         if (jpClient()) {
             handleJPForm();
         } else {
@@ -65,7 +65,7 @@ const VirtualAccOpening = (function() {
             { selector: '#repeat_password',   validations: ['req', ['compare', { to: '#client_password' }]], exclude_request: 1 },
 
             { selector: '#residence' },
-            { request_field: 'email_consent' },
+            { selector: '#email_consent' },
             { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
             { request_field: 'new_account_virtual', value: 1 },
         ];

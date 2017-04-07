@@ -2,7 +2,7 @@ const BinaryPjax       = require('../../../../base/binary_pjax');
 const Header           = require('../../../../base/header');
 const localize         = require('../../../../base/localize').localize;
 const State            = require('../../../../base/storage').State;
-const objectNotEmpty   = require('../../../../base/utility').objectNotEmpty;
+const isEmptyObject    = require('../../../../base/utility').isEmptyObject;
 const showLoadingImage = require('../../../../base/utility').showLoadingImage;
 const jpClient         = require('../../../../common_functions/country_base').jpClient;
 const Validation       = require('../../../../common_functions/form_validation');
@@ -39,7 +39,7 @@ const FinancialAssessment = (() => {
 
         financial_assessment = $.extend({}, response.get_financial_assessment);
 
-        if (!objectNotEmpty(financial_assessment)) {
+        if (isEmptyObject(financial_assessment)) {
             BinarySocket.wait('get_account_status').then((data) => {
                 if (data.get_account_status.risk_classification === 'high') {
                     $('#high_risk_classification').removeClass('invisible');
@@ -67,15 +67,15 @@ const FinancialAssessment = (() => {
         $btn_submit.attr('disabled', 'disabled');
 
         if (Validation.validate(form_selector)) {
-            let hasChanged = false;
+            let has_changed = false;
             Object.keys(financial_assessment).forEach((key) => {
                 const $key = $(`#${key}`);
                 if ($key.length && $key.val() !== financial_assessment[key]) {
-                    hasChanged = true;
+                    has_changed = true;
                 }
             });
-            if (Object.keys(financial_assessment).length === 0) hasChanged = true;
-            if (!hasChanged) {
+            if (Object.keys(financial_assessment).length === 0) has_changed = true;
+            if (!has_changed) {
                 showFormMessage('You did not change anything.', false);
                 setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
                 return;
@@ -109,9 +109,9 @@ const FinancialAssessment = (() => {
         }
     };
 
-    const showFormMessage = (msg, isSuccess) => {
+    const showFormMessage = (msg, is_success) => {
         const redirect_url = localStorage.getItem('financial_assessment_redirect');
-        if (isSuccess && /metatrader/i.test(redirect_url)) {
+        if (is_success && /metatrader/i.test(redirect_url)) {
             localStorage.removeItem('financial_assessment_redirect');
             $.scrollTo($('h1#heading'), 500, { offset: -10 });
             $(form_selector).addClass(hidden_class);
@@ -123,8 +123,8 @@ const FinancialAssessment = (() => {
             });
         } else {
             $('#msg_form')
-                .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-                .html(isSuccess ? '<ul class="checked" style="display: inline-block;"><li>' + localize(msg) + '</li></ul>' : localize(msg))
+                .attr('class', is_success ? 'success-msg' : 'errorfield')
+                .html(is_success ? '<ul class="checked" style="display: inline-block;"><li>' + localize(msg) + '</li></ul>' : localize(msg))
                 .css('display', 'block')
                 .delay(5000)
                 .fadeOut(1000);

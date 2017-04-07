@@ -99,8 +99,8 @@ const Client = (() => {
     const shouldAcceptTnc = () => {
         if (get('is_virtual')) return false;
         const website_tnc_version = State.get(['response', 'website_status', 'website_status', 'terms_conditions_version']);
-        const client_tnc_status = State.get(['response', 'get_settings', 'get_settings', 'client_tnc_status']);
-        return client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version;
+        const get_settings = State.get(['response', 'get_settings', 'get_settings']);
+        return get_settings.hasOwnProperty('client_tnc_status') && get_settings.client_tnc_status !== website_tnc_version;
     };
 
     const clear = () => {
@@ -114,16 +114,15 @@ const Client = (() => {
         if (/no-reality-check/.test(hash)) {
             window.location.hash = hash.replace('no-reality-check', '');
         }
-        sessionStorage.setItem('currencies', '');
     };
 
     const getToken = (client_loginid) => {
         let token;
         const tokens = get('tokens');
         if (client_loginid && tokens) {
-            const tokensObj = JSON.parse(tokens);
-            if (tokensObj.hasOwnProperty(client_loginid) && tokensObj[client_loginid]) {
-                token = tokensObj[client_loginid];
+            const tokens_obj = JSON.parse(tokens);
+            if (tokens_obj.hasOwnProperty(client_loginid) && tokens_obj[client_loginid]) {
+                token = tokens_obj[client_loginid];
             }
         }
         return token;
@@ -134,16 +133,16 @@ const Client = (() => {
             return false;
         }
         const tokens = get('tokens');
-        const tokensObj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
-        tokensObj[client_loginid] = token;
-        set('tokens', JSON.stringify(tokensObj));
+        const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
+        tokens_obj[client_loginid] = token;
+        set('tokens', JSON.stringify(tokens_obj));
         return true;
     };
 
-    const setCookie = (cookieName, Value, domain) => {
+    const setCookie = (cookie_name, Value, domain) => {
         const cookie_expire = new Date();
         cookie_expire.setDate(cookie_expire.getDate() + 60);
-        const cookie = new CookieStorage(cookieName, domain);
+        const cookie = new CookieStorage(cookie_name, domain);
         cookie.write(Value, cookie_expire, true);
     };
 
@@ -209,8 +208,8 @@ const Client = (() => {
         }
     };
 
-    const sendLogoutRequest = (showLoginPage) => {
-        if (showLoginPage) {
+    const sendLogoutRequest = (show_login_page) => {
+        if (show_login_page) {
             sessionStorage.setItem('showLoginPage', 1);
         }
         BinarySocket.send({ logout: '1' });

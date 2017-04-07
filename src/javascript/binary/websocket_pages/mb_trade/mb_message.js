@@ -1,28 +1,24 @@
-const MBContract          = require('./mb_contract').MBContract;
-const MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
-const MBNotifications     = require('./mb_notifications').MBNotifications;
-const MBProcess           = require('./mb_process').MBProcess;
-const MBPurchase          = require('./mb_purchase').MBPurchase;
-const MBSymbols           = require('./mb_symbols').MBSymbols;
-const MBTick              = require('./mb_tick').MBTick;
-const PortfolioWS = require('../user/account/portfolio/portfolio.init');
-const State  = require('../../base/storage').State;
-const GTM    = require('../../base/gtm');
-const Client = require('../../base/client');
-const processTradingTimes  = require('../trade/process').processTradingTimes;
-const forgetTradingStreams = require('../trade/process').forgetTradingStreams;
+const MBContract      = require('./mb_contract');
+const MBNotifications = require('./mb_notifications');
+const MBProcess       = require('./mb_process');
+const MBPurchase      = require('./mb_purchase');
+const MBTick          = require('./mb_tick');
+const Process         = require('../trade/process');
+const PortfolioInit   = require('../user/account/portfolio/portfolio.init');
+const GTM             = require('../../base/gtm');
+const State           = require('../../base/storage').State;
 
 /*
  * This Message object process the response from server and fire
  * events based on type of response
  */
-const MBMessage = (function () {
+const MBMessage = (() => {
     'use strict';
 
-    const process = function (msg) {
+    const process = (msg) => {
         const response = JSON.parse(msg.data);
         if (!State.get('is_mb_trading')) {
-            forgetTradingStreams();
+            Process.forgetTradingStreams();
             return;
         }
         if (response) {
@@ -33,10 +29,6 @@ const MBMessage = (function () {
                 MBNotifications.hide('CONNECTION_ERROR');
                 MBContract.setContractsResponse(response);
                 MBProcess.processContract(response);
-            } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
-                Client.set('currencies', response.payout_currencies.join(','));
-                MBDisplayCurrencies('', false);
-                MBSymbols.getSymbols(1);
             } else if (type === 'proposal') {
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
@@ -47,13 +39,13 @@ const MBMessage = (function () {
             } else if (type === 'history') {
                 MBTick.processHistory(response);
             } else if (type === 'trading_times') {
-                processTradingTimes(response);
+                Process.processTradingTimes(response);
             } else if (type === 'portfolio') {
-                PortfolioWS.updatePortfolio(response);
+                PortfolioInit.updatePortfolio(response);
             } else if (type === 'proposal_open_contract') {
-                PortfolioWS.updateIndicative(response);
+                PortfolioInit.updateIndicative(response);
             } else if (type === 'transaction') {
-                PortfolioWS.transactionResponseHandler(response);
+                PortfolioInit.transactionResponseHandler(response);
             }
         }
     };
@@ -63,6 +55,4 @@ const MBMessage = (function () {
     };
 })();
 
-module.exports = {
-    MBMessage: MBMessage,
-};
+module.exports = MBMessage;

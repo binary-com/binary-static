@@ -1,17 +1,17 @@
 const moment                 = require('moment');
-const MarketTimes            = require('../market_timesws');
+const TradingTimes           = require('../trading_times');
+const localize               = require('../../../base/localize').localize;
 const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
-const localize               = require('../../../base/localize').localize;
 const Table                  = require('../../../common_functions/attach_dom/table');
 const dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
 const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
 const jpClient               = require('../../../common_functions/country_base').jpClient;
 const toISOFormat            = require('../../../common_functions/string_util').toISOFormat;
 const toReadableFormat       = require('../../../common_functions/string_util').toReadableFormat;
-const DatePicker             = require('../../../components/date_picker').DatePicker;
+const DatePicker             = require('../../../components/date_picker');
 
-const MarketTimesUI = (() => {
+const TradingTimesUI = (() => {
     'use strict';
 
     let $date,
@@ -21,7 +21,7 @@ const MarketTimesUI = (() => {
         trading_times,
         is_framed;
 
-    const onLoad = function(config) {
+    const onLoad = (config) => {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
@@ -37,12 +37,11 @@ const MarketTimesUI = (() => {
         }
 
         const date = moment.utc();
-        $date.val(toReadableFormat(date))
-             .attr('data-value', toISOFormat(date));
-        const datePickerInst = new DatePicker('#trading-date');
-        datePickerInst.show({
-            minDate: 'today',
-            maxDate: 364,
+        $date.val(toReadableFormat(date)).attr('data-value', toISOFormat(date));
+        DatePicker.init({
+            selector: '#trading-date',
+            minDate : 0,
+            maxDate : 364,
         });
         $date.change(function() {
             if (!dateValueChanged(this, 'date')) {
@@ -71,17 +70,17 @@ const MarketTimesUI = (() => {
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {
-            const tabID = 'market_' + (m + 1);
+            const tab_id = 'market_' + (m + 1);
 
             // contents
-            const $market = $('<div/>', { id: tabID });
+            const $market = $('<div/>', { id: tab_id });
             $market.append(createMarketTables(markets[m], is_japan_trading));
             if ($market.find('table tr').length) {
                 $contents.append($market);
 
                 // tabs
                 if (!is_japan_trading) {
-                    $ul.append($('<li/>').append($('<a/>', { href: '#' + tabID, text: markets[m].name, id: 'outline' })));
+                    $ul.append($('<li/>').append($('<a/>', { href: '#' + tab_id, text: markets[m].name, id: 'outline' })));
                 }
             }
         }
@@ -106,7 +105,7 @@ const MarketTimesUI = (() => {
             should_populate = true;
             // display only "Major Pairs" for Japan
             if (is_japan_trading) {
-                const submarket_info = MarketTimes.getSubmarketInfo(active_symbols, submarkets[s].name);
+                const submarket_info = TradingTimes.getSubmarketInfo(active_symbols, submarkets[s].name);
                 if (submarket_info.length === 0 || submarket_info[0].submarket !== 'major_pairs') {
                     should_populate = false;
                 }
@@ -123,7 +122,7 @@ const MarketTimesUI = (() => {
                 // symbols of this submarket
                 const symbols = submarkets[s].symbols;
                 for (let sy = 0; sy < symbols.length; sy++) {
-                    if (Object.keys(MarketTimes.getSymbolInfo(symbols[sy].symbol, active_symbols)).length !== 0) {
+                    if (Object.keys(TradingTimes.getSymbolInfo(symbols[sy].symbol, active_symbols)).length !== 0) {
                         $submarket_table.find('tbody').append(createSubmarketTableRow(market.name, submarkets[s].name, symbols[sy]));
                     }
                 }
@@ -192,12 +191,12 @@ const MarketTimesUI = (() => {
             req.landing_company = 'japan';
         }
         if (should_request_active_symbols) {
-            BinarySocket.send(req).then((response) => {
-                MarketTimesUI.setActiveSymbols(response);
+            BinarySocket.send(req, false, 'active_symbols').then((response) => {
+                TradingTimesUI.setActiveSymbols(response);
             });
         }
         BinarySocket.send({ trading_times: date || 'today' }).then((response) => {
-            MarketTimesUI.setTradingTimes(response);
+            TradingTimesUI.setTradingTimes(response);
         });
     };
 
@@ -214,4 +213,4 @@ const MarketTimesUI = (() => {
     };
 })();
 
-module.exports = MarketTimesUI;
+module.exports = TradingTimesUI;

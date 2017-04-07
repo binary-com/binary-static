@@ -1,4 +1,4 @@
-const objectNotEmpty = require('../../base/utility').objectNotEmpty;
+const isEmptyObject = require('../../base/utility').isEmptyObject;
 
 /*
  * Handles trading page default values
@@ -9,24 +9,24 @@ const objectNotEmpty = require('../../base/utility').objectNotEmpty;
  *
  */
 
-const MBDefaults = (function() {
+const MBDefaults = (() => {
     'use strict';
 
     let params = {};
-    const getDefault = function(key) {
+    const getDefault = (key) => {
         loadParams();
         return params[key];
     };
 
-    const loadParams = function() {
-        if (!objectNotEmpty(params)) params = JSON.parse(localStorage.getItem('mb_trading')) || {};
+    const loadParams = () => {
+        if (isEmptyObject(params)) params = JSON.parse(localStorage.getItem('mb_trading')) || {};
     };
 
-    const saveParams = function() {
+    const saveParams = () => {
         localStorage.setItem('mb_trading', JSON.stringify(params));
     };
 
-    const setDefault = function(key, value) {
+    const setDefault = (key, value) => {
         if (!key) return;
         value = value || '';
         loadParams();
@@ -36,16 +36,16 @@ const MBDefaults = (function() {
         }
     };
 
-    const removeDefault = function() {
+    const removeDefault = () => {
         loadParams();
-        let isUpdated = false;
+        let is_updated = false;
         for (let i = 0; i < arguments.length; i++) {
             if (params.hasOwnProperty(arguments[i])) {
                 delete params[arguments[i]];
-                isUpdated = true;
+                is_updated = true;
             }
         }
-        if (isUpdated) {
+        if (is_updated) {
             saveParams();
         }
     };
@@ -54,10 +54,8 @@ const MBDefaults = (function() {
         get   : getDefault,
         set   : setDefault,
         remove: removeDefault,
-        clear : function() { params = {}; },
+        clear : () => { params = {}; },
     };
 })();
 
-module.exports = {
-    MBDefaults: MBDefaults,
-};
+module.exports = MBDefaults;

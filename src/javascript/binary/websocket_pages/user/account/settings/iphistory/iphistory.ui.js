@@ -1,12 +1,12 @@
+const moment               = require('moment');
 const showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeOnHover;
-const FlexTableUI = require('../../../../../common_functions/attach_dom/flextable');
-const moment      = require('moment');
-const localize    = require('../../../../../base/localize').localize;
+const localize             = require('../../../../../base/localize').localize;
+const FlexTableUI          = require('../../../../../common_functions/attach_dom/flextable');
 
 const IPHistoryUI = (() => {
     'use strict';
 
-    const container_selector = '#login_history-ws-container';
+    const container_selector = '#login-history-container';
     const no_messages_error  = 'Your account has no Login/Logout activity.';
 
     const init = () => {
@@ -41,11 +41,11 @@ const IPHistoryUI = (() => {
         FlexTableUI.init({
             id       : 'login-history-table',
             container: container_selector,
-            header   : headers.map(function(s) { return localize(s); }),
+            header   : headers.map(s => localize(s)),
             cols     : columns,
             data     : history,
             formatter: formatRow,
-            style    : function($row) {
+            style    : ($row) => {
                 $row.children('.timestamp').addClass('pre');
             },
         });

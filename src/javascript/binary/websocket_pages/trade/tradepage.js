@@ -1,41 +1,37 @@
-const TradingAnalysis      = require('./analysis').TradingAnalysis;
-const addEventListenerForm = require('./common').addEventListenerForm;
-const chartFrameCleanup    = require('./common').chartFrameCleanup;
-const showFormOverlay      = require('./common').showFormOverlay;
-const showPriceOverlay     = require('./common').showPriceOverlay;
-const displayCurrencies    = require('./currency').displayCurrencies;
-const Defaults             = require('./defaults').Defaults;
-const TradingEvents        = require('./event').TradingEvents;
-const Message              = require('./message').Message;
-const Notifications        = require('./notifications').Notifications;
-const Price                = require('./price').Price;
+const TradingAnalysis      = require('./analysis');
+const commonTrading        = require('./common');
+const displayCurrencies    = require('./currency');
+const Defaults             = require('./defaults');
+const TradingEvents        = require('./event');
+const Message              = require('./message');
+const Notifications        = require('./notifications');
+const Price                = require('./price');
 const forgetTradingStreams = require('./process').forgetTradingStreams;
-const Symbols              = require('./symbols').Symbols;
-const ViewPopupWS          = require('../user/view_popup/view_popupws');
+const Symbols              = require('./symbols');
+const ViewPopup            = require('../user/view_popup/view_popup');
 const BinaryPjax           = require('../../base/binary_pjax');
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
 const jpClient             = require('../../common_functions/country_base').jpClient;
 const Guide                = require('../../common_functions/guide');
 
-const TradePage = (function() {
+const TradePage = (() => {
+    'use strict';
+
     let events_initialized = 0;
     State.remove('is_trading');
 
-    const onLoad = function() {
+    const onLoad = () => {
         if (jpClient()) {
             BinaryPjax.load('multi_barriers_trading');
             return;
         }
         State.set('is_trading', true);
-        if (sessionStorage.getItem('currencies')) {
-            displayCurrencies();
-        }
         BinarySocket.init({
-            onmessage: function(msg) {
+            onmessage: (msg) => {
                 Message.process(msg);
             },
-            onopen: function() {
+            onopen: () => {
                 Notifications.hide('CONNECTION_ERROR');
             },
         });
@@ -45,15 +41,13 @@ const TradePage = (function() {
             TradingEvents.init();
         }
 
-        if (sessionStorage.getItem('currencies')) {
+        BinarySocket.send({ payout_currencies: 1 }).then(() => {
             displayCurrencies();
             Symbols.getSymbols(1);
-        } else {
-            BinarySocket.send({ payout_currencies: 1 });
-        }
+        });
 
         if (document.getElementById('websocket_form')) {
-            addEventListenerForm();
+            commonTrading.addEventListenerForm();
         }
 
         // Walk-through Guide
@@ -66,27 +60,28 @@ const TradePage = (function() {
         $('#tab_explanation').find('a').text(localize('Explanation'));
         $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
 
-        ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
+        ViewPopup.viewButtonOnClick('#contract_confirmation_container');
     };
 
-    const reload = function() {
+    const reload = () => {
         sessionStorage.removeItem('underlying');
         window.location.reload();
     };
 
-    const onUnload = function() {
+    const onUnload = () => {
         State.remove('is_trading');
         events_initialized = 0;
         forgetTradingStreams();
         BinarySocket.clear();
         Defaults.clear();
-        chartFrameCleanup();
+        commonTrading.chartFrameCleanup();
     };
 
-    const onDisconnect = function() {
-        showPriceOverlay();
-        showFormOverlay();
-        chartFrameCleanup();
+    const onDisconnect = () => {
+        commonTrading.showPriceOverlay();
+        commonTrading.showFormOverlay();
+        commonTrading.chartFrameCleanup();
+        commonTrading.clean();
         onLoad();
     };
 

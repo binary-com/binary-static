@@ -3,7 +3,7 @@ const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
-const objectNotEmpty     = require('./utility').objectNotEmpty;
+const isEmptyObject      = require('./utility').isEmptyObject;
 const Cookies            = require('../../lib/js-cookie');
 
 const LoggedInHandler = (() => {
@@ -19,7 +19,7 @@ const LoggedInHandler = (() => {
             if (!loginid) { // redirected to another domain (e.g. github.io) so those cookie are not accessible here
                 const loginids = Object.keys(tokens);
                 let loginid_list = '';
-                loginids.map(function(id) {
+                loginids.map((id) => {
                     loginid_list += (loginid_list ? '+' : '') + id + ':' + (/^V/i.test(id) ? 'V' : 'R') + ':E'; // since there is not any data source to check, so assume all are enabled, disabled accounts will be handled on authorize
                 });
                 loginid = loginids[0];
@@ -63,13 +63,13 @@ const LoggedInHandler = (() => {
         const hash = (/acct1/i.test(window.location.hash) ? window.location.hash : window.location.search).substr(1).split('&'); // to maintain compatibility till backend change released
         const tokens = {};
         for (let i = 0; i < hash.length; i += 2) {
-            const loginid = getHashValue(hash[i], 'acct'),
-                token   = getHashValue(hash[i + 1], 'token');
+            const loginid = getHashValue(hash[i], 'acct');
+            const token   = getHashValue(hash[i + 1], 'token');
             if (loginid && token) {
                 tokens[loginid] = token;
             }
         }
-        if (objectNotEmpty(tokens)) {
+        if (!isEmptyObject(tokens)) {
             Client.set('tokens', JSON.stringify(tokens));
         }
         return tokens;

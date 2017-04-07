@@ -1,28 +1,26 @@
-const MBContract                = require('./mb_contract').MBContract;
-const MBDefaults                = require('./mb_defaults').MBDefaults;
-const MBNotifications           = require('./mb_notifications').MBNotifications;
-const MBPrice                   = require('./mb_price').MBPrice;
-const MBSymbols                 = require('./mb_symbols').MBSymbols;
-const MBTick                    = require('./mb_tick').MBTick;
-const TradingAnalysis           = require('../trade/analysis').TradingAnalysis;
-const jpClient                  = require('../../common_functions/country_base').jpClient;
-const displayUnderlyings        = require('../trade/common').displayUnderlyings;
-const generateUnderlyingOptions = require('../trade/common').generateUnderlyingOptions;
-const showFormOverlay           = require('../trade/common').showFormOverlay;
-const processForgetTicks        = require('../trade/process').processForgetTicks;
-const localize                  = require('../../base/localize').localize;
-const Client                    = require('../../base/client');
+const MBContract         = require('./mb_contract');
+const MBDefaults         = require('./mb_defaults');
+const MBNotifications    = require('./mb_notifications');
+const MBPrice            = require('./mb_price');
+const MBSymbols          = require('./mb_symbols');
+const MBTick             = require('./mb_tick');
+const TradingAnalysis    = require('../trade/analysis');
+const commonTrading      = require('../trade/common');
+const processForgetTicks = require('../trade/process').processForgetTicks;
+const Client             = require('../../base/client');
+const localize           = require('../../base/localize').localize;
+const jpClient           = require('../../common_functions/country_base').jpClient;
 
-const MBProcess = (function() {
+const MBProcess = (() => {
+    'use strict';
+
     let market_status = '',
         symbols_timeout;
     /*
      * This function processes the active symbols to get markets
      * and underlying list
      */
-    const processActiveSymbols = function(data) {
-        'use strict';
-
+    const processActiveSymbols = (data) => {
         if (data.hasOwnProperty('error')) {
             MBNotifications.show({ text: data.error.message, uid: 'ACTIVE_SYMBOLS' });
             return;
@@ -33,7 +31,7 @@ const MBProcess = (function() {
 
         const is_show_all  = Client.isLoggedIn() && !jpClient();
         const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
-        const update_page  = MBSymbols.need_page_update();
+        const update_page  = MBSymbols.needPageUpdate();
         let symbol = MBDefaults.get('underlying');
 
         if (update_page && (!symbol || !symbols_list[symbol])) {
@@ -42,7 +40,7 @@ const MBProcess = (function() {
         }
         // check if all symbols are inactive
         let is_market_closed = true;
-        Object.keys(symbols_list).forEach(function(s) {
+        Object.keys(symbols_list).forEach((s) => {
             if (symbols_list[s].is_active) {
                 is_market_closed = false;
             }
@@ -53,7 +51,7 @@ const MBProcess = (function() {
         } else {
             handleMarketOpen();
             if (is_show_all) populateUnderlyingGroups(symbol);
-            else displayUnderlyings('underlying', symbols_list, symbol);
+            else commonTrading.displayUnderlyings('underlying', symbols_list, symbol);
 
             if (symbol && !symbols_list[symbol].is_active) {
                 MBNotifications.show({ text: localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
@@ -63,10 +61,10 @@ const MBProcess = (function() {
         }
     };
 
-    const populateUnderlyingGroups = function(selected) {
+    const populateUnderlyingGroups = (selected) => {
         const $underlyings = $('#underlying');
-        const allSymbols = MBSymbols.underlyings();
-        const markets    = MBSymbols.markets();
+        const all_symbols = MBSymbols.underlyings();
+        const markets     = MBSymbols.markets();
 
         $underlyings.empty();
 
@@ -75,43 +73,41 @@ const MBProcess = (function() {
             .forEach((market) => {
                 $underlyings.append(
                     $('<optgroup/>', { label: markets[market].name })
-                        .append($(generateUnderlyingOptions(allSymbols[market], selected))));
+                        .append($(commonTrading.generateUnderlyingOptions(all_symbols[market], selected))));
             });
     };
 
-    const handleMarketClosed = function() {
+    const handleMarketClosed = () => {
         $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
         MBNotifications.show({ text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
-        symbols_timeout = setTimeout(function() { MBSymbols.getSymbols(1); }, 30000);
+        symbols_timeout = setTimeout(() => { MBSymbols.getSymbols(1); }, 30000);
     };
 
-    const handleMarketOpen = function() {
+    const handleMarketOpen = () => {
         $('.japan-form, .japan-table, #trading_bottom_content').removeClass('invisible');
         MBNotifications.hide('MARKET_CLOSED');
     };
 
-    const clearSymbolTimeout = function() {
+    const clearSymbolTimeout = () => {
         clearTimeout(symbols_timeout);
     };
 
     /*
      * Function to call when underlying has changed
      */
-    const processMarketUnderlying = function() {
-        'use strict';
-
-        const underlyingElement = document.getElementById('underlying');
-        if (!underlyingElement) {
+    const processMarketUnderlying = () => {
+        const underlying_element = document.getElementById('underlying');
+        if (!underlying_element) {
             return;
         }
 
-        if (underlyingElement.selectedIndex < 0) {
-            underlyingElement.selectedIndex = 0;
+        if (underlying_element.selectedIndex < 0) {
+            underlying_element.selectedIndex = 0;
         }
-        const underlying = underlyingElement.value;
+        const underlying = underlying_element.value;
         MBDefaults.set('underlying', underlying);
 
-        showFormOverlay();
+        commonTrading.showFormOverlay();
 
         // forget the old tick id i.e. close the old tick stream
         processForgetTicks();
@@ -130,9 +126,7 @@ const MBProcess = (function() {
     /*
      * Function to process ticks stream
      */
-    const processTick = function(tick) {
-        'use strict';
-
+    const processTick = (tick) => {
         if (tick.hasOwnProperty('error')) {
             MBNotifications.show({ text: tick.error.message, uid: 'TICK_ERROR' });
             return;
@@ -148,9 +142,7 @@ const MBProcess = (function() {
     /*
      * Function to display contract form for current underlying
      */
-    const processContract = function(contracts) {
-        'use strict';
-
+    const processContract = (contracts) => {
         if (contracts.hasOwnProperty('error')) {
             MBNotifications.show({ text: contracts.error.message, uid: contracts.error.code });
             return;
@@ -160,11 +152,11 @@ const MBProcess = (function() {
 
         checkMarketStatus(contracts.contracts_for.close);
 
-        const noRebuild = contracts.hasOwnProperty('passthrough') &&
+        const no_rebuild = contracts.hasOwnProperty('passthrough') &&
                         contracts.passthrough.hasOwnProperty('action') &&
                         contracts.passthrough.action === 'no-proposal';
-        MBContract.populateOptions((noRebuild ? null : 'rebuild'));
-        if (noRebuild) {
+        MBContract.populateOptions((no_rebuild ? null : 'rebuild'));
+        if (no_rebuild) {
             processExpiredBarriers();
             return;
         }
@@ -172,7 +164,7 @@ const MBProcess = (function() {
         TradingAnalysis.request();
     };
 
-    const checkMarketStatus = function(close) {
+    const checkMarketStatus = (close) => {
         const now = window.time.unix();
 
         // if market is closed, else if market is open
@@ -190,9 +182,7 @@ const MBProcess = (function() {
         }
     };
 
-    const processForgetProposals = function() {
-        'use strict';
-
+    const processForgetProposals = () => {
         MBPrice.showPriceOverlay();
         BinarySocket.send({
             forget_all: 'proposal',
@@ -200,14 +190,12 @@ const MBProcess = (function() {
         MBPrice.cleanup();
     };
 
-    const processPriceRequest = function() {
-        'use strict';
-
+    const processPriceRequest = () => {
         MBPrice.increaseReqId();
         processForgetProposals();
         MBPrice.showPriceOverlay();
-        const available_contracts = MBContract.getCurrentContracts(),
-            durations = MBDefaults.get('period').split('_');
+        const available_contracts = MBContract.getCurrentContracts();
+        const durations = MBDefaults.get('period').split('_');
         const req = {
             proposal   : 1,
             subscribe  : 1,
@@ -247,9 +235,7 @@ const MBProcess = (function() {
         }
     };
 
-    const processProposal = function(response) {
-        'use strict';
-
+    const processProposal = (response) => {
         const req_id = MBPrice.getReqId();
         if (response.req_id === req_id) {
             MBPrice.display(response);
@@ -257,11 +243,11 @@ const MBProcess = (function() {
         }
     };
 
-    const processExpiredBarriers = function() {
+    const processExpiredBarriers = () => {
         const contracts = MBContract.getCurrentContracts();
         let expired_barrier,
             $expired_barrier_element;
-        contracts.forEach(function(c) {
+        contracts.forEach((c) => {
             const expired_barriers = c.expired_barriers;
             for (let i = 0; i < expired_barriers.length; i++) {
                 if (+c.barriers === 2) {
@@ -278,23 +264,23 @@ const MBProcess = (function() {
         });
     };
 
-    const barrierHasExpired = function(expired_barriers, barrier, barrier2) {
+    const barrierHasExpired = (expired_barriers, barrier, barrier2) => {
         if (barrier2) {
             return containsArray(expired_barriers, [[barrier2, barrier]]);
         }
         return (expired_barriers.indexOf((barrier).toString()) > -1);
     };
 
-    const processForgetProposal = function(expired_barrier) {
+    const processForgetProposal = (expired_barrier) => {
         const prices = MBPrice.getPrices();
-        Object.keys(prices[expired_barrier]).forEach(function(c) {
+        Object.keys(prices[expired_barrier]).forEach((c) => {
             if (!prices[expired_barrier][c].hasOwnProperty('error')) {
                 BinarySocket.send({ forget: prices[expired_barrier][c].proposal.id });
             }
         });
     };
 
-    const containsArray = function(array, val) {
+    const containsArray = (array, val) => {
         const hash = {};
         for (let i = 0; i < array.length; i++) {
             hash[array[i]] = i;
@@ -309,10 +295,8 @@ const MBProcess = (function() {
         processContract        : processContract,
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
-        onUnload               : function() { clearSymbolTimeout(); MBSymbols.clearData(); },
+        onUnload               : () => { clearSymbolTimeout(); MBSymbols.clearData(); MBTick.clean(); },
     };
 })();
 
-module.exports = {
-    MBProcess: MBProcess,
-};
+module.exports = MBProcess;

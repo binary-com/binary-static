@@ -13,8 +13,8 @@ const StatementUI = (() => {
     let all_data = [],
         oauth_apps = {};
 
-    const table_id = 'statement-table',
-        columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
+    const table_id = 'statement-table';
+    const columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
 
     const createEmptyStatementTable = () => {
         const header = [
@@ -28,8 +28,8 @@ const StatementUI = (() => {
             localize('Details'),
         ];
 
-        const jp_client = jpClient(),
-            currency = Client.get('currency');
+        const jp_client = jpClient();
+        const currency = Client.get('currency');
 
         header[6] += (jp_client || !currency ? '' : ' (' + currency + ')');
 
@@ -72,7 +72,7 @@ const StatementUI = (() => {
 
         // create view button and append
         if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
-            const $view_button = $('<button/>', { class: 'button open_contract_detailsws', text: localize('View'), contract_id: statement_data.id });
+            const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: statement_data.id });
             $statement_row.children('.desc,.details').append($view_button);
         }
 
@@ -84,7 +84,7 @@ const StatementUI = (() => {
     };
 
     const errorMessage = (msg) => {
-        const $err = $('#statement-ws-container').find('#error-msg');
+        const $err = $('#statement-container').find('#error-msg');
         if (msg) {
             $err.removeClass('invisible').text(msg);
         } else {

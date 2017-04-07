@@ -1,5 +1,5 @@
 const Portfolio           = require('../portfolio').Portfolio;
-const ViewPopupWS         = require('../../view_popup/view_popupws');
+const ViewPopup           = require('../../view_popup/view_popup');
 const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const localize            = require('../../../../base/localize').localize;
@@ -10,7 +10,7 @@ const jpClient            = require('../../../../common_functions/country_base')
 const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
 const GetAppDetails       = require('../../../../common_functions/get_app_details');
 
-const PortfolioWS = (function() {
+const PortfolioInit = (() => {
     'use strict';
 
     let values,
@@ -20,7 +20,7 @@ const PortfolioWS = (function() {
         is_initialized,
         is_first_response;
 
-    const init = function() {
+    const init = () => {
         hidden_class = 'invisible';
         updateBalance();
 
@@ -42,12 +42,12 @@ const PortfolioWS = (function() {
         // Display ViewPopup according to contract_id in query string
         const contract_id = urlParam('contract_id');
         if (contract_id) {
-            ViewPopupWS.init($('<div />', { contract_id: contract_id }).get(0));
+            ViewPopup.init($('<div />', { contract_id: contract_id }).get(0));
         }
     };
 
-    const createPortfolioRow = function(data, is_first) {
-        const longCode = typeof module !== 'undefined' ?
+    const createPortfolioRow = (data, is_first) => {
+        const long_code = typeof module !== 'undefined' ?
             data.longcode :
             (jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
 
@@ -56,17 +56,17 @@ const PortfolioWS = (function() {
             $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
                 '<td class="ref"><span' + GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' +
                 '<td class="payout"><strong>' + formatMoney(data.currency, data.payout) + '</strong></td>' +
-                '<td class="details">' + longCode + '</td>' +
+                '<td class="details">' + long_code + '</td>' +
                 '<td class="purchase"><strong>' + formatMoney(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' +
-                '<td class="button"><button class="button open_contract_detailsws nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' +
+                '<td class="button"><button class="button open_contract_details nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' +
                 '</tr>' +
                 '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
-                '<td colspan="6">' + longCode + '</td>' +
+                '<td colspan="6">' + long_code + '</td>' +
                 '</tr>'));
     };
 
-    const updateBalance = function() {
+    const updateBalance = () => {
         const $portfolio_balance = $('#portfolio-balance');
         if ($portfolio_balance.length === 0) return;
         $portfolio_balance.text(Portfolio.getBalance(Client.get('balance'), Client.get('currency')));
@@ -78,7 +78,7 @@ const PortfolioWS = (function() {
         }
     };
 
-    const updatePortfolio = function(data) {
+    const updatePortfolio = (data) => {
         if (data.hasOwnProperty('error')) {
             errorMessage(data.error.message);
             return;
@@ -94,15 +94,15 @@ const PortfolioWS = (function() {
              **/
             $('#portfolio-no-contract').hide();
             let portfolio_data;
-            $.each(data.portfolio.contracts, function(ci, c) {
+            $.each(data.portfolio.contracts, (ci, c) => {
                 if (!values.hasOwnProperty(c.contract_id)) {
                     values[c.contract_id] = {};
                     values[c.contract_id].buy_price = c.buy_price;
                     portfolio_data = Portfolio.getPortfolioData(c);
                     currency = portfolio_data.currency;
                     createPortfolioRow(portfolio_data, is_first_response);
-                    setTimeout(function() {
-                        $('tr.' + c.contract_id).removeClass('new');
+                    setTimeout(() => {
+                        $(`tr.${c.contract_id}`).removeClass('new');
                     }, 1000);
                 }
             });
@@ -120,7 +120,7 @@ const PortfolioWS = (function() {
         is_first_response = false;
     };
 
-    const transactionResponseHandler = function(response) {
+    const transactionResponseHandler = (response) => {
         if (response.hasOwnProperty('error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
@@ -130,7 +130,7 @@ const PortfolioWS = (function() {
         }
     };
 
-    const updateIndicative = function(data) {
+    const updateIndicative = (data) => {
         if (data.hasOwnProperty('error') || !values) {
             return;
         }
@@ -145,7 +145,7 @@ const PortfolioWS = (function() {
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
             BinarySocket.send({ sell_expired: 1 });
         }
-        const $td = $('#' + proposal.contract_id + ' td.indicative');
+        const $td = $(`#${proposal.contract_id}`).find('td.indicative');
 
         const old_indicative = values[proposal.contract_id].indicative || 0.00;
         values[proposal.contract_id].indicative = proposal.bid_price;
@@ -168,14 +168,14 @@ const PortfolioWS = (function() {
         updateFooter();
     };
 
-    const updateOAuthApps = function(response) {
+    const updateOAuthApps = (response) => {
         oauth_apps = GetAppDetails.buildOauthApps(response);
         GetAppDetails.addTooltip(oauth_apps);
     };
 
-    const removeContract = function(contract_id) {
+    const removeContract = (contract_id) => {
         delete (values[contract_id]);
-        $('tr.' + contract_id)
+        $(`tr.${contract_id}`)
             .removeClass('new')
             .css('opacity', '0.5')
             .fadeOut(1000, function() {
@@ -189,12 +189,12 @@ const PortfolioWS = (function() {
         updateFooter();
     };
 
-    const updateFooter = function() {
+    const updateFooter = () => {
         $('#cost-of-open-positions').text(formatMoney(currency, Portfolio.getSumPurchase(values)));
         $('#value-of-open-positions').text(formatMoney(currency, Portfolio.getIndicativeSum(values)));
     };
 
-    const errorMessage = function(msg) {
+    const errorMessage = (msg) => {
         const $err = $('#portfolio').find('#error-msg');
         if (msg) {
             $err.removeClass(hidden_class).text(msg);
@@ -203,37 +203,37 @@ const PortfolioWS = (function() {
         }
     };
 
-    const onLoad = function() {
+    const onLoad = () => {
         if (!State.get('is_beta_trading') && !State.get('is_mb_trading')) {
             BinarySocket.init({
-                onmessage: function(msg) {
-                    const response = JSON.parse(msg.data),
-                        msg_type = response.msg_type;
+                onmessage: (msg) => {
+                    const response = JSON.parse(msg.data);
+                    const msg_type = response.msg_type;
 
                     switch (msg_type) {
                         case 'portfolio':
-                            PortfolioWS.updatePortfolio(response);
+                            PortfolioInit.updatePortfolio(response);
                             break;
                         case 'transaction':
-                            PortfolioWS.transactionResponseHandler(response);
+                            PortfolioInit.transactionResponseHandler(response);
                             break;
                         case 'proposal_open_contract':
-                            PortfolioWS.updateIndicative(response);
+                            PortfolioInit.updateIndicative(response);
                             break;
                         case 'oauth_apps':
-                            PortfolioWS.updateOAuthApps(response);
+                            PortfolioInit.updateOAuthApps(response);
                             break;
                         default:
-                            // msg_type is not what PortfolioWS handles, so ignore it.
+                            // msg_type is not what PortfolioInit handles, so ignore it.
                     }
                 },
             });
         }
-        PortfolioWS.init();
-        ViewPopupWS.viewButtonOnClick('#portfolio-table');
+        PortfolioInit.init();
+        ViewPopup.viewButtonOnClick('#portfolio-table');
     };
 
-    const onUnload = function() {
+    const onUnload = () => {
         BinarySocket.send({ forget_all: 'proposal_open_contract' });
         BinarySocket.send({ forget_all: 'transaction' });
         $('#portfolio-body').empty();
@@ -253,4 +253,4 @@ const PortfolioWS = (function() {
     };
 })();
 
-module.exports = PortfolioWS;
+module.exports = PortfolioInit;

@@ -4,10 +4,10 @@ const ProfitTable = (() => {
     'use strict';
 
     const getProfitTabletData = (transaction) => {
-        const buy_moment = moment.utc(transaction.purchase_time * 1000),
-            sell_moment  = moment.utc(transaction.sell_time * 1000),
-            buy_price    = parseFloat(transaction.buy_price).toFixed(2),
-            sell_price   = parseFloat(transaction.sell_price).toFixed(2);
+        const buy_moment   = moment.utc(transaction.purchase_time * 1000);
+        const sell_moment  = moment.utc(transaction.sell_time * 1000);
+        const buy_price    = parseFloat(transaction.buy_price).toFixed(2);
+        const sell_price   = parseFloat(transaction.sell_price).toFixed(2);
 
         return {
             buyDate  : buy_moment.format('YYYY-MM-DD') + '\n' + buy_moment.format('HH:mm:ss') + ' GMT',

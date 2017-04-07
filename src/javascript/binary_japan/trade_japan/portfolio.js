@@ -1,12 +1,12 @@
-const State  = require('../../binary/base/storage').State;
-const Client = require('../../binary/base/client');
-const PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init');
+const Client        = require('../../binary/base/client');
+const State         = require('../../binary/base/storage').State;
+const PortfolioInit = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init');
 
-const JapanPortfolio = (function() {
+const JapanPortfolio = (() => {
     let $portfolio,
-        isPortfolioActive = false;
+        is_portfolio_active = false;
 
-    function init() {
+    const init = () => {
         if (isActive()) {
             $('#tab_portfolio').removeClass('invisible');
         }
@@ -14,36 +14,30 @@ const JapanPortfolio = (function() {
         const $container = $('#tab_portfolio-content');
         $portfolio = $portfolio || $('#portfolio');
 
-        if ($portfolio &&
-        (!$portfolio.parent().length ||
-        $portfolio.parent().get(0).id !== 'tab_portfolio-content')) {
+        if ($portfolio && (!$portfolio.parent().length || $portfolio.parent().get(0).id !== 'tab_portfolio-content')) {
             $portfolio.detach();
             $container.append($portfolio);
         }
-    }
+    };
 
-    function show() {
-        if (isTradePage() && !isPortfolioActive) {
-            PortfolioWS.onLoad();
-            isPortfolioActive = true;
+    const show = () => {
+        if (isTradePage() && !is_portfolio_active) {
+            PortfolioInit.onLoad();
+            is_portfolio_active = true;
         }
-    }
+    };
 
-    function isActive() {
-        return !!(Client.isLoggedIn() && isTradePage());
-    }
+    const isActive = () => !!(Client.isLoggedIn() && isTradePage());
 
-    function hide() {
-        if (isTradePage() && isPortfolioActive) {
-            PortfolioWS.onUnload();
-            isPortfolioActive = false;
+    const hide = () => {
+        if (isTradePage() && is_portfolio_active) {
+            PortfolioInit.onUnload();
+            is_portfolio_active = false;
             $portfolio = undefined;
         }
-    }
+    };
 
-    function isTradePage() {
-        return State.get('is_mb_trading');
-    }
+    const isTradePage = () => State.get('is_mb_trading');
 
     return {
         init    : init,
@@ -53,6 +47,4 @@ const JapanPortfolio = (function() {
     };
 })();
 
-module.exports = {
-    JapanPortfolio: JapanPortfolio,
-};
+module.exports = JapanPortfolio;

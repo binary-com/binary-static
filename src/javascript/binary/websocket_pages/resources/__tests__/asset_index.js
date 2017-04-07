@@ -1,29 +1,29 @@
-const asset_index = require('../asset_indexws');
+const asset_index = require('../asset_index');
 const { api, expect } = require('../../../common_functions/tests');
 
-describe('Asset Index', function() {
+describe('Asset Index', () => {
     let asset_index_res,
         active_symbols_res;
     before(function(done) {
         this.timeout(10000);
-        api.getAssetIndex().then(function(response) {
+        api.getAssetIndex().then((response) => {
             asset_index_res = response.asset_index;
             if (active_symbols_res) done();
         });
-        api.getActiveSymbolsBrief().then(function(response) {
+        api.getActiveSymbolsBrief().then((response) => {
             active_symbols_res = response.active_symbols;
             if (asset_index_res) done();
         });
     });
 
-    it('Should have all functions that are being tested', function() {
+    it('Should have all functions that are being tested', () => {
         expect(asset_index).to.have.all.of.keys(['getAssetIndexData', 'getMarketColumns']);
     });
 
-    it('Should getAssetIndexData() have all expected data', function() {
+    it('Should getAssetIndexData() have all expected data', () => {
         const asset_index_data = asset_index.getAssetIndexData(asset_index_res, active_symbols_res);
         expect(asset_index_data).to.be.an('array');
-        asset_index_data.forEach(function(asset_index_item) {
+        asset_index_data.forEach((asset_index_item) => {
             expect(asset_index_item).to.be.an('array')
                 .to.have.lengthOf(5);
             expect(asset_index_item[0]).to.be.a('string');
@@ -41,10 +41,10 @@ describe('Asset Index', function() {
         });
     });
 
-    it('Should getMarketColumns() have all expected data', function() {
+    it('Should getMarketColumns() have all expected data', () => {
         const market_columns = asset_index.getMarketColumns();
         expect(market_columns).to.be.an('Object');
-        Object.keys(market_columns).forEach(function(market) {
+        Object.keys(market_columns).forEach((market) => {
             expect(market_columns[market]).to.have.property('columns')
                 .that.is.an('array');
             expect(market_columns[market].columns.length).to.equal(market_columns[market].header.length);
