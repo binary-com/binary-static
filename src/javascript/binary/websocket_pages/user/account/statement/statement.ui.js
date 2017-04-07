@@ -13,8 +13,8 @@ const StatementUI = (() => {
     let all_data = [],
         oauth_apps = {};
 
-    const table_id = 'statement-table',
-        columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
+    const table_id = 'statement-table';
+    const columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
 
     const createEmptyStatementTable = () => {
         const header = [
@@ -28,8 +28,8 @@ const StatementUI = (() => {
             localize('Details'),
         ];
 
-        const jp_client = jpClient(),
-            currency = Client.get('currency');
+        const jp_client = jpClient();
+        const currency = Client.get('currency');
 
         header[6] += (jp_client || !currency ? '' : ' (' + currency + ')');
 

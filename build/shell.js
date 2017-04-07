@@ -18,6 +18,12 @@ module.exports = function (grunt) {
                 stdout: true
             }
         },
+        trigger_tests: {
+            command: grunt.option('staging') ? 'grunt gh-pages:trigger_tests' : 'echo "Tests are triggered only when releasing to Staging."',
+            options: {
+                stdout: true
+            }
+        },
         make_cname: {
             command: 'git config --get remote.origin.url',
             options: {

@@ -347,6 +347,8 @@ sub _texts {
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
         push @texts, localize('Last digit stats for the latest [_1] ticks on [_2]');
+        push @texts, localize('Percentage');
+        push @texts, localize('Digit');
         #strings for paymentagent
         push @texts, localize('Amount');
         push @texts, localize('Deposit');

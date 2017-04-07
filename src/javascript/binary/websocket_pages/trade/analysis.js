@@ -1,11 +1,9 @@
-const DigitInfo                  = require('./charts/digit_info');
-const JapanPortfolio             = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
-const State                      = require('../../base/storage').State;
-const getLanguage                = require('../../base/language').get;
-const toggleActiveNavMenuElement = require('./common').toggleActiveNavMenuElement;
-const showHighchart              = require('./common').showHighchart;
-const Url                        = require('../../base/url');
-const elementInnerHtml           = require('../../common_functions/common_functions').elementInnerHtml;
+const commonTrading    = require('./common');
+const getLanguage      = require('../../base/language').get;
+const State            = require('../../base/storage').State;
+const Url              = require('../../base/url');
+const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
+const JapanPortfolio   = require('../../../binary_japan/trade_japan/portfolio');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -19,20 +17,20 @@ const elementInnerHtml           = require('../../common_functions/common_functi
  * or underlying to load bet analysis for that particular event
  */
 
-const TradingAnalysis = (function() {
-    const trading_digit_info = new DigitInfo();
+const TradingAnalysis = (() => {
+    'use strict';
 
-    const requestTradeAnalysis = function() {
-        let formName = State.get('is_mb_trading') ? $('#category').val() :
+    const requestTradeAnalysis = () => {
+        let form_name = State.get('is_mb_trading') ? $('#category').val() :
                                                     $('#contract_form_name_nav').find('.a-active').attr('id');
-        if (formName === 'matchdiff') {
-            formName = 'digits';
+        if (form_name === 'matchdiff') {
+            form_name = 'digits';
         }
-        if (formName === 'callput') {
-            formName = 'higherlower';
+        if (form_name === 'callput') {
+            form_name = 'higherlower';
         }
-        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
-        if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
+        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + form_name));
+        if (form_name === 'digits' || form_name === 'overunder' || form_name === 'evenodd') {
             $('#tab_last_digit').removeClass('invisible');
         } else {
             $('#tab_last_digit').addClass('invisible');
@@ -45,22 +43,20 @@ const TradingAnalysis = (function() {
      * This function bind event to link elements of bottom content
      * navigation
      */
-    const bindAnalysisTabEvent = function() {
-        'use strict';
-
-        const analysisNavElement = document.querySelector('#trading_bottom_content #betsBottomPage');
-        if (analysisNavElement) {
-            analysisNavElement.addEventListener('click', function(e) {
+    const bindAnalysisTabEvent = () => {
+        const analysis_nav_element = document.querySelector('#trading_bottom_content #betsBottomPage');
+        if (analysis_nav_element) {
+            analysis_nav_element.addEventListener('click', (e) => {
                 if (e.target && e.target.nodeName === 'A') {
                     e.preventDefault();
 
-                    const clickedLink = e.target,
-                        clickedElement = clickedLink.parentElement,
-                        isTabActive = clickedElement.classList.contains('active');
+                    const clicked_link = e.target;
+                    const clicked_element = clicked_link.parentElement;
+                    const is_tab_active = clicked_element.classList.contains('active');
 
-                    sessionStorage.setItem('currentAnalysisTab', clickedElement.id);
+                    sessionStorage.setItem('currentAnalysisTab', clicked_element.id);
 
-                    if (!isTabActive) {
+                    if (!is_tab_active) {
                         loadAnalysisTab();
                     }
                 }
@@ -72,25 +68,23 @@ const TradingAnalysis = (function() {
      * This function handles all the functionality on how to load
      * tab according to current paramerted
      */
-    const loadAnalysisTab = function() {
-        'use strict';
+    const loadAnalysisTab = () => {
+        const current_tab = getActiveTab();
+        const current_link = document.querySelector('#' + current_tab + ' a');
+        const content_id = document.getElementById(current_tab + '-content');
 
-        const currentTab = getActiveTab(),
-            currentLink = document.querySelector('#' + currentTab + ' a'),
-            contentId = document.getElementById(currentTab + '-content');
-
-        const analysisNavElement = document.querySelector('#trading_bottom_content #betsBottomPage');
-        toggleActiveNavMenuElement(analysisNavElement, currentLink.parentElement);
+        const analysis_nav_element = document.querySelector('#trading_bottom_content #betsBottomPage');
+        commonTrading.toggleActiveNavMenuElement(analysis_nav_element, current_link.parentElement);
         toggleActiveAnalysisTabs();
 
         JapanPortfolio.init();
-        if (currentTab === 'tab_portfolio') {
+        if (current_tab === 'tab_portfolio') {
             JapanPortfolio.show();
         } else {
             JapanPortfolio.hide();
-            if (currentTab === 'tab_graph') {
-                showHighchart();
-            } else if (currentTab === 'tab_last_digit') {
+            if (current_tab === 'tab_graph') {
+                commonTrading.showHighchart();
+            } else if (current_tab === 'tab_last_digit') {
                 const underlying = $('[name=underlying] option:selected').val() || $('#underlying').find('option:selected').val();
                 const tick = $('[name=tick_count]').val() || 100;
                 BinarySocket.send({
@@ -102,14 +96,13 @@ const TradingAnalysis = (function() {
             } else {
                 $.ajax({
                     method: 'GET',
-                    url   : currentLink.getAttribute('href'),
-                })
-                    .done(function(data) {
-                        elementInnerHtml(contentId, data);
-                        if (currentTab === 'tab_explanation') {
-                            showExplanation(currentLink.href);
-                        }
-                    });
+                    url   : current_link.getAttribute('href'),
+                }).done((data) => {
+                    elementInnerHtml(content_id, data);
+                    if (current_tab === 'tab_explanation') {
+                        showExplanation(current_link.href);
+                    }
+                });
             }
         }
     };
@@ -117,20 +110,18 @@ const TradingAnalysis = (function() {
     /*
      * function to toggle the active element for analysis menu
      */
-    const toggleActiveAnalysisTabs = function() {
-        'use strict';
+    const toggleActiveAnalysisTabs = () => {
+        const current_tab = getActiveTab();
+        const analysis_container = document.getElementById('bet_bottom_content');
 
-        const currentTab = getActiveTab(),
-            analysisContainer = document.getElementById('bet_bottom_content');
+        if (analysis_container) {
+            const child_elements = analysis_container.children;
+            const current_tab_element = document.getElementById(current_tab + '-content');
+            const classes = current_tab_element.classList;
 
-        if (analysisContainer) {
-            const childElements = analysisContainer.children,
-                currentTabElement = document.getElementById(currentTab + '-content'),
-                classes = currentTabElement.classList;
-
-            for (let i = 0, len = childElements.length; i < len; i++) {
-                childElements[i].classList.remove('selectedTab');
-                childElements[i].classList.add('invisible');
+            for (let i = 0, len = child_elements.length; i < len; i++) {
+                child_elements[i].classList.remove('selectedTab');
+                child_elements[i].classList.add('invisible');
             }
 
             classes.add('selectedTab');
@@ -141,37 +132,37 @@ const TradingAnalysis = (function() {
     /*
      * get the current active tab if its visible i.e allowed for current parameters
      */
-    const getActiveTab = function() {
-        let selectedTab = sessionStorage.getItem('currentAnalysisTab') || (State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation');
-        const selectedElement = document.getElementById(selectedTab);
+    const getActiveTab = () => {
+        let selected_tab = sessionStorage.getItem('currentAnalysisTab') || (State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation');
+        const selected_element = document.getElementById(selected_tab);
 
-        if (selectedElement && selectedElement.classList.contains('invisible') &&
-            !(selectedTab === 'tab_portfolio' && JapanPortfolio.isActive())) {
-            selectedTab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
-            sessionStorage.setItem('currentAnalysisTab', selectedTab);
+        if (selected_element && selected_element.classList.contains('invisible') &&
+            !(selected_tab === 'tab_portfolio' && JapanPortfolio.isActive())) {
+            selected_tab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
+            sessionStorage.setItem('currentAnalysisTab', selected_tab);
         }
 
-        return selectedTab;
+        return selected_tab;
     };
 
     /*
      * handle the display of proper explanation based on parameters
      */
-    const showExplanation = function(href) {
+    const showExplanation = (href) => {
         const options = Url.paramsHash(href);
         const form_name    = options.form_name || 'risefall';
         const show_image   = options.show_image   ? options.show_image   > 0 : true;
         const show_winning = options.show_winning ? options.show_winning > 0 : true;
         const show_explain = true;
         const hidden_class = 'invisible';
-        const $Container   = $('#tab_explanation-content');
+        const $container   = $('#tab_explanation-content');
 
         if (show_winning) {
-            $Container.find('#explanation_winning, #winning_' + form_name).removeClass(hidden_class);
+            $container.find('#explanation_winning, #winning_' + form_name).removeClass(hidden_class);
         }
 
         if (show_explain) {
-            $Container.find('#explanation_explain, #explain_' + form_name).removeClass(hidden_class);
+            $container.find('#explanation_explain, #explain_' + form_name).removeClass(hidden_class);
         }
 
         const images = {
@@ -215,22 +206,17 @@ const TradingAnalysis = (function() {
 
         if (show_image && images.hasOwnProperty(form_name)) {
             const image_path = Url.urlForStatic('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
-            $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
-            $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
-            $Container.find('#explanation_image').removeClass(hidden_class);
+            $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
+            $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
+            $container.find('#explanation_image').removeClass(hidden_class);
         }
     };
 
     return {
-        request   : requestTradeAnalysis,
-        digit_info: function() {
-            return trading_digit_info;
-        },
+        request             : requestTradeAnalysis,
         getActiveTab        : getActiveTab,
         bindAnalysisTabEvent: bindAnalysisTabEvent,
     };
 })();
 
-module.exports = {
-    TradingAnalysis: TradingAnalysis,
-};
+module.exports = TradingAnalysis;

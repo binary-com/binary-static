@@ -1,24 +1,24 @@
 /*
  * Display price/spot movement variation to depict price moved up or down
  */
-function displayPriceMovement(element, oldValue, currentValue) {
+const displayPriceMovement = (element, old_value, current_value) => {
     'use strict';
 
     element.classList.remove('price_moved_down');
     element.classList.remove('price_moved_up');
-    if (parseFloat(currentValue) > parseFloat(oldValue)) {
+    if (parseFloat(current_value) > parseFloat(old_value)) {
         element.classList.remove('price_moved_down');
         element.classList.add('price_moved_up');
-    } else if (parseFloat(currentValue) < parseFloat(oldValue)) {
+    } else if (parseFloat(current_value) < parseFloat(old_value)) {
         element.classList.remove('price_moved_up');
         element.classList.add('price_moved_down');
     }
-}
+};
 
 /*
  * count number of decimal places in spot so that we can make barrier to same decimal places
  */
-function countDecimalPlaces(num) {
+const countDecimalPlaces = (num) => {
     'use strict';
 
     if (!isNaN(num)) {
@@ -28,11 +28,11 @@ function countDecimalPlaces(num) {
         }
     }
     return 0;
-}
+};
 
 const trading_times = {};
 
-function processTradingTimesAnswer(response) {
+const processTradingTimesAnswer = (response) => {
     if (!trading_times.hasOwnProperty(response.echo_req.trading_times) && response.hasOwnProperty('trading_times') && response.trading_times.hasOwnProperty('markets')) {
         for (let i = 0; i < response.trading_times.markets.length; i++) {
             const submarkets = response.trading_times.markets[i].submarkets;
@@ -52,16 +52,14 @@ function processTradingTimesAnswer(response) {
             }
         }
     }
-}
+};
 
-function getElement() {
-    return document.getElementById('date_start');
-}
+const getElement = () => document.getElementById('date_start');
 
 module.exports = {
     displayPriceMovement     : displayPriceMovement,
     countDecimalPlaces       : countDecimalPlaces,
     processTradingTimesAnswer: processTradingTimesAnswer,
-    getTradingTimes          : function () { return trading_times; },
+    getTradingTimes          : () => trading_times,
     getStartDateNode         : getElement,
 };

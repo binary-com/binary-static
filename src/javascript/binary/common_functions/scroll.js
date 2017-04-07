@@ -49,10 +49,10 @@ const Scroll = (() => {
                 sticky_navigation();
 
                 for (let i = 0; i < length; i++) {
-                    const section = $('.section:eq(' + i + ')'),
-                        sectionOffset = section.offset(),
-                        isOffsetTop = sectionOffset && $(this).scrollTop() >= sectionOffset.top - 5;
-                    if (($(window).scrollTop() === 0 || isOffsetTop) && section.css('display') !== 'none') { // ignore hidden elements
+                    const section = $('.section:eq(' + i + ')');
+                    const section_offset = section.offset();
+                    const is_offset_top = section_offset && $(this).scrollTop() >= section_offset.top - 5;
+                    if (($(window).scrollTop() === 0 || is_offset_top) && section.css('display') !== 'none') { // ignore hidden elements
                         sidebar_nav.find('li').removeClass('selected');
 
                         if ($(window).scrollTop() === 0 || sidebar_nav.width() === 0) {
@@ -70,10 +70,10 @@ const Scroll = (() => {
         }
     };
 
-    const scrollToTop = function() {
+    const scrollToTop = () => {
         let is_displaying = false;
         const $scrollup = $('#scrollup');
-        $(document).scroll(function () {
+        $(document).scroll(function() {
             if ($(this).scrollTop() > 100) {
                 if (is_displaying) return;
                 $scrollup.fadeIn();
@@ -84,7 +84,7 @@ const Scroll = (() => {
             }
         });
 
-        $scrollup.click(function () {
+        $scrollup.click(() => {
             $.scrollTo(0, 500);
         });
     };
