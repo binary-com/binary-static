@@ -43,7 +43,7 @@ const Scroll = (() => {
 
             const sidebar_nav = selector.find('#sidebar-nav');
             const length = elm_selector.find('.section').length;
-            $(window).on('scroll', () => {
+            $(window).on('scroll', function() {
                 if (!sidebar_nav.is(':visible')) return;
                 // and run it again every time you scroll
                 sticky_navigation();
