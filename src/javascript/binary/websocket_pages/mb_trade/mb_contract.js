@@ -1,6 +1,6 @@
 const moment           = require('moment');
-const MBDefaults       = require('./mb_defaults').MBDefaults;
-const MBSymbols        = require('./mb_symbols').MBSymbols;
+const MBDefaults       = require('./mb_defaults');
+const MBSymbols        = require('./mb_symbols');
 const Client           = require('../../base/client');
 const getLanguage      = require('../../base/language').get;
 const localize         = require('../../base/localize').localize;
@@ -13,13 +13,13 @@ const formatCurrency   = require('../../common_functions/currency_to_symbol').fo
  * Contract object mocks the trading form we have on our website
  * It parses the contracts json we get from socket.send({contracts_for: 'R_50'})
  */
-const MBContract = (function() {
+const MBContract = (() => {
     'use strict';
 
     let contracts_for_response,
         contract_timeout;
 
-    const getContracts = function(underlying) {
+    const getContracts = (underlying) => {
         const req = {
             contracts_for: (underlying || MBDefaults.get('underlying')),
             currency     : getCurrency(),
@@ -33,16 +33,16 @@ const MBContract = (function() {
         contract_timeout = setTimeout(getContracts, 15000);
     };
 
-    const clearContractTimeout = function(timoutID) {
-        if (timoutID) {
-            clearTimeout(timoutID);
+    const clearContractTimeout = (timout_id) => {
+        if (timout_id) {
+            clearTimeout(timout_id);
         } else {
             clearTimeout(contract_timeout);
-            clearTimeout(remainingTimeout);
+            clearTimeout(remaining_timeout);
         }
     };
 
-    const periodText = function(trading_period) {
+    const periodText = (trading_period) => {
         let date_start,
             date_expiry,
             duration;
@@ -73,7 +73,7 @@ const MBContract = (function() {
         };
     };
 
-    const populatePeriods = function(rebuild) {
+    const populatePeriods = (rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         let trading_period,
             start_end;
@@ -146,7 +146,7 @@ const MBContract = (function() {
             }
 
             // remove periods that no longer exist
-            existing_array.forEach(function(period) {
+            existing_array.forEach((period) => {
                 if (trading_period_array.indexOf(period) < 0) {
                     $list.find('[value="' + period + '"]').remove();
                 }
@@ -154,25 +154,25 @@ const MBContract = (function() {
         }
     };
 
-    let periodValue,
-        $countDownTimer,
-        remainingTimeElement,
-        remainingTimeout;
-    const displayRemainingTime = function(recalculate) {
-        if (typeof periodValue === 'undefined' || recalculate) {
-            periodValue = MBDefaults.get('period');
-            $countDownTimer = $('.countdown-timer');
-            remainingTimeElement = document.getElementById('remaining-time');
+    let period_value,
+        $count_down_timer,
+        remaining_time_element,
+        remaining_timeout;
+    const displayRemainingTime = (recalculate) => {
+        if (typeof period_value === 'undefined' || recalculate) {
+            period_value = MBDefaults.get('period');
+            $count_down_timer = $('.countdown-timer');
+            remaining_time_element = document.getElementById('remaining-time');
         }
-        if (!periodValue) return;
-        const timeLeft = parseInt(periodValue.split('_')[1]) - window.time.unix();
-        if (timeLeft <= 0) {
+        if (!period_value) return;
+        const time_left = parseInt(period_value.split('_')[1]) - window.time.unix();
+        if (time_left <= 0) {
             location.reload();
-        } else if (timeLeft < 120) {
-            $countDownTimer.addClass('alert');
+        } else if (time_left < 120) {
+            $count_down_timer.addClass('alert');
         }
-        const remainingTimeString = [],
-            duration = moment.duration(timeLeft * 1000);
+        const remaining_time_string = [];
+        const duration = moment.duration(time_left * 1000);
         const all_durations = {
             month : duration.months(),
             day   : duration.days(),
@@ -180,25 +180,25 @@ const MBContract = (function() {
             minute: duration.minutes(),
             second: duration.seconds(),
         };
-        Object.keys(all_durations).forEach(function(key) {
+        Object.keys(all_durations).forEach((key) => {
             if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + (jpClient() ? '' : ' ') + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
+                remaining_time_string.push(all_durations[key] + (jpClient() ? '' : ' ') + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
             }
         });
-        elementInnerHtml(remainingTimeElement, remainingTimeString.join(' '));
-        if (remainingTimeout) clearContractTimeout(remainingTimeout);
-        remainingTimeout = setTimeout(displayRemainingTime, 1000);
+        elementInnerHtml(remaining_time_element, remaining_time_string.join(' '));
+        if (remaining_timeout) clearContractTimeout(remaining_timeout);
+        remaining_timeout = setTimeout(displayRemainingTime, 1000);
     };
 
-    const sortByExpiryTime = function(first, second) {
-        const a = first.split('_'),
-            b = second.split('_'),
-            duration1 = a[1] - a[0],
-            duration2 = b[1] - b[0];
+    const sortByExpiryTime = (first, second) => {
+        const a = first.split('_');
+        const b = second.split('_');
+        const duration1 = a[1] - a[0];
+        const duration2 = b[1] - b[0];
         return a[1] === b[1] ? duration1 - duration2 : a[1] - b[1];
     };
 
-    const populateOptions = function(rebuild) {
+    const populateOptions = (rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         const available_contracts = contracts_for_response.contracts_for.available,
             $category = $('#category');
@@ -234,12 +234,12 @@ const MBContract = (function() {
         populatePeriods(rebuild);
     };
 
-    const getCurrentContracts = function() {
+    const getCurrentContracts = () => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return [];
-        const contracts = [],
-            category  = MBDefaults.get('category'),
-            periods   = MBDefaults.get('period').split('_');
-        contracts_for_response.contracts_for.available.forEach(function(c) {
+        const contracts = [];
+        const category  = MBDefaults.get('category');
+        const periods   = MBDefaults.get('period').split('_');
+        contracts_for_response.contracts_for.available.forEach((c) => {
             if (c.contract_category === category && c.trading_period &&
                     +c.trading_period.date_start.epoch  === +periods[0] &&
                     +c.trading_period.date_expiry.epoch === +periods[1]) {
@@ -249,7 +249,7 @@ const MBContract = (function() {
         return contracts;
     };
 
-    const getTemplate = function(contract_type) {
+    const getTemplate = (contract_type) => {
         const templates = {
             PUT: {
                 opposite   : 'CALLE',
@@ -303,7 +303,7 @@ const MBContract = (function() {
         return contract_type ? templates[contract_type] : templates;
     };
 
-    const displayDescriptions = function() {
+    const displayDescriptions = () => {
         const contracts = getCurrentContracts();
         if (!contracts.length) return;
         const $desc_wrappers = $('.descr-wrapper'),
@@ -311,7 +311,7 @@ const MBContract = (function() {
             payout = Number(MBDefaults.get('payout') * (jpClient() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
             date_expiry = periodText(contracts[0].trading_period).end.replace(/\s\(.*\)/, '');
-        contracts.forEach(function(c) {
+        contracts.forEach((c) => {
             const contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
@@ -321,9 +321,7 @@ const MBContract = (function() {
         });
     };
 
-    const getCurrency = function() {
-        return (Client.get('currency') || $('#currency').attr('value') || 'JPY');
-    };
+    const getCurrency = () => (Client.get('currency') || $('#currency').attr('value') || 'JPY');
 
     return {
         getContracts        : getContracts,
@@ -334,14 +332,12 @@ const MBContract = (function() {
         getTemplate         : getTemplate,
         displayDescriptions : displayDescriptions,
         getCurrency         : getCurrency,
-        getContractsResponse: function() { return contracts_for_response; },
-        setContractsResponse: function(contracts_for) { contracts_for_response = contracts_for; },
-        onUnload            : function() {
-            clearContractTimeout(); contracts_for_response = {}; periodValue = undefined;
+        getContractsResponse: () => contracts_for_response,
+        setContractsResponse: (contracts_for) => { contracts_for_response = contracts_for; },
+        onUnload            : () => {
+            clearContractTimeout(); contracts_for_response = {}; period_value = undefined;
         },
     };
 })();
 
-module.exports = {
-    MBContract: MBContract,
-};
+module.exports = MBContract;

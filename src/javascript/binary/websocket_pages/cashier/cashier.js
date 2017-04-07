@@ -6,7 +6,7 @@ const urlFor             = require('../../base/url').urlFor;
 const jpClient           = require('../../common_functions/country_base').jpClient;
 const jpResidence        = require('../../common_functions/country_base').jpResidence;
 
-const Cashier = (function() {
+const Cashier = (() => {
     'use strict';
 
     let href = '';
@@ -34,7 +34,7 @@ const Cashier = (function() {
         });
     };
 
-    const onLoad = function() {
+    const onLoad = () => {
         if (jpClient() && !jpResidence()) {
             BinaryPjax(defaultRedirectUrl());
         }

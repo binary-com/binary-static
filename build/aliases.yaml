@@ -22,11 +22,11 @@ dev:
   - 'clean'
   - 'default'
   - 'shell:compile_dev'
-  - 'gh-pages'
+  - 'gh-pages:main'
 
 deploy:
   - 'default'
-  - 'gh-pages'
+  - 'gh-pages:main'
 
 serve:
   - 'webpack'
@@ -50,4 +50,5 @@ release:
   - 'default'
   - 'shell:compile_production'
   - 'shell:make_cname'
-  - 'gh-pages'
+  - 'gh-pages:main'
+  - 'shell:trigger_tests'

@@ -22,7 +22,7 @@ const getHighestZIndex = (selector) => {
         selector = 'div,p,area,nav,section,header,canvas,aside,span';
     }
     const all = [];
-    const _store_zindex = function () {
+    const _store_zindex = function() {
         if ($(this).is(':visible')) {
             const z = $(this).css('z-index');
             if (!isNaN(z)) {
@@ -35,32 +35,32 @@ const getHighestZIndex = (selector) => {
     return all.length ? Math.max(...all) : null;
 };
 
-const downloadCSV = (csvContents, filename) => {
+const downloadCSV = (csv_contents, filename) => {
     filename = filename || 'data.csv';
     if (navigator.msSaveBlob) { // IE 10+
-        navigator.msSaveBlob(new Blob([csvContents], { type: 'text/csv;charset=utf-8;' }), filename);
+        navigator.msSaveBlob(new Blob([csv_contents], { type: 'text/csv;charset=utf-8;' }), filename);
     } else { // Other browsers
-        const csv = 'data:text/csv;charset=utf-8,' + csvContents;
-        const downloadLink = document.createElement('a');
-        downloadLink.href = encodeURI(csv);
-        downloadLink.download = filename;
+        const csv = 'data:text/csv;charset=utf-8,' + csv_contents;
+        const download_link = document.createElement('a');
+        download_link.href = encodeURI(csv);
+        download_link.download = filename;
 
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
+        document.body.appendChild(download_link);
+        download_link.click();
+        document.body.removeChild(download_link);
     }
 };
 
 const template = (string, content) => string.replace(/\[_(\d+)]/g, (s, index) => content[(+index) - 1]);
 
 const isEmptyObject = (obj) => {
-    let isEmpty = true;
+    let is_empty = true;
     if (obj && obj instanceof Object) {
         Object.keys(obj).forEach((key) => {
-            if (obj.hasOwnProperty(key)) isEmpty = false;
+            if (obj.hasOwnProperty(key)) is_empty = false;
         });
     }
-    return isEmpty;
+    return is_empty;
 };
 
 const cloneObject = obj => (!isEmptyObject(obj) ? $.extend({}, obj) : obj);

@@ -1,10 +1,10 @@
-const MBContract      = require('./mb_contract').MBContract;
-const MBDefaults      = require('./mb_defaults').MBDefaults;
-const MBNotifications = require('./mb_notifications').MBNotifications;
-const MBProcess       = require('./mb_process').MBProcess;
+const MBContract      = require('./mb_contract');
+const MBDefaults      = require('./mb_defaults');
+const MBNotifications = require('./mb_notifications');
+const MBProcess       = require('./mb_process');
+const TradingAnalysis = require('../trade/analysis');
 const debounce        = require('../trade/common').debounce;
 const showHighchart   = require('../trade/common').showHighchart;
-const TradingAnalysis = require('../trade/analysis').TradingAnalysis;
 const jpClient        = require('../../common_functions/country_base').jpClient;
 
 /*
@@ -15,14 +15,14 @@ const jpClient        = require('../../common_functions/country_base').jpClient;
  * page for pjax to work else it will fire on all pages
  *
  */
-const MBTradingEvents = (function () {
+const MBTradingEvents = (() => {
     'use strict';
 
-    const initiate = function () {
+    const initiate =  () => {
         const $form = $('#trade_form');
         const hidden_class = 'invisible';
 
-        $(document).on('click', function(e) {
+        $(document).on('click', (e) => {
             if ($(e.target).parents('#payout').length) return;
             $form.find('.list').addClass(hidden_class);
         });
@@ -79,17 +79,17 @@ const MBTradingEvents = (function () {
             });
         }
 
-        const validatePayout = function(payoutAmount) {
-            let isOK = true;
+        const validatePayout = (payout_amount) => {
+            let is_ok = true;
             const contract = MBContract.getCurrentContracts();
-            const maxAmount = (Array.isArray(contract) && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
-            if (!payoutAmount || isNaN(payoutAmount) ||
-                (jpClient() && (payoutAmount < 1 || payoutAmount > 100)) ||
-                (payoutAmount <= 0 || payoutAmount > maxAmount)) {
-                isOK = false;
+            const max_amount = (Array.isArray(contract) && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
+            if (!payout_amount || isNaN(payout_amount) ||
+                (jpClient() && (payout_amount < 1 || payout_amount > 100)) ||
+                (payout_amount <= 0 || payout_amount > max_amount)) {
+                is_ok = false;
             }
 
-            return isOK;
+            return is_ok;
         };
 
         const $payout = $form.find('#payout');
@@ -131,6 +131,4 @@ const MBTradingEvents = (function () {
     };
 })();
 
-module.exports = {
-    MBTradingEvents: MBTradingEvents,
-};
+module.exports = MBTradingEvents;

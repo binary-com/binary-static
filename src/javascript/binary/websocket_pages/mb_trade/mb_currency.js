@@ -1,4 +1,4 @@
-const MBDefaults     = require('./mb_defaults').MBDefaults;
+const MBDefaults     = require('./mb_defaults');
 const Client         = require('../../base/client');
 const jpClient       = require('../../common_functions/country_base').jpClient;
 const formatCurrency = require('../../common_functions/currency_to_symbol').formatCurrency;
@@ -9,7 +9,7 @@ const formatCurrency = require('../../common_functions/currency_to_symbol').form
  * It process 'socket.send({payout_currencies:1})` response
  * and display them
  */
-function MBDisplayCurrencies() {
+const MBDisplayCurrencies = () => {
     'use strict';
 
     const $currency  = $('#trade_form #currency');
@@ -31,8 +31,6 @@ function MBDisplayCurrencies() {
     $currency.attr('value', def_value).find('> .current').html(jpClient() ? '✕' : formatCurrency(def_value));
 
     MBDefaults.set('currency', def_value);
-}
-
-module.exports = {
-    MBDisplayCurrencies: MBDisplayCurrencies,
 };
+
+module.exports = MBDisplayCurrencies;
