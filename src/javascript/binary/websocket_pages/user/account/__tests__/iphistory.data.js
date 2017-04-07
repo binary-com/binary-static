@@ -2,7 +2,7 @@ const expect        = require('chai').expect;
 const IPHistoryData = require('../settings/iphistory/iphistory.data.js');
 
 
-describe('IPHistoryData.parseUserAgent', function() {
+describe('IPHistoryData.parseUserAgent', () => {
     // TODO: add more user agent test strings
     const parse = IPHistoryData.parseUserAgent;
     const common = [
@@ -48,25 +48,25 @@ describe('IPHistoryData.parseUserAgent', function() {
         },
     ];
 
-    common.forEach(function(entry) {
-        it(`works for ${entry.name}`, function() {
+    common.forEach((entry) => {
+        it(`works for ${entry.name}`, () => {
             const browser = IPHistoryData.parseUserAgent(entry.ua);
             expect(browser.name).to.equal(entry.name);
             expect(browser.version).to.equal(entry.version);
         });
     });
 
-    it('returns null when userAgent is not parsable', function() {
+    it('returns null when userAgent is not parsable', () => {
         const ua = '--unparsable--';
         expect(parse(ua)).to.equal(null);
     });
 });
 
 
-describe('IPHistoryData.parse', function() {
+describe('IPHistoryData.parse', () => {
     const parse = IPHistoryData.parse;
 
-    it('parses activity objects correctly', function() {
+    it('parses activity objects correctly', () => {
         const activity = {
             environment: '12-Jul-16 06:38:09GMT IP=211.24.127.133 IP_COUNTRY=MY User_AGENT=Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:48.0) Gecko/20100101 Firefox/48.0 LANG=EN',
             time       : 1468305490,
@@ -86,7 +86,7 @@ describe('IPHistoryData.parse', function() {
         });
     });
 
-    it('returns correct .success attribute', function() {
+    it('returns correct .success attribute', () => {
         const activity = {
             environment: '13-Jul-16 05:13:29GMT IP=211.24.127.133 IP_COUNTRY=MY User_AGENT=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/601.6.17 (KHTML, like Gecko) Version/9.1.1 Safari/601.6.17 LANG=EN',
             time       : 1468386810,

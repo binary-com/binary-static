@@ -344,6 +344,8 @@ sub _texts {
         #strings for digit_info
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
+        push @texts, localize('Percentage');
+        push @texts, localize('Digit');
         #strings for paymentagent
         push @texts, localize('Amount');
         push @texts, localize('Deposit');

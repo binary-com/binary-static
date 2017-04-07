@@ -19,202 +19,180 @@ const isEmptyObject              = require('../../base/utility').isEmptyObject;
  * `Contract.open()` `Contract.close()`
  * `Contract.barriers` if applicable for current underlying
  */
-const Contract = (function() {
+const Contract = (() => {
     'use strict';
 
-    const contractType = {};
-    let contractDetails = {},
+    const contract_type = {};
+    let contract_details = {},
         barriers = {},
         durations = {},
-        startDates = {},
+        start_dates = {},
         open,
         close,
         form,
         barrier;
 
-    const populate_durations = function(currentContract) {
-        const currentCategory  = currentContract.contract_category,
-            expiry_type      = currentContract.expiry_type,
-            barrier_category = currentContract.barrier_category,
-            start_type       = currentContract.start_type,
-            max_duration     = currentContract.max_contract_duration,
-            min_duration     = currentContract.min_contract_duration;
+    const populateDurations = (current_contract) => {
+        const current_category = current_contract.contract_category;
+        const expiry_type      = current_contract.expiry_type;
+        const barrier_category = current_contract.barrier_category;
+        const start_type       = current_contract.start_type;
+        const max_duration     = current_contract.max_contract_duration;
+        const min_duration     = current_contract.min_contract_duration;
 
         if (!durations[expiry_type]) {
             durations[expiry_type] = {};
         }
 
-        if (!durations[expiry_type][currentCategory]) {
-            durations[expiry_type][currentCategory] = {};
+        if (!durations[expiry_type][current_category]) {
+            durations[expiry_type][current_category] = {};
         }
 
-        if (!durations[expiry_type][currentCategory][barrier_category]) {
-            durations[expiry_type][currentCategory][barrier_category] = {};
+        if (!durations[expiry_type][current_category][barrier_category]) {
+            durations[expiry_type][current_category][barrier_category] = {};
         }
 
-        if (!durations[expiry_type][currentCategory][barrier_category][start_type]) {
-            durations[expiry_type][currentCategory][barrier_category][start_type] = {};
+        if (!durations[expiry_type][current_category][barrier_category][start_type]) {
+            durations[expiry_type][current_category][barrier_category][start_type] = {};
         }
 
-        durations[expiry_type][currentCategory][barrier_category][start_type].max_contract_duration = max_duration;
+        durations[expiry_type][current_category][barrier_category][start_type].max_contract_duration = max_duration;
 
-        durations[expiry_type][currentCategory][barrier_category][start_type].min_contract_duration = min_duration;
+        durations[expiry_type][current_category][barrier_category][start_type].min_contract_duration = min_duration;
     };
 
-    const details = function(formName) {
+    const details = (form_name) => {
         const contracts = Contract.contracts().contracts_for;
-        let barrierCategory;
+        let barrier_category;
 
         if (!contracts) return;
 
-        startDates = { has_spot: 0, list: [] };
+        start_dates = { has_spot: 0, list: [] };
         durations = {};
         open = contracts.open;
         close = contracts.close;
 
-        const formBarrier = getFormNameBarrierCategory(formName);
-        form = formName = formBarrier.formName;
-        barrier = barrierCategory = formBarrier.barrierCategory;
+        const form_barrier = getFormNameBarrierCategory(form_name);
+        form = form_name = form_barrier.form_name;
+        barrier = barrier_category = form_barrier.barrier_category;
 
-        contracts.available.forEach(function(currentObj) {
-            const contractCategory = currentObj.contract_category;
+        contracts.available.forEach((current_obj) => {
+            const contract_category = current_obj.contract_category;
 
-            if (formName && formName === contractCategory) {
-                if (barrierCategory) {
-                    if (barrierCategory === currentObj.barrier_category) {
-                        populate_durations(currentObj);
+            if (form_name && form_name === contract_category) {
+                if (barrier_category) {
+                    if (barrier_category === current_obj.barrier_category) {
+                        populateDurations(current_obj);
                     }
                 } else {
-                    populate_durations(currentObj);
+                    populateDurations(current_obj);
                 }
 
-                if (currentObj.forward_starting_options && currentObj.start_type === 'forward' && sessionStorage.formname !== 'higherlower') {
-                    startDates.list = currentObj.forward_starting_options;
-                } else if (currentObj.start_type === 'spot') {
-                    startDates.has_spot = 1;
+                if (current_obj.forward_starting_options && current_obj.start_type === 'forward' && sessionStorage.formname !== 'higherlower') {
+                    start_dates.list = current_obj.forward_starting_options;
+                } else if (current_obj.start_type === 'spot') {
+                    start_dates.has_spot = 1;
                 }
 
-                const symbol = currentObj.underlying_symbol;
-                if (currentObj.barrier_category && currentObj.barrier_category !== 'non_financial') {
+                const symbol = current_obj.underlying_symbol;
+                if (current_obj.barrier_category && current_obj.barrier_category !== 'non_financial') {
                     if (!barriers.hasOwnProperty(symbol)) {
                         barriers[symbol] = {};
                     }
-                    if (currentObj.barriers === 1) {
-                        barriers[symbol][contractCategory] = {
+                    if (current_obj.barriers === 1) {
+                        barriers[symbol][contract_category] = {
                             count           : 1,
-                            barrier         : currentObj.barrier,
-                            barrier_category: currentObj.barrier_category,
+                            barrier         : current_obj.barrier,
+                            barrier_category: current_obj.barrier_category,
                         };
-                    } else if (currentObj.barriers === 2) {
-                        barriers[symbol][contractCategory] = {
+                    } else if (current_obj.barriers === 2) {
+                        barriers[symbol][contract_category] = {
                             count           : 2,
-                            barrier         : currentObj.high_barrier,
-                            barrier1        : currentObj.low_barrier,
-                            barrier_category: currentObj.barrier_category,
+                            barrier         : current_obj.high_barrier,
+                            barrier1        : current_obj.low_barrier,
+                            barrier_category: current_obj.barrier_category,
                         };
                     }
                 }
 
-                if (!contractType[contractCategory]) {
-                    contractType[contractCategory] = {};
+                if (!contract_type[contract_category]) {
+                    contract_type[contract_category] = {};
                 }
 
-                const type = currentObj.contract_type;
-                if (!contractType[contractCategory].hasOwnProperty(type)) {
-                    contractType[contractCategory][type] = localize(currentObj.contract_display);
+                const type = current_obj.contract_type;
+                if (!contract_type[contract_category].hasOwnProperty(type)) {
+                    contract_type[contract_category][type] = localize(current_obj.contract_display);
                 }
             }
         });
 
-        if (formName && barrierCategory) {
-            if (barriers && barriers[formName] && barriers[formName].barrier_category !== barrierCategory) {
+        if (form_name && barrier_category) {
+            if (barriers && barriers[form_name] && barriers[form_name].barrier_category !== barrier_category) {
                 barriers = {};
             }
         }
     };
 
-    const getContracts = function(underlying) {
+    const getContracts = (underlying) => {
         BinarySocket.send({ contracts_for: underlying });
     };
 
-    const getContractForms = function() {
-        const contracts = Contract.contracts().contracts_for,
-            tradeContractForms = {};
+    const getContractForms = () => {
+        const contracts = Contract.contracts().contracts_for;
+        const trade_contract_forms = {};
 
         if (!contracts) return null;
 
-        contracts.available.forEach(function(currentObj) {
-            const contractCategory = currentObj.contract_category;
-            if (contractCategory && !tradeContractForms.hasOwnProperty(contractCategory)) {
-                if (contractCategory === 'callput') {
-                    if (currentObj.barrier_category === 'euro_atm') {
-                        tradeContractForms.risefall = localize('Rise/Fall');
+        contracts.available.forEach((current_obj) => {
+            const contract_category = current_obj.contract_category;
+            if (contract_category && !trade_contract_forms.hasOwnProperty(contract_category)) {
+                if (contract_category === 'callput') {
+                    if (current_obj.barrier_category === 'euro_atm') {
+                        trade_contract_forms.risefall = localize('Rise/Fall');
                     } else {
-                        tradeContractForms.higherlower = localize('Higher/Lower');
+                        trade_contract_forms.higherlower = localize('Higher/Lower');
                     }
                 } else {
-                    tradeContractForms[contractCategory] = localize(currentObj.contract_category_display);
-                    if (contractCategory === 'digits') {
-                        tradeContractForms.matchdiff = localize('Matches/Differs');
+                    trade_contract_forms[contract_category] = localize(current_obj.contract_category_display);
+                    if (contract_category === 'digits') {
+                        trade_contract_forms.matchdiff = localize('Matches/Differs');
                         if (getLanguage() !== 'ID') {
-                            tradeContractForms.evenodd = localize('Even/Odd');
-                            tradeContractForms.overunder = localize('Over/Under');
+                            trade_contract_forms.evenodd = localize('Even/Odd');
+                            trade_contract_forms.overunder = localize('Over/Under');
                         }
                     }
                 }
             }
         });
 
-        if (isEmptyObject(tradeContractForms)) return null;
+        if (isEmptyObject(trade_contract_forms)) return null;
 
-        if (tradeContractForms.risefall || tradeContractForms.higherlower) {
-            tradeContractForms.updown = localize('Up/Down');
+        if (trade_contract_forms.risefall || trade_contract_forms.higherlower) {
+            trade_contract_forms.updown = localize('Up/Down');
         }
 
-        if (tradeContractForms.endsinout || tradeContractForms.staysinout) {
-            tradeContractForms.inout = localize('In/Out');
+        if (trade_contract_forms.endsinout || trade_contract_forms.staysinout) {
+            trade_contract_forms.inout = localize('In/Out');
         }
 
-        return tradeContractForms;
+        return trade_contract_forms;
     };
 
     return {
         details      : details,
         getContracts : getContracts,
         contractForms: getContractForms,
-        open         : function() {
-            return open;
-        },
-        close: function() {
-            return close;
-        },
-        contracts: function() {
-            return contractDetails;
-        },
-        durations: function() {
-            return durations;
-        },
-        startDates: function() {
-            return startDates;
-        },
-        barriers: function() {
-            return barriers;
-        },
-        contractType: function() {
-            return contractType;
-        },
-        form: function() {
-            return form;
-        },
-        barrier: function() {
-            return barrier;
-        },
-        setContracts: function(data) {
-            contractDetails = data;
-        },
+        open         : () => open,
+        close        : () => close,
+        contracts    : () => contract_details,
+        durations    : () => durations,
+        startDates   : () => start_dates,
+        barriers     : () => barriers,
+        contractType : () => contract_type,
+        form         : () => form,
+        barrier      : () => barrier,
+        setContracts : (data) => { contract_details = data; },
     };
 })();
 
-module.exports = {
-    Contract: Contract,
-};
+module.exports = Contract;

@@ -1,10 +1,10 @@
 const Client   = require('../../../base/client');
 const jpClient = require('../../../common_functions/country_base').jpClient;
 
-const Settings = (function() {
+const Settings = (() => {
     'use strict';
 
-    const onLoad = function() {
+    const onLoad = () => {
         BinarySocket.wait('get_account_status').then((response) => {
             const class_hidden = 'invisible';
             const class_real   = '.real';

@@ -1,6 +1,6 @@
-const Defaults       = require('./defaults').Defaults;
-const formatCurrency = require('../../common_functions/currency_to_symbol').formatCurrency;
+const Defaults       = require('./defaults');
 const Client         = require('../../base/client');
+const formatCurrency = require('../../common_functions/currency_to_symbol').formatCurrency;
 
 /*
  * Handles currency display
@@ -8,12 +8,12 @@ const Client         = require('../../base/client');
  * It process 'socket.send({payout_currencies:1})` response
  * and display them
  */
-function displayCurrencies() {
+const displayCurrencies = () => {
     'use strict';
 
-    const target = document.getElementById('currency'),
-        fragment =  document.createDocumentFragment(),
-        currencies = Client.get('currencies').split(',');
+    const target = document.getElementById('currency');
+    const fragment = document.createDocumentFragment();
+    const currencies = Client.get('currencies').split(',');
 
     if (!target) {
         return;
@@ -24,9 +24,9 @@ function displayCurrencies() {
     }
 
     if (currencies.length > 1) {
-        currencies.forEach(function (currency) {
-            const option = document.createElement('option'),
-                content = document.createTextNode(currency);
+        currencies.forEach((currency) => {
+            const option = document.createElement('option');
+            const content = document.createTextNode(currency);
 
             option.setAttribute('value', currency);
 
@@ -40,8 +40,6 @@ function displayCurrencies() {
         $('#currency').replaceWith($('<span/>', { id: target.getAttribute('id'), class: target.getAttribute('class'), value: currencies[0], text: formatCurrency(currencies[0]) }));
         Defaults.set('currency', currencies[0]);
     }
-}
-
-module.exports = {
-    displayCurrencies: displayCurrencies,
 };
+
+module.exports = displayCurrencies;

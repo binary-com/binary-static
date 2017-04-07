@@ -120,13 +120,13 @@ const PaymentAgentWithdraw = (() => {
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    const showPageError = (errMsg, id) => {
+    const showPageError = (err_msg, id) => {
         const $error = $(view_ids.error);
         $error.find(' > p').addClass(hidden_class);
         if (id) {
             $error.find(`#${id}`).removeClass(hidden_class);
         } else {
-            $error.find('#custom-error').html(errMsg).removeClass(hidden_class);
+            $error.find('#custom-error').html(err_msg).removeClass(hidden_class);
         }
         setActiveView(view_ids.error);
     };

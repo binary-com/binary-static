@@ -10,7 +10,7 @@ const Clock = (() => {
 
     const showLocalTimeOnHover = (s) => {
         if (jpClient()) return;
-        $(s || '.date').each(function(idx, ele) {
+        $(s || '.date').each((idx, ele) => {
             const gmt_time_str = ele.textContent.replace('\n', ' ');
             const local_time  = moment.utc(gmt_time_str, 'YYYY-MM-DD HH:mm:ss').local();
             if (local_time.isValid()) {

@@ -3,7 +3,7 @@ const Validation       = require('../../../common_functions/form_validation');
 const MetaTraderConfig = require('./metatrader.config');
 const MetaTraderUI     = require('./metatrader.ui');
 
-const MetaTrader = (function() {
+const MetaTrader = (() => {
     'use strict';
 
     const types_info   = MetaTraderConfig.types_info;
@@ -51,7 +51,7 @@ const MetaTrader = (function() {
     const getAllAccountsInfo = () => {
         BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
             if (response.mt5_login_list && response.mt5_login_list.length > 0) {
-                response.mt5_login_list.map(function(obj) {
+                response.mt5_login_list.map((obj) => {
                     const acc_type = getAccountType(obj.group);
                     if (acc_type) { // ignore old accounts which are not linked to any group
                         types_info[acc_type].account_info = { login: obj.login };

@@ -7,10 +7,10 @@ const isStorageSupported = (storage) => {
         return false;
     }
 
-    const testKey = 'test';
+    const test_key = 'test';
     try {
-        storage.setItem(testKey, '1');
-        storage.removeItem(testKey);
+        storage.setItem(test_key, '1');
+        storage.removeItem(test_key);
         return true;
     } catch (e) {
         return false;

@@ -3,7 +3,7 @@ const formatMoney      = require('../../../common_functions/currency_to_symbol')
 const Validation       = require('../../../common_functions/form_validation');
 const MetaTraderConfig = require('./metatrader.config');
 
-const MetaTraderUI = (function() {
+const MetaTraderUI = (() => {
     'use strict';
 
     let $container,
@@ -34,7 +34,7 @@ const MetaTraderUI = (function() {
 
     const populateAccountList = () => {
         const $acc_box = $templates.find('> .acc-box');
-        Object.keys(types_info).forEach(function(acc_type) {
+        Object.keys(types_info).forEach((acc_type) => {
             if ($list.find(`#${acc_type}`).length === 0 && (types_info[acc_type].is_enabled || types_info[acc_type].is_demo)) {
                 const $acc_item = $acc_box.clone();
 
@@ -64,7 +64,7 @@ const MetaTraderUI = (function() {
         $acc_item.find('.loading').addClass(hidden_class);
         if (types_info[acc_type].account_info) {
             // Update account info
-            $acc_item.find('.acc-info div[data]').map(function () {
+            $acc_item.find('.acc-info div[data]').map(function() {
                 const key  = $(this).attr('data');
                 const info = types_info[acc_type].account_info[key];
                 $(this).text(

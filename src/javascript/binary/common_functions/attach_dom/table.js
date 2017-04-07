@@ -53,8 +53,8 @@ const Table = (() => {
         })();
 
         for (let i = 0; i < data.length; i++) {
-            const innerType = (opt === 'body') ? 'data' : 'header';
-            const $tr = createFlexTableRow(data[i], metadata, innerType);
+            const inner_type = (opt === 'body') ? 'data' : 'header';
+            const $tr = createFlexTableRow(data[i], metadata, inner_type);
             $tr.appendTo($outer);
         }
 
@@ -72,15 +72,15 @@ const Table = (() => {
             throw new Error('metadata and data does not match');
         }
 
-        const isData = (opt === 'data');
+        const is_data = (opt === 'data');
 
         const $tr = $('<tr></tr>');
         for (let i = 0; i < data.length; i++) {
-            const className = metadata[i].toLowerCase().replace(/\s/g, '-');
-            const rowElement = (isData) ?
-                $('<td></td>', { class: className, html: data[i] }) :
-                $('<th></th>', { class: className, html: data[i] });
-            rowElement.appendTo($tr);
+            const class_name = metadata[i].toLowerCase().replace(/\s/g, '-');
+            const row_element = (is_data) ?
+                $('<td></td>', { class: class_name, html: data[i] }) :
+                $('<th></th>', { class: class_name, html: data[i] });
+            row_element.appendTo($tr);
         }
 
         return $tr;
@@ -102,13 +102,13 @@ const Table = (() => {
     const appendTableBody = (id, data, rowGenerator) => {
         const tbody = document.querySelector(`#${id} > tbody`);
         if (!tbody) return;
-        const docFrag = document.createDocumentFragment();
+        const doc_frag = document.createDocumentFragment();
         data.map((ele) => {
             const row = rowGenerator(ele);
-            docFrag.appendChild(row);
+            doc_frag.appendChild(row);
         });
 
-        tbody.appendChild(docFrag);
+        tbody.appendChild(doc_frag);
     };
 
     return {

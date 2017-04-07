@@ -4,9 +4,9 @@ const AssetIndex = (() => {
     let market_columns;
 
     // Search and Remove (to decrease the next search count)
-    const getSymbolInfo = (qSymbol, active_symbols) =>
+    const getSymbolInfo = (q_symbol, active_symbols) =>
         active_symbols.filter((sy, id) => {
-            if (sy.symbol === qSymbol) {
+            if (sy.symbol === q_symbol) {
                 active_symbols.splice(id, 1);
                 return true;
             }
@@ -53,8 +53,8 @@ const AssetIndex = (() => {
                     };
                 }
 
-                const asset_cells = asset_item[idx.cells],
-                    values = {};
+                const asset_cells = asset_item[idx.cells];
+                const values = {};
                 for (let j = 0; j < asset_cells.length; j++) {
                     const col  = asset_cells[j][idx.cell_props.cell_name];
 

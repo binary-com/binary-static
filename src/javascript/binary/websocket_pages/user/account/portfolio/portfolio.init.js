@@ -10,7 +10,7 @@ const jpClient            = require('../../../../common_functions/country_base')
 const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
 const GetAppDetails       = require('../../../../common_functions/get_app_details');
 
-const PortfolioInit = (function() {
+const PortfolioInit = (() => {
     'use strict';
 
     let values,
@@ -20,7 +20,7 @@ const PortfolioInit = (function() {
         is_initialized,
         is_first_response;
 
-    const init = function() {
+    const init = () => {
         hidden_class = 'invisible';
         updateBalance();
 
@@ -46,8 +46,8 @@ const PortfolioInit = (function() {
         }
     };
 
-    const createPortfolioRow = function(data, is_first) {
-        const longCode = typeof module !== 'undefined' ?
+    const createPortfolioRow = (data, is_first) => {
+        const long_code = typeof module !== 'undefined' ?
             data.longcode :
             (jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
 
@@ -57,15 +57,15 @@ const PortfolioInit = (function() {
                 $('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
                     .append($('<td/>', { class: 'ref' }).append($(`<span ${GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id])} data-balloon-position="right">${data.transaction_id}</span>`)))
                     .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: formatMoney(data.currency, data.payout) })))
-                    .append($('<td/>', { class: 'details', text: longCode }))
+                    .append($('<td/>', { class: 'details', text: long_code }))
                     .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { text: formatMoney(data.currency, data.buy_price) })))
                     .append($('<td/>', { class: 'indicative' }).append($('<strong/>', { class: 'indicative_price', text: '--.--' })))
                     .append($('<td/>', { class: 'button' }).append($('<button/>', { class: 'button open_contract_details nowrap', contract_id: data.contract_id, text: localize('View') }))))
             .append(
-                $('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: longCode })));
+                $('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));
     };
 
-    const updateBalance = function() {
+    const updateBalance = () => {
         const $portfolio_balance = $('#portfolio-balance');
         if ($portfolio_balance.length === 0) return;
         $portfolio_balance.text(Portfolio.getBalance(Client.get('balance'), Client.get('currency')));
@@ -77,7 +77,7 @@ const PortfolioInit = (function() {
         }
     };
 
-    const updatePortfolio = function(data) {
+    const updatePortfolio = (data) => {
         if (data.hasOwnProperty('error')) {
             errorMessage(data.error.message);
             return;
@@ -93,14 +93,14 @@ const PortfolioInit = (function() {
              **/
             $('#portfolio-no-contract').hide();
             let portfolio_data;
-            $.each(data.portfolio.contracts, function(ci, c) {
+            $.each(data.portfolio.contracts, (ci, c) => {
                 if (!values.hasOwnProperty(c.contract_id)) {
                     values[c.contract_id] = {};
                     values[c.contract_id].buy_price = c.buy_price;
                     portfolio_data = Portfolio.getPortfolioData(c);
                     currency = portfolio_data.currency;
                     createPortfolioRow(portfolio_data, is_first_response);
-                    setTimeout(function() {
+                    setTimeout(() => {
                         $(`tr.${c.contract_id}`).removeClass('new');
                     }, 1000);
                 }
@@ -119,7 +119,7 @@ const PortfolioInit = (function() {
         is_first_response = false;
     };
 
-    const transactionResponseHandler = function(response) {
+    const transactionResponseHandler = (response) => {
         if (response.hasOwnProperty('error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
@@ -129,7 +129,7 @@ const PortfolioInit = (function() {
         }
     };
 
-    const updateIndicative = function(data) {
+    const updateIndicative = (data) => {
         if (data.hasOwnProperty('error') || !values) {
             return;
         }
@@ -144,7 +144,7 @@ const PortfolioInit = (function() {
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
             BinarySocket.send({ sell_expired: 1 });
         }
-        const $td = $(`#${proposal.contract_id} td.indicative`);
+        const $td = $(`#${proposal.contract_id}`).find('td.indicative');
 
         const old_indicative = values[proposal.contract_id].indicative || 0.00;
         values[proposal.contract_id].indicative = proposal.bid_price;
@@ -168,12 +168,12 @@ const PortfolioInit = (function() {
         updateFooter();
     };
 
-    const updateOAuthApps = function(response) {
+    const updateOAuthApps = (response) => {
         oauth_apps = GetAppDetails.buildOauthApps(response);
         GetAppDetails.addTooltip(oauth_apps);
     };
 
-    const removeContract = function(contract_id) {
+    const removeContract = (contract_id) => {
         delete (values[contract_id]);
         $(`tr.${contract_id}`)
             .removeClass('new')
@@ -189,12 +189,12 @@ const PortfolioInit = (function() {
         updateFooter();
     };
 
-    const updateFooter = function() {
+    const updateFooter = () => {
         $('#cost-of-open-positions').text(formatMoney(currency, Portfolio.getSumPurchase(values)));
         $('#value-of-open-positions').text(formatMoney(currency, Portfolio.getIndicativeSum(values)));
     };
 
-    const errorMessage = function(msg) {
+    const errorMessage = (msg) => {
         const $err = $('#portfolio').find('#error-msg');
         if (msg) {
             $err.removeClass(hidden_class).text(msg);
@@ -203,12 +203,12 @@ const PortfolioInit = (function() {
         }
     };
 
-    const onLoad = function() {
+    const onLoad = () => {
         if (!State.get('is_beta_trading') && !State.get('is_mb_trading')) {
             BinarySocket.init({
-                onmessage: function(msg) {
-                    const response = JSON.parse(msg.data),
-                        msg_type = response.msg_type;
+                onmessage: (msg) => {
+                    const response = JSON.parse(msg.data);
+                    const msg_type = response.msg_type;
 
                     switch (msg_type) {
                         case 'portfolio':
@@ -233,7 +233,7 @@ const PortfolioInit = (function() {
         ViewPopup.viewButtonOnClick('#portfolio-table');
     };
 
-    const onUnload = function() {
+    const onUnload = () => {
         BinarySocket.send({ forget_all: 'proposal_open_contract' });
         BinarySocket.send({ forget_all: 'transaction' });
         $('#portfolio-body').empty();

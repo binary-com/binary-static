@@ -1,6 +1,6 @@
+const Url           = require('../../base/url');
 const isEmptyObject = require('../../base/utility').isEmptyObject;
 const isVisible     = require('../../common_functions/common_functions').isVisible;
-const Url           = require('../../base/url');
 
 /*
  * Handles trading page default values
@@ -12,23 +12,23 @@ const Url           = require('../../base/url');
  *
  */
 
-const Defaults = (function() {
+const Defaults = (() => {
     'use strict';
 
     let params = {};
-    const getDefault = function(key) {
-        const pValue = params[key] || Url.param(key),
-            sValue = sessionStorage.getItem(key);
-        if (pValue && (!sValue || pValue !== sValue)) {
-            sessionStorage.setItem(key, pValue);
+    const getDefault = (key) => {
+        const p_value = params[key] || Url.param(key);
+        const s_value = sessionStorage.getItem(key);
+        if (p_value && (!s_value || p_value !== s_value)) {
+            sessionStorage.setItem(key, p_value);
         }
-        if (!pValue && sValue) {
-            setDefault(key, sValue);
+        if (!p_value && s_value) {
+            setDefault(key, s_value);
         }
-        return pValue || sValue;
+        return p_value || s_value;
     };
 
-    const setDefault = function(key, value) {
+    const setDefault = (key, value) => {
         if (!key) return;
         value = value || '';
         if (isEmptyObject(params)) params = Url.paramsHash();
@@ -42,29 +42,29 @@ const Defaults = (function() {
         }
     };
 
-    const removeDefault = function() {
+    const removeDefault = () => {
         if (isEmptyObject(params)) params = Url.paramsHash();
-        let isUpdated = false;
+        let is_updated = false;
         for (let i = 0; i < arguments.length; i++) {
             if (params.hasOwnProperty(arguments[i])) {
                 sessionStorage.removeItem(arguments[i]);
                 delete (params[arguments[i]]);
-                isUpdated = true;
+                is_updated = true;
             }
         }
-        if (isUpdated) {
+        if (is_updated) {
             updateURL();
         }
     };
 
-    const updateAll = function() {
-        Object.keys(params).forEach(function(key) {
+    const updateAll = () => {
+        Object.keys(params).forEach((key) => {
             sessionStorage.setItem(key, params[key]);
         });
         updateURL();
     };
 
-    const updateURL = function() {
+    const updateURL = () => {
         const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params)}`;
         window.history.replaceState({ url: updated_url }, null, updated_url);
     };
@@ -74,10 +74,8 @@ const Defaults = (function() {
         set   : setDefault,
         update: updateAll,
         remove: removeDefault,
-        clear : function() { params = {}; },
+        clear : () => { params = {}; },
     };
 })();
 
-module.exports = {
-    Defaults: Defaults,
-};
+module.exports = Defaults;

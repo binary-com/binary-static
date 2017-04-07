@@ -13,9 +13,9 @@ const Cookies   = require('../../lib/js-cookie');
 
 const Guide = (() => {
     let opt,
-        cookieName,
-        btnNext,
-        btnFinish;
+        cookie_name,
+        btn_next,
+        btn_finish;
 
     const init = (options) => {
         opt = {
@@ -31,9 +31,9 @@ const Guide = (() => {
         };
         $.extend(true, opt, options);
 
-        cookieName = 'hide_guide';
-        btnNext    = { className: 'button', html: $('<span/>', { text: localize('Next') }) };
-        btnFinish  = { className: 'button btnFinish', html: $('<span/>', { text: localize('Finish') }) };
+        cookie_name = 'hide_guide';
+        btn_next    = { className: 'button', html: $('<span/>', { text: localize('Next') }) };
+        btn_finish  = { className: 'button btnFinish', html: $('<span/>', { text: localize('Finish') }) };
 
         if ($(opt.guideBtnID).length === 0) {
             console.warn(`Could not find the button placeholder: <div id="${opt.guideBtnID}"></div>`);
@@ -57,7 +57,7 @@ const Guide = (() => {
      *  do not show the guide button if its close (X) has been clicked before
      */
     const isDisabled = () => {
-        const disabled = Cookies.get(cookieName);
+        const disabled = Cookies.get(cookie_name);
         return !!disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
     };
 
@@ -66,8 +66,8 @@ const Guide = (() => {
      */
     const setDisabled = () => {
         if (!isDisabled()) {
-            const disabled = Cookies.get(cookieName);
-            Cookies.set(cookieName, (!disabled ? opt.script : `${disabled},${opt.script}`));
+            const disabled = Cookies.get(cookie_name);
+            Cookies.set(cookie_name, (!disabled ? opt.script : `${disabled},${opt.script}`));
         }
     };
 
@@ -112,8 +112,8 @@ const Guide = (() => {
     /*
      *  each page's script
      */
-    const getScript = (scriptName) => {
-        if (scriptName !== 'trading') {
+    const getScript = (script_name) => {
+        if (script_name !== 'trading') {
             return null;
         }
         return [
@@ -121,31 +121,31 @@ const Guide = (() => {
                 selector   : '#contract_markets',
                 description: `<h1>${localize('Step')} 1</h1>${localize('Select your market')}`,
                 event_type : 'next',
-                nextButton : btnNext,
+                nextButton : btn_next,
             },
             {
                 selector   : '#underlying',
                 description: `<h1>${localize('Step')} 2</h1>${localize('Select your underlying asset')}`,
                 event_type : 'next',
-                nextButton : btnNext,
+                nextButton : btn_next,
             },
             {
                 selector   : '#contract_form_name_nav',
                 description: `<h1>${localize('Step')} 3</h1>${localize('Select your trade type')}`,
                 event_type : 'next',
-                nextButton : btnNext,
+                nextButton : btn_next,
             },
             {
                 selector   : '#websocket_form',
                 description: `<h1>${localize('Step')} 4</h1>${localize('Adjust trade parameters')}`,
                 event_type : 'next',
-                nextButton : btnNext,
+                nextButton : btn_next,
             },
             {
                 selector   : '#contracts_list',
                 description: `<h1>${localize('Step')} 5</h1>${localize('Predict the direction<br />and purchase')}`,
                 event_type : 'next',
-                nextButton : btnFinish,
+                nextButton : btn_finish,
             },
         ];
     };

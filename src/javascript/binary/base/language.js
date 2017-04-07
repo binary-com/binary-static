@@ -4,7 +4,7 @@ const Cookies       = require('../../lib/js-cookie');
 const Language = (() => {
     'use strict';
 
-    const allLanguages = {
+    const all_languages = {
         EN   : 'English',
         DE   : 'Deutsch',
         ES   : 'Español',
@@ -29,7 +29,7 @@ const Language = (() => {
     };
 
     const languageFromUrl = () => {
-        const regex = new RegExp(`^(${Object.keys(allLanguages).join('|')})$`, 'i');
+        const regex = new RegExp(`^(${Object.keys(all_languages).join('|')})$`, 'i');
         const url_params = window.location.href.split('/').slice(3);
         return (url_params.find(lang => regex.test(lang)) || '');
     };
@@ -52,7 +52,7 @@ const Language = (() => {
     };
 
     return {
-        getAll   : () => allLanguages,
+        getAll   : () => all_languages,
         setCookie: setCookieLanguage,
         get      : getLanguage,
         onChange : onChangeLanguage,

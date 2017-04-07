@@ -7,10 +7,10 @@ const FormManager   = require('../../../common_functions/form_manager');
 const TrafficSource = require('../../../common_functions/traffic_source');
 const Cookies       = require('../../../../lib/js-cookie');
 
-const VirtualAccOpening = (function() {
+const VirtualAccOpening = (() => {
     const form = '#virtual-form';
 
-    const onLoad = function() {
+    const onLoad = () => {
         if (jpClient()) {
             handleJPForm();
         } else {
