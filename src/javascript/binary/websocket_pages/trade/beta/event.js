@@ -333,7 +333,7 @@ const TradingEvents_Beta = (() => {
         /*
          * attach event to close icon for purchase container
          */
-        $('#close_confirmation_container, #contract_purchase_new_trade').on('click', (e) => {
+        $('#close_confirmation_container, #contract_purchase_new_trade').on('click dblclick', (e) => {
             if (e.target) {
                 e.preventDefault();
                 document.getElementById('contract_confirmation_container').style.display = 'none';
