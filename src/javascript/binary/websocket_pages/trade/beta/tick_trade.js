@@ -454,8 +454,7 @@ const TickDisplay_Beta = (() => {
                     };
                 }
                 if (tick.epoch > contract_start_moment.unix() && !spots_list[tick.epoch]) {
-                    if (!chart) return;
-                    if (!chart.series) return;
+                    if (!chart || !chart.series) return;
                     chart.series[0].addPoint([counter, tick.quote], true, false);
                     applicable_ticks.push(tick);
                     spots_list[tick.epoch] = tick.quote;
