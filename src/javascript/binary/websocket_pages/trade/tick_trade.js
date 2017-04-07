@@ -34,16 +34,15 @@ const TickDisplay = (() => {
 
     const initialize = (data) => {
         // setting up globals
-        number_of_ticks = parseInt(data.number_of_ticks);
-        display_symbol = data.display_symbol;
-        contract_start_ms = parseInt(data.contract_start * 1000);
-        contract_category = data.contract_category;
-        set_barrier = !contract_category.match('digits');
-        barrier = data.barrier;
-        abs_barrier = data.abs_barrier;
-        display_decimals = data.display_decimals || 2;
+        number_of_ticks      = parseInt(data.number_of_ticks);
+        display_symbol       = data.display_symbol;
+        contract_start_ms    = parseInt(data.contract_start) * 1000;
+        contract_category    = data.contract_category;
+        set_barrier          = !contract_category.match('digits');
+        barrier              = data.barrier;
+        abs_barrier          = data.abs_barrier;
+        display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
-        const tick_frequency = 5;
 
         if (data.show_contract_result) {
             contract_sentiment = data.contract_sentiment;
@@ -52,10 +51,10 @@ const TickDisplay = (() => {
         }
 
         const minimize = data.show_contract_result;
-        const end_time = parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * tick_frequency);
+        const end_time = parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * 5);
 
-        set_x_indicators();
-        initialize_chart({
+        setXIndicators();
+        initializeChart({
             plot_from: data.previous_tick_epoch * 1000,
             plot_to  : new Date(end_time * 1000).getTime(),
             minimize : minimize,
@@ -63,7 +62,7 @@ const TickDisplay = (() => {
         });
     };
 
-    const set_x_indicators = () => {
+    const setXIndicators = () => {
         const exit_tick_index = number_of_ticks - 1;
         if (contract_category.match('asian')) {
             ticks_needed = number_of_ticks;
@@ -97,7 +96,7 @@ const TickDisplay = (() => {
         }
     };
 
-    const initialize_chart = (config) => {
+    const initializeChart = (config) => {
         chart = new Highcharts.Chart({
             chart: {
                 type           : 'line',
@@ -142,7 +141,7 @@ const TickDisplay = (() => {
         });
     };
 
-    const apply_chart_background_color = (tick) => {
+    const applyChartBackgroundColor = (tick) => {
         if (!show_contract_result) {
             return;
         }
@@ -162,7 +161,7 @@ const TickDisplay = (() => {
         }
     };
 
-    const add_barrier = () => {
+    const addBarrier = () => {
         if (!set_barrier) {
             return;
         }
@@ -234,7 +233,7 @@ const TickDisplay = (() => {
         });
     };
 
-    const evaluate_contract_outcome = () => {
+    const evaluateContractOutcome = () => {
         if (!contract_barrier) {
             return; // can't do anything without barrier
         }
@@ -259,11 +258,11 @@ const TickDisplay = (() => {
 
     const win = () => {
         const profit = payout - price;
-        update_ui(payout, profit, localize('This contract won'));
+        updateUI(payout, profit, localize('This contract won'));
     };
 
     const lose = () => {
-        update_ui(0, -price, localize('This contract lost'));
+        updateUI(0, -price, localize('This contract lost'));
     };
 
     const plot = () => {
@@ -272,7 +271,7 @@ const TickDisplay = (() => {
         applicable_ticks = [];
     };
 
-    const update_ui = (final_price, pnl, contract_status) => {
+    const updateUI = (final_price, pnl, contract_status) => {
         updatePurchaseStatus(final_price, final_price - pnl, contract_status);
     };
 
@@ -311,7 +310,7 @@ const TickDisplay = (() => {
                     chart_display_decimals = data.history.prices[0].split('.')[1].length || 2;
                 }
             }
-            if (!window.tick_init || window.tick_init === '') {
+            if (!window.tick_init) {
                 initialize({
                     symbol              : window.tick_underlying,
                     number_of_ticks     : window.tick_count,
@@ -335,7 +334,7 @@ const TickDisplay = (() => {
         }
 
         if (applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed) {
-            evaluate_contract_outcome();
+            evaluateContractOutcome();
             if (window.responseID) {
                 BinarySocket.send({ forget: window.responseID });
             }
@@ -355,9 +354,9 @@ const TickDisplay = (() => {
                 }
 
                 if (tick.epoch > contract_start_moment.unix() && !spots_list[tick.epoch]) {
-                    if (!tick_chart) return;
-                    if (!tick_chart.series) return;
-                    tick_chart.series[0].addPoint([counter, tick.quote], true, false);
+                    if (!chart) return;
+                    if (!chart.series) return;
+                    chart.series[0].addPoint([counter, tick.quote], true, false);
                     applicable_ticks.push(tick);
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key = '_' + counter;
@@ -366,8 +365,8 @@ const TickDisplay = (() => {
                         add(x_indicators[indicator_key]);
                     }
 
-                    add_barrier();
-                    apply_chart_background_color(tick);
+                    addBarrier();
+                    applyChartBackgroundColor(tick);
                     counter++;
                 }
             }
@@ -405,6 +404,8 @@ const TickDisplay = (() => {
     return {
         init       : initialize,
         updateChart: updateChart,
+        dispatch   : dispatch,
+        resetSpots : () => { spots_list = {}; },
     };
 })();
 

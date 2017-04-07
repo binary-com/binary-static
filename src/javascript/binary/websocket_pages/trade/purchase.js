@@ -137,7 +137,7 @@ const Purchase = (() => {
                 barrier = passthrough.barrier;
             }
 
-            TickDisplay.initialize({
+            TickDisplay.init({
                 symbol              : passthrough.symbol,
                 barrier             : barrier,
                 number_of_ticks     : passthrough.duration,
@@ -152,7 +152,7 @@ const Purchase = (() => {
                 show_contract_result: 1,
                 width               : $('#confirmation_message').width(),
             });
-            TickDisplay.spots_list = {};
+            TickDisplay.resetSpots();
         }
     };
 

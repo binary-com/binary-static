@@ -38,11 +38,7 @@ const DigitInfo_Beta = (() => {
             formatter  : function() {
                 const total      = $("select[name='tick_count']").val();
                 const percentage = (this.y / total) * 100;
-                return $('<b/>', { text: `${localize('Digit')}:` })
-                    .append(this.x)
-                    .append($('<br/>'))
-                    .append($('<b/>', { text: `${localize('Percentage')}:` }))
-                    .append(`${percentage.toFixed(1)}%`);
+                return `<b>${localize('Digit')}:</b> ${this.x}<br/><b>${localize('Percentage')}:</b> ${percentage.toFixed(1)}%`;
             },
         },
         plotOptions: {

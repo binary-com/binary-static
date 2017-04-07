@@ -46,7 +46,6 @@ const TickDisplay_Beta = (() => {
         show_contract_result = data.show_contract_result;
         is_trading_page      = data.is_trading_page;
         contract_sentiment   = data.contract_sentiment;
-        const tick_frequency         = 5;
 
         if (data.show_contract_result) {
             price = parseFloat(data.price);
@@ -59,7 +58,7 @@ const TickDisplay_Beta = (() => {
         initializeChart({
             plot_from: data.previous_tick_epoch * 1000,
             plot_to  : new Date((parseInt(data.contract_start) +
-                parseInt((number_of_ticks + 2) * tick_frequency)) * 1000).getTime(),
+                parseInt((number_of_ticks + 2) * 5)) * 1000).getTime(),
             minimize: minimize,
             width   : data.width ? data.width : undefined,
         });
@@ -180,7 +179,7 @@ const TickDisplay_Beta = (() => {
             legend   : { enabled: false },
         };
         // Trading page's chart
-        const show_values = (tick, time, this_price) => {
+        const showValues = (tick, time, this_price) => {
             $('#contract_purchase_profit_list').find('#chart-values')
                 .css('display', 'flex').end()
                 .find('#contract-values')
@@ -200,7 +199,7 @@ const TickDisplay_Beta = (() => {
                     formatter: function() {
                         const time = moment.utc(applicable_ticks[this.x].epoch * 1000).format('HH:mm:ss');
                         const this_price = addComma(this.y, display_decimals);
-                        show_values(+this.x + (is_start_on_first_tick ? 1 : 0), time, this_price);
+                        showValues(+this.x + (is_start_on_first_tick ? 1 : 0), time, this_price);
                     },
                     events: {
                         hide: () => {
