@@ -47,7 +47,7 @@ const APIToken = (() => {
             showFormMessage(response.error.message, false);
             return;
         }
-        showFormMessage('New token created', true);
+        showFormMessage('New token created.', true);
         $('#txt_name').val('');
 
         populateTokensList(response);
