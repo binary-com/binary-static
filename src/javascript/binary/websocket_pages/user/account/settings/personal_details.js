@@ -166,12 +166,12 @@ const PersonalDetails = (() => {
         const is_error = response.set_settings !== 1;
         if (!is_error) {
             // to update tax information message for financial clients
-            BinarySocket.send({ get_account_status: 1 }, true).then(() => {
+            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                 showHideTaxMessage();
                 Header.displayAccountStatus();
             });
             // to update the State with latest get_settings data
-            BinarySocket.send({ get_settings: 1 }, true).then((data) => {
+            BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
                 getDetailsResponse(data.get_settings);
             });
         }

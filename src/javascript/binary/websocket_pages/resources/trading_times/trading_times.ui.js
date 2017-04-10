@@ -191,7 +191,7 @@ const TradingTimesUI = (() => {
             req.landing_company = 'japan';
         }
         if (should_request_active_symbols) {
-            BinarySocket.send(req, false, 'active_symbols').then((response) => {
+            BinarySocket.send(req, { forced: false, msg_type: 'active_symbols' }).then((response) => {
                 TradingTimesUI.setActiveSymbols(response);
             });
         }
