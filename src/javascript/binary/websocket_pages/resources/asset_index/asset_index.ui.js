@@ -69,17 +69,17 @@ const AssetIndexUI = (() => {
     };
 
     const getSubmarketTable = (asset_item, symbol_info) => {
-        const market_id    = 'market-'    + symbol_info.market;
-        const submarket_id = 'submarket-' + symbol_info.submarket;
+        const market_id    = `market-${symbol_info.market}`;
+        const submarket_id = `submarket-${symbol_info.submarket}`;
 
-        let $table = $contents.find('#' + submarket_id);
+        let $table = $contents.find(`#${submarket_id}`);
         if ($table.length === 0) {
             // Create the table for this submarket
-            let $market = $contents.find('#' + market_id);
+            let $market = $contents.find(`#${market_id}`);
             if ($market.length === 0) {
                 // Create the market and tab elements
                 $market = $('<div/>', { id: market_id });
-                $tabs.append($('<li/>').append($('<a/>', { href: '#' + market_id, text: symbol_info.market_display_name, id: 'outline' })));
+                $tabs.append($('<li/>').append($('<a/>', { href: `#${market_id}`, text: symbol_info.market_display_name, id: 'outline' })));
             }
             $table = createEmptyTable(asset_item, symbol_info, submarket_id);
             $market.append($table);

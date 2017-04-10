@@ -29,7 +29,7 @@ const ApplicationsUI = (() => {
     const createRevokeButton = (container, app) => {
         const $button = $('<button/>', { class: 'button', text: localize(messages.revoke_access) });
         $button.on('click', () => {
-            if (window.confirm(localize(messages.revoke_confirm) + ": '" + app.name + "'?")) {
+            if (window.confirm(`${localize(messages.revoke_confirm)}: '${app.name}'?`)) {
                 BinarySocket.send({ oauth_apps: 1, revoke_app: app.id }).then((response) => {
                     if (response.error) {
                         displayError(response.error.message);
@@ -73,7 +73,7 @@ const ApplicationsUI = (() => {
     };
 
     const displayError = (message) => {
-        $(container_selector + ' .error-msg').text(message);
+        container_selector.find('.error-msg').text(message);
     };
 
     const init = () => {
@@ -81,7 +81,7 @@ const ApplicationsUI = (() => {
     };
 
     const clean = () => {
-        $(container_selector + ' .error-msg').text('');
+        container_selector.find('.error-msg').text('');
         FlexTableUI.clear();
     };
 

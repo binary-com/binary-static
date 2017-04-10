@@ -42,7 +42,7 @@ const MBPrice = (() => {
         }
     };
 
-    const makeBarrier = req => (req.barrier2 ? req.barrier2 + '_' : '') + req.barrier;
+    const makeBarrier = req => (req.barrier2 ? `${req.barrier2}_` : '') + req.barrier;
 
     const display = (response) => {
         const barrier = makeBarrier(response.echo_req);
@@ -100,7 +100,7 @@ const MBPrice = (() => {
 
     const updatePrice = (proposal) => {
         const barrier    = makeBarrier(proposal.echo_req);
-        const price_rows = document.querySelectorAll(price_selector + ' div[data-barrier="' + barrier + '"]');
+        const price_rows = document.querySelectorAll(`${price_selector} div[data-barrier="${barrier}"]`);
 
         if (!price_rows.length) return;
 
@@ -142,27 +142,27 @@ const MBPrice = (() => {
     const makePriceRow = (values, is_update) => {
         const payout   = MBDefaults.get('payout');
         const is_japan = jpClient();
-        return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
-                '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
-                '<div class="gr-4 buy-price">' +
-                    '<button class="price-button' + (values.is_active ? '' : ' inactive') + '"' +
-                        (values.is_active ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
-                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
-                            '<span class="value-wrapper">' +
-                                '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +
-                                formatPrice(values.ask_price) +
-                            '</span>' +
-                            (is_japan ? '<span class="base-value">(' + formatPrice(values.ask_price / payout) + ')</span>' : '') +
-                    '</button>' +
-                '</div>' +
-                '<div class="gr-4 sell-price">' +
-                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' +
-                        '<span class="dynamics ' + (values.sell_price_movement || '') + '"></span>' +
-                        formatPrice(values.sell_price) +
-                        (is_japan ? '<span class="base-value">(' + formatPrice(values.sell_price / payout) + ')</span>' : '') +
-                    '</span>' +
-                '</div>' +
-            (is_update ? '' : '</div>');
+        return `${(is_update ? '' : `<div data-barrier="${values.barrier}" class="gr-row price-row">`)}
+                <div class="gr-4 barrier">${values.barrier.split('_').join(' ... ')}</div>
+                <div class="gr-4 buy-price">
+                    <button class="price-button${(values.is_active ? '' : ' inactive')}"
+                        ${(values.is_active ? ` onclick="return HandleClick('MBPrice', '${values.barrier}', '${values.contract_type}')"` : '')}
+                        ${(values.message ? ` data-balloon="${values.message}"` : '')}>
+                            <span class="value-wrapper">
+                                <span class="dynamics ${(values.ask_price_movement || '')}"></span>
+                                ${formatPrice(values.ask_price)}
+                            </span>
+                            ${(is_japan ? `<span class="base-value">(${formatPrice(values.ask_price / payout)})</span>` : '')}
+                    </button>
+                </div>
+                <div class="gr-4 sell-price">
+                    <span class="price-wrapper${(!values.sell_price ? ' inactive' : '')}">
+                        <span class="dynamics ${(values.sell_price_movement || '')}"></span>
+                        ${formatPrice(values.sell_price)}
+                        ${(is_japan ? `<span class="base-value">(${formatPrice(values.sell_price / payout)})</span>` : '')}
+                    </span>
+                </div>
+            ${(is_update ? '' : '</div>')}`;
     };
 
     const processBuy = (barrier, contract_type) => {

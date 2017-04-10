@@ -1,4 +1,3 @@
-const getLanguage  = require('../base/language').get;
 const urlForStatic = require('../base/url').urlForStatic;
 const loadCSS      = require('../../lib/loadCSS').loadCSS;
 const loadJS       = require('../../lib/loadJS').loadJS;
@@ -7,7 +6,6 @@ const Contact = (() => {
     'use strict';
 
     const onLoad = () => {
-        $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + getLanguage() + '/portal/articles');
         displayCsContacts();
         showLiveChatIcon();
     };
@@ -15,7 +13,7 @@ const Contact = (() => {
     const displayCsContacts = () => {
         $('.contact-content').on('change', '#cs_telephone_number', function() {
             const val = $(this).val().split(',');
-            $('#display_cs_telephone').html(val[0] + (val.length > 1 ? '<br />' + val[1] : ''));
+            $('#display_cs_telephone').html(val[0] + (val.length > 1 ? `<br />${val[1]}` : ''));
         });
     };
 

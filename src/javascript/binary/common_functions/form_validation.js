@@ -98,7 +98,7 @@ const Validation = (() => {
             is_ok = false;
             message = localize('Should be a valid number');
         } else if (options.type === 'float' && options.decimals &&
-            !(new RegExp('^\\d+(\\.\\d{' + options.decimals.replace(/ /g, '') + '})?$').test(value))) {
+            !(new RegExp(`^\\d+(\\.\\d{${options.decimals.replace(/ /g, '')}})?$`).test(value))) {
             is_ok = false;
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
         } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
