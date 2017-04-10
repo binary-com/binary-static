@@ -124,7 +124,7 @@ const FinancialAssessment = (() => {
         } else {
             $('#msg_form')
                 .attr('class', is_success ? 'success-msg' : 'errorfield')
-                .html(is_success ? '<ul class="checked" style="display: inline-block;"><li>' + localize(msg) + '</li></ul>' : localize(msg))
+                .html(is_success ? $('<ul/>', { class: 'checked', style: 'display: inline-block;' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
                 .css('display', 'block')
                 .delay(5000)
                 .fadeOut(1000);

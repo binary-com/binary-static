@@ -1277,6 +1277,9 @@ msgstr "Австралия"
 msgid "Australia 200 Cash Index"
 msgstr "Australia 200 Cash Index"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "Авторизация"
 
@@ -1797,7 +1800,9 @@ msgstr "Выберите страйк-цену."
 msgid "Christmas Day"
 msgstr "Рождество"
 
-msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+#, fuzzy
+#| msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Гражданам Афганистана, Бельгии, Боснии и Герцеговины, Гайаны, Ирака, Лаоса, Сирии, Уганды, Вануату и Йемена запрещено открывать счета на сайте компании Binary Investments (Europe) Ltd."
 
 msgid "Classification of assets requiring hedge"
@@ -2373,6 +2378,11 @@ msgstr "Разработайте собственное торговое при�
 
 msgid "Differences with other data feeds"
 msgstr "Разница с другими поставщиками котировок"
+
+#, fuzzy
+#| msgid "Digits"
+msgid "Digit"
+msgstr "Цифровые"
 
 msgid "Digit contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Цена покупки цифровых контрактов будет возмещена, если контракт не истечёт в течение 5 минут."
@@ -5554,6 +5564,11 @@ msgstr "Размер выплаты"
 msgid "Pension"
 msgstr "Пенсия"
 
+#, fuzzy
+#| msgid "Retracement Percentages"
+msgid "Percentage"
+msgstr "Проценты отката"
+
 msgid "Period"
 msgstr "Период"
 
@@ -5734,11 +5749,6 @@ msgstr "Пожалуйста, выберите минимум один пара�
 
 msgid "Please select the checkbox."
 msgstr "Пожалуйста, выберите нужный ответ."
-
-#, fuzzy
-#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Чтобы пройти проверку личности и процесс аутентификации счёта, пожалуйста, отправьте нам следующие документы:"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Пожалуйста, укажите желаемый интервал для проверки реальности (в минутах)"
@@ -5927,7 +5937,9 @@ msgstr "Прибыль/убытки (пункты)"
 msgid "Prohibited Trades"
 msgstr "Запрещённые сделки"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Подтверждение адреса: отсканированный счёт за коммунальные услуги или выписка с Вашего банковского счёта (датированные не позднее, чем за 3 месяца до текущей даты)."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -8738,7 +8750,7 @@ msgstr "Вы ни при каких обстоятельствах не полу
 
 #, fuzzy
 #| msgid "You are not resident in a restricted country such as the USA, Japan, Hong Kong, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, Iraq, or such other restricted country as the Company may decide from time to time at its sole discretion;"
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Вы не являетесь жителем следующих стран: США, Японии, Гонконга, Коста-Рики, Малайзии, Мальты, Ирана, Северной Кореи, Джерси, Ирака или иных стран, где не работает Компания и которые могут быть внесены в список запрещённых стран по единоличному усмотрению Компании;"
 
 msgid "You are over 18 years of age;"
@@ -9406,7 +9418,9 @@ msgstr "год(а)/лет"
 msgid "years"
 msgstr "год(а)/лет"
 
-msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+#, fuzzy
+#| msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgstr "Вы не являетесь резидентом страны, где мы не предлагаем услуги, а именно Афганистана, Боснии и Герцеговины, Коста-Рики, Гайаны, Гонконга, Ирана, Ирака, Джерси, Лаоса, Малайзии, Мальты, Северной Кореи, Сирии, Уганды, США, Вануату или Йемена;"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
@@ -11292,6 +11306,11 @@ msgstr "Согласие с правилами и условиями"
 
 msgid "Account Limits"
 msgstr "Лимиты счета"
+
+#, fuzzy
+#~| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Чтобы пройти проверку личности и процесс аутентификации счёта, пожалуйста, отправьте нам следующие документы:"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Пожелания:</strong>"
@@ -13832,9 +13851,6 @@ msgstr "Лимиты счета"
 
 #~ msgid "Response too large."
 #~ msgstr "Ответ слишком большой."
-
-#~ msgid "Retracement Percentages"
-#~ msgstr "Проценты отката"
 
 #~ msgid "Retry"
 #~ msgstr "Попробовать снова"

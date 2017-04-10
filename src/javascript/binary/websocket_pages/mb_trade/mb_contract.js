@@ -86,7 +86,7 @@ const MBContract = (() => {
             if (available_contracts[i].contract_category === selected_option) {
                 trading_period = available_contracts[i].trading_period;
                 if (!trading_period) return;
-                start_end = trading_period.date_start.epoch + '_' + trading_period.date_expiry.epoch + '_' + trading_period.duration;
+                start_end = [trading_period.date_start.epoch, trading_period.date_expiry.epoch, trading_period.duration].join('_');
                 if (trading_period_array.indexOf(start_end) < 0) {
                     trading_period_array.push(start_end);
                 }
@@ -134,7 +134,7 @@ const MBContract = (() => {
                 let $new_item;
                 existing_array = existing_array.concat(missing_array).sort(sortByExpiryTime);
                 existing_array.forEach((existing, idx) => {
-                    if ($list.find('[value="' + existing + '"]').length < 1) {
+                    if ($list.find(`[value="${existing}"]`).length < 1) {
                         $new_item = makeItem(existing);
                         if (idx < 1) {
                             $($new_item).insertBefore($list.children().eq(idx));
@@ -148,7 +148,7 @@ const MBContract = (() => {
             // remove periods that no longer exist
             existing_array.forEach((period) => {
                 if (trading_period_array.indexOf(period) < 0) {
-                    $list.find('[value="' + period + '"]').remove();
+                    $list.find(`[value="${period}"]`).remove();
                 }
             });
         }
