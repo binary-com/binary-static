@@ -128,12 +128,12 @@ const PaymentAgentWithdraw = (() => {
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    const showPageError = (errMsg, id) => {
+    const showPageError = (err_msg, id) => {
         $(view_ids.error + ' > p').addClass(hidden_class);
         if (id) {
             $(view_ids.error + ' #' + id).removeClass(hidden_class);
         } else {
-            $(view_ids.error + ' #custom-error').html(errMsg).removeClass(hidden_class);
+            $(view_ids.error + ' #custom-error').html(err_msg).removeClass(hidden_class);
         }
         setActiveView(view_ids.error);
     };

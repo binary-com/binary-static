@@ -11,6 +11,12 @@ module.exports = function (grunt) {
         }
     };
 
+    Object.keys(global.repos).forEach(function(target) {
+        if (grunt.option(target)) {
+            global.release_target = target;
+        }
+    });
+
     global.branch_prefix = 'br_';
     global.branch = grunt.option('branch');
     global.dist = 'dist' + (global.branch ? '/' + global.branch_prefix + global.branch : '');

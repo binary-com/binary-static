@@ -70,11 +70,11 @@ const isVisible = elem => !(!elem || (elem.offsetWidth === 0 && elem.offsetHeigh
  * function to check if browser supports the type date/time
  * send a wrong val in case browser 'pretends' to support
  */
-const checkInput = (type, wrongVal) => {
+const checkInput = (type, wrong_val) => {
     const input = document.createElement('input');
     input.setAttribute('type', type);
-    input.setAttribute('value', wrongVal);
-    return (input.value !== wrongVal);
+    input.setAttribute('value', wrong_val);
+    return (input.value !== wrong_val);
 };
 
 /*

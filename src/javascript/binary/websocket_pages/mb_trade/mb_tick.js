@@ -15,22 +15,22 @@
  * 'MBTick.display()` to display current spot
  */
 
-const MBTick = (function() {
+const MBTick = (() => {
     'use strict';
 
     let quote = '',
         id    = '',
         epoch = '',
         spots = {},
-        errorMessage = '';
+        error_message = '';
     const keep_number  = 60;
 
-    const details = function(data) {
-        errorMessage = '';
+    const details = (data) => {
+        error_message = '';
 
         if (data) {
             if (data.error) {
-                errorMessage = data.error.message;
+                error_message = data.error.message;
             } else {
                 const tick = data.tick;
                 quote = tick.quote;
@@ -38,9 +38,7 @@ const MBTick = (function() {
                 epoch = tick.epoch;
 
                 spots[epoch] = quote;
-                const epoches = Object.keys(spots).sort(function(a, b) {
-                    return a - b;
-                });
+                const epoches = Object.keys(spots).sort((a, b) => a - b);
                 if (epoches.length > keep_number) {
                     delete spots[epoches[0]];
                 }
@@ -48,53 +46,54 @@ const MBTick = (function() {
         }
     };
 
-    const display = function() {
+    const display = () => {
         $('#spot').fadeIn(200);
-        const spotElement = document.getElementById('spot');
-        if (!spotElement) return;
+        const spot_element = document.getElementById('spot');
+        if (!spot_element) return;
         let message = '';
-        if (errorMessage) {
-            message = errorMessage;
+        if (error_message) {
+            message = error_message;
         } else {
             message = quote;
         }
 
         if (parseFloat(message) !== +message) {
-            spotElement.className = 'error';
+            spot_element.className = 'error';
         } else {
-            spotElement.classList.remove('error');
-            MBTick.displayPriceMovement(parseFloat(spotElement.textContent), parseFloat(message));
+            spot_element.classList.remove('error');
+            MBTick.displayPriceMovement(parseFloat(spot_element.textContent), parseFloat(message));
         }
 
-        spotElement.textContent = message;
+        spot_element.textContent = message;
     };
 
     /*
      * Display price/spot movement variation to depict price moved up or down
      */
-    const displayPriceMovement = function(oldValue, currentValue) {
-        const className = (currentValue > oldValue) ? 'up' : (currentValue < oldValue) ? 'down' : 'still';
+    const displayPriceMovement = (old_value, current_value) => {
+        const className = (current_value > old_value) ? 'up' : (current_value < old_value) ? 'down' : 'still';
         $('#spot-dyn').attr('class', 'dynamics ' + className);
     };
 
-    const updateWarmChart = function() {
-        const $chart = $('#trading_worm_chart'),
-            spots_array = Object.keys(MBTick.spots())
-                .sort(function(a, b) { return a - b; })
-                .map(function(v) { return MBTick.spots()[v]; }),
-            chart_config = {
-                type              : 'line',
-                lineColor         : '#606060',
-                fillColor         : false,
-                spotColor         : '#00f000',
-                minSpotColor      : '#0000f0',
-                maxSpotColor      : '#f00000',
-                highlightSpotColor: '#ffff00',
-                highlightLineColor: '#000000',
-                spotRadius        : 2,
-                width             : 200,
-                height            : 25,
-            };
+    const chart_config = {
+        type              : 'line',
+        lineColor         : '#606060',
+        fillColor         : false,
+        spotColor         : '#00f000',
+        minSpotColor      : '#0000f0',
+        maxSpotColor      : '#f00000',
+        highlightSpotColor: '#ffff00',
+        highlightLineColor: '#000000',
+        spotRadius        : 2,
+        width             : 200,
+        height            : 25,
+    };
+
+    let $chart;
+
+    const updateWarmChart = () => {
+        $chart = $chart || $('#trading_worm_chart');
+        const spots_array = Object.keys(MBTick.spots()).sort((a, b) => a - b).map(v => MBTick.spots()[v]);
         if ($chart && typeof $chart.sparkline === 'function') {
             $chart.sparkline(spots_array, chart_config);
             if (spots_array.length) {
@@ -105,7 +104,7 @@ const MBTick = (function() {
         }
     };
 
-    const request = function(symbol) {
+    const request = (symbol) => {
         BinarySocket.send({
             ticks_history: symbol,
             style        : 'ticks',
@@ -115,7 +114,7 @@ const MBTick = (function() {
         });
     };
 
-    const processHistory = function(res) {
+    const processHistory = (res) => {
         if (res.history && res.history.times && res.history.prices) {
             for (let i = 0; i < res.history.times.length; i++) {
                 details({
@@ -134,16 +133,17 @@ const MBTick = (function() {
         updateWarmChart: updateWarmChart,
         request        : request,
         processHistory : processHistory,
-        quote          : function() { return quote; },
-        id             : function() { return id; },
-        epoch          : function() { return epoch; },
-        errorMessage   : function() { return errorMessage; },
-        spots          : function() { return spots; },
-        setQuote       : function(q) { quote = q; },
-        clean          : function() {
+        quote          : ()  => quote,
+        id             : ()  => id,
+        epoch          : ()  => epoch,
+        errorMessage   : ()  => error_message,
+        spots          : ()  => spots,
+        setQuote       : (q) => { quote = q; },
+        clean          : ()  => {
             spots = {};
             quote = '';
-            $('#spot').fadeOut(200, function() {
+            $chart = null;
+            $('#spot').fadeOut(200, () => {
                 // resets spot movement coloring, will continue on the next tick responses
                 $('#spot-dyn').removeAttr('class').text('');
             });
@@ -152,6 +152,4 @@ const MBTick = (function() {
     };
 })();
 
-module.exports = {
-    MBTick: MBTick,
-};
+module.exports = MBTick;

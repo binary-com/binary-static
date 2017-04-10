@@ -2,16 +2,16 @@ const getLanguage = require('./language').get;
 const State       = require('./storage').State;
 const urlFor      = require('./url').urlFor;
 
-const BinaryPjax = (function() {
+const BinaryPjax = (() => {
     'use strict';
 
     let xhr;
-    const params   = {},
-        defaults = {
-            type    : 'GET',
-            dataType: 'html',
-        },
-        cache = {};
+    const params   = {};
+    const defaults = {
+        type    : 'GET',
+        dataType: 'html',
+    };
+    const cache = {};
 
     const init = (container, content_selector) => {
         if (!(window.history && window.history.pushState && window.history.replaceState &&
@@ -157,9 +157,9 @@ const BinaryPjax = (function() {
         $.scrollTo('body', 500);
     };
 
-    const abortXHR = (xhrObj) => {
-        if (xhrObj && xhrObj.readyState < 4) {
-            xhrObj.abort();
+    const abortXHR = (xhr_obj) => {
+        if (xhr_obj && xhr_obj.readyState < 4) {
+            xhr_obj.abort();
         }
     };
 
