@@ -43,7 +43,7 @@ const APIToken = (() => {
     };
 
     const newTokenResponse = (response) => {
-        showSubmitSuccess('New token created.');
+        if (!response.error) showSubmitSuccess('New token created.');
         $('#txt_name').val('');
 
         populateTokensList(response);
