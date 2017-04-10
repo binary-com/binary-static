@@ -1787,7 +1787,9 @@ msgstr "กำหนดราคาใช้สิทธิของท่าน
 msgid "Christmas Day"
 msgstr "วันคริสต์มาส"
 
-msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+#, fuzzy
+#| msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "ลูกค้าในประเทศเหล่านี้ อัฟกานิสถาน เบลเยี่ยม บอสเนีย และ เฮอเซโกวินา กายอานา อิรัก สาธารณรัฐประชาชนลาว ซีเรีย ยูกานดา วาตูอานู หรือ เยเมน จะได้รับการดูแลและเปิดบัญชีจาก Binary Investments (Europe) Ltd."
 
 msgid "Classification of assets requiring hedge"
@@ -2360,6 +2362,11 @@ msgstr "พัฒนาแอพพลิเคชันในการเทร
 
 msgid "Differences with other data feeds"
 msgstr "ความแตกต่างของข้อมูลฟีดอื่นๆ"
+
+#, fuzzy
+#| msgid "Digits"
+msgid "Digit"
+msgstr "ตัวเลข"
 
 msgid "Digit contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "สัญญา Digit จะถูกคืนมูลค่าที่ราคาซื้อหากสัญญาไม่สิ้นสุดภายใน 5 นาที"
@@ -5518,6 +5525,11 @@ msgstr "จำนวนเงินที่ได้รับชำระ"
 msgid "Pension"
 msgstr "บำนาญ"
 
+#, fuzzy
+#| msgid "Retracement Percentages"
+msgid "Percentage"
+msgstr "ร้อยละของการปรับฐาน"
+
 msgid "Period"
 msgstr "ระยะเวลา"
 
@@ -8653,7 +8665,7 @@ msgstr "ท่านไม่ได้รับสิทธิ์ในการ
 
 #, fuzzy
 #| msgid "You are not resident in a restricted country such as the USA, Japan, Hong Kong, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, Iraq, or such other restricted country as the Company may decide from time to time at its sole discretion;"
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "ท่านไม่มีที่พำนัก หรือ มีถิ่นฐานในประเทศต่อไปนี้ สหรัฐอเมริกา ญี่ปุ่น ฮ่องกง คอสตาริก้า มาเลเซีย มอลตา อิหร่าน เกาหลีเหนือ เจอร์ซี อิรัก หรือ ประเทศอื่นๆ ที่ทางบริษัทฯ อาจจะมีการกำหนดในแต่ละครั้งตามดุลยพินิจของบริษัทฯแต่เพียงผู้เดียว"
 
 msgid "You are over 18 years of age;"
@@ -9290,7 +9302,9 @@ msgstr "ปี"
 msgid "years"
 msgstr "ปี"
 
-msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+#, fuzzy
+#| msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgstr "ท่านไม่ได้มีที่พำนักในประเทศควบคุมต่อไปนี้ อัฟกานิสถาน บอสเนียและเฮอเซโกวินา คอสตาริกา ฮ่องกง อิหร่าน อิรัก เจอร์ซี สาธารณรัฐประชาชนลาว มาเลเซีย มอลตา เกาหลีเหนือ ซีเรีย ยูกานดา สหรัฐอเมริกา วานูอาตู หรือ เยเมน"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
@@ -13188,9 +13202,6 @@ msgstr "วงเงินในบัญชี"
 
 #~ msgid "Response too large."
 #~ msgstr "คำตอบยาวเกินไป"
-
-#~ msgid "Retracement Percentages"
-#~ msgstr "ร้อยละของการปรับฐาน"
 
 #~ msgid "Retry"
 #~ msgstr "ลองใหม่"
