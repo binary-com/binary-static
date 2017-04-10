@@ -122,11 +122,18 @@ const BinarySocketClass = () => {
         return promise_obj.promise;
     };
 
-    const send = (data, force_send, msg_type) => {
+    /**
+     * @param {Object} data: request object
+     * @param {Object} options:
+     *      forced  : {boolean}  sends the request regardless the same msg_type has been sent before
+     *      msg_type: {string}   specify the type of request call
+     *      callback: {function} to call on response of streaming requests
+     */
+    const send = function(data, options = {}) {
         const promise_obj = new PromiseClass();
 
-        msg_type = msg_type || no_duplicate_requests.find(c => c in data);
-        if (!force_send && msg_type) {
+        const msg_type = options.msg_type || no_duplicate_requests.find(c => c in data);
+        if (!options.forced && msg_type) {
             const last_response = State.get(['response', msg_type]);
             if (last_response) {
                 promise_obj.resolve(last_response);
@@ -146,7 +153,13 @@ const BinarySocketClass = () => {
             data.req_id = ++req_id;
         }
         promises[data.req_id] = {
-            callback : (response) => { promise_obj.resolve(response); },
+            callback: (response) => {
+                if (typeof options.callback === 'function') {
+                    options.callback(response);
+                } else {
+                    promise_obj.resolve(response);
+                }
+            },
             subscribe: !!data.subscribe,
         };
 
