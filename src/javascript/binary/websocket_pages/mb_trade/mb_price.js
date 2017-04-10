@@ -26,46 +26,49 @@ const MBPrice = (() => {
         contract_types = {},
         barriers       = [],
         req_id         = 0,
-        res_count      = 0,
         is_displayed   = false,
         is_unwelcome   = false,
         $rows          = {},
         $table;
 
     const addPriceObj = (req) => {
-        const barrier = makeBarrier(req);
-        if (!prices[barrier]) {
-            prices[barrier] = {};
-        }
-        prices[barrier][req.contract_type] = {};
-        if (!contract_types[req.contract_type]) {
-            contract_types[req.contract_type] = MBContract.getTemplate(req.contract_type);
-        }
+        req.barriers.forEach((barrier_obj) => {
+            const barrier = makeBarrier(barrier_obj);
+            if (!prices[barrier]) {
+                prices[barrier] = {};
+            }
+            req.contract_type.forEach((c_type) => {
+                prices[barrier][c_type] = {};
+                if (!contract_types[c_type]) {
+                    contract_types[c_type] = MBContract.getTemplate(c_type);
+                }
+            });
+        });
     };
 
-    const makeBarrier = req => (req.barrier2 ? `${req.barrier2}_` : '') + req.barrier;
+    const makeBarrier = (barrier_obj) => {
+        if (!barrier_obj.barrier && barrier_obj.error) barrier_obj = barrier_obj.error.details;
+        return (barrier_obj.barrier2 ? `${barrier_obj.barrier2}_` : '') + barrier_obj.barrier;
+    };
 
     const display = (response) => {
-        const barrier = makeBarrier(response.echo_req);
-        const contract_type = response.echo_req.contract_type;
-        const prev_proposal = $.extend({}, prices[barrier][contract_type]);
+        Object.keys(response.proposal_array.proposals).forEach((contract_type) => {
+            response.proposal_array.proposals[contract_type].forEach((proposal) => {
+                const barrier                  = makeBarrier(proposal);
+                const prev_proposal            = $.extend({}, prices[barrier][contract_type]);
+                prices[barrier][contract_type] = $.extend({ echo_req: response.echo_req }, proposal);
 
-        if (isEmptyObject(prev_proposal)) {
-            res_count++;
-        }
+                // update previous ask_price to use in price movement
+                if (!isEmptyObject(prev_proposal) && !prev_proposal.error) {
+                    prices[barrier][contract_type].prev_price = prev_proposal.ask_price;
+                }
+            });
+        });
 
-        prices[barrier][contract_type] = response;
-        // update previous ask_price to use in price movement
-        if (!isEmptyObject(prev_proposal) && !prev_proposal.error) {
-            prices[barrier][contract_type].prev_price = prev_proposal.proposal.ask_price;
-        }
-
-        // populate table if all proposals received
-        if (!is_displayed && res_count === Object.keys(prices).length * 2) {
+        if (!is_displayed) {
             populateTable();
-        } else if ($rows[barrier]) {
-            updatePrice(prices[barrier][contract_type]);
         }
+        updatePrices();
     };
 
     const populateTable = () => {
@@ -95,9 +98,9 @@ const MBPrice = (() => {
         });
 
         barriers.forEach((barrier) => {
-            Object.keys(contract_types).forEach(function(contract_type) {
+            Object.keys(contract_types).forEach((contract_type) => {
                 $($table[+contract_types[contract_type].order])
-                    .append(updatePriceRow(getValues(prices[barrier][contract_type])));
+                    .append(updatePriceRow(getValues(prices[barrier][contract_type], contract_type)));
             });
         });
 
@@ -106,42 +109,49 @@ const MBPrice = (() => {
         is_displayed = true;
     };
 
-    const updatePrice = (proposal) => {
-        const barrier = makeBarrier(proposal.echo_req);
-        const contract_type_opp = contract_types[proposal.echo_req.contract_type].opposite;
+    const updatePrices = () => {
+        Object.keys(contract_types).forEach((contract_type) => {
+            barriers.forEach((barrier) => {
+                const proposal   = prices[barrier][contract_type];
+                const price_rows = document.querySelectorAll(`${price_selector} div[data-barrier="${makeBarrier(proposal)}"]`);
 
-        updatePriceRow(getValues(proposal));
-        updatePriceRow(getValues(prices[barrier][contract_type_opp]));
+                if (!price_rows.length) return;
+
+                const contract_type_opp = contract_types[contract_type].opposite;
+
+                updatePriceRow(getValues(proposal, contract_type));
+                updatePriceRow(getValues(prices[barrier][contract_type_opp], contract_type_opp));
+            });
+        });
     };
 
-    const getValues = (proposal) => {
-        const barrier       = makeBarrier(proposal.echo_req);
-        const payout        = proposal.echo_req.amount;
-        const contract_type = proposal.echo_req.contract_type;
-        const proposal_opp  = prices[barrier][contract_types[contract_type].opposite];
+    const getValues = (proposal, contract_type) => {
+        const barrier      = makeBarrier(proposal);
+        const payout       = proposal.echo_req.amount;
+        const proposal_opp = prices[barrier][contract_types[contract_type].opposite];
         return {
             payout             : payout / 1000,
             contract_type      : contract_type,
             barrier            : barrier,
-            is_active          : !proposal.error && proposal.proposal.ask_price && !is_unwelcome,
+            is_active          : !proposal.error && proposal.ask_price && !is_unwelcome,
             message            : proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
             ask_price          : getAskPrice(proposal),
             sell_price         : payout - getAskPrice(proposal_opp),
-            ask_price_movement : !proposal.error ? getMovementDirection(proposal.prev_price, proposal.proposal.ask_price) : '',
-            sell_price_movement: proposal_opp && !proposal_opp.error ? getMovementDirection(proposal_opp.proposal.ask_price, proposal_opp.prev_price) : '',
+            ask_price_movement : !proposal.error ? getMovementDirection(proposal.prev_price, proposal.ask_price) : '',
+            sell_price_movement: proposal_opp && !proposal_opp.error ? getMovementDirection(proposal_opp.ask_price, proposal_opp.prev_price) : '',
         };
     };
 
     const getAskPrice = proposal => (
-        (proposal.error || +proposal.proposal.ask_price === 0) ?
+        (proposal.error || +proposal.ask_price === 0) ?
             (getPropertyValue(proposal, ['error', 'details', 'display_value']) || proposal.echo_req.amount) : // In case of RateLimit error, there is no display_value, so we display the request amount
-            proposal.proposal.ask_price
+            proposal.ask_price
     );
 
     const getMovementDirection = (prev, current) => (current > prev ? 'up' : current < prev ? 'down' : '');
 
     const updatePriceRow = (values) => {
-        const $buy = $(`<button class="price-button' + (values.is_active ? '' : ' inactive') + '"
+        const $buy = $(`<button class="price-button${values.is_active ? '' : ' inactive'}"
             ${values.is_active ? ` onclick="return HandleClick('MBPrice', '${values.barrier}', '${values.contract_type}')"` : ''}
             ${values.message ? ` data-balloon="${values.message}"` : ''}>
                 <span class="value-wrapper">
@@ -178,7 +188,6 @@ const MBPrice = (() => {
         prices         = {};
         contract_types = {};
         barriers       = [];
-        res_count      = 0;
         is_displayed   = false;
         $rows          = {};
         // display loading
@@ -194,12 +203,12 @@ const MBPrice = (() => {
 
         const req = {
             buy       : 1,
-            price     : proposal.proposal.ask_price,
+            price     : proposal.ask_price,
             parameters: {
                 amount               : proposal.echo_req.amount,
-                barrier              : proposal.echo_req.barrier,
+                barrier              : proposal.barrier,
                 basis                : 'payout',
-                contract_type        : proposal.echo_req.contract_type,
+                contract_type        : contract_type,
                 currency             : MBContract.getCurrency(),
                 symbol               : proposal.echo_req.symbol,
                 date_expiry          : proposal.echo_req.date_expiry,
@@ -208,8 +217,8 @@ const MBPrice = (() => {
             },
         };
 
-        if (proposal.echo_req.barrier2) {
-            req.parameters.barrier2 = proposal.echo_req.barrier2;
+        if (proposal.barrier2) {
+            req.parameters.barrier2 = proposal.barrier2;
         }
 
         BinarySocket.send(req);

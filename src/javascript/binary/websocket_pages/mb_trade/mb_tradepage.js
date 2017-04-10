@@ -8,7 +8,6 @@ const MBProcess            = require('./mb_process');
 const MBSymbols            = require('./mb_symbols');
 const TradingAnalysis      = require('../trade/analysis');
 const chartFrameCleanup    = require('../trade/common').chartFrameCleanup;
-const forgetTradingStreams = require('../trade/process').forgetTradingStreams;
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
 const JapanPortfolio       = require('../../../binary_japan/trade_japan/portfolio');
@@ -61,7 +60,6 @@ const MBTradePage = (() => {
         MBContract.onUnload();
         MBPrice.onUnload();
         MBProcess.onUnload();
-        forgetTradingStreams();
         BinarySocket.clear();
     };
 
