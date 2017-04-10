@@ -154,6 +154,12 @@
         text-align: center;
         align-self: flex-start;
         white-space: nowrap;
+        &.PUT {
+            background-image: url('../images/pages/trade/higher_2.svg');
+        }
+        &.CALLE {
+            background-image: url('../images/pages/trade/lower_2.svg');
+        }
     }
     .select {
         margin-right: 10px;
