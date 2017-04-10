@@ -194,7 +194,7 @@ const Header = (() => {
             };
 
             const messages = {
-                authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
+                authenticate: () => localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.',
                     [`<a href="${urlFor('user/authenticate')}">`, '</a>']),
                 residence: () => localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.',
                     [`<a href="${urlFor('user/settings/detailsws')}">`, '</a>']),
