@@ -1,15 +1,14 @@
-const MBContract         = require('./mb_contract');
-const MBDefaults         = require('./mb_defaults');
-const MBNotifications    = require('./mb_notifications');
-const MBPrice            = require('./mb_price');
-const MBSymbols          = require('./mb_symbols');
-const MBTick             = require('./mb_tick');
-const TradingAnalysis    = require('../trade/analysis');
-const commonTrading      = require('../trade/common');
-const processForgetTicks = require('../trade/process').processForgetTicks;
-const Client             = require('../../base/client');
-const localize           = require('../../base/localize').localize;
-const jpClient           = require('../../common_functions/country_base').jpClient;
+const MBContract      = require('./mb_contract');
+const MBDefaults      = require('./mb_defaults');
+const MBNotifications = require('./mb_notifications');
+const MBPrice         = require('./mb_price');
+const MBSymbols       = require('./mb_symbols');
+const MBTick          = require('./mb_tick');
+const TradingAnalysis = require('../trade/analysis');
+const commonTrading   = require('../trade/common');
+const Client          = require('../../base/client');
+const localize        = require('../../base/localize').localize;
+const jpClient        = require('../../common_functions/country_base').jpClient;
 
 const MBProcess = (() => {
     'use strict';
@@ -182,14 +181,6 @@ const MBProcess = (() => {
         }
     };
 
-    const processForgetProposals = () => {
-        MBPrice.showPriceOverlay();
-        BinarySocket.send({
-            forget_all: 'proposal',
-        });
-        MBPrice.cleanup();
-    };
-
     const processPriceRequest = () => {
         MBPrice.increaseReqId();
         processForgetProposals();
@@ -197,36 +188,47 @@ const MBProcess = (() => {
         const available_contracts = MBContract.getCurrentContracts();
         const durations = MBDefaults.get('period').split('_');
         const req = {
-            proposal   : 1,
-            subscribe  : 1,
-            basis      : 'payout',
-            amount     : jpClient() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
-            currency   : MBContract.getCurrency(),
-            symbol     : MBDefaults.get('underlying'),
-            req_id     : MBPrice.getReqId(),
-            date_expiry: durations[1],
+            proposal_array: 1,
+            subscribe     : 1,
+            basis         : 'payout',
+            amount        : jpClient() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
+            currency      : MBContract.getCurrency(),
+            symbol        : MBDefaults.get('underlying'),
+            req_id        : MBPrice.getReqId(),
+            date_expiry   : durations[1],
+            contract_type : [],
+            barriers      : [],
 
             trading_period_start: durations[0],
         };
-        let barriers_array,
-            all_expired = true;
-        for (let i = 0; i < available_contracts.length; i++) {
-            req.contract_type = available_contracts[i].contract_type;
-            barriers_array = available_contracts[i].available_barriers;
-            for (let j = 0; j < barriers_array.length; j++) {
-                if (+available_contracts[i].barriers === 2) {
-                    req.barrier  = barriers_array[j][1];
-                    req.barrier2 = barriers_array[j][0];
-                } else {
-                    req.barrier = barriers_array[j];
-                }
-                if (!barrierHasExpired(available_contracts[i].expired_barriers, req.barrier, req.barrier2)) {
-                    all_expired = false;
-                    MBPrice.addPriceObj(req);
-                    BinarySocket.send(req);
-                }
+
+        // contract_type
+        available_contracts.forEach(c => req.contract_type.push(c.contract_type));
+
+        // barriers
+        let all_expired = true;
+        const contract = available_contracts[0];
+        contract.available_barriers.forEach((barrier) => {
+            const barrier_item = {};
+            if (+contract.barriers === 2) {
+                barrier_item.barrier  = barrier[1];
+                barrier_item.barrier2 = barrier[0];
+            } else {
+                barrier_item.barrier = barrier;
             }
+            if (!barrierHasExpired(contract.expired_barriers, barrier_item.barrier, barrier_item.barrier2)) {
+                all_expired = false;
+                req.barriers.push(barrier_item);
+            }
+        });
+
+        // send request
+        if (req.barriers.length) {
+            MBPrice.addPriceObj(req);
+            BinarySocket.send(req);
         }
+
+        // all barriers expired
         if (all_expired) {
             MBNotifications.show({ text: `${localize('All barriers in this trading window are expired')}.`, uid: 'ALL_EXPIRED' });
             MBPrice.hidePriceOverlay();
@@ -239,7 +241,6 @@ const MBProcess = (() => {
         const req_id = MBPrice.getReqId();
         if (response.req_id === req_id) {
             MBPrice.display(response);
-            // MBPrice.hidePriceOverlay();
         }
     };
 
@@ -280,12 +281,38 @@ const MBProcess = (() => {
         });
     };
 
+    const processForgetProposals = () => {
+        MBPrice.showPriceOverlay();
+        BinarySocket.send({
+            forget_all: 'proposal_array',
+        });
+        MBPrice.cleanup();
+    };
+
+    const processForgetTicks = () => {
+        BinarySocket.send({
+            forget_all: 'ticks',
+        });
+    };
+
+    const forgetTradingStreams = () => {
+        processForgetProposals();
+        processForgetTicks();
+    };
+
     const containsArray = (array, val) => {
         const hash = {};
         for (let i = 0; i < array.length; i++) {
             hash[array[i]] = i;
         }
         return hash.hasOwnProperty(val);
+    };
+
+    const onUnload = () => {
+        forgetTradingStreams();
+        clearSymbolTimeout();
+        MBSymbols.clearData();
+        MBTick.clean();
     };
 
     return {
@@ -295,7 +322,9 @@ const MBProcess = (() => {
         processContract        : processContract,
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
-        onUnload               : () => { clearSymbolTimeout(); MBSymbols.clearData(); MBTick.clean(); },
+        processForgetTicks     : processForgetTicks,
+        forgetTradingStreams   : forgetTradingStreams,
+        onUnload               : onUnload,
     };
 })();
 

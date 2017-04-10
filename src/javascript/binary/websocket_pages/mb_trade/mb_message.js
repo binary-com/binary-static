@@ -18,7 +18,7 @@ const MBMessage = (() => {
     const process = (msg) => {
         const response = JSON.parse(msg.data);
         if (!State.get('is_mb_trading')) {
-            Process.forgetTradingStreams();
+            MBProcess.forgetTradingStreams();
             return;
         }
         if (response) {
@@ -29,7 +29,7 @@ const MBMessage = (() => {
                 MBNotifications.hide('CONNECTION_ERROR');
                 MBContract.setContractsResponse(response);
                 MBProcess.processContract(response);
-            } else if (type === 'proposal') {
+            } else if (type === 'proposal_array') {
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
                 MBPurchase.display(response);
