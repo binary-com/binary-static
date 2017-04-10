@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-04-06 17:50+0000\n"
+"PO-Revision-Date: 2017-04-10 18:45+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1003,7 +1004,7 @@ msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。"
 
 msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
-msgstr ""
+msgstr "資金の入出金は銀行振込をご利用いただけます。"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "クライアントへ低い金額（現地通貨）での入金を許可する"
@@ -1088,6 +1089,8 @@ msgstr "お客さまが開始された取引は、リアル口座またはその
 
 msgid "Any amendments to the contractual terms of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between you and us in connection with the Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms and conditions of this Agreement."
 msgstr ""
+"明らかに誤りのある契約条件の変更は合理的且つ公正に行われます。誤りのある契約に関連する当社とお客様の間で交わされた金銭については、改正後の契約条項に従い受"
+"取人に返還されます。"
 
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "個人情報のお取り扱いなどに関する変更点は全て当社サイトに掲載されます。お客さまの個人情報の経済的利用へ直接影響を与えるような変更が発生し得る場合は、当社はお客さまのご口座にそのような影響が発生する前に書面での事前認証を求めます。"
@@ -1275,7 +1278,7 @@ msgid "Australia 200 Cash Index"
 msgstr "オーストラリア 200現物指数"
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
-msgstr ""
+msgstr "個人情報を確認してアカウントの認証を行います。次に進むには以下の書類を%1までご送付ください。"
 
 msgid "Authentication"
 msgstr "ご口座アップグレード"
@@ -1563,7 +1566,7 @@ msgid "Binary.com"
 msgstr "Binary.com"
 
 msgid "Binary.com assesses the choice of external execution venues regularly (at least once a year) with the intention of achieving a better result for you based on our best execution obligation."
-msgstr ""
+msgstr "Binary.comは最良執行義務に基いてお客さまへより良い結果を導くことができるよう、定期的（年に一度）に最良執行への選択を評価しています。"
 
 msgid "Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
 msgstr "Binary.com (バイナリードットコム)は、各国の監督局からライセンスを付与され、世界中のお客さまに取引を提供し100万口座以上を保持しています。1999年以来、揺らぐことのない一定の整合性と信頼性でお客さまへのサービスに尽力してまいりました。当社の規制要件に加えて、最高の倫理基準に基いて行動しています。"
@@ -1801,11 +1804,9 @@ msgstr "バリア価格を設定"
 msgid "Christmas Day"
 msgstr "クリスマス"
 
-#, fuzzy
-#| msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr ""
-"アフガニスタン、ベルギー、ボスニア・ヘルツェゴビナ、ガイアナ、イラク、ラオス、シリア、ウガンダ、バヌアツ,\n"
+"アフガニスタン、ベルギー、ボスニア・ヘルツェゴビナ、イラク、ラオス、シリア、ウガンダ、バヌアツ,\n"
 "イエメンの方は、Binary Investments (Europe) Ltd.にて口座を開設いただきます。"
 
 msgid "Classification of assets requiring hedge"
@@ -2386,8 +2387,6 @@ msgstr "当社のAPIを利用して自身の取引アプリケーションを開
 msgid "Differences with other data feeds"
 msgstr "他社が提供するデータフィードとの相違について"
 
-#, fuzzy
-#| msgid "Digits"
 msgid "Digit"
 msgstr "数字"
 
@@ -2470,7 +2469,7 @@ msgid "Download CSV"
 msgstr "CSVファイルでダウンロード"
 
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
-msgstr ""
+msgstr "デスクトップまたはノートパソコンにMT5をダウンロードして、何百万のトレーダーに選ばれたパワフルなツールと機能を活用しましょう。"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "セールス及びマーケティング目標をサポートする急速な成長と事業開発の推進"
@@ -3441,7 +3440,7 @@ msgid "If any provision of this Agreement is held to be void or unenforceable in
 msgstr "本契約の全体または一部の条項が無効、若しくは法的強制力がないと判断された場合、その不履行条項（またはその一部）は本契約から削除されたものとみなされ、残りの条項は引き続き完全に有効かつ強制可能であるものとします。"
 
 msgid "If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect."
-msgstr ""
+msgstr "本契約の一部条項が裁判所又は各管轄先の規制機関によって無効若しくは強制不能となっても、それ以外の条項に関しては効力を失うことはありません。"
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "当社が単独の裁量で顧客がこれらの条件を遵守していないと判断した場合、または顧客が当社からの合理的な要求を遵守しない場合、当社は顧客の口座を停止し、 そこに蓄積された資金を保留することがあります。"
@@ -5570,10 +5569,8 @@ msgstr "取引数量(ロット x ¥1,000)"
 msgid "Pension"
 msgstr "年金"
 
-#, fuzzy
-#| msgid "Retracement Percentages"
 msgid "Percentage"
-msgstr "Retracement率"
+msgstr "割合"
 
 msgid "Period"
 msgstr "期間"
@@ -9478,10 +9475,10 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-#, fuzzy
-#| msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr "お客様はアフガニスタン、ボスニア・ヘルツェゴビナ、コスタリカ、ガイアナ、香港、イラン、イラク、ジャージー、ラオス、マレーシア、マルタ、北朝鮮、シリア、ウガンダ、米国、バヌアツ、イエメンなどの特定の国の居住者ではありません。"
+msgstr ""
+"お客様はアフガニスタン、ボスニア・ヘルツェゴビナ、コスタリカ、香港、イラン、イラク、ジャージー、ラオス、マレーシア、マルタ、北朝鮮、シリア、ウガンダ、米国"
+"、バヌアツ、イエメンなどの特定の国の居住者ではありません。"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "１８歳以上であり、エストニア国民の場合は２１歳以上です。"
