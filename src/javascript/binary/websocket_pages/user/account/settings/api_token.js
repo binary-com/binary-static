@@ -43,7 +43,11 @@ const APIToken = (() => {
     };
 
     const newTokenResponse = (response) => {
-        if (!response.error) showSubmitSuccess('New token created.');
+        if (response.error) {
+            showFormMessage(response.error.message, false);
+            return;
+        }
+        showFormMessage('New token created', true);
         $('#txt_name').val('');
 
         populateTokensList(response);
@@ -147,10 +151,10 @@ const APIToken = (() => {
             .html(localize(msg));
     };
 
-    const showSubmitSuccess = (msg) => {
+    const showFormMessage = (msg, is_success) => {
         $('#msg_form')
-            .attr('class', 'success-msg')
-            .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })))
+            .attr('class', is_success ? 'success-msg' : error_class)
+            .html(is_success ? `<ul class="checked"><li>${localize(msg)}</li></ul>` : localize(msg))
             .css('display', 'block')
             .delay(3000)
             .fadeOut(1000);
