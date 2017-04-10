@@ -1,6 +1,7 @@
 const moment     = require('moment');
 const localize   = require('../base/localize').localize;
 const checkInput = require('../common_functions/common_functions').checkInput;
+const padLeft    = require('../common_functions/string_util').padLeft;
 
 const TimePicker = (() => {
     'use strict';
@@ -77,7 +78,7 @@ const TimePicker = (() => {
                 if (typeof invalid[2] !== 'undefined' && isFinite(invalid[2])) minute = formatTime(invalid[2]);
                 if (typeof invalid[3] !== 'undefined' && isFinite(invalid[3])) second = formatTime(invalid[3]);
 
-                new_time = moment(time_now.format('YYYY-MM-DD') + ' ' + [hour, minute, second].join(':')).format('HH:mm');
+                new_time = moment(`${time_now.format('YYYY-MM-DD')} ${[hour, minute, second].join(':')}`).format('HH:mm');
 
                 if (old_value && old_value === new_time) return false;
                 $this.val(new_time);
@@ -92,7 +93,7 @@ const TimePicker = (() => {
         checkWidth(options.selector);
     };
 
-    const formatTime = time => ('0' + time).slice(-2);
+    const formatTime = time => padLeft(time, 2, '0');
 
     const toTime = time => [formatTime(time.hour), formatTime(time.minute), '00'].join(':');
 

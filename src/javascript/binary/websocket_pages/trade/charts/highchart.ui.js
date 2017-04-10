@@ -120,7 +120,7 @@ const HighchartUI = (() => {
 
     const replaceExitLabelWithSell = (subtitle) => {
         const subtitle_length = subtitle.childNodes.length;
-        const textnode = document.createTextNode(' '  + localize('Sell time') + ' ');
+        const textnode = document.createTextNode(` ${localize('Sell time')} `);
         for (let i = 0; i < subtitle_length; i++) {
             const item = subtitle.childNodes[i];
             if (/End time/.test(item.nodeValue)) {
@@ -151,9 +151,7 @@ const HighchartUI = (() => {
     };
 
     const showError = (type, message) => {
-        const el = document.getElementById('analysis_live_chart');
-        if (!el) return;
-        el.innerHTML = '<p class="error-msg">' + (type === 'missing' ? localize('Ticks history returned an empty array.') : message) + '</p>';
+        $('#analysis_live_chart').html($('<p/>', { class: 'error-msg', text: (type === 'missing' ? localize('Ticks history returned an empty array.') : message) }));
     };
 
     const getMarkerObject = (type) => {

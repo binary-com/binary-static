@@ -32,11 +32,11 @@ const Guide = (() => {
         $.extend(true, opt, options);
 
         cookie_name = 'hide_guide';
-        btn_next    = { className: 'button', html: '<span>' + localize('Next') + '</span>' };
-        btn_finish  = { className: 'button btnFinish', html: '<span>' + localize('Finish') + '</span>' };
+        btn_next    = { className: 'button', html: $('<span/>', { text: localize('Next') }) };
+        btn_finish  = { className: 'button btnFinish', html: $('<span/>', { text: localize('Finish') }) };
 
         if ($(opt.guideBtnID).length === 0) {
-            console.warn('Could not find the button placeholder: <div id="' + opt.guideBtnID + '"></div>');
+            console.warn(`Could not find the button placeholder: <div id="${opt.guideBtnID}"></div>`);
             return;
         }
 
@@ -67,7 +67,7 @@ const Guide = (() => {
     const setDisabled = () => {
         if (!isDisabled()) {
             const disabled = Cookies.get(cookie_name);
-            Cookies.set(cookie_name, (!disabled ? opt.script : disabled + ',' + opt.script));
+            Cookies.set(cookie_name, (!disabled ? opt.script : `${disabled},${opt.script}`));
         }
     };
 
@@ -83,7 +83,7 @@ const Guide = (() => {
             .addClass('gr-hide-m pulser')
             .append($('<span/>', { class: 'close', text: 'X' }))
             .append($('<strong/>'));
-        $(opt.guideBtnID + ' strong').html('<span></span>' + opt.btnText);
+        $(`${opt.guideBtnID} strong`).html(`<span></span>${opt.btnText}`);
 
         setEvents();
     };
@@ -92,7 +92,7 @@ const Guide = (() => {
      *  both buttons' click event
      */
     const setEvents = () => {
-        $(opt.guideBtnID + ' strong').click(() => {
+        $(`${opt.guideBtnID} strong`).click(() => {
             const enjoyhint_instance = new EnjoyHint({});
             enjoyhint_instance.setScript(getScript(opt.script));
             enjoyhint_instance.runScript();
@@ -103,7 +103,7 @@ const Guide = (() => {
         }
 
         // Hide button
-        $(opt.guideBtnID + ' span.close').click(() => {
+        $(`${opt.guideBtnID} span.close`).click(() => {
             setDisabled();
             $(opt.guideBtnID).remove();
         });
@@ -119,38 +119,33 @@ const Guide = (() => {
         return [
             {
                 selector   : '#contract_markets',
-                description: '<h1>' + localize('Step') + ' 1</h1>' +
-                                localize('Select your market'),
-                event_type: 'next',
-                nextButton: btn_next,
+                description: `<h1>${localize('Step')} 1</h1>${localize('Select your market')}`,
+                event_type : 'next',
+                nextButton : btn_next,
             },
             {
                 selector   : '#underlying',
-                description: '<h1>' + localize('Step') + ' 2</h1>' +
-                                localize('Select your underlying asset'),
-                event_type: 'next',
-                nextButton: btn_next,
+                description: `<h1>${localize('Step')} 2</h1>${localize('Select your underlying asset')}`,
+                event_type : 'next',
+                nextButton : btn_next,
             },
             {
                 selector   : '#contract_form_name_nav',
-                description: '<h1>' + localize('Step') + ' 3</h1>' +
-                                localize('Select your trade type'),
-                event_type: 'next',
-                nextButton: btn_next,
+                description: `<h1>${localize('Step')} 3</h1>${localize('Select your trade type')}`,
+                event_type : 'next',
+                nextButton : btn_next,
             },
             {
                 selector   : '#websocket_form',
-                description: '<h1>' + localize('Step') + ' 4</h1>' +
-                                localize('Adjust trade parameters'),
-                event_type: 'next',
-                nextButton: btn_next,
+                description: `<h1>${localize('Step')} 4</h1>${localize('Adjust trade parameters')}`,
+                event_type : 'next',
+                nextButton : btn_next,
             },
             {
                 selector   : '#contracts_list',
-                description: '<h1>' + localize('Step') + ' 5</h1>' +
-                                localize('Predict the direction<br />and purchase'),
-                event_type: 'next',
-                nextButton: btn_finish,
+                description: `<h1>${localize('Step')} 5</h1>${localize('Predict the direction<br />and purchase')}`,
+                event_type : 'next',
+                nextButton : btn_finish,
             },
         ];
     };

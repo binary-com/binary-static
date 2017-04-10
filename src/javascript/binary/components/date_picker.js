@@ -97,7 +97,7 @@ const DatePicker = (() => {
 
             $this.attr('data-value', date);
 
-            const duration = date_pickers[selector].config_data.type === 'diff' ? moment.utc(date + ' 23:59:59').diff(moment.utc(), 'days') : null;
+            const duration = date_pickers[selector].config_data.type === 'diff' ? moment.utc(`${date} 23:59:59`).diff(moment.utc(), 'days') : null;
             $this.val(duration || date_text);
             if (old_value === date) return false;
             $(this_selector).trigger('change', [duration || date_text]);

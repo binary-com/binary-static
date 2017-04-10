@@ -39,7 +39,7 @@ const Url = (() => {
         return param_hash;
     };
 
-    const paramsHashToString = pars => Object.keys(pars).map(key => key + '=' + pars[key]).join('&');
+    const paramsHashToString = pars => Object.keys(pars).map(key => `${key}=${pars[key]}`).join('&');
 
     const urlFor = (path, pars) => {
         if (!path) {
@@ -52,7 +52,7 @@ const Url = (() => {
         if (typeof window !== 'undefined') {
             url  = window.location.href;
         }
-        return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + (path || ('home' + (lang === 'ja' ? '-jp' : ''))) + '.html' + (pars ? '?' + pars : '');
+        return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${(path || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
     };
 
     const urlForStatic = (path) => {

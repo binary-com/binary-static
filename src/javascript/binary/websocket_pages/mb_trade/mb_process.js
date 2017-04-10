@@ -230,7 +230,7 @@ const MBProcess = (() => {
 
         // all barriers expired
         if (all_expired) {
-            MBNotifications.show({ text: localize('All barriers in this trading window are expired') + '.', uid: 'ALL_EXPIRED' });
+            MBNotifications.show({ text: `${localize('All barriers in this trading window are expired')}.`, uid: 'ALL_EXPIRED' });
             MBPrice.hidePriceOverlay();
         } else {
             MBNotifications.hide('ALL_EXPIRED');
@@ -252,11 +252,11 @@ const MBProcess = (() => {
             const expired_barriers = c.expired_barriers;
             for (let i = 0; i < expired_barriers.length; i++) {
                 if (+c.barriers === 2) {
-                    expired_barrier = expired_barriers[i][0] + '_' + expired_barriers[i][1];
+                    expired_barrier = [expired_barriers[i][0], expired_barriers[i][1]].join('_');
                 } else {
                     expired_barrier = expired_barriers[i];
                 }
-                $expired_barrier_element = $('div [data-barrier="' + expired_barrier + '"]');
+                $expired_barrier_element = $(`div [data-barrier="${expired_barrier}"]`);
                 if ($expired_barrier_element.length > 0) {
                     processForgetProposal(expired_barrier);
                     $expired_barrier_element.remove();

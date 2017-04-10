@@ -58,13 +58,13 @@ const Platforms = (() => {
     };
 
     const showSelectedDiv = () => {
-        const $sections_with_hash = $('.sections[id="' + getHash().substring(1) + '"]');
+        const $sections_with_hash = $(`.sections[id="${getHash().substring(1)}"]`);
         if ($sections_with_hash.is(':visible') && $('.sections:visible').length === 1) {
             return;
         }
         $('.sections').addClass('invisible');
         $sections_with_hash.removeClass('invisible');
-        $('.sidebar-nav a[href="' + getHash() + '"]').parent().addClass('selected');
+        $(`.sidebar-nav a[href="${getHash()}"]`).parent().addClass('selected');
     };
 
     const onUnload = () => {

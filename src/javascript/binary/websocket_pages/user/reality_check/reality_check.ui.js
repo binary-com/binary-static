@@ -91,7 +91,7 @@ const RealityCheckUI = (() => {
     };
 
     const onStatementClick = () => {
-        const win = window.open(urlFor('user/statementws') + '#no-reality-check', '_blank');
+        const win = window.open(`${urlFor('user/statementws')}#no-reality-check`, '_blank');
         if (win) {
             win.focus();
         }

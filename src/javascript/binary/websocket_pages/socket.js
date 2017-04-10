@@ -46,7 +46,7 @@ const BinarySocketClass = () => {
         wrong_app_id = 0;
 
     const timeouts  = {};
-    const socket_url = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
+    const socket_url = `${getSocketURL()}?app_id=${getAppId()}&l=${getLanguage()}`;
     const promises  = {};
     const no_duplicate_requests = [
         'authorize',
@@ -159,7 +159,7 @@ const BinarySocketClass = () => {
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(() => {
                     if (typeof reloadPage === 'function' && data.contracts_for) {
-                        window.alert("The server didn't respond to the request:\n\n" + JSON.stringify(data) + '\n\n');
+                        window.alert(`The server didn't respond to the request:\n\n${JSON.stringify(data)}\n\n`);
                         reloadPage();
                     } else {
                         $('.price_container').hide();
@@ -323,9 +323,11 @@ const BinarySocketClass = () => {
 
                 switch (error_code) {
                     case 'WrongResponse':
-                    case 'OutputValidationFailed':
-                        $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.')) + '</p></div>');
+                    case 'OutputValidationFailed': {
+                        const text_value = (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.'));
+                        $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: text_value })));
                         break;
+                    }
                     case 'RateLimit':
                         $('#ratelimit-error-message:hidden').css('display', 'block');
                         break;

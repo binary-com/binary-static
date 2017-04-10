@@ -71,8 +71,8 @@ const MBTick = (() => {
      * Display price/spot movement variation to depict price moved up or down
      */
     const displayPriceMovement = (old_value, current_value) => {
-        const className = (current_value > old_value) ? 'up' : (current_value < old_value) ? 'down' : 'still';
-        $('#spot-dyn').attr('class', 'dynamics ' + className);
+        const class_name = (current_value > old_value) ? 'up' : (current_value < old_value) ? 'down' : 'still';
+        $('#spot-dyn').attr('class', `dynamics ${class_name}`);
     };
 
     const chart_config = {

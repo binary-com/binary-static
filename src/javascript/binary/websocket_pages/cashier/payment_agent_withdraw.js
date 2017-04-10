@@ -90,7 +90,7 @@ const PaymentAgentWithdraw = (() => {
                     fnc_response_handler: withdrawResponse,
                 });
 
-                $(view_ids.confirm + ' #btnBack').click(() => {
+                $(`${view_ids.confirm} #btnBack`).click(() => {
                     setActiveView(view_ids.form);
                 });
                 break;
@@ -99,15 +99,7 @@ const PaymentAgentWithdraw = (() => {
                 setActiveView(view_ids.success);
                 $('#successMessage').css('display', '')
                     .attr('class', 'success-msg')
-                    .html(
-                        '<ul class="checked"><li>' +
-                        localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [
-                            request.currency,
-                            request.amount,
-                            Cookies.get('loginid'),
-                            agent_name,
-                        ]) +
-                        '</li></ul>');
+                    .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, request.amount, Cookies.get('loginid'), agent_name]) })));
                 break;
 
             default: // error
@@ -129,11 +121,12 @@ const PaymentAgentWithdraw = (() => {
     // ----- Message Functions -----
     // -----------------------------
     const showPageError = (err_msg, id) => {
-        $(view_ids.error + ' > p').addClass(hidden_class);
+        const $error = $(view_ids.error);
+        $error.find(' > p').addClass(hidden_class);
         if (id) {
-            $(view_ids.error + ' #' + id).removeClass(hidden_class);
+            $error.find(`#${id}`).removeClass(hidden_class);
         } else {
-            $(view_ids.error + ' #custom-error').html(err_msg).removeClass(hidden_class);
+            $error.find('#custom-error').html(err_msg).removeClass(hidden_class);
         }
         setActiveView(view_ids.error);
     };

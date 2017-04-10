@@ -87,7 +87,7 @@ const Menu = (() => {
         let $item,
             $subitem;
         // Is something selected in main items list
-        $item = $main_menu.find('a[href*="' + pathname + '"]');
+        $item = $main_menu.find(`a[href*="${pathname}"]`);
         const $parent = $item.closest('li');
         if ($parent.hasClass('sub_item')) {
             $subitem = $item;

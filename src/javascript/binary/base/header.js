@@ -194,18 +194,18 @@ const Header = (() => {
             };
 
             const messages = {
-                authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/authenticate') + '">', '</a>']),
+                authenticate: () => localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.',
+                    [`<a href="${urlFor('user/authenticate')}">`, '</a>']),
                 residence: () => localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.',
-                    ['<a href="' + urlFor('user/settings/detailsws') + '">', '</a>']),
+                    [`<a href="${urlFor('user/settings/detailsws')}">`, '</a>']),
                 risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/settings/assessmentws') + '">', '</a>']),
+                    [`<a href="${urlFor('user/settings/assessmentws')}">`, '</a>']),
                 tax: () => localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/settings/detailsws') + '">', '</a>']),
+                    [`<a href="${urlFor('user/settings/detailsws')}">`, '</a>']),
                 tnc: () => localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/tnc_approvalws') + '">', '</a>']),
+                    [`<a href="${urlFor('user/tnc_approvalws')}">`, '</a>']),
                 unwelcome: () => localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
-                    ['<a href="' + urlFor('contact') + '">', '</a>']),
+                    [`<a href="${urlFor('contact')}">`, '</a>']),
             };
 
             const validations = {

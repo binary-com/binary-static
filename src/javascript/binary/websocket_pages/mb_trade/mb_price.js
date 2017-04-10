@@ -48,7 +48,7 @@ const MBPrice = (() => {
 
     const makeBarrier = (barrier_obj) => {
         if (!barrier_obj.barrier && barrier_obj.error) barrier_obj = barrier_obj.error.details;
-        return (barrier_obj.barrier2 ? barrier_obj.barrier2 + '_' : '') + barrier_obj.barrier;
+        return (barrier_obj.barrier2 ? `${barrier_obj.barrier2}_` : '') + barrier_obj.barrier;
     };
 
     const display = (response) => {
@@ -111,7 +111,7 @@ const MBPrice = (() => {
     const updatePrice = (contract_type) => {
         barriers.forEach((barrier) => {
             const proposal = prices[barrier][contract_type],
-                price_rows = document.querySelectorAll(price_selector + ' div[data-barrier="' + makeBarrier(proposal) + '"]');
+                price_rows = document.querySelectorAll(`${price_selector} div[data-barrier="${makeBarrier(proposal)}"]`);
 
             if (!price_rows.length) return;
 
@@ -152,27 +152,27 @@ const MBPrice = (() => {
     const makePriceRow = (values, is_update) => {
         const payout   = MBDefaults.get('payout');
         const is_japan = jpClient();
-        return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
-                '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
-                '<div class="gr-4 buy-price">' +
-                    '<button class="price-button' + (values.is_active ? '' : ' inactive') + '"' +
-                        (values.is_active ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
-                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
-                            '<span class="value-wrapper">' +
-                                '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +
-                                formatPrice(values.ask_price) +
-                            '</span>' +
-                            (is_japan ? '<span class="base-value">(' + formatPrice(values.ask_price / payout) + ')</span>' : '') +
-                    '</button>' +
-                '</div>' +
-                '<div class="gr-4 sell-price">' +
-                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' +
-                        '<span class="dynamics ' + (values.sell_price_movement || '') + '"></span>' +
-                        formatPrice(values.sell_price) +
-                        (is_japan ? '<span class="base-value">(' + formatPrice(values.sell_price / payout) + ')</span>' : '') +
-                    '</span>' +
-                '</div>' +
-            (is_update ? '' : '</div>');
+        return `${(is_update ? '' : `<div data-barrier="${values.barrier}" class="gr-row price-row">`)}
+                <div class="gr-4 barrier">${values.barrier.split('_').join(' ... ')}</div>
+                <div class="gr-4 buy-price">
+                    <button class="price-button${(values.is_active ? '' : ' inactive')}"
+                        ${(values.is_active ? ` onclick="return HandleClick('MBPrice', '${values.barrier}', '${values.contract_type}')"` : '')}
+                        ${(values.message ? ` data-balloon="${values.message}"` : '')}>
+                            <span class="value-wrapper">
+                                <span class="dynamics ${(values.ask_price_movement || '')}"></span>
+                                ${formatPrice(values.ask_price)}
+                            </span>
+                            ${(is_japan ? `<span class="base-value">(${formatPrice(values.ask_price / payout)})</span>` : '')}
+                    </button>
+                </div>
+                <div class="gr-4 sell-price">
+                    <span class="price-wrapper${(!values.sell_price ? ' inactive' : '')}">
+                        <span class="dynamics ${(values.sell_price_movement || '')}"></span>
+                        ${formatPrice(values.sell_price)}
+                        ${(is_japan ? `<span class="base-value">(${formatPrice(values.sell_price / payout)})</span>` : '')}
+                    </span>
+                </div>
+            ${(is_update ? '' : '</div>')}`;
     };
 
     const processBuy = (barrier, contract_type) => {
