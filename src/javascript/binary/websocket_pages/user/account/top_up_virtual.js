@@ -35,7 +35,7 @@ const TopUpVirtual = (() => {
     const showMessage = (message, is_success) => {
         const view_id = is_success ? view_ids.success : view_ids.error;
         setActiveView(view_id);
-        $(view_id + ' > p').html(message);
+        $(`${view_id} > p`).html(message);
     };
 
     const setActiveView = (view_id) => {

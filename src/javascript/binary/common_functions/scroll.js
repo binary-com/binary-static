@@ -4,7 +4,7 @@ const Scroll = (() => {
     const sidebarScroll = (elm_selector) => {
         elm_selector.on('click', '#sidebar-nav li', function() {
             const clicked_li = $(this);
-            $.scrollTo($('.section:eq(' + clicked_li.index() + ')'), 500);
+            $.scrollTo($(`.section:eq(${clicked_li.index()})`), 500);
             return false;
         }).addClass('unbind_later');
 
@@ -49,7 +49,7 @@ const Scroll = (() => {
                 sticky_navigation();
 
                 for (let i = 0; i < length; i++) {
-                    const section = $('.section:eq(' + i + ')');
+                    const section = $(`.section:eq(${i})`);
                     const section_offset = section.offset();
                     const is_offset_top = section_offset && $(this).scrollTop() >= section_offset.top - 5;
                     if (($(window).scrollTop() === 0 || is_offset_top) && section.css('display') !== 'none') { // ignore hidden elements
@@ -62,7 +62,7 @@ const Scroll = (() => {
                             // We're at bottom of screen so highlight last nav item.
                             sidebar_nav.find('li:last-child').addClass('selected');
                         } else {
-                            sidebar_nav.find('li:eq(' + i + ')').addClass('selected');
+                            sidebar_nav.find(`li:eq(${i})`).addClass('selected');
                         }
                     }
                 }
@@ -95,7 +95,7 @@ const Scroll = (() => {
         scrollToTop    : scrollToTop,
         goToHashSection: () => {
             const hash = window.location.hash;
-            if (hash) $('a[href="' + hash + '"]').click();
+            if (hash) $(`a[href="${hash}"]`).click();
         },
         scrollToHashSection: () => {
             const hash = window.location.hash;

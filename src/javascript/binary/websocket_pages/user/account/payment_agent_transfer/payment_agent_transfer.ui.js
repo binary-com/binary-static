@@ -34,7 +34,7 @@ const PaymentAgentTransferUI = (() => {
 
     const showTransferError = (err) => { $confirm_transfer.find('.errorfield').text(localize(err)).removeClass(hidden_class); };
 
-    const updateFormView = (currency) => { $paymentagent_transfer.find('label[for="amount"]').text(localize('Amount') + ' ' + currency); };
+    const updateFormView = (currency) => { $paymentagent_transfer.find('label[for="amount"]').text(`${localize('Amount')} ${currency}`); };
 
     const updateConfirmView = (username, loginid, amount, currency) => {
         $confirm_transfer
@@ -48,7 +48,7 @@ const PaymentAgentTransferUI = (() => {
             .end()
             .find('#confirm_amount')
                 .empty()
-                .text(currency + ' ' + amount);
+                .text(`${currency} ${amount}`);
     };
 
     const updateDoneView = (from_id, to_id, amount, currency) => {

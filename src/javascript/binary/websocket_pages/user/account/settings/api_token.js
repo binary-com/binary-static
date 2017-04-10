@@ -111,7 +111,7 @@ const APIToken = (() => {
     };
 
     const formatToken = (token) => {
-        const last_used = (token.last_used ? token.last_used + ' GMT' : localize('Never Used'));
+        const last_used = (token.last_used ? `${token.last_used} GMT` : localize('Never Used'));
         const scopes = token.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
         return [
             token.display_name,
@@ -150,7 +150,7 @@ const APIToken = (() => {
     const showSubmitSuccess = (msg) => {
         $('#msg_form')
             .attr('class', 'success-msg')
-            .html('<ul class="checked"><li>' + localize(msg) + '</li></ul>')
+            .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })))
             .css('display', 'block')
             .delay(3000)
             .fadeOut(1000);

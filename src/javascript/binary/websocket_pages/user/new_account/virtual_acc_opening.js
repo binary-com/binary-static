@@ -48,7 +48,7 @@ const VirtualAccOpening = (() => {
         const $residence = $('#residence');
 
         // set residence value to client's country, detected by IP address from back-end
-        const $clients_country = $residence.find('option[value="' + clients_country + '"]');
+        const $clients_country = $residence.find(`option[value="${clients_country}"]`);
         if (!$clients_country.attr('disabled')) {
             $clients_country.prop('selected', true);
         }

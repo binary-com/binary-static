@@ -101,7 +101,7 @@ const PaymentAgentList = (() => {
                 banks.map((bank) => {
                     supported_banks += bank.length === 0 ?
                         '' :
-                        '<img src="' + urlForStatic('images/pages/payment_agent/banks/' + bank.toLowerCase() + '.png') + '" alt="' + bank + '" title="' + bank + '" />';
+                        `<img src="${urlForStatic(`images/pages/payment_agent/banks/${bank.toLowerCase()}.png`)}" alt="${bank}" title="${bank}" />`;
                 });
             }
 

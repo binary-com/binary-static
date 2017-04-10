@@ -10,21 +10,16 @@ const LimitsUI = (() => {
     let client_limits = '';
 
     const appendRowTable = (name, turnover_limit, padding, font_weight) => {
-        client_limits.append('<tr class="flex-tr">' +
-            '<td class="flex-tr-child" style="padding-left: ' + padding + '; font-weight: ' + font_weight + ';">' +
-            localize(name) +
-            '</td>' +
-            '<td>' +
-            turnover_limit +
-            '</td>' +
-            '</tr>');
+        client_limits.append($('<tr/>', { class: 'flex-tr' })
+            .append($('<td/>', { class: 'flex-tr-child', style: `padding-left: ${padding}; font-weight: ${font_weight};`, text: localize(name) }))
+            .append($('<td/>', { text: turnover_limit })));
     };
 
     const fillLimitsTable = (limits) => {
         const currency = Client.get('currency');
 
         if (currency) {
-            $('.limit').append(' (' + currency + ')');
+            $('.limit').append(` (${currency})`);
         }
 
         const open_position   = document.getElementById('open-positions');
@@ -52,10 +47,10 @@ const LimitsUI = (() => {
                 appendRowTable(object.name, object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
             }
         });
-        const login_id =  Client.get('login_id');
+        const login_id =  Client.get('loginid');
         if (login_id) {
-            $('#trading-limits').prepend(login_id + ' - ');
-            $('#withdrawal-title').prepend(login_id + ' - ');
+            $('#trading-limits').prepend(`${login_id} - `);
+            $('#withdrawal-title').prepend(`${login_id} - `);
         }
         $('#withdrawal-limits, #limits-title').removeClass('invisible');
     };

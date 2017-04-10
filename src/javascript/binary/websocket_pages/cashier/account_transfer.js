@@ -40,7 +40,7 @@ const AccountTransfer = (() => {
         });
 
         // show client's login id on top
-        const $client_option = $transfer.find('option[data-from="' + Client.get('loginid') + '"]');
+        const $client_option = $transfer.find(`option[data-from="${Client.get('loginid')}"]`);
         if ($client_option.length !== 0) {
             $client_option.insertBefore($transfer.find('option:eq(0)')).attr('selected', 'selected');
         }
@@ -94,8 +94,8 @@ const AccountTransfer = (() => {
         $(form_id).addClass(hidden_class);
         accounts = response.accounts;
         accounts.forEach((account, idx) => {
-            $('#loginid_' + (idx + 1)).text(account.loginid);
-            $('#balance_' + (idx + 1)).text(account.currency + ' ' + account.balance);
+            $(`#loginid_${(idx + 1)}`).text(account.loginid);
+            $(`#balance_${(idx + 1)}`).text(`${account.currency} ${account.balance}`);
         });
         $('#success_form').removeClass(hidden_class);
     };
