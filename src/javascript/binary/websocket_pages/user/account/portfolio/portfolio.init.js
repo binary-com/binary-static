@@ -3,7 +3,6 @@ const ViewPopup           = require('../../view_popup/view_popup');
 const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const localize            = require('../../../../base/localize').localize;
-const State               = require('../../../../base/storage').State;
 const urlParam            = require('../../../../base/url').param;
 const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
@@ -33,10 +32,11 @@ const PortfolioInit = (() => {
         $portfolio_loading.show();
         showLoadingImage($portfolio_loading);
         is_first_response = true;
-        BinarySocket.send({ portfolio: 1 });
+        BinarySocket.send({ portfolio: 1 }, { callback: (response) => { updatePortfolio(response); } });
         // Subscribe to transactions to auto update new purchases
-        BinarySocket.send({ transaction: 1, subscribe: 1 });
-        BinarySocket.send({ oauth_apps: 1 });
+        BinarySocket.send({ transaction: 1, subscribe: 1 },
+            { callback: (response) => { transactionResponseHandler(response); } });
+        BinarySocket.send({ oauth_apps: 1 }, { callback: (response) => { updateOAuthApps(response); } });
         is_initialized = true;
 
         // Display ViewPopup according to contract_id in query string
@@ -111,7 +111,8 @@ const PortfolioInit = (() => {
             updateFooter();
 
             // request "proposal_open_contract"
-            BinarySocket.send({ proposal_open_contract: 1, subscribe: 1 });
+            BinarySocket.send({ proposal_open_contract: 1, subscribe: 1 },
+                { callback: (response) => { updateIndicative(response); } });
         }
         // ready to show portfolio table
         $('#portfolio-loading').hide();
@@ -123,7 +124,7 @@ const PortfolioInit = (() => {
         if (response.hasOwnProperty('error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
-            BinarySocket.send({ portfolio: 1 });
+            BinarySocket.send({ portfolio: 1 }, { callback: (res) => { updatePortfolio(res); } });
         } else if (response.transaction.action === 'sell') {
             removeContract(response.transaction.contract_id);
         }
@@ -204,32 +205,7 @@ const PortfolioInit = (() => {
     };
 
     const onLoad = () => {
-        if (!State.get('is_beta_trading') && !State.get('is_mb_trading')) {
-            BinarySocket.init({
-                onmessage: (msg) => {
-                    const response = JSON.parse(msg.data);
-                    const msg_type = response.msg_type;
-
-                    switch (msg_type) {
-                        case 'portfolio':
-                            PortfolioInit.updatePortfolio(response);
-                            break;
-                        case 'transaction':
-                            PortfolioInit.transactionResponseHandler(response);
-                            break;
-                        case 'proposal_open_contract':
-                            PortfolioInit.updateIndicative(response);
-                            break;
-                        case 'oauth_apps':
-                            PortfolioInit.updateOAuthApps(response);
-                            break;
-                        default:
-                            // msg_type is not what PortfolioInit handles, so ignore it.
-                    }
-                },
-            });
-        }
-        PortfolioInit.init();
+        init();
         ViewPopup.viewButtonOnClick('#portfolio-table');
     };
 
@@ -242,7 +218,6 @@ const PortfolioInit = (() => {
     };
 
     return {
-        init                      : init,
         updateBalance             : updateBalance,
         updatePortfolio           : updatePortfolio,
         updateIndicative          : updateIndicative,
