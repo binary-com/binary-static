@@ -37,7 +37,9 @@ const PortfolioInit = (() => {
         });
         // Subscribe to transactions to auto update new purchases
         BinarySocket.send({ transaction: 1, subscribe: 1 }, { callback: transactionResponseHandler });
-        BinarySocket.send({ oauth_apps: 1 }, { callback: updateOAuthApps });
+        BinarySocket.send({ oauth_apps: 1 }).then((response) => {
+            updateOAuthApps(response);
+        });
         is_initialized = true;
 
         // Display ViewPopup according to contract_id in query string
@@ -124,7 +126,9 @@ const PortfolioInit = (() => {
         if (response.hasOwnProperty('error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
-            BinarySocket.send({ portfolio: 1 }, { callback: updatePortfolio });
+            BinarySocket.send({ portfolio: 1 }).then((res) => {
+                updatePortfolio(res);
+            });
         } else if (response.transaction.action === 'sell') {
             removeContract(response.transaction.contract_id);
         }
