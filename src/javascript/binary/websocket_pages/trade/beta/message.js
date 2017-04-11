@@ -5,7 +5,6 @@ const Notifications  = require('../notifications');
 const Tick           = require('../tick');
 const AssetIndexUI   = require('../../resources/asset_index/asset_index.ui');
 const TradingTimesUI = require('../../resources/trading_times/trading_times.ui');
-const PortfolioInit  = require('../../user/account/portfolio/portfolio.init');
 const GTM            = require('../../../base/gtm');
 const State          = require('../../../base/storage').State;
 
@@ -52,14 +51,6 @@ const Message_Beta = (() => {
                 TradingTimesUI.setTradingTimes(response);
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);
-            } else if (type === 'portfolio') {
-                PortfolioInit.updatePortfolio(response);
-            } else if (type === 'proposal_open_contract') {
-                PortfolioInit.updateIndicative(response);
-            } else if (type === 'transaction') {
-                PortfolioInit.transactionResponseHandler(response);
-            } else if (type === 'oauth_apps') {
-                PortfolioInit.updateOAuthApps(response);
             }
         } else {
             console.log('some error occured');

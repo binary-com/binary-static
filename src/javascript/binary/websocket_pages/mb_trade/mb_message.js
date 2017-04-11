@@ -4,7 +4,6 @@ const MBProcess       = require('./mb_process');
 const MBPurchase      = require('./mb_purchase');
 const MBTick          = require('./mb_tick');
 const Process         = require('../trade/process');
-const PortfolioInit   = require('../user/account/portfolio/portfolio.init');
 const GTM             = require('../../base/gtm');
 const State           = require('../../base/storage').State;
 
@@ -40,12 +39,6 @@ const MBMessage = (() => {
                 MBTick.processHistory(response);
             } else if (type === 'trading_times') {
                 Process.processTradingTimes(response);
-            } else if (type === 'portfolio') {
-                PortfolioInit.updatePortfolio(response);
-            } else if (type === 'proposal_open_contract') {
-                PortfolioInit.updateIndicative(response);
-            } else if (type === 'transaction') {
-                PortfolioInit.transactionResponseHandler(response);
             }
         }
     };
