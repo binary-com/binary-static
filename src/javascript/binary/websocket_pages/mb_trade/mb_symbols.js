@@ -57,7 +57,7 @@ const MBSymbols = (() => {
             } else if (website_status.website_status.clients_country === 'jp' || getLanguage() === 'JA') {
                 req.landing_company = 'japan';
             }
-            BinarySocket.send(req, false, 'active_symbols');
+            BinarySocket.send(req, { forced: false, msg_type: 'active_symbols' });
             need_page_update = update;
         });
     };
