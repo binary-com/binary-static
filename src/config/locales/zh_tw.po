@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-04-03 02:37+0000\n"
+"PO-Revision-Date: 2017-04-08 04:07+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
@@ -1255,6 +1255,9 @@ msgstr "澳大利亞"
 msgid "Australia 200 Cash Index"
 msgstr "澳大利亞 200 現金指數"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr "請提交身份與地址證明，立刻進行帳戶驗證。繼續操作，請發送以下文件到%1:"
+
 msgid "Authentication"
 msgstr "驗證"
 
@@ -1771,7 +1774,9 @@ msgstr "選擇您自己的履約價格。"
 msgid "Christmas Day"
 msgstr "聖誕節"
 
-msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+#, fuzzy
+#| msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "阿富汗、比利時、波士尼亞和黑塞哥維那、蓋亞納、伊拉克、老撾人民民主共和國、敘利亞、烏干達、瓦努阿圖或葉門等國國民將受禁止于Binary 投資（歐洲）Ltd開立帳戶。"
 
 msgid "Classification of assets requiring hedge"
@@ -2344,6 +2349,11 @@ msgstr "以我們的 API 發展您自己的交易應用。"
 msgid "Differences with other data feeds"
 msgstr "與其他資料源的差異"
 
+#, fuzzy
+#| msgid "Digits"
+msgid "Digit"
+msgstr "數字期權"
+
 msgid "Digit contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "數位合約如果沒在 5 分鐘內結束，將退還購入價格。"
 
@@ -2446,10 +2456,8 @@ msgstr "在我們的申請過程中，我們可能會向您索取關於您的背
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "本協議有效期內，您將您所擁有的所有知識產權免版稅、非獨占、世界範圍、不可撤銷的權利授予我們："
 
-#, fuzzy
-#| msgid "<strong>Duties and Responsibilities:</strong>"
 msgid "Duties and Responsibilities:"
-msgstr "<strong>職責:</strong>"
+msgstr "職責:"
 
 msgid "E-cash"
 msgstr "電子現金"
@@ -5493,6 +5501,11 @@ msgstr "收益金額"
 msgid "Pension"
 msgstr "退休金"
 
+#, fuzzy
+#| msgid "Retracement Percentages"
+msgid "Percentage"
+msgstr "回撤百分比"
+
 msgid "Period"
 msgstr "週期"
 
@@ -5670,9 +5683,6 @@ msgstr "請選擇至少一個範圍"
 msgid "Please select the checkbox."
 msgstr "請選擇核取方塊。"
 
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "為證明您的身份及驗證您的帳號，請將以下文件傳送到%1 :"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "請指定您的優選實況調查間隔時間分鐘數"
 
@@ -5739,10 +5749,8 @@ msgstr "預測價格走向<br />並購入"
 msgid "Preferences"
 msgstr "偏好"
 
-#, fuzzy
-#| msgid "Preferences"
 msgid "Preferences:"
-msgstr "偏好"
+msgstr "偏好:"
 
 msgid "Premier binary options trading platform"
 msgstr "首選二元期權交易平台"
@@ -5858,8 +5866,8 @@ msgstr "利潤/虧損(點)"
 msgid "Prohibited Trades"
 msgstr "違禁交易"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
-msgstr "地址證明 - 水電煤帳單或銀行月結單掃描件（日期不得超過3個月）。"
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
+msgstr "地址證明 - 水電煤帳單或銀行月結單掃描件（日期不得超過3個月）。地址證明必須包括您的姓名、地址、簽發日期和發證機構名稱。"
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
 msgstr "身份證明 - 顯示您名字和出生日期的護照、駕照（臨時或永久）或身份證的掃描件。"
@@ -7550,10 +7558,8 @@ msgstr "時代在變。我們增加了賠付金額，以便我們的客戶從盈
 msgid "Title"
 msgstr "職稱"
 
-#, fuzzy
-#| msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgid "To apply, please submit your CV and a cover letter to %1."
-msgstr "如有意申請，請將您的履歷和求職信傳到<span id='hr_contact_eaddress'></span>。"
+msgstr "如有意申請，請將您的履歷和求職信傳到%1。"
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
 msgstr "要申請這個重要的領導職位，您須顯示出開源技術的熱忱，以及在充滿活力和挑戰性的工作環境中測試才華的慾望。"
@@ -8611,7 +8617,9 @@ msgstr "您未獲許可儲存任何內容(例如摘要資料)。"
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "您無權在任何情況下獲取公司任何補償或支付。"
 
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+#, fuzzy
+#| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "您不是阿富汗、波斯尼亞和黑塞哥維那、哥斯大黎加、任何歐盟國家、圭亞那、老撾人民民主共和國、敘利亞、烏干達、瓦努阿圖、也門、美國、日本、香港、哥斯大黎加、馬來西亞、馬爾他、伊朗、朝鮮、澤西島、伊拉克、或其它由公司隨時自行決定為受限制國家的居民；"
 
 msgid "You are over 18 years of age;"
@@ -8852,7 +8860,7 @@ msgid "You will provide us with any information that we may reasonably require t
 msgstr "為了充分滿足有關政府機關需求，我們可能向您提出任何合理資料請求，您將為我們提供相關資料。"
 
 msgid "You will take all reasonable steps to comply with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident;"
-msgstr "您將採取一切合理步驟，遵守您居住的管轄區適用的法律、條例、憲章、法令或規則:"
+msgstr "您將採取一切合理步驟，遵守您居住的管轄區適用的法律、條例、憲章、法令或規則。"
 
 msgid "You will use the margin trading services described in this Agreement in good faith and you will not use any software, algorithm, or any trading strategy to manipulate or take unfair advantage of the way our bid and offer prices are quoted. You shall observe the standard of behaviour reasonably expected of persons in your position and not take any step which would cause us to fail to observe the standard of behaviour reasonably expected of persons in our position."
 msgstr "您將誠信使用本協定所述的保證金交易服務，您不會對我們的出價和要價方式使用任何軟體、算法或任何交易策略操作或採取不公平的優勢。你應遵守您立場的標準和合理行為，不採取任何使我們無法遵守我們立場的標準和合理行為的措施。"
@@ -9247,7 +9255,9 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+#, fuzzy
+#| msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgstr "您不是阿富汗、波士尼亞和黑塞哥維那、哥斯大黎加、蓋亞納、香港、伊朗、伊拉克、澤西島、老撾人民民主共和國、馬來西亞、馬爾他、朝鮮、敘利亞、烏干達、美國、瓦努阿圖或葉門等受限制國家及地區的居民；"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
@@ -10911,6 +10921,9 @@ msgstr "條款和條件審批"
 
 msgid "Account Limits"
 msgstr "帳戶限額"
+
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "為證明您的身份及驗證您的帳號，請將以下文件傳送到%1 :"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>偏好設定:</strong>"
@@ -13443,9 +13456,6 @@ msgstr "帳戶限額"
 
 #~ msgid "Response too large."
 #~ msgstr "反應太大。"
-
-#~ msgid "Retracement Percentages"
-#~ msgstr "回撤百分比"
 
 #~ msgid "Retry"
 #~ msgstr "重試"

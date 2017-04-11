@@ -9,12 +9,11 @@ const Cookies = require('./lib/js-cookie');
  *
  */
 
-function getAppId() {
-    return localStorage.getItem('config.app_id') ? localStorage.getItem('config.app_id') :
-               /staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1';
-}
+const getAppId = () => (
+    localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1')
+);
 
-function getSocketURL() {
+const getSocketURL = () => {
     let server_url = localStorage.getItem('config.server_url');
     if (!server_url) {
         const loginid = Cookies.get('loginid'),
@@ -26,22 +25,22 @@ function getSocketURL() {
 
         // override defaults by cookie values
         if (percentValues && percentValues.indexOf(',') > 0) {
-            const cookiePercents = percentValues.split(',');
-            categoryMap.map(function(cat, idx) {
-                if (cookiePercents[idx] && !isNaN(cookiePercents[idx])) {
-                    toGreenPercent[cat] = +cookiePercents[idx].trim();
+            const cookie_percents = percentValues.split(',');
+            categoryMap.map((cat, idx) => {
+                if (cookie_percents[idx] && !isNaN(cookie_percents[idx])) {
+                    toGreenPercent[cat] = +cookie_percents[idx].trim();
                 }
             });
         }
 
-        server_url = (/staging\.binary\.com/i.test(window.location.hostname) ? 'blue' :
+        server_url = `${(/staging\.binary\.com/i.test(window.location.hostname) ? 'blue' :
                 (isReal  ? (randomPercent < toGreenPercent.real       ? 'green' : 'blue') :
                  loginid ? (randomPercent < toGreenPercent.virtual    ? 'green' : 'blue') :
                            (randomPercent < toGreenPercent.logged_out ? 'green' : 'blue'))
-            ) + '.binaryws.com';
+            )}.binaryws.com`;
     }
-    return 'wss://' + server_url + '/websockets/v3';
-}
+    return `wss://${server_url}/websockets/v3`;
+};
 
 module.exports = {
     getAppId    : getAppId,

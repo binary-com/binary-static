@@ -153,14 +153,12 @@ sub _texts {
         push @texts, localize('Stop-profit');
         push @texts, localize('View');
         push @texts, localize('Statement');
-        push @texts, localize('points');
         push @texts, localize('Tick');
         push @texts, localize('Buy price');
         push @texts, localize('Final price');
         push @texts, localize('Long');
         push @texts, localize('Short');
-        push @texts, localize('Deposit of');
-        push @texts, localize('is required. Current spread');
+        push @texts, localize('Deposit of [_1] is required. Current spread: [_2] points');
         push @texts, localize('Chart');
         push @texts, localize('Explanation');
         push @texts, localize('Last Digit Stats');
@@ -346,7 +344,8 @@ sub _texts {
         #strings for digit_info
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
-        push @texts, localize('Last digit stats for the latest [_1] ticks on [_2]');
+        push @texts, localize('Percentage');
+        push @texts, localize('Digit');
         #strings for paymentagent
         push @texts, localize('Amount');
         push @texts, localize('Deposit');

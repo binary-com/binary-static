@@ -17,7 +17,7 @@ const AssetIndexUI = (() => {
         market_columns,
         is_framed;
 
-    const onLoad = function(config) {
+    const onLoad = (config) => {
         if (jpClient()) {
             if (!State.get('is_beta_trading')) {
                 BinaryPjax.load('resources');
@@ -69,17 +69,17 @@ const AssetIndexUI = (() => {
     };
 
     const getSubmarketTable = (asset_item, symbol_info) => {
-        const market_id    = 'market-'    + symbol_info.market;
-        const submarket_id = 'submarket-' + symbol_info.submarket;
+        const market_id    = `market-${symbol_info.market}`;
+        const submarket_id = `submarket-${symbol_info.submarket}`;
 
-        let $table = $contents.find('#' + submarket_id);
+        let $table = $contents.find(`#${submarket_id}`);
         if ($table.length === 0) {
             // Create the table for this submarket
-            let $market = $contents.find('#' + market_id);
+            let $market = $contents.find(`#${market_id}`);
             if ($market.length === 0) {
                 // Create the market and tab elements
                 $market = $('<div/>', { id: market_id });
-                $tabs.append($('<li/>').append($('<a/>', { href: '#' + market_id, text: symbol_info.market_display_name, id: 'outline' })));
+                $tabs.append($('<li/>').append($('<a/>', { href: `#${market_id}`, text: symbol_info.market_display_name, id: 'outline' })));
             }
             $table = createEmptyTable(asset_item, symbol_info, submarket_id);
             $market.append($table);
@@ -90,11 +90,11 @@ const AssetIndexUI = (() => {
     };
 
     const createSubmarketTableRow = (asset_item, symbol_info) => {
-        const cells   = [symbol_info.display_name],
-            columns = ['asset'];
+        const cells   = [symbol_info.display_name];
+        const columns = ['asset'];
 
-        const market_cols = market_columns[symbol_info.market],
-            asset_cells = asset_item[4];
+        const market_cols = market_columns[symbol_info.market];
+        const asset_cells = asset_item[4];
         for (let i = 1; i < market_cols.columns.length; i++) {
             const prop = market_cols.columns[i];
             if (prop.length > 0) {

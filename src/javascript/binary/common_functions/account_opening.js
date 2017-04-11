@@ -64,7 +64,7 @@ const AccountOpening = (() => {
                 if (residence_value === res.value) {
                     residence_text = res.text;
                     if (residence_value !== 'jp' && res.phone_idd && !$phone.val()) {
-                        $phone.val('+' + res.phone_idd);
+                        $phone.val(`+${res.phone_idd}`);
                     }
                 }
             });
@@ -160,7 +160,7 @@ const AccountOpening = (() => {
         const validations = [];
         let validation,
             id;
-        $(form_id).find('select, input[type=checkbox]').each(function () {
+        $(form_id).find('select, input[type=checkbox]').each(function() {
             id = $(this).attr('id');
             if (id !== 'tnc') {
                 validation = { selector: `#${id}`, validations: ['req'] };

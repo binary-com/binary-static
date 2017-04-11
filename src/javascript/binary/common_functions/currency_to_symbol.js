@@ -10,20 +10,20 @@ const formatMoney = (currency_value, amount) => {
         const language = typeof window !== 'undefined' ? getLanguage().toLowerCase() : 'en';
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
     } else {
-        let updatedAmount,
+        let updated_amount,
             sign = '';
         if (jpClient()) {
-            updatedAmount = parseInt(amount);
-            if (Number(updatedAmount) < 0) {
+            updated_amount = parseInt(amount);
+            if (Number(updated_amount) < 0) {
                 sign = '-';
             }
         } else {
-            updatedAmount = parseFloat(amount).toFixed(2);
+            updated_amount = parseFloat(amount).toFixed(2);
         }
-        updatedAmount = addComma(updatedAmount);
-        const symbol = mapCurrency[currency_value];
+        updated_amount = addComma(updated_amount);
+        const symbol = map_currency[currency_value];
 
-        money = symbol ? sign + symbol + updatedAmount : currency_value + ' ' + updatedAmount;
+        money = symbol ? sign + symbol + updated_amount : `${currency_value} ${updated_amount}`;
     }
     return money;
 };
@@ -31,7 +31,7 @@ const formatMoney = (currency_value, amount) => {
 // Taken with modifications from:
 //    https://github.com/bengourley/currency-symbol-map/blob/master/map.js
 // When we need to handle more currencies please look there.
-const mapCurrency = {
+const map_currency = {
     USD: '$',
     GBP: '£',
     AUD: 'A$',
@@ -41,5 +41,5 @@ const mapCurrency = {
 
 module.exports = {
     formatMoney   : formatMoney,
-    formatCurrency: currency => mapCurrency[currency],
+    formatCurrency: currency => map_currency[currency],
 };

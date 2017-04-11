@@ -3,10 +3,9 @@ msgstr ""
 "Project-Id-Version: French (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-04-03 07:30+0000\n"
-"Last-Translator: Arnaud Malfoy <arnaud.malfoy@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>"
-"\n"
+"PO-Revision-Date: 2017-04-10 02:27+0000\n"
+"Last-Translator: Mohammad Reza Hamedanchi <mohammad@binary.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1257,6 +1256,9 @@ msgstr "Australie"
 msgid "Australia 200 Cash Index"
 msgstr "Australia 200 Cash Index"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr "Authentifiez votre compte en vérifiant votre identité et votre adresse. Pour cela, envoyoyez simplement les documents suivants à %1 :"
+
 msgid "Authentication"
 msgstr "Authentification"
 
@@ -1773,7 +1775,9 @@ msgstr "Définissez votre propre objectif."
 msgid "Christmas Day"
 msgstr "Jour de Noël"
 
-msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+#, fuzzy
+#| msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Les citoyens des pays suivants ne sont pas autorisés à ouvrir un compte auprès de Binary Investments (Europe) Ltd : Afghanistan, Belgique, Bosnie-Herzégovine, Guyane, Laos, Syrie, Ouganda, Vanuatu et Yémen."
 
 msgid "Classification of assets requiring hedge"
@@ -2345,6 +2349,11 @@ msgstr "Développez votre propre application de trading avec nos API."
 
 msgid "Differences with other data feeds"
 msgstr "Différences par rapport aux autres sources de données"
+
+#, fuzzy
+#| msgid "Digits"
+msgid "Digit"
+msgstr "Chiffres"
 
 msgid "Digit contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Les contrats « asiatiques » seront remboursés à leur prix d'achat si le contrat n'arrive pas à échéance dans un délai de 5 minutes."
@@ -5493,6 +5502,11 @@ msgstr "Montant du paiement"
 msgid "Pension"
 msgstr "Pension"
 
+#, fuzzy
+#| msgid "Retracement Percentages"
+msgid "Percentage"
+msgstr "Pourcentages de retracement"
+
 msgid "Period"
 msgstr "Période"
 
@@ -5551,13 +5565,13 @@ msgid "Please %1 to view this page"
 msgstr "Veuillez %1 pour afficher cette page"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
-msgstr "S'il vous plait %acceptez les termes et conditions mises à jour%2pour supprimer vos limites de retrait et de trading."
+msgstr "S'il vous plait %1acceptez les termes et conditions mises à jour%2 pour supprimer vos limites de retrait et de trading."
 
 msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
-msgstr "S'il vous plait %authentifiez votre compte %2 pour supprimer vos limites de retrait et de trading."
+msgstr "S'il vous plait %1authentifiez votre compte%2 pour supprimer vos limites de retrait et de trading."
 
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
-msgstr "S'il vous plait %complétez le profile de votre compte %2 pour supprimer vos limites de retrait et de trading."
+msgstr "S'il vous plait %1complétez le profile de votre compte%2 pour supprimer vos limites de retrait et de trading."
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Veuillez <a href=\"%1\">accepter la dernière version des conditions générales</a>."
@@ -5669,9 +5683,6 @@ msgstr "Veuillez sélectionner au moins un champ d'application"
 
 msgid "Please select the checkbox."
 msgstr "Veuillez cocher la case."
-
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Veuillez envoyer les documents suivants à %1 pour vérifier votre identité et authentifier votre compte :"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Veuillez indiquer la périodicité souhaitée en minutes pour les avertissements de connexion"
@@ -5856,7 +5867,9 @@ msgstr "Profits/pertes (points)"
 msgid "Prohibited Trades"
 msgstr "Transactions prohibées"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Justificatif de domicile : une copie scannée d'une facture ou d'un relevé bancaire (documents datés de moins de 3 mois)."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -6598,10 +6611,7 @@ msgid "Stop Out Level"
 msgstr "Niveau Stop Out"
 
 msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
-msgstr ""
-"Niveau de stop out &mdash; Le niveau de Marge égal ou en dessous duquel vos "
-"Positions Ouvertes puissent être fermées de force avec ou sans votre "
-"consentement préalable."
+msgstr "Niveau de stop out &mdash; Le niveau de Marge égal ou en dessous duquel vos Positions Ouvertes puissent être fermées de force avec ou sans votre consentement préalable."
 
 msgid "Stop Profit Level"
 msgstr "Niveau stop-profit"
@@ -7779,10 +7789,8 @@ msgstr "Essayez Binary Bot"
 msgid "Try MetaTrader 5"
 msgstr "Essayez MetaTrader 5"
 
-#, fuzzy
-#| msgid "Binary Next-Gen"
 msgid "Try Next-Gen"
-msgstr "Binary Next-Gen"
+msgstr "Essayez Next-Gen"
 
 msgid "Try TradingView"
 msgstr "Essayez TradingView"
@@ -8612,7 +8620,9 @@ msgstr "Vous n'avez pas l'autorisation de stocker des Contenus quels qu'ils soie
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Vous ne pouvez prétendre à aucune forme de compensation ou de remboursement de la part de la Société, quelles que soient les circonstances."
 
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+#, fuzzy
+#| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Vous n'êtes pas résident d'un pays restrictif comme l’Afghanistan; Bosnie-Herzégovine; Costa Rica; tout pays de l'Union Européenne; Guyana; Laos; Syrie; Ouganda; Vanuatu; Yémen; USA; Japon; Hong Kong; Costa Rica; Malaisie; Malte; Iran; Corée du Nord; Jersey; Irak; ou tout autre pays restreint comme l'Entreprise peut le décider de temps en temps à sa seule discrétion;"
 
 msgid "You are over 18 years of age;"
@@ -9119,10 +9129,8 @@ msgstr "lettres"
 msgid "login"
 msgstr "connexion"
 
-#, fuzzy
-#| msgid "Logout"
 msgid "logout"
-msgstr "Déconnexion"
+msgstr "déconnexion"
 
 msgid "max: 100,000"
 msgstr "max : 100 000"
@@ -9250,7 +9258,9 @@ msgstr "année"
 msgid "years"
 msgstr "années"
 
-msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+#, fuzzy
+#| msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgstr "vous ne résidez pas dans un pays soumis à des restrictions comme l'Afghanistan, la Bosnie-Herzégovine, le Costa Rica, la Guyane, Hong Kong, l'Iran, l'Iraq, Jersey, le Laos, la Malaisie, la Corée du Nord, la Syrie, l'Ouganda, les États-Unis, le Vanuatu ou le Yémen ;"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
@@ -10332,505 +10342,305 @@ msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 h
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_1"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_1"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_10"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_10"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_100"
-msgstr "{JAPAN ONLY},000"
+msgstr "{seulement pour le JAPON}TIP_100"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_11"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_11"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_12"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_12"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_13"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_13"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_14"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_14"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_15"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_15"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_16"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_16"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_17"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_17"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_18"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_18"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_19"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_19"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_2"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_2"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_20"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_20"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_21"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_21"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_22"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_22"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_23"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_23"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_24"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_24"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_25"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_25"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_26"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_26"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_27"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_27"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_28"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_28"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_29"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_29"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_3"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_3"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_30"
-msgstr "{JAPAN ONLY},000"
+msgstr "{seulement pour le JAPON}TIP_30"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_31"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_31"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_32"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_32"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_33"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_33"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_34"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_34"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_35"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_35"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_36"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_36"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_37"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_37"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_38"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_38"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_39"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_39"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_4"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_4"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_40"
-msgstr "{JAPAN ONLY},000"
+msgstr "{seulement pour le JAPON}TIP_40"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_41"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_41"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_42"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_42"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_43"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_43"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_44"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_44"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_45"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_45"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_46"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{seulement pour le JAPON}TIP_46"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_47"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{seulement pour le JAPON}TIP_47"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_48"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_48"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_49"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_49"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_5"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_5"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_50"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_50"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_51"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_51"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_52"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_52"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_53"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_53"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_54"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_54"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_55"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_55"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_56"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_56"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_57"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_57"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_58"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_58"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_59"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_59"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_6"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_6"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_60"
-msgstr "{JAPAN ONLY},000"
+msgstr "{seulement pour le JAPON}TIP_60"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_61"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_61"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_62"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_62"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_63"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_63"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_64"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_64"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_65"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_65"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_66"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{seulement pour le JAPON}TIP_66"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_67"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{seulement pour le JAPON}TIP_67"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_68"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_68"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_69"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_69"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_7"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_7"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_70"
-msgstr "{JAPAN ONLY},000"
+msgstr "{seulement pour le JAPON},TIP_70"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_71"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_71"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_72"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_72"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_73"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_73"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_74"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{seulement pour le JAPON}TIP_74"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_75"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_75"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_76"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{seulement pour le JAPON}TIP_76"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}7546677"
 msgid "{JAPAN ONLY}TIP_77"
-msgstr "{JAPAN ONLY}7546677"
+msgstr "{seulement pour le JAPON}TIP_77"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_78"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_78"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_79"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_79"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_8"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_8"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_80"
-msgstr "{JAPAN ONLY},000"
+msgstr "{seulement pour le JAPON}TIP_80"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_81"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_81"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_82"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_82"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_83"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_83"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_84"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_84"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_85"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_85"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_86"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_86"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_87"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_87"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_88"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_88"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_89"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_89"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_9"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_9"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY},000"
 msgid "{JAPAN ONLY}TIP_90"
-msgstr "{JAPAN ONLY},000"
+msgstr "{seulement pour le JAPON}TIP_90"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_91"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_91"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_92"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_92"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_93"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_93"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_94"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_94"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}251"
 msgid "{JAPAN ONLY}TIP_95"
-msgstr "{JAPAN ONLY}251"
+msgstr "{seulement pour le JAPON}TIP_95"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_96"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_96"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_97"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_97"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_98"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_98"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}¥"
 msgid "{JAPAN ONLY}TIP_99"
-msgstr "{JAPAN ONLY}¥"
+msgstr "{seulement pour le JAPON}TIP_99"
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
@@ -11116,6 +10926,9 @@ msgstr "Acceptation des conditions générales"
 
 msgid "Account Limits"
 msgstr "Limites du Compte"
+
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Veuillez envoyer les documents suivants à %1 pour vérifier votre identité et authentifier votre compte :"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Préférences :</strong>"
@@ -13395,9 +13208,6 @@ msgstr "Limites du Compte"
 
 #~ msgid "Response too large."
 #~ msgstr "Réponse trop volumineuse."
-
-#~ msgid "Retracement Percentages"
-#~ msgstr "Pourcentages de retracement"
 
 #~ msgid "Retry"
 #~ msgstr "Réessayer"

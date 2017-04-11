@@ -52,11 +52,11 @@ const LimitsInit = (() => {
     const limitsError = (error) => {
         document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
         document.getElementById('limits-title').setAttribute('style', 'display:none');
-        const errorElement = document.getElementsByClassName('notice-msg')[0];
+        const error_element = document.getElementsByClassName('notice-msg')[0];
         if (error && error.message) {
-            elementInnerHtml(errorElement, error.message);
+            elementInnerHtml(error_element, error.message);
         } else {
-            elementInnerHtml(errorElement, localize('An error occured') + '.');
+            elementInnerHtml(error_element, `${localize('An error occured')}.`);
         }
         document.getElementById('client_message').setAttribute('style', 'display:block');
     };

@@ -8,10 +8,10 @@ const FormManager        = require('../../../common_functions/form_manager');
 const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
 const moment             = require('moment');
 
-const FinancialAccOpening = (function() {
-    const formID = '#financial-form';
+const FinancialAccOpening = (() => {
+    const form_id = '#financial-form';
 
-    const onLoad = function() {
+    const onLoad = () => {
         State.set('is_financial_opening', 1);
         if (Client.get('has_financial') || !Client.get('residence')) {
             BinaryPjax.load('trading');
@@ -34,14 +34,14 @@ const FinancialAccOpening = (function() {
         });
 
         if (AccountOpening.redirectAccount()) return;
-        AccountOpening.populateForm(formID, getValidations);
+        AccountOpening.populateForm(form_id, getValidations);
 
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
             if (!isEmptyObject(response.get_financial_assessment)) {
                 const keys = Object.keys(response.get_financial_assessment);
-                keys.forEach(function(key) {
+                keys.forEach((key) => {
                     const val = response.get_financial_assessment[key];
-                    $('#' + key).val(val);
+                    $(`#${key}`).val(val);
                 });
             }
         });
@@ -64,14 +64,14 @@ const FinancialAccOpening = (function() {
         });
 
         FormManager.handleSubmit({
-            form_selector       : formID,
+            form_selector       : form_id,
             obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
             fnc_response_handler: handleResponse,
         });
     };
 
     const getValidations = () => (
-        AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(formID), [
+        AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id), [
             { selector: '#tax_identification_number', validations: ['req', 'postcode', ['length', { min: 1, max: 20 }]] },
         ])
     );
@@ -83,13 +83,13 @@ const FinancialAccOpening = (function() {
             $financial_risk.removeClass('hidden');
             $.scrollTo($financial_risk, 500, { offset: -10 });
 
-            const form_id = '#financial-risk';
-            FormManager.init(form_id, []);
+            const risk_form_id = '#financial-risk';
+            FormManager.init(risk_form_id, []);
 
             const echo_req = $.extend({}, response.echo_req);
             echo_req.accept_risk = 1;
             FormManager.handleSubmit({
-                form_selector       : form_id,
+                form_selector       : risk_form_id,
                 obj_request         : echo_req,
                 fnc_response_handler: handleResponse,
             });

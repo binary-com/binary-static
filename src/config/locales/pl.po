@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-29 20:37+0000\n"
+"PO-Revision-Date: 2017-04-04 12:53+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
@@ -992,7 +992,7 @@ msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Wszystkie godziny są podane według czasu GMT (Greenwich Mean Time)."
 
 msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
-msgstr ""
+msgstr "Wszystkie Twoje wpłacone środki i wypłaty są przetwarzane przez Binary.com w ciągu 24 godzin. Jednak w niektórych przypadkach Twój bank lub dostawca usług przelewów pieniężnych może wymagać dodatkowego czasu na przetworzenie."
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Klienci mogą wpłacać małe kwoty (w lokalnej walucie)"
@@ -1260,6 +1260,9 @@ msgstr "Australia"
 
 msgid "Australia 200 Cash Index"
 msgstr "Australijski indeks gotówkowy Australia 200"
+
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
 
 msgid "Authentication"
 msgstr "Weryfikacja"
@@ -1777,7 +1780,9 @@ msgstr "Wybierz swoją wypłatę."
 msgid "Christmas Day"
 msgstr "Boże Narodzenie"
 
-msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+#, fuzzy
+#| msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Mieszkańscy Afganistamu, Belgii, Bośni i Hercegowiny, Gujany, Iraku, Laosu, Syrii, Ugandy, Republiki Vanuatu oraz Jemenu nie mogą otwierać konta w Binary Investments (Europe) Ltd."
 
 msgid "Classification of assets requiring hedge"
@@ -2350,6 +2355,11 @@ msgstr "Stwórz swoją własną aplikację do handlowania przy użyciu naszych A
 msgid "Differences with other data feeds"
 msgstr "Różnice między innymi źródłami danych"
 
+#, fuzzy
+#| msgid "Digits"
+msgid "Digit"
+msgstr "Cyfry"
+
 msgid "Digit contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Kwota zakupu kontraktu opartego na cyfrach zostanie zwrócona, jeśli kontrakt nie zakończy się w przeciągu 5 minut."
 
@@ -2452,10 +2462,8 @@ msgstr "Podczas procesu aplikacyjnego możemy poprosić Cię o informacje dotycz
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "Na czas trwania niniejszej Umowy udzielasz nam, na podstawie wszelkich Twoich praw własności intelektualnej, nieodpłatnie niewyłącznego, globalnego, nieodwołalnego prawa do:"
 
-#, fuzzy
-#| msgid "<strong>Duties and Responsibilities:</strong>"
 msgid "Duties and Responsibilities:"
-msgstr "<strong>Obowiązki</strong>"
+msgstr "Obowiązki:"
 
 msgid "E-cash"
 msgstr "E-gotówka"
@@ -3178,7 +3186,7 @@ msgid "Goes Outside"
 msgstr "Przekroczy"
 
 msgid "Got questions? %1Contact us%2 for help."
-msgstr ""
+msgstr "Masz pytania? %1Skontaktuj się z nami%2, aby uzyskać pomoc."
 
 msgid "Governing Laws and Jurisdiction"
 msgstr "Prawo właściwe i jurysdykcja"
@@ -5499,6 +5507,11 @@ msgstr "Kwota wypłaty"
 msgid "Pension"
 msgstr "Emerytura"
 
+#, fuzzy
+#| msgid "Retracement Percentages"
+msgid "Percentage"
+msgstr "Procenty zniesienia"
+
 msgid "Period"
 msgstr "Okres"
 
@@ -5676,11 +5689,6 @@ msgstr "Proszę wybrać przynajmniej jeden zakres"
 msgid "Please select the checkbox."
 msgstr "Proszę zaznaczyć pole wyboru."
 
-#, fuzzy
-#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Aby zweryfikować swoją tożsamość i uwierzytelnić konto, proszę przesłać dokumenty wymienione poniżej:"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Proszę określić w minutach preferowany odstęp czasu pomiędzy kontrolami konta"
 
@@ -5747,10 +5755,8 @@ msgstr "Oszacuj kierunek zmian<br />i kup"
 msgid "Preferences"
 msgstr "Preferencje"
 
-#, fuzzy
-#| msgid "Preferences"
 msgid "Preferences:"
-msgstr "Preferencje"
+msgstr "Preferencje:"
 
 msgid "Premier binary options trading platform"
 msgstr "Wiodąca platforma handlu opcjami binarnymi"
@@ -5866,7 +5872,9 @@ msgstr "Zysk/Strata (punkty)"
 msgid "Prohibited Trades"
 msgstr "Zakłady zabronione"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Potwierdzenie adresu – skan rachunku za media lub wyciągu bankowego z ostatnich 3 miesięcy."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -7566,10 +7574,8 @@ msgstr "Czasy się zmieniają. Zwiększamy wypłaty, dzięki czemu nasi klienci 
 msgid "Title"
 msgstr "Tytuł"
 
-#, fuzzy
-#| msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgid "To apply, please submit your CV and a cover letter to %1."
-msgstr "Aby aplikować, prześlij swoje CV i list motywacyjny na <span id='hr_contact_eaddress'></span>."
+msgstr "Aby aplikować, prześlij swoje CV i list motywacyjny do %1."
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
 msgstr "Osoby ubiegające się o to ważne stanowisko zarządce muszą wykazać się pasją do technologii typu open source oraz chęcią sprawdzenia swoich talentów w dynamicznym i wymagającym środowisku pracy."
@@ -8629,7 +8635,9 @@ msgstr "Nie zezwala się na przechowywanie jakichkolwiek treści (np. danych ze 
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "W żadnym wypadku Użytkownik nie jest upoważniony do otrzymania od Firmy jakiegokolwiek wynagrodzenia ani zwrotu kosztów."
 
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+#, fuzzy
+#| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Nie jesteś mieszkańcem lub mieszkanką kraju z ograniczonym dostępem, czyli Afganistanu, Bośni i Hercegowiny, Kostaryki, jakiegokolwiek kraju Unii Europejskiej, Gujany, Laosu, Syrii, Ugandy, Republiki Vanuatu, Jemenu, Stanów Zjednoczonych, Japonii, Hongkongu, Malezji, Malty, Iranu, Korei Północnej, Jersey, Iraku ani jakiegokolwiek innego kraju, który Firma zakwalifikuje za kraj z ograniczonym dostępem według własnego uznania;"
 
 msgid "You are over 18 years of age;"
@@ -9265,7 +9273,9 @@ msgstr "rok"
 msgid "years"
 msgstr "lat(a)"
 
-msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+#, fuzzy
+#| msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgstr "nie jesteś mieszkańcem kraju z ograniczonym dostępem, czyli Afganistanu, Bośni i Hercegowiny, Kostaryki, Gujany, Hongkongu, Iranu, Iraku, Jersey, Laosu, Malezji, Malty, Korei Północnej, Syrii, Ugandy, Stanów Zjednoczonych, Republiki Vanuatu ani Jemenu;"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
@@ -10929,6 +10939,9 @@ msgstr "Akceptacja regulaminu"
 
 msgid "Account Limits"
 msgstr "Limity na koncie"
+
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Aby zweryfikować swoją tożsamość i uwierzytelnić konto, proszę przesłać do %1 dokumenty wymienione poniżej:"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Preferencje:</strong>"
@@ -13222,9 +13235,6 @@ msgstr "Limity na koncie"
 
 #~ msgid "Response too large."
 #~ msgstr "Odpowiedź jest za długa."
-
-#~ msgid "Retracement Percentages"
-#~ msgstr "Procenty zniesienia"
 
 #~ msgid "Retry"
 #~ msgstr "Spróbuj ponownie"

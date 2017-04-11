@@ -5,7 +5,7 @@ const localize = require('../../base/localize').localize;
  *
  */
 
-const MBNotifications = (function() {
+const MBNotifications = (() => {
     'use strict';
 
     /*
@@ -15,9 +15,9 @@ const MBNotifications = (function() {
      *     dismissible: {boolean} dismissible messages can be hidden by client
      * }
      */
-    const showErrorMessage = function(options) {
-        const $note_wrapper = getContainer(),
-            $this_uid     = $note_wrapper.find('#' + options.uid);
+    const showErrorMessage = (options) => {
+        const $note_wrapper = getContainer();
+        const $this_uid     = $note_wrapper.find(`#${options.uid}`);
 
         if (!options.uid || $this_uid.length === 0) {
             $note_wrapper.prepend(generateMessage(options));
@@ -29,34 +29,32 @@ const MBNotifications = (function() {
         hideSpinnerShowTrading();
     };
 
-    const generateMessage = function(options) {
-        const $message = $('<div class="notice-msg center-text' + (options.dismissible ? ' dismissible' : '') + '"' +
-            (options.uid ? ' id="' + options.uid + '"' : '') + '>' + localize(options.text) +
-                (options.dismissible ? '<div class="notification-dismiss">x</div>' : '') +
-            '</div>');
+    const generateMessage = (options) => {
+        const $message = $(`<div class="notice-msg center-text${(options.dismissible ? ' dismissible' : '')}"
+            ${(options.uid ? ` id="${options.uid}"` : '')}>${localize(options.text)}
+                ${(options.dismissible ? '<div class="notification-dismiss">x</div>' : '')}
+            </div>`);
 
         if (options.dismissible) {
-            $message.click(function () { dismissMessage(this); });
+            $message.click(function() { dismissMessage(this); });
         }
 
         return $message;
     };
 
-    const hideErrorMessage = function(uid) {
+    const hideErrorMessage = (uid) => {
         if (uid) {
-            getContainer().find('#' + uid).remove();
+            getContainer().find(`#${uid}`).remove();
         }
     };
 
-    const dismissMessage = function(obj) {
+    const dismissMessage = (obj) => {
         $(obj).remove();
     };
 
-    const getContainer = function() {
-        return $('#notifications_wrapper');
-    };
+    const getContainer = () => $('#notifications_wrapper');
 
-    const hideSpinnerShowTrading = function() {
+    const hideSpinnerShowTrading = () => {
         $('.barspinner').addClass('invisible');
         $('.mb-trading-wrapper').removeClass('invisible');
     };
@@ -69,6 +67,4 @@ const MBNotifications = (function() {
     };
 })();
 
-module.exports = {
-    MBNotifications: MBNotifications,
-};
+module.exports = MBNotifications;

@@ -39,7 +39,7 @@ const Url = (() => {
         return param_hash;
     };
 
-    const paramsHashToString = pars => Object.keys(pars).map(key => key + '=' + pars[key]).join('&');
+    const paramsHashToString = pars => Object.keys(pars).map(key => `${key}=${pars[key]}`).join('&');
 
     const urlFor = (path, pars) => {
         if (!path) {
@@ -52,7 +52,7 @@ const Url = (() => {
         if (typeof window !== 'undefined') {
             url  = window.location.href;
         }
-        return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + (path || ('home' + (lang === 'ja' ? '-jp' : ''))) + '.html' + (pars ? '?' + pars : '');
+        return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${(path || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
     };
 
     const urlForStatic = (path) => {
@@ -62,25 +62,25 @@ const Url = (() => {
             path = path.substr(1);
         }
 
-        let staticHost;
+        let static_host;
         if (typeof window !== 'undefined') {
-            staticHost = window.staticHost;
+            static_host = window.staticHost;
         }
-        if (!staticHost || staticHost.length === 0) {
-            staticHost = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src');
+        if (!static_host || static_host.length === 0) {
+            static_host = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src');
 
-            if (staticHost && staticHost.length > 0) {
-                staticHost = staticHost.substr(0, staticHost.indexOf('/js/') + 1);
+            if (static_host && static_host.length > 0) {
+                static_host = static_host.substr(0, static_host.indexOf('/js/') + 1);
             } else {
-                staticHost = 'https://www.binary.com/';
+                static_host = 'https://www.binary.com/';
             }
 
             if (typeof window !== 'undefined') {
-                window.staticHost = staticHost;
+                window.staticHost = static_host;
             }
         }
 
-        return staticHost + path;
+        return static_host + path;
     };
 
     const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');

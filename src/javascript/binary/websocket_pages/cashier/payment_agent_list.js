@@ -7,8 +7,8 @@ const PaymentAgentList = (() => {
     let $pa_list_container,
         $agent_template;
 
-    const ddl_countries_id = '#target_country',
-        hidden_class = 'hidden';
+    const ddl_countries_id = '#target_country';
+    const hidden_class = 'hidden';
 
     const onLoad = () => {
         $(() => {
@@ -101,7 +101,7 @@ const PaymentAgentList = (() => {
                 banks.map((bank) => {
                     supported_banks += bank.length === 0 ?
                         '' :
-                        '<img src="' + urlForStatic('images/pages/payment_agent/banks/' + bank.toLowerCase() + '.png') + '" alt="' + bank + '" title="' + bank + '" />';
+                        `<img src="${urlForStatic(`images/pages/payment_agent/banks/${bank.toLowerCase()}.png`)}" alt="${bank}" title="${bank}" />`;
                 });
             }
 

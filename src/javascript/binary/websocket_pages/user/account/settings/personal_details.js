@@ -8,7 +8,7 @@ const FormManager   = require('../../../../common_functions/form_manager');
 const moment        = require('moment');
 require('select2');
 
-const PersonalDetails = (function() {
+const PersonalDetails = (() => {
     'use strict';
 
     const form_id = '#frmPersonalDetails';
@@ -43,7 +43,7 @@ const PersonalDetails = (function() {
     const getDetailsResponse = (data) => {
         const get_settings = $.extend({}, data);
         get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        get_settings.name = is_jp ? get_settings.last_name : (get_settings.salutation || '') + ' ' + (get_settings.first_name || '') + ' ' + (get_settings.last_name || '');
+        get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
 
         displayGetSettingsData(get_settings);
 
@@ -134,7 +134,7 @@ const PersonalDetails = (function() {
                 { selector: '#hedge_asset_amount', validations: ['req', 'number'], parent_node: 'jp_settings' },
                 { selector: '#hedge_asset',        validations: ['req'], parent_node: 'jp_settings' },
             ];
-            $(form_id).find('select').each(function () {
+            $(form_id).find('select').each(function() {
                 validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
             });
         } else if (is_virtual) {
@@ -166,12 +166,12 @@ const PersonalDetails = (function() {
         const is_error = response.set_settings !== 1;
         if (!is_error) {
             // to update tax information message for financial clients
-            BinarySocket.send({ get_account_status: 1 }, true).then(() => {
+            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                 showHideTaxMessage();
                 Header.displayAccountStatus();
             });
             // to update the State with latest get_settings data
-            BinarySocket.send({ get_settings: 1 }, true).then((data) => {
+            BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
                 getDetailsResponse(data.get_settings);
             });
         }
@@ -183,7 +183,7 @@ const PersonalDetails = (function() {
     const showFormMessage = (msg, is_success) => {
         $('#formMessage')
             .attr('class', is_success ? 'success-msg' : 'errorfield')
-            .html(is_success ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
+            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
@@ -222,7 +222,7 @@ const PersonalDetails = (function() {
         }
     };
 
-    const populateStates = function(response) {
+    const populateStates = (response) => {
         const address_state = '#address_state';
         let $field = $(address_state);
         const states = response.states_list;
@@ -231,7 +231,7 @@ const PersonalDetails = (function() {
 
         if (states && states.length > 0) {
             $field.append($('<option/>', { value: '', text: localize('Please select') }));
-            states.forEach(function(state) {
+            states.forEach((state) => {
                 $field.append($('<option/>', { value: state.value, text: state.text }));
             });
         } else {

@@ -8,7 +8,7 @@ const scrollToHashSection = require('../../../../common_functions/scroll').scrol
 const DatePicker          = require('../../../../components/date_picker');
 const TimePicker          = require('../../../../components/time_picker');
 
-const SelfExclusion = (function() {
+const SelfExclusion = (() => {
     'use strict';
 
     let $form,
@@ -22,7 +22,7 @@ const SelfExclusion = (function() {
     const error_class      = 'errorfield';
     const hidden_class     = 'invisible';
 
-    const onLoad = function() {
+    const onLoad = () => {
         $form = $(form_id);
 
         fields = {};
@@ -50,8 +50,8 @@ const SelfExclusion = (function() {
             $('#loading').addClass(hidden_class);
             $form.removeClass(hidden_class);
             self_exclusion_data = response.get_self_exclusion;
-            $.each(self_exclusion_data, function(key, value) {
-                fields[key] = value + '';
+            $.each(self_exclusion_data, (key, value) => {
+                fields[key] = value.toString();
                 $form.find(`#${key}`).val(value);
             });
             bindValidation();
@@ -138,9 +138,9 @@ const SelfExclusion = (function() {
 
     const toMoment   = value  => moment(new Date(value));
     const dateFormat = elm_id => ($(elm_id).val() ? toMoment($(elm_id).val()).format('YYYY-MM-DD') : '');
-    const getTimeout = () => ($(timeout_date_id).val() ? moment((dateFormat(timeout_date_id) + ' ' + $(timeout_time_id).val()).trim()).valueOf() / 1000 : '');
+    const getTimeout = () => ($(timeout_date_id).val() ? moment((`${dateFormat(timeout_date_id)} ${$(timeout_time_id).val()}`).trim()).valueOf() / 1000 : '');
 
-    const initDatePicker = function() {
+    const initDatePicker = () => {
         // timeout_until
         TimePicker.init({ selector: timeout_time_id });
         DatePicker.init({
@@ -177,7 +177,7 @@ const SelfExclusion = (function() {
         return is_changed && is_confirmed;
     };
 
-    const setExclusionResponse = function(response) {
+    const setExclusionResponse = (response) => {
         if (response.error) {
             const error_msg = response.error.message;
             const error_fld = response.error.field;
@@ -196,10 +196,10 @@ const SelfExclusion = (function() {
         });
     };
 
-    const showFormMessage = function(msg, is_success) {
+    const showFormMessage = (msg, is_success) => {
         $('#msg_form')
             .attr('class', is_success ? 'success-msg' : error_class)
-            .html(is_success ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
+            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);

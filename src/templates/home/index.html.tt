@@ -118,24 +118,24 @@
     <div class="separator-line border-bottom"></div>
 </div>
 
-<div class="container">
+<div class="container" id="payment_methods">
     <div class="gr-12 gr-padding-30 gr-parent">
         <h2 class="center-text">[% l("Payment methods") %]</h2>
 
         <div class="gr-12">
             <a href="[% request.url_for('/cashier/payment_methods') %]">
                 <div class="gr-row gr-row-align-center">
-                    <div id="visa"></div>
-                    <div id="mastercard"></div>
-                    <div id="int_bank_wire"></div>
-                    <div id="local_bank_transfer"></div>
-                    <div id="western_union"></div>
-                    <div id="citadel"></div>
-                    <div id="neteller"></div>
-                    <div id="okpay"></div>
-                    <div id="fastpay"></div>
-                    <div id="perfect_money"></div>
-                    <div id="moneybrokers"></div>
+                    <div class="payment-logo" id="visa"></div>
+                    <div class="payment-logo" id="mastercard"></div>
+                    <div class="payment-logo" id="int_bank_wire"></div>
+                    <div class="payment-logo" id="local_bank_transfer"></div>
+                    <div class="payment-logo" id="western_union"></div>
+                    <div class="payment-logo" id="citadel"></div>
+                    <div class="payment-logo" id="neteller"></div>
+                    <div class="payment-logo" id="okpay"></div>
+                    <div class="payment-logo" id="fastpay"></div>
+                    <div class="payment-logo" id="perfect_money"></div>
+                    <div class="payment-logo" id="moneybrokers"></div>
                 </div>
             </a>
             <p class="center-text">[% l("Hundreds of deposit and withdrawal options.") %]</p>

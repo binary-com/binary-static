@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-25 09:08+0000\n"
-"Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
+"PO-Revision-Date: 2017-04-04 15:55+0000\n"
+"Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.12\n"
+"X-Generator: Weblate 2.13-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" có nghĩa là một bộ chương trình lập trình độc quyền, các lệnh, các công cụ và nguồn lực được tạo ra và duy trì bởi %1 cái mà cho phép bạn sử dụng Ứng dụng đã được đăng ký để giao dịch trên sàn giao dịch %1."
@@ -1259,6 +1259,9 @@ msgstr "Úc"
 msgid "Australia 200 Cash Index"
 msgstr "Chỉ số tiền mặt úc 200"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "Xác thực"
 
@@ -1775,7 +1778,9 @@ msgstr "Chọn giá thực hiện của riêng bạn."
 msgid "Christmas Day"
 msgstr "Lễ Giáng Sinh"
 
-msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+#, fuzzy
+#| msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Công dân của Afghanistan, Bỉ, Bosnia và Herzegovina, Guyana, Iraq, Lào, Syria, Uganda, Vanuatu hay Yemen sẽ bị hạn chế trong việc mở một tài khoản với Công ty TNHH Đầu Tư Binary (Châu Âu)."
 
 msgid "Classification of assets requiring hedge"
@@ -2348,6 +2353,11 @@ msgstr "Phát triển ứng dụng giao dịch của bạn bằng APIs của
 msgid "Differences with other data feeds"
 msgstr "Những khác biệt với các nguồn dữ liệu khác"
 
+#, fuzzy
+#| msgid "Digits"
+msgid "Digit"
+msgstr "Chữ số"
+
 msgid "Digit contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Các hợp đồng hàng số sẽ được hoàn tiền tại giá mua nếu hợp đồng không kết thúc trong vòng 5 phút."
 
@@ -2450,10 +2460,8 @@ msgstr "Trong quá trình ứng tuyển, chúng tôi có thể yêu cầ
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "Theo điều khoản của Thỏa thuận này, bạn cho phép chúng tôi có quyền tự do đặc quyền, không loại trừ, trên phạm vi toàn thế giới,không thể hủy ngang, dựa theo quyền sở hữu trí tuệ, để:"
 
-#, fuzzy
-#| msgid "<strong>Duties and Responsibilities:</strong>"
 msgid "Duties and Responsibilities:"
-msgstr "<strong>Nhiệm vụ và Trách nhiệm:</strong>"
+msgstr "Nhiệm vụ và Trách nhiệm:"
 
 msgid "E-cash"
 msgstr "Thẻ điện tử"
@@ -5497,6 +5505,11 @@ msgstr "Số tiền thanh toán"
 msgid "Pension"
 msgstr "Tiền phụ cấp"
 
+#, fuzzy
+#| msgid "Retracement Percentages"
+msgid "Percentage"
+msgstr "Phần trăm Thoái lui"
+
 msgid "Period"
 msgstr "Giai đoạn"
 
@@ -5673,11 +5686,6 @@ msgstr "Vui lòng chọn ít nhất một phạm vi"
 
 msgid "Please select the checkbox."
 msgstr "Vui lòng chọn hộp tích."
-
-#, fuzzy
-#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Xin vui lòng gửi cho chúng tôi các tài liệu sau đây để xác minh danh tính của bạn và xác thực tài khoản của bạn:"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Hãy chỉ rõ khoảng thời gian kiểm tra thực tế ưa thích của bạn vào biên bản"
@@ -5864,7 +5872,9 @@ msgstr "Lợi nhuận/Thua lỗ (điểm)"
 msgid "Prohibited Trades"
 msgstr "Các giao dịch bị cấm"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Bằng chứng địa chỉ - Một bản quét hóa đơn điện nước hoặc bản sao kê ngân hàng không quá 3 tháng gần đây nhất."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -8623,7 +8633,9 @@ msgstr "Bạn không được phép lưu trữ bất kỳ nội dung nào (ví d
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Bạn không có quyền nhận bất kỳ khoản bồi thường hay đền bù đối với bất kỳ tài sản nào của Công ty chúng tôi với mọi trường hợp."
 
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+#, fuzzy
+#| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Bạn không phải là cư dân trong một đất nước bị hạn chế như Afghanistan; Bosnia và Herzegovina; Costa Rica; bất kỳ quốc gia liên minh châu Âu; Guyana; Lào PDR; Syria; Uganda; Vanuatu; Yemen; HOA KỲ; Nhật bản; Hồng Kông; Costa Rica; Malaysia; Malta; Iran; Bắc Triều tiên; Jersey; Iraq; hoặc bất kỳ quốc gia hạn chế khác là công ty có thể quyết định thời gian theo ý mình;"
 
 msgid "You are over 18 years of age;"
@@ -9263,7 +9275,9 @@ msgstr "năm"
 msgid "years"
 msgstr "năm"
 
-msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+#, fuzzy
+#| msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgstr "bạn không phải là cư dân trong một đất nước bị hạn chế như Afghanistan, Bosnia và Herzegovina, Costa Rica, Guyana, Hồng Kông, Iran, Iraq, Jersey, Lào, Malaysia, Malta, Bắc Triều tiên, Syria, Uganda, Hoa Kỳ, Vanuatu hay Yemen;"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
@@ -11127,6 +11141,11 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
+
+#, fuzzy
+#~| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Xin vui lòng gửi cho chúng tôi các tài liệu sau đây để xác minh danh tính của bạn và xác thực tài khoản của bạn:"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Sở thích:</strong>"
@@ -13451,9 +13470,6 @@ msgstr "Giới hạn Tài khoản"
 
 #~ msgid "Response too large."
 #~ msgstr "Phản hồi quá lớn."
-
-#~ msgid "Retracement Percentages"
-#~ msgstr "Phần trăm Thoái lui"
 
 #~ msgid "Retry"
 #~ msgstr "Thử lại"

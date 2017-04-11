@@ -24,7 +24,7 @@ const KnowledgeTest = (() => {
     const submitHandler = () => {
         if (submit_completed) return;
 
-        const answered_qid = Object.keys(submitted).map(function(k) { return +k; });
+        const answered_qid = Object.keys(submitted).map(k => +k);
         if (answered_qid.length !== 20) {
             $('#knowledge-test-instructions').addClass('invisible');
             $('#knowledge-test-msg')
@@ -34,7 +34,7 @@ const KnowledgeTest = (() => {
             const unanswered = random_picks.reduce((a, b) => a.concat(b))
                                         .find(q => answered_qid.indexOf(q.id) === -1).id;
 
-            $.scrollTo('a[name="' + unanswered + '"]', 500, { offset: -10 });
+            $.scrollTo(`a[name="${unanswered}"]`, 500, { offset: -10 });
             return;
         }
 
@@ -60,7 +60,7 @@ const KnowledgeTest = (() => {
     const showQuestionsTable = () => {
         for (let j = 0; j < random_picks.length; j++) {
             const table = KnowledgeTestUI.createQuestionTable(random_picks[j]);
-            $('#section' + (j + 1) + '-question').append(table);
+            $(`#section${(j + 1)}-question`).append(table);
         }
 
         const $questions = $('#knowledge-test-questions');
@@ -105,7 +105,7 @@ const KnowledgeTest = (() => {
 
     const onLoad = () => {
         // need to send get_settings because client status needs to be checked against latest available data
-        BinarySocket.send({ get_settings: 1 }, true).then((response) => {
+        BinarySocket.send({ get_settings: 1 }, { forced: true }).then((response) => {
             const jp_status = response.get_settings.jp_account_status;
 
             if (!jp_status) {
@@ -151,7 +151,7 @@ const KnowledgeTest = (() => {
         /* eslint-enable */
     };
 
-    const randomPick4 = function(obj_questions) {
+    const randomPick4 = (obj_questions) => {
         const availables = Object.keys(obj_questions);
 
         const random_picks_four = [];
@@ -169,11 +169,11 @@ const KnowledgeTest = (() => {
         // retrieve questions text from html
         $('#data-questions').find('> div').each(function() { // sections
             const category = +$(this).attr('data-section-id');
-            questions['section' + category] = [];
+            questions[`section${category}`] = [];
 
             $(this).find('> div').each(function() { // questions
                 const question_id = +$(this).attr('data-question-id');
-                questions['section' + category].push({
+                questions[`section${category}`].push({
                     category          : category,
                     id                : question_id,
                     question          : $(this).attr('data-question-en'),
@@ -189,7 +189,7 @@ const KnowledgeTest = (() => {
         return picked_questions;
     };
 
-    const sendResult = function(questions) {
+    const sendResult = (questions) => {
         BinarySocket.send({
             jp_knowledge_test: 1,
             score            : result_score,
@@ -199,7 +199,7 @@ const KnowledgeTest = (() => {
             if (!response.error) {
                 showResult(result_score, response.jp_knowledge_test.test_taken_epoch * 1000);
                 $('html, body').animate({ scrollTop: 0 }, 'slow');
-                BinarySocket.send({ get_settings: 1 }, true).then(() => {
+                BinarySocket.send({ get_settings: 1 }, { forced: true }).then(() => {
                     Header.upgradeMessageVisibility();
                 });
             } else if (response.error.code === 'TestUnavailableNow') {
@@ -210,6 +210,7 @@ const KnowledgeTest = (() => {
             }
         });
     };
+
     return {
         onLoad: onLoad,
     };

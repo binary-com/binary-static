@@ -1,46 +1,46 @@
 const localize = require('../../../base/localize').localize;
 
-const HighchartUI = (function() {
+const HighchartUI = (() => {
     let common_time_style,
         common_spot_style,
         txt,
-        chartOptions;
+        chart_options;
 
-    const init_labels = function () {
+    const initLabels = () => {
         common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
         common_spot_style = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
     };
 
-    const get_labels = function(option) {
+    const getLabels = (option) => {
         if (!common_time_style || !common_spot_style) {
-            init_labels();
+            initLabels();
         }
         switch (option) {
             case 'start_time':
-                return '<div style="' + common_time_style + 'border-style: solid;"></div> ' + localize('Start time') + ' ';
+                return `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start time')} `;
             case 'entry_spot':
-                return '<div style="' + common_spot_style + 'border: 3px solid orange; width: 4px; height: 4px;"></div> ' + localize('Entry spot') + ' ';
+                return `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry spot')} `;
             case 'exit_spot':
-                return '<div style="' + common_spot_style + 'background-color: orange; width:10px; height: 10px;"></div> ' + localize('Exit spot') + ' ';
+                return `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `;
             case 'end_time':
-                return '<div style="' + common_time_style + 'border-style: dashed;"></div> ' + localize('End time') + ' ';
+                return `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `;
             case 'delay':
-                return '<span class="chart-delay"> ' + localize('Charting for this underlying is delayed') + ' </span>';
+                return `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`;
             default:
                 return null;
         }
     };
 
-    const set_labels = function (chart_delayed) {
+    const setLabels = (chart_delayed) => {
         // display a guide for clients to know how we are marking entry and exit spots
-        txt = (chart_delayed ? get_labels('delay') : '') +
-            get_labels('start_time') +
-            (history ? get_labels('entry_spot') + get_labels('exit_spot') : '') +
-            get_labels('end_time');
+        txt = (chart_delayed ? getLabels('delay') : '') +
+            getLabels('start_time') +
+            (history ? getLabels('entry_spot') + getLabels('exit_spot') : '') +
+            getLabels('end_time');
     };
 
-    const set_chart_options = function (params) {
-        chartOptions = {
+    const setCartOptions = (params) => {
+        chart_options = {
             chart: {
                 backgroundColor: null, /* make background transparent */
                 height         : Math.max(params.height, 450),
@@ -104,23 +104,23 @@ const HighchartUI = (function() {
             rangeSelector: { enabled: false },
         };
         if (params.user_sold) {
-            chartOptions.series[0].zones.pop();
+            chart_options.series[0].zones.pop();
         }
     };
 
-    const get_highchart_options = function (JPClient) {
-        return {
+    const getHighchartOptions = JPClient => (
+        {
             // use comma as separator instead of space
             lang  : { thousandsSep: ',' },
             global: {
                 timezoneOffset: JPClient ? -9 * 60 : 0, // Converting chart time to JST.
             },
-        };
-    };
+        }
+    );
 
-    const replace_exit_label_with_sell = function(subtitle) {
-        const subtitle_length = subtitle.childNodes.length,
-            textnode = document.createTextNode(' '  + localize('Sell time') + ' ');
+    const replaceExitLabelWithSell = (subtitle) => {
+        const subtitle_length = subtitle.childNodes.length;
+        const textnode = document.createTextNode(` ${localize('Sell time')} `);
         for (let i = 0; i < subtitle_length; i++) {
             const item = subtitle.childNodes[i];
             if (/End time/.test(item.nodeValue)) {
@@ -129,7 +129,7 @@ const HighchartUI = (function() {
         }
     };
 
-    const get_plotline_options = function(params, type) {
+    const getPlotlineOptions = (params, type) => {
         const is_plotx = type === 'x';
         const options = {
             value    : params.value,
@@ -150,30 +150,26 @@ const HighchartUI = (function() {
         return options;
     };
 
-    const show_error = function(type, message) {
-        const el = document.getElementById('analysis_live_chart');
-        if (!el) return;
-        el.innerHTML = '<p class="error-msg">' + (type === 'missing' ? localize('Ticks history returned an empty array.') : message) + '</p>';
+    const showError = (type, message) => {
+        $('#analysis_live_chart').html($('<p/>', { class: 'error-msg', text: (type === 'missing' ? localize('Ticks history returned an empty array.') : message) }));
     };
 
-    const get_marker_object = function(type) {
+    const getMarkerObject = (type) => {
         const color = type === 'entry' ? 'white' : 'orange';
         return { fillColor: color, lineColor: 'orange', lineWidth: 3, radius: 4, states: { hover: { fillColor: color, lineColor: 'orange', lineWidth: 3, radius: 4 } } };
     };
 
     return {
-        set_labels                  : set_labels,
-        get_labels                  : get_labels,
-        set_chart_options           : set_chart_options,
-        get_chart_options           : function() { return chartOptions; },
-        get_highchart_options       : get_highchart_options,
-        replace_exit_label_with_sell: replace_exit_label_with_sell,
-        get_plotline_options        : get_plotline_options,
-        show_error                  : show_error,
-        get_marker_object           : get_marker_object,
+        setLabels               : setLabels,
+        getLabels               : getLabels,
+        setCartOptions          : setCartOptions,
+        getChartOptions         : () => chart_options,
+        getHighchartOptions     : getHighchartOptions,
+        replaceExitLabelWithSell: replaceExitLabelWithSell,
+        getPlotlineOptions      : getPlotlineOptions,
+        showError               : showError,
+        getMarkerObject         : getMarkerObject,
     };
 })();
 
-module.exports = {
-    HighchartUI: HighchartUI,
-};
+module.exports = HighchartUI;

@@ -1,25 +1,23 @@
-const MBContract          = require('./mb_contract').MBContract;
-const MBNotifications     = require('./mb_notifications').MBNotifications;
-const MBProcess           = require('./mb_process').MBProcess;
-const MBPurchase          = require('./mb_purchase').MBPurchase;
-const MBTick              = require('./mb_tick').MBTick;
-const PortfolioInit = require('../user/account/portfolio/portfolio.init');
-const State  = require('../../base/storage').State;
-const GTM    = require('../../base/gtm');
-const processTradingTimes  = require('../trade/process').processTradingTimes;
-const forgetTradingStreams = require('../trade/process').forgetTradingStreams;
+const MBContract      = require('./mb_contract');
+const MBNotifications = require('./mb_notifications');
+const MBProcess       = require('./mb_process');
+const MBPurchase      = require('./mb_purchase');
+const MBTick          = require('./mb_tick');
+const Process         = require('../trade/process');
+const GTM             = require('../../base/gtm');
+const State           = require('../../base/storage').State;
 
 /*
  * This Message object process the response from server and fire
  * events based on type of response
  */
-const MBMessage = (function () {
+const MBMessage = (() => {
     'use strict';
 
-    const process = function (msg) {
+    const process = (msg) => {
         const response = JSON.parse(msg.data);
         if (!State.get('is_mb_trading')) {
-            forgetTradingStreams();
+            MBProcess.forgetTradingStreams();
             return;
         }
         if (response) {
@@ -30,7 +28,7 @@ const MBMessage = (function () {
                 MBNotifications.hide('CONNECTION_ERROR');
                 MBContract.setContractsResponse(response);
                 MBProcess.processContract(response);
-            } else if (type === 'proposal') {
+            } else if (type === 'proposal_array') {
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
                 MBPurchase.display(response);
@@ -40,13 +38,7 @@ const MBMessage = (function () {
             } else if (type === 'history') {
                 MBTick.processHistory(response);
             } else if (type === 'trading_times') {
-                processTradingTimes(response);
-            } else if (type === 'portfolio') {
-                PortfolioInit.updatePortfolio(response);
-            } else if (type === 'proposal_open_contract') {
-                PortfolioInit.updateIndicative(response);
-            } else if (type === 'transaction') {
-                PortfolioInit.transactionResponseHandler(response);
+                Process.processTradingTimes(response);
             }
         }
     };
@@ -56,6 +48,4 @@ const MBMessage = (function () {
     };
 })();
 
-module.exports = {
-    MBMessage: MBMessage,
-};
+module.exports = MBMessage;

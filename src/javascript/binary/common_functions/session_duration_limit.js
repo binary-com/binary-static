@@ -18,10 +18,10 @@ const SessionDurationLimit = (() => {
 
         warning = 10 * 1000; // milliseconds before limit to display the warning message
 
-        const limit     = Client.get('session_duration_limit') * 1;
-        const now       = moment().unix();
-        const start     = Client.get('session_start') * 1;
-        const mathLimit = Math.pow(2, 31) - 1;
+        const limit      = Client.get('session_duration_limit') * 1;
+        const now        = moment().unix();
+        const start      = Client.get('session_start') * 1;
+        const math_limit = Math.pow(2, 31) - 1;
         let remained  = ((limit + start) - now) * 1000;
         if (remained < 0) remained = warning;
 
@@ -31,8 +31,8 @@ const SessionDurationLimit = (() => {
         };
 
         // limit of setTimeout is this number
-        if (remained > mathLimit) {
-            remained %= mathLimit;
+        if (remained > math_limit) {
+            remained %= math_limit;
             timeout_before = setTimeout(init, remained);
         } else {
             setTimeOut();
@@ -54,10 +54,8 @@ const SessionDurationLimit = (() => {
     };
 
     const displayWarning = () => {
-        $('body').append(
-            $("<div id='session_limit' class='lightbox'><div><div><div class='limit_message'>" +
-                localize('Your session duration limit will end in [_1] seconds.', [warning / 1000]) +
-                '</div></div></div></div>'));
+        $('body').append($('<div/>', { id: 'session_limit', class: 'lightbox' }).append($('<div/>').append($('<div/>')
+            .append($('<div/>', { class: 'limit_message', text: localize('Your session duration limit will end in [_1] seconds.', [warning / 1000]) })))));
         $('#session_limit').click(function() { $(this).remove(); });
     };
 

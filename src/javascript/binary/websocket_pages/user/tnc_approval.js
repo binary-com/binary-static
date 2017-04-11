@@ -5,12 +5,12 @@ const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
 const urlFor             = require('../../base/url').urlFor;
 const template           = require('../../base/utility').template;
 
-const TNCApproval = (function() {
+const TNCApproval = (() => {
     'use strict';
 
     const hidden_class = 'invisible';
 
-    const onLoad = function() {
+    const onLoad = () => {
         requiresTNCApproval($('#btn_accept'), display, null, true);
     };
 
@@ -37,14 +37,14 @@ const TNCApproval = (function() {
 
             funcDisplay();
 
-            $btn.click(function (e) {
+            $btn.click((e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                BinarySocket.send({ tnc_approval: '1' }, true).then((response) => {
+                BinarySocket.send({ tnc_approval: '1' }, { forced: true }).then((response) => {
                     if (response.error) {
                         $('#err_message').html(response.error.message).removeClass(hidden_class);
                     } else {
-                        BinarySocket.send({ get_settings: 1 }, true).then(() => {
+                        BinarySocket.send({ get_settings: 1 }, { forced: true }).then(() => {
                             Header.displayAccountStatus();
                         });
                         redirectBack(redirect_anyway);
@@ -57,7 +57,7 @@ const TNCApproval = (function() {
         });
     };
 
-    const redirectBack = function(redirect_anyway) {
+    const redirectBack = (redirect_anyway) => {
         if (redirect_anyway) {
             setTimeout(() => {
                 BinaryPjax.load(defaultRedirectUrl());
