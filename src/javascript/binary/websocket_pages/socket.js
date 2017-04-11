@@ -2,7 +2,6 @@ const MBTradePage          = require('./mb_trade/mb_tradepage');
 const TradePage_Beta       = require('./trade/beta/tradepage');
 const reloadPage           = require('./trade/common').reloadPage;
 const Notifications        = require('./trade/notifications');
-const TickDisplay          = require('./trade/tick_trade');
 const TradePage            = require('./trade/tradepage');
 const updateBalance        = require('./user/update_balance');
 const Client               = require('../base/client');
@@ -246,16 +245,10 @@ const BinarySocketClass = () => {
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
                 let dispatch_to;
                 if (passthrough) {
-                    dispatch_to = passthrough.dispatch_to;
                     const this_req_number = passthrough.req_number;
                     if (this_req_number) {
                         clearInterval(timeouts[this_req_number]);
                         delete timeouts[this_req_number];
-                    } else {
-                        switch (dispatch_to) {
-                            case 'ViewTickDisplay': TickDisplay.dispatch(response); break;
-                            // no default
-                        }
                     }
                 }
 

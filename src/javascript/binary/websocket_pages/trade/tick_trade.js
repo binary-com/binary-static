@@ -275,14 +275,6 @@ const TickDisplay = (() => {
         updatePurchaseStatus(final_price, final_price - pnl, contract_status);
     };
 
-    const socketSend = (req) => {
-        if (!req.hasOwnProperty('passthrough')) {
-            req.passthrough = {};
-        }
-        req.passthrough.dispatch_to = 'ViewTickDisplay';
-        BinarySocket.send(req);
-    };
-
     const dispatch = (data) => {
         const tick_chart = document.getElementById('tick_chart');
 
@@ -291,7 +283,6 @@ const TickDisplay = (() => {
         }
 
         if (window.subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-            if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChart') return;
             window.responseID = data.tick.id;
             ViewPopupUI.storeSubscriptionID(window.responseID);
         }
@@ -394,7 +385,7 @@ const TickDisplay = (() => {
             } else {
                 request.end = contract.date_expiry;
             }
-            socketSend(request);
+            BinarySocket.send(request, { callback: dispatch });
         } else {
             dispatch(data);
         }
