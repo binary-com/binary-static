@@ -601,6 +601,12 @@ const ViewPopup = (() => {
     };
 
     const responseProposal = (response) => {
+        if (response.error) {
+            if (response.error.code !== 'AlreadySubscribed' && response.echo_req.contract_id === contract_id) {
+                showErrorPopup(response, response.error.message);
+            }
+            return;
+        }
         if (response.proposal_open_contract.contract_id === contract_id) {
             ViewPopupUI.storeSubscriptionID(response.proposal_open_contract.id);
             responseContract(response);
