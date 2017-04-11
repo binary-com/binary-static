@@ -1,11 +1,9 @@
 const MBTradePage          = require('./mb_trade/mb_tradepage');
 const TradePage_Beta       = require('./trade/beta/tradepage');
-const Highchart            = require('./trade/charts/highchart');
 const reloadPage           = require('./trade/common').reloadPage;
 const Notifications        = require('./trade/notifications');
 const TickDisplay          = require('./trade/tick_trade');
 const TradePage            = require('./trade/tradepage');
-const ViewPopup            = require('./user/view_popup/view_popup');
 const updateBalance        = require('./user/update_balance');
 const Client               = require('../base/client');
 const Clock                = require('../base/clock');
@@ -255,8 +253,6 @@ const BinarySocketClass = () => {
                         delete timeouts[this_req_number];
                     } else {
                         switch (dispatch_to) {
-                            case 'ViewPopup':       ViewPopup.dispatch(response);   break;
-                            case 'ViewChart':       Highchart.dispatch(response);   break;
                             case 'ViewTickDisplay': TickDisplay.dispatch(response); break;
                             // no default
                         }

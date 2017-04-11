@@ -121,7 +121,7 @@ const ViewPopup = (() => {
         containerSetText('status',            contract.status, { class: contract.is_ended ? 'loss' : 'profit' });
         containerSetText('stop_loss_level',   contract.stop_loss_level);
         containerSetText('stop_profit_level', contract.stop_profit_level);
-        containerSetText('pl_value',          parseFloat(contract.current_value_in_dollar).toFixed(2), { class: contract.current_value_in_dollar * 1 >= 0 ? 'profit' : 'loss' });
+        containerSetText('pl_value',          parseFloat(contract.current_value_in_dollar).toFixed(2), { class: +contract.current_value_in_dollar >= 0 ? 'profit' : 'loss' });
         containerSetText('pl_point',          parseFloat(contract.current_value_in_point).toFixed(2));
 
         if (!contract.is_ended) {
@@ -255,11 +255,11 @@ const ViewPopup = (() => {
         if (!chart_started && !contract.tick_count) {
             if (!tick_forgotten) {
                 tick_forgotten = true;
-                socketSend({ forget_all: 'ticks' });
+                BinarySocket.send({ forget_all: 'ticks' });
             }
             if (!candle_forgotten) {
                 candle_forgotten = true;
-                socketSend({ forget_all: 'candles' });
+                BinarySocket.send({ forget_all: 'candles' });
                 Highchart.showChart(contract);
             }
             if (candle_forgotten && tick_forgotten) {
@@ -281,7 +281,9 @@ const ViewPopup = (() => {
             normalContractEnded(parseFloat(profit_loss) >= 0);
             if (contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !is_sell_clicked) {
                 ViewPopupUI.forgetStreams();
-                socketSend({ sell_expired: 1, passthrough: {} }, getContract);
+                BinarySocket.send({ sell_expired: 1 }).then((response) => {
+                    getContract(response);
+                });
             }
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
         }
@@ -522,7 +524,9 @@ const ViewPopup = (() => {
                 e.stopPropagation();
                 is_sell_clicked = true;
                 sellSetVisibility(false);
-                socketSend({ sell: contract_id, price: contract.bid_price, passthrough: {} }, responseSell);
+                BinarySocket.send({ sell: contract_id, price: contract.bid_price }).then((response) => {
+                    responseSell(response);
+                });
             });
         } else {
             if (!is_exist) return;
@@ -542,7 +546,7 @@ const ViewPopup = (() => {
                 subscribe             : 1,
             };
             if (option === 'no-subscribe') delete req.subscribe;
-            socketSend(req);
+            BinarySocket.send(req, { callback: responseProposal });
         }
     };
 
@@ -550,12 +554,14 @@ const ViewPopup = (() => {
     const getCorporateActions = () => {
         const epoch = window.time.unix();
         const end_time = epoch < contract.date_expiry ? epoch.toFixed(0) : contract.date_expiry;
-        socketSend({
+        BinarySocket.send({
             get_corporate_actions: '1',
             symbol               : contract.underlying,
             start                : contract.date_start,
             end                  : end_time,
-        }, responseCorporateActions);
+        }).then((response) => {
+            responseCorporateActions(response);
+        });
     };
 
     const responseCorporateActions = (response) => {
@@ -594,32 +600,12 @@ const ViewPopup = (() => {
         }
     };
 
-    const socketSend = (req, fnc) => {
-        if (!req.hasOwnProperty('passthrough')) {
-            req.passthrough = {};
-        }
-        req.passthrough.dispatch_to = 'ViewPopup';
-        BinarySocket.send(req).then((response) => {
-            if (fnc && typeof fnc === 'function') fnc(response);
-        });
-    };
-
-    const dispatch = (response) => {
-        switch (response.msg_type) {
-            case 'proposal_open_contract':
-                if (response.proposal_open_contract) {
-                    if (response.proposal_open_contract.contract_id === contract_id) {
-                        ViewPopupUI.storeSubscriptionID(response.proposal_open_contract.id);
-                        responseContract(response);
-                    } else {
-                        BinarySocket.send({ forget: response.proposal_open_contract.id });
-                    }
-                } else if (response.echo_req.contract_id === contract_id && response.error && response.error.code !== 'AlreadySubscribed') {
-                    showErrorPopup(response, response.error.message);
-                }
-                break;
-            default:
-                break;
+    const responseProposal = (response) => {
+        if (response.proposal_open_contract.contract_id === contract_id) {
+            ViewPopupUI.storeSubscriptionID(response.proposal_open_contract.id);
+            responseContract(response);
+        } else {
+            BinarySocket.send({ forget: response.proposal_open_contract.id });
         }
         const dates = ['#trade_details_start_date', '#trade_details_end_date', '#trade_details_current_date', '#trade_details_live_date'];
         for (let i = 0; i < dates.length; i++) {
@@ -637,7 +623,6 @@ const ViewPopup = (() => {
 
     return {
         init             : init,
-        dispatch         : dispatch,
         spreadUpdate     : spreadUpdate,
         normalUpdate     : normalUpdate,
         viewButtonOnClick: viewButtonOnClick,

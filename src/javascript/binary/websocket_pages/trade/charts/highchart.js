@@ -142,23 +142,10 @@ const Highchart = (() => {
         }
     };
 
-    // use this instead of BinarySocket.send to avoid overriding the onmessage of trading page
-    const socketSend = (req) => {
-        if (!req) return;
-        if (!req.hasOwnProperty('passthrough')) {
-            req.passthrough = {};
-        }
-        // send dispatch_to to help socket.js forward the correct response back to here
-        req.passthrough.dispatch_to = 'ViewChart';
-        BinarySocket.send(req);
-    };
-
-    const dispatch = (response) => {
+    const handleResponse = (response) => {
         const type  = response.msg_type;
         const error = response.error;
-        if (type === 'contracts_for' && (!error || (error.code && error.code === 'InvalidSymbol'))) {
-            delayedChart(response);
-        } else if (/(history|candles|tick|ohlc)/.test(type) && !error) {
+        if (/(history|candles|tick|ohlc)/.test(type) && !error) {
             response_id = response[type].id;
             // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
             if (response_id) ViewPopupUI.storeSubscriptionID(response_id, 'chart');
@@ -270,7 +257,12 @@ const Highchart = (() => {
             handleDelay(stored_delay);
             showEntryError();
         } else if (!is_contracts_for_send && update === '') {
-            socketSend({ contracts_for: underlying });
+            BinarySocket.send({ contracts_for: underlying }).then((response) => {
+                const error = response.error;
+                if ((!error || (error.code && error.code === 'InvalidSymbol'))) {
+                    delayedChart(response);
+                }
+            });
             is_contracts_for_send = true;
         }
     };
@@ -290,7 +282,7 @@ const Highchart = (() => {
         } else if (!is_history_send) {
             is_history_send = true;
             if (request.subscribe) is_chart_subscribed = true;
-            socketSend(request);
+            BinarySocket.send(request, { callback: handleResponse });
         }
     };
 
@@ -500,7 +492,7 @@ const Highchart = (() => {
             const last_data = data[data.length - 1];
             const last = parseInt(last_data.x || last_data[0]);
             if (last > (end_time * 1000) || last > (sell_time * 1000)) {
-                socketSend({ forget: response_id });
+                BinarySocket.send({ forget: response_id });
                 is_chart_forget = true;
             }
         }
@@ -562,7 +554,6 @@ const Highchart = (() => {
 
     return {
         showChart: showChart,
-        dispatch : dispatch,
     };
 })();
 
