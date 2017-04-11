@@ -3,7 +3,6 @@ const Notifications = require('./notifications');
 const Process       = require('./process');
 const Purchase      = require('./purchase');
 const Tick          = require('./tick');
-const PortfolioInit = require('../user/account/portfolio/portfolio.init');
 const GTM           = require('../../base/gtm');
 const State         = require('../../base/storage').State;
 
@@ -45,12 +44,6 @@ const Message = (() => {
                 Process.processTradingTimes(response);
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);
-            } else if (type === 'portfolio') {
-                PortfolioInit.updatePortfolio(response);
-            } else if (type === 'proposal_open_contract') {
-                PortfolioInit.updateIndicative(response);
-            } else if (type === 'transaction') {
-                PortfolioInit.transactionResponseHandler(response);
             }
         } else {
             console.log('some error occured');

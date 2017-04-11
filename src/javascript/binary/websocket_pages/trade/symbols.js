@@ -37,7 +37,7 @@ const Symbols = (() => {
         const $args = {
             active_symbols: 'brief',
         };
-        BinarySocket.send($args, update);
+        BinarySocket.send($args, { forced: update });
         need_page_update = update;
     };
 
