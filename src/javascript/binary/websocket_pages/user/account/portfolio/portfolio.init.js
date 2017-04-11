@@ -32,11 +32,12 @@ const PortfolioInit = (() => {
         $portfolio_loading.show();
         showLoadingImage($portfolio_loading);
         is_first_response = true;
-        BinarySocket.send({ portfolio: 1 }, { callback: (response) => { updatePortfolio(response); } });
+        BinarySocket.send({ portfolio: 1 }).then((response) => {
+            updatePortfolio(response);
+        });
         // Subscribe to transactions to auto update new purchases
-        BinarySocket.send({ transaction: 1, subscribe: 1 },
-            { callback: (response) => { transactionResponseHandler(response); } });
-        BinarySocket.send({ oauth_apps: 1 }, { callback: (response) => { updateOAuthApps(response); } });
+        BinarySocket.send({ transaction: 1, subscribe: 1 }, { callback: transactionResponseHandler });
+        BinarySocket.send({ oauth_apps: 1 }, { callback: updateOAuthApps });
         is_initialized = true;
 
         // Display ViewPopup according to contract_id in query string
@@ -111,8 +112,7 @@ const PortfolioInit = (() => {
             updateFooter();
 
             // request "proposal_open_contract"
-            BinarySocket.send({ proposal_open_contract: 1, subscribe: 1 },
-                { callback: (response) => { updateIndicative(response); } });
+            BinarySocket.send({ proposal_open_contract: 1, subscribe: 1 }, { callback: updateIndicative });
         }
         // ready to show portfolio table
         $('#portfolio-loading').hide();
@@ -124,7 +124,7 @@ const PortfolioInit = (() => {
         if (response.hasOwnProperty('error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
-            BinarySocket.send({ portfolio: 1 }, { callback: (res) => { updatePortfolio(res); } });
+            BinarySocket.send({ portfolio: 1 }, { callback: updatePortfolio });
         } else if (response.transaction.action === 'sell') {
             removeContract(response.transaction.contract_id);
         }
