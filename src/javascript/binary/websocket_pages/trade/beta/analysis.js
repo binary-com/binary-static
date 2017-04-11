@@ -1,4 +1,5 @@
 const commonTrading    = require('../common');
+const showHighchart    = require('../charts/chart_frame').showHighchart;
 const AssetIndexUI     = require('../../resources/asset_index/asset_index.ui');
 const TradingTimesUI   = require('../../resources/trading_times/trading_times.ui');
 const PortfolioInit    = require('../../user/account/portfolio/portfolio.init');
@@ -80,14 +81,14 @@ const TradingAnalysis_Beta = (() => {
 
         switch (current_tab) {
             case 'tab_graph':
-                commonTrading.showHighchart();
+                showHighchart();
                 break;
             case 'tab_portfolio':
                 PortfolioInit.onLoad();
                 break;
             case 'tab_last_digit': {
-                const underlying = $('[name=underlying] option:selected').val() || $('#underlying').find('option:selected').val();
-                const tick = $('[name=tick_count]').val() || 100;
+                const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
+                const tick = $('#tick_count').val() || 100;
                 BinarySocket.send({ ticks_history: underlying, end: 'latest', count: tick.toString(), req_id: 1 });
                 break;
             }

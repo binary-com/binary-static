@@ -2,7 +2,7 @@ const DigitInfo_Beta = require('./charts/digit_info');
 const Process_Beta   = require('./process');
 const Purchase_Beta  = require('./purchase');
 const Notifications  = require('../notifications');
-const Tick           = require('../tick');
+const GetTicks       = require('../get_ticks');
 const AssetIndexUI   = require('../../resources/asset_index/asset_index.ui');
 const TradingTimesUI = require('../../resources/trading_times/trading_times.ui');
 const GTM            = require('../../../base/gtm');
@@ -42,7 +42,7 @@ const Message_Beta = (() => {
                 if (response.req_id === 1 || response.req_id === 2) {
                     DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
                 } else {
-                    Tick.processHistory(response);
+                    GetTicks.processHistory(response);
                 }
             } else if (type === 'asset_index') {
                 AssetIndexUI.setAssetIndex(response);

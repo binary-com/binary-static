@@ -11,6 +11,7 @@ const TickDisplay_Beta               = require('./tick_trade');
 const commonTrading                  = require('../common');
 const processTradingTimesAnswer      = require('../common_independent').processTradingTimesAnswer;
 const Defaults                       = require('../defaults');
+const GetTicks                       = require('../get_ticks');
 const Symbols                        = require('../symbols');
 const setFormPlaceholderContent_Beta = require('../set_values').setFormPlaceholderContent_Beta;
 const Tick                           = require('../tick');
@@ -43,26 +44,23 @@ const Process_Beta = (() => {
     /*
      * Function to call when market has changed
      */
-    const processMarket_Beta = (flag) => {
+    const processMarket_Beta = () => {
         // we can get market from sessionStorage as allowed market
         // is already set when this is called
         let market = Defaults.get('market'),
             symbol = Defaults.get('underlying');
-        const update_page = Symbols.needpageUpdate() || flag;
 
         // change to default market if query string contains an invalid market
         if (!market || !Symbols.underlyings()[market]) {
             market = commonTrading.getDefaultMarket();
             Defaults.set('market', market);
         }
-        if (update_page && (!symbol || !Symbols.underlyings()[market][symbol])) {
+        if ((!symbol || !Symbols.underlyings()[market][symbol])) {
             symbol = undefined;
         }
         commonTrading.displayUnderlyings('underlying', Symbols.underlyings()[market], symbol);
 
-        if (update_page) {
-            marketUnderlying_Beta();
-        }
+        marketUnderlying_Beta();
     };
 
     /*
@@ -85,7 +83,7 @@ const Process_Beta = (() => {
         // forget the old tick id i.e. close the old tick stream
         processForgetTicks_Beta();
         // get ticks for current underlying
-        Tick.request(underlying);
+        GetTicks.request(underlying);
 
         Tick.clean();
 
