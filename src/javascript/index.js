@@ -27,11 +27,6 @@ const BinaryLoader = require('./binary/base/binary_loader');
 
 $(window).on('load', BinaryLoader.init);
 
-if (typeof window === 'undefined') {
-    // eslint-disable-next-line
-    Element = () => {}; // jshint ignore:line
-}
-
 Element.prototype.hide = function() {
     this.style.display = 'none';
 };
