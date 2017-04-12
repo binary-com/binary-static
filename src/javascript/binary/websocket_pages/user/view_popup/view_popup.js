@@ -71,7 +71,7 @@ const ViewPopup = (() => {
 
         if (contract) {
             if (!document.getElementById(wrapper_id)) return;
-            normalUpdate();
+            update();
             return;
         }
 
@@ -81,15 +81,14 @@ const ViewPopup = (() => {
             getCorporateActions();
         }
 
-        normalShowContract();
+        showContract();
     };
 
-    // ===== Contract: Normal =====
-    const normalShowContract = () => {
+    const showContract = () => {
         setLoadingState(false);
 
         if (!$container) {
-            $container = normalMakeTemplate();
+            $container = makeTemplate();
         }
 
         containerSetText('trade_details_contract_id',    contract.contract_id);
@@ -99,13 +98,13 @@ const ViewPopup = (() => {
         containerSetText('trade_details_payout',         formatMoney(contract.currency, contract.payout));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
 
-        normalUpdateTimers();
-        normalUpdate();
+        updateTimers();
+        update();
         ViewPopupUI.repositionConfirmation();
         if (State.get('is_mb_trading')) MBPrice.hidePriceOverlay();
     };
 
-    const normalUpdate = () => {
+    const update = () => {
         const final_price      = contract.sell_price || contract.bid_price;
         const is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const user_sold        = contract.sell_time && contract.sell_time < contract.date_expiry;
@@ -191,7 +190,7 @@ const ViewPopup = (() => {
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
         }
         if (is_ended) {
-            normalContractEnded(parseFloat(profit_loss) >= 0);
+            contractEnded(parseFloat(profit_loss) >= 0);
             if (contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !is_sell_clicked) {
                 ViewPopupUI.forgetStreams();
                 BinarySocket.send({ sell_expired: 1 }).then((response) => {
@@ -210,7 +209,7 @@ const ViewPopup = (() => {
         contract.validation_error = '';
     };
 
-    const normalUpdateTimers = () => {
+    const updateTimers = () => {
         const update_time = () => {
             const now = Math.max(Math.ceil((window.time || 0) / 1000), contract.current_spot_time || 0);
             containerSetText('trade_details_live_date', toJapanTimeIfNeeded(epochToDateTime(now)));
@@ -241,7 +240,7 @@ const ViewPopup = (() => {
         window.ViewPopupTimerInterval = setInterval(update_time, 500);
     };
 
-    const normalContractEnded = () => {
+    const contractEnded = () => {
         containerSetText('trade_details_current_title',    localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
         containerSetText('trade_details_spot_label',       localize('Exit Spot'));
         containerSetText('trade_details_spottime_label',   localize('Exit Spot Time'));
@@ -294,29 +293,29 @@ const ViewPopup = (() => {
     const populateCorporateAction = (corporate_action) => {
         for (let i = 0; i < corporate_action.get_corporate_actions.actions.length; i++) {
             $('#corporate_action_content').append(
-                normalRow(corporate_action.get_corporate_actions.actions[i].display_date, '', '', '', `${corporate_action.get_corporate_actions.actions[i].type} (${corporate_action.get_corporate_actions.actions[i].value}-${localize('for')}-1)`));
+                createRow(corporate_action.get_corporate_actions.actions[i].display_date, '', '', '', `${corporate_action.get_corporate_actions.actions[i].type} (${corporate_action.get_corporate_actions.actions[i].value}-${localize('for')}-1)`));
         }
         let original_barriers,
             adjusted_barriers;
 
         if (contract.original_barrier) {
-            original_barriers = normalRow(localize('Original Barrier'), '', '', '', contract.original_barrier);
+            original_barriers = createRow(localize('Original Barrier'), '', '', '', contract.original_barrier);
         } else if (contract.original_high_barrier) {
-            original_barriers = normalRow(localize('Original High Barrier'), '', '', '', contract.original_high_barrier) +
-                normalRow(localize('Original Low Barrier'), '', '', '', contract.original_low_barrier);
+            original_barriers = createRow(localize('Original High Barrier'), '', '', '', contract.original_high_barrier) +
+                createRow(localize('Original Low Barrier'), '', '', '', contract.original_low_barrier);
         }
         if (contract.barrier) {
-            adjusted_barriers = normalRow(localize('Adjusted Barrier'), '', '', '', contract.barrier);
+            adjusted_barriers = createRow(localize('Adjusted Barrier'), '', '', '', contract.barrier);
         } else if (contract.high_barrier) {
-            adjusted_barriers = normalRow(localize('Adjusted High Barrier'), '', '', '', contract.high_barrier) +
-                normalRow(localize('Adjusted Low Barrier'), '', '', '', contract.low_barrier);
+            adjusted_barriers = createRow(localize('Adjusted High Barrier'), '', '', '', contract.high_barrier) +
+                createRow(localize('Adjusted Low Barrier'), '', '', '', contract.low_barrier);
         }
         $('#barrier_change_content').append(
             original_barriers +
             adjusted_barriers);
     };
 
-    const normalMakeTemplate = () => {
+    const makeTemplate = () => {
         $container = $('<div/>').append($('<div/>', { id: wrapper_id }));
 
         const longcode = contract.longcode;
@@ -327,26 +326,26 @@ const ViewPopup = (() => {
         $sections.find('#sell_details_table').append($(
             `<table>
             <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
-            ${normalRow('Contract ID', '', 'trade_details_contract_id')}
-            ${normalRow('Reference ID', '', 'trade_details_ref_id')}
-            ${normalRow('Start Time', '', 'trade_details_start_date')}
-            ${(!contract.tick_count ? normalRow('End Time', '', 'trade_details_end_date') +
-                normalRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
-            ${normalRow('Entry Spot', '', 'trade_details_entry_spot')}
-            ${normalRow(contract.barrier_count > 1 ? 'High Barrier' :
+            ${createRow('Contract ID', '', 'trade_details_contract_id')}
+            ${createRow('Reference ID', '', 'trade_details_ref_id')}
+            ${createRow('Start Time', '', 'trade_details_start_date')}
+            ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
+                createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
+            ${createRow('Entry Spot', '', 'trade_details_entry_spot')}
+            ${createRow(contract.barrier_count > 1 ? 'High Barrier' :
                 /^DIGIT(MATCH|DIFF)$/.test(contract.contract_type) ? 'Target' : 'Barrier', '', 'trade_details_barrier', true)}
-            ${(contract.barrier_count > 1 ? normalRow('Low Barrier', '', 'trade_details_barrier_low', true) : '')}
-            ${normalRow('Potential Payout', '', 'trade_details_payout')}
-            ${normalRow('Purchase Price', '', 'trade_details_purchase_price')}
+            ${(contract.barrier_count > 1 ? createRow('Low Barrier', '', 'trade_details_barrier_low', true) : '')}
+            ${createRow('Potential Payout', '', 'trade_details_payout')}
+            ${createRow('Purchase Price', '', 'trade_details_purchase_price')}
             </tbody><tbody id="corporate_action_content" class="invisible"></tbody>
             <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>
             <tbody id="barrier_change_content" class="invisible"></tbody>
             <tr><th colspan="2" id="trade_details_current_title">${localize('Current')}</th></tr>
-            ${normalRow('Spot', 'trade_details_spot_label', 'trade_details_current_spot')}
-            ${normalRow('Spot Time', 'trade_details_spottime_label', 'trade_details_current_date')}
-            ${normalRow('Current Time', '', 'trade_details_live_date')}
-            ${normalRow('Indicative', 'trade_details_indicative_label', 'trade_details_indicative_price')}
-            ${normalRow('Profit/Loss', '', 'trade_details_profit_loss')}
+            ${createRow('Spot', 'trade_details_spot_label', 'trade_details_current_spot')}
+            ${createRow('Spot Time', 'trade_details_spottime_label', 'trade_details_current_date')}
+            ${createRow('Current Time', '', 'trade_details_live_date')}
+            ${createRow('Indicative', 'trade_details_indicative_label', 'trade_details_indicative_price')}
+            ${createRow('Profit/Loss', '', 'trade_details_profit_loss')}
             <tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>
             </table>
             <div id="errMsg" class="notice-msg hidden"></div>
@@ -362,7 +361,7 @@ const ViewPopup = (() => {
         return $(`#${wrapper_id}`);
     };
 
-    const normalRow = (label, label_id, value_id, is_hidden, value) => (
+    const createRow = (label, label_id, value_id, is_hidden, value) => (
         `<tr${(is_hidden ? ` class="${hidden_class}"` : '')}><td${(label_id ? ` id="${label_id}"` : '')}>${localize(label)}</td><td${(value_id ? ` id="${value_id}"` : '')}>${(value || '')}</td></tr>`
     );
 

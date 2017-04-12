@@ -392,12 +392,6 @@ sub _texts {
         push @texts, localize('Current');
         push @texts, localize('Open');
         push @texts, localize('Closed');
-        push @texts, localize('Entry Level');
-        push @texts, localize('Exit Level');
-        push @texts, localize('Stop Loss Level');
-        push @texts, localize('Stop Profit Level');
-        push @texts, localize('Current Level');
-        push @texts, localize('Profit/Loss (points)');
         push @texts, localize('Contract is not started yet');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
