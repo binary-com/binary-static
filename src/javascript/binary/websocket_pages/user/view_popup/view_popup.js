@@ -69,8 +69,7 @@ const ViewPopup = (() => {
 
         $.extend(contract, response.proposal_open_contract);
 
-        if (contract) {
-            if (!document.getElementById(wrapper_id)) return;
+        if (contract && document.getElementById(wrapper_id)) {
             update();
             return;
         }
