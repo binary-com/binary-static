@@ -24,7 +24,6 @@ const ViewPopupUI = (() => {
                 cleanup();
                 if (typeof State.get('ViewPopup.onClose') === 'function') {
                     State.get('ViewPopup.onClose')();
-                    State.remove('ViewPopup.onClose');
                 }
             };
             $con.find('a.close').on('click', () => { onClose(); });

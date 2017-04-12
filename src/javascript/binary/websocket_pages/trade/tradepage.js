@@ -68,6 +68,7 @@ const TradePage = (() => {
         BinarySocket.clear();
         Defaults.clear();
         chartFrameCleanup();
+        State.remove('ViewPopup.onClose');
     };
 
     const onDisconnect = () => {
