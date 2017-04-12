@@ -73,7 +73,7 @@ const ApplicationsUI = (() => {
     };
 
     const displayError = (message) => {
-        container_selector.find('.error-msg').text(message);
+        $(container_selector).find('.error-msg').text(message);
     };
 
     const init = () => {
@@ -81,7 +81,7 @@ const ApplicationsUI = (() => {
     };
 
     const clean = () => {
-        container_selector.find('.error-msg').text('');
+        $(container_selector).find('.error-msg').text('');
         FlexTableUI.clear();
     };
 
