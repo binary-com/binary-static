@@ -1715,6 +1715,9 @@ msgstr "Thay đổi mật khẩu sử dụng cho tiền gửi và rút tiền."
 msgid "Change your main login password."
 msgstr "Thay đổi mật khẩu đăng nhập chính của bạn."
 
+msgid "Charitable Activities"
+msgstr ""
+
 msgid "Chart"
 msgstr "Biểu đồ"
 
@@ -2293,8 +2296,10 @@ msgstr "Quỹ gửi tiền và bắt đầu kinh doanh"
 msgid "Deposit into"
 msgstr "Gửi tiền đến"
 
-msgid "Deposit of"
-msgstr "Tiền gửi của"
+#, fuzzy
+#| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
+msgid "Deposit of %1 is required. Current spread: %2 points"
+msgstr "Khoản tiền gửi của %1 %2 được yêu cầu. Giá chênh lệch hiện tại: %3 điểm"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Gửi hay rút tiền qua tài khoản của bạn bằng điện chuyển khoản ngân hàng, thẻ tín dụng hay ví thẻ điện tử."
@@ -4440,8 +4445,14 @@ msgstr "Văn phòng Kuala Lumpur"
 msgid "L. Event of Default"
 msgstr "L. Sự kiện mặc định"
 
+msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
+msgstr ""
+
 msgid "Languages"
 msgstr "Ngôn ngữ"
+
+msgid "Languages Classes for Refugees (LCFR)"
+msgstr ""
 
 msgid "Last Digit Prediction"
 msgstr "Dự đoán Chữ số Cuối cùng"
@@ -5119,6 +5130,11 @@ msgid "Now"
 msgstr "Bây giờ"
 
 msgid "Number of ticks"
+msgstr "Số điểm"
+
+#, fuzzy
+#| msgid "Number of ticks"
+msgid "Number of ticks:"
 msgstr "Số điểm"
 
 msgid "O. Representations and Warranties"
@@ -6296,6 +6312,11 @@ msgstr "Quỹ tách biệt"
 msgid "Select market"
 msgstr "Chọn thị trường"
 
+#, fuzzy
+#| msgid "Select market"
+msgid "Select market:"
+msgstr "Chọn thị trường"
+
 msgid "Select your market"
 msgstr "Chọn thị trường của bạn"
 
@@ -7033,7 +7054,9 @@ msgstr "Chương trình"
 msgid "The STP account provides you with the tightest spreads and connects you directly to the market."
 msgstr "Tài khoản STP cung cấp cho bạn với các quảng bá sát nhất và kết nối bạn trực tiếp đến thị trường."
 
-msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+#, fuzzy
+#| msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr "Trung tâm cộng đông học tập cư trú 3 là một cộng đồng trường học cho trẻ tị nạn Myanmar đang chờ hồi hương với gia đình của họ tới một quốc gia thứ 3. Nhà trường với mục đích cung cấp cho những trẻ em mà đang ở độ tuổi dễ bị ảnh hưởng nhất có được một nền giáo dục để chúng có thể tự chuẩn bị cho tương lai."
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
@@ -8102,6 +8125,9 @@ msgstr "Chúng tôi cũng cung cấp cấu trúc trả lãi đặc biệt cho nh
 msgid "We analyse your pending orders."
 msgstr "Chúng tôi phân tích các lệnh đang chờ của bạn."
 
+msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
+msgstr ""
+
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "Ủy ban Dịch vụ Tài chính Malta (\"MFSA\") ủy quyền và quy định cho chúng tôi thực hiện công việc kinh doanh đầu tư theo Đạo luật Dịch vụ Đầu tư (điều 370, Luật Malta) (\"Đạo luật\"). MFSA đã ủy quyền cho chúng tôi giao dịch tài khoản của mình ( ví dụ, cung cấp và hoạt động như các đối tác để giao dịch) và để thực thi các đơn hàng trên danh nghĩa của người khác, tất cả các dịch vụ liên quan tới sản phẩm phái sinh tài chính (quyền chọn nhị phân sơ cấp), liên quan tới giao dịch ngoại hối, chỉ số, cổ phiếu và những sản phẩm tài chính hoặc tài sản khác (\"Sản phẩm Tài chính\"). Chúng tôi không được ủy quyền và không cung cấp tư vấn đầu tư hoặc các dịch vụ đầu tư khác ngoài những điều mô tả ở trên. Nếu bạn thấy rằng bạn cần tư vấn về đầu tư hoặc dịch vụ đầu tư khác với các loại được miêu tả bên trên, bạn nên liên hệ với công ty hoặc nhà tư vấn tài chính độc lập."
 
@@ -9129,9 +9155,6 @@ msgstr "iOS, Android"
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
 msgstr "định tuyến thông minh các lệnh đến để phân loại rõ ràng các loại khác nhau của chế độ thực thi dựa trên cấu hình và thiết lập bằng cách sử dụng các yếu tố thực thi tốt nhất."
 
-msgid "is required. Current spread"
-msgstr "là bắt buộc. Giá chênh lệch hiện tại"
-
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "Sàn giao dịch có một sức hấp dẫn quốc tế rộng, với giao diện bằng tiếng Anh, tiếng Tây Ban Nha, Pháp, Đức, Bồ Đào Nha, Trung Quốc, Nhật Bản, Ý, Thái Lan, Ba Lan, Nga và Indonesia."
 
@@ -9193,9 +9216,6 @@ msgstr "của trang."
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "trang dành cho quyết toán tại thời gian chính xác đối với tất cả các hợp đồng. Các trang web khác có thể áp dụng quy ước khác nhau (ví dụ như một số trang web chọn thời gian 04:00 NY, hoặc 5:00 theo giờ Luân Đôn). Kết quả là, giá đóng, mở, cao, thấp hiển thị trên trang web của chúng tôi có thể khác với những giá trên các trang web khác, do quy ước thời gian đóng cửa thị trường."
-
-msgid "points"
-msgstr "điểm"
 
 msgid "second"
 msgstr "giây"
@@ -11141,6 +11161,15 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
+
+#~ msgid "Deposit of"
+#~ msgstr "Tiền gửi của"
+
+#~ msgid "is required. Current spread"
+#~ msgstr "là bắt buộc. Giá chênh lệch hiện tại"
+
+#~ msgid "points"
+#~ msgstr "điểm"
 
 #, fuzzy
 #~| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
@@ -15890,9 +15919,6 @@ msgstr "Giới hạn Tài khoản"
 
 #~ msgid "Delete for Breach"
 #~ msgstr "Hủy vì Vi phạm"
-
-#~ msgid "Deposit of %1 %2 is required. Current spread: %3 points"
-#~ msgstr "Khoản tiền gửi của %1 %2 được yêu cầu. Giá chênh lệch hiện tại: %3 điểm"
 
 #~ msgid "Email Verification"
 #~ msgstr "Xác minh Email"
