@@ -1,7 +1,7 @@
 const moment             = require('moment');
 const Barriers           = require('./barriers');
 const commonTrading      = require('./common');
-const getTradingTimes    = require('./common_independent').getTradingTimes;
+const commonIndependent  = require('./common_independent').getTradingTimes;
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
 const Price              = require('./price');
@@ -354,13 +354,14 @@ const Durations = (() => {
     };
 
     const processTradingTimesRequest = (date) => {
-        const trading_times = getTradingTimes();
+        const trading_times = commonIndependent.getTradingTimes();
         if (trading_times.hasOwnProperty(date)) {
             Price.processPriceRequest();
         } else {
             commonTrading.showPriceOverlay();
-            BinarySocket.send({
-                trading_times: date,
+            BinarySocket.send({ trading_times: date }).then((response) => {
+                commonIndependent.processTradingTimesAnswer(response);
+                Price.processPriceRequest();
             });
         }
     };

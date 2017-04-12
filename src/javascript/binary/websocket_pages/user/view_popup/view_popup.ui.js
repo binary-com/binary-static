@@ -20,16 +20,15 @@ const ViewPopupUI = (() => {
         if (!$container) {
             const $con = $('<div class="inpage_popup_container" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>');
             $con.hide();
-            const on_close = () => {
-                cleanup(true);
-                if (State.get('is_trading')) {
-                    // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
-                    BinarySocket.send({ ticks_history: $('#underlying').val(), style: 'ticks', end: 'latest', count: 20, subscribe: 1 });
+            const onClose = () => {
+                cleanup();
+                if (typeof State.get('ViewPopup.onClose') === 'function') {
+                    State.get('ViewPopup.onClose')();
                 }
             };
-            $con.find('a.close').on('click', () => { on_close(); });
+            $con.find('a.close').on('click', () => { onClose(); });
             $(document).on('keydown', (e) => {
-                if (e.which === 27) on_close();
+                if (e.which === 27) onClose();
             });
             $container = $con;
         }

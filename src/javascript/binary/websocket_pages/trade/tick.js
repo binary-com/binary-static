@@ -28,7 +28,6 @@ const Tick = (() => {
         epoch = '',
         spots = {},
         error_message = '';
-    const keep_number = 20;
 
     const details = (data) => {
         error_message = '';
@@ -44,7 +43,7 @@ const Tick = (() => {
 
                 spots[epoch] = quote;
                 const epoches = Object.keys(spots).sort((a, b) => a - b);
-                if (epoches.length > keep_number) {
+                if (epoches.length > 20) {
                     delete spots[epoches[0]];
                 }
             }
@@ -116,29 +115,6 @@ const Tick = (() => {
         }
     };
 
-    const request = (symbol) => {
-        BinarySocket.send({
-            ticks_history: symbol,
-            style        : 'ticks',
-            end          : 'latest',
-            count        : keep_number,
-            subscribe    : 1,
-        });
-    };
-
-    const processHistory = (res) => {
-        if (res.history && res.history.times && res.history.prices) {
-            for (let i = 0; i < res.history.times.length; i++) {
-                details({
-                    tick: {
-                        epoch: res.history.times[i],
-                        quote: res.history.prices[i],
-                    },
-                });
-            }
-        }
-    };
-
     const clean = () => {
         spots = {};
         quote = '';
@@ -149,17 +125,15 @@ const Tick = (() => {
     };
 
     return {
-        details       : details,
-        display       : display,
-        request       : request,
-        processHistory: processHistory,
-        clean         : clean,
-        quote         : () => quote,
-        id            : () => id,
-        epoch         : () => epoch,
-        errorMessage  : () => error_message,
-        spots         : () => spots,
-        setQuote      : (q) => { quote = q; },
+        details     : details,
+        display     : display,
+        clean       : clean,
+        quote       : () => quote,
+        id          : () => id,
+        epoch       : () => epoch,
+        errorMessage: () => error_message,
+        spots       : () => spots,
+        setQuote    : (q) => { quote = q; },
     };
 })();
 

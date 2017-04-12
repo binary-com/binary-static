@@ -2,12 +2,12 @@ const TradingAnalysis_Beta      = require('./analysis');
 const TradingEvents_Beta        = require('./event');
 const Message_Beta              = require('./message');
 const Price_Beta                = require('./price');
-const forgetTradingStreams_Beta = require('./process').forgetTradingStreams_Beta;
+const Process_Beta              = require('./process');
 const commonTrading             = require('../common');
+const chartFrameCleanup         = require('../charts/chart_frame').chartFrameCleanup;
 const displayCurrencies         = require('../currency');
 const Defaults                  = require('../defaults');
-const Notifications             = require('../notifications');
-const Symbols                   = require('../symbols');
+const GetTicks                  = require('../get_ticks');
 const PortfolioInit             = require('../../user/account/portfolio/portfolio.init');
 const ViewPopup                 = require('../../user/view_popup/view_popup');
 const BinaryPjax                = require('../../../base/binary_pjax');
@@ -33,9 +33,6 @@ const TradePage_Beta = (() => {
             onmessage: (msg) => {
                 Message_Beta.process(msg);
             },
-            onopen: () => {
-                Notifications.hide('CONNECTION_ERROR');
-            },
         });
         Price_Beta.clearFormId();
         if (events_initialized === 0) {
@@ -45,7 +42,7 @@ const TradePage_Beta = (() => {
 
         BinarySocket.send({ payout_currencies: 1 }).then(() => {
             displayCurrencies();
-            Symbols.getSymbols(1);
+            Process_Beta.processActiveSymbols_Beta();
         });
 
         if (document.getElementById('websocket_form')) {
@@ -63,6 +60,8 @@ const TradePage_Beta = (() => {
         TradingAnalysis_Beta.bindAnalysisTabEvent();
 
         ViewPopup.viewButtonOnClick('#contract_confirmation_container');
+        // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
+        State.set('ViewPopup.onClose', () => { GetTicks.request($('#underlying').val()); });
     };
 
     const adjustAnalysisColumnHeight = () => {
@@ -177,17 +176,18 @@ const TradePage_Beta = (() => {
     const onUnload = () => {
         State.remove('is_beta_trading');
         events_initialized = 0;
-        forgetTradingStreams_Beta();
+        Process_Beta.forgetTradingStreams_Beta();
         BinarySocket.clear();
         Defaults.clear();
         PortfolioInit.onUnload();
-        commonTrading.chartFrameCleanup();
+        chartFrameCleanup();
+        State.remove('ViewPopup.onClose');
     };
 
     const onDisconnect = () => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
-        commonTrading.chartFrameCleanup();
+        chartFrameCleanup();
         commonTrading.clean();
         onLoad();
     };
