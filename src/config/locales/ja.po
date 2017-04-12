@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-04-11 02:14+0000\n"
 "Last-Translator: Masanari Higashiyama <higashiyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1088,9 +1087,7 @@ msgid "Any Transaction opened by you must be within any credit or position limit
 msgstr "お客さまが開始された取引は、リアル口座またはその他決済に影響がないようクレジットまたはポジションの制限を超えないようにしてください。"
 
 msgid "Any amendments to the contractual terms of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between you and us in connection with the Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms and conditions of this Agreement."
-msgstr ""
-"明らかに誤りのある契約条件の変更は合理的且つ公正に行われます。誤りのある契約に関連する当社とお客様の間で交わされた金銭については、改正後の契約条項に従い受"
-"取人に返還されます。"
+msgstr "明らかに誤りのある契約条件の変更は合理的且つ公正に行われます。誤りのある契約に関連する当社とお客様の間で交わされた金銭については、改正後の契約条項に従い受取人に返還されます。"
 
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "個人情報のお取り扱いなどに関する変更点は全て当社サイトに掲載されます。お客さまの個人情報の経済的利用へ直接影響を与えるような変更が発生し得る場合は、当社はお客さまのご口座にそのような影響が発生する前に書面での事前認証を求めます。"
@@ -1741,6 +1738,9 @@ msgstr "入出金に用いるパスワードを変更"
 msgid "Change your main login password."
 msgstr "パスワードを変更してください"
 
+msgid "Charitable Activities"
+msgstr ""
+
 msgid "Chart"
 msgstr "チャート"
 
@@ -2327,8 +2327,10 @@ msgstr "預託金入金後に取引開始"
 msgid "Deposit into"
 msgstr "XXXへご入金"
 
-msgid "Deposit of"
-msgstr "Xのご入金"
+#, fuzzy
+#| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
+msgid "Deposit of %1 is required. Current spread: %2 points"
+msgstr "%1 %2のご入金が必要です。現在のスプレッド： %3 ポイント"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "銀行振込によりお客さまの口座に入出金を行います"
@@ -4492,8 +4494,14 @@ msgstr "クアラルンプール（マレーシア）"
 msgid "L. Event of Default"
 msgstr "L. 契約不履行事由"
 
+msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
+msgstr ""
+
 msgid "Languages"
 msgstr "言語"
+
+msgid "Languages Classes for Refugees (LCFR)"
+msgstr ""
 
 msgid "Last Digit Prediction"
 msgstr "下一桁の数字を予測"
@@ -5179,6 +5187,11 @@ msgid "Now"
 msgstr "Now"
 
 msgid "Number of ticks"
+msgstr "Tickの総数"
+
+#, fuzzy
+#| msgid "Number of ticks"
+msgid "Number of ticks:"
 msgstr "Tickの総数"
 
 msgid "O. Representations and Warranties"
@@ -6358,6 +6371,11 @@ msgstr "資産の区分管理"
 msgid "Select market"
 msgstr "取引市場を選択"
 
+#, fuzzy
+#| msgid "Select market"
+msgid "Select market:"
+msgstr "取引市場を選択"
+
 msgid "Select your market"
 msgstr "取引市場を選択"
 
@@ -7102,7 +7120,9 @@ msgstr "アフィリエイトプログラム"
 msgid "The STP account provides you with the tightest spreads and connects you directly to the market."
 msgstr ""
 
-msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+#, fuzzy
+#| msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr "シェルターコミュニティ学習センター3とは、第三国の地で離れ離れになった家族を待っている、ミャンマー難民の子どもたちが利用するコミュニティスクールです。ここでは、繊細な年齢である子どもたちに将来への準備となる教育を提供することを目的としています。"
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
@@ -7843,9 +7863,7 @@ msgid "Trade only with money you can afford to lose. Do not trade with borrowed 
 msgstr "損を出しても納得のできる金額でのトレードのみ実行しましょう。借金をしてまでトレード資金を準備することは見合わせましょう。"
 
 msgid "Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!"
-msgstr ""
-"バイナリードットコムは海外で15年以上、バイナリー取引業者として経験がある為、日本でも初となる、世界の主要通貨において多数のオプション種類や期間を設定でき"
-"る商品をご提供します"
+msgstr "バイナリードットコムは海外で15年以上、バイナリー取引業者として経験がある為、日本でも初となる、世界の主要通貨において多数のオプション種類や期間を設定できる商品をご提供します"
 
 msgid "Trade type"
 msgstr "トレードの種類"
@@ -8259,6 +8277,9 @@ msgstr "また、当社では当社の商品に関する取引アドバイスを
 
 msgid "We analyse your pending orders."
 msgstr "保留中のトレードを分析します。"
+
+msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
+msgstr ""
 
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "当社は投資事業を行ううえで、投資サービス法(Cap. 370, マルタ法律)の下、マルタ金融サービス庁 (\"MFSA\")によって承認、規制されています。外国為替、インデックス、株式、その他金融商品または資産（金融商品）に関する金融デリバティブ商品（主にバイナリーオプション）を自身の口座で取り扱うことを（取引相手としてのオファーや行為）MFSAによって承認されています。投資アドバイスまたは上述の行為を超えるその他投資サービスの提供は承認されていないため、致しかねます。投資アドバイスまたは上記以外のその他投資サービスが必要だと感じだ際は、独立財務顧問または会社に連絡する必要があります。"
@@ -9333,9 +9354,6 @@ msgstr "iOS、Android"
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
 msgstr ""
 
-msgid "is required. Current spread"
-msgstr "のご入金が必要です。現在のスプレッド"
-
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "当社は英語、スペイン語、フランス語、ドイツ語、ポルトガル語、中国語、日本語、イタリア語、タイ語、ポーランド語、ロシア語、インドネシア語での国際的なインターフェイスを有しています。"
 
@@ -9395,9 +9413,6 @@ msgstr "サイトのXXX"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "から、全てのトレードに関する正確な終値の適用時間をご確認下さい。他のウェブサイトでは、異なるデータを採用している可能性があります。（例：ニューヨーク時間・午前４時、ロンドン時間・午前５時など）ゆえに、当社が公表している始値、最高値、最安値、及び市場閉場価格は、他のウェブサイトで公表している価格と異なる可能性があります。"
-
-msgid "points"
-msgstr "ポイント"
 
 msgid "second"
 msgstr "秒"
@@ -9478,9 +9493,7 @@ msgid "years"
 msgstr "年"
 
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr ""
-"お客様はアフガニスタン、ボスニア・ヘルツェゴビナ、コスタリカ、香港、イラン、イラク、ジャージー、ラオス、マレーシア、マルタ、北朝鮮、シリア、ウガンダ、米国"
-"、バヌアツ、イエメンなどの特定の国の居住者ではありません。"
+msgstr "お客様はアフガニスタン、ボスニア・ヘルツェゴビナ、コスタリカ、香港、イラン、イラク、ジャージー、ラオス、マレーシア、マルタ、北朝鮮、シリア、ウガンダ、米国、バヌアツ、イエメンなどの特定の国の居住者ではありません。"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "１８歳以上であり、エストニア国民の場合は２１歳以上です。"
@@ -11364,6 +11377,15 @@ msgstr "利用規約の承認"
 
 msgid "Account Limits"
 msgstr "ご利用制限額"
+
+#~ msgid "Deposit of"
+#~ msgstr "Xのご入金"
+
+#~ msgid "is required. Current spread"
+#~ msgstr "のご入金が必要です。現在のスプレッド"
+
+#~ msgid "points"
+#~ msgstr "ポイント"
 
 #~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 #~ msgstr "お客さまの個人情報を確認してアカウント認証を行うために、次の書類を当社までご送付ください。"
@@ -16111,9 +16133,6 @@ msgstr "ご利用制限額"
 
 #~ msgid "Delete for Breach"
 #~ msgstr "違反のため削除します"
-
-#~ msgid "Deposit of %1 %2 is required. Current spread: %3 points"
-#~ msgstr "%1 %2のご入金が必要です。現在のスプレッド： %3 ポイント"
 
 #~ msgid "Email Verification"
 #~ msgstr "Eメール認証"

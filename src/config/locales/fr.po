@@ -1712,6 +1712,9 @@ msgstr "Modifier le mot de passe utiliser pour les dépôts et retraits."
 msgid "Change your main login password."
 msgstr "Modifier votre mot de passe de connexion principal."
 
+msgid "Charitable Activities"
+msgstr ""
+
 msgid "Chart"
 msgstr "Graphique"
 
@@ -2290,8 +2293,10 @@ msgstr "Déposer des fonds et lancer des transactions"
 msgid "Deposit into"
 msgstr "Dépôt vers"
 
-msgid "Deposit of"
-msgstr "Dépôt de"
+#, fuzzy
+#| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
+msgid "Deposit of %1 is required. Current spread: %2 points"
+msgstr "Un dépôt de %1 %2 est requis. Spread actuel : %3 points"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Dépôt ou retrait sur votre compte par virement bancaire, carte de crédit ou service de paiement en ligne."
@@ -4437,8 +4442,14 @@ msgstr "Antenne de Kuala Lumpur"
 msgid "L. Event of Default"
 msgstr "L. Évènement de défaut"
 
+msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
+msgstr ""
+
 msgid "Languages"
 msgstr "Langues"
+
+msgid "Languages Classes for Refugees (LCFR)"
+msgstr ""
 
 msgid "Last Digit Prediction"
 msgstr "Prédiction sur le dernier chiffre"
@@ -5116,6 +5127,11 @@ msgid "Now"
 msgstr "Maintenant"
 
 msgid "Number of ticks"
+msgstr "Nombre de ticks"
+
+#, fuzzy
+#| msgid "Number of ticks"
+msgid "Number of ticks:"
 msgstr "Nombre de ticks"
 
 msgid "O. Representations and Warranties"
@@ -6289,6 +6305,11 @@ msgstr "Fonds cantonnés"
 msgid "Select market"
 msgstr "Sélectionnez un marché"
 
+#, fuzzy
+#| msgid "Select market"
+msgid "Select market:"
+msgstr "Sélectionnez un marché"
+
 msgid "Select your market"
 msgstr "Sélectionnez votre marché"
 
@@ -7024,7 +7045,9 @@ msgstr "Le Programme"
 msgid "The STP account provides you with the tightest spreads and connects you directly to the market."
 msgstr "Le compte STP vous fournit les spreads les plus serrés et vous connecte directement avec le marché."
 
-msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+#, fuzzy
+#| msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr "Le « Shelter Community Learning Centre 3 » est un foyer scolaire local accueillant les enfants birmans réfugiés qui attendent d'être rapatriés avec leur famille dans un pays tiers. Cette structure scolaire vise à offrir à ces enfants une éducation qui les prépare aux années futures."
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
@@ -8089,6 +8112,9 @@ msgstr "Nous proposons également des plans de commissionnement spécifiques aux
 msgid "We analyse your pending orders."
 msgstr "Nous analysons vos ordres en suspens."
 
+msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
+msgstr ""
+
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "Nous sommes agréés et régulés par l'autorité maltaise des services financiers (« MFSA ») conformément à la Loi sur les services d'investissement (droit maltais, chap. 370) (la « Loi ») nous autorisant à poursuivre des activités d'investissement. Nous sommes autorisés par la MFSA à négocier pour compte propre (c’est-à-dire à proposer des transactions et à agir en tant que contrepartie dans le cadre de transactions), et ce afin d'exécuter des ordres pour des tierces personnes. Les deux services sont proposés dans le cadre d'opérations sur instruments dérivés (principalement les options binaires) apparentés au marché des changes, aux indices, aux actions et aux autres produits ou actifs financiers (« Produits financiers »). Nous ne sommes pas autorisés à proposer ou à fournir des services de conseil en investissement ou tout autre service d'investissement autre que ceux décrits ci-dessus. Si vous estimez avoir besoin de conseils ou de services liés à l'investissement autres que ceux décrits ci-dessus, veuillez contacter un conseiller financier indépendant ou une entreprise proposant de tels services."
 
@@ -9114,9 +9140,6 @@ msgstr "iOS, Android"
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
 msgstr "intelligemment acheminer vos ordres entrants pour différents types de mode d’exécution basés sur des configurations et algorithmes établis utilisant les facteurs de meilleure exécution."
 
-msgid "is required. Current spread"
-msgstr "est requis. Spread actuel"
-
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "elle connaît un succès grandissant à l'international, avec une interface déclinée en anglais, espagnol, français, allemand, portugais, chinois, japonais, italien, thaï, polonais, russe et indonésien."
 
@@ -9176,9 +9199,6 @@ msgstr "sur le site."
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "afin d'obtenir l'heure exacte de la clôture de tous les contrats. Les autres sites web peuvent adopter une convention différente (par exemple, certains sites web choisissent 4 heures, heure de NY, ou 5 heures, heure de Londres). Par conséquent, les prix à l'ouverture, supérieurs, inférieurs et à la clôture affichés sur notre site web peuvent différer de ceux affichés sur d'autres sites web, du fait de leur convention sur l'heure de clôture du marché."
-
-msgid "points"
-msgstr "points"
 
 msgid "second"
 msgstr "seconde"
@@ -10926,6 +10946,15 @@ msgstr "Acceptation des conditions générales"
 
 msgid "Account Limits"
 msgstr "Limites du Compte"
+
+#~ msgid "Deposit of"
+#~ msgstr "Dépôt de"
+
+#~ msgid "is required. Current spread"
+#~ msgstr "est requis. Spread actuel"
+
+#~ msgid "points"
+#~ msgstr "points"
 
 #~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 #~ msgstr "Veuillez envoyer les documents suivants à %1 pour vérifier votre identité et authentifier votre compte :"
@@ -15703,9 +15732,6 @@ msgstr "Limites du Compte"
 
 #~ msgid "Delete for Breach"
 #~ msgstr "Suppression pour non-respect des Conditions"
-
-#~ msgid "Deposit of %1 %2 is required. Current spread: %3 points"
-#~ msgstr "Un dépôt de %1 %2 est requis. Spread actuel : %3 points"
 
 #~ msgid "Email Verification"
 #~ msgstr "Vérification de Mail"

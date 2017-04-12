@@ -1724,6 +1724,9 @@ msgstr "เปลี่ยนรหัสผ่านเพื่อใช้ใ
 msgid "Change your main login password."
 msgstr "แก้ไขรหัสผ่านหลักของท่าน"
 
+msgid "Charitable Activities"
+msgstr ""
+
 msgid "Chart"
 msgstr "แผนภูมิ"
 
@@ -2303,8 +2306,10 @@ msgstr "ฝากเงินแล้วเริ่มซื้อขายไ
 msgid "Deposit into"
 msgstr "การนำฝากไปยัง"
 
-msgid "Deposit of"
-msgstr "การฝากของ"
+#, fuzzy
+#| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
+msgid "Deposit of %1 is required. Current spread: %2 points"
+msgstr "การฝากเงินของ %1 %2 มีความจำเป็น สเปรตปัจจุบัน: %3 พอยต์"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "ฝากเงิน หรือ ถอนเงินเข้าบัญชีของท่านผ่านบริการของธนาคาร บัตรเครดิต หรือ กระเป๋าสตางค์อิเล็กทรอนิกส์"
@@ -4456,8 +4461,14 @@ msgstr "สำนักงานกัวลาลัมเปอร์"
 msgid "L. Event of Default"
 msgstr "L. กรณีเพิกเฉยต่อสัญญา"
 
+msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
+msgstr ""
+
 msgid "Languages"
 msgstr "ภาษา"
+
+msgid "Languages Classes for Refugees (LCFR)"
+msgstr ""
 
 msgid "Last Digit Prediction"
 msgstr "การพยากรณ์ตัวเลขสุดท้าย"
@@ -5136,6 +5147,11 @@ msgid "Now"
 msgstr "ขณะนี้"
 
 msgid "Number of ticks"
+msgstr "จำนวนของช่วงราคา"
+
+#, fuzzy
+#| msgid "Number of ticks"
+msgid "Number of ticks:"
 msgstr "จำนวนของช่วงราคา"
 
 msgid "O. Representations and Warranties"
@@ -6318,6 +6334,11 @@ msgstr ""
 msgid "Select market"
 msgstr "กำหนด ตลาด"
 
+#, fuzzy
+#| msgid "Select market"
+msgid "Select market:"
+msgstr "กำหนด ตลาด"
+
 msgid "Select your market"
 msgstr "กำหนด ตลาดของท่าน"
 
@@ -7054,7 +7075,9 @@ msgstr "โปรแกรม"
 msgid "The STP account provides you with the tightest spreads and connects you directly to the market."
 msgstr "บัญชี STP ทำให้ท่านมีสเปรดที่หนาแน่นและเชื่องโยงท่านสู่ตลาดได้โดยตรง"
 
-msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+#, fuzzy
+#| msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr "Shelter Community Learning Centre 3 คือ กลุ่มชุมชนโรงเรียนสำหรับเด็กๆ ผู้ลี้ภัยชาวพม่า ที่รอคอยการถูกส่งกลับประเทศเดิมกับครอบครัวของเขายังประเทศโลกที่ 3 โรงเรียนมีเป้าหมายเพื่อให้การศึกษากับกลุ่มเด็กเหล่านี้ ผู้ซึ่งด้อยโอกาส เพื่อให้เขามีแนวทางในการดำเนินชีวิตในอนาคต"
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
@@ -8130,6 +8153,9 @@ msgstr "พวกเราเสนอโครงสร้างการมอ
 msgid "We analyse your pending orders."
 msgstr "พวกเราวิเคราะห์คำสั่งซื้อที่ค้างอยู่ของท่าน"
 
+msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
+msgstr ""
+
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "พวกเราได้รับอนุญาตและรับรองโดย Malta Financial Services Authority (\"MFSA\") ภายใต้ พระราชบัญญัติการบริการการลงทุน (Cap. 370, Laws of Malta) (\"พระราชบัญญัติ\") เพื่อขับเคลื่อนธุรกิจการลงทุน พวกเราได้รับอนุญาตจาก MFSA เพื่อบริหารบัญชีของลูกค้า (เช่น จัดหาบริการและเป็นตัวแทนในการซื้อขาย) และเพื่อจัดการคำสั่งซื้อในนามผู้อื่น ทั้งสองบริการสัมพันธ์กับผลิตภัณฑ์อนุพันธ์ทางการเงิน (ไบนารีออปชั่นแรกเริ่ม) ที่เกี่ยวกับการแลกเปลี่ยนเงินตราต่างประเทศ ดัชนีต่างๆ หลักทรัพย์ และ ผลิตภัณฑ์ทางการเงินอื่นๆ หรือ สินทรัพย์ (\"ผลิตภัณฑ์ทางการเงิน\") พวกเราไม่ได้รับอนุญาตในการให้บริการ หรือ ให้คำแนะนำการลงทุน หรือ บริการการลงทุนอื่นๆ นอกเหนือจากที่กล่าวข้างต้น หากท่านต้องการคำแนะนำการลงทุน หรือ บริการการลงทุนด้านอื่น ท่านสามารถติดต่อผู้ให้คำปรึกษาทางการเงินอิสระ หรือ บริษัทฯ ที่ปรึกษาทางการเงิน"
 
@@ -9158,9 +9184,6 @@ msgstr "ไอโอเอส เอนดรอย"
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
 msgstr ""
 
-msgid "is required. Current spread"
-msgstr "ต้องการสเปรดปัจจุบัน"
-
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "ระบบรองรับความเป็นสากล ด้วยส่วนเชื่อมต่อการใช้งานในภาษาต่างๆ ได้แก่ ภาษาอังกฤษ ภาษาสเปน ภาษาฝรั่งเศา ภาษาเยอรมัน ภาษาโปรตุเกส ภาษาจีน ภาษาญี่ปุ่น ภาษาอิตาลี ภาษาไทย ภาษาโปแลนด์ ภาษารัสเซีย และภาษาอินโดนีเซีย"
 
@@ -9220,9 +9243,6 @@ msgstr "ของเว็บไซต์"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "หน้าสำหรับเวลาที่ใช้เป็นข้อตกลงสำหรับทุกสัญญา เว็บไซต์อื่นอาจใช้การกำหนดเวลาที่แตกต่างออกไป (เช่น บางเว็บไซต์ใช้เวลา 4.00 น. เวลานิวยอร์ก หรือ 5.00 น. เวลาลอนดอน) ทำให้ราคาเปิด สูง ต่ำ และ ราคาปิดที่แสดงในเว็บไซต์ของเราจะแตกต่างจากเว็บไซต์อื่นๆ เนื่องจากการกำหนดเวลาปิดของตลาด"
-
-msgid "points"
-msgstr "จุด"
 
 msgid "second"
 msgstr "วินาที"
@@ -10968,6 +10988,15 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Account Limits"
 msgstr "วงเงินในบัญชี"
+
+#~ msgid "Deposit of"
+#~ msgstr "การฝากของ"
+
+#~ msgid "is required. Current spread"
+#~ msgstr "ต้องการสเปรดปัจจุบัน"
+
+#~ msgid "points"
+#~ msgstr "จุด"
 
 #~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 #~ msgstr "โปรดส่งเอกสารต่อไปนี้มายัง %1 เพื่อตรวจสอบตัวตนและยืนยันบัญชีของท่าน:"
@@ -15420,9 +15449,6 @@ msgstr "วงเงินในบัญชี"
 #, fuzzy
 #~ msgid "Delete for Breach"
 #~ msgstr "ลบสำหรับการฝ่าฝืน"
-
-#~ msgid "Deposit of %1 %2 is required. Current spread: %3 points"
-#~ msgstr "การฝากเงินของ %1 %2 มีความจำเป็น สเปรตปัจจุบัน: %3 พอยต์"
 
 #~ msgid "Email Verification"
 #~ msgstr "การตรวจสอบอีเมล์"

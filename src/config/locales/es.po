@@ -1916,6 +1916,9 @@ msgstr "Cambiar la contraseña utilizada para depósitos y retiradas."
 msgid "Change your main login password."
 msgstr "Cambiar su contraseña de inicio de sesión principal."
 
+msgid "Charitable Activities"
+msgstr ""
+
 msgid "Chart"
 msgstr "Gráfico"
 
@@ -2548,8 +2551,10 @@ msgstr "Depositar y retirar fondos"
 msgid "Deposit into"
 msgstr "Depositar a"
 
-msgid "Deposit of"
-msgstr "Depósito de"
+#, fuzzy
+#| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
+msgid "Deposit of %1 is required. Current spread: %2 points"
+msgstr "Se require un depósito de %1 %2. Spread actual: %3 puntos"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Depositar a o retirar dinero de su cuenta a través de transferencia bancaria, tarjeta de crédito o dinero electrónico."
@@ -4827,8 +4832,14 @@ msgstr "Oficina de Kuala Lumpur"
 msgid "L. Event of Default"
 msgstr ""
 
+msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
+msgstr ""
+
 msgid "Languages"
 msgstr "Idiomas"
+
+msgid "Languages Classes for Refugees (LCFR)"
+msgstr ""
 
 msgid "Last Digit Prediction"
 msgstr "Predicción del último dígito"
@@ -5566,6 +5577,11 @@ msgid "Now"
 msgstr "Ahora"
 
 msgid "Number of ticks"
+msgstr "Número de intervalos"
+
+#, fuzzy
+#| msgid "Number of ticks"
+msgid "Number of ticks:"
 msgstr "Número de intervalos"
 
 msgid "O. Representations and Warranties"
@@ -6875,6 +6891,11 @@ msgstr ""
 msgid "Select market"
 msgstr "Seleccione mercado"
 
+#, fuzzy
+#| msgid "Select market"
+msgid "Select market:"
+msgstr "Seleccione mercado"
+
 msgid "Select your market"
 msgstr "Seleccione su mercado"
 
@@ -7658,7 +7679,7 @@ msgstr "El Programa"
 msgid "The STP account provides you with the tightest spreads and connects you directly to the market."
 msgstr ""
 
-msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr ""
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
@@ -8863,6 +8884,9 @@ msgstr "También ofrecemos estructuras de pago específicas para los afiliados q
 msgid "We analyse your pending orders."
 msgstr ""
 
+msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
+msgstr ""
+
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "Estamos autorisados y regulados por Malta Financial Services Authority (\"MFSA\") bajo del Acto de servicios de inversión, Investment Services Act (Cap. 370, Laws of Malta) (el \"Acto\"), para efectuar operaciones de inversión. Estamos autorizados por el MFSA a negociar por cuenta propia (es decir, oferecer y actuar como contraparte de todas las operaciones) y para ejecutar ordenes en nombre de otras personas, ambos servicios están relacionados con los productos financieros derivados (principalmente opciones binarias) vinculados a divisas, índices, acciones y otros productos financieros o activos (\"Productos Financieros\"). No estamos autorizados a y no ofrecemos ni proporcionamos asesoramiento sobre inversiones o otros servicios distintos a los descritos arriba. Si usted siente que necesita asesoramiento sobre inversiones o servicios de inversión distintos a los descritos anteriormente, debe ponerse en contacto con un asesor financiero independiente."
 
@@ -9954,9 +9978,6 @@ msgstr ""
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
 msgstr ""
 
-msgid "is required. Current spread"
-msgstr "es requerido. El spread actual"
-
 #, fuzzy
 #| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
@@ -10022,9 +10043,6 @@ msgstr "del sitio web."
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "página para ver el momento exacto de liquidación de todos los contratos. Otros sitios pueden adoptar diferentes convenciones (por ejemplo, algunos sitios web eligen las 4 en punto, hora de Nueva York o las 5 en punto, hora de Londres). Por esto, los precios de apertura, los máximos, los mínimos y los de cierre en nuestro sitio pueden ser diferentes a los de otros sitios web, debido a la convención de la hora de cierre del mercado."
-
-msgid "points"
-msgstr "puntos"
 
 msgid "second"
 msgstr "segundo"
@@ -12160,6 +12178,15 @@ msgstr "Acuerdo con los términos y condiciones"
 
 msgid "Account Limits"
 msgstr "Límites de la cuenta"
+
+#~ msgid "Deposit of"
+#~ msgstr "Depósito de"
+
+#~ msgid "is required. Current spread"
+#~ msgstr "es requerido. El spread actual"
+
+#~ msgid "points"
+#~ msgstr "puntos"
 
 #, fuzzy
 #~| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -16933,9 +16960,6 @@ msgstr "Límites de la cuenta"
 
 #~ msgid "Delete for Breach"
 #~ msgstr "Cancelación por Incumplimiento"
-
-#~ msgid "Deposit of %1 %2 is required. Current spread: %3 points"
-#~ msgstr "Se require un depósito de %1 %2. Spread actual: %3 puntos"
 
 #~ msgid "Email Verification"
 #~ msgstr "Verificación de email"
