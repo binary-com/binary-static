@@ -219,6 +219,7 @@ const BinarySocketClass = () => {
         }
 
         binary_socket.onopen = () => {
+            Notifications.hide('CONNECTION_ERROR');
             const api_token = getLoginToken();
             if (api_token && !authorized && localStorage.getItem('client.tokens')) {
                 binary_socket.send(JSON.stringify({ authorize: api_token }));

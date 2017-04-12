@@ -1,4 +1,5 @@
-const commonTrading    = require('./common');
+const DigitInfo        = require('./charts/digit_info');
+const showHighchart    = require('./charts/chart_frame').showHighchart;
 const getLanguage      = require('../../base/language').get;
 const State            = require('../../base/storage').State;
 const Url              = require('../../base/url');
@@ -74,7 +75,7 @@ const TradingAnalysis = (() => {
         const content_id = document.getElementById(`${current_tab}-content`);
 
         const analysis_nav_element = document.querySelector('#trading_bottom_content #betsBottomPage');
-        commonTrading.toggleActiveNavMenuElement(analysis_nav_element, current_link.parentElement);
+        toggleActiveNavMenuElement(analysis_nav_element, current_link.parentElement);
         toggleActiveAnalysisTabs();
 
         JapanPortfolio.init();
@@ -83,15 +84,23 @@ const TradingAnalysis = (() => {
         } else {
             JapanPortfolio.hide();
             if (current_tab === 'tab_graph') {
-                commonTrading.showHighchart();
+                showHighchart();
             } else if (current_tab === 'tab_last_digit') {
-                const underlying = $('[name=underlying] option:selected').val() || $('#underlying').find('option:selected').val();
-                const tick = $('[name=tick_count]').val() || 100;
+                const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
+                const tick = $('#tick_count').val() || 100;
                 BinarySocket.send({
                     ticks_history: underlying,
                     count        : tick.toString(),
                     end          : 'latest',
-                    req_id       : 1,
+                }, {
+                    callback: (response) => {
+                        const type = response.msg_type;
+                        if (type === 'tick') {
+                            DigitInfo.updateChart(response);
+                        } else if (type === 'history') {
+                            DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
+                        }
+                    },
                 });
             } else {
                 $.ajax({
@@ -209,6 +218,21 @@ const TradingAnalysis = (() => {
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $container.find('#explanation_image').removeClass(hidden_class);
+        }
+    };
+
+    /*
+     * toggle active class of menu
+     */
+    const toggleActiveNavMenuElement = (nav, event_element) => {
+        const li_elements = nav.getElementsByTagName('li');
+        const classes = event_element.classList;
+
+        if (!classes.contains('active')) {
+            for (let i = 0, len = li_elements.length; i < len; i++) {
+                li_elements[i].classList.remove('active');
+            }
+            classes.add('active');
         }
     };
 
