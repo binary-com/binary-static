@@ -240,6 +240,11 @@ const MBProcess = (() => {
     const processProposal = (response) => {
         const req_id = MBPrice.getReqId();
         if (response.req_id === req_id) {
+            if (response.error) {
+                MBNotifications.show({ text: response.error.message, uid: 'PROPOSAL', dismissible: false });
+                return;
+            }
+            MBNotifications.hide('PROPOSAL');
             MBPrice.display(response);
         }
     };

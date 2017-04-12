@@ -30,7 +30,7 @@ const Process_Beta = (() => {
      * and underlying list
      */
     const processActiveSymbols_Beta = () => {
-        BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
+        BinarySocket.send({ active_symbols: 'brief' }, { forced: true }).then((response) => {
             // populate the Symbols object
             Symbols.details(response);
 
