@@ -17,27 +17,6 @@ const elementTextContent = require('../../common_functions/common_functions').el
  * This contains common functions we need for processing the response
  */
 
-if (typeof window === 'undefined') {
-    // eslint-disable-next-line
-    Element = () => {}; // jshint ignore:line
-}
-
-Element.prototype.hide = function() {
-    this.style.display = 'none';
-};
-
-Element.prototype.show = function() {
-    this.style.display = '';
-};
-
-if (!('remove' in Element.prototype)) {
-    Element.prototype.remove = function() {
-        if (this.parentNode) {
-            this.parentNode.removeChild(this);
-        }
-    };
-}
-
 const commonTrading = (() => {
     'use strict';
 

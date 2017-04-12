@@ -23,11 +23,7 @@ const Message_Beta = (() => {
         }
         if (response) {
             const type = response.msg_type;
-            if (type === 'active_symbols') {
-                Process_Beta.processActiveSymbols_Beta(response);
-                AssetIndexUI.setActiveSymbols(response);
-                TradingTimesUI.setActiveSymbols(response);
-            } else if (type === 'contracts_for') {
+            if (type === 'contracts_for') {
                 Notifications.hide('CONNECTION_ERROR');
                 Process_Beta.processContract_Beta(response);
                 window.contracts_for = response;

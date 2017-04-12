@@ -2,12 +2,11 @@ const TradingAnalysis_Beta      = require('./analysis');
 const TradingEvents_Beta        = require('./event');
 const Message_Beta              = require('./message');
 const Price_Beta                = require('./price');
-const forgetTradingStreams_Beta = require('./process').forgetTradingStreams_Beta;
+const Process_Beta              = require('./process');
 const commonTrading             = require('../common');
 const chartFrameCleanup         = require('../charts/chart_frame').chartFrameCleanup;
 const displayCurrencies         = require('../currency');
 const Defaults                  = require('../defaults');
-const processActiveSymbols      = require('../process').processActiveSymbols;
 const PortfolioInit             = require('../../user/account/portfolio/portfolio.init');
 const ViewPopup                 = require('../../user/view_popup/view_popup');
 const BinaryPjax                = require('../../../base/binary_pjax');
@@ -42,7 +41,7 @@ const TradePage_Beta = (() => {
 
         BinarySocket.send({ payout_currencies: 1 }).then(() => {
             displayCurrencies();
-            processActiveSymbols();
+            Process_Beta.processActiveSymbols_Beta();
         });
 
         if (document.getElementById('websocket_form')) {
@@ -174,7 +173,7 @@ const TradePage_Beta = (() => {
     const onUnload = () => {
         State.remove('is_beta_trading');
         events_initialized = 0;
-        forgetTradingStreams_Beta();
+        Process_Beta.forgetTradingStreams_Beta();
         BinarySocket.clear();
         Defaults.clear();
         PortfolioInit.onUnload();

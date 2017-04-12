@@ -15,6 +15,8 @@ const GetTicks                       = require('../get_ticks');
 const Symbols                        = require('../symbols');
 const setFormPlaceholderContent_Beta = require('../set_values').setFormPlaceholderContent_Beta;
 const Tick                           = require('../tick');
+const AssetIndexUI                   = require('../../resources/asset_index/asset_index.ui');
+const TradingTimesUI                 = require('../../resources/trading_times/trading_times.ui');
 const localize                       = require('../../../base/localize').localize;
 const State                          = require('../../../base/storage').State;
 const elementInnerHtml               = require('../../../common_functions/common_functions').elementInnerHtml;
@@ -27,17 +29,21 @@ const Process_Beta = (() => {
      * This function process the active symbols to get markets
      * and underlying list
      */
-    const processActiveSymbols_Beta = (data) => {
-        // populate the Symbols object
-        Symbols.details(data);
+    const processActiveSymbols_Beta = () => {
+        BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
+            // populate the Symbols object
+            Symbols.details(response);
 
-        const market = commonTrading.getDefaultMarket();
+            const market = commonTrading.getDefaultMarket();
 
-        // store the market
-        Defaults.set('market', market);
+            // store the market
+            Defaults.set('market', market);
 
-        commonTrading.displayMarkets('contract_markets', Symbols.markets(), market);
-        processMarket_Beta();
+            commonTrading.displayMarkets('contract_markets', Symbols.markets(), market);
+            processMarket_Beta();
+            AssetIndexUI.setActiveSymbols(response);
+            TradingTimesUI.setActiveSymbols(response);
+        });
     };
 
 
