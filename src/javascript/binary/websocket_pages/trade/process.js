@@ -1,19 +1,17 @@
 const moment                    = require('moment');
 const TradingAnalysis           = require('./analysis');
-const Barriers                  = require('./barriers');
-const DigitInfo                 = require('./charts/digit_info');
 const commonTrading             = require('./common');
 const processTradingTimesAnswer = require('./common_independent').processTradingTimesAnswer;
 const Contract                  = require('./contract');
 const Defaults                  = require('./defaults');
 const Durations                 = require('./duration');
+const GetTicks                  = require('./get_ticks');
+const Notifications             = require('./notifications');
 const Price                     = require('./price');
-const Purchase                  = require('./purchase');
 const setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
 const StartDates                = require('./starttime').StartDates;
 const Symbols                   = require('./symbols');
 const Tick                      = require('./tick');
-const TickDisplay               = require('./tick_trade');
 const localize                  = require('../../base/localize').localize;
 const State                     = require('../../base/storage').State;
 const elementInnerHtml          = require('../../common_functions/common_functions').elementInnerHtml;
@@ -26,43 +24,42 @@ const Process = (() => {
      * This function process the active symbols to get markets
      * and underlying list
      */
-    const processActiveSymbols = (data) => {
-        // populate the Symbols object
-        Symbols.details(data);
+    const processActiveSymbols = () => {
+        BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
+            // populate the Symbols object
+            Symbols.details(response);
 
-        const market = commonTrading.getDefaultMarket();
+            const market = commonTrading.getDefaultMarket();
 
-        // store the market
-        Defaults.set('market', market);
+            // store the market
+            Defaults.set('market', market);
 
-        commonTrading.displayMarkets('contract_markets', Symbols.markets(), market);
-        processMarket();
+            commonTrading.displayMarkets('contract_markets', Symbols.markets(), market);
+            processMarket();
+        });
     };
 
 
     /*
      * Function to call when market has changed
      */
-    const processMarket = (flag) => {
+    const processMarket = () => {
         // we can get market from sessionStorage as allowed market
         // is already set when this is called
         let market = Defaults.get('market'),
             symbol = Defaults.get('underlying');
-        const update_page = Symbols.needpageUpdate() || flag;
 
         // change to default market if query string contains an invalid market
         if (!market || !Symbols.underlyings()[market]) {
             market = commonTrading.getDefaultMarket();
             Defaults.set('market', market);
         }
-        if (update_page && (!symbol || !Symbols.underlyings()[market][symbol])) {
+        if ((!symbol || !Symbols.underlyings()[market][symbol])) {
             symbol = undefined;
         }
         commonTrading.displayUnderlyings('underlying', Symbols.underlyings()[market], symbol);
 
-        if (update_page) {
-            processMarketUnderlying();
-        }
+        processMarketUnderlying();
     };
 
     /*
@@ -85,7 +82,7 @@ const Process = (() => {
         // forget the old tick id i.e. close the old tick stream
         processForgetTicks();
         // get ticks for current underlying
-        Tick.request(underlying);
+        GetTicks.request(underlying);
 
         Tick.clean();
 
@@ -93,9 +90,17 @@ const Process = (() => {
 
         BinarySocket.clearTimeouts();
 
-        Contract.getContracts(underlying);
+        getContracts(underlying);
 
         commonTrading.displayTooltip(Defaults.get('market'), underlying);
+    };
+
+    const getContracts = (underlying) => {
+        BinarySocket.send({ contracts_for: underlying }).then((response) => {
+            Notifications.hide('CONNECTION_ERROR');
+            processContract(response);
+            window.contracts_for = response;
+        });
     };
 
     /*
@@ -265,39 +270,6 @@ const Process = (() => {
         });
     };
 
-    /*
-     * Function to process ticks stream
-     */
-    const processTick = (tick) => {
-        const symbol = sessionStorage.getItem('underlying');
-        if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
-            Tick.details(tick);
-            Tick.display();
-            if (tick.tick) {
-                DigitInfo.updateChart(tick);
-            }
-            TickDisplay.updateChart(tick);
-            Purchase.updateSpotList();
-            if (!Barriers.isBarrierUpdated()) {
-                Barriers.display();
-                Barriers.setBarrierUpdate(true);
-            }
-            commonTrading.updateWarmChart();
-        } else {
-            DigitInfo.updateChart(tick);
-        }
-    };
-
-    const processProposal = (response) => {
-        const form_id = Price.getFormId();
-        if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
-            response.echo_req.passthrough.form_id === form_id) {
-            commonTrading.hideOverlayContainer();
-            Price.display(response, Contract.contractType()[Contract.form()]);
-            commonTrading.hidePriceOverlay();
-        }
-    };
-
     const processTradingTimes = (response) => {
         processTradingTimesAnswer(response);
         Price.processPriceRequest();
@@ -358,8 +330,6 @@ const Process = (() => {
         processContractForm : processContractForm,
         forgetTradingStreams: forgetTradingStreams,
         processForgetTicks  : processForgetTicks,
-        processTick         : processTick,
-        processProposal     : processProposal,
         processTradingTimes : processTradingTimes,
         onExpiryTypeChange  : onExpiryTypeChange,
         onDurationUnitChange: onDurationUnitChange,

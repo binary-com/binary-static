@@ -50,7 +50,7 @@ const ViewPopup = (() => {
 
         if (btn_view) {
             ViewPopupUI.disableButton($(btn_view));
-            ViewPopupUI.cleanup(true);
+            ViewPopupUI.cleanup();
         }
 
         getContract();

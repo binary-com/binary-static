@@ -129,7 +129,6 @@ const DigitInfo = (() => {
                 ticks_history: symbol,
                 end          : 'latest',
                 count        : count,
-                req_id       : 2,
             };
             if (chart.series[0].name !== symbol) {
                 if ($('#underlying').find('option:selected').val() !== $('#digit_underlying').val()) {
@@ -141,7 +140,16 @@ const DigitInfo = (() => {
                     stream_id = null;
                 }
             }
-            BinarySocket.send(request);
+            BinarySocket.send(request, {
+                callback: (response) => {
+                    const type = response.msg_type;
+                    if (type === 'tick') {
+                        updateChart(response);
+                    } else if (type === 'history') {
+                        showChart(response.echo_req.ticks_history, response.history.prices);
+                    }
+                },
+            });
         };
         $('#digit_underlying, #tick_count').on('change', getLatest).addClass('unbind_later');
     };
@@ -243,14 +251,14 @@ const DigitInfo = (() => {
     };
 
     const updateChart = (tick) => {
-        if (tick.req_id === 2) {
+        if (stream_id) {
             if (chart.series[0].name === tick.tick.symbol) {
                 stream_id = tick.tick.id || null;
                 update(tick.tick.symbol, tick.tick.quote);
             } else {
                 BinarySocket.send({ forget: (tick.tick.id).toString() });
             }
-        } else if (!stream_id) {
+        } else {
             update(tick.tick.symbol, tick.tick.quote);
         }
     };
