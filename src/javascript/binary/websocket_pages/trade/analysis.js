@@ -190,10 +190,6 @@ const TradingAnalysis = (() => {
                 image1: 'up-down-1.svg',
                 image2: 'up-down-2.svg',
             },
-            spreads: {
-                image1: 'spreads-1.svg',
-                image2: 'spreads-2.svg',
-            },
             evenodd: {
                 image1: 'evenodd-1.svg',
                 image2: 'evenodd-2.svg',

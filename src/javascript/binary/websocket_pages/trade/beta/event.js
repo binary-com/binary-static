@@ -12,7 +12,6 @@ const commonTrading                  = require('../common');
 const getStartDateNode               = require('../common_independent').getStartDateNode;
 const BinaryPjax                     = require('../../../base/binary_pjax');
 const dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
-const elementTextContent             = require('../../../common_functions/common_functions').elementTextContent;
 const isVisible                      = require('../../../common_functions/common_functions').isVisible;
 const onlyNumericOnKeypress          = require('../../../common_functions/event_handler');
 const TimePicker                     = require('../../../components/time_picker');
@@ -295,10 +294,6 @@ const TradingEvents_Beta = (() => {
         if (currency_element) {
             currency_element.addEventListener('change', (e) => {
                 Defaults.set('currency', e.target.value);
-                const stop_type_dollar_label = document.getElementById('stop_type_dollar_label');
-                if (stop_type_dollar_label && isVisible(stop_type_dollar_label)) {
-                    elementTextContent(stop_type_dollar_label, e.target.value);
-                }
                 Price_Beta.processPriceRequest_Beta();
             });
         }
@@ -388,66 +383,6 @@ const TradingEvents_Beta = (() => {
         if (prediction_element) {
             prediction_element.addEventListener('change', commonTrading.debounce((e) => {
                 Defaults.set('prediction', e.target.value);
-                Price_Beta.processPriceRequest_Beta();
-                commonTrading.submitForm(document.getElementById('websocket_form'));
-            }));
-        }
-
-        /*
-         * attach an event to change in amount per point for spreads
-         */
-        const amount_per_point_element = document.getElementById('amount_per_point');
-        if (amount_per_point_element) {
-            amount_per_point_element.addEventListener('input', commonTrading.debounce((e) => {
-                if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(2);
-                }
-                Defaults.set('amount_per_point', e.target.value);
-                Price_Beta.processPriceRequest_Beta();
-                commonTrading.submitForm(document.getElementById('websocket_form'));
-            }));
-        }
-
-        /*
-         * attach an event to change in stop type for spreads
-         */
-        const stopTypeEvent = (e) => {
-            Defaults.set('stop_type', e.target.value);
-            Price_Beta.processPriceRequest_Beta();
-        };
-
-        const stop_type_element = document.querySelectorAll('input[name="stop_type"]');
-        if (stop_type_element) {
-            for (let i = 0, len = stop_type_element.length; i < len; i++) {
-                stop_type_element[i].addEventListener('click', stopTypeEvent);
-            }
-        }
-
-        /*
-         * attach an event to change in stop loss input value
-         */
-        const stop_loss_element = document.getElementById('stop_loss');
-        if (stop_loss_element) {
-            stop_loss_element.addEventListener('input', commonTrading.debounce((e) => {
-                if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(2);
-                }
-                Defaults.set('stop_loss', e.target.value);
-                Price_Beta.processPriceRequest_Beta();
-                commonTrading.submitForm(document.getElementById('websocket_form'));
-            }));
-        }
-
-        /*
-         * attach an event to change in stop profit input value
-         */
-        const stop_profit_element = document.getElementById('stop_profit');
-        if (stop_profit_element) {
-            stop_profit_element.addEventListener('input', commonTrading.debounce((e) => {
-                if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(2);
-                }
-                Defaults.set('stop_profit', e.target.value);
                 Price_Beta.processPriceRequest_Beta();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));

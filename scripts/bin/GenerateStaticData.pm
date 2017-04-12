@@ -148,9 +148,6 @@ sub _texts {
         push @texts, localize('Potential Payout');
         push @texts, localize('Total Cost');
         push @texts, localize('Potential Profit');
-        push @texts, localize('Amount per point');
-        push @texts, localize('Stop-loss');
-        push @texts, localize('Stop-profit');
         push @texts, localize('View');
         push @texts, localize('Statement');
         push @texts, localize('Tick');
@@ -158,7 +155,6 @@ sub _texts {
         push @texts, localize('Final price');
         push @texts, localize('Long');
         push @texts, localize('Short');
-        push @texts, localize('Deposit of [_1] is required. Current spread: [_2] points');
         push @texts, localize('Chart');
         push @texts, localize('Explanation');
         push @texts, localize('Last Digit Stats');

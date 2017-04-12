@@ -14,7 +14,6 @@ const ViewPopup = (() => {
     'use strict';
 
     let contract_id,
-        contract_type,
         contract,
         is_sold,
         is_sell_clicked,
@@ -30,13 +29,11 @@ const ViewPopup = (() => {
 
     const popupbox_id   = 'inpage_popup_content_box';
     const wrapper_id    = 'sell_content_wrapper';
-    const win_status_id = 'contract_win_status';
     const hidden_class  = 'hidden';
 
     const init = (button) => {
         btn_view               = button;
         contract_id            = $(btn_view).attr('contract_id');
-        contract_type          = '';
         contract               = {};
         is_sold                = false;
         is_sell_clicked        = false;
@@ -72,9 +69,9 @@ const ViewPopup = (() => {
 
         $.extend(contract, response.proposal_open_contract);
 
-        if (contract && contract_type) {
+        if (contract) {
             if (!document.getElementById(wrapper_id)) return;
-            ViewPopup[`${contract_type}Update`]();
+            normalUpdate();
             return;
         }
 
@@ -84,92 +81,8 @@ const ViewPopup = (() => {
             getCorporateActions();
         }
 
-        // ----- Spread -----
-        if (contract.shortcode.toUpperCase().indexOf('SPREAD') === 0) {
-            contract_type = 'spread';
-            spreadShowContract();
-        } else { // ----- Normal -----
-            contract_type = 'normal';
-            normalShowContract();
-        }
+        normalShowContract();
     };
-
-    // ===== Contract: Spread =====
-    const spreadShowContract = () => {
-        setLoadingState(false);
-
-        spreadSetValues();
-
-        if (!$container) {
-            $container = spreadMakeTemplate();
-        }
-
-        $container.find('#entry_level').text(contract.entry_level);
-        $container.find('#per_point').text(contract.amount_per_point);
-
-        spreadUpdate();
-    };
-
-    const spreadSetValues = () => {
-        contract.is_ended = contract.is_settleable || contract.is_sold;
-        contract.status = localize(contract.is_ended ? 'Closed' : 'Open');
-    };
-
-    const spreadUpdate = () => {
-        spreadSetValues();
-
-        containerSetText('status',            contract.status, { class: contract.is_ended ? 'loss' : 'profit' });
-        containerSetText('stop_loss_level',   contract.stop_loss_level);
-        containerSetText('stop_profit_level', contract.stop_profit_level);
-        containerSetText('pl_value',          parseFloat(contract.current_value_in_dollar).toFixed(2), { class: +contract.current_value_in_dollar >= 0 ? 'profit' : 'loss' });
-        containerSetText('pl_point',          parseFloat(contract.current_value_in_point).toFixed(2));
-
-        if (!contract.is_ended) {
-            containerSetText('sell_level', contract.current_level);
-        } else {
-            spreadContractEnded(+contract.current_value_in_dollar >= 0);
-        }
-
-        sellSetVisibility(!is_sell_clicked && !contract.is_ended);
-    };
-
-    const spreadContractEnded = () => {
-        $container.find('#sell_level').parent('tr').addClass(hidden_class);
-        $container.find('#exit_level').text(contract.exit_level).parent('tr').removeClass(hidden_class);
-        sellSetVisibility(false);
-    };
-
-    const spreadMakeTemplate = () => {
-        $container = $('<div/>');
-        $container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: localize('Contract Information') }));
-
-        const $table = $('<table><tbody></tbody></table>');
-        const tbody = spreadRow('Status',    'status', (contract.is_ended ? 'loss' : 'profit')) +
-            spreadRow('Entry Level',       'entry_level') +
-            spreadRow('Exit Level',        'exit_level', '', '', !contract.is_ended) +
-            spreadRow('Stop Loss Level',   'stop_loss_level') +
-            spreadRow('Stop Profit Level', 'stop_profit_level') +
-            spreadRow('Current Level',     'sell_level', '', '', contract.is_ended) +
-            spreadRow('Amount Per Point',  'per_point') +
-            spreadRow('Profit/Loss',       'pl_value', (contract.profit >= 0 ? 'profit' : 'loss'), ` (${contract.currency})`) +
-            spreadRow('Profit/Loss (points)', 'pl_point');
-
-        $table.find('tbody').append(tbody);
-        $container.append(
-            $('<div/>', { id: wrapper_id })
-            .append($('<div/>', { id: 'spread_table' }).append($table))
-            .append($('<div/>', { id: 'errMsg', class: `notice-msg ${hidden_class}` }))
-            .append($('<div/>', { id: win_status_id, class: hidden_class }))
-            .append($('<div/>', { id: 'contract_sell_wrapper', class: hidden_class })));
-
-        ViewPopupUI.showInpagePopup(`<div class="${popupbox_id}">${$container.html()}</div>`, 'spread_popup', '#sell_bet_desc, #sell_content_wrapper');
-
-        return $(`#${wrapper_id}`);
-    };
-
-    const spreadRow = (label, id, classname, label_no_localize, is_hidden) => (
-        `<tr${(is_hidden ? ` class="${hidden_class}"` : '')}><td>${localize(label)}${(label_no_localize || '')}</td><td${(id ? ` id="${id}"` : '')}${(classname ? ` class="${classname}"` : '')}></td></tr>`
-    );
 
     // ===== Contract: Normal =====
     const normalShowContract = () => {
@@ -507,18 +420,14 @@ const ViewPopup = (() => {
         const is_exist = $container.find(`#${sell_wrapper_id}`).length > 0;
         if (show) {
             if (is_exist) return;
-            if (contract_type === 'spread') {
-                $container.find('#contract_sell_wrapper').removeClass(hidden_class).append(
-                    $('<p/>', { id: sell_wrapper_id, class: 'button' })
-                    .append($('<button/>', { id: sell_button_id, class: 'button', text: localize('Sell') })));
-            } else {
-                $container.find('#contract_sell_wrapper').removeClass(hidden_class)
-                    .append($('<div/>', { id: sell_wrapper_id })
-                        .append($('<button/>', { id: sell_button_id, class: 'button', text: localize('Sell at market') }))
-                        .append($('<div/>', { class: 'note' })
-                            .append($('<strong/>', { text: `${localize('Note')}: ` }))
-                            .append($('<span/>', { text: localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.') }))));
-            }
+
+            $container.find('#contract_sell_wrapper').removeClass(hidden_class)
+                .append($('<div/>', { id: sell_wrapper_id })
+                    .append($('<button/>', { id: sell_button_id, class: 'button', text: localize('Sell at market') }))
+                    .append($('<div/>', { class: 'note' })
+                        .append($('<strong/>', { text: `${localize('Note')}: ` }))
+                        .append($('<span/>', { text: localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.') }))));
+
             $container.find(`#${sell_button_id}`).unbind('click').click((e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -587,17 +496,13 @@ const ViewPopup = (() => {
         ViewPopupUI.forgetStreams();
         $container.find('#errMsg').addClass(hidden_class);
         sellSetVisibility(false);
-        if (contract_type === 'spread') {
-            getContract();
-        } else if (contract_type === 'normal') {
-            if (is_sell_clicked) {
-                containerSetText('contract_sell_message',
-                    `${localize('You have sold this contract at [_1] [_2]', [contract.currency, response.sell.sold_for])}
-                    <br />
-                    ${localize('Your transaction reference number is [_1]', [response.sell.transaction_id])}`);
-            }
-            getContract('no-subscribe');
+        if (is_sell_clicked) {
+            containerSetText('contract_sell_message',
+                `${localize('You have sold this contract at [_1] [_2]', [contract.currency, response.sell.sold_for])}
+                <br />
+                ${localize('Your transaction reference number is [_1]', [response.sell.transaction_id])}`);
         }
+        getContract('no-subscribe');
     };
 
     const responseProposal = (response) => {
@@ -629,8 +534,6 @@ const ViewPopup = (() => {
 
     return {
         init             : init,
-        spreadUpdate     : spreadUpdate,
-        normalUpdate     : normalUpdate,
         viewButtonOnClick: viewButtonOnClick,
     };
 })();

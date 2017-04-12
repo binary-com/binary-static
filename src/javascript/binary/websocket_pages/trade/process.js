@@ -17,7 +17,6 @@ const TickDisplay               = require('./tick_trade');
 const localize                  = require('../../base/localize').localize;
 const State                     = require('../../base/storage').State;
 const elementInnerHtml          = require('../../common_functions/common_functions').elementInnerHtml;
-const elementTextContent        = require('../../common_functions/common_functions').elementTextContent;
 
 const Process = (() => {
     'use strict';
@@ -164,8 +163,6 @@ const Process = (() => {
 
         displayPrediction();
 
-        displaySpreads();
-
         let r1;
         if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
             r1 = Durations.onStartDateChange(Defaults.get('date_start'));
@@ -186,12 +183,6 @@ const Process = (() => {
         if (make_price_request >= 0) {
             Price.processPriceRequest();
         }
-
-        if (Defaults.get('formname') === 'spreads') {
-            Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time', 'amount', 'amount_type');
-        } else {
-            Defaults.remove('amount_per_point', 'stop_type', 'stop_loss', 'stop_profit');
-        }
     };
 
     const displayPrediction = () => {
@@ -206,47 +197,6 @@ const Process = (() => {
         } else {
             prediction_element.hide();
             Defaults.remove('prediction');
-        }
-    };
-
-    const displaySpreads = () => {
-        const amount_type            = document.getElementById('amount_type');
-        const amount_per_point_label = document.getElementById('amount_per_point_label');
-        const amount                 = document.getElementById('amount');
-        const amount_per_point       = document.getElementById('amount_per_point');
-        const spread_container       = document.getElementById('spread_element_container');
-        const stop_type_dollar_label = document.getElementById('stop_type_dollar_label');
-        const expiry_type_row        = document.getElementById('expiry_row');
-
-        if (sessionStorage.getItem('formname') === 'spreads') {
-            amount_type.hide();
-            amount.hide();
-            expiry_type_row.hide();
-            amount_per_point_label.show();
-            amount_per_point.show();
-            spread_container.show();
-            elementTextContent(stop_type_dollar_label, document.getElementById('currency').value || Defaults.get('currency'));
-            if (Defaults.get('stop_type')) {
-                const el = document.querySelectorAll(`input[name="stop_type"][value="${Defaults.get('stop_type')}"]`);
-                if (el) {
-                    el[0].setAttribute('checked', 'checked');
-                }
-            } else {
-                Defaults.set('stop_type', document.getElementById('stop_type_points').checked ? 'point' : 'dollar');
-            }
-            if (Defaults.get('amount_per_point')) amount_per_point.value = Defaults.get('amount_per_point');
-            else Defaults.set('amount_per_point', amount_per_point.value);
-            if (Defaults.get('stop_loss')) document.getElementById('stop_loss').value = Defaults.get('stop_loss');
-            else Defaults.set('stop_loss', document.getElementById('stop_loss').value);
-            if (Defaults.get('stop_profit')) document.getElementById('stop_profit').value = Defaults.get('stop_profit');
-            else Defaults.set('stop_profit', document.getElementById('stop_profit').value);
-        } else {
-            amount_per_point_label.hide();
-            amount_per_point.hide();
-            spread_container.hide();
-            expiry_type_row.show();
-            amount_type.show();
-            amount.show();
         }
     };
 

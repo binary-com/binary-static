@@ -307,14 +307,6 @@
         &.EXPIRYMISS {
             background-image: url('../images/pages/trade/ends-outside_1.png');
         }
-        &.SPREADU {
-            background-image: url('../images/pages/trade/spreads.svg');
-            background-size: 2em;
-        }
-        &.SPREADD {
-            background-image: url('../images/pages/trade/spreads_1.svg');
-            background-size: 2em;
-        }
     }
     #contract_prices_container {
         .price_container {

@@ -75,15 +75,9 @@ const Purchase = (() => {
             }
             const profit_value = Math.round((payout_value - cost_value) * 100) / 100;
 
-            if (sessionStorage.getItem('formname') === 'spreads') {
-                elementInnerHtml(payout, `${localize('Stop-loss')} <p>${receipt.stop_loss_level}</p>`);
-                elementInnerHtml(cost,   `${localize('Amount per point')} <p>${receipt.amount_per_point}</p>`);
-                elementInnerHtml(profit, `${localize('Stop-profit')} <p>${receipt.stop_profit_level} </p>`);
-            } else {
-                elementInnerHtml(payout, `${localize('Potential Payout')} <p>${payout_value}</p>`);
-                elementInnerHtml(cost,   `${localize('Total Cost')} <p>${cost_value}</p>`);
-                elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
-            }
+            elementInnerHtml(payout, `${localize('Potential Payout')} <p>${payout_value}</p>`);
+            elementInnerHtml(cost,   `${localize('Total Cost')} <p>${cost_value}</p>`);
+            elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
 
             commonTrading.updateContractBalance(receipt.balance_after);
 
