@@ -126,7 +126,7 @@ const DigitInfo_Beta = (() => {
                 ticks_history: symbol,
                 end          : 'latest',
                 count        : count,
-                req_id       : 2 };
+            };
             if (chart.series[0].name !== symbol) {
                 if ($('#underlying').find('option:selected').val() !== $('#digit_underlying').val()) {
                     request.subscribe = 1;
@@ -137,7 +137,14 @@ const DigitInfo_Beta = (() => {
                     stream_id = null;
                 }
             }
-            BinarySocket.send(request);
+            BinarySocket.send(request, { callback: (response) => {
+                const type = response.msg_type;
+                if (type === 'tick') {
+                    updateChart(response);
+                } else if (type === 'history') {
+                    showChart(response.echo_req.ticks_history, response.history.prices);
+                }
+            } });
         };
         $('#digit_underlying, #tick_count').on('change', getLatest).addClass('unbind_later');
     };

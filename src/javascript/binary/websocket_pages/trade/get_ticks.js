@@ -1,10 +1,13 @@
-const TradingAnalysis = require('./analysis');
-const Barriers        = require('./barriers');
-const updateWarmChart = require('./common').updateWarmChart;
-const DigitInfo       = require('./charts/digit_info');
-const Purchase        = require('./purchase');
-const Tick            = require('./tick');
-const TickDisplay     = require('./tick_trade');
+const TradingAnalysis      = require('./analysis');
+const Barriers             = require('./barriers');
+const TradingAnalysis_Beta = require('./beta/analysis');
+const DigitInfo_Beta       = require('./beta/charts/digit_info');
+const updateWarmChart      = require('./common').updateWarmChart;
+const DigitInfo            = require('./charts/digit_info');
+const Purchase             = require('./purchase');
+const Tick                 = require('./tick');
+const TickDisplay          = require('./tick_trade');
+const State                = require('../../base/storage').State;
 
 const GetTicks = (() => {
     const request = (symbol) => {
@@ -17,15 +20,21 @@ const GetTicks = (() => {
         }, {
             callback: (response) => {
                 const type = response.msg_type;
+                const is_digit = State.get('is_trading') && TradingAnalysis.getActiveTab() === 'tab_last_digit';
+                const is_digit_beta = State.get('is_beta_trading') && TradingAnalysis_Beta.getActiveTab() === 'tab_last_digit';
                 if (type === 'tick') {
                     processTick(response);
-                    if (TradingAnalysis.getActiveTab() === 'tab_last_digit') {
+                    if (is_digit) {
                         DigitInfo.updateChart(response);
+                    } else if (is_digit_beta) {
+                        DigitInfo_Beta.updateChart(response);
                     }
                 } else if (type === 'history') {
                     processHistory(response);
-                    if (TradingAnalysis.getActiveTab() === 'tab_last_digit') {
+                    if (is_digit) {
                         DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
+                    } else if (is_digit_beta) {
+                        DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
                     }
                 }
             },
