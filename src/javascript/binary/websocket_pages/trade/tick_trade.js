@@ -69,7 +69,7 @@ const TickDisplay = (() => {
             x_indicators = {
                 _0: { label: 'Entry Spot', id: 'start_tick' },
             };
-            x_indicators['_' + exit_tick_index] = {
+            x_indicators[`_${exit_tick_index}`] = {
                 label: 'Exit Spot',
                 id   : 'exit_tick',
             };
@@ -78,7 +78,7 @@ const TickDisplay = (() => {
             x_indicators = {
                 _0: { label: 'Entry Spot', id: 'entry_tick' },
             };
-            x_indicators['_' + number_of_ticks] = {
+            x_indicators[`_${number_of_ticks}`] = {
                 label: 'Exit Spot',
                 id   : 'exit_tick',
             };
@@ -87,8 +87,8 @@ const TickDisplay = (() => {
             x_indicators = {
                 _0: { label: 'Tick 1', id: 'start_tick' },
             };
-            x_indicators['_' + exit_tick_index] = {
-                label: 'Tick ' + number_of_ticks,
+            x_indicators[`_${exit_tick_index}`] = {
+                label: `Tick ${number_of_ticks}`,
                 id   : 'last_tick',
             };
         } else {
@@ -112,7 +112,7 @@ const TickDisplay = (() => {
                 formatter: function() {
                     const new_y = this.y.toFixed(display_decimals);
                     const mom = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
-                    return mom + '<br/>' + display_symbol + ' ' + new_y;
+                    return `${mom}<br/>${display_symbol} ${new_y}`;
                 },
             },
             xAxis: {
@@ -175,7 +175,7 @@ const TickDisplay = (() => {
                 let final_barrier = barrier_tick.quote + parseFloat(barrier);
                 // sometimes due to rounding issues, result is 1.009999 while it should
                 // be 1.01
-                final_barrier = Number(Math.round(final_barrier + 'e' + display_decimals) + 'e-' + display_decimals);
+                final_barrier = Number(`${Math.round(`${final_barrier}e${display_decimals}`)}e-${display_decimals}`);
 
                 barrier_tick.quote = final_barrier;
             } else if (abs_barrier) {
@@ -185,7 +185,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-barrier',
                 value : barrier_tick.quote,
-                label : { text: 'Barrier (' + barrier_tick.quote + ')', align: 'center' },
+                label : { text: `Barrier (${barrier_tick.quote})`, align: 'center' },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
@@ -208,7 +208,7 @@ const TickDisplay = (() => {
                 value: calc_barrier,
                 color: 'green',
                 label: {
-                    text : 'Average (' + calc_barrier + ')',
+                    text : `Average (${calc_barrier})`,
                     align: 'center',
                 },
                 width : 2,
@@ -218,7 +218,7 @@ const TickDisplay = (() => {
         }
         const purchase_barrier = document.getElementById('contract_purchase_barrier');
         if (contract_barrier && purchase_barrier) {
-            elementInnerHtml(purchase_barrier, localize('Barrier') + ': ' + contract_barrier);
+            elementInnerHtml(purchase_barrier, `${localize('Barrier')}: ${contract_barrier}`);
         }
     };
 
@@ -275,14 +275,6 @@ const TickDisplay = (() => {
         updatePurchaseStatus(final_price, final_price - pnl, contract_status);
     };
 
-    const socketSend = (req) => {
-        if (!req.hasOwnProperty('passthrough')) {
-            req.passthrough = {};
-        }
-        req.passthrough.dispatch_to = 'ViewTickDisplay';
-        BinarySocket.send(req);
-    };
-
     const dispatch = (data) => {
         const tick_chart = document.getElementById('tick_chart');
 
@@ -291,7 +283,6 @@ const TickDisplay = (() => {
         }
 
         if (window.subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-            if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChart') return;
             window.responseID = data.tick.id;
             ViewPopupUI.storeSubscriptionID(window.responseID);
         }
@@ -358,7 +349,7 @@ const TickDisplay = (() => {
                     chart.series[0].addPoint([counter, tick.quote], true, false);
                     applicable_ticks.push(tick);
                     spots_list[tick.epoch] = tick.quote;
-                    const indicator_key = '_' + counter;
+                    const indicator_key = `_${counter}`;
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
                         x_indicators[indicator_key].index = counter;
                         add(x_indicators[indicator_key]);
@@ -394,7 +385,7 @@ const TickDisplay = (() => {
             } else {
                 request.end = contract.date_expiry;
             }
-            socketSend(request);
+            BinarySocket.send(request, { callback: dispatch });
         } else {
             dispatch(data);
         }

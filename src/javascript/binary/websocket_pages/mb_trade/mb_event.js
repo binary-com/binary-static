@@ -5,7 +5,6 @@ const MBProcess       = require('./mb_process');
 const MBTick          = require('./mb_tick');
 const TradingAnalysis = require('../trade/analysis');
 const debounce        = require('../trade/common').debounce;
-const Process         = require('../trade/process');
 const jpClient        = require('../../common_functions/country_base').jpClient;
 
 /*
@@ -44,7 +43,7 @@ const MBTradingEvents = (() => {
                     MBContract.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
-                    Process.processForgetTicks();
+                    MBProcess.processForgetTicks();
                     // get ticks for current underlying
                     MBTick.request(underlying);
                     MBContract.displayDescriptions();

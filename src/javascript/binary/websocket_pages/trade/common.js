@@ -109,7 +109,7 @@ const commonTrading = (() => {
                         a.setAttribute('menuitem', first);
                         ul.appendChild(fragment2);
                         ul.setAttribute('class', 'tm-ul-2');
-                        ul.setAttribute('id', el1[0] + '-submenu');
+                        ul.setAttribute('id', `${el1[0]}-submenu`);
 
                         if (flag) {
                             li.classList.add('active');
@@ -179,7 +179,7 @@ const commonTrading = (() => {
                     if (selected && selected === key2) {
                         option.setAttribute('selected', 'selected');
                     }
-                    elementTextContent(option, '\xA0\xA0\xA0\xA0' + elements[key].submarkets[key2].name);
+                    elementTextContent(option, `\xA0\xA0\xA0\xA0${elements[key].submarkets[key2].name}`);
                     fragment.appendChild(option);
                 }
             }
@@ -401,7 +401,7 @@ const commonTrading = (() => {
         if (node && type && payout) {
             const profit = payout - type;
             const return_percent = (profit / type) * 100;
-            const comment = localize('Net profit') + ': ' + formatMoney(currency, profit) + ' | ' + localize('Return') + ' ' + return_percent.toFixed(1) + '%';
+            const comment = `${localize('Net profit')}: ${formatMoney(currency, profit)} | ${localize('Return')} ${return_percent.toFixed(1)}%`;
 
             if (isNaN(profit) || isNaN(return_percent)) {
                 node.hide();
@@ -430,7 +430,7 @@ const commonTrading = (() => {
                 } else {
                     display_amount = parseFloat(stop_loss);
                 }
-                elementTextContent(node, localize('Deposit of') + ' ' + formatMoney(currency, display_amount) + ' ' + localize('is required. Current spread') + ': ' + point + ' ' + localize('points'));
+                elementTextContent(node, localize('Deposit of [_1] is required. Current spread: [_2] points', formatMoney(currency, display_amount), point));
             }
         }
     };
@@ -614,12 +614,12 @@ const commonTrading = (() => {
         const $cost   = $('#contract_purchase_cost');
         const $profit = $('#contract_purchase_profit');
 
-        $payout.html(localize('Buy price') + '<p>' + addComma(Math.abs(pnl)) + '</p>');
-        $cost.html(localize('Final price') + '<p>' + addComma(final_price) + '</p>');
+        $payout.html($('<div/>', { text: localize('Buy price') }).append($('<p/>', { text: addComma(Math.abs(pnl)) })));
+        $cost.html($('<div/>', { text: localize('Final price') }).append($('<p/>', { text: addComma(final_price) })));
         if (!final_price) {
-            $profit.html(localize('Loss') + '<p>' + addComma(pnl) + '</p>');
+            $profit.html($('<div/>', { text: localize('Loss') }).append($('<p/>', { text: addComma(pnl) })));
         } else {
-            $profit.html(localize('Profit') + '<p>' + addComma(Math.round((final_price - pnl) * 100) / 100) + '</p>');
+            $profit.html($('<div/>', { text: localize('Profit') }).append($('<p/>', { text: addComma(Math.round((final_price - pnl) * 100) / 100) })));
             updateContractBalance(Client.get('balance'));
         }
     };
@@ -693,10 +693,8 @@ const commonTrading = (() => {
     };
 
     const setChartSource = () => {
-        const ja = jpClient();
-        document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + getLanguage().toLowerCase() +
-      '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
-      '&hideFooter=' + (ja ? 'true' : 'false');
+        const is_ja = !!jpClient();
+        document.getElementById('chart_frame').src = `https://webtrader.binary.com?affiliates=true&instrument=${document.getElementById('underlying').value}&timePeriod=1t&gtm=true&lang=${getLanguage().toLowerCase()}&hideOverlay=${is_ja}&hideShare=${is_ja}&timezone=GMT+${(is_ja ? '9' : '0')}&hideFooter=${is_ja}`;
     };
 
     // ============= Functions used in /trading_beta =============
@@ -766,7 +764,7 @@ const commonTrading = (() => {
     const labelValue = (label_elem, label, value, no_currency) => {
         const currency = Client.get('currency');
         elementInnerHtml(label_elem, label);
-        const value_elem = document.getElementById(label_elem.id + '_value');
+        const value_elem = document.getElementById(`${label_elem.id}_value`);
         elementInnerHtml(value_elem, no_currency ? value : formatMoney(currency, value));
         value_elem.setAttribute('value', String(value).replace(/,/g, ''));
     };
@@ -793,10 +791,10 @@ const commonTrading = (() => {
         start_date_value = start_date_value === 'now' ? Math.floor(window.time._i / 1000) : start_date_value;
         end_time_value = end_time_value || '23:59:59';
 
-        if (Moment.utc(end_date_value + ' ' + end_time_value).unix() <= start_date_value) {
+        if (Moment.utc(`${end_date_value} ${end_time_value}`).unix() <= start_date_value) {
             $element.addClass('error-field');
             if (!document.getElementById('end_time_validation')) {
-                $('#expiry_type_endtime').append('<p class="error-msg" id="end_time_validation">' + localize('End time must be after start time.') + '</p>');
+                $('#expiry_type_endtime').append($('<p/>', { class: 'error-msg', id: 'end_time_validation', text: localize('End time must be after start time.') }));
             }
             return false;
         }

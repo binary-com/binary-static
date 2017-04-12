@@ -20,8 +20,8 @@ const Login = (() => {
         const server_url = localStorage.getItem('config.server_url');
         const language = getLanguage();
         return ((server_url && /qa/.test(server_url)) ?
-            'https://www.' + server_url.split('.')[1] + '.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + language :
-            'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + language
+            `https://www.${server_url.split('.')[1]}.com/oauth2/authorize?app_id=${getAppId()}&l=${language}` :
+            `https://oauth.binary.com/oauth2/authorize?app_id=${getAppId()}&l=${language}`
         );
     };
 

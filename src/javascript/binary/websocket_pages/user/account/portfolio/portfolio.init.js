@@ -3,7 +3,6 @@ const ViewPopup           = require('../../view_popup/view_popup');
 const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const localize            = require('../../../../base/localize').localize;
-const State               = require('../../../../base/storage').State;
 const urlParam            = require('../../../../base/url').param;
 const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
@@ -33,10 +32,14 @@ const PortfolioInit = (() => {
         $portfolio_loading.show();
         showLoadingImage($portfolio_loading);
         is_first_response = true;
-        BinarySocket.send({ portfolio: 1 });
+        BinarySocket.send({ portfolio: 1 }).then((response) => {
+            updatePortfolio(response);
+        });
         // Subscribe to transactions to auto update new purchases
-        BinarySocket.send({ transaction: 1, subscribe: 1 });
-        BinarySocket.send({ oauth_apps: 1 });
+        BinarySocket.send({ transaction: 1, subscribe: 1 }, { callback: transactionResponseHandler });
+        BinarySocket.send({ oauth_apps: 1 }).then((response) => {
+            updateOAuthApps(response);
+        });
         is_initialized = true;
 
         // Display ViewPopup according to contract_id in query string
@@ -52,18 +55,17 @@ const PortfolioInit = (() => {
             (jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
 
         const new_class = is_first ? '' : 'new';
-        $('#portfolio-body').prepend(
-            $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
-                '<td class="ref"><span' + GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' +
-                '<td class="payout"><strong>' + formatMoney(data.currency, data.payout) + '</strong></td>' +
-                '<td class="details">' + long_code + '</td>' +
-                '<td class="purchase"><strong>' + formatMoney(data.currency, data.buy_price) + '</strong></td>' +
-                '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' +
-                '<td class="button"><button class="button open_contract_details nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' +
-                '</tr>' +
-                '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
-                '<td colspan="6">' + long_code + '</td>' +
-                '</tr>'));
+        $('#portfolio-body')
+            .prepend(
+                $('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
+                    .append($('<td/>', { class: 'ref' }).append($(`<span ${GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id])} data-balloon-position="right">${data.transaction_id}</span>`)))
+                    .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: formatMoney(data.currency, data.payout) })))
+                    .append($('<td/>', { class: 'details', text: long_code }))
+                    .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { text: formatMoney(data.currency, data.buy_price) })))
+                    .append($('<td/>', { class: 'indicative' }).append($('<strong/>', { class: 'indicative_price', text: '--.--' })))
+                    .append($('<td/>', { class: 'button' }).append($('<button/>', { class: 'button open_contract_details nowrap', contract_id: data.contract_id, text: localize('View') }))))
+            .append(
+                $('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));
     };
 
     const updateBalance = () => {
@@ -112,7 +114,7 @@ const PortfolioInit = (() => {
             updateFooter();
 
             // request "proposal_open_contract"
-            BinarySocket.send({ proposal_open_contract: 1, subscribe: 1 });
+            BinarySocket.send({ proposal_open_contract: 1, subscribe: 1 }, { callback: updateIndicative });
         }
         // ready to show portfolio table
         $('#portfolio-loading').hide();
@@ -124,7 +126,9 @@ const PortfolioInit = (() => {
         if (response.hasOwnProperty('error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
-            BinarySocket.send({ portfolio: 1 });
+            BinarySocket.send({ portfolio: 1 }).then((res) => {
+                updatePortfolio(res);
+            });
         } else if (response.transaction.action === 'sell') {
             removeContract(response.transaction.contract_id);
         }
@@ -156,13 +160,14 @@ const PortfolioInit = (() => {
             removeContract(proposal.contract_id);
         } else {
             if (+proposal.is_valid_to_sell !== 1) {
-                no_resale_html = '<span>' + localize('Resale not offered') + '</span>';
+                no_resale_html = $('<span/>', { text: localize('Resale not offered') });
                 $td.addClass('no_resale');
             } else {
                 status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
                 $td.removeClass('no_resale');
             }
-            $td.html('<strong class="indicative_price' + status_class + '"">' + formatMoney(proposal.currency, values[proposal.contract_id].indicative) + '</strong>' + no_resale_html);
+            $td.html($('<strong/>', { class: `indicative_price ${status_class}`, text: formatMoney(proposal.currency, values[proposal.contract_id].indicative) })
+                .append(no_resale_html));
         }
 
         updateFooter();
@@ -204,32 +209,7 @@ const PortfolioInit = (() => {
     };
 
     const onLoad = () => {
-        if (!State.get('is_beta_trading') && !State.get('is_mb_trading')) {
-            BinarySocket.init({
-                onmessage: (msg) => {
-                    const response = JSON.parse(msg.data);
-                    const msg_type = response.msg_type;
-
-                    switch (msg_type) {
-                        case 'portfolio':
-                            PortfolioInit.updatePortfolio(response);
-                            break;
-                        case 'transaction':
-                            PortfolioInit.transactionResponseHandler(response);
-                            break;
-                        case 'proposal_open_contract':
-                            PortfolioInit.updateIndicative(response);
-                            break;
-                        case 'oauth_apps':
-                            PortfolioInit.updateOAuthApps(response);
-                            break;
-                        default:
-                            // msg_type is not what PortfolioInit handles, so ignore it.
-                    }
-                },
-            });
-        }
-        PortfolioInit.init();
+        init();
         ViewPopup.viewButtonOnClick('#portfolio-table');
     };
 
@@ -242,7 +222,6 @@ const PortfolioInit = (() => {
     };
 
     return {
-        init                      : init,
         updateBalance             : updateBalance,
         updatePortfolio           : updatePortfolio,
         updateIndicative          : updateIndicative,

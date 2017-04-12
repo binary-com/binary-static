@@ -4,7 +4,6 @@ const MBProcess       = require('./mb_process');
 const MBPurchase      = require('./mb_purchase');
 const MBTick          = require('./mb_tick');
 const Process         = require('../trade/process');
-const PortfolioInit   = require('../user/account/portfolio/portfolio.init');
 const GTM             = require('../../base/gtm');
 const State           = require('../../base/storage').State;
 
@@ -18,7 +17,7 @@ const MBMessage = (() => {
     const process = (msg) => {
         const response = JSON.parse(msg.data);
         if (!State.get('is_mb_trading')) {
-            Process.forgetTradingStreams();
+            MBProcess.forgetTradingStreams();
             return;
         }
         if (response) {
@@ -29,7 +28,7 @@ const MBMessage = (() => {
                 MBNotifications.hide('CONNECTION_ERROR');
                 MBContract.setContractsResponse(response);
                 MBProcess.processContract(response);
-            } else if (type === 'proposal') {
+            } else if (type === 'proposal_array') {
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
                 MBPurchase.display(response);
@@ -40,12 +39,6 @@ const MBMessage = (() => {
                 MBTick.processHistory(response);
             } else if (type === 'trading_times') {
                 Process.processTradingTimes(response);
-            } else if (type === 'portfolio') {
-                PortfolioInit.updatePortfolio(response);
-            } else if (type === 'proposal_open_contract') {
-                PortfolioInit.updateIndicative(response);
-            } else if (type === 'transaction') {
-                PortfolioInit.transactionResponseHandler(response);
             }
         }
     };
