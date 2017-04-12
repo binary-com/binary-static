@@ -6,8 +6,11 @@ const MBSymbols       = require('./mb_symbols');
 const MBTick          = require('./mb_tick');
 const TradingAnalysis = require('../trade/analysis');
 const commonTrading   = require('../trade/common');
+const BinaryPjax      = require('../../base/binary_pjax');
 const Client          = require('../../base/client');
+const getLanguage     = require('../../base/language').get;
 const localize        = require('../../base/localize').localize;
+const State           = require('../../base/storage').State;
 const jpClient        = require('../../common_functions/country_base').jpClient;
 
 const MBProcess = (() => {
@@ -15,6 +18,30 @@ const MBProcess = (() => {
 
     let market_status = '',
         symbols_timeout;
+
+    const getSymbols = () => {
+        BinarySocket.wait('website_status').then((website_status) => {
+            const landing_company_obj = State.get(['response', 'landing_company', 'landing_company']);
+            const allowed_markets     = Client.currentLandingCompany().legal_allowed_markets;
+            if (Client.isLoggedIn() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
+                BinaryPjax.load('trading');
+                return;
+            }
+            const req = {
+                active_symbols: 'brief',
+                product_type  : 'multi_barrier',
+            };
+            if (landing_company_obj) {
+                req.landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
+            } else if (website_status.website_status.clients_country === 'jp' || getLanguage() === 'JA') {
+                req.landing_company = 'japan';
+            }
+            BinarySocket.send(req, { forced: true, msg_type: 'active_symbols' }).then((response) => {
+                processActiveSymbols(response);
+            });
+        });
+    };
+
     /*
      * This function processes the active symbols to get markets
      * and underlying list
@@ -30,10 +57,9 @@ const MBProcess = (() => {
 
         const is_show_all  = Client.isLoggedIn() && !jpClient();
         const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
-        const update_page  = MBSymbols.needPageUpdate();
         let symbol = MBDefaults.get('underlying');
 
-        if (update_page && (!symbol || !symbols_list[symbol])) {
+        if (!symbol || !symbols_list[symbol]) {
             symbol = undefined;
             MBDefaults.remove('underlying');
         }
@@ -54,7 +80,7 @@ const MBProcess = (() => {
 
             if (symbol && !symbols_list[symbol].is_active) {
                 MBNotifications.show({ text: localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
-            } else if (update_page) {
+            } else {
                 MBProcess.processMarketUnderlying();
             }
         }
@@ -79,7 +105,7 @@ const MBProcess = (() => {
     const handleMarketClosed = () => {
         $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
         MBNotifications.show({ text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
-        symbols_timeout = setTimeout(() => { MBSymbols.getSymbols(1); }, 30000);
+        symbols_timeout = setTimeout(() => { getSymbols(1); }, 30000);
     };
 
     const handleMarketOpen = () => {
@@ -119,24 +145,29 @@ const MBProcess = (() => {
 
         BinarySocket.clearTimeouts();
 
-        MBContract.getContracts(underlying);
+        getContracts(underlying);
     };
 
-    /*
-     * Function to process ticks stream
-     */
-    const processTick = (tick) => {
-        if (tick.hasOwnProperty('error')) {
-            MBNotifications.show({ text: tick.error.message, uid: 'TICK_ERROR' });
-            return;
+    let contract_timeout;
+    const getContracts = (underlying) => {
+        const req = {
+            contracts_for: (underlying || MBDefaults.get('underlying')),
+            currency     : MBContract.getCurrency(),
+            product_type : 'multi_barrier',
+        };
+        if (!underlying) {
+            req.passthrough = { action: 'no-proposal' };
         }
-        const symbol = MBDefaults.get('underlying');
-        if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
-            MBTick.details(tick);
-            MBTick.display();
-            MBTick.updateWarmChart();
-        }
+        BinarySocket.send(req).then((response) => {
+            MBNotifications.hide('CONNECTION_ERROR');
+            MBContract.setContractsResponse(response);
+            processContract(response);
+        });
+        if (contract_timeout) clearContractTimeout();
+        contract_timeout = setTimeout(getContracts, 15000);
     };
+
+    const clearContractTimeout = () => { clearTimeout(contract_timeout); };
 
     /*
      * Function to display contract form for current underlying
@@ -174,7 +205,7 @@ const MBProcess = (() => {
             market_status = 'closed';
         } else {
             if (market_status === 'closed') {
-                MBSymbols.getSymbols(1);
+                getSymbols(1);
                 handleMarketOpen();
             }
             market_status = 'open';
@@ -194,7 +225,7 @@ const MBProcess = (() => {
             amount        : jpClient() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
             currency      : MBContract.getCurrency(),
             symbol        : MBDefaults.get('underlying'),
-            req_id        : MBPrice.getReqId(),
+            passthrough   : { req_id: MBPrice.getReqId() },
             date_expiry   : durations[1],
             contract_type : [],
             barriers      : [],
@@ -225,7 +256,7 @@ const MBProcess = (() => {
         // send request
         if (req.barriers.length) {
             MBPrice.addPriceObj(req);
-            BinarySocket.send(req);
+            BinarySocket.send(req, { callback: processProposal });
         }
 
         // all barriers expired
@@ -239,7 +270,7 @@ const MBProcess = (() => {
 
     const processProposal = (response) => {
         const req_id = MBPrice.getReqId();
-        if (response.req_id === req_id) {
+        if (response.passthrough.req_id === req_id) {
             if (response.error) {
                 MBNotifications.show({ text: response.error.message, uid: 'PROPOSAL', dismissible: false });
                 return;
@@ -316,14 +347,16 @@ const MBProcess = (() => {
     const onUnload = () => {
         forgetTradingStreams();
         clearSymbolTimeout();
+        clearContractTimeout();
         MBSymbols.clearData();
         MBTick.clean();
     };
 
     return {
+        getSymbols             : getSymbols,
         processActiveSymbols   : processActiveSymbols,
         processMarketUnderlying: processMarketUnderlying,
-        processTick            : processTick,
+        getContracts           : getContracts,
         processContract        : processContract,
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
