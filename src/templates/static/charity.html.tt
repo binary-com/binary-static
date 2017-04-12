@@ -68,5 +68,11 @@
                 </div>
             </div>
         </div>
+
+        <div class="section-content">
+            <div class="center-text">
+                <p>[% l("We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at [_1].", '<a href="mailto:marketing@binary.com">marketing@binary.com</a>') %]</p>
+            </div>
+        </div>
     </div>
 </div>
