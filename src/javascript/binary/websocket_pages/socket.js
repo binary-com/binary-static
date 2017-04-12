@@ -1,11 +1,8 @@
 const MBTradePage          = require('./mb_trade/mb_tradepage');
 const TradePage_Beta       = require('./trade/beta/tradepage');
-const Highchart            = require('./trade/charts/highchart');
 const reloadPage           = require('./trade/common').reloadPage;
 const Notifications        = require('./trade/notifications');
-const TickDisplay          = require('./trade/tick_trade');
 const TradePage            = require('./trade/tradepage');
-const ViewPopup            = require('./user/view_popup/view_popup');
 const updateBalance        = require('./user/update_balance');
 const Client               = require('../base/client');
 const Clock                = require('../base/clock');
@@ -46,7 +43,7 @@ const BinarySocketClass = () => {
         wrong_app_id = 0;
 
     const timeouts  = {};
-    const socket_url = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
+    const socket_url = `${getSocketURL()}?app_id=${getAppId()}&l=${getLanguage()}`;
     const promises  = {};
     const no_duplicate_requests = [
         'authorize',
@@ -122,11 +119,18 @@ const BinarySocketClass = () => {
         return promise_obj.promise;
     };
 
-    const send = (data, force_send, msg_type) => {
+    /**
+     * @param {Object} data: request object
+     * @param {Object} options:
+     *      forced  : {boolean}  sends the request regardless the same msg_type has been sent before
+     *      msg_type: {string}   specify the type of request call
+     *      callback: {function} to call on response of streaming requests
+     */
+    const send = function(data, options = {}) {
         const promise_obj = new PromiseClass();
 
-        msg_type = msg_type || no_duplicate_requests.find(c => c in data);
-        if (!force_send && msg_type) {
+        const msg_type = options.msg_type || no_duplicate_requests.find(c => c in data);
+        if (!options.forced && msg_type) {
             const last_response = State.get(['response', msg_type]);
             if (last_response) {
                 promise_obj.resolve(last_response);
@@ -146,7 +150,13 @@ const BinarySocketClass = () => {
             data.req_id = ++req_id;
         }
         promises[data.req_id] = {
-            callback : (response) => { promise_obj.resolve(response); },
+            callback: (response) => {
+                if (typeof options.callback === 'function') {
+                    options.callback(response);
+                } else {
+                    promise_obj.resolve(response);
+                }
+            },
             subscribe: !!data.subscribe,
         };
 
@@ -159,7 +169,7 @@ const BinarySocketClass = () => {
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(() => {
                     if (typeof reloadPage === 'function' && data.contracts_for) {
-                        window.alert("The server didn't respond to the request:\n\n" + JSON.stringify(data) + '\n\n');
+                        window.alert(`The server didn't respond to the request:\n\n${JSON.stringify(data)}\n\n`);
                         reloadPage();
                     } else {
                         $('.price_container').hide();
@@ -235,18 +245,10 @@ const BinarySocketClass = () => {
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
                 let dispatch_to;
                 if (passthrough) {
-                    dispatch_to = passthrough.dispatch_to;
                     const this_req_number = passthrough.req_number;
                     if (this_req_number) {
                         clearInterval(timeouts[this_req_number]);
                         delete timeouts[this_req_number];
-                    } else {
-                        switch (dispatch_to) {
-                            case 'ViewPopup':       ViewPopup.dispatch(response);   break;
-                            case 'ViewChart':       Highchart.dispatch(response);   break;
-                            case 'ViewTickDisplay': TickDisplay.dispatch(response); break;
-                            // no default
-                        }
                     }
                 }
 
@@ -323,9 +325,11 @@ const BinarySocketClass = () => {
 
                 switch (error_code) {
                     case 'WrongResponse':
-                    case 'OutputValidationFailed':
-                        $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.')) + '</p></div>');
+                    case 'OutputValidationFailed': {
+                        const text_value = (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.'));
+                        $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: text_value })));
                         break;
+                    }
                     case 'RateLimit':
                         $('#ratelimit-error-message:hidden').css('display', 'block');
                         break;

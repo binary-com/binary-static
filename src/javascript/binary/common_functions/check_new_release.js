@@ -16,7 +16,7 @@ const check_new_release = () => { // calling this method is handled by GTM tags
             }
         }
     };
-    xhttp.open('GET', urlForStatic() + 'version?' + Math.random().toString(36).slice(2), true);
+    xhttp.open('GET', `${urlForStatic()}version?${Math.random().toString(36).slice(2)}`, true);
     xhttp.send();
 };
 

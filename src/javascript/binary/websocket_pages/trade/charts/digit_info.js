@@ -1,7 +1,6 @@
 const Highcharts       = require('highcharts');
 const Symbols          = require('../symbols');
 const localize         = require('../../../base/localize').localize;
-const elementInnerHtml = require('../../../common_functions/common_functions').elementInnerHtml;
 require('highcharts/modules/exporting')(Highcharts);
 
 const DigitInfo = (() => {
@@ -35,7 +34,7 @@ const DigitInfo = (() => {
         tooltip: {
             borderWidth: 1,
             formatter  : function() {
-                const total = $("select[name='tick_count']").val();
+                const total =  $('#tick_count').val();
                 const percentage = (this.y / total) * 100;
                 return `<b>${localize('Digit')}:</b> ${this.x}<br/><b>${localize('Percentage')}:</b> ${percentage.toFixed(1)}%`;
             },
@@ -56,7 +55,7 @@ const DigitInfo = (() => {
                         textShadow: false,
                     },
                     formatter: function() {
-                        const total = $("select[name='tick_count']").val();
+                        const total = $('#tick_count').val();
                         const percentage = (this.point.y / total) * 100;
                         return `${percentage.toFixed(2)}%`;
                     },
@@ -85,7 +84,7 @@ const DigitInfo = (() => {
                 x        : 0,
                 enabled  : false,
                 formatter: function() {
-                    const total = $("select[name='tick_count']").val();
+                    const total = $('#tick_count').val();
                     const percentage = parseInt((this.value / total) * 100);
                     return `${percentage}%`;
                 },
@@ -103,24 +102,13 @@ const DigitInfo = (() => {
             }
         });
         underlyings = underlyings.sort();
-        let elem = '<select class="smallfont" name="underlying">';
+        let elem = '';
         for (let i = 0; i < underlyings.length; i++) {
-            elem += '<option value="' + underlyings[i] + '">' + localize(symbols[underlyings[i]]) + '</option>';
+            elem += `<option value="${underlyings[i]}">${localize(symbols[underlyings[i]])}</option>`;
         }
-        elem += '</select>';
-        const content_id = document.getElementById('tab_last_digit-content');
-        const content = '<div class="gr-parent">' +
-                '<div id="last_digit_histo_form" class="gr-8 gr-12-m gr-centered">' +
-                '<form class="smallfont gr-row" action="#" method="post">' +
-                '<div class="gr-6 gr-12-m">' + localize('Select market') + ' : ' + elem + ' </div>' +
-                '<div class="gr-6 gr-12-m">' + localize('Number of ticks') + ' : <select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>' +
-                '</form>' +
-                '</div>' +
-                '<div id="last_digit_histo" class="gr-8 gr-12-m gr-centered"></div>' +
-                '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
-                '</div>';
-        elementInnerHtml(content_id, content);
-        $('[name=underlying]').val(underlying);
+        $('#digit_underlying').html($(elem)).val(underlying);
+        $('#digit_domain').text(domain.charAt(0).toUpperCase() + domain.slice(1));
+        $('#digit_info_underlying').text($('#digit_underlying option:selected').text());
     };
 
     const onLatest = () => {
@@ -131,16 +119,20 @@ const DigitInfo = (() => {
             return false;
         }).addClass('unbind_later');
 
-        const get_latest = () => {
-            const symbol = $('[name=underlying] option:selected').val();
+        const getLatest = () => {
+            const $digit_underlying_option = $('#digit_underlying option:selected');
+            const symbol = $digit_underlying_option.val();
+            const count = $('#tick_count').val();
+            $('#digit_info_underlying').text($digit_underlying_option.text());
+            $('#digit_info_count').text(count);
             const request = {
                 ticks_history: symbol,
                 end          : 'latest',
-                count        : $('[name=tick_count]', form).val(),
+                count        : count,
                 req_id       : 2,
             };
             if (chart.series[0].name !== symbol) {
-                if ($('#underlying').find('option:selected').val() !== $('[name=underlying]', form).val()) {
+                if ($('#underlying').find('option:selected').val() !== $('#digit_underlying').val()) {
                     request.subscribe = 1;
                     request.style     = 'ticks';
                 }
@@ -151,8 +143,7 @@ const DigitInfo = (() => {
             }
             BinarySocket.send(request);
         };
-        $('[name=underlying]', form).on('change', get_latest).addClass('unbind_later');
-        $('[name=tick_count]', form).on('change', get_latest).addClass('unbind_later');
+        $('#digit_underlying, #tick_count').on('change', getLatest).addClass('unbind_later');
     };
 
     const showChart = (underlying, underlying_spots) => {
@@ -166,19 +157,19 @@ const DigitInfo = (() => {
             underlying_spots[i] = val.substr(val.length - 1);
         }
 
-        const get_title = () => (
+        const getTitle = () => (
             {
-                text: localize($('#last_digit_title').html(), [underlying_spots.length, $('[name=underlying] option:selected').text()]),
+                text: localize($('#last_digit_title').html(), [underlying_spots.length, $('#digit_underlying option:selected').text()]),
             }
         );
 
         spots = underlying_spots;
         if (chart && $('#last_digit_histo').html()) {
-            chart.xAxis[0].update({ title: get_title() }, true);
+            chart.xAxis[0].update({ title: getTitle() }, true);
             chart.series[0].name = underlying;
         } else {
             addContent(underlying); // this creates #last_digit_title
-            chart_config.xAxis.title = get_title();
+            chart_config.xAxis.title = getTitle();
             chart = new Highcharts.Chart(chart_config);
             chart.addSeries({ name: underlying, data: [] });
             onLatest();
@@ -257,7 +248,7 @@ const DigitInfo = (() => {
                 stream_id = tick.tick.id || null;
                 update(tick.tick.symbol, tick.tick.quote);
             } else {
-                BinarySocket.send({ forget: tick.tick.id + '' });
+                BinarySocket.send({ forget: (tick.tick.id).toString() });
             }
         } else if (!stream_id) {
             update(tick.tick.symbol, tick.tick.quote);

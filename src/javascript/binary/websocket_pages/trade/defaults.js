@@ -65,7 +65,7 @@ const Defaults = (() => {
     };
 
     const updateURL = () => {
-        const updated_url = window.location.origin + window.location.pathname + '?' + Url.paramsHashToString(params);
+        const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params)}`;
         window.history.replaceState({ url: updated_url }, null, updated_url);
     };
 

@@ -40,7 +40,7 @@ const downloadCSV = (csv_contents, filename) => {
     if (navigator.msSaveBlob) { // IE 10+
         navigator.msSaveBlob(new Blob([csv_contents], { type: 'text/csv;charset=utf-8;' }), filename);
     } else { // Other browsers
-        const csv = 'data:text/csv;charset=utf-8,' + csv_contents;
+        const csv = `data:text/csv;charset=utf-8,${csv_contents}`;
         const download_link = document.createElement('a');
         download_link.href = encodeURI(csv);
         download_link.download = filename;
