@@ -1,13 +1,9 @@
 const moment                         = require('moment');
 const TradingAnalysis_Beta           = require('./analysis');
-const Barriers_Beta                  = require('./barriers');
-const DigitInfo_Beta                 = require('./charts/digit_info');
 const Contract_Beta                  = require('./contract');
 const Durations_Beta                 = require('./duration');
 const Price_Beta                     = require('./price');
-const Purchase_Beta                  = require('./purchase');
 const StartDates_Beta                = require('./starttime');
-const TickDisplay_Beta               = require('./tick_trade');
 const commonTrading                  = require('../common');
 const Defaults                       = require('../defaults');
 const GetTicks                       = require('../get_ticks');
@@ -278,29 +274,6 @@ const Process_Beta = (() => {
         });
     };
 
-    /*
-     * process ticks stream
-     */
-    const processTick_Beta = (tick) => {
-        const symbol = sessionStorage.getItem('underlying');
-        if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
-            Tick.details(tick);
-            Tick.display();
-            if (tick.tick) {
-                DigitInfo_Beta.updateChart(tick);
-            }
-            TickDisplay_Beta.updateChart(tick);
-            Purchase_Beta.updateSpotList();
-            if (!Barriers_Beta.isBarrierUpdated()) {
-                Barriers_Beta.display();
-                Barriers_Beta.setBarrierUpdate(true);
-            }
-            commonTrading.updateWarmChart();
-        } else {
-            DigitInfo_Beta.updateChart(tick);
-        }
-    };
-
     const onExpiryTypeChange = (value) => {
         const $expiry_type = $('#expiry_type');
         if (!value || !$expiry_type.find(`option[value=${value}]`).length) {
@@ -356,7 +329,6 @@ const Process_Beta = (() => {
         processContractForm_Beta : processContractForm_Beta,
         forgetTradingStreams_Beta: forgetTradingStreams_Beta,
         processForgetTicks_Beta  : processForgetTicks_Beta,
-        processTick_Beta         : processTick_Beta,
         onExpiryTypeChange       : onExpiryTypeChange,
         onDurationUnitChange     : onDurationUnitChange,
     };
