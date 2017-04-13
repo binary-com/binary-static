@@ -278,7 +278,7 @@ const Process_Beta = (() => {
      * process ticks stream
      */
     const processTick_Beta = (tick) => {
-        const symbol = sessionStorage.getItem('underlying');
+        const symbol = Defaults.get('underlying');
         if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
             Tick.details(tick);
             Tick.display();
