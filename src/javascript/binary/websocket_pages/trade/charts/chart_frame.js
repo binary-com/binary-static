@@ -24,7 +24,7 @@ const ChartFrame = (() => {
     };
 
     const chartFrameSource = () => {
-        if ($('#tab_graph').hasClass('active') && (sessionStorage.getItem('old_underlying') !== sessionStorage.getItem('underlying') || /^(|about:blank)$/.test($('#chart_frame').attr('src')))) {
+        if ($('#tab_graph').hasClass('active') && (sessionStorage.getItem('old_underlying') !== $('#underlying').val() || /^(|about:blank)$/.test($('#chart_frame').attr('src')))) {
             chartFrameCleanup();
             setChartSource();
             sessionStorage.setItem('old_underlying', document.getElementById('underlying').value);
