@@ -1,3 +1,4 @@
+const DigitInfo_Beta   = require('./charts/digit_info');
 const commonTrading    = require('../common');
 const showHighchart    = require('../charts/chart_frame').showHighchart;
 const AssetIndexUI     = require('../../resources/asset_index/asset_index.ui');
@@ -89,7 +90,15 @@ const TradingAnalysis_Beta = (() => {
             case 'tab_last_digit': {
                 const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
                 const tick = $('#tick_count').val() || 100;
-                BinarySocket.send({ ticks_history: underlying, end: 'latest', count: tick.toString(), req_id: 1 });
+                BinarySocket.send({ ticks_history: underlying, end: 'latest', count: tick.toString() }, {
+                    callback: (response) => {
+                        const type = response.msg_type;
+                        if (type === 'tick') {
+                            DigitInfo_Beta.updateChart(response);
+                        } else if (type === 'history') {
+                            DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
+                        }
+                    } });
                 break;
             }
             case 'tab_asset_index':

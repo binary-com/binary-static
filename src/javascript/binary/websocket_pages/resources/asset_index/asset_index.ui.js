@@ -124,14 +124,14 @@ const AssetIndexUI = (() => {
     };
 
     const sendRequest = () => {
-        if (State.get('is_beta_trading')) return;
         if (!active_symbols) {
             BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
                 AssetIndexUI.setActiveSymbols(response);
             });
         }
         BinarySocket.send({ asset_index: 1 }).then((response) => {
-            AssetIndexUI.setAssetIndex(response);
+            asset_index = response.asset_index;
+            if (active_symbols) populateTable();
         });
     };
 
@@ -140,10 +140,6 @@ const AssetIndexUI = (() => {
         setActiveSymbols: (response) => {
             active_symbols = response.active_symbols.slice(0); // clone
             if (asset_index) populateTable();
-        },
-        setAssetIndex: (response) => {
-            asset_index = response.asset_index;
-            if (active_symbols) populateTable();
         },
     };
 })();
