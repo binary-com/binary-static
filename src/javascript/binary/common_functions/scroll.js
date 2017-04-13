@@ -1,21 +1,21 @@
 const Scroll = (() => {
     'use strict';
 
-    let $selector;
+    let $main_container;
 
-    const sidebarScroll = ($elm_selector) => {
-        $selector = $elm_selector;
+    const sidebarScroll = ($container) => {
+        $main_container = $container;
 
-        $elm_selector.on('click', '#sidebar-nav li', function() {
+        $container.on('click', '#sidebar-nav li', function() {
             const clicked_li = $(this);
             $.scrollTo($(`.section:eq(${clicked_li.index()})`), 500);
             return false;
         });
 
-        if ($elm_selector.length) {
+        if ($container.length) {
             // grab the initial top offset of the navigation
-            const $sidebar = $elm_selector.find('.sidebar');
-            const $container = $elm_selector.find('.sidebar-container');
+            const $sidebar = $container.find('.sidebar');
+            const $sidebar_container = $container.find('.sidebar-container');
             let width = $sidebar.width();
             let sticky_navigation_offset_top = $sidebar.offset().top;
 
@@ -33,7 +33,8 @@ const Scroll = (() => {
 
                 // if we've scrolled more than the navigation, change its position to fixed to stick to top,
                 // otherwise change it back to relative
-                if (scroll_top + $sidebar[0].offsetHeight > $container[0].offsetHeight + $container.offset().top) {
+                if (scroll_top + $sidebar[0].offsetHeight >
+                    $sidebar_container[0].offsetHeight + $sidebar_container.offset().top) {
                     $sidebar.css({ position: 'absolute', bottom: 0, top: '', width: width });
                 } else if (scroll_top > sticky_navigation_offset_top) {
                     $sidebar.css({ position: 'fixed', top: 0, bottom: '', width: width });
@@ -46,7 +47,7 @@ const Scroll = (() => {
             sticky_navigation();
 
             const sidebar_nav = $sidebar.find('#sidebar-nav');
-            const length = $elm_selector.find('.section').length;
+            const length = $container.find('.section').length;
             $(window).on('scroll', function() {
                 if (!sidebar_nav.is(':visible')) return;
                 // and run it again every time you scroll
@@ -98,9 +99,9 @@ const Scroll = (() => {
         scrollToTop  : scrollToTop,
         offScroll    : () => {
             $(window).off('scroll');
-            if ($selector) {
-                $selector.find('#sidebar-nav li').off('click');
-                $selector = '';
+            if ($main_container) {
+                $main_container.find('#sidebar-nav li').off('click');
+                $main_container = '';
             }
         },
         goToHashSection: () => {
