@@ -273,12 +273,6 @@ msgstr "Отдел количественной аналитики %1 отвеч
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "Индексы Smart FX от %1 – это \"умные\" рынки, которые измеряют стоимость валюты по отношению к группе основных валют."
 
-msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr "Контракты со спредами от %1 представляют собой производные контракты с кредитным рычагом, стоимость которых напрямую зависит от динамики основного рынка. Клиенты, открывающие “длинные позиции” на растущем рынке (и “короткие позиции” на снижающемся рынке), получают прибыль от данных движений, внося гораздо меньшие инвестиции, чем на живом рынке."
-
-msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr "Контракты со спредами от %1 требуют наличия функции ‘стоп-лосс’, ограничивающей максимальные потери, которые может понести клиент. Сумма, необходимая для активации функции ‘стоп-лосс’, послужит в качестве депозита и не может быть использована для дальнейшей торговли, пока не будет закрыт контракт со спредом. Контракты со спредом закрываются тогда, когда они будут проданы клиентом или по достижении уровней ‘стоп-лосс’ и 'стоп-профит'."
-
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "Индексы волатильности %1 основаны на криптографически зашифрованном генераторе случайных чисел, надёжность которого подтверждена независимой третьей стороной."
 
@@ -320,12 +314,6 @@ msgstr "&#8220;%1 является одним из наших самых дав�
 
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;Мы пользуемся www.binary.com уже 8 лет и рекомендуем binary всем нашим клиентам по всему миру.&#8221;"
-
-msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
-msgstr "'<strong>Длинные</strong>' позиции приносят прибыль, когда индекс растёт, и не приносят прибыли в случае снижения индекса."
-
-msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
-msgstr "'<strong>Короткие</strong>' позиции приносят прибыль при падении индекса и не приносят прибыли, когда индекс растёт."
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "Награда “Лучшая компания в области коммуникации с клиентами“ от Investors Chronicle"
@@ -1030,9 +1018,6 @@ msgstr "Количество"
 
 msgid "Amount of above assets"
 msgstr "Amount of above assets"
-
-msgid "Amount per point"
-msgstr "Сумма за пункт"
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Диплом о дополнительном специальном/высшем образовании, окончании ВУЗа или получении степени бакалавра"
@@ -2208,9 +2193,6 @@ msgstr "Символ валюты"
 msgid "Current"
 msgstr "Текущие"
 
-msgid "Current Level"
-msgstr "Текущий уровень"
-
 msgid "Current Time"
 msgstr "Текущее время"
 
@@ -2321,11 +2303,6 @@ msgstr "Пополните счёт и начните торговлю"
 
 msgid "Deposit into"
 msgstr "Перевести на счёт"
-
-#, fuzzy
-#| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
-msgid "Deposit of %1 is required. Current spread: %2 points"
-msgstr "Необходим депозит в размере %1 %2. Текущий спред: %3 пункта(ов)"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Пополните или выведите средства со счета банковским переводом, картой или электронной валютой."
@@ -2682,9 +2659,6 @@ msgstr "Внесите барьер для изменения спот-коти�
 msgid "Enter your email"
 msgstr "Введите свой email"
 
-msgid "Entry Level"
-msgstr "Уровень входа"
-
 msgid "Entry Spot"
 msgstr "Входная котировка"
 
@@ -2732,9 +2706,6 @@ msgstr "Обстоятельства &mdash; обстоятельства мог
 
 msgid "Everyone"
 msgstr "Каждый"
-
-msgid "Example:"
-msgstr "Например:"
 
 msgid "Excellent English language (written and oral) communication skills"
 msgstr "Отличные навыки коммуникации на английском языке (письменно и устно)"
@@ -2795,9 +2766,6 @@ msgstr "Модель исполнения и риск контрагента"
 
 msgid "Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions."
 msgstr "Управление взаимоотношениями с клиентами для предотвращения мошенничества при оплате."
-
-msgid "Exit Level"
-msgstr "Уровень окончания"
 
 msgid "Exit Spot"
 msgstr "Выходная котировка"
@@ -3037,9 +3005,6 @@ msgstr "Для котировок рынка Форекс время закры�
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "Для Форекс: Форекс является внебиржевым рынком. Банки и другие крупные финансовые учреждения торгуют валютами между собой без наличия единого контролирующего этот процесс органа. В связи с этим, на котировки Форекс нет единой официальной цены. В различных источниках котировки могут быть разными. Соответственно, цены могут различаться у различных провайдеров котировок в зависимости от того, от каких банков или из каких источников они получают информацию."
-
-msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
-msgstr "Уровень входа в длинные позиции: спот-цена плюс половина спреда. Уровень окончания: спот-цена минус половина спреда. Уровень входа в короткие позиции рассчитывается так: спот-цена минус половина спреда, а уровень окончания – так: спот-цена плюс половина спреда."
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "Третий год подряд BetOnMarkets.com становится лучшей компанией в номинации 'Лучший поставщик услуг в торговле опционами с фиксированным коэффициентом прибыли' по версии британского журнала Shares Magazine. Это последний раз, когда мы выиграли этот приз, так как Shares Magazine перестал предлагать эту категорию номинаций."
@@ -3358,9 +3323,6 @@ msgstr "Как читать таблицу выше"
 
 msgid "How to trade binary options?"
 msgstr "Как торговать бинарными опционами?"
-
-msgid "How to trade spreads?"
-msgstr "Как торговать со спредами?"
 
 msgid "How to trade the Volatility Indices markets?"
 msgstr "Как торговать на рынках Индексов волатильности?"
@@ -4533,9 +4495,6 @@ msgstr "Узнать больше"
 
 msgid "Learn more about our corporate culture"
 msgstr "Узнайте больше о нашей корпоративной культуре"
-
-msgid "Learn more about spreads on %1."
-msgstr "Узнайте больше о спредах на %1."
 
 msgid "Learn the basics, from choosing your asset to winning your payout."
 msgstr "Научитесь азам торговли, начиная с выбора актива и заканчивая получением прибыли."
@@ -5778,9 +5737,6 @@ msgstr "Пожалуйста, отправьте вышеуказанную ин
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr "Пожалуйста примите во внимание, что наш курс своп также зависит от времени и дней, в течение которых Вы сохраняете позиции открытыми: "
 
-msgid "Points"
-msgstr "Пункты"
-
 msgid "Poland"
 msgstr "Польша"
 
@@ -5813,9 +5769,6 @@ msgstr "Потенциальная прибыль"
 
 msgid "Potential profit"
 msgstr "Потенциальная прибыль"
-
-msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
-msgstr "Потенциальная прибыль и убыток ограничены уровнями стоп-профит и стоп-лосс, соответственно."
 
 msgid "Power & simplicity"
 msgstr "Мощь и простота"
@@ -5946,9 +5899,6 @@ msgstr "Анализ счета"
 
 msgid "Profit/Loss"
 msgstr "Плюс/Минус"
-
-msgid "Profit/Loss (points)"
-msgstr "Прибыль/убытки (пункты)"
 
 msgid "Prohibited Trades"
 msgstr "Запрещённые сделки"
@@ -6617,12 +6567,6 @@ msgstr "Спот-время"
 msgid "Spot price"
 msgstr "Спот-цена"
 
-msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
-msgstr "Выплаты по контрактам со спредами основаны на движении индекса по отношению к уровню входа в сделку."
-
-msgid "Spreads"
-msgstr "Спреды"
-
 msgid "Stake"
 msgstr "Ставка"
 
@@ -6702,9 +6646,6 @@ msgstr "Опыт торговли акциями"
 msgid "Stocks trading frequency"
 msgstr "Частота торговли акциями"
 
-msgid "Stop Loss Level"
-msgstr "Уровень стоп-лосс"
-
 msgid "Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
 msgstr "Стоп-ордер/приказ стоп-лосс &mdash; инструкция исполнить контракт с целью закрыть открытую позицию, когда цена достигнет указанного Вами уровня."
 
@@ -6716,20 +6657,8 @@ msgstr "Уровень принудительного закрытия (уров
 msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "Уровень стоп-аут &mdash; уровень маржи, на котором или ниже которого Ваши открытые позиции могут быть принудительно закрыты (с или без получения Вашего предварительного согласия)."
 
-msgid "Stop Profit Level"
-msgstr "Уровень стоп-профит"
-
 msgid "Stop and Limit Orders"
 msgstr "Стоп-ордеры и лимитные ордеры"
-
-msgid "Stop-loss"
-msgstr "Стоп-лосс"
-
-msgid "Stop-profit"
-msgstr "Стоп-профит"
-
-msgid "Stop-type"
-msgstr "Тип стопа"
 
 msgid "Storage of Content"
 msgstr "Хранение Контента"
@@ -7185,9 +7114,6 @@ msgstr "Трансфер недоступен. Пожалуйста, %1попо�
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "Партнерская программа позволяет Вам получать прибыль от привлечения клиентов на сайт. Мы делимся своим ростом и успехом с партнерами, которые приводят на сайт новых Клиентов."
 
-msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
-msgstr "Сумма прибыли/убытков за каждый пункт при росте/падении должна быть помножена на сумму за пункт. Большая сумма за пункт приведет к большим прибылям/убыткам за каждый пункт движения индекса."
-
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "Процедуры по предотвращению отмывания капитала могут иметь следующие последствия для Клиентов:"
 
@@ -7263,15 +7189,6 @@ msgstr "Простой способ начать работать на фина�
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "Указанный Вами электронный адрес уже используется для другого счёта. Если Вы забыли пароль к своему счету, пожалуйста, воспользуйтесь <a href=\"%1\">инструментом восстановления пароля</a> или свяжитесь с нашей службой поддержки."
 
-msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
-msgstr "Уровень входа в длинные позиции составляет 1001, что соответствует формуле: уровень входа + половина спреда. Спот-котировка на выходе составляет 1100; таким образом, уровень окончания длинной позиции составляет 1099, что соответствует формуле: спот-котировка на выходе - половина спреда."
-
-msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
-msgstr "Уровень входа в короткие позиции составляет 999, что соответствует формуле: уровень входа - половина спреда. Спот-котировка на выходе составляет 1100; таким образом, уровень окончания короткой позиции составляет 1101, что соответствует формуле: спот-котировка на выходе + половина спреда."
-
-msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
-msgstr "Спот-котировка на входе в инструмент XYZ составляет 1000, а спред на данном инструменте составляет 2 пункта."
-
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Входная спот-цена – это начальная цена купленного трейдером контракта."
 
@@ -7328,9 +7245,6 @@ msgstr "Предлагаемый и полагающийся каждому кл
 msgid "The leverage ratio refers to the number of times your margin (the amount set aside from your account balance to open and maintain a transaction) can be \"leveraged\" to enter into a Transaction. The denominator of the leverage ratio is always 1. A 50:1 leverage is equivalent to a 2% margin requirement (1 divided by 50 = 2%). The leverage ratio that we/you establish will determine the amount of margin required. As leverage is inversely proportional to margin, the lower the leverage you set for your Account, the higher the margin required to be set aside from your account balance (your margin requirement)."
 msgstr "Коэффициент кредитного рычага показывает, во сколько раз увеличивается Ваша маржа для заключения контракта (сумма, которая будет заблокирована на Вашем счету для открытия и поддержания контракта). Знаменатель в коэффициенте кредитного рычага всегда равен 1. Кредитный рычаг в размере 50:1 эквивалентен маржевому требованию в размере 2% (1 разделить на 50 = 2%). Установленный нами/Вами коэффициент кредитного рычага определяет необходимый уровень маржи. Кредитный рычаг обратно пропорционален марже: чем ниже кредитный рычаг, установленный на Вашем счету, тем выше уровень маржи, который должен быть заблокирован на Вашем балансе (Ваше маржевое требование)."
 
-msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "Убытки в размере 306 USD являются разницей между уровнем выхода и входа, помноженной на сумму за пункт."
-
 msgid "The main password of account number %1 has been changed."
 msgstr "Основной пароль для счёта %1 был изменён."
 
@@ -7384,9 +7298,6 @@ msgstr "Ведущая платформа для торговли бинарны
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "Прибыль - это разница между выплатой и ценой покупки (ставкой) выигравшего контракта."
 
-msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "Прибыль в размере 294 USD - это разница между уровнем выхода и входа, помноженная на сумму за пункт."
-
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr "Услуги торговли с использованием маржи, перечисленные в данном Соглашении, не предоставляются на территории Европейского Союза."
 
@@ -7415,9 +7326,6 @@ msgstr "Алгоритм выравнивания и фильтрации кот
 
 msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "Ставка - это цена, которую должен заплатить трейдер за приобретение контракта."
-
-msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
-msgstr "Стоп-лосс и стоп-профит являются гарантированными инструментами. Прибыли и убытки ограничены инструментами стоп-профит и стоп-лосс, соответственно. Когда уровень окончания касается уровня стоп-лосс или стоп-профит, контракт будет закрыт на соответствующей отметке."
 
 msgid "The swap rate will depend on the direction of the position you take:"
 msgstr "Курс своп будет зависеть от направления движения Вашего контракта:"
@@ -11326,6 +11234,98 @@ msgstr "Согласие с правилами и условиями"
 
 msgid "Account Limits"
 msgstr "Лимиты счета"
+
+#~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+#~ msgstr "Контракты со спредами от %1 представляют собой производные контракты с кредитным рычагом, стоимость которых напрямую зависит от динамики основного рынка. Клиенты, открывающие “длинные позиции” на растущем рынке (и “короткие позиции” на снижающемся рынке), получают прибыль от данных движений, внося гораздо меньшие инвестиции, чем на живом рынке."
+
+#~ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+#~ msgstr "Контракты со спредами от %1 требуют наличия функции ‘стоп-лосс’, ограничивающей максимальные потери, которые может понести клиент. Сумма, необходимая для активации функции ‘стоп-лосс’, послужит в качестве депозита и не может быть использована для дальнейшей торговли, пока не будет закрыт контракт со спредом. Контракты со спредом закрываются тогда, когда они будут проданы клиентом или по достижении уровней ‘стоп-лосс’ и 'стоп-профит'."
+
+#~ msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
+#~ msgstr "'<strong>Длинные</strong>' позиции приносят прибыль, когда индекс растёт, и не приносят прибыли в случае снижения индекса."
+
+#~ msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
+#~ msgstr "'<strong>Короткие</strong>' позиции приносят прибыль при падении индекса и не приносят прибыли, когда индекс растёт."
+
+#~ msgid "Amount per point"
+#~ msgstr "Сумма за пункт"
+
+#~ msgid "Current Level"
+#~ msgstr "Текущий уровень"
+
+#, fuzzy
+#~| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
+#~ msgid "Deposit of %1 is required. Current spread: %2 points"
+#~ msgstr "Необходим депозит в размере %1 %2. Текущий спред: %3 пункта(ов)"
+
+#~ msgid "Entry Level"
+#~ msgstr "Уровень входа"
+
+#~ msgid "Example:"
+#~ msgstr "Например:"
+
+#~ msgid "Exit Level"
+#~ msgstr "Уровень окончания"
+
+#~ msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
+#~ msgstr "Уровень входа в длинные позиции: спот-цена плюс половина спреда. Уровень окончания: спот-цена минус половина спреда. Уровень входа в короткие позиции рассчитывается так: спот-цена минус половина спреда, а уровень окончания – так: спот-цена плюс половина спреда."
+
+#~ msgid "How to trade spreads?"
+#~ msgstr "Как торговать со спредами?"
+
+#~ msgid "Learn more about spreads on %1."
+#~ msgstr "Узнайте больше о спредах на %1."
+
+#~ msgid "Points"
+#~ msgstr "Пункты"
+
+#~ msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
+#~ msgstr "Потенциальная прибыль и убыток ограничены уровнями стоп-профит и стоп-лосс, соответственно."
+
+#~ msgid "Profit/Loss (points)"
+#~ msgstr "Прибыль/убытки (пункты)"
+
+#~ msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
+#~ msgstr "Выплаты по контрактам со спредами основаны на движении индекса по отношению к уровню входа в сделку."
+
+#~ msgid "Spreads"
+#~ msgstr "Спреды"
+
+#~ msgid "Stop Loss Level"
+#~ msgstr "Уровень стоп-лосс"
+
+#~ msgid "Stop Profit Level"
+#~ msgstr "Уровень стоп-профит"
+
+#~ msgid "Stop-loss"
+#~ msgstr "Стоп-лосс"
+
+#~ msgid "Stop-profit"
+#~ msgstr "Стоп-профит"
+
+#~ msgid "Stop-type"
+#~ msgstr "Тип стопа"
+
+#~ msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
+#~ msgstr "Сумма прибыли/убытков за каждый пункт при росте/падении должна быть помножена на сумму за пункт. Большая сумма за пункт приведет к большим прибылям/убыткам за каждый пункт движения индекса."
+
+#~ msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
+#~ msgstr "Уровень входа в длинные позиции составляет 1001, что соответствует формуле: уровень входа + половина спреда. Спот-котировка на выходе составляет 1100; таким образом, уровень окончания длинной позиции составляет 1099, что соответствует формуле: спот-котировка на выходе - половина спреда."
+
+#~ msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
+#~ msgstr "Уровень входа в короткие позиции составляет 999, что соответствует формуле: уровень входа - половина спреда. Спот-котировка на выходе составляет 1100; таким образом, уровень окончания короткой позиции составляет 1101, что соответствует формуле: спот-котировка на выходе + половина спреда."
+
+#~ msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
+#~ msgstr "Спот-котировка на входе в инструмент XYZ составляет 1000, а спред на данном инструменте составляет 2 пункта."
+
+#~ msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "Убытки в размере 306 USD являются разницей между уровнем выхода и входа, помноженной на сумму за пункт."
+
+#~ msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "Прибыль в размере 294 USD - это разница между уровнем выхода и входа, помноженная на сумму за пункт."
+
+#~ msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
+#~ msgstr "Стоп-лосс и стоп-профит являются гарантированными инструментами. Прибыли и убытки ограничены инструментами стоп-профит и стоп-лосс, соответственно. Когда уровень окончания касается уровня стоп-лосс или стоп-профит, контракт будет закрыт на соответствующей отметке."
 
 #~ msgid "Deposit of"
 #~ msgstr "Пополнение в размере"

@@ -258,12 +258,6 @@ msgstr "％1的定量分析小組負責在二元期權網站提供訂價及選�
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "%1 的智慧外匯是衡量一種貨幣相對一籃子主要貨幣價值的智慧型市場。"
 
-msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr "%1 的價差合約為槓桿型衍生合約，其價值直接與基礎市場走勢掛勾。  以比實時市場較低之投資對上漲市場購入「長倉」合同（及對下降市場購入「短倉」合同）的客戶從以上價格走勢中獲利。"
-
-msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr "%1 的價差合約需要可以制定客戶最大損失限額的「止損」。此「止損」額將當作訂金，在價差合約平倉前不可用於繼續交易。價差合約在接觸「止損」或「止盈」水平時由客戶售出完成平倉。"
-
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "1％的波動率指數由經過加密的安全隨機數字生成器生成，並由獨立的第三方審計其公平度。"
 
@@ -305,12 +299,6 @@ msgstr "&#8220;%1一向都是我們最長久和最信賴的合作夥伴。我們
 
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220; 1我們已經使用了www.binary.com 達8年之久，非常樂意地向我們的全球會員推薦此網站。&#8221; 2"
-
-msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
-msgstr "'<strong>長倉</strong>'合同當指數上漲則獲利，當指數下降則虧損。"
-
-msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
-msgstr "'<strong>短倉</strong>'合同當指數上漲則虧損，當指數下降則獲利。"
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "《 Investors Chronicle》頒發的「最佳客戶通訊企業」獎項"
@@ -1008,9 +996,6 @@ msgstr "金額"
 
 msgid "Amount of above assets"
 msgstr "Amount of above assets"
-
-msgid "Amount per point"
-msgstr "每點之金額"
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "高等/高級/研究生文憑或學士學位"
@@ -2176,9 +2161,6 @@ msgstr "貨幣符號"
 msgid "Current"
 msgstr "目前"
 
-msgid "Current Level"
-msgstr "目前價位"
-
 msgid "Current Time"
 msgstr "目前時間"
 
@@ -2289,11 +2271,6 @@ msgstr "存款並開始交易"
 
 msgid "Deposit into"
 msgstr "存款到"
-
-#, fuzzy
-#| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
-msgid "Deposit of %1 is required. Current spread: %2 points"
-msgstr "需要%1 %2 訂金。目前價差：%3 點"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "通過銀行電匯、信用卡或電子現金錢包存款進入您的帳戶或提款。"
@@ -2640,9 +2617,6 @@ msgstr "請按與現貨價格差額的形式輸入障礙水平。如果您輸入
 msgid "Enter your email"
 msgstr "請輸入您的電子郵件"
 
-msgid "Entry Level"
-msgstr "進場價位"
-
 msgid "Entry Spot"
 msgstr "入市現價"
 
@@ -2690,9 +2664,6 @@ msgstr "事件 &mdash; 事件範例包括停止提供與您的訂單相關的交
 
 msgid "Everyone"
 msgstr "所有人"
-
-msgid "Example:"
-msgstr "例如:"
 
 msgid "Excellent English language (written and oral) communication skills"
 msgstr "優秀的英語 (書面和口語) 溝通技巧"
@@ -2753,9 +2724,6 @@ msgstr "執行模型和交易對手風險"
 
 msgid "Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions."
 msgstr "利用特殊客戶關係管理技巧防止支付處理和商業交易中的欺詐活動。"
-
-msgid "Exit Level"
-msgstr "退出價位"
 
 msgid "Exit Spot"
 msgstr "退市現價"
@@ -2993,9 +2961,6 @@ msgstr "對於外匯報價的收盤時間，公司在本網站「市場開放時
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "關於外匯交易：外匯市場是銀行和其它大型金融機構相互交易外匯的場外交易（OTC）市場，沒有中央結算行。因此，外匯交易報價也沒有「官方」價格來源。不同的資料源包含不同類型國際銀行的報價。因此，根據其獲得價格的銀行不同，各外匯報價提供者的價格也不相同。"
-
-msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
-msgstr "長倉合約之進場價位為現價加上價差的一半，而退出價位則是現價減去價差的一半。短倉合約之進場價位為現價減去價差的一半，而退出價位則是現價加價差的一半。"
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "BetOnMarkets.com 連續三年被英國股票雜誌《Shares Magazine》選為「最佳固定賠率金融交易提供商」。這是我們最後一次獲獎，因為該雜誌已停止頒發這一類獎項。"
@@ -3308,9 +3273,6 @@ msgstr "如何讀取上面的表"
 
 msgid "How to trade binary options?"
 msgstr "二元期權如何交易?"
-
-msgid "How to trade spreads?"
-msgstr "點差交易如何操作?"
 
 msgid "How to trade the Volatility Indices markets?"
 msgstr "如何在波動率指數市場上交易？"
@@ -4475,9 +4437,6 @@ msgstr "瞭解更多資訊"
 
 msgid "Learn more about our corporate culture"
 msgstr "查看關於我們企業文化的詳細資料"
-
-msgid "Learn more about spreads on %1."
-msgstr "請到 %1 檢視價差的詳細資料。"
 
 msgid "Learn the basics, from choosing your asset to winning your payout."
 msgstr "了解二元期權交易基礎知識，從選擇標的資產到選擇目標賠付額，全都包含在內。"
@@ -5705,9 +5664,6 @@ msgstr "請將以上資訊傳到<a href='mailto:%1'>%1</a>。"
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr "請注意，我們的掉期率也取決於您的持倉時間和天數︰ "
 
-msgid "Points"
-msgstr "點"
-
 msgid "Poland"
 msgstr "波蘭"
 
@@ -5740,9 +5696,6 @@ msgstr "潛在利潤"
 
 msgid "Potential profit"
 msgstr "潛在利潤"
-
-msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
-msgstr "潛在盈虧分別受止盈、止損價位所限制。"
 
 msgid "Power & simplicity"
 msgstr "強大而簡單"
@@ -5869,9 +5822,6 @@ msgstr "利潤表"
 
 msgid "Profit/Loss"
 msgstr "利潤/虧損"
-
-msgid "Profit/Loss (points)"
-msgstr "利潤/虧損(點)"
 
 msgid "Prohibited Trades"
 msgstr "違禁交易"
@@ -6532,12 +6482,6 @@ msgstr "現貨時間"
 msgid "Spot price"
 msgstr "現貨價格"
 
-msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
-msgstr "價差合約賠付額是根據合約進場價位的相對指數走勢而定。"
-
-msgid "Spreads"
-msgstr "價差"
-
 msgid "Stake"
 msgstr "投注資金"
 
@@ -6613,9 +6557,6 @@ msgstr "股票交易經驗"
 msgid "Stocks trading frequency"
 msgstr "股票交易頻率"
 
-msgid "Stop Loss Level"
-msgstr "止損價位"
-
 msgid "Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
 msgstr "止損單 &mdash; 當價格達到您指定的基準時對持倉頭寸執行平倉交易的指令。"
 
@@ -6625,20 +6566,8 @@ msgstr "強制平倉層次"
 msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "強制平倉層次 &mdash; 保證金處於或低於此層次時您的持倉頭寸可以在經過您同意或未經您事先同意的情況下強制平倉。"
 
-msgid "Stop Profit Level"
-msgstr "止盈價位"
-
 msgid "Stop and Limit Orders"
 msgstr "止損單和限價單"
-
-msgid "Stop-loss"
-msgstr "止損"
-
-msgid "Stop-profit"
-msgstr "止盈"
-
-msgid "Stop-type"
-msgstr "停止類型"
 
 msgid "Storage of Content"
 msgstr "內容儲存"
@@ -7092,9 +7021,6 @@ msgstr "帳戶不可轉帳。請將資金%1存入%2 您的帳戶。"
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "聯盟方案讓您通過推薦客戶到網站而獲利。有能力給網站帶來新客戶的聯盟會員可一起共享增長和成功。"
 
-msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
-msgstr "每上漲/下降一點之盈利/虧損乘以每一點之金額。  如每一點之金額很大，每一點的指數走勢將導致極大的盈利/虧損。"
-
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "反洗黑錢程序對客戶有以下影響："
 
@@ -7170,15 +7096,6 @@ msgstr "參與金融市場最簡便的方法"
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "所提供的電子郵件地址已經在使用。如果忘了密碼，請嘗試使用我們的<a href=\"%1\">密碼恢復工具</a>或聯繫客服部。"
 
-msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
-msgstr "長倉合約的進場價位為1001，即進場現價 + 一半價差。退出時，現價為 1100，因此長倉合約的退市價位為 1099，即退場現價 - 一半價差。"
-
-msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
-msgstr "短倉合約的進場價位為999，即進場現價 - 一半價差。退出時，現價為 1100，因此短倉合約的退市價位為 1101，即退場現價 + 一半價差。"
-
-msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
-msgstr "XYZ 工具的進場現價為1000，而此工具的價差為2點。"
-
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "入市現價是交易者所買入交易的初始價格。"
 
@@ -7233,9 +7150,6 @@ msgstr "每個客戶的保護層級和期限是根據分配給客戶的類別而
 msgid "The leverage ratio refers to the number of times your margin (the amount set aside from your account balance to open and maintain a transaction) can be \"leveraged\" to enter into a Transaction. The denominator of the leverage ratio is always 1. A 50:1 leverage is equivalent to a 2% margin requirement (1 divided by 50 = 2%). The leverage ratio that we/you establish will determine the amount of margin required. As leverage is inversely proportional to margin, the lower the leverage you set for your Account, the higher the margin required to be set aside from your account balance (your margin requirement)."
 msgstr "槓桿比率指使用您的保證金（為進行交易從您的帳戶餘額撥出並保留的金額） 作為\"槓桿\"進入交易的次數。槓桿比率的分母始終是 1。50: 1 的槓桿比率相當於需要 2%保證金 (1 除以 50 = 2%)。我們替您建立的槓桿比率將確定保證金的數額。槓桿比率與保證金成反比，您的帳戶所設槓桿比率越低，從您的帳戶餘額撥出的保證金額就越高 （所需保證金）。"
 
-msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "306美元虧損是以退出和進場價位的相差額乘以每一點的金額算出。"
-
 msgid "The main password of account number %1 has been changed."
 msgstr "%1帳號的主密碼已更改。"
 
@@ -7287,9 +7201,6 @@ msgstr "全世界金融市場二元期權交易的頂尖平台"
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "利潤即盈利交易中所得賠付金額與購買價格（成本）之間的差額。"
 
-msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "294美元盈利是以退出和進場價位的相差額乘以每一點的金額算出。"
-
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr "歐洲聯盟國家不可用本協定所述的保證金交易服務。"
 
@@ -7316,9 +7227,6 @@ msgstr "前述平滑和過濾算法。"
 
 msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "投注金額即交易者為執行交易所必需支付的金額。"
-
-msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
-msgstr "我們提供止損和止盈的保證。虧損和盈利分別受止損和止盈所限制。  當退出價位接觸止損或止盈任何一項時，合約將在該止損或止盈價位平倉。"
 
 msgid "The swap rate will depend on the direction of the position you take:"
 msgstr "掉期利率將取決於您的頭寸方向︰"
@@ -10931,6 +10839,98 @@ msgstr "條款和條件審批"
 
 msgid "Account Limits"
 msgstr "帳戶限額"
+
+#~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+#~ msgstr "%1 的價差合約為槓桿型衍生合約，其價值直接與基礎市場走勢掛勾。  以比實時市場較低之投資對上漲市場購入「長倉」合同（及對下降市場購入「短倉」合同）的客戶從以上價格走勢中獲利。"
+
+#~ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+#~ msgstr "%1 的價差合約需要可以制定客戶最大損失限額的「止損」。此「止損」額將當作訂金，在價差合約平倉前不可用於繼續交易。價差合約在接觸「止損」或「止盈」水平時由客戶售出完成平倉。"
+
+#~ msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
+#~ msgstr "'<strong>長倉</strong>'合同當指數上漲則獲利，當指數下降則虧損。"
+
+#~ msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
+#~ msgstr "'<strong>短倉</strong>'合同當指數上漲則虧損，當指數下降則獲利。"
+
+#~ msgid "Amount per point"
+#~ msgstr "每點之金額"
+
+#~ msgid "Current Level"
+#~ msgstr "目前價位"
+
+#, fuzzy
+#~| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
+#~ msgid "Deposit of %1 is required. Current spread: %2 points"
+#~ msgstr "需要%1 %2 訂金。目前價差：%3 點"
+
+#~ msgid "Entry Level"
+#~ msgstr "進場價位"
+
+#~ msgid "Example:"
+#~ msgstr "例如:"
+
+#~ msgid "Exit Level"
+#~ msgstr "退出價位"
+
+#~ msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
+#~ msgstr "長倉合約之進場價位為現價加上價差的一半，而退出價位則是現價減去價差的一半。短倉合約之進場價位為現價減去價差的一半，而退出價位則是現價加價差的一半。"
+
+#~ msgid "How to trade spreads?"
+#~ msgstr "點差交易如何操作?"
+
+#~ msgid "Learn more about spreads on %1."
+#~ msgstr "請到 %1 檢視價差的詳細資料。"
+
+#~ msgid "Points"
+#~ msgstr "點"
+
+#~ msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
+#~ msgstr "潛在盈虧分別受止盈、止損價位所限制。"
+
+#~ msgid "Profit/Loss (points)"
+#~ msgstr "利潤/虧損(點)"
+
+#~ msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
+#~ msgstr "價差合約賠付額是根據合約進場價位的相對指數走勢而定。"
+
+#~ msgid "Spreads"
+#~ msgstr "價差"
+
+#~ msgid "Stop Loss Level"
+#~ msgstr "止損價位"
+
+#~ msgid "Stop Profit Level"
+#~ msgstr "止盈價位"
+
+#~ msgid "Stop-loss"
+#~ msgstr "止損"
+
+#~ msgid "Stop-profit"
+#~ msgstr "止盈"
+
+#~ msgid "Stop-type"
+#~ msgstr "停止類型"
+
+#~ msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
+#~ msgstr "每上漲/下降一點之盈利/虧損乘以每一點之金額。  如每一點之金額很大，每一點的指數走勢將導致極大的盈利/虧損。"
+
+#~ msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
+#~ msgstr "長倉合約的進場價位為1001，即進場現價 + 一半價差。退出時，現價為 1100，因此長倉合約的退市價位為 1099，即退場現價 - 一半價差。"
+
+#~ msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
+#~ msgstr "短倉合約的進場價位為999，即進場現價 - 一半價差。退出時，現價為 1100，因此短倉合約的退市價位為 1101，即退場現價 + 一半價差。"
+
+#~ msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
+#~ msgstr "XYZ 工具的進場現價為1000，而此工具的價差為2點。"
+
+#~ msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "306美元虧損是以退出和進場價位的相差額乘以每一點的金額算出。"
+
+#~ msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "294美元盈利是以退出和進場價位的相差額乘以每一點的金額算出。"
+
+#~ msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
+#~ msgstr "我們提供止損和止盈的保證。虧損和盈利分別受止損和止盈所限制。  當退出價位接觸止損或止盈任何一項時，合約將在該止損或止盈價位平倉。"
 
 #~ msgid "Deposit of"
 #~ msgstr "存款"

@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-04-12 16:56+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -270,12 +269,6 @@ msgstr "定量分析グループはオプションのリスクと収益性の管
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "%1のスマートFXは、主要通貨バスケットに対する通貨の価値を計るスマートマーケットです。"
 
-msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr "%1のスプレッドトレードには、市場動向が直接関連する値のデリバティブトレードを活用しています。上昇傾向にある市場で「ロング」を選んだ場合（及び下落傾向にある市場で「ショート」を選んだ場合）はライブマーケットで必要とされる投資額よりもはるかに少額で、利益を得られます。"
-
-msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr "%1のスプレッドトレードでは、生じる損失の最大を制限できる「損切り」が必要となります。この「損切り」の金額は、口座内の資金に作用し、スプレッドトレードが終了するまでそれ以外のお取引ができないよう機能します。スプレッドトレードは転売する際に「損切り」と「利益ストップ」のレベルに到達次第閉鎖されます。"
-
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "当社のボラティリティ インデックスは、独立したサードパーティーによる公平性の監査のうえ、暗号化された安全な乱数ジェネレーターをベースにしています。"
 
@@ -319,12 +312,6 @@ msgstr "&#8220;Binary.com (バイナリードットコム)は最も歴史があ�
 
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;当社はwww.binary.comを８年以上利用しています。世界中のトレーダーにバイナリーをぜひともお薦めします。&#8221;"
-
-msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
-msgstr "「<strong>ロング</strong>」 インデックスが上昇すると条件を満たし、下落すると条件が満たされません。"
-
-msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
-msgstr "「<strong>ショート</strong>」 インデックスが下落すると条件を満たし、上昇すると条件が満たされません。"
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "”Investors Chronicle”において「最優秀カスタマーサポート」を受賞"
@@ -1026,9 +1013,6 @@ msgstr "金額"
 
 msgid "Amount of above assets"
 msgstr "上記資産額"
-
-msgid "Amount per point"
-msgstr "1ポイントの金額"
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "高度専門士、専門士、準修士または学士"
@@ -2216,9 +2200,6 @@ msgstr "通貨記号"
 msgid "Current"
 msgstr "現在"
 
-msgid "Current Level"
-msgstr "現在のレベル"
-
 msgid "Current Time"
 msgstr "現在時刻："
 
@@ -2329,9 +2310,6 @@ msgstr "預託金入金後に取引開始"
 
 msgid "Deposit into"
 msgstr "XXXへご入金"
-
-msgid "Deposit of %1 is required. Current spread: %2 points"
-msgstr "%1のご入金が必要です。現在のスプレッド： %2 ポイント"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "銀行振込によりお客さまの口座に入出金を行います"
@@ -2678,9 +2656,6 @@ msgstr "スポット価格に差異を付加する目的でバリア値を設定
 msgid "Enter your email"
 msgstr "メールアドレスを入力してデモ口座を開設"
 
-msgid "Entry Level"
-msgstr "エントリーレベル"
-
 msgid "Entry Spot"
 msgstr "取引開始時刻直後のティック"
 
@@ -2728,9 +2703,6 @@ msgstr ""
 
 msgid "Everyone"
 msgstr "全員"
-
-msgid "Example:"
-msgstr "例："
 
 msgid "Excellent English language (written and oral) communication skills"
 msgstr "優れた英語コミュニケーション能力（筆記及び口頭）"
@@ -2791,9 +2763,6 @@ msgstr "実行モデルとカウンターパーティリスク"
 
 msgid "Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions."
 msgstr "支払処理やビジネス取引における不正行為を防止するために、例外的な顧客関係管理のスキルを行使する。"
-
-msgid "Exit Level"
-msgstr "判定レベル"
 
 msgid "Exit Spot"
 msgstr "判定レート"
@@ -3031,9 +3000,6 @@ msgstr "当社は外国為替市場の市場終了時刻は当社サイト内の
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "外国為替：外国為替市場は、取引所を介さずに主要な銀行や証券会社がそれぞれの通貨を直接もしくは為替ブローカーを通して取引しておりますので、外国為替相場に関する公式な価格は存在しません。各データフィードは、それぞれ異なる主要金融機関が提供する部分集合的な価格を含みますので、価格情報はどの金融機関の提示価格を採用したかに依存します。"
-
-msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
-msgstr "ロングトレードにおいて、エントリーレベルは値にスプレッドの半分を足し、判定レベルは値からスプレッドの半分を引きます。ショートトレードにおいては、エントリーレベルは値から半分のスプレッドを引き、判定レベルは値にスプレッドの半分を足します。"
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "３年連続でBetOnMarkets.comは、Shares Magazine UKから「最優秀な固定オッズ金融取引業者」を認定されてきましたが、同誌がこの分野への授与を中止したため、これが当社が同賞を受賞する最後の年になります。"
@@ -3347,9 +3313,6 @@ msgstr "上記テーブルの読み方"
 msgid "How to trade binary options?"
 msgstr "バイナリーオプション取引方法"
 
-msgid "How to trade spreads?"
-msgstr "スプレッド取引方法"
-
 msgid "How to trade the Volatility Indices markets?"
 msgstr "ボラティリティインデックスマーケットの取引方法"
 
@@ -3515,9 +3478,7 @@ msgid "If you introduce our website to potential clients, you will eventually st
 msgstr "潜在顧客に当サイトをご紹介いただくと、クライアントが%1のリアル口座を開設された時点ですぐに受動収入をお受け取りいただけます。クライアントが当サーバーを使用する限り、引き続きコミッションをお受け取りいただけます。簡単に行ってしまえば、実際にはそれほどの労力を使わなくてもコミッションのお受け取りを開始いただけるということです。"
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open. This adjustment is based on interbank lending rates, on top of a 2% fee."
-msgstr ""
-"一晩中ポジションをオープンのまま保持されると、ポジションをオープンに保つのに必要な手数料としてお客さまの口座に金利調整が行われます。この調整はインターバン"
-"クの貸出金利に基づいた２％の手数料が課せられます。"
+msgstr "一晩中ポジションをオープンのまま保持されると、ポジションをオープンに保つのに必要な手数料としてお客さまの口座に金利調整が行われます。この調整はインターバンクの貸出金利に基づいた２％の手数料が課せられます。"
 
 msgid "If you meet our basic requirements, we'll send you a talent test."
 msgstr "当社の基本的な要求基準に見合う場合は、テストのご連絡をいたします。"
@@ -3607,9 +3568,7 @@ msgid "If you want to profit from this high demand product then your best option
 msgstr "需要の高い商品からベストな選択をして利益を得るには、マーケットリーダーとパートナーになることです。%1はこの業界で15年以上になり、様々な功績を残してきました。"
 
 msgid "If you wanted to purchase <strong>100 units</strong> of a particular asset trading at <strong>US&#36; 50 per unit</strong> through a traditional broker, it would cost you <strong>US&#36; 5,000</strong> for this transaction."
-msgstr ""
-"従来のブローカーを通して<strong>1単位50</strong>の特定の資産取引を<strong>100単位</strong>購入されたい場合、<st"
-"rong>US&#36;5,000</strong>かかります。"
+msgstr "従来のブローカーを通して<strong>1単位50</strong>の特定の資産取引を<strong>100単位</strong>購入されたい場合、<strong>US&#36;5,000</strong>かかります。"
 
 msgid "If you wish to withdraw funds from your Real Account and close your Real Account, you may notify us by contacting our helpdesk at <a href='mailto:%1'>%1</a>. Your Real Account may be closed if you do not have any Open Positions and all amounts due to us have been settled."
 msgstr "リアル口座からの資金出金後、リアル口座の閉鎖をされた場合は、ヘルプデスク<a href='mailto:%1'>%1</a>までご連絡ください。オープン中のポジションがなく、資金が口座に無いことを確認後、お客さまのリアル口座は閉鎖されます。"
@@ -4500,10 +4459,7 @@ msgid "L. Event of Default"
 msgstr "L. 契約不履行事由"
 
 msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
-msgstr ""
-"難民支援言語クラス（LCFR）は、長期的に質の高い教育を行う社会的企業「Love & Respect Transformation Centre」が編制す"
-"る教育プログラムです。このプログラムでは、自国へ送還されるまでの間に雇用の際に役立つ言語スキルを提供するために子供から大人までの幅広い年齢層に英語、マレー"
-"語、フランス語を教えています。"
+msgstr "難民支援言語クラス（LCFR）は、長期的に質の高い教育を行う社会的企業「Love & Respect Transformation Centre」が編制する教育プログラムです。このプログラムでは、自国へ送還されるまでの間に雇用の際に役立つ言語スキルを提供するために子供から大人までの幅広い年齢層に英語、マレー語、フランス語を教えています。"
 
 msgid "Languages"
 msgstr "言語"
@@ -4542,9 +4498,6 @@ msgstr "詳細はこちら"
 
 msgid "Learn more about our corporate culture"
 msgstr "当社の企業文化について詳しく見る"
-
-msgid "Learn more about spreads on %1."
-msgstr "Binary株式会社 (和文名称 バイナリー株式会社)のスプレッドについて詳細を確認する"
 
 msgid "Learn the basics, from choosing your asset to winning your payout."
 msgstr "成功のために取引対象を選択し、トレードの基礎を学ぶ"
@@ -5780,9 +5733,6 @@ msgstr "<a href='mailto:%1'>%1</a>まで上記の情報をご提出ください�
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr "当社のスワップレートは、保有しているポジションのオープン日時にも関係しますのでご注意ください。 "
 
-msgid "Points"
-msgstr "ポイント"
-
 msgid "Poland"
 msgstr "ポーランド"
 
@@ -5815,9 +5765,6 @@ msgstr "期待利益"
 
 msgid "Potential profit"
 msgstr "潜在利益"
-
-msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
-msgstr "潜在利益と損失は、それぞれ利益ストップと損切りレベルで制限されます。"
 
 msgid "Power & simplicity"
 msgstr "効果的かつ簡潔"
@@ -5944,9 +5891,6 @@ msgstr "取引明細"
 
 msgid "Profit/Loss"
 msgstr "損益"
-
-msgid "Profit/Loss (points)"
-msgstr "損益（ポイント）"
 
 msgid "Prohibited Trades"
 msgstr "取引を禁止しています"
@@ -6611,12 +6555,6 @@ msgstr "スポットタイム"
 msgid "Spot price"
 msgstr "スポットレート"
 
-msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
-msgstr "スプレッドトレードのペイアウトは、契約のエントリーレベルと相対的なインデックスの動きに基づいています。"
-
-msgid "Spreads"
-msgstr "スプレッド"
-
 msgid "Stake"
 msgstr "購入価格"
 
@@ -6692,9 +6630,6 @@ msgstr "株式取引のご経験"
 msgid "Stocks trading frequency"
 msgstr "株式取引の頻度"
 
-msgid "Stop Loss Level"
-msgstr "損切りレベル"
-
 msgid "Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
 msgstr ""
 
@@ -6704,20 +6639,8 @@ msgstr "ロスカットレベル"
 msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "ロスカットレベル &mdash; オープンポジションがマージンレベル以下である際に、同意の上または同意なしに強制的に行われることがあります"
 
-msgid "Stop Profit Level"
-msgstr "利益ストップレベル"
-
 msgid "Stop and Limit Orders"
 msgstr "逆指値注文と指値注文"
-
-msgid "Stop-loss"
-msgstr "損切り"
-
-msgid "Stop-profit"
-msgstr "利益ストップ"
-
-msgid "Stop-type"
-msgstr "ストップタイプ"
 
 msgid "Storage of Content"
 msgstr "コンテンツの保存"
@@ -7125,9 +7048,7 @@ msgid "The STP account provides you with the tightest spreads and connects you d
 msgstr ""
 
 msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
-msgstr ""
-"シェルターコミュニティ学習センター3とは、第三国の地で離れ離れになった家族を待っている、ミャンマー難民の子どもたちが利用するコミュニティスクールです。ここ"
-"では、繊細な年齢である子どもたちに将来への準備となる教育を提供することを目的としています。"
+msgstr "シェルターコミュニティ学習センター3とは、第三国の地で離れ離れになった家族を待っている、ミャンマー難民の子どもたちが利用するコミュニティスクールです。ここでは、繊細な年齢である子どもたちに将来への準備となる教育を提供することを目的としています。"
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
 msgstr ""
@@ -7179,9 +7100,6 @@ msgstr "口座振替はご利用いただけません。お客さまの口座へ
 
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "アフィリエイトプログラムサイトにクライアントをご紹介いただくことで、利益をお受け取りいただけます。サイトへ新しいクライアントを集客するスキルのあるアフィリエイトで成長と成功をわかち合いましょう。"
-
-msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
-msgstr "ラダーのポイントごとの利益額/損失額は、1ポイントの金額を掛けたものになります。1ポイントが大きいとインデックスの動向のポイントごとの利益/損失も大きくなります。"
 
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr ""
@@ -7292,15 +7210,6 @@ msgstr "業界最多の9通貨ペアとラダー、タッチ、レンジによ�
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "ご入力いただいたメールアドレスは既に他のログインIDで使用されています。パスワードをお忘れの場合は、<a href=\"%1\">こちら</a>からパスワードを再発行して頂くか、カスタマーサポートまでご連絡下さい。"
 
-msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
-msgstr "ロングトレードのエントリーレベルが1001（始値 + スプレッドの半分）の場合、判定の際に値が1100であるとロングトレードの判定レベルは1099です。（終値 - スプレッドの半分）"
-
-msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
-msgstr "ショートトレードのエントリーレベルが999（始値 - スプレッドの半分）の場合、判定の際に値が1100であるとショートトレードの判定レベルは1101です。（終値 + スプレッドの半分）"
-
-msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
-msgstr "金融商品XYZの始値は1000で、この商品のスプレッドは2ポイントです。"
-
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "取引時レートとは、購入時のレートのことです。"
 
@@ -7370,9 +7279,6 @@ msgstr "提供される保護レベルは、各クライアントに割り当て
 msgid "The leverage ratio refers to the number of times your margin (the amount set aside from your account balance to open and maintain a transaction) can be \"leveraged\" to enter into a Transaction. The denominator of the leverage ratio is always 1. A 50:1 leverage is equivalent to a 2% margin requirement (1 divided by 50 = 2%). The leverage ratio that we/you establish will determine the amount of margin required. As leverage is inversely proportional to margin, the lower the leverage you set for your Account, the higher the margin required to be set aside from your account balance (your margin requirement)."
 msgstr ""
 
-msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "USD306の損失は、判定レベルとエントリーレベルを1ポイントの金額で掛けた分の差額になります。"
-
 msgid "The main password of account number %1 has been changed."
 msgstr "口座番号 %1のメインパスワード変更を承りました。"
 
@@ -7433,9 +7339,6 @@ msgstr ""
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "勝ちトレードの払い戻し金額と購入金額の差額が利益になります。"
 
-msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "USD 294の利益は、判定レベルとエントリーレベルのそれぞれをポイントごとの金額で掛け算した差額です。"
-
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr "本契約に記載されている信用取引サービスの規定は、欧州連合ではご利用いただけません。"
 
@@ -7462,9 +7365,6 @@ msgstr "採用しているアルゴリズムについて"
 
 msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "購入金額とは、トレード開始のために支払わなければならない金額のことです。"
-
-msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
-msgstr "損切りと利益ストップは保証されています。損失と利益はそれぞれ損切りと利益ストップに制限されています。判定レベルが損切りまたは利益ストップに到達した場合、損切りレベルまたは利益ストップレベルで閉鎖されます。"
 
 msgid "The swap rate will depend on the direction of the position you take:"
 msgstr "スワップレートはお客さまが保持するポジションの動向によって決まります。"
@@ -11381,6 +11281,96 @@ msgstr "利用規約の承認"
 
 msgid "Account Limits"
 msgstr "ご利用制限額"
+
+#~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+#~ msgstr "%1のスプレッドトレードには、市場動向が直接関連する値のデリバティブトレードを活用しています。上昇傾向にある市場で「ロング」を選んだ場合（及び下落傾向にある市場で「ショート」を選んだ場合）はライブマーケットで必要とされる投資額よりもはるかに少額で、利益を得られます。"
+
+#~ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+#~ msgstr "%1のスプレッドトレードでは、生じる損失の最大を制限できる「損切り」が必要となります。この「損切り」の金額は、口座内の資金に作用し、スプレッドトレードが終了するまでそれ以外のお取引ができないよう機能します。スプレッドトレードは転売する際に「損切り」と「利益ストップ」のレベルに到達次第閉鎖されます。"
+
+#~ msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
+#~ msgstr "「<strong>ロング</strong>」 インデックスが上昇すると条件を満たし、下落すると条件が満たされません。"
+
+#~ msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
+#~ msgstr "「<strong>ショート</strong>」 インデックスが下落すると条件を満たし、上昇すると条件が満たされません。"
+
+#~ msgid "Amount per point"
+#~ msgstr "1ポイントの金額"
+
+#~ msgid "Current Level"
+#~ msgstr "現在のレベル"
+
+#~ msgid "Deposit of %1 is required. Current spread: %2 points"
+#~ msgstr "%1のご入金が必要です。現在のスプレッド： %2 ポイント"
+
+#~ msgid "Entry Level"
+#~ msgstr "エントリーレベル"
+
+#~ msgid "Example:"
+#~ msgstr "例："
+
+#~ msgid "Exit Level"
+#~ msgstr "判定レベル"
+
+#~ msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
+#~ msgstr "ロングトレードにおいて、エントリーレベルは値にスプレッドの半分を足し、判定レベルは値からスプレッドの半分を引きます。ショートトレードにおいては、エントリーレベルは値から半分のスプレッドを引き、判定レベルは値にスプレッドの半分を足します。"
+
+#~ msgid "How to trade spreads?"
+#~ msgstr "スプレッド取引方法"
+
+#~ msgid "Learn more about spreads on %1."
+#~ msgstr "Binary株式会社 (和文名称 バイナリー株式会社)のスプレッドについて詳細を確認する"
+
+#~ msgid "Points"
+#~ msgstr "ポイント"
+
+#~ msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
+#~ msgstr "潜在利益と損失は、それぞれ利益ストップと損切りレベルで制限されます。"
+
+#~ msgid "Profit/Loss (points)"
+#~ msgstr "損益（ポイント）"
+
+#~ msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
+#~ msgstr "スプレッドトレードのペイアウトは、契約のエントリーレベルと相対的なインデックスの動きに基づいています。"
+
+#~ msgid "Spreads"
+#~ msgstr "スプレッド"
+
+#~ msgid "Stop Loss Level"
+#~ msgstr "損切りレベル"
+
+#~ msgid "Stop Profit Level"
+#~ msgstr "利益ストップレベル"
+
+#~ msgid "Stop-loss"
+#~ msgstr "損切り"
+
+#~ msgid "Stop-profit"
+#~ msgstr "利益ストップ"
+
+#~ msgid "Stop-type"
+#~ msgstr "ストップタイプ"
+
+#~ msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
+#~ msgstr "ラダーのポイントごとの利益額/損失額は、1ポイントの金額を掛けたものになります。1ポイントが大きいとインデックスの動向のポイントごとの利益/損失も大きくなります。"
+
+#~ msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
+#~ msgstr "ロングトレードのエントリーレベルが1001（始値 + スプレッドの半分）の場合、判定の際に値が1100であるとロングトレードの判定レベルは1099です。（終値 - スプレッドの半分）"
+
+#~ msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
+#~ msgstr "ショートトレードのエントリーレベルが999（始値 - スプレッドの半分）の場合、判定の際に値が1100であるとショートトレードの判定レベルは1101です。（終値 + スプレッドの半分）"
+
+#~ msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
+#~ msgstr "金融商品XYZの始値は1000で、この商品のスプレッドは2ポイントです。"
+
+#~ msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "USD306の損失は、判定レベルとエントリーレベルを1ポイントの金額で掛けた分の差額になります。"
+
+#~ msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "USD 294の利益は、判定レベルとエントリーレベルのそれぞれをポイントごとの金額で掛け算した差額です。"
+
+#~ msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
+#~ msgstr "損切りと利益ストップは保証されています。損失と利益はそれぞれ損切りと利益ストップに制限されています。判定レベルが損切りまたは利益ストップに到達した場合、損切りレベルまたは利益ストップレベルで閉鎖されます。"
 
 #~ msgid "Deposit of"
 #~ msgstr "Xのご入金"
