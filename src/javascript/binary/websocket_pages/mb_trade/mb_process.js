@@ -105,7 +105,7 @@ const MBProcess = (() => {
     const handleMarketClosed = () => {
         $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
         MBNotifications.show({ text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
-        symbols_timeout = setTimeout(() => { getSymbols(1); }, 30000);
+        symbols_timeout = setTimeout(() => { getSymbols(); }, 30000);
     };
 
     const handleMarketOpen = () => {
@@ -205,7 +205,7 @@ const MBProcess = (() => {
             market_status = 'closed';
         } else {
             if (market_status === 'closed') {
-                getSymbols(1);
+                getSymbols();
                 handleMarketOpen();
             }
             market_status = 'open';
