@@ -102,7 +102,6 @@ const Page = (() => {
 
     const onUnload = () => {
         Menu.onUnload();
-        Contents.onUnload();
     };
 
     const recordAffiliateExposure = () => {

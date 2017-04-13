@@ -146,7 +146,7 @@ const DigitInfo_Beta = (() => {
                 }
             } });
         };
-        $('#digit_underlying, #tick_count').on('change', getLatest).addClass('unbind_later');
+        $('#digit_underlying, #tick_count').off('change').on('change', getLatest);
     };
 
     const showChart = (underlying, underlying_spots) => {
