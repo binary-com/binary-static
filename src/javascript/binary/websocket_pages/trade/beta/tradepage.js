@@ -1,6 +1,5 @@
 const TradingAnalysis_Beta      = require('./analysis');
 const TradingEvents_Beta        = require('./event');
-const Message_Beta              = require('./message');
 const Price_Beta                = require('./price');
 const Process_Beta              = require('./process');
 const commonTrading             = require('../common');
@@ -29,11 +28,6 @@ const TradePage_Beta = (() => {
             return;
         }
         State.set('is_beta_trading', true);
-        BinarySocket.init({
-            onmessage: (msg) => {
-                Message_Beta.process(msg);
-            },
-        });
         Price_Beta.clearFormId();
         if (events_initialized === 0) {
             events_initialized = 1;

@@ -50,7 +50,6 @@ sub all_pages {
         ['get-started/why-trade-with-us',            'get_started/why_trade_with_us',             'get_started', 'Why Trade with Binary.com',        'ja'],
         ['get-started/how-to-trade-binaries',        'get_started/how_to_trade_binaries',         'get_started', 'How to Trade Binary Options?',           'ja'],
         ['get-started/volidx-markets',               'get_started/volidx_markets',                'get_started', 'Volatility Index Markets',         'ja'],
-        ['get-started/spread',                       'get_started/spread_bets',                   'get_started', 'Spreads',                          'ja'],
         ['get-started/smart-indices',                'get_started/smart_indices',                 'get_started', 'Smart Indices',                    'ja'],
         ['get-started/otc-indices-stocks',           'get_started/otc_indices_stocks',            'get_started', 'What Are OTC Indices and Stocks?', 'ja'],
         ['get-started/beginners-faq',                'get_started/beginners_faq',                 'get_started', 'FAQ',                              'ja'],
