@@ -264,12 +264,6 @@ msgstr "Zespół analizy ilościowej %1 jest odpowiedzialny za wycenę opcji bin
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "Inteligentne rynki forex na %1 to inteligentne rynki, które mierzą wartość waluty w stosunku do koszyka głównych walut."
 
-msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr "Kontrakty Spread oferowane przez %1 to lewarowane instrumenty pochodne, których wartość jest bezpośrednio związana z ruchami na rynku instrumentu bazowego. Ruchy te przynoszą zyski klientom, którzy wybierają pozycje „długie” na rynku rosnącym (i tym, którzy wybierają pozycje „krótkie” na rynku zniżkującym) przy znacznie mniejszych inwestowanych kwotach w porównaniu z kwotami wymaganymi przy handlu na rynkach rzeczywistych."
-
-msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr "Kontrakty Spread oferowane przez %1 wiążą się z określeniem kwoty „stop stratom”, która stanowi maksymalny limit strat ponoszonych przez klienta. Kwota „stop stratom” odgrywa rolę depozytu i nie będzie można jej wykorzystać do dalszego handlu do czasu zamknięcia kontraktu Spread. Kontrakty Spread są zamykane w chwili sprzedania ich przez Klienta lub w momencie osiągnięcia limitu „stop stratom” bądź „stop zyskom”."
-
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "Wskaźniki zmienności %1 są oparte na zabezpieczonym kryptograficznie generatorze losowych liczb, za którego audyt odpowiada niezależna strona trzecia."
 
@@ -311,12 +305,6 @@ msgstr "&#8220;%1 to jeden z naszych najbardziej zaufanych partnerów, z którym
 
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;Korzystamy z portalu www.binary.com od 8 lat i polecamy go wszystkim naszym członkom na całym świecie.&#8221;"
-
-msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
-msgstr "'<strong>Długie</strong>' kontrakty przynoszą zyski, gdy indeks rośnie i straty, gdy indeks maleje."
-
-msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
-msgstr "'<strong>Krótkie</strong>' kontrakty przynoszą straty, gdy indeks wzrasta i zyski, gdy indeks spada."
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "Nagroda „Firma najlepiej komunikująca się z klientami” przyznana przez Investors Chronicle"
@@ -1014,9 +1002,6 @@ msgstr "Kwota"
 
 msgid "Amount of above assets"
 msgstr "Wartość powyższych aktywów"
-
-msgid "Amount per point"
-msgstr "Kwota na punkt"
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Minimum studia licencjackie"
@@ -2184,9 +2169,6 @@ msgstr "Symbol waluty"
 msgid "Current"
 msgstr "Obecne"
 
-msgid "Current Level"
-msgstr "Obecny poziom"
-
 msgid "Current Time"
 msgstr "Obecny czas"
 
@@ -2297,11 +2279,6 @@ msgstr "Wpłać środki i rozpocznij handlowanie"
 
 msgid "Deposit into"
 msgstr "Wpłata na"
-
-#, fuzzy
-#| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
-msgid "Deposit of %1 is required. Current spread: %2 points"
-msgstr "Wymagany depozyt: %2 %1. Obecny spread: %3 punkty"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Wpłaty i wypłaty na Twoje konto za pośrednictwem przelewu bankowego, karty kredytowej lub e-gotówki."
@@ -2650,9 +2627,6 @@ msgstr "Wprowadź limit w zakresie różnicy od aktualnej ceny. Jeśli wprowadzi
 msgid "Enter your email"
 msgstr "Wpisz swój adres e-mail"
 
-msgid "Entry Level"
-msgstr "Poziom wejściowy"
-
 msgid "Entry Spot"
 msgstr "Pozycja wejściowa"
 
@@ -2700,9 +2674,6 @@ msgstr "Zdarzenie &mdash; przykłady zdarzenia obejmują miedzy innymi sytuacje,
 
 msgid "Everyone"
 msgstr "Wszyscy"
-
-msgid "Example:"
-msgstr "Przykład:"
 
 msgid "Excellent English language (written and oral) communication skills"
 msgstr "Doskonała znajomość języka angielskiego (w mowie i w piśmie) i zdolności komunikacyjne"
@@ -2763,9 +2734,6 @@ msgstr "Model realizacji i ryzyko kontrahenta"
 
 msgid "Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions."
 msgstr "Wykorzystywanie doskonałych zdolności zarządzania relacjami z klientem w celu zapobiegania oszustwom podczas przetwarzania płatności i zawierania transakcji."
-
-msgid "Exit Level"
-msgstr "Poziom wyjściowy"
 
 msgid "Exit Spot"
 msgstr "Pozycja wyjściowa"
@@ -3003,9 +2971,6 @@ msgstr "Dla notowań forex godziny zamknięcia są określane przez Firmę i prz
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "Dla Forex: Rynek forex to rynek obrotu pozagiełdowego, gdzie banki i inne instytucje finansowe handlują walutami między sobą bez centralnej instytucji rozliczeniowej. W związku z powyższym nie istnieje „oficjalna” cena źródłowa dla notowań forex. Różne kanały zawierają notowania z różnych banków międzynarodowych. W związku z tym ceny mogą się różnić między dostawcami, w zależności od tego, z którego banku uzyskują ceny."
-
-msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
-msgstr "W przypadku kontraktów długich poziom wejściowy jest równy cenie spot plus połowa spreadu, zaś poziom wyjściowy jest równy cenie spot minus połowa spreadu. W przypadku kontraktów krótkich poziom wejściowy jest równy cenie spot minus połowa spreadu, zaś poziom wyjściowy jest równy cenie spot plus połowa spreadu."
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "Po raz trzeci z kolei BetOnMarkets.com uzyskał tytuł „Najlepszego dostawcy zakładów o ustalonej stawce” od pisma Shares Magazine UK. Wygraliśmy po raz ostatni, ponieważ Shares Magazine nie przyznaje już nagród w tej kategorii."
@@ -3318,9 +3283,6 @@ msgstr "Jak czytać informacje w powyższej tabeli"
 
 msgid "How to trade binary options?"
 msgstr "Jak handlować opcjami binarnymi?"
-
-msgid "How to trade spreads?"
-msgstr "Jak handlować spreadami?"
 
 msgid "How to trade the Volatility Indices markets?"
 msgstr "Jak handlować na rynkach wskaźników zmienności?"
@@ -4485,9 +4447,6 @@ msgstr "Dowiedz się więcej"
 
 msgid "Learn more about our corporate culture"
 msgstr "Dowiedz się więcej o naszej kulturze korporacyjnej"
-
-msgid "Learn more about spreads on %1."
-msgstr "Dowiedz się więcej na temat spreadów na %1."
 
 msgid "Learn the basics, from choosing your asset to winning your payout."
 msgstr "Naucz się podstaw: od wybrania aktywów do wygrania wypłaty."
@@ -5717,9 +5676,6 @@ msgstr "Proszę przesłać powyższe informacje na adres: <a href='mailto:%1'>%1
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr "Należy zauważyć, że nasze stawki swapowe zależą również od czasu i od dni utrzymywania pozycji otwartych: "
 
-msgid "Points"
-msgstr "Punkty"
-
 msgid "Poland"
 msgstr "Polska"
 
@@ -5752,9 +5708,6 @@ msgstr "Możliwy zysk"
 
 msgid "Potential profit"
 msgstr "Możliwy zysk"
-
-msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
-msgstr "Wysokość potencjalnych zysków i strat jest ograniczona do wysokości poziomu „stop zyskom” i „stop stratom” odpowiednio."
 
 msgid "Power & simplicity"
 msgstr "Siła i prostota"
@@ -5881,9 +5834,6 @@ msgstr "Tabela zysków"
 
 msgid "Profit/Loss"
 msgstr "Zysk/Strata"
-
-msgid "Profit/Loss (points)"
-msgstr "Zysk/Strata (punkty)"
 
 msgid "Prohibited Trades"
 msgstr "Zakłady zabronione"
@@ -6548,12 +6498,6 @@ msgstr "Czas spot"
 msgid "Spot price"
 msgstr "Cena punktowa"
 
-msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
-msgstr "Wypłata kontraktów Spread jest uzależniona od ruchów indeksu powiązanego z poziomem wejściowym danego kontraktu."
-
-msgid "Spreads"
-msgstr "Spready"
-
 msgid "Stake"
 msgstr "Stawka"
 
@@ -6629,9 +6573,6 @@ msgstr "Doświadczenie w handlowaniu akcjami"
 msgid "Stocks trading frequency"
 msgstr "Częstotliwość handlowania akcjami"
 
-msgid "Stop Loss Level"
-msgstr "Poziom Stop stratom"
-
 msgid "Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
 msgstr "Zlecenie Stop/ zlecenie Stop stratom &mdash; polecenie wykonania transakcji w celu zamknięcia pozycji otwartej w przypadku, gdy cena osiągnie określony poziom."
 
@@ -6641,20 +6582,8 @@ msgstr "Poziom Stop Out"
 msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr ""
 
-msgid "Stop Profit Level"
-msgstr "Poziom Stop zyskom"
-
 msgid "Stop and Limit Orders"
 msgstr "Zlecenia Stop i Limit"
-
-msgid "Stop-loss"
-msgstr "Stop-stratom"
-
-msgid "Stop-profit"
-msgstr "Stop-zyskom"
-
-msgid "Stop-type"
-msgstr "Stop-typ"
 
 msgid "Storage of Content"
 msgstr "Przechowywanie treści"
@@ -7108,9 +7037,6 @@ msgstr "Przelew środków jest niemożliwy. Proszę %1wpłacić%2 środki na kon
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "Program partnerski umożliwia Ci uzyskiwanie korzyści z przekierowywania klientów na naszą stronę. Naszym rozwojem i sukcesem dzielimy się z naszymi partnerami, którzy zapewniają nam przypływ nowych klientów."
 
-msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
-msgstr "Kwota zysku/straty na punkt wzrostu/spadku jest pomnożona przez kwotę na punkt. Wysoka kwota na punkt skutkuje wysokimi zyskami/stratami na punkt zmieniającego się indeksu."
-
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "Proces przeciwdziałania praniu brudnych pieniędzy ma następujący wpływ na Klientów:"
 
@@ -7186,15 +7112,6 @@ msgstr "Najprostszy sposób na rozpoczęcie przygody z rynkami finansowymi"
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "Podany adres e-mail jest już w użyciu. Jeżeli nie pamiętasz hasła, skorzystaj z opcji <a href=\"%1\">odzyskiwania hasła</a> lub skontaktuj się z obsługą klienta."
 
-msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
-msgstr "Poziom wejściowy dla kontraktu długiego wynosi 1001, czyli: wejściowa cena spot + połowa spreadu. Przy zamknięciu kontraktu cena spot wynosi 1100, tak więc poziom wyjściowy dla kontraktu długiego wynosi 1099, czyli: wyjściowa cena spot - połowa spreadu."
-
-msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
-msgstr "Poziom wejściowy dla kontraktu krótkiego wynosi 999, czyli: wejściowa cena spot - połowa spreadu. Przy zamknięciu kontraktu cena spot wynosi 1100, tak więc poziom wyjściowy dla kontraktu krótkiego wynosi 1101, czyli: wyjściowa cena spot + połowa spreadu."
-
-msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
-msgstr "Wejściowa cena spot instrumentu XYZ wynosi 1000, a spread dla tego instrumentu to 2 punkty."
-
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Cena wejściowa to cena początkowa zakładu zakupionego przez gracza."
 
@@ -7249,9 +7166,6 @@ msgstr "Poziom ochrony oferowanej i należnej klientowi zależy od kategorii, do
 msgid "The leverage ratio refers to the number of times your margin (the amount set aside from your account balance to open and maintain a transaction) can be \"leveraged\" to enter into a Transaction. The denominator of the leverage ratio is always 1. A 50:1 leverage is equivalent to a 2% margin requirement (1 divided by 50 = 2%). The leverage ratio that we/you establish will determine the amount of margin required. As leverage is inversely proportional to margin, the lower the leverage you set for your Account, the higher the margin required to be set aside from your account balance (your margin requirement)."
 msgstr "Wskaźnik dźwigni określa ile razy można zastosować dźwignię w stosunku do Twojego depozytu zabezpieczającego (kwota odłożona z Twojego salda na koncie w celu otwarcia i utrzymania transakcji), aby zawrzeć Transakcję. Wskaźnik podawany jest zawsze w stosunku do 1. Wskaźnik dźwigni wynoszący 50:1 odpowiada 2% depozytu zabezpieczającego (1 dzielone przez 50 = 2%). Określony przez nas lub przez Ciebie wskaźnik dźwigni będzie określał kwotę wymaganego depozytu zabezpieczającego. Dźwignia jest odwrotnie proporcjonalna do depozytu zabezpieczającego: im mniejszy wskaźnik dźwigni ustawisz dla swojego Konta, tym wyższa będzie kwota wymaganego depozytu zabezpieczającego, który należy odłożyć z Twojego salda na koncie (wymóg depozytu zabezpieczającego)."
 
-msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "Strata 306 USD stanowi różnicę między poziomem wyjściowym i wejściowym pomnożoną przez kwotę na punkt."
-
 msgid "The main password of account number %1 has been changed."
 msgstr "Hasło główne do konta o numerze %1 zostało zmienione."
 
@@ -7303,9 +7217,6 @@ msgstr "Wiodąca platforma do handlu opcjami binarnymi na światowych rynkach fi
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "Zysk to różnica między ceną zakupu (stawką) a wypłatą z wygrywającego zakładu."
 
-msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "Zysk 294 USD stanowi różnicę między poziomem wyjściowym i wejściowym pomnożoną przez kwotę na punkt."
-
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr "Zapis odnoszący się do usługi handlowania na kredyt zawarty w niniejszej Umowie nie ma zastosowania w Unii Europejskiej."
 
@@ -7332,9 +7243,6 @@ msgstr "Algorytmy wygładzające i filtrujące opisane powyżej."
 
 msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "Stawka to kwota, którą gracz musi zapłacić, żeby przystąpić do transakcji."
-
-msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
-msgstr "Stop-stratom i stop-zyskom to poziomy gwarantowane. Straty i zyski mogą wynieść nie więcej niż określone poziomy stop-stratom i stop-zyskom. W momencie gdy poziom wyjściowy osiąga limit stop-stratom lub stop-zyskom, kontrakt zostaje zamknięty po cenie równej limitowi stop-stratom lub stop-zyskom."
 
 msgid "The swap rate will depend on the direction of the position you take:"
 msgstr "Stopa swap zależy od kierunku pozycji:"
@@ -10959,6 +10867,98 @@ msgstr "Akceptacja regulaminu"
 
 msgid "Account Limits"
 msgstr "Limity na koncie"
+
+#~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+#~ msgstr "Kontrakty Spread oferowane przez %1 to lewarowane instrumenty pochodne, których wartość jest bezpośrednio związana z ruchami na rynku instrumentu bazowego. Ruchy te przynoszą zyski klientom, którzy wybierają pozycje „długie” na rynku rosnącym (i tym, którzy wybierają pozycje „krótkie” na rynku zniżkującym) przy znacznie mniejszych inwestowanych kwotach w porównaniu z kwotami wymaganymi przy handlu na rynkach rzeczywistych."
+
+#~ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+#~ msgstr "Kontrakty Spread oferowane przez %1 wiążą się z określeniem kwoty „stop stratom”, która stanowi maksymalny limit strat ponoszonych przez klienta. Kwota „stop stratom” odgrywa rolę depozytu i nie będzie można jej wykorzystać do dalszego handlu do czasu zamknięcia kontraktu Spread. Kontrakty Spread są zamykane w chwili sprzedania ich przez Klienta lub w momencie osiągnięcia limitu „stop stratom” bądź „stop zyskom”."
+
+#~ msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
+#~ msgstr "'<strong>Długie</strong>' kontrakty przynoszą zyski, gdy indeks rośnie i straty, gdy indeks maleje."
+
+#~ msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
+#~ msgstr "'<strong>Krótkie</strong>' kontrakty przynoszą straty, gdy indeks wzrasta i zyski, gdy indeks spada."
+
+#~ msgid "Amount per point"
+#~ msgstr "Kwota na punkt"
+
+#~ msgid "Current Level"
+#~ msgstr "Obecny poziom"
+
+#, fuzzy
+#~| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
+#~ msgid "Deposit of %1 is required. Current spread: %2 points"
+#~ msgstr "Wymagany depozyt: %2 %1. Obecny spread: %3 punkty"
+
+#~ msgid "Entry Level"
+#~ msgstr "Poziom wejściowy"
+
+#~ msgid "Example:"
+#~ msgstr "Przykład:"
+
+#~ msgid "Exit Level"
+#~ msgstr "Poziom wyjściowy"
+
+#~ msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
+#~ msgstr "W przypadku kontraktów długich poziom wejściowy jest równy cenie spot plus połowa spreadu, zaś poziom wyjściowy jest równy cenie spot minus połowa spreadu. W przypadku kontraktów krótkich poziom wejściowy jest równy cenie spot minus połowa spreadu, zaś poziom wyjściowy jest równy cenie spot plus połowa spreadu."
+
+#~ msgid "How to trade spreads?"
+#~ msgstr "Jak handlować spreadami?"
+
+#~ msgid "Learn more about spreads on %1."
+#~ msgstr "Dowiedz się więcej na temat spreadów na %1."
+
+#~ msgid "Points"
+#~ msgstr "Punkty"
+
+#~ msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
+#~ msgstr "Wysokość potencjalnych zysków i strat jest ograniczona do wysokości poziomu „stop zyskom” i „stop stratom” odpowiednio."
+
+#~ msgid "Profit/Loss (points)"
+#~ msgstr "Zysk/Strata (punkty)"
+
+#~ msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
+#~ msgstr "Wypłata kontraktów Spread jest uzależniona od ruchów indeksu powiązanego z poziomem wejściowym danego kontraktu."
+
+#~ msgid "Spreads"
+#~ msgstr "Spready"
+
+#~ msgid "Stop Loss Level"
+#~ msgstr "Poziom Stop stratom"
+
+#~ msgid "Stop Profit Level"
+#~ msgstr "Poziom Stop zyskom"
+
+#~ msgid "Stop-loss"
+#~ msgstr "Stop-stratom"
+
+#~ msgid "Stop-profit"
+#~ msgstr "Stop-zyskom"
+
+#~ msgid "Stop-type"
+#~ msgstr "Stop-typ"
+
+#~ msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
+#~ msgstr "Kwota zysku/straty na punkt wzrostu/spadku jest pomnożona przez kwotę na punkt. Wysoka kwota na punkt skutkuje wysokimi zyskami/stratami na punkt zmieniającego się indeksu."
+
+#~ msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
+#~ msgstr "Poziom wejściowy dla kontraktu długiego wynosi 1001, czyli: wejściowa cena spot + połowa spreadu. Przy zamknięciu kontraktu cena spot wynosi 1100, tak więc poziom wyjściowy dla kontraktu długiego wynosi 1099, czyli: wyjściowa cena spot - połowa spreadu."
+
+#~ msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
+#~ msgstr "Poziom wejściowy dla kontraktu krótkiego wynosi 999, czyli: wejściowa cena spot - połowa spreadu. Przy zamknięciu kontraktu cena spot wynosi 1100, tak więc poziom wyjściowy dla kontraktu krótkiego wynosi 1101, czyli: wyjściowa cena spot + połowa spreadu."
+
+#~ msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
+#~ msgstr "Wejściowa cena spot instrumentu XYZ wynosi 1000, a spread dla tego instrumentu to 2 punkty."
+
+#~ msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "Strata 306 USD stanowi różnicę między poziomem wyjściowym i wejściowym pomnożoną przez kwotę na punkt."
+
+#~ msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "Zysk 294 USD stanowi różnicę między poziomem wyjściowym i wejściowym pomnożoną przez kwotę na punkt."
+
+#~ msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
+#~ msgstr "Stop-stratom i stop-zyskom to poziomy gwarantowane. Straty i zyski mogą wynieść nie więcej niż określone poziomy stop-stratom i stop-zyskom. W momencie gdy poziom wyjściowy osiąga limit stop-stratom lub stop-zyskom, kontrakt zostaje zamknięty po cenie równej limitowi stop-stratom lub stop-zyskom."
 
 #~ msgid "Deposit of"
 #~ msgstr "Wpłata w wysokości"
