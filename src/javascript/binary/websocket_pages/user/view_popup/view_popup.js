@@ -1,6 +1,5 @@
 const moment               = require('moment');
 const ViewPopupUI          = require('./view_popup.ui');
-const MBPrice              = require('../../mb_trade/mb_price');
 const Highchart            = require('../../trade/charts/highchart');
 const TickDisplay          = require('../../trade/tick_trade');
 const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
@@ -47,7 +46,7 @@ const ViewPopup = (() => {
 
         if (btn_view) {
             ViewPopupUI.disableButton($(btn_view));
-            ViewPopupUI.cleanup(true);
+            ViewPopupUI.cleanup();
         }
 
         getContract();
@@ -100,7 +99,10 @@ const ViewPopup = (() => {
         updateTimers();
         update();
         ViewPopupUI.repositionConfirmation();
-        if (State.get('is_mb_trading')) MBPrice.hidePriceOverlay();
+
+        if (State.get('is_mb_trading')) {
+            State.call('ViewPopup.onDisplayed');
+        }
     };
 
     const update = () => {

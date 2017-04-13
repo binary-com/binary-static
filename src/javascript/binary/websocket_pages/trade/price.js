@@ -1,10 +1,10 @@
 const moment               = require('moment');
 const getStartDateNode     = require('./common_independent').getStartDateNode;
-const Defaults             = require('./defaults');
 const commonTrading        = require('./common');
 const displayPriceMovement = require('./common_independent').displayPriceMovement;
 const getTradingTimes      = require('./common_independent').getTradingTimes;
 const Contract             = require('./contract');
+const Defaults             = require('./defaults');
 const localize             = require('../../base/localize').localize;
 const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
@@ -279,7 +279,14 @@ const Price = (() => {
             }
         }
         Object.keys(types).forEach((type_of_contract) => {
-            BinarySocket.send(Price.proposal(type_of_contract));
+            BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
+                if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
+                    response.echo_req.passthrough.form_id === form_id) {
+                    commonTrading.hideOverlayContainer();
+                    Price.display(response, Contract.contractType()[Contract.form()]);
+                    commonTrading.hidePriceOverlay();
+                }
+            } });
         });
     };
 
@@ -289,7 +296,6 @@ const Price = (() => {
         clearMapping    : clearMapping,
         clearFormId     : clearFormId,
         idDisplayMapping: () => type_display_id_mapping,
-        getFormId       : () => form_id,
         incrFormId      : () => { form_id++; },
 
         processForgetProposals: processForgetProposals,

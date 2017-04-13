@@ -22,7 +22,6 @@ const Symbols = (() => {
     let trade_markets = {},
         trade_markets_list = {},
         trade_underlyings = {},
-        need_page_update = 1,
         names = {};
 
     const details = (data) => {
@@ -33,22 +32,12 @@ const Symbols = (() => {
         names              = ActiveSymbols.getSymbolNames(all_symbols);
     };
 
-    const getSymbols = (update) => {
-        const $args = {
-            active_symbols: 'brief',
-        };
-        BinarySocket.send($args);
-        need_page_update = update;
-    };
-
     return {
-        details       : details,
-        getSymbols    : getSymbols,
-        markets       : list   => (list ? trade_markets_list : trade_markets),
-        underlyings   : ()     => trade_underlyings,
-        getName       : symbol => names[symbol],
-        needpageUpdate: ()     => need_page_update,
-        getAllSymbols : ()     => names,
+        details      : details,
+        markets      : list   => (list ? trade_markets_list : trade_markets),
+        underlyings  : ()     => trade_underlyings,
+        getName      : symbol => names[symbol],
+        getAllSymbols: ()     => names,
     };
 })();
 

@@ -277,7 +277,14 @@ const Price_Beta = (() => {
             }
         }
         Object.keys(types).forEach((type_of_contract) => {
-            BinarySocket.send(Price_Beta.proposal(type_of_contract));
+            BinarySocket.send(Price_Beta.proposal(type_of_contract), { callback: (response) => {
+                if (response.echo_req && response.echo_req.passthrough &&
+                    response.echo_req.passthrough.form_id === form_id) {
+                    commonTrading.hideOverlayContainer();
+                    Price_Beta.display(response, Contract_Beta.contractType()[Contract_Beta.form()]);
+                    commonTrading.hidePriceOverlay();
+                }
+            } });
         });
     };
 

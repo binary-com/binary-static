@@ -1,5 +1,5 @@
 const PortfolioInit         = require('./account/portfolio/portfolio.init');
-const updateContractBalance = require('../trade/common').updateContractBalance;
+const updateContractBalance = require('../trade/update_values').updateContractBalance;
 const Client                = require('../../base/client');
 const formatMoney           = require('../../common_functions/currency_to_symbol').formatMoney;
 

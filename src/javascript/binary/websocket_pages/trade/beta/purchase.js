@@ -66,8 +66,7 @@ const Purchase_Beta = (() => {
                 $(this).text('').removeAttr('class', '');
             });
             const purchase_passthrough = purchase_data.echo_req.passthrough;
-            elementTextContent(brief, `${$('#underlying').find('option:selected').text()} / ${toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type])}
-                ${(Contract_Beta.form() === 'digits' ? ` ${purchase_passthrough.barrier}` : '')}`);
+            elementTextContent(brief, `${$('#underlying').find('option:selected').text()} / ${toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type])}${(Contract_Beta.form() === 'digits' && !/(even|odd)/i.test(purchase_passthrough.contract_type) ? ` ${purchase_passthrough.barrier}` : '')}`);
 
             elementTextContent(heading, localize('Contract Confirmation'));
             elementTextContent(descr, receipt.longcode);

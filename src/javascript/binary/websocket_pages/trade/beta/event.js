@@ -1,16 +1,20 @@
 const moment                         = require('moment');
 const TradingAnalysis_Beta           = require('./analysis');
 const Barriers_Beta                  = require('./barriers');
-const Contract_Beta                  = require('./contract');
 const Durations_Beta                 = require('./duration');
 const Price_Beta                     = require('./price');
 const Process_Beta                   = require('./process');
+const Purchase_Beta                  = require('./purchase');
+const chartFrameSource               = require('../charts/chart_frame').chartFrameSource;
 const Defaults                       = require('../defaults');
+const GetTicks                       = require('../get_ticks');
 const setFormPlaceholderContent_Beta = require('../set_values').setFormPlaceholderContent_Beta;
 const Tick                           = require('../tick');
 const commonTrading                  = require('../common');
 const getStartDateNode               = require('../common_independent').getStartDateNode;
+const Notifications                  = require('../notifications');
 const BinaryPjax                     = require('../../../base/binary_pjax');
+const GTM                            = require('../../../base/gtm');
 const dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
 const isVisible                      = require('../../../common_functions/common_functions').isVisible;
 const onlyNumericOnKeypress          = require('../../../common_functions/event_handler');
@@ -40,8 +44,8 @@ const TradingEvents_Beta = (() => {
             // it will default to proper one
             Defaults.remove('formname');
             Defaults.remove('underlying');
-            Process_Beta.processMarket_Beta(1);
-            commonTrading.chartFrameSource();
+            Process_Beta.processMarket_Beta();
+            chartFrameSource();
         };
 
         const market_nav_element = document.getElementById('contract_markets');
@@ -90,7 +94,7 @@ const TradingEvents_Beta = (() => {
         if (underlying_element) {
             underlying_element.addEventListener('change', (e) => {
                 if (e.target) {
-                    commonTrading.chartFrameSource();
+                    chartFrameSource();
                     commonTrading.showFormOverlay();
                     commonTrading.showPriceOverlay();
                     if (e.target.selectedIndex < 0) {
@@ -105,12 +109,16 @@ const TradingEvents_Beta = (() => {
 
                     commonTrading.updateWarmChart();
 
-                    Contract_Beta.getContracts(underlying);
+                    BinarySocket.send({ contracts_for: underlying }).then((response) => {
+                        Notifications.hide('CONNECTION_ERROR');
+                        Process_Beta.processContract_Beta(response);
+                        window.contracts_for = response;
+                    });
 
                     // forget the old tick id i.e. close the old tick stream
                     Process_Beta.processForgetTicks_Beta();
                     // get ticks for current underlying
-                    Tick.request(underlying);
+                    GetTicks.request(underlying);
                     commonTrading.displayTooltip_Beta(Defaults.get('market'), underlying);
                 }
             });
@@ -318,7 +326,10 @@ const TradingEvents_Beta = (() => {
                     }
                 }, this);
                 if (id && ask_price) {
-                    BinarySocket.send(params);
+                    BinarySocket.send(params).then((response) => {
+                        Purchase_Beta.display(response);
+                        GTM.pushPurchaseData(response);
+                    });
                     Price_Beta.incrFormId();
                     Price_Beta.processForgetProposals_Beta();
                 }
