@@ -1,0 +1,29 @@
+[% BLOCK tab_container %]
+    <div class="content-tab-container [% class %]">
+        [% content %]
+    </div>
+[% END %]
+
+[% BLOCK tabs %]
+    <div id="[% id %]">
+        <ul id="[% id_ul %]" class="tm-ul follow-default">
+            [% FOREACH tab IN tabs %]
+                <li id="[% tab.id %]" class="tm-li [% tab.class %]">
+                    <a href="[% IF no_href %]javascript:;[% END %]#[% tab.id %]" class="tm-a">[% tab.text %]</a>
+                </li>
+            [% END %]
+        </ul>
+    </div>
+[% END %]
+
+[% BLOCK tab_content_container %]
+    <div class="tab-content-wrapper" id="[% id %]">
+        [% content %]
+    </div>
+[% END %]
+
+[% BLOCK tab_content %]
+    <div id="[% id %]-content" class="toggle-content [% IF class %][% class %][% ELSE %]invisible[% END %]">
+        [% content %]
+    </div>
+[% END %]

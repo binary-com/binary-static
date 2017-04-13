@@ -6,9 +6,9 @@
 [% END %]
 
 [% WRAPPER user/reality_check/wrapper.html.tt %]
-    [% INCLUDE rc_row string = l('Login time:') id = 'login_time' %]
-    [% INCLUDE rc_row string = l('Current time:') id = 'current_time' %]
-    [% INCLUDE rc_row string = l('Session duration:') id = 'session_duration' %]
+    [% INCLUDE rc_row string=l('Login time:') id='login_time' %]
+    [% INCLUDE rc_row string=l('Current time:') id='current_time' %]
+    [% INCLUDE rc_row string=l('Session duration:') id='session_duration' %]
 
     <p id="start_time"></p>
 

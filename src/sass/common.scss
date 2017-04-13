@@ -128,7 +128,7 @@ label {
     width: 45%;
 }
 
-*, p.no-para-margin, .errorfield {
+*, .no-margin, .errorfield {
     margin: 0;
 }
 
@@ -286,4 +286,12 @@ button .barspinner.white {
     display: none;
     background: url('../images/common/scrollup_icon.svg') no-repeat;
     z-index: 999;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.center-align {
+    align-items: center;
 }

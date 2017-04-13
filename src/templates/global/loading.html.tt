@@ -1,7 +1,11 @@
+[% BLOCK loading %]
 <div class="barspinner dark">
-    <div class="rect1"></div>
-    <div class="rect2"></div>
-    <div class="rect3"></div>
-    <div class="rect4"></div>
-    <div class="rect5"></div>
+    [% items = ['1', '2', '3', '4', '5'] %]
+    [% FOREACH item IN items %]
+    <div class="rect[% item %]"></div>
+    [% END %]
 </div>
+[% END %]
+
+[% INCLUDE loading %]
+

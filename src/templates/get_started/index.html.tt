@@ -1,101 +1,37 @@
+[% BLOCK box %]
+<div class="gr-row">
+    [% FOREACH box IN boxes %]
+    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+        <div class="section fill-bg-color">
+            <a href="[% request.url_for('/get-started/' _ box.id) %]">
+                <div id="[% box.id %]"></div>
+                <div class="section-header">[% box.header %]</div>
+            </a>
+            <div class="section-info">[% box.info %]</div>
+        </div>
+    </div>
+    [% END %]
+</div>
+[% END %]
+
 <dl>
-
-<div class="gr-row">
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color">
-            <a href="[% request.url_for('/get-started/what-is-binary-trading') %]">
-                <div id="what-is-binary-trading"></div>
-                <div class="section-header">[% l("Why choose binary trading?") %]</div>
-            </a>
-            <div class="section-info">[% l("Learn about one of the fastest growing sectors of the finance industry.") %]</div>
-        </div>
-    </div>
-
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color">
-            <a href="[% request.url_for('/get-started/types-of-trades') %]">
-                <div id="types-of-trades"></div>
-                <div class="section-header">[% l("Types of trades") %]</div>
-            </a>
-            <div class="section-info">[% l("Read about the five types of trade offered by [_1].", website_name) %]</div>
-        </div>
-    </div>
-</div>
-
-<div class="gr-row">
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color">
-            <a href="[% request.url_for('/get-started/binary-options-basics') %]">
-                <div id="binary-options-basics"></div>
-                <div class="section-header">[% l("Binary options basics") %]</div>
-            </a>
-            <div class="section-info">[% l("Learn the basics, from choosing your asset to winning your payout.") %]</div>
-        </div>
-    </div>
-
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color">
-            <a href="[% request.url_for('/get-started/why-trade-with-us') %]">
-                <div id="why-trade-with-us"></div>
-                <div class="section-header">[% l("Benefits of trading binaries") %]</div>
-            </a>
-            <div class="section-info">[% l("Learn about the simplicity, transparency and flexibility of binary trading.") %]</div>
-        </div>
-    </div>
-</div>
-
-<div class="gr-row">
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color">
-            <a href="[% request.url_for('/get-started/how-to-trade-binaries') %]">
-                <div id="how-to-trade-binaries"></div>
-                <div class="section-header">[% l("How to trade binary options?") %]</div>
-            </a>
-            <div class="section-info">[% l("Follow a simple step-by-step guide to binary trading.") %]</div>
-        </div>
-    </div>
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color">
-            <a href="[% request.url_for('/get-started/beginners-faq') %]">
-                <div id="beginners-faq"></div>
-                <div class="section-header">[% l("FAQ") %]</div>
-            </a>
-            <div class="section-info">[% l("Read the answers to some common questions.") %]</div>
-        </div>
-    </div>
-</div>
-
-<div class="gr-row">
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color">
-            <a href="[% request.url_for('/get-started/volidx-markets') %]">
-                <div id="random-trades"></div>
-                <div class="section-header">[% l("How to trade the Volatility Indices markets?") %]</div>
-            </a>
-            <div class="section-info">[% l("Discover our Volatility Indices.") %]</div>
-        </div>
-    </div>
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color">
-            <a href="[% request.url_for('/get-started/smart-indices') %]">
-                <div id="smart-indices"></div>
-                <div class="section-header">[% l("Smart Markets") %]</div>
-            </a>
-            <div class="section-info">[% l("Discover our Smart Markets.") %]</div>
-        </div>
-    </div>
-</div>
-
-<div class="gr-row">
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color">
-            <a href="[% request.url_for('/get-started/glossary') %]">
-                <div id="glossary"></div>
-                <div class="section-header">[% l("Glossary") %]</div>
-            </a>
-            <div class="section-info">[% l("Check out some technical terms before you start.") %]</div>
-        </div>
-    </div>
-</div>
-
+    [% INCLUDE box boxes=[
+        { id='what-is-binary-trading', header=l("Why choose binary trading?"), info=l("Learn about one of the fastest growing sectors of the finance industry.") },
+        { id='types-of-trades',        header=l("Types of trades"),            info=l("Read about the five types of trade offered by [_1].", website_name) },
+    ] %]
+    [% INCLUDE box boxes=[
+        { id='binary-options-basics', header=l("Binary options basics"),        info=l("Learn the basics, from choosing your asset to winning your payout.") },
+        { id='why-trade-with-us',     header=l("Benefits of trading binaries"), info=l("Learn about the simplicity, transparency and flexibility of binary trading.") },
+    ] %]
+    [% INCLUDE box boxes=[
+        { id='how-to-trade-binaries', header=l("How to trade binary options?"), info=l("Follow a simple step-by-step guide to binary trading.") },
+        { id='beginners-faq',         header=l("FAQ"),                          info=l("Read the answers to some common questions.") },
+    ] %]
+    [% INCLUDE box boxes=[
+        { id='volidx-markets', header=l("How to trade the Volatility Indices markets?"), info=l("Discover our Volatility Indices.") },
+        { id='smart-indices',  header=l("Smart Markets"),                                info=l("Discover our Smart Markets.") },
+    ] %]
+    [% INCLUDE box boxes=[
+        { id='glossary', header=l("Glossary"), info=l("Check out some technical terms before you start.") },
+    ] %]
 </dl>

@@ -1,3 +1,5 @@
+[% PROCESS components/forms.html.tt %]
+
 <div>
     <h1 id="heading">[% l("Financial Assessment") %]</h1>
 
@@ -23,6 +25,6 @@
             <p class="gr-12">[% l("The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.") %]</p>
         </fieldset>
 
-        [% INCLUDE components/forms/submit_button.html.tt text=l("Update") is_centered=1 type='submit' %]
+        [% INCLUDE submit_button text=l("Update") is_centered=1 type='submit' %]
     </form>
 </div>

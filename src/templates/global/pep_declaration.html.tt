@@ -1,6 +1,6 @@
-<fieldset>
-    <legend>[% l('PEP Declaration') %]</legend>
+[% PROCESS components/forms.html.tt %]
 
+[% WRAPPER fieldset legend=l('PEP Declaration') %]
     <div class="gr-12">
         <p>[% l("A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates.") %]</p>
     </div>
@@ -9,4 +9,4 @@
         <input id="not_pep" type="checkbox" />
         <label for="not_pep">[% l("I acknowledge that I am not a politically exposed person (PEP).") %]</label>
     </div>
-</fieldset>
+[% END %]

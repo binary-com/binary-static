@@ -105,9 +105,7 @@ const PaymentAgentWithdraw = (() => {
             default: // error
                 if (response.echo_req.dry_run === 1) {
                     setActiveView(view_ids.form);
-                    $('#formMessage').css('display', '')
-                        .attr('class', 'errorfield')
-                        .html(response.error.message);
+                    $('#formMessage').removeClass(hidden_class).html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
                     showPageError(localize('Your token has expired. Please click [_1]here[_2] to restart the verification process.', ['<a href="javascript:;" onclick="window.location.reload();">', '</a>']));
                 } else {

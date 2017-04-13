@@ -1,0 +1,9 @@
+<div class="gr-padding-10 gr-gutter fill-bg-color">
+    <h4><strong>[% IF lang == 'ja' %][% l('{JAPAN ONLY}Register')  %][% ELSE %][% l('Register') %][% END %]</strong></h4>
+</div>
+
+<div class="center-text gr-padding-10">
+    <a class="button" href="https://login.binary.com/signup.php[% IF lang == 'ja' %]?lang=13[% END %]">
+        <span>[% IF lang == 'ja' %][% l('{JAPAN ONLY}Sign me up')  %][% ELSE %][% l('Sign me up') %][% END %]</span>
+    </a>
+</div>

@@ -1,21 +1,11 @@
-<div class="gr-row gr-padding-30">
-    <div class="gr-4 gr-12-m gr-6-p center-text gr-centered">
-        <div class="xquote">
-            <div>
-                <div class="picture">
-                    <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/view-positions-icon.svg') %]"/>
-                </div>
-                <div class="text">
-                    <a href="[% request.url_for('/open-positions') %]">[% l("View open positions") %]</a>
-                </div>
-            </div>
-        </div>
-    </div>
+[% PROCESS components/elements.html.tt %]
+
+<div class="gr-padding-30">
+    [% INCLUDE fill_box image='images/pages/careers/view-positions-icon.svg' center=1 padding='4'
+        href=request.url_for('/open-positions') text=l("View open positions") %]
 </div>
 
-<div class="gr-hide-m">
-    <div class="separator-line border-bottom"></div>
-</div>
+[% INCLUDE global/separator_line.html.tt %]
 
 <div class="gr-padding-30">
     <h1>[% l("Are you ready?") %]</h1>
@@ -25,6 +15,6 @@
     <p>[% l("If we're happy with your results, we'll contact you for an interview and then do background and reference checks.") %]</p>
     <p>[% l("If all that sounds a bit daunting, you're right. But it's how we make sure we get the best people for our team.") %]</p>
 
-    [% hr_link = "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'hr@binary.com') %]
+    [% hr_link="<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'hr@binary.com') %]
     <p class="center-text">[% l("To apply, please submit your CV and a cover letter to [_1].", hr_link) %]</p>
 </div>
