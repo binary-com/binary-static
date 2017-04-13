@@ -1,17 +1,13 @@
 const moment                         = require('moment');
 const TradingAnalysis_Beta           = require('./analysis');
-const Barriers_Beta                  = require('./barriers');
-const DigitInfo_Beta                 = require('./charts/digit_info');
 const Contract_Beta                  = require('./contract');
 const Durations_Beta                 = require('./duration');
 const Price_Beta                     = require('./price');
-const Purchase_Beta                  = require('./purchase');
 const StartDates_Beta                = require('./starttime');
-const TickDisplay_Beta               = require('./tick_trade');
 const commonTrading                  = require('../common');
-const processTradingTimesAnswer      = require('../common_independent').processTradingTimesAnswer;
 const Defaults                       = require('../defaults');
 const GetTicks                       = require('../get_ticks');
+const Notifications                  = require('../notifications');
 const Symbols                        = require('../symbols');
 const setFormPlaceholderContent_Beta = require('../set_values').setFormPlaceholderContent_Beta;
 const Tick                           = require('../tick');
@@ -97,7 +93,11 @@ const Process_Beta = (() => {
 
         BinarySocket.clearTimeouts();
 
-        Contract_Beta.getContracts(underlying);
+        BinarySocket.send({ contracts_for: underlying }).then((response) => {
+            Notifications.hide('CONNECTION_ERROR');
+            processContract_Beta(response);
+            window.contracts_for = response;
+        });
 
         commonTrading.displayTooltip_Beta(Defaults.get('market'), underlying);
     };
@@ -274,44 +274,6 @@ const Process_Beta = (() => {
         });
     };
 
-    /*
-     * process ticks stream
-     */
-    const processTick_Beta = (tick) => {
-        const symbol = Defaults.get('underlying');
-        if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
-            Tick.details(tick);
-            Tick.display();
-            if (tick.tick) {
-                DigitInfo_Beta.updateChart(tick);
-            }
-            TickDisplay_Beta.updateChart(tick);
-            Purchase_Beta.updateSpotList();
-            if (!Barriers_Beta.isBarrierUpdated()) {
-                Barriers_Beta.display();
-                Barriers_Beta.setBarrierUpdate(true);
-            }
-            commonTrading.updateWarmChart();
-        } else {
-            DigitInfo_Beta.updateChart(tick);
-        }
-    };
-
-    const processProposal_Beta = (response) => {
-        const form_id = Price_Beta.getFormId();
-        if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
-                response.echo_req.passthrough.form_id === form_id) {
-            commonTrading.hideOverlayContainer();
-            Price_Beta.display(response, Contract_Beta.contractType()[Contract_Beta.form()]);
-            commonTrading.hidePriceOverlay();
-        }
-    };
-
-    const processTradingTimes_Beta = (response) => {
-        processTradingTimesAnswer(response);
-        Price_Beta.processPriceRequest_Beta();
-    };
-
     const onExpiryTypeChange = (value) => {
         const $expiry_type = $('#expiry_type');
         if (!value || !$expiry_type.find(`option[value=${value}]`).length) {
@@ -367,9 +329,6 @@ const Process_Beta = (() => {
         processContractForm_Beta : processContractForm_Beta,
         forgetTradingStreams_Beta: forgetTradingStreams_Beta,
         processForgetTicks_Beta  : processForgetTicks_Beta,
-        processTick_Beta         : processTick_Beta,
-        processProposal_Beta     : processProposal_Beta,
-        processTradingTimes_Beta : processTradingTimes_Beta,
         onExpiryTypeChange       : onExpiryTypeChange,
         onDurationUnitChange     : onDurationUnitChange,
     };

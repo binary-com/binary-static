@@ -853,6 +853,11 @@
                 #portfolio #portfolio-content > div, #tab_trading_times-content > p {
                     margin: 0 10px 10px;
                 }
+                #tab_trading_times-content, #tab_asset_index-content {
+                    select {
+                        margin-bottom: 10px;
+                    }
+                }
                 .toggle-content .gr-padding-10 {
                     padding-top: 0;
                 }

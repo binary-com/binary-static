@@ -133,10 +133,6 @@ const Contract_Beta = (() => {
         }
     };
 
-    const getContracts = (underlying) => {
-        BinarySocket.send({ contracts_for: underlying });
-    };
-
     const getContractForms = () => {
         const contracts = Contract_Beta.contracts().contracts_for;
         const trade_contract_forms = {};
@@ -180,7 +176,6 @@ const Contract_Beta = (() => {
 
     return {
         details      : details,
-        getContracts : getContracts,
         contractForms: getContractForms,
         open         : () => open,
         close        : () => close,

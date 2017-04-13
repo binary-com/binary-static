@@ -46,6 +46,7 @@ const BinarySocketClass = () => {
         'residence_list',
         'landing_company',
         'payout_currencies',
+        'asset_index',
     ];
     let sent_requests = [];
     const waiting_list = {
