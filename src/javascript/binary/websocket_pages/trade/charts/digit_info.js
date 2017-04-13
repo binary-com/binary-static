@@ -112,13 +112,6 @@ const DigitInfo = (() => {
     };
 
     const onLatest = () => {
-        const tab = $('#tab_last_digit-content');
-        const form = tab.find('form:first');
-        form.on('submit', (event) => {
-            event.preventDefault();
-            return false;
-        }).addClass('unbind_later');
-
         const getLatest = () => {
             const $digit_underlying_option = $('#digit_underlying option:selected');
             const symbol = $digit_underlying_option.val();
@@ -151,7 +144,7 @@ const DigitInfo = (() => {
                 },
             });
         };
-        $('#digit_underlying, #tick_count').on('change', getLatest).addClass('unbind_later');
+        $('#digit_underlying, #tick_count').off('change').on('change', getLatest);
     };
 
     const showChart = (underlying, underlying_spots) => {

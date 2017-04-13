@@ -258,14 +258,6 @@
         &.EXPIRYMISS {
             background: url('../images/pages/trade/ends-outside_1.png') no-repeat top center;
         }
-        &.SPREADU {
-            background: url('../images/pages/trade/spreads.svg') no-repeat top center;
-            background-size: 40%;
-        }
-        &.SPREADD {
-            background: url('../images/pages/trade/spreads_1.svg') no-repeat top center;
-            background-size: 40%;
-        }
     }
     #contract_prices_container {
         position: relative;

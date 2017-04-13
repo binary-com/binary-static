@@ -96,15 +96,6 @@
             <div class="section-info">[% l("Check out some technical terms before you start.") %]</div>
         </div>
     </div>
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color">
-            <a href="[% request.url_for('/get-started/spread') %]">
-                <div id="spread"></div>
-                <div class="section-header">[% l("Spreads") %]</div>
-            </a>
-            <div class="section-info">[% l("Learn more about spreads on [_1].", website_name) %]</div>
-        </div>
-    </div>
 </div>
 
 </dl>

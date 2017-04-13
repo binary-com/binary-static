@@ -100,35 +100,25 @@ const GTM = (() => {
             bom_buy_price     : buy.buy_price,
             bom_payout        : buy.payout,
         };
-        // Spread contracts
-        if (/spread/i.test(req.contract_type)) {
+        $.extend(data, {
+            bom_amount     : req.amount,
+            bom_basis      : req.basis,
+            bom_expiry_type: document.getElementById('expiry_type').value,
+        });
+        if (data.bom_expiry_type === 'duration') {
             $.extend(data, {
-                bom_stop_type        : req.stop_type,
-                bom_amount_per_point : buy.amount_per_point,
-                bom_stop_loss_level  : buy.stop_loss_level,
-                bom_stop_profit_level: buy.stop_profit_level,
+                bom_duration     : req.duration,
+                bom_duration_unit: req.duration_unit,
             });
-        } else {
-            $.extend(data, {
-                bom_amount     : req.amount,
-                bom_basis      : req.basis,
-                bom_expiry_type: document.getElementById('expiry_type').value,
-            });
-            if (data.bom_expiry_type === 'duration') {
-                $.extend(data, {
-                    bom_duration     : req.duration,
-                    bom_duration_unit: req.duration_unit,
-                });
-            }
-            if (isVisible(document.getElementById('barrier'))) {
-                data.bom_barrier = req.barrier;
-            } else if (isVisible(document.getElementById('barrier_high'))) {
-                data.bom_barrier_high = req.barrier;
-                data.bom_barrier_low  = req.barrier2;
-            }
-            if (isVisible(document.getElementById('prediction'))) {
-                data.bom_prediction  = req.barrier;
-            }
+        }
+        if (isVisible(document.getElementById('barrier'))) {
+            data.bom_barrier = req.barrier;
+        } else if (isVisible(document.getElementById('barrier_high'))) {
+            data.bom_barrier_high = req.barrier;
+            data.bom_barrier_low  = req.barrier2;
+        }
+        if (isVisible(document.getElementById('prediction'))) {
+            data.bom_prediction  = req.barrier;
         }
 
         pushDataLayer(data);
