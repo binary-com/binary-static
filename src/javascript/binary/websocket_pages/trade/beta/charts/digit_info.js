@@ -244,14 +244,14 @@ const DigitInfo_Beta = (() => {
     };
 
     const updateChart = (tick) => {
-        if (tick.req_id === 2) {
+        if (stream_id) {
             if (chart.series[0].name === tick.tick.symbol) {
                 stream_id = tick.tick.id || null;
                 update(tick.tick.symbol, tick.tick.quote);
             } else {
                 BinarySocket.send({ forget: (tick.tick.id).toString() });
             }
-        } else if (!stream_id) {
+        } else {
             update(tick.tick.symbol, tick.tick.quote);
         }
     };
