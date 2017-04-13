@@ -53,17 +53,15 @@ const ApplicationsUI = (() => {
             return FlexTableUI.replace(data);
         }
         const headers = ['Name', 'Permissions', 'Last Used'];
-        const columns = ['name', 'permissions', 'last_used'];
         can_revoke = /admin/.test((State.get(['response', 'authorize', 'authorize']) || {}).scopes);
         if (can_revoke) {
             headers.push('Action');
-            columns.push('action');
         }
         FlexTableUI.init({
             container: container_selector,
-            header   : headers.map(s => localize(s)),
+            header   : headers.map(localize),
             id       : 'applications-table',
-            cols     : columns,
+            cols     : headers.map(title => title.toLowerCase().replace(/\s/g, '-')),
             data     : data,
             style    : ($row, app) => {
                 if (can_revoke) {
