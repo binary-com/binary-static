@@ -1,7 +1,9 @@
 const MBContract       = require('./mb_contract');
 const MBDefaults       = require('./mb_defaults');
 const MBNotifications  = require('./mb_notifications');
+const ViewPopup        = require('../user/view_popup/view_popup');
 const Client           = require('../../base/client');
+const GTM              = require('../../base/gtm');
 const localize         = require('../../base/localize').localize;
 const getPropertyValue = require('../../base/utility').getPropertyValue;
 const isEmptyObject    = require('../../base/utility').isEmptyObject;
@@ -224,7 +226,16 @@ const MBPrice = (() => {
             req.parameters.barrier2 = proposal.barrier2;
         }
 
-        BinarySocket.send(req);
+        BinarySocket.send(req).then((response) => {
+            if (response.error) {
+                hidePriceOverlay();
+                MBNotifications.show({ text: response.error.message, uid: 'BUY_ERROR', dismissible: true });
+            } else {
+                MBNotifications.hide('BUY_ERROR');
+                ViewPopup.init($('<div />', { contract_id: response.buy.contract_id }).get(0));
+                GTM.pushPurchaseData(response);
+            }
+        });
     };
 
     const showPriceOverlay = () => {

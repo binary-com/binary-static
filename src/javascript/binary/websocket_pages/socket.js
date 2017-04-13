@@ -1,3 +1,4 @@
+const MBNotifications      = require('./mb_trade/mb_notifications');
 const MBTradePage          = require('./mb_trade/mb_tradepage');
 const TradePage_Beta       = require('./trade/beta/tradepage');
 const reloadPage           = require('./trade/common').reloadPage;
@@ -24,12 +25,6 @@ const Cookies              = require('../../lib/js-cookie');
  *
  * Provide additional functionality like if connection is close, open
  * it again and process the buffered requests
- *
- *
- * Usage:
- *
- * `BinarySocket.init()` to initiate the connection
- * `BinarySocket.send({contracts_for : 1})` to send message to server
  */
 const BinarySocketClass = () => {
     'use strict';
@@ -166,7 +161,7 @@ const BinarySocketClass = () => {
                 data.passthrough = {};
             }
             // temporary check
-            if ((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !State.get('is_mb_trading')) {
+            if ((data.contracts_for || data.proposal) && !State.get('is_mb_trading')) {
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(() => {
                     if (typeof reloadPage === 'function' && data.contracts_for) {
@@ -176,7 +171,7 @@ const BinarySocketClass = () => {
                         $('.price_container').hide();
                     }
                 }, 60 * 1000);
-            } else if (data.contracts_for && !data.passthrough.hasOwnProperty('dispatch_to') && State.get('is_mb_trading')) {
+            } else if (data.contracts_for && State.get('is_mb_trading')) {
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(() => {
                     MBTradePage.onDisconnect();
@@ -221,6 +216,7 @@ const BinarySocketClass = () => {
 
         binary_socket.onopen = () => {
             Notifications.hide('CONNECTION_ERROR');
+            MBNotifications.hide('CONNECTION_ERROR');
             const api_token = getLoginToken();
             if (api_token && !authorized && localStorage.getItem('client.tokens')) {
                 binary_socket.send(JSON.stringify({ authorize: api_token }));
@@ -245,7 +241,6 @@ const BinarySocketClass = () => {
             const response = JSON.parse(msg.data);
             if (response) {
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
-                let dispatch_to;
                 if (passthrough) {
                     const this_req_number = passthrough.req_number;
                     if (this_req_number) {
@@ -283,7 +278,7 @@ const BinarySocketClass = () => {
                         Client.sendLogoutRequest(is_active_tab);
                     } else if (response.authorize.loginid !== Cookies.get('loginid')) {
                         Client.sendLogoutRequest(true);
-                    } else if (dispatch_to !== 'cashier_password') {
+                    } else {
                         authorized = true;
                         if (!Login.isLoginPages()) {
                             Client.responseAuthorize(response);

@@ -22,9 +22,7 @@ const ViewPopupUI = (() => {
             $con.hide();
             const onClose = () => {
                 cleanup();
-                if (typeof State.get('ViewPopup.onClose') === 'function') {
-                    State.get('ViewPopup.onClose')();
-                }
+                State.call('ViewPopup.onClose');
             };
             $con.find('a.close').on('click', () => { onClose(); });
             $(document).on('keydown', (e) => {
