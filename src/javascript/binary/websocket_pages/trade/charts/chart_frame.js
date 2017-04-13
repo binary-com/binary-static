@@ -1,5 +1,6 @@
 const getLanguage = require('../../../base/language').get;
 const localize    = require('../../../base/localize');
+const Url         = require('../../../base/url');
 const jpClient    = require('../../../common_functions/country_base').jpClient;
 
 const ChartFrame = (() => {
@@ -24,10 +25,11 @@ const ChartFrame = (() => {
     };
 
     const chartFrameSource = () => {
-        if ($('#tab_graph').hasClass('active') && (sessionStorage.getItem('old_underlying') !== sessionStorage.getItem('underlying') || /^(|about:blank)$/.test($('#chart_frame').attr('src')))) {
+        const new_underlying = document.getElementById('underlying').value;
+        const chart_source   = $('#chart_frame').attr('src');
+        if ($('#tab_graph').hasClass('active') && (Url.paramsHash(chart_source).instrument !== new_underlying || /^(|about:blank)$/.test(chart_source))) {
             chartFrameCleanup();
             setChartSource();
-            sessionStorage.setItem('old_underlying', document.getElementById('underlying').value);
         }
         $('#chart-error').hide();
         $('#trade_live_chart').show();

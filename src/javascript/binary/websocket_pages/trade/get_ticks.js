@@ -7,6 +7,7 @@ const Purchase_Beta        = require('./beta/purchase');
 const TickDisplay_Beta     = require('./beta/tick_trade');
 const updateWarmChart      = require('./common').updateWarmChart;
 const DigitInfo            = require('./charts/digit_info');
+const Defaults             = require('./defaults');
 const Purchase             = require('./purchase');
 const Tick                 = require('./tick');
 const TickDisplay          = require('./tick_trade');
@@ -50,7 +51,7 @@ const GetTicks = (() => {
     };
 
     const processTick = (tick) => {
-        const symbol = sessionStorage.getItem('underlying');
+        const symbol = Defaults.get('underlying');
         if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
             Tick.details(tick);
             Tick.display();
@@ -78,7 +79,7 @@ const GetTicks = (() => {
     };
 
     const processTick_Beta = (tick) => {
-        const symbol = sessionStorage.getItem('underlying');
+        const symbol = Defaults.get('underlying');
         if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
             Tick.details(tick);
             Tick.display();
