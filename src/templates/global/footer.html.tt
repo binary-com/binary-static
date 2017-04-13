@@ -132,6 +132,9 @@
                                    <a target="_blank" href="https://shop.binary.com">[% l("Binary Shop") %]</a>
                                </li>
                                <li>
+                                   <a href="[% request.url_for('/charity') %]">[% l("Charitable Activities") %]</a>
+                               </li>
+                               <li>
                                    <a href="[% request.url_for('/partners') %]">[% l("All Partnership Options") %]</a>
                                </li>
                            </ul>
