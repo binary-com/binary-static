@@ -282,6 +282,11 @@ msgstr "ประวัติศาสตร์อันน่าจดจำข
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "ระบบต่างๆ ของ %1 ขณะนี้มีการประมวลผลมากกว่า 1 ล้านธุรกรรมต่อวัน (รวมประเภทบัญชีเสมือน หรือ บัญชีทดลองใช้)"
 
+#, fuzzy
+#| msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
+msgstr "โปรด %1ดำเนินการพิสูจน์ตัวตนในบัญชีของท่าน%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
+
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "แนวคิดการบริจาคเพื่อการกุศลของ%1 มุ่งต่อองค์กรการกุศลขนาดเล็ก และองค์กรที่ไม่แสวงหากำไรทั่วโลกซึ่งสร้างสรรค์ความแตกต่างให้กับชุมชนของพวกเขา การบริจาคของเราเพื่อให้บังเกิดผลต่อหน่วยงานเล็กๆ เหล่านั้นโดยตรง ปราศจากภาระของค่าใช้จ่ายที่ใช้ในการดำเนินธุรกิจที่มีในองค์กรการกุศลใหญ่ๆ อื่นๆ"
 
@@ -1254,9 +1259,7 @@ msgid "Australia 200 Cash Index"
 msgstr "ดัชนีเงิน Australian 200"
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
-msgstr ""
-"การพิสูจน์บัญชีของท่าน ทำได้ขณะนี้โดยตรวจสอบอัตลักษณ์และที่อยู่ของท่าน "
-"เพื่อดำเนินการต่อ โปรดส่งเอกสารต่อไปนี้มายัง %1:"
+msgstr "การพิสูจน์บัญชีของท่าน ทำได้ขณะนี้โดยตรวจสอบอัตลักษณ์และที่อยู่ของท่าน เพื่อดำเนินการต่อ โปรดส่งเอกสารต่อไปนี้มายัง %1:"
 
 msgid "Authentication"
 msgstr "การระบุตัวตน"
@@ -1460,9 +1463,7 @@ msgid "Binary KK granted Japan license"
 msgstr "Binary KK ได้รับใบอนุญาตของประเทศญี่ปุ่น"
 
 msgid "Binary KK is a licensed Type 1 Financial Instruments Business, regulated by the KLFB, and a member of the FFAJ."
-msgstr ""
-"Binary KK คือ องค์กรที่ดำเนินธุรกิจทางการเงินประเภทที่ 1 ที่มีใบอนุญาต รั"
-"บรองโดย KLFB และสมาชิกหนึ่งของ FFAJ"
+msgstr "Binary KK คือ องค์กรที่ดำเนินธุรกิจทางการเงินประเภทที่ 1 ที่มีใบอนุญาต รับรองโดย KLFB และสมาชิกหนึ่งของ FFAJ"
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK ตั้งอยู่ที่ Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012 ประเทศญี่ปุ่น"
@@ -1780,10 +1781,7 @@ msgid "Christmas Day"
 msgstr "วันคริสต์มาส"
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr ""
-"ลูกค้าในประเทศเหล่านี้ อัฟกานิสถาน เบลเยี่ยม บอสเนีย และ เฮอเซโกวินา อิรัก "
-"สาธารณรัฐประชาชนลาว ซีเรีย ยูกานดา วาตูอานู หรือ เยเมน "
-"จะได้รับการดูแลและเปิดบัญชีจาก Binary Investments (Europe) Ltd."
+msgstr "ลูกค้าในประเทศเหล่านี้ อัฟกานิสถาน เบลเยี่ยม บอสเนีย และ เฮอเซโกวินา อิรัก สาธารณรัฐประชาชนลาว ซีเรีย ยูกานดา วาตูอานู หรือ เยเมน จะได้รับการดูแลและเปิดบัญชีจาก Binary Investments (Europe) Ltd."
 
 msgid "Classification of assets requiring hedge"
 msgstr "การจำแนกสินทรัพย์ที่ต้องป้องกันความเสี่ยง"
@@ -2507,10 +2505,7 @@ msgid "Each party to this Agreement represents and warrants to the other that it
 msgstr "แต่ละฝ่ายในข้อตกลงฉบับนี้ทำหน้าที่รับรองว่า จะรักษาและปฏิบัติตามข้อตกลงทุกข้อให้ถูกต้องตามสิทธิ กรรมสิทธิ์ หน้าที่ และบทบาทที่กล่าวในข้อตกลงนี้ เพื่อยินยอมให้บุคคลอื่นมีสิทธิ์และเสรีภาพตามหน้าที่ความรับผิดชอบที่ปรากฏในข้อตกลงนี้"
 
 msgid "Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index."
-msgstr ""
-"แต่ละครั้งที่ท่านเปิดโพซิชั่นสัญลักษณ์ดัชนีผันผวน ท่านสามารถเริ่ม "
-"ด้วยธุรกรรมปริมาณขั้นต่ำ 0.01 (มูลค่าซื้อขาย), ซึ่งแปลงเป็นมูลค่า 0.01 "
-"เหรียญสหรัฐ ต่อจุดการเคลื่อนไหวของดัชนี"
+msgstr "แต่ละครั้งที่ท่านเปิดโพซิชั่นสัญลักษณ์ดัชนีผันผวน ท่านสามารถเริ่ม ด้วยธุรกรรมปริมาณขั้นต่ำ 0.01 (มูลค่าซื้อขาย), ซึ่งแปลงเป็นมูลค่า 0.01 เหรียญสหรัฐ ต่อจุดการเคลื่อนไหวของดัชนี"
 
 msgid "Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake."
 msgstr "แต่ละการซื้อขายเป็นการกำหนดจำนวนเงินที่ต้องถูกชำระไว้ก่อน ซึ่งท่านสามารถปรับตัวแปรในการคำนวณมูลค่า เมื่อท่านชนะจะได้รับการชำระเงิน หากการพยากรณ์ หรือ การทำนายของท่านถูกต้อง หรือท่านจะต้องชำระเงินที่ท่านวางหากผลไม่ถูกต้อง"
@@ -3434,10 +3429,7 @@ msgid "If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong
 msgstr "หากท่านซื้อ <strong>1 สัญญาของดัชนี Volatility 100</strong> ที่ <strong>ราคา US&#36 20,000</strong> และ <strong>อัตรามาร์จินที่ 0.01(1%)</strong>การคำนวณมาร์จินของการซื้อเป็นดังนี้:"
 
 msgid "If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:"
-msgstr ""
-"หากท่านซื้อ <strong>หนึ่งชุดของ EUR/USD</strong> ด้วย<strong>สัญญามูลค่า "
-"100,000</strong> และ <strong>เลเวอเลจที่ 100:1</strong> "
-"การคำนวณมาร์จินต่อหนึ่งชุดนั้น ทำได้ดังนี้:"
+msgstr "หากท่านซื้อ <strong>หนึ่งชุดของ EUR/USD</strong> ด้วย<strong>สัญญามูลค่า 100,000</strong> และ <strong>เลเวอเลจที่ 100:1</strong> การคำนวณมาร์จินต่อหนึ่งชุดนั้น ทำได้ดังนี้:"
 
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "หากท่านเลือกซื้อขายสัญญากับเรา ซึ่งมีความสำคัญที่ท่านจะตระหนักในความเสี่ยงที่เกี่ยวข้อง ท่านมีแหล่งข้อมูลการลงทุนที่เพียงพอเพื่อเข้าใจในความเสี่ยงดังกล่าว ที่ท่านควรพิจารณาสังเกตการณ์อย่างใกล้ชิด"
@@ -3566,13 +3558,7 @@ msgid "If you would like to file a complaint with regards to our service, kindly
 msgstr "หากท่านต้องการแจ้งข้อปรับปรุง หรือร้องทุกข์เกี่ยวกับบริการของเรา โปรดติดต่อเราและให้รายละเอียดที่เกี่ยวข้องกับเหตุการณ์ที่ท่านพบ เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน เวลาที่ใช้ในการดำเนินการตามปกติ คือ ประมาณ 1-2 สัปดาห์ (และมากที่สุด คือ 2 เดือน) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
 
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
-msgstr ""
-"หากท่านต้องการแจ้งข้อปรับปรุง "
-"หรือร้องทุกข์เกี่ยวกับบริการซื้อขายมาร์จินของเราที่กำหนดในข้อตกลงนี้ "
-"โปรดติดต่อเราและให้รายละเอียดที่เกี่ยวข้องกับเหตุการณ์ที่ท่านพบ "
-"เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน "
-"เวลาที่ใช้ในการดำเนินการตามปกติ คือ ประมาณ 1-2 สัปดาห์ (และมากที่สุด คือ "
-"ภายใน 2 เดือน) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
+msgstr "หากท่านต้องการแจ้งข้อปรับปรุง หรือร้องทุกข์เกี่ยวกับบริการซื้อขายมาร์จินของเราที่กำหนดในข้อตกลงนี้ โปรดติดต่อเราและให้รายละเอียดที่เกี่ยวข้องกับเหตุการณ์ที่ท่านพบ เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน เวลาที่ใช้ในการดำเนินการตามปกติ คือ ประมาณ 1-2 สัปดาห์ (และมากที่สุด คือ ภายใน 2 เดือน) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
 
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product - the %1 trading platform."
 msgstr "หากท่านเป็นโบรกเกอร์ พวกเราต้องการดำเนินธุรกิจร่วมกับท่าน เราจะแนะนำผลิตภัณฑ์นวัตกรรมที่ไม่เหมือนใครให้กับลูกค้าของท่าน - ระบบซื้อขาย %1"
@@ -4435,14 +4421,7 @@ msgid "L. Event of Default"
 msgstr "L. กรณีเพิกเฉยต่อสัญญา"
 
 msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
-msgstr ""
-"โครงการสอนภาษาเพื่อผู้ลี้ภัย (Language Classes for Refugees: LCFR) "
-"เป็นโปรแกรมด้านการศึกษาเพื่อผู้ลี้ภัยที่ดำเนินการโดย 'Love & Respect "
-"Transformation Centre' คือ กิจการเพื่อสังคมที่พัฒนาการศึกษาที่มีคุ"
-"ณภาพในระยะยาว โปรแกรมนี้ดำเนินการสอนภาษาอังกฤษ ภาษาบาฮาซา มาเลเซีย "
-"และภาษาฝรั่งเศส เพื่อกลุ่มเด็ก เยาวชน กระทั่งวัยผู้ใหญ่ "
-"เพื่อให้เขาเหล่านั้นมีทักษะทางภาษา "
-"เพื่อทำให้เขาสามารถประกอบอาชีพในระหว่างที่รอส่งตัวกลับประเทศ"
+msgstr "โครงการสอนภาษาเพื่อผู้ลี้ภัย (Language Classes for Refugees: LCFR) เป็นโปรแกรมด้านการศึกษาเพื่อผู้ลี้ภัยที่ดำเนินการโดย 'Love & Respect Transformation Centre' คือ กิจการเพื่อสังคมที่พัฒนาการศึกษาที่มีคุณภาพในระยะยาว โปรแกรมนี้ดำเนินการสอนภาษาอังกฤษ ภาษาบาฮาซา มาเลเซีย และภาษาฝรั่งเศส เพื่อกลุ่มเด็ก เยาวชน กระทั่งวัยผู้ใหญ่ เพื่อให้เขาเหล่านั้นมีทักษะทางภาษา เพื่อทำให้เขาสามารถประกอบอาชีพในระหว่างที่รอส่งตัวกลับประเทศ"
 
 msgid "Languages"
 msgstr "ภาษา"
@@ -5332,12 +5311,7 @@ msgid "Our Company"
 msgstr "บริษัทฯ ของเรา"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
-msgstr ""
-"โปรแกรมพันธมิตรสากลของเรามีกำหนดการชำระเงินตรงเวลาทุกครั้ง "
-"ตั้งแต่การเปิดตัวอย่างเป็นทางการครั้งแรกเมื่อเดือนมีนาคม พ.ศ. 2547 (ค.ศ. "
-"2004) ในประเทศญี่ปุ่น ค่านายหน้าของท่านจะถูกโอนเข้าในบัญชีพันธมิตรของท่"
-"านภายใน 30 วัน "
-"หลังจากวันสิ้นเดือนตามปฏิทินที่มีผู้ถูกแนะนำของท่านได้ปฏิบัติครบตามเงื่อนไข"
+msgstr "โปรแกรมพันธมิตรสากลของเรามีกำหนดการชำระเงินตรงเวลาทุกครั้ง ตั้งแต่การเปิดตัวอย่างเป็นทางการครั้งแรกเมื่อเดือนมีนาคม พ.ศ. 2547 (ค.ศ. 2004) ในประเทศญี่ปุ่น ค่านายหน้าของท่านจะถูกโอนเข้าในบัญชีพันธมิตรของท่านภายใน 30 วัน หลังจากวันสิ้นเดือนตามปฏิทินที่มีผู้ถูกแนะนำของท่านได้ปฏิบัติครบตามเงื่อนไข"
 
 msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how Binary.com executes orders on behalf of our clients."
 msgstr ""
@@ -5394,9 +5368,7 @@ msgid "Our site does not charge any transfer fees."
 msgstr "ระบบของเราไม่เรียกเก็บค่าธรรมเนียมใดๆ ในการโอน"
 
 msgid "Our swap rate may also be adjusted to take holidays into account."
-msgstr ""
-"อัตราการเปลี่ยนแปลงในอัตราดอกเบี้ย (Swap Rate) "
-"ของเราอาจมีการปรับปรุงในบัญชีเมื่อมีการเรียกใช้ในช่วงวันหยุด"
+msgstr "อัตราการเปลี่ยนแปลงในอัตราดอกเบี้ย (Swap Rate) ของเราอาจมีการปรับปรุงในบัญชีเมื่อมีการเรียกใช้ในช่วงวันหยุด"
 
 msgid "Our track-record"
 msgstr "บันทึกการติดตามของพวกเรา"
@@ -5582,19 +5554,10 @@ msgid "Please %1 to view this page"
 msgstr "โปรด %1 เพื่อเรียกดูหน้านี้"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
-msgstr ""
-"โปรด %1ยอมรับข้อตกลงและเงื่อนไข%2 "
-"เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
-
-msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
-msgstr ""
-"โปรด %1ดำเนินการพิสูจน์ตัวตนในบัญชีของท่าน%2 "
-"เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
+msgstr "โปรด %1ยอมรับข้อตกลงและเงื่อนไข%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
 
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
-msgstr ""
-"โปรด %1ปรับปรุงประวัติของท่าน%2 "
-"เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
+msgstr "โปรด %1ปรับปรุงประวัติของท่าน%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "โปรด <a href=\"%1\">ยอมรับข้อตกลงและเงื่อนไข</a>"
@@ -5621,9 +5584,7 @@ msgid "Please choose which currency you would like to transact in."
 msgstr "โปรดระบุสกุลเงินที่ท่านต้องการ"
 
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
-msgstr ""
-"โปรดบันทึกผล %1แบบฟอร์มการประเมินทางการเงิน%2 "
-"เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
+msgstr "โปรดบันทึกผล %1แบบฟอร์มการประเมินทางการเงิน%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
 
 msgid "Please complete the tax information before proceeding."
 msgstr "โปรดบันทึกข้อมูลภาษีของท่านก่อนการดำเนินการต่อไป"
@@ -5708,6 +5669,15 @@ msgstr "โปรดระบุค่าอย่างน้อยหนึ่
 
 msgid "Please select the checkbox."
 msgstr "โปรดระบุค่าจากตัวเลือก"
+
+msgid "Please set %1country of residence%2 before upgrading to a real-money account."
+msgstr ""
+
+msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
+msgstr ""
+
+msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "โปรดระบุช่วงเวลาการตรวจสอบสภาพความเป็นจริงที่ท่านต้องการเป็นหน่วยนาทีที่จะเกิดขึ้นจริงระหว่างการซื้อขาย"
@@ -5994,9 +5964,7 @@ msgid "Real Account"
 msgstr "บัญชีจริง"
 
 msgid "Real Account &mdash; Your real money account opened with Binary.com's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
-msgstr ""
-"บัญชีจริง &mdash; บัญชีเงินจริงของท่านที่เปิดกับ Binary.com แพลตฟอร์มการซื้"
-"อขาย MT5 ที่ได้รับการรับรองจาก MetaQuotes Software Corporation"
+msgstr "บัญชีจริง &mdash; บัญชีเงินจริงของท่านที่เปิดกับ Binary.com แพลตฟอร์มการซื้อขาย MT5 ที่ได้รับการรับรองจาก MetaQuotes Software Corporation"
 
 msgid "Real Cent"
 msgstr "เงินจริง"
@@ -8077,11 +8045,7 @@ msgid "We analyse your pending orders."
 msgstr "พวกเราวิเคราะห์คำสั่งซื้อที่ค้างอยู่ของท่าน"
 
 msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
-msgstr ""
-"พวกเราเตรียมพร้อมสำหรับองค์กรการกุศลขนาดเล็ก องค์กรท้องถิ่น "
-"ซึ่งพวกเราสามารถเป็นส่วนหนึ่งในการบริจาคให้โดยตรง "
-"หากท่านต้องการพูดคุยกับเราเกี่ยวกับการขอการสนับสนุนองค์กรของท่าน "
-"โปรดติดต่อเราที่ %1"
+msgstr "พวกเราเตรียมพร้อมสำหรับองค์กรการกุศลขนาดเล็ก องค์กรท้องถิ่น ซึ่งพวกเราสามารถเป็นส่วนหนึ่งในการบริจาคให้โดยตรง หากท่านต้องการพูดคุยกับเราเกี่ยวกับการขอการสนับสนุนองค์กรของท่าน โปรดติดต่อเราที่ %1"
 
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "พวกเราได้รับอนุญาตและรับรองโดย Malta Financial Services Authority (\"MFSA\") ภายใต้ พระราชบัญญัติการบริการการลงทุน (Cap. 370, Laws of Malta) (\"พระราชบัญญัติ\") เพื่อขับเคลื่อนธุรกิจการลงทุน พวกเราได้รับอนุญาตจาก MFSA เพื่อบริหารบัญชีของลูกค้า (เช่น จัดหาบริการและเป็นตัวแทนในการซื้อขาย) และเพื่อจัดการคำสั่งซื้อในนามผู้อื่น ทั้งสองบริการสัมพันธ์กับผลิตภัณฑ์อนุพันธ์ทางการเงิน (ไบนารีออปชั่นแรกเริ่ม) ที่เกี่ยวกับการแลกเปลี่ยนเงินตราต่างประเทศ ดัชนีต่างๆ หลักทรัพย์ และ ผลิตภัณฑ์ทางการเงินอื่นๆ หรือ สินทรัพย์ (\"ผลิตภัณฑ์ทางการเงิน\") พวกเราไม่ได้รับอนุญาตในการให้บริการ หรือ ให้คำแนะนำการลงทุน หรือ บริการการลงทุนอื่นๆ นอกเหนือจากที่กล่าวข้างต้น หากท่านต้องการคำแนะนำการลงทุน หรือ บริการการลงทุนด้านอื่น ท่านสามารถติดต่อผู้ให้คำปรึกษาทางการเงินอิสระ หรือ บริษัทฯ ที่ปรึกษาทางการเงิน"
@@ -8335,10 +8299,7 @@ msgid "When you trade with %1, you can be assured that your deposits are held in
 msgstr "เมื่อท่านซื้อขายกับ %1 ท่านสามารถประกันได้ว่าเงินฝากของท่านจะได้รับความไว้วางใจในการดูแลและไม่ถูกนำไปใช้เพื่อวัตถุประสงค์อื่น"
 
 msgid "When your account equity is unable to cover the margin requirement, your account will be placed under margin call. This state does not affect your ability to open new positions."
-msgstr ""
-"เมื่อทุนในบัญชีของท่านไม่เพียงพอตามข้อกำหนดของมาร์จิน "
-"บัญชีของท่านจะแปรสภาพใต้เงื่อนไข มาร์จินคอล "
-"หากแต่ภาวะดังกล่าวไม่มีผลต่อท่านในการเปิดโพซิชั่นใหม่"
+msgstr "เมื่อทุนในบัญชีของท่านไม่เพียงพอตามข้อกำหนดของมาร์จิน บัญชีของท่านจะแปรสภาพใต้เงื่อนไข มาร์จินคอล หากแต่ภาวะดังกล่าวไม่มีผลต่อท่านในการเปิดโพซิชั่นใหม่"
 
 msgid "When, as a result of political, economic, military or monetary events (including unusual market volatility or illiquidity) or any circumstances outside the control, responsibility and power of the Company, the continued operation of this site is not reasonably practicable without materially and adversely affecting and prejudicing the interests of Clients or the Company, or if, in the opinion of the Company, a price cannot be calculated for financial contracts."
 msgstr "หากมีเหตุทางการเมือง เศรษฐกิจ การทหาร หรือ สถานการณ์ทางการเงินใดๆ (รวมถึงการผันผวนของตลาดที่ผิดปกติ หรือ ตลาดไม่มีสภาพคล่อง) หรือ เหตุการณ์อื่นที่อยู่เหนือการควบคุม เหนือความรับผิดชอบ หรือ จากการดำเนินการของบริษัทฯ ปฏิบัติการอย่างต่อเนื่องของเว็บไซต์นี้อาจมีการหยุดชะงักโดยปราศจากการสื่อสาร อาจส่งผลให้เกิดผลลบ หรือ ผลกระทบต่อกำไรขาดทุนของลูกค้า หรือ ต่อบริษัทฯ รวมถึงในกรณีใดๆ ที่ทำให้ระบบซื้อขายไม่สามารถคำนวณราคาของสัญญาทางการเงินได้"
@@ -8620,12 +8581,7 @@ msgid "You are not entitled to any compensation or reimbursement of any kind fro
 msgstr "ท่านไม่ได้รับสิทธิ์ในการได้รับค่าชดเชยใดๆ หรือ การชำระเงินคืนให้ในกรณีใดๆ จากบริษัทฯ ไม่ว่าสถานการณ์ใดๆ"
 
 msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
-msgstr ""
-"ท่านไม่มีที่พำนัก หรือ มีถิ่นฐานในประเทศต่อไปนี้ อัฟกานิสถาน บอสเนีย และ "
-"เฮอเซโกวินา คอสตาริก้า และประเทศใดๆ ในสหภาพยุโรป สาธารณรัฐประชาชนลาว ซีเรีย "
-"ยูกานดา วานูอาตู เยเมน สหรัฐอเมริกา ญี่ปุ่น ฮ่องกง คอสตาริก้า มาเลเซีย มอลตา "
-"อิหร่าน เกาหลีเหนือ เจอร์ซี อิรัก หรือ ประเทศอื่นๆ ที่ทางบริษัทฯ "
-"อาจจะมีการกำหนดในแต่ละครั้งตามดุลยพินิจของบริษัทฯ แต่เพียงผู้เดียว"
+msgstr "ท่านไม่มีที่พำนัก หรือ มีถิ่นฐานในประเทศต่อไปนี้ อัฟกานิสถาน บอสเนีย และ เฮอเซโกวินา คอสตาริก้า และประเทศใดๆ ในสหภาพยุโรป สาธารณรัฐประชาชนลาว ซีเรีย ยูกานดา วานูอาตู เยเมน สหรัฐอเมริกา ญี่ปุ่น ฮ่องกง คอสตาริก้า มาเลเซีย มอลตา อิหร่าน เกาหลีเหนือ เจอร์ซี อิรัก หรือ ประเทศอื่นๆ ที่ทางบริษัทฯ อาจจะมีการกำหนดในแต่ละครั้งตามดุลยพินิจของบริษัทฯ แต่เพียงผู้เดียว"
 
 msgid "You are over 18 years of age;"
 msgstr "ท่านอายุมากกว่า 18 ปี"
@@ -9256,10 +9212,7 @@ msgid "years"
 msgstr "ปี"
 
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr ""
-"ท่านไม่ได้มีที่พำนักในประเทศควบคุมต่อไปนี้ อัฟกานิสถาน บอสเนียและเฮอเซโกวินา "
-"คอสตาริกา ฮ่องกง อิหร่าน อิรัก เจอร์ซี สาธารณรัฐประชาชนลาว มาเลเซีย มอลตา "
-"เกาหลีเหนือ ซีเรีย ยูกานดา สหรัฐอเมริกา วานูอาตู หรือ เยเมน"
+msgstr "ท่านไม่ได้มีที่พำนักในประเทศควบคุมต่อไปนี้ อัฟกานิสถาน บอสเนียและเฮอเซโกวินา คอสตาริกา ฮ่องกง อิหร่าน อิรัก เจอร์ซี สาธารณรัฐประชาชนลาว มาเลเซีย มอลตา เกาหลีเหนือ ซีเรีย ยูกานดา สหรัฐอเมริกา วานูอาตู หรือ เยเมน"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "ท่านมีอายุมากกว่า 18 ปี หากแต่ท่านเป็นพลเมืองเอสโทเนีย ท่านจะต้องอายุมากกว่า 21 ปี;"
