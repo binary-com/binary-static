@@ -37,7 +37,6 @@ const Purchase_Beta = (() => {
         const balance                     = document.getElementById('contract_purchase_balance');
         const payout                      = document.getElementById('contract_purchase_payout');
         const cost                        = document.getElementById('contract_purchase_cost');
-        const profit                      = document.getElementById('contract_purchase_profit');
         const spots                       = document.getElementById('contract_purchase_spots');
         const confirmation_error          = document.getElementById('confirmation_error');
         const confirmation_error_contents = document.getElementById('confirmation_error_contents');
@@ -67,16 +66,8 @@ const Purchase_Beta = (() => {
                 $(this).text('').removeAttr('class', '');
             });
             const purchase_passthrough = purchase_data.echo_req.passthrough;
-            elementTextContent(brief, `${$('#underlying').find('option:selected').text()} / ${toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type])}
-                ${(Contract_Beta.form() === 'digits' ? ` ${purchase_passthrough.barrier}` : '')}`);
+            elementTextContent(brief, `${$('#underlying').find('option:selected').text()} / ${toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type])}${(Contract_Beta.form() === 'digits' && !/(even|odd)/i.test(purchase_passthrough.contract_type) ? ` ${purchase_passthrough.barrier}` : '')}`);
 
-            const is_spread = (Contract_Beta.form() === 'spreads');
-            if (is_spread) {
-                $('#contract_purchase_profit_list, #contract_purchase_description_section').removeClass('gr-4 gr-8').addClass('gr-6');
-            } else {
-                $('#contract_purchase_profit_list').removeClass('gr-6').addClass('gr-4');
-                $('#contract_purchase_description_section').removeClass('gr-6').addClass('gr-8');
-            }
             elementTextContent(heading, localize('Contract Confirmation'));
             elementTextContent(descr, receipt.longcode);
             if (barrier_element) commonTrading.labelValue(barrier_element, '', '', true);
@@ -98,14 +89,8 @@ const Purchase_Beta = (() => {
             chart.hide();
             spots.hide();
 
-            if (is_spread) {
-                commonTrading.labelValue(payout, localize('Stop-loss'),        receipt.stop_loss_level,   true);
-                commonTrading.labelValue(cost,   localize('Amount per point'), receipt.amount_per_point);
-                commonTrading.labelValue(profit, localize('Stop-profit'),      receipt.stop_profit_level, true);
-            } else {
-                commonTrading.labelValue(payout, localize('Payout'), addComma(payout_value));
-                commonTrading.labelValue(cost,   localize('Stake'),  addComma(cost_value));
-            }
+            commonTrading.labelValue(payout, localize('Payout'), addComma(payout_value));
+            commonTrading.labelValue(cost,   localize('Stake'),  addComma(cost_value));
 
             elementTextContent(balance, `${localize('Account balance:')} ${formatMoney(Client.get('currency'), receipt.balance_after)}`);
 

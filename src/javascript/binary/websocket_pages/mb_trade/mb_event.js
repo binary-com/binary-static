@@ -4,7 +4,7 @@ const MBNotifications = require('./mb_notifications');
 const MBProcess       = require('./mb_process');
 const TradingAnalysis = require('../trade/analysis');
 const debounce        = require('../trade/common').debounce;
-const showHighchart   = require('../trade/common').showHighchart;
+const showHighchart   = require('../trade/charts/chart_frame').showHighchart;
 const jpClient        = require('../../common_functions/country_base').jpClient;
 
 /*
@@ -47,7 +47,7 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('underlying', underlying);
                 MBNotifications.hide('SYMBOL_INACTIVE');
 
-                MBContract.getContracts(underlying);
+                MBProcess.getContracts(underlying);
                 MBContract.displayDescriptions();
 
                 showHighchart();

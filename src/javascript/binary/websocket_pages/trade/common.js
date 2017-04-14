@@ -3,14 +3,10 @@ const Defaults           = require('./defaults');
 const Notifications      = require('./notifications');
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
-const MBDefaults         = require('../mb_trade/mb_defaults');
 const Client             = require('../../base/client');
-const getLanguage        = require('../../base/language').get;
 const localize           = require('../../base/localize').localize;
-const State              = require('../../base/storage').State;
 const urlFor             = require('../../base/url').urlFor;
 const isEmptyObject      = require('../../base/utility').isEmptyObject;
-const jpClient           = require('../../common_functions/country_base').jpClient;
 const formatMoney        = require('../../common_functions/currency_to_symbol').formatMoney;
 const addComma           = require('../../common_functions/string_util').addComma;
 const toISOFormat        = require('../../common_functions/string_util').toISOFormat;
@@ -20,27 +16,6 @@ const elementTextContent = require('../../common_functions/common_functions').el
 /*
  * This contains common functions we need for processing the response
  */
-
-if (typeof window === 'undefined') {
-    // eslint-disable-next-line
-    Element = () => {}; // jshint ignore:line
-}
-
-Element.prototype.hide = function() {
-    this.style.display = 'none';
-};
-
-Element.prototype.show = function() {
-    this.style.display = '';
-};
-
-if (!('remove' in Element.prototype)) {
-    Element.prototype.remove = function() {
-        if (this.parentNode) {
-            this.parentNode.removeChild(this);
-        }
-    };
-}
 
 const commonTrading = (() => {
     'use strict';
@@ -288,8 +263,6 @@ const commonTrading = (() => {
         UPORDOWN    : 'bottom',
         ONETOUCH    : 'top',
         NOTOUCH     : 'bottom',
-        SPREADU     : 'top',
-        SPREADD     : 'bottom',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');
@@ -323,7 +296,6 @@ const commonTrading = (() => {
             ['digits',
                 ['matchdiff', 'evenodd', 'overunder'],
             ],
-            'spreads',
         ];
 
         if (elements) {
@@ -355,21 +327,6 @@ const commonTrading = (() => {
         }
     };
 
-    /*
-     * toggle active class of menu
-     */
-    const toggleActiveNavMenuElement = (nav, event_element) => {
-        const li_elements = nav.getElementsByTagName('li');
-        const classes = event_element.classList;
-
-        if (!classes.contains('active')) {
-            for (let i = 0, len = li_elements.length; i < len; i++) {
-                li_elements[i].classList.remove('active');
-            }
-            classes.add('active');
-        }
-    };
-
     const toggleActiveCatMenuElement = (nav, event_element_id) => {
         const event_element = document.getElementById(event_element_id);
         const li_elements = nav.querySelectorAll('.active, .a-active');
@@ -397,7 +354,7 @@ const commonTrading = (() => {
     };
 
     /*
-     * display the profit and return of bet under each trade container except spreads
+     * display the profit and return of bet under each trade container
      */
     const displayCommentPrice = (node, currency, type, payout) => {
         if (node && type && payout) {
@@ -410,29 +367,6 @@ const commonTrading = (() => {
             } else {
                 node.show();
                 elementTextContent(node, comment);
-            }
-        }
-    };
-
-    /*
-     * display comment for spreads
-     */
-    const displayCommentSpreads = (node, currency, point) => {
-        if (node && point) {
-            const amount_per_point = document.getElementById('amount_per_point').value;
-            const stop_type = document.querySelector('input[name="stop_type"]:checked').value;
-            const stop_loss = document.getElementById('stop_loss').value;
-            let display_amount = 0;
-
-            if (isNaN(stop_loss) || isNaN(amount_per_point)) {
-                node.hide();
-            } else {
-                if (stop_type === 'point') {
-                    display_amount = parseFloat(parseFloat(amount_per_point) * parseFloat(stop_loss));
-                } else {
-                    display_amount = parseFloat(stop_loss);
-                }
-                elementTextContent(node, localize('Deposit of [_1] is required. Current spread: [_2] points', formatMoney(currency, display_amount), point));
             }
         }
     };
@@ -610,26 +544,6 @@ const commonTrading = (() => {
         return false;
     };
 
-    const updatePurchaseStatus = (final_price, pnl, contract_status) => {
-        $('#contract_purchase_heading').text(localize(contract_status));
-        const $payout = $('#contract_purchase_payout');
-        const $cost   = $('#contract_purchase_cost');
-        const $profit = $('#contract_purchase_profit');
-
-        $payout.html($('<div/>', { text: localize('Buy price') }).append($('<p/>', { text: addComma(Math.abs(pnl)) })));
-        $cost.html($('<div/>', { text: localize('Final price') }).append($('<p/>', { text: addComma(final_price) })));
-        if (!final_price) {
-            $profit.html($('<div/>', { text: localize('Loss') }).append($('<p/>', { text: addComma(pnl) })));
-        } else {
-            $profit.html($('<div/>', { text: localize('Profit') }).append($('<p/>', { text: addComma(Math.round((final_price - pnl) * 100) / 100) })));
-            updateContractBalance(Client.get('balance'));
-        }
-    };
-
-    const updateContractBalance = (balance) => {
-        $('#contract_purchase_balance').text(`${localize('Account balance:')} ${formatMoney(Client.get('currency'), balance)}`);
-    };
-
     const chart_config = {
         type              : 'line',
         lineColor         : '#606060',
@@ -660,44 +574,8 @@ const commonTrading = (() => {
     const reloadPage = () => {
         Defaults.remove('market', 'underlying', 'formname',
             'date_start', 'expiry_type', 'expiry_date', 'expirt_time', 'duration_units', 'diration_value',
-            'amount', 'amount_type', 'currency', 'stop_loss', 'stop_type', 'stop_profit', 'amount_per_point', 'prediction');
+            'amount', 'amount_type', 'currency', 'prediction');
         location.reload();
-    };
-
-    const showHighchart = () => {
-        if (window.chartAllowed) {
-            chartFrameSource();
-        } else {
-            chartFrameCleanup();
-            $('#trade_live_chart').hide();
-            $('#chart-error').text(localize('Chart is not available for this underlying.')).show();
-        }
-    };
-
-    const chartFrameCleanup = () => {
-        /*
-         * Prevent IE memory leak (http://stackoverflow.com/questions/8407946).
-         */
-        const chart_frame = document.getElementById('chart_frame');
-        if (chart_frame) {
-            chart_frame.src = 'about:blank';
-        }
-    };
-
-    const chartFrameSource = () => {
-        if (sessionStorage.getItem('old_underlying') !== sessionStorage.getItem('underlying') || /^(|about:blank)$/.test($('#chart_frame').attr('src'))) {
-            chartFrameCleanup();
-            const underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : document.getElementById('underlying').value;
-            setChartSource(underlying);
-            sessionStorage.setItem('old_underlying', underlying);
-        }
-        $('#chart-error').hide();
-        $('#trade_live_chart').show();
-    };
-
-    const setChartSource = (underlying) => {
-        const is_ja = !!jpClient();
-        document.getElementById('chart_frame').src = `https://webtrader.binary.com?affiliates=true&instrument=${underlying}&timePeriod=1t&gtm=true&lang=${getLanguage().toLowerCase()}&hideOverlay=${is_ja}&hideShare=${is_ja}&timezone=GMT+${(is_ja ? '9' : '0')}&hideFooter=${is_ja}`;
     };
 
     // ============= Functions used in /trading_beta =============
@@ -819,10 +697,8 @@ const commonTrading = (() => {
         hideOverlayContainer           : hideOverlayContainer,
         getContractCategoryTree        : getContractCategoryTree,
         resetPriceMovement             : resetPriceMovement,
-        toggleActiveNavMenuElement     : toggleActiveNavMenuElement,
         toggleActiveCatMenuElement     : toggleActiveCatMenuElement,
         displayCommentPrice            : displayCommentPrice,
-        displayCommentSpreads          : displayCommentSpreads,
         debounce                       : debounce,
         getDefaultMarket               : getDefaultMarket,
         addEventListenerForm           : addEventListenerForm,
@@ -830,13 +706,8 @@ const commonTrading = (() => {
         durationOrder                  : duration => duration_order[duration],
         displayTooltip                 : displayTooltip,
         selectOption                   : selectOption,
-        updatePurchaseStatus           : updatePurchaseStatus,
-        updateContractBalance          : updateContractBalance,
         updateWarmChart                : updateWarmChart,
         reloadPage                     : reloadPage,
-        showHighchart                  : showHighchart,
-        chartFrameCleanup              : chartFrameCleanup,
-        chartFrameSource               : chartFrameSource,
         displayContractForms           : displayContractForms,
         displayMarkets                 : displayMarkets,
         toggleActiveNavMenuElement_Beta: toggleActiveNavMenuElement_Beta,

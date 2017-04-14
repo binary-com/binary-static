@@ -1,10 +1,10 @@
 const moment               = require('moment');
 const getStartDateNode     = require('./common_independent').getStartDateNode;
-const Defaults             = require('./defaults');
 const commonTrading        = require('./common');
 const displayPriceMovement = require('./common_independent').displayPriceMovement;
 const getTradingTimes      = require('./common_independent').getTradingTimes;
 const Contract             = require('./contract');
+const Defaults             = require('./defaults');
 const localize             = require('../../base/localize').localize;
 const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
@@ -48,10 +48,6 @@ const Price = (() => {
         const high_barrier     = document.getElementById('barrier_high');
         const low_barrier      = document.getElementById('barrier_low');
         const prediction       = document.getElementById('prediction');
-        const amount_per_point = document.getElementById('amount_per_point');
-        const stop_type        = document.querySelector('input[name="stop_type"]:checked');
-        const stop_loss        = document.getElementById('stop_loss');
-        const stop_profit      = document.getElementById('stop_profit');
 
         if (payout && isVisible(payout) && payout.value) {
             proposal.amount = parseFloat(payout.value);
@@ -115,22 +111,6 @@ const Price = (() => {
             proposal.barrier = parseInt(prediction.value);
         }
 
-        if (amount_per_point && isVisible(amount_per_point)) {
-            proposal.amount_per_point = parseFloat(amount_per_point.value);
-        }
-
-        if (stop_type && isVisible(stop_type)) {
-            proposal.stop_type = stop_type.value;
-        }
-
-        if (stop_loss && isVisible(stop_loss)) {
-            proposal.stop_loss = parseFloat(stop_loss.value);
-        }
-
-        if (stop_profit && isVisible(stop_profit)) {
-            proposal.stop_profit = parseFloat(stop_profit.value);
-        }
-
         if (contract_type) {
             proposal.contract_type = type_of_contract;
         }
@@ -152,11 +132,6 @@ const Price = (() => {
         let type = params.contract_type;
         if (id && !type) {
             type = type_display_id_mapping[id];
-        }
-
-        let is_spread = false;
-        if (params.contract_type && (params.contract_type === 'SPREADU' || params.contract_type === 'SPREADD')) {
-            is_spread = true;
         }
 
         if (params && id && Object.getOwnPropertyNames(params).length > 0) {
@@ -189,35 +164,22 @@ const Price = (() => {
         const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
             h4.setAttribute('class', `contract_heading ${type}`);
-            if (is_spread) {
-                if (position === 'top') {
-                    elementTextContent(h4, localize('Long'));
-                } else {
-                    elementTextContent(h4, localize('Short'));
-                }
-            } else {
-                elementTextContent(h4, display_text);
-            }
+            elementTextContent(h4, display_text);
         }
 
         const setData = (data) => {
             if (!data) return;
             if (data.display_value) {
-                if (is_spread) {
-                    $('.stake:visible').hide();
-                    elementTextContent(amount, data.display_value);
-                } else {
-                    $('.stake:hidden').show();
-                    elementTextContent(stake, `${localize('Stake')}: `);
-                    elementTextContent(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
-                }
+                $('.stake:hidden').show();
+                elementTextContent(stake, `${localize('Stake')}: `);
+                elementTextContent(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
                 $('.stake_wrapper:hidden').show();
             } else {
                 $('.stake_wrapper:visible').hide();
             }
 
             if (data.payout) {
-                elementTextContent(payout, `${(is_spread ? localize('Payout/point') : localize('Payout'))}: `);
+                elementTextContent(payout, `${localize('Payout')}: `);
                 elementTextContent(payout_amount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
                 $('.payout_wrapper:hidden').show();
             } else {
@@ -246,11 +208,7 @@ const Price = (() => {
             }
             comment.show();
             error.hide();
-            if (is_spread) {
-                commonTrading.displayCommentSpreads(comment, (currency.value || currency.getAttribute('value')), proposal.spread);
-            } else {
-                commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
-            }
+            commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             const old_price = purchase.getAttribute('data-display_value');
             const old_payout = purchase.getAttribute('data-payout');
             displayPriceMovement(amount, old_price, proposal.display_value);
@@ -321,7 +279,14 @@ const Price = (() => {
             }
         }
         Object.keys(types).forEach((type_of_contract) => {
-            BinarySocket.send(Price.proposal(type_of_contract));
+            BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
+                if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
+                    response.echo_req.passthrough.form_id === form_id) {
+                    commonTrading.hideOverlayContainer();
+                    Price.display(response, Contract.contractType()[Contract.form()]);
+                    commonTrading.hidePriceOverlay();
+                }
+            } });
         });
     };
 
@@ -331,7 +296,6 @@ const Price = (() => {
         clearMapping    : clearMapping,
         clearFormId     : clearFormId,
         idDisplayMapping: () => type_display_id_mapping,
-        getFormId       : () => form_id,
         incrFormId      : () => { form_id++; },
 
         processForgetProposals: processForgetProposals,

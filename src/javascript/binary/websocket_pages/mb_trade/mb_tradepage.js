@@ -1,13 +1,10 @@
 const MBContract           = require('./mb_contract');
 const MBDisplayCurrencies  = require('./mb_currency');
 const MBTradingEvents      = require('./mb_event');
-const MBMessage            = require('./mb_message');
-const MBNotifications      = require('./mb_notifications');
 const MBPrice              = require('./mb_price');
 const MBProcess            = require('./mb_process');
-const MBSymbols            = require('./mb_symbols');
 const TradingAnalysis      = require('../trade/analysis');
-const chartFrameCleanup    = require('../trade/common').chartFrameCleanup;
+const chartFrameCleanup    = require('../trade/charts/chart_frame').chartFrameCleanup;
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
 const JapanPortfolio       = require('../../../binary_japan/trade_japan/portfolio');
@@ -20,14 +17,6 @@ const MBTradePage = (() => {
 
     const onLoad = () => {
         State.set('is_mb_trading', true);
-        BinarySocket.init({
-            onmessage: (msg) => {
-                MBMessage.process(msg);
-            },
-            onopen: () => {
-                MBNotifications.hide('CONNECTION_ERROR');
-            },
-        });
 
         if (events_initialized === 0) {
             events_initialized = 1;
@@ -36,7 +25,7 @@ const MBTradePage = (() => {
 
         BinarySocket.send({ payout_currencies: 1 }).then(() => {
             MBDisplayCurrencies();
-            MBSymbols.getSymbols(1);
+            MBProcess.getSymbols();
         });
 
         TradingAnalysis.bindAnalysisTabEvent();
@@ -45,6 +34,8 @@ const MBTradePage = (() => {
         $('#tab_explanation').find('a').text(localize('Explanation'));
         $('#remaining-time-label').text(localize('Remaining time'));
         window.chartAllowed = true;
+        // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
+        State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
     };
 
     const reload = () => {
@@ -61,6 +52,7 @@ const MBTradePage = (() => {
         MBPrice.onUnload();
         MBProcess.onUnload();
         BinarySocket.clear();
+        State.remove('ViewPopup.onDisplayed');
     };
 
     const onDisconnect = () => {

@@ -184,19 +184,18 @@ const TradingTimesUI = (() => {
     };
 
     const sendRequest = (date, should_request_active_symbols) => {
-        if (State.get('is_beta_trading')) return;
-
         const req = { active_symbols: 'brief' };
         if (jpClient()) {
             req.landing_company = 'japan';
         }
         if (should_request_active_symbols) {
-            BinarySocket.send(req, false, 'active_symbols').then((response) => {
+            BinarySocket.send(req, { forced: false, msg_type: 'active_symbols' }).then((response) => {
                 TradingTimesUI.setActiveSymbols(response);
             });
         }
         BinarySocket.send({ trading_times: date || 'today' }).then((response) => {
-            TradingTimesUI.setTradingTimes(response);
+            trading_times = response.trading_times;
+            if (active_symbols) populateTable();
         });
     };
 
@@ -205,10 +204,6 @@ const TradingTimesUI = (() => {
         setActiveSymbols: (response) => {
             active_symbols = response.active_symbols.slice(0); // clone
             if (trading_times) populateTable();
-        },
-        setTradingTimes: (response) => {
-            trading_times = response.trading_times;
-            if (active_symbols) populateTable();
         },
     };
 })();

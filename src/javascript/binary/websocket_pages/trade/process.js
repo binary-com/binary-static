@@ -1,23 +1,20 @@
 const moment                    = require('moment');
 const TradingAnalysis           = require('./analysis');
-const Barriers                  = require('./barriers');
-const DigitInfo                 = require('./charts/digit_info');
 const commonTrading             = require('./common');
 const processTradingTimesAnswer = require('./common_independent').processTradingTimesAnswer;
 const Contract                  = require('./contract');
 const Defaults                  = require('./defaults');
 const Durations                 = require('./duration');
+const GetTicks                  = require('./get_ticks');
+const Notifications             = require('./notifications');
 const Price                     = require('./price');
-const Purchase                  = require('./purchase');
 const setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
 const StartDates                = require('./starttime').StartDates;
 const Symbols                   = require('./symbols');
 const Tick                      = require('./tick');
-const TickDisplay               = require('./tick_trade');
 const localize                  = require('../../base/localize').localize;
 const State                     = require('../../base/storage').State;
 const elementInnerHtml          = require('../../common_functions/common_functions').elementInnerHtml;
-const elementTextContent        = require('../../common_functions/common_functions').elementTextContent;
 
 const Process = (() => {
     'use strict';
@@ -26,43 +23,42 @@ const Process = (() => {
      * This function process the active symbols to get markets
      * and underlying list
      */
-    const processActiveSymbols = (data) => {
-        // populate the Symbols object
-        Symbols.details(data);
+    const processActiveSymbols = () => {
+        BinarySocket.send({ active_symbols: 'brief' }, { forced: true }).then((response) => {
+            // populate the Symbols object
+            Symbols.details(response);
 
-        const market = commonTrading.getDefaultMarket();
+            const market = commonTrading.getDefaultMarket();
 
-        // store the market
-        Defaults.set('market', market);
+            // store the market
+            Defaults.set('market', market);
 
-        commonTrading.displayMarkets('contract_markets', Symbols.markets(), market);
-        processMarket();
+            commonTrading.displayMarkets('contract_markets', Symbols.markets(), market);
+            processMarket();
+        });
     };
 
 
     /*
      * Function to call when market has changed
      */
-    const processMarket = (flag) => {
+    const processMarket = () => {
         // we can get market from sessionStorage as allowed market
         // is already set when this is called
         let market = Defaults.get('market'),
             symbol = Defaults.get('underlying');
-        const update_page = Symbols.needpageUpdate() || flag;
 
         // change to default market if query string contains an invalid market
         if (!market || !Symbols.underlyings()[market]) {
             market = commonTrading.getDefaultMarket();
             Defaults.set('market', market);
         }
-        if (update_page && (!symbol || !Symbols.underlyings()[market][symbol])) {
+        if ((!symbol || !Symbols.underlyings()[market][symbol])) {
             symbol = undefined;
         }
         commonTrading.displayUnderlyings('underlying', Symbols.underlyings()[market], symbol);
 
-        if (update_page) {
-            processMarketUnderlying();
-        }
+        processMarketUnderlying();
     };
 
     /*
@@ -85,7 +81,7 @@ const Process = (() => {
         // forget the old tick id i.e. close the old tick stream
         processForgetTicks();
         // get ticks for current underlying
-        Tick.request(underlying);
+        GetTicks.request(underlying);
 
         Tick.clean();
 
@@ -93,9 +89,17 @@ const Process = (() => {
 
         BinarySocket.clearTimeouts();
 
-        Contract.getContracts(underlying);
+        getContracts(underlying);
 
         commonTrading.displayTooltip(Defaults.get('market'), underlying);
+    };
+
+    const getContracts = (underlying) => {
+        BinarySocket.send({ contracts_for: underlying }).then((response) => {
+            Notifications.hide('CONNECTION_ERROR');
+            processContract(response);
+            window.contracts_for = response;
+        });
     };
 
     /*
@@ -164,8 +168,6 @@ const Process = (() => {
 
         displayPrediction();
 
-        displaySpreads();
-
         let r1;
         if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
             r1 = Durations.onStartDateChange(Defaults.get('date_start'));
@@ -186,12 +188,6 @@ const Process = (() => {
         if (make_price_request >= 0) {
             Price.processPriceRequest();
         }
-
-        if (Defaults.get('formname') === 'spreads') {
-            Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time', 'amount', 'amount_type');
-        } else {
-            Defaults.remove('amount_per_point', 'stop_type', 'stop_loss', 'stop_profit');
-        }
     };
 
     const displayPrediction = () => {
@@ -209,47 +205,6 @@ const Process = (() => {
         }
     };
 
-    const displaySpreads = () => {
-        const amount_type            = document.getElementById('amount_type');
-        const amount_per_point_label = document.getElementById('amount_per_point_label');
-        const amount                 = document.getElementById('amount');
-        const amount_per_point       = document.getElementById('amount_per_point');
-        const spread_container       = document.getElementById('spread_element_container');
-        const stop_type_dollar_label = document.getElementById('stop_type_dollar_label');
-        const expiry_type_row        = document.getElementById('expiry_row');
-
-        if (sessionStorage.getItem('formname') === 'spreads') {
-            amount_type.hide();
-            amount.hide();
-            expiry_type_row.hide();
-            amount_per_point_label.show();
-            amount_per_point.show();
-            spread_container.show();
-            elementTextContent(stop_type_dollar_label, document.getElementById('currency').value || Defaults.get('currency'));
-            if (Defaults.get('stop_type')) {
-                const el = document.querySelectorAll(`input[name="stop_type"][value="${Defaults.get('stop_type')}"]`);
-                if (el) {
-                    el[0].setAttribute('checked', 'checked');
-                }
-            } else {
-                Defaults.set('stop_type', document.getElementById('stop_type_points').checked ? 'point' : 'dollar');
-            }
-            if (Defaults.get('amount_per_point')) amount_per_point.value = Defaults.get('amount_per_point');
-            else Defaults.set('amount_per_point', amount_per_point.value);
-            if (Defaults.get('stop_loss')) document.getElementById('stop_loss').value = Defaults.get('stop_loss');
-            else Defaults.set('stop_loss', document.getElementById('stop_loss').value);
-            if (Defaults.get('stop_profit')) document.getElementById('stop_profit').value = Defaults.get('stop_profit');
-            else Defaults.set('stop_profit', document.getElementById('stop_profit').value);
-        } else {
-            amount_per_point_label.hide();
-            amount_per_point.hide();
-            spread_container.hide();
-            expiry_type_row.show();
-            amount_type.show();
-            amount.show();
-        }
-    };
-
     const forgetTradingStreams = () => {
         Price.processForgetProposals();
         processForgetTicks();
@@ -263,39 +218,6 @@ const Process = (() => {
         BinarySocket.send({
             forget_all: 'ticks',
         });
-    };
-
-    /*
-     * Function to process ticks stream
-     */
-    const processTick = (tick) => {
-        const symbol = sessionStorage.getItem('underlying');
-        if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
-            Tick.details(tick);
-            Tick.display();
-            if (tick.tick) {
-                DigitInfo.updateChart(tick);
-            }
-            TickDisplay.updateChart(tick);
-            Purchase.updateSpotList();
-            if (!Barriers.isBarrierUpdated()) {
-                Barriers.display();
-                Barriers.setBarrierUpdate(true);
-            }
-            commonTrading.updateWarmChart();
-        } else {
-            DigitInfo.updateChart(tick);
-        }
-    };
-
-    const processProposal = (response) => {
-        const form_id = Price.getFormId();
-        if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
-            response.echo_req.passthrough.form_id === form_id) {
-            commonTrading.hideOverlayContainer();
-            Price.display(response, Contract.contractType()[Contract.form()]);
-            commonTrading.hidePriceOverlay();
-        }
     };
 
     const processTradingTimes = (response) => {
@@ -358,8 +280,6 @@ const Process = (() => {
         processContractForm : processContractForm,
         forgetTradingStreams: forgetTradingStreams,
         processForgetTicks  : processForgetTicks,
-        processTick         : processTick,
-        processProposal     : processProposal,
         processTradingTimes : processTradingTimes,
         onExpiryTypeChange  : onExpiryTypeChange,
         onDurationUnitChange: onDurationUnitChange,
