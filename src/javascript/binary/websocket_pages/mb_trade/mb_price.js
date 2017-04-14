@@ -54,6 +54,7 @@ const MBPrice = (() => {
     };
 
     const display = (response) => {
+        if (isEmptyObject(response.proposal_array.proposals)) return; // ignore invalid responses
         Object.keys(response.proposal_array.proposals).forEach((contract_type) => {
             response.proposal_array.proposals[contract_type].forEach((proposal) => {
                 const barrier                  = makeBarrier(proposal);
