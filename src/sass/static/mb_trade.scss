@@ -99,16 +99,14 @@
             }
             #disable-overlay {
                 position: absolute;
-                top: 84px;
-                left: 10px;
+                top: 70px;
                 z-index: 1;
-                width: calc(100% - 20px);
-                height: calc(100% - 84px);
+                width: 100%;
+                height: calc(100% - 70px);
                 background-color: rgba(242, 242, 242, 0.5);
             }
             #loading-overlay {
                 width: 100%;
-                background: $COLOR_WHITE url('../images/common/hourglass_1.gif') center 20px no-repeat;
             }
             .prices-wrapper {
                 .price-row, .heading {

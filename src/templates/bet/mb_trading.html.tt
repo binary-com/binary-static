@@ -1,4 +1,4 @@
-<div class="center-text">
+<div id="main_loading" class="center-text">
     [% INCLUDE global/loading.html.tt %]
 </div>
 <div id="mb-trading-wrapper" class="gr-centered invisible">
@@ -75,7 +75,7 @@
                 </div>
                 <div class="price-rows"></div>
             </div>
-            <div id="loading-overlay" class="invisible"></div>
+            <div id="loading-overlay" class="invisible">[% INCLUDE global/loading.html.tt %]</div>
         </div>
     </div>
     </div>
