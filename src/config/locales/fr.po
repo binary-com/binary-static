@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-04-13 11:53+0000\n"
 "Last-Translator: Arnaud Malfoy <arnaud.malfoy@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>"
-"\n"
+"Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -274,6 +273,11 @@ msgstr "L'histoire unique de %1"
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Les systèmes de %1 traitent actuellement plus d'un million de transactions par jour (comptes virtuels compris)."
+
+#, fuzzy
+#| msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
+msgstr "S'il vous plait %1authentifiez votre compte%2 pour supprimer vos limites de retrait et de trading."
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "L'action caritative de %1 soutient les petites associations caritatives et à but non lucratif qui œuvrent dans différentes régions du monde pour initier des changements positifs au sein des communautés locales. Nous évitons ainsi le poids des coûts indirects qui s'appliquent généralement au sein des structures caritatives de plus grande envergure, afin que nos dons aient un impact direct."
@@ -1765,10 +1769,7 @@ msgid "Christmas Day"
 msgstr "Jour de Noël"
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr ""
-"Les citoyens des pays suivants ne sont pas autorisés à ouvrir un compte "
-"auprès de Binary Investments (Europe) Ltd : Afghanistan, Belgique, Bosnie-"
-"Herzégovine, Irak, Laos, Syrie, Ouganda, Vanuatu et Yémen."
+msgstr "Les citoyens des pays suivants ne sont pas autorisés à ouvrir un compte auprès de Binary Investments (Europe) Ltd : Afghanistan, Belgique, Bosnie-Herzégovine, Irak, Laos, Syrie, Ouganda, Vanuatu et Yémen."
 
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
@@ -4405,14 +4406,7 @@ msgid "L. Event of Default"
 msgstr "L. Évènement de défaut"
 
 msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
-msgstr ""
-"Classes de langue pour réfugiés (LCFR) est un programme éducatif pour "
-"réfugiés organisé par \"Le Centre de Transformation par l'amour et le "
-"respect\" - une entreprise sociale engagée à une éducation de qualité pour "
-"le long terme. Ce programme enseigne l'Anglais, le Malais et le Français à "
-"des groupes d'âge allant des enfants aux adultes afin de leur assurer des "
-"aptitudes en matière de langues qui les aideront à trouver un emploi dans "
-"l'attente de leur rapatriement."
+msgstr "Classes de langue pour réfugiés (LCFR) est un programme éducatif pour réfugiés organisé par \"Le Centre de Transformation par l'amour et le respect\" - une entreprise sociale engagée à une éducation de qualité pour le long terme. Ce programme enseigne l'Anglais, le Malais et le Français à des groupes d'âge allant des enfants aux adultes afin de leur assurer des aptitudes en matière de langues qui les aideront à trouver un emploi dans l'attente de leur rapatriement."
 
 msgid "Languages"
 msgstr "Langues"
@@ -5545,9 +5539,6 @@ msgstr "Veuillez %1 pour afficher cette page"
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "S'il vous plait %1acceptez les termes et conditions mises à jour%2 pour supprimer vos limites de retrait et de trading."
 
-msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
-msgstr "S'il vous plait %1authentifiez votre compte%2 pour supprimer vos limites de retrait et de trading."
-
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "S'il vous plait %1complétez le profile de votre compte%2 pour supprimer vos limites de retrait et de trading."
 
@@ -5661,6 +5652,15 @@ msgstr "Veuillez sélectionner au moins un champ d'application"
 
 msgid "Please select the checkbox."
 msgstr "Veuillez cocher la case."
+
+msgid "Please set %1country of residence%2 before upgrading to a real-money account."
+msgstr ""
+
+msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
+msgstr ""
+
+msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Veuillez indiquer la périodicité souhaitée en minutes pour les avertissements de connexion"
@@ -5837,11 +5837,7 @@ msgid "Prohibited Trades"
 msgstr "Transactions prohibées"
 
 msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
-msgstr ""
-"Justificatif de domicile : une copie scannée d'une facture de gaz, "
-"d'électricité, d'eau ou d'un relevé bancaire datant de moins de 3 mois. "
-"Votre justificatif de domicile doit inclure votre nom, adresse, date "
-"d'émission, et le nom de l'organisation émettrice."
+msgstr "Justificatif de domicile : une copie scannée d'une facture de gaz, d'électricité, d'eau ou d'un relevé bancaire datant de moins de 3 mois. Votre justificatif de domicile doit inclure votre nom, adresse, date d'émission, et le nom de l'organisation émettrice."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
 msgstr "Preuve d'identité : une copie scannée de votre passeport, de votre permis de conduire (provisoire ou non) ou de votre carte d'identité, indiquant votre nom et votre date de naissance."
@@ -6978,12 +6974,7 @@ msgid "The STP account provides you with the tightest spreads and connects you d
 msgstr "Le compte STP vous fournit les spreads les plus serrés et vous connecte directement avec le marché."
 
 msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
-msgstr ""
-"Le « Shelter Community Learning Centre 3 » est un foyer scolaire local "
-"accueillant les enfants birmans réfugiés qui attendent d'être rapatriés avec "
-"leur famille dans un pays tiers. Cette structure scolaire vise à offrir à "
-"ces enfants - qui sont à l'âge le plus vulnérable - une éducation qui les "
-"prépare aux années futures."
+msgstr "Le « Shelter Community Learning Centre 3 » est un foyer scolaire local accueillant les enfants birmans réfugiés qui attendent d'être rapatriés avec leur famille dans un pays tiers. Cette structure scolaire vise à offrir à ces enfants - qui sont à l'âge le plus vulnérable - une éducation qui les prépare aux années futures."
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
 msgstr "Le compte standard est approprié pour une grande gamme de traders, à la fois nouveaux et expérimentés."
@@ -8027,11 +8018,7 @@ msgid "We analyse your pending orders."
 msgstr "Nous analysons vos ordres en suspens."
 
 msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
-msgstr ""
-"Nous sommes toujours à la recherche d'œuvres de bienfaisance à la fois "
-"locale et petites où nos contributions peuvent avoir un impact direct. Si "
-"vous voulez discuter avec nous pour que nous aidions votre organisme de "
-"bienfaisance, contactez nous s'il vous plaît au %1."
+msgstr "Nous sommes toujours à la recherche d'œuvres de bienfaisance à la fois locale et petites où nos contributions peuvent avoir un impact direct. Si vous voulez discuter avec nous pour que nous aidions votre organisme de bienfaisance, contactez nous s'il vous plaît au %1."
 
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "Nous sommes agréés et régulés par l'autorité maltaise des services financiers (« MFSA ») conformément à la Loi sur les services d'investissement (droit maltais, chap. 370) (la « Loi ») nous autorisant à poursuivre des activités d'investissement. Nous sommes autorisés par la MFSA à négocier pour compte propre (c’est-à-dire à proposer des transactions et à agir en tant que contrepartie dans le cadre de transactions), et ce afin d'exécuter des ordres pour des tierces personnes. Les deux services sont proposés dans le cadre d'opérations sur instruments dérivés (principalement les options binaires) apparentés au marché des changes, aux indices, aux actions et aux autres produits ou actifs financiers (« Produits financiers »). Nous ne sommes pas autorisés à proposer ou à fournir des services de conseil en investissement ou tout autre service d'investissement autre que ceux décrits ci-dessus. Si vous estimez avoir besoin de conseils ou de services liés à l'investissement autres que ceux décrits ci-dessus, veuillez contacter un conseiller financier indépendant ou une entreprise proposant de tels services."
@@ -8565,12 +8552,7 @@ msgid "You are not entitled to any compensation or reimbursement of any kind fro
 msgstr "Vous ne pouvez prétendre à aucune forme de compensation ou de remboursement de la part de la Société, quelles que soient les circonstances."
 
 msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
-msgstr ""
-"Vous n'êtes pas résident d'un pays restrictif comme l’Afghanistan; Bosnie-"
-"Herzégovine; Costa Rica; tout pays de l'Union Européenne; Laos; Syrie; "
-"Ouganda; Vanuatu; Yémen; USA; Japon; Hong Kong; Costa Rica; Malaisie; Malte; "
-"Iran; Corée du Nord; Jersey; Irak; ou tout autre pays restreint comme "
-"l'Entreprise peut le décider de temps en temps à sa seule discrétion;"
+msgstr "Vous n'êtes pas résident d'un pays restrictif comme l’Afghanistan; Bosnie-Herzégovine; Costa Rica; tout pays de l'Union Européenne; Laos; Syrie; Ouganda; Vanuatu; Yémen; USA; Japon; Hong Kong; Costa Rica; Malaisie; Malte; Iran; Corée du Nord; Jersey; Irak; ou tout autre pays restreint comme l'Entreprise peut le décider de temps en temps à sa seule discrétion;"
 
 msgid "You are over 18 years of age;"
 msgstr "Vous êtes âgé de plus de 18 ans;"
@@ -9200,11 +9182,7 @@ msgid "years"
 msgstr "années"
 
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr ""
-"vous ne résidez pas dans un pays soumis à des restrictions comme "
-"l'Afghanistan, la Bosnie-Herzégovine, le Costa Rica, Hong Kong, l'Iran, "
-"l'Irak, Jersey, le Laos, la Malaisie, la Corée du Nord, la Syrie, l'Ouganda, "
-"les États-Unis, le Vanuatu ou le Yémen ;"
+msgstr "vous ne résidez pas dans un pays soumis à des restrictions comme l'Afghanistan, la Bosnie-Herzégovine, le Costa Rica, Hong Kong, l'Iran, l'Irak, Jersey, le Laos, la Malaisie, la Corée du Nord, la Syrie, l'Ouganda, les États-Unis, le Vanuatu ou le Yémen ;"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "vous êtes âgé de plus de 18 ans, sauf si vous êtes un résident de l'Estonie, auquel cas vous devez avoir plus de 21 ans ;"
