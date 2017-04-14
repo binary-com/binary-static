@@ -9112,11 +9112,6 @@ msgstr "der Site."
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "die Seite für die genaue Zeit für alle Kontraktabrechnungen. Andere Websites mögen andere Vereinbarungen getroffen haben (z. B. wählen einige Websites 16 Uhr (New York) oder 17 Uhr (London)). Dadurch können sich die Eröffnungs-, Höchst-, Tiefst- und Schlussnotierungen auf unserer Website aufgrund des Börsenschlusses von denen anderer Websites unterscheiden ."
 
-#, fuzzy
-#| msgid "Spread"
-msgid "read"
-msgstr "Marge"
-
 msgid "second"
 msgstr "Sekunde"
 
@@ -10859,6 +10854,11 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 msgid "Account Limits"
 msgstr "Kontolimits"
+
+#, fuzzy
+#~| msgid "Spread"
+#~ msgid "read"
+#~ msgstr "Marge"
 
 #~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
 #~ msgstr "%1 Spread Kontrakte sind gehebelte derivative Kontrakte, deren Wert direkt an die unterliegenden Marktbewegungen gebunden ist. Kunden, die nach einem steigenden Markt \"verlangen\" (und diejenigen die einen fallenden Martk \"scheuen\") profitieren von diesen Bewegungen mit wesentlich geringerer Investition, als Sie an der echten Börse verlangt wird."

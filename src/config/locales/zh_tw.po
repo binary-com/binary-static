@@ -9108,11 +9108,6 @@ msgstr "網站的。"
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "所有合約準確結算時間的頁面。其他網站可能會有不同的慣例（比如一些網站採用紐約時間4點或倫敦時間5點）。由於不同的收盤時間慣例，在本網站顯示的開盤、高、低或收盤價可能跟其他網站不一致。"
 
-#, fuzzy
-#| msgid "Spread"
-msgid "read"
-msgstr "價差"
-
 msgid "second"
 msgstr "秒"
 
@@ -10855,6 +10850,11 @@ msgstr "條款和條件審批"
 
 msgid "Account Limits"
 msgstr "帳戶限額"
+
+#, fuzzy
+#~| msgid "Spread"
+#~ msgid "read"
+#~ msgstr "價差"
 
 #~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
 #~ msgstr "%1 的價差合約為槓桿型衍生合約，其價值直接與基礎市場走勢掛勾。  以比實時市場較低之投資對上漲市場購入「長倉」合同（及對下降市場購入「短倉」合同）的客戶從以上價格走勢中獲利。"
