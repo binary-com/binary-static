@@ -147,10 +147,11 @@ const TradingAnalysis = (() => {
 
         if (selected_element && selected_element.classList.contains('invisible') &&
             !(selected_tab === 'tab_portfolio' && JapanPortfolio.isActive())) {
-            selected_tab = window.chartAllowed && !State.get('is_mb_trading') ? 'tab_graph' : 'tab_explanation';
+            selected_tab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
             sessionStorage.setItem('currentAnalysisTab', selected_tab);
         }
 
+        if (selected_tab === 'tab_graph' && State.get('is_mb_trading')) selected_tab = 'tab_explanation';
         return selected_tab;
     };
 
