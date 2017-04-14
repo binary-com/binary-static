@@ -51,10 +51,13 @@ InScriptStore.prototype = {
             obj[key[0]] = value;
         }
     },
-    remove: function(key) { delete this.store[key]; },
-    clear : function()    { this.store = {}; },
-    has   : function(key) { return this.get(key) !== undefined; },
-    keys  : function()    { return Object.keys(this.store); },
+    remove: function(...keys) {
+        keys.forEach((key) => { delete this.store[key]; });
+    },
+    clear: function()    { this.store = {}; },
+    has  : function(key) { return this.get(key) !== undefined; },
+    keys : function()    { return Object.keys(this.store); },
+    call : function(key) { if (typeof this.get(key) === 'function') this.get(key)(); },
 };
 
 const State = new InScriptStore();
