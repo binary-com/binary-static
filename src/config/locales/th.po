@@ -9133,11 +9133,6 @@ msgstr "ของเว็บไซต์"
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "หน้าสำหรับเวลาที่ใช้เป็นข้อตกลงสำหรับทุกสัญญา เว็บไซต์อื่นอาจใช้การกำหนดเวลาที่แตกต่างออกไป (เช่น บางเว็บไซต์ใช้เวลา 4.00 น. เวลานิวยอร์ก หรือ 5.00 น. เวลาลอนดอน) ทำให้ราคาเปิด สูง ต่ำ และ ราคาปิดที่แสดงในเว็บไซต์ของเราจะแตกต่างจากเว็บไซต์อื่นๆ เนื่องจากการกำหนดเวลาปิดของตลาด"
 
-#, fuzzy
-#| msgid "Spreads"
-msgid "read"
-msgstr "สเปรด"
-
 msgid "second"
 msgstr "วินาที"
 
@@ -10880,6 +10875,11 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Account Limits"
 msgstr "วงเงินในบัญชี"
+
+#, fuzzy
+#~| msgid "Spreads"
+#~ msgid "read"
+#~ msgstr "สเปรด"
 
 #~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
 #~ msgstr "สัญญาสเปรดของ %1 มีผลกับสัญญาอนุพันธ์ เป็นมูลค่าซึ่งขึ้นกับการเคลื่อนไหวของตลาดผลิตภัณฑ์อ้างอิงต่างๆ เมื่อลูกค้าทำกำไรตามการเคลื่อนไหวของตลาดโดย 'Long' ในตลาดขาขึ้น (และดำเนินการ 'Short' ในตลาดขาลง) จะมีมูลค่าน้อยกว่ามากเมื่อเทียบกับค่าในตลาดจริง"
