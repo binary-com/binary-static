@@ -2,17 +2,20 @@ const moment                     = require('moment');
 const TradingAnalysis            = require('./analysis');
 const Barriers                   = require('./barriers');
 const commonTrading              = require('./common');
-const Contract                   = require('./contract');
+const chartFrameSource           = require('./charts/chart_frame').chartFrameSource;
 const Defaults                   = require('./defaults');
 const Durations                  = require('./duration');
+const GetTicks                   = require('./get_ticks');
+const Notifications              = require('./notifications');
 const Price                      = require('./price');
 const Process                    = require('./process');
+const Purchase                   = require('./purchase');
 const setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
 const getStartDateNode           = require('./common_independent').getStartDateNode;
 const Tick                       = require('./tick');
 const BinaryPjax                 = require('../../base/binary_pjax');
+const GTM                        = require('../../base/gtm');
 const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
-const elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
 const isVisible                  = require('../../common_functions/common_functions').isVisible;
 const onlyNumericOnKeypress      = require('../../common_functions/event_handler');
 const TimePicker                 = require('../../components/time_picker');
@@ -41,8 +44,8 @@ const TradingEvents = (() => {
             // it will default to proper one
             Defaults.remove('formname');
             Defaults.remove('underlying');
-            Process.processMarket(1);
-            commonTrading.chartFrameSource();
+            Process.processMarket();
+            chartFrameSource();
         };
 
         const market_nav_element = document.getElementById('contract_markets');
@@ -91,7 +94,7 @@ const TradingEvents = (() => {
         if (underlying_element) {
             underlying_element.addEventListener('change', (e) => {
                 if (e.target) {
-                    commonTrading.chartFrameSource();
+                    chartFrameSource();
                     commonTrading.showFormOverlay();
                     commonTrading.showPriceOverlay();
                     if (e.target.selectedIndex < 0) {
@@ -106,16 +109,24 @@ const TradingEvents = (() => {
 
                     commonTrading.updateWarmChart();
 
-                    Contract.getContracts(underlying);
+                    getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
                     Process.processForgetTicks();
                     // get ticks for current underlying
-                    Tick.request(underlying);
+                    GetTicks.request(underlying);
                     commonTrading.displayTooltip(Defaults.get('market'), underlying);
                 }
             });
         }
+
+        const getContracts = (underlying) => {
+            BinarySocket.send({ contracts_for: underlying }).then((response) => {
+                Notifications.hide('CONNECTION_ERROR');
+                Process.processContract(response);
+                window.contracts_for = response;
+            });
+        };
 
         /*
          * bind event to change in duration amount, request new price
@@ -293,10 +304,6 @@ const TradingEvents = (() => {
         if (currency_element) {
             currency_element.addEventListener('change', (e) => {
                 Defaults.set('currency', e.target.value);
-                const stop_type_dollar_label = document.getElementById('stop_type_dollar_label');
-                if (stop_type_dollar_label && isVisible(stop_type_dollar_label)) {
-                    elementTextContent(stop_type_dollar_label, e.target.value);
-                }
                 Price.processPriceRequest();
             });
         }
@@ -322,7 +329,10 @@ const TradingEvents = (() => {
                 }, this);
                 if (id && ask_price) {
                     $('.purchase_button').css('visibility', 'hidden');
-                    BinarySocket.send(params);
+                    BinarySocket.send(params).then((response) => {
+                        Purchase.display(response);
+                        GTM.pushPurchaseData(response);
+                    });
                     Price.incrFormId();
                     Price.processForgetProposals();
                 }
@@ -386,66 +396,6 @@ const TradingEvents = (() => {
         if (prediction_element) {
             prediction_element.addEventListener('change', commonTrading.debounce((e) => {
                 Defaults.set('prediction', e.target.value);
-                Price.processPriceRequest();
-                commonTrading.submitForm(document.getElementById('websocket_form'));
-            }));
-        }
-
-        /*
-         * attach an event to change in amount per point for spreads
-         */
-        const amount_per_point_element = document.getElementById('amount_per_point');
-        if (amount_per_point_element) {
-            amount_per_point_element.addEventListener('input', commonTrading.debounce((e) => {
-                if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(2);
-                }
-                Defaults.set('amount_per_point', e.target.value);
-                Price.processPriceRequest();
-                commonTrading.submitForm(document.getElementById('websocket_form'));
-            }));
-        }
-
-        /*
-         * attach an event to change in stop type for spreads
-         */
-        const stopTypeEvent = (e) => {
-            Defaults.set('stop_type', e.target.value);
-            Price.processPriceRequest();
-        };
-
-        const stop_type_element = document.querySelectorAll('input[name="stop_type"]');
-        if (stop_type_element) {
-            for (let i = 0, len = stop_type_element.length; i < len; i++) {
-                stop_type_element[i].addEventListener('click', stopTypeEvent);
-            }
-        }
-
-        /*
-         * attach an event to change in stop loss input value
-         */
-        const stop_loss_element = document.getElementById('stop_loss');
-        if (stop_loss_element) {
-            stop_loss_element.addEventListener('input', commonTrading.debounce((e) => {
-                if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(2);
-                }
-                Defaults.set('stop_loss', e.target.value);
-                Price.processPriceRequest();
-                commonTrading.submitForm(document.getElementById('websocket_form'));
-            }));
-        }
-
-        /*
-         * attach an event to change in stop profit input value
-         */
-        const stop_profit_element = document.getElementById('stop_profit');
-        if (stop_profit_element) {
-            stop_profit_element.addEventListener('input', commonTrading.debounce((e) => {
-                if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(2);
-                }
-                Defaults.set('stop_profit', e.target.value);
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));

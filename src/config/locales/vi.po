@@ -263,12 +263,6 @@ msgstr "Nhóm Phân Tích Định Lượng của %1 có trách nhiệm định g
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "Smart FX của %1 là thị trường thông minh đo lường giá trị của một đồng tiền so với những đồng tiền lớn khác."
 
-msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr "Hợp đồng Spread% 1 là hợp đồng phái sinh đòn bẩy, giá trị được gắn liền với các biến động của thị trường. Khách hàng \"Dài\" là một thị trường tăng cao (và những người 'Ngắn' một thị trường giảm) thu được lợi nhuận từ những hoạt động này với đầu tư ít hơn nhiều so với nhu cầu thị trường sống."
-
-msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr "Hợp đồng Chênh lệch của %1 yêu cầu một mức 'điểm dừng lỗ' giới hạn mức lỗ cao nhất của khách hàng. Số tiền ở mức 'giới hạn lỗ' này sẽ là số tiền gửi trước và không được sử dụng cho giao dịch trong tương lai cho tới khi Hợp đồng Chênh lệch hết hiệu lực. Hợp đồng này không có giá trị khi khách hàng chạm tới mức 'điểm dừng lỗ' hoặc 'điểm dừng lợi nhuận'."
-
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "Chỉ số biến động của %1 được dựa trên một máy phát các số bảo mật ngẫu nhiên được mã hoá để kiểm định tính công bằng bởi một bên thứ ba độc lập."
 
@@ -310,12 +304,6 @@ msgstr "&#8220;%1 là một trong những đối tác lâu đời nhất và đ
 
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;chúng tôi đã dùng www.binary.com trong 8 năm qua và rất tin tưởng giới thiệu binary đến tất cả thành viên trên toàn thế giới.&#8221;"
-
-msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
-msgstr "'<strong>Hợp đồng giữ vị thế Mua </strong>' tạo lợi nhuận khi chỉ số tăng và thua lỗ khi chỉ số giảm."
-
-msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
-msgstr "'<strong>Hợp đồng vị thế Bán</strong> thua lỗ khi chỉ số tăng và có lợi nhuận khi chỉ số giảm."
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "Giải thưởng 'Công ty Truyền thông kết nối Khách hàng Tốt nhất' của Investors Chronicle"
@@ -1012,9 +1000,6 @@ msgstr "Số tiền"
 
 msgid "Amount of above assets"
 msgstr "Amount of above assets"
-
-msgid "Amount per point"
-msgstr "Số tiền trên mỗi điểm"
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Tốt nghiệp loại Trung bình/ Khá/ Giỏi hoặc có Bằng cử nhân"
@@ -1715,6 +1700,9 @@ msgstr "Thay đổi mật khẩu sử dụng cho tiền gửi và rút tiền."
 msgid "Change your main login password."
 msgstr "Thay đổi mật khẩu đăng nhập chính của bạn."
 
+msgid "Charitable Activities"
+msgstr ""
+
 msgid "Chart"
 msgstr "Biểu đồ"
 
@@ -2179,9 +2167,6 @@ msgstr "Ký hiệu tiền tệ"
 msgid "Current"
 msgstr "Tiền tệ"
 
-msgid "Current Level"
-msgstr "Mức Hiện tại"
-
 msgid "Current Time"
 msgstr "Thời gian hiện tại"
 
@@ -2292,9 +2277,6 @@ msgstr "Quỹ gửi tiền và bắt đầu kinh doanh"
 
 msgid "Deposit into"
 msgstr "Gửi tiền đến"
-
-msgid "Deposit of"
-msgstr "Tiền gửi của"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Gửi hay rút tiền qua tài khoản của bạn bằng điện chuyển khoản ngân hàng, thẻ tín dụng hay ví thẻ điện tử."
@@ -2643,9 +2625,6 @@ msgstr "Nhập giá giới hạn khác với giá giao ngay. Nếu bạn 
 msgid "Enter your email"
 msgstr "Nhập địa chỉ email của bạn"
 
-msgid "Entry Level"
-msgstr "Mức ban đầu"
-
 msgid "Entry Spot"
 msgstr "Giá khởi điểm"
 
@@ -2693,9 +2672,6 @@ msgstr "Sự kiện &mdash; sự kiện ví dụ bao gồm các trường hợp 
 
 msgid "Everyone"
 msgstr "Tất cả mọi người"
-
-msgid "Example:"
-msgstr "Ví dụ:"
 
 msgid "Excellent English language (written and oral) communication skills"
 msgstr "Kỹ năng giao tiếp tuyệt vời bằng tiếng Anh (viết và nói)"
@@ -2756,9 +2732,6 @@ msgstr "Mô hình thực thi và rủi ro đối tác"
 
 msgid "Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions."
 msgstr "Sử dụng kỹ năng quản lý quan hệ khách hàng xuất sắc để ngăn chặn các hoạt động gian lận trong xử lý các khoản thanh toán và giao dịch kinh doanh."
-
-msgid "Exit Level"
-msgstr "Mức giá Thoát ra"
 
 msgid "Exit Spot"
 msgstr "Giá Giao ngay thoát ra"
@@ -2996,9 +2969,6 @@ msgstr "Đối với báo giá ngoại tệ tại thời điểm đóng 
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "Đối với thị trường ngoại tệ: Thị trường ngoại hối là thị trường OTC (không chính thức), nơi mà ngân hàng và những thể chế tài chính lớn khác giao dịch tiền tệ với nhau mà không cần phải có nhà thanh toán bù trừ trung ương. Theo đó, sẽ không có nguồn giá \"chính thức\" đối với báo giá ngoại tệ. Nguồn dữ liệu khác nhau sẽ tập hợp từ chuỗi các ngân hàng quốc tế. Theo đó, giá có thể khác nhau giữa các nhà cung cấp, phụ thuộc vào ngân hàng mà họ lấy giá từ đó."
-
-msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
-msgstr "Đối với hợp đồng vị thế mua, mức giá đi vào là giá giao ngay cộng thêm một nửa giá chênh lệch và mức giá đi ra là giá giao ngay trừ đi một nửa giá chênh lệch. Đối với hợp đồng vị thế bán, giá đi vào là giá giao ngay trừ cho một nửa giá chênh lệch và giá thoát ra là giá giao ngay cộng thêm một nửa mức giá chênh lệch."
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "Ba năm liên tiếp, BetOnMarkets.com được tạp chí Shares Magazine Anh bầu chọn là \" Nhà cung cấp Giao dịch Tài chính Fixed-Odds Tốt nhất\". Đó là lần cuối chúng tôi chiến thắng vì Shares Magazine đã dừng trao giải trong lĩnh vực này."
@@ -3311,9 +3281,6 @@ msgstr "Làm thế nào để đọc bảng trên"
 
 msgid "How to trade binary options?"
 msgstr "Làm thế nào để giao dịch các tùy chọn nhị phân?"
-
-msgid "How to trade spreads?"
-msgstr "Làm thế nào để giao dịch chênh lệch giá?"
 
 msgid "How to trade the Volatility Indices markets?"
 msgstr "Giao dịch thị trường Chỉ số Biến động như thế nào?"
@@ -4440,8 +4407,14 @@ msgstr "Văn phòng Kuala Lumpur"
 msgid "L. Event of Default"
 msgstr "L. Sự kiện mặc định"
 
+msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
+msgstr ""
+
 msgid "Languages"
 msgstr "Ngôn ngữ"
+
+msgid "Languages Classes for Refugees (LCFR)"
+msgstr ""
 
 msgid "Last Digit Prediction"
 msgstr "Dự đoán Chữ số Cuối cùng"
@@ -4472,9 +4445,6 @@ msgstr "Tìm hiểu thêm"
 
 msgid "Learn more about our corporate culture"
 msgstr "Tìm hiểu thêm về văn hóa của tập đoàn chúng tôi"
-
-msgid "Learn more about spreads on %1."
-msgstr "Tìm hiểu thêm về các quảng bá trên %1."
 
 msgid "Learn the basics, from choosing your asset to winning your payout."
 msgstr "Tìm hiểu về những điều cơ bản, từ việc chọn tài sản để thu lãi."
@@ -5121,6 +5091,11 @@ msgstr "Bây giờ"
 msgid "Number of ticks"
 msgstr "Số điểm"
 
+#, fuzzy
+#| msgid "Number of ticks"
+msgid "Number of ticks:"
+msgstr "Số điểm"
+
 msgid "O. Representations and Warranties"
 msgstr "O. đại diện và bảo đảm"
 
@@ -5699,9 +5674,6 @@ msgstr "Vui lòng gửi thông tin trên tới <a href='%1'>%2</a>."
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr "Xin hãy lưu ý rằng tỷ lệ trao đổi của chúng tôi cũng phụ thuộc vào thời gian và ngày bạn giữ phiên mở của bạn: "
 
-msgid "Points"
-msgstr "Điểm"
-
 msgid "Poland"
 msgstr "Ba Lan"
 
@@ -5734,9 +5706,6 @@ msgstr "Lợi nhuận Tiềm năng"
 
 msgid "Potential profit"
 msgstr "Lợi nhuận tiềm năng"
-
-msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
-msgstr "Lợi nhuận và thua lỗ tiềm năng được giới hạn tới mức lợi nhuận tới hạn và thua lỗ tới hạn tương ứng."
 
 msgid "Power & simplicity"
 msgstr "Mạnh mẽ và đơn giản"
@@ -5865,9 +5834,6 @@ msgstr "Bảng Lợi nhuận"
 
 msgid "Profit/Loss"
 msgstr "Lợi nhuận/Thua lỗ"
-
-msgid "Profit/Loss (points)"
-msgstr "Lợi nhuận/Thua lỗ (điểm)"
 
 msgid "Prohibited Trades"
 msgstr "Các giao dịch bị cấm"
@@ -6296,6 +6262,11 @@ msgstr "Quỹ tách biệt"
 msgid "Select market"
 msgstr "Chọn thị trường"
 
+#, fuzzy
+#| msgid "Select market"
+msgid "Select market:"
+msgstr "Chọn thị trường"
+
 msgid "Select your market"
 msgstr "Chọn thị trường của bạn"
 
@@ -6527,12 +6498,6 @@ msgstr "Thời điểm làm giá"
 msgid "Spot price"
 msgstr "Giá giao ngay"
 
-msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
-msgstr "Lợi nhuận của Hợp đồng Chênh lệch được dựa trên biến động của chỉ số có quan tới mức giá nhập vào của hợp đồng."
-
-msgid "Spreads"
-msgstr "Giá chênh lệch"
-
 msgid "Stake"
 msgstr "Đơn vị vốn, cổ phiếu"
 
@@ -6608,9 +6573,6 @@ msgstr "Kinh nghiệm giao dịch Chứng khoán"
 msgid "Stocks trading frequency"
 msgstr "Tần suất giao dịch Chứng khoán"
 
-msgid "Stop Loss Level"
-msgstr "Mức Thua lỗ Tới hạn"
-
 msgid "Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
 msgstr "Lệnh dừng / Lệnh dừng thiệt hại &mdash; một hướng dẫn để thực hiện một giao dịch để đóng một phiên mở khi đạt tới mức giá cụ thể của bạn."
 
@@ -6622,20 +6584,8 @@ msgstr "Mức dừng"
 msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "Mức độ dừng &mdash; Mức lề ở hoặc thấp hơn mà phiên mở của bạn có thể mạnh mẽ có hoặc không có sự đồng ý trước của bạn."
 
-msgid "Stop Profit Level"
-msgstr "Mức Lợi nhuận Tới hạn"
-
 msgid "Stop and Limit Orders"
 msgstr "Lệnh dừng và giới hạn"
-
-msgid "Stop-loss"
-msgstr "Thua lỗ -Tới hạn"
-
-msgid "Stop-profit"
-msgstr "Dừng - Lợi nhuận"
-
-msgid "Stop-type"
-msgstr "Loại - Tới hạn"
 
 msgid "Storage of Content"
 msgstr "Lưu trữ các Nội dung"
@@ -7033,7 +6983,9 @@ msgstr "Chương trình"
 msgid "The STP account provides you with the tightest spreads and connects you directly to the market."
 msgstr "Tài khoản STP cung cấp cho bạn với các quảng bá sát nhất và kết nối bạn trực tiếp đến thị trường."
 
-msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+#, fuzzy
+#| msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr "Trung tâm cộng đông học tập cư trú 3 là một cộng đồng trường học cho trẻ tị nạn Myanmar đang chờ hồi hương với gia đình của họ tới một quốc gia thứ 3. Nhà trường với mục đích cung cấp cho những trẻ em mà đang ở độ tuổi dễ bị ảnh hưởng nhất có được một nền giáo dục để chúng có thể tự chuẩn bị cho tương lai."
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
@@ -7086,9 +7038,6 @@ msgstr "Chuyển giữa hai tài khoản không khả dụng. %1 vui lòng gửi
 
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "Chương trình liên kết cho phép bạn kiếm lời từ việc giới thiệu khách hàng cho trang web. Sự lớn mạnh và thành công được chia sẻ cho liên kết người mà có khả năng mang Khách hàng mới tới cho trang web."
-
-msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
-msgstr "Khoản lợi nhuận/thua lỗ trên điểm của chỉ số tăng/giảm được nhân lên bởi số tiền trên điểm. Số tiền trên điểm lớn sinh ra lợi nhuận/thua lỗ trên điểm của biến động chỉ số."
 
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "Xử lý chống rửa tiền có những ảnh hưởng sau đây đến Khách hàng:"
@@ -7165,15 +7114,6 @@ msgstr "Cách dễ nhất để bắt đầu trong thị trường tài 
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "Địa chỉ thư điện tử cung cấp đang được sử dụng. Nếu bạn quên mật khẩu của bạn, hãy thử <a href=\"%1\"> công cụ phục hồi mật khẩu của chúng tôi</a> hoặc liên hệ với dịch vụ khách hàng của chúng tôi."
 
-msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
-msgstr "Giá nhập vào của hợp đồng vị thế mua là 1001, là giá giao ngay nhập vào + một nửa giá chênh lệch. Tại giá đi ra, giá giao ngay là 1100 và vì vậy mức giá thoát ra cho hợp đồng vị thế mua là 1099, là giá giao ngay thoát ra - một nửa giá chênh lệch."
-
-msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
-msgstr "Mức giá nhập vào của hợp đồng vị thế bán là 999, là giá giao ngay nhập vào - một nửa giá chênh lệch. Tại giá đi ra, giá giao ngay là 1100 và vì thế mức giá đi ra cho hợp đồng vị thế bán là 1101, là giá giao ngay đi ra + một nửa giá chênh lệch."
-
-msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
-msgstr "Giá giao ngay đi vào của công cụ XYZ là 1000 và chênh lệch của công cụ này là 2 điểm."
-
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Giá giao ngay nhập vào là giá bắt đầu của giao dịch được mua bởi người giao dịch."
 
@@ -7228,9 +7168,6 @@ msgstr "Mức độ bảo vệ được cung cấp và mỗi khách hàng phụ
 msgid "The leverage ratio refers to the number of times your margin (the amount set aside from your account balance to open and maintain a transaction) can be \"leveraged\" to enter into a Transaction. The denominator of the leverage ratio is always 1. A 50:1 leverage is equivalent to a 2% margin requirement (1 divided by 50 = 2%). The leverage ratio that we/you establish will determine the amount of margin required. As leverage is inversely proportional to margin, the lower the leverage you set for your Account, the higher the margin required to be set aside from your account balance (your margin requirement)."
 msgstr "Tỷ lệ đòn bẩy dùng để chỉ số lần lề của bạn (số tiền đặt ngoài tài khoản của bạn để mở và duy trì một giao dịch) có thể được \"thừa hưởng\" để nhập vào một giao dịch. Mẫu số tỷ lệ đòn bẩy luôn luôn là 1. Một đòn bẩy 50: 1 là tương đương với một yêu cầu của biên độ 2% (1 chia cho 50 = 2%). Tỷ lệ đòn bẩy chúng tôi/bạn thiết lập sẽ xác định số lượng lề điều kiện. Như đòn bẩy là tỷ lệ nghịch với lề, việc hạ thấp các đòn bẩy bạn đặt cho tài khoản của bạn, cao hơn lề điều kiện được đặt bên cạnh tài khoản của bạn (yêu cầu lợi nhuận của bạn)."
 
-msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "Thua lỗ USD 306 là phần chênh lệch giữa mức giá đi vào và giá đi ra nhân với số tiền trên mỗi điểm."
-
 msgid "The main password of account number %1 has been changed."
 msgstr "Mật khẩu chính của tài khoản số %1 đã bị thay đổi."
 
@@ -7282,9 +7219,6 @@ msgstr "Sàn giao dịch cao cấp cho giao dịch quyền chọn nhị phân tr
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "Lợi nhuận là phần chênh lệch giữa giá mua (cổ phần) và tiền thanh toán trên giao dịch thắng."
 
-msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "Lợi nhuận USD 294 là phần chênh lệch giữa mức giá đi ra và mức giá đi vào nhân với số tiền trên mỗi điểm."
-
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr "Việc cung cấp các dịch vụ kinh doanh lợi nhuận được mô tả trong thỏa thuận này không có trong liên minh châu Âu."
 
@@ -7311,9 +7245,6 @@ msgstr "Thuật toán làm trơn và lọc được mô tả ở trên."
 
 msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "Đơn vị vốn (stake) là số tiền nhà giao dịch cần phải trả để được vào một giao dịch."
-
-msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
-msgstr "Điểm tới hạn lỗ và tới hạn lãi được bảo đảm. Lỗ và lãi được giới hạn tới điểm tới hạn lỗ và điểm tới hạn lãi tương ứng. Khi mức giá đi ra chạm vào hoặc điểm tới hạn lỗ hoặc tới hạn lãi, thì hợp đồng sẽ được đóng tại mức giá tại điểm tới hạn lỗ hoặc điểm tới hạn lãi."
 
 msgid "The swap rate will depend on the direction of the position you take:"
 msgstr "Tỷ lệ trao đổi sẽ phụ thuộc vào sự chỉ đạo của các phiên bạn tham gia:"
@@ -8101,6 +8032,9 @@ msgstr "Chúng tôi cũng cung cấp cấu trúc trả lãi đặc biệt cho nh
 
 msgid "We analyse your pending orders."
 msgstr "Chúng tôi phân tích các lệnh đang chờ của bạn."
+
+msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
+msgstr ""
 
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "Ủy ban Dịch vụ Tài chính Malta (\"MFSA\") ủy quyền và quy định cho chúng tôi thực hiện công việc kinh doanh đầu tư theo Đạo luật Dịch vụ Đầu tư (điều 370, Luật Malta) (\"Đạo luật\"). MFSA đã ủy quyền cho chúng tôi giao dịch tài khoản của mình ( ví dụ, cung cấp và hoạt động như các đối tác để giao dịch) và để thực thi các đơn hàng trên danh nghĩa của người khác, tất cả các dịch vụ liên quan tới sản phẩm phái sinh tài chính (quyền chọn nhị phân sơ cấp), liên quan tới giao dịch ngoại hối, chỉ số, cổ phiếu và những sản phẩm tài chính hoặc tài sản khác (\"Sản phẩm Tài chính\"). Chúng tôi không được ủy quyền và không cung cấp tư vấn đầu tư hoặc các dịch vụ đầu tư khác ngoài những điều mô tả ở trên. Nếu bạn thấy rằng bạn cần tư vấn về đầu tư hoặc dịch vụ đầu tư khác với các loại được miêu tả bên trên, bạn nên liên hệ với công ty hoặc nhà tư vấn tài chính độc lập."
@@ -9129,9 +9063,6 @@ msgstr "iOS, Android"
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
 msgstr "định tuyến thông minh các lệnh đến để phân loại rõ ràng các loại khác nhau của chế độ thực thi dựa trên cấu hình và thiết lập bằng cách sử dụng các yếu tố thực thi tốt nhất."
 
-msgid "is required. Current spread"
-msgstr "là bắt buộc. Giá chênh lệch hiện tại"
-
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "Sàn giao dịch có một sức hấp dẫn quốc tế rộng, với giao diện bằng tiếng Anh, tiếng Tây Ban Nha, Pháp, Đức, Bồ Đào Nha, Trung Quốc, Nhật Bản, Ý, Thái Lan, Ba Lan, Nga và Indonesia."
 
@@ -9193,9 +9124,6 @@ msgstr "của trang."
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "trang dành cho quyết toán tại thời gian chính xác đối với tất cả các hợp đồng. Các trang web khác có thể áp dụng quy ước khác nhau (ví dụ như một số trang web chọn thời gian 04:00 NY, hoặc 5:00 theo giờ Luân Đôn). Kết quả là, giá đóng, mở, cao, thấp hiển thị trên trang web của chúng tôi có thể khác với những giá trên các trang web khác, do quy ước thời gian đóng cửa thị trường."
-
-msgid "points"
-msgstr "điểm"
 
 msgid "second"
 msgstr "giây"
@@ -11141,6 +11069,107 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
+
+#~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+#~ msgstr "Hợp đồng Spread% 1 là hợp đồng phái sinh đòn bẩy, giá trị được gắn liền với các biến động của thị trường. Khách hàng \"Dài\" là một thị trường tăng cao (và những người 'Ngắn' một thị trường giảm) thu được lợi nhuận từ những hoạt động này với đầu tư ít hơn nhiều so với nhu cầu thị trường sống."
+
+#~ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+#~ msgstr "Hợp đồng Chênh lệch của %1 yêu cầu một mức 'điểm dừng lỗ' giới hạn mức lỗ cao nhất của khách hàng. Số tiền ở mức 'giới hạn lỗ' này sẽ là số tiền gửi trước và không được sử dụng cho giao dịch trong tương lai cho tới khi Hợp đồng Chênh lệch hết hiệu lực. Hợp đồng này không có giá trị khi khách hàng chạm tới mức 'điểm dừng lỗ' hoặc 'điểm dừng lợi nhuận'."
+
+#~ msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
+#~ msgstr "'<strong>Hợp đồng giữ vị thế Mua </strong>' tạo lợi nhuận khi chỉ số tăng và thua lỗ khi chỉ số giảm."
+
+#~ msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
+#~ msgstr "'<strong>Hợp đồng vị thế Bán</strong> thua lỗ khi chỉ số tăng và có lợi nhuận khi chỉ số giảm."
+
+#~ msgid "Amount per point"
+#~ msgstr "Số tiền trên mỗi điểm"
+
+#~ msgid "Current Level"
+#~ msgstr "Mức Hiện tại"
+
+#, fuzzy
+#~| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
+#~ msgid "Deposit of %1 is required. Current spread: %2 points"
+#~ msgstr "Khoản tiền gửi của %1 %2 được yêu cầu. Giá chênh lệch hiện tại: %3 điểm"
+
+#~ msgid "Entry Level"
+#~ msgstr "Mức ban đầu"
+
+#~ msgid "Example:"
+#~ msgstr "Ví dụ:"
+
+#~ msgid "Exit Level"
+#~ msgstr "Mức giá Thoát ra"
+
+#~ msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
+#~ msgstr "Đối với hợp đồng vị thế mua, mức giá đi vào là giá giao ngay cộng thêm một nửa giá chênh lệch và mức giá đi ra là giá giao ngay trừ đi một nửa giá chênh lệch. Đối với hợp đồng vị thế bán, giá đi vào là giá giao ngay trừ cho một nửa giá chênh lệch và giá thoát ra là giá giao ngay cộng thêm một nửa mức giá chênh lệch."
+
+#~ msgid "How to trade spreads?"
+#~ msgstr "Làm thế nào để giao dịch chênh lệch giá?"
+
+#~ msgid "Learn more about spreads on %1."
+#~ msgstr "Tìm hiểu thêm về các quảng bá trên %1."
+
+#~ msgid "Points"
+#~ msgstr "Điểm"
+
+#~ msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
+#~ msgstr "Lợi nhuận và thua lỗ tiềm năng được giới hạn tới mức lợi nhuận tới hạn và thua lỗ tới hạn tương ứng."
+
+#~ msgid "Profit/Loss (points)"
+#~ msgstr "Lợi nhuận/Thua lỗ (điểm)"
+
+#~ msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
+#~ msgstr "Lợi nhuận của Hợp đồng Chênh lệch được dựa trên biến động của chỉ số có quan tới mức giá nhập vào của hợp đồng."
+
+#~ msgid "Spreads"
+#~ msgstr "Giá chênh lệch"
+
+#~ msgid "Stop Loss Level"
+#~ msgstr "Mức Thua lỗ Tới hạn"
+
+#~ msgid "Stop Profit Level"
+#~ msgstr "Mức Lợi nhuận Tới hạn"
+
+#~ msgid "Stop-loss"
+#~ msgstr "Thua lỗ -Tới hạn"
+
+#~ msgid "Stop-profit"
+#~ msgstr "Dừng - Lợi nhuận"
+
+#~ msgid "Stop-type"
+#~ msgstr "Loại - Tới hạn"
+
+#~ msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
+#~ msgstr "Khoản lợi nhuận/thua lỗ trên điểm của chỉ số tăng/giảm được nhân lên bởi số tiền trên điểm. Số tiền trên điểm lớn sinh ra lợi nhuận/thua lỗ trên điểm của biến động chỉ số."
+
+#~ msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
+#~ msgstr "Giá nhập vào của hợp đồng vị thế mua là 1001, là giá giao ngay nhập vào + một nửa giá chênh lệch. Tại giá đi ra, giá giao ngay là 1100 và vì vậy mức giá thoát ra cho hợp đồng vị thế mua là 1099, là giá giao ngay thoát ra - một nửa giá chênh lệch."
+
+#~ msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
+#~ msgstr "Mức giá nhập vào của hợp đồng vị thế bán là 999, là giá giao ngay nhập vào - một nửa giá chênh lệch. Tại giá đi ra, giá giao ngay là 1100 và vì thế mức giá đi ra cho hợp đồng vị thế bán là 1101, là giá giao ngay đi ra + một nửa giá chênh lệch."
+
+#~ msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
+#~ msgstr "Giá giao ngay đi vào của công cụ XYZ là 1000 và chênh lệch của công cụ này là 2 điểm."
+
+#~ msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "Thua lỗ USD 306 là phần chênh lệch giữa mức giá đi vào và giá đi ra nhân với số tiền trên mỗi điểm."
+
+#~ msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "Lợi nhuận USD 294 là phần chênh lệch giữa mức giá đi ra và mức giá đi vào nhân với số tiền trên mỗi điểm."
+
+#~ msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
+#~ msgstr "Điểm tới hạn lỗ và tới hạn lãi được bảo đảm. Lỗ và lãi được giới hạn tới điểm tới hạn lỗ và điểm tới hạn lãi tương ứng. Khi mức giá đi ra chạm vào hoặc điểm tới hạn lỗ hoặc tới hạn lãi, thì hợp đồng sẽ được đóng tại mức giá tại điểm tới hạn lỗ hoặc điểm tới hạn lãi."
+
+#~ msgid "Deposit of"
+#~ msgstr "Tiền gửi của"
+
+#~ msgid "is required. Current spread"
+#~ msgstr "là bắt buộc. Giá chênh lệch hiện tại"
+
+#~ msgid "points"
+#~ msgstr "điểm"
 
 #, fuzzy
 #~| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
@@ -15890,9 +15919,6 @@ msgstr "Giới hạn Tài khoản"
 
 #~ msgid "Delete for Breach"
 #~ msgstr "Hủy vì Vi phạm"
-
-#~ msgid "Deposit of %1 %2 is required. Current spread: %3 points"
-#~ msgstr "Khoản tiền gửi của %1 %2 được yêu cầu. Giá chênh lệch hiện tại: %3 điểm"
 
 #~ msgid "Email Verification"
 #~ msgstr "Xác minh Email"

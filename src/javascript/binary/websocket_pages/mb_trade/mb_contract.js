@@ -16,31 +16,7 @@ const formatCurrency   = require('../../common_functions/currency_to_symbol').fo
 const MBContract = (() => {
     'use strict';
 
-    let contracts_for_response,
-        contract_timeout;
-
-    const getContracts = (underlying) => {
-        const req = {
-            contracts_for: (underlying || MBDefaults.get('underlying')),
-            currency     : getCurrency(),
-            product_type : 'multi_barrier',
-        };
-        if (!underlying) {
-            req.passthrough = { action: 'no-proposal' };
-        }
-        BinarySocket.send(req);
-        if (contract_timeout) clearContractTimeout(contract_timeout);
-        contract_timeout = setTimeout(getContracts, 15000);
-    };
-
-    const clearContractTimeout = (timout_id) => {
-        if (timout_id) {
-            clearTimeout(timout_id);
-        } else {
-            clearTimeout(contract_timeout);
-            clearTimeout(remaining_timeout);
-        }
-    };
+    let contracts_for_response;
 
     const durationText = (dur) => {
         const duration_map = {
@@ -204,9 +180,11 @@ const MBContract = (() => {
             }
         });
         elementInnerHtml(remaining_time_element, remaining_time_string.join(' '));
-        if (remaining_timeout) clearContractTimeout(remaining_timeout);
+        if (remaining_timeout) clearRemainingTimeout();
         remaining_timeout = setTimeout(displayRemainingTime, 1000);
     };
+
+    const clearRemainingTimeout = () => { clearTimeout(remaining_timeout); };
 
     const sortByExpiryTime = (first, second) => {
         const a = first.split('_');
@@ -348,7 +326,6 @@ const MBContract = (() => {
     );
 
     return {
-        getContracts        : getContracts,
         populatePeriods     : populatePeriods,
         populateOptions     : populateOptions,
         displayRemainingTime: displayRemainingTime,
@@ -359,7 +336,7 @@ const MBContract = (() => {
         getContractsResponse: () => contracts_for_response,
         setContractsResponse: (contracts_for) => { contracts_for_response = contracts_for; },
         onUnload            : () => {
-            clearContractTimeout(); contracts_for_response = {}; period_value = undefined;
+            clearRemainingTimeout(); contracts_for_response = {}; period_value = undefined;
         },
     };
 })();

@@ -1,16 +1,17 @@
-const moment             = require('moment');
-const Barriers_Beta      = require('./barriers');
-const Contract_Beta      = require('./contract');
-const Price_Beta         = require('./price');
-const commonTrading      = require('../common');
-const Defaults           = require('../defaults');
-const localize           = require('../../../base/localize').localize;
-const State              = require('../../../base/storage').State;
-const elementTextContent = require('../../../common_functions/common_functions').elementTextContent;
-const isVisible          = require('../../../common_functions/common_functions').isVisible;
-const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
-const toReadableFormat   = require('../../../common_functions/string_util').toReadableFormat;
-const DatePicker         = require('../../../components/date_picker');
+const moment                    = require('moment');
+const Barriers_Beta             = require('./barriers');
+const Contract_Beta             = require('./contract');
+const Price_Beta                = require('./price');
+const commonTrading             = require('../common');
+const processTradingTimesAnswer = require('../common_independent').processTradingTimesAnswer;
+const Defaults                  = require('../defaults');
+const localize                  = require('../../../base/localize').localize;
+const State                     = require('../../../base/storage').State;
+const elementTextContent        = require('../../../common_functions/common_functions').elementTextContent;
+const isVisible                 = require('../../../common_functions/common_functions').isVisible;
+const toISOFormat               = require('../../../common_functions/string_util').toISOFormat;
+const toReadableFormat          = require('../../../common_functions/string_util').toReadableFormat;
+const DatePicker                = require('../../../components/date_picker');
 
 /*
  * Handles duration processing display
@@ -410,8 +411,9 @@ const Durations_Beta = (() => {
             Price_Beta.processPriceRequest_Beta();
         } else {
             commonTrading.showPriceOverlay();
-            BinarySocket.send({
-                trading_times: date,
+            BinarySocket.send({ trading_times: date }).then((response) => {
+                processTradingTimesAnswer(response);
+                Price_Beta.processPriceRequest_Beta();
             });
         }
     };

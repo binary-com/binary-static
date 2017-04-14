@@ -51,7 +51,6 @@ my @urls = (
     ['get-started/why-trade-with-us'           , 'monthly', '0.80', 'ja'],
     ['get-started/how-to-trade-binaries'       , 'monthly', '0.80', 'ja'],
     ['get-started/volidx-markets'              , 'monthly', '0.80', 'ja'],
-    ['get-started/spread'                      , 'monthly', '0.80', 'ja'],
     ['get-started/smart-indices'               , 'monthly', '0.80', 'ja'],
     ['get-started/otc-indices-stocks'          , 'monthly', '0.80', 'ja'],
     ['get-started/beginners-faq'               , 'monthly', '0.80', 'ja'],
