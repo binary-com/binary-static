@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-04-13 19:45+0000\n"
+"PO-Revision-Date: 2017-04-15 18:28+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -1026,6 +1026,8 @@ msgstr "โพซิชั่นที่เปิดอาจจะถูกป
 
 msgid "An Open Position may be partially closed by entering into an opposite Transaction in the same Market but for a smaller number of lots (volume) as the Open Position."
 msgstr ""
+"โพซิชั่นที่เปิดอาจถูกปิดลงบางส่วนเมื่อมีการเพิ่มธุรกรรมที่ตรงข้ามกันในตลาดเดี"
+"ยวกัน แต่เป็นจำนวนที่น้อยกว่าจำนวนของโพซิชั่นที่เปิดอยู่"
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "รหัสผ่านเพิ่มนี้สามารถใช้เพื่อเข้าถึงส่วนของแคชเชียร์"
@@ -4782,34 +4784,35 @@ msgid "Maximum account cash balance"
 msgstr "มูลค่าสูงสุดของบัญชีเงินสด"
 
 msgid "Maximum aggregate contract purchases over a 30-day period."
-msgstr "มูลค่าสัญญารวมมากที่สุดที่ซื้อเกินกว่าระยะเวลา 30 วัน"
+msgstr "มูลค่าสัญญารวมสูงสุดที่ซื้อในระยะเวลา 30 วัน"
 
 msgid "Maximum aggregate contract purchases over a 7-day period."
-msgstr "มูลค่าสัญญารวมมากที่สุดที่ซื้อเกินกว่าระยะเวลา 7 วัน"
+msgstr "มูลค่าสัญญารวมสูงสุดที่ซื้อในระยะเวลา 7 วัน"
 
 msgid "Maximum aggregate contract purchases per day."
-msgstr "มูลค่าสัญญารวมมากที่สุดที่ซื้อต่อวัน"
+msgstr "มูลค่าสัญญารวมสูงสุดที่ซื้อต่อวัน"
 
 msgid "Maximum aggregate loss over a 30-day period."
-msgstr "มูลค่ารวมที่ขาดทุนมากที่สุดที่เกินกว่าระยะเวลา 30 วัน"
+msgstr "มูลค่ารวมที่ขาดทุนสูงสุดในระยะเวลา 30 วัน"
 
 msgid "Maximum aggregate loss over a 7-day period."
-msgstr "มูลค่ารวมที่ขาดทุนมากที่สุดที่เกินกว่าระยะเวลา 7 วัน"
+msgstr "มูลค่ารวมที่ขาดทุนสูงสุดในระยะเวลา 7 วัน"
 
 msgid "Maximum aggregate loss per day."
-msgstr "มูลค่ารวมที่ขาดทุนมากที่สุดต่อวัน"
+msgstr "มูลค่ารวมที่ขาดทุนสูงสุดต่อวัน"
 
 msgid "Maximum aggregate payouts on open positions"
-msgstr "มูลค่าการชำระเงินรวมที่มากที่สุดของโพซิชั่นที่เปิด"
+msgstr "มูลค่าการชำระเงินรวมสูงสุดของโพซิชั่นที่เปิด"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
-msgstr "มูลค่าการชำระเงินรวมที่มากที่สุดของโพซิชั่นที่เปิดต่อสัญลักษณ์และประเภทของสัญญา"
+msgstr ""
+"มูลค่าการชำระเงินรวมสูงสุดของโพซิชั่นที่เปิดต่อสัญลักษณ์และประเภทของสัญญา"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
 msgstr "การชำระเงินสูงสุดของโพซิชันที่เปิดอยู่ต่อสัญลักษณ์และประเภทของสัญญา วงเงินนี้สามารถขยายไปถึงวงเงินทั้งหมดของการชำระเงิน หากไม่มีโพซิชันที่เปิดอยู่ก่อนหน้านี้"
 
 msgid "Maximum daily turnover"
-msgstr "มูลค่าการซื้อขายรายวันที่มากที่สุด"
+msgstr "มูลค่าการซื้อขายสูงสุดรายวัน"
 
 msgid "Maximum number of open positions"
 msgstr "จำนวนสูงสุดของโพซิชั่นที่เปิด"
@@ -5671,13 +5674,17 @@ msgid "Please select the checkbox."
 msgstr "โปรดระบุค่าจากตัวเลือก"
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
-msgstr ""
+msgstr "โปรดตั้งค่า %1ประเทศที่พำนัก%2 ก่อนอัพเกรดเป็นบัญชีจริง"
 
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr ""
+"โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก %1ตัวเลือกพักการซื้อขาย%2 "
+"เพื่อลบวงเงินการฝากเงิน"
 
 msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
 msgstr ""
+"โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก <a href=\"%1\""
+">ตัวเลือกพักการซื้อขาย</a> เพื่อเข้าใช้งาน"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "โปรดระบุช่วงเวลาการตรวจสอบสภาพความเป็นจริงที่ท่านต้องการเป็นหน่วยนาทีที่จะเกิดขึ้นจริงระหว่างการซื้อขาย"
@@ -6294,7 +6301,7 @@ msgid "Self-Employed"
 msgstr "อาชีพอิสระ"
 
 msgid "Self-Exclusion Facilities"
-msgstr "เครื่องมือสำหรับการพักตัวเอง"
+msgstr "เครื่องมือสำหรับพักการซื้อขาย"
 
 msgid "Self-employed"
 msgstr "อาชีพอิสระ"
@@ -7902,6 +7909,8 @@ msgstr "ใช้โอกาสที่มีในเว็บของพว
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
 msgstr ""
+"ใช้แพลตฟอร์มเว็บ ไม่ว่า วินโดว์ แมคโอเอส หรือ ลินุกซ์ "
+"โดยไม่ต้องดาวน์โหลดหรือติดตั้งโปรแกรมใดๆ"
 
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "ใช้ ดำเนินการ และแสดงแอพพลิเคชันของท่าน และเนื้อหาเพื่อวัตถุประสงค์ทางการตลาด การสาธิต และให้ลูกค้าของเราได้ใช้งานแอพพลิเคชัน และ    "
@@ -8491,7 +8500,7 @@ msgid "Working closely with the Head of Compliance to implement Know your Client
 msgstr "ปฏิบัติงานอย่างใกล้ชิดร่วมกับหัวหน้าฝ่าย Compliance เพื่อดำเนินการตามหลักเกณฑ์ทั่วไปเกี่ยวกับการรู้จักลูกค้า (Know your Client: KYC), การฟอกเงิน (Anti-Money Laundering: AML) และกฏการป้องกันข้อมูล"
 
 msgid "Written limits and self-exclusion"
-msgstr "วงเงินและการพักที่แจ้งเป็นลายลักษณ์อักษร"
+msgstr "วงเงินและการพักการซื้อขายที่แจ้งเป็นลายลักษณ์อักษร"
 
 msgid "Year"
 msgstr "ปี"
