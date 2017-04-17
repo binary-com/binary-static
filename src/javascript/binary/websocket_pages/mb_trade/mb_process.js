@@ -96,17 +96,19 @@ const MBProcess = (() => {
         const $list = $underlyings.find('.list');
         $list.empty();
 
+        if (Object.keys(all_symbols).indexOf(selected) === -1) selected = '';
         Object.keys(all_symbols).forEach((symbol, idx) => {
             if (all_symbols[symbol].is_active) {
                 const is_current = (!selected && idx === 0) || symbol === selected;
                 const $current = $('<div/>', { value: symbol })
                     .append($('<img/>', {
                         src: urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`),
-                        alt: all_symbols[symbol].display,
-                    }));
+                        alt: '',
+                    }))
+                    .append($('<span/>', { text: all_symbols[symbol].display, class: 'name' }));
                 $list.append($current);
                 if (is_current) {
-                    $underlyings.attr('value', symbol).find('> .current').html($current.clone());
+                    MBContract.setCurrentItem($underlyings, symbol);
                 }
             }
         });

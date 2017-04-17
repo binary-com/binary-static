@@ -11,39 +11,24 @@
         </div>
     </div>
 
-    <div id="mb_trading" class="gr-5 gr-12-m gr-12-p">
+    <div class="gr-5 gr-12-m gr-12-p gr-no-gutter-left">
+    <div id="mb_trading" class="gr-12">
 
         <div id="notifications_wrapper"></div>
-
         <div id="trade_form" class="gr-row">
-            <div id="underlying" class="gr-3 gr-no-gutter">
-                <div class="current"></div>
-                <div class="list invisible"></div>
-            </div>
-            <div id="category" class="gr-3 gr-no-gutter">
-                <div class="current"></div>
-                <div class="list invisible"></div>
-            </div>
-            <div id="period" class="gr-3 gr-no-gutter">
-                <div class="current"></div>
-                <div class="list invisible"></div>
-            </div>
-            <div class="gr-3 gr-no-gutter">
-                <div id="currency">
-                    <div class="current"></div>
-                    <div class="list invisible"></div>
-                </div>
-                <div id="payout">
-                    <div class="current"></div>
-                    <div class="list invisible">
-                        <div class="plus" value="+1">+1</div>
-                        <div class="plus" value="+5">+5</div>
-                        <div class="plus" value="+10">+10</div>
-                        <div class="minus" value="-10">-10</div>
-                        <div class="minus" value="-5">-5</div>
-                        <div class="minus" value="-1">-1</div>
-                    </div>
-                </div>
+            [% INCLUDE form_item id='underlying' class='gr-2' %]
+            [% INCLUDE form_item id='category'   class='gr-3' %]
+            [% INCLUDE form_item id='period'     class='gr-5' %]
+            <div class="gr-2 gr-no-gutter">
+                [% INCLUDE form_item id='currency' %]
+                [% WRAPPER form_item id='payout' %]
+                    <div class="plus"  value="+1">+1</div>
+                    <div class="plus"  value="+5">+5</div>
+                    <div class="plus"  value="+10">+10</div>
+                    <div class="minus" value="-10">-10</div>
+                    <div class="minus" value="-5">-5</div>
+                    <div class="minus" value="-1">-1</div>
+                [% END %]
             </div>
         </div>
 
@@ -79,6 +64,7 @@
         </div>
     </div>
     </div>
+    </div>
 
     [% INCLUDE bet/analysis.html.tt no_graph=1 %]
     <div id="open_positions_container">[% INCLUDE user/portfolio.html.tt %]</div>
@@ -93,3 +79,10 @@
         </div>
     </div>
 </div>
+
+[% BLOCK form_item %]
+<div id="[% id %]"[% IF class %] class="[% class %] gr-no-gutter"[% END %]>
+    <div class="current"></div>
+    <div class="list invisible">[% content %]</div>
+</div>
+[% END %]

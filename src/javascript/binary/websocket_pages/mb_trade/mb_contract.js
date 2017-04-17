@@ -77,17 +77,18 @@ const MBContract = (() => {
             const text = periodText(period);
             return $('<div/>', {
                 value: period,
-                html : `<div class="start">${text.start}</div><div class="duration">${text.duration}</div><div class="end">${text.end}</div>`,
+                html : `<div class="start">${text.start}</div><div class="duration">${text.duration.toUpperCase()}</div><div class="end">${text.end}</div>`,
             });
         };
         if ($list.children().length === 0) { // populate for the first time
-            const default_value = MBDefaults.get('period');
+            let default_value = MBDefaults.get('period');
+            if (trading_period_array.indexOf(default_value) === -1) default_value = '';
             trading_period_array.forEach((period, idx) => {
                 const is_current = (!default_value && idx === 0) || period === default_value;
                 const $current = makeItem(period);
                 $list.append($current);
                 if (is_current) {
-                    $period.attr('value', period).find('> .current').html($current.clone());
+                    setCurrentItem($period, period);
                 }
             });
             MBDefaults.set('period', $period.attr('value'));
@@ -203,7 +204,7 @@ const MBContract = (() => {
                     });
                     $list.append($current);
                     if (is_current) {
-                        $category.attr('value', category.value).find('> .current').html($current.clone());
+                        setCurrentItem($category, category.value);
                     }
                 }
             });
@@ -301,6 +302,17 @@ const MBContract = (() => {
 
     const getCurrency = () => (Client.get('currency') || $('#currency').attr('value') || 'JPY');
 
+    const setCurrentItem = ($container, value) => {
+        const $selected = $container.find(`.list [value="${value}"]`);
+        if ($selected.length) {
+            $container.attr('value', value).find('> .current').html($selected.clone());
+
+            const hidden_class = 'invisible';
+            $container.find(`.list .${hidden_class}`).removeClass(hidden_class);
+            $selected.addClass(hidden_class);
+        }
+    };
+
     return {
         populatePeriods     : populatePeriods,
         populateOptions     : populateOptions,
@@ -311,6 +323,7 @@ const MBContract = (() => {
         getCurrency         : getCurrency,
         getContractsResponse: () => contracts_for_response,
         setContractsResponse: (contracts_for) => { contracts_for_response = contracts_for; },
+        setCurrentItem      : setCurrentItem,
         onUnload            : () => {
             clearRemainingTimeout(); contracts_for_response = {}; period_value = undefined;
         },

@@ -43,7 +43,7 @@ const MBTradingEvents = (() => {
         if ($underlying.length) {
             $underlying.on('click', '.list > div', function() {
                 const underlying = $(this).attr('value');
-                $underlying.attr('value', underlying).find('> .current').html($(this).clone());
+                MBContract.setCurrentItem($underlying, underlying);
                 MBDefaults.set('underlying', underlying);
                 MBNotifications.hide('SYMBOL_INACTIVE');
 
@@ -58,7 +58,7 @@ const MBTradingEvents = (() => {
         if ($category.length) {
             $category.on('click', '.list > div', function() {
                 const category = $(this).attr('value');
-                $category.attr('value', category).find('> .current').html($(this).clone());
+                MBContract.setCurrentItem($category, category);
                 MBDefaults.set('category', category);
                 MBContract.populatePeriods('rebuild');
                 MBProcess.processPriceRequest();
@@ -70,7 +70,7 @@ const MBTradingEvents = (() => {
         if ($period.length) {
             $period.on('click', '.list > div', function() {
                 const period = $(this).attr('value');
-                $period.attr('value', period).find('> .current').html($(this).clone());
+                MBContract.setCurrentItem($period, period);
                 MBDefaults.set('period', period);
                 MBProcess.processPriceRequest();
                 $('.countdown-timer').removeClass('alert');
@@ -112,17 +112,6 @@ const MBTradingEvents = (() => {
                     MBContract.displayDescriptions();
                 }
             }));
-        }
-
-        const $currency = $form.find('#currency');
-        if ($currency.length) {
-            $currency.on('click', '.list > div', function() {
-                const currency = $(this).attr('value');
-                $currency.attr('value', currency).find('> .current').html($(this).clone());
-                MBDefaults.set('currency', currency);
-                MBProcess.processPriceRequest();
-                MBContract.displayDescriptions();
-            });
         }
     };
 
