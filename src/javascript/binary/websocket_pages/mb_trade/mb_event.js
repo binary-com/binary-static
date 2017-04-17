@@ -1,6 +1,7 @@
 const MBContract      = require('./mb_contract');
 const MBDefaults      = require('./mb_defaults');
 const MBNotifications = require('./mb_notifications');
+const MBPrice         = require('./mb_price');
 const MBProcess       = require('./mb_process');
 const TradingAnalysis = require('../trade/analysis');
 const debounce        = require('../trade/common').debounce;
@@ -112,6 +113,36 @@ const MBTradingEvents = (() => {
                     MBContract.displayDescriptions();
                 }
             }));
+        }
+
+        const $currency = $form.find('#currency');
+        if ($currency.length) {
+            $currency.on('click', '.list > div', function() {
+                const currency = $(this).attr('value');
+                MBContract.setCurrentItem($currency, currency);
+                MBDefaults.set('currency', currency);
+                MBProcess.processPriceRequest();
+                MBContract.displayDescriptions();
+            });
+        }
+
+        const $allow_trading = $('#allow_trading');
+        const setTradingStatus = (is_enabled) => {
+            if (is_enabled) {
+                MBPrice.hidePriceOverlay();
+                MBNotifications.hide('TRADING_DISABLED');
+            } else {
+                MBPrice.showPriceOverlay();
+                $allow_trading.removeAttr('checked');
+            }
+        };
+        if ($allow_trading.length) {
+            const allow_trading_def = !MBDefaults.get('disable_trading');
+            setTradingStatus(allow_trading_def);
+            $allow_trading.on('change', (e) => {
+                MBDefaults.set('disable_trading', !e.target.checked);
+                setTradingStatus(e.target.checked);
+            });
         }
     };
 

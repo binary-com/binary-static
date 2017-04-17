@@ -208,15 +208,72 @@
                 }
             }
         }
-        .countdown-timer {
-            padding: 0;
-            border-radius: 3px;
-            white-space: nowrap;
-            line-height: 22px;
-            &.alert {
-                background: rgba(251, 228, 215, 0.7);
-                padding-right: 5px;
-                margin-right: 0;
+        #timer_row {
+            > div {
+                padding: 0;
+                white-space: nowrap;
+                line-height: 22px;
+            }
+            #trading_status {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .toggle-button {
+                    display: none;
+                    &, & + .toggle-slider {
+                        box-sizing: border-box;
+                    }
+                    + .toggle-slider {
+                        font-size: 0.75em;
+                        display: block;
+                        position: relative;
+                        outline: 0;
+                        width: 4em;
+                        height: 2em;
+                        cursor: pointer;
+                        background: $COLOR_GRAY;
+                        border-radius: 2em;
+                        padding: 2px;
+                        margin-right: 5px;
+                        transition: all 0.4s ease;
+                        &:after, &:before {
+                            display: block;
+                            position: relative;
+                            content: '';
+                            width: calc(2em - 4px);
+                            height: calc(2em - 4px);
+                        }
+                        &:after {
+                            left: 0;
+                            border-radius: 50%;
+                            background: $COLOR_WHITE;
+                            transition: all 0.2s ease;
+                        }
+                        &:before, ~ .enabled-text {
+                            display: none;
+                        }
+                    }
+                    &:checked + .toggle-slider {
+                        background: $COLOR_BLUE_SHADE;
+                        &:after {
+                            left: 2em;
+                        }
+                        ~ .enabled-text {
+                            display: inline-block;
+                        }
+                        ~ .disabled-text {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .countdown-timer {
+                border-radius: 3px;
+                &.alert {
+                    background: rgba(251, 228, 215, 0.7);
+                    padding-right: 5px;
+                    margin-right: 0;
+                }
             }
         }
         .padding-10 {

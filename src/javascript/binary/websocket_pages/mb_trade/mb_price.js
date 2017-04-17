@@ -1,4 +1,5 @@
 const MBContract       = require('./mb_contract');
+const MBDefaults       = require('./mb_defaults');
 const MBNotifications  = require('./mb_notifications');
 const ViewPopup        = require('../user/view_popup/view_popup');
 const Client           = require('../../base/client');
@@ -202,6 +203,12 @@ const MBPrice = (() => {
     };
 
     const sendBuyRequest = (barrier, contract_type) => {
+        if (MBDefaults.get('disable_trading')) {
+            MBNotifications.show({ text: 'You have disabled the trading.', uid: 'TRADING_DISABLED', dismissible: true });
+            return;
+        }
+        MBNotifications.hide('TRADING_DISABLED');
+
         const proposal = prices[barrier][contract_type];
         if (!proposal || proposal.error) return;
 
@@ -242,7 +249,9 @@ const MBPrice = (() => {
     };
 
     const hidePriceOverlay = () => {
-        $('#disable-overlay, #loading-overlay').addClass(hidden_class);
+        if (!MBDefaults.get('disable_trading')) {
+            $('#disable-overlay, #loading-overlay').addClass(hidden_class);
+        }
     };
 
     return {

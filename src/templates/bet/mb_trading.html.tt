@@ -32,8 +32,14 @@
             </div>
         </div>
 
-        <div class="gr-row">
-            <div class="gr-12 countdown-timer align-end">
+        <div id="timer_row" class="gr-row">
+            <div id="trading_status" class="gr-5">
+                <input id="allow_trading" class="toggle-button" type="checkbox" checked="checked" />
+                <label for="allow_trading" class="toggle-slider"></label>
+                <span class="enabled-text">[% l('Trading is enabled') %]</span>
+                <span class="disabled-text">[% l('Trading is disabled') %]</span>
+            </div>
+            <div class="gr-7 countdown-timer align-end">
                 <span id="remaining-time-label"></span>
                 <span id="remaining-time">...</span>
             </div>
