@@ -1025,9 +1025,7 @@ msgid "An Open Position may be closed by placing an opposite Order, that is an O
 msgstr "โพซิชั่นที่เปิดอาจจะถูกปิดด้วยการวางคำสั่งตรงข้าม และคำสั่งขาย (เพื่อปิดสถานะ Long) หรือซื้อ (ปิดสถานะ Short) ในตลาดเดียวกัน"
 
 msgid "An Open Position may be partially closed by entering into an opposite Transaction in the same Market but for a smaller number of lots (volume) as the Open Position."
-msgstr ""
-"โพซิชั่นที่เปิดอาจถูกปิดลงบางส่วนเมื่อมีการเพิ่มธุรกรรมที่ตรงข้ามกันในตลาดเดี"
-"ยวกัน แต่เป็นจำนวนที่น้อยกว่าจำนวนของโพซิชั่นที่เปิดอยู่"
+msgstr "โพซิชั่นที่เปิดอาจถูกปิดลงบางส่วนเมื่อมีการเพิ่มธุรกรรมที่ตรงข้ามกันในตลาดเดียวกัน แต่เป็นจำนวนที่น้อยกว่าจำนวนของโพซิชั่นที่เปิดอยู่"
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "รหัสผ่านเพิ่มนี้สามารถใช้เพื่อเข้าถึงส่วนของแคชเชียร์"
@@ -4805,8 +4803,7 @@ msgid "Maximum aggregate payouts on open positions"
 msgstr "มูลค่าการชำระเงินรวมสูงสุดของโพซิชั่นที่เปิด"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
-msgstr ""
-"มูลค่าการชำระเงินรวมสูงสุดของโพซิชั่นที่เปิดต่อสัญลักษณ์และประเภทของสัญญา"
+msgstr "มูลค่าการชำระเงินรวมสูงสุดของโพซิชั่นที่เปิดต่อสัญลักษณ์และประเภทของสัญญา"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
 msgstr "การชำระเงินสูงสุดของโพซิชันที่เปิดอยู่ต่อสัญลักษณ์และประเภทของสัญญา วงเงินนี้สามารถขยายไปถึงวงเงินทั้งหมดของการชำระเงิน หากไม่มีโพซิชันที่เปิดอยู่ก่อนหน้านี้"
@@ -5677,14 +5674,10 @@ msgid "Please set %1country of residence%2 before upgrading to a real-money acco
 msgstr "โปรดตั้งค่า %1ประเทศที่พำนัก%2 ก่อนอัพเกรดเป็นบัญชีจริง"
 
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
-msgstr ""
-"โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก %1ตัวเลือกพักการซื้อขาย%2 "
-"เพื่อลบวงเงินการฝากเงิน"
+msgstr "โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก %1ตัวเลือกพักการซื้อขาย%2 เพื่อลบวงเงินการฝากเงิน"
 
 msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
-msgstr ""
-"โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก <a href=\"%1\""
-">ตัวเลือกพักการซื้อขาย</a> เพื่อเข้าใช้งาน"
+msgstr "โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก <a href=\"%1\">ตัวเลือกพักการซื้อขาย</a> เพื่อเข้าใช้งาน"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "โปรดระบุช่วงเวลาการตรวจสอบสภาพความเป็นจริงที่ท่านต้องการเป็นหน่วยนาทีที่จะเกิดขึ้นจริงระหว่างการซื้อขาย"
@@ -7478,7 +7471,9 @@ msgstr "เว็ยไซต์นี้มีลิงค์ไปยังเ
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "เว็บไซต์นี้ไม่มีการเก็บข้อมูลส่วนบุคคลของท่านนอกจากข้อมูลที่ท่านได้รับทราบว่า เป็นข้อมูลเจาะจงที่ขอจากท่านโดยตรง มีการใช้เทคโนโลยีที่เรียกว่า \"คุกกี้\" ในการติดตามข้อมูลจากทางเว็บไซต์ คุกกี้เป็นส่วนหนึ่งของข้อมูลที่เว็บไซต์หนึ่งๆ สามารถส่งให้กับเบราเซอร์ของท่าน และอาจจะถูกเก็บในระบบของท่าน ท่านอาจจะตั้งค่าเบราเซอร์ของท่านให้แจ้งเมื่อท่านได้รับคุกกี้ใดๆ ศึ่งช่วยให้ท่านมีโอกาสตัดสินใจจะยอมรับหรือปฏิเสธคุกกี้นั้น หากท่านไม่รับคุกกี้ ท่านจะต้องบันทึกรหัสผู้ใช้งานอละรหัสผ่านครั้งแล้วครั้งเล่าเมื่อมีการเรียกแบบฟอร์มที่ต้องการคุกกี้จากเครื่องของท่าน ท่านได้รับข้อแนะนำให้ปฏิบัติตามทางเลือกดังกล่าว หากท่านมีข้อสงสัยเกี่ยวกับความปลอดภัยของเบราเซอร์ของท่าน หรือ เครื่องคอมพิวเตอร์ของท่าน"
 
-msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+#, fuzzy
+#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "เว็บไซต์นี้ใช้สำหรับประเทศสหราชอาณาจักรและเกาะ  Isle of Man โดยบริษัท Binary (IOM) Ltd. ตั้งอยู่ที่ ชั้น 1 อาคาร Millennium House ถนน Victoria เขต Douglas IM2 4RW บนเกาะ Isle of Man ในบริติชไอลส์ โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Gambling Supervision Commission บนเกาะ Isle of Man ในบริติชไอลส์ ใบอนุญาตสำหรับผลิตภัณฑ์การเสี่ยงโชคออนไลน์ได้รับเมื่อ 31 สิงหาคม 2555 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission - <a href='%1' target='_blank'>คลิกดูใบอนุญาต</a> เว็บไซต์นี้ใช้สำหรับประเทศในกลุ่มยุโรป สำหรับผลิตภัณฑ์การลงทุนต่างๆ โดยบริษัท  Binary Investments (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ในหมวดที่ 3 ของผู้ให้บริการการลงทุนโดยหน่วยงาน Malta Financial Services Authority (ใบอนุญาตเลขที่ IS/70156) และสำหรับผลิตภัณฑ์การพนัน โดยบริษัท Binary (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา ได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Malta Gaming Authority ประเทศมอลตา ใบอนุญาตเลขที่ MGA/CL2/118/2000 ได้รับเมื่อ 26 พฤษภาคม 2553 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission - <a href='%2' target='_blank'>คลิกดูใบอนุญาต</a> และสำหรับลูกค้าในประเทศไอร์แลนด์ได้รับใบอนุญาตจาก (3) Revenue Commissioners ประเทศไอร์แลนด์ ได้รับใบอนุญาตเมื่อ 29 กันยายน 2558 (ใบอนุญาตเลขที่ 1010285) อนึ่ง เว็บไซต์นี้ไม่เปิดให้บริการในประเทศต่อไปนี้ สหรัฐอเมริกา คอสตาริกา ฮ่องกง และรวมถึงบุคคลที่อายุต่ำกว่า 18 ปี"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
@@ -7908,9 +7903,7 @@ msgid "Use the opportunity provided by our website to practice for free with our
 msgstr "ใช้โอกาสที่มีในเว็บของพวกเราเพื่อเรียนรู้ให้เกิดความชำนาญโดยไม่ต้องลงทุนลงเงินจากบัญชีทดลองใช้งาน จะทำให้ท่านมีความคุ้นเคยกับการทำงานต่างๆ และหลักการในเว็บไซต์"
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
-msgstr ""
-"ใช้แพลตฟอร์มเว็บ ไม่ว่า วินโดว์ แมคโอเอส หรือ ลินุกซ์ "
-"โดยไม่ต้องดาวน์โหลดหรือติดตั้งโปรแกรมใดๆ"
+msgstr "ใช้แพลตฟอร์มเว็บ ไม่ว่า วินโดว์ แมคโอเอส หรือ ลินุกซ์ โดยไม่ต้องดาวน์โหลดหรือติดตั้งโปรแกรมใดๆ"
 
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "ใช้ ดำเนินการ และแสดงแอพพลิเคชันของท่าน และเนื้อหาเพื่อวัตถุประสงค์ทางการตลาด การสาธิต และให้ลูกค้าของเราได้ใช้งานแอพพลิเคชัน และ    "
