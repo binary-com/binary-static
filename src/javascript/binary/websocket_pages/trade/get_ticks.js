@@ -1,6 +1,4 @@
-const TradingAnalysis      = require('./analysis');
 const Barriers             = require('./barriers');
-const TradingAnalysis_Beta = require('./beta/analysis');
 const Barriers_Beta        = require('./beta/barriers');
 const DigitInfo_Beta       = require('./beta/charts/digit_info');
 const Purchase_Beta        = require('./beta/purchase');
@@ -8,14 +6,16 @@ const TickDisplay_Beta     = require('./beta/tick_trade');
 const updateWarmChart      = require('./common').updateWarmChart;
 const DigitInfo            = require('./charts/digit_info');
 const Defaults             = require('./defaults');
+const getActiveTab         = require('./get_active_tab').getActiveTab;
+const getActiveTab_Beta    = require('./get_active_tab').getActiveTab_Beta;
 const Purchase             = require('./purchase');
 const Tick                 = require('./tick');
 const TickDisplay          = require('./tick_trade');
 const State                = require('../../base/storage').State;
 
 const GetTicks = (() => {
-    const request = (symbol) => {
-        BinarySocket.send({
+    const request = (symbol, req, callback) => {
+        BinarySocket.send(req || {
             ticks_history: symbol,
             style        : 'ticks',
             end          : 'latest',
@@ -24,8 +24,11 @@ const GetTicks = (() => {
         }, {
             callback: (response) => {
                 const type = response.msg_type;
-                const is_digit = TradingAnalysis.getActiveTab() === 'tab_last_digit';
-                const is_digit_beta = TradingAnalysis_Beta.getActiveTab() === 'tab_last_digit';
+                const is_digit = getActiveTab() === 'tab_last_digit';
+                const is_digit_beta = getActiveTab_Beta() === 'tab_last_digit';
+                if (typeof callback === 'function') {
+                    callback(response);
+                }
                 if (type === 'tick') {
                     if (State.get('is_trading')) {
                         processTick(response);

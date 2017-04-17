@@ -1,6 +1,7 @@
 const Highcharts  = require('highcharts/highstock');
 const HighchartUI = require('./highchart.ui');
 const MBContract  = require('../../mb_trade/mb_contract');
+const GetTicks    = require('../../trade/get_ticks');
 const ViewPopupUI = require('../../user/view_popup/view_popup.ui');
 const localize    = require('../../../base/localize').localize;
 const State       = require('../../../base/storage').State;
@@ -282,7 +283,8 @@ const Highchart = (() => {
         } else if (!is_history_send) {
             is_history_send = true;
             if (request.subscribe) is_chart_subscribed = true;
-            BinarySocket.send(request, { callback: handleResponse });
+            // BinarySocket.send(request, { callback: handleResponse });
+            GetTicks.request('', request, handleResponse);
         }
     };
 
