@@ -11,46 +11,58 @@ const getActiveTab_Beta    = require('./get_active_tab').getActiveTab_Beta;
 const Purchase             = require('./purchase');
 const Tick                 = require('./tick');
 const TickDisplay          = require('./tick_trade');
+const MBTick               = require('../mb_trade/mb_tick');
 const State                = require('../../base/storage').State;
 
 const GetTicks = (() => {
     const request = (symbol, req, callback) => {
-        BinarySocket.send(req || {
-            ticks_history: symbol,
-            style        : 'ticks',
-            end          : 'latest',
-            count        : 20,
-            subscribe    : 1,
-        }, {
-            callback: (response) => {
-                const type = response.msg_type;
-                const is_digit = getActiveTab() === 'tab_last_digit';
-                const is_digit_beta = getActiveTab_Beta() === 'tab_last_digit';
-                if (typeof callback === 'function') {
-                    callback(response);
-                }
-                if (type === 'tick') {
-                    if (State.get('is_trading')) {
-                        processTick(response);
+        if (State.get('old_symbol') && req && callback && State.get('old_symbol') !== req.ticks_history) {
+            BinarySocket.send(req, { callback: callback });
+        } else {
+            BinarySocket.send({ forget_all: 'ticks' });
+            BinarySocket.send({ forget_all: 'candles' });
+            BinarySocket.send(req || {
+                ticks_history: symbol,
+                style        : 'ticks',
+                end          : 'latest',
+                count        : 20,
+                subscribe    : 1,
+            }, {
+                callback: (response) => {
+                    const type = response.msg_type;
+                    const is_digit = getActiveTab() === 'tab_last_digit';
+                    const is_digit_beta = getActiveTab_Beta() === 'tab_last_digit';
+                    if (typeof callback === 'function') {
+                        callback(response);
+                    }
+                    if (State.get('is_mb_trading')) {
+                        MBTick.processTickHistory(response);
+                        return;
+                    }
+                    if (type === 'tick') {
+                        if (State.get('is_trading')) {
+                            processTick(response);
+                            if (is_digit) {
+                                DigitInfo.updateChart(response);
+                            }
+                        } else if (State.get('is_beta_trading')) {
+                            processTick_Beta(response);
+                            if (is_digit_beta) {
+                                DigitInfo_Beta.updateChart(response);
+                            }
+                        }
+                    } else if (type === 'history') {
+                        processHistory(response);
                         if (is_digit) {
-                            DigitInfo.updateChart(response);
-                        }
-                    } else if (State.get('is_beta_trading')) {
-                        processTick_Beta(response);
-                        if (is_digit_beta) {
-                            DigitInfo_Beta.updateChart(response);
+                            DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
+                        } else if (is_digit_beta) {
+                            DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
                         }
                     }
-                } else if (type === 'history') {
-                    processHistory(response);
-                    if (is_digit) {
-                        DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
-                    } else if (is_digit_beta) {
-                        DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
-                    }
-                }
-            },
-        });
+                },
+            });
+        }
+        State.set('old_symbol', symbol || (req || {}).ticks_history);
     };
 
     const processTick = (tick) => {
