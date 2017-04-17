@@ -172,13 +172,13 @@ const TradePage_Beta = (() => {
         Defaults.clear();
         PortfolioInit.onUnload();
         chartFrameCleanup();
+        commonTrading.clean();
     };
 
     const onDisconnect = () => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
         chartFrameCleanup();
-        commonTrading.clean();
         onLoad();
     };
 

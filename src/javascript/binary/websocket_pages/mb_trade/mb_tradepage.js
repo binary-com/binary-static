@@ -51,6 +51,7 @@ const MBTradePage = (() => {
         MBPrice.onUnload();
         MBProcess.onUnload();
         BinarySocket.clear();
+        State.remove('ViewPopup.onDisplayed');
     };
 
     const onDisconnect = () => {

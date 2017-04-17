@@ -65,13 +65,13 @@ const TradePage = (() => {
         BinarySocket.clear();
         Defaults.clear();
         chartFrameCleanup();
+        commonTrading.clean();
     };
 
     const onDisconnect = () => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
         chartFrameCleanup();
-        commonTrading.clean();
         onLoad();
     };
 
