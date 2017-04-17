@@ -11,12 +11,16 @@ const getActiveTab_Beta    = require('./get_active_tab').getActiveTab_Beta;
 const Purchase             = require('./purchase');
 const Tick                 = require('./tick');
 const TickDisplay          = require('./tick_trade');
+const MBDefaults           = require('../mb_trade/mb_defaults');
 const MBTick               = require('../mb_trade/mb_tick');
 const State                = require('../../base/storage').State;
 
 const GetTicks = (() => {
+    let underlying;
+
     const request = (symbol, req, callback) => {
-        if (State.get('old_symbol') && req && callback && State.get('old_symbol') !== req.ticks_history) {
+        underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
+        if (underlying && req && callback && underlying !== req.ticks_history) {
             BinarySocket.send(req, { callback: callback });
         } else {
             BinarySocket.send({ forget_all: 'ticks' });
@@ -62,11 +66,10 @@ const GetTicks = (() => {
                 },
             });
         }
-        State.set('old_symbol', symbol || (req || {}).ticks_history);
     };
 
     const processTick = (tick) => {
-        const symbol = Defaults.get('underlying');
+        const symbol = underlying;
         if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
             Tick.details(tick);
             Tick.display();
@@ -94,7 +97,7 @@ const GetTicks = (() => {
     };
 
     const processTick_Beta = (tick) => {
-        const symbol = Defaults.get('underlying');
+        const symbol = underlying;
         if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
             Tick.details(tick);
             Tick.display();

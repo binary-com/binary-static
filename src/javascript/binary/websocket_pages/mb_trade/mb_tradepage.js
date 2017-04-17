@@ -3,7 +3,6 @@ const MBDisplayCurrencies  = require('./mb_currency');
 const MBTradingEvents      = require('./mb_event');
 const MBPrice              = require('./mb_price');
 const MBProcess            = require('./mb_process');
-const MBTick               = require('./mb_tick');
 const TradingAnalysis      = require('../trade/analysis');
 const chartFrameCleanup    = require('../trade/charts/chart_frame').chartFrameCleanup;
 const localize             = require('../../base/localize').localize;
@@ -35,8 +34,6 @@ const MBTradePage = (() => {
         $('#tab_explanation').find('a').text(localize('Explanation'));
         $('#remaining-time-label').text(localize('Remaining time'));
         window.chartAllowed = true;
-        // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
-        State.set('ViewPopup.onClose', () => { MBTick.request($('#underlying').val()); });
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
     };
 
@@ -54,7 +51,6 @@ const MBTradePage = (() => {
         MBPrice.onUnload();
         MBProcess.onUnload();
         BinarySocket.clear();
-        State.remove('ViewPopup.onClose', 'ViewPopup.onDisplayed');
     };
 
     const onDisconnect = () => {

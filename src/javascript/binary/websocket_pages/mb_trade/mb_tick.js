@@ -1,6 +1,5 @@
 const MBDefaults      = require('./mb_defaults');
 const MBNotifications = require('./mb_notifications');
-const State           = require('../../base/storage').State;
 
 /*
  * MBTick object handles all the process/display related to tick streaming
@@ -116,7 +115,6 @@ const MBTick = (() => {
             count        : keep_number,
             subscribe    : 1,
         }, { callback: processTickHistory });
-        State.set('old_symbol', symbol);
     };
 
     const processTickHistory = (response) => {

@@ -1,4 +1,3 @@
-const State            = require('../../../base/storage').State;
 const getHighestZIndex = require('../../../base/utility').getHighestZIndex;
 
 const ViewPopupUI = (() => {
@@ -22,7 +21,6 @@ const ViewPopupUI = (() => {
             $con.hide();
             const onClose = () => {
                 cleanup();
-                State.call('ViewPopup.onClose');
             };
             $con.find('a.close').on('click', () => { onClose(); });
             $(document).on('keydown', (e) => {
