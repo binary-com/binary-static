@@ -28,7 +28,7 @@
                                     <a href="[% request.url_for('careers') %]">[% l('Careers') %]</a>
                                 </li>
                                 <li class="ja-hide">
-                                    <a href="http://binarycom.statuspage.io" target="_blank">[% l('Network Status') %]</a>
+                                    <a href="https://binarycom.statuspage.io" target="_blank">[% l('Network Status') %]</a>
                                 </li>
                                 <li class="ja-hide id-hide">
                                     <a href="[% request.url_for('/legal/us_patents') %]" class="us_patent_link">[% l('Patents') %]</a>
