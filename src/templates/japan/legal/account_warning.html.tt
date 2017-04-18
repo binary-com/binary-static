@@ -1,0 +1,14 @@
+[% PROCESS components/elements.html.tt %]
+
+<div class="gr-12 gr-padding-30 gr-no-gutter">
+    <h2>[% l("General Risk Warning") %]</h2>
+	[% INCLUDE list class='bullet' items=[
+		{ class='gr-padding-10', text=l("Japan website General Risk Warning List item 1") },
+		{ class='gr-padding-10', text=l("Japan website General Risk Warning List item 2") },
+		{ class='gr-padding-10', text=l("Japan website General Risk Warning List item 3") },
+		{ class='gr-padding-10', text=l("Japan website General Risk Warning List item 4") },
+	] %]
+	<p>[% l("Japan website General Risk Warning Paragraph 1") %]</p>
+	<p>[% l("Japan website General Risk Warning Paragraph 2") %]</p>
+	<p>[% l("Japan website General Risk Warning Paragraph 3") %]</p>
+</div>

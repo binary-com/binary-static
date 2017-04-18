@@ -1,15 +1,9 @@
+[% PROCESS components/elements.html.tt %]
+
 [% BLOCK footer_column %]
 <div class="gr-4 [% wrapper_class %]">
     <h4 class="secondary-color">[% header %]</h4>
-    <ul>
-        [% FOREACH item IN items %]
-        <a href="[% item.href %][% item.hash %]"[% IF item.target %] target="[% item.target %]"[% END %]>
-            <li[% IF item.class %] class="[% item.class %]"[% END %]>
-                [% item.text %]
-            </li>
-        </a>
-        [% END %]
-    </ul>
+    [% INCLUDE list items %]
 </div>
 [% END %]
 
@@ -58,8 +52,8 @@
                         [% INCLUDE footer_column header=l('Legal') items=[
                             { text=l('Terms and Conditions'), href=request.url_for('terms-and-conditions'),                             class='ja-hide' },
                             { text=l('Terms and Conditions'), href=request.url_for('terms-and-conditions-jp'),                          class='hidden ja-show-block' },
-                            { text=l('Security and Privacy'), href=request.url_for('terms-and-conditions'),                             class='ja-hide',              hash='?#privacy' },
-                            { text=l('Security and Privacy'), href=request.url_for('terms-and-conditions-jp'),                          class='hidden ja-show-block', hash='?#account-privacy' },
+                            { text=l('Security and Privacy'), href=request.url_for('terms-and-conditions'),                             class='ja-hide',              param='?#privacy' },
+                            { text=l('Security and Privacy'), href=request.url_for('terms-and-conditions-jp'),                          class='hidden ja-show-block', param='?#account-privacy' },
                             { text=l('Responsible Trading'),  href=request.url_for('responsible-trading'),                              class='ja-hide' },
                             { text=l('Complaints'),           href=request.url_for('terms-and-conditions?section=complaints-disputes'), class='ja-hide' },
                         ] %]

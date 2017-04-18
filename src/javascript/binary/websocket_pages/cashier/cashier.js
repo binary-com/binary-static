@@ -36,7 +36,7 @@ const Cashier = (() => {
 
     const onLoad = () => {
         if (jpClient() && !jpResidence()) {
-            BinaryPjax(defaultRedirectUrl());
+            BinaryPjax.load(defaultRedirectUrl());
         }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {

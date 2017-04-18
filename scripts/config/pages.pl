@@ -18,7 +18,6 @@ sub all_pages {
         ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions', 'ja'],
         ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions', 'NOT-ja,en'],
         ['regulation',                 'legal/regulation',             'default',    'Regulation'],
-        ['styles',                     'home/styles',                  'full_width', 'Styles'],
         ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate',            'ja'],
         ['affiliate/signup-jp',        'japan/affiliates/signup',      'default',    'Affiliate',            'NOT-ja,en'],
         ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],

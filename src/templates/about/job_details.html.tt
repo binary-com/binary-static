@@ -14,7 +14,7 @@
         <p>[% paragraph %]</p>
     [% END %]
     [% IF items %]
-        [% INCLUDE ul class items %]
+        [% INCLUDE list class items %]
     [% END %]
 [% END %]
 

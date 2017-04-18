@@ -24,7 +24,7 @@
 
 [% BLOCK column_ul %]
     <div class="gr-6 gr-12-m">
-        [% INCLUDE ul items class='checked' %]
+        [% INCLUDE list items class='checked' %]
     </div>
 [% END %]
 

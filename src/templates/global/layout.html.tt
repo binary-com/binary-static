@@ -10,7 +10,23 @@
     [% INCLUDE global/head.html.tt %]
 [% END %]
 
-[% INCLUDE global/body_top.html.tt %]
+[% UNLESS is_pjax_request %]
+    <body[% IF lang %] class="[% language %]"[% END %]>
+        [% INCLUDE global/header.html.tt %]
+        [% INCLUDE global/main_menu.html.tt %]
+        [% INCLUDE global/mobile_menu.html.tt %]
+        [% INCLUDE global/gtm.html.tt %]
+    <!-- FlushHead -->
+    <a href="javascript:;" id="scrollup"></a>
+[% END %]
+        <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
+            <div id="page_info" style="display:none;">
+                [% INCLUDE global/title.html.tt %]
+                <div id="content_class">[% current_route %]-content</div>
+            </div>
+[% IF !full_width %]
+            <div class="container">
+[% END %]
 
 [% IF get_started %]
 <div class="get-started">
@@ -36,25 +52,7 @@
             [% content %]
         </div>
 
-        <div class="gr-3 gr-hide-m">
-            <div class="sidebar-right">
-                <div class="invisible client_logged_out fill-bg-color">
-                    <p>
-                        <a href="[% request.url_for('/') %]">[% l('Try it now') %]</a>
-                        <br/>
-                        [% l('No risk, $10K virtual money account') %]
-                    </p>
-                </div>
-
-                <div class="fill-bg-color">
-                    <p>
-                        [% l('Want to learn more?') %]
-                        <br/>
-                        <a href="[% request.url_for('/tour') %]">[% l('View the Tour') %]</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+        [% INCLUDE global/signup_tour.html.tt %]
     </div>
 </div>
 [% ELSE %]

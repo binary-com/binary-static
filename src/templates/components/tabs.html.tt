@@ -27,3 +27,30 @@
         [% content %]
     </div>
 [% END %]
+
+[% BLOCK tabs_subtabs %]
+<div class="tab-menu [% class %]">
+    <div class="tab-menu-wrap">
+        <ul id="[% id %]" class="tm-ul">
+            [% FOREACH item IN items %]
+                <li id="[% item.id %]" class="tm-li">
+                [% IF item.subtabs %]
+                    <span class="menu-wrap-a">
+                        <span class="menu-wrap-b">
+                            <a href="#[% item.id %]" class="tm-a">[% item.text %]</a>
+                        </span>
+                    </span>
+                    <ul class="tm-ul-2">
+                        [% FOREACH subtab IN item.subtabs %]
+                            <li id="[% item.id %]-[% subtab.id %]" class="tm-li-2"><a href="#[% subtab.id %]" class="tm-a-2">[% subtab.text %]</a></li>
+                        [% END %]
+                    </ul>
+                [% ELSE %]
+                <a href="#[% item.id %]" class="tm-a">[% item.text %]</a>
+                [% END %]
+                </li>
+            [% END %]
+        </ul>
+    </div>
+</div>
+[% END %]

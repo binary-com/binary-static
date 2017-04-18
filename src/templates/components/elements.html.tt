@@ -1,13 +1,20 @@
 [% BLOCK fill_box %]
-<div class="[% IF padding %]gr-12-m gr-6-p gr-padding-10[% IF center == 'true' %] gr-[% padding || 9 %] gr-centered[% ELSE %] gr-[% padding || 6 %][% END %][% END %]">
-    <div class="center-text gr-gutter gr-padding-20 [% IF color == 'dark' %]primary-bg-color[% ELSE %]fill-bg-color[% END %][% IF border %] [% border %][% END %]">
+<div class="[% IF padding %]gr-12-m gr-6-p gr-padding-10[% IF center == 'true' %] gr-[% padding || 9 %] gr-centered[% ELSE %] gr-[% padding || 6 %][% END %][% END %] [% class %]">
+    <div class="[% UNLESS align_left %]center-text[% END %] gr-gutter gr-padding-20 [% IF color == 'dark' %]primary-bg-color[% ELSE %]fill-bg-color[% END %][% IF border %] [% border %][% END %]">
         <div class="inline-flex center-align gr-gutter">
             [% IF image %]<img class="half-sized-picture gr-gutter-right" src="[% request.url_for(image) %]"/>[% END %]
+            [% IF href %]
             <a href="[% href %]"[% IF target %] target="[% target %]"[% END %][% IF download == 'true' %] download[% END %][% IF color == 'dark' %] class="content-inverse-color"[% END %]>
+            [% ELSE %]
+            <p class="gr-gutter">
+            [% END %]
+            [% IF em %]<em>[% END %]
                 [% text %]
-            </a>
+            [% IF em %]</em>[% END %]
+            [% IF !href %]</p>[% ELSE %]</a>[% END %]
         </div>
     </div>
+    [% content %]
 </div>
 [% END %]
 
@@ -29,16 +36,21 @@
 
 [% BLOCK li %]
 <li[% IF class %] class="[% class %]"[% END %][% IF id %] id="[% id %]"[% END %]>
-    [% IF href %]<a href="[% href %]">[% END %][%= text =%][% IF href %]</a>[% END %]
+    [% IF header %][% IF !text %]<h3>[% ELSE %]<strong>[% END %][% header %][% IF text %]</strong>[% ELSE %]</h3>[% END %] [% END %]
+    [% IF href %]<a href="[% href %][% param %]" [% IF target %] target="[% target %]"[% END %]>[% END %]
+    [% IF p %]<p>[% END %]
+    [%= text =%]
+    [% IF p %]</p>[% END %]
+    [% IF href %]</a>[% END %]
 </li>
 [% END %]
 
-[% BLOCK ul %]
-    <ul [% IF class %] class="[% class %]"[% END %][% IF id %] id="[% id %]"[% END %]>
+[% BLOCK list %]
+    <[% IF unordered %]ol[% ELSE %]ul[% END %] [% IF class %] class="[% class %]"[% END %][% IF id %] id="[% id %]"[% END %]>
         [% FOREACH item IN items %]
-            [% INCLUDE li class=item.class id=item.id href=item.href text=item.text %]
+            [% INCLUDE li class=item.class id=item.id href=item.href param=item.param target=item.target text=item.text header=item.header %]
         [% END %]
-    </ul>
+    </[% IF unordered %]ol[% ELSE %]ul[% END %]>
 [% END %]
 
 [% BLOCK select %]
@@ -49,4 +61,16 @@
             </option>
         [% END %]
     </select>
+[% END %]
+
+[% BLOCK tbody %]
+    <tbody>
+        [% FOREACH tr IN trs %]
+            <tr>
+                [% FOREACH td IN tr %]
+                    <td>[% td.text %]</td>
+                [% END %]
+            </tr>
+        [% END %]
+    </tbody>
 [% END %]

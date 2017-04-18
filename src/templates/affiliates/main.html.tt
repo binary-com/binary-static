@@ -9,7 +9,7 @@
 
 <div class="gr-padding-20">
     <h2>[% l('Are your site visitors interested in:') %]</h2>
-    [% INCLUDE ul class="checked" items=[
+    [% INCLUDE list class="checked" items=[
         { text=l('Learning to trade online?') },
         { text=l('Discovering an easy, low-risk, flexible and, award-winning platform?') },
         { text=l('Participating in the forex, stocks or commodities markets?') },
@@ -26,7 +26,7 @@
     <h2>[% l('Why become an Affiliate?') %]</h2>
     <p><em>[% l('"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I\'ve found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry." - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>.') %]</em></p>
 
-    [% INCLUDE ul class="checked" items=[
+    [% INCLUDE list class="checked" items=[
         { text=l("Long-term partnership with the leading financial trading service") },
         { text=l('Great pay-outs. Earn up to 35%') },
         { text=l('High conversions and customer value') },

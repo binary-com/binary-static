@@ -9,9 +9,9 @@
 [% END %]
 
 [% INCLUDE social_icons networks=[
-    { media=youtube,     href='https://www.youtube.com/user/BinaryTradingVideos' },
-    { media=google-plus, href='https://plus.google.com/106251151552682209951' },
-    { media=facebook,    href='https://www.facebook.com/binarydotcom' },
-    { media=twitter,     href='https://twitter.com/Binarydotcom' },
-    { media=linkedin,    href='https://www.linkedin.com/company/binary-com' },
+    { media='youtube',     href='https://www.youtube.com/user/BinaryTradingVideos' },
+    { media='google-plus', href='https://plus.google.com/106251151552682209951' },
+    { media='facebook',    href='https://www.facebook.com/binarydotcom' },
+    { media='twitter',     href='https://twitter.com/Binarydotcom' },
+    { media='linkedin',    href='https://www.linkedin.com/company/binary-com' },
 ] %]

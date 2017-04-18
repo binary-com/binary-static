@@ -4,7 +4,7 @@
     <h3>[% l("What is the definition of a 'client'?") %]</h3>
     <p>[% l("A client is someone who has been referred through one of your marketing tools and who has deposited money into their [_1] account. They must fulfill the following criteria:", broker_name) %]</p>
 
-    [% INCLUDE ul class='checked' items=[
+    [% INCLUDE list class='checked' items=[
         { text=l("Have not previously been a [_1] customer.", broker_name) },
         { text=l("Have made the minimum deposit.") },
         { text=l("Are over 18.") },
@@ -32,7 +32,7 @@
 
     <div class="gr-padding-20 gr-parent">
         <h3>[% l("Why should I become an affiliate with [_1]?", broker_name) %]</h3>
-        [% INCLUDE ul class='checked' items=[
+        [% INCLUDE list class='checked' items=[
             { text=l("it is the leading binary option trading platform.") },
             { text=l("it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian.") },
             { text=l("the platform is 100% web based making it instantly available for clients.") },
@@ -109,7 +109,7 @@
 
     <h3>[% l("Can you customize a banner for my site?") %]</h3>
     <p>[% l("Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:") %]</p>
-    [% INCLUDE ul class='checked' items=[
+    [% INCLUDE list class='checked' items=[
         { text=l("Pixel size.") },
         { text=l("File format.") },
         { text=l("Desired language.") },

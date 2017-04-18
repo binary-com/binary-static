@@ -25,14 +25,14 @@
                 <p class="center-text gr-padding-10">Our people need to possess certain attributes, regardless of department. We want someone who loves to:</p>
                 <div class="gr-row">
                     <div class="gr-6 gr-12-m">
-                        [% INCLUDE ul class='checked' items=[
+                        [% INCLUDE list class='checked' items=[
                             { text="Give their best every day." },
                             { text="Team up with talented people to make an impact." },
                             { text="Get things done in a no-nonsense manner." },
                         ] %]
                     </div>
                     <div class="gr-6 gr-12-m">
-                        [% INCLUDE ul class='checked' items=[
+                        [% INCLUDE list class='checked' items=[
                             { text="Work without bureaucracy and hierarchy." },
                             { text="Have the latest technologies at their disposal." },
                             { text="Learn and improve, day in and day out." },

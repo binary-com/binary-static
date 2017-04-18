@@ -1,8 +1,9 @@
 [% BLOCK image %]
 <div class="gr-row">
-    [% items = ['1', '2', '3'] %]
-    [% FOREACH i IN items %]
-    <div class="gr-4"><img class="responsive" src="[% request.url_for('images/pages/home/step-' _ i _ '.svg') %]"/></div>
+    [% item = 1 %]
+    [% WHILE item <= 3 %]
+    <div class="gr-4"><img class="responsive" src="[% request.url_for('images/pages/home/step-' _ item _ '.svg') %]"/></div>
+    [% item = item + 1 %]
     [% END %]
 </div>
 [% END %]

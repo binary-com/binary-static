@@ -9,7 +9,7 @@
 
 <div class="gr-padding-20">
     <h2>[% l('{JAPAN ONLY}Are your site visitors interested in:') %]</h2>
-    [% INCLUDE ul class="checked" items=[
+    [% INCLUDE list class="checked" items=[
         { text=l('{JAPAN ONLY}Learning to trade online?') },
         { text=l('{JAPAN ONLY}Discovering an easy to use, limited-risk, award-winning platform?') },
         { text=l('{JAPAN ONLY}Foreign Exchange markets') },
@@ -23,7 +23,7 @@
 <div class="gr-padding-20">
     <h2>[% l('{JAPAN ONLY}Why become an Affiliate?') %]</h2>
 
-    [% INCLUDE ul class="checked" items=[
+    [% INCLUDE list class="checked" items=[
         { text=l('{JAPAN ONLY}Long-term partnership with an establish international financial trading service') },
         { text=l('{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral') },
         { text=l('{JAPAN ONLY}Professional service') },

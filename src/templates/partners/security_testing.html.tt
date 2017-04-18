@@ -8,14 +8,14 @@
             <p>[% l("Test our products and services for security vulnerabilities. In the process, you’ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme.") %]</p>
 
             <h2>[% l("Benefits") %]</h2>
-            [% INCLUDE ul class='bullet' items=[
+            [% INCLUDE list class='bullet' items=[
                 { text=l("Hone your security testing skills.") },
                 { text=l("Increase your HackerOne reputation to build up credibility and profile visibility.") },
                 { text=l("Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities.") },
             ] %]
 
             <h2>[% l("Getting started") %]</h2>
-            [% INCLUDE ul class='bullet' items=[
+            [% INCLUDE list class='bullet' items=[
                 { text=l("Read and understand our HackerOne bug bounty programme policy.") },
                 { text=l("Analyse and test the domains and subdomains listed in the scope.") },
                 { text=l("Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue.") },
