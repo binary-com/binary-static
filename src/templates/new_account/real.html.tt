@@ -147,11 +147,13 @@
                     </div>
                 </fieldset>
 
+                [% INCLUDE global/pep_declaration.html.tt %]
+
                 <fieldset class="center-text" id="formlayout">
                     <div class="gr-row">
                         <div class="gr-12-m gr-padding-10 gr-centered">
                             <input type="checkbox" name="tnc" id="tnc">
-                            <label for="tnc">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]">[% l('terms and conditions') %]</a> [% l('of the site.') %]</label>
+                            <label for="tnc">[% l('I have read and agree to the [_1]terms and conditions[_2] of the site.', '<a target="_blank" href="' _ request.url_for('/terms-and-conditions') _ '">', '</a>') %]</label>
                         </div>
                     </div>
 
