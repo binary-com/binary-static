@@ -714,6 +714,9 @@ msgstr "Un título de licenciatura en Informática, o una combinación equivalen
 msgid "A Bachelor's degree in Marketing, Business Administration, or related discipline"
 msgstr "Un título de licenciatura en Marketing, Administración de Empresas o una disciplina relacionada"
 
+msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
+msgstr ""
+
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Un Agente de Pagos actua como un intercambio entre el cliente (es decir, nuestro cliente) y %1. El Agente de Pagos procesa los depósitos y retiros para los clientes que desean utilizar un método específico de dinero electrónico o monedas locales que no se ofrecen por defecto en %1. Los gastos de transferencia corren a cargo del cliente."
 
@@ -1115,7 +1118,9 @@ msgstr "Permitir a los clientes utilizar monederos electrónicos que no están d
 msgid "Alter the normal trading times for the affected market;"
 msgstr ""
 
-msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+#, fuzzy
+#| msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr ""
 "Alternativamente, los clientes que están registrados tanto con Binary (IOM) como con Binary (Europe) Ltd., en vez de enviar su disputa a IBAS, pueden usar la plataforma de Resolución de Disputas en Línea de la Comisión Europea disponible\n"
 "<a href='http://ec.europa.eu/odr' target='_blank'>aquí</a>."
@@ -1694,7 +1699,9 @@ msgstr "La filial japonesa de Binary, Binary KK, abre una oficina en Tokio e ini
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "La filial maltesa de Binary, Binary Investments (Europe) Ltd. recibe una licencia de Servicios de Inversión de categoría 3 regulada por Malta Financial Services Authority."
 
-msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+#, fuzzy
+#| msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
 msgstr "La plataforma de Binary tramita un promedio de 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transacciones</a> por segundo, las 24 horas del día, los 7 días de la semana"
 
 #, fuzzy
@@ -3623,6 +3630,9 @@ msgstr "Recursos Humanos"
 msgid "Hundreds of deposit and withdrawal options."
 msgstr "Múltiples opciones de depósito y retiro."
 
+msgid "I acknowledge that I am not a politically exposed person (PEP)."
+msgstr ""
+
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "Estoy de acuerdo que negociaré las opciones binarias extrabursátiles usando mi propio juicio y aceptaré la responsabilidad por cualquier pérdida que pueda ocurrir a partir de la transacción, y que esta pérdida está dentro de un rango aceptable en relación con el valor total de mis activos financieros."
 
@@ -3640,8 +3650,10 @@ msgstr "Olvidé mi contraseña, ¿qué debo hacer?"
 msgid "I have a Real Money Account"
 msgstr "Tengo una Cuenta de Dinero Real"
 
-msgid "I have read and agree to the"
-msgstr "He leído y acepto los"
+#, fuzzy
+#| msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
+msgid "I have read and agree to the %1terms and conditions%2 of the site."
+msgstr "He leído y acepto los <a target=\"_blank\" href=\"%1\">términos y condiciones</a> del sitio."
 
 msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgstr "He leído y acepto los <a target=\"_blank\" href=\"%1\">términos y condiciones</a> del sitio."
@@ -5885,6 +5897,11 @@ msgstr "La propiedad, el contenido y la responsabilidad de los sitios web del Af
 msgid "P. Indemnification"
 msgstr "Indemnización"
 
+#, fuzzy
+#| msgid "Explanation"
+msgid "PEP Declaration"
+msgstr "Explicación"
+
 msgid "PM"
 msgstr ""
 
@@ -8112,7 +8129,9 @@ msgstr "Este sitio web incluye enlaces a otros sitios y puede contener publicida
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Este sitio web no recoge su información de identificación personal excepto cuando usted la proporciona de forma intencionada y voluntaria. La tecnología llamada \"cookies\" se puede usar para brindar información personalizada de un sitio web. Un cookie es un elemento de datos que un sitio web puede enviar a su navegador, que a su vez, se almacena en su sistema. Usted puede configurar su navegador para que lo notifique cuando recibe una cookie. Luego deberá ingresar su usuario y contraseña nuevamente en cada formulario que necesita para ingresar al sistema. Se le sugiere elegir esta opción si tiene dudas acerca de la seguridad de su navegador o de su PC."
 
-msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+#, fuzzy
+#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "Este sitio web es comercializado en el Reino Unido y la Isla de Man por Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isla de Man, las Islas Británicas, autorizado y regulado por (1) la Comisión de Supervisión del Juego de la Isla de Man, las Islas Británicas, licencia de juego en línea vigente publicada el 31 de agosto de 2012, y para los clientes del Reino Unido, por la comisión (2) UK Gambling Commission - <a href='%1' target='_blank'>ver la licencia</a>. En el resto de la UE este sitio web está comercializado para los productos de inversión por Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenciado y regulado como categoría 3 por Malta Financial Services Authority (número de licencia IS/70156), y para los productos de juego por Regent Marcets(Malta) Ltd., Mompalao Building, Suite 2, Torre Road, Msida MSD1825, Malta, autorizado y regulado por (1) la Autoridad de Juegos de Malta, con el número de la licencia MGA/CL2/118/2000, del 26 de mayo de 2010, y para los clientes del Reino Unido, por la comisión (2) UK Gambling Commission - <a href='%2' target='_blank'>ver la licencia</a> y para los clientes de Irlanda por (3) Revenue Commissioners en Irlanda, la licencia actual de la casa de apuestas a distancia emitida el 29 de septiembre 2015 (licence no 1010285). Los servicios de este sitio web no están disponibles en ciertos países como los EE.UU., Costa Rica, Hong Kong o para las personas menores de 18 años."
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
@@ -9343,7 +9362,7 @@ msgstr "No tiene permiso para almacenar ningún Contenido (tal como alimentació
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Usted no tiene derecho a recibir ninguna compensación o reembolso de ningún tipo de la Compañía bajo ninguna circunstancia."
 
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr ""
 
 msgid "You are over 18 years of age;"
@@ -9939,9 +9958,6 @@ msgstr ""
 msgid "numbers"
 msgstr "números"
 
-msgid "of the site."
-msgstr "del sitio web."
-
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "página para ver el momento exacto de liquidación de todos los contratos. Otros sitios pueden adoptar diferentes convenciones (por ejemplo, algunos sitios web eligen las 4 en punto, hora de Nueva York o las 5 en punto, hora de Londres). Por esto, los precios de apertura, los máximos, los mínimos y los de cierre en nuestro sitio pueden ser diferentes a los de otros sitios web, debido a la convención de la hora de cierre del mercado."
 
@@ -9956,9 +9972,6 @@ msgstr "espacio"
 
 msgid "sublicense any of the rights granted under these Terms, other than as permitted by these Terms;"
 msgstr "sub-licenciar cualquiera de los derechos otorgados por estos Términos, de una manera diferente a lo permitido por estos Términos;"
-
-msgid "terms and conditions"
-msgstr "términos y condiciones"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
 msgstr ""
@@ -12079,6 +12092,20 @@ msgstr "Acuerdo con los términos y condiciones"
 
 msgid "Account Limits"
 msgstr "Límites de la cuenta"
+
+#~ msgid "I have read and agree to the"
+#~ msgstr "He leído y acepto los"
+
+#~ msgid "of the site."
+#~ msgstr "del sitio web."
+
+#~ msgid "terms and conditions"
+#~ msgstr "términos y condiciones"
+
+#, fuzzy
+#~| msgid "Spread"
+#~ msgid "read"
+#~ msgstr "Margen"
 
 #, fuzzy
 #~| msgid ""
@@ -19016,9 +19043,6 @@ msgstr "Límites de la cuenta"
 
 #~ msgid "Rise/Fall Table"
 #~ msgstr "Tabla de Alza/Baja"
-
-#~ msgid "Spread"
-#~ msgstr "Margen"
 
 #~ msgid "Study our live charts"
 #~ msgstr "Estudie nuestros gráficos en tiempo real"
