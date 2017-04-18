@@ -20,7 +20,7 @@ const GetTicks = (() => {
 
     const request = (symbol, req, callback) => {
         underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
-        if (underlying && req && callback && underlying !== req.ticks_history) {
+        if (underlying && req && callback && (underlying !== req.ticks_history || !req.subscribe)) {
             BinarySocket.send(req, { callback: callback });
         } else {
             BinarySocket.send({ forget_all: 'ticks' });
