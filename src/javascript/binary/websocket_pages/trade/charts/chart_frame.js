@@ -40,7 +40,7 @@ const ChartFrame = (() => {
     const setChartSource = () => {
         const is_ja = !!jpClient();
         const underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : document.getElementById('underlying').value;
-        document.getElementById('chart_frame').src = `https://webtrader.binary.com?affiliates=true&instrument=${underlying}&timePeriod=1t&gtm=true&lang=${getLanguage().toLowerCase()}&hideOverlay=${is_ja}&hideShare=${is_ja}&timezone=GMT+${(is_ja ? '9' : '0')}&hideFooter=${is_ja}`;
+        document.getElementById('chart_frame').src = `https://webtrader.binary.com?affiliates=true&instrument=${underlying}&timePeriod=1t&gtm=true&lang=${getLanguage().toLowerCase()}&hideOverlay=${is_ja}&hideShare=${is_ja}&timezone=GMT+${(is_ja ? '9' : '0')}`;
     };
 
     return {

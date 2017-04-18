@@ -284,6 +284,11 @@ msgstr "Binary.com (バイナリードットコム)の沿革"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "当システムは1日に100万件を超える取引（仮想アカウントを含む）を処理しています。"
 
+#, fuzzy
+#| msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
+msgstr "出金制限及び取引制限を解除するには、%1口座認証%2をしていただく必要があります。"
+
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr ""
 "%1の慈善活動では、地域社会においてプラスの影響を少しでも与えられるよう、世界中の小規模慈善団体や非営利団体に焦点を当てています。\n"
@@ -5604,9 +5609,6 @@ msgstr "現在、ログアウトの状態です。ご利用頂くためには再
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "出金制限及び取引制限を解除するには、%1改訂版利用規約に同意%2いただく必要があります。"
 
-msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
-msgstr "出金制限及び取引制限を解除するには、%1口座認証%2をしていただく必要があります。"
-
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "出金制限及び取引制限を解除するには、%1口座情報の入力を完了%2していただく必要があります。"
 
@@ -5720,6 +5722,15 @@ msgstr "範囲を1つ以上選択してください"
 
 msgid "Please select the checkbox."
 msgstr "チェックボックスを選択してください"
+
+msgid "Please set %1country of residence%2 before upgrading to a real-money account."
+msgstr ""
+
+msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
+msgstr ""
+
+msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "ご希望のリアリティチェック間隔を分単位で指定してください"

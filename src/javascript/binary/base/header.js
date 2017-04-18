@@ -193,38 +193,38 @@ const Header = (() => {
                 return false;
             };
 
+            const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
+
+
             const messages = {
-                authenticate: () => localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.',
-                    [`<a href="${urlFor('user/authenticate')}">`, '</a>']),
-                residence: () => localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.',
-                    [`<a href="${urlFor('user/settings/detailsws')}">`, '</a>']),
-                risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
-                    [`<a href="${urlFor('user/settings/assessmentws')}">`, '</a>']),
-                tax: () => localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
-                    [`<a href="${urlFor('user/settings/detailsws')}">`, '</a>']),
-                tnc: () => localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
-                    [`<a href="${urlFor('user/tnc_approvalws')}">`, '</a>']),
-                unwelcome: () => localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
-                    [`<a href="${urlFor('contact')}">`, '</a>']),
+                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.',        'user/authenticate'),
+                financial_limit: () => buildMessage('Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.', 'user/security/self_exclusionws', '#max_30day_turnover'),
+                residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                        'user/settings/detailsws'),
+                risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',        'user/settings/assessmentws'),
+                tax            : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                 'user/settings/detailsws'),
+                tnc            : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',       'user/tnc_approvalws'),
+                unwelcome      : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                      'contact'),
             };
 
             const validations = {
                 authenticate: () =>
                     (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient() && should_authenticate,
-                residence: () => !Client.get('residence'),
-                risk     : () => riskAssessment(),
-                tax      : () => Client.shouldCompleteTax(),
-                tnc      : () => Client.shouldAcceptTnc(),
-                unwelcome: () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
+                financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
+                residence      : () => !Client.get('residence'),
+                risk           : () => riskAssessment(),
+                tax            : () => Client.shouldCompleteTax(),
+                tnc            : () => Client.shouldAcceptTnc(),
+                unwelcome      : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
             };
 
             // real account checks
             const check_statuses_real = [
-                { validation: validations.tnc,          message: messages.tnc },
-                { validation: validations.risk,         message: messages.risk },
-                { validation: validations.tax,          message: messages.tax },
-                { validation: validations.authenticate, message: messages.authenticate },
-                { validation: validations.unwelcome,    message: messages.unwelcome },
+                { validation: validations.tnc,             message: messages.tnc },
+                { validation: validations.financial_limit, message: messages.financial_limit },
+                { validation: validations.risk,            message: messages.risk },
+                { validation: validations.tax,             message: messages.tax },
+                { validation: validations.authenticate,    message: messages.authenticate },
+                { validation: validations.unwelcome,       message: messages.unwelcome },
             ];
 
             // virtual checks
