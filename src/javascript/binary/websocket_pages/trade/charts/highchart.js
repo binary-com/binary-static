@@ -149,7 +149,7 @@ const Highchart = (() => {
         if (/(history|candles|tick|ohlc)/.test(type) && !error) {
             response_id = response[type].id;
             // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
-            if (response_id) ViewPopupUI.storeSubscriptionID(response_id, 'chart');
+            if (response_id) ViewPopupUI.storeSubscriptionID(response_id, underlying);
             options = { title: contract.display_name };
             options[type] = response[type];
             const history = response.history;
