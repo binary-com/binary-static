@@ -633,6 +633,9 @@ msgstr "Dyplom inżyniera na kierunku Informatyka lub inne równoważne studia n
 msgid "A Bachelor's degree in Marketing, Business Administration, or related discipline"
 msgstr "Ukończone studia licencjackie na kierunku: marketing, administracja, ekonomia lub pokrewne"
 
+msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
+msgstr ""
+
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Pośrednik płatności działa jako kantor wymiany walut między Klientem (naszym klientem) a %1. Pośrednik płatności przetwarza wpłaty i wypłaty dla klientów, którzy chcą korzystać z określonych metod płatności internetowych lub lokalnych walut niedostępnych na %1. Opłaty za przelewy są pokrywane przez Klienta."
 
@@ -996,7 +999,9 @@ msgstr "Klienci mogą korzystać z e-portfela, co nie jest możliwe bezpośredni
 msgid "Alter the normal trading times for the affected market;"
 msgstr "Po normalnych godzinach handlowych danego rynku;"
 
-msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+#, fuzzy
+#| msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "Klienci zarejestrowani w Binary (IOM) Ltd i Binary (Europe) Ltd zamiast przekazywać spory do IBAS (Independent Betting Adjudication Service), mogą skorzystać z platformy Internetowego rozstrzygania sporów Komisji Europejskiej, która jest dostępna <a href='http://ec.europa.eu/odr' target='_blank'>tutaj</a>."
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
@@ -1527,7 +1532,9 @@ msgstr "Spółka zależna firmy Binary, Binary KK, otwiera biuro w Tokio i rozpo
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "Urząd ds. Usług Finansowych (Malta Financial Services Authority) na Malcie przyznał maltańskiej spółce zależnej firmy Binary, Binary Investments (Europe) Ltd., licencję dla podmiotów świadczących usługi inwestycyjne kategorii 3."
 
-msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+#, fuzzy
+#| msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
 msgstr "Platforma Binary rozlicza średnio 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transakcji</a> na sekundę, 24 godziny na dobę przez 7 dni w tygodniu"
 
 msgid "Binary.com"
@@ -3300,6 +3307,11 @@ msgstr "Zasoby ludzkie"
 msgid "Hundreds of deposit and withdrawal options."
 msgstr "Wiele opcji dokonywania wpłat i wypłat."
 
+#, fuzzy
+#| msgid "I declare I am not a Foreign Politically Exposed Person."
+msgid "I acknowledge that I am not a politically exposed person (PEP)."
+msgstr "Oświadczam, że nie jestem osobą z zagranicy zajmującą eksponowane stanowisko polityczne."
+
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
@@ -3315,8 +3327,10 @@ msgstr "Nie pamiętam swojego hasła, co mam zrobić?"
 msgid "I have a Real Money Account"
 msgstr "Mam konto z prawdziwymi pieniędzmi"
 
-msgid "I have read and agree to the"
-msgstr "Zapoznałem/am się i akceptuję"
+#, fuzzy
+#| msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
+msgid "I have read and agree to the %1terms and conditions%2 of the site."
+msgstr "Przeczytałem(am) <a target=\"_blank\" href=\"%1\">regulamin</a> tego portalu i wyrażam zgodę na jego postanowienia."
 
 msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgstr "Przeczytałem(am) <a target=\"_blank\" href=\"%1\">regulamin</a> tego portalu i wyrażam zgodę na jego postanowienia."
@@ -5411,6 +5425,11 @@ msgstr "Odpowiedzialność za własność, treść i wiarygodność stron partne
 
 msgid "P. Indemnification"
 msgstr "P. Odszkodowanie"
+
+#, fuzzy
+#| msgid "Explanation"
+msgid "PEP Declaration"
+msgstr "Wyjaśnienie"
 
 msgid "PM"
 msgstr "PM"
@@ -8566,7 +8585,9 @@ msgstr "Nie zezwala się na przechowywanie jakichkolwiek treści (np. danych ze 
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "W żadnym wypadku Użytkownik nie jest upoważniony do otrzymania od Firmy jakiegokolwiek wynagrodzenia ani zwrotu kosztów."
 
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+#, fuzzy
+#| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Nie jesteś mieszkańcem lub mieszkanką kraju z ograniczonym dostępem, czyli Afganistanu, Bośni i Hercegowiny, Kostaryki, jakiegokolwiek kraju Unii Europejskiej, Laosu, Syrii, Ugandy, Republiki Vanuatu, Jemenu, Stanów Zjednoczonych, Japonii, Hongkongu, Malezji, Malty, Iranu, Korei Północnej, Jersey, Iraku ani jakiegokolwiek innego kraju, który Firma uzna za kraj z ograniczonym dostępem według własnego uznania;"
 
 msgid "You are over 18 years of age;"
@@ -9112,9 +9133,6 @@ msgstr ""
 msgid "numbers"
 msgstr "liczby"
 
-msgid "of the site."
-msgstr "niniejszej strony."
-
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr ",gdzie opisane są dokładne pory rozliczania wszystkich kontraktów. Inne portale mogą stosować inną konwencję (np. niektóre portale wybierają godz. 4 czasu nowojorskiego lub 5 czasu londyńskiego). Tak więc, ze względu na konwencję godziny zamknięcia rynku, cena otwarcia, cena wysoka, cena niska i cena zamknięcia wyświetlone na naszym portalu mogą różnić się od tych na innych portalach."
 
@@ -9129,9 +9147,6 @@ msgstr "spacja"
 
 msgid "sublicense any of the rights granted under these Terms, other than as permitted by these Terms;"
 msgstr "przeniesienie jakichkolwiek praw nadanych na mocy niniejszych Warunków, za wyjątkiem przeniesienia zgodnego z niniejszymi Warunkami;"
-
-msgid "terms and conditions"
-msgstr "regulamin"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
 msgstr "które łamią jakiekolwiek prawo, regulacje, instrumenty prawne, ordynacje lub przepisy, które regulują funkcjonowanie wszelkich rynków finansowych i rynków wymiany walut, bądź środowisko regulacji finansowych, lub"
@@ -10860,6 +10875,15 @@ msgstr "Akceptacja regulaminu"
 
 msgid "Account Limits"
 msgstr "Limity na koncie"
+
+#~ msgid "I have read and agree to the"
+#~ msgstr "Zapoznałem/am się i akceptuję"
+
+#~ msgid "of the site."
+#~ msgstr "niniejszej strony."
+
+#~ msgid "terms and conditions"
+#~ msgstr "regulamin"
 
 #, fuzzy
 #~| msgid "Spread"
