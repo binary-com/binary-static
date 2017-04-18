@@ -1,26 +1,38 @@
 #mb-trading-wrapper {
     max-width: 1200px;
+    #trade_live_chart {
+        border: 1px solid $COLOR_GRAY;
+        padding-right: 1px;
+        height: calc(100% - 10px);
+    }
     #mb_trading {
         font-size: 14px;
         #trade_form {
             margin-bottom: 10px;
             > div {
-                border: 3px solid $COLOR_LIGHT_GRAY;
                 text-align: center;
+                background: $COLOR_LIGHT_GRAY;
+                border-right: 3px solid $COLOR_WHITE;
                 &:nth-child(4) {
-                    border-right: 3px solid $COLOR_LIGHT_GRAY;
+                    border-right: none;
                 }
-                border-right: none;
                 position: relative;
-                height: 130px;
+                height: 80px;
                 .current {
-                    height: 115px;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    > div {
+                        display: block;
+                        width: 100%;
+                    }
                 }
                 .current, .list > div {
                     padding: 5px;
                     cursor: pointer;
                     &:hover {
-                        background-color: $COLOR_LIGHT_GRAY;
+                        background-color: $COLOR_GRAY;
                     }
                 }
                 .list {
@@ -30,15 +42,19 @@
                     background-color: $COLOR_WHITE;
                     > div {
                         border: 1px solid $COLOR_LIGHT_GRAY;
+                        border-top: none;
                     }
                 }
+            }
+            #underlying .name {
+                display: block;
+                margin-top: 5px;
             }
             #category {
                 .contract-type {
                     display: inline-block;
                     width: calc(50% - 5px);
                     padding-top: 40px;
-                    margin-top: 30px;
                     background-position: center top;
                     background-repeat: no-repeat;
                     vertical-align: top;
@@ -46,21 +62,23 @@
             }
             #period {
                 .start, .end {
-                    line-height: 25px;
+                    line-height: 20px;
                 }
                 .duration {
-                    line-height: 65px;
                     font-size: $FONT_SIZE_XL;
                     font-weight: bold;
+                }
+                .current > div, .list > div {
+                    display: flex;
+                    align-items: center;
                 }
             }
             #currency {
                 position: absolute;
                 width: 100%;
-                z-index: -1;
                 .current {
-                    height: 25px;
-                    line-height: 25px;
+                    height: 15px;
+                    line-height: 15px;
                 }
             }
             #payout {
@@ -70,8 +88,8 @@
                     font-weight: bold;
                 }
                 .list > div {
-                    line-height: 50px;
-                    font-size: $FONT_SIZE_XL;
+                    line-height: 30px;
+                    font-size: $FONT_SIZE_L;
                     font-weight: bold;
                 }
                 .plus {
@@ -85,7 +103,7 @@
         .price-table {
             position: relative;
             .descr-wrapper {
-                padding: 10px;
+                padding: 5px 10px;
                 .contract-type {
                     padding-left: 45px;
                     margin-bottom: 0;
@@ -99,22 +117,25 @@
             }
             #disable-overlay {
                 position: absolute;
-                top: 70px;
+                top: 56px;
                 z-index: 1;
                 width: 100%;
-                height: calc(100% - 70px);
+                height: calc(100% - 66px);
                 background-color: rgba(242, 242, 242, 0.5);
             }
             #loading-overlay {
                 width: 100%;
             }
             .prices-wrapper {
-                .price-row, .heading {
-                    .buy-price, .sell-price, .barrier {
-                        line-height: 35px;
-                        padding: 3px 0;
-                        text-align: center;
-                    }
+                .heading > div {
+                    line-height: 20px;
+                    padding: 10px 0;
+                    text-align: center;
+                }
+                .price-row > div {
+                    line-height: 35px;
+                    padding: 3px 0;
+                    text-align: center;
                 }
                 .price-row .barrier {
                     line-height: 18px;
@@ -276,27 +297,9 @@
                 }
             }
         }
-        .padding-10 {
-            padding: 10px 10px 0;
-        }
-        .padding-right-five {
-            padding-right: 5px;
-        }
-        .padding-right-ten {
-            padding-right: 10px;
-        }
-        .no-padding-right {
-            padding-right: 0;
-        }
-        .float-left {
-            float: left;
-        }
         @media screen and (max-width: 768px) {
             .gr-12-p {
                 padding-bottom: 10px;
-            }
-            .padding-right-five, .no-padding-right {
-                padding-right: 10px;
             }
         }
         @media screen and (max-width: 480px) {

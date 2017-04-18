@@ -36,6 +36,7 @@ const MBTradePage = (() => {
         window.chartAllowed = true;
         // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
+        $('.container').css('max-width', '1200px');
     };
 
     const reload = () => {
@@ -53,6 +54,7 @@ const MBTradePage = (() => {
         MBProcess.onUnload();
         BinarySocket.clear();
         State.remove('ViewPopup.onDisplayed');
+        $('.container').css('max-width', '');
     };
 
     const onDisconnect = () => {

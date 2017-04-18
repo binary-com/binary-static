@@ -75,9 +75,10 @@ const MBContract = (() => {
         }
         const makeItem = (period) => {
             const text = periodText(period);
+            const duration = text.duration.toUpperCase().replace(/([A-Z])/, '$1<br>');
             return $('<div/>', {
                 value: period,
-                html : `<div class="start">${text.start}</div><div class="duration">${text.duration.toUpperCase()}</div><div class="end">${text.end}</div>`,
+                html : `<div class="start">${text.start}</div><div class="duration">${duration}</div><div class="end">${text.end}</div>`,
             });
         };
         if ($list.children().length === 0) { // populate for the first time

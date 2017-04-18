@@ -7,7 +7,7 @@
     <div class="gr-7 gr-12-m gr-12-p gr-order-2-m gr-order-2-p">
         <p class="error-msg" id="chart-error"></p>
         <div id="trade_live_chart">
-            <iframe src="" width="100%" height="630" id="chart_frame" style="overflow-y: hidden;" scrolling="no"></iframe>
+            <iframe src="" width="100%" height="100%" id="chart_frame" style="overflow-y: hidden;" scrolling="no"></iframe>
         </div>
     </div>
 
