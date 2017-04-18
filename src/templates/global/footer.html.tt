@@ -63,7 +63,7 @@
                                     <a href="http://www.gamcare.org.uk/" target="_blank">[% l('GamCare') %]</a>
                                 </li>
                                 <li class="ja-hide academy">
-                                    <a href="http://academy.binary.com" target="_blank">[% l('Academy') %]</a>
+                                    <a href="https://academy.binary.com" target="_blank">[% l('Academy') %]</a>
                                 </li>
                                 <li class='ja-hide id-hide'>
                                     <a href="https://academy.binary.com/en/events/" target="_blank">[% l('Webinars') %]</a>
@@ -161,7 +161,7 @@
                 <div class="ja-hide gr-3 gr-12-m gr-5-p center-text" id="social-networks">
                     <div class="gr-row ja-hide id-hide">
                         <div class="gr-5">
-                            <a href="http://www.gov.im/gambling/" target="_blank">
+                            <a href="https://www.gov.im/gambling/" target="_blank">
                                 <img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
                             </a>
                         </div>
