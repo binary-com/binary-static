@@ -111,8 +111,6 @@ const TradingEvents = (() => {
 
                     getContracts(underlying);
 
-                    // forget the old tick id i.e. close the old tick stream
-                    Process.processForgetTicks();
                     // get ticks for current underlying
                     GetTicks.request(underlying);
                     commonTrading.displayTooltip(Defaults.get('market'), underlying);
