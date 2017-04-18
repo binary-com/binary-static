@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-04-17 06:17+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Traditional) "
-"<https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -626,6 +625,9 @@ msgstr "電腦科學系學士，或具備同等技術教育、培訓背景及工
 msgid "A Bachelor's degree in Marketing, Business Administration, or related discipline"
 msgstr "市場行銷、工商管理或相關學科學士學位"
 
+msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
+msgstr ""
+
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "付款代理人扮演客戶（即我們的顧客）和 %1之間的兌換員。如果客戶希望使用某種特定電子貨幣或1%不支持的本地貨幣，付款代理人將負責為客戶處理充值和提款事宜。匯款費用由客戶支付。"
 
@@ -989,7 +991,9 @@ msgstr "允許客戶使用%1並不直接提供之電子貨幣"
 msgid "Alter the normal trading times for the affected market;"
 msgstr "為受影響的市場改變正常交易時間;"
 
-msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+#, fuzzy
+#| msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "另外，在Binary(IOM)有限公司和Binary(歐洲)有限公司都註冊過的客戶與其將爭端向IBA提出申訴，也可以<a href='http://ec.europa.eu/odr' target= '_blank'>在此</a>使用歐洲線上解決爭端委員會(ODR)平台。"
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
@@ -1520,7 +1524,9 @@ msgstr "Binary 日本子公司 Binary KK 在東京開設了辦公室，並開始
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "Binary 的馬爾他附屬公司 Binary Investments (Europe) Ltd. 由 Malta Financial Services Authority 授予第3類投資服務執照。"
 
-msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+#, fuzzy
+#| msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
 msgstr "Binary平台平均每秒鐘進行15宗<a href='http://binarycom.statuspage.io/' target='_blank'>交易</a>，全天候提供服務,整年無休"
 
 msgid "Binary.com"
@@ -3293,6 +3299,11 @@ msgstr "人力資源"
 msgid "Hundreds of deposit and withdrawal options."
 msgstr "多種存款和取款選擇。"
 
+#, fuzzy
+#| msgid "I declare I am not a Foreign Politically Exposed Person."
+msgid "I acknowledge that I am not a politically exposed person (PEP)."
+msgstr "我聲明本人不是外國政治公眾人士。"
+
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
@@ -3308,8 +3319,10 @@ msgstr "我忘記了密碼，該怎麼辦？"
 msgid "I have a Real Money Account"
 msgstr "我有真實資金帳戶"
 
-msgid "I have read and agree to the"
-msgstr "我已閱讀並同意"
+#, fuzzy
+#| msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
+msgid "I have read and agree to the %1terms and conditions%2 of the site."
+msgstr "我已閱讀並同意本網站的<a target=\"_blank\" href=\"%1\">條款和條件</a>。"
 
 msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgstr "我已閱讀並同意本網站的<a target=\"_blank\" href=\"%1\">條款和條件</a>。"
@@ -4404,9 +4417,7 @@ msgid "L. Event of Default"
 msgstr "十二、違約事件"
 
 msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
-msgstr ""
-"難民語言課程(LCFR)是由致力於長期提供高素質教育的社會企業，「愛心與尊重轉換中心」為難民組織的教育項目。此項目為從孩童到成人各種年齡的群組提供英語、馬"
-"來文和法文教學，目的是要讓他們掌握語言技能，幫助他們在等待遣返回國期間找到職業。"
+msgstr "難民語言課程(LCFR)是由致力於長期提供高素質教育的社會企業，「愛心與尊重轉換中心」為難民組織的教育項目。此項目為從孩童到成人各種年齡的群組提供英語、馬來文和法文教學，目的是要讓他們掌握語言技能，幫助他們在等待遣返回國期間找到職業。"
 
 msgid "Languages"
 msgstr "語言"
@@ -5406,6 +5417,11 @@ msgstr "聯盟網站的所有權、內容和法律責任均由聯盟會員全權
 
 msgid "P. Indemnification"
 msgstr "十六、賠償"
+
+#, fuzzy
+#| msgid "Explanation"
+msgid "PEP Declaration"
+msgstr "說明"
 
 msgid "PM"
 msgstr "下午"
@@ -6974,8 +6990,7 @@ msgid "The STP account provides you with the tightest spreads and connects you d
 msgstr "STP帳戶提供最低價差，並讓您與市場直接連接。"
 
 msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
-msgstr ""
-"庇護所社區第3學習中心是為正在緬甸等待與家人被遣至第三國的難民兒童成立的社區學校。該學校旨在為這些處於最脆弱年齡的兒童提供教育，為他們的未來做好準備。"
+msgstr "庇護所社區第3學習中心是為正在緬甸等待與家人被遣至第三國的難民兒童成立的社區學校。該學校旨在為這些處於最脆弱年齡的兒童提供教育，為他們的未來做好準備。"
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
 msgstr "標準帳戶適合廣泛的交易者，包括新手和經驗豐富的操盤手。"
@@ -7446,18 +7461,7 @@ msgid "This website does not collect personally identifying information about yo
 msgstr "除非您有意識地專門提供，本網站並不收集個人身份資訊。一種被稱之為「cookies」的技術可以提供來自特定網站的訂制資訊。 cookie 是一種資料元，網站可發送 cookie 到您瀏覽器，然後存儲在您的系統中。您可以將您的瀏覽器設定為收到 cookie 時通知您，以便您決定是否接受。如果您不接受該 cookie，那麼請在所有需要輸入系統的表單中再次輸入您的登入 ID 和密碼。如果您對您的個人電腦或個人瀏覽器的安全性存在擔憂，我們建議您選擇這麼做。"
 
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr ""
-"本網站由Binary (IOM) Ltd.在英國和曼島經營，地址為：First Floor, Millennium House, Victoria "
-"Road, Douglas, IM2 4RW, Isle of Man, British Isles；(1)由不列顛群島曼島投資監管委員會授予執照和監管，"
-"目前線上博彩執照於2012 年8 月31 日頒發；而英國客戶(2)由英國博彩委員會授予執照和監管- <a href='%1' target="
-"'_blank' >檢視執照</a>。此網站市場在歐盟其他地區，投資產品由Binary Investments (Europe) Ltd.經營，"
-"地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, "
-"Malta，由馬爾他金融服務機構授予執照及監管為3級投資服務提供商（執照號碼為IS/70156)），而博彩產品由Binary (Europe) "
-"Ltd.,經營，地址為：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, "
-"Malta，(1)由位於馬爾他的馬爾他博彩管理局授予執照和監管，執照號碼為MGA/CL2/118/2000（2015年5 月26 "
-"日），而英國客戶(2)由英國博彩委員會授予執照和監管- <a href='%2 ' "
-"target='_blank'>檢視執照</a>，而愛爾蘭客戶由(3)愛爾蘭稅務專員辦事處授予執照和監管，執照號碼為1010285 (2015年9 "
-"月29 日）。本網站的服務不向一些國家如美國、哥斯大黎加及香港或對年齡不到18歲的使用者提供。"
+msgstr "本網站由Binary (IOM) Ltd.在英國和曼島經營，地址為：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；(1)由不列顛群島曼島投資監管委員會授予執照和監管，目前線上博彩執照於2012 年8 月31 日頒發；而英國客戶(2)由英國博彩委員會授予執照和監管- <a href='%1' target='_blank' >檢視執照</a>。此網站市場在歐盟其他地區，投資產品由Binary Investments (Europe) Ltd.經營，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構授予執照及監管為3級投資服務提供商（執照號碼為IS/70156)），而博彩產品由Binary (Europe) Ltd.,經營，地址為：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，(1)由位於馬爾他的馬爾他博彩管理局授予執照和監管，執照號碼為MGA/CL2/118/2000（2015年5 月26 日），而英國客戶(2)由英國博彩委員會授予執照和監管- <a href='%2 ' target='_blank'>檢視執照</a>，而愛爾蘭客戶由(3)愛爾蘭稅務專員辦事處授予執照和監管，執照號碼為1010285 (2015年9 月29 日）。本網站的服務不向一些國家如美國、哥斯大黎加及香港或對年齡不到18歲的使用者提供。"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "對 bash 腳本編程非常熟悉，並有豐富的腳本語言（如Perl 和 PHP）經驗"
@@ -8563,7 +8567,9 @@ msgstr "您未獲許可儲存任何內容(例如摘要資料)。"
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "您無權在任何情況下獲取公司任何補償或支付。"
 
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+#, fuzzy
+#| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "您不是阿富汗、波斯尼亞和黑塞哥維那、哥斯大黎加、任何歐盟國家、老撾人民民主共和國、敘利亞、烏干達、瓦努阿圖、也門、美國、日本、香港、哥斯大黎加、馬來西亞、馬爾他、伊朗、朝鮮、澤西島、伊拉克、或其它由公司隨時自行決定為受限制國家的居民；"
 
 msgid "You are over 18 years of age;"
@@ -9109,9 +9115,6 @@ msgstr "借記到您真實帳戶的實現利潤和從您真實帳戶扣除的實
 msgid "numbers"
 msgstr "號碼"
 
-msgid "of the site."
-msgstr "網站的。"
-
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "所有合約準確結算時間的頁面。其他網站可能會有不同的慣例（比如一些網站採用紐約時間4點或倫敦時間5點）。由於不同的收盤時間慣例，在本網站顯示的開盤、高、低或收盤價可能跟其他網站不一致。"
 
@@ -9126,9 +9129,6 @@ msgstr "空間"
 
 msgid "sublicense any of the rights granted under these Terms, other than as permitted by these Terms;"
 msgstr "轉讓這些條款所授予 （除非條款允許） 的任何權利;"
-
-msgid "terms and conditions"
-msgstr "條款與條件"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
 msgstr "違反任何管制任何交易所、金融市場或金融監管環境運作的法律、規例、文書、條例或規則; 或"
@@ -10857,6 +10857,15 @@ msgstr "條款和條件審批"
 
 msgid "Account Limits"
 msgstr "帳戶限額"
+
+#~ msgid "I have read and agree to the"
+#~ msgstr "我已閱讀並同意"
+
+#~ msgid "of the site."
+#~ msgstr "網站的。"
+
+#~ msgid "terms and conditions"
+#~ msgstr "條款與條件"
 
 #, fuzzy
 #~| msgid "Spread"
