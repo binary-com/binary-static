@@ -132,7 +132,7 @@
         <p>[% l("Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" target=\"_blank\">view licence</a>.") %]</p>
         <p>[% l("UK and Manx residents will have their account opened with Binary (IOM) Ltd.") %]</p>
         [% INCLUDE regulator_text %]
-        [% INCLUDE regulator_image href="http://www.gov.im/gambling/" image='images/pages/footer/isle-of-man.png' %]
+        [% INCLUDE regulator_image href="https://www.gov.im/gambling/" image='images/pages/footer/isle-of-man.png' %]
     [% END %]
 
     [% WRAPPER box header=l("Binary (C.R.) S.A.") %]

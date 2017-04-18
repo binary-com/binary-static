@@ -162,6 +162,7 @@ const MBTick = (() => {
             });
         },
         displayPriceMovement: displayPriceMovement,
+        processTickHistory  : processTickHistory,
     };
 })();
 

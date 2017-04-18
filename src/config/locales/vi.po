@@ -631,6 +631,9 @@ msgstr "Cử nhân Khoa Học Máy Tính, hoặc một sự kết hợp tương 
 msgid "A Bachelor's degree in Marketing, Business Administration, or related discipline"
 msgstr "Bằng cử nhận chuyên ngành Marketing, Quản trị kinh doanh hoặc chuyên ngành liên quan"
 
+msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
+msgstr ""
+
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Đại lý Thanh toán làm việc giống như hoạt động trao đổi giữa các Khách hàng (đó là khách hàng của chúng tôi) và %1. Đại lý Thanh toán tiến hành thực hiện hoạt động rút tiền và gửi tiền cho Khách hàng muốn sử dụng phương thức thanh toán thẻ điện tử hoặc bằng tiền nội tệ mà không được %1 cung cấp. Phí giao dịch Khách hàng sẽ chịu."
 
@@ -994,7 +997,9 @@ msgstr "Cho phép Khách hàng sử dụng ví điện tử, mà không 
 msgid "Alter the normal trading times for the affected market;"
 msgstr "Thay đổi thời gian kinh doanh bình thường đối với thị trường bị ảnh hưởng;"
 
-msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+#, fuzzy
+#| msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "Như một sự lựa chọn, các khách hàng đang đăng ký tài khoản tại công ty TNHH Binary (IOM) và công ty TNHH Binary (Europe), thay vì phải gửi  tranh chấp của họ tới IBAS, họ có thể sử dụng Cơ quan Giải quyết Tranh chấp trực tuyến khả dụng của Ủy ban Châu Âu <a href='http://ec.europa.eu/odr' target='_blank'>tại đây</a>."
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
@@ -1525,7 +1530,9 @@ msgstr "Binary KK công ty chi nhánh Nhật của Binary mở một văn pho
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "Công ty Đầu tư Binary (Châu Âu) chi nhánh Malta được cấp giấy phép về Dịch vụ Đầu tư Loại 3 bởi Ủy ban Dịch vụ Tài chính Malta."
 
-msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+#, fuzzy
+#| msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
 msgstr "Sàn giao dịch của Binary hoạt động bình quân 15 <a href='http://binarycom.statuspage.io/' target='_blank'>giao dịch</a> trên một giây, 24/7"
 
 msgid "Binary.com"
@@ -3302,6 +3309,11 @@ msgstr "Nhân Sự"
 msgid "Hundreds of deposit and withdrawal options."
 msgstr "Hàng trăm quyền chọn rút tiền và gửi tiền."
 
+#, fuzzy
+#| msgid "I declare I am not a Foreign Politically Exposed Person."
+msgid "I acknowledge that I am not a politically exposed person (PEP)."
+msgstr "Tôi tuyên bố tôi không phải là một cá nhân có ảnh hưởng chính trị ngoại quốc."
+
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
@@ -3317,8 +3329,10 @@ msgstr "Tôi đã quên mật khẩu, tôi nên làm gì?"
 msgid "I have a Real Money Account"
 msgstr "Tôi có Tài khoản Tiền Thực"
 
-msgid "I have read and agree to the"
-msgstr "Tôi đã đọc và đồng ý với"
+#, fuzzy
+#| msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
+msgid "I have read and agree to the %1terms and conditions%2 of the site."
+msgstr "Tôi đã đọc và đồng ý với <a target=\"_blank\" href=\"%1\">điều khoản và điều kiện</a> của trang web."
 
 msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgstr "Tôi đã đọc và đồng ý với <a target=\"_blank\" href=\"%1\">điều khoản và điều kiện</a> của trang web."
@@ -5416,6 +5430,11 @@ msgstr "Chi nhánh phải chịu trách nhiệm về quyền sở hữu, n
 msgid "P. Indemnification"
 msgstr "P. Tiền bồi thường"
 
+#, fuzzy
+#| msgid "Explanation"
+msgid "PEP Declaration"
+msgstr "Giải thích"
+
 msgid "PM"
 msgstr "PM"
 
@@ -7467,7 +7486,9 @@ msgstr "Trang web này chứa các đường dẫn đến các trang web khác
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Trang web này không thu thập thông tin cá nhân về bạn trừ khi bạn cố ý cung cấp nó. Có một công nghệ gọi là \"cookies\" có thể được sử dụng để cung cấp thông tin từ một trang web. Cookie là một phần tử của dữ liệu mà trang web gửi đến trình duyệt của bạn, sau đó  nó có thể lưu trữ trên hệ thống của bạn. Bạn có thể thiết lập trình duyệt để thông báo khi bạn nhận được một cookie, cho bạn cơ hội quyết định có nên chấp nhận nó hay không. Nếu bạn không chấp nhận cookie này, thì bạn sẽ cần phải nhập ID và mật khẩu của bạn một lần nữa trên các biểu mẫu được yêu cầu để có thể vào được hệ thống. Bạn nên chọn tùy chọn này nếu bạn lo lắng về bảo mật trình duyệt cá nhân hoặc PC của mình."
 
-msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+#, fuzzy
+#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "Trang web này được giới thiệu trên thị trường Anh và Đảo Man bởi công ty TNHH Binary (IOM), tầng 1, Tòa nhà Millennium, Đường Victoria, Douglas, IM2 4RW, Đảo Man, Anh, được cấp phép và quy định bởi (1) Ủy ban Giám sát Cá cược tại Đảo Man, Anh, giấy phép cá cược trực tuyến hiện ban hành ngày 31 Tháng Tám năm 2012, và (2) Ủy ban Cá cược Anh cấp cho khách hàng nước Anh- <a href='%1' target='_blank'>xem giấy phép</a>. Trang web này được giới thiệu trên thị trường EU còn lại bởi công ty TNHH Binary Investments (Châu Âu) , Tòa nhà Mompalao, Khu 2, Đường Tower, Msida MSD1825, Malta, được cấp phép và quy định bởi (1) Ủy ban quản lý Cá cược Malta ở Malta, Giấy phép số MGA / CL2 / 118/2000, 26 tháng 5 năm 2015 và (2) Ủy ban quản lý Cá cược UK cấp cho khách hàng của Anh - <a href='%2' target='_blank'>xem giấy phép</a>, và Các ủy viên Cục thuế Ai-len cấp cho khách hàng Ai-len, giấy phép hiện tại có hiệu lực được ban hành vào ngày 29 tháng 9 năm 2015 (giấy phép số 1010285). Các dịch vụ của trang web này không có tại một số quốc gia nhất định như Hoa Kỳ, Costa Rica,Hong Kong, hay cho người dưới 18 tuổi."
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
@@ -8580,7 +8601,7 @@ msgstr "Bạn không có quyền nhận bất kỳ khoản bồi thường hay �
 
 #, fuzzy
 #| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Bạn không phải là cư dân trong một đất nước bị hạn chế như Afghanistan; Bosnia và Herzegovina; Costa Rica; bất kỳ quốc gia liên minh châu Âu; Guyana; Lào PDR; Syria; Uganda; Vanuatu; Yemen; HOA KỲ; Nhật bản; Hồng Kông; Costa Rica; Malaysia; Malta; Iran; Bắc Triều tiên; Jersey; Iraq; hoặc bất kỳ quốc gia hạn chế khác là công ty có thể quyết định thời gian theo ý mình;"
 
 msgid "You are over 18 years of age;"
@@ -9130,9 +9151,6 @@ msgstr "biểu đồ của các lợi nhuận được biết đến tài khoả
 msgid "numbers"
 msgstr "các số"
 
-msgid "of the site."
-msgstr "của trang."
-
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "trang dành cho quyết toán tại thời gian chính xác đối với tất cả các hợp đồng. Các trang web khác có thể áp dụng quy ước khác nhau (ví dụ như một số trang web chọn thời gian 04:00 NY, hoặc 5:00 theo giờ Luân Đôn). Kết quả là, giá đóng, mở, cao, thấp hiển thị trên trang web của chúng tôi có thể khác với những giá trên các trang web khác, do quy ước thời gian đóng cửa thị trường."
 
@@ -9147,9 +9165,6 @@ msgstr "khoảng cách"
 
 msgid "sublicense any of the rights granted under these Terms, other than as permitted by these Terms;"
 msgstr "giấy phép bổ sung cho các quyền được cấp theo Điều khoản này,  ngoài các quyền được cho phép bởi những Điều khoản này;"
-
-msgid "terms and conditions"
-msgstr "điều khoản và điều kiện"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
 msgstr "việc làm trái lại bất kỳ điều luật, quy định, công cụ, pháp lệnh hoặc quy tắc nào chi phối hoạt động của bất kỳ giao dịch, thị trường tài chính, hoặc môi trường quy định tài chính; hoặc"
@@ -11080,6 +11095,20 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
+
+#~ msgid "I have read and agree to the"
+#~ msgstr "Tôi đã đọc và đồng ý với"
+
+#~ msgid "of the site."
+#~ msgstr "của trang."
+
+#~ msgid "terms and conditions"
+#~ msgstr "điều khoản và điều kiện"
+
+#, fuzzy
+#~| msgid "Spread"
+#~ msgid "read"
+#~ msgstr "Chênh lệch"
 
 #~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
 #~ msgstr "Hợp đồng Spread% 1 là hợp đồng phái sinh đòn bẩy, giá trị được gắn liền với các biến động của thị trường. Khách hàng \"Dài\" là một thị trường tăng cao (và những người 'Ngắn' một thị trường giảm) thu được lợi nhuận từ những hoạt động này với đầu tư ít hơn nhiều so với nhu cầu thị trường sống."
@@ -18056,9 +18085,6 @@ msgstr "Giới hạn Tài khoản"
 
 #~ msgid "Rise/Fall Table"
 #~ msgstr "Bảng Tăng/Giảm"
-
-#~ msgid "Spread"
-#~ msgstr "Chênh lệch"
 
 #~ msgid "Study our live charts"
 #~ msgstr "Tìm hiểu về biểu đồ trực tiếp của chúng tôi"
