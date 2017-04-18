@@ -33,7 +33,7 @@ const Highchart = (() => {
     let is_initialized,
         is_chart_delayed,
         is_chart_subscribed,
-        is_chart_forget,
+        stop_streaming,
         is_contracts_for_send,
         is_history_send,
         is_entry_tick_barrier_selected;
@@ -41,7 +41,7 @@ const Highchart = (() => {
     const initOnce = () => {
         chart = options = response_id = contract = request = min_point = max_point = '';
 
-        is_initialized = is_chart_delayed = is_chart_subscribed = is_chart_forget =
+        is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming =
         is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
     };
 
@@ -183,7 +183,7 @@ const Highchart = (() => {
                         drawLineX(start_time);
                     }
                 }
-            } else if ((tick || ohlc) && !is_chart_forget) {
+            } else if ((tick || ohlc) && !stop_streaming) {
                 if (chart && chart.series) {
                     updateChart(options);
                 }
@@ -256,7 +256,7 @@ const Highchart = (() => {
             delayedChart(contracts_response);
         } else if (stored_delay) {
             handleDelay(stored_delay);
-            showEntryError();
+            sendTickRequest();
         } else if (!is_contracts_for_send && update === '') {
             BinarySocket.send({ contracts_for: underlying }).then((response) => {
                 const error = response.error;
@@ -274,10 +274,10 @@ const Highchart = (() => {
             handleDelay(license);
             saveFeedLicense(contracts_response.echo_req.contracts_for, license);
         }
-        showEntryError();
+        sendTickRequest();
     };
 
-    const showEntryError = () => {
+    const sendTickRequest = () => {
         if (!entry_tick_time && !is_chart_delayed && start_time && window.time.unix() >= parseInt(start_time)) {
             HighchartUI.showError('', localize('Waiting for entry tick.'));
         } else if (!is_history_send) {
@@ -477,25 +477,19 @@ const Highchart = (() => {
                 $('#waiting_exit_tick').remove();
             }
         }
-        if (!is_chart_forget) {
-            forgetStreams();
+        if (!stop_streaming) {
+            setStopStreaming();
         }
     };
 
-    const forgetStreams = () => {
-        if (
-            chart &&
-            (is_sold || is_settleable) &&
-            response_id &&
-            chart.series &&
-            chart.series[0].options.data.length > 0
-        ) {
+    const setStopStreaming = () => {
+        if (chart && (is_sold || is_settleable) && response_id &&
+            chart.series && chart.series[0].options.data.length > 0) {
             const data = chart.series[0].options.data;
             const last_data = data[data.length - 1];
             const last = parseInt(last_data.x || last_data[0]);
             if (last > (end_time * 1000) || last > (sell_time * 1000)) {
-                BinarySocket.send({ forget: response_id });
-                is_chart_forget = true;
+                stop_streaming = true;
             }
         }
     };
