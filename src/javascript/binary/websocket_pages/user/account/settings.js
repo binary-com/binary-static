@@ -1,5 +1,6 @@
-const Client   = require('../../../base/client');
-const jpClient = require('../../../common_functions/country_base').jpClient;
+const BinarySocket = require('../../socket');
+const Client       = require('../../../base/client');
+const jpClient     = require('../../../common_functions/country_base').jpClient;
 
 const Settings = (() => {
     'use strict';

@@ -175,11 +175,6 @@
                 </div>
             </div>
         </div>
-        <div id="ratelimit-error-message">
-            <div class="message">
-                [% l('You have reached the rate limit of requests per second. Please try later.') %]
-            </div>
-        </div>
     </div>
     <div id="footer-last" class="primary-bg-color">
         <div class="container">

@@ -1,5 +1,6 @@
-const Client   = require('../../../base/client');
-const localize = require('../../../base/localize').localize;
+const BinarySocket = require('../../socket');
+const Client       = require('../../../base/client');
+const localize     = require('../../../base/localize').localize;
 
 const TopUpVirtual = (() => {
     'use strict';

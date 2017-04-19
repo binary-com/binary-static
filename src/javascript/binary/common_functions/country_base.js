@@ -1,6 +1,7 @@
 const Language               = require('../base/language');
 const createLanguageDropDown = require('../common_functions/attach_dom/language_dropdown');
 const Cookies                = require('../../lib/js-cookie');
+const BinarySocket           = require('../websocket_pages/socket');
 
 const checkClientsCountry = () => {
     BinarySocket.wait('website_status').then((response) => {

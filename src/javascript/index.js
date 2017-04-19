@@ -9,9 +9,6 @@ window.$ = window.jQuery = require('jquery');
 require('babel-polyfill');
 require('promise-polyfill');
 
-// TODO: refactor and remove global status of socket
-exportAllFunctions(require('./binary/websocket_pages/socket'));
-
 // created for handling global onclick
 exportAllFunctions(require('./binary/common_functions/attach_dom/handle_click'));
 // used by gtm to update page after a new release

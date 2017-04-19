@@ -1,3 +1,5 @@
+const BinarySocket = require('../../socket');
+
 const Authenticate = (() => {
     const onLoad = () => {
         BinarySocket.send({ get_account_status: 1 }).then((response) => {

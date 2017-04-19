@@ -1,5 +1,6 @@
 const MBDefaults       = require('../../mb_trade/mb_defaults');
 const Defaults         = require('../../trade/defaults');
+const BinarySocket     = require('../../socket');
 const State            = require('../../../base/storage').State;
 const getHighestZIndex = require('../../../base/utility').getHighestZIndex;
 

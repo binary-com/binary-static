@@ -1,11 +1,13 @@
-const BinaryPjax         = require('./binary_pjax');
-const pages_config       = require('./binary_pages');
-const Client             = require('./client');
-const GTM                = require('./gtm');
-const localize           = require('./localize').localize;
-const Login              = require('./login');
-const Page               = require('./page');
-const defaultRedirectUrl = require('./url').defaultRedirectUrl;
+const BinaryPjax          = require('./binary_pjax');
+const pages_config        = require('./binary_pages');
+const Client              = require('./client');
+const GTM                 = require('./gtm');
+const localize            = require('./localize').localize;
+const Login               = require('./login');
+const Page                = require('./page');
+const defaultRedirectUrl  = require('./url').defaultRedirectUrl;
+const BinarySocket        = require('../websocket_pages/socket');
+const BinarySocketGeneral = require('../websocket_pages/socket_general');
 
 const BinaryLoader = (() => {
     'use strict';
@@ -14,17 +16,19 @@ const BinaryLoader = (() => {
         active_script = null;
 
     const init = () => {
-        BinarySocket.init();
+        Client.init();
+        BinarySocket.init(BinarySocketGeneral.initOptions());
 
         container = $('#content-holder');
         container.on('binarypjax:before', beforeContentChange);
-        container.on('binarypjax:after', afterContentChange);
+        container.on('binarypjax:after',  afterContentChange);
         BinaryPjax.init(container, '#content');
     };
 
     const beforeContentChange = () => {
         if (active_script) {
             Page.onUnload();
+            BinarySocket.removeOnDisconnect();
             if (typeof active_script.onUnload === 'function') {
                 active_script.onUnload();
             }
@@ -73,6 +77,7 @@ const BinaryLoader = (() => {
         } else {
             active_script.onLoad();
         }
+        BinarySocket.setOnDisconnect(active_script.onDisconnect);
     };
 
     const displayMessage = (message) => {

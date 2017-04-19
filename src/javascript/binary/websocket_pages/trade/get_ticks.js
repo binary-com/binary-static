@@ -13,6 +13,7 @@ const Tick                 = require('./tick');
 const TickDisplay          = require('./tick_trade');
 const MBDefaults           = require('../mb_trade/mb_defaults');
 const MBTick               = require('../mb_trade/mb_tick');
+const BinarySocket         = require('../socket');
 const State                = require('../../base/storage').State;
 
 const GetTicks = (() => {

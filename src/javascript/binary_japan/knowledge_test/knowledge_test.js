@@ -4,6 +4,7 @@ const toJapanTimeIfNeeded = require('../../binary/base/clock').toJapanTimeIfNeed
 const Header              = require('../../binary/base/header');
 const localize            = require('../../binary/base/localize').localize;
 const urlFor              = require('../../binary/base/url').urlFor;
+const BinarySocket        = require('../../binary/websocket_pages/socket');
 
 const KnowledgeTest = (() => {
     'use strict';
