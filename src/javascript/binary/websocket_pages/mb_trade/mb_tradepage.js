@@ -34,7 +34,6 @@ const MBTradePage = (() => {
         $('#tab_explanation').find('a').text(localize('Explanation'));
         $('#remaining-time-label').text(localize('Remaining time'));
         window.chartAllowed = true;
-        // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
     };
 

@@ -4,7 +4,6 @@ const chartFrameCleanup = require('./charts/chart_frame').chartFrameCleanup;
 const displayCurrencies = require('./currency');
 const Defaults          = require('./defaults');
 const TradingEvents     = require('./event');
-const GetTicks          = require('./get_ticks');
 const Price             = require('./price');
 const Process           = require('./process');
 const ViewPopup         = require('../user/view_popup/view_popup');
@@ -52,8 +51,6 @@ const TradePage = (() => {
         $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
 
         ViewPopup.viewButtonOnClick('#contract_confirmation_container');
-        // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
-        State.set('ViewPopup.onClose', () => { GetTicks.request($('#underlying').val()); });
     };
 
     const reload = () => {
@@ -68,14 +65,13 @@ const TradePage = (() => {
         BinarySocket.clear();
         Defaults.clear();
         chartFrameCleanup();
-        State.remove('ViewPopup.onClose');
+        commonTrading.clean();
     };
 
     const onDisconnect = () => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
         chartFrameCleanup();
-        commonTrading.clean();
         onLoad();
     };
 

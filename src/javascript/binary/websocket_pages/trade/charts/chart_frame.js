@@ -1,6 +1,6 @@
 const MBDefaults  = require('../../mb_trade/mb_defaults');
 const getLanguage = require('../../../base/language').get;
-const localize    = require('../../../base/localize');
+const localize    = require('../../../base/localize').localize;
 const State       = require('../../../base/storage').State;
 const Url         = require('../../../base/url');
 const jpClient    = require('../../../common_functions/country_base').jpClient;

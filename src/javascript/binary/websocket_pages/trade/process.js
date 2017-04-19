@@ -78,8 +78,6 @@ const Process = (() => {
 
         commonTrading.showFormOverlay();
 
-        // forget the old tick id i.e. close the old tick stream
-        processForgetTicks();
         // get ticks for current underlying
         GetTicks.request(underlying);
 

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: French (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-04-13 11:53+0000\n"
-"Last-Translator: Arnaud Malfoy <arnaud.malfoy@gmail.com>\n"
+"PO-Revision-Date: 2017-04-14 14:49+0000\n"
+"Last-Translator: Chloe Chevreton <chloe-che@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -628,6 +628,9 @@ msgstr "Un niveau Bac+3 en informatique ou un niveau équivalent combinant forma
 msgid "A Bachelor's degree in Marketing, Business Administration, or related discipline"
 msgstr "Un diplôme de niveau licence en marketing, en gestion ou dans une discipline pertinente"
 
+msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
+msgstr ""
+
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "L'Agent de Paiement agit comme un intermédiaire entre le Client (notre client) et %1. L'Agent de Paiement prend en charge les dépôts et retraits pour les Clients souhaitant utiliser un service de paiement électronique spécifique ou une devise locale non disponible sur %1. Les frais de change sont à la charge du Client."
 
@@ -991,7 +994,9 @@ msgstr "Autoriser les Clients à utiliser les services de paiement électronique
 msgid "Alter the normal trading times for the affected market;"
 msgstr "Altérer les horaires habituels de trading pour le marché concerné ;"
 
-msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+#, fuzzy
+#| msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "Cependant, les clients enregistrés à la fois chez Binary (IOM) Ltd et chez Binary (Europe) Ltd peuvent, plutôt que de soumettre leur litige à l'organisme d'arbitrage IBAS, utiliser la plateforme de règlement en ligne des litiges (RLL) de la Commission européenne, disponible <a href='http://ec.europa.eu/odr' target='_blank'>ici</a>."
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
@@ -1522,7 +1527,9 @@ msgstr "La filiale japonaise Binary KK ouvre une antenne à Tokyo et lance le p
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "Binary Investments (Europe), la filiale maltaise de Binary, obtient une licence de catégorie 3 délivrée par l'Autorité maltaise des services financiers, autorisant la société à proposer des services d'investissement."
 
-msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+#, fuzzy
+#| msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
 msgstr "La plateforme Binary traite en moyenne 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> par seconde, 24h/24 et 7j/7"
 
 msgid "Binary.com"
@@ -3295,6 +3302,11 @@ msgstr "Ressources humaines"
 msgid "Hundreds of deposit and withdrawal options."
 msgstr "Des centaines d'options de dépôt et de retrait."
 
+#, fuzzy
+#| msgid "I declare I am not a Foreign Politically Exposed Person."
+msgid "I acknowledge that I am not a politically exposed person (PEP)."
+msgstr "Je déclare que je ne suis pas une personne politiquement exposée à l'étranger."
+
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "Je confirme que je négocierai les options binaires de gré à gré sur la base de mon propre jugement et j'endosse la responsabilité de toute perte susceptible de résulter d'une transaction, dans les limites permises par la valeur totale de mes actifs financiers."
 
@@ -3310,8 +3322,10 @@ msgstr "J'ai oublié mon mot de passe, que dois-je faire ?"
 msgid "I have a Real Money Account"
 msgstr "Je possède un compte réel"
 
-msgid "I have read and agree to the"
-msgstr "J'ai lu et j'accepte les"
+#, fuzzy
+#| msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
+msgid "I have read and agree to the %1terms and conditions%2 of the site."
+msgstr "J'ai lu et j'approuve les <a target=\"_blank\" href=\"%1\">conditions générales</a> du site."
 
 msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgstr "J'ai lu et j'approuve les <a target=\"_blank\" href=\"%1\">conditions générales</a> du site."
@@ -4406,13 +4420,13 @@ msgid "L. Event of Default"
 msgstr "L. Évènement de défaut"
 
 msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
-msgstr "Classes de langue pour réfugiés (LCFR) est un programme éducatif pour réfugiés organisé par \"Le Centre de Transformation par l'amour et le respect\" - une entreprise sociale engagée à une éducation de qualité pour le long terme. Ce programme enseigne l'Anglais, le Malais et le Français à des groupes d'âge allant des enfants aux adultes afin de leur assurer des aptitudes en matière de langues qui les aideront à trouver un emploi dans l'attente de leur rapatriement."
+msgstr "« Language Classes for Refugees » (LCFR) est un programme éducatif destiné aux personnes réfugiées et organisé par « Love & Respect Transformation Centre », une entreprise sociale engagée pour une éducation de qualité sur le long terme. Ce programme enseigne l'anglais, le malais et le français à des groupes d'enfants et d'adultes pour leur permettre d'acquérir des compétences linguistiques qui les aideront à trouver un emploi dans l'attente de leur rapatriement."
 
 msgid "Languages"
 msgstr "Langues"
 
 msgid "Languages Classes for Refugees (LCFR)"
-msgstr "Classes de langue pour Réfugiés (LCFR)"
+msgstr "Languages Classes for Refugees (LCFR)"
 
 msgid "Last Digit Prediction"
 msgstr "Prédiction sur le dernier chiffre"
@@ -5406,6 +5420,11 @@ msgstr "La propriété, le contenu et la responsabilité des sites Web de l'Affi
 
 msgid "P. Indemnification"
 msgstr "P. Exonération de responsabilité"
+
+#, fuzzy
+#| msgid "Explanation"
+msgid "PEP Declaration"
+msgstr "Explication"
 
 msgid "PM"
 msgstr ""
@@ -7444,7 +7463,9 @@ msgstr "Ce site Web contient des liens vers d'autres sites et peut contenir des 
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Ce site Web ne recueille pas de données personnelles vous concernant, sauf celles que vous nous fournissez pour des besoins spécifiques et en toute connaissance de cause. Il existe des fichiers nommés « cookies » qui peuvent être utilisés pour fournir des informations spécifiques depuis un site Web. Un cookie est un fichier de données qu'un site Web peut envoyer à votre navigateur, qui peut ensuite le stocker sur votre système. Vous pouvez configurer votre navigateur pour qu'il vous envoie une notification lorsque vous recevez un cookie, afin de pouvoir décider de l'accepter ou non. Si vous n'acceptez pas le cookie, vous devrez à nouveau saisir votre identifiant de connexion et votre mot de passe pour chaque formulaire requis pour entrer dans le système. Nous vous conseillons de choisir cette option si vous avez des doutes quant à la sécurité de votre navigateur personnel ou de votre PC."
 
-msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+#, fuzzy
+#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "Pour le Royaume-Uni et l'île de Man, les services proposés via ce site Web sont commercialisés par Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, British Isles, autorisés et réglementés par (1) la Gambling Supervision Commission de l'île de Man, îles britanniques (licence actuelle pour les services de jeux en ligne délivrée le 31 août 2012), et pour les clients du Royaume-Uni par (2) la Commission des jeux du Royaume-Uni <a href='%1' target='_blank'>afficher la licence</a>. Pour le reste de l'Europe, les services d'investissement proposés via ce site Web sont commercialisés par Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par l'Autorité maltaise des services financiers conformément à la licence de « fournisseur de services d'investissement » de catégorie 3 (licence n° IS/70156). Les services de jeu en ligne sont commercialisés par Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par (1) l'Autorité maltaise des jeux (licence n° MGA/CL2/118/2000 du 26 mai 2015), pour les clients du Royaume-Uni par (2) la Commission des jeux du Royaume-Uni <a href='%2' target='_blank'>afficher la licence</a>, et pour les clients basés en Irlande par (3) Revenue Commissioners (licence actuelle de bookmaker en ligne délivrée le 29 septembre 2015, licence n° 1010285).  Les services de ce site Web sont indisponibles dans certains pays, notamment aux États-Unis, au Costa Rica et à Hong-Kong et ne sont pas accessibles aux personnes âgées de moins de 18 ans."
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
@@ -8018,7 +8039,7 @@ msgid "We analyse your pending orders."
 msgstr "Nous analysons vos ordres en suspens."
 
 msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
-msgstr "Nous sommes toujours à la recherche d'œuvres de bienfaisance à la fois locale et petites où nos contributions peuvent avoir un impact direct. Si vous voulez discuter avec nous pour que nous aidions votre organisme de bienfaisance, contactez nous s'il vous plaît au %1."
+msgstr "Nous sommes toujours à la recherche de petites associations caritatives locales au sein desquelles nos contributions peuvent avoir un impact direct. Si vous souhaitez vous entretenir avec nous concernant les possibilités de soutien de votre association caritative, veuillez nous contacter à l'adresse %1."
 
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "Nous sommes agréés et régulés par l'autorité maltaise des services financiers (« MFSA ») conformément à la Loi sur les services d'investissement (droit maltais, chap. 370) (la « Loi ») nous autorisant à poursuivre des activités d'investissement. Nous sommes autorisés par la MFSA à négocier pour compte propre (c’est-à-dire à proposer des transactions et à agir en tant que contrepartie dans le cadre de transactions), et ce afin d'exécuter des ordres pour des tierces personnes. Les deux services sont proposés dans le cadre d'opérations sur instruments dérivés (principalement les options binaires) apparentés au marché des changes, aux indices, aux actions et aux autres produits ou actifs financiers (« Produits financiers »). Nous ne sommes pas autorisés à proposer ou à fournir des services de conseil en investissement ou tout autre service d'investissement autre que ceux décrits ci-dessus. Si vous estimez avoir besoin de conseils ou de services liés à l'investissement autres que ceux décrits ci-dessus, veuillez contacter un conseiller financier indépendant ou une entreprise proposant de tels services."
@@ -8551,7 +8572,9 @@ msgstr "Vous n'avez pas l'autorisation de stocker des Contenus quels qu'ils soie
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Vous ne pouvez prétendre à aucune forme de compensation ou de remboursement de la part de la Société, quelles que soient les circonstances."
 
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+#, fuzzy
+#| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Vous n'êtes pas résident d'un pays restrictif comme l’Afghanistan; Bosnie-Herzégovine; Costa Rica; tout pays de l'Union Européenne; Laos; Syrie; Ouganda; Vanuatu; Yémen; USA; Japon; Hong Kong; Costa Rica; Malaisie; Malte; Iran; Corée du Nord; Jersey; Irak; ou tout autre pays restreint comme l'Entreprise peut le décider de temps en temps à sa seule discrétion;"
 
 msgid "You are over 18 years of age;"
@@ -9097,9 +9120,6 @@ msgstr "net des profits réalisés crédités sur votre Compte Réel et des pert
 msgid "numbers"
 msgstr "chiffres"
 
-msgid "of the site."
-msgstr "sur le site."
-
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "afin d'obtenir l'heure exacte de la clôture de tous les contrats. Les autres sites web peuvent adopter une convention différente (par exemple, certains sites web choisissent 4 heures, heure de NY, ou 5 heures, heure de Londres). Par conséquent, les prix à l'ouverture, supérieurs, inférieurs et à la clôture affichés sur notre site web peuvent différer de ceux affichés sur d'autres sites web, du fait de leur convention sur l'heure de clôture du marché."
 
@@ -9114,9 +9134,6 @@ msgstr "espace"
 
 msgid "sublicense any of the rights granted under these Terms, other than as permitted by these Terms;"
 msgstr "ne céder aucune sous-licence ni aucun des droits octroyés en vertu des présentes Conditions, autrement que dans la mesure permise par les présentes Conditions ;"
-
-msgid "terms and conditions"
-msgstr "conditions générales"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
 msgstr "qui vont à l'encontre de toute loi, réglementations, instruments, ordonnances ou règles qui gouvernent les opérations de tout échange, le marché financier, ou l'environnement financier réglementaire; ou"
@@ -10847,6 +10864,18 @@ msgstr "Acceptation des conditions générales"
 
 msgid "Account Limits"
 msgstr "Limites du Compte"
+
+#~ msgid "I have read and agree to the"
+#~ msgstr "J'ai lu et j'accepte les"
+
+#~ msgid "of the site."
+#~ msgstr "sur le site."
+
+#~ msgid "terms and conditions"
+#~ msgstr "conditions générales"
+
+#~ msgid "read"
+#~ msgstr "lire"
 
 #~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
 #~ msgstr "Les contrats sur spread de %1 sont des contrats dérivés à effet de levier, dont la valeur est directement liée aux mouvements du marché sous-jacent. Les clients en position « longue » sur un marché haussier (ou en position « courte » sur un marché baissier) profitent de ces mouvements en engageant un investissement largement inférieur à celui que nécessiterait la spéculation sur le marché réel."
@@ -23685,9 +23714,6 @@ msgstr "Limites du Compte"
 
 #~ msgid "Password not given"
 #~ msgstr "Mot de passe non entré"
-
-#~ msgid "read"
-#~ msgstr "lire"
 
 #~ msgid "unspecified"
 #~ msgstr "non précisé"

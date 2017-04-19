@@ -58,7 +58,7 @@
                         <div class="gr-row">
                             <div class="gr-6 center-text border-right-bottom gr-padding-30">
                                 <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/transacts.svg') %]"/>
-                                <p>[% l("Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7") %]</p>
+                                <p>[% l("Binary's platform transacts on average 15 [_1]transactions[_2] per second, 24/7", "<a href='https://binarycom.statuspage.io/' target='_blank'>", "</a>") %]</p>
                             </div>
                             <div class="gr-6 center-text border-right-bottom gr-padding-30">
                                 <a href="[% request.url_for('/contact') %]">

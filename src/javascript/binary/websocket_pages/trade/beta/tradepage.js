@@ -6,7 +6,6 @@ const commonTrading             = require('../common');
 const chartFrameCleanup         = require('../charts/chart_frame').chartFrameCleanup;
 const displayCurrencies         = require('../currency');
 const Defaults                  = require('../defaults');
-const GetTicks                  = require('../get_ticks');
 const PortfolioInit             = require('../../user/account/portfolio/portfolio.init');
 const ViewPopup                 = require('../../user/view_popup/view_popup');
 const BinaryPjax                = require('../../../base/binary_pjax');
@@ -54,8 +53,6 @@ const TradePage_Beta = (() => {
         TradingAnalysis_Beta.bindAnalysisTabEvent();
 
         ViewPopup.viewButtonOnClick('#contract_confirmation_container');
-        // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
-        State.set('ViewPopup.onClose', () => { GetTicks.request($('#underlying').val()); });
     };
 
     const adjustAnalysisColumnHeight = () => {
@@ -175,14 +172,13 @@ const TradePage_Beta = (() => {
         Defaults.clear();
         PortfolioInit.onUnload();
         chartFrameCleanup();
-        State.remove('ViewPopup.onClose');
+        commonTrading.clean();
     };
 
     const onDisconnect = () => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
         chartFrameCleanup();
-        commonTrading.clean();
         onLoad();
     };
 

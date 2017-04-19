@@ -1,6 +1,7 @@
-const DigitInfo_Beta   = require('./charts/digit_info');
 const commonTrading    = require('../common');
 const showHighchart    = require('../charts/chart_frame').showHighchart;
+const getActiveTab     = require('../get_active_tab').getActiveTab_Beta;
+const GetTicks         = require('../get_ticks');
 const AssetIndexUI     = require('../../resources/asset_index/asset_index.ui');
 const TradingTimesUI   = require('../../resources/trading_times/trading_times.ui');
 const PortfolioInit    = require('../../user/account/portfolio/portfolio.init');
@@ -90,15 +91,11 @@ const TradingAnalysis_Beta = (() => {
             case 'tab_last_digit': {
                 const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
                 const tick = $('#tick_count').val() || 100;
-                BinarySocket.send({ ticks_history: underlying, end: 'latest', count: tick.toString() }, {
-                    callback: (response) => {
-                        const type = response.msg_type;
-                        if (type === 'tick') {
-                            DigitInfo_Beta.updateChart(response);
-                        } else if (type === 'history') {
-                            DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
-                        }
-                    } });
+                GetTicks.request('', {
+                    ticks_history: underlying,
+                    end          : 'latest',
+                    count        : tick.toString(),
+                });
                 break;
             }
             case 'tab_asset_index':
@@ -145,21 +142,6 @@ const TradingAnalysis_Beta = (() => {
             classes.add('selectedTab');
             classes.remove('invisible');
         }
-    };
-
-    /*
-     * get the current active tab if its visible i.e allowed for current parameters
-     */
-    const getActiveTab = () => {
-        let selected_tab = sessionStorage.getItem('currentAnalysisTab_Beta') || (State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation');
-        const selected_element = document.getElementById(selected_tab);
-
-        if (selected_element && selected_element.classList.contains('invisible')) {
-            selected_tab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
-            sessionStorage.setItem('currentAnalysisTab_Beta', selected_tab);
-        }
-
-        return selected_tab;
     };
 
     /*

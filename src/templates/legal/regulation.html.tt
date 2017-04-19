@@ -152,7 +152,7 @@
                 <p>[% l("UK and Manx residents will have their account opened with Binary (IOM) Ltd.") %]</p>
                 <p><strong>[% l("Regulator:") %]</strong></p>
                 <div class="gr-2 gr-4-m gr-centered gr-padding-10">
-                    <a href="http://www.gov.im/gambling/" target="_blank">
+                    <a href="https://www.gov.im/gambling/" target="_blank">
                         <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]">
                     </a>
                 </div>
