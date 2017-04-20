@@ -33,7 +33,7 @@
     <div class="gr-3 gr-hide-m gr-no-gutter-left sidebar-container">
         <div class="sidebar">
             [% INCLUDE list id='sidebar-nav' items=[
-                { class='selected', id='sidebar-link-section-1', href='?section=tac', text=l("Terms and Conditions") },
+                { id='sidebar-link-section-1', href='?section=tac',                 text=l("Terms and Conditions"), class='selected' },
                 { id='sidebar-link-section-2', href='?section=trading-rules',       text=l("Trading Rules") },
                 { id='sidebar-link-section-3', href='?section=deposit-bonus',       text=l("Deposit Bonus") },
                 { id='sidebar-link-section-4', href='?section=affiliate',           text=l("Affiliate Program") },

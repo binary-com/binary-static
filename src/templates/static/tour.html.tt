@@ -6,7 +6,7 @@
           [% l("First, define your position...") %]
         </h1>
         <p>
-          [% l("When you start trading with Binary.com, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when.") %]
+          [% l("When you start trading with [_1], you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when.", website_name) %]
         </p>
         <a class="button ja-hide" href="[% request.url_for('trading') %]">
           <img class="responsive ja-hide" id="new-trader-icon" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>

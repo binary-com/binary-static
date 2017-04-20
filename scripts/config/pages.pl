@@ -20,7 +20,7 @@ sub all_pages {
         ['regulation',                 'legal/regulation',             'default',    'Regulation'],
         ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate',            'ja'],
         ['affiliate/signup-jp',        'japan/affiliates/signup',      'default',    'Affiliate',            'NOT-ja,en'],
-        ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],
+        ['user/browser-support',       'misc/browser_support',         'default',    'Login trouble'],
         ['endpoint',                   'misc/endpoint',                'default',    'Endpoint'],
         ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents',           'ja'],
         ['cashier',                    'cashier/index',                'default',    'Cashier'],

@@ -51,7 +51,7 @@
 <div class="static_full">
     <h1 class="center-text">[% l("Regulatory Information") %]</h1>
     <div class="gr-parent gr-padding-30">
-        <p class="center-text">[% l("Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements.") %]</p>
+        <p class="center-text">[% l("[_1] is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements.", website_name) %]</p>
 
         [% INCLUDE global/separator_line.html.tt class='gr-parent gr-padding-20' invisible=1 %]
     </div>
@@ -74,7 +74,7 @@
         <div class="gr-padding-30 gr-12" id="accordion">
             <h3 aria-expanded="true" aria-selected="true">[% l("EU Passport Rights") %]</h3>
             <div>
-                <p>[% l("Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to Binary.com via EU passporting rights - freedom to provide cross border services.") %]</p>
+                <p>[% l("Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to [_1] via EU passporting rights - freedom to provide cross border services.", website_name) %]</p>
                 <div class="center-text gr-padding-10 gr-12">
                     <img class="responsive" src="[% request.url_for('images/pages/regulation/map.svg') %]" usemap="#planetmap">
                 </div>
@@ -138,12 +138,12 @@
 
     [% WRAPPER box header=l("Binary (C.R.) S.A.") %]
         <p>[% l("Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A.") %]</p>
-        <p>[% l("Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system.") %]</p>
+        <p>[% l("[_1] is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system.", website_name) %]</p>
     [% END %]
 
     [% WRAPPER box header=l("Binary (V) Ltd") last=1 %]
         <p>[% l("Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf\" target=\"_blank\">view licence</a>.") %]</p>
-        <p>[% l("Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu.") %]</p>
+        <p>[% l("Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. [_1] is not available in the Republic of Vanuatu.", website_name) %]</p>
         [% INCLUDE regulator_text %]
         [% INCLUDE regulator_image href="https://www.vfsc.vu/" image='images/pages/regulation/vanuatu-logo.svg' %]
     [% END %]

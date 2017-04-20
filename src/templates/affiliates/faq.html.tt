@@ -1,14 +1,11 @@
-[% PROCESS components/elements.html.tt %]
-
 <div class="gr-padding-20 gr-parent">
     <h3>[% l("What is the definition of a 'client'?") %]</h3>
     <p>[% l("A client is someone who has been referred through one of your marketing tools and who has deposited money into their [_1] account. They must fulfill the following criteria:", broker_name) %]</p>
-
-    [% INCLUDE list class='checked' items=[
-        { text=l("Have not previously been a [_1] customer.", broker_name) },
-        { text=l("Have made the minimum deposit.") },
-        { text=l("Are over 18.") },
-    ] %]
+    <ul class="checked">
+        <li>[% l("Have not previously been a [_1] customer.", broker_name) %]</li>
+        <li>[% l("Have made the minimum deposit.") %]</li>
+        <li>[% l("Are over 18.") %]</li>
+    </ul>
 </div>
 
 <h3>[% l("Who can be a client on the [_1] platform?", broker_name) %]</h3>
@@ -32,13 +29,13 @@
 
     <div class="gr-padding-20 gr-parent">
         <h3>[% l("Why should I become an affiliate with [_1]?", broker_name) %]</h3>
-        [% INCLUDE list class='checked' items=[
-            { text=l("it is the leading binary option trading platform.") },
-            { text=l("it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian.") },
-            { text=l("the platform is 100% web based making it instantly available for clients.") },
-            { text=l("the platform is user friendly and accessible to all levels of traders.") },
-            { text=l("the [_1] affiliate program is competitive and adaptive to your unique requirements.", broker_name) },
-        ] %]
+        <ul class="checked">
+            <li>[% l("it is the leading binary option trading platform.") %]</li>
+            <li>[% l("it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian.") %]</li>
+            <li>[% l("the platform is 100% web based making it instantly available for clients.") %]</li>
+            <li>[% l("the platform is user friendly and accessible to all levels of traders.") %]</li>
+            <li>[% l("the [_1] affiliate program is competitive and adaptive to your unique requirements.", broker_name) %]</li>
+        </ul>
         <p>[% l("If you want to profit from this high demand product then your best option is to partner with the market leader. [_1] has been in the business for over 15 years, and has been successful ever since.", broker_name) %]</p>
     </div>
 
@@ -109,15 +106,15 @@
 
     <h3>[% l("Can you customize a banner for my site?") %]</h3>
     <p>[% l("Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:") %]</p>
-    [% INCLUDE list class='checked' items=[
-        { text=l("Pixel size.") },
-        { text=l("File format.") },
-        { text=l("Desired language.") },
-        { text=l("The URL of the site on which the banner is going to appear.") },
-        { text=l("Banner placement.") },
-        { text=l("Specific colors the banner should include.") },
-        { text=l("Specific message the banner should include.") },
-    ] %]
+    <ul class="checked">
+        <li>[% l("Pixel size.") %]</li>
+        <li>[% l("File format.") %]</li>
+        <li>[% l("Desired language.") %]</li>
+        <li>[% l("The URL of the site on which the banner is going to appear.") %]</li>
+        <li>[% l("Banner placement.") %]</li>
+        <li>[% l("Specific colors the banner should include.") %]</li>
+        <li>[% l("Specific message the banner should include.") %]</li>
+    </ul>
 </div>
 
 <div class="gr-padding-20 gr-parent">

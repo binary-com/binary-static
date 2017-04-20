@@ -1,5 +1,3 @@
-[% PROCESS components/elements.html.tt %]
-
 <p>[% l('Are you an Investment professional?') %]</p>
 <p>[% l('Do you run a website?') %]</p>
 <p>[% l('Do you own a newsletter or a mailing list?') %]</p>
@@ -9,13 +7,13 @@
 
 <div class="gr-padding-20">
     <h2>[% l('Are your site visitors interested in:') %]</h2>
-    [% INCLUDE list class="checked" items=[
-        { text=l('Learning to trade online?') },
-        { text=l('Discovering an easy, low-risk, flexible and, award-winning platform?') },
-        { text=l('Participating in the forex, stocks or commodities markets?') },
-        { text=l('Earning a second income in their spare time?') },
-        { text=l('Earning tax free trading profits*?') },
-    ] %]
+    <ul class="checked">
+        <li>[% l('Learning to trade online?') %]</li>
+        <li>[% l('Discovering an easy, low-risk, flexible and, award-winning platform?') %]</li>
+        <li>[% l('Participating in the forex, stocks or commodities markets?') %]</li>
+        <li>[% l('Earning a second income in their spare time?') %]</li>
+        <li>[% l('Earning tax free trading profits*?') %]</li>
+    </ul>
     <p>[% l('We will provide you with all the tools you need to turn your traffic into a lucrative revenue stream') %]</p>
     <p><em>[% l('* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor.') %]</em></p>
 </div>
@@ -25,17 +23,16 @@
 <div class="gr-padding-20">
     <h2>[% l('Why become an Affiliate?') %]</h2>
     <p><em>[% l('"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I\'ve found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry." - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>.') %]</em></p>
-
-    [% INCLUDE list class="checked" items=[
-        { text=l("Long-term partnership with the leading financial trading service") },
-        { text=l('Great pay-outs. Earn up to 35%') },
-        { text=l('High conversions and customer value') },
-        { text=l('Multi-lingual and multi-currency support') },
-        { text=l('The best promotional tools and robust online reporting') },
-        { text=l('A dedicated affiliate team to provide you with the best service possible') },
-        { text=l('Award-winning, patented financial trading platform') },
-        { text=l('You will be provided with all the tools, to turn your traffic into a lucrative revenue stream') },
-    ] %]
+    <ul class="checked">
+        <li>[% l("Long-term partnership with the leading financial trading service") %]</li>
+        <li>[% l('Great pay-outs. Earn up to 35%') %]</li>
+        <li>[% l('High conversions and customer value') %]</li>
+        <li>[% l('Multi-lingual and multi-currency support') %]</li>
+        <li>[% l('The best promotional tools and robust online reporting') %]</li>
+        <li>[% l('A dedicated affiliate team to provide you with the best service possible') %]</li>
+        <li>[% l('Award-winning, patented financial trading platform') %]</li>
+        <li>[% l('You will be provided with all the tools, to turn your traffic into a lucrative revenue stream') %]</li>
+    </ul>
 </div>
 
 <div class="gr-padding-20">

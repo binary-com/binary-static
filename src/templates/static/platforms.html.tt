@@ -24,7 +24,7 @@
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/trading-page.png') %]" />
                     </div>
                     <div class="gr-padding-30">
-                        <h3>[% l("Binary.com") %]</h3>
+                        <h3>[% website_name %]</h3>
                         <strong>[% l("Premier binary options trading platform") %]</strong>
                         <p>
                             [% l("Trade in the world’s financial markets with a simple and user-friendly online platform.") %]
@@ -153,7 +153,7 @@
                             <tbody>
                                 <tr>
                                     <th>&nbsp;</th>
-                                    <td>[% l("Binary.com") %]</td>
+                                    <td>[% website_name %]</td>
                                     <td>[% l("Next-Gen") %]</td>
                                     <td>[% l("Tick Trade") %]</td>
                                     <td>[% l("MetaTrader 5") %]</td>
@@ -291,7 +291,7 @@
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/tradingview.png') %]" />
                     </div>
                     <div class="gr-padding-30">
-                        <h3>[% l("TradingView for Binary.com") %]</h3>
+                        <h3>[% l("TradingView for [_1]", website_name) %]</h3>
                         <strong>[% l("Powerful charting and technical analysis") %]</strong>
                         <p>
                             [% l("Analyse the markets with an extensive range of indicators, price bands, and overlays.") %]

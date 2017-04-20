@@ -81,10 +81,6 @@ fieldset {
     border: 1px solid $COLOR_GRAY;
     padding: 5px;
     margin-bottom: 10px;
-    &#formlayout { /* TODO: remove all occurrences: no point in using fieldset when we hide its border */
-        background: none;
-        border: 0;
-    }
     legend {
         color: $COLOR_DARK_GRAY;
         padding: 0 0.8em;

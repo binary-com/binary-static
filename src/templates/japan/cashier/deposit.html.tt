@@ -18,7 +18,7 @@
             [{ text=l("{JAPAN ONLY}Account Name") },   { text=l("{JAPAN ONLY}Binary K.K. Customer Account") }],
         ] %]
     </table>
-    <p>[% l("{JAPAN ONLY}Please make sure you add your Binary.com account ID to the Remitter's account name, or it will delay crediting the funds to your account:") %]</p>
+    <p>[% l("{JAPAN ONLY}Please make sure you add your [_1] account ID to the Remitter's account name, or it will delay crediting the funds to your account:", website_name) %]</p>
     <p>[% l("{JAPAN ONLY}Remitter's Name:") %] <span id="name_id"></span></p>
     <p>[% l("{JAPAN ONLY}Please note we can only accept payments from your designated bank account and no other account in your name.") %]</p>
     <p>[% l("{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support.") %]</p>

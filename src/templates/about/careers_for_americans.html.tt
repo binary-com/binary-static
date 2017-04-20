@@ -25,18 +25,18 @@
                 <p class="center-text gr-padding-10">Our people need to possess certain attributes, regardless of department. We want someone who loves to:</p>
                 <div class="gr-row">
                     <div class="gr-6 gr-12-m">
-                        [% INCLUDE list class='checked' items=[
-                            { text="Give their best every day." },
-                            { text="Team up with talented people to make an impact." },
-                            { text="Get things done in a no-nonsense manner." },
-                        ] %]
+                        <ul class="checked">
+                            <li>[% "Give their best every day." %]</li>
+                            <li>[% "Team up with talented people to make an impact." %]</li>
+                            <li>[% "Get things done in a no-nonsense manner." %]</li>
+                        </ul>
                     </div>
                     <div class="gr-6 gr-12-m">
-                        [% INCLUDE list class='checked' items=[
-                            { text="Work without bureaucracy and hierarchy." },
-                            { text="Have the latest technologies at their disposal." },
-                            { text="Learn and improve, day in and day out." },
-                        ] %]
+                        <ul class="checked">
+                            <li>[% "Work without bureaucracy and hierarchy." %]</li>
+                            <li>[% "Have the latest technologies at their disposal." %]</li>
+                            <li>[% "Learn and improve, day in and day out." %]</li>
+                        </ul>
                     </div>
                 </div>
             </div>

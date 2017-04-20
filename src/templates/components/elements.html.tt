@@ -46,11 +46,11 @@
 [% END %]
 
 [% BLOCK list %]
-    <[% IF unordered %]ol[% ELSE %]ul[% END %] [% IF class %] class="[% class %]"[% END %][% IF id %] id="[% id %]"[% END %]>
+    <ul[% IF class %] class="[% class %]"[% END %][% IF id %] id="[% id %]"[% END %]>
         [% FOREACH item IN items %]
             [% INCLUDE li class=item.class id=item.id href=item.href param=item.param target=item.target text=item.text header=item.header %]
         [% END %]
-    </[% IF unordered %]ol[% ELSE %]ul[% END %]>
+    </ul>
 [% END %]
 
 [% BLOCK select %]
@@ -68,9 +68,32 @@
         [% FOREACH tr IN trs %]
             <tr>
                 [% FOREACH td IN tr %]
+                    [% IF td.header %]
+                    <th[% IF td.balloon %] data-balloon="[% td.balloon %]"[% END %]>[% td.header %]</th>
+                    [% ELSE %]
                     <td>[% td.text %]</td>
+                    [% END %]
                 [% END %]
             </tr>
         [% END %]
     </tbody>
+[% END %]
+
+[% BLOCK table %]
+    [% IF scroll %]<div class="table-container">[% END %]
+    <table>
+        [% IF data.thead %]
+        <thead>
+            [% FOREACH row IN data.thead %]
+                <tr>
+                    [% FOREACH th IN row %]
+                        <th>[% th.text %]</th>
+                    [% END %]
+                </tr>
+            [% END %]
+        </thead>
+        [% END %]
+        [% INCLUDE tbody trs=data.tbody %]
+    </table>
+    [% IF scroll %]</div>[% END %]
 [% END %]

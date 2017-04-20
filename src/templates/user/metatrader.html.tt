@@ -103,7 +103,7 @@
         </form>
 
         <form id="frm_deposit">
-            <p>[% l('Transfer funds from Binary.com account into your MT5 account:') %]</p>
+            <p>[% l('Transfer funds from [_1] account into your MT5 account:', website_name) %]</p>
             [% INCLUDE form_row type='label' id='lbl_from'   label=l("Transfer from") %]
             [% INCLUDE form_row type='label' id='lbl_to'     label=l("Deposit into") %]
             [% INCLUDE form_row type='text'  id='txt_amount' label=l("Amount") input_prefix='&#36; ' attributes='maxlength="10"' %]
@@ -112,7 +112,7 @@
         </form>
 
         <form id="frm_withdrawal">
-            <p>[% l('Transfer funds from your MT5 account into your Binary.com account:') %]</p>
+            <p>[% l('Transfer funds from your MT5 account into your [_1] account:', website_name) %]</p>
             [% INCLUDE form_row type='label'    id='lbl_from'      label=l("Withdraw from") %]
             [% INCLUDE form_row type='label'    id='lbl_to'        label=l("Transfer into") %]
             [% INCLUDE form_row type='password' id='txt_main_pass' label=l("MT5 main password") %]
