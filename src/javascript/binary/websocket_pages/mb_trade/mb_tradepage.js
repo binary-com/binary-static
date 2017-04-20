@@ -1,13 +1,13 @@
-const MBContract           = require('./mb_contract');
-const MBDisplayCurrencies  = require('./mb_currency');
-const MBTradingEvents      = require('./mb_event');
-const MBPrice              = require('./mb_price');
-const MBProcess            = require('./mb_process');
-const TradingAnalysis      = require('../trade/analysis');
-const chartFrameCleanup    = require('../trade/charts/chart_frame').chartFrameCleanup;
-const localize             = require('../../base/localize').localize;
-const State                = require('../../base/storage').State;
-const JapanPortfolio       = require('../../../binary_japan/trade_japan/portfolio');
+import MBContract from './mb_contract';
+import MBDisplayCurrencies from './mb_currency';
+import MBTradingEvents from './mb_event';
+import MBPrice from './mb_price';
+import MBProcess from './mb_process';
+import TradingAnalysis from '../trade/analysis';
+import { chartFrameCleanup } from '../trade/charts/chart_frame';
+import { localize } from '../../base/localize';
+import { State } from '../../base/storage';
+import JapanPortfolio from '../../../binary_japan/trade_japan/portfolio';
 
 const MBTradePage = (() => {
     'use strict';

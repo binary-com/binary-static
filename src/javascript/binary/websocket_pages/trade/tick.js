@@ -1,8 +1,6 @@
-const moment               = require('moment');
-const countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
-const displayPriceMovement = require('./common_independent').displayPriceMovement;
-const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
-const isVisible            = require('../../common_functions/common_functions').isVisible;
+import moment from 'moment';
+import { countDecimalPlaces, displayPriceMovement } from './common_independent';
+import { elementTextContent, isVisible } from '../../common_functions/common_functions';
 
 /*
  * Tick object handles all the process/display related to tick streaming
@@ -78,29 +76,38 @@ const Tick = (() => {
     const displayIndicativeBarrier = () => {
         const current_tick = Tick.quote();
         const unit = document.getElementById('duration_units');
-        const indicative_barrier_tooltip      = document.getElementById('indicative_barrier_tooltip');
+        const indicative_barrier_tooltip = document.getElementById('indicative_barrier_tooltip');
         const indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
-        const indicative_low_barrier_tooltip  = document.getElementById('indicative_low_barrier_tooltip');
-        const barrier_element      = document.getElementById('barrier');
+        const indicative_low_barrier_tooltip = document.getElementById('indicative_low_barrier_tooltip');
+        const barrier_element = document.getElementById('barrier');
         const high_barrier_element = document.getElementById('barrier_high');
-        const low_barrier_element  = document.getElementById('barrier_low');
+        const low_barrier_element = document.getElementById('barrier_low');
         let value;
 
         const end_time = document.getElementById('expiry_date');
-        if (unit && (!isVisible(unit) || unit.value !== 'd') && current_tick && !isNaN(current_tick) &&
-            (end_time && (!isVisible(end_time) || moment(end_time.getAttribute('data-value')).isBefore(moment().add(1, 'day'), 'day')))) {
+        if (
+            unit &&
+            (!isVisible(unit) || unit.value !== 'd') &&
+            current_tick &&
+            !isNaN(current_tick) &&
+            (end_time &&
+                (!isVisible(end_time) ||
+                    moment(end_time.getAttribute('data-value')).isBefore(moment().add(1, 'day'), 'day')))
+        ) {
             const decimal_places = countDecimalPlaces(current_tick);
             if (indicative_barrier_tooltip && isVisible(indicative_barrier_tooltip)) {
                 const barrier_value = isNaN(parseFloat(barrier_element.value)) ? 0 : parseFloat(barrier_element.value);
-                indicative_barrier_tooltip.textContent =
-                    (parseFloat(current_tick) + barrier_value).toFixed(decimal_places);
+                indicative_barrier_tooltip.textContent = (parseFloat(current_tick) + barrier_value).toFixed(
+                    decimal_places,
+                );
             }
 
             if (indicative_high_barrier_tooltip && isVisible(indicative_high_barrier_tooltip)) {
                 value = parseFloat(high_barrier_element.value);
                 value = isNaN(value) ? 0 : value;
-                indicative_high_barrier_tooltip.textContent =
-                    (parseFloat(current_tick) + value).toFixed(decimal_places);
+                indicative_high_barrier_tooltip.textContent = (parseFloat(current_tick) + value).toFixed(
+                    decimal_places,
+                );
             }
 
             if (indicative_low_barrier_tooltip && isVisible(indicative_low_barrier_tooltip)) {
@@ -133,7 +140,9 @@ const Tick = (() => {
         epoch       : () => epoch,
         errorMessage: () => error_message,
         spots       : () => spots,
-        setQuote    : (q) => { quote = q; },
+        setQuote    : (q) => {
+            quote = q;
+        },
     };
 })();
 

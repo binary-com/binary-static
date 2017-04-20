@@ -1,7 +1,7 @@
-const MBDefaults       = require('../../mb_trade/mb_defaults');
-const Defaults         = require('../../trade/defaults');
-const State            = require('../../../base/storage').State;
-const getHighestZIndex = require('../../../base/utility').getHighestZIndex;
+import MBDefaults from '../../mb_trade/mb_defaults';
+import Defaults from '../../trade/defaults';
+import { State } from '../../../base/storage';
+import { getHighestZIndex } from '../../../base/utility';
 
 const ViewPopupUI = (() => {
     'use strict';
@@ -23,12 +23,16 @@ const ViewPopupUI = (() => {
             $container = null;
         }
         if (!$container) {
-            const $con = $('<div class="inpage_popup_container" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>');
+            const $con = $(
+                '<div class="inpage_popup_container" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>',
+            );
             $con.hide();
             const onClose = () => {
                 cleanup();
             };
-            $con.find('a.close').on('click', () => { onClose(); });
+            $con.find('a.close').on('click', () => {
+                onClose();
+            });
             $(document).on('keydown', (e) => {
                 if (e.which === 27) onClose();
             });
@@ -43,7 +47,9 @@ const ViewPopupUI = (() => {
         clearTimer();
         closeContainer();
         init();
-        $(window).off('resize', () => { repositionConfirmation(); });
+        $(window).off('resize', () => {
+            repositionConfirmation();
+        });
     };
 
     const forgetStreams = () => {
@@ -113,7 +119,9 @@ const ViewPopupUI = (() => {
         con.show();
         // $('html').addClass('no-scroll');
         $(document.body).append($('<div/>', { class: 'popup_page_overlay' }));
-        $('.popup_page_overlay').click(() => { container().find('a.close').click(); });
+        $('.popup_page_overlay').click(() => {
+            container().find('a.close').click();
+        });
         con.draggable({
             stop: () => {
                 repositionConfirmationOnDrag();
@@ -123,7 +131,9 @@ const ViewPopupUI = (() => {
         });
         $(dragHandle).disableSelection();
         repositionConfirmation();
-        $(window).resize(() => { repositionConfirmation(); });
+        $(window).resize(() => {
+            repositionConfirmation();
+        });
         return con;
     };
 
@@ -132,11 +142,17 @@ const ViewPopupUI = (() => {
         const offset = con.offset();
         const win_ = $(window);
         // top
-        if (offset.top < win_.scrollTop()) { con.offset({ top: win_.scrollTop() }); }
+        if (offset.top < win_.scrollTop()) {
+            con.offset({ top: win_.scrollTop() });
+        }
         // left
-        if (offset.left < 0) { con.offset({ left: 0 }); }
+        if (offset.left < 0) {
+            con.offset({ left: 0 });
+        }
         // right
-        if (offset.left > win_.width() - con.width()) { con.offset({ left: win_.width() - con.width() }); }
+        if (offset.left > win_.width() - con.width()) {
+            con.offset({ left: win_.width() - con.width() });
+        }
     };
 
     const repositionConfirmation = (x, y) => {
@@ -144,17 +160,19 @@ const ViewPopupUI = (() => {
         const win_ = $(window);
         let x_min = 0,
             y_min = 500;
-        if (win_.width() < 767) { // To be responsive, on mobiles and phablets we show popup as full screen.
+        if (win_.width() < 767) {
+            // To be responsive, on mobiles and phablets we show popup as full screen.
             x_min = 0;
             y_min = 0;
         }
         if (x === undefined) {
-            x = Math
-                .max(Math.floor((win_.width() - win_.scrollLeft() - con.width()) / 2), x_min) + win_.scrollLeft();
+            x = Math.max(Math.floor((win_.width() - win_.scrollLeft() - con.width()) / 2), x_min) + win_.scrollLeft();
         }
         if (y === undefined) {
             y = Math.min(Math.floor((win_.height() - con.height()) / 2), y_min) + win_.scrollTop();
-            if (y < win_.scrollTop()) { y = win_.scrollTop(); }
+            if (y < win_.scrollTop()) {
+                y = win_.scrollTop();
+            }
         }
         con.offset({ left: x, top: y });
         repositionConfirmationOnDrag();

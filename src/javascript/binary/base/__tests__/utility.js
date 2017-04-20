@@ -1,5 +1,5 @@
-const expect  = require('chai').expect;
-const utility = require('../utility');
+import { expect } from 'chai';
+import utility from '../utility';
 
 describe('template', () => {
     it('works as expected', () => {

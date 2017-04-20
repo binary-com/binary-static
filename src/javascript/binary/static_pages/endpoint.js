@@ -1,5 +1,4 @@
-const getAppId     = require('../../config').getAppId;
-const getSocketURL = require('../../config').getSocketURL;
+import { getAppId, getSocketURL } from '../../config';
 
 const Endpoint = (() => {
     'use strict';
@@ -14,8 +13,12 @@ const Endpoint = (() => {
             e.preventDefault();
             const server_url = $server_url.val().trim().toLowerCase();
             const app_id = $app_id.val().trim();
-            if (server_url) localStorage.setItem('config.server_url', server_url);
-            if (app_id && !isNaN(app_id)) localStorage.setItem('config.app_id', parseInt(app_id));
+            if (server_url) {
+                localStorage.setItem('config.server_url', server_url);
+            }
+            if (app_id && !isNaN(app_id)) {
+                localStorage.setItem('config.app_id', parseInt(app_id));
+            }
             window.location.reload();
         });
 

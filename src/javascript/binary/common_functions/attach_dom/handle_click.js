@@ -1,5 +1,5 @@
-const MBPrice   = require('../../websocket_pages/mb_trade/mb_price');
-const CashierJP = require('../../../binary_japan/cashier');
+import MBPrice from '../../websocket_pages/mb_trade/mb_price';
+import CashierJP from '../../../binary_japan/cashier';
 
 const HandleClick = (param, ...values) => {
     switch (param) {

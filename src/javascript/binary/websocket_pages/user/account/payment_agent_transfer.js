@@ -1,7 +1,7 @@
-const PaymentAgentTransferUI = require('./payment_agent_transfer/payment_agent_transfer.ui');
-const Client                 = require('../../../base/client');
-const State                  = require('../../../base/storage').State;
-const FormManager            = require('../../../common_functions/form_manager');
+import PaymentAgentTransferUI from './payment_agent_transfer/payment_agent_transfer.ui';
+import Client from '../../../base/client';
+import { State } from '../../../base/storage';
+import FormManager from '../../../common_functions/form_manager';
 
 const PaymentAgentTransfer = (() => {
     const hidden_class = 'invisible';
@@ -14,7 +14,12 @@ const PaymentAgentTransfer = (() => {
     const onLoad = () => {
         PaymentAgentTransferUI.initValues();
         BinarySocket.wait('get_settings', 'balance').then(() => {
-            is_authenticated_payment_agent = State.get(['response', 'get_settings', 'get_settings', 'is_authenticated_payment_agent']);
+            is_authenticated_payment_agent = State.get([
+                'response',
+                'get_settings',
+                'get_settings',
+                'is_authenticated_payment_agent',
+            ]);
             if (is_authenticated_payment_agent) {
                 init();
             } else {
@@ -42,15 +47,45 @@ const PaymentAgentTransfer = (() => {
 
         common_request_fields = [
             { request_field: 'paymentagent_transfer', value: 1 },
-            { request_field: 'currency',              value: currency },
+            { request_field: 'currency', value: currency },
         ];
 
-        FormManager.init(form_id, [
-            { selector: '#client_id', validations: ['req', ['regular', { regex: /^\w+\d+$/, message: 'Please enter a valid Login ID.' }]], request_field: 'transfer_to' },
-            { selector: '#amount',    validations: ['req', ['number', { type: 'float', decimals: '1, 2', min: 10, max: 2000 }]] },
+        FormManager.init(
+            form_id,
+            [
+                {
+                    selector   : '#client_id',
+                    validations: [
+                        'req',
+                        [
+                            'regular',
+                            {
+                                regex  : /^\w+\d+$/,
+                                message: 'Please enter a valid Login ID.',
+                            },
+                        ],
+                    ],
+                    request_field: 'transfer_to',
+                },
+                {
+                    selector   : '#amount',
+                    validations: [
+                        'req',
+                        [
+                            'number',
+                            {
+                                type    : 'float',
+                                decimals: '1, 2',
+                                min     : 10,
+                                max     : 2000,
+                            },
+                        ],
+                    ],
+                },
 
-            { request_field: 'dry_run', value: 1 },
-        ].concat(common_request_fields));
+                { request_field: 'dry_run', value: 1 },
+            ].concat(common_request_fields),
+        );
 
         FormManager.handleSubmit({
             form_selector       : form_id,
@@ -105,8 +140,12 @@ const PaymentAgentTransfer = (() => {
         if (response.paymentagent_transfer === 2) {
             PaymentAgentTransferUI.hideFirstForm();
             PaymentAgentTransferUI.showConfirmation();
-            PaymentAgentTransferUI.updateConfirmView(response.client_to_full_name, req.transfer_to.toUpperCase(),
-                req.amount, req.currency);
+            PaymentAgentTransferUI.updateConfirmView(
+                response.client_to_full_name,
+                req.transfer_to.toUpperCase(),
+                req.amount,
+                req.currency,
+            );
             initConfirm(req);
             return;
         }
@@ -114,17 +153,25 @@ const PaymentAgentTransfer = (() => {
         if (response.paymentagent_transfer === 1) {
             PaymentAgentTransferUI.hideFirstForm();
             PaymentAgentTransferUI.showDone();
-            PaymentAgentTransferUI.updateDoneView(Client.get('loginid'), req.transfer_to.toUpperCase(), req.amount, req.currency);
+            PaymentAgentTransferUI.updateDoneView(
+                Client.get('loginid'),
+                req.transfer_to.toUpperCase(),
+                req.amount,
+                req.currency,
+            );
         }
     };
 
     const initConfirm = (req) => {
         const confirm_form_id = '#frm_confirm_transfer';
 
-        FormManager.init(confirm_form_id, [
-            { request_field: 'transfer_to', value: req.transfer_to },
-            { request_field: 'amount',      value: req.amount },
-        ].concat(common_request_fields));
+        FormManager.init(
+            confirm_form_id,
+            [
+                { request_field: 'transfer_to', value: req.transfer_to },
+                { request_field: 'amount', value: req.amount },
+            ].concat(common_request_fields),
+        );
 
         FormManager.handleSubmit({
             form_selector       : confirm_form_id,

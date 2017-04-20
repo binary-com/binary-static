@@ -1,14 +1,13 @@
-const BinaryPjax          = require('./binary_pjax');
-const Client              = require('./client');
-const GTM                 = require('./gtm');
-const localize            = require('./localize').localize;
-const Login               = require('./login');
-const State               = require('./storage').State;
-const urlFor              = require('./url').urlFor;
-const isEmptyObject       = require('./utility').isEmptyObject;
-const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
-const jpClient            = require('../common_functions/country_base').jpClient;
-const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
+import BinaryPjax from './binary_pjax';
+import Client from './client';
+import GTM from './gtm';
+import { localize } from './localize';
+import Login from './login';
+import { State } from './storage';
+import { urlFor } from './url';
+import { isEmptyObject } from './utility';
+import { checkClientsCountry, jpClient } from '../common_functions/country_base';
+import MetaTrader from '../websocket_pages/user/metatrader/metatrader';
 
 const Header = (() => {
     'use strict';
@@ -27,7 +26,7 @@ const Header = (() => {
 
     const bindClick = () => {
         $('#logo').off('click').on('click', () => {
-            BinaryPjax.load(urlFor(Client.isLoggedIn() ? (jpClient() ? 'multi_barriers_trading' : 'trading') : ''));
+            BinaryPjax.load(urlFor(Client.isLoggedIn() ? jpClient() ? 'multi_barriers_trading' : 'trading' : ''));
         });
         $('#btn_login').off('click').on('click', (e) => {
             e.preventDefault();
@@ -46,33 +45,37 @@ const Header = (() => {
             if (!client.disabled) {
                 let type = 'Virtual';
                 if (client.real) {
-                    if (client.financial)          type = 'Investment';
+                    if (client.financial) type = 'Investment';
                     else if (client.non_financial) type = 'Gaming';
-                    else                           type = 'Real';
+                    else type = 'Real';
                 }
                 type += ' Account';
 
                 const curr_id = client.id;
                 const localized_type = localize(type);
-                if (curr_id === Client.get('loginid')) { // default account
+                if (curr_id === Client.get('loginid')) {
+                    // default account
                     $('.account-type').html(localized_type);
                     $('.account-id').html(curr_id);
                 } else {
-                    loginid_select.append($('<a/>', { href: `${'java'}${'script:;'}`, 'data-value': curr_id })
-                        .append($('<li/>', { text: localized_type }).append($('<div/>', { text: curr_id }))))
+                    loginid_select
+                        .append(
+                            $('<a/>', {
+                                href        : `${'java'}${'script:;'}`,
+                                'data-value': curr_id,
+                            }).append($('<li/>', { text: localized_type }).append($('<div/>', { text: curr_id }))),
+                        )
                         .append($('<div/>', { class: 'separator-line-thin-gray' }));
                 }
             }
         });
         let $this;
-        $('.login-id-list').html(loginid_select)
-            .find('a').off('click')
-            .on('click', function(e) {
-                e.preventDefault();
-                $this = $(this);
-                $this.attr('disabled', 'disabled');
-                switchLoginid($this.attr('data-value'));
-            });
+        $('.login-id-list').html(loginid_select).find('a').off('click').on('click', function(e) {
+            e.preventDefault();
+            $this = $(this);
+            $this.attr('disabled', 'disabled');
+            switchLoginid($this.attr('data-value'));
+        });
     };
 
     const metatraderMenuItemVisibility = (landing_company_response) => {
@@ -94,7 +97,7 @@ const Header = (() => {
         sessionStorage.setItem('active_tab', '1');
         // set cookies: loginid, login
         Client.setCookie('loginid', loginid);
-        Client.setCookie('login',   token);
+        Client.setCookie('login', token);
         // set local storage
         GTM.setLoginFlag();
         localStorage.setItem('active_loginid', loginid);
@@ -108,11 +111,13 @@ const Header = (() => {
             const loginid_array = Client.get('loginid_array');
 
             const $upgrade_msg = $('.upgrademessage');
-            const hidden_class  = 'invisible';
+            const hidden_class = 'invisible';
 
             const showUpgrade = (url, msg) => {
-                $upgrade_msg.removeClass(hidden_class)
-                    .find('a').removeClass(hidden_class)
+                $upgrade_msg
+                    .removeClass(hidden_class)
+                    .find('a')
+                    .removeClass(hidden_class)
                     .attr('href', urlFor(url))
                     .html($('<span/>', { text: localize(msg) }));
             };
@@ -120,24 +125,43 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 const show_upgrade_msg = !loginid_array.some(client => client.real);
 
-                $upgrade_msg.removeClass(hidden_class)
-                    .find('> span').removeClass(hidden_class).end()
+                $upgrade_msg
+                    .removeClass(hidden_class)
+                    .find('> span')
+                    .removeClass(hidden_class)
+                    .end()
                     .find('a')
                     .addClass(hidden_class);
 
-                const jp_account_status = (State.get(['response', 'get_settings', 'get_settings', 'jp_account_status']) || {}).status;
+                const jp_account_status = (State.get([
+                    'response',
+                    'get_settings',
+                    'get_settings',
+                    'jp_account_status',
+                ]) || {}).status;
                 if (jp_account_status && show_upgrade_msg) {
-                    if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
+                    if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) {
+                        // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else {
                         $upgrade_msg.removeClass(hidden_class);
                         if (jp_account_status === 'jp_activation_pending') {
                             if ($('.activation-message').length === 0) {
-                                $('#virtual-text').append($('<div/>', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
+                                $('#virtual-text').append(
+                                    $('<div/>', {
+                                        class: 'activation-message',
+                                        text : ` ${localize('Your Application is Being Processed.')}`,
+                                    }),
+                                );
                             }
                         } else if (jp_account_status === 'activated') {
                             if ($('.activated-message').length === 0) {
-                                $('#virtual-text').append($('<div/>', { class: 'activated-message', text: ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}` }));
+                                $('#virtual-text').append(
+                                    $('<div/>', {
+                                        class: 'activated-message',
+                                        text : ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}`,
+                                    }),
+                                );
                             }
                         }
                     }
@@ -156,7 +180,10 @@ const Header = (() => {
             } else {
                 let show_financial = false;
                 // also allow UK MLT client to open MF account
-                if (Client.canUpgradeGamingToFinancial(landing_company) || (Client.get('residence') === 'gb' && /^MLT/.test(Client.get('loginid')))) {
+                if (
+                    Client.canUpgradeGamingToFinancial(landing_company) ||
+                    (Client.get('residence') === 'gb' && /^MLT/.test(Client.get('loginid')))
+                ) {
                     show_financial = !loginid_array.some(client => client.financial);
                 }
                 if (show_financial) {
@@ -177,7 +204,11 @@ const Header = (() => {
 
     const hideNotification = () => {
         const $msg_notification = $('#msg_notification');
-        if ($msg_notification.is(':visible')) $msg_notification.slideUp(500, () => { $msg_notification.html(''); });
+        if ($msg_notification.is(':visible')) {
+            $msg_notification.slideUp(500, () => {
+                $msg_notification.html('');
+            });
+        }
     };
 
     const displayAccountStatus = () => {
@@ -188,27 +219,60 @@ const Header = (() => {
 
             const riskAssessment = () => {
                 if (get_account_status.risk_classification === 'high') {
-                    return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
+                    return isEmptyObject(
+                        State.get(['response', 'get_financial_assessment', 'get_financial_assessment']),
+                    );
                 }
                 return false;
             };
 
-            const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
-
+            const buildMessage = (string, path, hash = '') =>
+                localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
 
             const messages = {
-                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.',        'user/authenticate'),
-                financial_limit: () => buildMessage('Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.', 'user/security/self_exclusionws', '#max_30day_turnover'),
-                residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                        'user/settings/detailsws'),
-                risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',        'user/settings/assessmentws'),
-                tax            : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                 'user/settings/detailsws'),
-                tnc            : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',       'user/tnc_approvalws'),
-                unwelcome      : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                      'contact'),
+                authenticate: () =>
+                    buildMessage(
+                        '[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.',
+                        'user/authenticate',
+                    ),
+                financial_limit: () =>
+                    buildMessage(
+                        'Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.',
+                        'user/security/self_exclusionws',
+                        '#max_30day_turnover',
+                    ),
+                residence: () =>
+                    buildMessage(
+                        'Please set [_1]country of residence[_2] before upgrading to a real-money account.',
+                        'user/settings/detailsws',
+                    ),
+                risk: () =>
+                    buildMessage(
+                        'Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
+                        'user/settings/assessmentws',
+                    ),
+                tax: () =>
+                    buildMessage(
+                        'Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
+                        'user/settings/detailsws',
+                    ),
+                tnc: () =>
+                    buildMessage(
+                        'Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
+                        'user/tnc_approvalws',
+                    ),
+                unwelcome: () =>
+                    buildMessage(
+                        'Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
+                        'contact',
+                    ),
             };
 
             const validations = {
                 authenticate: () =>
-                    (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient() && should_authenticate,
+                    (!/authenticated/.test(status) || !/age_verification/.test(status)) &&
+                    !jpClient() &&
+                    should_authenticate,
                 financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence      : () => !Client.get('residence'),
                 risk           : () => riskAssessment(),
@@ -219,17 +283,29 @@ const Header = (() => {
 
             // real account checks
             const check_statuses_real = [
-                { validation: validations.tnc,             message: messages.tnc },
-                { validation: validations.financial_limit, message: messages.financial_limit },
-                { validation: validations.risk,            message: messages.risk },
-                { validation: validations.tax,             message: messages.tax },
-                { validation: validations.authenticate,    message: messages.authenticate },
-                { validation: validations.unwelcome,       message: messages.unwelcome },
+                { validation: validations.tnc, message: messages.tnc },
+                {
+                    validation: validations.financial_limit,
+                    message   : messages.financial_limit,
+                },
+                { validation: validations.risk, message: messages.risk },
+                { validation: validations.tax, message: messages.tax },
+                {
+                    validation: validations.authenticate,
+                    message   : messages.authenticate,
+                },
+                {
+                    validation: validations.unwelcome,
+                    message   : messages.unwelcome,
+                },
             ];
 
             // virtual checks
             const check_statuses_virtual = [
-                { validation: validations.residence, message: messages.residence },
+                {
+                    validation: validations.residence,
+                    message   : messages.residence,
+                },
             ];
 
             const checkStatus = (check_statuses) => {
@@ -246,11 +322,19 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 checkStatus(check_statuses_virtual);
             } else {
-                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment', 'balance').then(() => {
+                BinarySocket.wait(
+                    'website_status',
+                    'get_account_status',
+                    'get_settings',
+                    'get_financial_assessment',
+                    'balance',
+                ).then(() => {
                     get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
                     status = get_account_status.status;
                     if (/costarica/.test(Client.get('landing_company_name')) && +Client.get('balance') < 200) {
-                        BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
+                        BinarySocket.send({
+                            mt5_login_list: 1,
+                        }).then((response) => {
                             if (response.mt5_login_list.length) {
                                 should_authenticate = true;
                             }

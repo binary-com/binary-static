@@ -1,12 +1,12 @@
-const generateBirthDate    = require('./attach_dom/birth_date_picker');
-const BinaryPjax           = require('../base/binary_pjax');
-const Client               = require('../base/client');
-const localize             = require('../base/localize').localize;
-const State                = require('../base/storage').State;
-const makeOption           = require('../common_functions/common_functions').makeOption;
-const FormManager          = require('../common_functions/form_manager');
-const Cookies              = require('../../lib/js-cookie');
-require('select2');
+import 'select2';
+import generateBirthDate from './attach_dom/birth_date_picker';
+import BinaryPjax from '../base/binary_pjax';
+import Client from '../base/client';
+import { localize } from '../base/localize';
+import { State } from '../base/storage';
+import { makeOption } from '../common_functions/common_functions';
+import FormManager from '../common_functions/form_manager';
+import Cookies from '../../lib/js-cookie';
 
 const AccountOpening = (() => {
     'use strict';
@@ -25,9 +25,11 @@ const AccountOpening = (() => {
             const landing_company = response.landing_company;
 
             // redirect client to correct account opening page if needed
-            if (!State.get('is_financial_opening') &&
+            if (
+                !State.get('is_financial_opening') &&
                 ((!is_virtual && Client.canUpgradeGamingToFinancial(landing_company)) ||
-                Client.canUpgradeVirtualToFinancial(landing_company))) {
+                    Client.canUpgradeVirtualToFinancial(landing_company))
+            ) {
                 BinaryPjax.load('new_account/maltainvestws');
                 return false;
             }
@@ -41,7 +43,9 @@ const AccountOpening = (() => {
 
     const populateForm = (form_id, getValidations) => {
         getResidence();
-        BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
+        BinarySocket.send({ states_list: Client.get('residence') }).then(data =>
+            handleState(data.states_list, form_id, getValidations),
+        );
         generateBirthDate();
     };
 
@@ -52,8 +56,8 @@ const AccountOpening = (() => {
     const handleResidenceList = (residence_list) => {
         if (residence_list.length > 0) {
             const $place_of_birth = $('#place_of_birth');
-            const $tax_residence  = $('#tax_residence');
-            const $phone          = $('#phone');
+            const $tax_residence = $('#tax_residence');
+            const $phone = $('#phone');
             const residence_value = Client.get('residence') || '';
             let residence_text = '';
 
@@ -74,8 +78,10 @@ const AccountOpening = (() => {
             if ($tax_residence) {
                 $tax_residence.html($options.html()).promise().done(() => {
                     setTimeout(() => {
-                        $tax_residence.select2()
-                            .val(getTaxResidence() || residence_value).trigger('change')
+                        $tax_residence
+                            .select2()
+                            .val(getTaxResidence() || residence_value)
+                            .trigger('change')
                             .removeClass('invisible');
                     }, 500);
                 });
@@ -85,7 +91,7 @@ const AccountOpening = (() => {
 
     const getTaxResidence = () => {
         const tax_residence = State.get(['response', 'get_settings', 'get_settings'] || {}).tax_residence;
-        return (tax_residence ? tax_residence.split(',') : '');
+        return tax_residence ? tax_residence.split(',') : '';
     };
 
     const handleState = (states_list, form_id, getValidations) => {
@@ -99,13 +105,25 @@ const AccountOpening = (() => {
 
             if (states_list && states_list.length > 0) {
                 states_list.forEach((state) => {
-                    $address_state.append($('<option/>', { value: state.value, text: state.text }));
+                    $address_state.append(
+                        $('<option/>', {
+                            value: state.value,
+                            text : state.text,
+                        }),
+                    );
                 });
                 if (client_state) {
                     $address_state.val(client_state);
                 }
             } else {
-                $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35' }));
+                $address_state.replaceWith(
+                    $('<input/>', {
+                        id       : 'address_state',
+                        name     : 'address_state',
+                        type     : 'text',
+                        maxlength: '35',
+                    }),
+                );
                 $address_state = $(address_state_id);
                 if (client_state) {
                     $address_state.text(client_state);
@@ -123,34 +141,82 @@ const AccountOpening = (() => {
         if (response.error) {
             const errorMessage = response.error.message;
             $('#submit-message').empty();
-            $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
+            $('#client_message')
+                .find('.notice-msg')
+                .text(
+                    response.msg_type === 'sanity_check'
+                        ? localize('There was some invalid character in an input field.')
+                        : errorMessage,
+                )
+                .end()
                 .removeClass('invisible');
         } else {
-            Client.processNewAccount(Client.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
+            Client.processNewAccount(
+                Client.get('email'),
+                response[message_type].client_id,
+                response[message_type].oauth_token,
+                false,
+            );
         }
     };
 
     const commonValidations = () => {
         const req = [
-            { selector: '#salutation',         validations: ['req'] },
-            { selector: '#first_name',         validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: '#last_name',          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: '#date_of_birth',      validations: ['req'] },
-            { selector: '#address_line_1',     validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
-            { selector: '#address_line_2',     validations: ['address', ['length', { min: 0, max: 70 }]] },
-            { selector: '#address_city',       validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
-            { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['general', ['length', { min: 0, max: 35 }]] },
-            { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
-            { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
-            { selector: '#secret_question',    validations: ['req'] },
-            { selector: '#secret_answer',      validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
-            { selector: '#tnc',                validations: [['req', { message: 'Please accept the terms and conditions.' }]], exclude_request: 1 },
+            { selector: '#salutation', validations: ['req'] },
+            {
+                selector   : '#first_name',
+                validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]],
+            },
+            {
+                selector   : '#last_name',
+                validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]],
+            },
+            { selector: '#date_of_birth', validations: ['req'] },
+            {
+                selector   : '#address_line_1',
+                validations: ['req', 'address', ['length', { min: 1, max: 70 }]],
+            },
+            {
+                selector   : '#address_line_2',
+                validations: ['address', ['length', { min: 0, max: 70 }]],
+            },
+            {
+                selector   : '#address_city',
+                validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]],
+            },
+            {
+                selector   : '#address_state',
+                validations: $('#address_state').prop('nodeName') === 'SELECT'
+                    ? ''
+                    : ['general', ['length', { min: 0, max: 35 }]],
+            },
+            {
+                selector   : '#address_postcode',
+                validations: ['postcode', ['length', { min: 0, max: 20 }]],
+            },
+            {
+                selector   : '#phone',
+                validations: ['req', 'phone', ['length', { min: 6, max: 35 }]],
+            },
+            { selector: '#secret_question', validations: ['req'] },
+            {
+                selector   : '#secret_answer',
+                validations: ['req', 'general', ['length', { min: 4, max: 50 }]],
+            },
+            {
+                selector       : '#tnc',
+                validations    : [['req', { message: 'Please accept the terms and conditions.' }]],
+                exclude_request: 1,
+            },
 
             { request_field: 'residence', value: Client.get('residence') },
         ];
 
         if (Cookies.get('affiliate_tracking')) {
-            req.push({ request_field: 'affiliate_token', value: Cookies.getJSON('affiliate_tracking').t });
+            req.push({
+                request_field: 'affiliate_token',
+                value        : Cookies.getJSON('affiliate_tracking').t,
+            });
         }
 
         return req;

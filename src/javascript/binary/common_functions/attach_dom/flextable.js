@@ -1,4 +1,4 @@
-const Table = require('./table');
+import Table from './table';
 
 const FlexTableUI = (() => {
     'use strict';
@@ -7,24 +7,18 @@ const FlexTableUI = (() => {
 
     const init = (conf) => {
         config = conf;
-        const $tableContainer = Table.createFlexTable(
-            [],
-            getMetadata(),
-            config.header,
-            config.footer);
+        const $tableContainer = Table.createFlexTable([], getMetadata(), config.header, config.footer);
         // Table.appendTablebody expects the table to already
         // exist in the DOM, so we need to append first
         $tableContainer.appendTo(config.container);
         extend(config.data);
     };
 
-    const getMetadata = () => (
-        {
-            id        : config.id,
-            tableClass: config.class,
-            cols      : config.cols,
-        }
-    );
+    const getMetadata = () => ({
+        id        : config.id,
+        tableClass: config.class,
+        cols      : config.cols,
+    });
 
     const extend = (data) => {
         const cols = config.cols;
@@ -42,7 +36,10 @@ const FlexTableUI = (() => {
     const displayError = (message, colspan) => {
         const $tr = $('<tr/>', { class: 'flex-tr' });
         const $td = $('<td/>', { colspan: colspan });
-        const $p  = $('<p/>', { class: 'notice-msg center-text', text: message });
+        const $p = $('<p/>', {
+            class: 'notice-msg center-text',
+            text : message,
+        });
         return $(`#${config.id} tbody`).append($tr.append($td.append($p)));
     };
 

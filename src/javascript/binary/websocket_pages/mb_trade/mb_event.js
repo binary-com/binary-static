@@ -1,11 +1,11 @@
-const MBContract      = require('./mb_contract');
-const MBDefaults      = require('./mb_defaults');
-const MBNotifications = require('./mb_notifications');
-const MBProcess       = require('./mb_process');
-const MBTick          = require('./mb_tick');
-const TradingAnalysis = require('../trade/analysis');
-const debounce        = require('../trade/common').debounce;
-const jpClient        = require('../../common_functions/country_base').jpClient;
+import MBContract from './mb_contract';
+import MBDefaults from './mb_defaults';
+import MBNotifications from './mb_notifications';
+import MBProcess from './mb_process';
+import MBTick from './mb_tick';
+import TradingAnalysis from '../trade/analysis';
+import { debounce } from '../trade/common';
+import { jpClient } from '../../common_functions/country_base';
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -74,15 +74,20 @@ const MBTradingEvents = (() => {
 
         const payout_element = document.getElementById('payout');
         const payoutOnKeypress = (ev) => {
-            const key  = ev.keyCode;
+            const key = ev.keyCode;
             const char = String.fromCharCode(ev.which);
             let is_ok = true;
-            if ((char === '.' && ev.target.value.indexOf(char) >= 0) ||
-                    (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
-                    /['%]/.test(char)) { // similarity to arrows key code in some browsers
+            if (
+                (char === '.' && ev.target.value.indexOf(char) >= 0) ||
+                (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
+                /['%]/.test(char)
+            ) {
+                // similarity to arrows key code in some browsers
                 is_ok = false;
             }
-            const result = payout_element.value.substring(0, ev.target.selectionStart) + char +
+            const result =
+                payout_element.value.substring(0, ev.target.selectionStart) +
+                char +
                 payout_element.value.substring(ev.target.selectionEnd);
 
             if ((jpClient() && char === '.') || result[0] === '0' || !validatePayout(+result)) {
@@ -98,10 +103,13 @@ const MBTradingEvents = (() => {
         const validatePayout = (payout_amount) => {
             let is_ok = true;
             const contract = MBContract.getCurrentContracts();
-            const max_amount = (Array.isArray(contract) && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
-            if (!payout_amount || isNaN(payout_amount) ||
+            const max_amount = Array.isArray(contract) && contract[0].expiry_type !== 'intraday' ? 20000 : 5000;
+            if (
+                !payout_amount ||
+                isNaN(payout_amount) ||
                 (jpClient() && (payout_amount < 1 || payout_amount > 100)) ||
-                (payout_amount <= 0 || payout_amount > max_amount)) {
+                (payout_amount <= 0 || payout_amount > max_amount)
+            ) {
                 is_ok = false;
             }
 
@@ -115,42 +123,46 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('payout', payout_def);
             }
             payout_element.addEventListener('keypress', payoutOnKeypress);
-            payout_element.addEventListener('input', debounce((e) => {
-                let payout = e.target.value;
+            payout_element.addEventListener(
+                'input',
+                debounce((e) => {
+                    let payout = e.target.value;
 
-                if (!jpClient()) {
-                    payout = payout.replace(/[^0-9.]/g, '');
-                    if (isStandardFloat(payout)) {
-                        payout = parseFloat(payout).toFixed(2);
+                    if (!jpClient()) {
+                        payout = payout.replace(/[^0-9.]/g, '');
+                        if (isStandardFloat(payout)) {
+                            payout = parseFloat(payout).toFixed(2);
+                        }
+                        e.target.value = payout;
                     }
-                    e.target.value = payout;
-                }
 
-                const $payout_element = $('#payout');
-                const $table_element = $('.japan-table');
-                if (!validatePayout(payout)) {
-                    $payout_element.addClass('error-field');
-                    $table_element.addClass('invisible');
-                    return false;
-                }
-                // else
-                $payout_element.removeClass('error-field');
-                $table_element.removeClass('invisible');
+                    const $payout_element = $('#payout');
+                    const $table_element = $('.japan-table');
+                    if (!validatePayout(payout)) {
+                        $payout_element.addClass('error-field');
+                        $table_element.addClass('invisible');
+                        return false;
+                    }
+                    // else
+                    $payout_element.removeClass('error-field');
+                    $table_element.removeClass('invisible');
 
-                MBDefaults.set('payout', payout);
-                MBProcess.processPriceRequest();
-                MBContract.displayDescriptions();
-                return true;
-            }));
+                    MBDefaults.set('payout', payout);
+                    MBProcess.processPriceRequest();
+                    MBContract.displayDescriptions();
+                    return true;
+                }),
+            );
             payout_element.addEventListener('click', function() {
                 this.select();
             });
         }
 
         // For verifying there are 2 digits after decimal
-        const isStandardFloat = value => (
-            !isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2
-        );
+        const isStandardFloat = value =>
+            !isNaN(value) &&
+            value % 1 !== 0 &&
+            (+parseFloat(value)).toFixed(10).replace(/^-?\d*\.?|0+$/g, '').length > 2;
 
         const currency_element = document.getElementById('currency');
         if (currency_element) {

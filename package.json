@@ -6,7 +6,20 @@
     "test": "grunt test",
     "start": "sudo -p 'enter password for sudo:' grunt custom",
     "livereload": "sudo -p 'enter password for sudo:' grunt livereload",
-    "serve": "sudo -p 'enter password for sudo:' grunt serve"
+    "serve": "sudo -p 'enter password for sudo:' grunt serve",
+    "precommit": "lint-staged"
+  },
+  "babel": {
+    "babelrc": false,
+    "presets": [
+      "es2015"
+    ]
+  },
+  "lint-staged": {
+    "*js": [
+      "prettier-eslint --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -41,7 +54,6 @@
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.2",
-    "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^19.0.0",
@@ -52,10 +64,13 @@
     "grunt-shell": "^2.1.0",
     "grunt-stylelint": "^0.6.0",
     "grunt-webpack": "^1.0.14",
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.0",
     "load-grunt-config": "^0.19.2",
     "load-grunt-tasks": "^3.5.2",
     "mocha": "^3.2.0",
     "postcss-scss": "^0.4.0",
+    "prettier-eslint": "^5.1.0",
     "time-grunt": "^1.0.0",
     "unused-files-webpack-plugin": "^3.0.0",
     "webpack": "^1.13.2",

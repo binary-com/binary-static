@@ -1,8 +1,8 @@
-const BinaryPjax  = require('../base/binary_pjax');
-const getLanguage = require('../base/language').get;
-const localize    = require('../base/localize').localize;
-const urlFor      = require('../base/url').urlFor;
-const FormManager = require('../common_functions/form_manager');
+import BinaryPjax from '../base/binary_pjax';
+import { get as getLanguage } from '../base/language';
+import { localize } from '../base/localize';
+import { urlFor } from '../base/url';
+import FormManager from '../common_functions/form_manager';
 
 const Home = (() => {
     'use strict';
@@ -23,7 +23,11 @@ const Home = (() => {
             });
 
             FormManager.init(form_id, [
-                { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
+                {
+                    selector     : '#email',
+                    validations  : ['req', 'email'],
+                    request_field: 'verify_email',
+                },
                 { request_field: 'type', value: 'account_opening' },
             ]);
             FormManager.handleSubmit({
@@ -35,14 +39,20 @@ const Home = (() => {
     };
 
     const checkCountry = (req) => {
-        if ((clients_country !== 'my') || /@binary\.com$/.test(req.verify_email)) {
+        if (clients_country !== 'my' || /@binary\.com$/.test(req.verify_email)) {
             return true;
         }
-        $('#frm_verify_email').find('div')
-            .html($('<p/>', { class: 'notice-msg center-text', html: localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.', [urlFor('contact')]) }));
+        $('#frm_verify_email').find('div').html(
+            $('<p/>', {
+                class: 'notice-msg center-text',
+                html : localize(
+                    'Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.',
+                    [urlFor('contact')],
+                ),
+            }),
+        );
         return false;
     };
-
 
     const handler = (response) => {
         const error = response.error;
@@ -52,7 +62,6 @@ const Home = (() => {
             $('#signup_error').css({ display: 'inline-block' }).text(error.message);
         }
     };
-
 
     return {
         onLoad: onLoad,

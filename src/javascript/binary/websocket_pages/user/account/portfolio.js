@@ -1,6 +1,6 @@
-const toJapanTimeIfNeeded = require('../../../base/clock').toJapanTimeIfNeeded;
-const formatMoney         = require('../../../common_functions/currency_to_symbol').formatMoney;
-const jpClient            = require('../../../common_functions/country_base').jpClient;
+import { toJapanTimeIfNeeded } from '../../../base/clock';
+import { formatMoney } from '../../../common_functions/currency_to_symbol';
+import { jpClient } from '../../../common_functions/country_base';
 
 const Portfolio = (() => {
     'use strict';
@@ -10,31 +10,28 @@ const Portfolio = (() => {
         return currency ? formatMoney(currency, balance) : balance;
     };
 
-    const getPortfolioData = c => (
-        {
-            transaction_id: c.transaction_id,
-            contract_id   : c.contract_id,
-            payout        : parseFloat(c.payout).toFixed(2),
-            longcode      : typeof module !== 'undefined' ?
-                c.longcode : (jpClient() ?
-                    toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode),
-            currency : c.currency,
-            buy_price: c.buy_price,
-            app_id   : c.app_id,
-        }
-    );
+    const getPortfolioData = c => ({
+        transaction_id: c.transaction_id,
+        contract_id   : c.contract_id,
+        payout        : parseFloat(c.payout).toFixed(2),
+        longcode      : typeof module !== 'undefined'
+            ? c.longcode
+            : jpClient() ? toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode,
+        currency : c.currency,
+        buy_price: c.buy_price,
+        app_id   : c.app_id,
+    });
 
-    const getProposalOpenContract = proposal => (
-        {
-            contract_id     : proposal.contract_id,
-            bid_price       : parseFloat(proposal.bid_price || 0).toFixed(2),
-            is_sold         : proposal.is_sold,
-            is_valid_to_sell: proposal.is_valid_to_sell,
-            currency        : proposal.currency,
-        }
-    );
+    const getProposalOpenContract = proposal => ({
+        contract_id     : proposal.contract_id,
+        bid_price       : parseFloat(proposal.bid_price || 0).toFixed(2),
+        is_sold         : proposal.is_sold,
+        is_valid_to_sell: proposal.is_valid_to_sell,
+        currency        : proposal.currency,
+    });
 
-    const getSum = (values, value_type) => { // value_type is: indicative or buy_price
+    const getSum = (values, value_type) => {
+        // value_type is: indicative or buy_price
         let sum = 0;
         const keys = Object.keys(values);
         for (let i = 0; i < keys.length; i++) {

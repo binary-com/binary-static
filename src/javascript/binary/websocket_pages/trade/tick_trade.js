@@ -1,11 +1,11 @@
-const Highcharts           = require('highcharts');
-const moment               = require('moment');
-const Tick                 = require('./tick');
-const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
-const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
-const localize             = require('../../base/localize').localize;
-const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
-const isVisible            = require('../../common_functions/common_functions').isVisible;
+import Highcharts from 'highcharts';
+import moment from 'moment';
+import Tick from './tick';
+import { updatePurchaseStatus } from './update_values';
+import ViewPopupUI from '../user/view_popup/view_popup.ui';
+import { localize } from '../../base/localize';
+import { elementInnerHtml, isVisible } from '../../common_functions/common_functions';
+
 require('highcharts/modules/exporting')(Highcharts);
 
 const TickDisplay = (() => {
@@ -34,14 +34,14 @@ const TickDisplay = (() => {
 
     const initialize = (data) => {
         // setting up globals
-        number_of_ticks      = parseInt(data.number_of_ticks);
-        display_symbol       = data.display_symbol;
-        contract_start_ms    = parseInt(data.contract_start) * 1000;
-        contract_category    = data.contract_category;
-        set_barrier          = !contract_category.match('digits');
-        barrier              = data.barrier;
-        abs_barrier          = data.abs_barrier;
-        display_decimals     = data.display_decimals || 2;
+        number_of_ticks = parseInt(data.number_of_ticks);
+        display_symbol = data.display_symbol;
+        contract_start_ms = parseInt(data.contract_start) * 1000;
+        contract_category = data.contract_category;
+        set_barrier = !contract_category.match('digits');
+        barrier = data.barrier;
+        abs_barrier = data.abs_barrier;
+        display_decimals = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
 
         if (data.show_contract_result) {
@@ -101,11 +101,13 @@ const TickDisplay = (() => {
             chart: {
                 type           : 'line',
                 renderTo       : 'tick_chart',
-                width          : config.width ? config.width : (config.minimize ? 394 : null),
+                width          : config.width ? config.width : config.minimize ? 394 : null,
                 height         : config.minimize ? 143 : null,
                 backgroundColor: null,
-                events         : { load: plot(config.plot_from, config.plot_to) },
-                marginLeft     : 50,
+                events         : {
+                    load: plot(config.plot_from, config.plot_to),
+                },
+                marginLeft: 50,
             },
             credits: { enabled: false },
             tooltip: {
@@ -129,9 +131,11 @@ const TickDisplay = (() => {
                 },
                 title: '',
             },
-            series: [{
-                data: [],
-            }],
+            series: [
+                {
+                    data: [],
+                },
+            ],
             title    : '',
             exporting: { enabled: false, enableImages: false },
             legend   : { enabled: false },
@@ -183,9 +187,12 @@ const TickDisplay = (() => {
             }
 
             chart.yAxis[0].addPlotLine({
-                id    : 'tick-barrier',
-                value : barrier_tick.quote,
-                label : { text: `Barrier (${barrier_tick.quote})`, align: 'center' },
+                id   : 'tick-barrier',
+                value: barrier_tick.quote,
+                label: {
+                    text : `Barrier (${barrier_tick.quote})`,
+                    align: 'center',
+                },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
@@ -199,7 +206,7 @@ const TickDisplay = (() => {
             for (let i = 0; i < applicable_ticks.length; i++) {
                 total += parseFloat(applicable_ticks[i].quote);
             }
-            let calc_barrier =  total / applicable_ticks.length;
+            let calc_barrier = total / applicable_ticks.length;
             calc_barrier = calc_barrier.toFixed(parseInt(display_decimals) + 1); // round calculated barrier
 
             chart.yAxis[0].removePlotLine('tick-barrier');
@@ -224,9 +231,12 @@ const TickDisplay = (() => {
 
     const add = (indicator) => {
         chart.xAxis[0].addPlotLine({
-            value : indicator.index,
-            id    : indicator.id,
-            label : { text: indicator.label, x: /start_tick|entry_tick/.test(indicator.id) ? -15 : 5 },
+            value: indicator.index,
+            id   : indicator.id,
+            label: {
+                text: indicator.label,
+                x   : /start_tick|entry_tick/.test(indicator.id) ? -15 : 5,
+            },
             color : '#e98024',
             width : 2,
             zIndex: 2,
@@ -303,9 +313,11 @@ const TickDisplay = (() => {
             }
             if (!window.tick_init) {
                 initialize({
-                    symbol              : window.tick_underlying,
-                    number_of_ticks     : window.tick_count,
-                    contract_category   : ((/asian/i).test(window.tick_shortcode) ? 'asian' : (/digit/i).test(window.tick_shortcode) ? 'digits' : 'callput'),
+                    symbol           : window.tick_underlying,
+                    number_of_ticks  : window.tick_count,
+                    contract_category: /asian/i.test(window.tick_shortcode)
+                        ? 'asian'
+                        : /digit/i.test(window.tick_shortcode) ? 'digits' : 'callput',
                     longcode            : window.tick_longcode,
                     display_symbol      : window.tick_display_name,
                     contract_start      : window.tick_date_start,
@@ -395,7 +407,9 @@ const TickDisplay = (() => {
         init       : initialize,
         updateChart: updateChart,
         dispatch   : dispatch,
-        resetSpots : () => { spots_list = {}; },
+        resetSpots : () => {
+            spots_list = {};
+        },
     };
 })();
 

@@ -1,4 +1,4 @@
-const LimitsInit = require('./limits/limits.init');
+import LimitsInit from './limits/limits.init';
 
 const Limits = (() => {
     const onLoad = () => {

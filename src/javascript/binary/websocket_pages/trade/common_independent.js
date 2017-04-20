@@ -33,7 +33,11 @@ const countDecimalPlaces = (num) => {
 const trading_times = {};
 
 const processTradingTimesAnswer = (response) => {
-    if (!trading_times.hasOwnProperty(response.echo_req.trading_times) && response.hasOwnProperty('trading_times') && response.trading_times.hasOwnProperty('markets')) {
+    if (
+        !trading_times.hasOwnProperty(response.echo_req.trading_times) &&
+        response.hasOwnProperty('trading_times') &&
+        response.trading_times.hasOwnProperty('markets')
+    ) {
         for (let i = 0; i < response.trading_times.markets.length; i++) {
             const submarkets = response.trading_times.markets[i].submarkets;
             if (submarkets) {

@@ -1,10 +1,11 @@
-const Client = require('../base/client');
+import Client from '../base/client';
 
 const GetStarted = (() => {
     'use strict';
 
     const selectNavElement = () => {
-        $('.nav li').removeClass('selected')
+        $('.nav li')
+            .removeClass('selected')
             .find(`a[href="${window.location.pathname}"]`)
             .parent('li')
             .addClass('selected');
@@ -47,11 +48,13 @@ const GetStarted = (() => {
                     return false;
                 }
                 const $now_showing = $('.subsection:not(.hidden)');
-                const $to_show = $button.hasClass('next') ? $now_showing.next('.subsection') : $now_showing.prev('.subsection');
+                const $to_show = $button.hasClass('next')
+                    ? $now_showing.next('.subsection')
+                    : $now_showing.prev('.subsection');
                 return updateActiveSubsection($nav, $to_show);
             });
 
-            const fragment = (location.href.split('#'))[1];
+            const fragment = location.href.split('#')[1];
             const $to_show = fragment ? $(`a[name=${fragment}-section]`).parent('.subsection') : $('.subsection.first');
             updateActiveSubsection($nav, $to_show);
         }

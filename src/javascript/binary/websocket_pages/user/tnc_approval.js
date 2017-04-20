@@ -1,9 +1,8 @@
-const BinaryPjax         = require('../../base/binary_pjax');
-const Client             = require('../../base/client');
-const Header             = require('../../base/header');
-const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
-const urlFor             = require('../../base/url').urlFor;
-const template           = require('../../base/utility').template;
+import BinaryPjax from '../../base/binary_pjax';
+import Client from '../../base/client';
+import Header from '../../base/header';
+import { defaultRedirectUrl, urlFor } from '../../base/url';
+import { template } from '../../base/utility';
 
 const TNCApproval = (() => {
     'use strict';
@@ -19,11 +18,13 @@ const TNCApproval = (() => {
         if (!landing_company) return;
 
         const $container = $('#tnc_container');
-        const $tnc_msg   = $container.find('#tnc_message');
-        $tnc_msg.html(template($tnc_msg.html(), [
-            landing_company,
-            urlFor(Client.get('residence') === 'jp' ? 'terms-and-conditions-jp' : 'terms-and-conditions'),
-        ]));
+        const $tnc_msg = $container.find('#tnc_message');
+        $tnc_msg.html(
+            template($tnc_msg.html(), [
+                landing_company,
+                urlFor(Client.get('residence') === 'jp' ? 'terms-and-conditions-jp' : 'terms-and-conditions'),
+            ]),
+        );
         $container.find('#tnc_loading').remove();
         $container.find('#tnc_approval').removeClass(hidden_class);
     };

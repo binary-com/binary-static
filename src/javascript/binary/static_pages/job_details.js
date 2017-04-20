@@ -1,5 +1,4 @@
-const urlParam = require('../base/url').param;
-const urlFor   = require('../base/url').urlFor;
+import { param as urlParam, urlFor } from '../base/url';
 
 const JobDetails = (() => {
     'use strict';
@@ -37,7 +36,11 @@ const JobDetails = (() => {
         $('#image').find('img').addClass(hidden_class);
         // show section
         $(dept_class).removeClass(hidden_class);
-        $sidebar_dept.removeClass(hidden_class).find(`a[href="${window.location.hash}"]`).parent('li').addClass('selected');
+        $sidebar_dept
+            .removeClass(hidden_class)
+            .find(`a[href="${window.location.hash}"]`)
+            .parent('li')
+            .addClass('selected');
         showSelectedDiv();
         $('#back-button').attr('href', `${urlFor('open-positions')}#${dept}`);
         addEventListeners();

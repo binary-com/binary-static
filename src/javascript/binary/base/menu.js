@@ -1,5 +1,5 @@
-const Client = require('./client');
-require('../../lib/mmenu/jquery.mmenu.min.all.js');
+import Client from './client';
+import '../../lib/mmenu/jquery.mmenu.min.all';
 
 const Menu = (() => {
     'use strict';
@@ -15,7 +15,10 @@ const Menu = (() => {
         const active = activeMenuTop();
         if (active) active.addClass('active');
 
-        if (Client.isLoggedIn() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
+        if (
+            Client.isLoggedIn() ||
+            /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)
+        ) {
             showMainMenu();
         }
     };
@@ -31,12 +34,7 @@ const Menu = (() => {
 
     const activateMainMenu = () => {
         // First unset everything.
-        $main_menu
-            .find('li.item')
-            .removeClass('active hover')
-            .end()
-            .find('li.sub_item a')
-            .removeClass('a-active');
+        $main_menu.find('li.item').removeClass('active hover').end().find('li.sub_item a').removeClass('a-active');
 
         const active = activeMainMenu();
         const active_item = active.item;
@@ -51,9 +49,13 @@ const Menu = (() => {
         }
     };
 
-    const onUnload = () => { $main_menu.unbind().find('.item').unbind(); };
+    const onUnload = () => {
+        $main_menu.unbind().find('.item').unbind();
+    };
 
-    const removeHover = () => { $main_menu.find('li.item').removeClass('hover'); };
+    const removeHover = () => {
+        $main_menu.find('li.item').removeClass('hover');
+    };
 
     const onMouseHover = (active_item) => {
         $main_menu
@@ -81,7 +83,7 @@ const Menu = (() => {
 
     const activeMainMenu = () => {
         let pathname = window.location.pathname;
-        if (/cashier/i.test(pathname) && !(/(cashier_password|payment_methods)/.test(pathname))) {
+        if (/cashier/i.test(pathname) && !/(cashier_password|payment_methods)/.test(pathname)) {
             pathname = $('#topMenuCashier').find('a').attr('href');
         }
         let $item,
@@ -100,13 +102,16 @@ const Menu = (() => {
 
     const makeMobileMenu = () => {
         if ($('#mobile-menu-container').is(':visible')) {
-            $('#mobile-menu').mmenu({
-                position       : 'right',
-                zposition      : 'front',
-                slidingSubmenus: false,
-                searchfield    : true,
-                onClick        : { close: true },
-            }, { selectedClass: 'active' });
+            $('#mobile-menu').mmenu(
+                {
+                    position       : 'right',
+                    zposition      : 'front',
+                    slidingSubmenus: false,
+                    searchfield    : true,
+                    onClick        : { close: true },
+                },
+                { selectedClass: 'active' },
+            );
         }
     };
 

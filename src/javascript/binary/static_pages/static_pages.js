@@ -1,24 +1,42 @@
-const GetStarted = require('./get_started');
-const handleHash = require('../base/utility').handleHash;
-const Scroll     = require('../common_functions/scroll');
+import GetStarted from './get_started';
+import { handleHash } from '../base/utility';
+import Scroll from '../common_functions/scroll';
 
 module.exports = {
     OpenPositions: {
-        onLoad: () => { Scroll.scrollToHashSection(); },
+        onLoad: () => {
+            Scroll.scrollToHashSection();
+        },
     },
     VolidxMarkets: {
-        onLoad  : () => { Scroll.goToHashSection(); GetStarted.onLoad(); },
-        onUnload: () => { Scroll.offScroll(); },
+        onLoad: () => {
+            Scroll.goToHashSection();
+            GetStarted.onLoad();
+        },
+        onUnload: () => {
+            Scroll.offScroll();
+        },
     },
     OpenSourceProjects: {
-        onLoad  : () => { Scroll.sidebarScroll($('.open-source-projects')); },
-        onUnload: () => { Scroll.offScroll(); },
+        onLoad: () => {
+            Scroll.sidebarScroll($('.open-source-projects'));
+        },
+        onUnload: () => {
+            Scroll.offScroll();
+        },
     },
     PaymentAgent: {
-        onLoad  : () => { Scroll.sidebarScroll($('.payment-agent')); },
-        onUnload: () => { Scroll.offScroll(); },
+        onLoad: () => {
+            Scroll.sidebarScroll($('.payment-agent'));
+        },
+        onUnload: () => {
+            Scroll.offScroll();
+        },
     },
     AffiliateSignup: {
-        onLoad: () => { tabListener(); handleHash(); },
+        onLoad: () => {
+            tabListener();
+            handleHash();
+        },
     },
 };

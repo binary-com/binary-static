@@ -1,22 +1,20 @@
-const Client            = require('./client');
-const Contents          = require('./contents');
-const Header            = require('./header');
-const Language          = require('./language');
-const Localize          = require('./localize');
-const localize          = require('./localize').localize;
-const Login             = require('./login');
-const Menu              = require('./menu');
-const LocalStore        = require('./storage').LocalStore;
-const State             = require('./storage').State;
-const Url               = require('./url');
-const checkLanguage     = require('../common_functions/country_base').checkLanguage;
-const scrollToTop       = require('../common_functions/scroll').scrollToTop;
-const TrafficSource     = require('../common_functions/traffic_source');
-const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
-const Cookies           = require('../../lib/js-cookie');
-const PushNotification  = require('../../lib/push_notification');
-require('../../lib/polyfills/array.includes');
-require('../../lib/polyfills/string.includes');
+import Client from './client';
+import Contents from './contents';
+import Header from './header';
+import Language from './language';
+import Localize, { localize } from './localize';
+import Login from './login';
+import Menu from './menu';
+import { LocalStore, State } from './storage';
+import Url from './url';
+import { checkLanguage } from '../common_functions/country_base';
+import { scrollToTop } from '../common_functions/scroll';
+import TrafficSource from '../common_functions/traffic_source';
+import RealityCheck from '../websocket_pages/user/reality_check/reality_check';
+import Cookies from '../../lib/js-cookie';
+import PushNotification from '../../lib/push_notification';
+import '../../lib/polyfills/array.includes';
+import '../../lib/polyfills/string.includes';
 
 const Page = (() => {
     'use strict';
@@ -137,13 +135,14 @@ const Page = (() => {
         return true;
     };
 
-    const reload = (forced_reload) => { window.location.reload(!!forced_reload); };
+    const reload = (forced_reload) => {
+        window.location.reload(!!forced_reload);
+    };
 
     const endpointNotification = () => {
         const server = localStorage.getItem('config.server_url');
         if (server && server.length > 0) {
-            const message = `${(/www\.binary\.com/i.test(window.location.hostname) ? '' :
-                `${localize('This is a staging server - For testing purposes only')} - `)}
+            const message = `${/www\.binary\.com/i.test(window.location.hostname) ? '' : `${localize('This is a staging server - For testing purposes only')} - `}
                 ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
             const $end_note = $('#end-note');
             $end_note.html(message).removeClass('invisible');

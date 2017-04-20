@@ -1,10 +1,10 @@
-const moment           = require('moment');
-const getStartDateNode = require('./common_independent').getStartDateNode;
-const Contract         = require('./contract');
-const Defaults         = require('./defaults');
-const Durations        = require('./duration');
-const localize         = require('../../base/localize').localize;
-const State            = require('../../base/storage').State;
+import moment from 'moment';
+import { getStartDateNode } from './common_independent';
+import Contract from './contract';
+import Defaults from './defaults';
+import Durations from './duration';
+import { localize } from '../../base/localize';
+import { State } from '../../base/storage';
 
 /*
  * Handles start time display
@@ -20,7 +20,7 @@ const StartDates = (() => {
     let has_now = 0;
     State.remove('is_start_dates_displayed');
 
-    const compareStartDate = (a, b) => (a.date < b.date ? -1 : (a.date > b.date ? 1 : 0));
+    const compareStartDate = (a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0);
 
     const displayStartDates = () => {
         const start_dates = Contract.startDates();
@@ -64,7 +64,7 @@ const StartDates = (() => {
                     a = start;
                 }
 
-                a = moment(Math.ceil((+a) / rounding) * rounding).utc();
+                a = moment(Math.ceil(+a / rounding) * rounding).utc();
 
                 while (a.isBefore(b)) {
                     if (a.unix() - start.unix() > 5 * 60) {
@@ -98,8 +98,12 @@ const StartDates = (() => {
 
     return {
         display: displayStartDates,
-        disable: () => { getStartDateNode().setAttribute('disabled', 'disabled'); },
-        enable : () => { getStartDateNode().removeAttribute('disabled'); },
+        disable: () => {
+            getStartDateNode().setAttribute('disabled', 'disabled');
+        },
+        enable: () => {
+            getStartDateNode().removeAttribute('disabled');
+        },
     };
 })();
 

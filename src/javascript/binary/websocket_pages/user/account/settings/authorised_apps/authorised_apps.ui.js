@@ -1,9 +1,9 @@
-const ApplicationsData     = require('./authorised_apps.data');
-const showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeOnHover;
-const localize             = require('../../../../../base/localize').localize;
-const showLoadingImage     = require('../../../../../base/utility').showLoadingImage;
-const FlexTableUI          = require('../../../../../common_functions/attach_dom/flextable');
-const toTitleCase          = require('../../../../../common_functions/string_util').toTitleCase;
+import ApplicationsData from './authorised_apps.data';
+import { showLocalTimeOnHover } from '../../../../../base/clock';
+import { localize } from '../../../../../base/localize';
+import { showLoadingImage } from '../../../../../base/utility';
+import FlexTableUI from '../../../../../common_functions/attach_dom/flextable';
+import { toTitleCase } from '../../../../../common_functions/string_util';
 
 const ApplicationsUI = (() => {
     'use strict';
@@ -27,10 +27,16 @@ const ApplicationsUI = (() => {
     };
 
     const createRevokeButton = (container, app) => {
-        const $button = $('<button/>', { class: 'button', text: localize(messages.revoke_access) });
+        const $button = $('<button/>', {
+            class: 'button',
+            text : localize(messages.revoke_access),
+        });
         $button.on('click', () => {
             if (window.confirm(`${localize(messages.revoke_confirm)}: '${app.name}'?`)) {
-                BinarySocket.send({ oauth_apps: 1, revoke_app: app.id }).then((response) => {
+                BinarySocket.send({
+                    oauth_apps: 1,
+                    revoke_app: app.id,
+                }).then((response) => {
                     if (response.error) {
                         displayError(response.error.message);
                     } else {
@@ -56,8 +62,7 @@ const ApplicationsUI = (() => {
             cols     : columns,
             data     : data,
             style    : ($row, app) => {
-                $row.children('.action').first()
-                    .append(createRevokeButton($row, app));
+                $row.children('.action').first().append(createRevokeButton($row, app));
             },
             formatter: formatApp,
         });

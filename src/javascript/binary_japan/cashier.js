@@ -1,10 +1,9 @@
-const BinaryPjax         = require('../binary/base/binary_pjax');
-const Client             = require('../binary/base/client');
-const localize           = require('../binary/base/localize').localize;
-const defaultRedirectUrl = require('../binary/base/url').defaultRedirectUrl;
-const template           = require('../binary/base/utility').template;
-const jpClient           = require('../binary/common_functions/country_base').jpClient;
-const jpResidence        = require('../binary/common_functions/country_base').jpResidence;
+import BinaryPjax from '../binary/base/binary_pjax';
+import Client from '../binary/base/client';
+import { localize } from '../binary/base/localize';
+import { defaultRedirectUrl } from '../binary/base/url';
+import { template } from '../binary/base/utility';
+import { jpClient, jpResidence } from '../binary/common_functions/country_base';
 
 const CashierJP = (() => {
     'use strict';
@@ -15,7 +14,7 @@ const CashierJP = (() => {
         BinarySocket.wait('get_settings').then(() => {
             $container.removeClass('invisible');
             if (action === 'deposit') {
-                $('#name_id').text(`${(Client.get('loginid') || 'JP12345')} ${(Client.get('first_name') || 'Joe Bloggs')}`);
+                $('#name_id').text(`${Client.get('loginid') || 'JP12345'} ${Client.get('first_name') || 'Joe Bloggs'}`);
             } else if (action === 'withdraw') {
                 $('#id123-control22598118').val(Client.get('loginid'));
                 $('#id123-control22598060').val(Client.get('email'));
@@ -44,8 +43,16 @@ const CashierJP = (() => {
 
     return {
         errorHandler: errorHandler,
-        Deposit     : { onLoad: () => { onLoad('deposit'); } },
-        Withdraw    : { onLoad: () => { onLoad('withdraw'); } },
+        Deposit     : {
+            onLoad: () => {
+                onLoad('deposit');
+            },
+        },
+        Withdraw: {
+            onLoad: () => {
+                onLoad('withdraw');
+            },
+        },
     };
 })();
 

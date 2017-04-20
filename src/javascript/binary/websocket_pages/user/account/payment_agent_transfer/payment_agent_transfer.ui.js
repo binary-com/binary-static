@@ -1,4 +1,4 @@
-const localize = require('../../../../base/localize').localize;
+import { localize } from '../../../../base/localize';
 
 const PaymentAgentTransferUI = (() => {
     'use strict';
@@ -16,49 +16,64 @@ const PaymentAgentTransferUI = (() => {
         $notes_transfer = $('#paymentagent_transfer_notes');
     };
 
-    const hideForm = () => { $paymentagent_transfer.addClass(hidden_class); };
+    const hideForm = () => {
+        $paymentagent_transfer.addClass(hidden_class);
+    };
 
-    const showForm = () => { $paymentagent_transfer.removeClass(hidden_class); };
+    const showForm = () => {
+        $paymentagent_transfer.removeClass(hidden_class);
+    };
 
-    const hideConfirmation = () => { $confirm_transfer.addClass(hidden_class); };
+    const hideConfirmation = () => {
+        $confirm_transfer.addClass(hidden_class);
+    };
 
-    const showConfirmation = () => { $confirm_transfer.find('.errorfield').addClass(hidden_class).end().removeClass(hidden_class); };
+    const showConfirmation = () => {
+        $confirm_transfer.find('.errorfield').addClass(hidden_class).end().removeClass(hidden_class);
+    };
 
-    const hideDone = () => { $done_transfer.addClass(hidden_class); };
+    const hideDone = () => {
+        $done_transfer.addClass(hidden_class);
+    };
 
-    const showDone = () => { $done_transfer.removeClass(hidden_class); };
+    const showDone = () => {
+        $done_transfer.removeClass(hidden_class);
+    };
 
-    const hideNotes = () => { $notes_transfer.addClass(hidden_class); };
+    const hideNotes = () => {
+        $notes_transfer.addClass(hidden_class);
+    };
 
-    const showNotes = () => { $notes_transfer.removeClass(hidden_class); };
+    const showNotes = () => {
+        $notes_transfer.removeClass(hidden_class);
+    };
 
-    const showTransferError = (err) => { $confirm_transfer.find('.errorfield').text(localize(err)).removeClass(hidden_class); };
+    const showTransferError = (err) => {
+        $confirm_transfer.find('.errorfield').text(localize(err)).removeClass(hidden_class);
+    };
 
-    const updateFormView = (currency) => { $paymentagent_transfer.find('label[for="amount"]').text(`${localize('Amount')} ${currency}`); };
+    const updateFormView = (currency) => {
+        $paymentagent_transfer.find('label[for="amount"]').text(`${localize('Amount')} ${currency}`);
+    };
 
     const updateConfirmView = (username, loginid, amount, currency) => {
         $confirm_transfer
             .find('#user_name')
-                .empty()
-                .text(username)
+            .empty()
+            .text(username)
             .end()
             .find('#loginid')
-                .empty()
-                .text(loginid)
+            .empty()
+            .text(loginid)
             .end()
             .find('#confirm_amount')
-                .empty()
-                .text(`${currency} ${amount}`);
+            .empty()
+            .text(`${currency} ${amount}`);
     };
 
     const updateDoneView = (from_id, to_id, amount, currency) => {
         const template_string = 'Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.';
-        const confirm_msg = localize(template_string, [
-            amount,
-            currency,
-            from_id,
-            to_id,
-        ]);
+        const confirm_msg = localize(template_string, [amount, currency, from_id, to_id]);
         $done_transfer.find(' > #confirm_msg').text(confirm_msg).removeClass(hidden_class);
     };
 

@@ -1,11 +1,12 @@
-const Highcharts    = require('highcharts');
-const moment        = require('moment');
-const commonTrading = require('../common');
-const Tick          = require('../tick');
-const ViewPopupUI   = require('../../user/view_popup/view_popup.ui');
-const localize      = require('../../../base/localize').localize;
-const isVisible     = require('../../../common_functions/common_functions').isVisible;
-const addComma      = require('../../../common_functions/string_util').addComma;
+import Highcharts from 'highcharts';
+import moment from 'moment';
+import commonTrading from '../common';
+import Tick from '../tick';
+import ViewPopupUI from '../../user/view_popup/view_popup.ui';
+import { localize } from '../../../base/localize';
+import { isVisible } from '../../../common_functions/common_functions';
+import { addComma } from '../../../common_functions/string_util';
+
 require('highcharts/modules/exporting')(Highcharts);
 
 const TickDisplay_Beta = (() => {
@@ -35,17 +36,17 @@ const TickDisplay_Beta = (() => {
 
     const initialize = (data) => {
         // setting up globals
-        number_of_ticks      = parseInt(data.number_of_ticks);
-        display_symbol       = data.display_symbol;
-        contract_start_ms    = parseInt(data.contract_start * 1000);
-        contract_category    = data.contract_category;
-        set_barrier          = !contract_category.match('digits');
-        barrier              = data.barrier;
-        abs_barrier          = data.abs_barrier;
-        display_decimals     = data.display_decimals || 2;
+        number_of_ticks = parseInt(data.number_of_ticks);
+        display_symbol = data.display_symbol;
+        contract_start_ms = parseInt(data.contract_start * 1000);
+        contract_category = data.contract_category;
+        set_barrier = !contract_category.match('digits');
+        barrier = data.barrier;
+        abs_barrier = data.abs_barrier;
+        display_decimals = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
-        is_trading_page      = data.is_trading_page;
-        contract_sentiment   = data.contract_sentiment;
+        is_trading_page = data.is_trading_page;
+        contract_sentiment = data.contract_sentiment;
 
         if (data.show_contract_result) {
             price = parseFloat(data.price);
@@ -57,10 +58,9 @@ const TickDisplay_Beta = (() => {
         setXIndicators();
         initializeChart({
             plot_from: data.previous_tick_epoch * 1000,
-            plot_to  : new Date((parseInt(data.contract_start) +
-                parseInt((number_of_ticks + 2) * 5)) * 1000).getTime(),
-            minimize: minimize,
-            width   : data.width ? data.width : undefined,
+            plot_to  : new Date((parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * 5)) * 1000).getTime(),
+            minimize : minimize,
+            width    : data.width ? data.width : undefined,
         });
 
         // add tooltip events to highcharts
@@ -128,11 +128,13 @@ const TickDisplay_Beta = (() => {
             chart: {
                 type           : 'line',
                 renderTo       : 'tick_chart',
-                width          : config.width ? config.width : (config.minimize ? 394 : null),
+                width          : config.width ? config.width : config.minimize ? 394 : null,
                 height         : config.minimize ? 120 : null,
                 backgroundColor: null,
-                events         : { load: plot(config.plot_from, config.plot_to) },
-                marginLeft     : 20,
+                events         : {
+                    load: plot(config.plot_from, config.plot_to),
+                },
+                marginLeft: 20,
             },
             credits: { enabled: false },
             tooltip: {
@@ -152,7 +154,9 @@ const TickDisplay_Beta = (() => {
 
                 labels: {
                     autoRotation: false,
-                    formatter   : function() { return this.value + (is_start_on_first_tick ? 1 : 0); },
+                    formatter   : function() {
+                        return this.value + (is_start_on_first_tick ? 1 : 0);
+                    },
                 },
                 crosshair: {
                     color : '#E98024',
@@ -171,17 +175,21 @@ const TickDisplay_Beta = (() => {
                     x    : 0,
                 },
             },
-            series: [{
-                data: [],
-            }],
+            series: [
+                {
+                    data: [],
+                },
+            ],
             title    : '',
             exporting: { enabled: false, enableImages: false },
             legend   : { enabled: false },
         };
         // Trading page's chart
         const showValues = (tick, time, this_price) => {
-            $('#contract_purchase_profit_list').find('#chart-values')
-                .css('display', 'flex').end()
+            $('#contract_purchase_profit_list')
+                .find('#chart-values')
+                .css('display', 'flex')
+                .end()
                 .find('#contract-values')
                 .css('display', 'none');
             $('#chart_values_tick_value').text(tick);
@@ -203,7 +211,10 @@ const TickDisplay_Beta = (() => {
                     },
                     events: {
                         hide: () => {
-                            $('#contract_purchase_profit_list').find('#chart-values').hide().end()
+                            $('#contract_purchase_profit_list')
+                                .find('#chart-values')
+                                .hide()
+                                .end()
                                 .find(' #contract-values')
                                 .show();
                         },
@@ -224,10 +235,12 @@ const TickDisplay_Beta = (() => {
                         enabled: false,
                     },
                 },
-                series: [{
-                    color    : '#2a3052',
-                    lineWidth: 1,
-                }],
+                series: [
+                    {
+                        color    : '#2a3052',
+                        lineWidth: 1,
+                    },
+                ],
             });
         }
         chart = new Highcharts.Chart(chart_options);
@@ -262,8 +275,8 @@ const TickDisplay_Beta = (() => {
         }
 
         const barrier_type = contract_category.match('asian') ? 'asian' : 'static';
-        const line_color   = is_trading_page ? '#6b8fb9' : 'green';
-        const line_width   = is_trading_page ? 1 : 2;
+        const line_color = is_trading_page ? '#6b8fb9' : 'green';
+        const line_width = is_trading_page ? 1 : 2;
 
         if (barrier_type === 'static') {
             const barrier_tick = applicable_ticks[0];
@@ -300,7 +313,7 @@ const TickDisplay_Beta = (() => {
             for (let i = 0; i < applicable_ticks.length; i++) {
                 total += parseFloat(applicable_ticks[i].quote);
             }
-            let calc_barrier =  total / applicable_ticks.length;
+            let calc_barrier = total / applicable_ticks.length;
             calc_barrier = calc_barrier.toFixed(parseInt(display_decimals) + 1); // round calculated barrier
 
             chart.yAxis[0].removePlotLine('tick-barrier');
@@ -319,15 +332,23 @@ const TickDisplay_Beta = (() => {
         }
         const purchase_barrier = document.getElementById('contract_purchase_barrier');
         if (contract_barrier && purchase_barrier) {
-            commonTrading.labelValue(purchase_barrier, localize('Barrier'), addComma(contract_barrier, display_decimals), true);
+            commonTrading.labelValue(
+                purchase_barrier,
+                localize('Barrier'),
+                addComma(contract_barrier, display_decimals),
+                true,
+            );
         }
     };
 
     const add = (indicator) => {
         chart.xAxis[0].addPlotLine({
-            value : indicator.index,
-            id    : indicator.id,
-            label : { text: indicator.label, x: /start_tick|entry_tick/.test(indicator.id) ? -15 : 5 },
+            value: indicator.index,
+            id   : indicator.id,
+            label: {
+                text: indicator.label,
+                x   : /start_tick|entry_tick/.test(indicator.id) ? -15 : 5,
+            },
             color : '#e98024',
             width : 2,
             zIndex: 2,
@@ -404,15 +425,19 @@ const TickDisplay_Beta = (() => {
             }
             if (!window.tick_init || window.tick_init === '') {
                 initialize({
-                    symbol              : window.tick_underlying,
-                    number_of_ticks     : window.tick_count,
-                    contract_category   : ((/asian/i).test(window.tick_shortcode) ? 'asian' : (/digit/i).test(window.tick_shortcode) ? 'digits' : 'callput'),
-                    longcode            : window.tick_longcode,
-                    display_symbol      : window.tick_display_name,
-                    contract_start      : window.tick_date_start,
-                    abs_barrier         : window.abs_barrier,
-                    display_decimals    : chart_display_decimals,
-                    contract_sentiment  : window.contract_type === 'CALL' || window.contract_type === 'ASIANU' ? 'up' : 'down',
+                    symbol           : window.tick_underlying,
+                    number_of_ticks  : window.tick_count,
+                    contract_category: /asian/i.test(window.tick_shortcode)
+                        ? 'asian'
+                        : /digit/i.test(window.tick_shortcode) ? 'digits' : 'callput',
+                    longcode          : window.tick_longcode,
+                    display_symbol    : window.tick_display_name,
+                    contract_start    : window.tick_date_start,
+                    abs_barrier       : window.abs_barrier,
+                    display_decimals  : chart_display_decimals,
+                    contract_sentiment: window.contract_type === 'CALL' || window.contract_type === 'ASIANU'
+                        ? 'up'
+                        : 'down',
                     show_contract_result: 0,
                 });
                 spots_list = {};
@@ -461,9 +486,9 @@ const TickDisplay_Beta = (() => {
             }
 
             if (is_trading_page) {
-                const is_up   = contract_sentiment === 'up';
-                const min     = chart.yAxis[0].getExtremes().min;
-                const max     = chart.yAxis[0].getExtremes().max;
+                const is_up = contract_sentiment === 'up';
+                const min = chart.yAxis[0].getExtremes().min;
+                const max = chart.yAxis[0].getExtremes().max;
                 chart.yAxis[0].removePlotBand('win-area');
                 chart.yAxis[0].addPlotBand({
                     id   : 'win-area',
@@ -501,7 +526,7 @@ const TickDisplay_Beta = (() => {
             };
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
-                window.subscribe  = 'true';
+                window.subscribe = 'true';
             } else {
                 request.end = contract.date_expiry;
             }
@@ -514,7 +539,9 @@ const TickDisplay_Beta = (() => {
     return {
         init       : initialize,
         updateChart: updateChart,
-        resetSpots : () => { spots_list = {}; },
+        resetSpots : () => {
+            spots_list = {};
+        },
     };
 })();
 

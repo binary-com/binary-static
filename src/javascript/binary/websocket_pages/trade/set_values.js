@@ -1,6 +1,6 @@
-const Contract_Beta = require('./beta/contract');
-const Contract      = require('./contract');
-const Defaults      = require('./defaults');
+import Contract_Beta from './beta/contract';
+import Contract from './contract';
+import Defaults from './defaults';
 
 /*
  * set placeholder text based on current form, used for mobile menu

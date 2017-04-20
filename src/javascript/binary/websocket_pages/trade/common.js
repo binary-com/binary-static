@@ -1,17 +1,15 @@
-const Moment             = require('moment');
-const Defaults           = require('./defaults');
-const Notifications      = require('./notifications');
-const Symbols            = require('./symbols');
-const Tick               = require('./tick');
-const Client             = require('../../base/client');
-const localize           = require('../../base/localize').localize;
-const urlFor             = require('../../base/url').urlFor;
-const isEmptyObject      = require('../../base/utility').isEmptyObject;
-const formatMoney        = require('../../common_functions/currency_to_symbol').formatMoney;
-const addComma           = require('../../common_functions/string_util').addComma;
-const toISOFormat        = require('../../common_functions/string_util').toISOFormat;
-const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
-const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
+import Moment from 'moment';
+import Defaults from './defaults';
+import Notifications from './notifications';
+import Symbols from './symbols';
+import Tick from './tick';
+import Client from '../../base/client';
+import { localize } from '../../base/localize';
+import { urlFor } from '../../base/url';
+import { isEmptyObject } from '../../base/utility';
+import { formatMoney } from '../../common_functions/currency_to_symbol';
+import { addComma, toISOFormat } from '../../common_functions/string_util';
+import { elementInnerHtml, elementTextContent } from '../../common_functions/common_functions';
 
 /*
  * This contains common functions we need for processing the response
@@ -50,7 +48,7 @@ const commonTrading = (() => {
                     for (let j = 0; j < el1[1].length; j++) {
                         const el2 = el1[1][j];
                         const li2 = document.createElement('li');
-                        const a2  = document.createElement('a');
+                        const a2 = document.createElement('a');
                         const content2 = document.createTextNode(elements[el2]);
                         li2.classList.add('tm-li-2');
 
@@ -78,7 +76,7 @@ const commonTrading = (() => {
                     }
                     if (fragment2.hasChildNodes()) {
                         const ul = document.createElement('ul');
-                        const a  = document.createElement('a');
+                        const a = document.createElement('a');
                         const content = document.createTextNode(elements[el1[0]]);
 
                         a.appendChild(content);
@@ -172,8 +170,12 @@ const commonTrading = (() => {
                 Defaults.set('market', current.value);
             }
 
-            if (current.disabled) { // there is no open market
-                Notifications.show({ text: localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
+            if (current.disabled) {
+                // there is no open market
+                Notifications.show({
+                    text: localize('All markets are closed now. Please try again later.'),
+                    uid : 'MARKETS_CLOSED',
+                });
                 document.getElementById('trading_init_progress').style.display = 'none';
             }
         }
@@ -228,12 +230,14 @@ const commonTrading = (() => {
      * trading form to the actual we send it to backend
      * for e.g risefall is mapped to callput with barrierCategory euro_atm
      */
-    const getFormNameBarrierCategory = form_name => (
-        {
-            form_name       : form_name && !/(risefall|higherlower|callput)/.test(form_name) ? (/(overunder|evenodd|matchdiff)/.test(form_name) ? 'digits' : form_name) : 'callput',
-            barrier_category: form_name && !/(risefall|callput)/.test(form_name) ? (/higherlower/.test(form_name) ? 'euro_non_atm' : '') : 'euro_atm',
-        }
-    );
+    const getFormNameBarrierCategory = form_name => ({
+        form_name: form_name && !/(risefall|higherlower|callput)/.test(form_name)
+            ? /(overunder|evenodd|matchdiff)/.test(form_name) ? 'digits' : form_name
+            : 'callput',
+        barrier_category: form_name && !/(risefall|callput)/.test(form_name)
+            ? /higherlower/.test(form_name) ? 'euro_non_atm' : ''
+            : 'euro_atm',
+    });
 
     /*
      * This maps the contract type to where we display on trading form
@@ -285,17 +289,11 @@ const commonTrading = (() => {
 
     const getContractCategoryTree = (elements) => {
         let tree = [
-            ['updown',
-                ['risefall', 'higherlower'],
-            ],
+            ['updown', ['risefall', 'higherlower']],
             'touchnotouch',
-            ['inout',
-                ['endsinout', 'staysinout'],
-            ],
+            ['inout', ['endsinout', 'staysinout']],
             'asian',
-            ['digits',
-                ['matchdiff', 'evenodd', 'overunder'],
-            ],
+            ['digits', ['matchdiff', 'evenodd', 'overunder']],
         ];
 
         if (elements) {
@@ -335,7 +333,7 @@ const commonTrading = (() => {
             len;
 
         if (!classes.contains('active')) {
-            for (i = 0, len = li_elements.length; i < len; i++) {
+            for ((i = 0), (len = li_elements.length); i < len; i++) {
                 li_elements[i].classList.remove('active');
                 li_elements[i].classList.remove('a-active');
             }
@@ -359,7 +357,7 @@ const commonTrading = (() => {
     const displayCommentPrice = (node, currency, type, payout) => {
         if (node && type && payout) {
             const profit = payout - type;
-            const return_percent = (profit / type) * 100;
+            const return_percent = profit / type * 100;
             const comment = `${localize('Net profit')}: ${formatMoney(currency, profit)} | ${localize('Return')} ${return_percent.toFixed(1)}%`;
 
             if (isNaN(profit) || isNaN(return_percent)) {
@@ -404,7 +402,8 @@ const commonTrading = (() => {
         let mkt = Defaults.get('market');
         const markets = Symbols.markets(1);
         if (!mkt || !markets[mkt]) {
-            const sorted_markets = Object.keys(Symbols.markets()).filter(v => markets[v].is_active)
+            const sorted_markets = Object.keys(Symbols.markets())
+                .filter(v => markets[v].is_active)
                 .sort((a, b) => getMarketsOrder(a) - getMarketsOrder(b));
             mkt = sorted_markets[0];
         }
@@ -426,11 +425,15 @@ const commonTrading = (() => {
      * this is invoked when submit button is clicked and prevents reloading of page
      */
     const addEventListenerForm = () => {
-        document.getElementById('websocket_form').addEventListener('submit', (evt) => {
-            evt.currentTarget.classList.add('submitted');
-            evt.preventDefault();
-            return false;
-        }, false);
+        document.getElementById('websocket_form').addEventListener(
+            'submit',
+            (evt) => {
+                evt.currentTarget.classList.add('submitted');
+                evt.preventDefault();
+                return false;
+            },
+            false,
+        );
     };
 
     /*
@@ -493,13 +496,18 @@ const commonTrading = (() => {
     };
 
     const displayTooltip = (market, symbol) => {
-        const tip      = document.getElementById('symbol_tip');
-        const guide    = document.getElementById('guideBtn');
-        const app      = document.getElementById('androidApp');
+        const tip = document.getElementById('symbol_tip');
+        const guide = document.getElementById('guideBtn');
+        const app = document.getElementById('androidApp');
         const appstore = document.getElementById('appstore');
-        const markets  = document.getElementById('contract_markets').value;
+        const markets = document.getElementById('contract_markets').value;
         if (!market || !symbol) return;
-        if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
+        if (
+            market.match(/^volidx/) ||
+            symbol.match(/^R/) ||
+            market.match(/^random_index/) ||
+            market.match(/^random_daily/)
+        ) {
             if (guide) guide.hide();
             tip.show();
             tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
@@ -560,7 +568,7 @@ const commonTrading = (() => {
 
     const updateWarmChart = () => {
         $chart = $chart || $('#trading_worm_chart');
-        const spots =  Object.keys(Tick.spots()).sort((a, b) => a - b).map(v => Tick.spots()[v]);
+        const spots = Object.keys(Tick.spots()).sort((a, b) => a - b).map(v => Tick.spots()[v]);
         if ($chart && typeof $chart.sparkline === 'function') {
             $chart.sparkline(spots, chart_config);
             if (spots.length) {
@@ -572,9 +580,21 @@ const commonTrading = (() => {
     };
 
     const reloadPage = () => {
-        Defaults.remove('market', 'underlying', 'formname',
-            'date_start', 'expiry_type', 'expiry_date', 'expirt_time', 'duration_units', 'diration_value',
-            'amount', 'amount_type', 'currency', 'prediction');
+        Defaults.remove(
+            'market',
+            'underlying',
+            'formname',
+            'date_start',
+            'expiry_type',
+            'expiry_date',
+            'expirt_time',
+            'duration_units',
+            'diration_value',
+            'amount',
+            'amount_type',
+            'currency',
+            'prediction',
+        );
         location.reload();
     };
 
@@ -603,24 +623,32 @@ const commonTrading = (() => {
         final_price = String(final_price).replace(/,/g, '') * 1;
         pnl = String(pnl).replace(/,/g, '') * 1;
         $('#contract_purchase_heading').text(localize(contract_status));
-        const payout  = document.getElementById('contract_purchase_payout');
-        const cost    = document.getElementById('contract_purchase_cost');
-        const profit  = document.getElementById('contract_purchase_profit');
+        const payout = document.getElementById('contract_purchase_payout');
+        const cost = document.getElementById('contract_purchase_cost');
+        const profit = document.getElementById('contract_purchase_profit');
 
         labelValue(cost, localize('Stake'), addComma(Math.abs(pnl)));
         labelValue(payout, localize('Payout'), addComma(final_price));
 
-        const isWin = (final_price > 0);
-        $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
-        labelValue(profit, isWin ? localize('Profit') : localize('Loss'),
-            addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl)));
+        const isWin = final_price > 0;
+        $('#contract_purchase_profit_value').attr('class', isWin ? 'profit' : 'loss');
+        labelValue(
+            profit,
+            isWin ? localize('Profit') : localize('Loss'),
+            addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl)),
+        );
     };
 
     const displayTooltip_Beta = (market, symbol) => {
-        const tip     = document.getElementById('symbol_tip');
+        const tip = document.getElementById('symbol_tip');
         const markets = document.getElementById('contract_markets').value;
         if (!market || !symbol) return;
-        if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
+        if (
+            market.match(/^volidx/) ||
+            symbol.match(/^R/) ||
+            market.match(/^random_index/) ||
+            market.match(/^random_daily/)
+        ) {
             tip.show();
             tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
         } else {
@@ -651,16 +679,25 @@ const commonTrading = (() => {
     };
 
     const timeIsValid = ($element) => {
-        let end_date_value   = document.getElementById('expiry_date').getAttribute('data-value'),
+        let end_date_value = document.getElementById('expiry_date').getAttribute('data-value'),
             start_date_value = document.getElementById('date_start').value,
-            end_time_value   = document.getElementById('expiry_time').value;
+            end_time_value = document.getElementById('expiry_time').value;
         const $invalid_time = $('#invalid-time');
 
-        if ($element.attr('id') === $('#expiry_time') && end_time_value &&
-            !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(end_time_value)) {
+        if (
+            $element.attr('id') === $('#expiry_time') &&
+            end_time_value &&
+            !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(end_time_value)
+        ) {
             $element.addClass('error-field');
             if ($invalid_time.length === 0) {
-                $('#expiry_type_endtime').parent().append($('<p>', { class: 'error-msg', id: 'invalid-time', text: localize('Time is in the wrong format.') }));
+                $('#expiry_type_endtime').parent().append(
+                    $('<p>', {
+                        class: 'error-msg',
+                        id   : 'invalid-time',
+                        text : localize('Time is in the wrong format.'),
+                    }),
+                );
             }
             return false;
         }
@@ -675,7 +712,13 @@ const commonTrading = (() => {
         if (Moment.utc(`${end_date_value} ${end_time_value}`).unix() <= start_date_value) {
             $element.addClass('error-field');
             if (!document.getElementById('end_time_validation')) {
-                $('#expiry_type_endtime').append($('<p/>', { class: 'error-msg', id: 'end_time_validation', text: localize('End time must be after start time.') }));
+                $('#expiry_type_endtime').append(
+                    $('<p/>', {
+                        class: 'error-msg',
+                        id   : 'end_time_validation',
+                        text : localize('End time must be after start time.'),
+                    }),
+                );
             }
             return false;
         }
@@ -686,14 +729,22 @@ const commonTrading = (() => {
     };
 
     return {
-        displayUnderlyings             : displayUnderlyings,
-        generateUnderlyingOptions      : generateUnderlyingOptions,
-        getFormNameBarrierCategory     : getFormNameBarrierCategory,
-        contractTypeDisplayMapping     : contractTypeDisplayMapping,
-        showPriceOverlay               : () => { showHideOverlay('loading_container2', 'block'); },
-        hidePriceOverlay               : () => { showHideOverlay('loading_container2', 'none'); },
-        hideFormOverlay                : () => { showHideOverlay('loading_container3', 'none'); },
-        showFormOverlay                : () => { showHideOverlay('loading_container3', 'block'); },
+        displayUnderlyings        : displayUnderlyings,
+        generateUnderlyingOptions : generateUnderlyingOptions,
+        getFormNameBarrierCategory: getFormNameBarrierCategory,
+        contractTypeDisplayMapping: contractTypeDisplayMapping,
+        showPriceOverlay          : () => {
+            showHideOverlay('loading_container2', 'block');
+        },
+        hidePriceOverlay: () => {
+            showHideOverlay('loading_container2', 'none');
+        },
+        hideFormOverlay: () => {
+            showHideOverlay('loading_container3', 'none');
+        },
+        showFormOverlay: () => {
+            showHideOverlay('loading_container3', 'block');
+        },
         hideOverlayContainer           : hideOverlayContainer,
         getContractCategoryTree        : getContractCategoryTree,
         resetPriceMovement             : resetPriceMovement,
@@ -715,7 +766,9 @@ const commonTrading = (() => {
         displayTooltip_Beta            : displayTooltip_Beta,
         labelValue                     : labelValue,
         timeIsValid                    : timeIsValid,
-        clean                          : () => { $chart = null; },
+        clean                          : () => {
+            $chart = null;
+        },
     };
 })();
 

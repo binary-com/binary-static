@@ -1,19 +1,18 @@
-const Barriers             = require('./barriers');
-const Barriers_Beta        = require('./beta/barriers');
-const DigitInfo_Beta       = require('./beta/charts/digit_info');
-const Purchase_Beta        = require('./beta/purchase');
-const TickDisplay_Beta     = require('./beta/tick_trade');
-const updateWarmChart      = require('./common').updateWarmChart;
-const DigitInfo            = require('./charts/digit_info');
-const Defaults             = require('./defaults');
-const getActiveTab         = require('./get_active_tab').getActiveTab;
-const getActiveTab_Beta    = require('./get_active_tab').getActiveTab_Beta;
-const Purchase             = require('./purchase');
-const Tick                 = require('./tick');
-const TickDisplay          = require('./tick_trade');
-const MBDefaults           = require('../mb_trade/mb_defaults');
-const MBTick               = require('../mb_trade/mb_tick');
-const State                = require('../../base/storage').State;
+import Barriers from './barriers';
+import Barriers_Beta from './beta/barriers';
+import DigitInfo_Beta from './beta/charts/digit_info';
+import Purchase_Beta from './beta/purchase';
+import TickDisplay_Beta from './beta/tick_trade';
+import { updateWarmChart } from './common';
+import DigitInfo from './charts/digit_info';
+import Defaults from './defaults';
+import { getActiveTab, getActiveTab_Beta } from './get_active_tab';
+import Purchase from './purchase';
+import Tick from './tick';
+import TickDisplay from './tick_trade';
+import MBDefaults from '../mb_trade/mb_defaults';
+import MBTick from '../mb_trade/mb_tick';
+import { State } from '../../base/storage';
 
 const GetTicks = (() => {
     let underlying;
@@ -25,46 +24,49 @@ const GetTicks = (() => {
         } else {
             BinarySocket.send({ forget_all: 'ticks' });
             BinarySocket.send({ forget_all: 'candles' });
-            BinarySocket.send(req || {
-                ticks_history: symbol,
-                style        : 'ticks',
-                end          : 'latest',
-                count        : 20,
-                subscribe    : 1,
-            }, {
-                callback: (response) => {
-                    const type = response.msg_type;
-                    const is_digit = getActiveTab() === 'tab_last_digit';
-                    const is_digit_beta = getActiveTab_Beta() === 'tab_last_digit';
-                    if (typeof callback === 'function') {
-                        callback(response);
-                    }
-                    if (State.get('is_mb_trading')) {
-                        MBTick.processTickHistory(response);
-                        return;
-                    }
-                    if (type === 'tick') {
-                        if (State.get('is_trading')) {
-                            processTick(response);
-                            if (is_digit) {
-                                DigitInfo.updateChart(response);
-                            }
-                        } else if (State.get('is_beta_trading')) {
-                            processTick_Beta(response);
-                            if (is_digit_beta) {
-                                DigitInfo_Beta.updateChart(response);
-                            }
-                        }
-                    } else if (type === 'history') {
-                        processHistory(response);
-                        if (is_digit) {
-                            DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
-                        } else if (is_digit_beta) {
-                            DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
-                        }
-                    }
+            BinarySocket.send(
+                req || {
+                    ticks_history: symbol,
+                    style        : 'ticks',
+                    end          : 'latest',
+                    count        : 20,
+                    subscribe    : 1,
                 },
-            });
+                {
+                    callback: (response) => {
+                        const type = response.msg_type;
+                        const is_digit = getActiveTab() === 'tab_last_digit';
+                        const is_digit_beta = getActiveTab_Beta() === 'tab_last_digit';
+                        if (typeof callback === 'function') {
+                            callback(response);
+                        }
+                        if (State.get('is_mb_trading')) {
+                            MBTick.processTickHistory(response);
+                            return;
+                        }
+                        if (type === 'tick') {
+                            if (State.get('is_trading')) {
+                                processTick(response);
+                                if (is_digit) {
+                                    DigitInfo.updateChart(response);
+                                }
+                            } else if (State.get('is_beta_trading')) {
+                                processTick_Beta(response);
+                                if (is_digit_beta) {
+                                    DigitInfo_Beta.updateChart(response);
+                                }
+                            }
+                        } else if (type === 'history') {
+                            processHistory(response);
+                            if (is_digit) {
+                                DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
+                            } else if (is_digit_beta) {
+                                DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
+                            }
+                        }
+                    },
+                },
+            );
         }
     };
 

@@ -14,7 +14,10 @@ const Table = (() => {
      */
     const createFlexTable = (body, metadata, header, footer) => {
         const $table_container = $('<div></div>', { class: 'table-container' });
-        const $table = $('<table></table>', { class: metadata.tableClass || '', id: metadata.id });
+        const $table = $('<table></table>', {
+            class: metadata.tableClass || '',
+            id   : metadata.id,
+        });
         const $body = createFlexTableTopGroup(body, metadata.cols, 'body');
 
         if (header) {
@@ -47,13 +50,13 @@ const Table = (() => {
                     return $('<tbody></tbody>');
                 case 'footer':
                     return $('<tfoot></tfoot>');
-                default :
+                default:
                     return $('<thead></thead>');
             }
         })();
 
         for (let i = 0; i < data.length; i++) {
-            const inner_type = (opt === 'body') ? 'data' : 'header';
+            const inner_type = opt === 'body' ? 'data' : 'header';
             const $tr = createFlexTableRow(data[i], metadata, inner_type);
             $tr.appendTo($outer);
         }
@@ -72,14 +75,14 @@ const Table = (() => {
             throw new Error('metadata and data does not match');
         }
 
-        const is_data = (opt === 'data');
+        const is_data = opt === 'data';
 
         const $tr = $('<tr></tr>');
         for (let i = 0; i < data.length; i++) {
             const class_name = metadata[i].toLowerCase().replace(/\s/g, '-');
-            const row_element = (is_data) ?
-                $('<td></td>', { class: class_name, html: data[i] }) :
-                $('<th></th>', { class: class_name, html: data[i] });
+            const row_element = is_data
+                ? $('<td></td>', { class: class_name, html: data[i] })
+                : $('<th></th>', { class: class_name, html: data[i] });
             row_element.appendTo($tr);
         }
 

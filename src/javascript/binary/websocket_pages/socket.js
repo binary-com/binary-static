@@ -1,24 +1,23 @@
-const MBNotifications      = require('./mb_trade/mb_notifications');
-const MBTradePage          = require('./mb_trade/mb_tradepage');
-const TradePage_Beta       = require('./trade/beta/tradepage');
-const reloadPage           = require('./trade/common').reloadPage;
-const Notifications        = require('./trade/notifications');
-const TradePage            = require('./trade/tradepage');
-const updateBalance        = require('./user/update_balance');
-const Client               = require('../base/client');
-const Clock                = require('../base/clock');
-const GTM                  = require('../base/gtm');
-const Header               = require('../base/header');
-const getLanguage          = require('../base/language').get;
-const localize             = require('../base/localize').localize;
-const Login                = require('../base/login');
-const State                = require('../base/storage').State;
-const getPropertyValue     = require('../base/utility').getPropertyValue;
-const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
-const SessionDurationLimit = require('../common_functions/session_duration_limit');
-const getAppId             = require('../../config').getAppId;
-const getSocketURL         = require('../../config').getSocketURL;
-const Cookies              = require('../../lib/js-cookie');
+import MBNotifications from './mb_trade/mb_notifications';
+import MBTradePage from './mb_trade/mb_tradepage';
+import TradePage_Beta from './trade/beta/tradepage';
+import { reloadPage } from './trade/common';
+import Notifications from './trade/notifications';
+import TradePage from './trade/tradepage';
+import updateBalance from './user/update_balance';
+import Client from '../base/client';
+import Clock from '../base/clock';
+import GTM from '../base/gtm';
+import Header from '../base/header';
+import { get as getLanguage } from '../base/language';
+import { localize } from '../base/localize';
+import Login from '../base/login';
+import { State } from '../base/storage';
+import { getPropertyValue } from '../base/utility';
+import { getLoginToken } from '../common_functions/common_functions';
+import SessionDurationLimit from '../common_functions/session_duration_limit';
+import { getAppId, getSocketURL } from '../../config';
+import Cookies from '../../lib/js-cookie';
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -32,14 +31,14 @@ const BinarySocketClass = () => {
     let binary_socket,
         buffered_sends = [],
         events = {},
-        authorized   = false,
-        req_number   = 0,
-        req_id       = 0,
+        authorized = false,
+        req_number = 0,
+        req_id = 0,
         wrong_app_id = 0;
 
-    const timeouts  = {};
+    const timeouts = {};
     const socket_url = `${getSocketURL()}?app_id=${getAppId()}&l=${getLanguage()}`;
-    const promises  = {};
+    const promises = {};
     const no_duplicate_requests = [
         'authorize',
         'get_settings',
@@ -69,13 +68,10 @@ const BinarySocketClass = () => {
                 waiting_list.items[msg_type] = [];
             }
         },
-        another_exists: (pr, msg_type) => (
-            Object.keys(waiting_list.items)
-                .some(type => (
-                    type !== msg_type &&
-                    $.inArray(pr, waiting_list.items[type]) >= 0
-                ))
-        ),
+        another_exists: (pr, msg_type) =>
+            Object.keys(waiting_list.items).some(
+                type => type !== msg_type && $.inArray(pr, waiting_list.items[type]) >= 0,
+            ),
     };
 
     const clearTimeouts = () => {
@@ -323,8 +319,17 @@ const BinarySocketClass = () => {
                 switch (error_code) {
                     case 'WrongResponse':
                     case 'OutputValidationFailed': {
-                        const text_value = (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.'));
-                        $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: text_value })));
+                        const text_value = error_code === 'WrongResponse' && response.error.message
+                            ? response.error.message
+                            : localize('Sorry, an error occurred while processing your request.');
+                        $('#content').empty().html(
+                            $('<div/>', { class: 'container' }).append(
+                                $('<p/>', {
+                                    class: 'notice-msg center-text',
+                                    text : text_value,
+                                }),
+                            ),
+                        );
                         break;
                     }
                     case 'RateLimit':
@@ -354,11 +359,17 @@ const BinarySocketClass = () => {
             clearTimeouts();
 
             if (wrong_app_id !== getAppId()) {
-                const toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
-                               State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
-                               State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
+                const toCall = State.get('is_trading')
+                    ? TradePage.onDisconnect
+                    : State.get('is_beta_trading')
+                          ? TradePage_Beta.onDisconnect
+                          : State.get('is_mb_trading') ? MBTradePage.onDisconnect : '';
                 if (toCall) {
-                    Notifications.show({ text: localize('Connection error: Please check your internet connection.'), uid: 'CONNECTION_ERROR', dismissible: true });
+                    Notifications.show({
+                        text       : localize('Connection error: Please check your internet connection.'),
+                        uid        : 'CONNECTION_ERROR',
+                        dismissible: true,
+                    });
                     timeouts.error = setTimeout(() => {
                         toCall();
                     }, 10 * 1000);

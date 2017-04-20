@@ -1,14 +1,13 @@
-const isEmptyObject = require('../base/utility').isEmptyObject;
+import { isEmptyObject } from '../base/utility';
 
 const ActiveSymbols = (() => {
     'use strict';
 
-    const groupBy = (xs, key) => (
+    const groupBy = (xs, key) =>
         xs.reduce((rv, x) => {
             (rv[x[key]] = rv[x[key]] || []).push(x);
             return rv;
-        }, {})
-    );
+        }, {});
 
     const extend = (a, b) => {
         if (!a || !b) return null;

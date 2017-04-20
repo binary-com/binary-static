@@ -1,4 +1,4 @@
-const localize = require('../../../base/localize').localize;
+import { localize } from '../../../base/localize';
 
 const HighchartUI = (() => {
     let common_time_style,
@@ -7,7 +7,8 @@ const HighchartUI = (() => {
         chart_options;
 
     const initLabels = () => {
-        common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
+        common_time_style =
+            'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
         common_spot_style = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
     };
 
@@ -33,7 +34,8 @@ const HighchartUI = (() => {
 
     const setLabels = (chart_delayed) => {
         // display a guide for clients to know how we are marking entry and exit spots
-        txt = (chart_delayed ? getLabels('delay') : '') +
+        txt =
+            (chart_delayed ? getLabels('delay') : '') +
             getLabels('start_time') +
             (history ? getLabels('entry_spot') + getLabels('exit_spot') : '') +
             getLabels('end_time');
@@ -42,7 +44,7 @@ const HighchartUI = (() => {
     const setCartOptions = (params) => {
         chart_options = {
             chart: {
-                backgroundColor: null, /* make background transparent */
+                backgroundColor: null /* make background transparent */,
                 height         : Math.max(params.height, 450),
                 renderTo       : params.el,
                 animation      : false,
@@ -53,7 +55,7 @@ const HighchartUI = (() => {
             },
             credits: { enabled: false },
             tooltip: {
-                xDateFormat  : (params.JPClient ? '%Y/%m/%d, %H:%M:%S' : '%A, %b %e, %H:%M:%S GMT'),
+                xDateFormat  : params.JPClient ? '%Y/%m/%d, %H:%M:%S' : '%A, %b %e, %H:%M:%S GMT',
                 valueDecimals: params.decimals.split('.')[1].length || 3,
             },
             subtitle: {
@@ -66,28 +68,35 @@ const HighchartUI = (() => {
             yAxis: {
                 labels: { align: 'left' },
             },
-            series: [{
-                type : params.type,
-                name : params.title,
-                data : params.data,
-                // zones are used to display color of the line
-                zones: [{
-                    // make the line grey until it reaches entry time or start time if entry spot time is not yet known
-                    value: params.entry_time,
-                    color: '#ccc',
-                }, {
-                    // make the line default color until exit time is reached
-                    value: params.exit_time,
-                    color: '',
-                }, {
-                    // make the line grey again after trade ended
-                    color: '#ccc',
-                }],
-                zoneAxis      : 'x',
-                cropThreshold : Infinity,
-                softThreshold : false,
-                turboThreshold: Infinity,
-            }],
+            series: [
+                {
+                    type : params.type,
+                    name : params.title,
+                    data : params.data,
+                    // zones are used to display color of the line
+                    zones: [
+                        {
+                            // make the line grey until it reaches entry time or start time
+                            // if entry spot time is not yet known
+                            value: params.entry_time,
+                            color: '#ccc',
+                        },
+                        {
+                            // make the line default color until exit time is reached
+                            value: params.exit_time,
+                            color: '',
+                        },
+                        {
+                            // make the line grey again after trade ended
+                            color: '#ccc',
+                        },
+                    ],
+                    zoneAxis      : 'x',
+                    cropThreshold : Infinity,
+                    softThreshold : false,
+                    turboThreshold: Infinity,
+                },
+            ],
             exporting  : { enabled: false },
             plotOptions: {
                 line: {
@@ -108,15 +117,13 @@ const HighchartUI = (() => {
         }
     };
 
-    const getHighchartOptions = JPClient => (
-        {
-            // use comma as separator instead of space
-            lang  : { thousandsSep: ',' },
-            global: {
-                timezoneOffset: JPClient ? -9 * 60 : 0, // Converting chart time to JST.
-            },
-        }
-    );
+    const getHighchartOptions = JPClient => ({
+        // use comma as separator instead of space
+        lang  : { thousandsSep: ',' },
+        global: {
+            timezoneOffset: JPClient ? -9 * 60 : 0, // Converting chart time to JST.
+        },
+    });
 
     const replaceExitLabelWithSell = (subtitle) => {
         const subtitle_length = subtitle.childNodes.length;
@@ -151,12 +158,30 @@ const HighchartUI = (() => {
     };
 
     const showError = (type, message) => {
-        $('#analysis_live_chart').html($('<p/>', { class: 'error-msg', text: (type === 'missing' ? localize('Ticks history returned an empty array.') : message) }));
+        $('#analysis_live_chart').html(
+            $('<p/>', {
+                class: 'error-msg',
+                text : type === 'missing' ? localize('Ticks history returned an empty array.') : message,
+            }),
+        );
     };
 
     const getMarkerObject = (type) => {
         const color = type === 'entry' ? 'white' : 'orange';
-        return { fillColor: color, lineColor: 'orange', lineWidth: 3, radius: 4, states: { hover: { fillColor: color, lineColor: 'orange', lineWidth: 3, radius: 4 } } };
+        return {
+            fillColor: color,
+            lineColor: 'orange',
+            lineWidth: 3,
+            radius   : 4,
+            states   : {
+                hover: {
+                    fillColor: color,
+                    lineColor: 'orange',
+                    lineWidth: 3,
+                    radius   : 4,
+                },
+            },
+        };
     };
 
     return {

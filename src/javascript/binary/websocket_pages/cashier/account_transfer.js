@@ -1,6 +1,6 @@
-const Client      = require('../../base/client');
-const localize    = require('../../base/localize').localize;
-const FormManager = require('../../common_functions/form_manager');
+import Client from '../../base/client';
+import { localize } from '../../base/localize';
+import FormManager from '../../common_functions/form_manager';
 
 const AccountTransfer = (() => {
     'use strict';
@@ -13,8 +13,7 @@ const AccountTransfer = (() => {
 
     const populateAccounts = (response) => {
         if (response.error) {
-            $('#error_message').find('p').text(response.error.message).end()
-                .removeClass(hidden_class);
+            $('#error_message').find('p').text(response.error.message).end().removeClass(hidden_class);
             return;
         }
         accounts = response.accounts;
@@ -29,13 +28,15 @@ const AccountTransfer = (() => {
                 from_loginid = accounts[idx].loginid;
                 to_loginid = accounts[1 - idx].loginid;
                 text = localize('from [_1] to [_2]', [from_loginid, to_loginid]);
-                $transfer.append($('<option/>', {
-                    text           : text,
-                    'data-from'    : from_loginid,
-                    'data-to'      : to_loginid,
-                    'data-currency': accounts[idx].currency,
-                    'data-balance' : accounts[idx].balance,
-                }));
+                $transfer.append(
+                    $('<option/>', {
+                        text           : text,
+                        'data-from'    : from_loginid,
+                        'data-to'      : to_loginid,
+                        'data-currency': accounts[idx].currency,
+                        'data-balance' : accounts[idx].balance,
+                    }),
+                );
             }
         });
 
@@ -67,18 +68,43 @@ const AccountTransfer = (() => {
         });
     };
 
-    const updateCurrency = ($currency) => { $currency.text(getTransferAttr('data-currency')); };
+    const updateCurrency = ($currency) => {
+        $currency.text(getTransferAttr('data-currency'));
+    };
 
     const getTransferAttr = attribute => $transfer.find('option:selected').attr(attribute);
 
     const bindValidation = () => {
         FormManager.init(form_id, [
-            { selector: '#amount', validations: ['req', ['number', { type: 'float', decimals: '1, 2', min: 0.1, max: getTransferAttr('data-balance') }]] },
+            {
+                selector   : '#amount',
+                validations: [
+                    'req',
+                    [
+                        'number',
+                        {
+                            type    : 'float',
+                            decimals: '1, 2',
+                            min     : 0.1,
+                            max     : getTransferAttr('data-balance'),
+                        },
+                    ],
+                ],
+            },
 
             { request_field: 'transfer_between_accounts', value: 1 },
-            { request_field: 'account_from',              value: () => getTransferAttr('data-from') },
-            { request_field: 'account_to',                value: () => getTransferAttr('data-to') },
-            { request_field: 'currency',                  value: () => getTransferAttr('data-currency') },
+            {
+                request_field: 'account_from',
+                value        : () => getTransferAttr('data-from'),
+            },
+            {
+                request_field: 'account_to',
+                value        : () => getTransferAttr('data-to'),
+            },
+            {
+                request_field: 'currency',
+                value        : () => getTransferAttr('data-currency'),
+            },
         ]);
     };
 
@@ -94,8 +120,8 @@ const AccountTransfer = (() => {
         $(form_id).addClass(hidden_class);
         accounts = response.accounts;
         accounts.forEach((account, idx) => {
-            $(`#loginid_${(idx + 1)}`).text(account.loginid);
-            $(`#balance_${(idx + 1)}`).text(`${account.currency} ${account.balance}`);
+            $(`#loginid_${idx + 1}`).text(account.loginid);
+            $(`#balance_${idx + 1}`).text(`${account.currency} ${account.balance}`);
         });
         $('#success_form').removeClass(hidden_class);
     };

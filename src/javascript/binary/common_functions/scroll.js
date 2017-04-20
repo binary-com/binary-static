@@ -33,11 +33,23 @@ const Scroll = (() => {
 
                 // if we've scrolled more than the navigation, change its position to fixed to stick to top,
                 // otherwise change it back to relative
-                if (scroll_top + $sidebar[0].offsetHeight >
-                    $sidebar_container[0].offsetHeight + $sidebar_container.offset().top) {
-                    $sidebar.css({ position: 'absolute', bottom: 0, top: '', width: width });
+                if (
+                    scroll_top + $sidebar[0].offsetHeight >
+                    $sidebar_container[0].offsetHeight + $sidebar_container.offset().top
+                ) {
+                    $sidebar.css({
+                        position: 'absolute',
+                        bottom  : 0,
+                        top     : '',
+                        width   : width,
+                    });
                 } else if (scroll_top > sticky_navigation_offset_top) {
-                    $sidebar.css({ position: 'fixed', top: 0, bottom: '', width: width });
+                    $sidebar.css({
+                        position: 'fixed',
+                        top     : 0,
+                        bottom  : '',
+                        width   : width,
+                    });
                 } else {
                     $sidebar.css({ position: 'relative' });
                 }
@@ -57,7 +69,8 @@ const Scroll = (() => {
                     const section = $(`.section:eq(${i})`);
                     const section_offset = section.offset();
                     const is_offset_top = section_offset && $(this).scrollTop() >= section_offset.top - 5;
-                    if (($(window).scrollTop() === 0 || is_offset_top) && section.css('display') !== 'none') { // ignore hidden elements
+                    if (($(window).scrollTop() === 0 || is_offset_top) && section.css('display') !== 'none') {
+                        // ignore hidden elements
                         sidebar_nav.find('li').removeClass('selected');
 
                         if ($(window).scrollTop() === 0 || sidebar_nav.width() === 0) {

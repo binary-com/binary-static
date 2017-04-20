@@ -1,4 +1,4 @@
-const Cookies = require('./lib/js-cookie');
+import Cookies from './lib/js-cookie';
 
 /*
  * Configuration values needed in js codes
@@ -9,17 +9,16 @@ const Cookies = require('./lib/js-cookie');
  *
  */
 
-const getAppId = () => (
-    localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1')
-);
+const getAppId = () =>
+    localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
 
 const getSocketURL = () => {
     let server_url = localStorage.getItem('config.server_url');
     if (!server_url) {
         const loginid = Cookies.get('loginid'),
-            isReal  = loginid && !/^VRT/.test(loginid),
+            isReal = loginid && !/^VRT/.test(loginid),
             toGreenPercent = { real: 100, virtual: 0, logged_out: 0 }, // default percentage
-            categoryMap    = ['real', 'virtual', 'logged_out'],
+            categoryMap = ['real', 'virtual', 'logged_out'],
             randomPercent = Math.random() * 100,
             percentValues = Cookies.get('connection_setup'); // set by GTM
 
@@ -33,11 +32,7 @@ const getSocketURL = () => {
             });
         }
 
-        server_url = `${(/staging\.binary\.com/i.test(window.location.hostname) ? 'blue' :
-                (isReal  ? (randomPercent < toGreenPercent.real       ? 'green' : 'blue') :
-                 loginid ? (randomPercent < toGreenPercent.virtual    ? 'green' : 'blue') :
-                           (randomPercent < toGreenPercent.logged_out ? 'green' : 'blue'))
-            )}.binaryws.com`;
+        server_url = `${/staging\.binary\.com/i.test(window.location.hostname) ? 'blue' : isReal ? randomPercent < toGreenPercent.real ? 'green' : 'blue' : loginid ? randomPercent < toGreenPercent.virtual ? 'green' : 'blue' : randomPercent < toGreenPercent.logged_out ? 'green' : 'blue'}.binaryws.com`;
     }
     return `wss://${server_url}/websockets/v3`;
 };

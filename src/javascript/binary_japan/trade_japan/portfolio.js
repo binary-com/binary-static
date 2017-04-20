@@ -1,6 +1,6 @@
-const Client        = require('../../binary/base/client');
-const State         = require('../../binary/base/storage').State;
-const PortfolioInit = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init');
+import Client from '../../binary/base/client';
+import { State } from '../../binary/base/storage';
+import PortfolioInit from '../../binary/websocket_pages/user/account/portfolio/portfolio.init';
 
 const JapanPortfolio = (() => {
     let $portfolio,

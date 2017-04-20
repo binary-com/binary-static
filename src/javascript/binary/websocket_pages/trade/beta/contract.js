@@ -1,7 +1,7 @@
-const getFormNameBarrierCategory = require('../common').getFormNameBarrierCategory;
-const getLanguage                = require('../../../base/language').get;
-const localize                   = require('../../../base/localize').localize;
-const isEmptyObject              = require('../../../base/utility').isEmptyObject;
+import { getFormNameBarrierCategory } from '../common';
+import { get as getLanguage } from '../../../base/language';
+import { localize } from '../../../base/localize';
+import { isEmptyObject } from '../../../base/utility';
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -34,11 +34,11 @@ const Contract_Beta = (() => {
 
     const populateDurations = (current_contract) => {
         const current_category = current_contract.contract_category;
-        const expiry_type      = current_contract.expiry_type;
+        const expiry_type = current_contract.expiry_type;
         const barrier_category = current_contract.barrier_category;
-        const start_type       = current_contract.start_type;
-        const max_duration     = current_contract.max_contract_duration;
-        const min_duration     = current_contract.min_contract_duration;
+        const start_type = current_contract.start_type;
+        const max_duration = current_contract.max_contract_duration;
+        const min_duration = current_contract.min_contract_duration;
 
         if (!durations[expiry_type]) {
             durations[expiry_type] = {};
@@ -88,7 +88,11 @@ const Contract_Beta = (() => {
                     populateDurations(current_obj);
                 }
 
-                if (current_obj.forward_starting_options && current_obj.start_type === 'forward' && sessionStorage.formname !== 'higherlower') {
+                if (
+                    current_obj.forward_starting_options &&
+                    current_obj.start_type === 'forward' &&
+                    sessionStorage.formname !== 'higherlower'
+                ) {
                     start_dates.list = current_obj.forward_starting_options;
                 } else if (current_obj.start_type === 'spot') {
                     start_dates.has_spot = 1;
@@ -120,8 +124,9 @@ const Contract_Beta = (() => {
                 }
 
                 if (!contract_type[contract_category].hasOwnProperty(current_obj.contract_type)) {
-                    contract_type[contract_category][current_obj.contract_type] =
-                        localize(current_obj.contract_display);
+                    contract_type[contract_category][current_obj.contract_type] = localize(
+                        current_obj.contract_display,
+                    );
                 }
             }
         });
@@ -186,7 +191,9 @@ const Contract_Beta = (() => {
         contractType : () => contract_type,
         form         : () => form,
         barrier      : () => barrier,
-        setContracts : (data) => { contract_details = data; },
+        setContracts : (data) => {
+            contract_details = data;
+        },
     };
 })();
 

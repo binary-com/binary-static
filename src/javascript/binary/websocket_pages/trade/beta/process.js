@@ -1,21 +1,21 @@
-const moment                         = require('moment');
-const TradingAnalysis_Beta           = require('./analysis');
-const Contract_Beta                  = require('./contract');
-const Durations_Beta                 = require('./duration');
-const Price_Beta                     = require('./price');
-const StartDates_Beta                = require('./starttime');
-const commonTrading                  = require('../common');
-const Defaults                       = require('../defaults');
-const GetTicks                       = require('../get_ticks');
-const Notifications                  = require('../notifications');
-const Symbols                        = require('../symbols');
-const setFormPlaceholderContent_Beta = require('../set_values').setFormPlaceholderContent_Beta;
-const Tick                           = require('../tick');
-const AssetIndexUI                   = require('../../resources/asset_index/asset_index.ui');
-const TradingTimesUI                 = require('../../resources/trading_times/trading_times.ui');
-const localize                       = require('../../../base/localize').localize;
-const State                          = require('../../../base/storage').State;
-const elementInnerHtml               = require('../../../common_functions/common_functions').elementInnerHtml;
+import moment from 'moment';
+import TradingAnalysis_Beta from './analysis';
+import Contract_Beta from './contract';
+import Durations_Beta from './duration';
+import Price_Beta from './price';
+import StartDates_Beta from './starttime';
+import commonTrading from '../common';
+import Defaults from '../defaults';
+import GetTicks from '../get_ticks';
+import Notifications from '../notifications';
+import Symbols from '../symbols';
+import { setFormPlaceholderContent_Beta } from '../set_values';
+import Tick from '../tick';
+import AssetIndexUI from '../../resources/asset_index/asset_index.ui';
+import TradingTimesUI from '../../resources/trading_times/trading_times.ui';
+import { localize } from '../../../base/localize';
+import { State } from '../../../base/storage';
+import { elementInnerHtml } from '../../../common_functions/common_functions';
 
 const Process_Beta = (() => {
     'use strict';
@@ -41,7 +41,6 @@ const Process_Beta = (() => {
         });
     };
 
-
     /*
      * Function to call when market has changed
      */
@@ -56,7 +55,7 @@ const Process_Beta = (() => {
             market = commonTrading.getDefaultMarket();
             Defaults.set('market', market);
         }
-        if ((!symbol || !Symbols.underlyings()[market][symbol])) {
+        if (!symbol || !Symbols.underlyings()[market][symbol]) {
             symbol = undefined;
         }
         commonTrading.displayUnderlyings('underlying', Symbols.underlyings()[market], symbol);
@@ -105,20 +104,25 @@ const Process_Beta = (() => {
     const processContract_Beta = (contracts) => {
         if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
             Price_Beta.processForgetProposals_Beta();
-            const container                   = document.getElementById('contract_confirmation_container');
-            const message_container           = document.getElementById('confirmation_message');
-            const confirmation_error          = document.getElementById('confirmation_error');
+            const container = document.getElementById('contract_confirmation_container');
+            const message_container = document.getElementById('confirmation_message');
+            const confirmation_error = document.getElementById('confirmation_error');
             const confirmation_error_contents = document.getElementById('confirmation_error_contents');
-            const contracts_list              = document.getElementById('contracts_list');
+            const contracts_list = document.getElementById('contracts_list');
             container.style.display = 'block';
             contracts_list.style.display = 'none';
             message_container.hide();
             confirmation_error.show();
-            elementInnerHtml(confirmation_error_contents, `${contracts.error.message} <a href="javascript:;" onclick="sessionStorage.removeItem('underlying'); window.location.reload();">${localize('Please reload the page')}</a>`);
+            elementInnerHtml(
+                confirmation_error_contents,
+                `${contracts.error.message} <a href="javascript:;" onclick="sessionStorage.removeItem('underlying'); window.location.reload();">${localize('Please reload the page')}</a>`,
+            );
             return;
         }
 
-        window.chartAllowed = !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly');
+        window.chartAllowed = !(contracts.contracts_for &&
+            contracts.contracts_for.feed_license &&
+            contracts.contracts_for.feed_license === 'chartonly');
 
         document.getElementById('trading_socket_container_beta').classList.add('show');
         const init_logo = document.getElementById('trading_init_progress');
@@ -167,9 +171,13 @@ const Process_Beta = (() => {
         displayPrediction_Beta();
 
         let r1;
-        if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
+        if (
+            State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now'
+        ) {
             r1 = Durations_Beta.onStartDateChange(Defaults.get('date_start'));
-            if (!r1 || Defaults.get('expiry_type') === 'endtime') Durations_Beta.display();
+            if (!r1 || Defaults.get('expiry_type') === 'endtime') {
+                Durations_Beta.display();
+            }
         } else {
             Durations_Beta.display();
         }
@@ -177,10 +185,15 @@ const Process_Beta = (() => {
         if (Defaults.get('amount')) $('#amount').val(Defaults.get('amount'));
         else Defaults.set('amount', document.getElementById('amount').value);
 
-        if (Defaults.get('amount_type')) commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
-        else Defaults.set('amount_type', document.getElementById('amount_type').value);
+        if (Defaults.get('amount_type')) {
+            commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
+        } else {
+            Defaults.set('amount_type', document.getElementById('amount_type').value);
+        }
 
-        if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
+        if (Defaults.get('currency')) {
+            commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
+        }
 
         const expiry_type = Defaults.get('expiry_type') || 'duration';
         const make_price_request = onExpiryTypeChange(expiry_type);

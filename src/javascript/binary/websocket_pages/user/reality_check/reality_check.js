@@ -1,6 +1,6 @@
-const RealityCheckData = require('./reality_check.data');
-const RealityCheckUI   = require('./reality_check.ui');
-const Client           = require('../../../base/client');
+import RealityCheckData from './reality_check.data';
+import RealityCheckUI from './reality_check.ui';
+import Client from '../../../base/client';
 
 const RealityCheck = (() => {
     'use strict';
@@ -8,8 +8,10 @@ const RealityCheck = (() => {
     const storageHandler = (ev) => {
         const key = ev.key;
         const new_value = ev.newValue;
-        if ((key === 'client.reality_check.ack' && +new_value === 1) ||
-            (key === 'client.reality_check.keep_open' && +new_value === 0)) {
+        if (
+            (key === 'client.reality_check.ack' && +new_value === 1) ||
+            (key === 'client.reality_check.keep_open' && +new_value === 0)
+        ) {
             RealityCheckUI.closePopUp();
         }
     };

@@ -1,9 +1,8 @@
-const LimitsUI           = require('./limits.ui');
-const Client             = require('../../../../../base/client');
-const localize           = require('../../../../../base/localize').localize;
-const elementInnerHtml   = require('../../../../../common_functions/common_functions').elementInnerHtml;
-const elementTextContent = require('../../../../../common_functions/common_functions').elementTextContent;
-const addComma           = require('../../../../../common_functions/string_util').addComma;
+import LimitsUI from './limits.ui';
+import Client from '../../../../../base/client';
+import { localize } from '../../../../../base/localize';
+import { elementInnerHtml, elementTextContent } from '../../../../../common_functions/common_functions';
+import { addComma } from '../../../../../common_functions/string_util';
 
 const LimitsInit = (() => {
     'use strict';
@@ -12,38 +11,52 @@ const LimitsInit = (() => {
         const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);
 
-        const el_withdraw_limit     = document.getElementById('withdrawal-limit');
-        const el_withdrawn          = document.getElementById('already-withdraw');
+        const el_withdraw_limit = document.getElementById('withdrawal-limit');
+        const el_withdrawn = document.getElementById('already-withdraw');
         const el_withdraw_limit_agg = document.getElementById('withdrawal-limit-aggregate');
 
         if (limits.lifetime_limit === 99999999 && limits.num_of_days_limit === 99999999) {
-            elementTextContent(el_withdraw_limit, localize('Your account is fully authenticated and your withdrawal limits have been lifted.'));
+            elementTextContent(
+                el_withdraw_limit,
+                localize('Your account is fully authenticated and your withdrawal limits have been lifted.'),
+            );
         } else {
-            let txt_withdraw_lim           = 'Your withdrawal limit is [_1] [_2] (or equivalent in other currency).',
-                txt_withdraw_amt           = 'You have already withdrawn the equivalent of [_1] [_2].',
-                txt_current_max_withdrawal = 'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).',
-                currency                   = 'EUR';
-            const days_limit               = addComma(limits.num_of_days_limit).split('.')[1] === '00' ? addComma(limits.num_of_days_limit).split('.')[0] : addComma(limits.num_of_days_limit);
+            let txt_withdraw_lim = 'Your withdrawal limit is [_1] [_2] (or equivalent in other currency).',
+                txt_withdraw_amt = 'You have already withdrawn the equivalent of [_1] [_2].',
+                txt_current_max_withdrawal =
+                    'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).',
+                currency = 'EUR';
+            const days_limit = addComma(limits.num_of_days_limit).split('.')[1] === '00'
+                ? addComma(limits.num_of_days_limit).split('.')[0]
+                : addComma(limits.num_of_days_limit);
             // no need for addComma since it is already string like "1,000"
-            const withdrawn                = limits.withdrawal_since_inception_monetary;
-            const remainder                = addComma(limits.remainder).split('.')[1] === '00' ? addComma(limits.remainder).split('.')[0] : addComma(limits.remainder);
+            const withdrawn = limits.withdrawal_since_inception_monetary;
+            const remainder = addComma(limits.remainder).split('.')[1] === '00'
+                ? addComma(limits.remainder).split('.')[0]
+                : addComma(limits.remainder);
 
-            if ((/^(iom)$/i).test(Client.get('landing_company_name'))) { // MX
-                txt_withdraw_lim  = 'Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).';
-                txt_withdraw_amt = 'You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.';
-                elementTextContent(el_withdraw_limit,
-                    localize(txt_withdraw_lim, [limits.num_of_days, currency, days_limit]));
-                elementTextContent(el_withdrawn,
-                    localize(txt_withdraw_amt,  [currency, withdrawn, limits.num_of_days]));
+            if (/^(iom)$/i.test(Client.get('landing_company_name'))) {
+                // MX
+                txt_withdraw_lim =
+                    'Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).';
+                txt_withdraw_amt =
+                    'You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.';
+                elementTextContent(
+                    el_withdraw_limit,
+                    localize(txt_withdraw_lim, [limits.num_of_days, currency, days_limit]),
+                );
+                elementTextContent(el_withdrawn, localize(txt_withdraw_amt, [currency, withdrawn, limits.num_of_days]));
             } else {
-                if ((/^(costarica|japan)$/i).test(Client.get('landing_company_name'))) { // CR , JP
-                    txt_withdraw_lim           = 'Your withdrawal limit is [_1] [_2].';
-                    txt_withdraw_amt           = 'You have already withdrawn [_1] [_2].';
-                    txt_current_max_withdrawal = 'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].';
-                    currency                   = Client.get('currency') || Client.get('default_currency');
+                if (/^(costarica|japan)$/i.test(Client.get('landing_company_name'))) {
+                    // CR , JP
+                    txt_withdraw_lim = 'Your withdrawal limit is [_1] [_2].';
+                    txt_withdraw_amt = 'You have already withdrawn [_1] [_2].';
+                    txt_current_max_withdrawal =
+                        'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].';
+                    currency = Client.get('currency') || Client.get('default_currency');
                 }
                 elementTextContent(el_withdraw_limit, localize(txt_withdraw_lim, [currency, days_limit]));
-                elementTextContent(el_withdrawn, localize(txt_withdraw_amt,  [currency, withdrawn]));
+                elementTextContent(el_withdrawn, localize(txt_withdraw_amt, [currency, withdrawn]));
             }
             elementTextContent(el_withdraw_limit_agg, localize(txt_current_max_withdrawal, [currency, remainder]));
         }

@@ -1,5 +1,5 @@
-const CookieStorage = require('./storage').CookieStorage;
-const Cookies       = require('../../lib/js-cookie');
+import { CookieStorage } from './storage';
+import Cookies from '../../lib/js-cookie';
 
 const Language = (() => {
     'use strict';
@@ -31,13 +31,15 @@ const Language = (() => {
     const languageFromUrl = () => {
         const regex = new RegExp(`^(${Object.keys(all_languages).join('|')})$`, 'i');
         const url_params = window.location.href.split('/').slice(3);
-        return (url_params.find(lang => regex.test(lang)) || '');
+        return url_params.find(lang => regex.test(lang)) || '';
     };
 
     let current_lang = null;
-    const getLanguage = () => (current_lang = (current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase()));
+    const getLanguage = () =>
+        current_lang = current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase();
 
-    const urlForLanguage = lang => window.location.href.replace(new RegExp(`\/${getLanguage()}\/`, 'i'), `/${lang.trim().toLowerCase()}/`);
+    const urlForLanguage = lang =>
+        window.location.href.replace(new RegExp(`\/${getLanguage()}\/`, 'i'), `/${lang.trim().toLowerCase()}/`);
 
     const onChangeLanguage = () => {
         let $this;

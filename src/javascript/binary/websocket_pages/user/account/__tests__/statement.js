@@ -1,5 +1,5 @@
-const statement = require('../statement');
-const { api, expect } = require('../../../../common_functions/tests');
+import statement from '../statement';
+import { api, expect } from '../../../../common_functions/tests';
 
 describe('Statement', () => {
     let statement_ws;
@@ -15,22 +15,13 @@ describe('Statement', () => {
     });
     it('Should have all expected data', () => {
         const statement_data = statement.getStatementData(statement_ws.transactions[0]);
-        expect(statement_data).to.be.an('Object')
-            .and.to.have.property('date')
-            .and.to.be.a('string');
-        expect(statement_data).to.have.property('ref')
-            .and.to.be.a('string');
-        expect(statement_data).to.have.property('payout')
-            .and.to.be.a('string');
-        expect(statement_data).to.have.property('action')
-            .and.to.be.a('string');
-        expect(statement_data).to.have.property('amount')
-            .and.to.be.a('string');
-        expect(statement_data).to.have.property('balance')
-            .and.to.be.a('string');
-        expect(statement_data).to.have.property('desc')
-            .and.to.be.a('string');
-        expect(statement_data).to.have.property('id')
-            .and.to.be.a('string');
+        expect(statement_data).to.be.an('Object').and.to.have.property('date').and.to.be.a('string');
+        expect(statement_data).to.have.property('ref').and.to.be.a('string');
+        expect(statement_data).to.have.property('payout').and.to.be.a('string');
+        expect(statement_data).to.have.property('action').and.to.be.a('string');
+        expect(statement_data).to.have.property('amount').and.to.be.a('string');
+        expect(statement_data).to.have.property('balance').and.to.be.a('string');
+        expect(statement_data).to.have.property('desc').and.to.be.a('string');
+        expect(statement_data).to.have.property('id').and.to.be.a('string');
     });
 });

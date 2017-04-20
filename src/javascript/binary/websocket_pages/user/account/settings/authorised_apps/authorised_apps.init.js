@@ -1,5 +1,5 @@
-const ApplicationsData = require('./authorised_apps.data');
-const ApplicationsUI   = require('./authorised_apps.ui');
+import ApplicationsData from './authorised_apps.data';
+import ApplicationsUI from './authorised_apps.ui';
 
 const ApplicationsInit = (() => {
     'use strict';

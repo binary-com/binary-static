@@ -1,4 +1,4 @@
-const localize = require('../base/localize').localize;
+import { localize } from '../base/localize';
 
 const buildOauthApps = (response) => {
     if (!response || !response.oauth_apps) return {};
@@ -16,13 +16,11 @@ const addTooltip = (oauth_apps) => {
     });
 };
 
-const addAppIdName = (app_id, app_name) => (
-    app_id ? localize('Transaction performed by [_1] (App ID: [_2])', [app_name || '', app_id]) : ''
-);
+const addAppIdName = (app_id, app_name) =>
+    (app_id ? localize('Transaction performed by [_1] (App ID: [_2])', [app_name || '', app_id]) : '');
 
-const showTooltip = (app_id, oauth_app_id) => (
-    app_id ? ` class="${app_id}" data-balloon="${addAppIdName(app_id, oauth_app_id)}"` : ''
-);
+const showTooltip = (app_id, oauth_app_id) =>
+    (app_id ? ` class="${app_id}" data-balloon="${addAppIdName(app_id, oauth_app_id)}"` : '');
 
 module.exports = {
     buildOauthApps: buildOauthApps,

@@ -1,5 +1,5 @@
-const Client = require('../base/client');
-const Scroll = require('../common_functions/scroll');
+import Client from '../base/client';
+import Scroll from '../common_functions/scroll';
 
 const WhyUs = (() => {
     'use strict';

@@ -1,7 +1,7 @@
-const showLoadingImage = require('../../../base/utility').showLoadingImage;
-const formatMoney      = require('../../../common_functions/currency_to_symbol').formatMoney;
-const Validation       = require('../../../common_functions/form_validation');
-const MetaTraderConfig = require('./metatrader.config');
+import { showLoadingImage } from '../../../base/utility';
+import { formatMoney } from '../../../common_functions/currency_to_symbol';
+import Validation from '../../../common_functions/form_validation';
+import MetaTraderConfig from './metatrader.config';
 
 const MetaTraderUI = (() => {
     'use strict';
@@ -14,19 +14,19 @@ const MetaTraderUI = (() => {
         $main_msg,
         submit;
 
-    const hidden_class  = 'invisible';
+    const hidden_class = 'invisible';
 
-    const types_info   = MetaTraderConfig.types_info;
+    const types_info = MetaTraderConfig.types_info;
     const actions_info = MetaTraderConfig.actions_info;
-    const validations  = MetaTraderConfig.validations;
+    const validations = MetaTraderConfig.validations;
 
     const init = (submit_func) => {
         submit = submit_func;
         $container = $('#mt_account_management');
-        $list      = $container.find('#accounts_list');
-        $action    = $container.find('#fst_action');
+        $list = $container.find('#accounts_list');
+        $action = $container.find('#fst_action');
         $templates = $container.find('#templates');
-        $main_msg  = $container.find('#main_msg');
+        $main_msg = $container.find('#main_msg');
         $container.find('#mt_loading').remove();
 
         populateAccountList();
@@ -35,7 +35,10 @@ const MetaTraderUI = (() => {
     const populateAccountList = () => {
         const $acc_box = $templates.find('> .acc-box');
         Object.keys(types_info).forEach((acc_type) => {
-            if ($list.find(`#${acc_type}`).length === 0 && (types_info[acc_type].is_enabled || types_info[acc_type].is_demo)) {
+            if (
+                $list.find(`#${acc_type}`).length === 0 &&
+                (types_info[acc_type].is_enabled || types_info[acc_type].is_demo)
+            ) {
                 const $acc_item = $acc_box.clone();
 
                 // set values
@@ -50,7 +53,9 @@ const MetaTraderUI = (() => {
             }
         });
         $list.find('[class*="act_"]').click(populateForm);
-        $action.find('.close').click(() => { closeForm(true); });
+        $action.find('.close').click(() => {
+            closeForm(true);
+        });
     };
 
     const displayLoadingAccount = (acc_type) => {
@@ -65,16 +70,13 @@ const MetaTraderUI = (() => {
         if (types_info[acc_type].account_info) {
             // Update account info
             $acc_item.find('.acc-info div[data]').map(function() {
-                const key  = $(this).attr('data');
+                const key = $(this).attr('data');
                 const info = types_info[acc_type].account_info[key];
-                $(this).text(
-                    key === 'balance' ? formatMoney('USD', +info) :
-                    key === 'leverage' ? `1:${info}` : info);
+                $(this).text(key === 'balance' ? formatMoney('USD', +info) : key === 'leverage' ? `1:${info}` : info);
             });
             $acc_item.find('.has-account').removeClass(hidden_class);
         } else {
-            $acc_item.find('.no-account').removeClass(hidden_class)
-                .find('.info').html($templates.find(`#${acc_type}`));
+            $acc_item.find('.no-account').removeClass(hidden_class).find('.info').html($templates.find(`#${acc_type}`));
         }
     };
 
@@ -92,7 +94,8 @@ const MetaTraderUI = (() => {
         $list.find(`#${acc_type} > div`).addClass('active');
 
         actions_info[action].prerequisites(acc_type).then((error_msg) => {
-            if (error_msg) { // does not meet one of prerequisites
+            if (error_msg) {
+                // does not meet one of prerequisites
                 displayMainMessage(error_msg);
                 return;
             }
@@ -104,7 +107,10 @@ const MetaTraderUI = (() => {
             $form.find('#btn_submit').attr({ acc_type: acc_type, action: action }).on('click dblclick', submit);
 
             // update legend, append form
-            $action.find('legend').text(`${types_info[acc_type].title}: ${actions_info[action].title}`).end()
+            $action
+                .find('legend')
+                .text(`${types_info[acc_type].title}: ${actions_info[action].title}`)
+                .end()
                 .find('#frm_action')
                 .html($form)
                 .end()
@@ -147,7 +153,10 @@ const MetaTraderUI = (() => {
     };
 
     const displayPageError = (message) => {
-        $('#mt_account_management').find('#page_msg').html(message).removeClass(hidden_class)
+        $('#mt_account_management')
+            .find('#page_msg')
+            .html(message)
+            .removeClass(hidden_class)
             .end()
             .find('#mt_loading')
             .remove();
@@ -157,7 +166,10 @@ const MetaTraderUI = (() => {
         const $btn = $form.find('button');
         if ($btn.length && !$btn.find('.barspinner').length) {
             $btn.attr('disabled', 'disabled');
-            const $btn_text = $('<span/>', { text: $btn.text(), class: hidden_class });
+            const $btn_text = $('<span/>', {
+                text : $btn.text(),
+                class: hidden_class,
+            });
             showLoadingImage($btn, 'white');
             $btn.append($btn_text);
         }

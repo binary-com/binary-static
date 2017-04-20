@@ -1,13 +1,11 @@
-const Contract           = require('./contract');
-const Symbols            = require('./symbols');
-const Tick               = require('./tick');
-const TickDisplay        = require('./tick_trade');
-const updateValues       = require('./update_values');
-const localize           = require('../../base/localize').localize;
-const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
-const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
-const isVisible          = require('../../common_functions/common_functions').isVisible;
-const padLeft            = require('../../common_functions/string_util').padLeft;
+import Contract from './contract';
+import Symbols from './symbols';
+import Tick from './tick';
+import TickDisplay from './tick_trade';
+import updateValues from './update_values';
+import { localize } from '../../base/localize';
+import { elementInnerHtml, elementTextContent, isVisible } from '../../common_functions/common_functions';
+import { padLeft } from '../../common_functions/string_util';
 
 /*
  * Purchase object that handles all the functions related to
@@ -22,25 +20,31 @@ const Purchase = (() => {
     const display = (details) => {
         purchase_data = details;
 
-        const receipt     = details.buy;
+        const receipt = details.buy;
         const passthrough = details.echo_req.passthrough;
-        const container          = document.getElementById('contract_confirmation_container');
-        const message_container  = document.getElementById('confirmation_message');
-        const heading            = document.getElementById('contract_purchase_heading');
-        const descr              = document.getElementById('contract_purchase_descr');
-        const barrier_element    = document.getElementById('contract_purchase_barrier');
-        const reference          = document.getElementById('contract_purchase_reference');
-        const chart              = document.getElementById('tick_chart');
-        const payout             = document.getElementById('contract_purchase_payout');
-        const cost               = document.getElementById('contract_purchase_cost');
-        const profit             = document.getElementById('contract_purchase_profit');
-        const spots              = document.getElementById('contract_purchase_spots');
+        const container = document.getElementById('contract_confirmation_container');
+        const message_container = document.getElementById('confirmation_message');
+        const heading = document.getElementById('contract_purchase_heading');
+        const descr = document.getElementById('contract_purchase_descr');
+        const barrier_element = document.getElementById('contract_purchase_barrier');
+        const reference = document.getElementById('contract_purchase_reference');
+        const chart = document.getElementById('tick_chart');
+        const payout = document.getElementById('contract_purchase_payout');
+        const cost = document.getElementById('contract_purchase_cost');
+        const profit = document.getElementById('contract_purchase_profit');
+        const spots = document.getElementById('contract_purchase_spots');
         const confirmation_error = document.getElementById('confirmation_error');
-        const contracts_list     = document.getElementById('contracts_list');
-        const button             = document.getElementById('contract_purchase_button');
+        const contracts_list = document.getElementById('contracts_list');
+        const button = document.getElementById('contract_purchase_button');
 
         const error = details.error;
-        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
+        const show_chart =
+            !error &&
+            passthrough.duration <= 10 &&
+            passthrough.duration_unit === 't' &&
+            (sessionStorage.formname === 'risefall' ||
+                sessionStorage.formname === 'higherlower' ||
+                sessionStorage.formname === 'asian');
 
         contracts_list.style.display = 'none';
 
@@ -76,7 +80,7 @@ const Purchase = (() => {
             const profit_value = Math.round((payout_value - cost_value) * 100) / 100;
 
             elementInnerHtml(payout, `${localize('Potential Payout')} <p>${payout_value}</p>`);
-            elementInnerHtml(cost,   `${localize('Total Cost')} <p>${cost_value}</p>`);
+            elementInnerHtml(cost, `${localize('Total Cost')} <p>${cost_value}</p>`);
             elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
 
             updateValues.updateContractBalance(receipt.balance_after);
@@ -156,8 +160,9 @@ const Purchase = (() => {
             return;
         }
 
-        let duration = purchase_data.echo_req && purchase_data.echo_req.passthrough ?
-                        purchase_data.echo_req.passthrough.duration : null;
+        let duration = purchase_data.echo_req && purchase_data.echo_req.passthrough
+            ? purchase_data.echo_req.passthrough.duration
+            : null;
 
         if (!duration) {
             return;
@@ -165,11 +170,14 @@ const Purchase = (() => {
 
         const spots = document.getElementById('contract_purchase_spots');
         const spots2 = Tick.spots();
-        const epoches = Object.keys(spots2).sort((a, b) =>  a - b);
+        const epoches = Object.keys(spots2).sort((a, b) => a - b);
         if (spots) spots.textContent = '';
 
         let last_digit;
-        const replace = (d) => { last_digit = d; return `<b>${d}</b>`; };
+        const replace = (d) => {
+            last_digit = d;
+            return `<b>${d}</b>`;
+        };
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
@@ -182,13 +190,13 @@ const Purchase = (() => {
 
                 const el1 = document.createElement('div');
                 el1.classList.add('col');
-                elementTextContent(el1, `${localize('Tick')} ${(spots.getElementsByClassName('row').length + 1)}`);
+                elementTextContent(el1, `${localize('Tick')} ${spots.getElementsByClassName('row').length + 1}`);
                 fragment.appendChild(el1);
 
                 const el2 = document.createElement('div');
                 el2.classList.add('col');
                 const date = new Date(tick_d.epoch * 1000);
-                const hours   = padLeft(date.getUTCHours(), 2, '0');
+                const hours = padLeft(date.getUTCHours(), 2, '0');
                 const minutes = padLeft(date.getUTCMinutes(), 2, '0');
                 const seconds = padLeft(date.getUTCSeconds(), 2, '0');
                 elementTextContent(el2, [hours, minutes, seconds].join(':'));
@@ -208,14 +216,14 @@ const Purchase = (() => {
                         final_price,
                         pnl;
                     const pass_contract_type = purchase_data.echo_req.passthrough.contract_type;
-                    const pass_barrier       = purchase_data.echo_req.passthrough.barrier;
+                    const pass_barrier = purchase_data.echo_req.passthrough.barrier;
 
                     if (
                         (pass_contract_type === 'DIGITMATCH' && +last_digit === +pass_barrier) ||
-                        (pass_contract_type === 'DIGITDIFF'  && +last_digit !== +pass_barrier) ||
-                        (pass_contract_type === 'DIGITEVEN'  && +last_digit % 2 === 0) ||
-                        (pass_contract_type === 'DIGITODD'   && +last_digit % 2) ||
-                        (pass_contract_type === 'DIGITOVER'  && +last_digit > pass_barrier) ||
+                        (pass_contract_type === 'DIGITDIFF' && +last_digit !== +pass_barrier) ||
+                        (pass_contract_type === 'DIGITEVEN' && +last_digit % 2 === 0) ||
+                        (pass_contract_type === 'DIGITODD' && +last_digit % 2) ||
+                        (pass_contract_type === 'DIGITOVER' && +last_digit > pass_barrier) ||
                         (pass_contract_type === 'DIGITUNDER' && +last_digit < pass_barrier)
                     ) {
                         spots.className = 'won';

@@ -1,12 +1,12 @@
-const getLanguage = require('./language').get;
-const State       = require('./storage').State;
-const urlFor      = require('./url').urlFor;
+import { get as getLanguage } from './language';
+import { State } from './storage';
+import { urlFor } from './url';
 
 const BinaryPjax = (() => {
     'use strict';
 
     let xhr;
-    const params   = {};
+    const params = {};
     const defaults = {
         type    : 'GET',
         dataType: 'html',
@@ -14,9 +14,13 @@ const BinaryPjax = (() => {
     const cache = {};
 
     const init = (container, content_selector) => {
-        if (!(window.history && window.history.pushState && window.history.replaceState &&
-            // pushState isn't reliable on iOS until 5.
-            !navigator.userAgent.match(/((iPod|iPhone|iPad).+\bOS\s+[1-4]\D|WebApps\/.+CFNetwork)/))) {
+        if (
+            !(window.history &&
+                window.history.pushState &&
+                window.history.replaceState &&
+                // pushState isn't reliable on iOS until 5.
+                !navigator.userAgent.match(/((iPod|iPhone|iPad).+\bOS\s+[1-4]\D|WebApps\/.+CFNetwork)/))
+        ) {
             console.error('Unable to initialize router');
             return;
         }
@@ -58,7 +62,7 @@ const BinaryPjax = (() => {
 
     const handleClick = (event) => {
         const link = event.currentTarget;
-        const url  = link.href;
+        const url = link.href;
 
         if (url.length <= 0) {
             return;
@@ -111,12 +115,13 @@ const BinaryPjax = (() => {
     const load = (url, replace) => {
         const lang = getLanguage();
         const options = $.extend(true, {}, $.ajaxSettings, defaults, {
-            url: url.replace(new RegExp(`\/${lang}\/`, 'i'), `/${lang.toLowerCase()}/pjax/`) });
+            url: url.replace(new RegExp(`\/${lang}\/`, 'i'), `/${lang.toLowerCase()}/pjax/`),
+        });
 
         options.success = (data) => {
             const result = {};
 
-            result.title   = $(data).find('title').text().trim();
+            result.title = $(data).find('title').text().trim();
             result.content = $('<div/>', { html: data }).find(params.content_selector);
 
             // If failed to find title or content, load the page in traditional way

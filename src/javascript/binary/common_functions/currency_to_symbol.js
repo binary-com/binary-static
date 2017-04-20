@@ -1,6 +1,6 @@
-const jpClient    = require('./country_base').jpClient;
-const addComma    = require('./string_util').addComma;
-const getLanguage = require('../base/language').get;
+import { jpClient } from './country_base';
+import { addComma } from './string_util';
+import { get as getLanguage } from '../base/language';
 
 const formatMoney = (currency_value, amount) => {
     let money;

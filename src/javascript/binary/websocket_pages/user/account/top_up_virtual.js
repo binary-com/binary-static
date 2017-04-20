@@ -1,5 +1,5 @@
-const Client   = require('../../../base/client');
-const localize = require('../../../base/localize').localize;
+import Client from '../../../base/client';
+import { localize } from '../../../base/localize';
 
 const TopUpVirtual = (() => {
     'use strict';
@@ -26,7 +26,8 @@ const TopUpVirtual = (() => {
                         response.topup_virtual.amount,
                         Client.get('loginid'),
                     ]),
-                    true);
+                    true,
+                );
             }
             $('.barspinner').addClass(hidden_class);
         });

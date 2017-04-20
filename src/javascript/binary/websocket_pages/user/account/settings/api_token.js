@@ -1,18 +1,18 @@
-const BinaryPjax           = require('../../../../base/binary_pjax');
-const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
-const localize             = require('../../../../base/localize').localize;
-const FlexTableUI          = require('../../../../common_functions/attach_dom/flextable');
-const jpClient             = require('../../../../common_functions/country_base').jpClient;
-const FormManager          = require('../../../../common_functions/form_manager');
-const toTitleCase          = require('../../../../common_functions/string_util').toTitleCase;
+import BinaryPjax from '../../../../base/binary_pjax';
+import { showLocalTimeOnHover } from '../../../../base/clock';
+import { localize } from '../../../../base/localize';
+import FlexTableUI from '../../../../common_functions/attach_dom/flextable';
+import { jpClient } from '../../../../common_functions/country_base';
+import FormManager from '../../../../common_functions/form_manager';
+import { toTitleCase } from '../../../../common_functions/string_util';
 
 const APIToken = (() => {
     'use strict';
 
     const hidden_class = 'invisible';
-    const error_class  = 'errorfield';
-    const form_id      = '#token_form';
-    const max_tokens   = 30;
+    const error_class = 'errorfield';
+    const form_id = '#token_form';
+    const max_tokens = 30;
 
     let $table_container,
         $form;
@@ -30,8 +30,28 @@ const APIToken = (() => {
 
         const regex_msg = localize('Only [_1] are allowed.', [['letters', 'numbers', 'space', '_'].join(', ')]);
         FormManager.init(form_id, [
-            { selector: '#txt_name',           request_field: 'new_token',        validations: ['req', ['regular', { regex: /^[\w\s]+$/, message: regex_msg }], ['length', { min: 2, max: 32 }]] },
-            { selector: '[id*="chk_scopes_"]', request_field: 'new_token_scopes', validations: [['req', { message: localize('Please select at least one scope') }]], value: getScopes },
+            {
+                selector     : '#txt_name',
+                request_field: 'new_token',
+                validations  : [
+                    'req',
+                    ['regular', { regex: /^[\w\s]+$/, message: regex_msg }],
+                    ['length', { min: 2, max: 32 }],
+                ],
+            },
+            {
+                selector     : '[id*="chk_scopes_"]',
+                request_field: 'new_token_scopes',
+                validations  : [
+                    [
+                        'req',
+                        {
+                            message: localize('Please select at least one scope'),
+                        },
+                    ],
+                ],
+                value: getScopes,
+            },
 
             { request_field: 'api_token', value: 1 },
         ]);
@@ -53,9 +73,13 @@ const APIToken = (() => {
         populateTokensList(response);
     };
 
-    const getScopes = () => (
-        $form.find('[id*="chk_scopes_"]:checked').map(function() { return $(this).val(); }).get()
-    );
+    const getScopes = () =>
+        $form
+            .find('[id*="chk_scopes_"]:checked')
+            .map(function() {
+                return $(this).val();
+            })
+            .get();
 
     // -----------------------
     // ----- Tokens List -----
@@ -102,7 +126,10 @@ const APIToken = (() => {
 
     const createDeleteButton = ($row, token) => {
         const message = localize('Are you sure that you want to permanently delete token');
-        const $button = $('<button/>', { class: 'button btn_delete', text: localize('Delete') });
+        const $button = $('<button/>', {
+            class: 'button btn_delete',
+            text : localize('Delete'),
+        });
         $button.click((e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -115,14 +142,14 @@ const APIToken = (() => {
     };
 
     const formatToken = (token) => {
-        const last_used = (token.last_used ? `${token.last_used} GMT` : localize('Never Used'));
+        const last_used = token.last_used ? `${token.last_used} GMT` : localize('Never Used');
         const scopes = token.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
         return [
             token.display_name,
             token.token,
             scopes,
             last_used,
-            '',  // btn_delete
+            '', // btn_delete
         ];
     };
 
@@ -131,13 +158,10 @@ const APIToken = (() => {
             api_token   : 1,
             delete_token: token,
         }).then((response) => {
-            $(`#${response.echo_req.delete_token}`)
-                .removeClass('new')
-                .addClass('deleting')
-                .fadeOut(700, function() {
-                    $(this).remove();
-                    populateTokensList(response);
-                });
+            $(`#${response.echo_req.delete_token}`).removeClass('new').addClass('deleting').fadeOut(700, function() {
+                $(this).remove();
+                populateTokensList(response);
+            });
         });
     };
 
@@ -145,10 +169,7 @@ const APIToken = (() => {
     // ----- Message Functions -----
     // -----------------------------
     const showErrorMessage = (msg) => {
-        $('#token_message').removeClass(hidden_class)
-            .find('p')
-            .attr('class', error_class)
-            .html(localize(msg));
+        $('#token_message').removeClass(hidden_class).find('p').attr('class', error_class).html(localize(msg));
     };
 
     const showFormMessage = (msg, is_success) => {

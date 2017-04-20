@@ -1,6 +1,6 @@
-const urlForStatic = require('../base/url').urlForStatic;
-const loadCSS      = require('../../lib/loadCSS').loadCSS;
-const loadJS       = require('../../lib/loadJS').loadJS;
+import { urlForStatic } from '../base/url';
+import { loadCSS } from '../../lib/loadCSS';
+import { loadJS } from '../../lib/loadJS';
 
 const Contact = (() => {
     'use strict';
@@ -48,34 +48,34 @@ const Contact = (() => {
             },
             fields: {
                 ticket: {
-                        // desc: &#x27;&#x27;,
-                        // labels_new: &#x27;&#x27;,
-                        // priority: &#x27;&#x27;,
-                        // subject: &#x27;&#x27;,
-                        // custom_loginid: &#x27;&#x27;
+                    // desc: &#x27;&#x27;,
+                    // labels_new: &#x27;&#x27;,
+                    // priority: &#x27;&#x27;,
+                    // subject: &#x27;&#x27;,
+                    // custom_loginid: &#x27;&#x27;
                 },
                 interaction: {
-                        // email: &#x27;&#x27;,
-                        // name: &#x27;&#x27;
+                    // email: &#x27;&#x27;,
+                    // name: &#x27;&#x27;
                 },
                 chat: {
-                        // subject: ''
+                    // subject: ''
                 },
                 customer: {
-                        // company: &#x27;&#x27;,
-                        // desc: &#x27;&#x27;,
-                        // first_name: &#x27;&#x27;,
-                        // last_name: &#x27;&#x27;,
-                        // locale_code: &#x27;&#x27;,
-                        // title: &#x27;&#x27;,
-                        // custom_loginid: &#x27;&#x27;
+                    // company: &#x27;&#x27;,
+                    // desc: &#x27;&#x27;,
+                    // first_name: &#x27;&#x27;,
+                    // last_name: &#x27;&#x27;,
+                    // locale_code: &#x27;&#x27;,
+                    // title: &#x27;&#x27;,
+                    // custom_loginid: &#x27;&#x27;
                 },
             },
         }).render();
     };
 
     const changeChatIcon = () => {
-      // desk.com change icon - crude way
+        // desk.com change icon - crude way
         if ($('#live-chat-icon').length > 0) {
             let timer = null;
             const image_url = urlForStatic('images/pages/contact/chat-icon.svg');

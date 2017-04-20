@@ -1,17 +1,17 @@
-const TradingAnalysis   = require('./analysis');
-const commonTrading     = require('./common');
-const chartFrameCleanup = require('./charts/chart_frame').chartFrameCleanup;
-const displayCurrencies = require('./currency');
-const Defaults          = require('./defaults');
-const TradingEvents     = require('./event');
-const Price             = require('./price');
-const Process           = require('./process');
-const ViewPopup         = require('../user/view_popup/view_popup');
-const BinaryPjax        = require('../../base/binary_pjax');
-const localize          = require('../../base/localize').localize;
-const State             = require('../../base/storage').State;
-const jpClient          = require('../../common_functions/country_base').jpClient;
-const Guide             = require('../../common_functions/guide');
+import TradingAnalysis from './analysis';
+import commonTrading from './common';
+import { chartFrameCleanup } from './charts/chart_frame';
+import displayCurrencies from './currency';
+import Defaults from './defaults';
+import TradingEvents from './event';
+import Price from './price';
+import Process from './process';
+import ViewPopup from '../user/view_popup/view_popup';
+import BinaryPjax from '../../base/binary_pjax';
+import { localize } from '../../base/localize';
+import { State } from '../../base/storage';
+import { jpClient } from '../../common_functions/country_base';
+import Guide from '../../common_functions/guide';
 
 const TradePage = (() => {
     'use strict';

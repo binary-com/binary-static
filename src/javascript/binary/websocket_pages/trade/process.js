@@ -1,20 +1,20 @@
-const moment                    = require('moment');
-const TradingAnalysis           = require('./analysis');
-const commonTrading             = require('./common');
-const processTradingTimesAnswer = require('./common_independent').processTradingTimesAnswer;
-const Contract                  = require('./contract');
-const Defaults                  = require('./defaults');
-const Durations                 = require('./duration');
-const GetTicks                  = require('./get_ticks');
-const Notifications             = require('./notifications');
-const Price                     = require('./price');
-const setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
-const StartDates                = require('./starttime').StartDates;
-const Symbols                   = require('./symbols');
-const Tick                      = require('./tick');
-const localize                  = require('../../base/localize').localize;
-const State                     = require('../../base/storage').State;
-const elementInnerHtml          = require('../../common_functions/common_functions').elementInnerHtml;
+import moment from 'moment';
+import TradingAnalysis from './analysis';
+import commonTrading from './common';
+import { processTradingTimesAnswer } from './common_independent';
+import Contract from './contract';
+import Defaults from './defaults';
+import Durations from './duration';
+import GetTicks from './get_ticks';
+import Notifications from './notifications';
+import Price from './price';
+import { setFormPlaceholderContent } from './set_values';
+import { StartDates } from './starttime';
+import Symbols from './symbols';
+import Tick from './tick';
+import { localize } from '../../base/localize';
+import { State } from '../../base/storage';
+import { elementInnerHtml } from '../../common_functions/common_functions';
 
 const Process = (() => {
     'use strict';
@@ -38,7 +38,6 @@ const Process = (() => {
         });
     };
 
-
     /*
      * Function to call when market has changed
      */
@@ -53,7 +52,7 @@ const Process = (() => {
             market = commonTrading.getDefaultMarket();
             Defaults.set('market', market);
         }
-        if ((!symbol || !Symbols.underlyings()[market][symbol])) {
+        if (!symbol || !Symbols.underlyings()[market][symbol]) {
             symbol = undefined;
         }
         commonTrading.displayUnderlyings('underlying', Symbols.underlyings()[market], symbol);
@@ -106,19 +105,24 @@ const Process = (() => {
     const processContract = (contracts) => {
         if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
             Price.processForgetProposals();
-            const container          = document.getElementById('contract_confirmation_container');
-            const message_container  = document.getElementById('confirmation_message');
+            const container = document.getElementById('contract_confirmation_container');
+            const message_container = document.getElementById('confirmation_message');
             const confirmation_error = document.getElementById('confirmation_error');
-            const contracts_list     = document.getElementById('contracts_list');
+            const contracts_list = document.getElementById('contracts_list');
             container.style.display = 'block';
             contracts_list.style.display = 'none';
             message_container.hide();
             confirmation_error.show();
-            elementInnerHtml(confirmation_error, `${contracts.error.message} <a href="javascript:;" onclick="sessionStorage.removeItem('underlying'); window.location.reload();">${localize('Please reload the page')}</a>`);
+            elementInnerHtml(
+                confirmation_error,
+                `${contracts.error.message} <a href="javascript:;" onclick="sessionStorage.removeItem('underlying'); window.location.reload();">${localize('Please reload the page')}</a>`,
+            );
             return;
         }
 
-        window.chartAllowed = !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly');
+        window.chartAllowed = !(contracts.contracts_for &&
+            contracts.contracts_for.feed_license &&
+            contracts.contracts_for.feed_license === 'chartonly');
 
         document.getElementById('trading_socket_container').classList.add('show');
         const init_logo = document.getElementById('trading_init_progress');
@@ -167,18 +171,27 @@ const Process = (() => {
         displayPrediction();
 
         let r1;
-        if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
+        if (
+            State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now'
+        ) {
             r1 = Durations.onStartDateChange(Defaults.get('date_start'));
-            if (!r1 || Defaults.get('expiry_type') === 'endtime') Durations.display();
+            if (!r1 || Defaults.get('expiry_type') === 'endtime') {
+                Durations.display();
+            }
         } else {
             Durations.display();
         }
 
         if (Defaults.get('amount')) $('#amount').val(Defaults.get('amount'));
         else Defaults.set('amount', document.getElementById('amount').value);
-        if (Defaults.get('amount_type')) commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
-        else Defaults.set('amount_type', document.getElementById('amount_type').value);
-        if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
+        if (Defaults.get('amount_type')) {
+            commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
+        } else {
+            Defaults.set('amount_type', document.getElementById('amount_type').value);
+        }
+        if (Defaults.get('currency')) {
+            commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
+        }
 
         const expiry_type = Defaults.get('expiry_type') || 'duration';
         const make_price_request = onExpiryTypeChange(expiry_type);

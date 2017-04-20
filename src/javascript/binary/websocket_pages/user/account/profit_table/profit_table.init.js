@@ -1,9 +1,8 @@
-const ProfitTableUI        = require('./profit_table.ui');
-const ViewPopup            = require('../../view_popup/view_popup');
-const localize             = require('../../../../base/localize').localize;
-const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
-const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
-const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
+import ProfitTableUI from './profit_table.ui';
+import ViewPopup from '../../view_popup/view_popup';
+import { localize } from '../../../../base/localize';
+import { showLocalTimeOnHover } from '../../../../base/clock';
+import { addTooltip, buildOauthApps } from '../../../../common_functions/get_app_details';
 
 const ProfitTableInit = (() => {
     let batch_size,
@@ -14,9 +13,9 @@ const ProfitTableInit = (() => {
         pending,
         current_batch;
 
-    const tableExist = () => (document.getElementById('profit-table'));
+    const tableExist = () => document.getElementById('profit-table');
 
-    const finishedConsumed = () => (transaction_consumed === transactions_received);
+    const finishedConsumed = () => transaction_consumed === transactions_received;
 
     const onUnload = () => {
         current_batch = [];
@@ -62,11 +61,17 @@ const ProfitTableInit = (() => {
             ProfitTableUI.updateProfitTable(getNextChunk());
 
             // Show a message when the table is empty
-            if ((transactions_received === 0) && (current_batch.length === 0)) {
-                $('#profit-table').find('tbody')
-                    .append($('<tr/>', { class: 'flex-tr' })
-                        .append($('<td/>',  { colspan: 8 })
-                            .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
+            if (transactions_received === 0 && current_batch.length === 0) {
+                $('#profit-table').find('tbody').append(
+                    $('<tr/>', { class: 'flex-tr' }).append(
+                        $('<td/>', { colspan: 8 }).append(
+                            $('<p/>', {
+                                class: 'notice-msg center-text',
+                                text : localize('Your account has no trading activity.'),
+                            }),
+                        ),
+                    ),
+                );
             }
         }
     };
@@ -75,7 +80,7 @@ const ProfitTableInit = (() => {
         $(document).scroll(() => {
             const hidableHeight = (percentage) => {
                 const total_hidable = $(document).height() - $(window).height();
-                return Math.floor((total_hidable * percentage) / 100);
+                return Math.floor(total_hidable * percentage / 100);
             };
 
             const p_from_top = $(document).scrollTop();

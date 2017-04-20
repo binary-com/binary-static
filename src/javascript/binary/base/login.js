@@ -1,6 +1,6 @@
-const Client      = require('./client');
-const getLanguage = require('./language').get;
-const getAppId    = require('../../config').getAppId;
+import Client from './client';
+import { get as getLanguage } from './language';
+import { getAppId } from '../../config';
 
 const Login = (() => {
     'use strict';
@@ -10,7 +10,9 @@ const Login = (() => {
             try {
                 sessionStorage.setItem('redirect_url', window.location.href);
             } catch (e) {
-                window.alert('The website needs features which are not enabled on private mode browsing. Please use normal mode.');
+                window.alert(
+                    'The website needs features which are not enabled on private mode browsing. Please use normal mode.',
+                );
             }
             window.location.href = loginUrl();
         }
@@ -19,10 +21,9 @@ const Login = (() => {
     const loginUrl = () => {
         const server_url = localStorage.getItem('config.server_url');
         const language = getLanguage();
-        return ((server_url && /qa/.test(server_url)) ?
-            `https://www.${server_url.split('.')[1]}.com/oauth2/authorize?app_id=${getAppId()}&l=${language}` :
-            `https://oauth.binary.com/oauth2/authorize?app_id=${getAppId()}&l=${language}`
-        );
+        return server_url && /qa/.test(server_url)
+            ? `https://www.${server_url.split('.')[1]}.com/oauth2/authorize?app_id=${getAppId()}&l=${language}`
+            : `https://oauth.binary.com/oauth2/authorize?app_id=${getAppId()}&l=${language}`;
     };
 
     const isLoginPages = () => /logged_inws/.test(document.URL);

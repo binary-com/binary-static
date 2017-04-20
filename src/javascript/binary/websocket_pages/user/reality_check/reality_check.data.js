@@ -1,6 +1,6 @@
-const moment     = require('moment');
-const localize   = require('../../../base/localize').localize;
-const LocalStore = require('../../../base/storage').LocalStore;
+import moment from 'moment';
+import { localize } from '../../../base/localize';
+import { LocalStore } from '../../../base/storage';
 
 const RealityCheckData = (() => {
     'use strict';
@@ -9,7 +9,7 @@ const RealityCheckData = (() => {
 
     const resetInvalid = () => {
         const ack = get('ack');
-        const interval = +(get('interval'));
+        const interval = +get('interval');
         if (ack !== 0 && ack !== 1) {
             set('ack', 0);
         }
@@ -29,10 +29,12 @@ const RealityCheckData = (() => {
             session_duration.get('minutes'),
         ]);
 
-        const turnover = +(data.buy_amount) + (+(data.sell_amount));
-        const profit_loss = +(data.sell_amount) - (+(data.buy_amount));
+        const turnover = +data.buy_amount + +data.sell_amount;
+        const profit_loss = +data.sell_amount - +data.buy_amount;
 
-        const start_time_string = localize('Your trading statistics since [_1].', [`${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`]);
+        const start_time_string = localize('Your trading statistics since [_1].', [
+            `${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`,
+        ]);
         return {
             start_time_string: start_time_string,
             login_time       : `${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`,
@@ -45,7 +47,7 @@ const RealityCheckData = (() => {
             contracts_bought : data.buy_count,
             contracts_sold   : data.sell_count,
             open_contracts   : data.open_contract_count,
-            potential_profit : (+(data.potential_profit)).toFixed(2),
+            potential_profit : (+data.potential_profit).toFixed(2),
         };
     };
 

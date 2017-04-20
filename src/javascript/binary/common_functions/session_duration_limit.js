@@ -1,6 +1,6 @@
-const moment   = require('moment');
-const Client   = require('../base/client');
-const localize = require('../base/localize').localize;
+import moment from 'moment';
+import Client from '../base/client';
+import { localize } from '../base/localize';
 
 const SessionDurationLimit = (() => {
     'use strict';
@@ -18,11 +18,11 @@ const SessionDurationLimit = (() => {
 
         warning = 10 * 1000; // milliseconds before limit to display the warning message
 
-        const limit      = Client.get('session_duration_limit') * 1;
-        const now        = moment().unix();
-        const start      = Client.get('session_start') * 1;
+        const limit = Client.get('session_duration_limit') * 1;
+        const now = moment().unix();
+        const start = Client.get('session_start') * 1;
         const math_limit = Math.pow(2, 31) - 1;
-        let remained  = ((limit + start) - now) * 1000;
+        let remained = (limit + start - now) * 1000;
         if (remained < 0) remained = warning;
 
         const setTimeOut = () => {
@@ -54,9 +54,21 @@ const SessionDurationLimit = (() => {
     };
 
     const displayWarning = () => {
-        $('body').append($('<div/>', { id: 'session_limit', class: 'lightbox' }).append($('<div/>').append($('<div/>')
-            .append($('<div/>', { class: 'limit_message', text: localize('Your session duration limit will end in [_1] seconds.', [warning / 1000]) })))));
-        $('#session_limit').click(function() { $(this).remove(); });
+        $('body').append(
+            $('<div/>', { id: 'session_limit', class: 'lightbox' }).append(
+                $('<div/>').append(
+                    $('<div/>').append(
+                        $('<div/>', {
+                            class: 'limit_message',
+                            text : localize('Your session duration limit will end in [_1] seconds.', [warning / 1000]),
+                        }),
+                    ),
+                ),
+            ),
+        );
+        $('#session_limit').click(function() {
+            $(this).remove();
+        });
     };
 
     return {

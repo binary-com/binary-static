@@ -1,5 +1,5 @@
-const profitTable = require('../profit_table');
-const { api, expect } = require('../../../../common_functions/tests');
+import profitTable from '../profit_table';
+import { api, expect } from '../../../../common_functions/tests';
 
 describe('Profit Table', () => {
     let profit_table;
@@ -15,24 +15,14 @@ describe('Profit Table', () => {
     });
     it('Should have all expected data', () => {
         const profit_table_data = profitTable.getProfitTabletData(profit_table.transactions[0]);
-        expect(profit_table_data).to.be.an('Object')
-            .and.to.have.property('buyDate')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('ref')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('payout')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('buyPrice')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('sellDate')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('sellPrice')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('pl')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('desc')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('id')
-            .and.to.be.a('string');
+        expect(profit_table_data).to.be.an('Object').and.to.have.property('buyDate').and.to.be.a('string');
+        expect(profit_table_data).to.have.property('ref').and.to.be.a('string');
+        expect(profit_table_data).to.have.property('payout').and.to.be.a('string');
+        expect(profit_table_data).to.have.property('buyPrice').and.to.be.a('string');
+        expect(profit_table_data).to.have.property('sellDate').and.to.be.a('string');
+        expect(profit_table_data).to.have.property('sellPrice').and.to.be.a('string');
+        expect(profit_table_data).to.have.property('pl').and.to.be.a('string');
+        expect(profit_table_data).to.have.property('desc').and.to.be.a('string');
+        expect(profit_table_data).to.have.property('id').and.to.be.a('string');
     });
 });

@@ -1,6 +1,5 @@
-const getPropertyValue = require('./utility').getPropertyValue;
-const isEmptyObject    = require('./utility').isEmptyObject;
-const Cookies          = require('../../lib/js-cookie');
+import { getPropertyValue, isEmptyObject } from './utility';
+import Cookies from '../../lib/js-cookie';
 
 const isStorageSupported = (storage) => {
     if (typeof storage === 'undefined') {
@@ -30,8 +29,12 @@ Store.prototype = {
             this.storage.setItem(key, value);
         }
     },
-    remove: function(key) { this.storage.removeItem(key); },
-    clear : function()    { this.storage.clear(); },
+    remove: function(key) {
+        this.storage.removeItem(key);
+    },
+    clear: function() {
+        this.storage.clear();
+    },
 };
 
 const InScriptStore = function(object) {
@@ -45,19 +48,31 @@ InScriptStore.prototype = {
     set: function(key, value, obj = this.store) {
         if (!Array.isArray(key)) key = [key];
         if (key.length > 1) {
-            if (!(key[0] in obj) || isEmptyObject(obj[key[0]])) obj[key[0]] = {};
+            if (!(key[0] in obj) || isEmptyObject(obj[key[0]])) {
+                obj[key[0]] = {};
+            }
             this.set(key.slice(1), value, obj[key[0]]);
         } else {
             obj[key[0]] = value;
         }
     },
     remove: function(...keys) {
-        keys.forEach((key) => { delete this.store[key]; });
+        keys.forEach((key) => {
+            delete this.store[key];
+        });
     },
-    clear: function()    { this.store = {}; },
-    has  : function(key) { return this.get(key) !== undefined; },
-    keys : function()    { return Object.keys(this.store); },
-    call : function(key) { if (typeof this.get(key) === 'function') this.get(key)(); },
+    clear: function() {
+        this.store = {};
+    },
+    has: function(key) {
+        return this.get(key) !== undefined;
+    },
+    keys: function() {
+        return Object.keys(this.store);
+    },
+    call: function(key) {
+        if (typeof this.get(key) === 'function') this.get(key)();
+    },
 };
 
 const State = new InScriptStore();
@@ -67,7 +82,8 @@ const CookieStorage = function(cookie_name, cookie_domain) {
     this.initialized = false;
     this.cookie_name = cookie_name;
     const hostname = window.location.hostname;
-    this.domain = cookie_domain || (/\.binary\.com/i.test(hostname) ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
+    this.domain =
+        cookie_domain || (/\.binary\.com/i.test(hostname) ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
     this.path = '/';
     this.expires = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
     this.value = {};

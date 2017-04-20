@@ -1,15 +1,13 @@
-const moment                 = require('moment');
-const TradingTimes           = require('../trading_times');
-const localize               = require('../../../base/localize').localize;
-const State                  = require('../../../base/storage').State;
-const showLoadingImage       = require('../../../base/utility').showLoadingImage;
-const Table                  = require('../../../common_functions/attach_dom/table');
-const dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
-const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
-const jpClient               = require('../../../common_functions/country_base').jpClient;
-const toISOFormat            = require('../../../common_functions/string_util').toISOFormat;
-const toReadableFormat       = require('../../../common_functions/string_util').toReadableFormat;
-const DatePicker             = require('../../../components/date_picker');
+import moment from 'moment';
+import TradingTimes from '../trading_times';
+import { localize } from '../../../base/localize';
+import { State } from '../../../base/storage';
+import { showLoadingImage } from '../../../base/utility';
+import Table from '../../../common_functions/attach_dom/table';
+import { dateValueChanged, jqueryuiTabsToDropdown } from '../../../common_functions/common_functions';
+import { jpClient } from '../../../common_functions/country_base';
+import { toISOFormat, toReadableFormat } from '../../../common_functions/string_util';
+import DatePicker from '../../../components/date_picker';
 
 const TradingTimesUI = (() => {
     'use strict';
@@ -22,16 +20,18 @@ const TradingTimesUI = (() => {
         is_framed;
 
     const onLoad = (config) => {
-        $date      = $('#trading-date');
+        $date = $('#trading-date');
         $container = $('#trading-times');
-        columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
-        if (!State.get('is_beta_trading')) active_symbols = trading_times = undefined;
+        columns = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
+        if (!State.get('is_beta_trading')) {
+            active_symbols = trading_times = undefined;
+        }
 
         if ($container.contents().length) return;
 
         showLoadingImage($container);
 
-        is_framed = (config && config.framed);
+        is_framed = config && config.framed;
         if (!trading_times) {
             sendRequest('today', !(active_symbols && active_symbols.length));
         }
@@ -70,7 +70,7 @@ const TradingTimesUI = (() => {
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {
-            const tab_id = `market_${(m + 1)}`;
+            const tab_id = `market_${m + 1}`;
 
             // contents
             const $market = $('<div/>', { id: tab_id });
@@ -80,7 +80,15 @@ const TradingTimesUI = (() => {
 
                 // tabs
                 if (!is_japan_trading) {
-                    $ul.append($('<li/>').append($('<a/>', { href: `#${tab_id}`, text: markets[m].name, id: 'outline' })));
+                    $ul.append(
+                        $('<li/>').append(
+                            $('<a/>', {
+                                href: `#${tab_id}`,
+                                text: markets[m].name,
+                                id  : 'outline',
+                            }),
+                        ),
+                    );
                 }
             }
         }
@@ -116,14 +124,19 @@ const TradingTimesUI = (() => {
                 const $submarket_table = createEmptyTable(`${market.name}-${s}`);
 
                 // submarket name
-                $submarket_table.find('thead').prepend(createSubmarketHeader(submarkets[s].name))
-                    .find('th.opens, th.closes').addClass('nowrap');
+                $submarket_table
+                    .find('thead')
+                    .prepend(createSubmarketHeader(submarkets[s].name))
+                    .find('th.opens, th.closes')
+                    .addClass('nowrap');
 
                 // symbols of this submarket
                 const symbols = submarkets[s].symbols;
                 for (let sy = 0; sy < symbols.length; sy++) {
                     if (Object.keys(TradingTimes.getSymbolInfo(symbols[sy].symbol, active_symbols)).length !== 0) {
-                        $submarket_table.find('tbody').append(createSubmarketTableRow(market.name, submarkets[s].name, symbols[sy]));
+                        $submarket_table
+                            .find('tbody')
+                            .append(createSubmarketTableRow(market.name, submarkets[s].name, symbols[sy]));
                     }
                 }
 
@@ -136,9 +149,14 @@ const TradingTimesUI = (() => {
         return $market_tables;
     };
 
-    const createSubmarketHeader = submarket_name => (
-        $('<tr/>', { class: 'flex-tr' })
-            .append($('<th/>', { class: 'flex-tr-child submarket-name', colspan: columns.length, text: submarket_name })));
+    const createSubmarketHeader = submarket_name =>
+        $('<tr/>', { class: 'flex-tr' }).append(
+            $('<th/>', {
+                class  : 'flex-tr-child submarket-name',
+                colspan: columns.length,
+                text   : submarket_name,
+            }),
+        );
 
     const createSubmarketTableRow = (market_name, submarket_name, symbol) => {
         const $table_row = Table.createFlexTableRow(
@@ -147,10 +165,11 @@ const TradingTimesUI = (() => {
                 '', // Opens
                 '', // Closes
                 symbol.times.settlement,
-                '',  // UpcomingEvents
+                '', // UpcomingEvents
             ],
             columns,
-            'data');
+            'data',
+        );
         $table_row.children('.opens').html(symbol.times.open.join('<br />'));
         $table_row.children('.closes').html(symbol.times.close.join('<br />'));
         $table_row.children('.upcomingevents').html(createEventsText(symbol.events));
@@ -161,7 +180,7 @@ const TradingTimesUI = (() => {
     const createEventsText = (events) => {
         let result = '';
         for (let i = 0; i < events.length; i++) {
-            result += `${(i > 0 ? '<br />' : '')}${localize(events[i].descrip)}: ${localize(events[i].dates)}`;
+            result += `${i > 0 ? '<br />' : ''}${localize(events[i].descrip)}: ${localize(events[i].dates)}`;
         }
         return result.length > 0 ? result : '--';
     };
@@ -189,7 +208,10 @@ const TradingTimesUI = (() => {
             req.landing_company = 'japan';
         }
         if (should_request_active_symbols) {
-            BinarySocket.send(req, { forced: false, msg_type: 'active_symbols' }).then((response) => {
+            BinarySocket.send(req, {
+                forced  : false,
+                msg_type: 'active_symbols',
+            }).then((response) => {
                 TradingTimesUI.setActiveSymbols(response);
             });
         }

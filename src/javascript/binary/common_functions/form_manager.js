@@ -1,6 +1,5 @@
-const Validation       = require('./form_validation');
-const isEmptyObject    = require('../base/utility').isEmptyObject;
-const showLoadingImage = require('../base/utility').showLoadingImage;
+import Validation from './form_validation';
+import { isEmptyObject, showLoadingImage } from '../base/utility';
 
 const FormManager = (() => {
     'use strict';
@@ -55,10 +54,16 @@ const FormManager = (() => {
                     // if label, take the text
                     // if checkbox, take checked value
                     // otherwise take the value
-                    value = field.value ? (typeof field.value === 'function' ? field.value() : field.value) :
-                        native ? val : ($selector.attr('data-value') || (/lbl_/.test(key) ? (field.value || $selector.text()) :
-                            $selector.is(':checkbox') ? ($selector.is(':checked') ? 1 : 0) :
-                                Array.isArray(val) ? val.join(',') : (val || '')));
+                    value = field.value
+                        ? typeof field.value === 'function' ? field.value() : field.value
+                        : native
+                              ? val
+                              : $selector.attr('data-value') ||
+                                    (/lbl_/.test(key)
+                                        ? field.value || $selector.text()
+                                        : $selector.is(':checkbox')
+                                              ? $selector.is(':checked') ? 1 : 0
+                                              : Array.isArray(val) ? val.join(',') : val || '');
 
                     if (!(field.exclude_if_empty && val.length === 0)) {
                         key = key.replace(/lbl_|#|\./g, '');
@@ -80,7 +85,10 @@ const FormManager = (() => {
     const disableButton = ($btn) => {
         if ($btn.length && !$btn.find('.barspinner').length) {
             $btn.attr('disabled', 'disabled');
-            const $btn_text = $('<span/>', { text: $btn.text(), class: 'invisible' });
+            const $btn_text = $('<span/>', {
+                text : $btn.text(),
+                class: 'invisible',
+            });
             showLoadingImage($btn, 'white');
             $btn.append($btn_text);
         }

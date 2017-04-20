@@ -1,14 +1,11 @@
-const moment               = require('moment');
-const getStartDateNode     = require('./common_independent').getStartDateNode;
-const commonTrading        = require('./common');
-const displayPriceMovement = require('./common_independent').displayPriceMovement;
-const getTradingTimes      = require('./common_independent').getTradingTimes;
-const Contract             = require('./contract');
-const Defaults             = require('./defaults');
-const localize             = require('../../base/localize').localize;
-const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
-const isVisible            = require('../../common_functions/common_functions').isVisible;
-const formatMoney          = require('../../common_functions/currency_to_symbol').formatMoney;
+import moment from 'moment';
+import { getStartDateNode, displayPriceMovement, getTradingTimes } from './common_independent';
+import commonTrading from './common';
+import Contract from './contract';
+import Defaults from './defaults';
+import { localize } from '../../base/localize';
+import { elementTextContent, isVisible } from '../../common_functions/common_functions';
+import { formatMoney } from '../../common_functions/currency_to_symbol';
 
 /*
  * Price object handles all the functions we need to display prices
@@ -35,19 +32,19 @@ const Price = (() => {
             subscribe: 1,
         };
         const contract_type = type_of_contract;
-        const start_time    = getStartDateNode();
-        const underlying       = document.getElementById('underlying');
-        const amount_type      = document.getElementById('amount_type');
-        const currency         = document.getElementById('currency');
-        const payout           = document.getElementById('amount');
-        const expiry_type      = document.getElementById('expiry_type');
-        const duration         = document.getElementById('duration_amount');
-        const duration_unit    = document.getElementById('duration_units');
-        const end_date         = document.getElementById('expiry_date');
-        const barrier          = document.getElementById('barrier');
-        const high_barrier     = document.getElementById('barrier_high');
-        const low_barrier      = document.getElementById('barrier_low');
-        const prediction       = document.getElementById('prediction');
+        const start_time = getStartDateNode();
+        const underlying = document.getElementById('underlying');
+        const amount_type = document.getElementById('amount_type');
+        const currency = document.getElementById('currency');
+        const payout = document.getElementById('amount');
+        const expiry_type = document.getElementById('expiry_type');
+        const duration = document.getElementById('duration_amount');
+        const duration_unit = document.getElementById('duration_units');
+        const end_date = document.getElementById('expiry_date');
+        const barrier = document.getElementById('barrier');
+        const high_barrier = document.getElementById('barrier_high');
+        const low_barrier = document.getElementById('barrier_low');
+        const prediction = document.getElementById('prediction');
 
         if (payout && isVisible(payout) && payout.value) {
             proposal.amount = parseFloat(payout.value);
@@ -81,7 +78,12 @@ const Price = (() => {
             let end_time2 = Defaults.get('expiry_time');
             if (!end_time2) {
                 const trading_times = getTradingTimes();
-                if (trading_times.hasOwnProperty(end_date2) && typeof trading_times[end_date2][underlying.value] === 'object' && trading_times[end_date2][underlying.value].length && trading_times[end_date2][underlying.value][0] !== '--') {
+                if (
+                    trading_times.hasOwnProperty(end_date2) &&
+                    typeof trading_times[end_date2][underlying.value] === 'object' &&
+                    trading_times[end_date2][underlying.value].length &&
+                    trading_times[end_date2][underlying.value][0] !== '--'
+                ) {
                     if (trading_times[end_date2][underlying.value].length > 1) {
                         end_time2 = trading_times[end_date2][underlying.value][1];
                     } else {
@@ -90,7 +92,7 @@ const Price = (() => {
                 }
             }
 
-            proposal.date_expiry = moment.utc(`${end_date2} ${(end_time2 || '23:59:59')}`).unix();
+            proposal.date_expiry = moment.utc(`${end_date2} ${end_time2 || '23:59:59'}`).unix();
             // For stopping tick trade behaviour
             proposal.duration_unit = 'm';
         }
@@ -150,15 +152,15 @@ const Price = (() => {
             $(container).fadeIn(200);
         }
 
-        const h4            = container.getElementsByClassName('contract_heading')[0];
-        const amount        = container.getElementsByClassName('contract_amount')[0];
+        const h4 = container.getElementsByClassName('contract_heading')[0];
+        const amount = container.getElementsByClassName('contract_amount')[0];
         const payout_amount = container.getElementsByClassName('contract_payout')[0];
-        const stake         = container.getElementsByClassName('stake')[0];
-        const payout        = container.getElementsByClassName('payout')[0];
-        const purchase      = container.getElementsByClassName('purchase_button')[0];
-        const description   = container.getElementsByClassName('contract_description')[0];
-        const comment       = container.getElementsByClassName('price_comment')[0];
-        const error         = container.getElementsByClassName('contract_error')[0];
+        const stake = container.getElementsByClassName('stake')[0];
+        const payout = container.getElementsByClassName('payout')[0];
+        const purchase = container.getElementsByClassName('purchase_button')[0];
+        const description = container.getElementsByClassName('contract_description')[0];
+        const comment = container.getElementsByClassName('price_comment')[0];
+        const error = container.getElementsByClassName('contract_error')[0];
         const currency = document.getElementById('currency');
 
         const display_text = type && contract_type ? contract_type[type] : '';
@@ -172,7 +174,10 @@ const Price = (() => {
             if (data.display_value) {
                 $('.stake:hidden').show();
                 elementTextContent(stake, `${localize('Stake')}: `);
-                elementTextContent(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
+                elementTextContent(
+                    amount,
+                    formatMoney(currency.value || currency.getAttribute('value'), data.display_value),
+                );
                 $('.stake_wrapper:hidden').show();
             } else {
                 $('.stake_wrapper:visible').hide();
@@ -180,7 +185,10 @@ const Price = (() => {
 
             if (data.payout) {
                 elementTextContent(payout, `${localize('Payout')}: `);
-                elementTextContent(payout_amount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
+                elementTextContent(
+                    payout_amount,
+                    formatMoney(currency.value || currency.getAttribute('value'), data.payout),
+                );
                 $('.payout_wrapper:hidden').show();
             } else {
                 $('.payout_wrapper:visible').hide();
@@ -208,7 +216,12 @@ const Price = (() => {
             }
             comment.show();
             error.hide();
-            commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
+            commonTrading.displayCommentPrice(
+                comment,
+                currency.value || currency.getAttribute('value'),
+                proposal.ask_price,
+                proposal.payout,
+            );
             const old_price = purchase.getAttribute('data-display_value');
             const old_payout = purchase.getAttribute('data-payout');
             displayPriceMovement(amount, old_price, proposal.display_value);
@@ -279,14 +292,20 @@ const Price = (() => {
             }
         }
         Object.keys(types).forEach((type_of_contract) => {
-            BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
-                if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
-                    response.echo_req.passthrough.form_id === form_id) {
-                    commonTrading.hideOverlayContainer();
-                    Price.display(response, Contract.contractType()[Contract.form()]);
-                    commonTrading.hidePriceOverlay();
-                }
-            } });
+            BinarySocket.send(Price.proposal(type_of_contract), {
+                callback: (response) => {
+                    if (
+                        response.echo_req &&
+                        response.echo_req !== null &&
+                        response.echo_req.passthrough &&
+                        response.echo_req.passthrough.form_id === form_id
+                    ) {
+                        commonTrading.hideOverlayContainer();
+                        Price.display(response, Contract.contractType()[Contract.form()]);
+                        commonTrading.hidePriceOverlay();
+                    }
+                },
+            });
         });
     };
 
@@ -296,7 +315,9 @@ const Price = (() => {
         clearMapping    : clearMapping,
         clearFormId     : clearFormId,
         idDisplayMapping: () => type_display_id_mapping,
-        incrFormId      : () => { form_id++; },
+        incrFormId      : () => {
+            form_id++;
+        },
 
         processForgetProposals: processForgetProposals,
         processPriceRequest   : processPriceRequest,

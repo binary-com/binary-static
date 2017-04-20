@@ -1,11 +1,11 @@
-const Client        = require('../../../base/client');
-const localize      = require('../../../base/localize').localize;
-const urlFor        = require('../../../base/url').urlFor;
-const makeOption    = require('../../../common_functions/common_functions').makeOption;
-const jpClient      = require('../../../common_functions/country_base').jpClient;
-const FormManager   = require('../../../common_functions/form_manager');
-const TrafficSource = require('../../../common_functions/traffic_source');
-const Cookies       = require('../../../../lib/js-cookie');
+import Client from '../../../base/client';
+import { localize } from '../../../base/localize';
+import { urlFor } from '../../../base/url';
+import { makeOption } from '../../../common_functions/common_functions';
+import { jpClient } from '../../../common_functions/country_base';
+import FormManager from '../../../common_functions/form_manager';
+import TrafficSource from '../../../common_functions/traffic_source';
+import Cookies from '../../../../lib/js-cookie';
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
@@ -27,7 +27,7 @@ const VirtualAccOpening = (() => {
 
     const handleResidenceList = (residence_list) => {
         if (residence_list.length > 0) {
-            const $residence      = $('#residence');
+            const $residence = $('#residence');
             const residence_value = Client.get('residence') || '';
 
             const $options_with_disabled = $('<div/>');
@@ -60,23 +60,52 @@ const VirtualAccOpening = (() => {
         const utm_data = TrafficSource.getData();
 
         const req = [
-            { selector: '#verification_code', validations: ['req', 'email_token'] },
-            { selector: '#client_password',   validations: ['req', 'password'], re_check_field: '#repeat_password' },
-            { selector: '#repeat_password',   validations: ['req', ['compare', { to: '#client_password' }]], exclude_request: 1 },
+            {
+                selector   : '#verification_code',
+                validations: ['req', 'email_token'],
+            },
+            {
+                selector      : '#client_password',
+                validations   : ['req', 'password'],
+                re_check_field: '#repeat_password',
+            },
+            {
+                selector       : '#repeat_password',
+                validations    : ['req', ['compare', { to: '#client_password' }]],
+                exclude_request: 1,
+            },
 
             { selector: '#residence' },
             { selector: '#email_consent' },
-            { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
+            {
+                request_field: 'utm_source',
+                value        : TrafficSource.getSource(utm_data),
+            },
             { request_field: 'new_account_virtual', value: 1 },
         ];
 
-        if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium', value: utm_data.utm_medium });
-        if (utm_data.utm_campaign) req.push({ request_field: 'utm_campaign', value: utm_data.utm_campaign });
+        if (utm_data.utm_medium) {
+            req.push({
+                request_field: 'utm_medium',
+                value        : utm_data.utm_medium,
+            });
+        }
+        if (utm_data.utm_campaign) {
+            req.push({
+                request_field: 'utm_campaign',
+                value        : utm_data.utm_campaign,
+            });
+        }
 
         const gclid = Client.get('gclid');
         if (gclid) req.push({ request_field: 'gclid_url', value: gclid });
 
-        if (Cookies.get('affiliate_tracking')) req.push({ request_field: 'affiliate_token', value: Cookies.getJSON('affiliate_tracking').t });
+        if (Cookies.get('affiliate_tracking')) {
+            req.push({
+                request_field: 'affiliate_token',
+                value        : Cookies.getJSON('affiliate_tracking').t,
+            });
+        }
 
         FormManager.init(form, req);
     };
@@ -85,7 +114,13 @@ const VirtualAccOpening = (() => {
         // show email consent field for japanese accounts
         // and don't allow them to change residence
         const $residence = $('#residence');
-        $residence.replaceWith($('<label/>', { id: 'residence', 'data-value': 'jp', text: localize('Japan') }));
+        $residence.replaceWith(
+            $('<label/>', {
+                id          : 'residence',
+                'data-value': 'jp',
+                text        : localize('Japan'),
+            }),
+        );
         $('#email_consent').parent().parent().removeClass('invisible');
         bindValidation();
     };
@@ -96,20 +131,18 @@ const VirtualAccOpening = (() => {
         if (!error) {
             const new_account = response.new_account_virtual;
             Client.setCookie('residence', response.echo_req.residence);
-            return Client.processNewAccount(
-                new_account.email,
-                new_account.client_id,
-                new_account.oauth_token,
-                true);
+            return Client.processNewAccount(new_account.email, new_account.client_id, new_account.oauth_token, true);
         }
 
         switch (error.code) {
             case 'InvalidToken': {
-                const message = 'Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.';
+                const message =
+                    'Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.';
                 return showFormError(message, '');
             }
             case 'duplicate email': {
-                const message = 'The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.';
+                const message =
+                    'The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.';
                 return showFormError(message, 'user/lost_passwordws');
             }
             case 'PasswordError': {
@@ -127,8 +160,7 @@ const VirtualAccOpening = (() => {
     };
 
     const showError = (message) => {
-        $('#error-account-opening').removeClass('invisible')
-            .text(localize(message));
+        $('#error-account-opening').removeClass('invisible').text(localize(message));
     };
 
     return {

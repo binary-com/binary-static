@@ -1,6 +1,6 @@
-const Client     = require('../base/client');
-const BinaryPjax = require('../base/binary_pjax');
-const jpClient   = require('../common_functions/country_base').jpClient;
+import Client from '../base/client';
+import BinaryPjax from '../base/binary_pjax';
+import { jpClient } from '../common_functions/country_base';
 
 const GetStartedJP = (() => {
     'use strict';

@@ -1,6 +1,6 @@
-const BinaryPjax  = require('../../base/binary_pjax');
-const localize    = require('../../base/localize').localize;
-const FormManager = require('../../common_functions/form_manager');
+import BinaryPjax from '../../base/binary_pjax';
+import { localize } from '../../base/localize';
+import FormManager from '../../common_functions/form_manager';
 
 const LostPassword = (() => {
     'use strict';
@@ -16,7 +16,11 @@ const LostPassword = (() => {
     const onLoad = () => {
         const form_id = '#frm_lost_password';
         FormManager.init(form_id, [
-            { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
+            {
+                selector     : '#email',
+                validations  : ['req', 'email'],
+                request_field: 'verify_email',
+            },
             { request_field: 'type', value: 'reset_password' },
         ]);
         FormManager.handleSubmit({

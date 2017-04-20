@@ -1,7 +1,7 @@
-const moment     = require('moment');
-const localize   = require('../base/localize').localize;
-const checkInput = require('../common_functions/common_functions').checkInput;
-const padLeft    = require('../common_functions/string_util').padLeft;
+import moment from 'moment';
+import { localize } from '../base/localize';
+import { checkInput } from '../common_functions/common_functions';
+import { padLeft } from '../common_functions/string_util';
 
 const TimePicker = (() => {
     'use strict';
@@ -13,25 +13,31 @@ const TimePicker = (() => {
         time_pickers[options.selector] = {};
 
         config(options);
-        $(window).resize(() => { checkWidth(options.selector); });
+        $(window).resize(() => {
+            checkWidth(options.selector);
+        });
     };
 
-    const hide = (selector) => { $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown'); };
+    const hide = (selector) => {
+        $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown');
+    };
 
     const create = (selector) => {
         let $this;
-        $(selector).keydown(function(e) {
-            if (e.which === 13) {
-                $this = $(this);
-                e.preventDefault();
-                e.stopPropagation();
-                $this.timepicker('setTime', $this.val());
-                $this.timepicker('hide');
-                $this.blur();
-                return false;
-            }
-            return true;
-        }).timepicker(time_pickers[selector].config_data);
+        $(selector)
+            .keydown(function(e) {
+                if (e.which === 13) {
+                    $this = $(this);
+                    e.preventDefault();
+                    e.stopPropagation();
+                    $this.timepicker('setTime', $this.val());
+                    $this.timepicker('hide');
+                    $this.blur();
+                    return false;
+                }
+                return true;
+            })
+            .timepicker(time_pickers[selector].config_data);
     };
 
     const timeNow = () => moment.utc(window.time);
@@ -50,12 +56,18 @@ const TimePicker = (() => {
             if (options.minTime.isBefore(time_now)) {
                 options.minTime = time_now;
             }
-            obj_config.minTime = { hour: parseInt(options.minTime.hour()), minute: parseInt(options.minTime.minute()) };
+            obj_config.minTime = {
+                hour  : parseInt(options.minTime.hour()),
+                minute: parseInt(options.minTime.minute()),
+            };
         }
 
         if (options.maxTime) {
             options.maxTime = moment.utc(options.maxTime);
-            obj_config.maxTime = { hour: parseInt(options.maxTime.hour()), minute: parseInt(options.maxTime.minute()) };
+            obj_config.maxTime = {
+                hour  : parseInt(options.maxTime.hour()),
+                minute: parseInt(options.maxTime.minute()),
+            };
         }
 
         let $this;
@@ -74,11 +86,19 @@ const TimePicker = (() => {
                     minute = time_now.format('mm'),
                     second = time_now.format('ss');
 
-                if (typeof invalid[1] !== 'undefined' && isFinite(invalid[1])) hour   = formatTime(invalid[1]);
-                if (typeof invalid[2] !== 'undefined' && isFinite(invalid[2])) minute = formatTime(invalid[2]);
-                if (typeof invalid[3] !== 'undefined' && isFinite(invalid[3])) second = formatTime(invalid[3]);
+                if (typeof invalid[1] !== 'undefined' && isFinite(invalid[1])) {
+                    hour = formatTime(invalid[1]);
+                }
+                if (typeof invalid[2] !== 'undefined' && isFinite(invalid[2])) {
+                    minute = formatTime(invalid[2]);
+                }
+                if (typeof invalid[3] !== 'undefined' && isFinite(invalid[3])) {
+                    second = formatTime(invalid[3]);
+                }
 
-                new_time = moment(`${time_now.format('YYYY-MM-DD')} ${[hour, minute, second].join(':')}`).format('HH:mm');
+                new_time = moment(`${time_now.format('YYYY-MM-DD')} ${[hour, minute, second].join(':')}`).format(
+                    'HH:mm',
+                );
 
                 if (old_value && old_value === new_time) return false;
                 $this.val(new_time);
@@ -111,7 +131,10 @@ const TimePicker = (() => {
             if (maxTime) $selector.attr('max', toTime(maxTime));
             return;
         }
-        if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') || ($(window).width() < 770 && !checkInput('time', 'not-a-time'))) {
+        if (
+            ($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') ||
+            ($(window).width() < 770 && !checkInput('time', 'not-a-time'))
+        ) {
             $selector.attr({ type: 'text', 'data-picker': 'jquery' });
             $selector.removeAttr('min max');
             create(selector);

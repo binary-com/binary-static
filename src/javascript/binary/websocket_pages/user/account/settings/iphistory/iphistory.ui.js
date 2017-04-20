@@ -1,13 +1,13 @@
-const moment               = require('moment');
-const showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeOnHover;
-const localize             = require('../../../../../base/localize').localize;
-const FlexTableUI          = require('../../../../../common_functions/attach_dom/flextable');
+import moment from 'moment';
+import { showLocalTimeOnHover } from '../../../../../base/clock';
+import { localize } from '../../../../../base/localize';
+import FlexTableUI from '../../../../../common_functions/attach_dom/flextable';
 
 const IPHistoryUI = (() => {
     'use strict';
 
     const container_selector = '#login-history-container';
-    const no_messages_error  = 'Your account has no Login/Logout activity.';
+    const no_messages_error = 'Your account has no Login/Logout activity.';
 
     const init = () => {
         const $title = $('#login_history-title').children().first();
@@ -16,21 +16,15 @@ const IPHistoryUI = (() => {
 
     const formatRow = (data) => {
         const timestamp = `${moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n')} GMT`;
-        const status    = localize(data.success ? 'Successful' : 'Failed');
-        const action    = localize(data.action);
-        const browser   = data.browser;
+        const status = localize(data.success ? 'Successful' : 'Failed');
+        const action = localize(data.action);
+        const browser = data.browser;
         let browser_string = browser ? `${browser.name} v${browser.version}` : 'Unknown';
         const patt = /^(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium) v[0-9.]+$/i;
         if (!patt.test(browser_string) && browser_string !== 'Unknown') {
             browser_string = 'Error';
         }
-        return [
-            timestamp,
-            action,
-            browser_string,
-            data.ip_addr,
-            status,
-        ];
+        return [timestamp, action, browser_string, data.ip_addr, status];
     };
 
     const update = (history) => {

@@ -1,10 +1,12 @@
 module.exports = {
-	all: {
-		options: {
-			reporter: 'spec',
-			quiet: false, // Optionally suppress output to standard out (defaults to false)
-			clearRequireCache: false, // Optionally clear the require cache before running tests (defaults to false)
-		},
-		src: ['src/javascript/binary/**/__tests__/*.js']
-	}
+    all: {
+        options: {
+            reporter         : 'spec',
+            quiet            : false, // Optionally suppress output to standard out (defaults to false)
+            clearRequireCache: false, // Optionally clear the require cache before running tests (defaults to false)
+            require          : 'babel-register',
+        },
+        src: ['src/javascript/binary/**/__tests__/*.js'],
+    },
 };
+

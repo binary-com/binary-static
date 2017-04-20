@@ -5,7 +5,11 @@
  * @param theme: dark or white
  */
 const showLoadingImage = (container, theme = 'dark') => {
-    container.empty().append(`<div class="barspinner ${theme}"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>`);
+    container
+        .empty()
+        .append(
+            `<div class="barspinner ${theme}"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>`,
+        );
 };
 
 /**
@@ -37,9 +41,11 @@ const getHighestZIndex = (selector) => {
 
 const downloadCSV = (csv_contents, filename) => {
     filename = filename || 'data.csv';
-    if (navigator.msSaveBlob) { // IE 10+
+    if (navigator.msSaveBlob) {
+        // IE 10+
         navigator.msSaveBlob(new Blob([csv_contents], { type: 'text/csv;charset=utf-8;' }), filename);
-    } else { // Other browsers
+    } else {
+        // Other browsers
         const csv = `data:text/csv;charset=utf-8,${csv_contents}`;
         const download_link = document.createElement('a');
         download_link.href = encodeURI(csv);
@@ -51,7 +57,7 @@ const downloadCSV = (csv_contents, filename) => {
     }
 };
 
-const template = (string, content) => string.replace(/\[_(\d+)]/g, (s, index) => content[(+index) - 1]);
+const template = (string, content) => string.replace(/\[_(\d+)]/g, (s, index) => content[+index - 1]);
 
 const isEmptyObject = (obj) => {
     let is_empty = true;

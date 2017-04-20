@@ -1,4 +1,4 @@
-const ActiveSymbols = require('../../common_functions/active_symbols');
+import ActiveSymbols from '../../common_functions/active_symbols';
 
 /*
  * Symbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
@@ -25,19 +25,19 @@ const Symbols = (() => {
         names = {};
 
     const details = (data) => {
-        const all_symbols  = data.active_symbols;
-        trade_markets      = ActiveSymbols.getMarkets(all_symbols);
+        const all_symbols = data.active_symbols;
+        trade_markets = ActiveSymbols.getMarkets(all_symbols);
         trade_markets_list = ActiveSymbols.getMarketsList(all_symbols);
-        trade_underlyings  = ActiveSymbols.getTradeUnderlyings(all_symbols);
-        names              = ActiveSymbols.getSymbolNames(all_symbols);
+        trade_underlyings = ActiveSymbols.getTradeUnderlyings(all_symbols);
+        names = ActiveSymbols.getSymbolNames(all_symbols);
     };
 
     return {
         details      : details,
-        markets      : list   => (list ? trade_markets_list : trade_markets),
-        underlyings  : ()     => trade_underlyings,
+        markets      : list => (list ? trade_markets_list : trade_markets),
+        underlyings  : () => trade_underlyings,
         getName      : symbol => names[symbol],
-        getAllSymbols: ()     => names,
+        getAllSymbols: () => names,
     };
 })();
 

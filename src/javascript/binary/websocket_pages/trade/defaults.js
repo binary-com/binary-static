@@ -1,6 +1,6 @@
-const Url           = require('../../base/url');
-const isEmptyObject = require('../../base/utility').isEmptyObject;
-const isVisible     = require('../../common_functions/common_functions').isVisible;
+import Url from '../../base/url';
+import { isEmptyObject } from '../../base/utility';
+import { isVisible } from '../../common_functions/common_functions';
 
 /*
  * Handles trading page default values
@@ -48,7 +48,7 @@ const Defaults = (() => {
         for (let i = 0; i < arguments.length; i++) {
             if (params.hasOwnProperty(arguments[i])) {
                 sessionStorage.removeItem(arguments[i]);
-                delete (params[arguments[i]]);
+                delete params[arguments[i]];
                 is_updated = true;
             }
         }
@@ -74,7 +74,9 @@ const Defaults = (() => {
         set   : setDefault,
         update: updateAll,
         remove: removeDefault,
-        clear : () => { params = {}; },
+        clear : () => {
+            params = {};
+        },
     };
 })();
 

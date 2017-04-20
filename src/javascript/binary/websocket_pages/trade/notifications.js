@@ -15,7 +15,7 @@ const Notifications = (() => {
      */
     const showErrorMessage = (options) => {
         const $note_wrapper = getContainer();
-        const $this_uid     = $note_wrapper.find(`#${options.uid}`);
+        const $this_uid = $note_wrapper.find(`#${options.uid}`);
 
         if (!options.uid || $this_uid.length === 0) {
             $note_wrapper.prepend(generateMessage(options));
@@ -27,13 +27,17 @@ const Notifications = (() => {
     };
 
     const generateMessage = (options) => {
-        const $message = $(`<div class="notice-msg center-text${(options.dismissible ? ' dismissible' : '')}"
-            ${(options.uid ? ` id="${options.uid}"` : '')}>${options.text}
-                ${(options.dismissible ? '<div class="notification-dismiss">x</div>' : '')}
-            </div>`);
+        const $message = $(
+            `<div class="notice-msg center-text${options.dismissible ? ' dismissible' : ''}"
+            ${options.uid ? ` id="${options.uid}"` : ''}>${options.text}
+                ${options.dismissible ? '<div class="notification-dismiss">x</div>' : ''}
+            </div>`,
+        );
 
         if (options.dismissible) {
-            $message.click(function() { dismissMessage(this); });
+            $message.click(function() {
+                dismissMessage(this);
+            });
         }
 
         return $message;

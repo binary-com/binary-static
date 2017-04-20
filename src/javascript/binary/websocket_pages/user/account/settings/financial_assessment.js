@@ -1,11 +1,10 @@
-const BinaryPjax       = require('../../../../base/binary_pjax');
-const Header           = require('../../../../base/header');
-const localize         = require('../../../../base/localize').localize;
-const State            = require('../../../../base/storage').State;
-const isEmptyObject    = require('../../../../base/utility').isEmptyObject;
-const showLoadingImage = require('../../../../base/utility').showLoadingImage;
-const jpClient         = require('../../../../common_functions/country_base').jpClient;
-const Validation       = require('../../../../common_functions/form_validation');
+import BinaryPjax from '../../../../base/binary_pjax';
+import Header from '../../../../base/header';
+import { localize } from '../../../../base/localize';
+import { State } from '../../../../base/storage';
+import { isEmptyObject, showLoadingImage } from '../../../../base/utility';
+import { jpClient } from '../../../../common_functions/country_base';
+import Validation from '../../../../common_functions/form_validation';
 
 const FinancialAssessment = (() => {
     'use strict';
@@ -14,7 +13,7 @@ const FinancialAssessment = (() => {
         arr_validation = [];
 
     const form_selector = '#frm_assessment';
-    const hidden_class  = 'invisible';
+    const hidden_class = 'invisible';
 
     const onLoad = () => {
         if (jpClient()) {
@@ -53,11 +52,15 @@ const FinancialAssessment = (() => {
         });
 
         arr_validation = [];
-        if (financial_assessment.occupation === undefined) {  // handle existing assessments
+        if (financial_assessment.occupation === undefined) {
+            // handle existing assessments
             financial_assessment.occupation = '';
         }
         $(form_selector).find('select').map(function() {
-            arr_validation.push({ selector: `#${$(this).attr('id')}`, validations: ['req'] });
+            arr_validation.push({
+                selector   : `#${$(this).attr('id')}`,
+                validations: ['req'],
+            });
         });
         Validation.init(form_selector, arr_validation);
     };
@@ -74,10 +77,14 @@ const FinancialAssessment = (() => {
                     has_changed = true;
                 }
             });
-            if (Object.keys(financial_assessment).length === 0) has_changed = true;
+            if (Object.keys(financial_assessment).length === 0) {
+                has_changed = true;
+            }
             if (!has_changed) {
                 showFormMessage('You did not change anything.', false);
-                setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
+                setTimeout(() => {
+                    $btn_submit.removeAttr('disabled');
+                }, 1000);
                 return;
             }
 
@@ -92,13 +99,17 @@ const FinancialAssessment = (() => {
                     showFormMessage('Sorry, an error occurred while processing your request.', false);
                 } else {
                     showFormMessage('Your changes have been updated successfully.', true);
-                    BinarySocket.send({ get_financial_assessment: 1 }).then(() => {
+                    BinarySocket.send({
+                        get_financial_assessment: 1,
+                    }).then(() => {
                         Header.displayAccountStatus();
                     });
                 }
             });
         } else {
-            setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
+            setTimeout(() => {
+                $btn_submit.removeAttr('disabled');
+            }, 1000);
         }
     };
 
@@ -116,7 +127,9 @@ const FinancialAssessment = (() => {
             $.scrollTo($('h1#heading'), 500, { offset: -10 });
             $(form_selector).addClass(hidden_class);
             $('#msg_main').removeClass(hidden_class);
-            BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+            BinarySocket.send({
+                get_account_status: 1,
+            }).then((response_status) => {
                 if ($.inArray('authenticated', response_status.get_account_status.status) === -1) {
                     $('#msg_authenticate').removeClass(hidden_class);
                 }
@@ -124,7 +137,14 @@ const FinancialAssessment = (() => {
         } else {
             $('#msg_form')
                 .attr('class', is_success ? 'success-msg' : 'errorfield')
-                .html(is_success ? $('<ul/>', { class: 'checked', style: 'display: inline-block;' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
+                .html(
+                    is_success
+                        ? $('<ul/>', {
+                            class: 'checked',
+                            style: 'display: inline-block;',
+                        }).append($('<li/>', { text: localize(msg) }))
+                        : localize(msg),
+                )
                 .css('display', 'block')
                 .delay(5000)
                 .fadeOut(1000);

@@ -1,12 +1,11 @@
-const localize      = require('../../../../base/localize').localize;
-const Client        = require('../../../../base/client');
-const Header        = require('../../../../base/header');
-const State         = require('../../../../base/storage').State;
-const detectHedging = require('../../../../common_functions/common_functions').detectHedging;
-const makeOption    = require('../../../../common_functions/common_functions').makeOption;
-const FormManager   = require('../../../../common_functions/form_manager');
-const moment        = require('moment');
-require('select2');
+import moment from 'moment';
+import 'select2';
+import { localize } from '../../../../base/localize';
+import Client from '../../../../base/client';
+import Header from '../../../../base/header';
+import { State } from '../../../../base/storage';
+import { detectHedging, makeOption } from '../../../../common_functions/common_functions';
+import FormManager from '../../../../common_functions/form_manager';
 
 const PersonalDetails = (() => {
     'use strict';
@@ -42,8 +41,12 @@ const PersonalDetails = (() => {
 
     const getDetailsResponse = (data) => {
         const get_settings = $.extend({}, data);
-        get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
+        get_settings.date_of_birth = get_settings.date_of_birth
+            ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD')
+            : '';
+        get_settings.name = is_jp
+            ? get_settings.last_name
+            : `${get_settings.salutation || ''} ${get_settings.first_name || ''} ${get_settings.last_name || ''}`;
 
         displayGetSettingsData(get_settings);
 
@@ -81,7 +84,7 @@ const PersonalDetails = (() => {
             has_key = $key.length > 0;
             has_lbl_key = $lbl_key.length > 0;
             // prioritise labels for japan account
-            $key = has_key && has_lbl_key ? (is_jp ? $lbl_key : $key) : (has_key ? $key : $lbl_key);
+            $key = has_key && has_lbl_key ? is_jp ? $lbl_key : $key : has_key ? $key : $lbl_key;
             if ($key.length > 0) {
                 data_key = data[key] === null ? '' : data[key];
                 editable_fields[key] = data_key;
@@ -113,45 +116,84 @@ const PersonalDetails = (() => {
 
     const isChanged = (data) => {
         const compare_data = $.extend({}, data);
-        return Object.keys(compare_data).some(key => (
-            key !== 'set_settings' && key !== 'jp_settings' && editable_fields[key] !== compare_data[key]
-        ));
+        return Object.keys(compare_data).some(
+            key => key !== 'set_settings' && key !== 'jp_settings' && editable_fields[key] !== compare_data[key],
+        );
     };
 
     const getValidations = (data) => {
         let validations;
         if (is_jp) {
             validations = [
-                { request_field: 'address_line_1',   value: data.address_line_1 },
-                { request_field: 'address_line_2',   value: data.address_line_2 },
-                { request_field: 'address_city',     value: data.address_city },
-                { request_field: 'address_state',    value: data.address_state },
-                { request_field: 'address_postcode', value: data.address_postcode },
-                { request_field: 'phone',            value: data.phone },
+                { request_field: 'address_line_1', value: data.address_line_1 },
+                { request_field: 'address_line_2', value: data.address_line_2 },
+                { request_field: 'address_city', value: data.address_city },
+                { request_field: 'address_state', value: data.address_state },
+                {
+                    request_field: 'address_postcode',
+                    value        : data.address_postcode,
+                },
+                { request_field: 'phone', value: data.phone },
 
                 { selector: '#email_consent' },
 
-                { selector: '#hedge_asset_amount', validations: ['req', 'number'], parent_node: 'jp_settings' },
-                { selector: '#hedge_asset',        validations: ['req'], parent_node: 'jp_settings' },
+                {
+                    selector   : '#hedge_asset_amount',
+                    validations: ['req', 'number'],
+                    parent_node: 'jp_settings',
+                },
+                {
+                    selector   : '#hedge_asset',
+                    validations: ['req'],
+                    parent_node: 'jp_settings',
+                },
             ];
             $(form_id).find('select').each(function() {
-                validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
+                validations.push({
+                    selector   : `#${$(this).attr('id')}`,
+                    validations: ['req'],
+                    parent_node: 'jp_settings',
+                });
             });
         } else if (is_virtual) {
             validations = [{ selector: '#residence', validations: ['req'] }];
         } else {
             validations = [
-                { selector: '#address_line_1',     validations: ['req', 'address'] },
-                { selector: '#address_line_2',     validations: ['address'] },
-                { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
-                { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
-                { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
-                { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
+                {
+                    selector   : '#address_line_1',
+                    validations: ['req', 'address'],
+                },
+                { selector: '#address_line_2', validations: ['address'] },
+                {
+                    selector   : '#address_city',
+                    validations: ['req', 'letter_symbol'],
+                },
+                {
+                    selector   : '#address_state',
+                    validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'],
+                },
+                {
+                    selector   : '#address_postcode',
+                    validations: ['postcode', ['length', { min: 0, max: 20 }]],
+                },
+                {
+                    selector   : '#phone',
+                    validations: ['req', 'phone', ['length', { min: 6, max: 35 }]],
+                },
 
-                { selector: '#place_of_birth', validations: Client.isFinancial() ? ['req'] : '' },
-                { selector: '#tax_residence',  validations: Client.isFinancial() ? ['req'] : '' },
+                {
+                    selector   : '#place_of_birth',
+                    validations: Client.isFinancial() ? ['req'] : '',
+                },
+                {
+                    selector   : '#tax_residence',
+                    validations: Client.isFinancial() ? ['req'] : '',
+                },
             ];
-            const tax_id_validation = { selector: '#tax_identification_number',  validations: ['postcode', ['length', { min: 0, max: 20 }]] };
+            const tax_id_validation = {
+                selector   : '#tax_identification_number',
+                validations: ['postcode', ['length', { min: 0, max: 20 }]],
+            };
             if (Client.isFinancial()) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
@@ -175,15 +217,22 @@ const PersonalDetails = (() => {
                 getDetailsResponse(data.get_settings);
             });
         }
-        showFormMessage(is_error ?
-            'Sorry, an error occurred while processing your account.' :
-            'Your settings have been updated successfully.', !is_error);
+        showFormMessage(
+            is_error
+                ? 'Sorry, an error occurred while processing your account.'
+                : 'Your settings have been updated successfully.',
+            !is_error,
+        );
     };
 
     const showFormMessage = (msg, is_success) => {
         $('#formMessage')
             .attr('class', is_success ? 'success-msg' : 'errorfield')
-            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
+            .html(
+                is_success
+                    ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) }))
+                    : localize(msg),
+            )
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
@@ -192,7 +241,7 @@ const PersonalDetails = (() => {
     const populateResidence = (response) => {
         const residence_list = response.residence_list;
         const $place_of_birth = $('#place_of_birth');
-        const $tax_residence  = $('#tax_residence');
+        const $tax_residence = $('#tax_residence');
         if (residence_list.length > 0) {
             const $options = $('<div/>');
             const $options_with_disabled = $('<div/>');
@@ -206,8 +255,10 @@ const PersonalDetails = (() => {
                 $place_of_birth.html($options.html());
                 $tax_residence.html($options.html()).promise().done(() => {
                     setTimeout(() => {
-                        $tax_residence.select2()
-                            .val(tax_residence ? tax_residence.split(',') : '').trigger('change')
+                        $tax_residence
+                            .select2()
+                            .val(tax_residence ? tax_residence.split(',') : '')
+                            .trigger('change')
                             .removeClass('invisible');
                     }, 500);
                 });
@@ -215,7 +266,12 @@ const PersonalDetails = (() => {
             } else {
                 $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
                 const $residence = $('#residence');
-                $options_with_disabled.prepend($('<option/>', { text: localize('Please select a value'), value: '' }));
+                $options_with_disabled.prepend(
+                    $('<option/>', {
+                        text : localize('Please select a value'),
+                        value: '',
+                    }),
+                );
                 $residence.html($options_with_disabled.html());
                 initFormManager();
             }
@@ -235,7 +291,14 @@ const PersonalDetails = (() => {
                 $field.append($('<option/>', { value: state.value, text: state.text }));
             });
         } else {
-            $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+            $field.replaceWith(
+                $('<input/>', {
+                    id       : address_state.replace('#', ''),
+                    name     : 'address_state',
+                    type     : 'text',
+                    maxlength: '35',
+                }),
+            );
             $field = $(address_state);
         }
         $field.val(get_settings_data.address_state);
@@ -247,7 +310,9 @@ const PersonalDetails = (() => {
         }
     };
 
-    const initFormManager = () => { FormManager.init(form_id, getValidations(get_settings_data)); };
+    const initFormManager = () => {
+        FormManager.init(form_id, getValidations(get_settings_data));
+    };
 
     const onLoad = () => {
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
@@ -260,7 +325,9 @@ const PersonalDetails = (() => {
                     BinarySocket.send({ residence_list: 1 }).then(response => populateResidence(response));
                 }
                 if (residence) {
-                    BinarySocket.send({ states_list: residence }).then(response => populateStates(response));
+                    BinarySocket.send({
+                        states_list: residence,
+                    }).then(response => populateStates(response));
                 }
             } else {
                 $('#btn_update').addClass(hidden_class);

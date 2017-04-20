@@ -1,6 +1,5 @@
-const expect        = require('chai').expect;
-const IPHistoryData = require('../settings/iphistory/iphistory.data.js');
-
+import { expect } from 'chai';
+import IPHistoryData from '../settings/iphistory/iphistory.data';
 
 describe('IPHistoryData.parseUserAgent', () => {
     // TODO: add more user agent test strings
@@ -61,7 +60,6 @@ describe('IPHistoryData.parseUserAgent', () => {
         expect(parse(ua)).to.equal(null);
     });
 });
-
 
 describe('IPHistoryData.parse', () => {
     const parse = IPHistoryData.parse;

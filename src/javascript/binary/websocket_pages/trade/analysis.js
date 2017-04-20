@@ -1,11 +1,11 @@
-const showHighchart    = require('./charts/chart_frame').showHighchart;
-const getActiveTab     = require('./get_active_tab').getActiveTab;
-const GetTicks         = require('./get_ticks');
-const getLanguage      = require('../../base/language').get;
-const State            = require('../../base/storage').State;
-const Url              = require('../../base/url');
-const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
-const JapanPortfolio   = require('../../../binary_japan/trade_japan/portfolio');
+import { showHighchart } from './charts/chart_frame';
+import { getActiveTab } from './get_active_tab';
+import GetTicks from './get_ticks';
+import { get as getLanguage } from '../../base/language';
+import { State } from '../../base/storage';
+import Url from '../../base/url';
+import { elementInnerHtml } from '../../common_functions/common_functions';
+import JapanPortfolio from '../../../binary_japan/trade_japan/portfolio';
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -23,15 +23,24 @@ const TradingAnalysis = (() => {
     'use strict';
 
     const requestTradeAnalysis = () => {
-        let form_name = State.get('is_mb_trading') ? $('#category').val() :
-                                                    $('#contract_form_name_nav').find('.a-active').attr('id');
+        let form_name = State.get('is_mb_trading')
+            ? $('#category').val()
+            : $('#contract_form_name_nav').find('.a-active').attr('id');
         if (form_name === 'matchdiff') {
             form_name = 'digits';
         }
         if (form_name === 'callput') {
             form_name = 'higherlower';
         }
-        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation',  `underlying_symbol=${$('#underlying').val()}&form_name=${form_name}`));
+        $('#tab_explanation')
+            .find('a')
+            .attr(
+                'href',
+                Url.urlFor(
+                    'trade/bet_explanation',
+                    `underlying_symbol=${$('#underlying').val()}&form_name=${form_name}`,
+                ),
+            );
         if (form_name === 'digits' || form_name === 'overunder' || form_name === 'evenodd') {
             $('#tab_last_digit').removeClass('invisible');
         } else {
@@ -87,7 +96,8 @@ const TradingAnalysis = (() => {
             if (current_tab === 'tab_graph') {
                 showHighchart();
             } else if (current_tab === 'tab_last_digit') {
-                const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
+                const underlying =
+                    $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
                 const tick = $('#tick_count').val() || 100;
                 GetTicks.request('', {
                     ticks_history: underlying,
@@ -135,12 +145,12 @@ const TradingAnalysis = (() => {
      */
     const showExplanation = (href) => {
         const options = Url.paramsHash(href);
-        const form_name    = options.form_name || 'risefall';
-        const show_image   = options.show_image   ? options.show_image   > 0 : true;
+        const form_name = options.form_name || 'risefall';
+        const show_image = options.show_image ? options.show_image > 0 : true;
         const show_winning = options.show_winning ? options.show_winning > 0 : true;
         const show_explain = true;
         const hidden_class = 'invisible';
-        const $container   = $('#tab_explanation-content');
+        const $container = $('#tab_explanation-content');
 
         if (show_winning) {
             $container.find(`#explanation_winning, #winning_${form_name}`).removeClass(hidden_class);
@@ -186,7 +196,9 @@ const TradingAnalysis = (() => {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(getLanguage() === 'JA' ? 'ja/' : '')}`);
+            const image_path = Url.urlForStatic(
+                `images/pages/trade-explanation/${getLanguage() === 'JA' ? 'ja/' : ''}`,
+            );
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $container.find('#explanation_image').removeClass(hidden_class);

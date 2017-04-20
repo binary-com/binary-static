@@ -1,5 +1,5 @@
-const getLanguage = require('./language').get;
-const jpClient    = require('../common_functions/country_base').jpClient;
+import { get as getLanguage } from './language';
+import { jpClient } from '../common_functions/country_base';
 
 const Url = (() => {
     'use strict';
@@ -50,9 +50,9 @@ const Url = (() => {
         const lang = getLanguage().toLowerCase();
         let url = '';
         if (typeof window !== 'undefined') {
-            url  = window.location.href;
+            url = window.location.href;
         }
-        return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${(path || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
+        return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${path || `home${lang === 'ja' ? '-jp' : ''}`}.html${pars ? `?${pars}` : ''}`;
     };
 
     const urlForStatic = (path) => {

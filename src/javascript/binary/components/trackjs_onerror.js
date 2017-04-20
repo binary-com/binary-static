@@ -27,10 +27,11 @@ window._trackJs = {
             return false;
         }
 
-        payload.network = payload.network.filter(item => (
-            // ignore random errors from Intercom
-            !(item.statusCode === 403 && payload.message.indexOf('intercom') > -1)
-        ));
+        payload.network = payload.network.filter(
+            item =>
+                // ignore random errors from Intercom
+                !(item.statusCode === 403 && payload.message.indexOf('intercom') > -1),
+        );
 
         return true;
     },

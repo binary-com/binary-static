@@ -1,6 +1,6 @@
-const Defaults       = require('./defaults');
-const Client         = require('../../base/client');
-const formatCurrency = require('../../common_functions/currency_to_symbol').formatCurrency;
+import Defaults from './defaults';
+import Client from '../../base/client';
+import { formatCurrency } from '../../common_functions/currency_to_symbol';
 
 /*
  * Handles currency display
@@ -37,7 +37,14 @@ const displayCurrencies = () => {
         target.appendChild(fragment);
         Defaults.set('currency', target.value);
     } else {
-        $('#currency').replaceWith($('<span/>', { id: target.getAttribute('id'), class: target.getAttribute('class'), value: currencies[0], text: formatCurrency(currencies[0]) }));
+        $('#currency').replaceWith(
+            $('<span/>', {
+                id   : target.getAttribute('id'),
+                class: target.getAttribute('class'),
+                value: currencies[0],
+                text : formatCurrency(currencies[0]),
+            }),
+        );
         Defaults.set('currency', currencies[0]);
     }
 };
