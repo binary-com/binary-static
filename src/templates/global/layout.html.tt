@@ -7,21 +7,21 @@
 [% END %]
 
 [% UNLESS is_pjax_request %]
-    [% INCLUDE global/head.html.tt %]
+    [% PROCESS global/head.html.tt %]
 [% END %]
 
 [% UNLESS is_pjax_request %]
     <body[% IF lang %] class="[% language %]"[% END %]>
-        [% INCLUDE global/header.html.tt %]
-        [% INCLUDE global/main_menu.html.tt %]
-        [% INCLUDE global/mobile_menu.html.tt %]
-        [% INCLUDE global/gtm.html.tt %]
+        [% PROCESS global/header.html.tt %]
+        [% PROCESS global/main_menu.html.tt %]
+        [% PROCESS global/mobile_menu.html.tt %]
+        [% PROCESS global/gtm.html.tt %]
     <!-- FlushHead -->
     <a href="javascript:;" id="scrollup"></a>
 [% END %]
         <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
             <div id="page_info" style="display:none;">
-                [% INCLUDE global/title.html.tt %]
+                [% PROCESS global/title.html.tt %]
                 <div id="content_class">[% current_route %]-content</div>
             </div>
 [% IF !full_width %]
@@ -52,12 +52,12 @@
             [% content %]
         </div>
 
-        [% INCLUDE global/signup_tour.html.tt %]
+        [% PROCESS global/signup_tour.html.tt %]
     </div>
 </div>
 [% ELSE %]
   [% content %]
 [% END %]
 [% UNLESS is_pjax_request %]
-  [% INCLUDE global/footer.html.tt %]
+  [% PROCESS global/footer.html.tt %]
 [% END %]

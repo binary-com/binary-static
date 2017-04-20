@@ -25,7 +25,7 @@
 
     <p><label for="target_country">[% l('Show payment agents for:') %]</label> <select id="target_country" class="hidden"></select></p>
 
-    <div class="loading">[% INCLUDE global/loading.html.tt %]</div>
+    <div class="loading">[% PROCESS global/loading.html.tt %]</div>
 
     <div id="pa_list">
         <div id="accordion" class="hidden">

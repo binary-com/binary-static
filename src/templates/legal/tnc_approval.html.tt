@@ -1,5 +1,5 @@
 <div id="tnc_container" class="gr-12">
-    <div id="tnc_loading">[% INCLUDE global/loading.html.tt %]</div>
+    <div id="tnc_loading">[% PROCESS global/loading.html.tt %]</div>
 
     <div class="gr-row gr-parent invisible" id="tnc_approval">
         <div class="gr-2 gr-6-m gr-centered-m">

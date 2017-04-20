@@ -24,7 +24,7 @@
         [% END %]
         [% INCLUDE tab_content id='tab_explanation' class='selectedTab' %]
         [% WRAPPER tab_content id='tab_last_digit' %]
-            [% INCLUDE bet/last_digit.html.tt %]
+            [% PROCESS bet/last_digit.html.tt %]
         [% END %]
     [% END %]
 </div>

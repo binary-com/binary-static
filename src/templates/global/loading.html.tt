@@ -1,12 +1,9 @@
 [% BLOCK loading %]
 <div class="barspinner dark">
-    [% item = 1 %]
-    [% WHILE item <= 5 %]
-    <div class="rect[% item %]"></div>
-    [% item = item + 1 %]
+    [% FOREACH i IN [1..5] %]
+    <div class="rect[% i %]"></div>
     [% END %]
 </div>
 [% END %]
 
-[% INCLUDE loading %]
-
+[% PROCESS loading %]

@@ -280,12 +280,12 @@
                 </div>
             </div>
             <div class="col-right gr-6 gr-5-t gr-12-p gr-12-m">
-                [% INCLUDE bet/beta/analysis.html.tt %]
+                [% PROCESS bet/beta/analysis.html.tt %]
             </div>
         </div>
     </div>
 </div>
 <div id="all_prices"></div>
 <div id="trading_init_progress">
-    [% INCLUDE global/loading.html.tt %]
+    [% PROCESS global/loading.html.tt %]
 </div>

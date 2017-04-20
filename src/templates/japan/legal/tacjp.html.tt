@@ -20,20 +20,20 @@
     ] %]
     <div class="tab-content">
         [% WRAPPER tab_content_container %]
-            [% WRAPPER tab_content id='legal' %][% INCLUDE japan/legal/terms_and_conditions.html.tt %][% END %]
-            [% WRAPPER tab_content id='contract' %][% INCLUDE japan/legal/contract.html.tt %][% END %]
+            [% WRAPPER tab_content id='legal' %][% PROCESS japan/legal/terms_and_conditions.html.tt %][% END %]
+            [% WRAPPER tab_content id='contract' %][% PROCESS japan/legal/contract.html.tt %][% END %]
 
-            [% WRAPPER tab_content id='account-privacy' %][% INCLUDE japan/legal/account_privacy.html.tt %][% END %]
-            [% WRAPPER tab_content id='account-antisocial' %][% INCLUDE japan/legal/account_antisocial.html.tt %][% END %]
-            [% WRAPPER tab_content id='account-risk' %][% INCLUDE japan/legal/account_risk.html.tt %][% END %]
-            [% WRAPPER tab_content id='account-warning' %][% INCLUDE japan/legal/account_warning.html.tt %][% END %]
+            [% WRAPPER tab_content id='account-privacy' %][% PROCESS japan/legal/account_privacy.html.tt %][% END %]
+            [% WRAPPER tab_content id='account-antisocial' %][% PROCESS japan/legal/account_antisocial.html.tt %][% END %]
+            [% WRAPPER tab_content id='account-risk' %][% PROCESS japan/legal/account_risk.html.tt %][% END %]
+            [% WRAPPER tab_content id='account-warning' %][% PROCESS japan/legal/account_warning.html.tt %][% END %]
 
-            [% WRAPPER tab_content id='ethics-code' %][% INCLUDE japan/legal/ethics_code.html.tt %][% END %]
-            [% WRAPPER tab_content id='ethics-antisocial' %][% INCLUDE japan/legal/ethics_antisocial.html.tt %][% END %]
-            [% WRAPPER tab_content id='ethics-solicitation' %][% INCLUDE japan/legal/ethics_solicitation.html.tt %][% END %]
-            [% WRAPPER tab_content id='ethics-liability' %][% INCLUDE japan/legal/ethics_liability.html.tt %][% END %]
+            [% WRAPPER tab_content id='ethics-code' %][% PROCESS japan/legal/ethics_code.html.tt %][% END %]
+            [% WRAPPER tab_content id='ethics-antisocial' %][% PROCESS japan/legal/ethics_antisocial.html.tt %][% END %]
+            [% WRAPPER tab_content id='ethics-solicitation' %][% PROCESS japan/legal/ethics_solicitation.html.tt %][% END %]
+            [% WRAPPER tab_content id='ethics-liability' %][% PROCESS japan/legal/ethics_liability.html.tt %][% END %]
 
-            [% WRAPPER tab_content id='affiliates' %][% INCLUDE japan/legal/affiliates.html.tt %][% END %]
+            [% WRAPPER tab_content id='affiliates' %][% PROCESS japan/legal/affiliates.html.tt %][% END %]
         [% END %]
     </div>
 </div>

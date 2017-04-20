@@ -32,7 +32,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
 
-        [% INCLUDE global/title.html.tt %]
+        [% PROCESS global/title.html.tt %]
 
         <link rel="manifest" href="[% root_url _ 'manifest.json' %]">
         <script type="text/javascript" src="//cdn.pushwoosh.com/webpush/pushwoosh-web-notifications.js" async></script>

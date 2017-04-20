@@ -131,6 +131,6 @@
             </div>
         </div>
 
-        [% INCLUDE about/careers_shared.html.tt %]
+        [% PROCESS about/careers_shared.html.tt %]
     </div>
 </div>

@@ -147,7 +147,7 @@
                     </div>
                 </fieldset>
 
-                [% INCLUDE global/pep_declaration.html.tt %]
+                [% PROCESS global/pep_declaration.html.tt %]
 
                 <fieldset class="center-text" id="formlayout">
                     <div class="gr-row">

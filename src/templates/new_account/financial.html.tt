@@ -178,9 +178,9 @@
                     </div>
                 </fieldset>
 
-                [% INCLUDE global/financial_form.html.tt %]
+                [% PROCESS global/financial_form.html.tt %]
 
-                [% INCLUDE global/pep_declaration.html.tt %]
+                [% PROCESS global/pep_declaration.html.tt %]
 
                 <fieldset>
                     <div class="gr-12">

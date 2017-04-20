@@ -3,5 +3,5 @@
 
     [% content %]
 
-    [% INCLUDE user/reality_check/form.html.tt %]
+    [% PROCESS user/reality_check/form.html.tt %]
 </div>

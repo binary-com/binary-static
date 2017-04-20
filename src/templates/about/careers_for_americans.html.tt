@@ -72,7 +72,7 @@
                     [% INCLUDE info_box padding='6' header="Kuala Lumpur, Malaysia" text="Malaysia's federal capital is a city of contrast and diversity, brimming with modern infrastructure, historical attractions, and a multicultural society." %]
                 </div>
             </div>
-            [% INCLUDE about/careers_shared.html.tt %]
+            [% PROCESS about/careers_shared.html.tt %]
         </div>
     </div>
 </div>

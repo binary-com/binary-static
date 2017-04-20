@@ -98,7 +98,7 @@
                             </a>
                         </div>
                     </div>
-                    [% INCLUDE global/social.html.tt %]
+                    [% PROCESS global/social.html.tt %]
                 </div>
             </div>
         </div>

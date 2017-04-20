@@ -23,7 +23,7 @@
 [% END %]
 
 [% BLOCK tab_content %]
-    <div id="[% id %]-content" class="toggle-content [% IF class %][% class %][% ELSE %]invisible[% END %]">
+    <div id="[% id %]-content" class="toggle-content [% UNLESS visible %]invisible[% END %]">
         [% content %]
     </div>
 [% END %]
@@ -33,7 +33,7 @@
     <div class="tab-menu-wrap">
         <ul id="[% id %]" class="tm-ul">
             [% FOREACH item IN items %]
-                <li id="[% item.id %]" class="tm-li">
+                <li id="[% item.id %]" class="tm-li [% item.class %]">
                 [% IF item.subtabs %]
                     <span class="menu-wrap-a">
                         <span class="menu-wrap-b">

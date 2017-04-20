@@ -54,7 +54,7 @@
 
     <form id="frm_withdraw" class="invisible">
         [% WRAPPER fieldset %]
-            [% INCLUDE verification_code %]
+            [% PROCESS verification_code %]
         [% END %]
         [% INCLUDE submit_button is_centered=1 type='submit' text=l("Submit") no_error=1 %]
     </form>

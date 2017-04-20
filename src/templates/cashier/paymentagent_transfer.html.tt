@@ -5,7 +5,7 @@
 
 <h1>[% l('Payment Agent transfer') %]</h1>
 
-<div id="pa_transfer_loading" class="center-text">[% INCLUDE global/loading.html.tt %]</div>
+<div id="pa_transfer_loading" class="center-text">[% PROCESS global/loading.html.tt %]</div>
 
 <form id="frm_confirm_transfer" class="invisible">
     <p>[% l('Please confirm the transaction details in order to complete the transfer:') %]</p>

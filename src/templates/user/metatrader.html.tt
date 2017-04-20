@@ -5,7 +5,7 @@
         <h1>[% l('MetaTrader account management') %]</h1>
     </div>
     <p id="page_msg" class="notice-msg center-text invisible"></p>
-    <div id="mt_loading">[% INCLUDE global/loading.html.tt %]</div>
+    <div id="mt_loading">[% PROCESS global/loading.html.tt %]</div>
     <div class="gr-12">
         <div id="accounts_list" class="gr-row"></div>
     </div>
@@ -22,7 +22,7 @@
         <div class="acc-box gr-12-m gr-6-p gr-4-t gr-4">
             <div>
                 <div class="title"></div>
-                <div class="loading">[% INCLUDE global/loading.html.tt %]</div>
+                <div class="loading">[% PROCESS global/loading.html.tt %]</div>
                 <div class="center-text no-account invisible">
                     <div class="info"></div>
                     <span class="button"><span class="act_new_account">[% l('Create Account') %]</span></span>
@@ -128,7 +128,7 @@
             <div id="msg_authenticate">
                 <div class="align-start">
                     <p>[% l('To withdraw from MT5 Financial Account please Authenticate your [_1] account.', website_name) %]</p>
-                    [% INCLUDE user/common/authenticate_message.html.tt %]
+                    [% PROCESS user/common/authenticate_message.html.tt %]
                 </div>
             </div>
         </div>
