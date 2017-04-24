@@ -1,19 +1,17 @@
-const TradingAnalysis      = require('./analysis');
-const commonTrading        = require('./common');
-const displayCurrencies    = require('./currency');
-const Defaults             = require('./defaults');
-const TradingEvents        = require('./event');
-const Message              = require('./message');
-const Notifications        = require('./notifications');
-const Price                = require('./price');
-const forgetTradingStreams = require('./process').forgetTradingStreams;
-const Symbols              = require('./symbols');
-const ViewPopup            = require('../user/view_popup/view_popup');
-const BinaryPjax           = require('../../base/binary_pjax');
-const localize             = require('../../base/localize').localize;
-const State                = require('../../base/storage').State;
-const jpClient             = require('../../common_functions/country_base').jpClient;
-const Guide                = require('../../common_functions/guide');
+const TradingAnalysis   = require('./analysis');
+const commonTrading     = require('./common');
+const chartFrameCleanup = require('./charts/chart_frame').chartFrameCleanup;
+const displayCurrencies = require('./currency');
+const Defaults          = require('./defaults');
+const TradingEvents     = require('./event');
+const Price             = require('./price');
+const Process           = require('./process');
+const ViewPopup         = require('../user/view_popup/view_popup');
+const BinaryPjax        = require('../../base/binary_pjax');
+const localize          = require('../../base/localize').localize;
+const State             = require('../../base/storage').State;
+const jpClient          = require('../../common_functions/country_base').jpClient;
+const Guide             = require('../../common_functions/guide');
 
 const TradePage = (() => {
     'use strict';
@@ -27,14 +25,6 @@ const TradePage = (() => {
             return;
         }
         State.set('is_trading', true);
-        BinarySocket.init({
-            onmessage: (msg) => {
-                Message.process(msg);
-            },
-            onopen: () => {
-                Notifications.hide('CONNECTION_ERROR');
-            },
-        });
         Price.clearFormId();
         if (events_initialized === 0) {
             events_initialized = 1;
@@ -43,7 +33,7 @@ const TradePage = (() => {
 
         BinarySocket.send({ payout_currencies: 1 }).then(() => {
             displayCurrencies();
-            Symbols.getSymbols(1);
+            Process.processActiveSymbols();
         });
 
         if (document.getElementById('websocket_form')) {
@@ -71,17 +61,17 @@ const TradePage = (() => {
     const onUnload = () => {
         State.remove('is_trading');
         events_initialized = 0;
-        forgetTradingStreams();
+        Process.forgetTradingStreams();
         BinarySocket.clear();
         Defaults.clear();
-        commonTrading.chartFrameCleanup();
+        chartFrameCleanup();
+        commonTrading.clean();
     };
 
     const onDisconnect = () => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
-        commonTrading.chartFrameCleanup();
-        commonTrading.clean();
+        chartFrameCleanup();
         onLoad();
     };
 

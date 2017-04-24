@@ -94,7 +94,7 @@ const TickDisplay_Beta = (() => {
             x_indicators = {
                 _0: { label: 'Entry Spot', id: 'start_tick' },
             };
-            x_indicators['_' + exit_tick_index] = {
+            x_indicators[`_${exit_tick_index}`] = {
                 label: 'Exit Spot',
                 id   : 'exit_tick',
             };
@@ -103,7 +103,7 @@ const TickDisplay_Beta = (() => {
             x_indicators = {
                 _0: { label: 'Entry Spot', id: 'entry_tick' },
             };
-            x_indicators['_' + number_of_ticks] = {
+            x_indicators[`_${number_of_ticks}`] = {
                 label: 'Exit Spot',
                 id   : 'exit_tick',
             };
@@ -112,8 +112,8 @@ const TickDisplay_Beta = (() => {
             x_indicators = {
                 _0: { label: 'Tick 1', id: 'start_tick' },
             };
-            x_indicators['_' + exit_tick_index] = {
-                label: 'Tick ' + number_of_ticks,
+            x_indicators[`_${exit_tick_index}`] = {
+                label: `Tick ${number_of_ticks}`,
                 id   : 'last_tick',
             };
         } else {
@@ -139,7 +139,7 @@ const TickDisplay_Beta = (() => {
                 formatter: function() {
                     const new_y = this.y.toFixed(display_decimals);
                     const mom = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
-                    return mom + '<br/>' + display_symbol + ' ' + new_y;
+                    return `${mom}<br/>${display_symbol} ${new_y}`;
                 },
                 crosshairs: [true],
             },
@@ -272,7 +272,7 @@ const TickDisplay_Beta = (() => {
                 let final_barrier = barrier_tick.quote + parseFloat(barrier);
                 // sometimes due to rounding issues, result is 1.009999 while it should
                 // be 1.01
-                final_barrier = Number(Math.round(final_barrier + 'e' + display_decimals) + 'e-' + display_decimals);
+                final_barrier = Number(`${Math.round(`${final_barrier}e${display_decimals}`)}e-${display_decimals}`);
 
                 barrier_tick.quote = final_barrier;
             } else if (abs_barrier) {
@@ -286,7 +286,7 @@ const TickDisplay_Beta = (() => {
                 width : line_width,
                 zIndex: 2,
                 label : {
-                    text : is_trading_page ? '' : 'Barrier (' + barrier_tick.quote + ')',
+                    text : is_trading_page ? '' : `Barrier (${barrier_tick.quote})`,
                     align: 'center',
                 },
             });
@@ -311,7 +311,7 @@ const TickDisplay_Beta = (() => {
                 width : line_width,
                 zIndex: 2,
                 label : {
-                    text : is_trading_page ? '' : 'Average (' + calc_barrier + ')',
+                    text : is_trading_page ? '' : `Average (${calc_barrier})`,
                     align: 'center',
                 },
             });
@@ -376,14 +376,6 @@ const TickDisplay_Beta = (() => {
         commonTrading.updatePurchaseStatus_Beta(final_price, final_price - pnl, contract_status);
     };
 
-    const socketSend = (req) => {
-        if (!req.hasOwnProperty('passthrough')) {
-            req.passthrough = {};
-        }
-        req.passthrough.dispatch_to = 'ViewTickDisplay';
-        BinarySocket.send(req);
-    };
-
     const dispatch = (data) => {
         const tick_chart = document.getElementById('tick_chart');
 
@@ -392,7 +384,6 @@ const TickDisplay_Beta = (() => {
         }
 
         if (window.subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-            if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChart') return;
             window.responseID = data.tick.id;
             ViewPopupUI.storeSubscriptionID(window.responseID);
         }
@@ -458,7 +449,7 @@ const TickDisplay_Beta = (() => {
                     chart.series[0].addPoint([counter, tick.quote], true, false);
                     applicable_ticks.push(tick);
                     spots_list[tick.epoch] = tick.quote;
-                    const indicator_key = '_' + counter;
+                    const indicator_key = `_${counter}`;
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
                         x_indicators[indicator_key].index = counter;
                         add(x_indicators[indicator_key]);
@@ -514,7 +505,7 @@ const TickDisplay_Beta = (() => {
             } else {
                 request.end = contract.date_expiry;
             }
-            socketSend(request);
+            BinarySocket.send(request, { callback: dispatch });
         } else {
             dispatch(data);
         }

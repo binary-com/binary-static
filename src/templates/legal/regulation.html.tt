@@ -72,9 +72,10 @@
                             <area shape="rect" coords="498.57,665.88,643.74,697.59" href="[% request.url_for('download/regulation/Slovenia.pdf') %]" alt="Slovenia" target="_blank">
                             <area shape="rect" coords="532.14,629.79,677.31,661.50" href="http://www.hanfa.hr/capital-market/registers/notifications-from-eu-member-states" alt="Croatia" target="_blank">
                             <area shape="rect" coords="754.83,540.21,900.00,571.92" href="[% request.url_for('download/regulation/Greece.pdf') %]" alt="Greece" target="_blank">
-                            <area shape="rect" coords="754.83,419.19,900.00,450.90" href="[% request.url_for('download/regulation/Romania.pdf') %]" alt="Romania" target="_blank">
-                            <area shape="rect" coords="754.83,369.57,900.00,401.28" href="[% request.url_for('download/regulation/Slovakia.pdf') %]" alt="Slovakia" target="_blank">
-                            <area shape="rect" coords="708.69,334.14,900.00,365.85" href="[% request.url_for('download/regulation/Czech.pdf') %]" alt="Czech Republic" target="_blank">
+                            <area shape="rect" coords="754.41,443.22,900.00,474.53" href="[% request.url_for('download/regulation/Romania.pdf') %]" alt="Romania" target="_blank">
+                            <area shape="rect" coords="754.11,407.81,900.00,439.52" href="https://alk.mnb.hu/en/left_menu/market_participants/kereso/kereses?ktasearch_value=&ktasearch_label=&ktasearch_prev_value=&pmod=simpleSearch&n=Binary+Investments+%28Europe%29+Ltd&st=0&i=&a=1&x=56&y=8" alt="Hungary" target="_blank">
+                            <area shape="rect" coords="754.41,372.70,900.00,404.41" href="[% request.url_for('download/regulation/Slovakia.pdf') %]" alt="Slovakia" target="_blank">
+                            <area shape="rect" coords="708.23,337.29,900.00,369.00" href="[% request.url_for('download/regulation/Czech.pdf') %]" alt="Czech Republic" target="_blank">
                             <area shape="rect" coords="765.87,287.94,900.03,319.65" href="[% request.url_for('download/regulation/Poland.pdf') %]" alt="Poland" target="_blank">
                             <area shape="rect" coords="765.87,222.12,900.03,253.83" href="http://www.fktk.lv/en/market/financial-instruments-market/service-providers-from-the-eea/freedom-to-provide-services.html" alt="Latvia" target="_blank">
                             <area shape="rect" coords="765.87,185.97,900.03,217.68" href="[% request.url_for('download/regulation/Estonia.pdf') %]" alt="Estonia" target="_blank">
@@ -152,7 +153,7 @@
                 <p>[% l("UK and Manx residents will have their account opened with Binary (IOM) Ltd.") %]</p>
                 <p><strong>[% l("Regulator:") %]</strong></p>
                 <div class="gr-2 gr-4-m gr-centered gr-padding-10">
-                    <a href="http://www.gov.im/gambling/" target="_blank">
+                    <a href="https://www.gov.im/gambling/" target="_blank">
                         <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]">
                     </a>
                 </div>

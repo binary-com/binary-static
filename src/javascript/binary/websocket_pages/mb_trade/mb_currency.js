@@ -42,10 +42,9 @@ const MBDisplayCurrencies = (selected, show_class) => {
         target.appendChild(fragment);
         MBDefaults.set('currency', target.value);
     } else {
-        $('#currency').replaceWith('<span id="' + target.getAttribute('id') +
-                                    '" class="' + (show_class ? target.getAttribute('class') : '') +
-                                    '" value="' + currencies[0] + '">' +
-                                    (State.get('is_mb_trading') && jpClient() ? '✕' : formatCurrency(currencies[0])) + '</span>');
+        const class_value = show_class ? target.getAttribute('class') : '';
+        const text_value = State.get('is_mb_trading') && jpClient() ? '✕' : formatCurrency(currencies[0]);
+        $('#currency').replaceWith($('<span/>', { id: target.getAttribute('id'), class: class_value, value: currencies[0], text: text_value }));
         if ($('.payout-mult:visible').length === 0) $('#payout').width(40); // wider when there is free space
         MBDefaults.set('currency', currencies[0]);
     }

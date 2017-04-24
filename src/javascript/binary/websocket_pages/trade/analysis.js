@@ -1,4 +1,6 @@
-const commonTrading    = require('./common');
+const showHighchart    = require('./charts/chart_frame').showHighchart;
+const getActiveTab     = require('./get_active_tab').getActiveTab;
+const GetTicks         = require('./get_ticks');
 const getLanguage      = require('../../base/language').get;
 const State            = require('../../base/storage').State;
 const Url              = require('../../base/url');
@@ -29,7 +31,7 @@ const TradingAnalysis = (() => {
         if (form_name === 'callput') {
             form_name = 'higherlower';
         }
-        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + form_name));
+        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation',  `underlying_symbol=${$('#underlying').val()}&form_name=${form_name}`));
         if (form_name === 'digits' || form_name === 'overunder' || form_name === 'evenodd') {
             $('#tab_last_digit').removeClass('invisible');
         } else {
@@ -70,11 +72,11 @@ const TradingAnalysis = (() => {
      */
     const loadAnalysisTab = () => {
         const current_tab = getActiveTab();
-        const current_link = document.querySelector('#' + current_tab + ' a');
-        const content_id = document.getElementById(current_tab + '-content');
+        const current_link = document.querySelector(`#${current_tab} a`);
+        const content_id = document.getElementById(`${current_tab}-content`);
 
         const analysis_nav_element = document.querySelector('#trading_bottom_content #betsBottomPage');
-        commonTrading.toggleActiveNavMenuElement(analysis_nav_element, current_link.parentElement);
+        toggleActiveNavMenuElement(analysis_nav_element, current_link.parentElement);
         toggleActiveAnalysisTabs();
 
         JapanPortfolio.init();
@@ -83,15 +85,14 @@ const TradingAnalysis = (() => {
         } else {
             JapanPortfolio.hide();
             if (current_tab === 'tab_graph') {
-                commonTrading.showHighchart();
+                showHighchart();
             } else if (current_tab === 'tab_last_digit') {
-                const underlying = $('[name=underlying] option:selected').val() || $('#underlying').find('option:selected').val();
-                const tick = $('[name=tick_count]').val() || 100;
-                BinarySocket.send({
+                const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
+                const tick = $('#tick_count').val() || 100;
+                GetTicks.request('', {
                     ticks_history: underlying,
-                    count        : tick + '',
+                    count        : tick.toString(),
                     end          : 'latest',
-                    req_id       : 1,
                 });
             } else {
                 $.ajax({
@@ -116,7 +117,7 @@ const TradingAnalysis = (() => {
 
         if (analysis_container) {
             const child_elements = analysis_container.children;
-            const current_tab_element = document.getElementById(current_tab + '-content');
+            const current_tab_element = document.getElementById(`${current_tab}-content`);
             const classes = current_tab_element.classList;
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
@@ -127,22 +128,6 @@ const TradingAnalysis = (() => {
             classes.add('selectedTab');
             classes.remove('invisible');
         }
-    };
-
-    /*
-     * get the current active tab if its visible i.e allowed for current parameters
-     */
-    const getActiveTab = () => {
-        let selected_tab = sessionStorage.getItem('currentAnalysisTab') || (State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation');
-        const selected_element = document.getElementById(selected_tab);
-
-        if (selected_element && selected_element.classList.contains('invisible') &&
-            !(selected_tab === 'tab_portfolio' && JapanPortfolio.isActive())) {
-            selected_tab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
-            sessionStorage.setItem('currentAnalysisTab', selected_tab);
-        }
-
-        return selected_tab;
     };
 
     /*
@@ -158,11 +143,11 @@ const TradingAnalysis = (() => {
         const $container   = $('#tab_explanation-content');
 
         if (show_winning) {
-            $container.find('#explanation_winning, #winning_' + form_name).removeClass(hidden_class);
+            $container.find(`#explanation_winning, #winning_${form_name}`).removeClass(hidden_class);
         }
 
         if (show_explain) {
-            $container.find('#explanation_explain, #explain_' + form_name).removeClass(hidden_class);
+            $container.find(`#explanation_explain, #explain_${form_name}`).removeClass(hidden_class);
         }
 
         const images = {
@@ -190,10 +175,6 @@ const TradingAnalysis = (() => {
                 image1: 'up-down-1.svg',
                 image2: 'up-down-2.svg',
             },
-            spreads: {
-                image1: 'spreads-1.svg',
-                image2: 'spreads-2.svg',
-            },
             evenodd: {
                 image1: 'evenodd-1.svg',
                 image2: 'evenodd-2.svg',
@@ -205,10 +186,25 @@ const TradingAnalysis = (() => {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            const image_path = Url.urlForStatic('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
+            const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(getLanguage() === 'JA' ? 'ja/' : '')}`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $container.find('#explanation_image').removeClass(hidden_class);
+        }
+    };
+
+    /*
+     * toggle active class of menu
+     */
+    const toggleActiveNavMenuElement = (nav, event_element) => {
+        const li_elements = nav.getElementsByTagName('li');
+        const classes = event_element.classList;
+
+        if (!classes.contains('active')) {
+            for (let i = 0, len = li_elements.length; i < len; i++) {
+                li_elements[i].classList.remove('active');
+            }
+            classes.add('active');
         }
     };
 

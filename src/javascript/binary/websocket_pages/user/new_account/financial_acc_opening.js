@@ -41,7 +41,7 @@ const FinancialAccOpening = (() => {
                 const keys = Object.keys(response.get_financial_assessment);
                 keys.forEach((key) => {
                     const val = response.get_financial_assessment[key];
-                    $('#' + key).val(val);
+                    $(`#${key}`).val(val);
                 });
             }
         });

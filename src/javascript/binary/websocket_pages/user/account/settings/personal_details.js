@@ -43,7 +43,7 @@ const PersonalDetails = (() => {
     const getDetailsResponse = (data) => {
         const get_settings = $.extend({}, data);
         get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        get_settings.name = is_jp ? get_settings.last_name : (get_settings.salutation || '') + ' ' + (get_settings.first_name || '') + ' ' + (get_settings.last_name || '');
+        get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
 
         displayGetSettingsData(get_settings);
 
@@ -166,12 +166,12 @@ const PersonalDetails = (() => {
         const is_error = response.set_settings !== 1;
         if (!is_error) {
             // to update tax information message for financial clients
-            BinarySocket.send({ get_account_status: 1 }, true).then(() => {
+            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                 showHideTaxMessage();
                 Header.displayAccountStatus();
             });
             // to update the State with latest get_settings data
-            BinarySocket.send({ get_settings: 1 }, true).then((data) => {
+            BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
                 getDetailsResponse(data.get_settings);
             });
         }
@@ -183,7 +183,7 @@ const PersonalDetails = (() => {
     const showFormMessage = (msg, is_success) => {
         $('#formMessage')
             .attr('class', is_success ? 'success-msg' : 'errorfield')
-            .html(is_success ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
+            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);

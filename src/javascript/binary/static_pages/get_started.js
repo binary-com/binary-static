@@ -5,7 +5,7 @@ const GetStarted = (() => {
 
     const selectNavElement = () => {
         $('.nav li').removeClass('selected')
-            .find('a[href="' + window.location.pathname + '"]')
+            .find(`a[href="${window.location.pathname}"]`)
             .parent('li')
             .addClass('selected');
     };
@@ -52,7 +52,7 @@ const GetStarted = (() => {
             });
 
             const fragment = (location.href.split('#'))[1];
-            const $to_show = fragment ? $('a[name=' + fragment + '-section]').parent('.subsection') : $('.subsection.first');
+            const $to_show = fragment ? $(`a[name=${fragment}-section]`).parent('.subsection') : $('.subsection.first');
             updateActiveSubsection($nav, $to_show);
         }
         selectNavElement();

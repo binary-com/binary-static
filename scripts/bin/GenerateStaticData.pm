@@ -148,19 +148,13 @@ sub _texts {
         push @texts, localize('Potential Payout');
         push @texts, localize('Total Cost');
         push @texts, localize('Potential Profit');
-        push @texts, localize('Amount per point');
-        push @texts, localize('Stop-loss');
-        push @texts, localize('Stop-profit');
         push @texts, localize('View');
         push @texts, localize('Statement');
-        push @texts, localize('points');
         push @texts, localize('Tick');
         push @texts, localize('Buy price');
         push @texts, localize('Final price');
         push @texts, localize('Long');
         push @texts, localize('Short');
-        push @texts, localize('Deposit of');
-        push @texts, localize('is required. Current spread');
         push @texts, localize('Chart');
         push @texts, localize('Explanation');
         push @texts, localize('Last Digit Stats');
@@ -346,7 +340,6 @@ sub _texts {
         #strings for digit_info
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
-        push @texts, localize('Last digit stats for the latest [_1] ticks on [_2]');
         push @texts, localize('Percentage');
         push @texts, localize('Digit');
         #strings for paymentagent
@@ -399,12 +392,6 @@ sub _texts {
         push @texts, localize('Current');
         push @texts, localize('Open');
         push @texts, localize('Closed');
-        push @texts, localize('Entry Level');
-        push @texts, localize('Exit Level');
-        push @texts, localize('Stop Loss Level');
-        push @texts, localize('Stop Profit Level');
-        push @texts, localize('Current Level');
-        push @texts, localize('Profit/Loss (points)');
         push @texts, localize('Contract is not started yet');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
@@ -497,7 +484,9 @@ sub _texts {
         push @texts, localize('from [_1] to [_2]');
 
         # strings for header notification
-        push @texts, localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.');
+        push @texts, localize('Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.');
+        push @texts, localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.');
         push @texts, localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.');

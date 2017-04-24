@@ -1,13 +1,11 @@
 const TradingAnalysis_Beta      = require('./analysis');
 const TradingEvents_Beta        = require('./event');
-const Message_Beta              = require('./message');
 const Price_Beta                = require('./price');
-const forgetTradingStreams_Beta = require('./process').forgetTradingStreams_Beta;
+const Process_Beta              = require('./process');
 const commonTrading             = require('../common');
+const chartFrameCleanup         = require('../charts/chart_frame').chartFrameCleanup;
 const displayCurrencies         = require('../currency');
 const Defaults                  = require('../defaults');
-const Notifications             = require('../notifications');
-const Symbols                   = require('../symbols');
 const PortfolioInit             = require('../../user/account/portfolio/portfolio.init');
 const ViewPopup                 = require('../../user/view_popup/view_popup');
 const BinaryPjax                = require('../../../base/binary_pjax');
@@ -29,14 +27,6 @@ const TradePage_Beta = (() => {
             return;
         }
         State.set('is_beta_trading', true);
-        BinarySocket.init({
-            onmessage: (msg) => {
-                Message_Beta.process(msg);
-            },
-            onopen: () => {
-                Notifications.hide('CONNECTION_ERROR');
-            },
-        });
         Price_Beta.clearFormId();
         if (events_initialized === 0) {
             events_initialized = 1;
@@ -45,7 +35,7 @@ const TradePage_Beta = (() => {
 
         BinarySocket.send({ payout_currencies: 1 }).then(() => {
             displayCurrencies();
-            Symbols.getSymbols(1);
+            Process_Beta.processActiveSymbols_Beta();
         });
 
         if (document.getElementById('websocket_form')) {
@@ -85,17 +75,18 @@ const TradePage_Beta = (() => {
         let total_width = 0;
 
         // add seeMore tab
-        let $see_more = $ul.find('li.' + see_more_class);
+        let $see_more = $ul.find(`li.${see_more_class}`);
         if ($see_more.length === 0) {
-            $see_more = $('<li class="tm-li ' + see_more_class + '"><a class="tm-a" href="javascript:;"><span class="caret-down"></span></a></li>');
+            $see_more = $('<li/>', { class: `tm-li ${see_more_class}` }).append($('<a/>', { class: 'tm-a', href: `${'java'}${'script:;'}` })
+                .append($('<span/>', { class: 'caret-down' })));
             $ul.append($see_more);
         }
         $see_more.removeClass('active');
 
         // add moreTabs container
-        let $more_tabs = $ul.find('.' + more_tabs_class);
+        let $more_tabs = $ul.find(`.${more_tabs_class}`);
         if ($more_tabs.length === 0) {
-            $more_tabs = $('<div class="' + more_tabs_class + '" />').appendTo($see_more);
+            $more_tabs = $('<div/>', { class: more_tabs_class }).appendTo($see_more);
         } else {
             $more_tabs.find('>li').each((index, tab) => {
                 $(tab).insertBefore($see_more);
@@ -110,7 +101,7 @@ const TradePage_Beta = (() => {
         });
         let result_width = total_width;
         while (result_width >= max_width) {
-            const $thisTab = $ul.find('>li:not(.' + see_more_class + '):visible').last();
+            const $thisTab = $ul.find(`>li:not(.${see_more_class}):visible`).last();
             result_width -= $thisTab.outerWidth(true);
             $thisTab.prependTo($more_tabs);
         }
@@ -176,18 +167,18 @@ const TradePage_Beta = (() => {
     const onUnload = () => {
         State.remove('is_beta_trading');
         events_initialized = 0;
-        forgetTradingStreams_Beta();
+        Process_Beta.forgetTradingStreams_Beta();
         BinarySocket.clear();
         Defaults.clear();
         PortfolioInit.onUnload();
-        commonTrading.chartFrameCleanup();
+        chartFrameCleanup();
+        commonTrading.clean();
     };
 
     const onDisconnect = () => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
-        commonTrading.chartFrameCleanup();
-        commonTrading.clean();
+        chartFrameCleanup();
         onLoad();
     };
 

@@ -131,7 +131,7 @@ const DepositWithdraw = (() => {
                 email   : 'Email address',
             };
         }
-        const $el = $('#' + msg_id);
+        const $el = $(`#${msg_id}`);
         const err_msg = template($el.html(), [localize(details ? error_fields[details] : 'details')]);
         $el.html(err_msg);
         showMessage(msg_id);
@@ -186,6 +186,9 @@ const DepositWithdraw = (() => {
                     break;
                 case 'ASK_AGE_VERIFICATION':
                     showError('age_error');
+                    break;
+                case 'ASK_SELF_EXCLUSION_MAX_TURNOVER_SET':
+                    showError('limits_error');
                     break;
                 default:
                     showError('custom_error', error.message);

@@ -1,4 +1,7 @@
 const commonTrading    = require('../common');
+const showHighchart    = require('../charts/chart_frame').showHighchart;
+const getActiveTab     = require('../get_active_tab').getActiveTab_Beta;
+const GetTicks         = require('../get_ticks');
 const AssetIndexUI     = require('../../resources/asset_index/asset_index.ui');
 const TradingTimesUI   = require('../../resources/trading_times/trading_times.ui');
 const PortfolioInit    = require('../../user/account/portfolio/portfolio.init');
@@ -29,7 +32,7 @@ const TradingAnalysis_Beta = (() => {
         if (form_name === 'matchdiff') {
             form_name = 'digits';
         }
-        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation_beta', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + form_name));
+        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation_beta', `underlying_symbol=${$('#underlying').val()}&form_name=${form_name}`));
         if (/(digits|overunder|evenodd)/.test(form_name)) {
             $('#tab_last_digit').removeClass('invisible');
         } else {
@@ -71,8 +74,8 @@ const TradingAnalysis_Beta = (() => {
      */
     const loadAnalysisTab = () => {
         const current_tab = getActiveTab();
-        const current_link = document.querySelector('#' + current_tab + ' a');
-        const content_id = document.getElementById(current_tab + '-content');
+        const current_link = document.querySelector(`#${current_tab} a`);
+        const content_id = document.getElementById(`${current_tab}-content`);
 
         const analysis_nav_element = document.querySelector('#trading_analysis_content #analysis_tabs');
         commonTrading.toggleActiveNavMenuElement_Beta(analysis_nav_element, current_link.parentElement);
@@ -80,15 +83,19 @@ const TradingAnalysis_Beta = (() => {
 
         switch (current_tab) {
             case 'tab_graph':
-                commonTrading.showHighchart();
+                showHighchart();
                 break;
             case 'tab_portfolio':
                 PortfolioInit.onLoad();
                 break;
             case 'tab_last_digit': {
-                const underlying = $('[name=underlying] option:selected').val() || $('#underlying').find('option:selected').val();
-                const tick = $('[name=tick_count]').val() || 100;
-                BinarySocket.send({ ticks_history: underlying, end: 'latest', count: tick + '', req_id: 1 });
+                const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
+                const tick = $('#tick_count').val() || 100;
+                GetTicks.request('', {
+                    ticks_history: underlying,
+                    end          : 'latest',
+                    count        : tick.toString(),
+                });
                 break;
             }
             case 'tab_asset_index':
@@ -124,7 +131,7 @@ const TradingAnalysis_Beta = (() => {
 
         if (analysis_container) {
             const child_elements = analysis_container.children;
-            const current_tab_element = document.getElementById(current_tab + '-content');
+            const current_tab_element = document.getElementById(`${current_tab}-content`);
             const classes = current_tab_element.classList;
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
@@ -135,21 +142,6 @@ const TradingAnalysis_Beta = (() => {
             classes.add('selectedTab');
             classes.remove('invisible');
         }
-    };
-
-    /*
-     * get the current active tab if its visible i.e allowed for current parameters
-     */
-    const getActiveTab = () => {
-        let selected_tab = sessionStorage.getItem('currentAnalysisTab_Beta') || (State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation');
-        const selected_element = document.getElementById(selected_tab);
-
-        if (selected_element && selected_element.classList.contains('invisible')) {
-            selected_tab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
-            sessionStorage.setItem('currentAnalysisTab_Beta', selected_tab);
-        }
-
-        return selected_tab;
     };
 
     /*
@@ -165,11 +157,11 @@ const TradingAnalysis_Beta = (() => {
         const $container   = $('#tab_explanation-content');
 
         if (show_winning) {
-            $container.find('#explanation_winning, #winning_' + form_name).removeClass(hidden_class);
+            $container.find(`#explanation_winning, #winning_${form_name}`).removeClass(hidden_class);
         }
 
         if (show_explain) {
-            $container.find('#explanation_explain, #explain_' + form_name).removeClass(hidden_class);
+            $container.find(`#explanation_explain, #explain_${form_name}`).removeClass(hidden_class);
         }
 
         const images = {
@@ -197,10 +189,6 @@ const TradingAnalysis_Beta = (() => {
                 image1: 'up-down-1.svg',
                 image2: 'up-down-2.svg',
             },
-            spreads: {
-                image1: 'spreads-1.svg',
-                image2: 'spreads-2.svg',
-            },
             evenodd: {
                 image1: 'evenodd-1.svg',
                 image2: 'evenodd-2.svg',
@@ -213,7 +201,7 @@ const TradingAnalysis_Beta = (() => {
 
         if (show_image && images.hasOwnProperty(form_name)) {
             const language = getLanguage().toLowerCase();
-            const image_path = Url.urlForStatic('images/pages/trade-explanation/' + (language === 'ja' ? `${language}/` : ''));
+            const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(language === 'ja' ? `${language}/` : '')}`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $container.find('#explanation_image').removeClass(hidden_class);

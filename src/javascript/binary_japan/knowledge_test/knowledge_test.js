@@ -34,7 +34,7 @@ const KnowledgeTest = (() => {
             const unanswered = random_picks.reduce((a, b) => a.concat(b))
                                         .find(q => answered_qid.indexOf(q.id) === -1).id;
 
-            $.scrollTo('a[name="' + unanswered + '"]', 500, { offset: -10 });
+            $.scrollTo(`a[name="${unanswered}"]`, 500, { offset: -10 });
             return;
         }
 
@@ -60,7 +60,7 @@ const KnowledgeTest = (() => {
     const showQuestionsTable = () => {
         for (let j = 0; j < random_picks.length; j++) {
             const table = KnowledgeTestUI.createQuestionTable(random_picks[j]);
-            $('#section' + (j + 1) + '-question').append(table);
+            $(`#section${(j + 1)}-question`).append(table);
         }
 
         const $questions = $('#knowledge-test-questions');
@@ -105,7 +105,7 @@ const KnowledgeTest = (() => {
 
     const onLoad = () => {
         // need to send get_settings because client status needs to be checked against latest available data
-        BinarySocket.send({ get_settings: 1 }, true).then((response) => {
+        BinarySocket.send({ get_settings: 1 }, { forced: true }).then((response) => {
             const jp_status = response.get_settings.jp_account_status;
 
             if (!jp_status) {
@@ -169,11 +169,11 @@ const KnowledgeTest = (() => {
         // retrieve questions text from html
         $('#data-questions').find('> div').each(function() { // sections
             const category = +$(this).attr('data-section-id');
-            questions['section' + category] = [];
+            questions[`section${category}`] = [];
 
             $(this).find('> div').each(function() { // questions
                 const question_id = +$(this).attr('data-question-id');
-                questions['section' + category].push({
+                questions[`section${category}`].push({
                     category          : category,
                     id                : question_id,
                     question          : $(this).attr('data-question-en'),
@@ -199,7 +199,7 @@ const KnowledgeTest = (() => {
             if (!response.error) {
                 showResult(result_score, response.jp_knowledge_test.test_taken_epoch * 1000);
                 $('html, body').animate({ scrollTop: 0 }, 'slow');
-                BinarySocket.send({ get_settings: 1 }, true).then(() => {
+                BinarySocket.send({ get_settings: 1 }, { forced: true }).then(() => {
                     Header.upgradeMessageVisibility();
                 });
             } else if (response.error.code === 'TestUnavailableNow') {

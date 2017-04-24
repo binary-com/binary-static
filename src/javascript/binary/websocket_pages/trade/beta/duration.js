@@ -1,16 +1,17 @@
-const moment             = require('moment');
-const Barriers_Beta      = require('./barriers');
-const Contract_Beta      = require('./contract');
-const Price_Beta         = require('./price');
-const commonTrading      = require('../common');
-const Defaults           = require('../defaults');
-const localize           = require('../../../base/localize').localize;
-const State              = require('../../../base/storage').State;
-const elementTextContent = require('../../../common_functions/common_functions').elementTextContent;
-const isVisible          = require('../../../common_functions/common_functions').isVisible;
-const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
-const toReadableFormat   = require('../../../common_functions/string_util').toReadableFormat;
-const DatePicker         = require('../../../components/date_picker');
+const moment                    = require('moment');
+const Barriers_Beta             = require('./barriers');
+const Contract_Beta             = require('./contract');
+const Price_Beta                = require('./price');
+const commonTrading             = require('../common');
+const processTradingTimesAnswer = require('../common_independent').processTradingTimesAnswer;
+const Defaults                  = require('../defaults');
+const localize                  = require('../../../base/localize').localize;
+const State                     = require('../../../base/storage').State;
+const elementTextContent        = require('../../../common_functions/common_functions').elementTextContent;
+const isVisible                 = require('../../../common_functions/common_functions').isVisible;
+const toISOFormat               = require('../../../common_functions/string_util').toISOFormat;
+const toReadableFormat          = require('../../../common_functions/string_util').toReadableFormat;
+const DatePicker                = require('../../../components/date_picker');
 
 /*
  * Handles duration processing display
@@ -165,7 +166,7 @@ const Durations_Beta = (() => {
             expiry_date_iso = toISOFormat(expiry_date);
 
 
-        if (moment(expiry_date_iso + ' ' + expiry_time).valueOf() < current_moment.valueOf()) {
+        if (moment(`${expiry_date_iso} ${expiry_time}`).valueOf() < current_moment.valueOf()) {
             expiry_date = current_moment;
             expiry_date_iso = toISOFormat(expiry_date);
             expiry_time = current_moment.format('HH:mm');
@@ -217,7 +218,7 @@ const Durations_Beta = (() => {
         const unit_max_value = unit.options[unit.selectedIndex].getAttribute('data-maximum');
         let unit_value = Defaults.get('duration_amount') || unit_min_value;
         unit.value = Defaults.get('duration_units') &&
-            document.querySelectorAll('select[id="duration_units"] [value="' + Defaults.get('duration_units') + '"]').length ?
+            document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
                 Defaults.get('duration_units') : unit.value;
         elementTextContent(document.getElementById('duration_minimum'), unit_min_value);
         elementTextContent(document.getElementById('duration_maximum'), unit_max_value);
@@ -277,19 +278,19 @@ const Durations_Beta = (() => {
         // in case of having endtime as expiry_type and change the form to contract types
         // which only have duration and do not support endtime, it should change the Default value
         // to get corrected based on contract situations
-        if ($('#expiry_type').find('option[value=' + Defaults.get('expiry_type') + ']').length === 0 && target.value) {
+        if ($('#expiry_type').find(`option[value=${Defaults.get('expiry_type')}]`).length === 0 && target.value) {
             Defaults.set('expiry_type', target.value);
         }
         const current_selected = Defaults.get('expiry_type') || target.value || 'duration';
         let hide_id = (current_selected === 'duration') ? 'endtime' : 'duration',
             id = current_selected;
 
-        id = document.getElementById('expiry_type_' + id);
+        id = document.getElementById(`expiry_type_${id}`);
         if (id) {
             id.style.display = 'flex';
         }
         // need to hide the non selected one
-        hide_id = document.getElementById('expiry_type_' + hide_id);
+        hide_id = document.getElementById(`expiry_type_${hide_id}`);
         if (hide_id) {
             hide_id.style.display = 'none';
         }
@@ -368,7 +369,7 @@ const Durations_Beta = (() => {
 
     const onStartDateChange = (value) => {
         const $date_start_select = $('#date_start');
-        if (!value || !$date_start_select.find('option[value=' + value + ']').length) {
+        if (!value || !$date_start_select.find(`option[value=${value}]`).length) {
             return 0;
         }
 
@@ -410,8 +411,9 @@ const Durations_Beta = (() => {
             Price_Beta.processPriceRequest_Beta();
         } else {
             commonTrading.showPriceOverlay();
-            BinarySocket.send({
-                trading_times: date,
+            BinarySocket.send({ trading_times: date }).then((response) => {
+                processTradingTimesAnswer(response);
+                Price_Beta.processPriceRequest_Beta();
             });
         }
     };

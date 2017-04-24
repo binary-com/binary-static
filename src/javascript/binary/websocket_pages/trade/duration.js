@@ -1,7 +1,7 @@
 const moment             = require('moment');
 const Barriers           = require('./barriers');
 const commonTrading      = require('./common');
-const getTradingTimes    = require('./common_independent').getTradingTimes;
+const commonIndependent  = require('./common_independent');
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
 const Price              = require('./price');
@@ -164,7 +164,7 @@ const Durations = (() => {
             expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm'),
             expiry_date_iso = toISOFormat(expiry_date);
 
-        if (moment(expiry_date_iso + ' ' + expiry_time).valueOf() < current_moment.valueOf()) {
+        if (moment(`${expiry_date_iso} ${expiry_time}`).valueOf() < current_moment.valueOf()) {
             expiry_date = current_moment;
             expiry_date_iso = toISOFormat(expiry_date);
             expiry_time = current_moment.format('HH:mm');
@@ -216,7 +216,7 @@ const Durations = (() => {
         const unit_max_value = unit.options[unit.selectedIndex].getAttribute('data-maximum');
         let unit_value = Defaults.get('duration_amount') || unit_min_value;
         unit.value = Defaults.get('duration_units') &&
-            document.querySelectorAll('select[id="duration_units"] [value="' + Defaults.get('duration_units') + '"]').length ?
+            document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
                 Defaults.get('duration_units') : unit.value;
         elementTextContent(document.getElementById('duration_minimum'), unit_min_value);
         elementTextContent(document.getElementById('duration_maximum'), unit_max_value);
@@ -278,19 +278,19 @@ const Durations = (() => {
         // in case of having endtime as expiry_type and change the form to contract types
         // which only have duration and do not support endtime, it should change the Default value
         // to get corrected based on contract situations
-        if ($('#expiry_type').find('option[value=' + Defaults.get('expiry_type') + ']').length === 0 && target.value) {
+        if ($('#expiry_type').find(`option[value=${Defaults.get('expiry_type')}]`).length === 0 && target.value) {
             Defaults.set('expiry_type', target.value);
         }
         const current_selected = Defaults.get('expiry_type') || target.value || 'duration';
         let id = current_selected,
             hide_id = (current_selected === 'duration') ? 'endtime' : 'duration';
 
-        id = document.getElementById('expiry_type_' + id);
+        id = document.getElementById(`expiry_type_${id}`);
         if (id) {
             id.style.display = 'flex';
         }
         // need to hide the non selected one
-        hide_id = document.getElementById('expiry_type_' + hide_id);
+        hide_id = document.getElementById(`expiry_type_${hide_id}`);
         if (hide_id) {
             hide_id.style.display = 'none';
         }
@@ -354,13 +354,14 @@ const Durations = (() => {
     };
 
     const processTradingTimesRequest = (date) => {
-        const trading_times = getTradingTimes();
+        const trading_times = commonIndependent.getTradingTimes();
         if (trading_times.hasOwnProperty(date)) {
             Price.processPriceRequest();
         } else {
             commonTrading.showPriceOverlay();
-            BinarySocket.send({
-                trading_times: date,
+            BinarySocket.send({ trading_times: date }).then((response) => {
+                commonIndependent.processTradingTimesAnswer(response);
+                Price.processPriceRequest();
             });
         }
     };
@@ -381,7 +382,7 @@ const Durations = (() => {
 
     const onStartDateChange = (value) => {
         const $date_start_select = $('#date_start');
-        if (!value || !$date_start_select.find('option[value=' + value + ']').length) {
+        if (!value || !$date_start_select.find(`option[value=${value}]`).length) {
             return 0;
         }
 

@@ -102,7 +102,6 @@ const Page = (() => {
 
     const onUnload = () => {
         Menu.onUnload();
-        Contents.onUnload();
     };
 
     const recordAffiliateExposure = () => {
@@ -133,7 +132,7 @@ const Page = (() => {
         Cookies.set('affiliate_tracking', cookie_hash, {
             expires: 365, // expires in 365 days
             path   : '/',
-            domain : '.' + location.hostname.split('.').slice(-2).join('.'),
+            domain : `.${location.hostname.split('.').slice(-2).join('.')}`,
         });
         return true;
     };
@@ -143,9 +142,9 @@ const Page = (() => {
     const endpointNotification = () => {
         const server = localStorage.getItem('config.server_url');
         if (server && server.length > 0) {
-            const message = (/www\.binary\.com/i.test(window.location.hostname) ? '' :
-                localize('This is a staging server - For testing purposes only') + ' - ') +
-                localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server]);
+            const message = `${(/www\.binary\.com/i.test(window.location.hostname) ? '' :
+                `${localize('This is a staging server - For testing purposes only')} - `)}
+                ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
             const $end_note = $('#end-note');
             $end_note.html(message).removeClass('invisible');
             $('#footer').css('padding-bottom', $end_note.height());

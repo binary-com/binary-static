@@ -1,10 +1,12 @@
-const moment           = require('moment');
-const Client           = require('../../../../base/client');
-const localize         = require('../../../../base/localize').localize;
-const dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
-const FormManager      = require('../../../../common_functions/form_manager');
-const DatePicker       = require('../../../../components/date_picker');
-const TimePicker       = require('../../../../components/time_picker');
+const moment              = require('moment');
+const Client              = require('../../../../base/client');
+const Header              = require('../../../../base/header');
+const localize            = require('../../../../base/localize').localize;
+const dateValueChanged    = require('../../../../common_functions/common_functions').dateValueChanged;
+const FormManager         = require('../../../../common_functions/form_manager');
+const scrollToHashSection = require('../../../../common_functions/scroll').scrollToHashSection;
+const DatePicker          = require('../../../../components/date_picker');
+const TimePicker          = require('../../../../components/time_picker');
 
 const SelfExclusion = (() => {
     'use strict';
@@ -29,10 +31,10 @@ const SelfExclusion = (() => {
         });
 
         initDatePicker();
-        getData();
+        getData(true);
     };
 
-    const getData = () => {
+    const getData = (scroll) => {
         BinarySocket.send({ get_self_exclusion: 1 }).then((response) => {
             if (response.error) {
                 if (response.error.code === 'ClientSelfExclusion') {
@@ -49,10 +51,11 @@ const SelfExclusion = (() => {
             $form.removeClass(hidden_class);
             self_exclusion_data = response.get_self_exclusion;
             $.each(self_exclusion_data, (key, value) => {
-                fields[key] = value + '';
+                fields[key] = value.toString();
                 $form.find(`#${key}`).val(value);
             });
             bindValidation();
+            if (scroll) scrollToHashSection();
         });
     };
 
@@ -135,7 +138,7 @@ const SelfExclusion = (() => {
 
     const toMoment   = value  => moment(new Date(value));
     const dateFormat = elm_id => ($(elm_id).val() ? toMoment($(elm_id).val()).format('YYYY-MM-DD') : '');
-    const getTimeout = () => ($(timeout_date_id).val() ? moment((dateFormat(timeout_date_id) + ' ' + $(timeout_time_id).val()).trim()).valueOf() / 1000 : '');
+    const getTimeout = () => ($(timeout_date_id).val() ? moment((`${dateFormat(timeout_date_id)} ${$(timeout_time_id).val()}`).trim()).valueOf() / 1000 : '');
 
     const initDatePicker = () => {
         // timeout_until
@@ -188,12 +191,15 @@ const SelfExclusion = (() => {
         showFormMessage('Your changes have been updated.', true);
         Client.set('session_start', moment().unix()); // used to handle session duration limit
         getData();
+        BinarySocket.send({ get_account_status: 1 }).then(() => {
+            Header.displayAccountStatus();
+        });
     };
 
     const showFormMessage = (msg, is_success) => {
         $('#msg_form')
             .attr('class', is_success ? 'success-msg' : error_class)
-            .html(is_success ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
+            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);

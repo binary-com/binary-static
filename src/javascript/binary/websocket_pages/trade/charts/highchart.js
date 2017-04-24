@@ -1,6 +1,7 @@
 const Highcharts  = require('highcharts/highstock');
 const HighchartUI = require('./highchart.ui');
 const MBContract  = require('../../mb_trade/mb_contract');
+const GetTicks    = require('../../trade/get_ticks');
 const ViewPopupUI = require('../../user/view_popup/view_popup.ui');
 const localize    = require('../../../base/localize').localize;
 const State       = require('../../../base/storage').State;
@@ -32,7 +33,7 @@ const Highchart = (() => {
     let is_initialized,
         is_chart_delayed,
         is_chart_subscribed,
-        is_chart_forget,
+        stop_streaming,
         is_contracts_for_send,
         is_history_send,
         is_entry_tick_barrier_selected;
@@ -40,7 +41,7 @@ const Highchart = (() => {
     const initOnce = () => {
         chart = options = response_id = contract = request = min_point = max_point = '';
 
-        is_initialized = is_chart_delayed = is_chart_subscribed = is_chart_forget =
+        is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming =
         is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
     };
 
@@ -136,32 +137,19 @@ const Highchart = (() => {
     // type 'x' is used to draw lines such as start and end times
     // type 'y' is used to draw lines such as barrier
     const addPlotLine = (params, type) => {
-        chart[(type + 'Axis')][0].addPlotLine(HighchartUI.getPlotlineOptions(params, type));
+        chart[(`${type}Axis`)][0].addPlotLine(HighchartUI.getPlotlineOptions(params, type));
         if (userSold()) {
             HighchartUI.replaceExitLabelWithSell(chart.subtitle.element);
         }
     };
 
-    // use this instead of BinarySocket.send to avoid overriding the onmessage of trading page
-    const socketSend = (req) => {
-        if (!req) return;
-        if (!req.hasOwnProperty('passthrough')) {
-            req.passthrough = {};
-        }
-        // send dispatch_to to help socket.js forward the correct response back to here
-        req.passthrough.dispatch_to = 'ViewChart';
-        BinarySocket.send(req);
-    };
-
-    const dispatch = (response) => {
+    const handleResponse = (response) => {
         const type  = response.msg_type;
         const error = response.error;
-        if (type === 'contracts_for' && (!error || (error.code && error.code === 'InvalidSymbol'))) {
-            delayedChart(response);
-        } else if (/(history|candles|tick|ohlc)/.test(type) && !error) {
+        if (/(history|candles|tick|ohlc)/.test(type) && !error) {
             response_id = response[type].id;
             // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
-            if (response_id) ViewPopupUI.storeSubscriptionID(response_id, 'chart');
+            if (response_id) ViewPopupUI.storeSubscriptionID(response_id, underlying);
             options = { title: contract.display_name };
             options[type] = response[type];
             const history = response.history;
@@ -195,7 +183,7 @@ const Highchart = (() => {
                         drawLineX(start_time);
                     }
                 }
-            } else if ((tick || ohlc) && !is_chart_forget) {
+            } else if ((tick || ohlc) && !stop_streaming) {
                 if (chart && chart.series) {
                     updateChart(options);
                 }
@@ -262,15 +250,20 @@ const Highchart = (() => {
         }
 
         const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : window.contracts_for;
-        const stored_delay = sessionStorage.getItem('license.' + underlying);
+        const stored_delay = sessionStorage.getItem(`license.${underlying}`);
 
         if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
             delayedChart(contracts_response);
         } else if (stored_delay) {
             handleDelay(stored_delay);
-            showEntryError();
+            sendTickRequest();
         } else if (!is_contracts_for_send && update === '') {
-            socketSend({ contracts_for: underlying });
+            BinarySocket.send({ contracts_for: underlying }).then((response) => {
+                const error = response.error;
+                if ((!error || (error.code && error.code === 'InvalidSymbol'))) {
+                    delayedChart(response);
+                }
+            });
             is_contracts_for_send = true;
         }
     };
@@ -281,16 +274,17 @@ const Highchart = (() => {
             handleDelay(license);
             saveFeedLicense(contracts_response.echo_req.contracts_for, license);
         }
-        showEntryError();
+        sendTickRequest();
     };
 
-    const showEntryError = () => {
+    const sendTickRequest = () => {
         if (!entry_tick_time && !is_chart_delayed && start_time && window.time.unix() >= parseInt(start_time)) {
             HighchartUI.showError('', localize('Waiting for entry tick.'));
         } else if (!is_history_send) {
             is_history_send = true;
             if (request.subscribe) is_chart_subscribed = true;
-            socketSend(request);
+            // BinarySocket.send(request, { callback: handleResponse });
+            GetTicks.request('', request, handleResponse);
         }
     };
 
@@ -477,31 +471,25 @@ const Highchart = (() => {
             }
             if (!contract.sell_spot && !contract.exit_tick) {
                 if ($('#waiting_exit_tick').length === 0) {
-                    $('#trade_details_message').append('<div id="waiting_exit_tick">' + localize('Waiting for exit tick.') + '</div>');
+                    $('#trade_details_message').append($('<div/>', { id: 'waiting_exit_tick', text: localize('Waiting for exit tick.') }));
                 }
             } else {
                 $('#waiting_exit_tick').remove();
             }
         }
-        if (!is_chart_forget) {
-            forgetStreams();
+        if (!stop_streaming) {
+            setStopStreaming();
         }
     };
 
-    const forgetStreams = () => {
-        if (
-            chart &&
-            (is_sold || is_settleable) &&
-            response_id &&
-            chart.series &&
-            chart.series[0].options.data.length > 0
-        ) {
+    const setStopStreaming = () => {
+        if (chart && (is_sold || is_settleable) && response_id &&
+            chart.series && chart.series[0].options.data.length > 0) {
             const data = chart.series[0].options.data;
             const last_data = data[data.length - 1];
             const last = parseInt(last_data.x || last_data[0]);
             if (last > (end_time * 1000) || last > (sell_time * 1000)) {
-                socketSend({ forget: response_id });
-                is_chart_forget = true;
+                stop_streaming = true;
             }
         }
     };
@@ -543,7 +531,7 @@ const Highchart = (() => {
     };
 
     const saveFeedLicense = (save_contract, license) => {
-        const regex = new RegExp('license.' + contract);
+        const regex = new RegExp(`license.${contract}`);
         let match_found = false;
 
         for (let i = 0; i < sessionStorage.length; i++) {
@@ -554,7 +542,7 @@ const Highchart = (() => {
         }
 
         if (!match_found) {
-            sessionStorage.setItem('license.' + save_contract, license);
+            sessionStorage.setItem(`license.${save_contract}`, license);
         }
     };
 
@@ -562,7 +550,6 @@ const Highchart = (() => {
 
     return {
         showChart: showChart,
-        dispatch : dispatch,
     };
 })();
 

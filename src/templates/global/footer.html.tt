@@ -28,7 +28,7 @@
                                     <a href="[% request.url_for('careers') %]">[% l('Careers') %]</a>
                                 </li>
                                 <li class="ja-hide">
-                                    <a href="http://binarycom.statuspage.io" target="_blank">[% l('Network Status') %]</a>
+                                    <a href="https://binarycom.statuspage.io" target="_blank">[% l('Network Status') %]</a>
                                 </li>
                                 <li class="ja-hide id-hide">
                                     <a href="[% request.url_for('/legal/us_patents') %]" class="us_patent_link">[% l('Patents') %]</a>
@@ -63,7 +63,7 @@
                                     <a href="http://www.gamcare.org.uk/" target="_blank">[% l('GamCare') %]</a>
                                 </li>
                                 <li class="ja-hide academy">
-                                    <a href="http://academy.binary.com" target="_blank">[% l('Academy') %]</a>
+                                    <a href="https://academy.binary.com" target="_blank">[% l('Academy') %]</a>
                                 </li>
                                 <li class='ja-hide id-hide'>
                                     <a href="https://academy.binary.com/en/events/" target="_blank">[% l('Webinars') %]</a>
@@ -132,6 +132,9 @@
                                    <a target="_blank" href="https://shop.binary.com">[% l("Binary Shop") %]</a>
                                </li>
                                <li>
+                                   <a href="[% request.url_for('/charity') %]">[% l("Charitable Activities") %]</a>
+                               </li>
+                               <li>
                                    <a href="[% request.url_for('/partners') %]">[% l("All Partnership Options") %]</a>
                                </li>
                            </ul>
@@ -153,12 +156,12 @@
         <div class="container">
             <div class="gr-row">
                 <div id="regulatory-text" class="gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color">
-                    [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
+                    [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
                 </div>
                 <div class="ja-hide gr-3 gr-12-m gr-5-p center-text" id="social-networks">
                     <div class="gr-row ja-hide id-hide">
                         <div class="gr-5">
-                            <a href="http://www.gov.im/gambling/" target="_blank">
+                            <a href="https://www.gov.im/gambling/" target="_blank">
                                 <img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
                             </a>
                         </div>
