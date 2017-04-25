@@ -29,7 +29,7 @@ const limitLanguage = (lang) => {
     }
 };
 
-const jpClient = () => (typeof window === 'undefined' ? false : (Language.get() === 'JA' || jpResidence()));
+const jpClient = () => (Language.get() === 'JA' || jpResidence());
 
 const jpResidence = () => Cookies.get('residence') === 'jp';
 
