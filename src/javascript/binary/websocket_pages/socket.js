@@ -270,10 +270,10 @@ const BinarySocketClass = () => {
 
                 const error_code = getPropertyValue(response, ['error', 'code']);
                 if (type === 'website_status') {
-                    const is_available_now = /^up$/i.test(response.site_status);
+                    const is_available_now = /^up$/i.test(response.website_status.site_status);
                     if (!is_available && is_available_now) window.location.reload();
                     is_available = is_available_now;
-                    $('#site-status-message').css('display', is_available ? 'none' : 'block').find('.message').html(response.message);
+                    $('#site-status-message').css('display', is_available ? 'none' : 'block').find('.message').html(response.website_status.message);
                 } else if (type === 'authorize') {
                     if (response.error) {
                         const is_active_tab = sessionStorage.getItem('active_tab') === '1';
