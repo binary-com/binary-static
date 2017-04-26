@@ -1,6 +1,7 @@
 const Url           = require('../../base/url');
 const isEmptyObject = require('../../base/utility').isEmptyObject;
 const isVisible     = require('../../common_functions/common_functions').isVisible;
+const State         = require('../../base/storage').State;
 
 /*
  * Handles trading page default values
@@ -65,6 +66,7 @@ const Defaults = (() => {
     };
 
     const updateURL = () => {
+        if (!State.get('is_trading') && !State.get('is_beta_trading')) return;
         const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params)}`;
         window.history.replaceState({ url: updated_url }, null, updated_url);
     };
