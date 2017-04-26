@@ -18,8 +18,6 @@ const ViewPopup = (() => {
         is_sell_clicked,
         chart_started,
         chart_init,
-        corporate_action_event,
-        corporate_action_sent,
         chart_updated;
     let $container,
         $loading,
@@ -38,8 +36,6 @@ const ViewPopup = (() => {
         chart_started          = false;
         chart_init             = false;
         chart_updated          = false;
-        corporate_action_event = false;
-        corporate_action_sent  = false;
         $container             = '';
 
         if (btn_view) {
@@ -69,12 +65,6 @@ const ViewPopup = (() => {
         if (contract && document.getElementById(wrapper_id)) {
             update();
             return;
-        }
-
-        // ----- Corporate Action -----
-        if (contract.has_corporate_actions && !corporate_action_sent) {
-            corporate_action_sent = true;
-            getCorporateActions();
         }
 
         showContract();
@@ -160,7 +150,7 @@ const ViewPopup = (() => {
             if (contract.entry_spot > 0) {
                 containerSetText('trade_details_entry_spot', contract.entry_spot);
             }
-            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporate_action_event ? `* ${localize('This contract was affected by a Corporate Action event.')}` : '&nbsp;');
+            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
 
         if (!chart_started && !contract.tick_count) {
@@ -246,67 +236,6 @@ const ViewPopup = (() => {
         // showWinLossStatus(is_win);
     };
 
-    const addColorAndClass = ($tab_to_show, $tab_to_hide, $content_to_show, $content_to_hide) => {
-        $tab_to_show.attr('style', 'background: #f2f2f2;');
-        $tab_to_hide.attr('style', 'background: #c2c2c2;');
-        $content_to_hide.addClass('invisible');
-        $content_to_show.removeClass('invisible');
-    };
-
-    const showCorporateAction = () => {
-        const $contract_information_tab = $('#contract_information_tab');
-        const $contract_information_content = $('#contract_information_content');
-
-        $contract_information_tab.removeAttr('colspan');
-        $('#contract_tabs').append(`<th id="corporate_action_tab">${localize('Corporate Action')}</th>`);
-
-        const $corporate_action_tab     = $('#corporate_action_tab');
-        const $corporate_action_content = $('#corporate_action_content');
-        const $barrier_change         = $('#barrier_change');
-        const $barrier_change_content = $('#barrier_change_content');
-
-        $corporate_action_tab.attr('style', 'background: #c2c2c2;');
-        $('#sell_details_table').draggable({ disabled: true });
-
-        $corporate_action_tab.on('click', () => {
-            addColorAndClass($corporate_action_tab, $contract_information_tab,
-                             $corporate_action_content, $contract_information_content);
-            $barrier_change.removeClass('invisible');
-            $barrier_change_content.removeClass('invisible');
-        });
-        $contract_information_tab.on('click', () => {
-            $barrier_change.addClass('invisible');
-            $barrier_change_content.addClass('invisible');
-            addColorAndClass($contract_information_tab, $corporate_action_tab,
-                             $contract_information_content, $corporate_action_content);
-        });
-    };
-
-    const populateCorporateAction = (corporate_action) => {
-        for (let i = 0; i < corporate_action.get_corporate_actions.actions.length; i++) {
-            $('#corporate_action_content').append(
-                createRow(corporate_action.get_corporate_actions.actions[i].display_date, '', '', '', `${corporate_action.get_corporate_actions.actions[i].type} (${corporate_action.get_corporate_actions.actions[i].value}-${localize('for')}-1)`));
-        }
-        let original_barriers,
-            adjusted_barriers;
-
-        if (contract.original_barrier) {
-            original_barriers = createRow(localize('Original Barrier'), '', '', '', contract.original_barrier);
-        } else if (contract.original_high_barrier) {
-            original_barriers = createRow(localize('Original High Barrier'), '', '', '', contract.original_high_barrier) +
-                createRow(localize('Original Low Barrier'), '', '', '', contract.original_low_barrier);
-        }
-        if (contract.barrier) {
-            adjusted_barriers = createRow(localize('Adjusted Barrier'), '', '', '', contract.barrier);
-        } else if (contract.high_barrier) {
-            adjusted_barriers = createRow(localize('Adjusted High Barrier'), '', '', '', contract.high_barrier) +
-                createRow(localize('Adjusted Low Barrier'), '', '', '', contract.low_barrier);
-        }
-        $('#barrier_change_content').append(
-            original_barriers +
-            adjusted_barriers);
-    };
-
     const makeTemplate = () => {
         $container = $('<div/>').append($('<div/>', { id: wrapper_id }));
 
@@ -329,7 +258,7 @@ const ViewPopup = (() => {
             ${(contract.barrier_count > 1 ? createRow('Low Barrier', '', 'trade_details_barrier_low', true) : '')}
             ${createRow('Potential Payout', '', 'trade_details_payout')}
             ${createRow('Purchase Price', '', 'trade_details_purchase_price')}
-            </tbody><tbody id="corporate_action_content" class="invisible"></tbody>
+            </tbody>
             <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>
             <tbody id="barrier_change_content" class="invisible"></tbody>
             <tr><th colspan="2" id="trade_details_current_title">${localize('Current')}</th></tr>
@@ -447,29 +376,6 @@ const ViewPopup = (() => {
             };
             if (option === 'no-subscribe') delete req.subscribe;
             BinarySocket.send(req, { callback: responseProposal });
-        }
-    };
-
-    // ----- Corporate Action -----
-    const getCorporateActions = () => {
-        const epoch = window.time.unix();
-        const end_time = epoch < contract.date_expiry ? epoch.toFixed(0) : contract.date_expiry;
-        BinarySocket.send({
-            get_corporate_actions: '1',
-            symbol               : contract.underlying,
-            start                : contract.date_start,
-            end                  : end_time,
-        }).then((response) => {
-            responseCorporateActions(response);
-        });
-    };
-
-    const responseCorporateActions = (response) => {
-        if (!isEmptyObject(response.get_corporate_actions)) {
-            corporate_action_event = true;
-            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporate_action_event ? `* ${localize('This contract was affected by a Corporate Action event.')}` : '&nbsp;');
-            populateCorporateAction(response);
-            showCorporateAction();
         }
     };
 
