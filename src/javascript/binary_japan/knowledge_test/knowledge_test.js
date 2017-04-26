@@ -130,7 +130,7 @@ const KnowledgeTest = (() => {
                     break;
                 }
                 default: {
-                    window.location.href = Url.urlFor('/'); // needs to be loaded without pjax
+                    window.location.href = Url.defaultRedirectUrl(); // needs to be loaded without pjax
                 }
             }
         });
