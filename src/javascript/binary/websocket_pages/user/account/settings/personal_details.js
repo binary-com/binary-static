@@ -98,9 +98,9 @@ const PersonalDetails = (() => {
                 if (populate) {
                     if ($key.is(':checkbox')) {
                         $key.prop('checked', !!data_key);
-                    } else if (/(SELECT|INPUT)/.test($key.prop('nodeName')) && !$key.val()) {
+                    } else if (/(SELECT|INPUT)/.test($key.prop('nodeName'))) {
                         $key.val(data_key.split(',')).trigger('change');
-                    } else if (key !== 'country' && !$key.text()) {
+                    } else if (key !== 'country') {
                         $key.text(data_key ? localize(data_key) : '-');
                     }
                 }
