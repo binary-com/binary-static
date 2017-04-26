@@ -28,7 +28,8 @@ const Highchart = (() => {
         is_settleable,
         exit_tick_time,
         exit_time,
-        underlying;
+        underlying,
+        margin;
 
     let is_initialized,
         is_chart_delayed,
@@ -221,7 +222,7 @@ const Highchart = (() => {
         const calculate_granularity = calculateGranularity();
         const granularity = calculate_granularity[0];
         const duration    = calculate_granularity[1];
-        const margin      = granularity === 0 ? Math.max(300, (30 * duration) / (60 * 60) || 0) : 3 * granularity;
+        margin = granularity === 0 ? Math.max(300, (30 * duration) / (60 * 60) || 0) : 3 * granularity;
 
         request = {
             ticks_history    : underlying,
@@ -483,13 +484,17 @@ const Highchart = (() => {
     };
 
     const setStopStreaming = () => {
-        if (chart && (is_sold || is_settleable) && response_id &&
+        if (chart && (is_sold || is_settleable) &&
             chart.series && chart.series[0].options.data.length > 0) {
             const data = chart.series[0].options.data;
             const last_data = data[data.length - 1];
             const last = parseInt(last_data.x || last_data[0]);
             if (last > (end_time * 1000) || last > (sell_time * 1000)) {
                 stop_streaming = true;
+            } else {
+                // add a null point if the last tick is before end time to bring end time line into view
+                const time = userSold() ? sell_time : end_time;
+                chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
             }
         }
     };
