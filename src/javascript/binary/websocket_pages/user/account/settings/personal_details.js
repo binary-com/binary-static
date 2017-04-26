@@ -51,6 +51,16 @@ const PersonalDetails = (() => {
             $(real_acc_elements).remove();
         } else if (is_jp) {
             const jp_settings = get_settings.jp_settings;
+            switch (jp_settings.gender) {
+                case 'f':
+                    jp_settings.gender = localize('Female');
+                    break;
+                case 'm':
+                    jp_settings.gender = localize('Male');
+                    break;
+                default:
+                    break;
+            }
             displayGetSettingsData(jp_settings);
             if (jp_settings.hedge_asset !== null && jp_settings.hedge_asset_amount !== null) {
                 $('.hedge').removeClass(hidden_class);
@@ -88,9 +98,9 @@ const PersonalDetails = (() => {
                 if (populate) {
                     if ($key.is(':checkbox')) {
                         $key.prop('checked', !!data_key);
-                    } else if (/(SELECT|INPUT)/.test($key.prop('nodeName'))) {
+                    } else if (/(SELECT|INPUT)/.test($key.prop('nodeName')) && !$key.val()) {
                         $key.val(data_key.split(',')).trigger('change');
-                    } else if (key !== 'country') {
+                    } else if (key !== 'country' && !$key.text()) {
                         $key.text(data_key ? localize(data_key) : '-');
                     }
                 }
@@ -223,22 +233,29 @@ const PersonalDetails = (() => {
     };
 
     const populateStates = (response) => {
-        const address_state = '#address_state';
-        let $field = $(address_state);
         const states = response.states_list;
 
-        $field.empty();
-
-        if (states && states.length > 0) {
-            $field.append($('<option/>', { value: '', text: localize('Please select') }));
-            states.forEach((state) => {
-                $field.append($('<option/>', { value: state.value, text: state.text }));
-            });
+        if (is_jp) {
+            const state_text = (states.filter(state => state.value === get_settings_data.address_state)[0] || {}).text;
+            $('#lbl_address_state').text(state_text || get_settings_data.address_state);
         } else {
-            $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
-            $field = $(address_state);
+            const address_state = '#address_state';
+            let $field = $(address_state);
+
+            $field.empty();
+
+            if (states && states.length > 0) {
+                $field.append($('<option/>', { value: '', text: localize('Please select') }));
+                states.forEach((state) => {
+                    $field.append($('<option/>', { value: state.value, text: state.text }));
+                });
+            } else {
+                $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+                $field = $(address_state);
+            }
+            $field.val(get_settings_data.address_state);
         }
-        $field.val(get_settings_data.address_state);
+
         initFormManager();
         if (is_jp && !is_virtual) {
             // detect hedging needs to be called after FormManager.init
