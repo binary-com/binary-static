@@ -1,5 +1,5 @@
 [% PROCESS components/forms.html.tt %]
-[% PROCESS global/fields_new_account.html.tt %]
+[% PROCESS components/forms_common_rows.html.tt %]
 
 <div class='gr-12 static_full'>
     <h1>[% l('Financial Account Opening') %]</h1>
@@ -24,14 +24,14 @@
             [% INCLUDE address_line_1 %]
             [% INCLUDE address_line_2 %]
             [% INCLUDE address_city %]
-            [% INCLUDE address_state %]
+            [% PROCESS address_state %]
             [% INCLUDE address_postcode %]
             [% INCLUDE phone %]
         [% END %]
 
         [% WRAPPER fieldset legend=l('Security') %]
-            [% INCLUDE secret_question %]
-            [% INCLUDE secret_answer %]
+            [% PROCESS secret_question %]
+            [% PROCESS secret_answer %]
         [% END %]
 
         [% PROCESS global/financial_form.html.tt %]
@@ -44,7 +44,7 @@
             </div>
         </fieldset>
 
-        [% INCLUDE tnc %]
+        [% PROCESS tnc %]
     </form>
 
     <form id="financial-risk" class="hidden">
@@ -61,5 +61,5 @@
         </fieldset>
     </form>
 
-    [% INCLUDE client_message %]
+    [% PROCESS client_message %]
 </div>

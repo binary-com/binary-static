@@ -1,104 +1,40 @@
+[% BLOCK column %]
+<div class="gr-3 gr-6-m gr-parent [% class %]"[% IF id %] id="[% id %]"[% END %]>
+    <div class="gr-8 gr-padding-10">
+        <a href="[% request.url_for('user/security/' _ url) %]">
+            <img class="responsive" src="[% request.url_for('images/pages/settings/' _ image _ '.svg') %]">
+        </a>
+    </div>
+    <div class="gr-12">
+        <h4><a href="[% request.url_for('/user/settings/' _ url) %]">[% header %]</a></h4>
+        <p>[% text %]</p>
+    </div>
+</div>
+[% END %]
+
 <div class="invisible" id="settings_container">
     <h1>[% l('Security') %]</h1>
 
     <div class="gr-row">
-        <div class="gr-3 gr-6-m gr-parent invisible" id="change_password">
-            <div class="gr-8 gr-padding-10">
-                <a href="[% request.url_for('/user/security/change_passwordws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/account_password.svg') %]">
-                </a>
-            </div>
-            <div class="gr-12">
-                <h4>
-                    <a href="[% request.url_for('/user/security/change_passwordws') %]">[% l('Account Password') %]</a>
-                </h4>
-                <p>[% l('Change your main login password.') %]</p>
-            </div>
-        </div>
+        [% INCLUDE column class='invisible' id='change_password' url='change_passwordws' image='account_password'
+            header=l('Account Password') text=l('Change your main login password.') %]
 
-        <div class="gr-3 gr-6-m gr-parent real invisible">
-            <div class="gr-8 gr-padding-10">
-                <a href="[% request.url_for('/user/security/cashier_passwordws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/cashier_password.svg') %]">
-                </a>
-            </div>
-            <div class="gr-12">
-                <h4>
-                    <a href="[% request.url_for('/user/security/cashier_passwordws') %]">[% l('Cashier Password') %]</a>
-                </h4>
-                <p>[% l('Change the password used for deposits and withdrawals.') %]</p>
-            </div>
-        </div>
+        [% INCLUDE column class='real invisible' url='cashier_passwordws' image='cashier_password'
+            header=l('Cashier Password') text=l('Change the password used for deposits and withdrawals.') %]
 
-        <div class="gr-3 gr-6-m gr-parent real invisible">
-            <div class="gr-8 gr-padding-10">
-                <a href="[% request.url_for('/user/security/self_exclusionws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/self-exclusion.svg') %]">
-                </a>
-            </div>
-            <div class="gr-12">
-                <h4>
-                    <a href="[% request.url_for('/user/security/self_exclusionws') %]">[% l('Self Exclusion') %]</a>
-                </h4>
-                <p>[% l('Facility that allows you to set limits on your account.') %]</p>
-            </div>
-        </div>
+        [% INCLUDE column class='real invisible' url='self_exclusionws' image='self-exclusion'
+            header=l('Self Exclusion') text=l('Facility that allows you to set limits on your account.') %]
 
-        <div class="gr-3 gr-6-m gr-parent real invisible">
-            <div class="gr-8 gr-padding-10">
-                <a href="[% request.url_for('/user/security/limitsws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/limits.svg') %]">
-                </a>
-            </div>
-            <div class="gr-12">
-                <h4>
-                    <a href="[% request.url_for('/user/security/limitsws') %]">[% l('Limits') %]</a>
-                </h4>
-                <p>[% l('View your trading and withdrawal limits.') %]</p>
-            </div>
-        </div>
+        [% INCLUDE column class='real invisible' url='limitsws' image='limits'
+            header=l('Limits') text=l('View your trading and withdrawal limits.') %]
 
-        <div class="gr-3 gr-6-m gr-parent ja-hide">
-            <div class="gr-8 gr-padding-10">
-                <a href="[% request.url_for('/user/security/iphistoryws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/iphistory.svg') %]">
-                </a>
-            </div>
-            <div class="gr-12">
-                <h4>
-                    <a href="[% request.url_for('/user/security/iphistoryws') %]">[% l('Login History') %]</a>
-                </h4>
-                <p>[% l('View your login history.') %]</p>
-            </div>
-        </div>
+        [% INCLUDE column class='ja-hide' url='iphistoryws' image='iphistory'
+            header=l('Login History') text=l('View your login history.') %]
 
-        <div class="gr-3 gr-6-m gr-parent ja-hide">
-            <div class="gr-8 gr-padding-10">
-                <a href="[% request.url_for('/user/security/api_tokenws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/api-token.svg') %]">
-                </a>
-            </div>
-            <div class="gr-12">
-                <h4>
-                    <a href="[% request.url_for('/user/security/api_tokenws') %]">[% l('API Token') %]</a>
-                </h4>
-                <p>[% l('API token for third party applications.') %]</p>
-            </div>
-        </div>
+        [% INCLUDE column class='ja-hide' url='api_tokenws' image='api-token'
+            header=l('API Token') text=l('API token for third party applications.') %]
 
-        <div class="gr-3 gr-6-m gr-parent ja-hide">
-            <div class="gr-8 gr-padding-10">
-                <a href="[% request.url_for('/user/security/authorised_appsws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/applications.svg') %]">
-                </a>
-            </div>
-            <div class="gr-12">
-                <h4>
-                    <a href="[% request.url_for('/user/security/authorised_appsws') %]">[% l('Authorised Applications') %]</a>
-                </h4>
-                <p>[% l('Manage your authorised applications.') %]</p>
-            </div>
-        </div>
+        [% INCLUDE column class='ja-hide' url='authorised_appsws' image='applications'
+            header=l('Authorised Applications') text=l('Manage your authorised applications.') %]
     </div>
-
 </div>

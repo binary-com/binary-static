@@ -1,5 +1,5 @@
 [% PROCESS components/forms.html.tt %]
-[% PROCESS global/fields_new_account.html.tt %]
+[% PROCESS components/forms_common_rows.html.tt %]
 
 [% BLOCK money %]
     <option value="">[% l('Please select') %]</option>
@@ -61,7 +61,7 @@
 
         [% WRAPPER fieldset legend=l('Address') %]
             [% INCLUDE address_postcode hint=l('E.g. 123-4567') %]
-            [% INCLUDE address_state %]
+            [% PROCESS address_state %]
             [% INCLUDE address_city hint=l('E.g. Shibuya-ku') %]
             [% INCLUDE address_line_1 hint=l('E.g. Hiroo') %]
             [% INCLUDE address_line_2 hint=l('E.g. Building name, apartment number etc (Optional)') %]
@@ -69,8 +69,8 @@
         [% END %]
 
         [% WRAPPER fieldset legend=l('Security') %]
-            [% INCLUDE secret_question %]
-            [% INCLUDE secret_answer %]
+            [% PROCESS secret_question %]
+            [% PROCESS secret_answer %]
         [% END %]
 
         [% WRAPPER fieldset legend=l('Status') %]
@@ -191,5 +191,5 @@
         </div>
     </form>
 
-    [% INCLUDE client_message %]
+    [% PROCESS client_message %]
 </div>

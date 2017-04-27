@@ -128,7 +128,7 @@
             <div id="msg_authenticate">
                 <div class="align-start">
                     <p>[% l('To withdraw from MT5 Financial Account please Authenticate your [_1] account.', website_name) %]</p>
-                    [% PROCESS user/common/authenticate_message.html.tt %]
+                    [% PROCESS global/authenticate_message.html.tt %]
                 </div>
             </div>
         </div>

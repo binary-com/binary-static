@@ -6,12 +6,12 @@
     <p class='notice-message'>[% l('Thank you for signing up! Please check your email to retrieve the verification token.') %]</p>
     <form id="virtual-form" class="gr-padding-10">
         [% WRAPPER fieldset legend=l('Details') %]
-            [% INCLUDE verification_code %]
+            [% PROCESS verification_code %]
             [% INCLUDE form_row type='password' id='client_password' label=l('Choose a password')
-                hint=l('Minimum of six lower and uppercase letters with numbers') %]
+                hint=l("Minimum of six lower and uppercase letters with numbers") %]
             [% INCLUDE form_row type='password' id='repeat_password' label=l('Re-enter password') %]
             [% INCLUDE form_row type='select' id='residence' class='invisible' label=l('Country of residence') %]
-            [% INCLUDE form_row type='checkbox' id='email_consent' row_class='invisible' row_id='email_consent_label'
+            [% INCLUDE form_row type='checkbox' id='email_consent' row_class='invisible' label_row_id='email_consent_label'
                 label=l('Receive news and special offers') %]
         [% END %]
 

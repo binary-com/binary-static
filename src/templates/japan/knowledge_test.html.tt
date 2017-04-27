@@ -1,5 +1,5 @@
 [% BLOCK sections %]
-    [% items = [
+    [% items=[
         { number='1', header=l('{JAPAN ONLY}Section 1: Structure')},
         { number='2', header=l('{JAPAN ONLY}Section 2: Method') },
         { number='3', header=l('{JAPAN ONLY}Section 3: Outline') },

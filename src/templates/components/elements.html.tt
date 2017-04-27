@@ -64,14 +64,18 @@
 [% END %]
 
 [% BLOCK tbody %]
-    <tbody>
+    <tbody[% IF tbody_id %] id="[% tbody_id %]"[% END %]>
         [% FOREACH tr IN trs %]
             <tr>
                 [% FOREACH td IN tr %]
                     [% IF td.header %]
-                    <th[% IF td.balloon %] data-balloon="[% td.balloon %]"[% END %]>[% td.header %]</th>
+                    <th[% IF td.balloon %] data-balloon="[% td.balloon %]"[% END %][% IF td.class %] class="[% td.class %]"[% END %]>
+                        [% td.header %]
+                    </th>
                     [% ELSE %]
-                    <td>[% td.text %]</td>
+                    <td[% IF td.class %] class="[% td.class %]"[% END %][% IF td.id %] id="[% td.id %]"[% END %]>
+                        [% td.text %]
+                    </td>
                     [% END %]
                 [% END %]
             </tr>
@@ -81,19 +85,32 @@
 
 [% BLOCK table %]
     [% IF scroll %]<div class="table-container">[% END %]
-    <table>
+    <table[% IF id %] id="[% id %]"[% END %]>
         [% IF data.thead %]
         <thead>
             [% FOREACH row IN data.thead %]
                 <tr>
                     [% FOREACH th IN row %]
-                        <th>[% th.text %]</th>
+                        <th[% IF th.class %] class="[% th.class %]"[% END %]>[% th.text %]</th>
                     [% END %]
                 </tr>
             [% END %]
         </thead>
         [% END %]
-        [% INCLUDE tbody trs=data.tbody %]
+        [% INCLUDE tbody trs=data.tbody tbody_id %]
+        [% IF data.tfoot %]
+            <tfoot>
+                [% FOREACH row IN data.tfoot %]
+                <tr>
+                    [% FOREACH th IN row %]
+                        <th[% IF th.class %] class="[% th.class %]"[% END %][% IF th.id %] id="[% th.id %]"[% END %] [% th.attributes %]>
+                            [% th.text %]
+                        </th>
+                    [% END %]
+                </tr>
+                [% END %]
+            </tfoot>
+        [% END %]
     </table>
     [% IF scroll %]</div>[% END %]
 [% END %]

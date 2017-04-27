@@ -14,9 +14,11 @@
         </div>
     </div>
     [% ELSE -%]
-    <div class="gr-row form-row center-text-m [% row_class %]">
-        <div class="gr-4 gr-12-m"[% IF row_id %] id="[% row_id %]"[% END %]>
-            <label[% IF type!='label' %] for="[% id %]"[% END %]>[% label %]</label>
+    <div class="gr-row form-row center-text-m [% row_class %]"[% IF row_id %] id="[% row_id %]"[% END %]>
+        <div class="gr-4 gr-12-m"[% IF label_row_id %] id="[% label_row_id %]"[% END %]>
+            <label[% IF type!='label' %] for="[% id %]"[% END %]>
+                [% IF required %]<em class="required_asterisk">**</em>[% END %][% label %]
+            </label>
         </div>
         <div class="gr-8 gr-12-m">
             [% SWITCH type -%]
@@ -45,7 +47,7 @@
 
 [% BLOCK submit_button %]
     [% UNLESS no_wrapper %]
-    <div class="[% is_centered ? 'center-text' : 'gr-row' %]">
+    <div class="[% is_centered ? 'center-text' : 'gr-row' %] [% class %]"[% IF id %] id="[% id %]"[% END %]>
         [% IF not is_centered -%]
         <div class="gr-8 gr-push-4 gr-12-m gr-push-0-m center-text-m">
         [% END -%]

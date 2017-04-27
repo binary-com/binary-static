@@ -15,6 +15,6 @@
     <p>[% l("If we're happy with your results, we'll contact you for an interview and then do background and reference checks.") %]</p>
     <p>[% l("If all that sounds a bit daunting, you're right. But it's how we make sure we get the best people for our team.") %]</p>
 
-    [% hr_link="<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'hr@binary.com') %]
+    [% hr_link = "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'hr@binary.com') %]
     <p class="center-text">[% l("To apply, please submit your CV and a cover letter to [_1].", hr_link) %]</p>
 </div>

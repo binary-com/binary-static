@@ -87,7 +87,7 @@ fieldset {
         font-weight: bold;
         text-transform: capitalize;
     }
-    #inputheading, .text-display { /* TODO: replace all occurrences of id with the class */
+    .text-display { /* TODO: replace all occurrences of id with the class */
         line-height: 25px;
     }
     .error-msg {

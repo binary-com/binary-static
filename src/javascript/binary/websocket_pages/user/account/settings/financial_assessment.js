@@ -53,11 +53,12 @@ const FinancialAssessment = (() => {
         });
 
         arr_validation = [];
-        if (financial_assessment.occupation === undefined) {  // handle existing assessments
-            financial_assessment.occupation = '';
-        }
         $(form_selector).find('select').map(function() {
-            arr_validation.push({ selector: `#${$(this).attr('id')}`, validations: ['req'] });
+            const id = $(this).attr('id');
+            arr_validation.push({ selector: `#${id}`, validations: ['req'] });
+            if (financial_assessment[id] === undefined) {  // handle fields not previously set by client
+                financial_assessment[id] = '';
+            }
         });
         Validation.init(form_selector, arr_validation);
     };
