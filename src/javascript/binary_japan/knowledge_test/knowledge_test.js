@@ -3,7 +3,7 @@ const BinaryPjax          = require('../../binary/base/binary_pjax');
 const toJapanTimeIfNeeded = require('../../binary/base/clock').toJapanTimeIfNeeded;
 const Header              = require('../../binary/base/header');
 const localize            = require('../../binary/base/localize').localize;
-const urlFor              = require('../../binary/base/url').urlFor;
+const Url                 = require('../../binary/base/url');
 const BinarySocket        = require('../../binary/websocket_pages/socket');
 
 const KnowledgeTest = (() => {
@@ -110,7 +110,7 @@ const KnowledgeTest = (() => {
             const jp_status = response.get_settings.jp_account_status;
 
             if (!jp_status) {
-                BinaryPjax.load('/');
+                BinaryPjax.load(Url.defaultRedirectUrl());
                 return;
             }
 
@@ -131,7 +131,7 @@ const KnowledgeTest = (() => {
                     break;
                 }
                 default: {
-                    window.location.href = urlFor('/'); // needs to be loaded without pjax
+                    window.location.href = Url.defaultRedirectUrl(); // needs to be loaded without pjax
                 }
             }
         });
