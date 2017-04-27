@@ -3833,6 +3833,9 @@ msgstr "無効な値です。最大はXXXです。"
 msgid "Invalid amount, minimum is"
 msgstr "無効な値です。最小"
 
+msgid "Invalid email address"
+msgstr "無効なEメールアドレス"
+
 msgid "Investigate and reproduce client-reported issues"
 msgstr "顧客から報告された問題の調査と再現"
 
@@ -5609,9 +5612,6 @@ msgstr "ご利用ガイド"
 
 msgid "Platforms"
 msgstr "プラットフォーム"
-
-msgid "Please %1 to view this page"
-msgstr "現在、ログアウトの状態です。ご利用頂くためには再度%1が必要です。"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "出金制限及び取引制限を解除するには、%1改訂版利用規約に同意%2いただく必要があります。"
@@ -9285,9 +9285,6 @@ msgstr "最高水準のバイナリーオプション取引プラットフォー
 msgid "letters"
 msgstr "文字"
 
-msgid "login"
-msgstr "ログイン"
-
 msgid "logout"
 msgstr "ログアウト"
 
@@ -11294,6 +11291,12 @@ msgstr "利用規約の承認"
 msgid "Account Limits"
 msgstr "ご利用制限額"
 
+#~ msgid "Please %1 to view this page"
+#~ msgstr "現在、ログアウトの状態です。ご利用頂くためには再度%1が必要です。"
+
+#~ msgid "login"
+#~ msgstr "ログイン"
+
 #~ msgid "I have read and agree to the"
 #~ msgstr "私は一読したうえで、同意します。"
 
@@ -11884,9 +11887,6 @@ msgstr "ご利用制限額"
 
 #~ msgid "Invalid date of birth."
 #~ msgstr "生年月日が無効です。"
-
-#~ msgid "Invalid email address"
-#~ msgstr "無効なEメールアドレス"
 
 #~ msgid "Jump To"
 #~ msgstr "Xへ移動する"

@@ -3808,6 +3808,9 @@ msgstr "Số tiền không hợp lệ, tối đa là"
 msgid "Invalid amount, minimum is"
 msgstr "Số tiền không hợp lệ, tối thiểu là"
 
+msgid "Invalid email address"
+msgstr "Địa chỉ email không hợp lệ"
+
 msgid "Investigate and reproduce client-reported issues"
 msgstr "Điều tra và ghi chép lại các vấn đề mà khách hàng phản ánh"
 
@@ -5562,9 +5565,6 @@ msgstr "Ghé thăm Sàn giao dịch"
 
 msgid "Platforms"
 msgstr "Các sàn giao dịch"
-
-msgid "Please %1 to view this page"
-msgstr "VII lòng %1 để xem trang này"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "Xin %1 vui lòng chấp nhận cập nhật các điều khoản và điều kiện %2 để nâng mức tiền rút và giới hạn giao dịch."
@@ -9104,9 +9104,6 @@ msgstr "Đó là sàn giao dịch quyền chọn nhị phân hàng đầu."
 msgid "letters"
 msgstr "các ký tự"
 
-msgid "login"
-msgstr "đăng nhập"
-
 #, fuzzy
 #| msgid "Logout"
 msgid "logout"
@@ -11096,6 +11093,12 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
 
+#~ msgid "Please %1 to view this page"
+#~ msgstr "VII lòng %1 để xem trang này"
+
+#~ msgid "login"
+#~ msgstr "đăng nhập"
+
 #~ msgid "I have read and agree to the"
 #~ msgstr "Tôi đã đọc và đồng ý với"
 
@@ -11717,9 +11720,6 @@ msgstr "Giới hạn Tài khoản"
 
 #~ msgid "Invalid date of birth."
 #~ msgstr "Ngày sinh không hợp lệ."
-
-#~ msgid "Invalid email address"
-#~ msgstr "Địa chỉ email không hợp lệ"
 
 #~ msgid "Jump To"
 #~ msgstr "Nhảy đến"
