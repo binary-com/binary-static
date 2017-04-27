@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-04-19 06:32+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2017-04-26 14:31+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -632,7 +632,7 @@ msgid "A Bachelor's degree in Marketing, Business Administration, or related dis
 msgstr "Степень бакалавра в области маркетинга, бизнес-администрирования или смежной дисциплине"
 
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
-msgstr ""
+msgstr "Политически значимое лицо (ПЗЛ) – это человек, который выполняет или в прошлом выполнял важную политическую роль. Данный статус распространяется на родственников и близких друзей ПЗЛ."
 
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Платежный Агент выступает в роли посредника между нашим Клиентом и %1. Платежный агент обрабатывает пополнение и вывод средств для Клиентов, которые желают использовать специфический электронный способ оплаты или местную валюту, не предложенную на %1. Комиссию за перевод оплачивает Клиент."
@@ -997,10 +997,8 @@ msgstr "Позволяют клиентам использовать элект�
 msgid "Alter the normal trading times for the affected market;"
 msgstr "изменить время торговли на соответствующем рынке;"
 
-#, fuzzy
-#| msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
-msgstr "Кроме того, вместо того, чтобы выносить споры в Независимый букмекерский арбитражный сервис IBAS, клиенты, зарегистрированные в компаниях Binary (IOM) Ltd и Binary (Europe) Ltd, могут воспользоваться платформой Европейской комиссии по разрешению онлайн споров (ODR), доступной <a href='http://ec.europa.eu/odr' target='_blank'>здесь</a>."
+msgstr "Кроме того, вместо того, чтобы выносить споры в Независимый букмекерский арбитражный сервис IBAS, клиенты, зарегистрированные в компаниях Binary (IOM) Ltd и Binary (Europe) Ltd, могут воспользоваться платформой Европейской комиссии по разрешению онлайн споров (ODR), доступной %1здесь%2."
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "Хотя Компания сохраняет за собой право отказать или закрыть счет Клиента, она гарантирует исполнение всех договорных обязательств, уже принятых Компанией."
@@ -1532,10 +1530,8 @@ msgstr "Binary KK – дочерняя компания Binary в Японии �
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "Мальтийская дочерняя компания Binary под названием Binary Investments (Europe) Ltd. получает лицензию на инвестиционные услуги категории 3 от Мальтийского управления финансовых услуг (Malta Financial Services Authority)."
 
-#, fuzzy
-#| msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
 msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
-msgstr "В среднем, платформа Binary проводит 15 <a href='http://binarycom.statuspage.io/' target='_blank'>транзакций</a> в секунду, 24/7"
+msgstr "В среднем, платформа Binary проводит 15 %1транзакций%2 в секунду, 24/7"
 
 msgid "Binary.com"
 msgstr "Binary.com"
@@ -3307,10 +3303,8 @@ msgstr "Отдел кадров"
 msgid "Hundreds of deposit and withdrawal options."
 msgstr "Множество вариантов пополнения счёта и вывода средств."
 
-#, fuzzy
-#| msgid "I declare I am not a Foreign Politically Exposed Person."
 msgid "I acknowledge that I am not a politically exposed person (PEP)."
-msgstr "Настоящим я заявляю, что не являюсь политическим деятелем иностранного государства."
+msgstr "Настоящим я заявляю, что не являюсь политически значимым лицом (ПЗЛ)."
 
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
@@ -3327,10 +3321,8 @@ msgstr "Я забыл(а) пароль, что делать?"
 msgid "I have a Real Money Account"
 msgstr "У меня уже есть реальный счёт"
 
-#, fuzzy
-#| msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgid "I have read and agree to the %1terms and conditions%2 of the site."
-msgstr "Я прочитал и согласен с  <a target=\"_blank\" href=\"%1\">правилами и условиями</a> сайта."
+msgstr "Я прочитал и согласен с %1правилами и условиями%2 сайта."
 
 msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgstr "Я прочитал и согласен с  <a target=\"_blank\" href=\"%1\">правилами и условиями</a> сайта."
@@ -5429,10 +5421,8 @@ msgstr "Партнер несет единоличную ответственн�
 msgid "P. Indemnification"
 msgstr "P. Возмещение ущерба"
 
-#, fuzzy
-#| msgid "Explanation"
 msgid "PEP Declaration"
-msgstr "Объяснение"
+msgstr "Декларация ПЗЛ"
 
 msgid "PM"
 msgstr "вечера"
@@ -8582,10 +8572,8 @@ msgstr "Вам запрещено хранить любой Контент (на
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Вы ни при каких обстоятельствах не получаете прав на любую компенсацию или возмещение расходов со стороны Компании."
 
-#, fuzzy
-#| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
-msgstr "Вы не являетесь жителем следующих стран: Афганистана, Боснии и Герцеговины, любой страны Евросоюза, Лаоса, Сирии, Уганды, Вануату, Йемена, США, Японии, Гонконга, Коста-Рики, Малайзии, Мальты, Ирана, Северной Кореи, Джерси, Ирака или иных стран, где не работает Компания и которые могут быть внесены в список запрещённых стран по единоличному усмотрению Компании;"
+msgstr "Вы не являетесь жителем следующих стран: Афганистана, Боснии и Герцеговины, Коста-Рики, любой страны Евросоюза, Лаоса, Сирии, Уганды, Вануату, Йемена, США, Японии, Гонконга, Малайзии, Мальты, Ирана, Северной Кореи, Джерси, Ирака или иных стран, где не работает Компания и которые могут быть внесены в список запрещённых стран по единоличному усмотрению Компании;"
 
 msgid "You are over 18 years of age;"
 msgstr "Вы старше 18 лет;"
