@@ -17,8 +17,7 @@ const ViewPopup = (() => {
         is_sold,
         is_sell_clicked,
         chart_started,
-        tick_forgotten,
-        candle_forgotten,
+        chart_init,
         corporate_action_event,
         corporate_action_sent,
         chart_updated;
@@ -37,8 +36,7 @@ const ViewPopup = (() => {
         is_sold                = false;
         is_sell_clicked        = false;
         chart_started          = false;
-        tick_forgotten         = false;
-        candle_forgotten       = false;
+        chart_init             = false;
         chart_updated          = false;
         corporate_action_event = false;
         corporate_action_sent  = false;
@@ -166,20 +164,13 @@ const ViewPopup = (() => {
         }
 
         if (!chart_started && !contract.tick_count) {
-            if (!tick_forgotten) {
-                tick_forgotten = true;
-                BinarySocket.send({ forget_all: 'ticks' });
-            }
-            if (!candle_forgotten) {
-                candle_forgotten = true;
-                BinarySocket.send({ forget_all: 'candles' });
+            if (!chart_init) {
+                chart_init = true;
                 Highchart.showChart(contract);
             }
-            if (candle_forgotten && tick_forgotten) {
-                Highchart.showChart(contract, 'update');
-                if (contract.entry_tick_time) {
-                    chart_started = true;
-                }
+            Highchart.showChart(contract, 'update');
+            if (contract.entry_tick_time) {
+                chart_started = true;
             }
         } else if (contract.tick_count && !chart_updated) {
             TickDisplay.updateChart('', contract);

@@ -1,5 +1,5 @@
 const getLanguage = require('../../../base/language').get;
-const localize    = require('../../../base/localize');
+const localize    = require('../../../base/localize').localize;
 const Url         = require('../../../base/url');
 const jpClient    = require('../../../common_functions/country_base').jpClient;
 

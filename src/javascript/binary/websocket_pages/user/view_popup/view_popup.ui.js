@@ -1,10 +1,15 @@
+const MBDefaults       = require('../../mb_trade/mb_defaults');
+const Defaults         = require('../../trade/defaults');
 const State            = require('../../../base/storage').State;
 const getHighestZIndex = require('../../../base/utility').getHighestZIndex;
 
 const ViewPopupUI = (() => {
     'use strict';
 
-    let $container;
+    let $container,
+        stream_ids,
+        chart_stream_ids,
+        chart_underlying;
 
     const init = () => {
         $container = null;
@@ -22,7 +27,6 @@ const ViewPopupUI = (() => {
             $con.hide();
             const onClose = () => {
                 cleanup();
-                State.call('ViewPopup.onClose');
                 $(document).off('keydown');
                 $(window).off('popstate', onClose);
             };
@@ -46,8 +50,8 @@ const ViewPopupUI = (() => {
     };
 
     const forgetStreams = () => {
-        while (window.stream_ids && window.stream_ids.length > 0) {
-            const id = window.stream_ids.pop();
+        while (stream_ids && stream_ids.length > 0) {
+            const id = stream_ids.pop();
             if (id && id.length > 0) {
                 BinarySocket.send({ forget: id });
             }
@@ -55,8 +59,14 @@ const ViewPopupUI = (() => {
     };
 
     const forgetChartStreams = () => {
-        while (window.chart_stream_ids && window.chart_stream_ids.length > 0) {
-            const id = window.chart_stream_ids.pop();
+        if (State.get('is_trading') || State.get('is_mb_trading') || State.get('is_beta_trading')) {
+            const underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
+            if (underlying === chart_underlying) {
+                return;
+            }
+        }
+        while (chart_stream_ids && chart_stream_ids.length > 0) {
+            const id = chart_stream_ids.pop();
             if (id && id.length > 0) {
                 BinarySocket.send({ forget: id });
             }
@@ -154,17 +164,18 @@ const ViewPopupUI = (() => {
     };
 
     // ===== Dispatch =====
-    const storeSubscriptionID = (id, option) => {
-        if (!window.stream_ids && !option) {
-            window.stream_ids = [];
+    const storeSubscriptionID = (id, underlying) => {
+        if (!stream_ids && !underlying) {
+            stream_ids = [];
         }
-        if (!window.chart_stream_ids && option) {
-            window.chart_stream_ids = [];
+        if (!chart_stream_ids && underlying) {
+            chart_stream_ids = [];
+            chart_underlying = underlying;
         }
-        if (!option && id && id.length > 0 && $.inArray(id, window.stream_ids) < 0) {
-            window.stream_ids.push(id);
-        } else if (option && id && id.length > 0 && $.inArray(id, window.chart_stream_ids) < 0) {
-            window.chart_stream_ids.push(id);
+        if (!underlying && id && id.length > 0 && $.inArray(id, stream_ids) < 0) {
+            stream_ids.push(id);
+        } else if (underlying && id && id.length > 0 && $.inArray(id, chart_stream_ids) < 0) {
+            chart_stream_ids.push(id);
         }
     };
 
