@@ -1,4 +1,4 @@
-const Highcharts    = require('highcharts');
+const Highcharts    = require('highstock-release');
 const moment        = require('moment');
 const commonTrading = require('../common');
 const Tick          = require('../tick');
@@ -6,7 +6,6 @@ const BinarySocket  = require('../../socket');
 const ViewPopupUI   = require('../../user/view_popup/view_popup.ui');
 const localize      = require('../../../base/localize').localize;
 const isVisible     = require('../../../common_functions/common_functions').isVisible;
-require('highcharts/modules/exporting')(Highcharts);
 
 const TickDisplay_Beta = (() => {
     'use strict';

@@ -90,7 +90,7 @@ const TradingEvents = (() => {
         if (underlying_element) {
             underlying_element.addEventListener('change', (e) => {
                 if (e.target) {
-                    chartFrameSource();
+                    // chartFrameSource();
                     commonTrading.showFormOverlay();
                     commonTrading.showPriceOverlay();
                     if (e.target.selectedIndex < 0) {
@@ -99,7 +99,7 @@ const TradingEvents = (() => {
                     const underlying = e.target.value;
                     Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                     Defaults.set('underlying', underlying);
-                    TradingAnalysis.request();
+                    // TradingAnalysis.request();
 
                     Tick.clean();
 
