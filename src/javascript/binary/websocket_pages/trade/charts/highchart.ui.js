@@ -87,6 +87,7 @@ const HighchartUI = (() => {
                 cropThreshold : Infinity,
                 softThreshold : false,
                 turboThreshold: Infinity,
+                connectNulls  : true,
             }],
             exporting  : { enabled: false },
             plotOptions: {
