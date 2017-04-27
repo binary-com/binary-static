@@ -163,7 +163,7 @@ const AccountOpening = (() => {
             id;
         $(form_id).find('select, input[type=checkbox]').each(function() {
             id = $(this).attr('id');
-            if (id !== 'tnc' && id !== 'address_state') {
+            if (!/^(tnc|address_state)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
                 if (id === 'not_pep') {
                     validation.exclude_request = 1;
