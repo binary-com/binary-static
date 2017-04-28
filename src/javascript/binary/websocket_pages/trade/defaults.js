@@ -43,16 +43,16 @@ const Defaults = (() => {
         }
     };
 
-    const removeDefault = () => {
+    const removeDefault = (...keys) => {
         if (isEmptyObject(params)) params = Url.paramsHash();
         let is_updated = false;
-        for (let i = 0; i < arguments.length; i++) {
-            if (params.hasOwnProperty(arguments[i])) {
-                sessionStorage.removeItem(arguments[i]);
-                delete (params[arguments[i]]);
+        keys.forEach((key) => {
+            if (key in params) {
+                sessionStorage.removeItem(key);
+                delete params[key];
                 is_updated = true;
             }
-        }
+        });
         if (is_updated) {
             updateURL();
         }
