@@ -1,5 +1,7 @@
 const commonTrading    = require('../common');
 const showHighchart    = require('../charts/chart_frame').showHighchart;
+const getActiveTab     = require('../get_active_tab').getActiveTab_Beta;
+const GetTicks         = require('../get_ticks');
 const AssetIndexUI     = require('../../resources/asset_index/asset_index.ui');
 const TradingTimesUI   = require('../../resources/trading_times/trading_times.ui');
 const PortfolioInit    = require('../../user/account/portfolio/portfolio.init');
@@ -89,7 +91,11 @@ const TradingAnalysis_Beta = (() => {
             case 'tab_last_digit': {
                 const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
                 const tick = $('#tick_count').val() || 100;
-                BinarySocket.send({ ticks_history: underlying, end: 'latest', count: tick.toString(), req_id: 1 });
+                GetTicks.request('', {
+                    ticks_history: underlying,
+                    end          : 'latest',
+                    count        : tick.toString(),
+                });
                 break;
             }
             case 'tab_asset_index':
@@ -139,21 +145,6 @@ const TradingAnalysis_Beta = (() => {
     };
 
     /*
-     * get the current active tab if its visible i.e allowed for current parameters
-     */
-    const getActiveTab = () => {
-        let selected_tab = sessionStorage.getItem('currentAnalysisTab_Beta') || (State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation');
-        const selected_element = document.getElementById(selected_tab);
-
-        if (selected_element && selected_element.classList.contains('invisible')) {
-            selected_tab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
-            sessionStorage.setItem('currentAnalysisTab_Beta', selected_tab);
-        }
-
-        return selected_tab;
-    };
-
-    /*
      * handle the display of proper explanation based on parameters
      */
     const showExplanation = (href) => {
@@ -197,10 +188,6 @@ const TradingAnalysis_Beta = (() => {
             updown: {
                 image1: 'up-down-1.svg',
                 image2: 'up-down-2.svg',
-            },
-            spreads: {
-                image1: 'spreads-1.svg',
-                image2: 'spreads-2.svg',
             },
             evenodd: {
                 image1: 'evenodd-1.svg',

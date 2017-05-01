@@ -1,5 +1,6 @@
 const getLanguage = require('../../../base/language').get;
-const localize    = require('../../../base/localize');
+const localize    = require('../../../base/localize').localize;
+const Url         = require('../../../base/url');
 const jpClient    = require('../../../common_functions/country_base').jpClient;
 
 const ChartFrame = (() => {
@@ -24,10 +25,11 @@ const ChartFrame = (() => {
     };
 
     const chartFrameSource = () => {
-        if ($('#tab_graph').hasClass('active') && (sessionStorage.getItem('old_underlying') !== sessionStorage.getItem('underlying') || /^(|about:blank)$/.test($('#chart_frame').attr('src')))) {
+        const new_underlying = document.getElementById('underlying').value;
+        const chart_source   = $('#chart_frame').attr('src');
+        if ($('#tab_graph').hasClass('active') && (Url.paramsHash(chart_source).instrument !== new_underlying || /^(|about:blank)$/.test(chart_source))) {
             chartFrameCleanup();
             setChartSource();
-            sessionStorage.setItem('old_underlying', document.getElementById('underlying').value);
         }
         $('#chart-error').hide();
         $('#trade_live_chart').show();
@@ -35,7 +37,7 @@ const ChartFrame = (() => {
 
     const setChartSource = () => {
         const is_ja = !!jpClient();
-        document.getElementById('chart_frame').src = `https://webtrader.binary.com?affiliates=true&instrument=${document.getElementById('underlying').value}&timePeriod=1t&gtm=true&lang=${getLanguage().toLowerCase()}&hideOverlay=${is_ja}&hideShare=${is_ja}&timezone=GMT+${(is_ja ? '9' : '0')}&hideFooter=${is_ja}`;
+        document.getElementById('chart_frame').src = `https://webtrader.binary.com?affiliates=true&instrument=${document.getElementById('underlying').value}&timePeriod=1t&gtm=true&lang=${getLanguage().toLowerCase()}&hideOverlay=${is_ja}&hideShare=${is_ja}&timezone=GMT+${(is_ja ? '9' : '0')}`;
     };
 
     return {

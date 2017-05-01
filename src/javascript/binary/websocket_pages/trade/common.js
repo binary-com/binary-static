@@ -263,8 +263,6 @@ const commonTrading = (() => {
         UPORDOWN    : 'bottom',
         ONETOUCH    : 'top',
         NOTOUCH     : 'bottom',
-        SPREADU     : 'top',
-        SPREADD     : 'bottom',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');
@@ -298,7 +296,6 @@ const commonTrading = (() => {
             ['digits',
                 ['matchdiff', 'evenodd', 'overunder'],
             ],
-            'spreads',
         ];
 
         if (elements) {
@@ -357,7 +354,7 @@ const commonTrading = (() => {
     };
 
     /*
-     * display the profit and return of bet under each trade container except spreads
+     * display the profit and return of bet under each trade container
      */
     const displayCommentPrice = (node, currency, type, payout) => {
         if (node && type && payout) {
@@ -370,29 +367,6 @@ const commonTrading = (() => {
             } else {
                 node.show();
                 elementTextContent(node, comment);
-            }
-        }
-    };
-
-    /*
-     * display comment for spreads
-     */
-    const displayCommentSpreads = (node, currency, point) => {
-        if (node && point) {
-            const amount_per_point = document.getElementById('amount_per_point').value;
-            const stop_type = document.querySelector('input[name="stop_type"]:checked').value;
-            const stop_loss = document.getElementById('stop_loss').value;
-            let display_amount = 0;
-
-            if (isNaN(stop_loss) || isNaN(amount_per_point)) {
-                node.hide();
-            } else {
-                if (stop_type === 'point') {
-                    display_amount = parseFloat(parseFloat(amount_per_point) * parseFloat(stop_loss));
-                } else {
-                    display_amount = parseFloat(stop_loss);
-                }
-                elementTextContent(node, localize('Deposit of [_1] is required. Current spread: [_2] points', formatMoney(currency, display_amount), point));
             }
         }
     };
@@ -600,7 +574,7 @@ const commonTrading = (() => {
     const reloadPage = () => {
         Defaults.remove('market', 'underlying', 'formname',
             'date_start', 'expiry_type', 'expiry_date', 'expirt_time', 'duration_units', 'diration_value',
-            'amount', 'amount_type', 'currency', 'stop_loss', 'stop_type', 'stop_profit', 'amount_per_point', 'prediction');
+            'amount', 'amount_type', 'currency', 'prediction');
         location.reload();
     };
 
@@ -725,7 +699,6 @@ const commonTrading = (() => {
         resetPriceMovement             : resetPriceMovement,
         toggleActiveCatMenuElement     : toggleActiveCatMenuElement,
         displayCommentPrice            : displayCommentPrice,
-        displayCommentSpreads          : displayCommentSpreads,
         debounce                       : debounce,
         getDefaultMarket               : getDefaultMarket,
         addEventListenerForm           : addEventListenerForm,

@@ -1,5 +1,6 @@
-const DigitInfo        = require('./charts/digit_info');
 const showHighchart    = require('./charts/chart_frame').showHighchart;
+const getActiveTab     = require('./get_active_tab').getActiveTab;
+const GetTicks         = require('./get_ticks');
 const getLanguage      = require('../../base/language').get;
 const State            = require('../../base/storage').State;
 const Url              = require('../../base/url');
@@ -88,19 +89,10 @@ const TradingAnalysis = (() => {
             } else if (current_tab === 'tab_last_digit') {
                 const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
                 const tick = $('#tick_count').val() || 100;
-                BinarySocket.send({
+                GetTicks.request('', {
                     ticks_history: underlying,
                     count        : tick.toString(),
                     end          : 'latest',
-                }, {
-                    callback: (response) => {
-                        const type = response.msg_type;
-                        if (type === 'tick') {
-                            DigitInfo.updateChart(response);
-                        } else if (type === 'history') {
-                            DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
-                        }
-                    },
                 });
             } else {
                 $.ajax({
@@ -136,22 +128,6 @@ const TradingAnalysis = (() => {
             classes.add('selectedTab');
             classes.remove('invisible');
         }
-    };
-
-    /*
-     * get the current active tab if its visible i.e allowed for current parameters
-     */
-    const getActiveTab = () => {
-        let selected_tab = sessionStorage.getItem('currentAnalysisTab') || (State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation');
-        const selected_element = document.getElementById(selected_tab);
-
-        if (selected_element && selected_element.classList.contains('invisible') &&
-            !(selected_tab === 'tab_portfolio' && JapanPortfolio.isActive())) {
-            selected_tab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
-            sessionStorage.setItem('currentAnalysisTab', selected_tab);
-        }
-
-        return selected_tab;
     };
 
     /*
@@ -198,10 +174,6 @@ const TradingAnalysis = (() => {
             updown: {
                 image1: 'up-down-1.svg',
                 image2: 'up-down-2.svg',
-            },
-            spreads: {
-                image1: 'spreads-1.svg',
-                image2: 'spreads-2.svg',
             },
             evenodd: {
                 image1: 'evenodd-1.svg',

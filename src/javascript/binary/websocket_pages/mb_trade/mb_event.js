@@ -40,7 +40,7 @@ const MBTradingEvents = (() => {
 
                     MBTick.updateWarmChart();
 
-                    MBContract.getContracts(underlying);
+                    MBProcess.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
                     MBProcess.processForgetTicks();

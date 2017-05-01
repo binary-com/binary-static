@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-04-04 16:51+0000\n"
+"PO-Revision-Date: 2017-04-15 18:28+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API ของ %1\" หมายถึง ระบบของ %1 ที่ประกอบด้วย ชุดคำสั่งต่างๆ โปรโตคอลต่างๆ เครื่องมือต่างๆ และทรัพยากรต่างๆ ที่ถูกพัฒนาขึ้นและดำเนินการโดย %1 ซึ่งท่านสามารถใช้งานแอพพลิเคชันได้เพื่อเชื่อมต่อกับแพลตฟอร์มการซื้อขายของ %1"
@@ -267,12 +267,6 @@ msgstr "กลุ่มการวิเคราะห์เชิงปริ
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "Smart FX ของ %1 คือ ตลาดซื้อขายอัตราแลกเปลี่ยนอันชาญฉลาดที่ช่วยประเมินมูลค่าสกุลเงินที่พิจารณาจากกลุ่มสกุลเงินหลักๆ"
 
-msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr "สัญญาสเปรดของ %1 มีผลกับสัญญาอนุพันธ์ เป็นมูลค่าซึ่งขึ้นกับการเคลื่อนไหวของตลาดผลิตภัณฑ์อ้างอิงต่างๆ เมื่อลูกค้าทำกำไรตามการเคลื่อนไหวของตลาดโดย 'Long' ในตลาดขาขึ้น (และดำเนินการ 'Short' ในตลาดขาลง) จะมีมูลค่าน้อยกว่ามากเมื่อเทียบกับค่าในตลาดจริง"
-
-msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr "สัญญาสเปรดของ %1 จำเป็นในการหยุดภาวะขาดทุน (Stop Loss) ซึ่งวงเงินขาดทุนมากที่สุดนั้นจะถูกกำหนดโดยลูกค้า จำนวนเงินที่เกิดขึ้นในการหยุดภาวะขาดทุนนั้นจะเหมือนจำนวนเงินที่ฝากเข้าและจะไม่ถูกใช้ในการซื้อขายครั้งถัดไปจนกระทั่งสัญญาสเปรดนั้นถูกปิดลง สัญญาสเปรดจะถูกปิดเมื่อลูกค้าทำการขายโดยใช้ภาวะ 'Stop Loss' หรือ 'Stop Profit' ตามลำดับ"
-
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "ดัชนีผันผวนของ %1 ใช้การเข้ารหัสเพื่อความปลอดภัยในการสุ่มจำนวนตัวเลขที่สามารถตรวจสอบความยุติธรรมได้โดยไม่ขึ้นกับหน่วยงานใดๆ"
 
@@ -287,6 +281,11 @@ msgstr "ประวัติศาสตร์อันน่าจดจำข
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "ระบบต่างๆ ของ %1 ขณะนี้มีการประมวลผลมากกว่า 1 ล้านธุรกรรมต่อวัน (รวมประเภทบัญชีเสมือน หรือ บัญชีทดลองใช้)"
+
+#, fuzzy
+#| msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
+msgstr "โปรด %1ดำเนินการพิสูจน์ตัวตนในบัญชีของท่าน%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "แนวคิดการบริจาคเพื่อการกุศลของ%1 มุ่งต่อองค์กรการกุศลขนาดเล็ก และองค์กรที่ไม่แสวงหากำไรทั่วโลกซึ่งสร้างสรรค์ความแตกต่างให้กับชุมชนของพวกเขา การบริจาคของเราเพื่อให้บังเกิดผลต่อหน่วยงานเล็กๆ เหล่านั้นโดยตรง ปราศจากภาระของค่าใช้จ่ายที่ใช้ในการดำเนินธุรกิจที่มีในองค์กรการกุศลใหญ่ๆ อื่นๆ"
@@ -314,12 +313,6 @@ msgstr "&#8220;%1 เป็นหนึ่งในพันธมิตรเ�
 
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;เราใช้งาน www.binary.com มา 8 ปี และเป็นที่ที่เยี่ยมยอด ที่เราได้แนะนำให้สมาชิกทั่วโลกของเราใช้&#8221;"
-
-msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
-msgstr "'<strong>Long</strong>' สัญญาซื้อ (Buy) สร้างกำไรเมื่อดัชนีขาขึ้นและขาดทุนเมื่อดัชนีร่วงลง"
-
-msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
-msgstr "'<strong>Short</strong>' สัญญาขาย (Sell) จะให้ผลขาดทุนเมื่อดัชนีเพิ่มขึ้นและสร้างกำไรเมื่อดัชนีร่วงลง"
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "รางวัล ‘Best Customer Communication Firm’ ได้รับจาก Investors Chronicle"
@@ -642,6 +635,9 @@ msgstr "สำเร็จการศึกษาสาขาวิทยาก
 
 msgid "A Bachelor's degree in Marketing, Business Administration, or related discipline"
 msgstr "สำเร็จการศึกษาในสาขาการตลาด สาขาบริหารธุรกิจ หรือสาขาเทียบเท่าในหลักสูตรที่เกี่ยวข้อง"
+
+msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
+msgstr ""
 
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "ตัวแทนรับชำระเงินเป็นเหมือนตัวกลางแลกเปลี่ยนระหว่างลูกค้าและ %1 ตัวแทนรับชำระเงินอำนวยความสะดวกในการฝากเงินและถอนเงินให้กับลูกค้าที่ปรารถนาจะใช้ช่องทางเงินสดอิเล็กทรอนิกส์ หรือ สกุลเงินท้องถิ่น ที่ไม่ได้บริการโดย %1 โดยค่าธรรมเนียมการโอนเงินรับผิดชอบโดยลูกค้าผู้ทำธุรกรรม"
@@ -1010,7 +1006,9 @@ msgstr "ยินยอมให้ลูกค้าใช้กระเป๋
 msgid "Alter the normal trading times for the affected market;"
 msgstr "เปลี่ยนเวลาการซื้อขายปกติสำหรับตลาดที่มีผล"
 
-msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+#, fuzzy
+#| msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
+msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "อีกทางหนึ่งสำหรับลูกค้าที่ลงทะเบียนกับทั้ง Binary (IOM) Ltd และ Binary (Europe) Ltd นอกจากการส่งข้อคัดค้านต่อ IBAS พวกเขาสามารถดำเนินการผ่านช่องทาง European Commission’s Online Dispute Resolution (ODR) โดยคลิก<a href='http://ec.europa.eu/odr' target='_blank'>ที่นี่</a>"
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
@@ -1022,9 +1020,6 @@ msgstr "จำนวน"
 msgid "Amount of above assets"
 msgstr "จำนวนของสินทรัพย์ข้างต้น"
 
-msgid "Amount per point"
-msgstr "จำนวนเงินต่อหน่วย"
-
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "สำเร็จการศึกษาระดับสูงกว่ามหาวิทยาลัย หรือ ปริญญาตรี หรือ อนุปริญญา"
 
@@ -1035,7 +1030,7 @@ msgid "An Open Position may be closed by placing an opposite Order, that is an O
 msgstr "โพซิชั่นที่เปิดอาจจะถูกปิดด้วยการวางคำสั่งตรงข้าม และคำสั่งขาย (เพื่อปิดสถานะ Long) หรือซื้อ (ปิดสถานะ Short) ในตลาดเดียวกัน"
 
 msgid "An Open Position may be partially closed by entering into an opposite Transaction in the same Market but for a smaller number of lots (volume) as the Open Position."
-msgstr ""
+msgstr "โพซิชั่นที่เปิดอาจถูกปิดลงบางส่วนเมื่อมีการเพิ่มธุรกรรมที่ตรงข้ามกันในตลาดเดียวกัน แต่เป็นจำนวนที่น้อยกว่าจำนวนของโพซิชั่นที่เปิดอยู่"
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "รหัสผ่านเพิ่มนี้สามารถใช้เพื่อเข้าถึงส่วนของแคชเชียร์"
@@ -1269,7 +1264,7 @@ msgid "Australia 200 Cash Index"
 msgstr "ดัชนีเงิน Australian 200"
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
-msgstr ""
+msgstr "การพิสูจน์บัญชีของท่าน ทำได้ขณะนี้โดยตรวจสอบอัตลักษณ์และที่อยู่ของท่าน เพื่อดำเนินการต่อ โปรดส่งเอกสารต่อไปนี้มายัง %1:"
 
 msgid "Authentication"
 msgstr "การระบุตัวตน"
@@ -1473,7 +1468,7 @@ msgid "Binary KK granted Japan license"
 msgstr "Binary KK ได้รับใบอนุญาตของประเทศญี่ปุ่น"
 
 msgid "Binary KK is a licensed Type 1 Financial Instruments Business, regulated by the KLFB, and a member of the FFAJ."
-msgstr ""
+msgstr "Binary KK คือ องค์กรที่ดำเนินธุรกิจทางการเงินประเภทที่ 1 ที่มีใบอนุญาต รับรองโดย KLFB และสมาชิกหนึ่งของ FFAJ"
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK ตั้งอยู่ที่ Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012 ประเทศญี่ปุ่น"
@@ -1544,7 +1539,9 @@ msgstr "บริษัทย่อยของ Binary ที่ประเท�
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "บริษัทย่อยของ Binary ที่มอลเตส Binary Investments (Europe) Ltd. ได้รับใบอนุญาตตามกฎหมายสำหรับผู้ให้บริการผลิตภัณฑ์และบริการการลงทุน ประเภทที่ 3 จาก Malta Financial Services Authority"
 
-msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+#, fuzzy
+#| msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
+msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
 msgstr "ระบบไบนารีประมวลผลโดยเฉลี่ย 15 <a href='http://binarycom.statuspage.io/' target='_blank'>ธุรกรรม</a> ต่อวินาที ตลอด 24 ชั่วโมง 7 วันทำการ"
 
 msgid "Binary.com"
@@ -1724,6 +1721,9 @@ msgstr "เปลี่ยนรหัสผ่านเพื่อใช้ใ
 msgid "Change your main login password."
 msgstr "แก้ไขรหัสผ่านหลักของท่าน"
 
+msgid "Charitable Activities"
+msgstr "กิจกรรมเพื่อสาธารณกุศล"
+
 msgid "Chart"
 msgstr "แผนภูมิ"
 
@@ -1787,10 +1787,8 @@ msgstr "กำหนดราคาใช้สิทธิของท่าน
 msgid "Christmas Day"
 msgstr "วันคริสต์มาส"
 
-#, fuzzy
-#| msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr "ลูกค้าในประเทศเหล่านี้ อัฟกานิสถาน เบลเยี่ยม บอสเนีย และ เฮอเซโกวินา กายอานา อิรัก สาธารณรัฐประชาชนลาว ซีเรีย ยูกานดา วาตูอานู หรือ เยเมน จะได้รับการดูแลและเปิดบัญชีจาก Binary Investments (Europe) Ltd."
+msgstr "ลูกค้าในประเทศเหล่านี้ อัฟกานิสถาน เบลเยี่ยม บอสเนีย และ เฮอเซโกวินา อิรัก สาธารณรัฐประชาชนลาว ซีเรีย ยูกานดา วาตูอานู หรือ เยเมน จะได้รับการดูแลและเปิดบัญชีจาก Binary Investments (Europe) Ltd."
 
 msgid "Classification of assets requiring hedge"
 msgstr "การจำแนกสินทรัพย์ที่ต้องป้องกันความเสี่ยง"
@@ -2189,9 +2187,6 @@ msgstr "สัญลักษณ์สกุลเงิน"
 msgid "Current"
 msgstr "ปัจจุบัน"
 
-msgid "Current Level"
-msgstr "ระดับปัจจุบัน"
-
 msgid "Current Time"
 msgstr "เวลาปัจจุบัน:"
 
@@ -2303,9 +2298,6 @@ msgstr "ฝากเงินแล้วเริ่มซื้อขายไ
 msgid "Deposit into"
 msgstr "การนำฝากไปยัง"
 
-msgid "Deposit of"
-msgstr "การฝากของ"
-
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "ฝากเงิน หรือ ถอนเงินเข้าบัญชีของท่านผ่านบริการของธนาคาร บัตรเครดิต หรือ กระเป๋าสตางค์อิเล็กทรอนิกส์"
 
@@ -2363,8 +2355,6 @@ msgstr "พัฒนาแอพพลิเคชันในการเทร
 msgid "Differences with other data feeds"
 msgstr "ความแตกต่างของข้อมูลฟีดอื่นๆ"
 
-#, fuzzy
-#| msgid "Digits"
 msgid "Digit"
 msgstr "ตัวเลข"
 
@@ -2521,9 +2511,8 @@ msgstr "แต่ละธุรกรรมออปชั่นมีการ
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
 msgstr "แต่ละฝ่ายในข้อตกลงฉบับนี้ทำหน้าที่รับรองว่า จะรักษาและปฏิบัติตามข้อตกลงทุกข้อให้ถูกต้องตามสิทธิ กรรมสิทธิ์ หน้าที่ และบทบาทที่กล่าวในข้อตกลงนี้ เพื่อยินยอมให้บุคคลอื่นมีสิทธิ์และเสรีภาพตามหน้าที่ความรับผิดชอบที่ปรากฏในข้อตกลงนี้"
 
-#, fuzzy
 msgid "Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index."
-msgstr "แต่ละครั้งที่คุณเปิดตำแหน่งบนสัญลักษณ์ดัชนีผันผวน คุณสามารถเริ่ม ด้วยธุรกรรมปริมาณขั้นต่ำ 0.01 (ขนาดการค้า), ซึ่งแปลบ. 0.01 ต่อจุดการเคลื่อนไหวของดัชนีได้"
+msgstr "แต่ละครั้งที่ท่านเปิดโพซิชั่นสัญลักษณ์ดัชนีผันผวน ท่านสามารถเริ่ม ด้วยธุรกรรมปริมาณขั้นต่ำ 0.01 (มูลค่าซื้อขาย), ซึ่งแปลงเป็นมูลค่า 0.01 เหรียญสหรัฐ ต่อจุดการเคลื่อนไหวของดัชนี"
 
 msgid "Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake."
 msgstr "แต่ละการซื้อขายเป็นการกำหนดจำนวนเงินที่ต้องถูกชำระไว้ก่อน ซึ่งท่านสามารถปรับตัวแปรในการคำนวณมูลค่า เมื่อท่านชนะจะได้รับการชำระเงิน หากการพยากรณ์ หรือ การทำนายของท่านถูกต้อง หรือท่านจะต้องชำระเงินที่ท่านวางหากผลไม่ถูกต้อง"
@@ -2654,9 +2643,6 @@ msgstr "เริ่มต้น Barrier ในความแตกต่าง
 msgid "Enter your email"
 msgstr "ป้อนอีเมล์ของท่าน"
 
-msgid "Entry Level"
-msgstr "ระดับเริ่มต้น"
-
 msgid "Entry Spot"
 msgstr "สปอตเริ่มต้น"
 
@@ -2704,9 +2690,6 @@ msgstr ""
 
 msgid "Everyone"
 msgstr "ทุกท่าน"
-
-msgid "Example:"
-msgstr "ตัวอย่าง:"
 
 msgid "Excellent English language (written and oral) communication skills"
 msgstr "มีทักษะภาษาอังกฤษดีเยี่ยมในการสื่อสารทางคำพูดและการเขียน"
@@ -2767,9 +2750,6 @@ msgstr "โมเดลในการดำเนินการและคว
 
 msgid "Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions."
 msgstr "มีทักษะและเทคนิคการบริหารความสัมพันธ์ระหว่างลูกค้า เพื่อป้องกันพฤติการณ์ฉ้อโกงในกระบวนการชำระเงินและธุรกรรมต่างๆ"
-
-msgid "Exit Level"
-msgstr "ระดับสิ้นสุด"
 
 msgid "Exit Spot"
 msgstr "สปอตสิ้นสุด"
@@ -3007,9 +2987,6 @@ msgstr "สำหรับราคาฟอเร็กซ์ในเวลา
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "สำหรับฟอเร็กซ์ หรือ ตลาดค้าสกุลเงิน: ตลาดฟอเร็กซ์เป็นตลาดที่ซื้อขายได้เอง ขณะที่ธนาคารและสถาบันการเงินหลักอื่นๆ ค้าสกุลเงินในกลุ่มของเขาโดยปราศจากศูนย์กลางการจัดการซื้อขาย ตามหลักการนี้ จึงไม่มีราคาอย่างเป็นทางการในการซื้อขายฟอเร็กซ์ หรือ สกุลเงินต่างๆ ฟีดข้อมูลประกอบด้วยราคาที่ได้รับจากธนาคารนานาชาติต่างๆ และราคาอาจจะมีความแตกต่างกันในแต่ละกลุ่มผู้ให้ข้อมูล ขึ้นกับธนาคารต่างๆ ที่พวกเขาได้รับราคามา"
-
-msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
-msgstr "สำหรับสัญญาระยะยาว ระดับเริ่มต้น คือ สปอตบวกด้วยครึ่งของสเปรด และระดับสิ้นสุด คือ สปอตลบด้วยครึ่งของสเปรด สำหรับสัญญาระยะสั้น ระดับเริ่มต้น คือ สปอตลบด้วยครึ่งของสเปรด และระดับสิ้นสุด คือ สปอตบวกด้วยครึ่งของสเปรด"
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "สำหรับสามปีที่ต่อเนื่อง BetOnMarkets.com ได้รับคัดเลือกจากคะแนนนิยมกับตำแหน่ง 'Best Fixed-Odds Financial Trading Provider' โดย Shares Magazine UK ซึ่งเป็นครั้งสุดท้ายที่ชนะ เนื่องจาก Shares Magazine ยุติการให้รางวัลในหมวดนี้หลังจากนั้น"
@@ -3323,9 +3300,6 @@ msgstr "จะอ่านตารางข้างต้นอย่างไ
 msgid "How to trade binary options?"
 msgstr "จะซื้อขายไบนารีออปชั่นอย่างไร?"
 
-msgid "How to trade spreads?"
-msgstr "เทรดสเปรดอย่างไร?"
-
 msgid "How to trade the Volatility Indices markets?"
 msgstr "จะเทรดดัชนีผันผวนอย่างไร?"
 
@@ -3340,6 +3314,11 @@ msgstr "ฝ่ายบุคคล"
 
 msgid "Hundreds of deposit and withdrawal options."
 msgstr "มีวิธีการฝากเงินและถอนเงินหลากหลายวิธี"
+
+#, fuzzy
+#| msgid "I declare I am not a Foreign Politically Exposed Person."
+msgid "I acknowledge that I am not a politically exposed person (PEP)."
+msgstr "ข้าพเจ้าแสดงเจตนารมณ์ ข้าพเจ้าไม่ใช่บุคคลที่เกี่ยวกับการเมืองในต่างประเทศ"
 
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "ข้าพเจ้ายินยอมว่า ข้าพเจ้าจะซื้อขายไบนารีออปชั่นโดยตรงโดยใช้การตัดสินใจของตัวเองและรับผิดชอบต่อผลขาดทุนซึ่งอาจจะเกิดขึ้นในธุรกรรม และอยู่ในขอบเขตที่ยอมรับได้ตามผลรวมของสินทรัพย์ทางการเงินของข้าพเจ้า"
@@ -3356,8 +3335,10 @@ msgstr "ฉันลืมรหัสผ่าน ฉันจะทำอย�
 msgid "I have a Real Money Account"
 msgstr "ฉันมีบัญชีเงินจริง"
 
-msgid "I have read and agree to the"
-msgstr "ฉันได้อ่านและยอมรับ"
+#, fuzzy
+#| msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
+msgid "I have read and agree to the %1terms and conditions%2 of the site."
+msgstr "ฉันได้อ่านและยอมรับ <a target=\"_blank\" href=\"%1\">ข้อตกลงและเงื่อนไข</a> ของเว็บไซต์แล้ว"
 
 msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgstr "ฉันได้อ่านและยอมรับ <a target=\"_blank\" href=\"%1\">ข้อตกลงและเงื่อนไข</a> ของเว็บไซต์แล้ว"
@@ -3461,9 +3442,8 @@ msgstr "หากท่านมีความประสงค์ใด เ�
 msgid "If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:"
 msgstr "หากท่านซื้อ <strong>1 สัญญาของดัชนี Volatility 100</strong> ที่ <strong>ราคา US&#36 20,000</strong> และ <strong>อัตรามาร์จินที่ 0.01(1%)</strong>การคำนวณมาร์จินของการซื้อเป็นดังนี้:"
 
-#, fuzzy
 msgid "If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:"
-msgstr "หากท่านซื้อ <strong>EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:"
+msgstr "หากท่านซื้อ <strong>หนึ่งชุดของ EUR/USD</strong> ด้วย<strong>สัญญามูลค่า 100,000</strong> และ <strong>เลเวอเลจที่ 100:1</strong> การคำนวณมาร์จินต่อหนึ่งชุดนั้น ทำได้ดังนี้:"
 
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "หากท่านเลือกซื้อขายสัญญากับเรา ซึ่งมีความสำคัญที่ท่านจะตระหนักในความเสี่ยงที่เกี่ยวข้อง ท่านมีแหล่งข้อมูลการลงทุนที่เพียงพอเพื่อเข้าใจในความเสี่ยงดังกล่าว ที่ท่านควรพิจารณาสังเกตการณ์อย่างใกล้ชิด"
@@ -3591,8 +3571,6 @@ msgstr "หากท่านต้องการทราบข้อมูล
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "หากท่านต้องการแจ้งข้อปรับปรุง หรือร้องทุกข์เกี่ยวกับบริการของเรา โปรดติดต่อเราและให้รายละเอียดที่เกี่ยวข้องกับเหตุการณ์ที่ท่านพบ เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน เวลาที่ใช้ในการดำเนินการตามปกติ คือ ประมาณ 1-2 สัปดาห์ (และมากที่สุด คือ 2 เดือน) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
 
-#, fuzzy
-#| msgid "If you would like to file a complaint with regards to the margin trading service described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgstr "หากท่านต้องการแจ้งข้อปรับปรุง หรือร้องทุกข์เกี่ยวกับบริการซื้อขายมาร์จินของเราที่กำหนดในข้อตกลงนี้ โปรดติดต่อเราและให้รายละเอียดที่เกี่ยวข้องกับเหตุการณ์ที่ท่านพบ เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน เวลาที่ใช้ในการดำเนินการตามปกติ คือ ประมาณ 1-2 สัปดาห์ (และมากที่สุด คือ ภายใน 2 เดือน) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
 
@@ -4456,8 +4434,14 @@ msgstr "สำนักงานกัวลาลัมเปอร์"
 msgid "L. Event of Default"
 msgstr "L. กรณีเพิกเฉยต่อสัญญา"
 
+msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
+msgstr "โครงการสอนภาษาเพื่อผู้ลี้ภัย (Language Classes for Refugees: LCFR) เป็นโปรแกรมด้านการศึกษาเพื่อผู้ลี้ภัยที่ดำเนินการโดย 'Love & Respect Transformation Centre' คือ กิจการเพื่อสังคมที่พัฒนาการศึกษาที่มีคุณภาพในระยะยาว โปรแกรมนี้ดำเนินการสอนภาษาอังกฤษ ภาษาบาฮาซา มาเลเซีย และภาษาฝรั่งเศส เพื่อกลุ่มเด็ก เยาวชน กระทั่งวัยผู้ใหญ่ เพื่อให้เขาเหล่านั้นมีทักษะทางภาษา เพื่อทำให้เขาสามารถประกอบอาชีพในระหว่างที่รอส่งตัวกลับประเทศ"
+
 msgid "Languages"
 msgstr "ภาษา"
+
+msgid "Languages Classes for Refugees (LCFR)"
+msgstr "โครงการสอนภาษาเพื่อผู้ลี้ภัย (Language Classes for Refugees: LCFR)"
 
 msgid "Last Digit Prediction"
 msgstr "การพยากรณ์ตัวเลขสุดท้าย"
@@ -4488,9 +4472,6 @@ msgstr "เรียนเพิ่มเติม"
 
 msgid "Learn more about our corporate culture"
 msgstr "เรียนรู้เพิ่มเติมเกี่ยวกับวัฒนธรรมองค์กรของเรา"
-
-msgid "Learn more about spreads on %1."
-msgstr "เรียนรู้เพิ่มเติมเกี่ยวกับสเปรดของ %1"
 
 msgid "Learn the basics, from choosing your asset to winning your payout."
 msgstr "เรียนรู้หลักการพื้นฐานจากการกำหนดสินทรัพย์ของท่านเพื่อทำกำไร"
@@ -4581,7 +4562,7 @@ msgstr ""
 
 #, fuzzy
 msgid "Limit/Limit Price &mdash; The price specified in your Limit Order."
-msgstr "Limit / Limit Price - The price specified in your Limit Order."
+msgstr "Limit / Limit Price - ราคาที่ระบุในคำสั่งซื้อของท่าน"
 
 msgid "Limitations on Liability"
 msgstr "ข้อจำกัดของหนี้สิน"
@@ -4815,34 +4796,34 @@ msgid "Maximum account cash balance"
 msgstr "มูลค่าสูงสุดของบัญชีเงินสด"
 
 msgid "Maximum aggregate contract purchases over a 30-day period."
-msgstr "มูลค่าสัญญารวมมากที่สุดที่ซื้อเกินกว่าระยะเวลา 30 วัน"
+msgstr "มูลค่าสัญญารวมสูงสุดที่ซื้อในระยะเวลา 30 วัน"
 
 msgid "Maximum aggregate contract purchases over a 7-day period."
-msgstr "มูลค่าสัญญารวมมากที่สุดที่ซื้อเกินกว่าระยะเวลา 7 วัน"
+msgstr "มูลค่าสัญญารวมสูงสุดที่ซื้อในระยะเวลา 7 วัน"
 
 msgid "Maximum aggregate contract purchases per day."
-msgstr "มูลค่าสัญญารวมมากที่สุดที่ซื้อต่อวัน"
+msgstr "มูลค่าสัญญารวมสูงสุดที่ซื้อต่อวัน"
 
 msgid "Maximum aggregate loss over a 30-day period."
-msgstr "มูลค่ารวมที่ขาดทุนมากที่สุดที่เกินกว่าระยะเวลา 30 วัน"
+msgstr "มูลค่ารวมที่ขาดทุนสูงสุดในระยะเวลา 30 วัน"
 
 msgid "Maximum aggregate loss over a 7-day period."
-msgstr "มูลค่ารวมที่ขาดทุนมากที่สุดที่เกินกว่าระยะเวลา 7 วัน"
+msgstr "มูลค่ารวมที่ขาดทุนสูงสุดในระยะเวลา 7 วัน"
 
 msgid "Maximum aggregate loss per day."
-msgstr "มูลค่ารวมที่ขาดทุนมากที่สุดต่อวัน"
+msgstr "มูลค่ารวมที่ขาดทุนสูงสุดต่อวัน"
 
 msgid "Maximum aggregate payouts on open positions"
-msgstr "มูลค่าการชำระเงินรวมที่มากที่สุดของโพซิชั่นที่เปิด"
+msgstr "มูลค่าการชำระเงินรวมสูงสุดของโพซิชั่นที่เปิด"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
-msgstr "มูลค่าการชำระเงินรวมที่มากที่สุดของโพซิชั่นที่เปิดต่อสัญลักษณ์และประเภทของสัญญา"
+msgstr "มูลค่าการชำระเงินรวมสูงสุดของโพซิชั่นที่เปิดต่อสัญลักษณ์และประเภทของสัญญา"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
 msgstr "การชำระเงินสูงสุดของโพซิชันที่เปิดอยู่ต่อสัญลักษณ์และประเภทของสัญญา วงเงินนี้สามารถขยายไปถึงวงเงินทั้งหมดของการชำระเงิน หากไม่มีโพซิชันที่เปิดอยู่ก่อนหน้านี้"
 
 msgid "Maximum daily turnover"
-msgstr "มูลค่าการซื้อขายรายวันที่มากที่สุด"
+msgstr "มูลค่าการซื้อขายสูงสุดรายวัน"
 
 msgid "Maximum number of open positions"
 msgstr "จำนวนสูงสุดของโพซิชั่นที่เปิด"
@@ -5138,6 +5119,9 @@ msgstr "ขณะนี้"
 msgid "Number of ticks"
 msgstr "จำนวนของช่วงราคา"
 
+msgid "Number of ticks:"
+msgstr "จำนวนของช่วงราคา:"
+
 msgid "O. Representations and Warranties"
 msgstr "O. การเป็นตัวแทนและการรับรอง"
 
@@ -5340,10 +5324,8 @@ msgstr "อื่นๆ"
 msgid "Our Company"
 msgstr "บริษัทฯ ของเรา"
 
-#, fuzzy
-#| msgid "The Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. Your commission will be credited to your affiliate account within fifteen days after the close of a calendar month."
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
-msgstr "โปรแกรมพันธมิตรมีการชำระเงินตรงเวลาทุกครั้ง ตั้งแต่การเปิดตัวอย่างเป็นทางการครั้งแรกเมื่อเดือนมีนาคม พ.ศ. 2547 (ค.ศ. 2004) ค่านายหน้าของท่านจะถูกโอนเข้าในบัญชีของท่านภายใน 15 วัน หลังจากวันสิ้นเดือนตามปฏิทิน"
+msgstr "โปรแกรมพันธมิตรสากลของเรามีกำหนดการชำระเงินตรงเวลาทุกครั้ง ตั้งแต่การเปิดตัวอย่างเป็นทางการครั้งแรกเมื่อเดือนมีนาคม พ.ศ. 2547 (ค.ศ. 2004) ในประเทศญี่ปุ่น ค่านายหน้าของท่านจะถูกโอนเข้าในบัญชีพันธมิตรของท่านภายใน 30 วัน หลังจากวันสิ้นเดือนตามปฏิทินที่มีผู้ถูกแนะนำของท่านได้ปฏิบัติครบตามเงื่อนไข"
 
 msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how Binary.com executes orders on behalf of our clients."
 msgstr ""
@@ -5400,7 +5382,7 @@ msgid "Our site does not charge any transfer fees."
 msgstr "ระบบของเราไม่เรียกเก็บค่าธรรมเนียมใดๆ ในการโอน"
 
 msgid "Our swap rate may also be adjusted to take holidays into account."
-msgstr ""
+msgstr "อัตราการเปลี่ยนแปลงในอัตราดอกเบี้ย (Swap Rate) ของเราอาจมีการปรับปรุงในบัญชีเมื่อมีการเรียกใช้ในช่วงวันหยุด"
 
 msgid "Our track-record"
 msgstr "บันทึกการติดตามของพวกเรา"
@@ -5455,6 +5437,11 @@ msgstr "กรรมสิทธิ์ เนื้อหา และควา�
 
 msgid "P. Indemnification"
 msgstr "P. ค่าสินไหมทดแทน"
+
+#, fuzzy
+#| msgid "Explanation"
+msgid "PEP Declaration"
+msgstr "คำอธิบาย"
 
 msgid "PM"
 msgstr "น."
@@ -5525,10 +5512,8 @@ msgstr "จำนวนเงินที่ได้รับชำระ"
 msgid "Pension"
 msgstr "บำนาญ"
 
-#, fuzzy
-#| msgid "Retracement Percentages"
 msgid "Percentage"
-msgstr "ร้อยละของการปรับฐาน"
+msgstr "ร้อยละ"
 
 msgid "Period"
 msgstr "ระยะเวลา"
@@ -5588,18 +5573,13 @@ msgid "Please %1 to view this page"
 msgstr "โปรด %1 เพื่อเรียกดูหน้านี้"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
-msgstr ""
-
-msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
-msgstr ""
+msgstr "โปรด %1ยอมรับข้อตกลงและเงื่อนไข%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
 
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
-msgstr ""
+msgstr "โปรด %1ปรับปรุงประวัติของท่าน%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
 
-#, fuzzy
-#| msgid "Please accept the terms and conditions."
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
-msgstr "โปรดยอมรับข้อตกลงและเงื่อนไข"
+msgstr "โปรด <a href=\"%1\">ยอมรับข้อตกลงและเงื่อนไข</a>"
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "โปรด <a href=\"%1\">ฝากเงิน</a> ก่อนทำการโอนให้ลูกค้า"
@@ -5622,10 +5602,8 @@ msgstr "โปรดตรวจสอบอีเมล์ของท่าน
 msgid "Please choose which currency you would like to transact in."
 msgstr "โปรดระบุสกุลเงินที่ท่านต้องการ"
 
-#, fuzzy
-#| msgid "Please complete the following financial assessment form before continuing."
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
-msgstr "โปรดบันทึกผลการประเมินทางการเงินของท่านในแบบฟอร์มต่อไปนี้ ก่อนการดำเนินการต่อไป"
+msgstr "โปรดบันทึกผล %1แบบฟอร์มการประเมินทางการเงิน%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
 
 msgid "Please complete the tax information before proceeding."
 msgstr "โปรดบันทึกข้อมูลภาษีของท่านก่อนการดำเนินการต่อไป"
@@ -5711,6 +5689,15 @@ msgstr "โปรดระบุค่าอย่างน้อยหนึ่
 msgid "Please select the checkbox."
 msgstr "โปรดระบุค่าจากตัวเลือก"
 
+msgid "Please set %1country of residence%2 before upgrading to a real-money account."
+msgstr "โปรดตั้งค่า %1ประเทศที่พำนัก%2 ก่อนอัพเกรดเป็นบัญชีจริง"
+
+msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
+msgstr "โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก %1ตัวเลือกพักการซื้อขาย%2 เพื่อลบวงเงินการฝากเงิน"
+
+msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+msgstr "โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก <a href=\"%1\">ตัวเลือกพักการซื้อขาย</a> เพื่อเข้าใช้งาน"
+
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "โปรดระบุช่วงเวลาการตรวจสอบสภาพความเป็นจริงที่ท่านต้องการเป็นหน่วยนาทีที่จะเกิดขึ้นจริงระหว่างการซื้อขาย"
 
@@ -5722,9 +5709,6 @@ msgstr "โปรดส่งข้อมูลข้างต้นมาที
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr ""
-
-msgid "Points"
-msgstr "จุด"
 
 msgid "Poland"
 msgstr "โปแลนด์"
@@ -5758,9 +5742,6 @@ msgstr "ประมาณการกำไร"
 
 msgid "Potential profit"
 msgstr "ประมาณการกำไร"
-
-msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
-msgstr "ประมาณการกำไรและขาดทุนซึ่งถูกกำหนดโดยระดับการหยุดกำไรและขาดทุนตามลำดับ"
 
 msgid "Power & simplicity"
 msgstr "ความเรียบง่ายและพลัง"
@@ -5888,9 +5869,6 @@ msgstr "ตารางกำไร"
 msgid "Profit/Loss"
 msgstr "กำไร/ขาดทุน"
 
-msgid "Profit/Loss (points)"
-msgstr "กำไร/ขาดทุน (จุด)"
-
 msgid "Prohibited Trades"
 msgstr "การซื้อขายต้องห้าม"
 
@@ -6004,10 +5982,8 @@ msgstr "อ่านคำตอบของคำถามพื้นฐาน
 msgid "Real Account"
 msgstr "บัญชีจริง"
 
-#, fuzzy
-#| msgid "Binary Options Real Account - Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
 msgid "Real Account &mdash; Your real money account opened with Binary.com's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
-msgstr "Binary Options Real Account - บัญชีเงินจริงของท่านที่เปิดกับ Binary.com ซึ่งท่านใช้ในการซื้อขายไบนารีออปชั่นกับ Binary.com"
+msgstr "บัญชีจริง &mdash; บัญชีเงินจริงของท่านที่เปิดกับ Binary.com แพลตฟอร์มการซื้อขาย MT5 ที่ได้รับการรับรองจาก MetaQuotes Software Corporation"
 
 msgid "Real Cent"
 msgstr "เงินจริง"
@@ -6318,6 +6294,9 @@ msgstr ""
 msgid "Select market"
 msgstr "กำหนด ตลาด"
 
+msgid "Select market:"
+msgstr "กำหนดตลาด:"
+
 msgid "Select your market"
 msgstr "กำหนด ตลาดของท่าน"
 
@@ -6334,7 +6313,7 @@ msgid "Self-Employed"
 msgstr "อาชีพอิสระ"
 
 msgid "Self-Exclusion Facilities"
-msgstr "เครื่องมือสำหรับการพักตัวเอง"
+msgstr "เครื่องมือสำหรับพักการซื้อขาย"
 
 msgid "Self-employed"
 msgstr "อาชีพอิสระ"
@@ -6550,12 +6529,6 @@ msgstr "เวลาสปอต"
 msgid "Spot price"
 msgstr "ราคาสปอต"
 
-msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
-msgstr "การชำระเงินของสัญญาสเปรดเป็นไปตามการเคลื่อนไหวของดัชนีที่เกี่ยวข้องกันเมื่อจุดเริ่มต้นของสัญญา"
-
-msgid "Spreads"
-msgstr "สเปรด"
-
 msgid "Stake"
 msgstr "วางเงิน"
 
@@ -6631,9 +6604,6 @@ msgstr "ประสบการณ์ในการซื้อขายหล
 msgid "Stocks trading frequency"
 msgstr "ความถี่ในการซื้อขายหลักทรัพย์ต่างๆ"
 
-msgid "Stop Loss Level"
-msgstr "ระดับการระงับการขาดทุน"
-
 msgid "Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
 msgstr ""
 
@@ -6643,20 +6613,8 @@ msgstr "ระดับยุติการซื้อขาย"
 msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr ""
 
-msgid "Stop Profit Level"
-msgstr "ระดับการระงับกำไร"
-
 msgid "Stop and Limit Orders"
 msgstr "คำสั่งยุติและคำสั่งจำกัดคำสั่งซื้อ"
-
-msgid "Stop-loss"
-msgstr "ระงับขาดทุน"
-
-msgid "Stop-profit"
-msgstr "ล็อคกำไร"
-
-msgid "Stop-type"
-msgstr "ประเภทของการระงับ"
 
 msgid "Storage of Content"
 msgstr "ที่พักของข้อมูล"
@@ -7054,7 +7012,9 @@ msgstr "โปรแกรม"
 msgid "The STP account provides you with the tightest spreads and connects you directly to the market."
 msgstr "บัญชี STP ทำให้ท่านมีสเปรดที่หนาแน่นและเชื่องโยงท่านสู่ตลาดได้โดยตรง"
 
-msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+#, fuzzy
+#| msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr "Shelter Community Learning Centre 3 คือ กลุ่มชุมชนโรงเรียนสำหรับเด็กๆ ผู้ลี้ภัยชาวพม่า ที่รอคอยการถูกส่งกลับประเทศเดิมกับครอบครัวของเขายังประเทศโลกที่ 3 โรงเรียนมีเป้าหมายเพื่อให้การศึกษากับกลุ่มเด็กเหล่านี้ ผู้ซึ่งด้อยโอกาส เพื่อให้เขามีแนวทางในการดำเนินชีวิตในอนาคต"
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
@@ -7107,9 +7067,6 @@ msgstr "การโอนบัญชีไม่สามารถทำได
 
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "โปรแกรมพันธมิตรทำให้ท่านได้รับผลประโยชน์จากการแนะนำลูกค้ามาที่เว็บไซต์ การเติบโตและความสำเร็จที่แบ่งสรรปันส่วนซึ่งกันและกันกับผู้ที่มีความสามารถในการหาลูกค้าใหม่ๆ ให้กับเว็บไซต์"
-
-msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
-msgstr "จำนวนกำไร/ขาดทุนต่อจุดของการขึ้น/ลงคูณด้วยจำนวนต่อจุด มูลค่าที่มากจะส่งผลต่อกำไร/ขาดทุนต่อจุดต่อการเคลื่อนไหวของดัชนี"
 
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "กระบวนการป้องกันและปราบปรามการฟอกเงินมีผลกระทบต่อไปนี้กับลูกค้า:"
@@ -7186,15 +7143,6 @@ msgstr "วิธีที่ง่ายที่สุดในการเร
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "อีเมล์ของท่านถูกลงทะเบียนไว้กับผู้ใช้งานอีกบัญชีหนึ่ง หากท่านลืมรหัสผ่านของบัญชีที่ท่านมีอยู่ โปรด <a href=\"%1\">เรียกใช้การกู้คืนรหัสผ่าน</a> หรือ ติดต่อเจ้าหน้าที่บริการลูกค้า"
 
-msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
-msgstr "ระดับเริ่มต้นของสัญญา long คือ 1001 ซึ่งเป็นสปอตเริ่มต้น + ครึ่งสเปรด ที่จุดสิ้นสุดที่ 1100 และระดับสุดท้ายของสัญญา long จะเป็น 1099 ซึ่งเป็นสปอตสุดท้าย - ครึ่งสเปรด"
-
-msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
-msgstr "ระดับเริ่มต้นของสัญญา short คือ 999 ซึ่งเป็นสปอตเริ่มต้น - ครึ่งสเปรด ที่จุดสิ้นสุดที่ 1100 และระดับสุดท้ายของสัญญา short จะเป็น 1101 ซึ่งเป็นสปอตสุดท้าย + ครึ่งสเปรด"
-
-msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
-msgstr "จุดเริ่มต้นของเครื่องมือ XYZ คือ 1000 และช่วงเพิ่มขึ้นครั้งละ 2 จุด"
-
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "ราคาสปอตเริ่มต้น คือ ราคาเริ่มต้นของการเริ่มซื้อขายโดยผู้เทรด"
 
@@ -7249,9 +7197,6 @@ msgstr "ระดับของการป้องกันขึ้นกั
 msgid "The leverage ratio refers to the number of times your margin (the amount set aside from your account balance to open and maintain a transaction) can be \"leveraged\" to enter into a Transaction. The denominator of the leverage ratio is always 1. A 50:1 leverage is equivalent to a 2% margin requirement (1 divided by 50 = 2%). The leverage ratio that we/you establish will determine the amount of margin required. As leverage is inversely proportional to margin, the lower the leverage you set for your Account, the higher the margin required to be set aside from your account balance (your margin requirement)."
 msgstr ""
 
-msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "การขาดทุน 306 เหรียญสหรัฐ เป็นผลจากความแตกต่างของระดับปิดและระดับเริ่มต้น คูณด้วยจำนวนต่อหน่วย"
-
 msgid "The main password of account number %1 has been changed."
 msgstr "รหัสผ่านหลักของเลขที่บัญชี %1 ได้มีการเปลี่ยนแปลงแล้ว"
 
@@ -7303,9 +7248,6 @@ msgstr "แพลตฟอร์มปฐมฤกษ์สำหรับกา
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "กำไรคือความแตกต่างของราคาซื้อ (ที่วางเงิน) และการชำระเงินเมื่อท่านชนะการซื้อขาย"
 
-msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr "กำไรจำนวน 294 เหรียญสหรัฐ เป็นมูลค่าความแตกต่างระหว่างราคาเริ่มต้นและราคาสุดท้ายที่คูณด้วยจำนวนต่อหน่วย"
-
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr ""
 
@@ -7332,9 +7274,6 @@ msgstr "อัลกอริธึ่มการทำให้เรียบ
 
 msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "เงินเดิมพัน คือ จำนวนเงินที่ผู้ทำการซื้อขายต้องชำระเพื่อเริ่มการซื้อขาย"
-
-msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
-msgstr "การหยุดภาวะขาดทุน และ การหยุดการทำกำไรได้รับการรับรอง ขาดทุนและกำไรถูกจำกัดในการหยุดภาวะขาดทุน และ การหยุดการทำกำไรตามลำดับ เมื่อระดับสุดท้ายแต่ที่จุดหยุดภาวะขาดทุน หรือ หยุดการทำกำไร สัญญาจะถูกปิดที่ระดับของการหยุดภาวะขาดทุน หรือ การหยุดการทำกำไร"
 
 msgid "The swap rate will depend on the direction of the position you take:"
 msgstr ""
@@ -7551,7 +7490,9 @@ msgstr "เว็ยไซต์นี้มีลิงค์ไปยังเ
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "เว็บไซต์นี้ไม่มีการเก็บข้อมูลส่วนบุคคลของท่านนอกจากข้อมูลที่ท่านได้รับทราบว่า เป็นข้อมูลเจาะจงที่ขอจากท่านโดยตรง มีการใช้เทคโนโลยีที่เรียกว่า \"คุกกี้\" ในการติดตามข้อมูลจากทางเว็บไซต์ คุกกี้เป็นส่วนหนึ่งของข้อมูลที่เว็บไซต์หนึ่งๆ สามารถส่งให้กับเบราเซอร์ของท่าน และอาจจะถูกเก็บในระบบของท่าน ท่านอาจจะตั้งค่าเบราเซอร์ของท่านให้แจ้งเมื่อท่านได้รับคุกกี้ใดๆ ศึ่งช่วยให้ท่านมีโอกาสตัดสินใจจะยอมรับหรือปฏิเสธคุกกี้นั้น หากท่านไม่รับคุกกี้ ท่านจะต้องบันทึกรหัสผู้ใช้งานอละรหัสผ่านครั้งแล้วครั้งเล่าเมื่อมีการเรียกแบบฟอร์มที่ต้องการคุกกี้จากเครื่องของท่าน ท่านได้รับข้อแนะนำให้ปฏิบัติตามทางเลือกดังกล่าว หากท่านมีข้อสงสัยเกี่ยวกับความปลอดภัยของเบราเซอร์ของท่าน หรือ เครื่องคอมพิวเตอร์ของท่าน"
 
-msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+#, fuzzy
+#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "เว็บไซต์นี้ใช้สำหรับประเทศสหราชอาณาจักรและเกาะ  Isle of Man โดยบริษัท Binary (IOM) Ltd. ตั้งอยู่ที่ ชั้น 1 อาคาร Millennium House ถนน Victoria เขต Douglas IM2 4RW บนเกาะ Isle of Man ในบริติชไอลส์ โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Gambling Supervision Commission บนเกาะ Isle of Man ในบริติชไอลส์ ใบอนุญาตสำหรับผลิตภัณฑ์การเสี่ยงโชคออนไลน์ได้รับเมื่อ 31 สิงหาคม 2555 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission - <a href='%1' target='_blank'>คลิกดูใบอนุญาต</a> เว็บไซต์นี้ใช้สำหรับประเทศในกลุ่มยุโรป สำหรับผลิตภัณฑ์การลงทุนต่างๆ โดยบริษัท  Binary Investments (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ในหมวดที่ 3 ของผู้ให้บริการการลงทุนโดยหน่วยงาน Malta Financial Services Authority (ใบอนุญาตเลขที่ IS/70156) และสำหรับผลิตภัณฑ์การพนัน โดยบริษัท Binary (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา ได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Malta Gaming Authority ประเทศมอลตา ใบอนุญาตเลขที่ MGA/CL2/118/2000 ได้รับเมื่อ 26 พฤษภาคม 2553 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission - <a href='%2' target='_blank'>คลิกดูใบอนุญาต</a> และสำหรับลูกค้าในประเทศไอร์แลนด์ได้รับใบอนุญาตจาก (3) Revenue Commissioners ประเทศไอร์แลนด์ ได้รับใบอนุญาตเมื่อ 29 กันยายน 2558 (ใบอนุญาตเลขที่ 1010285) อนึ่ง เว็บไซต์นี้ไม่เปิดให้บริการในประเทศต่อไปนี้ สหรัฐอเมริกา คอสตาริกา ฮ่องกง และรวมถึงบุคคลที่อายุต่ำกว่า 18 ปี"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
@@ -7578,20 +7519,14 @@ msgstr "เวลา"
 msgid "Time is in the wrong format."
 msgstr "เวลาอยู่ในรูปแบบที่ไม่ถูกต้อง"
 
-#, fuzzy
-#| msgid "Expiry time cannot be in the past."
 msgid "Time out cannot be in the past."
-msgstr "เวลาที่หมดอายุไม่สามารถเป็นเวลาในอดีต"
+msgstr "ช่วงเวลาที่ใช้อ้างอิงไม่สามารถเป็นเวลาในอดีต"
 
-#, fuzzy
-#| msgid "Session duration limit cannot be more than 6 weeks."
 msgid "Time out cannot be more than 6 weeks."
-msgstr "รอบระยะเวลาการซื้อขายไม่สามารถมากกว่า 6 สัปดาห์"
+msgstr "ช่วงระยะเวลาอ้างอิงไม่สามารถมากกว่า 6 สัปดาห์"
 
-#, fuzzy
-#| msgid "Exclude time must be after today."
 msgid "Time out must be after today."
-msgstr "เวลาพักต้องเริ่มพรุ่งนี้"
+msgstr "ช่วงเวลาอ้างอิงต้องเริ่มในวันพรุ่งนี้"
 
 msgid "Time out until"
 msgstr "หมดเวลากระทั่ง"
@@ -7987,7 +7922,7 @@ msgid "Use the opportunity provided by our website to practice for free with our
 msgstr "ใช้โอกาสที่มีในเว็บของพวกเราเพื่อเรียนรู้ให้เกิดความชำนาญโดยไม่ต้องลงทุนลงเงินจากบัญชีทดลองใช้งาน จะทำให้ท่านมีความคุ้นเคยกับการทำงานต่างๆ และหลักการในเว็บไซต์"
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
-msgstr ""
+msgstr "ใช้แพลตฟอร์มเว็บ ไม่ว่า วินโดว์ แมคโอเอส หรือ ลินุกซ์ โดยไม่ต้องดาวน์โหลดหรือติดตั้งโปรแกรมใดๆ"
 
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "ใช้ ดำเนินการ และแสดงแอพพลิเคชันของท่าน และเนื้อหาเพื่อวัตถุประสงค์ทางการตลาด การสาธิต และให้ลูกค้าของเราได้ใช้งานแอพพลิเคชัน และ    "
@@ -8129,6 +8064,9 @@ msgstr "พวกเราเสนอโครงสร้างการมอ
 
 msgid "We analyse your pending orders."
 msgstr "พวกเราวิเคราะห์คำสั่งซื้อที่ค้างอยู่ของท่าน"
+
+msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
+msgstr "พวกเราเตรียมพร้อมสำหรับองค์กรการกุศลขนาดเล็ก องค์กรท้องถิ่น ซึ่งพวกเราสามารถเป็นส่วนหนึ่งในการบริจาคให้โดยตรง หากท่านต้องการพูดคุยกับเราเกี่ยวกับการขอการสนับสนุนองค์กรของท่าน โปรดติดต่อเราที่ %1"
 
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "พวกเราได้รับอนุญาตและรับรองโดย Malta Financial Services Authority (\"MFSA\") ภายใต้ พระราชบัญญัติการบริการการลงทุน (Cap. 370, Laws of Malta) (\"พระราชบัญญัติ\") เพื่อขับเคลื่อนธุรกิจการลงทุน พวกเราได้รับอนุญาตจาก MFSA เพื่อบริหารบัญชีของลูกค้า (เช่น จัดหาบริการและเป็นตัวแทนในการซื้อขาย) และเพื่อจัดการคำสั่งซื้อในนามผู้อื่น ทั้งสองบริการสัมพันธ์กับผลิตภัณฑ์อนุพันธ์ทางการเงิน (ไบนารีออปชั่นแรกเริ่ม) ที่เกี่ยวกับการแลกเปลี่ยนเงินตราต่างประเทศ ดัชนีต่างๆ หลักทรัพย์ และ ผลิตภัณฑ์ทางการเงินอื่นๆ หรือ สินทรัพย์ (\"ผลิตภัณฑ์ทางการเงิน\") พวกเราไม่ได้รับอนุญาตในการให้บริการ หรือ ให้คำแนะนำการลงทุน หรือ บริการการลงทุนอื่นๆ นอกเหนือจากที่กล่าวข้างต้น หากท่านต้องการคำแนะนำการลงทุน หรือ บริการการลงทุนด้านอื่น ท่านสามารถติดต่อผู้ให้คำปรึกษาทางการเงินอิสระ หรือ บริษัทฯ ที่ปรึกษาทางการเงิน"
@@ -8346,7 +8284,7 @@ msgid "What our clients are saying"
 msgstr "ลูกค้าของเราพูดถึงเราอย่างไรบ้าง"
 
 msgid "What's a margin call and how do we apply it?"
-msgstr "Margin Call คืออะไร และจำต้องทำอย่างไรกับมัน?"
+msgstr "มาร์จินคอล (Margin Call) คืออะไร และจำต้องทำอย่างไรกับมัน?"
 
 msgid "What's a stop out level and how do we apply it?"
 msgstr "ระดับการระงับขาดทุน คืออะไร และเราจะทำอย่างไรกับมัน?"
@@ -8382,7 +8320,7 @@ msgid "When you trade with %1, you can be assured that your deposits are held in
 msgstr "เมื่อท่านซื้อขายกับ %1 ท่านสามารถประกันได้ว่าเงินฝากของท่านจะได้รับความไว้วางใจในการดูแลและไม่ถูกนำไปใช้เพื่อวัตถุประสงค์อื่น"
 
 msgid "When your account equity is unable to cover the margin requirement, your account will be placed under margin call. This state does not affect your ability to open new positions."
-msgstr ""
+msgstr "เมื่อทุนในบัญชีของท่านไม่เพียงพอตามข้อกำหนดของมาร์จิน บัญชีของท่านจะแปรสภาพใต้เงื่อนไข มาร์จินคอล หากแต่ภาวะดังกล่าวไม่มีผลต่อท่านในการเปิดโพซิชั่นใหม่"
 
 msgid "When, as a result of political, economic, military or monetary events (including unusual market volatility or illiquidity) or any circumstances outside the control, responsibility and power of the Company, the continued operation of this site is not reasonably practicable without materially and adversely affecting and prejudicing the interests of Clients or the Company, or if, in the opinion of the Company, a price cannot be calculated for financial contracts."
 msgstr "หากมีเหตุทางการเมือง เศรษฐกิจ การทหาร หรือ สถานการณ์ทางการเงินใดๆ (รวมถึงการผันผวนของตลาดที่ผิดปกติ หรือ ตลาดไม่มีสภาพคล่อง) หรือ เหตุการณ์อื่นที่อยู่เหนือการควบคุม เหนือความรับผิดชอบ หรือ จากการดำเนินการของบริษัทฯ ปฏิบัติการอย่างต่อเนื่องของเว็บไซต์นี้อาจมีการหยุดชะงักโดยปราศจากการสื่อสาร อาจส่งผลให้เกิดผลลบ หรือ ผลกระทบต่อกำไรขาดทุนของลูกค้า หรือ ต่อบริษัทฯ รวมถึงในกรณีใดๆ ที่ทำให้ระบบซื้อขายไม่สามารถคำนวณราคาของสัญญาทางการเงินได้"
@@ -8574,7 +8512,7 @@ msgid "Working closely with the Head of Compliance to implement Know your Client
 msgstr "ปฏิบัติงานอย่างใกล้ชิดร่วมกับหัวหน้าฝ่าย Compliance เพื่อดำเนินการตามหลักเกณฑ์ทั่วไปเกี่ยวกับการรู้จักลูกค้า (Know your Client: KYC), การฟอกเงิน (Anti-Money Laundering: AML) และกฏการป้องกันข้อมูล"
 
 msgid "Written limits and self-exclusion"
-msgstr "วงเงินและการพักที่แจ้งเป็นลายลักษณ์อักษร"
+msgstr "วงเงินและการพักการซื้อขายที่แจ้งเป็นลายลักษณ์อักษร"
 
 msgid "Year"
 msgstr "ปี"
@@ -8664,9 +8602,9 @@ msgid "You are not entitled to any compensation or reimbursement of any kind fro
 msgstr "ท่านไม่ได้รับสิทธิ์ในการได้รับค่าชดเชยใดๆ หรือ การชำระเงินคืนให้ในกรณีใดๆ จากบริษัทฯ ไม่ว่าสถานการณ์ใดๆ"
 
 #, fuzzy
-#| msgid "You are not resident in a restricted country such as the USA, Japan, Hong Kong, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, Iraq, or such other restricted country as the Company may decide from time to time at its sole discretion;"
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
-msgstr "ท่านไม่มีที่พำนัก หรือ มีถิ่นฐานในประเทศต่อไปนี้ สหรัฐอเมริกา ญี่ปุ่น ฮ่องกง คอสตาริก้า มาเลเซีย มอลตา อิหร่าน เกาหลีเหนือ เจอร์ซี อิรัก หรือ ประเทศอื่นๆ ที่ทางบริษัทฯ อาจจะมีการกำหนดในแต่ละครั้งตามดุลยพินิจของบริษัทฯแต่เพียงผู้เดียว"
+#| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgstr "ท่านไม่มีที่พำนัก หรือ มีถิ่นฐานในประเทศต่อไปนี้ อัฟกานิสถาน บอสเนีย และ เฮอเซโกวินา คอสตาริก้า และประเทศใดๆ ในสหภาพยุโรป สาธารณรัฐประชาชนลาว ซีเรีย ยูกานดา วานูอาตู เยเมน สหรัฐอเมริกา ญี่ปุ่น ฮ่องกง คอสตาริก้า มาเลเซีย มอลตา อิหร่าน เกาหลีเหนือ เจอร์ซี อิรัก หรือ ประเทศอื่นๆ ที่ทางบริษัทฯ อาจจะมีการกำหนดในแต่ละครั้งตามดุลยพินิจของบริษัทฯ แต่เพียงผู้เดียว"
 
 msgid "You are over 18 years of age;"
 msgstr "ท่านอายุมากกว่า 18 ปี"
@@ -9158,9 +9096,6 @@ msgstr "ไอโอเอส เอนดรอย"
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
 msgstr ""
 
-msgid "is required. Current spread"
-msgstr "ต้องการสเปรดปัจจุบัน"
-
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "ระบบรองรับความเป็นสากล ด้วยส่วนเชื่อมต่อการใช้งานในภาษาต่างๆ ได้แก่ ภาษาอังกฤษ ภาษาสเปน ภาษาฝรั่งเศา ภาษาเยอรมัน ภาษาโปรตุเกส ภาษาจีน ภาษาญี่ปุ่น ภาษาอิตาลี ภาษาไทย ภาษาโปแลนด์ ภาษารัสเซีย และภาษาอินโดนีเซีย"
 
@@ -9215,14 +9150,8 @@ msgstr ""
 msgid "numbers"
 msgstr "ตัวเลข"
 
-msgid "of the site."
-msgstr "ของเว็บไซต์"
-
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "หน้าสำหรับเวลาที่ใช้เป็นข้อตกลงสำหรับทุกสัญญา เว็บไซต์อื่นอาจใช้การกำหนดเวลาที่แตกต่างออกไป (เช่น บางเว็บไซต์ใช้เวลา 4.00 น. เวลานิวยอร์ก หรือ 5.00 น. เวลาลอนดอน) ทำให้ราคาเปิด สูง ต่ำ และ ราคาปิดที่แสดงในเว็บไซต์ของเราจะแตกต่างจากเว็บไซต์อื่นๆ เนื่องจากการกำหนดเวลาปิดของตลาด"
-
-msgid "points"
-msgstr "จุด"
 
 msgid "second"
 msgstr "วินาที"
@@ -9235,9 +9164,6 @@ msgstr "ช่องว่าง"
 
 msgid "sublicense any of the rights granted under these Terms, other than as permitted by these Terms;"
 msgstr "ใบอนุญาตย่อยใดๆ ที่ดำเนินการภายใต้เงื่อนไขข้อตกลงนี้ ยกเว้นที่อนุญาตโดยเงื่อนไขข้อตกลงนี้"
-
-msgid "terms and conditions"
-msgstr "ข้อตกลงและเงื่อนไข"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
 msgstr "ซึ่งโต้แย้งกับกฎหมายใดๆ หลักเกณฑ์ใดๆ เครื่องมือใดๆ กฤษฎีกา หรือ กฎที่กำกับการปฏิบัติการใดๆ ในการแลกเปลี่ยน ตลาดการเงิน หรือ องค์ภาวะที่บังคับทางการเงิน หรือ"
@@ -9302,8 +9228,6 @@ msgstr "ปี"
 msgid "years"
 msgstr "ปี"
 
-#, fuzzy
-#| msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgstr "ท่านไม่ได้มีที่พำนักในประเทศควบคุมต่อไปนี้ อัฟกานิสถาน บอสเนียและเฮอเซโกวินา คอสตาริกา ฮ่องกง อิหร่าน อิรัก เจอร์ซี สาธารณรัฐประชาชนลาว มาเลเซีย มอลตา เกาหลีเหนือ ซีเรีย ยูกานดา สหรัฐอเมริกา วานูอาตู หรือ เยเมน"
 
@@ -10968,6 +10892,118 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Account Limits"
 msgstr "วงเงินในบัญชี"
+
+#~ msgid "I have read and agree to the"
+#~ msgstr "ฉันได้อ่านและยอมรับ"
+
+#~ msgid "of the site."
+#~ msgstr "ของเว็บไซต์"
+
+#~ msgid "terms and conditions"
+#~ msgstr "ข้อตกลงและเงื่อนไข"
+
+#, fuzzy
+#~| msgid "Spreads"
+#~ msgid "read"
+#~ msgstr "สเปรด"
+
+#~ msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+#~ msgstr "สัญญาสเปรดของ %1 มีผลกับสัญญาอนุพันธ์ เป็นมูลค่าซึ่งขึ้นกับการเคลื่อนไหวของตลาดผลิตภัณฑ์อ้างอิงต่างๆ เมื่อลูกค้าทำกำไรตามการเคลื่อนไหวของตลาดโดย 'Long' ในตลาดขาขึ้น (และดำเนินการ 'Short' ในตลาดขาลง) จะมีมูลค่าน้อยกว่ามากเมื่อเทียบกับค่าในตลาดจริง"
+
+#~ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+#~ msgstr "สัญญาสเปรดของ %1 จำเป็นในการหยุดภาวะขาดทุน (Stop Loss) ซึ่งวงเงินขาดทุนมากที่สุดนั้นจะถูกกำหนดโดยลูกค้า จำนวนเงินที่เกิดขึ้นในการหยุดภาวะขาดทุนนั้นจะเหมือนจำนวนเงินที่ฝากเข้าและจะไม่ถูกใช้ในการซื้อขายครั้งถัดไปจนกระทั่งสัญญาสเปรดนั้นถูกปิดลง สัญญาสเปรดจะถูกปิดเมื่อลูกค้าทำการขายโดยใช้ภาวะ 'Stop Loss' หรือ 'Stop Profit' ตามลำดับ"
+
+#~ msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
+#~ msgstr "'<strong>Long</strong>' สัญญาซื้อ (Buy) สร้างกำไรเมื่อดัชนีขาขึ้นและขาดทุนเมื่อดัชนีร่วงลง"
+
+#~ msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
+#~ msgstr "'<strong>Short</strong>' สัญญาขาย (Sell) จะให้ผลขาดทุนเมื่อดัชนีเพิ่มขึ้นและสร้างกำไรเมื่อดัชนีร่วงลง"
+
+#~ msgid "Amount per point"
+#~ msgstr "จำนวนเงินต่อหน่วย"
+
+#~ msgid "Current Level"
+#~ msgstr "ระดับปัจจุบัน"
+
+#, fuzzy
+#~| msgid "Deposit of %1 %2 is required. Current spread: %3 points"
+#~ msgid "Deposit of %1 is required. Current spread: %2 points"
+#~ msgstr "การฝากเงินของ %1 %2 มีความจำเป็น สเปรตปัจจุบัน: %3 พอยต์"
+
+#~ msgid "Entry Level"
+#~ msgstr "ระดับเริ่มต้น"
+
+#~ msgid "Example:"
+#~ msgstr "ตัวอย่าง:"
+
+#~ msgid "Exit Level"
+#~ msgstr "ระดับสิ้นสุด"
+
+#~ msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
+#~ msgstr "สำหรับสัญญาระยะยาว ระดับเริ่มต้น คือ สปอตบวกด้วยครึ่งของสเปรด และระดับสิ้นสุด คือ สปอตลบด้วยครึ่งของสเปรด สำหรับสัญญาระยะสั้น ระดับเริ่มต้น คือ สปอตลบด้วยครึ่งของสเปรด และระดับสิ้นสุด คือ สปอตบวกด้วยครึ่งของสเปรด"
+
+#~ msgid "How to trade spreads?"
+#~ msgstr "เทรดสเปรดอย่างไร?"
+
+#~ msgid "Learn more about spreads on %1."
+#~ msgstr "เรียนรู้เพิ่มเติมเกี่ยวกับสเปรดของ %1"
+
+#~ msgid "Points"
+#~ msgstr "จุด"
+
+#~ msgid "Potential profit and losses are limited to stop profit and stop loss levels respectively."
+#~ msgstr "ประมาณการกำไรและขาดทุนซึ่งถูกกำหนดโดยระดับการหยุดกำไรและขาดทุนตามลำดับ"
+
+#~ msgid "Profit/Loss (points)"
+#~ msgstr "กำไร/ขาดทุน (จุด)"
+
+#~ msgid "Spread contracts payout based on the movement of the index relative to the entry level of the contract."
+#~ msgstr "การชำระเงินของสัญญาสเปรดเป็นไปตามการเคลื่อนไหวของดัชนีที่เกี่ยวข้องกันเมื่อจุดเริ่มต้นของสัญญา"
+
+#~ msgid "Stop Loss Level"
+#~ msgstr "ระดับการระงับการขาดทุน"
+
+#~ msgid "Stop Profit Level"
+#~ msgstr "ระดับการระงับกำไร"
+
+#~ msgid "Stop-loss"
+#~ msgstr "ระงับขาดทุน"
+
+#~ msgid "Stop-profit"
+#~ msgstr "ล็อคกำไร"
+
+#~ msgid "Stop-type"
+#~ msgstr "ประเภทของการระงับ"
+
+#~ msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
+#~ msgstr "จำนวนกำไร/ขาดทุนต่อจุดของการขึ้น/ลงคูณด้วยจำนวนต่อจุด มูลค่าที่มากจะส่งผลต่อกำไร/ขาดทุนต่อจุดต่อการเคลื่อนไหวของดัชนี"
+
+#~ msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
+#~ msgstr "ระดับเริ่มต้นของสัญญา long คือ 1001 ซึ่งเป็นสปอตเริ่มต้น + ครึ่งสเปรด ที่จุดสิ้นสุดที่ 1100 และระดับสุดท้ายของสัญญา long จะเป็น 1099 ซึ่งเป็นสปอตสุดท้าย - ครึ่งสเปรด"
+
+#~ msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
+#~ msgstr "ระดับเริ่มต้นของสัญญา short คือ 999 ซึ่งเป็นสปอตเริ่มต้น - ครึ่งสเปรด ที่จุดสิ้นสุดที่ 1100 และระดับสุดท้ายของสัญญา short จะเป็น 1101 ซึ่งเป็นสปอตสุดท้าย + ครึ่งสเปรด"
+
+#~ msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
+#~ msgstr "จุดเริ่มต้นของเครื่องมือ XYZ คือ 1000 และช่วงเพิ่มขึ้นครั้งละ 2 จุด"
+
+#~ msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "การขาดทุน 306 เหรียญสหรัฐ เป็นผลจากความแตกต่างของระดับปิดและระดับเริ่มต้น คูณด้วยจำนวนต่อหน่วย"
+
+#~ msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
+#~ msgstr "กำไรจำนวน 294 เหรียญสหรัฐ เป็นมูลค่าความแตกต่างระหว่างราคาเริ่มต้นและราคาสุดท้ายที่คูณด้วยจำนวนต่อหน่วย"
+
+#~ msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
+#~ msgstr "การหยุดภาวะขาดทุน และ การหยุดการทำกำไรได้รับการรับรอง ขาดทุนและกำไรถูกจำกัดในการหยุดภาวะขาดทุน และ การหยุดการทำกำไรตามลำดับ เมื่อระดับสุดท้ายแต่ที่จุดหยุดภาวะขาดทุน หรือ หยุดการทำกำไร สัญญาจะถูกปิดที่ระดับของการหยุดภาวะขาดทุน หรือ การหยุดการทำกำไร"
+
+#~ msgid "Deposit of"
+#~ msgstr "การฝากของ"
+
+#~ msgid "is required. Current spread"
+#~ msgstr "ต้องการสเปรดปัจจุบัน"
+
+#~ msgid "points"
+#~ msgstr "จุด"
 
 #~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 #~ msgstr "โปรดส่งเอกสารต่อไปนี้มายัง %1 เพื่อตรวจสอบตัวตนและยืนยันบัญชีของท่าน:"
@@ -15420,9 +15456,6 @@ msgstr "วงเงินในบัญชี"
 #, fuzzy
 #~ msgid "Delete for Breach"
 #~ msgstr "ลบสำหรับการฝ่าฝืน"
-
-#~ msgid "Deposit of %1 %2 is required. Current spread: %3 points"
-#~ msgstr "การฝากเงินของ %1 %2 มีความจำเป็น สเปรตปัจจุบัน: %3 พอยต์"
 
 #~ msgid "Email Verification"
 #~ msgstr "การตรวจสอบอีเมล์"

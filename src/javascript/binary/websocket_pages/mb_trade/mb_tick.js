@@ -1,3 +1,6 @@
+const MBDefaults      = require('./mb_defaults');
+const MBNotifications = require('./mb_notifications');
+
 /*
  * MBTick object handles all the process/display related to tick streaming
  *
@@ -111,16 +114,27 @@ const MBTick = (() => {
             end          : 'latest',
             count        : keep_number,
             subscribe    : 1,
-        });
+        }, { callback: processTickHistory });
     };
 
-    const processHistory = (res) => {
-        if (res.history && res.history.times && res.history.prices) {
-            for (let i = 0; i < res.history.times.length; i++) {
+    const processTickHistory = (response) => {
+        if (response.msg_type === 'tick') {
+            if (response.hasOwnProperty('error')) {
+                MBNotifications.show({ text: response.error.message, uid: 'TICK_ERROR' });
+                return;
+            }
+            const symbol = MBDefaults.get('underlying');
+            if (response.echo_req.ticks === symbol || (response.tick && response.tick.symbol === symbol)) {
+                MBTick.details(response);
+                MBTick.display();
+                MBTick.updateWarmChart();
+            }
+        } else if (response.history && response.history.times && response.history.prices) {
+            for (let i = 0; i < response.history.times.length; i++) {
                 details({
                     tick: {
-                        epoch: res.history.times[i],
-                        quote: res.history.prices[i],
+                        epoch: response.history.times[i],
+                        quote: response.history.prices[i],
                     },
                 });
             }
@@ -132,7 +146,6 @@ const MBTick = (() => {
         display        : display,
         updateWarmChart: updateWarmChart,
         request        : request,
-        processHistory : processHistory,
         quote          : ()  => quote,
         id             : ()  => id,
         epoch          : ()  => epoch,
@@ -149,6 +162,7 @@ const MBTick = (() => {
             });
         },
         displayPriceMovement: displayPriceMovement,
+        processTickHistory  : processTickHistory,
     };
 })();
 
