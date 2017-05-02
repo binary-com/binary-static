@@ -178,7 +178,7 @@ const MBProcess = (() => {
             return;
         }
 
-        window.chartAllowed = !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly');
+        State.set('is_chart_allowed', !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly'));
 
         checkMarketStatus(contracts.contracts_for.close);
 
