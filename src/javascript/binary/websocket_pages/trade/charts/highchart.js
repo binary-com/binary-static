@@ -469,7 +469,7 @@ const Highchart = (() => {
     // draw the last line, mark the exit tick, and forget the streams
     const endContract = () => {
         if (chart && !stop_streaming) {
-            drawLineX((userSold() ? (sell_time || sell_spot_time) : end_time), '', 'textLeft', 'Dash');
+            drawLineX((userSold() ? sell_time : end_time), '', 'textLeft', 'Dash');
             if (exit_tick_time) {
                 selectTick(exit_tick_time, 'exit');
             }
