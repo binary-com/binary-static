@@ -20,7 +20,7 @@
 [% END %]
 
 [% BLOCK last_name %]
-    [% INCLUDE form_row type='text' id='family_name' label=l('Last name')
+    [% INCLUDE form_row type='text' id='last_name' label=l('Family name')
         attributes='maxlength="30"' _ (class ? ' class="' _ class _ '"' : '') hint=hint %]
 [% END %]
 

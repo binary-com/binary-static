@@ -82,7 +82,7 @@
             [% WRAPPER form_row type='select' id='financial_asset' label=l('Financial Asset') %]
                 [% INCLUDE money %]
             [% END %]
-            [% INCLUDE form_row type='input' id='daily_loss_limit' label=l('Daily limit on losses')
+            [% INCLUDE form_row type='text' id='daily_loss_limit' label=l('Daily limit on losses')
                 hint=l('Maximum aggregate loss per day.') %]
         [% END %]
 
