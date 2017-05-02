@@ -38,16 +38,16 @@
             [% WRAPPER components/forms/form_row.html.tt type='custom' id='timeout_until_date' label=l("Time out until") row_class='ja-hide'
                 hint=l('Please enter date in the format DD MMM, YYYY HH:mm (local time).') %]
                 <div class="gr-row">
-                    <div class="gr-4 gr-12-m">
-                        <input type="text" id="timeout_until_date" maxlength="15" autocomplete="off" />
+                    <div class="gr-4 gr-5-t gr-6-p gr-12-m">
+                        <input type="text" class="clearable" id="timeout_until_date" maxlength="15" autocomplete="off" readonly />
                     </div>
-                    <div class="gr-4 gr-12-m">
-                        <input type="text" id="timeout_until_time" maxlength="8" autocomplete="off" />
+                    <div class="gr-4 gr-5-t gr-6-p gr-12-m">
+                        <input type="text" class="clearable" id="timeout_until_time" maxlength="8" autocomplete="off"  />
                     </div>
                 </div>
             [% END %]
 
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='exclude_until' label=l("Exclude me from the website until") attributes='maxlength="15" autocomplete="off"'
+            [% INCLUDE components/forms/form_row.html.tt type='text' id='exclude_until' label=l("Exclude me from the website until") attributes='maxlength="15" autocomplete="off" readonly class="clearable"'
                 hint=l('Please enter date in the format DD MMM, YYYY.') %]
 
             [% INCLUDE components/forms/submit_button.html.tt text=l("Update Settings") type='submit' %]
