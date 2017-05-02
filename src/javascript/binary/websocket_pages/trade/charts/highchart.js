@@ -379,7 +379,7 @@ const Highchart = (() => {
     // calculate where to display the maximum value of the x-axis of the chart for line chart
     const getMaxHistory = (history_times) => {
         let end = end_time;
-        if (sell_spot_time && sell_time < end_time) {
+        if (sell_spot_time && (sell_time || sell_spot_time) < end_time) {
             end = sell_spot_time;
         } else if (exit_tick_time) {
             end = exit_tick_time;
@@ -469,9 +469,7 @@ const Highchart = (() => {
     // draw the last line, mark the exit tick, and forget the streams
     const endContract = () => {
         if (chart && !stop_streaming) {
-            if (!sell_spot_time || sell_time) {
-                drawLineX((userSold() ? sell_time : end_time), '', 'textLeft', 'Dash');
-            }
+            drawLineX((userSold() ? (sell_time || sell_spot_time) : end_time), '', 'textLeft', 'Dash');
             if (exit_tick_time) {
                 selectTick(exit_tick_time, 'exit');
             }
@@ -497,11 +495,11 @@ const Highchart = (() => {
                 i++;
             }
             const last = parseInt(last_data.x || last_data[0]);
-            if (last > (end_time * 1000) || last > (sell_time * 1000)) {
+            if (last > (end_time * 1000) || last > ((sell_time || sell_spot_time) * 1000)) {
                 stop_streaming = true;
             } else {
                 // add a null point if the last tick is before end time to bring end time line into view
-                const time = userSold() ? sell_time : end_time;
+                const time = userSold() ? (sell_time || sell_spot_time) : end_time;
                 chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
             }
         }
@@ -559,7 +557,9 @@ const Highchart = (() => {
         }
     };
 
-    const userSold = () => sell_time && sell_time < end_time;
+    const userSold = () => (
+        (sell_time && sell_time < end_time) || (!sell_time && sell_spot_time && sell_spot_time < end_time)
+    );
 
     return {
         showChart: showChart,
