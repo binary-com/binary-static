@@ -42,3 +42,13 @@ if (!('remove' in Element.prototype)) {
         }
     };
 }
+
+(function ($) {
+    $.fn.setVisibility = function(make_visible) {
+        if (make_visible) {
+            this.removeClass('invisible');
+        } else {
+            this.addClass('invisible');
+        }
+    };
+})(jQuery);

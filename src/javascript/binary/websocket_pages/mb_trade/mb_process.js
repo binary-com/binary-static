@@ -103,13 +103,13 @@ const MBProcess = (() => {
     };
 
     const handleMarketClosed = () => {
-        $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
+        $('.japan-form, .japan-table, #trading_bottom_content').setVisibility(0);
         MBNotifications.show({ text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
         symbols_timeout = setTimeout(() => { getSymbols(); }, 30000);
     };
 
     const handleMarketOpen = () => {
-        $('.japan-form, .japan-table, #trading_bottom_content').removeClass('invisible');
+        $('.japan-form, .japan-table, #trading_bottom_content').setVisibility(1);
         MBNotifications.hide('MARKET_CLOSED');
     };
 

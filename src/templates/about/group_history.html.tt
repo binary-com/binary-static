@@ -31,7 +31,7 @@
             [% l("Binary Bot released") %]
           </div>
           <div class="event-body">
-            [% l("[_1] introduces an <a href='[_2]' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity.", website_name, ("https://bot.binary.com")) %]
+            [% l("[_1] introduces an [_2]auto-trader programming tool[_3][_4]{JAPAN ONLY}auto-trader programming tool[_5], allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity.", website_name, '<a href="https://bot.binary.com" target="_blank" class="ja-hide">', '</a>', '<span class="invisible ja-show">', '</span>') %]
           </div>
         </li>
         <li class="event right featured" style="margin-bottom: 50px">
@@ -39,7 +39,7 @@
             [% l("[_1] Shop introduced", website_name) %]
           </div>
           <div class="event-body">
-            [% l("[_1] launches an <a href='[_2]' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products.", website_name, ("https://shop.binary.com")) %]
+            [% l("[_1] launches an [_2]e-commerce site for branded merchandise[_3][_4]{JAPAN ONLY}e-commerce site for branded merchandise[_5] – enabling clients, affiliates, and developers to buy and sell [_1] products.", website_name, '<a href="https://shop.binary.com" target="_blank" class="ja-hide">', '</a>', '<span class="invisible ja-show">', '</span>') %]
           </div>
         </li>
         <li class="event left" style="margin-bottom: 50px">

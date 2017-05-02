@@ -20,7 +20,6 @@ const SelfExclusion = (() => {
     const timeout_time_id  = '#timeout_until_time';
     const exclude_until_id = '#exclude_until';
     const error_class      = 'errorfield';
-    const hidden_class     = 'invisible';
 
     const onLoad = () => {
         $form = $(form_id);
@@ -41,14 +40,14 @@ const SelfExclusion = (() => {
                     Client.sendLogoutRequest();
                 }
                 if (response.error.message) {
-                    $('#msg_error').html(response.error.message).removeClass(hidden_class);
-                    $form.addClass(hidden_class);
+                    $('#msg_error').html(response.error.message).setVisibility(1);
+                    $form.setVisibility(0);
                 }
                 return;
             }
 
-            $('#loading').addClass(hidden_class);
-            $form.removeClass(hidden_class);
+            $('#loading').setVisibility(0);
+            $form.setVisibility(1);
             self_exclusion_data = response.get_self_exclusion;
             $.each(self_exclusion_data, (key, value) => {
                 fields[key] = value.toString();
@@ -182,7 +181,7 @@ const SelfExclusion = (() => {
             const error_msg = response.error.message;
             const error_fld = response.error.field;
             if (error_fld) {
-                $(`#${error_fld}`).siblings('.error-msg').removeClass(hidden_class).html(error_msg);
+                $(`#${error_fld}`).siblings('.error-msg').setVisibility(1).html(error_msg);
             } else {
                 showFormMessage(localize(error_msg), false);
             }
