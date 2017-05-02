@@ -2,7 +2,7 @@
     <h2>
         [% l("Terms and Conditions") %]
     </h2>
-    <p><i>[% l("Version 4. Last modified 2016-12-30.") %]</i></p>
+    <p><i>[% l("Version 5. Last modified 2017-04-26.") %]</i></p>
     <h2>[% l("A. Introduction and Scope of Agreement") %]</h2>
     <ol>
         <li>[% l("The term 'we', 'us', 'our', 'ours', 'the Company', or 'Binary.com' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website.") %]</li>
@@ -13,7 +13,7 @@
     </ol>
     <h2>[% l("B. Commencement and Cancellation") %]</h2>
     <ol>
-        <li>[% l("This Agreement will commence on the date you receive your Real Account number, and, for any new versions thereafter, on the date the new versions are published on our website.") %]</li>
+        <li>[% l("This Agreement will commence on the date you receive your Cent, Standard, and / or STP Account number, and, for any new versions thereafter, on the date the new versions are published on our website.") %]</li>
     </ol>
     <h2>[% l("C. Provision of Services") %]</h2>
     <ol>
@@ -30,59 +30,69 @@
     <ol>
         <li>[% l("Opening an Account") %]
             <ol>
-                <li>[% l("To open a Real Account, you must have an authenticated Binary Options Real Account with Binary.com. A Real Account cannot be opened in the absence of a Binary Options Real Account.") %]</li>
-                <li>[% l("Your Binary Options Real Account with Binary.com has to be authenticated within five days from your Real Account opening date to keep your Real Account active.") %]</li>
-                <li>[% l("By opening a Real Account with Binary.com, you represent, warrant and undertake that:") %]
+                <li>[% l("You may open one or more of the three types of accounts available on Binary.com: Cent, Standard, and / or STP. The specification of Cent, Standard, and / or STP Account is explained in <a href=\"[_1]\"><u>Types of Accounts</u></a>.", request.url_for('types-of-accounts')) %]</li>
+                <li>[% l("To open a Cent, Standard, and / or STP Account, you must have an authenticated Binary Options Real Account with Binary.com. A Cent, Standard, and / or STP Account cannot be opened in the absence of a Binary Options Real Account.") %]</li>
+                <li>[% l("Your Binary Options Real Account with Binary.com has to be authenticated within five days from your Cent, Standard, and / or STP Account opening date to keep your Cent, Standard, and / or STP Account active.") %]</li>
+                <li>[% l("By opening a Cent, Standard, and / or STP Account with Binary.com, you represent, warrant and undertake that:") %]
                     <ol>
                         <li>[% l("You are acting for your sole benefit, and not for, or on behalf of any other person;") %]</li>
                         <li>[% l("You have read this Legal Terms and Conditions page in full and understood that you will be buying and selling financial contracts subject to these terms and conditions;") %]</li>
                         <li>[% l("You have read our privacy statement and hereby give us consent to process your personal information as outlined there;") %]</li>
                         <li>[% l("You are over 18 years of age;") %]</li>
-                        <li>[% l("You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;") %]</li>
+                        <li>[% l("You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;") %]</li>
                         <li>[% l("You have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site.") %]</li>
                     </ol>
                 </li>
-                <li>[% l("We reserve the right to refuse your request to open a Real Account for any reason, and any Real Account may be closed at our discretion at any time.") %]</li>
+                <li>[% l("We reserve the right to refuse your request to open a Cent, Standard, and / or STP Account for any reason, and your Cent, Standard, and / or STP Account may be closed at our discretion at any time.") %]</li>
             </ol>
         </li>
         <li>[% l("Assessment of Appropriateness") %]
             <ol>
                 <li>[% l("In the course of provision of services, we may, where applicable, conduct an appropriateness test, in accordance with our regulatory obligations, in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded.") %]</li>
-                <li>[% l("Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you. Such a warning shall be displayed on the website.") %]</li>
+                <li>[% l("Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you. Such a warning shall be displayed on the your account.") %]</li>
                 <li>[% l("In accordance with applicable regulatory requirements, where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness.") %]</li>
             </ol>
         </li>
         <li>[% l("Fund Transfers") %]
             <ol>
-                <li>[% l("Funding of Real Account") %]
+                <li>[% l("Funding of Cent, Standard, and / or STP Account") %]
                     <ol>
-                        <li>[% l("Your Real Account shall be funded by transferring funds from your Binary Options Real Account, subject to the availability and sufficiency of funds in your Binary Options Real Account. No fund transfers shall be made to any other account in the name of any third party.") %]</li>
-                        <li>[% l("All fund transfers from your Binary Options Real Account to your Real Account must be made by you.") %]</li>
-                        <li>[% l("You acknowledge and accept that your Real Account will be maintained in one currency, which is the same currency maintained in your Binary Options Real Account.") %]</li>
-                        <li>[% l("There will be no charges for fund transfers from your Binary Options Real Account to your Real Account.") %]</li>
+                        <li>[% l("Your Cent, Standard, and / or STP Account shall be funded by transferring funds from your Binary Options Real Account, subject to the availability and sufficiency of funds in your Binary Options Real Account. No fund transfers shall be made to any other account in the name of any third party.") %]</li>
+                        <li>[% l("All fund transfers from your Binary Options Real Account to your Cent, Standard, and / or STP Account must be made by you.") %]</li>
+                        <li>[% l("You acknowledge and accept that your Cent, Standard, and / or STP Account will be maintained in one currency, which is the same currency maintained in your Binary Options Real Account.") %]</li>
+                        <li>[% l("There will be no charges for fund transfers from your Binary Options Real Account to your Cent, Standard, and / or STP Account.") %]</li>
                     </ol>
                 </li>
-                <li>[% l("Withdrawal of Funds from Real Account") %]
+                <li>[% l("Withdrawal of Funds from Cent, Standard, and / or STP Account") %]
                     <ol>
-                        <li>[% l("Subject to the availability and sufficiency of funds in your Real Account, you may withdraw your funds from your Real Account to your Binary Options Real Account.") %]</li>
-                        <li>[% l("We may, however, withhold your withdrawal request from your Real Account to your Binary Options Real Account, in whole or in part, if:") %]
+                        <li>[% l("Subject to the availability and sufficiency of funds in your Cent, Standard, and / or STP Account, you may withdraw your funds from your Cent, Standard, and / or STP Account to your Binary Options Real Account.") %]</li>
+                        <li>[% l("We may, however, withhold your withdrawal request from your Cent, Standard, and / or STP Account to your Binary Options Real Account, in whole or in part, if:") %]
                             <ol>
-                                <li>[% l("You have unrealised losses on your Real Account; and/or") %]</li>
+                                <li>[% l("You have unrealised losses on your Cent, Standard, and / or STP Account; and/or") %]</li>
                                 <li>[% l("Such withdrawal would result in your Account Equity being less than zero; and/or") %]</li>
                                 <li>[% l("We reasonably consider that funds may be required to meet any Margin Requirement; and/or") %]</li>
                                 <li>[% l("There is any amount outstanding from you to us; and/or") %]</li>
                                 <li>[% l("We are required to do so in accordance with any relevant law or regulation.") %]</li>
                             </ol>
                         </li>
-                        <li>[% l("Withdrawal of funds from your Real Account must be made in the same currency maintained in your Binary Options Real Account.") %]</li>
+                        <li>[% l("Withdrawal of funds from your Cent, Standard, and / or STP Account must be made in the same currency maintained in your Binary Options Real Account.") %]</li>
                     </ol>
                 </li>
             </ol>
         </li>
-        <li>[% l("Accounts with debit balance (i.e. credit exposure to [_1])", brand_name) %]
+        <li>[% l("Negative Balance Protection") %]
             <ol>
+                <li>[% l("The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your Cent, Standard, and /or STP Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the client’s negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:") %]</li>
+                <ol>
+                    <li>[% l("in the case of a force majeure event;") %]</li>
+                    <li>[% l("in abnormal market conditions or exceptional market movements/volatility;") %]</li>
+                    <li>[% l("in the case of a client opening any Transaction in relation to Prohibited Trades;") %]</li>
+                    <li>[% l("in the case of Professional Clients;") %]</li>
+                    <li>[% l("where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and") %]</li>
+                    <li>[% l("in the case of a client breaching any of the terms of this Agreement which results in a negative balance.") %]</li>
+                </ol>
                 <li>[% l("The Company does not offer any credit facilities or arrangement to its clients in normal trading circumstances. You acknowledge and agree that you will not be dealing with us on credit, regardless of the amount of your Account Balance and Transactions entered into with us.") %]</li>
-                <li>[% l("Accounts with debit balances are required to settle the full amount immediately by making a payment to us.") %]</li>
+                <li>[% l("If your account is not subject to Negative Balance Protection, you are required to settle the full amount immediately by making a payment to us.") %]</li>
                 <li>[% l("If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand.") %]</li>
             </ol>
         </li>
@@ -95,7 +105,7 @@
             <ol>
                 <li>[% l("We are committed to making sure your personal data and transactions are secure:") %]
                     <ol>
-                        <li>[% l("Your Real Account password and login ID are unique and passwords are hashed so that not even Binary.com staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;") %]</li>
+                        <li>[% l("Your Cent, Standard, and / or STP Account password and login ID are unique and passwords are hashed so that not even Binary.com staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;") %]</li>
                         <li>[% l("It is your responsibility to keep your password and login ID confidential. You agree that you will not disclose your password and login ID to any other person;") %]</li>
                         <li>[% l("All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies;") %]</li>
                         <li>[% l("Our information security policies are based on industry best practices in access control and business continuity; and") %]</li>
@@ -107,7 +117,20 @@
         </li>
         <li>[% l("Closing an Account") %]
             <ol>
-                <li>[% l("If you wish to withdraw funds from your Real Account and close your Real Account, you may notify us by contacting our helpdesk at <a href='mailto:[_1]'>[_1]</a>. Your Real Account may be closed if you do not have any Open Positions and all amounts due to us have been settled.", "support@binary.com") %]</li>
+                <li>[% l("If you wish to withdraw funds from your Cent, Standard, and / or STP Account and close your Cent, Standard, and / or STP Account, you may notify us by contacting our helpdesk at <a href='mailto:[_1]'>[_1]</a>. Your Cent, Standard, and / or STP Account may be closed if you do not have any Open Positions and all amounts due to us have been settled.", "support@binary.com") %]</li>
+                <li>[% l("Swap-free Account") %]</li>
+                <ol>
+                    <li>[% l("Upon your request and consent, we may convert your Cent, Standard, and / or STP Account designated by you to a Swap-free Account. You acknowledge that we reserve the right to request justification, documents, and / or additional information in relation to your conversion request prior to the conversion. You also acknowledge that all open positions under your Cent, Standard, and / or STP Account designated by you to be converted to a Swap-free Account must be closed prior to you accessing the Swap-free Account. We may, acting reasonably, accept or reject your conversion request at our sole discretion for any reason whatsoever without being obliged to provide any explanation or justification.") %]</li>
+                    <li>[% l("Upon converting your Cent, Standard, and / or STP Account designated by you to a Swap-free Account, you acknowledge and agree that no interest adjustment (or swap rate adjustment) will be made to your Swap-free Account when rolling over your Open Positions. This means that we will not debit interest (interest charge to you) of any form in respect of your Swap-free Account; likewise, by requesting and consenting the conversion to a Swap-free Account, you acknowledge and agree that you are waiving your entitlement to receive interest in respect of your Swap-free Account. This means that we will not credit interest (interest income to you) of any form in respect of your Swap-free Account.
+") %]</li>
+                    <li>[% l("We will take all reasonable steps to provide you with the features and facilities of a Swap-free Account. The interest-free arrangements in place in relation to your Swap-free Account does not warrant or represent (whether express or implied) that your Swap-free Account is Sharia-compliant. You agree and acknowledge that the execution, delivery and performance of your Swap-free Account is in accordance with the terms, characteristics and features as determined by us and may not conform with your corresponding Sharia principles and requirements.") %]</li>
+                    <li>[% l("The provision of Swap-free Accounts by us to you is made in good faith. By requesting and consenting to convert your Cent, Standard, and / or STP Account designated by you to a Swap-free Account, you represent and warrant to us that you will not take any unfair advantage of its terms or to enter into Transactions that take advantage of the differences between Swap-free Accounts and non-Swap-free Accounts (which can be a Cent, Standard, and / or STP Account). In the event that we detect any form of abuse, fraud, manipulation, or any other forms of deceitful activity in regards to your Swap-free Account, we may, at our absolute discretion:") %]</li>
+                    <ol>
+                        <li>[% l("revoke the Swap-free status and convert your Swap-free Account to a non-Swap-free Account;") %]</li>
+                        <li>[% l("treat all your Transactions closed under your Swap-free Account as void and nullify all profits generated or losses incurred in relation to your Swap-free Account; and") %]</li>
+                        <li>[% l("adjust (either by debiting or crediting your account) any un-accrued interest charges (due from you to us) or income (due from us to you) in relation to your Swap-free Account.") %]</li>
+                    </ol>
+                </ol>
             </ol>
         </li>
     </ol>
@@ -116,23 +139,43 @@
         <li>[% l("Order Execution/Cancellation/Modification") %]
             <ol>
                 <li>[% l("You acknowledge that it is your responsibility to understand the features, characteristics, terms and conditions of an Order and the implications of executing an Order before you place an Order with us.") %]</li>
-                <li>[% l("Subject to network latency, we endeavour to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price.") %]</li>
+                <li>[% l("Subject to network latency, we endeavour to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price, stop level, or limit order level.") %]</li>
                 <li>[% l("We endeavour to open or close the Transaction to which your Order relates at the price reasonably available to us, acting in accordance with our duty of best execution. Best execution means that we must take all sufficient steps to obtain, when executing orders, the best possible result for you, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the order.") %]</li>
                 <li>[% l("Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices.") %]</li>
             </ol>
         </li>
-        <li>[% l("Stop and Limit Orders") %]
+        <li>[% l("Order Types") %]
             <ol>
-                <li>[% l("We may, at our absolute discretion, accept a Stop Order or a Limit Order from you. We may enable other types of Orders (for example, a trailing stop order) for your execution at any point in time.") %]</li>
-                <li>[% l("You may specify your instruction of a Stop Order or a Limit Order may be applied for a limited duration or for an indefinite period (a \"good till cancelled\" or \"GTC\" Order).") %]</li>
-                <li>[% l("In the case of a Stop Order, you acknowledge that we will endeavour to open/close a Transaction at the Next Available Price.") %]</li>
-                <li>[% l("In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you.") %]</li>
-                <li>[% l("You may not cancel or amend the level of your Stop and Limit Order prior to the closing of your Transaction once the level has been reached.") %]</li>
-                <li>[% l("You acknowledge that a Stop or Limit Order placed on your Open Position, when executed, would be capable of closing or partly closing your Transaction. You also acknowledge that it is your responsibility to cancel the Stop or Limit Order that you placed on your Open Positions if you do not want the Stop or Limit Order to remain valid. If you close your original Transaction and fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order.") %]</li>
-                <li>[% l("You acknowledge that we reserve the right to establish a minimum and maximum transaction size which may be subject to alteration and that we will only execute Orders that fall within the range of the minimum and maximum transaction size.") %]</li>
-                <li>[% l("We may, at our absolute discretion, disregard your Order if an Event takes place resulting in it no longer being reasonable for us to act on your Order after indicating an acceptance of your Order.") %]</li>
+                <li>[% l("We may, at our absolute discretion, accept and Order from you. Example of Orders offered currently:
+") %]
+                    <ol>
+                        <li>[% l("Market Orders &ndash; Market orders are instructions to deal now in your specified volume at spot price. When you execute a market order, your market order transaction becomes and Open Position which is subject to market fluctuations that occur between the time your market order is received/executed and the time your market order is filled. This means that your market order will be filled at the first available price that may be different from the quoted bid/offer price when you clicked to execute your market order on the electronic trading platform. By placing a Market order with us, you acknowledge that you are placing an instruction to open/close a Transaction regardless of the bid/offer price.") %]</li>
+                        <li>[% l("Pending Orders &ndash; Pending orders are instructions to deal when your pre-defined conditions, for example, bid/offer price, are fulfilled. Pending orders are filled at the first available price which may be the same as the quoted bid/offer price when you clicked to execute your market order on the electronic trading platform, or a few pips away due to slippage. You acknowledge that your pending order is triggered only if your pre-defined conditions attached to your pending order are fulfilled. This means that your pending order will not be filled if your pre-defined conditions attached to your pending orders are not fulfilled and you can skip a Transaction entirely. You can change your pre-defined conditions any time before your pending orders are filled.") %]</li>
+                        <li>[% l("Stop Orders &ndash; Stop orders are instructions to deal by opening or closing a Transaction when our quote reaches a level that is less favourable to you when compared against the current market price. By placing a stop order, you acknowledge that you are specifying a stop level and your stop order will be triggered if our bid/offer price moves against your favour to a point that it at or beyond your specified stop level. There are two types of stop order, stop closing order and stop entry order. A stop closing order is used to automatically close and Open Position when the market price reaches your specified stop level to limit your downside risk (a loss to you). A stop entry order is used to automatically open a position when the market price reaches your specified stop level to increase the probability of a profit to you.") %]</li>
+                        <li>[% l("Limit Orders &ndash; Limit orders operate on a rationale that is the opposite of stop orders. Limit orders are instructions to deal by opening or closing a Transaction when our quote reaches a level that is more favourable to you when compared against the current market price. By placing a limit order, you acknowledge that you are specifying a limit and your limit order will be triggered if our bid/offer price moves in your favour to a point that it at or beyond your specified limit. The limit order level is the maximum offer price at which you are willing to place an order to buy or the minimum at which you are willing to place an order to sell.") %]</li>
+                    </ol>
+                </li>
+                <li>[% l("Whilst we endeavour to explain how an Order operates through the content on Binary.com, you acknowledge and agree that it is your responsibility to understand how an Order operates on the MT5 trading platform prior to placing any such Order with us.") %]</li>
+
             </ol>
         </li>
+        <li>[% l("You may specify your instruction of a Stop Order or a Limit Order may be applied for a limited duration or for an indefinite period (a \"good till cancelled\" or \"GTC\" Order).") %]</li>
+        <li>[% l("In the case of a Stop Order, you acknowledge that we will endeavour to open/close a Transaction at the First Available Price.") %]</li>
+        <li>[% l("In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the limit order level you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you.") %]</li>
+        <li>[% l("You may not cancel or amend the level of your Stop and Limit Order prior to the closing of your Transaction once the level has been reached.") %]</li>
+        <li>[% l("You acknowledge that a Stop or Limit Order placed on your Open Position, when executed, would be capable of closing or partly closing your Transaction. You also acknowledge that it is your responsibility to cancel the Stop or Limit Order that you placed on your Open Positions if you do not want the Stop or Limit Order to remain valid. If you close your original Transaction and fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order.") %]</li>
+        <li>[% l("You acknowledge that we reserve the right to establish a minimum and maximum transaction size which may be subject to alteration and that we will only execute Orders that fall within the range of the minimum and maximum transaction size.") %]</li>
+        <li>[% l("When Gapping occurs, we will seek to open or close the Transaction to which your Order relates, acting in accordance with our duty of best execution. You acknowledge that when gapping occurs in the underlying instrument on which your margin trading product is based, the time and level (the bid/offer price) at which your accepted order will be executed, may have a regard to the volume of your Order, the liquidity and volatility of the market of the underlying instrument on which your margin trading product is based, the sequence of your Order, and possible network latency. We will endeavour to fill/partially fill your Order within a reasonable time at the First Available Price after the gap has been filled.") %]</li>
+        <li>[% l("You acknowledge that you will factor the following liquidity risks into any of your trading decision on Binary.com during low liquidity levels of the market of the underlying instrument on which your margin trading product is based:") %]
+            <ol>
+                <li>[% l("Difficulty to open or close a Transaction at the level (the bid/offer price) you requested;") %]</li>
+                <li>[% l("Delays in execution while a counterparty for your Transaction is identified;") %]</li>
+                <li>[% l("Differences in the quoted bid/offer price when you clicked to execute your order on the electronic trading platform and when your order is filled; and") %]</li>
+                <li>[% l("Wider bid-offer spread due to the decrease in the probability that the highest price any buyer is prepared to pay and the lowest price any seller is happy to accept will move closer together.") %]</li>
+            </ol>
+            [% l("You acknowledge that during low liquidity levels, your orders may be filled at the First Available Price which may be the same as the quoted bid/offer price when you clicked to execute your market order on the electronic trading platform, or a few pips away due to slippage.") %]
+        </li>
+        <li>[% l("We may, at our absolute discretion, disregard your Order if an Event takes place resulting in it no longer being reasonable for us to act on your Order after indicating an acceptance of your Order.") %]</li>
     </ol>
     <h2>[% l("G. Margin") %]</h2>
     <ol>
@@ -148,19 +191,19 @@
                 <li>[% l("The Margin Requirement is a percentage of the value of the Open Positions and will continue to fluctuate in accordance with the value of the Open Positions throughout the duration of the relevant contracts (the \"Contract Value\").") %]</li>
                 <li>[% l("Margin Requirements can increase/decrease based on the aggregated size of your Open Position determined by the volume (number of lots), contract size (value per point in the original currency of the contract), market price, and margin rate.") %]</li>
                 <li>[% l("We may modify Margin Requirements for any Open Positions or new Transactions entered into, at our sole discretion. Formulas for Margin Requirements published on the website are indicative only and may be changed by the Company at its discretion at any time, due to changing market conditions or other factors.") %]</li>
-                <li>[% l("Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level.") %]</li>
+                <li>[% l("Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Cent, Standard, and / or STP Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Cent, Standard, and / or STP Account reaches the Stop Out Level.") %]</li>
             </ol>
         </li>
         <li>[% l("Stop Out Level") %]
             <ol>
-                <li>[% l("If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level.") %]</li>
-                <li>[% l("The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavour to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level.") %]</li>
-                <li>[% l("The Stop Out Level applicable to your Real Account may differ from the default Stop Out Level published on our website.") %]</li>
+                <li>[% l("If the Margin Level for your Cent, Standard, and / or STP Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level.") %]</li>
+                <li>[% l("The default Stop Out Level applicable to your Cent, Standard, and / or STP Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavour to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level.") %]</li>
+                <li>[% l("The Stop Out Level applicable to your Cent, Standard, and / or STP Account may differ from the default Stop Out Level published on our website.") %]</li>
             </ol>
         </li>
         <li>[% l("Margin Payment") %]
             <ol>
-                <li>[% l("You may make Margin Payments by transferring funds from your Binary Options Real Account to your Real Account. In the event that there are insufficient funds in your Binary Options Real Account to fund your Real Account, you may make Margin Payments by funding your Binary Options Real Account and transferring the funds from your Binary Options Real Account to your Real Account.") %]</li>
+                <li>[% l("You may make Margin Payments by transferring funds from your Binary Options Real Account to your Cent, Standard, and / or STP Account. In the event that there are insufficient funds in your Binary Options Real Account to fund your Cent, Standard, and / or STP Account, you may make Margin Payments by funding your Binary Options Real Account and transferring the funds from your Binary Options Real Account to your Cent, Standard, and / or STP Account.") %]</li>
                 <li>[% l("Margin Payments are due immediately and shall be received in full by us.") %]</li>
             </ol>
         </li>
@@ -179,19 +222,19 @@
             <ol>
                 <li>[% l("Money collected from Clients are not invested in any securities, futures, or other investments, on behalf of Clients.") %]</li>
                 <li>[% l("The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency.") %]</li>
-                <li>[% l("Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account.") %]</li>
+                <li>[% l("Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a depository institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account.") %]</li>
             </ol>
         </li>
         <li>[% l("Personal Data and Privacy") %]
             <ol>
                 <li>[% l("You acknowledge that we may use, store, or otherwise process personal information provided by you in connection with the provision of margin trading services described in this Agreement. You consent to the processing and transmittal of your personal information for the purposes of performing the contract and administering the relationship between you and us.") %]</li>
                 <li>[% l("You consent to us recording any telephone conversation between you and us. All instructions receive by telephone will be binding as if received in writing. Recorded telephone conversations between you and us shall be, and remain, our sole property. You will accept recorded telephone conversations between you and us as conclusive evidence of instructions or conversations so recorded and we may deliver copies of transcripts of such recordings to any court, regulatory, or governmental authority without seeking prior consent from you.") %]</li>
-                <li>[% l("We may or may not use your personal information to contact you at any reasonable time as part of our marketing activities. You authorise us to contact you by email or telephone to give you information about selected products and services offered by us. Your consent for us to use your personal information for this purpose applies to the period you have a Real Account with us and after you close your Real Account. Please advise us in writing if you do not wish your personal information to be used for such purposes.") %]</li>
+                <li>[% l("We may or may not use your personal information to contact you at any reasonable time as part of our marketing activities. You authorise us to contact you by email or telephone to give you information about selected products and services offered by us. Your consent for us to use your personal information for this purpose applies to the period you have a Cent, Standard, and / or STP Account with us and after you close your Cent, Standard, and / or STP Account. Please advise us in writing if you do not wish your personal information to be used for such purposes.") %]</li>
             </ol>
         </li>
         <li>[% l("Confidentiality") %]
             <ol>
-                <li>[% l("The personal information that we collect and hold is treated as confidential. Confidential information will not be used for any purpose other than in connection with the provision of the margin trading services described in this Agreement. Confidential information will only be disclosed as and when required by law. We may also disclose such personal information to: (i) other companies within the Binary Group of companies; (ii) any such third parties as we see fit to assist us in servicing your Real Account; (iii) regulatory authorities upon their reasonable request; (iv) any such third parties as we see fit to assist us in enforcing our legal or contractual rights against you, including, but not limited, to legal advisors; (v) third parties as we see fit to investigate or prevent fraud or other illegal activities.") %]</li>
+                <li>[% l("The personal information that we collect and hold is treated as confidential. Confidential information will not be used for any purpose other than in connection with the provision of the margin trading services described in this Agreement. Confidential information will only be disclosed as and when required by law. We may also disclose such personal information to: (i) other companies within the Binary Group of companies; (ii) any such third parties as we see fit to assist us in servicing your Cent, Standard, and / or STP Account; (iii) regulatory authorities upon their reasonable request; (iv) any such third parties as we see fit to assist us in enforcing our legal or contractual rights against you, including, but not limited, to legal advisors; (v) third parties as we see fit to investigate or prevent fraud or other illegal activities.") %]</li>
             </ol>
         </li>
         <li>[% l("Complaints and disputes") %]
@@ -217,7 +260,7 @@
         <li>[% l("Opening a Transaction") %]
             <ol>
                 <li>[% l("A Transaction is opened by either executing a \"Buy\" or \"Sell\" Order based on a specified number of lots (volume) that constitute the underlying instrument of the relevant market.") %]</li>
-                <li>[% l("Any Transaction opened by you must be within any credit or position limit in effect with respect to the Real Account or any Transactions.") %]</li>
+                <li>[% l("Any Transaction opened by you must be within any credit or position limit in effect with respect to the Cent, Standard, and / or STP Account or any Transactions.") %]</li>
                 <li>[% l("Upon opening a Transaction, the sum due and payable by you to us are deducted from your Account Balance.") %]</li>
             </ol>
         </li>
@@ -257,14 +300,14 @@
         <li>[% l("We will act on any instructions given, or appearing to be given by you and received by us in relation to the margin trading services provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us.") %]</li>
         <li>[% l("We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency.") %]</li>
         <li>[% l("You hereby agree that you will not participate in any illegal, deceptive, misleading or unethical practices including, but not limited to, disparagement of the MT5 Trading Platform or other practices which may be detrimental to the MT5 Trading Platform, Licensor or the public interest.") %]</li>
-        <li>[% l("The Company sources market data from prime brokers who act as liquidity providers, thus executing your Transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by us or the prime brokers to yourselves. You acknowledge and agree that such data is proprietary to us and any such provider, and you will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. You represent and warrant that you will only use such data for purposes of facilitating your entry into Transactions with us on your Real Account in accordance with this Agreement and not for any other purpose. This clause does not apply to Volatility Indices.") %]</li>
+        <li>[% l("The Company sources market data from prime brokers who act as liquidity providers, thus executing your Transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by us or the prime brokers to yourselves. You acknowledge and agree that such data is proprietary to us and any such provider, and you will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. You represent and warrant that you will only use such data for purposes of facilitating your entry into Transactions with us on your Cent, Standard, and / or STP Account in accordance with this Agreement and not for any other purpose. This clause does not apply to Volatility Indices.") %]</li>
     </ol>
     <h2>[% l("L. Event of Default") %]</h2>
     <ol>
         <li>[% l("Each of the following event constitutes an \"Event of Default\":") %]
             <ol>
                 <li>[% l("Your death, your incapacity, become of unsound mind or your inability to pay your debts as they fall due, or is bankrupt or insolvent, as defined under any bankruptcy or insolvency law applicable to you, if you are an individual;") %]</li>
-                <li>[% l("The Margin Level of your Real Account reaches or falls below the Stop Out Level;") %]</li>
+                <li>[% l("The Margin Level of your Cent, Standard, and / or STP Account reaches or falls below the Stop Out Level;") %]</li>
                 <li>[% l("You act in breach of any warranty or representation made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;") %]</li>
                 <li>[% l("Your debts are not settled as, and when, they fall due;") %]</li>
             </ol>
@@ -274,7 +317,7 @@
                 <li>[% l("On the occurrence of an Event of Default, we may exercise our rights under this clause, at any time and without prior notice:") %]
                     <ol>
                         <li>[% l("Closing or part-closing all, or any, of your Open Positions based on the prevailing prices available in the relevant markets;") %]</li>
-                        <li>[% l("Suspending your Real Account and refusing to execute any Orders to enter into further Transactions with you. Whilst your Real Account is suspended, you will be able to place Orders to close your Open Positions, but you will not be able to place Orders which would create Open Positions.") %]</li>
+                        <li>[% l("Suspending your Cent, Standard, and / or STP Account and refusing to execute any Orders to enter into further Transactions with you. Whilst your Cent, Standard, and / or STP Account is suspended, you will be able to place Orders to close your Open Positions, but you will not be able to place Orders which would create Open Positions.") %]</li>
                     </ol>
                 </li>
             </ol>
@@ -289,7 +332,7 @@
     </ol>
     <h2>[% l("N. Force Majeure Events") %]</h2>
     <ol>
-        <li>[% l("A force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from, or hindered or delayed, in delivering or receiving, or is impossible to deliver or receive, any quotation of the bid and offer price of a market in one or more of the instruments which we ordinarily deal in Transactions; (ii) an excessive movement in the market of the instrument or our reasonable anticipation of the potential occurrence of market disruption.") %]</li>
+        <li>[% l("A force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from, or hindered or delayed, in delivering or receiving, or is impossible to deliver or receive, any quotation of the bid and offer price of a market in one or more of the instruments which we ordinarily deal in Transactions; (ii) volatility or loss of liquidity, suspension, liquidation, or an excessive movement in the market of the instrument or our reasonable anticipation of the potential occurrence of market disruption.") %]</li>
         <li>[% l("If we determine that a force majeure event exists, the Company shall promptly give notice thereof to the client. Subsequently, we may, at our absolute discretion, take one or more of the following steps:") %]
             <ol>
                 <li>[% l("Suspend the trading of the affected instrument;") %]</li>
@@ -299,16 +342,34 @@
                 <li>[% l("Change the Stop Out Level in relation to your account.") %]</li>
             </ol>
         </li>
-        <li>[% l("The Company shall not be in breach of its obligation under this Agreement and shall not be held liable for any failure of or delay in performing its obligations under this Agreement if such failure or delay is the result of the occurrence of a Force Majeure Event.") %]</li>
-        <li>[% l("Nothing in this Force Majeure Event section shall be taken as indicating that it constitutes an event of default.") %]</li>
-        <li>[% l("This section on Force Majeure Events does not apply to Volatility Indices.") %]</li>
+        <li>[% l("The Company shall not be in breach of its obligation under this Agreement and shall not be held liable for any failure of or delay in performing its obligations under this Agreement if such failure or delay is the result of the occurrence of a force majeure event.") %]</li>
+        <li>[% l("Nothing in this force majeure event section shall be taken as indicating that it constitutes an event of default.") %]</li>
+        <li>[% l("This section on force majeure events does not apply to Volatility Indices.") %]</li>
     </ol>
-    <h2>[% l("O. Representations and Warranties") %]</h2>
+    <h2>[% l("O. Prohibuted Trades") %]</h2>
+    <ol>
+        <li>[% l("The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:") %]
+            <ol>
+                <li>[% l("that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or") %]</li>
+                <li>[% l("with insider knowledge of any financial market or instrument.") %]</li>
+            </ol>
+        </li>
+        <li>[% l("The Company has the discretion to seek information from Clients to verify compliance with these terms.") %]</li>
+        <li>[% l("It is a condition of using the website that:") %]
+            <ol>
+                <li>[% l("any Client that is employed in the banking and/or finance sector must only conduct trades through the website with the knowledge of his/her employer and in accordance with the employer’s policies; and that") %]</li>
+                <li>[% l("Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term.") %]</li>
+            </ol>
+        </li>
+        <li>[% l("The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms.") %]</li>
+        <li>[% l("If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein.") %]</li>
+    </ol>
+    <h2>[% l("P. Representations and Warranties") %]</h2>
     <ol>
         <li>[% l("You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:") %]
             <ol>
                 <li>[% l("If you are an individual, you are over 18 years old and you have full capacity to enter into this Agreement;") %]</li>
-                <li>[% l("You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;") %]</li>
+                <li>[% l("You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Cent, Standard, and / or STP Account with us;") %]</li>
                 <li>[% l("You have all necessary authority, powers, consents, licences and authorisations and have taken all necessary actions to enable you to enter into, and perform this Agreement and such Transactions lawfully;") %]</li>
                 <li>[% l("The execution, delivery, and performance of this Agreement and each Transaction will not violate any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident.") %]</li>
                 <li>[% l("You are willing and financially able to sustain a total loss of funds (which may exceed your initial deposit) resulting from a Transaction;") %]</li>
@@ -325,46 +386,48 @@
         </li>
         <li>[% l("You acknowledge that we reserve the right to void or close out one or more of your Transactions if we observe any breaches of warranty given under this Agreement.") %]</li>
     </ol>
-    <h2>[% l("P. Indemnification") %]</h2>
+    <h2>[% l("Q. Indemnification") %]</h2>
     <ol>
         <li>[% l("Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of, or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney's fees) incurred arising out of your failure to comply with any and all of your obligations set forth in this Agreement and/or the Company's enforcement against you of any and all of its rights under this Agreement.") %]</li>
         <li>[% l("Without prejudice to any other terms of this Agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to you in relation to any loss that you incurred whether directly or indirectly by any cause beyond our control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 Trading Platform or any systems or network links.") %]</li>
         <li>[% l("The Company does not make any warranty, express or implied, that any pricing or other information provided through the MT5 Trading Platform or otherwise is correct. Furthermore, if a quote (bid or offer price) error occurs due to a system malfunction (whether or not it's a third party or a proprietary system), the Company will not be liable for any resulting losses that have incurred.") %]</li>
     </ol>
-    <h2>[% l("Q. Miscellaneous") %]</h2>
+    <h2>[% l("R. Miscellaneous") %]</h2>
     <ol>
         <li>[% l("Unless proven to be wrong, our records shall be used as evidence of your dealings with us in connection with the margin trading services described in this Agreement. You agree to use our records as evidence in any such legal or regulatory proceedings and you agree to keep your own record of your dealings with us that will help us investigate any complaints or disputes. If the records used as evidence of your dealings with us are not originals, are in the form of diagrams or charts, or are system generated content, you will not object to the use of such records as evidence.") %]</li>
         <li>[% l("The Binary.com website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at <a href='mailto:[_1]'>[_1]</a>. Binary.com and the bull/bear logo are registered trademarks.", "support@binary.com") %]</li>
         <li>[% l("If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect.") %]</li>
         <li>[% l("In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident.") %]</li>
     </ol>
-    <h2>[% l("R. Interpretation of Terms") %]</h2>
+    <h2>[% l("S. Interpretation of Terms") %]</h2>
     <ol>
         <li>[% l("Account Balance &mdash; Your account balance represents:") %]
             <ol>
-                <li>[% l("net of fund transfers between your Binary Options Account and your Real Account;") %]</li>
-                <li>[% l("net of realised profits credited to your Real Account and realised losses debited from your Real Account;") %]</li>
-                <li>[% l("net of any other money credited to your Real Account and debited from your Real Account. Your account balance includes Margin Requirement. The amount of your account balance in excess of Margin Requirement is available for your withdrawal. The amount set aside for Margin Requirement is not available for your withdrawal.") %]</li>
+                <li>[% l("net of fund transfers between your Binary Options Account and your Cent, Standard, and / or STP Account;") %]</li>
+                <li>[% l("net of realised profits credited to your Cent, Standard, and / or STP Account and realised losses debited from your Cent, Standard, and / or STP Account;") %]</li>
+                <li>[% l("net of any other money credited to your Cent, Standard, and / or STP Account and debited from your Cent, Standard, and / or STP Account. Your account balance includes Margin Requirement. The amount of your account balance in excess of Margin Requirement is available for your withdrawal. The amount set aside for Margin Requirement is not available for your withdrawal.") %]</li>
             </ol>
         </li>
         <li>[% l("Account Equity &mdash; Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss.") %]</li>
         <li>[% l("Account Free Margin &mdash; Your Account Equity minus your Total Margin.") %]</li>
-       <li>[% l("Binary Options Real Account &mdash; Your real money account opened with Binary.com which you use to trade binary options with Binary.com.") %]</li>
+        <li>[% l("Binary Options Real Account &mdash; Your real money account opened with Binary.com which you use to trade binary options with Binary.com.") %]</li>
+        <li>[% l("Cent, Standard, and / or STP Account &mdash; Your real money account opened with Binary.com\'s MT5 Trading Platform licensed from MetaQuotes Software Corporation which you use to trade FX and CFD with Binary.com.") %]</li>
         <li>[% l("Event &mdash; Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others.") %]</li>
-        <li>[% l("Limit/Limit Price &mdash; The price specified in your Limit Order.") %]</li>
-        <li>[% l("Limit Order &mdash; An instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price.") %]</li>
+        <li>[% l("First Available Price &mdash; Earliest price reasonably available and quoted by Binary.com when our Price quotation reaches or goes beyond the level of your Stop Order.") %]</li>
+        <li>[% l("Gapping &mdash; An unfilled space or interval of a financial market with nil or little trading volume") %]</li>
+        <li>[% l("Licensor &mdash; MetaQuotes Software Corporation, a separate legal entity that is not affiliated with Binary (V) Ltd. and Binary (C.R.) S.A.") %]</li>
+        <li>[% l("Limit/Limit Order Level/Limit Price &mdash; The price specified in your Limit Order.") %]</li>
         <li>[% l("Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract.") %]</li>
         <li>[% l("Margin Level &mdash; Ratio of Account Equity to Total Margin, expressed as a percentage.") %]</li>
-        <li>[% l("Next Available Price &mdash; Earliest price reasonably available and quoted by Binary.com when our Price quotation reaches or goes beyond the level of your Stop Order.") %]</li>
+        <li>[% l("Negative Balance Protection – Accounts with negative balances that are subject to Negative Balance Protection will have their negative balance waived by crediting their account in accordance with s. E (4).") %]</li>
         <li>[% l("Open Position &mdash; The position in a market made by reference to an Underlying Instrument created by opening a Transaction as a result of placing an Order to the extent that such position has not been closed in whole or in part under this Agreement.") %]</li>
         <li>[% l("Order &mdash; An execution instruction given by you to us in relation to a Market Order, Stop Order, Limit Order, and etc.") %]</li>
         <li>[% l("Price/Prices &mdash; Bid and Offer Price/Prices.") %]</li>
-        <li>[% l("Real Account &mdash; Your real money account opened with Binary.com's MT5 Trading Platform licensed from MetaQuotes Software Corporation.") %]</li>
         <li>[% l("Roll-over &mdash; In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day.") %]</li>
         <li>[% l("Roll-over Credit/Debit &mdash; Accounts with Open Positions concerned by the Roll-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company at its sole discretion.") %]</li>
-        <li>[% l("Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price.") %]</li>
-        <li>[% l("Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent.") %]</li>
-        <li>[% l("Total Margin &mdash; The aggregate of all Margin Requirements in your Real Account.") %]</li>
+        <li>[% l("Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent.") %]</li>
+        <li>[% l("Swap-free Account &mdash; Interest-free accounts whereby interest adjustments will not be made on overnight open positions.") %]</li>
+        <li>[% l("Total Margin &mdash; The aggregate of all Margin Requirements in your Cent, Standard, and / or STP Account.") %]</li>
         <li>[% l("Transaction &mdash; A contract entered into by you pursuant to this Agreement.") %]</li>
     </ol>
 </div>
