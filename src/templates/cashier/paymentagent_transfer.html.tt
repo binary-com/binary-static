@@ -49,7 +49,7 @@
     [% WRAPPER fieldset legend=l('Details') %]
         [% INCLUDE form_row label=l('Transfer to Login ID') id='client_id' type='text' %]
         [% INCLUDE form_row label=l('Amount') id='amount' type='number' attributes='min="10" max="2000" step="any"'
-            hint=l('Min:') %] 10 [% l('Max:') %] 2000 %]
+            hint=l('Min: 10 Max: 2000') %]
     [% END %]
 
     [% INCLUDE submit_button msg_id='form_error' type='submit' text=l('Submit') %]

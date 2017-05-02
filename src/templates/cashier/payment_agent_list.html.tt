@@ -35,8 +35,8 @@
                 [% INCLUDE table trs=[
                     { text= l('Name')                     , placeholder= 'name' },
                     { text= l('Summary')                  , placeholder= 'summary' },
-                    { text= l('Commission on deposits')   , placeholder= 'deposit_commission' },
-                    { text= l('Commission on withdrawals'), placeholder= 'withdrawal_commission' },
+                    { text= l('Commission on deposits')   , placeholder= 'deposit_commission%' },
+                    { text= l('Commission on withdrawals'), placeholder= 'withdrawal_commission%' },
                     { text= l('Website')                  , placeholder= 'url', href=1 },
                     { text= l('Email')                    , placeholder= 'email', mailto=1 },
                     { text= l('Tel')                      , placeholder= 'telephone' },

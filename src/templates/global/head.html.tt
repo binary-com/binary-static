@@ -1,7 +1,7 @@
 [% BLOCK link %]
     [% FOREACH favicon IN favicons %]
     [% sizes = favicon.size _ 'x' _ favicon.size %]
-    <link rel="[% favicon.rel %]icon" sizes="[% sizes %]"[% IF favicon.type %] type="[% favicon.type %]"[% END %] href="https://style.binary.com/images/favicons/[% favicon.rel || 'fav' %]icon-[% sizes %].png">
+    <link rel="[% (favicon.is_image ? '' : 'apple-touch-') _ 'icon' %]" sizes="[% sizes %]"[% IF favicon.is_image %] type="image/png"[% END %] href="https://style.binary.com/images/favicons/[% favicon.is_image ? 'fav' : 'apple-touch-' %]icon-[% sizes %].png">
     [% END %]
 [% END %]
 
@@ -38,20 +38,20 @@
         <script type="text/javascript" src="//cdn.pushwoosh.com/webpush/pushwoosh-web-notifications.js" async></script>
 
         [% INCLUDE link favicons=[
-            { rel='apple-touch-', size='57' },
-            { rel='apple-touch-', size='114' },
-            { rel='apple-touch-', size='72' },
-            { rel='apple-touch-', size='144' },
-            { rel='apple-touch-', size='60' },
-            { rel='apple-touch-', size='120' },
-            { rel='apple-touch-', size='76' },
-            { rel='apple-touch-', size='152' },
-            { rel='apple-touch-', size='180' },
-            { type='image/png', size='192' }
-            { type='image/png', size='160' }
-            { type='image/png', size='96' }
-            { type='image/png', size='16' }
-            { type='image/png', size='32' }
+            { size='57' },
+            { size='114' },
+            { size='72' },
+            { size='144' },
+            { size='60' },
+            { size='120' },
+            { size='76' },
+            { size='152' },
+            { size='180' },
+            { is_image=1, size='192' },
+            { is_image=1, size='160' },
+            { is_image=1, size='96' },
+            { is_image=1, size='16' },
+            { is_image=1, size='32' },
         ] %]
 
         [% FOREACH o IN language_options =%]
