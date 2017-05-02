@@ -50,5 +50,6 @@ if (!('remove' in Element.prototype)) {
         } else {
             this.addClass('invisible');
         }
+        return this;
     };
 })(jQuery);
