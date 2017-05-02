@@ -15,7 +15,8 @@ const Highchart = (() => {
         contract,
         request,
         min_point,
-        max_point;
+        max_point,
+        lines_drawn;
 
     let start_time,
         purchase_time,
@@ -41,6 +42,7 @@ const Highchart = (() => {
 
     const initOnce = () => {
         chart = options = response_id = contract = request = min_point = max_point = '';
+        lines_drawn = [];
 
         is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming =
         is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
@@ -452,7 +454,7 @@ const Highchart = (() => {
     };
 
     const drawLineX = (value_time, label_name, text_left, dash, color) => {
-        if (chart) {
+        if (chart && !(new RegExp(value_time).test(lines_drawn))) {
             addPlotLine({
                 value    : value_time * 1000,
                 label    : label_name || '',
@@ -460,6 +462,7 @@ const Highchart = (() => {
                 dashStyle: dash || '',
                 color    : color || '',
             }, 'x');
+            lines_drawn.push(value_time);
         }
     };
 
