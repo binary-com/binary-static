@@ -57,29 +57,40 @@
                         <div class="center-text gr-padding-10 gr-12">
                             <img class="responsive" src="[% request.url_for('images/pages/regulation/map.svg') %]" usemap="#planetmap">
                         </div>
+[% BLOCK area %]
+    [% square_wh=10.6 default_width=37.8 %]
+    [% FOREACH item IN items %]
+        <area shape="rect" coords="[% item.x * 3 %],[% item.y * 3 %],[% (item.x + (item.width || default_width) + square_wh) * 3 %],[% (item.y + square_wh) * 3 %]" href="[% item.link || request.url_for('download/regulation/' _ item.name.replace(' ', '') _ '.pdf') %]" alt="[% item.name %]" target="_blank">
+    [% END %]
+[% END %]
                         <map name="planetmap" id="planetmap">
-                            <area shape="rect" coords="374.91,21,520,55" href="[% request.url_for('download/regulation/Sweden.pdf') %]" alt="Sweden" target="_blank">
-                            <area shape="rect" coords="353.01,59.16,498.18,90.87" href="[% request.url_for('download/regulation/Denmark.pdf') %]" alt="Denmark" target="_blank">
-                            <area shape="rect" coords="328.02,95.37,473.19,127.08" href="[% request.url_for('download/regulation/Germany.pdf') %]" alt="Germany" target="_blank">
-                            <area shape="rect" coords="270.18,131.58,440.64,163.29" href="[% request.url_for('download/regulation/Netherlands.pdf') %]" alt="Netherlands" target="_blank">
-                            <area shape="rect" coords="0.00,259.71,198.93,291.42" href="[% request.url_for('download/regulation/UnitedKingdom.pdf') %]" alt="United Kingdom" target="_blank">
-                            <area shape="rect" coords="26.61,343.62,198.93,375.33" href="[% request.url_for('download/regulation/Luxembourg.pdf') %]" alt="Luxembourg" target="_blank">
-                            <area shape="rect" coords="53.76,378.81,198.93,410.52" href="[% request.url_for('download/regulation/France.pdf') %]" alt="France" target="_blank">
-                            <area shape="rect" coords="2.82,432.81,147.99,464.52" href="[% request.url_for('download/regulation/Spain.pdf') %]" alt="Spain" target="_blank">
-                            <area shape="rect" coords="2.82,468.96,147.99,500.67" href="[% request.url_for('download/regulation/Portugal.pdf') %]" alt="Portugal" target="_blank">
-                            <area shape="rect" coords="34.50,505.59,147.99,537.30" href="[% request.url_for('download/regulation/Italy.pdf') %]" alt="Italy" target="_blank">
-                            <area shape="rect" coords="292.95,556.05,438.12,587.76" href="[% request.url_for('download/regulation/Austria.pdf') %]" alt="Austria" target="_blank">
-                            <area shape="rect" coords="498.57,665.88,643.74,697.59" href="[% request.url_for('download/regulation/Slovenia.pdf') %]" alt="Slovenia" target="_blank">
-                            <area shape="rect" coords="532.14,629.79,677.31,661.50" href="http://www.hanfa.hr/capital-market/registers/notifications-from-eu-member-states" alt="Croatia" target="_blank">
-                            <area shape="rect" coords="754.83,540.21,900.00,571.92" href="[% request.url_for('download/regulation/Greece.pdf') %]" alt="Greece" target="_blank">
-                            <area shape="rect" coords="754.41,443.22,900.00,474.53" href="[% request.url_for('download/regulation/Romania.pdf') %]" alt="Romania" target="_blank">
-                            <area shape="rect" coords="754.11,407.81,900.00,439.52" href="https://alk.mnb.hu/en/left_menu/market_participants/kereso/kereses?ktasearch_value=&ktasearch_label=&ktasearch_prev_value=&pmod=simpleSearch&n=Binary+Investments+%28Europe%29+Ltd&st=0&i=&a=1&x=56&y=8" alt="Hungary" target="_blank">
-                            <area shape="rect" coords="754.41,372.70,900.00,404.41" href="[% request.url_for('download/regulation/Slovakia.pdf') %]" alt="Slovakia" target="_blank">
-                            <area shape="rect" coords="708.23,337.29,900.00,369.00" href="[% request.url_for('download/regulation/Czech.pdf') %]" alt="Czech Republic" target="_blank">
-                            <area shape="rect" coords="765.87,287.94,900.03,319.65" href="[% request.url_for('download/regulation/Poland.pdf') %]" alt="Poland" target="_blank">
-                            <area shape="rect" coords="765.87,222.12,900.03,253.83" href="http://www.fktk.lv/en/market/financial-instruments-market/service-providers-from-the-eea/freedom-to-provide-services.html" alt="Latvia" target="_blank">
-                            <area shape="rect" coords="765.87,185.97,900.03,217.68" href="[% request.url_for('download/regulation/Estonia.pdf') %]" alt="Estonia" target="_blank">
-                            <area shape="rect" coords="765.87,41.64,900.03,73.35" href="[% request.url_for('download/regulation/Finland.pdf') %]" alt="Finland" target="_blank">
+                            [%# Inspect country name rectangles in map.svg and use attributes: x, y, width (default: 37.8) %]
+                            [% INCLUDE area items=[
+                                { name='Sweden'         x=125.0  y=7.6   },
+                                { name='Denmark'        x=117.7  y=19.7  },
+                                { name='Germany'        x=109.3  y=31.8  },
+                                { name='Netherlands'    x=90.1   y=43.9  width=46.2 },
+                                { name='United Kingdom' x=0.0    y=86.6  width=55.7 },
+                                { name='Luxembourg'     x=8.9    y=114.5 width=46.9 },
+                                { name='France'         x=17.9   y=126.3 },
+                                { name='Spain'          x=0.9    y=144.3 },
+                                { name='Portugal'       x=0.9    y=156.3 },
+                                { name='Italy'          x=11.5   y=168.5 width=27.3 },
+                                { name='Austria'        x=97.7   y=185.3 },
+                                { name='Slovenia'       x=166.2  y=222.0 },
+                                { name='Croatia'        x=177.4  y=209.9 link='http://www.hanfa.hr/capital-market/registers/notifications-from-eu-member-states' },
+                                { name='Greece'         x=251.6  y=180.1 },
+                                { name='Bulgaria'       x=251.6  y=159.5 },
+                                { name='Romania'        x=251.6  y=147.7 },
+                                { name='Hungary'        x=251.5  y=135.9 link='https://alk.mnb.hu/en/left_menu/market_participants/kereso/kereses?ktasearch_value=&ktasearch_label=&ktasearch_prev_value=&pmod=simpleSearch&n=Binary+Investments+%28Europe%29+Ltd&st=0&i=&a=1&x=56&y=8' },
+                                { name='Slovakia'       x=251.6  y=124.2 },
+                                { name='Czech Republic' x=236.2  y=112.4 width=53.2 },
+                                { name='Poland'         x=255.3  y=95.3  width=34.2 },
+                                { name='Lithuania'      x=250.7  y=83.4  width=38.8 link='https://www.lb.lt/en/sfi-financial-market-participants?query=binary&ff=1' },
+                                { name='Latvia'         x=255.3  y=71.7  width=34.2 link='http://www.fktk.lv/en/market/financial-instruments-market/service-providers-from-the-eea/freedom-to-provide-services.html' },
+                                { name='Estonia'        x=255.3  y=60.0  width=34.2 },
+                                { name='Finland'        x=255.3  y=13.9  width=34.2 },
+                            ] %]
                         </map>
                     </div>
                     <h3 class="margin-top">[% l("Pillar 3 Disclosures") %]</h3>
