@@ -465,8 +465,10 @@ const Highchart = (() => {
 
     // draw the last line, mark the exit tick, and forget the streams
     const endContract = () => {
-        if (chart) {
-            drawLineX((userSold() ? sell_time : end_time), '', 'textLeft', 'Dash');
+        if (chart && !stop_streaming) {
+            if (!sell_spot_time || sell_time) {
+                drawLineX((userSold() ? sell_time : end_time), '', 'textLeft', 'Dash');
+            }
             if (exit_tick_time) {
                 selectTick(exit_tick_time, 'exit');
             }
@@ -477,8 +479,6 @@ const Highchart = (() => {
             } else {
                 $('#waiting_exit_tick').remove();
             }
-        }
-        if (!stop_streaming) {
             setStopStreaming();
         }
     };
@@ -487,7 +487,12 @@ const Highchart = (() => {
         if (chart && (is_sold || is_settleable) &&
             chart.series && chart.series[0].options.data.length > 0) {
             const data = chart.series[0].options.data;
-            const last_data = data[data.length - 1];
+            let last_data = data[data.length - 1];
+            let i = 2;
+            while (last_data.y === null) {
+                last_data = data[data.length - i];
+                i++;
+            }
             const last = parseInt(last_data.x || last_data[0]);
             if (last > (end_time * 1000) || last > (sell_time * 1000)) {
                 stop_streaming = true;
