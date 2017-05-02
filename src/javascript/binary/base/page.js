@@ -13,6 +13,7 @@ const checkLanguage     = require('../common_functions/country_base').checkLangu
 const scrollToTop       = require('../common_functions/scroll').scrollToTop;
 const TrafficSource     = require('../common_functions/traffic_source');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
+const AffiliatePopup    = require('../../binary_japan/affiliate_popup');
 const Cookies           = require('../../lib/js-cookie');
 const PushNotification  = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
@@ -109,6 +110,9 @@ const Page = (() => {
         if (!token || token.length !== 32) {
             return false;
         }
+
+        AffiliatePopup.show();
+
         const token_length = token.length;
         const is_subsidiary = /\w{1}/.test(Url.param('s'));
 
