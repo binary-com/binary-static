@@ -1,6 +1,7 @@
 const moment           = require('moment');
 const localize         = require('../base/localize').localize;
 const isEmptyObject    = require('../base/utility').isEmptyObject;
+const clearable        = require('../base/utility').clearable;
 const checkInput       = require('../common_functions/common_functions').checkInput;
 const toReadableFormat = require('../common_functions/string_util').toReadableFormat;
 const padLeft          = require('../common_functions/string_util').padLeft;
@@ -113,20 +114,6 @@ const DatePicker = (() => {
 
         checkWidth(selector);
     };
-
-    const clearable = (element) => {
-        element.addClass('clear');
-        $(document).on('mousemove', '.clear', function(e) {
-            e.preventDefault();
-            element[toggleAddRemoveClass(this.offsetWidth - 18 < e.clientX - this.getBoundingClientRect().left)]('onClear');
-        }).on('mousedown', '.onClear', function(e) {
-            e.preventDefault();
-            element.attr('data-value', '');
-            element.removeClass('clear onClear').val('').change();
-        });
-    };
-
-    const toggleAddRemoveClass = condition => (condition ? 'addClass' : 'removeClass');
 
     const formatDate = (date, add) => padLeft(date + (add || 0), 2, '0');
 
