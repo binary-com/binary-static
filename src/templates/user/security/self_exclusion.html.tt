@@ -38,10 +38,10 @@
             [% WRAPPER components/forms/form_row.html.tt type='custom' id='timeout_until_date' label=l("Time out until") row_class='ja-hide'
                 hint=l('Please enter date in the format DD MMM, YYYY HH:mm (local time).') %]
                 <div class="gr-row">
-                    <div class="gr-4 gr-5-t gr-6-p gr-12-m">
+                    <div class="gr-5 gr-6-t gr-6-p gr-12-m">
                         <input type="text" class="clearable" id="timeout_until_date" maxlength="15" autocomplete="off" readonly />
                     </div>
-                    <div class="gr-4 gr-5-t gr-6-p gr-12-m">
+                    <div class="gr-4 gr-6-t gr-6-p gr-12-m">
                         <input type="text" class="clearable" id="timeout_until_time" maxlength="8" autocomplete="off"  />
                     </div>
                 </div>
