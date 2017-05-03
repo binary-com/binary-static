@@ -62,19 +62,19 @@
         </ol>
     </div>
 
-    <div class="subsection hidden">
+    <div class="subsection invisible">
         <a name="get-your-price-section"></a>
         <h2>[% l("Step 2: Get your contract price") %]</h2>
         <p>[% l("Our prices are benchmarked against the interbank options market. You’ll receive fair and transparent pricing, whatever your position.") %]</p>
     </div>
 
-    <div class="subsection hidden">
+    <div class="subsection invisible">
         <a name="make-your-trade-section"></a>
         <h2>[% l("Step 3: Make your trade") %]</h2>
-        <p>[% l("When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses.") %]</p>
+        <p>[% l("When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no invisible fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses.") %]</p>
     </div>
 
-    <div class="subsection last hidden">
+    <div class="subsection last invisible">
         <a class="client_logged_out invisible" name="dont-just-read-about-it-section"></a>
 
         <h2>[% l("Interested? Why not try a virtual account") %]</h2>
