@@ -2,11 +2,11 @@
     <h1>[% l('Give Me More Money!') %]</h1>
     <div class="loading">[% PROCESS global/loading.html.tt %]</div>
     <div id="topup_virtual" class="center-text">
-        <div id="viewError" class="viewItem hidden">
+        <div id="viewError" class="viewItem invisible">
             <p class="notice-msg"></p>
         </div>
 
-        <div id="viewSuccess" class="viewItem hidden">
+        <div id="viewSuccess" class="viewItem invisible">
             <p class="success-msg"></p>
             <a class="button" href="[% request.url_for('/user/portfoliows') %]">
                 <span>[% l('View Updated Portfolio') %]</span>

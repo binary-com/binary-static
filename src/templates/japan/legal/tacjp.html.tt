@@ -1,6 +1,6 @@
 [% PROCESS components/tabs.html.tt %]
 
-<div class="hidden ja-show content-tab-container">
+<div class="invisible ja-show content-tab-container">
     [% INCLUDE tabs_subtabs class='static_full' id='legal-menu' items=[
         { id='legal',      text=l('Terms and Conditions')  },
         { id='contract',   text=l('Pre-contract Document') },

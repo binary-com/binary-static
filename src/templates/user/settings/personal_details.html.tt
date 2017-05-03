@@ -27,12 +27,12 @@
     [% l('Please complete the tax information before proceeding.') %]
 </p>
 
-<form class="form gr-padding-10 hidden" id="frmPersonalDetails">
+<form class="form gr-padding-10 invisible" id="frmPersonalDetails">
     [% WRAPPER fieldset legend=l('Details') %]
-        [% INCLUDE form_row type='label' required=1 label=l('Name')          is_bold=1 id='lbl_name'          row_class='hidden RealAcc JpAcc' %]
+        [% INCLUDE form_row type='label' required=1 label=l('Name')          is_bold=1 id='lbl_name'          row_class='invisible RealAcc JpAcc' %]
         [% INCLUDE form_row type='label' required=1 label=l('Gender')        is_bold=1 id='lbl_gender'        row_class='invisible JpAcc' %]
-        [% INCLUDE form_row type='label' required=1 label=l('Date of birth') is_bold=1 id='lbl_date_of_birth' row_class='hidden RealAcc JpAcc' %]
-        [% INCLUDE form_row type='select' label=l('Place of birth') id='place_of_birth' row_class='hidden RealAcc' %]
+        [% INCLUDE form_row type='label' required=1 label=l('Date of birth') is_bold=1 id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' %]
+        [% INCLUDE form_row type='select' label=l('Place of birth') id='place_of_birth' row_class='invisible RealAcc' %]
         [% INCLUDE form_row type='label' required=1 label=l('Country of Residence') is_bold=1 id='lbl_country' %]
         [% INCLUDE form_row type='label' required=1 label=l('Email address')        is_bold=1 id='lbl_email' %]
         [% WRAPPER form_row type='select' label=l('Occupation') id='occupation' class='jp_value' row_class='invisible JpAcc' %]
@@ -47,11 +47,11 @@
             <option value="Others">[% l('Others') %]</option>
         [% END %]
     [% END %]
-    [% WRAPPER fieldset class='hidden RealAcc ja-hide' legend=l('Tax Information') %]
+    [% WRAPPER fieldset class='invisible RealAcc ja-hide' legend=l('Tax Information') %]
         [% INCLUDE form_row type='select' label=l('Tax residence') id='tax_residence' class='invisible' attributes='multiple="multiple"' %]
         [% INCLUDE form_row type='text' label=l('Tax identification number') id='tax_identification_number' attributes='maxlength="20"' %]
     [% END %]
-    [% WRAPPER fieldset class='hidden RealAcc ja-hide' legend=l('Address') %]
+    [% WRAPPER fieldset class='invisible RealAcc ja-hide' legend=l('Address') %]
         [% INCLUDE address_line_1 no_hint=1 %]
         [% INCLUDE address_line_2 %]
         [% INCLUDE address_city %]
@@ -114,4 +114,4 @@
     [% INCLUDE submit_button id='btn_update' class='invisible' msg_id='formMessage' type='submit' text=l('Update') %]
 </form>
 
-<p class="required hidden RealAcc JpAcc rowCustomerSupport"><em class="required_asterisk">**</em> [% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', request.url_for('contact')) %]</p>
+<p class="required invisible RealAcc JpAcc rowCustomerSupport"><em class="required_asterisk">**</em> [% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', request.url_for('contact')) %]</p>

@@ -47,7 +47,7 @@
         [% PROCESS tnc %]
     </form>
 
-    <form id="financial-risk" class="hidden">
+    <form id="financial-risk" class="invisible">
         <fieldset>
             <div class="gr-12">
                 <p>[% l('<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved).') %]</p>

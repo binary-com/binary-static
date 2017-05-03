@@ -76,7 +76,7 @@ const AccountOpening = (() => {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(getTaxResidence() || residence_value).trigger('change')
-                            .removeClass('invisible');
+                            .setVisibility(1);
                     }, 500);
                 });
             }
@@ -125,7 +125,7 @@ const AccountOpening = (() => {
             const errorMessage = response.error.message;
             $('#submit-message').empty();
             $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
-                .removeClass('invisible');
+                .setVisibility(1);
         } else {
             Client.processNewAccount(Client.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
         }

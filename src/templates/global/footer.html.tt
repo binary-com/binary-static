@@ -30,12 +30,12 @@
 
                         [% INCLUDE footer_column header=l('Education') items=[
                             { text=l('Why Us?'),                           href=request.url_for('why-us'),                                class='ja-hide' },
-                            { text=l('Why Us?'),                           href=request.url_for('why-us-jp'),                             class='all-hide ja-show-block' },
+                            { text=l('Why Us?'),                           href=request.url_for('why-us-jp'),                             class='invisible ja-show' },
                             { text=l('Getting Started'),                   href=request.url_for('get-started'),                           class='ja-hide' },
-                            { text=l('Getting Started'),                   href=request.url_for('get-started-jp'),                        class='all-hide ja-show-block' },
+                            { text=l('Getting Started'),                   href=request.url_for('get-started-jp'),                        class='invisible ja-show' },
                             { text=l('Platform Tour'),                     href=request.url_for('tour'),                                  class='ja-hide' },
-                            { text=l('Platform Tour'),                     href=request.url_for('tour-jp'),                               class='hidden ja-show-block' },
-                            { text=l('{JAPAN ONLY}Service Announcements'), href=request.url_for('service-announcements'),                 class='hidden ja-show-block' },
+                            { text=l('Platform Tour'),                     href=request.url_for('tour-jp'),                               class='invisible ja-show' },
+                            { text=l('{JAPAN ONLY}Service Announcements'), href=request.url_for('service-announcements'),                 class='invisible ja-show' },
                             { text=l('GamCare'),                           href=request.url_for('http://www.gamcare.org.uk/'),            class='ja-hide id-hide', target='_blank' },
                             { text=l('Academy'),                           href=request.url_for('https://academy.binary.com'),            class='ja-hide academy', target='_blank' },
                             { text=l('Webinars'),                          href=request.url_for('https://academy.binary.com/en/events/'), class='ja-hide id-hide', target='_blank' },
@@ -51,9 +51,9 @@
                     <div class="gr-row">
                         [% INCLUDE footer_column header=l('Legal') items=[
                             { text=l('Terms and Conditions'), href=request.url_for('terms-and-conditions'),                             class='ja-hide' },
-                            { text=l('Terms and Conditions'), href=request.url_for('terms-and-conditions-jp'),                          class='hidden ja-show-block' },
+                            { text=l('Terms and Conditions'), href=request.url_for('terms-and-conditions-jp'),                          class='invisible ja-show' },
                             { text=l('Security and Privacy'), href=request.url_for('terms-and-conditions'),                             class='ja-hide',              param='?#privacy' },
-                            { text=l('Security and Privacy'), href=request.url_for('terms-and-conditions-jp'),                          class='hidden ja-show-block', param='?#account-privacy' },
+                            { text=l('Security and Privacy'), href=request.url_for('terms-and-conditions-jp'),                          class='invisible ja-show', param='?#account-privacy' },
                             { text=l('Responsible Trading'),  href=request.url_for('responsible-trading'),                              class='ja-hide' },
                             { text=l('Complaints'),           href=request.url_for('terms-and-conditions?section=complaints-disputes'), class='ja-hide' },
                         ] %]
@@ -71,7 +71,7 @@
                             { text=l('All Partnership Options'), href=request.url_for('partners') },
                         ] %]
 
-                        [% INCLUDE footer_column header=l('{JAPAN ONLY}Company Profile') wrapper_class='all-hide ja-show' items=[
+                        [% INCLUDE footer_column header=l('{JAPAN ONLY}Company Profile') wrapper_class='invisible ja-show' items=[
                             { text=l('{JAPAN ONLY}Company Profile & Disclosure'), href=request.url_for('company-profile') },
                         ] %]
                     </div>
@@ -102,7 +102,7 @@
                 </div>
             </div>
         </div>
-        <div id="ratelimit-error-message">
+        <div id="ratelimit-error-message" class="invisible">
             <div class="message">[% l('You have reached the rate limit of requests per second. Please try later.') %]</div>
         </div>
     </div>
