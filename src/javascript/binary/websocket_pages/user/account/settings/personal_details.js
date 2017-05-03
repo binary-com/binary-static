@@ -13,7 +13,6 @@ const PersonalDetails = (() => {
 
     const form_id = '#frmPersonalDetails';
     const real_acc_elements = '.RealAcc';
-    const hidden_class = 'invisible';
     let editable_fields,
         is_jp,
         is_virtual,
@@ -27,16 +26,16 @@ const PersonalDetails = (() => {
         residence = Client.get('residence');
         is_jp = residence === 'jp';
         if (is_jp && !is_virtual) {
-            $('#fieldset_email_consent').removeClass(hidden_class);
+            $('#fieldset_email_consent').setVisibility(1);
         }
         showHideTaxMessage();
     };
 
     const showHideTaxMessage = () => {
         if (Client.shouldCompleteTax()) {
-            $('#tax_information_notice').removeClass(hidden_class);
+            $('#tax_information_notice').setVisibility(1);
         } else {
-            $('#tax_information_notice').addClass(hidden_class);
+            $('#tax_information_notice').setVisibility(0);
         }
     };
 
@@ -51,15 +50,25 @@ const PersonalDetails = (() => {
             $(real_acc_elements).remove();
         } else if (is_jp) {
             const jp_settings = get_settings.jp_settings;
+            switch (jp_settings.gender) {
+                case 'f':
+                    jp_settings.gender = localize('Female');
+                    break;
+                case 'm':
+                    jp_settings.gender = localize('Male');
+                    break;
+                default:
+                    break;
+            }
             displayGetSettingsData(jp_settings);
             if (jp_settings.hedge_asset !== null && jp_settings.hedge_asset_amount !== null) {
-                $('.hedge').removeClass(hidden_class);
+                $('.hedge').setVisibility(1);
             }
-            $('.JpAcc').removeClass('invisible hidden');
+            $('.JpAcc').setVisibility(1);
         } else {
-            $(real_acc_elements).removeClass('hidden');
+            $(real_acc_elements).setVisibility(1);
         }
-        $(form_id).removeClass('hidden');
+        $(form_id).setVisibility(1);
         FormManager.handleSubmit({
             form_selector       : form_id,
             obj_request         : { set_settings: 1 },
@@ -99,7 +108,7 @@ const PersonalDetails = (() => {
         if (data.country) {
             $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'lbl_country' })));
             $('#lbl_country').text(data.country);
-            if (is_virtual) $('#btn_update').addClass(hidden_class);
+            if (is_virtual) $('#btn_update').setVisibility(0);
         }
     };
 
@@ -208,7 +217,7 @@ const PersonalDetails = (() => {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(tax_residence ? tax_residence.split(',') : '').trigger('change')
-                            .removeClass('invisible');
+                            .setVisibility(1);
                     }, 500);
                 });
                 $place_of_birth.val(get_settings_data.place_of_birth || residence);
@@ -223,22 +232,29 @@ const PersonalDetails = (() => {
     };
 
     const populateStates = (response) => {
-        const address_state = '#address_state';
-        let $field = $(address_state);
         const states = response.states_list;
 
-        $field.empty();
-
-        if (states && states.length > 0) {
-            $field.append($('<option/>', { value: '', text: localize('Please select') }));
-            states.forEach((state) => {
-                $field.append($('<option/>', { value: state.value, text: state.text }));
-            });
+        if (is_jp) {
+            const state_text = (states.filter(state => state.value === get_settings_data.address_state)[0] || {}).text;
+            $('#lbl_address_state').text(state_text || get_settings_data.address_state);
         } else {
-            $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
-            $field = $(address_state);
+            const address_state = '#address_state';
+            let $field = $(address_state);
+
+            $field.empty();
+
+            if (states && states.length > 0) {
+                $field.append($('<option/>', { value: '', text: localize('Please select') }));
+                states.forEach((state) => {
+                    $field.append($('<option/>', { value: state.value, text: state.text }));
+                });
+            } else {
+                $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+                $field = $(address_state);
+            }
+            $field.val(get_settings_data.address_state);
         }
-        $field.val(get_settings_data.address_state);
+
         initFormManager();
         if (is_jp && !is_virtual) {
             // detect hedging needs to be called after FormManager.init
@@ -255,7 +271,7 @@ const PersonalDetails = (() => {
             get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
             getDetailsResponse(get_settings_data);
             if (!is_virtual || !residence) {
-                $('#btn_update').removeClass(hidden_class);
+                $('#btn_update').setVisibility(1);
                 if (!is_jp) {
                     BinarySocket.send({ residence_list: 1 }).then(response => populateResidence(response));
                 }
@@ -263,7 +279,7 @@ const PersonalDetails = (() => {
                     BinarySocket.send({ states_list: residence }).then(response => populateStates(response));
                 }
             } else {
-                $('#btn_update').addClass(hidden_class);
+                $('#btn_update').setVisibility(0);
             }
         });
     };

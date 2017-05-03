@@ -10,7 +10,6 @@ const Cashier = (() => {
     'use strict';
 
     let href = '';
-    const hidden_class = 'invisible';
 
     const showContent = () => {
         Client.activateByClientType();
@@ -30,7 +29,7 @@ const Cashier = (() => {
                 new_el.href = href;
             }
             $a.replaceWith($('<a/>', new_el));
-            $(top_up_id).parent().removeClass(hidden_class);
+            $(top_up_id).parent().setVisibility(1);
         });
     };
 
@@ -46,10 +45,10 @@ const Cashier = (() => {
                     displayTopUpButton();
                 }
                 if (is_virtual || /CR/.test(Client.get('loginid'))) {
-                    $('#payment-agent-section').removeClass(hidden_class);
+                    $('#payment-agent-section').setVisibility(1);
                 }
                 if (Client.hasGamingFinancialEnabled()) {
-                    $('#account-transfer-section').removeClass(hidden_class);
+                    $('#account-transfer-section').setVisibility(1);
                 }
             });
         }

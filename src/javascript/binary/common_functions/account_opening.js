@@ -76,7 +76,7 @@ const AccountOpening = (() => {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(getTaxResidence() || residence_value).trigger('change')
-                            .removeClass('invisible');
+                            .setVisibility(1);
                     }, 500);
                 });
             }
@@ -98,6 +98,7 @@ const AccountOpening = (() => {
             const client_state = response.get_settings.address_state;
 
             if (states_list && states_list.length > 0) {
+                $address_state.append($('<option/>', { value: '', text: localize('Please select') }));
                 states_list.forEach((state) => {
                     $address_state.append($('<option/>', { value: state.value, text: state.text }));
                 });
@@ -124,7 +125,7 @@ const AccountOpening = (() => {
             const errorMessage = response.error.message;
             $('#submit-message').empty();
             $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
-                .removeClass('invisible');
+                .setVisibility(1);
         } else {
             Client.processNewAccount(Client.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
         }
@@ -162,7 +163,7 @@ const AccountOpening = (() => {
             id;
         $(form_id).find('select, input[type=checkbox]').each(function() {
             id = $(this).attr('id');
-            if (id !== 'tnc') {
+            if (!/^(tnc|address_state)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
                 if (id === 'not_pep') {
                     validation.exclude_request = 1;

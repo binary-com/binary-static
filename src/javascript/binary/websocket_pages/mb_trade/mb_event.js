@@ -130,12 +130,12 @@ const MBTradingEvents = (() => {
                 const $table_element = $('.japan-table');
                 if (!validatePayout(payout)) {
                     $payout_element.addClass('error-field');
-                    $table_element.addClass('invisible');
+                    $table_element.setVisibility(0);
                     return false;
                 }
                 // else
                 $payout_element.removeClass('error-field');
-                $table_element.removeClass('invisible');
+                $table_element.setVisibility(1);
 
                 MBDefaults.set('payout', payout);
                 MBProcess.processPriceRequest();

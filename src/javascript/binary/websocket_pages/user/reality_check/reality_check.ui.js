@@ -110,7 +110,7 @@ const RealityCheckUI = (() => {
         const interval = +RealityCheckData.get('interval');
         const toWait = interval - ((Date.now() - login_time) % interval);
 
-        window.setTimeout(() => {
+        setTimeout(() => {
             RealityCheckData.set('keep_open', 1);
             getSummaryAsync();
         }, toWait);
