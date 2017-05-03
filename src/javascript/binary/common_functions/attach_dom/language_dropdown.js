@@ -16,9 +16,9 @@ const createLanguageDropDown = (website_status) => {
         $select_language.append($('<li/>', { class: language, text: mapCodeToLanguage(language) }));
     });
 
-    $select_language.find(`.${current_language}:eq(1)`).addClass('invisible');
+    $select_language.find(`.${current_language}:eq(1)`).setVisibility(0);
     Language.onChange();
-    $languages.removeClass('invisible');
+    $languages.setVisibility(1);
 };
 
 const mapCodeToLanguage = code => Language.getAll()[code];
