@@ -42,7 +42,8 @@ const Barriers = (() => {
                     const elm     = document.getElementById('barrier');
                     const tooltip = document.getElementById('barrier_tooltip');
                     const span    = document.getElementById('barrier_span');
-                    let barrier_def = defaults_barrier && !isNaN(defaults_barrier) ? defaults_barrier : barrier.barrier,
+                    let barrier_def = defaults_barrier && !isNaN(defaults_barrier) ?
+                        defaults_barrier : (barrier.barrier || 0),
                         value;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
                         (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
