@@ -86,9 +86,9 @@ const StatementUI = (() => {
     const errorMessage = (msg) => {
         const $err = $('#statement-container').find('#error-msg');
         if (msg) {
-            $err.removeClass('invisible').text(msg);
+            $err.setVisibility(1).text(msg);
         } else {
-            $err.addClass('invisible').text('');
+            $err.setVisibility(0).text('');
         }
     };
 

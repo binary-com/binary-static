@@ -8,6 +8,8 @@ const TrafficSource = require('../../../common_functions/traffic_source');
 const Cookies       = require('../../../../lib/js-cookie');
 
 const VirtualAccOpening = (() => {
+    'use strict';
+
     const form = '#virtual-form';
 
     const onLoad = () => {
@@ -15,7 +17,7 @@ const VirtualAccOpening = (() => {
             handleJPForm();
         } else {
             BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
-            $('#residence').removeClass('invisible');
+            $('#residence').setVisibility(1);
             bindValidation();
         }
 
@@ -52,7 +54,7 @@ const VirtualAccOpening = (() => {
         if (!$clients_country.attr('disabled')) {
             $clients_country.prop('selected', true);
         }
-        $residence.removeClass('invisible');
+        $residence.setVisibility(1);
     };
 
     const bindValidation = () => {
@@ -86,7 +88,7 @@ const VirtualAccOpening = (() => {
         // and don't allow them to change residence
         const $residence = $('#residence');
         $residence.replaceWith($('<label/>', { id: 'residence', 'data-value': 'jp', text: localize('Japan') }));
-        $('#email_consent').parent().parent().removeClass('invisible');
+        $('#email_consent').parent().parent().setVisibility(1);
         bindValidation();
     };
 
@@ -127,8 +129,7 @@ const VirtualAccOpening = (() => {
     };
 
     const showError = (message) => {
-        $('#error-account-opening').removeClass('invisible')
-            .text(localize(message));
+        $('#error-account-opening').setVisibility(1).text(localize(message));
     };
 
     return {

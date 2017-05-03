@@ -21,12 +21,12 @@ const Menu = (() => {
     };
 
     const showMainMenu = () => {
-        $main_menu.removeClass('hidden');
+        $main_menu.setVisibility(1);
         activateMainMenu();
     };
 
     const hideMainMenu = () => {
-        $main_menu.addClass('hidden');
+        $main_menu.setVisibility(0);
     };
 
     const activateMainMenu = () => {

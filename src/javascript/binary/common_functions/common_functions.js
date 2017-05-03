@@ -11,9 +11,9 @@ const emailRot13 = str => (
 const detectHedging = ($purpose, $hedging) => {
     $purpose.change(() => {
         if ($purpose.val() === 'Hedging') {
-            $hedging.removeClass('invisible');
+            $hedging.setVisibility(1);
         } else {
-            $hedging.addClass('invisible');
+            $hedging.setVisibility(0);
         }
     });
 };

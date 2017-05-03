@@ -41,22 +41,22 @@
                                 <li class="ja-hide">
                                     <a href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
                                 </li>
-                                <li class="all-hide ja-show-block">
+                                <li class="invisible ja-show">
                                     <a href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a href="[% request.url_for('get-started') %]">[% l('Getting Started') %]</a>
                                 </li>
-                                <li class="all-hide ja-show-block">
+                                <li class="invisible ja-show">
                                     <a href="[% request.url_for('get-started-jp') %]">[% l('Getting Started') %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a href="[% request.url_for('tour') %]">[% l('Platform Tour') %]</a>
                                 </li>
-                                <li class="hidden ja-show-block">
+                                <li class="invisible ja-show">
                                     <a href="[% request.url_for('tour-jp') %]">[% l('Platform Tour') %]</a>
                                 </li>
-                                <li class="hidden ja-show-block">
+                                <li class="invisible ja-show">
                                     <a href="[% request.url_for('service-announcements') %]">[% l('{JAPAN ONLY}Service Announcements') %]</a>
                                 </li>
                                 <li class="ja-hide id-hide">
@@ -91,13 +91,13 @@
                                <li class='ja-hide'>
                                    <a href="[% request.url_for('/terms-and-conditions') %]">[% l('Terms and Conditions') %]</a>
                                </li>
-                               <li class='hidden ja-show-block'>
+                               <li class='invisible ja-show'>
                                    <a href="[% request.url_for('/terms-and-conditions-jp') %]">[% l('Terms and Conditions') %]</a>
                                </li>
                                <li class='ja-hide'>
                                    <a href="[% request.url_for('/terms-and-conditions') %]?#privacy">[% l('Security and Privacy') %]</a>
                                </li>
-                               <li class='hidden ja-show-block'>
+                               <li class='invisible ja-show'>
                                    <a href="[% request.url_for('/terms-and-conditions-jp') %]?#account-privacy">[% l('Security and Privacy') %]</a>
                                </li>
                                <li class="ja-hide">
@@ -139,7 +139,7 @@
                                </li>
                            </ul>
                        </div>
-                       <div class="gr-4 all-hide ja-show">
+                       <div class="gr-4 invisible ja-show">
                            <h4 class="secondary-color">[% l('{JAPAN ONLY}Company Profile') %]</h4>
                            <ul>
                                <li>
@@ -175,7 +175,7 @@
                 </div>
             </div>
         </div>
-        <div id="ratelimit-error-message">
+        <div id="ratelimit-error-message" class="invisible">
             <div class="message">
                 [% l('You have reached the rate limit of requests per second. Please try later.') %]
             </div>
