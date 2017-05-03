@@ -43,7 +43,7 @@ const Barriers = (() => {
                     const tooltip = document.getElementById('barrier_tooltip');
                     const span    = document.getElementById('barrier_span');
                     let barrier_def = defaults_barrier && !isNaN(defaults_barrier) ?
-                        defaults_barrier : (barrier.barrier || 0),
+                            defaults_barrier : (barrier.barrier || 0),
                         value;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
                         (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
@@ -88,8 +88,9 @@ const Barriers = (() => {
 
                     const defaults_high = Defaults.get('barrier_high');
                     const defaults_low  = Defaults.get('barrier_low');
-                    let barrier_high  = defaults_high && !isNaN(defaults_high) ? defaults_high : barrier.barrier,
-                        barrier_low   = defaults_low  && !isNaN(defaults_low)  ? defaults_low  : barrier.barrier1,
+                    let barrier_high  = defaults_high && !isNaN(defaults_high) ? defaults_high : (barrier.barrier || 0),
+                        barrier_low   = defaults_low  && !isNaN(defaults_low)  ?
+                            defaults_low  : (barrier.barrier1 || 0),
                         value_high,
                         value_low;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
