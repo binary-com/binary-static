@@ -45,7 +45,7 @@ const Highchart = (() => {
         lines_drawn = [];
 
         is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming =
-        is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
+            is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
     };
 
     const initializeValues = () => {
@@ -178,12 +178,18 @@ const Highchart = (() => {
                     chart = initChart(options);
                     if (!chart) return;
 
-                    if (purchase_time !== start_time) drawLineX(purchase_time, localize('Purchase Time'), '', '', '#7cb5ec');
+                    if (purchase_time !== start_time) {
+                        drawLineX({
+                            value: purchase_time,
+                            label: localize('Purchase Time'),
+                            color: '#7cb5ec',
+                        });
+                    }
 
                     // second condition is used to make sure contracts that have purchase time
                     // but are sold before the start time don't show start time
                     if (!is_sold || (is_sold && sell_time && sell_time > start_time)) {
-                        drawLineX(start_time);
+                        drawLineX({ value: start_time });
                     }
                 }
             } else if ((tick || ohlc) && !stop_streaming) {
@@ -453,23 +459,27 @@ const Highchart = (() => {
         if (!max_point) max_point = end_time;
     };
 
-    const drawLineX = (value_time, label_name, text_left, dash, color) => {
-        if (chart && !(new RegExp(value_time).test(lines_drawn))) {
+    const drawLineX = (properties) => {
+        if (chart && properties.value && !(new RegExp(properties.value).test(lines_drawn))) {
             addPlotLine({
-                value    : value_time * 1000,
-                label    : label_name || '',
-                textLeft : text_left === 'textLeft',
-                dashStyle: dash || '',
-                color    : color || '',
+                value    : properties.value * 1000,
+                label    : properties.label || '',
+                textLeft : properties.text_left === 'textLeft',
+                dashStyle: properties.dash_style || '',
+                color    : properties.color || '',
             }, 'x');
-            lines_drawn.push(value_time);
+            lines_drawn.push(properties.value);
         }
     };
 
     // draw the last line, mark the exit tick, and forget the streams
     const endContract = () => {
         if (chart && !stop_streaming) {
-            drawLineX((userSold() ? sell_time : end_time), '', 'textLeft', 'Dash');
+            drawLineX({
+                value     : (userSold() ? sell_time : end_time),
+                text_left : 'textLeft',
+                dash_style: 'Dash',
+            });
             if (exit_tick_time) {
                 selectTick(exit_tick_time, 'exit');
             }
@@ -508,7 +518,7 @@ const Highchart = (() => {
     const calculateGranularity = () => {
         const duration = Math.min(exit_time, now_time) - (purchase_time || start_time);
         let granularity;
-              // days * hours * minutes * seconds
+        // days * hours * minutes * seconds
         if      (duration <=            60 * 60) granularity = 0;     // less than 1 hour
         else if (duration <=        2 * 60 * 60) granularity = 120;   // 2 hours
         else if (duration <=        6 * 60 * 60) granularity = 600;   // 6 hours
