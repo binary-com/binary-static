@@ -22,6 +22,8 @@ const JapanPortfolio   = require('../../../binary_japan/trade_japan/portfolio');
 const TradingAnalysis = (() => {
     'use strict';
 
+    const hidden_class = 'invisible';
+
     const requestTradeAnalysis = () => {
         let form_name = State.get('is_mb_trading') ? $('#category').val() :
                                                     $('#contract_form_name_nav').find('.a-active').attr('id');
@@ -33,9 +35,9 @@ const TradingAnalysis = (() => {
         }
         $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation',  `underlying_symbol=${$('#underlying').val()}&form_name=${form_name}`));
         if (form_name === 'digits' || form_name === 'overunder' || form_name === 'evenodd') {
-            $('#tab_last_digit').removeClass('invisible');
+            $('#tab_last_digit').setVisibility(1);
         } else {
-            $('#tab_last_digit').addClass('invisible');
+            $('#tab_last_digit').setVisibility(0);
         }
         sessionStorage.setItem('currentAnalysisTab', getActiveTab());
         loadAnalysisTab();
@@ -122,11 +124,11 @@ const TradingAnalysis = (() => {
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
                 child_elements[i].classList.remove('selectedTab');
-                child_elements[i].classList.add('invisible');
+                child_elements[i].classList.add(hidden_class);
             }
 
             classes.add('selectedTab');
-            classes.remove('invisible');
+            classes.remove(hidden_class);
         }
     };
 
@@ -139,15 +141,14 @@ const TradingAnalysis = (() => {
         const show_image   = options.show_image   ? options.show_image   > 0 : true;
         const show_winning = options.show_winning ? options.show_winning > 0 : true;
         const show_explain = true;
-        const hidden_class = 'invisible';
         const $container   = $('#tab_explanation-content');
 
         if (show_winning) {
-            $container.find(`#explanation_winning, #winning_${form_name}`).removeClass(hidden_class);
+            $container.find(`#explanation_winning, #winning_${form_name}`).setVisibility(1);
         }
 
         if (show_explain) {
-            $container.find(`#explanation_explain, #explain_${form_name}`).removeClass(hidden_class);
+            $container.find(`#explanation_explain, #explain_${form_name}`).setVisibility(1);
         }
 
         const images = {
@@ -189,7 +190,7 @@ const TradingAnalysis = (() => {
             const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(getLanguage() === 'JA' ? 'ja/' : '')}`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
-            $container.find('#explanation_image').removeClass(hidden_class);
+            $container.find('#explanation_image').setVisibility(1);
         }
     };
 

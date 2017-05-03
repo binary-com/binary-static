@@ -99,10 +99,10 @@ const Purchase = (() => {
                 elementTextContent(button, localize('View'));
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
-                $('.open_contract_details').attr('contract_id', receipt.contract_id).removeClass('invisible');
+                $('.open_contract_details').attr('contract_id', receipt.contract_id).setVisibility(1);
             } else {
                 button.hide();
-                $('.open_contract_details').addClass('invisible');
+                $('.open_contract_details').setVisibility(0);
             }
         }
 
