@@ -4,8 +4,6 @@ const urlFor   = require('../base/url').urlFor;
 const JobDetails = (() => {
     'use strict';
 
-    const hidden_class = 'invisible';
-
     let dept;
 
     let $sections_div,
@@ -16,11 +14,11 @@ const JobDetails = (() => {
 
     const showSelectedDiv = () => {
         const section = window.location.hash;
-        $sections_div.addClass(hidden_class).filter(section).removeClass(hidden_class);
+        $sections_div.setVisibility(0).filter(section).setVisibility(1);
         if (dept === 'Information_Technology' && /senior_perl_developer/.test(section)) {
-            $senior_perl_message.removeClass(hidden_class);
+            $senior_perl_message.setVisibility(1);
         } else {
-            $senior_perl_message.addClass(hidden_class);
+            $senior_perl_message.setVisibility(0);
         }
     };
 
@@ -32,12 +30,12 @@ const JobDetails = (() => {
         $sections_div = $('.sections > div > div');
         $senior_perl_message = $('.senior_perl_message');
         // hide all first (to handle pjaxload)
-        $sidebar.addClass(hidden_class);
-        $('#title').find('h1').addClass(hidden_class);
-        $('#image').find('img').addClass(hidden_class);
+        $sidebar.setVisibility(0);
+        $('#title').find('h1').setVisibility(0);
+        $('#image').find('img').setVisibility(0);
         // show section
-        $(dept_class).removeClass(hidden_class);
-        $sidebar_dept.removeClass(hidden_class).find(`a[href="${window.location.hash}"]`).parent('li').addClass('selected');
+        $(dept_class).setVisibility(1);
+        $sidebar_dept.setVisibility(1).find(`a[href="${window.location.hash}"]`).parent('li').addClass('selected');
         showSelectedDiv();
         $('#back-button').attr('href', `${urlFor('open-positions')}#${dept}`);
         addEventListeners();

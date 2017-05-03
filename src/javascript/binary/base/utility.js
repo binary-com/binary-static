@@ -81,6 +81,20 @@ const handleHash = () => {
     }
 };
 
+const clearable = (element) => {
+    element.addClass('clear');
+    $(document).on('mousemove', '.clear', function(e) {
+        e.stopPropagation();
+        $(e.currentTarget)[toggleAddRemoveClass(this.offsetWidth - 18 < e.clientX - this.getBoundingClientRect().left)]('onClear');
+    }).on('mousedown', '.onClear', function(e) {
+        e.stopPropagation();
+        $(e.currentTarget).attr('data-value', '');
+        $(e.currentTarget).removeClass('clear onClear').val('').change();
+    });
+};
+
+const toggleAddRemoveClass = condition => (condition ? 'addClass' : 'removeClass');
+
 module.exports = {
     showLoadingImage: showLoadingImage,
     getHighestZIndex: getHighestZIndex,
@@ -89,4 +103,5 @@ module.exports = {
     isEmptyObject   : isEmptyObject,
     getPropertyValue: getPropertyValue,
     handleHash      : handleHash,
+    clearable       : clearable,
 };

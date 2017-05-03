@@ -93,7 +93,6 @@ const Process_Beta = (() => {
         BinarySocket.send({ contracts_for: underlying }).then((response) => {
             Notifications.hide('CONNECTION_ERROR');
             processContract_Beta(response);
-            window.contracts_for = response;
         });
 
         commonTrading.displayTooltip_Beta(Defaults.get('market'), underlying);
@@ -118,7 +117,7 @@ const Process_Beta = (() => {
             return;
         }
 
-        window.chartAllowed = !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly');
+        State.set('is_chart_allowed', !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly'));
 
         document.getElementById('trading_socket_container_beta').classList.add('show');
         const init_logo = document.getElementById('trading_init_progress');

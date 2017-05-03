@@ -27,6 +27,8 @@ const jpClient         = require('../../../common_functions/country_base').jpCli
 const TradingAnalysis_Beta = (() => {
     'use strict';
 
+    const hidden_class = 'invisible';
+
     const requestTradeAnalysis = () => {
         let form_name = State.get('is_mb_trading') ? $('#category').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
         if (form_name === 'matchdiff') {
@@ -34,9 +36,9 @@ const TradingAnalysis_Beta = (() => {
         }
         $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation_beta', `underlying_symbol=${$('#underlying').val()}&form_name=${form_name}`));
         if (/(digits|overunder|evenodd)/.test(form_name)) {
-            $('#tab_last_digit').removeClass('invisible');
+            $('#tab_last_digit').setVisibility(1);
         } else {
-            $('#tab_last_digit').addClass('invisible');
+            $('#tab_last_digit').setVisibility(0);
         }
         sessionStorage.setItem('currentAnalysisTab_Beta', getActiveTab());
         loadAnalysisTab();
@@ -48,11 +50,11 @@ const TradingAnalysis_Beta = (() => {
      */
     const bindAnalysisTabEvent = () => {
         if (Client.isLoggedIn()) {
-            $('#tab_portfolio').removeClass('invisible');
+            $('#tab_portfolio').setVisibility(1);
         }
         if (!jpClient()) {
-            $('#tab_asset_index').removeClass('invisible');
-            $('#tab_trading_times').removeClass('invisible');
+            $('#tab_asset_index').setVisibility(1);
+            $('#tab_trading_times').setVisibility(1);
         }
 
         const $analysis_tabs = $('#trading_analysis_content').find('#analysis_tabs');
@@ -136,11 +138,11 @@ const TradingAnalysis_Beta = (() => {
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
                 child_elements[i].classList.remove('selectedTab');
-                child_elements[i].classList.add('invisible');
+                child_elements[i].classList.add(hidden_class);
             }
 
             classes.add('selectedTab');
-            classes.remove('invisible');
+            classes.remove(hidden_class);
         }
     };
 
@@ -153,15 +155,14 @@ const TradingAnalysis_Beta = (() => {
         const show_image   = options.show_image   ? options.show_image   > 0 : true;
         const show_winning = options.show_winning ? options.show_winning > 0 : true;
         const show_explain = true;
-        const hidden_class = 'invisible';
         const $container   = $('#tab_explanation-content');
 
         if (show_winning) {
-            $container.find(`#explanation_winning, #winning_${form_name}`).removeClass(hidden_class);
+            $container.find(`#explanation_winning, #winning_${form_name}`).setVisibility(1);
         }
 
         if (show_explain) {
-            $container.find(`#explanation_explain, #explain_${form_name}`).removeClass(hidden_class);
+            $container.find(`#explanation_explain, #explain_${form_name}`).setVisibility(1);
         }
 
         const images = {
@@ -204,7 +205,7 @@ const TradingAnalysis_Beta = (() => {
             const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(language === 'ja' ? `${language}/` : '')}`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
-            $container.find('#explanation_image').removeClass(hidden_class);
+            $container.find('#explanation_image').setVisibility(1);
         }
     };
 

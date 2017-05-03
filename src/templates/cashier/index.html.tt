@@ -16,13 +16,13 @@
                     </div>
                     <div class="gr-5 gr-12-m">
                         <span class="ja-hide">[% l('You can request more virtual money if your virtual balance falls below USD 1,000.00.') %]</span>
-                        <span class="all-hide ja-show">[% l('You can request more virtual money if your virtual balance falls below JPY 100,000.') %]</span>
+                        <span class="invisible ja-show">[% l('You can request more virtual money if your virtual balance falls below JPY 100,000.') %]</span>
                     </div>
                     <div class="gr-5 gr-12-m">
                         <div class="gr-padding-10 invisible">
                             <a class="toggle button" id="VRT_topup_link">
                                 <span class="ja-hide">[% l('Get USD 10,000.00') %]</span>
-                                <span class="all-hide ja-show">[% l('Get JPY 1,000,000') %]</span>
+                                <span class="invisible ja-show">[% l('Get JPY 1,000,000') %]</span>
                             </a>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         <a class="ja-hide" href="[% request.url_for('/cashier/forwardws#deposit') %]" id="payment_methods">
                             <img class="responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/payment-methods.svg') %]" />
                         </a>
-                        <a class="all-hide ja-show" href="[% request.url_for('/cashier/deposit-jp') %]" id="payment_methods">
+                        <a class="invisible ja-show" href="[% request.url_for('/cashier/deposit-jp') %]" id="payment_methods">
                             <img class="responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/japan_cashier.svg') %]" />
                         </a>
                     </div>
@@ -71,7 +71,7 @@
                             <a class="button"></a>
                         </div>
                     </div>
-                    <div class="gr-5 gr-12-m all-hide ja-show">
+                    <div class="gr-5 gr-12-m invisible ja-show">
                         <div class="gr-padding-10 client_real invisible gr-parent">
                             <a class="toggle button client_real invisible" href="[% request.url_for('/cashier/deposit-jp') %]">
                                 <span class="deposit">[% l('Deposit') %]</span>

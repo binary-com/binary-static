@@ -22,7 +22,6 @@ const MBPrice = (() => {
     'use strict';
 
     const price_selector = '.prices-wrapper .price-rows';
-    const hidden_class   = 'invisible';
     const is_japan       = jpClient();
 
     let prices         = {},
@@ -196,7 +195,7 @@ const MBPrice = (() => {
         $rows          = {};
         // display loading
         if ($(price_selector).html()) {
-            $('#loading-overlay').height($(price_selector).height()).removeClass(hidden_class);
+            $('#loading-overlay').height($(price_selector).height()).setVisibility(1);
         }
         $(price_selector).html('');
     };
@@ -238,11 +237,11 @@ const MBPrice = (() => {
     };
 
     const showPriceOverlay = () => {
-        $('#disable-overlay').removeClass(hidden_class);
+        $('#disable-overlay').setVisibility(1);
     };
 
     const hidePriceOverlay = () => {
-        $('#disable-overlay, #loading-overlay').addClass(hidden_class);
+        $('#disable-overlay, #loading-overlay').setVisibility(0);
     };
 
     return {

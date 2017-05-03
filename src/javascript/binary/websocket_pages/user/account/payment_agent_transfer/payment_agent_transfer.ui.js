@@ -3,7 +3,6 @@ const localize = require('../../../../base/localize').localize;
 const PaymentAgentTransferUI = (() => {
     'use strict';
 
-    const hidden_class = 'invisible';
     let $paymentagent_transfer,
         $confirm_transfer,
         $done_transfer,
@@ -16,23 +15,23 @@ const PaymentAgentTransferUI = (() => {
         $notes_transfer = $('#paymentagent_transfer_notes');
     };
 
-    const hideForm = () => { $paymentagent_transfer.addClass(hidden_class); };
+    const hideForm = () => { $paymentagent_transfer.setVisibility(0); };
 
-    const showForm = () => { $paymentagent_transfer.removeClass(hidden_class); };
+    const showForm = () => { $paymentagent_transfer.setVisibility(1); };
 
-    const hideConfirmation = () => { $confirm_transfer.addClass(hidden_class); };
+    const hideConfirmation = () => { $confirm_transfer.setVisibility(0); };
 
-    const showConfirmation = () => { $confirm_transfer.find('.errorfield').addClass(hidden_class).end().removeClass(hidden_class); };
+    const showConfirmation = () => { $confirm_transfer.find('.errorfield').setVisibility(0).end().setVisibility(1); };
 
-    const hideDone = () => { $done_transfer.addClass(hidden_class); };
+    const hideDone = () => { $done_transfer.setVisibility(0); };
 
-    const showDone = () => { $done_transfer.removeClass(hidden_class); };
+    const showDone = () => { $done_transfer.setVisibility(1); };
 
-    const hideNotes = () => { $notes_transfer.addClass(hidden_class); };
+    const hideNotes = () => { $notes_transfer.setVisibility(0); };
 
-    const showNotes = () => { $notes_transfer.removeClass(hidden_class); };
+    const showNotes = () => { $notes_transfer.setVisibility(1); };
 
-    const showTransferError = (err) => { $confirm_transfer.find('.errorfield').text(localize(err)).removeClass(hidden_class); };
+    const showTransferError = (err) => { $confirm_transfer.find('.errorfield').text(localize(err)).setVisibility(1); };
 
     const updateFormView = (currency) => { $paymentagent_transfer.find('label[for="amount"]').text(`${localize('Amount')} ${currency}`); };
 
@@ -59,7 +58,7 @@ const PaymentAgentTransferUI = (() => {
             from_id,
             to_id,
         ]);
-        $done_transfer.find(' > #confirm_msg').text(confirm_msg).removeClass(hidden_class);
+        $done_transfer.find(' > #confirm_msg').text(confirm_msg).setVisibility(1);
     };
 
     const hideFirstForm = () => {

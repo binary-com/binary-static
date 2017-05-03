@@ -112,7 +112,6 @@ const TradingEvents_Beta = (() => {
                     BinarySocket.send({ contracts_for: underlying }).then((response) => {
                         Notifications.hide('CONNECTION_ERROR');
                         Process_Beta.processContract_Beta(response);
-                        window.contracts_for = response;
                     });
 
                     // forget the old tick id i.e. close the old tick stream

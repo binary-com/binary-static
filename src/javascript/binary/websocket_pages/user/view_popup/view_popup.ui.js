@@ -27,11 +27,14 @@ const ViewPopupUI = (() => {
             $con.hide();
             const onClose = () => {
                 cleanup();
+                $(document).off('keydown');
+                $(window).off('popstate', onClose);
             };
-            $con.find('a.close').on('click', () => { onClose(); });
+            $con.find('a.close').on('click', onClose);
             $(document).on('keydown', (e) => {
                 if (e.which === 27) onClose();
             });
+            $(window).on('popstate', onClose);
             $container = $con;
         }
         return $container;

@@ -193,17 +193,17 @@ const Client = (() => {
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status').then(() => {
                 $('#client-logged-in').addClass('gr-centered');
-                $('.client_logged_in').removeClass('invisible');
+                $('.client_logged_in').setVisibility(1);
                 if (get('is_virtual')) {
-                    $(section).find('.client_virtual').removeClass('invisible');
+                    $(section).find('.client_virtual').setVisibility(1);
                     $('#topbar').addClass('secondary-bg-color').removeClass('primary-color-dark');
                 } else {
-                    $(section).find('.client_real').not((jpClient() ? '.ja-hide' : '')).removeClass('invisible');
+                    $(section).find('.client_real').not((jpClient() ? '.ja-hide' : '')).setVisibility(1);
                     $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
                 }
             });
         } else {
-            $(section).find('.client_logged_out').removeClass('invisible');
+            $(section).find('.client_logged_out').setVisibility(1);
             $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
         }
     };

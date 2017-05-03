@@ -11,7 +11,7 @@
         <a class="button ja-hide" href="[% request.url_for('trading') %]">
           <img class="responsive ja-hide" id="new-trader-icon" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
         </a>
-        <img class="responsive hidden ja-show" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-jp.svg') %]"/>
+        <img class="responsive invisible ja-show" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-jp.svg') %]"/>
       </div>
     </div>
   </div>

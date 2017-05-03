@@ -10,7 +10,7 @@ const TermsAndConditions = (() => {
         handleActiveTab();
         TNCApproval.requiresTNCApproval(
             $('#btn_accept'),
-            () => { $('.tnc_accept').removeClass('invisible'); },
+            () => { $('.tnc_accept').setVisibility(1); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
         Scroll.sidebarScroll($('.tac-binary'));
         tabListener();
@@ -25,7 +25,6 @@ const TermsAndConditions = (() => {
 
         const parent_active = 'active';
         const child_active  = 'a-active';
-        const hidden_class  = 'invisible';
 
         $(menu)
             .find('li')
@@ -51,10 +50,10 @@ const TermsAndConditions = (() => {
         }
         $(content)
             .find('> div')
-            .addClass(hidden_class)
+            .setVisibility(0)
             .end()
             .find(content_to_show)
-            .removeClass(hidden_class);
+            .setVisibility(1);
 
         const section = urlParam('section');
         const $content = $('#content');

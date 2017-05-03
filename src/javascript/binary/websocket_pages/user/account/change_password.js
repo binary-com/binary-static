@@ -4,6 +4,8 @@ const localize    = require('../../../base/localize').localize;
 const FormManager = require('../../../common_functions/form_manager');
 
 const ChangePassword = (() => {
+    'use strict';
+
     const form_id = '#frm_change_password';
 
     const init = () => {
@@ -22,10 +24,10 @@ const ChangePassword = (() => {
 
     const handler = (response) => {
         if ('error' in response) {
-            $('#form_error').text(localize(response.error.message)).removeClass('hidden');
+            $('#form_error').text(localize(response.error.message)).setVisibility(1);
         } else {
-            $(form_id).addClass('hidden');
-            $('#msg_success').removeClass('invisible');
+            $(form_id).setVisibility(0);
+            $('#msg_success').setVisibility(1);
             setTimeout(() => {
                 Client.sendLogoutRequest(true);
             }, 5000);

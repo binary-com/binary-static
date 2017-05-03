@@ -7,7 +7,7 @@ const jpClient    = require('../../../common_functions/country_base').jpClient;
 
 const ChartFrame = (() => {
     const showHighchart = () => {
-        if (window.chartAllowed) {
+        if (State.get('is_chart_allowed')) {
             chartFrameSource();
         } else {
             chartFrameCleanup();

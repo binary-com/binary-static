@@ -14,8 +14,6 @@ const MetaTraderUI = (() => {
         $main_msg,
         submit;
 
-    const hidden_class  = 'invisible';
-
     const types_info   = MetaTraderConfig.types_info;
     const actions_info = MetaTraderConfig.actions_info;
     const validations  = MetaTraderConfig.validations;
@@ -55,13 +53,13 @@ const MetaTraderUI = (() => {
 
     const displayLoadingAccount = (acc_type) => {
         const $acc_item = $list.find(`#${acc_type}`);
-        $acc_item.find('> div > div[class!="title"]').addClass(hidden_class);
-        $acc_item.find('.loading').removeClass(hidden_class);
+        $acc_item.find('> div > div[class!="title"]').setVisibility(0);
+        $acc_item.find('.loading').setVisibility(1);
     };
 
     const updateAccount = (acc_type) => {
         const $acc_item = $list.find(`#${acc_type}`);
-        $acc_item.find('.loading').addClass(hidden_class);
+        $acc_item.find('.loading').setVisibility(0);
         if (types_info[acc_type].account_info) {
             // Update account info
             $acc_item.find('.acc-info div[data]').map(function() {
@@ -71,9 +69,9 @@ const MetaTraderUI = (() => {
                     key === 'balance' ? formatMoney('USD', +info) :
                     key === 'leverage' ? `1:${info}` : info);
             });
-            $acc_item.find('.has-account').removeClass(hidden_class);
+            $acc_item.find('.has-account').setVisibility(1);
         } else {
-            $acc_item.find('.no-account').removeClass(hidden_class)
+            $acc_item.find('.no-account').setVisibility(1)
                 .find('.info').html($templates.find(`#${acc_type}`));
         }
     };
@@ -108,7 +106,7 @@ const MetaTraderUI = (() => {
                 .find('#frm_action')
                 .html($form)
                 .end()
-                .removeClass(hidden_class);
+                .setVisibility(1);
             $.scrollTo($action, 500, { offset: -7 });
             Validation.init(`#frm_${action}`, validations[action]);
         });
@@ -119,13 +117,13 @@ const MetaTraderUI = (() => {
             $form.find('#btn_submit').off('click dblclick', submit);
             $form.empty();
             $form = undefined;
-            $action.addClass(hidden_class);
+            $action.setVisibility(0);
             $list.find('.acc-box > div').removeClass('active');
             if (should_scroll) {
                 $.scrollTo($list, 500, { offset: -10 });
             }
         }
-        $main_msg.empty().addClass(hidden_class);
+        $main_msg.empty().setVisibility(0);
     };
 
     const postValidate = (acc_type, action) => {
@@ -134,20 +132,20 @@ const MetaTraderUI = (() => {
     };
 
     const hideFormMessage = () => {
-        $form.find('#msg_form').html('').addClass(hidden_class);
+        $form.find('#msg_form').html('').setVisibility(0);
     };
 
     const displayFormMessage = (message) => {
-        $form.find('#msg_form').text(message).removeClass(hidden_class);
+        $form.find('#msg_form').text(message).setVisibility(1);
     };
 
     const displayMainMessage = (message) => {
-        $main_msg.html(message).removeClass(hidden_class);
+        $main_msg.html(message).setVisibility(1);
         $.scrollTo($main_msg, 500, { offset: -10 });
     };
 
     const displayPageError = (message) => {
-        $('#mt_account_management').find('#page_msg').html(message).removeClass(hidden_class)
+        $('#mt_account_management').find('#page_msg').html(message).setVisibility(1)
             .end()
             .find('#mt_loading')
             .remove();
@@ -157,7 +155,7 @@ const MetaTraderUI = (() => {
         const $btn = $form.find('button');
         if ($btn.length && !$btn.find('.barspinner').length) {
             $btn.attr('disabled', 'disabled');
-            const $btn_text = $('<span/>', { text: $btn.text(), class: hidden_class });
+            const $btn_text = $('<span/>', { text: $btn.text(), class: 'invisible' });
             showLoadingImage($btn, 'white');
             $btn.append($btn_text);
         }

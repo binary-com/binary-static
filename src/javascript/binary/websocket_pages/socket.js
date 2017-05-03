@@ -315,7 +315,7 @@ const BinarySocketClass = () => {
                     setResidence(response.get_settings.country_code);
                     GTM.eventHandler(response.get_settings);
                     if (response.get_settings.is_authenticated_payment_agent) {
-                        $('#topMenuPaymentAgent').removeClass('invisible');
+                        $('#topMenuPaymentAgent').setVisibility(1);
                     }
                     Client.set('first_name', response.get_settings.first_name);
                 }
@@ -328,7 +328,7 @@ const BinarySocketClass = () => {
                         break;
                     }
                     case 'RateLimit':
-                        $('#ratelimit-error-message:hidden').css('display', 'block');
+                        $('#ratelimit-error-message').setVisibility(1);
                         break;
                     case 'InvalidToken':
                         if (!/^(reset_password|new_account_virtual|paymentagent_withdraw|cashier)$/.test(type)) {

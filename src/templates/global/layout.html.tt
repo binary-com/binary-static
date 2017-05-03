@@ -40,7 +40,7 @@
           [% l('Want to learn more?') %]
           <br/>
           <a class="ja-hide" href="[% request.url_for('/tour') %]">[% l('View the Tour') %]</a>
-          <a class="hidden ja-show" href="[% request.url_for('/tour-jp') %]">[% l('View the Tour') %]</a>
+          <a class="invisible ja-show" href="[% request.url_for('/tour-jp') %]">[% l('View the Tour') %]</a>
         </p>
       </div>
     </div>

@@ -52,7 +52,7 @@ const LimitsUI = (() => {
             $('#trading-limits').prepend(`${login_id} - `);
             $('#withdrawal-title').prepend(`${login_id} - `);
         }
-        $('#withdrawal-limits, #limits-title').removeClass('invisible');
+        $('#withdrawal-limits, #limits-title').setVisibility(1);
     };
 
     const clearTableContent = () =>  {

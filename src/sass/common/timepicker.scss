@@ -12,3 +12,22 @@
         border-radius: 0;
     }
 }
+
+.clearable {
+    background: $COLOR_WHITE url('data:image/gif;base64,R0lGODlhBwAHAIAAAP///5KSkiH5BAAAAAAALAAAAAAHAAcAAAIMTICmsGrIXnLxuDMLADs=') no-repeat right -10px center;
+    padding: 3px 18px 3px 4px; /* Use the same right padding (18px) in jQ */
+    border-radius: 3px;
+    transition: background 0.4s;
+    &.clear {
+        background-position: right 5px center;
+    }
+    &.onClear {
+        cursor: pointer;
+    }
+}
+
+.clearable::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}

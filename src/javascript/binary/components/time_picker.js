@@ -1,5 +1,6 @@
 const moment     = require('moment');
 const localize   = require('../base/localize').localize;
+const clearable  = require('../base/utility').clearable;
 const checkInput = require('../common_functions/common_functions').checkInput;
 const padLeft    = require('../common_functions/string_util').padLeft;
 
@@ -85,6 +86,11 @@ const TimePicker = (() => {
             }
             $this.attr('data-value', new_time || time);
             $(this_selector).trigger('change', [new_time || time]);
+
+            if ($this.hasClass('clearable')) {
+                clearable($this);
+            }
+
             return true;
         };
 
@@ -102,7 +108,7 @@ const TimePicker = (() => {
         const time_picker_conf = time_pickers[selector].config_data;
         if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
             hide(selector);
-            $selector.attr({ type: 'time', 'data-picker': 'native' });
+            $selector.attr({ type: 'time', 'data-picker': 'native' }).removeAttr('readonly');
 
             const minTime = time_picker_conf.minTime;
             if (minTime) $selector.attr('min', toTime(minTime));
@@ -112,7 +118,7 @@ const TimePicker = (() => {
             return;
         }
         if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') || ($(window).width() < 770 && !checkInput('time', 'not-a-time'))) {
-            $selector.attr({ type: 'text', 'data-picker': 'jquery' });
+            $selector.attr({ type: 'text', 'data-picker': 'jquery', readonly: 'readonly' });
             $selector.removeAttr('min max');
             create(selector);
         }

@@ -15,12 +15,10 @@ const PortfolioInit = (() => {
     let values,
         currency,
         oauth_apps,
-        hidden_class,
         is_initialized,
         is_first_response;
 
     const init = () => {
-        hidden_class = 'invisible';
         updateBalance();
 
         if (is_initialized) return;
@@ -73,9 +71,9 @@ const PortfolioInit = (() => {
         $portfolio_balance.text(Portfolio.getBalance(Client.get('balance'), Client.get('currency')));
         const $if_balance_zero = $('#if-balance-zero');
         if (Client.get('balance') > 0 || Client.get('is_virtual')) {
-            $if_balance_zero.addClass(hidden_class);
+            $if_balance_zero.setVisibility(0);
         } else {
-            $if_balance_zero.removeClass(hidden_class);
+            $if_balance_zero.setVisibility(1);
         }
     };
 
@@ -88,7 +86,7 @@ const PortfolioInit = (() => {
         // no open contracts
         if (data.portfolio.contracts.length === 0) {
             $('#portfolio-no-contract').show();
-            $('#portfolio-table').addClass(hidden_class);
+            $('#portfolio-table').setVisibility(0);
         } else {
             /**
              * User has at least one contract
@@ -107,7 +105,7 @@ const PortfolioInit = (() => {
                     }, 1000);
                 }
             });
-            $('#portfolio-table').removeClass(hidden_class);
+            $('#portfolio-table').setVisibility(1);
 
             // update footer area data
             updateFooter();
@@ -117,7 +115,7 @@ const PortfolioInit = (() => {
         }
         // ready to show portfolio table
         $('#portfolio-loading').hide();
-        $('#portfolio-content').removeClass(hidden_class);
+        $('#portfolio-content').setVisibility(1);
         is_first_response = false;
     };
 
@@ -185,7 +183,7 @@ const PortfolioInit = (() => {
             .fadeOut(1000, function() {
                 $(this).remove();
                 if ($('#portfolio-body').find('tr').length === 0) {
-                    $('#portfolio-table').addClass(hidden_class);
+                    $('#portfolio-table').setVisibility(0);
                     $('#cost-of-open-positions, #value-of-open-positions').text('');
                     $('#portfolio-no-contract').show();
                 }
@@ -201,9 +199,9 @@ const PortfolioInit = (() => {
     const errorMessage = (msg) => {
         const $err = $('#portfolio').find('#error-msg');
         if (msg) {
-            $err.removeClass(hidden_class).text(msg);
+            $err.setVisibility(1).text(msg);
         } else {
-            $err.addClass(hidden_class).text('');
+            $err.setVisibility(0).text('');
         }
     };
 
@@ -216,7 +214,7 @@ const PortfolioInit = (() => {
         BinarySocket.send({ forget_all: 'proposal_open_contract' });
         BinarySocket.send({ forget_all: 'transaction' });
         $('#portfolio-body').empty();
-        $('#portfolio-content').addClass(hidden_class);
+        $('#portfolio-content').setVisibility(0);
         is_initialized = false;
     };
 

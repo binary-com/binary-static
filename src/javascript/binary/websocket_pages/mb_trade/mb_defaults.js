@@ -36,15 +36,15 @@ const MBDefaults = (() => {
         }
     };
 
-    const removeDefault = () => {
+    const removeDefault = (...keys) => {
         loadParams();
         let is_updated = false;
-        for (let i = 0; i < arguments.length; i++) {
-            if (params.hasOwnProperty(arguments[i])) {
-                delete params[arguments[i]];
+        keys.forEach((key) => {
+            if (key in params) {
+                delete params[key];
                 is_updated = true;
             }
-        }
+        });
         if (is_updated) {
             saveParams();
         }

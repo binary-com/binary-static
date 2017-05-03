@@ -27,7 +27,7 @@ const ViewPopup = (() => {
 
     const popupbox_id   = 'inpage_popup_content_box';
     const wrapper_id    = 'sell_content_wrapper';
-    const hidden_class  = 'hidden';
+    const hidden_class  = 'invisible';
 
     const init = (button) => {
         btn_view               = button;
@@ -129,13 +129,13 @@ const ViewPopup = (() => {
         if (current_spot) {
             containerSetText('trade_details_current_spot', current_spot);
         } else {
-            $('#trade_details_current_spot').parent().addClass(hidden_class);
+            $('#trade_details_current_spot').parent().setVisibility(0);
         }
 
         if (current_spot_time) {
             containerSetText('trade_details_current_date', toJapanTimeIfNeeded(epochToDateTime(current_spot_time)));
         } else {
-            $('#trade_details_current_date').parent().addClass(hidden_class);
+            $('#trade_details_current_date').parent().setVisibility(0);
         }
 
         containerSetText('trade_details_ref_id',           contract.transaction_ids.buy + (contract.transaction_ids.sell ? ` - ${contract.transaction_ids.sell}` : ''));
@@ -193,7 +193,7 @@ const ViewPopup = (() => {
         }
 
         if (!contract.is_valid_to_sell) {
-            $container.find('#errMsg').addClass(hidden_class);
+            $container.find('#errMsg').setVisibility(0);
         }
 
         sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
@@ -241,7 +241,7 @@ const ViewPopup = (() => {
         if (!(contract.is_settleable && !contract.is_sold)) {
             containerSetText('trade_details_message', '&nbsp;');
         }
-        $container.find('#errMsg').addClass(hidden_class);
+        $container.find('#errMsg').setVisibility(0);
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
     };
@@ -249,8 +249,8 @@ const ViewPopup = (() => {
     const addColorAndClass = ($tab_to_show, $tab_to_hide, $content_to_show, $content_to_hide) => {
         $tab_to_show.attr('style', 'background: #f2f2f2;');
         $tab_to_hide.attr('style', 'background: #c2c2c2;');
-        $content_to_hide.addClass('invisible');
-        $content_to_show.removeClass('invisible');
+        $content_to_hide.setVisibility(0);
+        $content_to_show.setVisibility(1);
     };
 
     const showCorporateAction = () => {
@@ -271,12 +271,12 @@ const ViewPopup = (() => {
         $corporate_action_tab.on('click', () => {
             addColorAndClass($corporate_action_tab, $contract_information_tab,
                              $corporate_action_content, $contract_information_content);
-            $barrier_change.removeClass('invisible');
-            $barrier_change_content.removeClass('invisible');
+            $barrier_change.setVisibility(1);
+            $barrier_change_content.setVisibility(1);
         });
         $contract_information_tab.on('click', () => {
-            $barrier_change.addClass('invisible');
-            $barrier_change_content.addClass('invisible');
+            $barrier_change.setVisibility(0);
+            $barrier_change_content.setVisibility(0);
             addColorAndClass($contract_information_tab, $corporate_action_tab,
                              $contract_information_content, $corporate_action_content);
         });
@@ -340,7 +340,7 @@ const ViewPopup = (() => {
             ${createRow('Profit/Loss', '', 'trade_details_profit_loss')}
             <tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>
             </table>
-            <div id="errMsg" class="notice-msg hidden"></div>
+            <div id="errMsg" class="notice-msg ${hidden_class}"></div>
             <div id="trade_details_bottom"><div id="contract_sell_wrapper" class="${hidden_class}"></div><div id="contract_sell_message"></div><div id="contract_win_status" class="${hidden_class}"></div></div>`));
 
         $sections.find('#sell_details_chart_wrapper').html($('<div/>', { id: (contract.tick_count ? 'tick_chart' : 'analysis_live_chart'), class: 'live_chart_wrapper' }));
@@ -369,7 +369,7 @@ const ViewPopup = (() => {
         if ($target && $target.length > 0) {
             $target.html(string);
             if (attributes) $target.attr(attributes);
-            if (is_visible) $target.parent('tr').removeClass(hidden_class);
+            if (is_visible) $target.parent('tr').setVisibility(1);
         }
     };
 
@@ -412,7 +412,7 @@ const ViewPopup = (() => {
         if (show) {
             if (is_exist) return;
 
-            $container.find('#contract_sell_wrapper').removeClass(hidden_class)
+            $container.find('#contract_sell_wrapper').setVisibility(1)
                 .append($('<div/>', { id: sell_wrapper_id })
                     .append($('<button/>', { id: sell_button_id, class: 'button', text: localize('Sell at market') }))
                     .append($('<div/>', { class: 'note' })
@@ -478,14 +478,14 @@ const ViewPopup = (() => {
             if (response.error.code === 'NoOpenPosition') {
                 getContract();
             } else {
-                $container.find('#errMsg').text(response.error.message).removeClass(hidden_class);
+                $container.find('#errMsg').text(response.error.message).setVisibility(1);
             }
             sellSetVisibility(true);
             is_sell_clicked = false;
             return;
         }
         ViewPopupUI.forgetStreams();
-        $container.find('#errMsg').addClass(hidden_class);
+        $container.find('#errMsg').setVisibility(0);
         sellSetVisibility(false);
         if (is_sell_clicked) {
             containerSetText('contract_sell_message',
