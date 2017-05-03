@@ -29,6 +29,36 @@ msgstr "“我与多家联盟公司合作，迄今为止，它是我发现的最
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"第三方供应商\"指通过使用%1的API提供可用功能和作用的第三方（非联盟成员）实体。"
 
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$100,000 - $250,000"
+msgstr "$100,001-$250,000"
+
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$100,001 - $500,000"
+msgstr "$100,001-$250,000"
+
+#, fuzzy
+#| msgid "&#36;25,000 - &#36;50,000"
+msgid "$25,000 - $50,000"
+msgstr "&#36;25,000 - &#36;50,000"
+
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$250,001 - $500,000"
+msgstr "$100,001-$250,000"
+
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$50,001 - $100,000"
+msgstr "$100,001-$250,000"
+
+#, fuzzy
+#| msgid "&#36;500,001 - &#36;1,000,000"
+msgid "$500,001 - $1,000,000"
+msgstr "&#36;500,001 - &#36;1,000,000"
+
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 已记入您的虚拟资金账户%3"
 
@@ -128,7 +158,9 @@ msgstr "%1已经更新了其<a href=\"%2\">条款和条件</a>。通过点击OK�
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "%1 已拥有百万用户，到达了一个历史性的里程碑。本公司持续快速成长，这项成就再次证实我们在同业中的领先地位。"
 
-msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+#, fuzzy
+#| msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+msgid "%1 introduces an %2auto-trader programming tool%3, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1也引入了<a href='%2' target='_blank' class='ja-hide'>自动化交易程序工具</a><span class='all-hide ja-show'>自动化交易程序工具</span>，允许客户轻松使用“拖放”操作开发自己的自动化交易机器人。"
 
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
@@ -170,7 +202,9 @@ msgstr "%1 是在线期权交易领域屡获殊荣的领先企业。"
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 是在线期权交易领域屡获殊荣的领先企业。我们拥有："
 
-msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+#, fuzzy
+#| msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 启动了<a href='%2' target='_blank' class='ja-hide'>品牌商品专用电子商务网站</a><span class='all-hide ja-show'>品牌商品专用电子商务网站</span> – 让客户、联盟会员和程序开发员买卖Binary.com的产品。"
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
@@ -280,24 +314,6 @@ msgstr "立刻进行%1账户验证%2，以获得取款选项的所有优惠。"
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1的慈善活动侧重于捐助世界各地在当地社区有重大影响力的小型慈善机构和非营利组织。 我们的捐款使他们直接受惠，也不须像一些大型慈善机构那样支付庞大开销。"
-
-msgid "&#36;100,000 - &#36;250,000"
-msgstr "&#36;100,000 - &#36;250,000"
-
-msgid "&#36;100,001 - &#36;500,000"
-msgstr "&#36;100,001 - &#36;500,000"
-
-msgid "&#36;25,000 - &#36;50,000"
-msgstr "&#36;25,000 - &#36;50,000"
-
-msgid "&#36;250,001 - &#36;500,000"
-msgstr "&#36;250,001 - &#36;500,000"
-
-msgid "&#36;50,001 - &#36;100,000"
-msgstr "&#36;50,001 - &#36;100,000"
-
-msgid "&#36;500,001 - &#36;1,000,000"
-msgstr "&#36;500,001 - &#36;1,000,000"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1是我们最长久、最信赖的合作伙伴。我们已经有很多年的合作关系。&#8221;"
@@ -1055,6 +1071,11 @@ msgstr "密码提示问题的答案"
 
 msgid "Anti-Fraud Officer"
 msgstr "反欺诈主任"
+
+#, fuzzy
+#| msgid "Authenticate your Account"
+msgid "Anticipated Account Turnover"
+msgstr "验证您的账户"
 
 msgid "Any"
 msgstr "任何"
@@ -4472,14 +4493,18 @@ msgstr "法律&法规符合性"
 msgid "Legal Compliance"
 msgstr "遵守法律"
 
-msgid "Less than &#36;100,000"
-msgstr "少于 &#36; 100,000"
-
-msgid "Less than &#36;25,000"
-msgstr "少于&#36;25,000"
-
 msgid "Less than 1 million JPY"
 msgstr "Less than 1 million JPY"
+
+#, fuzzy
+#| msgid "Less than &#36;100,000"
+msgid "Less than 100,000"
+msgstr "少于 &#36; 100,000"
+
+#, fuzzy
+#| msgid "Less than &#36;25,000"
+msgid "Less than 25,000"
+msgstr "少于&#36;25,000"
 
 msgid "Less than 6 months"
 msgstr "Less than 6 months"
@@ -5371,10 +5396,14 @@ msgstr "我们的历史记录"
 msgid "Our trading screen is simple to use:"
 msgstr "我们的交易屏幕简单，容易使用："
 
-msgid "Over &#36;1,000,000"
+#, fuzzy
+#| msgid "Over &#36;1,000,000"
+msgid "Over $1,000,000"
 msgstr "大于&#36;1,000,000"
 
-msgid "Over &#36;500,001"
+#, fuzzy
+#| msgid "Over &#36;500,001"
+msgid "Over $500,001"
 msgstr "大于&#36;500,001"
 
 msgid "Over 1 million registered accounts worldwide"
@@ -8268,7 +8297,9 @@ msgstr "当我们在自己账户（交易平台）上交易时，我们是委托
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
 msgstr "当我们与您订立合约时，我们会采取负责任的行动，通过遵循我们的订单执行政策以及您所提供的任何特定指令执行合约条款，为您争取最佳结果。我们的订单执行政策包含一整套特定的程序，为您获取最佳执行结果，需要遵循并考虑的因素包括：（一）您的合约性质，（二）您制定合约的优先事项，（三）与市场有关的实行方式，考虑这些的目的是在广泛的、可能互相冲突的因素间实现最佳平衡（根据我们的观点）。我们的政策并不能提供保证，但当我们与您订立合约后，获得的价格将总比别处合算。"
 
-msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
+#, fuzzy
+#| msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
+msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no invisible fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "当您对收到的价格感到满意时请立刻执行交易。通过我们的独特平台，您不会遇到滑价或跳空市场。更重要的是，不会有任何隐藏费用。您也可在任何长期合约到期前随时售出，以保护您的赚取利润或将亏损降至最低额。"
 
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
@@ -10855,6 +10886,18 @@ msgstr "条款和条件审批"
 
 msgid "Account Limits"
 msgstr "账户限额"
+
+#~ msgid "&#36;100,000 - &#36;250,000"
+#~ msgstr "&#36;100,000 - &#36;250,000"
+
+#~ msgid "&#36;100,001 - &#36;500,000"
+#~ msgstr "&#36;100,001 - &#36;500,000"
+
+#~ msgid "&#36;250,001 - &#36;500,000"
+#~ msgstr "&#36;250,001 - &#36;500,000"
+
+#~ msgid "&#36;50,001 - &#36;100,000"
+#~ msgstr "&#36;50,001 - &#36;100,000"
 
 #~ msgid "Please %1 to view this page"
 #~ msgstr "要查看此页面请%1"
@@ -16468,9 +16511,6 @@ msgstr "账户限额"
 #~ msgid "Authenticate to Withdraw"
 #~ msgstr "验证提款"
 
-#~ msgid "Authenticate your Account"
-#~ msgstr "验证您的账户"
-
 #~ msgid "Confirm Your Email"
 #~ msgstr "请确定您的电子邮件"
 
@@ -18892,9 +18932,6 @@ msgstr "账户限额"
 
 #~ msgid "Stock Buyback"
 #~ msgstr "股票购回"
-
-#~ msgid "$100,001-$250,000"
-#~ msgstr "$100,001-$250,000"
 
 #~ msgid "An automatically generated <a href=\"https://apigee.com/rmg/resources/binary1\" target=\"_blank\">Resource Summary</a> is also available."
 #~ msgstr "也提供自动生成的 <a href=\"https://apigee.com/rmg/resources/binary1\" target=\"_blank\">资源摘要</a>。"
