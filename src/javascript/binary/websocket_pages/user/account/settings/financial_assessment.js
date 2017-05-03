@@ -14,7 +14,6 @@ const FinancialAssessment = (() => {
         arr_validation = [];
 
     const form_selector = '#frm_assessment';
-    const hidden_class  = 'invisible';
 
     const onLoad = () => {
         if (jpClient()) {
@@ -42,7 +41,7 @@ const FinancialAssessment = (() => {
         if (isEmptyObject(financial_assessment)) {
             BinarySocket.wait('get_account_status').then((data) => {
                 if (data.get_account_status.risk_classification === 'high') {
-                    $('#high_risk_classification').removeClass('invisible');
+                    $('#high_risk_classification').setVisibility(1);
                 }
             });
         }
@@ -106,7 +105,7 @@ const FinancialAssessment = (() => {
     const hideLoadingImg = (show_form) => {
         $('#assessment_loading').remove();
         if (show_form) {
-            $(form_selector).removeClass(hidden_class);
+            $(form_selector).setVisibility(1);
         }
     };
 
@@ -115,11 +114,11 @@ const FinancialAssessment = (() => {
         if (is_success && /metatrader/i.test(redirect_url)) {
             localStorage.removeItem('financial_assessment_redirect');
             $.scrollTo($('h1#heading'), 500, { offset: -10 });
-            $(form_selector).addClass(hidden_class);
-            $('#msg_main').removeClass(hidden_class);
+            $(form_selector).setVisibility(0);
+            $('#msg_main').setVisibility(1);
             BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                 if ($.inArray('authenticated', response_status.get_account_status.status) === -1) {
-                    $('#msg_authenticate').removeClass(hidden_class);
+                    $('#msg_authenticate').setVisibility(1);
                 }
             });
         } else {
