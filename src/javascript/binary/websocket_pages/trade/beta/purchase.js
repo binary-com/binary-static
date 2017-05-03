@@ -107,11 +107,11 @@ const Purchase_Beta = (() => {
                 button.setAttribute('contract_id', receipt.contract_id);
                 descr.show();
                 button.show();
-                $('#confirmation_message').find('.open_contract_details').attr('contract_id', receipt.contract_id).removeClass('invisible');
+                $('#confirmation_message').find('.open_contract_details').attr('contract_id', receipt.contract_id).setVisibility(1);
             } else {
                 descr.hide();
                 button.hide();
-                $('#confirmation_message').find('.open_contract_details').addClass('invisible');
+                $('#confirmation_message').find('.open_contract_details').setVisibility(0);
             }
         }
 

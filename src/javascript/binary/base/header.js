@@ -78,7 +78,7 @@ const Header = (() => {
 
     const metatraderMenuItemVisibility = (landing_company_response) => {
         if (MetaTrader.isEligible(landing_company_response)) {
-            $('#all-accounts').find('#user_menu_metatrader').removeClass('invisible');
+            $('#all-accounts').find('#user_menu_metatrader').setVisibility(1);
         }
     };
 
@@ -109,11 +109,10 @@ const Header = (() => {
             const loginid_array = Client.get('loginid_array');
 
             const $upgrade_msg = $('.upgrademessage');
-            const hidden_class  = 'invisible';
 
             const showUpgrade = (url, msg) => {
-                $upgrade_msg.removeClass(hidden_class)
-                    .find('a').removeClass(hidden_class)
+                $upgrade_msg.setVisibility(1)
+                    .find('a').setVisibility(1)
                     .attr('href', urlFor(url))
                     .html($('<span/>', { text: localize(msg) }));
             };
@@ -121,17 +120,17 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 const show_upgrade_msg = !loginid_array.some(client => client.real);
 
-                $upgrade_msg.removeClass(hidden_class)
-                    .find('> span').removeClass(hidden_class).end()
+                $upgrade_msg.setVisibility(1)
+                    .find('> span').setVisibility(1).end()
                     .find('a')
-                    .addClass(hidden_class);
+                    .setVisibility(0);
 
                 const jp_account_status = (State.get(['response', 'get_settings', 'get_settings', 'jp_account_status']) || {}).status;
                 if (jp_account_status && show_upgrade_msg) {
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else {
-                        $upgrade_msg.removeClass(hidden_class);
+                        $upgrade_msg.setVisibility(1);
                         if (jp_account_status === 'jp_activation_pending') {
                             if ($('.activation-message').length === 0) {
                                 $('#virtual-text').append($('<div/>', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
@@ -143,7 +142,7 @@ const Header = (() => {
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    $upgrade_msg.find('> span').removeClass(hidden_class);
+                    $upgrade_msg.find('> span').setVisibility(1);
                     if (Client.canUpgradeVirtualToFinancial(landing_company)) {
                         showUpgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
                     } else if (Client.canUpgradeVirtualToJapan(landing_company)) {
@@ -152,7 +151,7 @@ const Header = (() => {
                         showUpgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
                 } else {
-                    $upgrade_msg.find('a').addClass(hidden_class).html('');
+                    $upgrade_msg.find('a').setVisibility(0).html('');
                 }
             } else {
                 let show_financial = false;
@@ -161,10 +160,10 @@ const Header = (() => {
                     show_financial = !loginid_array.some(client => client.financial);
                 }
                 if (show_financial) {
-                    $('#virtual-text').parent().addClass('invisible');
+                    $('#virtual-text').parent().setVisibility(0);
                     showUpgrade('new_account/maltainvestws', 'Open a Financial Account');
                 } else {
-                    $upgrade_msg.addClass(hidden_class);
+                    $upgrade_msg.setVisibility(0);
                 }
             }
         });

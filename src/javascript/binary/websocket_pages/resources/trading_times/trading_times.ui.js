@@ -61,13 +61,13 @@ const TradingTimesUI = (() => {
     const populateTable = () => {
         if (!active_symbols || !trading_times) return;
 
-        $('#errorMsg').addClass('hidden');
+        $('#errorMsg').setVisibility(0);
 
         const is_japan_trading = jpClient();
 
         const markets = trading_times.markets;
 
-        const $ul = $('<ul/>', { class: is_japan_trading ? 'hidden' : '' });
+        const $ul = $('<ul/>', { class: is_japan_trading ? 'invisible' : '' });
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {

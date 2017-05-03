@@ -7,7 +7,6 @@ const AccountTransfer = (() => {
     'use strict';
 
     const form_id = '#frm_account_transfer';
-    const hidden_class = 'invisible';
 
     let accounts,
         $transfer;
@@ -15,7 +14,7 @@ const AccountTransfer = (() => {
     const populateAccounts = (response) => {
         if (response.error) {
             $('#error_message').find('p').text(response.error.message).end()
-                .removeClass(hidden_class);
+                .setVisibility(1);
             return;
         }
         accounts = response.accounts;
@@ -49,7 +48,7 @@ const AccountTransfer = (() => {
         if (from_loginid) {
             showForm($form);
         } else {
-            $('#client_message').removeClass(hidden_class);
+            $('#client_message').setVisibility(1);
         }
     };
 
@@ -60,7 +59,7 @@ const AccountTransfer = (() => {
             bindValidation();
         });
         updateCurrency($currency);
-        $form.removeClass(hidden_class);
+        $form.setVisibility(1);
         bindValidation();
         FormManager.handleSubmit({
             form_selector       : form_id,
@@ -85,20 +84,20 @@ const AccountTransfer = (() => {
 
     const responseHandler = (response) => {
         if (response.error) {
-            $('#form_error').text(response.error.message).removeClass(hidden_class);
+            $('#form_error').text(response.error.message).setVisibility(1);
         } else {
             BinarySocket.send({ transfer_between_accounts: 1 }).then(data => populateReceipt(data));
         }
     };
 
     const populateReceipt = (response) => {
-        $(form_id).addClass(hidden_class);
+        $(form_id).setVisibility(0);
         accounts = response.accounts;
         accounts.forEach((account, idx) => {
             $(`#loginid_${(idx + 1)}`).text(account.loginid);
             $(`#balance_${(idx + 1)}`).text(`${account.currency} ${account.balance}`);
         });
-        $('#success_form').removeClass(hidden_class);
+        $('#success_form').setVisibility(1);
     };
 
     const onLoad = () => {

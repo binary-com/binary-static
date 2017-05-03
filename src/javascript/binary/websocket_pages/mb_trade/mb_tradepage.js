@@ -34,7 +34,7 @@ const MBTradePage = (() => {
         $('#tab_graph').find('a').text(localize('Chart'));
         $('#tab_explanation').find('a').text(localize('Explanation'));
         $('#remaining-time-label').text(localize('Remaining time'));
-        window.chartAllowed = true;
+        State.set('is_chart_allowed', true);
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
     };
 
@@ -44,7 +44,7 @@ const MBTradePage = (() => {
 
     const onUnload = () => {
         chartFrameCleanup();
-        window.chartAllowed = false;
+        State.set('is_chart_allowed', false);
         JapanPortfolio.hide();
         State.remove('is_mb_trading');
         events_initialized = 0;

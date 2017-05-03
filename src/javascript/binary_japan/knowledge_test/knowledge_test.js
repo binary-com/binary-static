@@ -9,8 +9,6 @@ const BinarySocket        = require('../../binary/websocket_pages/socket');
 const KnowledgeTest = (() => {
     'use strict';
 
-    const hidden_class = 'invisible';
-
     const submitted = {};
     let submit_completed = false;
     let random_picks = [];
@@ -27,7 +25,7 @@ const KnowledgeTest = (() => {
 
         const answered_qid = Object.keys(submitted).map(k => +k);
         if (answered_qid.length !== 20) {
-            $('#knowledge-test-instructions').addClass('invisible');
+            $('#knowledge-test-instructions').setVisibility(0);
             $('#knowledge-test-msg')
                 .addClass('notice-msg')
                 .text(localize('You need to finish all 20 questions.'));
@@ -67,13 +65,13 @@ const KnowledgeTest = (() => {
         const $questions = $('#knowledge-test-questions');
         $questions.find('input[type=radio]').click(questionAnswerHandler);
         $('#knowledge-test-submit').click(submitHandler);
-        $questions.removeClass(hidden_class);
+        $questions.setVisibility(1);
         $('#knowledge-test-msg').text(localize('{JAPAN ONLY}Please complete the following questions.'));
-        $('#knowledge-test-instructions').removeClass('invisible');
+        $('#knowledge-test-instructions').setVisibility(1);
     };
 
     const showResult = (score, time) => {
-        $('#knowledge-test-instructions').addClass('invisible');
+        $('#knowledge-test-instructions').setVisibility(0);
         $('#knowledge-test-header').text(localize('{JAPAN ONLY}Knowledge Test Result'));
         const msg = score >= 14 ? msg_pass : msg_fail;
         $('#knowledge-test-msg').text(localize(msg));
@@ -81,13 +79,13 @@ const KnowledgeTest = (() => {
         const $result_table = KnowledgeTestUI.createResultUI(score, time);
 
         $('#knowledge-test-container').append($result_table);
-        $('#knowledge-test-questions').addClass(hidden_class);
+        $('#knowledge-test-questions').setVisibility(0);
     };
 
     const showMsgOnly = (msg) => {
-        $('#knowledge-test-questions').addClass(hidden_class);
+        $('#knowledge-test-questions').setVisibility(0);
         $('#knowledge-test-msg').text(localize(msg));
-        $('#knowledge-test-instructions').addClass('invisible');
+        $('#knowledge-test-instructions').setVisibility(0);
     };
 
     const showDisallowedMsg = jp_status =>
@@ -206,7 +204,7 @@ const KnowledgeTest = (() => {
             } else if (response.error.code === 'TestUnavailableNow') {
                 showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
             } else {
-                $('#form-msg').html(response.error.message).removeClass(hidden_class);
+                $('#form-msg').html(response.error.message).setVisibility(1);
                 submit_completed = false;
             }
         });

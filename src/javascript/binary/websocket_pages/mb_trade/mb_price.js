@@ -198,7 +198,7 @@ const MBPrice = (() => {
         is_displayed   = false;
         // display loading
         if ($(price_selector).html()) {
-            $('#loading-overlay').height($(price_selector).height()).removeClass('invisible');
+            $('#loading-overlay').height($(price_selector).height()).setVisibility(1);
         }
         $(price_selector).html('');
     };
@@ -240,11 +240,11 @@ const MBPrice = (() => {
     };
 
     const showPriceOverlay = () => {
-        $('#disable-overlay').removeClass('invisible');
+        $('#disable-overlay').setVisibility(1);
     };
 
     const hidePriceOverlay = () => {
-        $('#disable-overlay, #loading-overlay').addClass('invisible');
+        $('#disable-overlay, #loading-overlay').setVisibility(0);
     };
 
     return {

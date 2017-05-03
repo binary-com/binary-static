@@ -97,7 +97,6 @@ const Process = (() => {
         BinarySocket.send({ contracts_for: underlying }).then((response) => {
             Notifications.hide('CONNECTION_ERROR');
             processContract(response);
-            window.contracts_for = response;
         });
     };
 
@@ -119,7 +118,7 @@ const Process = (() => {
             return;
         }
 
-        window.chartAllowed = !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly');
+        State.set('is_chart_allowed', !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly'));
 
         document.getElementById('trading_socket_container').classList.add('show');
         const init_logo = document.getElementById('trading_init_progress');

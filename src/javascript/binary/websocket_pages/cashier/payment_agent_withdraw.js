@@ -19,7 +19,6 @@ const PaymentAgentWithdraw = (() => {
         txt_amount       : '#txtAmount',
         txt_desc         : '#txtDescription',
     };
-    const hidden_class = 'hidden';
 
     let $views,
         agent_name;
@@ -123,25 +122,25 @@ const PaymentAgentWithdraw = (() => {
     // -----------------------------
     const showPageError = (err_msg, id) => {
         const $error = $(view_ids.error);
-        $error.find(' > p').addClass(hidden_class);
+        $error.find(' > p').setVisibility(0);
         if (id) {
-            $error.find(`#${id}`).removeClass(hidden_class);
+            $error.find(`#${id}`).setVisibility(1);
         } else {
-            $error.find('#custom-error').html(err_msg).removeClass(hidden_class);
+            $error.find('#custom-error').html(err_msg).setVisibility(1);
         }
         setActiveView(view_ids.error);
     };
 
     // ----- View Control -----
     const setActiveView = (view_id) => {
-        $views.addClass(hidden_class);
-        $(view_id).removeClass(hidden_class);
+        $views.setVisibility(0);
+        $(view_id).setVisibility(1);
     };
 
     const onLoad = () => {
         BinarySocket.wait('get_account_status').then((data) => {
             $views = $('#paymentagent_withdrawal').find('.viewItem');
-            $views.addClass(hidden_class);
+            $views.setVisibility(0);
 
             if (/(withdrawal|cashier)_locked/.test(data.get_account_status.status)) {
                 showPageError('', 'withdrawal-locked-error');

@@ -14,7 +14,7 @@ const CashierJP = (() => {
         if (jpClient() && !jpResidence()) BinaryPjax.load(defaultRedirectUrl());
         const $container = $('#japan_cashier_container');
         BinarySocket.wait('get_settings').then(() => {
-            $container.removeClass('invisible');
+            $container.setVisibility(1);
             if (action === 'deposit') {
                 $('#name_id').text(`${(Client.get('loginid') || 'JP12345')} ${(Client.get('first_name') || 'Joe Bloggs')}`);
             } else if (action === 'withdraw') {

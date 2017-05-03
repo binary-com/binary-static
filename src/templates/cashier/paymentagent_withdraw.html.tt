@@ -3,14 +3,14 @@
 
     <div id="paymentagent_withdrawal">
 
-        <div id="viewError" class="viewItem hidden">
-            <p id="custom-error" class="notice-msg center-text hidden"></p>
-            <p id="withdrawal-locked-error" class="notice-msg center-text hidden">
+        <div id="viewError" class="viewItem invisible">
+            <p id="custom-error" class="notice-msg center-text invisible"></p>
+            <p id="withdrawal-locked-error" class="notice-msg center-text invisible">
                 [% l('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', '<a href="mailto:support@binary.com">support@binary.com</a>') %]
             </p>
         </div>
 
-        <div id="viewSuccess" class="viewItem hidden">
+        <div id="viewSuccess" class="viewItem invisible">
             <p id="successMessage"></p>
             <p>
                 <a class="button" href="[% request.url_for('/user/statementws') %]">
@@ -19,7 +19,7 @@
             </p>
         </div>
 
-        <form id="viewConfirm" class="viewItem hidden">
+        <form id="viewConfirm" class="viewItem invisible">
             <p>[% l('Please confirm the transaction details in order to complete the transfer:') %]</p>
 
             <p>[% l('Transfer to') %]: <span id="lblAgentName"></span><br />[% l('Amount') %]: <span id="lblCurrency"></span> <span id="lblAmount"></span></p>
@@ -28,7 +28,7 @@
             <button class="button" type="submit">[% l('Confirm') %]</button>
         </form>
 
-        <div id="viewForm" class="viewItem hidden">
+        <div id="viewForm" class="viewItem invisible">
             <p>[% l('Please provide us with the following information, after retrieving the verification token from your email:') %]</p>
             <form class="form rbox gr-padding-10" id="frmWithdrawal">
                 <fieldset>

@@ -123,7 +123,6 @@ const TradingEvents = (() => {
             BinarySocket.send({ contracts_for: underlying }).then((response) => {
                 Notifications.hide('CONNECTION_ERROR');
                 Process.processContract(response);
-                window.contracts_for = response;
             });
         };
 

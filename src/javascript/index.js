@@ -16,6 +16,7 @@ exportAllFunctions(require('./binary/common_functions/check_new_release'));
 
 require('event-source-polyfill');
 require('./lib/jquery.sparkline.js');
+require('./lib/plugins');
 require('jquery.scrollto');
 
 require('./binary/components/trackjs_onerror');
@@ -23,19 +24,3 @@ require('./binary/components/trackjs_onerror');
 const BinaryLoader = require('./binary/base/binary_loader');
 
 $(window).on('load', BinaryLoader.init);
-
-Element.prototype.hide = function() {
-    this.style.display = 'none';
-};
-
-Element.prototype.show = function() {
-    this.style.display = '';
-};
-
-if (!('remove' in Element.prototype)) {
-    Element.prototype.remove = function() {
-        if (this.parentNode) {
-            this.parentNode.removeChild(this);
-        }
-    };
-}
