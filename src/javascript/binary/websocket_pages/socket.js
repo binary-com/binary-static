@@ -20,6 +20,7 @@ const BinarySocket = (() => {
         req_number     = 0,
         req_id         = 0,
         wrong_app_id   = 0,
+        is_available   = true,
         is_disconnect_called = false;
 
     const socket_url = `${getSocketURL()}?app_id=${getAppId()}&l=${getLanguage()}`;
@@ -147,7 +148,7 @@ const BinarySocket = (() => {
             subscribe: !!data.subscribe,
         };
 
-        if (isReady()) {
+        if (isReady() && is_available) {
             is_disconnect_called = false;
             if (!data.hasOwnProperty('passthrough') && !data.hasOwnProperty('verify_email')) {
                 data.passthrough = {};
@@ -214,7 +215,7 @@ const BinarySocket = (() => {
                 const type = response.msg_type;
 
                 // store in State
-                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || type === 'balance') {
+                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /(balance|website_status)/.test(type)) {
                     State.set(['response', type], $.extend({}, response));
                 }
                 // resolve the send promise
@@ -277,6 +278,13 @@ const BinarySocket = (() => {
         }
     };
 
+    const availability = (status) => {
+        if (typeof status !== 'undefined') {
+            is_available = !!status;
+        }
+        return is_available;
+    };
+
     return {
         init              : init,
         wait              : wait,
@@ -284,6 +292,7 @@ const BinarySocket = (() => {
         clear             : clear,
         clearTimeouts     : clearTimeouts,
         sendBuffered      : sendBufferedRequests,
+        availability      : availability,
         setOnDisconnect   : (onDisconnect) => { config.onDisconnect = onDisconnect; },
         removeOnDisconnect: () => { delete config.onDisconnect; },
     };

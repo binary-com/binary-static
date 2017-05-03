@@ -17,14 +17,24 @@ const BinarySocketGeneral = (() => {
         if (is_ready) {
             if (!Login.isLoginPages()) {
                 Client.validateLoginid();
-                BinarySocket.send({ website_status: 1 });
+                BinarySocket.send({ website_status: 1, subscribe: 1 });
             }
             Clock.startClock();
         }
     };
 
     const onMessage = (response) => {
+        let is_available;
         switch (response.msg_type) {
+            case 'website_status':
+                is_available = /^up$/i.test(response.website_status.site_status);
+                if (is_available && !BinarySocket.availability()) {
+                    window.location.reload();
+                } else if (!is_available) {
+                    Header.displayNotification(response.website_status.message, true);
+                }
+                BinarySocket.availability(is_available);
+                break;
             case 'authorize':
                 if (response.error) {
                     const is_active_tab = sessionStorage.getItem('active_tab') === '1';
