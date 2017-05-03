@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-04-27 16:15+0000\n"
+"PO-Revision-Date: 2017-05-03 20:45+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,35 +35,23 @@ msgstr "「様々なアフィリエイトプログラムに加入してきまし
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "「サードパーティプロバイダー」とは%1 APIを使用して機能を利用可能にするサードパーティ（非提携）エンティティを意味します。"
 
-#, fuzzy
-#| msgid "&#36;100,000 - &#36;250,000"
 msgid "$100,000 - $250,000"
-msgstr "&#36;100,000 - &#36;250,000"
+msgstr "$100,000 - $250,000"
 
-#, fuzzy
-#| msgid "&#36;100,001 - &#36;500,000"
 msgid "$100,001 - $500,000"
-msgstr "&#36;100,001 - &#36;500,000"
+msgstr "$100,001 - $500,000"
 
-#, fuzzy
-#| msgid "&#36;25,000 - &#36;50,000"
 msgid "$25,000 - $50,000"
-msgstr "&#36;25,000 - &#36;50,000"
+msgstr "$25,000 - $50,000"
 
-#, fuzzy
-#| msgid "&#36;250,001 - &#36;500,000"
 msgid "$250,001 - $500,000"
-msgstr "&#36;250,001 - &#36;500,000"
+msgstr "$250,001 - $500,000"
 
-#, fuzzy
-#| msgid "&#36;50,001 - &#36;100,000"
 msgid "$50,001 - $100,000"
-msgstr "&#36;50,001 - &#36;100,000"
+msgstr "$50,001 - $100,000"
 
-#, fuzzy
-#| msgid "&#36;500,001 - &#36;1,000,000"
 msgid "$500,001 - $1,000,000"
-msgstr "&#36;500,001 - &#36;1,000,000"
+msgstr "$500,001 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2をデモ口座%3に付与されました"
@@ -163,10 +152,8 @@ msgstr "<a href=\"%2\">取引約款</a>を改定いたします。当社でお�
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "口座数が100万口座を超え、社史に残る実績を達成、業界トップのポジションを確実なものにしました。"
 
-#, fuzzy
-#| msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgid "%1 introduces an %2auto-trader programming tool%3, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
-msgstr "「ドラッグ&ドロップ」操作で自動売買ロボットを作成し、システムトレードを可能にする自動トレーダープログラミングツール<a href='%2' target='_blank' class='ja-hide'></a>を導入しました。"
+msgstr "「ドラッグ&ドロップ」操作で自動売買ロボットを作成し、システムトレードを可能にする%2自動トレーダープログラミングツール%3を導入しました。"
 
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgstr "Binary.com (バイナリードットコム)ではダイナミック且つ柔軟なワークスタイルが可能です。世界中のホームオフィスからの在宅勤務の機会もご希望に応じて許可しています。"
@@ -207,10 +194,8 @@ msgstr "%1は受賞履歴を有するオンライン上のオプション取引�
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "当社は受賞履歴を有するオンライン上のオプション取引業界でのパイオニアであり、下記の実績を誇ります："
 
-#, fuzzy
-#| msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
-msgstr "海外で自社ブランド商品のECサイトを開設<a href='%2' target='_blank' class='ja-hide'></a> - お客様、アフィリエイト会員、開発者の方々が自社ブランドの売買がご利用いただけます。"
+msgstr "海外で自社ブランド商品の%2ECサイト%3を開設 - お客様、アフィリエイト会員、開発者の方々が自社ブランドの売買がご利用いただけます。"
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr ""
@@ -447,7 +432,7 @@ msgid "7-day limit on losses"
 msgstr "7日間の損失制限"
 
 msgid "7-day turnover limit"
-msgstr "7日の取引限度額"
+msgstr "7日の取引数量限度額"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<<職務内容に戻る"
@@ -1087,10 +1072,8 @@ msgstr "秘密の質問の答え"
 msgid "Anti-Fraud Officer"
 msgstr "不正対策局"
 
-#, fuzzy
-#| msgid "Authenticate your Account"
 msgid "Anticipated Account Turnover"
-msgstr "ご口座のアップグレードについて"
+msgstr "予想されるご口座の取引数量"
 
 msgid "Any"
 msgstr "任意"
@@ -2264,7 +2247,7 @@ msgid "Daily limit on losses"
 msgstr "損失限度額（1日）"
 
 msgid "Daily turnover limit"
-msgstr "1日の取引限度額"
+msgstr "1日の取引数量限度額"
 
 msgid "Data Feed"
 msgstr "データフィード"
@@ -4550,15 +4533,11 @@ msgstr "法務・規制コンプライアンス"
 msgid "Legal Compliance"
 msgstr "法令順守"
 
-#, fuzzy
-#| msgid "Less than &#36;100,000"
 msgid "Less than $100,000"
-msgstr "&#36;100,000未満"
+msgstr "$100,000未満"
 
-#, fuzzy
-#| msgid "Less than &#36;25,000"
 msgid "Less than $25,000"
-msgstr "&#36;25,000未満"
+msgstr "$25,000未満"
 
 msgid "Less than 1 million JPY"
 msgstr "100万円未満"
@@ -5461,15 +5440,11 @@ msgstr "当社の実績について"
 msgid "Our trading screen is simple to use:"
 msgstr "取引方法は次の5つの取引条件を選択・指定："
 
-#, fuzzy
-#| msgid "Over &#36;1,000,000"
 msgid "Over $1,000,000"
-msgstr "&#36;1,000,000以上"
+msgstr "$1,000,001以上"
 
-#, fuzzy
-#| msgid "Over &#36;500,001"
 msgid "Over $500,001"
-msgstr "&#36;500,001以上"
+msgstr "$500,002以上"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "世界中で100万口座以上"
@@ -8486,10 +8461,11 @@ msgstr "当社の口座（Dealing Desk）を取り扱う際、当社は当事者
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
 msgstr "お客さまと契約を締結する際、お客さまから頂いた特定の指示への当社注文執行ポリシーと対象に応じて、それら契約の執行により可能な限り最良の結果をお客さまへもたらせられるようあらゆる合理的な措置を講じます。当社注文執行ポリシーは、対象となるお客さまへ可能な限り最良の結果をもたらすよう考慮し設計されている一連の手順を含みます。： (a)お客さまの契約の性質 (b)これら契約を締結するのに関連してお客さまに同意いただいた特定の優先順位 (c)論争要素の範囲にわたる最適なバランスを提供して結果を生成する目的をもって、対象のマーケットに関連した実践。当社ポリシーは保証を提供することはできませんが、お客さまと契約締結の際、価格は常により良いものであるか、他の場所で利用できるようなものになる場合があります。"
 
-#, fuzzy
-#| msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no invisible fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
-msgstr "満足のいく価格が表示されたら、すぐに取引を実行してください。当社独自のプラットフォームでは、市場との差やズレに関してご心配いただく必要ありません。一番重要なことは、追加料金が発生しない点です。利益を守り、損失を最小限に抑えるために、トレードによっては取引期間が終了する前にトレードを売却することも可能です。"
+msgstr ""
+"満足のいく価格が表示されたら、すぐに取引を実行してください。当社独自のプラットフォームでは、市場との差やズレに関してご心配いただく必要ありません。そして一"
+"番重要なことは、追加料金が発生しない点です。利益を守り、損失を最小限に抑えるために、トレードによっては取引期間が終了する前にトレードを売却することも可能で"
+"す。"
 
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "\"Ok\"をクリックすると、選択した日付までこのサイトでのトレードができなくなります。"
