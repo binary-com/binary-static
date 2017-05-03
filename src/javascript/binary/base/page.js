@@ -146,7 +146,7 @@ const Page = (() => {
                 `${localize('This is a staging server - For testing purposes only')} - `)}
                 ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
             const $end_note = $('#end-note');
-            $end_note.html(message).removeClass('invisible');
+            $end_note.html(message).setVisibility(1);
             $('#footer').css('padding-bottom', $end_note.height());
         }
     };

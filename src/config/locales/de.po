@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: German (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-04-12 12:51+0000\n"
+"PO-Revision-Date: 2017-04-19 16:25+0000\n"
 "Last-Translator: Karin Graf <karin_graf@hotmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
 "Language: de\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13\n"
+"X-Generator: Weblate 2.14-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "„%1 API“ bedeutet von %1 selbst entwickelte Programmroutinen, Protokolle, Werkzeuge und Mittel, die von %1 erstellt und gepflegt werden, die es Ihnen ermöglichen, eine genehmigte Anwendung zu verwenden, um sich in die %1 Handelsplattform zu integrieren."
@@ -27,6 +27,36 @@ msgstr "\"Ich arbeite mit vielen Partnerunternehmen zusammen und habe festgestel
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"Drittanbieter\" bezeichnet das/die Dritte(n) (nicht verbunden(e)(en)) Unternehmen, das/die Eigenschaften und Funktionen unter Verwendung des %1 API zur Verfügung stellen."
+
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$100,000 - $250,000"
+msgstr "$100.001-$250.000"
+
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$100,001 - $500,000"
+msgstr "$100.001-$250.000"
+
+#, fuzzy
+#| msgid "&#36;25,000 - &#36;50,000"
+msgid "$25,000 - $50,000"
+msgstr "25.000&#36; - 100.000&#36;"
+
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$250,001 - $500,000"
+msgstr "$100.001-$250.000"
+
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$50,001 - $100,000"
+msgstr "$100.001-$250.000"
+
+#, fuzzy
+#| msgid "&#36;500,001 - &#36;1,000,000"
+msgid "$500,001 - $1,000,000"
+msgstr "500.001&#36; - 1.000.000&#36;"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 wurden Ihrem virtuellen Geldkonto %3 gutgeschrieben"
@@ -127,7 +157,9 @@ msgstr "%1 hat seine <a href=\"%2\">Allgemeinen Geschäftsbedinungen</a> aktuali
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "%1 hat 1. Million Benutzer und somit einen historischen Meilenstein erreicht. Das Unternehmen sieht weiterhin ein exponentiales Wachstum voraus und dieses bestätigt erneut seine Position als Branchenführer."
 
-msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+#, fuzzy
+#| msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+msgid "%1 introduces an %2auto-trader programming tool%3, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1 stellt ein <a href='%2' target='_blank' class='ja-hide'>Auto-Trader Programmiertool </a><span class='all-hide ja-show'>Auto-Trader Programmiertool</span> zur Verfügung, was den Kunden ermöglicht, ihre eigenen Trading-Robots mit einfachem „drag-and-drop” zu entwickeln."
 
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
@@ -169,7 +201,9 @@ msgstr "%1 ist der preisgekrönte Branchenpionier im Bereich des Online-Handels 
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 ist der preisgekrönte Branchenpionier im Bereich des Online-Handels mit Optionen. Wir bieten:"
 
-msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+#, fuzzy
+#| msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 führt eine<a href='%2' target='_blank' class='ja-hide'> eCommerce Site für Markenartikel </a><span class='all-hide ja-show'> eCommerce Site für Markenartikel </span> ein, die es Kunden, Geschäftspartnern und Entwicklern ermöglicht, Binary.com Produkte zu kaufen und zu verkaufen."
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
@@ -274,31 +308,11 @@ msgstr "Die bemerkenswerte Geschichte von %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Die Systeme von %1 verarbeiten jetzt über 1 Millionen Transaktionen/Tag (einschließlich virtueller Konten)."
 
-#, fuzzy
-#| msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
 msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
-msgstr "Bitte %1authentifizieren Sie Ihr Konto%2, um Ihre Abhebe- und Handelslimits aufzuheben."
+msgstr "Bitte %1Authentifizieren Sie Ihr Konto%2 jetzt, um von allen Abhebeoptionen Gebrauch zu machen."
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1s gemeinnützige Initiative konzentriert sich auf kleine Stiftungen und Non-Profit-Organisationen auf der ganzen Welt, die einen Unterschied für die lokale Bevölkerung machen. Im Gegensatz zu größeren Stiftungen, haben unsere Spenden einen direkten Einfluss, da sie von der Belastung mit Betriebskosten frei sind."
-
-msgid "&#36;100,000 - &#36;250,000"
-msgstr "100.000&#36; - 250.000&#36;"
-
-msgid "&#36;100,001 - &#36;500,000"
-msgstr "100.000&#36; - 500.000&#36;"
-
-msgid "&#36;25,000 - &#36;50,000"
-msgstr "25.000&#36; - 100.000&#36;"
-
-msgid "&#36;250,001 - &#36;500,000"
-msgstr "250.001&#36; - 500.000&#36;"
-
-msgid "&#36;50,001 - &#36;100,000"
-msgstr "50.001&#36; - 100.000&#36;"
-
-msgid "&#36;500,001 - &#36;1,000,000"
-msgstr "500.001&#36; - 1.000.000&#36;"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 ist einer unserer ältesten und vetrauenswürdigsten Partner. Wir arbeiten schon viele Jahre zusammen.&#8221;"
@@ -630,7 +644,7 @@ msgid "A Bachelor's degree in Marketing, Business Administration, or related dis
 msgstr "Ein Bachelor-Abschluss in Marketing, Betriebswirtschaft oder einer ähnlichen Disziplin"
 
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
-msgstr ""
+msgstr "Eine PEP ist eine Einzelperson, die mit einem wichtigen, öffentlichen Amt betraut ist oder betraut war. Dieser Status weitet sich auf Verwandte und nahe Kollegen des PEPs aus."
 
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Ein Zahlungsagent handelt als ein Mittler zwischen dem Kunden (das heißt, unserem Kunden) und %1. Der Zahlungsagent führt für Kunden, die eine besondere e-Cash Methode oder nationale Währung verweden, die nicht von %1 angebotet wird, Einzahlungen und Abhebungen durch. Die Überweisungsgebühren werden vom Kunden getragen."
@@ -995,10 +1009,8 @@ msgstr "Den Kunden ermöglichen, e-Wallets zu verwenden, die nicht direkt auf %1
 msgid "Alter the normal trading times for the affected market;"
 msgstr "Ändern Sie die normalen Handelszeiten für den betroffenen Markt;"
 
-#, fuzzy
-#| msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
-msgstr "Alternativ können Kunden, die sowohl bei Binary (IOM) Ltd. als auch bei Binary (Europe) Ltd. angemeldet sind, Ihren Streitfall statt bei IBAS auf der Online Dispute Resolution Plattform (ODR) der Europäischen Kommission unter <a href='http://ec.europa.eu/odr' target='_blank'>einreichen</a>."
+msgstr "Alternativ können Kunden, die sowohl bei Binary (IOM) Ltd. als auch bei Binary (Europe) Ltd. angemeldet sind, Ihren Streitfall statt bei IBAS auf der Online Dispute Resolution Plattform (ODR) der Europäischen Kommission unter %1hier%2."
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "Obwohl das Unternehmen alle Rechte hat und sich vorbehält ein Kundenkonto abzulehnen oder zu kündigen, garantiert das Unternehmen, dass alle schon eingegangenen vertraglichen Verpflichtungen erfüllt werden."
@@ -1059,6 +1071,11 @@ msgstr "Antwort auf die Geheimfrage"
 
 msgid "Anti-Fraud Officer"
 msgstr "Betrugsbekämpfungsbeauftragter"
+
+#, fuzzy
+#| msgid "Authenticate your Account"
+msgid "Anticipated Account Turnover"
+msgstr "Authentifizieren Sie Ihr Konto"
 
 msgid "Any"
 msgstr "Irgendein(e)"
@@ -1528,10 +1545,8 @@ msgstr "Binary KK, die japanische Tochtergesellschaft von Binary, eröffnet ein 
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "Der Binary Tochtergesellschaft  Binary Investments (Europe) Ltd. wurde von der Maltesischen Finanzdienstleistungsaufsichtsbehörde eine Kategorie 3 Investmentdienstleistungen Lizenz erteilt."
 
-#, fuzzy
-#| msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
 msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
-msgstr "Auf der Binary Platform werden im Durchschnitt 15 <a href='http://binarycom.statuspage.io/' target='_blank'>Transaktionen</a> pro Sekunde, rund um die Uhr, abgewickelt"
+msgstr "Auf der Binary Platform werden im Durchschnitt 15 %1Transaktionen%2 pro Sekunde, rund um die Uhr, abgewickelt"
 
 msgid "Binary.com"
 msgstr "Binary.com"
@@ -3305,10 +3320,8 @@ msgstr "Personalabteilung"
 msgid "Hundreds of deposit and withdrawal options."
 msgstr "Unendlich viele Einzahlungs- und Abhebemethoden."
 
-#, fuzzy
-#| msgid "I declare I am not a Foreign Politically Exposed Person."
 msgid "I acknowledge that I am not a politically exposed person (PEP)."
-msgstr "Ich erkläre hiermit, dass ich keine ausländisch politisch exponierte Person bin."
+msgstr "Ich bestätige hiermit, dass ich keine politisch exponierte Person (PEP) bin."
 
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
@@ -3325,10 +3338,8 @@ msgstr "Ich habe mein Passwort vergessen. Was soll ich machen?"
 msgid "I have a Real Money Account"
 msgstr "Ich habe ein Echtgeldkonto"
 
-#, fuzzy
-#| msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgid "I have read and agree to the %1terms and conditions%2 of the site."
-msgstr "Ich habe die <a target=\"_blank\" href=\"%1\">Geschäftsbedingungen</a> dieser Seite gelesen und diesen zugestimmt."
+msgstr "Ich habe die %1Geschäftsbedingungen%2 dieser Seite gelesen und diesen zugestimmt."
 
 msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgstr "Ich habe die <a target=\"_blank\" href=\"%1\">Geschäftsbedingungen</a> dieser Seite gelesen und diesen zugestimmt."
@@ -3803,6 +3814,9 @@ msgstr "Ungültiger Betrag, das Maximum ist"
 
 msgid "Invalid amount, minimum is"
 msgstr "Ungültiger Betrag, das Minimum ist"
+
+msgid "Invalid email address"
+msgstr "Falsche E-Mail Adresse"
 
 msgid "Investigate and reproduce client-reported issues"
 msgstr "Untersuchung und Reproduktion von Kunden gemeldeten Problemen"
@@ -4479,10 +4493,14 @@ msgstr "Erfüllung gesetzlicher und behördlicher Auflagen"
 msgid "Legal Compliance"
 msgstr "Gesetzmäßigkeit"
 
-msgid "Less than &#36;100,000"
+#, fuzzy
+#| msgid "Less than &#36;100,000"
+msgid "Less than $100,000"
 msgstr "Weniger als 100.000&#36;"
 
-msgid "Less than &#36;25,000"
+#, fuzzy
+#| msgid "Less than &#36;25,000"
+msgid "Less than $25,000"
 msgstr "Weniger als 25.000&#36;"
 
 msgid "Less than 1 million JPY"
@@ -5376,10 +5394,14 @@ msgstr "Unser Erfolgsnachweis"
 msgid "Our trading screen is simple to use:"
 msgstr "Unser Handelsbildschirm ist einfach zu benützen:"
 
-msgid "Over &#36;1,000,000"
+#, fuzzy
+#| msgid "Over &#36;1,000,000"
+msgid "Over $1,000,000"
 msgstr "Über 1.000.000&#36;"
 
-msgid "Over &#36;500,001"
+#, fuzzy
+#| msgid "Over &#36;500,001"
+msgid "Over $500,001"
 msgstr "Über 500.001&#36;"
 
 msgid "Over 1 million registered accounts worldwide"
@@ -5424,10 +5446,8 @@ msgstr "Eigentum, Inhalt und Haftung für die Partnersiten liegen in der alleini
 msgid "P. Indemnification"
 msgstr "P. Schadenersatz"
 
-#, fuzzy
-#| msgid "Explanation"
 msgid "PEP Declaration"
-msgstr "Erläuterung"
+msgstr "PEP Erklärung"
 
 msgid "PM"
 msgstr "nachmittags"
@@ -5555,9 +5575,6 @@ msgstr "Plattformtour"
 msgid "Platforms"
 msgstr "Plattformen"
 
-msgid "Please %1 to view this page"
-msgstr "Bitte %1, um diese Seite anzuzeigen"
-
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "Bitte %1akzeptieren Sie die aktualisierten allgemeinen Geschäftsbedingungen%2, um Ihre Abhebe- und Handelslimits aufzuheben."
 
@@ -5676,13 +5693,13 @@ msgid "Please select the checkbox."
 msgstr "Bitte wählen Sie das Kontrollkästchen."
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
-msgstr ""
+msgstr "Bitte legen Sie ein %1Wohnsitzland%2 fest, bevor Sie auf ein Echtgeldkonto aufrüsten."
 
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
-msgstr ""
+msgstr "Bitte legen Sie Ihre 30-Tage Umsatzgrenze in unseren %1Selbstausschluss Einrichtungen%2 fest, um Einzahlungslimits zu entfernen."
 
 msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
-msgstr ""
+msgstr "Bitte legen Sie Ihre 30-Tage Umsatzgrenze in unseren <a href=\"%1\">Selbstausschluss Einrichtungen</a> fest, um auf die Kasse zuzugreifen."
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Bitte geben Sie Ihren bevorzugten Reality-Check Intervall in Minuten an"
@@ -7466,10 +7483,8 @@ msgstr "Diese Website enthält Links zu anderen Websites und kann Banner- oder B
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Diese Website sammelt keine persönlichen Identifizierungsinformationen über Sie, es sei denn, dass Sie solche willentlich und wissentlich zur Verfügung stellen. Es gibt eine Technologie, \"Cookies\" genannt, die dazu genutzt werden kann, auf einer Website maßgeschneiderte Informationen darzustellen. Ein Cookie ist ein Datenelement, das eine Website an Ihren Browser schicken kann, der es dann in Ihrem System speichert. Sie können Ihren Browser so einrichten, dass Sie beim Empfang eines Cookies benachrichtigt werden und so entscheiden können, ob Sie den Cookie annehmen oder ablehnen. Wenn Sie den Cookie ablehnen, müssen Sie Ihre Login ID und das Passwort in jedem Formular erneut eingeben, um in das System zu gelangen. Wir raten Ihnen, diese Option zu wählen, wenn Sie Bedenken über Sicherheit Ihres eigenen Browsers oder PCs haben sollten."
 
-#, fuzzy
-#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "Diese Website wird in Großbritannien und auf der Isle of Man von Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, Britische Inseln vermarktet und wird von (1) der Gambling Commission (Glücksspielbehörde) der Isle of Man, Britische Inseln zugelassen und überwacht - <a href='%1' target='_blank'>Lizenz anzeigen</a>. Die vorliegende Online Glücksspielgenehmigung wurde am 31. August 2012 erteilt. Diese Website wird in den anderen Ländern der EU für von Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, angebotene Investmentprodukte vermarktet, die (1) von der Malta Gaming Authority auf Malta zugelassen sind und überwacht werden. Die Lizenznummer lautet MGA/CL2/118/2000, 26. Mai 2015 - <a href='%2' target='_blank'>Lizenz anzeigen</a>. Die Dienstleistungen dieser Website stehen in manchen Ländern wie den USA, Costa Rica, Hongkong oder Personen unter 18 Jahren nicht zur Verfügung."
+msgstr "Diese Website wird in Großbritannien und auf der Isle of Man von Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, Britische Inseln vermarktet und wird von (1) der Gambling Commission (Glücksspielbehörde) der Isle of Man, Britische Inseln zugelassen und überwacht - <a href='%1' target='_blank'>Lizenz anzeigen</a>. Die vorliegende Online Glücksspielgenehmigung wurde am 31. August 2012 erteilt. Diese Website wird in den anderen Ländern der EU für von Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, angebotene Investmentprodukte vermarktet, zugelassen und überwacht als ein Kategorie 3 Investitionsdienstleistung Anbieter von der Malta Financial Services Authority (Lizenznummer IS/70156), und für Wettprodukte von Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, die (1) von der Malta Gaming Authority auf Malta zugelassen sind und überwacht werden. Die Lizenznummer lautet MGA/CL2/118/2000, 26. Mai 2015 und für Kunden aus Großbritannien von der (2) UK Gambling Commission - <a href='%2' target='_blank'>Lizenz anzeigen</a> und für Irische Kunden von der (3) Revenue Commissioners in Ireland, aktuelle entfernte Buchmacherlizenz ausgestellt am 29. September 2015 (Lizenznummer 1010285). Die Dienstleistungen dieser Website stehen in manchen Ländern wie den USA, Costa Rica, Hongkong oder Personen unter 18 Jahren nicht zur Verfügung."
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "Fundierte Kenntnisse im Bash Scripting sowie Erfahrung in Skript-Sprachen wie Perl und PHP"
@@ -8278,7 +8293,9 @@ msgstr "Wenn wir auf dem eigenen Konto handeln (dealing desk), agieren wir als D
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
 msgstr "Wenn wir einen Kontrakt mit Ihnen eingehen, untenehmen wir alle geeigneten Schritte, bei der Ausführung dieser Kontrakte anhand unserer Orderausführungsregeln und gemäß der der von Ihnen erhaltenen besonderen Anweisgungen, das bestmögliche Ergebnis für Sie zu erlangen. Unsere Orderausführungsregeln bestehen aus einer Reihe von Verfahren, die dazu gedacht sind, für Sie das bestmögliche Ergebnis anhand und unter Berücksichtigung des Folgenden zu erreichen: (a) Die Eigenart Ihrer Kontrakte, (b) die von Ihnen für den Eingang derartiger Kontrakte angegebenen Prioritäten und (c) den Praktiken des in Rede stehenden Marktes, mit dem Ziel, ein Ergebnis zu erreichen, das, nach unserer Ansicht, den besten Ausgleich zwischen manchmal gegenläufigen Faktoren bietet. Unsere Regeln stellen keine Garantie dar, allerdings, wenn wir einen Kontrakt mit Ihnen eingehen, wird der Kurs immer besser sein, als Sie ihn vielleicht woanders finden können."
 
-msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
+#, fuzzy
+#| msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
+msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no invisible fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "Wenn Sie mit dem Kurs, den Sie erhalten, zufrieden sind, führen Sie Ihr Geschäft umgehend durch. Mit unserer einzigartigen Plattform, müssen Sie sich nicht mit \"Slippage\" oder Absatzmärkten zufrieden geben. Und am Wichtigsten, es gibt keine versteckten Gebühren. Sie können ebenfalls jegliche Langzeit-Geschäfte zu jeder Zeit bevor sie ablaufen zurückverkaufen, um den Gewinn, den Sie möglicher Weise verdient haben zu schützen, oder um Ihre Verluste zu minimieren."
 
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
@@ -8581,8 +8598,6 @@ msgstr "Es ist Ihnen nicht erlaubt, jeglichen Content (wie Feed-Daten) zu speich
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Sie sind in keinem Fall zu jeglicher Entschädigung oder Rückerstattung vom Unternehmen berechtigt."
 
-#, fuzzy
-#| msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Sie sind nicht in einem eingeschränkten Land, wie Afghanistan; Bosnien und Herzegovina; Costa Rica; einem Land der Europäischen Union; Laos; Syrien; Uganda; Vanuatu; Yemen; der USA; Japan; Hong Kong; Malaysia; Malta; Iran; Nordkorea; Jersey; Irak; oder einem anderen eingeschränkten Land wie das Unternehmen von Zeit zu Zeit, nach eigenem Ermessen, entscheiden kann, ansässig;"
 
@@ -9083,9 +9098,6 @@ msgstr "Sie ist die führende Binäre Optionen Handelsplattform."
 
 msgid "letters"
 msgstr "Buchstaben"
-
-msgid "login"
-msgstr "Login"
 
 msgid "logout"
 msgstr "abmelden"
@@ -10872,6 +10884,24 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 msgid "Account Limits"
 msgstr "Kontolimits"
 
+#~ msgid "&#36;100,000 - &#36;250,000"
+#~ msgstr "100.000&#36; - 250.000&#36;"
+
+#~ msgid "&#36;100,001 - &#36;500,000"
+#~ msgstr "100.000&#36; - 500.000&#36;"
+
+#~ msgid "&#36;250,001 - &#36;500,000"
+#~ msgstr "250.001&#36; - 500.000&#36;"
+
+#~ msgid "&#36;50,001 - &#36;100,000"
+#~ msgstr "50.001&#36; - 100.000&#36;"
+
+#~ msgid "Please %1 to view this page"
+#~ msgstr "Bitte %1, um diese Seite anzuzeigen"
+
+#~ msgid "login"
+#~ msgstr "Login"
+
 #~ msgid "I have read and agree to the"
 #~ msgstr "Ich habe die %? gelesen und stimme ihnen zu"
 
@@ -11466,9 +11496,6 @@ msgstr "Kontolimits"
 
 #~ msgid "Invalid date of birth."
 #~ msgstr "Falsches Geburtsdatum."
-
-#~ msgid "Invalid email address"
-#~ msgstr "Falsche E-Mail Adresse"
 
 #~ msgid "Jump To"
 #~ msgstr "Springen zu"
@@ -16153,9 +16180,6 @@ msgstr "Kontolimits"
 #~ msgid "Authenticate to Withdraw"
 #~ msgstr "Zur Auszahlung authentifizieren"
 
-#~ msgid "Authenticate your Account"
-#~ msgstr "Authentifizieren Sie Ihr Konto"
-
 #~ msgid "Confirm Your Email"
 #~ msgstr "Bestätigen Sie Ihre E-Mail Adresse"
 
@@ -18542,9 +18566,6 @@ msgstr "Kontolimits"
 
 #~ msgid "Stock Buyback"
 #~ msgstr "Aktienrückkauf"
-
-#~ msgid "$100,001-$250,000"
-#~ msgstr "$100.001-$250.000"
 
 #~ msgid "An automatically generated <a href=\"https://apigee.com/rmg/resources/binary1\" target=\"_blank\">Resource Summary</a> is also available."
 #~ msgstr "Es steht auch ein automatisch erstellter <a href=\"https://apigee.com/rmg/resources/binary1\" target=\"_blank\">Mittelüberblick</a> zur Verfüung."
