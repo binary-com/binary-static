@@ -33,6 +33,7 @@ const BinarySocketClass = () => {
         buffered_sends = [],
         events = {},
         authorized   = false,
+        is_available = true,
         req_number   = 0,
         req_id       = 0,
         wrong_app_id = 0;
@@ -156,7 +157,7 @@ const BinarySocketClass = () => {
             subscribe: !!data.subscribe,
         };
 
-        if (isReady()) {
+        if (isReady() && is_available) {
             if (!data.hasOwnProperty('passthrough') && !data.hasOwnProperty('verify_email')) {
                 data.passthrough = {};
             }
@@ -231,7 +232,7 @@ const BinarySocketClass = () => {
             if (isReady()) {
                 if (!Login.isLoginPages()) {
                     Client.validateLoginid();
-                    binary_socket.send(JSON.stringify({ website_status: 1 }));
+                    binary_socket.send(JSON.stringify({ website_status: 1, subscribe: 1 }));
                 }
                 Clock.startClock();
             }
@@ -252,7 +253,7 @@ const BinarySocketClass = () => {
                 const type = response.msg_type;
 
                 // store in State
-                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || type === 'balance') {
+                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /(balance|website_status)/.test(type)) {
                     State.set(['response', type], $.extend({}, response));
                 }
                 // resolve the send promise
@@ -268,7 +269,12 @@ const BinarySocketClass = () => {
                 waiting_list.resolve(response);
 
                 const error_code = getPropertyValue(response, ['error', 'code']);
-                if (type === 'authorize') {
+                if (type === 'website_status') {
+                    const is_available_now = /^up$/i.test(response.website_status.site_status);
+                    if (!is_available && is_available_now) window.location.reload();
+                    is_available = is_available_now;
+                    $('#site-status-message').setVisibility(!is_available).find('.message').html(response.website_status.message);
+                } else if (type === 'authorize') {
                     if (response.error) {
                         const is_active_tab = sessionStorage.getItem('active_tab') === '1';
                         if (error_code === 'SelfExclusion' && is_active_tab) {
@@ -315,7 +321,7 @@ const BinarySocketClass = () => {
                     setResidence(response.get_settings.country_code);
                     GTM.eventHandler(response.get_settings);
                     if (response.get_settings.is_authenticated_payment_agent) {
-                        $('#topMenuPaymentAgent').removeClass('invisible');
+                        $('#topMenuPaymentAgent').setVisibility(1);
                     }
                     Client.set('first_name', response.get_settings.first_name);
                 }
@@ -328,7 +334,7 @@ const BinarySocketClass = () => {
                         break;
                     }
                     case 'RateLimit':
-                        $('#ratelimit-error-message:hidden').css('display', 'block');
+                        $('#ratelimit-error-message').setVisibility(1);
                         break;
                     case 'InvalidToken':
                         if (!/^(reset_password|new_account_virtual|paymentagent_withdraw|cashier)$/.test(type)) {

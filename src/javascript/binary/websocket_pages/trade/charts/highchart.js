@@ -258,7 +258,7 @@ const Highchart = (() => {
             request.subscribe = 1;
         }
 
-        const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : window.contracts_for;
+        const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : State.get(['response', 'contracts_for']);
         const stored_delay = sessionStorage.getItem(`license.${underlying}`);
 
         if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
