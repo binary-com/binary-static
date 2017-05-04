@@ -41,6 +41,13 @@ const Validation = (() => {
                             $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
                         }
                         field.$error = $parent.find(`.${error_class}`);
+                        // Add indicator to required fields
+                        if (field.validations.indexOf('req') >= 0) {
+                            const $label = $parent.parent().find('label');
+                            if ($label.find('span.required').length === 0) {
+                                $label.prepend($('<span/>', { class: 'required error-msg', text: '*' }));
+                            }
+                        }
                     }
 
                     const event = events_map[field.type];

@@ -108,6 +108,9 @@ textarea {
 /* form styles */
 label {
     line-height: 25px;
+    .required {
+        padding: 0 3px;
+    }
 }
 
 /* used for form label in grid structure */
