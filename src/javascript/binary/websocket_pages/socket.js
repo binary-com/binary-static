@@ -15,6 +15,7 @@ const Login                = require('../base/login');
 const State                = require('../base/storage').State;
 const getPropertyValue     = require('../base/utility').getPropertyValue;
 const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
+const jpResidence          = require('../common_functions/country_base').jpResidence;
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
 const getAppId             = require('../../config').getAppId;
 const getSocketURL         = require('../../config').getSocketURL;
@@ -293,7 +294,7 @@ const BinarySocketClass = () => {
                             send({ get_account_status: 1 });
                             send({ payout_currencies: 1 });
                             setResidence(response.authorize.country || Cookies.get('residence'));
-                            if (!Client.get('is_virtual')) {
+                            if (!Client.get('is_virtual') && !jpResidence()) {
                                 send({ get_self_exclusion: 1 });
                                 // TODO: remove this when back-end adds it as a status to get_account_status
                                 send({ get_financial_assessment: 1 });
