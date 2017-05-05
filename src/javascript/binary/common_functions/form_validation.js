@@ -200,13 +200,13 @@ const Validation = (() => {
 
     const clearError = (field) => {
         if (field.$error && field.$error.length) {
-            field.$error.addClass(hidden_class);
+            field.$error.setVisibility(0);
         }
     };
 
     const showError = (field, message) => {
         clearError(field);
-        field.$error.text(localize(message)).removeClass(hidden_class);
+        field.$error.text(localize(message)).setVisibility(1);
     };
 
     const validate = (form_selector) => {

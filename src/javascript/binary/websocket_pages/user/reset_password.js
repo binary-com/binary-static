@@ -6,27 +6,25 @@ const FormManager       = require('../../common_functions/form_manager');
 const ResetPassword = (() => {
     'use strict';
 
-    const hidden_class = 'invisible';
-
     const responseHandler = (response) => {
-        $('#container_reset_password').addClass(hidden_class);
+        $('#container_reset_password').setVisibility(0);
         if (response.error) {
             const $form_error = $('#form_error');
             const reset_error_template = '[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.';
             const error_code = response.error.code;
 
-            $('#msg_reset_password').addClass(hidden_class);
+            $('#msg_reset_password').setVisibility(0);
 
             let err_msg;
             if (error_code === 'SocialBased') {
                 err_msg = localize(response.error.message);
-                $form_error.find('a').addClass(hidden_class);
+                $form_error.find('a').setVisibility(0);
             } else { // special handling as backend return inconsistent format
                 err_msg = localize(reset_error_template, [error_code === 'InputValidationFailed' ? localize('There was some invalid character in an input field.') : localize(response.error.message)]);
             }
 
             $('#form_error_msg').text(err_msg);
-            $form_error.removeClass(hidden_class);
+            $form_error.setVisibility(1);
         } else {
             $('#msg_reset_password').text(localize('Your password has been successfully reset. Please log into your account using your new password.'));
             setTimeout(() => {
@@ -40,9 +38,9 @@ const ResetPassword = (() => {
 
         $('#have_real_account').off('click').on('click', function() {
             if ($(this).is(':checked')) {
-                $('#dob_field').removeClass(hidden_class);
+                $('#dob_field').setVisibility(1);
             } else {
-                $('#dob_field').addClass(hidden_class);
+                $('#dob_field').setVisibility(0);
             }
         });
 

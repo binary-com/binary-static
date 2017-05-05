@@ -12,12 +12,12 @@ const Charity = (() => {
                 images.eq(images.length - 1).prependTo($gallery);
             }
         };
-        interval = window.setInterval(switchPicture, 5000);
+        interval = setInterval(switchPicture, 5000);
     };
 
     const onUnload = () => {
         if (interval) {
-            window.clearInterval(interval);
+            clearInterval(interval);
             interval = null;
         }
     };

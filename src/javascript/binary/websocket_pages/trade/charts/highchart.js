@@ -15,7 +15,8 @@ const Highchart = (() => {
         contract,
         request,
         min_point,
-        max_point;
+        max_point,
+        lines_drawn;
 
     let start_time,
         purchase_time,
@@ -41,9 +42,10 @@ const Highchart = (() => {
 
     const initOnce = () => {
         chart = options = response_id = contract = request = min_point = max_point = '';
+        lines_drawn = [];
 
         is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming =
-        is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
+            is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
     };
 
     const initializeValues = () => {
@@ -176,12 +178,18 @@ const Highchart = (() => {
                     chart = initChart(options);
                     if (!chart) return;
 
-                    if (purchase_time !== start_time) drawLineX(purchase_time, localize('Purchase Time'), '', '', '#7cb5ec');
+                    if (purchase_time !== start_time) {
+                        drawLineX({
+                            value: purchase_time,
+                            label: localize('Purchase Time'),
+                            color: '#7cb5ec',
+                        });
+                    }
 
                     // second condition is used to make sure contracts that have purchase time
                     // but are sold before the start time don't show start time
                     if (!is_sold || (is_sold && sell_time && sell_time > start_time)) {
-                        drawLineX(start_time);
+                        drawLineX({ value: start_time });
                     }
                 }
             } else if ((tick || ohlc) && !stop_streaming) {
@@ -250,7 +258,7 @@ const Highchart = (() => {
             request.subscribe = 1;
         }
 
-        const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : window.contracts_for;
+        const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : State.get(['response', 'contracts_for']);
         const stored_delay = sessionStorage.getItem(`license.${underlying}`);
 
         if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
@@ -377,7 +385,7 @@ const Highchart = (() => {
     // calculate where to display the maximum value of the x-axis of the chart for line chart
     const getMaxHistory = (history_times) => {
         let end = end_time;
-        if (sell_spot_time && sell_time < end_time) {
+        if (sell_spot_time && (sell_time || sell_spot_time) < end_time) {
             end = sell_spot_time;
         } else if (exit_tick_time) {
             end = exit_tick_time;
@@ -451,22 +459,27 @@ const Highchart = (() => {
         if (!max_point) max_point = end_time;
     };
 
-    const drawLineX = (value_time, label_name, text_left, dash, color) => {
-        if (chart) {
+    const drawLineX = (properties) => {
+        if (chart && properties.value && !(new RegExp(properties.value).test(lines_drawn))) {
             addPlotLine({
-                value    : value_time * 1000,
-                label    : label_name || '',
-                textLeft : text_left === 'textLeft',
-                dashStyle: dash || '',
-                color    : color || '',
+                value    : properties.value * 1000,
+                label    : properties.label || '',
+                textLeft : properties.text_left === 'textLeft',
+                dashStyle: properties.dash_style || '',
+                color    : properties.color || '',
             }, 'x');
+            lines_drawn.push(properties.value);
         }
     };
 
     // draw the last line, mark the exit tick, and forget the streams
     const endContract = () => {
-        if (chart) {
-            drawLineX((userSold() ? sell_time : end_time), '', 'textLeft', 'Dash');
+        if (chart && !stop_streaming) {
+            drawLineX({
+                value     : (userSold() ? sell_time : end_time),
+                text_left : 'textLeft',
+                dash_style: 'Dash',
+            });
             if (exit_tick_time) {
                 selectTick(exit_tick_time, 'exit');
             }
@@ -477,8 +490,6 @@ const Highchart = (() => {
             } else {
                 $('#waiting_exit_tick').remove();
             }
-        }
-        if (!stop_streaming) {
             setStopStreaming();
         }
     };
@@ -487,13 +498,18 @@ const Highchart = (() => {
         if (chart && (is_sold || is_settleable) &&
             chart.series && chart.series[0].options.data.length > 0) {
             const data = chart.series[0].options.data;
-            const last_data = data[data.length - 1];
+            let last_data = data[data.length - 1];
+            let i = 2;
+            while (last_data.y === null) {
+                last_data = data[data.length - i];
+                i++;
+            }
             const last = parseInt(last_data.x || last_data[0]);
-            if (last > (end_time * 1000) || last > (sell_time * 1000)) {
+            if (last > (end_time * 1000) || last > ((sell_time || sell_spot_time) * 1000)) {
                 stop_streaming = true;
             } else {
                 // add a null point if the last tick is before end time to bring end time line into view
-                const time = userSold() ? sell_time : end_time;
+                const time = userSold() ? (sell_time || sell_spot_time) : end_time;
                 chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
             }
         }
@@ -502,7 +518,7 @@ const Highchart = (() => {
     const calculateGranularity = () => {
         const duration = Math.min(exit_time, now_time) - (purchase_time || start_time);
         let granularity;
-              // days * hours * minutes * seconds
+        // days * hours * minutes * seconds
         if      (duration <=            60 * 60) granularity = 0;     // less than 1 hour
         else if (duration <=        2 * 60 * 60) granularity = 120;   // 2 hours
         else if (duration <=        6 * 60 * 60) granularity = 600;   // 6 hours
@@ -551,7 +567,9 @@ const Highchart = (() => {
         }
     };
 
-    const userSold = () => sell_time && sell_time < end_time;
+    const userSold = () => (
+        (sell_time && sell_time < end_time) || (!sell_time && sell_spot_time && sell_spot_time < end_time)
+    );
 
     return {
         showChart: showChart,

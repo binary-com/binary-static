@@ -4,19 +4,19 @@
             <li class="ja-hide">
                 <a href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
             </li>
-            <li class="all-hide ja-show-block">
+            <li class="invisible ja-show">
                 <a href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
             </li>
             <li class="ja-hide">
               <a href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>
             </li>
-            <li class="all-hide ja-show-block">
+            <li class="invisible ja-show">
                 <a href="[% request.url_for('get-started-jp') %]"[% target %]>[% l("Get Started") %]</a>
             </li>
             <li class="ja-hide">
                 <a href="[% request.url_for('tour') %]">[% l('Tour') %]</a>
             </li>
-            <li class="all-hide ja-show-block">
+            <li class="invisible ja-show">
                 <a href="[% request.url_for('tour-jp') %]">[% l('Tour') %]</a>
             </li>
             [%= FOREACH item IN menu=%]
@@ -36,7 +36,7 @@
             <li class="ja-hide">
                 <a href="[% request.url_for('platforms') %]">[% l("Platforms") %]</a>
             </li>
-            <li class="all-hide ja-show-block">
+            <li class="invisible ja-show">
                 <a href="[% request.url_for('multi_barriers_trading') %]">[% l("Trade") %]</a>
             </li>
         </ul>
