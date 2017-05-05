@@ -10,7 +10,7 @@
     <div class="gr-row gr-padding-10" id="[% id %]">
         <div class="gr-3 gr-12-m">
             <div class="gr-12 gr-padding-10 center-text">
-                <h2>[% title %]</h2>
+                <h2 class="gr-gutter">[% title %]</h2>
                 <img class="responsive" src="[% request.url_for('images/pages/careers/' _ id _ '.svg') %]"/>
             </div>
         </div>
