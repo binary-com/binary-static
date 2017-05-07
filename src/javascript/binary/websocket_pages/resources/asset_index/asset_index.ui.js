@@ -43,7 +43,7 @@ const AssetIndexUI = (() => {
     const populateTable = () => {
         if (!active_symbols || !asset_index) return;
 
-        $('#errorMsg').addClass('hidden');
+        $('#errorMsg').setVisibility(0);
         asset_index = AssetIndex.getAssetIndexData(asset_index, active_symbols);
         market_columns = AssetIndex.getMarketColumns();
         $tabs = $('<ul/>');

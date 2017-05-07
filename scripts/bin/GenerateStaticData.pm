@@ -187,6 +187,8 @@ sub _texts {
         push @texts, localize('Sorry, an error occurred while processing your account.');
         push @texts, localize('Your changes have been updated successfully.');
         push @texts, localize('Your settings have been updated successfully.');
+        push @texts, localize('Female');
+        push @texts, localize('Male');
         #strings for home and virtual account opening page
         push @texts, localize('verification token');
         push @texts, localize('email address');
@@ -194,9 +196,8 @@ sub _texts {
         push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');
-        push @texts, localize('Please [_1] to view this page');
-        push @texts, localize('login');
         push @texts, localize('Your session duration limit will end in [_1] seconds.');
+        push @texts, localize('Invalid email address');
         #strings for real account opening page
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
@@ -408,15 +409,7 @@ sub _texts {
         push @texts, localize('Contract ID');
         push @texts, localize('Reference ID');
         push @texts, localize('Remaining Time');
-        push @texts, localize('This contract was affected by a Corporate Action event.');
         push @texts, localize('Barrier Change');
-        push @texts, localize('Original Barrier');
-        push @texts, localize('Original High Barrier');
-        push @texts, localize('Original Low Barrier');
-        push @texts, localize('Adjusted Barrier');
-        push @texts, localize('Adjusted High Barrier');
-        push @texts, localize('Adjusted Low Barrier');
-        push @texts, localize('Corporate Action');
         # strings for financial assessment
         push @texts, localize('Please select a value');
         # Strings for authorised_apps

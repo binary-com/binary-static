@@ -65,25 +65,25 @@
                                 <li class="ja-hide">
                                     <a href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
                                 </li>
-                                <li class="all-hide ja-show-inline-block">
+                                <li class="invisible ja-show">
                                     <a href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a href="[% request.url_for('get-started') %]">[% l("Get Started") %]</a>
                                 </li>
-                                <li class="all-hide ja-show-inline-block">
+                                <li class="invisible ja-show">
                                   <a href="[% request.url_for('get-started-jp') %]">[% l("Get Started") %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a href="[% request.url_for('tour') %]">[% l('Tour') %]</a>
                                 </li>
-                                <li class="all-hide ja-show-inline-block">
+                                <li class="invisible ja-show">
                                     <a href="[% request.url_for('tour-jp') %]">[% l('Tour') %]</a>
                                 </li>
                                 <li class="ja-hide" id="main-navigation-trading">
                                     <a href="[% request.url_for('platforms') %]">[% l("Platforms") %]</a>
                                 </li>
-                                <li class="all-hide ja-show-inline-block" id="main-navigation-jptrading">
+                                <li class="invisible ja-show" id="main-navigation-jptrading">
                                     <a href="[% request.url_for('multi_barriers_trading') %]">[% l("Trade") %]</a>
                                 </li>
                             </ul>
