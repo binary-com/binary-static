@@ -37,17 +37,18 @@ const Validation = (() => {
                         field.$error = $form.find(field.msg_element);
                     } else {
                         const $parent = field.$.parent();
+                        // Add indicator to required fields
+                        if (field.validations.indexOf('req') >= 0) {
+                            if ($parent.find('.hint').length === 1) {
+                                $($('<span/>', { class: 'required_field_asterisk', text: '*' })).insertAfter(field.$);
+                            } else if ($parent.find('span.required').length === 0) {
+                                $parent.append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
+                            }
+                        }
                         if ($parent.find(`div.${error_class}`).length === 0) {
                             $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
                         }
                         field.$error = $parent.find(`.${error_class}`);
-                        // Add indicator to required fields
-                        if (field.validations.indexOf('req') >= 0) {
-                            const $label = $parent.parent().find('label');
-                            if ($label.find('span.required').length === 0) {
-                                $label.prepend($('<span/>', { class: 'required error-msg', text: '*' }));
-                            }
-                        }
                     }
 
                     const event = events_map[field.type];
