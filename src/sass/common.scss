@@ -151,8 +151,8 @@ label {
 
 .required_field_asterisk {
     position: absolute;
-    padding: 1px 5px;
-    font-size: 12px;
+    margin: -3px 3px;
+    font-size: $FONT_SIZE_S;
     color: $COLOR_RED;
 }
 
