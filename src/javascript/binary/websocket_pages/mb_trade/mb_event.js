@@ -6,6 +6,7 @@ const MBTick          = require('./mb_tick');
 const TradingAnalysis = require('../trade/analysis');
 const debounce        = require('../trade/common').debounce;
 const jpClient        = require('../../common_functions/country_base').jpClient;
+const formatMoney     = require('../../common_functions/currency_to_symbol').formatMoney;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -121,7 +122,7 @@ const MBTradingEvents = (() => {
                 if (!jpClient()) {
                     payout = payout.replace(/[^0-9.]/g, '');
                     if (isStandardFloat(payout)) {
-                        payout = parseFloat(payout).toFixed(2);
+                        payout = formatMoney(MBDefaults.get('currency'), parseFloat(payout), 1);
                     }
                     e.target.value = payout;
                 }
