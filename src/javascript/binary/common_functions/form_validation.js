@@ -38,8 +38,12 @@ const Validation = (() => {
                     } else {
                         const $parent = field.$.parent();
                         // Add indicator to required fields
-                        if (field.validations.indexOf('req') >= 0 && $parent.parent().find('span.required_field_asterisk').length === 0) {
-                            $parent.parent().find('label').append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
+                        if (field.validations.indexOf('req') >= 0) {
+                            let $label = $parent.parent().find('label');
+                            if (!$label.length) $label = $parent.find('label');
+                            if ($label.find('span.required_field_asterisk').length === 0) {
+                                $label.append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
+                            }
                         }
                         if ($parent.find(`div.${error_class}`).length === 0) {
                             $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
@@ -152,6 +156,7 @@ const Validation = (() => {
             message;
 
         field.validations.some((valid) => {
+            if (!valid) return true;
             let type,
                 options = {};
 

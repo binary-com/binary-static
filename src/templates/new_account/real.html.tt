@@ -151,11 +151,9 @@
 
                 <fieldset class="center-text" id="formlayout">
                     <div class="gr-row">
-                        <div class="gr-12-m gr-12 gr-padding-10 gr-centered">
+                        <div class="gr-12-m gr-padding-10 gr-centered">
                             <input type="checkbox" name="tnc" id="tnc">
-                            <label for="tnc">[% l('I have read and agree to the [_1]terms and conditions[_2] of the site.', '<a target="_blank" href="' _ request.url_for('/terms-and-conditions') _ '">', '</a>') %]
-                                <span class="required_field_asterisk">*</span>
-                            </label>
+                            <label for="tnc">[% l('I have read and agree to the [_1]terms and conditions[_2] of the site.', '<a target="_blank" href="' _ request.url_for('/terms-and-conditions') _ '">', '</a>') %]</label>
                         </div>
                     </div>
 
