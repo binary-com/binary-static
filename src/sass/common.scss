@@ -145,8 +145,11 @@ label {
 }
 
 /* global styles */
-.required_asterisk {
-    color: $COLOR_ORANGE;
+.required_field_asterisk {
+    position: absolute;
+    margin: -3px 3px;
+    font-size: $FONT_SIZE_S;
+    color: $COLOR_RED;
 }
 
 .inpage_popup_container {

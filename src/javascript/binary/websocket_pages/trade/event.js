@@ -373,6 +373,9 @@ const TradingEvents = (() => {
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
+            low_barrier_element.addEventListener('keypress', (ev) => {
+                onlyNumericOnKeypress(ev, [43, 45, 46]);
+            });
         }
 
         /*
@@ -385,6 +388,9 @@ const TradingEvents = (() => {
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
+            high_barrier_element.addEventListener('keypress', (ev) => {
+                onlyNumericOnKeypress(ev, [43, 45, 46]);
+            });
         }
 
         /*

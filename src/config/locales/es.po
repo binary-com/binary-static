@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-18 06:41+0000\n"
-"Last-Translator: Negar Naghshbandi <negar@binary.com>\n"
+"PO-Revision-Date: 2017-05-03 21:05+0000\n"
+"Last-Translator: Camilo Diaz Barria <camilo.diaz@usach.cl>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/binary/static/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.11-dev\n"
+"X-Generator: Weblate 2.14-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API de Binary.com\" significa el conjunto propio de Binary.com de rutinas de programación, protocolos, herramientas y recursos creados y mantenidos por Binary.com que le permite usar una Aplicación registrada para interactuar con la plataforma de comercio Binary.com."
@@ -136,7 +136,7 @@ msgid "%1 also provides links to an online quiz to assess a potential gambling p
 msgstr "%1 también ofrece enlaces a un cuestionario en línea para evaluar un problema con el juego potencial de una persona y una calculadora en línea para comprobar la cantidad de dinero que uno realmente se puede permitir gastar."
 
 msgid "%1 and %2 cannot be the same."
-msgstr ""
+msgstr "%1 y %2 no pueden ser iguales."
 
 msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "%1 y el logotipo del toro/oso son marcas registradas."
@@ -145,7 +145,7 @@ msgid "%1 continues to innovate and grow"
 msgstr "%1 continúa innovando y creciendo"
 
 msgid "%1 days %2 hours %3 minutes"
-msgstr ""
+msgstr "%1 días %2 horas %3 minutos"
 
 #, fuzzy
 #| msgid "Deposit is done. Transaction ID:"
@@ -253,7 +253,7 @@ msgid "%1 offers a virtual-money account so you can get the hang of trading bina
 msgstr "%1 ofrece una cuenta de dinero virtual para que pueda acostumbrarse a comerciar con opciones binarias. Por qué no <a class='pjaxload' href='%2'>abre una cuenta de dinero virtual de $10,000 completamente funcional y gratuita</a> y aprende a comerciar."
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
-msgstr ""
+msgstr "%1 ofrece cinco tipos principales de operación que le ayudarán a aplicar su visión o estrategia de mercado:"
 
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk). Client orders are typically hedged when the total transaction volume exceeds a predefined threshold of risk tolerance level. For both execution models, %1 acts as the contractual counterparty to the transactions that you enter into with us, as opposed to entering into a contractual counterparty with a central clearing house as would be the case with exchange traded financial instruments. As such, counterparty risk exists. Counterparty risk refers to the risk of loss for clients resulting from the fact that the counterparty to the forex and/or contracts for differences transaction that you entered into may default on its obligations prior to the final settlement of the transaction's cash flow."
 msgstr ""
@@ -992,15 +992,6 @@ msgstr "Domicilio"
 
 msgid "Adjust trade parameters"
 msgstr "Ajustar parámetros de comercio"
-
-msgid "Adjusted Barrier"
-msgstr "Límite ajustado"
-
-msgid "Adjusted High Barrier"
-msgstr "Límite Superior Ajustado"
-
-msgid "Adjusted Low Barrier"
-msgstr "Límite Inferior Ajustado"
 
 msgid "Admin"
 msgstr "Administrador"
@@ -1942,9 +1933,6 @@ msgstr ""
 msgid "Choose Scopes:"
 msgstr "Seleccione las condiciones:"
 
-msgid "Choose a Name:"
-msgstr "Seleccione un nombre:"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Seleccione una duración desde 10 segundos hasta 365 días."
 
@@ -1979,6 +1967,11 @@ msgstr "Elija la forma de pago que desea utilizar."
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "Elija el tipo específico de token de la API que necesita, basándose en las capacidades que desea hacer disponibles."
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token name"
+msgstr "Seleccione un nombre:"
 
 msgid "Choose your own strike."
 msgstr "Seleccione el precio para ganar."
@@ -2344,9 +2337,6 @@ msgstr "Copyright"
 
 msgid "Copywriter"
 msgstr "Copywriter"
-
-msgid "Corporate Action"
-msgstr "Acción Corporativa"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr ""
@@ -5749,15 +5739,6 @@ msgstr "Resumen de la política de ejecución de órdenes"
 msgid "Order Execution/Cancellation/Modification"
 msgstr ""
 
-msgid "Original Barrier"
-msgstr "Barrera Original"
-
-msgid "Original High Barrier"
-msgstr "Barrera Superior Original"
-
-msgid "Original Low Barrier"
-msgstr "Barrera Inferior Original"
-
 msgid "Other"
 msgstr "Otro"
 
@@ -8077,9 +8058,6 @@ msgstr "Descubra nuestros Índices de Volatilidad."
 
 msgid "This contract lost"
 msgstr "Este contrato perdió"
-
-msgid "This contract was affected by a Corporate Action event."
-msgstr "Este contrato ha sido afectado por un evento de Acción Corporativa."
 
 msgid "This contract won"
 msgstr "Este contrato ganó"
@@ -12098,6 +12076,30 @@ msgstr "Acuerdo con los términos y condiciones"
 
 msgid "Account Limits"
 msgstr "Límites de la cuenta"
+
+#~ msgid "Adjusted Barrier"
+#~ msgstr "Límite ajustado"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "Límite Superior Ajustado"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "Límite Inferior Ajustado"
+
+#~ msgid "Corporate Action"
+#~ msgstr "Acción Corporativa"
+
+#~ msgid "Original Barrier"
+#~ msgstr "Barrera Original"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "Barrera Superior Original"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "Barrera Inferior Original"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "Este contrato ha sido afectado por un evento de Acción Corporativa."
 
 #, fuzzy
 #~| msgid "$100,000 - $250,000"
