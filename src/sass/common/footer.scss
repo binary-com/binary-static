@@ -38,7 +38,7 @@
                 padding-left: 5px;
             }
         }
-        #ratelimit-error-message {
+        #ratelimit-error-message, #site-status-message {
             position: fixed;
             top: 0;
             width: 100%;
@@ -47,13 +47,14 @@
             text-align: center;
             .message {
                 margin: 12px;
-                font-style: italic;
-                color: $COLOR_RED;
                 a {
                     color: $COLOR_GREEN;
                     font-size: inherit;
                 }
             }
+        }
+        #site-status-message {
+            z-index: 9999;
         }
     }
     #footer-last {

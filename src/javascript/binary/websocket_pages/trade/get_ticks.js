@@ -23,8 +23,10 @@ const GetTicks = (() => {
         if (underlying && req && callback && (underlying !== req.ticks_history || !req.subscribe)) {
             BinarySocket.send(req, { callback: callback });
         } else {
-            BinarySocket.send({ forget_all: 'ticks' });
-            BinarySocket.send({ forget_all: 'candles' });
+            if (!req || req.subscribe) {
+                BinarySocket.send({ forget_all: 'ticks' });
+                BinarySocket.send({ forget_all: 'candles' });
+            }
             BinarySocket.send(req || {
                 ticks_history: symbol,
                 style        : 'ticks',

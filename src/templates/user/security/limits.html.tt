@@ -67,11 +67,7 @@
             </p>
         </div>
     </div>
-    <div id="client_message" style="display:none">
-            <div id="client_message_content">
-                <p class="center-text notice-msg"></p>
-            </div>
-    </div>
+    <div id="limits_error"></div>
 </div>
 <div class="invisible" id="withdrawal-limits">
     <h2 id="withdrawal-title">[% l("Withdrawal Limits") %]</h2>
