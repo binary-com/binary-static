@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-05-08 03:26+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Traditional) "
-"<https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -875,15 +874,6 @@ msgstr "地址"
 msgid "Adjust trade parameters"
 msgstr "調整交易參數"
 
-msgid "Adjusted Barrier"
-msgstr "經調整障礙"
-
-msgid "Adjusted High Barrier"
-msgstr "經調整高障礙"
-
-msgid "Adjusted Low Barrier"
-msgstr "經調整低障礙"
-
 msgid "Admin"
 msgstr "管理中心"
 
@@ -1736,9 +1726,6 @@ msgstr "執行長、高級官員和立法委員"
 msgid "Choose Scopes:"
 msgstr "選擇範圍:"
 
-msgid "Choose a Name:"
-msgstr "選擇名稱:"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "合約期限的選擇範圍為10 秒到365 天。"
 
@@ -1765,6 +1752,11 @@ msgstr "選擇您想要採用的支付方式。"
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "根據個人使用能力意願選擇所需的特定API權杖。"
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token name"
+msgstr "選擇名稱:"
 
 msgid "Choose your own strike."
 msgstr "選擇您自己的履約價格。"
@@ -2098,9 +2090,6 @@ msgstr "版權"
 
 msgid "Copywriter"
 msgstr "文案"
-
-msgid "Corporate Action"
-msgstr "共同決議"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "費用 - 您的訂單執行費用主要由價差，即我們的標價和我們提供的價格之間的區別組成。"
@@ -5273,15 +5262,6 @@ msgstr "訂單執行政策"
 msgid "Order Execution/Cancellation/Modification"
 msgstr "訂單的執行/取消/修改"
 
-msgid "Original Barrier"
-msgstr "原障礙"
-
-msgid "Original High Barrier"
-msgstr "原高障礙"
-
-msgid "Original Low Barrier"
-msgstr "原低障礙"
-
 msgid "Other"
 msgstr "其它"
 
@@ -7394,9 +7374,6 @@ msgstr "本條款不適用於波動率指數。"
 msgid "This contract lost"
 msgstr "此合約虧損"
 
-msgid "This contract was affected by a Corporate Action event."
-msgstr "該合約已受共同決議事件影響。"
-
 msgid "This contract won"
 msgstr "此合約獲利"
 
@@ -8265,9 +8242,7 @@ msgid "When we enter into Contracts with you, we will take all reasonable steps 
 msgstr "當我們與您訂立合約時，我們會採取負責任的行動，遵循我們的訂單執行政策以及您所提供的任何特定指令執行合約條款，為您爭取最佳結果。我們的訂單執行政策包含一整套程序，為了讓您獲取最佳執行結果而特別制定，遵循並考慮以下因素：（一）您的合約的性質，（二）制定合約時您所指定的優先事項，（三）與市場有關的實行方式，目的是根據我們的觀點，在廣泛的、有時會相衝突的因素間實現最佳平衡。我們的政策並不提供任何保證，但我們與您訂立合約的價格永遠比別處更加合算。"
 
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no invisible fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
-msgstr ""
-"當您對收到的價格感到滿意時請立刻執行交易。通過我們的獨特平台，您不會遇到滑價或跳空市場。更重要的是，不會有任何未顯示費用。您也可在任何長期合約到期前隨時售"
-"出，以保護您的賺取利潤或將虧損降至最低額。"
+msgstr "當您對收到的價格感到滿意時請立刻執行交易。通過我們的獨特平台，您不會遇到滑價或跳空市場。更重要的是，不會有任何未顯示費用。您也可在任何長期合約到期前隨時售出，以保護您的賺取利潤或將虧損降至最低額。"
 
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "當您點選「OK」後，您將被禁止在此網站交易，直到選定期限結束為止。"
@@ -10848,6 +10823,30 @@ msgstr "條款和條件審批"
 
 msgid "Account Limits"
 msgstr "帳戶限額"
+
+#~ msgid "Adjusted Barrier"
+#~ msgstr "經調整障礙"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "經調整高障礙"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "經調整低障礙"
+
+#~ msgid "Corporate Action"
+#~ msgstr "共同決議"
+
+#~ msgid "Original Barrier"
+#~ msgstr "原障礙"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "原高障礙"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "原低障礙"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "該合約已受共同決議事件影響。"
 
 #~ msgid "Please %1 to view this page"
 #~ msgstr "要查看此頁面，請 %1 t"

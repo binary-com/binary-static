@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-05-08 05:33+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -892,15 +891,6 @@ msgstr "所在地"
 msgid "Adjust trade parameters"
 msgstr "取引期間を選択して頂き購入希望ロット数を入力して下さい。"
 
-msgid "Adjusted Barrier"
-msgstr "調整バリア"
-
-msgid "Adjusted High Barrier"
-msgstr "調整高バリア"
-
-msgid "Adjusted Low Barrier"
-msgstr "調整低バリア"
-
 msgid "Admin"
 msgstr "管理者"
 
@@ -1765,9 +1755,6 @@ msgstr "最高経営責任者、上級役人、高官"
 msgid "Choose Scopes:"
 msgstr "範囲選択："
 
-msgid "Choose a Name:"
-msgstr "名前を選択："
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "取引期間は2時間以上から選択が可能です。"
 
@@ -1794,6 +1781,11 @@ msgstr "ご希望のお支払い方法をご選択ください。"
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "ご希望の機能に基いた、必要なAPIトークンの種類を選択してください。"
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token name"
+msgstr "名前を選択："
 
 msgid "Choose your own strike."
 msgstr "バリア価格を設定"
@@ -2137,9 +2129,6 @@ msgstr "著作権"
 
 msgid "Copywriter"
 msgstr "コピーライター"
-
-msgid "Corporate Action"
-msgstr "企業活動"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "費用 - 注文実行の費用は主にスプレッドです。例: 当社の付け値と当社の提案価格の差額"
@@ -5344,15 +5333,6 @@ msgstr "オーダー実行ポリシー"
 msgid "Order Execution/Cancellation/Modification"
 msgstr "注文の実行/キャンセル/変更"
 
-msgid "Original Barrier"
-msgstr "オリジナルバリア"
-
-msgid "Original High Barrier"
-msgstr "オリジナル高バリア"
-
-msgid "Original Low Barrier"
-msgstr "オリジナル低バリア"
-
 msgid "Other"
 msgstr "その他"
 
@@ -7569,9 +7549,6 @@ msgstr "この条項はボラティリティインデックには適用されま
 msgid "This contract lost"
 msgstr "このトレードは負け判定"
 
-msgid "This contract was affected by a Corporate Action event."
-msgstr "この契約は、コーポレートアクションの影響を受けていました。"
-
 msgid "This contract won"
 msgstr "このトレードは勝ち判定"
 
@@ -8462,10 +8439,7 @@ msgid "When we enter into Contracts with you, we will take all reasonable steps 
 msgstr "お客さまと契約を締結する際、お客さまから頂いた特定の指示への当社注文執行ポリシーと対象に応じて、それら契約の執行により可能な限り最良の結果をお客さまへもたらせられるようあらゆる合理的な措置を講じます。当社注文執行ポリシーは、対象となるお客さまへ可能な限り最良の結果をもたらすよう考慮し設計されている一連の手順を含みます。： (a)お客さまの契約の性質 (b)これら契約を締結するのに関連してお客さまに同意いただいた特定の優先順位 (c)論争要素の範囲にわたる最適なバランスを提供して結果を生成する目的をもって、対象のマーケットに関連した実践。当社ポリシーは保証を提供することはできませんが、お客さまと契約締結の際、価格は常により良いものであるか、他の場所で利用できるようなものになる場合があります。"
 
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no invisible fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
-msgstr ""
-"満足のいく価格が表示されたら、すぐに取引を実行してください。当社独自のプラットフォームでは、市場との差やズレに関してご心配いただく必要ありません。そして一"
-"番重要なことは、追加料金が発生しない点です。利益を守り、損失を最小限に抑えるために、トレードによっては取引期間が終了する前にトレードを売却することも可能で"
-"す。"
+msgstr "満足のいく価格が表示されたら、すぐに取引を実行してください。当社独自のプラットフォームでは、市場との差やズレに関してご心配いただく必要ありません。そして一番重要なことは、追加料金が発生しない点です。利益を守り、損失を最小限に抑えるために、トレードによっては取引期間が終了する前にトレードを売却することも可能です。"
 
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "\"Ok\"をクリックすると、選択した日付までこのサイトでのトレードができなくなります。"
@@ -9583,10 +9557,7 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
 msgstr "総則"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1"
-msgstr ""
-"（1）アフィリエイトプログラムにご参加頂くにあたり、本約款を熟読し理解されることは重要です。本約款への同意の表明、及びアフィリエイトプログラムへの申請行為"
-"は、下記の本約款及び「アフィリエイト広告に関するガイドライン」に同意されたものとみなします。万が一、本約款に同意できない場合は、アフィリエイトプログラムへ"
-"の参加は見合わせて下さい。アフィリエイト会員には、当アフィリエイトプログラムにて会員獲得を目指すウェブサイトの管理者として行動して頂きます。"
+msgstr "（1）アフィリエイトプログラムにご参加頂くにあたり、本約款を熟読し理解されることは重要です。本約款への同意の表明、及びアフィリエイトプログラムへの申請行為は、下記の本約款及び「アフィリエイト広告に関するガイドライン」に同意されたものとみなします。万が一、本約款に同意できない場合は、アフィリエイトプログラムへの参加は見合わせて下さい。アフィリエイト会員には、当アフィリエイトプログラムにて会員獲得を目指すウェブサイトの管理者として行動して頂きます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
 msgstr "（2）当社は、当プログラムへの参加許可を与える権限を有します。故に、当プログラムへの参加の可否に関する当社の決定は、最終的かつ絶対的なものになります。"
@@ -11300,6 +11271,30 @@ msgstr "利用規約の承認"
 
 msgid "Account Limits"
 msgstr "ご利用制限額"
+
+#~ msgid "Adjusted Barrier"
+#~ msgstr "調整バリア"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "調整高バリア"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "調整低バリア"
+
+#~ msgid "Corporate Action"
+#~ msgstr "企業活動"
+
+#~ msgid "Original Barrier"
+#~ msgstr "オリジナルバリア"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "オリジナル高バリア"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "オリジナル低バリア"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "この契約は、コーポレートアクションの影響を受けていました。"
 
 #~ msgid "Please %1 to view this page"
 #~ msgstr "現在、ログアウトの状態です。ご利用頂くためには再度%1が必要です。"
