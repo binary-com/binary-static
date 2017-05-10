@@ -409,15 +409,7 @@ sub _texts {
         push @texts, localize('Contract ID');
         push @texts, localize('Reference ID');
         push @texts, localize('Remaining Time');
-        push @texts, localize('This contract was affected by a Corporate Action event.');
         push @texts, localize('Barrier Change');
-        push @texts, localize('Original Barrier');
-        push @texts, localize('Original High Barrier');
-        push @texts, localize('Original Low Barrier');
-        push @texts, localize('Adjusted Barrier');
-        push @texts, localize('Adjusted High Barrier');
-        push @texts, localize('Adjusted Low Barrier');
-        push @texts, localize('Corporate Action');
         # strings for financial assessment
         push @texts, localize('Please select a value');
         # Strings for authorised_apps
