@@ -156,7 +156,7 @@ const Validation = (() => {
             message;
 
         field.validations.some((valid) => {
-            if (!valid) return true;
+            if (!valid) return false; // check next validation
             let type,
                 options = {};
 
@@ -186,9 +186,9 @@ const Validation = (() => {
                     message = localize(message, [localize(options.name1), localize(options.name2)]);
                 }
                 all_is_ok = false;
-                return true;
+                return true; // break on the first error found
             }
-            return false;
+            return false; // check next validation
         });
 
         if (!all_is_ok) {
