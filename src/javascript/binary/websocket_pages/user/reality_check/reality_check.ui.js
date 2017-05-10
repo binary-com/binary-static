@@ -74,7 +74,7 @@ const RealityCheckUI = (() => {
     const bindValidation = () => {
         $(form.num_reality_duration).off('keypress').on('keypress', handleKeypress);
         FormManager.init(form.selector, [
-            { selector: form.num_reality_duration, validations: ['req', ['number', { min: 10, max: 120 }]], exclude_request: 1, no_scroll: 1 },
+            { selector: form.num_reality_duration, validations: ['req', ['number', { min: 10, max: 60 }]], exclude_request: 1, no_scroll: 1 },
         ]);
         FormManager.handleSubmit({
             form_selector       : form.selector,
