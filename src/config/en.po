@@ -33,6 +33,24 @@ msgstr ""
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr ""
 
+msgid "$100,000 - $250,000"
+msgstr ""
+
+msgid "$100,001 - $500,000"
+msgstr ""
+
+msgid "$25,000 - $50,000"
+msgstr ""
+
+msgid "$250,001 - $500,000"
+msgstr ""
+
+msgid "$50,001 - $100,000"
+msgstr ""
+
+msgid "$500,001 - $1,000,000"
+msgstr ""
+
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr ""
 
@@ -132,7 +150,7 @@ msgstr ""
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr ""
 
-msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+msgid "%1 introduces an %2auto-trader programming tool%3, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr ""
 
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
@@ -174,7 +192,7 @@ msgstr ""
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr ""
 
-msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr ""
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
@@ -283,24 +301,6 @@ msgid "%1Authenticate your account%2 now to take full advantage of all withdrawa
 msgstr ""
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
-msgstr ""
-
-msgid "&#36;100,000 - &#36;250,000"
-msgstr ""
-
-msgid "&#36;100,001 - &#36;500,000"
-msgstr ""
-
-msgid "&#36;25,000 - &#36;50,000"
-msgstr ""
-
-msgid "&#36;250,001 - &#36;500,000"
-msgstr ""
-
-msgid "&#36;50,001 - &#36;100,000"
-msgstr ""
-
-msgid "&#36;500,001 - &#36;1,000,000"
 msgstr ""
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
@@ -860,15 +860,6 @@ msgstr ""
 msgid "Adjust trade parameters"
 msgstr ""
 
-msgid "Adjusted Barrier"
-msgstr ""
-
-msgid "Adjusted High Barrier"
-msgstr ""
-
-msgid "Adjusted Low Barrier"
-msgstr ""
-
 msgid "Admin"
 msgstr ""
 
@@ -1038,6 +1029,9 @@ msgid "Answer to secret question"
 msgstr ""
 
 msgid "Anti-Fraud Officer"
+msgstr ""
+
+msgid "Anticipated Account Turnover"
 msgstr ""
 
 msgid "Any"
@@ -1718,9 +1712,6 @@ msgstr ""
 msgid "Choose Scopes:"
 msgstr ""
 
-msgid "Choose a Name:"
-msgstr ""
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr ""
 
@@ -1746,6 +1737,9 @@ msgid "Choose the payment method you'd like to use."
 msgstr ""
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
+msgstr ""
+
+msgid "Choose token name"
 msgstr ""
 
 msgid "Choose your own strike."
@@ -2079,9 +2073,6 @@ msgid "Copyright"
 msgstr ""
 
 msgid "Copywriter"
-msgstr ""
-
-msgid "Corporate Action"
 msgstr ""
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
@@ -3776,6 +3767,9 @@ msgstr ""
 msgid "Invalid amount, minimum is"
 msgstr ""
 
+msgid "Invalid email address"
+msgstr ""
+
 msgid "Investigate and reproduce client-reported issues"
 msgstr ""
 
@@ -4451,10 +4445,10 @@ msgstr ""
 msgid "Legal Compliance"
 msgstr ""
 
-msgid "Less than &#36;100,000"
+msgid "Less than $100,000"
 msgstr ""
 
-msgid "Less than &#36;25,000"
+msgid "Less than $25,000"
 msgstr ""
 
 msgid "Less than 1 million JPY"
@@ -5252,15 +5246,6 @@ msgstr ""
 msgid "Order Execution/Cancellation/Modification"
 msgstr ""
 
-msgid "Original Barrier"
-msgstr ""
-
-msgid "Original High Barrier"
-msgstr ""
-
-msgid "Original Low Barrier"
-msgstr ""
-
 msgid "Other"
 msgstr ""
 
@@ -5348,10 +5333,10 @@ msgstr ""
 msgid "Our trading screen is simple to use:"
 msgstr ""
 
-msgid "Over &#36;1,000,000"
+msgid "Over $1,000,000"
 msgstr ""
 
-msgid "Over &#36;500,001"
+msgid "Over $500,001"
 msgstr ""
 
 msgid "Over 1 million registered accounts worldwide"
@@ -5523,9 +5508,6 @@ msgid "Platform Tour"
 msgstr ""
 
 msgid "Platforms"
-msgstr ""
-
-msgid "Please %1 to view this page"
 msgstr ""
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
@@ -7376,9 +7358,6 @@ msgstr ""
 msgid "This contract lost"
 msgstr ""
 
-msgid "This contract was affected by a Corporate Action event."
-msgstr ""
-
 msgid "This contract won"
 msgstr ""
 
@@ -8246,7 +8225,7 @@ msgstr ""
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
 msgstr ""
 
-msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
+msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no invisible fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr ""
 
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
@@ -9042,9 +9021,6 @@ msgid "it is the leading binary option trading platform."
 msgstr ""
 
 msgid "letters"
-msgstr ""
-
-msgid "login"
 msgstr ""
 
 msgid "logout"

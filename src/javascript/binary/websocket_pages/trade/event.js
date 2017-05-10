@@ -122,7 +122,6 @@ const TradingEvents = (() => {
             BinarySocket.send({ contracts_for: underlying }).then((response) => {
                 Notifications.hide('CONNECTION_ERROR');
                 Process.processContract(response);
-                window.contracts_for = response;
             });
         };
 
@@ -340,8 +339,8 @@ const TradingEvents = (() => {
         /*
          * attach event to close icon for purchase container
          */
-        $('#close_confirmation_container, #contract_purchase_new_trade').on('click dblclick', (e) => {
-            if (e.target) {
+        $('#close_confirmation_container').on('click dblclick', (e) => {
+            if (e.target && isVisible(document.getElementById('confirmation_message_container'))) {
                 e.preventDefault();
                 commonTrading.hideOverlayContainer();
                 Price.processPriceRequest();
@@ -373,6 +372,9 @@ const TradingEvents = (() => {
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
+            low_barrier_element.addEventListener('keypress', (ev) => {
+                onlyNumericOnKeypress(ev, [43, 45, 46]);
+            });
         }
 
         /*
@@ -385,6 +387,9 @@ const TradingEvents = (() => {
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
+            high_barrier_element.addEventListener('keypress', (ev) => {
+                onlyNumericOnKeypress(ev, [43, 45, 46]);
+            });
         }
 
         /*

@@ -5,13 +5,13 @@
         [% l('Please complete the tax information before proceeding.') %]
     </p>
 
-    <form class="form gr-padding-10 hidden" id="frmPersonalDetails">
+    <form class="form gr-padding-10 invisible" id="frmPersonalDetails">
         <fieldset>
             <legend>[% l('Details') %]</legend>
 
-            <div class="gr-padding-10 gr-row rowName clear hidden RealAcc JpAcc">
+            <div class="gr-padding-10 gr-row rowName clear invisible RealAcc JpAcc">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('Name') %]</label>
+                    <label>[% l('Name') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -22,7 +22,7 @@
 
             <div class="gr-padding-10 gr-row clear JpAcc invisible">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('Gender') %]</label>
+                    <label>[% l('Gender') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -31,9 +31,9 @@
                 </div>
             </div>
 
-            <div class="gr-padding-10 gr-row clear rowBirthDate hidden RealAcc JpAcc">
+            <div class="gr-padding-10 gr-row clear rowBirthDate invisible RealAcc JpAcc">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('Date of birth') %]</label>
+                    <label>[% l('Date of birth') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-            <div class="hidden RealAcc">
+            <div class="invisible RealAcc">
                 <div class="gr-padding-10 gr-row clear">
                     <div class="gr-4 form_label">
                         <label for="place_of_birth">[% l('Place of birth') %]</label>
@@ -55,7 +55,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('Country of Residence') %]</label>
+                    <label>[% l('Country of Residence') %]</label>
                 </div>
                 <div class="gr-8">
                     <label><strong id="lbl_country"></strong></label>
@@ -64,7 +64,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('Email address') %]</label>
+                    <label>[% l('Email address') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -93,7 +93,7 @@
             </div>
         </fieldset>
 
-        <fieldset class="hidden RealAcc ja-hide">
+        <fieldset class="invisible RealAcc ja-hide">
             <legend>[% l('Tax Information') %]</legend>
 
             <div class="gr-padding-10 gr-row clear">
@@ -115,7 +115,7 @@
             </div>
         </fieldset>
 
-        <fieldset class="hidden RealAcc ja-hide">
+        <fieldset class="invisible RealAcc ja-hide">
             <legend>[% l('Address') %]</legend>
 
             <div class="gr-padding-10 gr-row clear">
@@ -178,7 +178,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('Postal Code / ZIP') %]</label>
+                    <label>[% l('Postal Code / ZIP') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -189,7 +189,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('State/Province') %]</label>
+                    <label>[% l('State/Province') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -200,7 +200,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('Town/City') %]</label>
+                    <label>[% l('Town/City') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -211,7 +211,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('First line of home address') %]</label>
+                    <label>[% l('First line of home address') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -222,7 +222,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('Second line of home address') %]</label>
+                    <label>[% l('Second line of home address') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -233,7 +233,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('Telephone') %]</label>
+                    <label>[% l('Telephone') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -459,6 +459,6 @@
         </div>
     </form>
 
-    <p class="required hidden RealAcc JpAcc rowCustomerSupport"><em class="required_asterisk">**</em> [% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', request.url_for('contact')) %]</p>
+    <p class="required invisible RealAcc JpAcc rowCustomerSupport">[% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', request.url_for('contact')) %]</p>
 
 </div>
