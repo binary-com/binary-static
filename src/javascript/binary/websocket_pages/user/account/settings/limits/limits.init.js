@@ -1,7 +1,6 @@
 const LimitsUI           = require('./limits.ui');
 const Client             = require('../../../../../base/client');
 const localize           = require('../../../../../base/localize').localize;
-const elementInnerHtml   = require('../../../../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../../../common_functions/common_functions').elementTextContent;
 const formatMoney        = require('../../../../../common_functions/currency_to_symbol').formatMoney;
 
@@ -52,19 +51,10 @@ const LimitsInit = (() => {
     const limitsError = (error) => {
         document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
         document.getElementById('limits-title').setAttribute('style', 'display:none');
-        const error_element = document.getElementsByClassName('notice-msg')[0];
-        if (error && error.message) {
-            elementInnerHtml(error_element, error.message);
-        } else {
-            elementInnerHtml(error_element, `${localize('An error occured')}.`);
-        }
-        document.getElementById('client_message').setAttribute('style', 'display:block');
+        $('#limits_error').append($('<p/>', { class: 'center-text notice-msg', text: error && error.message ? error.message : localize('Sorry, an error occurred while processing your request.') }));
     };
 
     const initTable = () => {
-        const client_message = document.getElementById('client_message');
-        if (!client_message) return;
-        client_message.setAttribute('style', 'display:none');
         LimitsUI.clearTableContent();
     };
 

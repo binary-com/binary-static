@@ -892,15 +892,6 @@ msgstr "Adresse"
 msgid "Adjust trade parameters"
 msgstr "Anpassen von Handelsparametern"
 
-msgid "Adjusted Barrier"
-msgstr "Veränderte Grenze"
-
-msgid "Adjusted High Barrier"
-msgstr "Angepasste obere Grenze"
-
-msgid "Adjusted Low Barrier"
-msgstr "Angepasste untere Grenze"
-
 msgid "Admin"
 msgstr "Admin"
 
@@ -1755,9 +1746,6 @@ msgstr "Vorstandsvorsitzende, leitende Beamte und Gesetzgeber"
 msgid "Choose Scopes:"
 msgstr "Geltungsbereiche auswählen:"
 
-msgid "Choose a Name:"
-msgstr "Wählen Sie einen Namen aus:"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Wählen Sie eine Laufzeit von 10 Sekunden bis zu 365 Tagen aus."
 
@@ -1784,6 +1772,11 @@ msgstr "Wählen Sie die gewünschte Zahlungsmethode aus."
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "Wählen Sie auf der Grundlage der Möglichkeiten, die Sie gerne zur Verfügung stellen möchten, die spezifische Art des von Ihnen benötigten API-Tokens aus."
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token name"
+msgstr "Wählen Sie einen Namen aus:"
 
 msgid "Choose your own strike."
 msgstr "Wählen Sie Ihren eigenen Ausübungspreis aus."
@@ -2117,9 +2110,6 @@ msgstr "Copyright"
 
 msgid "Copywriter"
 msgstr "Copywriter"
-
-msgid "Corporate Action"
-msgstr "Unternehmenshandlung"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "Kosten - Die Kosten, die bei der Ausführung Ihrer Order entstehen und vorwiegend aus Spread, d.h., dem Unterschied zwischen unserem Geld- und unserem Briefkurs bestehen."
@@ -5298,15 +5288,6 @@ msgstr "Regeln der Orderausführung"
 msgid "Order Execution/Cancellation/Modification"
 msgstr "Order Ausführung/Stornierung/Modifizierung"
 
-msgid "Original Barrier"
-msgstr "Ursprüngliche Grenze"
-
-msgid "Original High Barrier"
-msgstr "Ursprüngliche obere Grenze"
-
-msgid "Original Low Barrier"
-msgstr "Ursprüngliche untere Grenze"
-
 msgid "Other"
 msgstr "Sonstiges"
 
@@ -7422,9 +7403,6 @@ msgstr "Diese Klausel bezieht sich nicht auf Volatiliät Indizes."
 
 msgid "This contract lost"
 msgstr "Dieser Kontrakt verlor"
-
-msgid "This contract was affected by a Corporate Action event."
-msgstr "Dieser Kontrakt ist von einer Unternehmenshandlung betroffen."
 
 msgid "This contract won"
 msgstr "Dieser Vertrag gewann"
@@ -10883,6 +10861,30 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 msgid "Account Limits"
 msgstr "Kontolimits"
+
+#~ msgid "Adjusted Barrier"
+#~ msgstr "Veränderte Grenze"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "Angepasste obere Grenze"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "Angepasste untere Grenze"
+
+#~ msgid "Corporate Action"
+#~ msgstr "Unternehmenshandlung"
+
+#~ msgid "Original Barrier"
+#~ msgstr "Ursprüngliche Grenze"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "Ursprüngliche obere Grenze"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "Ursprüngliche untere Grenze"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "Dieser Kontrakt ist von einer Unternehmenshandlung betroffen."
 
 #~ msgid "&#36;100,000 - &#36;250,000"
 #~ msgstr "100.000&#36; - 250.000&#36;"
