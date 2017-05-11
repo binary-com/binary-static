@@ -893,15 +893,6 @@ msgstr "Adresse"
 msgid "Adjust trade parameters"
 msgstr "Définir les paramètres de la transaction"
 
-msgid "Adjusted Barrier"
-msgstr "Barrière ajustée"
-
-msgid "Adjusted High Barrier"
-msgstr "Barrière supérieure ajustée"
-
-msgid "Adjusted Low Barrier"
-msgstr "Barrière inférieure ajustée"
-
 msgid "Admin"
 msgstr "Administration"
 
@@ -1760,9 +1751,6 @@ msgstr "Directeurs Généraux, Hauts Fonctionnaires et Législateurs"
 msgid "Choose Scopes:"
 msgstr "Choisissez les champs d'application :"
 
-msgid "Choose a Name:"
-msgstr "Choisissez un nom :"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Sélectionnez une durée d'activité de 10 secondes à 365 jours."
 
@@ -1789,6 +1777,11 @@ msgstr "Sélectionnez le moyen de paiement que vous souhaitez utiliser."
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "Choisissez le type de jeton d'API dont vous avez besoin, selon les fonctionnalités que vous souhaitez proposer."
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token name"
+msgstr "Choisissez un nom :"
 
 msgid "Choose your own strike."
 msgstr "Définissez votre propre objectif."
@@ -2122,9 +2115,6 @@ msgstr "Droit d'auteur"
 
 msgid "Copywriter"
 msgstr "Rédacteur [H/F]"
-
-msgid "Corporate Action"
-msgstr "Opération sur titre"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "Coûts - les coûts d'exécution de votre ordre sont composés principalement du spread, c'est à dire de la difference entre les prix de la mise et de l'offre."
@@ -5305,15 +5295,6 @@ msgstr "Politique d'exécution des ordres"
 msgid "Order Execution/Cancellation/Modification"
 msgstr "Execution d'Ordre/Annulation/Modification"
 
-msgid "Original Barrier"
-msgstr "Barrière initiale"
-
-msgid "Original High Barrier"
-msgstr "Barrière supérieure initiale"
-
-msgid "Original Low Barrier"
-msgstr "Barrière inférieure initiale"
-
 msgid "Other"
 msgstr "Autre"
 
@@ -7431,9 +7412,6 @@ msgstr "Cette clause ne s'applique pas aux indices de volatilité."
 
 msgid "This contract lost"
 msgstr "Ce contrat a été perdu"
-
-msgid "This contract was affected by a Corporate Action event."
-msgstr "Ce contrat a été affecté par un événement relatif à une opération sur titre."
 
 msgid "This contract won"
 msgstr "Ce contrat a été gagné"
@@ -10892,6 +10870,30 @@ msgstr "Acceptation des conditions générales"
 
 msgid "Account Limits"
 msgstr "Limites du Compte"
+
+#~ msgid "Adjusted Barrier"
+#~ msgstr "Barrière ajustée"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "Barrière supérieure ajustée"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "Barrière inférieure ajustée"
+
+#~ msgid "Corporate Action"
+#~ msgstr "Opération sur titre"
+
+#~ msgid "Original Barrier"
+#~ msgstr "Barrière initiale"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "Barrière supérieure initiale"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "Barrière inférieure initiale"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "Ce contrat a été affecté par un événement relatif à une opération sur titre."
 
 #~ msgid "&#36;100,000 - &#36;250,000"
 #~ msgstr "100 000 &#36; - 250 000 &#36;"

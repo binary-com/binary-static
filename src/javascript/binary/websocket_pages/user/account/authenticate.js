@@ -1,3 +1,5 @@
+const BinarySocket = require('../../socket');
+
 const Authenticate = (() => {
     'use strict';
 

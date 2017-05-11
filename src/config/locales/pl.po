@@ -898,15 +898,6 @@ msgstr "Adres"
 msgid "Adjust trade parameters"
 msgstr "Dostosuj parametry handlowe"
 
-msgid "Adjusted Barrier"
-msgstr "Limit zmieniony"
-
-msgid "Adjusted High Barrier"
-msgstr "Górny limit został zmieniony"
-
-msgid "Adjusted Low Barrier"
-msgstr "Dolny limit został zmieniony"
-
 msgid "Admin"
 msgstr "Admin"
 
@@ -1765,9 +1756,6 @@ msgstr "Dyrektorzy, urzędnicy wysokiego szczebla, prawodawcy"
 msgid "Choose Scopes:"
 msgstr "Wybierz zakres:"
 
-msgid "Choose a Name:"
-msgstr "Wybierz nazwę:"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Wybierz czas trwania od 10 sekund do 365 dni."
 
@@ -1794,6 +1782,11 @@ msgstr "Wybierz metodę płatności, z której chcesz skorzystać."
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "W zależności od funkcji, które chcesz udostępnić, wybierz rodzaj tokenu API, którego potrzebujesz."
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token name"
+msgstr "Wybierz nazwę:"
 
 msgid "Choose your own strike."
 msgstr "Wybierz swoją wypłatę."
@@ -2127,9 +2120,6 @@ msgstr "Prawa autorskie"
 
 msgid "Copywriter"
 msgstr "Copywriter"
-
-msgid "Corporate Action"
-msgstr "Działania przedsiębiorstwa"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "Koszty – koszty realizacji Twojego zlecenia składające się głównie ze spreadu, t.j. różnicy między ceną sprzedaży a ceną ofertową."
@@ -5310,15 +5300,6 @@ msgstr "Polityka dot. realizacji zlecenia"
 msgid "Order Execution/Cancellation/Modification"
 msgstr "Realizacja/anulowanie/zmiana zlecenia"
 
-msgid "Original Barrier"
-msgstr "Pierwotny limit"
-
-msgid "Original High Barrier"
-msgstr "Pierwotny górny limit"
-
-msgid "Original Low Barrier"
-msgstr "Pierwotny dolny limit"
-
 msgid "Other"
 msgstr "Inne"
 
@@ -7436,9 +7417,6 @@ msgstr "Tej klauzuli nie stosuje się w odniesieniu do wskaźników zmienności.
 
 msgid "This contract lost"
 msgstr "Ten kontrakt przegrał"
-
-msgid "This contract was affected by a Corporate Action event."
-msgstr "Działania przedsiębiorstwa wpłynęły na ten kontrakt."
 
 msgid "This contract won"
 msgstr "Ten kontrakt wygrał"
@@ -10903,6 +10881,30 @@ msgstr "Akceptacja regulaminu"
 
 msgid "Account Limits"
 msgstr "Limity na koncie"
+
+#~ msgid "Adjusted Barrier"
+#~ msgstr "Limit zmieniony"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "Górny limit został zmieniony"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "Dolny limit został zmieniony"
+
+#~ msgid "Corporate Action"
+#~ msgstr "Działania przedsiębiorstwa"
+
+#~ msgid "Original Barrier"
+#~ msgstr "Pierwotny limit"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "Pierwotny górny limit"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "Pierwotny dolny limit"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "Działania przedsiębiorstwa wpłynęły na ten kontrakt."
 
 #~ msgid "&#36;100,000 - &#36;250,000"
 #~ msgstr "100 000 &#36; – 250 000 &#36;"

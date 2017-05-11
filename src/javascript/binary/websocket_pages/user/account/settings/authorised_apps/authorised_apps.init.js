@@ -1,5 +1,6 @@
 const ApplicationsData = require('./authorised_apps.data');
 const ApplicationsUI   = require('./authorised_apps.ui');
+const BinarySocket     = require('../../../../socket');
 
 const ApplicationsInit = (() => {
     'use strict';

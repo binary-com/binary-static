@@ -988,15 +988,6 @@ msgstr "Endereço"
 msgid "Adjust trade parameters"
 msgstr "Ajustar parâmetros de negociação"
 
-msgid "Adjusted Barrier"
-msgstr "Barreira Ajustada"
-
-msgid "Adjusted High Barrier"
-msgstr "Barreira alta ajustada"
-
-msgid "Adjusted Low Barrier"
-msgstr "Barreira baixa ajustada"
-
 msgid "Admin"
 msgstr "Administração"
 
@@ -1903,9 +1894,6 @@ msgstr ""
 msgid "Choose Scopes:"
 msgstr "Escolha os âmbitos:"
 
-msgid "Choose a Name:"
-msgstr "Escolha um nome:"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Escolha a duração do contrato, de 10 segundos até 365 dias."
 
@@ -1940,6 +1928,11 @@ msgstr "Escolha o método de pagamento que você prefere usar."
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "Escolha o tipo de token de API específico que você necessita, com base nas capacidades que você desejar disponibilizar."
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token name"
+msgstr "Escolha um nome:"
 
 msgid "Choose your own strike."
 msgstr "Escolha a sua própria aposta."
@@ -2295,9 +2288,6 @@ msgstr "Direitos autorais"
 
 msgid "Copywriter"
 msgstr "Redator"
-
-msgid "Corporate Action"
-msgstr "Ação corporativa"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr ""
@@ -5668,15 +5658,6 @@ msgstr "Resumo da política de execução de ordens"
 msgid "Order Execution/Cancellation/Modification"
 msgstr ""
 
-msgid "Original Barrier"
-msgstr "Barreira original"
-
-msgid "Original High Barrier"
-msgstr "Barreira alta original"
-
-msgid "Original Low Barrier"
-msgstr "Barreira baixa original"
-
 msgid "Other"
 msgstr "Outro"
 
@@ -7956,9 +7937,6 @@ msgstr "Descubra os nossos índices Volatility."
 
 msgid "This contract lost"
 msgstr "Esse contrato perdeu"
-
-msgid "This contract was affected by a Corporate Action event."
-msgstr "Este contrato foi afetado por um evento de ação corporativa."
 
 msgid "This contract won"
 msgstr "Esse contrato ganhou"
@@ -11827,6 +11805,30 @@ msgstr "Aprovação dos termos e condições"
 
 msgid "Account Limits"
 msgstr "Limites da Conta"
+
+#~ msgid "Adjusted Barrier"
+#~ msgstr "Barreira Ajustada"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "Barreira alta ajustada"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "Barreira baixa ajustada"
+
+#~ msgid "Corporate Action"
+#~ msgstr "Ação corporativa"
+
+#~ msgid "Original Barrier"
+#~ msgstr "Barreira original"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "Barreira alta original"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "Barreira baixa original"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "Este contrato foi afetado por um evento de ação corporativa."
 
 #~ msgid "Please %1 to view this page"
 #~ msgstr "Por favor %1 para ver esta página"
