@@ -1,98 +1,48 @@
+[% PROCESS components/elements.html.tt %]
+[% counter = 1 %]
+
+[% BLOCK section %]
+    <div [% IF id %]id="[% id %]"[% END %] class="section [% class %]">
+        <a id="[% link_id %]"></a>
+        <div class="section-content">
+            <div id="section-[% counter %]">[% content %]</div>
+        </div>
+    [% counter = counter + 1 %]
+    </div>
+[% END %]
+
 <div class="tac-binary gr-row">
     <div class="gr-9 gr-12-m gr-parent">
-        <div class="section">
-            <a id="tac"></a>
-            <div class="section-content">
-                <div id="section-1">[% INCLUDE legal/tac_sections/tac.html.tt %]</div>
+        [% WRAPPER section link_id='tac' %][% PROCESS legal/tac_sections/tac.html.tt %][% END %]
+        [% WRAPPER section link_id='trading-rules' %][% PROCESS legal/tac_sections/trading_rules.html.tt %][% END %]
+        [% WRAPPER section link_id='deposit-bonus' %][% PROCESS legal/tac_sections/deposit_bonus.html.tt %][% END %]
+        [% WRAPPER section link_id='affiliate' %][% PROCESS legal/tac_sections/affiliate.html.tt %][% END %]
+        [% WRAPPER section link_id='api' %][% PROCESS legal/tac_sections/api.html.tt %][% END %]
+        [% WRAPPER section link_id='complaints-disputes' %][% PROCESS legal/tac_sections/complaints.html.tt %][% END %]
+        [% WRAPPER section link_id='conflicts-policy' %][% PROCESS legal/tac_sections/conflicts_policy.html.tt %][% END %]
+        [% WRAPPER section link_id='biel' %][% PROCESS legal/tac_sections/biel.html.tt %][% END %]
+        [% WRAPPER section id='tnc_accept' class='tnc_accept invisible' link_id='accept' %]
+            <div class="gr-9 gr-12-m gr-centered center-text">
+                <p>[% l('By clicking OK, you confirm that you have read and accepted Terms & Conditions.') %]</p>
+                <button class="button" id="btn_accept">[% l('OK') %]</button>
+                <p class="gr-12 error-msg center-text invisible" id="err_message"></p>
             </div>
-        </div>
-        <div class="section">
-            <a id="trading-rules"></a>
-            <div class="section-content">
-                <div id="section-2">[% INCLUDE legal/tac_sections/trading_rules.html.tt %]</div>
-            </div>
-        </div>
-        <div class="section">
-            <a id="deposit-bonus"></a>
-            <div class="section-content">
-                <div id="section-3">[% INCLUDE legal/tac_sections/deposit_bonus.html.tt %]</div>
-            </div>
-        </div>
-        <div class="section">
-            <a id="affiliate"></a>
-            <div class="section-content">
-                <div id="section-4">[% INCLUDE legal/tac_sections/affiliate.html.tt %]</div>
-            </div>
-        </div>
-        <div class="section">
-            <a id="api"></a>
-            <div class="section-content">
-                <div id="section-5">[% INCLUDE legal/tac_sections/api.html.tt %]</div>
-            </div>
-        </div>
-        <div class="section">
-            <a id="complaints-disputes"></a>
-            <div class="section-content">
-                <div id="section-6">[% INCLUDE legal/tac_sections/complaints.html.tt %]</div>
-            </div>
-        </div>
-        <div class="section">
-            <a id="conflicts-policy"></a>
-            <div class="section-content">
-                <div id="section-7">[% INCLUDE legal/tac_sections/conflicts_policy.html.tt %]</div>
-            </div>
-        </div>
-        <div class="section">
-            <a id="biel"></a>
-            <div class="section-content">
-                <div id="section-8">[% INCLUDE legal/tac_sections/biel.html.tt %]</div>
-            </div>
-        </div>
-        <div id="tnc_accept" class="section tnc_accept invisible">
-            <a id="accept"></a>
-            <div class="section-content">
-                <div id="section-9">
-                    <div class="gr-9 gr-12-m gr-centered center-text">
-                        <p>[% l('By clicking OK, you confirm that you have read and accepted Terms & Conditions.') %]</p>
-                        <button class="button" id="btn_accept">[% l('OK') %]</button>
-                        <p class="gr-12 error-msg center-text invisible" id="err_message"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        [% END %]
     </div>
 
     <div class="gr-3 gr-hide-m gr-no-gutter-left sidebar-container">
         <div class="sidebar">
-            <ul id="sidebar-nav">
-                <li class="selected" id="sidebar-link-section-1">
-                    <a href="?section=tac">[% l("Terms and Conditions") %]</a>
-                </li>
-                <li id="sidebar-link-section-2">
-                    <a href="?section=trading-rules">[% l("Trading Rules") %]</a>
-                </li>
-                <li id="sidebar-link-section-3">
-                    <a href="?section=deposit-bonus">[% l("Deposit Bonus") %]</a>
-                </li>
-                <li id="sidebar-link-section-4">
-                    <a href="?section=affiliate">[% l("Affiliate Program") %]</a>
-                </li>
-                <li id="sidebar-link-section-5">
-                    <a href="?section=api">[% l("API") %]</a>
-                </li>
-                <li id="sidebar-link-section-6">
-                    <a href="?section=complaints-disputes">[% l("Complaints and Disputes") %]</a>
-                </li>
-                <li id="sidebar-link-section-7">
-                    <a href="?section=conflicts-policy">[% l("Conflicts Policy") %]</a>
-                </li>
-                <li id="sidebar-link-section-8">
-                    <a href="?section=biel">[% l("BIEL Terms") %]</a>
-                </li>
-                <li id="sidebar-link-section-9" class="tnc_accept invisible">
-                    <a href="?section=accept">[% l("Accept Terms and Conditions") %]</a>
-                </li>
-            </ul>
+            [% INCLUDE list id='sidebar-nav' items=[
+                { id='sidebar-link-section-1', href='?section=tac',                 text=l("Terms and Conditions"), class='selected' },
+                { id='sidebar-link-section-2', href='?section=trading-rules',       text=l("Trading Rules") },
+                { id='sidebar-link-section-3', href='?section=deposit-bonus',       text=l("Deposit Bonus") },
+                { id='sidebar-link-section-4', href='?section=affiliate',           text=l("Affiliate Program") },
+                { id='sidebar-link-section-5', href='?section=api',                 text=l("API") },
+                { id='sidebar-link-section-6', href='?section=complaints-disputes', text=l("Complaints and Disputes") },
+                { id='sidebar-link-section-7', href='?section=conflicts-policy',    text=l("Conflicts Policy") },
+                { id='sidebar-link-section-8', href='?section=biel',                text=l("BIEL Terms") },
+                { id='sidebar-link-section-9', href='?section=accept',              text=l("Accept Terms and Conditions") },
+            ] %]
         </div>
     </div>
 </div>

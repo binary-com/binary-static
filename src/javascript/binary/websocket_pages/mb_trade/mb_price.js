@@ -1,6 +1,7 @@
 const MBContract       = require('./mb_contract');
 const MBDefaults       = require('./mb_defaults');
 const MBNotifications  = require('./mb_notifications');
+const BinarySocket     = require('../socket');
 const ViewPopup        = require('../user/view_popup/view_popup');
 const Client           = require('../../base/client');
 const GTM              = require('../../base/gtm');
@@ -9,7 +10,7 @@ const getPropertyValue = require('../../base/utility').getPropertyValue;
 const isEmptyObject    = require('../../base/utility').isEmptyObject;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 const jpClient         = require('../../common_functions/country_base').jpClient;
-const addComma         = require('../../common_functions/string_util').addComma;
+const formatMoney      = require('../../common_functions/currency_to_symbol').formatMoney;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -187,7 +188,7 @@ const MBPrice = (() => {
         MBPrice.sendBuyRequest(barrier, contract_type);
     };
 
-    const formatPrice = price => addComma(price, jpClient() ? '0' : 2);
+    const formatPrice = price => formatMoney(MBContract.getCurrency(), price, 1);
 
     const cleanup = () => {
         prices         = {};

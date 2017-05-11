@@ -1,34 +1,23 @@
+[% BLOCK column %]
+<div class="gr-3 gr-6-m gr-parent [% class %]">
+    <div class="gr-8 gr-padding-10">
+        <a href="[% request.url_for('user/settings/' _ url) %]">
+            <img class="responsive" src="[% request.url_for('images/pages/settings/' _ image _ '.svg') %]">
+        </a>
+    </div>
+    <div class="gr-12">
+        <h4><a href="[% request.url_for('/user/settings/' _ url) %]">[% header %]</a></h4>
+        <p>[% text %]</p>
+    </div>
+</div>
+[% END %]
+
 <div class="invisible" id="settings_container">
     <h1>[% l('Profile') %]</h1>
 
     <div class="gr-row">
-        <div class="gr-3 gr-6-m gr-parent">
-            <div class="gr-8 gr-padding-10">
-                <a href="[% request.url_for('/user/settings/detailsws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/detail.svg') %]">
-                </a>
-            </div>
-            <div class="gr-12">
-                <h4>
-                    <a href="[% request.url_for('/user/settings/detailsws') %]">[% l('Personal Details') %]</a>
-                </h4>
-                <p>[% l('View your personal information.') %]</p>
-            </div>
-        </div>
-
-        <div class="gr-3 gr-6-m gr-parent ja-hide real invisible">
-            <div class="gr-8 gr-padding-10">
-                <a href="[% request.url_for('/user/settings/assessmentws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/financial-assessment.svg') %]">
-                </a>
-            </div>
-            <div class="gr-12">
-                <h4>
-                    <a href="[% request.url_for('/user/settings/assessmentws') %]">[% l('Financial Assessment') %]</a>
-                </h4>
-                <p>[% l('View your financial assessment settings.') %]</p>
-            </div>
-        </div>
+        [% INCLUDE column url='detailsws' image='detail' header=l('Personal Details') text=l('View your personal information.') %]
+        [% INCLUDE column class='ja-hide real invisible' url='assessmentws' image='financial-assessment' header=l('Financial Assessment')
+            text=l('View your financial assessment settings.') %]
     </div>
-
 </div>

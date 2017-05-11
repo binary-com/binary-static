@@ -13,10 +13,12 @@ const Purchase                   = require('./purchase');
 const setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
 const getStartDateNode           = require('./common_independent').getStartDateNode;
 const Tick                       = require('./tick');
+const BinarySocket               = require('../socket');
 const BinaryPjax                 = require('../../base/binary_pjax');
 const GTM                        = require('../../base/gtm');
 const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
 const isVisible                  = require('../../common_functions/common_functions').isVisible;
+const formatMoney                = require('../../common_functions/currency_to_symbol').formatMoney;
 const onlyNumericOnKeypress      = require('../../common_functions/event_handler');
 const TimePicker                 = require('../../components/time_picker');
 
@@ -234,7 +236,7 @@ const TradingEvents = (() => {
             amount_element.addEventListener('input', commonTrading.debounce((e) => {
                 e.target.value = e.target.value.replace(/[^0-9.]/g, '');
                 if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(2);
+                    e.target.value = formatMoney(Defaults.get('currency'), parseFloat(e.target.value), 1);
                 }
                 Defaults.set('amount', e.target.value);
                 Price.processPriceRequest();
@@ -372,6 +374,9 @@ const TradingEvents = (() => {
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
+            low_barrier_element.addEventListener('keypress', (ev) => {
+                onlyNumericOnKeypress(ev, [43, 45, 46]);
+            });
         }
 
         /*
@@ -384,6 +389,9 @@ const TradingEvents = (() => {
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
+            high_barrier_element.addEventListener('keypress', (ev) => {
+                onlyNumericOnKeypress(ev, [43, 45, 46]);
+            });
         }
 
         /*

@@ -1,0 +1,15 @@
+<form id="frm_verify_email">
+    <div class="gr-row gr-row-align-center">
+        <div class="signup-box gr-[% padding || 8 %] gr-10-p gr-12-m gr-no-gutter [% class %]">
+            <div class="gr-row gr-padding-10">
+                <div class="gr-[% email_padding || 7 %] gr-10-m gr-centered">
+                    <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
+                </div>
+                <div class="gr-[% button_padding || 5 %] gr-8-m gr-centered">
+                    <button[% IF dark_button %] class="primary-bg-color"[% END %] id="btn_verify_email" type="submit">[% text %]</button>
+                </div>
+                <span class="gr-12 gr-padding-10 error-msg hint color-white center-text invisible" id="signup_error"></span>
+            </div>
+        </div>
+    </div>
+</form>

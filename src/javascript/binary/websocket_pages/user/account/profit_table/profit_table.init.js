@@ -1,5 +1,6 @@
 const ProfitTableUI        = require('./profit_table.ui');
 const ViewPopup            = require('../../view_popup/view_popup');
+const BinarySocket         = require('../../../socket');
 const localize             = require('../../../../base/localize').localize;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;

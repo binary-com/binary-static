@@ -5,6 +5,7 @@ const defaultRedirectUrl = require('../binary/base/url').defaultRedirectUrl;
 const template           = require('../binary/base/utility').template;
 const jpClient           = require('../binary/common_functions/country_base').jpClient;
 const jpResidence        = require('../binary/common_functions/country_base').jpResidence;
+const BinarySocket       = require('../binary/websocket_pages/socket');
 
 const CashierJP = (() => {
     'use strict';

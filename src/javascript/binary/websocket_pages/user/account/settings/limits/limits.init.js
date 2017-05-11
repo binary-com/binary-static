@@ -1,9 +1,8 @@
 const LimitsUI           = require('./limits.ui');
 const Client             = require('../../../../../base/client');
 const localize           = require('../../../../../base/localize').localize;
-const elementInnerHtml   = require('../../../../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../../../common_functions/common_functions').elementTextContent;
-const addComma           = require('../../../../../common_functions/string_util').addComma;
+const formatMoney        = require('../../../../../common_functions/currency_to_symbol').formatMoney;
 
 const LimitsInit = (() => {
     'use strict';
@@ -23,10 +22,10 @@ const LimitsInit = (() => {
                 txt_withdraw_amt           = 'You have already withdrawn the equivalent of [_1] [_2].',
                 txt_current_max_withdrawal = 'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).',
                 currency                   = 'EUR';
-            const days_limit               = addComma(limits.num_of_days_limit).split('.')[1] === '00' ? addComma(limits.num_of_days_limit).split('.')[0] : addComma(limits.num_of_days_limit);
-            // no need for addComma since it is already string like "1,000"
+            const days_limit               = formatMoney(currency, limits.num_of_days_limit, 1);
+            // no need for formatMoney since it is already string like "1,000"
             const withdrawn                = limits.withdrawal_since_inception_monetary;
-            const remainder                = addComma(limits.remainder).split('.')[1] === '00' ? addComma(limits.remainder).split('.')[0] : addComma(limits.remainder);
+            const remainder                = formatMoney(currency, limits.remainder, 1);
 
             if ((/^(iom)$/i).test(Client.get('landing_company_name'))) { // MX
                 txt_withdraw_lim  = 'Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).';
@@ -52,19 +51,10 @@ const LimitsInit = (() => {
     const limitsError = (error) => {
         document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
         document.getElementById('limits-title').setAttribute('style', 'display:none');
-        const error_element = document.getElementsByClassName('notice-msg')[0];
-        if (error && error.message) {
-            elementInnerHtml(error_element, error.message);
-        } else {
-            elementInnerHtml(error_element, `${localize('An error occured')}.`);
-        }
-        document.getElementById('client_message').setAttribute('style', 'display:block');
+        $('#limits_error').append($('<p/>', { class: 'center-text notice-msg', text: error && error.message ? error.message : localize('Sorry, an error occurred while processing your request.') }));
     };
 
     const initTable = () => {
-        const client_message = document.getElementById('client_message');
-        if (!client_message) return;
-        client_message.setAttribute('style', 'display:none');
         LimitsUI.clearTableContent();
     };
 

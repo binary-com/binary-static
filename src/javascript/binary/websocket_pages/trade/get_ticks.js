@@ -13,6 +13,7 @@ const Tick                 = require('./tick');
 const TickDisplay          = require('./tick_trade');
 const MBDefaults           = require('../mb_trade/mb_defaults');
 const MBTick               = require('../mb_trade/mb_tick');
+const BinarySocket         = require('../socket');
 const State                = require('../../base/storage').State;
 
 const GetTicks = (() => {
@@ -23,8 +24,10 @@ const GetTicks = (() => {
         if (underlying && req && callback && (underlying !== req.ticks_history || !req.subscribe)) {
             BinarySocket.send(req, { callback: callback });
         } else {
-            BinarySocket.send({ forget_all: 'ticks' });
-            BinarySocket.send({ forget_all: 'candles' });
+            if (!req || req.subscribe) {
+                BinarySocket.send({ forget_all: 'ticks' });
+                BinarySocket.send({ forget_all: 'candles' });
+            }
             BinarySocket.send(req || {
                 ticks_history: symbol,
                 style        : 'ticks',

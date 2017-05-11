@@ -1,81 +1,77 @@
-[% USE String %]
-
 <div class='gr-12 gr-parent'>
     <div class='gr-12'>
-
         <!-- ========== Winning ========== -->
         <div id="explanation_winning" class="invisible">
             <h3>[% l("Winning the contract") %]</h3>
 
-                <div id="winning_asian" class="invisible">
-                    <p>[% l("Asian options settle by comparing the <strong>last tick</strong> with the average spot over the period.") %]</p>
-                    <p>[% l("If you select \"Asian Rise\", you will win the payout if the <strong>last tick</strong> is <strong>higher</strong> than the <strong>average</strong> of the ticks.") %]</p>
-                    <p>[% l("If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks.") %]</p>
-                </div>
+            <div id="winning_asian" class="invisible">
+                <p>[% l("Asian options settle by comparing the <strong>last tick</strong> with the average spot over the period.") %]</p>
+                <p>[% l("If you select \"Asian Rise\", you will win the payout if the <strong>last tick</strong> is <strong>higher</strong> than the <strong>average</strong> of the ticks.") %]</p>
+                <p>[% l("If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks.") %]</p>
+            </div>
 
-                <div id="winning_digits" class="invisible">
-                    <p>[% l("If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>") %]</p>
-                    <p>[% l("If you select \"Differs\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>not the same</strong> as your <strong>prediction</strong>.") %]</p>
-                </div>
+            <div id="winning_digits" class="invisible">
+                <p>[% l("If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>") %]</p>
+                <p>[% l("If you select \"Differs\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>not the same</strong> as your <strong>prediction</strong>.") %]</p>
+            </div>
 
-                <div id="winning_endsinout" class="invisible">
-                    <p>[% l("If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>.") %]</p>
-                    <p>[% l("If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>.") %]</p>
-                </div>
+            <div id="winning_endsinout" class="invisible">
+                <p>[% l("If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>.") %]</p>
+                <p>[% l("If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>.") %]</p>
+            </div>
 
-                <div id="winning_evenodd" class="invisible">
-                    <p>[% l("If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>") %]</p>
-                    <p>[% l("If you select \"Odd\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>odd number (i.e., 1, 3, 5, 7, or 9).</strong>") %]</p>
-                </div>
+            <div id="winning_evenodd" class="invisible">
+                <p>[% l("If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>") %]</p>
+                <p>[% l("If you select \"Odd\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>odd number (i.e., 1, 3, 5, 7, or 9).</strong>") %]</p>
+            </div>
 
-                <div id="winning_higherlower" class="invisible">
-                    <p>[% l("If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>.") %]</p>
-                    <p>[% l("If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>.") %]</p>
-                </div>
+            <div id="winning_higherlower" class="invisible">
+                <p>[% l("If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>.") %]</p>
+                <p>[% l("If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>.") %]</p>
+            </div>
 
-                <div id="winning_overunder" class="invisible">
-                    <p>[% l("If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>") %]</p>
-                    <p>[% l("If you select \"Under\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>less than your prediction.</strong>") %]</p>
-                </div>
+            <div id="winning_overunder" class="invisible">
+                <p>[% l("If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>") %]</p>
+                <p>[% l("If you select \"Under\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>less than your prediction.</strong>") %]</p>
+            </div>
 
-                <div id="winning_risefall" class="invisible">
-                    <p>[% l("If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>.") %]</p>
-                    <p>[% l("If you select \"Falls\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>.") %]</p>
-                </div>
+            <div id="winning_risefall" class="invisible">
+                <p>[% l("If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>.") %]</p>
+                <p>[% l("If you select \"Falls\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>.") %]</p>
+            </div>
 
-                <div id="winning_runbet-lucky10" class="invisible">
-                    <p>[% l("You win the payout if the market price ends in the digit you have selected.") %]</p>
-                </div>
+            <div id="winning_runbet-lucky10" class="invisible">
+                <p>[% l("You win the payout if the market price ends in the digit you have selected.") %]</p>
+            </div>
 
-                <div id="winning_runbet-quick10" class="invisible">
-                    <p>[% l("You win the payout if the market price does not end in the digit you have selected.") %]</p>
-                </div>
+            <div id="winning_runbet-quick10" class="invisible">
+                <p>[% l("You win the payout if the market price does not end in the digit you have selected.") %]</p>
+            </div>
 
-                <div id="winning_runbet-updown" class="invisible">
-                    <p>[% l("If you select \"rises\", you win the payout if the market price is higher than the <strong>entry spot</strong>.") %]</p>
-                    <p>[% l("If you select \"falls\", you win the payout if the market price is lower than the <strong>entry spot</strong>.") %]</p>
-                </div>
+            <div id="winning_runbet-updown" class="invisible">
+                <p>[% l("If you select \"rises\", you win the payout if the market price is higher than the <strong>entry spot</strong>.") %]</p>
+                <p>[% l("If you select \"falls\", you win the payout if the market price is lower than the <strong>entry spot</strong>.") %]</p>
+            </div>
 
-                <div id="winning_staysinout" class="invisible">
-                    <p>[% l("If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>.") %]</p>
-                    <p>[% l("If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>.") %]</p>
-                </div>
+            <div id="winning_staysinout" class="invisible">
+                <p>[% l("If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>.") %]</p>
+                <p>[% l("If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>.") %]</p>
+            </div>
 
-                <div id="winning_ticks" class="invisible">
-                    <p>[% l("If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>.") %]</p>
-                    <p>[% l("If you select \"Falls\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>.") %]</p>
-                </div>
+            <div id="winning_ticks" class="invisible">
+                <p>[% l("If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>.") %]</p>
+                <p>[% l("If you select \"Falls\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>.") %]</p>
+            </div>
 
-                <div id="winning_touchnotouch" class="invisible">
-                    <p>[% l("If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>.") %]</p>
-                    <p>[% l("If you select \"Does Not Touch\", you win the payout if the market never touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>.") %]</p>
-                </div>
+            <div id="winning_touchnotouch" class="invisible">
+                <p>[% l("If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>.") %]</p>
+                <p>[% l("If you select \"Does Not Touch\", you win the payout if the market never touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>.") %]</p>
+            </div>
 
-                <div id="winning_updown" class="invisible">
-                    <p>[% l("If you select \"rises\", you win the payout if the market price is higher than the entry spot.") %]</p>
-                    <p>[% l("If you select \"falls\", you win the payout if the market price is lower than the entry spot.") %]</p>
-                </div>
-
+            <div id="winning_updown" class="invisible">
+                <p>[% l("If you select \"rises\", you win the payout if the market price is higher than the entry spot.") %]</p>
+                <p>[% l("If you select \"falls\", you win the payout if the market price is lower than the entry spot.") %]</p>
+            </div>
         </div>
 
         <!-- ========== Image ========== -->
@@ -95,7 +91,6 @@
         <!-- ========== Explain ========== -->
         <div id="explanation_explain" class="invisible">
             <div id='explanation-content'>
-
                 <div id="explain_asian" class="invisible">
                     <h3>[% l("The First Tick") %]</h3>
                     <p>[% l("The first tick is the first tick after the contract is processed by our servers.") %]</p>
@@ -167,16 +162,13 @@
                 </div>
 
                 <div id="explain_touchnotouch" class="invisible">
-                    [% USE String %]
                     <h3>[% l("Contract period") %]</h3>
                     <p>[% l("The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>.") %]</p>
                     <p>[% l("The <strong>start time</strong> is when the contract is processed by our servers.") %]</p>
                     <p>[% l("The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).") %]</p>
                     <p class="hint"><strong>[% l("Note") %]: </strong>[% l("Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.") %]</p>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div><!-- gr-parent closes -->

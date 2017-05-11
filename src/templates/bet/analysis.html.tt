@@ -1,68 +1,30 @@
+[% PROCESS components/tabs.html.tt %]
 <div id="trading_bottom_content">
-  <div class="content-tab-container page-section">
-    <div class="tab-menu">
-      <div class="tab-menu-wrap">
-        <ul id="betsBottomPage" class="tm-ul follow-default">
-          <li id="tab_portfolio" class="tm-li invisible first">
-            <a href="#tab_portfolio" class="tm-a first"></a>
-          </li>
-          <li id="tab_graph" class="tm-li first">
-            <a href="#tab_graph" class="tm-a first"></a>
-          </li>
-          <li id="tab_explanation" class="tm-li active">
-            <a href="" class="tm-a"></a>
-          </li>
-          <li id="tab_last_digit" class="invisible tm-li">
-            <a href="javascript:;" class="tm-a"></a>
-          </li>
-          <li id="tab_japan_info" class="invisible tm-li last">
-            <a href="javascript:;" class="tm-a"></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="tab-content">
-      <div class="tab-content-wrapper" id="bet_bottom_content">
-        <div id="tab_portfolio-content" class="toggle-content invisible "></div>
-        <div id="tab_graph-content" class="toggle-content invisible">
-          <p class="error-msg" id="chart-error"></p>
-          <div id="trade_live_chart">
-            <table width="600px" align="center">
-              <tr align="center">
-                <td colspan="4">
-                  <iframe src="" width="100%" height="630" id="chart_frame" style="overflow-y : hidden;" scrolling="no"></iframe>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div id="tab_explanation-content" class="toggle-content selectedTab"></div>
-        <div id="tab_last_digit-content" class="toggle-content invisible ">
-            <div class="gr-parent">
-                <div id="last_digit_histo_form" class="gr-8 gr-12-m gr-centered">
-                    <div class="smallfont gr-row">
-                        <div class="gr-6 gr-12-m">
-                            <label for="digit_underlying">[% l('Select market:') %]</label>
-                            <select class="smallfont" id="digit_underlying"></select>
-                        </div>
-                        <div class="gr-6 gr-12-m">
-                            <label for="tick_count">[% l('Number of ticks:') %]</label>
-                            <select class="smallfont" id="tick_count">
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option selected="selected" value="100">100</option>
-                                <option value="500">500</option>
-                                <option value="1000">1000</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div id="last_digit_histo" class="gr-8 gr-12-m gr-centered"></div>
-                <div id="last_digit_title" class="gr-hide"><span id="digit_domain"></span> - [% l('Last digit stats for the latest [_1] ticks on [_2]', '<span id="digit_info_count">100</span>', '<span id="digit_info_underlying"></span>') %]</div>
+    [% WRAPPER tab_container class='page-section' %]
+        [% INCLUDE tabs id_ul='betsBottomPage' tabs=[
+            { id='tab_portfolio',  class='invisible' },
+            { id='tab_graph' },
+            { id='tab_explanation' },
+            { id='tab_last_digit', class='invisible', no_href=1 },
+        ] %]
+    [% END %]
+    [% WRAPPER tab_content_container id='bet_bottom_content' %]
+        [% INCLUDE tab_content id='tab_portfolio' %]
+        [% WRAPPER tab_content id='tab_graph' %]
+            <p class="error-msg" id="chart-error"></p>
+            <div id="trade_live_chart">
+                <table width="600px" align="center">
+                    <tr align="center">
+                        <td colspan="4">
+                            <iframe src="" width="100%" height="630" id="chart_frame" style="overflow-y : hidden;" scrolling="no"></iframe>
+                        </td>
+                    </tr>
+                </table>
             </div>
-        </div>
-        <div id="tab_japan_info-content" class="toggle-content invisible "></div>
-      </div>
-    </div>
-  </div>
+        [% END %]
+        [% INCLUDE tab_content id='tab_explanation' class='selectedTab' %]
+        [% WRAPPER tab_content id='tab_last_digit' %]
+            [% PROCESS bet/last_digit.html.tt %]
+        [% END %]
+    [% END %]
 </div>

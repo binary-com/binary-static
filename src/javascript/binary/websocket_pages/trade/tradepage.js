@@ -6,6 +6,7 @@ const Defaults          = require('./defaults');
 const TradingEvents     = require('./event');
 const Price             = require('./price');
 const Process           = require('./process');
+const BinarySocket      = require('../socket');
 const ViewPopup         = require('../user/view_popup/view_popup');
 const BinaryPjax        = require('../../base/binary_pjax');
 const localize          = require('../../base/localize').localize;
@@ -66,6 +67,7 @@ const TradePage = (() => {
         Defaults.clear();
         chartFrameCleanup();
         commonTrading.clean();
+        BinarySocket.clear('active_symbols');
     };
 
     const onDisconnect = () => {

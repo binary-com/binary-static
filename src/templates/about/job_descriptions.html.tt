@@ -1,278 +1,88 @@
+[% BLOCK column %]
+    <div class="eq">
+        <h3[% IF class %] class="[% class %]"[% END %]>[% header %]</h3>
+        <p>[% text %]</p>
+        <a href="[% request.url_for('/open-positions/job-details?dept=' _ id _ '#' _ subsection) %]">[% l("Learn more") %]</a>
+    </div>
+[% END %]
+
+[% BLOCK row %]
+    <div class="gr-row gr-padding-10" id="[% id %]">
+        <div class="gr-3 gr-12-m">
+            <div class="gr-12 gr-padding-10 center-text">
+                <h2>[% title %]</h2>
+                <img class="responsive" src="[% request.url_for('images/pages/careers/' _ id _ '.svg') %]"/>
+            </div>
+        </div>
+        <div class="gr-9 gr-12-m">
+            <div class="eqWrap">
+                [% FOREACH section IN sections %]
+                    [% INCLUDE column header=section.header text=section.text subsection=section.subsection class=section.class id %]
+                [% END %]
+            </div>
+        </div>
+    </div>
+
+    [% UNLESS last %]
+        [% INCLUDE global/separator_line.html.tt %]
+    [% END %]
+[% END %]
+
 <div class="open-positions container">
     <div class="gr-parent static_full">
         <div class="gr-padding-10">
             <h1>[% l("Open Positions") %]</h1>
         </div>
 
-        <div class="gr-row gr-padding-10" id="information_technology">
-            <div class="gr-3 gr-12-m">
-                <div class="gr-12 gr-padding-10 center-text">
-                    <h2>[% l("Information Technology") %]</h2>
-                    <img class="responsive" src="[% request.url_for('images/pages/careers/information_technology.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-9 gr-12-m">
-                <div class="eqWrap">
-                    <div class="eq">
-                        <h3>[% l("DevOps Manager / Team Lead") %]</h3>
-                        <p>[% l("Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=information_technology#devops_manager') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3>[% l("Senior Front-End Developer") %]</h3>
-                        <p>[% l("Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=information_technology#senior_frontend_developer') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3 class="one-line nowrap">[% l("Senior Perl Developer") %]</h3>
-                        <p>[% l("Tasked with writing robust, high-quality, production-ready code and contributing to the architecture that drives our high-traffic global website.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=information_technology#senior_perl_developer') %]">[% l("Learn more") %]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        [% INCLUDE row id="information_technology" title=l("Information Technology") sections=[
+            { header=l("DevOps Manager / Team Lead"), subsection='devops_manager',            text=l("Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing.") },
+            { header=l("Senior Front-End Developer"), subsection='senior_frontend_developer', text=l("Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base.") },
+            { header=l("Senior Perl Developer"),      subsection='senior_perl_developer',     text=l("Tasked with writing robust, high-quality, production-ready code and contributing to the architecture that drives our high-traffic global website."), class="one-line nowrap" },
+        ] %]
 
-        <div class="gr-12 gr-hide-m">
-            <div class="separator-line border-bottom"></div>
-        </div>
+        [% INCLUDE row id="quality_assurance" title=l("Quality Assurance") sections=[
+            { header=l("Quality Assurance Engineer"), subsection='quality_assurance_engineer', text=l("Execute and update manual and automated test plans, ensure the integrity of releases, investigate and reproduce client-reported issues."), class="nowrap" },
+        ] %]
 
-        <div class="gr-row gr-padding-10" id="quality_assurance">
-            <div class="gr-3 gr-12-m">
-                <div class="gr-12 gr-padding-10 center-text">
-                    <h2>[% l("Quality Assurance") %]</h2>
-                    <img class="responsive" src="[% request.url_for('images/pages/careers/quality_assurance.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-9 gr-12-m">
-                <div class="eqWrap">
-                    <div class="eq">
-                        <h3 class="nowrap">[% l("Quality Assurance Engineer") %]</h3>
-                        <p>[% l("Execute and update manual and automated test plans, ensure the integrity of releases, investigate and reproduce client-reported issues.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=quality_assurance#quality_assurance_engineer') %]">[% l("Learn more") %]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        [% INCLUDE row id="quantitative_analysis" title=l("Quantitative Analysis") sections=[
+            { header=l("Quantitative Developer"), subsection='quantitative_developer', text=l("Responsible for the risk management and derivatives pricing of the company, including implementation and maintenance.") },
+            { header=l("Quantitative Analyst"),   subsection='quantitative_analyst',   text=l("Responsible for the pricing of binary options offered on the [_1] website and the risk management and profitability of its options book.", website_name) },
+        ] %]
 
-        <div class="gr-12 gr-hide-m">
-            <div class="separator-line border-bottom"></div>
-        </div>
+        [% INCLUDE row id="marketing" title=l("Marketing") sections=[
+            { header=l("Marketing Project Coordinator"), subsection='marketing_project_coordinator', text=l("Work with senior staff to coordinate project delivery; develop and update schedules; document processes; and push initiatives to successful completion.") },
+            { header=l("Social Media Executive"),        subsection='social_media_executive',        text=l("Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits.") },
+            { header=l("Affiliate Manager"),             subsection='affiliate_manager',             text=l("Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network.") },
+            { header=l("Graphic Designers"),             subsection='graphic_designers',             text=l("Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials.") },
+            { header=l("Marketing Executives"),          subsection='marketing_executives',          text=l("Contribute your creativity and marketing capabilities to further the company's branding efforts, implementing a broad array of promotional campaigns.") },
+            { header=l("Copywriter"),                    subsection='copywriter',                    text=l("Create clear, concise, and engaging content that effectively promotes the company's trading platform and product offerings in a variety of formats.") },
+            { header=l("Translator"),                    subsection='translator',                    text=l("Work with colleagues in IT, Customer Support, and Marketing to provide localised text for our global website, blog, social media outlets, and promotional materials.") },
+            { header=l("Proofreader"),                   subsection='proofreader',                   text=l("Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials.") },
+        ] %]
 
-        <div class="gr-row gr-padding-10" id="quantitative_analysis">
-            <div class="gr-3 gr-12-m">
-                <div class="gr-12 gr-padding-10 center-text">
-                    <h2>[% l("Quantitative Analysis") %]</h2>
-                    <img class="responsive" src="[% request.url_for('images/pages/careers/quantitative_analysis.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-9 gr-12-m">
-                <div class="eqWrap">
-                    <div class="eq">
-                        <h3>[% l("Quantitative Developer") %]</h3>
-                        <p>[% l("Responsible for the risk management and derivatives pricing of the company, including implementation and maintenance.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=quantitative_analysis#quantitative_developer') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3>[% l("Quantitative Analyst") %]</h3>
-                        <p>[% l("Responsible for the pricing of binary options offered on the [_1] website and the risk management and profitability of its options book.", website_name) %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=quantitative_analysis#quantitative_analyst') %]">[% l("Learn more") %]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        [% INCLUDE row id="accounting" title=l("Accounting") sections=[
+            { header=l("Accounts And Payments Executive"), subsection='accounts_and_payments_executive', text=l("Responsible for the processing of client payments, assisting with the management accounts of the companies within our group, and more.") },
+        ] %]
 
-        <div class="gr-12 gr-hide-m">
-            <div class="separator-line border-bottom"></div>
-        </div>
+        [% INCLUDE row id="compliance" title=l("Compliance") sections=[
+            { header=l("Compliance Executive"), subsection='compliance_executive', text=l("Ensuring that the Binary Group of companies are in full compliance with the legal and regulatory regimes to which they are subject.") },
+            { header=l("Anti-Fraud Officer"),   subsection='anti_fraud_officer',   text=l("Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions.") },
+        ] %]
 
-        <div class="gr-row gr-padding-10" id="marketing">
-            <div class="gr-3 gr-12-m">
-                <div class="gr-12 gr-padding-10 center-text">
-                    <h2>[% l("Marketing") %]</h2>
-                    <img class="responsive" src="[% request.url_for('images/pages/careers/marketing.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-9 gr-12-m">
-                <div class="eqWrap">
-                    <div class="eq">
-                        <h3>[% l("Marketing Project Coordinator") %]</h3>
-                        <p>[% l("Work with senior staff to coordinate project delivery; develop and update schedules; document processes; and push initiatives to successful completion.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=marketing#marketing_project_coordinator') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3>[% l("Social Media Executive") %]</h3>
-                        <p>[% l("Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=marketing#social_media_executive') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3>[% l("Affiliate Manager") %]</h3>
-                        <p>[% l("Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=marketing#affiliate_manager') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3>[% l("Graphic Designers") %]</h3>
-                        <p>[% l("Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=marketing#graphic_designers') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3>[% l("Marketing Executives") %]</h3>
-                        <p>[% l("Contribute your creativity and marketing capabilities to further the company's branding efforts, implementing a broad array of promotional campaigns.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=marketing#marketing_executives') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3>[% l("Copywriter") %]</h3>
-                        <p>[% l("Create clear, concise, and engaging content that effectively promotes the company's trading platform and product offerings in a variety of formats.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=marketing#copywriter') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3>[% l("Translator") %]</h3>
-                        <p>[% l("Work with colleagues in IT, Customer Support, and Marketing to provide localised text for our global website, blog, social media outlets, and promotional materials.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=marketing#translator') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3>[% l("Proofreader") %]</h3>
-                        <p>[% l("Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=marketing#proofreader') %]">[% l("Learn more") %]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        [% INCLUDE row id="customer_support" title=l("Customer Support") sections=[
+            { header=l("Customer Service Representatives"), subsection='global_customer_service_representatives', text=l("As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues.") },
+        ] %]
 
-        <div class="gr-12 gr-hide-m">
-            <div class="separator-line border-bottom"></div>
-        </div>
+        [% INCLUDE row id="human_resources" title=l("Human Resources") sections=[
+            { header=l("Human Resource Executive"), subsection='human_resource_executive', text=l("Responsible for supporting the Group's global recruiting and talent management needs and a broad array of HR-related administrative tasks.") },
+        ] %]
 
-        <div class="gr-row gr-padding-10" id="accounting">
-            <div class="gr-3 gr-12-m">
-                <div class="gr-12 gr-padding-10 center-text">
-                    <h2>[% l("Accounting") %]</h2>
-                    <img class="responsive" src="[% request.url_for('images/pages/careers/accounting.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-9 gr-12-m">
-                <div class="eqWrap">
-                    <div class="eq">
-                        <h3>[% l("Accounts And Payments Executive") %]</h3>
-                        <p>[% l("Responsible for the processing of client payments, assisting with the management accounts of the companies within our group, and more.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=accounting#accounts_and_payments_executive') %]">[% l("Learn more") %]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        [% INCLUDE row id="administrator" title=l("Administrator") sections=[
+            { header=l("Administrative Executive"), subsection='administrative_executive', text=l("Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration.") },
+        ] %]
 
-        <div class="gr-12 gr-hide-m">
-            <div class="separator-line border-bottom"></div>
-        </div>
-
-        <div class="gr-row gr-padding-10" id="compliance">
-            <div class="gr-3 gr-12-m">
-                <div class="gr-12 gr-padding-10 center-text">
-                    <h2>[% l("Compliance") %]</h2>
-                    <img class="responsive" src="[% request.url_for('images/pages/careers/compliance.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-9 gr-12-m">
-                <div class="eqWrap">
-                    <div class="eq">
-                        <h3>[% l("Compliance Executive") %]</h3>
-                        <p>[% l("Ensuring that the Binary Group of companies are in full compliance with the legal and regulatory regimes to which they are subject.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=compliance#compliance_executive') %]">[% l("Learn more") %]</a>
-                    </div>
-                    <div class="eq">
-                        <h3>[% l("Anti-Fraud Officer") %]</h3>
-                        <p>[% l("Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=compliance#anti_fraud_officer') %]">[% l("Learn more") %]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="gr-12 gr-hide-m">
-            <div class="separator-line border-bottom"></div>
-        </div>
-
-        <div class="gr-row gr-padding-10" id="customer_support">
-            <div class="gr-3 gr-12-m">
-                <div class="gr-12 gr-padding-10 center-text">
-                    <h2>[% l("Customer Support") %]</h2>
-                    <img class="responsive" src="[% request.url_for('images/pages/careers/customer_support.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-9 gr-12-m">
-                <div class="eqWrap">
-                <div class="eq">
-                    <h3>[% l("Customer Service Representatives") %]</h3>
-                    <p>[% l("As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues.") %]</p>
-                    <a href="[% request.url_for('/open-positions/job-details?dept=customer_support#global_customer_service_representatives') %]">[% l("Learn more") %]</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <div class="gr-12 gr-hide-m">
-            <div class="separator-line border-bottom"></div>
-        </div>
-
-        <div class="gr-row gr-padding-10" id="human_resources">
-            <div class="gr-3 gr-12-m">
-                <div class="gr-12 gr-padding-10 center-text">
-                    <h2>[% l("Human Resources") %]</h2>
-                    <img class="responsive" src="[% request.url_for('images/pages/careers/human_resources.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-9 gr-12-m">
-                <div class="eqWrap">
-                    <div class="eq">
-                        <h3>[% l("Human Resource Executive") %]</h3>
-                        <p>[% l("Responsible for supporting the Group's global recruiting and talent management needs and a broad array of HR-related administrative tasks.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=human_resources#human_resource_executive') %]">[% l("Learn more") %]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="gr-12 gr-hide-m">
-            <div class="separator-line border-bottom"></div>
-        </div>
-
-        <div class="gr-row gr-padding-10" id="administrator">
-            <div class="gr-3 gr-12-m">
-                <div class="gr-12 gr-padding-10 center-text">
-                    <h2>[% l("Administrator") %]</h2>
-                    <img class="responsive" src="[% request.url_for('images/pages/careers/administrator.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-9 gr-12-m">
-                <div class="eqWrap">
-                    <div class="eq">
-                        <h3>[% l("Administrative Executive") %]</h3>
-                        <p>[% l("Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=administrator#administrative_executive') %]">[% l("Learn more") %]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="gr-12 gr-hide-m">
-            <div class="separator-line border-bottom"></div>
-        </div>
-
-        <div class="gr-row gr-padding-10" id="internal_audit">
-            <div class="gr-3 gr-12-m">
-                <div class="gr-12 gr-padding-10 center-text">
-                    <h2>[% l("Internal Audit") %]</h2>
-                    <img class="responsive" src="[% request.url_for('images/pages/careers/internal_audit.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-9 gr-12-m">
-                <div class="eqWrap">
-                    <div class="eq">
-                        <h3>[% l("Internal Auditor") %]</h3>
-                        <p>[% l("Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes.") %]</p>
-                        <a href="[% request.url_for('/open-positions/job-details?dept=internal_audit#internal_auditor') %]">[% l("Learn more") %]</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        [% INCLUDE row id="internal_audit" title=l("Internal Audit") last=1 sections=[
+            { header=l("Internal Auditor"), subsection='internal_auditor', text=l("Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes.") },
+        ] %]
     </div>
 </div>

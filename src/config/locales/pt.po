@@ -16,6 +16,11 @@ msgstr ""
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "A \"API %1\" significa o conjunto proprietário de rotinas, protocolos, ferramentas e recursos programáticos, criados e mantidos pela %1, que lhe permite usar um aplicativo registrado para servir de interface com a plataforma de negociação da %1."
 
+#, fuzzy
+#| msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
+msgid "\"%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.\""
+msgstr "&#8220;A %1 é um dos parceiros mais antigos e confiáveis que nós temos. Nós trabalhamos juntos há muitos anos.&#8221;"
+
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "Opções \"binárias\" ou \"digitais\" são opções que pagam um valor fixo, pré-determinado, conforme a ocorrência ou não de um evento no momento em que a opção binária se vence. As opções binárias só podem ter um de dois resultados possíveis e permitem que você adote uma abordagem simples de \"Sim\" ou \"Não\". Tais como as opções tradicionais, as opções binárias baseiam-se em ativos subjacentes, incluindo câmbios, índices ou ações. No entanto, uma das diferenças mais significativas das opções tradicionais, entre outras, é que só poderá haver dois resultados para a opção: ou o cliente recebe o retorno após a ocorrência do evento, ou o cliente perde o valor de investimento, como definido em cada opção."
 
@@ -27,6 +32,11 @@ msgstr "\"Trabalho com uma série de empresas afiliadas e é de longe a mais ami
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"Fornecedor(es) terceiro(s)\" significa a entidade terceira (não afiliada) que disponibiliza recursos e funções através do uso da API %1."
+
+#, fuzzy
+#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
+msgid "\"We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.\""
+msgstr "&#8220;Temos usado a www.binary.com durante os últimos 8 anos e recomendamos vivamente a binary a todos os nossos membros em todo o mundo&#8221;"
 
 #, fuzzy
 #| msgid "$100,000 - $250,000"
@@ -134,6 +144,9 @@ msgstr "%1 e %2 não podem ser iguais."
 msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "%1 e o logotipo do touro e urso são marcas comerciais registradas."
 
+msgid "%1 assesses the choice of external execution venues regularly (at least once a year) with the intention of achieving a better result for you based on our best execution obligation."
+msgstr ""
+
 msgid "%1 continues to innovate and grow"
 msgstr "A %1 continua a inovar e crescer"
 
@@ -187,8 +200,23 @@ msgstr "A %1 apresenta uma <a href='%2' target='_blank' class='ja-hide'>ferramen
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgstr "A %1 é um lugar flexível. Além dos nossos escritórios, temos colaboradores que escolheram trabalhar a partir das suas casas, em diferentes países de todo o mundo. Se esse tipo de trabalho combina com você, estamos prontos para recebê-lo."
 
+#, fuzzy
+#| msgid "Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
+msgid "%1 is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
+msgstr "A Binary.com é uma plataforma de negociação licenciada e regulada que serve mais de 1.000.000 de clientes em todo o mundo. Possuímos várias licenças para cumprir regulamentos ao redor do mundo. Servimos os nossos clientes com um compromisso inabalável e constante com a integridade e a fiabilidade. Sempre nos comprometemos com os mais elevados padrões de ética, para além das nossas obrigações regulamentares."
+
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "A %1 procura sempre adicionar profissionais experientes à sua talentosa equipe de administradores, colaboradores técnicos e gestores. Para apoiar o nosso crescimento contínuo, desenvolvemos um grande número de oportunidades de carreira interessantes nas seguintes áreas:"
+
+#, fuzzy
+#| msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='%1'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='%2'>github</a>."
+msgid "%1 is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to %2CPAN%3. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on %4github%3."
+msgstr "A Binary.com é um membro ativo da comunidade Perl e está no processo de carregar um número de seus módulos internos de serviços públicos para <a target='_blank' href='%1'>CPAN</a>. Se você é um entusiasta da Perl, contribua revisando esses módulos e enviando pedidos no <a target='_blank' href='%2'>github</a>."
+
+#, fuzzy
+#| msgid "Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
+msgid "%1 is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
+msgstr "A Binary.com é defensora ativa do movimento open-source e está em processo de open-sourcing de uma série de componentes de seu código de base."
 
 msgid "%1 is entirely web-based and requires no software installation."
 msgstr "A %1 é totalmente baseada na Internet e não requer instalação de software."
@@ -198,6 +226,21 @@ msgstr "A %1 foi premiada como \"A Melhor Corretora de Opções Binárias\" na 1
 
 msgid "%1 is looking to recruit highly skilled, experienced designers who are passionate about developing attractive visuals for both online and offline applications."
 msgstr "A %1 procura recrutar designers experientes e altamente qualificados que são apaixonados pelo desenvolvimento de elementos visuais, tanto para aplicativos online como offline."
+
+#, fuzzy
+#| msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
+msgid "%1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
+msgstr "<strong>ISENÇÃO DE RESPONSABILIDADE IMPORTANTE</strong> - a %1 não está afiliada em nenhum dos Agentes de Pagamentos acima referidos. Cada Agente de Pagamento opera como prestador de serviços independente e não é endossado, garantido ou de outra forma aprovado pela %1. OS CLIENTES LIDAM COM OS AGENTES DE PAGAMENTOS POR SUA PRÓPRIA CONTA E RISCO. Os clientes são aconselhados a verificar as credenciais dos Agentes de Pagamentos antes de lhes enviarem algum dinheiro. A %1 não deve, em nenhuma circunstância, ser responsabilizada por operações realizadas entre clientes e Agentes de Pagamentos."
+
+#, fuzzy
+#| msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
+msgid "%1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
+msgstr "<strong>ISENÇÃO DE RESPONSABILIDADE IMPORTANTE</strong> - a %1 não está afiliada à nenhum dos Agentes de Pagamentos acima referidos. Cada Agente de Pagamentos opera como prestador de serviços independente e não é endossado, garantido ou de outra forma aprovado pela %1. OS CLIENTES LIDAM COM OS AGENTES DE PAGAMENTOS POR SUA PRÓPRIA CONTA E RISCO. Os clientes são aconselhados a verificar as credenciais dos Agentes de Pagamentos antes de lhes enviarem algum dinheiro. A %1 não deve, em nenhuma circunstância, ser responsabilizada por operações realizadas entre clientes e Agentes de Pagamentos."
+
+#, fuzzy
+#| msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
+msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
+msgstr "A Binary.com não está disponível na Costa Rica e não é regulamentada nem supervisionada por nenhuma entidade regulamentar no sistema financeiro costa-riquenho."
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "A %1 é um dos nomes mais antigos e mais respeitados na negociação online de opções binárias."
@@ -248,6 +291,9 @@ msgstr "A %1 disponibiliza uma conta virtual para que você possa se habituar à
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
 msgstr "A %1 disponibiliza cincos tipos principais de negociações que o ajudarão a executar a sua visão de mercado ou a sua estratégia:"
 
+msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
+msgstr ""
+
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk). Client orders are typically hedged when the total transaction volume exceeds a predefined threshold of risk tolerance level. For both execution models, %1 acts as the contractual counterparty to the transactions that you enter into with us, as opposed to entering into a contractual counterparty with a central clearing house as would be the case with exchange traded financial instruments. As such, counterparty risk exists. Counterparty risk refers to the risk of loss for clients resulting from the fact that the counterparty to the forex and/or contracts for differences transaction that you entered into may default on its obligations prior to the final settlement of the transaction's cash flow."
 msgstr "A %1 disponibiliza operações de câmbio e contratos por diferença através do modelo híbrido, i.e. tanto por conta própria (mesa de negociação) e parcialmente fazendo cobertura das ordens de clientes com os nossos fornecedores de liquidez (sem mesa de negociação). As ordens de clientes geralmente são cobertas quando o volume total de transações excede um limiar predefinido de um nível de tolerância de risco. Para ambos os modelos de execução, a %1 desempenha o papel de contraparte contratual das transações que você realiza conosco, em vez de entrar numa contraparte contratual com uma câmara de compensação central, como seria o caso com instrumentos financeiros negociados em bolsa. Como tal, riscos de contraparte existem. Risco de contraparte refere-se ao risco de perda por clientes, resultando do fato que a contraparte das operações de câmbio ou das transações de contratos por diferença que você realizou pode não cumprir as suas obrigações antes da liquidação final dos respetivos fluxos financeiros da transação."
 
@@ -262,11 +308,22 @@ msgstr "A %1 oferece os mercados financeiros mundiais numa plataforma simples e 
 msgid "%1 offers you four ways to trade a particular asset:"
 msgstr "A %1 oferece cinco formas de negociar o seu ativo escolhido:"
 
+#, fuzzy
+#| msgid "Open-source projects"
+msgid "%1 open-source projects"
+msgstr "Projetos de código aberto"
+
 msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
 msgstr "A %1 abre um escritório no edifício QSentral no centro de Kuala Lumpur para promover a expansão da sua equipe de desenvolvimento de TI."
 
+msgid "%1 owes you a duty of best execution when executing orders on your behalf, i.e., when you are placing a legitimate reliance on us to safeguard your interest in relation to the execution of your order."
+msgstr ""
+
 msgid "%1 provides business partnership services via the following programs."
 msgstr "A %1 fornece serviços de parceria de negócios através dos seguintes programas."
+
+msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
+msgstr ""
 
 msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:"
 msgstr "A %1 proporciona-lhe a oportunidade de escolher entre a auto-exclusão ou <a href='%2'>a definição de limites nas suas atividades de negociação</a> neste site. Você também pode <a href=\"%3\">nos contatar</a> por chat ao vivo, e-mail ou telefone, para comunicar o limite que você pretende definir. Os limites disponíveis são:"
@@ -289,6 +346,9 @@ msgstr "A %1 procura um Executivo de Mídia Social para melhorar e proativamente
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "A %1 procura um redator perspicaz para produzir conteúdos que cativam a atenção de novos potenciais parceiros e clientes atuais localizados em todo o mundo."
 
+msgid "%1 shall act, at times, as a principal and at other times as an agent on your behalf, for all Transactions entered into, by you."
+msgstr ""
+
 msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "A %1 apoia o %2 que é a principal caridade na Bretanha empenhada em minimizar os danos relacionados com jogos de azar. A caridade financia educação, prevenção e serviços de tratamento e promove pesquisas para ajudar pessoa atingir melhor compreensão sobre danos relacionados com jogos de azar. Também disponibiliza uma linha telefônica de apoio nacional para proporcionar conselhos confidenciais e apoio emocional àqueles que procuram ajuda com os seus hábitos de jogo."
 
@@ -302,6 +362,11 @@ msgstr "A retirada está concluída. ID de transação:"
 
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
 msgstr "A %1 gostaria de criar parcerias com potenciais agentes de pagamento em todo o mundo, para que possamos disponibilizar serviços de processamento de pagamentos aos nossos clientes nas suas respectivas regiões."
+
+#, fuzzy
+#| msgid "Binary.com's CPAN contributions"
+msgid "%1's CPAN contributions"
+msgstr "As contribuições CPAN da Binary.com"
 
 msgid "%1's Continuous Indices are the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75% and 100%."
 msgstr "Os Índice Contínuos da %1 são o Índice Volatility 10, o Índice Volatility 25, o Índice Volatility 50, o Índice Volatility 75 e o Índice Volatility 100. Estes índices correspondem a mercados simulados com volatilidades de 10%, 25%, 50%, 75% e 100%."
@@ -343,12 +408,6 @@ msgstr ""
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "A iniciativa de caridade da %1 concentra-se em pequenas instituições de caridade e organizações sem fins lucrativos em todo o mundo que estão causando uma diferença positiva nas suas comunidades locais. As nossas doações têm um impacto direto, livre das despesas gerais inerentes às instituições de caridade grandes."
-
-msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
-msgstr "&#8220;A %1 é um dos parceiros mais antigos e confiáveis que nós temos. Nós trabalhamos juntos há muitos anos.&#8221;"
-
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
-msgstr "&#8220;Temos usado a www.binary.com durante os últimos 8 anos e recomendamos vivamente a binary a todos os nossos membros em todo o mundo&#8221;"
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "Prêmio de \"Melhor Empresa em Comunicação com o Cliente\" do Investors Chronicle"
@@ -406,9 +465,6 @@ msgstr "1-3 million JPY"
 msgid "1-3 years"
 msgstr "1-3 years"
 
-msgid "1. Choose the Underlying"
-msgstr "1. Escolha o ativo"
-
 msgid "10-30 million JPY"
 msgstr "10-30 million JPY"
 
@@ -418,17 +474,11 @@ msgstr "2 a 3 anos de experiência relevante numa função de teste de aplicativ
 msgid "2-way pricing"
 msgstr "Preços bidirecionais"
 
-msgid "2. Choose the Duration of the Trade"
-msgstr "2. Escolha a duração da sua negociação"
-
 msgid "3-5 million JPY"
 msgstr "3-5 million JPY"
 
 msgid "3-5 years"
 msgstr "3-5 years"
-
-msgid "3. Choose how you want to Trade the Market"
-msgstr "3. Escolha como você quer negociar no mercado"
 
 msgid "30-50 million JPY"
 msgstr "30-50 million JPY"
@@ -438,9 +488,6 @@ msgstr "Limite de 30 dias nas perdas"
 
 msgid "30-day turnover limit"
 msgstr "Limite de 30 dias no volume de negócios"
-
-msgid "4. Choose your Stake and Potential Return"
-msgstr "4. Escolha a sua aposta e o seu retorno potencial"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 transações ou mais nos últimos 12 meses"
@@ -481,84 +528,14 @@ msgstr "<a href='%1'>Fundada</a> em Outubro de 1999"
 msgid "<a href='%1'>Offices</a> in Malta, Malaysia and Japan"
 msgstr "<a href='%1'>Escritórios</a> em Malta, Malásia e Japão"
 
-msgid ""
-"<p><strong>Detailed report</strong>: The detailed report shows you your detailed traffic and income statistics. Use the filters and column selectors to break down your reporting as desired.</p>\n"
-"    <p><strong>Player report</strong>: The player report shows a breakdown of statistics per player. Use the filters to refine the report.</p>\n"
-"    <p><strong>Daily Earnings</strong>: The commission report shows you your daily commission earnings, per site / product.</p>"
-msgstr ""
-"<p><strong>Relatório detalhado</strong>: O relatório detalhado mostra-lhe estatísticas detalhadas de tráfego e receitas. Use os filtros e seletores de coluna para dividir o seu relatório conforme pretendido.</p>\n"
-"    \n"
-"<p><strong>Relatório de Jogadores</strong>: O relatório de jogadores mostra uma divisão de estatísticas por jogador. Use os filtros para otimizar o relatório.</p>\n"
-"    \n"
-"<p><strong>Ganhos Diários</strong>: O relatório de comissões mostra-lhe os seus ganhos diários em comissões, por site / produto.</p>"
-
-msgid ""
-"<p>A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria: </p>\n"
-"\n"
-"    <ul class='checked'>\n"
-"        <li>Have not previously been a %1 customer.</li>\n"
-"        <li>Have made the minimum deposit.</li>\n"
-"        <li>Are over 18.</li>\n"
-"    </ul>"
-msgstr ""
-"<p>Um cliente é alguém que foi referenciado através de uma das suas ferramentas de marketing e que depositou dinheiro na sua respectiva conta da %1. Ele deve cumprir os seguintes critérios:</p>\n"
-"  <ul class='checked'>\n"
-"        <li>Não ter sido cliente da %1 anteriormente.</li>\n"
-"        <li>Ter realizado o depósito mínimo.</li>\n"
-"        <li>Ter mais de 18 anos.</li>\n"
-"   </ul>"
-
-msgid ""
-"<p>Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:</p>\n"
-"    <ul class='checked'>\n"
-"        <li>Pixel size.</li>\n"
-"        <li>File format.</li>\n"
-"        <li>Desired language.</li>\n"
-"        <li>The URL of the site on which the banner is going to appear.</li>\n"
-"        <li>Banner placement.</li>\n"
-"        <li>Specific colors the banner should include.</li>\n"
-"        <li>Specific message the banner should include.</li>\n"
-"    </ul>"
-msgstr ""
-"<p>Sim. Por favor, contate o seu gestor de conta se quiser um banner personalizado e forneça-lhe as seguintes informações:</p>\n"
-"  <ul class='checked'>\n"
-"   <li>Tamanho em pixels.</li>\n"
-"   <li>Formato do arquivo.</li>\n"
-"   <li>Idioma pretendido.</li>\n"
-"   <li>O URL do site onde o banner vai aparecer.</li>\n"
-"   <li>Localização do banner.</li>\n"
-"   <li>Cores específicas que o banner deve incluir.</li>\n"
-"   <li>Mensagem específica que o banner deve incluir.</li>\n"
-"    </ul>"
-
-msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
-msgstr "<strong>Exposição adicional de negócio:</strong> Você aumentará o reconhecimento dos seus serviços e gerará novas oportunidades de negócio."
-
-msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
-msgstr "<strong>Todas as durações</strong> de 10 segundos a 365 dias."
-
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Todas as durações</strong> - de 10 segundos a 365 dias."
-
-msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Todas as condições do mercado:</strong> acima/abaixo, toca/não toca, fica dentro/sai fora."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Todas as condições do mercado</strong> - acima/abaixo, toca/não toca, fica dentro/sai fora."
 
-#, fuzzy
-#| msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
-msgid "<strong>All markets and conditions</strong> - Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
-msgstr "<strong>Todos os mercados, todas as condições</strong> - negocie moedas, índices e matérias-primas em mercados em subida, descida, movimento lateral, calmos e voláteis."
-
-msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
-msgstr "<strong>Todos os mercados:</strong> moedas, ações, índices e matérias-primas."
-
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Todos os mercados</strong> - moedas, índices de ações e matérias-primas."
-
-msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>Todos os prêmios:</strong> de $1 a $50.000."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>Todos os pagamentos</strong> - de $1 a $50.000."
@@ -566,142 +543,22 @@ msgstr "<strong>Todos os pagamentos</strong> - de $1 a $50.000."
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Teste de adequação: AVISO:</strong> Ao prestar-lhe os nossos serviços, somos obrigados a obter informações de você, a fim de avaliar se um determinado produto ou serviço é adequado para você (ou seja, se possui a experiência e os conhecimentos para compreender os riscos envolvidos)."
 
-#, fuzzy
-#| msgid "<strong>Trade when you want to trade</strong> - trade 24/7, even on weekends."
-msgid "<strong>Available 24/7</strong> - Trade when you want. %1 is available 24/7, even on weekends"
-msgstr "<strong>Negocie quando você quiser</strong> - negocie 24/7, inclusive nos finais de semana."
-
-msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
-msgstr "<strong>Comissões:</strong> Você irá cobrar uma comissão para processar as transações."
-
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>Risco de taxa de câmbio</strong>: As taxas de câmbio entre moedas estrangeiras podem mudar rapidamente devido a uma ampla variedade de condições econômicas, políticas e outras, expondo você ao risco de perdas cambiais, além do risco de perda inerente de negociar o produto de investimento subjacente. Se você depositar fundos numa determinada moeda para negociar contratos expressos em moeda diferente, os seus ganhos ou as suas perdas no investimento subjacente podem, desse modo, ser afetados por alterações na taxa de câmbio entre as duas moedas."
-
-msgid "<strong>Extra revenue stream:</strong> You will have the potential to earn another level of income from our affiliate program."
-msgstr "<strong>Fonte adicional de receitas:</strong> Você terá a oportunidade de ganhar outro nível de rendimento do nosso programa de afiliados."
-
-msgid "<strong>Flexible</strong> - Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
-msgstr "<strong>Flexível</strong> - Escolha entre mais de um milhão de variações de negociação, a qualquer momento, e personalize as suas negociações de acordo com a sua estratégia preferida"
-
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
-msgid "<strong>Higher/Lower</strong> - Predict the market ending higher or lower than a price target."
-msgstr "<strong>Superior/Inferior</strong> - preveja se mercado vai terminar mais alto ou mais baixo do que um preço-alvo."
-
-msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
-msgstr "<strong>ISENÇÃO DE RESPONSABILIDADE IMPORTANTE</strong> - a %1 não está afiliada em nenhum dos Agentes de Pagamentos acima referidos. Cada Agente de Pagamento opera como prestador de serviços independente e não é endossado, garantido ou de outra forma aprovado pela %1. OS CLIENTES LIDAM COM OS AGENTES DE PAGAMENTOS POR SUA PRÓPRIA CONTA E RISCO. Os clientes são aconselhados a verificar as credenciais dos Agentes de Pagamentos antes de lhes enviarem algum dinheiro. A %1 não deve, em nenhuma circunstância, ser responsabilizada por operações realizadas entre clientes e Agentes de Pagamentos."
-
-msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
-msgstr "<strong>ISENÇÃO DE RESPONSABILIDADE IMPORTANTE</strong> - a %1 não está afiliada à nenhum dos Agentes de Pagamentos acima referidos. Cada Agente de Pagamentos opera como prestador de serviços independente e não é endossado, garantido ou de outra forma aprovado pela %1. OS CLIENTES LIDAM COM OS AGENTES DE PAGAMENTOS POR SUA PRÓPRIA CONTA E RISCO. Os clientes são aconselhados a verificar as credenciais dos Agentes de Pagamentos antes de lhes enviarem algum dinheiro. A %1 não deve, em nenhuma circunstância, ser responsabilizada por operações realizadas entre clientes e Agentes de Pagamentos."
-
-#, fuzzy
-#| msgid "<strong>In/Out</strong> - where you can profit from the market staying inside, or going outside, two price targets."
-msgid "<strong>In/Out</strong> - Predict the market staying inside or going outside two price targets."
-msgstr "<strong>Dentro/Fora</strong> - onde você pode lucrar quando o mercado fica dentro ou sai fora das barreiras de preço."
-
-#, fuzzy
-#| msgid "<strong>Instant access</strong> - open an account in minutes."
-msgid "<strong>Instant access</strong> - Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7"
-msgstr "<strong>Acesso instantâneo</strong> - abra uma conta em poucos minutos."
 
 msgid "<strong>Long positions</strong>: We charge a 2% fee on top of interbank lending rates."
 msgstr "<strong>Posições longas</strong>: Cobramos uma taxa de 2% em cima das taxas de juro interbancárias."
 
 #, fuzzy
-#| msgid "<strong>Lock in profits</strong> - sell back your long-term trades at any time at market prices."
-msgid "<strong>Long positions</strong>: We charge a 2% fee on top of market rates."
-msgstr "<strong>Bloquei os lucros</strong> - venda os seus contratos a longo prazo a qualquer momento a preços do mercado."
-
-msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
-msgstr "<strong>Parceria de longo prazo:</strong> A sua parceria com a %1 pode se tornar um meio de promover o seu produto ou os seus serviços GRATUITAMENTE aos nossos mais de 1.000.000 de clientes registrados em todo o mundo."
-
-#, fuzzy
-#| msgid "<strong>Low minimum stakes</strong> - start trading with as little as $5."
-msgid "<strong>Low minimum stakes</strong> - Deposit as little as USD 5 to start trading"
-msgstr "<strong>Apostas com valores mínimos baixos</strong> - comece a negociar com apenas $5."
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "<strong>Open menu</strong> and select <strong>Preferences</strong>."
+msgstr "O <strong>ponto de saída</strong> é o ponto <strong>da hora final</strong>."
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr "<strong>Outros riscos</strong>: Existem outros riscos relacionados com a negociação de produtos de investimento e a negociação de moedas estrangeiras que não podem ser descritos em pormenores neste documento. Geralmente, no entanto, as transações de ações, opções e moedas, envolvem exposição a uma combinação dos seguintes fatores de risco: risco de mercado, risco de crédito, risco de liquidação, risco de liquidez, risco operacional e risco legal. Por exemplo, pode haver perturbações graves no mercado se eventos econômicos ou políticos, ou outros imprevistos locais ou no exterior, afetarem o mercado. Além destes tipos de risco, pode haver outros fatores, tais como questões de contabilidade e tratamentos fiscais que você deve considerar."
 
-#, fuzzy
-#| msgid "<strong>Patented technology</strong> - %1 is the industry pioneer and holds patented pricing technology."
-msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
-msgstr "<strong>Tecnologia patenteada</strong> - a %1 é a pioneira desta indústria e possui uma tecnologia de preços patenteada."
-
-msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
-msgstr "<strong>Proteja os seus lucros</strong> - Venda os seus contratos de longo prazo antes da expiração para proteger quaisquer lucros que possa ter realizado ou para minimizar as suas perdas"
-
-#, fuzzy
-#| msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
-msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
-msgstr "<strong>Sobe/Desce</strong> - preveja se o mercado vai subir ou descer do seu nível atual."
-
-#, fuzzy
-#| msgid "<strong>Scalable trading</strong> - win the same proportional return on stakes of all values."
-msgid "<strong>Scalable</strong> - Earn the same proportional return on stakes of all values"
-msgstr "<strong>Negociação escalável</strong> - ganhe o mesmo retorno proporcional em apostas de todos os valores."
-
-#, fuzzy
-#| msgid "<strong>Security</strong> - %1 ensures your personal data and transactions are always secure."
-msgid "<strong>Security and privacy</strong> - Trade confidently, knowing that your personal data, transactions, and funds are always secure"
-msgstr "<strong>Segurança</strong> - a %1 garante que seus dados pessoais e as suas transações estão sempre seguras."
-
-#, fuzzy
-#| msgid "<strong>Benchmarked prices</strong> - %1 benchmarks its prices daily against inter-bank derivatives markets."
-msgid "<strong>Sharp, benchmarked prices</strong> - Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets."
-msgstr "<strong>Preços referenciados</strong> - a %1 referencia e compara os seus preços diariamente com os mercados dos derivados interbancários."
-
 msgid "<strong>Short positions</strong>: We charge a 2% fee on top of interbank lending rates."
 msgstr "<strong>Posições curtas</strong>: Cobramos uma taxa de 2% em cima da taxa de juro interbancária."
-
-#, fuzzy
-#| msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
-msgid "<strong>Short positions</strong>: We charge a 2% fee on top of market rates."
-msgstr "<strong>Comissões:</strong> Você irá cobrar uma comissão para processar as transações."
-
-#, fuzzy
-#| msgid "<strong>Short to long-term</strong> - choose timeframes from 10 seconds to 365 days."
-msgid "<strong>Short to long-term durations</strong> - Choose timeframes from 10 seconds to 365 days"
-msgstr "<strong>De curto a longo prazo</strong> - escolha durações de 10 segundos até 365 dias."
-
-msgid "<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use"
-msgstr "<strong>Simples e intuitiva</strong> - Desfrute de uma plataforma de negociação de fácil navegação e uso"
-
-#, fuzzy
-#| msgid "<strong>Touch/No Touch</strong> - predict if the market will touch or not touch a price target."
-msgid "<strong>Touch/No Touch</strong> - Predict the market touching or not touching a price target."
-msgstr "<strong>Toca/Não Toca</strong> - preveja se o mercado vai tocar ou não um preço-alvo."
-
-#, fuzzy
-#| msgid "<strong>Trade to your strategy</strong> - set your trades on 'gut feel', or use technical or fundamental analysis."
-msgid "<strong>Trade according to your preferred strategy</strong> - Trade based on \"gut feel\" or rely on technical and fundamental analysis"
-msgstr "<strong>Negocie de acordo com a sua estratégia</strong> - escolha as suas negociações através da intuição ou use análises técnicas ou fundamentais."
-
-msgid "<strong>Transparent risk and potential reward</strong> - Know how much you will win or lose before you purchase the contract"
-msgstr "<strong>Risco e retorno potencial transparentes</strong> - Saiba quanto você irá ganhar ou perder antes de comprar o contrato"
-
-#, fuzzy
-#| msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
-msgid "<strong>Two-way pricing</strong> - Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from %1"
-msgstr "<strong>Preços nos dois sentidos</strong> - a %1 indica o preço de uma negociação e do seu oposto, com preços imparciais e transparentes."
-
-msgid "<ul><li> Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>. </li><li> Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button. </li><li> Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option. </li><li> Click anywhere outside the menu to save and close. </li></ul>"
-msgstr "<ul><li> Vá para o menu <strong>Mais ações</strong> e selecione <strong>Definições</strong>. </li><li> Sob<strong>Definições avançadas</strong>, clique no botão <strong>Ver definições avançadas</strong> . </li><li> Na seção <strong>Cookies</strong>, selecione a opção \"<strong>Não bloquear cookies</strong>\". </li><li> Clique em qualquer sítio fora do menu para salvar e sair. </li></ul>"
-
-msgid "<ul><li> Go to the <strong>Safari</strong> menu and select <strong>Preferences</strong>.</li><li> Click on the <strong>Privacy</strong> tab. </li><li> Set \"<strong>Block cookies:</strong>\" to <strong>Never</strong>. </li><li> Click on the <strong>X</strong> button at the top right to save and close. </li></ul>"
-msgstr "<ul><li> Vá para o menu <strong>Safari</strong> e selecione <strong>Preferências</strong>.</li><li> Clique na aba <strong>Privacidade</strong>. </li><li> Defina \"<strong>Bloquear cookies:</strong>\" para <strong>Nunca</strong>. </li><li> Clique no botão <strong>X</strong> no canto superior direito para salvar e sair. </li></ul>"
-
-msgid "<ul><li> Go to the <strong>Tools</strong> menu and select <strong>Internet Options</strong>. </li><li> Click on the <strong>Privacy</strong> tab. </li><li> Click on the <strong>Advanced</strong> button. </li><li> Select the <strong>Override automatic cookie handling</strong>. </li><li> Select <strong>Accept</strong> for both <strong>First-party Cookies</strong> and <strong>Third-party Cookies</strong>. </li><li> Click on the <strong>OK</strong> button to save and close. </li></ul>"
-msgstr "<ul><li> Vá para o menu <strong>Ferramentas</strong> e selecione <strong>Opções de Internet</strong>. </li><li> Clique no menu <strong>Privacidade</strong>. </li><li> Clique no botão <strong>Avançadas</strong>. </li><li> Selecione <strong>Ignorar tratamento automático de cookies</strong>. </li><li> Selecione <strong>Aceitar</strong> tanto para <strong>Cookies Primários</strong> quanto para <strong>Cookies de Terceiros</strong>. </li><li> Clique no botão <strong>OK</strong> para salvar e fechar. </li></ul>"
-
-msgid "<ul><li> Go to the <strong>Tools</strong> menu and select <strong>Preferences</strong>. </li><li> Click on the <strong>Advanced</strong> tab. </li><li> Select <strong>Cookies</strong> from the left column. </li><li> Select <strong>Accept cookies</strong>. </li><li> Click on the <strong>OK</strong> button to save and close. </li></ul>"
-msgstr "<ul><li> Vá para o menu <strong>Ferramentas</strong> e selecione <strong>Preferências</strong>. </li><li> Clique no menu<strong>Avançadas</strong>. </li><li> Selecione <strong>Cookies</strong> na coluna esquerda. </li><li> Selecione <strong>Aceitar cookies</strong>. </li><li> Clique no botão <strong>OK</strong> para salvar e fechar. </li></ul>"
-
-msgid "<ul><li><strong> Open menu</strong> and select <strong>Preferences</strong>.</li><li>Click on the <strong>Privacy</strong> tab.</li><li>Set \"<strong>Firefox will</strong>\" to \"<strong>Remember history</strong>\".</li><li>Click on the <strong>OK</strong> button to save your settings.</li></ul>"
-msgstr "<ul><li><strong> Abra o menu</strong> e selecione <strong>Preferências</strong>.</li><li>Clique na aba <strong>Privacidade</strong>.</li><li> Defina \"<strong>O Firefox deve</strong>\" para \"<strong>Lembrar histórico</strong>\".</li><li>Clique no botão <strong>OK</strong> para salvar as suas definições.</li></ul>"
-
-msgid "<ul><li>Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>.</li><li>Click on the <strong>Show advanced settings</strong>.</li><li>Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.</li><li>Select <strong>Allow local data to be set (recommended)</strong>.</li><li>Click on the <strong>Done</strong> button to save your settings.</li></ul>"
-msgstr "<ul><li>Vá para\"<strong>Menu Chrome (Personalizar e controlar Google Chrome)</strong>\" abra e selecione <strong>Configurações</strong>.</li><li>Clique em <strong>Mostrar configurações avançadas</strong>.</li><li>Clique no botão <strong>Configurações de conteúdo</strong> sob o menu <strong>Privacidade</strong>.</li><li>Selecione <strong>Permitir a configuração de dados locais (recomendado)</strong>.</li><li>Clique no botão <strong>Fechar</strong> para salvar as suas configurações.</li></ul>"
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "Um grau de Bacharel em ciências da computação, ou uma combinação equivalente de ensino técnico, treinamento e experiência profissional"
@@ -741,6 +598,23 @@ msgstr "Uma opção binária é uma opção com um pagamento de prêmio fixo que
 
 msgid "A broad array of HR-related administrative tasks"
 msgstr "Um amplo conjunto de tarefas administrativas relacionadas com RH"
+
+#, fuzzy
+#| msgid ""
+#| "<p>A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria: </p>\n"
+#| "<ul>\n"
+#| "<li>Have not previously been a %1 customer.</li>\n"
+#| "<li>Have made the minimum deposit.</li>\n"
+#| "<li>Are over 18.</li>\n"
+#| "</ul>"
+msgid "A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria:"
+msgstr ""
+"<p>Um cliente é alguém que foi referenciado através de uma das suas ferramentas de marketing e que depositou dinheiro na sua respectiva conta %1. Ele deve cumprir os seguintes critérios: </p>\n"
+"<ul>\n"
+"<li>Não ter sido anteriormente um cliente da %1.</li>\n"
+"<li>Ter realizado o depósito mínimo.</li>\n"
+"<li>Ter mais de 18 anos.</li>\n"
+"</ul>"
 
 msgid "A dedicated affiliate team to provide you with the best service possible"
 msgstr "Uma equipe de afiliados dedicada para lhe prestar o melhor serviço possível"
@@ -952,9 +826,6 @@ msgstr "Tipo de conta"
 msgid "Accounting"
 msgstr "Contabilidade"
 
-msgid "Accounting & Payments"
-msgstr "Contabilidade e Pagamentos"
-
 msgid "Accounts And Payments Executive"
 msgstr "Executivo de contas e pagamentos"
 
@@ -982,20 +853,14 @@ msgstr "Adaptar a comunicação de forma apropriada para se adequar a uma varied
 msgid "Adapt tone of voice as appropriate to suit specified target audiences"
 msgstr "Adaptar o tom de voz, conforme apropriado, para se adequar a públicos-alvo específicos"
 
+msgid "Additional business exposure:"
+msgstr ""
+
 msgid "Address"
 msgstr "Endereço"
 
 msgid "Adjust trade parameters"
 msgstr "Ajustar parâmetros de negociação"
-
-msgid "Adjusted Barrier"
-msgstr "Barreira Ajustada"
-
-msgid "Adjusted High Barrier"
-msgstr "Barreira alta ajustada"
-
-msgid "Adjusted Low Barrier"
-msgstr "Barreira baixa ajustada"
 
 msgid "Admin"
 msgstr "Administração"
@@ -1062,7 +927,7 @@ msgstr "Todas as atividades de afiliados devem ser executadas de forma profissio
 msgid "All barriers in this trading window are expired"
 msgstr "Todas as barreiras nesta janela de negociação já expiraram"
 
-msgid "All client orders are processed on a first in first out basis without any manual intervention. When executing your order, Binary.com will seek to fill your order transaction as promptly as possible, at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework which commensurate with the size, nature, complexity, and risk profile of our activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted and orders that will be worked in the market with fill level passed on to the client."
+msgid "All client orders are processed on a first in first out basis without any manual intervention. When executing your order, %1 will seek to fill your order transaction as promptly as possible, at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework which commensurate with the size, nature, complexity, and risk profile of our activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted and orders that will be worked in the market with fill level passed on to the client."
 msgstr ""
 
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies."
@@ -1077,6 +942,11 @@ msgid "All customer funds are segregated and held with JSF Trust Bank."
 msgstr ""
 
 #, fuzzy
+#| msgid "3. duration"
+msgid "All durations:"
+msgstr "3. duração"
+
+#, fuzzy
 #| msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgid "All fund transfers from your Binary Options Real Account to your Real Account must be made by you."
 msgstr "Para depositar ou retirar fundos da sua conta real na MetaTrader, mude para a sua conta real Binary.com."
@@ -1089,11 +959,31 @@ msgstr ""
 msgid "All market conditions and durations"
 msgstr "Negociação de todas as condições"
 
+#, fuzzy
+#| msgid "Trade all market conditions"
+msgid "All market conditions:"
+msgstr "Negocie todas as condições de mercado"
+
+#, fuzzy
+#| msgid "Trade all market conditions"
+msgid "All markets and conditions"
+msgstr "Negocie todas as condições de mercado"
+
 msgid "All markets are closed now. Please try again later."
 msgstr "Todos os mercados estão agora fechados. Tente novamente mais tarde."
 
+#, fuzzy
+#| msgid "Select market"
+msgid "All markets:"
+msgstr "Selecione o mercado"
+
 msgid "All opinions, news, research, analysis, prices or other information contained on this website are provided as general market commentary and do not constitute investment advice. %1 will not accept liability for any loss or damage, including but without limitation to, any loss of profit that may arise directly or indirectly from use of or reliance on such information."
 msgstr "Todas as opiniões, notícias, pesquisas, análises, preços ou outras informações contidas neste site são disponibilizadas como comentários gerais do mercado, não constituindo recomendações de investimento. A %1 não se responsabilizará por quaisquer perdas ou danos, incluindo, mas não só, quaisquer perdas de lucros que possam resultar direta ou indiretamente da utilização ou confiança depositada em tais informações."
+
+#, fuzzy
+#| msgid "5. payout"
+msgid "All payouts:"
+msgstr "5. pagamento"
 
 msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading services described in this Agreement is not suitable for everyone. You acknowledge that the margin trading services described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
 msgstr ""
@@ -1101,7 +991,7 @@ msgstr ""
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Todos os horários estão de acordo com o fuso horário GMT (Greenwich Mean Time)."
 
-msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
 msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
@@ -1268,6 +1158,9 @@ msgstr "Abr"
 msgid "April"
 msgstr "Abril"
 
+msgid "Are over 18."
+msgstr ""
+
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr "Você é já um agente de pagamentos ou tem interesse em se tornar um?"
 
@@ -1334,7 +1227,7 @@ msgstr "As opções asiáticas são estabelecidas por meio da comparação entre
 msgid "Asians"
 msgstr "Asiáticas"
 
-msgid "Aspects of a client order not affected by specific instructions are subject to the application of Binary.com's Order Execution Policy. In the absence of specific instructions from our clients, we will exercise our own discretion in determining the factors that are required to be taken into account for the purpose of providing you with best execution, having regard to the execution criteria listed below:"
+msgid "Aspects of a client order not affected by specific instructions are subject to the application of %1's Order Execution Policy. In the absence of specific instructions from our clients, we will exercise our own discretion in determining the factors that are required to be taken into account for the purpose of providing you with best execution, having regard to the execution criteria listed below:"
 msgstr ""
 
 #, fuzzy
@@ -1404,6 +1297,11 @@ msgstr "Ferramenta de programação Auto-trader"
 msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool."
 msgstr "Automatize as suas estratégias de negociação com a nossa ferramenta de criação de bots \"arrastar e soltar\"."
 
+#, fuzzy
+#| msgid "Available Markets"
+msgid "Available 24/7"
+msgstr "Mercados disponíveis"
+
 msgid "Available Markets"
 msgstr "Mercados disponíveis"
 
@@ -1465,6 +1363,9 @@ msgstr "Transação"
 msgid "Banks, hedge funds and professional investors routinely trade binary options in over-the-counter derivatives markets. Many market professionals use and trust the %1 platform for high-volume flexible trades."
 msgstr "Os bancos, fundos de cobertura e investidores profissionais negociam rotineiramente nas opções binárias em diferentes tipos de mercados derivados. Muitos mercados profissionais usam e confiam na plataforma %1 para um grande volume de negociações flexíveis."
 
+msgid "Banner placement."
+msgstr ""
+
 msgid "Barrier"
 msgstr "Barreira"
 
@@ -1485,6 +1386,11 @@ msgstr "Plataformas básicas"
 
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "Antes de abrirmos uma conta para você negociar ou investir em produtos de investimento na BIEL, é necessário que façamos uma avaliação sobre a adequação dos produtos de investimento ou serviços escolhidos por você e que o avisemos, com base nas informações que nos forneceu, caso tais produtos ou serviços não sejam apropriados. Qualquer decisão de abrir uma conta e de usar os nossos produtos e serviços é sua. A compreensão dos riscos relacionados com os nossos produtos e serviços é da sua responsabilidade."
+
+#, fuzzy
+#| msgid "<strong>Benchmarked prices</strong> - %1 benchmarks its prices daily against inter-bank derivatives markets."
+msgid "Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets."
+msgstr "<strong>Preços referenciados</strong> - a %1 referencia e compara os seus preços diariamente com os mercados dos derivados interbancários."
 
 msgid "Benefits"
 msgstr "Benefícios"
@@ -1576,7 +1482,9 @@ msgstr "O Binary Group Services está procurando desenvolvedores talentosos e mo
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Binary Group Services está procurando desenvolvedores front-end talentosos e motivados que buscam uma oportunidade de brilhar nas suas carreiras."
 
-msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to Binary.com via EU passporting rights - freedom to provide cross border services."
+#, fuzzy
+#| msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to Binary.com via EU passporting rights - freedom to provide cross border services."
+msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "A Binary Investments (Europe) Limited tem o direito de prestar serviços em outros estados membros da UE através dos direitos de passaporte da UE. Consulte o mapa abaixo para ver uma lista de países da UE que têm acesso à Binary.com através dos direitos de passaporte da UE - a liberdade de prestar serviços transfronteiriços."
 
 msgid "Binary Investments (Europe) Ltd"
@@ -1618,7 +1526,7 @@ msgstr "Opções binárias"
 msgid "Binary Options Basics"
 msgstr "Opções Binárias Básicas"
 
-msgid "Binary Options Real Account &mdash; Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
+msgid "Binary Options Real Account &mdash; Your real money account opened with %1 which you use to trade binary options with %1."
 msgstr ""
 
 msgid "Binary Shop"
@@ -1680,42 +1588,6 @@ msgstr "À nossa subsidiária maltesa, Binary Investments (Europe) Ltd., é conc
 msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
 msgstr "A plataforma da Binary efetua, em média, 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transações</a> por segundo, 24/7"
 
-msgid "Binary.com"
-msgstr "Binary.com"
-
-msgid "Binary.com assesses the choice of external execution venues regularly (at least once a year) with the intention of achieving a better result for you based on our best execution obligation."
-msgstr ""
-
-msgid "Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
-msgstr "A Binary.com é uma plataforma de negociação licenciada e regulada que serve mais de 1.000.000 de clientes em todo o mundo. Possuímos várias licenças para cumprir regulamentos ao redor do mundo. Servimos os nossos clientes com um compromisso inabalável e constante com a integridade e a fiabilidade. Sempre nos comprometemos com os mais elevados padrões de ética, para além das nossas obrigações regulamentares."
-
-msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='%1'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='%2'>github</a>."
-msgstr "A Binary.com é um membro ativo da comunidade Perl e está no processo de carregar um número de seus módulos internos de serviços públicos para <a target='_blank' href='%1'>CPAN</a>. Se você é um entusiasta da Perl, contribua revisando esses módulos e enviando pedidos no <a target='_blank' href='%2'>github</a>."
-
-msgid "Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
-msgstr "A Binary.com é defensora ativa do movimento open-source e está em processo de open-sourcing de uma série de componentes de seu código de base."
-
-msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
-msgstr "A Binary.com não está disponível na Costa Rica e não é regulamentada nem supervisionada por nenhuma entidade regulamentar no sistema financeiro costa-riquenho."
-
-msgid "Binary.com offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
-msgstr ""
-
-msgid "Binary.com open-source projects"
-msgstr "Projetos open-source da Binary.com"
-
-msgid "Binary.com owes you a duty of best execution when executing orders on your behalf, i.e., when you are placing a legitimate reliance on us to safeguard your interest in relation to the execution of your order."
-msgstr ""
-
-msgid "Binary.com provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
-msgstr ""
-
-msgid "Binary.com shall act, at times, as a principal and at other times as an agent on your behalf, for all Transactions entered into, by you."
-msgstr ""
-
-msgid "Binary.com's CPAN contributions"
-msgstr "As contribuições CPAN da Binary.com"
-
 msgid "Both the above"
 msgstr "Ambos acima"
 
@@ -1768,7 +1640,7 @@ msgstr ""
 msgid "By indicating your acceptance of these terms and conditions and continuing with your application to join our affiliate program, you are agreeing to the terms and conditions set out in this Agreement. If you do not agree with the terms and conditions (or are not authorised to do so), you should not continue with your application."
 msgstr "Ao indicar a sua aceitação destes termos e condições e ao prosseguir com o seu pedido de adesão ao nosso programa de afiliados, você concordará com os termos e condições definidos neste Acordo. Caso não concorde com os termos e condições (ou não esteja autorizado a fazê-lo), você não deve prosseguir com a sua candidatura."
 
-msgid "By opening a Real Account with Binary.com, you represent, warrant and undertake that:"
+msgid "By opening a Real Account with %1, you represent, warrant and undertake that:"
 msgstr ""
 
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
@@ -1780,7 +1652,9 @@ msgstr "Ao enviar sugestões ou outros comentários relativos à API %1 à empre
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Até ao dia 15 de cada mês, você receberá as comissões ganhas durante o mês do calendário anterior."
 
-msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+#, fuzzy
+#| msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your %1 login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgstr "Ao usar ou interagir com o site, você está dando o seu consentimento para o uso do recurso de ID de usuário do Google Analytics, que permite à Google capturar a sua ID de login %1 (por exemplo, VRTC1234, CR1234, MF1234, etc.). Nenhuma outra informação pessoalmente identificável, para além da sua ID de login Binary.com, ou qualquer outro dado que poderá ser associado a tais informações pela Google, será compartilhada com ou divulgada à Google ao ativar o recurso de ID de usuário do Google Analytics."
 
 msgid "C. Definition of Best Execution"
@@ -1903,9 +1777,6 @@ msgstr ""
 msgid "Choose Scopes:"
 msgstr "Escolha os âmbitos:"
 
-msgid "Choose a Name:"
-msgstr "Escolha um nome:"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Escolha a duração do contrato, de 10 segundos até 365 dias."
 
@@ -1922,9 +1793,29 @@ msgid "Choose from five types of markets and their respective assets:"
 msgstr ""
 
 #, fuzzy
+#| msgid "<strong>Flexible</strong> - Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
+msgid "Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
+msgstr "<strong>Flexível</strong> - Escolha entre mais de um milhão de variações de negociação, a qualquer momento, e personalize as suas negociações de acordo com a sua estratégia preferida"
+
+#, fuzzy
+#| msgid "3. Choose how you want to Trade the Market"
+msgid "Choose how you want to Trade the Market"
+msgstr "3. Escolha como você quer negociar no mercado"
+
+#, fuzzy
+#| msgid "2. Choose the Duration of the Trade"
+msgid "Choose the Duration of the Trade"
+msgstr "2. Escolha a duração da sua negociação"
+
+#, fuzzy
 #| msgid "Choose Touch / No Touch when you want to profit from the market touching or not touching a target any time during the contract period."
 msgid "Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period."
 msgstr "Escolha Toca/Não toca, para lucrar quando o mercado tocar ou não tocar um preço-alvo durante qualquer momento de duração do contrato."
+
+#, fuzzy
+#| msgid "1. Choose the Underlying"
+msgid "Choose the Underlying"
+msgstr "1. Escolha o ativo"
 
 #, fuzzy
 #| msgid ""
@@ -1940,6 +1831,21 @@ msgstr "Escolha o método de pagamento que você prefere usar."
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "Escolha o tipo de token de API específico que você necessita, com base nas capacidades que você desejar disponibilizar."
+
+#, fuzzy
+#| msgid "Choose a duration from 10 seconds to 365 days."
+msgid "Choose timeframes from 10 seconds to 365 days"
+msgstr "Escolha a duração do contrato, de 10 segundos até 365 dias."
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token Name"
+msgstr "Escolha um nome:"
+
+#, fuzzy
+#| msgid "4. Choose your Stake and Potential Return"
+msgid "Choose your Stake and Potential Return"
+msgstr "4. Escolha a sua aposta e o seu retorno potencial"
 
 msgid "Choose your own strike."
 msgstr "Escolha a sua própria aposta."
@@ -1963,8 +1869,46 @@ msgstr "Reclamações e disputas"
 msgid "Clerks"
 msgstr ""
 
+msgid "Click anywhere outside the menu to save and close."
+msgstr ""
+
 msgid "Click here to retry"
 msgstr "Clique aqui para tentar novamente"
+
+msgid "Click on the <strong>Advanced</strong> button."
+msgstr ""
+
+msgid "Click on the <strong>Advanced</strong> tab."
+msgstr ""
+
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu."
+msgstr "O <strong>ponto de saída</strong> é o ponto <strong>da hora final</strong>."
+
+#, fuzzy
+#| msgid "Click on the 'Log In' button to access your account"
+msgid "Click on the <strong>Done</strong> button to save your settings."
+msgstr "Clique no botão 'Início de Sessão' para aceder à sua conta"
+
+#, fuzzy
+#| msgid "Access the <strong>Settings</strong> section on the account."
+msgid "Click on the <strong>OK</strong> button to save and close."
+msgstr "Acesse a seção <strong>Configurações</strong> da conta."
+
+#, fuzzy
+#| msgid "Click on the 'Log In' button to access your account"
+msgid "Click on the <strong>OK</strong> button to save your settings."
+msgstr "Clique no botão 'Início de Sessão' para aceder à sua conta"
+
+msgid "Click on the <strong>Privacy</strong> tab."
+msgstr ""
+
+msgid "Click on the <strong>Show advanced settings</strong>."
+msgstr ""
+
+msgid "Click on the <strong>X</strong> button at the top right to save and close."
+msgstr ""
 
 #, fuzzy
 #| msgid "Clients' Money"
@@ -1988,7 +1932,9 @@ msgstr "Os clientes aceitam ser total e pessoalmente responsáveis pela devida l
 msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
 msgstr "Os clientes aceitam cumprir as solicitações razoáveis apresentadas pela Empresa com fins de verificar a conformidade com este termo."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
+#, fuzzy
+#| msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
 msgstr "Os clientes do resto do mundo (excluindo certos países tais como os EUA, a Costa Rica e Hong Kong) terão as suas contas de FX e da CFD Metatrader 5 abertas na Binary (V) Ltd. A Binary.com não está disponível na República de Vanuatu."
 
 msgid "Clients may avail of this bonus only when a real money account is opened."
@@ -2074,6 +2020,11 @@ msgstr "Comissão sobre retiradas"
 
 msgid "Commissions will be earned throughout the life of the client, on all transactions the client undertakes at the merchant, for as long as you, the Affiliate, remain a member of this affiliate program. The company reserves the right to cancel the commissions that are not reclaimed after 2 years."
 msgstr "As comissões serão recebidas durante a permanência do cliente, sobre todas as transações que o cliente empreenda junto ao operador, enquanto você, o Afiliado, permanecer como membro deste programa de afiliados. A empresa reserva-se o direito de cancelar as comissões que não forem reclamadas após 2 anos."
+
+#, fuzzy
+#| msgid "Commission Rates"
+msgid "Commissions:"
+msgstr "Taxas de Comissão"
 
 msgid "Commodities"
 msgstr "Matérias-primas"
@@ -2296,9 +2247,6 @@ msgstr "Direitos autorais"
 msgid "Copywriter"
 msgstr "Redator"
 
-msgid "Corporate Action"
-msgstr "Ação corporativa"
-
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr ""
 
@@ -2403,6 +2351,11 @@ msgstr ""
 msgid "D. Client Instructions"
 msgstr "Instruções Linux"
 
+#, fuzzy
+#| msgid "Daily Charts"
+msgid "Daily Earnings:"
+msgstr "Gráficos Diários"
+
 msgid "Daily Reset Indices"
 msgstr "Índices \"Reinício Diário\""
 
@@ -2466,7 +2419,7 @@ msgstr "Demo"
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "Demonstrar a capacidade de pensar / agir rapidamente e realizar várias tarefas simultaneamente para executar campanhas eficazes"
 
-msgid "Depending on the level of risk that we are exposed to acting as your counterparty, we largely act in a principal capacity of your trades. As such, the execution venue will usually be Binary.com. However, we may transmit your order to third party liquidity providers, in which case we will determine the execution venue ourselves on the basis described above."
+msgid "Depending on the level of risk that we are exposed to acting as your counterparty, we largely act in a principal capacity of your trades. As such, the execution venue will usually be %1. However, we may transmit your order to third party liquidity providers, in which case we will determine the execution venue ourselves on the basis described above."
 msgstr ""
 
 msgid "Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers."
@@ -2480,6 +2433,11 @@ msgstr "Depositar"
 
 msgid "Deposit Bonus"
 msgstr "Bônus de Deposito"
+
+#, fuzzy
+#| msgid "<strong>Low minimum stakes</strong> - start trading with as little as $5."
+msgid "Deposit as little as USD 5 to start trading"
+msgstr "<strong>Apostas com valores mínimos baixos</strong> - comece a negociar com apenas $5."
 
 #, fuzzy
 #| msgid "Depositing and withdrawing funds"
@@ -2517,6 +2475,16 @@ msgstr "Descrição"
 
 msgid "Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials."
 msgstr "Projetar conteúdos cativantes e visualmente inspiradores para o website da empresa e muitas outras formas de mídia, incluindo tanto materiais online como offline."
+
+#, fuzzy
+#| msgid "Preferred language"
+msgid "Desired language."
+msgstr "Idioma preferido"
+
+#, fuzzy
+#| msgid "Daily Report"
+msgid "Detailed report:"
+msgstr "Relatório Diário"
 
 msgid "Details"
 msgstr "Dados"
@@ -2607,7 +2575,9 @@ msgstr "Você tem um site?"
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "Você quer saber mais sobre os mercados ou sobre negociação financeira? Confira os recursos abaixo."
 
-msgid "Do you want to see Binary.com in other languages, or can you suggest improvements to our current translations?"
+#, fuzzy
+#| msgid "Do you want to see Binary.com in other languages, or can you suggest improvements to our current translations?"
+msgid "Do you want to see %1 in other languages, or can you suggest improvements to our current translations?"
 msgstr "Você quer consultar a Binary.com em outros idiomas ou sugerir melhorias nas nossas traduções atuais?"
 
 msgid "Document account chargebacks"
@@ -2692,7 +2662,9 @@ msgstr "E.g. Hiroo"
 msgid "E.g. Shibuya-ku"
 msgstr "E.g. Shibuya-ku"
 
-msgid "EGR Operator Award "
+#, fuzzy
+#| msgid "EGR Operator Award "
+msgid "EGR Operator Award"
 msgstr "Prêmio de Operador EGR "
 
 msgid "EU Passport Rights"
@@ -2737,6 +2709,11 @@ msgstr "Ganhe dinheiro ao tornar-se afiliado. Você receberá uma comissão por 
 
 msgid "Earn money for any verifiable errors that you find."
 msgstr "Ganhar dinheiro por quaisquer erros verificáveis que você encontrar."
+
+#, fuzzy
+#| msgid "<strong>Scalable trading</strong> - win the same proportional return on stakes of all values."
+msgid "Earn the same proportional return on stakes of all values"
+msgstr "<strong>Negociação escalável</strong> - ganhe o mesmo retorno proporcional em apostas de todos os valores."
 
 msgid "Earning a second income in their spare time?"
 msgstr "Obter uma segunda fonte de rendimento durante o seu tempo livre?"
@@ -2833,6 +2810,11 @@ msgstr "Envolver-se em mineração de dados usando bancos de dados SQL, R/S-Plus
 
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
 msgstr "Melhorar e gerenciar proativamente as iniciativas de mídia social da empresa, usando uma variedade de canais para atrair e cultivar oportunidades de negócio, clientes, parceiros e recrutas."
+
+#, fuzzy
+#| msgid "<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use"
+msgid "Enjoy a trading platform that’s easy to navigate and use"
+msgstr "<strong>Simples e intuitiva</strong> - Desfrute de uma plataforma de negociação de fácil navegação e uso"
 
 msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
 msgstr "Desfrute da nossa forma mais rápida de negociar com o aplicativo dos tique-taques, esteja onde estiver."
@@ -3053,6 +3035,9 @@ msgstr "Amplos conhecimentos de Javascript, HTML, CSS, AJAX, JSON"
 msgid "External forces"
 msgstr ""
 
+msgid "Extra revenue stream:"
+msgstr ""
+
 msgid "F. Execution Venues"
 msgstr ""
 
@@ -3106,6 +3091,11 @@ msgstr "Feminino"
 
 msgid "Fifteen years on, and we're still innovating, growing and working on new ways to serve our customers better. For the first time, we offer short-term touch/no-touch trades and introduce a new charting application. We believe we have the most competitive and comprehensive digital options platform available to the retail public."
 msgstr "Quinze anos depois e ainda estamos inovando, crescendo e trabalhando em novas maneiras de servir melhor os nossos clientes. Pela primeira vez, nós oferecemos negociações toca/não toca de curto prazo e introduzimos um novo aplicativo de gráficos. Acreditamos que temos a plataforma de opções digitais mais competitiva e abrangente disponível ao grande público."
+
+#, fuzzy
+#| msgid "Table format"
+msgid "File format."
+msgstr "Formato de Tabela"
 
 msgid "Filtering Controls"
 msgstr "Filtro de Controle"
@@ -3170,6 +3160,11 @@ msgstr "Assistência de primeira classe a clientes."
 msgid "Firsthand knowledge of other cultures through direct experience"
 msgstr "Conhecimentos em primeira mão de outras culturas através de experiências diretas"
 
+#, fuzzy
+#| msgid "Flexibility"
+msgid "Flexible"
+msgstr "Flexibilidade"
+
 msgid "Flexible trades"
 msgstr "Contratos flexíveis"
 
@@ -3208,7 +3203,7 @@ msgstr ""
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr ""
 
-msgid "For features and trading illustration of Spot FX offered by Binary.com, refer to the Product Disclosure Statement. This policy is an appendix to the overarching Binary.com Order Execution Policy and should be read in conjunction with the overarching Binary.com Order Execution Policy."
+msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product Disclosure Statement. This policy is an appendix to the overarching %1 Order Execution Policy and should be read in conjunction with the overarching %1 Order Execution Policy."
 msgstr ""
 
 msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as stocks and stock indices) are not open throughout the day and that trading may not be available when the markets are closed."
@@ -3404,11 +3399,34 @@ msgstr "Representantes globais de apoio ao cliente"
 msgid "Glossary"
 msgstr "Glossário"
 
+msgid "Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>."
+msgstr ""
+
 msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
 msgstr "Vá para a <a href=\"https://login.binary.com/password-retrieve.php\">página de recuperação de senha</a> e insira o seu nome de usuário e endereço de e-mail nos campos de formulário apresentados, para que a sua senha seja enviada por e-mail."
 
 msgid "Go to the <a href=\"https://login.binary.com/signup.php\">sign up page</a> to register as an affiliate today."
 msgstr "Vá para a <a href=\"https://login.binary.com/signup.php\">página de cadastro</a> para se registrar ainda hoje como afiliado."
+
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>."
+msgstr "O <strong>ponto de saída</strong> é o ponto <strong>da hora final</strong>."
+
+#, fuzzy
+#| msgid "Payout must be between <strong>%1</strong> and <strong>%2</strong>."
+msgid "Go to the <strong>Safari</strong> menu and select <strong>Preferences</strong>."
+msgstr "O pagamento deve estar entre <strong>%1</strong> e <strong>%2</strong>."
+
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "Go to the <strong>Tools</strong> menu and select <strong>Internet Options</strong>."
+msgstr "O <strong>ponto de saída</strong> é o ponto <strong>da hora final</strong>."
+
+#, fuzzy
+#| msgid "Payout must be between <strong>%1</strong> and <strong>%2</strong>."
+msgid "Go to the <strong>Tools</strong> menu and select <strong>Preferences</strong>."
+msgstr "O pagamento deve estar entre <strong>%1</strong> e <strong>%2</strong>."
 
 msgid "Go with the leader"
 msgstr "Siga o líder"
@@ -3457,6 +3475,12 @@ msgstr "Informação reguladora"
 
 msgid "Hands-on test automation experience a plus"
 msgstr "Experiência direta com automatização de testes é uma mais-valia"
+
+msgid "Have made the minimum deposit."
+msgstr ""
+
+msgid "Have not previously been a %1 customer."
+msgstr ""
 
 msgid "Health"
 msgstr "Saúde"
@@ -3623,6 +3647,9 @@ msgid "I. Quotes"
 msgstr "Cotação"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
+msgstr ""
+
+msgid "IMPORTANT DISCLAIMER"
 msgstr ""
 
 msgid "IP Address"
@@ -3895,7 +3922,9 @@ msgstr "Instantâneo"
 msgid "Important notes on our swap rates (overnight funding)"
 msgstr ""
 
-msgid "Improve Binary.com's front-end content"
+#, fuzzy
+#| msgid "Improve Binary.com's front-end content"
+msgid "Improve %1's front-end content"
 msgstr "Melhore o conteúdo front-end da Binary.com"
 
 msgid "Improve your trading skills with our free educational & training resources."
@@ -3930,7 +3959,7 @@ msgstr "Ao estilo clássico do Vale do Silício, o gestor de fundos e empresári
 msgid "In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident."
 msgstr ""
 
-msgid "In executing orders on your behalf, Binary.com takes into consideration the following to achieve the best possible result for you:"
+msgid "In executing orders on your behalf, %1 takes into consideration the following to achieve the best possible result for you:"
 msgstr ""
 
 #, fuzzy
@@ -4073,8 +4102,8 @@ msgstr "Informações sobre os feeds de dados utilizados pela nossa empresa, e s
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "Informações sobre o desempenho anterior de qualquer instrumento ou ativo subjacente não garante o seu desempenho atual e/ou futuro. Desempenho anterior não é um indicador confiável para resultados futuros."
 
-msgid "Insufficient balance"
-msgstr "Saldo insuficiente"
+msgid "Instant access"
+msgstr ""
 
 msgid "Insufficient balance."
 msgstr "Saldo insuficiente."
@@ -4719,6 +4748,11 @@ msgstr "Por favor, forneça a sua morada completa.<br>Isto será usado para aute
 msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
 msgstr ""
 
+#, fuzzy
+#| msgid "<strong>Transparent risk and potential reward</strong> - Know how much you will win or lose before you purchase the contract"
+msgid "Know how much you will win or lose before you purchase the contract"
+msgstr "<strong>Risco e retorno potencial transparentes</strong> - Saiba quanto você irá ganhar ou perder antes de comprar o contrato"
+
 msgid "Know what you stand to win or lose"
 msgstr ""
 
@@ -4940,10 +4974,20 @@ msgstr "Problema com Login"
 msgid "Long"
 msgstr "Longo"
 
+#, fuzzy
+#| msgid "Open positions"
+msgid "Long positions"
+msgstr "Vagas em aberto"
+
 msgid "Long-term partnership with the leading financial trading service"
 msgstr "Parceria a longo prazo com o serviço líder de negociação financeira"
 
-msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? Binary.com is one of the world's most progressive companies, with offices in Asia and Europe."
+#, fuzzy
+#| msgid "A True Partnership"
+msgid "Long-term partnership:"
+msgstr "Uma verdadeira parceria"
+
+msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? %1 is one of the world's most progressive companies, with offices in Asia and Europe."
 msgstr ""
 
 msgid "Loss"
@@ -4963,6 +5007,11 @@ msgstr "Barreira Baixa"
 
 msgid "Low barrier offset"
 msgstr "Variação de barreira baixa"
+
+#, fuzzy
+#| msgid "minimum is"
+msgid "Low minimum stakes"
+msgstr "o mínimo é"
 
 #, fuzzy
 #| msgid "lower"
@@ -5115,9 +5164,6 @@ msgstr "Combina/Difere"
 msgid "Matches/Differs - Predict that the last digit will match or not match"
 msgstr ""
 
-msgid "Max:"
-msgstr "Máx:"
-
 #, fuzzy
 #| msgid "Leverage"
 msgid "Maximum Leverage"
@@ -5197,9 +5243,6 @@ msgstr "Depósito Min-Máx"
 
 msgid "Min-Max Withdrawal"
 msgstr "Retirada Mín-Máx"
-
-msgid "Min:"
-msgstr "Mín:"
 
 msgid "Min: 10 Max: 2000"
 msgstr "Mín: 10 Máx: 2000"
@@ -5379,7 +5422,7 @@ msgstr "Novo token criado."
 msgid "Next"
 msgstr "Próximo"
 
-msgid "Next Available Price &mdash; Earliest price reasonably available and quoted by Binary.com when our Price quotation reaches or goes beyond the level of your Stop Order."
+msgid "Next Available Price &mdash; Earliest price reasonably available and quoted by %1 when our Price quotation reaches or goes beyond the level of your Stop Order."
 msgstr ""
 
 msgid "Next-Gen"
@@ -5482,7 +5525,9 @@ msgstr "Número de tique-taques"
 msgid "O. Representations and Warranties"
 msgstr ""
 
-msgid "OAuth App ID (Optional)"
+#, fuzzy
+#| msgid "OAuth App ID (Optional)"
+msgid "OAuth App ID"
 msgstr "ID do Aplicativo OAuth (Opcional)"
 
 msgid "OK"
@@ -5620,6 +5665,11 @@ msgstr "Abra uma conta gratuita"
 msgid "Open a free account"
 msgstr "Abra uma conta gratuita"
 
+#, fuzzy
+#| msgid "<strong>Instant access</strong> - open an account in minutes."
+msgid "Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7"
+msgstr "<strong>Acesso instantâneo</strong> - abra uma conta em poucos minutos."
+
 msgid "Open an account now"
 msgstr "Abrir uma conta agora"
 
@@ -5668,15 +5718,6 @@ msgstr "Resumo da política de execução de ordens"
 msgid "Order Execution/Cancellation/Modification"
 msgstr ""
 
-msgid "Original Barrier"
-msgstr "Barreira original"
-
-msgid "Original High Barrier"
-msgstr "Barreira alta original"
-
-msgid "Original Low Barrier"
-msgstr "Barreira baixa original"
-
 msgid "Other"
 msgstr "Outro"
 
@@ -5703,7 +5744,7 @@ msgstr "A nossa empresa"
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "O Programa de Afiliados tem realizado os pagamentos a tempo, sem falta, desde o nosso lançamento oficial em Março de 2004. As suas comissões serão creditadas na sua conta de afiliado dentro de quinze dias após o fecho de cada mês civil."
 
-msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how Binary.com executes orders on behalf of our clients."
+msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how %1 executes orders on behalf of our clients."
 msgstr ""
 
 msgid "Our Policy"
@@ -5865,6 +5906,11 @@ msgstr "Redefinição de senha"
 msgid "Password should have lower and uppercase letters with numbers."
 msgstr "A senha deve conter letras minúsculas, maiúsculas e números."
 
+#, fuzzy
+#| msgid "Information Technology"
+msgid "Patented technology"
+msgstr "Tecnologias de informação"
+
 msgid "Patents"
 msgstr "Patentes"
 
@@ -5952,6 +5998,9 @@ msgstr "Tamanho do gráfico"
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pip representa \"percentage in point\" que é geralmente a quarta casa decimal (isto é, 0.0001)."
 
+msgid "Pixel size."
+msgstr ""
+
 #, fuzzy
 #| msgid "Date of birth"
 msgid "Place of birth"
@@ -5968,6 +6017,11 @@ msgstr "Visita da Plataforma"
 
 msgid "Platforms"
 msgstr "Plataformas"
+
+#, fuzzy
+#| msgid "Daily Report"
+msgid "Player report:"
+msgstr "Relatório Diário"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr ""
@@ -6178,6 +6232,26 @@ msgstr "Pre-contract Document"
 msgid "Predict the direction<br />and purchase"
 msgstr "Preveja a direção<br />e compre"
 
+#, fuzzy
+#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
+msgid "Predict the market ending higher or lower than a price target."
+msgstr "<strong>Superior/Inferior</strong> - preveja se mercado vai terminar mais alto ou mais baixo do que um preço-alvo."
+
+#, fuzzy
+#| msgid "Profit from the market rising or falling from its current level"
+msgid "Predict the market rising or falling from its current level."
+msgstr "Lucro proveniente do mercado em alta ou em queda a partir do seu nível atual"
+
+#, fuzzy
+#| msgid "Profit from the market staying inside, or going outside, two price targets"
+msgid "Predict the market staying inside or going outside two price targets."
+msgstr "Lucro proveniente do mercado que fica dentro, ou se move para fora, dois objetivos de preço"
+
+#, fuzzy
+#| msgid "Profit from the market touching or not touching a target price"
+msgid "Predict the market touching or not touching a price target."
+msgstr "Lucro proveniente do mercado que toca ou não toca um preço alvo"
+
 msgid "Preferences"
 msgstr "Preferências"
 
@@ -6317,6 +6391,11 @@ msgstr "Revisar e corrigir os conteúdos exibidos no site, blog, meios de comuni
 msgid "Proofreader"
 msgstr "Revisor"
 
+#, fuzzy
+#| msgid "Potential profit"
+msgid "Protect your profits"
+msgstr "Lucro potencial"
+
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "Conhecimentos comprovados de padrões de auditoria, leis, regras e regulamentações são uma vantagem"
 
@@ -6421,7 +6500,7 @@ msgstr "Leia as respostas às perguntas frequentes."
 msgid "Real Account"
 msgstr "Conta Real"
 
-msgid "Real Account &mdash; Your real money account opened with Binary.com's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
+msgid "Real Account &mdash; Your real money account opened with %1's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
 msgstr ""
 
 #, fuzzy
@@ -6451,6 +6530,11 @@ msgstr "Balanço da realidade"
 
 msgid "Receive news and special offers"
 msgstr "Receba notícias e ofertas especiais"
+
+#, fuzzy
+#| msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
+msgid "Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from %1"
+msgstr "<strong>Preços nos dois sentidos</strong> - a %1 indica o preço de uma negociação e do seu oposto, com preços imparciais e transparentes."
 
 msgid "Receive your activation code by secure"
 msgstr ""
@@ -6699,6 +6783,9 @@ msgstr "Preço de venda"
 msgid "Saturday"
 msgstr "Sábado"
 
+msgid "Scalable"
+msgstr ""
+
 msgid "Scope and Intent"
 msgstr "Âmbito e intenção"
 
@@ -6742,11 +6829,32 @@ msgstr "Testes de usuário"
 msgid "Security and Privacy"
 msgstr "Segurança e Privacidade"
 
+#, fuzzy
+#| msgid "Security and Privacy"
+msgid "Security and privacy"
+msgstr "Segurança e Privacidade"
+
 msgid "Security testing opportunities"
 msgstr "Oportunidades de testes de segurança"
 
 msgid "Segregated Funds"
 msgstr ""
+
+#, fuzzy
+#| msgid "<strong>Preferences:</strong>"
+msgid "Select <strong>Accept cookies</strong>."
+msgstr "<strong>Preferências:</strong>"
+
+msgid "Select <strong>Accept</strong> for both <strong>First-party Cookies</strong> and <strong>Third-party Cookies</strong>."
+msgstr ""
+
+msgid "Select <strong>Allow local data to be set (recommended)</strong>."
+msgstr ""
+
+#, fuzzy
+#| msgid "Access the <strong>Settings</strong> section on the account."
+msgid "Select <strong>Cookies</strong> from the left column."
+msgstr "Acesse a seção <strong>Configurações</strong> da conta."
 
 msgid "Select market"
 msgstr "Selecione o mercado"
@@ -6755,6 +6863,9 @@ msgstr "Selecione o mercado"
 #| msgid "Select market"
 msgid "Select market:"
 msgstr "Selecione o mercado"
+
+msgid "Select the <strong>Override automatic cookie handling</strong>."
+msgstr ""
 
 msgid "Select your market"
 msgstr "Selecione o seu mercado"
@@ -6795,6 +6906,11 @@ msgstr "Vender opção"
 msgid "Sell time"
 msgstr "Hora de venda"
 
+#, fuzzy
+#| msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
+msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
+msgstr "<strong>Proteja os seus lucros</strong> - Venda os seus contratos de longo prazo antes da expiração para proteger quaisquer lucros que possa ter realizado ou para minimizar as suas perdas"
+
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Envie-nos um currículo e uma carta de apresentação que descreve os seus interesses profissionais."
 
@@ -6829,6 +6945,16 @@ msgid "Session duration:"
 msgstr "Duração da sessão:"
 
 #, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "Set \"<strong>Block cookies:</strong>\" to <strong>Never</strong>."
+msgstr "O <strong>ponto de saída</strong> é o ponto <strong>da hora final</strong>."
+
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "Set \"<strong>Firefox will</strong>\" to \"<strong>Remember history</strong>\"."
+msgstr "O <strong>ponto de saída</strong> é o ponto <strong>da hora final</strong>."
+
+#, fuzzy
 #| msgid "The barrier(s) you choose defines your position and triggers your payout."
 msgid "Set barrier(s) to define your position and trigger the payout you will receive."
 msgstr "A barreira que você escolhe define a sua posição e aciona o seu pagamento."
@@ -6853,6 +6979,11 @@ msgstr "Separabilidade"
 msgid "Sharp prices"
 msgstr "Preços exatos"
 
+#, fuzzy
+#| msgid "Sharp prices"
+msgid "Sharp, benchmarked prices"
+msgstr "Preços exatos"
+
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr ""
 
@@ -6864,6 +6995,16 @@ msgstr "Curto"
 
 msgid "Short interval traders"
 msgstr "Negociadores de intervalo curto"
+
+#, fuzzy
+#| msgid "Set your position"
+msgid "Short positions"
+msgstr "Defina a sua posição"
+
+#, fuzzy
+#| msgid "Choose the duration"
+msgid "Short to long-term durations"
+msgstr "Escolha a duração"
 
 msgid "Should a disruption occur in the data feeds which cannot be readily rectified by the Company, the Company reserves the right to refund the contract purchase."
 msgstr "Caso ocorra uma interrupção no fluxo de dados que não possa ser corrigida rapidamente pela Companhia, a Companhia reserva o direito de reembolsar a compra do contrato."
@@ -6903,6 +7044,11 @@ msgstr "Sair"
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "Experiência relevante em Mídia Social, Marketing e / ou Publicidade"
+
+#, fuzzy
+#| msgid "Scope and Intent"
+msgid "Simple and intuitive"
+msgstr "Âmbito e intenção"
 
 msgid "Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. %1 ensures fair and transparent pricing by showing you both sides of the trade."
 msgstr "Simplesmente mude qualquer parâmetro e o preço muda instantaneamente, oferecendo informações sobre a sua negociação em tempo-real. A %1 garante preços justos e transparentes, mostrando os dois lados da sua negociação."
@@ -6987,6 +7133,12 @@ msgstr "Spam - Não toleramos Spam"
 
 msgid "Specific Instructions"
 msgstr "Instruções específicas"
+
+msgid "Specific colors the banner should include."
+msgstr ""
+
+msgid "Specific message the banner should include."
+msgstr ""
 
 msgid "Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. %1 offers payouts from $1 to $50,000."
 msgstr ""
@@ -7163,11 +7315,11 @@ msgstr "É possível copiar e distribuir esses materiais numa base limitada, ape
 msgid "Such withdrawal would result in your Account Equity being less than zero; and/or"
 msgstr ""
 
+msgid "Summary"
+msgstr "Resumo"
+
 msgid "Summary Order Execution Policy"
 msgstr "Resumo da política de execução de ordens"
-
-msgid "Summary:"
-msgstr "Resumo:"
 
 msgid "Sunday"
 msgstr "Domingo"
@@ -7305,6 +7457,14 @@ msgstr "Os termos e condições da %1;"
 msgid "The %1 website is protected by certain copyrights."
 msgstr "O website da %1 está protegido por determinados direitos de autor."
 
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
+msgstr ""
+
+#, fuzzy
+#| msgid "The Binary.com website's static content (CSS, Javascript) is available as the <a target='_blank' href='%1'>binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
+msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
+msgstr "O conteúdo estático do site Binary.com (CSS, Javascript) está disponível como <a target='_blank' href='%1'>binary-static</a>, projeto open source no github. Você gostaria de recriar o site Binary.com ou melhorar a compatibilidade com navegadores, aumentar a velocidade do site ou o desempenho do Javascript? Por favor desenhe o projeto e envie o pedido com as suas sugestões de mudança dos códigos."
+
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "A <strong>principal plataforma</strong> para a negociação de opções binárias"
 
@@ -7340,12 +7500,6 @@ msgstr "O Agente irá enviar-lhe a quantia de retirada (menos a comissão) atrav
 
 msgid "The Average"
 msgstr "A Média"
-
-msgid "The Binary.com website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at <a href='mailto:%1'>%1</a>. Binary.com and the bull/bear logo are registered trademarks."
-msgstr ""
-
-msgid "The Binary.com website's static content (CSS, Javascript) is available as the <a target='_blank' href='%1'>binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
-msgstr "O conteúdo estático do site Binary.com (CSS, Javascript) está disponível como <a target='_blank' href='%1'>binary-static</a>, projeto open source no github. Você gostaria de recriar o site Binary.com ou melhorar a compatibilidade com navegadores, aumentar a velocidade do site ou o desempenho do Javascript? Por favor desenhe o projeto e envie o pedido com as suas sugestões de mudança dos códigos."
 
 msgid "The Cent account offers the highest leverage, as well as low margin call and stop out level."
 msgstr ""
@@ -7515,6 +7669,9 @@ msgstr ""
 msgid "The Stop Out Level applicable to your Real Account may differ from the default Stop Out Level published on our website."
 msgstr ""
 
+msgid "The URL of the site on which the banner is going to appear."
+msgstr ""
+
 msgid "The USD Index is a weighted Index, measuring the US Dollar's value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%."
 msgstr "O USD é um índice ponderado, que mede o valor do Dólar em relação a uma cesta de 5 moedas globais (EUR, AUD, GBP, JPY e CAD), cada uma ponderada em 20%."
 
@@ -7589,6 +7746,9 @@ msgstr "Os dados de gráficos disponibilizados aos clientes da Empresa é apenas
 msgid "The client has reached a turnover that is 5 times the bonus amount"
 msgstr "O cliente tiver atingido um volume de negócios 5 vezes o valor do bônus"
 
+msgid "The commission report shows you your daily commission earnings, per site / product."
+msgstr ""
+
 msgid "The commission you will charge Clients on deposits and withdrawals"
 msgstr "A comissão que você irá cobrar aos clientes para depósitos e retiradas"
 
@@ -7632,6 +7792,9 @@ msgid "The cut-off time for performing Roll-overs and booking of the Roll-over C
 msgstr ""
 
 msgid "The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavour to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level."
+msgstr ""
+
+msgid "The detailed report shows you your detailed traffic and income statistics. Use the filters and column selectors to break down your reporting as desired."
 msgstr ""
 
 msgid "The duration is the length of a purchased trade (see 'contract period')."
@@ -7752,6 +7915,9 @@ msgstr ""
 msgid "The personal information that we obtain about you assists us in servicing your account. We know you may be concerned about what we do with this information, and with financial information about your account. The following outlines our privacy practices."
 msgstr "As informações pessoais que obtemos sobre si ajudam-nos a fazer a manutenção da sua conta. Sabemos que pode estar preocupado com o uso que damos a essas informações e às informações financeiras referentes à sua conta. A seguir descrevemos as nossas práticas de privacidade."
 
+msgid "The player report shows a breakdown of statistics per player. Use the filters to refine the report."
+msgstr ""
+
 msgid "The premier platform for trading binary options in the world's financial markets"
 msgstr "A principal plataforma para a negociação de opções binárias nos mercados financeiros do mundo"
 
@@ -7794,12 +7960,12 @@ msgstr ""
 msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
 msgstr "O termo \"a Empresa\" denotará a Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenciada e regulamentada pela (1) Comissão de Supervisão de Jogos da Ilha de Man, Ilhas Britânicas, licença de jogo online atual emitida em 31 de agosto de 2012, e para os clientes do Reino Unido pela (2) Comissão de Apostas do Reino Unido; a Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenciada e regulamentada pela (1) Malta Gaming Authority (Autoridade de Jogo de Malta) em Malta, para os produtos de Jogo, licença MGA/CL2/118/2000, de 26 de maio de 2010, e para os clientes do Reino Unido pela (2) Comissão de Apostas do Reino Unido; a Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulada pela Malta Financial Services Authority (Autoridade de Serviços Financeiros de Malta) para produtos de investimento, detentora de uma licença (n.º IS/70156) de categoria 3 para serviços de investimento; ou Binary (CR) S.A., dependendo da jurisdição a que a conta do cliente foi relacionada, de acordo com os procedimentos de abertura de conta do site, e como descrito na seção Sobre Nós do site."
 
-msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or 'Binary.com' shall denote Binary (V) Ltd."
+msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote Binary (V) Ltd."
 msgstr ""
 
 #, fuzzy
 #| msgid "The term \"the Company\" shall denote either of Binary (IOM) Ltd., Binary (Europe) Ltd. or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
-msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or 'Binary.com' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
+msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "O termo \"Empresa\" deve indicar a Binary (IOM) Ltd., a Binary (Europe) Ltd. ou a Binary (CR) S.A., dependendo da jurisdição à qual a conta de um cliente foi atribuída de acordo com os procedimentos de abertura de conta da página web e conforme detalhado na seção Quem Somos da página Web."
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
@@ -7937,7 +8103,7 @@ msgstr "Estes termos e condições de serviço começam a aplicar-se na data em 
 msgid "This Document"
 msgstr "Este Documento"
 
-msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com."
+msgid "This Policy applies to retail and professional clients of %1 dealing in financial products offered by %1."
 msgstr ""
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
@@ -7957,16 +8123,15 @@ msgstr "Descubra os nossos índices Volatility."
 msgid "This contract lost"
 msgstr "Esse contrato perdeu"
 
-msgid "This contract was affected by a Corporate Action event."
-msgstr "Este contrato foi afetado por um evento de ação corporativa."
-
 msgid "This contract won"
 msgstr "Esse contrato ganhou"
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the %1 Application Program Interface (\"API\"); \"you\", or \"your\")."
 msgstr "O presente documento (o \"Contrato\") estabelece os termos e condições (\"Termos\") entre \"a Empresa\", que é a Binary Services Ltd (\"nós e \"nosso[a]\"), e você (a pessoa que se inscreveu na Application Program Interface [\"API\"] da %1; \"você\" ou \"seu/sua\")."
 
-msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\" which is Binary Services Ltd, and you (the person who applied for this program; \"you\", \"your\", or \"Affiliate\"), in relation to your application to setup an affiliate account (and membership of the affiliate program if your application is deemed successful)"
+#, fuzzy
+#| msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\" which is Binary Services Ltd, and you (the person who applied for this program; \"you\", \"your\", or \"Affiliate\"), in relation to your application to setup an affiliate account (and membership of the affiliate program if your application is deemed successful)"
+msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\" which is Binary Services Ltd, and you (the person who applied for this program; \"you\", \"your\", or \"Affiliate\"), in relation to your application to setup an affiliate account (and membership of the affiliate program if your application is deemed successful)."
 msgstr "O presente documento (o \"Acordo\") estabelece os termos e condições entre \"a Empresa\", que é a Binary Services Ltd, e você (a pessoa que se inscreveu neste programa; \"você\", \"seu/sua\" ou \"Afiliado\"), em relação à sua inscrição para a criação de uma conta de afiliado (e ser membro do programa de afiliados se a sua candidatura for considerada bem-sucedida)"
 
 msgid "This feature is not relevant to virtual-money accounts."
@@ -8103,7 +8268,7 @@ msgstr ""
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our margin requirements."
 msgstr ""
 
-msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with Binary.com. A Real Account cannot be opened in the absence of a Binary Options Real Account."
+msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr ""
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
@@ -8188,8 +8353,26 @@ msgstr "Durações de negociação"
 msgid "Trade Now"
 msgstr "Negocie já"
 
+msgid "Trade according to your preferred strategy"
+msgstr ""
+
 msgid "Trade all major currencies, indices, stocks, and commodities."
 msgstr "Negocie todas as principais moedas, índices, bolsas e matérias-primas."
+
+#, fuzzy
+#| msgid "<strong>Trade to your strategy</strong> - set your trades on 'gut feel', or use technical or fundamental analysis."
+msgid "Trade based on \"gut feel\" or rely on technical and fundamental analysis"
+msgstr "<strong>Negocie de acordo com a sua estratégia</strong> - escolha as suas negociações através da intuição ou use análises técnicas ou fundamentais."
+
+#, fuzzy
+#| msgid "<strong>Security</strong> - %1 ensures your personal data and transactions are always secure."
+msgid "Trade confidently, knowing that your personal data, transactions, and funds are always secure"
+msgstr "<strong>Segurança</strong> - a %1 garante que seus dados pessoais e as suas transações estão sempre seguras."
+
+#, fuzzy
+#| msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
+msgid "Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
+msgstr "<strong>Todos os mercados, todas as condições</strong> - negocie moedas, índices e matérias-primas em mercados em subida, descida, movimento lateral, calmos e voláteis."
 
 msgid "Trade in the world's financial markets in a simple, user-friendly platform."
 msgstr "Negocie nos mercados financeiros mundiais numa plataforma simples e fácil de usar."
@@ -8208,6 +8391,11 @@ msgstr ""
 msgid "Trade type"
 msgstr "1. tipo de contrato"
 
+#, fuzzy
+#| msgid "<strong>Trade when you want to trade</strong> - trade 24/7, even on weekends."
+msgid "Trade when you want. %1 is available 24/7, even on weekends"
+msgstr "<strong>Negocie quando você quiser</strong> - negocie 24/7, inclusive nos finais de semana."
+
 msgid "Trade with a powerful interface known as the global industry standard."
 msgstr "Negocie com uma poderosa interface conhecida como o padrão global da indústria."
 
@@ -8215,6 +8403,11 @@ msgstr "Negocie com uma poderosa interface conhecida como o padrão global da in
 #| msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks."
 msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions."
 msgstr "Negocie com facilidade a partir da ampla gama de métodos de depósito e retirada oferecidos pela %1. Os seus fundos são segregados e mantidos em bancos de classificação AAA."
+
+#, fuzzy
+#| msgid "<strong>Patented technology</strong> - %1 is the industry pioneer and holds patented pricing technology."
+msgid "Trade with the industry pioneer and holder of a patented pricing technology"
+msgstr "<strong>Tecnologia patenteada</strong> - a %1 é a pioneira desta indústria e possui uma tecnologia de preços patenteada."
 
 msgid "Trade your way"
 msgstr "Negocie do seu jeito"
@@ -8260,8 +8453,10 @@ msgstr "Guia de negociação"
 msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
 msgstr "A negociação em mercados financeiros pode criar dependência. Preencha o formulário abaixo para limitar a sua participação no nosso site ou envie uma carta ou fax assinado para a nossa equipe de apoio ao cliente. Uma vez definidos, você só poderá apertar os seus limites. Os limites só serão removidos ou desapertados após 7 dias com exceção da data de auto-exclusão, que não pode ser removida ou alterada uma vez que você a confirmou. Para remover ou aumentar os seus limites, contate o <a href=\"%1\">apoio ao cliente</a>."
 
-msgid "TradingView for Binary.com"
-msgstr "TradingView para Binary.com"
+#, fuzzy
+#| msgid "TradingView"
+msgid "TradingView for %1"
+msgstr "TradingView"
 
 msgid "Transact in"
 msgstr "Transacionar em"
@@ -8285,12 +8480,12 @@ msgstr "Transferir para"
 
 #, fuzzy
 #| msgid "Withdraw funds from your MetaTrader account into your Binary account:"
-msgid "Transfer funds from Binary.com account into your MT5 account:"
+msgid "Transfer funds from %1 account into your MT5 account:"
 msgstr "Retire fundos da sua conta MetaTrader para a sua conta Binary:"
 
 #, fuzzy
 #| msgid "Withdraw funds from your MetaTrader account into your Binary account:"
-msgid "Transfer funds from your MT5 account into your Binary.com account:"
+msgid "Transfer funds from your MT5 account into your %1 account:"
 msgstr "Retire fundos da sua conta MetaTrader para a sua conta Binary:"
 
 #, fuzzy
@@ -8315,6 +8510,9 @@ msgstr "Traduções"
 
 msgid "Translator"
 msgstr "Tradutor"
+
+msgid "Transparent risk and potential reward"
+msgstr ""
 
 msgid "True"
 msgstr "Verdadeiro"
@@ -8355,6 +8553,11 @@ msgstr "Terça-feira"
 
 msgid "Turnover"
 msgstr "Volume de negócios"
+
+#, fuzzy
+#| msgid "2-way pricing"
+msgid "Two-way pricing"
+msgstr "Preços bidirecionais"
 
 msgid "Types of trades"
 msgstr "Tipos de negociações"
@@ -8399,17 +8602,24 @@ msgstr "Quantia por ponto"
 msgid "UX / UI experience"
 msgstr "Experiência com UX / UI"
 
-msgid "Ukraine"
-msgstr "Ucrânia"
-
 msgid "Ultra fast on-the-go trading"
 msgstr "Negociações ultra-rápidas em qualquer lugar"
+
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button."
+msgstr "O <strong>ponto de saída</strong> é o ponto <strong>da hora final</strong>."
 
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "Em nenhuma circunstância pode a Empresa, ou o seus diretores ou funcionários, ser responsável ao abrigo deste acordo perante você ou qualquer terceiro por quaisquer perdas ou danos indiretos, especiais, incidentais, punitivos ou resultantes, ou quaisquer outros danos similares sob qualquer teoria de responsabilidade (quer por contrato, prejuízo, responsabilidade estrita ou qualquer outra teoria), que são direta ou indiretamente imputáveis ao uso de, ou a incapacidade de usar, a API %1, ou quaisquer conteúdos contidos nela, mesmo que a Empresa tenha sido informada da possibilidade disso."
 
 msgid "Under no circumstances shall we provide investment advice or recommendation to you or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written information, which we may publish on our website or provide to you in any other manner. We will endeavour to ensure the accuracy and completeness of this written information but it will not constitute investment advice or recommendation provided by us to you."
 msgstr ""
+
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option."
+msgstr "O <strong>ponto de saída</strong> é o ponto <strong>da hora final</strong>."
 
 msgid "Under the Rules, clients may be categorised into one of the following three categories:"
 msgstr "De acordo com as regras, os clientes podem ser categorizados em uma das três categorias seguintes:"
@@ -8514,9 +8724,6 @@ msgstr "Usando o nosso website, os clientes podem negociar moedas, índices, aç
 msgid "Utilise a variety of tactics - both online and offline - to grow and support the company's network of partners in your designated market"
 msgstr "Utilizar uma variedade de táticas – tanto online como offline – para desenvolver e auxiliar a rede de parceiros da empresa no seu mercado designado"
 
-msgid "Verification Token"
-msgstr "Token de verificação"
-
 msgid "Verification code format incorrect."
 msgstr "Formato incorreto de código de verificação."
 
@@ -8533,10 +8740,12 @@ msgstr "Verifique a nova senha"
 
 #, fuzzy
 #| msgid "Version 43. Last modified 2016-11-09."
-msgid "Version 4. Last modified 2016-12-30."
+msgid "Version 44. Last modified 2017-04-19."
 msgstr "Versão 43. Última modificação em 2016-11-09."
 
-msgid "Version 43. Last modified 2016-11-09."
+#, fuzzy
+#| msgid "Version 43. Last modified 2016-11-09."
+msgid "Version 5. Last modified 2017-04-19."
 msgstr "Versão 43. Última modificação em 2016-11-09."
 
 msgid "View"
@@ -8634,7 +8843,9 @@ msgstr "Na %1, consideramos a força e a segurança da nossa plataforma de negoc
 msgid "Want to learn more?"
 msgstr "Quer saber mais?"
 
-msgid "Want to telecommute? "
+#, fuzzy
+#| msgid "Want to telecommute? "
+msgid "Want to telecommute?"
 msgstr "Quer trabalhar remotamente? "
 
 msgid "Warranties"
@@ -8693,6 +8904,11 @@ msgstr ""
 msgid "We are required to take a number of factors into account when considering how to give you best execution. We have rated price as the most important followed by: (a) costs; (b) size, (c) liquidity of the underlying market, (d) speed and (e) likelihood of execution and settlement. The main way in which we will ensure that you obtain best execution is by ensuring that in our calculation of our bid/offer prices, we pay due consideration to the market price for the underlying reference product to which your Contract relates. We have access to a number of different data sources in order to ascertain the market price, which is our objective view of the bids and offers available to arms' length traders."
 msgstr "Somos obrigados a levar um grande número de fatores em conta quando consideramos como lhe proporcionar a melhor execução. Classificamos o preço como o mais importante, seguido por: (a) custos; (b) dimensão, (c) liquidez do mercado subjacente, (d) velocidade e (e) probabilidade de execução e liquidação. A principal forma na qual iremos certificar que você obtenha melhor execução é ao assegurar que, no nosso cálculo dos nossos preços de proposta/oferta, nós prestemos a devida consideração aos preços de mercado dos produtos de referência subjacentes a que se relaciona o seu contrato. Temos acesso a um grande número de fontes de dados diferentes para averiguar os preços de mercado, que representa a nossa perspectiva objetiva das propostas e ofertas disponíveis a negociadores imparciais."
 
+#, fuzzy
+#| msgid "<strong>Lock in profits</strong> - sell back your long-term trades at any time at market prices."
+msgid "We charge a 2% fee on top of market rates."
+msgstr "<strong>Bloquei os lucros</strong> - venda os seus contratos a longo prazo a qualquer momento a preços do mercado."
+
 msgid "We delete an order with the largest margin reserved."
 msgstr ""
 
@@ -8748,7 +8964,7 @@ msgstr ""
 
 #, fuzzy
 #| msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
-msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you’re in Malta or Malaysia."
+msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta or Malaysia."
 msgstr "Nós oferecemos uma estrutura de remuneração com base no mercado, um plano de bônus anual em dinheiro, benefícios de saúde para você e sua família, viagens e abonos de internet, e viagens da empresa."
 
 msgid "We prohibit the use of unauthorised incentives, gifts and payments to encourage customer sign-ups. In the event that we believe that you have engaged in such activity, we reserve the right to withhold any amounts due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
@@ -8920,7 +9136,9 @@ msgstr "Quando você clicar em \"Ok\", você será excluído das negociações n
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
 msgstr "Quando você for aprovado como afiliado, receberá tudo necessário para que possa começar imediatamente."
 
-msgid "When you start trading with Binary.com, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when."
+#, fuzzy
+#| msgid "When you start trading with Binary.com, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when."
+msgid "When you start trading with %1, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when."
 msgstr "Quando você começa a negociar com a Binary.com, será direcionado diretamente para a tela de negociação, onde você pode definir os parâmetros das suas negociações e escolher o que você quer negociar, como e quando."
 
 msgid "When you trade with %1, you can be assured that your deposits are held in a separate trust account and are not used for any other purpose."
@@ -9130,6 +9348,9 @@ msgstr "Limites escritos e auto-exclusão"
 msgid "Year"
 msgstr "Ano"
 
+msgid "Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:"
+msgstr ""
+
 msgid "Yes. Please email us at <a href=\"mailto:%1\">%1</a> for further assistance."
 msgstr "Sim. Envie um e-mail <a href=\"mailto:%1\">%1</a> para mais informações."
 
@@ -9214,7 +9435,7 @@ msgstr "Não é permitido armazenar qualquer conteúdo (tais como feeds de dados
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Você não tem direito a receber nenhuma compensação ou reembolso de qualquer natureza da empresa, em nenhuma circunstância."
 
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr ""
 
 msgid "You are over 18 years of age;"
@@ -9467,6 +9688,21 @@ msgstr ""
 msgid "You will be subjected to swap rates if you keep a position open past the market close."
 msgstr ""
 
+#, fuzzy
+#| msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
+msgid "You will charge a commission to process the transactions."
+msgstr "<strong>Comissões:</strong> Você irá cobrar uma comissão para processar as transações."
+
+#, fuzzy
+#| msgid "<strong>Extra revenue stream:</strong> You will have the potential to earn another level of income from our affiliate program."
+msgid "You will have the potential to earn another level of income from our affiliate program."
+msgstr "<strong>Fonte adicional de receitas:</strong> Você terá a oportunidade de ganhar outro nível de rendimento do nosso programa de afiliados."
+
+#, fuzzy
+#| msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
+msgid "You will increase awareness of your services and generate new business."
+msgstr "<strong>Exposição adicional de negócio:</strong> Você aumentará o reconhecimento dos seus serviços e gerará novas oportunidades de negócio."
+
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr ""
 
@@ -9497,7 +9733,7 @@ msgstr "O seu limite de retiradas de %1 dia(s) é atualmente %2 %3 (ou equivalen
 msgid "Your Application is Being Processed."
 msgstr "A sua inscrição está sendo processado."
 
-msgid "Your Binary Options Real Account with Binary.com has to be authenticated within five days from your Real Account opening date to keep your Real Account active."
+msgid "Your Binary Options Real Account with %1 has to be authenticated within five days from your Real Account opening date to keep your Real Account active."
 msgstr ""
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
@@ -9511,7 +9747,7 @@ msgstr "A sua propriedade"
 
 #, fuzzy
 #| msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
-msgid "Your Real Account password and login ID are unique and passwords are hashed so that not even Binary.com staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;"
+msgid "Your Real Account password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;"
 msgstr "A sua senha e o ID de início de sessão são únicos e as senhas estão protegidas para que nem os funcionários da %1 as possam ler. Esta é a razão por que não podemos recuperar a senha e de termos de lhe emitir uma nova e enviá-la para o seu endereço de e-mail se não conseguir lembrar-se."
 
 msgid "Your Real Account shall be funded by transferring funds from your Binary Options Real Account, subject to the availability and sufficiency of funds in your Binary Options Real Account. No fund transfers shall be made to any other account in the name of any third party."
@@ -9591,6 +9827,11 @@ msgstr ""
 
 msgid "Your name, email address and contact number"
 msgstr "O seu nome, endereço de e-mail e número de contato"
+
+#, fuzzy
+#| msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
+msgid "Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
+msgstr "<strong>Parceria de longo prazo:</strong> A sua parceria com a %1 pode se tornar um meio de promover o seu produto ou os seus serviços GRATUITAMENTE aos nossos mais de 1.000.000 de clientes registrados em todo o mundo."
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "A sua senha e o ID de início de sessão são únicos e as senhas estão protegidas para que nem os funcionários da %1 as possam ler. Esta é a razão por que não podemos recuperar a senha e de termos de lhe emitir uma nova e enviá-la para o seu endereço de e-mail se não conseguir lembrar-se."
@@ -9708,6 +9949,11 @@ msgstr ""
 msgid "consolidating liquidity from several providers into a single stream of blended feed; and"
 msgstr ""
 
+#, fuzzy
+#| msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
+msgid "currencies, stocks, indices, and commodities."
+msgstr "<strong>Todos os mercados:</strong> moedas, ações, índices e matérias-primas."
+
 msgid "d) The timeframe or duration of the contract as defined by your order execution."
 msgstr ""
 
@@ -9726,8 +9972,18 @@ msgstr "por exemplo blue.binaryws.com"
 msgid "email address"
 msgstr "endereço de e-mail"
 
+#, fuzzy
+#| msgid "Choose a payout from $1 to $50,000."
+msgid "from $1 to $50,000."
+msgstr "Escolha um pagamento de $1 a $50.000."
+
 msgid "from %1 to %2"
 msgstr ""
+
+#, fuzzy
+#| msgid "10 seconds to 365 days..."
+msgid "from 10 seconds to 365 days."
+msgstr "10 segundos a 365 dias..."
 
 #, fuzzy
 #| msgid "Th"
@@ -9852,6 +10108,11 @@ msgstr "hoje"
 msgid "today, Fridays"
 msgstr "Sexta-feira"
 
+#, fuzzy
+#| msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
+msgid "up/down, touch/no-touch, stays in/goes out."
+msgstr "<strong>Todas as condições do mercado:</strong> acima/abaixo, toca/não toca, fica dentro/sai fora."
+
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "usar ou reproduzir a API %1 de outra forma que não seja permitida por estes termos ou"
 
@@ -9881,7 +10142,7 @@ msgstr "anos"
 
 #, fuzzy
 #| msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
+msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Israel, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgstr "você não é residente em um país restrito como Afeganistão, Bósnia e Herzegovina, Costa Rica, Guiana, Hong Kong, Irão, Iraque, Jersey, RDP do Laos, Malásia, Malta, Coreia do Norte, Síria, Uganda, os USA, Vanuatu ou Iêmen;"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
@@ -10413,6 +10674,11 @@ msgstr "{JAPAN ONLY}Because option prices are determined by the probability of b
 msgid "{JAPAN ONLY}Best Tracking with \"Forever Cookies\""
 msgstr "O melhor rastreamento com \"Forever Cookies\""
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Binary K. K."
+msgid "{JAPAN ONLY}Binary Co., Ltd."
+msgstr "{JAPAN ONLY}Binary K. K."
+
 msgid "{JAPAN ONLY}Binary K. K."
 msgstr "{JAPAN ONLY}Binary K. K."
 
@@ -10819,6 +11085,9 @@ msgstr "{JAPAN ONLY}Knowledge test list item 5"
 msgid "{JAPAN ONLY}Learning to trade online?"
 msgstr "Aprender a negociar online?"
 
+msgid "{JAPAN ONLY}Licensed by the Kanto Local Financial Bureau (Finance Division) No. 2949"
+msgstr ""
+
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 
@@ -10832,6 +11101,11 @@ msgstr "{JAPAN ONLY}Main business"
 
 msgid "{JAPAN ONLY}Matters to attend:"
 msgstr "{JAPAN ONLY}Matters to attend:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
+msgid "{JAPAN ONLY}Member Associations: Financial Futures Association Japan"
+msgstr "{JAPAN ONLY}The Financial Futures Association of Japan"
 
 msgid "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
 msgstr "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
@@ -10924,11 +11198,16 @@ msgstr "{JAPAN ONLY}Please input the amount you would like to withdraw and press
 msgid "{JAPAN ONLY}Please make a bank transfer from your designated bank account to:"
 msgstr "{JAPAN ONLY}Please make a bank transfer from your designated bank account to:"
 
-msgid "{JAPAN ONLY}Please make sure you add your Binary.com account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
+#, fuzzy
+#| msgid "{JAPAN ONLY}Please make sure you add your Binary.com account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
+msgid "{JAPAN ONLY}Please make sure you add your %1 account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
 msgstr "{JAPAN ONLY}Please make sure you add your Binary.com account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
 
 msgid "{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000."
 msgstr "{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000."
+
+msgid "{JAPAN ONLY}Please note that the website that you have just visited is not our site. Information regarding the Company's financial instruments that have been posted on that site, any evaluation, impression, etc. are the sole responsibility of the administrators of that website, and has been created by them only. We can make no guarantee or accept any responsibility for their content."
+msgstr ""
 
 msgid "{JAPAN ONLY}Please note the maximum regular withdrawal amount is ¥1,000,000."
 msgstr "{JAPAN ONLY}Please note the maximum regular withdrawal amount is ¥1,000,000."
@@ -10944,6 +11223,11 @@ msgstr "{JAPAN ONLY}Pre-Contract Documents"
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of the underlying spot price, and are dependent on multiple factors which may vary."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Goes Outside"
+msgid "{JAPAN ONLY}Proceed to official site"
+msgstr "{JAPAN ONLY}Goes Outside"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Goes Outside"
@@ -11668,6 +11952,11 @@ msgstr "{JAPAN ONLY}We will process your request and transfer the funds to your 
 msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 msgstr "Iremos fornecer-lhe todas as ferramentas de que necessita para transformar o seu tráfego numa corrente de receitas lucrativas"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Binary K. K."
+msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
+msgstr "{JAPAN ONLY}Binary K. K."
+
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 
@@ -11754,9 +12043,6 @@ msgstr "Por que nós"
 msgid "Regulation"
 msgstr "Regulamento"
 
-msgid "Styles"
-msgstr "Estilos"
-
 msgid "Endpoint"
 msgstr "Ponto de extremidade"
 
@@ -11827,6 +12113,167 @@ msgstr "Aprovação dos termos e condições"
 
 msgid "Account Limits"
 msgstr "Limites da Conta"
+
+#~ msgid ""
+#~ "<p><strong>Detailed report</strong>: The detailed report shows you your detailed traffic and income statistics. Use the filters and column selectors to break down your reporting as desired.</p>\n"
+#~ "    <p><strong>Player report</strong>: The player report shows a breakdown of statistics per player. Use the filters to refine the report.</p>\n"
+#~ "    <p><strong>Daily Earnings</strong>: The commission report shows you your daily commission earnings, per site / product.</p>"
+#~ msgstr ""
+#~ "<p><strong>Relatório detalhado</strong>: O relatório detalhado mostra-lhe estatísticas detalhadas de tráfego e receitas. Use os filtros e seletores de coluna para dividir o seu relatório conforme pretendido.</p>\n"
+#~ "    \n"
+#~ "<p><strong>Relatório de Jogadores</strong>: O relatório de jogadores mostra uma divisão de estatísticas por jogador. Use os filtros para otimizar o relatório.</p>\n"
+#~ "    \n"
+#~ "<p><strong>Ganhos Diários</strong>: O relatório de comissões mostra-lhe os seus ganhos diários em comissões, por site / produto.</p>"
+
+#~ msgid ""
+#~ "<p>A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria: </p>\n"
+#~ "\n"
+#~ "    <ul class='checked'>\n"
+#~ "        <li>Have not previously been a %1 customer.</li>\n"
+#~ "        <li>Have made the minimum deposit.</li>\n"
+#~ "        <li>Are over 18.</li>\n"
+#~ "    </ul>"
+#~ msgstr ""
+#~ "<p>Um cliente é alguém que foi referenciado através de uma das suas ferramentas de marketing e que depositou dinheiro na sua respectiva conta da %1. Ele deve cumprir os seguintes critérios:</p>\n"
+#~ "  <ul class='checked'>\n"
+#~ "        <li>Não ter sido cliente da %1 anteriormente.</li>\n"
+#~ "        <li>Ter realizado o depósito mínimo.</li>\n"
+#~ "        <li>Ter mais de 18 anos.</li>\n"
+#~ "   </ul>"
+
+#~ msgid ""
+#~ "<p>Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:</p>\n"
+#~ "    <ul class='checked'>\n"
+#~ "        <li>Pixel size.</li>\n"
+#~ "        <li>File format.</li>\n"
+#~ "        <li>Desired language.</li>\n"
+#~ "        <li>The URL of the site on which the banner is going to appear.</li>\n"
+#~ "        <li>Banner placement.</li>\n"
+#~ "        <li>Specific colors the banner should include.</li>\n"
+#~ "        <li>Specific message the banner should include.</li>\n"
+#~ "    </ul>"
+#~ msgstr ""
+#~ "<p>Sim. Por favor, contate o seu gestor de conta se quiser um banner personalizado e forneça-lhe as seguintes informações:</p>\n"
+#~ "  <ul class='checked'>\n"
+#~ "   <li>Tamanho em pixels.</li>\n"
+#~ "   <li>Formato do arquivo.</li>\n"
+#~ "   <li>Idioma pretendido.</li>\n"
+#~ "   <li>O URL do site onde o banner vai aparecer.</li>\n"
+#~ "   <li>Localização do banner.</li>\n"
+#~ "   <li>Cores específicas que o banner deve incluir.</li>\n"
+#~ "   <li>Mensagem específica que o banner deve incluir.</li>\n"
+#~ "    </ul>"
+
+#~ msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
+#~ msgstr "<strong>Todas as durações</strong> de 10 segundos a 365 dias."
+
+#~ msgid "<strong>All payouts:</strong> from $1 to $50,000."
+#~ msgstr "<strong>Todos os prêmios:</strong> de $1 a $50.000."
+
+#, fuzzy
+#~| msgid "<strong>In/Out</strong> - where you can profit from the market staying inside, or going outside, two price targets."
+#~ msgid "<strong>In/Out</strong> - Predict the market staying inside or going outside two price targets."
+#~ msgstr "<strong>Dentro/Fora</strong> - onde você pode lucrar quando o mercado fica dentro ou sai fora das barreiras de preço."
+
+#, fuzzy
+#~| msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
+#~ msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
+#~ msgstr "<strong>Sobe/Desce</strong> - preveja se o mercado vai subir ou descer do seu nível atual."
+
+#, fuzzy
+#~| msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
+#~ msgid "<strong>Short positions</strong>: We charge a 2% fee on top of market rates."
+#~ msgstr "<strong>Comissões:</strong> Você irá cobrar uma comissão para processar as transações."
+
+#, fuzzy
+#~| msgid "<strong>Short to long-term</strong> - choose timeframes from 10 seconds to 365 days."
+#~ msgid "<strong>Short to long-term durations</strong> - Choose timeframes from 10 seconds to 365 days"
+#~ msgstr "<strong>De curto a longo prazo</strong> - escolha durações de 10 segundos até 365 dias."
+
+#, fuzzy
+#~| msgid "<strong>Touch/No Touch</strong> - predict if the market will touch or not touch a price target."
+#~ msgid "<strong>Touch/No Touch</strong> - Predict the market touching or not touching a price target."
+#~ msgstr "<strong>Toca/Não Toca</strong> - preveja se o mercado vai tocar ou não um preço-alvo."
+
+#~ msgid "<ul><li> Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>. </li><li> Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button. </li><li> Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option. </li><li> Click anywhere outside the menu to save and close. </li></ul>"
+#~ msgstr "<ul><li> Vá para o menu <strong>Mais ações</strong> e selecione <strong>Definições</strong>. </li><li> Sob<strong>Definições avançadas</strong>, clique no botão <strong>Ver definições avançadas</strong> . </li><li> Na seção <strong>Cookies</strong>, selecione a opção \"<strong>Não bloquear cookies</strong>\". </li><li> Clique em qualquer sítio fora do menu para salvar e sair. </li></ul>"
+
+#~ msgid "<ul><li> Go to the <strong>Safari</strong> menu and select <strong>Preferences</strong>.</li><li> Click on the <strong>Privacy</strong> tab. </li><li> Set \"<strong>Block cookies:</strong>\" to <strong>Never</strong>. </li><li> Click on the <strong>X</strong> button at the top right to save and close. </li></ul>"
+#~ msgstr "<ul><li> Vá para o menu <strong>Safari</strong> e selecione <strong>Preferências</strong>.</li><li> Clique na aba <strong>Privacidade</strong>. </li><li> Defina \"<strong>Bloquear cookies:</strong>\" para <strong>Nunca</strong>. </li><li> Clique no botão <strong>X</strong> no canto superior direito para salvar e sair. </li></ul>"
+
+#~ msgid "<ul><li> Go to the <strong>Tools</strong> menu and select <strong>Internet Options</strong>. </li><li> Click on the <strong>Privacy</strong> tab. </li><li> Click on the <strong>Advanced</strong> button. </li><li> Select the <strong>Override automatic cookie handling</strong>. </li><li> Select <strong>Accept</strong> for both <strong>First-party Cookies</strong> and <strong>Third-party Cookies</strong>. </li><li> Click on the <strong>OK</strong> button to save and close. </li></ul>"
+#~ msgstr "<ul><li> Vá para o menu <strong>Ferramentas</strong> e selecione <strong>Opções de Internet</strong>. </li><li> Clique no menu <strong>Privacidade</strong>. </li><li> Clique no botão <strong>Avançadas</strong>. </li><li> Selecione <strong>Ignorar tratamento automático de cookies</strong>. </li><li> Selecione <strong>Aceitar</strong> tanto para <strong>Cookies Primários</strong> quanto para <strong>Cookies de Terceiros</strong>. </li><li> Clique no botão <strong>OK</strong> para salvar e fechar. </li></ul>"
+
+#~ msgid "<ul><li> Go to the <strong>Tools</strong> menu and select <strong>Preferences</strong>. </li><li> Click on the <strong>Advanced</strong> tab. </li><li> Select <strong>Cookies</strong> from the left column. </li><li> Select <strong>Accept cookies</strong>. </li><li> Click on the <strong>OK</strong> button to save and close. </li></ul>"
+#~ msgstr "<ul><li> Vá para o menu <strong>Ferramentas</strong> e selecione <strong>Preferências</strong>. </li><li> Clique no menu<strong>Avançadas</strong>. </li><li> Selecione <strong>Cookies</strong> na coluna esquerda. </li><li> Selecione <strong>Aceitar cookies</strong>. </li><li> Clique no botão <strong>OK</strong> para salvar e fechar. </li></ul>"
+
+#~ msgid "<ul><li><strong> Open menu</strong> and select <strong>Preferences</strong>.</li><li>Click on the <strong>Privacy</strong> tab.</li><li>Set \"<strong>Firefox will</strong>\" to \"<strong>Remember history</strong>\".</li><li>Click on the <strong>OK</strong> button to save your settings.</li></ul>"
+#~ msgstr "<ul><li><strong> Abra o menu</strong> e selecione <strong>Preferências</strong>.</li><li>Clique na aba <strong>Privacidade</strong>.</li><li> Defina \"<strong>O Firefox deve</strong>\" para \"<strong>Lembrar histórico</strong>\".</li><li>Clique no botão <strong>OK</strong> para salvar as suas definições.</li></ul>"
+
+#~ msgid "<ul><li>Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>.</li><li>Click on the <strong>Show advanced settings</strong>.</li><li>Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.</li><li>Select <strong>Allow local data to be set (recommended)</strong>.</li><li>Click on the <strong>Done</strong> button to save your settings.</li></ul>"
+#~ msgstr "<ul><li>Vá para\"<strong>Menu Chrome (Personalizar e controlar Google Chrome)</strong>\" abra e selecione <strong>Configurações</strong>.</li><li>Clique em <strong>Mostrar configurações avançadas</strong>.</li><li>Clique no botão <strong>Configurações de conteúdo</strong> sob o menu <strong>Privacidade</strong>.</li><li>Selecione <strong>Permitir a configuração de dados locais (recomendado)</strong>.</li><li>Clique no botão <strong>Fechar</strong> para salvar as suas configurações.</li></ul>"
+
+#~ msgid "Accounting & Payments"
+#~ msgstr "Contabilidade e Pagamentos"
+
+#~ msgid "Binary.com"
+#~ msgstr "Binary.com"
+
+#~ msgid "Binary.com open-source projects"
+#~ msgstr "Projetos open-source da Binary.com"
+
+#~ msgid "Insufficient balance"
+#~ msgstr "Saldo insuficiente"
+
+#~ msgid "Max:"
+#~ msgstr "Máx:"
+
+#~ msgid "Min:"
+#~ msgstr "Mín:"
+
+#~ msgid "Summary:"
+#~ msgstr "Resumo:"
+
+#~ msgid "TradingView for Binary.com"
+#~ msgstr "TradingView para Binary.com"
+
+#~ msgid "Ukraine"
+#~ msgstr "Ucrânia"
+
+#~ msgid "Verification Token"
+#~ msgstr "Token de verificação"
+
+#, fuzzy
+#~| msgid "Version 43. Last modified 2016-11-09."
+#~ msgid "Version 4. Last modified 2016-12-30."
+#~ msgstr "Versão 43. Última modificação em 2016-11-09."
+
+#~ msgid "Styles"
+#~ msgstr "Estilos"
+
+#~ msgid "Adjusted Barrier"
+#~ msgstr "Barreira Ajustada"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "Barreira alta ajustada"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "Barreira baixa ajustada"
+
+#~ msgid "Corporate Action"
+#~ msgstr "Ação corporativa"
+
+#~ msgid "Original Barrier"
+#~ msgstr "Barreira original"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "Barreira alta original"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "Barreira baixa original"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "Este contrato foi afetado por um evento de ação corporativa."
 
 #~ msgid "Please %1 to view this page"
 #~ msgstr "Por favor %1 para ver esta página"
@@ -11967,9 +12414,6 @@ msgstr "Limites da Conta"
 #~| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 #~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 #~ msgstr "Para autenticar a sua conta, envie um e-mail para <a href=\"mailto:%1\">%1</a>"
-
-#~ msgid "<strong>Preferences:</strong>"
-#~ msgstr "<strong>Preferências:</strong>"
 
 #~ msgid "<strong>Requirements:</strong>"
 #~ msgstr "<strong>Requisitos:</strong>"
@@ -12400,9 +12844,6 @@ msgstr "Limites da Conta"
 #~ msgid "Choose the barrier(s)"
 #~ msgstr "Escolha a(s) barreira(s)"
 
-#~ msgid "Choose the duration"
-#~ msgstr "Escolha a duração"
-
 #~ msgid "Choose the market, the price target, the time period, and how much you wish to win."
 #~ msgstr "Escolha o mercado, o preço-alvo, o período de tempo e quanto deseja ganhar."
 
@@ -12444,9 +12885,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "Financial rewards"
 #~ msgstr "Recompensa financeira"
-
-#~ msgid "Flexibility"
-#~ msgstr "Flexibilidade"
 
 #~ msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 #~ msgstr "Formato: aaaa-mm-dd (não é necessário para contas de dinheiro virtual)"
@@ -12582,9 +13020,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "Touch/No touch trades"
 #~ msgstr "Negociações Toca/Não Toca"
-
-#~ msgid "Trade all market conditions"
-#~ msgstr "Negocie todas as condições de mercado"
 
 #~ msgid "Try adding more letters or numbers."
 #~ msgstr "Experimente adicionar mais letras ou números."
@@ -12885,9 +13320,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "TickTrade App"
 #~ msgstr "Aplicativo dos tique-taque"
-
-#~ msgid "TradingView"
-#~ msgstr "TradingView"
 
 #~ msgid "{JAPAN ONLY}March 2016"
 #~ msgstr "{JAPAN ONLY}March 2016"
@@ -16714,9 +17146,6 @@ msgstr "Limites da Conta"
 #~ msgid "Contract started"
 #~ msgstr "Contrato Iniciado"
 
-#~ msgid "Daily Report"
-#~ msgstr "Relatório Diário"
-
 #~ msgid "Data will be available after market close."
 #~ msgstr "Os dados estarão disponíveis após o fechamento do mercado."
 
@@ -17174,9 +17603,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "maximum is"
 #~ msgstr "o máximo é"
-
-#~ msgid "minimum is"
-#~ msgstr "o mínimo é"
 
 #~ msgid "<p>Sorry, an error has occurred. Please <a href=\"%1\">try accessing our Cashier</a> again.</p>"
 #~ msgstr "<p>Lamentamos, ocorreu um erro. <a href=\"%1\">Experimente acessar o Caixa</a> novamente.</p>"
@@ -18266,9 +18692,6 @@ msgstr "Limites da Conta"
 #~ msgid "Statistic"
 #~ msgstr "Estatística"
 
-#~ msgid "Summary"
-#~ msgstr "Resumo"
-
 #~ msgid "Tips"
 #~ msgstr "Dicas"
 
@@ -18319,9 +18742,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "<a href='#account-manager-guide'>Account managers</a> can now place trades for their clients with %1’s bulk trader facility."
 #~ msgstr "<a href='#account-manager-guide'>Gerentes de contas</a> podem agora realizar negociações em nome dos seus clientes com o recurso negociador em massa da %1."
-
-#~ msgid "Access the <strong>Settings</strong> section on the account."
-#~ msgstr "Acesse a seção <strong>Configurações</strong> da conta."
 
 #~ msgid "Account manager's guide"
 #~ msgstr "Guia do gerenciador de contas"
@@ -18907,9 +19327,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "Payout of %1 %2 for every point %3 rises from entry level, with stop loss of [plural,_4,%d point,%d points] and stop profit of [plural,_5,%d point,%d points]."
 #~ msgstr "Pagamento de %1 %2 por cada ponto que %3 subir desde o nível de entrada, com limite de perdas de [plural,_4,%d ponto,%d pontos] e limite de ganhos de [plural,_5,%d pontos,%d pontos]."
-
-#~ msgid "Payout must be between <strong>%1</strong> and <strong>%2</strong>."
-#~ msgstr "O pagamento deve estar entre <strong>%1</strong> e <strong>%2</strong>."
 
 #~ msgid "Stake must be between <strong>%1</strong> and <strong>%2</strong>."
 #~ msgstr "O pagamento deve estar entre <strong>%1</strong>e<strong>%2</strong>."
@@ -20171,9 +20588,6 @@ msgstr "Limites da Conta"
 #~ msgid "%1 provides you with the opportunity to either self exclude or"
 #~ msgstr "A %1 oferece a você a oportunidade de se auto-excluir ou"
 
-#~ msgid "10 seconds to 365 days..."
-#~ msgstr "10 segundos a 365 dias..."
-
 #~ msgid "New To Trading?"
 #~ msgstr "Negociar é Novidade para você?"
 
@@ -20185,9 +20599,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "OPEN VIRTUAL ACCOUNT"
 #~ msgstr "ABRA UMA CONTA VIRTUAL"
-
-#~ msgid "Set your position"
-#~ msgstr "Defina a sua posição"
 
 #~ msgid "With payouts from $1 to $100,000, we have you covered."
 #~ msgstr "Com pagamentos desde $1 até $100.000, você está coberto por nós."
@@ -21874,15 +22285,6 @@ msgstr "Limites da Conta"
 #~ msgid "Profit from market movements over the next 5 ticks"
 #~ msgstr "Lucro proveniente de movimentos do mercado nos próximos 5 movimentos mínimos"
 
-#~ msgid "Profit from the market rising or falling from its current level"
-#~ msgstr "Lucro proveniente do mercado em alta ou em queda a partir do seu nível atual"
-
-#~ msgid "Profit from the market staying inside, or going outside, two price targets"
-#~ msgstr "Lucro proveniente do mercado que fica dentro, ou se move para fora, dois objetivos de preço"
-
-#~ msgid "Profit from the market touching or not touching a target price"
-#~ msgstr "Lucro proveniente do mercado que toca ou não toca um preço alvo"
-
 #~ msgid "Rise/Fall, Higher/Lower, Touch/No-touch and In/Out trades."
 #~ msgstr "Contratos Alta/Queda, Mais Alto/Mais Baixo, Toque/Sem Toque e Dentro/Fora."
 
@@ -21927,9 +22329,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "Bollinger Bands are placed two standard deviations above and below the moving average (which in the chart above is %1 %2). Standard deviation is a statistical concept that describes how prices are dispersed around an average value. 95% of the price data will fall between the two trading bands. The simplest way to use Bollinger Bands is to use the upper and lower bands as price targets."
 #~ msgstr "As Bollinger Bands (bandas de Bollinger)possuem dois desvios padrão acima e abaixo da média móvel (que no gráfico acima é %1 %2). O desvio padrão é um conceito estatístico que descreve como os preços são dispersos em torno de um valor médio. Cerca de 95% dos preços ficam entre as duas bandas de negociação. A maneira mais simples de usar as bandas de Bollinger consiste em utilizar as as bandas superior e inferior como alvos de preços."
-
-#~ msgid "Daily Charts"
-#~ msgstr "Gráficos Diários"
 
 #~ msgid "Entire Database"
 #~ msgstr "Base de Dados Completa"
@@ -22056,12 +22455,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "3. The Trade Type"
 #~ msgstr "3. O Tipo de Contrato"
-
-#~ msgid "3. duration"
-#~ msgstr "3. duração"
-
-#~ msgid "5. payout"
-#~ msgstr "5. pagamento"
 
 #~ msgid "Apply Now"
 #~ msgstr "Candidate-se Agora"
@@ -22515,9 +22908,6 @@ msgstr "Limites da Conta"
 #~ msgid "Note for UK telephone numbers:"
 #~ msgstr "Nota para números de telefone do RU:"
 
-#~ msgid "Preferred language"
-#~ msgstr "Idioma preferido"
-
 #~ msgid "The international dialing code for the UK is 44. Therefore if your number is for example 020 76811574 then you should input 442076811574 in order to make it into an internationally recognisable number. i.e. the leading 0 should be omitted."
 #~ msgstr "O código de marcação internacional para o RU é 44. Por isso, se o seu número for, por exemplo, 020 76811574 deve inserir 442076811574 para o tornar num número internacionalmente reconhecível, isto é, o primeiro 0 deve ser omitido."
 
@@ -22914,9 +23304,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "Steady"
 #~ msgstr "Estáveis"
-
-#~ msgid "Table format"
-#~ msgstr "Formato de Tabela"
 
 #~ msgid "The above table represents a snapshot of the average client positions. This information is generally updated four times a day (at 10 minutes past 7am, 12am, 5pm and 10pm GMT). It is computed by calculating mathematical ratios known as delta, vega and theta and represents approximate estimates of market positions only."
 #~ msgstr "A tabela acima representa um instantâneo das posições médias do cliente. Esta informação é geralmente atualizada quatro vezes por dia (10 minutos depois das 07h, 12h, 17h e 20h GMT). Este instantâneo é calculado através do cálculo de rácios matemáticos conhecidos como o delta, vega e teta, e representa apenas estimativas aproximadas de posições no mercado."
@@ -23771,9 +24158,6 @@ msgstr "Limites da Conta"
 #~ msgid "Authentication is not available at the moment."
 #~ msgstr "A Autenticação não está disponível de momento."
 
-#~ msgid "Click on the 'Log In' button to access your account"
-#~ msgstr "Clique no botão 'Início de Sessão' para aceder à sua conta"
-
 #~ msgid "Congratulations! You've now joined our community of 300,000+ traders worldwide who continue to choose our award-winning fixed odds platform as their preferred platform for trading the financial markets."
 #~ msgstr "Parabéns! Aderiu à nossa comunidade de mais de 300.000 negociadores em todo o mundo que continuam a escolher a nossa premiada plataforma de odds fixas como a sua plataforma preferida para negociar nos mercados financeiros."
 
@@ -24016,21 +24400,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "8h%ctx(hours)"
 #~ msgstr "8h%ctx(horas)"
-
-#~ msgid ""
-#~ "<p>A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria: </p>\n"
-#~ "<ul>\n"
-#~ "<li>Have not previously been a %1 customer.</li>\n"
-#~ "<li>Have made the minimum deposit.</li>\n"
-#~ "<li>Are over 18.</li>\n"
-#~ "</ul>"
-#~ msgstr ""
-#~ "<p>Um cliente é alguém que foi referenciado através de uma das suas ferramentas de marketing e que depositou dinheiro na sua respectiva conta %1. Ele deve cumprir os seguintes critérios: </p>\n"
-#~ "<ul>\n"
-#~ "<li>Não ter sido anteriormente um cliente da %1.</li>\n"
-#~ "<li>Ter realizado o depósito mínimo.</li>\n"
-#~ "<li>Ter mais de 18 anos.</li>\n"
-#~ "</ul>"
 
 #~ msgid ""
 #~ "<p>Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:</p>\n"

@@ -1,20 +1,34 @@
+[% BLOCK image %]
+<div class="gr-row">
+    [% FOREACH i IN [1..3] %]
+        <div class="gr-4"><img class="responsive" src="[% request.url_for('images/pages/home/step-' _ i _ '.svg') %]"/></div>
+    [% END %]
+</div>
+[% END %]
+
+[% BLOCK strong_p %]
+<div class="gr-row">
+    [% paragraphs = [ l("Define your position"), l("Get your price"), l("Make your trade") ] %]
+    [% FOREACH p IN paragraphs %]
+        <div class="gr-4"><p class="center-text"><strong>[% p %]</strong></p></div>
+    [% END %]
+</div>
+[% END %]
+
+[% BLOCK li %]
+    <strong>[% li.header %]</strong>
+    <p>[% li.description %]</p>
+    [% content %]
+[% END %]
+
 <div class="section-content section-5">
     <h1>[% l("How to trade binary options?") %]</h1>
 
     <div class="first subsection">
         <a name="binary-trading-in-3-easy-steps-section"></a>
 
-        <div class="gr-row">
-            <div class="gr-4"><img class="responsive" src="[% request.url_for('images/pages/home/step-1.svg') %]"/></div>
-            <div class="gr-4"><img class="responsive" src="[% request.url_for('images/pages/home/step-2.svg') %]"/></div>
-            <div class="gr-4"><img class="responsive" src="[% request.url_for('images/pages/home/step-3.svg') %]"/></div>
-        </div>
-
-        <div class="gr-row">
-            <div class="gr-4"><p class="center-text"><strong>[% l("Define your position") %]</strong></p></div>
-            <div class="gr-4"><p class="center-text"><strong>[% l("Get your price") %]</strong></p></div>
-            <div class="gr-4"><p class="center-text"><strong>[% l("Make your trade") %]</strong></p></div>
-        </div>
+        [% INCLUDE image %]
+        [% INCLUDE strong_p %]
 
         <div>
             <a name="define-your-position-section"></a>
@@ -25,9 +39,7 @@
 
         <img class="responsive" src="[% request.url_for('images/pages/get-started/define-your-position.svg') %]"/>
         <ol>
-            <li>
-                <strong>[% l("Underlying market") %]</strong>
-                <p>[% l("Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs.") %]</p>
+            [% WRAPPER li header=l("Underlying market") description=l("Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs.") %]
                 <p>[% l("Choose from five types of markets and their respective assets:") %]</p>
                 <ul class="bullet">
                     <li>[% l("Currencies - All major Forex pairs") %]</li>
@@ -36,29 +48,18 @@
                     <li>[% l("OTC stocks - Blue-chip stock contracts sourced from the over-the-counter market") %]</li>
                     <li>[% l("Volatility indices - [_1]'s proprietary indices that simulate market forces", website_name) %]</li>
                 </ul>
-            </li>
-            <li>
-                <strong>[% l("Trade type") %]</strong>
-                <p>[% l("There are four main trade types for you to choose from:") %]</p>
+            [% END %]
+            [% WRAPPER li header=l("Trade type") description=l("There are four main trade types for you to choose from:") %]
                 <ul class="bullet">
                     <li>[% l("Rise/Fall - Predict if the market will rise or fall from its current level") %]</li>
                     <li>[% l("Higher/Lower - Predict if the market will end higher or lower than a target price") %]</li>
                     <li>[% l("Touch/No Touch - Predict if the market will touch or not touch a target price") %]</li>
                     <li>[% l("In/Out - Predict if the market will stay between or outside two target prices") %]</li>
                 </ul>
-            </li>
-            <li>
-                <strong>[% l("Duration") %]</strong>
-                <p>[% l("Set the length of your trade, from 10 seconds to 365 days.") %]</p>
-            </li>
-            <li>
-                <strong>[% l("Barrier(s)") %]</strong>
-                <p>[% l("Set barrier(s) to define your position and trigger the payout you will receive.") %]</p>
-            </li>
-            <li>
-                <strong>[% l("Payout") %]</strong>
-                <p>[% l("Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake.") %]</p>
-            </li>
+            [% END %]
+            [% INCLUDE li header=l("Duration") description=l("Set the length of your trade, from 10 seconds to 365 days.") %]
+            [% INCLUDE li header=l("Barrier(s)") description=l("Set barrier(s) to define your position and trigger the payout you will receive.") %]
+            [% INCLUDE li header=l("Payout") description=l("Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake.") %]
         </ol>
     </div>
 
@@ -80,35 +81,17 @@
         <h2>[% l("Interested? Why not try a virtual account") %]</h2>
         <p>[% l("Test-run [_1], and sharpen your trading skills, with a no-risk, no-commitment, virtual account.", website_name) %]</p>
 
-        <div class="gr-row">
-            <div class="gr-4"><img class="responsive" src="[% request.url_for('images/pages/home/step-1.svg') %]"/></div>
-            <div class="gr-4"><img class="responsive" src="[% request.url_for('images/pages/home/step-2.svg') %]"/></div>
-            <div class="gr-4"><img class="responsive" src="[% request.url_for('images/pages/home/step-3.svg') %]"/></div>
-        </div>
-
-        <div class="gr-row">
-            <div class="gr-4"><p class="center-text"><strong>[% l("Define your position") %]</strong></p></div>
-            <div class="gr-4"><p class="center-text"><strong>[% l("Get your price") %]</strong></p></div>
-            <div class="gr-4"><p class="center-text"><strong>[% l("Make your trade") %]</strong></p></div>
-        </div>
+        [% INCLUDE image %]
+        [% INCLUDE strong_p %]
 
         <div class="gr-padding-10 center-text client_logged_out invisible">
-            <a class="button" href="[% request.url_for('/') %]">
-                <span>[% l("Try it now") %]</span>
-            </a>
+            <a class="button" href="[% request.url_for('/') %]"><span>[% l("Try it now") %]</span></a>
             <p>[% l("No risk, \$10K virtual money account") %]</p>
         </div>
     </div>
 
-    <div class="center-text">
-        <div class="subsection-navigation">
-            <br/>
-            <a class="back button" href="javascript:;">
-                <span>[% l("Back") %]</span>
-            </a>
-            <a class="next button" href="javascript:;">
-                <span>[% l("Next") %]</span>
-            </a>
-        </div>
+    <div class="subsection-navigation center-text gr-padding-20">
+        <a class="back button" href="javascript:;"><span>[% l("Back") %]</span></a>
+        <a class="next button" href="javascript:;"><span>[% l("Next") %]</span></a>
     </div>
 </div>

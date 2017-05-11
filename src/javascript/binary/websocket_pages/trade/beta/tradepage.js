@@ -6,6 +6,7 @@ const commonTrading             = require('../common');
 const chartFrameCleanup         = require('../charts/chart_frame').chartFrameCleanup;
 const displayCurrencies         = require('../currency');
 const Defaults                  = require('../defaults');
+const BinarySocket              = require('../../socket');
 const PortfolioInit             = require('../../user/account/portfolio/portfolio.init');
 const ViewPopup                 = require('../../user/view_popup/view_popup');
 const BinaryPjax                = require('../../../base/binary_pjax');
@@ -173,6 +174,7 @@ const TradePage_Beta = (() => {
         PortfolioInit.onUnload();
         chartFrameCleanup();
         commonTrading.clean();
+        BinarySocket.clear('active_symbols');
     };
 
     const onDisconnect = () => {

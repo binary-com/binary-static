@@ -5,6 +5,7 @@ const localize             = require('../base/localize').localize;
 const State                = require('../base/storage').State;
 const makeOption           = require('../common_functions/common_functions').makeOption;
 const FormManager          = require('../common_functions/form_manager');
+const BinarySocket         = require('../websocket_pages/socket');
 const Cookies              = require('../../lib/js-cookie');
 require('select2');
 
@@ -112,7 +113,7 @@ const AccountOpening = (() => {
                     $address_state.text(client_state);
                 }
             }
-            $address_state.parent().parent().show();
+            $address_state.parent().parent().removeClass('invisible');
 
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());
@@ -141,7 +142,7 @@ const AccountOpening = (() => {
             { selector: '#address_line_2',     validations: ['address', ['length', { min: 0, max: 70 }]] },
             { selector: '#address_city',       validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
             { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['general', ['length', { min: 0, max: 35 }]] },
-            { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
+            { selector: '#address_postcode',   validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
             { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
             { selector: '#secret_question',    validations: ['req'] },
             { selector: '#secret_answer',      validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },

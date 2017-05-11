@@ -1,4 +1,5 @@
 const Client = require('../../../base/client');
+const BinarySocket = require('../../socket');
 
 const Authenticate = (() => {
     'use strict';

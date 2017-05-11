@@ -4,22 +4,22 @@
     <img class="responsive" id="lga_icon_footer" src="[% request.url_for('images/pages/get-started/binary-option-basics.svg') %]"/>
     <p>[% l("You only need to make four decisions to execute a binary contract.") %]</p>
 
-    <h2>[% l("1. Choose the Underlying") %]</h2>
+    <h2>1. [% l("Choose the Underlying") %]</h2>
     <p>[% l("The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset.") %]</p>
 
-    <h2>[% l("2. Choose the Duration of the Trade") %]</h2>
+    <h2>2. [% l("Choose the Duration of the Trade") %]</h2>
     <p>[% l("Each binary option contract runs for a set time - with [_1] you can choose a contract that runs between 10 seconds and 365 days.", website_name) %]</p>
 
-    <h2>[% l("3. Choose how you want to Trade the Market") %]</h2>
+    <h2>3. [% l("Choose how you want to Trade the Market") %]</h2>
     <p>[% l("[_1] offers you four ways to trade a particular asset:", website_name) %]</p>
     <ul>
-        <li>[% l("<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level.") %]</li>
-        <li>[% l("<strong>Higher/Lower</strong> - Predict the market ending higher or lower than a price target.") %]</li>
-        <li>[% l("<strong>Touch/No Touch</strong> - Predict the market touching or not touching a price target.") %]</li>
-        <li>[% l("<strong>In/Out</strong> - Predict the market staying inside or going outside two price targets.") %]</li>
+        <li><strong>[% l("Rise/Fall") %]</strong> - [%  l("Predict the market rising or falling from its current level.") %]</li>
+        <li><strong>[% l("Higher/Lower") %]</strong> - [% l("Predict the market ending higher or lower than a price target.") %]</li>
+        <li><strong>[% l("Touch/No Touch") %]</strong> - [% l("Predict the market touching or not touching a price target.") %]</li>
+        <li><strong>[% l("In/Out") %]</strong> - [% l("Predict the market staying inside or going outside two price targets.") %]</li>
     </ul>
     <br />
 
-    <h2>[% l("4. Choose your Stake and Potential Return") %]</h2>
+    <h2>4. [% l("Choose your Stake and Potential Return") %]</h2>
     <p>[% l("Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. [_1] offers payouts from \$1 to \$50,000.", website_name) %]</p>
 </div>
