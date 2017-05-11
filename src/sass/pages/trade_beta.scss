@@ -22,15 +22,6 @@
     }
 }
 
-@keyframes spinning {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 @keyframes fade {
     from {
         opacity: 0;
@@ -55,12 +46,9 @@
 }
 
 #trading_socket_container_beta {
-    font-size: 1rem;
+    font-size: $FONT_SIZE_N;
     position: relative;
     opacity: 0;
-    #markets_closed_msg {
-        margin-top: 0;
-    }
     &.show {
         animation: fade 1s;
         animation-fill-mode: forwards;
@@ -69,9 +57,6 @@
         border-radius: 5px;
         box-sizing: border-box;
         height: 28px;
-    }
-    b {
-        font-weight: bold;
     }
     label {
         line-height: 28px;
@@ -85,9 +70,9 @@
             font-size: 0;
             li {
                 @include BIDIR_VALUE(margin, 0 2px 0 0, 0 0 0 2px);
-                font-size: 1rem;
+                font-size: $FONT_SIZE_N;
                 .tm-a-2 {
-                    font-size: 80%;
+                    font-size: $FONT_SIZE_XS;
                 }
             }
         }
@@ -112,37 +97,8 @@
             margin-bottom: 5px;
         }
     }
-    .vertical-row {
-        flex-direction: column;
-        display: flex;
-    }
-    .nav_placeholder {
-        display: none;
-        overflow: hidden;
-        width: 100%;
-        background-color: $COLOR_BLUE;
-        padding: 3px 0 3px 10px;
-        margin: 10px 0;
-        color: $COLOR_WHITE;
-        text-transform: capitalize;
-        &:after {
-            content: '\25BC';
-            font-size: 50%;
-            right: 0;
-            position: absolute;
-            margin-right: 10px;
-        }
-    }
     .form_label input, .form_label select {
         max-width: 170px;
-    }
-    input[type=checkbox] {
-        &.show_menu {
-            display: none;
-        }
-        &#market_show_menu:checked ~ #contract_market_nav, &#contract_form_show_menu:checked ~ #contract_form_name_nav {
-            display: flex;
-        }
     }
     .big-col {
         flex: 1.5;
@@ -225,16 +181,9 @@
         }
         border: 1px solid $COLOR_GRAY;
         flex: 1 0 auto;
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
         input[type=number] {
             -moz-appearance: textfield;
         }
-    }
-    #contract_form_content {
-        padding: 0 10px;
     }
     .contract_heading {
         text-transform: capitalize;
@@ -338,7 +287,7 @@
         .contract_purchase_reference {
             margin-top: auto;
             line-height: normal;
-            font-size: 0.75rem;
+            font-size: $FONT_SIZE_XS;
         }
         #contract_purchase_button {
             margin: 10px auto 0;
@@ -358,7 +307,7 @@
         .price_comment, .contract_error, #contract_purchase_balance {
             background-color: $COLOR_GRAY;
             line-height: 1.5rem;
-            font-size: 0.8rem;
+            font-size: $FONT_SIZE_XS;
             padding: 5px;
             text-align: center;
             flex: 0 0 auto;
@@ -374,7 +323,7 @@
         }
         #confirmation_message {
             position: relative;
-            font-size: 14px;
+            font-size: $FONT_SIZE_S;
             line-height: 18px;
         }
         #contract_purchase_descr {
@@ -387,7 +336,7 @@
             padding: 0;
             line-height: 20px;
             display: flex;
-            font-size: 0.75rem;
+            font-size: $FONT_SIZE_XS;
             position: relative;
             table td {
                 border: 0;
@@ -411,10 +360,10 @@
             line-height: 20px;
             overflow: hidden;
             #current_tick_number {
-                font-size: 0.8rem;
+                font-size: $FONT_SIZE_XS;
             }
             #current_tick_spot {
-                font-size: 1.05rem;
+                font-size: $FONT_SIZE_N;
                 margin-bottom: 18px;
             }
             #last_digits_list {
@@ -422,12 +371,12 @@
                     padding: 0 6px;
                     .digit {
                         font-weight: bold;
-                        font-size: 1.05rem;
+                        font-size: $FONT_SIZE_N;
                         margin-bottom: 8px;
                         min-width: 10px;
                     }
                     .number {
-                        font-size: 0.8rem;
+                        font-size: $FONT_SIZE_S;
                         line-height: normal;
                     }
                 }
@@ -444,7 +393,7 @@
         .contract_amount, .contract_payout, .payout, .stake {
             @include BIDIR_VALUE(padding, 3px, 3px);
             line-height: 1.5;
-            font-size: 90%;
+            font-size: $FONT_SIZE_N;
             flex: 1 0 auto;
         }
         .payout {
@@ -452,7 +401,7 @@
         }
         .contract_amount, .contract_payout {
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: $FONT_SIZE_L;
             border-radius: 5px;
         }
     }
@@ -486,7 +435,7 @@
     #contract_confirmation_container {
         @include BIDIR_VALUE(text-align, left, right);
         #contract_purchase_heading, #confirmation_error_heading {
-            font-size: 18px;
+            font-size: $FONT_SIZE_L;
             line-height: 35px;
             margin-bottom: 0;
             color: $COLOR_WHITE;
@@ -533,9 +482,6 @@
             display: inline-flex;
         }
     }
-    #period_row {
-        display: none;
-    }
     #duration_amount {
         @include BIDIR_PROP(margin-right, margin-left, 5px);
     }
@@ -561,26 +507,17 @@
         width: 80px;
     }
     #expiry_date, #expiry_time {
-        font-size: 90%;
+        font-size: $FONT_SIZE_N;
     }
-    .barrier_class input, #period {
+    .barrier_class input {
         width: 175px;
         @include BIDIR_PROP(margin-right, margin-left, 5px);
-    }
-    #period {
-        font-size: 80%;
     }
     .medium_width_input {
         width: 100px;
     }
     #amount {
         margin-top: -1px;
-    }
-    .radio_label {
-        margin: 0 10px;
-    }
-    #contract_description1 #contract_description2 #pricing_table_container #open_positions_container {
-        display: none;
     }
 }
 
@@ -606,7 +543,7 @@
                     }
                 }
                 #spot {
-                    font-size: 14px;
+                    font-size: $FONT_SIZE_S;
                 }
             }
         }
@@ -645,12 +582,12 @@
         #contract_market_form_container {
             ul#contract_form_name_nav {
                 a.tm-a {
-                    font-size: 65%;
+                    font-size: $FONT_SIZE_XXS;
                 }
                 li.tm-li-2 {
                     margin: 0;
                     a.tm-a-2 {
-                        font-size: 80%;
+                        font-size: $FONT_SIZE_XS;
                     }
                 }
             }
@@ -696,9 +633,6 @@
         #contract_prices_container .price_container .price_wrapper {
             width: calc(100% - 30px);
         }
-        #japan_analysis #trading_analysis_content ul#analysis_tabs {
-            flex-direction: column;
-        }
     }
 }
 
@@ -711,7 +645,7 @@
         a.tm-a {
             padding: 0 5px;
             width: auto;
-            font-size: 80%;
+            font-size: $FONT_SIZE_XS;
             line-height: 28px;
         }
         .tm-ul-2 {
@@ -764,7 +698,7 @@
                     }
                     a {
                         display: block;
-                        font-size: 14px;
+                        font-size: $FONT_SIZE_S;
                         text-decoration: none;
                         &a:hover {
                             background: $COLOR_GRAY;
@@ -802,15 +736,10 @@
     color: $COLOR_RED;
 }
 
-/*
- * these styles are for trade analysis and will be removed
- *
- * DO NOT ADD ANY COMMON STYLING BELOW THIS. ALL OTHER STYLING GO ABOVE THIS
- */
 #content #trading_socket_container_beta {
     #trading_analysis_content {
         height: 100%;
-        font-size: 1rem;
+        font-size: $FONT_SIZE_N;
         #analysis_tabs {
             white-space: nowrap;
         }
@@ -860,33 +789,4 @@
             margin-bottom: 20px;
         }
     }
-    #japan_analysis #trading_analysis_content {
-        margin-top: 15px;
-        font-size: 1rem;
-        ul#analysis_tabs {
-            @include ul_segmented_navigation;
-            font-size: 85%;
-            border-bottom: none;
-            li {
-                @include li_segmented_element;
-                background: transparent;
-                border-radius: 0;
-                padding: 6px 0;
-                line-height: 1;
-                font-size: 1rem;
-            }
-        }
-        #analysis_content {
-            border: none;
-            #chart_frame {
-                height: 630px !important;
-            }
-            #portfolio {
-                padding: 0;
-            }
-        }
-    }
 }
-/*
- * DO NOT ADD ANY COMMON STYLING BELOW THIS. ALL OTHER STYLING GO ABOVE THIS
- */

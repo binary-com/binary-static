@@ -2,7 +2,7 @@
 
 [% BLOCK footer_column %]
 <div class="gr-4 [% wrapper_class %]">
-    <h4 class="secondary-color">[% header %]</h4>
+    <h4 class="secondary-color"><strong>[% header %]</strong></h4>
     [% INCLUDE list items %]
 </div>
 [% END %]
@@ -13,7 +13,7 @@
 </div> [% # closes div#content %]
 </div>[% #closes div#content-holder %]
 <div id="footer" class="no-print">
-    <div id="footer-menu" class="primary-bg-color">
+    <div id="footer-menu" class="primary-bg-color gr-padding-10">
         <div class="container">
             <div class="gr-row gr-padding-10">
                 <div class="gr-6 gr-12-m gr-parent gr-no-gutter">
@@ -79,12 +79,12 @@
             </div>
         </div>
     </div>
-    <div id="footer-regulatory" class="primary-color-dark">
+    <div id="footer-regulatory" class="primary-color-dark gr-padding-10 gr-child">
         <div class="container">
             <div class="gr-row">
-                <div id="regulatory-text" class="gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color">
+                <p id="regulatory-text" class="gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color no-margin">
                     [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
-                </div>
+                </p>
                 <div class="ja-hide gr-3 gr-12-m gr-5-p center-text" id="social-networks">
                     <div class="gr-row ja-hide id-hide">
                         <div class="gr-5">
@@ -98,7 +98,24 @@
                             </a>
                         </div>
                     </div>
-                    [% PROCESS global/social.html.tt %]
+                    [% BLOCK social_icons %]
+                        <div class="gr-padding-10 gr-row">
+                            <div class="gr-2 gr-1-p gr-3-m"></div>
+                            [% FOREACH networks %]
+                                <a href="[% href %]" target="_blank" class="gr-2 gr-1-m gr-no-gutter-right">
+                                    <img class="responsive" src="[% request.url_for('images/pages/footer/' _ media _ '.svg') %]"/>
+                                </a>
+                            [% END %]
+                        </div>
+                    [% END %]
+
+                    [% INCLUDE social_icons networks=[
+                        { media='youtube',     href='https://www.youtube.com/user/BinaryTradingVideos' },
+                        { media='google-plus', href='https://plus.google.com/106251151552682209951' },
+                        { media='facebook',    href='https://www.facebook.com/binarydotcom' },
+                        { media='twitter',     href='https://twitter.com/Binarydotcom' },
+                        { media='linkedin',    href='https://www.linkedin.com/company/binary-com' },
+                    ] %]
                 </div>
             </div>
         </div>
@@ -106,13 +123,13 @@
     <div id="footer-last" class="primary-bg-color">
         <div class="container">
             <div class="gr-padding-10">
-                <p class="gambling content-inverse-color">
+                <p class="gambling content-inverse-color no-para-margin">
                     [% l('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class="ja-hide">Read about <a href="[_1]">Responsible Trading</a>.</span>', request.url_for('responsible-trading')) %]
                 </p>
             </div>
         </div>
     </div>
-    <div id="end-note" class="invisible"></div>
+    <div id="end-note" class="invisible content-inverse-color center-text"></div>
 </div>[% #closes div#footer %]
 
         </div>[% #closes div#page-wrapper %]

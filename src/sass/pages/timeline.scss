@@ -33,7 +33,7 @@ $grow-effect-duration: 0.4s;
         }
         border: 1px solid $COLOR_GRAY;
         font-weight: bold;
-        font-size: 22px;
+        font-size: $FONT_SIZE_XL;
         transition-duration: $grow-effect-duration;
         transition-property: transform;
         box-shadow: 0 0 2px $COLOR_GRAY;

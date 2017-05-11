@@ -23,26 +23,9 @@
     }
 }
 
-@mixin topspace {
-    margin-top: 40px;
-}
-
-@mixin section-separator {
-    .section:first-child {
-        padding-bottom: 50px;
-    }
-    .section:not(:first-child) {
-        padding: 20px 0 50px;
-    }
-    .section:last-child {
-        padding-bottom: 0;
-        border-bottom: none;
-    }
-}
-
 @mixin menu-left {
     ul {
-        font-size: 90%;
+        font-size: $FONT_SIZE_N;
         li {
             list-style-image: none;
             margin: 0;
@@ -68,35 +51,11 @@
             }
         }
     }
-    .open-account {
-        background: $COLOR_LIGHT_GRAY;
-        padding: 20px;
-    }
-}
-
-@mixin menu-right {
-    div {
-        background: $COLOR_LIGHT_GRAY;
-        margin-bottom: 20px;
-        padding: 20px;
-        text-align: center;
-        p {
-            margin: 0;
-        }
-    }
-    .open-account {
-        p {
-            margin-bottom: 1em;
-        }
-        padding: 20px;
-    }
 }
 
 @mixin link-button {
     color: $COLOR_WHITE;
-    text-decoration: none;
     text-align: center;
-    line-height: 100%;
     background: $COLOR_GREEN;
     border-radius: $BORDER_RADIUS;
     text-transform: capitalize;

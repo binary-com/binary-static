@@ -29,10 +29,10 @@
 [% END %]
 
 [% IF get_started %]
-<div class="get-started">
+<div class="get-started static_full">
     <div class="gr-row">
         <div class="gr-3 gr-hide-m">
-            <div class="sidebar-left">
+            <div class="sidebar">
                 [% INCLUDE nav items=[
                     { section='what-is-binary-trading', text=l("Why choose binary trading?") },
                     { section='types-of-trades',        text=l("Types of trades") },

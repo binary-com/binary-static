@@ -7,14 +7,14 @@
                 <div id="[% box.id %]"></div>
                 <div class="section-header">[% box.header %]</div>
             </a>
-            <div class="section-info">[% box.info %]</div>
+            <div class="section-info gr-padding-10 gr-gutter">[% box.info %]</div>
         </div>
     </div>
     [% END %]
 </div>
 [% END %]
 
-<dl>
+<div class="center-text">
     [% INCLUDE box boxes=[
         { id='what-is-binary-trading', header=l("Why choose binary trading?"), info=l("Learn about one of the fastest growing sectors of the finance industry.") },
         { id='types-of-trades',        header=l("Types of trades"),            info=l("Read about the five types of trade offered by [_1].", website_name) },
@@ -34,4 +34,4 @@
     [% INCLUDE box boxes=[
         { id='glossary', header=l("Glossary"), info=l("Check out some technical terms before you start.") },
     ] %]
-</dl>
+</div>

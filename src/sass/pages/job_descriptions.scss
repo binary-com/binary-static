@@ -13,10 +13,6 @@
         margin-top: 1.1em;
         width: 50%;
     }
-    h2 {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
     .eq {
         padding: 10px;
         width: 30%;
@@ -27,13 +23,8 @@
     }
 }
 
-.job-details {
-    .sidebar {
-        position: relative;
-    }
-    .dept-image {
-        width: 80%;
-    }
+.job-details .dept-image {
+    width: 80%;
 }
 
 @media screen and (max-width: 800px) {

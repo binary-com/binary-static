@@ -282,7 +282,7 @@
     position: absolute;
     color: $COLOR_WHITE;
     z-index: 107;
-    font-size: 1.7em;
+    font-size: $FONT_SIZE_XXL;
     font-family: 'casino_handregular', 'Arial';
     -webkit-transition: opacity 400ms cubic-bezier(0.42, 0, 0.58, 1);
     -moz-transition: opacity 400ms cubic-bezier(0.42, 0, 0.58, 1);
