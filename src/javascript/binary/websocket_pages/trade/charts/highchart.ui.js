@@ -39,7 +39,7 @@ const HighchartUI = (() => {
             getLabels('end_time');
     };
 
-    const setCartOptions = (params) => {
+    const setChartOptions = (params) => {
         chart_options = {
             chart: {
                 backgroundColor: null, /* make background transparent */
@@ -163,7 +163,7 @@ const HighchartUI = (() => {
     return {
         setLabels               : setLabels,
         getLabels               : getLabels,
-        setCartOptions          : setCartOptions,
+        setChartOptions         : setChartOptions,
         getChartOptions         : () => chart_options,
         getHighchartOptions     : getHighchartOptions,
         replaceExitLabelWithSell: replaceExitLabelWithSell,
