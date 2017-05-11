@@ -108,9 +108,10 @@ sub all_pages {
         ['user/settings/assessmentws',       'user/settings/financial_assessment',   'default',    'Financial Assessment',    'ja'],
         ['user/settings/detailsws',          'user/settings/personal_details',       'default',    'Personal Details'],
 
-        ['logged_inws',                'global/logged_in',     undef],
-        ['trade/bet_explanation',      'bet/explanation',      undef],
-        ['trade/bet_explanation_beta', 'bet/beta/explanation', undef],
+        ['logged_inws',                'global/logged_in',       undef],
+        ['trade/bet_explanation',      'bet/explanation',        undef],
+        ['trade/bet_explanation_beta', 'bet/beta/explanation',   undef],
+        ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],
     );
 }
 

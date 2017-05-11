@@ -8,7 +8,6 @@ const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
 const isEmptyObject      = require('../../base/utility').isEmptyObject;
 const formatMoney        = require('../../common_functions/currency_to_symbol').formatMoney;
-const addComma           = require('../../common_functions/string_util').addComma;
 const toISOFormat        = require('../../common_functions/string_util').toISOFormat;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
@@ -606,14 +605,15 @@ const commonTrading = (() => {
         const payout  = document.getElementById('contract_purchase_payout');
         const cost    = document.getElementById('contract_purchase_cost');
         const profit  = document.getElementById('contract_purchase_profit');
+        const currency = Client.get('currency');
 
-        labelValue(cost, localize('Stake'), addComma(Math.abs(pnl)));
-        labelValue(payout, localize('Payout'), addComma(final_price));
+        labelValue(cost, localize('Stake'), formatMoney(currency, Math.abs(pnl), 1));
+        labelValue(payout, localize('Payout'), formatMoney(currency, final_price, 1));
 
         const isWin = (final_price > 0);
         $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
         labelValue(profit, isWin ? localize('Profit') : localize('Loss'),
-            addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl)));
+            formatMoney(currency, isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl), 1));
     };
 
     const displayTooltip_Beta = (market, symbol) => {
