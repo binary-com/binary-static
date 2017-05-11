@@ -19,6 +19,7 @@ exportAllFunctions(require('./binary/common_functions/check_new_release'));
 
 require('event-source-polyfill');
 require('./lib/jquery.sparkline.js');
+require('./lib/plugins');
 require('jquery.scrollto');
 
 require('./binary/components/trackjs_onerror');

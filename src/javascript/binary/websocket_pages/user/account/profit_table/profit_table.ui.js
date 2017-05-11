@@ -15,8 +15,8 @@ const ProfitTableUI = (() => {
     let oauth_apps = {},
         currency;
 
-    const profit_table_id = 'profit-table',
-        cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
+    const profit_table_id = 'profit-table';
+    const cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
 
     const createEmptyTable = () => {
         const header = [
@@ -34,7 +34,7 @@ const ProfitTableUI = (() => {
         const jp_client = jpClient();
         currency = Client.get('currency');
 
-        header[7] += (jp_client ? '' : (currency ? ' (' + currency + ')' : ''));
+        header[7] += (jp_client ? '' : (currency ? ` (${currency})` : ''));
 
         const footer = [localize('Total Profit/Loss'), '', '', '', '', '', '', '', ''];
 
@@ -61,37 +61,44 @@ const ProfitTableUI = (() => {
             acc_total = 0;
         }
 
-        const current_total = transactions.reduce(function(previous, current) {
+        const current_total = transactions.reduce((previous, current) => {
             const buy_price  = Number(parseFloat(current.buy_price));
             const sell_price = Number(parseFloat(current.sell_price));
             const pl = sell_price - buy_price;
             return previous + pl;
         }, 0);
 
-        const total = acc_total + current_total,
-            jp_client = jpClient(),
-            sub_total_type = (total >= 0) ? 'profit' : 'loss';
+        const total = acc_total + current_total;
+        const jp_client = jpClient();
+        const sub_total_type = (total >= 0) ? 'profit' : 'loss';
 
         $('#pl-day-total').find(' > .pl').text(jp_client ? formatMoney(currency, total) : addComma(Number(total).toFixed(2)))
             .removeClass('profit loss')
             .addClass(sub_total_type);
     };
 
-    const createProfitTableRow = function(transaction) {
+    const createProfitTableRow = (transaction) => {
         const profit_table_data = ProfitTable.getProfitTabletData(transaction);
         const pl_type = (profit_table_data.pl >= 0) ? 'profit' : 'loss';
 
         const jp_client = jpClient();
 
-        const data = [jp_client ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jp_client ? formatMoney(currency, profit_table_data.payout) : profit_table_data.payout, '', jp_client ? formatMoney(currency, profit_table_data.buyPrice) : profit_table_data.buyPrice, (jp_client ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate), jp_client ? formatMoney(currency, profit_table_data.sellPrice) : profit_table_data.sellPrice, jp_client ? formatMoney(currency, profit_table_data.pl) : profit_table_data.pl, ''];
+        const data = [
+            jp_client ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate,
+            `<span ${showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id])}>${profit_table_data.ref}</span>`,
+            jp_client ? formatMoney(currency, profit_table_data.payout) : profit_table_data.payout,
+            '',
+            jp_client ? formatMoney(currency, profit_table_data.buyPrice)  : profit_table_data.buyPrice,
+            jp_client ? toJapanTimeIfNeeded(transaction.sell_time)         : profit_table_data.sellDate,
+            jp_client ? formatMoney(currency, profit_table_data.sellPrice) : profit_table_data.sellPrice,
+            jp_client ? formatMoney(currency, profit_table_data.pl)        : profit_table_data.pl,
+            '',
+        ];
         const $row = Table.createFlexTableRow(data, cols, 'data');
 
         $row.children('.pl').addClass(pl_type);
-        $row.children('.contract').html(profit_table_data.desc + '<br>');
-        $row.children('.buy-date').each(function() {
-            $(this).wrapInner('<div class="new-width"></div>');
-        });
-        $row.children('.sell-date').each(function() {
+        $row.children('.contract').html(`${profit_table_data.desc}<br>`);
+        $row.children('.buy-date, .sell-date').each(function() {
             $(this).wrapInner('<div class="new-width"></div>');
         });
 
@@ -109,15 +116,15 @@ const ProfitTableUI = (() => {
 
     const clearTableContent = () => {
         Table.clearTableBody(profit_table_id);
-        $('#' + profit_table_id + '>tfoot').hide();
+        $(`#${profit_table_id}`).find('> tfoot').hide();
     };
 
     const errorMessage = (msg) => {
         const $err = $('#profit-table-container').find('#error-msg');
         if (msg) {
-            $err.removeClass('invisible').text(msg);
+            $err.setVisibility(1).text(msg);
         } else {
-            $err.addClass('invisible').text('');
+            $err.setVisibility(0).text('');
         }
     };
 

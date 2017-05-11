@@ -39,12 +39,12 @@ const Page = (() => {
 
         // onLoad.queue does not work on the home page.
         // jQuery's ready function works always.
-        $(document).ready(function () {
+        $(document).ready(() => {
             // Cookies is not always available.
             // So, fall back to a more basic solution.
             let match = document.cookie.match(/\bloginid=(\w+)/);
             match = match ? match[1] : '';
-            $(window).on('storage', function (jq_event) {
+            $(window).on('storage', (jq_event) => {
                 switch (jq_event.originalEvent.key) {
                     case 'active_loginid':
                         if (jq_event.originalEvent.newValue === match) return;
@@ -102,7 +102,6 @@ const Page = (() => {
 
     const onUnload = () => {
         Menu.onUnload();
-        Contents.onUnload();
     };
 
     const recordAffiliateExposure = () => {
@@ -133,21 +132,21 @@ const Page = (() => {
         Cookies.set('affiliate_tracking', cookie_hash, {
             expires: 365, // expires in 365 days
             path   : '/',
-            domain : '.' + location.hostname.split('.').slice(-2).join('.'),
+            domain : `.${location.hostname.split('.').slice(-2).join('.')}`,
         });
         return true;
     };
 
-    const reload = (forcedReload) => { window.location.reload(!!forcedReload); };
+    const reload = (forced_reload) => { window.location.reload(!!forced_reload); };
 
     const endpointNotification = () => {
         const server = localStorage.getItem('config.server_url');
         if (server && server.length > 0) {
-            const message = (/www\.binary\.com/i.test(window.location.hostname) ? '' :
-                localize('This is a staging server - For testing purposes only') + ' - ') +
-                localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server]);
+            const message = `${(/www\.binary\.com/i.test(window.location.hostname) ? '' :
+                `${localize('This is a staging server - For testing purposes only')} - `)}
+                ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
             const $end_note = $('#end-note');
-            $end_note.html(message).removeClass('invisible');
+            $end_note.html(message).setVisibility(1);
             $('#footer').css('padding-bottom', $end_note.height());
         }
     };
@@ -161,7 +160,7 @@ const Page = (() => {
             l  : Language.get().toLowerCase(),
             url: 'https://whatbrowser.org/',
         };
-        $(document).ready(function() {
+        $(document).ready(() => {
             $('body').append($('<script/>', { src: src }));
         });
     };

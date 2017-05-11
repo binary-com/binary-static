@@ -43,7 +43,7 @@ const FlexTableUI = (() => {
         const $tr = $('<tr/>', { class: 'flex-tr' });
         const $td = $('<td/>', { colspan: colspan });
         const $p  = $('<p/>', { class: 'notice-msg center-text', text: message });
-        return $('#' + config.id + ' tbody').append($tr.append($td.append($p)));
+        return $(`#${config.id} tbody`).append($tr.append($td.append($p)));
     };
 
     const replace = (data) => {
@@ -56,7 +56,7 @@ const FlexTableUI = (() => {
     const clear = () => {
         if (config) {
             replace([]);
-            $('#' + config.id + '> tfoot').hide();
+            $(`#${config.id} > tfoot`).hide();
         }
     };
 

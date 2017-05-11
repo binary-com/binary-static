@@ -47,9 +47,9 @@ const TrafficSource = (() => {
             return;
         }
 
-        const current_values = getData(),
-            params = Url.paramsHash(),
-            param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
+        const current_values = getData();
+        const params = Url.paramsHash();
+        const param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
 
         if (params.utm_source) { // url params can be stored only if utm_source is available
             param_keys.map((key) => {

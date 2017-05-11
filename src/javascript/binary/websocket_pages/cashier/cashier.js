@@ -6,11 +6,10 @@ const urlFor             = require('../../base/url').urlFor;
 const jpClient           = require('../../common_functions/country_base').jpClient;
 const jpResidence        = require('../../common_functions/country_base').jpResidence;
 
-const Cashier = (function() {
+const Cashier = (() => {
     'use strict';
 
     let href = '';
-    const hidden_class = 'invisible';
 
     const showContent = () => {
         Client.activateByClientType();
@@ -30,11 +29,11 @@ const Cashier = (function() {
                 new_el.href = href;
             }
             $a.replaceWith($('<a/>', new_el));
-            $(top_up_id).parent().removeClass(hidden_class);
+            $(top_up_id).parent().setVisibility(1);
         });
     };
 
-    const onLoad = function() {
+    const onLoad = () => {
         if (jpClient() && !jpResidence()) {
             BinaryPjax(defaultRedirectUrl());
         }
@@ -46,10 +45,10 @@ const Cashier = (function() {
                     displayTopUpButton();
                 }
                 if (is_virtual || /CR/.test(Client.get('loginid'))) {
-                    $('#payment-agent-section').removeClass(hidden_class);
+                    $('#payment-agent-section').setVisibility(1);
                 }
                 if (Client.hasGamingFinancialEnabled()) {
-                    $('#account-transfer-section').removeClass(hidden_class);
+                    $('#account-transfer-section').setVisibility(1);
                 }
             });
         }

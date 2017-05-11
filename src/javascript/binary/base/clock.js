@@ -10,7 +10,7 @@ const Clock = (() => {
 
     const showLocalTimeOnHover = (s) => {
         if (jpClient()) return;
-        $(s || '.date').each(function(idx, ele) {
+        $(s || '.date').each((idx, ele) => {
             const gmt_time_str = ele.textContent.replace('\n', ' ');
             const local_time  = moment.utc(gmt_time_str, 'YYYY-MM-DD HH:mm:ss').local();
             if (local_time.isValid()) {
@@ -71,7 +71,7 @@ const Clock = (() => {
 
         const updateTime = () => {
             window.time = moment((server_time_at_response + moment().valueOf()) - client_time_at_response).utc();
-            const time_str = window.time.format('YYYY-MM-DD HH:mm') + ' GMT';
+            const time_str = `${window.time.format('YYYY-MM-DD HH:mm')} GMT`;
             if (jpClient()) {
                 $clock.html(toJapanTimeIfNeeded(time_str, 1, '', 1));
             } else {

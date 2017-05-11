@@ -1,49 +1,47 @@
-const Contract_Beta             = require('./contract').Contract_Beta;
-const TickDisplay_Beta          = require('./tick_trade');
-const Symbols                   = require('../symbols').Symbols;
-const Tick                      = require('../tick').Tick;
-const localize                  = require('../../../base/localize').localize;
-const formatMoney               = require('../../../common_functions/currency_to_symbol').formatMoney;
-const toTitleCase               = require('../../../common_functions/string_util').toTitleCase;
-const addComma                  = require('../../../common_functions/string_util').addComma;
-const isVisible                 = require('../../../common_functions/common_functions').isVisible;
-const updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
-const label_value               = require('../common').label_value;
-const Client                    = require('../../../base/client');
-const elementTextContent        = require('../../../common_functions/common_functions').elementTextContent;
-const elementInnerHtml          = require('../../../common_functions/common_functions').elementInnerHtml;
+const Contract_Beta      = require('./contract');
+const TickDisplay_Beta   = require('./tick_trade');
+const commonTrading      = require('../common');
+const Symbols            = require('../symbols');
+const Tick               = require('../tick');
+const Client             = require('../../../base/client');
+const localize           = require('../../../base/localize').localize;
+const elementInnerHtml   = require('../../../common_functions/common_functions').elementInnerHtml;
+const elementTextContent = require('../../../common_functions/common_functions').elementTextContent;
+const isVisible          = require('../../../common_functions/common_functions').isVisible;
+const formatMoney        = require('../../../common_functions/currency_to_symbol').formatMoney;
+const addComma           = require('../../../common_functions/string_util').addComma;
+const toTitleCase        = require('../../../common_functions/string_util').toTitleCase;
 
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response
  */
 
-const Purchase_Beta = (function () {
+const Purchase_Beta = (() => {
     'use strict';
 
     let purchase_data = {};
 
-    const display = function (details) {
+    const display = (details) => {
         purchase_data = details;
 
-        const receipt = details.buy,
-            passthrough = details.echo_req.passthrough,
-            container = document.getElementById('contract_confirmation_container'),
-            message_container = document.getElementById('confirmation_message'),
-            heading = document.getElementById('contract_purchase_heading'),
-            descr = document.getElementById('contract_purchase_descr'),
-            barrier_element = document.getElementById('contract_purchase_barrier'),
-            chart = document.getElementById('tick_chart'),
-            brief = document.getElementById('contract_purchase_brief'),
-            balance = document.getElementById('contract_purchase_balance'),
-            payout = document.getElementById('contract_purchase_payout'),
-            cost = document.getElementById('contract_purchase_cost'),
-            profit = document.getElementById('contract_purchase_profit'),
-            spots = document.getElementById('contract_purchase_spots'),
-            confirmation_error = document.getElementById('confirmation_error'),
-            confirmation_error_contents = document.getElementById('confirmation_error_contents'),
-            contracts_list = document.getElementById('contracts_list'),
-            button = document.getElementById('contract_purchase_button');
+        const receipt     = details.buy;
+        const passthrough = details.echo_req.passthrough;
+        const container                   = document.getElementById('contract_confirmation_container');
+        const message_container           = document.getElementById('confirmation_message');
+        const heading                     = document.getElementById('contract_purchase_heading');
+        const descr                       = document.getElementById('contract_purchase_descr');
+        const barrier_element             = document.getElementById('contract_purchase_barrier');
+        const chart                       = document.getElementById('tick_chart');
+        const brief                       = document.getElementById('contract_purchase_brief');
+        const balance                     = document.getElementById('contract_purchase_balance');
+        const payout                      = document.getElementById('contract_purchase_payout');
+        const cost                        = document.getElementById('contract_purchase_cost');
+        const spots                       = document.getElementById('contract_purchase_spots');
+        const confirmation_error          = document.getElementById('confirmation_error');
+        const confirmation_error_contents = document.getElementById('confirmation_error_contents');
+        const contracts_list              = document.getElementById('contracts_list');
+        const button                      = document.getElementById('contract_purchase_button');
 
         const error = details.error;
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
@@ -56,9 +54,9 @@ const Purchase_Beta = (function () {
             confirmation_error.show();
             elementInnerHtml(confirmation_error_contents,  error.message);
         } else {
-            const guideBtn = document.getElementById('guideBtn');
-            if (guideBtn) {
-                guideBtn.style.display = 'none';
+            const guide_btn = document.getElementById('guideBtn');
+            if (guide_btn) {
+                guide_btn.style.display = 'none';
             }
             container.style.display = 'block';
             message_container.show();
@@ -68,21 +66,13 @@ const Purchase_Beta = (function () {
                 $(this).text('').removeAttr('class', '');
             });
             const purchase_passthrough = purchase_data.echo_req.passthrough;
-            elementTextContent(brief, $('#underlying').find('option:selected').text() + ' / ' + toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type]) +
-                (Contract_Beta.form() === 'digits' ? ' ' + purchase_passthrough.barrier : ''));
+            elementTextContent(brief, `${$('#underlying').find('option:selected').text()} / ${toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type])}${(Contract_Beta.form() === 'digits' && !/(even|odd)/i.test(purchase_passthrough.contract_type) ? ` ${purchase_passthrough.barrier}` : '')}`);
 
-            const is_spread = (Contract_Beta.form() === 'spreads');
-            if (is_spread) {
-                $('#contract_purchase_profit_list, #contract_purchase_description_section').removeClass('gr-4 gr-8').addClass('gr-6');
-            } else {
-                $('#contract_purchase_profit_list').removeClass('gr-6').addClass('gr-4');
-                $('#contract_purchase_description_section').removeClass('gr-6').addClass('gr-8');
-            }
             elementTextContent(heading, localize('Contract Confirmation'));
             elementTextContent(descr, receipt.longcode);
-            if (barrier_element) label_value(barrier_element, '', '', true);
-            [].forEach.call(document.getElementsByClassName('contract_purchase_reference'), function(ref) {
-                elementTextContent(ref, localize('Ref.') + ' ' + receipt.transaction_id);
+            if (barrier_element) commonTrading.labelValue(barrier_element, '', '', true);
+            [].forEach.call(document.getElementsByClassName('contract_purchase_reference'), (ref) => {
+                elementTextContent(ref, `${localize('Ref.')} ${receipt.transaction_id}`);
             });
 
             let payout_value,
@@ -99,23 +89,17 @@ const Purchase_Beta = (function () {
             chart.hide();
             spots.hide();
 
-            if (is_spread) {
-                label_value(payout, localize('Stop-loss'),        receipt.stop_loss_level,   true);
-                label_value(cost,   localize('Amount per point'), receipt.amount_per_point);
-                label_value(profit, localize('Stop-profit'),      receipt.stop_profit_level, true);
-            } else {
-                label_value(payout, localize('Payout'), addComma(payout_value));
-                label_value(cost,   localize('Stake'),  addComma(cost_value));
-            }
+            commonTrading.labelValue(payout, localize('Payout'), addComma(payout_value));
+            commonTrading.labelValue(cost,   localize('Stake'),  addComma(cost_value));
 
-            elementTextContent(balance, localize('Account balance:') + ' ' + formatMoney(Client.get('currency'), receipt.balance_after));
+            elementTextContent(balance, `${localize('Account balance:')} ${formatMoney(Client.get('currency'), receipt.balance_after)}`);
 
             if (show_chart) {
                 chart.show();
             }
 
             if (Contract_Beta.form() === 'digits') {
-                [].forEach.call(spots.childNodes, function(child) { elementInnerHtml(child, '&nbsp;'); });
+                [].forEach.call(spots.childNodes, (child) => { elementInnerHtml(child, '&nbsp;'); });
                 spots.show();
             }
 
@@ -123,11 +107,11 @@ const Purchase_Beta = (function () {
                 button.setAttribute('contract_id', receipt.contract_id);
                 descr.show();
                 button.show();
-                $('#confirmation_message').find('.open_contract_details').attr('contract_id', receipt.contract_id).removeClass('invisible');
+                $('#confirmation_message').find('.open_contract_details').attr('contract_id', receipt.contract_id).setVisibility(1);
             } else {
                 descr.hide();
                 button.hide();
-                $('#confirmation_message').find('.open_contract_details').addClass('invisible');
+                $('#confirmation_message').find('.open_contract_details').setVisibility(0);
             }
         }
 
@@ -157,7 +141,7 @@ const Purchase_Beta = (function () {
                 barrier = passthrough.barrier;
             }
 
-            TickDisplay_Beta.initialize({
+            TickDisplay_Beta.init({
                 symbol              : passthrough.symbol,
                 barrier             : barrier,
                 number_of_ticks     : passthrough.duration,
@@ -173,11 +157,11 @@ const Purchase_Beta = (function () {
                 width               : $('#tick_chart').width(),
                 is_trading_page     : true,
             });
-            TickDisplay_Beta.spots_list = {};
+            TickDisplay_Beta.resetSpots();
         }
     };
 
-    const update_spot_list = function() {
+    const updateSpotList = () => {
         if ($('#contract_purchase_spots:hidden').length) {
             return;
         }
@@ -189,10 +173,10 @@ const Purchase_Beta = (function () {
             return;
         }
 
-        const container  = document.getElementById('contract_purchase_spots'),
-            tick_elem  = document.getElementById('current_tick_number'),
-            spot_elem  = document.getElementById('current_tick_spot'),
-            list_elem  = document.getElementById('last_digits_list');
+        const container  = document.getElementById('contract_purchase_spots');
+        const tick_elem  = document.getElementById('current_tick_number');
+        const spot_elem  = document.getElementById('current_tick_spot');
+        const list_elem  = document.getElementById('last_digits_list');
         if (container) {
             tick_elem.innerHTML = spot_elem.innerHTML = list_elem.innerHTML = '&nbsp;';
         }
@@ -202,7 +186,7 @@ const Purchase_Beta = (function () {
 
             const digit_elem = document.createElement('div');
             digit_elem.classList.add('digit');
-            digit_elem.id = 'tick_digit_' + i;
+            digit_elem.id = `tick_digit_${i}`;
             elementInnerHtml(digit_elem, '&nbsp;');
             fragment.appendChild(digit_elem);
 
@@ -214,13 +198,13 @@ const Purchase_Beta = (function () {
             list_elem.appendChild(fragment);
         }
 
-        const spots2 = Tick.spots(),
-            epoches = Object.keys(spots2).sort(function(a, b) { return a - b; });
+        const spots2 = Tick.spots();
+        const epoches = Object.keys(spots2).sort((a, b) => a - b);
         let tick_number = 0;
 
-        const is_win = function(last_digit) {
-            const contract_type = purchase_data.echo_req.passthrough.contract_type,
-                barrier       = purchase_data.echo_req.passthrough.barrier;
+        const is_win = (last_digit) => {
+            const contract_type = purchase_data.echo_req.passthrough.contract_type;
+            const barrier       = purchase_data.echo_req.passthrough.barrier;
             return ((contract_type === 'DIGITMATCH' && last_digit === barrier) ||
                     (contract_type === 'DIGITDIFF'  && last_digit !== barrier) ||
                     (contract_type === 'DIGITEVEN'  && last_digit % 2 === 0)   ||
@@ -229,9 +213,9 @@ const Purchase_Beta = (function () {
                     (contract_type === 'DIGITUNDER' && last_digit < barrier));
         };
         let last_digit = null;
-        const replace = function(d) {
+        const replace = (d) => {
             last_digit = d;
-            return '<span class="' + (is_win(d) ? 'profit' : 'loss') + '">' + d + '</span>';
+            return `<span class="${(is_win(d) ? 'profit' : 'loss')}">${d}</span>`;
         };
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
@@ -242,10 +226,10 @@ const Purchase_Beta = (function () {
             if (isVisible(container) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
                 tick_number++;
 
-                elementTextContent(tick_elem, localize('Tick') + ' ' + tick_number);
+                elementTextContent(tick_elem, `${localize('Tick')} ${tick_number}`);
                 elementInnerHtml(spot_elem, tick_d.quote.replace(/\d$/, replace));
 
-                const this_digit_elem = document.getElementById('tick_digit_' + tick_number);
+                const this_digit_elem = document.getElementById(`tick_digit_${tick_number}`);
                 this_digit_elem.classList.add(is_win(last_digit) ? 'profit' : 'loss');
                 elementTextContent(this_digit_elem, last_digit);
 
@@ -264,7 +248,7 @@ const Purchase_Beta = (function () {
                         contract_status = localize('This contract lost');
                     }
 
-                    updatePurchaseStatus_Beta(final_price, pnl, contract_status);
+                    commonTrading.updatePurchaseStatus_Beta(final_price, pnl, contract_status);
                 }
 
                 duration--;
@@ -276,11 +260,9 @@ const Purchase_Beta = (function () {
     };
 
     return {
-        display         : display,
-        update_spot_list: update_spot_list,
+        display       : display,
+        updateSpotList: updateSpotList,
     };
 })();
 
-module.exports = {
-    Purchase_Beta: Purchase_Beta,
-};
+module.exports = Purchase_Beta;

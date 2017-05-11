@@ -9,7 +9,7 @@ window._trackJs = {
             return false;
         };
 
-        const ignorableErrors = [
+        const ignorable_errors = [
             // General script error, not actionable
             '[object Event]',
             // General script error, not actionable
@@ -23,7 +23,7 @@ window._trackJs = {
             'Unexpected token <',
         ];
 
-        if (itemExistInList(payload.message, ignorableErrors)) {
+        if (itemExistInList(payload.message, ignorable_errors)) {
             return false;
         }
 

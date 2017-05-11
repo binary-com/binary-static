@@ -8,12 +8,11 @@ const FormManager   = require('../../../../common_functions/form_manager');
 const moment        = require('moment');
 require('select2');
 
-const PersonalDetails = (function() {
+const PersonalDetails = (() => {
     'use strict';
 
     const form_id = '#frmPersonalDetails';
     const real_acc_elements = '.RealAcc';
-    const hidden_class = 'invisible';
     let editable_fields,
         is_jp,
         is_virtual,
@@ -27,23 +26,23 @@ const PersonalDetails = (function() {
         residence = Client.get('residence');
         is_jp = residence === 'jp';
         if (is_jp && !is_virtual) {
-            $('#fieldset_email_consent').removeClass(hidden_class);
+            $('#fieldset_email_consent').setVisibility(1);
         }
         showHideTaxMessage();
     };
 
     const showHideTaxMessage = () => {
         if (Client.shouldCompleteTax()) {
-            $('#tax_information_notice').removeClass(hidden_class);
+            $('#tax_information_notice').setVisibility(1);
         } else {
-            $('#tax_information_notice').addClass(hidden_class);
+            $('#tax_information_notice').setVisibility(0);
         }
     };
 
     const getDetailsResponse = (data) => {
         const get_settings = $.extend({}, data);
         get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        get_settings.name = is_jp ? get_settings.last_name : (get_settings.salutation || '') + ' ' + (get_settings.first_name || '') + ' ' + (get_settings.last_name || '');
+        get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
 
         displayGetSettingsData(get_settings);
 
@@ -51,15 +50,25 @@ const PersonalDetails = (function() {
             $(real_acc_elements).remove();
         } else if (is_jp) {
             const jp_settings = get_settings.jp_settings;
+            switch (jp_settings.gender) {
+                case 'f':
+                    jp_settings.gender = localize('Female');
+                    break;
+                case 'm':
+                    jp_settings.gender = localize('Male');
+                    break;
+                default:
+                    break;
+            }
             displayGetSettingsData(jp_settings);
             if (jp_settings.hedge_asset !== null && jp_settings.hedge_asset_amount !== null) {
-                $('.hedge').removeClass(hidden_class);
+                $('.hedge').setVisibility(1);
             }
-            $('.JpAcc').removeClass('invisible hidden');
+            $('.JpAcc').setVisibility(1);
         } else {
-            $(real_acc_elements).removeClass('hidden');
+            $(real_acc_elements).setVisibility(1);
         }
-        $(form_id).removeClass('hidden');
+        $(form_id).setVisibility(1);
         FormManager.handleSubmit({
             form_selector       : form_id,
             obj_request         : { set_settings: 1 },
@@ -99,7 +108,7 @@ const PersonalDetails = (function() {
         if (data.country) {
             $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'lbl_country' })));
             $('#lbl_country').text(data.country);
-            if (is_virtual) $('#btn_update').addClass(hidden_class);
+            if (is_virtual) $('#btn_update').setVisibility(0);
         }
     };
 
@@ -134,7 +143,7 @@ const PersonalDetails = (function() {
                 { selector: '#hedge_asset_amount', validations: ['req', 'number'], parent_node: 'jp_settings' },
                 { selector: '#hedge_asset',        validations: ['req'], parent_node: 'jp_settings' },
             ];
-            $(form_id).find('select').each(function () {
+            $(form_id).find('select').each(function() {
                 validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
             });
         } else if (is_virtual) {
@@ -145,7 +154,7 @@ const PersonalDetails = (function() {
                 { selector: '#address_line_2',     validations: ['address'] },
                 { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
                 { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
-                { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
+                { selector: '#address_postcode',   validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
 
                 { selector: '#place_of_birth', validations: Client.isFinancial() ? ['req'] : '' },
@@ -166,12 +175,12 @@ const PersonalDetails = (function() {
         const is_error = response.set_settings !== 1;
         if (!is_error) {
             // to update tax information message for financial clients
-            BinarySocket.send({ get_account_status: 1 }, true).then(() => {
+            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                 showHideTaxMessage();
                 Header.displayAccountStatus();
             });
             // to update the State with latest get_settings data
-            BinarySocket.send({ get_settings: 1 }, true).then((data) => {
+            BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
                 getDetailsResponse(data.get_settings);
             });
         }
@@ -183,7 +192,7 @@ const PersonalDetails = (function() {
     const showFormMessage = (msg, is_success) => {
         $('#formMessage')
             .attr('class', is_success ? 'success-msg' : 'errorfield')
-            .html(is_success ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
+            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
@@ -208,7 +217,7 @@ const PersonalDetails = (function() {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(tax_residence ? tax_residence.split(',') : '').trigger('change')
-                            .removeClass('invisible');
+                            .setVisibility(1);
                     }, 500);
                 });
                 $place_of_birth.val(get_settings_data.place_of_birth || residence);
@@ -222,23 +231,30 @@ const PersonalDetails = (function() {
         }
     };
 
-    const populateStates = function(response) {
-        const address_state = '#address_state';
-        let $field = $(address_state);
+    const populateStates = (response) => {
         const states = response.states_list;
 
-        $field.empty();
-
-        if (states && states.length > 0) {
-            $field.append($('<option/>', { value: '', text: localize('Please select') }));
-            states.forEach(function(state) {
-                $field.append($('<option/>', { value: state.value, text: state.text }));
-            });
+        if (is_jp) {
+            const state_text = (states.filter(state => state.value === get_settings_data.address_state)[0] || {}).text;
+            $('#lbl_address_state').text(state_text || get_settings_data.address_state);
         } else {
-            $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
-            $field = $(address_state);
+            const address_state = '#address_state';
+            let $field = $(address_state);
+
+            $field.empty();
+
+            if (states && states.length > 0) {
+                $field.append($('<option/>', { value: '', text: localize('Please select') }));
+                states.forEach((state) => {
+                    $field.append($('<option/>', { value: state.value, text: state.text }));
+                });
+            } else {
+                $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+                $field = $(address_state);
+            }
+            $field.val(get_settings_data.address_state);
         }
-        $field.val(get_settings_data.address_state);
+
         initFormManager();
         if (is_jp && !is_virtual) {
             // detect hedging needs to be called after FormManager.init
@@ -255,7 +271,7 @@ const PersonalDetails = (function() {
             get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
             getDetailsResponse(get_settings_data);
             if (!is_virtual || !residence) {
-                $('#btn_update').removeClass(hidden_class);
+                $('#btn_update').setVisibility(1);
                 if (!is_jp) {
                     BinarySocket.send({ residence_list: 1 }).then(response => populateResidence(response));
                 }
@@ -263,7 +279,7 @@ const PersonalDetails = (function() {
                     BinarySocket.send({ states_list: residence }).then(response => populateStates(response));
                 }
             } else {
-                $('#btn_update').addClass(hidden_class);
+                $('#btn_update').setVisibility(0);
             }
         });
     };

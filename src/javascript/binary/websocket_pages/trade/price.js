@@ -1,18 +1,14 @@
-const getStartDateNode           = require('./common_independent').getStartDateNode;
-const formatMoney                = require('../../common_functions/currency_to_symbol').formatMoney;
-const moment                     = require('moment');
-const contractTypeDisplayMapping = require('./common').contractTypeDisplayMapping;
-const resetPriceMovement         = require('./common').resetPriceMovement;
-const displayCommentPrice        = require('./common').displayCommentPrice;
-const displayCommentSpreads      = require('./common').displayCommentSpreads;
-const showPriceOverlay           = require('./common').showPriceOverlay;
-const displayPriceMovement       = require('./common_independent').displayPriceMovement;
-const getTradingTimes            = require('./common_independent').getTradingTimes;
-const Contract                   = require('./contract').Contract;
-const Defaults                   = require('./defaults').Defaults;
-const isVisible                  = require('../../common_functions/common_functions').isVisible;
-const localize                   = require('../../base/localize').localize;
-const elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
+const moment               = require('moment');
+const getStartDateNode     = require('./common_independent').getStartDateNode;
+const commonTrading        = require('./common');
+const displayPriceMovement = require('./common_independent').displayPriceMovement;
+const getTradingTimes      = require('./common_independent').getTradingTimes;
+const Contract             = require('./contract');
+const Defaults             = require('./defaults');
+const localize             = require('../../base/localize').localize;
+const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
+const isVisible            = require('../../common_functions/common_functions').isVisible;
+const formatMoney          = require('../../common_functions/currency_to_symbol').formatMoney;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -27,46 +23,42 @@ const elementTextContent         = require('../../common_functions/common_functi
  * `socket.send(Price.proposal())` to send price proposal to sever
  * `Price.display()` to display the price details returned from server
  */
-const Price = (function() {
+const Price = (() => {
     'use strict';
 
-    let typeDisplayIdMapping = {},
+    let type_display_id_mapping = {},
         form_id = 0;
 
-    const createProposal = function(typeOfContract) {
+    const createProposal = (type_of_contract) => {
         const proposal = {
             proposal : 1,
             subscribe: 1,
         };
-        const underlying = document.getElementById('underlying'),
-            contractType = typeOfContract,
-            amountType = document.getElementById('amount_type'),
-            currency = document.getElementById('currency'),
-            payout = document.getElementById('amount'),
-            startTime = getStartDateNode(),
-            expiryType = document.getElementById('expiry_type'),
-            duration = document.getElementById('duration_amount'),
-            durationUnit = document.getElementById('duration_units'),
-            endDate = document.getElementById('expiry_date'),
-            barrier = document.getElementById('barrier'),
-            highBarrier = document.getElementById('barrier_high'),
-            lowBarrier = document.getElementById('barrier_low'),
-            prediction = document.getElementById('prediction'),
-            amountPerPoint = document.getElementById('amount_per_point'),
-            stopType = document.querySelector('input[name="stop_type"]:checked'),
-            stopLoss = document.getElementById('stop_loss'),
-            stopProfit = document.getElementById('stop_profit');
+        const contract_type = type_of_contract;
+        const start_time    = getStartDateNode();
+        const underlying       = document.getElementById('underlying');
+        const amount_type      = document.getElementById('amount_type');
+        const currency         = document.getElementById('currency');
+        const payout           = document.getElementById('amount');
+        const expiry_type      = document.getElementById('expiry_type');
+        const duration         = document.getElementById('duration_amount');
+        const duration_unit    = document.getElementById('duration_units');
+        const end_date         = document.getElementById('expiry_date');
+        const barrier          = document.getElementById('barrier');
+        const high_barrier     = document.getElementById('barrier_high');
+        const low_barrier      = document.getElementById('barrier_low');
+        const prediction       = document.getElementById('prediction');
 
         if (payout && isVisible(payout) && payout.value) {
             proposal.amount = parseFloat(payout.value);
         }
 
-        if (amountType && isVisible(amountType) && amountType.value) {
-            proposal.basis = amountType.value;
+        if (amount_type && isVisible(amount_type) && amount_type.value) {
+            proposal.basis = amount_type.value;
         }
 
-        if (contractType) {
-            proposal.contract_type = typeOfContract;
+        if (contract_type) {
+            proposal.contract_type = type_of_contract;
         }
 
         if (currency && (currency.value || currency.getAttribute('value'))) {
@@ -77,28 +69,28 @@ const Price = (function() {
             proposal.symbol = underlying.value;
         }
 
-        if (startTime && isVisible(startTime) && startTime.value !== 'now') {
-            proposal.date_start = startTime.value;
+        if (start_time && isVisible(start_time) && start_time.value !== 'now') {
+            proposal.date_start = start_time.value;
         }
 
-        if (expiryType && isVisible(expiryType) && expiryType.value === 'duration') {
+        if (expiry_type && isVisible(expiry_type) && expiry_type.value === 'duration') {
             proposal.duration = parseInt(duration.value);
-            proposal.duration_unit = durationUnit.value;
-        } else if (expiryType && isVisible(expiryType) && expiryType.value === 'endtime') {
-            const endDate2 = endDate.getAttribute('data-value');
-            let endTime2 = Defaults.get('expiry_time');
-            if (!endTime2) {
+            proposal.duration_unit = duration_unit.value;
+        } else if (expiry_type && isVisible(expiry_type) && expiry_type.value === 'endtime') {
+            const end_date2 = end_date.getAttribute('data-value');
+            let end_time2 = Defaults.get('expiry_time');
+            if (!end_time2) {
                 const trading_times = getTradingTimes();
-                if (trading_times.hasOwnProperty(endDate2) && typeof trading_times[endDate2][underlying.value] === 'object' && trading_times[endDate2][underlying.value].length && trading_times[endDate2][underlying.value][0] !== '--') {
-                    if (trading_times[endDate2][underlying.value].length > 1) {
-                        endTime2 = trading_times[endDate2][underlying.value][1];
+                if (trading_times.hasOwnProperty(end_date2) && typeof trading_times[end_date2][underlying.value] === 'object' && trading_times[end_date2][underlying.value].length && trading_times[end_date2][underlying.value][0] !== '--') {
+                    if (trading_times[end_date2][underlying.value].length > 1) {
+                        end_time2 = trading_times[end_date2][underlying.value][1];
                     } else {
-                        endTime2 = trading_times[endDate2][underlying.value];
+                        end_time2 = trading_times[end_date2][underlying.value];
                     }
                 }
             }
 
-            proposal.date_expiry = moment.utc(endDate2 + ' ' + (endTime2 || '23:59:59')).unix();
+            proposal.date_expiry = moment.utc(`${end_date2} ${(end_time2 || '23:59:59')}`).unix();
             // For stopping tick trade behaviour
             proposal.duration_unit = 'm';
         }
@@ -107,122 +99,88 @@ const Price = (function() {
             proposal.barrier = barrier.value;
         }
 
-        if (highBarrier && isVisible(highBarrier) && highBarrier.value) {
-            proposal.barrier = highBarrier.value;
+        if (high_barrier && isVisible(high_barrier) && high_barrier.value) {
+            proposal.barrier = high_barrier.value;
         }
 
-        if (lowBarrier && isVisible(lowBarrier) && lowBarrier.value) {
-            proposal.barrier2 = lowBarrier.value;
+        if (low_barrier && isVisible(low_barrier) && low_barrier.value) {
+            proposal.barrier2 = low_barrier.value;
         }
 
         if (prediction && isVisible(prediction)) {
             proposal.barrier = parseInt(prediction.value);
         }
 
-        if (amountPerPoint && isVisible(amountPerPoint)) {
-            proposal.amount_per_point = parseFloat(amountPerPoint.value);
-        }
-
-        if (stopType && isVisible(stopType)) {
-            proposal.stop_type = stopType.value;
-        }
-
-        if (stopLoss && isVisible(stopLoss)) {
-            proposal.stop_loss = parseFloat(stopLoss.value);
-        }
-
-        if (stopProfit && isVisible(stopProfit)) {
-            proposal.stop_profit = parseFloat(stopProfit.value);
-        }
-
-        if (contractType) {
-            proposal.contract_type = typeOfContract;
+        if (contract_type) {
+            proposal.contract_type = type_of_contract;
         }
 
         proposal.passthrough = {
             form_id: form_id,
         };
 
-        resetPriceMovement();
+        commonTrading.resetPriceMovement();
 
         return proposal;
     };
 
-    const display = function(details, contractType) {
+    const display = (details, contract_type) => {
         const proposal = details.proposal;
         const id = proposal ? proposal.id : '';
         const params = details.echo_req;
 
         let type = params.contract_type;
         if (id && !type) {
-            type = typeDisplayIdMapping[id];
-        }
-
-        let is_spread = false;
-        if (params.contract_type && (params.contract_type === 'SPREADU' || params.contract_type === 'SPREADD')) {
-            is_spread = true;
+            type = type_display_id_mapping[id];
         }
 
         if (params && id && Object.getOwnPropertyNames(params).length > 0) {
-            typeDisplayIdMapping[id] = type;
+            type_display_id_mapping[id] = type;
         }
 
-        const position = contractTypeDisplayMapping(type);
+        const position = commonTrading.contractTypeDisplayMapping(type);
 
         if (!position) {
             return;
         }
 
-        const container = document.getElementById('price_container_' + position);
+        const container = document.getElementById(`price_container_${position}`);
         if (!container) return;
         if (!$(container).is(':visible')) {
             $(container).fadeIn(200);
         }
 
-        const h4 = container.getElementsByClassName('contract_heading')[0],
-            amount = container.getElementsByClassName('contract_amount')[0],
-            payoutAmount = container.getElementsByClassName('contract_payout')[0],
-            stake = container.getElementsByClassName('stake')[0],
-            payout = container.getElementsByClassName('payout')[0],
-            purchase = container.getElementsByClassName('purchase_button')[0],
-            description = container.getElementsByClassName('contract_description')[0],
-            comment = container.getElementsByClassName('price_comment')[0],
-            error = container.getElementsByClassName('contract_error')[0],
-            currency = document.getElementById('currency');
+        const h4            = container.getElementsByClassName('contract_heading')[0];
+        const amount        = container.getElementsByClassName('contract_amount')[0];
+        const payout_amount = container.getElementsByClassName('contract_payout')[0];
+        const stake         = container.getElementsByClassName('stake')[0];
+        const payout        = container.getElementsByClassName('payout')[0];
+        const purchase      = container.getElementsByClassName('purchase_button')[0];
+        const description   = container.getElementsByClassName('contract_description')[0];
+        const comment       = container.getElementsByClassName('price_comment')[0];
+        const error         = container.getElementsByClassName('contract_error')[0];
+        const currency = document.getElementById('currency');
 
-        const display_text = type && contractType ? contractType[type] : '';
+        const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
-            h4.setAttribute('class', 'contract_heading ' + type);
-            if (is_spread) {
-                if (position === 'top') {
-                    elementTextContent(h4, localize('Long'));
-                } else {
-                    elementTextContent(h4, localize('Short'));
-                }
-            } else {
-                elementTextContent(h4, display_text);
-            }
+            h4.setAttribute('class', `contract_heading ${type}`);
+            elementTextContent(h4, display_text);
         }
 
-        const setData = function(data) {
+        const setData = (data) => {
             if (!data) return;
             if (data.display_value) {
-                if (is_spread) {
-                    $('.stake:visible').hide();
-                    elementTextContent(amount, data.display_value);
-                } else {
-                    $('.stake:hidden').show();
-                    elementTextContent(stake, localize('Stake') + ': ');
-                    elementTextContent(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
-                }
+                $('.stake:hidden').show();
+                elementTextContent(stake, `${localize('Stake')}: `);
+                elementTextContent(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
                 $('.stake_wrapper:hidden').show();
             } else {
                 $('.stake_wrapper:visible').hide();
             }
 
             if (data.payout) {
-                elementTextContent(payout, (is_spread ? localize('Payout/point') : localize('Payout')) + ': ');
-                elementTextContent(payoutAmount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
+                elementTextContent(payout, `${localize('Payout')}: `);
+                elementTextContent(payout_amount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
                 $('.payout_wrapper:hidden').show();
             } else {
                 $('.payout_wrapper:visible').hide();
@@ -250,41 +208,37 @@ const Price = (function() {
             }
             comment.show();
             error.hide();
-            if (is_spread) {
-                displayCommentSpreads(comment, (currency.value || currency.getAttribute('value')), proposal.spread);
-            } else {
-                displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
-            }
-            const oldprice = purchase.getAttribute('data-display_value'),
-                oldpayout = purchase.getAttribute('data-payout');
-            displayPriceMovement(amount, oldprice, proposal.display_value);
-            displayPriceMovement(payoutAmount, oldpayout, proposal.payout);
+            commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
+            const old_price = purchase.getAttribute('data-display_value');
+            const old_payout = purchase.getAttribute('data-payout');
+            displayPriceMovement(amount, old_price, proposal.display_value);
+            displayPriceMovement(payout_amount, old_payout, proposal.payout);
             purchase.setAttribute('data-purchase-id', id);
             purchase.setAttribute('data-ask-price', proposal.ask_price);
             purchase.setAttribute('data-display_value', proposal.display_value);
             purchase.setAttribute('data-payout', proposal.payout);
             purchase.setAttribute('data-symbol', id);
-            Object.keys(params).forEach(function(key) {
+            Object.keys(params).forEach((key) => {
                 if (key && key !== 'proposal') {
-                    purchase.setAttribute('data-' + key, params[key]);
+                    purchase.setAttribute(`data-${key}`, params[key]);
                 }
             });
         }
     };
 
-    const clearMapping = function() {
-        typeDisplayIdMapping = {};
+    const clearMapping = () => {
+        type_display_id_mapping = {};
     };
 
-    const clearFormId = function() {
+    const clearFormId = () => {
         form_id = 0;
     };
 
     /*
      * Function to request for cancelling the current price proposal
      */
-    const processForgetProposals = function() {
-        showPriceOverlay();
+    const processForgetProposals = () => {
+        commonTrading.showPriceOverlay();
         BinarySocket.send({
             forget_all: 'proposal',
         });
@@ -295,10 +249,10 @@ const Price = (function() {
      * Function to process and calculate price based on current form
      * parameters or change in form parameters
      */
-    const processPriceRequest = function() {
+    const processPriceRequest = () => {
         Price.incrFormId();
         processForgetProposals();
-        showPriceOverlay();
+        commonTrading.showPriceOverlay();
         let types = Contract.contractType()[Contract.form()];
         if (Contract.form() === 'digits') {
             switch (sessionStorage.getItem('formname')) {
@@ -324,10 +278,15 @@ const Price = (function() {
                     break;
             }
         }
-        Object.keys(types).forEach(function(typeOfContract) {
-            if (types.hasOwnProperty(typeOfContract)) {
-                BinarySocket.send(Price.proposal(typeOfContract));
-            }
+        Object.keys(types).forEach((type_of_contract) => {
+            BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
+                if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
+                    response.echo_req.passthrough.form_id === form_id) {
+                    commonTrading.hideOverlayContainer();
+                    Price.display(response, Contract.contractType()[Contract.form()]);
+                    commonTrading.hidePriceOverlay();
+                }
+            } });
         });
     };
 
@@ -336,20 +295,12 @@ const Price = (function() {
         display         : display,
         clearMapping    : clearMapping,
         clearFormId     : clearFormId,
-        idDisplayMapping: function() {
-            return typeDisplayIdMapping;
-        },
-        getFormId: function() {
-            return form_id;
-        },
-        incrFormId: function() {
-            form_id++;
-        },
+        idDisplayMapping: () => type_display_id_mapping,
+        incrFormId      : () => { form_id++; },
+
         processForgetProposals: processForgetProposals,
         processPriceRequest   : processPriceRequest,
     };
 })();
 
-module.exports = {
-    Price: Price,
-};
+module.exports = Price;

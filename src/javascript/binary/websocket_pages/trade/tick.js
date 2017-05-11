@@ -1,8 +1,8 @@
 const moment               = require('moment');
-const displayPriceMovement = require('./common_independent').displayPriceMovement;
 const countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
-const isVisible            = require('../../common_functions/common_functions').isVisible;
+const displayPriceMovement = require('./common_independent').displayPriceMovement;
 const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
+const isVisible            = require('../../common_functions/common_functions').isVisible;
 
 /*
  * Tick object handles all the process/display related to tick streaming
@@ -20,20 +20,21 @@ const elementTextContent   = require('../../common_functions/common_functions').
  * `Tick.epoch()` to get the tick epoch time
  * 'Tick.display()` to display current spot
  */
-const Tick = (function() {
+const Tick = (() => {
+    'use strict';
+
     let quote = '',
         id = '',
         epoch = '',
         spots = {},
-        errorMessage = '';
-    const keep_number = 20;
+        error_message = '';
 
-    const details = function(data) {
-        errorMessage = '';
+    const details = (data) => {
+        error_message = '';
 
         if (data) {
             if (data.error) {
-                errorMessage = data.error.message;
+                error_message = data.error.message;
             } else {
                 const tick = data.tick;
                 quote = tick.quote;
@@ -41,138 +42,123 @@ const Tick = (function() {
                 epoch = tick.epoch;
 
                 spots[epoch] = quote;
-                const epoches = Object.keys(spots).sort(function(a, b) {
-                    return a - b;
-                });
-                if (epoches.length > keep_number) {
+                const epoches = Object.keys(spots).sort((a, b) => a - b);
+                if (epoches.length > 20) {
                     delete spots[epoches[0]];
                 }
             }
         }
     };
 
-    const display = function() {
+    const display = () => {
         $('#spot').fadeIn(200);
-        const spotElement = document.getElementById('spot');
-        if (!spotElement) return;
+        const spot_element = document.getElementById('spot');
+        if (!spot_element) return;
         let message = '';
-        if (errorMessage) {
-            message = errorMessage;
+        if (error_message) {
+            message = error_message;
         } else {
             message = quote;
         }
 
         if (parseFloat(message) !== +message) {
-            spotElement.className = 'error';
+            spot_element.className = 'error';
         } else {
-            spotElement.classList.remove('error');
-            displayPriceMovement(spotElement, elementTextContent(spotElement), message);
+            spot_element.classList.remove('error');
+            displayPriceMovement(spot_element, elementTextContent(spot_element), message);
             displayIndicativeBarrier();
         }
 
-        elementTextContent(spotElement, message);
+        elementTextContent(spot_element, message);
     };
 
     /*
-     * function to display indicative barrier
+     * display indicative barrier
      */
-    const displayIndicativeBarrier = function() {
-        'use strict';
-
-        const unit = document.getElementById('duration_units'),
-            currentTick = Tick.quote(),
-            indicativeBarrierTooltip = document.getElementById('indicative_barrier_tooltip'),
-            indicativeHighBarrierTooltip = document.getElementById('indicative_high_barrier_tooltip'),
-            indicativeLowBarrierTooltip = document.getElementById('indicative_low_barrier_tooltip'),
-            barrierElement = document.getElementById('barrier'),
-            highBarrierElement = document.getElementById('barrier_high'),
-            lowBarrierElement = document.getElementById('barrier_low');
+    const displayIndicativeBarrier = () => {
+        const current_tick = Tick.quote();
+        const unit = document.getElementById('duration_units');
+        const indicative_barrier_tooltip      = document.getElementById('indicative_barrier_tooltip');
+        const indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
+        const indicative_low_barrier_tooltip  = document.getElementById('indicative_low_barrier_tooltip');
+        const barrier_element      = document.getElementById('barrier');
+        const high_barrier_element = document.getElementById('barrier_high');
+        const low_barrier_element  = document.getElementById('barrier_low');
+        const tooltip      = document.getElementById('barrier_tooltip');
+        const span         = document.getElementById('barrier_span');
+        const high_tooltip = document.getElementById('barrier_high_tooltip');
+        const high_span    = document.getElementById('barrier_high_span');
+        const low_tooltip  = document.getElementById('barrier_low_tooltip');
+        const low_span     = document.getElementById('barrier_low_span');
         let value;
 
         const end_time = document.getElementById('expiry_date');
-        if (unit && (!isVisible(unit) || unit.value !== 'd') && currentTick && !isNaN(currentTick) &&
+        if (unit && (!isVisible(unit) || unit.value !== 'd') && current_tick && !isNaN(current_tick) &&
             (end_time && (!isVisible(end_time) || moment(end_time.getAttribute('data-value')).isBefore(moment().add(1, 'day'), 'day')))) {
-            const decimalPlaces = countDecimalPlaces(currentTick);
-            if (indicativeBarrierTooltip && isVisible(indicativeBarrierTooltip)) {
-                const barrierValue = isNaN(parseFloat(barrierElement.value)) ? 0 : parseFloat(barrierElement.value);
-                indicativeBarrierTooltip.textContent = (parseFloat(currentTick) + barrierValue).toFixed(decimalPlaces);
+            const decimal_places = countDecimalPlaces(current_tick);
+            if (indicative_barrier_tooltip && isVisible(indicative_barrier_tooltip) && String(barrier_element.value).match(/^[+-]/)) {
+                const barrier_value = isNaN(parseFloat(barrier_element.value)) ? 0 : parseFloat(barrier_element.value);
+                indicative_barrier_tooltip.textContent =
+                    (parseFloat(current_tick) + barrier_value).toFixed(decimal_places);
+                tooltip.style.display = 'inherit';
+                span.style.display = 'none';
+            } else {
+                elementTextContent(indicative_barrier_tooltip, '');
+                tooltip.style.display = 'none';
+                span.style.display = 'inherit';
             }
 
-            if (indicativeHighBarrierTooltip && isVisible(indicativeHighBarrierTooltip)) {
-                value = parseFloat(highBarrierElement.value);
+            if (indicative_high_barrier_tooltip && isVisible(indicative_high_barrier_tooltip) && String(high_barrier_element.value).match(/^[+-]/)) {
+                value = parseFloat(high_barrier_element.value);
                 value = isNaN(value) ? 0 : value;
-                indicativeHighBarrierTooltip.textContent = (parseFloat(currentTick) + value).toFixed(decimalPlaces);
+                indicative_high_barrier_tooltip.textContent =
+                    (parseFloat(current_tick) + value).toFixed(decimal_places);
+                high_tooltip.style.display = 'inherit';
+                high_span.style.display = 'none';
+            } else {
+                elementTextContent(indicative_high_barrier_tooltip, '');
+                high_tooltip.style.display = 'none';
+                high_span.style.display = 'inherit';
             }
 
-            if (indicativeLowBarrierTooltip && isVisible(indicativeLowBarrierTooltip)) {
-                value = parseFloat(lowBarrierElement.value);
+            if (indicative_low_barrier_tooltip && isVisible(indicative_low_barrier_tooltip) && String(low_barrier_element.value).match(/^[+-]/)) {
+                value = parseFloat(low_barrier_element.value);
                 value = isNaN(value) ? 0 : value;
-                indicativeLowBarrierTooltip.textContent = (parseFloat(currentTick) + value).toFixed(decimalPlaces);
+                indicative_low_barrier_tooltip.textContent = (parseFloat(current_tick) + value).toFixed(decimal_places);
+                low_tooltip.style.display = 'inherit';
+                low_span.style.display = 'none';
+            } else {
+                elementTextContent(indicative_low_barrier_tooltip, '');
+                low_tooltip.style.display = 'none';
+                low_span.style.display = 'inherit';
             }
         } else {
-            elementTextContent(indicativeBarrierTooltip, '');
-            elementTextContent(indicativeHighBarrierTooltip, '');
-            elementTextContent(indicativeLowBarrierTooltip, '');
+            elementTextContent(indicative_barrier_tooltip, '');
+            elementTextContent(indicative_high_barrier_tooltip, '');
+            elementTextContent(indicative_low_barrier_tooltip, '');
         }
     };
 
-    const request = function(symbol) {
-        BinarySocket.send({
-            ticks_history: symbol,
-            style        : 'ticks',
-            end          : 'latest',
-            count        : keep_number,
-            subscribe    : 1,
+    const clean = () => {
+        spots = {};
+        quote = '';
+        $('#spot').fadeOut(200, function() {
+            // resets spot movement coloring, will continue on the next tick responses
+            $(this).removeClass('price_moved_down price_moved_up').text('');
         });
     };
 
-    const processHistory = function(res) {
-        if (res.history && res.history.times && res.history.prices) {
-            for (let i = 0; i < res.history.times.length; i++) {
-                details({
-                    tick: {
-                        epoch: res.history.times[i],
-                        quote: res.history.prices[i],
-                    },
-                });
-            }
-        }
-    };
-
     return {
-        details: details,
-        display: display,
-        quote  : function() {
-            return quote;
-        },
-        id: function() {
-            return id;
-        },
-        epoch: function() {
-            return epoch;
-        },
-        errorMessage: function() {
-            return errorMessage;
-        },
-        clean: function() {
-            spots = {};
-            quote = '';
-            $('#spot').fadeOut(200, function() {
-                // resets spot movement coloring, will continue on the next tick responses
-                $(this).removeClass('price_moved_down price_moved_up').text('');
-            });
-        },
-        spots: function() {
-            return spots;
-        },
-        setQuote: function(q) {
-            quote = q;
-        },
-        request       : request,
-        processHistory: processHistory,
+        details     : details,
+        display     : display,
+        clean       : clean,
+        quote       : () => quote,
+        id          : () => id,
+        epoch       : () => epoch,
+        errorMessage: () => error_message,
+        spots       : () => spots,
+        setQuote    : (q) => { quote = q; },
     };
 })();
 
-module.exports = {
-    Tick: Tick,
-};
+module.exports = Tick;

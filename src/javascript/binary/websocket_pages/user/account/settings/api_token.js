@@ -9,7 +9,6 @@ const toTitleCase          = require('../../../../common_functions/string_util')
 const APIToken = (() => {
     'use strict';
 
-    const hidden_class = 'invisible';
     const error_class  = 'errorfield';
     const form_id      = '#token_form';
     const max_tokens   = 30;
@@ -17,7 +16,7 @@ const APIToken = (() => {
     let $table_container,
         $form;
 
-    const onLoad = function() {
+    const onLoad = () => {
         if (jpClient()) {
             BinaryPjax.load('user/settingsws');
             return;
@@ -43,7 +42,11 @@ const APIToken = (() => {
     };
 
     const newTokenResponse = (response) => {
-        showSubmitSuccess('New token created.');
+        if (response.error) {
+            showFormMessage(response.error.message, false);
+            return;
+        }
+        showFormMessage('New token created.', true);
         $('#txt_name').val('');
 
         populateTokensList(response);
@@ -56,7 +59,7 @@ const APIToken = (() => {
     // -----------------------
     // ----- Tokens List -----
     // -----------------------
-    const populateTokensList = function(response) {
+    const populateTokensList = (response) => {
         if ('error' in response) {
             showErrorMessage(response.error.message);
             return;
@@ -66,16 +69,16 @@ const APIToken = (() => {
 
         const tokens = response.api_token.tokens;
         if (tokens.length === 0) {
-            $table_container.addClass(hidden_class);
+            $table_container.setVisibility(0);
             return;
         } else if (tokens.length >= max_tokens) {
-            $form.addClass(hidden_class);
+            $form.setVisibility(0);
             showErrorMessage(localize('The maximum number of tokens ([_1]) has been reached.', [max_tokens]));
         } else {
-            $form.removeClass(hidden_class);
+            $form.setVisibility(1);
         }
 
-        $table_container.removeClass(hidden_class).empty();
+        $table_container.setVisibility(1).empty();
 
         const headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
         FlexTableUI.init({
@@ -85,7 +88,7 @@ const APIToken = (() => {
             cols     : headers.map(title => title.toLowerCase().replace(/\s/g, '-')),
             data     : tokens,
             formatter: formatToken,
-            style    : function($row, token) {
+            style    : ($row, token) => {
                 if (token.display_name === response.echo_req.new_token) {
                     $row.addClass('new');
                 }
@@ -96,10 +99,10 @@ const APIToken = (() => {
         showLocalTimeOnHover('td.last-used');
     };
 
-    const createDeleteButton = function($row, token) {
+    const createDeleteButton = ($row, token) => {
         const message = localize('Are you sure that you want to permanently delete token');
         const $button = $('<button/>', { class: 'button btn_delete', text: localize('Delete') });
-        $button.click(function(e) {
+        $button.click((e) => {
             e.preventDefault();
             e.stopPropagation();
             if (!window.confirm(`${message}: "${token.display_name}"?`)) {
@@ -110,8 +113,8 @@ const APIToken = (() => {
         $row.children('.action').html($button);
     };
 
-    const formatToken = function(token) {
-        const last_used = (token.last_used ? token.last_used + ' GMT' : localize('Never Used'));
+    const formatToken = (token) => {
+        const last_used = (token.last_used ? `${token.last_used} GMT` : localize('Never Used'));
         const scopes = token.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
         return [
             token.display_name,
@@ -122,7 +125,7 @@ const APIToken = (() => {
         ];
     };
 
-    const deleteToken = function(token) {
+    const deleteToken = (token) => {
         BinarySocket.send({
             api_token   : 1,
             delete_token: token,
@@ -140,24 +143,24 @@ const APIToken = (() => {
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    const showErrorMessage = function(msg) {
-        $('#token_message').removeClass(hidden_class)
+    const showErrorMessage = (msg) => {
+        $('#token_message').setVisibility(1)
             .find('p')
             .attr('class', error_class)
             .html(localize(msg));
     };
 
-    const showSubmitSuccess = function(msg) {
+    const showFormMessage = (msg, is_success) => {
         $('#msg_form')
-            .attr('class', 'success-msg')
-            .html('<ul class="checked"><li>' + localize(msg) + '</li></ul>')
+            .attr('class', is_success ? 'success-msg' : error_class)
+            .html(is_success ? `<ul class="checked"><li>${localize(msg)}</li></ul>` : localize(msg))
             .css('display', 'block')
             .delay(3000)
             .fadeOut(1000);
     };
 
-    const clearMessages = function() {
-        $('#token_message').addClass(hidden_class);
+    const clearMessages = () => {
+        $('#token_message').setVisibility(0);
     };
 
     return {

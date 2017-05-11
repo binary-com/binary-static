@@ -7,10 +7,10 @@ const isStorageSupported = (storage) => {
         return false;
     }
 
-    const testKey = 'test';
+    const test_key = 'test';
     try {
-        storage.setItem(testKey, '1');
-        storage.removeItem(testKey);
+        storage.setItem(test_key, '1');
+        storage.removeItem(test_key);
         return true;
     } catch (e) {
         return false;
@@ -51,10 +51,13 @@ InScriptStore.prototype = {
             obj[key[0]] = value;
         }
     },
-    remove: function(key) { delete this.store[key]; },
-    clear : function()    { this.store = {}; },
-    has   : function(key) { return this.get(key) !== undefined; },
-    keys  : function()    { return Object.keys(this.store); },
+    remove: function(...keys) {
+        keys.forEach((key) => { delete this.store[key]; });
+    },
+    clear: function()    { this.store = {}; },
+    has  : function(key) { return this.get(key) !== undefined; },
+    keys : function()    { return Object.keys(this.store); },
+    call : function(key) { if (typeof this.get(key) === 'function') this.get(key)(); },
 };
 
 const State = new InScriptStore();
@@ -64,7 +67,7 @@ const CookieStorage = function(cookie_name, cookie_domain) {
     this.initialized = false;
     this.cookie_name = cookie_name;
     const hostname = window.location.hostname;
-    this.domain = cookie_domain || (/\.binary\.com/i.test(hostname) ? '.' + hostname.split('.').slice(-2).join('.') : hostname);
+    this.domain = cookie_domain || (/\.binary\.com/i.test(hostname) ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
     this.path = '/';
     this.expires = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
     this.value = {};

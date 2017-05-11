@@ -47,7 +47,7 @@ const Platforms = (() => {
         if ($('.sidebar-left').is(':visible')) {
             showSelectedDiv();
         } else {
-            $('.sections').removeClass('invisible');
+            $('.sections').setVisibility(1);
         }
         // $('.inner th').hide().fadeIn(1); // force to refresh in order to maintain correct positions
     };
@@ -58,13 +58,13 @@ const Platforms = (() => {
     };
 
     const showSelectedDiv = () => {
-        const $sections_with_hash = $('.sections[id="' + getHash().substring(1) + '"]');
+        const $sections_with_hash = $(`.sections[id="${getHash().substring(1)}"]`);
         if ($sections_with_hash.is(':visible') && $('.sections:visible').length === 1) {
             return;
         }
-        $('.sections').addClass('invisible');
-        $sections_with_hash.removeClass('invisible');
-        $('.sidebar-nav a[href="' + getHash() + '"]').parent().addClass('selected');
+        $('.sections').setVisibility(0);
+        $sections_with_hash.setVisibility(1);
+        $(`.sidebar-nav a[href="${getHash()}"]`).parent().addClass('selected');
     };
 
     const onUnload = () => {

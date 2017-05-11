@@ -3,12 +3,10 @@ const BinaryPjax          = require('../../binary/base/binary_pjax');
 const toJapanTimeIfNeeded = require('../../binary/base/clock').toJapanTimeIfNeeded;
 const Header              = require('../../binary/base/header');
 const localize            = require('../../binary/base/localize').localize;
-const urlFor              = require('../../binary/base/url').urlFor;
+const Url                 = require('../../binary/base/url');
 
 const KnowledgeTest = (() => {
     'use strict';
-
-    const hidden_class = 'invisible';
 
     const submitted = {};
     let submit_completed = false;
@@ -24,9 +22,9 @@ const KnowledgeTest = (() => {
     const submitHandler = () => {
         if (submit_completed) return;
 
-        const answered_qid = Object.keys(submitted).map(function(k) { return +k; });
+        const answered_qid = Object.keys(submitted).map(k => +k);
         if (answered_qid.length !== 20) {
-            $('#knowledge-test-instructions').addClass('invisible');
+            $('#knowledge-test-instructions').setVisibility(0);
             $('#knowledge-test-msg')
                 .addClass('notice-msg')
                 .text(localize('You need to finish all 20 questions.'));
@@ -34,7 +32,7 @@ const KnowledgeTest = (() => {
             const unanswered = random_picks.reduce((a, b) => a.concat(b))
                                         .find(q => answered_qid.indexOf(q.id) === -1).id;
 
-            $.scrollTo('a[name="' + unanswered + '"]', 500, { offset: -10 });
+            $.scrollTo(`a[name="${unanswered}"]`, 500, { offset: -10 });
             return;
         }
 
@@ -60,19 +58,19 @@ const KnowledgeTest = (() => {
     const showQuestionsTable = () => {
         for (let j = 0; j < random_picks.length; j++) {
             const table = KnowledgeTestUI.createQuestionTable(random_picks[j]);
-            $('#section' + (j + 1) + '-question').append(table);
+            $(`#section${(j + 1)}-question`).append(table);
         }
 
         const $questions = $('#knowledge-test-questions');
         $questions.find('input[type=radio]').click(questionAnswerHandler);
         $('#knowledge-test-submit').click(submitHandler);
-        $questions.removeClass(hidden_class);
+        $questions.setVisibility(1);
         $('#knowledge-test-msg').text(localize('{JAPAN ONLY}Please complete the following questions.'));
-        $('#knowledge-test-instructions').removeClass('invisible');
+        $('#knowledge-test-instructions').setVisibility(1);
     };
 
     const showResult = (score, time) => {
-        $('#knowledge-test-instructions').addClass('invisible');
+        $('#knowledge-test-instructions').setVisibility(0);
         $('#knowledge-test-header').text(localize('{JAPAN ONLY}Knowledge Test Result'));
         const msg = score >= 14 ? msg_pass : msg_fail;
         $('#knowledge-test-msg').text(localize(msg));
@@ -80,13 +78,13 @@ const KnowledgeTest = (() => {
         const $result_table = KnowledgeTestUI.createResultUI(score, time);
 
         $('#knowledge-test-container').append($result_table);
-        $('#knowledge-test-questions').addClass(hidden_class);
+        $('#knowledge-test-questions').setVisibility(0);
     };
 
     const showMsgOnly = (msg) => {
-        $('#knowledge-test-questions').addClass(hidden_class);
+        $('#knowledge-test-questions').setVisibility(0);
         $('#knowledge-test-msg').text(localize(msg));
-        $('#knowledge-test-instructions').addClass('invisible');
+        $('#knowledge-test-instructions').setVisibility(0);
     };
 
     const showDisallowedMsg = jp_status =>
@@ -105,11 +103,11 @@ const KnowledgeTest = (() => {
 
     const onLoad = () => {
         // need to send get_settings because client status needs to be checked against latest available data
-        BinarySocket.send({ get_settings: 1 }, true).then((response) => {
+        BinarySocket.send({ get_settings: 1 }, { forced: true }).then((response) => {
             const jp_status = response.get_settings.jp_account_status;
 
             if (!jp_status) {
-                BinaryPjax.load('/');
+                BinaryPjax.load(Url.defaultRedirectUrl());
                 return;
             }
 
@@ -130,7 +128,7 @@ const KnowledgeTest = (() => {
                     break;
                 }
                 default: {
-                    window.location.href = urlFor('/'); // needs to be loaded without pjax
+                    window.location.href = Url.defaultRedirectUrl(); // needs to be loaded without pjax
                 }
             }
         });
@@ -151,7 +149,7 @@ const KnowledgeTest = (() => {
         /* eslint-enable */
     };
 
-    const randomPick4 = function(obj_questions) {
+    const randomPick4 = (obj_questions) => {
         const availables = Object.keys(obj_questions);
 
         const random_picks_four = [];
@@ -169,11 +167,11 @@ const KnowledgeTest = (() => {
         // retrieve questions text from html
         $('#data-questions').find('> div').each(function() { // sections
             const category = +$(this).attr('data-section-id');
-            questions['section' + category] = [];
+            questions[`section${category}`] = [];
 
             $(this).find('> div').each(function() { // questions
                 const question_id = +$(this).attr('data-question-id');
-                questions['section' + category].push({
+                questions[`section${category}`].push({
                     category          : category,
                     id                : question_id,
                     question          : $(this).attr('data-question-en'),
@@ -189,7 +187,7 @@ const KnowledgeTest = (() => {
         return picked_questions;
     };
 
-    const sendResult = function(questions) {
+    const sendResult = (questions) => {
         BinarySocket.send({
             jp_knowledge_test: 1,
             score            : result_score,
@@ -199,17 +197,18 @@ const KnowledgeTest = (() => {
             if (!response.error) {
                 showResult(result_score, response.jp_knowledge_test.test_taken_epoch * 1000);
                 $('html, body').animate({ scrollTop: 0 }, 'slow');
-                BinarySocket.send({ get_settings: 1 }, true).then(() => {
+                BinarySocket.send({ get_settings: 1 }, { forced: true }).then(() => {
                     Header.upgradeMessageVisibility();
                 });
             } else if (response.error.code === 'TestUnavailableNow') {
                 showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
             } else {
-                $('#form-msg').html(response.error.message).removeClass(hidden_class);
+                $('#form-msg').html(response.error.message).setVisibility(1);
                 submit_completed = false;
             }
         });
     };
+
     return {
         onLoad: onLoad,
     };

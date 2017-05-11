@@ -1,8 +1,8 @@
 const moment                 = require('moment');
 const TradingTimes           = require('../trading_times');
+const localize               = require('../../../base/localize').localize;
 const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
-const localize               = require('../../../base/localize').localize;
 const Table                  = require('../../../common_functions/attach_dom/table');
 const dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
 const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
@@ -21,7 +21,7 @@ const TradingTimesUI = (() => {
         trading_times,
         is_framed;
 
-    const onLoad = function(config) {
+    const onLoad = (config) => {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
@@ -60,27 +60,27 @@ const TradingTimesUI = (() => {
     const populateTable = () => {
         if (!active_symbols || !trading_times) return;
 
-        $('#errorMsg').addClass('hidden');
+        $('#errorMsg').setVisibility(0);
 
         const is_japan_trading = jpClient();
 
         const markets = trading_times.markets;
 
-        const $ul = $('<ul/>', { class: is_japan_trading ? 'hidden' : '' });
+        const $ul = $('<ul/>', { class: is_japan_trading ? 'invisible' : '' });
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {
-            const tabID = 'market_' + (m + 1);
+            const tab_id = `market_${(m + 1)}`;
 
             // contents
-            const $market = $('<div/>', { id: tabID });
+            const $market = $('<div/>', { id: tab_id });
             $market.append(createMarketTables(markets[m], is_japan_trading));
             if ($market.find('table tr').length) {
                 $contents.append($market);
 
                 // tabs
                 if (!is_japan_trading) {
-                    $ul.append($('<li/>').append($('<a/>', { href: '#' + tabID, text: markets[m].name, id: 'outline' })));
+                    $ul.append($('<li/>').append($('<a/>', { href: `#${tab_id}`, text: markets[m].name, id: 'outline' })));
                 }
             }
         }
@@ -113,7 +113,7 @@ const TradingTimesUI = (() => {
 
             if (should_populate) {
                 // submarket table
-                const $submarket_table = createEmptyTable(market.name + '-' + s);
+                const $submarket_table = createEmptyTable(`${market.name}-${s}`);
 
                 // submarket name
                 $submarket_table.find('thead').prepend(createSubmarketHeader(submarkets[s].name))
@@ -161,7 +161,7 @@ const TradingTimesUI = (() => {
     const createEventsText = (events) => {
         let result = '';
         for (let i = 0; i < events.length; i++) {
-            result += (i > 0 ? '<br />' : '') + localize(events[i].descrip) + ': ' + localize(events[i].dates);
+            result += `${(i > 0 ? '<br />' : '')}${localize(events[i].descrip)}: ${localize(events[i].dates)}`;
         }
         return result.length > 0 ? result : '--';
     };
@@ -184,19 +184,18 @@ const TradingTimesUI = (() => {
     };
 
     const sendRequest = (date, should_request_active_symbols) => {
-        if (State.get('is_beta_trading')) return;
-
         const req = { active_symbols: 'brief' };
         if (jpClient()) {
             req.landing_company = 'japan';
         }
         if (should_request_active_symbols) {
-            BinarySocket.send(req).then((response) => {
+            BinarySocket.send(req, { forced: false, msg_type: 'active_symbols' }).then((response) => {
                 TradingTimesUI.setActiveSymbols(response);
             });
         }
         BinarySocket.send({ trading_times: date || 'today' }).then((response) => {
-            TradingTimesUI.setTradingTimes(response);
+            trading_times = response.trading_times;
+            if (active_symbols) populateTable();
         });
     };
 
@@ -205,10 +204,6 @@ const TradingTimesUI = (() => {
         setActiveSymbols: (response) => {
             active_symbols = response.active_symbols.slice(0); // clone
             if (trading_times) populateTable();
-        },
-        setTradingTimes: (response) => {
-            trading_times = response.trading_times;
-            if (active_symbols) populateTable();
         },
     };
 })();

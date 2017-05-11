@@ -5,14 +5,14 @@ const GetStarted = (() => {
 
     const selectNavElement = () => {
         $('.nav li').removeClass('selected')
-            .find('a[href="' + window.location.pathname + '"]')
+            .find(`a[href="${window.location.pathname}"]`)
             .parent('li')
             .addClass('selected');
     };
 
     const updateActiveSubsection = ($nav, $to_show) => {
-        $('.subsection').addClass('hidden');
-        $to_show.removeClass('hidden');
+        $('.subsection').setVisibility(0);
+        $to_show.setVisibility(1);
         const $nav_back = $nav.find('.back');
         const $nav_next = $nav.find('.next');
 
@@ -46,13 +46,13 @@ const GetStarted = (() => {
                 if ($button.hasClass('button-disabled')) {
                     return false;
                 }
-                const $now_showing = $('.subsection:not(.hidden)');
+                const $now_showing = $('.subsection:not(.invisible)');
                 const $to_show = $button.hasClass('next') ? $now_showing.next('.subsection') : $now_showing.prev('.subsection');
                 return updateActiveSubsection($nav, $to_show);
             });
 
             const fragment = (location.href.split('#'))[1];
-            const $to_show = fragment ? $('a[name=' + fragment + '-section]').parent('.subsection') : $('.subsection.first');
+            const $to_show = fragment ? $(`a[name=${fragment}-section]`).parent('.subsection') : $('.subsection.first');
             updateActiveSubsection($nav, $to_show);
         }
         selectNavElement();

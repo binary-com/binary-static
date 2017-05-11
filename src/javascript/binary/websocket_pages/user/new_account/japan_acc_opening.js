@@ -5,8 +5,10 @@ const AccountOpening = require('../../../common_functions/account_opening');
 const detectHedging  = require('../../../common_functions/common_functions').detectHedging;
 const FormManager    = require('../../../common_functions/form_manager');
 
-const JapanAccOpening = (function() {
-    const onLoad = function() {
+const JapanAccOpening = (() => {
+    'use strict';
+
+    const onLoad = () => {
         if (AccountOpening.redirectCookie()) return;
         BinarySocket.wait('authorize').then(() => {
             if (Client.get('residence') !== 'jp') {
@@ -16,9 +18,9 @@ const JapanAccOpening = (function() {
             State.set('is_japan_opening', 1);
             if (AccountOpening.redirectAccount()) return;
             AccountOpening.populateForm();
-            const formID = '#japan-form';
+            const form_id = '#japan-form';
 
-            FormManager.init(formID, [
+            FormManager.init(form_id, [
                 { selector: '#first_name',         validations: ['req', 'letter_symbol'] },
                 { selector: '#last_name',          validations: ['req', 'letter_symbol'] },
                 { selector: '#date_of_birth',      validations: ['req'] },
@@ -34,12 +36,12 @@ const JapanAccOpening = (function() {
 
                 { request_field: 'residence',         value: Client.get('residence') },
                 { request_field: 'new_account_japan', value: 1 },
-            ].concat(AccountOpening.selectCheckboxValidation(formID)));
+            ].concat(AccountOpening.selectCheckboxValidation(form_id)));
 
             detectHedging($('#trading_purpose'), $('.hedging-assets'));
 
             FormManager.handleSubmit({
-                form_selector       : formID,
+                form_selector       : form_id,
                 fnc_response_handler: handleResponse,
             });
         });
@@ -50,7 +52,7 @@ const JapanAccOpening = (function() {
             AccountOpening.handleNewAccount(response, response.msg_type);
         } else {
             BinaryPjax.load('new_account/knowledge_testws');
-            $('#topbar-msg').children('a').addClass('invisible');
+            $('#topbar-msg').children('a').setVisibility(0);
         }
     };
 

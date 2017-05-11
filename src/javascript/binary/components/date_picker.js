@@ -1,6 +1,7 @@
 const moment           = require('moment');
 const localize         = require('../base/localize').localize;
 const isEmptyObject    = require('../base/utility').isEmptyObject;
+const clearable        = require('../base/utility').clearable;
 const checkInput       = require('../common_functions/common_functions').checkInput;
 const toReadableFormat = require('../common_functions/string_util').toReadableFormat;
 const padLeft          = require('../common_functions/string_util').padLeft;
@@ -97,10 +98,15 @@ const DatePicker = (() => {
 
             $this.attr('data-value', date);
 
-            const duration = date_pickers[selector].config_data.type === 'diff' ? moment.utc(date + ' 23:59:59').diff(moment.utc(), 'days') : null;
+            const duration = date_pickers[selector].config_data.type === 'diff' ? moment.utc(`${date} 23:59:59`).diff(moment.utc(), 'days') : null;
             $this.val(duration || date_text);
             if (old_value === date) return false;
             $(this_selector).trigger('change', [duration || date_text]);
+
+            if ($this.hasClass('clearable')) {
+                clearable($this);
+            }
+
             return true;
         };
 

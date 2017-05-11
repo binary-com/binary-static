@@ -180,6 +180,8 @@
 
                 [% INCLUDE global/financial_form.html.tt %]
 
+                [% INCLUDE global/pep_declaration.html.tt %]
+
                 <fieldset>
                     <div class="gr-12">
                       <p>[% l('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.') %]</p>
@@ -190,7 +192,7 @@
                     <div class="gr-row">
                         <div class="gr-12-m gr-padding-10 gr-centered">
                             <input type="checkbox" id="tnc" />
-                            <label for="tnc">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]">[% l('terms and conditions') %]</a> [% l('of the site.') %]</label>
+                            <label for="tnc">[% l('I have read and agree to the [_1]terms and conditions[_2] of the site.', '<a target="_blank" href="' _ request.url_for('/terms-and-conditions') _ '">', '</a>') %]</label>
                         </div>
                     </div>
 
@@ -198,7 +200,7 @@
                 </fieldset>
             </form>
 
-            <form id="financial-risk" class="hidden">
+            <form id="financial-risk" class="invisible">
                 <fieldset>
                     <div class="gr-12">
                         <p>[% l('<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved).') %]</p>

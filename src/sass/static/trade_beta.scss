@@ -220,7 +220,7 @@
                 display: block;
                 position: absolute;
                 height: 100%;
-                margin-top: -8px;
+                top: 0;
             }
         }
         border: 1px solid $COLOR_GRAY;
@@ -306,14 +306,6 @@
         }
         &.EXPIRYMISS {
             background-image: url('../images/pages/trade/ends-outside_1.png');
-        }
-        &.SPREADU {
-            background-image: url('../images/pages/trade/spreads.svg');
-            background-size: 2em;
-        }
-        &.SPREADD {
-            background-image: url('../images/pages/trade/spreads_1.svg');
-            background-size: 2em;
         }
     }
     #contract_prices_container {
@@ -852,6 +844,11 @@
                 }
                 #portfolio #portfolio-content > div, #tab_trading_times-content > p {
                     margin: 0 10px 10px;
+                }
+                #tab_trading_times-content, #tab_asset_index-content {
+                    select {
+                        margin-bottom: 10px;
+                    }
                 }
                 .toggle-content .gr-padding-10 {
                     padding-top: 0;

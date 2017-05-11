@@ -1,19 +1,19 @@
 const statement = require('../statement');
 const { api, expect } = require('../../../../common_functions/tests');
 
-describe('Statement', function() {
+describe('Statement', () => {
     let statement_ws;
     before(function(done) {
         this.timeout(10000);
         // this is a read token, even if other people take it, won't be able to do any harm
-        api.authorize('hhh9bfrbq0G3dRf').then(function() {
-            api.getStatement({ limit: 1, description: 1, offset: 0 }).then(function(response) {
+        api.authorize('hhh9bfrbq0G3dRf').then(() => {
+            api.getStatement({ limit: 1, description: 1, offset: 0 }).then((response) => {
                 statement_ws = response.statement;
                 done();
             });
         });
     });
-    it('Should have all expected data', function() {
+    it('Should have all expected data', () => {
         const statement_data = statement.getStatementData(statement_ws.transactions[0]);
         expect(statement_data).to.be.an('Object')
             .and.to.have.property('date')

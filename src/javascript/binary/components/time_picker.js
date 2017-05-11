@@ -1,6 +1,8 @@
 const moment     = require('moment');
 const localize   = require('../base/localize').localize;
+const clearable  = require('../base/utility').clearable;
 const checkInput = require('../common_functions/common_functions').checkInput;
+const padLeft    = require('../common_functions/string_util').padLeft;
 
 const TimePicker = (() => {
     'use strict';
@@ -77,13 +79,18 @@ const TimePicker = (() => {
                 if (typeof invalid[2] !== 'undefined' && isFinite(invalid[2])) minute = formatTime(invalid[2]);
                 if (typeof invalid[3] !== 'undefined' && isFinite(invalid[3])) second = formatTime(invalid[3]);
 
-                new_time = moment(time_now.format('YYYY-MM-DD') + ' ' + [hour, minute, second].join(':')).format('HH:mm');
+                new_time = moment(`${time_now.format('YYYY-MM-DD')} ${[hour, minute, second].join(':')}`).format('HH:mm');
 
                 if (old_value && old_value === new_time) return false;
                 $this.val(new_time);
             }
             $this.attr('data-value', new_time || time);
             $(this_selector).trigger('change', [new_time || time]);
+
+            if ($this.hasClass('clearable')) {
+                clearable($this);
+            }
+
             return true;
         };
 
@@ -92,7 +99,7 @@ const TimePicker = (() => {
         checkWidth(options.selector);
     };
 
-    const formatTime = time => ('0' + time).slice(-2);
+    const formatTime = time => padLeft(time, 2, '0');
 
     const toTime = time => [formatTime(time.hour), formatTime(time.minute), '00'].join(':');
 
@@ -101,7 +108,7 @@ const TimePicker = (() => {
         const time_picker_conf = time_pickers[selector].config_data;
         if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
             hide(selector);
-            $selector.attr({ type: 'time', 'data-picker': 'native' });
+            $selector.attr({ type: 'time', 'data-picker': 'native' }).removeAttr('readonly');
 
             const minTime = time_picker_conf.minTime;
             if (minTime) $selector.attr('min', toTime(minTime));
@@ -111,7 +118,7 @@ const TimePicker = (() => {
             return;
         }
         if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') || ($(window).width() < 770 && !checkInput('time', 'not-a-time'))) {
-            $selector.attr({ type: 'text', 'data-picker': 'jquery' });
+            $selector.attr({ type: 'text', 'data-picker': 'jquery', readonly: 'readonly' });
             $selector.removeAttr('min max');
             create(selector);
         }

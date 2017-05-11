@@ -1,32 +1,22 @@
-const MBContract           = require('./mb_contract').MBContract;
-const MBDisplayCurrencies  = require('./mb_currency').MBDisplayCurrencies;
-const MBTradingEvents      = require('./mb_event').MBTradingEvents;
-const MBMessage            = require('./mb_message').MBMessage;
-const MBNotifications      = require('./mb_notifications').MBNotifications;
-const MBPrice              = require('./mb_price').MBPrice;
-const MBProcess            = require('./mb_process').MBProcess;
-const MBSymbols            = require('./mb_symbols').MBSymbols;
-const TradingAnalysis      = require('../trade/analysis').TradingAnalysis;
-const chartFrameCleanup    = require('../trade/common').chartFrameCleanup;
-const forgetTradingStreams = require('../trade/process').forgetTradingStreams;
+const MBContract           = require('./mb_contract');
+const MBDisplayCurrencies  = require('./mb_currency');
+const MBTradingEvents      = require('./mb_event');
+const MBPrice              = require('./mb_price');
+const MBProcess            = require('./mb_process');
+const TradingAnalysis      = require('../trade/analysis');
+const chartFrameCleanup    = require('../trade/charts/chart_frame').chartFrameCleanup;
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
-const JapanPortfolio       = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
+const JapanPortfolio       = require('../../../binary_japan/trade_japan/portfolio');
 
-const MBTradePage = (function() {
+const MBTradePage = (() => {
+    'use strict';
+
     let events_initialized = 0;
     State.remove('is_mb_trading');
 
-    const onLoad = function() {
+    const onLoad = () => {
         State.set('is_mb_trading', true);
-        BinarySocket.init({
-            onmessage: function(msg) {
-                MBMessage.process(msg);
-            },
-            onopen: function() {
-                MBNotifications.hide('CONNECTION_ERROR');
-            },
-        });
 
         if (events_initialized === 0) {
             events_initialized = 1;
@@ -35,7 +25,7 @@ const MBTradePage = (function() {
 
         BinarySocket.send({ payout_currencies: 1 }).then(() => {
             MBDisplayCurrencies('', false);
-            MBSymbols.getSymbols(1);
+            MBProcess.getSymbols();
         });
 
         TradingAnalysis.bindAnalysisTabEvent();
@@ -43,27 +33,28 @@ const MBTradePage = (function() {
         $('#tab_graph').find('a').text(localize('Chart'));
         $('#tab_explanation').find('a').text(localize('Explanation'));
         $('#remaining-time-label').text(localize('Remaining time'));
-        window.chartAllowed = true;
+        State.set('is_chart_allowed', true);
+        State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
     };
 
-    const reload = function() {
+    const reload = () => {
         window.location.reload();
     };
 
-    const onUnload = function() {
+    const onUnload = () => {
         chartFrameCleanup();
-        window.chartAllowed = false;
+        State.set('is_chart_allowed', false);
         JapanPortfolio.hide();
         State.remove('is_mb_trading');
         events_initialized = 0;
         MBContract.onUnload();
         MBPrice.onUnload();
         MBProcess.onUnload();
-        forgetTradingStreams();
         BinarySocket.clear();
+        State.remove('ViewPopup.onDisplayed');
     };
 
-    const onDisconnect = function() {
+    const onDisconnect = () => {
         MBPrice.showPriceOverlay();
         chartFrameCleanup();
         onLoad();

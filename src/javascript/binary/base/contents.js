@@ -9,14 +9,8 @@ const Contents = (() => {
         $('#content').removeClass().addClass($('#content_class').text());
     };
 
-    const onUnload = () => {
-        // TODO: remove unbind_later class and off() at needed pages
-        $('.unbind_later').off();
-    };
-
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad: onLoad,
     };
 })();
 

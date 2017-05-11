@@ -77,7 +77,7 @@ const Header = (() => {
 
     const metatraderMenuItemVisibility = (landing_company_response) => {
         if (MetaTrader.isEligible(landing_company_response)) {
-            $('#all-accounts').find('#user_menu_metatrader').removeClass('invisible');
+            $('#all-accounts').find('#user_menu_metatrader').setVisibility(1);
         }
     };
 
@@ -108,11 +108,10 @@ const Header = (() => {
             const loginid_array = Client.get('loginid_array');
 
             const $upgrade_msg = $('.upgrademessage');
-            const hidden_class  = 'invisible';
 
             const showUpgrade = (url, msg) => {
-                $upgrade_msg.removeClass(hidden_class)
-                    .find('a').removeClass(hidden_class)
+                $upgrade_msg.setVisibility(1)
+                    .find('a').setVisibility(1)
                     .attr('href', urlFor(url))
                     .html($('<span/>', { text: localize(msg) }));
             };
@@ -120,17 +119,17 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 const show_upgrade_msg = !loginid_array.some(client => client.real);
 
-                $upgrade_msg.removeClass(hidden_class)
-                    .find('> span').removeClass(hidden_class).end()
+                $upgrade_msg.setVisibility(1)
+                    .find('> span').setVisibility(1).end()
                     .find('a')
-                    .addClass(hidden_class);
+                    .setVisibility(0);
 
                 const jp_account_status = (State.get(['response', 'get_settings', 'get_settings', 'jp_account_status']) || {}).status;
                 if (jp_account_status && show_upgrade_msg) {
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else {
-                        $upgrade_msg.removeClass(hidden_class);
+                        $upgrade_msg.setVisibility(1);
                         if (jp_account_status === 'jp_activation_pending') {
                             if ($('.activation-message').length === 0) {
                                 $('#virtual-text').append($('<div/>', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
@@ -142,7 +141,7 @@ const Header = (() => {
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    $upgrade_msg.find('> span').removeClass(hidden_class);
+                    $upgrade_msg.find('> span').setVisibility(1);
                     if (Client.canUpgradeVirtualToFinancial(landing_company)) {
                         showUpgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
                     } else if (Client.canUpgradeVirtualToJapan(landing_company)) {
@@ -151,7 +150,7 @@ const Header = (() => {
                         showUpgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
                 } else {
-                    $upgrade_msg.find('a').addClass(hidden_class).html('');
+                    $upgrade_msg.find('a').setVisibility(0).html('');
                 }
             } else {
                 let show_financial = false;
@@ -160,10 +159,10 @@ const Header = (() => {
                     show_financial = !loginid_array.some(client => client.financial);
                 }
                 if (show_financial) {
-                    $('#virtual-text').parent().addClass('invisible');
+                    $('#virtual-text').parent().setVisibility(0);
                     showUpgrade('new_account/maltainvestws', 'Open a Financial Account');
                 } else {
-                    $upgrade_msg.addClass(hidden_class);
+                    $upgrade_msg.setVisibility(0);
                 }
             }
         });
@@ -193,38 +192,38 @@ const Header = (() => {
                 return false;
             };
 
+            const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
+
+
             const messages = {
-                authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/authenticate') + '">', '</a>']),
-                residence: () => localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.',
-                    ['<a href="' + urlFor('user/settings/detailsws') + '">', '</a>']),
-                risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/settings/assessmentws') + '">', '</a>']),
-                tax: () => localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/settings/detailsws') + '">', '</a>']),
-                tnc: () => localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/tnc_approvalws') + '">', '</a>']),
-                unwelcome: () => localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
-                    ['<a href="' + urlFor('contact') + '">', '</a>']),
+                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.',        'user/authenticate'),
+                financial_limit: () => buildMessage('Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.', 'user/security/self_exclusionws', '#max_30day_turnover'),
+                residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                        'user/settings/detailsws'),
+                risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',        'user/settings/assessmentws'),
+                tax            : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                 'user/settings/detailsws'),
+                tnc            : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',       'user/tnc_approvalws'),
+                unwelcome      : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                      'contact'),
             };
 
             const validations = {
                 authenticate: () =>
                     (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient() && should_authenticate,
-                residence: () => !Client.get('residence'),
-                risk     : () => riskAssessment(),
-                tax      : () => Client.shouldCompleteTax(),
-                tnc      : () => Client.shouldAcceptTnc(),
-                unwelcome: () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
+                financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
+                residence      : () => !Client.get('residence'),
+                risk           : () => riskAssessment(),
+                tax            : () => Client.shouldCompleteTax(),
+                tnc            : () => Client.shouldAcceptTnc(),
+                unwelcome      : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
             };
 
             // real account checks
             const check_statuses_real = [
-                { validation: validations.tnc,          message: messages.tnc },
-                { validation: validations.risk,         message: messages.risk },
-                { validation: validations.tax,          message: messages.tax },
-                { validation: validations.authenticate, message: messages.authenticate },
-                { validation: validations.unwelcome,    message: messages.unwelcome },
+                { validation: validations.tnc,             message: messages.tnc },
+                { validation: validations.financial_limit, message: messages.financial_limit },
+                { validation: validations.risk,            message: messages.risk },
+                { validation: validations.tax,             message: messages.tax },
+                { validation: validations.authenticate,    message: messages.authenticate },
+                { validation: validations.unwelcome,       message: messages.unwelcome },
             ];
 
             // virtual checks

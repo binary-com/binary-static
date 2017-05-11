@@ -16,7 +16,6 @@
           <li><a href="[% request.url_for('/get-started/why-trade-with-us') %]">[% l("Why trade with [_1]", website_name) %]</a></li>
           <li><a href="[% request.url_for('/get-started/how-to-trade-binaries') %]">[% l("How to trade binary options?") %]</a></li>
           <li class="ja-hide"><a href="[% request.url_for('/get-started/volidx-markets') %]">[% l("How to trade the Volatility Indices markets?") %]</a></li>
-          <li class="ja-hide"><a href="[% request.url_for('/get-started/spread') %]">[% l("How to trade spreads?") %]</a></li>
           <li class="ja-hide"><a href="[% request.url_for('/get-started/smart-indices') %]">[% l("Smart Markets") %]</a></li>
           <li class="ja-hide"><a href="[% request.url_for('/get-started/otc-indices-stocks') %]">[% l("OTC Indices and Stocks") %]</a></li>
           <li><a href="[% request.url_for('/get-started/beginners-faq') %]">[% l("FAQ") %]</a></li>
@@ -41,7 +40,7 @@
           [% l('Want to learn more?') %]
           <br/>
           <a class="ja-hide" href="[% request.url_for('/tour') %]">[% l('View the Tour') %]</a>
-          <a class="hidden ja-show" href="[% request.url_for('/tour-jp') %]">[% l('View the Tour') %]</a>
+          <a class="invisible ja-show" href="[% request.url_for('/tour-jp') %]">[% l('View the Tour') %]</a>
         </p>
       </div>
     </div>

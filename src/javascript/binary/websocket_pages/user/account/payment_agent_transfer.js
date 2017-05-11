@@ -3,15 +3,15 @@ const Client                 = require('../../../base/client');
 const State                  = require('../../../base/storage').State;
 const FormManager            = require('../../../common_functions/form_manager');
 
-const PaymentAgentTransfer = (function() {
-    const hiddenClass = 'invisible';
+const PaymentAgentTransfer = (() => {
+    'use strict';
 
     let balance,
         is_authenticated_payment_agent,
         common_request_fields,
         $insufficient_balance;
 
-    const onLoad = function() {
+    const onLoad = () => {
         PaymentAgentTransferUI.initValues();
         BinarySocket.wait('get_settings', 'balance').then(() => {
             is_authenticated_payment_agent = State.get(['response', 'get_settings', 'get_settings', 'is_authenticated_payment_agent']);
@@ -23,7 +23,7 @@ const PaymentAgentTransfer = (function() {
         });
     };
 
-    const init = function() {
+    const init = () => {
         const form_id = '#frm_paymentagent_transfer';
         const $no_bal_err = $('#no_balance_error');
         const currency = Client.get('currency');
@@ -32,11 +32,11 @@ const PaymentAgentTransfer = (function() {
 
         if (!currency || +balance === 0) {
             $('#pa_transfer_loading').remove();
-            $no_bal_err.removeClass(hiddenClass);
+            $no_bal_err.setVisibility(1);
             return;
         }
 
-        $no_bal_err.addClass(hiddenClass);
+        $no_bal_err.setVisibility(0);
         setFormVisibility(true);
         PaymentAgentTransferUI.updateFormView(currency);
 
@@ -65,16 +65,16 @@ const PaymentAgentTransfer = (function() {
 
     const checkBalance = (amount) => {
         if (+amount > +balance) {
-            $insufficient_balance.removeClass(hiddenClass);
+            $insufficient_balance.setVisibility(1);
             return false;
         }
-        $insufficient_balance.addClass(hiddenClass);
+        $insufficient_balance.setVisibility(0);
         return true;
     };
 
     const additionalCheck = req => checkBalance(req.amount);
 
-    const setFormVisibility = function(is_visible) {
+    const setFormVisibility = (is_visible) => {
         if (is_visible) {
             $('#pa_transfer_loading').remove();
             PaymentAgentTransferUI.showForm();
@@ -84,7 +84,7 @@ const PaymentAgentTransfer = (function() {
             PaymentAgentTransferUI.hideNotes();
             if (!is_authenticated_payment_agent) {
                 $('#pa_transfer_loading').remove();
-                $('#not_pa_error').removeClass('invisible');
+                $('#not_pa_error').setVisibility(1);
             }
         }
     };
@@ -95,7 +95,7 @@ const PaymentAgentTransfer = (function() {
 
         if (error) {
             if (req.dry_run === 1) {
-                $('#form_error').text(error.message).removeClass(hiddenClass);
+                $('#form_error').text(error.message).setVisibility(1);
                 return;
             }
             PaymentAgentTransferUI.showTransferError(error.message);
@@ -131,12 +131,12 @@ const PaymentAgentTransfer = (function() {
             fnc_response_handler: responseHandler,
         });
 
-        $('#back_transfer').off('click').click(function() {
+        $('#back_transfer').off('click').click(() => {
             PaymentAgentTransferUI.showForm();
             PaymentAgentTransferUI.showNotes();
             PaymentAgentTransferUI.hideConfirmation();
             PaymentAgentTransferUI.hideDone();
-            $('#form_error').addClass(hiddenClass);
+            $('#form_error').setVisibility(0);
         });
     };
 

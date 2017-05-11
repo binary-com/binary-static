@@ -13,8 +13,8 @@ const StatementUI = (() => {
     let all_data = [],
         oauth_apps = {};
 
-    const table_id = 'statement-table',
-        columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
+    const table_id = 'statement-table';
+    const columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
 
     const createEmptyStatementTable = () => {
         const header = [
@@ -28,10 +28,10 @@ const StatementUI = (() => {
             localize('Details'),
         ];
 
-        const jp_client = jpClient(),
-            currency = Client.get('currency');
+        const jp_client = jpClient();
+        const currency = Client.get('currency');
 
-        header[6] += (jp_client || !currency ? '' : ' (' + currency + ')');
+        header[6] += (jp_client || !currency ? '' : ` (${currency})`);
 
         const metadata = {
             id  : table_id,
@@ -44,7 +44,7 @@ const StatementUI = (() => {
     const clearTableContent = () => {
         Table.clearTableBody(table_id);
         all_data = [];
-        $('#' + table_id + '>tfoot').hide();
+        $(`#${table_id} > tfoot`).hide();
     };
 
     const createStatementRow = (transaction) => {
@@ -57,7 +57,7 @@ const StatementUI = (() => {
 
         const $statement_row = Table.createFlexTableRow([
             statement_data.date,
-            '<span' + showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id]) + '>' + statement_data.ref + '</span>',
+            `<span ${showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id])}>${statement_data.ref}</span>`,
             statement_data.payout,
             localize(statement_data.action),
             '',
@@ -68,7 +68,7 @@ const StatementUI = (() => {
 
         $statement_row.children('.credit').addClass(credit_debit_type);
         $statement_row.children('.date').addClass('pre');
-        $statement_row.children('.desc').html(localize(statement_data.desc) + '<br>');
+        $statement_row.children('.desc').html(`${localize(statement_data.desc)}<br>`);
 
         // create view button and append
         if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
@@ -86,17 +86,16 @@ const StatementUI = (() => {
     const errorMessage = (msg) => {
         const $err = $('#statement-container').find('#error-msg');
         if (msg) {
-            $err.removeClass('invisible').text(msg);
+            $err.setVisibility(1).text(msg);
         } else {
-            $err.addClass('invisible').text('');
+            $err.setVisibility(0).text('');
         }
     };
 
     const exportCSV = () => {
         downloadCSV(
             Statement.generateCSV(all_data, jpClient()),
-            'Statement_' + Client.get('loginid') + '_latest' + $('#rows_count').text() + '_' +
-                toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '') + '.csv');
+            `Statement_${Client.get('loginid')}_latest${$('#rows_count').text()}_${toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '')}.csv`);
     };
 
     return {

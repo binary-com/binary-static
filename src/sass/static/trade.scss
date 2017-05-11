@@ -173,7 +173,7 @@
                 display: block;
                 position: absolute;
                 height: 100%;
-                margin-top: -8px;
+                top: 0;
             }
         }
         border: 1px solid $COLOR_GRAY;
@@ -257,14 +257,6 @@
         }
         &.EXPIRYMISS {
             background: url('../images/pages/trade/ends-outside_1.png') no-repeat top center;
-        }
-        &.SPREADU {
-            background: url('../images/pages/trade/spreads.svg') no-repeat top center;
-            background-size: 40%;
-        }
-        &.SPREADD {
-            background: url('../images/pages/trade/spreads_1.svg') no-repeat top center;
-            background-size: 40%;
         }
     }
     #contract_prices_container {

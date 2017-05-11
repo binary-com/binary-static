@@ -74,8 +74,8 @@ const ProfitTableInit = (() => {
     const onScrollLoad = () => {
         $(document).scroll(() => {
             const hidableHeight = (percentage) => {
-                const totalHidable = $(document).height() - $(window).height();
-                return Math.floor((totalHidable * percentage) / 100);
+                const total_hidable = $(document).height() - $(window).height();
+                return Math.floor((total_hidable * percentage) / 100);
             };
 
             const p_from_top = $(document).scrollTop();
@@ -103,7 +103,7 @@ const ProfitTableInit = (() => {
         BinarySocket.send(req).then((response) => {
             profitTableHandler(response);
             showLocalTimeOnHover('td.buy-date,td.sell-date');
-            $('.barspinner').addClass('hidden');
+            $('.barspinner').setVisibility(0);
         });
     };
 

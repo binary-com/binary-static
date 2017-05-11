@@ -1,32 +1,32 @@
-const Contract      = require('./contract').Contract;
-const Defaults      = require('./defaults').Contract;
-const Contract_Beta = require('./beta/contract').Contract_Beta;
+const Contract_Beta = require('./beta/contract');
+const Contract      = require('./contract');
+const Defaults      = require('./defaults');
 
 /*
- * function to set placeholder text based on current form, used for mobile menu
+ * set placeholder text based on current form, used for mobile menu
  */
-function setFormPlaceholderContent(name) {
+const setFormPlaceholderContent = (name) => {
     'use strict';
 
-    const formPlaceholder = document.getElementById('contract_form_nav_placeholder');
-    if (formPlaceholder) {
+    const form_placeholder = document.getElementById('contract_form_nav_placeholder');
+    if (form_placeholder) {
         name = name || Defaults.get('formname');
-        formPlaceholder.textContent = Contract.contractForms()[name];
+        form_placeholder.textContent = Contract.contractForms()[name];
     }
-}
+};
 
 /*
- * function to set placeholder text based on current form, used for mobile menu
+ * set placeholder text based on current form, used for mobile menu
  */
-function setFormPlaceholderContent_Beta(name) {
+const setFormPlaceholderContent_Beta = (name) => {
     'use strict';
 
-    const formPlaceholder = document.getElementById('contract_form_nav_placeholder');
-    if (formPlaceholder) {
+    const form_placeholder = document.getElementById('contract_form_nav_placeholder');
+    if (form_placeholder) {
         name = name || Defaults.get('formname');
-        formPlaceholder.textContent = Contract_Beta.contractForms()[name];
+        form_placeholder.textContent = Contract_Beta.contractForms()[name];
     }
-}
+};
 
 module.exports = {
     setFormPlaceholderContent     : setFormPlaceholderContent,

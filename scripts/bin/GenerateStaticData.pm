@@ -148,19 +148,13 @@ sub _texts {
         push @texts, localize('Potential Payout');
         push @texts, localize('Total Cost');
         push @texts, localize('Potential Profit');
-        push @texts, localize('Amount per point');
-        push @texts, localize('Stop-loss');
-        push @texts, localize('Stop-profit');
         push @texts, localize('View');
         push @texts, localize('Statement');
-        push @texts, localize('points');
         push @texts, localize('Tick');
         push @texts, localize('Buy price');
         push @texts, localize('Final price');
         push @texts, localize('Long');
         push @texts, localize('Short');
-        push @texts, localize('Deposit of');
-        push @texts, localize('is required. Current spread');
         push @texts, localize('Chart');
         push @texts, localize('Explanation');
         push @texts, localize('Last Digit Stats');
@@ -193,6 +187,8 @@ sub _texts {
         push @texts, localize('Sorry, an error occurred while processing your account.');
         push @texts, localize('Your changes have been updated successfully.');
         push @texts, localize('Your settings have been updated successfully.');
+        push @texts, localize('Female');
+        push @texts, localize('Male');
         #strings for home and virtual account opening page
         push @texts, localize('verification token');
         push @texts, localize('email address');
@@ -200,9 +196,8 @@ sub _texts {
         push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');
-        push @texts, localize('Please [_1] to view this page');
-        push @texts, localize('login');
         push @texts, localize('Your session duration limit will end in [_1] seconds.');
+        push @texts, localize('Invalid email address');
         #strings for real account opening page
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
@@ -346,7 +341,8 @@ sub _texts {
         #strings for digit_info
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
-        push @texts, localize('Last digit stats for the latest [_1] ticks on [_2]');
+        push @texts, localize('Percentage');
+        push @texts, localize('Digit');
         #strings for paymentagent
         push @texts, localize('Amount');
         push @texts, localize('Deposit');
@@ -397,12 +393,6 @@ sub _texts {
         push @texts, localize('Current');
         push @texts, localize('Open');
         push @texts, localize('Closed');
-        push @texts, localize('Entry Level');
-        push @texts, localize('Exit Level');
-        push @texts, localize('Stop Loss Level');
-        push @texts, localize('Stop Profit Level');
-        push @texts, localize('Current Level');
-        push @texts, localize('Profit/Loss (points)');
         push @texts, localize('Contract is not started yet');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
@@ -419,15 +409,7 @@ sub _texts {
         push @texts, localize('Contract ID');
         push @texts, localize('Reference ID');
         push @texts, localize('Remaining Time');
-        push @texts, localize('This contract was affected by a Corporate Action event.');
         push @texts, localize('Barrier Change');
-        push @texts, localize('Original Barrier');
-        push @texts, localize('Original High Barrier');
-        push @texts, localize('Original Low Barrier');
-        push @texts, localize('Adjusted Barrier');
-        push @texts, localize('Adjusted High Barrier');
-        push @texts, localize('Adjusted Low Barrier');
-        push @texts, localize('Corporate Action');
         # strings for financial assessment
         push @texts, localize('Please select a value');
         # Strings for authorised_apps
@@ -495,7 +477,9 @@ sub _texts {
         push @texts, localize('from [_1] to [_2]');
 
         # strings for header notification
-        push @texts, localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.');
+        push @texts, localize('Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.');
+        push @texts, localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.');
         push @texts, localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.');

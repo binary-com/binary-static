@@ -1,8 +1,4 @@
 const ActiveSymbols = require('../../common_functions/active_symbols');
-const BinaryPjax    = require('../../base/binary_pjax');
-const Client        = require('../../base/client');
-const getLanguage   = require('../../base/language').get;
-const State         = require('../../base/storage').State;
 
 /*
  * MBSymbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
@@ -20,60 +16,33 @@ const State         = require('../../base/storage').State;
  *
  */
 
-const MBSymbols = (function () {
+const MBSymbols = (() => {
     'use strict';
 
-    let tradeMarkets     = {},
-        tradeMarketsList = {},
-        tradeUnderlyings = {},
-        need_page_update = 1,
-        allSymbols       = {},
-        names            = {};
+    let trade_markets      = {},
+        trade_markets_list = {},
+        trade_underlyings  = {},
+        all_symbols        = {},
+        names              = {};
 
-    const details = function (data) {
+    const details = (data) => {
         ActiveSymbols.clearData();
         const active_symbols = data.active_symbols;
-        tradeMarkets     = ActiveSymbols.getMarkets(active_symbols);
-        tradeMarketsList = ActiveSymbols.getMarketsList(active_symbols);
-        tradeUnderlyings = ActiveSymbols.getTradeUnderlyings(active_symbols);
-        allSymbols       = ActiveSymbols.getSymbols(allSymbols);
-        names            = ActiveSymbols.getSymbolNames(active_symbols);
-    };
-
-    const getSymbols = function (update) {
-        BinarySocket.wait('website_status').then((website_status) => {
-            const landing_company_obj = State.get(['response', 'landing_company', 'landing_company']);
-            const allowed_markets     = Client.currentLandingCompany().legal_allowed_markets;
-            if (Client.isLoggedIn() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
-                BinaryPjax.load('trading');
-                return;
-            }
-            const req = {
-                active_symbols: 'brief',
-                product_type  : 'multi_barrier',
-            };
-            if (landing_company_obj) {
-                req.landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
-            } else if (website_status.website_status.clients_country === 'jp' || getLanguage() === 'JA') {
-                req.landing_company = 'japan';
-            }
-            BinarySocket.send(req, false, 'active_symbols');
-            need_page_update = update;
-        });
+        trade_markets        = ActiveSymbols.getMarkets(active_symbols);
+        trade_markets_list   = ActiveSymbols.getMarketsList(active_symbols);
+        trade_underlyings    = ActiveSymbols.getTradeUnderlyings(active_symbols);
+        all_symbols          = ActiveSymbols.getSymbols(all_symbols);
+        names                = ActiveSymbols.getSymbolNames(active_symbols);
     };
 
     return {
-        details         : details,
-        getSymbols      : getSymbols,
-        markets         : function (list)  { return list ? tradeMarketsList : tradeMarkets; },
-        underlyings     : function ()      { return tradeUnderlyings; },
-        getName         : function(symbol) { return names[symbol]; },
-        need_page_update: function ()      { return need_page_update; },
-        getAllSymbols   : function ()      { return allSymbols; },
-        clearData       : function ()      { ActiveSymbols.clearData(); },
+        details      : details,
+        markets      : list    => (list ? trade_markets_list : trade_markets),
+        underlyings  : ()      => trade_underlyings,
+        getName      : symbol  => names[symbol],
+        getAllSymbols: ()      => all_symbols,
+        clearData    : ()      => { ActiveSymbols.clearData(); },
     };
 })();
 
-module.exports = {
-    MBSymbols: MBSymbols,
-};
+module.exports = MBSymbols;

@@ -71,12 +71,12 @@ const Client = (() => {
 
     const set = (key, value) => {
         client_object[key] = value;
-        return LocalStore.set('client.' + key, value);
+        return LocalStore.set(`client.${key}`, value);
     };
 
     // use this function to get variables that have values
     const get = (key) => {
-        let value = client_object[key] || LocalStore.get('client.' + key) || '';
+        let value = client_object[key] || LocalStore.get(`client.${key}`) || '';
         if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
             value = JSON.parse(value || false);
         }
@@ -120,9 +120,9 @@ const Client = (() => {
         let token;
         const tokens = get('tokens');
         if (client_loginid && tokens) {
-            const tokensObj = JSON.parse(tokens);
-            if (tokensObj.hasOwnProperty(client_loginid) && tokensObj[client_loginid]) {
-                token = tokensObj[client_loginid];
+            const tokens_obj = JSON.parse(tokens);
+            if (tokens_obj.hasOwnProperty(client_loginid) && tokens_obj[client_loginid]) {
+                token = tokens_obj[client_loginid];
             }
         }
         return token;
@@ -133,16 +133,16 @@ const Client = (() => {
             return false;
         }
         const tokens = get('tokens');
-        const tokensObj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
-        tokensObj[client_loginid] = token;
-        set('tokens', JSON.stringify(tokensObj));
+        const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
+        tokens_obj[client_loginid] = token;
+        set('tokens', JSON.stringify(tokens_obj));
         return true;
     };
 
-    const setCookie = (cookieName, Value, domain) => {
+    const setCookie = (cookie_name, Value, domain) => {
         const cookie_expire = new Date();
         cookie_expire.setDate(cookie_expire.getDate() + 60);
-        const cookie = new CookieStorage(cookieName, domain);
+        const cookie = new CookieStorage(cookie_name, domain);
         cookie.write(Value, cookie_expire, true);
     };
 
@@ -156,7 +156,7 @@ const Client = (() => {
         setCookie('email',        client_email);
         setCookie('login',        token);
         setCookie('loginid',      client_loginid);
-        setCookie('loginid_list', virtual_client ? client_loginid + ':V:E' : client_loginid + ':R:E+' + Cookies.get('loginid_list'));
+        setCookie('loginid_list', virtual_client ? `${client_loginid}:V:E` : `${client_loginid}:R:E+${Cookies.get('loginid_list')}`);
         // set local storage
         localStorage.setItem('GTM_new_account', '1');
         localStorage.setItem('active_loginid', client_loginid);
@@ -193,23 +193,23 @@ const Client = (() => {
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status').then(() => {
                 $('#client-logged-in').addClass('gr-centered');
-                $('.client_logged_in').removeClass('invisible');
+                $('.client_logged_in').setVisibility(1);
                 if (get('is_virtual')) {
-                    $(section).find('.client_virtual').removeClass('invisible');
+                    $(section).find('.client_virtual').setVisibility(1);
                     $('#topbar').addClass('secondary-bg-color').removeClass('primary-color-dark');
                 } else {
-                    $(section).find('.client_real').not((jpClient() ? '.ja-hide' : '')).removeClass('invisible');
+                    $(section).find('.client_real').not((jpClient() ? '.ja-hide' : '')).setVisibility(1);
                     $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
                 }
             });
         } else {
-            $(section).find('.client_logged_out').removeClass('invisible');
+            $(section).find('.client_logged_out').setVisibility(1);
             $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
         }
     };
 
-    const sendLogoutRequest = (showLoginPage) => {
-        if (showLoginPage) {
+    const sendLogoutRequest = (show_login_page) => {
+        if (show_login_page) {
             sessionStorage.setItem('showLoginPage', 1);
         }
         BinarySocket.send({ logout: '1' });
@@ -221,13 +221,13 @@ const Client = (() => {
         LocalStore.remove('client.tokens');
         const cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence'];
         const domains = [
-            '.' + document.domain.split('.').slice(-2).join('.'),
-            '.' + document.domain,
+            `.${document.domain.split('.').slice(-2).join('.')}`,
+            `.${document.domain}`,
         ];
 
         let parent_path = window.location.pathname.split('/', 2)[1];
         if (parent_path !== '') {
-            parent_path = '/' + parent_path;
+            parent_path = `/${parent_path}`;
         }
 
         cookies.forEach((c) => {

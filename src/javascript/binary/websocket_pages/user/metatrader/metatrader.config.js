@@ -4,7 +4,7 @@ const urlFor        = require('../../../base/url').urlFor;
 const isEmptyObject = require('../../../base/utility').isEmptyObject;
 const formatMoney   = require('../../../common_functions/currency_to_symbol').formatMoney;
 
-const MetaTraderConfig = (function() {
+const MetaTraderConfig = (() => {
     'use strict';
 
     const currency = 'USD';
@@ -113,7 +113,7 @@ const MetaTraderConfig = (function() {
                 } else if (types_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                         resolve($.inArray('authenticated', response_status.get_account_status.status) === -1 ?
-                            $('#msg_authenticate').find('.show_for_mt5').removeClass('invisible').end()
+                            $('#msg_authenticate').find('.show_for_mt5').setVisibility(1).end()
                                 .html() : '');
                     });
                 } else {

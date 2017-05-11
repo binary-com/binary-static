@@ -56,13 +56,6 @@
                     <p>[% l("If you select \"falls\", you win the payout if the market price is lower than the <strong>entry spot</strong>.") %]</p>
                 </div>
 
-                <div id="winning_spreads" class="invisible">
-                    <p>[% l('Spread contracts payout based on the movement of the index relative to the entry level of the contract.') %]</p>
-                    <p>[% l("'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls.") %]</p>
-                    <p>[% l("'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls.") %]</p>
-                    <p>[% l("The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level.") %]</p>
-                </div>
-
                 <div id="winning_staysinout" class="invisible">
                     <p>[% l("If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>.") %]</p>
                     <p>[% l("If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>.") %]</p>
@@ -161,12 +154,6 @@
                     </p>
                     <br />
                     <p class="hint"><strong>[% l("Note") %]: </strong>[% l("Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time.") %]</p>
-                </div>
-
-                <div id="explain_spreads" class="invisible">
-                    <h3>[% l("Entry Level") %]</h3>
-                    <p>[% l("For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread.") %]</p>
-                    <p>[% l("The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index.") %]</p>
                 </div>
 
                 <div id="explain_staysinout" class="invisible">

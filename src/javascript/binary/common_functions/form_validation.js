@@ -37,6 +37,14 @@ const Validation = (() => {
                         field.$error = $form.find(field.msg_element);
                     } else {
                         const $parent = field.$.parent();
+                        // Add indicator to required fields
+                        if (field.validations.indexOf('req') >= 0) {
+                            let $label = $parent.parent().find('label');
+                            if (!$label.length) $label = $parent.find('label');
+                            if ($label.find('span.required_field_asterisk').length === 0) {
+                                $label.append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
+                            }
+                        }
                         if ($parent.find(`div.${error_class}`).length === 0) {
                             $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
                         }
@@ -98,7 +106,7 @@ const Validation = (() => {
             is_ok = false;
             message = localize('Should be a valid number');
         } else if (options.type === 'float' && options.decimals &&
-            !(new RegExp('^\\d+(\\.\\d{' + options.decimals.replace(/ /g, '') + '})?$').test(value))) {
+            !(new RegExp(`^\\d+(\\.\\d{${options.decimals.replace(/ /g, '')}})?$`).test(value))) {
             is_ok = false;
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
         } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
@@ -148,6 +156,7 @@ const Validation = (() => {
             message;
 
         field.validations.some((valid) => {
+            if (!valid) return false; // check next validation
             let type,
                 options = {};
 
@@ -177,9 +186,9 @@ const Validation = (() => {
                     message = localize(message, [localize(options.name1), localize(options.name2)]);
                 }
                 all_is_ok = false;
-                return true;
+                return true; // break on the first error found
             }
-            return false;
+            return false; // check next validation
         });
 
         if (!all_is_ok) {
@@ -193,13 +202,13 @@ const Validation = (() => {
 
     const clearError = (field) => {
         if (field.$error && field.$error.length) {
-            field.$error.addClass(hidden_class);
+            field.$error.setVisibility(0);
         }
     };
 
     const showError = (field, message) => {
         clearError(field);
-        field.$error.text(localize(message)).removeClass(hidden_class);
+        field.$error.text(localize(message)).setVisibility(1);
     };
 
     const validate = (form_selector) => {

@@ -16,42 +16,29 @@ const ActiveSymbols = require('../../common_functions/active_symbols');
  *
  */
 
-const Symbols = (function () {
+const Symbols = (() => {
     'use strict';
 
-    let tradeMarkets = {},
-        tradeMarketsList = {},
-        tradeUnderlyings = {},
-        need_page_update = 1,
+    let trade_markets = {},
+        trade_markets_list = {},
+        trade_underlyings = {},
         names = {};
 
-    const details = function (data) {
-        const allSymbols = data.active_symbols;
-        tradeMarkets = ActiveSymbols.getMarkets(allSymbols);
-        tradeMarketsList = ActiveSymbols.getMarketsList(allSymbols);
-        tradeUnderlyings = ActiveSymbols.getTradeUnderlyings(allSymbols);
-        names = ActiveSymbols.getSymbolNames(allSymbols);
-    };
-
-    const getSymbols = function (update) {
-        const $args = {
-            active_symbols: 'brief',
-        };
-        BinarySocket.send($args);
-        need_page_update = update;
+    const details = (data) => {
+        const all_symbols  = data.active_symbols;
+        trade_markets      = ActiveSymbols.getMarkets(all_symbols);
+        trade_markets_list = ActiveSymbols.getMarketsList(all_symbols);
+        trade_underlyings  = ActiveSymbols.getTradeUnderlyings(all_symbols);
+        names              = ActiveSymbols.getSymbolNames(all_symbols);
     };
 
     return {
-        details         : details,
-        getSymbols      : getSymbols,
-        markets         : function (list) { return list ? tradeMarketsList : tradeMarkets; },
-        underlyings     : function () { return tradeUnderlyings; },
-        getName         : function(symbol) { return names[symbol]; },
-        need_page_update: function () { return need_page_update; },
-        getAllSymbols   : function() { return names; },
+        details      : details,
+        markets      : list   => (list ? trade_markets_list : trade_markets),
+        underlyings  : ()     => trade_underlyings,
+        getName      : symbol => names[symbol],
+        getAllSymbols: ()     => names,
     };
 })();
 
-module.exports = {
-    Symbols: Symbols,
-};
+module.exports = Symbols;
