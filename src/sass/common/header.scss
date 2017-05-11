@@ -41,11 +41,14 @@ body #topbar {
             opacity: 0.75;
         }
         li {
+            white-space: normal;
             display: inline-block;
             margin: 0;
             a {
                 font-weight: normal;
                 vertical-align: middle;
+                display: table-cell;
+                height: 50px;
                 max-width: 110px;
                 text-decoration: none;
                 letter-spacing: 0;
