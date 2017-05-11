@@ -28,6 +28,10 @@
     text-align: center;
 }
 
+.justify-text {
+    text-align: justify;
+}
+
 .align-start {
     @include BIDIR_VALUE (text-align, left, right);
 }
