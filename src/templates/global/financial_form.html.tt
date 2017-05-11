@@ -20,7 +20,7 @@
 
 [% BLOCK values %]
     <option value="">[% l("Please select") %]</option>
-    <option value="Less than \$25,000">[% l("Less than \25,000") %]</option>
+    <option value="Less than \$25,000">[% l("Less than \$25,000") %]</option>
     <option value="\$25,000 - \$50,000">[% l("\$25,000 - \$50,000") %]</option>
     <option value="\$50,001 - \$100,000">[% l("\$50,001 - \$100,000") %]</option>
     <option value="\$100,001 - \$500,000">[% l("\$100,001 - \$500,000") %]</option>
@@ -101,7 +101,7 @@
 
     [% WRAPPER components/forms/form_row.html.tt id='estimated_worth' label=l("Estimated Net Worth") type='select' %]
         <option value="">[% l("Please select") %]</option>
-        <option value="Less than \$100,000">[% l("Less than \100,000") %]</option>
+        <option value="Less than \$100,000">[% l("Less than \$100,000") %]</option>
         <option value="\$100,000 - \$250,000">[% l("\$100,000 - \$250,000") %]</option>
         <option value="\$250,001 - \$500,000">[% l("\$250,001 - \$500,000") %]</option>
         <option value="\$500,001 - \$1,000,000">[% l("\$500,001 - \$1,000,000") %]</option>

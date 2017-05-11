@@ -10,7 +10,7 @@
     <div id="token_form" class="gr-12 gr-padding-10">
         <form>
             [% WRAPPER components/forms/fieldset.html.tt legend=l("Create New Token") %]
-                [% INCLUDE components/forms/form_row.html.tt type='text' id='txt_name' label=l("Choose a Name:") attributes='maxlength="32"' %]
+                [% INCLUDE components/forms/form_row.html.tt type='text' id='txt_name' label=l("Choose token name") attributes='maxlength="32"' %]
 
                 [% WRAPPER components/forms/form_row.html.tt type='custom' label=l("Choose Scopes:") %]
                     <input id="chk_scopes_read" type="checkbox" value="read" checked="checked" readonly="readonly" />

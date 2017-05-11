@@ -12,6 +12,7 @@ const Url               = require('./url');
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
 const scrollToTop       = require('../common_functions/scroll').scrollToTop;
 const TrafficSource     = require('../common_functions/traffic_source');
+const BinarySocket      = require('../websocket_pages/socket');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
 const AffiliatePopup    = require('../../binary_japan/affiliate_popup');
 const Cookies           = require('../../lib/js-cookie');
@@ -24,7 +25,6 @@ const Page = (() => {
 
     const init = () => {
         State.set('is_loaded_by_pjax', false);
-        Client.init();
         Url.init();
         PushNotification.init();
         onDocumentReady();
@@ -98,7 +98,6 @@ const Page = (() => {
             checkLanguage();
         }
         TrafficSource.setData();
-        BinarySocket.init();
     };
 
     const onUnload = () => {
@@ -150,7 +149,7 @@ const Page = (() => {
                 `${localize('This is a staging server - For testing purposes only')} - `)}
                 ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
             const $end_note = $('#end-note');
-            $end_note.html(message).removeClass('invisible');
+            $end_note.html(message).setVisibility(1);
             $('#footer').css('padding-bottom', $end_note.height());
         }
     };

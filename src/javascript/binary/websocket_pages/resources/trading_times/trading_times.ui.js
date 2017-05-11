@@ -1,5 +1,6 @@
 const moment                 = require('moment');
 const TradingTimes           = require('../trading_times');
+const BinarySocket           = require('../../socket');
 const localize               = require('../../../base/localize').localize;
 const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
@@ -60,13 +61,13 @@ const TradingTimesUI = (() => {
     const populateTable = () => {
         if (!active_symbols || !trading_times) return;
 
-        $('#errorMsg').addClass('hidden');
+        $('#errorMsg').setVisibility(0);
 
         const is_japan_trading = jpClient();
 
         const markets = trading_times.markets;
 
-        const $ul = $('<ul/>', { class: is_japan_trading ? 'hidden' : '' });
+        const $ul = $('<ul/>', { class: is_japan_trading ? 'invisible' : '' });
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {
@@ -189,7 +190,7 @@ const TradingTimesUI = (() => {
             req.landing_company = 'japan';
         }
         if (should_request_active_symbols) {
-            BinarySocket.send(req, { forced: false, msg_type: 'active_symbols' }).then((response) => {
+            BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
                 TradingTimesUI.setActiveSymbols(response);
             });
         }

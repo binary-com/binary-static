@@ -4,9 +4,6 @@ body {
     .calls_recording {
         display: none;
     }
-    .all-hide {
-        display: none !important;
-    }
     ul.checked > li {
         @include BIDIR_VALUE(background-position, left top, right top);
         @include BIDIR_PROP(padding-left, padding-right, 35px);
@@ -34,22 +31,6 @@ body.EN {
 body.JA {
     .ja-hide {
         display: none !important;
-    }
-    .ja-show {
-        display: inline !important;
-        visibility: visible !important;
-    }
-    .ja-show-block {
-        display: block !important;
-        visibility: visible !important;
-    }
-    .ja-show-inline-block {
-        display: inline-block !important;
-        visibility: visible !important;
-    }
-    .ja-no-padding {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
     }
     .regulatory-logo {
         display: none !important;

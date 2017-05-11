@@ -1,6 +1,7 @@
-const urlFor   = require('../binary/base/url').urlFor;
-const Client   = require('../binary/base/client');
-const jpClient = require('../binary/common_functions/country_base').jpClient;
+const urlFor       = require('../binary/base/url').urlFor;
+const Client       = require('../binary/base/client');
+const jpClient     = require('../binary/common_functions/country_base').jpClient;
+const BinarySocket = require('../binary/websocket_pages/socket');
 
 const AffiliatePopup = (() => {
     'use strict';

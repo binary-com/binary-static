@@ -4,6 +4,7 @@ const MBNotifications = require('./mb_notifications');
 const MBPrice         = require('./mb_price');
 const MBSymbols       = require('./mb_symbols');
 const MBTick          = require('./mb_tick');
+const BinarySocket    = require('../socket');
 const TradingAnalysis = require('../trade/analysis');
 const commonTrading   = require('../trade/common');
 const BinaryPjax      = require('../../base/binary_pjax');
@@ -36,7 +37,7 @@ const MBProcess = (() => {
             } else if (website_status.website_status.clients_country === 'jp' || getLanguage() === 'JA') {
                 req.landing_company = 'japan';
             }
-            BinarySocket.send(req, { forced: true, msg_type: 'active_symbols' }).then((response) => {
+            BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
                 processActiveSymbols(response);
             });
         });
@@ -103,13 +104,13 @@ const MBProcess = (() => {
     };
 
     const handleMarketClosed = () => {
-        $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
+        $('.japan-form, .japan-table, #trading_bottom_content').setVisibility(0);
         MBNotifications.show({ text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
         symbols_timeout = setTimeout(() => { getSymbols(); }, 30000);
     };
 
     const handleMarketOpen = () => {
-        $('.japan-form, .japan-table, #trading_bottom_content').removeClass('invisible');
+        $('.japan-form, .japan-table, #trading_bottom_content').setVisibility(1);
         MBNotifications.hide('MARKET_CLOSED');
     };
 
@@ -178,7 +179,7 @@ const MBProcess = (() => {
             return;
         }
 
-        window.chartAllowed = !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly');
+        State.set('is_chart_allowed', !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly'));
 
         checkMarketStatus(contracts.contracts_for.close);
 

@@ -1,3 +1,4 @@
+const BinarySocket  = require('../../socket');
 const Client        = require('../../../base/client');
 const localize      = require('../../../base/localize').localize;
 const urlFor        = require('../../../base/url').urlFor;
@@ -113,7 +114,7 @@ const MetaTraderConfig = (() => {
                 } else if (types_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                         resolve($.inArray('authenticated', response_status.get_account_status.status) === -1 ?
-                            $('#msg_authenticate').find('.show_for_mt5').removeClass('invisible').end()
+                            $('#msg_authenticate').find('.show_for_mt5').setVisibility(1).end()
                                 .html() : '');
                     });
                 } else {

@@ -1,3 +1,5 @@
+const moment             = require('moment');
+const BinarySocket       = require('../../socket');
 const BinaryPjax         = require('../../../base/binary_pjax');
 const Client             = require('../../../base/client');
 const State              = require('../../../base/storage').State;
@@ -6,9 +8,10 @@ const isEmptyObject      = require('../../../base/utility').isEmptyObject;
 const AccountOpening     = require('../../../common_functions/account_opening');
 const FormManager        = require('../../../common_functions/form_manager');
 const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
-const moment             = require('moment');
 
 const FinancialAccOpening = (() => {
+    'use strict';
+
     const form_id = '#financial-form';
 
     const onLoad = () => {
@@ -78,9 +81,9 @@ const FinancialAccOpening = (() => {
 
     const handleResponse = (response) => {
         if ('error' in response && response.error.code === 'show risk disclaimer') {
-            $('#financial-form').addClass('hidden');
+            $('#financial-form').setVisibility(0);
             const $financial_risk = $('#financial-risk');
-            $financial_risk.removeClass('hidden');
+            $financial_risk.setVisibility(1);
             $.scrollTo($financial_risk, 500, { offset: -10 });
 
             const risk_form_id = '#financial-risk';

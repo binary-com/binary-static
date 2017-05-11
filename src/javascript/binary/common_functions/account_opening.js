@@ -5,6 +5,7 @@ const localize             = require('../base/localize').localize;
 const State                = require('../base/storage').State;
 const makeOption           = require('../common_functions/common_functions').makeOption;
 const FormManager          = require('../common_functions/form_manager');
+const BinarySocket         = require('../websocket_pages/socket');
 const Cookies              = require('../../lib/js-cookie');
 require('select2');
 
@@ -76,7 +77,7 @@ const AccountOpening = (() => {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(getTaxResidence() || residence_value).trigger('change')
-                            .removeClass('invisible');
+                            .setVisibility(1);
                     }, 500);
                 });
             }
@@ -125,7 +126,7 @@ const AccountOpening = (() => {
             const errorMessage = response.error.message;
             $('#submit-message').empty();
             $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
-                .removeClass('invisible');
+                .setVisibility(1);
         } else {
             Client.processNewAccount(Client.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
         }
@@ -141,7 +142,7 @@ const AccountOpening = (() => {
             { selector: '#address_line_2',     validations: ['address', ['length', { min: 0, max: 70 }]] },
             { selector: '#address_city',       validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
             { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['general', ['length', { min: 0, max: 35 }]] },
-            { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
+            { selector: '#address_postcode',   validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
             { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
             { selector: '#secret_question',    validations: ['req'] },
             { selector: '#secret_answer',      validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },

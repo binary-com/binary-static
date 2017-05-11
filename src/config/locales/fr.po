@@ -28,6 +28,36 @@ msgstr "« Je travaille avec plusieurs sociétés affiliées, et celle-ci est d
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "« Tiers fournisseur(s) » désigne la tierce partie (non-affiliée) offrant l'accès à différentes caractéristiques et fonctionnalités par le biais de l'API Binary.com."
 
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$100,000 - $250,000"
+msgstr "$100,001-$250,000"
+
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$100,001 - $500,000"
+msgstr "$100,001-$250,000"
+
+#, fuzzy
+#| msgid "&#36;25,000 - &#36;50,000"
+msgid "$25,000 - $50,000"
+msgstr "25 000 &#36; - 50 000 &#36;"
+
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$250,001 - $500,000"
+msgstr "$100,001-$250,000"
+
+#, fuzzy
+#| msgid "$100,001-$250,000"
+msgid "$50,001 - $100,000"
+msgstr "$100,001-$250,000"
+
+#, fuzzy
+#| msgid "&#36;500,001 - &#36;1,000,000"
+msgid "$500,001 - $1,000,000"
+msgstr "500 001 &#36; - 1 000 000 &#36;"
+
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%2 %1 ont été crédités sur votre compte virtuel %3"
 
@@ -127,7 +157,9 @@ msgstr "%1 a mis à jour ses <a href=\"%2\">Conditions générales</a>. En cliqu
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "%1 atteint 1 million d'utilisateurs et prend un tournant historique. La société jouit toujours d'une croissance exponentielle et réaffirme ainsi son statut de chef de file du secteur."
 
-msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+#, fuzzy
+#| msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+msgid "%1 introduces an %2auto-trader programming tool%3, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1 inaugure un <a href='%2' target='_blank' class='ja-hide'>outil de programmation dédié au trading automatique</a><span class='all-hide ja-show'>outil de programmation dédié au trading automatique</span> permettant aux clients de mettre au point leurs propres robots de trading automatisés en quelques clics."
 
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
@@ -169,7 +201,9 @@ msgstr "%1 est la figure de proue du secteur des options binaires en ligne, avec
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "Régulièrement récompensée pour ses services, %1 est une société pionnière sur le marché du trading d'options binaires en ligne. Notre société offre les avantages suivants :"
 
-msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+#, fuzzy
+#| msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 lance un <a href='%2' target='_blank' class='ja-hide'> site de vente en ligne dédié à ses produits</a><span class='all-hide ja-show'> site de vente en ligne dédié à ses produits</span> : clients, affiliés et développeurs peuvent désormais acheter et vendre les produits Binary.com."
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
@@ -281,24 +315,6 @@ msgstr "S'il vous plait %1authentifiez votre compte%2 pour supprimer vos limites
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "L'action caritative de %1 soutient les petites associations caritatives et à but non lucratif qui œuvrent dans différentes régions du monde pour initier des changements positifs au sein des communautés locales. Nous évitons ainsi le poids des coûts indirects qui s'appliquent généralement au sein des structures caritatives de plus grande envergure, afin que nos dons aient un impact direct."
-
-msgid "&#36;100,000 - &#36;250,000"
-msgstr "100 000 &#36; - 250 000 &#36;"
-
-msgid "&#36;100,001 - &#36;500,000"
-msgstr "100 001 &#36; - 500 000 &#36;"
-
-msgid "&#36;25,000 - &#36;50,000"
-msgstr "25 000 &#36; - 50 000 &#36;"
-
-msgid "&#36;250,001 - &#36;500,000"
-msgstr "250 001 &#36; - 500 000 &#36;"
-
-msgid "&#36;50,001 - &#36;100,000"
-msgstr "50 001 &#36; - 100 000 &#36;"
-
-msgid "&#36;500,001 - &#36;1,000,000"
-msgstr "500 001 &#36; - 1 000 000 &#36;"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 est l'un de nos partenaires les plus anciens et les plus fiables. Nous travaillons ensemble depuis de nombreuses années.&#8221;"
@@ -877,15 +893,6 @@ msgstr "Adresse"
 msgid "Adjust trade parameters"
 msgstr "Définir les paramètres de la transaction"
 
-msgid "Adjusted Barrier"
-msgstr "Barrière ajustée"
-
-msgid "Adjusted High Barrier"
-msgstr "Barrière supérieure ajustée"
-
-msgid "Adjusted Low Barrier"
-msgstr "Barrière inférieure ajustée"
-
 msgid "Admin"
 msgstr "Administration"
 
@@ -1058,6 +1065,11 @@ msgstr "Répondez à la question secrète"
 
 msgid "Anti-Fraud Officer"
 msgstr "Responsable de la lutte anti-fraude [H/F]"
+
+#, fuzzy
+#| msgid "Authenticate your Account"
+msgid "Anticipated Account Turnover"
+msgstr "Authentifier votre compte"
 
 msgid "Any"
 msgstr "Toutes les durées"
@@ -1739,9 +1751,6 @@ msgstr "Directeurs Généraux, Hauts Fonctionnaires et Législateurs"
 msgid "Choose Scopes:"
 msgstr "Choisissez les champs d'application :"
 
-msgid "Choose a Name:"
-msgstr "Choisissez un nom :"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Sélectionnez une durée d'activité de 10 secondes à 365 jours."
 
@@ -1768,6 +1777,11 @@ msgstr "Sélectionnez le moyen de paiement que vous souhaitez utiliser."
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "Choisissez le type de jeton d'API dont vous avez besoin, selon les fonctionnalités que vous souhaitez proposer."
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token name"
+msgstr "Choisissez un nom :"
 
 msgid "Choose your own strike."
 msgstr "Définissez votre propre objectif."
@@ -2101,9 +2115,6 @@ msgstr "Droit d'auteur"
 
 msgid "Copywriter"
 msgstr "Rédacteur [H/F]"
-
-msgid "Corporate Action"
-msgstr "Opération sur titre"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "Coûts - les coûts d'exécution de votre ordre sont composés principalement du spread, c'est à dire de la difference entre les prix de la mise et de l'offre."
@@ -3801,6 +3812,9 @@ msgstr "Montant non valide, le maximum est de"
 msgid "Invalid amount, minimum is"
 msgstr "Montant non valide, le minimum est de"
 
+msgid "Invalid email address"
+msgstr "Adresse email non valide"
+
 msgid "Investigate and reproduce client-reported issues"
 msgstr "Examiner et reproduire les problèmes signalés par les clients"
 
@@ -4476,10 +4490,14 @@ msgstr "Conformité juridique et réglementaire"
 msgid "Legal Compliance"
 msgstr "Conformité juridique"
 
-msgid "Less than &#36;100,000"
+#, fuzzy
+#| msgid "Less than &#36;100,000"
+msgid "Less than $100,000"
 msgstr "Moins de 100 000 &#36;"
 
-msgid "Less than &#36;25,000"
+#, fuzzy
+#| msgid "Less than &#36;25,000"
+msgid "Less than $25,000"
 msgstr "Moins de 25 000 &#36;"
 
 msgid "Less than 1 million JPY"
@@ -5277,15 +5295,6 @@ msgstr "Politique d'exécution des ordres"
 msgid "Order Execution/Cancellation/Modification"
 msgstr "Execution d'Ordre/Annulation/Modification"
 
-msgid "Original Barrier"
-msgstr "Barrière initiale"
-
-msgid "Original High Barrier"
-msgstr "Barrière supérieure initiale"
-
-msgid "Original Low Barrier"
-msgstr "Barrière inférieure initiale"
-
 msgid "Other"
 msgstr "Autre"
 
@@ -5373,10 +5382,14 @@ msgstr "Notre expérience"
 msgid "Our trading screen is simple to use:"
 msgstr "Notre écran de trading est simple d'utilisation :"
 
-msgid "Over &#36;1,000,000"
+#, fuzzy
+#| msgid "Over &#36;1,000,000"
+msgid "Over $1,000,000"
 msgstr "Plus de 1 000 000 &#36;"
 
-msgid "Over &#36;500,001"
+#, fuzzy
+#| msgid "Over &#36;500,001"
+msgid "Over $500,001"
 msgstr "Plus de 500 001 &#36;"
 
 msgid "Over 1 million registered accounts worldwide"
@@ -5551,9 +5564,6 @@ msgstr "Aperçu de la plateforme"
 
 msgid "Platforms"
 msgstr "Plateformes"
-
-msgid "Please %1 to view this page"
-msgstr "Veuillez %1 pour afficher cette page"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "S'il vous plait %1acceptez les termes et conditions mises à jour%2 pour supprimer vos limites de retrait et de trading."
@@ -7403,9 +7413,6 @@ msgstr "Cette clause ne s'applique pas aux indices de volatilité."
 msgid "This contract lost"
 msgstr "Ce contrat a été perdu"
 
-msgid "This contract was affected by a Corporate Action event."
-msgstr "Ce contrat a été affecté par un événement relatif à une opération sur titre."
-
 msgid "This contract won"
 msgstr "Ce contrat a été gagné"
 
@@ -8275,7 +8282,9 @@ msgstr "Dans le cadre de notre activité de négociation pour compte propre, nou
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
 msgstr "Dans le cadre d'un Contrat passé avec vous, nous nous engageons à prendre toutes les mesures raisonnables pour obtenir en votre nom le meilleur résultat possible en exécutant ce Contrat conformément à notre politique d'exécution des ordres et à toute instruction spécifique que vous seriez susceptible de nous transmettre. Notre politique d'exécution des ordres se compose d'un ensemble de procédures conçues pour obtenir le meilleur résultat d'exécution possible pour vous, en tenant compte des critères suivants : (a) la nature de votre Contrat, (b) les priorités que vous nos aurez expressément communiquées dans le cadre de ce Contrat, et (c) les pratiques liées au marché en question. Ces procédures ont pour objectif de produire un résultat qui offre, à notre avis, le meilleur équilibre entre un certain nombre de facteurs parfois contradictoires. Cependant, notre politique ne peut garantir que, dans le cadre d'un Contrat passé avec vous, le prix sera toujours avantageux en comparaison d'un autre prix disponible ou susceptible d'être disponible ailleurs."
 
-msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
+#, fuzzy
+#| msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
+msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no invisible fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "Quand vous êtes satisfait avec le prix que vous recevez, exécutez votre transaction immédiatement. Avec notre plateforme unique, vous n'aurez pas à lutter avec des 'perturbations' ou des trous dans le marché. Et plus important il n'y a pas de frais cachés. Vous pouvez aussi revendre tout échange de long terme à tout moment avant qu'ils expirent pour protéger le profit que vous pouvez avoir gagné ou pour minimiser vos pertes."
 
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
@@ -9074,9 +9083,6 @@ msgstr "une plate-forme de trading leader sur le marché des options binaires"
 
 msgid "letters"
 msgstr "lettres"
-
-msgid "login"
-msgstr "connexion"
 
 msgid "logout"
 msgstr "déconnexion"
@@ -10865,6 +10871,48 @@ msgstr "Acceptation des conditions générales"
 msgid "Account Limits"
 msgstr "Limites du Compte"
 
+#~ msgid "Adjusted Barrier"
+#~ msgstr "Barrière ajustée"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "Barrière supérieure ajustée"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "Barrière inférieure ajustée"
+
+#~ msgid "Corporate Action"
+#~ msgstr "Opération sur titre"
+
+#~ msgid "Original Barrier"
+#~ msgstr "Barrière initiale"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "Barrière supérieure initiale"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "Barrière inférieure initiale"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "Ce contrat a été affecté par un événement relatif à une opération sur titre."
+
+#~ msgid "&#36;100,000 - &#36;250,000"
+#~ msgstr "100 000 &#36; - 250 000 &#36;"
+
+#~ msgid "&#36;100,001 - &#36;500,000"
+#~ msgstr "100 001 &#36; - 500 000 &#36;"
+
+#~ msgid "&#36;250,001 - &#36;500,000"
+#~ msgstr "250 001 &#36; - 500 000 &#36;"
+
+#~ msgid "&#36;50,001 - &#36;100,000"
+#~ msgstr "50 001 &#36; - 100 000 &#36;"
+
+#~ msgid "Please %1 to view this page"
+#~ msgstr "Veuillez %1 pour afficher cette page"
+
+#~ msgid "login"
+#~ msgstr "connexion"
+
 #~ msgid "I have read and agree to the"
 #~ msgstr "J'ai lu et j'accepte les"
 
@@ -11467,9 +11515,6 @@ msgstr "Limites du Compte"
 
 #~ msgid "Invalid date of birth."
 #~ msgstr "Date de naissance non valide."
-
-#~ msgid "Invalid email address"
-#~ msgstr "Adresse email non valide"
 
 #~ msgid "Jump To"
 #~ msgstr "Aller à"
@@ -16183,9 +16228,6 @@ msgstr "Limites du Compte"
 #~ msgid "Authenticate to Withdraw"
 #~ msgstr "Authentifier pour effectuer un retrait"
 
-#~ msgid "Authenticate your Account"
-#~ msgstr "Authentifier votre compte"
-
 #~ msgid "Confirm Your Email"
 #~ msgstr "Confirmez votre e-mail :"
 
@@ -18534,9 +18576,6 @@ msgstr "Limites du Compte"
 
 #~ msgid "Stock Buyback"
 #~ msgstr "Rachat d'Actions"
-
-#~ msgid "$100,001-$250,000"
-#~ msgstr "$100,001-$250,000"
 
 #~ msgid "An automatically generated <a href=\"https://apigee.com/rmg/resources/binary1\" target=\"_blank\">Resource Summary</a> is also available."
 #~ msgstr "Un <a href=\"https://apigee.com/rmg/resources/binary1\" target=\"_blank\">Résumé des Ressources</a> généré automatiquement est également disponible."

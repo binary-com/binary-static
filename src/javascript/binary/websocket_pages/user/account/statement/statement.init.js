@@ -1,6 +1,7 @@
 const moment               = require('moment');
 const StatementUI          = require('./statement.ui');
 const ViewPopup            = require('../../view_popup/view_popup');
+const BinarySocket         = require('../../../socket');
 const getLanguage          = require('../../../../base/language').get;
 const localize             = require('../../../../base/localize').localize;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
@@ -87,9 +88,9 @@ const StatementInit = (() => {
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             } else {
                 $('#jump-to').parent().parent().parent()
-                             .removeClass('invisible');
+                             .setVisibility(1);
                 if (getLanguage() === 'JA') {
-                    $('#download_csv').removeClass('invisible')
+                    $('#download_csv').setVisibility(1)
                                       .find('a')
                                       .unbind('click')
                                       .click(() => { StatementUI.exportCSV(); });
@@ -143,7 +144,7 @@ const StatementInit = (() => {
 
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             addTooltip(StatementUI.setOauthApps(buildOauthApps(response)));
-            $('.barspinner').addClass('hidden');
+            $('.barspinner').setVisibility(0);
         });
         getNextBatchStatement();
         loadStatementChunkWhenScroll();

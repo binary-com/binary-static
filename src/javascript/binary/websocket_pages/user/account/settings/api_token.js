@@ -1,3 +1,4 @@
+const BinarySocket         = require('../../../socket');
 const BinaryPjax           = require('../../../../base/binary_pjax');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const localize             = require('../../../../base/localize').localize;
@@ -9,7 +10,6 @@ const toTitleCase          = require('../../../../common_functions/string_util')
 const APIToken = (() => {
     'use strict';
 
-    const hidden_class = 'invisible';
     const error_class  = 'errorfield';
     const form_id      = '#token_form';
     const max_tokens   = 30;
@@ -70,16 +70,16 @@ const APIToken = (() => {
 
         const tokens = response.api_token.tokens;
         if (tokens.length === 0) {
-            $table_container.addClass(hidden_class);
+            $table_container.setVisibility(0);
             return;
         } else if (tokens.length >= max_tokens) {
-            $form.addClass(hidden_class);
+            $form.setVisibility(0);
             showErrorMessage(localize('The maximum number of tokens ([_1]) has been reached.', [max_tokens]));
         } else {
-            $form.removeClass(hidden_class);
+            $form.setVisibility(1);
         }
 
-        $table_container.removeClass(hidden_class).empty();
+        $table_container.setVisibility(1).empty();
 
         const headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
         FlexTableUI.init({
@@ -145,7 +145,7 @@ const APIToken = (() => {
     // ----- Message Functions -----
     // -----------------------------
     const showErrorMessage = (msg) => {
-        $('#token_message').removeClass(hidden_class)
+        $('#token_message').setVisibility(1)
             .find('p')
             .attr('class', error_class)
             .html(localize(msg));
@@ -161,7 +161,7 @@ const APIToken = (() => {
     };
 
     const clearMessages = () => {
-        $('#token_message').addClass(hidden_class);
+        $('#token_message').setVisibility(0);
     };
 
     return {

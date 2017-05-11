@@ -1,3 +1,4 @@
+const BinarySocket       = require('../socket');
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const Header             = require('../../base/header');
@@ -7,8 +8,6 @@ const template           = require('../../base/utility').template;
 
 const TNCApproval = (() => {
     'use strict';
-
-    const hidden_class = 'invisible';
 
     const onLoad = () => {
         requiresTNCApproval($('#btn_accept'), display, null, true);
@@ -25,7 +24,7 @@ const TNCApproval = (() => {
             urlFor(Client.get('residence') === 'jp' ? 'terms-and-conditions-jp' : 'terms-and-conditions'),
         ]));
         $container.find('#tnc_loading').remove();
-        $container.find('#tnc_approval').removeClass(hidden_class);
+        $container.find('#tnc_approval').setVisibility(1);
     };
 
     const requiresTNCApproval = ($btn, funcDisplay, onSuccess, redirect_anyway) => {
@@ -42,7 +41,7 @@ const TNCApproval = (() => {
                 e.stopPropagation();
                 BinarySocket.send({ tnc_approval: '1' }, { forced: true }).then((response) => {
                     if (response.error) {
-                        $('#err_message').html(response.error.message).removeClass(hidden_class);
+                        $('#err_message').html(response.error.message).setVisibility(1);
                     } else {
                         BinarySocket.send({ get_settings: 1 }, { forced: true }).then(() => {
                             Header.displayAccountStatus();

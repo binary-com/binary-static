@@ -13,6 +13,7 @@ const Tick                           = require('../tick');
 const commonTrading                  = require('../common');
 const getStartDateNode               = require('../common_independent').getStartDateNode;
 const Notifications                  = require('../notifications');
+const BinarySocket                   = require('../../socket');
 const BinaryPjax                     = require('../../../base/binary_pjax');
 const GTM                            = require('../../../base/gtm');
 const dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
@@ -112,7 +113,6 @@ const TradingEvents_Beta = (() => {
                     BinarySocket.send({ contracts_for: underlying }).then((response) => {
                         Notifications.hide('CONNECTION_ERROR');
                         Process_Beta.processContract_Beta(response);
-                        window.contracts_for = response;
                     });
 
                     // forget the old tick id i.e. close the old tick stream
