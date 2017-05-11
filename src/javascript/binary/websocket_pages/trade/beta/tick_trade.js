@@ -1,7 +1,6 @@
 const Highcharts    = require('highcharts');
 const moment        = require('moment');
 const commonTrading = require('../common');
-const Defaults      = require('../defaults');
 const Tick          = require('../tick');
 const ViewPopupUI   = require('../../user/view_popup/view_popup.ui');
 const localize      = require('../../../base/localize').localize;
