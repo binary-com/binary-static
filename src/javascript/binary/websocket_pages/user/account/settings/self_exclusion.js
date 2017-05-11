@@ -1,4 +1,5 @@
 const moment              = require('moment');
+const BinarySocket        = require('../../../socket');
 const Client              = require('../../../../base/client');
 const Header              = require('../../../../base/header');
 const localize            = require('../../../../base/localize').localize;

@@ -1,11 +1,12 @@
-const Highcharts  = require('highcharts/highstock');
-const HighchartUI = require('./highchart.ui');
-const MBContract  = require('../../mb_trade/mb_contract');
-const GetTicks    = require('../../trade/get_ticks');
-const ViewPopupUI = require('../../user/view_popup/view_popup.ui');
-const localize    = require('../../../base/localize').localize;
-const State       = require('../../../base/storage').State;
-const jpClient    = require('../../../common_functions/country_base').jpClient;
+const Highcharts   = require('highcharts/highstock');
+const HighchartUI  = require('./highchart.ui');
+const MBContract   = require('../../mb_trade/mb_contract');
+const GetTicks     = require('../../trade/get_ticks');
+const BinarySocket = require('../../socket');
+const ViewPopupUI  = require('../../user/view_popup/view_popup.ui');
+const localize     = require('../../../base/localize').localize;
+const State        = require('../../../base/storage').State;
+const jpClient     = require('../../../common_functions/country_base').jpClient;
 require('highcharts/modules/exporting')(Highcharts);
 
 const Highchart = (() => {
