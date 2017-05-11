@@ -5,6 +5,7 @@ const State              = require('./storage').State;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const getLoginToken      = require('../common_functions/common_functions').getLoginToken;
 const jpClient           = require('../common_functions/country_base').jpClient;
+const BinarySocket       = require('../websocket_pages/socket');
 const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
 const Cookies            = require('../../lib/js-cookie');
 

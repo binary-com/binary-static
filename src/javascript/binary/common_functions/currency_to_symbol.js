@@ -8,7 +8,7 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
     if (amount) amount = String(amount).replace(/,/g, '');
     if (typeof Intl !== 'undefined' && currency_value && !is_bitcoin && amount) {
         const options = exclude_currency ? { minimumFractionDigits: decimal_places, maximumFractionDigits: decimal_places } : { style: 'currency', currency: currency_value };
-        const language = typeof window !== 'undefined' ? getLanguage().toLowerCase() : 'en';
+        const language = getLanguage().toLowerCase();
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
     } else {
         let updated_amount,

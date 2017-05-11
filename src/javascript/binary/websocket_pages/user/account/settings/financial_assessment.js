@@ -1,3 +1,4 @@
+const BinarySocket     = require('../../../socket');
 const BinaryPjax       = require('../../../../base/binary_pjax');
 const Header           = require('../../../../base/header');
 const localize         = require('../../../../base/localize').localize;

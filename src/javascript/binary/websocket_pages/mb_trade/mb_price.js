@@ -1,6 +1,7 @@
 const MBContract       = require('./mb_contract');
 const MBDefaults       = require('./mb_defaults');
 const MBNotifications  = require('./mb_notifications');
+const BinarySocket     = require('../socket');
 const ViewPopup        = require('../user/view_popup/view_popup');
 const Client           = require('../../base/client');
 const GTM              = require('../../base/gtm');
