@@ -1,3 +1,10 @@
+[% BLOCK link %]
+    [% FOREACH favicon IN favicons %]
+    [% sizes = favicon.size _ 'x' _ favicon.size %]
+    <link rel="[% (favicon.is_image ? '' : 'apple-touch-') _ 'icon' %]" sizes="[% sizes %]"[% IF favicon.is_image %] type="image/png"[% END %] href="https://style.binary.com/images/favicons/[% favicon.is_image ? 'fav' : 'apple-touch-' %]icon-[% sizes %].png">
+    [% END %]
+[% END %]
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,25 +32,27 @@
         <meta property="og:type" content="website" />
         <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
 
-        [% INCLUDE global/title.html.tt %]
+        [% PROCESS global/title.html.tt %]
 
         <link rel="manifest" href="[% root_url _ 'manifest.json' %]">
         <script type="text/javascript" src="//cdn.pushwoosh.com/webpush/pushwoosh-web-notifications.js" async></script>
 
-        <link rel="apple-touch-icon" sizes="57x57" href="https://style.binary.com/images/favicons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="https://style.binary.com/images/favicons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="https://style.binary.com/images/favicons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="https://style.binary.com/images/favicons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="https://style.binary.com/images/favicons/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="https://style.binary.com/images/favicons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="https://style.binary.com/images/favicons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="https://style.binary.com/images/favicons/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="https://style.binary.com/images/favicons/apple-touch-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="https://style.binary.com/images/favicons/favicon-192x192.png">
-        <link rel="icon" type="image/png" sizes="160x160" href="https://style.binary.com/images/favicons/favicon-160x160.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="https://style.binary.com/images/favicons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://style.binary.com/images/favicons/favicon-16x16.png" >
-        <link rel="icon" type="image/png" sizes="32x32" href="https://style.binary.com/images/favicons/favicon-32x32.png" >
+        [% INCLUDE link favicons=[
+            { size='57' },
+            { size='114' },
+            { size='72' },
+            { size='144' },
+            { size='60' },
+            { size='120' },
+            { size='76' },
+            { size='152' },
+            { size='180' },
+            { is_image=1, size='192' },
+            { is_image=1, size='160' },
+            { is_image=1, size='96' },
+            { is_image=1, size='16' },
+            { is_image=1, size='32' },
+        ] %]
 
         [% FOREACH o IN language_options =%]
             [%= IF o.lower != 'ja' =%]
@@ -53,7 +62,7 @@
         [% FOREACH css_file IN css_files =%]
             <link rel="stylesheet" href="[%= css_file =%]">
         [% END %]
-        [% INCLUDE global/javascripts.html.tt
-            javascript=javascript
-        %]
+        [%= FOREACH js IN javascript.libs =%]
+            <script src='[%= js =%]'></script>
+        [%= END =%]
     </head>

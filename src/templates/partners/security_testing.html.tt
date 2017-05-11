@@ -1,41 +1,29 @@
-<div class="security_testing container">
-  <div class="gr-no-gutter static_full">
-    <h1>[% l("Security testing opportunities") %]</h1>
-    <div>
-      <p>
-        [% l("Want to help us enhance the strength and security of our platform?") %]
-      </p>
-      <p>
-        [% l("Test our products and services for security vulnerabilities. In the process, you’ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme.") %]
-      </p>
-      <h2>[% l("Benefits") %]</h2>
-      <ul class="bullet">
-        <li>[% l("Hone your security testing skills.") %]</li>
-        <li>[% l("Increase your HackerOne reputation to build up credibility and profile visibility.") %]</li>
-        <li>[% l("Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities.") %]</li>
-      </ul>
-      <h2>[% l("Getting started") %]</h2>
-      <ul class="bullet">
-        <li>[% l("Read and understand our HackerOne bug bounty programme policy.") %]</li>
-        <li>[% l("Analyse and test the domains and subdomains listed in the scope.") %]</li>
-        <li>[% l("Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue.") %]</li>
-        <li>[% l("If you find any vulnerabilities in our <a target='_blank' href='[_1]'>open-source code</a>, feel free to submit a pull request on GitHub.", 'https://github.com/binary-com') %]</li>
-      </ul>
-      <div class="gr-row">
+[% PROCESS components/elements.html.tt %]
 
-        <div class="gr-6 gr-12-m gr-6-p gr-centered">
-          <div class="xquote">
-            <div>
-              <div class="picture">
-                <img class="responsive" src="[% request.url_for('images/pages/security_testing/hackerone-img.svg') %]"/>
-              </div>
-              <div class="text">
-                <a href="https://hackerone.com/binary" target="_blank">[% l("Explore our HackerOne bounty programme") %]</a>
-              </div>
-            </div>
-          </div>
+<div class="container">
+    <div class="static_full">
+        <h1>[% l("Security testing opportunities") %]</h1>
+        <div>
+            <p>[% l("Want to help us enhance the strength and security of our platform?") %]</p>
+            <p>[% l("Test our products and services for security vulnerabilities. In the process, you’ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme.") %]</p>
+
+            <h2>[% l("Benefits") %]</h2>
+            <ul class="bullet">
+                <li>[% l("Hone your security testing skills.") %]</li>
+                <li>[% l("Increase your HackerOne reputation to build up credibility and profile visibility.") %]</li>
+                <li>[% l("Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities.") %]</li>
+            </ul>
+
+            <h2>[% l("Getting started") %]</h2>
+            <ul class="bullet">
+                <li>[% l("Read and understand our HackerOne bug bounty programme policy.") %]</li>
+                <li>[% l("Analyse and test the domains and subdomains listed in the scope.") %]</li>
+                <li>[% l("Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue.") %]</li>
+                <li>[% l("If you find any vulnerabilities in our <a target='_blank' href='[_1]'>open-source code</a>, feel free to submit a pull request on GitHub.", 'https://github.com/binary-com') %]</li>
+            </ul>
+
+            [% INCLUDE fill_box center=1 padding='6' href='https://hackerone.com/binary' target='_blank'
+                image='images/pages/security_testing/hackerone-img.svg' text=l("Explore our HackerOne bounty programme") %]
         </div>
-      </div>
     </div>
-  </div>
 </div>

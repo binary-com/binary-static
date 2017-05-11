@@ -1,55 +1,63 @@
-[% UNLESS is_pjax_request %]
-  [% INCLUDE global/head.html.tt %]
+[% BLOCK nav %]
+<ul class="nav">
+    [% FOREACH items %]
+        <li><a href="[% request.url_for('/get-started/' _ section) %]">[% text %]</a></li>
+    [% END %]
+</ul>
 [% END %]
 
-[% INCLUDE global/body_top.html.tt %]
+[% UNLESS is_pjax_request %]
+    [% PROCESS global/head.html.tt %]
+[% END %]
+
+[% UNLESS is_pjax_request %]
+    <body[% IF lang %] class="[% language %]"[% END %]>
+        [% PROCESS global/header.html.tt %]
+        [% PROCESS global/main_menu.html.tt %]
+        [% PROCESS global/mobile_menu.html.tt %]
+        [% PROCESS global/gtm.html.tt %]
+    <!-- FlushHead -->
+    <a href="javascript:;" id="scrollup"></a>
+[% END %]
+        <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
+            <div id="page_info" style="display:none;">
+                [% PROCESS global/title.html.tt %]
+                <div id="content_class">[% current_route %]-content</div>
+            </div>
+[% IF !full_width %]
+            <div class="container">
+[% END %]
 
 [% IF get_started %]
 <div class="get-started">
-  <div class="gr-row">
-  <div class="gr-3 gr-hide-m">
-    <div class="sidebar-left">
-      <ul class="nav">
-          <li><a href="[% request.url_for('/get-started/what-is-binary-trading') %]">[% l("Why choose binary trading?") %]</a></li>
-          <li><a href="[% request.url_for('/get-started/types-of-trades') %]">[% l("Types of trades") %]</a></li>
-          <li><a href="[% request.url_for('/get-started/binary-options-basics') %]">[% l("Binary options basics") %]</a></li>
-          <li><a href="[% request.url_for('/get-started/why-trade-with-us') %]">[% l("Why trade with [_1]", website_name) %]</a></li>
-          <li><a href="[% request.url_for('/get-started/how-to-trade-binaries') %]">[% l("How to trade binary options?") %]</a></li>
-          <li class="ja-hide"><a href="[% request.url_for('/get-started/volidx-markets') %]">[% l("How to trade the Volatility Indices markets?") %]</a></li>
-          <li class="ja-hide"><a href="[% request.url_for('/get-started/smart-indices') %]">[% l("Smart Markets") %]</a></li>
-          <li class="ja-hide"><a href="[% request.url_for('/get-started/otc-indices-stocks') %]">[% l("OTC Indices and Stocks") %]</a></li>
-          <li><a href="[% request.url_for('/get-started/beginners-faq') %]">[% l("FAQ") %]</a></li>
-          <li><a href="[% request.url_for('/get-started/glossary') %]">[% l("Glossary") %]</a></li>
-        </ul>
+    <div class="gr-row">
+        <div class="gr-3 gr-hide-m">
+            <div class="sidebar-left">
+                [% INCLUDE nav items=[
+                    { section='what-is-binary-trading', text=l("Why choose binary trading?") },
+                    { section='types-of-trades',        text=l("Types of trades") },
+                    { section='binary-options-basics',  text=l("Binary options basics") },
+                    { section='why-trade-with-us',      text=l("Why trade with [_1]", website_name) },
+                    { section='how-to-trade-binaries',  text=l("How to trade binary options?") },
+                    { section='volidx-markets'          text=l("How to trade the Volatility Indices markets?") },
+                    { section='smart-indices',          text=l("Smart Markets") },
+                    { section='otc-indices-stocks',     text=l("OTC Indices and Stocks") },
+                    { section='beginners-faq',          text=l("FAQ") },
+                    { section='glossary',               text=l("Glossary") },
+                ] %]
+            </div>
+        </div>
+
+        <div class="gr-6 gr-12-m gr-parent">
+            [% content %]
+        </div>
+
+        [% PROCESS global/signup_tour.html.tt %]
     </div>
-  </div>
-  <div class="gr-6 gr-12-m gr-parent">
-    [% content %]
-  </div>
-  <div class="gr-3 gr-hide-m">
-    <div class="sidebar-right">
-      <div class="invisible client_logged_out fill-bg-color">
-        <p>
-          <a href="[% request.url_for('/') %]">[% l('Try it now') %]</a>
-          <br/>
-          [% l('No risk, $10K virtual money account') %]
-        </p>
-      </div>
-      <div class="fill-bg-color">
-        <p>
-          [% l('Want to learn more?') %]
-          <br/>
-          <a class="ja-hide" href="[% request.url_for('/tour') %]">[% l('View the Tour') %]</a>
-          <a class="invisible ja-show" href="[% request.url_for('/tour-jp') %]">[% l('View the Tour') %]</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
 [% ELSE %]
   [% content %]
 [% END %]
 [% UNLESS is_pjax_request %]
-  [% INCLUDE global/footer.html.tt %]
+  [% PROCESS global/footer.html.tt %]
 [% END %]

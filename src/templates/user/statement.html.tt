@@ -1,7 +1,7 @@
 <div id="statement-container">
     <div class="page-title" id="statement-title">
         <h1>[% l('Statement') %]</h1>
-        <div class="loading">[% INCLUDE global/loading.html.tt %]</div>
+        <div class="loading">[% PROCESS global/loading.html.tt %]</div>
         <br>
         <p class="notice-msg center-text invisible" id="error-msg"></p>
     </div>

@@ -1,108 +1,40 @@
+[% PROCESS components/elements.html.tt %]
+[% BLOCK info %]
+<div class="gr-parent gr-padding-10">
+    <h2>[% header %]</h2>
+    <p>[% text %]</p>
+    <ul class="bullet">
+        <li>
+            <a href="[% japan_docs_url _ '/documents/' _ doc _ '.pdf' %]" target="_blank" download>[% l("{JAPAN ONLY}Download our latest report here") %]</a>
+        </li>
+    </ul>
+</div>
+[% END %]
+
 <div class="gr-parent gr-padding-30 static_full">
     <h1>[% l("{JAPAN ONLY}Company Profile") %]</h1>
     <table>
-        <tr>
-            <td>
-                [% l("{JAPAN ONLY}Company name") %]
-            </td>
-            <td>
-                [% l("{JAPAN ONLY}Binary K. K.") %]
-            </td>
-        </tr>
-        <tr>
-            <td>
-                [% l("{JAPAN ONLY}Company name in English") %]
-            </td>
-            <td>
-                Binary K. K.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                [% l("{JAPAN ONLY}Registration") %]
-            </td>
-            <td>
-                [% l("{JAPAN ONLY}Financial Instruments Business No. xxxx") %]
-            </td>
-        </tr>
-        <tr>
-            <td>
-                [% l("Address") %]
-            </td>
-            <td>
-                [% l("{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012") %]
-            </td>
-        </tr>
-        <tr>
-            <td>
-                [% l("{JAPAN ONLY}Establishment") %]
-            </td>
-            <td>
-                [% l("{JAPAN ONLY}November 7, 2014") %]
-            </td>
-        </tr>
-        <tr>
-            <td>
-                [% l("{JAPAN ONLY}Capital") %]
-            </td>
-            <td>
-                [% l("{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)") %]
-            </td>
-        </tr>
-        <tr>
-            <td>
-                [% l("{JAPAN ONLY}Association of join") %]
-            </td>
-            <td>
-                [% l("{JAPAN ONLY}The Financial Futures Association of Japan") %]
-            </td>
-        </tr>
-        <tr>
-            <td>
-                [% l("{JAPAN ONLY}Designated dispute resolution organization") %]
-            </td>
-            <td>
-                [% l("{JAPAN ONLY}Financial Instruments Mediation Assistance Center") %]
-            </td>
-        </tr>
-        <tr>
-            <td>
-                [% l("{JAPAN ONLY}Main business") %]
-            </td>
-            <td>
-                [% l("{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law") %]
-            </td>
-        </tr>
+        [% INCLUDE tbody trs=[
+            [{ text=l("{JAPAN ONLY}Company name") },                               { text=l("{JAPAN ONLY}Binary K. K.") }],
+            [{ text=l("{JAPAN ONLY}Company name in English") },                    { text='Binary K. K.' }],
+            [{ text=l("{JAPAN ONLY}Registration") },                               { text=l("{JAPAN ONLY}Financial Instruments Business No. xxxx") }],
+            [{ text=l("Address") },                                                { text=l("{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012") }],
+            [{ text=l("{JAPAN ONLY}Establishment") },                              { text=l("{JAPAN ONLY}November 7, 2014") }],
+            [{ text=l("{JAPAN ONLY}Capital") },                                    { text=l("{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)") }],
+            [{ text=l("{JAPAN ONLY}Association of join") },                        { text=l("{JAPAN ONLY}The Financial Futures Association of Japan") }],
+            [{ text=l("{JAPAN ONLY}Designated dispute resolution organization") }, { text=l("{JAPAN ONLY}Financial Instruments Mediation Assistance Center") }],
+            [{ text=l("{JAPAN ONLY}Main business") },                              { text=l("{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law") }],
+        ] %]
     </table>
 </div>
 
-<div class="gr-parent gr-padding-10">
-    <h2>[% l("{JAPAN ONLY}Capital Adequacy Ratio (CAR)") %]</h2>
-    <p>
-        [% l("{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)") %]
-    </p>
-    <ul class="bullet">
-        <li>
-            <a href="[% japan_docs_url _ '/documents/binary_report_capital_adequacy.pdf' %]" target="_blank" download>[% l("{JAPAN ONLY}Download our latest report here") %]</a>
-        </li>
-    </ul>
-</div>
+[% INCLUDE info header=l("{JAPAN ONLY}Capital Adequacy Ratio (CAR)") text=l("{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)")
+   doc='binary_report_capital_adequacy' %]
 
-<div class="gr-parent gr-padding-10">
-    <h2>[% l("{JAPAN ONLY}Win Loss Ratio") %]</h2>
-    <p>
-        [% l("{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA") %]
-    </p>
-    <ul class="bullet">
-        <li>
-            <a href="[% japan_docs_url _ '/documents/binary_report_ratios.pdf' %]" target="_blank" download>[% l("{JAPAN ONLY}Download our latest report here") %]</a>
-        </li>
-    </ul>
-</div>
+[% INCLUDE info header=l("{JAPAN ONLY}Win Loss Ratio") text=l("{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA")
+   doc='binary_report_ratios' %]
 
 <div class="gr-parent gr-padding-10">
     <h2>[% l("{JAPAN ONLY}Financial Condition") %]</h2>
-    <p>
-        [% l("{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA") %]
-    </p>
+    <p>[% l("{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA") %]</p>
 </div>

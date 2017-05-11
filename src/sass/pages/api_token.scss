@@ -24,9 +24,6 @@
             text-decoration: none;
             @include BIDIR_PROP(margin-right, margin-left, 15px);
         }
-        #formMessage {
-            margin-bottom: 10px;
-        }
     }
 }
 

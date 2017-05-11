@@ -1,24 +1,14 @@
+[% PROCESS components/elements.html.tt %]
+
 <div class='gr-hide gr-show-m gr-show-p' id='mobile-menu-container'>
     <div class='gr-hide' id='mobile-menu'>
         <ul>
-            <li class="ja-hide">
-                <a href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
-            </li>
-            <li class="invisible ja-show">
-                <a href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
-            </li>
-            <li class="ja-hide">
-              <a href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>
-            </li>
-            <li class="invisible ja-show">
-                <a href="[% request.url_for('get-started-jp') %]"[% target %]>[% l("Get Started") %]</a>
-            </li>
-            <li class="ja-hide">
-                <a href="[% request.url_for('tour') %]">[% l('Tour') %]</a>
-            </li>
-            <li class="invisible ja-show">
-                <a href="[% request.url_for('tour-jp') %]">[% l('Tour') %]</a>
-            </li>
+            [% INCLUDE li text=l('Why Us?')     href=request.url_for('why-us')                 class='ja-hide' %]
+            [% INCLUDE li text=l('Why Us?')     href=request.url_for('why-us-jp')              class='invisible ja-show' %]
+            [% INCLUDE li text=l("Get Started") href=request.url_for('get-started')            class='ja-hide' %]
+            [% INCLUDE li text=l("Get Started") href=request.url_for('get-started-jp')         class='invisible ja-show' %]
+            [% INCLUDE li text=l('Tour')        href=request.url_for('tour')                   class='ja-hide' %]
+            [% INCLUDE li text=l('Tour')        href=request.url_for('tour-jp')                class='invisible ja-show' %]
             [%= FOREACH item IN menu=%]
             <li id="[%= item.id =%]" class="item[% IF item.class %] [%= item.class =%][% END %]">
                 <a class="link [% item.link_class %]" href="[%= item.url =%]">[%= item.text =%]</a>
@@ -33,12 +23,8 @@
                 [% END %]
             </li>
             [%= END =%]
-            <li class="ja-hide">
-                <a href="[% request.url_for('platforms') %]">[% l("Platforms") %]</a>
-            </li>
-            <li class="invisible ja-show">
-                <a href="[% request.url_for('multi_barriers_trading') %]">[% l("Trade") %]</a>
-            </li>
+            [% INCLUDE li text=l("Platforms")   href=request.url_for('platforms')              class='ja-hide'                       id='main-navigation-trading' %]
+            [% INCLUDE li text=l("Trade")       href=request.url_for('multi_barriers_trading') class='invisible ja-show' id='main-navigation-jptrading' %]
         </ul>
     </div>
 </div>

@@ -5,15 +5,9 @@
                 <h1>[% l('Oops... Page Not Available') %]</h1>
             </div>
             <div class="gr-8 gr-12-m gr-12-p gr-6-t">
-                <p>
-                    [% l('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.') %]
-                </p>
-                <p>
-                    [% l('<a href="[_1]">Return to trading page</a>', request.url_for('/trading')) %]
-                </p>
-                <p>
-                    [% l('If the issue keeps happening, please contact <a href="[_1]">customer support</a>.', request.url_for('/contact')) %]
-                </p>
+                <p>[% l('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.') %]</p>
+                <p>[% l('<a href="[_1]">Return to trading page</a>', request.url_for('/trading')) %]</p>
+                <p>[% l('If the issue keeps happening, please contact <a href="[_1]">customer support</a>.', request.url_for('/contact')) %]</p>
             </div>
             <div class="gr-4 gr-12-m gr-12-p gr-6-t">
                 <div class="big-error-code">404</div>

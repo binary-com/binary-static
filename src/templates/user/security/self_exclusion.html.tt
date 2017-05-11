@@ -1,56 +1,56 @@
-<div class="gr-12 gr-padding-10">
-	<h1>[% l('Self-Exclusion Facilities') %]</h1>
+[% PROCESS components/forms.html.tt %]
 
-	<p>[% l('Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href="[_1]">customer support</a>.', request.url_for('contact')) %]</p>
+<h1>[% l('Self-Exclusion Facilities') %]</h1>
 
-	<p id="msg_error" class="center-text notice-msg invisible"></p>
+<p>[% l('Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href="[_1]">customer support</a>.', request.url_for('contact')) %]</p>
 
-	<div id="loading">[% INCLUDE global/loading.html.tt %]</div>
+<p id="msg_error" class="center-text notice-msg invisible"></p>
 
-	<form id="frm_self_exclusion" class="invisible">
-        [% WRAPPER components/forms/fieldset.html.tt %]
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='max_balance' label=l("Maximum account cash balance") attributes='maxlength="20"'
-                hint=l('Once this limit is reached, you may no longer deposit.') %]
+<div id="loading">[% PROCESS global/loading.html.tt %]</div>
 
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='max_turnover' label=l("Daily turnover limit") attributes='maxlength="20"'
-                hint=l('Maximum aggregate contract purchases per day.') %]
+<form id="frm_self_exclusion" class="invisible">
+    [% WRAPPER fieldset %]
+        [% INCLUDE form_row type='text' id='max_balance' label=l("Maximum account cash balance") attributes='maxlength="20"'
+            hint=l('Once this limit is reached, you may no longer deposit.') %]
 
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='max_losses' label=l("Daily limit on losses") attributes='maxlength="20"'
-                hint=l('Maximum aggregate loss per day.') %]
+        [% INCLUDE form_row type='text' id='max_turnover' label=l("Daily turnover limit") attributes='maxlength="20"'
+            hint=l('Maximum aggregate contract purchases per day.') %]
 
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='max_7day_turnover' label=l("7-day turnover limit") attributes='maxlength="20"'
-                hint=l('Maximum aggregate contract purchases over a 7-day period.') %]
+        [% INCLUDE form_row type='text' id='max_losses' label=l("Daily limit on losses") attributes='maxlength="20"'
+            hint=l('Maximum aggregate loss per day.') %]
 
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='max_7day_losses' label=l("7-day limit on losses") attributes='maxlength="20"'
-                hint=l('Maximum aggregate loss over a 7-day period.') %]
+        [% INCLUDE form_row type='text' id='max_7day_turnover' label=l("7-day turnover limit") attributes='maxlength="20"'
+            hint=l('Maximum aggregate contract purchases over a 7-day period.') %]
 
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='max_30day_turnover' label=l("30-day turnover limit") attributes='maxlength="20"'
-                hint=l('Maximum aggregate contract purchases over a 30-day period.') %]
+        [% INCLUDE form_row type='text' id='max_7day_losses' label=l("7-day limit on losses") attributes='maxlength="20"'
+            hint=l('Maximum aggregate loss over a 7-day period.') %]
 
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='max_30day_losses' label=l("30-day limit on losses") attributes='maxlength="20"'
-                hint=l('Maximum aggregate loss over a 30-day period.') %]
+        [% INCLUDE form_row type='text' id='max_30day_turnover' label=l("30-day turnover limit") attributes='maxlength="20"'
+            hint=l('Maximum aggregate contract purchases over a 30-day period.') %]
 
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='max_open_bets' label=l("Maximum number of open positions") attributes='maxlength="4"' %]
+        [% INCLUDE form_row type='text' id='max_30day_losses' label=l("30-day limit on losses") attributes='maxlength="20"'
+            hint=l('Maximum aggregate loss over a 30-day period.') %]
 
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='session_duration_limit' label=l("Session duration limit, in minutes") attributes='maxlength="5"'
-                hint=l('You will be automatically logged out after such time.') %]
+        [% INCLUDE form_row type='text' id='max_open_bets' label=l("Maximum number of open positions") attributes='maxlength="4"' %]
 
-            [% WRAPPER components/forms/form_row.html.tt type='custom' id='timeout_until_date' label=l("Time out until") row_class='ja-hide'
-                hint=l('Please enter date in the format DD MMM, YYYY HH:mm (local time).') %]
-                <div class="gr-row">
-                    <div class="gr-5 gr-6-t gr-6-p gr-12-m">
-                        <input type="text" class="clearable" id="timeout_until_date" maxlength="15" autocomplete="off" readonly />
-                    </div>
-                    <div class="gr-4 gr-6-t gr-6-p gr-12-m">
-                        <input type="text" class="clearable" id="timeout_until_time" maxlength="8" autocomplete="off"  />
-                    </div>
+        [% INCLUDE form_row type='text' id='session_duration_limit' label=l("Session duration limit, in minutes") attributes='maxlength="5"'
+            hint=l('You will be automatically logged out after such time.') %]
+
+        [% WRAPPER form_row type='custom' id='timeout_until_date' label=l("Time out until") row_class='ja-hide'
+            hint=l('Please enter date in the format DD MMM, YYYY HH:mm (local time).') %]
+            <div class="gr-row">
+                <div class="gr-5 gr-6-t gr-6-p gr-12-m">
+                    <input type="text" class="clearable" id="timeout_until_date" maxlength="15" autocomplete="off" readonly />
                 </div>
-            [% END %]
-
-            [% INCLUDE components/forms/form_row.html.tt type='text' id='exclude_until' label=l("Exclude me from the website until") attributes='maxlength="15" autocomplete="off" readonly class="clearable"'
-                hint=l('Please enter date in the format DD MMM, YYYY.') %]
-
-            [% INCLUDE components/forms/submit_button.html.tt text=l("Update Settings") type='submit' %]
+                <div class="gr-4 gr-6-t gr-6-p gr-12-m">
+                    <input type="text" class="clearable" id="timeout_until_time" maxlength="8" autocomplete="off"  />
+                </div>
+            </div>
         [% END %]
-	</form>
-</div>
+
+        [% INCLUDE form_row type='text' id='exclude_until' label=l("Exclude me from the website until") attributes='maxlength="15" autocomplete="off" readonly class="clearable"'
+            hint=l('Please enter date in the format DD MMM, YYYY.') %]
+
+        [% INCLUDE submit_button text=l("Update Settings") type='submit' %]
+    [% END %]
+</form>

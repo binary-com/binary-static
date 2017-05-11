@@ -50,7 +50,7 @@ const Home = (() => {
         if (!error) {
             BinaryPjax.load('new_account/virtualws');
         } else {
-            $('#signup_error').css({ display: 'inline-block' }).text(error.message);
+            $('#signup_error').removeClass('invisible').text(error.message);
         }
     };
 
