@@ -5,6 +5,7 @@ const localize             = require('../base/localize').localize;
 const State                = require('../base/storage').State;
 const makeOption           = require('../common_functions/common_functions').makeOption;
 const FormManager          = require('../common_functions/form_manager');
+const BinarySocket         = require('../websocket_pages/socket');
 const Cookies              = require('../../lib/js-cookie');
 require('select2');
 

@@ -1,5 +1,6 @@
 const MBDefaults      = require('./mb_defaults');
 const MBNotifications = require('./mb_notifications');
+const BinarySocket    = require('../socket');
 
 /*
  * MBTick object handles all the process/display related to tick streaming
