@@ -5,7 +5,7 @@ const Durations_Beta                 = require('./duration');
 const Price_Beta                     = require('./price');
 const Process_Beta                   = require('./process');
 const Purchase_Beta                  = require('./purchase');
-const chartFrameSource               = require('../charts/chart_frame').chartFrameSource;
+const setChart                       = require('../charts/webtrader_chart').setChart;
 const Defaults                       = require('../defaults');
 const GetTicks                       = require('../get_ticks');
 const Tick                           = require('../tick');
@@ -46,7 +46,7 @@ const TradingEvents_Beta = (() => {
             Defaults.remove('formname');
             Defaults.remove('underlying');
             Process_Beta.processMarket_Beta();
-            chartFrameSource();
+            setChart();
         };
 
         const market_nav_element = document.getElementById('contract_markets');
@@ -90,7 +90,7 @@ const TradingEvents_Beta = (() => {
         if (underlying_element) {
             underlying_element.addEventListener('change', (e) => {
                 if (e.target) {
-                    chartFrameSource();
+                    setChart();
                     commonTrading.showFormOverlay();
                     commonTrading.showPriceOverlay();
                     if (e.target.selectedIndex < 0) {

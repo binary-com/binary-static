@@ -1,6 +1,6 @@
 const TradingAnalysis   = require('./analysis');
 const commonTrading     = require('./common');
-const chartFrameCleanup = require('./charts/chart_frame').chartFrameCleanup;
+const cleanupChart      = require('./charts/webtrader_chart').cleanupChart;
 const displayCurrencies = require('./currency');
 const Defaults          = require('./defaults');
 const TradingEvents     = require('./event');
@@ -65,7 +65,7 @@ const TradePage = (() => {
         Process.forgetTradingStreams();
         BinarySocket.clear();
         Defaults.clear();
-        chartFrameCleanup();
+        cleanupChart();
         commonTrading.clean();
         BinarySocket.clear('active_symbols');
     };
@@ -73,7 +73,7 @@ const TradePage = (() => {
     const onDisconnect = () => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
-        chartFrameCleanup();
+        cleanupChart();
         onLoad();
     };
 

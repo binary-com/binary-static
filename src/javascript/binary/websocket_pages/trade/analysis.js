@@ -1,4 +1,4 @@
-const showHighchart    = require('./charts/chart_frame').showHighchart;
+const showChart        = require('./charts/webtrader_chart').showChart;
 const getActiveTab     = require('./get_active_tab').getActiveTab;
 const GetTicks         = require('./get_ticks');
 const getLanguage      = require('../../base/language').get;
@@ -87,7 +87,7 @@ const TradingAnalysis = (() => {
         } else {
             JapanPortfolio.hide();
             if (current_tab === 'tab_graph') {
-                showHighchart();
+                showChart();
             } else if (current_tab === 'tab_last_digit') {
                 const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
                 const tick = $('#tick_count').val() || 100;

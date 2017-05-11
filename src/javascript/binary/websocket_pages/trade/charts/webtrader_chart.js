@@ -1,44 +1,44 @@
-const wtcharts    = require('webtrader-charts');
+const WTCharts    = require('webtrader-charts');
 const getLanguage = require('../../../base/language').get;
 const localize    = require('../../../base/localize').localize;
 const State       = require('../../../base/storage').State;
 const jpClient    = require('../../../common_functions/country_base').jpClient;
 const Config      = require('../../../../config');
 
-const ChartFrame = (() => {
+const WebtraderChart = (() => {
     'use strict';
 
     let chart;
 
-    const showHighchart = () => {
+    const showChart = () => {
         if (State.get('is_chart_allowed')) {
-            chartFrameSource();
+            setChart();
         } else {
-            chartFrameCleanup();
+            cleanupChart();
             $('#trade_live_chart').hide();
             $('#chart-error').text(localize('Chart is not available for this underlying.')).show();
         }
     };
 
-    const chartFrameCleanup = () => {
+    const cleanupChart = () => {
         if (chart && typeof chart.actions.destroy === 'function') {
             chart.actions.destroy();
             chart = undefined;
         }
     };
 
-    const chartFrameSource = () => {
+    const setChart = () => {
         const new_underlying = document.getElementById('underlying').value;
         if ($('#tab_graph').hasClass('active') && (!chart || chart.data().instrumentCode !== new_underlying)) {
-            chartFrameCleanup();
-            setChartSource();
+            cleanupChart();
+            initChart();
         }
         $('#chart-error').hide();
         $('#trade_live_chart').show();
     };
 
-    const setChartSource = () => {
-        wtcharts.init({
+    const initChart = () => {
+        WTCharts.init({
             server: Config.getSocketURL(),
             appId : Config.getAppId(),
             lang  : getLanguage().toLowerCase(),
@@ -53,14 +53,14 @@ const ChartFrame = (() => {
             lang          : getLanguage().toLowerCase(),
             timezone      : `GMT+${jpClient() ? '9' : '0'}`,
         };
-        chart = wtcharts.chartWindow.addNewChart($('#chart_frame'), chart_config);
+        chart = WTCharts.chartWindow.addNewChart($('#chart_frame'), chart_config);
     };
 
     return {
-        showHighchart    : showHighchart,
-        chartFrameCleanup: chartFrameCleanup,
-        chartFrameSource : chartFrameSource,
+        showChart   : showChart,
+        cleanupChart: cleanupChart,
+        setChart    : setChart,
     };
 })();
 
-module.exports = ChartFrame;
+module.exports = WebtraderChart;

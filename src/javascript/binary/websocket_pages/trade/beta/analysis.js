@@ -1,5 +1,5 @@
 const commonTrading    = require('../common');
-const showHighchart    = require('../charts/chart_frame').showHighchart;
+const showChart        = require('../charts/webtrader_chart').showChart;
 const getActiveTab     = require('../get_active_tab').getActiveTab_Beta;
 const GetTicks         = require('../get_ticks');
 const AssetIndexUI     = require('../../resources/asset_index/asset_index.ui');
@@ -85,7 +85,7 @@ const TradingAnalysis_Beta = (() => {
 
         switch (current_tab) {
             case 'tab_graph':
-                showHighchart();
+                showChart();
                 break;
             case 'tab_portfolio':
                 PortfolioInit.onLoad();
