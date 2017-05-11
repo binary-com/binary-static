@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-08 05:33+0000\n"
+"PO-Revision-Date: 2017-05-11 09:35+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -10783,6 +10784,8 @@ msgstr "1回あたりの入金限度額は100万円となっております。"
 
 msgid "{JAPAN ONLY}Please note that the website that you have just visited is not our site. Information regarding the Company's financial instruments that have been posted on that site, any evaluation, impression, etc. are the sole responsibility of the administrators of that website, and has been created by them only. We can make no guarantee or accept any responsibility for their content."
 msgstr ""
+"直前にご覧いただいていたウェブサイトは当社が作成したものではありません。また、その掲載されている感想や評価はあくまでもウェブサイトの作成者が管理するもので"
+"、当社によるものではありません。"
 
 msgid "{JAPAN ONLY}Please note the maximum regular withdrawal amount is ¥1,000,000."
 msgstr "1日の出金可能額は100万円となっております。"
@@ -10799,10 +10802,8 @@ msgstr "契約締結前交付書面"
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "店頭通貨オプションの価格は、複数の要素に基づく計算値であり、基本的には相対取引で価格は決定されます。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Professional service"
 msgid "{JAPAN ONLY}Proceed to official site"
-msgstr "当社は、最高水準のFXバイナリーオプション取引環境を提供します"
+msgstr "ここからは、Binary株式会社のウェブサイトです"
 
 msgid "{JAPAN ONLY}Professional service"
 msgstr "当社は、最高水準のFXバイナリーオプション取引環境を提供します"
@@ -11521,10 +11522,8 @@ msgstr "支払処理は出金依頼日、または出金承認日から最大5�
 msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 msgstr "当社は、アフィリエイト会員様が広告活動を効果的にできますよう必要なツールを提供させていただきます"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Binary K. K."
 msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
-msgstr "Binary株式会社 (和文名称 バイナリー株式会社)"
+msgstr "ここからは、Binary株式会社のウェブサイトです"
 
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "コールオプションの買いの損益分岐点は、バリア価格に原資産１単位当たりのオプション料を加算した価格となります。"
