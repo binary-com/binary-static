@@ -1,0 +1,56 @@
+[% BLOCK tab_container %]
+    <div class="content-tab-container [% class %]">
+        [% content %]
+    </div>
+[% END %]
+
+[% BLOCK tabs %]
+    <div id="[% id %]">
+        <ul id="[% id_ul %]" class="tm-ul follow-default">
+            [% FOREACH tab IN tabs %]
+                <li id="[% tab.id %]" class="tm-li [% tab.class %]">
+                    <a href="[% IF no_href %]javascript:;[% END %]#[% tab.id %]" class="tm-a">[% tab.text %]</a>
+                </li>
+            [% END %]
+        </ul>
+    </div>
+[% END %]
+
+[% BLOCK tab_content_container %]
+    <div class="tab-content-wrapper" id="[% id %]">
+        [% content %]
+    </div>
+[% END %]
+
+[% BLOCK tab_content %]
+    <div id="[% id %]-content" class="toggle-content [% UNLESS visible %]invisible[% END %]">
+        [% content %]
+    </div>
+[% END %]
+
+[% BLOCK tabs_subtabs %]
+<div class="tab-menu [% class %]">
+    <div class="tab-menu-wrap">
+        <ul id="[% id %]" class="tm-ul">
+            [% FOREACH item IN items %]
+                <li id="[% item.id %]" class="tm-li [% item.class %]">
+                [% IF item.subtabs %]
+                    <span class="menu-wrap-a">
+                        <span class="menu-wrap-b">
+                            <a href="#[% item.id %]" class="tm-a">[% item.text %]</a>
+                        </span>
+                    </span>
+                    <ul class="tm-ul-2">
+                        [% FOREACH subtab IN item.subtabs %]
+                            <li id="[% item.id %]-[% subtab.id %]" class="tm-li-2"><a href="#[% subtab.id %]" class="tm-a-2">[% subtab.text %]</a></li>
+                        [% END %]
+                    </ul>
+                [% ELSE %]
+                <a href="#[% item.id %]" class="tm-a">[% item.text %]</a>
+                [% END %]
+                </li>
+            [% END %]
+        </ul>
+    </div>
+</div>
+[% END %]

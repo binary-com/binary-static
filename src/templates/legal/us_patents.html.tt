@@ -1,10 +1,16 @@
-<div class="static_full">
-
-    <h1>[% l("US Patents") %]</h1>
+[% BLOCK patents %]
     <ul>
-        <li><a onclick="window.open('https://www.google.com/patents/US7206762')" href="javascript:void(0);">[% l('Betting system and method') %]</a></li>
-        <li><a onclick="window.open('https://www.google.com/patents/US8046293')" href="javascript:void(0);">[% l('Computer trading system for offering custom financial market speculations') %]</a></li>
-        <li><a onclick="window.open('https://www.google.com/patents/US8046292')" href="javascript:void(0);">[% l('Computer system and method for speculating on a financial market') %]</a></li>
+        [% FOREACH items %]
+            <li><a onclick="window.open('https://www.google.com/patents/[% doc %]')" href="javascript:void(0);">[% text %]</a></li>
+        [% END %]
     </ul>
+[% END %]
 
+<div class="static_full">
+    <h1>[% l("US Patents") %]</h1>
+    [% INCLUDE patents items=[
+        { doc='US7206762', text=l('Betting system and method') },
+        { doc='US8046293', text=l('Computer trading system for offering custom financial market speculations') },
+        { doc='US8046292', text=l('Computer system and method for speculating on a financial market') },
+    ] %]
 </div>

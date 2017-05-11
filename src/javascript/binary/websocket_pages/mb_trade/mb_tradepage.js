@@ -3,6 +3,7 @@ const MBDisplayCurrencies  = require('./mb_currency');
 const MBTradingEvents      = require('./mb_event');
 const MBPrice              = require('./mb_price');
 const MBProcess            = require('./mb_process');
+const BinarySocket         = require('../socket');
 const TradingAnalysis      = require('../trade/analysis');
 const chartFrameCleanup    = require('../trade/charts/chart_frame').chartFrameCleanup;
 const localize             = require('../../base/localize').localize;
@@ -50,7 +51,7 @@ const MBTradePage = (() => {
         MBContract.onUnload();
         MBPrice.onUnload();
         MBProcess.onUnload();
-        BinarySocket.clear();
+        BinarySocket.clear('active_symbols');
         State.remove('ViewPopup.onDisplayed');
     };
 

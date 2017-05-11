@@ -1,4 +1,5 @@
 const ApplicationsData     = require('./authorised_apps.data');
+const BinarySocket         = require('../../../../socket');
 const showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeOnHover;
 const localize             = require('../../../../../base/localize').localize;
 const showLoadingImage     = require('../../../../../base/utility').showLoadingImage;

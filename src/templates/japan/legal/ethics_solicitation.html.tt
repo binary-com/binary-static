@@ -1,0 +1,20 @@
+[% PROCESS components/list_multiline.html.tt %]
+
+<div class="gr-12 gr-padding-30 gr-no-gutter">
+    <h2>[% l("Investment Solicitation Policy") %]</h2>
+    <p>[% l("Japan website Investment Solicitation Policy Paragraph 1") %]</p>
+
+	[% INCLUDE list_multiline items=[
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 1"),  texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 1") }] },
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 2"),  texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 2") }] },
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 3"),  texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 3") }] },
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 4"),  texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 4") }] },
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 5"),  texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 5") }] },
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 6"),  texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 6") }] },
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 7"),  texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 7") }] },
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 8"),  texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 8") }] },
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 9"),  texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 9") }] },
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 10"), texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 10") }] },
+		{ header=l("Japan website Investment Solicitation Policy Bold list item 11"), texts=[ { text=l("Japan website Investment Solicitation Policy Explanation of item 11") }] },
+	] %]
+</div>

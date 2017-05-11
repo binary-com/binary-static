@@ -1,0 +1,14 @@
+[% BLOCK list_nested %]
+<li>[% IF strong %]<strong>[% END %][% header %][% IF strong %]</strong>[% END %]
+    <ol class="reset_ol">
+        [% FOREACH item IN items %]
+            [% IF item.list_nested %]
+                [% INCLUDE list_nested items=item.list_nested header=item.header strong=item.strong %]
+            [% ELSE %]
+                <li>[% item.text %]</li>
+            [% END %]
+        [% END %]
+    </ol>
+    [% content %]
+</li>
+[% END %]

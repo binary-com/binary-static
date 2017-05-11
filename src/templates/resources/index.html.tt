@@ -1,30 +1,23 @@
+[% BLOCK column %]
+<div class="gr-3 gr-8-m gr-parent[% IF ja_hide %] ja-hide[% END %]">
+    <div class="gr-8 gr-padding-10">
+        <a href="[% request.url_for('resources/' _ url) %]">
+            <img class="responsive" src="[% request.url_for('images/pages/resources/' _ image _ '-icon.svg') %]"/>
+        </a>
+    </div>
+    <div class="gr-12">
+        <h4><a href="[% request.url_for('resources/' _ url) %]">[% header %]</a></h4>
+        <p>[% text %]</p>
+    </div>
+</div>
+[% END %]
+
 <h1>[% l("Resources") %]</h1>
 <p>[% l("Do you want to learn more about the markets and how to trade them? Check out the resources below.") %]</p>
 <div class="gr-row">
-  <div class="gr-3 gr-8-m gr-parent ja-hide">
-    <div class="gr-8 gr-padding-10">
-      <a href="[% request.url_for('/resources/asset_indexws') %]" id="asset-index">
-        <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/asset-index-icon.svg') %]"/>
-      </a>
-    </div>
-    <div class="gr-12">
-      <h4>
-        <a href="[% request.url_for('/resources/asset_indexws') %]">[% l("Asset Index") %]</a>
-      </h4>
-      <p>[% l("View the full list of assets, contract types and durations.") %]</p>
-    </div>
-  </div>
-  <div class="gr-3 gr-8-m gr-parent">
-    <div class="gr-8 gr-padding-10">
-      <a href="[% request.url_for('/resources/market_timesws') %]" id="trading-times">
-        <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/trading-times-icon.svg') %]"/>
-      </a>
-    </div>
-    <div class="gr-12">
-      <h4>
-        <a href="[% request.url_for('/resources/market_timesws') %]">[% l("Trading Times") %]</a>
-      </h4>
-      <p>[% l("View the operating hours of the markets you can trade.") %]</p>
-    </div>
-  </div>
+    [% INCLUDE column ja_hide=1 url='asset_indexws' image='asset-index' header=l("Asset Index")
+        text=l("View the full list of assets, contract types and durations.") %]
+
+    [% INCLUDE column url='market_timesws' image='trading-times' header=l("Trading Times")
+        text=l("View the operating hours of the markets you can trade.") %]
 </div>

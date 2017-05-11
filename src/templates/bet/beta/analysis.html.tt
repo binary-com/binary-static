@@ -1,70 +1,28 @@
+[% PROCESS components/tabs.html.tt %]
 <div id="trading_analysis_content">
-    <div class="content-tab-container page-section">
-        <div id="analysis_tab_container">
-            <ul id="analysis_tabs" class="tm-ul follow-default">
-                <li id="tab_graph" class="tm-li first">
-                    <a href="#tab_graph" class="tm-a first">[% l('Chart') %]</a>
-                </li>
-                <li id="tab_portfolio" class="tm-li first invisible">
-                    <a href="#tab_portfolio" class="tm-a first">[% l('Portfolio') %]</a>
-                </li>
-                <li id="tab_explanation" class="tm-li">
-                    <a href="" class="tm-a">[% l('Explanation') %]</a>
-                </li>
-                <li id="tab_last_digit" class="invisible tm-li">
-                    <a href="javascript:;" class="tm-a">[% l('Last Digit Stats') %]</a>
-                </li>
-                <li id="tab_japan_info" class="invisible tm-li">
-                    <a href="javascript:;" class="tm-a"></a>
-                </li>
-                <li id="tab_asset_index" class="invisible tm-li">
-                    <a href="javascript:;" class="tm-a">[% l('Asset Index') %]</a>
-                </li>
-                <li id="tab_trading_times" class="invisible tm-li last">
-                    <a href="javascript:;" class="tm-a">[% l('Trading Times') %]</a>
-                </li>
-            </ul>
-        </div>
-        <div class="tab-content-wrapper" id="analysis_content">
-            <div id="tab_graph-content" class="toggle-content invisible">
+    [% WRAPPER tab_container class='page-section' %]
+        [% INCLUDE tabs id='analysis_tab_container' id_ul='analysis_tabs' tabs=[
+            { text=l('Chart'),            id='tab_graph' },
+            { text=l('Portfolio'),        id='tab_portfolio',     class='invisible' },
+            { text=l('Explanation'),      id='tab_explanation' },
+            { text=l('Last Digit Stats'), id='tab_last_digit',    class='invisible', no_href=1 },
+            { text=l('Asset Index'),      id='tab_asset_index',   class='invisible' },
+            { text=l('Trading Times'),    id='tab_trading_times', class='invisible', no_href=1 },
+        ] %]
+        [% WRAPPER tab_content_container id='analysis_content' %]
+            [% WRAPPER tab_content id='tab_graph' %]
                 <p class="error-msg" id="chart-error"></p>
                 <div id="trade_live_chart">
                     <table><tr><td>
                         <iframe src="" width="100%" height="99%" id="chart_frame" style="overflow-y : hidden;" scrolling="no"></iframe>
                     </td></tr></table>
                 </div>
-            </div>
-            <div id="tab_portfolio-content" class="toggle-content invisible">[% INCLUDE user/portfolio.html.tt %]</div>
-            <div id="tab_explanation-content" class="toggle-content selectedTab"></div>
-            <div id="tab_last_digit-content" class="toggle-content invisible">
-                <div class="gr-parent">
-                    <div id="last_digit_histo_form" class="gr-12 gr-12-m gr-centered">
-                        <div class="smallfont gr-row">
-                            <div class="gr-6 gr-12-m center-text">
-                                <label class="gr-padding-10" for="digit_underlying">[% l('Select market:') %]</label>
-                                <br/>
-                                <select class="smallfont" id="digit_underlying"></select>
-                            </div>
-                            <div class="gr-6 gr-12-m center-text">
-                                <label class="gr-padding-10" for="tick_count">[% l('Number of ticks:') %]</label>
-                                <br/>
-                                <select class="smallfont" id="tick_count">
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option selected="selected" value="100">100</option>
-                                    <option value="500">500</option>
-                                    <option value="1000">1000</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="last_digit_histo" class="gr-12 gr-12-m gr-centered"></div>
-                    <div id="last_digit_title" class="gr-hide"><span id="digit_domain"></span> - [% l('Last digit stats for the latest [_1] ticks on [_2]', '<span id="digit_info_count">100</span>', '<span id="digit_info_underlying"></span>') %]</div>
-                </div>
-            </div>
-            <div id="tab_japan_info-content" class="toggle-content invisible"></div>
-            <div id="tab_asset_index-content" class="toggle-content invisible">[% INCLUDE resources/asset_index.html.tt %]</div>
-            <div id="tab_trading_times-content" class="toggle-content invisible">[% INCLUDE resources/trading_times.html.tt %]</div>
-        </div>
-    </div>
+            [% END %]
+            [% WRAPPER tab_content id='tab_portfolio' %][% PROCESS user/portfolio.html.tt %][% END %]
+            [% INCLUDE tab_content id='tab_explanation' class='selectedTab' %]
+            [% WRAPPER tab_content id='tab_last_digit' %][% PROCESS bet/beta/last_digit.html.tt %][% END %]
+            [% WRAPPER tab_content id='tab_asset_index' %][% PROCESS resources/asset_index.html.tt %][% END %]
+            [% WRAPPER tab_content id='tab_trading_times' %][% PROCESS resources/trading_times.html.tt %][% END %]
+        [% END %]
+    [% END %]
 </div>

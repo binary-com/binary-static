@@ -1,23 +1,9 @@
 .contact-content {
-    h2, h3 {
-        margin-bottom: 10px;
-    }
-    .hr-line {
-        border-bottom: 1px solid $COLOR_GRAY;
-    }
     #cs_telephone_number {
         width: 100%;
     }
-    .center-align {
-        margin-top: auto;
-        margin-bottom: auto;
-        padding-right: 0;
-    }
-    .bottom-row {
-        padding-top: 10px;
-    }
     .border-bottom {
-        min-height: 190px;
+        min-height: 200px;
     }
     @media screen and (max-width: 480px) {
         .border-bottom {

@@ -1,146 +1,84 @@
+[% PROCESS components/elements.html.tt %]
+
+[% BLOCK platform %]
+<div class="gr-6 gr-12-m gr-12-p">
+    <div class="[% image_class %]">
+        <img class="responsive" src="[% request.url_for('images/pages/platforms/' _ image _ '.png') %]" />
+    </div>
+    <div class="gr-padding-30">
+        <h3>[% header %]</h3>
+        <strong>[% description %]</strong>
+        <p>[% text %]</p>
+        [% IF url %]
+        <p>
+            <a class="button" href="[% url %]"[% IF target %] target="[% target %]"[% END %]><span>[% button_text %]</span></a>
+        </p>
+        [% END %]
+        [% IF app_store_url and google_play_url %]
+            <div class="gr-row">
+                <a class="gr-5 gr-6-m" href="[% app_store_url %]" target="_blank">
+                    <div class="app-store-badge"></div>
+                </a>
+                <a class="gr-5 gr-6-m" href="[% google_play_url %]" target="_blank">
+                    <div class="google-play-badge"></div>
+                </a>
+            </div>
+        [% END %]
+    </div>
+</div>
+[% END %]
+
+[% dash = { text= '<div class="small-padding-top">-</div>', class='vertical-align-middle center-text' };
+    tick = { text= '<ul class="checked"><li></li></ul>'}; %]
+
 <div class="gr-row static_full">
     <div class="gr-3 gr-hide-m gr-hide-p sidebar-container">
         <div class="sidebar-left">
-            <ul class="sidebar-nav">
-                <li>
-                    <a href="#trading-platforms">[% l("Trading Platforms") %]</a>
-                </li>
-                <li class="invisible">
-                    <a href="#platforms-comparison">[% l("Platform Comparison") %]</a>
-                </li>
-                <li>
-                    <a href="#more-tools">[% l("More Tools") %]</a>
-                </li>
-            </ul>
+            [% INCLUDE list class='sidebar-nav' items=[
+                { href='#trading-platforms',    text=l("Trading Platforms") },
+                { href='#platforms-comparison', text=l("Platform Comparison"), class='invisible' },
+                { href='#more-tools',           text=l("More Tools") },
+            ] %]
         </div>
     </div>
+
     <div class="gr-9 gr-12-m platforms-section">
         <div id="trading-platforms" class="sections invisible">
             <h1>[% l("Trading Platforms") %]</h1>
             <h2>[% l("Basic Platforms") %]</h2>
             <div class="gr-row">
-                <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-12 gr-7-p gr-10-m">
-                        <img class="responsive" src="[% request.url_for('images/pages/platforms/trading-page.png') %]" />
-                    </div>
-                    <div class="gr-padding-30">
-                        <h3>[% l("Binary.com") %]</h3>
-                        <strong>[% l("Premier binary options trading platform") %]</strong>
-                        <p>
-                            [% l("Trade in the world’s financial markets with a simple and user-friendly online platform.") %]
-                            <p>
-                                <a class="button" href="[% request.url_for('/trading') %]">
-                                    <span>[% l("Trade Now") %]</span>
-                                </a>
-                            </p>
-                        </p>
-                    </div>
-                </div>
-                <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8 gr-5-p gr-7-m">
-                        <img class="responsive" src="[% request.url_for('images/pages/platforms/tick-trade.png') %]" />
-                    </div>
-                    <div class="gr-padding-30">
-                        <h3>[% l("Binary Tick Trade App") %]</h3>
-                        <strong>[% l("Ultra fast on-the-go trading") %]</strong>
-                        <p>
-                            [% l("Enjoy our fastest type of trading with our Tick Trade app, wherever you are.") %]
-                            <div class="gr-row">
-                                <a class="gr-5 gr-6-m" href="https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=platforms_page&mt=8" target="_blank">
-                                    <div class="app-store-badge"></div>
-                                </a>
-                                <a class="gr-5 gr-6-m" href="https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page" target="_blank">
-                                    <div class="google-play-badge"></div>
-                                </a>
-                           </div>
-                        </p>
-                    </div>
-                </div>
+                [% INCLUDE platform image_class='gr-12 gr-7-p gr-10-m' image='trading-page' header=website_name description=l("Premier binary options trading platform")
+                    text=l("Trade in the world’s financial markets with a simple and user-friendly online platform.")
+                    url=request.url_for('trading') button_text=l("Trade Now") %]
+
+                [% INCLUDE platform image_class='gr-8 gr-5-p gr-7-m' image='tick-trade' header=l("Binary Tick Trade App") description=l("Ultra fast on-the-go trading")
+                    text=l("Enjoy our fastest type of trading with our Tick Trade app, wherever you are.")
+                    app_store_url='https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=platforms_page&mt=8'
+                    google_play_url='https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' %]
             </div>
             <h2>[% l("Advanced Platforms") %]</h2>
             <div class="gr-row">
-                <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8 gr-5-p gr-7-m">
-                        <img class="responsive" src="[% request.url_for('images/pages/platforms/metatrader.png') %]" />
-                    </div>
-                    <div class="gr-padding-30">
-                        <h3>[% l("MetaTrader 5") %]</h3>
-                        <strong>[% l("Advanced CFD trading platform") %]</strong>
-                        <p>
-                            [% l("Trade with a powerful interface known as the global industry standard.") %]
-                            <p>
-                                <a class="button" href="https://mt.binary.com" target="_blank">
-                                    <span>[% l("Try MetaTrader 5") %]</span>
-                                </a>
-                            </p>
-                        </p>
-                    </div>
-                </div>
-                <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8 gr-5-p gr-7-m">
-                        <img class="responsive" src="[% request.url_for('images/pages/platforms/webtrader.png') %]" />
-                    </div>
-                    <div class="gr-padding-30">
-                        <h3>[% l("Binary Webtrader") %]</h3>
-                        <strong>[% l("Advanced binary options trading interface") %]</strong>
-                        <p>
-                            [% l("Monitor the movements of your favourite assets and markets at the same time.") %]
-                            <p>
-                                <a class="button" href="https://webtrader.binary.com" target="_blank">
-                                    <span>[% l("Try Webtrader") %]</span>
-                                </a>
-                            </p>
-                        </p>
-                    </div>
-                </div>
+                [% INCLUDE platform image_class='gr-8 gr-5-p gr-7-m' image='metatrader' header=l("MetaTrader 5") description=l("Advanced CFD trading platform")
+                    text=l("Trade with a powerful interface known as the global industry standard.")
+                    url='https://mt.binary.com' target='_blank' button_text=l("Try MetaTrader 5") %]
+
+                [% INCLUDE platform image_class='gr-8 gr-5-p gr-7-m' image='webtrader' header=l("Binary Webtrader") description=l("Advanced binary options trading interface")
+                    text=l("Monitor the movements of your favourite assets and markets at the same time.")
+                    url='https://webtrader.binary.com' target='_blank' button_text=l("Try Webtrader") %]
             </div>
             <div class="gr-row">
-                <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-12 gr-7-p gr-10-m">
-                        <img class="responsive" src="[% request.url_for('images/pages/platforms/nextgen.png') %]" />
-                    </div>
-                    <div class="gr-padding-30">
-                        <h3>[% l("Binary Next-Gen") %]</h3>
-                        <strong>[% l("Advanced trading app for web and mobile") %]</strong>
-                        <p>
-                            [% l("Explore advanced trading features with the Next-Gen app for web and mobile.") %]
-                            <div class="gr-row">
-                                <div class="gr-12">
-                                    <a class="button" href="https://app.binary.com" target="_blank">
-                                        <span>[% l('Try Next-Gen') %]</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="gr-row gr-padding-10">
-                                <a class="gr-5 gr-6-m" href="https://itunes.apple.com/app/apple-store/id1134884301?pt=117911266&ct=platforms_page&mt=8" target="_blank">
-                                    <div class="app-store-badge"></div>
-                                </a>
-                                <a class="gr-5 gr-6-m" href="https://play.google.com/store/apps/details?id=app.binary.com&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page" target="_blank">
-                                    <div class="google-play-badge"></div>
-                                </a>
-                           </div>
-                        </p>
-                    </div>
-                </div>
-                <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-10 gr-7-p gr-9-m">
-                        <img class="responsive" src="[% request.url_for('images/pages/platforms/binarybot.png') %]" />
-                    </div>
-                    <div class="gr-padding-30">
-                        <h3>[% l("Binary Bot") %]</h3>
-                        <strong>[% l("Auto-trader programming tool") %]</strong>
-                        <p>
-                            [% l("Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool.") %]
-                            <p>
-                                <a class="button" href="https://bot.binary.com" target="_blank">
-                                    <span>[% l("Try Binary Bot") %]</span>
-                                </a>
-                            </p>
-                        </p>
-                    </div>
-                </div>
+                [% INCLUDE platform image_class='gr-12 gr-7-p gr-10-m' image='nextgen' header=l("Binary Next-Gen") description=l("Advanced trading app for web and mobile")
+                    text=l("Explore advanced trading features with the Next-Gen app for web and mobile.")
+                    url='https://app.binary.com' target='_blank' button_text=l("Try Next-Gen")
+                    app_store_url='https://itunes.apple.com/app/apple-store/id1134884301?pt=117911266&ct=platforms_page&mt=8'
+                    google_play_url='https://play.google.com/store/apps/details?id=app.binary.com&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' %]
+
+                [% INCLUDE platform image_class='gr-10 gr-7-p gr-9-m' image='binarybot' header=l("Binary Bot") description=l("Auto-trader programming tool")
+                    text=l("Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool.")
+                    url='https://bot.binary.com' target='_blank' button_text=l("Try Binary Bot") %]
             </div>
         </div>
+
         <div id="platforms-comparison" class="invisible">
             <h1>[% l("Platform Comparison") %]</h1>
             <p>[% l("Compare all the trading platforms that we offer. Choose the ideal platform for your preferred trading strategy.") %]</p>
@@ -149,160 +87,55 @@
                 <div class="outer">
                     <div class="inner">
                         <div class="fade-to-left"></div>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>&nbsp;</th>
-                                    <td>[% l("Binary.com") %]</td>
-                                    <td>[% l("Next-Gen") %]</td>
-                                    <td>[% l("Tick Trade") %]</td>
-                                    <td>[% l("MetaTrader 5") %]</td>
-                                    <td>[% l("Webtrader") %]</td>
-                                    <td>[% l("Binary Bot") %]</td>
-                                </tr>
-                                <tr>
-                                    <th>[% l("Environment") %]</th>
-                                    <td>[% l("Web (Including Mobile)") %]</td>
-                                    <td>[% l("Web, iOS, Android") %]</td>
-                                    <td>[% l("iOS, Android") %]</td>
-                                    <td>[% l("Windows, macOS, Linux") %]</td>
-                                    <td>[% l("Web (Desktop Only)") %]</td>
-                                    <td>[% l("Web (Desktop Only)") %]</td>
-                                </tr>
-                                <tr>
-                                    <th>[% l("Price") %]</th>
-                                    <td>[% l("Free") %]</td>
-                                    <td>[% l("Free") %]</td>
-                                    <td>[% l("Free") %]</td>
-                                    <td>[% l("Free") %]</td>
-                                    <td>[% l("Free") %]</td>
-                                    <td>[% l("Free") %]</td>
-                                </tr>
-                                <tr>
-                                    <th>[% l("Ideal Users") %]</th>
-                                    <td>[% l("Everyone") %]</td>
-                                    <td>[% l("Everyone") %]</td>
-                                    <td>[% l("Short interval traders") %]</td>
-                                    <td>[% l("Serious traders") %]</td>
-                                    <td>[% l("Serious traders") %]</td>
-                                    <td>[% l("Serious traders") %]</td>
-                                </tr>
-                                <tr>
-                                    <th>[% l("Available Products") %]</th>
-                                    <td>[% l("Binary Options") %]</td>
-                                    <td>[% l("Binary Options") %]</td>
-                                    <td>[% l("Binary Options") %]</td>
-                                    <td>[% l("Contracts for Difference (CFD)") %]</td>
-                                    <td>[% l("Binary Options") %]</td>
-                                    <td>[% l("Binary Options") %]</td>
-                                </tr>
-                                <tr>
-                                    <th>[% l("Available Markets") %]</th>
-                                    <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
-                                    <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
-                                    <td>[% l("Forex, Volatility Indices") %]</td>
-                                    <td>[% l("Volatility Indices") %]</td>
-                                    <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
-                                    <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
-                                </tr>
-                                <tr>
-                                    <th>[% l("Trade Durations") %]</th>
-                                    <td>[% l("5 ticks to 1 year") %]</td>
-                                    <td>[% l("5 ticks to 1 year") %]</td>
-                                    <td>[% l("5 to 10 ticks") %]</td>
-                                    <td>[% l("Any") %]</td>
-                                    <td>[% l("5 ticks to 1 year") %]</td>
-                                    <td>[% l("5 ticks to 1 year") %]</td>
-                                </tr>
-                                <tr>
-                                    <th class="auto-height">[% l("Multiple Charts") %]</th>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th class="auto-height">[% l("Chart Indicators") %]</th>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                </tr>
-                                <tr>
-                                    <th class="auto-height">[% l("Chart Comparison") %]</th>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th class="auto-height">[% l("Advanced Automation") %]</th>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                    <td class="vertical-align-middle center-text">
-                                        <div class="small-padding-top">-</div>
-                                    </td>
-                                    <td><ul class="checked"><li></li></ul></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        [% INCLUDE table data={
+                            tbody=[
+                                [{ header=' ' },
+                                 { text=website_name },      { text=l("Next-Gen") },  { text=l("Tick Trade") },
+                                 { text=l("MetaTrader 5") }, { text=l("Webtrader") }, { text=l("Binary Bot") } ],
+
+                                [{ header=l("Environment") },
+                                 { text=l("Web (Including Mobile)") }, { text=l("Web, iOS, Android") },  { text=l("iOS, Android") },
+                                 { text=l("Windows, macOS, Linux") },  { text=l("Web (Desktop Only)") }, { text=l("Web (Desktop Only)") } ],
+
+                                [{ header=l("Price") },
+                                 { text=l("Free") }, { text=l("Free") }, { text=l("Free") },
+                                 { text=l("Free") }, { text=l("Free") }, { text=l("Free") } ],
+
+                                [{ header=l("Ideal Users") },
+                                 { text=l("Everyone") },        { text=l("Everyone") },        { text=l("Short interval traders") },
+                                 { text=l("Serious traders") }, { text=l("Serious traders") }, { text=l("Serious traders") } ],
+
+                                [{ header=l("Available Products") },
+                                 { text=l("Binary Options") },                 { text=l("Binary Options") }, { text=l("Binary Options") },
+                                 { text=l("Contracts for Difference (CFD)") }, { text=l("Binary Options") }, { text=l("Binary Options") } ],
+
+                                [{ header=l("Available Markets") },
+                                 { text=l("Forex, Indices, Stocks, Commodities, Volatility Indices") }, { text=l("Forex, Indices, Stocks, Commodities, Volatility Indices") },
+                                 { text=l("Forex, Volatility Indices") },                               { text=l("Volatility Indices") },
+                                 { text=l("Forex, Indices, Stocks, Commodities, Volatility Indices") }, { text=l("Forex, Indices, Stocks, Commodities, Volatility Indices") } ],
+
+                                [{ header=l("Trade Durations") },
+                                 { text=l("5 ticks to 1 year") }, { text=l("5 ticks to 1 year") }, { text=l("5 to 10 ticks") },
+                                 { text=l("Any") },               { text=l("5 ticks to 1 year") }, { text=l("5 ticks to 1 year") } ],
+
+                                [{ header=l("Multiple Charts"),     class='auto-height' }, dash, tick, dash, tick, tick, dash ],
+                                [{ header=l("Chart Indicators"),    class='auto-height' }, tick, dash, dash, tick, tick, tick ],
+                                [{ header=l("Chart Comparison"),    class='auto-height' }, tick, dash, dash, dash, tick, dash ],
+                                [{ header=l("Advanced Automation"), class='auto-height' }, dash, dash, dash, tick, dash, tick ],
+                            ],
+                        } %]
                         <div class="fade-to-right"></div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div id="more-tools" class="sections invisible">
             <h1>[% l("More Tools") %]</h1>
             <div class="gr-row">
-                <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-10 gr-5-p gr-9-m">
-                        <img class="responsive" src="[% request.url_for('images/pages/platforms/tradingview.png') %]" />
-                    </div>
-                    <div class="gr-padding-30">
-                        <h3>[% l("TradingView for Binary.com") %]</h3>
-                        <strong>[% l("Powerful charting and technical analysis") %]</strong>
-                        <p>
-                            [% l("Analyse the markets with an extensive range of indicators, price bands, and overlays.") %]
-                            <p>
-                                <a class="button" href="https://tradingview.binary.com" target="_blank">
-                                    <span>[% l("Try TradingView") %]</span>
-                                </a>
-                            </p>
-                        </p>
-                    </div>
-                </div>
+                [% INCLUDE platform image_class='gr-10 gr-5-p gr-9-m' image='tradingview' header=l("TradingView for [_1]", website_name) description=l("Powerful charting and technical analysis")
+                    text=l("Analyse the markets with an extensive range of indicators, price bands, and overlays.")
+                    url='https://tradingview.binary.com' target='_blank' button_text=l("Try TradingView") %]
             </div>
             <h2>[% l("Buy an App, or Build Your Own") %]</h2>
             <p>[% l("Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>.") %]</p>

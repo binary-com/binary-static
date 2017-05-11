@@ -1,5 +1,1 @@
-[% IF language.lower == 'ja' %]
-    <title>[%= browser_title =%][% l("{JAPAN ONLY}Binary.com page title") %]</title>
-[% ELSE %]
-    <title>[%= browser_title _ website_name =%]</title>
-[% END %]
+<title>[%= browser_title _ (language.lower == 'ja' ? l("{JAPAN ONLY}Binary.com page title") : website_name) =%]</title>

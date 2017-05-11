@@ -1,3 +1,4 @@
+const BinarySocket = require('../socket');
 const urlForStatic = require('../../base/url').urlForStatic;
 const Cookies      = require('../../../lib/js-cookie');
 

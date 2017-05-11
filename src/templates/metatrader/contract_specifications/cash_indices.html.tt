@@ -1,134 +1,37 @@
+[% PROCESS components/elements.html.tt %]
+[% percentage = { text='0.2%' } %]
+
 <div id="cash-specs" class="gr-row">
     <div class="gr-12 gr-padding-10">
         <h1>[% l('Contract Specifications (CFD) - Cash Indices') %]</h1>
-        <div class="table-container">
-            <table>
-                <thead>
-                <tr>
-                    <th>[% l('Symbol') %]</th>
-                    <th>[% l('Description') %]</th>
-                    <th>[% l('Volume 1.0<br>(Trade Size)') %]</th>
-                    <th>[% l('Minimum Volume<br>(Trade Size)') %]</th>
-                    <th>[% l('Maximum Volume<br>(Trade Size)') %]</th>
-                    <th>[% l('Margin') %]</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>AUS_200</td>
-                    <td>[% l('Australia 200 Cash Index') %]</td>
-                    <td>[% l('AUD 1 per point') %]</td>
-                    <td>1</td>
-                    <td>100</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>JP_225</td>
-                    <td>[% l('Japan Cash Index') %]</td>
-                    <td>[% l('JPY 1 per point') %]</td>
-                    <td>10</td>
-                    <td>1000</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>IND_50</td>
-                    <td>[% l('India 50 Cash Index') %]</td>
-                    <td>[% l('USD 1 per point') %]</td>
-                    <td>1</td>
-                    <td>100</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>ESP_35</td>
-                    <td>[% l('Spain 35 Cash Index') %]</td>
-                    <td>[% l('EUR 1 per point') %]</td>
-                    <td>1</td>
-                    <td>100</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>EUR_50</td>
-                    <td>[% l('Euro 50 Cash Index') %]</td>
-                    <td>[% l('EUR 1 per point') %]</td>
-                    <td>1</td>
-                    <td>500</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>FRA_40</td>
-                    <td>[% l('France 40 Cash Index') %]</td>
-                    <td>[% l('EUR 1 per point') %]</td>
-                    <td>1</td>
-                    <td>500</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>GBR_100</td>
-                    <td>[% l('UK 100 Cash Index') %]</td>
-                    <td>[% l('GBP 1 per point') %]</td>
-                    <td>1</td>
-                    <td>500</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>NED_25</td>
-                    <td>[% l('Netherlands 25 Cash Index') %]</td>
-                    <td>[% l('EUR 1 per point') %]</td>
-                    <td>1</td>
-                    <td>100</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>ZAF_40</td>
-                    <td>[% l('South Africa 40 Cash Index') %]</td>
-                    <td>[% l('ZAR 1 per point') %]</td>
-                    <td>1</td>
-                    <td>100</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>DAX_30</td>
-                    <td>[% l('German 30 Cash Index') %]</td>
-                    <td>[% l('EUR 1 per point') %]</td>
-                    <td>1</td>
-                    <td>100</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>CAN_60</td>
-                    <td>[% l('Canada 60 Cash Index') %]</td>
-                    <td>[% l('CAD 1 per point') %]</td>
-                    <td>1</td>
-                    <td>100</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>US_30</td>
-                    <td>[% l('US 30 Cash Index') %]</td>
-                    <td>[% l('USD 1 per point') %]</td>
-                    <td>1</td>
-                    <td>200</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>US_100</td>
-                    <td>[% l('US 100 Cash Index') %]</td>
-                    <td>[% l('USD 1 per point') %]</td>
-                    <td>1</td>
-                    <td>200</td>
-                    <td>0.2%</td>
-                </tr>
-                <tr>
-                    <td>US_500</td>
-                    <td>[% l('US 500 Cash Index') %]</td>
-                    <td>[% l('USD 1 per point') %]</td>
-                    <td>1</td>
-                    <td>200</td>
-                    <td>0.2%</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        [% INCLUDE table scroll=1 data={
+            thead= [
+                [
+                    { text=l('Symbol') },
+                    { text=l('Description') },
+                    { text=l('Volume 1.0<br>(Trade Size)') },
+                    { text=l('Minimum Volume<br>(Trade Size)') },
+                    { text=l('Maximum Volume<br>(Trade Size)') },
+                    { text=l('Margin') },
+                ],
+            ],
+            tbody= [
+                [{ text='AUS_200' }, { text=l('Australia 200 Cash Index') },   { text=l('AUD 1 per point') }, { text='1' },  { text='100' },  percentage ],
+                [{ text='JP_225' },  { text=l('Japan Cash Index') },           { text=l('JPY 1 per point') }, { text='10' }, { text='1000' }, percentage ],
+                [{ text='IND_50' },  { text=l('India 50 Cash Index') },        { text=l('USD 1 per point') }, { text='1' },  { text='100' },  percentage ],
+                [{ text='ESP_35' },  { text=l('Spain 35 Cash Index') },        { text=l('EUR 1 per point') }, { text='1' },  { text='100' },  percentage ],
+                [{ text='EUR_50' },  { text=l('Euro 50 Cash Index') },         { text=l('EUR 1 per point') }, { text='1' },  { text='500' },  percentage ],
+                [{ text='FRA_40' },  { text=l('France 40 Cash Index') },       { text=l('EUR 1 per point') }, { text='1' },  { text='500' },  percentage ],
+                [{ text='GBR_100' }, { text=l('UK 100 Cash Index') },          { text=l('GBP 1 per point') }, { text='1' },  { text='500' },  percentage ],
+                [{ text='NED_25' },  { text=l('Netherlands 25 Cash Index') },  { text=l('EUR 1 per point') }, { text='1' },  { text='100' },  percentage ],
+                [{ text='ZAF_40' },  { text=l('South Africa 40 Cash Index') }, { text=l('ZAR 1 per point') }, { text='1' },  { text='100' },  percentage ],
+                [{ text='DAX_30' },  { text=l('German 30 Cash Index') },       { text=l('EUR 1 per point') }, { text='1' },  { text='100' },  percentage ],
+                [{ text='CAN_60' },  { text=l('Canada 60 Cash Index') },       { text=l('CAD 1 per point') }, { text='1' },  { text='100' },  percentage ],
+                [{ text='US_30' },   { text=l('US 30 Cash Index') },           { text=l('USD 1 per point') }, { text='1' },  { text='200' },  percentage ],
+                [{ text='US_100' },  { text=l('US 100 Cash Index') },          { text=l('USD 1 per point') }, { text='1' },  { text='200' },  percentage ],
+                [{ text='US_500' },  { text=l('US 500 Cash Index') },          { text=l('USD 1 per point') }, { text='1' },  { text='200' },  percentage ],
+            ],
+        } %]
     </div>
 
     <div class="gr-12 gr-padding-10">
@@ -149,8 +52,8 @@
         <p>[% l('The swap rate will depend on the direction of the position you take:') %]</p>
         <div class="gr-prefix-1">
             <ul class="bullet">
-                <li>[% l('<strong>Long positions</strong>: We charge a 2% fee on top of market rates.') %]</li>
-                <li>[% l('<strong>Short positions</strong>: We charge a 2% fee on top of market rates.') %]</li>
+                <li><strong>[% l('Long positions') %]</strong>: [% l('We charge a 2% fee on top of market rates.') %]</li>
+                <li><strong>[% l('Short positions') %]</strong>: [% l('We charge a 2% fee on top of market rates.') %]</li>
             </ul>
         </div>
         <p>[% l('Please take note that our swap rate also depends on the time and days you hold your positions open: ') %]</p>

@@ -9,7 +9,6 @@ const elementInnerHtml   = require('../../../common_functions/common_functions')
 const elementTextContent = require('../../../common_functions/common_functions').elementTextContent;
 const isVisible          = require('../../../common_functions/common_functions').isVisible;
 const formatMoney        = require('../../../common_functions/currency_to_symbol').formatMoney;
-const addComma           = require('../../../common_functions/string_util').addComma;
 const toTitleCase        = require('../../../common_functions/string_util').toTitleCase;
 
 /*
@@ -89,10 +88,12 @@ const Purchase_Beta = (() => {
             chart.hide();
             spots.hide();
 
-            commonTrading.labelValue(payout, localize('Payout'), addComma(payout_value));
-            commonTrading.labelValue(cost,   localize('Stake'),  addComma(cost_value));
+            const currency = Client.get('currency');
 
-            elementTextContent(balance, `${localize('Account balance:')} ${formatMoney(Client.get('currency'), receipt.balance_after)}`);
+            commonTrading.labelValue(payout, localize('Payout'), formatMoney(currency, payout_value, 1));
+            commonTrading.labelValue(cost,   localize('Stake'),  formatMoney(currency, cost_value, 1));
+
+            elementTextContent(balance, `${localize('Account balance:')} ${formatMoney(currency, receipt.balance_after)}`);
 
             if (show_chart) {
                 chart.show();

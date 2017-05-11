@@ -1,22 +1,11 @@
-<div class="gr-12">
+<p>[% l('{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?') %]</p>
+<p>[% l('{JAPAN ONLY}Do you run a website or publish an FX blog?') %]</p>
+<p>[% l('{JAPAN ONLY}Do you publish a newsletter or manage a mailing list?') %]</p>
+<p>[% l('{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals.') %]</p>
 
-    <p>[% l('{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?') %]</p>
-    <p>[% l('{JAPAN ONLY}Do you run a website or publish an FX blog?') %]</p>
-    <p>[% l('{JAPAN ONLY}Do you publish a newsletter or manage a mailing list?') %]</p>
-    <p>[% l('{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals.') %]</p>
+[% INCLUDE affiliates/register.html.tt lang='ja' %]
 
-    <div class="rbox-heading">
-        <h4>[% l('{JAPAN ONLY}Register') %]</h4>
-    </div>
-
-    <div class="center-text gr-padding-10">
-        <a class="button" href="https://login.binary.com/signup.php?lang=13">
-            <span>[% l('{JAPAN ONLY}Sign me up') %]</span>
-        </a>
-    </div>
-
-    <br>
-
+<div class="gr-padding-20">
     <h2>[% l('{JAPAN ONLY}Are your site visitors interested in:') %]</h2>
     <ul class="checked">
         <li>[% l('{JAPAN ONLY}Learning to trade online?') %]</li>
@@ -25,21 +14,12 @@
         <li>[% l('{JAPAN ONLY}Earning a second income in their spare time?') %]</li>
     </ul>
     <p>[% l('{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream') %]</p>
+</div>
 
-    <div class="rbox-heading">
-        <h4>[% l('{JAPAN ONLY}Register') %]</h4>
-    </div>
+[% INCLUDE affiliates/register.html.tt lang='ja' %]
 
-    <div class="center-text gr-padding-10">
-        <a class="button" href="https://login.binary.com/signup.php?lang=13">
-            <span>[% l('{JAPAN ONLY}Sign me up') %]</span>
-        </a>
-    </div>
-
-    <br>
-
+<div class="gr-padding-20">
     <h2>[% l('{JAPAN ONLY}Why become an Affiliate?') %]</h2>
-
     <ul class="checked">
         <li>[% l('{JAPAN ONLY}Long-term partnership with an establish international financial trading service') %]</li>
         <li>[% l('{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral') %]</li>
@@ -49,37 +29,30 @@
         <li>[% l('{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan') %]</li>
         <li>[% l('{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream') %]</li>
     </ul>
+</div>
 
-    <br>
-
+<div class="gr-padding-20">
     <h2>[% l('{JAPAN ONLY}Generous Commission Structure') %]</h2>
     <p>[% l('{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account.') %]</p>
+</div>
 
-    <br>
-
+<div class="gr-padding-20">
     <h2>[% l('{JAPAN ONLY}Best Tracking with "Forever Cookies"') %]</h2>
     <p>[% l('{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on [_1] and in that event, opens an account with us.', broker_name) %]</p>
-    <br>
+</div>
 
+<div class="gr-padding-20">
     <h2>[% l('{JAPAN ONLY}On-time Payments Every Time') %]</h2>
     <p>[% l("Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions.") %] </p>
+</div>
 
-    <br>
-
+<div class="gr-padding-20">
     <h2>[% l('{JAPAN ONLY}A True Partnership') %]</h2>
 
     <p>[% l("{JAPAN ONLY}We offer an informative and entertaining way to advertise online; including text ads, customer landing pages and invitations to promotional and educational events for your site visitors.") %]</p>
     <p>[% l("{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with [_1] and begins trading. ", broker_name) %]<span>[% l("Please see our <a href=[_1]>terms and conditions</a> for details of payout qualifications.", request.url_for('/terms-and-conditions-jp') ) %]</span></p>
     <p>[% l("{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away.") %]</p>
     <p>[% l("{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today.") %]</p>
-
-    <div class="rbox-heading">
-        <h4>[% l('{JAPAN ONLY}Register') %]</h4>
-    </div>
-
-    <div class="center-text gr-padding-10">
-        <a class="button" href="https://login.binary.com/signup.php?lang=13">
-            <span>[% l('{JAPAN ONLY}Sign me up') %]</span>
-        </a>
-    </div>
 </div>
+
+[% INCLUDE affiliates/register.html.tt lang='ja' %]

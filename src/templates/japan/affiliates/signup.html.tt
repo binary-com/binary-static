@@ -12,7 +12,7 @@
         <div class="tab-content container">
             <div class="tab-content-wrapper">
                 <div id="general_info-content" class="toggle-content">
-                    [% INCLUDE japan/affiliates/main.html.tt %]
+                    [% PROCESS japan/affiliates/main.html.tt %]
                 </div>
             </div>
         </div>

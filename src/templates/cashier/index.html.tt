@@ -1,149 +1,102 @@
-<div class="gr-row">
-
-    <div class="gr-12">
-        <h1>[% l('Cashier') %]</h1>
-    </div>
-
-    <div class="gr-12 gr-padding-10 table-body client_virtual invisible gr-parent">
-        <div class="gr-padding-10">
-            <h3>[% l('Get more virtual money') %]</h3>
+[% BLOCK deposit_withdraw %]
+    [% deposit_url = ja_hide ? '/cashier/forwardws#deposit' : ja_show ? '/cashier/deposit-jp' : '/cashier/payment_agent_listws' %]
+    [% withdraw_url = ja_hide ? '/cashier/forwardws#withdraw' : ja_show ? '/cashier/withdraw-jp' : '/paymentagent/withdrawws' %]
+    <div class="gr-5 gr-12-m[% IF ja_hide %] ja-hide[% ELSIF ja_show %] invisible ja-show[% END %]">
+        <div class="gr-padding-10 client_real invisible gr-parent">
+            <a class="toggle button client_real invisible" href="[% request.url_for(deposit_url) %]">
+                <span class="deposit">[% l('Deposit') %]</span>
+            </a>
         </div>
-        <div class="gr-row">
-            <div class="gr-12">
-                <div class="gr-row">
-                    <div class="gr-2 gr-4-m">
-                        <img class="responsive charting-page-icon" id="virtual_money_icon" src="[% request.url_for('images/pages/cashier/virtual_topup.svg') %]" />
-                    </div>
-                    <div class="gr-5 gr-12-m">
-                        <span class="ja-hide">[% l('You can request more virtual money if your virtual balance falls below USD 1,000.00.') %]</span>
-                        <span class="invisible ja-show">[% l('You can request more virtual money if your virtual balance falls below JPY 100,000.') %]</span>
-                    </div>
-                    <div class="gr-5 gr-12-m">
-                        <div class="gr-padding-10 invisible">
-                            <a class="toggle button" id="VRT_topup_link">
-                                <span class="ja-hide">[% l('Get USD 10,000.00') %]</span>
-                                <span class="invisible ja-show">[% l('Get JPY 1,000,000') %]</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <div class="gr-padding-10 client_real invisible">
+            <a class="toggle button client_real invisible" href="[% request.url_for(withdraw_url) %]">
+                <span class="withdraw">[% l('Withdraw') %]</span>
+            </a>
+        </div>
+        [% IF show_upgrade %]
+            <div class="gr-padding-10 invisible upgrademessage">
+                <a class="button"></a>
             </div>
-        </div>
+        [% END %]
     </div>
+[% END %]
 
-    <div class="gr-12 gr-padding-10 client_virtual invisible">
-        <span></span>
-    </div>
+<h1>[% l('Cashier') %]</h1>
 
-    <div class="gr-12 gr-padding-10 table-body">
-        <div class="gr-padding-10">
-            <h3>[% l('Bank-wire, credit card, e-cash wallet') %]</h3>
+<div class="gr-padding-10 table-body client_virtual invisible gr-parent">
+    <h3 class="gr-padding-10">[% l('Get more virtual money') %]</h3>
+    <div class="gr-row">
+        <div class="gr-2 gr-4-m">
+            <img class="responsive" id="virtual_money_icon" src="[% request.url_for('images/pages/cashier/virtual_topup.svg') %]" />
         </div>
-        <div class="gr-row">
-            <div class="gr-12">
-                <div class="gr-row">
-                    <div class="gr-2 gr-4-m">
-                        <a class="ja-hide" href="[% request.url_for('/cashier/forwardws#deposit') %]" id="payment_methods">
-                            <img class="responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/payment-methods.svg') %]" />
-                        </a>
-                        <a class="invisible ja-show" href="[% request.url_for('/cashier/deposit-jp') %]" id="payment_methods">
-                            <img class="responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/japan_cashier.svg') %]" />
-                        </a>
-                    </div>
-                    <div class="gr-5 gr-12-m">
-                        <span>[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</span>
-                        <a class="ja-hide" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
-                            <p>[% l('View available payment methods') %]</p>
-                        </a>
-                    </div>
-                    <div class="gr-5 gr-12-m ja-hide">
-                        <div class="gr-padding-10 client_real invisible gr-parent">
-                            <a class="toggle button by_client_type client_real invisible" href="[% request.url_for('/cashier/forwardws#deposit') %]">
-                                <span class="deposit">[% l('Deposit') %]</span>
-                            </a>
-                        </div>
-                        <div class="gr-padding-10 client_real invisible">
-                            <a class="toggle button by_client_type client_real invisible" href="[% request.url_for('/cashier/forwardws#withdraw') %]">
-                                <span class="withdraw">[% l('Withdraw') %]</span>
-                            </a>
-                        </div>
-                        <div class="gr-padding-10 invisible upgrademessage">
-                            <a class="button"></a>
-                        </div>
-                    </div>
-                    <div class="gr-5 gr-12-m invisible ja-show">
-                        <div class="gr-padding-10 client_real invisible gr-parent">
-                            <a class="toggle button client_real invisible" href="[% request.url_for('/cashier/deposit-jp') %]">
-                                <span class="deposit">[% l('Deposit') %]</span>
-                            </a>
-                        </div>
-                        <div class="gr-padding-10 client_real invisible">
-                            <a class="toggle button client_real invisible" href="[% request.url_for('/cashier/withdraw-jp') %]">
-                                <span class="withdraw">[% l('Withdraw') %]</span>
-                            </a>
-                        </div>
-                        <div class="gr-padding-10 invisible upgrademessage">
-                            <a class="button"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="gr-5 gr-12-m">
+            <span class="ja-hide">[% l('You can request more virtual money if your virtual balance falls below USD 1,000.00.') %]</span>
+            <span class="invisible ja-show">[% l('You can request more virtual money if your virtual balance falls below JPY 100,000.') %]</span>
+        </div>
+        <div class="gr-5 gr-12-m invisible">
+            <a class="toggle button" id="VRT_topup_link">
+                <span class="ja-hide">[% l('Get USD 10,000.00') %]</span>
+                <span class="invisible ja-show">[% l('Get JPY 1,000,000') %]</span>
+            </a>
         </div>
     </div>
+</div>
 
-    <div class="gr-12 gr-padding-10">
-        <span></span>
-    </div>
+<div class="gr-padding-10 client_virtual invisible"></div>
 
-    <div class="gr-12 gr-padding-10 table-body ja-hide payment-agent invisible" id="payment-agent-section">
-        <div class="gr-padding-10">
-            <h3>[% l('Payment Agent') %]</h3>
+<div class="gr-padding-10 table-body">
+    <h3 class="gr-padding-10">[% l('Bank-wire, credit card, e-cash wallet') %]</h3>
+    <div class="gr-row">
+        <div class="gr-2 gr-4-m">
+            <a class="ja-hide" href="[% request.url_for('/cashier/forwardws#deposit') %]" id="payment_methods">
+                <img class="responsive" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/payment-methods.svg') %]" />
+            </a>
+            <a class="invisible ja-show" href="[% request.url_for('/cashier/deposit-jp') %]" id="payment_methods">
+                <img class="responsive" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/japan_cashier.svg') %]" />
+            </a>
         </div>
-        <div class="gr-row">
-            <div class="gr-2 gr-4-m">
-                <a href="[% request.url_for('/cashier/payment_agent_listws') %]" id="payment_agent">
-                    <img class="responsive charting-page-icon" id="payment_agent_icon" src="[% request.url_for('images/pages/cashier/payment-agents.svg') %]" />
-                </a>
-            </div>
-            <div class="gr-5 gr-12-m">
-                <span>[% l('For e-cash methods or local currencies not supported by [_1].', website_name) %]</span>
-                <p class="faded">
-                    [% l('Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent') %]
-                </p>
-            </div>
-            <div class="gr-5 gr-12-m">
-                <div class="gr-padding-10 gr-parent">
-                    <a class="toggle button client_real invisible" href="[% request.url_for('/cashier/payment_agent_listws') %]">
-                        <span class="deposit">[% l('Deposit') %]</span>
-                    </a>
-                </div>
-                <div class="gr-padding-10">
-                    <a class="toggle button client_real invisible" href="[% request.url_for('/paymentagent/withdrawws') %]">
-                        <span class="withdraw">[% l('Withdraw') %]</span>
-                    </a>
-                </div>
-            </div>
+        <div class="gr-5 gr-12-m">
+            <span>[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</span>
+            <a class="ja-hide" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
+                <p>[% l('View available payment methods') %]</p>
+            </a>
+        </div>
+        [% INCLUDE deposit_withdraw ja_hide=1 show_upgrade=1 %]
+        [% INCLUDE deposit_withdraw ja_show=1 show_upgrade=1 %]
+    </div>
+</div>
+
+<div class="gr-padding-10"></div>
+
+<div class="gr-padding-10 table-body ja-hide payment-agent invisible" id="payment-agent-section">
+    <h3 class="gr-padding-10">[% l('Payment Agent') %]</h3>
+    <div class="gr-row">
+        <div class="gr-2 gr-4-m">
+            <a href="[% request.url_for('/cashier/payment_agent_listws') %]" id="payment_agent">
+                <img class="responsive" id="payment_agent_icon" src="[% request.url_for('images/pages/cashier/payment-agents.svg') %]" />
+            </a>
+        </div>
+        <div class="gr-5 gr-12-m">
+            <span>[% l('For e-cash methods or local currencies not supported by [_1].', website_name) %]</span>
+            <p class="faded">[% l('Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent') %]</p>
+        </div>
+        [% INCLUDE deposit_withdraw %]
+    </div>
+</div>
+
+<div class="gr-padding-10 table-body ja-hide invisible" id="account-transfer-section">
+    <div class="gr-row">
+        <div class="gr-2 gr-4-m">
+            <a href="[% request.url_for('/cashier/account_transfer') %]" id="account_transfer">
+                <img class="responsive" id="acc_transfer_icon" src="[% request.url_for('images/pages/cashier/account-transfer.svg') %]" />
+            </a>
+        </div>
+        <div class="gr-5 gr-12-m">
+            <span>[% l('Transfer between your gaming and financial accounts.') %]</span>
+        </div>
+        <div class="gr-5 gr-12-m gr-padding-10 gr-parent">
+            <a class="toggle button client_real invisible" href="[% request.url_for('/cashier/account_transfer') %]">
+                <span class="withdraw">[% l('Transfer') %]</span>
+            </a>
         </div>
     </div>
-
-    <div class="gr-12 gr-padding-10 table-body ja-hide invisible" id="account-transfer-section">
-        <div class="gr-row">
-            <div class="gr-2 gr-4-m">
-                <a href="[% request.url_for('/cashier/account_transfer') %]" id="account_transfer">
-                    <img class="responsive charting-page-icon" id="acc_transfer_icon" src="[% request.url_for('images/pages/cashier/account-transfer.svg') %]" />
-                </a>
-            </div>
-            <div class="gr-5 gr-12-m">
-                <span>[% l('Transfer between your gaming and financial accounts.') %]</span>
-            </div>
-            <div class="gr-5 gr-12-m">
-                <div class="gr-padding-10 gr-parent">
-                    <a class="toggle button client_real invisible" href="[% request.url_for('/cashier/account_transfer') %]">
-                        <span class="withdraw">[% l('Transfer') %]</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>

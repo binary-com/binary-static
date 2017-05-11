@@ -84,29 +84,53 @@ const Tick = (() => {
         const barrier_element      = document.getElementById('barrier');
         const high_barrier_element = document.getElementById('barrier_high');
         const low_barrier_element  = document.getElementById('barrier_low');
+        const tooltip      = document.getElementById('barrier_tooltip');
+        const span         = document.getElementById('barrier_span');
+        const high_tooltip = document.getElementById('barrier_high_tooltip');
+        const high_span    = document.getElementById('barrier_high_span');
+        const low_tooltip  = document.getElementById('barrier_low_tooltip');
+        const low_span     = document.getElementById('barrier_low_span');
         let value;
 
         const end_time = document.getElementById('expiry_date');
         if (unit && (!isVisible(unit) || unit.value !== 'd') && current_tick && !isNaN(current_tick) &&
             (end_time && (!isVisible(end_time) || moment(end_time.getAttribute('data-value')).isBefore(moment().add(1, 'day'), 'day')))) {
             const decimal_places = countDecimalPlaces(current_tick);
-            if (indicative_barrier_tooltip && isVisible(indicative_barrier_tooltip)) {
+            if (indicative_barrier_tooltip && isVisible(indicative_barrier_tooltip) && String(barrier_element.value).match(/^[+-]/)) {
                 const barrier_value = isNaN(parseFloat(barrier_element.value)) ? 0 : parseFloat(barrier_element.value);
                 indicative_barrier_tooltip.textContent =
                     (parseFloat(current_tick) + barrier_value).toFixed(decimal_places);
+                tooltip.style.display = 'inherit';
+                span.style.display = 'none';
+            } else {
+                elementTextContent(indicative_barrier_tooltip, '');
+                tooltip.style.display = 'none';
+                span.style.display = 'inherit';
             }
 
-            if (indicative_high_barrier_tooltip && isVisible(indicative_high_barrier_tooltip)) {
+            if (indicative_high_barrier_tooltip && isVisible(indicative_high_barrier_tooltip) && String(high_barrier_element.value).match(/^[+-]/)) {
                 value = parseFloat(high_barrier_element.value);
                 value = isNaN(value) ? 0 : value;
                 indicative_high_barrier_tooltip.textContent =
                     (parseFloat(current_tick) + value).toFixed(decimal_places);
+                high_tooltip.style.display = 'inherit';
+                high_span.style.display = 'none';
+            } else {
+                elementTextContent(indicative_high_barrier_tooltip, '');
+                high_tooltip.style.display = 'none';
+                high_span.style.display = 'inherit';
             }
 
-            if (indicative_low_barrier_tooltip && isVisible(indicative_low_barrier_tooltip)) {
+            if (indicative_low_barrier_tooltip && isVisible(indicative_low_barrier_tooltip) && String(low_barrier_element.value).match(/^[+-]/)) {
                 value = parseFloat(low_barrier_element.value);
                 value = isNaN(value) ? 0 : value;
                 indicative_low_barrier_tooltip.textContent = (parseFloat(current_tick) + value).toFixed(decimal_places);
+                low_tooltip.style.display = 'inherit';
+                low_span.style.display = 'none';
+            } else {
+                elementTextContent(indicative_low_barrier_tooltip, '');
+                low_tooltip.style.display = 'none';
+                low_span.style.display = 'inherit';
             }
         } else {
             elementTextContent(indicative_barrier_tooltip, '');

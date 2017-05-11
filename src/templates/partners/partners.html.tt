@@ -1,92 +1,40 @@
-<div class="container container">
-  <div class="static_full">
-    <h1>
-      [% l("Partners") %]
-    </h1>
-    <p>
-      [% l("[_1] provides business partnership services via the following programs.", website_name) %]
-    </p>
-  </div>
-  <div class="gr-row gr-clear">
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
-        <a href="[% request.url_for('/affiliate/signup') %]">
-          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/affiliate-program.svg') %]"/>
+[% BLOCK column %]
+<div class="gr-4 gr-12-m">
+    <div class="gr-6 gr-padding-10">
+        <a href="[% url %]"[% IF target %] target="[% target %]"[% END %]>
+            <img class="responsive" src="[% request.url_for('images/pages/partners/' _ image _ '.svg') %]"/>
         </a>
-      </div>
-      <div class="gr-12">
-        <h4>
-          <a href="[% request.url_for('/affiliate/signup') %]">[% l("Affiliate Program") %]</a>
-        </h4>
-        <p>[% l("Earn commissions by introducing new customers to [_1].", website_name) %]</p>
-      </div>
     </div>
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
-        <a href="[% request.url_for('/payment-agent') %]">
-          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/payment-agents.svg') %]"/>
-        </a>
-      </div>
-      <div class="gr-12">
-        <h4>
-          <a href="[% request.url_for('/payment-agent') %]">[% l("Payment Agent") %]</a>
-        </h4>
-        <p>[% l("Apply to become a Payment Agent") %]</p>
-      </div>
+    <div class="gr-12">
+        <h4><a href="[% url %]">[% header %]</a></h4>
+        <p>[% text %]</p>
     </div>
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
-        <a href="https://developers.binary.com" target="_blank">
-          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/api.svg') %]"/>
-        </a>
-      </div>
-      <div class="gr-12">
-        <h4>
-          <a href="https://developers.binary.com" target="_blank">[% l("API") %]</a>
-        </h4>
-        <p>[% l("Develop your own trading application with our APIs.") %]</p>
-      </div>
+</div>
+[% END %]
+
+<div class="container">
+    <div class="static_full">
+        <h1>[% l("Partners") %]</h1>
+        <p>[% l("[_1] provides business partnership services via the following programs.", website_name) %]</p>
     </div>
-  </div>
-  <div class="gr-row gr-clear">
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
-        <a href="[% request.url_for('/open-source-projects') %]">
-          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/open-source-venture.svg') %]"/>
-        </a>
-      </div>
-      <div class="gr-12">
-        <h4>
-          <a href="[% request.url_for('/open-source-projects') %]">[% l("Open Source") %]</a>
-        </h4>
-        <p>[% l("Contribute to [_1]\'s open-source projects.", website_name) %]</p>
-      </div>
+    <div class="gr-row gr-clear">
+        [% INCLUDE column url=request.url_for('affiliate/signup') image='affiliate-program' header=l("Affiliate Program")
+            text=l("Earn commissions by introducing new customers to [_1].", website_name) %]
+
+        [% INCLUDE column url=request.url_for('payment-agent') image='payment-agents' header=l("Payment Agent")
+            text=l("Apply to become a Payment Agent") %]
+
+        [% INCLUDE column url='https://developers.binary.com' target='_blank' image='api' header=l("API")
+            text=l("Develop your own trading application with our APIs.") %]
     </div>
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
-        <a href="https://academy.binary.com/en/contributors/" target="_blank">
-          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/contributors.svg') %]" target="_blank"/>
-        </a>
-      </div>
-      <div class="gr-12">
-        <h4>
-          <a href="https://academy.binary.com/en/contributors/" target="_blank">[% l("Contributors") %]</a>
-        </h4>
-        <p>[% l("Apply to become a contributor") %]</p>
-      </div>
+    <div class="gr-row gr-clear">
+        [% INCLUDE column url=request.url_for('open-source-projects') image='open-source-venture' header=l("Open Source")
+            text=l("Contribute to [_1]'s open-source projects.", website_name) %]
+
+        [% INCLUDE column url='https://academy.binary.com/en/contributors/' target='_blank' image='contributors' header=l("Contributors")
+            text=l("Apply to become a contributor") %]
+
+        [% INCLUDE column url=request.url_for('security-testing') image='tester' header=l("Security Testing")
+            text=l("Earn money for any verifiable errors that you find.") %]
     </div>
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
-        <a href="[% request.url_for('/security-testing') %]">
-          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/tester.svg') %]"/>
-        </a>
-      </div>
-      <div class="gr-12">
-        <h4>
-          <a href="[% request.url_for('/security-testing') %]">[% l("Security Testing") %]</a>
-        </h4>
-        <p>[% l("Earn money for any verifiable errors that you find.") %]</p>
-      </div>
-    </div>
-  </div>
 </div>

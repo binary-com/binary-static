@@ -48,12 +48,6 @@
         width: 10%;
         margin: 0 1em;
     }
-    .xquote {
-        padding: 20px 40px;
-        p {
-            font-style: italic;
-        }
-    }
     .xbubble-right {
         content: '';
         width: 0;
@@ -98,12 +92,8 @@
     .relative {
         position: relative;
     }
-    .xquote {
-        position: relative;
-        margin-top: 25%;
-        p {
-            font-style: normal;
-        }
+    .box {
+        margin-top: 10%;
     }
     .small-image {
         width: 8%;
@@ -124,7 +114,7 @@
 
 @media screen and (max-width: 768px) {
     .home-jp-content {
-        .xquote {
+        .box {
             margin-top: auto;
         }
     }

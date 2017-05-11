@@ -2,10 +2,10 @@
     <h2>
         [% l("Terms and Conditions") %]
     </h2>
-    <p><i>[% l("Version 4. Last modified 2016-12-30.") %]</i></p>
+    <p><i>[% l("Version 5. Last modified 2017-04-19.") %]</i></p>
     <h2>[% l("A. Introduction and Scope of Agreement") %]</h2>
     <ol>
-        <li>[% l("The term 'we', 'us', 'our', 'ours', 'the Company', or 'Binary.com' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website.") %]</li>
+        <li>[% l("The term 'we', 'us', 'our', 'ours', 'the Company', or '[_1]' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website.", website_name) %]</li>
         <li>[% l("You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments.") %]</li>
         <li>[% l("All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading services described in this Agreement is not suitable for everyone. You acknowledge that the margin trading services described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us.") %]</li>
         <li>[% l("You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks.") %]</li>
@@ -23,22 +23,22 @@
     </ol>
     <h2>[% l("D. Capacity") %]</h2>
     <ol>
-        <li>[% l("Binary.com shall act, at times, as a principal and at other times as an agent on your behalf, for all Transactions entered into, by you.") %]</li>
+        <li>[% l("[_1] shall act, at times, as a principal and at other times as an agent on your behalf, for all Transactions entered into, by you.", website_name) %]</li>
         <li>[% l("We will hold you responsible for all your obligations under this Agreement in our course of providing the margin trading service described in this Agreement to you, even if you notify us that you are acting as the agent of an identified principal.") %]</li>
     </ol>
     <h2>[% l("E. Account Management") %]</h2>
     <ol>
         <li>[% l("Opening an Account") %]
             <ol>
-                <li>[% l("To open a Real Account, you must have an authenticated Binary Options Real Account with Binary.com. A Real Account cannot be opened in the absence of a Binary Options Real Account.") %]</li>
-                <li>[% l("Your Binary Options Real Account with Binary.com has to be authenticated within five days from your Real Account opening date to keep your Real Account active.") %]</li>
-                <li>[% l("By opening a Real Account with Binary.com, you represent, warrant and undertake that:") %]
+                <li>[% l("To open a Real Account, you must have an authenticated Binary Options Real Account with [_1]. A Real Account cannot be opened in the absence of a Binary Options Real Account.", website_name) %]</li>
+                <li>[% l("Your Binary Options Real Account with [_1] has to be authenticated within five days from your Real Account opening date to keep your Real Account active.", website_name) %]</li>
+                <li>[% l("By opening a Real Account with [_1], you represent, warrant and undertake that:", website_name) %]
                     <ol>
                         <li>[% l("You are acting for your sole benefit, and not for, or on behalf of any other person;") %]</li>
                         <li>[% l("You have read this Legal Terms and Conditions page in full and understood that you will be buying and selling financial contracts subject to these terms and conditions;") %]</li>
                         <li>[% l("You have read our privacy statement and hereby give us consent to process your personal information as outlined there;") %]</li>
                         <li>[% l("You are over 18 years of age;") %]</li>
-                        <li>[% l("You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;") %]</li>
+                        <li>[% l("You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;") %]</li>
                         <li>[% l("You have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site.") %]</li>
                     </ol>
                 </li>
@@ -95,7 +95,7 @@
             <ol>
                 <li>[% l("We are committed to making sure your personal data and transactions are secure:") %]
                     <ol>
-                        <li>[% l("Your Real Account password and login ID are unique and passwords are hashed so that not even Binary.com staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;") %]</li>
+                        <li>[% l("Your Real Account password and login ID are unique and passwords are hashed so that not even [_1] staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;", website_name) %]</li>
                         <li>[% l("It is your responsibility to keep your password and login ID confidential. You agree that you will not disclose your password and login ID to any other person;") %]</li>
                         <li>[% l("All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies;") %]</li>
                         <li>[% l("Our information security policies are based on industry best practices in access control and business continuity; and") %]</li>
@@ -334,7 +334,8 @@
     <h2>[% l("Q. Miscellaneous") %]</h2>
     <ol>
         <li>[% l("Unless proven to be wrong, our records shall be used as evidence of your dealings with us in connection with the margin trading services described in this Agreement. You agree to use our records as evidence in any such legal or regulatory proceedings and you agree to keep your own record of your dealings with us that will help us investigate any complaints or disputes. If the records used as evidence of your dealings with us are not originals, are in the form of diagrams or charts, or are system generated content, you will not object to the use of such records as evidence.") %]</li>
-        <li>[% l("The Binary.com website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at <a href='mailto:[_1]'>[_1]</a>. Binary.com and the bull/bear logo are registered trademarks.", "support@binary.com") %]</li>
+        [% support_email = '<a href="mailto:%">%</a>' | replace('%', 'support@binary.com') %]
+        <li>[% l("The [_1] website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at [_2]. [_1] and the bull/bear logo are registered trademarks.", website_name, support_email) %]</li>
         <li>[% l("If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect.") %]</li>
         <li>[% l("In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident.") %]</li>
     </ol>
@@ -349,17 +350,17 @@
         </li>
         <li>[% l("Account Equity &mdash; Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss.") %]</li>
         <li>[% l("Account Free Margin &mdash; Your Account Equity minus your Total Margin.") %]</li>
-       <li>[% l("Binary Options Real Account &mdash; Your real money account opened with Binary.com which you use to trade binary options with Binary.com.") %]</li>
+       <li>[% l("Binary Options Real Account &mdash; Your real money account opened with [_1] which you use to trade binary options with [_1].", website_name) %]</li>
         <li>[% l("Event &mdash; Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others.") %]</li>
         <li>[% l("Limit/Limit Price &mdash; The price specified in your Limit Order.") %]</li>
         <li>[% l("Limit Order &mdash; An instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price.") %]</li>
         <li>[% l("Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract.") %]</li>
         <li>[% l("Margin Level &mdash; Ratio of Account Equity to Total Margin, expressed as a percentage.") %]</li>
-        <li>[% l("Next Available Price &mdash; Earliest price reasonably available and quoted by Binary.com when our Price quotation reaches or goes beyond the level of your Stop Order.") %]</li>
+        <li>[% l("Next Available Price &mdash; Earliest price reasonably available and quoted by [_1] when our Price quotation reaches or goes beyond the level of your Stop Order.", website_name) %]</li>
         <li>[% l("Open Position &mdash; The position in a market made by reference to an Underlying Instrument created by opening a Transaction as a result of placing an Order to the extent that such position has not been closed in whole or in part under this Agreement.") %]</li>
         <li>[% l("Order &mdash; An execution instruction given by you to us in relation to a Market Order, Stop Order, Limit Order, and etc.") %]</li>
         <li>[% l("Price/Prices &mdash; Bid and Offer Price/Prices.") %]</li>
-        <li>[% l("Real Account &mdash; Your real money account opened with Binary.com's MT5 Trading Platform licensed from MetaQuotes Software Corporation.") %]</li>
+        <li>[% l("Real Account &mdash; Your real money account opened with [_1]'s MT5 Trading Platform licensed from MetaQuotes Software Corporation.", website_name) %]</li>
         <li>[% l("Roll-over &mdash; In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day.") %]</li>
         <li>[% l("Roll-over Credit/Debit &mdash; Accounts with Open Positions concerned by the Roll-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company at its sole discretion.") %]</li>
         <li>[% l("Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price.") %]</li>

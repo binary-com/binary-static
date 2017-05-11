@@ -1,5 +1,5 @@
 <div id="main_loading" class="center-text">
-    [% INCLUDE global/loading.html.tt %]
+    [% PROCESS global/loading.html.tt %]
 </div>
 <div id="mb-trading-wrapper" class="gr-centered invisible">
     <div class="gr-row">

@@ -1,3 +1,14 @@
+[% PROCESS components/elements.html.tt %]
+[% BLOCK steps %]
+<div class="gr-6 gr-12-m gr-padding-30">
+    <div class="gr-row align-center">
+        <img class="small-image" src="[% request.url_for('images/pages/home-jp/' _ step _ '.svg') %]">
+        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/' _ image _ '.svg') %]">
+        <p class="gr-6 gr-no-gutter">[% text %]</p>
+    </div>
+</div>
+[% END %]
+
 <div class="relative">
     <div id="banner"></div>
     <div class="container gr-padding-30">
@@ -5,21 +16,7 @@
             <h1 class="center-text gr-padding-20">[% l("First-Class FX Binary Options Trading Platform") %]</h1>
             <h3 class="center-text gr-padding-20 gr-child">[% l("Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform.") %]</h3>
 
-            <form id="frm_verify_email">
-                <div class="gr-row gr-row-align-center">
-                    <div class="signup-box gr-7 gr-10-p gr-12-m gr-no-gutter">
-                        <div class="gr-row gr-padding-30">
-                            <div class="gr-8 gr-10-m gr-centered">
-                                <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
-                            </div>
-                            <div class="gr-4 gr-8-m gr-centered">
-                                <button id="btn_verify_email" type="submit">[% l('Get started') %]</button>
-                            </div>
-                            <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            [% INCLUDE global/form_verify_email.html.tt padding='8' email_padding='8' button_padding=4 text=l('Get started') %]
         </div>
     </div>
 </div>
@@ -58,17 +55,14 @@
         </div>
     </div>
 
-    <div class="separator-line border-bottom"></div>
+    [% INCLUDE global/separator_line.html.tt no_wrapper=1 %]
 </div>
 
 <div class="container gr-padding-10">
     <h2 class="center-text gr-padding-10">[% l('A leading innovator of Binary Options trading for over 15 Years') %]</h2>
     <div class="gr-row">
-        <div class="gr-5 gr-centered gr-12-p gr-12-m">
-            <div class="xquote fill-bg-color">
-                <p>[% l('Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!') %]</p>
-            </div>
-        </div>
+        [% INCLUDE fill_box class='box' padding='5' center=1 align_left=1 text=l('Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!') %]
+
         <div class="gr-5 gr-centered gr-6-p gr-8-m gr-padding-30">
             <img class="gr-11 gr-12-p gr-12-m gr-centered" src="[% request.url_for('images/pages/home-jp/currencies.svg') %]">
         </div>
@@ -87,57 +81,18 @@
 
         <div class="gr-11 gr-centered">
             <div class="gr-row">
-                <div class="gr-6 gr-12-m gr-padding-30">
-                    <div class="gr-row align-center">
-                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/1.svg') %]">
-                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/demo.svg') %]">
-                        <p class="gr-6 gr-no-gutter">[% l('Open a Demo Account') %]</p>
-                    </div>
-                </div>
-
-                <div class="gr-6 gr-12-m gr-padding-30">
-                    <div class="gr-row align-center">
-                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/2.svg') %]">
-                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/real_money.svg') %]">
-                        <p class="gr-6 gr-no-gutter">[% l('Apply for a Real Money Account') %]</p>
-                    </div>
-                </div>
+                [% INCLUDE steps step='1' image='demo'       text=l('Open a Demo Account') %]
+                [% INCLUDE steps step='2' image='real_money' text=l('Apply for a Real Money Account') %]
             </div>
 
             <div class="gr-row">
-                <div class="gr-6 gr-12-m gr-padding-30">
-                    <div class="gr-row align-center">
-                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/3.svg') %]">
-                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/test.svg') %]">
-                        <p class="gr-6 gr-no-gutter">[% l('Pass our Knowledge Test') %]</p>
-                    </div>
-                </div>
-
-                <div class="gr-6 gr-12-m gr-padding-30">
-                    <div class="gr-row align-center">
-                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/4.svg') %]">
-                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/email.svg') %]">
-                        <p class="gr-6 gr-no-gutter">[% l('Email us your Identity Documents') %]</p>
-                    </div>
-                </div>
+                [% INCLUDE steps step='3' image='test'  text=l('Pass our Knowledge Test') %]
+                [% INCLUDE steps step='4' image='email' text=l('Email us your Identity Documents') %]
             </div>
 
             <div class="gr-row">
-                <div class="gr-6 gr-12-m gr-padding-30">
-                    <div class="gr-row align-center">
-                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/5.svg') %]">
-                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/secure.svg') %]">
-                        <p class="gr-6 gr-no-gutter">[% l('Receive your activation code by secure') %]</p>
-                    </div>
-                </div>
-
-                <div class="gr-6 gr-12-m gr-padding-30">
-                    <div class="gr-row align-center">
-                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/6.svg') %]">
-                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/fund.svg') %]">
-                        <p class="gr-6 gr-no-gutter">[% l('Deposit funds and begin trading') %]</p>
-                    </div>
-                </div>
+                [% INCLUDE steps step='5' image='secure' text=l('Receive your activation code by secure') %]
+                [% INCLUDE steps step='6' image='fund'   text=l('Deposit funds and begin trading') %]
             </div>
         </div>
 

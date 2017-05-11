@@ -1,42 +1,21 @@
+[% PROCESS components/forms.html.tt %]
+
 <div class="endpoint-config static_full">
     <h1>[% l('Change API Endpoint') %]</h1>
     <div class="gr-padding-10">
-        <div class="rbox form">
-            <div class="rbox-wrap">
-                <form id="frm_endpoint">
-                    <fieldset>
-                        <legend>[% l('Details') %]</legend>
-                        <div class="gr-padding-10 gr-row clear">
-                            <div class="gr-4 form_label">
-                                <label for="server_url">[% l('Server') %]</label>
-                            </div>
-                            <div class="gr-8">
-                                <input type="text" class="text" id="server_url" maxlength="30" />
-                                <p class="hint">[% l('e.g. blue.binaryws.com') %]</p>
-                                <p class="errorfield" id="error-server_url" style="display:none"></p>
-                            </div>
-                        </div>
-                        <div class="gr-padding-10 gr-row clear">
-                            <div class="gr-4 form_label">
-                                <label for="app_id">[% l('OAuth App ID (Optional)') %]</label>
-                            </div>
-                            <div class="gr-8">
-                                <input type="text" class="text" id="app_id" maxlength="5" />
-                                <p class="hint">
-                                    [% l('You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/.') %]
-                                </p>
-                                <p class="errorfield" id="error-app_id" style="display:none"></p>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <fieldset class="center-text" id="formlayout">
-                        <button class="button" id="new_endpoint" type="submit">[% l('Submit') %]</button>
-                        <a class="button" id="reset_endpoint">
-                            <span class="button">[% l('Reset to Original Settings') %]</span>
-                        </a>
-                    </fieldset>
-                </form>
+        <form id="frm_endpoint">
+            [% WRAPPER fieldset legend=l('Details') %]
+                [% INCLUDE form_row id='server_url' label=l('Server') type='text' attributes='maxlength="30"'
+                    hint=l('e.g. blue.binaryws.com') %]
+                [% INCLUDE form_row id='app_id' label=l('OAuth App ID') type='text' attributes='maxlength="5"'
+                    hint=l('You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/.') %]
+            [% END %]
+            <div class="center-text">
+                <button class="button" id="new_endpoint" type="submit">[% l('Submit') %]</button>
+                <a class="button" id="reset_endpoint">
+                    <span class="button">[% l('Reset to Original Settings') %]</span>
+                </a>
             </div>
-        </div>
+        </form>
     </div>
 </div>

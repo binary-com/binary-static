@@ -1,226 +1,65 @@
+[% PROCESS components/forms.html.tt %]
+[% PROCESS components/forms_common_rows.html.tt %]
+
 <div class='gr-12 static_full'>
     <h1>[% l('Financial Account Opening') %]</h1>
-    <div class="rbox form gr-padding-10">
-        <div class="rbox-wrap">
-            <form id="financial-form">
-                <fieldset>
-                    <legend id="details">[% l('Details') %]</legend>
+    <form id="financial-form" class="gr-padding-10">
+        [% WRAPPER fieldset legend=l('Details') %]
+            [% INCLUDE salutation    class='input-disabled' %]
+            [% INCLUDE first_name    class='input-disabled' %]
+            [% INCLUDE last_name     class='input-disabled' %]
+            [% INCLUDE date_of_birth class='input-disabled' %]
+            [% INCLUDE form_row type='select' id='place_of_birth' label=l('Place of birth') %]
+            [% INCLUDE residence %]
+        [% END %]
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="salutation">[% l('Title') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <select id="salutation" class="input-disabled">
-                              <option value="Mr">[% l('Mr') %]</option>
-                              <option value="Mrs" class="ru-hide">[% l('Mrs') %]</option>
-                              <option value="Ms">[% l('Ms') %]</option>
-                              <option value="Miss" class="ru-hide">[% l('Miss') %]</option>
-                            </select>
-                        </div>
-                    </div>
+        [% WRAPPER fieldset legend=l('Tax Information') %]
+            [% INCLUDE form_row type='select' id='tax_residence' label=l('Tax residence')
+                class='invisible' attributes='multiple="multiple"' %]
+            [% INCLUDE form_row type='text' id='tax_identification_number' label=l('Tax identification number')
+                attributes='maxlength="20"' %]
+        [% END %]
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="first_name">[% l('First name') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text input-disabled" id="first_name" maxlength="30"/>
-                        </div>
-                    </div>
+        [% WRAPPER fieldset legend=l('Address') %]
+            [% INCLUDE address_line_1 %]
+            [% INCLUDE address_line_2 %]
+            [% INCLUDE address_city %]
+            [% PROCESS address_state %]
+            [% INCLUDE address_postcode %]
+            [% INCLUDE phone %]
+        [% END %]
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="last_name">[% l('Family name') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text input-disabled" id="last_name" maxlength="30"/>
-                        </div>
-                    </div>
+        [% WRAPPER fieldset legend=l('Security') %]
+            [% PROCESS secret_question %]
+            [% PROCESS secret_answer %]
+        [% END %]
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="date_of_birth">[% l('Date of birth') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" id="date_of_birth" name="date_of_birth" class="input-disabled" size="12" readonly="readonly"/>
-                        </div>
-                    </div>
+        [% PROCESS global/financial_form.html.tt %]
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="place_of_birth">[% l('Place of birth') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <select name="place_of_birth" id="place_of_birth"></select>
-                        </div>
-                    </div>
+        [% PROCESS global/pep_declaration.html.tt %]
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="residence">[% l('Country of residence') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <label id="lbl_residence"></label>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>[% l('Tax Information') %]</legend>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="tax_residence">[% l('Tax residence') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <select name="tax_residence" id="tax_residence" class="invisible" multiple="multiple"></select>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="tax_identification_number">[% l('Tax identification number') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="tax_identification_number" maxlength="20"/>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend id="address">[% l('Address') %]</legend>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="address_line_1">[% l('First line of home address') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="address_line_1" maxlength="70"/>
-                            <p class="hint">[% l('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.') %]</p>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="address_line_2">[% l('Second line of home address') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="address_line_2" maxlength="70"/>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="address_city">[% l('Town/City') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="address_city" maxlength="35"/>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear" style="display:none">
-                        <div class="gr-4 form_label">
-                            <label for="address_state">[% l('State/Province') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <select id="address_state"></select>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="address_postcode">[% l('Postal code/ZIP') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="address_postcode" maxlength="20" />
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="phone">[% l('Telephone') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="phone" maxlength="35" />
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset class="security">
-                    <legend id="security">[% l('Security') %]</legend>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="secret_question">[% l('Secret question') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <select id="secret_question">
-                              <option value="Favourite dish">[% l('Favourite dish') %]</option>
-                              <option value="Mother's maiden name">[% l("Mother's maiden name") %]</option>
-                              <option value="Name of your pet">[% l('Name of your pet') %]</option>
-                              <option value="Name of first love">[% l('Name of first love') %]</option>
-                              <option value="Memorable town/city">[% l('Memorable town/city') %]</option>
-                              <option value="Memorable date">[% l('Memorable date') %]</option>
-                              <option value="Brand of first car">[% l('Brand of first car') %]</option>
-                              <option value="Favourite artist">[% l('Favourite artist') %]</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="secret_answer">[% l('Answer to secret question') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="secret_answer" maxlength="50" autocomplete="off"/>
-                        </div>
-                    </div>
-                </fieldset>
-
-                [% INCLUDE global/financial_form.html.tt %]
-
-                [% INCLUDE global/pep_declaration.html.tt %]
-
-                <fieldset>
-                    <div class="gr-12">
-                      <p>[% l('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.') %]</p>
-                    </div>
-                </fieldset>
-
-                <fieldset class="center-text" id="formlayout">
-                    <div class="gr-row">
-                        <div class="gr-12-m gr-padding-10 gr-centered">
-                            <input type="checkbox" id="tnc" />
-                            <label for="tnc">[% l('I have read and agree to the [_1]terms and conditions[_2] of the site.', '<a target="_blank" href="' _ request.url_for('/terms-and-conditions') _ '">', '</a>') %]</label>
-                        </div>
-                    </div>
-
-                    <button class="button" id="btn_submit" type="submit">[% l('Open Account') %]</button>
-                </fieldset>
-            </form>
-
-            <form id="financial-risk" class="invisible">
-                <fieldset>
-                    <div class="gr-12">
-                        <p>[% l('<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved).') %]</p>
-                        <p>[% l('On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you.') %]</p>
-                        <p>[% l('By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate.') %]</p>
-                        <p class="center-text">
-                            <button class="button" type="submit">[% l('Accept') %]</button>
-                            <a class="button" href="[% request.url_for('trading') %]"><span>[% l('Decline') %]</span></a>
-                        </p>
-                    </div>
-                </fieldset>
-            </form>
-
-            <div class="errorbox rbox invisible" id="client_message">
-                <div class="rbox-wrap">
-                    <div class="gr-12 rbox-content" id="client_message_content">
-                        <p class="center-text notice-msg"></p>
-                    </div>
-                </div>
+        <fieldset>
+            <div class="gr-12">
+              <p>[% l('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.') %]</p>
             </div>
-        </div>
-    </div>
+        </fieldset>
+
+        [% PROCESS tnc %]
+    </form>
+
+    <form id="financial-risk" class="invisible">
+        <fieldset>
+            <div class="gr-12">
+                <p>[% l('<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved).') %]</p>
+                <p>[% l('On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you.') %]</p>
+                <p>[% l('By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate.') %]</p>
+                <p class="center-text">
+                    <button class="button" type="submit">[% l('Accept') %]</button>
+                    <a class="button" href="[% request.url_for('trading') %]"><span>[% l('Decline') %]</span></a>
+                </p>
+            </div>
+        </fieldset>
+    </form>
+
+    [% PROCESS client_message %]
 </div>

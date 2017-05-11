@@ -1,0 +1,24 @@
+[% PROCESS components/elements.html.tt %]
+
+<div class="gr-parent">
+    <div id="last_digit_histo_form" class="gr-8 gr-12-m gr-centered">
+        <div class="smallfont gr-row">
+            <div class="gr-6 gr-12-m">
+                <label for="digit_underlying">[% l('Select market:') %]</label>
+                <select class="smallfont" id="digit_underlying"></select>
+            </div>
+            <div class="gr-6 gr-12-m">
+                <label for="tick_count">[% l('Number of ticks:') %]</label>
+                [% INCLUDE select class="smallfont" id="tick_count" options=[
+                    { text='25',   value='25', },
+                    { text='50',   value='50', },
+                    { text='100',  value='100', selected=1 },
+                    { text='500',  value='500', },
+                    { text='1000', value='1000', },
+                ]%]
+            </div>
+        </div>
+    </div>
+    <div id="last_digit_histo" class="gr-8 gr-12-m gr-centered"></div>
+    <div id="last_digit_title" class="gr-hide"><span id="digit_domain"></span> - [% l('Last digit stats for the latest [_1] ticks on [_2]', '<span id="digit_info_count">100</span>', '<span id="digit_info_underlying"></span>') %]</div>
+</div>

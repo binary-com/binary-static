@@ -1,198 +1,93 @@
+[% PROCESS components/elements.html.tt %]
+
+[% BLOCK section %]
+<div class="section">
+    <a id="[% id %]"></a>
+    <h1>[% header %]</h1>
+    [% content %]
+</div>
+[% END %]
+
 <div class="container">
-  <div class="payment-agent static_full gr-row">
-    <div class="gr-3 gr-hide-m sidebar-container">
-      <div class="sidebar">
-        <ul id="sidebar-nav">
-          <li class="selected" id="sidebar-link-section-1">
-            <a href="#payment-agents">
-              [% l("Payment Agents") %]
-            </a>
-          </li>
-          <li id="sidebar-link-section-1">
-            <a href="#why-choose-payment-agents">
-              [% l("Why do Clients choose to use Payment Agents?") %]
-            </a>
-          </li>
-          <li id="sidebar-link-section-2">
-            <a href="#who-can-apply-payment-agent">
-              [% l("Who can apply to be a Payment Agent?") %]
-            </a>
-          </li>
-          <li id="sidebar-link-section-3">
-            <a href="#benefits-of-payment-agent">
-              [% l("Benefits of being a Payment Agent") %]
-            </a>
-          </li>
-          <li id="sidebar-link-section-4">
-            <a href="#next-steps">
-              [% l("How does it work?") %]
-            </a>
-          </li>
-        </ul>
-        <div class="sidebar-button">
-          <a href="mailto:[% affiliate_email %]">[% l("Contact Us") %]</a>
+    <div class="payment-agent static_full gr-row">
+        <div class="gr-3 gr-hide-m sidebar-container">
+            <div class="sidebar">
+                [% INCLUDE list id='sidebar-nav' items=[
+                    { href='#payment-agents',              text=l("Payment Agents"), class='selected' },
+                    { href='#why-choose-payment-agents',   text=l("Why do Clients choose to use Payment Agents?") },
+                    { href='#who-can-apply-payment-agent', text=l("Who can apply to be a Payment Agent?") },
+                    { href='#benefits-of-payment-agent',   text=l("Benefits of being a Payment Agent") },
+                    { href='#next-steps',                  text=l("How does it work?") },
+                ] %]
+                <div class="sidebar-button"><a href="mailto:[% affiliate_email %]">[% l("Contact Us") %]</a></div>
+            </div>
         </div>
-      </div>
+        <div class="gr-9 gr-12-m gr-parent">
+            [% WRAPPER section id='payment-agents' header=l("Payment Agents") %]
+                <p>[% l("Are you a Payment Agent, or interested in acting as one?") %]</p>
+                <p>[% l("[_1] would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions.", website_name) %]</p>
+                <div class="gr-row">
+                    <div class="gr-8 gr-12-m">
+                        <p>[% l("A Payment Agent acts like an exchange between the Client (that is, our customer) and [_1]. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by [_1]. The transfer fees are borne by the Client.", website_name) %]</p>
+                    </div>
+                    <div class="gr-4 gr-8-m gr-centered">
+                        <img class="responsive" src="[% request.url_for('images/pages/payment_agent/payment_agents.svg') %]"/>
+                    </div>
+                </div>
+                <p class="faded">[% l("Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars.") %]</p>
+            [% END %]
+
+            [% WRAPPER section id='why-choose-payment-agents' header=l("Why do Clients choose to use Payment Agents?") %]
+                <ul class="checked">
+                    <li>[% l("Allow Clients to use e-wallets, which are not available directly on [_1]", website_name) %]</li>
+                    <li>[% l("Accept local bank wires") %]</li>
+                    <li>[% l("Avoid the need to have an e-wallet") %]</li>
+                    <li>[% l("Allow Clients to deposit with lower amounts (via local currency)") %]</li>
+                </ul>
+            [% END %]
+
+            [% WRAPPER section id='who-can-apply-payment-agent' header=l("Who can apply to be a Payment Agent?") %]
+                <div class="gr-row">
+                    <div class="gr-4 gr-8-m gr-centered">
+                        <img class="responsive" src="[% request.url_for('images/pages/payment_agent/who_payment_agents.svg') %]"/>
+                    </div>
+                    <div class="gr-8 gr-12-m">
+                        <ul class="checked">
+                            <li>[% l("Online currency exchangers") %]</li>
+                            <li>[% l("[_1] affiliate partners who wish to support a big group of Clients", website_name) %]</li>
+                            <li>[% l("Anyone who has potential to grow or increase traffic to [_1]", website_name) %]</li>
+                        </ul>
+                    </div>
+                </div>
+            [% END %]
+
+            [% WRAPPER section id='benefits-of-payment-agent' header=l("Benefits of being a Payment Agent") %]
+                <ul class="checked">
+                    <li><strong>[% l("Additional business exposure:") %]</strong> [% l("You will increase awareness of your services and generate new business.") %]</li>
+                    <li><strong>[% l("Commissions:") %]</strong> [% l("You will charge a commission to process the transactions.") %]</li>
+                    <li><strong>[% l("Extra revenue stream:") %]</strong> [% l("You will have the potential to earn another level of income from our affiliate program.") %]</li>
+                    <li><strong>[% l("Long-term partnership:") %]</strong> [% l("Your partnership with [_1] could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide.", website_name) %]</li>
+                </ul>
+            [% END %]
+
+            [% WRAPPER section id='next-steps' header=l("How does it work?") %]
+                <p>[% l("Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by [_1], and you have a good track record in the market, then we would love to <a href='mailto:[_2]'>hear from you!</a>", website_name, affiliate_email) %]</p>
+                <p>[% l("As a first step, please send us an application with:") %]</p>
+                <ul class="checked">
+                    <li>[% l("Your name, email address and contact number") %]</li>
+                    <li>[% l("Your website request.url (if you have one)") %]</li>
+                    <li>[% l("A list of payment methods you will accept from Clients") %]</li>
+                    <li>[% l("The commission you will charge Clients on deposits and withdrawals") %]</li>
+                </ul>
+                <p>[% l("Please submit the above information to <a href='mailto:[_1]'>[_1]</a>.", affiliate_email) %]</p>
+                <p>[% l("Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents).") %]</p>
+                <p>[% l("Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='[_1]'>payment agent</a> list.", request.url_for('/cashier/payment_agent_listws')) %]</p>
+            [% END %]
+
+            [% WRAPPER section id='need-more-information' header=l("Need more information?") %]
+                <p>[% l("If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:[_1]'>[_1]</a>", affiliate_email) %]</p>
+                <p>[% l("We look forward to hearing from you.") %]</p>
+            [% END %]
+        </div>
     </div>
-    <div class="gr-9 gr-12-m gr-parent">
-      <div class="section">
-        <a id="why-choose-payment-agents"></a>
-        <div class="section-content">
-          <div id="section-1">
-            <div class="gr-12">
-              <h1>
-                [% l("Payment Agents") %]
-              </h1>
-              <p>
-                [% l("Are you a Payment Agent, or interested in acting as one?") %]
-              </p>
-              <p>
-                [% l("[_1] would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions.", website_name) %]
-              </p>
-            </div>
-            <div class="gr-row">
-                <div class="gr-8 gr-12-m">
-                  <p>
-                    [% l("A Payment Agent acts like an exchange between the Client (that is, our customer) and [_1]. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by [_1]. The transfer fees are borne by the Client.", website_name) %]
-                  </p>
-                </div>
-                <div class="gr-4 gr-8-m gr-centered">
-                  <img class="responsive" src="[% request.url_for('images/pages/payment_agent/payment_agents.svg') %]"/>
-                </div>
-            </div>
-            <div class="gr-12">
-              <p class="faded">
-                [% l("Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars.") %]
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <a id="why-choose-payment-agents"></a>
-        <div class="section-content">
-          <div id="section-2">
-            <div class="gr-12">
-              <h1>
-                [% l("Why do Clients choose to use Payment Agents?") %]
-              </h1>
-              <ul class="checked">
-                <li>
-                  [% l("Allow Clients to use e-wallets, which are not available directly on [_1]", website_name) %]
-                </li>
-                <li>
-                  [% l("Accept local bank wires") %]
-                </li>
-                <li>
-                  [% l("Avoid the need to have an e-wallet") %]
-                </li>
-                <li>
-                  [% l("Allow Clients to deposit with lower amounts (via local currency)") %]
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <a id="who-can-apply-payment-agent"></a>
-        <div class="section-content">
-          <div id="section-3">
-            <div class="gr-12">
-              <h1>
-                [% l("Who can apply to be a Payment Agent?") %]
-              </h1>
-            </div>
-            <div class="gr-row">
-                <div class="gr-4 gr-8-m gr-centered">
-                  <img class="responsive" src="[% request.url_for('images/pages/payment_agent/who_payment_agents.svg') %]"/>
-                </div>
-                <div class="gr-8 gr-12-m">
-                  <ul class="checked">
-                    <li>
-                      [% l("Online currency exchangers") %]
-                    </li>
-                    <li>
-                      [% l("[_1] affiliate partners who wish to support a big group of Clients", website_name) %]
-                    </li>
-                    <li>
-                      [% l("Anyone who has potential to grow or increase traffic to [_1]", website_name) %]
-                    </li>
-                  </ul>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <a id="benefits-of-payment-agent"></a>
-        <div class="section-content">
-          <div id="section-4">
-            <div class="gr-12">
-              <h1>
-                [% l("Benefits of being a Payment Agent") %]
-              </h1>
-              <ul class="checked">
-                <li>[% l("<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business.") %]</li>
-                <li>[% l("<strong>Commissions:</strong> You will charge a commission to process the transactions.") %]</li>
-                <li>[% l("<strong>Extra revenue stream:</strong> You will have the potential to earn another level of income from our affiliate program.") %]</li>
-                <li>[% l("<strong>Long-term partnership:</strong> Your partnership with [_1] could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide.", website_name) %]</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <a id="next-steps"></a>
-        <div class="section-content gr-parent gr-12">
-          <div id="section-5">
-            <div class="gr-12">
-              <h1>
-                [% l("How does it work?") %]
-              </h1>
-              <p>[% l("Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by [_1], and you have a good track record in the market, then we would love to <a href='mailto:[_2]'>hear from you!</a>", website_name, affiliate_email) %]</p>
-              <p>
-                [% l("As a first step, please send us an application with:") %]
-              </p>
-              <ul class="checked">
-                <li>
-                  [% l("Your name, email address and contact number") %]
-                </li>
-                <li>
-                  [% l("Your website request.url (if you have one)") %]
-                </li>
-                <li>
-                  [% l("A list of payment methods you will accept from Clients") %]
-                </li>
-                <li>
-                  [% l("The commission you will charge Clients on deposits and withdrawals") %]
-                </li>
-              </ul>
-              <p>[% l("Please submit the above information to <a href='mailto:[_1]'>[_1]</a>.", affiliate_email) %]</p>
-              <p>
-                [% l("Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents).") %]
-              </p>
-              <p>[% l("Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='[_1]'>payment agent</a> list.", request.url_for('/cashier/payment_agent_listws')) %]</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <a id="need-more-information"></a>
-        <div class="section-content gr-parent gr-12">
-          <div id="section-6">
-            <div class="gr-12">
-              <h1>
-                [% l("Need more information?") %]
-              </h1>
-              <p>[% l("If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:[_1]'>[_1]</a>", affiliate_email) %]</p>
-              <p>
-                [% l("We look forward to hearing from you.") %]
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

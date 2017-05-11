@@ -1,3 +1,6 @@
+[% PROCESS components/forms.html.tt %]
+[% PROCESS components/forms_common_rows.html.tt %]
+
 <div id="deposit_withdraw">
     <h1 id="heading"></h1>
 
@@ -43,37 +46,16 @@
     </form>
 
     <form id="frm_currency" class="invisible">
-        <fieldset>
-            <div class="gr-padding-10 gr-row clear">
-                <div class="gr-4 form_label">
-                    <label for="select_currency">[% l("Transact in") %]</label>
-                </div>
-                <div class="gr-8">
-                    <select id="select_currency"></select>
-                </div>
-            </div>
-            <div class="gr-padding-10 row clear center-text">
-                <div class="gr-8">
-                    <button class="button" type="submit">[% l("Continue") %]</button>
-                </div>
-            </div>
-        </fieldset>
+        [% WRAPPER fieldset %]
+            [% INCLUDE form_row label=l("Transact in") id='select_currency' type='select' %]
+            [% INCLUDE submit_button is_centered=1 type='submit' text=l("Continue") no_error=1 %]
+        [% END %]
     </form>
 
     <form id="frm_withdraw" class="invisible">
-        <fieldset>
-            <div class="gr-row gr-parent gr-padding-10">
-                <div class="form_label gr-4">
-                    <label for="verification_code">[% l("Verification token") %]</label>
-                </div>
-                <div class="gr-8">
-                    <input id="verification_code" name="verification_code" type="text" maxlength="8" autocomplete="off" />
-                    <div class="hint">[% l("Please check your email for the value of this token") %]</div>
-                </div>
-            </div>
-        </fieldset>
-        <div class="gr-12 gr-parent gr-centered center-text">
-            <button class="button" type="submit">[% l("Submit") %]</button>
-        </div>
+        [% WRAPPER fieldset %]
+            [% PROCESS verification_code %]
+        [% END %]
+        [% INCLUDE submit_button is_centered=1 type='submit' text=l("Submit") no_error=1 %]
     </form>
 </div>

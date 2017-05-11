@@ -1,6 +1,7 @@
-const Client      = require('../../base/client');
-const localize    = require('../../base/localize').localize;
-const FormManager = require('../../common_functions/form_manager');
+const BinarySocket = require('../socket');
+const Client       = require('../../base/client');
+const localize     = require('../../base/localize').localize;
+const FormManager  = require('../../common_functions/form_manager');
 
 const AccountTransfer = (() => {
     'use strict';

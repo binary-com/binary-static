@@ -1,3 +1,4 @@
+const BinarySocket       = require('../socket');
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const Header             = require('../../base/header');
@@ -35,7 +36,7 @@ const Cashier = (() => {
 
     const onLoad = () => {
         if (jpClient() && !jpResidence()) {
-            BinaryPjax(defaultRedirectUrl());
+            BinaryPjax.load(defaultRedirectUrl());
         }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {

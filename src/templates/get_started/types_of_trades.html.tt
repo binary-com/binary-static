@@ -21,35 +21,35 @@
     </div>
 
     <div class="subsection">
-      <h2><a href="[% request.url_for('trading?market=forex&formname=touchnotouch') %]">[% l("Touch/No Touch") %]</a></h2>
-      <p>[% l("Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period.") %]</p>
+        <h2><a href="[% request.url_for('trading?market=forex&formname=touchnotouch') %]">[% l("Touch/No Touch") %]</a></h2>
+        <p>[% l("Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period.") %]</p>
     </div>
 
     <div class="subsection">
-      <h2><a href="[% request.url_for('trading?market=forex&formname=staysinout') %]">[% l("In/Out") %]</a></h2>
-      <p>[% l("There are two types of In/Out trades:") %]</p>
-      <ol>
-        <li>[% l("Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period") %]</li>
-        <li>[% l("Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period") %]</li>
-      </ol>
+        <h2><a href="[% request.url_for('trading?market=forex&formname=staysinout') %]">[% l("In/Out") %]</a></h2>
+        <p>[% l("There are two types of In/Out trades:") %]</p>
+        <ol>
+            <li>[% l("Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period") %]</li>
+            <li>[% l("Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period") %]</li>
+        </ol>
     </div>
 
     <div class="subsection">
-      <h2><a href="[% request.url_for('trading?market=volidx&formname=asian') %]">[% l("Asians") %]</a></h2>
-      <p>[% l("There are two ways to trade Asians:") %]</p>
-      <ol>
-        <li>[% l("Up - Predict that the market will end higher than the average price") %]</li>
-        <li>[% l("Down - Predict that the market will end lower than the average price") %]</li>
-      </ol>
+        <h2><a href="[% request.url_for('trading?market=volidx&formname=asian') %]">[% l("Asians") %]</a></h2>
+        <p>[% l("There are two ways to trade Asians:") %]</p>
+        <ol>
+            <li>[% l("Up - Predict that the market will end higher than the average price") %]</li>
+            <li>[% l("Down - Predict that the market will end lower than the average price") %]</li>
+        </ol>
     </div>
 
     <div class="subsection">
-      <h2><a href="[% request.url_for('trading?market=volidx&formname=matchdiff') %]">[% l("Digits") %]</a></h2>
-      <p>[% l("Digits let you predict the last decimal digit of the spot price. There are three types of Digits trades:") %]</p>
-      <ol>
-        <li>[% l("Matches/Differs - Predict that the last digit will match or not match") %]</li>
-        <li>[% l("Even/Odd - Predict that the last digit is even or odd after the last tick") %]</li>
-        <li>[% l("Over/Under - Predict that the last digit is higher or lower") %]</li>
-      </ol>
+        <h2><a href="[% request.url_for('trading?market=volidx&formname=matchdiff') %]">[% l("Digits") %]</a></h2>
+        <p>[% l("Digits let you predict the last decimal digit of the spot price. There are three types of Digits trades:") %]</p>
+        <ol>
+            <li>[% l("Matches/Differs - Predict that the last digit will match or not match") %]</li>
+            <li>[% l("Even/Odd - Predict that the last digit is even or odd after the last tick") %]</li>
+            <li>[% l("Over/Under - Predict that the last digit is higher or lower") %]</li>
+        </ol>
     </div>
 </div>

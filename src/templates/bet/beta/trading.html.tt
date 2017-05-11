@@ -113,16 +113,9 @@
                                         </div>
                                         <div class="big-col">
                                             <select id="prediction" class="small_width_input">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
+                                                [% FOREACH i IN [0..9] %]
+                                                    <option value="[% i %]">[% i %]</option>
+                                                [% END %]
                                             </select>
                                         </div>
                                     </div>
@@ -280,12 +273,12 @@
                 </div>
             </div>
             <div class="col-right gr-6 gr-5-t gr-12-p gr-12-m">
-                [% INCLUDE bet/beta/analysis.html.tt %]
+                [% PROCESS bet/beta/analysis.html.tt %]
             </div>
         </div>
     </div>
 </div>
 <div id="all_prices"></div>
 <div id="trading_init_progress">
-    [% INCLUDE global/loading.html.tt %]
+    [% PROCESS global/loading.html.tt %]
 </div>

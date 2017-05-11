@@ -5,6 +5,7 @@ const displayPriceMovement = require('./common_independent').displayPriceMovemen
 const getTradingTimes      = require('./common_independent').getTradingTimes;
 const Contract             = require('./contract');
 const Defaults             = require('./defaults');
+const BinarySocket         = require('../socket');
 const localize             = require('../../base/localize').localize;
 const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
 const isVisible            = require('../../common_functions/common_functions').isVisible;

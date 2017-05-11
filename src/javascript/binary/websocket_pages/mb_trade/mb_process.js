@@ -3,6 +3,7 @@ const MBDefaults      = require('./mb_defaults');
 const MBNotifications = require('./mb_notifications');
 const MBPrice         = require('./mb_price');
 const MBSymbols       = require('./mb_symbols');
+const BinarySocket    = require('../socket');
 const TradingAnalysis = require('../trade/analysis');
 const showHighchart   = require('../trade/charts/chart_frame').showHighchart;
 const commonTrading   = require('../trade/common');
@@ -37,7 +38,7 @@ const MBProcess = (() => {
             } else if (website_status.website_status.clients_country === 'jp' || getLanguage() === 'JA') {
                 req.landing_company = 'japan';
             }
-            BinarySocket.send(req, { forced: true, msg_type: 'active_symbols' }).then((response) => {
+            BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
                 processActiveSymbols(response);
             });
         });

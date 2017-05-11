@@ -2,6 +2,7 @@ const Highcharts           = require('highcharts');
 const moment               = require('moment');
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
+const BinarySocket         = require('../socket');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const localize             = require('../../base/localize').localize;
 const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;

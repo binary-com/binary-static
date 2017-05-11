@@ -1,4 +1,21 @@
-<div class="about-us">
+[% BLOCK box_inner %]
+    <div class="gr-6 center-text[% IF class %] [% class %][% END %]">
+        [% IF href %]<a href="[% request.url_for(href) %]">[% END %]
+            <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/' _ image _ '.svg') %]"/>
+        [% IF href %]</a>[% END %]
+        <p>[% text %]</p>
+    </div>
+[% END %]
+
+[% BLOCK box %]
+    <div class="gr-6 gr-12-m">
+        <div class="gr-row">
+            [% content %]
+        </div>
+    </div>
+[% END %]
+
+<div class="about-us static_full">
     <div class="container section">
         <div class="gr-parent">
             <h1 class="center-text gr-padding-20">
@@ -23,63 +40,25 @@
         <div class="container section">
             <div class="gr-padding-10 facts">
                 <h1 class="center-text gr-padding-20">[% l("Key facts") %]</h1>
-                    <div class="gr-row border-bottom no-padding">
-                        <div class="gr-6 gr-12-m">
-                            <div class="gr-row">
-                                <div class="gr-6 center-text border-right-top">
-                                    <a href="[% request.url_for('/group-history') %]">
-                                        <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/founded.svg') %]"/>
-                                    </a>
-                                    <p>[% l("<a href='[_1]'>Founded</a> October 1999", request.url_for("/group-history")) %]</p>
-                                </div>
-                                <div class="gr-6 center-text border-right-top">
-                                    <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/debt-free.svg') %]"/>
-                                    <p>[% l("Debt-free") %]</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gr-6 gr-12-m">
-                            <div class="gr-row">
-                            <div class="gr-6 center-text border-right-top">
-                                <a href="[% request.url_for('/careers') %]">
-                                    <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/staff.svg') %]"/>
-                                </a>
-                                <p>[% l("Over 90 <a href='[_1]'>staff</a> and contractors worldwide", request.url_for("/careers")) %]</p>
-                            </div>
-                            <div class="gr-6 center-text">
-                                <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/1mil.svg') %]"/>
-                                <p>[% l("Over 1 million registered accounts worldwide") %]</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="gr-row border-bottom no-padding">
+                    [% WRAPPER box %]
+                        [% INCLUDE box_inner class='border-right-top' href='/group-history' image='founded' text=l("<a href='[_1]'>Founded</a> October 1999", request.url_for("/group-history")) %]
+                        [% INCLUDE box_inner class='border-right-top' image='debt-free' text=l("Debt-free") %]
+                    [% END %]
+                    [% WRAPPER box %]
+                        [% INCLUDE box_inner class='border-right-top' href='/careers' image='staff' text=l("Over 90 <a href='[_1]'>staff</a> and contractors worldwide", request.url_for("/careers")) %]
+                        [% INCLUDE box_inner image='1mil' text=l("Over 1 million registered accounts worldwide") %]
+                    [% END %]
                 </div>
                 <div class="gr-row gr-parent">
-                    <div class="gr-6 gr-12-m">
-                        <div class="gr-row">
-                            <div class="gr-6 center-text border-right-bottom gr-padding-30">
-                                <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/transacts.svg') %]"/>
-                                <p>[% l("Binary's platform transacts on average 15 [_1]transactions[_2] per second, 24/7", "<a href='https://binarycom.statuspage.io/' target='_blank'>", "</a>") %]</p>
-                            </div>
-                            <div class="gr-6 center-text border-right-bottom gr-padding-30">
-                                <a href="[% request.url_for('/contact') %]">
-                                    <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/locations.svg') %]"/>
-                                </a>
-                                <p>[% l("<a href='[_1]'>Offices</a> in Malta, Malaysia and Japan", request.url_for("/contact")) %]</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gr-6 gr-12-m">
-                        <div class="gr-row">
-                            <div class="gr-6 center-text border-right-bottom gr-padding-30">
-                                <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/license.svg') %]"/>
-                                <p>[% l("Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan") %]</p>
-                            </div>
-                            <div class="gr-6 center-text gr-padding-30">
-                                <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/languages.svg') %]"/>
-                                <p>[% l("Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai") %]</p>
-                            </div>
-                        </div>
-                    </div>
+                    [% WRAPPER box %]
+                        [% INCLUDE box_inner class='border-right-bottom gr-padding-30' image='transacts' text=l("Binary's platform transacts on average 15 [_1]transactions[_2] per second, 24/7", "<a href='https://binarycom.statuspage.io/' target='_blank'>", "</a>") %]
+                        [% INCLUDE box_inner class='border-right-bottom gr-padding-30' href='/contact' image='locations' text=l("<a href='[_1]'>Offices</a> in Malta, Malaysia and Japan", request.url_for("/contact")) %]
+                    [% END %]
+                    [% WRAPPER box %]
+                        [% INCLUDE box_inner class='border-right-bottom gr-padding-30' image='license' text=l("Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan") %]
+                        [% INCLUDE box_inner class='gr-padding-30' image='languages' text=l("Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai") %]
+                    [% END %]
                 </div>
             </div>
         </div>

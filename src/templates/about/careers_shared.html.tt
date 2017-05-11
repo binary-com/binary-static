@@ -1,21 +1,11 @@
-<div class="gr-row gr-padding-30">
-    <div class="gr-4 gr-12-m gr-6-p center-text gr-centered">
-        <div class="xquote">
-            <div>
-                <div class="picture">
-                    <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/view-positions-icon.svg') %]"/>
-                </div>
-                <div class="text">
-                    <a href="[% request.url_for('/open-positions') %]">[% l("View open positions") %]</a>
-                </div>
-            </div>
-        </div>
-    </div>
+[% PROCESS components/elements.html.tt %]
+
+<div class="gr-padding-30">
+    [% INCLUDE fill_box image='images/pages/careers/view-positions-icon.svg' center=1 padding='4'
+        href=request.url_for('/open-positions') text=l("View open positions") %]
 </div>
 
-<div class="gr-hide-m">
-    <div class="separator-line border-bottom"></div>
-</div>
+[% INCLUDE global/separator_line.html.tt %]
 
 <div class="gr-padding-30">
     <h1>[% l("Are you ready?") %]</h1>

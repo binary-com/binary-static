@@ -1,5 +1,7 @@
 const PaymentAgentTransferUI = require('./payment_agent_transfer/payment_agent_transfer.ui');
+const BinarySocket           = require('../../socket');
 const Client                 = require('../../../base/client');
+const localize               = require('../../../base/localize').localize;
 const State                  = require('../../../base/storage').State;
 const FormManager            = require('../../../common_functions/form_manager');
 
@@ -9,7 +11,7 @@ const PaymentAgentTransfer = (() => {
     let balance,
         is_authenticated_payment_agent,
         common_request_fields,
-        $insufficient_balance;
+        $form_error;
 
     const onLoad = () => {
         PaymentAgentTransferUI.initValues();
@@ -28,7 +30,7 @@ const PaymentAgentTransfer = (() => {
         const $no_bal_err = $('#no_balance_error');
         const currency = Client.get('currency');
         balance = State.get(['response', 'balance', 'balance', 'balance']);
-        $insufficient_balance = $('#insufficient_balance');
+        $form_error = $('#form_error');
 
         if (!currency || +balance === 0) {
             $('#pa_transfer_loading').remove();
@@ -65,10 +67,10 @@ const PaymentAgentTransfer = (() => {
 
     const checkBalance = (amount) => {
         if (+amount > +balance) {
-            $insufficient_balance.setVisibility(1);
+            $form_error.text(localize('Insufficient balance.')).setVisibility(1);
             return false;
         }
-        $insufficient_balance.setVisibility(0);
+        $form_error.setVisibility(0);
         return true;
     };
 
@@ -95,7 +97,7 @@ const PaymentAgentTransfer = (() => {
 
         if (error) {
             if (req.dry_run === 1) {
-                $('#form_error').text(error.message).setVisibility(1);
+                $form_error.text(error.message).setVisibility(1);
                 return;
             }
             PaymentAgentTransferUI.showTransferError(error.message);
@@ -136,7 +138,7 @@ const PaymentAgentTransfer = (() => {
             PaymentAgentTransferUI.showNotes();
             PaymentAgentTransferUI.hideConfirmation();
             PaymentAgentTransferUI.hideDone();
-            $('#form_error').setVisibility(0);
+            $form_error.setVisibility(0);
         });
     };
 

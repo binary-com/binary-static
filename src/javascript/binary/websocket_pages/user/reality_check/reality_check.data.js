@@ -1,6 +1,7 @@
-const moment     = require('moment');
-const localize   = require('../../../base/localize').localize;
-const LocalStore = require('../../../base/storage').LocalStore;
+const moment      = require('moment');
+const localize    = require('../../../base/localize').localize;
+const LocalStore  = require('../../../base/storage').LocalStore;
+const formatMoney = require('../../../common_functions/currency_to_symbol').formatMoney;
 
 const RealityCheckData = (() => {
     'use strict';
@@ -40,12 +41,12 @@ const RealityCheckData = (() => {
             session_duration : duration_string,
             loginid          : data.loginid,
             currency         : data.currency,
-            turnover         : (+turnover).toFixed(2),
-            profit_loss      : (+profit_loss).toFixed(2),
+            turnover         : formatMoney(data.currency, +turnover, 1),
+            profit_loss      : formatMoney(data.currency, +profit_loss, 1),
             contracts_bought : data.buy_count,
             contracts_sold   : data.sell_count,
             open_contracts   : data.open_contract_count,
-            potential_profit : (+(data.potential_profit)).toFixed(2),
+            potential_profit : formatMoney(data.currency, +(data.potential_profit), 1),
         };
     };
 

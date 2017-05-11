@@ -33,7 +33,7 @@
         <div id="content">
             <div id="login_loading">
                 <a href="[% request.url_for('/') %]" id="loading_link">
-                    [% INCLUDE global/loading.html.tt %]
+                    [% PROCESS global/loading.html.tt %]
                 </a>
             </div>
         </div>

@@ -2,7 +2,6 @@ const ProfitTable         = require('../profit_table');
 const Client              = require('../../../../base/client');
 const localize            = require('../../../../base/localize').localize;
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
-const addComma            = require('../../../../common_functions/string_util').addComma;
 const elementTextContent  = require('../../../../common_functions/common_functions').elementTextContent;
 const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
@@ -72,7 +71,7 @@ const ProfitTableUI = (() => {
         const jp_client = jpClient();
         const sub_total_type = (total >= 0) ? 'profit' : 'loss';
 
-        $('#pl-day-total').find(' > .pl').text(jp_client ? formatMoney(currency, total) : addComma(Number(total).toFixed(2)))
+        $('#pl-day-total').find(' > .pl').text(formatMoney(currency, Number(total), !jp_client))
             .removeClass('profit loss')
             .addClass(sub_total_type);
     };

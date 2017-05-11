@@ -1,5 +1,6 @@
-<div id="portfolio">
+[% PROCESS components/elements.html.tt %]
 
+<div id="portfolio">
     <h1 class="portfolio-header-margin">[% l('Portfolio') %]</h1>
 
     <p class="notice-msg center-text invisible" id="error-msg"></p>
@@ -26,30 +27,25 @@
             <p>[% l("No open positions.") %]</p>
         </div>
 
-        <div class="table-container">
-        <table id="portfolio-table">
-            <thead>
-                <tr>
-                    <th class="ref">[% l('Ref.') %]</th>
-                    <th class="payout nowrap">[% l('Potential Payout') %]</th>
-                    <th class="details">[% l('Contract Details') %]</th>
-                    <th class="purchase">[% l('Purchase') %]</th>
-                    <th class="indicative nowrap">[% l('Indicative') %]</th>
-                    <th class="button"></th>
-                </tr>
-            </thead>
-
-            <tbody id="portfolio-body"></tbody>
-
-            <tfoot>
-                <tr>
-                    <th>[% l("Total") %]</th>
-                    <th class="ref" colspan="2"></th>
-                    <th class="cost" id="cost-of-open-positions"></th>
-                    <th class="value" id="value-of-open-positions" colspan="2"></th>
-                </tr>
-            </tfoot>
-        </table>
-        </div>
+        [% INCLUDE table scroll=1 id='portfolio-table' tbody_id='portfolio-body' data={
+            thead=[
+                [
+                    { class='ref',               text=l('Ref.') },
+                    { class='payout nowrap',     text=l('Potential Payout') },
+                    { class='details',           text=l('Contract Details') },
+                    { class='purchase',          text=l('Purchase') },
+                    { class='indicative nowrap', text=l('Indicative') },
+                    { class='button',            text='' },
+                ],
+            ],
+            tfoot=[
+                [
+                    { text=l('Total') },
+                    { class='ref',   attributes='colspan="2"' },
+                    { class='cost',  id="cost-of-open-positions" },
+                    { class='value', id="value-of-open-positions", attributes='colspan="2"' },
+                ],
+            ],
+        } %]
     </div>
 </div>

@@ -1,3 +1,4 @@
+const BinarySocket         = require('../socket');
 const Client               = require('../../base/client');
 const localize             = require('../../base/localize').localize;
 const template             = require('../../base/utility').template;

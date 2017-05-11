@@ -1,189 +1,48 @@
+[% PROCESS components/elements.html.tt %]
+[% txt_100000 = { text='100,000' }; txt_01 = { text='0.01' }; txt_1000 = { text='1000:1' }
+    txt_5000 = { text='5000' }; txt_100 = { text='100' };
+%]
+
 <div id="forex-specs" class="gr-row">
     <div class="gr-12 gr-padding-10">
         <h1>[% l('Contract Specifications - Forex') %]</h1>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>[% l('Currency Symbol') %]</th>
-                        <th>[% l('Lot Size (Volume = 1.0)') %]</th>
-                        <th>[% l('Minimum Volume') %]</th>
-                        <th>[% l('Minimum Volume Increment') %]</th>
-                        <th>[% l('Maximum Leverage') %]</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>EUR/USD</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>GBP/USD</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>USD/CHF</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>USD/JPY</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>USD/CAD</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>AUD/USD</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>AUD/NZD</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>AUD/CAD</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>AUD/CHF</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>AUD/JPY</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>EUR/GBP</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>EUR/AUD</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>EUR/CHF</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>EUR/JPY</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>EUR/JPY</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>EUR/NZD</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>EUR/CAD</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>GBP/CHF</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>GBP/JPY</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>NZD/USD</td>
-                        <td>100,000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>XAGUSD</td>
-                        <td>5000</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>XAUUSD</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>XPDUSD</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                    <tr>
-                        <td>XPTUSD</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>1000:1</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        [% INCLUDE table scroll=1 data={
+            thead= [
+                [
+                    { text=l('Currency Symbol') },
+                    { text=l('Lot Size (Volume = 1.0)') },
+                    { text=l('Minimum Volume') },
+                    { text=l('Minimum Volume Increment') },
+                    { text=l('Maximum Leverage') },
+                ],
+            ],
+            tbody= [
+                [{ text='EUR/USD' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='GBP/USD' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='USD/CHF' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='USD/JPY' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='USD/CAD' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='AUD/USD' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='AUD/NZD' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='AUD/CAD' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='AUD/CHF' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='AUD/JPY' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='EUR/GBP' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='EUR/AUD' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='EUR/CHF' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='EUR/JPY' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='EUR/JPY' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='EUR/NZD' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='EUR/CAD' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='GBP/CHF' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='GBP/JPY' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='NZD/USD' }, txt_100000, txt_01, txt_01, txt_1000 ],
+                [{ text='XAGUSD' },  txt_5000,   txt_01, txt_01, txt_1000 ],
+                [{ text='XAUUSD' },  txt_100,    txt_01, txt_01, txt_1000 ],
+                [{ text='XPDUSD' },  txt_100,    txt_01, txt_01, txt_1000 ],
+                [{ text='XPTUSD' },  txt_100,    txt_01, txt_01, txt_1000 ],
+            ],
+        } %]
     </div>
 
     <div class="gr-12 gr-padding-10">

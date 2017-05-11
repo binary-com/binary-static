@@ -337,6 +337,7 @@ sub _texts {
         push @texts, localize('Market is closed. Please try again later.');
         push @texts, localize('This symbol is not active. Please try another symbol.');
         push @texts, localize('Connection error: Please check your internet connection.');
+        push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
         push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
         #strings for digit_info
         push @texts, localize('Select market');
@@ -409,15 +410,7 @@ sub _texts {
         push @texts, localize('Contract ID');
         push @texts, localize('Reference ID');
         push @texts, localize('Remaining Time');
-        push @texts, localize('This contract was affected by a Corporate Action event.');
         push @texts, localize('Barrier Change');
-        push @texts, localize('Original Barrier');
-        push @texts, localize('Original High Barrier');
-        push @texts, localize('Original Low Barrier');
-        push @texts, localize('Adjusted Barrier');
-        push @texts, localize('Adjusted High Barrier');
-        push @texts, localize('Adjusted Low Barrier');
-        push @texts, localize('Corporate Action');
         # strings for financial assessment
         push @texts, localize('Please select a value');
         # Strings for authorised_apps

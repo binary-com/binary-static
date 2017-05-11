@@ -173,7 +173,7 @@
                 display: block;
                 position: absolute;
                 height: 100%;
-                margin-top: -8px;
+                top: 0;
             }
         }
         border: 1px solid $COLOR_GRAY;
@@ -703,6 +703,7 @@
         @include ul_segmented_navigation;
         font-size: 85%;
         border-bottom: none;
+        margin: 0;
         li {
             @include li_segmented_element;
             background: transparent;

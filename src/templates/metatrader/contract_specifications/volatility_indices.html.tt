@@ -1,104 +1,34 @@
+[% PROCESS components/elements.html.tt %]
+[% usd = { text=l('USD 1 per point') }; txt_100 = { text='100' }; txt_01 = { text='0.01' };
+    percentage = { text='0.2%' }; high_frequency = l('High frequency (2 ticks per second)') %]
+
 <div id="volatility-specs" class="gr-row">
     <div class="gr-12 gr-padding-10">
         <h1>[% l('Contract Specifications (CFD) - Volatility Indices') %]</h1>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>[% l('Symbol') %]</th>
-                        <th>[% l('Volume 1.0 (Trade Size)') %]</th>
-                        <th>[% l('Minimum Volume (Trade Size)') %]</th>
-                        <th>[% l('Maximum Volume (Trade Size)') %]</th>
-                        <th>[% l('Minimum Volume Increment') %]</th>
-                        <th>[% l('Pip Size') %]</th>
-                        <th>[% l('Minimum Spread') %]</th>
-                        <th>[% l('Margin') %]</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>Volatility 100 Index</th>
-                        <td>[% l('USD 1 per point') %]</td>
-                        <td>0.01</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.01</td>
-                        <td>0.025%</td>
-                        <td>0.2%</td>
-                    </tr>
-                    <tr>
-                        <th>Volatility 75 Index</th>
-                        <td>[% l('USD 1 per point') %]</td>
-                        <td>0.01</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.0001</td>
-                        <td>0.018%</td>
-                        <td>0.2%</td>
-                    </tr>
-                    <tr>
-                        <th>Volatility 50 Index</th>
-                        <td>[% l('USD 1 per point') %]</td>
-                        <td>0.5</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.0001</td>
-                        <td>0.012%</td>
-                        <td>0.2%</td>
-                    </tr>
-                    <tr>
-                        <th>Volatility 25 Index</th>
-                        <td>[% l('USD 1 per point') %]</td>
-                        <td>0.5</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.001</td>
-                        <td>0.006%</td>
-                        <td>0.2%</td>
-                    </tr>
-                    <tr>
-                        <th>Volatility 10 Index</th>
-                        <td>[% l('USD 1 per point') %]</td>
-                        <td>0.1</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.001</td>
-                        <td>0.025%</td>
-                        <td>0.2%</td>
-                    </tr>
-                    <tr>
-                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">HF Volatility 100 Index</th>
-                        <td>[% l('USD 1 per point') %]</td>
-                        <td>0.3</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.001</td>
-                        <td>0.012%</td>
-                        <td>0.2%</td>
-                    </tr>
-                    <tr>
-                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">HF Volatility 50 Index</th>
-                        <td>[% l('USD 1 per point') %]</td>
-                        <td>0.5</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.001</td>
-                        <td>0.012%</td>
-                        <td>0.2%</td>
-                    </tr>
-                    <tr>
-                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">HF Volatility 10 Index</th>
-                        <td>[% l('USD 1 per point') %]</td>
-                        <td>0.1</td>
-                        <td>100</td>
-                        <td>0.01</td>
-                        <td>0.001</td>
-                        <td>0.005%</td>
-                        <td>0.2%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        [% INCLUDE table scroll=1 data={
+            thead= [
+                [
+                    { text=l('Symbol') },
+                    { text=l('Volume 1.0 (Trade Size)') },
+                    { text=l('Minimum Volume (Trade Size)') },
+                    { text=l('Maximum Volume (Trade Size)') },
+                    { text=l('Minimum Volume Increment') },
+                    { text=l('Pip Size') },
+                    { text=l('Minimum Spread') },
+                    { text=l('Margin') },
+                ],
+            ],
+            tbody= [
+                [{ header='Volatility 100 Index' }, usd, { text='0.01' }, txt_100, txt_01, { text='0.01' },   { text='0.025%' }, percentage ],
+                [{ header='Volatility 75 Index' },  usd, { text='0.01' }, txt_100, txt_01, { text='0.0001' }, { text='0.018%' }, percentage ],
+                [{ header='Volatility 50 Index' },  usd, { text='0.5' },  txt_100, txt_01, { text='0.0001' }, { text='0.012%' }, percentage ],
+                [{ header='Volatility 25 Index' },  usd, { text='0.5' },  txt_100, txt_01, { text='0.001' },  { text='0.006%' }, percentage ],
+                [{ header='Volatility 10 Index' },  usd, { text='0.1' },  txt_100, txt_01, { text='0.001' },  { text='0.025%' }, percentage ],
+                [{ header='HF Volatility 100 Index', balloon=high_frequency }, usd, { text='0.3' }, txt_100, txt_01, { text='0.001' }, { text='0.012%' }, percentage ],
+                [{ header='HF Volatility 50 Index',  balloon=high_frequency }, usd, { text='0.5' }, txt_100, txt_01, { text='0.001' }, { text='0.012%' }, percentage ],
+                [{ header='HF Volatility 10 Index',  balloon=high_frequency }, usd, { text='0.1' }, txt_100, txt_01, { text='0.001' }, { text='0.005%' }, percentage ],
+            ],
+        } %]
     </div>
 
     <div class="gr-12 gr-padding-10">

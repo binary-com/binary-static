@@ -1,3 +1,11 @@
+[% BLOCK mt_box %]
+<div class="mt-box gr-12">
+    <div class="mt-img mr1-icon"></div>
+    <p class="mt-box-content">[% text %]</p>
+    <div class="mt-img mr2-icon"></div>
+</div>
+[% END %]
+
 <div class="container" id="margin_policy">
     <div class="gr-row static_full">
         <div class="gr-12">
@@ -18,20 +26,12 @@
         <div class="gr-12 gr-padding-30 center-text">
             <h2>[% l("How is margin calculated?") %]</h2>
             <p>[% l("The margin for our CFDs are calculated as follows:") %]</p>
-            <div class="mt-box gr-12">
-                <div class="mt-img mr1-icon"></div>
-                <p class="mt-box-content">[% l("If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:") %]</p>
-                <div class="mt-img mr2-icon"></div>
-            </div>
+            [% PROCESS mt_box text=l("If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:") %]
         </div>
 
         <div class="gr-12 gr-padding-30 center-text">
             <p>[% l("The margin for our Forex symbols is calculated as follows:") %]</p>
-            <div class="mt-box gr-12">
-                <div class="mt-img l1-icon"></div>
-                <p class="mt-box-content">[% l("If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:") %]</p>
-                <div class="mt-img l2-icon"></div>
-            </div>
+            [% PROCESS mt_box text=l("If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:") %]
         </div>
 
         <hr class="gr-12 separator">

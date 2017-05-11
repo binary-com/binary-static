@@ -1,4 +1,5 @@
 const AssetIndex             = require('../asset_index');
+const BinarySocket           = require('../../socket');
 const BinaryPjax             = require('../../../base/binary_pjax');
 const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;

@@ -1,105 +1,61 @@
-<div>
-    <h1>[% l('Payment Agent Withdrawal') %]</h1>
+[% PROCESS components/forms.html.tt %]
+[% PROCESS components/forms_common_rows.html.tt %]
 
-    <div id="paymentagent_withdrawal">
+<h1>[% l('Payment Agent Withdrawal') %]</h1>
 
-        <div id="viewError" class="viewItem invisible">
-            <p id="custom-error" class="notice-msg center-text invisible"></p>
-            <p id="withdrawal-locked-error" class="notice-msg center-text invisible">
-                [% l('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', '<a href="mailto:support@binary.com">support@binary.com</a>') %]
-            </p>
-        </div>
-
-        <div id="viewSuccess" class="viewItem invisible">
-            <p id="successMessage"></p>
-            <p>
-                <a class="button" href="[% request.url_for('/user/statementws') %]">
-                    <span class="button">[% l('View your statement') %]</span>
-                </a>
-            </p>
-        </div>
-
-        <form id="viewConfirm" class="viewItem invisible">
-            <p>[% l('Please confirm the transaction details in order to complete the transfer:') %]</p>
-
-            <p>[% l('Transfer to') %]: <span id="lblAgentName"></span><br />[% l('Amount') %]: <span id="lblCurrency"></span> <span id="lblAmount"></span></p>
-
-            <a class="button" id="btnBack" href="javascript:;"><span class="button">[% l('Back') %]</span></a>
-            <button class="button" type="submit">[% l('Confirm') %]</button>
-        </form>
-
-        <div id="viewForm" class="viewItem invisible">
-            <p>[% l('Please provide us with the following information, after retrieving the verification token from your email:') %]</p>
-            <form class="form rbox gr-padding-10" id="frmWithdrawal">
-                <fieldset>
-
-                  <div class="gr-padding-10 gr-row clear">
-                      <div class="gr-4 form_label">
-                          <label for="verification_code">[% l('Verification Token') %]</label>
-                      </div>
-                      <div class="gr-8">
-                          <input type="text" id="verification_code" maxlength="8" autocomplete="off" />
-                          <div class="hint">[% l('Please check your email for the value of this token') %]</div>
-                      </div>
-                  </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="ddlAgents">[% l('Transfer to Payment Agent') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <select id="ddlAgents"></select>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="txtAmount">[% l('Amount') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            USD <input type="text" id="txtAmount" />
-                            <div class="hint">[% l('Min: 10 Max: 2000') %]</div>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="txtDescription">[% l('Further Instructions') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <textarea id="txtDescription" row="6" cols="60" maxlength="300"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10">
-                        <div class="gr-4"></div>
-                        <div class="gr-8">
-                            <div id="formMessage"></div>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10">
-                        <div class="gr-8 gr-centered center-text">
-                            <button class="button" type="submit">[% l('Submit') %]</button>
-                        </div>
-                    </div>
-
-                </fieldset>
-            </form>
-
-            <div id="paymentagent_withdrawal_notes">
-                <div>[% l('Notes:') %]</div>
-                <ul>
-                    <li>[% l('[_1] does not charge any transfer fees.', website_name) %]</li>
-                    <li>[% l('In the \'Further Instructions\' field please specify the payment method and account number to which the Agent will send the funds to.') +%] [%+ l('Please make sure that you first agree with the Agent on the terms of payment before submitting your request.') %]</li>
-                    <li>[% l('Once you click the \'Submit\' button the funds will be withdrawn from your account and will be sent to the Payment Agent you have chosen.') %]</li>
-                    <li>[% l('The Agent will send you the withdrawal amount (minus the commission) via your preferred payment method.') %]</li>
-                </ul>
-            </div>
-
-            <p class="comment">[% l('<strong>IMPORTANT DISCLAIMER</strong> - [_1] is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and Payment Agents.', website_name) %]</p>
-        </div>
-
+<div id="paymentagent_withdrawal">
+    <div id="viewError" class="viewItem invisible">
+        <p id="custom-error" class="notice-msg center-text invisible"></p>
+        <p id="withdrawal-locked-error" class="notice-msg center-text invisible">
+            [% l('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', '<a href="mailto:support@binary.com">support@binary.com</a>') %]
+        </p>
     </div>
 
+    <div id="viewSuccess" class="viewItem invisible">
+        <p id="successMessage"></p>
+        <p>
+            <a class="button" href="[% request.url_for('/user/statementws') %]">
+                <span class="button">[% l('View your statement') %]</span>
+            </a>
+        </p>
+    </div>
+
+    <form id="viewConfirm" class="viewItem invisible">
+        <p>[% l('Please confirm the transaction details in order to complete the transfer:') %]</p>
+
+        <p>[% l('Transfer to') %]: <span id="lblAgentName"></span><br />[% l('Amount') %]: <span id="lblCurrency"></span> <span id="lblAmount"></span></p>
+
+        [% INCLUDE submit_button custom_btn_id='btnBack' custom_btn_href='javascript:;' custom_btn_text=l('Back')
+            type='submit' text=l('Confirm') %]
+    </form>
+
+    <div id="viewForm" class="viewItem invisible">
+        <p>[% l('Please provide us with the following information, after retrieving the verification token from your email:') %]</p>
+
+        <form class="form rbox gr-padding-10" id="frmWithdrawal">
+            [% WRAPPER fieldset %]
+                [% PROCESS verification_code %]
+                [% INCLUDE form_row label=l('Transfer to Payment Agent') id='ddlAgents' type='select' %]
+                [% INCLUDE form_row label=l('Amount') id='txtAmount' type='text' input_prefix='USD '
+                    hint=l('Min: 10 Max: 2000') %]
+                [% WRAPPER form_row label=l('Further Instructions') id='txtDescription' type='custom' %]
+                    <textarea id="txtDescription" row="6" cols="60" maxlength="300"></textarea>
+                [% END %]
+                [% INCLUDE submit_button msg_id='formMessage' type='submit' text=l('Submit') %]
+            [% END %]
+        </form>
+
+        <div id="paymentagent_withdrawal_notes">
+            <div>[% l('Notes:') %]</div>
+            <ul>
+                <li>[% l('[_1] does not charge any transfer fees.', website_name) %]</li>
+                <li>[% l('In the \'Further Instructions\' field please specify the payment method and account number to which the Agent will send the funds to.') +%] [%+ l('Please make sure that you first agree with the Agent on the terms of payment before submitting your request.') %]</li>
+                <li>[% l('Once you click the \'Submit\' button the funds will be withdrawn from your account and will be sent to the Payment Agent you have chosen.') %]</li>
+                <li>[% l('The Agent will send you the withdrawal amount (minus the commission) via your preferred payment method.') %]</li>
+            </ul>
+        </div>
+
+        <p class="comment"><strong>[% l('IMPORTANT DISCLAIMER') %]</strong> - [% l('[_1] is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and Payment Agents.', website_name) %]</p>
+    </div>
 </div>
+

@@ -1,0 +1,18 @@
+<div class="gr-3 gr-hide-m">
+    <div class="sidebar-right">
+        <div class="client_logged_out invisible fill-bg-color">
+            <p>
+                <a href="[% request.url_for('/') %]">[% l('Try it now') %]</a>
+                <br>
+                [% l('No risk, $10K virtual money account') %]
+            </p>
+        </div>
+        <div class="fill-bg-color">
+            <p>
+                [% l('Want to learn more?') %]
+                <br>
+                <a href="[% request.url_for('/tour' _  (is_jp ? '-jp' : '')) %]">[% l('View the Tour') %]</a>
+            </p>
+        </div>
+    </div>
+</div>

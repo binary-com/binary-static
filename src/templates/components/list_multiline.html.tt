@@ -1,0 +1,18 @@
+[% BLOCK list_multiline %]
+<ol>
+    [% FOREACH item IN items %]
+        <li>
+            <strong>[% item.header %]</strong>
+            [% IF item.ul %]<ul class="[% item.ul_class %]">[% END %]
+            [% FOREACH p IN item.texts %]
+                [% IF p.li %]
+                    <li[% IF item.li_class %] class="[% item.li_class %]"[% END %]>[% p.li %]</li>
+                [% ELSE %]
+                    <p>[% p.text %]</p>
+                [% END %]
+            [% END %]
+            [% IF item.ul %]</ul>[% END %]
+        </li>
+    [% END %]
+</ol>
+[% END %]

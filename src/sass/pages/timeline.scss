@@ -42,7 +42,7 @@ $grow-effect-duration: 0.4s;
         }
         & + .event {
             @media all and (min-width: $width-break-point) {
-                margin-top: -20px;
+                margin-top: -5px;
             }
         }
         &:hover {

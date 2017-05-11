@@ -1,69 +1,64 @@
+[% BLOCK li_p %]
+<li class="gr-padding-10">
+    <strong>[% header %]</strong>
+    [% FOREACH p IN paragraphs %]
+        <p>[% p %]</p>
+    [% END %]
+    [% content %]
+</li>
+[% END %]
+
+
 <div id="affiliate-tnc-jp" class="gr-12 gr-padding-30 gr-no-gutter">
     <h2>[% l('{JAPAN ONLY} Affiliate Program Terms & Conditions') %]</h2>
 
     <ol>
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 1 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 2') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 2 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 3') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 3 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 2') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 3') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 4') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 2') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 3') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 4') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 5') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 6') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 7') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 8') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 9') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 10') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 5 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 2') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 3') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 4') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 5') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 6') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 7') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 6 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 2') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 3') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 7 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 2') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 8 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 1') %]</p>
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 1 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 2')
+        ] %]
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 2 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 3')
+        ] %]
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 3 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 2')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 3')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 4')
+        ] %]
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 4 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 2')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 3')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 4')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 5')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 6')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 7')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 8')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 9')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 10')
+        ] %]
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 5 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 2')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 3')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 4')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 5')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 6')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 7')
+        ] %]
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 6 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 2')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 3')
+        ] %]
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 7 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 2')
+        ] %]
+        [% WRAPPER li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 8 Title') paragraphs=[l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 1')] %]
             <ul class="gr-padding-10">
                 <li>[% l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 2') %]</li>
                 <li>[% l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 3') %]</li>
@@ -92,33 +87,26 @@
             <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 4') %]</p>
             <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 5') %]</p>
             <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 6') %]</p>
-        </li>
-
-        <li class="gr-padidng-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 9 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 2') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 3') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 10 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 2') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 11 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 2') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 12 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 2') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 3') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 1') %]</p>
+        [% END %]
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 9 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 2')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 3')
+        ] %]
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 10 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 2')
+        ] %]
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 11 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 2')
+        ] %]
+        [% WRAPPER li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 12 Title') paragraphs=[
+                l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 1')
+                l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 2')
+                l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 3')
+                l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 1')
+            ] %]
             <ul>
                 <li>[% l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 2') %]</li>
                 <li>[% l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 3') %]</li>
@@ -126,11 +114,8 @@
                 <li>[% l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 5') %]</li>
             </ul>
             <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 5') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 13 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1') %]</p>
+        [% END %]
+        [% WRAPPER li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 13 Title') paragraphs=[l('{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1')] %]
             <ul>
                 <li>[% l('{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 1') %]</li>
                 <li>[% l('{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 2') %]</li>
@@ -160,17 +145,15 @@
                 <li>[% l('{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 5') %]</li>
             </ul>
             <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 4') %]</p>
-        </li>
-
-        <li class="gr-padding-10">
-            <strong>[% l('{JAPAN ONLY} Affiliate Program T&C Section 14 Title') %]</strong>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 1') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 2') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 3') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 4') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 5') %]</p>
-            <p>[% l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 6') %]</p>
-        </li>
+        [% END %]
+        [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 14 Title') paragraphs=[
+            l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 2')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 3')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 4')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 5')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 6')
+        ] %]
     </ol>
 
     <span style="float: right">[% l('{JAPAN ONLY} Affiliate Program T&C Section Version Update') %]</span>

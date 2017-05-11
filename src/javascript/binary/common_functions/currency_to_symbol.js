@@ -1,13 +1,14 @@
 const jpClient    = require('./country_base').jpClient;
-const addComma    = require('./string_util').addComma;
 const getLanguage = require('../base/language').get;
 
-const formatMoney = (currency_value, amount) => {
+const formatMoney = (currency_value, amount, exclude_currency) => {
+    const is_bitcoin = /xbt/i.test(currency_value);
+    const decimal_places = is_bitcoin ? 6 : 2;
     let money;
     if (amount) amount = String(amount).replace(/,/g, '');
-    if (typeof Intl !== 'undefined' && currency_value && amount) {
-        const options = { style: 'currency', currency: currency_value };
-        const language = typeof window !== 'undefined' ? getLanguage().toLowerCase() : 'en';
+    if (typeof Intl !== 'undefined' && currency_value && !is_bitcoin && amount) {
+        const options = exclude_currency ? { minimumFractionDigits: decimal_places, maximumFractionDigits: decimal_places } : { style: 'currency', currency: currency_value };
+        const language = getLanguage().toLowerCase();
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
     } else {
         let updated_amount,
@@ -18,14 +19,24 @@ const formatMoney = (currency_value, amount) => {
                 sign = '-';
             }
         } else {
-            updated_amount = parseFloat(amount).toFixed(2);
+            updated_amount = parseFloat(amount).toFixed(decimal_places);
         }
-        updated_amount = addComma(updated_amount);
-        const symbol = map_currency[currency_value];
-
-        money = symbol ? sign + symbol + updated_amount : `${currency_value} ${updated_amount}`;
+        updated_amount = addComma(updated_amount, decimal_places);
+        if (exclude_currency) {
+            money = updated_amount;
+        } else {
+            const symbol = map_currency[currency_value];
+            money = symbol ? sign + symbol + updated_amount : `${currency_value} ${updated_amount}`;
+        }
     }
     return money;
+};
+
+const addComma = (num, decimal_points) => {
+    const number = String(num || 0).replace(/,/g, '') * 1;
+    return number.toFixed(decimal_points || 2).toString().replace(/(^|[^\w.])(\d{4,})/g, ($0, $1, $2) => (
+        $1 + $2.replace(/\d(?=(?:\d\d\d)+(?!\d))/g, '$&,')
+    ));
 };
 
 // Taken with modifications from:
@@ -37,6 +48,7 @@ const map_currency = {
     AUD: 'A$',
     EUR: '€',
     JPY: '¥',
+    XBT: '₿',
 };
 
 module.exports = {

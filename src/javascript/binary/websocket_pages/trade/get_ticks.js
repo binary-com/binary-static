@@ -11,6 +11,7 @@ const getActiveTab_Beta    = require('./get_active_tab').getActiveTab_Beta;
 const Purchase             = require('./purchase');
 const Tick                 = require('./tick');
 const TickDisplay          = require('./tick_trade');
+const BinarySocket         = require('../socket');
 const State                = require('../../base/storage').State;
 
 const GetTicks = (() => {
@@ -21,8 +22,10 @@ const GetTicks = (() => {
         if (underlying && req && callback && (underlying !== req.ticks_history || !req.subscribe)) {
             BinarySocket.send(req, { callback: callback });
         } else {
-            BinarySocket.send({ forget_all: 'ticks' });
-            BinarySocket.send({ forget_all: 'candles' });
+            if (!req || req.subscribe) {
+                BinarySocket.send({ forget_all: 'ticks' });
+                BinarySocket.send({ forget_all: 'candles' });
+            }
             BinarySocket.send(req || {
                 ticks_history: symbol,
                 style        : 'ticks',

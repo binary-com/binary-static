@@ -1,5 +1,6 @@
 const MBDefaults       = require('../../mb_trade/mb_defaults');
 const Defaults         = require('../../trade/defaults');
+const BinarySocket     = require('../../socket');
 const State            = require('../../../base/storage').State;
 const getHighestZIndex = require('../../../base/utility').getHighestZIndex;
 
@@ -168,14 +169,18 @@ const ViewPopupUI = (() => {
         if (!stream_ids && !underlying) {
             stream_ids = [];
         }
-        if (!chart_stream_ids && underlying) {
+        if (!chart_stream_ids) {
             chart_stream_ids = [];
+        }
+        if (underlying) {
             chart_underlying = underlying;
         }
-        if (!underlying && id && id.length > 0 && $.inArray(id, stream_ids) < 0) {
-            stream_ids.push(id);
-        } else if (underlying && id && id.length > 0 && $.inArray(id, chart_stream_ids) < 0) {
-            chart_stream_ids.push(id);
+        if (id && id.length > 0) {
+            if (!underlying && $.inArray(id, stream_ids) < 0) {
+                stream_ids.push(id);
+            } else if (underlying && $.inArray(id, chart_stream_ids) < 0) {
+                chart_stream_ids.push(id);
+            }
         }
     };
 

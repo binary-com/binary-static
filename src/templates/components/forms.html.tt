@@ -1,0 +1,72 @@
+[% BLOCK fieldset %]
+    <fieldset[% IF id %] id="[% id %]"[% END %][% IF class %] class="[% class %]"[% END %]>
+        [% IF legend %]<legend>[% legend %]</legend>[% END %]
+        [% content %]
+    </fieldset>
+[% END %]
+
+[% BLOCK form_row %]
+    [% IF type=='checkbox' and !spaced -%]
+    <div class="gr-row">
+        <div class="gr-12-m gr-padding-20 gr-centered">
+            <input id="[% id %]" type="checkbox" />
+            <label for="[% id %]">[% label %]</label>
+        </div>
+    </div>
+    [% ELSE -%]
+    <div class="gr-row form-row center-text-m [% row_class %]"[% IF row_id %] id="[% row_id %]"[% END %]>
+        <div class="gr-4 gr-12-m"[% IF label_row_id %] id="[% label_row_id %]"[% END %]>
+            <label[% IF type!='label' %] for="[% id %]"[% END %]>
+                [% label %]
+            </label>
+        </div>
+        <div class="gr-8 gr-12-m">
+            [% SWITCH type -%]
+                [%- CASE 'select' -%]
+                    <select id="[% id %]" class="form_input [% class %]" [% attributes %]>
+                        [%= content -%]
+                    </select>
+                [%- CASE ['text', 'password', 'number', 'checkbox'] -%]
+                    [% input_prefix %]<input type="[% type %]" id="[% id %]"[% IF type=='password' %] maxlength="25"[% END %] [% attributes %] />
+                [%- CASE 'label' -%]
+                    <span class="text-display">
+                        [% IF is_bold -%]
+                            <strong id="[% id %]" [% attributes %]></strong>
+                        [% ELSE -%]
+                            <span id="[% id %]" [% attributes %]></span>
+                        [%- END %]
+                    </span>
+                [%- CASE 'custom' -%]
+                    [% content %]
+            [%- END %]
+            [% IF hint %]<div class="hint">[% hint %]</div>[% END %]
+        </div>
+    </div>
+    [%- END %]
+[% END %]
+
+[% BLOCK submit_button %]
+    [% UNLESS no_wrapper %]
+    <div class="[% is_centered ? 'center-text' : 'gr-row' %] [% class %]"[% IF id %] id="[% id %]"[% END %]>
+        [% IF not is_centered -%]
+        <div class="gr-8 gr-push-4 gr-12-m gr-push-0-m center-text-m">
+        [% END -%]
+    [% END %]
+        [% UNLESS no_error %]
+        <div id="[% msg_id || 'msg_form' %]" class="error-msg invisible"></div>
+        [% END %]
+        [% IF custom_btn_text %]
+            <a class="button" href="[% custom_btn_href %]" id="[% custom_btn_id %]">
+                <span class="button">[% custom_btn_text %]</span>
+            </a>
+        [% END %]
+        <div class="gr-padding-10">
+            <button id="[% id || 'btn_submit' %]"[% IF type=='submit' %] type="submit"[% END %]>[% text %]</button>
+        </div>
+    [% UNLESS no_wrapper %]
+        [% IF not is_centered -%]
+        </div>
+        [% END -%]
+    </div>
+    [% END %]
+[% END %]

@@ -1,231 +1,113 @@
-<div class="container">
-  <div class="why-us static_full gr-row">
-    <div class="gr-3 gr-hide-m sidebar-container">
-      <div class="sidebar">
-        <ul id="sidebar-nav">
-          <li class="selected" id="sidebar-link-section-1">
-            <a href="#section-one">
-              [% l("Sharp prices") %]
-            </a>
-          </li>
-          <li id="sidebar-link-section-2">
-            <a href="#section-two">
-              [% l("Flexible trades") %]
-            </a>
-          </li>
-          <li id="sidebar-link-section-3">
-            <a href="#section-three">
-              [% l("Controlled risk") %]
-            </a>
-          </li>
-          <li id="sidebar-link-section-4">
-            <a href="#section-four">
-              [% l("{JAPAN ONLY}Your Funds") %]
-            </a>
-          </li>
-          <li id="sidebar-link-section-5">
-            <a href="#section-five">
-              [% l("Trust") %]
-            </a>
-          </li>
-        </ul>
-        <div class="center-text gr-padding-10 client_logged_out">
-          <a class="button" href="[% request.url_for('/') %]">
-            <span>[% l("Open a free account") %]</span>
-          </a>
-        </div>
-      </div>
+[% PROCESS components/elements.html.tt %]
+
+[% BLOCK section %]
+<div class="section">
+    <a id="[% id %]"></a>
+    <div class="section-content">
+        <h1>[% header %]</h1>
+        [% content %]
     </div>
-    <div class="gr-9 gr-12-m gr-parent">
-      <div class="section">
-        <a id="section-one"></a>
-        <div class="section-content">
-          <div id="section-1">
-            <div class="gr-12">
-              <h1>
-                [% l("Why pay more?") %]
-              </h1>
-              <p>
-                [% l("[_1]'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.", website_name) %]
-              </p>
-            </div>
-            <div class="gr-row">
-                <div class="gr-7 gr-12-m">
-                  <ul class="checked">
-                    <li>
-                      [% l("{JAPAN ONLY}We offer real time prices calculated from the same rates that bank and securities companies use.") %]
-                    </li>
-                    <li>
-                      [% l("{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options.") %]
-                    </li>
-                    <li>
-                      [% l("{JAPAN ONLY}We offer trading periods from as short as 2 hours to as long as one-year, in predefined contract series.") %]
-                    </li>
-                    <li>
-                      [% l("{JAPAN ONLY}We offer transparent 2-way pricing, allowing equal chance to trade in either direction of the market.") %]
-                    </li>
-                    <li>
-                      [% l("{JAPAN ONLY}We will pass on any possible price improvements for orders in fast moving markets.") %]
-                    </li>
-                  </ul>
+</div>
+[% END %]
+
+<div class="container">
+    <div class="why-us static_full gr-row">
+        <div class="gr-3 gr-hide-m sidebar-container">
+            <div class="sidebar">
+                [% INCLUDE list id='sidebar-nav' items=[
+                    { id='sidebar-link-section-1', href='#section-one',   text=l("Sharp prices"), class='selected'},
+                    { id='sidebar-link-section-2', href='#section-two',   text=l("Flexible trades") },
+                    { id='sidebar-link-section-3', href='#section-three', text=l("Controlled risk") },
+                    { id='sidebar-link-section-4', href='#section-four',  text=l("{JAPAN ONLY}Your Funds") },
+                    { id='sidebar-link-section-5', href='#section-five',  text=l("Trust") },
+                ] %]
+                <div class="center-text gr-padding-10 client_logged_out">
+                    <a class="button" href="[% request.url_for('/') %]">
+                        <span>[% l("Open a free account") %]</span>
+                    </a>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="section">
-        <a id="section-two"></a>
-        <div class="section-content">
-          <div id="section-2">
-            <div class="gr-12">
-              <h1>
-                [% l("Trade your way") %]
-              </h1>
-              <p>
-                [% l("Our trading screen is simple to use:") %]
+        <div class="gr-9 gr-12-m gr-parent">
+            [% WRAPPER section id='section-one' header=l("Why pay more?") %]
+                <p>[% l("[_1]'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.", website_name) %]</p>
+                <ul class="checked">
+                    <li>[% l("{JAPAN ONLY}We offer real time prices calculated from the same rates that bank and securities companies use.") %]</li>
+                    <li>[% l("{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options.") %]</li>
+                    <li>[% l("{JAPAN ONLY}We offer trading periods from as short as 2 hours to as long as one-year, in predefined contract series.") %]</li>
+                    <li>[% l("{JAPAN ONLY}We offer transparent 2-way pricing, allowing equal chance to trade in either direction of the market.") %]</li>
+                    <li>[% l("{JAPAN ONLY}We will pass on any possible price improvements for orders in fast moving markets.") %]</li>
+                </ul>
+            [% END %]
+            [% WRAPPER section id='section-two' header=l("Trade your way") %]
+                <p>[% l("[_1]'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.", website_name) %]</p>
+                <ul class="checked">
+                    <li>[% l("{JAPAN ONLY}We offer real time prices calculated from the same rates that bank and securities companies use.") %]</li>
+                    <li>[% l("{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options.") %]</li>
+                    <li>[% l("{JAPAN ONLY}We offer trading periods from as short as 2 hours to as long as one-year, in predefined contract series.") %]</li>
+                    <li>[% l("{JAPAN ONLY}We offer transparent 2-way pricing, allowing equal chance to trade in either direction of the market.") %]</li>
+                    <li>[% l("{JAPAN ONLY}We will pass on any possible price improvements for orders in fast moving markets.") %]</li>
+                </ul>
+                <p>[% l("Our trading screen is simple to use:") %]</p>
                 <ol class="split start">
-                    <li>
-                        [% l("{JAPAN ONLY}Select an FX rate") %]
-                    </li>
-                    <li>
-                        [% l("{JAPAN ONLY}Select an option type") %]
-                    </li>
-                    <li>
-                        [% l("{JAPAN ONLY}Select a trading period") %]
-                    </li>
-                    <li>
-                        [% l("{JAPAN ONLY}Select payout size") %]
-                    </li>
+                    <li>[% l("{JAPAN ONLY}Select an FX rate") %]</li>
+                    <li>[% l("{JAPAN ONLY}Select an option type") %]</li>
+                    <li>[% l("{JAPAN ONLY}Select a trading period") %]</li>
+                    <li>[% l("{JAPAN ONLY}Select payout size") %]</li>
                 </ol>
                 <div class="gr-padding-10">
-                    <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/trade_form.png') %]" />
+                    <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/trade_form.png') %]"/>
                 </div>
                 <ol class="split">
-                    <li>
-                        [% l("{JAPAN ONLY}Choose direction of the market and the exercise price you wish to target, and hit the green buy button to instantly trade") %]
-                    </li>
+                    <li>[% l("{JAPAN ONLY}Choose direction of the market and the exercise price you wish to target, and hit the green buy button to instantly trade") %]</li>
                 </ol>
-              </p>
-            </div>
-            <div class="gr-12">
-                <p>
-                    [% l("{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button.") %]
-                </p>
-            </div>
-            <div class="gr-12">
-              <p>
-                  [% l("{JAPAN ONLY}Track your trade in real time:") %]
-              </p>
-              <div class="gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/track_trade.png') %]" />
-              </div>
-              <ul class="checked">
-                  <li>
-                      [% l("{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers") %]
-                  </li>
-                  <li>
-                      [% l("{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time") %]
-                  </li>
-              </ul>
-            </div>
-          </div>
+                <p>[% l("{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button.") %]</p>
+                <p>[% l("{JAPAN ONLY}Track your trade in real time:") %]</p>
+                <div class="gr-padding-10">
+                    <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/track_trade.png') %]"/>
+                </div>
+                <ul class="checked">
+                    <li>[% l("{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers") %]</li>
+                    <li>[% l("{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time") %]</li>
+                </ul>
+            [% END %]
+            [% WRAPPER section id='section-three' header=l("You won't lose your shirt") %]
+                <ul class="checked">
+                    <li>[% l("{JAPAN ONLY}You set your own personal daily loss limit") %]</li>
+                    <li>[% l("{JAPAN ONLY}You can protect your account value further by setting other limits to encourage trading discipline") %]</li>
+                    <li>[% l("{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid") %]</li>
+                    <li>[% l("{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk") %]</li>
+                    <li>[% l("{JAPAN ONLY}You can sell-back your position at any time until 2 minutes before expiry to either cut your losses, or take your profits early") %]</li>
+                    <li>[% l("{JAPAN ONLY}You can see the real-time value of your portfolio and access the trade view and analysis screen from which you can then choose to close the position:") %]</li>
+                </ul>
+                <div class="gr-padding-10">
+                    <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/portfolio.png') %]"/>
+                </div>
+            [% END %]
+            [% WRAPPER section id='section-four' header=l("{JAPAN ONLY}Your funds are safe") %]
+                <p>[% l("{JAPAN ONLY}[_1] is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital.", website_name) %]</p>
+                <p>[% l("{JAPAN ONLY}Matters to attend:") %]</p>
+                <ul>
+                    <li>[% l("{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately") %]</li>
+                    <li>[% l("{JAPAN ONLY}Segregate all customers' money to a trust account") %]</li>
+                    <li>[% l("{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd") %]</li>
+                    <li>[% l("{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)") %]</li>
+                    <li>[% l("{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day") %]</li>
+                    <li>[% l("{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly") %]</li>
+                </ul>
+                <div class="gr-padding-10">
+                    <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/fund_safe.svg') %]"/>
+                </div>
+            [% END %]
+            [% WRAPPER section id='section-five' header=l("Our track-record") %]
+                <p>[% l("{JAPAN ONLY}[_1] was one of the first active Binary Options brokers and has a proven track record of delivering first class service and maintaining an award winning trading platform, while delivering strong financial performance to our shareholders, for more than 15 years worldwide.", website_name) %]</p>
+                <p>[% l("{JAPAN ONLY}We pride ourselves on our responsible trading and high ethical standards, and we only offer our service in jurisdictions where we hold the necessary licenses and legal registrations.") %]</p>
+                <p>[% l("{JAPAN ONLY}As well as our Japanese financial licence, we also operate in European jurisdictions with our Malta Financial Services Type 3 Licence, and under various gaming licences around the world.") %]</p>
+                <div class="hint">
+                    <p>[% l("{JAPAN ONLY}Please note:") %]</p>
+                    <p>[% l("{JAPAN ONLY}If the market price has changed significantly it may not be possible to execute a trade at a delayed price displayed in a customer's browser. Alternatively you may pay a lower price for the option if the price has moved quickly in that direction. Please see our summary of specifications document for full details of our 'slippage' rules.") %]</p>
+                </div>
+            [% END %]
         </div>
-      </div>
-      <div class="section">
-        <a id="section-three"></a>
-        <div class="section-content">
-          <div id="section-3">
-            <div class="gr-12 gr-padding-10">
-              <h1>
-                [% l("You won't lose your shirt") %]
-              </h1>
-            </div>
-            <div class="gr-12">
-              <ul class="checked">
-                <li>
-                  [% l("{JAPAN ONLY}You set your own personal daily loss limit") %]
-                </li>
-                <li>
-                  [% l("{JAPAN ONLY}You can protect your account value further by setting other limits to encourage trading discipline") %]
-                </li>
-                <li>
-                  [% l("{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid") %]
-                </li>
-                <li>
-                  [% l("{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk") %]
-                </li>
-                <li>
-                  [% l("{JAPAN ONLY}You can sell-back your position at any time until 2 minutes before expiry to either cut your losses, or take your profits early") %]
-                </li>
-                <li>
-                  [% l("{JAPAN ONLY}You can see the real-time value of your portfolio and access the trade view and analysis screen from which you can then choose to close the position:") %]
-                </li>
-              </ul>
-              <div class="gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/portfolio.png') %]" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <a id="section-four"></a>
-        <div class="section-content">
-          <div id="section-4">
-            <div class="gr-12">
-              <h1>
-                [% l("{JAPAN ONLY}Your funds are safe") %]
-              </h1>
-              <p>
-                [% l("{JAPAN ONLY}[_1] is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital.", website_name) %]
-              </p>
-              <p>
-                  [% l("{JAPAN ONLY}Matters to attend:") %]
-                  <ul>
-                      <li>[% l("{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately") %]</li>
-                      <li>[% l("{JAPAN ONLY}Segregate all customers' money to a trust account") %]</li>
-                      <li>[% l("{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd") %]</li>
-                      <li>[% l("{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)") %]</li>
-                      <li>[% l("{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day") %]</li>
-                      <li>[% l("{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly") %]</li>
-                  </ul>
-              </p>
-              <div class="gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/fund_safe.svg') %]" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <a id="section-five"></a>
-        <div class="section-content">
-          <div id="section-5">
-            <div class="gr-12">
-              <h1>
-                [% l("Our track-record") %]
-              </h1>
-              <p>
-                [% l("{JAPAN ONLY}[_1] was one of the first active Binary Options brokers and has a proven track record of delivering first class service and maintaining an award winning trading platform, while delivering strong financial performance to our shareholders, for more than 15 years worldwide.", website_name) %]
-              </p>
-              <p>
-                  [% l("{JAPAN ONLY}We pride ourselves on our responsible trading and high ethical standards, and we only offer our service in jurisdictions where we hold the necessary licenses and legal registrations.") %]
-              </p>
-              <p>
-                  [% l("{JAPAN ONLY}As well as our Japanese financial licence, we also operate in European jurisdictions with our Malta Financial Services Type 3 Licence, and under various gaming licences around the world.") %]
-              </p>
-              <div class="hint">
-                  <p>
-                      [% l("{JAPAN ONLY}Please note:") %]
-                  </p>
-                  <p>
-                      [% l("{JAPAN ONLY}If the market price has changed significantly it may not be possible to execute a trade at a delayed price displayed in a customer's browser. Alternatively you may pay a lower price for the option if the price has moved quickly in that direction. Please see our summary of specifications document for full details of our 'slippage' rules.") %]
-                  </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </div>

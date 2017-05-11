@@ -1,31 +1,15 @@
+[% BLOCK table_row %]
+    <div class="gr-row gr-padding-10 [% IF header %]table-header[% ELSE %]table-body table-body-lines[% END %]">
+        <div class="gr-2 center-text">[% text_1 %]</div>
+        <div class="gr-6">[% text_2 %]</div>
+        <div class="gr-4">[% text_3 %]</div>
+    </div>
+[% END %]
+
 <div class="gr-parent gr-6 gr-12-m gr-centered">
-    <div class="gr-row gr-padding-10 table-header">
-        <div class="gr-2 center-text">[% l('Tier') %]</div>
-        <div class="gr-6">[% l('Total Net Revenue Per Month') %]</div>
-        <div class="gr-4">[% l('Commission Rates') %]</div>
-    </div>
-
-    <div class="gr-row gr-padding-10 table-body table-body-lines">
-        <div class="gr-2 center-text">1</div>
-        <div class="gr-6">0 - $10,000</div>
-        <div class="gr-4 center-text">20 %</div>
-    </div>
-
-    <div class="gr-row gr-padding-10 table-body table-body-lines">
-        <div class="gr-2 center-text">2</div>
-        <div class="gr-6">$10,001 - $50,000</div>
-        <div class="gr-4 center-text">25 %</div>
-    </div>
-
-    <div class="gr-row gr-padding-10 table-body table-body-lines">
-        <div class="gr-2 center-text">3</div>
-        <div class="gr-6">$50,001 - $100,000</div>
-        <div class="gr-4 center-text">30 %</div>
-    </div>
-
-    <div class="gr-row gr-padding-10 table-body table-body-lines">
-        <div class="gr-2 center-text">4</div>
-        <div class="gr-6">$100,001 +</div>
-        <div class="gr-4 center-text">35 %</div>
-    </div>
+    [% INCLUDE table_row header=1 text_1=l('Tier') text_2=l('Total Net Revenue Per Month') text_3=l('Commission Rates') %]
+    [% INCLUDE table_row text_1='1' text_2='0 - $10,000'        text_3='20 %' %]
+    [% INCLUDE table_row text_1='2' text_2='$10,001 - $50,000'  text_3='25 %' %]
+    [% INCLUDE table_row text_1='3' text_2='$50,001 - $100,000' text_3='30 %' %]
+    [% INCLUDE table_row text_1='4' text_2='$100,001 +'         text_3='35 %' %]
 </div>

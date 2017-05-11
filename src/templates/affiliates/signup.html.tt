@@ -1,4 +1,4 @@
-<div class="gr-12 static_full">
+<div class="static_full">
 <h1>[% l('Affiliate') %]</h1>
 
 <div class="content-tab-container gr-padding-10">
@@ -13,10 +13,10 @@
     <div class="tab-content container">
         <div class="tab-content-wrapper">
             <div id="general_info-content" class="toggle-content">
-                [% INCLUDE affiliates/main.html.tt %]
+                [% PROCESS affiliates/main.html.tt %]
             </div>
             <div id="faq-content" class="toggle-content invisible">
-                [% INCLUDE affiliates/faq.html.tt %]
+                [% PROCESS affiliates/faq.html.tt %]
             </div>
         </div>
     </div>

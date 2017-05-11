@@ -118,13 +118,11 @@ CookieStorage.prototype = {
 let SessionStore,
     LocalStore;
 
-if (typeof window !== 'undefined') {
-    if (isStorageSupported(window.localStorage)) {
-        LocalStore = new Store(window.localStorage);
-    }
-    if (isStorageSupported(window.sessionStorage)) {
-        SessionStore = new Store(window.sessionStorage);
-    }
+if (isStorageSupported(window.localStorage)) {
+    LocalStore = new Store(window.localStorage);
+}
+if (isStorageSupported(window.sessionStorage)) {
+    SessionStore = new Store(window.sessionStorage);
 }
 
 if (!LocalStore) {

@@ -1,3 +1,5 @@
+[% PROCESS components/forms.html.tt %]
+
 [% BLOCK experience %]
     <option value="">[% l("Please select") %]</option>
     <option value="0-1 year">[% l("0-1 year") %]</option>
@@ -13,7 +15,7 @@
 [% END %]
 
 [% BLOCK select_row %]
-    [% WRAPPER components/forms/form_row.html.tt id=id label=label type='select' %]
+    [% WRAPPER form_row id=id label=label type='select' %]
         [% PROCESS $con %]
     [% END %]
 [% END %]
@@ -27,7 +29,7 @@
     <option value="Over \$500,000">[% l("Over \$500,001") %]</option>
 [% END %]
 
-[% WRAPPER components/forms/fieldset.html.tt legend=l("Financial Information") %]
+[% WRAPPER fieldset legend=l("Financial Information") %]
     [% INCLUDE select_row con='experience' id='forex_trading_experience' label=l("Forex trading experience") %]
 
     [% INCLUDE select_row con='frequency' id='forex_trading_frequency' label=l("Forex trading frequency") %]
@@ -52,7 +54,7 @@
 
     [% INCLUDE select_row con='frequency' id='other_instruments_trading_frequency' label=l("Other financial instruments trading frequency") %]
 
-    [% WRAPPER components/forms/form_row.html.tt id='employment_industry' label=l("Industry of Employment") type='select' %]
+    [% WRAPPER form_row id='employment_industry' label=l("Industry of Employment") type='select' %]
         <option value="">[% l("Please select") %]</option>
         <option value="Construction">[% l("Construction") %]</option>
         <option value="Education">[% l("Education") %]</option>
@@ -62,7 +64,7 @@
         <option value="Other">[% l("Other") %]</option>
     [% END %]
 
-    [% WRAPPER components/forms/form_row.html.tt id='occupation' label=l("Occupation") type='select' %]
+    [% WRAPPER form_row id='occupation' label=l("Occupation") type='select' %]
         <option value="">[% l('Please select') %]</option>
         <option value="Chief Executives, Senior Officials and Legislators">[% l('Chief Executives, Senior Officials and Legislators') %]</option>
         <option value="Managers">[% l('Managers') %]</option>
@@ -79,14 +81,14 @@
         <option value="Others">[% l('Others') %]</option>
     [% END %]
 
-    [% WRAPPER components/forms/form_row.html.tt id='education_level' label=l("Level of Education") type='select' %]
+    [% WRAPPER form_row id='education_level' label=l("Level of Education") type='select' %]
         <option value="">[% l("Please select") %]</option>
         <option value="Primary">[% l("Primary") %]</option>
         <option value="Secondary">[% l("Secondary") %]</option>
         <option value="Tertiary">[% l("Tertiary") %]</option>
     [% END %]
 
-    [% WRAPPER components/forms/form_row.html.tt id='income_source' label=l("Income Source") type='select' %]
+    [% WRAPPER form_row id='income_source' label=l("Income Source") type='select' %]
         <option value="">[% l("Please select") %]</option>
         <option value="Salaried Employee">[% l("Salaried Employee") %]</option>
         <option value="Self-Employed">[% l("Self-Employed") %]</option>
@@ -95,11 +97,11 @@
         <option value="Other">[% l("Other") %]</option>
     [% END %]
 
-    [% WRAPPER components/forms/form_row.html.tt id='net_income' label=l("Net Annual Income") type='select' %]
+    [% WRAPPER form_row id='net_income' label=l("Net Annual Income") type='select' %]
         [% INCLUDE values %]
     [% END %]
 
-    [% WRAPPER components/forms/form_row.html.tt id='estimated_worth' label=l("Estimated Net Worth") type='select' %]
+    [% WRAPPER form_row id='estimated_worth' label=l("Estimated Net Worth") type='select' %]
         <option value="">[% l("Please select") %]</option>
         <option value="Less than \$100,000">[% l("Less than \$100,000") %]</option>
         <option value="\$100,000 - \$250,000">[% l("\$100,000 - \$250,000") %]</option>
@@ -108,7 +110,7 @@
         <option value="Over \$1,000,000">[% l("Over \$1,000,000") %]</option>
     [% END %]
 
-    [% WRAPPER components/forms/form_row.html.tt id='account_turnover' label=l("Anticipated Account Turnover") type='select' %]
+    [% WRAPPER form_row id='account_turnover' label=l("Anticipated Account Turnover") type='select' %]
         [% INCLUDE values %]
     [% END %]
 [% END %]

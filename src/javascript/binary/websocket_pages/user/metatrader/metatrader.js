@@ -1,7 +1,8 @@
-const localize         = require('../../../base/localize').localize;
-const Validation       = require('../../../common_functions/form_validation');
 const MetaTraderConfig = require('./metatrader.config');
 const MetaTraderUI     = require('./metatrader.ui');
+const BinarySocket     = require('../../socket');
+const localize         = require('../../../base/localize').localize;
+const Validation       = require('../../../common_functions/form_validation');
 
 const MetaTrader = (() => {
     'use strict';

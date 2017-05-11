@@ -1,3 +1,16 @@
+[% PROCESS components/forms.html.tt %]
+[% BLOCK row %]
+    <div class="gr-padding-10 gr-row table-body">
+        <div class="gr-1"></div>
+        <div class="gr-2">
+            <span id="loginid_[% id %]"></span>
+        </div>
+        <div class="gr-5">
+            <span id="balance_[% id %]"></span>
+        </div>
+    </div>
+[% END %]
+
 <h1>[% l("Account Transfer") %]</h1>
 
 <div class="invisible" id="client_message">
@@ -12,55 +25,18 @@
 
 <div class="invisible" id="success_form">
     <p>[% l("Your account transfer is successful. Your new balances are:") %]</p>
-    <div class="gr-padding-10 gr-row table-body">
-        <div class="gr-1"></div>
-        <div class="gr-2">
-            <span id="loginid_1"></span>
-        </div>
-        <div class="gr-5">
-            <span id="balance_1"></span>
-        </div>
-    </div>
-
-    <div class="gr-padding-10 gr-row table-body">
-        <div class="gr-1"></div>
-        <div class="gr-2">
-            <span id="loginid_2"></span>
-        </div>
-        <div class="gr-5">
-            <span id="balance_2"></span>
-        </div>
-    </div>
+    [% INCLUDE row id='1' %]
+    [% INCLUDE row id='2' %]
 </div>
 
 <form class="invisible" id="frm_account_transfer">
-    <fieldset>
-        <legend>[% l('Details') %]</legend>
-        <div class="gr-row gr-padding-10">
-            <div class="gr-4 form_label">
-                <label for="transfer">[% l("Transfer") %]</label>
-            </div>
-            <div class="gr-8">
-                <select id="transfer" name="transfer"></select>
-            </div>
-        </div>
+    [% WRAPPER fieldset legend=l('Details') %]
+        [% INCLUDE form_row label=l("Transfer") type='select' id='transfer' %]
+        [% WRAPPER form_row label=l("Amount") type='custom' id='transfer_amount' %]
+            <label id="currency"></label>
+            <input id="amount" name="amount" type="text" maxlength="20" />
+        [% END %]
+    [% END %]
 
-        <div class="gr-row gr-padding-10">
-            <div class="gr-4 form_label">
-                <label for="amount" id="transfer_amount">[% l("Amount") %]</label>
-            </div>
-            <div class="gr-8">
-                <label id="currency"></label>
-                <input id="amount" name="amount" type="text" maxlength="20" />
-            </div>
-        </div>
-    </fieldset>
-
-    <div class="gr-row gr-padding-10">
-        <div class="gr-4"></div>
-        <div class="gr-8">
-            <p class="gr-padding-10 errorfield no-para-margin invisible" id="form_error"></p>
-            <button class="button" type="submit">[% l("Transfer") %]</button>
-        </div>
-    </div>
+    [% INCLUDE submit_button msg_id='form_error' type='submit' text=l("Transfer") %]
 </form>

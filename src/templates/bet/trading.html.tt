@@ -1,0 +1,217 @@
+<div id="trading_socket_container" class="tab-menu-wrap">
+    <div id="notifications_wrapper"></div>
+    <div id="loading_container" class="overlay_container"></div>
+    <div id="guideBtn"></div>
+    <div class="center-text">
+        <a href="https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=trading_page&mt=8" target="_blank" id="appstore"></a>
+        <a href="https://goo.gl/5KmSsU" target="_blank" id="androidApp"></a>
+    </div>
+    <div class="row" id="contract_symbol_container">
+        <div id="contract_markets_container">
+            <select id="contract_markets"></select>
+        </div>
+        <div>
+            <select id="underlying"></select>
+            <span class="unicode-info-icon" id="symbol_tip" target="">&#9432;</span>
+            <label for="spot" id="spot_label">[% l("Spot") %]</label>
+            <span id="spot"></span>
+            <span id="trading_worm_chart"></span>
+        </div>
+        <ul id="market_menu"></ul>
+    </div>
+    <div class="row clear" id="contract_form_content_wrapper">
+        <div class="col row-inner">
+            <div id="contract_market_form_container">
+                <ul class="nav tm-ul follow-default" id="contract_form_name_nav"></ul>
+            </div>
+            <div id="contract_container" class="col row">
+                <div id="loading_container3" class="overlay_container"></div>
+                <div id="contract_form_container" class="col">
+                    <div id="contract_form_content">
+                        <form id='websocket_form'>
+                            <div class="row" id="period_row">
+                                <div class="col form_label">
+                                    <label for="period" id="period_label">[% l("Period") %]</label>
+                                </div>
+                                <div class="big-col">
+                                    <select id="period"></select>
+                                </div>
+                            </div>
+                            <div class="row" id="date_start_row">
+                                <div class="col form_label" id="start_time_label">[% l("Start time") %]</div>
+                                <div class="big-col">
+                                    <select id="date_start"></select>
+                                </div>
+                            </div>
+                            <div class="row" id="expiry_row">
+                                <div class="col form_label">
+                                    <select id="expiry_type"></select>
+                                </div>
+                                <div class="big-col">
+                                    <div id="expiry_type_duration">
+                                        <input id="duration_amount" type="number" class="small_width_input" autocomplete="off" /><label></label>
+                                        <select id="duration_units" class="medium_width_input"></select>
+                                        <span id="duration_tooltip_wrapper">
+                                            <span id="duration_tooltip" data-balloon="[% l('minimum available duration') %]">[% l("min") %]</span>
+                                            <span id="duration_minimum"></span>
+                                            <span id="duration_maximum" class="invisible"></span>
+                                        </span>
+                                    </div>
+                                    <div id="expiry_type_endtime">
+                                        <input id="expiry_date" type="text" readonly="readonly" autocomplete="off" />
+                                        <input id="expiry_time" type="text" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row barrier_class" id="barrier_row">
+                                <div class="col form_label">
+                                    <label for="H" id="barrier_label">
+                                        <span id="barrier_tooltip"  data-balloon="[% l('Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received') %]" data-balloon-length="xlarge">[% l("Barrier offset") %]</span>
+                                        <span id="barrier_span">[% l("Barrier") %]</span>
+                                    </label>
+                                </div>
+                                <div class="big-col">
+                                    <input id="barrier" type="text" name="H" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" autocomplete="off" />
+                                    <span id="indicative_barrier_tooltip" data-balloon="[% l('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.') %]" data-balloon-length="xlarge"></span>
+                                </div>
+                            </div>
+                            <div class="row barrier_class" id="high_barrier_row">
+                                <div class="col form_label">
+                                    <label for="H" id="barrier_high_label">
+                                        <span id="barrier_high_tooltip" data-balloon="[% l('Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received') %]" data-balloon-length="xlarge">[% l("High barrier offset") %]</span>
+                                        <span id="barrier_high_span">[% l("High barrier") %]</span>
+                                    </label>
+                                </div>
+                                <div class="big-col">
+                                    <input id="barrier_high" type="text" name="H" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" autocomplete="off" />
+                                    <span id="indicative_high_barrier_tooltip" data-balloon="[% l('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.') %]" data-balloon-length="xlarge"></span>
+                                </div>
+                            </div>
+                            <div class="row barrier_class" id="low_barrier_row">
+                                <div class="col form_label">
+                                    <label for="L" id="barrier_low_label">
+                                        <span id="barrier_low_tooltip" data-balloon="[% l('Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received') %]" data-balloon-length="xlarge">[% l("Low barrier offset") %]</span>
+                                        <span id="barrier_low_span">[% l("Low barrier") %]</span>
+                                    </label>
+                                </div>
+                                <div class="big-col">
+                                    <input id="barrier_low" type="text" name="L" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" autocomplete="off" />
+                                    <span id="indicative_low_barrier_tooltip" data-balloon="[% l('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.') %]" data-balloon-length="xlarge"></span>
+                                </div>
+                            </div>
+                            <div class="row" id="prediction_row">
+                                <div class="col form_label">
+                                    <label for="prediction" id="prediction_label">[% l("Last Digit Prediction") %]</label>
+                                </div>
+                                <div class="big-col">
+                                    <select id="prediction" class="small_width_input">
+                                        [% FOREACH i IN [0..9] %]
+                                            <option value="[% i %]">[% i %]</option>
+                                        [% END %]
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row" id="payout_row">
+                                <div class="col form_label">
+                                    <select id="amount_type">
+                                        <option value="payout" id="payout_option">[% l("Payout") %]</option>
+                                        <option value="stake" id="stake_option">[% l("Stake") %]</option>
+                                    </select>
+                                </div>
+                                <div class="row-inner big-col">
+                                    <div class="col-inner">
+                                        <select id="currency" class="small_width_input"></select>
+                                        <input id="amount" type="text" step="any" maxlength="10" value="10" class="medium_width_input" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="open_positions_container">[% PROCESS user/portfolio.html.tt %]</div>
+                </div>
+            </div>
+        </div>
+        <div id="contract_prices_container" class="col row-inner">
+            <div id="contract_confirmation_container" class="overlay_container col">
+                <a class="close" id="close_confirmation_container"></a>
+                <div id="confirmation_message_container">
+                    <div id="confirmation_message">
+                        <h3 id="contract_purchase_heading"></h3>
+                        <div id="contract_purchase_descr"></div>
+                        <div class="row" id="contract_purchase_profit_list">
+                            <div class="col" id="contract_purchase_payout"></div>
+                            <div class="col" id="contract_purchase_cost"></div>
+                            <div class="col" id="contract_purchase_profit"></div>
+                        </div>
+                        <div id="contract_purchase_barrier"></div>
+                        <div id="contract_purchase_reference"></div>
+                        <div class="button">
+                            <span id="contract_purchase_button" class="button open_contract_details"></span>
+                        </div>
+                        <div id="contract_purchase_spots"></div>
+                        <div id="tick_chart"></div>
+                        <div id="contract_purchase_balance"></div>
+                    </div>
+                    <div id="confirmation_error"></div>
+                </div>
+                <div id="confirmation_message_endelement"></div>
+            </div>
+            <div class="row-inner" id="contracts_list">
+                <div id="loading_container2" class="overlay_container"></div>
+                <div class="col price_container row-inner" id="price_container_top">
+                    <div class="col gr-row">
+                        <div class="price_wrapper row">
+                            <h4 class="contract_heading"></h4>
+                            <span class="amount_wrapper">
+                                <div class="amount_wrapper_div">
+                                    <div class="stake_wrapper">
+                                        <span class="stake"></span>
+                                        <span class="contract_amount"></span>
+                                    </div>
+                                    <div class="payout_wrapper">
+                                        <span class="payout"></span>
+                                        <span class="contract_payout"></span>
+                                    </div>
+                                </div>
+                                <div class="contract_purchase button">
+                                    <span class="purchase_button contract_description no-underline" id="purchase_button_top" data-balloon-length="xlarge" value="purchase">[% l("Purchase") %]</span>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col price_comment"></div>
+                    <div class="col contract_error"></div>
+                </div>
+                <div class="col price_container row-inner" id="price_container_bottom">
+                    <div class="col gr-row">
+                        <div class="price_wrapper row">
+                            <h4 class="contract_heading"></h4>
+                            <span class="amount_wrapper">
+                                <div class="amount_wrapper_div">
+                                    <div class="stake_wrapper">
+                                        <span class="stake"></span>
+                                        <span class="contract_amount"></span>
+                                    </div>
+                                    <div class="payout_wrapper">
+                                        <span class="payout"></span>
+                                        <span class="contract_payout"></span>
+                                    </div>
+                                </div>
+                                <div class="contract_purchase button">
+                                    <span class="purchase_button contract_description no-underline" id="purchase_button_bottom" data-balloon-length="xlarge" value="purchase">[% l("Purchase") %]</span>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col price_comment"></div>
+                    <div class="col contract_error"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="all_prices"></div>
+[% PROCESS bet/analysis.html.tt %]
+<div id="trading_init_progress">
+    [% PROCESS global/loading.html.tt %]
+</div>

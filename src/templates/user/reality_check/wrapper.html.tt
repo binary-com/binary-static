@@ -1,7 +1,5 @@
 <div id="reality_check_content">
     <h1>[% l("Reality Check") %]</h1>
-
     [% content %]
-
-    [% INCLUDE user/reality_check/form.html.tt %]
+    [% PROCESS user/reality_check/form.html.tt %]
 </div>

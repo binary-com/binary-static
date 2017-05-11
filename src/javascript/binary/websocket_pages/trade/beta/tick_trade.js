@@ -2,10 +2,10 @@ const Highcharts    = require('highcharts');
 const moment        = require('moment');
 const commonTrading = require('../common');
 const Tick          = require('../tick');
+const BinarySocket  = require('../../socket');
 const ViewPopupUI   = require('../../user/view_popup/view_popup.ui');
 const localize      = require('../../../base/localize').localize;
 const isVisible     = require('../../../common_functions/common_functions').isVisible;
-const addComma      = require('../../../common_functions/string_util').addComma;
 require('highcharts/modules/exporting')(Highcharts);
 
 const TickDisplay_Beta = (() => {
@@ -210,7 +210,7 @@ const TickDisplay_Beta = (() => {
 
                     formatter: function() {
                         const time = moment.utc(applicable_ticks[this.x].epoch * 1000).format('HH:mm:ss');
-                        const this_price = addComma(this.y, display_decimals);
+                        const this_price = this.y;
                         showValues(+this.x + (is_start_on_first_tick ? 1 : 0), time, this_price);
                     },
                     events: {
@@ -331,7 +331,7 @@ const TickDisplay_Beta = (() => {
         }
         const purchase_barrier = document.getElementById('contract_purchase_barrier');
         if (contract_barrier && purchase_barrier) {
-            commonTrading.labelValue(purchase_barrier, localize('Barrier'), addComma(contract_barrier, display_decimals), true);
+            commonTrading.labelValue(purchase_barrier, localize('Barrier'), contract_barrier, true);
         }
     };
 

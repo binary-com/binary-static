@@ -1,3 +1,21 @@
+[% BLOCK charity %]
+<div class="charity-country">
+    <h3>[% country %]</h3>
+    [% FOREACH charity IN charities %]
+        <div class="gr-row">
+            <div class="gr-4 gr-12-m"><img class="responsive gr-padding-20" src="[% request.url_for('/images/pages/charity/' _ charity.image _ '.jpg') %]"></div>
+            <div class="gr-8 gr-12-m">
+                <p><strong>[% charity.title %]</strong></p>
+                <p>[% charity.text %]</p>
+                [% FOREACH contact IN charity.contacts %]
+                    <p><strong>[% contact.text %]: <a href="[% IF contact.mailto %]mailto:[% END %][% contact.href %]">[% contact.href %]</a></strong></p>
+                [% END %]
+            </div>
+        </div>
+    [% END %]
+</div>
+[% END %]
+
 <div class="charity">
     <div class="section">
         <div class="section-content">
@@ -5,74 +23,33 @@
                 <h1>[% l("Making a Positive Impact in Local Communities") %]</h1>
                 <p>[% l("[_1]’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities.", website_name) %]</p>
             </div>
-
             <div class="gallery">
                 <img class="responsive" src="[% request.url_for('/images/pages/charity/charity-1.jpg') %]"><img class="responsive" src="[% request.url_for('/images/pages/charity/charity-2.jpg') %]"><img class="responsive" src="[% request.url_for('/images/pages/charity/charity-3.jpg') %]">
             </div>
         </div>
 
         <div class="section-content">
-            <div class="charity-country invisible">
-                <h3>[% l("Indonesia") %]</h3>
-                <div class="gr-row">
-                    <div class="gr-4 gr-12-m"><p>Insert image here</p></div>
-                    <div class="gr-8 gr-12-m">
-                        <p><strong>Lorem ipsum</strong></p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="charity-country">
-                <h3>[% l("Malta") %]</h3>
-                <div class="gr-row">
-                    <div class="gr-4 gr-12-m"><img class="responsive gr-padding-20" src="[% request.url_for('/images/pages/charity/eurobasket_wolves.jpg') %]"></div>
-                    <div class="gr-8 gr-12-m">
-                        <p><strong>[% l("Eurobasket Wolves") %]</strong></p>
-                        <p>[% l("The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds.") %]</p>
-                        <p><strong>[% l("Contact") %]: <a href="mailto:eubasket@hotmail.com">eubasket@hotmail.com</a></strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="charity-country">
-                <h3>[% l("Malaysia") %]</h3>
-                <div class="gr-row">
-                    <div class="gr-4 gr-12-m"><img class="responsive gr-padding-20" src="[% request.url_for('/images/pages/charity/learning_centre.jpg') %]"></div>
-                    <div class="gr-8 gr-12-m">
-                        <p><strong>[% l("Shelter Home’s Shelter Community Learning Centre 3") %]</strong></p>
-                        <p>[% l("The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future.") %]</p>
-                        <p><strong>[% l("URL") %]: <a href="http://www.shelterhome.org">http://www.shelterhome.org</a></strong></p>
-                    </div>
-                </div>
-
-                <div class="gr-row">
-                    <div class="gr-4 gr-12-m"><img class="responsive gr-padding-20" src="[% request.url_for('/images/pages/charity/languages_refugee.jpg') %]"></div>
-                    <div class="gr-8 gr-12-m">
-                        <p><strong>[% l("Languages Classes for Refugees (LCFR)") %]</strong></p>
-                        <p>[% l("Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated.") %]</p>
-                        <p><strong>[% l("URL") %]: <a href="https://www.facebook.com/languagesclassesforrefugees">https://www.facebook.com/languagesclassesforrefugees</a></strong></p>
-                        <p><strong>[% l("Contact") %]: <a href="mailto:spreadlnrevents@gmail.com">spreadlnrevents@gmail.com</a></strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="charity-country invisible">
-                <h3>[% l("Ukraine") %]</h3>
-                <div class="gr-row">
-                    <div class="gr-4 gr-12-m"><p>Insert image here</p></div>
-                    <div class="gr-8 gr-12-m">
-                        <p><strong>Lorem ipsum</strong></p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                </div>
-            </div>
+            [% INCLUDE charity country=l("Malta") charities=[
+                { image='eurobasket_wolves', title=l("Eurobasket Wolves"), text=l("The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."),
+                    contacts=[
+                        { text=l("Contact"), mailto=1, href='eubasket@hotmail.com' },
+                    ] },
+            ] %]
+            [% INCLUDE charity country=l("Malaysia") charities=[
+                { image='learning_centre', title=l("Shelter Home’s Shelter Community Learning Centre 3"), text=l("The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."),
+                    contacts=[
+                        { text=l("URL"), href='http://www.shelterhome.org' },
+                    ] },
+                { image='languages_refugee', title=l("Languages Classes for Refugees (LCFR)"), text=l("Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."),
+                    contacts=[
+                        { text=l("URL"), href='https://www.facebook.com/languagesclassesforrefugees' },
+                        { text=l("Contact"), mailto=1, href='spreadlnrevents@gmail.com' },
+                    ] },
+            ] %]
         </div>
 
-        <div class="section-content">
-            <div class="center-text">
-                <p>[% l("We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at [_1].", '<a href="mailto:marketing@binary.com">marketing@binary.com</a>') %]</p>
-            </div>
+        <div class="section-content center-text">
+            <p>[% l("We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at [_1].", '<a href="mailto:marketing@binary.com">marketing@binary.com</a>') %]</p>
         </div>
     </div>
 </div>

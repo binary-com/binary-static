@@ -1,64 +1,39 @@
+[% PROCESS components/tabs.html.tt %]
+
 <div class="invisible ja-show content-tab-container">
-    <div class="tab-menu static_full">
-        <div class="tab-menu-wrap">
-            <ul id="legal-menu" class="tm-ul">
-                <li id="legal" class="tm-li first"><a href="#legal" class="tm-a">[% l('Terms and Conditions') %]</a></li>
-                <li id="contract" class="tm-li"><a href="#contract" class="tm-a">[% l('Pre-contract Document') %]</a></li>
-
-                <li id="account" class="tm-li">
-                    <span class="menu-wrap-a">
-                        <span class="menu-wrap-b">
-                            <a href="#account" class="tm-a first">[% l('Account Opening') %]</a>
-                        </span>
-                    </span>
-                    <ul class="tm-ul-2">
-                        <li id="account-privacy" class="tm-li-2 first"><a href="#account-privacy" class="tm-a-2">[% l('Privacy Policy') %]</a></li>
-                        <li id="account-antisocial" class="tm-li-2"><a href="#account-antisocial" class="tm-a-2">[% l('No Connections with Antisocial Forces') %]</a></li>
-                        <li id="account-risk" class="tm-li-2"><a href="#account-risk" class="tm-a-2">[% l('Risk for Binary Option Trading') %]</a></li>
-                        <li id="account-warning" class="tm-li-2"><a href="#account-warning" class="tm-a-2">[% l('General Risk Warning') %]</a></li>
-                    </ul>
-                </li>
-
-                <li id="ethics" class="tm-li">
-                    <span class="menu-wrap-a">
-                        <span class="menu-wrap-b">
-                            <a href="#ethics" class="tm-a first">[% l('Policies and Exclusion of Liability') %]</a>
-                        </span>
-                    </span>
-                    <ul class="tm-ul-2">
-                        <li id="ethics-code" class="tm-li-2 first"><a href="#ethics-code" class="tm-a-2">[% l('Ethics Code') %]</a></li>
-                        <li id="ethics-antisocial" class="tm-li-2"><a href="#ethics-antisocial" class="tm-a-2">[% l('Eliminating Antisocial Forces') %]</a></li>
-                        <li id="ethics-solicitation" class="tm-li-2"><a href="#ethics-solicitation" class="tm-a-2">[% l('Investment Solicitation Policy') %]</a></li>
-                        <li id="ethics-liability" class="tm-li-2"><a href="#ethics-liability" class="tm-a-2">[% l('Exclusion of Liability') %]</a></li>
-                    </ul>
-                </li>
-
-                <li id="affiliates" class="tm-li">
-                    <span class="menu-wrap-a">
-                        <span class="menu-wrap-b">
-                            <a href="#affiliates" class="tm-a first">[% l('Affiliates Program') %]</a>
-                        </span>
-                    </span>
-                </li>
-            </ul>
-        </div>
-    </div>
+    [% INCLUDE tabs_subtabs class='static_full' id='legal-menu' items=[
+        { id='legal',      text=l('Terms and Conditions')  },
+        { id='contract',   text=l('Pre-contract Document') },
+        { id='account',    text=l('Account Opening'),                     subtabs=[
+                { id='privacy',    text=l('Privacy Policy') },
+                { id='antisocial', text=l('No Connections with Antisocial Forces') },
+                { id='risk',       text=l('Risk for Binary Option Trading') },
+                { id='warning',    text=l('General Risk Warning') },
+            ] },
+        { id='ethics',     text=l('Policies and Exclusion of Liability'), subtabs=[
+                { id='code',         text=l('Ethics Code') },
+                { id='antisocial',   text=l('Eliminating Antisocial Forces') },
+                { id='solicitation', text=l('Investment Solicitation Policy') },
+                { id='liability',    text=l('Exclusion of Liability') },
+            ] },
+        { id='affiliates', text=l('Affiliates Program') }
+    ] %]
     <div class="tab-content">
-        <div class="tab-content-wrapper menu-has-sub-item">
-            <div id="legal-content" class="toggle-content invisible">[% INCLUDE japan/legal/terms_and_conditions.html.tt %]</div>
-            <div id="contract-content" class="toggle-content invisible">[% INCLUDE japan/legal/contract.html.tt %]</div>
+        [% WRAPPER tab_content_container %]
+            [% WRAPPER tab_content id='legal' %][% PROCESS japan/legal/terms_and_conditions.html.tt %][% END %]
+            [% WRAPPER tab_content id='contract' %][% PROCESS japan/legal/contract.html.tt %][% END %]
 
-            <div id="account-privacy-content" class="toggle-content invisible">[% INCLUDE japan/legal/privacy.html.tt %]</div>
-            <div id="account-antisocial-content" class="toggle-content invisible">[% INCLUDE japan/legal/antisocial_connection.html.tt %]</div>
-            <div id="account-risk-content" class="toggle-content invisible">[% INCLUDE japan/legal/risk.html.tt %]</div>
-            <div id="account-warning-content" class="toggle-content invisible">[% INCLUDE japan/legal/risk_warning.html.tt %]</div>
+            [% WRAPPER tab_content id='account-privacy' %][% PROCESS japan/legal/account_privacy.html.tt %][% END %]
+            [% WRAPPER tab_content id='account-antisocial' %][% PROCESS japan/legal/account_antisocial.html.tt %][% END %]
+            [% WRAPPER tab_content id='account-risk' %][% PROCESS japan/legal/account_risk.html.tt %][% END %]
+            [% WRAPPER tab_content id='account-warning' %][% PROCESS japan/legal/account_warning.html.tt %][% END %]
 
-            <div id="ethics-code-content" class="toggle-content invisible">[% INCLUDE japan/legal/ethics_code.html.tt %]</div>
-            <div id="ethics-antisocial-content" class="toggle-content invisible">[% INCLUDE japan/legal/antisocial_forces.html.tt %]</div>
-            <div id="ethics-solicitation-content" class="toggle-content invisible">[% INCLUDE japan/legal/solicitation.html.tt %]</div>
-            <div id="ethics-liability-content" class="toggle-content invisible">[% INCLUDE japan/legal/liability_exclusion.html.tt %]</div>
+            [% WRAPPER tab_content id='ethics-code' %][% PROCESS japan/legal/ethics_code.html.tt %][% END %]
+            [% WRAPPER tab_content id='ethics-antisocial' %][% PROCESS japan/legal/ethics_antisocial.html.tt %][% END %]
+            [% WRAPPER tab_content id='ethics-solicitation' %][% PROCESS japan/legal/ethics_solicitation.html.tt %][% END %]
+            [% WRAPPER tab_content id='ethics-liability' %][% PROCESS japan/legal/ethics_liability.html.tt %][% END %]
 
-            <div id="affiliates-content" class="toggle-content invisible">[% INCLUDE japan/legal/affiliates.html.tt %]</div>
-        </div>
+            [% WRAPPER tab_content id='affiliates' %][% PROCESS japan/legal/affiliates.html.tt %][% END %]
+        [% END %]
     </div>
 </div>

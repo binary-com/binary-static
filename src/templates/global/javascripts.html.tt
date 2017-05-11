@@ -1,3 +1,0 @@
-[%= FOREACH js IN javascript.libs =%]
-  <script src='[%= js =%]'></script>
-[%= END =%]

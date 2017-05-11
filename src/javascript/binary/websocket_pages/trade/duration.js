@@ -5,6 +5,7 @@ const commonIndependent  = require('./common_independent');
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
 const Price              = require('./price');
+const BinarySocket       = require('../socket');
 const localize           = require('../../base/localize').localize;
 const State              = require('../../base/storage').State;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;

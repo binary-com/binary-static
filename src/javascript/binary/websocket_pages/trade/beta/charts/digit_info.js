@@ -1,5 +1,6 @@
 const Highcharts       = require('highcharts');
 const Symbols          = require('../../symbols');
+const BinarySocket     = require('../../../socket');
 const localize         = require('../../../../base/localize').localize;
 const template         = require('../../../../base/utility').template;
 require('highcharts/modules/exporting')(Highcharts);
