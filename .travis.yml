@@ -8,3 +8,10 @@ notifications:
     email: false
 before_install: npm install -g grunt-cli
 install: npm install
+before_script:
+   - gem install travis
+after_script:
+   - chmod +x trigger.sh
+   - chmod +x get-build-status.sh
+   - ./trigger.sh binary-com binary-static-ci master $TRAVIS_ACCESS_TOKEN
+   - ./get-build-status.sh binary-com binary-static-ci $TRAVIS_ACCESS_TOKEN
