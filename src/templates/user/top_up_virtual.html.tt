@@ -1,16 +1,16 @@
 <div class="gr-12">
-  <h1>[% l('Give Me More Money!') %]</h1>
-  <div class="loading">[% INCLUDE global/loading.html.tt %]</div>
-  <div id="topup_virtual" class="center-text">
-    <div id="viewError" class="viewItem invisible">
-      <p class="notice-msg"></p>
-    </div>
+    <h1>[% l('Give Me More Money!') %]</h1>
+    <div class="loading">[% PROCESS global/loading.html.tt %]</div>
+    <div id="topup_virtual" class="center-text">
+        <div id="viewError" class="viewItem invisible">
+            <p class="notice-msg"></p>
+        </div>
 
-    <div id="viewSuccess" class="viewItem invisible">
-      <p class="success-msg"></p>
-      <a class="button" href="[% request.url_for('/user/portfoliows') %]">
-        <span>[% l('View Updated Portfolio') %]</span>
-      </a>
+        <div id="viewSuccess" class="viewItem invisible">
+            <p class="success-msg"></p>
+            <a class="button" href="[% request.url_for('/user/portfoliows') %]">
+                <span>[% l('View Updated Portfolio') %]</span>
+            </a>
+        </div>
     </div>
-  </div>
 </div>

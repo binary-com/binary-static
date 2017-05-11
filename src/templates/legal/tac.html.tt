@@ -1,59 +1,30 @@
-<div class="content-tab-container static_full tab-with-subsection">
-    <div class="tab-menu">
-        <div class="tab-menu-wrap">
-            <ul id="legal-menu" class="tm-ul">
-                <li id="legal" class="tm-li first">
-                    <span class="menu-wrap-a">
-                        <span class="menu-wrap-b">
-                            <a href="#legal" class="tm-a first">[% l('Terms and Conditions') %]</a>
-                        </span>
-                    </span>
-                    <ul class="tm-ul-2">
-                        <li id="legal-binary" class="tm-li-2 first"><a href="#legal-binary" class="tm-a-2">[% l('Binary Options') %]</a></li>
-                        <li id="legal-mt" class="tm-li-2"><a href="#legal-mt" class="tm-a-2">[% l('MetaTrader') %]</a></li>
-                    </ul>
-                </li>
+[% PROCESS components/tabs.html.tt %]
 
-                <li id="datafeed" class="tm-li"><a href="#datafeed" class="tm-a">[% l('Data Feed') %]</a></li>
-                <li id="privacy" class="tm-li"><a href="#privacy" class="tm-a">[% l('Security and Privacy') %]</a></li>
-                <li id="copyright" class="tm-li"><a href="#copyright" class="tm-a">[% l('Copyright') %]</a></li>
+[% subtabs=[
+    { id='binary', text=l('Binary Options') },
+    { id='mt',     text=l('MetaTrader') },
+] %]
 
-                <li id="risk" class="tm-li">
-                    <span class="menu-wrap-a">
-                        <span class="menu-wrap-b"><a href="#risk" class="tm-a first">[% l('Risk Disclaimer') %]</a></span>
-                    </span>
-                    <ul class="tm-ul-2">
-                        <li id="risk-binary" class="tm-li-2 first"><a href="#risk-binary" class="tm-a-2">[% l('Binary Options') %]</a></li>
-                        <li id="risk-mt" class="tm-li-2"><a href="#risk-mt" class="tm-a-2">[% l('MetaTrader') %]</a></li>
-                    </ul>
-                </li>
-
-                <li id="order-execution" class="tm-li">
-                    <span class="menu-wrap-a">
-                        <span class="menu-wrap-b"><a href="#order-execution" class="tm-a first">[% l('Order Execution') %]</a></span>
-                    </span>
-                    <ul class="tm-ul-2">
-                        <li id="order-execution-binary" class="tm-li-2 first"><a href="#order-execution-binary" class="tm-a-2">[% l('Binary Options') %]</a></li>
-                        <li id="order-execution-mt" class="tm-li-2"><a href="#order-execution-mt" class="tm-a-2">[% l('MetaTrader') %]</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
+[% WRAPPER tab_container class='static_full tab-with-subsection' %]
+    [% INCLUDE tabs_subtabs id='legal-menu' items=[
+        { id='legal',           text=l('Terms and Conditions'), subtabs=subtabs },
+        { id='datafeed',        text=l('Data Feed') },
+        { id='privacy',         text=l('Security and Privacy') },
+        { id='copyright',       text=l('Copyright') },
+        { id='risk',            text=l('Risk Disclaimer'),      subtabs=subtabs },
+        { id='order-execution', text=l('Order Execution'),      subtabs=subtabs },
+    ] %]
     <div class="tab-content gr-padding-10">
-        <div class="tab-content-wrapper menu-has-sub-item">
-            <div id="legal-binary-content" class="toggle-content invisible">[% INCLUDE legal/terms_and_conditions.html.tt %]</div>
-            <div id="legal-mt-content" class="toggle-content invisible">[% INCLUDE legal/metatrader/terms_and_conditions.html.tt %]</div>
-
-            <div id="datafeed-content" class="toggle-content invisible">[% INCLUDE legal/datafeed.html.tt %]</div>
-            <div id="privacy-content" class="toggle-content invisible">[% INCLUDE legal/privacy.html.tt %]</div>
-            <div id="copyright-content" class="toggle-content invisible">[% INCLUDE legal/copyright.html.tt %]</div>
-
-            <div id="risk-binary-content" class="toggle-content invisible">[% INCLUDE legal/risk_disclaimer.html.tt %]</div>
-            <div id="risk-mt-content" class="toggle-content invisible">[% INCLUDE legal/metatrader/risk_disclaimer.html.tt %]</div>
-
-            <div id="order-execution-binary-content" class="toggle-content invisible">[% INCLUDE legal/order_execution.html.tt %]</div>
-            <div id="order-execution-mt-content" class="toggle-content invisible">[% INCLUDE legal/metatrader/order_execution.html.tt %]</div>
-        </div>
+        [% WRAPPER tab_content_container %]
+            [% WRAPPER tab_content id='legal-binary' %][% PROCESS legal/terms_and_conditions.html.tt %][% END %]
+            [% WRAPPER tab_content id='legal-mt' %][% PROCESS legal/metatrader/terms_and_conditions.html.tt %][% END %]
+            [% WRAPPER tab_content id='datafeed' %][% PROCESS legal/datafeed.html.tt %][% END %]
+            [% WRAPPER tab_content id='privacy' %][% PROCESS legal/privacy.html.tt %][% END %]
+            [% WRAPPER tab_content id='copyright' %][% PROCESS legal/copyright.html.tt %][% END %]
+            [% WRAPPER tab_content id='risk-binary' %][% PROCESS legal/risk_disclaimer.html.tt %][% END %]
+            [% WRAPPER tab_content id='risk-mt' %][% PROCESS legal/metatrader/risk_disclaimer.html.tt %][% END %]
+            [% WRAPPER tab_content id='order-execution-binary' %][% PROCESS legal/order_execution.html.tt %][% END %]
+            [% WRAPPER tab_content id='order-execution-mt' %][% PROCESS legal/metatrader/order_execution.html.tt %][% END %]
+        [% END %]
     </div>
-</div>
+[% END %]

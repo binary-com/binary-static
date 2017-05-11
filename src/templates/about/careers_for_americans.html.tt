@@ -1,110 +1,78 @@
+[% PROCESS components/elements.html.tt %]
+
+[% BLOCK lg_column_link %]
+    <div class="gr-6 gr-12-m">
+        <img class="gr-3 gr-centered" src="[% request.url_for('/images/pages/careers_for_americans/' _ image _ '.svg') %]" />
+        <p><strong>[% title %]</strong></p>
+        <p>[% text %]</p>
+        <p>
+            <a href="[% request.url_for('open-positions/job-details.html?dept=Quantitative_Analysis#section-' _ section ) %]">Learn more</a>
+        </p>
+    </div>
+[% END %]
+
 <div class="career careers-for-americans">
     <div class="gr-parent static_full">
         <div class="container gr-padding-20 gr-parent">
             <div class="center-text gr-padding-10 gr-parent">
                 <h1 class="gr-padding-10">Career Opportunities for Americans</h1>
-                <p>Looking for a way out of Donald Trump's America? Want to do your best work and fulfil your potential in a country that’s modern, diverse, and tolerant?</p>
-                <img class="responsive gr-padding-10" src="[% request.url_for('/images/pages/careers_for_americans/usa.jpg') %]" />
-                <p>Binary.com is one of the world's most progressive companies, spread across multiple cities in Asia and Europe. We value experience, drive, and talent. Your moral standards are equally important. You must hold the same core values that define who we are, including integrity, tolerance, diversity, and equal opportunity. If you share our feelings about your new president, you might be on the right track.</p>
+                <p>Looking for a way out of Donald Trump's America? Want to do your best work and fulfil your potential in a country that's modern, diverse, and tolerant?</p>
+                <img class="gr-6 gr-centered gr-padding-10" src="[% request.url_for('/images/pages/careers_for_americans/usa.jpg') %]" />
+                <p>[% website_name %] is one of the world's most progressive companies, spread across multiple cities in Asia and Europe. We value experience, drive, and talent. Your moral standards are equally important. You must hold the same core values that define who we are, including integrity, tolerance, diversity, and equal opportunity. If you share our feelings about your new president, you might be on the right track.</p>
             </div>
-            <div class="gr-padding-20 gr-parent">
-                <h2 class="center-text gr-padding-10">Do you see yourself at Binary.com?</h2>
+            <div class="gr-padding-20">
+                <h2 class="center-text">Do you see yourself at [% website_name %]?</h2>
                 <p class="center-text gr-padding-10">Our people need to possess certain attributes, regardless of department. We want someone who loves to:</p>
-                <div class="gr-12">
-                    <div class="gr-row">
-                        <div class="gr-6 gr-12-m">
-                            <ul class="checked">
-                                <li>Give their best every day.</li>
-                                <li>Team up with talented people to make an impact.</li>
-                                <li>Get things done in a no-nonsense manner.</li>
-                            </ul>
-                        </div>
-                        <div class="gr-6 gr-12-m">
-                            <ul class="checked">
-                                <li>Work without bureaucracy and hierarchy.</li>
-                                <li>Have the latest technologies at their disposal.</li>
-                                <li>Learn and improve, day in and day out.</li>
-                            </ul>
-                        </div>
+                <div class="gr-row">
+                    <div class="gr-6 gr-12-m">
+                        <ul class="checked">
+                            <li>[% "Give their best every day." %]</li>
+                            <li>[% "Team up with talented people to make an impact." %]</li>
+                            <li>[% "Get things done in a no-nonsense manner." %]</li>
+                        </ul>
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <ul class="checked">
+                            <li>[% "Work without bureaucracy and hierarchy." %]</li>
+                            <li>[% "Have the latest technologies at their disposal." %]</li>
+                            <li>[% "Learn and improve, day in and day out." %]</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="gr-padding-30 fill-bg-color center-text">
-            <div class="container">
-                <div class="gr-12 gr-parent">
-                    <h2 class="gr-padding-20">Career Spotlight</h2>
-                    <div class="gr-row">
-                        <div class="gr-6 gr-12-m">
-                            <img class="responsive" src="[% request.url_for('/images/pages/careers_for_americans/data_scientist.svg') %]" />
-                            <p><strong>Data Scientist</strong></p>
-                            <p>Generate and execute data-driven ideas and solutions to improve products and services.</p>
-                            <p>
-                                <a href="[% request.url_for('open-positions/job-details.html?dept=Quantitative_Analysis#section-one') %]">Learn more</a>
-                            </p>
-                        </div>
-                        <div class="gr-6 gr-12-m">
-                            <img class="responsive" src="[% request.url_for('/images/pages/careers_for_americans/quants_analysis.svg') %]" />
-                            <p><strong>Quantitative Analyst</strong></p>
-                            <p>Develop derivatives pricing and risk management algorithms.</p>
-                            <p>
-                                <a href="[% request.url_for('open-positions/job-details.html?dept=Quantitative_Analysis#section-two') %]">Learn more</a>
-                            </p>
-                        </div>
-                    </div>
+            <div class="container gr-padding-20">
+                <h2>Career Spotlight</h2>
+                <div class="gr-row">
+                    [% INCLUDE lg_column_link image='data_scientist' title="Data Scientist" section='one'
+                        text="Generate and execute data-driven ideas and solutions to improve products and services." %]
+
+                    [% INCLUDE lg_column_link image='quants_analysis' title="Quantitative Analyst" section='two'
+                        text="Develop derivatives pricing and risk management algorithms." %]
                 </div>
             </div>
         </div>
         <div class="container">
-            <div class="gr-padding-10 gr-parent">
-                <p class="center-text gr-padding-10">If you decide to join us, you will enjoy a market-based salary, annual performance bonus, health benefits, casual dress code, and flexi hours. We will also assist you with your work permit, and relocation for your spouse and children.</p>
-                <h2 class="center-text gr-padding-10">Join us in one of the following locations:</h2>
-                <div class="gr-row gr-padding-30">
-                    <div class="gr-6 gr-12-m">
-                        <div class="border-bottom">
-                            <div class="fill-bg-color gr-padding-10">
-                                <h3 class="margin">Msida, Malta</h3>
-                            </div>
-                            <p class="margin gr-parent gr-padding-10">
-                                An old scenic fishing village turned bustling university town, thanks to service and infrastructure developments spurred by the University of Malta.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="gr-6 gr-12-m">
-                        <div class="border-bottom">
-                            <div class="fill-bg-color gr-padding-10">
-                                <h3 class="margin">Berlin, Germany</h3>
-                            </div>
-                            <p class="margin gr-parent gr-padding-10">
-                                Germany’s capital is steeped in rich history. It is also a global city of cultural and technological significance with world-famous events and venues.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <p class="center-text gr-padding-10">If you decide to join us, you will enjoy a market-based salary, annual performance bonus, health benefits, casual dress code, and flexi hours. We will also assist you with your work permit, and relocation for your spouse and children.</p>
+            <div class="gr-padding-10">
+                <h2 class="center-text">Join us in one of the following locations:</h2>
+
+                <div class="gr-padding-10"></div>
+
                 <div class="gr-row">
-                    <div class="gr-6 gr-12-m">
-                        <div class="border-bottom">
-                            <div class="fill-bg-color gr-padding-10">
-                                <h3 class="margin">Cyberjaya, Malaysia</h3>
-                            </div>
-                            <p class="margin gr-parent gr-padding-10">
-                                A high-tech green township that seamlessly blends modern infrastructure with acres of green spaces and facilities to give you the ultimate work-life balance.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="gr-6 gr-12-m">
-                        <div class="border-bottom">
-                            <div class="fill-bg-color gr-padding-10">
-                                <h3 class="margin">Kuala Lumpur, Malaysia</h3>
-                            </div>
-                            <p class="margin gr-parent gr-padding-10">
-                                Malaysia’s federal capital is a city of contrast and diversity, brimming with modern infrastructure, historical attractions, and a multicultural society.
-                            </p>
-                        </div>
-                    </div>
+                    [% INCLUDE info_box padding='6' header="Msida, Malta" text="An old scenic fishing village turned bustling university town, thanks to service and infrastructure developments spurred by the University of Malta." %]
+                    [% INCLUDE info_box padding='6' header="Berlin, Germany" text="Germany's capital is steeped in rich history. It is also a global city of cultural and technological significance with world-famous events and venues." %]
+                </div>
+
+                <div class="gr-hide-m gr-padding-30"></div>
+
+                <div class="gr-row">
+                    [% INCLUDE info_box padding='6' header="Cyberjaya, Malaysia" text="A high-tech green township that seamlessly blends modern infrastructure with acres of green spaces and facilities to give you the ultimate work-life balance." %]
+                    [% INCLUDE info_box padding='6' header="Kuala Lumpur, Malaysia" text="Malaysia's federal capital is a city of contrast and diversity, brimming with modern infrastructure, historical attractions, and a multicultural society." %]
                 </div>
             </div>
-            [% INCLUDE about/careers_shared.html.tt %]
+            [% PROCESS about/careers_shared.html.tt %]
         </div>
     </div>
 </div>

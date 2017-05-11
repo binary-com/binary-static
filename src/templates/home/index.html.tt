@@ -1,23 +1,16 @@
+[% PROCESS components/elements.html.tt %]
+[% BLOCK payment_logo %]
+    [% FOREACH item IN items %]
+    <div class="payment-logo" id="[% item %]"></div>
+    [% END %]
+[% END %]
+
 <div id="banner">
     <div class="container gr-padding-30">
         <h1 class="dark center-text gr-padding-10">[% l("The <strong>Premier Platform</strong> for Binary Options Trading") %]</h1>
         <p class="center-text gr-padding-10">[% l("Trade <strong>24/7</strong>, even on weekends.") %]</p>
 
-        <form id="frm_verify_email">
-            <div class="gr-row gr-row-align-center">
-                <div class="signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
-                    <div class="gr-row gr-padding-10">
-                        <div class="gr-7 gr-10-m gr-centered">
-                            <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
-                        </div>
-                        <div class="gr-5 gr-8-m gr-centered">
-                            <button class="primary-bg-color" id="btn_verify_email" type="submit">[% l('Create Free Account') %]</button>
-                        </div>
-                        <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
-                    </div>
-                </div>
-            </div>
-        </form>
+        [% INCLUDE global/form_verify_email.html.tt class='secondary-bg-color' dark_button=1 text=l('Create Free Account') %]
     </div>
 </div>
 
@@ -32,12 +25,12 @@
             </div>
 
             <div class="gr-5 gr-12-m gr-parent">
-                <ul>
-                    <li>[% l("<strong>All markets:</strong> currencies, stocks, indices, and commodities.") %]</li>
-                    <li>[% l("<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out.") %]</li>
-                    <li>[% l("<strong>All durations:</strong> from 10 seconds to 365 days.") %]</li>
-                    <li>[% l("<strong>All payouts:</strong> from \$1 to \$50,000.") %]</li>
-                </ul>
+                [% INCLUDE list items=[
+                    { header=l("All markets:"),           text=l("currencies, stocks, indices, and commodities.") },
+                    { header=l("All market conditions:"), text=l("up/down, touch/no-touch, stays in/goes out.") },
+                    { header=l("All durations:"),         text=l("from 10 seconds to 365 days.") },
+                    { header=l("All payouts:"),           text=l("from \$1 to \$50,000.") },
+                ] %]
             </div>
         </div>
     </div>
@@ -56,11 +49,11 @@
                 <img class="mena" src="[% request.url_for('images/pages/home/awards-mena.png') %]"/>
             </div>
 
-            <ul class="gr-row gr-row-align-center">
-                <li class="xlist1"><h3>[% l("Sharp prices") %]</h3></li>
-                <li class="xlist3"><h3>[% l("Trade your way") %]</h3></li>
-                <li class="xlist2"><h3>[% l("Licensed and regulated") %]</h3></li>
-            </ul>
+            [% INCLUDE list class='gr-row gr-row-align-center' items=[
+                { header=l("Sharp prices"),           class='xlist1' },
+                { header=l("Trade your way"),         class='xlist3' },
+                { header=l("Licensed and regulated"), class='xlist2' },
+            ] %]
         </div>
     </div>
 </div>
@@ -92,30 +85,24 @@
         </div>
     </div>
 
-    <div class="separator-line border-bottom"></div>
+    [% INCLUDE global/separator_line.html.tt no_wrapper=1 %]
 </div>
 
 <div class="container gr-padding-30 gr-parent">
     <h2 class="center-text">[% l("What our clients are saying") %]</h2>
 
     <div class="gr-row">
-        <div class="gr-6 gr-12-m gr-6-p">
-            <div class="xquote fill-bg-color">
-                <p>[% l("&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;") %]</p>
-            </div>
+        [% WRAPPER fill_box padding='6' em=1 align_left=1 text=l("\"We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.\"") %]
             <div class="xbubble-left"></div>
             <div class="xquoter-left"><p>[% l("Joshua Cavallaro <span> Markets And You Trader</span>") %]</p></div>
-        </div>
-        <div class="gr-6 gr-12-m gr-6-p">
-            <div class="xquote fill-bg-color">
-                <p>[% l("&#8220;[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;", website_name) %]</p>
-            </div>
+        [% END %]
+        [% WRAPPER fill_box padding='6' em=1 align_left=1 text=l("\"[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years.\"", website_name) %]
             <div class="xbubble-right"></div>
             <div class="xquoter-right"><p>[% l("Andrei Asavei <span>Top Binary Options Brokers</span>") %]</p></div>
-        </div>
+        [% END %]
     </div>
 
-    <div class="separator-line border-bottom"></div>
+    [% INCLUDE global/separator_line.html.tt no_wrapper=1 %]
 </div>
 
 <div class="container" id="payment_methods">
@@ -125,17 +112,19 @@
         <div class="gr-12">
             <a href="[% request.url_for('/cashier/payment_methods') %]">
                 <div class="gr-row gr-row-align-center">
-                    <div class="payment-logo" id="visa"></div>
-                    <div class="payment-logo" id="mastercard"></div>
-                    <div class="payment-logo" id="int_bank_wire"></div>
-                    <div class="payment-logo" id="local_bank_transfer"></div>
-                    <div class="payment-logo" id="western_union"></div>
-                    <div class="payment-logo" id="citadel"></div>
-                    <div class="payment-logo" id="neteller"></div>
-                    <div class="payment-logo" id="okpay"></div>
-                    <div class="payment-logo" id="fastpay"></div>
-                    <div class="payment-logo" id="perfect_money"></div>
-                    <div class="payment-logo" id="moneybrokers"></div>
+                    [% INCLUDE payment_logo items=[
+                        'visa',
+                        'mastercard',
+                        'int_bank_wire',
+                        'local_bank_transfer',
+                        'western_union',
+                        'citadel',
+                        'neteller',
+                        'okpay',
+                        'fastpay',
+                        'perfect_money',
+                        'moneybrokers',
+                    ] %]
                 </div>
             </a>
             <p class="center-text">[% l("Hundreds of deposit and withdrawal options.") %]</p>

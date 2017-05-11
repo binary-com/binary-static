@@ -1,5 +1,6 @@
 const IPHistoryData = require('./iphistory.data');
 const IPHistoryUI   = require('./iphistory.ui');
+const BinarySocket  = require('../../../../socket');
 
 const IPHistoryInit = (() => {
     'use strict';

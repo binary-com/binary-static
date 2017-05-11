@@ -4,7 +4,8 @@ const jpClient    = require('../common_functions/country_base').jpClient;
 const Url = (() => {
     'use strict';
 
-    let location_url;
+    let location_url,
+        static_host;
 
     const init = (url) => {
         location_url = url ? getLocation(url) : window ? window.location : '';
@@ -48,10 +49,7 @@ const Url = (() => {
             path = path.substr(1);
         }
         const lang = getLanguage().toLowerCase();
-        let url = '';
-        if (typeof window !== 'undefined') {
-            url  = window.location.href;
-        }
+        const url = window.location.href;
         return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${(path || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
     };
 
@@ -62,10 +60,6 @@ const Url = (() => {
             path = path.substr(1);
         }
 
-        let static_host;
-        if (typeof window !== 'undefined') {
-            static_host = window.staticHost;
-        }
         if (!static_host || static_host.length === 0) {
             static_host = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src');
 
@@ -73,10 +67,6 @@ const Url = (() => {
                 static_host = static_host.substr(0, static_host.indexOf('/js/') + 1);
             } else {
                 static_host = 'https://www.binary.com/';
-            }
-
-            if (typeof window !== 'undefined') {
-                window.staticHost = static_host;
             }
         }
 

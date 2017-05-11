@@ -18,10 +18,9 @@ sub all_pages {
         ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions', 'ja'],
         ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions', 'NOT-ja,en'],
         ['regulation',                 'legal/regulation',             'default',    'Regulation'],
-        ['styles',                     'home/styles',                  'full_width', 'Styles'],
         ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate',            'ja'],
         ['affiliate/signup-jp',        'japan/affiliates/signup',      'default',    'Affiliate',            'NOT-ja,en'],
-        ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],
+        ['user/browser-support',       'misc/browser_support',         'default',    'Login trouble'],
         ['endpoint',                   'misc/endpoint',                'default',    'Endpoint'],
         ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents',           'ja'],
         ['cashier',                    'cashier/index',                'default',    'Cashier'],
@@ -73,9 +72,9 @@ sub all_pages {
         ['paymentagent/transferws',      'cashier/paymentagent_transfer',             'default', 'Payment Agent Transfer'],
         ['paymentagent/withdrawws',      'cashier/paymentagent_withdraw',             'default', 'Payment Agent Withdrawal'],
 
-        ['multi_barriers_trading', 'bet/mb_trading',  'default', 'Trusted by traders since 2000'],
-        ['trading',                'bet/static',      'default', 'Trusted by traders since 2000'],
-        ['trading_beta',           'bet/beta/static', 'default', 'Trusted by traders since 2000', 'ja'],
+        ['multi_barriers_trading', 'bet/mb_trading',   'default', 'Trusted by traders since 2000'],
+        ['trading',                'bet/trading',      'default', 'Trusted by traders since 2000'],
+        ['trading_beta',           'bet/beta/trading', 'default', 'Trusted by traders since 2000', 'ja'],
 
         ['new_account/japanws',          'new_account/japan',           'default', 'Real Money Account Opening', 'NOT-ja,en'],
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening', 'NOT-ja,en'],
@@ -109,9 +108,10 @@ sub all_pages {
         ['user/settings/assessmentws',       'user/settings/financial_assessment',   'default',    'Financial Assessment',    'ja'],
         ['user/settings/detailsws',          'user/settings/personal_details',       'default',    'Personal Details'],
 
-        ['logged_inws',                'global/logged_in',     undef],
-        ['trade/bet_explanation',      'bet/explanation',      undef],
-        ['trade/bet_explanation_beta', 'bet/beta/explanation', undef],
+        ['logged_inws',                'global/logged_in',       undef],
+        ['trade/bet_explanation',      'bet/explanation',        undef],
+        ['trade/bet_explanation_beta', 'bet/beta/explanation',   undef],
+        ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],
     );
 }
 

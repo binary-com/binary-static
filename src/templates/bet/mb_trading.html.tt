@@ -1,5 +1,5 @@
 <div class="center-text">
-    [% INCLUDE global/loading.html.tt %]
+    [% PROCESS global/loading.html.tt %]
 </div>
 <div class="mb-trading-wrapper invisible">
     <div id="mb_trading">
@@ -113,6 +113,6 @@
             <div id="loading-overlay" class="invisible"></div>
         </div>
     </div>
-    [% INCLUDE bet/analysis.html.tt %]
-    <div id="open_positions_container">[% INCLUDE user/portfolio.html.tt %]</div>
+    [% PROCESS bet/analysis.html.tt %]
+    <div id="open_positions_container">[% PROCESS user/portfolio.html.tt %]</div>
 </div>

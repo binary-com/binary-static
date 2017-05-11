@@ -1,7 +1,8 @@
-const BinaryPjax  = require('../../../base/binary_pjax');
-const Client      = require('../../../base/client');
-const localize    = require('../../../base/localize').localize;
-const FormManager = require('../../../common_functions/form_manager');
+const BinarySocket = require('../../socket');
+const BinaryPjax   = require('../../../base/binary_pjax');
+const Client       = require('../../../base/client');
+const localize     = require('../../../base/localize').localize;
+const FormManager  = require('../../../common_functions/form_manager');
 
 const ChangePassword = (() => {
     'use strict';

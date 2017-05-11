@@ -1,51 +1,29 @@
+[% PROCESS components/forms.html.tt %]
+[% BLOCK strong_label %]
+    <strong><label id="[% id %]"></label></strong>
+[% END %]
+
 <h1>[% l('Payment Agent transfer') %]</h1>
 
-<div id="pa_transfer_loading" class="center-text">[% INCLUDE global/loading.html.tt %]</div>
+<div id="pa_transfer_loading" class="center-text">[% PROCESS global/loading.html.tt %]</div>
 
 <form id="frm_confirm_transfer" class="invisible">
     <p>[% l('Please confirm the transaction details in order to complete the transfer:') %]</p>
 
-    <fieldset>
-        <legend>[% l('Details') %]</legend>
+    [% WRAPPER fieldset legend=l('Details') %]
+        [% WRAPPER form_row label=l('Transfer to') id='user_name' type='custom' %]
+            [% INCLUDE strong_label id='user_name' %]
+        [% END %]
+        [% WRAPPER form_row label=l('Login ID') id='loginid' type='custom' %]
+            [% INCLUDE strong_label id='loginid' %]
+        [% END %]
+        [% WRAPPER form_row label=l('Amount') id='confirm_amount' type='custom' %]
+            [% INCLUDE strong_label id='confirm_amount' %]
+        [% END %]
+    [% END %]
 
-        <div class="gr-row gr-padding-10">
-            <div class="gr-4 form_label">
-                <label for="user_name">[% l('Transfer to') %]</label>
-            </div>
-            <div class="gr-8">
-                <strong><label id="user_name"></label></strong>
-            </div>
-        </div>
-
-        <div class="gr-row gr-padding-10">
-            <div class="gr-4 form_label">
-                <label for="user_name">[% l('Login ID') %]</label>
-            </div>
-            <div class="gr-8">
-                <strong><label id="loginid"></label></strong>
-            </div>
-        </div>
-
-        <div class="gr-row gr-padding-10">
-            <div class="gr-4 form_label">
-                <label for="amount">[% l('Amount') %]</label>
-            </div>
-            <div class="gr-8">
-                <strong><label id="confirm_amount"></label></strong>
-            </div>
-        </div>
-    </fieldset>
-
-    <div class="gr-row gr-padding-10">
-        <div class="gr-4"></div>
-        <div class="gr-8">
-            <p class="errorfield invisible gr-padding-10"></p>
-            <a class="button" href="javascript:;" id="back_transfer">
-                <span class="button">[% l('Back') %]</span>
-            </a>
-            <button class="button" type="submit">[% l('Confirm') %]</button>
-        </div>
-    </div>
+    [% INCLUDE submit_button custom_btn_href="javascript:;" custom_btn_id="back_transfer" custom_btn_text=l('Back')
+        type='submit' text=l('Confirm') %]
 </form>
 
 <div id="pa_transfer_done" class="invisible">
@@ -68,37 +46,13 @@
 <form id="frm_paymentagent_transfer" class="invisible">
     <p>[% l('Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:') %]</p>
 
-    <fieldset>
-        <legend>[% l('Details') %]</legend>
+    [% WRAPPER fieldset legend=l('Details') %]
+        [% INCLUDE form_row label=l('Transfer to Login ID') id='client_id' type='text' %]
+        [% INCLUDE form_row label=l('Amount') id='amount' type='number' attributes='min="10" max="2000" step="any"'
+            hint=l('Min: 10 Max: 2000') %]
+    [% END %]
 
-        <div class="gr-row gr-padding-10">
-            <div class="gr-4 form_label">
-                <label for="client_id">[% l('Transfer to Login ID') %]</label>
-            </div>
-            <div class="gr-8">
-                <input type="text" name="client_id" id="client_id"/>
-            </div>
-        </div>
-
-        <div class="gr-row gr-padding-10">
-            <div class="gr-4 form_label">
-                <label for="amount">[% l('Amount') %]</label>
-            </div>
-            <div class="gr-8">
-                <input type="number" name="amount" id="amount" min="10" max="2000" step="any"/>
-                <p class="hint">[% l('Min:') %] 10 [% l('Max:') %] 2000</p>
-            </div>
-        </div>
-    </fieldset>
-
-    <div class="gr-row gr-padding-10">
-        <div class="gr-4"></div>
-        <div class="gr-8">
-            <p id="insufficient_balance" class="errorfield invisible gr-padding-10">[% l('Insufficient balance') %]</p>
-            <p id="form_error" class="errorfield invisible gr-padding-10"></p>
-            <button class="button" type="submit">[% l('Submit') %]</button>
-        </div>
-    </div>
+    [% INCLUDE submit_button msg_id='form_error' type='submit' text=l('Submit') %]
 </form>
 
 <div id="paymentagent_transfer_notes" class="invisible">

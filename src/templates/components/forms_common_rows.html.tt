@@ -1,0 +1,101 @@
+[% PROCESS components/forms.html.tt %]
+
+[% BLOCK verification_code %]
+    [% INCLUDE form_row label=l("Verification token") id='verification_code' type='text' attributes='maxlength="8" autocomplete="off"'
+            hint=l("Please check your email for the value of this token") %]
+[% END %]
+
+[% BLOCK salutation %]
+    [% WRAPPER form_row type='select' id='salutation' class label=l('Title') %]
+        <option value="Mr">[% l('Mr') %]</option>
+        <option value="Mrs" class="ru-hide">[% l('Mrs') %]</option>
+        <option value="Ms">[% l('Ms') %]</option>
+        <option value="Miss" class="ru-hide">[% l('Miss') %]</option>
+    [% END %]
+[% END %]
+
+[% BLOCK first_name %]
+    [% INCLUDE form_row type='text' id='first_name' label=l('First name')
+        attributes='maxlength="30"' _ (class ? ' class="' _ class _ '"' : '') hint=hint%]
+[% END %]
+
+[% BLOCK last_name %]
+    [% INCLUDE form_row type='text' id='last_name' label=l('Family name')
+        attributes='maxlength="30"' _ (class ? ' class="' _ class _ '"' : '') hint=hint %]
+[% END %]
+
+[% BLOCK date_of_birth %]
+    [% INCLUDE form_row type='text' id='date_of_birth' label=l('Date of birth')
+        attributes='size="12" readonly="readonly"' _ (class ? ' class="' _ class _ '"' : '') %]
+[% END %]
+
+[% BLOCK residence %]
+    [% WRAPPER form_row type='custom' id='residence' label=l('Country of residence') %]
+        <label id="lbl_residence"></label>
+    [% END %]
+[% END %]
+
+[% BLOCK address_line_1 %]
+    [% INCLUDE form_row type='text' id='address_line_1' label=l('First line of home address') attributes='maxlength="70"'
+        hint=hint || (no_hint ? '' : l('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.')) %]
+[% END %]
+
+[% BLOCK address_line_2 %]
+    [% INCLUDE form_row type='text' id='address_line_2' label=l('Second line of home address') attributes='maxlength="70"' hint=hint %]
+[% END %]
+
+[% BLOCK address_city %]
+    [% INCLUDE form_row type='text' id='address_city' label=l('Town/City') attributes='maxlength="35"' hint=hint %]
+[% END %]
+
+[% BLOCK address_state %]
+    [% INCLUDE form_row type='select' id='address_state' label=l('State/Province') %]
+[% END %]
+
+[% BLOCK address_postcode %]
+    [% INCLUDE form_row type='text' id='address_postcode' label=l('Postal code/ZIP') attributes='maxlength="20"' hint=hint %]
+[% END %]
+
+[% BLOCK phone %]
+    [% INCLUDE form_row type='text' id='phone' label=l('Telephone') attributes='maxlength="35"' hint=hint %]
+[% END %]
+
+[% BLOCK secret_question %]
+    [% WRAPPER form_row type='select' id='secret_question' label=l('Secret question') %]
+        <option value="Favourite dish">[% l('Favourite dish') %]</option>
+        <option value="Mother's maiden name">[% l("Mother's maiden name") %]</option>
+        <option value="Name of your pet">[% l('Name of your pet') %]</option>
+        <option value="Name of first love">[% l('Name of first love') %]</option>
+        <option value="Memorable town/city">[% l('Memorable town/city') %]</option>
+        <option value="Memorable date">[% l('Memorable date') %]</option>
+        <option value="Brand of first car">[% l('Brand of first car') %]</option>
+        <option value="Favourite artist">[% l('Favourite artist') %]</option>
+    [% END %]
+[% END %]
+
+[% BLOCK secret_answer %]
+    [% INCLUDE form_row type='text' id='secret_answer' label=l('Answer to secret question') attributes='maxlength="50" autocomplete="off"' %]
+[% END %]
+
+[% BLOCK tnc %]
+    <div class="center-text">
+        <div class="gr-row">
+            <div class="gr-12-m gr-padding-10 gr-centered">
+                <input type="checkbox" name="tnc" id="tnc">
+                <label for="tnc">[% l('I have read and agree to the [_1]terms and conditions[_2] of the site.', '<a target="_blank" href="' _ request.url_for('/terms-and-conditions') _ '">', '</a>') %]</label>
+            </div>
+        </div>
+
+        <button class="button" type="submit">[% l('Open Account') %]</button>
+    </div>
+[% END %]
+
+[% BLOCK client_message %]
+    <div class="errorbox rbox invisible" id="client_message">
+        <div class="rbox-wrap">
+            <div class="gr-12 rbox-content" id="client_message_content">
+                <p class="center-text notice-msg"></p>
+            </div>
+        </div>
+    </div>
+[% END %]

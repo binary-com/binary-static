@@ -1,3 +1,4 @@
+const BinarySocket  = require('../../../socket');
 const localize      = require('../../../../base/localize').localize;
 const Client        = require('../../../../base/client');
 const Header        = require('../../../../base/header');

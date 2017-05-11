@@ -1,85 +1,32 @@
+[% PROCESS components/list_multiline.html.tt %]
+
 <div class="gr-12 gr-padding-30 gr-no-gutter">
     <h2>[% l("Ethics Code") %]</h2>
-    <p>
-    	[% l("Japan website Ethics Code Paragraph 1") %]
-    </p>
-    <p>
-		[% l("Japan website Ethics Code Paragraph 2") %]
-	</p>
-	<p>
-		[% l("Japan website Ethics Code Paragraph 3") %]
-	</p>
-	<p>
-		<ol>
-			<li>
-				<strong>[% l("Japan website Ethics Code Bold list item 1") %]</strong>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 1") %]
-				</p>
-			</li>
-			<li>
-				<strong>[% l("Japan website Ethics Code Bold list item 2") %]</strong>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 2") %]
-				</p>
-			</li>
-			<li>
-				<strong>[% l("Japan website Ethics Code Bold list item 3") %]</strong>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 3") %]
-				</p>
-			</li>
-			<li>
-				<strong>[% l("Japan website Ethics Code Bold list item 4") %]</strong>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 4") %]
-				</p>
-			</li>
-			<li>
-				<strong>[% l("Japan website Ethics Code Bold list item 5") %]</strong>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 5") %]
-				</p>
-			</li>
-			<li>
-				<strong>[% l("Japan website Ethics Code Bold list item 6") %]</strong>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 6.1") %]
-				</p>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 6.2") %]
-				</p>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 6.3") %]
-				</p>
-			</li>
-			<li>
-				<strong>[% l("Japan website Ethics Code Bold list item 7") %]</strong>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 7.1") %]
-				</p>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 7.2") %]
-				</p>
-			</li>
-			<li>
-				<strong>[% l("Japan website Ethics Code Bold list item 8") %]</strong>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 8.1") %]
-				</p>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 8.2") %]
-				</p>
-			</li>
-			<li>
-				<strong>[% l("Japan website Ethics Code Bold list item 9") %]</strong>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 9.1") %]
-				</p>
-				<p>
-					[% l("Japan website Ethics Code Explanation of item 9.2") %]
-				</p>
-			</li>
-		</ol>
-	</p>
+    <p>[% l("Japan website Ethics Code Paragraph 1") %]</p>
+    <p>[% l("Japan website Ethics Code Paragraph 2") %]</p>
+	<p>[% l("Japan website Ethics Code Paragraph 3") %]</p>
+	[% INCLUDE list_multiline items=[
+		{ header=l("Japan website Ethics Code Bold list item 1"), texts=[ { text=l("Japan website Ethics Code Explanation of item 1") }] },
+		{ header=l("Japan website Ethics Code Bold list item 2"), texts=[ { text=l("Japan website Ethics Code Explanation of item 2") }] },
+		{ header=l("Japan website Ethics Code Bold list item 3"), texts=[ { text=l("Japan website Ethics Code Explanation of item 3") }] },
+		{ header=l("Japan website Ethics Code Bold list item 4"), texts=[ { text=l("Japan website Ethics Code Explanation of item 4") }] },
+		{ header=l("Japan website Ethics Code Bold list item 5"), texts=[ { text=l("Japan website Ethics Code Explanation of item 5") }] },
+		{ header=l("Japan website Ethics Code Bold list item 6"), texts=[
+				{ text=l("Japan website Ethics Code Explanation of item 6.1") },
+				{ text=l("Japan website Ethics Code Explanation of item 6.2") },
+				{ text=l("Japan website Ethics Code Explanation of item 6.3") },
+			] },
+		{ header=l("Japan website Ethics Code Bold list item 7"), texts=[
+				{ text=l("Japan website Ethics Code Explanation of item 7.1") },
+				{ text=l("Japan website Ethics Code Explanation of item 7.2") },
+			] },
+		{ header=l("Japan website Ethics Code Bold list item 8"), texts=[
+				{ text=l("Japan website Ethics Code Explanation of item 8.1") },
+				{ text=l("Japan website Ethics Code Explanation of item 8.2") },
+			] },
+		{ header=l("Japan website Ethics Code Bold list item 9"), texts=[
+				{ text=l("Japan website Ethics Code Explanation of item 9.1") },
+				{ text=l("Japan website Ethics Code Explanation of item 9.2") },
+			] },
+	] %]
 </div>

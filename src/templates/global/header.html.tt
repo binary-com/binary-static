@@ -1,3 +1,28 @@
+[% PROCESS components/elements.html.tt %]
+
+[% BLOCK language %]
+<ul id="[% type %]_language">
+    <li>
+        <span class="world world-[% color %]"></span>
+        <div class="language-wrapper">
+            <span class="language"></span>
+        </div>
+        <span class="nav-caret"></span>
+    </li>
+</ul>
+[% END %]
+
+[% BLOCK account %]
+<a href="javascript:;">
+    <div class="main-account">
+        <div class="account-type"></div>
+        <div class="account-id"></div>
+        <div class="topMenuBalance">0</div>
+    </div>
+    <div class="nav-caret"></div>
+</a>
+[% END %]
+
 <div id="msg_notification" class="notice-msg center-text"></div>
 <div id='page-wrapper'>
     <div id="topbar" class="no-print primary-color-dark">
@@ -17,24 +42,8 @@
                         </div>
                         <div class='gr-5 gr-6-m'>
                             <div class="languages invisible">
-                                <ul id="display_language">
-                                    <li>
-                                        <span class="world world-white"></span>
-                                        <div class="language-wrapper">
-                                            <span class="language"></span>
-                                        </div>
-                                        <span class="nav-caret"></span>
-                                    </li>
-                                </ul>
-                                <ul id="select_language">
-                                    <li>
-                                        <span class="world world-black"></span>
-                                        <div class="language-wrapper">
-                                            <span class="language"></span>
-                                        </div>
-                                        <span class="nav-caret"></span>
-                                    </li>
-                                </ul>
+                                [% INCLUDE language type='display' color='white' %]
+                                [% INCLUDE language type='select'  color='black' %]
                             </div>
                         </div>
                     </div>
@@ -61,77 +70,47 @@
                     </div>
                     <div class='gr-6 gr-hide-m gr-hide-p gr-padding-10'>
                         <div id='main-navigation'>
-                            <ul id="menu-top">
-                                <li class="ja-hide">
-                                    <a href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
-                                </li>
-                                <li class="invisible ja-show">
-                                    <a href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
-                                </li>
-                                <li class="ja-hide">
-                                    <a href="[% request.url_for('get-started') %]">[% l("Get Started") %]</a>
-                                </li>
-                                <li class="invisible ja-show">
-                                  <a href="[% request.url_for('get-started-jp') %]">[% l("Get Started") %]</a>
-                                </li>
-                                <li class="ja-hide">
-                                    <a href="[% request.url_for('tour') %]">[% l('Tour') %]</a>
-                                </li>
-                                <li class="invisible ja-show">
-                                    <a href="[% request.url_for('tour-jp') %]">[% l('Tour') %]</a>
-                                </li>
-                                <li class="ja-hide" id="main-navigation-trading">
-                                    <a href="[% request.url_for('platforms') %]">[% l("Platforms") %]</a>
-                                </li>
-                                <li class="invisible ja-show" id="main-navigation-jptrading">
-                                    <a href="[% request.url_for('multi_barriers_trading') %]">[% l("Trade") %]</a>
-                                </li>
-                            </ul>
+                            [% INCLUDE list id='menu-top' items=[
+                                { text=l('Why Us?'),     href=request.url_for('why-us'),                 class='ja-hide' },
+                                { text=l('Why Us?'),     href=request.url_for('why-us-jp'),              class='invisible ja-show' },
+                                { text=l("Get Started"), href=request.url_for('get-started'),            class='ja-hide' },
+                                { text=l("Get Started"), href=request.url_for('get-started-jp'),         class='invisible ja-show' },
+                                { text=l('Tour'),        href=request.url_for('tour'),                   class='ja-hide' },
+                                { text=l('Tour'),        href=request.url_for('tour-jp'),                class='invisible ja-show' },
+                                { text=l("Platforms"),   href=request.url_for('platforms'),              class='ja-hide',           id='main-navigation-trading' },
+                                { text=l("Trade"),       href=request.url_for('multi_barriers_trading'), class='invisible ja-show', id='main-navigation-jptrading' },
+                            ] %]
                         </div>
                     </div>
                     <div id="client-logged-in" class="gr-3 gr-7-m gr-8-p gr-no-gutter client_real client_virtual center-text invisible">
-                      <div id="main-logout">
-                        <ul id="main-account" class="nav-menu main-nav">
-                            <li class="account">
-                                <a href="javascript:;">
-                                    <div class="main-account">
-                                        <div class="account-type"></div>
-                                        <div class="account-id"></div>
-                                        <div class="topMenuBalance">0</div>
-                                    </div>
-                                    <div class="nav-caret"></div>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul id="all-accounts" class="nav-menu main-nav">
-                            <li class="account">
-                                <a href="javascript:;">
-                                    <div class="main-account">
-                                        <div class="account-type"></div>
-                                        <div class="account-id"></div>
-                                        <div class="topMenuBalance">0</div>
-                                    </div>
-                                    <div class="nav-caret"></div>
-                                </a>
-                                <ul>
-                                    <a class="link" href="[% request.url_for('/user/settingsws') %]">
-                                        <li class="topMenuProfile">[% l("Profile") %]</li>
-                                    </a>
-                                    <a class="link" href="[% request.url_for('/user/securityws') %]">
-                                        <li class="topMenuSecurity">[% l("Security & Limits") %]</li>
-                                    </a>
-                                    <a class="link invisible" id="user_menu_metatrader" href="[% request.url_for('/user/metatrader') %]">
-                                        <li class="topMenuMetaTrader">[% l("MetaTrader") %]</li>
-                                    </a>
-                                    <div class="separator-line-thin-gray"></div>
-                                    <div class="login-id-list"></div>
-                                    <a href="javascript:;" id="btn_logout" class="logout">
-                                        <li>[% l("Sign out") %]</li>
-                                    </a>
-                                </ul>
-                            </li>
-                        </ul>
-                      </div>
+                        <div id="main-logout">
+                            <ul id="main-account" class="nav-menu main-nav">
+                                <li class="account">
+                                    [% INCLUDE account %]
+                                </li>
+                            </ul>
+                            <ul id="all-accounts" class="nav-menu main-nav">
+                                <li class="account">
+                                    [% INCLUDE account %]
+                                    <ul>
+                                        <a class="link" href="[% request.url_for('/user/settingsws') %]">
+                                            <li class="topMenuProfile">[% l("Profile") %]</li>
+                                        </a>
+                                        <a class="link" href="[% request.url_for('/user/securityws') %]">
+                                            <li class="topMenuSecurity">[% l("Security & Limits") %]</li>
+                                        </a>
+                                        <a class="link invisible" id="user_menu_metatrader" href="[% request.url_for('/user/metatrader') %]">
+                                            <li class="topMenuMetaTrader">[% l("MetaTrader") %]</li>
+                                        </a>
+                                        <div class="separator-line-thin-gray"></div>
+                                        <div class="login-id-list"></div>
+                                        <a href="javascript:;" id="btn_logout" class="logout">
+                                            <li>[% l("Sign out") %]</li>
+                                        </a>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div id="client-logged-out" class="gr-3 gr-8-m gr-8-p gr-no-gutter client_logged_out invisible gr-padding-10">
                         <a id="btn_login" class="button" href="javascript:;"><span>[% l('Log in') %]</span></a>

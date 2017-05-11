@@ -12,7 +12,9 @@ const Url               = require('./url');
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
 const scrollToTop       = require('../common_functions/scroll').scrollToTop;
 const TrafficSource     = require('../common_functions/traffic_source');
+const BinarySocket      = require('../websocket_pages/socket');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
+const AffiliatePopup    = require('../../binary_japan/affiliate_popup');
 const Cookies           = require('../../lib/js-cookie');
 const PushNotification  = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
@@ -23,7 +25,6 @@ const Page = (() => {
 
     const init = () => {
         State.set('is_loaded_by_pjax', false);
-        Client.init();
         Url.init();
         PushNotification.init();
         onDocumentReady();
@@ -97,7 +98,6 @@ const Page = (() => {
             checkLanguage();
         }
         TrafficSource.setData();
-        BinarySocket.init();
     };
 
     const onUnload = () => {
@@ -109,6 +109,9 @@ const Page = (() => {
         if (!token || token.length !== 32) {
             return false;
         }
+
+        AffiliatePopup.show();
+
         const token_length = token.length;
         const is_subsidiary = /\w{1}/.test(Url.param('s'));
 

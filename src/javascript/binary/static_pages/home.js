@@ -1,8 +1,9 @@
-const BinaryPjax  = require('../base/binary_pjax');
-const getLanguage = require('../base/language').get;
-const localize    = require('../base/localize').localize;
-const urlFor      = require('../base/url').urlFor;
-const FormManager = require('../common_functions/form_manager');
+const BinaryPjax   = require('../base/binary_pjax');
+const getLanguage  = require('../base/language').get;
+const localize     = require('../base/localize').localize;
+const urlFor       = require('../base/url').urlFor;
+const FormManager  = require('../common_functions/form_manager');
+const BinarySocket = require('../websocket_pages/socket');
 
 const Home = (() => {
     'use strict';
@@ -49,7 +50,7 @@ const Home = (() => {
         if (!error) {
             BinaryPjax.load('new_account/virtualws');
         } else {
-            $('#signup_error').css({ display: 'inline-block' }).text(error.message);
+            $('#signup_error').removeClass('invisible').text(error.message);
         }
     };
 

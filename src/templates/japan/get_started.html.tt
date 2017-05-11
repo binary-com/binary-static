@@ -1,253 +1,120 @@
+[% PROCESS components/elements.html.tt %]
+[% BLOCK box %]
+<dl class="gr-row">
+    [% FOREACH box IN boxes %]
+        <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+            <div class="section fill-bg-color section-jp">
+                <a href="#[% box.id %]">
+                    <div id="[% box.id %]-img"></div>
+                    <div class="section-header">[% box.header %]</div>
+                </a>
+            </div>
+        </div>
+    [% END %]
+</dl>
+[% END %]
+
+[% BLOCK download %]
+<div class="center-text gr-padding-10">
+    <a class="button" href="[% japan_docs_url _ '/documents/' _ doc _ '.pdf' %]" target="_blank">
+        <span[% IF class %] class="[% class %]"[% END %]>[% text || l('{JAPAN ONLY}Download') %]</span>
+    </a>
+</div>
+[% END %]
+
 <div class="get-started-jp gr-row">
-  <div class="gr-3 gr-hide-m">
-    <div class="sidebar-left">
-      <ul class="nav">
-        <li class="how-to-open-an-account">
-          <a href="#how-to-open-an-account">[% l('{JAPAN ONLY}How to Open an Account') %]</a>
-        </li>
-        <li class="identification-documents">
-          <a href="#identification-documents">[% l('{JAPAN ONLY}Identification Documents') %]</a>
-        </li>
-        <li class="options-basic-knowledge">
-          <a href="#options-basic-knowledge">[% l('{JAPAN ONLY}Options Basic Knowledge') %]</a>
-        </li>
-        <li class="trading-guide">
-          <a href="#trading-guide">[% l('{JAPAN ONLY}Trading Guide') %]</a>
-        </li>
-        <li class="summary-of-specifications">
-          <a href="#summary-of-specifications">[% l('{JAPAN ONLY}Summary of Specifications') %]</a>
-        </li>
-        <li class="pre-contract-documents">
-          <a href="#pre-contract-documents">[% l('{JAPAN ONLY}Pre-Contract Documents') %]</a>
-        </li>
-      </ul>
+    <div class="gr-3 gr-hide-m">
+        <div class="sidebar-left">
+            [% INCLUDE list class='nav' items=[
+                { class='how-to-open-an-account',    href='#how-to-open-an-account',    text=l('{JAPAN ONLY}How to Open an Account') },
+                { class='identification-documents',  href='#identification-documents',  text=l('{JAPAN ONLY}Identification Documents') },
+                { class='options-basic-knowledge',   href='#options-basic-knowledge',   text=l('{JAPAN ONLY}Options Basic Knowledge') },
+                { class='trading-guide',             href='#trading-guide',             text=l('{JAPAN ONLY}Trading Guide') },
+                { class='summary-of-specifications', href='#summary-of-specifications', text=l('{JAPAN ONLY}Summary of Specifications') },
+                { class='pre-contract-documents',    href='#pre-contract-documents',    text=l('{JAPAN ONLY}Pre-Contract Documents') },
+            ] %]
+        </div>
     </div>
-  </div>
 
-  <div class="gr-6 gr-12-m gr-parent" id="index">
+    <div class="gr-6 gr-12-m gr-parent" id="index">
+        [% INCLUDE box boxes=[
+            { id='how-to-open-an-account',   header=l("{JAPAN ONLY}How to Open an Account") },
+            { id='identification-documents', header=l("{JAPAN ONLY}Identification Documents") },
+        ] %]
+        [% INCLUDE box boxes=[
+            { id='options-basic-knowledge', header=l("{JAPAN ONLY}Options Basic Knowledge") },
+            { id='trading-guide',           header=l("{JAPAN ONLY}Trading Guide") },
+        ] %]
+        [% INCLUDE box boxes=[
+            { id='summary-of-specifications', header=l("{JAPAN ONLY}Summary of Specifications") },
+            { id='pre-contract-documents',    header=l("{JAPAN ONLY}Pre-Contract Documents") },
+        ] %]
+    </div>
 
-    <dl class="gr-row">
-      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color section-jp">
-          <a href="#how-to-open-an-account">
-            <div id="how-to-open-an-account-img"></div>
-            <div class="section-header">
-              [% l('{JAPAN ONLY}How to Open an Account') %]
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color section-jp">
-          <a href="#identification-documents">
-            <div id="identification-documents-img"></div>
-            <div class="section-header">
-              [% l('{JAPAN ONLY}Identification Documents') %]
-            </div>
-          </a>
-        </div>
-      </div>
-    </dl>
-
-    <dl class="gr-row">
-      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color section-jp">
-          <a href="#options-basic-knowledge">
-            <div id="options-basic-knowledge-img"></div>
-            <div class="section-header">
-              [% l('{JAPAN ONLY}Options Basic Knowledge') %]
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color section-jp">
-          <a href="#trading-guide">
-            <div id="trading-guide-img"></div>
-            <div class="section-header">
-              [% l('{JAPAN ONLY}Trading Guide') %]
-            </div>
-          </a>
-        </div>
-      </div>
-    </dl>
-
-    <dl class="gr-row">
-      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color section-jp">
-          <a href="#summary-of-specifications">
-            <div id="summary-of-specifications-img"></div>
-            <div class="section-header">
-              [% l('{JAPAN ONLY}Summary of Specifications') %]
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
-        <div class="section fill-bg-color section-jp">
-          <a href="#pre-contract-documents">
-            <div id="pre-contract-documents-img"></div>
-            <div class="section-header">
-              [% l('{JAPAN ONLY}Pre-Contract Documents') %]
-            </div>
-          </a>
-        </div>
-      </div>
-    </dl>
-
-  </div>
-
-  <div class="gr-6 gr-12-m gr-parent contents" style="display:none">
-    <div id="content-how-to-open-an-account">
-      <h1>[% l('{JAPAN ONLY}How to Open an Account') %]</h1>
-      <p>
-        [% l('{JAPAN ONLY}You can apply to open an account online. Simply click <a href="[_1]">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account.', request.url_for('/')) %]
-      </p>
-      <p>
-        [% l('{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:') %]
-        <ol>
-          <li>
-            [% l('{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions.') %]
-          </li>
-          <li>
-            [% l('{JAPAN ONLY}Take our Knowledge Test to confirm your understanding of options.') %]
-          </li>
-          <li>
-            [% l('{JAPAN ONLY}Email us copies of your Identification Documents and My Number card.') %]
-            <p class="hint">
-              [% l('{JAPAN ONLY}Please click <a href="#identification-documents">here</a> for further information.') %]
+    <div class="gr-6 gr-12-m gr-parent contents" style="display:none">
+        <div id="content-how-to-open-an-account">
+            <h1>[% l('{JAPAN ONLY}How to Open an Account') %]</h1>
+            <p>[% l('{JAPAN ONLY}You can apply to open an account online. Simply click <a href="[_1]">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account.', request.url_for('/')) %]</p>
+            <p>
+                [% l('{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:') %]
+                <ol>
+                    <li>[% l('{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions.') %]</li>
+                    <li>[% l('{JAPAN ONLY}Take our Knowledge Test to confirm your understanding of options.') %]</li>
+                    <li>
+                        [% l('{JAPAN ONLY}Email us copies of your Identification Documents and My Number card.') %]
+                        <p class="hint">[% l('{JAPAN ONLY}Please click <a href="#identification-documents">here</a> for further information.') %]</p>
+                    </li>
+                    <li>[% l('{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address.') %]</li>
+                </ol>
             </p>
-          </li>
-          <li>
-            [% l('{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address.') %]
-          </li>
-        </ol>
-      </p>
-      <p>
-        [% l('{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:') %]
-      </p>
-      <p class="center-text">
-        <a class="button" href="[% japan_docs_url _ '/documents/binary_account_open_guide.pdf' %]" download target="_blank">
-          <span>[% l('{JAPAN ONLY}Download') %]</span>
-        </a>
-      </p>
-    </div>
+            <p>[% l('{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:') %]</p>
+            [% INCLUDE download doc='binary_account_open_guide' %]
+        </div>
 
-    <div id="content-identification-documents">
-      <h1>[% l('{JAPAN ONLY}Identification Documents') %]</h1>
-      <p>
-        [% l('{JAPAN ONLY}We are required to request copies of your My Number Card as well as proof of registered address. Your details will be kept secure and only used for the specific purposes of verifying your credentials, as required by law.') %]
-      </p>
-      <p>
-        [% l('{JAPAN ONLY}For full details of the documents we can accept please download the following guide:') %]
-      </p>
-      <p class="center-text">
-        <a class="button" href="[% japan_docs_url _ '/documents/binary_id_guide.pdf' %]" download target="_blank">
-          <span>[% l('{JAPAN ONLY}Download') %]</span>
-        </a>
-      </p>
-    </div>
+        <div id="content-identification-documents">
+            <h1>[% l('{JAPAN ONLY}Identification Documents') %]</h1>
+            <p>[% l('{JAPAN ONLY}We are required to request copies of your My Number Card as well as proof of registered address. Your details will be kept secure and only used for the specific purposes of verifying your credentials, as required by law.') %]</p>
+            <p>[% l('{JAPAN ONLY}For full details of the documents we can accept please download the following guide:') %]</p>
+            [% INCLUDE download doc='binary_id_guide' %]
+        </div>
 
-    <div id="content-options-basic-knowledge">
-      <h1>[% l('{JAPAN ONLY}Options Basic Knowledge') %]</h1>
-      <p>
-        [% l('{JAPAN ONLY}In order to open a trading account for you we will need to test your knowledge of options to ensure you have the necessary understanding of the products and risks of binary option trading.') %]
-      </p>
-      <p>
-        [% l('{JAPAN ONLY}Please download our Options Basic Knowledge guides which cover all the essential concepts, terminalogy and required information:') %]
-      </p>
-      <div class="gr-row">
-          <div class="gr-6 gr-12-m gr-12-p">
-            <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_1.pdf' %]" target="_blank">
-                <span class="link-size-box">[% l('{JAPAN ONLY}Introduction to Binary Options') %]</span>
-              </a>
+        <div id="content-options-basic-knowledge">
+            <h1>[% l('{JAPAN ONLY}Options Basic Knowledge') %]</h1>
+            <p>[% l('{JAPAN ONLY}In order to open a trading account for you we will need to test your knowledge of options to ensure you have the necessary understanding of the products and risks of binary option trading.') %]</p>
+            <p>[% l('{JAPAN ONLY}Please download our Options Basic Knowledge guides which cover all the essential concepts, terminalogy and required information:') %]</p>
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m gr-12-p">
+                    [% INCLUDE download doc='binary_kihon_chishiki_1' class='link-size-box' text=l('{JAPAN ONLY}Introduction to Binary Options') %]
+                    [% INCLUDE download doc='binary_kihon_chishiki_2' class='link-size-box' text=l('{JAPAN ONLY}Purchase, Settlement & Resale') %]
+                    [% INCLUDE download doc='binary_kihon_chishiki_3' class='link-size-box' text=l('{JAPAN ONLY}Options Basics') %]
+                </div>
+                <div class="gr-6 gr-12-m gr-12-p">
+                    [% INCLUDE download doc='binary_kihon_chishiki_4' class='link-size-box' text=l('{JAPAN ONLY}Trading & Hedging') %]
+                    [% INCLUDE download doc='binary_kihon_chishiki_5' class='link-size-box' text=l('{JAPAN ONLY}Option Pricing') %]
+                    [% INCLUDE download doc='binary_kihon_chishiki_6' class='link-size-box' text=l('{JAPAN ONLY}Regulation & Tax') %]
+                </div>
             </div>
-            <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_2.pdf' %]" target="_blank">
-                <span class="link-size-box">[% l('{JAPAN ONLY}Purchase, Settlement & Resale') %]</span>
-              </a>
-            </div>
-            <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_3.pdf' %]" target="_blank">
-                <span class="link-size-box">[% l('{JAPAN ONLY}Options Basics') %]</span>
-              </a>
-            </div>
-          </div>
-          <div class="gr-6 gr-12-m gr-12-p">
-            <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_4.pdf' %]" target="_blank">
-                <span class="link-size-box">[% l('{JAPAN ONLY}Trading & Hedging') %]</span>
-              </a>
-            </div>
-            <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_5.pdf' %]" target="_blank">
-                <span class="link-size-box">[% l('{JAPAN ONLY}Option Pricing') %]</span>
-              </a>
-            </div>
-            <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_6.pdf' %]" target="_blank">
-                <span class="link-size-box">[% l('{JAPAN ONLY}Regulation & Tax') %]</span>
-              </a>
-            </div>
-          </div>
-      </div>
+        </div>
+
+        <div id="content-trading-guide">
+            <h1>[% l('{JAPAN ONLY}Trading Guide') %]</h1>
+            <p>[% l('{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:') %]</p>
+            [% INCLUDE download doc='binary_operation_manual' %]
+        </div>
+
+        <div id="content-summary-of-specifications">
+            <h1>[% l('{JAPAN ONLY}Summary of Specifications') %]</h1>
+            <p>[% l('{JAPAN ONLY}Please download our Summary of Specifications which lists all the details of our trade types, rules and conditions for trading etc.') %]</p>
+            [% INCLUDE download doc='binary_torihiki_gaiyou' %]
+        </div>
+
+        <div id="content-pre-contract-documents">
+            <h1>[% l('{JAPAN ONLY}Pre-Contract Documents') %]</h1>
+            <p>[% l('{JAPAN ONLY}Please download our Pre-Contract Documents which you must confirm you have read, understood and agree with, when upgrading to a real money account.') %]</p>
+            [% INCLUDE download doc='binary_maeshomen' %]
+        </div>
     </div>
 
-    <div id="content-trading-guide">
-      <h1>[% l('{JAPAN ONLY}Trading Guide') %]</h1>
-      <p>
-        [% l('{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:') %]
-      </p>
-      <p class="center-text">
-        <a class="button" href="[% japan_docs_url _ '/documents/binary_operation_manual.pdf' %]" target="_blank">
-          <span>[% l('{JAPAN ONLY}Download') %]</span>
-        </a>
-      </p>
-    </div>
 
-    <div id="content-summary-of-specifications">
-      <h1>[% l('{JAPAN ONLY}Summary of Specifications') %]</h1>
-      <p>
-        [% l('{JAPAN ONLY}Please download our Summary of Specifications which lists all the details of our trade types, rules and conditions for trading etc.') %]
-      </p>
-      <p class="center-text">
-        <a class="button" href="[% japan_docs_url _ '/documents/binary_torihiki_gaiyou.pdf' %]" target="_blank">
-          <span>[% l('{JAPAN ONLY}Download') %]</span>
-        </a>
-      </p>
-    </div>
-
-    <div id="content-pre-contract-documents">
-      <h1>[% l('{JAPAN ONLY}Pre-Contract Documents') %]</h1>
-      <p>
-        [% l('{JAPAN ONLY}Please download our Pre-Contract Documents which you must confirm you have read, understood and agree with, when upgrading to a real money account.') %]
-      </p>
-      <p class="center-text">
-        <a class="button" href="[% japan_docs_url _ '/documents/binary_maeshomen.pdf' %]" target="_blank">
-          <span>[% l('{JAPAN ONLY}Download') %]</span>
-        </a>
-      </p>
-    </div>
-
-  </div>
-
-  <div class="gr-3 gr-hide-m">
-    <div class="sidebar-right">
-      <div class="client_logged_out invisible fill-bg-color">
-        <p>
-          <a href="[% request.url_for('/') %]">[% l('Try it now') %]</a>
-          <br>
-          [% l('No risk, $10K virtual money account') %]
-        </p>
-      </div>
-      <div class="fill-bg-color">
-        <p>
-          [% l('Want to learn more?') %]
-          <br>
-          <a href="[% request.url_for('/tour-jp') %]">[% l('View the Tour') %]</a>
-        </p>
-      </div>
-    </div>
-  </div>
+    [% INCLUDE global/signup_tour.html.tt is_jp=1 %]
 </div>

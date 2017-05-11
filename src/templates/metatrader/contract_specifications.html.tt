@@ -1,30 +1,16 @@
-<div class="content-tab-container static_full cs-content">
-    <div class="tab-menu">
-        <div class="tab-menu-wrap">
-            <ul id="cs-menu" class="tm-ul">
-                <li id="forex" class="tm-li first active">
-                    <a href="#forex" class="tm-a first a-active">[% l('Forex') %]</a>
-                </li>
-                <li id="volatility" class="tm-li last">
-                    <a href="#volatility" class="tm-a">[% l('Volatility Indices') %]</a>
-                </li>
-                <li id="cash" class="tm-li last">
-                    <a href="#cash" class="tm-a">[% l('Cash Indices') %]</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+[% PROCESS components/tabs.html.tt %]
+
+[% WRAPPER tab_container class='static_full cs-content' %]
+    [% INCLUDE tabs_subtabs id='cs-menu' items=[
+        { class='active', id='forex', text=l('Forex') },
+        { id='volatility', text=l('Volatility Indices') },
+        { id='cash',       text=l('Cash Indices') },
+    ] %]
     <div class="tab-content">
-        <div class="tab-content-wrapper menu-has-sub-item">
-            <div id="forex-content" class="toggle-content">
-                [% INCLUDE metatrader/contract_specifications/forex.html.tt %]
-            </div>
-            <div id="volatility-content" class="toggle-content invisible">
-                [% INCLUDE metatrader/contract_specifications/volatility_indices.html.tt %]
-            </div>
-            <div id="cash-content" class="toggle-content invisible">
-                [% INCLUDE metatrader/contract_specifications/cash_indices.html.tt %]
-            </div>
-        </div>
+        [% WRAPPER tab_content_container %]
+            [% WRAPPER tab_content id='forex' visible=1 %][% PROCESS metatrader/contract_specifications/forex.html.tt %][% END %]
+            [% WRAPPER tab_content id='volatility' %][% PROCESS metatrader/contract_specifications/volatility_indices.html.tt %][% END %]
+            [% WRAPPER tab_content id='cash' %][% PROCESS metatrader/contract_specifications/cash_indices.html.tt %][% END %]
+        [% END %]
     </div>
-</div>
+[% END %]

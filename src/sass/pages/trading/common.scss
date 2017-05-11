@@ -4,15 +4,6 @@
 }
 
 #content {
-    .rbox-heading {
-        font-weight: bold;
-        background-color: $COLOR_LIGHT_GRAY;
-        h4 {
-            font-size: 1em;
-            margin: 0;
-            padding: 0.3em 8px;
-        }
-    }
     .rbox-content {
         background-color: $COLOR_WHITE;
         padding: 0.3em 0;
@@ -26,6 +17,10 @@
 
 .center-text {
     text-align: center;
+}
+
+.justify-text {
+    text-align: justify;
 }
 
 .align-start {
