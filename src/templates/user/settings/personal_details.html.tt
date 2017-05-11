@@ -29,12 +29,12 @@
 
 <form class="form gr-padding-10 invisible" id="frmPersonalDetails">
     [% WRAPPER fieldset legend=l('Details') %]
-        [% INCLUDE form_row type='label' required=1 label=l('Name')          is_bold=1 id='lbl_name'          row_class='invisible RealAcc JpAcc' %]
-        [% INCLUDE form_row type='label' required=1 label=l('Gender')        is_bold=1 id='lbl_gender'        row_class='invisible JpAcc' %]
-        [% INCLUDE form_row type='label' required=1 label=l('Date of birth') is_bold=1 id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' %]
+        [% INCLUDE form_row type='label'  label=l('Name')          is_bold=1 id='lbl_name'          row_class='invisible RealAcc JpAcc' %]
+        [% INCLUDE form_row type='label'  label=l('Gender')        is_bold=1 id='lbl_gender'        row_class='invisible JpAcc' %]
+        [% INCLUDE form_row type='label'  label=l('Date of birth') is_bold=1 id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' %]
         [% INCLUDE form_row type='select' label=l('Place of birth') id='place_of_birth' row_class='invisible RealAcc' %]
-        [% INCLUDE form_row type='label' required=1 label=l('Country of Residence') is_bold=1 id='lbl_country' %]
-        [% INCLUDE form_row type='label' required=1 label=l('Email address')        is_bold=1 id='lbl_email' %]
+        [% INCLUDE form_row type='label'  label=l('Country of Residence') is_bold=1 id='lbl_country' %]
+        [% INCLUDE form_row type='label'  label=l('Email address')        is_bold=1 id='lbl_email' %]
         [% WRAPPER form_row type='select' label=l('Occupation') id='occupation' class='jp_value' row_class='invisible JpAcc' %]
             <option value="Office worker">[% l('Office worker') %]</option>
             <option value="Director">[% l('Director') %]</option>
@@ -60,12 +60,12 @@
         [% INCLUDE phone %]
     [% END %]
     [% WRAPPER fieldset class='invisible JpAcc' legend=l('Address') %]
-        [% INCLUDE form_row type='label' required=1 label=l('Postal Code / ZIP')           id='lbl_address_postcode' attributes='class="jp_value"' %]
-        [% INCLUDE form_row type='label' required=1 label=l('State/Province')              id='lbl_address_state'    attributes='class="jp_value"' %]
-        [% INCLUDE form_row type='label' required=1 label=l('Town/City')                   id='lbl_address_city'     attributes='class="jp_value"' %]
-        [% INCLUDE form_row type='label' required=1 label=l('First line of home address')  id='lbl_address_line_1'   attributes='class="jp_value"' %]
-        [% INCLUDE form_row type='label' required=1 label=l('Second line of home address') id='lbl_address_line_2'   attributes='class="jp_value"' %]
-        [% INCLUDE form_row type='label' required=1 label=l('Telephone')                   id='lbl_phone'            attributes='class="jp_value"' %]
+        [% INCLUDE form_row type='label' label=l('Postal Code / ZIP')           id='lbl_address_postcode' attributes='class="jp_value"' %]
+        [% INCLUDE form_row type='label' label=l('State/Province')              id='lbl_address_state'    attributes='class="jp_value"' %]
+        [% INCLUDE form_row type='label' label=l('Town/City')                   id='lbl_address_city'     attributes='class="jp_value"' %]
+        [% INCLUDE form_row type='label' label=l('First line of home address')  id='lbl_address_line_1'   attributes='class="jp_value"' %]
+        [% INCLUDE form_row type='label' label=l('Second line of home address') id='lbl_address_line_2'   attributes='class="jp_value"' %]
+        [% INCLUDE form_row type='label' label=l('Telephone')                   id='lbl_phone'            attributes='class="jp_value"' %]
     [% END %]
     [% WRAPPER fieldset class='invisible JpAcc' legend=l('Status') %]
         [% WRAPPER form_row type='select' label=l('Annual income') id='annual_income' attributes='class="jp_value"' %]
@@ -114,4 +114,4 @@
     [% INCLUDE submit_button id='btn_update' class='invisible' msg_id='formMessage' type='submit' text=l('Update') %]
 </form>
 
-<p class="required invisible RealAcc JpAcc rowCustomerSupport"><em class="required_asterisk">**</em> [% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', request.url_for('contact')) %]</p>
+<p class="required invisible RealAcc JpAcc rowCustomerSupport">[% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', request.url_for('contact')) %]</p>

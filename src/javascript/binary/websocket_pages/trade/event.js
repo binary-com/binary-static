@@ -13,6 +13,7 @@ const Purchase                   = require('./purchase');
 const setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
 const getStartDateNode           = require('./common_independent').getStartDateNode;
 const Tick                       = require('./tick');
+const BinarySocket               = require('../socket');
 const BinaryPjax                 = require('../../base/binary_pjax');
 const GTM                        = require('../../base/gtm');
 const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;

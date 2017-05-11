@@ -1,5 +1,6 @@
-const moment   = require('moment');
-const jpClient = require('../common_functions/country_base').jpClient;
+const moment       = require('moment');
+const jpClient     = require('../common_functions/country_base').jpClient;
+const BinarySocket = require('../websocket_pages/socket');
 
 const Clock = (() => {
     'use strict';

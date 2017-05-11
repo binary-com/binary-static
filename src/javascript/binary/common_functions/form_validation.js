@@ -37,6 +37,14 @@ const Validation = (() => {
                         field.$error = $form.find(field.msg_element);
                     } else {
                         const $parent = field.$.parent();
+                        // Add indicator to required fields
+                        if (field.validations.indexOf('req') >= 0) {
+                            let $label = $parent.parent().find('label');
+                            if (!$label.length) $label = $parent.find('label');
+                            if ($label.find('span.required_field_asterisk').length === 0) {
+                                $label.append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
+                            }
+                        }
                         if ($parent.find(`div.${error_class}`).length === 0) {
                             $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
                         }
@@ -148,6 +156,7 @@ const Validation = (() => {
             message;
 
         field.validations.some((valid) => {
+            if (!valid) return false; // check next validation
             let type,
                 options = {};
 
@@ -177,9 +186,9 @@ const Validation = (() => {
                     message = localize(message, [localize(options.name1), localize(options.name2)]);
                 }
                 all_is_ok = false;
-                return true;
+                return true; // break on the first error found
             }
-            return false;
+            return false; // check next validation
         });
 
         if (!all_is_ok) {

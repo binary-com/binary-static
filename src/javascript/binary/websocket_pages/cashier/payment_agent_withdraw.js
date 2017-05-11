@@ -1,7 +1,8 @@
-const Client      = require('../../base/client');
-const localize    = require('../../base/localize').localize;
-const FormManager = require('../../common_functions/form_manager');
-const Cookies     = require('../../../lib/js-cookie');
+const BinarySocket = require('../socket');
+const Client       = require('../../base/client');
+const localize     = require('../../base/localize').localize;
+const FormManager  = require('../../common_functions/form_manager');
+const Cookies      = require('../../../lib/js-cookie');
 
 const PaymentAgentWithdraw = (() => {
     'use strict';

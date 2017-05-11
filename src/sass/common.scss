@@ -141,8 +141,11 @@ label {
 }
 
 /* global styles */
-.required_asterisk {
-    color: $COLOR_ORANGE;
+.required_field_asterisk {
+    position: absolute;
+    margin: -3px 3px;
+    font-size: $FONT_SIZE_S;
+    color: $COLOR_RED;
 }
 
 .inpage_popup_container {
@@ -267,10 +270,25 @@ button .barspinner.white {
 }
 
 #msg_notification {
-    font-size: $FONT_SIZE_S;
-    padding: 3px 0;
-    line-height: 20px;
-    display: none;
+    &, &:after {
+        font-size: $FONT_SIZE_S;
+        padding: 3px 0;
+        min-height: 20px;
+        line-height: 20px;
+        display: none;
+    }
+    &.error:after {
+        display: block;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        content: attr(data-message);
+        background: $COLOR_YELLOW;
+        color: $COLOR_RED;
+        border-bottom: 1px solid $COLOR_RED;
+    }
 }
 
 #scrollup {

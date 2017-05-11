@@ -905,15 +905,6 @@ msgstr "ที่อยู่"
 msgid "Adjust trade parameters"
 msgstr "ปรับแต่งตัวแปรของการเทรด"
 
-msgid "Adjusted Barrier"
-msgstr "Adjusted Barrier"
-
-msgid "Adjusted High Barrier"
-msgstr "ค่า Barrier สูงที่ปรับปรุงแล้ว"
-
-msgid "Adjusted Low Barrier"
-msgstr "ค่า Barrier ต่ำที่ปรับปรุงแล้ว"
-
 msgid "Admin"
 msgstr "แอดมิน"
 
@@ -1772,9 +1763,6 @@ msgstr "ผู้บริหารระดับสูง เจ้าหน�
 msgid "Choose Scopes:"
 msgstr "กำหนดขอบเขต:"
 
-msgid "Choose a Name:"
-msgstr "กำหนด ชื่อ:"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "กำหนด ระยะเวลา จาก 10 วินาที ถึง 365 วัน"
 
@@ -1801,6 +1789,11 @@ msgstr "กำหนดวิธีการชำระเงินที่ท
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "กำหนดประเภทเฉพาะของ API โทเค่นที่ท่านต้องการใช้งาน"
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token name"
+msgstr "กำหนด ชื่อ:"
 
 msgid "Choose your own strike."
 msgstr "กำหนดราคาใช้สิทธิของท่าน"
@@ -2134,9 +2127,6 @@ msgstr "ลิขสิทธิ์"
 
 msgid "Copywriter"
 msgstr "กอปปี้ไรท์เตอร์หรือ ผู้เขียนต้นฉบับ"
-
-msgid "Corporate Action"
-msgstr "การดำเนินการขององค์กร"
 
 #, fuzzy
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
@@ -5320,15 +5310,6 @@ msgstr "นโยบาย Order Execution"
 msgid "Order Execution/Cancellation/Modification"
 msgstr "การจัดการคำสั่งซื้อ / การยกเลิกคำสั่งซื้อ / การเปลี่ยนแปลงแก้ไขคำสั่งซื้อ"
 
-msgid "Original Barrier"
-msgstr "Barrier ดั้งเดิม"
-
-msgid "Original High Barrier"
-msgstr "Barrier สูง ดั้งเดิม"
-
-msgid "Original Low Barrier"
-msgstr "Barrier ต่ำ ดั้งเดิม"
-
 msgid "Other"
 msgstr "อื่นๆ"
 
@@ -7454,9 +7435,6 @@ msgstr "วรรคนี้ ไม่รวมถึงผลิตภัณ�
 
 msgid "This contract lost"
 msgstr "สัญญานี้ขาดทุน"
-
-msgid "This contract was affected by a Corporate Action event."
-msgstr "สัญญานี้มีผลต่อการดำเนินงานขององค์กร"
 
 msgid "This contract won"
 msgstr "สัญญานี้กำไร"
@@ -10914,6 +10892,30 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Account Limits"
 msgstr "วงเงินในบัญชี"
+
+#~ msgid "Adjusted Barrier"
+#~ msgstr "Adjusted Barrier"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "ค่า Barrier สูงที่ปรับปรุงแล้ว"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "ค่า Barrier ต่ำที่ปรับปรุงแล้ว"
+
+#~ msgid "Corporate Action"
+#~ msgstr "การดำเนินการขององค์กร"
+
+#~ msgid "Original Barrier"
+#~ msgstr "Barrier ดั้งเดิม"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "Barrier สูง ดั้งเดิม"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "Barrier ต่ำ ดั้งเดิม"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "สัญญานี้มีผลต่อการดำเนินงานขององค์กร"
 
 #~ msgid "Please %1 to view this page"
 #~ msgstr "โปรด %1 เพื่อเรียกดูหน้านี้"

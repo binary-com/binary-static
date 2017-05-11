@@ -896,15 +896,6 @@ msgstr "Địa chỉ"
 msgid "Adjust trade parameters"
 msgstr "Điều giới hạn giao dịch"
 
-msgid "Adjusted Barrier"
-msgstr "Rào cản đã được điều chỉnh"
-
-msgid "Adjusted High Barrier"
-msgstr "Giới hạn cao đã được điều chỉnh"
-
-msgid "Adjusted Low Barrier"
-msgstr "Giới hạn thấp đã được điều chỉnh"
-
 msgid "Admin"
 msgstr "Quản trị viên"
 
@@ -1763,9 +1754,6 @@ msgstr "Giám đốc điều hành, quan chức cấp cao và các nhà lập ph
 msgid "Choose Scopes:"
 msgstr "Chọn Loại:"
 
-msgid "Choose a Name:"
-msgstr "Chọn một Tên:"
-
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Chọn thời hạn từ 10 giây tới 365 ngày."
 
@@ -1792,6 +1780,11 @@ msgstr "Chọn phương thức thanh toán bạn muốn sử dụng."
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "Chọn kiểu token API bạn cần, dựa trên khả năng mà bạn muốn làm cho nó khả dụng."
+
+#, fuzzy
+#| msgid "Choose a Name:"
+msgid "Choose token name"
+msgstr "Chọn một Tên:"
 
 msgid "Choose your own strike."
 msgstr "Chọn giá thực hiện của riêng bạn."
@@ -2127,9 +2120,6 @@ msgstr "Bản quyền"
 
 msgid "Copywriter"
 msgstr "Biên Soạn Quảng Cáo"
-
-msgid "Corporate Action"
-msgstr "Hoạt động của công ty"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "Chi phí - các chi phí thực thi lệnh của bạn, bao gồm chuyền bá chủ yếu, tức là, sự khác biệt giữa các giá thầu của chúng tôi và giá chúng tôi cung cấp."
@@ -5314,15 +5304,6 @@ msgstr "Chính Sách Thực hiện Lệnh"
 msgid "Order Execution/Cancellation/Modification"
 msgstr "Thực thi lệnh/ Hủy/Thay đổi"
 
-msgid "Original Barrier"
-msgstr "Giới hạn Ban đầu"
-
-msgid "Original High Barrier"
-msgstr "Giới hạn Cao Ban đầu"
-
-msgid "Original Low Barrier"
-msgstr "Giới hạn Thấp Ban đầu"
-
 msgid "Other"
 msgstr "Khác"
 
@@ -7454,9 +7435,6 @@ msgstr "Khoản này không áp dụng cho chỉ số biến động."
 
 msgid "This contract lost"
 msgstr "Hợp đồng này đã bị lỗ"
-
-msgid "This contract was affected by a Corporate Action event."
-msgstr "Hợp đồng này đã bị ảnh hưởng bởi một sự kiện hoạt động của công ty."
 
 msgid "This contract won"
 msgstr "Hợp đồng này đã thắng"
@@ -11123,6 +11101,30 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
+
+#~ msgid "Adjusted Barrier"
+#~ msgstr "Rào cản đã được điều chỉnh"
+
+#~ msgid "Adjusted High Barrier"
+#~ msgstr "Giới hạn cao đã được điều chỉnh"
+
+#~ msgid "Adjusted Low Barrier"
+#~ msgstr "Giới hạn thấp đã được điều chỉnh"
+
+#~ msgid "Corporate Action"
+#~ msgstr "Hoạt động của công ty"
+
+#~ msgid "Original Barrier"
+#~ msgstr "Giới hạn Ban đầu"
+
+#~ msgid "Original High Barrier"
+#~ msgstr "Giới hạn Cao Ban đầu"
+
+#~ msgid "Original Low Barrier"
+#~ msgstr "Giới hạn Thấp Ban đầu"
+
+#~ msgid "This contract was affected by a Corporate Action event."
+#~ msgstr "Hợp đồng này đã bị ảnh hưởng bởi một sự kiện hoạt động của công ty."
 
 #~ msgid "&#36;100,000 - &#36;250,000"
 #~ msgstr "&#36; $100,000 - &#36; $250,000"

@@ -1,4 +1,5 @@
 const PaymentAgentTransferUI = require('./payment_agent_transfer/payment_agent_transfer.ui');
+const BinarySocket           = require('../../socket');
 const Client                 = require('../../../base/client');
 const localize               = require('../../../base/localize').localize;
 const State                  = require('../../../base/storage').State;

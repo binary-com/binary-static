@@ -17,7 +17,7 @@
     <div class="gr-row form-row center-text-m [% row_class %]"[% IF row_id %] id="[% row_id %]"[% END %]>
         <div class="gr-4 gr-12-m"[% IF label_row_id %] id="[% label_row_id %]"[% END %]>
             <label[% IF type!='label' %] for="[% id %]"[% END %]>
-                [% IF required %]<em class="required_asterisk">**</em>[% END %][% label %]
+                [% label %]
             </label>
         </div>
         <div class="gr-8 gr-12-m">
