@@ -45,13 +45,14 @@ const WebtraderChart = (() => {
         });
         const $underlying = $('#underlying');
         const chart_config = {
-            instrumentCode: $underlying.val(),
-            instrumentName: $underlying.find('option:selected').text(),
-            timePeriod    : '1t',
-            type          : 'line',
-            delayAmount   : 0,
-            lang          : getLanguage().toLowerCase(),
-            timezone      : `GMT+${jpClient() ? '9' : '0'}`,
+            instrumentCode    : $underlying.val(),
+            instrumentName    : $underlying.find('option:selected').text(),
+            showInstrumentName: true,
+            timePeriod        : '1t',
+            type              : 'line',
+            delayAmount       : 0,
+            lang              : getLanguage().toLowerCase(),
+            timezone          : `GMT+${jpClient() ? '9' : '0'}`,
         };
         chart = WTCharts.chartWindow.addNewChart($('#webtrader_chart'), chart_config);
     };
