@@ -158,10 +158,11 @@ const Page = (() => {
         const src = '//browser-update.org/update.min.js';
         if ($(`script[src*="${src}"]`).length) return;
         window.$buoop = {
-            vs : { i: 11, f: -4, o: -4, s: 9, c: -4 },
-            api: 4,
-            l  : Language.get().toLowerCase(),
-            url: 'https://whatbrowser.org/',
+            vs     : { i: 11, f: -4, o: -4, s: 9, c: -4 },
+            api    : 4,
+            l      : Language.get().toLowerCase(),
+            url    : 'https://whatbrowser.org/',
+            noclose: true, // Do not show the 'ignore' button to close the notification
         };
         $(document).ready(() => {
             $('body').append($('<script/>', { src: src }));
