@@ -4,7 +4,6 @@ const MBTradingEvents     = require('./mb_event');
 const MBPrice             = require('./mb_price');
 const MBProcess           = require('./mb_process');
 const BinarySocket        = require('../socket');
-const TradingAnalysis     = require('../trade/analysis');
 const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupChart;
 const localize            = require('../../base/localize').localize;
 const State               = require('../../base/storage').State;
@@ -29,7 +28,6 @@ const MBTradePage = (() => {
             MBProcess.getSymbols();
         });
 
-        TradingAnalysis.bindAnalysisTabEvent();
         $('#tab_portfolio').find('a').text(localize('Portfolio'));
         $('#tab_graph').find('a').text(localize('Chart'));
         $('#tab_explanation').find('a').text(localize('Explanation'));

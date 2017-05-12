@@ -13,13 +13,7 @@
         [% WRAPPER tab_content id='tab_graph' %]
             <p class="error-msg" id="chart-error"></p>
             <div id="trade_live_chart">
-                <table width="600px" align="center">
-                    <tr align="center">
-                        <td colspan="4">
-                            <div id="chart_frame" style="width: 100%; height: 630px; overflow-y: hidden;"></div>
-                        </td>
-                    </tr>
-                </table>
+                <div id="webtrader_chart"></div>
             </div>
         [% END %]
         [% INCLUDE tab_content id='tab_explanation' class='selectedTab' %]

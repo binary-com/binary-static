@@ -53,7 +53,7 @@ const WebtraderChart = (() => {
             lang          : getLanguage().toLowerCase(),
             timezone      : `GMT+${jpClient() ? '9' : '0'}`,
         };
-        chart = WTCharts.chartWindow.addNewChart($('#chart_frame'), chart_config);
+        chart = WTCharts.chartWindow.addNewChart($('#webtrader_chart'), chart_config);
     };
 
     return {

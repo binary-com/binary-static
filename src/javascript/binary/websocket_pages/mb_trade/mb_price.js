@@ -2,6 +2,7 @@ const MBContract       = require('./mb_contract');
 const MBDefaults       = require('./mb_defaults');
 const MBNotifications  = require('./mb_notifications');
 const BinarySocket     = require('../socket');
+const TradingAnalysis  = require('../trade/analysis');
 const ViewPopup        = require('../user/view_popup/view_popup');
 const Client           = require('../../base/client');
 const GTM              = require('../../base/gtm');
@@ -109,6 +110,11 @@ const MBPrice = (() => {
         MBPrice.hidePriceOverlay();
         MBNotifications.hideSpinnerShowTrading();
         is_displayed = true;
+
+        // Analysis should be initialised after contents being displayed,
+        // so the chart is able to get the proper container width/height
+        TradingAnalysis.bindAnalysisTabEvent();
+        TradingAnalysis.request();
     };
 
     const updatePrice = (contract_type) => {
