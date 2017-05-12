@@ -16,9 +16,9 @@
 [% END %]
 
 [% BLOCK column_lg %]
-    <div class="gr-6 gr-12-m[% IF center == 'true' %] center-text[% END %]">
+    <div class="gr-6 gr-12-m[% IF center %] center-text[% END %]">
         <img class="responsive" src="[% request.url_for('images/pages/careers/' _ image _ '.jpg') %]"/>
-        <p[% IF center == 'true' %] class="gr-padding-10 hint"[% END %]>[% text %]</p>
+        <p[% IF center %] class="gr-padding-10 hint"[% END %]>[% text %]</p>
     </div>
 [% END %]
 

@@ -6,7 +6,7 @@
         </a>
     </div>
     <div class="gr-12">
-        <h4><a href="[% request.url_for('/user/settings/' _ url) %]">[% header %]</a></h4>
+        <h4><a href="[% request.url_for('user/security/' _ url) %]">[% header %]</a></h4>
         <p>[% text %]</p>
     </div>
 </div>

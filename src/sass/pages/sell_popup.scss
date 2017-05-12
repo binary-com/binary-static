@@ -5,7 +5,7 @@
 
 #sell_popup_container {
     width: 90%;
-    font-size: 80%;
+    font-size: $FONT_SIZE_S;
     max-width: 960px;
     margin: 0 auto;
     padding: 0;
@@ -60,12 +60,6 @@
                 border-right: 1px solid $COLOR_DARK_GRAY;
                 margin-right: -1px;
                 padding: 0;
-                .chart-notice {
-                    margin: 0;
-                }
-                .highcharts-container {
-                    direction: ltr;
-                }
             }
             #sell_details_table {
                 padding: 0;
@@ -82,7 +76,7 @@
                 #trade_details_profit_loss {
                     font-weight: bold;
                     span {
-                        font-size: 10px;
+                        font-size: $FONT_SIZE_XXS;
                         @include BIDIR_PROP(padding-left, padding-right, 7px);
                         font-weight: normal;
                     }
@@ -97,16 +91,14 @@
                     font-style: italic;
                 }
                 #contract_sell_message {
-                    font-size: 0.9em;
+                    font-size: $FONT_SIZE_N;
                     line-height: 20px;
                 }
-                #sell_at_market_wrapper {
-                    .note {
-                        line-height: 18px;
-                        margin-bottom: 10px;
-                        font-size: 12px;
-                        padding: 3px 10px;
-                    }
+                #sell_at_market_wrapper .note {
+                    line-height: 18px;
+                    margin-bottom: 10px;
+                    font-size: $FONT_SIZE_XS;
+                    padding: 3px 10px;
                 }
             }
         }

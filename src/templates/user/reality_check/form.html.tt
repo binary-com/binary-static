@@ -3,7 +3,7 @@
         <label for="num_reality_duration">[% l("Please specify your preferred reality-check interval in minutes") %]</label>
         <input id="num_reality_duration" step="1" min="1" size="6" type="number"/>
     </div>
-    <div class="center-text gr-centered" id="reality_check_nav">
+    <div class="center-text gr-centered gr-padding-20 gr-child" id="reality_check_nav">
         <button class="button" type="submit">[% l("Continue Trading") %]</button>
         <a class="button-secondary" id="statement" href="javascript:;"><span>[% l("View Statement") %]</span></a>
         <a class="button-secondary" id="logout" href="javascript:;"><span>[% l("Log out") %]</span></a>

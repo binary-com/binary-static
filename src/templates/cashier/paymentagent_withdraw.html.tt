@@ -32,7 +32,7 @@
     <div id="viewForm" class="viewItem invisible">
         <p>[% l('Please provide us with the following information, after retrieving the verification token from your email:') %]</p>
 
-        <form class="form rbox gr-padding-10" id="frmWithdrawal">
+        <form class="form gr-padding-10" id="frmWithdrawal">
             [% WRAPPER fieldset %]
                 [% PROCESS verification_code %]
                 [% INCLUDE form_row label=l('Transfer to Payment Agent') id='ddlAgents' type='select' %]

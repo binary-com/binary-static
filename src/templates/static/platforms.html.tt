@@ -33,7 +33,7 @@
 
 <div class="gr-row static_full">
     <div class="gr-3 gr-hide-m gr-hide-p sidebar-container">
-        <div class="sidebar-left">
+        <div class="sidebar">
             [% INCLUDE list class='sidebar-nav' items=[
                 { href='#trading-platforms',    text=l("Trading Platforms") },
                 { href='#platforms-comparison', text=l("Platform Comparison"), class='invisible' },

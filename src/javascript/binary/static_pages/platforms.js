@@ -44,7 +44,7 @@ const Platforms = (() => {
     // };
 
     const checkWidth = () => {
-        if ($('.sidebar-left').is(':visible')) {
+        if ($('.sidebar').is(':visible')) {
             showSelectedDiv();
         } else {
             $('.sections').setVisibility(1);

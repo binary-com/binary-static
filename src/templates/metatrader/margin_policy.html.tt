@@ -1,7 +1,7 @@
 [% BLOCK mt_box %]
-<div class="mt-box gr-12">
+<div class="gr-8 gr-centered gr-padding-10">
     <div class="mt-img mr1-icon"></div>
-    <p class="mt-box-content">[% text %]</p>
+    <p class="fill-bg-color gr-padding-20 gr-gutter">[% text %]</p>
     <div class="mt-img mr2-icon"></div>
 </div>
 [% END %]
@@ -12,16 +12,19 @@
             <h1>[% l("Margin Policy") %]</h1>
         </div>
 
-        <div class="gr-12 gr-padding-30 center-text">
-            <h2>[% l("What is Margin?") %]</h2>
-            <p>[% l("Margin allows you to trade on leverage, giving you the same level of market exposure using much less capital.") %]</p>
-            <div class="mt-box gr-12">
-                <p class="mt-box-content">[% l("If you wanted to purchase <strong>100 units</strong> of a particular asset trading at <strong>US&#36; 50 per unit</strong> through a traditional broker, it would cost you <strong>US&#36; 5,000</strong> for this transaction.") %]</p>
+        <div class="gr-12">
+            <div class="gr-padding-30 center-text">
+                <h2>[% l("What is Margin?") %]</h2>
+                <p>[% l("Margin allows you to trade on leverage, giving you the same level of market exposure using much less capital.") %]</p>
+                <div class="gr-8 gr-centered gr-padding-10">
+                    <p class="fill-bg-color gr-padding-20 gr-gutter">[% l("If you wanted to purchase <strong>100 units</strong> of a particular asset trading at <strong>US&#36; 50 per unit</strong> through a traditional broker, it would cost you <strong>US&#36; 5,000</strong> for this transaction.") %]</p>
+                </div>
+                <p>[% l("With a CFD (which is a leveraged product), you can purchase 100 units of the same asset at a fraction of the cost.") %]</p>
             </div>
-            <p>[% l("With a CFD (which is a leveraged product), you can purchase 100 units of the same asset at a fraction of the cost.") %]</p>
+
+            [% INCLUDE global/separator_line.html.tt %]
         </div>
 
-        <hr class="gr-12 separator">
 
         <div class="gr-12 gr-padding-30 center-text">
             <h2>[% l("How is margin calculated?") %]</h2>
@@ -29,12 +32,15 @@
             [% PROCESS mt_box text=l("If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:") %]
         </div>
 
-        <div class="gr-12 gr-padding-30 center-text">
-            <p>[% l("The margin for our Forex symbols is calculated as follows:") %]</p>
-            [% PROCESS mt_box text=l("If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:") %]
+        <div class="gr-12">
+            <div class="gr-padding-30 center-text">
+                <p>[% l("The margin for our Forex symbols is calculated as follows:") %]</p>
+                [% PROCESS mt_box text=l("If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:") %]
+            </div>
+
+            [% INCLUDE global/separator_line.html.tt %]
         </div>
 
-        <hr class="gr-12 separator">
 
         <div class="gr-12 gr-padding-30">
             <h2>[% l("What's a margin call and how do we apply it?") %]</h2>

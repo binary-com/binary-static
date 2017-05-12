@@ -1,24 +1,19 @@
 #footer {
     #footer-menu {
-        padding: 10px 0;
         h4 {
-            font-size: 13px;
-            font-weight: bold;
+            font-size: $FONT_SIZE_S;
         }
         li {
             line-height: 1;
         }
     }
+    .content-inverse-color a {
+        text-decoration: underline;
+    }
     #footer-regulatory {
-        padding-top: 10px;
-        a {
-            display: inline-block;
-            text-decoration: underline;
-        }
         #regulatory-text {
-            line-height: 1.2em;
             text-align: justify;
-            font-size: 10px;
+            font-size: $FONT_SIZE_XXS;
         }
         #iom_icon_footer {
             max-width: 90px;
@@ -26,57 +21,32 @@
         #lga_icon_footer {
             max-width: 140px;
         }
-        .social-icons {
-            @include BIDIR_VALUE (text-align, right, left);
-            .social-network-icon {
-                width: 30px;
-                height: 30px;
-                padding-left: 5px;
-            }
-        }
         #ratelimit-error-message, #site-status-message {
             position: fixed;
             top: 0;
             width: 100%;
             background-color: $COLOR_YELLOW;
             z-index: 999;
-            text-align: center;
-            .message {
-                margin: 12px;
-                a {
-                    color: $COLOR_GREEN;
-                    font-size: inherit;
-                }
-            }
         }
         #site-status-message {
             z-index: 9999;
         }
     }
     #footer-last {
-        a {
-            text-decoration: underline;
-        }
         .gambling {
-            margin: 0;
             text-align: justify;
-            font-size: 13px;
+            font-size: $FONT_SIZE_XS;
             font-weight: 400;
             line-height: 110%;
         }
     }
     #end-note {
         line-height: 25px;
-        text-align: center;
         background: $COLOR_RED;
-        color: $COLOR_WHITE;
         font-size: $FONT_SIZE_XS;
         position: fixed;
         bottom: 0;
         z-index: 10;
         width: 100%;
-        a {
-            color: $COLOR_WHITE;
-        }
     }
 }

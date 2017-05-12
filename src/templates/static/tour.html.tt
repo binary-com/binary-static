@@ -1,74 +1,76 @@
 <div class="tour container">
-    <div class="section border-bottom">
-        <div class="section-content">
-            <h1>[% l("First, define your position...") %]</h1>
-            <p>[% l("When you start trading with [_1], you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when.", website_name) %]</p>
-            <a class="button" href="[% request.url_for('trading') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
-            </a>
+    <div class="static_full">
+        <div class="section border-bottom">
+            <div class="section-content center-text gr-padding-30 gr-parent">
+                <h1>[% l("First, define your position...") %]</h1>
+                <p>[% l("When you start trading with [_1], you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when.", website_name) %]</p>
+                <a class="button" href="[% request.url_for('trading') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="section border-bottom">
-        <div class="section-content">
-            <h1>[% l("2-way pricing") %]</h1>
-            <p>[% l("Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. [_1] ensures fair and transparent pricing by showing you both sides of the trade.", website_name) %]</p>
-            <div class="gr-row">
-                <div class="gr-6 gr-12-m">
-                    <a class="button" href="[% request.url_for('trading') %]">
-                        <img class="responsive" src="[% request.url_for('images/pages/tour/2-way-pricing_live.svg') %]"/>
-                    </a>
-                </div>
-                <div class="gr-6 gr-12-m">
-                    <a class="button" href="[% request.url_for('trading') %]">
-                        <img class="responsive" src="[% request.url_for('images/pages/tour/2-way-pricing_opposite.svg') %]"/>
-                    </a>
+        <div class="section border-bottom">
+            <div class="section-content center-text gr-padding-30">
+                <h1>[% l("2-way pricing") %]</h1>
+                <p>[% l("Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. [_1] ensures fair and transparent pricing by showing you both sides of the trade.", website_name) %]</p>
+                <div class="gr-row">
+                    <div class="gr-6 gr-12-m">
+                        <a class="button" href="[% request.url_for('trading') %]">
+                            <img class="responsive" src="[% request.url_for('images/pages/tour/2-way-pricing_live.svg') %]"/>
+                        </a>
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <a class="button" href="[% request.url_for('trading') %]">
+                            <img class="responsive" src="[% request.url_for('images/pages/tour/2-way-pricing_opposite.svg') %]"/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="section border-bottom">
-        <div class="section-content">
-            <h1>[% l("Then, make your trade") %]</h1>
-            <p>[% l("As soon as you click on the 'PURCHASE' button, your trade registers in your account. The price of your trade continues to update in real time.") %]</p>
-            <img class="responsive" src="[% request.url_for('images/pages/tour/tour-portfolio-snapshot_1.svg') %]"/>
+        <div class="section border-bottom">
+            <div class="section-content center-text gr-padding-30">
+                <h1>[% l("Then, make your trade") %]</h1>
+                <p>[% l("As soon as you click on the 'PURCHASE' button, your trade registers in your account. The price of your trade continues to update in real time.") %]</p>
+                <img class="responsive" src="[% request.url_for('images/pages/tour/tour-portfolio-snapshot_1.svg') %]"/>
+            </div>
         </div>
-    </div>
-    <div class="section border-bottom">
-        <div class="section-content">
-            <h1>[% l("Exit your trades before expiry") %]</h1>
-            <p>[% l("With [_1], you can sell your contracts before expiry to keep any profits you may have made or to minimise your losses. You don’t have to wait until the actual expiration time.", website_name) %]</p>
+        <div class="section border-bottom">
+            <div class="section-content center-text gr-padding-30">
+                <h1>[% l("Exit your trades before expiry") %]</h1>
+                <p>[% l("With [_1], you can sell your contracts before expiry to keep any profits you may have made or to minimise your losses. You don’t have to wait until the actual expiration time.", website_name) %]</p>
+            </div>
         </div>
-    </div>
-    <div class="section border-bottom">
-        <div class="section-content">
-            <h1>[% l("Bank your way") %]</h1>
-            <a class="button" href="[% request.url_for('cashier/payment_methods') %]">
-                <span>[% l("View payment methods") %]</span>
-            </a>
-            <p>[% l("Trade with ease with [_1]'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions.", website_name) %]</p>
-            <a class="button" href="[% request.url_for('/cashier/payment_methods') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/tour/tour-flexible-banking.png') %]"/>
-            </a>
-        </div>
-    </div>
-    <div class="section border-bottom">
-        <div class="section-content">
-            <h1>[% l("Learn from us") %]</h1>
-            <p>[% l("Stay informed. [_1] offers daily market reports and market research, as well as frequent trading webinars.", website_name) %]</p>
-            <span id="edu-research-tool"></span>
-            <a class="button" href="[% request.url_for('/resources') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/tour/tour-tools-education.svg') %]"/>
-            </a>
-        </div>
-    </div>
-    <div class="section border-bottom">
-        <div class="section-content">
-            <h1>[% l("Talk to us") %]</h1>
-            <p>[% l("Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via live chat, email and telephone.") %]</p>
-            <div class="gr-4 gr-8-m gr-centered">
-                <a class="button" href="[% request.url_for('contact') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/tour/tour-customer-support.png') %]"/>
+        <div class="section border-bottom">
+            <div class="section-content center-text gr-padding-30">
+                <h1>[% l("Bank your way") %]</h1>
+                <a class="button" href="[% request.url_for('cashier/payment_methods') %]">
+                    <span>[% l("View payment methods") %]</span>
                 </a>
+                <p>[% l("Trade with ease with [_1]'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions.", website_name) %]</p>
+                <a class="button" href="[% request.url_for('/cashier/payment_methods') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/tour/tour-flexible-banking.png') %]"/>
+                </a>
+            </div>
+        </div>
+        <div class="section border-bottom">
+            <div class="section-content center-text gr-padding-30">
+                <h1>[% l("Learn from us") %]</h1>
+                <p>[% l("Stay informed. [_1] offers daily market reports and market research, as well as frequent trading webinars.", website_name) %]</p>
+                <span id="edu-research-tool"></span>
+                <a class="button" href="[% request.url_for('/resources') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/tour/tour-tools-education.svg') %]"/>
+                </a>
+            </div>
+        </div>
+        <div class="section border-bottom">
+            <div class="section-content center-text gr-padding-30 gr-child">
+                <h1>[% l("Talk to us") %]</h1>
+                <p>[% l("Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via live chat, email and telephone.") %]</p>
+                <div class="gr-4 gr-8-m gr-centered">
+                    <a class="button" href="[% request.url_for('contact') %]">
+                        <img class="responsive" src="[% request.url_for('images/pages/tour/tour-customer-support.png') %]"/>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

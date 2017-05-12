@@ -48,9 +48,10 @@ $FONT_SCALE: 1.15;
 
 // Use only these font sizes throughout the site
 
-$FONT_SIZE_XXL: $FONT_BASE * $FONT_SCALE * $FONT_SCALE * $FONT_SCALE;
-$FONT_SIZE_XL: $FONT_BASE * $FONT_SCALE * $FONT_SCALE;
-$FONT_SIZE_L: $FONT_BASE * $FONT_SCALE;
-$FONT_SIZE_N: $FONT_BASE;
-$FONT_SIZE_S: $FONT_BASE / $FONT_SCALE;
-$FONT_SIZE_XS: $FONT_BASE / $FONT_SCALE / $FONT_SCALE;
+$FONT_SIZE_XXL: $FONT_BASE * $FONT_SCALE * $FONT_SCALE * $FONT_SCALE; // 1.520875rem =~ 24px
+$FONT_SIZE_XL: $FONT_BASE * $FONT_SCALE * $FONT_SCALE;                // 1.3225rem   =~ 21px
+$FONT_SIZE_L: $FONT_BASE * $FONT_SCALE;                               // 1.15rem     =~ 18px
+$FONT_SIZE_N: $FONT_BASE;                                             // 1rem        =~ 16px
+$FONT_SIZE_S: $FONT_BASE / $FONT_SCALE;                               // .86957rem   =~ 14px
+$FONT_SIZE_XS: $FONT_BASE / $FONT_SCALE / $FONT_SCALE;                // .75614rem   =~ 12px
+$FONT_SIZE_XXS: $FONT_BASE / $FONT_SCALE / $FONT_SCALE / $FONT_SCALE; // .65752rem   =~ 10px

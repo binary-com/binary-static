@@ -1,0 +1,224 @@
+// styling for static pages that are too short or simple to need their own styling page
+
+.about-us {
+    .border-right-top {
+        height: 200px;
+    }
+    .border-right-bottom {
+        height: 300px;
+    }
+    .border-right-top, .border-right-bottom {
+        @include BIDIR_PROP(border-right, border-left, 1px solid $COLOR_GRAY);
+    }
+    @media screen and (max-width: 480px) {
+        .border-bottom, .border-right-top, .border-right-bottom {
+            border: none;
+        }
+    }
+}
+
+.why-us-jp-content ol {
+    &.split li {
+        text-indent: -1.1em;
+        list-style-type: none;
+        &:before {
+            counter-increment: mycounter;
+            content: counter(mycounter) '.\00A0\00A0';
+        }
+    }
+    &.start {
+        counter-reset: mycounter;
+    }
+}
+
+.payment-agent .faded {
+    color: $COLOR_GRAY_SHADE;
+    font-size: $FONT_SIZE_N;
+    margin-bottom: 0;
+}
+
+.deposit-jp-content img.responsive {
+    width: 50%;
+}
+
+#affiliate-tnc-jp ol li ul li {
+    list-style-type: none !important;
+}
+
+.browser-support-content {
+    .li-boxes-content-icon {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        height: 10em;
+    }
+    #internet_explorer {
+        background-image: url('../images/pages/browser_support/ielogo.png');
+    }
+    #microsoft_edge {
+        background-image: url('../images/pages/browser_support/edgelogo.png');
+        background-size: 50%;
+    }
+    #firefox {
+        background-image: url('../images/pages/browser_support/firefoxlogo.png');
+    }
+    #safari {
+        background-image: url('../images/pages/browser_support/safarilogo.png');
+    }
+    #opera {
+        background-image: url('../images/pages/browser_support/operalogo.png');
+    }
+    #chrome {
+        background-image: url('../images/pages/browser_support/chromelogo.png');
+    }
+}
+
+#payment_methods {
+    h3 {
+        margin: 20px 0 0;
+    }
+    .payment-logo {
+        width: 72px;
+        height: 57px;
+        background-image: url('../images/pages/cashier/payment_methods_sprite.png');
+    }
+    div {
+        align-self: center;
+    }
+    #int_bank_wire {
+        background-position: -7px -9px;
+    }
+    #local_bank_transfer {
+        background-position: -90px -9px;
+    }
+    #western_union {
+        background-position: -174px -9px;
+    }
+    #citadel {
+        background-position: -257px -9px;
+    }
+    #visa {
+        background-position: -338px -10px;
+    }
+    #mastercard {
+        background-position: -421px -11px;
+    }
+    #cuo_credit_card {
+        background-position: -108px -214px;
+    }
+    #moneybrokers {
+        background-position: -8px -72px;
+    }
+    #neteller {
+        background-position: -90px -72px;
+    }
+    #moneta {
+        background-position: -174px -72px;
+    }
+    #webmoney {
+        background-position: -257px -73px;
+    }
+    #qiwi {
+        background-position: -10px -136px;
+    }
+    #icbc {
+        background-position: -9px -348px;
+    }
+    #fastpay {
+        background-position: -12px -429px;
+    }
+    #perfect_money {
+        background-position: -106px -428px;
+    }
+    #yandex {
+        background-position: -102px -348px;
+    }
+    #paysafecard {
+        background-position: -372px -425px;
+    }
+    #okpay {
+        background-position: -285px -426px;
+    }
+    #bitcoin {
+        background-position: -12px -499px;
+    }
+}
+
+.charity {
+    .gallery {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 2s ease;
+            &:first-child {
+                position: relative;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.contact-content {
+    #cs_telephone_number {
+        width: 100%;
+    }
+    .border-bottom {
+        min-height: 200px;
+    }
+    @media screen and (max-width: 480px) {
+        .border-bottom {
+            min-height: 130px;
+        }
+    }
+}
+
+.regulation-content {
+    .gray-line {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+        background-color: $COLOR_LIGHT_GRAY;
+        width: 2px;
+        height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .background-gray {
+        margin-top: -30px;
+    }
+}
+
+.tour-content#content {
+    margin-bottom: 0;
+}
+
+.page_404 .big-error-code {
+    color: $COLOR_GRAY;
+    font-size: 10em;
+}
+
+#pa_list #accordion {
+    table {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        td {
+            padding: 10px 4px;
+            &:nth-of-type(1) {
+                width: 40%;
+            }
+        }
+    }
+    #supported_banks, .supported_banks {
+        text-align: center;
+        padding-top: 30px;
+    }
+    .supported_banks img {
+        width: 72px;
+        height: 57px;
+        margin: 3px;
+    }
+}

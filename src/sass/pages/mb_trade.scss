@@ -1,7 +1,7 @@
 #mb-trading-wrapper {
     max-width: 1200px;
     #mb_trading {
-        font-size: 14px;
+        font-size: $FONT_SIZE_S;
         #trade_form {
             margin-bottom: 10px;
             > div {
@@ -91,7 +91,7 @@
                     margin-bottom: 0;
                     background-repeat: no-repeat;
                     background-position: left;
-                    font-size: 18px;
+                    font-size: $FONT_SIZE_L;
                     white-space: nowrap;
                     line-height: 36px;
                     border-bottom: none;
@@ -134,7 +134,7 @@
                     background: $COLOR_LIGHT_GRAY;
                 }
                 .base-value {
-                    font-size: 9px;
+                    font-size: $FONT_SIZE_XXS;
                     display: inline-block;
                     margin-left: 5px;
                 }
@@ -182,7 +182,7 @@
                     border-radius: 3px;
                     padding: 10px 0;
                     cursor: pointer;
-                    font-size: 14px;
+                    font-size: $FONT_SIZE_S;
                     border: 0;
                     min-height: 34px;
                     position: relative;
@@ -248,7 +248,7 @@
             }
             .price-table .price-row {
                 .barrier, .price-button .value-wrapper, .sell-price {
-                    font-size: 0.9em;
+                    font-size: $FONT_SIZE_N;
                 }
                 .price-button {
                     width: 80%;

@@ -1,6 +1,6 @@
 @media screen and (max-width: 959px) {
     #header ul#menu-top.smaller-font a {
-        font-size: 85%;
+        font-size: $FONT_SIZE_XS;
     }
 }
 
@@ -8,23 +8,15 @@
     #sell_popup_container {
         padding: 0;
         width: 100%;
-        font-size: 70%;
+        font-size: $FONT_SIZE_XS;
         max-height: 500px;
         overflow: scroll;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
         overflow-x: auto;
     }
-    #footer-regulatory {
-        #social-networks .social-icons {
-            text-align: center;
-        }
-    }
     .table-container {
         overflow-x: auto;
-    }
-    .hide-tablet-mobile {
-        display: none;
     }
 }
 
@@ -41,7 +33,7 @@
         }
     }
     #btn_verify_email {
-        font-size: 0.9em;
+        font-size: $FONT_SIZE_N;
         padding: 0;
     }
     #end-note {

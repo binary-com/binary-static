@@ -1,6 +1,6 @@
 [% PROCESS components/elements.html.tt %]
 [% BLOCK box %]
-<dl class="gr-row">
+<div class="gr-row center-text">
     [% FOREACH box IN boxes %]
         <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
             <div class="section fill-bg-color section-jp">
@@ -11,7 +11,7 @@
             </div>
         </div>
     [% END %]
-</dl>
+</div>
 [% END %]
 
 [% BLOCK download %]
@@ -22,9 +22,9 @@
 </div>
 [% END %]
 
-<div class="get-started-jp gr-row">
+<div class="get-started-jp gr-row static_full">
     <div class="gr-3 gr-hide-m">
-        <div class="sidebar-left">
+        <div class="sidebar">
             [% INCLUDE list class='nav' items=[
                 { class='how-to-open-an-account',    href='#how-to-open-an-account',    text=l('{JAPAN ONLY}How to Open an Account') },
                 { class='identification-documents',  href='#identification-documents',  text=l('{JAPAN ONLY}Identification Documents') },

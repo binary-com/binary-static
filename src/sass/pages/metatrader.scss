@@ -22,7 +22,7 @@
                 margin-bottom: 20px;
                 .info {
                     padding: 10px;
-                    font-size: 0.9rem;
+                    font-size: $FONT_SIZE_N;
                     height: 100px;
                     line-height: 1.5rem;
                     a:before {
@@ -36,7 +36,7 @@
                 margin: 25px 0;
             }
             .acc-info div {
-                font-size: 0.9rem;
+                font-size: $FONT_SIZE_N;
                 padding: 0 0 0 25px;
                 line-height: 1.6em;
                 word-break: break-all;
@@ -45,7 +45,7 @@
                 margin-top: auto;
                 padding: 10px;
                 border-top: 1px solid $COLOR_GRAY;
-                font-size: 0.9rem;
+                font-size: $FONT_SIZE_N;
                 a {
                     display: inline-block;
                     width: 64px;

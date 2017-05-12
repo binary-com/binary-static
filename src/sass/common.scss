@@ -12,7 +12,7 @@ body {
     background: repeat-x bottom;
     overflow-x: hidden;
     .ui-widget {
-        font-size: 0.9em;
+        font-size: $FONT_SIZE_N;
     }
 }
 
@@ -28,10 +28,6 @@ select, input, button, textarea {
 
 select {
     max-width: 100%;
-}
-
-select.input {
-    width: 46.2%;
 }
 
 button {
@@ -71,11 +67,6 @@ em {
     font-style: italic;
 }
 
-form {
-    margin: 0;
-    padding: 0;
-}
-
 fieldset {
     position: relative;
     border: 1px solid $COLOR_GRAY;
@@ -92,6 +83,7 @@ fieldset {
     }
     .error-msg {
         width: 100%;
+        text-align: left;
         margin-top: 5px;
     }
 }
@@ -99,6 +91,13 @@ fieldset {
 textarea {
     height: 8em;
     width: 25em;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
 
 /* form styles */
@@ -129,14 +128,12 @@ label {
 }
 
 .errorfield {
-    font-size: 93%;
-    font-style: italic;
     margin-top: 8px;
     color: $COLOR_RED;
 }
 
-.comment {
-    font-size: 93%;
+.comment, .errorfield {
+    font-size: $FONT_SIZE_N;
     font-style: italic;
 }
 
@@ -178,11 +175,6 @@ label {
     margin-bottom: 20px;
 }
 
-.separator-line {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 #page-wrapper {
     display: flex;
     flex-direction: column;
@@ -191,14 +183,6 @@ label {
 
 #content-holder {
     flex: 1 1 auto;
-}
-
-#main-menu .items li a {
-    white-space: nowrap;
-}
-
-#japan-form .hint {
-    margin-bottom: 0;
 }
 
 .popup_page_overlay {
@@ -213,10 +197,6 @@ label {
 
 .light-yellow-background {
     background-color: $COLOR_YELLOW;
-}
-
-#session_limit .limit_message {
-    margin: 30px auto;
 }
 
 _:-ms-fullscreen, :root #content-holder {
@@ -306,6 +286,53 @@ button .barspinner.white {
     display: inline-flex;
 }
 
+.invisible {
+    display: none !important;
+    visibility: hidden;
+}
+
 .center-align {
     align-items: center;
+}
+
+.align-start {
+    @include BIDIR_VALUE (text-align, left, right);
+}
+
+.align-end {
+    @include BIDIR_VALUE (text-align, right, left);
+}
+
+.clear {
+    clear: both;
+}
+
+.sidebar {
+    @include menu-left;
+}
+
+.static_full {
+    margin-top: 40px;
+    .section:first-child {
+        padding-bottom: 50px;
+    }
+    .section:not(:first-child) {
+        padding: 20px 0 50px;
+    }
+    .section:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    .section {
+        display: block;
+        overflow: hidden;
+    }
+    .sidebar-button {
+        background: $COLOR_LIGHT_GRAY;
+        padding: 20px;
+        a {
+            @include link-button;
+            display: block;
+        }
+    }
 }

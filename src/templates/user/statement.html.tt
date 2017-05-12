@@ -5,13 +5,15 @@
         <br>
         <p class="notice-msg center-text invisible" id="error-msg"></p>
     </div>
-    <div class="gr-row gr-padding-10 invisible">
+    <div class="gr-row gr-padding-10 invisible" id="util_row">
         <div class="gr-6 gr-12-m">
-            <div class="gr-row padding-left">
-                <div class="label_form">
-                    <label>[% l("Start from:") %]</label>
+            <div class="gr-row gr-gutter-left">
+                <div class="label_form gr-gutter-left">
+                    <label for="jump-to">[% l("Start from:") %]</label>
                 </div>
-                <input type="text" id="jump-to" size="12" readonly="readonly"/>
+                <div class="gr-8 gr-gutter-left">
+                    <input type="text" id="jump-to" size="12" readonly="readonly"/>
+                </div>
             </div>
         </div>
         <div class="gr-6 gr-12-m align-end">

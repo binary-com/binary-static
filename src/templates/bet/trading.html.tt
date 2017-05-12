@@ -13,7 +13,6 @@
         <div>
             <select id="underlying"></select>
             <span class="unicode-info-icon" id="symbol_tip" target="">&#9432;</span>
-            <label for="spot" id="spot_label">[% l("Spot") %]</label>
             <span id="spot"></span>
             <span id="trading_worm_chart"></span>
         </div>
@@ -27,16 +26,8 @@
             <div id="contract_container" class="col row">
                 <div id="loading_container3" class="overlay_container"></div>
                 <div id="contract_form_container" class="col">
-                    <div id="contract_form_content">
+                    <div id="contract_form_content" class="gr-gutter">
                         <form id='websocket_form'>
-                            <div class="row" id="period_row">
-                                <div class="col form_label">
-                                    <label for="period" id="period_label">[% l("Period") %]</label>
-                                </div>
-                                <div class="big-col">
-                                    <select id="period"></select>
-                                </div>
-                            </div>
                             <div class="row" id="date_start_row">
                                 <div class="col form_label" id="start_time_label">[% l("Start time") %]</div>
                                 <div class="big-col">
@@ -71,7 +62,7 @@
                                     </label>
                                 </div>
                                 <div class="big-col">
-                                    <input id="barrier" type="text" name="H" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" autocomplete="off" />
+                                    <input id="barrier" type="text" name="H" autocomplete="off" />
                                     <span id="indicative_barrier_tooltip" data-balloon="[% l('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.') %]" data-balloon-length="xlarge"></span>
                                 </div>
                             </div>
@@ -83,7 +74,7 @@
                                     </label>
                                 </div>
                                 <div class="big-col">
-                                    <input id="barrier_high" type="text" name="H" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" autocomplete="off" />
+                                    <input id="barrier_high" type="text" name="H" autocomplete="off" />
                                     <span id="indicative_high_barrier_tooltip" data-balloon="[% l('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.') %]" data-balloon-length="xlarge"></span>
                                 </div>
                             </div>
@@ -95,7 +86,7 @@
                                     </label>
                                 </div>
                                 <div class="big-col">
-                                    <input id="barrier_low" type="text" name="L" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" autocomplete="off" />
+                                    <input id="barrier_low" type="text" name="L" autocomplete="off" />
                                     <span id="indicative_low_barrier_tooltip" data-balloon="[% l('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.') %]" data-balloon-length="xlarge"></span>
                                 </div>
                             </div>

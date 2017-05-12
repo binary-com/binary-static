@@ -3,7 +3,8 @@ const getLanguage = require('../base/language').get;
 
 const formatMoney = (currency_value, amount, exclude_currency) => {
     const is_bitcoin = /xbt/i.test(currency_value);
-    const decimal_places = is_bitcoin ? 6 : 2;
+    const is_jp = jpClient();
+    const decimal_places = is_bitcoin ? 6 : is_jp ? 0 : 2;
     let money;
     if (amount) amount = String(amount).replace(/,/g, '');
     if (typeof Intl !== 'undefined' && currency_value && !is_bitcoin && amount) {
@@ -13,7 +14,7 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
     } else {
         let updated_amount,
             sign = '';
-        if (jpClient()) {
+        if (is_jp) {
             updated_amount = parseInt(amount);
             if (Number(updated_amount) < 0) {
                 sign = '-';

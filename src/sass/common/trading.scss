@@ -32,10 +32,6 @@ a.close {
     color: $COLOR_RED;
 }
 
-#tab_explanation-content #explanation_explain {
-    margin-top: 20px;
-}
-
 #notifications_wrapper {
     .notice-msg {
         margin-bottom: 5px;
@@ -55,7 +51,7 @@ a.close {
             height: 24px;
             line-height: 24px;
             font-family: 'Arial';
-            font-size: 18px;
+            font-size: $FONT_SIZE_N;
         }
         &:hover .notification-dismiss {
             color: $COLOR_ORANGE;

@@ -39,13 +39,15 @@ const HighchartUI = (() => {
             getLabels('end_time');
     };
 
-    const setCartOptions = (params) => {
+    const setChartOptions = (params) => {
         chart_options = {
             chart: {
                 backgroundColor: null, /* make background transparent */
                 height         : Math.max(params.height, 450),
                 renderTo       : params.el,
                 animation      : false,
+                marginLeft     : 30,
+                marginRight    : 30,
             },
             title: {
                 text : params.title,
@@ -64,7 +66,8 @@ const HighchartUI = (() => {
                 labels: { overflow: 'justify', format: '{value:%H:%M:%S}' },
             },
             yAxis: {
-                labels: { align: 'left' },
+                opposite: false,
+                labels  : { align: 'left' },
             },
             series: [{
                 type : params.type,
@@ -163,7 +166,7 @@ const HighchartUI = (() => {
     return {
         setLabels               : setLabels,
         getLabels               : getLabels,
-        setCartOptions          : setCartOptions,
+        setChartOptions         : setChartOptions,
         getChartOptions         : () => chart_options,
         getHighchartOptions     : getHighchartOptions,
         replaceExitLabelWithSell: replaceExitLabelWithSell,

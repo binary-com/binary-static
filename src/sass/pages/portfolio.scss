@@ -1,7 +1,4 @@
 #portfolio {
-    #portfolio-content {
-        padding-top: 5px;
-    }
     td {
         padding: 10px;
         vertical-align: middle;
@@ -11,7 +8,7 @@
         &.indicative.no_resale {
             color: $COLOR_GRAY_SHADE;
             span {
-                font-size: 8px;
+                font-size: $FONT_SIZE_XXS;
                 display: block;
                 margin-top: -11px;
             }
@@ -40,13 +37,11 @@
     }
 }
 
-#trading_socket_container_beta #tab_portfolio-content {
-    #portfolio {
-        @include portfolio_second_row_description;
-        [data-balloon] {
-            cursor: initial;
-        }
-        [data-balloon]:after, [data-balloon]:before {
+#trading_socket_container_beta #tab_portfolio-content #portfolio {
+    @include portfolio_second_row_description;
+    [data-balloon] {
+        cursor: initial;
+        &:after, &:before {
             display: none !important;
         }
     }

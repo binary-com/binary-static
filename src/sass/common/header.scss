@@ -1,4 +1,3 @@
-/* Logo and top bar */
 body #topbar {
     @include BIDIR_VALUE(text-align, right, left);
     #virtual-text {
@@ -6,7 +5,6 @@ body #topbar {
     }
     #topbar-info {
         @include BIDIR_PROP(margin-left, margin-right, auto);
-        height: 23px;
         > div {
             height: 23px;
         }
@@ -14,19 +12,12 @@ body #topbar {
     #gmt-clock, #contact-us, .upgrademessage {
         align-self: center;
     }
-    #gmt-clock {
-        white-space: nowrap;
-    }
-    .upgrademessage {
-        text-align: center;
-        a {
-            @include link-button;
-            border-radius: 2px;
-            font-size: 90%;
-            padding: 2px 4px;
-            text-transform: none;
-            @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
-        }
+    .upgrademessage a {
+        @include link-button;
+        font-size: $FONT_SIZE_XS;
+        padding: 2px 4px;
+        text-transform: none;
+        @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
     }
     a {
         color: $COLOR_WHITE;
@@ -39,38 +30,20 @@ body #topbar {
 }
 
 #header {
-    height: 75px;
-    a img {
-        height: 55px;
-    }
     #client-logged-out {
         @include BIDIR_VALUE(text-align, right, left);
-        #btn_login {
-            margin-bottom: 0;
-        }
     }
     #mobile-menu-icon img {
         max-width: 32px;
     }
-    #mobile-menu-icon-container {
-        margin-top: 5px;
-        margin-right: 3px;
-    }
     #menu-top {
-        text-align: center;
-        white-space: nowrap;
         a:hover {
             opacity: 0.75;
         }
         li {
-            line-height: 1;
-            display: inline-block;
-            text-align: center;
-            margin: 0;
             white-space: normal;
-            &:last-child {
-                background: none;
-            }
+            display: inline-block;
+            margin: 0;
             a {
                 font-weight: normal;
                 vertical-align: middle;
@@ -82,7 +55,6 @@ body #topbar {
                 text-transform: capitalize;
                 padding: 0 10px;
                 word-wrap: break-word;
-                color: $COLOR_WHITE;
             }
         }
     }
@@ -91,11 +63,38 @@ body #topbar {
     }
     #main-logout {
         @include BIDIR_VALUE(float, right, left);
-        .main-account > .account-type {
-            white-space: nowrap;
-        }
         #all-accounts .main-account {
             margin-top: 3px;
+        }
+    }
+}
+
+#main-menu {
+    margin-bottom: 40px;
+    .items li a {
+        white-space: nowrap;
+    }
+}
+
+/* mobile menu overrides */
+html {
+    .mm-menu.mm-right {
+        width: 50%;
+        min-width: 220px;
+    }
+    @media all and (min-width: 550px) {
+        .mm-menu.mm-right {
+            width: 250px;
+        }
+    }
+    &.mm-right.mm-opening body {
+        .mm-page, #mm-blocker, .mm-fixed-top, .mm-fixed-bottom {
+            right: 220px;
+        }
+        @media all and (min-width: 550px) {
+            .mm-page, #mm-blocker, .mm-fixed-top, .mm-fixed-bottom {
+                right: 250px;
+            }
         }
     }
 }

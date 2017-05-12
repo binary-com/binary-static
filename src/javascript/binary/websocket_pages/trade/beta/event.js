@@ -8,7 +8,6 @@ const Purchase_Beta                  = require('./purchase');
 const chartFrameSource               = require('../charts/chart_frame').chartFrameSource;
 const Defaults                       = require('../defaults');
 const GetTicks                       = require('../get_ticks');
-const setFormPlaceholderContent_Beta = require('../set_values').setFormPlaceholderContent_Beta;
 const Tick                           = require('../tick');
 const commonTrading                  = require('../common');
 const getStartDateNode               = require('../common_independent').getStartDateNode;
@@ -74,16 +73,11 @@ const TradingEvents_Beta = (() => {
                     const is_form_active = clicked_form.classList.contains('active') || clicked_form.parentElement.classList.contains('active');
                     Defaults.set('formname', clicked_form.getAttribute('menuitem'));
 
-                    setFormPlaceholderContent_Beta();
                     // if form is already active then no need to send same request again
                     commonTrading.toggleActiveCatMenuElement(form_nav_element, e.target.getAttribute('menuitem'));
 
                     if (!is_form_active) {
                         contractFormEventChange();
-                    }
-                    const contract_form_checkbox = document.getElementById('contract_form_show_menu');
-                    if (contract_form_checkbox) {
-                        contract_form_checkbox.checked = false;
                     }
                 }
             });

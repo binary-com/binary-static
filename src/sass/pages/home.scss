@@ -1,7 +1,4 @@
 .home-content, .home-jp-content {
-    #banner {
-        background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
-    }
     .signup-box {
         border-radius: $BORDER_RADIUS;
         .error-msg {
@@ -21,6 +18,12 @@
             height: 3rem;
             width: 100%;
         }
+    }
+}
+
+.home-content {
+    #banner {
+        background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
     }
     .xlist1 {
         background: url('../images/pages/home/xicon-1.png') no-repeat;
@@ -75,7 +78,7 @@
         @include BIDIR_VALUE(text-align, right, left);
     }
     .xquoter-left p span, .xquoter-right p span {
-        font-size: 12px;
+        font-size: $FONT_SIZE_XS;
         font-style: italic;
     }
 }

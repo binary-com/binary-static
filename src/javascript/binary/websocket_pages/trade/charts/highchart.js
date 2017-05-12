@@ -119,7 +119,7 @@ const Highchart = (() => {
 
         const JPClient = jpClient();
         HighchartUI.setLabels(is_chart_delayed);
-        HighchartUI.setCartOptions({
+        HighchartUI.setChartOptions({
             height    : el.parentElement.offsetHeight,
             title     : localize(init_options.title),
             JPClient  : JPClient,
@@ -130,7 +130,7 @@ const Highchart = (() => {
             exit_time : exit_time ? exit_time * 1000 : null,
             user_sold : userSold(),
         });
-        Highcharts.setOptions(HighchartUI.getChartOptions(JPClient));
+        Highcharts.setOptions(HighchartUI.getHighchartOptions(JPClient));
 
         if (!el) return null;
         const new_chart = Highcharts.StockChart(el, HighchartUI.getChartOptions());
