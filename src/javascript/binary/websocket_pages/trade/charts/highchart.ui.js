@@ -46,6 +46,8 @@ const HighchartUI = (() => {
                 height         : Math.max(params.height, 450),
                 renderTo       : params.el,
                 animation      : false,
+                marginLeft     : 30,
+                marginRight    : 30,
             },
             title: {
                 text : params.title,
@@ -64,7 +66,8 @@ const HighchartUI = (() => {
                 labels: { overflow: 'justify', format: '{value:%H:%M:%S}' },
             },
             yAxis: {
-                labels: { align: 'left' },
+                opposite: false,
+                labels  : { align: 'left' },
             },
             series: [{
                 type : params.type,
