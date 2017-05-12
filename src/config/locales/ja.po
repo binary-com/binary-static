@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-12 02:41+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2017-05-12 08:18+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1274,10 +1274,8 @@ msgstr "ベーシック・プラットフォーム"
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "BIELと投資商品でお取引や投資されるアカウントを開設する前に、投資商品かサービスのどちらがお客さまに適しているか評価をさせていただく必要があります。また、場合によっては提供いただいた情報に基づき、いかなる製品、サービスが適さない事があります。口座を開設して、当製品やサービスを利用するのはお客さまの決断次第です。当商品とサービスに関連するリスクを理解いただくことはお客さまの責任になります。"
 
-#, fuzzy
-#| msgid "<strong>Sharp, benchmarked prices</strong> - Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets."
 msgid "Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets."
-msgstr "<strong>ベンチマーク価格</strong>：インターバンク取引と同じリターン率から利益を得ることができます。当社の価格はインターバンクオプション市場のベンチマークを用いています。"
+msgstr "インターバンク取引と同じリターン率から利益を得ることができます。当社の価格はインターバンクオプション市場のベンチマークを用いています。"
 
 msgid "Benefits"
 msgstr "福利厚生について"
@@ -1419,8 +1417,6 @@ msgstr "バイナリーオプション"
 msgid "Binary Options Basics"
 msgstr "バイナリー取引の基礎"
 
-#, fuzzy
-#| msgid "Binary Options Real Account &mdash; Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
 msgid "Binary Options Real Account &mdash; Your real money account opened with %1 which you use to trade binary options with %1."
 msgstr "バイナリーオプションリアル口座 - お客さまの口座はバイナリーオプション取引を行うために開設されました。"
 
@@ -1523,10 +1519,8 @@ msgstr ""
 msgid "By indicating your acceptance of these terms and conditions and continuing with your application to join our affiliate program, you are agreeing to the terms and conditions set out in this Agreement. If you do not agree with the terms and conditions (or are not authorised to do so), you should not continue with your application."
 msgstr "アフィリエイトプログラムにご参加頂くにあたり、本規約を熟読し理解されることは重要です。本規約への同意の表明、及びアフィリエイトプログラムへの申請行為は、下記の本規約に同意されたものとみなします。万が一、本規約に同意できない場合は、アフィリエイトプログラムへの参加は見合わせて下さい。アフィリエイト会員には、当アフィリエイトプログラムにて会員獲得を目指すウェブサイトの管理者として行動して頂きます。"
 
-#, fuzzy
-#| msgid "By opening a Real Account with Binary.com, you represent, warrant and undertake that:"
 msgid "By opening a Real Account with %1, you represent, warrant and undertake that:"
-msgstr "Binary.comでリアル口座を開設することで、以下の内容を代表者として保証し、請け負うこととなります。"
+msgstr "%1でリアル口座を開設することで、以下の内容を代表者として保証し、請け負うこととなります。"
 
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "ソフトウェアアプリケーション、ウェブサイト、お客さまが作成された製品または提供されたサービス（アプリケーション）を登録することで、これら条項に拘束されることに同意されたとみなします。"
@@ -1667,28 +1661,20 @@ msgstr "ペイアウトは1ロット1,000円、最大100ロットまで選択可
 msgid "Choose from five types of markets and their respective assets:"
 msgstr "5つの市場タイプと各資産を選択："
 
-#, fuzzy
-#| msgid "<strong>Flexible</strong> - Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
 msgid "Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
-msgstr "<strong>柔軟な取引</strong> - いつでも多種多様な取引をご選択できます。ご希望の戦略に応じて取引をカスタマイズ"
+msgstr "いつでも多種多様な取引をご選択できます。ご希望の戦略に応じて取引をカスタマイズ"
 
-#, fuzzy
-#| msgid "3. Choose how you want to Trade the Market"
 msgid "Choose how you want to Trade the Market"
-msgstr "3.トレード方法を選択"
+msgstr "トレード方法を選択"
 
-#, fuzzy
-#| msgid "2. Choose the Duration of the Trade"
 msgid "Choose the Duration of the Trade"
-msgstr "2. 取引期間を選択"
+msgstr "取引期間を選択"
 
 msgid "Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period."
 msgstr "取引期間中に設定したバリア価格に「達するか」「達しないか」を予測し、取引をしたい場合は「TOUCH/NO-TOUCH」を選択して下さい。"
 
-#, fuzzy
-#| msgid "1. Choose the Underlying"
 msgid "Choose the Underlying"
-msgstr "1. 取引対象を選択"
+msgstr "取引対象を選択"
 
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
 msgstr "取引されたい通貨ペアをご選択ください。バイナリーオプションの取引価値は原資産の価格から導かれます。バイナリーオプション取引の大きな利点として、取引対象そのものを売買せず、その資産の動向を予測して取引するだけという点があります。"
@@ -1699,20 +1685,14 @@ msgstr "ご希望のお支払い方法をご選択ください。"
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "ご希望の機能に基いた、必要なAPIトークンの種類を選択してください。"
 
-#, fuzzy
-#| msgid "Choose a duration from 10 seconds to 365 days."
 msgid "Choose timeframes from 10 seconds to 365 days"
 msgstr "取引期間は2時間以上から選択が可能です。"
 
-#, fuzzy
-#| msgid "Choose a Name:"
 msgid "Choose token Name"
-msgstr "名前を選択："
+msgstr "トークン名前を選択"
 
-#, fuzzy
-#| msgid "4. Choose your Stake and Potential Return"
 msgid "Choose your Stake and Potential Return"
-msgstr "4. 購入価格と予想利益を選択"
+msgstr "購入価格と予想利益を選択"
 
 msgid "Choose your own strike."
 msgstr "バリア価格を設定"
@@ -1751,20 +1731,14 @@ msgstr ""
 msgid "Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu."
 msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
 
-#, fuzzy
-#| msgid "Click on the 'Log In' button to access your account"
 msgid "Click on the <strong>Done</strong> button to save your settings."
-msgstr "”ログイン”ボタンをクリックし、ご口座にアクセスして下さい。"
+msgstr "”完了”ボタンをクリックし、現在の設定を保存して下さい。"
 
-#, fuzzy
-#| msgid "Access the <strong>Settings</strong> section on the account."
 msgid "Click on the <strong>OK</strong> button to save and close."
-msgstr "口座の<strong>設定</strong> にアクセスしてください。"
+msgstr "<strong>OK</strong>ボタンを押してセーブし閉じて下さい。"
 
-#, fuzzy
-#| msgid "Click on the 'Log In' button to access your account"
 msgid "Click on the <strong>OK</strong> button to save your settings."
-msgstr "”ログイン”ボタンをクリックし、ご口座にアクセスして下さい。"
+msgstr "<strong>OK</strong>ボタンを押してセーブし閉じて下さい。"
 
 msgid "Click on the <strong>Privacy</strong> tab."
 msgstr ""
@@ -1884,10 +1858,8 @@ msgstr "出金手数料"
 msgid "Commissions will be earned throughout the life of the client, on all transactions the client undertakes at the merchant, for as long as you, the Affiliate, remain a member of this affiliate program. The company reserves the right to cancel the commissions that are not reclaimed after 2 years."
 msgstr "アフィリエイト会員が携わった全ての取引、すなわち獲得会員から発生するアフィリエイト報酬はアフィリエイトプログラムに参加されている限り、無期限でアフィリエイト会員の報酬となります。当社は２年間請求のなかった報酬をキャンセルする権利を有します。"
 
-#, fuzzy
-#| msgid "Commission Rates"
 msgid "Commissions:"
-msgstr "報酬還元率"
+msgstr "コミッション"
 
 msgid "Commodities"
 msgstr "コモディティ"
@@ -2198,10 +2170,8 @@ msgstr "D. 権利能力"
 msgid "D. Client Instructions"
 msgstr "D. クライアント操作手順"
 
-#, fuzzy
-#| msgid "Daily Charts"
 msgid "Daily Earnings:"
-msgstr "デイリーチャート"
+msgstr "１日の収入"
 
 msgid "Daily Reset Indices"
 msgstr "デイリーリセットインデックス"
@@ -2283,10 +2253,8 @@ msgstr "入金"
 msgid "Deposit Bonus"
 msgstr "ご入金された場合に付与されるボーナスについて"
 
-#, fuzzy
-#| msgid "<strong>Low minimum stakes</strong> - Deposit as little as USD 5 to start trading"
 msgid "Deposit as little as USD 5 to start trading"
-msgstr "<strong>最低取引金額</strong>：ペイアウト1,000円からお取引を開始することが可能です"
+msgstr "ペイアウト1,000円からお取引を開始することが可能です"
 
 msgid "Deposit funds and begin trading"
 msgstr "預託金入金後に取引開始"
@@ -2321,13 +2289,9 @@ msgstr "取引内容"
 msgid "Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials."
 msgstr "オンライン/オフライン材料を含む当社ウェブサイトとその他のメディア形態への印象的なコンテンツのデザインをしています。"
 
-#, fuzzy
-#| msgid "Preferred language"
 msgid "Desired language."
 msgstr "ご希望の言語"
 
-#, fuzzy
-#| msgid "Daily Report"
 msgid "Detailed report:"
 msgstr "デイリーレポート"
 
@@ -2418,10 +2382,8 @@ msgstr "ウェブサイトを運営していますか？"
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "取引可能時間の情報を下記から参照ください。"
 
-#, fuzzy
-#| msgid "Do you want to see Binary.com in other languages, or can you suggest improvements to our current translations?"
 msgid "Do you want to see %1 in other languages, or can you suggest improvements to our current translations?"
-msgstr "Binary.com (バイナリードットコム)を他の言語での展開、及び既存の翻訳の改善を提案をされたい場合もお問い合わせください。"
+msgstr "%1(バイナリードットコム)を他の言語での展開、及び既存の翻訳の改善を提案をされたい場合もお問い合わせください。"
 
 msgid "Document account chargebacks"
 msgstr "アカウントのチャージバック証明書類の提出"
@@ -2495,10 +2457,8 @@ msgstr "例　広尾１ー１ー１ (全角)"
 msgid "E.g. Shibuya-ku"
 msgstr "例　渋谷区"
 
-#, fuzzy
-#| msgid "EGR Operator Award "
 msgid "EGR Operator Award"
-msgstr "EGRオペレーター賞を受賞 "
+msgstr "EGRオペレーター賞を受賞"
 
 msgid "EU Passport Rights"
 msgstr "EUパスポート権限"
@@ -2539,10 +2499,8 @@ msgstr "当社のアフィリエイトプログラムでは、報酬プランに
 msgid "Earn money for any verifiable errors that you find."
 msgstr "検出できるエラーを見つけてお金を受け取りましょう"
 
-#, fuzzy
-#| msgid "<strong>Scalable</strong> - Earn the same proportional return on stakes of all values"
 msgid "Earn the same proportional return on stakes of all values"
-msgstr "<strong>計量可能なお取引</strong>：どの通貨の賭金でも同じ比例したリターンを獲得いただけます。"
+msgstr "すべての値のステークスに対して同じ比率のリターンを獲得いただけます"
 
 msgid "Earning a second income in their spare time?"
 msgstr "空き時間を利用して効率的な収入を獲得しませんか？"
@@ -2634,10 +2592,8 @@ msgstr "SQLデータベース、R/ S-Plus、OLAP、その他分析ツールを�
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
 msgstr "潜在顧客、顧客、パートナーの誘致と展開に多様なチャンネルを用いて、当社のソーシャルメディアへの取り組みの強化と積極的な管理をします。"
 
-#, fuzzy
-#| msgid "<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use"
 msgid "Enjoy a trading platform that’s easy to navigate and use"
-msgstr "<strong>シンプルで直感的</strong> - わかりやすく、使いやすい取引プラットフォームで取引をお楽しみください"
+msgstr "わかりやすく、使いやすい取引プラットフォームで取引をお楽しみください"
 
 msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
 msgstr "当社のTick取引アプリケーションなら、いつでもどこでも最速のお取引をお楽しみいただけます。"
@@ -2909,10 +2865,8 @@ msgstr "女性"
 msgid "Fifteen years on, and we're still innovating, growing and working on new ways to serve our customers better. For the first time, we offer short-term touch/no-touch trades and introduce a new charting application. We believe we have the most competitive and comprehensive digital options platform available to the retail public."
 msgstr "創業１５年を迎えてもなお、当社は進化と成長を続けることで顧客目線の新たなサービスの提供に注力しています。短期間でのタッチ/ノータッチ・トレードの提供と新しいチャートアプリケーションを開発。個人向けのオプション取引にて他の追従を許さない、かつ理解しやすいシステムを提供しているという確かな自信と共にサービスを提供します。"
 
-#, fuzzy
-#| msgid "Table format"
 msgid "File format."
-msgstr "テーブル・フォーマット"
+msgstr "ファイル・フォーマット"
 
 msgid "Filtering Controls"
 msgstr "フィルタリング管理"
@@ -2971,8 +2925,6 @@ msgstr "きめ細かな顧客サービス"
 msgid "Firsthand knowledge of other cultures through direct experience"
 msgstr "経験から得た他文化の知識"
 
-#, fuzzy
-#| msgid "Flexibility"
 msgid "Flexible"
 msgstr "柔軟性"
 
@@ -10222,8 +10174,6 @@ msgstr "一般的に権利行使により利益が得られる確率を踏まえ
 msgid "{JAPAN ONLY}Best Tracking with \"Forever Cookies\""
 msgstr "Cookie(クッキー)による追跡サービスの設定"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Binary K. K."
 msgid "{JAPAN ONLY}Binary Co., Ltd."
 msgstr "Binary株式会社 (和文名称 バイナリー株式会社)"
 
@@ -10628,7 +10578,7 @@ msgid "{JAPAN ONLY}Learning to trade online?"
 msgstr "オンライントレードについて学びたい"
 
 msgid "{JAPAN ONLY}Licensed by the Kanto Local Financial Bureau (Finance Division) No. 2949"
-msgstr ""
+msgstr "金融商品取引業者　関東財務局長（金商）第2949号"
 
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr "リアルタイムで保有ポジションの損益とチャート分析"
@@ -10642,10 +10592,8 @@ msgstr "主な業務"
 msgid "{JAPAN ONLY}Matters to attend:"
 msgstr "注意事項"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
 msgid "{JAPAN ONLY}Member Associations: Financial Futures Association Japan"
-msgstr "一般社団法人金融先物取引業協会"
+msgstr "加入協会:一般社団法人金融先物取引業協会"
 
 msgid "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
 msgstr "取引手数料は無料です。"
@@ -10744,8 +10692,8 @@ msgstr "1回あたりの入金限度額は100万円となっております。"
 
 msgid "{JAPAN ONLY}Please note that the website that you have just visited is not our site. Information regarding the Company's financial instruments that have been posted on that site, any evaluation, impression, etc. are the sole responsibility of the administrators of that website, and has been created by them only. We can make no guarantee or accept any responsibility for their content."
 msgstr ""
-"直前にご覧いただいていたウェブサイトは当社が作成したものではありません。また、その掲載されている感想や評価はあくまでもウェブサイトの作成者が管理するもので"
-"、当社によるものではありません。"
+"ここからは、Binary株式会社のサイトとなります。直前に閲覧されたページに記載されていた金融商品の情報、又は感想や評価等の内容はサイト所有者が作成したも"
+"のであり、当社がその内容を保証するものではありません。"
 
 msgid "{JAPAN ONLY}Please note the maximum regular withdrawal amount is ¥1,000,000."
 msgstr "1日の出金可能額は100万円となっております。"
@@ -10763,7 +10711,7 @@ msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value
 msgstr "店頭通貨オプションの価格は、複数の要素に基づく計算値であり、基本的には相対取引で価格は決定されます。"
 
 msgid "{JAPAN ONLY}Proceed to official site"
-msgstr "ここからは、Binary株式会社のウェブサイトです"
+msgstr "公式サイトへ進む"
 
 msgid "{JAPAN ONLY}Professional service"
 msgstr "当社は、最高水準のFXバイナリーオプション取引環境を提供します"
@@ -11483,7 +11431,7 @@ msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your 
 msgstr "当社は、アフィリエイト会員様が広告活動を効果的にできますよう必要なツールを提供させていただきます"
 
 msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
-msgstr "ここからは、Binary株式会社のウェブサイトです"
+msgstr "Binary株式会社のウェブサイトへようこそ"
 
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "コールオプションの買いの損益分岐点は、バリア価格に原資産１単位当たりのオプション料を加算した価格となります。"
