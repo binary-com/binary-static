@@ -2,24 +2,6 @@
     transition: opacity 0.2s, color 0.2s, background 0.2s;
 }
 
-@keyframes spinning {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@-webkit-keyframes spinning {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 @keyframes pulsing {
     0% {
         opacity: 1;
@@ -47,25 +29,4 @@
 .pulser {
     -webkit-animation: pulsing 3s infinite ease;
     animation: pulsing 3s infinite ease;
-}
-
-.overlay {
-    opacity: 1;
-    transition: opacity 0.2s, height 0;
-}
-
-.overlay.hidden {
-    opacity: 0;
-    transition: opacity 0.2s, height 0 0.2s;
-    height: 0;
-}
-
-.overlay .dialog {
-    transition: transform 0.2s, height 0;
-    transform: scale(1);
-}
-
-.overlay.hidden .dialog {
-    transition: transform 0.2s, height 0 0.2s;
-    transform: scale(0.9);
 }

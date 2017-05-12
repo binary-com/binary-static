@@ -10,7 +10,6 @@ const Notifications              = require('./notifications');
 const Price                      = require('./price');
 const Process                    = require('./process');
 const Purchase                   = require('./purchase');
-const setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
 const getStartDateNode           = require('./common_independent').getStartDateNode;
 const Tick                       = require('./tick');
 const BinarySocket               = require('../socket');
@@ -74,16 +73,11 @@ const TradingEvents = (() => {
                     const is_form_active = clicked_form.classList.contains('active') || clicked_form.parentElement.classList.contains('active');
                     Defaults.set('formname', clicked_form.getAttribute('menuitem'));
 
-                    setFormPlaceholderContent();
                     // if form is already active then no need to send same request again
                     commonTrading.toggleActiveCatMenuElement(form_nav_element, e.target.getAttribute('menuitem'));
 
                     if (!is_form_active) {
                         contractFormEventChange();
-                    }
-                    const contract_form_checkbox = document.getElementById('contract_form_show_menu');
-                    if (contract_form_checkbox) {
-                        contract_form_checkbox.checked = false;
                     }
                 }
             });
