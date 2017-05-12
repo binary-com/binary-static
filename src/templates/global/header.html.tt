@@ -15,7 +15,7 @@
 [% BLOCK account %]
 <a href="javascript:;">
     <div class="main-account">
-        <div class="account-type"></div>
+        <div class="account-type nowrap"></div>
         <div class="account-id"></div>
         <div class="topMenuBalance">0</div>
     </div>
@@ -28,7 +28,7 @@
     <div id="topbar" class="no-print primary-color-dark">
         <div class="container">
             <div class="gr-row">
-                <div id="topbar-msg" class='gr-6 gr-5-t gr-12-p gr-12-m invisible upgrademessage'>
+                <div id="topbar-msg" class='gr-6 gr-5-t gr-12-p gr-12-m invisible upgrademessage center-text'>
                     <span class='gr-hide-m invisible'>
                         <span id='virtual-text'>[% l("You're using a Virtual Account.") %]</span>
                     </span>
@@ -36,7 +36,7 @@
                 </div>
                 <div class='gr-6 gr-7-t gr-12-p gr-12-m' id='topbar-info'>
                     <div class="gr-row">
-                        <div class='gr-5 gr-6-m no-underline' id="gmt-clock" data-balloon-pos="down"></div>
+                        <div class='gr-5 gr-6-m no-underline nowrap' id="gmt-clock" data-balloon-pos="down"></div>
                         <div class='gr-2 gr-hide-m' id='contact-us'>
                             <a href="[% request.url_for('contact') %]">[% l("Contact Us") %]</a>
                         </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class='gr-6 gr-hide-m gr-hide-p gr-padding-10'>
                         <div id='main-navigation'>
-                            [% INCLUDE list id='menu-top' items=[
+                            [% INCLUDE list id='menu-top' class="center-text nowrap" items=[
                                 { text=l('Why Us?'),     href=request.url_for('why-us'),                 class='ja-hide' },
                                 { text=l('Why Us?'),     href=request.url_for('why-us-jp'),              class='invisible ja-show' },
                                 { text=l("Get Started"), href=request.url_for('get-started'),            class='ja-hide' },

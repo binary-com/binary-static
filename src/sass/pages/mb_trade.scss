@@ -1,6 +1,6 @@
 #mb_trading {
     font-family: $FONT-STACK;
-    font-size: 14px;
+    font-size: $FONT_SIZE_S;
     .flex-box {
         display: flex;
         &.rows {
@@ -54,7 +54,7 @@
         }
     }
     .base-value {
-        font-size: 9px;
+        font-size: $FONT_SIZE_XXS;
     }
     .dynamics {
         display: inline-block;
@@ -95,7 +95,7 @@
         border-radius: 3px;
         padding: 10px 0;
         cursor: pointer;
-        font-size: 14px;
+        font-size: $FONT_SIZE_S;
         border: 0;
         min-height: 34px;
         position: relative;
@@ -140,7 +140,7 @@
         }
         .descr {
             padding: 0 16px 0 0;
-            font-size: 14px;
+            font-size: $FONT_SIZE_S;
             max-width: 420px;
             line-height: 1.4em;
         }
@@ -150,7 +150,7 @@
         margin-bottom: 0;
         background-repeat: no-repeat;
         background-position: top center;
-        font-size: 18px;
+        font-size: $FONT_SIZE_L;
         text-align: center;
         align-self: flex-start;
         white-space: nowrap;
@@ -228,7 +228,7 @@
             width: 45%;
         }
         .payout-mult {
-            font-size: 15px;
+            font-size: $FONT_SIZE_N;
         }
     }
     .float-left {
@@ -283,7 +283,7 @@
         }
         .japan-table .price-row {
             .barrier, .price-button .value-wrapper, .sell-price {
-                font-size: 0.9em;
+                font-size: $FONT_SIZE_N;
             }
             .price-button {
                 width: 80%;

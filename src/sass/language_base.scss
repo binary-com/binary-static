@@ -1,5 +1,4 @@
 /* Specific rules for languages */
-
 body {
     .calls_recording {
         display: none;
@@ -20,12 +19,6 @@ body.EN {
     .calls_recording {
         display: block !important;
     }
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_en.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_en.svg');
-    }
 }
 
 body.JA {
@@ -33,15 +26,6 @@ body.JA {
         display: none !important;
     }
     .regulatory-logo {
-        display: none !important;
-    }
-    #asset-forex div.table-header:nth-of-type(n + 3), #asset-forex div.table-body:nth-of-type(n + 15) {
-        display: none !important;
-    }
-    #tradingtimes-forex div.table-header:nth-of-type(n + 3), #tradingtimes-forex div.table-body:nth-of-type(n + 15) {
-        display: none !important;
-    }
-    #bet_guide_content div:nth-child(1) {
         display: none !important;
     }
     #header #menu-top li {
@@ -60,15 +44,15 @@ body.JA {
     }
     #footer #footer-regulatory {
         #regulatory-text {
-            font-size: 14px;
+            font-size: $FONT_SIZE_S;
         }
-        .gr-9, .gr-p-7 {
+        .gr-9, .gr-7-p {
             width: 100% !important;
         }
     }
     #mb_trading .payout-input {
-        .hint, span, label {
-            font-size: 10px;
+        .hint, label {
+            font-size: $FONT_SIZE_XXS;
         }
     }
 }
@@ -79,19 +63,13 @@ body.VI {
         padding: 0 8px !important;
     }
     #trading_socket_container #contract_form_name_nav {
-        font-size: 90%;
+        font-size: $FONT_SIZE_N;
         > li a.tm-a {
-            font-size: 65%;
+            font-size: $FONT_SIZE_XXS;
         }
     }
     #trading_socket_container_beta #contract_symbol_container {
-        font-size: 90%;
-    }
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_vi.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_vi.svg');
+        font-size: $FONT_SIZE_N;
     }
 }
 
@@ -104,19 +82,13 @@ body.FR {
         text-transform: initial !important;
     }
     #trading_socket_container #contract_form_name_nav {
-        font-size: 90%;
+        font-size: $FONT_SIZE_N;
         > li a.tm-a {
-            font-size: 70%;
+            font-size: $FONT_SIZE_XXS;
         }
     }
     #header .account-type {
-        font-size: 85%;
-    }
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_fr.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_fr.svg');
+        font-size: $FONT_SIZE_S;
     }
 }
 
@@ -132,17 +104,8 @@ body.ID {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    #footer #social-networks {
-        padding-top: 0;
-    }
     .id-hide {
         display: none !important;
-    }
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_id.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_id.svg');
     }
 }
 
@@ -161,29 +124,23 @@ body.IT, body.DE {
 
 body.ES {
     #trading_socket_container #contract_form_name_nav {
-        font-size: 80%;
-    }
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_es.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_es.svg');
+        font-size: $FONT_SIZE_XS;
     }
 }
 
 body.RU {
     #frm_verify_email button {
-        font-size: 80%;
+        font-size: $FONT_SIZE_XS;
     }
     #trading_socket_container {
         #contract_form_name_nav {
-            font-size: 90%;
+            font-size: $FONT_SIZE_N;
             > li a.tm-a {
-                font-size: 70%;
+                font-size: $FONT_SIZE_XXS;
             }
         }
         .contract_heading {
-            font-size: 95%;
+            font-size: $FONT_SIZE_N;
             padding-top: 2.7em;
         }
         #expiry_type {
@@ -197,13 +154,7 @@ body.RU {
         display: none !important;
     }
     #header .account-type {
-        font-size: 90%;
-    }
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_ru.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_ru.svg');
+        font-size: $FONT_SIZE_N;
     }
 }
 
@@ -218,49 +169,18 @@ body.PT, body.RU {
 
 body.DE {
     #trading_socket_container #contract_form_name_nav {
-        font-size: 90%;
+        font-size: $FONT_SIZE_N;
         > li a.tm-a {
-            font-size: 75%;
+            font-size: $FONT_SIZE_XS;
         }
-    }
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_de.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_de.svg');
-    }
-}
-
-body.IT {
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_it.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_it.svg');
-    }
-}
-
-body.ZH_CN {
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_zh_cn.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_zh_cn.svg');
     }
 }
 
 body.ZH_TW {
     #trading_socket_container #contract_form_name_nav {
-        font-size: 90%;
-        > li a.tm-a {
-            font-size: 90%;
+        &, > li a.tm-a {
+            font-size: $FONT_SIZE_N;
         }
-    }
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_zh_tw.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_zh_tw.svg');
     }
 }
 
@@ -270,29 +190,29 @@ body.ZH_CN, body.ZH_TW {
     }
 }
 
-body.PT {
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_pt.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_pt.svg');
-    }
-}
+$list:
+    ('EN', 'en'),
+    ('DE', 'de'),
+    ('ES', 'es'),
+    ('FR', 'fr'),
+    ('ID', 'id'),
+    ('IT', 'it'),
+    ('JA', 'ja'),
+    ('PL', 'pl'),
+    ('PT', 'pt'),
+    ('RU', 'ru'),
+    ('TH', 'th'),
+    ('VI', 'vi'),
+    ('ZH_CN', 'zh_cn'),
+    ('ZH_TW', 'zh_tw');
 
-body.PL {
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_pl.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_pl.svg');
-    }
-}
-
-body.TH {
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_th.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_th.svg');
+@each $language, $image in $list {
+    body.#{$language} {
+        .app-store-badge {
+            background-image: url('../images/pages/applications/appstore_#{$image}.svg');
+        }
+        .google-play-badge {
+            background-image: url('../images/pages/applications/googleplay_#{$image}.svg');
+        }
     }
 }
