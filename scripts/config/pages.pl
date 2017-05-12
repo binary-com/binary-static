@@ -109,8 +109,6 @@ sub all_pages {
         ['user/settings/detailsws',          'user/settings/personal_details',       'default',    'Personal Details'],
 
         ['logged_inws',                'global/logged_in',       undef],
-        ['trade/bet_explanation',      'bet/explanation',        undef],
-        ['trade/bet_explanation_beta', 'bet/beta/explanation',   undef],
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],
     );
 }

@@ -579,25 +579,6 @@ const commonTrading = (() => {
 
     // ============= Functions used in /trading_beta =============
 
-    /*
-     * toggle active class of menu
-     */
-    const toggleActiveNavMenuElement_Beta = (nav, event_element) => {
-        const li_elements = nav.getElementsByTagName('li');
-        const classes = event_element.classList;
-
-        if (!classes.contains('active')) {
-            for (let i = 0, len = li_elements.length; i < len; i++) {
-                li_elements[i].classList.remove('active');
-            }
-            classes.add('active');
-            const parent = event_element.parentElement.parentElement;
-            if (parent.tagName === 'LI' && !parent.classList.contains('active')) {
-                parent.classList.add('active');
-            }
-        }
-    };
-
     const updatePurchaseStatus_Beta = (final_price, pnl, contract_status) => {
         final_price = String(final_price).replace(/,/g, '') * 1;
         pnl = String(pnl).replace(/,/g, '') * 1;
@@ -686,36 +667,35 @@ const commonTrading = (() => {
     };
 
     return {
-        displayUnderlyings             : displayUnderlyings,
-        generateUnderlyingOptions      : generateUnderlyingOptions,
-        getFormNameBarrierCategory     : getFormNameBarrierCategory,
-        contractTypeDisplayMapping     : contractTypeDisplayMapping,
-        showPriceOverlay               : () => { showHideOverlay('loading_container2', 'block'); },
-        hidePriceOverlay               : () => { showHideOverlay('loading_container2', 'none'); },
-        hideFormOverlay                : () => { showHideOverlay('loading_container3', 'none'); },
-        showFormOverlay                : () => { showHideOverlay('loading_container3', 'block'); },
-        hideOverlayContainer           : hideOverlayContainer,
-        getContractCategoryTree        : getContractCategoryTree,
-        resetPriceMovement             : resetPriceMovement,
-        toggleActiveCatMenuElement     : toggleActiveCatMenuElement,
-        displayCommentPrice            : displayCommentPrice,
-        debounce                       : debounce,
-        getDefaultMarket               : getDefaultMarket,
-        addEventListenerForm           : addEventListenerForm,
-        submitForm                     : submitForm,
-        durationOrder                  : duration => duration_order[duration],
-        displayTooltip                 : displayTooltip,
-        selectOption                   : selectOption,
-        updateWarmChart                : updateWarmChart,
-        reloadPage                     : reloadPage,
-        displayContractForms           : displayContractForms,
-        displayMarkets                 : displayMarkets,
-        toggleActiveNavMenuElement_Beta: toggleActiveNavMenuElement_Beta,
-        updatePurchaseStatus_Beta      : updatePurchaseStatus_Beta,
-        displayTooltip_Beta            : displayTooltip_Beta,
-        labelValue                     : labelValue,
-        timeIsValid                    : timeIsValid,
-        clean                          : () => { $chart = null; },
+        displayUnderlyings        : displayUnderlyings,
+        generateUnderlyingOptions : generateUnderlyingOptions,
+        getFormNameBarrierCategory: getFormNameBarrierCategory,
+        contractTypeDisplayMapping: contractTypeDisplayMapping,
+        showPriceOverlay          : () => { showHideOverlay('loading_container2', 'block'); },
+        hidePriceOverlay          : () => { showHideOverlay('loading_container2', 'none'); },
+        hideFormOverlay           : () => { showHideOverlay('loading_container3', 'none'); },
+        showFormOverlay           : () => { showHideOverlay('loading_container3', 'block'); },
+        hideOverlayContainer      : hideOverlayContainer,
+        getContractCategoryTree   : getContractCategoryTree,
+        resetPriceMovement        : resetPriceMovement,
+        toggleActiveCatMenuElement: toggleActiveCatMenuElement,
+        displayCommentPrice       : displayCommentPrice,
+        debounce                  : debounce,
+        getDefaultMarket          : getDefaultMarket,
+        addEventListenerForm      : addEventListenerForm,
+        submitForm                : submitForm,
+        durationOrder             : duration => duration_order[duration],
+        displayTooltip            : displayTooltip,
+        selectOption              : selectOption,
+        updateWarmChart           : updateWarmChart,
+        reloadPage                : reloadPage,
+        displayContractForms      : displayContractForms,
+        displayMarkets            : displayMarkets,
+        updatePurchaseStatus_Beta : updatePurchaseStatus_Beta,
+        displayTooltip_Beta       : displayTooltip_Beta,
+        labelValue                : labelValue,
+        timeIsValid               : timeIsValid,
+        clean                     : () => { $chart = null; },
     };
 })();
 
