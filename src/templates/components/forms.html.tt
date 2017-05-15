@@ -7,7 +7,7 @@
 
 [% BLOCK form_row %]
     [% IF type=='checkbox' and !spaced -%]
-    <div class="gr-row">
+    <div class="gr-row [% row_class %]">
         <div class="gr-12-m gr-padding-20 gr-centered">
             <input id="[% id %]" type="checkbox" />
             <label for="[% id %]">[% label %]</label>
