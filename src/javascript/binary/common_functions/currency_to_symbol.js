@@ -4,7 +4,10 @@ const getLanguage = require('../base/language').get;
 const formatMoney = (currency_value, amount, exclude_currency) => {
     const is_bitcoin = /xbt/i.test(currency_value);
     const is_jp = jpClient();
-    const decimal_places = is_bitcoin ? 6 : is_jp ? 0 : 2;
+    let decimal_places = is_bitcoin ? (parseFloat(amount).toString().split('.')[1] || '').length || 0 : is_jp ? 0 : 2;
+    if (decimal_places > 8) {
+        decimal_places = 8;
+    }
     let money;
     if (amount) amount = String(amount).replace(/,/g, '');
     if (typeof Intl !== 'undefined' && currency_value && !is_bitcoin && amount) {
@@ -12,15 +15,13 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
         const language = getLanguage().toLowerCase();
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
     } else {
-        let updated_amount,
+        let updated_amount = amount,
             sign = '';
         if (is_jp) {
             updated_amount = parseInt(amount);
             if (Number(updated_amount) < 0) {
                 sign = '-';
             }
-        } else {
-            updated_amount = parseFloat(amount).toFixed(decimal_places);
         }
         updated_amount = addComma(updated_amount, decimal_places);
         if (exclude_currency) {
@@ -35,7 +36,7 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
 
 const addComma = (num, decimal_points) => {
     const number = String(num || 0).replace(/,/g, '') * 1;
-    return number.toFixed(decimal_points || 2).toString().replace(/(^|[^\w.])(\d{4,})/g, ($0, $1, $2) => (
+    return number.toFixed(typeof decimal_points !== 'undefined' ? decimal_points : 2).toString().replace(/(^|[^\w.])(\d{4,})/g, ($0, $1, $2) => (
         $1 + $2.replace(/\d(?=(?:\d\d\d)+(?!\d))/g, '$&,')
     ));
 };

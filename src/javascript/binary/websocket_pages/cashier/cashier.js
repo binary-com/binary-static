@@ -42,12 +42,14 @@ const Cashier = (() => {
             BinarySocket.wait('authorize').then(() => {
                 Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
                 const is_virtual = Client.get('is_virtual');
+                const is_bitcoin = /xbt/i.test(Client.get('currency'));
                 if (is_virtual) {
                     displayTopUpButton();
                 }
-                if (is_virtual || /CR/.test(Client.get('loginid'))) {
+                if (is_virtual || (/CR/.test(Client.get('loginid')) && !is_bitcoin)) {
                     $('#payment-agent-section').setVisibility(1);
                 }
+                $(is_bitcoin ? '.bitcoin_currency' : '.normal_currency').setVisibility(1);
                 if (Client.hasGamingFinancialEnabled()) {
                     $('#account-transfer-section').setVisibility(1);
                 }
