@@ -5,7 +5,6 @@ const Header              = require('../../../../base/header');
 const localize            = require('../../../../base/localize').localize;
 const dateValueChanged    = require('../../../../common_functions/common_functions').dateValueChanged;
 const FormManager         = require('../../../../common_functions/form_manager');
-const scrollToHashSection = require('../../../../common_functions/scroll').scrollToHashSection;
 const DatePicker          = require('../../../../components/date_picker');
 const TimePicker          = require('../../../../components/time_picker');
 
@@ -31,10 +30,10 @@ const SelfExclusion = (() => {
         });
 
         initDatePicker();
-        getData(true);
+        getData();
     };
 
-    const getData = (scroll) => {
+    const getData = () => {
         BinarySocket.send({ get_self_exclusion: 1 }).then((response) => {
             if (response.error) {
                 if (response.error.code === 'ClientSelfExclusion') {
@@ -55,7 +54,12 @@ const SelfExclusion = (() => {
                 $form.find(`#${key}`).val(value);
             });
             bindValidation();
-            if (scroll) scrollToHashSection();
+            BinarySocket.send({ get_account_status: 1 }).then((data) => {
+                const has_to_set_30day_turnover = /ukrts_max_turnover_limit_not_set/.test(data.get_account_status.status);
+                $('#frm_self_exclusion').find('fieldset > div.form-row:not(.max_30day_turnover)').setVisibility(!has_to_set_30day_turnover);
+                $('#description_max_30day_turnover').setVisibility(has_to_set_30day_turnover);
+                $('#description').setVisibility(!has_to_set_30day_turnover);
+            });
         });
     };
 
