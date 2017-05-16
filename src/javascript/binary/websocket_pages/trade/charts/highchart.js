@@ -1,6 +1,8 @@
 const Highcharts   = require('highcharts/highstock');
 const HighchartUI  = require('./highchart.ui');
 const MBContract   = require('../../mb_trade/mb_contract');
+const MBDefaults   = require('../../mb_trade/mb_defaults');
+const Defaults     = require('../../trade/defaults');
 const GetTicks     = require('../../trade/get_ticks');
 const BinarySocket = require('../../socket');
 const ViewPopupUI  = require('../../user/view_popup/view_popup.ui');
@@ -151,15 +153,24 @@ const Highchart = (() => {
         const type  = response.msg_type;
         const error = response.error;
         if (/(history|candles|tick|ohlc)/.test(type) && !error) {
-            response_id = response[type].id;
-            // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
-            if (response_id) ViewPopupUI.storeSubscriptionID(response_id, underlying);
             options = { title: contract.display_name };
             options[type] = response[type];
             const history = response.history;
             const candles = response.candles;
             const tick    = response.tick;
             const ohlc    = response.ohlc;
+            response_id = response[type].id;
+            // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
+            if (response_id) {
+                if (State.get('is_trading') || State.get('is_mb_trading') || State.get('is_beta_trading')) {
+                    const page_underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
+                    if (page_underlying !== tick.symbol) {
+                        ViewPopupUI.storeSubscriptionID(response_id, true);
+                    }
+                } else {
+                    ViewPopupUI.storeSubscriptionID(response_id, true);
+                }
+            }
             if (history || candles) {
                 const length = (history ? history.times : candles).length;
                 if (length === 0) {
@@ -194,7 +205,7 @@ const Highchart = (() => {
                     }
                 }
             } else if ((tick || ohlc) && !stop_streaming) {
-                if (chart && chart.series) {
+                if (chart && chart.series && underlying === tick.symbol) {
                     updateChart(options);
                 }
             }
