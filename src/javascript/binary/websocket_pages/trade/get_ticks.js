@@ -20,26 +20,16 @@ const GetTicks = (() => {
     let underlying;
 
     const request = (symbol, req, callback) => {
-        const handleCallback = (response) => {
-            if (response.tick) {
-                if (response.tick.symbol === (symbol || req.ticks_history)) {
-                    callback(response);
-                }
-            } else {
-                callback(response);
-            }
-        };
-
         underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
         if (underlying && req && callback && (underlying !== req.ticks_history || !req.subscribe)) {
-            BinarySocket.send(req, { callback: handleCallback });
+            BinarySocket.send(req, { callback: callback });
         } else {
             if (!req || req.subscribe) {
                 BinarySocket.send({ forget_all: 'ticks' });
                 BinarySocket.send({ forget_all: 'candles' });
             }
             BinarySocket.send(req || {
-                ticks_history: symbol,
+                ticks_history: symbol || underlying,
                 style        : 'ticks',
                 end          : 'latest',
                 count        : 20,
@@ -50,7 +40,7 @@ const GetTicks = (() => {
                     const is_digit = getActiveTab() === 'tab_last_digit';
                     const is_digit_beta = getActiveTab_Beta() === 'tab_last_digit';
                     if (typeof callback === 'function') {
-                        handleCallback(response);
+                        callback(response);
                     }
                     if (State.get('is_mb_trading')) {
                         MBTick.processTickHistory(response);

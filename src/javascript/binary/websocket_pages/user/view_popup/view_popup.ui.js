@@ -6,7 +6,8 @@ const ViewPopupUI = (() => {
 
     let $container,
         stream_ids,
-        chart_stream_ids;
+        chart_stream_ids,
+        getPageTickStream;
 
     const init = () => {
         $container = null;
@@ -43,6 +44,7 @@ const ViewPopupUI = (() => {
         clearTimer();
         closeContainer();
         init();
+        if (typeof getPageTickStream === 'function') getPageTickStream();
         $(window).off('resize', () => { repositionConfirmation(); });
     };
 
@@ -179,6 +181,7 @@ const ViewPopupUI = (() => {
         showInpagePopup       : showInpagePopup,
         repositionConfirmation: repositionConfirmation,
         storeSubscriptionID   : storeSubscriptionID,
+        setStreamFunction     : (streamFnc) => { getPageTickStream = streamFnc; },
     };
 })();
 
