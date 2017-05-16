@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-13 08:44+0000\n"
+"PO-Revision-Date: 2017-05-16 09:25+0000\n"
 "Last-Translator: Camilo Diaz Barria <camilo.diaz@usach.cl>\n"
 "Language-Team: Spanish "
 "<https://hosted.weblate.org/projects/binary/static/es/>\n"
@@ -330,12 +330,18 @@ msgstr "%1 abre una oficina en el edificio de oficinas QSentral en el centro de 
 
 msgid "%1 owes you a duty of best execution when executing orders on your behalf, i.e., when you are placing a legitimate reliance on us to safeguard your interest in relation to the execution of your order."
 msgstr ""
+"%1 se compromete a ejecutar sus órdenes de la mejor forma, es decir, cuando "
+"usted deposita su confianza en nosotros para salvaguardar sus intereses en "
+"relación a la ejecución de sus órdenes."
 
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 proporciona servicios de colaboración empresarial a través de los siguientes programas."
 
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr ""
+"%1 le entrega la mejor ejecución a través de un método de agregación "
+"inteligente durante la gestión de nuevas órdenes. Este método funciona de la "
+"siguiente manera:"
 
 msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:"
 msgstr "%1 le ofrece la oportunidad de autoexcluír o <a href='%2'> establecer límites para sus actividades comerciales</a> en este sitio web. Usted puede también <a href='%3'>contactar con nosotros</a> para indicar los límites que desee establecer, a través de chat, correo electrónico o teléfono. Los límites disponibles son:"
@@ -360,6 +366,8 @@ msgstr "%1 busca un Redactor con experiencia para producir contenido que haga pa
 
 msgid "%1 shall act, at times, as a principal and at other times as an agent on your behalf, for all Transactions entered into, by you."
 msgstr ""
+"En algunas ocasiones, %1 actuará en su nombre como principal y otras como "
+"agente, para todas las transacciones que realice."
 
 #, fuzzy
 #| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
@@ -419,9 +427,16 @@ msgstr "Los sistemas de %1 están ahora procesando más de 1 millón de transacc
 
 msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
 msgstr ""
+"%1Autentifique su cuenta%2 ahora para aprovechar al máximo todas las "
+"opciones de retiro disponibles."
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr ""
+"La iniciativa de caridad de %1 se concentra en pequeñas instituciones de "
+"caridad y organizaciones sin fines de lucro en todo el mundo que tengan un "
+"impacto positivo en sus comunidades locales. Nuestras donaciones tienen un "
+"impacto directo, libre de los gastos generales inherentes a las "
+"instituciones benéficas de gran tamaño."
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "El premio \"Mejor Empresa de Comunicaciones\" de Investors Chronicle"
@@ -451,6 +466,7 @@ msgstr "Contratos Toque"
 
 msgid "(Sell Price - Buy Price) x Volume x Price Per Point = Profit"
 msgstr ""
+"(Precio de venta - Precio de compra) x Volumen x Precio por punto = Ganancia"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Libre de impuestos: En muchos países, los beneficios procedentes de operaciones binarias son libres de impuestos pero en todo caso tiene que consultar a un asesor fiscal."
@@ -460,8 +476,9 @@ msgstr "* Libre de impuestos: En muchos países, los beneficios procedentes de o
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "Todas las llamadas son grabadas con fines de entrenamiento y vigilancia"
 
+#, fuzzy
 msgid ",000"
-msgstr ""
+msgstr ".000"
 
 msgid "0-1 year"
 msgstr "0-1 año(s)"
@@ -564,6 +581,8 @@ msgstr "<strong>Riesgo de tipo de cambio</strong>: Los tipos de cambio entre las
 
 msgid "<strong>Long positions</strong>: We charge a 2% fee on top of interbank lending rates."
 msgstr ""
+"<strong>Posiciones largas</strong>: Cobramos un importe de 2% sobre la tasa "
+"de interés interbancaria."
 
 #, fuzzy
 #| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
@@ -575,6 +594,8 @@ msgstr "<strong>Otros riesgoss</strong>: Existen otros riesgos que se relacionan
 
 msgid "<strong>Short positions</strong>: We charge a 2% fee on top of interbank lending rates."
 msgstr ""
+"<strong>Posiciones cortas</strong>: Cobramos un importe de 2% sobre la tasa "
+"de interés interbancaria."
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "Un título de licenciatura en Informática, o una combinación equivalente de educación técnica, capacitación y experiencia laboral"
@@ -584,6 +605,9 @@ msgstr "Un título de licenciatura en Marketing, Administración de Empresas o u
 
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
 msgstr ""
+"Una persona expuesta políticamente o PEP es un individuo al que le ha sido "
+"encomendada una función pública prominente. Este estatus se extiende a los "
+"parientes y socios de esta persona."
 
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Un Agente de Pagos actua como un intercambio entre el cliente (es decir, nuestro cliente) y %1. El Agente de Pagos procesa los depósitos y retiros para los clientes que desean utilizar un método específico de dinero electrónico o monedas locales que no se ofrecen por defecto en %1. Los gastos de transferencia corren a cargo del cliente."
@@ -599,6 +623,9 @@ msgstr ""
 
 msgid "A Transaction is opened by either executing a \"Buy\" or \"Sell\" Order based on a specified number of lots (volume) that constitute the underlying instrument of the relevant market."
 msgstr ""
+"Una transacción se abre a través de la ejecución de una orden de \"Compra\" "
+"o \"Venta\", con base en un número específico de lotes (volumen) que "
+"constituyen el instrumento subyacente del mercado relevante."
 
 msgid "A True Partnership"
 msgstr "Una verdadera asociación"
@@ -655,6 +682,12 @@ msgstr "Una comprensión completa de y un gran interés en el cumplimiento legal
 
 msgid "A higher figure (higher to you) representing our offer price and a lower figure (lower to you) representing our bid price for each Transaction shall be quoted to you upon your request. The difference between our bid and our offer price will comprise of the market spread (where there is market for the underlying instrument) and our spread (being our charge to you)."
 msgstr ""
+"Un valor más alto (más alto para usted), que represente nuestro precio de "
+"venta y un valor más bajo (menor para usted) que represente nuestro precio "
+"de compra para cada transacción le será informado previa solicitud. La "
+"diferencia entre nuestros precios de compra y venta estará compuesta por el "
+"diferencial de mercado (donde existe mercado para el instrumento subyacente) "
+"y nuestro diferencial (el valor que le cobramos)."
 
 #, fuzzy
 #| msgid "{Japan Only}Binary option specialist for over 15 years "
