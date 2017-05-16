@@ -91,12 +91,12 @@ table {
     }
     @media (max-width: $md) {
         #profit-table tr {
-            & > th.contract, & > td.contract {
+            > th.contract, > td.contract {
                 display: none !important;
             }
         }
         #statement-table tr {
-            & > th.desc, & > td.desc {
+            > th.desc, > td.desc {
                 display: none !important;
             }
         }
