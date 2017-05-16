@@ -2,7 +2,7 @@ const jpClient    = require('./country_base').jpClient;
 const getLanguage = require('../base/language').get;
 
 const formatMoney = (currency_value, amount, exclude_currency) => {
-    const is_bitcoin = /xbt/i.test(currency_value);
+    const is_bitcoin = /btc/i.test(currency_value);
     const is_jp = jpClient();
     let decimal_places = is_bitcoin ? (parseFloat(amount).toString().split('.')[1] || '').length || 0 : is_jp ? 0 : 2;
     if (decimal_places > 8) {
@@ -50,7 +50,7 @@ const map_currency = {
     AUD: 'A$',
     EUR: '€',
     JPY: '¥',
-    XBT: '₿',
+    BTC: '₿',
 };
 
 module.exports = {

@@ -42,7 +42,7 @@ const Cashier = (() => {
             BinarySocket.wait('authorize').then(() => {
                 Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
                 const is_virtual = Client.get('is_virtual');
-                const is_bitcoin = /xbt/i.test(Client.get('currency'));
+                const is_bitcoin = /btc/i.test(Client.get('currency'));
                 if (is_virtual) {
                     displayTopUpButton();
                 }
