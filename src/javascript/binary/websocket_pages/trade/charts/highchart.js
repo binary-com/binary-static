@@ -205,7 +205,7 @@ const Highchart = (() => {
                     }
                 }
             } else if ((tick || ohlc) && !stop_streaming) {
-                if (chart && chart.series && underlying === tick.symbol) {
+                if (chart && chart.series) {
                     updateChart(options);
                 }
             }
