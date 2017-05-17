@@ -1,6 +1,8 @@
 const Highcharts   = require('highcharts/highstock');
 const HighchartUI  = require('./highchart.ui');
 const MBContract   = require('../../mb_trade/mb_contract');
+const MBDefaults   = require('../../mb_trade/mb_defaults');
+const Defaults     = require('../../trade/defaults');
 const GetTicks     = require('../../trade/get_ticks');
 const BinarySocket = require('../../socket');
 const ViewPopupUI  = require('../../user/view_popup/view_popup.ui');
@@ -39,13 +41,14 @@ const Highchart = (() => {
         stop_streaming,
         is_contracts_for_send,
         is_history_send,
-        is_entry_tick_barrier_selected;
+        is_entry_tick_barrier_selected,
+        is_response_id_set;
 
     const initOnce = () => {
         chart = options = response_id = contract = request = min_point = max_point = '';
         lines_drawn = [];
 
-        is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming =
+        is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming = is_response_id_set =
             is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
     };
 
@@ -151,15 +154,28 @@ const Highchart = (() => {
         const type  = response.msg_type;
         const error = response.error;
         if (/(history|candles|tick|ohlc)/.test(type) && !error) {
-            response_id = response[type].id;
-            // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
-            if (response_id) ViewPopupUI.storeSubscriptionID(response_id, underlying);
             options = { title: contract.display_name };
             options[type] = response[type];
             const history = response.history;
             const candles = response.candles;
             const tick    = response.tick;
             const ohlc    = response.ohlc;
+            response_id = response[type].id;
+            // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
+            if (response_id && !is_response_id_set) {
+                if (State.get('is_trading') || State.get('is_mb_trading') || State.get('is_beta_trading')) {
+                    const page_underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
+                    if (page_underlying !== (tick || ohlc).symbol) {
+                        ViewPopupUI.storeSubscriptionID(response_id, true);
+                        ViewPopupUI.setStreamFunction();
+                    } else {
+                        ViewPopupUI.setStreamFunction(GetTicks.request);
+                    }
+                } else {
+                    ViewPopupUI.storeSubscriptionID(response_id, true);
+                }
+                is_response_id_set = true;
+            }
             if (history || candles) {
                 const length = (history ? history.times : candles).length;
                 if (length === 0) {
