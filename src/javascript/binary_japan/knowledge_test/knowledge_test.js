@@ -1,10 +1,12 @@
 const KnowledgeTestUI     = require('./knowledge_test.ui');
 const BinaryPjax          = require('../../binary/base/binary_pjax');
+const Client              = require('../../binary/base/client');
 const toJapanTimeIfNeeded = require('../../binary/base/clock').toJapanTimeIfNeeded;
 const Header              = require('../../binary/base/header');
 const localize            = require('../../binary/base/localize').localize;
 const Url                 = require('../../binary/base/url');
 const BinarySocket        = require('../../binary/websocket_pages/socket');
+const Cookies             = require('../../lib/js-cookie');
 
 const KnowledgeTest = (() => {
     'use strict';
@@ -14,6 +16,7 @@ const KnowledgeTest = (() => {
     let random_picks = [];
     const obj_random_picks = {};
     let result_score = 0;
+    const passing_score = 14; // minimum score to pass the test
 
     const msg_pass = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
     const msg_fail = '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.';
@@ -73,8 +76,12 @@ const KnowledgeTest = (() => {
     const showResult = (score, time) => {
         $('#knowledge-test-instructions').setVisibility(0);
         $('#knowledge-test-header').text(localize('{JAPAN ONLY}Knowledge Test Result'));
-        const msg = score >= 14 ? msg_pass : msg_fail;
+        const msg = score >= passing_score ? msg_pass : msg_fail;
         $('#knowledge-test-msg').text(localize(msg));
+        if (score >= passing_score && Cookies.get('affiliate_tracking')) {
+            $('#knowledge-test-msg').append(
+                $('<img/>', { src: `https://www.tcs-asp.net/aresult?LC=BINARY1&NK=${Client.get('loginid')}` }).setVisibility(0));
+        }
 
         const $result_table = KnowledgeTestUI.createResultUI(score, time);
 
@@ -192,7 +199,7 @@ const KnowledgeTest = (() => {
         BinarySocket.send({
             jp_knowledge_test: 1,
             score            : result_score,
-            status           : result_score >= 14 ? 'pass' : 'fail',
+            status           : result_score >= passing_score ? 'pass' : 'fail',
             questions        : questions,
         }).then((response) => {
             if (!response.error) {
