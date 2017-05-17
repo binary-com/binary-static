@@ -34,7 +34,5 @@
 [% INCLUDE info header=l("{JAPAN ONLY}Win Loss Ratio") text=l("{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA")
    doc='binary_report_ratios' %]
 
-<div class="gr-parent gr-padding-10">
-    <h2>[% l("{JAPAN ONLY}Financial Condition") %]</h2>
-    <p>[% l("{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA") %]</p>
-</div>
+[% INCLUDE info header=l("{JAPAN ONLY}Financial Condition") text=l("{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA")
+   doc='binary_disclosure' %]
