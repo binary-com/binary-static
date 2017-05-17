@@ -99,13 +99,12 @@ foreach my $m (@m) {
             website_name    => $request->website->display_name,
             browser_title   => $title ? localize($title).' | ' : '',
             request         => $request,
+            layout          => $layout,
             language        => uc $lang,
             root_url        => root_url(),
             current_path    => $save_as,
             current_route   => $current_route,
             affiliate_email => 'affiliates@binary.com',
-            full_width      => $layout && $layout eq 'full_width',
-            get_started     => $layout && $layout eq 'get_started',
             japan_docs_url  => 'https://japan-docs.binary.com'
         );
 
