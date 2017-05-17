@@ -90,8 +90,15 @@ table {
         }
     }
     @media (max-width: $md) {
-        #profit-table tr > th.contract, & > td.contract, #statement-table tr > th.desc, & > td.desc {
-            display: none !important;
+        #profit-table tr {
+            > th.contract, > td.contract {
+                display: none !important;
+            }
+        }
+        #statement-table tr {
+            > th.desc, > td.desc {
+                display: none !important;
+            }
         }
     }
 }
