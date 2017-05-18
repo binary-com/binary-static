@@ -186,11 +186,19 @@ const Header = (() => {
                 status,
                 should_authenticate = false;
 
+            const costarica_landing_company = /costarica/.test(Client.get('landing_company_name'));
+
             const riskAssessment = () => {
                 if (get_account_status.risk_classification === 'high') {
                     return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
                 }
                 return false;
+            };
+
+            const authenticate = () => {
+                // don't show age verification check for costarica clients
+                const should_age_verify = !/age_verification/.test(status) && !costarica_landing_company;
+                return (!/authenticated/.test(status) || should_age_verify) && !jpClient() && should_authenticate;
             };
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
@@ -207,8 +215,7 @@ const Header = (() => {
             };
 
             const validations = {
-                authenticate: () =>
-                    (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient() && should_authenticate,
+                authenticate   : () => authenticate(),
                 financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence      : () => !Client.get('residence'),
                 risk           : () => riskAssessment(),
@@ -249,7 +256,7 @@ const Header = (() => {
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment', 'balance').then(() => {
                     get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
                     status = get_account_status.status;
-                    if (/costarica/.test(Client.get('landing_company_name')) && +Client.get('balance') < 200) {
+                    if (costarica_landing_company && +Client.get('balance') < 200) {
                         BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
                             if (response.mt5_login_list.length) {
                                 should_authenticate = true;
