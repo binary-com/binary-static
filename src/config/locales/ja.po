@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-18 01:18+0000\n"
-"Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
+"PO-Revision-Date: 2017-05-19 18:22+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.14.1-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
@@ -1044,7 +1044,7 @@ msgid "April"
 msgstr "４月"
 
 msgid "Are over 18."
-msgstr ""
+msgstr "18歳以上です"
 
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr "お客さまは決済サービスエージェントですか？またはエージェントにご興味がありますか？"
@@ -1243,7 +1243,7 @@ msgid "Banks, hedge funds and professional investors routinely trade binary opti
 msgstr "銀行、ヘッジファンド、プロ投資家の皆様はデリバティブ市場でバイナリーオプションを日常的に取引されています。当社の取引プラットフォームは多くのプロ投資家から信頼され、ご利用いただいております。"
 
 msgid "Banner placement."
-msgstr ""
+msgstr "バナーの配置"
 
 msgid "Barrier"
 msgstr "バリア価格"
@@ -1708,7 +1708,7 @@ msgid "Clerks"
 msgstr "事務"
 
 msgid "Click anywhere outside the menu to save and close."
-msgstr ""
+msgstr "保存をして閉じるには、メニュー外をクリックしてください。"
 
 msgid "Click here to retry"
 msgstr "再試行するにはこちらをクリックしてください"
@@ -1732,13 +1732,13 @@ msgid "Click on the <strong>OK</strong> button to save your settings."
 msgstr "<strong>OK</strong>ボタンを押してセーブし閉じて下さい。"
 
 msgid "Click on the <strong>Privacy</strong> tab."
-msgstr ""
+msgstr "<strong>プライバシー</strong>タブをクリックしてください。"
 
 msgid "Click on the <strong>Show advanced settings</strong>."
 msgstr ""
 
 msgid "Click on the <strong>X</strong> button at the top right to save and close."
-msgstr ""
+msgstr "保存をして閉じるには、右上にある<strong>X</strong>ボタンをクリックしてください。"
 
 msgid "Client Money"
 msgstr "お客さまマネー"
@@ -2798,7 +2798,7 @@ msgid "External forces"
 msgstr "不可抗力条項"
 
 msgid "Extra revenue stream:"
-msgstr ""
+msgstr "追加収入："
 
 msgid "F. Execution Venues"
 msgstr "F. 注文執行場"
@@ -6448,15 +6448,11 @@ msgstr "取引継続時間の制限(分単位)"
 msgid "Session duration:"
 msgstr "セッション継続時間:"
 
-#, fuzzy
-#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgid "Set \"<strong>Block cookies:</strong>\" to <strong>Never</strong>."
-msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
+msgstr "”<strong>Cookieをブロック</strong>”を<strong>Never</strong>に設定してください。"
 
-#, fuzzy
-#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgid "Set \"<strong>Firefox will</strong>\" to \"<strong>Remember history</strong>\"."
-msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
+msgstr "\"<strong>Firefox</strong>\"を\"<strong>履歴を記憶する</strong>\"に設定してください。"
 
 msgid "Set barrier(s) to define your position and trigger the payout you will receive."
 msgstr "バリア価格の設定はポジションの要素であり、ペイアウトに影響します。"
@@ -6920,10 +6916,12 @@ msgstr "%1のウェブサイトは特定の著作権で保護されています�
 msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
 msgstr ""
 
-#, fuzzy
-#| msgid "The Binary.com website's static content (CSS, Javascript) is available as the <a target='_blank' href='%1'>binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
-msgstr "github上のオープンソース・プロジェクトである<a target='_blank' href='%1'>binary-static</a>にて、Binary.com (バイナリードットコム)のウェブサイトの静的コンテンツ (CSS, Javascript)は利用可能です。Binary.com (バイナリードットコム)のウェブサイトのカスタマイズ、ブラウザ互換性の向上、サイトスピードの向上、 Javascriptのパフォーマンスの向上をお望みの場合はプロジェクトをフォークし、コード変更の提案に関するプルリクエストを送信して下さい。"
+msgstr ""
+"github上のオープンソース・プロジェクトである%2binary-static%3にて、%1 (バイナリードットコム)のウェブサイトの静的コンテンツ ("
+"CSS, Javascript)は利用可能です。Binary.com "
+"(バイナリードットコム)のウェブサイトのカスタマイズ、ブラウザ互換性の向上、サイトスピードの向上、 "
+"Javascriptのパフォーマンスの向上をお望みの場合はプロジェクトをフォークし、コード変更の提案に関するプルリクエストを送信して下さい。"
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "最高水準のFXバイナリーオプション取引環境を提供"
@@ -7857,20 +7855,14 @@ msgstr ""
 msgid "Trade all major currencies, indices, stocks, and commodities."
 msgstr "主要通貨ペアのお取引"
 
-#, fuzzy
-#| msgid "<strong>Trade according to your preferred strategy</strong> - Trade based on \"gut feel\" or rely on technical and fundamental analysis"
 msgid "Trade based on \"gut feel\" or rely on technical and fundamental analysis"
-msgstr "<strong>自身の取引戦略を活用</strong>：戦略、テクニカル分析、ファンダメンタル分析などをトレードにご利用いただけます。"
+msgstr "戦略、テクニカル分析、ファンダメンタル分析などをトレードにご利用いただけます"
 
-#, fuzzy
-#| msgid "<strong>Security and privacy</strong> - Trade confidently, knowing that your personal data, transactions, and funds are always secure"
 msgid "Trade confidently, knowing that your personal data, transactions, and funds are always secure"
-msgstr "<strong>セキュリティ＆プライバシー</strong>：当社はお客さまの個人情報および取引情報の管理には、細心の注意を払い管理いたします。そのため、安心して取引いただけます。"
+msgstr "当社はお客さまの個人情報および取引情報の管理には細心の注意を払っています。そのため、安心して取引いただけます。"
 
-#, fuzzy
-#| msgid "<strong>All markets and conditions</strong> - Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
 msgid "Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
-msgstr "<strong>どんな相場状況でも</strong>：上昇、下落、保ち合い、荒れ相場、いかなる状況でもお取引が期待できます。"
+msgstr "上昇、下落、保ち合い、荒れ相場、いかなる状況でもお取引が期待できます"
 
 msgid "Trade in the world's financial markets in a simple, user-friendly platform."
 msgstr "見やすく利便性の高いプラットフォームにてお取引をお試しいただけます。"
@@ -7887,10 +7879,8 @@ msgstr "バイナリードットコムは、主要9通貨ペアを複数の種�
 msgid "Trade type"
 msgstr "トレードの種類"
 
-#, fuzzy
-#| msgid "<strong>Available 24/7</strong> - Trade when you want. %1 is available 24/7, even on weekends"
 msgid "Trade when you want. %1 is available 24/7, even on weekends"
-msgstr "<strong>お好きな時間にお取引</strong> - 平日24時間お取引が可能"
+msgstr "平日24時間お取引が可能"
 
 msgid "Trade with a powerful interface known as the global industry standard."
 msgstr "世界業界標準として名立たる強力なインターフェイスでトレードを実施しましょう。"
@@ -7898,10 +7888,8 @@ msgstr "世界業界標準として名立たる強力なインターフェイス
 msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions."
 msgstr "銀行振込による入出金が取引が可能。お客さまからお預かりした資金は、日証金信託銀行の信託口座にて当社の資産とは区分して管理されています。"
 
-#, fuzzy
-#| msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
 msgid "Trade with the industry pioneer and holder of a patented pricing technology"
-msgstr "<strong>特許技術</strong> - 業界のパイオニアであり、特許取得済みの価格テクノロジーを採用している当社で取引しましょう"
+msgstr "業界のパイオニアであり、特許取得済みの価格テクノロジーを採用している当社で取引をしましょう"
 
 msgid "Trade your way"
 msgstr "柔軟な取引"
@@ -7947,10 +7935,8 @@ msgstr ""
 "お客さまの過度な取引を防止するため、お客さま自身で下記の該当する取引上限設定を行えます。\n"
 "自動ログアウトと任意でログインしない以外の項目は1度設定されますと、次回からは設定した数値より低い数値以外は変更ができませんのでご注意下さい。制限の解除または緩和をご希望の場合は、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
-#, fuzzy
-#| msgid "TradingView"
 msgid "TradingView for %1"
-msgstr "TradingView"
+msgstr "TradingView for %1"
 
 msgid "Transact in"
 msgstr "選択通貨"
@@ -7970,15 +7956,11 @@ msgstr "お客さまのゲーム口座と金融口座間での送金"
 msgid "Transfer from"
 msgstr "送金元"
 
-#, fuzzy
-#| msgid "Transfer funds from Binary.com account into your MT5 account:"
 msgid "Transfer funds from %1 account into your MT5 account:"
 msgstr "MetaTraderの口座からBinary.com (バイナリードットコム)の口座へ資金をご出金："
 
-#, fuzzy
-#| msgid "Transfer funds from your MT5 account into your Binary.com account:"
 msgid "Transfer funds from your MT5 account into your %1 account:"
-msgstr "MetaTraderの口座からBinary.com (バイナリードットコム)の口座へ資金をご出金："
+msgstr "MetaTraderの口座から%1 (バイナリードットコム)の口座へ資金をご出金："
 
 msgid "Transfer into"
 msgstr "送金先"
@@ -8040,8 +8022,6 @@ msgstr "火"
 msgid "Turnover"
 msgstr "取引数量"
 
-#, fuzzy
-#| msgid "2-way pricing"
 msgid "Two-way pricing"
 msgstr "2ウェイ・プライス（購入・売却）を表示"
 
@@ -8092,10 +8072,10 @@ msgstr "責任の理論下における（契約、不法行為、厳格責任、
 msgid "Under no circumstances shall we provide investment advice or recommendation to you or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written information, which we may publish on our website or provide to you in any other manner. We will endeavour to ensure the accuracy and completeness of this written information but it will not constitute investment advice or recommendation provided by us to you."
 msgstr ""
 
-#, fuzzy
-#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgid "Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option."
-msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
+msgstr ""
+"<strong>Cookie</strong>セクションにある\"<strong>Cookieをブロックしない</strong>\""
+"オプションを選択してください。"
 
 msgid "Under the Rules, clients may be categorised into one of the following three categories:"
 msgstr "ルールに基づき、クライアントは3つのカテゴリーのうちの1つにあたります。"
@@ -8208,15 +8188,11 @@ msgstr "メインパスワード（確認用）"
 msgid "Verify new password"
 msgstr "新しいパスワード（確認用）"
 
-#, fuzzy
-#| msgid "Version 43. Last modified 2016-11-09."
 msgid "Version 44. Last modified 2017-04-19."
-msgstr "第43版・最終編集日：2016年11月9日"
+msgstr "第44版・最終編集日：2017年4月19日"
 
-#, fuzzy
-#| msgid "Version 43. Last modified 2016-11-09."
 msgid "Version 5. Last modified 2017-04-19."
-msgstr "第43版・最終編集日：2016年11月9日"
+msgstr "第5版・最終編集日：2017年4月19日"
 
 msgid "View"
 msgstr "表示"
@@ -8305,10 +8281,8 @@ msgstr "プラットフォームのセキュリティ強化へのお手伝いを
 msgid "Want to learn more?"
 msgstr "詳細はこちら"
 
-#, fuzzy
-#| msgid "Want to telecommute? "
 msgid "Want to telecommute?"
-msgstr "在宅勤務について "
+msgstr "在宅勤務にご興味がありますか？"
 
 msgid "Warranties"
 msgstr "保証内容"
@@ -8384,8 +8358,6 @@ msgstr "当社は関連する法律や規則に基いて行います。"
 msgid "We are required to take a number of factors into account when considering how to give you best execution. We have rated price as the most important followed by: (a) costs; (b) size, (c) liquidity of the underlying market, (d) speed and (e) likelihood of execution and settlement. The main way in which we will ensure that you obtain best execution is by ensuring that in our calculation of our bid/offer prices, we pay due consideration to the market price for the underlying reference product to which your Contract relates. We have access to a number of different data sources in order to ascertain the market price, which is our objective view of the bids and offers available to arms' length traders."
 msgstr "当社はお客さまへ最高執行をさせていただく方法を検討する際に、多くの要因を踏まえる必要があります。価格を見積もる上で最も重要となる項目は次の通りです。(a)費用 (b)サイズ (c)基礎となる市場の流動性 (d)スピード (e)実行と決済の見込み　お客さまが最良執行をお受け取りいただけることを保証できる主な方法は、お客さまの契約に関する基礎となる参照商品の市場価格に十分に考慮させていただいたビッド価格とオファー価格の計算の確実性です。一定の距離があるお客さまにご利用いただけるビッドとオファーの我々の客観的視点からみた市場価格を確認するために多くの異なるデータソースにアクセスします。"
 
-#, fuzzy
-#| msgid "<strong>Long positions</strong>: We charge a 2% fee on top of market rates."
 msgid "We charge a 2% fee on top of market rates."
 msgstr "長期間の取引期間をご指定して頂いたトレードは、最新の市場価格で売ることができる場合があります。"
 
@@ -8440,10 +8412,10 @@ msgstr ""
 msgid "We may, however, withhold your withdrawal request from your Real Account to your Binary Options Real Account, in whole or in part, if:"
 msgstr ""
 
-#, fuzzy
-#| msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you’re in Malta or Malaysia."
 msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta or Malaysia."
-msgstr "当社では、ボーナス、健康保険、旅行、インターネット、社員旅行といった魅力的な福利厚生を提供しています。マルタまたはマレーシアでハイスタンダードな生活をお楽しみいただけます。"
+msgstr ""
+"当社では、ボーナス、健康保険、旅行、インターネット、社員旅行といった魅力的な福利厚生を提供しています。マルタまたはマレーシアでハイスタンダードな生活をお楽"
+"しみいただけます。"
 
 msgid "We prohibit the use of unauthorised incentives, gifts and payments to encourage customer sign-ups. In the event that we believe that you have engaged in such activity, we reserve the right to withhold any amounts due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
 msgstr "当社が承認していない会員獲得を目的としたインセンティブやプレゼントを与えることは禁じています。このような行為を行った場合は、当社は報酬を保留にする権利を有します。しかしながら、インセンティブ付与に関する計画については当社アフィリエイトチームまでご相談の上、承認を得ることもできます。"
@@ -8604,8 +8576,6 @@ msgstr "\"Ok\"をクリックすると、選択した日付までこのサイト
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
 msgstr "アフィリエイトの認証が完了しましたら、すぐに開始いただけるのに必要な全てをこちらから提供させていただきます。"
 
-#, fuzzy
-#| msgid "When you start trading with Binary.com, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when."
 msgid "When you start trading with %1, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when."
 msgstr "取引を開始するには、取引画面でいくつかの取引条件を指定・選択します。"
 
@@ -9140,15 +9110,11 @@ msgstr "23:59:59 GMT以降にポジションをオープンのままにされま
 msgid "You will be subjected to swap rates if you keep a position open past the market close."
 msgstr "市場閉鎖後もポジションをオープンのままにされますと、スワップレートの対象となりますのでご注意ください。"
 
-#, fuzzy
-#| msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgid "You will charge a commission to process the transactions."
-msgstr "<strong>手数料:</strong> トランザクション処理に手数料が請求されます。"
+msgstr "トランザクション処理に手数料が請求されます。"
 
-#, fuzzy
-#| msgid "<strong>Extra revenue stream:</strong> You will have the potential to earn another level of income from our affiliate program."
 msgid "You will have the potential to earn another level of income from our affiliate program."
-msgstr "<strong>追加収入の流れ:</strong> 当社のアフィリエイトプログラムから別レベルの収入を獲得いただくことも可能です。"
+msgstr "当社のアフィリエイトプログラムから別レベルの収入を獲得いただくことも可能です。"
 
 #, fuzzy
 #| msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
