@@ -3,7 +3,12 @@ if (window.location.hash === '#done') {
     document.querySelectorAll('.notice-msg')[0].classList.remove('invisible');
     document.querySelectorAll('.notice-msg')[1].classList.remove('invisible');
     document.getElementsByTagName('form')[0].classList.add('invisible');
-    document.getElementsByTagName('form')[1].classList.add('invisible')
+    document.getElementsByTagName('form')[1].classList.add('invisible');
+    if(window.history.pushState) {
+        window.history.pushState('', '/', window.location.pathname)
+    } else {
+        window.location.hash = '';
+    }
 }
 
 // Collapse navbar on scroll
