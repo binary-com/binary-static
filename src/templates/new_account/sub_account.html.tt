@@ -1,0 +1,16 @@
+[% PROCESS components/forms.html.tt %]
+
+<div class='gr-12 static_full'>
+    <h1>[% l('Create New Sub-Account') %]</h1>
+    <p>[% l('Please choose the currency of your new sub-account:') %]</p>
+    <form id="frm_sub_account" class="gr-padding-10">
+        [% WRAPPER fieldset %]
+            [% INCLUDE form_row label=l("Currency") id='select_currency' type='select' %]
+        [% END %]
+
+        <div class="center-text">
+            <button class="button" type="submit">[% l('Create New Sub-Account') %]</button>
+            <p class="errorfield invisible" id="error-account-opening"></p>
+        </div>
+    </form>
+</div>
