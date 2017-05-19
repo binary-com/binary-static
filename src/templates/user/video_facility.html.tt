@@ -21,7 +21,7 @@
         </div>
 
         <div class="gr-padding-20 fill-bg-color center-text">
-            <span class="gr-gutter-right">[% l('Generated verficiation code:') %]</span>
+            <span class="gr-gutter-right">[% l('Generated verification code:') %]</span>
             <strong id="generated_token"></strong>
         </div>
 
