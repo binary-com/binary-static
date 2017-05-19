@@ -1,9 +1,9 @@
 // Handle form submission
 if (window.location.hash === '#done') {
-    document.querySelectorAll('.notice-msg')[0].classList.remove('invisible');
-    document.querySelectorAll('.notice-msg')[1].classList.remove('invisible');
-    document.getElementsByTagName('form')[0].classList.add('invisible');
-    document.getElementsByTagName('form')[1].classList.add('invisible');
+    for (let i = 0; i < 2; i++) {
+        document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
+        document.getElementsByTagName('form')[i].classList.add('invisible');
+    }
     if(window.history.pushState) {
         window.history.pushState('', '/', window.location.pathname)
     } else {
