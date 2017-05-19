@@ -1,9 +1,46 @@
+[% BLOCK link %]
+    [% FOREACH favicon IN favicons %]
+        [% sizes = favicon.size _ 'x' _ favicon.size %]
+    <link rel="[% (favicon.is_image ? '' : 'apple-touch-') _ 'icon' %]" sizes="[% sizes %]"[% IF favicon.is_image %] type="image/png"[% END %] href="https://style.binary.com/images/favicons/[% favicon.is_image ? 'fav' : 'apple-touch-' %]icon-[% sizes %].png">
+    [% END %]
+[% END %]
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
+        <meta name="description" content="
+        [%= l('[_1] gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities.', broker_name) =%]" />
+        <meta name="keywords" content="
+                [%= l('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading') =%]" />
+        <meta name="author" content="[%= broker_name =%]" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="dcterms.rightsHolder" content="[%= broker_name =%]" />
+        <meta name="dcterms.rights" content="[%= broker_name =%]" />
+        <meta property="og:title" content="[%= broker_name =%]" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
+
         <title>Binary.com ICO</title>
+
+        [% INCLUDE link favicons=[
+            { size='57' },
+            { size='114' },
+            { size='72' },
+            { size='144' },
+            { size='60' },
+            { size='120' },
+            { size='76' },
+            { size='152' },
+            { size='180' },
+            { is_image=1, size='192' },
+            { is_image=1, size='160' },
+            { is_image=1, size='96' },
+            { is_image=1, size='16' },
+            { is_image=1, size='32' },
+        ] %]
+
         <link href="[% request.url_for('css/ico.css') %]" rel="stylesheet" />
         <link href="https://style.binary.com/binary.css" rel="stylesheet" />
     </head>
@@ -101,32 +138,32 @@
             <div class="gr-row">
                 <div class="gr-4 gr-12-m vertical-center">
                     <div class="box">
-                        <img class="icon" src="../images/ico/icons/coins_icon.svg" />
+                        <img class="icon" src="[% request.url_for('images/ico/icons/coins_icon.svg') %]" />
                         <h4>[% l("Purchase our tokens") %]</h4>
                         <p>[% l("Binary.com will issue a number of tokens during the ICO.") %]</p>
                     </div>
-                    <img class="arrow" src="../images/ico/icons/arrow1.svg" />
+                    <img class="arrow" src="[% request.url_for('images/ico/icons/arrow1.svg') %]" />
                 </div>
                 <div class="gr-4 gr-12-m vertical-center">
                     <div class="box">
-                        <img class="icon" src="../images/ico/icons/ch_icon.svg" />
+                        <img class="icon" src="[% request.url_for('images/ico/icons/ch_icon.svg') %]" />
                         <h4>[% l("Earn exclusive tokenholder rights") %]</h4>
                         <p>[% l("Each token provides you with two exclusive tokenholder rights.") %]</p>
                     </div>
-                    <img class="arrow2" src="../images/ico/icons/arrow2.svg" />
+                    <img class="arrow" src="[% request.url_for('images/ico/icons/arrow2.svg') %]" />
                 </div>
                 <div class="gr-4 gr-12-m">
                     <div class="gr-row">
                         <div class="gr-12">
                             <div class="box">
-                                <img class="icon" src="../images/ico/icons/dp_icon.svg" />
+                                <img class="icon" src="[% request.url_for('images/ico/icons/dp_icon.svg') %]" />
                                 <h4>[% l("Receive dividend payments") %]</h4>
                                 <p>[% l("As a tokenholder, you have the right to receive payments equivalent to shareholder dividends.") %]</p>
                             </div>
                         </div>
                         <div class="gr-12">
                             <div class="box">
-                                <img class="icon" src="../images/ico/icons/ccs_icon.svg" />
+                                <img class="icon" src="[% request.url_for('images/ico/icons/ccs_icon.svg') %]" />
                                 <h4>[% l("Convert your tokens into shares") %]</h4>
                                 <p>[% l("As a tokenholder, you also have the right to convert your tokens into Ordinary Shares.") %]</p>
                             </div>
@@ -142,17 +179,17 @@
                     <h2>[% l("Token Dividends") %]</h2>
                 </div>
                 <div class="gr-4 gr-12-m">
-                    <img class="icon" src="../images/ico/icons/is_icon.svg" />
+                    <img class="icon" src="[% request.url_for('images/ico/icons/is_icon.svg') %]" />
                     <h4>[% l("How often do you issue dividends?") %]</h4>
                     <p>[% l("Binary generally distributes dividends once a year, at the sole discretion of its board.") %]</p>
                 </div>
                 <div class="gr-4 gr-12-m">
-                    <img class="icon" src="../images/ico/icons/ich_icon.svg" />
+                    <img class="icon" src="[% request.url_for('images/ico/icons/ich_icon.svg') %]" />
                     <h4>[% l("How do you inform tokenholders?") %]</h4>
                     <p>[% l("Distribution of dividends will be announced on the Binary.com website.") %]</p>
                 </div>
                 <div class="gr-4 gr-12-m">
-                    <img class="icon" src="../images/ico/icons/dvnd_icon.svg" />
+                    <img class="icon" src="[% request.url_for('images/ico/icons/dvnd_icon.svg') %]" />
                     <h4>[% l("How much dividend will I receive?") %]</h4>
                     <p>[% l("Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares.") %]</p>
                 </div>
@@ -207,42 +244,42 @@
                 <div class="gr-6 gr-12-m">
                     <div class="chart">
                         <h5 class="chart-heading chart-heading-right">[% l("Dividends paid out") %]</h5>
-                        <img src="../images/ico/images/dp_chart.svg" />
+                        <img src="[% request.url_for('images/ico/images/dp_chart.svg') %]" />
                         <p>[% l("A record-breaking year for turnover and profit in 2016 saw us distribute nearly USD 12 million in total dividend payments to shareholders.") %]</p>
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m">
                     <div class="chart">
                         <h5 class="chart-heading chart-heading-left">[% l("Gross and net profit") %]</h5>
-                        <img src="../images/ico/images/gn_chart.svg" />
+                        <img src="[% request.url_for('images/ico/images/gn_chart.svg') %]" />
                         <p>[% l("Binary.com is a successful and growing platform, with several ongoing initiatives to enhance future profitability. These include our entry into new regulated markets with significant growth potential, and the innovation and expansion of our product offerings.") %]</p>
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m">
                     <div class="chart">
                         <h5 class="chart-heading chart-heading-right">[% l("Turnover") %]</h5>
-                        <img src="../images/ico/images/to_chart.svg" />
+                        <img src="[% request.url_for('images/ico/images/to_chart.svg') %]" />
                         <p>[% l("We’ve generated over USD 3 billion in turnover since inception, thanks to a rapid growth in business from 2010 onwards.") %]</p>
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m">
                     <div class="chart">
                         <h5 class="chart-heading chart-heading-left">[% l("Active clients") %]</h5>
-                        <img src="../images/ico/images/nac_chart.svg" />
+                        <img src="[% request.url_for('images/ico/images/nac_chart.svg') %]" />
                         <p>[% l("Total active clients on our platform have almost doubled from 2014 to 2016. This is largely due to our focus on improving customer retention and acquiring new customers via targeted online marketing campaigns.") %]</p>
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m">
                     <div class="chart">
                         <h5 class="chart-heading chart-heading-right">[% l("Client transactions") %]</h5>
-                        <img src="../images/ico/images/ntb_chart.svg" />
+                        <img src="[% request.url_for('images/ico/images/ntb_chart.svg') %]" />
                         <p>[% l("In the last two years alone, over 276 million contracts were bought and sold on our platform.") %]</p>
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m">
                     <div class="chart">
                         <h5 class="chart-heading chart-heading-left">[% l("Employees") %]</h5>
-                        <img src="../images/ico/images/nec_chart.svg" />
+                        <img src="[% request.url_for('images/ico/images/nec_chart.svg') %]" />
                         <p>[% l("We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in four countries: Malaysia, Malta, Japan, and Germany.") %]</p>
                     </div>
                 </div>
@@ -275,17 +312,17 @@
             </div>
             <div class="gr-row">
                 <div class="gr-4 gr-12-m">
-                    <img class="icon" src="../images/ico/icons/ea_icon.svg" />
+                    <img class="icon" src="[% request.url_for('images/ico/icons/ea_icon.svg') %]" />
                     <h4>[% l("Exciting growth in Europe and Asia") %]</h4>
                     <p>[% l("Organic growth is driving demand, especially in the Far East –– the world’s leading market for binary options.") %]</p>
                 </div>
                 <div class="gr-4 gr-12-m">
-                    <img class="icon" src="../images/ico/icons/jp_icon.svg" />
+                    <img class="icon" src="[% request.url_for('images/ico/icons/jp_icon.svg') %]" />
                     <h4>[% l("New regulations in Japan") %]</h4>
                     <p>[% l("After a lengthy process, we were awarded a financial license to operate in the country, in compliance with its new regulations.") %]</p>
                 </div>
                 <div class="gr-4 gr-12-m">
-                    <img class="icon" src="../images/ico/icons/eu_icon.svg" />
+                    <img class="icon" src="[% request.url_for('images/ico/icons/eu_icon.svg') %]" />
                     <h4>[% l("EU recognition") %]</h4>
                     <p>[% l("The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers.") %]</p>
                 </div>

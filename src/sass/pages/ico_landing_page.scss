@@ -59,21 +59,6 @@ h1, h2, h3 {
     font-weight: 100 !important;
 }
 
-@media (max-width: 1199px) {
-    .intro {
-        height: 100%;
-        padding-top: 120px;
-        .intro-body {
-            .brand-heading {
-                font-size: 36px;
-            }
-            .intro-text {
-                font-size: 24px;
-            }
-        }
-    }
-}
-
 .transparent-dark-blue-bg {
     background-color: rgba(21, 33, 45, 0.7); // dark blue 0.7 opacity
 }
@@ -112,15 +97,8 @@ hr {
 }
 
 .arrow {
-    width: 71px;
-    top: 23%;
-    right: -35px;
-}
-
-.arrow2 {
-    width: 71px;
-    top: 3%;
-    right: -9%;
+    width: 91px;
+    margin-right: -20px;
 }
 
 // Who we are section
@@ -311,6 +289,18 @@ input[type='text']:focus, input[type='submit']:focus {
 }
 
 @media (max-width: 1199px) {
+    .intro {
+        height: 90%;
+        padding-top: 120px;
+        .intro-body {
+            .brand-heading {
+                font-size: 36px;
+            }
+            .intro-text {
+                font-size: 24px;
+            }
+        }
+    }
     .navbar-fixed-top {
         position: inherit;
         background: $COLOR_BLUE;
@@ -344,6 +334,9 @@ input[type='text']:focus, input[type='submit']:focus {
             padding: 0;
             margin: 15px;
         }
+    }
+    input[type='text'] {
+        width: 80vw;
     }
     .vertical-line, .arrow, .arrow2 {
         display: none;
