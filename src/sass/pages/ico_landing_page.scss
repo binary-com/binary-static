@@ -194,7 +194,7 @@ hr {
 // Aweber form
 input[type='text'] {
     width: 100%;
-    font-size: 22px;
+    font-size: 16px;
     padding: 7px;
     margin: 5px;
     border: none;
@@ -203,12 +203,12 @@ input[type='text'] {
 input[type='submit'] {
     max-width: 100%;
     width: 200px;
-    height: 40px;
-    margin: 5px;
+    padding: 7px;
+    margin: 4px;
     background: $COLOR_GREEN;
     color: $COLOR_WHITE;
     border: none;
-    cursor: hand;
+    cursor: pointer;
 }
 
 input[type='text']:focus, input[type='submit']:focus {
@@ -336,9 +336,9 @@ input[type='text']:focus, input[type='submit']:focus {
         }
     }
     input[type='text'] {
-        width: 80vw;
+        width: 90%;
     }
-    .vertical-line, .arrow, .arrow2 {
+    .vertical-line, .arrow {
         display: none;
     }
     .chart-heading-left, .chart-heading-right {

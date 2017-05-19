@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
         <meta name="description" content="
-        [%= l('[_1] gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities.', broker_name) =%]" />
+        [%= l("[_1] ICO, Invest in the world\'s premier platform for binary options trading", broker_name) =%]" />
         <meta name="keywords" content="
                 [%= l('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading') =%]" />
         <meta name="author" content="[%= broker_name =%]" />

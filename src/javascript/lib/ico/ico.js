@@ -1,3 +1,6 @@
+function processForm() {
+
+}
 // Collapse navbar on scroll
 function collapseNavbar() {
     const navbarFixedTopEl = document.getElementsByClassName('navbar-fixed-top');
