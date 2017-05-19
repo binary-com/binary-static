@@ -193,18 +193,17 @@ hr {
 
 // Aweber form
 input[type='text'] {
-    width: 100%;
+    width: 300px;
     font-size: 16px;
-    padding: 7px;
-    margin: 5px;
+    padding: 10px;
+    margin: 6px 0;
     border: none;
 }
 
 input[type='submit'] {
-    max-width: 100%;
-    width: 200px;
-    padding: 7px;
-    margin: 4px;
+    width: 100px;
+    padding: 10px;
+    margin: 5px 0;
     background: $COLOR_GREEN;
     color: $COLOR_WHITE;
     border: none;
@@ -297,7 +296,7 @@ input[type='text']:focus, input[type='submit']:focus {
         padding-top: 120px;
         .intro-body {
             .brand-heading {
-                font-size: 36px;
+                font-size: 34px;
             }
             .intro-text {
                 font-size: 24px;
