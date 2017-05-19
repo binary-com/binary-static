@@ -259,7 +259,9 @@ const BinarySocket = (() => {
             clearTimeouts();
 
             if (wrong_app_id !== getAppId()) {
-                config.notify(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
+                if (isClose()) {
+                    config.notify(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
+                }
                 if (typeof config.onDisconnect === 'function' && !is_disconnect_called) {
                     config.onDisconnect();
                     is_disconnect_called = true;
