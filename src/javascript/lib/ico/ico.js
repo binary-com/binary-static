@@ -14,11 +14,11 @@ document.ready = collapseNavbar;
 // Toggle mobile menu
 const toggleButton = document.getElementById('toggle-menu');
 toggleButton.addEventListener('click', function (e) {
-    const navbar = document.getElementsByClassName('navbar-collapse')[0];
-    if (navbar.classList.contains('collapse')) {
-        navbar.classList.remove('collapse');
+    const navbar = document.getElementsByClassName('navbar-fixed-top')[0];
+    if (navbar.classList.contains('expand')) {
+        navbar.classList.remove('expand');
     } else {
-        navbar.classList.add('collapse');
+        navbar.classList.add('expand');
     }
     e.stopPropagation();
 });

@@ -32,7 +32,6 @@ h1, h2, h3 {
 
 // Intro section
 .intro {
-    width: 100vw;
     height: auto;
     text-align: center;
     color: $COLOR_WHITE;
@@ -43,19 +42,16 @@ h1, h2, h3 {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-}
-
-.intro .intro-body {
-    vertical-align: middle;
-}
-
-.intro .intro-body .brand-heading {
-    font-size: 64px;
-}
-
-.intro .intro-body .intro-text {
-    font-size: 28px !important;
-    font-weight: 100;
+    .intro-body {
+        vertical-align: middle;
+        .brand-heading {
+            font-size: 64px;
+        }
+        .intro-text {
+            font-size: 28px !important;
+            font-weight: 100;
+        }
+    }
 }
 
 .intro-subtext {
@@ -67,12 +63,14 @@ h1, h2, h3 {
     .intro {
         height: 100%;
         padding-top: 120px;
-    }
-    .intro .intro-body .brand-heading {
-        font-size: 36px;
-    }
-    .intro .intro-body .intro-text {
-        font-size: 24px;
+        .intro-body {
+            .brand-heading {
+                font-size: 36px;
+            }
+            .intro-text {
+                font-size: 24px;
+            }
+        }
     }
 }
 
@@ -103,24 +101,23 @@ hr {
 
 .box {
     border: 1px solid $COLOR_DARK_BLUE;
-    margin: 15px 25px;
+    margin: 15px 0;
     padding: 15px;
 }
 
-.vertical {
-    position: relative;
-    transform: translateY(25%);
+.vertical-center {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
 }
 
 .arrow {
-    position: absolute;
     width: 71px;
     top: 23%;
     right: -35px;
 }
 
 .arrow2 {
-    position: absolute;
     width: 71px;
     top: 3%;
     right: -9%;
@@ -189,7 +186,7 @@ hr {
     left: 0;
     right: 0;
     margin: 0 auto;
-    height: 700px;
+    height: 1250px;
 }
 
 // What are binary options section
@@ -314,6 +311,21 @@ input[type='text']:focus, input[type='submit']:focus {
 }
 
 @media (max-width: 1199px) {
+    .navbar-fixed-top {
+        position: inherit;
+        background: $COLOR_BLUE;
+        margin-bottom: 0;
+        max-height: 60px;
+        overflow: hidden;
+        -webkit-transition: max-height 1s;
+        -moz-transition: max-height 1s;
+        -ms-transition: max-height 1s;
+        -o-transition: max-height 1s;
+        transition: max-height 1s;
+    }
+    .navbar-fixed-top.expand {
+        max-height: 400px;
+    }
     .navbar-header {
         padding: 10px;
     }
@@ -323,13 +335,6 @@ input[type='text']:focus, input[type='submit']:focus {
     }
     .navbar-toggle {
         display: block;
-    }
-    .navbar-collapse {
-        transition: 0.5s cubic-bezier(0, 1, 0.5, 1);
-        transform: translateY(0);
-    }
-    .collapse {
-        transform: translateY(-200%);
     }
     .navbar-nav {
         background: transparent;

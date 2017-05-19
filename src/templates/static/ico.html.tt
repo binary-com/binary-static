@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="gr-row">
-                <div class="gr-4 gr-12-m vertical">
+                <div class="gr-4 gr-12-m vertical-center">
                     <div class="box">
                         <img class="icon" src="../images/ico/icons/coins_icon.svg" />
                         <h4>[% l("Purchase our tokens") %]</h4>
@@ -107,7 +107,7 @@
                     </div>
                     <img class="arrow" src="../images/ico/icons/arrow1.svg" />
                 </div>
-                <div class="gr-4 gr-12-m vertical">
+                <div class="gr-4 gr-12-m vertical-center">
                     <div class="box">
                         <img class="icon" src="../images/ico/icons/ch_icon.svg" />
                         <h4>[% l("Earn exclusive tokenholder rights") %]</h4>
