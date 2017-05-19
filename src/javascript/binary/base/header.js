@@ -178,7 +178,7 @@ const Header = (() => {
     const hideNotification = (msg_code) => {
         const $msg_notification = $('#msg_notification');
         if (msg_code && $msg_notification.attr('data-code') !== msg_code) return;
-        if ($msg_notification.is(':visible')) $msg_notification.removeClass('error').slideUp(500, () => { $msg_notification.html('').removeAttr('data-message'); });
+        if ($msg_notification.is(':visible')) $msg_notification.removeClass('error').slideUp(500, () => { $msg_notification.html('').removeAttr('data-message data-code'); });
     };
 
     const displayAccountStatus = () => {
