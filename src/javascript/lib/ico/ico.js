@@ -1,6 +1,11 @@
-function processForm() {
-
+// Handle form submission
+if (window.location.hash === '#done') {
+    document.querySelectorAll('.notice-msg')[0].classList.remove('invisible');
+    document.querySelectorAll('.notice-msg')[1].classList.remove('invisible');
+    document.getElementsByTagName('form')[0].classList.add('invisible');
+    document.getElementsByTagName('form')[1].classList.add('invisible')
 }
+
 // Collapse navbar on scroll
 function collapseNavbar() {
     const navbarFixedTopEl = document.getElementsByClassName('navbar-fixed-top');
