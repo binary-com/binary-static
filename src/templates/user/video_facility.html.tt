@@ -2,7 +2,10 @@
 
 <div class="static_full">
     <h1>[% l('Video Room Facility') %]</h1>
-    <div class="gr-padding-10 gr-gutter invisible" id="facility_content">
+
+    <div id="loading">[% PROCESS global/loading.html.tt %]</div>
+
+    <div class="gr-padding-10 invisible" id="facility_content">
         <div class="invisible msg_authenticate">
             <p>[% l('Authenticate your account by video conference call. Follow these steps to proceed:') %]</p>
             <ol>

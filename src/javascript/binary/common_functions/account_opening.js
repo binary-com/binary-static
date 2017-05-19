@@ -113,7 +113,7 @@ const AccountOpening = (() => {
                     $address_state.text(client_state);
                 }
             }
-            $address_state.parent().parent().removeClass('invisible');
+            $address_state.parent().parent().setVisibility(1);
 
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());

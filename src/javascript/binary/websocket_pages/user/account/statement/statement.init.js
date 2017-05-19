@@ -87,8 +87,7 @@ const StatementInit = (() => {
                         .append($('<td/>', { colspan: 7 })
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             } else {
-                $('#jump-to').parent().parent().parent()
-                             .setVisibility(1);
+                $('#util_row').setVisibility(1);
                 if (getLanguage() === 'JA') {
                     $('#download_csv').setVisibility(1)
                                       .find('a')

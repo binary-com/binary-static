@@ -61,7 +61,8 @@ const DeskWidget = (() => {
 
                 if (image_str.match(/(none|chat-icon)/g)) {
                     clearInterval(timer);
-                    $(selector).removeClass('invisible');
+                    $('#loading').remove();
+                    $(selector).setVisibility(1);
                 }
             }
             $desk_widget.removeAttr('onmouseover onmouseout');
