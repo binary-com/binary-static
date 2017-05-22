@@ -1,16 +1,24 @@
 const jpClient    = require('./country_base').jpClient;
 const getLanguage = require('../base/language').get;
 
+const cryptocurrencies = ['BTC'];
+
 const formatMoney = (currency_value, amount, exclude_currency) => {
-    const is_bitcoin = /btc/i.test(currency_value);
+    const is_crypto = isCryptocurrency(currency_value);
     const is_jp = jpClient();
-    let decimal_places = is_bitcoin ? (parseFloat(amount).toString().split('.')[1] || '').length || 0 : is_jp ? 0 : 2;
-    if (decimal_places > 8) {
-        decimal_places = 8;
-    }
+    const getDecimalPlaces = () => {
+        let decimal_places = 2;
+        if (is_crypto) {
+            decimal_places = Math.min((parseFloat(amount).toString().split('.')[1] || '').length || 0, 8);
+        } else if (is_jp) {
+            decimal_places = 0;
+        }
+        return decimal_places;
+    };
+    const decimal_places = getDecimalPlaces();
     let money;
     if (amount) amount = String(amount).replace(/,/g, '');
-    if (typeof Intl !== 'undefined' && currency_value && !is_bitcoin && amount) {
+    if (typeof Intl !== 'undefined' && currency_value && !is_crypto && amount) {
         const options = exclude_currency ? { minimumFractionDigits: decimal_places, maximumFractionDigits: decimal_places } : { style: 'currency', currency: currency_value };
         const language = getLanguage().toLowerCase();
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
@@ -53,7 +61,10 @@ const map_currency = {
     BTC: '₿',
 };
 
+const isCryptocurrency = currency => (new RegExp(currency, 'i')).test(cryptocurrencies);
+
 module.exports = {
-    formatMoney   : formatMoney,
-    formatCurrency: currency => map_currency[currency],
+    formatMoney     : formatMoney,
+    formatCurrency  : currency => map_currency[currency],
+    isCryptocurrency: isCryptocurrency,
 };
