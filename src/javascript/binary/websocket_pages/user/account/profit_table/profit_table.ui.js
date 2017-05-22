@@ -78,7 +78,7 @@ const ProfitTableUI = (() => {
 
     const createProfitTableRow = (transaction) => {
         const profit_table_data = ProfitTable.getProfitTabletData(transaction);
-        const pl_type = (transaction.pl >= 0) ? 'profit' : 'loss';
+        const pl_type = Number(transaction.sell_price - transaction.buy_price) >= 0 ? 'profit' : 'loss';
 
         const jp_client = jpClient();
 
