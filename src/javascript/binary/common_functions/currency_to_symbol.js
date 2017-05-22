@@ -61,7 +61,9 @@ const map_currency = {
     BTC: '₿',
 };
 
-const isCryptocurrency = currency => (new RegExp(currency, 'i')).test(cryptocurrencies);
+const isCryptocurrency = currency => (
+    currency ? (new RegExp(currency, 'i')).test(cryptocurrencies) : false
+);
 
 module.exports = {
     formatMoney     : formatMoney,
