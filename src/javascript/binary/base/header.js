@@ -169,15 +169,16 @@ const Header = (() => {
         });
     };
 
-    const displayNotification = (message, is_error) => {
+    const displayNotification = (message, is_error, msg_code = '') => {
         const $msg_notification = $('#msg_notification');
-        $msg_notification.html(message).attr('data-message', message);
+        $msg_notification.html(message).attr({ 'data-message': message, 'data-code': msg_code });
         if ($msg_notification.is(':hidden')) $msg_notification.removeClass('error').slideDown(500, () => { if (is_error) $msg_notification.addClass('error'); });
     };
 
-    const hideNotification = () => {
+    const hideNotification = (msg_code) => {
         const $msg_notification = $('#msg_notification');
-        if ($msg_notification.is(':visible')) $msg_notification.removeClass('error').slideUp(500, () => { $msg_notification.html('').removeAttr('data-message'); });
+        if (msg_code && $msg_notification.attr('data-code') !== msg_code) return;
+        if ($msg_notification.is(':visible')) $msg_notification.removeClass('error').slideUp(500, () => { $msg_notification.html('').removeAttr('data-message data-code'); });
     };
 
     const displayAccountStatus = () => {
