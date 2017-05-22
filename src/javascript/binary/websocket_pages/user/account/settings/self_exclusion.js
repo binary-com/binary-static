@@ -45,20 +45,19 @@ const SelfExclusion = (() => {
                 }
                 return;
             }
-
-            $('#loading').setVisibility(0);
-            $form.setVisibility(1);
-            self_exclusion_data = response.get_self_exclusion;
-            $.each(self_exclusion_data, (key, value) => {
-                fields[key] = value.toString();
-                $form.find(`#${key}`).val(value);
-            });
-            bindValidation();
             BinarySocket.send({ get_account_status: 1 }).then((data) => {
                 const has_to_set_30day_turnover = /ukrts_max_turnover_limit_not_set/.test(data.get_account_status.status);
                 $('#frm_self_exclusion').find('fieldset > div.form-row:not(.max_30day_turnover)').setVisibility(!has_to_set_30day_turnover);
                 $('#description_max_30day_turnover').setVisibility(has_to_set_30day_turnover);
                 $('#description').setVisibility(!has_to_set_30day_turnover);
+                $('#loading').setVisibility(0);
+                $form.setVisibility(1);
+                self_exclusion_data = response.get_self_exclusion;
+                $.each(self_exclusion_data, (key, value) => {
+                    fields[key] = value.toString();
+                    $form.find(`#${key}`).val(value);
+                });
+                bindValidation();
             });
         });
     };
