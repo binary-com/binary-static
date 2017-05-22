@@ -16,9 +16,11 @@
 [% END %]
 
 [% BLOCK li %]
-    <strong>[% li.header %]</strong>
-    <p>[% li.description %]</p>
-    [% content %]
+    <li>
+        <strong>[% header %]</strong>
+        <p>[% description %]</p>
+        [% content %]
+    </li>
 [% END %]
 
 <div class="section-content section-5">
