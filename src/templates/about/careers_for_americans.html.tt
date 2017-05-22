@@ -6,7 +6,7 @@
         <p><strong>[% title %]</strong></p>
         <p>[% text %]</p>
         <p>
-            <a href="[% request.url_for('open-positions/job-details.html?dept=Quantitative_Analysis#section-' _ section ) %]">Learn more</a>
+            <a href="[% request.url_for('open-positions/job-details.html?dept=quantitative_analysis#quantitative_' _ section ) %]">Learn more</a>
         </p>
     </div>
 [% END %]
@@ -45,10 +45,10 @@
             <div class="container gr-padding-20">
                 <h2>Career Spotlight</h2>
                 <div class="gr-row">
-                    [% INCLUDE lg_column_link image='data_scientist' title="Data Scientist" section='one'
+                    [% INCLUDE lg_column_link image='data_scientist' title="Data Scientist" section='developer'
                         text="Generate and execute data-driven ideas and solutions to improve products and services." %]
 
-                    [% INCLUDE lg_column_link image='quants_analysis' title="Quantitative Analyst" section='two'
+                    [% INCLUDE lg_column_link image='quants_analysis' title="Quantitative Analyst" section='analyst'
                         text="Develop derivatives pricing and risk management algorithms." %]
                 </div>
             </div>
