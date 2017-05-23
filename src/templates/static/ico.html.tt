@@ -214,26 +214,42 @@
             </div>
             <div class="container">
                 <div class="gr-row">
-                    <div class="gr-4 content-inverse-color gr-12-m">
-                        <p>[% l("Binary.com is the pioneer of online binary options trading. We grew from one simple idea: to make binary options easily accessible to retail investors worldwide.") %]</p>
-                        <p>[% l("Today, we’ve established ourselves as a market leader and one of the most popular online binary options trading platforms in the world.") %]</p>
-                        <p>[% l("Our track record speaks for itself; we recorded a turnover of USD 847.6 million in 2016 &mdash;&mdash; bringing our total turnover to over USD 3 billion since we launched in 2000.") %]</p>
+                    <div class="gr-4 gr-12-m">
+                        <div class="content-inverse-color gr-padding-30">
+                            <div class="gr-row">
+                                <p>[% l("Binary.com is the pioneer of online binary options trading. We grew from one simple idea: to make binary options easily accessible to retail investors worldwide.") %]</p>
+                                <p>[% l("Today, we’ve established ourselves as a market leader and one of the most popular online binary options trading platforms in the world.") %]</p>
+                                <p>[% l("Our track record speaks for itself; we recorded a turnover of USD 847.6 million in 2016 &mdash;&mdash; bringing our total turnover to over USD 3 billion since we launched in 2000.") %]</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="gr-7 gr-push-1 gr-push-0-m gr-12-m">
-                        <div class="gr-row white-bg">
+                    <div class="gr-7 gr-push-1 gr-push-0-m gr-12-m white-bg">
+                        <div class="gr-row">
                             <div class="gr-6 gr-12-m">
                                 <h4>[% l("Licensed and regulated") %]</h4>
                                 <p>[% l("Binary.com is licensed and regulated in Malta, the British Isles, Japan, and Vanuatu.") %]</p>
-                                <h4>[% l("Sharp prices") %]</h4>
-                                <p>[% l("Our cutting-edge pricing technology gives you the same rates of return as the interbank market.") %]</p>
-                                <h4>[% l("Award-winning platforms") %]</h4>
-                                <p>[% l("Trade anytime, anywhere with our desktop, web, and mobile platforms.") %]</p>
                             </div>
                             <div class="gr-6 gr-12-m">
                                 <h4>[% l("Extensive product range") %]</h4>
                                 <p>[% l("Over 100 asset classes across Forex, CFDs, and binary options.") %]</p>
-                                <h4>[% l("Patented technology") %]</h4>
-                                <p>[% l("Binary.com developed the systems, methods, and algorithms that made it accessible to retail traders.") %]</p>
+                            </div>
+                        </div>
+                        <div class="gr-row">
+                            <div class="gr-6 gr-12-m">
+                                <h4>[% l("Sharp prices") %]</h4>
+                                <p>[% l("Our cutting-edge pricing technology gives you the same rates of return as the interbank market.") %]</p>
+                            </div>
+                            <div class="gr-6 gr-12-m">
+                                <h4>[% l("Extensive product range") %]</h4>
+                                <p>[% l("Over 100 asset classes across Forex, CFDs, and binary options.") %]</p>
+                            </div>
+                        </div>
+                        <div class="gr-row">
+                            <div class="gr-6 gr-12-m">
+                                <h4>[% l("Award-winning platforms") %]</h4>
+                                <p>[% l("Trade anytime, anywhere with our desktop, web, and mobile platforms.") %]</p>
+                            </div>
+                            <div class="gr-6 gr-12-m">
                                 <h4>[% l("Global presence") %]</h4>
                                 <p>[% l("Binary.com employs over 130 people across its offices in Malta, Malaysia, Japan, and Germany.") %]</p>
                             </div>
