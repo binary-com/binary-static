@@ -61,10 +61,13 @@ sub all_pages {
         ['metatrader/margin-policy',           'metatrader/margin_policy',           'full_width', 'MetaTrader Margin Policy'],
 
         ['cashier/account_transfer',     'cashier/account_transfer',                  'default', 'Account Transfer'],
+        ['cashier/deposit-jp',           'japan/cashier/deposit',                     'default', 'Deposit',         'NOT-ja,en'],
         ['cashier/epg_forwardws',        'cashier/deposit_withdraw',                  'default', 'Cashier'],
         ['cashier/forwardws',            'cashier/deposit_withdraw',                  'default', 'Cashier',         'ja'],
         ['cashier/payment_agent_listws', 'cashier/payment_agent_list',                'default', 'Payment Agent Deposit'],
+        ['cashier/submit-withdraw-jp',   'japan/cashier/submit',                      'default', 'Acknowledgement', 'NOT-ja,en'],
         ['cashier/top_up_virtualws',     'user/top_up_virtual',                       'default', 'Give Me More Money!'],
+        ['cashier/withdraw-jp',          'japan/cashier/withdraw',                    'default', 'Withdraw',        'NOT-ja,en'],
 
         ['paymentagent/transferws',      'cashier/paymentagent_transfer',             'default', 'Payment Agent Transfer'],
         ['paymentagent/withdrawws',      'cashier/paymentagent_withdraw',             'default', 'Payment Agent Withdrawal'],

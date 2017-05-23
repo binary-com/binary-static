@@ -17,7 +17,7 @@
                 <a href="[% request.url_for('cashier/forwardws#deposit') %]" class="button nowrap ja-hide">
                     <span>[% l('Make a Deposit') %]</span>
                 </a>
-                <a href="[% request.url_for('cashier/epg_forwardws#deposit') %]" class="button nowrap invisible ja-show">
+                <a href="[% request.url_for('cashier/deposit-jp') %]" class="button nowrap invisible ja-show">
                     <span>[% l('Make a Deposit') %]</span>
                 </a>
             </span>
