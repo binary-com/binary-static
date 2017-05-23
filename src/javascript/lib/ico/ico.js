@@ -69,11 +69,22 @@ function checkWidth() {
     return navbarHeight;
 }
 
+function checkBrowser() {
+    const isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
+    const isIE = /*@cc_on!@*/false || !!document.documentMode; // Internet Explorer 6-11
+
+    if (isFirefox || isIE) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // scrollTo function with animation
 // - Gist reference: https://gist.github.com/andjosh/6764939
 function scrollTo(element, to, duration) {
-    if (!element.scrollTop) {
-        element = document.documentElement; // handles FF and IE browsers
+    if (checkBrowser()) {
+        element = document.documentElement;
     }
     let start = element.scrollTop,
         change = to - start,
