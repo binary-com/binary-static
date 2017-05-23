@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         let navbarHeight = checkWidth();
         const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
-        scrollTo(document.body, to, 1500);
+        scrollTo(document.body, to, 1000);
     }
 
     // Toggle mobile menu
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
             }
             let navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
-            scrollTo(document.body, to, 1500);
+            scrollTo(document.body, to, 1000);
             e.preventDefault();
         }
     });
