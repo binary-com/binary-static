@@ -1,163 +1,90 @@
+[% PROCESS components/elements.html.tt %]
+
+[% BLOCK footer_column %]
+<div class="gr-4 [% wrapper_class %]">
+    <h4 class="secondary-color"><strong>[% header %]</strong></h4>
+    [% INCLUDE list items %]
+</div>
+[% END %]
+
 [% IF !full_width %]
 </div> [% # closes container %]
 [% END %]
 </div> [% # closes div#content %]
 </div>[% #closes div#content-holder %]
 <div id="footer" class="no-print">
-    <div id="footer-menu" class="primary-bg-color">
+    <div id="footer-menu" class="primary-bg-color gr-padding-10">
         <div class="container">
             <div class="gr-row gr-padding-10">
                 <div class="gr-6 gr-12-m gr-parent gr-no-gutter">
                     <div class="gr-row">
-                        <div class="gr-4">
-                            <h4 class="secondary-color">[% l('Our Company') %]</h4>
-                            <ul>
-                                <li>
-                                    <a href="[% request.url_for('about-us') %]">[% l('About Us') %]</a>
-                                </li>
-                                <li class="gr-hide gr-show-m">
-                                    <a href="[% request.url_for('contact') %]">[% l("Contact Us") %]</a>
-                                </li>
-                                <li class="id-hide ar-hide">
-                                    <a href="[% request.url_for('/regulation') %]">[% l('Regulatory Information') %]</a>
-                                </li>
-                                <li>
-                                    <a href="[% request.url_for('group-history') %]">[% l('Group History') %]</a>
-                                </li>
-                                <li class="ja-hide">
-                                    <a href="[% request.url_for('careers') %]">[% l('Careers') %]</a>
-                                </li>
-                                <li class="ja-hide">
-                                    <a href="https://binarycom.statuspage.io" target="_blank">[% l('Network Status') %]</a>
-                                </li>
-                                <li class="ja-hide id-hide">
-                                    <a href="[% request.url_for('/legal/us_patents') %]" class="us_patent_link">[% l('Patents') %]</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="gr-4">
-                            <h4 class="secondary-color">[% l('Education') %]</h4>
-                            <ul>
-                                <li class="ja-hide">
-                                    <a href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
-                                </li>
-                                <li class="invisible ja-show">
-                                    <a href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
-                                </li>
-                                <li class="ja-hide">
-                                    <a href="[% request.url_for('get-started') %]">[% l('Getting Started') %]</a>
-                                </li>
-                                <li class="invisible ja-show">
-                                    <a href="[% request.url_for('get-started-jp') %]">[% l('Getting Started') %]</a>
-                                </li>
-                                <li class="ja-hide">
-                                    <a href="[% request.url_for('tour') %]">[% l('Platform Tour') %]</a>
-                                </li>
-                                <li class="invisible ja-show">
-                                    <a href="[% request.url_for('tour-jp') %]">[% l('Platform Tour') %]</a>
-                                </li>
-                                <li class="invisible ja-show">
-                                    <a href="[% request.url_for('service-announcements') %]">[% l('{JAPAN ONLY}Service Announcements') %]</a>
-                                </li>
-                                <li class="ja-hide id-hide">
-                                    <a href="http://www.gamcare.org.uk/" target="_blank">[% l('GamCare') %]</a>
-                                </li>
-                                <li class="ja-hide academy">
-                                    <a href="https://academy.binary.com" target="_blank">[% l('Academy') %]</a>
-                                </li>
-                                <li class='ja-hide id-hide'>
-                                    <a href="https://academy.binary.com/en/events/" target="_blank">[% l('Webinars') %]</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="gr-4">
-                            <h4 class="secondary-color">[% l('Banking') %]</h4>
-                            <ul>
-                                <li>
-                                    <a href="[% request.url_for('/cashier') %]">[% l('Cashier') %]</a>
-                                </li>
-                                <li class="ja-hide">
-                                    <a href="[% request.url_for('/cashier/payment_methods') %]">[% l('Payment Methods') %]</a>
-                                </li>
-                            </ul>
-                        </div>
+                        [% INCLUDE footer_column header=l('Our Company') items=[
+                            { text=l('About Us'),               href=request.url_for('about-us') },
+                            { text=l("Contact Us"),             href=request.url_for('contact'),           class='gr-hide gr-show-m' },
+                            { text=l('Regulatory Information'), href=request.url_for('regulation'),        class='id-hide ar-hide' },
+                            { text=l('Group History'),          href=request.url_for('group-history') },
+                            { text=l('Careers'),                href=request.url_for('careers'),           class='ja-hide' },
+                            { text=l('Network Status'),         href='https://binarycom.statuspage.io',    class='ja-hide', target='_blank' },
+                            { text=l('Patents'),                href=request.url_for('/legal/us_patents'), class='ja-hide id-hide' },
+                        ] %]
+
+                        [% INCLUDE footer_column header=l('Education') items=[
+                            { text=l('Why Us?'),                           href=request.url_for('why-us'),                                class='ja-hide' },
+                            { text=l('Why Us?'),                           href=request.url_for('why-us-jp'),                             class='invisible ja-show' },
+                            { text=l('Getting Started'),                   href=request.url_for('get-started'),                           class='ja-hide' },
+                            { text=l('Getting Started'),                   href=request.url_for('get-started-jp'),                        class='invisible ja-show' },
+                            { text=l('Platform Tour'),                     href=request.url_for('tour'),                                  class='ja-hide' },
+                            { text=l('Platform Tour'),                     href=request.url_for('tour-jp'),                               class='invisible ja-show' },
+                            { text=l('{JAPAN ONLY}Service Announcements'), href=request.url_for('service-announcements'),                 class='invisible ja-show' },
+                            { text=l('GamCare'),                           href=request.url_for('http://www.gamcare.org.uk/'),            class='ja-hide id-hide', target='_blank' },
+                            { text=l('Academy'),                           href=request.url_for('https://academy.binary.com'),            class='ja-hide academy', target='_blank' },
+                            { text=l('Webinars'),                          href=request.url_for('https://academy.binary.com/en/events/'), class='ja-hide id-hide', target='_blank' },
+                        ] %]
+
+                        [% INCLUDE footer_column header=l('Banking') items=[
+                            { text=l('Cashier'),         href=request.url_for('cashier') },
+                            { text=l('Payment Methods'), href=request.url_for('cashier/payment_methods'), class='ja-hide' },
+                        ] %]
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-parent gr-no-gutter">
                     <div class="gr-row">
-                        <div class="gr-4">
-                           <h4 class="secondary-color">[% l('Legal') %]</h4>
-                           <ul>
-                               <li class='ja-hide'>
-                                   <a href="[% request.url_for('/terms-and-conditions') %]">[% l('Terms and Conditions') %]</a>
-                               </li>
-                               <li class='invisible ja-show'>
-                                   <a href="[% request.url_for('/terms-and-conditions-jp') %]">[% l('Terms and Conditions') %]</a>
-                               </li>
-                               <li class='ja-hide'>
-                                   <a href="[% request.url_for('/terms-and-conditions') %]?#privacy">[% l('Security and Privacy') %]</a>
-                               </li>
-                               <li class='invisible ja-show'>
-                                   <a href="[% request.url_for('/terms-and-conditions-jp') %]?#account-privacy">[% l('Security and Privacy') %]</a>
-                               </li>
-                               <li class="ja-hide">
-                                   <a href="[% request.url_for('responsible-trading') %]">[% l('Responsible Trading') %]</a>
-                               </li>
-                               <li class="ja-hide">
-                                   <a href="[% request.url_for('/terms-and-conditions?section=complaints-disputes') %]#legal-binary">[% l('Complaints') %]</a>
-                               </li>
-                           </ul>
-                       </div>
-                       <div class="gr-4 ja-hide">
-                           <h4 class="secondary-color">[% l('Trading') %]</h4>
-                           <ul>
-                               <li>
-                                   <a href="[% request.url_for('/platforms') %]">[% l('Platforms') %]</a>
-                               </li>
-                               <li>
-                                   <a href="[% request.url_for('/resources/asset_indexws') %]">[% l('Asset Index') %]</a>
-                               </li>
-                           </ul>
-                       </div>
-                       <div class="gr-4 ja-hide">
-                           <h4 class="secondary-color">[% l('Partner With Us') %]</h4>
-                           <ul class="partner">
-                               <li>
-                                   <a href="[% request.url_for('/affiliate/signup') %]">[% l("Affiliate Program") %]</a>
-                               </li>
-                               <li>
-                                   <a href="https://developers.binary.com" target="_blank">[% l("API") %]</a>
-                               </li>
-                               <li>
-                                   <a target="_blank" href="https://shop.binary.com">[% l("Binary Shop") %]</a>
-                               </li>
-                               <li>
-                                   <a href="[% request.url_for('/charity') %]">[% l("Charitable Activities") %]</a>
-                               </li>
-                               <li>
-                                   <a href="[% request.url_for('/partners') %]">[% l("All Partnership Options") %]</a>
-                               </li>
-                           </ul>
-                       </div>
-                       <div class="gr-4 invisible ja-show">
-                           <h4 class="secondary-color">[% l('{JAPAN ONLY}Company Profile') %]</h4>
-                           <ul>
-                               <li>
-                                   <a href="[% request.url_for('/company-profile') %]">[% l("{JAPAN ONLY}Company Profile & Disclosure") %]</a>
-                               </li>
-                           </ul>
-                       </div>
+                        [% INCLUDE footer_column header=l('Legal') items=[
+                            { text=l('Terms and Conditions'), href=request.url_for('terms-and-conditions'),                             class='ja-hide' },
+                            { text=l('Terms and Conditions'), href=request.url_for('terms-and-conditions-jp'),                          class='invisible ja-show' },
+                            { text=l('Security and Privacy'), href=request.url_for('terms-and-conditions'),                             class='ja-hide',              param='?#privacy' },
+                            { text=l('Security and Privacy'), href=request.url_for('terms-and-conditions-jp'),                          class='invisible ja-show', param='?#account-privacy' },
+                            { text=l('Responsible Trading'),  href=request.url_for('responsible-trading'),                              class='ja-hide' },
+                            { text=l('Complaints'),           href=request.url_for('terms-and-conditions?section=complaints-disputes'), class='ja-hide' },
+                        ] %]
+
+                        [% INCLUDE footer_column header=l('Trading') wrapper_class='ja-hide' items=[
+                            { text=l('Platforms'),   href=request.url_for('platforms') },
+                            { text=l('Asset Index'), href=request.url_for('resources/asset_indexws') },
+                        ] %]
+
+                        [% INCLUDE footer_column header=l('Partner With Us') wrapper_class='ja-hide' items=[
+                            { text=l('Affiliate Program'),       href=request.url_for('affiliate/signup') },
+                            { text=l('API'),                     href="https://developers.binary.com",    target='_blank' },
+                            { text=l('Binary Shop'),             href="https://shop.binary.com",          target='_blank' },
+                            { text=l('Charitable Activities'),   href=request.url_for('charity') },
+                            { text=l('All Partnership Options'), href=request.url_for('partners') },
+                        ] %]
+
+                        [% INCLUDE footer_column header=l('{JAPAN ONLY}Company Profile') wrapper_class='invisible ja-show' items=[
+                            { text=l('{JAPAN ONLY}Company Profile & Disclosure'), href=request.url_for('company-profile') },
+                        ] %]
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="footer-regulatory" class="primary-color-dark">
+    <div id="footer-regulatory" class="primary-color-dark gr-padding-10 gr-child">
         <div class="container">
             <div class="gr-row">
-                <div id="regulatory-text" class="gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color">
+                <p id="regulatory-text" class="gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color no-margin">
                     [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
-                </div>
+                </p>
                 <div class="ja-hide gr-3 gr-12-m gr-5-p center-text" id="social-networks">
                     <div class="gr-row ja-hide id-hide">
                         <div class="gr-5">
@@ -171,29 +98,38 @@
                             </a>
                         </div>
                     </div>
-                    [% INCLUDE global/social.html.tt %]
+                    [% BLOCK social_icons %]
+                        <div class="gr-padding-10 gr-row">
+                            <div class="gr-2 gr-1-p gr-3-m"></div>
+                            [% FOREACH networks %]
+                                <a href="[% href %]" target="_blank" class="gr-2 gr-1-m gr-no-gutter-right">
+                                    <img class="responsive" src="[% request.url_for('images/pages/footer/' _ media _ '.svg') %]"/>
+                                </a>
+                            [% END %]
+                        </div>
+                    [% END %]
+
+                    [% INCLUDE social_icons networks=[
+                        { media='youtube',     href='https://www.youtube.com/user/BinaryTradingVideos' },
+                        { media='google-plus', href='https://plus.google.com/106251151552682209951' },
+                        { media='facebook',    href='https://www.facebook.com/binarydotcom' },
+                        { media='twitter',     href='https://twitter.com/Binarydotcom' },
+                        { media='linkedin',    href='https://www.linkedin.com/company/binary-com' },
+                    ] %]
                 </div>
             </div>
-        </div>
-        <div id="ratelimit-error-message" class="invisible">
-            <div class="message">
-                [% l('You have reached the rate limit of requests per second. Please try later.') %]
-            </div>
-        </div>
-        <div id="site-status-message" class="invisible">
-            <div class="message"></div>
         </div>
     </div>
     <div id="footer-last" class="primary-bg-color">
         <div class="container">
             <div class="gr-padding-10">
-                <p class="gambling content-inverse-color">
+                <p class="gambling content-inverse-color no-para-margin">
                     [% l('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class="ja-hide">Read about <a href="[_1]">Responsible Trading</a>.</span>', request.url_for('responsible-trading')) %]
                 </p>
             </div>
         </div>
     </div>
-    <div id="end-note" class="invisible"></div>
+    <div id="end-note" class="invisible content-inverse-color center-text"></div>
 </div>[% #closes div#footer %]
 
         </div>[% #closes div#page-wrapper %]

@@ -8,10 +8,10 @@ const Durations                 = require('./duration');
 const GetTicks                  = require('./get_ticks');
 const Notifications             = require('./notifications');
 const Price                     = require('./price');
-const setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
 const StartDates                = require('./starttime').StartDates;
 const Symbols                   = require('./symbols');
 const Tick                      = require('./tick');
+const BinarySocket              = require('../socket');
 const localize                  = require('../../base/localize').localize;
 const State                     = require('../../base/storage').State;
 const elementInnerHtml          = require('../../common_functions/common_functions').elementInnerHtml;
@@ -24,7 +24,7 @@ const Process = (() => {
      * and underlying list
      */
     const processActiveSymbols = () => {
-        BinarySocket.send({ active_symbols: 'brief' }, { forced: true }).then((response) => {
+        BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
             // populate the Symbols object
             Symbols.details(response);
 
@@ -145,9 +145,6 @@ const Process = (() => {
 
         // set form to session storage
         Defaults.set('formname', formname);
-
-        // change the form placeholder content as per current form (used for mobile menu)
-        setFormPlaceholderContent(formname);
 
         commonTrading.displayContractForms('contract_form_name_nav', contract_categories, formname);
 

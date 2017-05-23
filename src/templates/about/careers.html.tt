@@ -1,221 +1,133 @@
-<div class="career">
-  <div class="gr-parent static_full">
-    <div class="container">
-      <div class="gr-row center-text">
-        <div class="gr-12">
-          <h1>[% l("Imagine") %]</h1>
-          <p>
-            [% l("Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded.") %]
-          </p>
-        </div>
-      </div>
-      <div class="gr-row gr-padding-30">
-        <div class="gr-12">
-          <img class="responsive" src="[% request.url_for('images/pages/careers/main@1.jpg') %]"/>
-          <div class="xquote-inverse">
-            <div>
-              <div class="picture">
-                <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/view-positions-icon-white.svg') %]"/>
-              </div>
-              <div class="text">
-                <a href="[% request.url_for('/open-positions') %]">[% l("View open positions") %]</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="gr-row gr-padding-30">
-        <div class="gr-3 gr-12-m">
-          <h4>[% l("Ideas") %]</h4>
-          <p>
-            [% l("Where new ideas trump safe, old ones. And you\'re free to work your way, free from hierarchies and red tape.") %]
-          </p>
-        </div>
-        <div class="gr-3 gr-12-m">
-          <h4>[% l("Experience") %]</h4>
-          <p>
-            [% l("Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers.") %]
-          </p>
-        </div>
-        <div class="gr-3 gr-12-m">
-          <h4>[% l("Teamwork") %]</h4>
-          <p>
-            [% l("Where teamwork and a collaborative culture form the platform for personal and corporate growth.") %]
-          </p>
-        </div>
-        <div class="gr-3 gr-12-m">
-          <h4>[% l("Support") %]</h4>
-          <p>
-            [% l("Where supportive colleagues are like a second family.") %]
-          </p>
-        </div>
-      </div>
-      <div class="gr-row center-text">
-        <div class="gr-6 gr-12-m gr-6-p gr-padding-10">
-          <div class="xquote">
-            <div>
-              <div class="picture">
-                <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/corporate-culture.svg') %]"/>
-              </div>
-              <div class="text">
-                <a href="https://my.wobb.co/users/companies/binary-group-services-sdn-bhd" target="_blank">
-                  [% l("Learn more about our corporate culture") %]
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gr-6 gr-12-m gr-6-p gr-padding-10">
-          <div class="xquote">
-            <div>
-              <div class="picture">
-                <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/handbook.svg') %]"/>
-              </div>
-              <div class="text">
-                <a download="[% true %]" href="[% request.url_for('/download/binary-employee-handbook.pdf') %]" target="_blank">
-                  [% l("Employee handbook") %]
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="gr-row gr-padding-30">
-        <div class="gr-6 gr-12-m center-text">
-          <img class="responsive" src="[% request.url_for('images/pages/careers/fsb@1.jpg') %]"/>
-            <p class="gr-padding-10 hint">
-                [% l("Imagine a workplace that often doesn\'t feel like work.") %]
-            </p>
-        </div>
-        <div class="gr-6 gr-12-m center-text">
-          <img class="responsive" src="[% request.url_for('images/pages/careers/pt@1.jpg') %]"/>
-            <p class="gr-padding-10 hint">
-                [% l("Where we\'re one big, multicultural family.") %]
-            </p>
-        </div>
-        <div class="gr-12">
-          <p>
-            [% l("And your weekends can take you to some of the world\'s most exotic and beautiful places.") %]
-          </p>
-          <p>
-            [% l("But we\'re picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment.") %]
-          </p>
-          <p>
-            [% l("If you\'re looking to build a career, and not a resume, talk to us, [_1]. We\'re one of the IT world\'s most vibrant and progressive workplaces.", website_name) %]
-          </p>
-        </div>
-      </div>
-      <div class="gr-12 gr-hide-m">
-        <div class="separator-line border-bottom"></div>
-      </div>
-      <div class="gr-row gr-padding-30">
-        <div class="gr-4 gr-12-m">
-          <h2>[% l("Want to telecommute? ") %]</h2>
-          <p>
-            [% l("[_1] is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we\'re open to it.", website_name) %]
-          </p>
-        </div>
-        <div class="gr-4 gr-12-m">
-          <h2>[% l("Where you can go") %]</h2>
-          <p>
-            [% l("Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.") %]
-          </p>
-        </div>
-        <div class="gr-4 gr-12-m">
-          <h2>[% l("More benefits") %]</h2>
-          <p>
-            [% l("We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\’re in Malta or Malaysia.") %]
-          </p>
-        </div>
-        <div class="gr-9 gr-12-m gr-6-p center-text gr-centered gr-padding-30">
-          <div class="xquote">
-            <div>
-              <div class="picture">
-                <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/blog.svg') %]"/>
-              </div>
-              <div class="text">
-                <a href="https://blog.binary.com" target="_blank">
-                  [% l("Read our blog for the stories and ideas that inspire us") %]
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+[% PROCESS components/elements.html.tt %]
+
+[% BLOCK column_sm %]
+    <div class="gr-3 gr-12-m">
+        <h4><strong>[% header %]</strong></h4>
+        [% INCLUDE global/separator_line.html.tt no_wrapper=1 %]
+        <p>[% paragraph %]</p>
     </div>
+[% END %]
+
+[% BLOCK column_md %]
+    <div class="gr-4 gr-12-m">
+        <h2>[% header %]</h2>
+        <p>[% paragraph %]</p>
+    </div>
+[% END %]
+
+[% BLOCK column_lg %]
+    <div class="gr-6 gr-12-m[% IF center %] center-text[% END %]">
+        <img class="responsive" src="[% request.url_for('images/pages/careers/' _ image _ '.jpg') %]"/>
+        <p[% IF center %] class="gr-padding-10 hint"[% END %]>[% text %]</p>
+    </div>
+[% END %]
+
+<div class="static_full career">
+    <div class="container">
+        <div class="center-text">
+            <h1>[% l("Imagine") %]</h1>
+            <p>[% l("Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded.") %]</p>
+        </div>
+
+        <div class="gr-padding-30">
+            <img class="responsive" src="[% request.url_for('images/pages/careers/main@1.jpg') %]"/>
+            [% INCLUDE fill_box image='images/pages/careers/view-positions-icon-white.svg' color='dark' no_padding=1
+                href=request.url_for('/open-positions') text=l("View open positions") %]
+        </div>
+
+        <div class="gr-row gr-padding-30">
+            [% INCLUDE column_sm header=l("Ideas")      paragraph=l("Where new ideas trump safe, old ones. And you're free to work your way, free from hierarchies and red tape.") %]
+            [% INCLUDE column_sm header=l("Experience") paragraph=l("Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers.") %]
+            [% INCLUDE column_sm header=l("Teamwork")   paragraph=l("Where teamwork and a collaborative culture form the platform for personal and corporate growth.") %]
+            [% INCLUDE column_sm header=l("Support")    paragraph=l("Where supportive colleagues are like a second family.") %]
+        </div>
+
+        <div class="gr-row center-text">
+            [% INCLUDE fill_box image='images/pages/careers/corporate-culture.svg' href='https://my.wobb.co/users/companies/binary-group-services-sdn-bhd'
+                text=l("Learn more about our corporate culture") padding='6' target='_blank' %]
+
+            [% INCLUDE fill_box image='images/pages/careers/handbook.svg' href=request.url_for('/download/binary-employee-handbook.pdf') download=1
+                text=l("Employee handbook") padding='6' target='_blank' %]
+        </div>
+
+        <div class="gr-row gr-padding-30">
+            [% INCLUDE column_lg center=1 image='fsb@1' text=l("Imagine a workplace that often doesn't feel like work.") %]
+            [% INCLUDE column_lg center=1 image='pt@1'  text=l("Where we're one big, multicultural family.") %]
+
+            <div class="container">
+                <p>[% l("And your weekends can take you to some of the world's most exotic and beautiful places.") %]</p>
+                <p>[% l("But we're picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment.") %]</p>
+                <p>[% l("If you're looking to build a career, and not a resume, talk to us, [_1]. We're one of the IT world's most vibrant and progressive workplaces.", website_name) %]</p>
+            </div>
+        </div>
+
+        [% INCLUDE global/separator_line.html.tt %]
+
+        <div class="gr-row gr-padding-30">
+            [% INCLUDE column_md header=l("Want to telecommute?") paragraph=l("[_1] is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it.", website_name) %]
+            [% INCLUDE column_md header=l("Where you can go")     paragraph=l("Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.") %]
+            [% INCLUDE column_md header=l("More benefits")        paragraph=l("We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta or Malaysia.") %]
+
+            [% INCLUDE fill_box image='images/pages/careers/blog.svg' href='https://blog.binary.com' center=1 padding='9'
+                text=l("Read our blog for the stories and ideas that inspire us") target='_blank' %]
+        </div>
+    </div>
+
     <div class="fill-bg-color">
-      <div class="container">
-        <div class="gr-row gr-padding-30 center-text">
-          <div class="gr-12 gr-padding-30">
-            <h1>[% l("Our locations") %]</h1>
-          </div>
-          <div class="gr-6 gr-12-m">
-            <img class="responsive" src="[% request.url_for('images/pages/careers/my@2.jpg') %]"/>
-            <p>[% l("Malaysia") %]</p>
-          </div>
-          <div class="gr-6 gr-12-m">
-            <img class="responsive" src="[% request.url_for('images/pages/careers/malta@1.jpg') %]"/>
-            <p>[% l("Malta") %]</p>
-          </div>
-          <div class="gr-6 gr-12-m">
-            <img class="responsive" src="[% request.url_for('images/pages/careers/japan@1.jpg') %]"/>
-            <p>[% l("Japan") %]</p>
-          </div>
-          <div class="gr-6 gr-12-m">
-            <img class="responsive" src="[% request.url_for('images/pages/careers/germany@1.jpg') %]"/>
-            <p>[% l("Germany") %]</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="gr-row gr-padding-30 center-text">
-        <div class="gr-12 gr-padding-30">
-          <h1>[% l("Career opportunities for Americans") %]</h1>
-          <p>[% l("Looking for a new and exciting career in a country that\'s modern, diverse and tolerant? Binary\.com is one of the world\'s most progressive companies, with offices in Asia and Europe.") %]</p>
-        </div>
-        <div class="gr-4 gr-12-m gr-centered gr-padding-10">
-          <div class="xquote">
-            <div class="text nowrap">
-              <a href="[% request.url_for('careers-for-americans') %]">[% l("Learn more") %]</a>
+        <div class="container">
+            <div class="gr-row gr-padding-30 center-text">
+                <div class="gr-12 gr-padding-30">
+                    <h1>[% l("Our locations") %]</h1>
+                </div>
+
+                [% INCLUDE column_lg image='my@2'      text=l("Malaysia") %]
+                [% INCLUDE column_lg image='malta@1'   text=l("Malta") %]
+                [% INCLUDE column_lg image='japan@1'   text=l("Japan") %]
+                [% INCLUDE column_lg image='germany@1' text=l("Germany") %]
             </div>
-          </div>
         </div>
-      </div>
-      <div class="gr-12 gr-hide-m">
-        <div class="separator-line border-bottom"></div>
-      </div>
-      <div class="gr-row gr-padding-30">
-        <div class="gr-12 center-text">
-          <h1>[% l("Open positions") %]</h1>
-          <p>[% l("[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:", website_name) %]</p>
-        </div>
-      </div>
-      <div class="gr-10 gr-12-m gr-centered">
-        <div class="gr-row">
-          <div class="gr-6 gr-12-m">
-            <ul class="checked">
-              <li>[% l("Software (Perl) Development") %]</li>
-              <li>[% l("DevOps Engineering") %]</li>
-              <li>[% l("Information Security") %]</li>
-              <li>[% l("Front-End (Javascript) Development") %]</li>
-              <li>[% l("Quantitative Analytics") %]</li>
-              <li>[% l("Internal Audit") %]</li>
-            </ul>
-          </div>
-          <div class="gr-6 gr-12-m">
-            <ul class="checked">
-              <li>[% l("Online Marketing") %]</li>
-              <li>[% l("Business Development") %]</li>
-              <li>[% l("Graphics Design") %]</li>
-              <li>[% l("Customer Support") %]</li>
-              <li>[% l("Legal & Regulatory Compliance") %]</li>
-              <li>[% l("Accounting & Payments") %]</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      [% INCLUDE about/careers_shared.html.tt %]
     </div>
-  </div>
+
+    <div class="container">
+        <div class="gr-padding-30 center-text">
+            <div class="gr-padding-30">
+                <h1>[% l("Career opportunities for Americans") %]</h1>
+                <p>[% l("Looking for a new and exciting career in a country that's modern, diverse and tolerant? [_1] is one of the world's most progressive companies, with offices in Asia and Europe.", website_name) %]</p>
+            </div>
+
+            [% INCLUDE fill_box center=1 padding='4' href=request.url_for('/careers-for-americans') text=l("Learn more") %]
+        </div>
+
+        [% INCLUDE global/separator_line.html.tt %]
+
+        <div class="gr-padding-30 center-text">
+            <h1>[% l("Open positions") %]</h1>
+            <p>[% l("[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:", website_name) %]</p>
+        </div>
+
+        <div class="gr-10 gr-12-m gr-centered">
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m">
+                    <ul class="checked">
+                        <li>[% l("Software (Perl) Development") %]</li>
+                        <li>[% l("DevOps Engineering") %]</li>
+                        <li>[% l("Information Security") %]</li>
+                        <li>[% l("Front-End (Javascript) Development") %]</li>
+                        <li>[% l("Quantitative Analytics") %]</li>
+                    </ul>
+                </div>
+                <div class="gr-6 gr-12-m">
+                    <ul class="checked">
+                        <li>[% l("Online Marketing") %]</li>
+                        <li>[% l("Business Development") %]</li>
+                        <li>[% l("Graphics Design") %]</li>
+                        <li>[% l("Customer Support") %]</li>
+                        <li>[% l("Legal & Regulatory Compliance") %]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        [% PROCESS about/careers_shared.html.tt %]
+    </div>
 </div>

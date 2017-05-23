@@ -8,6 +8,7 @@ const urlFor              = require('./url').urlFor;
 const isEmptyObject       = require('./utility').isEmptyObject;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
+const BinarySocket        = require('../websocket_pages/socket');
 const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
 
 const Header = (() => {
@@ -168,15 +169,16 @@ const Header = (() => {
         });
     };
 
-    const displayNotification = (message) => {
+    const displayNotification = (message, is_error, msg_code = '') => {
         const $msg_notification = $('#msg_notification');
-        $msg_notification.html(message);
-        if ($msg_notification.is(':hidden')) $msg_notification.slideDown(500);
+        $msg_notification.html(message).attr({ 'data-message': message, 'data-code': msg_code });
+        if ($msg_notification.is(':hidden')) $msg_notification.removeClass('error').slideDown(500, () => { if (is_error) $msg_notification.addClass('error'); });
     };
 
-    const hideNotification = () => {
+    const hideNotification = (msg_code) => {
         const $msg_notification = $('#msg_notification');
-        if ($msg_notification.is(':visible')) $msg_notification.slideUp(500, () => { $msg_notification.html(''); });
+        if (msg_code && $msg_notification.attr('data-code') !== msg_code) return;
+        if ($msg_notification.is(':visible')) $msg_notification.removeClass('error').slideUp(500, () => { $msg_notification.html('').removeAttr('data-message data-code'); });
     };
 
     const displayAccountStatus = () => {
@@ -185,11 +187,19 @@ const Header = (() => {
                 status,
                 should_authenticate = false;
 
+            const costarica_landing_company = /costarica/.test(Client.get('landing_company_name'));
+
             const riskAssessment = () => {
                 if (get_account_status.risk_classification === 'high') {
                     return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
                 }
                 return false;
+            };
+
+            const authenticate = () => {
+                // don't show age verification check for costarica clients
+                const should_age_verify = !/age_verification/.test(status) && !costarica_landing_company;
+                return (!/authenticated/.test(status) || should_age_verify) && !jpClient() && should_authenticate;
             };
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
@@ -206,8 +216,7 @@ const Header = (() => {
             };
 
             const validations = {
-                authenticate: () =>
-                    (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient() && should_authenticate,
+                authenticate   : () => authenticate(),
                 financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence      : () => !Client.get('residence'),
                 risk           : () => riskAssessment(),
@@ -216,25 +225,25 @@ const Header = (() => {
                 unwelcome      : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
             };
 
-            // real account checks
+            // real account checks in order
             const check_statuses_real = [
-                { validation: validations.tnc,             message: messages.tnc },
-                { validation: validations.financial_limit, message: messages.financial_limit },
-                { validation: validations.risk,            message: messages.risk },
-                { validation: validations.tax,             message: messages.tax },
-                { validation: validations.authenticate,    message: messages.authenticate },
-                { validation: validations.unwelcome,       message: messages.unwelcome },
+                'tnc',
+                'financial_limit',
+                'risk',
+                'tax',
+                'authenticate',
+                'unwelcome',
             ];
 
             // virtual checks
             const check_statuses_virtual = [
-                { validation: validations.residence, message: messages.residence },
+                'residence',
             ];
 
             const checkStatus = (check_statuses) => {
-                const notified = check_statuses.some((object) => {
-                    if (object.validation()) {
-                        displayNotification(object.message());
+                const notified = check_statuses.some((check_type) => {
+                    if (validations[check_type]()) {
+                        displayNotification(messages[check_type]());
                         return true;
                     }
                     return false;
@@ -248,7 +257,7 @@ const Header = (() => {
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment', 'balance').then(() => {
                     get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
                     status = get_account_status.status;
-                    if (/costarica/.test(Client.get('landing_company_name')) && +Client.get('balance') < 200) {
+                    if (costarica_landing_company && +Client.get('balance') < 200) {
                         BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
                             if (response.mt5_login_list.length) {
                                 should_authenticate = true;
@@ -269,6 +278,8 @@ const Header = (() => {
 
         upgradeMessageVisibility    : upgradeMessageVisibility,
         metatraderMenuItemVisibility: metatraderMenuItemVisibility,
+        displayNotification         : displayNotification,
+        hideNotification            : hideNotification,
         displayAccountStatus        : displayAccountStatus,
     };
 })();

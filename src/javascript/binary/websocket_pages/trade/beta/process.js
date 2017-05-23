@@ -9,8 +9,8 @@ const Defaults                       = require('../defaults');
 const GetTicks                       = require('../get_ticks');
 const Notifications                  = require('../notifications');
 const Symbols                        = require('../symbols');
-const setFormPlaceholderContent_Beta = require('../set_values').setFormPlaceholderContent_Beta;
 const Tick                           = require('../tick');
+const BinarySocket                   = require('../../socket');
 const AssetIndexUI                   = require('../../resources/asset_index/asset_index.ui');
 const TradingTimesUI                 = require('../../resources/trading_times/trading_times.ui');
 const localize                       = require('../../../base/localize').localize;
@@ -25,7 +25,7 @@ const Process_Beta = (() => {
      * and underlying list
      */
     const processActiveSymbols_Beta = () => {
-        BinarySocket.send({ active_symbols: 'brief' }, { forced: true }).then((response) => {
+        BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
             // populate the Symbols object
             Symbols.details(response);
 
@@ -145,9 +145,6 @@ const Process_Beta = (() => {
 
         // set form to session storage
         Defaults.set('formname', formname);
-
-        // change the form placeholder content as per current form (used for mobile menu)
-        setFormPlaceholderContent_Beta(formname);
 
         commonTrading.displayContractForms('contract_form_name_nav', contract_categories, formname);
 

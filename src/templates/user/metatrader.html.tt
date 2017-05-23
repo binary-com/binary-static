@@ -1,16 +1,18 @@
+[% PROCESS components/forms.html.tt %]
+
 <div id="mt_account_management" class="container">
     <div>
         <h1>[% l('MetaTrader account management') %]</h1>
     </div>
     <p id="page_msg" class="notice-msg center-text invisible"></p>
-    <div id="mt_loading">[% INCLUDE global/loading.html.tt %]</div>
+    <div id="mt_loading">[% PROCESS global/loading.html.tt %]</div>
     <div class="gr-12">
         <div id="accounts_list" class="gr-row"></div>
     </div>
 
     <div class="fst-container">
         <div id="main_msg" class="notice-msg center-text invisible"></div>
-        [% WRAPPER components/forms/fieldset.html.tt legend=' ' id='fst_action' class='invisible' %]
+        [% WRAPPER fieldset legend=' ' id='fst_action' class='invisible' %]
             <span class="close"></span>
             <form id="frm_action"></form>
         [% END %]
@@ -20,7 +22,7 @@
         <div class="acc-box gr-12-m gr-6-p gr-4-t gr-4">
             <div>
                 <div class="title"></div>
-                <div class="loading">[% INCLUDE global/loading.html.tt %]</div>
+                <div class="loading">[% PROCESS global/loading.html.tt %]</div>
                 <div class="center-text no-account invisible">
                     <div class="info"></div>
                     <span class="button"><span class="act_new_account">[% l('Create Account') %]</span></span>
@@ -69,10 +71,10 @@
         </div>
 
         <form id="frm_new_account">
-            [% INCLUDE components/forms/form_row.html.tt type='label'  id='lbl_account_type' label=l("Account type") %]
-            [% INCLUDE components/forms/form_row.html.tt type='label'  id='lbl_email'        label=l("Email")        %]
-            [% INCLUDE components/forms/form_row.html.tt type='text'   id='txt_name'         label=l("Name")     attributes='maxlength="30" autocomplete="off"' %]
-            [% WRAPPER components/forms/form_row.html.tt type='select' id='ddl_leverage'     label=l("Leverage") row_class='invisible' %]
+            [% INCLUDE form_row type='label'  id='lbl_account_type' label=l("Account type") %]
+            [% INCLUDE form_row type='label'  id='lbl_email'        label=l("Email")        %]
+            [% INCLUDE form_row type='text'   id='txt_name'         label=l("Name")     attributes='maxlength="30" autocomplete="off"' %]
+            [% WRAPPER form_row type='select' id='ddl_leverage'     label=l("Leverage") row_class='invisible' %]
                 <option value="1">1:1</option>
                 <option value="50">1:50</option>
                 <option value="100" selected="selected">1:100</option>
@@ -81,42 +83,42 @@
                 <option value="500">1:500</option>
                 <option value="1000">1:1000</option>
             [% END %]
-            [% INCLUDE components/forms/form_row.html.tt type='password' id='txt_main_pass'     label=l("Main password (trading access)")
+            [% INCLUDE form_row type='password' id='txt_main_pass'     label=l("Main password (trading access)")
                 hint=l("Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.") %]
-            [% INCLUDE components/forms/form_row.html.tt type='password' id='txt_re_main_pass'  label=l("Verify main password") %]
-            [% INCLUDE components/forms/form_row.html.tt type='password' id='txt_investor_pass' label=l("Investor password (read-only access)") %]
-            [% INCLUDE components/forms/form_row.html.tt type='checkbox' id='chk_tnc'           label=l('I have read and agree to the <a target="_blank" href="[_1]">terms and conditions</a> of the site.', request.url_for('/terms-and-conditions') _ '#legal-mt') %]
+            [% INCLUDE form_row type='password' id='txt_re_main_pass'  label=l("Verify main password") %]
+            [% INCLUDE form_row type='password' id='txt_investor_pass' label=l("Investor password (read-only access)") %]
+            [% INCLUDE form_row type='checkbox' id='chk_tnc'           label=l('I have read and agree to the <a target="_blank" href="[_1]">terms and conditions</a> of the site.', request.url_for('/terms-and-conditions') _ '#legal-mt') %]
 
-            [% INCLUDE components/forms/submit_button.html.tt text=l("Create Account") type='submit' %]
+            [% INCLUDE submit_button text=l("Create Account") type='submit' %]
         </form>
 
         <form id="frm_password_change">
-            [% INCLUDE components/forms/form_row.html.tt type='label'    id='lbl_login'           label=l("Login ID") %]
-            [% INCLUDE components/forms/form_row.html.tt type='password' id='txt_old_password'    label=l("Current password") %]
-            [% INCLUDE components/forms/form_row.html.tt type='password' id='txt_new_password'    label=l("New password")
+            [% INCLUDE form_row type='label'    id='lbl_login'           label=l("Login ID") %]
+            [% INCLUDE form_row type='password' id='txt_old_password'    label=l("Current password") %]
+            [% INCLUDE form_row type='password' id='txt_new_password'    label=l("New password")
                 hint=l("Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.") %]
-            [% INCLUDE components/forms/form_row.html.tt type='password' id='txt_re_new_password' label=l("Verify new password") %]
+            [% INCLUDE form_row type='password' id='txt_re_new_password' label=l("Verify new password") %]
 
-            [% INCLUDE components/forms/submit_button.html.tt text=l("Change Password") type='submit' %]
+            [% INCLUDE submit_button text=l("Change Password") type='submit' %]
         </form>
 
         <form id="frm_deposit">
-            <p>[% l('Transfer funds from Binary.com account into your MT5 account:') %]</p>
-            [% INCLUDE components/forms/form_row.html.tt type='label' id='lbl_from'   label=l("Transfer from") %]
-            [% INCLUDE components/forms/form_row.html.tt type='label' id='lbl_to'     label=l("Deposit into") %]
-            [% INCLUDE components/forms/form_row.html.tt type='text'  id='txt_amount' label=l("Amount") input_prefix='&#36; ' attributes='maxlength="10"' %]
+            <p>[% l('Transfer funds from [_1] account into your MT5 account:', website_name) %]</p>
+            [% INCLUDE form_row type='label' id='lbl_from'   label=l("Transfer from") %]
+            [% INCLUDE form_row type='label' id='lbl_to'     label=l("Deposit into") %]
+            [% INCLUDE form_row type='text'  id='txt_amount' label=l("Amount") input_prefix='&#36; ' attributes='maxlength="10"' %]
 
-            [% INCLUDE components/forms/submit_button.html.tt text=l("Deposit") type='submit' %]
+            [% INCLUDE submit_button text=l("Deposit") type='submit' %]
         </form>
 
         <form id="frm_withdrawal">
-            <p>[% l('Transfer funds from your MT5 account into your Binary.com account:') %]</p>
-            [% INCLUDE components/forms/form_row.html.tt type='label'    id='lbl_from'      label=l("Withdraw from") %]
-            [% INCLUDE components/forms/form_row.html.tt type='label'    id='lbl_to'        label=l("Transfer into") %]
-            [% INCLUDE components/forms/form_row.html.tt type='password' id='txt_main_pass' label=l("MT5 main password") %]
-            [% INCLUDE components/forms/form_row.html.tt type='text'     id='txt_amount'    label=l("Amount") input_prefix='&#36; ' attributes='maxlength="10"' %]
+            <p>[% l('Transfer funds from your MT5 account into your [_1] account:', website_name) %]</p>
+            [% INCLUDE form_row type='label'    id='lbl_from'      label=l("Withdraw from") %]
+            [% INCLUDE form_row type='label'    id='lbl_to'        label=l("Transfer into") %]
+            [% INCLUDE form_row type='password' id='txt_main_pass' label=l("MT5 main password") %]
+            [% INCLUDE form_row type='text'     id='txt_amount'    label=l("Amount") input_prefix='&#36; ' attributes='maxlength="10"' %]
 
-            [% INCLUDE components/forms/submit_button.html.tt text=l("Withdraw") type='submit' %]
+            [% INCLUDE submit_button text=l("Withdraw") type='submit' %]
         </form>
 
         <div id="messages">
@@ -126,7 +128,7 @@
             <div id="msg_authenticate">
                 <div class="align-start">
                     <p>[% l('To withdraw from MT5 Financial Account please Authenticate your [_1] account.', website_name) %]</p>
-                    [% INCLUDE user/common/authenticate_message.html.tt %]
+                    [% PROCESS global/authenticate_message.html.tt %]
                 </div>
             </div>
         </div>

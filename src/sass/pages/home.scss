@@ -1,7 +1,4 @@
 .home-content, .home-jp-content {
-    #banner {
-        background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
-    }
     .signup-box {
         border-radius: $BORDER_RADIUS;
         .error-msg {
@@ -21,6 +18,12 @@
             height: 3rem;
             width: 100%;
         }
+    }
+}
+
+.home-content {
+    #banner {
+        background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
     }
     .xlist1 {
         background: url('../images/pages/home/xicon-1.png') no-repeat;
@@ -47,12 +50,6 @@
     .mena {
         width: 10%;
         margin: 0 1em;
-    }
-    .xquote {
-        padding: 20px 40px;
-        p {
-            font-style: italic;
-        }
     }
     .xbubble-right {
         content: '';
@@ -81,7 +78,7 @@
         @include BIDIR_VALUE(text-align, right, left);
     }
     .xquoter-left p span, .xquoter-right p span {
-        font-size: 12px;
+        font-size: $FONT_SIZE_XS;
         font-style: italic;
     }
 }
@@ -98,12 +95,8 @@
     .relative {
         position: relative;
     }
-    .xquote {
-        position: relative;
-        margin-top: 25%;
-        p {
-            font-style: normal;
-        }
+    .box {
+        margin-top: 10%;
     }
     .small-image {
         width: 8%;
@@ -124,7 +117,7 @@
 
 @media screen and (max-width: 768px) {
     .home-jp-content {
-        .xquote {
+        .box {
             margin-top: auto;
         }
     }

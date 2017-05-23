@@ -1,0 +1,109 @@
+// styling for websocket pages that are too short or simple to need their own styling page
+
+.api_token {
+    fieldset {
+        margin: 20px 0;
+        label {
+            text-decoration: none;
+            @include BIDIR_PROP(margin-right, margin-left, 15px);
+        }
+    }
+    table {
+        tr {
+            &.deleting {
+                background-color: $COLOR_LIGHT_GRAY;
+            }
+            &.new {
+                background-color: rgba(46, 136, 54, 0.2);
+            }
+        }
+    }
+}
+
+#applications-container, .api_token {
+    table td, th {
+        text-align: center !important;
+        vertical-align: middle;
+        line-height: 30px;
+        .button {
+            margin: 3px 0;
+        }
+    }
+}
+
+.forwardws-content iframe {
+    height: 1500px;
+}
+
+.epg_forwardws-content iframe {
+    height: 800px;
+}
+
+#limits-container thead {
+    @include BIDIR_VALUE(text-align, left, right);
+}
+
+#knowledge-test-container {
+    #knowledge-test-msg {
+        white-space: pre-line;
+    }
+    .kv-pairs {
+        width: auto;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        td {
+            border: none;
+        }
+    }
+}
+
+#profit-table-container {
+    th {
+        padding-right: 8px;
+    }
+    td {
+        padding-right: 8px;
+    }
+    .pl {
+        text-align: right !important;
+    }
+    #pl-day-total .buy-date {
+        flex-grow: 6;
+        flex-shrink: 6;
+    }
+    .contract {
+        flex: 2 1 100px;
+        padding-right: 20px;
+        min-width: 150px;
+    }
+    .new-width {
+        min-width: 100px;
+    }
+}
+
+#statement-container {
+    #download_csv {
+        line-height: 28px;
+    }
+    .desc {
+        flex: 2 1 100px;
+        padding-right: 20px;
+        word-break: break-word;
+        min-width: 130px;
+    }
+    .act {
+        flex: 0.8 1 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .api_token, #applications-container {
+        table td, table th {
+            font-size: $FONT_SIZE_XS;
+        }
+        table button {
+            font-size: $FONT_SIZE_XS;
+            padding: 10px 15px;
+        }
+    }
+}

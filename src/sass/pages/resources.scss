@@ -2,10 +2,8 @@
     table {
         margin-top: -2px;
     }
-    tr:nth-child(1) {
-        th {
-            background-color: $COLOR_GRAY_SHADE;
-        }
+    tr:nth-child(1) th {
+        background-color: $COLOR_GRAY_SHADE;
     }
     th {
         line-height: 30px;

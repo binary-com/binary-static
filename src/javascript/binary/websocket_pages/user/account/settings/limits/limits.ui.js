@@ -1,8 +1,8 @@
-const Table    = require('../../../../../common_functions/attach_dom/table');
-const addComma = require('../../../../../common_functions/string_util').addComma;
-const localize = require('../../../../../base/localize').localize;
-const Client   = require('../../../../../base/client');
-const elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
+const Table              = require('../../../../../common_functions/attach_dom/table');
+const localize           = require('../../../../../base/localize').localize;
+const Client             = require('../../../../../base/client');
+const elementTextContent = require('../../../../../common_functions/common_functions').elementTextContent;
+const formatMoney        = require('../../../../../common_functions/currency_to_symbol').formatMoney;
 
 const LimitsUI = (() => {
     'use strict';
@@ -27,10 +27,10 @@ const LimitsUI = (() => {
         const payout          = document.getElementById('payout');
         const payout_per      = document.getElementById('payout-per-symbol-and-contract-type');
 
-        elementTextContent(open_position, addComma(limits.open_positions).split('.')[0]);
-        elementTextContent(account_balance, addComma(limits.account_balance).split('.')[0]);
-        elementTextContent(payout, addComma(limits.payout).split('.')[0]);
-        elementTextContent(payout_per, addComma(limits.payout_per_symbol_and_contract_type).split('.')[0]);
+        elementTextContent(open_position, formatMoney(currency, limits.open_positions, 1));
+        elementTextContent(account_balance, formatMoney(currency, limits.account_balance, 1));
+        elementTextContent(payout, formatMoney(currency, limits.payout, 1));
+        elementTextContent(payout_per, formatMoney(currency, limits.payout_per_symbol_and_contract_type, 1));
 
         const market_specific = limits.market_specific;
         client_limits = $('#client-limits');
@@ -40,11 +40,11 @@ const LimitsUI = (() => {
                 appendRowTable(localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
                 Object.keys(object).forEach((c) => {
                     if (Client.get('residence') !== 'jp' || /Major Pairs/.test(object[c].name)) {
-                        appendRowTable(object[c].name, object[c].turnover_limit !== 'null' ? addComma(object[c].turnover_limit).split('.')[0] : 0, '25px', 'normal');
+                        appendRowTable(object[c].name, object[c].turnover_limit !== 'null' ? formatMoney(currency, object[c].turnover_limit, 1) : 0, '25px', 'normal');
                     }
                 });
             } else {
-                appendRowTable(object.name, object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
+                appendRowTable(object.name, object.turnover_limit !== 'null' ? formatMoney(currency, object.turnover_limit, 1) : 0, 'auto', 'bold');
             }
         });
         const login_id =  Client.get('loginid');

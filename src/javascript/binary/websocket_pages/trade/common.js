@@ -8,7 +8,6 @@ const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
 const isEmptyObject      = require('../../base/utility').isEmptyObject;
 const formatMoney        = require('../../common_functions/currency_to_symbol').formatMoney;
-const addComma           = require('../../common_functions/string_util').addComma;
 const toISOFormat        = require('../../common_functions/string_util').toISOFormat;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
@@ -580,25 +579,6 @@ const commonTrading = (() => {
 
     // ============= Functions used in /trading_beta =============
 
-    /*
-     * toggle active class of menu
-     */
-    const toggleActiveNavMenuElement_Beta = (nav, event_element) => {
-        const li_elements = nav.getElementsByTagName('li');
-        const classes = event_element.classList;
-
-        if (!classes.contains('active')) {
-            for (let i = 0, len = li_elements.length; i < len; i++) {
-                li_elements[i].classList.remove('active');
-            }
-            classes.add('active');
-            const parent = event_element.parentElement.parentElement;
-            if (parent.tagName === 'LI' && !parent.classList.contains('active')) {
-                parent.classList.add('active');
-            }
-        }
-    };
-
     const updatePurchaseStatus_Beta = (final_price, pnl, contract_status) => {
         final_price = String(final_price).replace(/,/g, '') * 1;
         pnl = String(pnl).replace(/,/g, '') * 1;
@@ -606,14 +586,15 @@ const commonTrading = (() => {
         const payout  = document.getElementById('contract_purchase_payout');
         const cost    = document.getElementById('contract_purchase_cost');
         const profit  = document.getElementById('contract_purchase_profit');
+        const currency = Client.get('currency');
 
-        labelValue(cost, localize('Stake'), addComma(Math.abs(pnl)));
-        labelValue(payout, localize('Payout'), addComma(final_price));
+        labelValue(cost, localize('Stake'), formatMoney(currency, Math.abs(pnl), 1));
+        labelValue(payout, localize('Payout'), formatMoney(currency, final_price, 1));
 
         const isWin = (final_price > 0);
         $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
         labelValue(profit, isWin ? localize('Profit') : localize('Loss'),
-            addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl)));
+            formatMoney(currency, isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl), 1));
     };
 
     const displayTooltip_Beta = (market, symbol) => {
@@ -686,36 +667,35 @@ const commonTrading = (() => {
     };
 
     return {
-        displayUnderlyings             : displayUnderlyings,
-        generateUnderlyingOptions      : generateUnderlyingOptions,
-        getFormNameBarrierCategory     : getFormNameBarrierCategory,
-        contractTypeDisplayMapping     : contractTypeDisplayMapping,
-        showPriceOverlay               : () => { showHideOverlay('loading_container2', 'block'); },
-        hidePriceOverlay               : () => { showHideOverlay('loading_container2', 'none'); },
-        hideFormOverlay                : () => { showHideOverlay('loading_container3', 'none'); },
-        showFormOverlay                : () => { showHideOverlay('loading_container3', 'block'); },
-        hideOverlayContainer           : hideOverlayContainer,
-        getContractCategoryTree        : getContractCategoryTree,
-        resetPriceMovement             : resetPriceMovement,
-        toggleActiveCatMenuElement     : toggleActiveCatMenuElement,
-        displayCommentPrice            : displayCommentPrice,
-        debounce                       : debounce,
-        getDefaultMarket               : getDefaultMarket,
-        addEventListenerForm           : addEventListenerForm,
-        submitForm                     : submitForm,
-        durationOrder                  : duration => duration_order[duration],
-        displayTooltip                 : displayTooltip,
-        selectOption                   : selectOption,
-        updateWarmChart                : updateWarmChart,
-        reloadPage                     : reloadPage,
-        displayContractForms           : displayContractForms,
-        displayMarkets                 : displayMarkets,
-        toggleActiveNavMenuElement_Beta: toggleActiveNavMenuElement_Beta,
-        updatePurchaseStatus_Beta      : updatePurchaseStatus_Beta,
-        displayTooltip_Beta            : displayTooltip_Beta,
-        labelValue                     : labelValue,
-        timeIsValid                    : timeIsValid,
-        clean                          : () => { $chart = null; },
+        displayUnderlyings        : displayUnderlyings,
+        generateUnderlyingOptions : generateUnderlyingOptions,
+        getFormNameBarrierCategory: getFormNameBarrierCategory,
+        contractTypeDisplayMapping: contractTypeDisplayMapping,
+        showPriceOverlay          : () => { showHideOverlay('loading_container2', 'block'); },
+        hidePriceOverlay          : () => { showHideOverlay('loading_container2', 'none'); },
+        hideFormOverlay           : () => { showHideOverlay('loading_container3', 'none'); },
+        showFormOverlay           : () => { showHideOverlay('loading_container3', 'block'); },
+        hideOverlayContainer      : hideOverlayContainer,
+        getContractCategoryTree   : getContractCategoryTree,
+        resetPriceMovement        : resetPriceMovement,
+        toggleActiveCatMenuElement: toggleActiveCatMenuElement,
+        displayCommentPrice       : displayCommentPrice,
+        debounce                  : debounce,
+        getDefaultMarket          : getDefaultMarket,
+        addEventListenerForm      : addEventListenerForm,
+        submitForm                : submitForm,
+        durationOrder             : duration => duration_order[duration],
+        displayTooltip            : displayTooltip,
+        selectOption              : selectOption,
+        updateWarmChart           : updateWarmChart,
+        reloadPage                : reloadPage,
+        displayContractForms      : displayContractForms,
+        displayMarkets            : displayMarkets,
+        updatePurchaseStatus_Beta : updatePurchaseStatus_Beta,
+        displayTooltip_Beta       : displayTooltip_Beta,
+        labelValue                : labelValue,
+        timeIsValid               : timeIsValid,
+        clean                     : () => { $chart = null; },
     };
 })();
 

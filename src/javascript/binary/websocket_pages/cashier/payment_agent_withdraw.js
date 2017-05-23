@@ -1,7 +1,8 @@
-const Client      = require('../../base/client');
-const localize    = require('../../base/localize').localize;
-const FormManager = require('../../common_functions/form_manager');
-const Cookies     = require('../../../lib/js-cookie');
+const BinarySocket = require('../socket');
+const Client       = require('../../base/client');
+const localize     = require('../../base/localize').localize;
+const FormManager  = require('../../common_functions/form_manager');
+const Cookies      = require('../../../lib/js-cookie');
 
 const PaymentAgentWithdraw = (() => {
     'use strict';
@@ -104,9 +105,7 @@ const PaymentAgentWithdraw = (() => {
             default: // error
                 if (response.echo_req.dry_run === 1) {
                     setActiveView(view_ids.form);
-                    $('#formMessage').css('display', '')
-                        .attr('class', 'errorfield')
-                        .html(response.error.message);
+                    $('#formMessage').setVisibility(1).html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
                     showPageError(localize('Your token has expired. Please click [_1]here[_2] to restart the verification process.', ['<a href="javascript:;" onclick="window.location.reload();">', '</a>']));
                 } else {

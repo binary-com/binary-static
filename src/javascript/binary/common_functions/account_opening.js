@@ -5,6 +5,7 @@ const localize             = require('../base/localize').localize;
 const State                = require('../base/storage').State;
 const makeOption           = require('../common_functions/common_functions').makeOption;
 const FormManager          = require('../common_functions/form_manager');
+const BinarySocket         = require('../websocket_pages/socket');
 const Cookies              = require('../../lib/js-cookie');
 require('select2');
 
@@ -112,7 +113,7 @@ const AccountOpening = (() => {
                     $address_state.text(client_state);
                 }
             }
-            $address_state.parent().parent().show();
+            $address_state.parent().parent().setVisibility(1);
 
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());

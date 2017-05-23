@@ -1,173 +1,35 @@
+[% PROCESS components/forms.html.tt %]
+[% PROCESS components/forms_common_rows.html.tt %]
+
 <div class='gr-12 static_full'>
     <h1>[% l('Real Money Account Opening') %]</h1>
-    <div class="rbox form gr-padding-10">
-        <div class="rbox-wrap">
-            <form id="frm_real">
-                <fieldset>
-                    <legend id="details">[% l('Details') %]</legend>
+    <form id="frm_real" class="gr-padding-10">
+        [% WRAPPER fieldset legend=l('Details') %]
+            [% INCLUDE salutation %]
+            [% INCLUDE first_name %]
+            [% INCLUDE last_name %]
+            [% INCLUDE date_of_birth %]
+            [% INCLUDE residence %]
+        [% END %]
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="salutation">[% l('Title') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <select id="salutation" name="salutation">
-                              <option value="Mr">[% l('Mr') %]</option>
-                              <option value="Mrs" class="ru-hide">[% l('Mrs') %]</option>
-                              <option value="Ms">[% l('Ms') %]</option>
-                              <option value="Miss" class="ru-hide">[% l('Miss') %]</option>
-                            </select>
-                        </div>
-                    </div>
+        [% WRAPPER fieldset legend=l('Address') %]
+            [% INCLUDE address_line_1 %]
+            [% INCLUDE address_line_2 %]
+            [% INCLUDE address_city %]
+            [% PROCESS address_state %]
+            [% INCLUDE address_postcode %]
+            [% INCLUDE phone %]
+        [% END %]
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="first_name">[% l('First name') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="first_name" name="first_name" maxlength="30"/>
-                        </div>
-                    </div>
+        [% WRAPPER fieldset legend=l('Security') %]
+            [% PROCESS secret_question %]
+            [% PROCESS secret_answer %]
+        [% END %]
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="last_name">[% l('Family name') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="last_name" name="last_name" maxlength="30"/>
-                        </div>
-                    </div>
+        [% PROCESS global/pep_declaration.html.tt %]
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="date_of_birth">[% l('Date of birth') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" id="date_of_birth" name="date_of_birth" size="12" readonly="readonly"/>
-                        </div>
-                    </div>
+        [% PROCESS tnc %]
+    </form>
 
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="residence">[% l('Country of residence') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <label id="lbl_residence"></label>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend id="address">[% l('Address') %]</legend>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="address_line_1">[% l('First line of home address') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="address_line_1" name="address_line_1" maxlength="70"/>
-                            <p class="hint">[% l('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.') %]</p>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="address_line_2">[% l('Second line of home address') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="address_line_2" name="address_line_2" maxlength="70"/>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="address_city">[% l('Town/City') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="address_city" name="address_city" maxlength="35"/>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear" style="display:none">
-                        <div class="gr-4 form_label">
-                            <label for="address_state">[% l('State/Province') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <select id="address_state" name="address_state"></select>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="address_postcode">[% l('Postal code/ZIP') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="address_postcode" name="address_postcode" maxlength="20" />
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="phone">[% l('Telephone') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="phone" name="phone" maxlength="35" />
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend id="security">[% l('Security') %]</legend>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="secret_question">[% l('Secret question') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <select id="secret_question" name="secret_question">
-                              <option value="Favourite dish">[% l('Favourite dish') %]</option>
-                              <option value="Mother's maiden name">[% l("Mother's maiden name") %]</option>
-                              <option value="Name of your pet">[% l('Name of your pet') %]</option>
-                              <option value="Name of first love">[% l('Name of first love') %]</option>
-                              <option value="Memorable town/city">[% l('Memorable town/city') %]</option>
-                              <option value="Memorable date">[% l('Memorable date') %]</option>
-                              <option value="Brand of first car">[% l('Brand of first car') %]</option>
-                              <option value="Favourite artist">[% l('Favourite artist') %]</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="gr-padding-10 gr-row clear">
-                        <div class="gr-4 form_label">
-                            <label for="secret_answer">[% l('Answer to secret question') %]</label>
-                        </div>
-                        <div class="gr-8">
-                            <input type="text" class="text" id="secret_answer" name="secret_answer" maxlength="50" autocomplete="off"/>
-                        </div>
-                    </div>
-                </fieldset>
-
-                [% INCLUDE global/pep_declaration.html.tt %]
-
-                <fieldset class="center-text" id="formlayout">
-                    <div class="gr-row">
-                        <div class="gr-12-m gr-padding-10 gr-centered">
-                            <input type="checkbox" name="tnc" id="tnc">
-                            <label for="tnc">[% l('I have read and agree to the [_1]terms and conditions[_2] of the site.', '<a target="_blank" href="' _ request.url_for('/terms-and-conditions') _ '">', '</a>') %]</label>
-                        </div>
-                    </div>
-
-                    <button class="button" type="submit">[% l('Open Account') %]</button>
-                </fieldset>
-            </form>
-
-            <div class="errorbox rbox invisible" id="client_message">
-                <div class="rbox-wrap">
-                    <div class="gr-12 rbox-content" id="client_message_content">
-                        <p class="center notice-msg"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    [% PROCESS client_message %]
 </div>

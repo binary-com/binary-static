@@ -1,6 +1,7 @@
 const moment               = require('moment');
 const StatementUI          = require('./statement.ui');
 const ViewPopup            = require('../../view_popup/view_popup');
+const BinarySocket         = require('../../../socket');
 const getLanguage          = require('../../../../base/language').get;
 const localize             = require('../../../../base/localize').localize;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
@@ -86,8 +87,7 @@ const StatementInit = (() => {
                         .append($('<td/>', { colspan: 7 })
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             } else {
-                $('#jump-to').parent().parent().parent()
-                             .setVisibility(1);
+                $('#util_row').setVisibility(1);
                 if (getLanguage() === 'JA') {
                     $('#download_csv').setVisibility(1)
                                       .find('a')
