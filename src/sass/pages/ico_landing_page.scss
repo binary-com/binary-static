@@ -208,6 +208,8 @@ input[type='submit'] {
     color: $COLOR_WHITE;
     border: none;
     cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 input[type='text']:focus, input[type='submit']:focus {
