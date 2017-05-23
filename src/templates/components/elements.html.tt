@@ -1,10 +1,10 @@
 [% BLOCK fill_box %]
-<div class="[% IF padding %]gr-12-m gr-6-p gr-padding-10[% IF center == 'true' %] gr-[% padding || 9 %] gr-centered[% ELSE %] gr-[% padding || 6 %][% END %][% END %] [% class %]">
+<div class="[% IF padding %]gr-12-m gr-6-p gr-padding-10[% IF center %] gr-[% padding || 9 %] gr-centered[% ELSE %] gr-[% padding || 6 %][% END %][% END %] [% class %]">
     <div class="[% UNLESS align_left %]center-text[% END %] gr-gutter gr-padding-20 [% IF color == 'dark' %]primary-bg-color[% ELSE %]fill-bg-color[% END %][% IF border %] [% border %][% END %]">
         <div class="inline-flex center-align gr-gutter">
             [% IF image %]<img class="half-sized-picture gr-gutter-right" src="[% request.url_for(image) %]"/>[% END %]
             [% IF href %]
-            <a href="[% href %]"[% IF target %] target="[% target %]"[% END %][% IF download == 'true' %] download[% END %][% IF color == 'dark' %] class="content-inverse-color"[% END %]>
+            <a href="[% href %]"[% IF target %] target="[% target %]"[% END %][% IF download %] download[% END %][% IF color == 'dark' %] class="content-inverse-color"[% END %]>
             [% ELSE %]
             <p class="gr-gutter">
             [% END %]

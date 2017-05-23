@@ -22,7 +22,9 @@
                 </table>
             </div>
         [% END %]
-        [% INCLUDE tab_content id='tab_explanation' class='selectedTab' %]
+        [% WRAPPER tab_content id='tab_explanation' class='selectedTab' %]
+            [% INCLUDE bet/explanation.html.tt %]
+        [% END %]
         [% WRAPPER tab_content id='tab_last_digit' %]
             [% PROCESS bet/last_digit.html.tt %]
         [% END %]

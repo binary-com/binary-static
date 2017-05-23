@@ -19,7 +19,9 @@
                 </div>
             [% END %]
             [% WRAPPER tab_content id='tab_portfolio' %][% PROCESS user/portfolio.html.tt %][% END %]
-            [% INCLUDE tab_content id='tab_explanation' class='selectedTab' %]
+            [% WRAPPER tab_content id='tab_explanation' class='selectedTab' %]
+                [% INCLUDE bet/beta/explanation.html.tt %]
+            [% END %]
             [% WRAPPER tab_content id='tab_last_digit' %][% PROCESS bet/beta/last_digit.html.tt %][% END %]
             [% WRAPPER tab_content id='tab_asset_index' %][% PROCESS resources/asset_index.html.tt %][% END %]
             [% WRAPPER tab_content id='tab_trading_times' %][% PROCESS resources/trading_times.html.tt %][% END %]

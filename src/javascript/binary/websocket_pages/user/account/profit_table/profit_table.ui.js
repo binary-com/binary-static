@@ -3,8 +3,8 @@ const Client              = require('../../../../base/client');
 const localize            = require('../../../../base/localize').localize;
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const elementTextContent  = require('../../../../common_functions/common_functions').elementTextContent;
-const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
+const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
 const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
 const Table               = require('../../../../common_functions/attach_dom/table');
 
@@ -78,19 +78,19 @@ const ProfitTableUI = (() => {
 
     const createProfitTableRow = (transaction) => {
         const profit_table_data = ProfitTable.getProfitTabletData(transaction);
-        const pl_type = (profit_table_data.pl >= 0) ? 'profit' : 'loss';
+        const pl_type = Number(transaction.sell_price - transaction.buy_price) >= 0 ? 'profit' : 'loss';
 
         const jp_client = jpClient();
 
         const data = [
             jp_client ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate,
             `<span ${showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id])}>${profit_table_data.ref}</span>`,
-            jp_client ? formatMoney(currency, profit_table_data.payout) : profit_table_data.payout,
+            profit_table_data.payout,
             '',
-            jp_client ? formatMoney(currency, profit_table_data.buyPrice)  : profit_table_data.buyPrice,
-            jp_client ? toJapanTimeIfNeeded(transaction.sell_time)         : profit_table_data.sellDate,
-            jp_client ? formatMoney(currency, profit_table_data.sellPrice) : profit_table_data.sellPrice,
-            jp_client ? formatMoney(currency, profit_table_data.pl)        : profit_table_data.pl,
+            profit_table_data.buyPrice,
+            jp_client ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate,
+            profit_table_data.sellPrice,
+            profit_table_data.pl,
             '',
         ];
         const $row = Table.createFlexTableRow(data, cols, 'data');

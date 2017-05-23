@@ -156,7 +156,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuTrading',
-        class      => 'ja-hide hide-tablet-mobile',
+        class      => 'ja-hide gr-hide-m gr-hide-p',
         url        => url_for('/trading'),
         text       => localize('Trade'),
         };
@@ -164,7 +164,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuJPTrading',
-        class      => 'invisible ja-show hide-tablet-mobile',
+        class      => 'invisible ja-show gr-hide-m gr-hide-p',
         url        => url_for('/multi_barriers_trading'),
         text       => localize('Trade'),
         };

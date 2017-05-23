@@ -1,7 +1,8 @@
-const commonTrading    = require('../common');
+const Defaults         = require('../defaults');
 const showHighchart    = require('../charts/chart_frame').showHighchart;
 const getActiveTab     = require('../get_active_tab').getActiveTab_Beta;
 const GetTicks         = require('../get_ticks');
+const MBDefaults       = require('../../mb_trade/mb_defaults');
 const AssetIndexUI     = require('../../resources/asset_index/asset_index.ui');
 const TradingTimesUI   = require('../../resources/trading_times/trading_times.ui');
 const PortfolioInit    = require('../../user/account/portfolio/portfolio.init');
@@ -9,8 +10,6 @@ const Client           = require('../../../base/client');
 const getLanguage      = require('../../../base/language').get;
 const State            = require('../../../base/storage').State;
 const Url              = require('../../../base/url');
-const elementInnerHtml = require('../../../common_functions/common_functions').elementInnerHtml;
-const jpClient         = require('../../../common_functions/country_base').jpClient;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -28,18 +27,12 @@ const TradingAnalysis_Beta = (() => {
     'use strict';
 
     const hidden_class = 'invisible';
+    let form_name;
 
     const requestTradeAnalysis = () => {
-        let form_name = State.get('is_mb_trading') ? $('#category').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
-        if (form_name === 'matchdiff') {
-            form_name = 'digits';
-        }
-        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation_beta', `underlying_symbol=${$('#underlying').val()}&form_name=${form_name}`));
-        if (/(digits|overunder|evenodd)/.test(form_name)) {
-            $('#tab_last_digit').setVisibility(1);
-        } else {
-            $('#tab_last_digit').setVisibility(0);
-        }
+        form_name = ((State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall').replace('matchdiff', 'digits');
+
+        $('#tab_last_digit').setVisibility(/(digits|overunder|evenodd)/.test(form_name));
         sessionStorage.setItem('currentAnalysisTab_Beta', getActiveTab());
         loadAnalysisTab();
     };
@@ -52,35 +45,28 @@ const TradingAnalysis_Beta = (() => {
         if (Client.isLoggedIn()) {
             $('#tab_portfolio').setVisibility(1);
         }
-        if (!jpClient()) {
-            $('#tab_asset_index').setVisibility(1);
-            $('#tab_trading_times').setVisibility(1);
-        }
+        $('#tab_asset_index').setVisibility(1);
+        $('#tab_trading_times').setVisibility(1);
 
-        const $analysis_tabs = $('#trading_analysis_content').find('#analysis_tabs');
-        if ($analysis_tabs.length) {
-            $analysis_tabs.find('li a').click(function(e) {
-                e.preventDefault();
-                const $li = $(this).parent();
-                sessionStorage.setItem('currentAnalysisTab_Beta', $li.attr('id'));
-                if (!$li.hasClass('active')) {
-                    loadAnalysisTab();
-                }
-            });
-        }
+        $('#analysis_tabs').find('li a').on('click', (e) => {
+            e.preventDefault();
+            const li = e.target.parentElement;
+            sessionStorage.setItem('currentAnalysisTab_Beta', li.id);
+            if (!li.classList.contains('active')) {
+                loadAnalysisTab(li.id);
+            }
+        });
     };
 
     /*
      * This function handles all the functionality on how to load
      * tab according to current paramerted
      */
-    const loadAnalysisTab = () => {
-        const current_tab = getActiveTab();
-        const current_link = document.querySelector(`#${current_tab} a`);
-        const content_id = document.getElementById(`${current_tab}-content`);
+    const loadAnalysisTab = (tab) => {
+        const current_tab = tab || getActiveTab();
 
-        const analysis_nav_element = document.querySelector('#trading_analysis_content #analysis_tabs');
-        commonTrading.toggleActiveNavMenuElement_Beta(analysis_nav_element, current_link.parentElement);
+        $('#analysis_tabs').find('li').removeClass('active');
+        $(`#${current_tab}`).addClass('active');
         toggleActiveAnalysisTabs();
 
         switch (current_tab) {
@@ -109,16 +95,7 @@ const TradingAnalysis_Beta = (() => {
                 $('#tab_trading').find('times-content').find('h1').hide();
                 break;
             default: {
-                const url = current_link.getAttribute('href');
-                $.ajax({
-                    method: 'GET',
-                    url   : url,
-                }).done((data) => {
-                    elementInnerHtml(content_id, data);
-                    if (current_tab === 'tab_explanation') {
-                        showExplanation(current_link.href);
-                    }
-                });
+                showExplanation();
                 break;
             }
         }
@@ -149,21 +126,11 @@ const TradingAnalysis_Beta = (() => {
     /*
      * handle the display of proper explanation based on parameters
      */
-    const showExplanation = (href) => {
-        const options = Url.paramsHash(href);
-        const form_name    = options.form_name || 'risefall';
-        const show_image   = options.show_image   ? options.show_image   > 0 : true;
-        const show_winning = options.show_winning ? options.show_winning > 0 : true;
-        const show_explain = true;
-        const $container   = $('#tab_explanation-content');
+    const showExplanation = () => {
+        const $container = $('#tab_explanation-content');
 
-        if (show_winning) {
-            $container.find(`#explanation_winning, #winning_${form_name}`).setVisibility(1);
-        }
-
-        if (show_explain) {
-            $container.find(`#explanation_explain, #explain_${form_name}`).setVisibility(1);
-        }
+        $container.find('#explanation_winning > div, #explanation_explain > div, #explanation_image').setVisibility(0);
+        $container.find(`#explanation_winning, #winning_${form_name}, #explanation_explain, #explain_${form_name}`).setVisibility(1);
 
         const images = {
             risefall: {
@@ -200,7 +167,7 @@ const TradingAnalysis_Beta = (() => {
             },
         };
 
-        if (show_image && images.hasOwnProperty(form_name)) {
+        if (images[form_name]) {
             const language = getLanguage().toLowerCase();
             const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(language === 'ja' ? `${language}/` : '')}`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
