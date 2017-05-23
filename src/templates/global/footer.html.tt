@@ -7,6 +7,19 @@
 </div>
 [% END %]
 
+[% BLOCK social_icons %]
+<div class="gr-padding-10 gr-row">
+    [% IF is_centered %]
+    <div class="gr-2 gr-1-p gr-3-m"></div>
+    [% END %]
+    [% FOREACH networks %]
+        <a href="[% href %]" target="_blank" class="[% IF is_centered %]gr-2 gr-1-m[% ELSE %]gr-3[% END %] gr-no-gutter-right">
+            <img class="responsive" src="[% request.url_for('images/pages/footer/' _ media _ '.svg') %]"/>
+        </a>
+    [% END %]
+</div>
+[% END %]
+
 [% IF !full_width %]
 </div> [% # closes container %]
 [% END %]
@@ -74,6 +87,15 @@
                         [% INCLUDE footer_column header=l('{JAPAN ONLY}Company Profile') wrapper_class='invisible ja-show' items=[
                             { text=l('{JAPAN ONLY}Company Profile & Disclosure'), href=request.url_for('company-profile') },
                         ] %]
+
+                        <div class="gr-4 invisible ja-show">
+                            <h4 class="secondary-color"><strong>[% l('{JAPAN ONLY}Social Media') %]</strong></h4>
+                            [% INCLUDE social_icons networks=[
+                                { media='youtube',     href='https://www.youtube.com/channel/UC0BZmStXHJdsrjboyLgcf8A' },
+                                { media='facebook',    href='https://www.facebook.com/BinaryKK/' },
+                                { media='twitter',     href='https://twitter.com/binarykk' },
+                            ] %]
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,18 +120,8 @@
                             </a>
                         </div>
                     </div>
-                    [% BLOCK social_icons %]
-                        <div class="gr-padding-10 gr-row">
-                            <div class="gr-2 gr-1-p gr-3-m"></div>
-                            [% FOREACH networks %]
-                                <a href="[% href %]" target="_blank" class="gr-2 gr-1-m gr-no-gutter-right">
-                                    <img class="responsive" src="[% request.url_for('images/pages/footer/' _ media _ '.svg') %]"/>
-                                </a>
-                            [% END %]
-                        </div>
-                    [% END %]
 
-                    [% INCLUDE social_icons networks=[
+                    [% INCLUDE social_icons is_centered=1 networks=[
                         { media='youtube',     href='https://www.youtube.com/user/BinaryTradingVideos' },
                         { media='google-plus', href='https://plus.google.com/106251151552682209951' },
                         { media='facebook',    href='https://www.facebook.com/binarydotcom' },
