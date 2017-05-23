@@ -39,7 +39,8 @@ my @urls = (
     ['open-source-projects'   , 'monthly', '0.80' , 'ja'],
 
     ['cashier/payment_methods' , 'monthly', '0.80', 'ja'],
-    ['cashier/epg_forwardws'   , 'monthly', '0.80', 'NOT-ja'],
+    ['cashier/deposit-jp'      , 'monthly', '0.80', 'NOT-ja'],
+    ['cashier/withdraw-jp'     , 'monthly', '0.80', 'NOT-ja'],
     ['resources/asset_indexws' , 'monthly', '0.80', 'ja'],
     ['resources/market_timesws', 'monthly', '0.80'],
 
