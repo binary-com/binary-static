@@ -58,13 +58,13 @@ const CashierPassword = (() => {
         const $form_error = $('#form_error');
         const $form_message = $('#form_message');
         $form_message.text('');
-        $form_error.text('');
+        $form_error.setVisibility(0);
         if (response.error) {
             let message = response.error.message;
             if (response.error.code === 'InputValidationFailed') {
                 message = 'Sorry, you have entered an incorrect cashier password';
             }
-            $form_error.text(localize(message));
+            $form_error.text(localize(message)).setVisibility(1);
             return;
         }
         redirect_url = sessionStorage.getItem('cashier_lock_redirect') || '';

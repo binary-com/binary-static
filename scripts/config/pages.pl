@@ -107,6 +107,7 @@ sub all_pages {
 
         ['logged_inws',                'global/logged_in',       undef],
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],
+        ['ico',                        'static/ico',             undef],
     );
 }
 

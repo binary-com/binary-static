@@ -24,3 +24,8 @@ require('./binary/components/trackjs_onerror');
 const BinaryLoader = require('./binary/base/binary_loader');
 
 $(window).on('load', BinaryLoader.init);
+$(window).on('pageshow', (e) => { // Safari doesn't fire load event when using back button
+    if (e.originalEvent.persisted) {
+        BinaryLoader.init();
+    }
+});

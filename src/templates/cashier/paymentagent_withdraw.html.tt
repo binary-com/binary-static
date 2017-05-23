@@ -26,7 +26,7 @@
         <p>[% l('Transfer to') %]: <span id="lblAgentName"></span><br />[% l('Amount') %]: <span id="lblCurrency"></span> <span id="lblAmount"></span></p>
 
         [% INCLUDE submit_button custom_btn_id='btnBack' custom_btn_href='javascript:;' custom_btn_text=l('Back')
-            type='submit' text=l('Confirm') %]
+            type='submit' text=l('Confirm') is_left_align=1 %]
     </form>
 
     <div id="viewForm" class="viewItem invisible">
