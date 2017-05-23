@@ -55,12 +55,12 @@
         [% UNLESS no_error %]
         <div id="[% msg_id || 'msg_form' %]" class="error-msg invisible"></div>
         [% END %]
+        <div class="gr-padding-10">
         [% IF custom_btn_text %]
             <a class="button" href="[% custom_btn_href %]" id="[% custom_btn_id %]">
                 <span class="button">[% custom_btn_text %]</span>
             </a>
         [% END %]
-        <div class="gr-padding-10">
             <button id="[% id || 'btn_submit' %]"[% IF type=='submit' %] type="submit"[% END %]>[% text %]</button>
         </div>
     [% UNLESS no_wrapper %]
