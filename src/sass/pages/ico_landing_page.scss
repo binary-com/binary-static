@@ -233,13 +233,11 @@ input[type='text']:focus, input[type='submit']:focus {
     top: 0;
     border-width: 0 0 1px;
     margin-bottom: 20px;
-    min-height: 50px !important;
-    padding: 10px;
     -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     overflow: auto;
-    height: auto;
+    padding: 10px 0;
 }
 
 .navbar-brand {
@@ -257,7 +255,7 @@ input[type='text']:focus, input[type='submit']:focus {
     float: right;
     display: flex;
     > li {
-        padding: 15px 15px 15px 25px;
+        padding: 10px 15px;
     }
     a, a:visited {
         color: $COLOR_WHITE !important;
@@ -273,7 +271,7 @@ input[type='text']:focus, input[type='submit']:focus {
 }
 
 .navbar-fixed-top.top-nav-collapse {
-    padding: 0 10px;
+    padding: 0;
     background: $COLOR_BLUE !important;
 }
 
@@ -309,16 +307,20 @@ input[type='text']:focus, input[type='submit']:focus {
         position: inherit;
         background: $COLOR_BLUE;
         margin-bottom: 0;
-        max-height: 50px;
+        height: 50px;
         overflow: hidden;
-        -webkit-transition: max-height 1s;
-        -moz-transition: max-height 1s;
-        -ms-transition: max-height 1s;
-        -o-transition: max-height 1s;
-        transition: max-height 1s;
+        padding: 0;
+        -webkit-transition: height 0.5s;
+        -moz-transition: height 0.5s;
+        -ms-transition: height 0.5s;
+        -o-transition: height 0.5s;
+        transition: height 0.5s;
+        .navbar-header {
+            padding: 10px;
+        }
     }
     .navbar-fixed-top.expand {
-        max-height: 400px;
+        height: 180px;
     }
     .navbar-brand {
         float: none;
@@ -336,7 +338,7 @@ input[type='text']:focus, input[type='submit']:focus {
         display: block;
         > li {
             padding: 0;
-            margin: 15px;
+            margin: 10px 15px;
         }
     }
     input[type='text'] {

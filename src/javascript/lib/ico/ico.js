@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // Toggle mobile menu
     const toggleButton = document.getElementById('toggle-menu');
+    const navbar = document.getElementsByClassName('navbar-fixed-top')[0];
     toggleButton.addEventListener('click', function (e) {
-        const navbar = document.getElementsByClassName('navbar-fixed-top')[0];
         if (navbar.classList.contains('expand')) {
             navbar.classList.remove('expand');
         } else {
