@@ -72,6 +72,9 @@ function checkWidth() {
 // scrollTo function with animation
 // - Gist reference: https://gist.github.com/andjosh/6764939
 function scrollTo(element, to, duration) {
+    if (!element.scrollTop) {
+        element = document.documentElement; // handles FF and IE browsers
+    }
     let start = element.scrollTop,
         change = to - start,
         currentTime = 0,
