@@ -31,7 +31,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
 
-        <title>Binary.com ICO</title>
+        [% PROCESS global/title.html.tt %]
 
         [% INCLUDE link favicons=[
             { size='57' },
@@ -68,13 +68,13 @@
                             <a href="#page-top"></a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#how-ico-works" on>How the ICO Works</a>
+                            <a class="page-scroll" href="#how-ico-works">[% l("How the ICO Works") %]</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#who-we-are">Who We Are</a>
+                            <a class="page-scroll" href="#who-we-are">[% l("Who We Are") %]</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#our-growth">Our Growth</a>
+                            <a class="page-scroll" href="#our-growth">[% l("Our Growth") %]</a>
                         </li>
                     </ul>
                 </div>
@@ -86,7 +86,7 @@
                 <div class="container center-text content-inverse-color">
                     <div class="gr-row">
                         <div class="gr-12">
-                            <h1 class="brand-heading">Binary.com ICO<br />Pre-announcement</h1>
+                            <h1 class="brand-heading">[% l("[_1] ICO <br /> Pre-announcement", broker_name) %]</h1>
                             <p class="intro-text">[% l("Invest in the world's premier platform for binary options trading") %]</p>
                             <p class="intro-subtext">[% l("An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares.") %]</p>
                         </div>
