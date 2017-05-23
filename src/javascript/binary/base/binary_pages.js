@@ -48,7 +48,6 @@ const VirtualAccOpening          = require('../websocket_pages/user/new_account/
 const ResetPassword              = require('../websocket_pages/user/reset_password');
 const TNCApproval                = require('../websocket_pages/user/tnc_approval');
 
-const CashierJP     = require('../../binary_japan/cashier');
 const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test');
 
 const pages_config = {
@@ -98,7 +97,6 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
-    'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
     'home-jp'                : { module: Home,                       not_authenticated: true },
@@ -111,7 +109,6 @@ const pages_config = {
     'volidx-markets'         : { module: StaticPages.VolidxMarkets },
     'why-us'                 : { module: WhyUs },
     'why-us-jp'              : { module: WhyUs },
-    'withdraw-jp'            : { module: CashierJP.Withdraw,         is_authenticated: true, only_real: true },
 };
 
 module.exports = pages_config;
