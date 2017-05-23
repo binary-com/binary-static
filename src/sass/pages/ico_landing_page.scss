@@ -133,6 +133,20 @@ hr {
 }
 
 // Our growth section
+#charts {
+    position: relative;
+    .vertical-line { // vertical line between charts
+        position: absolute;
+        width: 1px;
+        background-color: $COLOR_GRAY;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        height: 95%;
+    }
+}
+
 .chart {
     position: relative;
     margin-top: 15px;
@@ -151,20 +165,6 @@ hr {
 
 .chart-heading-left {
     left: 0;
-}
-
-#our-growth {
-    position: relative;
-}
-
-.vertical-line { // vertical line between charts
-    position: absolute;
-    width: 1px;
-    background-color: $COLOR_GRAY;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    height: 1250px;
 }
 
 // What are binary options section

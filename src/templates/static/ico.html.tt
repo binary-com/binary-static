@@ -266,7 +266,7 @@
                     <p class="section-intro">[% l("These key metrics will show you what growth and success looks like for an award-winning binary options trading platform.") %]</p>
                 </div>
             </div>
-            <div class="gr-row">
+            <div id="charts" class="gr-row">
                 <div class="gr-6 gr-12-m">
                     <div class="chart">
                         <h5 class="chart-heading chart-heading-right">[% l("Dividends paid out") %]</h5>
