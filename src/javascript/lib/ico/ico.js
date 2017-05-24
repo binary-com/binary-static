@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function(){
     // Scroll to section
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('page-scroll')) {
+            document.getElementById('home').classList.remove('invisible');
+            document.getElementById('faq').classList.add('invisible');
             const target = e.target.getAttribute('href').substr(1);
             let offset = 0;
             if (target === 'who-we-are' || target === 'page-top') {
@@ -42,6 +44,14 @@ document.addEventListener("DOMContentLoaded", function(){
             scrollTo(document.body, to, 1000);
             e.preventDefault();
         }
+    });
+
+    const faqButton = document.getElementById('faq-btn');
+    faqButton.addEventListener('click', function(e) {
+        document.getElementById('faq').classList.remove('invisible');
+        scrollTo(document.body, 0, 1000);
+        e.stopPropagation();
+        document.getElementById('home').classList.add('invisible');
     });
 
     window.onresize = checkWidth;

@@ -352,3 +352,25 @@ input[type='text']:focus, input[type='submit']:focus {
         min-width: 100px;
     }
 }
+
+#faq-section {
+    padding: 100px 15px;
+}
+
+.faq {
+    margin: 15px 0;
+    border: 1px solid $COLOR_LIGHT_GRAY;
+    h4 {
+        background-color: $COLOR_LIGHT_GRAY;
+        padding: 20px;
+    }
+    p {
+        padding: 0 20px;
+    }
+    strong {
+        font-weight: bold;
+    }
+    ol {
+        margin: 1.25em 0 1.25em 2em; // overwrite binary.css
+    }
+}
