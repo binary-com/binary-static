@@ -47,7 +47,7 @@ describe('Portfolio', () => {
         expect(portfolio_data).to.have.property('contract_id')
             .and.to.be.a('string');
         expect(portfolio_data).to.have.property('payout')
-            .and.to.be.a('string');
+            .and.to.be.a('number');
         expect(portfolio_data).to.have.property('longcode')
             .and.to.be.a('string');
         expect(portfolio_data).to.have.property('currency')
@@ -61,7 +61,7 @@ describe('Portfolio', () => {
             .and.to.have.property('contract_id')
             .and.to.be.a('string');
         expect(proposal_open_contract_data).to.have.property('bid_price')
-            .and.to.be.a('string');
+            .and.to.be.a('number');
         expect(proposal_open_contract_data).to.have.property('is_sold')
             .and.to.be.a('number');
         expect(proposal_open_contract_data).to.have.property('is_valid_to_sell')
@@ -73,14 +73,14 @@ describe('Portfolio', () => {
         const indicative_sum_data = portfolio.getIndicativeSum(values_mock_data);
         const calculated_sum =
             parseFloat(values_mock_data[9324828148].indicative) + parseFloat(values_mock_data[9299986648].indicative);
-        expect(indicative_sum_data).to.be.a('string')
-            .and.to.eql(calculated_sum.toFixed(2));
+        expect(indicative_sum_data).to.be.a('number')
+            .and.to.eql(calculated_sum);
     });
     it('Should calculate the correct sum purchase', () => {
         const sum_purchase_data = portfolio.getSumPurchase(values_mock_data);
         const calculated_sum =
             parseFloat(values_mock_data[9324828148].buy_price) + parseFloat(values_mock_data[9299986648].buy_price);
-        expect(sum_purchase_data).to.be.a('string')
-            .and.to.eql(calculated_sum.toFixed(2));
+        expect(sum_purchase_data).to.be.a('number')
+            .and.to.eql(calculated_sum);
     });
 });
