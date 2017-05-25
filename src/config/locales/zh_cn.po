@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-05-24 08:31+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Simplified) "
-"<https://hosted.weblate.org/projects/binary/static/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/binary/static/zh_Hans/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -93,6 +92,9 @@ msgstr "%1 应用程序编程界面(\"API\")的条款和条件"
 msgid "%1 ICO <br /> Pre-announcement"
 msgstr "%1 ICO <br />预告"
 
+msgid "%1 ICO FAQ"
+msgstr ""
+
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO，在全球领先的二元期权交易平台投资"
 
@@ -132,6 +134,11 @@ msgstr "%1 天 %2 小时 %3 分钟"
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "已完成从%2至账号%3的%1存款。交易编号: %4"
 
+#, fuzzy
+#| msgid "Binary.com developed the systems, methods, and algorithms that made it accessible to retail traders."
+msgid "%1 developed the systems, methods, and algorithms that made binary options accessible to retail traders."
+msgstr "Binary.com开发齐全的交易系统、方式和算法，方便零售交易者使用。"
+
 msgid "%1 does not charge any transfer fees."
 msgstr "%1不收取任何转账费用。"
 
@@ -170,6 +177,9 @@ msgstr "%1 是充满活力和灵活的工作场所。除了在各办事处工作
 
 msgid "%1 is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
 msgstr "%1是拥有牌照及受监管的交易平台，为全球超过1,000,000 个客户提供服务。我们持有多个牌照，并遵守世界各地的交易规则。1999 年以来，我们一直坚定不移地致力为客户提供完整和可靠的服务。除严格遵守监管规则外，我们也始终坚持最高的道德标准。"
+
+msgid "%1 is a well-established company founded in 1999. The growth of our business led us to consider an IPO, as is the case with most successful companies. However, we believe that stock exchanges will be gradually replaced by cryptocurrency exchanges in the coming decade, and IPOs will be gradually replaced by ICOs. This is why we decided to perform an ICO instead of an IPO."
+msgstr ""
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 不断为系统管理员、技术参与者和主管人才团队添加经验丰富的专业人员。我们在以下区域开发了多个吸引人的工作机会，以支持我们持续成长:"
@@ -302,6 +312,9 @@ msgstr "%1支持%2。这是英国一家领先的慈善机构，致力于消除�
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1在久负盛名的伦敦EGR操作员颁奖仪式中荣获2015年金融博彩操作员第一奖。"
+
+msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘coloured coins’ on the Bitcoin blockchain, and ‘ERC20’ tokens on the Ethereum blockchain."
+msgstr ""
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "已完成从账号%2至%3的%1提款。交易编号: %4交易编号：%4"
@@ -924,6 +937,11 @@ msgstr "数学、 物理或工程专科硕士或博士学位"
 msgid "An assertive, sales-driven personality, able to adapt quickly and achieve powerful results"
 msgstr "有主见，具销售驱动型人格，能够很快适应并达到强大效果"
 
+#, fuzzy
+#| msgid "An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares."
+msgid "An ‘Initial Coin Offering’ (or ‘ICO’ for short) is a fundraising method that’s relatively similar to an Initial Public Offering (IPO). In an ICO, cryptocurrency such as ‘coloured coins’ or ‘Ethereum tokens’ are issued instead of shares."
+msgstr "首次公开售币（或简称为ICO）是类似于IPO的一种融资方法。ICO所发行的不是股份，而是加密代币。"
+
 msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "对范围列出的域和子域进行分析及测试。"
 
@@ -1457,9 +1475,6 @@ msgstr "Binary 平台平均每秒钟进行 15  宗 %1交易%2，全天候提供�
 
 msgid "Binary.com by the numbers"
 msgstr "Binary.com数据"
-
-msgid "Binary.com developed the systems, methods, and algorithms that made it accessible to retail traders."
-msgstr "Binary.com开发齐全的交易系统、方式和算法，方便零售交易者使用。"
 
 msgid "Binary.com employs over 130 people across its offices in Malta, Malaysia, Japan, and Germany."
 msgstr "Binary.com在马耳他、马来西亚、日本和德国均开设办事处，雇员人数超过130人。"
@@ -3053,6 +3068,11 @@ msgstr "免费交易图表"
 msgid "Free webinars"
 msgstr "免费网络讲座"
 
+#, fuzzy
+#| msgid "Frequently Asked Questions (FAQs)"
+msgid "Frequently Asked Questions"
+msgstr "常见问题 (FAQ)"
+
 msgid "Fresh graduates who meet our basic requirements and are passionate about pursuing a professional career in administrative services are welcome to apply."
 msgstr "欢迎符合基本要求，并有热情从事行政工作的应届大学毕业生踊跃申请。"
 
@@ -3302,6 +3322,14 @@ msgstr "我收到联盟收益的方式和时间是？"
 msgid "How can I become an affiliate?"
 msgstr "我如何才能成为联盟会员？"
 
+msgid "How can I learn more about ICOs and cryptocurrencies?"
+msgstr ""
+
+#, fuzzy
+#| msgid "Purchase our tokens"
+msgid "How can I purchase your tokens?"
+msgstr "买入令牌"
+
 msgid "How do I change my payment method?"
 msgstr "我如何更改付款方式？"
 
@@ -3310,6 +3338,9 @@ msgstr "如何向账户存入资金？"
 
 msgid "How do I know how much I have earned?"
 msgstr "我怎么知道我赚了多少？"
+
+msgid "How do I stay informed on the Binary.com ICO?"
+msgstr ""
 
 msgid "How do we calculate interest fees for long positions?"
 msgstr "多头头寸的利息费用如何计算？"
@@ -3338,7 +3369,9 @@ msgstr "红利多久发放一次？"
 msgid "How soon can I start trading?"
 msgstr "我需要多久才能开始交易？"
 
-msgid "How the ICO Works"
+#, fuzzy
+#| msgid "How the ICO Works"
+msgid "How the ICO works"
 msgstr "ICO如何运作"
 
 msgid "How to begin"
@@ -3357,6 +3390,16 @@ msgid "How to use a payment agent?"
 msgstr "如何使用支付代理?"
 
 msgid "How will the ICO work"
+msgstr "ICO如何运作"
+
+#, fuzzy
+#| msgid "How will the ICO work"
+msgid "How will the ICO work?"
+msgstr "ICO如何运作"
+
+#, fuzzy
+#| msgid "How will the ICO work"
+msgid "How will the tokens be offered?"
 msgstr "ICO如何运作"
 
 msgid "Human Resource Executive"
@@ -3893,7 +3936,9 @@ msgstr "想进行产品投资的EEA居民由Binary投资 (欧洲) 有限公司 (
 msgid "Investment Solicitation Policy"
 msgstr "Investment Solicitation Policy"
 
-msgid "Investment in the proposed tokens is expected to involve a high degreee of risk, there will be no assurance that token holders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum."
+#, fuzzy
+#| msgid "Investment in the proposed tokens is expected to involve a high degreee of risk, there will be no assurance that token holders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum."
+msgid "Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum."
 msgstr "我们所推荐的令牌投资含高度风险，也不保证投入资金的令牌持有人将获得利润或回本。潜在投资者须仔细了解信息备忘录上列出的风险因素。"
 
 msgid "Investment trust"
@@ -3919,6 +3964,9 @@ msgstr "爱尔兰"
 
 msgid "Is it possible to deposit the same funds through different payment methods?"
 msgstr "可否通过不同的付款方式存入同一类资金？"
+
+msgid "Is the ICO available in all jurisdictions?"
+msgstr ""
 
 msgid "Is there a cost for joining?"
 msgstr "加入需要任何费用吗？"
@@ -5060,6 +5108,11 @@ msgstr "您宠物的名字"
 msgid "Name:"
 msgstr "姓名:"
 
+#, fuzzy
+#| msgid "Need more information?"
+msgid "Need more information on the ICO?"
+msgstr "想获取更多信息?"
+
 msgid "Need more information?"
 msgstr "想获取更多信息?"
 
@@ -5407,9 +5460,6 @@ msgstr "Others"
 msgid "Our Company"
 msgstr "我们公司"
 
-msgid "Our Growth"
-msgstr "我们的增长"
-
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "自2004年3月正式启动以来，我们的国际联盟项目一直及时足额支付款项。在日本，您的佣金将在您介绍的客户符合资格条件的日历月结束后三十天内汇入您的联盟会员账户。"
 
@@ -5448,6 +5498,11 @@ msgstr "在某些情况下，我们所决心的执行因素相对重要性可能
 
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "我们获取了主要竞争对手之一BetsForTraders 的客户群，为公司快速的内生性增长提供支持。"
+
+#, fuzzy
+#| msgid "Our Growth"
+msgid "Our growth"
+msgstr "我们的增长"
 
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "我们的信息安全政策基于访问控制和业务持续性的业内最佳实践。"
@@ -5806,6 +5861,9 @@ msgstr "请提交有效的验证令牌。"
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "请将以上信息发送到<a href='mailto:%1'>%1</a>。"
 
+msgid "Please subscribe to our mailing list using the form below for occasional announcements relating to the ICO."
+msgstr ""
+
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr "请注意，我们的掉期率也取决于您的持仓时间和天数︰ "
 
@@ -6088,6 +6146,11 @@ msgstr "阅读并了解我们的HackerOne编程缺陷奖励计划政策。"
 msgid "Read more"
 msgstr "阅读更多"
 
+#, fuzzy
+#| msgid "Read more"
+msgid "Read our FAQ"
+msgstr "阅读更多"
+
 msgid "Read our blog for the stories and ideas that inspire us"
 msgstr "阅读我们的博客，了解激励我们的故事和想法"
 
@@ -6138,6 +6201,9 @@ msgstr "参考"
 
 msgid "Reference ID"
 msgstr "参考编号"
+
+msgid "Regardless of the type of token, each token will provide you with two rights:"
+msgstr ""
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Ltd更名为 Binary Ltd"
@@ -7182,6 +7248,9 @@ msgstr "外汇交易通常以<i>手</i>计量。一个标准 <i>手</i>相当于
 msgid "The GBP Index is a weighted Index, measuring the British Pound's value against a basket of 5 global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%."
 msgstr "英镑指数是加权指数，衡量英镑相对5种全球货币（美元、欧元、澳元、日元、加元）的价值，每种货币的权重均为20%。"
 
+msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions."
+msgstr ""
+
 msgid "The Margin Level of your Real Account reaches or falls below the Stop Out Level;"
 msgstr "您的真实账户保证金水平已达到或低于强制平仓水平;"
 
@@ -7470,6 +7539,16 @@ msgstr "收益指当合约到期时实现的收益（参阅“赔付金额”）
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect."
 msgstr "我们也保留不定时修订或更换服务规则和范围的权利。网站运营期间作出的任何规则修改都不会进行追溯调整，且只适用于更改之后发生的金融合约购买行为。在任何修改条款生效前，公司有责任通知客户。"
 
+#, fuzzy
+#| msgid "As a tokenholder, you also have the right to convert your tokens into Ordinary Shares."
+msgid "The right to convert tokens into Ordinary Shares"
+msgstr "令牌持有人也有权将令牌转换成为普通股。"
+
+#, fuzzy
+#| msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
+msgid "The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares"
+msgstr "令牌可转换为等值的Binary普通股作为红利。"
+
 msgid "The server <a href=\"%1\">endpoint</a> is: %2"
 msgstr "服务器<a href=\"%1\">终端</a>是: %2"
 
@@ -7493,6 +7572,9 @@ msgstr "“我们”、“我们的”、“公司”、或 “%1” 等词指 B
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "“我们”、“我们的”、“公司”、或 “%1” 等词指 Binary (V) 有限公司或Binary (C.R.) S.A.，根据网站开户程序中客户账户的司法管辖而定 。"
+
+msgid "The tokens will be offered over a period of one month. The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017. The ICO price and auction method will be announced in due course."
+msgstr ""
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
 msgstr "通过本网站完成的交易以及客户和本公司之间的关系由本公司注册所在国（即“管辖地”）的法律管辖和解释，即英属马恩岛、马耳他或哥斯达黎加三者之一。对于可能出现的任何相关纠纷，您认同管辖地法院有作出相应处置的专属管辖权。因此，您不可撤销地服从管辖地法院对所有此类纠纷的司法管辖权，且您同意，对本公司的任何索赔只能在管辖地法院提起。详细信息请参阅本公司的投诉和纠纷部分。"
@@ -7683,12 +7765,10 @@ msgstr "此不可抗力事件章节不适用于波动率指数。"
 msgid "This symbol is not active. Please try another symbol."
 msgstr "这是个非活跃符号。请试另一符号。"
 
-msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of Binary.com. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
-msgstr ""
-"网站与推荐的ICO并不构成对所述任何管辖区内的令牌出价或邀约购入为非法出价或购入。令牌仅对Binary.com的注册客户出价。美国证券交易委员会以及任何国"
-"家，省份或地区的证券委员会以及任何国家或管辖地区的任何其他监管机构均未批准或不批准令牌的建议出价。关于欧洲经济区管辖地区内的令牌出价将根据欧盟指令2003"
-"/71/EC（及修订版，包括2010/73/EU指令）的豁免范围，特别是对合格投资者的豁免范围内执行。令牌出价对其他一些管辖区的合格或专业投资者也将受限制"
-"。这些限制的细节将在报价信息备忘录中详细说明。"
+#, fuzzy
+#| msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of Binary.com. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
+msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of %1. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
+msgstr "网站与推荐的ICO并不构成对所述任何管辖区内的令牌出价或邀约购入为非法出价或购入。令牌仅对Binary.com的注册客户出价。美国证券交易委员会以及任何国家，省份或地区的证券委员会以及任何国家或管辖地区的任何其他监管机构均未批准或不批准令牌的建议出价。关于欧洲经济区管辖地区内的令牌出价将根据欧盟指令2003/71/EC（及修订版，包括2010/73/EU指令）的豁免范围，特别是对合格投资者的豁免范围内执行。令牌出价对其他一些管辖区的合格或专业投资者也将受限制。这些限制的细节将在报价信息备忘录中详细说明。"
 
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "本网站包含其他网站链接，并可能含有第三方网站的横幅或图标广告。这些网站及广告可能会向您的网页浏览器写入cookies，因此不在我们的控制范围内。我们不对这些网站的隐私规范和内容负责。由于他们的隐私政策可能有所不同，我们建议您进行相关了解。"
@@ -7759,6 +7839,15 @@ msgstr "要开立MT5金融账户，请完成<a href=\"%1\">财务评估</a>。"
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "要启用 cookie，请根据您的浏览器版本选择对应的指示说明，并进行操作。"
 
+msgid "To learn how to trade cryptocurrency assets, we recommend that you open an account with US-based cryptocurrency exchange, <a href='https://poloniex.com/'>POLONIEX</a>."
+msgstr ""
+
+msgid "To learn more about Bitcoin, we recommend that you <a href='https://blockchain.info/wallet/#/'>open a Bitcoin wallet with Blockchain</a> and <a href='https://www.bitcoin.com/buy-bitcoin'>purchase bitcoins using a local exchange</a> in your country."
+msgstr ""
+
+msgid "To learn more about Ethereum, we recommend that you install the <a href='https://metamask.io/'>Metamask plugin for Chrome</a>, which will allow you to convert your Bitcoin into Ether."
+msgstr ""
+
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
 msgstr "要了解关于外汇100%强制清算水平的更多信息，请阅读我们的<a href=\"%1\">保证金政策</a>。"
 
@@ -7798,11 +7887,16 @@ msgstr "今天我们已成为市场的先驱者，也是全球最受欢迎的在
 msgid "Token"
 msgstr "令牌"
 
-msgid "Token Dividends"
+#, fuzzy
+#| msgid "Token Dividends"
+msgid "Token dividends"
 msgstr "令牌红利"
 
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
 msgstr "令牌可转换为等值的Binary普通股作为红利。"
+
+msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our account authentication process."
+msgstr ""
 
 msgid "Total"
 msgstr "总计"
@@ -8525,8 +8619,7 @@ msgid "We’ve generated over USD 3 billion in turnover since inception, thanks 
 msgstr "由于我们的业务自2010年以来快速增长，成立以来的总营业额高达30多亿美元。"
 
 msgid "We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in four countries: Malaysia, Malta, Japan, and Germany."
-msgstr ""
-"多年来，无论在人力和办公室方面，&mdash;&mdash;我们的规模不断扩大。目前在马来西亚、马耳他、日本和德国这四个国家有五个办事处和130多名员工。"
+msgstr "多年来，无论在人力和办公室方面，&mdash;&mdash;我们的规模不断扩大。目前在马来西亚、马耳他、日本和德国这四个国家有五个办事处和130多名员工。"
 
 msgid "We’ve obtained financial and gambling licenses to operate in key countries and regions such as Europe, the Isle of Man, the United Kingdom, and Japan."
 msgstr "我们已经欧洲、马恩岛、英国和日本等关键国家和地区获得金融和博彩经营许可证。"
@@ -8541,6 +8634,11 @@ msgid "What commission plan do you offer?"
 msgstr "你们提供怎样的佣金计划？"
 
 msgid "What is Margin?"
+msgstr "什么是保证金？"
+
+#, fuzzy
+#| msgid "What is Margin?"
+msgid "What is an ICO?"
 msgstr "什么是保证金？"
 
 msgid "What is the %1 affiliate program?"
@@ -8663,17 +8761,24 @@ msgstr "虽然我们将按照最佳执行职责行事，致力以要求价格对
 msgid "Whilst we endeavour to take all reasonable and sufficient steps, as required by applicable laws and regulations, to identify potential conflicts of interests between ourselves and our clients, or between one client and another, that arise in the course of providing the margin trading services as described in this Agreement, by establishing and implementing policies and procedures, it is possible that we may execute certain Transactions which may have other direct or indirect material interests."
 msgstr "虽然我们将按照适用的法律和规章，努力采取一切合理和足够的步骤，通过建立和实施政策和程序，以在提供本协议所述的保证金交易服务期间确定我们和客户之间或客户与客户之间潜在的利益冲突，但我们可能会执行某些可能有其他直接或间接物质利益的交易。"
 
-msgid "Who We Are"
-msgstr "我们是谁"
-
 msgid "Who can apply to be a Payment Agent?"
 msgstr "谁能申请成为付款代理？"
 
 msgid "Who can be a client on the %1 platform?"
 msgstr "哪些人可能成为 %1 平台的客户？"
 
+#, fuzzy
+#| msgid "Purchase our tokens"
+msgid "Who can purchase the tokens?"
+msgstr "买入令牌"
+
 msgid "Who is Binary.com"
 msgstr "谁是Binary.com"
+
+#, fuzzy
+#| msgid "Where we are"
+msgid "Who we are"
+msgstr "我们的位置"
 
 msgid "Why Choose Binary Trading?"
 msgstr "为何选择二元期权交易？"
@@ -8692,6 +8797,11 @@ msgstr "为何选择我们"
 
 msgid "Why do Clients choose to use Payment Agents?"
 msgstr "客户为什么选择使用支付代理？"
+
+#, fuzzy
+#| msgid "Who is Binary.com"
+msgid "Why is Binary.com performing an ICO?"
+msgstr "谁是Binary.com"
 
 msgid "Why limit yourself? Whatever your market view, %1 allows you to put your strategy to work and profit from your predictions."
 msgstr "何必局限自己？无论您的市场观点如何，%1 都能让您的交易策略实现价值，让您能通过预测市场获利。"
@@ -9312,6 +9422,9 @@ msgstr "您的取款限额为 %1 %2 (或其他货币的等值 ）。"
 msgid "Your withdrawal limit is %1 %2."
 msgstr "您的取款限额是 %1 %2。"
 
+msgid "You’ll be able to purchase our tokens using the funds in your %1 account. We will soon be introducing native <strong>BTC (Bitcoin)</strong> and <strong>ETH (Ethereum)</strong> account facilities to enable your participation in the ICO."
+msgstr ""
+
 msgid "ZAR 1 per point"
 msgstr "每点 1 南非兰特"
 
@@ -9707,9 +9820,7 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
 msgstr "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1. %1Link to binary_affiliate_guidelines.pdf%2."
-msgstr ""
-"{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1. %1Link to "
-"binary_affiliate_guidelines.pdf%2."
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1. %1Link to binary_affiliate_guidelines.pdf%2."
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
 msgstr "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
@@ -11223,8 +11334,16 @@ msgstr "条款和条件审批"
 msgid "Account Limits"
 msgstr "账户限额"
 
-msgid "ICO"
-msgstr "ICO"
+#, fuzzy
+#| msgid "Equity Offering"
+msgid "Initial Coin Offering"
+msgstr "股票发行"
+
+#~ msgid "Who We Are"
+#~ msgstr "我们是谁"
+
+#~ msgid "ICO"
+#~ msgstr "ICO"
 
 #~ msgid "Version 44. Last modified 2017-04-19."
 #~ msgstr "版本44。最后修改时间2017-04-19。"
@@ -11988,9 +12107,6 @@ msgstr "ICO"
 
 #~ msgid "Valletta, the capital of Malta"
 #~ msgstr "马耳他首都瓦莱塔"
-
-#~ msgid "Where we are"
-#~ msgstr "我们的位置"
 
 #~ msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries."
 #~ msgstr "无论是在马耳他或马来西亚，您都可以享受优渥的生活。相比大多数西方国家，在这些地方您的收入会更经用。"
@@ -19375,9 +19491,6 @@ msgstr "ICO"
 #~ msgid "Divestiture"
 #~ msgstr "剥离"
 
-#~ msgid "Equity Offering"
-#~ msgstr "股票发行"
-
 #~ msgid "Exchange Offering"
 #~ msgstr "换股收购"
 
@@ -22008,9 +22121,6 @@ msgstr "ICO"
 
 #~ msgid "47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands, is partly owned by the"
 #~ msgstr "海峡群岛(Channel Islands), 泽西岛(Jersey)，圣赫利尔(St. Helier)，滨海艺术中心(Esplanade)47号，邮编JE 0BD， 其部分股权拥有者为"
-
-#~ msgid "Frequently Asked Questions (FAQs)"
-#~ msgstr "常见问题 (FAQ)"
 
 #~ msgid "Regent Pacific Group Limited,"
 #~ msgstr "丽晶太平洋集团(Regent Pacific Group)有限公司，"
