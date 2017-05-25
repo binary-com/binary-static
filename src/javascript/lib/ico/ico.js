@@ -14,13 +14,13 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         let navbarHeight = checkWidth();
         const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
-        scrollTo(document.body, to, 1500);
+        scrollTo(document.body, to, 1000);
     }
 
     // Toggle mobile menu
     const toggleButton = document.getElementById('toggle-menu');
+    const navbar = document.getElementsByClassName('navbar-fixed-top')[0];
     toggleButton.addEventListener('click', function (e) {
-        const navbar = document.getElementsByClassName('navbar-fixed-top')[0];
         if (navbar.classList.contains('expand')) {
             navbar.classList.remove('expand');
         } else {
@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function(){
     // Scroll to section
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('page-scroll')) {
+            document.getElementById('home').classList.remove('invisible');
+            document.getElementById('faq').classList.add('invisible');
             const target = e.target.getAttribute('href').substr(1);
             let offset = 0;
             if (target === 'who-we-are' || target === 'page-top') {
@@ -39,9 +41,17 @@ document.addEventListener("DOMContentLoaded", function(){
             }
             let navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
-            scrollTo(document.body, to, 1500);
+            scrollTo(document.body, to, 1000);
             e.preventDefault();
         }
+    });
+
+    const faqButton = document.getElementById('faq-btn');
+    faqButton.addEventListener('click', function(e) {
+        document.getElementById('faq').classList.remove('invisible');
+        scrollTo(document.body, 0, 1000);
+        e.stopPropagation();
+        document.getElementById('home').classList.add('invisible');
     });
 
     window.onresize = checkWidth;
@@ -59,19 +69,33 @@ function collapseNavbar() {
     }
 }
 
+// Check view width, add navbar height as offset if on desktop
 function checkWidth() {
-    let navbarHeight;
-    if (window.innerWidth <= 320) {
-        navbarHeight = 0;
+    let mq = window.matchMedia("(max-width: 1199px)");
+    if (mq.matches) {
+        return 0;
     } else {
-        navbarHeight = document.getElementsByClassName('navbar-fixed-top')[0].scrollHeight;
+        return document.getElementsByClassName('navbar-fixed-top')[0].scrollHeight;
     }
-    return navbarHeight;
+}
+
+function checkBrowser() {
+    const isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
+    const isIE = /*@cc_on!@*/false || !!document.documentMode; // Internet Explorer 6-11
+
+    if (isFirefox || isIE) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // scrollTo function with animation
 // - Gist reference: https://gist.github.com/andjosh/6764939
 function scrollTo(element, to, duration) {
+    if (checkBrowser()) {
+        element = document.documentElement;
+    }
     let start = element.scrollTop,
         change = to - start,
         currentTime = 0,
