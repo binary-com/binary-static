@@ -69,14 +69,14 @@ function collapseNavbar() {
     }
 }
 
+// Check view width, add navbar height as offset if on desktop
 function checkWidth() {
-    let navbarHeight;
-    if (window.innerWidth <= 320) {
-        navbarHeight = 0;
+    let mq = window.matchMedia("(max-width: 1199px)");
+    if (mq.matches) {
+        return 0;
     } else {
-        navbarHeight = document.getElementsByClassName('navbar-fixed-top')[0].scrollHeight;
+        return document.getElementsByClassName('navbar-fixed-top')[0].scrollHeight;
     }
-    return navbarHeight;
 }
 
 function checkBrowser() {

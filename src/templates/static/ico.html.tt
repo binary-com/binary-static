@@ -68,13 +68,13 @@
                             <a href="#page-top"></a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#how-ico-works">[% l("How the ICO Works") %]</a>
+                            <a class="page-scroll" href="#how-ico-works">[% l("How the ICO works") %]</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#who-we-are">[% l("Who We Are") %]</a>
+                            <a class="page-scroll" href="#who-we-are">[% l("Who we are") %]</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#our-growth">[% l("Our Growth") %]</a>
+                            <a class="page-scroll" href="#our-growth">[% l("Our growth") %]</a>
                         </li>
                     </ul>
                 </div>
@@ -113,12 +113,12 @@
                                             <input type="hidden" name="meta_tooltip" value="" />
                                         </div>
                                         <div id="af-form-713141817" class="af-form">
-                                            <div id="af-body-713141817" class="gr-8 gr-push-4 gr-push-0-m gr-12-m af-body af-standards">
+                                            <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
                                                 <div class="af-element gr-row">
-                                                    <div class="gr-4 gr-12-m">
+                                                    <div class="gr-8 gr-12-m">
                                                         <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
                                                     </div>
-                                                    <div class="gr-2 gr-12-m">
+                                                    <div class="gr-4 gr-12-m">
                                                         <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit" />
                                                     </div>
                                                 </div>
@@ -187,7 +187,7 @@
             <div class="container content-section center-text">
                 <div class="gr-row">
                     <div class="gr-12">
-                        <h2>[% l("Token Dividends") %]</h2>
+                        <h2>[% l("Token dividends") %]</h2>
                     </div>
                     <div class="gr-4 gr-12-m">
                         <img class="icon" src="[% request.url_for('images/ico/icons/is_icon.svg') %]" />
@@ -210,7 +210,7 @@
             <div id="faq-section" class="content-section fill-bg-color center-text">
                 <div class="gr-row">
                     <div class="gr-12">
-                        <h2>[% l("Need for information on the ICO?") %]</h2>
+                        <h2>[% l("Need more information on the ICO?") %]</h2>
                     </div>
                     <div class="gr-12">
                         <button id="faq-btn" class="button">[% l("Read our FAQ") %]</button>
@@ -253,8 +253,8 @@
                                     <p>[% l("Our cutting-edge pricing technology gives you the same rates of return as the interbank market.") %]</p>
                                 </div>
                                 <div class="gr-6 gr-12-m">
-                                    <h4>[% l("Extensive product range") %]</h4>
-                                    <p>[% l("Over 100 asset classes across Forex, CFDs, and binary options.") %]</p>
+                                    <h4>[% l("Patented technology") %]</h4>
+                                    <p>[% l("[_1] developed the systems, methods, and algorithms that made binary options accessible to retail traders.", broker_name) %]</p>
                                 </div>
                             </div>
                             <div class="gr-row">
@@ -508,12 +508,12 @@
                                 <input type="hidden" name="meta_tooltip" value="" />
                             </div>
                             <div id="af-form-713141817" class="af-form">
-                                <div id="af-body-713141817" class="gr-8 gr-push-4 gr-push-0-m gr-12-m af-body af-standards">
+                                <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
                                     <div class="af-element gr-row">
-                                        <div class="gr-4 gr-12-m">
+                                        <div class="gr-8 gr-12-m">
                                             <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
                                         </div>
-                                        <div class="gr-2 gr-12-m">
+                                        <div class="gr-4 gr-12-m">
                                             <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit"/>
                                         </div>
                                     </div>
@@ -534,8 +534,8 @@
         </div>
         <div class="primary-bg-color content-inverse-color center-text">
             <div class="footnote">
-                <p>[% l("This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of Binary.com. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum.") %]</p>
-                <p>[% l("Investment in the proposed tokens is expected to involve a high degreee of risk, there will be no assurance that token holders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
+                <p>[% l("This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of [_1]. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum.", broker_name) %]</p>
+                <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
             </div>
         </div>
         <script src="[% request.url_for('js/ico/ico.js') %]"></script>

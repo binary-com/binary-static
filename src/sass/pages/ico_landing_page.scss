@@ -193,7 +193,7 @@ hr {
 
 // Aweber form
 input[type='text'] {
-    width: 300px;
+    width: 280px;
     font-size: 16px;
     padding: 10px;
     margin: 6px 0;
@@ -216,8 +216,11 @@ input[type='text']:focus, input[type='submit']:focus {
     outline: none !important;
 }
 
-.af-element {
-    display: inline-flex;
+.form-container {
+    display: flex;
+    .af-form-wrapper {
+        margin: 0 auto;
+    }
 }
 
 .notice-msg {
@@ -292,7 +295,7 @@ input[type='text']:focus, input[type='submit']:focus {
 
 @media (max-width: 1199px) {
     .intro {
-        height: 90%;
+        height: 95%;
         padding-top: 120px;
         .intro-body {
             .brand-heading {
@@ -342,7 +345,8 @@ input[type='text']:focus, input[type='submit']:focus {
         }
     }
     input[type='text'] {
-        width: 90%;
+        width: 95%;
+        text-align: center;
     }
     .vertical-line, .arrow {
         display: none;
@@ -355,6 +359,9 @@ input[type='text']:focus, input[type='submit']:focus {
 
 #faq-section {
     padding: 100px 15px;
+    #faq-btn {
+        text-transform: none !important;
+    }
 }
 
 .faq {
