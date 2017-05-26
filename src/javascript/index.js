@@ -19,8 +19,6 @@ require('./lib/jquery.sparkline.js');
 require('./lib/plugins');
 require('jquery.scrollto');
 
-require('./binary/components/trackjs_onerror');
-
 const BinaryLoader = require('./binary/base/binary_loader');
 
 $(window).on('load', BinaryLoader.init);
