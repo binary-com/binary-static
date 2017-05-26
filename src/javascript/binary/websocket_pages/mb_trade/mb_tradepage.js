@@ -25,7 +25,7 @@ const MBTradePage = (() => {
         }
 
         BinarySocket.send({ payout_currencies: 1 }).then(() => {
-            MBDisplayCurrencies('', false);
+            MBDisplayCurrencies();
             MBProcess.getSymbols();
         });
 

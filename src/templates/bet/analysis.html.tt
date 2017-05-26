@@ -3,14 +3,16 @@
     [% WRAPPER tab_container class='page-section' %]
         [% INCLUDE tabs id_ul='betsBottomPage' tabs=[
             { id='tab_portfolio',  class='invisible' },
-            { id='tab_graph' },
+            { id='tab_graph',      class=(no_graph ? 'invisible' : '') },
             { id='tab_explanation' },
             { id='tab_last_digit', class='invisible', no_href=1 },
         ] %]
     [% END %]
     [% WRAPPER tab_content_container id='bet_bottom_content' %]
         [% INCLUDE tab_content id='tab_portfolio' %]
-        [% WRAPPER tab_content id='tab_graph' %]
+
+        [% IF not no_graph %]
+            [% WRAPPER tab_content id='tab_graph' %]
             <p class="error-msg" id="chart-error"></p>
             <div id="trade_live_chart">
                 <table width="600px" align="center">
@@ -21,6 +23,7 @@
                     </tr>
                 </table>
             </div>
+            [% END %]
         [% END %]
         [% WRAPPER tab_content id='tab_explanation' class='selectedTab' %]
             [% INCLUDE bet/explanation.html.tt %]

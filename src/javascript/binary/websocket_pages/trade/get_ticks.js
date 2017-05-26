@@ -11,8 +11,6 @@ const getActiveTab_Beta    = require('./get_active_tab').getActiveTab_Beta;
 const Purchase             = require('./purchase');
 const Tick                 = require('./tick');
 const TickDisplay          = require('./tick_trade');
-const MBDefaults           = require('../mb_trade/mb_defaults');
-const MBTick               = require('../mb_trade/mb_tick');
 const BinarySocket         = require('../socket');
 const State                = require('../../base/storage').State;
 
@@ -20,7 +18,7 @@ const GetTicks = (() => {
     let underlying;
 
     const request = (symbol, req, callback) => {
-        underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
+        underlying = Defaults.get('underlying');
         if (underlying && req && callback && (underlying !== req.ticks_history || !req.subscribe)) {
             BinarySocket.send(req, { callback: callback });
         } else {
@@ -41,10 +39,6 @@ const GetTicks = (() => {
                     const is_digit_beta = getActiveTab_Beta() === 'tab_last_digit';
                     if (typeof callback === 'function') {
                         callback(response);
-                    }
-                    if (State.get('is_mb_trading')) {
-                        MBTick.processTickHistory(response);
-                        return;
                     }
                     if (type === 'tick') {
                         if (State.get('is_trading')) {

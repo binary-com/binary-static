@@ -3,14 +3,15 @@ const MBDefaults      = require('./mb_defaults');
 const MBNotifications = require('./mb_notifications');
 const MBPrice         = require('./mb_price');
 const MBSymbols       = require('./mb_symbols');
-const MBTick          = require('./mb_tick');
 const BinarySocket    = require('../socket');
 const TradingAnalysis = require('../trade/analysis');
+const showHighchart   = require('../trade/charts/chart_frame').showHighchart;
 const commonTrading   = require('../trade/common');
 const BinaryPjax      = require('../../base/binary_pjax');
 const Client          = require('../../base/client');
 const getLanguage     = require('../../base/language').get;
 const localize        = require('../../base/localize').localize;
+const urlForStatic    = require('../../base/url').urlForStatic;
 const State           = require('../../base/storage').State;
 const jpClient        = require('../../common_functions/country_base').jpClient;
 
@@ -64,6 +65,7 @@ const MBProcess = (() => {
             symbol = undefined;
             MBDefaults.remove('underlying');
         }
+
         // check if all symbols are inactive
         let is_market_closed = true;
         Object.keys(symbols_list).forEach((s) => {
@@ -76,8 +78,7 @@ const MBProcess = (() => {
             handleMarketClosed();
         } else {
             handleMarketOpen();
-            if (is_show_all) populateUnderlyingGroups(symbol);
-            else commonTrading.displayUnderlyings('underlying', symbols_list, symbol);
+            populateUnderlyings(symbol);
 
             if (symbol && !symbols_list[symbol].is_active) {
                 MBNotifications.show({ text: localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
@@ -85,32 +86,41 @@ const MBProcess = (() => {
                 MBProcess.processMarketUnderlying();
             }
         }
+
+        showHighchart();
     };
 
-    const populateUnderlyingGroups = (selected) => {
+    const populateUnderlyings = (selected) => {
         const $underlyings = $('#underlying');
-        const all_symbols = MBSymbols.underlyings();
-        const markets     = MBSymbols.markets();
+        const all_symbols = MBSymbols.getAllSymbols();
 
-        $underlyings.empty();
+        const $list = $underlyings.find('.list');
+        $list.empty();
 
-        Object.keys(markets)
-            .sort((a, b) => markets[a].name.localeCompare(markets[b].name))
-            .forEach((market) => {
-                $underlyings.append(
-                    $('<optgroup/>', { label: markets[market].name })
-                        .append($(commonTrading.generateUnderlyingOptions(all_symbols[market], selected))));
-            });
+        Object.keys(all_symbols).forEach((symbol, idx) => {
+            if (all_symbols[symbol].is_active) {
+                const is_current = (!selected && idx === 0) || symbol === selected;
+                const $current = $('<div/>', { value: symbol })
+                    .append($('<img/>', {
+                        src: urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`),
+                        alt: all_symbols[symbol].display,
+                    }));
+                $list.append($current);
+                if (is_current) {
+                    $underlyings.attr('value', symbol).find('> .current').html($current.clone());
+                }
+            }
+        });
     };
 
     const handleMarketClosed = () => {
-        $('.japan-form, .japan-table, #trading_bottom_content').setVisibility(0);
+        $('.trade-form, .price-table, #trading_bottom_content').setVisibility(0);
         MBNotifications.show({ text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
         symbols_timeout = setTimeout(() => { getSymbols(); }, 30000);
     };
 
     const handleMarketOpen = () => {
-        $('.japan-form, .japan-table, #trading_bottom_content').setVisibility(1);
+        $('.trade-form, .price-table, #trading_bottom_content').setVisibility(1);
         MBNotifications.hide('MARKET_CLOSED');
     };
 
@@ -122,27 +132,13 @@ const MBProcess = (() => {
      * Function to call when underlying has changed
      */
     const processMarketUnderlying = () => {
-        const underlying_element = document.getElementById('underlying');
-        if (!underlying_element) {
-            return;
-        }
-
-        if (underlying_element.selectedIndex < 0) {
-            underlying_element.selectedIndex = 0;
-        }
-        const underlying = underlying_element.value;
+        const underlying = $('#underlying').attr('value');
         MBDefaults.set('underlying', underlying);
 
         commonTrading.showFormOverlay();
 
         // forget the old tick id i.e. close the old tick stream
         processForgetTicks();
-        // get ticks for current underlying
-        MBTick.request(underlying);
-
-        MBTick.clean();
-
-        MBTick.updateWarmChart();
 
         BinarySocket.clearTimeouts();
 
@@ -350,7 +346,6 @@ const MBProcess = (() => {
         clearSymbolTimeout();
         clearContractTimeout();
         MBSymbols.clearData();
-        MBTick.clean();
     };
 
     return {

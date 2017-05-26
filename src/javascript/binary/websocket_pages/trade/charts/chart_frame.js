@@ -1,3 +1,4 @@
+const MBDefaults  = require('../../mb_trade/mb_defaults');
 const getLanguage = require('../../../base/language').get;
 const localize    = require('../../../base/localize').localize;
 const State       = require('../../../base/storage').State;
@@ -28,7 +29,7 @@ const ChartFrame = (() => {
     const chartFrameSource = () => {
         const new_underlying = document.getElementById('underlying').value;
         const chart_source   = $('#chart_frame').attr('src');
-        if ($('#tab_graph').hasClass('active') && (Url.paramsHash(chart_source).instrument !== new_underlying || /^(|about:blank)$/.test(chart_source))) {
+        if (Url.paramsHash(chart_source).instrument !== new_underlying || /^(|about:blank)$/.test(chart_source)) {
             chartFrameCleanup();
             setChartSource();
         }
@@ -38,7 +39,8 @@ const ChartFrame = (() => {
 
     const setChartSource = () => {
         const is_ja = !!jpClient();
-        document.getElementById('chart_frame').src = `https://webtrader.binary.com?affiliates=true&instrument=${document.getElementById('underlying').value}&timePeriod=1t&gtm=true&lang=${getLanguage().toLowerCase()}&hideOverlay=${is_ja}&hideShare=${is_ja}&timezone=GMT+${(is_ja ? '9' : '0')}`;
+        const underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : document.getElementById('underlying').value;
+        document.getElementById('chart_frame').src = `https://webtrader.binary.com?affiliates=true&instrument=${underlying}&timePeriod=1t&gtm=true&lang=${getLanguage().toLowerCase()}&hideOverlay=${is_ja}&hideShare=${is_ja}&timezone=GMT+${(is_ja ? '9' : '0')}`;
     };
 
     return {
