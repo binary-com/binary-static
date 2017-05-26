@@ -2,7 +2,6 @@ const ProfitTable         = require('../profit_table');
 const Client              = require('../../../../base/client');
 const localize            = require('../../../../base/localize').localize;
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
-const elementTextContent  = require('../../../../common_functions/common_functions').elementTextContent;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
 const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
 const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
@@ -12,7 +11,8 @@ const ProfitTableUI = (() => {
     'use strict';
 
     let oauth_apps = {},
-        currency;
+        currency,
+        total_profit = 0;
 
     const profit_table_id = 'profit-table';
     const cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
@@ -54,24 +54,17 @@ const ProfitTableUI = (() => {
     };
 
     const updateFooter = (transactions) => {
-        let acc_total = elementTextContent(document.querySelector('#pl-day-total > .pl'));
-        acc_total = parseFloat(acc_total.replace(/,/g, ''));
-        if (!acc_total || isNaN(acc_total)) {
-            acc_total = 0;
-        }
-
-        const current_total = transactions.reduce((previous, current) => {
+        total_profit += transactions.reduce((previous, current) => {
             const buy_price  = Number(parseFloat(current.buy_price));
             const sell_price = Number(parseFloat(current.sell_price));
             const pl = sell_price - buy_price;
             return previous + pl;
         }, 0);
 
-        const total = acc_total + current_total;
         const jp_client = jpClient();
-        const sub_total_type = (total >= 0) ? 'profit' : 'loss';
+        const sub_total_type = (total_profit >= 0) ? 'profit' : 'loss';
 
-        $('#pl-day-total').find(' > .pl').text(formatMoney(currency, Number(total), !jp_client))
+        $('#pl-day-total').find(' > .pl').text(formatMoney(currency, Number(total_profit), !jp_client))
             .removeClass('profit loss')
             .addClass(sub_total_type);
     };
@@ -116,6 +109,7 @@ const ProfitTableUI = (() => {
     const clearTableContent = () => {
         Table.clearTableBody(profit_table_id);
         $(`#${profit_table_id}`).find('> tfoot').hide();
+        total_profit = 0;
     };
 
     const errorMessage = (msg) => {
