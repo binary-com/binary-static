@@ -49,6 +49,7 @@
                             { text=l('Platform Tour'),                     href=request.url_for('tour'),                                  class='ja-hide' },
                             { text=l('Platform Tour'),                     href=request.url_for('tour-jp'),                               class='invisible ja-show' },
                             { text=l('{JAPAN ONLY}Service Announcements'), href=request.url_for('service-announcements'),                 class='invisible ja-show' },
+                            { text=l('Affiliate Program'),                 href=request.url_for('affiliate/signup-jp'),                   class='invisible ja-show' },
                             { text=l('GamCare'),                           href=request.url_for('http://www.gamcare.org.uk/'),            class='ja-hide id-hide', target='_blank' },
                             { text=l('Academy'),                           href=request.url_for('https://academy.binary.com'),            class='ja-hide academy', target='_blank' },
                             { text=l('Webinars'),                          href=request.url_for('https://academy.binary.com/en/events/'), class='ja-hide id-hide', target='_blank' },
