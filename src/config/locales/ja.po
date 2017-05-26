@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-24 05:40+0000\n"
-"Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
+"PO-Revision-Date: 2017-05-26 00:18+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.14.1-dev\n"
+"X-Generator: Weblate 2.14.1\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
@@ -95,12 +95,13 @@ msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1アプリケーション・プログラム・インターフェース(\"API\") ご利用規約"
 
 msgid "%1 ICO <br /> Pre-announcement"
-msgstr ""
+msgstr "%1 ICO <br /> 事前告知"
 
-#, fuzzy
-#| msgid "Welcome to the premier platform for online binaries trading"
+msgid "%1 ICO FAQ"
+msgstr "%1 ICO よくあるご質問"
+
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
-msgstr "最高のバイナリー・オプション取引へようこそ！"
+msgstr "%1 ICO: 世界最高水準のバイナリーオプションプラットフォームでお取引"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1下記リンクをクリックしてパスワードの再設定を再度お試しください。サポートが必要な場合は、 カスタマーサポートまでご連絡ください。"
@@ -137,6 +138,9 @@ msgstr "%1日 %2時間 %3分"
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "%2から口座番号%3への入金が完了しました。取引参照ID：%4"
+
+msgid "%1 developed the systems, methods, and algorithms that made binary options accessible to retail traders."
+msgstr ""
 
 msgid "%1 does not charge any transfer fees."
 msgstr "当社はご入金、及びご出金時に手数料を課しません。"
@@ -176,6 +180,9 @@ msgstr "Binary.com (バイナリードットコム)ではダイナミック且�
 
 msgid "%1 is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
 msgstr "Binary.com (バイナリードットコム)は、各国の監督局からライセンスを付与され、世界中のお客さまに取引を提供し100万口座以上を保持しています。1999年以来、揺らぐことのない一定の整合性と信頼性でお客さまへのサービスに尽力してまいりました。当社の規制要件に加えて、最高の倫理基準に基いて行動しています。"
+
+msgid "%1 is a well-established company founded in 1999. The growth of our business led us to consider an IPO, as is the case with most successful companies. However, we believe that stock exchanges will be gradually replaced by cryptocurrency exchanges in the coming decade, and IPOs will be gradually replaced by ICOs. This is why we decided to perform an ICO instead of an IPO."
+msgstr ""
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1は常に管理者、技術的貢献者、および管理者の有能なチームに経験豊富な専門家を迎えたいと考えています。当社の継続的な成長をサポートするために、我々は以下の分野での魅力的な数々のキャリア機会を展開してきました。"
@@ -312,6 +319,9 @@ msgstr "%1は、ギャンブルに関連する害を最小限にすることを�
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "ロンドンで開催された名誉あるEGRオペレーター賞授賞式にて金融ベッティングオペレーター部門で最優秀賞を受賞しました。"
+
+msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘coloured coins’ on the Bitcoin blockchain, and ‘ERC20’ tokens on the Ethereum blockchain."
+msgstr "%1ではトレーダの皆様へ多数のブロックチェーントークンの提供を予定しています。ビットコインのブロックチェーン「カラードコイン」やイーサリアムのブロックチェーン「ERC20」トークンなど多種多様なブロックチェーンで発行することができます。"
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "口座番号%2から%3へのご出金が完了しました。取引参照ID：%4"
@@ -923,7 +933,7 @@ msgid "An Ends Between trade pays out if the market exit price is strictly highe
 msgstr "「END-IN」トレードは、トレードの終値が最小値に設定したバリアよりも高値、”かつ”、最高値に設定したバリアよりも安値であれば条件が満たされたことになります。同値では条件が満たさないと判定され、終値のみが評価対象になります。「END-OUT」のトレードタイプでは、トレードの終値が最高値に設定したバリアよりも高値、”または”、最小値に設定したバリアよりも安値であれば条件が満たされます。"
 
 msgid "An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares."
-msgstr ""
+msgstr "イニシャル・コイン・オファリング（ICO）はIPOに比較的類似する資金調達方法です。ICOでは、株式の代わりに暗号トークンを発行します。"
 
 msgid "An Open Position may be closed by placing an opposite Order, that is an Order to sell (to close a Long Position) or to buy (to close a Short Position) in the same market for the same specified number of lots (volume)."
 msgstr "オープンポジションは逆のポジションの注文を実行することで閉じることができる場合もあります。これは、同じ市場で全く同じロット数（数量）を売却（ロングポジションを閉じるため）または購入（ショートポジションを閉じるため）することを意味します。"
@@ -939,6 +949,9 @@ msgstr "数学、物理学、工学の修士または博士の大学学位"
 
 msgid "An assertive, sales-driven personality, able to adapt quickly and achieve powerful results"
 msgstr "積極的であり、販売志向型の性格、そして迅速な適応力をもって大きな実績を挙げることができる。"
+
+msgid "An ‘Initial Coin Offering’ (or ‘ICO’ for short) is a fundraising method that’s relatively similar to an Initial Public Offering (IPO). In an ICO, cryptocurrency such as ‘coloured coins’ or ‘Ethereum tokens’ are issued instead of shares."
+msgstr ""
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "スコープに記載されているドメインとサブドメインの分析とテスト"
@@ -1483,9 +1496,6 @@ msgstr "Binaryプラットフォームでは、毎秒15件の%1取引%2が行わ
 
 msgid "Binary.com by the numbers"
 msgstr "数字でみるBinary.com"
-
-msgid "Binary.com developed the systems, methods, and algorithms that made it accessible to retail traders."
-msgstr ""
 
 msgid "Binary.com employs over 130 people across its offices in Malta, Malaysia, Japan, and Germany."
 msgstr ""
@@ -2415,7 +2425,7 @@ msgid "Do you offer virtual-money accounts?"
 msgstr "デモ口座を利用できますか？"
 
 msgid "Do you own a newsletter or a mailing list?"
-msgstr "お客さま自身のニュースレターまたはメールリストをお持ちですか？"
+msgstr "お客さま自身がニュースレターを発行しているかメールリストはお持ちですか？"
 
 msgid "Do you run a website?"
 msgstr "ウェブサイトを運営していますか？"
@@ -2544,7 +2554,7 @@ msgid "Earn exclusive tokenholder rights"
 msgstr ""
 
 msgid "Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
-msgstr "当社のアフィリエイトプログラムでは、報酬プランに基づいて報酬金額をアフィリエイト会員様にお支払します。"
+msgstr "当社のアフィリエイトプログラムでは、報酬プランに基づいて報酬金額をアフィリエイト会員様にお支払いいたします。"
 
 msgid "Earn money for any verifiable errors that you find."
 msgstr "検出できるエラーを見つけてお金を受け取りましょう"
@@ -3089,6 +3099,9 @@ msgstr "フリー取引チャート"
 msgid "Free webinars"
 msgstr "フリーウェビナー"
 
+msgid "Frequently Asked Questions"
+msgstr "よくあるご質問"
+
 msgid "Fresh graduates who meet our basic requirements and are passionate about pursuing a professional career in administrative services are welcome to apply."
 msgstr "当社の基本要件を満たし、管理事務でのプロフェッショナルなキャリアを追求する情熱のある新卒者は大歓迎です。"
 
@@ -3338,6 +3351,12 @@ msgstr "アフィリエイト報酬の受領方法と受領スケジュールに
 msgid "How can I become an affiliate?"
 msgstr "アフィリエイトプログラムの参加方法について教えて下さい。"
 
+msgid "How can I learn more about ICOs and cryptocurrencies?"
+msgstr ""
+
+msgid "How can I purchase your tokens?"
+msgstr "どうやってトークンを購入できますか？"
+
 msgid "How do I change my payment method?"
 msgstr "報酬の受領方法の変更のし方について教えて下さい。"
 
@@ -3346,6 +3365,9 @@ msgstr "どうやって口座に入金できますか？"
 
 msgid "How do I know how much I have earned?"
 msgstr "アフィリエイト報酬データの参照方法を教えて下さい。"
+
+msgid "How do I stay informed on the Binary.com ICO?"
+msgstr ""
 
 msgid "How do we calculate interest fees for long positions?"
 msgstr "ロングポジションの金利手数料の算出方法は？"
@@ -3374,8 +3396,8 @@ msgstr ""
 msgid "How soon can I start trading?"
 msgstr "口座開設の所要時間は？"
 
-msgid "How the ICO Works"
-msgstr ""
+msgid "How the ICO works"
+msgstr "ICOの仕組み"
 
 msgid "How to begin"
 msgstr "口座開設から取引開始までの流れ"
@@ -3393,6 +3415,12 @@ msgid "How to use a payment agent?"
 msgstr "決済サービスのご利用方法"
 
 msgid "How will the ICO work"
+msgstr ""
+
+msgid "How will the ICO work?"
+msgstr "ICOの流れを教えてください"
+
+msgid "How will the tokens be offered?"
 msgstr ""
 
 msgid "Human Resource Executive"
@@ -3933,7 +3961,7 @@ msgstr "EEA（欧州経済領域）住民への投資商品は、投資商品で
 msgid "Investment Solicitation Policy"
 msgstr "投資勧誘方針"
 
-msgid "Investment in the proposed tokens is expected to involve a high degreee of risk, there will be no assurance that token holders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum."
+msgid "Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum."
 msgstr ""
 
 msgid "Investment trust"
@@ -3959,6 +3987,9 @@ msgstr "アイルランド"
 
 msgid "Is it possible to deposit the same funds through different payment methods?"
 msgstr "他の支払い方法で同じ資金の入金はできますか？"
+
+msgid "Is the ICO available in all jurisdictions?"
+msgstr ""
 
 msgid "Is there a cost for joining?"
 msgstr "アフィリエイトプログラムの参加費用について教えて下さい。"
@@ -4487,7 +4518,7 @@ msgid "Join now"
 msgstr "アフリエイト申込み"
 
 msgid "Join our affiliate program to earn income by leveraging your hard-earned network of contact"
-msgstr "アフリエイトプログラムに参加して広告収入を得ませんか"
+msgstr "アフリエイトプログラムに参加しませんか?"
 
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "活気に満ちた有能なプロが揃う当チームに参加してみませんか？15年以上のバイナリーオプション取引業界において知名度の高い当ハイテクプラットフォームの強化と推進を私達と一緒に行いましょう。"
@@ -4779,8 +4810,6 @@ msgstr "下限バリア"
 msgid "Low barrier offset"
 msgstr "下限追加バリア値"
 
-#, fuzzy
-#| msgid "Low minimum stakes"
 msgid "Low minimum collateral"
 msgstr "少額取引"
 
@@ -4898,10 +4927,8 @@ msgstr "市場出口価格"
 msgid "Market is closed. Please try again later."
 msgstr "営業時間外のためご利用になれません。"
 
-#, fuzzy
-#| msgid "Career opportunities for Americans"
 msgid "Market opportunities for binary options"
-msgstr "採用情報（アメリカ出身の方）"
+msgstr "バイナリーオプションの市場機会"
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed."
 msgstr "市場価格は最高で１秒に１回の頻度で更新されます。どの任意の秒数でも市場価格にはその最初のTickの値、または特定の秒数に当社のデータフィードに受信された値が更新されます。"
@@ -5125,6 +5152,9 @@ msgstr "ペットの名前"
 
 msgid "Name:"
 msgstr "氏名:"
+
+msgid "Need more information on the ICO?"
+msgstr "ICOのより詳しい情報がご必要ですか？"
 
 msgid "Need more information?"
 msgstr "詳細がご確認になりたいですか？"
@@ -5477,11 +5507,8 @@ msgstr "その他"
 msgid "Our Company"
 msgstr "会社案内"
 
-msgid "Our Growth"
-msgstr ""
-
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
-msgstr "アフィリエイトプログラムは２００４年３月にサービスを提供して以来、常に期日通りにアフィリエイト報酬をお支払いしております。当社からの報酬額の支払は、報酬プランの条件を満たした場合、前月のアフィリエイト報酬は翌月の15日頃に登録頂いた指定口座に振込を行います。"
+msgstr "アフィリエイトプログラムは２００４年３月にサービスを提供して以来、常に期日通りにアフィリエイト報酬をお支払いしております。当社からの報酬額のお支払いは、報酬プランの条件を満たした場合、前月のアフィリエイト報酬は翌月の15日頃に登録頂いた指定口座に振込を行います。"
 
 msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how %1 executes orders on behalf of our clients."
 msgstr "当社の注文執行ポリシー（以下「ポリシー」）ではお客さまの代わりに%1が行うオーダー執行方法の概要と対応を明示します。"
@@ -5518,6 +5545,9 @@ msgstr "実行要因の相対的重要性に関する当社の決定は、最良
 
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "当社の競合相手であったBetsForTraders社の顧客を獲得し、組織として成長していきます。"
+
+msgid "Our growth"
+msgstr ""
 
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "当社の情報秘匿に関する取り決めは、アクセス管理とビジネスの継続性を考慮した業界にて最良の慣行に基づいております。"
@@ -5876,6 +5906,9 @@ msgstr "有効なワンタイムパスワードを送信してください。"
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "<a href='mailto:%1'>%1</a>まで上記の情報をご提出ください。"
 
+msgid "Please subscribe to our mailing list using the form below for occasional announcements relating to the ICO."
+msgstr ""
+
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr "当社のスワップレートは、保有しているポジションのオープン日時にも関係しますのでご注意ください。 "
 
@@ -6095,10 +6128,8 @@ msgstr "購入金額"
 msgid "Purchase Time"
 msgstr "購入時間"
 
-#, fuzzy
-#| msgid "Purchase Spot"
 msgid "Purchase our tokens"
-msgstr "購入スポット"
+msgstr "トークンを購入"
 
 msgid "Purpose of trading"
 msgstr "投資の目的"
@@ -6162,6 +6193,9 @@ msgstr "HackerOneバグ発見奨金プログラムのポリシーをよくお読
 msgid "Read more"
 msgstr "詳細をみる"
 
+msgid "Read our FAQ"
+msgstr "よくあるご質問を読む"
+
 msgid "Read our blog for the stories and ideas that inspire us"
 msgstr "魅力あるストーリーとアイディアが詰まった当社のブログを是非ご覧ください"
 
@@ -6212,6 +6246,9 @@ msgstr "約定番号"
 
 msgid "Reference ID"
 msgstr "約定番号"
+
+msgid "Regardless of the type of token, each token will provide you with two rights:"
+msgstr ""
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group LimitedはBinary Ltd.に会社名変更"
@@ -7267,6 +7304,9 @@ msgstr "外国為替では通常<i>ロット数</i>にて取引を行います�
 msgid "The GBP Index is a weighted Index, measuring the British Pound's value against a basket of 5 global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%."
 msgstr "GBPインデックスとは、5グローバル通貨(USD, EUR, AUD, JPY, CAD)のバスケットに対する英国ポンドの価値を計る各荷重20％の荷重インデックスです。"
 
+msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions."
+msgstr ""
+
 msgid "The Margin Level of your Real Account reaches or falls below the Stop Out Level;"
 msgstr "お客さまのリアル口座のマージンレベルがロスカットレベルに達した、あるいは下回りました。"
 
@@ -7613,6 +7653,12 @@ msgstr "ペイアウトとは、トレードの予測が正しかった場合に
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect."
 msgstr "当社はルールや範囲を適切に修正または変更する権利を有します。修正点や変更点はそれらが作成された以前の状況にさかのぼって適用されることはありませんが、作成後に取得された金融トレードに対して適用されます。お客さまにはご利用規約での全ての変更点を確認する義務があります。"
 
+msgid "The right to convert tokens into Ordinary Shares"
+msgstr ""
+
+msgid "The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares"
+msgstr ""
+
 msgid "The server <a href=\"%1\">endpoint</a> is: %2"
 msgstr "サーバーの <a href=\"%1\">エンドポイント</a> : %2"
 
@@ -7654,6 +7700,9 @@ msgstr "「当社」「我々」「私達」「%1」はBinary (V) Ltdを示す�
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "「当社」、「私達」、「当社の」、「私達の」、「%1」という表記は、口座開設におけるサイトの手順に従って所属した管轄によってBinary (V) Ltd.またはBinary (C.R.) S.A.を示します。"
+
+msgid "The tokens will be offered over a period of one month. The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017. The ICO price and auction method will be announced in due course."
+msgstr ""
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
 msgstr ""
@@ -7857,7 +7906,7 @@ msgstr "不可抗力によるこのセクションは、ボラティリティ・
 msgid "This symbol is not active. Please try another symbol."
 msgstr "このシンボルは現在ご利用いただけません。他のシンボルでお試しください。"
 
-msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of Binary.com. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
+msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of %1. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
 msgstr ""
 
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
@@ -7929,6 +7978,15 @@ msgstr "MT5の金融口座を開設するには、<a href=\"%1\">財務評価</a
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "ご利用中のブラウザのバージョンの指示に従ってクッキーを有効化して下さい。"
 
+msgid "To learn how to trade cryptocurrency assets, we recommend that you open an account with US-based cryptocurrency exchange, <a href='https://poloniex.com/'>POLONIEX</a>."
+msgstr ""
+
+msgid "To learn more about Bitcoin, we recommend that you <a href='https://blockchain.info/wallet/#/'>open a Bitcoin wallet with Blockchain</a> and <a href='https://www.bitcoin.com/buy-bitcoin'>purchase bitcoins using a local exchange</a> in your country."
+msgstr ""
+
+msgid "To learn more about Ethereum, we recommend that you install the <a href='https://metamask.io/'>Metamask plugin for Chrome</a>, which will allow you to convert your Bitcoin into Ether."
+msgstr ""
+
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
 msgstr "詳細については、外国為替の100%強制ロスカットレベルが記載されている<a href=\"%1\">マージンポリシー</a>をご確認ください。"
 
@@ -7968,10 +8026,13 @@ msgstr ""
 msgid "Token"
 msgstr "トークン"
 
-msgid "Token Dividends"
+msgid "Token dividends"
 msgstr "トークンの配当"
 
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
+msgstr ""
+
+msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our account authentication process."
 msgstr ""
 
 msgid "Total"
@@ -8243,10 +8304,8 @@ msgstr "UX / UI の経験"
 msgid "Ultra fast on-the-go trading"
 msgstr "出先でも超高速取引を"
 
-#, fuzzy
-#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgid "Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button."
-msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
+msgstr "<strong>設定</strong>にある<strong>高度な設定を表示</strong>ボタンをクリックしてください。"
 
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "責任の理論下における（契約、不法行為、厳格責任、その他考えられるもの）間接的、特別的、偶発的、懲罰的または結果的損失や損害賠償または%1 とその他コンテンツの使用不可に関係する直接的、間接的なその他類似の損害に対してあなたもしくはサードパーティーへの本契約の下、たとえ当社が可能性を把握していたとしても、いかなる状況において当社または当社の取締役及び従業員が責任を負うことはありません。"
@@ -8371,10 +8430,8 @@ msgstr "新しいパスワード（確認用）"
 msgid "Version 4. Last modified 2016-12-30."
 msgstr "第43版・最終編集日：2016年12月30日"
 
-#, fuzzy
-#| msgid "Version 4. Last modified 2016-12-30."
 msgid "Version 43. Last modified 2016-11-09."
-msgstr "第43版・最終編集日：2016年12月30日"
+msgstr "第43版・最終編集日：2016年11月9日"
 
 msgid "View"
 msgstr "表示"
@@ -8738,6 +8795,9 @@ msgstr "アフィリエイトの報酬体系について教えて下さい。"
 msgid "What is Margin?"
 msgstr "マージンとは何ですか？"
 
+msgid "What is an ICO?"
+msgstr "ICOとは何ですか？"
+
 msgid "What is the %1 affiliate program?"
 msgstr "%1のアフィリエイトプログラムについて教えて下さい。"
 
@@ -8858,16 +8918,19 @@ msgstr ""
 msgid "Whilst we endeavour to take all reasonable and sufficient steps, as required by applicable laws and regulations, to identify potential conflicts of interests between ourselves and our clients, or between one client and another, that arise in the course of providing the margin trading services as described in this Agreement, by establishing and implementing policies and procedures, it is possible that we may execute certain Transactions which may have other direct or indirect material interests."
 msgstr ""
 
-msgid "Who We Are"
-msgstr ""
-
 msgid "Who can apply to be a Payment Agent?"
 msgstr "決済サービスエージェントに申し込む"
 
 msgid "Who can be a client on the %1 platform?"
 msgstr "どのような人が%1の会員になることができますか？"
 
+msgid "Who can purchase the tokens?"
+msgstr "どんな人がトークンを購入することができますか？"
+
 msgid "Who is Binary.com"
+msgstr "Binary.comとは"
+
+msgid "Who we are"
 msgstr "Binary.comとは"
 
 msgid "Why Choose Binary Trading?"
@@ -8887,6 +8950,9 @@ msgstr "当社が選ばれる理由"
 
 msgid "Why do Clients choose to use Payment Agents?"
 msgstr "決済サービスをクライアントが利用される理由"
+
+msgid "Why is Binary.com performing an ICO?"
+msgstr "Binary.comがICOを実施するのはなぜですか？"
 
 msgid "Why limit yourself? Whatever your market view, %1 allows you to put your strategy to work and profit from your predictions."
 msgstr "Binary.com (バイナリードットコム)ならどのような相場の見通しを立てても、その投資戦略を実行に移すことができます。"
@@ -9332,10 +9398,8 @@ msgstr "トランザクション処理に手数料が請求されます。"
 msgid "You will have the potential to earn another level of income from our affiliate program."
 msgstr "当社のアフィリエイトプログラムから別レベルの収入を獲得いただくことも可能です。"
 
-#, fuzzy
-#| msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgid "You will increase awareness of your services and generate new business."
-msgstr "<strong>その他ビジネスエクスポージャー:</strong> あなたのサービスに対する認識を高め、新ビジネスを生成しましょう。"
+msgstr "あなたのサービスに対する意識を高め、新ビジネスを始めましょう。"
 
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr ""
@@ -9367,10 +9431,8 @@ msgstr "お客さまの%1日の出金限度額は現在%2 %3です。限度額�
 msgid "Your Application is Being Processed."
 msgstr "お客さまの口座開設申込書類の処理中です。"
 
-#, fuzzy
-#| msgid "Your Binary Options Real Account with Binary.com has to be authenticated within five days from your Real Account opening date to keep your Real Account active."
 msgid "Your Binary Options Real Account with %1 has to be authenticated within five days from your Real Account opening date to keep your Real Account active."
-msgstr "Binary.comで開設されたリアル口座は、開設日より5日以内に認証いただく必要があります。"
+msgstr "%1で開設されたリアル口座は、開設日より5日以内に認証いただく必要があります。"
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "あなたのクライアントに送金が処理されたことをお知らせする通知メールが届きます。"
@@ -9381,10 +9443,8 @@ msgstr "お客さまのIDはクッキーに保存され、お客さまのアフ�
 msgid "Your Property"
 msgstr "不動産"
 
-#, fuzzy
-#| msgid "Your Real Account password and login ID are unique and passwords are hashed so that not even Binary.com staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;"
 msgid "Your Real Account password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;"
-msgstr "お客さまのリアル口座のパスワードとログインIDは唯一無二な値であり、パスワードはハッシュ化され送信されますのでBinary.comの関係者ですら解読することができませんので、お客さまのパスワードを確認することはできませんので、パスワードを失念された際にはお客さまのメールアドレスに新たなパスワードを再発行させて頂かなければなりません。"
+msgstr "お客さまのリアル口座のパスワードとログインIDは唯一無二な値であり、パスワードはハッシュ化され送信されますので%1の関係者ですら解読することができませんので、お客さまのパスワードを確認することはできませんので、パスワードを失念された際にはお客さまのメールアドレスに新たなパスワードを再発行させて頂かなければなりません。"
 
 msgid "Your Real Account shall be funded by transferring funds from your Binary Options Real Account, subject to the availability and sufficiency of funds in your Binary Options Real Account. No fund transfers shall be made to any other account in the name of any third party."
 msgstr ""
@@ -9460,10 +9520,8 @@ msgstr ""
 msgid "Your name, email address and contact number"
 msgstr "氏名、メールアドレス、電話番号"
 
-#, fuzzy
-#| msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
 msgid "Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
-msgstr "<strong>長期パートナーシップ:</strong> 当社とのパートナーシップはあなたの製品やサービスを当社の100万人を超える世界中の登録者に無料で促進できることを意味します。"
+msgstr "当社とのパートナーシップを結ぶことで、あなたの製品やサービスを当社の100万人を超える世界中の登録者に無料で促進できることを意味します。"
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "お客さまのパスワードとログインIDは唯一無二な値であり、パスワードはハッシュ化され送信されますので%1の関係者ですら解読することができませんので、お客さまのパスワードを確認することはできませんので、パスワードを失念された際にはお客さまのメールアドレスに新たなパスワードを再発行させて頂かなければなりません。"
@@ -9527,6 +9585,9 @@ msgstr ""
 "お客さまの出金限度額は%1 %2です。限度額以上の出金額をご希望される場合は、本人確認が必要となりますので\n"
 "カスタマーサポートへご連絡ください。"
 
+msgid "You’ll be able to purchase our tokens using the funds in your %1 account. We will soon be introducing native <strong>BTC (Bitcoin)</strong> and <strong>ETH (Ethereum)</strong> account facilities to enable your participation in the ICO."
+msgstr ""
+
 msgid "ZAR 1 per point"
 msgstr "1ポイント＝ZAR 1"
 
@@ -9589,10 +9650,8 @@ msgstr "c) オーダーの実行時間"
 msgid "consolidating liquidity from several providers into a single stream of blended feed; and"
 msgstr ""
 
-#, fuzzy
-#| msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
 msgid "currencies, stocks, indices, and commodities."
-msgstr "<strong>取引対象：</strong>外国為替市場の主要通貨ペア"
+msgstr "外国為替市場の主要通貨ペア"
 
 msgid "d) The timeframe or duration of the contract as defined by your order execution."
 msgstr "d) お客さまご自身で実行されたトレードのタイムフレームまたは取引期間"
@@ -9612,18 +9671,14 @@ msgstr "例：blue.binaryws.com"
 msgid "email address"
 msgstr "メールアドレス"
 
-#, fuzzy
-#| msgid "Choose a payout from $1 to $50,000."
 msgid "from $1 to $50,000."
 msgstr "ペイアウトは1ロット1,000円、最大100ロットまで選択可能です"
 
 msgid "from %1 to %2"
 msgstr "%1から%2まで"
 
-#, fuzzy
-#| msgid "10 seconds to 365 days..."
 msgid "from 10 seconds to 365 days."
-msgstr "10秒から365日でのバイナリー取引！"
+msgstr "取引期間は2時間から最長365日まで！"
 
 msgid "h"
 msgstr "時間"
@@ -9742,10 +9797,8 @@ msgstr "本日"
 msgid "today, Fridays"
 msgstr "本日：金曜日"
 
-#, fuzzy
-#| msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
 msgid "up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>どのような市場状況でもトレードが可能：</strong>ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
+msgstr "ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "これら規約で許可されている以上の%1 APIの使用または再現"
@@ -9774,10 +9827,8 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-#, fuzzy
-#| msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Hong Kong, Iran, Iraq, Israel, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr "お客様はアフガニスタン、ボスニア・ヘルツェゴビナ、コスタリカ、香港、イラン、イラク、ジャージー、ラオス、マレーシア、マルタ、北朝鮮、シリア、ウガンダ、米国、バヌアツ、イエメンなどの特定の国の居住者ではありません。"
+msgstr "お客様はアフガニスタン、ボスニア・ヘルツェゴビナ、コスタリカ、香港、イラン、イラク、イスラエル、ジャージー、ラオス、マレーシア、マルタ、北朝鮮、シリア、ウガンダ、米国、バヌアツ、イエメンなどの特定の国の居住者ではありません。"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "１８歳以上であり、エストニア国民の場合は２１歳以上です。"
@@ -9946,10 +9997,8 @@ msgstr ""
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
 msgstr "総則"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point A"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1. %1Link to binary_affiliate_guidelines.pdf%2."
-msgstr "A:初回入金額が¥10,000 - ¥20,000の場合、入金金額の5倍相当の取引数量"
+msgstr "（1）アフィリエイトプログラムにご参加頂くにあたり、本約款を熟読し理解されることは重要です。本約款への同意の表明、及びアフィリエイトプログラムへの申請行為は、下記の本約款及び「アフィリエイト広告に関するガイドライン」に同意されたものとみなします。万が一、本約款に同意できない場合は、アフィリエイトプログラムへの参加は見合わせて下さい。アフィリエイト会員には、当アフィリエイトプログラムにて会員獲得を目指すウェブサイトの管理者として行動して頂きます。<br>%1アフィリエイト広告に関するガイドラインのダウンロードはこちら%2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
 msgstr "（2）当社は、当プログラムへの参加許可を与える権限を有します。故に、当プログラムへの参加の可否に関する当社の決定は、最終的かつ絶対的なものになります。"
@@ -10248,7 +10297,7 @@ msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by
 msgstr "1〜4が実質的支配者である法人"
 
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
-msgstr "投資についてよくご存ですか?"
+msgstr "投資についてよくご存知ですか?"
 
 msgid "{JAPAN ONLY}Are your site visitors interested in:"
 msgstr "あなたのサイト訪問者は以下の項目に興味があります:"
@@ -10371,10 +10420,10 @@ msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary a
 msgstr "区分管理必要額は当社が毎日算出し、算出日から2営業日までに信託をします。この2営業日の間も金融庁長官の指定する金融機関において、当社の資産とは分別して管理します。"
 
 msgid "{JAPAN ONLY}Do you publish a newsletter or manage a mailing list?"
-msgstr "メールリストまたは、メールマガジンを発行していますか？"
+msgstr "メールマガジンを発行していますか？"
 
 msgid "{JAPAN ONLY}Do you run a website or publish an FX blog?"
-msgstr "ウェーブサイトの運営、またはFXブログを書いてますか？"
+msgstr "websiteの運営、またはFXブログを書いてますか？"
 
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 msgstr "デモ口座にて擬似取引を行って頂き、操作方法等に慣れて頂くことをお勧め致します"
@@ -10386,7 +10435,7 @@ msgid "{JAPAN ONLY}Download our latest report here"
 msgstr "最新のレポートをダウンロード"
 
 msgid "{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
-msgstr "当社のアフィリエイトプログラムでは、報酬プランに基づいて報酬金額をアフィリエイト会員様にお支払します。"
+msgstr "当社のアフィリエイトプログラムでは、報酬プランに基づいて報酬金額をアフィリエイト会員様にお支払いいたします。"
 
 msgid "{JAPAN ONLY}Earning a second income in their spare time?"
 msgstr "バイナリーオプション取引をしたい"
@@ -10494,10 +10543,10 @@ msgid "{JAPAN ONLY}Generous Commission Structure"
 msgstr "報酬プランについて"
 
 msgid "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
-msgstr "アフィリエイト報酬として1人あたりの獲得会員につき20,000円お支払います"
+msgstr "アフィリエイト報酬として1人あたりの獲得会員につき20,000円をお支払いいたします"
 
 msgid "{JAPAN ONLY}High quality promotional materials with online reporting tools"
-msgstr "アフィリエイト会員は、オンラインレポート機能で広告活動を把握できます"
+msgstr "アフィリエイト会員様は、オンラインレポート機能で広告活動を把握できます"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "〒150-0012　東京都渋谷区広尾1-9-16　広尾宮田ビル3F"
@@ -10886,10 +10935,8 @@ msgstr "申し込み"
 msgid "{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today."
 msgstr "ご興味がある方は、是非ご連絡ください。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}Social Media"
-msgstr "日"
+msgstr "ソーシャルメディア"
 
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "残念ながら、合格点に達しませんでした。24時間以降（週末を除く）に再受験してください。"
@@ -11591,7 +11638,7 @@ msgid "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic
 msgstr "当社は、アフィリエイト会員様が広告活動を効果的にできますよう必要なツールを提供させていただきます"
 
 msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
-msgstr "アフィリエイト会員様のサイトを通じて獲得会員が当社にてリアル口座を開設した上、報酬プランの条件を満たした場合、1人あたりの獲得会員につき20,000円をお支払いたします。※詳しくは、アフィリエイトプログラムの利用規約の報酬の支払いをご確認ください。"
+msgstr "アフィリエイト会員様のサイトを通じて獲得会員が当社にてリアル口座を開設した上、報酬プランの条件を満たした場合、1人あたりの獲得会員につき20,000円をお支払いいたします。※詳しくは、アフィリエイトプログラムの利用規約の報酬の支払いをご確認ください。"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr "リアル口座開設は完了致しました。使用するには再度ログインが必要となります。"
@@ -11686,8 +11733,8 @@ msgstr "利用規約の承認"
 msgid "Account Limits"
 msgstr "ご利用制限額"
 
-msgid "ICO"
-msgstr ""
+msgid "Initial Coin Offering"
+msgstr "イニシャル・コイン・オファリング（IPO）"
 
 #~ msgid "Version 44. Last modified 2017-04-19."
 #~ msgstr "第44版・最終編集日：2017年4月19日"
@@ -12220,9 +12267,6 @@ msgstr ""
 
 #~ msgid "Valletta, the capital of Malta"
 #~ msgstr "マルタ共和国首都・Valletta"
-
-#~ msgid "Where we are"
-#~ msgstr "オフィス所在地"
 
 #~ msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries."
 #~ msgstr "マルタ共和国でもマレーシアでも、高い生活水準を得ることができ、収入も先進国の基準での増大が見込めます。"
@@ -19443,9 +19487,6 @@ msgstr ""
 #~ msgid "Divestiture"
 #~ msgstr "会社分割"
 
-#~ msgid "Equity Offering"
-#~ msgstr "提供株式"
-
 #~ msgid "Exchange Offering"
 #~ msgstr "交換オファー"
 
@@ -21898,9 +21939,6 @@ msgstr ""
 
 #~ msgid "47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands, is partly owned by the"
 #~ msgstr "47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islandsに登記されており、"
-
-#~ msgid "Frequently Asked Questions (FAQs)"
-#~ msgstr "よくあるご質問"
 
 #~ msgid "Regent Pacific Group Limited,"
 #~ msgstr "香港市場に上場済であるアジア太平洋地域で活動を展開している鉱業グループのRegent Pacific Group Limited"
