@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-24 08:32+0000\n"
+"PO-Revision-Date: 2017-05-26 01:52+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) "
+"<https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -91,7 +92,7 @@ msgid "%1 ICO <br /> Pre-announcement"
 msgstr "%1 ICO <br />預告"
 
 msgid "%1 ICO FAQ"
-msgstr ""
+msgstr "%1 ICO 常見問題集"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO。在全球領先的二元期權交易平台投資"
@@ -132,10 +133,8 @@ msgstr "%1 天 %2 小時 %3 分鐘"
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "已完成從%2至帳號%3的%1存款。交易編號: %4"
 
-#, fuzzy
-#| msgid "Binary.com developed the systems, methods, and algorithms that made it accessible to retail traders."
 msgid "%1 developed the systems, methods, and algorithms that made binary options accessible to retail traders."
-msgstr "Binary.com開發齊全的交易系統、方式和算法，方便零售交易者使用。"
+msgstr "%1開發齊全的交易系統、方式和算法，方便零售交易者進行二元期權交易。"
 
 msgid "%1 does not charge any transfer fees."
 msgstr "%1不收取任何轉帳費用。"
@@ -178,6 +177,8 @@ msgstr "%1是擁有執照及受監管的交易平台，為全球超過1,000,000 
 
 msgid "%1 is a well-established company founded in 1999. The growth of our business led us to consider an IPO, as is the case with most successful companies. However, we believe that stock exchanges will be gradually replaced by cryptocurrency exchanges in the coming decade, and IPOs will be gradually replaced by ICOs. This is why we decided to perform an ICO instead of an IPO."
 msgstr ""
+"%1成立於1999年，是根基穩固的公司。就像其他成功的企業，基於業務增長，我們考慮進行首次公開募股(IPO)。但是我們深信未來十年內股票交易將被加密貨幣交"
+"易取代，而首次公開募股將由首次代幣公開預售(ICO)取代。因此我們決定進行ICO，而不是IPO。"
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 不斷為系統管理員、技術參與者和主管人才團隊新增經驗豐富的專業人員。我們在以下區域開發了多個吸引人的工作機會，以支持我們持續成長:"
@@ -313,6 +314,8 @@ msgstr "%1在久負盛名的倫敦EGR操作員頒獎儀式中榮獲2015年金融
 
 msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘coloured coins’ on the Bitcoin blockchain, and ‘ERC20’ tokens on the Ethereum blockchain."
 msgstr ""
+"%1將為投資者提供一些程式塊鏈權杖。這些權杖可以各種形式在不同的程式塊鏈上發布，例如比特幣程式塊鏈上的「彩色硬幣」和「以太坊程式塊鏈」上的「ERC20」權"
+"杖。"
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "已完成從賬號%2至%3的%1提款。交易編號: %4"
@@ -935,10 +938,10 @@ msgstr "數學、 物理或工程專科碩士或博士學位"
 msgid "An assertive, sales-driven personality, able to adapt quickly and achieve powerful results"
 msgstr "有主見，具銷售驅動型人格，能夠很快適應並達到強大效果"
 
-#, fuzzy
-#| msgid "An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares."
 msgid "An ‘Initial Coin Offering’ (or ‘ICO’ for short) is a fundraising method that’s relatively similar to an Initial Public Offering (IPO). In an ICO, cryptocurrency such as ‘coloured coins’ or ‘Ethereum tokens’ are issued instead of shares."
-msgstr "首次公開售幣（或簡稱為ICO）是類似於IPO的一種融資方法。 ICO所發行的不是股份，而是加密代幣。"
+msgstr ""
+"「首次公開售幣」（或簡稱為「ICO」）是類似於首次公開募股(IPO)的一種融資方法。 "
+"ICO所發行的不是股份，而是加密代幣，例如「彩色硬幣」或「以太坊權杖」。"
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "對範圍列出的網域和子網域進行分析及測試。"
@@ -3065,7 +3068,7 @@ msgid "Free webinars"
 msgstr "免費線上研討會"
 
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "常見問題集"
 
 msgid "Fresh graduates who meet our basic requirements and are passionate about pursuing a professional career in administrative services are welcome to apply."
 msgstr "歡迎符合我們基本要求並熱衷於追求行政服務為專業的應屆大學畢業生踴躍申請。"
@@ -3317,12 +3320,10 @@ msgid "How can I become an affiliate?"
 msgstr "我如何才能成為聯盟會員？"
 
 msgid "How can I learn more about ICOs and cryptocurrencies?"
-msgstr ""
+msgstr "如何了解更多關於ICO和加密代幣的詳情？"
 
-#, fuzzy
-#| msgid "Purchase our tokens"
 msgid "How can I purchase your tokens?"
-msgstr "買入權杖"
+msgstr "如何買入權杖?"
 
 msgid "How do I change my payment method?"
 msgstr "我如何更改付款方式？"
@@ -3334,7 +3335,7 @@ msgid "How do I know how much I have earned?"
 msgstr "我怎麼知道我賺了多少？"
 
 msgid "How do I stay informed on the Binary.com ICO?"
-msgstr ""
+msgstr "如何繼續獲悉關於Binary.com ICO的更新消息？"
 
 msgid "How do we calculate interest fees for long positions?"
 msgstr "多頭頭寸的利息費用如何計算?"
@@ -3363,8 +3364,6 @@ msgstr "紅利多久發放一次?"
 msgid "How soon can I start trading?"
 msgstr "我需要多久才能開始交易？"
 
-#, fuzzy
-#| msgid "How the ICO Works"
 msgid "How the ICO works"
 msgstr "ICO如何操作"
 
@@ -3386,10 +3385,8 @@ msgstr "如何使用支付代理?"
 msgid "How will the ICO work"
 msgstr "ICO將如何操作"
 
-#, fuzzy
-#| msgid "How will the ICO work"
 msgid "How will the ICO work?"
-msgstr "ICO將如何操作"
+msgstr "ICO將如何操作?"
 
 #, fuzzy
 #| msgid "How will the ICO work"
@@ -3960,7 +3957,7 @@ msgid "Is it possible to deposit the same funds through different payment method
 msgstr "可否透過不同的付款方式存入同一類資金?"
 
 msgid "Is the ICO available in all jurisdictions?"
-msgstr ""
+msgstr "ICO是否可在所有交易管轄區內使用？"
 
 msgid "Is there a cost for joining?"
 msgstr "加入需要任何費用嗎？"
@@ -5854,7 +5851,7 @@ msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "請將以上資訊傳到<a href='mailto:%1'>%1</a>。"
 
 msgid "Please subscribe to our mailing list using the form below for occasional announcements relating to the ICO."
-msgstr ""
+msgstr "請使用以下表格訂閱郵遞清單，陸續收取關於ICO的最新公佈消息。"
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr "請注意，我們的掉期率也取決於您的持倉時間和天數︰ "
@@ -6195,7 +6192,7 @@ msgid "Reference ID"
 msgstr "身份參考號"
 
 msgid "Regardless of the type of token, each token will provide you with two rights:"
-msgstr ""
+msgstr "無論是何類型，每一權杖將為您提供兩種權利："
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Ltd. 更名為 Binary Ltd."
@@ -7239,7 +7236,7 @@ msgid "The GBP Index is a weighted Index, measuring the British Pound's value ag
 msgstr "英鎊指數是加權指數，衡量英鎊相對5種國際貨幣（美元、歐元、澳元、日圓、加元）的價值，每種貨幣的權重均為20%。"
 
 msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions."
-msgstr ""
+msgstr "一些管轄區將按照其規則和規定限制合格或專業投資者參與ICO。"
 
 msgid "The Margin Level of your Real Account reaches or falls below the Stop Out Level;"
 msgstr "您的真實帳戶保證金層級已達到或低於強制平倉層級;"
@@ -7564,7 +7561,7 @@ msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote e
 msgstr "「我們」、「我們的」、「公司」、或 「%1」等詞指 Binary (V) 有限公司，或Binary (C.R.) S.A.，根據網站開帳戶程序中客戶帳戶的司法管轄而定。"
 
 msgid "The tokens will be offered over a period of one month. The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017. The ICO price and auction method will be announced in due course."
-msgstr ""
+msgstr "權杖預售期為一個月。 ICO的準確日期還未確定，但我們打算於2017年第四季啟動。我們將在恰當的時候公佈ICO價格與售賣方式。"
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
 msgstr "通過本網站完成的交易以及客戶和本公司之間的關係由本公司註冊成立所在國（即「管轄地」）的法律管轄和解譯，即英屬曼島、馬爾他或哥斯大黎加三者之一。對於可能出現的與之相關的任何糾紛，您同意司法管轄地法院擁有處置這些糾紛的專屬管轄權。因此，您不可撤銷地服從司法管轄地法院對與所有此類糾紛相關的司法管轄權，且您同意對本公司的任何索賠主張只能在司法管轄地法院提起。有關投訴和糾紛的詳細資訊，請參閱本公司的投訴和糾紛部份。"
@@ -7831,12 +7828,17 @@ msgstr "要啟用cookie，請按下面符合您瀏覽器版本的指示說明進
 
 msgid "To learn how to trade cryptocurrency assets, we recommend that you open an account with US-based cryptocurrency exchange, <a href='https://poloniex.com/'>POLONIEX</a>."
 msgstr ""
+"欲了解加密代幣資產的交易方法，請在美國的<a href='https://poloniex.com/'>POLONIEX</a>加密代幣交易所開立帳戶。"
 
 msgid "To learn more about Bitcoin, we recommend that you <a href='https://blockchain.info/wallet/#/'>open a Bitcoin wallet with Blockchain</a> and <a href='https://www.bitcoin.com/buy-bitcoin'>purchase bitcoins using a local exchange</a> in your country."
 msgstr ""
+"欲了解比特幣的更多詳情，請<a href='https://blockchain.info/wallet/#/'>使用程式塊鏈開立比特幣錢包</a>並<"
+"a href='https://www.bitcoin.com/buy-bitcoin'>通過您的國家的當地交易所購入比特幣</a>。"
 
 msgid "To learn more about Ethereum, we recommend that you install the <a href='https://metamask.io/'>Metamask plugin for Chrome</a>, which will allow you to convert your Bitcoin into Ether."
 msgstr ""
+"欲了解以太坊的更多詳情，請在<a "
+"href='https://metamask.io/'>Chrome瀏覽器上安裝Metamask外掛程式</a>，即可將比特幣轉換成以太幣。"
 
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
 msgstr "要了解關於外匯100%強制清算層次的更多資訊，請閱讀我們的<a href=\"%1\">保證金政策</a>。"
@@ -7886,7 +7888,7 @@ msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinar
 msgstr "權杖可轉換為等值的Binary普通股作為紅利。"
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our account authentication process."
-msgstr ""
+msgstr "權杖僅售予擁有真實資金帳戶，並已完成帳戶驗證程序的%1客戶。"
 
 msgid "Total"
 msgstr "總計"
@@ -9410,6 +9412,8 @@ msgstr "您的取款限額是%1 %2。"
 
 msgid "You’ll be able to purchase our tokens using the funds in your %1 account. We will soon be introducing native <strong>BTC (Bitcoin)</strong> and <strong>ETH (Ethereum)</strong> account facilities to enable your participation in the ICO."
 msgstr ""
+"您可使用%1帳戶的資金購入權杖。我們即將推出原生<strong>BTC (比特幣)</strong>與<strong>ETH "
+"(以太坊)</strong>帳戶工具，以便您參與ICO。"
 
 msgid "ZAR 1 per point"
 msgstr "每點 1 南非幣"
