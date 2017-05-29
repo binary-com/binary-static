@@ -72,27 +72,31 @@
                 }
             }
 
-            if(document.referrer) {
-                localStorage.setItem('index_referrer', document.referrer);
-            }
-            var lang = getCookieItem('language');
-            if(lang) {
-                isDelayedRedirect();
+            if(/^https:\/\/www\.binary\.com\/translations\//i.test(window.location.href)) {
+                window.location.href = 'ach/home.html'; // in-context translation
             } else {
-                var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
-                ws.onopen = function(e) {
-                    ws.send(JSON.stringify({'website_status': '1'}));
-                };
-                ws.onmessage = function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if(response.msg_type === 'website_status') {
-                        if(!response.error && response.hasOwnProperty('website_status')) {
-                            lang = getLanguage(response.website_status.clients_country);
+                if(document.referrer) {
+                    localStorage.setItem('index_referrer', document.referrer);
+                }
+                var lang = getCookieItem('language');
+                if(lang) {
+                    isDelayedRedirect();
+                } else {
+                    var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
+                    ws.onopen = function(e) {
+                        ws.send(JSON.stringify({'website_status': '1'}));
+                    };
+                    ws.onmessage = function(msg) {
+                        var response = JSON.parse(msg.data);
+                        if(response.msg_type === 'website_status') {
+                            if(!response.error && response.hasOwnProperty('website_status')) {
+                                lang = getLanguage(response.website_status.clients_country);
+                            }
+                            ws.close();
+                            isDelayedRedirect();
                         }
-                        ws.close();
-                        isDelayedRedirect();
-                    }
-                };
+                    };
+                }
             }
         </script>
     </head>

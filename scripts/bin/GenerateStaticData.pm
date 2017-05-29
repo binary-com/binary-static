@@ -28,7 +28,7 @@ END_EXPORTS
 
 sub _texts {
     my $js = "const texts_json = {};\n";
-    foreach my $language (BS::all_languages()) {
+    foreach my $language ((BS::all_languages(), 'ACH')) {
         BS::set_lang($language);
 
         my @texts;

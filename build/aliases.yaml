@@ -46,6 +46,7 @@ custom:
 
 release:
   - 'shell:check_origin'
+  - 'shell:check_branch'
   - 'clean'
   - 'default'
   - 'shell:compile_production'
