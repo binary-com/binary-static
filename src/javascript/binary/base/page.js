@@ -28,6 +28,7 @@ const Page = (() => {
         Url.init();
         PushNotification.init();
         onDocumentReady();
+        inContextTranslation();
     };
 
     const onDocumentReady = () => {
@@ -102,6 +103,17 @@ const Page = (() => {
 
     const onUnload = () => {
         Menu.onUnload();
+    };
+
+    const inContextTranslation = () => {
+        if (/^https:\/\/www\.binary\.com\/translations\//i.test(window.location.href) && /ach/i.test(Language.get())) {
+            window._jipt = [];
+            window._jipt.push(['project', 'binary-static']);
+            $('body').append($('<script/>', {
+                type: 'text/javascript',
+                src : `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`,
+            }));
+        }
     };
 
     const recordAffiliateExposure = () => {

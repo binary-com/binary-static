@@ -1,22 +1,16 @@
-# Polish translation files.
-# Copyright (C) Binary.com Regentmarkets
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
+"Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-12 11:46+0000\n"
+"PO-Revision-Date: 2017-05-26 17:09+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
+"Language-Team: Polish\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.14-dev\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Weblate 2.14.1\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "„API %1” oznacza zestaw procedur, protokołów, zasobów i narzędzi programistycznych należących do firmy %1, stworzonych i wykorzystywanych przez nią, które umożliwiają korzystanie z zarejestrowanej aplikacji w celu łączenia się z platformą handlową %1."
@@ -5806,10 +5800,8 @@ msgstr "Odpowiedzialność za własność, treść i wiarygodność stron partne
 msgid "P. Indemnification"
 msgstr "P. Odszkodowanie"
 
-#, fuzzy
-#| msgid "Explanation"
 msgid "PEP Declaration"
-msgstr "Wyjaśnienie"
+msgstr "Oświadczenie ws. PEP"
 
 msgid "PM"
 msgstr "PM"
@@ -7891,7 +7883,7 @@ msgid "There will be no charges for fund transfers from your Binary Options Real
 msgstr "Za przeniesienie środków z Prawdziwego konta do opcji binarnych na Prawdziwe konto nie są pobierane żadne opłaty."
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
-msgstr "Dlatego w chwili obecnej Twoja maksymalna natychmiastowa wypłata (o ile posiadasz na koncie wystarczające środki) wynosi %2 %1 (lub równoważność tej kwoty w innej walucie)."
+msgstr "Dlatego w chwili obecnej Twoja maksymalna natychmiastowa wypłata (o ile posiadasz na koncie wystarczające środki) wynosi %2 %1 (lub równowartość tej kwoty w innej walucie)."
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2."
 msgstr "Dlatego w chwili obecnej Twoja maksymalna natychmiastowa wypłata (o ile posiadasz na koncie wystarczające środki) wynosi %2 %1."
@@ -9363,7 +9355,7 @@ msgid "You have all necessary authority, powers, consents, licences and authoris
 msgstr "Posiadasz wszelkie niezbędne uprawnienia, uprawomocnienia, zezwolenia, licencje i pozwolenia, i podjęte zostały wszelkie niezbędne działania, aby umożliwić legalne zawarcie i wykonanie niniejszej Umowy i takich Transakcji;"
 
 msgid "You have already withdrawn %1 %2."
-msgstr "Właśnie dokonano wypłaty %2 %1."
+msgstr "Wypłacono już %2 %1."
 
 msgid "You have already withdrawn the equivalent of %1 %2 in aggregate over the last %3 days."
 msgstr "Łączny ekwiwalent %2 %1 został już wypłacony w ciągu ostatnich %3 dni."
@@ -9591,7 +9583,7 @@ msgid "You're using a Virtual Account."
 msgstr "Używasz konta wirtualnego."
 
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
-msgstr "Twój %1-dniowy limit wypłat wynosi obecnie %3 %2 (Lub jego ekwiwalent w innej walucie)."
+msgstr "Twój %1-dniowy limit wypłat wynosi obecnie %3 %2 (lub jego równowartość w innej walucie)."
 
 msgid "Your Application is Being Processed."
 msgstr "Twój wniosek jest przetwarzany."

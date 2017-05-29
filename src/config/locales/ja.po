@@ -1,21 +1,15 @@
-# Japanese Translation of bom-web.
-# Copyright (C) 2013 Regent Markets Group
-# This file is distributed under the same license as the bom-web package.
-# Saori Ishikawa <saori@regentmarkets.com>, 2013
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-26 00:18+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"PO-Revision-Date: 2017-05-29 01:09+0000\n"
+"Last-Translator: Mark Tanser <mark@regentmarkets.com>\n"
+"Language-Team: Japanese\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.14.1\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
@@ -5508,7 +5502,7 @@ msgid "Our Company"
 msgstr "会社案内"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
-msgstr "アフィリエイトプログラムは２００４年３月にサービスを提供して以来、常に期日通りにアフィリエイト報酬をお支払いしております。当社からの報酬額のお支払いは、報酬プランの条件を満たした場合、前月のアフィリエイト報酬は翌月の15日頃に登録頂いた指定口座に振込を行います。"
+msgstr "アフィリエイトプログラムは2004年3月にサービスを提供して以来、常に期日通りにアフィリエイト報酬をお支払いしております。当社からの報酬額のお支払いは、報酬プランの条件を満たした場合、前月のアフィリエイト報酬は翌月の15日頃に登録頂いた指定口座に振込を行います。"
 
 msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how %1 executes orders on behalf of our clients."
 msgstr "当社の注文執行ポリシー（以下「ポリシー」）ではお客さまの代わりに%1が行うオーダー執行方法の概要と対応を明示します。"
@@ -5607,7 +5601,7 @@ msgid "Over 3 years"
 msgstr "3年以上"
 
 msgid "Over 5 years"
-msgstr "6年以上"
+msgstr "5年以上"
 
 msgid "Over 90 <a href='%1'>staff</a> and contractors worldwide"
 msgstr "世界中で90人を超えるスタッフと請負業者"
@@ -7143,7 +7137,7 @@ msgid "The AUD Index is a weighted Index, measuring the Australian Dollar's valu
 msgstr "AUDインデックスとは、5つのグローバル通貨(USD, EUR, GBP, JPY, CAD)のバスケットに対するオーストラリアドルの価値を計った各荷重20％の荷重インデックスです。"
 
 msgid "The Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. Your commission will be credited to your affiliate account within fifteen days after the close of a calendar month."
-msgstr "アフィリエイトプログラムは２００４年３月にサービスを提供して以来、常に期日通りにアフィリエイト報酬をお支払いしております。アフィリエイト報酬は、月末日から１５日以内にBinary Ltd.からお客さまのアフィリエイト口座に振り込まれます。"
+msgstr "アフィリエイトプログラムは2004年3月にサービスを提供して以来、常に期日通りにアフィリエイト報酬をお支払いしております。前月のアフィリエイト報酬は、翌月15日頃に登録いただいた口座に振り込まれます。"
 
 msgid "The Affiliate's Obligations"
 msgstr "アフィリエイト会員の義務"
@@ -9990,9 +9984,7 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 5"
 msgstr "（5）本約款に基づく当社との契約で生じた、または関連して生じる紛争、論争、請求は当社が指定した紛争解決機関に持ち込まれ、最終的な判断が決定されます。紛争解決手続きで使用される言語は日本語です。紛争解決機関の裁定による結果を、その地域を管轄する裁判所に提出することができます。紛争解決にかかる費用は貴殿が負担するものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 6"
-msgstr ""
-"当社との間に生じた本契約に関する訴訟については、東京地方裁判所をまたは東京簡易\n"
-"　裁判所を第一審の専属管轄裁判所とします。"
+msgstr "当社との間に生じた本契約に関する訴訟については、東京地方裁判所をまたは東京簡易裁判所を第一審の専属管轄裁判所とします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
 msgstr "総則"
@@ -10840,8 +10832,6 @@ msgstr "出金依頼額を入力して送信ボタンを押してください。
 msgid "{JAPAN ONLY}Please make a bank transfer from your designated bank account to:"
 msgstr "当社の指定口座へ振込を行ってください。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Please make sure you add your Binary.com account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
 msgid "{JAPAN ONLY}Please make sure you add your %1 account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
 msgstr "JPで始まる取引口座番号を振込名義の前に必ず記載してください。記載がない場合、取引口座への反映が遅延が起こる可能性があります。"
 
