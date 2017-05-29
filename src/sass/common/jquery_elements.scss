@@ -7,6 +7,7 @@
             background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#{rgba($COLOR_BLUE, 1)}" d="M15.7,16.59,11.125,12,15.7,7.41,14.3,6l-6,6,6,6Z"/></svg>');
         }
     }
+
     .ui-accordion-content {
         padding-top: 0;
     }
@@ -32,6 +33,7 @@
     padding: 3px 18px 3px 4px; /* Use the same right padding (18px) in jQ */
     border-radius: 3px;
     transition: background 0.4s;
+
     &.clear {
         background-position: right 5px center;
     }

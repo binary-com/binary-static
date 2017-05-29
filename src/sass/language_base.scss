@@ -59,12 +59,14 @@ body.JA {
 /*Vietnamese Language */
 body.VI {
     font-kerning: none;
+
     #legal-tab li.tm-li-2 {
         margin-right: 0 !important;
         padding: 0 8px !important;
     }
     #trading_socket_container #contract_form_name_nav {
         font-size: $FONT_SIZE_N;
+
         > li a.tm-a {
             font-size: $FONT_SIZE_XXS;
         }
@@ -84,6 +86,7 @@ body.FR {
     }
     #trading_socket_container #contract_form_name_nav {
         font-size: $FONT_SIZE_N;
+
         > li a.tm-a {
             font-size: $FONT_SIZE_XXS;
         }
@@ -136,6 +139,7 @@ body.RU {
     #trading_socket_container {
         #contract_form_name_nav {
             font-size: $FONT_SIZE_N;
+
             > li a.tm-a {
                 font-size: $FONT_SIZE_XXS;
             }
@@ -171,6 +175,7 @@ body.PT, body.RU {
 body.DE {
     #trading_socket_container #contract_form_name_nav {
         font-size: $FONT_SIZE_N;
+
         > li a.tm-a {
             font-size: $FONT_SIZE_XS;
         }
