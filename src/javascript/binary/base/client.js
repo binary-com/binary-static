@@ -5,7 +5,6 @@ const State              = require('./storage').State;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const getLoginToken      = require('../common_functions/common_functions').getLoginToken;
 const jpClient           = require('../common_functions/country_base').jpClient;
-const isCryptocurrency   = require('../common_functions/currency_to_symbol').isCryptocurrency;
 const BinarySocket       = require('../websocket_pages/socket');
 const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
 const Cookies            = require('../../lib/js-cookie');
@@ -87,7 +86,6 @@ const Client = (() => {
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
-        const currency = authorize.currency;
         if (!Cookies.get('email')) {
             setCookie('email', authorize.email);
             set('email', authorize.email);
@@ -96,8 +94,7 @@ const Client = (() => {
         set('is_virtual', authorize.is_virtual);
         set('landing_company_name', authorize.landing_company_name);
         set('landing_company_fullname', authorize.landing_company_fullname);
-        set('currency', currency);
-        set('is_crypto', isCryptocurrency(currency));
+        set('currency', authorize.currency);
     };
 
     const shouldAcceptTnc = () => {
