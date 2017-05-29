@@ -75,7 +75,7 @@ foreach my $m (@m) {
     $index++;
 
     foreach my $lang (@langs) {
-        if ($excludes) {
+        if ($excludes and uc $lang ne 'ACH') { # Do not exclude if it's in-context translation (ach)
             if ($excludes =~ /^NOT-/) {
                 next if ($excludes !~ $lang); # exclude all languages except this
             } else {
