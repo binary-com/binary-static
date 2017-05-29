@@ -7,6 +7,7 @@ const localize            = require('../../../../base/localize').localize;
 const defaultRedirectUrl  = require('../../../../base/url').defaultRedirectUrl;
 const dateValueChanged    = require('../../../../common_functions/common_functions').dateValueChanged;
 const FormManager         = require('../../../../common_functions/form_manager');
+const scrollToHashSection = require('../../../../common_functions/scroll').scrollToHashSection;
 const DatePicker          = require('../../../../components/date_picker');
 const TimePicker          = require('../../../../components/time_picker');
 
@@ -33,10 +34,10 @@ const SelfExclusion = (() => {
         });
 
         initDatePicker();
-        getData();
+        getData(true);
     };
 
-    const getData = () => {
+    const getData = (scroll) => {
         BinarySocket.send({ get_self_exclusion: 1 }).then((response) => {
             if (response.error) {
                 if (response.error.code === 'ClientSelfExclusion') {
@@ -64,6 +65,7 @@ const SelfExclusion = (() => {
                     $form.find(`#${key}`).val(value);
                 });
                 bindValidation();
+                if (scroll) scrollToHashSection();
             });
         });
     };
