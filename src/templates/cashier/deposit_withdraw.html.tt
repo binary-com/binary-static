@@ -22,7 +22,7 @@
             <span id="activation_error">[% l('Account not activated, please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]</span>
             <span id="age_error">[% l('Account needs age verification, please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]</span>
             <span id="tnc_error">[% l('Please <a href="[_1]">accept the updated Terms and Conditions</a>.', request.url_for('user/tnc_approvalws')) %]</span>
-            <span id="limits_error">[% l('Please set your 30-day turnover limit in our <a href="[_1]">self-exclusion facilities</a> to access the cashier.', request.url_for('user/security/self_exclusionws') _ '#max_30day_turnover') %]</span>
+            <span id="limits_error">[% l('Please set your <a href="[_1]">30-day turnover limit</a> to access the cashier.', request.url_for('user/security/self_exclusionws')) %]</span>
             <span id="custom_error">[% l('Sorry, an error occurred while processing your request.') %]</span>
         </p>
     </div>
