@@ -41,7 +41,7 @@
                 { id='sidebar-link-section-6', href='?section=complaints-disputes', text=l("Complaints and Disputes") },
                 { id='sidebar-link-section-7', href='?section=conflicts-policy',    text=l("Conflicts Policy") },
                 { id='sidebar-link-section-8', href='?section=biel',                text=l("BIEL Terms") },
-                { id='sidebar-link-section-9', href='?section=accept',              text=l("Accept Terms and Conditions") },
+                { id='sidebar-link-section-9', href='?section=accept',              text=l("Accept Terms and Conditions"), class='tnc_accept invisible' },
             ] %]
         </div>
     </div>

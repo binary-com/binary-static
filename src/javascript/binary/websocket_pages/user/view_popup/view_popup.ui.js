@@ -1,7 +1,4 @@
-const MBDefaults       = require('../../mb_trade/mb_defaults');
-const Defaults         = require('../../trade/defaults');
 const BinarySocket     = require('../../socket');
-const State            = require('../../../base/storage').State;
 const getHighestZIndex = require('../../../base/utility').getHighestZIndex;
 
 const ViewPopupUI = (() => {
@@ -10,7 +7,7 @@ const ViewPopupUI = (() => {
     let $container,
         stream_ids,
         chart_stream_ids,
-        chart_underlying;
+        getPageTickStream;
 
     const init = () => {
         $container = null;
@@ -47,6 +44,7 @@ const ViewPopupUI = (() => {
         clearTimer();
         closeContainer();
         init();
+        if (typeof getPageTickStream === 'function') getPageTickStream();
         $(window).off('resize', () => { repositionConfirmation(); });
     };
 
@@ -60,12 +58,6 @@ const ViewPopupUI = (() => {
     };
 
     const forgetChartStreams = () => {
-        if (State.get('is_trading') || State.get('is_mb_trading') || State.get('is_beta_trading')) {
-            const underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
-            if (underlying === chart_underlying) {
-                return;
-            }
-        }
         while (chart_stream_ids && chart_stream_ids.length > 0) {
             const id = chart_stream_ids.pop();
             if (id && id.length > 0) {
@@ -165,20 +157,17 @@ const ViewPopupUI = (() => {
     };
 
     // ===== Dispatch =====
-    const storeSubscriptionID = (id, underlying) => {
-        if (!stream_ids && !underlying) {
+    const storeSubscriptionID = (id, is_chart) => {
+        if (!stream_ids && !is_chart) {
             stream_ids = [];
         }
         if (!chart_stream_ids) {
             chart_stream_ids = [];
         }
-        if (underlying) {
-            chart_underlying = underlying;
-        }
         if (id && id.length > 0) {
-            if (!underlying && $.inArray(id, stream_ids) < 0) {
+            if (!is_chart && $.inArray(id, stream_ids) < 0) {
                 stream_ids.push(id);
-            } else if (underlying && $.inArray(id, chart_stream_ids) < 0) {
+            } else if (is_chart && $.inArray(id, chart_stream_ids) < 0) {
                 chart_stream_ids.push(id);
             }
         }
@@ -192,6 +181,7 @@ const ViewPopupUI = (() => {
         showInpagePopup       : showInpagePopup,
         repositionConfirmation: repositionConfirmation,
         storeSubscriptionID   : storeSubscriptionID,
+        setStreamFunction     : (streamFnc) => { getPageTickStream = streamFnc; },
     };
 })();
 

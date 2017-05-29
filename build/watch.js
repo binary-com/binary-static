@@ -5,11 +5,11 @@ module.exports = function (grunt){
             tasks: ['stylelint', 'css']
         },
         options: {
-            spawn: false,
-            interrupt: true,
+            spawn        : false,
+            interrupt    : true,
             debounceDelay: 250,
             livereload: {
-                key: grunt.file.read('node_modules/grunt-contrib-connect/tasks/certs/server.key'),
+                key : grunt.file.read('node_modules/grunt-contrib-connect/tasks/certs/server.key'),
                 cert: grunt.file.read('node_modules/grunt-contrib-connect/tasks/certs/server.crt')
             },
         }

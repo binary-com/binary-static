@@ -5,6 +5,7 @@ const Language = (() => {
     'use strict';
 
     const all_languages = {
+        ACH  : 'Translations',
         EN   : 'English',
         DE   : 'Deutsch',
         ES   : 'Español',
