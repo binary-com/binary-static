@@ -107,6 +107,7 @@ const Page = (() => {
 
     const inContextTranslation = () => {
         if (/^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href) && /ach/i.test(Language.get())) {
+            $('#topbar ul[id$="_language"]').setVisibility(0);
             window._jipt = [];
             window._jipt.push(['project', 'binary-static']);
             $('body').append($('<script/>', {
