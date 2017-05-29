@@ -74,6 +74,8 @@
         [% WRAPPER form_row type='select' label=l('Financial asset') id='financial_asset' attributes='class="jp_value"' %]
             [% INCLUDE money %]
         [% END %]
+        [% INCLUDE form_row type='label' id='daily_loss_limit' label=l('Daily limit on losses') attributes='class="jp_value format_money"'
+            hint=l('Maximum aggregate loss per day. Update this value in our [_1]self exclusion facility[_2].', '<a href="' _ request.url_for('user/security/self_exclusionws#max_losses') _ '">', '</a>') %]
     [% END %]
     [% WRAPPER fieldset class='invisible JpAcc' legend=l('Trading Experience') %]
         [% WRAPPER form_row type='select' label=l('Equities') id='trading_experience_equities' attributes='class="jp_value"' %]
@@ -83,6 +85,9 @@
             [% INCLUDE experience %]
         [% END %]
         [% WRAPPER form_row type='select' label=l('Foreign currency deposit') id='trading_experience_foreign_currency_deposit' attributes='class="jp_value"' %]
+            [% INCLUDE experience %]
+        [% END %]
+        [% WRAPPER form_row type='select' label=l('Margin FX') id='trading_experience_margin_fx' attributes='class="jp_value"' %]
             [% INCLUDE experience %]
         [% END %]
         [% WRAPPER form_row type='select' label=l('Investment trust') id='trading_experience_investment_trust' attributes='class="jp_value"' %]
@@ -105,7 +110,7 @@
             <option value="Margin FX">[% l('Margin FX') %]</option>
             <option value="Other">[% l('Other') %]</option>
         [% END %]
-        [% INCLUDE form_row type='text' label=l('Amount of above assets') id='hedge_asset_amount' attributes='maxlength="20"' row_class='hedge invisible' %]
+        [% INCLUDE form_row type='text' label=l('Amount of above assets') id='hedge_asset_amount' attributes='maxlength="20"' row_class='hedge invisible' input_prefix='¥' %]
     [% END %]
     [% WRAPPER fieldset class='invisible' id='fieldset_email_consent' legend=l('Preferences') %]
         [% INCLUDE form_row type='checkbox' label=l('Receive news and special offers') id='email_consent' label_row_id='email_consent_label' %]
