@@ -74,7 +74,6 @@
         [% WRAPPER form_row type='select' label=l('Financial asset') id='financial_asset' attributes='class="jp_value"' %]
             [% INCLUDE money %]
         [% END %]
-        [% INCLUDE form_row type='text' id='daily_loss_limit' label=l('Daily limit on losses') hint=l('Maximum aggregate loss per day.') %]
     [% END %]
     [% WRAPPER fieldset class='invisible JpAcc' legend=l('Trading Experience') %]
         [% WRAPPER form_row type='select' label=l('Equities') id='trading_experience_equities' attributes='class="jp_value"' %]
