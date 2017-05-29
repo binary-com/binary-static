@@ -141,6 +141,7 @@ const PersonalDetails = (() => {
 
                 { selector: '#email_consent' },
 
+                { selector: '#daily_loss_limit',   validations: ['req', 'number'], parent_node: 'jp_settings' },
                 { selector: '#hedge_asset_amount', validations: ['req', 'number'], parent_node: 'jp_settings' },
                 { selector: '#hedge_asset',        validations: ['req'], parent_node: 'jp_settings' },
             ];
