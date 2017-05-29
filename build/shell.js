@@ -1,4 +1,6 @@
 module.exports = function (grunt) {
+    var error_missing_target = `Target is required: use ${Object.keys(global.release_config).map(t => `--${t}`).join(' or ')} to do a release.`;
+
     return {
         compile_dev: {
             command: global.compileCommand('-f -d'),
@@ -32,10 +34,8 @@ module.exports = function (grunt) {
                         if(grunt.option('cleanup')) {
                             var origin = stdout.replace('\n', ''),
                                 CNAME;
-                            if (origin === global.repos.staging.origin) {
-                                CNAME = global.repos.staging.CNAME;
-                            } else if (origin === global.repos.production.origin) {
-                                CNAME = global.repos.production.CNAME;
+                            if (origin === gloabl.release_info.origin) {
+                                CNAME = gloabl.release_info.CNAME;
                             }
                             if (CNAME) {
                                 grunt.file.write(global.dist + '/CNAME', CNAME + "\n");
@@ -56,17 +56,29 @@ module.exports = function (grunt) {
                 callback: function (err, stdout, stderr, cb) {
                     if(!err) {
                         var origin = stdout.replace('\n', '');
-                        grunt.log.ok('origin: ' + origin);
-                        if (grunt.option('staging')) {
-                            if (origin !== global.repos.staging.origin) {
-                                grunt.fail.fatal('Your remote origin does not match the STAGING repository.');
-                            }
-                        } else if (grunt.option('production')) {
-                            if (origin !== global.repos.production.origin) {
-                                grunt.fail.fatal('Your remote origin does not match the PRODUCTION repository.');
-                            }
-                        } else {
-                            grunt.fail.fatal('Target is required: use --staging or --production to do a release.');
+                        grunt.log.ok('Remote origin: ' + origin);
+                        if (!global.release_target) {
+                            grunt.fail.fatal(error_missing_target);
+                        } else if (origin !== gloabl.release_info.origin) {
+                            grunt.fail.fatal(`Your remote origin does not match the ${global.release_target.toUpperCase()} repository.`);
+                        }
+                    }
+                    cb();
+                },
+                stdout: false
+            }
+        },
+        check_branch: {
+            command: 'git symbolic-ref --short HEAD',
+            options: {
+                callback: function (err, stdout, stderr, cb) {
+                    if(!err) {
+                        var branch = stdout.replace('\n', '');
+                        grunt.log.ok('Current branch: ' + branch);
+                        if (!global.release_target) {
+                            grunt.fail.fatal(error_missing_target);
+                        } else if (branch !== global.release_info.branch) {
+                            grunt.fail.fatal('Current branch is not correct.\nIn order to release to ' + global.release_target.toUpperCase() + ', please checkout the "' + global.release_info.branch + '" branch.');
                         }
                     }
                     cb();
