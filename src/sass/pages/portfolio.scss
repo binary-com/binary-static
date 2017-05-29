@@ -2,11 +2,13 @@
     td {
         padding: 10px;
         vertical-align: middle;
+
         &.indicative, &.purchase {
             white-space: nowrap;
         }
         &.indicative.no_resale {
             color: $COLOR_GRAY_SHADE;
+
             span {
                 font-size: $FONT_SIZE_XXS;
                 display: block;
@@ -20,6 +22,7 @@
     th {
         padding: 10px;
         @include BIDIR_VALUE(text-align, left, right);
+
         &.details {
             width: 45%;
         }
@@ -39,8 +42,10 @@
 
 #trading_socket_container_beta #tab_portfolio-content #portfolio {
     @include portfolio_second_row_description;
+
     [data-balloon] {
         cursor: initial;
+
         &:after, &:before {
             display: none !important;
         }

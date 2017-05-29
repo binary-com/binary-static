@@ -2,11 +2,13 @@
     #accounts_list .acc-box {
         padding: 0 10px 0 0;
         margin-bottom: 10px;
+
         > div {
             height: 100%;
             border: 1px solid $COLOR_GRAY;
             display: flex;
             flex-direction: column;
+
             &:hover, &.active {
                 border-color: $COLOR_DARK_WHITE;
                 background: $COLOR_LIGHT_GRAY;
@@ -20,11 +22,13 @@
             }
             .no-account {
                 margin-bottom: 20px;
+
                 .info {
                     padding: 10px;
                     font-size: $FONT_SIZE_N;
                     height: 100px;
                     line-height: 1.5rem;
+
                     a:before {
                         content: ' ';
                         display: block;
@@ -46,11 +50,13 @@
                 padding: 10px;
                 border-top: 1px solid $COLOR_GRAY;
                 font-size: $FONT_SIZE_N;
+
                 a {
                     display: inline-block;
                     width: 64px;
                     text-align: center;
                     margin: 0 10px;
+
                     img {
                         height: 32px;
                         margin-bottom: 7px;
@@ -62,11 +68,13 @@
     .fst-container {
         width: 100%;
         padding-right: 10px;
+
         #fst_action {
             border: 1px solid $COLOR_LIGHT_GRAY;
             margin: 0;
             padding-bottom: 30px;
             position: relative;
+
             legend {
                 background: $COLOR_NAV_BORDER;
                 color: $COLOR_WHITE;
@@ -82,6 +90,7 @@
                 width: 32px;
                 height: 32px;
                 background: $COLOR_NAV_BORDER svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="14" height="14"><path fill="#{rgba($COLOR_WHITE, 1)}" d="M50,5,45,0,25,20,5,0,0,5,20,25,0,45l5,5L25,30,45,50l5-5L30,25Z"/></svg>') no-repeat center;
+
                 &:hover {
                     background-color: $COLOR_DARK_BLUE;
                 }

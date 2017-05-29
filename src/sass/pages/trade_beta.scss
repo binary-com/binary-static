@@ -16,6 +16,7 @@
     text-transform: capitalize;
     padding: 3px 0;
     text-align: center;
+
     &.active {
         color: $COLOR_WHITE;
         background-color: $COLOR_BLUE;
@@ -49,6 +50,7 @@
     font-size: $FONT_SIZE_N;
     position: relative;
     opacity: 0;
+
     &.show {
         animation: fade 1s;
         animation-fill-mode: forwards;
@@ -63,14 +65,17 @@
     }
     #contract_market_form_container, #analysis_tab_container {
         height: 28px;
+
         .tm-li {
             height: 28px;
         }
         ul { /* to remove space between li tags */
             font-size: 0;
+
             li {
                 @include BIDIR_VALUE(margin, 0 2px 0 0, 0 0 0 2px);
                 font-size: $FONT_SIZE_N;
+
                 .tm-a-2 {
                     font-size: $FONT_SIZE_XS;
                 }
@@ -93,6 +98,7 @@
     }
     .row-inner {
         flex-direction: column;
+
         .col-inner {
             margin-bottom: 5px;
         }
@@ -108,6 +114,7 @@
     }
     #contract_form_content_wrapper {
         padding-top: 0.5em;
+
         .col-left {
             @include BIDIR_PROP(padding-right, padding-left, 5px);
         }
@@ -116,6 +123,7 @@
         }
         #contract_prices_container {
             margin-top: 5px;
+
             .price-left {
                 @include BIDIR_PROP(padding-right, padding-left, 2.5px);
             }
@@ -148,6 +156,7 @@
                     white-space: nowrap;
                     padding: 3px;
                     border-radius: $BORDER_RADIUS;
+
                     &.error {
                         font-style: italic;
                     }
@@ -162,6 +171,7 @@
         align-items: center;
         padding-top: 25px;
         position: relative;
+
         #contract_form_container .col {
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
         }
@@ -170,6 +180,7 @@
             display: none;
             background: transparent;
             z-index: 9;
+
             &#loading_container3 {
                 background: $COLOR_LIGHT_GRAY;
                 opacity: 0.5;
@@ -181,6 +192,7 @@
         }
         border: 1px solid $COLOR_GRAY;
         flex: 1 0 auto;
+
         input[type=number] {
             -moz-appearance: textfield;
         }
@@ -192,6 +204,7 @@
         text-align: center;
         background-repeat: no-repeat;
         @include BIDIR_VALUE(background-position, top left, top right);
+
         &.ASIANU {
             background-image: url('../images/pages/trade/asian-u_1.svg');
         }
@@ -266,6 +279,7 @@
             flex-direction: column;
             display: none;
             height: calc(100% - 2px);
+
             > .col.row {
                 flex: 1 0 auto;
             }
@@ -278,6 +292,7 @@
             .contract_purchase {
                 margin-bottom: 0;
                 margin-top: 10px;
+
                 .purchase_button {
                     cursor: pointer;
                     width: 100%;
@@ -338,6 +353,7 @@
             display: flex;
             font-size: $FONT_SIZE_XS;
             position: relative;
+
             table td {
                 border: 0;
                 @include BIDIR_VALUE(padding, 0 10px 4px 0, 0 0 4px 10px);
@@ -359,6 +375,7 @@
         #contract_purchase_spots {
             line-height: 20px;
             overflow: hidden;
+
             #current_tick_number {
                 font-size: $FONT_SIZE_XS;
             }
@@ -369,6 +386,7 @@
             #last_digits_list {
                 .gr-grow {
                     padding: 0 6px;
+
                     .digit {
                         font-weight: bold;
                         font-size: $FONT_SIZE_N;
@@ -416,6 +434,7 @@
         display: none;
         background: transparent;
         z-index: 9;
+
         .close {
             z-index: 10;
         }
@@ -425,6 +444,7 @@
             position: absolute;
             height: 100%;
             flex: 1 0 auto;
+
             div {
                 background: $COLOR_LIGHT_GRAY;
                 width: 100%;
@@ -434,6 +454,7 @@
     }
     #contract_confirmation_container {
         @include BIDIR_VALUE(text-align, left, right);
+
         #contract_purchase_heading, #confirmation_error_heading {
             font-size: $FONT_SIZE_L;
             line-height: 35px;
@@ -450,6 +471,7 @@
     }
     #contract_prices_container .price_container .price_wrapper {
         padding: 10px 15px;
+
         &.small {
             width: 95px;
         }
@@ -462,11 +484,13 @@
         .amount_wrapper {
             float: left;
             width: 100%;
+
             .amount_wrapper_div {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 margin-bottom: 10px;
+
                 div {
                     flex-grow: 1;
                 }
@@ -530,14 +554,17 @@
         #contract_symbol_container {
             #market_container {
                 max-width: calc(50% - 5px);
+
                 #contract_markets {
                     max-width: 100%;
                 }
             }
             #underlying_spot_wrapper {
                 max-width: 50%;
+
                 #underlying_container {
                     width: 100%;
+
                     #underlying {
                         max-width: calc(100% - 26px);
                     }
@@ -562,6 +589,7 @@
         }
         #trading_analysis_content {
             margin-top: 10px;
+
             #tab_graph-content {
                 height: 400px !important;
             }
@@ -586,6 +614,7 @@
                 }
                 li.tm-li-2 {
                     margin: 0;
+
                     a.tm-a-2 {
                         font-size: $FONT_SIZE_XS;
                     }
@@ -616,6 +645,7 @@
         div#contract_market_form_container {
             ul#contract_form_name_nav {
                 white-space: nowrap !important;
+
                 > li.tm-li {
                     /*float: none;
                     width: 100%; */
@@ -639,9 +669,11 @@
 #trading_socket_container_beta #contract_form_name_nav, #trading_socket_container_beta #analysis_tabs {
     border-bottom: none;
     font-size: $FONT_SIZE_N;
+
     > li {
         cursor: pointer;
         padding: 0;
+
         a.tm-a {
             padding: 0 5px;
             width: auto;
@@ -659,8 +691,10 @@
             height: 27px;
             border: 1px solid $COLOR_LIGHT_GRAY;
             border-bottom: 0;
+
             &.open {
                 border-color: $COLOR_GRAY;
+
                 .over {
                     width: 23px;
                     height: 1px;
@@ -673,6 +707,7 @@
             }
             > a {
                 line-height: 27px;
+
                 .caret-down {
                     border-top: 4px dashed;
                     border-right: 4px solid transparent;
@@ -688,11 +723,13 @@
                 background: $COLOR_LIGHT_GRAY;
                 @include BIDIR_PROP(right, left, -1px);
                 border: 1px solid $COLOR_GRAY;
+
                 li {
                     display: block;
                     margin: 0;
                     padding: 0;
                     white-space: nowrap;
+
                     &.active {
                         border-radius: 0;
                     }
@@ -700,6 +737,7 @@
                         display: block;
                         font-size: $FONT_SIZE_S;
                         text-decoration: none;
+
                         &a:hover {
                             background: $COLOR_GRAY;
                         }
@@ -714,6 +752,7 @@
     &.active, &.ui-tabs-active {
         background: $COLOR_BLUE;
         color: $COLOR_WHITE;
+
         li:not(.active) a {
             color: $COLOR_BLACK;
         }
@@ -722,6 +761,7 @@
 
 #analysis_daily_prices_form {
     text-align: center;
+
     input {
         margin: 0 10px;
     }
@@ -740,6 +780,7 @@
     #trading_analysis_content {
         height: 100%;
         font-size: $FONT_SIZE_N;
+
         #analysis_tabs {
             white-space: nowrap;
         }
@@ -750,6 +791,7 @@
         }
         .content-tab-container {
             height: 100%;
+
             #analysis_content {
                 margin: 0;
                 padding-top: 10px;
@@ -757,12 +799,14 @@
                 width: auto;
                 border: 1px solid $COLOR_GRAY;
                 overflow-y: auto;
+
                 .toggle-content, #trade_live_chart, #trade_live_chart #chart_frame {
                     height: 100%;
                 }
                 #trade_live_chart table {
                     width: 100%;
                     height: 98%;
+
                     td {
                         height: 100%;
                         border: 0;

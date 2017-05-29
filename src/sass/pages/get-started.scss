@@ -4,11 +4,13 @@
         min-height: 224px;
         height: calc(100% - 20px);
         margin: 0 10px 20px;
+
         a {
             display: block;
             color: $COLOR_WHITE;
             background: $COLOR_BLACK;
             text-decoration: none;
+
             &:hover .section-header {
                 background: $COLOR_DARK_GREEN;
             }
