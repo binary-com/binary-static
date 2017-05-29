@@ -2,6 +2,7 @@ table {
     border-collapse: collapse;
     line-height: 1.5em;
     width: 100%;
+
     * {
         font-size: $FONT_SIZE_N;
     }
@@ -46,6 +47,7 @@ table {
 /* Flex table styling */
 .table-container {
     $md: 600px;
+
     th {
         @include BIDIR_VALUE(text-align, left !important, right !important);
         border-bottom: none !important;
@@ -54,6 +56,7 @@ table {
     td {
         @include BIDIR_VALUE(text-align, left !important, right !important);
         @include BIDIR_PROP(padding-left, padding-right, 10px);
+
         &[data-balloon] {
             border-bottom: 3px solid $COLOR_LIGHT_GRAY;
         }
@@ -68,6 +71,7 @@ table {
             padding-right: 5px !important;
         }
     }
+
     #statement-table, #profit-table {
         tr {
             & > th.details, & > td.details {
@@ -79,6 +83,7 @@ table {
             @media (max-width: $md) {
                 & > th.details, & > td.details {
                     display: table-cell !important;
+
                     .button {
                         padding: 8px 15px;
                     }

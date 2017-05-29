@@ -4,6 +4,7 @@
     padding: 4px 20px;
     position: relative;
     @include BIDIR_PROP(margin-left, margin-right, 15px);
+
     span.close {
         display: none;
         color: $COLOR_RED;
@@ -24,6 +25,7 @@
         display: inline-block;
         white-space: nowrap;
         line-height: 20px;
+
         span {
             display: inline-block;
             vertical-align: middle;

@@ -11,6 +11,7 @@ body {
     position: relative;
     background: repeat-x bottom;
     overflow-x: hidden;
+
     .ui-widget {
         font-size: $FONT_SIZE_N;
     }
@@ -72,6 +73,7 @@ fieldset {
     border: 1px solid $COLOR_GRAY;
     padding: 5px;
     margin-bottom: 10px;
+
     legend {
         color: $COLOR_DARK_GRAY;
         padding: 0 0.8em;
@@ -113,6 +115,7 @@ label {
 
 .form-row {
     padding: 10px 0;
+
     div:first-child label {
         display: block;
         text-align: right;
@@ -154,6 +157,7 @@ label {
     background: $COLOR_LIGHT_GRAY;
     z-index: 1000;
     max-width: 90%;
+
     .drag-handle {
         cursor: pointer;
     }
@@ -230,6 +234,7 @@ _:-ms-fullscreen, :root #content-holder {
 
 input[type=checkbox] {
     margin-top: -5px;
+
     &#email_consent {
         margin-top: 5px;
     }
@@ -313,6 +318,7 @@ button .barspinner.white {
 
 .static_full {
     margin-top: 40px;
+
     .section:first-child {
         padding-bottom: 50px;
     }
@@ -330,6 +336,7 @@ button .barspinner.white {
     .sidebar-button {
         background: $COLOR_LIGHT_GRAY;
         padding: 20px;
+
         a {
             @include link-button;
             display: block;

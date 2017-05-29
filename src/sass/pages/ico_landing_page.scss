@@ -42,8 +42,10 @@ h1, h2, h3 {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+
     .intro-body {
         vertical-align: middle;
+
         .brand-heading {
             font-size: 64px;
         }
@@ -135,6 +137,7 @@ hr {
 // Our growth section
 #charts {
     position: relative;
+
     .vertical-line { // vertical line between charts
         position: absolute;
         width: 1px;
@@ -218,6 +221,7 @@ input[type='text']:focus, input[type='submit']:focus {
 
 .form-container {
     display: flex;
+
     .af-form-wrapper {
         margin: 0 auto;
     }
@@ -257,6 +261,7 @@ input[type='text']:focus, input[type='submit']:focus {
 .navbar-nav {
     float: right;
     display: flex;
+
     > li {
         padding: 10px 15px;
     }
@@ -297,6 +302,7 @@ input[type='text']:focus, input[type='submit']:focus {
     .intro {
         height: 95%;
         padding-top: 120px;
+
         .intro-body {
             .brand-heading {
                 font-size: 34px;
@@ -318,6 +324,7 @@ input[type='text']:focus, input[type='submit']:focus {
         -ms-transition: height 0.5s;
         -o-transition: height 0.5s;
         transition: height 0.5s;
+
         .navbar-header {
             padding: 10px;
         }
@@ -339,6 +346,7 @@ input[type='text']:focus, input[type='submit']:focus {
         background: transparent;
         float: none;
         display: block;
+
         > li {
             padding: 0;
             margin: 10px 15px;
@@ -359,6 +367,7 @@ input[type='text']:focus, input[type='submit']:focus {
 
 #faq-section {
     padding: 100px 15px;
+
     #faq-btn {
         text-transform: none !important;
     }
@@ -367,6 +376,7 @@ input[type='text']:focus, input[type='submit']:focus {
 .faq {
     margin: 15px 0;
     border: 1px solid $COLOR_LIGHT_GRAY;
+
     h4 {
         background-color: $COLOR_LIGHT_GRAY;
         padding: 20px;

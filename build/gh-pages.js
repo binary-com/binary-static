@@ -7,7 +7,7 @@ module.exports = function (grunt) {
                 branch : 'gh-pages',
                 message: global.release_target ? 'Release to ' + global.release_target : 'Auto-generated commit',
             },
-            src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '!' + global.branch_prefix + '*/**']
+            src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '!' + (global.branch_prefix || 'br_') + '*/**']
         },
         trigger_tests: {
             options: {
@@ -17,7 +17,7 @@ module.exports = function (grunt) {
                 repo   : 'git@github.com:binary-com/binary-static-ci.git',
                 message: 'Trigger tests',
             },
-            src: 'version',
+            src: grunt.cli.tasks[0] === 'release' && global.release_target === 'staging' ? 'version' : '',
         },
     }
 };

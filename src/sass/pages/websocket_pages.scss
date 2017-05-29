@@ -3,6 +3,7 @@
 .api_token {
     fieldset {
         margin: 20px 0;
+
         label {
             text-decoration: none;
             @include BIDIR_PROP(margin-right, margin-left, 15px);
@@ -25,6 +26,7 @@
         text-align: center !important;
         vertical-align: middle;
         line-height: 30px;
+
         .button {
             margin: 3px 0;
         }
@@ -51,6 +53,7 @@
         width: auto;
         margin-left: 15px;
         margin-bottom: 10px;
+
         td {
             border: none;
         }
