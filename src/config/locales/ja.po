@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-30 04:50-0400\n"
+"PO-Revision-Date: 2017-05-30 05:52-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -3756,6 +3756,9 @@ msgstr "外国為替市場では、任意の通貨が特定の通貨に対する
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "当社のモバイルアプリケーションまたは第三者開発アプリケーションへアクセスするには、はじめにAPIトークンの作成が必要です。"
 
+msgid "In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days."
+msgstr ""
+
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr "継続的な成長をサポートするために、当社では資格あるコンプライアンス担当者を募集しています。マルタに基づいているため、この新しい役割では、当社の企業コンプライアンス担当者に報告することとなります。"
 
@@ -4955,6 +4958,9 @@ msgstr "7日間の最大損失 (半角)"
 msgid "Maximum aggregate loss per day."
 msgstr "1日あたりの最大損失額【1円単位】例 10万円の場合は100000 (半角)"
 
+msgid "Maximum aggregate loss per day. Update this value in our %1self exclusion facility%2."
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions"
 msgstr "未現実利益限度額"
 
@@ -5861,8 +5867,8 @@ msgstr "リアル口座へアップグレードされる前に%居住国%2を設
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr "入金制限を解除するには、%1自己制限%2から30日の取引数量限度額を設定してください。"
 
-msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
-msgstr "キャッシャーへアクセスするには、<a href=\"%1\">自己制限</a>から30日の取引数量限度額を設定してください。"
+msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
+msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "ご希望のリアリティチェック間隔を分単位で指定してください"
@@ -8215,6 +8221,9 @@ msgstr "火"
 
 msgid "Turnover"
 msgstr "取引数量"
+
+msgid "Turnover Limit"
+msgstr ""
 
 msgid "Two-way pricing"
 msgstr "2ウェイ・プライス（購入・売却）を表示"
@@ -11381,6 +11390,36 @@ msgstr "信託により区分管理"
 
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "お客さまからの入金を確認後にお取引口座にすぐに反映いたします"
+
+msgid "{JAPANY ONLY}1 week to 1 year terms"
+msgstr ""
+
+msgid "{JAPANY ONLY}2 hours to 1 year terms"
+msgstr ""
+
+msgid "{JAPANY ONLY}Ladder Options"
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry."
+msgstr ""
+
+msgid "{JAPANY ONLY}Range Options: End-In / End-Out"
+msgstr ""
+
+msgid "{JAPANY ONLY}Range Options: Stay-In / Break-Out"
+msgstr ""
+
+msgid "{JAPANY ONLY}Touch Options"
+msgstr ""
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "店頭バイナリーオプション取引約款"
