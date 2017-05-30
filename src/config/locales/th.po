@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-28 23:30-0400\n"
+"PO-Revision-Date: 2017-05-30 05:51-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -3744,6 +3744,9 @@ msgstr "ในตลาดแลกเปลี่ยนเงินตรา �
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "เพื่อการใช้งานแอพพลิเคชันทางอุปกรณ์เคลื่อนที่ หรือแอพพลิเคชันอื่นๆ ท่านต้องขอ API โทเค่นก่อน"
 
+msgid "In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days."
+msgstr ""
+
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr "การสนับสนุนการเติบโตที่ต่อเนื่อง %1 สรรหาผู้ที่มีคุณสมบัติในการปฏิบัติหน้าที่ Compliance Executive ซึ่งเป็นตำแหน่งใหม่ ประจำที่สำนักงานมอลตา ผู้ดำรงตำแหน่งรายงานตรงต่อ Head of Regulatory และ Legal Compliance"
 
@@ -4932,6 +4935,9 @@ msgstr "มูลค่ารวมที่ขาดทุนสูงสุด
 msgid "Maximum aggregate loss per day."
 msgstr "มูลค่ารวมที่ขาดทุนสูงสุดต่อวัน"
 
+msgid "Maximum aggregate loss per day. Update this value in our %1self exclusion facility%2."
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions"
 msgstr "มูลค่าการชำระเงินรวมสูงสุดของโพซิชั่นที่เปิด"
 
@@ -5832,8 +5838,8 @@ msgstr "โปรดตั้งค่า %1ประเทศที่พำน
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr "โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก %1ตัวเลือกพักการซื้อขาย%2 เพื่อลบวงเงินการฝากเงิน"
 
-msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
-msgstr "โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก <a href=\"%1\">ตัวเลือกพักการซื้อขาย</a> เพื่อเข้าใช้งาน"
+msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
+msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "โปรดระบุช่วงเวลาการตรวจสอบสภาพความเป็นจริงที่ท่านต้องการเป็นหน่วยนาทีที่จะเกิดขึ้นจริงระหว่างการซื้อขาย"
@@ -8098,6 +8104,9 @@ msgstr "วันอังคาร"
 
 msgid "Turnover"
 msgstr "การซื้อขาย"
+
+msgid "Turnover Limit"
+msgstr ""
 
 msgid "Two-way pricing"
 msgstr ""
@@ -11215,6 +11224,36 @@ msgstr "{JAPAN ONLY}Your funds are safe"
 
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
+
+msgid "{JAPANY ONLY}1 week to 1 year terms"
+msgstr ""
+
+msgid "{JAPANY ONLY}2 hours to 1 year terms"
+msgstr ""
+
+msgid "{JAPANY ONLY}Ladder Options"
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry."
+msgstr ""
+
+msgid "{JAPANY ONLY}Range Options: End-In / End-Out"
+msgstr ""
+
+msgid "{JAPANY ONLY}Range Options: Stay-In / Break-Out"
+msgstr ""
+
+msgid "{JAPANY ONLY}Touch Options"
+msgstr ""
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
