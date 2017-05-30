@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-28 23:31-0400\n"
+"PO-Revision-Date: 2017-05-30 05:52-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -3743,6 +3743,9 @@ msgstr "Na rynkach walutowych można handlować na podstawie zmian kursów walut
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "Aby uzyskać dostęp do naszych aplikacji mobilnych i do aplikacji stron trzecich, musisz najpierw wygenerować Token API."
 
+msgid "In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days."
+msgstr ""
+
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr "W celu zapewnienia ciągłego rozwoju firma %1 poszukuje wykwalifikowanej osoby na stanowisko specjalisty ds. zgodności. Osoba zatrudniona na tym nowoutworzonym stanowisku będzie pracować w siedzibie na Malcie i będzie odpowiadać przed naszym dyrektorem ds. zgodności z przepisami prawnymi i regulacyjnymi"
 
@@ -4931,6 +4934,9 @@ msgstr "Maksymalna łączna strata w okresie 7-dniowym."
 msgid "Maximum aggregate loss per day."
 msgstr "Maksymalna łączna strata dzienna."
 
+msgid "Maximum aggregate loss per day. Update this value in our %1self exclusion facility%2."
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Maksymalne zagregowane wypłaty dla pozycji otwartych"
 
@@ -5831,7 +5837,7 @@ msgstr ""
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr ""
 
-msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -8095,6 +8101,9 @@ msgstr "Wtorek"
 
 msgid "Turnover"
 msgstr "Obrót"
+
+msgid "Turnover Limit"
+msgstr ""
 
 msgid "Two-way pricing"
 msgstr ""
@@ -11212,6 +11221,36 @@ msgstr "{JAPAN ONLY}Your funds are safe"
 
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
+
+msgid "{JAPANY ONLY}1 week to 1 year terms"
+msgstr ""
+
+msgid "{JAPANY ONLY}2 hours to 1 year terms"
+msgstr ""
+
+msgid "{JAPANY ONLY}Ladder Options"
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry."
+msgstr ""
+
+msgid "{JAPANY ONLY}Range Options: End-In / End-Out"
+msgstr ""
+
+msgid "{JAPANY ONLY}Range Options: Stay-In / Break-Out"
+msgstr ""
+
+msgid "{JAPANY ONLY}Touch Options"
+msgstr ""
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
