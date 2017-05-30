@@ -109,7 +109,7 @@ grunt release --staging=1|--production=1|--translations=1 [--cleanup]
 ```
 (The value is needed when more than one option is used)
 
-###Parameters:
+### Parameters:
 - `--staging` or `--production` or `--translations` (mandatory)
   - In order to prevent accidentally releasing to the wrong target, it is mandatory to provide one of these parameters.
   - Your remote origin will be checked to be the correct target of the given parameter.
