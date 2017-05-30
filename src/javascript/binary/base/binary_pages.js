@@ -3,9 +3,10 @@ const LoggedInHandler = require('./logged_in');
 const Charity            = require('../static_pages/charity');
 const Contact            = require('../static_pages/contact');
 const Endpoint           = require('../static_pages/endpoint');
-const Home               = require('../static_pages/home');
 const GetStarted         = require('../static_pages/get_started');
 const GetStartedJP       = require('../static_pages/get_started_jp');
+const Home               = require('../static_pages/home');
+const HomeJP             = require('../static_pages/home_jp');
 const JobDetails         = require('../static_pages/job_details');
 const Platforms          = require('../static_pages/platforms');
 const Regulation         = require('../static_pages/regulation');
@@ -101,7 +102,7 @@ const pages_config = {
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
-    'home-jp'                : { module: Home,                       not_authenticated: true },
+    'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'job-details'            : { module: JobDetails },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
