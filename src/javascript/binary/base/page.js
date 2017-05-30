@@ -77,7 +77,7 @@ const Page = (() => {
             Url.reset();
         } else {
             init();
-            Localize.forLang(Language.get());
+            Localize.forLang(Language.urlLang());
             Header.onLoad();
             Language.setCookie();
             Menu.makeMobileMenu();
