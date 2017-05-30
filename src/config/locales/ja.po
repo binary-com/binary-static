@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-30 06:13-0400\n"
+"PO-Revision-Date: 2017-05-30 17:30-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -4959,7 +4959,7 @@ msgid "Maximum aggregate loss per day."
 msgstr "1日あたりの最大損失額【1円単位】例 10万円の場合は100000 (半角)"
 
 msgid "Maximum aggregate loss per day. Update this value in our %1self exclusion facility%2."
-msgstr ""
+msgstr "1日の最大損失に達しました。%1s取引制限%2にてこの値を更新してください。"
 
 msgid "Maximum aggregate payouts on open positions"
 msgstr "未現実利益限度額"
@@ -5868,7 +5868,7 @@ msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%
 msgstr "入金制限を解除するには、%1自己制限%2から30日の取引数量限度額を設定してください。"
 
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
-msgstr ""
+msgstr "入出金にアクセスするには、<a href=\"%1\">30日の取引数量限度額</a>を設定いただく必要があります。"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "ご希望のリアリティチェック間隔を分単位で指定してください"
@@ -8223,7 +8223,7 @@ msgid "Turnover"
 msgstr "取引数量"
 
 msgid "Turnover Limit"
-msgstr ""
+msgstr "取引数量限度額"
 
 msgid "Two-way pricing"
 msgstr "2ウェイ・プライス（購入・売却）を表示"
