@@ -5,6 +5,7 @@ msgstr ""
 "PO-Revision-Date: 2017-05-28 23:30-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
+"Language: id_ID\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,7 +14,6 @@ msgstr ""
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: id\n"
 "X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
-"Language: id_ID\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program %1, protokol, alat dan sumber daya yang diciptakan dan dikelola oleh %1 yang dapat memberi Anda fasilitas untuk menggunakan aplikasi terdaftar pada platform trading %1."
@@ -3738,6 +3738,9 @@ msgstr "Pada pasar valuta asing, para trader dapat membeli kontrak berdasarkan p
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "Untuk mengakses aplikasi mobile kami dan aplikasi pihak ketiga lainnya, Anda harus membuat Token API."
 
+msgid "In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days."
+msgstr ""
+
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr "Untuk mendukung pertumbuhan yang berkelanjutan, %1 berusaha merekrut dan menempatkan Executive berkualitas yang taat. Posisi ini akan berkedudukan di Malta, berkewajiban memberikan laporan kepada Ketua Regulator dan Kepatuhan Hukum"
 
@@ -4926,6 +4929,9 @@ msgstr "Jumlah maksimum rata-rata kerugian dalam periode 7-hari."
 msgid "Maximum aggregate loss per day."
 msgstr "Maksimum rata-rata kerugian per hari."
 
+msgid "Maximum aggregate loss per day. Update this value in our %1self exclusion facility%2."
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Jumlah maksimal hasil rata-rata pada posisi terbuka"
 
@@ -5826,7 +5832,9 @@ msgstr "Silahkan pilih %negara domisili%2 sebelum mengupgrade ke dalam akun riil
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr "Tentukan batasan total pembelian kontrak 30-hari pada %1fasilitas pengecualian diri%2 untuk menghapus batasan deposit Anda."
 
-msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+#, fuzzy
+#| msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr "Tentukan batasan total pembelian kontrak 30-hari pada <a href=\"%1\">fasilitas pengecualian diri</a>untuk mengakses bagian kasir."
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -7030,7 +7038,8 @@ msgid "The %1 Privacy and Security Policy;"
 msgstr "Privasi dan Kebijakan Keamanan %1;"
 
 msgid "The %1 Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk."
-msgstr "Grup Quantitative Analytics %1 bertanggung jawab atas harga opsi binary yang ditawarkan pada website kami, \n"
+msgstr ""
+"Grup Quantitative Analytics %1 bertanggung jawab atas harga opsi binary yang ditawarkan pada website kami, \n"
 "serta manajemen risiko dan profitabilitas buku opsinya. Memproses lebih dari satu juta transaksi setiap hari, perusahaan mengelola buku opsi eksotis yang dapat dikatakan melebihi kompleksitas usaha derivatif pada umumnya."
 
 msgid "The %1 Terms and Conditions;"
@@ -8090,6 +8099,11 @@ msgid "Tuesday"
 msgstr "Selasa"
 
 msgid "Turnover"
+msgstr "Total pembelian"
+
+#, fuzzy
+#| msgid "Turnover"
+msgid "Turnover Limit"
 msgstr "Total pembelian"
 
 msgid "Two-way pricing"
@@ -11208,6 +11222,50 @@ msgstr "{JAPAN ONLY}Your funds are safe"
 
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}A True Partnership"
+msgid "{JAPANY ONLY}1 week to 1 year terms"
+msgstr "{JAPAN ONLY}A True Partnership"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Track your trade in real time:"
+msgid "{JAPANY ONLY}2 hours to 1 year terms"
+msgstr "{JAPAN ONLY}Track your trade in real time:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPANY ONLY}Ladder Options"
+msgstr "{JAPAN ONLY}Options Basics"
+
+#, fuzzy
+#| msgid "Predict the market staying inside or going outside two price targets."
+msgid "{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range."
+msgstr "Menganalisa pasar akan tetap berada atau keluar dua target harga."
+
+#, fuzzy
+#| msgid "Higher/Lower - Predict if the market will end higher or lower than a target price"
+msgid "{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
+msgstr "Higher/Lower - Menganalisa pasar akan berakhir lebih tinggi atau lebih rendah dari harga target"
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry."
+msgstr ""
+
+msgid "{JAPANY ONLY}Range Options: End-In / End-Out"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 1: Structure"
+msgid "{JAPANY ONLY}Range Options: Stay-In / Break-Out"
+msgstr "{JAPAN ONLY}Section 1: Structure"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPANY ONLY}Touch Options"
+msgstr "{JAPAN ONLY}Options Basics"
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
