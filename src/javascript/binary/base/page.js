@@ -1,5 +1,6 @@
 const Client            = require('./client');
 const Contents          = require('./contents');
+const Crowdin           = require('./crowdin');
 const Header            = require('./header');
 const Language          = require('./language');
 const Localize          = require('./localize');
@@ -28,7 +29,7 @@ const Page = (() => {
         Url.init();
         PushNotification.init();
         onDocumentReady();
-        inContextTranslation();
+        Crowdin.init();
     };
 
     const onDocumentReady = () => {
@@ -76,7 +77,7 @@ const Page = (() => {
             Url.reset();
         } else {
             init();
-            Localize.forLang(Language.get());
+            Localize.forLang(Language.urlLang());
             Header.onLoad();
             Language.setCookie();
             Menu.makeMobileMenu();
@@ -103,17 +104,6 @@ const Page = (() => {
 
     const onUnload = () => {
         Menu.onUnload();
-    };
-
-    const inContextTranslation = () => {
-        if (/^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href) && /ach/i.test(Language.get())) {
-            window._jipt = [];
-            window._jipt.push(['project', 'binary-static']);
-            $('body').append($('<script/>', {
-                type: 'text/javascript',
-                src : `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`,
-            }));
-        }
     };
 
     const recordAffiliateExposure = () => {

@@ -8,7 +8,7 @@ const Localize = (() => {
     let localized_texts;
 
     const localizeForLang = (lang) => {
-        localized_texts = texts_json[lang];
+        localized_texts = texts_json[lang.toUpperCase()];
         moment.locale(lang.toLowerCase());
     };
 

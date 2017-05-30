@@ -29,14 +29,27 @@ const Language = (() => {
         }
     };
 
+    let url_lang = null;
     const languageFromUrl = () => {
+        if (url_lang) return url_lang;
         const regex = new RegExp(`^(${Object.keys(all_languages).join('|')})$`, 'i');
         const url_params = window.location.href.split('/').slice(3);
-        return (url_params.find(lang => regex.test(lang)) || '');
+        url_lang = (url_params.find(lang => regex.test(lang)) || '');
+        return url_lang;
     };
 
     let current_lang = null;
-    const getLanguage = () => (current_lang = (current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase()));
+    const getLanguage = () => {
+        if (/ach/i.test(current_lang) || /ach/i.test(languageFromUrl())) {
+            const crowdin_lang = Cookies.get('jipt_language_code_binary-static'); // selected language for in-context translation
+            if (crowdin_lang) {
+                current_lang = crowdin_lang.toUpperCase().replace('-', '_').toUpperCase();
+                $('body').addClass(current_lang); // set the body class removed by crowdin code
+            }
+        }
+        current_lang = (current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase());
+        return current_lang;
+    };
 
     const urlForLanguage = lang => window.location.href.replace(new RegExp(`\/${getLanguage()}\/`, 'i'), `/${lang.trim().toLowerCase()}/`);
 
@@ -58,6 +71,7 @@ const Language = (() => {
         get      : getLanguage,
         onChange : onChangeLanguage,
         urlFor   : urlForLanguage,
+        urlLang  : languageFromUrl,
     };
 })();
 
