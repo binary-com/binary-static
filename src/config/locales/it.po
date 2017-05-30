@@ -5,6 +5,7 @@ msgstr ""
 "PO-Revision-Date: 2017-05-28 23:30-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,7 +14,6 @@ msgstr ""
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: it\n"
 "X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
-"Language: it_IT\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" indica l'insieme delle routine programmatiche, protocolli e risorse di proprietà di %1 create e gestite da %1 che ti consentono di usare un'Applicazione registrata per interagire con la piattaforma di trading di %1."
@@ -544,7 +544,9 @@ msgid "A broad array of HR-related administrative tasks"
 msgstr "Una vasta gamma di attività amministrative correlate alle Risorse Umane"
 
 msgid "A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria:"
-msgstr "<p>Un cliente è qualcuno che è stato riferito attraverso uno dei tuoi strumenti di marketing e che ha depositato fondi sul proprio account di %1.  Devono soddisfare i seguenti criteri: </p>\n\n"
+msgstr ""
+"<p>Un cliente è qualcuno che è stato riferito attraverso uno dei tuoi strumenti di marketing e che ha depositato fondi sul proprio account di %1.  Devono soddisfare i seguenti criteri: </p>\n"
+"\n"
 "    <ul class='checked'>\n"
 "        <li>Non essere già stati clienti di %1 precedentemente.</li>\n"
 "        <li>Aver effettuato il deposito minimo.</li>\n"
@@ -1695,7 +1697,8 @@ msgid "Choose the Underlying"
 msgstr ""
 
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
-msgstr "La prima cosa da fare è scegliere l'asset che desideri negoziare, come ad esempio l'oro o il petrolio, azioni o tassi FX (il valore di un'opzione binaria deriva dal prezzo dell'asset sottostante). Un grande vantaggio del trading di opzioni è che non stai acquistando\n"
+msgstr ""
+"La prima cosa da fare è scegliere l'asset che desideri negoziare, come ad esempio l'oro o il petrolio, azioni o tassi FX (il valore di un'opzione binaria deriva dal prezzo dell'asset sottostante). Un grande vantaggio del trading di opzioni è che non stai acquistando\n"
 "             o vendendo l'asset reale."
 
 msgid "Choose the payment method you'd like to use."
@@ -3744,6 +3747,9 @@ msgstr "Nel mercato dei cambi, i trader possono stipulare contratti basati sulla
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "Per accedere alle nostre app mobili e ad altre applicazioni di terze parti, dovrai innanzitutto generare un token API."
 
+msgid "In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days."
+msgstr ""
+
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr "Per poter supportare la sua crescita continua, %1 sta cercando di reclutare e posizionare un Executive qualitficato per la Compliance. In questo nuovo ruolo, con sede a Malta, l'incaricato riferirà con il nostro Capo della Compliance regolamentare e legale"
 
@@ -4932,6 +4938,9 @@ msgstr "Perdita totale massima per un periodo di 7 giorni."
 msgid "Maximum aggregate loss per day."
 msgstr "Perdita totale massima al giorno."
 
+msgid "Maximum aggregate loss per day. Update this value in our %1self exclusion facility%2."
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Payout totali massimi su posizioni aperte"
 
@@ -5832,7 +5841,7 @@ msgstr ""
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr ""
 
-msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -8095,6 +8104,11 @@ msgid "Tuesday"
 msgstr "Martedì"
 
 msgid "Turnover"
+msgstr "Turnover"
+
+#, fuzzy
+#| msgid "Turnover"
+msgid "Turnover Limit"
 msgstr "Turnover"
 
 msgid "Two-way pricing"
@@ -11213,6 +11227,48 @@ msgstr "{JAPAN ONLY}Your funds are safe"
 
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}A True Partnership"
+msgid "{JAPANY ONLY}1 week to 1 year terms"
+msgstr "{JAPAN ONLY}A True Partnership"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Track your trade in real time:"
+msgid "{JAPANY ONLY}2 hours to 1 year terms"
+msgstr "{JAPAN ONLY}Track your trade in real time:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPANY ONLY}Ladder Options"
+msgstr "{JAPAN ONLY}Options Basics"
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range."
+msgstr ""
+
+#, fuzzy
+#| msgid "Higher/Lower - Predict if the market will end higher or lower than a target price"
+msgid "{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
+msgstr "High/Low - Prevedi se il mercato chiuderà ad un prezzo più alto o più basso rispetto a quello deciso"
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry."
+msgstr ""
+
+msgid "{JAPANY ONLY}Range Options: End-In / End-Out"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 1: Structure"
+msgid "{JAPANY ONLY}Range Options: Stay-In / Break-Out"
+msgstr "{JAPAN ONLY}Section 1: Structure"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPANY ONLY}Touch Options"
+msgstr "{JAPAN ONLY}Options Basics"
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"

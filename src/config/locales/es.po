@@ -5,6 +5,7 @@ msgstr ""
 "PO-Revision-Date: 2017-05-28 23:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,7 +14,6 @@ msgstr ""
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
-"Language: es_ES\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API de Binary.com\" significa el conjunto propio de Binary.com de rutinas de programación, protocolos, herramientas y recursos creados y mantenidos por Binary.com que le permite usar una Aplicación registrada para interactuar con la plataforma de comercio Binary.com."
@@ -523,7 +523,8 @@ msgid "A Payment Agent acts like an exchange between the Client (that is, our cu
 msgstr "Un Agente de Pagos actua como un intercambio entre el cliente (es decir, nuestro cliente) y %1. El Agente de Pagos procesa los depósitos y retiros para los clientes que desean utilizar un método específico de dinero electrónico o monedas locales que no se ofrecen por defecto en %1. Los gastos de transferencia corren a cargo del cliente."
 
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
-msgstr "Un binario \"Queda dentro\" se paga si el mercado permanece entre (sin tocar) el límite superior e inferior (AMBOS) durante todo el período establecido. Un binario \"Sale\" se paga si el mercado alcanza el límite superior \n"
+msgstr ""
+"Un binario \"Queda dentro\" se paga si el mercado permanece entre (sin tocar) el límite superior e inferior (AMBOS) durante todo el período establecido. Un binario \"Sale\" se paga si el mercado alcanza el límite superior \n"
 "            o el inferior en cualquier momento durante el período establecido."
 
 msgid "A Transaction is opened by either executing a \"Buy\" or \"Sell\" Order based on a specified number of lots (volume) that constitute the underlying instrument of the relevant market."
@@ -545,7 +546,8 @@ msgid "A broad array of HR-related administrative tasks"
 msgstr "Una amplia gama de tareas administrativas relacionadas con recursos humanos"
 
 msgid "A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria:"
-msgstr "<p>Un cliente es alguien que ha sido referido a través de una de nuestras herramientas de marketing y que ha depositado dinero en su cuenta en %1. Deben cumplir con los siguientes criterios: </p>\n"
+msgstr ""
+"<p>Un cliente es alguien que ha sido referido a través de una de nuestras herramientas de marketing y que ha depositado dinero en su cuenta en %1. Deben cumplir con los siguientes criterios: </p>\n"
 "<ul>\n"
 "<li>No haber sido anteriormente un cliente de %1.</li>\n"
 "<li>Haber realizado el depósito mínimo.</li>\n"
@@ -922,7 +924,8 @@ msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Un titulo avanzado/superior o una licenciatura"
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr "Un contrato \"Finaliza dentro\" se paga si el precio de salida del mercado es estrictamente superior al límite de precio bajo Y estrictamente inferior al límite de precio alto. Un contrato \"Finaliza fuera\" se paga si el precio de salida del mercado es O BIEN estrictamente superior \n"
+msgstr ""
+"Un contrato \"Finaliza dentro\" se paga si el precio de salida del mercado es estrictamente superior al límite de precio bajo Y estrictamente inferior al límite de precio alto. Un contrato \"Finaliza fuera\" se paga si el precio de salida del mercado es O BIEN estrictamente superior \n"
 "            al límite de precio alto O estrictamente inferior que el límite de precio bajo."
 
 msgid "An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares."
@@ -1442,7 +1445,8 @@ msgid "Binary option"
 msgstr "Opciones binarias"
 
 msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
-msgstr "Las opciones binarias son fáciles de entender. Se llaman \"binarias\" porque sólo pueden haber dos resultados - ganar o perder. Si su predicción es correcta, recibe un pago que se determina en el inicio de la operación. Si no es así, perderá sólamente su \n"
+msgstr ""
+"Las opciones binarias son fáciles de entender. Se llaman \"binarias\" porque sólo pueden haber dos resultados - ganar o perder. Si su predicción es correcta, recibe un pago que se determina en el inicio de la operación. Si no es así, perderá sólamente su \n"
 "            apuesta inicial."
 
 msgid "Binary options basics"
@@ -1698,7 +1702,8 @@ msgid "Choose the Underlying"
 msgstr ""
 
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
-msgstr "Lo primero que tiene que hacer es elegir el activo con qué desea negociar, como el oro o el petróleo, las acciones o Forex. (El valor de una opción binaria se deriva del precio del activo subyacente). Una gran ventaja de las opciones binarias es que usted no está comprando \n"
+msgstr ""
+"Lo primero que tiene que hacer es elegir el activo con qué desea negociar, como el oro o el petróleo, las acciones o Forex. (El valor de una opción binaria se deriva del precio del activo subyacente). Una gran ventaja de las opciones binarias es que usted no está comprando \n"
 "            o vendiendo el activo real."
 
 msgid "Choose the payment method you'd like to use."
@@ -3742,11 +3747,15 @@ msgid "In executing orders on your behalf, %1 takes into consideration the follo
 msgstr ""
 
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
-msgstr "En el mercado de divisas los comerciantes pueden comprar contratos basados en el cambio del precio de una divisa en relación a otra. Por ejemplo, si selecciona Alza en el mercado EUR/USD, usted predice que el valor del Euro\n"
+msgstr ""
+"En el mercado de divisas los comerciantes pueden comprar contratos basados en el cambio del precio de una divisa en relación a otra. Por ejemplo, si selecciona Alza en el mercado EUR/USD, usted predice que el valor del Euro\n"
 "            subirá en relación al valor del dólar estadounidense."
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "Con acceder a nuestras aplicaciones móviles y otras aplicaciones de terceros, primero debe generar un token de la API."
+
+msgid "In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days."
+msgstr ""
 
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr "Con el fin de apoyar su crecimiento continuo, %1 está buscando un Ejecutivo de Cumplimiento cualificado. En este puesto de nueva creación, basado en Malta, el titular será responsable frente a nuestro Jefe de Cumplimiento Normativo y Legal"
@@ -4936,6 +4945,9 @@ msgstr "Máximo de pérdidas por un período de 7 días."
 msgid "Maximum aggregate loss per day."
 msgstr "Máximo de pérdidas por día."
 
+msgid "Maximum aggregate loss per day. Update this value in our %1self exclusion facility%2."
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Máximo de pagos agregados en posiciones abiertas"
 
@@ -5836,7 +5848,7 @@ msgstr ""
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr ""
 
-msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -7424,7 +7436,8 @@ msgid "The first step is to open an account. You can <a target='_blank' href='%1
 msgstr "El primer paso es abrir una cuenta. Puede <a target='_blank' href='%1'>solicitarlo en línea</a> en cuestión de minutos."
 
 msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
-msgstr "Lo primero que tiene que hacer es elegir el activo con qué desea negociar, como el oro o el petróleo, las acciones o Forex. (El valor de una opción binaria se deriva del precio del activo subyacente). Una gran ventaja de las opciones binarias es que usted no está comprando \n"
+msgstr ""
+"Lo primero que tiene que hacer es elegir el activo con qué desea negociar, como el oro o el petróleo, las acciones o Forex. (El valor de una opción binaria se deriva del precio del activo subyacente). Una gran ventaja de las opciones binarias es que usted no está comprando \n"
 "            o vendiendo el activo real."
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
@@ -7569,7 +7582,8 @@ msgid "The use, operation or combination of the %1 API with non-%1 API(s), data,
 msgstr "El uso, la operación o la combinación de la API de %1 con API(s), equipo o documentación que no son de %1 si la responsabilidad se habría evitado pero para dicho uso, operación, o combinación; o"
 
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
-msgstr "Los índices de volatilidad simulan varias situaciones reales del mercado y proporcionan una plataforma ideal para acostumbrarse al comercio y probar estrategias en varias condiciones del mercado. Estos índices dependen de la volatilidad y la deriva y ayudan a los usuarios a probar\n"
+msgstr ""
+"Los índices de volatilidad simulan varias situaciones reales del mercado y proporcionan una plataforma ideal para acostumbrarse al comercio y probar estrategias en varias condiciones del mercado. Estos índices dependen de la volatilidad y la deriva y ayudan a los usuarios a probar\n"
 "                escenarios de - alta volatilidad, baja volatilidad, tendencias alcistas y bajistas."
 
 msgid "Then, make your trade"
@@ -8101,6 +8115,11 @@ msgid "Tuesday"
 msgstr "Martes"
 
 msgid "Turnover"
+msgstr "Volumen de transacciones"
+
+#, fuzzy
+#| msgid "Turnover"
+msgid "Turnover Limit"
 msgstr "Volumen de transacciones"
 
 msgid "Two-way pricing"
@@ -8710,7 +8729,8 @@ msgid "Where we consider, on the basis of the information provided by you that y
 msgstr ""
 
 msgid "Where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
-msgstr "Cuando no logramos obtener información suficiente para evaluar la idoneidad de un producto o un servicio para usted, del mismo modo\n"
+msgstr ""
+"Cuando no logramos obtener información suficiente para evaluar la idoneidad de un producto o un servicio para usted, del mismo modo\n"
 " le informaremos que no estamos en condiciones de evaluar la idoneidad del producto para usted."
 
 msgid "Where we're one big, multicultural family."
@@ -11220,6 +11240,46 @@ msgstr ""
 
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 1: Structure"
+msgid "{JAPANY ONLY}1 week to 1 year terms"
+msgstr "{JAPAN ONLY}Section 1: Structure"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}How to Open an Account"
+msgid "{JAPANY ONLY}2 hours to 1 year terms"
+msgstr "{JAPAN ONLY}How to Open an Account"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPANY ONLY}Ladder Options"
+msgstr "{JAPAN ONLY}Options Basics"
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry."
+msgstr ""
+
+msgid "{JAPANY ONLY}Range Options: End-In / End-Out"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 1: Structure"
+msgid "{JAPANY ONLY}Range Options: Stay-In / Break-Out"
+msgstr "{JAPAN ONLY}Section 1: Structure"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPANY ONLY}Touch Options"
+msgstr "{JAPAN ONLY}Options Basics"
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"

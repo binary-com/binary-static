@@ -5,6 +5,7 @@ msgstr ""
 "PO-Revision-Date: 2017-05-28 23:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,7 +14,6 @@ msgstr ""
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: ru\n"
 "X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
-"Language: ru_RU\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API %1\" означает набор программ, протоколов, инструментов и ресурсов %1, созданных и поддерживаемых сайтом %1, а также позволяющих Вам пользоваться доступным приложением для работы на торговой платформе %1."
@@ -544,7 +544,8 @@ msgid "A broad array of HR-related administrative tasks"
 msgstr "Широкий спектр административных задач в области HR"
 
 msgid "A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria:"
-msgstr "<p>Клиентом считается человек, который зашел к нам на сайт через один из Ваших рекламных инструментов и который пополнил свой счет на %1. Клиенты должны соответствовать следующим критериям: </p>\n"
+msgstr ""
+"<p>Клиентом считается человек, который зашел к нам на сайт через один из Ваших рекламных инструментов и который пополнил свой счет на %1. Клиенты должны соответствовать следующим критериям: </p>\n"
 "<ul>\n"
 "<li>Не иметь ранее другого счета на %1.</li>\n"
 "<li>Внести хотя бы минимальный депозит.</li>\n"
@@ -1335,7 +1336,8 @@ msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building,
 msgstr "Binary (Europe) Ltd и Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\">view licence</a>."
-msgstr "Binary (Europe) Ltd, расположенная по адресу Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Мальта. Компания лицензирована и регулируется (исключительно для игорных продуктов – Индексов волатильности %1) Управлением по азартным играм Мальты (номер лицензии: MGA/CL2/118/2000);, а для клиентов виз Великобритании – Комиссией по азартным играм Великобритании –\n"
+msgstr ""
+"Binary (Europe) Ltd, расположенная по адресу Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Мальта. Компания лицензирована и регулируется (исключительно для игорных продуктов – Индексов волатильности %1) Управлением по азартным играм Мальты (номер лицензии: MGA/CL2/118/2000);, а для клиентов виз Великобритании – Комиссией по азартным играм Великобритании –\n"
 "<a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\"> см. лицензию</a>."
 
 msgid "Binary (IOM) Ltd"
@@ -3744,6 +3746,9 @@ msgstr "На рынке Forex трейдеры могут заключать к�
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "Чтобы получить доступ к нашим мобильным приложениям и другим сторонним приложениям, нужно сначала сгенерировать ключ API."
 
+msgid "In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days."
+msgstr ""
+
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr "С целью поддержания дальнейшего роста и развития, %1 ищет квалифицированного сотрудника отдела регулирования и контроля. Эта новая должность на Мальте подотчётна нашему главе отдела регулирования и нормативно-правового соответствия"
 
@@ -4932,6 +4937,9 @@ msgstr "Максимальная общая проигранная сумма з
 msgid "Maximum aggregate loss per day."
 msgstr "Максимальная общая проигранная сумма в день."
 
+msgid "Maximum aggregate loss per day. Update this value in our %1self exclusion facility%2."
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Максимальная совокупная выплата по открытым позициям"
 
@@ -5832,7 +5840,9 @@ msgstr "Пожалуйста, укажите %1страну проживания
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr "Пожалуйста, укажите 30-дневный лимит на объём покупок в настройках %1самоисключения,%2 чтобы снять лимит на депозит."
 
-msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+#, fuzzy
+#| msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
+msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr "Пожалуйста, установите 30-дневный лимит на объём покупок в настройках <a href=\"%1\">самоисключения,</a> чтобы получить доступ к кассе."
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -8095,6 +8105,11 @@ msgid "Tuesday"
 msgstr "Вторник"
 
 msgid "Turnover"
+msgstr "Объём покупок"
+
+#, fuzzy
+#| msgid "Turnover"
+msgid "Turnover Limit"
 msgstr "Объём покупок"
 
 msgid "Two-way pricing"
@@ -11213,6 +11228,48 @@ msgstr "{JAPAN ONLY}Your funds are safe"
 
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}A True Partnership"
+msgid "{JAPANY ONLY}1 week to 1 year terms"
+msgstr "{JAPAN ONLY}A True Partnership"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Track your trade in real time:"
+msgid "{JAPANY ONLY}2 hours to 1 year terms"
+msgstr "{JAPAN ONLY}Track your trade in real time:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPANY ONLY}Ladder Options"
+msgstr "{JAPAN ONLY}Options Basics"
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range."
+msgstr ""
+
+#, fuzzy
+#| msgid "Higher/Lower - Predict if the market will end higher or lower than a target price"
+msgid "{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
+msgstr "Выше/Ниже – сделайте прогноз, будет рынок выше или ниже заданной цены"
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not."
+msgstr ""
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry."
+msgstr ""
+
+msgid "{JAPANY ONLY}Range Options: End-In / End-Out"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 1: Structure"
+msgid "{JAPANY ONLY}Range Options: Stay-In / Break-Out"
+msgstr "{JAPAN ONLY}Section 1: Structure"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPANY ONLY}Touch Options"
+msgstr "{JAPAN ONLY}Options Basics"
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
