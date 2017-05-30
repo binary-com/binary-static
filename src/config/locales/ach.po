@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-05-28 23:04-0400\n"
+"PO-Revision-Date: 2017-05-30 05:51-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -3738,6 +3738,9 @@ msgstr "crwdns21693:0crwdne21693:0"
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "crwdns21694:0crwdne21694:0"
 
+msgid "In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days."
+msgstr "crwdns24212:0crwdne24212:0"
+
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr "crwdns21695:0%1crwdne21695:0"
 
@@ -4926,6 +4929,9 @@ msgstr "crwdns22089:0crwdne22089:0"
 msgid "Maximum aggregate loss per day."
 msgstr "crwdns22090:0crwdne22090:0"
 
+msgid "Maximum aggregate loss per day. Update this value in our %1self exclusion facility%2."
+msgstr "crwdns24213:0%1scrwdnd24213:0%2crwdne24213:0"
+
 msgid "Maximum aggregate payouts on open positions"
 msgstr "crwdns22091:0crwdne22091:0"
 
@@ -5826,8 +5832,8 @@ msgstr "crwdns22389:0%1ccrwdnd22389:0%2crwdne22389:0"
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr "crwdns22390:0%1scrwdnd22390:0%2crwdne22390:0"
 
-msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
-msgstr "crwdns22391:0%1crwdne22391:0"
+msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
+msgstr "crwdns24214:0%1crwdne24214:0"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "crwdns22392:0crwdne22392:0"
@@ -8090,6 +8096,9 @@ msgstr "crwdns23144:0crwdne23144:0"
 
 msgid "Turnover"
 msgstr "crwdns23145:0crwdne23145:0"
+
+msgid "Turnover Limit"
+msgstr "crwdns24215:0crwdne24215:0"
 
 msgid "Two-way pricing"
 msgstr "crwdns23146:0crwdne23146:0"
@@ -11207,6 +11216,36 @@ msgstr "crwdns24183:0{JAPAN ONLY}crwdne24183:0"
 
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "crwdns24184:0{JAPAN ONLY}crwdne24184:0"
+
+msgid "{JAPANY ONLY}1 week to 1 year terms"
+msgstr "crwdns24216:0{JAPANY ONLY}crwdne24216:0"
+
+msgid "{JAPANY ONLY}2 hours to 1 year terms"
+msgstr "crwdns24217:0{JAPANY ONLY}crwdne24217:0"
+
+msgid "{JAPANY ONLY}Ladder Options"
+msgstr "crwdns24218:0{JAPANY ONLY}crwdne24218:0"
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range."
+msgstr "crwdns24219:0{JAPANY ONLY}crwdne24219:0"
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
+msgstr "crwdns24220:0{JAPANY ONLY}crwdne24220:0"
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not."
+msgstr "crwdns24221:0{JAPANY ONLY}crwdne24221:0"
+
+msgid "{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry."
+msgstr "crwdns24222:0{JAPANY ONLY}crwdne24222:0"
+
+msgid "{JAPANY ONLY}Range Options: End-In / End-Out"
+msgstr "crwdns24223:0{JAPANY ONLY}crwdne24223:0"
+
+msgid "{JAPANY ONLY}Range Options: Stay-In / Break-Out"
+msgstr "crwdns24224:0{JAPANY ONLY}crwdne24224:0"
+
+msgid "{JAPANY ONLY}Touch Options"
+msgstr "crwdns24225:0{JAPANY ONLY}crwdne24225:0"
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "crwdns24185:0{Japan Only}crwdne24185:0"
