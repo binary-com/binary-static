@@ -21,6 +21,7 @@
     &.split li {
         text-indent: -1.1em;
         list-style-type: none;
+
         &:before {
             counter-increment: mycounter;
             content: counter(mycounter) '.\00A0\00A0';
@@ -149,12 +150,14 @@
         position: relative;
         width: 100%;
         overflow: hidden;
+
         img {
             position: absolute;
             top: 0;
             left: 0;
             opacity: 0;
             transition: opacity 2s ease;
+
             &:first-child {
                 position: relative;
                 opacity: 1;
@@ -205,8 +208,10 @@
         width: 80%;
         margin-left: auto;
         margin-right: auto;
+
         td {
             padding: 10px 4px;
+
             &:nth-of-type(1) {
                 width: 40%;
             }

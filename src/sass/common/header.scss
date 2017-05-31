@@ -1,10 +1,12 @@
 body #topbar {
     @include BIDIR_VALUE(text-align, right, left);
+
     #virtual-text {
         font-weight: 700;
     }
     #topbar-info {
         @include BIDIR_PROP(margin-left, margin-right, auto);
+
         > div {
             height: 23px;
         }
@@ -44,6 +46,7 @@ body #topbar {
             white-space: normal;
             display: inline-block;
             margin: 0;
+
             a {
                 font-weight: normal;
                 vertical-align: middle;
@@ -63,6 +66,7 @@ body #topbar {
     }
     #main-logout {
         @include BIDIR_VALUE(float, right, left);
+
         #all-accounts .main-account {
             margin-top: 3px;
         }
@@ -71,6 +75,7 @@ body #topbar {
 
 #main-menu {
     margin-bottom: 40px;
+
     .items li a {
         white-space: nowrap;
     }
@@ -87,6 +92,7 @@ html {
             width: 250px;
         }
     }
+
     &.mm-right.mm-opening body {
         .mm-page, #mm-blocker, .mm-fixed-top, .mm-fixed-bottom {
             right: 220px;

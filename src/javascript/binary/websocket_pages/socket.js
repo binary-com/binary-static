@@ -239,11 +239,11 @@ const BinarySocket = (() => {
                         break;
                     }
                     case 'RateLimit':
-                        config.notify(localize('You have reached the rate limit of requests per second. Please try later.'), true);
+                        config.notify(localize('You have reached the rate limit of requests per second. Please try later.'), true, 'RATE_LIMIT');
                         break;
                     case 'InvalidAppID':
                         wrong_app_id = getAppId();
-                        config.notify(response.error.message, true);
+                        config.notify(response.error.message, true, 'INVALID_APP_ID');
                         break;
                     // no default
                 }
@@ -259,7 +259,9 @@ const BinarySocket = (() => {
             clearTimeouts();
 
             if (wrong_app_id !== getAppId()) {
-                config.notify(localize('Connection error: Please check your internet connection.'), true);
+                if (isClose()) {
+                    config.notify(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
+                }
                 if (typeof config.onDisconnect === 'function' && !is_disconnect_called) {
                     config.onDisconnect();
                     is_disconnect_called = true;

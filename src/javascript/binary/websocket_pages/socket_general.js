@@ -25,6 +25,7 @@ const BinarySocketGeneral = (() => {
     };
 
     const onMessage = (response) => {
+        Header.hideNotification('CONNECTION_ERROR');
         let is_available;
         switch (response.msg_type) {
             case 'website_status':

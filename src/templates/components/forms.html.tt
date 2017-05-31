@@ -7,7 +7,7 @@
 
 [% BLOCK form_row %]
     [% IF type=='checkbox' and !spaced -%]
-    <div class="gr-row [% row_class %]">
+    <div class="gr-row [% row_class %]"[% IF row_id %] id="[% row_id %]"[% END %]>
         <div class="gr-12-m gr-padding-20 gr-centered">
             <input id="[% id %]" type="checkbox" />
             <label for="[% id %]">[% label %]</label>
@@ -49,18 +49,18 @@
     [% UNLESS no_wrapper %]
     <div class="[% is_centered ? 'center-text' : 'gr-row' %] [% class %]"[% IF id %] id="[% id %]"[% END %]>
         [% IF not is_centered -%]
-        <div class="gr-8 gr-push-4 gr-12-m gr-push-0-m center-text-m">
+        <div class="[% UNLESS is_left_align %]gr-8 gr-push-4 gr-12-m gr-push-0-m[% END %] center-text-m">
         [% END -%]
     [% END %]
         [% UNLESS no_error %]
         <div id="[% msg_id || 'msg_form' %]" class="error-msg invisible"></div>
         [% END %]
+        <div class="gr-padding-10">
         [% IF custom_btn_text %]
             <a class="button" href="[% custom_btn_href %]" id="[% custom_btn_id %]">
                 <span class="button">[% custom_btn_text %]</span>
             </a>
         [% END %]
-        <div class="gr-padding-10">
             <button id="[% id || 'btn_submit' %]"[% IF type=='submit' %] type="submit"[% END %]>[% text %]</button>
         </div>
     [% UNLESS no_wrapper %]

@@ -18,7 +18,7 @@
             l('{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 2')
         ] %]
         [% INCLUDE li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 2 Title') paragraphs=[
-            l('{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1')
+            l('{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1. [_1]Link to binary_affiliate_guidelines.pdf[_2].', '<a href="' _ japan_docs_url _ '/documents/binary_affiliate_guidelines.pdf' _ '" target="_blank">', "</a>")
             l('{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2')
             l('{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 3')
         ] %]
