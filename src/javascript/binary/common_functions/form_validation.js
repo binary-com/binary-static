@@ -38,7 +38,7 @@ const Validation = (() => {
                     } else {
                         const $parent = field.$.parent();
                         // Add indicator to required fields
-                        if (field.validations.indexOf('req') >= 0) {
+                        if (/req/.test(field.validations)) {
                             let $label = $parent.parent().find('label');
                             if (!$label.length) $label = $parent.find('label');
                             if ($label.find('span.required_field_asterisk').length === 0) {
