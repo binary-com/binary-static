@@ -21,7 +21,7 @@ module.exports = function (grunt) {
             }
         },
         trigger_tests: {
-            command: grunt.option('staging') ? 'grunt gh-pages:trigger_tests' : 'echo "Tests are triggered only when releasing to Staging."',
+            command: grunt.option('staging') ? 'grunt gh-pages:trigger_tests --staging' : 'echo "Tests are triggered only when releasing to Staging."',
             options: {
                 stdout: true
             }
