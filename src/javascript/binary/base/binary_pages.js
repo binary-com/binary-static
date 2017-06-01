@@ -11,6 +11,7 @@ const Platforms          = require('../static_pages/platforms');
 const Regulation         = require('../static_pages/regulation');
 const StaticPages        = require('../static_pages/static_pages');
 const TermsAndConditions = require('../static_pages/tnc');
+const VideoFacility      = require('../static_pages/video_facility');
 const WhyUs              = require('../static_pages/why_us');
 
 const AccountTransfer            = require('../websocket_pages/cashier/account_transfer');
@@ -108,6 +109,7 @@ const pages_config = {
     'payment-agent'          : { module: StaticPages.PaymentAgent },
     'terms-and-conditions'   : { module: TermsAndConditions },
     'terms-and-conditions-jp': { module: TermsAndConditions },
+    'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'volidx-markets'         : { module: StaticPages.VolidxMarkets },
     'why-us'                 : { module: WhyUs },
     'why-us-jp'              : { module: WhyUs },
