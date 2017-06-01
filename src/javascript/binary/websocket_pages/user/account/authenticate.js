@@ -1,3 +1,4 @@
+const Client = require('../../../base/client');
 const BinarySocket = require('../../socket');
 
 const Authenticate = (() => {
@@ -14,7 +15,11 @@ const Authenticate = (() => {
                 if (authenticated && age_verified) {
                     $('#fully_authenticated').setVisibility(1);
                 } else if (!authenticated) {
-                    $('#not_authenticated').setVisibility(1);
+                    if (Client.isFinancial()) {
+                        $('#not_authenticated_financial').setVisibility(1);
+                    } else {
+                        $('#not_authenticated').setVisibility(1);
+                    }
                 } else if (!age_verified) {
                     $('#needs_age_verification').setVisibility(1);
                 }

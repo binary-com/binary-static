@@ -1,6 +1,8 @@
 [% PROCESS components/elements.html.tt %]
 
-<div class="container">
+<div id="loading">[% PROCESS global/loading.html.tt %]</div>
+
+<div class="container invisible" id="contact_content">
     <div class="gr-row gr-parent static_full border-bottom gr-padding-30">
         <div class="gr-2 gr-hide-m ja-hide">
             <img class="responsive" src="[% request.url_for('images/pages/contact/contact-icon.svg') %]"/>
@@ -50,7 +52,7 @@
                     <div class="gr-padding-10">
                         <div class="gr-row inline-flex center-align ja-hide" id="live-chat-container">
                             <label class="gr-4">[% l("Live chat:") %]</label>
-                            <div class="gr-8"><span id="live-chat-icon"></span></div>
+                            <div class="gr-8"><span id="desk-link"></span></div>
                         </div>
                     </div>
                 </div>
