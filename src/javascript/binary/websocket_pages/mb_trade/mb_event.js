@@ -20,12 +20,14 @@ const MBTradingEvents = (() => {
     'use strict';
 
     const initiate =  () => {
-        const $form = $('#trade_form');
+        const $form = $('.trade_form');
         const hidden_class = 'invisible';
 
         $(document).on('click', (e) => {
             if ($(e.target).parents('#payout').length) return;
-            $form.find('.list').addClass(hidden_class);
+            $form.find('.list, #payout_list').addClass(hidden_class).end()
+                .find('#period, #category')
+                .removeClass(hidden_class);
         });
 
         $form.find('.current').on('click', function(e) {
@@ -74,7 +76,7 @@ const MBTradingEvents = (() => {
                 MBContract.setCurrentItem($period, period);
                 MBDefaults.set('period', period);
                 MBProcess.processPriceRequest();
-                $('.countdown-timer').removeClass('alert');
+                $('.remaining-time').removeClass('alert');
                 MBContract.displayRemainingTime('recalculate');
                 MBContract.displayDescriptions();
             });
@@ -101,18 +103,27 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('payout', payout_def);
                 $payout.attr('value', payout_def).find('.current').html(payout_def);
             }
-            $payout.on('click', '> .list > div', debounce(function() {
-                const payout = +MBDefaults.get('payout');
-                const new_payout = payout + parseInt($(this).attr('value'));
+            $payout
+                .find('.current').on('click', function () {
+                    const $list = $(`#${$(this).parent().attr('id')}_list`);
+                    const $sublist = $list.find('.list');
+                    $list.toggleClass(hidden_class);
+                    $sublist.toggleClass(hidden_class);
+                    $category.toggleClass(hidden_class);
+                    $period.toggleClass(hidden_class);
+                }).end()
+                .on('click', '> .list > div', debounce(function() {
+                    const payout = +MBDefaults.get('payout');
+                    const new_payout = payout + parseInt($(this).attr('value'));
 
-                if (validatePayout(new_payout)) {
-                    $('.price-table').setVisibility(1);
-                    MBDefaults.set('payout', new_payout);
-                    $payout.attr('value', new_payout).find('.current').html(new_payout);
-                    MBProcess.processPriceRequest();
-                    MBContract.displayDescriptions();
-                }
-            }));
+                    if (validatePayout(new_payout)) {
+                        $('.price-table').setVisibility(1);
+                        MBDefaults.set('payout', new_payout);
+                        $payout.attr('value', new_payout).find('.current').html(new_payout);
+                        MBProcess.processPriceRequest();
+                        MBContract.displayDescriptions();
+                    }
+                }));
         }
 
         const $currency = $form.find('#currency');
@@ -126,22 +137,29 @@ const MBTradingEvents = (() => {
             });
         }
 
-        const $allow_trading = $('#allow_trading');
+        const trading_status = '.trading-status';
+        const $trading_status = $(trading_status);
+        const $allow_trading = $trading_status.find('#allow');
+        const $disallow_trading = $trading_status.find('#disallow');
         const setTradingStatus = (is_enabled) => {
             if (is_enabled) {
                 MBPrice.hidePriceOverlay();
                 MBNotifications.hide('TRADING_DISABLED');
+                $disallow_trading.removeClass('selected');
+                $allow_trading.addClass('selected');
             } else {
                 MBPrice.showPriceOverlay();
-                $allow_trading.removeAttr('checked');
+                $allow_trading.removeClass('selected');
+                $disallow_trading.addClass('selected');
             }
         };
-        if ($allow_trading.length) {
+        if ($trading_status.length) {
             const allow_trading_def = !MBDefaults.get('disable_trading');
             setTradingStatus(allow_trading_def);
-            $allow_trading.on('change', (e) => {
-                MBDefaults.set('disable_trading', !e.target.checked);
-                setTradingStatus(e.target.checked);
+            $trading_status.on('click', (e) => {
+                const status = e.target.getAttribute('id');
+                MBDefaults.set('disable_trading', status === 'disallow');
+                setTradingStatus(status === 'allow');
             });
         }
     };

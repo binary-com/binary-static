@@ -12,7 +12,7 @@ const formatCurrency = require('../../common_functions/currency_to_symbol').form
 const MBDisplayCurrencies = () => {
     'use strict';
 
-    const $currency  = $('#trade_form #currency');
+    const $currency  = $('.trade_form #currency');
     const $list      = $currency.find('.list');
     const currencies = Client.get('currencies').split(',');
     const def_curr   = MBDefaults.get('currency');

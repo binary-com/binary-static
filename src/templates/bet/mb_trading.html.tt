@@ -15,48 +15,59 @@
     <div id="mb_trading" class="gr-12">
 
         <div id="notifications_wrapper"></div>
-        <div id="trade_form" class="gr-row">
-            [% INCLUDE form_item id='underlying' class='gr-2' %]
-            [% INCLUDE form_item id='category'   class='gr-3' %]
-            [% INCLUDE form_item id='period'     class='gr-5' %]
-            <div class="gr-2 gr-no-gutter">
-                [% INCLUDE form_item id='currency' %]
-                [% WRAPPER form_item id='payout' %]
-                    <div class="plus"  value="+1">+1</div>
-                    <div class="plus"  value="+5">+5</div>
-                    <div class="plus"  value="+10">+10</div>
-                    <div class="minus" value="-10">-10</div>
-                    <div class="minus" value="-5">-5</div>
-                    <div class="minus" value="-1">-1</div>
-                [% END %]
+
+        <div class="gr-row">
+            <div id="trading_status" class="gr-4 gr-no-gutter">
+                <div class="gr-padding-10 gr-parent center-text">[% l('Trading Activation') %]</div>
+                <div class="gr-row">
+                    <div class="gr-6 gr-no-gutter">
+                        <a class="button-secondary trading-status" href="javascript:;">
+                            <span class="selected" id="allow">[% l('ON') %]</span>
+                        </a>
+                    </div>
+                    <div class="gr-6 gr-no-gutter">
+                        <a class="button-secondary trading-status" href="javascript:;">
+                            <span id="disallow">[% l('OFF') %]</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="trade_form gr-8 gr-no-gutter">
+                [% INCLUDE form_item id='underlying' class='gr-12' row=1 %]
             </div>
         </div>
 
-        <div id="timer_row" class="gr-row">
-            <div id="trading_status" class="gr-5">
-                <input id="allow_trading" class="toggle-button" type="checkbox" checked="checked" />
-                <label for="allow_trading" class="toggle-slider"></label>
-                <span class="enabled-text">[% l('Trading is enabled') %]</span>
-                <span class="disabled-text">[% l('Trading is disabled') %]</span>
+        <div class="gr-row">
+            <div class="trade_form gr-4 gr-no-gutter">
+                <div id="currency_wrapper">
+                    [% INCLUDE form_item id='currency' %]
+                    [% INCLUDE form_item id='payout' exclude_list=1 %]
+                </div>
             </div>
-            <div class="gr-7 countdown-timer align-end">
-                <span id="remaining-time-label"></span>
-                <span id="remaining-time">...</span>
+            <div class="gr-8 gr-no-gutter">
+                <div class="trade_form">
+                    [% INCLUDE form_item id='period' class='gr-12' row=1 %]
+                </div>
+                <div class="trade_form">
+                    [% INCLUDE form_item id='category' class='gr-12' row=1 %]
+                </div>
+                <div class="trade_form">
+                    [% WRAPPER form_item id='payout_list' class='invisible' exclude_current=1 gr_row=1 %]
+                        <div class="plus gr-3"  value="+1">+1</div>
+                        <div class="plus gr-3"  value="+10">+10</div>
+                        <div class="constant gr-3"  value="50">50</div>
+                        <div class="constant gr-3"  value="50">100</div>
+                        <div class="minus gr-3" value="-1">-1</div>
+                        <div class="minus gr-3" value="-10">-10</div>
+                        <div class="ok gr-3" value="">-10</div>
+                    [% END %]
+                </div>
             </div>
         </div>
 
         <div class="price-table gr-row">
             <div id="disable-overlay" class="invisible"></div>
             <div class="prices-wrapper gr-padding-10 gr-12">
-                <div class="gr-row fill-bg-color">
-                    <div class="gr-2"></div>
-                    <div class="gr-5 descr-wrapper">
-                        <h1 class="contract-type" data-balloon-length="large"></h1>
-                    </div>
-                    <div class="gr-5 descr-wrapper">
-                        <h1 class="contract-type negative-color" data-balloon-length="large"></h1>
-                    </div>
-                </div>
                 <div class="gr-row heading">
                     <div class="gr-2 barrier">[% l('Barrier') %]</div>
                     <div class="gr-3 buy-price">[% l('Buy Price') %]</div>
@@ -88,7 +99,9 @@
 
 [% BLOCK form_item %]
 <div id="[% id %]"[% IF class %] class="[% class %] gr-no-gutter"[% END %]>
-    <div class="current"></div>
-    <div class="list invisible">[% content %]</div>
+    [% UNLESS exclude_current %]<div class="current"></div>[% END %]
+    [% UNLESS exclude_list %]
+        <div class="list [% IF row %]gr-12[% ELSIF gr_row %]gr-row[% END %] invisible">[% content %]</div>
+    [% END %]
 </div>
 [% END %]

@@ -9,10 +9,10 @@
     #mb_trading {
         font-size: 14px;
 
-        #trade_form {
-            margin-bottom: 10px;
+        .trade_form {
+            margin-top: 5px;
 
-            > div {
+            > div:first-child {
                 text-align: center;
                 background: $COLOR_LIGHT_GRAY;
                 border-right: 3px solid $COLOR_WHITE;
@@ -21,114 +21,127 @@
                     border-right: none;
                 }
                 position: relative;
-                height: 80px;
+                height: 60px;
 
                 .current {
-                    height: 70px;
+                    height: 50px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
 
                     > div {
-                        display: block;
                         width: 100%;
                     }
                 }
+                > div {
+                    height: 50px;
+                    background: $COLOR_LIGHT_GRAY;
+                }
                 .current, .list > div {
-                    padding: 5px;
+                    padding: 5px !important;
                     cursor: pointer;
+                    height: 50px;
 
                     &:hover {
                         background-color: $COLOR_GRAY;
+                        height: 50px;
+                    }
+                }
+                #currency .list > div {
+                    height: 15px;
+
+                    &:hover {
+                        height: 15px;
                     }
                 }
                 .list {
                     position: absolute;
                     z-index: 2;
                     width: 100%;
-                    background-color: $COLOR_WHITE;
+                    background-color: $COLOR_LIGHT_GRAY;
 
                     > div {
-                        border: 1px solid $COLOR_LIGHT_GRAY;
-                        border-top: none;
+                        background: $COLOR_LIGHT_GRAY;
                     }
                 }
             }
-            #underlying .name {
-                display: block;
-                margin-top: 5px;
+            #currency_wrapper, #payout {
+                height: 124px;
             }
-            #category {
-                .contract-type {
-                    display: inline-block;
-                    width: calc(50% - 5px);
-                    padding-top: 40px;
-                    background-position: center top;
-                    background-repeat: no-repeat;
-                    vertical-align: top;
+            #underlying {
+                margin-top: -7px;
+
+                div.current > div {
+                    display: flex;
                 }
+            }
+            .contract-type {
+                padding-left: 45px;
+                background-repeat: no-repeat;
+                background-position: left;
+                white-space: nowrap;
+                line-height: 36px;
             }
             #period {
                 .start, .end {
                     line-height: 20px;
                 }
                 .duration {
-                    font-size: $FONT_SIZE_XL;
+                    font-size: $FONT_SIZE_N;
                     font-weight: bold;
                 }
                 .current > div, .list > div {
-                    display: flex;
                     align-items: center;
                 }
             }
             #currency {
                 position: absolute;
                 width: 100%;
+                height: initial;
 
                 .current {
                     height: 15px;
                     line-height: 15px;
+                    padding-top: 35px;
                 }
             }
-            #payout {
-                .current {
-                    line-height: 115px;
-                    font-size: $FONT_SIZE_XXL;
-                    font-weight: bold;
-                }
-                .list > div {
-                    line-height: 30px;
-                    font-size: $FONT_SIZE_L;
-                    font-weight: bold;
-                }
-                .plus {
-                    color: $COLOR_LIGHT_BLUE;
-                }
-                .minus {
-                    color: $COLOR_ORANGE;
+            #payout .current {
+                line-height: 109px;
+                font-size: $FONT_SIZE_XXL;
+                font-weight: bold;
+                height: 109px;
+                padding-top: 10px !important;
+            }
+            #payout_list {
+                height: 124px;
+                background: $COLOR_WHITE;
+
+                .list {
+                    background: $COLOR_WHITE;
+
+                    > div {
+                        line-height: 50px;
+                        height: 63px;
+                        border: 2px solid $COLOR_WHITE;
+
+                        &.plus {
+                            color: $COLOR_WHITE;
+                            background: $COLOR_RED;
+                        }
+                        &.minus {
+                            color: $COLOR_WHITE;
+                            background: $COLOR_LIGHT_BLUE;
+                        }
+                    }
                 }
             }
         }
         .price-table {
             position: relative;
 
-            .descr-wrapper {
-                padding: 5px 10px;
-
-                .contract-type {
-                    padding-left: 45px;
-                    margin-bottom: 0;
-                    background-repeat: no-repeat;
-                    background-position: left;
-                    font-size: 18px;
-                    white-space: nowrap;
-                    line-height: 36px;
-                    border-bottom: none;
-                }
-            }
             #disable-overlay {
                 position: absolute;
-                top: 56px;
+                top: 53px;
                 z-index: 1;
                 width: 100%;
                 height: calc(100% - 66px);
@@ -245,77 +258,19 @@
                 }
             }
         }
-        #timer_row {
-            > div {
-                padding: 0;
-                white-space: nowrap;
-                line-height: 22px;
+        .button-secondary span {
+            width: 36%;
+
+            &.selected {
+                background-color: $COLOR_BLUE;
+                color: $COLOR_WHITE;
             }
-            #trading_status {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
+        }
+        .remaining-time {
+            color: $COLOR_RED;
 
-                .toggle-button {
-                    display: none;
-
-                    &, & + .toggle-slider {
-                        box-sizing: border-box;
-                    }
-                    + .toggle-slider {
-                        font-size: 0.75em;
-                        display: block;
-                        position: relative;
-                        outline: 0;
-                        width: 4em;
-                        height: 2em;
-                        cursor: pointer;
-                        background: $COLOR_GRAY;
-                        border-radius: 2em;
-                        padding: 2px;
-                        margin-right: 5px;
-                        transition: all 0.4s ease;
-
-                        &:after, &:before {
-                            display: block;
-                            position: relative;
-                            content: '';
-                            width: calc(2em - 4px);
-                            height: calc(2em - 4px);
-                        }
-                        &:after {
-                            left: 0;
-                            border-radius: 50%;
-                            background: $COLOR_WHITE;
-                            transition: all 0.2s ease;
-                        }
-                        &:before, ~ .enabled-text {
-                            display: none;
-                        }
-                    }
-                    &:checked + .toggle-slider {
-                        background: $COLOR_BLUE_SHADE;
-
-                        &:after {
-                            left: 2em;
-                        }
-                        ~ .enabled-text {
-                            display: inline-block;
-                        }
-                        ~ .disabled-text {
-                            display: none;
-                        }
-                    }
-                }
-            }
-            .countdown-timer {
-                border-radius: 3px;
-
-                &.alert {
-                    background: rgba(251, 228, 215, 0.7);
-                    padding-right: 5px;
-                    margin-right: 0;
-                }
+            .alert {
+                background: rgba(251, 228, 215, 0.7);
             }
         }
         @media screen and (max-width: 768px) {

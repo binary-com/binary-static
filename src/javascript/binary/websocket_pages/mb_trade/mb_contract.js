@@ -5,9 +5,9 @@ const Client           = require('../../base/client');
 const getLanguage      = require('../../base/language').get;
 const localize         = require('../../base/localize').localize;
 const isEmptyObject    = require('../../base/utility').isEmptyObject;
-const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 const jpClient         = require('../../common_functions/country_base').jpClient;
 const formatCurrency   = require('../../common_functions/currency_to_symbol').formatCurrency;
+const padLeft          = require('../../common_functions/string_util').padLeft;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -78,7 +78,8 @@ const MBContract = (() => {
             const duration = text.duration.toUpperCase().replace(/([A-Z])/, '$1<br>');
             return $('<div/>', {
                 value: period,
-                html : `<div class="start">${text.start}</div><div class="duration">${duration}</div><div class="end">${text.end}</div>`,
+                html : `<div class="duration gr-3">${duration}</div><div class="end gr-5">${text.end}</div><div class="remaining-time gr-4"></div>`,
+                class: 'gr-row',
             });
         };
         if ($list.children().length === 0) { // populate for the first time
@@ -134,13 +135,11 @@ const MBContract = (() => {
 
     let period_value,
         $count_down_timer,
-        remaining_time_element,
         remaining_timeout;
     const displayRemainingTime = (recalculate) => {
         if (typeof period_value === 'undefined' || recalculate) {
             period_value = MBDefaults.get('period');
-            $count_down_timer = $('.countdown-timer');
-            remaining_time_element = document.getElementById('remaining-time');
+            $count_down_timer = $('.remaining-time');
         }
         if (!period_value) return;
         const time_left = parseInt(period_value.split('_')[1]) - window.time.unix();
@@ -160,10 +159,10 @@ const MBContract = (() => {
         };
         Object.keys(all_durations).forEach((key) => {
             if (all_durations[key]) {
-                remaining_time_string.push(all_durations[key] + (jpClient() ? '' : ' ') + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
+                remaining_time_string.push(padLeft(all_durations[key], 2, '0'));
             }
         });
-        elementInnerHtml(remaining_time_element, remaining_time_string.join(' '));
+        $count_down_timer.text(remaining_time_string.join(':'));
         if (remaining_timeout) clearRemainingTimeout();
         remaining_timeout = setTimeout(displayRemainingTime, 1000);
     };
@@ -200,12 +199,13 @@ const MBContract = (() => {
                     const is_current = (!default_value && idx === 0) || category.value === default_value;
                     const $current   = $('<div/>', {
                         value: category.value,
-                        html : `<span class="contract-type ${category.type1}">${localize(getTemplate(category.type1).name)}</span>
-                                <span class="contract-type ${category.type2} negative-color">${localize(getTemplate(category.type2).name)}</span>`,
+                        html : `<span class="contract-type gr-6 ${category.type1}">${localize(getTemplate(category.type1).name)}</span>
+                                <span class="contract-type gr-6 ${category.type2} negative-color">${localize(getTemplate(category.type2).name)}</span>`,
+                        class: 'gr-row',
                     });
                     $list.append($current);
                     if (is_current) {
-                        setCurrentItem($category, category.value);
+                        setCurrentItem($category, category.value, 'descr-wrapper');
                     }
                 }
             });
@@ -295,18 +295,20 @@ const MBContract = (() => {
             const contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.contract-type')
-                .attr('class', `contract-type ${contract_type}${template.order ? ' negative-color' : ''}`).text(localize(template.name))
-                .attr('data-balloon', localize(template.description, [currency, payout, display_name, date_expiry]));
+            $wrapper.find('.contract-type').addClass('no-underline')
+                .attr({
+                    'data-balloon'       : localize(template.description, [currency, payout, display_name, date_expiry]),
+                    'data-balloon-length': 'medium',
+                });
         });
     };
 
     const getCurrency = () => (Client.get('currency') || $('#currency').attr('value') || 'JPY');
 
-    const setCurrentItem = ($container, value) => {
+    const setCurrentItem = ($container, value, className) => {
         const $selected = $container.find(`.list [value="${value}"]`);
         if ($selected.length) {
-            $container.attr('value', value).find('> .current').html($selected.clone());
+            $container.attr('value', value).find('> .current').html($selected.clone().addClass(className));
 
             const hidden_class = 'invisible';
             $container.find(`.list .${hidden_class}`).removeClass(hidden_class);

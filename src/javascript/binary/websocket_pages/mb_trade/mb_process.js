@@ -101,12 +101,13 @@ const MBProcess = (() => {
         Object.keys(all_symbols).forEach((symbol, idx) => {
             if (all_symbols[symbol].is_active) {
                 const is_current = (!selected && idx === 0) || symbol === selected;
-                const $current = $('<div/>', { value: symbol })
+                const $current = $('<div/>', { value: symbol, class: 'gr-row' })
                     .append($('<img/>', {
-                        src: urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`),
-                        alt: '',
+                        src  : urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`),
+                        alt  : '',
+                        class: 'gr-3',
                     }))
-                    .append($('<span/>', { text: all_symbols[symbol].display, class: 'name' }));
+                    .append($('<span/>', { text: all_symbols[symbol].display, class: 'name gr-6 align-self-center' }));
                 $list.append($current);
                 if (is_current) {
                     MBContract.setCurrentItem($underlyings, symbol);
