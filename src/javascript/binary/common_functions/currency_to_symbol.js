@@ -2,12 +2,12 @@ const jpClient    = require('./country_base').jpClient;
 const getLanguage = require('../base/language').get;
 
 const formatMoney = (currency_value, amount, exclude_currency) => {
-    const is_bitcoin = /xbt/i.test(currency_value);
+    const is_crypto = /xbt/i.test(currency_value);
     const is_jp = jpClient();
-    const decimal_places = is_bitcoin ? 6 : is_jp ? 0 : 2;
+    const decimal_places = getDecimalPlaces(currency_value, is_crypto, is_jp);
     let money;
     if (amount) amount = String(amount).replace(/,/g, '');
-    if (typeof Intl !== 'undefined' && currency_value && !is_bitcoin && amount) {
+    if (typeof Intl !== 'undefined' && currency_value && !is_crypto && amount) {
         const options = exclude_currency ? { minimumFractionDigits: decimal_places, maximumFractionDigits: decimal_places } : { style: 'currency', currency: currency_value };
         const language = getLanguage().toLowerCase();
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
@@ -35,9 +35,15 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
 
 const addComma = (num, decimal_points) => {
     const number = String(num || 0).replace(/,/g, '') * 1;
-    return number.toFixed(decimal_points || 2).toString().replace(/(^|[^\w.])(\d{4,})/g, ($0, $1, $2) => (
+    return parseFloat(number.toFixed(decimal_points || 2)).toString().replace(/(^|[^\w.])(\d{4,})/g, ($0, $1, $2) => (
         $1 + $2.replace(/\d(?=(?:\d\d\d)+(?!\d))/g, '$&,')
     ));
+};
+
+const getDecimalPlaces = (currency, is_crypto, is_jp) => {
+    is_crypto = is_crypto || /xbt/i.test(currency);
+    is_jp = is_jp || jpClient();
+    return is_crypto ? 8 : is_jp ? 0 : 2;
 };
 
 // Taken with modifications from:
@@ -53,6 +59,7 @@ const map_currency = {
 };
 
 module.exports = {
-    formatMoney   : formatMoney,
-    formatCurrency: currency => map_currency[currency],
+    formatMoney     : formatMoney,
+    formatCurrency  : currency => map_currency[currency],
+    getDecimalPlaces: getDecimalPlaces,
 };
