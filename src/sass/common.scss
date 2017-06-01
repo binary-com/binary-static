@@ -300,6 +300,10 @@ button .barspinner.white {
     align-items: center;
 }
 
+.align-self-center {
+    align-self: center;
+}
+
 .align-start {
     @include BIDIR_VALUE (text-align, left, right);
 }
