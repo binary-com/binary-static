@@ -54,6 +54,7 @@ const BinarySocketGeneral = (() => {
                         BinarySocket.send({ get_settings: 1 });
                         BinarySocket.send({ get_account_status: 1 });
                         BinarySocket.send({ payout_currencies: 1 });
+                        BinarySocket.send({ mt5_login_list: 1 });
                         setResidence(response.authorize.country || Cookies.get('residence'));
                         if (!Client.get('is_virtual') && !jpResidence()) {
                             BinarySocket.send({ get_self_exclusion: 1 });
