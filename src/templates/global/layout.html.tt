@@ -19,16 +19,16 @@
     <!-- FlushHead -->
     <a href="javascript:;" id="scrollup"></a>
 [% END %]
+[% IF layout %]
         <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
             <div id="page_info" style="display:none;">
                 [% PROCESS global/title.html.tt %]
                 <div id="content_class">[% current_route %]-content</div>
             </div>
-[% IF !full_width %]
-            <div class="container">
+            [% IF layout != 'full_width' %]<div class="container">[% END %]
 [% END %]
 
-[% IF get_started %]
+[% IF layout == 'get_started' %]
 <div class="get-started static_full">
     <div class="gr-row">
         <div class="gr-3 gr-hide-m">

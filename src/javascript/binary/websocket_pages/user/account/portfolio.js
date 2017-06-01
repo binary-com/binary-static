@@ -1,4 +1,3 @@
-const Client              = require('../../../base/client');
 const toJapanTimeIfNeeded = require('../../../base/clock').toJapanTimeIfNeeded;
 const formatMoney         = require('../../../common_functions/currency_to_symbol').formatMoney;
 const jpClient            = require('../../../common_functions/country_base').jpClient;
@@ -15,7 +14,7 @@ const Portfolio = (() => {
         {
             transaction_id: c.transaction_id,
             contract_id   : c.contract_id,
-            payout        : formatMoney(c.currency, parseFloat(c.payout), 1),
+            payout        : parseFloat(c.payout),
             longcode      : typeof module !== 'undefined' ?
                 c.longcode : (jpClient() ?
                     toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode),
@@ -28,7 +27,7 @@ const Portfolio = (() => {
     const getProposalOpenContract = proposal => (
         {
             contract_id     : proposal.contract_id,
-            bid_price       : formatMoney(proposal.currency, parseFloat(proposal.bid_price || 0), 1),
+            bid_price       : parseFloat(proposal.bid_price || 0),
             is_sold         : proposal.is_sold,
             is_valid_to_sell: proposal.is_valid_to_sell,
             currency        : proposal.currency,
@@ -45,7 +44,7 @@ const Portfolio = (() => {
             }
         }
 
-        return formatMoney(Client.get('currency'), sum, 1);
+        return sum;
     };
 
     return {

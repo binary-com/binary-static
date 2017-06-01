@@ -109,7 +109,7 @@
             <div>
                 <p>[% l("The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant.") %]</p>
                 [% INCLUDE fill_box padding='5' center=1 border='border-dark-gray' image='images/pages/regulation/pillar.svg'
-                    href=request.url_for('/download/BIEL_Pillar_3_Report_Version_2.pdf') target='_blank' download=1
+                    href=request.url_for('/download/BIEL_Pillar_3_Report_20170426.pdf') target='_blank' download=1
                     text=l("Pillar 3 disclosure report") %]
             </div>
 

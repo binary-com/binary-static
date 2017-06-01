@@ -169,7 +169,7 @@ const Purchase = (() => {
         if (spots) spots.textContent = '';
 
         let last_digit;
-        const replace = (d) => { last_digit = d; return `<b>${d}</b>`; };
+        const replace = (d) => { last_digit = d; return `<strong>${d}</strong>`; };
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],

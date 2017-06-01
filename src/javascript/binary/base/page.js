@@ -1,5 +1,6 @@
 const Client            = require('./client');
 const Contents          = require('./contents');
+const Crowdin           = require('./crowdin');
 const Header            = require('./header');
 const Language          = require('./language');
 const Localize          = require('./localize');
@@ -28,6 +29,7 @@ const Page = (() => {
         Url.init();
         PushNotification.init();
         onDocumentReady();
+        Crowdin.init();
     };
 
     const onDocumentReady = () => {
@@ -75,7 +77,7 @@ const Page = (() => {
             Url.reset();
         } else {
             init();
-            Localize.forLang(Language.get());
+            Localize.forLang(Language.urlLang());
             Header.onLoad();
             Language.setCookie();
             Menu.makeMobileMenu();

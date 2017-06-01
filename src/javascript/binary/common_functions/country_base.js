@@ -1,9 +1,11 @@
+const Crowdin                = require('../base/crowdin');
 const Language               = require('../base/language');
 const createLanguageDropDown = require('../common_functions/attach_dom/language_dropdown');
 const Cookies                = require('../../lib/js-cookie');
 const BinarySocket           = require('../websocket_pages/socket');
 
 const checkClientsCountry = () => {
+    if (Crowdin.isInContext()) return;
     BinarySocket.wait('website_status').then((response) => {
         if (response.error) return;
         const website_status = response.website_status;

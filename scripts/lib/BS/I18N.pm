@@ -48,7 +48,7 @@ sub configs_for {
     my $locales_dir = path(root_path())->child('src')->child('config');
     warn("Unable to locate locales directory. Looking in $locales_dir") unless (-d $locales_dir);
 
-    my @supported_languages = all_languages();
+    my @supported_languages = (all_languages(), 'ACH');
     foreach my $language (@supported_languages) {
         my $po_file_path;
         if ($language eq 'EN') {
