@@ -360,6 +360,9 @@ msgstr "%1 系统每天处理超过百万笔交易（包括虚拟账户）。"
 msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
 msgstr "立刻进行%1账户验证%2，以获得取款选项的所有优惠。"
 
+msgid "%1Schedule a video call%2 with our customer support team via live chat."
+msgstr ""
+
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1的慈善活动侧重于捐助世界各地在当地社区有重大影响力的小型慈善机构和非营利组织。 我们的捐款使他们直接受惠，也不须像一些大型慈善机构那样支付庞大开销。"
 
@@ -903,6 +906,9 @@ msgstr "为受影响的市场改变正常交易时间;"
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "另外，在Binary(IOM)有限公司和Binary（欧洲）有限公司都注册过的客户与其将争端向IBA提出申诉，也可以%1在此%2使用欧洲在线解决争端委员会(ODR)平台。"
 
+msgid "Alternatively, you can also %1authenticate your account by video call%2."
+msgstr ""
+
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "尽管公司拥有及保留所有拒绝或关闭客户账户的权利，但公司保证所有开出的合同义务都必须执行。"
 
@@ -1172,6 +1178,14 @@ msgstr "澳大利亚"
 
 msgid "Australia 200 Cash Index"
 msgstr "澳大利亚 200 现金指数"
+
+msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
+msgstr ""
+
+#, fuzzy
+#| msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply follow the steps below:"
+msgstr "请提交身份与地址证明，立刻进行账户验证。继续操作，请将以下文件发送到%1："
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
 msgstr "请提交身份与地址证明，立刻进行账户验证。继续操作，请将以下文件发送到%1："
@@ -1757,6 +1771,9 @@ msgstr "点击<strong>显示高级设置</strong>。"
 
 msgid "Click on the <strong>X</strong> button at the top right to save and close."
 msgstr "点击右上方的<strong>X</strong>按钮保存并关闭。"
+
+msgid "Click on the link to connect to the video call."
+msgstr ""
 
 msgid "Client Money"
 msgstr "客户资金"
@@ -2369,6 +2386,12 @@ msgstr "探索我们的波动率指数。"
 msgid "Discovering an easy, low-risk, flexible and, award-winning platform?"
 msgstr "探索简单易用、低风险、灵活且备受好评的平台?"
 
+msgid "Display your proof of address when prompted."
+msgstr ""
+
+msgid "Display your proof of identity when prompted."
+msgstr ""
+
 msgid "Distribution of dividends will be announced on the Binary.com website."
 msgstr "分红详情将在Binary.com网站公布。"
 
@@ -2635,6 +2658,9 @@ msgstr "确保网站内容符合质量控制标准"
 
 msgid "Ensure that any historical trading records and performance figures presented to your referrals related to trading on the website %1 are accurate and not misleading."
 msgstr "确保您提交的下线在 %1 网站的所有历史交易记录及业绩数据是准确的，不会造成误导。"
+
+msgid "Ensure that your original documents are ready when the video call starts"
+msgstr ""
 
 msgid "Ensuring that the Binary Group of companies are in full compliance with the legal and regulatory regimes to which they are subject."
 msgstr "确保Binary公司集团充分遵守相关的法律和监管制度。"
@@ -3140,6 +3166,11 @@ msgstr "我们通常会通过这个网站与您沟通，或向您开户时使用
 msgid "Generate periodic and special reports summarizing client trading trends"
 msgstr "生成客户交易趋势的定期和特别汇总报告"
 
+#, fuzzy
+#| msgid "verification token"
+msgid "Generated verification code:"
+msgstr "验证令牌"
+
 msgid "Generous Commission Structure"
 msgstr "优厚的佣金结构"
 
@@ -3214,9 +3245,6 @@ msgstr "选择行业领军企业"
 
 msgid "Goes Outside"
 msgstr "处于区间之外"
-
-msgid "Got questions? %1Contact us%2 for help."
-msgstr "有疑问？%1联系我们%2求助。"
 
 msgid "Governing Laws and Jurisdiction"
 msgstr "适用法律和司法管辖权"
@@ -3673,6 +3701,9 @@ msgstr "如果您的投诉涉及某笔交易的结果，且仍然没有得到解
 
 msgid "If your complaint relates to an outcome of a trade or a transaction and remains unresolved, it will turn into a dispute. Should you be unsatisfied with our response, you can choose to escalate your complaint to the regulator or to an alternative dispute resolution entity."
 msgstr "如果您的投诉涉及某笔交易的结果，且仍然没有得到解决，它会变成争议。如果您对我们的答复不满意，可以选择把您的投诉升级，向监管机构或其他解决纠纷的实体提出。"
+
+msgid "If your documents cannot be verified over video call for any reason, you will be required to send your documents to %1"
+msgstr ""
 
 msgid "If your margin level is still under the stop out level, we will close an open position with the largest loss."
 msgstr "如果您的保证金水平仍处于强制平仓水平，我们将对损失最大的持仓头寸进行强制平仓。"
@@ -4504,9 +4535,6 @@ msgstr "想放松时只需飞行很短的距离就能尽情探索美丽的海滩
 
 msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
 msgstr "请提供您的完整地址。<br>以便在您开立真实账户时验证您的身份。"
-
-msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
-msgstr "想要让您的MT5账户继续生效，请在5天内将这些文件寄送给我们。"
 
 msgid "Know how much you will win or lose before you purchase the contract"
 msgstr "购入合约交易前，您已知道赢或输的金额"
@@ -5468,6 +5496,9 @@ msgstr "我们公司继续茁壮成长，并在马恩岛获得牌照，可以为
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgstr "我们的存款和提款成本与费用详细请参考 <a href=\"%1\">此处</a>。请先了解所有跟您有关的成本和费用，因为这些将会影响您的收益。"
 
+msgid "Our customer support agent will provide you with a unique link to connect to the video call."
+msgstr ""
+
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "毋庸置疑，我们深受客户喜爱。2014 年中期，%1的历史交易数量和每日新交易数量分别超过1亿笔和13万笔。"
 
@@ -5852,6 +5883,9 @@ msgstr "请使用以下表格订阅邮件列表，陆续收取关于ICO的最新
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr "请注意，我们的掉期率也取决于您的持仓时间和天数︰ "
 
+msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
+msgstr ""
+
 msgid "Poland"
 msgstr "波兰"
 
@@ -6046,6 +6080,9 @@ msgstr "熟知审计标准、程序、法律、规则和条例者优先录取"
 
 msgid "Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration."
 msgstr "为供应商管理、活动策划、会计和人力资源管理等领域提供行政支持。"
+
+msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
+msgstr ""
 
 msgid "Public and corporation bond"
 msgstr "Public and corporation bond"
@@ -6532,6 +6569,9 @@ msgstr "卖出时间"
 
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "长期合约到期前售出交易，以保护您的盈利或将亏损降至最低"
+
+msgid "Send the following documents to %1:"
+msgstr ""
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "请将您的简历和求职信发送给我们。"
@@ -8270,6 +8310,9 @@ msgstr "版本4。最后修改时间2016-12-30。"
 msgid "Version 43. Last modified 2016-11-09."
 msgstr "版本43。最后修改时间2016-11-09。"
 
+msgid "Video Room Facility"
+msgstr ""
+
 msgid "View"
 msgstr "查看"
 
@@ -9109,6 +9152,9 @@ msgstr "要激活此账户，您必须完成知识测试。欲知详情请联系
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "要使用%1 API，您必须遵守这些条款。"
 
+msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
+msgstr ""
+
 msgid "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 msgstr "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 
@@ -9192,6 +9238,9 @@ msgstr "您必须谨慎的阅读这些补充条款、条件、订单执行政策
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
 msgstr "您了解基于随机数字生成器 （\"波动率指数\"）的产品属于博彩产品，而基于金融市场指数（外汇、股票、大宗商品）的产品属于金融工具。"
+
+msgid "You will be asked to prove that you are the owner of the account being authenticated."
+msgstr ""
 
 msgid "You will be automatically logged out after such time."
 msgstr "在该时间后您将自动退出登录。"
@@ -9378,6 +9427,9 @@ msgstr "不论您是通过访问我们的网站或第三方网站或从网站下
 
 msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "您违反了任何适用的法律、 法规或规定;"
+
+msgid "Your webcam and microphone must be in good working condition"
+msgstr ""
 
 msgid "Your website request.url (if you have one)"
 msgstr "您的网站request.url （如有）"
@@ -9579,6 +9631,9 @@ msgstr "人性化平台，各级别交易者皆可使用。"
 
 msgid "the specific instructions that we receive from you;"
 msgstr "您所提供的特定指令；"
+
+msgid "to set up the video call."
+msgstr ""
 
 msgid "today"
 msgstr "今天"
@@ -11331,3 +11386,9 @@ msgstr "账户限额"
 
 msgid "Initial Coin Offering"
 msgstr "首次代币预售"
+
+#~ msgid "Got questions? %1Contact us%2 for help."
+#~ msgstr "有疑问？%1联系我们%2求助。"
+
+#~ msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
+#~ msgstr "想要让您的MT5账户继续生效，请在5天内将这些文件寄送给我们。"
