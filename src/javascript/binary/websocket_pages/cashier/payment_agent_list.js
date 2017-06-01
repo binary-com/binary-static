@@ -1,3 +1,4 @@
+const BinarySocket = require('../socket');
 const urlForStatic = require('../../base/url').urlForStatic;
 const Cookies      = require('../../../lib/js-cookie');
 
@@ -8,7 +9,6 @@ const PaymentAgentList = (() => {
         $agent_template;
 
     const ddl_countries_id = '#target_country';
-    const hidden_class = 'hidden';
 
     const onLoad = () => {
         $(() => {
@@ -51,7 +51,7 @@ const PaymentAgentList = (() => {
 
         const countries = response.paymentagent_list.available_countries;
         if (countries.length === 0) {
-            $ddl_countries.parent().addClass(hidden_class);
+            $ddl_countries.parent().setVisibility(0);
             showEmptyListMsg();
             return;
         }
@@ -64,8 +64,8 @@ const PaymentAgentList = (() => {
             }
             insertListOption($ddl_countries, country[1], country[0]);
         });
-        $('#target_country').removeClass(hidden_class);
-        $('.barspinner').addClass(hidden_class);
+        $('#target_country').setVisibility(1);
+        $('.barspinner').setVisibility(0);
 
         if (found) {
             $ddl_countries.val(requested_country);
@@ -128,8 +128,8 @@ const PaymentAgentList = (() => {
     };
 
     const showEmptyListMsg = () => {
-        $('.barspinner').addClass(hidden_class);
-        $('#no_paymentagent').removeClass(hidden_class);
+        $('.barspinner').setVisibility(0);
+        $('#no_paymentagent').setVisibility(1);
     };
 
     return {

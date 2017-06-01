@@ -1,0 +1,116 @@
+[% BLOCK fill_box %]
+<div class="[% IF padding %]gr-12-m gr-6-p gr-padding-10[% IF center %] gr-[% padding || 9 %] gr-centered[% ELSE %] gr-[% padding || 6 %][% END %][% END %] [% class %]">
+    <div class="[% UNLESS align_left %]center-text[% END %] gr-gutter gr-padding-20 [% IF color == 'dark' %]primary-bg-color[% ELSE %]fill-bg-color[% END %][% IF border %] [% border %][% END %]">
+        <div class="inline-flex center-align gr-gutter">
+            [% IF image %]<img class="half-sized-picture gr-gutter-right" src="[% request.url_for(image) %]"/>[% END %]
+            [% IF href %]
+            <a href="[% href %]"[% IF target %] target="[% target %]"[% END %][% IF download %] download[% END %][% IF color == 'dark' %] class="content-inverse-color"[% END %]>
+            [% ELSE %]
+            <p class="gr-gutter">
+            [% END %]
+            [% IF em %]<em>[% END %]
+                [% text %]
+            [% IF em %]</em>[% END %]
+            [% IF !href %]</p>[% ELSE %]</a>[% END %]
+        </div>
+    </div>
+    [% content %]
+</div>
+[% END %]
+
+[% BLOCK info_box %]
+    <div class="gr-[% padding || 4 %] [% UNLESS padding == '6' %]gr-12-p [% END %]gr-12-m">
+        <div class="border-bottom">
+            <div class="fill-bg-color gr-padding-10">
+                <h3 class="gr-gutter no-margin">[% header %]</h3>
+            </div>
+            [% IF sub_header %]
+            <div class="gr-gutter gr-padding-10">[% sub_header %]</div>
+            [% END %]
+            <p class="gr-gutter gr-parent gr-padding-10[% IF sub_header %] no-margin[% END %]">
+                [% text %]
+            </p>
+        </div>
+    </div>
+[% END %]
+
+[% BLOCK li %]
+<li[% IF class %] class="[% class %]"[% END %][% IF id %] id="[% id %]"[% END %]>
+    [% IF header %][% IF !text %]<h3>[% ELSE %]<strong>[% END %][% header %][% IF text %]</strong>[% ELSE %]</h3>[% END %] [% END %]
+    [% IF href %]<a href="[% href %][% param %]" [% IF target %] target="[% target %]"[% END %]>[% END %]
+    [% IF p %]<p>[% END %]
+    [%= text =%]
+    [% IF p %]</p>[% END %]
+    [% IF href %]</a>[% END %]
+</li>
+[% END %]
+
+[% BLOCK list %]
+    <ul[% IF class %] class="[% class %]"[% END %][% IF id %] id="[% id %]"[% END %]>
+        [% FOREACH item IN items %]
+            [% INCLUDE li class=item.class id=item.id href=item.href param=item.param target=item.target text=item.text header=item.header %]
+        [% END %]
+    </ul>
+[% END %]
+
+[% BLOCK select %]
+    <select[% IF id %] id="[% id %]"[% END %][% IF class %] class="[% class %]"[% END %]>
+        [% FOREACH option IN options %]
+            <option[% IF option.value %] value="[% option.value %]"[% END %][% IF option.selected %] selected="selected"[% END %]>
+                [% option.text %]
+            </option>
+        [% END %]
+    </select>
+[% END %]
+
+[% BLOCK tbody %]
+    <tbody[% IF tbody_id %] id="[% tbody_id %]"[% END %]>
+        [% FOREACH tr IN trs %]
+            <tr>
+                [% FOREACH td IN tr %]
+                    [% IF td.header %]
+                    <th[% IF td.balloon %] data-balloon="[% td.balloon %]"[% END %][% IF td.class %] class="[% td.class %]"[% END %]>
+                        [% td.header %]
+                    </th>
+                    [% ELSE %]
+                    <td[% IF td.class %] class="[% td.class %]"[% END %][% IF td.id %] id="[% td.id %]"[% END %]>
+                        [% td.text %]
+                    </td>
+                    [% END %]
+                [% END %]
+            </tr>
+        [% END %]
+    </tbody>
+[% END %]
+
+[% BLOCK table %]
+    [% IF scroll %]<div class="table-container">[% END %]
+    <table[% IF id %] id="[% id %]"[% END %]>
+        [% IF data.thead %]
+        <thead>
+            [% FOREACH row IN data.thead %]
+                <tr>
+                    [% FOREACH th IN row %]
+                        <th[% IF th.class %] class="[% th.class %]"[% END %]>[% th.text %]</th>
+                    [% END %]
+                </tr>
+            [% END %]
+        </thead>
+        [% END %]
+        [% INCLUDE tbody trs=data.tbody tbody_id %]
+        [% IF data.tfoot %]
+            <tfoot>
+                [% FOREACH row IN data.tfoot %]
+                <tr>
+                    [% FOREACH th IN row %]
+                        <th[% IF th.class %] class="[% th.class %]"[% END %][% IF th.id %] id="[% th.id %]"[% END %] [% th.attributes %]>
+                            [% th.text %]
+                        </th>
+                    [% END %]
+                </tr>
+                [% END %]
+            </tfoot>
+        [% END %]
+    </table>
+    [% IF scroll %]</div>[% END %]
+[% END %]

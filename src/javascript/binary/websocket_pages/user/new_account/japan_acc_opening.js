@@ -1,3 +1,4 @@
+const BinarySocket   = require('../../socket');
 const BinaryPjax     = require('../../../base/binary_pjax');
 const Client         = require('../../../base/client');
 const State          = require('../../../base/storage').State;
@@ -6,6 +7,8 @@ const detectHedging  = require('../../../common_functions/common_functions').det
 const FormManager    = require('../../../common_functions/form_manager');
 
 const JapanAccOpening = (() => {
+    'use strict';
+
     const onLoad = () => {
         if (AccountOpening.redirectCookie()) return;
         BinarySocket.wait('authorize').then(() => {
@@ -50,7 +53,7 @@ const JapanAccOpening = (() => {
             AccountOpening.handleNewAccount(response, response.msg_type);
         } else {
             BinaryPjax.load('new_account/knowledge_testws');
-            $('#topbar-msg').children('a').addClass('invisible');
+            $('#topbar-msg').children('a').setVisibility(0);
         }
     };
 

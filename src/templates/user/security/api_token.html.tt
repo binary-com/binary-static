@@ -1,3 +1,5 @@
+[% PROCESS components/forms.html.tt %]
+
 <div id="api_token" class="api_token">
     <h1>[% l('API Token') %]</h1>
 
@@ -9,10 +11,10 @@
 
     <div id="token_form" class="gr-12 gr-padding-10">
         <form>
-            [% WRAPPER components/forms/fieldset.html.tt legend=l("Create New Token") %]
-                [% INCLUDE components/forms/form_row.html.tt type='text' id='txt_name' label=l("Choose a Name:") attributes='maxlength="32"' %]
+            [% WRAPPER fieldset legend=l("Create New Token") %]
+                [% INCLUDE form_row type='text' id='txt_name' label=l("Choose token Name") attributes='maxlength="32"' %]
 
-                [% WRAPPER components/forms/form_row.html.tt type='custom' label=l("Choose Scopes:") %]
+                [% WRAPPER form_row type='custom' label=l("Choose Scopes:") %]
                     <input id="chk_scopes_read" type="checkbox" value="read" checked="checked" readonly="readonly" />
                     <label for="chk_scopes_read" data-balloon="[% l('Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more.') %]" data-balloon-length="xlarge">[% l('Read') %]</label>
 
@@ -26,7 +28,7 @@
                     <label for="chk_scopes_admin" data-balloon="[% l('Can be used to open accounts, set settings, manage token usage, and more.') %]" data-balloon-length="xlarge">[% l('Admin') %]</label>
                 [% END %]
 
-                [% INCLUDE components/forms/submit_button.html.tt text=l("Create") type='submit' %]
+                [% INCLUDE submit_button text=l("Create") type='submit' %]
             [% END %]
         </form>
     </div>
@@ -35,5 +37,5 @@
         <p></p>
     </div>
 
-    <div id="tokens_list" class="gr-12 gr-parent gr-padding-10">[% INCLUDE global/loading.html.tt %]</div>
+    <div id="tokens_list" class="gr-12 gr-parent gr-padding-10">[% PROCESS global/loading.html.tt %]</div>
 </div>

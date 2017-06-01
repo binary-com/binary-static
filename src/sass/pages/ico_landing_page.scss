@@ -1,0 +1,393 @@
+h1 {
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 32px !important;
+}
+
+h4 {
+    font-weight: 700 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 500 !important;
+}
+
+.container {
+    max-width: 1200px !important;
+}
+
+.content-section {
+    padding: 50px 15px;
+}
+
+// Intro section
+.intro {
+    height: auto;
+    text-align: center;
+    color: $COLOR_WHITE;
+    padding-top: 120px;
+    background: url('../images/ico/images/img1@2x.png') no-repeat bottom center scroll;
+    background-color: $COLOR_BLACK;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+    .intro-body {
+        vertical-align: middle;
+
+        .brand-heading {
+            font-size: 64px;
+        }
+        .intro-text {
+            font-size: 28px !important;
+            font-weight: 100;
+        }
+    }
+}
+
+.intro-subtext {
+    font-size: 22px !important;
+    font-weight: 100 !important;
+}
+
+.transparent-dark-blue-bg {
+    background-color: rgba(21, 33, 45, 0.7); // dark blue 0.7 opacity
+}
+
+.underline {
+    width: 42px;
+    height: 5px;
+    border: 0;
+    background-color: $COLOR_ORANGE;
+}
+
+hr {
+    width: 70vw;
+    height: 1px;
+    border: 0;
+    background-color: $COLOR_GRAY;
+}
+
+// How ICO works section
+.icon {
+    width: 64px;
+    height: 64px;
+    margin: 20px;
+}
+
+.box {
+    border: 1px solid $COLOR_DARK_BLUE;
+    margin: 15px 0;
+    padding: 15px;
+}
+
+.vertical-center {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+}
+
+.arrow {
+    width: 91px;
+    margin-right: -20px;
+}
+
+// Who we are section
+.who-we-are-bg {
+    position: relative;
+    background: url('../images/ico/images/img3@2x.png') no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.white-bg {
+    background-color: $COLOR_WHITE;
+    padding: 32px 25px 14px !important;
+}
+
+.boxed-heading, .chart-heading {
+    position: absolute;
+    padding: 15px;
+    color: $COLOR_WHITE;
+    background-color: $COLOR_BLUE;
+}
+
+.boxed-heading-center {
+    top: -30px;
+    right: 0;
+    left: 0;
+    width: 80vw;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+// Our growth section
+#charts {
+    position: relative;
+
+    .vertical-line { // vertical line between charts
+        position: absolute;
+        width: 1px;
+        background-color: $COLOR_GRAY;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        height: 95%;
+    }
+}
+
+.chart {
+    position: relative;
+    margin-top: 15px;
+}
+
+.chart-heading {
+    min-width: 155px;
+    padding: 10px;
+    font-weight: 100;
+    top: -20px;
+}
+
+.chart-heading-right {
+    right: 0;
+}
+
+.chart-heading-left {
+    left: 0;
+}
+
+// What are binary options section
+.blue-bg {
+    background: url('../images/ico/images/img2@2x.png') no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.highlight {
+    height: 10px;
+    border: 0;
+    background-color: $COLOR_ORANGE;
+    width: 23vw;
+    position: absolute;
+    top: -59px;
+}
+
+.footnote {
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 15px;
+}
+
+// Aweber form
+input[type='text'] {
+    width: 280px;
+    font-size: 16px;
+    padding: 10px;
+    margin: 6px 0;
+    border: none;
+}
+
+input[type='submit'] {
+    width: 100px;
+    padding: 10px;
+    margin: 5px 0;
+    background: $COLOR_GREEN;
+    color: $COLOR_WHITE;
+    border: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type='text']:focus, input[type='submit']:focus {
+    outline: none !important;
+}
+
+.form-container {
+    display: flex;
+
+    .af-form-wrapper {
+        margin: 0 auto;
+    }
+}
+
+.notice-msg {
+    color: $COLOR_DARK_BLUE !important;
+}
+
+// Navbar
+.navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    top: 0;
+    border-width: 0 0 1px;
+    margin-bottom: 20px;
+    -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    overflow: auto;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    float: left;
+}
+
+.logo {
+    background: url('https://style.binary.com/images/logo/binary_logo_light.svg') no-repeat;
+    width: 48vw !important;
+    height: 36px;
+    margin: 15px;
+}
+
+.navbar-nav {
+    float: right;
+    display: flex;
+
+    > li {
+        padding: 10px 15px;
+    }
+    a, a:visited {
+        color: $COLOR_WHITE !important;
+        font-weight: 100 !important;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+    a:hover, a:focus {
+        text-decoration: none;
+        color: $COLOR_GREEN;
+    }
+}
+
+.navbar-fixed-top.top-nav-collapse {
+    padding: 0;
+    background: $COLOR_BLUE !important;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    background: url('../images/ico/icons/main_menu.svg') no-repeat;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+    display: none; // hide on desktop
+}
+
+.navbar-toggle:focus {
+    outline: 0;
+}
+
+@media (max-width: 1199px) {
+    .intro {
+        height: 95%;
+        padding-top: 120px;
+
+        .intro-body {
+            .brand-heading {
+                font-size: 34px;
+            }
+            .intro-text {
+                font-size: 24px;
+            }
+        }
+    }
+    .navbar-fixed-top {
+        position: inherit;
+        background: $COLOR_BLUE;
+        margin-bottom: 0;
+        height: 50px;
+        overflow: hidden;
+        padding: 0;
+        -webkit-transition: height 0.5s;
+        -moz-transition: height 0.5s;
+        -ms-transition: height 0.5s;
+        -o-transition: height 0.5s;
+        transition: height 0.5s;
+
+        .navbar-header {
+            padding: 10px;
+        }
+    }
+    .navbar-fixed-top.expand {
+        height: 180px;
+    }
+    .navbar-brand {
+        float: none;
+        margin: 0;
+        height: 30px;
+    }
+    .navbar-toggle {
+        display: block;
+        height: 30px;
+        width: 30px;
+    }
+    .navbar-nav {
+        background: transparent;
+        float: none;
+        display: block;
+
+        > li {
+            padding: 0;
+            margin: 10px 15px;
+        }
+    }
+    input[type='text'] {
+        width: 95%;
+        text-align: center;
+    }
+    .vertical-line, .arrow {
+        display: none;
+    }
+    .chart-heading-left, .chart-heading-right {
+        font-size: 14px;
+        min-width: 100px;
+    }
+}
+
+#faq-section {
+    padding: 100px 15px;
+
+    #faq-btn {
+        text-transform: none !important;
+    }
+}
+
+.faq {
+    margin: 15px 0;
+    border: 1px solid $COLOR_LIGHT_GRAY;
+
+    h4 {
+        background-color: $COLOR_LIGHT_GRAY;
+        padding: 20px;
+    }
+    p {
+        padding: 0 20px;
+    }
+    strong {
+        font-weight: bold;
+    }
+    ol {
+        margin: 1.25em 0 1.25em 2em; // overwrite binary.css
+    }
+}

@@ -1,36 +1,22 @@
 <div class="gr-parent gr-padding-30 static_full">
     <h1>[% l("{JAPAN ONLY}Japan Service Announcements") %]</h1>
 </div>
+
 <div class="gr-parent gr-padding-10">
     <h2>[% l("{JAPAN ONLY}JSA_Title_1") %]</h2>
-    <p>
-        <strong>[% l("{JAPAN ONLY}JSA_Date_1") %]</strong>
-    </p>
-    <p>
-        [% l("{JAPAN ONLY}JSA_Explanation_1_1)") %]
-    </p>
-    <p>
-        [% l("{JAPAN ONLY}JSA_Explanation_1_2)") %]
-    </p>
+    <p><strong>[% l("{JAPAN ONLY}JSA_Date_1") %]</strong></p>
+    <p>[% l("{JAPAN ONLY}JSA_Explanation_1_1)") %]</p>
+    <p>[% l("{JAPAN ONLY}JSA_Explanation_1_2)") %]</p>
 
 </div>
+
 <div class="gr-parent gr-padding-10">
     <h2>[% l("{JAPAN ONLY}JSA_Title_2") %]</h2>
-    <p>
-        <strong>[% l("{JAPAN ONLY}JSA_Date_2") %]</strong>
-    </p>
-    <p>
-        [% l("{JAPAN ONLY}JSA_Explanation_2_1)") %]
-    </p>
-    <p>
-        [% l("{JAPAN ONLY}JSA_Explanation_2_2)") %]
-    </p>
-    <p>
-        [% l("{JAPAN ONLY}JSA_Explanation_2_3)") %]
-    </p>
+    <p><strong>[% l("{JAPAN ONLY}JSA_Date_2") %]</strong></p>
+    <p>[% l("{JAPAN ONLY}JSA_Explanation_2_1)") %]</p>
+    <p>[% l("{JAPAN ONLY}JSA_Explanation_2_2)") %]</p>
+    <p>[% l("{JAPAN ONLY}JSA_Explanation_2_3)") %]</p>
 
 </div>
 
-<p>
-    [% l("{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:[_1]'>[_1]</a>).", "support@binary.com") %]
-</p>
+<p>[% l("{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:[_1]'>[_1]</a>).", "support@binary.com") %]</p>

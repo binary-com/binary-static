@@ -2,10 +2,10 @@ const Highcharts    = require('highcharts');
 const moment        = require('moment');
 const commonTrading = require('../common');
 const Tick          = require('../tick');
+const BinarySocket  = require('../../socket');
 const ViewPopupUI   = require('../../user/view_popup/view_popup.ui');
 const localize      = require('../../../base/localize').localize;
 const isVisible     = require('../../../common_functions/common_functions').isVisible;
-const addComma      = require('../../../common_functions/string_util').addComma;
 require('highcharts/modules/exporting')(Highcharts);
 
 const TickDisplay_Beta = (() => {
@@ -32,6 +32,18 @@ const TickDisplay_Beta = (() => {
         contract_start_moment,
         counter,
         spots_list;
+
+    let tick_underlying,
+        tick_count,
+        tick_longcode,
+        tick_display_name,
+        tick_date_start,
+        absolute_barrier,
+        tick_shortcode,
+        contract_type,
+        tick_init,
+        subscribe,
+        responseID;
 
     const initialize = (data) => {
         // setting up globals
@@ -198,7 +210,7 @@ const TickDisplay_Beta = (() => {
 
                     formatter: function() {
                         const time = moment.utc(applicable_ticks[this.x].epoch * 1000).format('HH:mm:ss');
-                        const this_price = addComma(this.y, display_decimals);
+                        const this_price = this.y;
                         showValues(+this.x + (is_start_on_first_tick ? 1 : 0), time, this_price);
                     },
                     events: {
@@ -319,7 +331,7 @@ const TickDisplay_Beta = (() => {
         }
         const purchase_barrier = document.getElementById('contract_purchase_barrier');
         if (contract_barrier && purchase_barrier) {
-            commonTrading.labelValue(purchase_barrier, localize('Barrier'), addComma(contract_barrier, display_decimals), true);
+            commonTrading.labelValue(purchase_barrier, localize('Barrier'), contract_barrier, true);
         }
     };
 
@@ -383,9 +395,9 @@ const TickDisplay_Beta = (() => {
             return;
         }
 
-        if (window.subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-            window.responseID = data.tick.id;
-            ViewPopupUI.storeSubscriptionID(window.responseID);
+        if (subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
+            responseID = data.tick.id;
+            ViewPopupUI.storeSubscriptionID(responseID);
         }
 
         let epoches,
@@ -402,21 +414,21 @@ const TickDisplay_Beta = (() => {
                     chart_display_decimals = data.history.prices[0].split('.')[1].length || 2;
                 }
             }
-            if (!window.tick_init || window.tick_init === '') {
+            if (!tick_init || tick_init === '') {
                 initialize({
-                    symbol              : window.tick_underlying,
-                    number_of_ticks     : window.tick_count,
-                    contract_category   : ((/asian/i).test(window.tick_shortcode) ? 'asian' : (/digit/i).test(window.tick_shortcode) ? 'digits' : 'callput'),
-                    longcode            : window.tick_longcode,
-                    display_symbol      : window.tick_display_name,
-                    contract_start      : window.tick_date_start,
-                    abs_barrier         : window.abs_barrier,
+                    symbol              : tick_underlying,
+                    number_of_ticks     : tick_count,
+                    contract_category   : ((/asian/i).test(tick_shortcode) ? 'asian' : (/digit/i).test(tick_shortcode) ? 'digits' : 'callput'),
+                    longcode            : tick_longcode,
+                    display_symbol      : tick_display_name,
+                    contract_start      : tick_date_start,
+                    abs_barrier         : absolute_barrier,
                     display_decimals    : chart_display_decimals,
-                    contract_sentiment  : window.contract_type === 'CALL' || window.contract_type === 'ASIANU' ? 'up' : 'down',
+                    contract_sentiment  : contract_type === 'CALL' || contract_type === 'ASIANU' ? 'up' : 'down',
                     show_contract_result: 0,
                 });
                 spots_list = {};
-                window.tick_init = 'initialized';
+                tick_init = 'initialized';
             }
         }
         if (data.tick) {
@@ -427,8 +439,8 @@ const TickDisplay_Beta = (() => {
         }
         if (applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed) {
             evaluateContractOutcome();
-            if (window.responseID) {
-                BinarySocket.send({ forget: window.responseID });
+            if (responseID) {
+                BinarySocket.send({ forget: responseID });
             }
         } else {
             for (let d = 0; d < epoches.length; d++) {
@@ -483,17 +495,17 @@ const TickDisplay_Beta = (() => {
     };
 
     const updateChart = (data, contract) => {
-        window.subscribe = 'false';
+        subscribe = 'false';
         if (contract) {
-            window.tick_underlying = contract.underlying;
-            window.tick_count = contract.tick_count;
-            window.tick_longcode = contract.longcode;
-            window.tick_display_name = contract.display_name;
-            window.tick_date_start = contract.date_start;
-            window.abs_barrier = contract.barrier;
-            window.tick_shortcode = contract.shortcode;
-            window.contract_type = contract.contract_type;
-            window.tick_init = '';
+            tick_underlying = contract.underlying;
+            tick_count = contract.tick_count;
+            tick_longcode = contract.longcode;
+            tick_display_name = contract.display_name;
+            tick_date_start = contract.date_start;
+            absolute_barrier = contract.barrier;
+            tick_shortcode = contract.shortcode;
+            contract_type = contract.contract_type;
+            tick_init = '';
             const request = {
                 ticks_history: contract.underlying,
                 start        : contract.date_start,
@@ -501,7 +513,7 @@ const TickDisplay_Beta = (() => {
             };
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
-                window.subscribe  = 'true';
+                subscribe  = 'true';
             } else {
                 request.end = contract.date_expiry;
             }

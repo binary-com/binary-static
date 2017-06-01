@@ -1,15 +1,17 @@
 const PaymentAgentTransferUI = require('./payment_agent_transfer/payment_agent_transfer.ui');
+const BinarySocket           = require('../../socket');
 const Client                 = require('../../../base/client');
+const localize               = require('../../../base/localize').localize;
 const State                  = require('../../../base/storage').State;
 const FormManager            = require('../../../common_functions/form_manager');
 
 const PaymentAgentTransfer = (() => {
-    const hidden_class = 'invisible';
+    'use strict';
 
     let balance,
         is_authenticated_payment_agent,
         common_request_fields,
-        $insufficient_balance;
+        $form_error;
 
     const onLoad = () => {
         PaymentAgentTransferUI.initValues();
@@ -28,15 +30,15 @@ const PaymentAgentTransfer = (() => {
         const $no_bal_err = $('#no_balance_error');
         const currency = Client.get('currency');
         balance = State.get(['response', 'balance', 'balance', 'balance']);
-        $insufficient_balance = $('#insufficient_balance');
+        $form_error = $('#form_error');
 
         if (!currency || +balance === 0) {
             $('#pa_transfer_loading').remove();
-            $no_bal_err.removeClass(hidden_class);
+            $no_bal_err.setVisibility(1);
             return;
         }
 
-        $no_bal_err.addClass(hidden_class);
+        $no_bal_err.setVisibility(0);
         setFormVisibility(true);
         PaymentAgentTransferUI.updateFormView(currency);
 
@@ -65,10 +67,10 @@ const PaymentAgentTransfer = (() => {
 
     const checkBalance = (amount) => {
         if (+amount > +balance) {
-            $insufficient_balance.removeClass(hidden_class);
+            $form_error.text(localize('Insufficient balance.')).setVisibility(1);
             return false;
         }
-        $insufficient_balance.addClass(hidden_class);
+        $form_error.setVisibility(0);
         return true;
     };
 
@@ -84,7 +86,7 @@ const PaymentAgentTransfer = (() => {
             PaymentAgentTransferUI.hideNotes();
             if (!is_authenticated_payment_agent) {
                 $('#pa_transfer_loading').remove();
-                $('#not_pa_error').removeClass('invisible');
+                $('#not_pa_error').setVisibility(1);
             }
         }
     };
@@ -95,7 +97,7 @@ const PaymentAgentTransfer = (() => {
 
         if (error) {
             if (req.dry_run === 1) {
-                $('#form_error').text(error.message).removeClass(hidden_class);
+                $form_error.text(error.message).setVisibility(1);
                 return;
             }
             PaymentAgentTransferUI.showTransferError(error.message);
@@ -136,7 +138,7 @@ const PaymentAgentTransfer = (() => {
             PaymentAgentTransferUI.showNotes();
             PaymentAgentTransferUI.hideConfirmation();
             PaymentAgentTransferUI.hideDone();
-            $('#form_error').addClass(hidden_class);
+            $form_error.setVisibility(0);
         });
     };
 

@@ -106,7 +106,7 @@ const MBTradingEvents = (() => {
                 const new_payout = payout + parseInt($(this).attr('value'));
 
                 if (validatePayout(new_payout)) {
-                    $('.price-table').removeClass('invisible');
+                    $('.price-table').setVisibility(1);
                     MBDefaults.set('payout', new_payout);
                     $payout.attr('value', new_payout).find('.current').html(new_payout);
                     MBProcess.processPriceRequest();

@@ -1,7 +1,8 @@
-const RealityCheckData      = require('./reality_check.data');
-const showLocalTimeOnHover  = require('../../../base/clock').showLocalTimeOnHover;
+const RealityCheckData     = require('./reality_check.data');
+const BinarySocket         = require('../../socket');
+const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
 const urlFor               = require('../../../base/url').urlFor;
-const FormManager           = require('../../../common_functions/form_manager');
+const FormManager          = require('../../../common_functions/form_manager');
 require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
 
@@ -31,9 +32,7 @@ const RealityCheckUI = (() => {
     const ajaxSuccess = (reality_check_text, summary) => {
         const content = 'reality_check_content';
         if (reality_check_text.includes(content) && $('#reality_check').length === 0) {
-            $('body').append($('<div/>', { id: 'reality_check', class: 'lightbox' })
-                .append($('<div />').append($('<div />')
-                .append($(reality_check_text).find(`#${content}`)))));
+            $('body').append($('<div/>', { id: 'reality_check', class: 'lightbox' }).append($(reality_check_text).find(`#${content}`)));
             $(form.num_reality_duration).val(Math.floor(+RealityCheckData.get('interval') / 60 / 1000));
             $('#statement').off('click').on('click dblclick', onStatementClick);
             $('#logout').off('click').on('click dblclick', onLogoutClick);
@@ -74,7 +73,7 @@ const RealityCheckUI = (() => {
     const bindValidation = () => {
         $(form.num_reality_duration).off('keypress').on('keypress', handleKeypress);
         FormManager.init(form.selector, [
-            { selector: form.num_reality_duration, validations: ['req', ['number', { min: 10, max: 120 }]], exclude_request: 1, no_scroll: 1 },
+            { selector: form.num_reality_duration, validations: ['req', ['number', { min: 10, max: 60 }]], exclude_request: 1, no_scroll: 1 },
         ]);
         FormManager.handleSubmit({
             form_selector       : form.selector,
@@ -110,7 +109,7 @@ const RealityCheckUI = (() => {
         const interval = +RealityCheckData.get('interval');
         const toWait = interval - ((Date.now() - login_time) % interval);
 
-        window.setTimeout(() => {
+        setTimeout(() => {
             RealityCheckData.set('keep_open', 1);
             getSummaryAsync();
         }, toWait);

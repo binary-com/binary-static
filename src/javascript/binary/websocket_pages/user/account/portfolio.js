@@ -14,7 +14,7 @@ const Portfolio = (() => {
         {
             transaction_id: c.transaction_id,
             contract_id   : c.contract_id,
-            payout        : parseFloat(c.payout).toFixed(2),
+            payout        : parseFloat(c.payout),
             longcode      : typeof module !== 'undefined' ?
                 c.longcode : (jpClient() ?
                     toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode),
@@ -27,7 +27,7 @@ const Portfolio = (() => {
     const getProposalOpenContract = proposal => (
         {
             contract_id     : proposal.contract_id,
-            bid_price       : parseFloat(proposal.bid_price || 0).toFixed(2),
+            bid_price       : parseFloat(proposal.bid_price || 0),
             is_sold         : proposal.is_sold,
             is_valid_to_sell: proposal.is_valid_to_sell,
             currency        : proposal.currency,
@@ -44,7 +44,7 @@ const Portfolio = (() => {
             }
         }
 
-        return sum.toFixed(2);
+        return sum;
     };
 
     return {

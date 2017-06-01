@@ -27,7 +27,7 @@ sub url_for {
     my $root_url = root_url();
     $root_url =~ s{/$}{};
 
-    if ($url =~ m{^/?(images|css|scripts|download)/}) {
+    if ($url =~ m{^/?(images|js|css|scripts|download)/}) {
         $url =~ s/^\///;
         return Mojo::URL->new(root_url() . $url);
     }

@@ -1,43 +1,27 @@
+[% PROCESS components/elements.html.tt %]
+
 <div id="japan_cashier_container" class="invisible">
-<div class="gr-row">
-    <h1 class="gr-11 gr-10-m">[% l("Deposit") %]</h1>
-    <a class="gr-1 gr-2-m no-print align-end" href="javascript:window.print()">
-        <img class="responsive" src="[% request.url_for('images/common/print.svg') %]"/>
-    </a>
-</div>
-<p>[% l("{JAPAN ONLY}Please make a bank transfer from your designated bank account to:") %]</p>
-<table>
-    <tbody>
-        <tr>
-            <td>[% l("{JAPAN ONLY}Bank") %]</td>
-            <td>[% l("{JAPAN ONLY}Rakuten Bank") %]</td>
-        </tr>
-        <tr>
-            <td>[% l("{JAPAN ONLY}Branch") %]</td>
-            <td>[% l("{JAPAN ONLY}#1 Sales Division") %]</td>
-        </tr>
-        <tr>
-            <td>[% l("{JAPAN ONLY}Branch Code") %]</td>
-            <td>[% l("{JAPAN ONLY}251") %]</td>
-        </tr>
-        <tr>
-            <td>[% l("{JAPAN ONLY}Account Type") %]</td>
-            <td>[% l("{JAPAN ONLY}Savings") %]</td>
-        </tr>
-        <tr>
-            <td>[% l("{JAPAN ONLY}Account Number") %]</td>
-            <td>[% l("{JAPAN ONLY}7546677") %]</td>
-        </tr>
-        <tr>
-            <td>[% l("{JAPAN ONLY}Account Name") %]</td>
-            <td>[% l("{JAPAN ONLY}Binary K.K. Customer Account") %]</td>
-        </tr>
-    </tbody>
-</table>
-<p>[% l("{JAPAN ONLY}Please make sure you add your Binary.com account ID to the Remitter's account name, or it will delay crediting the funds to your account:") %]</p>
-<p>[% l("{JAPAN ONLY}Remitter's Name:") %] <span id="name_id"></span></p>
-<p>[% l("{JAPAN ONLY}Please note we can only accept payments from your designated bank account and no other account in your name.") %]</p>
-<p>[% l("{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support.") %]</p>
-<p>[% l("{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000.") %]</p>
-<p>[% l("{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account.") %]</p>
+    <div class="gr-row">
+        <h1 class="gr-11 gr-10-m">[% l("Deposit") %]</h1>
+        <a class="gr-1 gr-2-m no-print align-end" href="javascript:window.print()">
+            <img class="responsive" src="[% request.url_for('images/common/print.svg') %]"/>
+        </a>
+    </div>
+    <p>[% l("{JAPAN ONLY}Please make a bank transfer from your designated bank account to:") %]</p>
+    <table>
+        [% INCLUDE tbody trs=[
+            [{ text=l("{JAPAN ONLY}Bank") },           { text=l("{JAPAN ONLY}Rakuten Bank") }],
+            [{ text=l("{JAPAN ONLY}Branch") },         { text=l("{JAPAN ONLY}#1 Sales Division") }],
+            [{ text=l("{JAPAN ONLY}Branch Code") },    { text=l("{JAPAN ONLY}251") }],
+            [{ text=l("{JAPAN ONLY}Account Type") },   { text=l("{JAPAN ONLY}Savings")}],
+            [{ text=l("{JAPAN ONLY}Account Number") }, { text=l("{JAPAN ONLY}7546677") }],
+            [{ text=l("{JAPAN ONLY}Account Name") },   { text=l("{JAPAN ONLY}Binary K.K. Customer Account") }],
+        ] %]
+    </table>
+    <p>[% l("{JAPAN ONLY}Please make sure you add your [_1] account ID to the Remitter's account name, or it will delay crediting the funds to your account:", website_name) %]</p>
+    <p>[% l("{JAPAN ONLY}Remitter's Name:") %] <span id="name_id"></span></p>
+    <p>[% l("{JAPAN ONLY}Please note we can only accept payments from your designated bank account and no other account in your name.") %]</p>
+    <p>[% l("{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support.") %]</p>
+    <p>[% l("{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000.") %]</p>
+    <p>[% l("{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account.") %]</p>
 </div>

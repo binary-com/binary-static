@@ -44,10 +44,10 @@ const Platforms = (() => {
     // };
 
     const checkWidth = () => {
-        if ($('.sidebar-left').is(':visible')) {
+        if ($('.sidebar').is(':visible')) {
             showSelectedDiv();
         } else {
-            $('.sections').removeClass('invisible');
+            $('.sections').setVisibility(1);
         }
         // $('.inner th').hide().fadeIn(1); // force to refresh in order to maintain correct positions
     };
@@ -62,8 +62,8 @@ const Platforms = (() => {
         if ($sections_with_hash.is(':visible') && $('.sections:visible').length === 1) {
             return;
         }
-        $('.sections').addClass('invisible');
-        $sections_with_hash.removeClass('invisible');
+        $('.sections').setVisibility(0);
+        $sections_with_hash.setVisibility(1);
         $(`.sidebar-nav a[href="${getHash()}"]`).parent().addClass('selected');
     };
 

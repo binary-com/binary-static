@@ -54,8 +54,8 @@ const SessionDurationLimit = (() => {
     };
 
     const displayWarning = () => {
-        $('body').append($('<div/>', { id: 'session_limit', class: 'lightbox' }).append($('<div/>').append($('<div/>')
-            .append($('<div/>', { class: 'limit_message', text: localize('Your session duration limit will end in [_1] seconds.', [warning / 1000]) })))));
+        $('body').append($('<div/>', { id: 'session_limit', class: 'lightbox' })
+            .append($('<div/>', { class: 'gr-padding-10 gr-gutter', text: localize('Your session duration limit will end in [_1] seconds.', [warning / 1000]) })));
         $('#session_limit').click(function() { $(this).remove(); });
     };
 

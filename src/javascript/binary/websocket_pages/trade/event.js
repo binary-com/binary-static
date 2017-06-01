@@ -10,13 +10,14 @@ const Notifications              = require('./notifications');
 const Price                      = require('./price');
 const Process                    = require('./process');
 const Purchase                   = require('./purchase');
-const setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
 const getStartDateNode           = require('./common_independent').getStartDateNode;
 const Tick                       = require('./tick');
+const BinarySocket               = require('../socket');
 const BinaryPjax                 = require('../../base/binary_pjax');
 const GTM                        = require('../../base/gtm');
 const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
 const isVisible                  = require('../../common_functions/common_functions').isVisible;
+const formatMoney                = require('../../common_functions/currency_to_symbol').formatMoney;
 const onlyNumericOnKeypress      = require('../../common_functions/event_handler');
 const TimePicker                 = require('../../components/time_picker');
 
@@ -72,16 +73,11 @@ const TradingEvents = (() => {
                     const is_form_active = clicked_form.classList.contains('active') || clicked_form.parentElement.classList.contains('active');
                     Defaults.set('formname', clicked_form.getAttribute('menuitem'));
 
-                    setFormPlaceholderContent();
                     // if form is already active then no need to send same request again
                     commonTrading.toggleActiveCatMenuElement(form_nav_element, e.target.getAttribute('menuitem'));
 
                     if (!is_form_active) {
                         contractFormEventChange();
-                    }
-                    const contract_form_checkbox = document.getElementById('contract_form_show_menu');
-                    if (contract_form_checkbox) {
-                        contract_form_checkbox.checked = false;
                     }
                 }
             });
@@ -111,8 +107,6 @@ const TradingEvents = (() => {
 
                     getContracts(underlying);
 
-                    // forget the old tick id i.e. close the old tick stream
-                    Process.processForgetTicks();
                     // get ticks for current underlying
                     GetTicks.request(underlying);
                     commonTrading.displayTooltip(Defaults.get('market'), underlying);
@@ -124,7 +118,6 @@ const TradingEvents = (() => {
             BinarySocket.send({ contracts_for: underlying }).then((response) => {
                 Notifications.hide('CONNECTION_ERROR');
                 Process.processContract(response);
-                window.contracts_for = response;
             });
         };
 
@@ -237,7 +230,7 @@ const TradingEvents = (() => {
             amount_element.addEventListener('input', commonTrading.debounce((e) => {
                 e.target.value = e.target.value.replace(/[^0-9.]/g, '');
                 if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(2);
+                    e.target.value = formatMoney(Defaults.get('currency'), parseFloat(e.target.value), 1);
                 }
                 Defaults.set('amount', e.target.value);
                 Price.processPriceRequest();
@@ -342,8 +335,8 @@ const TradingEvents = (() => {
         /*
          * attach event to close icon for purchase container
          */
-        $('#close_confirmation_container, #contract_purchase_new_trade').on('click dblclick', (e) => {
-            if (e.target) {
+        $('#close_confirmation_container').on('click dblclick', (e) => {
+            if (e.target && isVisible(document.getElementById('confirmation_message_container'))) {
                 e.preventDefault();
                 commonTrading.hideOverlayContainer();
                 Price.processPriceRequest();
@@ -375,6 +368,9 @@ const TradingEvents = (() => {
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
+            low_barrier_element.addEventListener('keypress', (ev) => {
+                onlyNumericOnKeypress(ev, [43, 45, 46]);
+            });
         }
 
         /*
@@ -387,6 +383,9 @@ const TradingEvents = (() => {
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
+            high_barrier_element.addEventListener('keypress', (ev) => {
+                onlyNumericOnKeypress(ev, [43, 45, 46]);
+            });
         }
 
         /*

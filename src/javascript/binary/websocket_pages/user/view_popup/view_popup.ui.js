@@ -1,10 +1,13 @@
-const State            = require('../../../base/storage').State;
+const BinarySocket     = require('../../socket');
 const getHighestZIndex = require('../../../base/utility').getHighestZIndex;
 
 const ViewPopupUI = (() => {
     'use strict';
 
-    let $container;
+    let $container,
+        stream_ids,
+        chart_stream_ids,
+        getPageTickStream;
 
     const init = () => {
         $container = null;
@@ -22,12 +25,14 @@ const ViewPopupUI = (() => {
             $con.hide();
             const onClose = () => {
                 cleanup();
-                State.call('ViewPopup.onClose');
+                $(document).off('keydown');
+                $(window).off('popstate', onClose);
             };
-            $con.find('a.close').on('click', () => { onClose(); });
+            $con.find('a.close').on('click', onClose);
             $(document).on('keydown', (e) => {
                 if (e.which === 27) onClose();
             });
+            $(window).on('popstate', onClose);
             $container = $con;
         }
         return $container;
@@ -39,12 +44,13 @@ const ViewPopupUI = (() => {
         clearTimer();
         closeContainer();
         init();
+        if (typeof getPageTickStream === 'function') getPageTickStream();
         $(window).off('resize', () => { repositionConfirmation(); });
     };
 
     const forgetStreams = () => {
-        while (window.stream_ids && window.stream_ids.length > 0) {
-            const id = window.stream_ids.pop();
+        while (stream_ids && stream_ids.length > 0) {
+            const id = stream_ids.pop();
             if (id && id.length > 0) {
                 BinarySocket.send({ forget: id });
             }
@@ -52,8 +58,8 @@ const ViewPopupUI = (() => {
     };
 
     const forgetChartStreams = () => {
-        while (window.chart_stream_ids && window.chart_stream_ids.length > 0) {
-            const id = window.chart_stream_ids.pop();
+        while (chart_stream_ids && chart_stream_ids.length > 0) {
+            const id = chart_stream_ids.pop();
             if (id && id.length > 0) {
                 BinarySocket.send({ forget: id });
             }
@@ -151,17 +157,19 @@ const ViewPopupUI = (() => {
     };
 
     // ===== Dispatch =====
-    const storeSubscriptionID = (id, option) => {
-        if (!window.stream_ids && !option) {
-            window.stream_ids = [];
+    const storeSubscriptionID = (id, is_chart) => {
+        if (!stream_ids && !is_chart) {
+            stream_ids = [];
         }
-        if (!window.chart_stream_ids && option) {
-            window.chart_stream_ids = [];
+        if (!chart_stream_ids) {
+            chart_stream_ids = [];
         }
-        if (!option && id && id.length > 0 && $.inArray(id, window.stream_ids) < 0) {
-            window.stream_ids.push(id);
-        } else if (option && id && id.length > 0 && $.inArray(id, window.chart_stream_ids) < 0) {
-            window.chart_stream_ids.push(id);
+        if (id && id.length > 0) {
+            if (!is_chart && $.inArray(id, stream_ids) < 0) {
+                stream_ids.push(id);
+            } else if (is_chart && $.inArray(id, chart_stream_ids) < 0) {
+                chart_stream_ids.push(id);
+            }
         }
     };
 
@@ -173,6 +181,7 @@ const ViewPopupUI = (() => {
         showInpagePopup       : showInpagePopup,
         repositionConfirmation: repositionConfirmation,
         storeSubscriptionID   : storeSubscriptionID,
+        setStreamFunction     : (streamFnc) => { getPageTickStream = streamFnc; },
     };
 })();
 

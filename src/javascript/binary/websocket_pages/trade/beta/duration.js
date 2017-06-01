@@ -5,6 +5,7 @@ const Price_Beta                = require('./price');
 const commonTrading             = require('../common');
 const processTradingTimesAnswer = require('../common_independent').processTradingTimesAnswer;
 const Defaults                  = require('../defaults');
+const BinarySocket              = require('../../socket');
 const localize                  = require('../../../base/localize').localize;
 const State                     = require('../../../base/storage').State;
 const elementTextContent        = require('../../../common_functions/common_functions').elementTextContent;

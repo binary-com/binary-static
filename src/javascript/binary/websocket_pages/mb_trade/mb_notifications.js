@@ -55,8 +55,8 @@ const MBNotifications = (() => {
     const getContainer = () => $('#notifications_wrapper');
 
     const hideSpinnerShowTrading = () => {
-        $('#main_loading').addClass('invisible');
-        $('#mb-trading-wrapper').removeClass('invisible');
+        $('#main_loading').setVisibility(0);
+        $('#mb-trading-wrapper').setVisibility(1);
     };
 
     return {

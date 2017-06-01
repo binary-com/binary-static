@@ -1,9 +1,11 @@
-const DigitInfo        = require('./charts/digit_info');
 const showHighchart    = require('./charts/chart_frame').showHighchart;
+const Defaults         = require('./defaults');
+const getActiveTab     = require('./get_active_tab').getActiveTab;
+const GetTicks         = require('./get_ticks');
+const MBDefaults       = require('../mb_trade/mb_defaults');
 const getLanguage      = require('../../base/language').get;
 const State            = require('../../base/storage').State;
 const Url              = require('../../base/url');
-const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 const JapanPortfolio   = require('../../../binary_japan/trade_japan/portfolio');
 
 /*
@@ -21,21 +23,17 @@ const JapanPortfolio   = require('../../../binary_japan/trade_japan/portfolio');
 const TradingAnalysis = (() => {
     'use strict';
 
+    const hidden_class = 'invisible';
+    let form_name;
+
     const requestTradeAnalysis = () => {
-        let form_name = State.get('is_mb_trading') ? $('#category').val() :
-                                                    $('#contract_form_name_nav').find('.a-active').attr('id');
-        if (form_name === 'matchdiff') {
-            form_name = 'digits';
-        }
-        if (form_name === 'callput') {
-            form_name = 'higherlower';
-        }
-        $('#tab_explanation').find('a').attr('href',  Url.urlFor('trade/bet_explanation',  `underlying_symbol=${$('#underlying').val()}&form_name=${form_name}`));
-        if (form_name === 'digits' || form_name === 'overunder' || form_name === 'evenodd') {
-            $('#tab_last_digit').removeClass('invisible');
-        } else {
-            $('#tab_last_digit').addClass('invisible');
-        }
+        form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
+
+        const map_obj = { matchdiff: 'digits', callput: 'higherlower' };
+        const regex = new RegExp(Object.keys(map_obj).join('|'), 'gi');
+        form_name = form_name.replace(regex, matched => map_obj[matched]);
+
+        $('#tab_last_digit').setVisibility(/(digits|overunder|evenodd)/.test(form_name));
         sessionStorage.setItem('currentAnalysisTab', getActiveTab());
         loadAnalysisTab();
     };
@@ -45,37 +43,25 @@ const TradingAnalysis = (() => {
      * navigation
      */
     const bindAnalysisTabEvent = () => {
-        const analysis_nav_element = document.querySelector('#trading_bottom_content #betsBottomPage');
-        if (analysis_nav_element) {
-            analysis_nav_element.addEventListener('click', (e) => {
-                if (e.target && e.target.nodeName === 'A') {
-                    e.preventDefault();
-
-                    const clicked_link = e.target;
-                    const clicked_element = clicked_link.parentElement;
-                    const is_tab_active = clicked_element.classList.contains('active');
-
-                    sessionStorage.setItem('currentAnalysisTab', clicked_element.id);
-
-                    if (!is_tab_active) {
-                        loadAnalysisTab();
-                    }
-                }
-            });
-        }
+        $('#betsBottomPage').find('li a').on('click', (e) => {
+            e.preventDefault();
+            const li = e.target.parentElement;
+            sessionStorage.setItem('currentAnalysisTab', li.id);
+            if (!li.classList.contains('active')) {
+                loadAnalysisTab(li.id);
+            }
+        });
     };
 
     /*
      * This function handles all the functionality on how to load
      * tab according to current paramerted
      */
-    const loadAnalysisTab = () => {
-        const current_tab = getActiveTab();
-        const current_link = document.querySelector(`#${current_tab} a`);
-        const content_id = document.getElementById(`${current_tab}-content`);
+    const loadAnalysisTab = (tab) => {
+        const current_tab = tab || getActiveTab();
 
-        const analysis_nav_element = document.querySelector('#trading_bottom_content #betsBottomPage');
-        toggleActiveNavMenuElement(analysis_nav_element, current_link.parentElement);
+        $('#betsBottomPage').find('li').removeClass('active');
+        $(`#${current_tab}`).addClass('active');
         toggleActiveAnalysisTabs();
 
         JapanPortfolio.init();
@@ -88,30 +74,13 @@ const TradingAnalysis = (() => {
             } else if (current_tab === 'tab_last_digit') {
                 const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
                 const tick = $('#tick_count').val() || 100;
-                BinarySocket.send({
+                GetTicks.request('', {
                     ticks_history: underlying,
                     count        : tick.toString(),
                     end          : 'latest',
-                }, {
-                    callback: (response) => {
-                        const type = response.msg_type;
-                        if (type === 'tick') {
-                            DigitInfo.updateChart(response);
-                        } else if (type === 'history') {
-                            DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
-                        }
-                    },
                 });
-            } else {
-                $.ajax({
-                    method: 'GET',
-                    url   : current_link.getAttribute('href'),
-                }).done((data) => {
-                    elementInnerHtml(content_id, data);
-                    if (current_tab === 'tab_explanation') {
-                        showExplanation(current_link.href);
-                    }
-                });
+            } else if (current_tab === 'tab_explanation') {
+                showExplanation();
             }
         }
     };
@@ -130,50 +99,22 @@ const TradingAnalysis = (() => {
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
                 child_elements[i].classList.remove('selectedTab');
-                child_elements[i].classList.add('invisible');
+                child_elements[i].classList.add(hidden_class);
             }
 
             classes.add('selectedTab');
-            classes.remove('invisible');
+            classes.remove(hidden_class);
         }
-    };
-
-    /*
-     * get the current active tab if its visible i.e allowed for current parameters
-     */
-    const getActiveTab = () => {
-        let selected_tab = sessionStorage.getItem('currentAnalysisTab') || (State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation');
-        const selected_element = document.getElementById(selected_tab);
-
-        if (selected_element && selected_element.classList.contains('invisible') &&
-            !(selected_tab === 'tab_portfolio' && JapanPortfolio.isActive())) {
-            selected_tab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
-            sessionStorage.setItem('currentAnalysisTab', selected_tab);
-        }
-
-        if (selected_tab === 'tab_graph' && State.get('is_mb_trading')) selected_tab = 'tab_explanation';
-        return selected_tab;
     };
 
     /*
      * handle the display of proper explanation based on parameters
      */
-    const showExplanation = (href) => {
-        const options = Url.paramsHash(href);
-        const form_name    = options.form_name || 'risefall';
-        const show_image   = options.show_image   ? options.show_image   > 0 : true;
-        const show_winning = options.show_winning ? options.show_winning > 0 : true;
-        const show_explain = true;
-        const hidden_class = 'invisible';
-        const $container   = $('#tab_explanation-content');
+    const showExplanation = () => {
+        const $container = $('#tab_explanation-content');
 
-        if (show_winning) {
-            $container.find(`#explanation_winning, #winning_${form_name}`).removeClass(hidden_class);
-        }
-
-        if (show_explain) {
-            $container.find(`#explanation_explain, #explain_${form_name}`).removeClass(hidden_class);
-        }
+        $container.find('#explanation_winning > div, #explanation_explain > div, #explanation_image').setVisibility(0);
+        $container.find(`#explanation_winning, #winning_${form_name}, #explanation_explain, #explain_${form_name}`).setVisibility(1);
 
         const images = {
             risefall: {
@@ -210,32 +151,16 @@ const TradingAnalysis = (() => {
             },
         };
 
-        if (show_image && images.hasOwnProperty(form_name)) {
+        if (images[form_name]) {
             const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(getLanguage() === 'JA' ? 'ja/' : '')}`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
-            $container.find('#explanation_image').removeClass(hidden_class);
-        }
-    };
-
-    /*
-     * toggle active class of menu
-     */
-    const toggleActiveNavMenuElement = (nav, event_element) => {
-        const li_elements = nav.getElementsByTagName('li');
-        const classes = event_element.classList;
-
-        if (!classes.contains('active')) {
-            for (let i = 0, len = li_elements.length; i < len; i++) {
-                li_elements[i].classList.remove('active');
-            }
-            classes.add('active');
+            $container.find('#explanation_image').setVisibility(1);
         }
     };
 
     return {
         request             : requestTradeAnalysis,
-        getActiveTab        : getActiveTab,
         bindAnalysisTabEvent: bindAnalysisTabEvent,
     };
 })();

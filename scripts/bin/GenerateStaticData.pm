@@ -28,7 +28,7 @@ END_EXPORTS
 
 sub _texts {
     my $js = "const texts_json = {};\n";
-    foreach my $language (BS::all_languages()) {
+    foreach my $language ((BS::all_languages(), 'ACH')) {
         BS::set_lang($language);
 
         my @texts;
@@ -187,6 +187,8 @@ sub _texts {
         push @texts, localize('Sorry, an error occurred while processing your account.');
         push @texts, localize('Your changes have been updated successfully.');
         push @texts, localize('Your settings have been updated successfully.');
+        push @texts, localize('Female');
+        push @texts, localize('Male');
         #strings for home and virtual account opening page
         push @texts, localize('verification token');
         push @texts, localize('email address');
@@ -194,9 +196,8 @@ sub _texts {
         push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');
-        push @texts, localize('Please [_1] to view this page');
-        push @texts, localize('login');
         push @texts, localize('Your session duration limit will end in [_1] seconds.');
+        push @texts, localize('Invalid email address');
         #strings for real account opening page
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
@@ -336,6 +337,7 @@ sub _texts {
         push @texts, localize('Market is closed. Please try again later.');
         push @texts, localize('This symbol is not active. Please try another symbol.');
         push @texts, localize('Connection error: Please check your internet connection.');
+        push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
         push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
         #strings for digit_info
         push @texts, localize('Select market');
@@ -408,15 +410,7 @@ sub _texts {
         push @texts, localize('Contract ID');
         push @texts, localize('Reference ID');
         push @texts, localize('Remaining Time');
-        push @texts, localize('This contract was affected by a Corporate Action event.');
         push @texts, localize('Barrier Change');
-        push @texts, localize('Original Barrier');
-        push @texts, localize('Original High Barrier');
-        push @texts, localize('Original Low Barrier');
-        push @texts, localize('Adjusted Barrier');
-        push @texts, localize('Adjusted High Barrier');
-        push @texts, localize('Adjusted Low Barrier');
-        push @texts, localize('Corporate Action');
         # strings for financial assessment
         push @texts, localize('Please select a value');
         # Strings for authorised_apps
@@ -484,7 +478,9 @@ sub _texts {
         push @texts, localize('from [_1] to [_2]');
 
         # strings for header notification
-        push @texts, localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.');
+        push @texts, localize('Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.');
+        push @texts, localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.');
         push @texts, localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.');

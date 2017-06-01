@@ -1,37 +1,40 @@
+[% BLOCK ul %]
+<h2>[% header %]</h2>
+<ul>
+    [% FOREACH item IN items %]
+        <li><strong>[% item.header %]</strong> - [% item.text %]</li>
+    [% END %]
+</ul>
+<br>
+[% END %]
+
 <div class="section-content section-4">
     <h1>[% l("Why trade with [_1]", website_name) %]</h1>
-    <h2>[% l("Award-winning online trading platform") %]</h2>
-    <ul>
-        <li>[% l("<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use") %]</li>
-        <li>[% l("<strong>Instant access</strong> - Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7") %]</li>
-        <li>[% l("<strong>Available 24/7</strong> - Trade when you want. [_1] is available 24/7, even on weekends", website_name) %]</li>
-        <li>[% l("<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology") %]</li>
-        <li>[% l("<strong>Security and privacy</strong> - Trade confidently, knowing that your personal data, transactions, and funds are always secure") %]</li>
-    </ul>
-    <br>
 
-    <h2>[% l("All market conditions and durations") %]</h2>
-    <ul>
-        <li>[% l("<strong>All markets and conditions</strong> - Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets") %]</li>
-        <li>[% l("<strong>Short to long-term durations</strong> - Choose timeframes from 10 seconds to 365 days") %]</li>
-    </ul>
-    <br>
+    [% INCLUDE ul header=l("Award-winning online trading platform") items=[
+        { header=l("Simple and intuitive"), text=l("Enjoy a trading platform that’s easy to navigate and use") },
+        { header=l("Instant access"),       text=l("Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7") },
+        { header=l("Available 24/7"),       text=l("Trade when you want. [_1] is available 24/7, even on weekends", website_name) },
+        { header=l("Patented technology"),  text=l("Trade with the industry pioneer and holder of a patented pricing technology") },
+        { header=l("Security and privacy"), text=l("Trade confidently, knowing that your personal data, transactions, and funds are always secure") },
+    ] %]
 
-    <h2>[% l("Competitive and transparent pricing") %]</h2>
-    <ul>
-        <li>[% l("<strong>Sharp, benchmarked prices</strong> - Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets.") %]</li>
-        <li>[% l("<strong>Transparent risk and potential reward</strong> - Know how much you will win or lose before you purchase the contract") %]</li>
-        <li>[% l("<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses") %]</li>
-        <li>[% l("<strong>Two-way pricing</strong> - Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from [_1]", website_name) %]</li>
-    </ul>
-    <br>
+    [% INCLUDE ul header=l("All market conditions and durations") items=[
+        { header=l("All markets and conditions"),   text=l("Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets") },
+        { header=l("Short to long-term durations"), text=l("Choose timeframes from 10 seconds to 365 days") },
+    ] %]
 
-    <h2>[% l("Ideal for beginners and experienced traders") %]</h2>
-    <ul>
-        <li>[% l("<strong>Low minimum stakes</strong> - Deposit as little as USD 5 to start trading") %]</li>
-        <li>[% l("<strong>Trade according to your preferred strategy</strong> - Trade based on \"gut feel\" or rely on technical and fundamental analysis") %]</li>
-        <li>[% l("<strong>Flexible</strong> - Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy") %]</li>
-        <li>[% l("<strong>Scalable</strong> - Earn the same proportional return on stakes of all values") %]</li>
-    </ul>
-    <br>
+    [% INCLUDE ul header=l("Competitive and transparent pricing") items=[
+        { header=l("Sharp, benchmarked prices"),             text=l("Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets.") },
+        { header=l("Transparent risk and potential reward"), text=l("Know how much you will win or lose before you purchase the contract") },
+        { header=l("Protect your profits"),                  text=l("Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses") },
+        { header=l("Two-way pricing"),                       text=l("Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from [_1]", website_name) },
+    ] %]
+
+    [% INCLUDE ul header=l("Ideal for beginners and experienced traders") items=[
+        { header=l("Low minimum stakes"),                         text=l("Deposit as little as USD 5 to start trading") },
+        { header=l("Trade according to your preferred strategy"), text=l("Trade based on \"gut feel\" or rely on technical and fundamental analysis") },
+        { header=l("Flexible"),                                   text=l("Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy") },
+        { header=l("Scalable"),                                   text=l("Earn the same proportional return on stakes of all values") },
+    ] %]
 </div>

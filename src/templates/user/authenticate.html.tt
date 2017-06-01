@@ -9,7 +9,7 @@
     </p>
 
     <div id="not_authenticated" class="invisible">
-        [% INCLUDE user/common/authenticate_message.html.tt %]
+        [% PROCESS global/authenticate_message.html.tt %]
     </div>
 
     <p class="center-text notice-msg invisible" id="error_message"></p>

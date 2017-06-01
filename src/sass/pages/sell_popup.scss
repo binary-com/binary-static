@@ -5,10 +5,11 @@
 
 #sell_popup_container {
     width: 90%;
-    font-size: 80%;
+    font-size: $FONT_SIZE_S;
     max-width: 960px;
     margin: 0 auto;
     padding: 0;
+
     a.close {
         right: 0;
         line-height: 30px;
@@ -28,10 +29,13 @@
     border: 2px solid $COLOR_BLUE;
     border-top: 1px solid $COLOR_WHITE;
     background-color: $COLOR_WHITE;
+
     .inpage_popup_content_box {
         border: 0;
+
         #contract_win_status {
             line-height: 30px;
+
             &.won {
                 background-color: rgba(46, 136, 54, 0.2);
             }
@@ -56,20 +60,16 @@
             overflow: auto;
             overflow-x: hidden;
             -ms-overflow-x: hidden;
+
             #sell_details_chart_wrapper {
                 border-right: 1px solid $COLOR_DARK_GRAY;
                 margin-right: -1px;
                 padding: 0;
-                .chart-notice {
-                    margin: 0;
-                }
-                .highcharts-container {
-                    direction: ltr;
-                }
             }
             #sell_details_table {
                 padding: 0;
                 border-left: 1px solid $COLOR_DARK_GRAY;
+
                 th {
                     line-height: 24px;
                     border-bottom: $COLOR_GRAY_SHADE;
@@ -81,8 +81,9 @@
                 }
                 #trade_details_profit_loss {
                     font-weight: bold;
+
                     span {
-                        font-size: 10px;
+                        font-size: $FONT_SIZE_XXS;
                         @include BIDIR_PROP(padding-left, padding-right, 7px);
                         font-weight: normal;
                     }
@@ -97,16 +98,14 @@
                     font-style: italic;
                 }
                 #contract_sell_message {
-                    font-size: 0.9em;
+                    font-size: $FONT_SIZE_S;
                     line-height: 20px;
                 }
-                #sell_at_market_wrapper {
-                    .note {
-                        line-height: 18px;
-                        margin-bottom: 10px;
-                        font-size: 12px;
-                        padding: 3px 10px;
-                    }
+                #sell_at_market_wrapper .note {
+                    line-height: 18px;
+                    margin-bottom: 10px;
+                    font-size: $FONT_SIZE_XS;
+                    padding: 3px 10px;
                 }
             }
         }

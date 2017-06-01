@@ -1,5 +1,6 @@
 const moment               = require('moment');
 const ViewPopupUI          = require('./view_popup.ui');
+const BinarySocket         = require('../../socket');
 const Highchart            = require('../../trade/charts/highchart');
 const TickDisplay          = require('../../trade/tick_trade');
 const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
@@ -17,10 +18,7 @@ const ViewPopup = (() => {
         is_sold,
         is_sell_clicked,
         chart_started,
-        tick_forgotten,
-        candle_forgotten,
-        corporate_action_event,
-        corporate_action_sent,
+        chart_init,
         chart_updated;
     let $container,
         $loading,
@@ -28,7 +26,7 @@ const ViewPopup = (() => {
 
     const popupbox_id   = 'inpage_popup_content_box';
     const wrapper_id    = 'sell_content_wrapper';
-    const hidden_class  = 'hidden';
+    const hidden_class  = 'invisible';
 
     const init = (button) => {
         btn_view               = button;
@@ -37,11 +35,8 @@ const ViewPopup = (() => {
         is_sold                = false;
         is_sell_clicked        = false;
         chart_started          = false;
-        tick_forgotten         = false;
-        candle_forgotten       = false;
+        chart_init             = false;
         chart_updated          = false;
-        corporate_action_event = false;
-        corporate_action_sent  = false;
         $container             = '';
 
         if (btn_view) {
@@ -71,12 +66,6 @@ const ViewPopup = (() => {
         if (contract && document.getElementById(wrapper_id)) {
             update();
             return;
-        }
-
-        // ----- Corporate Action -----
-        if (contract.has_corporate_actions && !corporate_action_sent) {
-            corporate_action_sent = true;
-            getCorporateActions();
         }
 
         showContract();
@@ -131,13 +120,13 @@ const ViewPopup = (() => {
         if (current_spot) {
             containerSetText('trade_details_current_spot', current_spot);
         } else {
-            $('#trade_details_current_spot').parent().addClass(hidden_class);
+            $('#trade_details_current_spot').parent().setVisibility(0);
         }
 
         if (current_spot_time) {
             containerSetText('trade_details_current_date', toJapanTimeIfNeeded(epochToDateTime(current_spot_time)));
         } else {
-            $('#trade_details_current_date').parent().addClass(hidden_class);
+            $('#trade_details_current_date').parent().setVisibility(0);
         }
 
         containerSetText('trade_details_ref_id',           contract.transaction_ids.buy + (contract.transaction_ids.sell ? ` - ${contract.transaction_ids.sell}` : ''));
@@ -148,7 +137,7 @@ const ViewPopup = (() => {
 
         if (final_price) {
             profit_loss = final_price - contract.buy_price;
-            percentage = ((profit_loss * 100) / contract.buy_price).toFixed(2);
+            percentage = formatMoney(contract.currency, (profit_loss * 100) / contract.buy_price, 1);
             containerSetText('trade_details_profit_loss',
                 `${formatMoney(contract.currency, profit_loss)}<span>(${(percentage > 0 ? '+' : '')}${percentage}%)</span>`, { class: (profit_loss >= 0 ? 'profit' : 'loss') });
         } else {
@@ -162,24 +151,17 @@ const ViewPopup = (() => {
             if (contract.entry_spot > 0) {
                 containerSetText('trade_details_entry_spot', contract.entry_spot);
             }
-            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporate_action_event ? `* ${localize('This contract was affected by a Corporate Action event.')}` : '&nbsp;');
+            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
 
         if (!chart_started && !contract.tick_count) {
-            if (!tick_forgotten) {
-                tick_forgotten = true;
-                BinarySocket.send({ forget_all: 'ticks' });
-            }
-            if (!candle_forgotten) {
-                candle_forgotten = true;
-                BinarySocket.send({ forget_all: 'candles' });
+            if (!chart_init) {
+                chart_init = true;
                 Highchart.showChart(contract);
             }
-            if (candle_forgotten && tick_forgotten) {
-                Highchart.showChart(contract, 'update');
-                if (contract.entry_tick_time) {
-                    chart_started = true;
-                }
+            Highchart.showChart(contract, 'update');
+            if (contract.entry_tick_time) {
+                chart_started = true;
             }
         } else if (contract.tick_count && !chart_updated) {
             TickDisplay.updateChart('', contract);
@@ -202,7 +184,7 @@ const ViewPopup = (() => {
         }
 
         if (!contract.is_valid_to_sell) {
-            $container.find('#errMsg').addClass(hidden_class);
+            $container.find('#errMsg').setVisibility(0);
         }
 
         sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
@@ -250,70 +232,9 @@ const ViewPopup = (() => {
         if (!(contract.is_settleable && !contract.is_sold)) {
             containerSetText('trade_details_message', '&nbsp;');
         }
-        $container.find('#errMsg').addClass(hidden_class);
+        $container.find('#errMsg').setVisibility(0);
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
-    };
-
-    const addColorAndClass = ($tab_to_show, $tab_to_hide, $content_to_show, $content_to_hide) => {
-        $tab_to_show.attr('style', 'background: #f2f2f2;');
-        $tab_to_hide.attr('style', 'background: #c2c2c2;');
-        $content_to_hide.addClass('invisible');
-        $content_to_show.removeClass('invisible');
-    };
-
-    const showCorporateAction = () => {
-        const $contract_information_tab = $('#contract_information_tab');
-        const $contract_information_content = $('#contract_information_content');
-
-        $contract_information_tab.removeAttr('colspan');
-        $('#contract_tabs').append(`<th id="corporate_action_tab">${localize('Corporate Action')}</th>`);
-
-        const $corporate_action_tab     = $('#corporate_action_tab');
-        const $corporate_action_content = $('#corporate_action_content');
-        const $barrier_change         = $('#barrier_change');
-        const $barrier_change_content = $('#barrier_change_content');
-
-        $corporate_action_tab.attr('style', 'background: #c2c2c2;');
-        $('#sell_details_table').draggable({ disabled: true });
-
-        $corporate_action_tab.on('click', () => {
-            addColorAndClass($corporate_action_tab, $contract_information_tab,
-                             $corporate_action_content, $contract_information_content);
-            $barrier_change.removeClass('invisible');
-            $barrier_change_content.removeClass('invisible');
-        });
-        $contract_information_tab.on('click', () => {
-            $barrier_change.addClass('invisible');
-            $barrier_change_content.addClass('invisible');
-            addColorAndClass($contract_information_tab, $corporate_action_tab,
-                             $contract_information_content, $corporate_action_content);
-        });
-    };
-
-    const populateCorporateAction = (corporate_action) => {
-        for (let i = 0; i < corporate_action.get_corporate_actions.actions.length; i++) {
-            $('#corporate_action_content').append(
-                createRow(corporate_action.get_corporate_actions.actions[i].display_date, '', '', '', `${corporate_action.get_corporate_actions.actions[i].type} (${corporate_action.get_corporate_actions.actions[i].value}-${localize('for')}-1)`));
-        }
-        let original_barriers,
-            adjusted_barriers;
-
-        if (contract.original_barrier) {
-            original_barriers = createRow(localize('Original Barrier'), '', '', '', contract.original_barrier);
-        } else if (contract.original_high_barrier) {
-            original_barriers = createRow(localize('Original High Barrier'), '', '', '', contract.original_high_barrier) +
-                createRow(localize('Original Low Barrier'), '', '', '', contract.original_low_barrier);
-        }
-        if (contract.barrier) {
-            adjusted_barriers = createRow(localize('Adjusted Barrier'), '', '', '', contract.barrier);
-        } else if (contract.high_barrier) {
-            adjusted_barriers = createRow(localize('Adjusted High Barrier'), '', '', '', contract.high_barrier) +
-                createRow(localize('Adjusted Low Barrier'), '', '', '', contract.low_barrier);
-        }
-        $('#barrier_change_content').append(
-            original_barriers +
-            adjusted_barriers);
     };
 
     const makeTemplate = () => {
@@ -338,7 +259,7 @@ const ViewPopup = (() => {
             ${(contract.barrier_count > 1 ? createRow('Low Barrier', '', 'trade_details_barrier_low', true) : '')}
             ${createRow('Potential Payout', '', 'trade_details_payout')}
             ${createRow('Purchase Price', '', 'trade_details_purchase_price')}
-            </tbody><tbody id="corporate_action_content" class="invisible"></tbody>
+            </tbody>
             <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>
             <tbody id="barrier_change_content" class="invisible"></tbody>
             <tr><th colspan="2" id="trade_details_current_title">${localize('Current')}</th></tr>
@@ -349,7 +270,7 @@ const ViewPopup = (() => {
             ${createRow('Profit/Loss', '', 'trade_details_profit_loss')}
             <tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>
             </table>
-            <div id="errMsg" class="notice-msg hidden"></div>
+            <div id="errMsg" class="notice-msg ${hidden_class}"></div>
             <div id="trade_details_bottom"><div id="contract_sell_wrapper" class="${hidden_class}"></div><div id="contract_sell_message"></div><div id="contract_win_status" class="${hidden_class}"></div></div>`));
 
         $sections.find('#sell_details_chart_wrapper').html($('<div/>', { id: (contract.tick_count ? 'tick_chart' : 'analysis_live_chart'), class: 'live_chart_wrapper' }));
@@ -378,7 +299,7 @@ const ViewPopup = (() => {
         if ($target && $target.length > 0) {
             $target.html(string);
             if (attributes) $target.attr(attributes);
-            if (is_visible) $target.parent('tr').removeClass(hidden_class);
+            if (is_visible) $target.parent('tr').setVisibility(1);
         }
     };
 
@@ -421,7 +342,7 @@ const ViewPopup = (() => {
         if (show) {
             if (is_exist) return;
 
-            $container.find('#contract_sell_wrapper').removeClass(hidden_class)
+            $container.find('#contract_sell_wrapper').setVisibility(1)
                 .append($('<div/>', { id: sell_wrapper_id })
                     .append($('<button/>', { id: sell_button_id, class: 'button', text: localize('Sell at market') }))
                     .append($('<div/>', { class: 'note' })
@@ -459,42 +380,19 @@ const ViewPopup = (() => {
         }
     };
 
-    // ----- Corporate Action -----
-    const getCorporateActions = () => {
-        const epoch = window.time.unix();
-        const end_time = epoch < contract.date_expiry ? epoch.toFixed(0) : contract.date_expiry;
-        BinarySocket.send({
-            get_corporate_actions: '1',
-            symbol               : contract.underlying,
-            start                : contract.date_start,
-            end                  : end_time,
-        }).then((response) => {
-            responseCorporateActions(response);
-        });
-    };
-
-    const responseCorporateActions = (response) => {
-        if (!isEmptyObject(response.get_corporate_actions)) {
-            corporate_action_event = true;
-            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporate_action_event ? `* ${localize('This contract was affected by a Corporate Action event.')}` : '&nbsp;');
-            populateCorporateAction(response);
-            showCorporateAction();
-        }
-    };
-
     const responseSell = (response) => {
         if (response.hasOwnProperty('error')) {
             if (response.error.code === 'NoOpenPosition') {
                 getContract();
             } else {
-                $container.find('#errMsg').text(response.error.message).removeClass(hidden_class);
+                $container.find('#errMsg').text(response.error.message).setVisibility(1);
             }
             sellSetVisibility(true);
             is_sell_clicked = false;
             return;
         }
         ViewPopupUI.forgetStreams();
-        $container.find('#errMsg').addClass(hidden_class);
+        $container.find('#errMsg').setVisibility(0);
         sellSetVisibility(false);
         if (is_sell_clicked) {
             containerSetText('contract_sell_message',

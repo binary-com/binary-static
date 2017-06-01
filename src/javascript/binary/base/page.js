@@ -1,5 +1,6 @@
 const Client            = require('./client');
 const Contents          = require('./contents');
+const Crowdin           = require('./crowdin');
 const Header            = require('./header');
 const Language          = require('./language');
 const Localize          = require('./localize');
@@ -12,7 +13,9 @@ const Url               = require('./url');
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
 const scrollToTop       = require('../common_functions/scroll').scrollToTop;
 const TrafficSource     = require('../common_functions/traffic_source');
+const BinarySocket      = require('../websocket_pages/socket');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
+const AffiliatePopup    = require('../../binary_japan/affiliate_popup');
 const Cookies           = require('../../lib/js-cookie');
 const PushNotification  = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
@@ -23,10 +26,10 @@ const Page = (() => {
 
     const init = () => {
         State.set('is_loaded_by_pjax', false);
-        Client.init();
         Url.init();
         PushNotification.init();
         onDocumentReady();
+        Crowdin.init();
     };
 
     const onDocumentReady = () => {
@@ -74,7 +77,7 @@ const Page = (() => {
             Url.reset();
         } else {
             init();
-            Localize.forLang(Language.get());
+            Localize.forLang(Language.urlLang());
             Header.onLoad();
             Language.setCookie();
             Menu.makeMobileMenu();
@@ -97,7 +100,6 @@ const Page = (() => {
             checkLanguage();
         }
         TrafficSource.setData();
-        BinarySocket.init();
     };
 
     const onUnload = () => {
@@ -109,6 +111,9 @@ const Page = (() => {
         if (!token || token.length !== 32) {
             return false;
         }
+
+        AffiliatePopup.show();
+
         const token_length = token.length;
         const is_subsidiary = /\w{1}/.test(Url.param('s'));
 
@@ -146,7 +151,7 @@ const Page = (() => {
                 `${localize('This is a staging server - For testing purposes only')} - `)}
                 ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
             const $end_note = $('#end-note');
-            $end_note.html(message).removeClass('invisible');
+            $end_note.html(message).setVisibility(1);
             $('#footer').css('padding-bottom', $end_note.height());
         }
     };
@@ -155,10 +160,11 @@ const Page = (() => {
         const src = '//browser-update.org/update.min.js';
         if ($(`script[src*="${src}"]`).length) return;
         window.$buoop = {
-            vs : { i: 11, f: -4, o: -4, s: 9, c: -4 },
-            api: 4,
-            l  : Language.get().toLowerCase(),
-            url: 'https://whatbrowser.org/',
+            vs     : { i: 11, f: -4, o: -4, s: 9, c: -4 },
+            api    : 4,
+            l      : Language.get().toLowerCase(),
+            url    : 'https://whatbrowser.org/',
+            noclose: true, // Do not show the 'ignore' button to close the notification
         };
         $(document).ready(() => {
             $('body').append($('<script/>', { src: src }));

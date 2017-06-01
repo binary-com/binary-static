@@ -8,7 +8,7 @@ const JapanPortfolio = (() => {
 
     const init = () => {
         if (isActive()) {
-            $('#tab_portfolio').removeClass('invisible');
+            $('#tab_portfolio').setVisibility(1);
         }
 
         const $container = $('#tab_portfolio-content');

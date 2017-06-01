@@ -1,12 +1,9 @@
 <div class="gr-12 gr-padding-30 gr-no-gutter">
     <h2>[% l("Terms and Conditions") %]</h2>
+    <p>[% l("Japan website Terms and Conditions Paragraph 1") %]</p>
     <p>
-      [% l("Japan website Terms and Conditions Paragraph 1") %]
+        <a class="button" href="[% japan_docs_url _ '/documents/binary_torihiki_yakkan.pdf' %]" download target="_blank">
+            <span>[% l("{Japan Only} Download Terms and Conditions Document file") %]</span>
+        </a>
     </p>
-    <p>
-      <a class="button" href="[% japan_docs_url _ '/documents/binary_torihiki_yakkan.pdf' %]" download target="_blank">
-          <span>[% l("{Japan Only} Download Terms and Conditions Document file") %]</span>
-      </a>
-  </p>
-
 </div>

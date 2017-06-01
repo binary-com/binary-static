@@ -1,0 +1,77 @@
+[% BLOCK browsers %]
+<div class="gr-6 gr-12-m">
+    <a id="[% id %]" target="_blank" href="[% href %]" class="li-boxes-content-icon">[% company %]</a>
+    <div class="li-2-boxes-content li-boxes-content-extra-height">
+        <h2>[% header %]</h2>
+        <ul>
+            [% FOREACH item IN items %]
+                <li>[% item %]</li>
+            [% END %]
+        </ul>
+    </div>
+</div>
+[% END %]
+
+<div class="gr-12 static_full">
+    <h1>[% l('Login trouble') %]</h1>
+    <p>[% l('If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session.') %]</p>
+    <p>[% l('To enable cookies, follow the instructions below for the browser version that you are using.') %]</p>
+</div>
+
+<div class="gr-parent clear">
+    <div class="gr-row">
+        [% INCLUDE browsers id='chrome' href='https://www.google.com/chrome/' company='Binary (C.R.) S.A.' header='Chrome 51+' items=[
+            l('Go to "<strong>Chrome Menu (Customize and control Google Chrome)</strong>" dropdown and select <strong>Settings</strong>.'),
+            l('Click on the <strong>Show advanced settings</strong>.'),
+            l('Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.'),
+            l('Select <strong>Allow local data to be set (recommended)</strong>.'),
+            l('Click on the <strong>Done</strong> button to save your settings.'),
+        ] %]
+        [% INCLUDE browsers id='firefox' href='https://www.mozilla.org/en-US/firefox/new/' company='Binary (IOM) Ltd' header='Mozilla Firefox 47+' items=[
+            l('<strong>Open menu</strong> and select <strong>Preferences</strong>.'),
+            l('Click on the <strong>Privacy</strong> tab.'),
+            l('Set "<strong>Firefox will</strong>" to "<strong>Remember history</strong>".'),
+            l('Click on the <strong>OK</strong> button to save your settings.'),
+        ] %]
+    </div>
+</div>
+
+<div class="gr-parent clear">
+    <div class="gr-row">
+        [% INCLUDE browsers id='safari' href='https://www.apple.com/safari/' company='Binary (Europe) Ltd' header='Safari 9.x+' items=[
+            l('Go to the <strong>Safari</strong> menu and select <strong>Preferences</strong>.'),
+            l('Click on the <strong>Privacy</strong> tab.'),
+            l('Set "<strong>Block cookies:</strong>" to <strong>Never</strong>.'),
+            l('Click on the <strong>X</strong> button at the top right to save and close.'),
+        ] %]
+        [% INCLUDE browsers id='opera' href='https://www.opera.com/' company='Binary (C.R.) S.A.' header='Opera 38+' items=[
+            l('Go to the <strong>Tools</strong> menu and select <strong>Preferences</strong>.'),
+            l('Click on the <strong>Advanced</strong> tab.'),
+            l('Select <strong>Cookies</strong> from the left column.'),
+            l('Select <strong>Accept cookies</strong>.'),
+            l('Click on the <strong>OK</strong> button to save and close.'),
+        ] %]
+    </div>
+</div>
+
+<div class="gr-parent">
+    <div class="gr-row">
+        [% INCLUDE browsers id='internet_explorer' href='https://www.microsoft.com/windows/internet-explorer/default.aspx'
+            company='Binary Ltd' header='Microsoft Internet Explorer 11+' items=[
+                l('Go to the <strong>Tools</strong> menu and select <strong>Internet Options</strong>.'),
+                l('Click on the <strong>Privacy</strong> tab.'),
+                l('Click on the <strong>Advanced</strong> button.'),
+                l('Select the <strong>Override automatic cookie handling</strong>.'),
+                l('Select <strong>Accept</strong> for both <strong>First-party Cookies</strong> and <strong>Third-party Cookies</strong>.'),
+                l('Click on the <strong>OK</strong> button to save and close.'),
+            ] %]
+        [% INCLUDE browsers id='microsoft_edge' href='https://www.microsoft.com/en-us/download/details.aspx?id=48126'
+            company='Binary Ltd' header='Microsoft Edge 12+' items=[
+                l('Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>.'),
+                l('Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button.'),
+                l('Under the <strong>Cookies</strong> section, select the "<strong>Don\'t block cookies</strong>" option.'),
+                l('Click anywhere outside the menu to save and close.'),
+            ] %]
+    </div>
+</div>
+<div class="gr-padding-20 clear"></div>

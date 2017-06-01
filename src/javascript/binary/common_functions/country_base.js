@@ -1,8 +1,11 @@
+const Crowdin                = require('../base/crowdin');
 const Language               = require('../base/language');
 const createLanguageDropDown = require('../common_functions/attach_dom/language_dropdown');
 const Cookies                = require('../../lib/js-cookie');
+const BinarySocket           = require('../websocket_pages/socket');
 
 const checkClientsCountry = () => {
+    if (Crowdin.isInContext()) return;
     BinarySocket.wait('website_status').then((response) => {
         if (response.error) return;
         const website_status = response.website_status;
@@ -28,7 +31,7 @@ const limitLanguage = (lang) => {
     }
 };
 
-const jpClient = () => (typeof window === 'undefined' ? false : (Language.get() === 'JA' || jpResidence()));
+const jpClient = () => (Language.get() === 'JA' || jpResidence());
 
 const jpResidence = () => Cookies.get('residence') === 'jp';
 
@@ -42,12 +45,8 @@ const checkLanguage = () => {
         }
     }
     if (jpClient()) {
-        const visible = 'visibility: visible;';
-        $('.ja-hide').addClass('invisible');
-        $('.ja-show').attr('style', `display: inline !important; ${visible}`);
-        $('.ja-show-block').attr('style', `display: block !important; ${visible}`);
-        $('.ja-show-inline-block').attr('style', `display: inline-block !important; ${visible}`);
-        $('.ja-no-padding').attr('style', 'padding-top: 0; padding-bottom: 0;');
+        $('.ja-hide').setVisibility(0);
+        $('.ja-show').setVisibility(1);
         $('#regulatory-text').addClass('gr-12 gr-12-p').removeClass('gr-9 gr-7-p');
         if (!jpResidence()) {
             $('#topMenuCashier').hide();

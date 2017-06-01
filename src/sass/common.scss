@@ -11,8 +11,9 @@ body {
     position: relative;
     background: repeat-x bottom;
     overflow-x: hidden;
+
     .ui-widget {
-        font-size: 0.9em;
+        font-size: $FONT_SIZE_N;
     }
 }
 
@@ -28,10 +29,6 @@ select, input, button, textarea {
 
 select {
     max-width: 100%;
-}
-
-select.input {
-    width: 46.2%;
 }
 
 button {
@@ -71,31 +68,24 @@ em {
     font-style: italic;
 }
 
-form {
-    margin: 0;
-    padding: 0;
-}
-
 fieldset {
     position: relative;
     border: 1px solid $COLOR_GRAY;
     padding: 5px;
     margin-bottom: 10px;
-    &#formlayout { /* TODO: remove all occurrences: no point in using fieldset when we hide its border */
-        background: none;
-        border: 0;
-    }
+
     legend {
         color: $COLOR_DARK_GRAY;
         padding: 0 0.8em;
         font-weight: bold;
         text-transform: capitalize;
     }
-    #inputheading, .text-display { /* TODO: replace all occurrences of id with the class */
+    .text-display { /* TODO: replace all occurrences of id with the class */
         line-height: 25px;
     }
     .error-msg {
         width: 100%;
+        text-align: left;
         margin-top: 5px;
     }
 }
@@ -103,6 +93,13 @@ fieldset {
 textarea {
     height: 8em;
     width: 25em;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
 
 /* form styles */
@@ -118,6 +115,7 @@ label {
 
 .form-row {
     padding: 10px 0;
+
     div:first-child label {
         display: block;
         text-align: right;
@@ -128,25 +126,26 @@ label {
     width: 45%;
 }
 
-*, p.no-para-margin, .errorfield {
+*, .no-margin, .errorfield {
     margin: 0;
 }
 
 .errorfield {
-    font-size: 93%;
-    font-style: italic;
     margin-top: 8px;
     color: $COLOR_RED;
 }
 
-.comment {
-    font-size: 93%;
+.comment, .errorfield {
+    font-size: $FONT_SIZE_N;
     font-style: italic;
 }
 
 /* global styles */
-.required_asterisk {
-    color: $COLOR_ORANGE;
+.required_field_asterisk {
+    position: absolute;
+    margin: -3px 3px;
+    font-size: $FONT_SIZE_S;
+    color: $COLOR_RED;
 }
 
 .inpage_popup_container {
@@ -158,6 +157,7 @@ label {
     background: $COLOR_LIGHT_GRAY;
     z-index: 1000;
     max-width: 90%;
+
     .drag-handle {
         cursor: pointer;
     }
@@ -179,11 +179,6 @@ label {
     margin-bottom: 20px;
 }
 
-.separator-line {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 #page-wrapper {
     display: flex;
     flex-direction: column;
@@ -192,14 +187,6 @@ label {
 
 #content-holder {
     flex: 1 1 auto;
-}
-
-#main-menu .items li a {
-    white-space: nowrap;
-}
-
-#japan-form .hint {
-    margin-bottom: 0;
 }
 
 .popup_page_overlay {
@@ -214,10 +201,6 @@ label {
 
 .light-yellow-background {
     background-color: $COLOR_YELLOW;
-}
-
-#session_limit .limit_message {
-    margin: 30px auto;
 }
 
 _:-ms-fullscreen, :root #content-holder {
@@ -251,6 +234,7 @@ _:-ms-fullscreen, :root #content-holder {
 
 input[type=checkbox] {
     margin-top: -5px;
+
     &#email_consent {
         margin-top: 5px;
     }
@@ -271,10 +255,25 @@ button .barspinner.white {
 }
 
 #msg_notification {
-    font-size: $FONT_SIZE_S;
-    padding: 3px 0;
-    line-height: 20px;
-    display: none;
+    &, &:after {
+        font-size: $FONT_SIZE_S;
+        padding: 3px 0;
+        min-height: 20px;
+        line-height: 20px;
+        display: none;
+    }
+    &.error:after {
+        display: block;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        content: attr(data-message);
+        background: $COLOR_YELLOW;
+        color: $COLOR_RED;
+        border-bottom: 1px solid $COLOR_RED;
+    }
 }
 
 #scrollup {
@@ -286,4 +285,61 @@ button .barspinner.white {
     display: none;
     background: url('../images/common/scrollup_icon.svg') no-repeat;
     z-index: 999;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.invisible {
+    display: none !important;
+    visibility: hidden;
+}
+
+.center-align {
+    align-items: center;
+}
+
+.align-start {
+    @include BIDIR_VALUE (text-align, left, right);
+}
+
+.align-end {
+    @include BIDIR_VALUE (text-align, right, left);
+}
+
+.clear {
+    clear: both;
+}
+
+.sidebar {
+    @include menu-left;
+}
+
+.static_full {
+    margin-top: 40px;
+
+    .section:first-child {
+        padding-bottom: 50px;
+    }
+    .section:not(:first-child) {
+        padding: 20px 0 50px;
+    }
+    .section:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    .section {
+        display: block;
+        overflow: hidden;
+    }
+    .sidebar-button {
+        background: $COLOR_LIGHT_GRAY;
+        padding: 20px;
+
+        a {
+            @include link-button;
+            display: block;
+        }
+    }
 }

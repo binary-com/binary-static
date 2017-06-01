@@ -2,13 +2,12 @@
     table {
         margin-top: -2px;
     }
-    tr:nth-child(1) {
-        th {
-            background-color: $COLOR_GRAY_SHADE;
-        }
+    tr:nth-child(1) th {
+        background-color: $COLOR_GRAY_SHADE;
     }
     th {
         line-height: 30px;
+
         &.submarket-name {
             border-bottom: 1px solid $COLOR_DARK_GRAY !important;
             text-align: center !important;
@@ -31,6 +30,7 @@
 #asset-index {
     th {
         width: 12%;
+
         &:nth-child(2):nth-last-child(1) {
             width: 24%;
         }
