@@ -52,16 +52,16 @@ const MetaTrader = (() => {
 
     const getAllAccountsInfo = () => {
         BinarySocket.wait('mt5_login_list').then((response) => {
-            // Ignore old accounts which are not linked to any group
-            const mt5_login_list = (response.mt5_login_list || []).filter(obj => obj.group);
+            // Ignore old accounts which are not linked to any group or has deprecated group
+            const mt5_login_list = (response.mt5_login_list || []).filter(obj => (
+                obj.group && Client.getMT5AccountType(obj.group) in types_info
+            ));
 
             // Update account info
             mt5_login_list.forEach((obj) => {
                 const acc_type = Client.getMT5AccountType(obj.group);
-                if (acc_type) {
-                    types_info[acc_type].account_info = { login: obj.login };
-                    getAccountDetails(obj.login, acc_type);
-                }
+                types_info[acc_type].account_info = { login: obj.login };
+                getAccountDetails(obj.login, acc_type);
             });
 
             Client.set('mt5_account', getDefaultAccount(mt5_login_list));
