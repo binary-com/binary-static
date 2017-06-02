@@ -17,7 +17,7 @@ module.exports = function (grunt) {
                 repo   : 'git@github.com:binary-com/binary-static-ci.git',
                 message: 'Trigger tests',
             },
-            src: grunt.cli.tasks[0] === 'release' && global.release_target === 'staging' ? 'version' : '',
+            src: grunt.option('staging') ? 'version' : '',
         },
     }
 };

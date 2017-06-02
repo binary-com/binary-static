@@ -227,3 +227,7 @@
         margin: 3px;
     }
 }
+
+body #not_authenticated_financial ul.checked > li {
+    list-style: none;
+}

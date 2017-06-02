@@ -21,7 +21,7 @@ module.exports = function (grunt) {
             }
         },
         trigger_tests: {
-            command: grunt.option('staging') ? 'grunt gh-pages:trigger_tests' : 'echo "Tests are triggered only when releasing to Staging."',
+            command: grunt.option('staging') ? 'grunt gh-pages:trigger_tests --staging' : 'echo "Tests are triggered only when releasing to Staging."',
             options: {
                 stdout: true
             }
@@ -34,8 +34,8 @@ module.exports = function (grunt) {
                         if(grunt.option('cleanup')) {
                             var origin = stdout.replace('\n', ''),
                                 CNAME;
-                            if (origin === gloabl.release_info.origin) {
-                                CNAME = gloabl.release_info.CNAME;
+                            if (origin === global.release_info.origin) {
+                                CNAME = global.release_info.CNAME;
                             }
                             if (CNAME) {
                                 grunt.file.write(global.dist + '/CNAME', CNAME + "\n");
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                         grunt.log.ok('Remote origin: ' + origin);
                         if (!global.release_target) {
                             grunt.fail.fatal(error_missing_target);
-                        } else if (origin !== gloabl.release_info.origin) {
+                        } else if (origin !== global.release_info.origin) {
                             grunt.fail.fatal(`Your remote origin does not match the ${global.release_target.toUpperCase()} repository.`);
                         }
                     }

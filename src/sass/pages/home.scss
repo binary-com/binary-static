@@ -114,6 +114,41 @@
     #email {
         border: 1px solid $COLOR_DARK_WHITE;
     }
+    #mb_trading .contract-type {
+        padding: 45px 26px 0;
+    }
+    .align-self-center {
+        align-self: center;
+    }
+    .go-right, .go-left {
+        width: 25px;
+        height: 25px;
+
+        &:not(.disabled):hover {
+            cursor: pointer;
+        }
+    }
+    .product {
+        display: inline-block;
+    }
+    #product_wrapper {
+        white-space: nowrap;
+
+        li {
+            white-space: normal;
+        }
+    }
+    .no-scroll, .product {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .home-jp-content {
+        .no-scroll, .product {
+            width: 600px;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -137,6 +172,9 @@
         .gr-padding-30 {
             padding-top: 10px;
             padding-bottom: 10px;
+        }
+        .no-scroll, .product {
+            width: 200px;
         }
     }
 }
