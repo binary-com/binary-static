@@ -485,6 +485,8 @@ sub _texts {
         push @texts, localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.');
+        # browser-update message
+        push @texts, localize('Your web browser ([_1]) is out of date and no longer supported. Update your browser now for the best experience on this site. [_2]Update browser[_3]');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
