@@ -10,8 +10,8 @@ describe('formatMoney', () => {
         expect(formatMoney('AUD', '123.55')).to.eq('A$123.55');
         expect(formatMoney('JPY', '123.55')).to.eq('¥124');
         expect(formatMoney('JPY', '1234.55')).to.eq('¥1,235');
-        expect(formatMoney('XBT', '1.000001')).to.eq('₿1.000001');
-        expect(formatMoney('XBT', '1.000000009')).to.eq('₿1.00000001');
+        expect(formatMoney('BTC', '0.005432110')).to.eq('₿0.00543211');
+        expect(formatMoney('BTC', '0.005432116')).to.eq('₿0.00543212');
     });
 
     it('works for unexpected currencies', () => {
