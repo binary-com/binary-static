@@ -11,10 +11,6 @@ PATH=/usr/local/opt/gettext/bin/:$PATH
 
 carton exec perl -Ilib -Ibin bin/extra_translations.pl
 
-for i in $(ls ../src/config/locales/*.po); do \
-    msgmerge --previous --backup none --no-wrap --update $i ../src/config/locales/messages.pot ; \
-done
-
 msgmerge --previous --backup none --no-wrap --update ../src/config/en.po ../src/config/locales/messages.pot
 
 carton exec perl -pi -e 's/Content-Type: text\/plain; charset=CHARSET/Content-Type: text\/plain; charset=UTF-8/'  ../src/config/locales/messages.pot
