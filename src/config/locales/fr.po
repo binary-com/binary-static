@@ -2,10 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-01 02:03-0400\n"
+"PO-Revision-Date: 2017-06-04 21:08-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
-"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,6 +13,7 @@ msgstr ""
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: fr\n"
 "X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
+"Language: fr_FR\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "« L'API %1 » désigne l'ensemble des produits propriétaires de %1, notamment les routines, protocoles, outils et ressources de programmation créés et mis en service par %1, vous permettant d'utiliser une Application enregistrée pour communiquer avec la plateforme de trading %1."
@@ -1182,10 +1182,8 @@ msgstr "Australia 200 Cash Index"
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr ""
 
-#, fuzzy
-#| msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply follow the steps below:"
-msgstr "Authentifiez votre compte en vérifiant votre identité et votre adresse. Pour cela, envoyoyez simplement les documents suivants à %1 :"
+msgstr ""
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
 msgstr "Authentifiez votre compte en vérifiant votre identité et votre adresse. Pour cela, envoyoyez simplement les documents suivants à %1 :"
@@ -3164,10 +3162,8 @@ msgstr "De manière générale, nous communiquerons avec vous par le biais de ce
 msgid "Generate periodic and special reports summarizing client trading trends"
 msgstr "Générer des rapports périodiques et spécifiques synthétisant les tendances de trading des clients"
 
-#, fuzzy
-#| msgid "verification token"
 msgid "Generated verification code:"
-msgstr "jeton de vérification"
+msgstr ""
 
 msgid "Generous Commission Structure"
 msgstr "Une structure de commissions généreuse"
@@ -5863,10 +5859,8 @@ msgstr "S'il vous plaît définissez votre %1pays de résidence%2 avant de mettr
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr "S'il vous plaît, définissez votre limite de chiffres d'affaires sur 30 jours dans notre %1infrastructures d'auto exclusion%2 pour supprimer les limites de dépôts."
 
-#, fuzzy
-#| msgid "Please set your 30-day turnover limit in our <a href=\"%1\">self-exclusion facilities</a> to access the cashier."
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
-msgstr "S'il vous plaît définissez votre limite de chiffre d'affaire de 30 jours <a href=\"%1\">infrastructures d'auto exclusion</a> pour accéder au caissier."
+msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Veuillez indiquer la périodicité souhaitée en minutes pour les avertissements de connexion"
@@ -8139,10 +8133,8 @@ msgstr "mardi"
 msgid "Turnover"
 msgstr "Volume de transactions"
 
-#, fuzzy
-#| msgid "Turnover"
 msgid "Turnover Limit"
-msgstr "Volume de transactions"
+msgstr ""
 
 msgid "Two-way pricing"
 msgstr ""
@@ -10434,8 +10426,7 @@ msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen
 msgstr "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
 
 msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
-msgstr ""
-"{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'> 1Customer Support</a> 2.\n"
+msgstr "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'> 1Customer Support</a> 2.\n"
 " Copy →↵…«»‹›-–—"
 
 msgid "{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with %1 and begins trading. "
@@ -11388,9 +11379,3 @@ msgstr "Limites du Compte"
 
 msgid "Initial Coin Offering"
 msgstr ""
-
-#~ msgid "Got questions? %1Contact us%2 for help."
-#~ msgstr "Vous avez des questions? %1Contactez nous%2 pour tout demande d'aide."
-
-#~ msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
-#~ msgstr "Veuillez envoyer ces documents sous cinq jours pour maintenir votre compte MT5 actif."

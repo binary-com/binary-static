@@ -2,10 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-01 02:02-0400\n"
+"PO-Revision-Date: 2017-06-04 21:07-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
-"Language: th_TH\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,6 +13,7 @@ msgstr ""
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: th\n"
 "X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
+"Language: th_TH\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API ของ %1\" หมายถึง ระบบของ %1 ที่ประกอบด้วย ชุดคำสั่งต่างๆ โปรโตคอลต่างๆ เครื่องมือต่างๆ และทรัพยากรต่างๆ ที่ถูกพัฒนาขึ้นและดำเนินการโดย %1 ซึ่งท่านสามารถใช้งานแอพพลิเคชันได้เพื่อเชื่อมต่อกับแพลตฟอร์มการซื้อขายของ %1"
@@ -547,9 +547,7 @@ msgid "A broad array of HR-related administrative tasks"
 msgstr "มีประสบการณ์ในงานบริหารทรัพยากรบุคคลที่หลากหลาย"
 
 msgid "A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria:"
-msgstr ""
-"<p>ลูกค้า คือ บุคคลผู้ซึ่งได้รับการเรียนเชิญให้เข้าใช้งานระบบเทรดผ่านทางช่องทางการตลาดช่องทางหนึ่งและได้ฝากเงินเข้ามายังบัญชีของเขา %1 โดยต้องมีคุณสมบัติต่อไปนี้: </p>\n"
-"\n"
+msgstr "<p>ลูกค้า คือ บุคคลผู้ซึ่งได้รับการเรียนเชิญให้เข้าใช้งานระบบเทรดผ่านทางช่องทางการตลาดช่องทางหนึ่งและได้ฝากเงินเข้ามายังบัญชีของเขา %1 โดยต้องมีคุณสมบัติต่อไปนี้: </p>\n\n"
 "    <ul class='checked'>\n"
 "        <li>ไม่เคยเป็นลูกค้า %1 มาก่อน</li>\n"
 "        <li>ได้ฝากเงินตามเกณฑ์มูลค่าขั้นต่ำ</li>\n"
@@ -1189,10 +1187,8 @@ msgstr "ดัชนีเงิน Australian 200"
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr ""
 
-#, fuzzy
-#| msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply follow the steps below:"
-msgstr "การพิสูจน์บัญชีของท่าน ทำได้ขณะนี้โดยตรวจสอบอัตลักษณ์และที่อยู่ของท่าน เพื่อดำเนินการต่อ โปรดส่งเอกสารต่อไปนี้มายัง %1:"
+msgstr ""
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
 msgstr "การพิสูจน์บัญชีของท่าน ทำได้ขณะนี้โดยตรวจสอบอัตลักษณ์และที่อยู่ของท่าน เพื่อดำเนินการต่อ โปรดส่งเอกสารต่อไปนี้มายัง %1:"
@@ -3171,10 +3167,8 @@ msgstr "โดยทั่วไป พวกเราจะติดต่อ�
 msgid "Generate periodic and special reports summarizing client trading trends"
 msgstr "จัดทำรายงานตามงวดเวลาและรายงานพิเศษที่มีข้อมูลสรุปเกี่ยวกับแนวโน้มการซื้อขายของลูกค้า"
 
-#, fuzzy
-#| msgid "verification token"
 msgid "Generated verification code:"
-msgstr "โทเค่นเพื่อการตรวจสอบ"
+msgstr ""
 
 msgid "Generous Commission Structure"
 msgstr "โครงสร้างผลตอบแทนแบบคุ้มค่า"
@@ -3762,8 +3756,7 @@ msgid "In carrying out OTC binary option trading, a customer needs expert knowle
 msgstr "ในการซื้อขายไบนารีออปชั่นด้วยตัวเอง ลูกค้าจำเป็นต้องมีความรู้ ความเชี่ยวชาญ เช่น ทฤษฎีมูลค่าของออปชั่น เพื่อทำการตัดสินใจในการลงทุนได้อย่างเหมาะสม"
 
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
-msgstr ""
-"รูปแบบคลาสสิกซิลิคอน วัลเลย์ ผู้จัดการกองทุนเฮดจ์ที่ประเทศฮ่องกง นาย Jean-Yves Sireau ก่อตั้ง Regent Markets จากห้องนอนของเขาในประเทศฮ่องกง\n"
+msgstr "รูปแบบคลาสสิกซิลิคอน วัลเลย์ ผู้จัดการกองทุนเฮดจ์ที่ประเทศฮ่องกง นาย Jean-Yves Sireau ก่อตั้ง Regent Markets จากห้องนอนของเขาในประเทศฮ่องกง\n"
 "เขาพัฒนาระบบต่างๆ วิธีการ และ อัลกอริธึ่มสำหรับระบบการซื้อขายผลิตภัณฑ์การเงินแบบ Fixed-Odds วิสัยทัศน์ของ Jean-Yves คือ การสร้างตลาดที่ง่ายที่สุดสำหรับสัญญาอนุพันธ์ที่เป็นแบบ Fixed-Odds Bet และเสนอให้กับนักลงทุนทั่วๆ ไป ในการซื้อขายเล็กๆ ในระยะแรก กระทั่งนวัตกรรมของเขาเป็นที่แพร่หลายสำหรับการซื้อขายไบนารีออปชั่นปริมาณมาก"
 
 msgid "In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident."
@@ -7589,11 +7582,8 @@ msgid "The system fills orders on a first-in-first out basis, i.e. based on the 
 msgstr ""
 
 msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
-msgstr ""
-"บริษัทฯ \"บริษัทฯ\" หมายถึง Binary (IOM) Ltd. ตั้งอยู่ที่ ชั้น 1 อาคาร Millennium House ถนน Victoria เขต Douglas IM2 4RW บนเกาะ Isle of Man ในบริติชไอลส์ โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Gambling Supervision Commission บนเกาะ Isle of Man  ในบริติชไอลส์ ใบอนุญาตสำหรับผลิตภัณฑ์การเสี่ยงโชคออนไลน์ได้รับเมื่อ 31 สิงหาคม 2555 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission \n"
-"\n"
-"Binary (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Malta Gaming Authority ประเทศมอลตา ใบอนุญาตเลขที่ MGA/CL2/118/2000 ได้รับเมื่อ 26 พฤษภาคม 2553 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission\n"
-"\n"
+msgstr "บริษัทฯ \"บริษัทฯ\" หมายถึง Binary (IOM) Ltd. ตั้งอยู่ที่ ชั้น 1 อาคาร Millennium House ถนน Victoria เขต Douglas IM2 4RW บนเกาะ Isle of Man ในบริติชไอลส์ โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Gambling Supervision Commission บนเกาะ Isle of Man  ในบริติชไอลส์ ใบอนุญาตสำหรับผลิตภัณฑ์การเสี่ยงโชคออนไลน์ได้รับเมื่อ 31 สิงหาคม 2555 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission \n\n"
+"Binary (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Malta Gaming Authority ประเทศมอลตา ใบอนุญาตเลขที่ MGA/CL2/118/2000 ได้รับเมื่อ 26 พฤษภาคม 2553 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission\n\n"
 "Binary Investments (Europe) Ltd ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ในหมวดที่ 3 ของผู้ให้บริการการลงทุนโดยหน่วยงาน Malta Financial Services Authority ใบอนุญาตเลขที่ IS/70156 หรือ Binary (CR) S.A. โดยขึ้นกับระเบียบวิธีในการเปิดบัญชีของเว็บไซต์ดังรายละเอียดในส่วน About Us ของเว็บไซต์นี้"
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote Binary (V) Ltd."
@@ -11396,9 +11386,3 @@ msgstr "วงเงินในบัญชี"
 
 msgid "Initial Coin Offering"
 msgstr ""
-
-#~ msgid "Got questions? %1Contact us%2 for help."
-#~ msgstr "มีคำถามไหม? %1ติดต่อเรา%2 สำหรับความช่วยเหรอ"
-
-#~ msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
-#~ msgstr "โปรดส่งเอกสารต่างๆ ให้เราภายใน 5 วัน เพื่อใช้งานบัญชี MT5 ของท่าน"
