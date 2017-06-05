@@ -170,8 +170,9 @@ const Process = (() => {
             Durations.display();
         }
 
+        const currency = Defaults.get('currency') || document.getElementById('currency').value;
         if (Defaults.get('amount')) $('#amount').val(Defaults.get('amount'));
-        else Defaults.set('amount', document.getElementById('amount').value);
+        else Defaults.set('amount', /btc/i.test(currency) ? 0.005 : document.getElementById('amount').value);
         if (Defaults.get('amount_type')) commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
         else Defaults.set('amount_type', document.getElementById('amount_type').value);
         if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));

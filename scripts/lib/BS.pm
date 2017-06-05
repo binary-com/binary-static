@@ -36,7 +36,7 @@ sub set_is_dev { $IS_DEV = 1; }
 our $BRANCH = '';
 sub branch { return $BRANCH; }
 sub set_branch {
-    $BRANCH = 'br_'.shift;
+    $BRANCH = shift;
     # chomp ($BRANCH = `git symbolic-ref --short HEAD`); $BRANCH = '_'.(split('/', $BRANCH))[-1];
 }
 
@@ -58,7 +58,7 @@ sub localize {
 }
 
 sub all_languages {
-    return ('EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW');
+    return $BRANCH eq 'translations' ? ('ACH') : ('EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW');
 }
 
 sub rtl_languages {
@@ -68,7 +68,7 @@ sub rtl_languages {
 
 ## url_for
 sub root_url {
-    return is_dev() ? '/binary-static/'.($BRANCH ? $BRANCH.'/' : '') : '/';
+    return '/'.(is_dev() ? 'binary-static/' : '').($BRANCH ? $BRANCH.'/' : '');
 }
 
 my %__request;

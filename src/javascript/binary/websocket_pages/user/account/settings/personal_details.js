@@ -5,6 +5,7 @@ const Header        = require('../../../../base/header');
 const State         = require('../../../../base/storage').State;
 const detectHedging = require('../../../../common_functions/common_functions').detectHedging;
 const makeOption    = require('../../../../common_functions/common_functions').makeOption;
+const formatMoney   = require('../../../../common_functions/currency_to_symbol').formatMoney;
 const FormManager   = require('../../../../common_functions/form_manager');
 const moment        = require('moment');
 require('select2');
@@ -18,7 +19,8 @@ const PersonalDetails = (() => {
         is_jp,
         is_virtual,
         residence,
-        get_settings_data;
+        get_settings_data,
+        currency;
 
     const init = () => {
         editable_fields = {};
@@ -93,7 +95,7 @@ const PersonalDetails = (() => {
             // prioritise labels for japan account
             $key = has_key && has_lbl_key ? (is_jp ? $lbl_key : $key) : (has_key ? $key : $lbl_key);
             if ($key.length > 0) {
-                data_key = data[key] === null ? '' : data[key];
+                data_key = data[key] === null ? '' : $key.hasClass('format_money') ? formatMoney(currency, data[key]) : data[key];
                 editable_fields[key] = data_key;
                 if (populate) {
                     if ($key.is(':checkbox')) {
@@ -267,6 +269,7 @@ const PersonalDetails = (() => {
     const initFormManager = () => { FormManager.init(form_id, getValidations(get_settings_data)); };
 
     const onLoad = () => {
+        currency = Client.get('currency');
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.get(['response', 'get_settings', 'get_settings']);

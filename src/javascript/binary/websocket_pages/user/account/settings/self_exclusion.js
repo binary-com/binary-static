@@ -1,8 +1,10 @@
 const moment              = require('moment');
 const BinarySocket        = require('../../../socket');
+const BinaryPjax          = require('../../../../base/binary_pjax');
 const Client              = require('../../../../base/client');
 const Header              = require('../../../../base/header');
 const localize            = require('../../../../base/localize').localize;
+const defaultRedirectUrl  = require('../../../../base/url').defaultRedirectUrl;
 const dateValueChanged    = require('../../../../common_functions/common_functions').dateValueChanged;
 const FormManager         = require('../../../../common_functions/form_manager');
 const scrollToHashSection = require('../../../../common_functions/scroll').scrollToHashSection;
@@ -14,7 +16,8 @@ const SelfExclusion = (() => {
 
     let $form,
         fields,
-        self_exclusion_data;
+        self_exclusion_data,
+        set_30day_turnover;
 
     const form_id          = '#frm_self_exclusion';
     const timeout_date_id  = '#timeout_until_date';
@@ -46,16 +49,24 @@ const SelfExclusion = (() => {
                 }
                 return;
             }
-
-            $('#loading').setVisibility(0);
-            $form.setVisibility(1);
-            self_exclusion_data = response.get_self_exclusion;
-            $.each(self_exclusion_data, (key, value) => {
-                fields[key] = value.toString();
-                $form.find(`#${key}`).val(value);
+            BinarySocket.send({ get_account_status: 1 }).then((data) => {
+                const has_to_set_30day_turnover = /ukrts_max_turnover_limit_not_set/.test(data.get_account_status.status);
+                if (typeof set_30day_turnover === 'undefined') {
+                    set_30day_turnover = has_to_set_30day_turnover;
+                }
+                $('#frm_self_exclusion').find('fieldset > div.form-row:not(.max_30day_turnover)').setVisibility(!has_to_set_30day_turnover);
+                $('#description_max_30day_turnover').setVisibility(has_to_set_30day_turnover);
+                $('#description').setVisibility(!has_to_set_30day_turnover);
+                $('#loading').setVisibility(0);
+                $form.setVisibility(1);
+                self_exclusion_data = response.get_self_exclusion;
+                $.each(self_exclusion_data, (key, value) => {
+                    fields[key] = value.toString();
+                    $form.find(`#${key}`).val(value);
+                });
+                bindValidation();
+                if (scroll) scrollToHashSection();
             });
-            bindValidation();
-            if (scroll) scrollToHashSection();
         });
     };
 
@@ -190,9 +201,13 @@ const SelfExclusion = (() => {
         }
         showFormMessage('Your changes have been updated.', true);
         Client.set('session_start', moment().unix()); // used to handle session duration limit
-        getData();
         BinarySocket.send({ get_account_status: 1 }).then(() => {
             Header.displayAccountStatus();
+            if (set_30day_turnover) {
+                BinaryPjax.load(defaultRedirectUrl());
+            } else {
+                getData();
+            }
         });
     };
 
