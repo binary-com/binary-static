@@ -73,6 +73,68 @@
             <span>[% l("Try our trading page") %]</span>
         </a>
     </div>
+    [% INCLUDE global/separator_line.html.tt no_wrapper=1 %]
+</div>
+
+[% id_no = 1 %]
+[% BLOCK product %]
+    <li id="product_[% id_no %]" class="product product_[% class %]">
+        <div class="gr-row gr-row-align-center mb-trading-wrapper" id="mb_trading">
+            <div class="[% icon_1 %] contract-type"></div>
+            <div class="[% icon_2 %] negative-color contract-type"></div>
+        </div>
+        <h3 class="center-text gr-padding-10">[% header %]</h3>
+        <p>[% description %]</p>
+        <div class="gr-row gr-row-align-center">
+            <div class="gr-4 gr-12-m">
+                <img class="responsive" src="[% request.url_for('images/pages/trade-explanation/ja/' _ image_1 _ '.svg') %]">
+            </div>
+            <div class="gr-12-m gr-padding-10"></div>
+            <div class="gr-4 gr-12-m">
+                <img class="responsive" src="[% request.url_for('images/pages/trade-explanation/ja/' _ image_2 _ '.svg') %]">
+            </div>
+        </div>
+        <p>[% duration %]</p>
+    </li>
+    [% id_no = id_no + 1 %]
+[% END %]
+
+<div class="container gr-padding-10 center-text">
+    <div class="gr-row gr-row-align-center">
+        <div class="align-self-center gr-gutter-right">
+            <img class="go-left disabled" src="[% request.url_for('images/pages/home-jp/icons/left_disabled.svg') %]">
+        </div>
+        <div class="no-scroll">
+            <ul id="product_wrapper">
+                [% PROCESS product icon_1='PUT' icon_2='CALLE' class='visible'
+                    can_go_left=0 can_go_right=1 image_1='higher-lower-1' image_2='higher-lower-2'
+                    header=l('{JAPANY ONLY}Ladder Options')
+                    description=l("{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier.")
+                    duration=l("{JAPANY ONLY}2 hours to 1 year terms") %]
+
+                [% PROCESS product icon_1='ONETOUCH' icon_2='NOTOUCH' class='hidden'
+                    can_go_left=1 can_go_right=1 image_1='touch-notouch-1' image_2='touch-notouch-2'
+                    header=l('{JAPANY ONLY}Touch Options')
+                    description=l("{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not.")
+                    duration=l("{JAPANY ONLY}1 week to 1 year terms") %]
+
+                [% PROCESS product icon_1='EXPIRYRANGEE' icon_2='EXPIRYMISS' class='hidden'
+                    can_go_left=1 can_go_right=1 image_1='in-out-1' image_2='in-out-2'
+                    header=l('{JAPANY ONLY}Range Options: End-In / End-Out')
+                    description=l("{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range.")
+                    duration=l("{JAPANY ONLY}1 week to 1 year terms") %]
+
+                [% PROCESS product icon_1='RANGE' icon_2='UPORDOWN' class='hidden'
+                    can_go_left=1 can_go_right=1 image_1='in-out-3' image_2='in-out-4'
+                    header=l('{JAPANY ONLY}Range Options: Stay-In / Break-Out')
+                    description=l("{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry.")
+                    duration=l("{JAPANY ONLY}1 week to 1 year terms") %]
+            </ul>
+        </div>
+        <div class="align-self-center gr-gutter-left">
+            <img class="go-right" src="[% request.url_for('images/pages/home-jp/icons/right_enabled.svg') %]">
+        </div>
+    </div>
 </div>
 
 <div class="gr-padding-30 fill-bg-color">

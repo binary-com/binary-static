@@ -1,0 +1,40 @@
+[% support_link = "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'support@binary.com') %]
+
+<div class="static_full">
+    <h1>[% l('Video Room Facility') %]</h1>
+
+    <div id="loading">[% PROCESS global/loading.html.tt %]</div>
+
+    <div class="gr-padding-10 invisible" id="facility_content">
+        <div class="invisible msg_authenticate">
+            <p>[% l('Authenticate your account by video conference call. Follow these steps to proceed:') %]</p>
+            <ol>
+                <li><span id="desk-link"></span> [% l('to set up the video call.') %]</li>
+                <li>[% l('Our customer support agent will provide you with a unique link to connect to the video call.') %]</li>
+                <li>[% l('Click on the link to connect to the video call.') %]</li>
+                <li>[% l('You will be asked to prove that you are the owner of the account being authenticated.') %]</li>
+                <li>[% l('Provide the customer support agent with the four-digit verification code below for confirmation.') %]</li>
+                <li>[% l('Display your proof of identity when prompted.') %]</li>
+                <li>[% l('Display your proof of address when prompted.') %]</li>
+                <li>[% l('Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours.') %]</li>
+            </ol>
+        </div>
+
+        <div class="gr-padding-20 fill-bg-color center-text">
+            <span class="gr-gutter-right">[% l('Generated verification code:') %]</span>
+            <strong id="generated_token"></strong>
+        </div>
+
+        <div class="invisible msg_authenticate">
+            <p><strong>[% l('Important') %]</strong></p>
+            <ul class="checked">
+                <li>[% l('Your webcam and microphone must be in good working condition') %]</li>
+                <li>[% l('Ensure that your original documents are ready when the video call starts') %]</li>
+                <li>[% l('You must have a fast and stable Internet connection as screenshots of your documents are required for our records') %]</li>
+                <li class="invisible" id="not_authenticated">[% l('If your documents cannot be verified over video call for any reason, you will be required to send your documents to [_1]', support_link) %]</li>
+            </ul>
+        </div>
+
+        <p class="center-text notice-msg invisible" id="error_message"></p>
+    </div>
+</div>

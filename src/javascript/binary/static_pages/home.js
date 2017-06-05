@@ -19,10 +19,6 @@ const Home = (() => {
             clients_country = response.website_status.clients_country;
             const form_id = '#frm_verify_email';
 
-            $('#start_now').click(() => {
-                $.scrollTo($(form_id), 500, { offset: -10 });
-            });
-
             FormManager.init(form_id, [
                 { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
                 { request_field: 'type', value: 'account_opening' },

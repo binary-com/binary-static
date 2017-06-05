@@ -1,5 +1,5 @@
-<div class="gr-12 gr-padding-10">
-    <div class="center-text gr-parent gr-padding-10">
+<div class="gr-12 gr-padding-10 center-text">
+    <div class="gr-parent gr-padding-10">
         <img src="https://style.binary.com/images/logo/binary_logo_dark.svg" alt="" style="max-height: 55px;" />
     </div>
     <h2>[% l("{JAPAN ONLY}Welcome to the site of Binary KK.") %]</h2>
@@ -13,7 +13,7 @@
 
     <div class="separator-line-thin-gray separator-line"></div>
 
-    <p class="align-start">
+    <p>
         <strong>[% l("{JAPAN ONLY}Binary Co., Ltd.") %]</strong><br />
         [% l("{JAPAN ONLY}Licensed by the Kanto Local Financial Bureau (Finance Division) No. 2949") %]<br />
         [% l("{JAPAN ONLY}Member Associations: Financial Futures Association Japan") %]

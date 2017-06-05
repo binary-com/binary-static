@@ -260,6 +260,8 @@ const Client = (() => {
 
     const shouldCompleteTax = () => isFinancial() && !/crs_tin_information/.test((State.get(['response', 'get_account_status', 'get_account_status']) || {}).status);
 
+    const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
+
     return {
         init             : init,
         validateLoginid  : validateLoginid,
@@ -276,6 +278,7 @@ const Client = (() => {
         doLogout         : doLogout,
         isFinancial      : isFinancial,
         shouldCompleteTax: shouldCompleteTax,
+        getMT5AccountType: getMT5AccountType,
 
         canUpgradeGamingToFinancial : canUpgradeGamingToFinancial,
         canUpgradeVirtualToFinancial: canUpgradeVirtualToFinancial,
