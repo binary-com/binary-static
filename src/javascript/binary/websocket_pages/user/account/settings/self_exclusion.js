@@ -146,10 +146,10 @@ const SelfExclusion = (() => {
 
     const getDate = (elm_id) => {
         const $elm = $(elm_id);
-        return !isNaN(new Date($elm.val()).getTime()) ? $elm.val() : $elm.attr('data-value');
+        return $elm.attr('data-value') ? $elm.attr('data-value') : !isNaN(new Date($elm.val()).getTime()) ? $elm.val() : '';
     };
     const getMoment  = elm_id => moment(new Date(getDate(elm_id)));
-    const getTimeout = () => ($(timeout_date_id).attr('data-value') ? moment(new Date(`${getDate(timeout_date_id)} ${$(timeout_time_id).val()}`)) : '');
+    const getTimeout = () => (getDate(timeout_date_id) ? (moment(new Date(`${getDate(timeout_date_id)} ${$(timeout_time_id).val()}`)).valueOf() / 1000).toFixed(0) : '');
 
     const initDatePicker = () => {
         // timeout_until
