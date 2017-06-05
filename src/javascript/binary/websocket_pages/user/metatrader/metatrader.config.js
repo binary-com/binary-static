@@ -1,6 +1,8 @@
 const BinarySocket  = require('../../socket');
 const Client        = require('../../../base/client');
+const GTM           = require('../../../base/gtm');
 const localize      = require('../../../base/localize').localize;
+const State         = require('../../../base/storage').State;
 const urlFor        = require('../../../base/url').urlFor;
 const isEmptyObject = require('../../../base/utility').isEmptyObject;
 const formatMoney   = require('../../../common_functions/currency_to_symbol').formatMoney;
@@ -8,30 +10,27 @@ const formatMoney   = require('../../../common_functions/currency_to_symbol').fo
 const MetaTraderConfig = (() => {
     'use strict';
 
-    const currency = 'USD';
-
     const types_info = {
-        demo            : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo'),            max_leverage: 1000, is_demo: true },
-        vanuatu_cent    : { account_type: 'financial', mt5_account_type: 'cent',     title: localize('Real Cent'),       max_leverage: 1000 },
-        vanuatu_standard: { account_type: 'financial', mt5_account_type: 'standard', title: localize('Real Standard'),   max_leverage: 300 },
-        vanuatu_stp     : { account_type: 'financial', mt5_account_type: 'stp',      title: localize('Real STP'),        max_leverage: 100 },
-        costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), max_leverage: 100 },
+        demo_vanuatu_cent    : { account_type: 'demo',      mt5_account_type: 'cent',     title: localize('Demo Cent'),       order: 1, max_leverage: 1000, is_demo: true },
+        demo_vanuatu_standard: { account_type: 'demo',      mt5_account_type: 'standard', title: localize('Demo Standard'),   order: 3, max_leverage: 300,  is_demo: true },
+        demo_vanuatu_stp     : { account_type: 'demo',      mt5_account_type: 'stp',      title: localize('Demo STP'),        order: 5, max_leverage: 100,  is_demo: true },
+        real_vanuatu_cent    : { account_type: 'financial', mt5_account_type: 'cent',     title: localize('Real Cent'),       order: 2, max_leverage: 1000 },
+        real_vanuatu_standard: { account_type: 'financial', mt5_account_type: 'standard', title: localize('Real Standard'),   order: 4, max_leverage: 300 },
+        real_vanuatu_stp     : { account_type: 'financial', mt5_account_type: 'stp',      title: localize('Real STP'),        order: 6, max_leverage: 100 },
+        demo_costarica       : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 7, max_leverage: 1000, is_demo: true },
+        real_costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 8, max_leverage: 100 },
     };
 
     const needsRealMessage = () => $(`#msg_${Client.get('has_real') ? 'switch' : 'upgrade'}`).html();
 
     const actions_info = {
         new_account: {
-            title      : localize('Create Account'),
-            success_msg: (response) => {
-                let acc_type = response.mt5_new_account.account_type;
-                switch (acc_type) {
-                    case 'financial': acc_type = `vanuatu_${response.mt5_new_account.mt5_account_type}`; break;
-                    case 'gaming'   : acc_type = 'costarica'; break;
-                    // no default
-                }
-                return localize('Congratulations! Your [_1] Account has been created.', [types_info[acc_type].title]);
-            },
+            title      : localize('Sign up'),
+            success_msg: response => localize('Congratulations! Your [_1] Account has been created.', types_info[
+                Object.keys(types_info).find(t => (
+                    types_info[t].account_type     === response.mt5_new_account.account_type &&
+                    types_info[t].mt5_account_type === (response.mt5_new_account.mt5_account_type || '')
+                ))].title),
             login        : response => response.mt5_new_account.login,
             prerequisites: acc_type => (
                 new Promise((resolve) => {
@@ -62,6 +61,9 @@ const MetaTraderConfig = (() => {
                     }
                 });
             },
+            onSuccess: (response) => {
+                GTM.mt5NewAccount(response);
+            },
         },
         password_change: {
             title        : localize('Change Password'),
@@ -75,7 +77,7 @@ const MetaTraderConfig = (() => {
         deposit: {
             title      : localize('Deposit'),
             success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
-                formatMoney(currency, response.echo_req.amount),
+                formatMoney(State.get(['response', 'authorize', 'authorize', 'currency']), response.echo_req.amount),
                 response.echo_req.from_binary,
                 response.echo_req.to_mt5,
                 response.binary_transaction_id,
@@ -103,7 +105,7 @@ const MetaTraderConfig = (() => {
         withdrawal: {
             title      : localize('Withdraw'),
             success_msg: response => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
-                formatMoney(currency, response.echo_req.amount),
+                formatMoney(State.get(['response', 'authorize', 'authorize', 'currency']), response.echo_req.amount),
                 response.echo_req.from_mt5,
                 response.echo_req.to_binary,
                 response.binary_transaction_id,
@@ -114,8 +116,7 @@ const MetaTraderConfig = (() => {
                 } else if (types_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                         resolve($.inArray('authenticated', response_status.get_account_status.status) === -1 ?
-                            $('#msg_authenticate').find('.show_for_mt5').setVisibility(1).end()
-                                .html() : '');
+                            $('#msg_authenticate').html() : '');
                     });
                 } else {
                     resolve();
@@ -199,23 +200,23 @@ const MetaTraderConfig = (() => {
     const validations = {
         new_account: [
             { selector: fields.new_account.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: fields.new_account.txt_main_pass.id,     validations: ['req', 'password'] },
+            { selector: fields.new_account.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account.txt_main_pass.id }]] },
-            { selector: fields.new_account.txt_investor_pass.id, validations: ['req', 'password', ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
+            { selector: fields.new_account.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
             { selector: fields.new_account.ddl_leverage.id,      validations: ['req'] },
             { selector: fields.new_account.chk_tnc.id,           validations: [['req', { message: 'Please accept the terms and conditions.' }]] },
         ],
         password_change: [
             { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },
-            { selector: fields.password_change.txt_new_password.id,    validations: ['req', 'password', ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
+            { selector: fields.password_change.txt_new_password.id,    validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
             { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
         ],
         deposit: [
-            { selector: fields.deposit.txt_amount.id, validations: ['req', ['number', { type: 'float', min: 1, max: 20000 }]] },
+            { selector: fields.deposit.txt_amount.id, validations: ['req', ['number', { type: 'float', min: 1, max: 20000, decimals: '0, 2' }]] },
         ],
         withdrawal: [
             { selector: fields.withdrawal.txt_main_pass.id, validations: ['req'] },
-            { selector: fields.withdrawal.txt_amount.id,    validations: ['req', ['number', { type: 'float', min: 1, max: 20000 }]] },
+            { selector: fields.withdrawal.txt_amount.id,    validations: ['req', ['number', { type: 'float', min: 1, max: 20000, decimals: '0, 2' }]] },
         ],
     };
 

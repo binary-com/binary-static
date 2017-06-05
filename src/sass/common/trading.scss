@@ -19,6 +19,7 @@ a.close {
     width: 35px;
     height: 35px;
     background: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="14" height="14"><path fill="#{rgba($COLOR_WHITE, 1)}" d="M50,5,45,0,25,20,5,0,0,5,20,25,0,45l5,5L25,30,45,50l5-5L30,25Z"/></svg>') no-repeat center;
+
     &:hover {
         background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="14" height="14"><path fill="#{rgba($COLOR_ORANGE, 1)}" d="M50,5,45,0,25,20,5,0,0,5,20,25,0,45l5,5L25,30,45,50l5-5L30,25Z"/></svg>');
     }
@@ -39,6 +40,7 @@ a.close {
         line-height: 25px;
         font-size: $FONT_SIZE_S;
         position: relative;
+
         &.dismissible {
             cursor: pointer;
         }

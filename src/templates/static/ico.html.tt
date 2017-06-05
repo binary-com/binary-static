@@ -1,0 +1,544 @@
+[% BLOCK link %]
+    [% FOREACH favicon IN favicons %]
+        [% sizes = favicon.size _ 'x' _ favicon.size %]
+    <link rel="[% (favicon.is_image ? '' : 'apple-touch-') _ 'icon' %]" sizes="[% sizes %]"[% IF favicon.is_image %] type="image/png"[% END %] href="https://style.binary.com/images/favicons/[% favicon.is_image ? 'fav' : 'apple-touch-' %]icon-[% sizes %].png">
+    [% END %]
+[% END %]
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style id="antiClickjack">body{display:none !important;}</style>
+        <script type="text/javascript">
+            if (self === top) {
+                var antiClickjack = document.getElementById("antiClickjack");
+                antiClickjack.parentNode.removeChild(antiClickjack);
+            } else {
+                top.location = self.location;
+            }
+        </script>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
+        <meta name="description" content="
+        [%= l("[_1] ICO, Invest in the world\'s premier platform for binary options trading", broker_name) =%]" />
+        <meta name="keywords" content="
+                [%= l('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading') =%]" />
+        <meta name="author" content="[%= broker_name =%]" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="dcterms.rightsHolder" content="[%= broker_name =%]" />
+        <meta name="dcterms.rights" content="[%= broker_name =%]" />
+        <meta property="og:title" content="[%= broker_name =%]" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
+
+        [% PROCESS global/title.html.tt %]
+
+        [% INCLUDE link favicons=[
+            { size='57' },
+            { size='114' },
+            { size='72' },
+            { size='144' },
+            { size='60' },
+            { size='120' },
+            { size='76' },
+            { size='152' },
+            { size='180' },
+            { is_image=1, size='192' },
+            { is_image=1, size='160' },
+            { is_image=1, size='96' },
+            { is_image=1, size='16' },
+            { is_image=1, size='32' },
+        ] %]
+
+        <link href="[% request.url_for('css/ico.css') %]" rel="stylesheet" />
+        <link href="https://style.binary.com/binary.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        [% PROCESS global/gtm.html.tt %]
+        <div class="navbar-fixed-top" role="navigation">
+            <div class="">
+                <div class="navbar-header">
+                    <span id="toggle-menu" href="button" class="navbar-toggle"></span>
+                    <a class="navbar-brand page-scroll logo" href="#page-top"></a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="invisible">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#how-ico-works">[% l("How the ICO works") %]</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#who-we-are">[% l("Who we are") %]</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#our-growth">[% l("Our growth") %]</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="home">
+            <!-- Intro Header -->
+            <div id="page-top" class="intro">
+                <div class="intro-body">
+                    <div class="container center-text content-inverse-color">
+                        <div class="gr-row">
+                            <div class="gr-12">
+                                <h1 class="brand-heading">[% l("[_1] ICO <br /> Pre-announcement", broker_name) %]</h1>
+                                <p class="intro-text">[% l("Invest in the world's premier platform for binary options trading") %]</p>
+                                <p class="intro-subtext">[% l("An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares.") %]</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="coming-soon" class="content-section center-text transparent-dark-blue-bg">
+                        <div class="gr-row">
+                            <div class="gr-12">
+                                <h3 class="content-inverse-color">[% l("Coming soon") %]</h3>
+                                <hr class="underline">
+                                <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO, including the official launch date.") %]</p>
+                                <div class="form-container">
+                                    <!-- AWeber Web Form Generator 3.0.1 -->
+                                    <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
+                                        <div style="display: none;">
+                                            <input type="hidden" name="meta_web_form_id" value="713141817" />
+                                            <input type="hidden" name="meta_split_id" value="" />
+                                            <input type="hidden" name="listname" value="awlist4685103" />
+                                            <input type="hidden" name="redirect" value="" id="redirect_600c7e6a647457c51ede13e8b4d377e6" />
+                                            <input type="hidden" name="meta_adtracking" value="Binary_ICO" />
+                                            <input type="hidden" name="meta_message" value="1001" />
+                                            <input type="hidden" name="meta_required" value="email" />
+                                            <input type="hidden" name="meta_tooltip" value="" />
+                                        </div>
+                                        <div id="af-form-713141817" class="af-form">
+                                            <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
+                                                <div class="af-element gr-row">
+                                                    <div class="gr-8 gr-12-m">
+                                                        <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+                                                    </div>
+                                                    <div class="gr-4 gr-12-m">
+                                                        <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="display: none;">
+                                                <img src="https://forms.aweber.com/form/displays.htm?id=7IzMjCyMHIzs" alt="" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <script type="text/javascript">
+                                        document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';
+                                    </script>
+                                    <!-- /AWeber Web Form Generator 3.0.1 -->
+                                    <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thank you for your interest in the [_1] ICO. Please check your email for a confirmation link.", broker_name) %]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- How ICO Works section -->
+            <div id="how-ico-works" class="container content-section center-text">
+                <div class="gr-row">
+                    <div class="gr-8 gr-push-2 gr-push-0-m gr-12-m">
+                        <h2>[% l("How will the ICO work") %]</h2>
+                    </div>
+                </div>
+                <div class="gr-row">
+                    <div class="gr-4 gr-12-m vertical-center">
+                        <div class="box">
+                            <img class="icon" src="[% request.url_for('images/ico/icons/coins_icon.svg') %]" />
+                            <h4>[% l("Purchase our tokens") %]</h4>
+                            <p>[% l("Binary.com will issue a number of tokens during the ICO.") %]</p>
+                        </div>
+                        <img class="arrow" src="[% request.url_for('images/ico/icons/arrow1.svg') %]" />
+                    </div>
+                    <div class="gr-4 gr-12-m vertical-center">
+                        <div class="box">
+                            <img class="icon" src="[% request.url_for('images/ico/icons/ch_icon.svg') %]" />
+                            <h4>[% l("Earn exclusive tokenholder rights") %]</h4>
+                            <p>[% l("Each token provides you with two exclusive tokenholder rights.") %]</p>
+                        </div>
+                        <img class="arrow" src="[% request.url_for('images/ico/icons/arrow2.svg') %]" />
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <div class="gr-row">
+                            <div class="gr-12">
+                                <div class="box">
+                                    <img class="icon" src="[% request.url_for('images/ico/icons/dp_icon.svg') %]" />
+                                    <h4>[% l("Receive dividend payments") %]</h4>
+                                    <p>[% l("As a tokenholder, you have the right to receive payments equivalent to shareholder dividends.") %]</p>
+                                </div>
+                            </div>
+                            <div class="gr-12">
+                                <div class="box">
+                                    <img class="icon" src="[% request.url_for('images/ico/icons/ccs_icon.svg') %]" />
+                                    <h4>[% l("Convert your tokens into shares") %]</h4>
+                                    <p>[% l("As a tokenholder, you also have the right to convert your tokens into Ordinary Shares.") %]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container content-section center-text">
+                <div class="gr-row">
+                    <div class="gr-12">
+                        <h2>[% l("Token dividends") %]</h2>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <img class="icon" src="[% request.url_for('images/ico/icons/is_icon.svg') %]" />
+                        <h4>[% l("How often do you issue dividends?") %]</h4>
+                        <p>[% l("Binary generally distributes dividends once a year, at the sole discretion of its board.") %]</p>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <img class="icon" src="[% request.url_for('images/ico/icons/ich_icon.svg') %]" />
+                        <h4>[% l("How do you inform tokenholders?") %]</h4>
+                        <p>[% l("Distribution of dividends will be announced on the Binary.com website.") %]</p>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <img class="icon" src="[% request.url_for('images/ico/icons/dvnd_icon.svg') %]" />
+                        <h4>[% l("How much dividend will I receive?") %]</h4>
+                        <p>[% l("Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares.") %]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="faq-section" class="content-section fill-bg-color center-text">
+                <div class="gr-row">
+                    <div class="gr-12">
+                        <h2>[% l("Need more information on the ICO?") %]</h2>
+                    </div>
+                    <div class="gr-12">
+                        <button id="faq-btn" class="button">[% l("Read our FAQ") %]</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Who We Are section -->
+            <div id="who-we-are" class="content-section who-we-are-bg">
+                <div class="gr-row center-text">
+                    <div class="gr-4">
+                        <h2 class="boxed-heading boxed-heading-center">[% l("Who is Binary.com") %]</h2>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="gr-row">
+                        <div class="gr-4 gr-12-m">
+                            <div class="content-inverse-color gr-padding-30">
+                                <div class="gr-row">
+                                    <p>[% l("Binary.com is the pioneer of online binary options trading. We grew from one simple idea: to make binary options easily accessible to retail investors worldwide.") %]</p>
+                                    <p>[% l("Today, we’ve established ourselves as a market leader and one of the most popular online binary options trading platforms in the world.") %]</p>
+                                    <p>[% l("Our track record speaks for itself; we recorded a turnover of USD 847.6 million in 2016 &mdash;&mdash; bringing our total turnover to over USD 3 billion since we launched in 2000.") %]</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gr-7 gr-push-1 gr-push-0-m gr-12-m white-bg">
+                            <div class="gr-row">
+                                <div class="gr-6 gr-12-m">
+                                    <h4>[% l("Licensed and regulated") %]</h4>
+                                    <p>[% l("Binary.com is licensed and regulated in Malta, the British Isles, Japan, and Vanuatu.") %]</p>
+                                </div>
+                                <div class="gr-6 gr-12-m">
+                                    <h4>[% l("Extensive product range") %]</h4>
+                                    <p>[% l("Over 100 asset classes across Forex, CFDs, and binary options.") %]</p>
+                                </div>
+                            </div>
+                            <div class="gr-row">
+                                <div class="gr-6 gr-12-m">
+                                    <h4>[% l("Sharp prices") %]</h4>
+                                    <p>[% l("Our cutting-edge pricing technology gives you the same rates of return as the interbank market.") %]</p>
+                                </div>
+                                <div class="gr-6 gr-12-m">
+                                    <h4>[% l("Patented technology") %]</h4>
+                                    <p>[% l("[_1] developed the systems, methods, and algorithms that made binary options accessible to retail traders.", broker_name) %]</p>
+                                </div>
+                            </div>
+                            <div class="gr-row">
+                                <div class="gr-6 gr-12-m">
+                                    <h4>[% l("Award-winning platforms") %]</h4>
+                                    <p>[% l("Trade anytime, anywhere with our desktop, web, and mobile platforms.") %]</p>
+                                </div>
+                                <div class="gr-6 gr-12-m">
+                                    <h4>[% l("Global presence") %]</h4>
+                                    <p>[% l("Binary.com employs over 130 people across its offices in Malta, Malaysia, Japan, and Germany.") %]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Our Growth section -->
+            <div id="our-growth" class="content-section center-text">
+                <div class="gr-row">
+                    <div class="gr-12">
+                        <h2>[% l("Binary.com by the numbers") %]</h2>
+                        <p class="section-intro">[% l("These key metrics will show you what growth and success looks like for an award-winning binary options trading platform.") %]</p>
+                    </div>
+                </div>
+                <div id="charts" class="gr-row">
+                    <div class="gr-6 gr-12-m">
+                        <div class="chart">
+                            <h5 class="chart-heading chart-heading-right">[% l("Dividends paid out") %]</h5>
+                            <img src="[% request.url_for('images/ico/images/dp_chart.svg') %]" />
+                            <p>[% l("A record-breaking year for turnover and profit in 2016 saw us distribute nearly USD 12 million in total dividend payments to shareholders.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <div class="chart">
+                            <h5 class="chart-heading chart-heading-left">[% l("Gross and net profit") %]</h5>
+                            <img src="[% request.url_for('images/ico/images/gn_chart.svg') %]" />
+                            <p>[% l("Binary.com is a successful and growing platform, with several ongoing initiatives to enhance future profitability. These include our entry into new regulated markets with significant growth potential, and the innovation and expansion of our product offerings.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <div class="chart">
+                            <h5 class="chart-heading chart-heading-right">[% l("Turnover") %]</h5>
+                            <img src="[% request.url_for('images/ico/images/to_chart.svg') %]" />
+                            <p>[% l("We’ve generated over USD 3 billion in turnover since inception, thanks to a rapid growth in business from 2010 onwards.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <div class="chart">
+                            <h5 class="chart-heading chart-heading-left">[% l("Active clients") %]</h5>
+                            <img src="[% request.url_for('images/ico/images/nac_chart.svg') %]" />
+                            <p>[% l("Total active clients on our platform have almost doubled from 2014 to 2016. This is largely due to our focus on improving customer retention and acquiring new customers via targeted online marketing campaigns.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <div class="chart">
+                            <h5 class="chart-heading chart-heading-right">[% l("Client transactions") %]</h5>
+                            <img src="[% request.url_for('images/ico/images/ntb_chart.svg') %]" />
+                            <p>[% l("In the last two years alone, over 276 million contracts were bought and sold on our platform.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <div class="chart">
+                            <h5 class="chart-heading chart-heading-left">[% l("Employees") %]</h5>
+                            <img src="[% request.url_for('images/ico/images/nec_chart.svg') %]" />
+                            <p>[% l("We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in four countries: Malaysia, Malta, Japan, and Germany.") %]</p>
+                        </div>
+                    </div>
+                    <div class="vertical-line"></div>
+                </div>
+            </div>
+            <div class="content-section blue-bg">
+                <div class="gr-row content-inverse-color">
+                    <div class="gr-3 gr-push-2 gr-push-0-m gr-12-m">
+                        <hr class="highlight">
+                        <h2>[% l("What are binary options") %]</h2>
+                        <p class="section-intro">[% l("Binary options possess unique attributes that appeal to both retail and institutional traders worldwide.") %]</p>
+                    </div>
+                    <div class="gr-4 gr-push-3 gr-push-0-m gr-12-m">
+                        <h4 class="secondary-color">[% l("Limited risk") %]</h4>
+                        <p>[% l("You can only lose your initial investment and nothing more.") %]</p>
+                        <h4 class="secondary-color">[% l("Low minimum collateral") %]</h4>
+                        <p>[% l("Deposit as little as USD 5 and start trading from USD 5 per contract.") %]</p>
+                        <h4 class="secondary-color">[% l("Multiple trading opportunities") %]</h4>
+                        <p>[% l("Trade short-term or long-term contracts, from ticks to days.") %]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container content-section center-text">
+                <div class="gr-row">
+                    <div class="gr-8 gr-push-2 gr-push-0-m gr-12-m">
+                        <h2>[% l("Market opportunities for binary options") %]</h2>
+                        <p>[% l("The binary options industry is poised for breakout growth similar to the growth shown by the Forex industry &mdash;&mdash; thanks to key trends and events in emerging and developed markets.") %]</p>
+                    </div>
+                </div>
+                <div class="gr-row">
+                    <div class="gr-4 gr-12-m">
+                        <img class="icon" src="[% request.url_for('images/ico/icons/ea_icon.svg') %]" />
+                        <h4>[% l("Exciting growth in Europe and Asia") %]</h4>
+                        <p>[% l("Organic growth is driving demand, especially in the Far East –– the world’s leading market for binary options.") %]</p>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <img class="icon" src="[% request.url_for('images/ico/icons/jp_icon.svg') %]" />
+                        <h4>[% l("New regulations in Japan") %]</h4>
+                        <p>[% l("After a lengthy process, we were awarded a financial license to operate in the country, in compliance with its new regulations.") %]</p>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <img class="icon" src="[% request.url_for('images/ico/icons/eu_icon.svg') %]" />
+                        <h4>[% l("EU recognition") %]</h4>
+                        <p>[% l("The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers.") %]</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Stay Informed section -->
+            <div id="stay-informed" class="container content-section center-text">
+                <div class="gr-row">
+                    <div class="gr-12">
+                        <h2>[% l("Our strengths") %]</h2>
+                        <p class="section-intro">[% l("We possess a number of attributes which differentiate us from other players in the market.") %]</p>
+                    </div>
+                </div>
+                <div class="gr-row">
+                    <div class="gr-4 gr-12-m">
+                        <h4>[% l("Intellectual property") %]</h4>
+                        <p>[% l("Our platform is backed by proprietary technology, developed and managed by a highly-skilled and experienced team carefully handpicked from around the world.") %]</p>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <h4>[% l("Extensive product portfolio") %]</h4>
+                        <p>[% l("We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days.") %]</p>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <h4>[% l("Strategic licensing") %]</h4>
+                        <p>[% l("We’ve obtained financial and gambling licenses to operate in key countries and regions such as Europe, the Isle of Man, the United Kingdom, and Japan.") %]</p>
+                    </div>
+                </div>
+                <div class="gr-row">
+                    <div class="gr-4 gr-12-m">
+                        <h4>[% l("Scalable business model") %]</h4>
+                        <p>[% l("We have the ability to adapt and scale to meet the demands of new clients, thanks to the teams and processes that we’ve put together over the years.") %]</p>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <h4>[% l("Strong leadership") %]</h4>
+                        <p>[% l("We have an agile senior management team with more than 30 years of collective experience in the industry, as well as a succession plan in place.") %]</p>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <h4>[% l("Strategic customer acquisition strategy") %]</h4>
+                        <p>[% l("We employ a wide range of unique marketing initiatives to acquire customers. We are focused primarily on untapped markets.") %]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="faq" class="invisible">
+            <div class="intro">
+                <div class="center-text content-section intro-body">
+                    <div class="gr-row">
+                        <div class="gr-12">
+                            <h1 class="brand-heading">[% l("[_1] ICO FAQ", broker_name) %]</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container content-section">
+                <div class="gr-row">
+                    <div class="gr-12">
+                        <h2>[% l("Frequently Asked Questions") %]</h2>
+                    </div>
+                </div>
+                <div class="gr-row">
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("What is an ICO?") %]</h4>
+                            <p>[% l("An \‘Initial Coin Offering\’ (or \‘ICO\’ for short) is a fundraising method that\’s relatively similar to an Initial Public Offering (IPO). In an ICO, cryptocurrency such as \‘coloured coins\’ or \‘Ethereum tokens\’ are issued instead of shares.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Why is Binary.com performing an ICO?") %]</h4>
+                            <p>[% l("[_1] is a well-established company founded in 1999. The growth of our business led us to consider an IPO, as is the case with most successful companies. However, we believe that stock exchanges will be gradually replaced by cryptocurrency exchanges in the coming decade, and IPOs will be gradually replaced by ICOs. This is why we decided to perform an ICO instead of an IPO.", broker_name) %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("How will the ICO work?") %]</h4>
+                            <p>[% l("[_1] will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as \‘coloured coins\’ on the Bitcoin blockchain, and \‘ERC20\’ tokens on the Ethereum blockchain.", broker_name) %]</p>
+                            <p>[% l("Regardless of the type of token, each token will provide you with two rights:") %]</p>
+                            <ol>
+                                <li>[% l("The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares") %]</li>
+                                <li>[% l("The right to convert tokens into Ordinary Shares") %]</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("How will the tokens be offered?") %]</h4>
+                            <p>[% l("The tokens will be offered over a period of one month. The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017. The ICO price and auction method will be announced in due course.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Who can purchase the tokens?") %]</h4>
+                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account, and who have completed our account authentication process.", broker_name) %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Is the ICO available in all jurisdictions?") %]</h4>
+                            <p>[% l("The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("How can I purchase your tokens?") %]</h4>
+                            <p>[% l("You\’ll be able to purchase our tokens using the funds in your [_1] account. We will soon be introducing native <strong>BTC (Bitcoin)</strong> and <strong>ETH (Ethereum)</strong> account facilities to enable your participation in the ICO.", broker_name) %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("How can I learn more about ICOs and cryptocurrencies?") %]</h4>
+                            <p>[% l("To learn more about Bitcoin, we recommend that you <a href='https://blockchain.info/wallet/#/'>open a Bitcoin wallet with Blockchain</a> and <a href='https://www.bitcoin.com/buy-bitcoin'>purchase bitcoins using a local exchange</a> in your country.") %]</p>
+                            <p>[% l("To learn more about Ethereum, we recommend that you install the <a href='https://metamask.io/'>Metamask plugin for Chrome</a>, which will allow you to convert your Bitcoin into Ether.") %]</p>
+                            <p>[% l("To learn how to trade cryptocurrency assets, we recommend that you open an account with US-based cryptocurrency exchange, <a href='https://poloniex.com/'>POLONIEX</a>.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("How do I stay informed on the Binary.com ICO?") %]</h4>
+                            <p>[% l("Please subscribe to our mailing list using the form below for occasional announcements relating to the ICO.") %]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Subscribe section -->
+        <div class="content-section primary-bg-color-dark center-text">
+            <div class="gr-row">
+                <div class="gr-12">
+                    <h3 class="content-inverse-color intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO, including the official launch date.") %]</h3>
+                    <div class="form-container">
+                        <!-- AWeber Web Form Generator 3.0.1 -->
+                        <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
+                            <div style="display: none;">
+                                <input type="hidden" name="meta_web_form_id" value="713141817" />
+                                <input type="hidden" name="meta_split_id" value="" />
+                                <input type="hidden" name="listname" value="awlist4685103" />
+                                <input type="hidden" name="redirect" value="" id="redirect_600c7e6a647457c51ede13e8b4d377e6" />
+                                <input type="hidden" name="meta_adtracking" value="Binary_ICO" />
+                                <input type="hidden" name="meta_message" value="1001" />
+                                <input type="hidden" name="meta_required" value="email" />
+                                <input type="hidden" name="meta_tooltip" value="" />
+                            </div>
+                            <div id="af-form-713141817" class="af-form">
+                                <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
+                                    <div class="af-element gr-row">
+                                        <div class="gr-8 gr-12-m">
+                                            <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+                                        </div>
+                                        <div class="gr-4 gr-12-m">
+                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: none;">
+                                    <img src="https://forms.aweber.com/form/displays.htm?id=7IzMjCyMHIzs" alt="" />
+                                </div>
+                            </div>
+                        </form>
+                        <script type="text/javascript">
+                            document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';
+                        </script>
+                        <!-- /AWeber Web Form Generator 3.0.1 -->
+                        <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thank you for your interest in the [_1] ICO. Please check your email for a confirmation link.", broker_name) %]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="primary-bg-color content-inverse-color center-text">
+            <div class="footnote">
+                <p>[% l("This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of [_1]. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum.", broker_name) %]</p>
+                <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
+            </div>
+        </div>
+        <script src="[% request.url_for('js/ico/ico.js') %]"></script>
+    </body>
+
+</html>

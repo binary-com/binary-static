@@ -29,7 +29,7 @@ const GetTicks = (() => {
                 BinarySocket.send({ forget_all: 'candles' });
             }
             BinarySocket.send(req || {
-                ticks_history: symbol,
+                ticks_history: symbol || underlying,
                 style        : 'ticks',
                 end          : 'latest',
                 count        : 20,

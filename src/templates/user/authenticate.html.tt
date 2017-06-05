@@ -11,6 +11,9 @@
     <div id="not_authenticated" class="invisible">
         [% PROCESS global/authenticate_message.html.tt %]
     </div>
+    <div id="not_authenticated_financial" class="invisible">
+        [% INCLUDE global/authenticate_message_financial.html.tt %]
+    </div>
 
     <p class="center-text notice-msg invisible" id="error_message"></p>
 </div>

@@ -26,12 +26,14 @@
 @mixin menu-left {
     ul {
         font-size: $FONT_SIZE_N;
+
         li {
             list-style-image: none;
             margin: 0;
             background: $COLOR_LIGHT_GRAY;
             line-height: 150%;
             border-bottom: 1px solid $COLOR_WHITE;
+
             &:hover {
                 background: $COLOR_GRAY;
             }
@@ -45,6 +47,7 @@
         }
         li.selected {
             background: $COLOR_BLUE;
+
             a {
                 color: $COLOR_WHITE;
                 text-decoration: none;
@@ -62,6 +65,7 @@
     padding: 10px 25px;
     display: inline-block;
     letter-spacing: 0.75px;
+
     &:visited {
         color: $COLOR_WHITE;
     }
@@ -86,6 +90,7 @@
         }
         &.tr-desc {
             display: table-row;
+
             td {
                 padding-top: 0;
             }

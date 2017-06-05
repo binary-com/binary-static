@@ -1,8 +1,10 @@
 #mb_trading {
     font-family: $FONT-STACK;
     font-size: $FONT_SIZE_S;
+
     .flex-box {
         display: flex;
+
         &.rows {
             flex-direction: column;
         }
@@ -18,6 +20,7 @@
     .japan-table {
         align-items: stretch;
         position: relative;
+
         #disable-overlay {
             position: absolute;
             top: 84px;
@@ -99,8 +102,10 @@
         border: 0;
         min-height: 34px;
         position: relative;
+
         .value-wrapper {
             margin-left: -15px;
+
             .dynamics {
                 &.up {
                     background-image: svg-icon('up', $COLOR_WHITE);
@@ -121,6 +126,7 @@
     }
     .inactive {
         color: $COLOR_GRAY;
+
         &.price-button, &:hover {
             color: $COLOR_WHITE;
             background: $COLOR_GRAY !important;
@@ -189,6 +195,7 @@
         background: $COLOR_LIGHT_GRAY;
         border-radius: 3px;
         width: 100%;
+
         .select, .payout-select {
             width: 100%;
             margin-top: 5px;
@@ -196,6 +203,7 @@
             border: 1px solid $COLOR_LIGHT_GRAY;
             background: $COLOR_WHITE;
             border-radius: 3px;
+
             &:focus {
                 outline: none;
             }
@@ -203,6 +211,7 @@
         .payout-input {
             position: relative;
             white-space: nowrap;
+
             .hint {
                 padding: 4px;
                 padding-right: 0;
@@ -237,6 +246,7 @@
     .space-between {
         justify-content: space-between;
         margin: 8px 0;
+
         .gr-grow {
             padding: 0;
         }
@@ -247,8 +257,10 @@
     .spot div {
         white-space: nowrap;
         display: block;
+
         &.spot-value {
             line-height: 30px;
+
             * {
                 vertical-align: middle;
             }
@@ -263,6 +275,7 @@
         border-radius: 3px;
         white-space: nowrap;
         line-height: 22px;
+
         &.alert {
             background: rgba(251, 228, 215, 0.7);
             padding-right: 5px;
@@ -288,6 +301,7 @@
             .price-button {
                 width: 80%;
                 margin-left: 15px;
+
                 .base-value {
                     bottom: 0;
                 }
@@ -303,8 +317,10 @@
     #tab_explanation-content #winning_higherlower {
         display: flex;
         flex-direction: column;
+
         p {
             margin-top: 0;
+
             &:first-child {
                 order: 2;
             }

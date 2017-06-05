@@ -41,7 +41,7 @@ const BinaryPjax = (() => {
         const content = container.find(content_selector);
 
         // put current content to cache, so we won't need to load it again
-        if (title && content && content.length) {
+        if (content && content.length) {
             window.history.replaceState({ url: url }, title, url);
             setDataPage(content, url);
             params.container.trigger('binarypjax:after', content);

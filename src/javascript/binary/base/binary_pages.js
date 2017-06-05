@@ -3,14 +3,16 @@ const LoggedInHandler = require('./logged_in');
 const Charity            = require('../static_pages/charity');
 const Contact            = require('../static_pages/contact');
 const Endpoint           = require('../static_pages/endpoint');
-const Home               = require('../static_pages/home');
 const GetStarted         = require('../static_pages/get_started');
 const GetStartedJP       = require('../static_pages/get_started_jp');
+const Home               = require('../static_pages/home');
+const HomeJP             = require('../static_pages/home_jp');
 const JobDetails         = require('../static_pages/job_details');
 const Platforms          = require('../static_pages/platforms');
 const Regulation         = require('../static_pages/regulation');
 const StaticPages        = require('../static_pages/static_pages');
 const TermsAndConditions = require('../static_pages/tnc');
+const VideoFacility      = require('../static_pages/video_facility');
 const WhyUs              = require('../static_pages/why_us');
 
 const AccountTransfer            = require('../websocket_pages/cashier/account_transfer');
@@ -101,13 +103,14 @@ const pages_config = {
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
-    'home-jp'                : { module: Home,                       not_authenticated: true },
+    'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'job-details'            : { module: JobDetails },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
     'terms-and-conditions'   : { module: TermsAndConditions },
     'terms-and-conditions-jp': { module: TermsAndConditions },
+    'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'volidx-markets'         : { module: StaticPages.VolidxMarkets },
     'why-us'                 : { module: WhyUs },
     'why-us-jp'              : { module: WhyUs },

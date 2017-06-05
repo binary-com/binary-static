@@ -1,5 +1,6 @@
 const Client            = require('./client');
 const Contents          = require('./contents');
+const Crowdin           = require('./crowdin');
 const Header            = require('./header');
 const Language          = require('./language');
 const Localize          = require('./localize');
@@ -28,6 +29,7 @@ const Page = (() => {
         Url.init();
         PushNotification.init();
         onDocumentReady();
+        Crowdin.init();
     };
 
     const onDocumentReady = () => {
@@ -75,7 +77,7 @@ const Page = (() => {
             Url.reset();
         } else {
             init();
-            Localize.forLang(Language.get());
+            Localize.forLang(Language.urlLang());
             Header.onLoad();
             Language.setCookie();
             Menu.makeMobileMenu();
@@ -158,10 +160,14 @@ const Page = (() => {
         const src = '//browser-update.org/update.min.js';
         if ($(`script[src*="${src}"]`).length) return;
         window.$buoop = {
-            vs : { i: 11, f: -4, o: -4, s: 9, c: -4 },
-            api: 4,
-            l  : Language.get().toLowerCase(),
-            url: 'https://whatbrowser.org/',
+            vs     : { i: 11, f: -4, o: -4, s: 9, c: -4 },
+            api    : 4,
+            l      : Language.get().toLowerCase(),
+            url    : 'https://whatbrowser.org/',
+            noclose: true, // Do not show the 'ignore' button to close the notification
+            text   : localize('Your web browser ([_1]) is out of date and no longer supported. Update your browser now for the best experience on this site. [_2]Update browser[_3]',
+                ['{brow_name}', '<a href="https://www.whatbrowser.org/" target="_blank">', '</a>']),
+            reminder: 0, // show all the time
         };
         $(document).ready(() => {
             $('body').append($('<script/>', { src: src }));
