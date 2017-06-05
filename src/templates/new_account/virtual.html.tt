@@ -11,7 +11,7 @@
                 hint=l("Minimum of six lower and uppercase letters with numbers") %]
             [% INCLUDE form_row type='password' id='repeat_password' label=l('Re-enter password') %]
             [% INCLUDE form_row type='select' id='residence' class='invisible' label=l('Country of residence') %]
-            [% INCLUDE form_row type='checkbox' id='email_consent' row_class='invisible' label_row_id='email_consent_label'
+            [% INCLUDE form_row type='checkbox' checked=1 id='email_consent' row_class='invisible' label_row_id='email_consent_label'
                 label=l('Receive news and special offers') %]
         [% END %]
 
