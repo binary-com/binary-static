@@ -45,6 +45,7 @@ my @urls = (
     ['security-testing'       , 'monthly', '0.80'],
 
     ['cashier'                     , 'monthly', '0.80'],
+    ['cashier/epg_forwardws'       , 'monthly', '0.80', 'NOT-ja'],
     ['cashier/payment_agent_listws', 'monthly', '0.80'],
     ['cashier/payment_methods'     , 'monthly', '0.80', 'ja'],
 

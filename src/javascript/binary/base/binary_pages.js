@@ -55,7 +55,6 @@ const SetCurrency          = require('../websocket_pages/user/set_currency');
 const TNCApproval          = require('../websocket_pages/user/tnc_approval');
 const TelegramBot          = require('../websocket_pages/user/telegram_bot');
 
-const CashierJP     = require('../../binary_japan/cashier');
 const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test');
 
 /* eslint-disable max-len */
@@ -109,7 +108,6 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
-    'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
@@ -125,7 +123,6 @@ const pages_config = {
     'volidx-markets'         : { module: StaticPages.VolidxMarkets },
     'why-us'                 : { module: WhyUs },
     'why-us-jp'              : { module: WhyUs },
-    'withdraw-jp'            : { module: CashierJP.Withdraw,         is_authenticated: true, only_real: true },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
 };
 /* eslint-enable max-len */
