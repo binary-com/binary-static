@@ -2,10 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-01 02:01-0400\n"
+"PO-Revision-Date: 2017-06-04 21:07-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
-"Language: vi_VN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,6 +13,7 @@ msgstr ""
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: vi\n"
 "X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
+"Language: vi_VN\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" có nghĩa là một bộ chương trình lập trình độc quyền, các lệnh, các công cụ và nguồn lực được tạo ra và duy trì bởi %1 cái mà cho phép bạn sử dụng Ứng dụng đã được đăng ký để giao dịch trên sàn giao dịch %1."
@@ -547,8 +547,7 @@ msgid "A broad array of HR-related administrative tasks"
 msgstr "Một mảng liên quan tới quản lý nhân sự, HR"
 
 msgid "A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria:"
-msgstr ""
-"<p>Khách hàng là những người được giới thiệu bởi một trong những công cụ marketing của bạn và đã nạp tiền vào tài khoản %1 của họ. Họ phải đáp ứng các yêu cầu sau: </p>\n"
+msgstr "<p>Khách hàng là những người được giới thiệu bởi một trong những công cụ marketing của bạn và đã nạp tiền vào tài khoản %1 của họ. Họ phải đáp ứng các yêu cầu sau: </p>\n"
 "<ul class='checked'>\n"
 "<li>Trước đây chưa từng là khách hàng của %1</li>\n"
 "<li>Ký quỹ mức tối thiểu.</li>\n"
@@ -3168,10 +3167,8 @@ msgstr "Nói chung, chúng tôi sẽ thông báo với bạn qua trang web này 
 msgid "Generate periodic and special reports summarizing client trading trends"
 msgstr "Làm báo cáo định kỳ và báo cáo riêng biệt nhằm tổng kết xu hướng giao dịch của khách hàng"
 
-#, fuzzy
-#| msgid "verification token"
 msgid "Generated verification code:"
-msgstr "chuỗi số xác minh"
+msgstr ""
 
 msgid "Generous Commission Structure"
 msgstr "Cấu trúc Tiền hoa hồng lớn"
@@ -9159,8 +9156,7 @@ msgid "You must not be a USA resident, citizen, or have any tax reporting to the
 msgstr "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 
 msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to %1 by writing in to %2 or by raising a discussion  thread on %3 which is part of our Developer Site. You will work with %1 to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from %1 in each instance."
-msgstr ""
-"Bạn phải nhanh chóng báo cáo nếu có bất kỳ nguy cơ nào về bảo mật, hay sự xâm nhập, vào Ứng dụng của bạn mà bạn phát hiện ra tại %1 bằng việc viết lên %2 hoặc mở một chủ đề thảo luận trên %3 tại một góc trong Mục Phát triển. Bạn sẽ làm việc với %1 để ngay lập tức giải quyết bất kỳ mối nguy cơ về bảo mật này, và sẽ ngay lập tức ngắt kết nối với bất kỳ sự xâm nhập hoặc kẻ xâm nhập nào.\n"
+msgstr "Bạn phải nhanh chóng báo cáo nếu có bất kỳ nguy cơ nào về bảo mật, hay sự xâm nhập, vào Ứng dụng của bạn mà bạn phát hiện ra tại %1 bằng việc viết lên %2 hoặc mở một chủ đề thảo luận trên %3 tại một góc trong Mục Phát triển. Bạn sẽ làm việc với %1 để ngay lập tức giải quyết bất kỳ mối nguy cơ về bảo mật này, và sẽ ngay lập tức ngắt kết nối với bất kỳ sự xâm nhập hoặc kẻ xâm nhập nào.\n"
 "Trong trường hợp nguy cơ về bảo mật hay sự xâm nhập liên quan đến Ứng dụng, API hoặc Bộ nhớ, bạn sẽ không được phép thông báo một cách công khai (ví dụ: trên báo chí, các trang blog, phương tiện truyền thông xã hội, các bảng tin tức,..) nếu không có sự cho phép đặc biệt và bằng văn bản từ %1 cho từng trường hợp."
 
 msgid "You need to finish all 20 questions."
@@ -11388,6 +11384,3 @@ msgstr "Giới hạn Tài khoản"
 
 msgid "Initial Coin Offering"
 msgstr ""
-
-#~ msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
-#~ msgstr "Vui lòng gửi cho chúng tôi những tài liệu này trong vòng 5 ngày để giữ cho tài khoản MT5 của bạn hoạt động."

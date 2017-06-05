@@ -2,10 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-01 02:01-0400\n"
+"PO-Revision-Date: 2017-06-04 21:08-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
-"Language: id_ID\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,6 +13,7 @@ msgstr ""
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: id\n"
 "X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
+"Language: id_ID\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program %1, protokol, alat dan sumber daya yang diciptakan dan dikelola oleh %1 yang dapat memberi Anda fasilitas untuk menggunakan aplikasi terdaftar pada platform trading %1."
@@ -1182,10 +1182,8 @@ msgstr "Indeks Tunai Australia 200"
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr ""
 
-#, fuzzy
-#| msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply follow the steps below:"
-msgstr "Otentikasi akun Anda sekarang dengan memverifikasi identitas dan alamat Anda. Untuk melanjutkan, cukup kirim dokumen-dokumen berikut ke %1:"
+msgstr ""
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
 msgstr "Otentikasi akun Anda sekarang dengan memverifikasi identitas dan alamat Anda. Untuk melanjutkan, cukup kirim dokumen-dokumen berikut ke %1:"
@@ -3164,10 +3162,8 @@ msgstr "Secara umum kami akan berkomunikasi dengan Anda melalui situs ini atau e
 msgid "Generate periodic and special reports summarizing client trading trends"
 msgstr "Menghasilkan laporan periodik dan khusus merangkum tren trading pelanggan"
 
-#, fuzzy
-#| msgid "verification token"
 msgid "Generated verification code:"
-msgstr "token verifikasi"
+msgstr ""
 
 msgid "Generous Commission Structure"
 msgstr "Struktur Persentasi Komisi"
@@ -7076,8 +7072,7 @@ msgid "The %1 Privacy and Security Policy;"
 msgstr "Privasi dan Kebijakan Keamanan %1;"
 
 msgid "The %1 Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk."
-msgstr ""
-"Grup Quantitative Analytics %1 bertanggung jawab atas harga opsi binary yang ditawarkan pada website kami, \n"
+msgstr "Grup Quantitative Analytics %1 bertanggung jawab atas harga opsi binary yang ditawarkan pada website kami, \n"
 "serta manajemen risiko dan profitabilitas buku opsinya. Memproses lebih dari satu juta transaksi setiap hari, perusahaan mengelola buku opsi eksotis yang dapat dikatakan melebihi kompleksitas usaha derivatif pada umumnya."
 
 msgid "The %1 Terms and Conditions;"
@@ -11384,9 +11379,3 @@ msgstr "Batasan rekening"
 
 msgid "Initial Coin Offering"
 msgstr "Penawaran Koin Perdana"
-
-#~ msgid "Got questions? %1Contact us%2 for help."
-#~ msgstr "Ada pertanyaan? %1Hubungi kami%2 untuk bantuan."
-
-#~ msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
-#~ msgstr "Mohon kirimkan dokumen ini dalam 5 hari untuk tetap mengaktifkan akun MT5 Anda."
