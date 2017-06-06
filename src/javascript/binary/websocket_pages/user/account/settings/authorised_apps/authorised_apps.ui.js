@@ -3,11 +3,14 @@ const BinarySocket         = require('../../../../socket');
 const showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeOnHover;
 const localize             = require('../../../../../base/localize').localize;
 const showLoadingImage     = require('../../../../../base/utility').showLoadingImage;
+const State                = require('../../../../../base/storage').State;
 const FlexTableUI          = require('../../../../../common_functions/attach_dom/flextable');
 const toTitleCase          = require('../../../../../common_functions/string_util').toTitleCase;
 
 const ApplicationsUI = (() => {
     'use strict';
+
+    let can_revoke = false;
 
     const container_selector = '#applications-container';
     const messages = {
@@ -19,23 +22,24 @@ const ApplicationsUI = (() => {
     const formatApp = (app) => {
         const last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : localize('Never');
         const scopes = app.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
-        return [
-            app.name,
-            scopes,
-            last_used,
-            '', // for the "Revoke App" button
-        ];
+        const data = [app.name, scopes, last_used];
+        if (can_revoke) {
+            data.push(''); // for the "Revoke App" button
+        }
+        return data;
     };
 
     const createRevokeButton = (container, app) => {
         const $button = $('<button/>', { class: 'button', text: localize(messages.revoke_access) });
         $button.on('click', () => {
             if (window.confirm(`${localize(messages.revoke_confirm)}: '${app.name}'?`)) {
-                BinarySocket.send({ oauth_apps: 1, revoke_app: app.id }).then((response) => {
+                BinarySocket.send({ revoke_oauth_app: app.id }).then((response) => {
                     if (response.error) {
                         displayError(response.error.message);
                     } else {
-                        update(response.oauth_apps.map(ApplicationsData.parse));
+                        BinarySocket.send({ oauth_apps: 1 }).then((res) => {
+                            update(res.oauth_apps.map(ApplicationsData.parse));
+                        });
                     }
                 });
                 container.css({ opacity: 0.5 });
@@ -48,17 +52,21 @@ const ApplicationsUI = (() => {
         if ($('#applications-table').length) {
             return FlexTableUI.replace(data);
         }
-        const headers = ['Name', 'Permissions', 'Last Used', 'Action'];
-        const columns = ['name', 'permissions', 'last_used', 'action'];
+        const headers = ['Name', 'Permissions', 'Last Used'];
+        can_revoke = /admin/.test((State.get(['response', 'authorize', 'authorize']) || {}).scopes);
+        if (can_revoke) {
+            headers.push('Action');
+        }
         FlexTableUI.init({
             container: container_selector,
-            header   : headers.map(s => localize(s)),
+            header   : headers.map(localize),
             id       : 'applications-table',
-            cols     : columns,
+            cols     : headers.map(title => title.toLowerCase().replace(/\s/g, '-')),
             data     : data,
             style    : ($row, app) => {
-                $row.children('.action').first()
-                    .append(createRevokeButton($row, app));
+                if (can_revoke) {
+                    $row.children('.action').first().append(createRevokeButton($row, app));
+                }
             },
             formatter: formatApp,
         });
