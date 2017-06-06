@@ -53,6 +53,7 @@ const PaymentAgentWithdraw = (() => {
                 form_selector       : form_id,
                 fnc_response_handler: withdrawResponse,
                 fnc_additional_check: setAgentName,
+                enable_button       : true,
             });
         } else {
             showPageError(localize('The Payment Agent facility is currently not available in your country.'));

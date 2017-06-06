@@ -392,7 +392,7 @@ const Durations = (() => {
         $('#time_start_row').setVisibility(value !== 'now');
         const time_start = document.getElementById('time_start');
         if (!time_start.value) {
-            const new_time = Defaults.get('time_start') || moment(window.time).add(5, 'minutes').utc().format('HH:mm');
+            const new_time = Defaults.get('time_start') || moment(window.time).add(6, 'minutes').utc().format('HH:mm');
             time_start.value = new_time;
             time_start.setAttribute('data-value', new_time);
         }
