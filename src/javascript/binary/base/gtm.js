@@ -1,11 +1,12 @@
-const moment      = require('moment');
-const Client      = require('./client');
-const getLanguage = require('./language').get;
-const Login       = require('./login');
-const State       = require('./storage').State;
-const isVisible   = require('../common_functions/common_functions').isVisible;
-const getAppId    = require('../../config').getAppId;
-const Cookies     = require('../../lib/js-cookie');
+const moment       = require('moment');
+const Client       = require('./client');
+const getLanguage  = require('./language').get;
+const Login        = require('./login');
+const State        = require('./storage').State;
+const isVisible    = require('../common_functions/common_functions').isVisible;
+const BinarySocket = require('../websocket_pages/socket');
+const getAppId     = require('../../config').getAppId;
+const Cookies      = require('../../lib/js-cookie');
 
 const GTM = (() => {
     'use strict';
@@ -80,7 +81,21 @@ const GTM = (() => {
             data.bom_lastname  = get_settings.last_name;
             data.bom_phone     = get_settings.phone;
         }
-        pushDataLayer(data);
+
+        if (is_login) {
+            BinarySocket.wait('mt5_login_list').then((response) => {
+                (response.mt5_login_list || []).forEach((obj) => {
+                    const acc_type = (Client.getMT5AccountType(obj.group) || '')
+                        .replace('real_vanuatu', 'financial').replace('vanuatu_', '').replace('costarica', 'gaming'); // i.e. financial_cent, demo_cent, demo_gaming, real_gaming
+                    if (acc_type) {
+                        data[`mt5_${acc_type}_id`] = obj.login;
+                    }
+                });
+                pushDataLayer(data);
+            });
+        } else {
+            pushDataLayer(data);
+        }
     };
 
     const pushPurchaseData = (response) => {
@@ -124,10 +139,28 @@ const GTM = (() => {
         pushDataLayer(data);
     };
 
+    const mt5NewAccount = (response) => {
+        const acc_type = response.mt5_new_account.mt5_account_type ?
+            `${response.mt5_new_account.account_type}_${response.mt5_new_account.mt5_account_type}` : // financial_cent, demo_cent, ...
+            `${response.mt5_new_account.account_type === 'demo' ? 'demo' : 'real'}_gaming`;           // demo_gaming, real_gaming
+        const gtm_data = {
+            event          : 'mt5_new_account',
+            bom_email      : Client.get('email'),
+            bom_country    : State.get(['response', 'get_settings', 'get_settings', 'country']),
+            mt5_last_signup: acc_type,
+        };
+        gtm_data[`mt5_${acc_type}_id`] = response.mt5_new_account.login;
+        if (/demo/.test(acc_type) && !Client.get('is_virtual')) {
+            gtm_data.visitorId = Client.get('loginid_array').find(login => !login.real).id;
+        }
+        pushDataLayer(gtm_data);
+    };
+
     return {
         pushDataLayer   : pushDataLayer,
         eventHandler    : eventHandler,
         pushPurchaseData: pushPurchaseData,
+        mt5NewAccount   : mt5NewAccount,
         setLoginFlag    : () => { if (isGtmApplicable()) localStorage.setItem('GTM_login', '1'); },
     };
 })();

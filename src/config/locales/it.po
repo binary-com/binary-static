@@ -2,10 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-01 02:02-0400\n"
+"PO-Revision-Date: 2017-06-04 21:08-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
-"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,6 +13,7 @@ msgstr ""
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: it\n"
 "X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
+"Language: it_IT\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" indica l'insieme delle routine programmatiche, protocolli e risorse di proprietà di %1 create e gestite da %1 che ti consentono di usare un'Applicazione registrata per interagire con la piattaforma di trading di %1."
@@ -360,6 +360,9 @@ msgstr "I sistemi di %1 stanno elaborando oltre 1 milione di transazioni al gior
 msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
 msgstr "%1Convalida il tuo account%2 ora per approfittare di tutte le opzioni di prelievo disponibili."
 
+msgid "%1Schedule a video call%2 with our customer support team via live chat."
+msgstr ""
+
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr ""
 
@@ -544,9 +547,7 @@ msgid "A broad array of HR-related administrative tasks"
 msgstr "Una vasta gamma di attività amministrative correlate alle Risorse Umane"
 
 msgid "A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria:"
-msgstr ""
-"<p>Un cliente è qualcuno che è stato riferito attraverso uno dei tuoi strumenti di marketing e che ha depositato fondi sul proprio account di %1.  Devono soddisfare i seguenti criteri: </p>\n"
-"\n"
+msgstr "<p>Un cliente è qualcuno che è stato riferito attraverso uno dei tuoi strumenti di marketing e che ha depositato fondi sul proprio account di %1.  Devono soddisfare i seguenti criteri: </p>\n\n"
 "    <ul class='checked'>\n"
 "        <li>Non essere già stati clienti di %1 precedentemente.</li>\n"
 "        <li>Aver effettuato il deposito minimo.</li>\n"
@@ -910,6 +911,9 @@ msgstr "Altera gli orari di trading normali per il mercato coinvolto;"
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "In alternativa, i clienti che sono registrati con Binary (IOM) Ltd e con Binary (Europe) Ltd, invece di inviare la controversia all'IBAS, possono utilizzare la piattaforma ODR (Risoluzione delle controversie online) della Commissione europea disponibile %1qui%2."
 
+msgid "Alternatively, you can also %1authenticate your account by video call%2."
+msgstr ""
+
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "Anche se la Società ha e conserva tutti i diritti di rifiutare o chiudere l'account di un Cliente, la Società garantisce il rispetto di tutti gli obblighi contrattuali già in essere."
 
@@ -1178,6 +1182,12 @@ msgid "Australia"
 msgstr "Australia"
 
 msgid "Australia 200 Cash Index"
+msgstr ""
+
+msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
+msgstr ""
+
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply follow the steps below:"
 msgstr ""
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
@@ -1697,8 +1707,7 @@ msgid "Choose the Underlying"
 msgstr ""
 
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
-msgstr ""
-"La prima cosa da fare è scegliere l'asset che desideri negoziare, come ad esempio l'oro o il petrolio, azioni o tassi FX (il valore di un'opzione binaria deriva dal prezzo dell'asset sottostante). Un grande vantaggio del trading di opzioni è che non stai acquistando\n"
+msgstr "La prima cosa da fare è scegliere l'asset che desideri negoziare, come ad esempio l'oro o il petrolio, azioni o tassi FX (il valore di un'opzione binaria deriva dal prezzo dell'asset sottostante). Un grande vantaggio del trading di opzioni è che non stai acquistando\n"
 "             o vendendo l'asset reale."
 
 msgid "Choose the payment method you'd like to use."
@@ -1765,6 +1774,9 @@ msgid "Click on the <strong>Show advanced settings</strong>."
 msgstr ""
 
 msgid "Click on the <strong>X</strong> button at the top right to save and close."
+msgstr ""
+
+msgid "Click on the link to connect to the video call."
 msgstr ""
 
 msgid "Client Money"
@@ -2376,6 +2388,12 @@ msgstr "Scopri i nostri Indici di volatilità."
 msgid "Discovering an easy, low-risk, flexible and, award-winning platform?"
 msgstr "Alla scoperta di una piattaforma pluripremiata facile da usare, a basso rischio e flessibile?"
 
+msgid "Display your proof of address when prompted."
+msgstr ""
+
+msgid "Display your proof of identity when prompted."
+msgstr ""
+
 msgid "Distribution of dividends will be announced on the Binary.com website."
 msgstr ""
 
@@ -2642,6 +2660,9 @@ msgstr "Garantire la conformità agli standard qualitativi alla base dei contenu
 
 msgid "Ensure that any historical trading records and performance figures presented to your referrals related to trading on the website %1 are accurate and not misleading."
 msgstr "Assicurati che tutti i registri storici del trading e i dati delle performance presentati alle persone che inviti, in merito al trading sul sito internet %1, siano precisi e non ingannevoli."
+
+msgid "Ensure that your original documents are ready when the video call starts"
+msgstr ""
 
 msgid "Ensuring that the Binary Group of companies are in full compliance with the legal and regulatory regimes to which they are subject."
 msgstr "Garantire che le società del Gruppo Binary siano in totale conformità con i regimi legali e regolamentari cui sono soggetti."
@@ -3147,6 +3168,9 @@ msgstr "Generalmente comunicheremo con te tramite questo sito internet o tramite
 msgid "Generate periodic and special reports summarizing client trading trends"
 msgstr "Generare report periodici e speciali per sintetizzare i trend di trading dei clienti"
 
+msgid "Generated verification code:"
+msgstr ""
+
 msgid "Generous Commission Structure"
 msgstr "Sistema vantaggioso di provvigioni"
 
@@ -3221,9 +3245,6 @@ msgstr "Scegli il leader"
 
 msgid "Goes Outside"
 msgstr "Esce fuori"
-
-msgid "Got questions? %1Contact us%2 for help."
-msgstr ""
 
 msgid "Governing Laws and Jurisdiction"
 msgstr "Legge applicabile e Giurisdizione"
@@ -3680,6 +3701,9 @@ msgstr "Se il tuo reclamo si riferisce al risultato di una Transazione e rimane 
 
 msgid "If your complaint relates to an outcome of a trade or a transaction and remains unresolved, it will turn into a dispute. Should you be unsatisfied with our response, you can choose to escalate your complaint to the regulator or to an alternative dispute resolution entity."
 msgstr "Se il tuo reclamo si riferisce al risultato di un trade o di una transazione e rimane irrisolto, porterà a una controversia. Nel caso in cui non dovessi essere soddisfatto della nostra risposta, puoi scegliere di inoltrare il reclamo all'ente regolatore o a un organo alternativo per la risoluzione delle controversie."
+
+msgid "If your documents cannot be verified over video call for any reason, you will be required to send your documents to %1"
+msgstr ""
 
 msgid "If your margin level is still under the stop out level, we will close an open position with the largest loss."
 msgstr ""
@@ -4510,9 +4534,6 @@ msgid "Kick back with beautiful beaches, islands, and mountains just a short fli
 msgstr ""
 
 msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
-msgstr ""
-
-msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
 msgstr ""
 
 msgid "Know how much you will win or lose before you purchase the contract"
@@ -5475,6 +5496,9 @@ msgstr "La nostra società continua a crescere e ottiene un'autorizzazione nel'I
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgstr "I nostri costi e oneri sui depositi e sui prelievi di fondi sono indicati <a href=\"%1\">qui</a>. Prendi nota di tutti i costi e oneri che verranno applicati poiché influiranno sulla tua redditività."
 
+msgid "Our customer support agent will provide you with a unique link to connect to the video call."
+msgstr ""
+
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "È evidente che i nostri clienti ci apprezzino. A metà del 2014, %1 contava uno storico di oltre 100 milioni di transazioni e oltre 130.000 nuove operazioni ogni giorno."
 
@@ -5859,6 +5883,9 @@ msgstr ""
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr ""
 
+msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
+msgstr ""
+
 msgid "Poland"
 msgstr "Polonia"
 
@@ -6053,6 +6080,9 @@ msgstr "La comprovata conoscenza degli standard di revisione, procedure, leggi, 
 
 msgid "Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration."
 msgstr "Fornire assistenza amministrativa in aree connesse alla gestione dei venditori, pianificazione degli eventi, contabilità e amministrazione delle risorse umane."
+
+msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
+msgstr ""
 
 msgid "Public and corporation bond"
 msgstr "Public and corporation bond"
@@ -6538,6 +6568,9 @@ msgid "Sell time"
 msgstr "Orario di vendita"
 
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
+msgstr ""
+
+msgid "Send the following documents to %1:"
 msgstr ""
 
 msgid "Send us a CV and a covering letter that describes your career interests."
@@ -8277,6 +8310,9 @@ msgstr "Versione 4. Ultima modifica 30-12-2016."
 msgid "Version 43. Last modified 2016-11-09."
 msgstr ""
 
+msgid "Video Room Facility"
+msgstr ""
+
 msgid "View"
 msgstr "Mostra"
 
@@ -9114,6 +9150,9 @@ msgstr ""
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Per poter utilizzare l'API di %1 devi conformarti ai presenti Termini."
 
+msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
+msgstr ""
+
 msgid "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 msgstr "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 
@@ -9196,6 +9235,9 @@ msgid "You should read these ST&Cs carefully as well as the Summary Order Execut
 msgstr "Dovresti leggere attentamente i presenti ST&C, così come il Riepilogo sulla politica per l'esecuzione degli ordini e il Riepilogo sulla politica dei conflitti, i Dettagli applicabili del contratto insieme alla Notifica sulla divulgazione dei rischi e qualsiasi altro documento da noi fornito o che ti verrà fornito in futuro."
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
+msgstr ""
+
+msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr ""
 
 msgid "You will be automatically logged out after such time."
@@ -9383,6 +9425,9 @@ msgstr ""
 
 msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "La violazione da parte tua di qualsiasi legge, regola o regolamento applicabile;"
+
+msgid "Your webcam and microphone must be in good working condition"
+msgstr ""
 
 msgid "Your website request.url (if you have one)"
 msgstr "L'URL della richiesta del tuo sito internet (se ne hai uno)"
@@ -9584,6 +9629,9 @@ msgstr "la piattaforma è facile da utilizzare e accessibile per i trader di qua
 
 msgid "the specific instructions that we receive from you;"
 msgstr "le specifiche istruzioni da te fornite;"
+
+msgid "to set up the video call."
+msgstr ""
 
 msgid "today"
 msgstr "oggi"

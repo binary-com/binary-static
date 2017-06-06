@@ -86,10 +86,11 @@
         <h3 class="center-text gr-padding-10">[% header %]</h3>
         <p>[% description %]</p>
         <div class="gr-row gr-row-align-center">
-            <div class="gr-4">
+            <div class="gr-4 gr-12-m">
                 <img class="responsive" src="[% request.url_for('images/pages/trade-explanation/ja/' _ image_1 _ '.svg') %]">
             </div>
-            <div class="gr-4">
+            <div class="gr-12-m gr-padding-10"></div>
+            <div class="gr-4 gr-12-m">
                 <img class="responsive" src="[% request.url_for('images/pages/trade-explanation/ja/' _ image_2 _ '.svg') %]">
             </div>
         </div>
