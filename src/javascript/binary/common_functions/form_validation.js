@@ -43,7 +43,7 @@ const Validation = (() => {
                             let $label = $parent.parent().find('label');
                             if (!$label.length) $label = $parent.find('label');
                             if ($label.length && $label.find('span.required_field_asterisk').length === 0) {
-                                $label.append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
+                                $($label[0]).append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
                                 if ($form.find('.required_field_asterisk.no-margin').length === 0) {
                                     $btn_submit.parent().append($('<p/>', { class: 'hint' })
                                         .append($('<span/>', { class: 'required_field_asterisk no-margin', text: '*' })).append($('<span/>', { text: ` ${localize('Indicates required field')}` })));
