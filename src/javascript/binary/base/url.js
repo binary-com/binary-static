@@ -1,5 +1,6 @@
 const urlLang  = require('./language').urlLang;
 const jpClient = require('../common_functions/country_base').jpClient;
+require('url-polyfill');
 
 const Url = (() => {
     'use strict';
