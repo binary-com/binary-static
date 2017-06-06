@@ -572,7 +572,7 @@ const commonTrading = (() => {
 
     const reloadPage = () => {
         Defaults.remove('market', 'underlying', 'formname',
-            'date_start', 'expiry_type', 'expiry_date', 'expirt_time', 'duration_units', 'diration_value',
+            'date_start', 'time_start', 'expiry_type', 'expiry_date', 'expirt_time', 'duration_units', 'diration_value',
             'amount', 'amount_type', 'currency', 'prediction');
         location.reload();
     };

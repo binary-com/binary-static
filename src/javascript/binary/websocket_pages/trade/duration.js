@@ -389,6 +389,14 @@ const Durations = (() => {
 
         $date_start_select.val(value);
 
+        $('#time_start_row').setVisibility(value !== 'now');
+        const time_start = document.getElementById('time_start');
+        if (!time_start.value) {
+            const new_time = Defaults.get('time_start') || moment(window.time).add(5, 'minutes').utc().format('HH:mm');
+            time_start.value = new_time;
+            time_start.setAttribute('data-value', new_time);
+        }
+
         let make_price_request = 1;
         const $expiry_time = $('#expiry_time');
         if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {

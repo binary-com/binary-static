@@ -51,10 +51,10 @@ const StartDates = (() => {
 
             start_dates.list.sort(compareStartDate);
 
-            let first;
+            let first,
+                selected;
             start_dates.list.forEach((start_date) => {
                 let a = moment.unix(start_date.open).utc();
-                const b = moment.unix(start_date.close).utc();
 
                 const rounding = 5 * 60 * 1000;
                 const start = moment.utc();
@@ -64,23 +64,19 @@ const StartDates = (() => {
                 }
 
                 a = moment(Math.ceil((+a) / rounding) * rounding).utc();
-
-                while (a.isBefore(b)) {
-                    if (a.unix() - start.unix() > 5 * 60) {
-                        option = document.createElement('option');
-                        option.setAttribute('value', a.utc().unix());
-                        if (typeof first === 'undefined' && !has_now) {
-                            first = a.utc().unix();
-                        }
-                        content = document.createTextNode(a.format('HH:mm ddd').replace(' ', ' GMT, '));
-                        if (option.value === Defaults.get('date_start')) {
-                            option.setAttribute('selected', 'selected');
-                        }
-                        option.appendChild(content);
-                        fragment.appendChild(option);
-                    }
-                    a.add(5, 'minutes');
+                option = document.createElement('option');
+                option.setAttribute('value', a.utc().unix());
+                content = document.createTextNode(a.format('ddd'));
+                const default_start = Defaults.get('date_start');
+                if (option.value >= default_start && !selected) {
+                    selected = true;
+                    option.setAttribute('selected', 'selected');
                 }
+                if (typeof first === 'undefined' && !has_now) {
+                    first = a.utc().unix();
+                }
+                option.appendChild(content);
+                fragment.appendChild(option);
             });
             target.appendChild(fragment);
             Defaults.set('date_start', target.value);

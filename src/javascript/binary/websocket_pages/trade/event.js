@@ -1,8 +1,9 @@
 const moment                     = require('moment');
 const TradingAnalysis            = require('./analysis');
 const Barriers                   = require('./barriers');
-const commonTrading              = require('./common');
 const chartFrameSource           = require('./charts/chart_frame').chartFrameSource;
+const commonTrading              = require('./common');
+const getStartDateNode           = require('./common_independent').getStartDateNode;
 const Defaults                   = require('./defaults');
 const Durations                  = require('./duration');
 const GetTicks                   = require('./get_ticks');
@@ -10,7 +11,6 @@ const Notifications              = require('./notifications');
 const Price                      = require('./price');
 const Process                    = require('./process');
 const Purchase                   = require('./purchase');
-const getStartDateNode           = require('./common_independent').getStartDateNode;
 const Tick                       = require('./tick');
 const BinarySocket               = require('../socket');
 const BinaryPjax                 = require('../../base/binary_pjax');
@@ -204,9 +204,9 @@ const TradingEvents = (() => {
              * attach datepicker and timepicker to end time durations
              * have to use jquery
              */
-            attachTimePicker();
+            attachTimePicker('#expiry_time');
             $('#expiry_time')
-                .on('focus click', attachTimePicker)
+                .on('focus click', () => { attachTimePicker('#expiry_time'); })
                 .on('keypress', (ev) => { onlyNumericOnKeypress(ev, [58]); })
                 .on('change input blur', function() {
                     if (!dateValueChanged(this, 'time')) {
@@ -252,6 +252,21 @@ const TradingEvents = (() => {
                     Price.processPriceRequest();
                 }
             });
+        }
+
+        const time_start_element = document.getElementById('time_start');
+        if (time_start_element) {
+            attachTimePicker('#time_start');
+            $('#time_start')
+                .on('focus click', () => { attachTimePicker('#time_start'); })
+                .on('change input blur', function() {
+                    if (!dateValueChanged(this, 'time')) {
+                        return false;
+                    }
+                    Defaults.set('time_start', time_start_element.value);
+                    Price.processPriceRequest();
+                    return true;
+                });
         }
 
         /*
@@ -420,14 +435,14 @@ const TradingEvents = (() => {
         }
     };
 
-    const attachTimePicker = () => {
+    const attachTimePicker = (selector) => {
         const date_start = document.getElementById('date_start').value;
-        const now = !date_start || date_start === 'now';
-        const current_moment = now ? (window.time ? window.time : moment.utc()) : parseInt(date_start) * 1000;
-        TimePicker.init({
-            selector: '#expiry_time',
-            minTime : current_moment,
-        });
+        const now = date_start === 'now' || moment(date_start * 1000).isSame(moment(), 'day');
+        const initObj = { selector: selector };
+        if (now) {
+            initObj.minTime = window.time ? window.time : moment.utc();
+        }
+        TimePicker.init(initObj);
     };
 
     return {

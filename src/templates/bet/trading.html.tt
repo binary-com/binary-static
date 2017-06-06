@@ -32,6 +32,10 @@
                                 <div class="col form_label" id="start_time_label">[% l("Start time") %]</div>
                                 <div class="big-col">
                                     <select id="date_start"></select>
+                                    <span id="time_start_row" class="invisible">
+                                        <input type="text" id="time_start" autocomplete="off" readonly="readonly" class="small_width_input" />
+                                        <span class="hint">GMT</span>
+                                    </span>
                                 </div>
                             </div>
                             <div class="row" id="expiry_row">
