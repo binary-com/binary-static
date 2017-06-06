@@ -51,13 +51,17 @@ const formatNumber = (num, decimal_points, is_crypto) => {
 const lengthOfDecimalPlaces = num => (num.toString().split('.')[1] || '').length;
 
 const getDecimalPlaces = (currency, amount) => {
-    const is_crypto = isCryptocurrency(currency);
-    const is_jp = jpClient();
     let decimal_places = 2;
-    if (is_crypto) {
-        decimal_places = Math.min(lengthOfDecimalPlaces(parseFloat(amount)) || 0, 8);
-    } else if (is_jp) {
-        decimal_places = 0;
+    if (typeof currency === 'string') {
+        const is_crypto = isCryptocurrency(currency);
+        const is_jp = jpClient();
+        if (is_crypto) {
+            decimal_places = Math.min(lengthOfDecimalPlaces(parseFloat(amount)) || 0, 8);
+        } else if (is_jp) {
+            decimal_places = 0;
+        }
+    } else {
+        decimal_places = lengthOfDecimalPlaces(parseFloat(amount));
     }
     return decimal_places;
 };
@@ -81,7 +85,6 @@ const isCryptocurrency = currency => (
 module.exports = {
     formatMoney     : formatMoney,
     formatCurrency  : currency => map_currency[currency],
-    formatNumber    : formatNumber,
     getDecimalPlaces: getDecimalPlaces,
     isCryptocurrency: isCryptocurrency,
 };

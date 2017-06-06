@@ -28,6 +28,7 @@ const Validation = (() => {
                 forms[form_selector].fields = fields;
                 const $btn_submit = $form.find('button[type="submit"]');
 
+                let has_required = false;
                 fields.forEach((field) => {
                     field.$ = $form.find(field.selector);
                     if (!field.$.length || !field.validations) return;
@@ -44,10 +45,7 @@ const Validation = (() => {
                             if (!$label.length) $label = $parent.find('label');
                             if ($label.length && $label.find('span.required_field_asterisk').length === 0) {
                                 $($label[0]).append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
-                                if ($form.find('.required_field_asterisk.no-margin').length === 0) {
-                                    $btn_submit.parent().append($('<p/>', { class: 'hint' })
-                                        .append($('<span/>', { class: 'required_field_asterisk no-margin', text: '*' })).append($('<span/>', { text: ` ${localize('Indicates required field')}` })));
-                                }
+                                has_required = true;
                             }
                         }
                         if ($parent.find(`div.${error_class}`).length === 0) {
@@ -68,6 +66,10 @@ const Validation = (() => {
                         });
                     }
                 });
+                if (has_required && $form.find('.required_field_asterisk.no-margin').length === 0) {
+                    $btn_submit.parent().append($('<p/>', { class: 'hint' })
+                        .append($('<span/>', { class: 'required_field_asterisk no-margin', text: '*' })).append($('<span/>', { text: ` ${localize('Indicates required field')}` })));
+                }
             }
         }
     };

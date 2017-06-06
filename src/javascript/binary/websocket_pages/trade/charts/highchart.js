@@ -9,7 +9,7 @@ const ViewPopupUI  = require('../../user/view_popup/view_popup.ui');
 const localize     = require('../../../base/localize').localize;
 const State        = require('../../../base/storage').State;
 const jpClient     = require('../../../common_functions/country_base').jpClient;
-const formatNumber = require('../../../common_functions/currency_to_symbol').formatNumber;
+const formatMoney  = require('../../../common_functions/currency_to_symbol').formatMoney;
 require('highcharts/modules/exporting')(Highcharts);
 
 const Highchart = (() => {
@@ -348,10 +348,10 @@ const Highchart = (() => {
             const high_barrier = contract.high_barrier;
             const low_barrier  = contract.low_barrier;
             if (barrier) {
-                addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [formatNumber(barrier)]),           dashStyle: 'Dot' }, 'y');
+                addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [formatMoney(1, barrier, 1)]),           dashStyle: 'Dot' }, 'y');
             } else if (high_barrier && low_barrier) {
-                addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize('High Barrier ([_1])', [formatNumber(high_barrier)]), dashStyle: 'Dot' }, 'y');
-                addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize('Low Barrier ([_1])', [formatNumber(low_barrier)]),   dashStyle: 'Dot' }, 'y');
+                addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize('High Barrier ([_1])', [formatMoney(1, high_barrier, 1)]), dashStyle: 'Dot' }, 'y');
+                addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize('Low Barrier ([_1])', [formatMoney(1, low_barrier, 1)]),   dashStyle: 'Dot' }, 'y');
             }
         }
     };

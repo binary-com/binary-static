@@ -9,7 +9,6 @@ const localize             = require('../../../base/localize').localize;
 const State                = require('../../../base/storage').State;
 const isEmptyObject        = require('../../../base/utility').isEmptyObject;
 const formatMoney          = require('../../../common_functions/currency_to_symbol').formatMoney;
-const formatNumber         = require('../../../common_functions/currency_to_symbol').formatNumber;
 
 const ViewPopup = (() => {
     'use strict';
@@ -105,13 +104,13 @@ const ViewPopup = (() => {
                              contract.bid_price : null;
 
         if (contract.barrier_count > 1) {
-            containerSetText('trade_details_barrier',     formatNumber(contract.high_barrier), '', true);
-            containerSetText('trade_details_barrier_low', formatNumber(contract.low_barrier), '', true);
+            containerSetText('trade_details_barrier',     formatMoney(1, contract.high_barrier, 1), '', true);
+            containerSetText('trade_details_barrier_low', formatMoney(1, contract.low_barrier, 1), '', true);
         } else if (contract.barrier) {
             containerSetText('trade_details_barrier',     contract.entry_tick_time ?
-                (contract.contract_type === 'DIGITMATCH' ? `${localize('Equals')} ${formatNumber(contract.barrier)}` :
-                    contract.contract_type === 'DIGITDIFF' ? `${localize('Not')} ${formatNumber(contract.barrier)}` :
-                    formatNumber(contract.barrier)) : '-',
+                (contract.contract_type === 'DIGITMATCH' ? `${localize('Equals')} ${formatMoney(1, contract.barrier, 1)}` :
+                    contract.contract_type === 'DIGITDIFF' ? `${localize('Not')} ${formatMoney(1, contract.barrier, 1)}` :
+                    formatMoney(1, contract.barrier, 1)) : '-',
                 '', true);
         }
 
@@ -150,7 +149,7 @@ const ViewPopup = (() => {
             containerSetText('trade_details_message', localize('Contract is not started yet'));
         } else {
             if (contract.entry_spot > 0) {
-                containerSetText('trade_details_entry_spot', formatNumber(contract.entry_spot));
+                containerSetText('trade_details_entry_spot', formatMoney(1, contract.entry_spot, 1));
             }
             containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
