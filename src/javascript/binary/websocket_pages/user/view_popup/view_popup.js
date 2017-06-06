@@ -9,6 +9,7 @@ const localize             = require('../../../base/localize').localize;
 const State                = require('../../../base/storage').State;
 const isEmptyObject        = require('../../../base/utility').isEmptyObject;
 const formatMoney          = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatNumber         = require('../../../common_functions/currency_to_symbol').formatNumber;
 
 const ViewPopup = (() => {
     'use strict';
@@ -104,13 +105,13 @@ const ViewPopup = (() => {
                              contract.bid_price : null;
 
         if (contract.barrier_count > 1) {
-            containerSetText('trade_details_barrier',     contract.high_barrier, '', true);
-            containerSetText('trade_details_barrier_low', contract.low_barrier, '', true);
+            containerSetText('trade_details_barrier',     formatNumber(contract.high_barrier), '', true);
+            containerSetText('trade_details_barrier_low', formatNumber(contract.low_barrier), '', true);
         } else if (contract.barrier) {
             containerSetText('trade_details_barrier',     contract.entry_tick_time ?
-                (contract.contract_type === 'DIGITMATCH' ? `${localize('Equals')} ${contract.barrier}` :
-                    contract.contract_type === 'DIGITDIFF' ? `${localize('Not')} ${contract.barrier}` :
-                    contract.barrier) : '-',
+                (contract.contract_type === 'DIGITMATCH' ? `${localize('Equals')} ${formatNumber(contract.barrier)}` :
+                    contract.contract_type === 'DIGITDIFF' ? `${localize('Not')} ${formatNumber(contract.barrier)}` :
+                    formatNumber(contract.barrier)) : '-',
                 '', true);
         }
 
@@ -149,7 +150,7 @@ const ViewPopup = (() => {
             containerSetText('trade_details_message', localize('Contract is not started yet'));
         } else {
             if (contract.entry_spot > 0) {
-                containerSetText('trade_details_entry_spot', contract.entry_spot);
+                containerSetText('trade_details_entry_spot', formatNumber(contract.entry_spot));
             }
             containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
@@ -342,12 +343,16 @@ const ViewPopup = (() => {
         if (show) {
             if (is_exist) return;
 
-            $container.find('#contract_sell_wrapper').setVisibility(1)
+            const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
+            const $sell_wrapper = $container.find('#contract_sell_wrapper');
+            $sell_wrapper.setVisibility(1)
                 .append($('<div/>', { id: sell_wrapper_id })
-                    .append($('<button/>', { id: sell_button_id, class: 'button', text: localize('Sell at market') }))
-                    .append($('<div/>', { class: 'note' })
-                        .append($('<strong/>', { text: `${localize('Note')}: ` }))
-                        .append($('<span/>', { text: localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.') }))));
+                    .append($('<button/>', { id: sell_button_id, class: 'button', text: localize(is_started ? 'Sell at market' : 'Sell') })));
+            if (is_started) {
+                $sell_wrapper.find(`#${sell_wrapper_id}`).append($('<div/>', { class: 'note' })
+                    .append($('<strong/>', { text: `${localize('Note')}: ` }))
+                    .append($('<span/>', { text: localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.') })));
+            }
 
             $container.find(`#${sell_button_id}`).unbind('click').click((e) => {
                 e.preventDefault();

@@ -22,7 +22,7 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
                 sign = '-';
             }
         }
-        updated_amount = addComma(updated_amount, decimal_places);
+        updated_amount = formatNumber(updated_amount, decimal_places, is_crypto);
         if (exclude_currency) {
             money = updated_amount;
         } else {
@@ -33,8 +33,12 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
     return money;
 };
 
-const addComma = (num, decimal_points, is_crypto) => {
-    let number = (String(num || 0).replace(/,/g, '') * 1).toFixed(decimal_points || 2);
+const formatNumber = (num, decimal_points, is_crypto) => {
+    let number = (String(num || 0).replace(/,/g, '') * 1);
+    decimal_points = decimal_points || (lengthOfDecimalPlaces(num));
+    if (decimal_points) {
+        number = number.toFixed(decimal_points);
+    }
     if (is_crypto) {
         number = parseFloat(number);
     }
@@ -44,12 +48,14 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
+const lengthOfDecimalPlaces = num => (num.toString().split('.')[1] || '').length;
+
 const getDecimalPlaces = (currency, amount) => {
     const is_crypto = isCryptocurrency(currency);
     const is_jp = jpClient();
     let decimal_places = 2;
     if (is_crypto) {
-        decimal_places = Math.min((parseFloat(amount).toString().split('.')[1] || '').length || 0, 8);
+        decimal_places = Math.min(lengthOfDecimalPlaces(parseFloat(amount)) || 0, 8);
     } else if (is_jp) {
         decimal_places = 0;
     }
@@ -75,6 +81,7 @@ const isCryptocurrency = currency => (
 module.exports = {
     formatMoney     : formatMoney,
     formatCurrency  : currency => map_currency[currency],
-    isCryptocurrency: isCryptocurrency,
+    formatNumber    : formatNumber,
     getDecimalPlaces: getDecimalPlaces,
+    isCryptocurrency: isCryptocurrency,
 };
