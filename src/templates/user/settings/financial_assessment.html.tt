@@ -9,7 +9,7 @@
         <p>[% l('Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5.') %]</p>
         <div id="msg_authenticate" class="invisible">
             <div><strong>[% l('Important') %]</strong></div>
-            [% PROCESS global/authenticate_message.html.tt %]
+            [% INCLUDE global/authenticate_message_financial.html.tt %]
         </div>
         <div class="center-text">
             <a class="button" href="[% request.url_for('user/metatrader') %]"><span>[% l('MetaTrader account management') %]</span></a>

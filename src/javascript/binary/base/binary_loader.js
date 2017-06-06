@@ -16,6 +16,11 @@ const BinaryLoader = (() => {
         active_script = null;
 
     const init = () => {
+        if (!/\.html$/i.test(window.location.pathname)) {
+            window.location.pathname += '.html';
+            return;
+        }
+
         Client.init();
         BinarySocket.init(BinarySocketGeneral.initOptions());
 

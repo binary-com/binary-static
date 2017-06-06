@@ -44,7 +44,10 @@
 <div class="gr-padding-10 client_virtual invisible"></div>
 
 <div class="gr-padding-10 table-body">
-    <h3 class="gr-padding-10">[% l('Bank-wire, credit card, e-cash wallet') %]</h3>
+    <h3 class="gr-padding-10">
+        <span class="invisible normal_currency">[% l('Bank-wire, credit card, e-cash wallet') %]</span>
+        <span class="invisible crypto_currency">[% l('Cryptocurrency') %]</span>
+    </h3>
     <div class="gr-row">
         <div class="gr-2 gr-4-m">
             <a class="ja-hide" href="[% request.url_for('/cashier/forwardws#deposit') %]" id="payment_methods">
@@ -55,8 +58,9 @@
             </a>
         </div>
         <div class="gr-5 gr-12-m">
-            <span>[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</span>
-            <a class="ja-hide" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
+            <span class="invisible normal_currency">[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</span>
+            <span class="invisible crypto_currency">[% l('Deposit or withdraw to your account via bitcoin.') %]</span>
+            <a class="ja-hide invisible normal_currency" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
                 <p>[% l('View available payment methods') %]</p>
             </a>
         </div>
