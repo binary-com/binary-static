@@ -4,6 +4,7 @@ const Tick               = require('./tick');
 const TickDisplay        = require('./tick_trade');
 const updateValues       = require('./update_values');
 const localize           = require('../../base/localize').localize;
+const urlFor             = require('../../base/url').urlFor;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
 const isVisible          = require('../../common_functions/common_functions').isVisible;
@@ -48,7 +49,11 @@ const Purchase = (() => {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            elementInnerHtml(confirmation_error, error.message);
+            let message = error.message;
+            if (error.code === 'FinancialBinariesRestrictedCountry') {
+                message = `${error.message}. ${localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/volidx-markets')}" >`, '</a>'])}`;
+            }
+            elementInnerHtml(confirmation_error, message);
         } else {
             const guide_btn = document.getElementById('guideBtn');
             if (guide_btn) {
