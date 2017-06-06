@@ -19,7 +19,8 @@ const ViewPopup = (() => {
         is_sell_clicked,
         chart_started,
         chart_init,
-        chart_updated;
+        chart_updated,
+        sell_text_updated;
     let $container,
         $loading,
         btn_view;
@@ -37,6 +38,7 @@ const ViewPopup = (() => {
         chart_started          = false;
         chart_init             = false;
         chart_updated          = false;
+        sell_text_updated      = false;
         $container             = '';
 
         if (btn_view) {
@@ -340,17 +342,21 @@ const ViewPopup = (() => {
         const sell_button_id = 'sell_at_market';
         const is_exist = $container.find(`#${sell_wrapper_id}`).length > 0;
         if (show) {
-            if (is_exist) return;
-
             const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
             const $sell_wrapper = $container.find('#contract_sell_wrapper');
+            if (is_exist) {
+                if (!sell_text_updated && is_started) {
+                    addSellNote($sell_wrapper);
+                    $sell_wrapper.find(`#${sell_button_id}`).text(localize('Sell at market'));
+                }
+                return;
+            }
+
             $sell_wrapper.setVisibility(1)
                 .append($('<div/>', { id: sell_wrapper_id })
                     .append($('<button/>', { id: sell_button_id, class: 'button', text: localize(is_started ? 'Sell at market' : 'Sell') })));
             if (is_started) {
-                $sell_wrapper.find(`#${sell_wrapper_id}`).append($('<div/>', { class: 'note' })
-                    .append($('<strong/>', { text: `${localize('Note')}: ` }))
-                    .append($('<span/>', { text: localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.') })));
+                addSellNote($sell_wrapper);
             }
 
             $container.find(`#${sell_button_id}`).unbind('click').click((e) => {
@@ -367,6 +373,13 @@ const ViewPopup = (() => {
             $container.find(`#${sell_button_id}`).unbind('click');
             $container.find(`#${sell_wrapper_id}`).remove();
         }
+    };
+
+    const addSellNote = ($sell_wrapper) => {
+        sell_text_updated = true;
+        $sell_wrapper.find('#sell_at_market_wrapper').append($('<div/>', { class: 'note' })
+            .append($('<strong/>', { text: `${localize('Note')}: ` }))
+            .append($('<span/>', { text: localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.') })));
     };
 
     // ===== Requests & Responses =====
