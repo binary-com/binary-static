@@ -455,6 +455,7 @@ sub _texts {
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('[_1] and [_2] cannot be the same.');
         push @texts, localize('You should enter [_1] characters.');
+        push @texts, localize('Indicates required field');
 
         # strings for metatrader
         push @texts, localize('Congratulations! Your [_1] Account has been created.');

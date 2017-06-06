@@ -26,6 +26,7 @@ const Validation = (() => {
             forms[form_selector] = { $form: $form };
             if (Array.isArray(fields) && fields.length) {
                 forms[form_selector].fields = fields;
+                const $btn_submit = $form.find('button[type="submit"]');
 
                 fields.forEach((field) => {
                     field.$ = $form.find(field.selector);
@@ -41,8 +42,12 @@ const Validation = (() => {
                         if (/req/.test(field.validations)) {
                             let $label = $parent.parent().find('label');
                             if (!$label.length) $label = $parent.find('label');
-                            if ($label.find('span.required_field_asterisk').length === 0) {
+                            if ($label.length && $label.find('span.required_field_asterisk').length === 0) {
                                 $label.append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
+                                if ($form.find('.required_field_asterisk.no-margin').length === 0) {
+                                    $btn_submit.parent().append($('<p/>', { class: 'hint' })
+                                        .append($('<span/>', { class: 'required_field_asterisk no-margin', text: '*' })).append($('<span/>', { text: ` ${localize('Indicates required field')}` })));
+                                }
                             }
                         }
                         if ($parent.find(`div.${error_class}`).length === 0) {

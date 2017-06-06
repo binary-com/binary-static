@@ -146,6 +146,11 @@ label {
     margin: -3px 3px;
     font-size: $FONT_SIZE_S;
     color: $COLOR_RED;
+
+    &.no-margin {
+        position: relative;
+        margin: 0;
+    }
 }
 
 .inpage_popup_container {
