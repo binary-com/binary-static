@@ -247,6 +247,7 @@ const TradingEvents = (() => {
         if (date_start_element) {
             date_start_element.addEventListener('change', (e) => {
                 Defaults.set('date_start', e.target.value);
+                checkValidTime();
                 const r = Durations.onStartDateChange(e.target.value);
                 if (r >= 0) {
                     Price.processPriceRequest();
@@ -433,6 +434,21 @@ const TradingEvents = (() => {
                 BinaryPjax.load(e.target.getAttribute('target'));
             }));
         }
+
+        const checkValidTime = () => {
+            const time = time_start_element.value.split(':');
+            if (time.length) {
+                const hour = Number(time[0]);
+                const minute = Number(time[1]);
+                const current_moment = moment.utc();
+                const date_time = moment.utc(Number(date_start_element.value) * 1000).hour(hour).minute(minute);
+                if (date_time.isSame(current_moment, 'day') &&
+                    (hour < current_moment.hour() ||
+                    (hour === current_moment.hour() && minute < current_moment.minute()))) {
+                    time_start_element.value = moment(window.time).add(6, 'minutes').utc().format('HH:mm');
+                }
+            }
+        };
     };
 
     const attachTimePicker = (selector) => {
