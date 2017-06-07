@@ -67,7 +67,7 @@ const StartDates = (() => {
                 option = document.createElement('option');
                 option.setAttribute('value', a.utc().unix());
                 content = document.createTextNode(a.format('ddd'));
-                const default_start = Defaults.get('date_start');
+                const default_start = Defaults.get('date_start') || 'now';
                 if (option.value >= default_start && !selected) {
                     selected = true;
                     option.setAttribute('selected', 'selected');

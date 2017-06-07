@@ -193,7 +193,7 @@ sub _texts {
         #strings for home and virtual account opening page
         push @texts, localize('verification token');
         push @texts, localize('email address');
-        push @texts, localize('Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.');
+        push @texts, localize('Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.');
         push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');
@@ -224,7 +224,7 @@ sub _texts {
         push @texts, localize('Invalid amount, maximum is');
         push @texts, localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.');
         push @texts, localize('Only [_1] decimal points are allowed.');
-        push @texts, localize('Your token has expired. Please click [_1]here[_2] to restart the verification process.');
+        push @texts, localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.');
         #strings for api_token page
         push @texts, localize('New token created.');
         push @texts, localize('The maximum number of tokens ([_1]) has been reached.');
