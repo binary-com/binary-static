@@ -1,7 +1,7 @@
 const jpClient    = require('./country_base').jpClient;
 const getLanguage = require('../base/language').get;
 
-const cryptocurrencies = ['BTC'];
+const cryptocurrencies = ['BTC', 'LTH', 'ETH'];
 
 const formatMoney = (currency_value, amount, exclude_currency) => {
     const is_crypto = isCryptocurrency(currency_value);

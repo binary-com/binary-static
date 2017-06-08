@@ -61,7 +61,7 @@ const SubAccOpening = (() => {
             // else show all
             currencies_to_show =
                 has_fiat_sub || (!is_crypto && client_currency) ?
-                    cryptocurrencies : currencies.concat(cryptocurrencies);
+                    cryptocurrencies : currencies;
             // remove client's currency and sub account currencies from list of currencies to show
             currencies_to_show = currencies_to_show.filter(c => sub_currencies.concat(client_currency).indexOf(c) < 0);
         }
