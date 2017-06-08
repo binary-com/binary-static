@@ -71,7 +71,7 @@ const SubAccOpening = (() => {
 
     const handleNewAccount = (response) => {
         const new_account = response.new_sub_account;
-        BinarySocket.send({ authorize: new_account.oauth_token }).then((response_authorize) => {
+        BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_authorize) => {
             if (response_authorize.error) {
                 showError(response_authorize.error.message);
             } else {
