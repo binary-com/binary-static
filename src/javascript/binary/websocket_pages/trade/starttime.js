@@ -50,6 +50,9 @@ const StartDates = (() => {
             }
 
             start_dates.list.sort(compareStartDate);
+            const default_start = Defaults.get('date_start') || 'now';
+
+            $('#time_start_row').setVisibility(default_start !== 'now');
 
             let first,
                 selected;
@@ -67,7 +70,6 @@ const StartDates = (() => {
                 option = document.createElement('option');
                 option.setAttribute('value', a.utc().unix());
                 content = document.createTextNode(a.format('ddd'));
-                const default_start = Defaults.get('date_start') || 'now';
                 if (option.value >= default_start && !selected) {
                     selected = true;
                     option.setAttribute('selected', 'selected');
