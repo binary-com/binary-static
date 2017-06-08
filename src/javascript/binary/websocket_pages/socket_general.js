@@ -5,6 +5,7 @@ const Clock                = require('../base/clock');
 const GTM                  = require('../base/gtm');
 const Header               = require('../base/header');
 const Login                = require('../base/login');
+const State                = require('../base/storage').State;
 const getPropertyValue     = require('../base/utility').getPropertyValue;
 const jpResidence          = require('../common_functions/country_base').jpResidence;
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
@@ -38,6 +39,9 @@ const BinarySocketGeneral = (() => {
                 BinarySocket.availability(is_available);
                 break;
             case 'authorize':
+                if (State.get('ignoreResponse') === 'authorize') {
+                    return;
+                }
                 if (response.error) {
                     const is_active_tab = sessionStorage.getItem('active_tab') === '1';
                     if (getPropertyValue(response, ['error', 'code']) === 'SelfExclusion' && is_active_tab) {

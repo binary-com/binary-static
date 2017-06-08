@@ -49,7 +49,7 @@ const SubAccOpening = (() => {
         const cryptocurrencies = currencies.filter(c => fiat_currencies.indexOf(c) < 0);
         const sub_currencies   = sub_accounts.length ? sub_accounts.map(a => a.currency) : [];
 
-        const has_fiat_sub = sub_accounts.length ? sub_currencies.some(currency => currency && new RegExp(currency, 'i').test(currencies)) : false;
+        const has_fiat_sub = sub_accounts.length ? sub_currencies.some(currency => currency && new RegExp(currency, 'i').test(fiat_currencies)) : false;
         const available_crypto =
             cryptocurrencies.filter(c => sub_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0);
         const can_open_crypto = available_crypto.length;
@@ -72,6 +72,7 @@ const SubAccOpening = (() => {
 
     const handleNewAccount = (response) => {
         const new_account = response.new_sub_account;
+        State.set('ignoreResponse', 'authorize');
         BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_authorize) => {
             if (response_authorize.error) {
                 showError(response_authorize.error.message);
@@ -84,6 +85,7 @@ const SubAccOpening = (() => {
                     }
                 });
             }
+            State.remove('ignoreResponse');
         });
     };
 
