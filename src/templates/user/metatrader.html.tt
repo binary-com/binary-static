@@ -1,134 +1,184 @@
 [% PROCESS components/forms.html.tt %]
-
-<div id="mt_account_management" class="container">
+<div class="container">
     <div>
         <h1>[% l('MetaTrader account management') %]</h1>
     </div>
     <p id="page_msg" class="notice-msg center-text invisible"></p>
     <div id="mt_loading">[% PROCESS global/loading.html.tt %]</div>
-    <div class="gr-12">
-        <div id="accounts_list" class="gr-row"></div>
-    </div>
-
-    <div class="fst-container">
-        <div id="main_msg" class="notice-msg center-text invisible"></div>
-        [% WRAPPER fieldset legend=' ' id='fst_action' class='invisible' %]
-            <span class="close"></span>
-            <form id="frm_action"></form>
-        [% END %]
-    </div>
-
-    <div id="templates" class="invisible">
-        <div class="acc-box gr-12-m gr-6-p gr-4-t gr-4">
-            <div>
-                <div class="title"></div>
-                <div class="loading">[% PROCESS global/loading.html.tt %]</div>
-                <div class="center-text no-account invisible">
-                    <div class="info"></div>
-                    <span class="button"><span class="act_new_account">[% l('Create Account') %]</span></span>
+    <div id="mt_account_management" class="gr-row fill-bg-color invisible">
+        <div id="mt_left_panel" class="mt-panel gr-3 gr-4-t gr-12-p gr-12-m gr-no-gutter">
+            <div class="top gr-hide-p gr-hide-m">
+                <div style="width: 80px; height: 80px; margin: 0 auto; background: #f2f2f2; border: 1px solid #004385; border-radius: 40px;"></div> <!-- TODO: replace with image -->
+            </div>
+            <div id="account_selector">
+                <h4 id="mt5_account"></h4>
+                <div id="accounts_list">
+                    <div></div>
                 </div>
-                <div class="acc-info has-account gr-row invisible">
-                    <div class="gr-4">[% l('Login ID:') %]</div><div data="login" class="gr-8"></div>
-                    <div class="gr-4">[% l('Name:') %]</div><div data="name" class="gr-7"></div>
-                    <div class="gr-4">[% l('Balance:') %]</div><div data="balance" class="gr-8"></div>
-                    <div class="gr-4">[% l('Leverage:') %]</div><div data="leverage" class="gr-8"></div>
+            </div>
+            <div id="account_detail">
+                <div class="acc-info mt-container has-account invisible">
+                    <div class="gr-row">
+                        <div class="gr-5">[% l('Login ID:') %]</div><div data="login" class="gr-7"></div>
+                        <div class="gr-5">[% l('Name:') %]</div><div data="name" class="gr-7"></div>
+                        <div class="gr-5">[% l('Balance:') %]</div><div data="balance" class="gr-7"></div>
+                        <div class="gr-5 invisible">[% l('Leverage:') %]</div><div data="leverage" class="gr-7 invisible"></div>
+                    </div>
                 </div>
-                <div class="acc-actions has-account center-text invisible">
+                <div class="acc-actions has-account invisible">
+                    <span class="invisible"><a href="javascript:;" class="act_new_account"></a></span>
                     <a href="javascript:;" class="act_deposit">
                         <img src="[% request.url_for('images/pages/metatrader/deposit.svg') %]" alt="" />
-                        [% l('Deposit') %]
+                        <span>[% l('Deposit') %]</span>
                     </a>
                     <a href="javascript:;" class="act_withdrawal">
                         <img src="[% request.url_for('images/pages/metatrader/withdraw.svg') %]" alt="" />
-                        [% l('Withdraw') %]
+                        <span>[% l('Withdraw') %]</span>
                     </a>
                     <a href="javascript:;" class="act_password_change">
                         <img src="[% request.url_for('images/pages/metatrader/password.svg') %]" alt="" />
-                        [% l('Password') %]
+                        <span>[% l('Password') %]</span>
                     </a>
+                </div>
+                <div id="account_desc" class="mt-container"></div>
+            </div>
+        </div>
+        <div id="mt_right_panel" class="mt-panel gr-9 gr-8-t gr-12-p gr-12-m gr-no-gutter">
+            <div class="top mt-container gr-hide-p gr-hide-m">
+                <p id="top_msg" class="notice-msg center-text invisible">[% l('Please <a href="[_1]">upgrade</a> to be able to create real MetaTrader 5 accounts.', request.url_for('new_account/realws')) %]</p>
+            </div>
+            <div class="fst-container mt-container">
+                <div id="fst_action" class="invisible">
+                    <h3></h3>
+                    <div class="separator primary-color"></div>
+                    <p id="main_msg" class="notice-msg center-text invisible"></p>
+                    <fieldset>
+                        <form id="frm_action" class="invisible"></form>
+                    </fieldset>
                 </div>
             </div>
         </div>
 
-        <div id="no_account_info">
-            <div id="demo">[% l('Open a free Demo account.') %]</div>
-            <div id="vanuatu_cent">
-                [% l('The Cent account offers the highest leverage, as well as low margin call and stop out level.') %]
-                <a class="invisible" target="_blank">[% l('Read more') %]</a>
+        <div id="templates" class="invisible">
+            <div class="acc-name">
+                <div class="mt-new invisible">
+                    <img src="[% request.url_for('images/pages/metatrader/signup.svg') %]" />
+                </div>
+                <div class="mt-balance">&nbsp;</div>
+                <div class="mt-type"></div>
+                <div class="mt-login invisible"></div>
             </div>
-            <div id="vanuatu_standard">
-                [% l('The Standard account is suitable for a wide range of traders, both new and experienced.') %]
-                <a class="invisible" target="_blank">[% l('Read more') %]</a>
-            </div>
-            <div id="vanuatu_stp">
-                [% l('The STP account provides you with the tightest spreads and connects you directly to the market.') %]
-                <a class="invisible" target="_blank">[% l('Read more') %]</a>
-            </div>
-            <div id="costarica">
-                [% l('The Volatility account allows you to profit by speculating on the rise or fall of an instrument.') %]
-                <a class="invisible" target="_blank">[% l('Read more') %]</a>
-            </div>
-        </div>
 
-        <form id="frm_new_account">
-            [% INCLUDE form_row type='label'  id='lbl_account_type' label=l("Account type") %]
-            [% INCLUDE form_row type='label'  id='lbl_email'        label=l("Email")        %]
-            [% INCLUDE form_row type='text'   id='txt_name'         label=l("Name")     attributes='maxlength="30" autocomplete="off"' %]
-            [% WRAPPER form_row type='select' id='ddl_leverage'     label=l("Leverage") row_class='invisible' %]
-                <option value="1">1:1</option>
-                <option value="50">1:50</option>
-                <option value="100" selected="selected">1:100</option>
-                <option value="200">1:200</option>
-                <option value="300">1:300</option>
-                <option value="500">1:500</option>
-                <option value="1000">1:1000</option>
+            [% BLOCK account_desc %]
+                <div class="demo_[% account_type %] real_[% account_type %]">
+                    <p>[% description %]</p>
+                    <ul class="checked small no-padding">
+                        [% FOREACH item IN items %]
+                            <li>[% item %]</li>
+                        [% END %]
+                    </ul>
+                    <a class="more" href="#" target="_blank">[% l('Read more') %]</a>
+                </div>
             [% END %]
-            [% INCLUDE form_row type='password' id='txt_main_pass'     label=l("Main password (trading access)")
-                hint=l("Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.") %]
-            [% INCLUDE form_row type='password' id='txt_re_main_pass'  label=l("Verify main password") %]
-            [% INCLUDE form_row type='password' id='txt_investor_pass' label=l("Investor password (read-only access)") %]
-            [% INCLUDE form_row type='checkbox' id='chk_tnc'           label=l('I have read and agree to the <a target="_blank" href="[_1]">terms and conditions</a> of the site.', request.url_for('/terms-and-conditions') _ '#legal-mt') %]
+            <div class="account-desc">
+                [% INCLUDE account_desc account_type='vanuatu_cent'
+                    description=l('Our MetaTrader 5 Cent account is ideal for new traders who want to start trading with a smaller capital.')
+                    items=[
+                            l('Offers the highest leverage – up to 1:1,000'),
+                            l('Fixed spreads'),
+                            l('Instant execution'),
+                            l('No commission'),
+                        ] %]
+                [% INCLUDE account_desc account_type='vanuatu_standard'
+                    description=l('Our MetaTrader 5 Standard account comes with mid-range leverage and variable spreads suitable for a wide range of traders.')
+                    items=[
+                            l('Leverage up to 1:300'),
+                            l('Variable spreads'),
+                            l('Market execution'),
+                            l('No commission'),
+                        ] %]
+                [% INCLUDE account_desc account_type='vanuatu_stp'
+                    description=l('Our MetaTrader 5 STP account provides you with the tightest spreads and connects you directly to the market.')
+                    items=[
+                            l('Leverage up to 1:100'),
+                            l('Variable spreads'),
+                            l('Market execution'),
+                            l('No commission'),
+                        ] %]
+                [% INCLUDE account_desc account_type='costarica'
+                    description=l('The Volatility account allows you to profit by speculating on the rise or fall of an instrument.')
+                    items=[
+                            l('Leverage up to 1:100'),
+                            l('Variable spreads'),
+                            l('Market execution'),
+                            l('No commission'),
+                        ] %]
+            </div>
 
-            [% INCLUDE submit_button text=l("Create Account") type='submit' %]
-        </form>
+            <form id="frm_new_account">
+                [% INCLUDE form_row type='label'  id='lbl_account_type' label=l("Account type") %]
+                [% INCLUDE form_row type='label'  id='lbl_email'        label=l("Email")        %]
+                [% INCLUDE form_row type='text'   id='txt_name'         label=l("Name")     attributes='maxlength="30" autocomplete="off"' %]
+                [% WRAPPER form_row type='select' id='ddl_leverage'     label=l("Leverage") row_class='invisible' %]
+                    <option value="1">1:1</option>
+                    <option value="50">1:50</option>
+                    <option value="100" selected="selected">1:100</option>
+                    <option value="200">1:200</option>
+                    <option value="300">1:300</option>
+                    <option value="500">1:500</option>
+                    <option value="1000">1:1000</option>
+                [% END %]
+                [% INCLUDE form_row type='password' id='txt_main_pass'     label=l("Main password (trading access)")
+                    hint=l("Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.") %]
+                [% INCLUDE form_row type='password' id='txt_re_main_pass'  label=l("Verify main password") %]
+                [% INCLUDE form_row type='password' id='txt_investor_pass' label=l("Investor password (read-only access)") %]
+                [% INCLUDE form_row type='checkbox' id='chk_tnc'           label=l('I have read and agree to the <a target="_blank" href="[_1]">terms and conditions</a> of the site.', request.url_for('/terms-and-conditions') _ '#legal-mt') %]
 
-        <form id="frm_password_change">
-            [% INCLUDE form_row type='label'    id='lbl_login'           label=l("Login ID") %]
-            [% INCLUDE form_row type='password' id='txt_old_password'    label=l("Current password") %]
-            [% INCLUDE form_row type='password' id='txt_new_password'    label=l("New password")
-                hint=l("Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.") %]
-            [% INCLUDE form_row type='password' id='txt_re_new_password' label=l("Verify new password") %]
+                [% INCLUDE submit_button text=l("Create Account") type='submit' %]
+            </form>
 
-            [% INCLUDE submit_button text=l("Change Password") type='submit' %]
-        </form>
+            <form id="frm_password_change">
+                [% INCLUDE form_row type='label'    id='lbl_login'           label=l("Login ID") row_class='invisible' %]
+                [% INCLUDE form_row type='password' id='txt_old_password'    label=l("Current password") %]
+                [% INCLUDE form_row type='password' id='txt_new_password'    label=l("New password")
+                    hint=l("Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.") %]
+                [% INCLUDE form_row type='password' id='txt_re_new_password' label=l("Verify new password") %]
 
-        <form id="frm_deposit">
-            <p>[% l('Transfer funds from [_1] account into your MT5 account:', website_name) %]</p>
-            [% INCLUDE form_row type='label' id='lbl_from'   label=l("Transfer from") %]
-            [% INCLUDE form_row type='label' id='lbl_to'     label=l("Deposit into") %]
-            [% INCLUDE form_row type='text'  id='txt_amount' label=l("Amount") input_prefix='&#36; ' attributes='maxlength="10"' %]
+                [% INCLUDE submit_button text=l("Change Password") type='submit' %]
+            </form>
 
-            [% INCLUDE submit_button text=l("Deposit") type='submit' %]
-        </form>
+            <form id="frm_deposit">
+                <p>[% l('Transfer funds from [_1] account into your MetaTrader 5 account:', website_name) %]</p>
+                [% INCLUDE form_row type='label' id='lbl_from'   label=l("Transfer from") %]
+                [% INCLUDE form_row type='label' id='lbl_to'     label=l("Deposit into") %]
+                [% INCLUDE form_row type='text'  id='txt_amount' label=l("Amount") input_prefix='&#36; ' attributes='maxlength="10"' %]
 
-        <form id="frm_withdrawal">
-            <p>[% l('Transfer funds from your MT5 account into your [_1] account:', website_name) %]</p>
-            [% INCLUDE form_row type='label'    id='lbl_from'      label=l("Withdraw from") %]
-            [% INCLUDE form_row type='label'    id='lbl_to'        label=l("Transfer into") %]
-            [% INCLUDE form_row type='password' id='txt_main_pass' label=l("MT5 main password") %]
-            [% INCLUDE form_row type='text'     id='txt_amount'    label=l("Amount") input_prefix='&#36; ' attributes='maxlength="10"' %]
+                [% INCLUDE submit_button text=l("Deposit") type='submit' %]
 
-            [% INCLUDE submit_button text=l("Withdraw") type='submit' %]
-        </form>
+                <p class="notice-msg">[% l('Want to fund your [_1] Real Account? <a href="[_2]">Go to the Cashier</a>', website_name, request.url_for('cashier')) %]</p>
+            </form>
 
-        <div id="messages">
-            <div id="msg_switch">[% l('To perform this action, please switch to your [_1] Real Account.', website_name) %]</div>
-            <div id="msg_upgrade">[% l('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', request.url_for('new_account/realws'), website_name) %]</div>
-            <div id="msg_assessment">[% l('To create an MT5 Financial Account please complete the <a href="[_1]">Financial Assessment</a>.', request.url_for('user/settings/assessmentws')) %]</div>
-            <div id="msg_authenticate">
-                <div class="align-start">
-                    <p>[% l('To withdraw from MT5 Financial Account please Authenticate your [_1] account.', website_name) %]</p>
-                    [% PROCESS global/authenticate_message.html.tt %]
+            <form id="frm_withdrawal">
+                <p>[% l('Transfer funds from your MetaTrader 5 account into your [_1] account:', website_name) %]</p>
+                [% INCLUDE form_row type='label'    id='lbl_from'      label=l("Withdraw from") %]
+                [% INCLUDE form_row type='label'    id='lbl_to'        label=l("Transfer into") %]
+                [% INCLUDE form_row type='password' id='txt_main_pass' label=l("MetaTrader 5 main password") %]
+                [% INCLUDE form_row type='text'     id='txt_amount'    label=l("Amount") input_prefix='&#36; ' attributes='maxlength="10"' %]
+
+                [% INCLUDE submit_button text=l("Withdraw") type='submit' %]
+
+                <p class="notice-msg">[% l('Want to withdraw funds from your [_1] Real Account? <a href="[_2]">Go to the Cashier</a>', website_name, request.url_for('cashier')) %]</p>
+            </form>
+
+            <div id="messages">
+                <div id="msg_switch">[% l('To perform this action, please switch to your [_1] Real Account.', website_name) %]</div>
+                <div id="msg_upgrade">[% l('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', request.url_for('new_account/realws'), website_name) %]</div>
+                <div id="msg_assessment">[% l('To create an MetaTrader 5 Financial Account please complete the <a href="[_1]">Financial Assessment</a>.', request.url_for('user/settings/assessmentws')) %]</div>
+                <div id="msg_authenticate">
+                    <div class="align-start">
+                        <p>[% l('To withdraw from MetaTrader 5 Financial Account please Authenticate your [_1] account.', website_name) %]</p>
+                        [% PROCESS global/authenticate_message.html.tt %]
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,98 +1,219 @@
 #mt_account_management {
-    #accounts_list .acc-box {
-        padding: 0 10px 0 0;
-        margin-bottom: 10px;
+    padding: 10px !important;
+    margin: 0;
 
-        > div {
-            height: 100%;
-            border: 1px solid $COLOR_GRAY;
-            display: flex;
-            flex-direction: column;
+    .mt-container {
+        padding: 0 20px;
+    }
+    .mt-panel {
+        background: $COLOR_WHITE;
+        padding: 10px 0 20px;
 
-            &:hover, &.active {
-                border-color: $COLOR_DARK_WHITE;
-                background: $COLOR_LIGHT_GRAY;
+        .top {
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        &:nth-child(2) {
+            border-left: 10px solid $COLOR_LIGHT_GRAY;
+        }
+    }
+    #account_selector {
+        position: relative;
+        margin: 5px;
+        cursor: pointer;
+
+        #mt5_account, #accounts_list {
+            border: 1px solid $COLOR_BLUE_SHADE;
+        }
+        #mt5_account {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            margin: 0;
+            overflow: hidden;
+            background: $COLOR_BLUE_SHADE;
+            color: $COLOR_WHITE;
+            border-radius: $BORDER_RADIUS;
+
+            &.open {
+                border-radius: $BORDER_RADIUS $BORDER_RADIUS 0 0;
             }
-            .title {
-                line-height: 40px;
-                text-align: center;
-                background: $COLOR_NAV_BORDER;
-                color: $COLOR_WHITE;
-                margin-bottom: 10px;
+            &:after {
+                content: '';
+                display: block;
+                float: right;
+                margin-top: 17px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid $COLOR_WHITE;
             }
-            .no-account {
-                margin-bottom: 20px;
+        }
+        #accounts_list {
+            width: 100%;
+            padding: 5px 0;
+            border-radius: 0 0 $BORDER_RADIUS $BORDER_RADIUS;
+            border-top: 0;
+            display: none;
+            position: absolute;
+            background: $COLOR_WHITE;
+            z-index: 1;
+            box-sizing: border-box;
+            font-size: $FONT_SIZE_S;
 
-                .info {
-                    padding: 10px;
-                    font-size: $FONT_SIZE_N;
-                    height: 100px;
-                    line-height: 1.5rem;
+            .acc-name {
+                line-height: 30px;
+                padding: 0 20px;
 
-                    a:before {
-                        content: ' ';
-                        display: block;
-                        margin-top: 5px;
+                &:hover {
+                    color: $COLOR_BLUE_SHADE;
+                    background: $COLOR_LIGHT_GRAY;
+                }
+                &.disabled {
+                    color: $COLOR_GRAY_SHADE;
+
+                    .mt-new img {
+                        filter: grayscale(100%);
+                        opacity: 0.2;
                     }
                 }
-            }
-            .loading {
-                margin: 25px 0;
-            }
-            .acc-info div {
-                font-size: $FONT_SIZE_N;
-                padding: 0 0 0 25px;
-                line-height: 1.6em;
-                word-break: break-all;
-            }
-            .acc-actions {
-                margin-top: auto;
-                padding: 10px;
-                border-top: 1px solid $COLOR_GRAY;
-                font-size: $FONT_SIZE_N;
-
-                a {
-                    display: inline-block;
-                    width: 64px;
-                    text-align: center;
-                    margin: 0 10px;
+                .mt-balance {
+                    float: right;
+                    font-size: $FONT_SIZE_XS;
+                }
+                .mt-new {
+                    float: right;
 
                     img {
-                        height: 32px;
-                        margin-bottom: 7px;
+                        width: 14px;
                     }
                 }
+            }
+            .separator {
+                margin: 5px 0;
+            }
+        }
+    }
+    #account_detail {
+        .acc-info {
+            font-size: $FONT_SIZE_S;
+            line-height: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .acc-actions a {
+            margin: 5px;
+            display: block;
+            padding: 20px 30px;
+            background: $COLOR_LIGHT_GRAY;
+
+            &:hover, &.selected {
+                border-right: 5px solid $COLOR_BLUE_SHADE;
+            }
+            img {
+                height: 24px;
+            }
+        }
+        #account_desc {
+            font-size: $FONT_SIZE_S;
+
+            a.more {
+                display: block;
+                margin: 20px 0;
             }
         }
     }
     .fst-container {
-        width: 100%;
-        padding-right: 10px;
-
         #fst_action {
-            border: 1px solid $COLOR_LIGHT_GRAY;
-            margin: 0;
-            padding-bottom: 30px;
             position: relative;
 
-            legend {
-                background: $COLOR_NAV_BORDER;
-                color: $COLOR_WHITE;
-                padding: 8px 10px;
-                margin-left: 15px;
+            h3 {
+                padding-top: 10px;
+                margin-bottom: 5px;
             }
-            .close {
-                cursor: pointer;
-                position: absolute;
-                top: 16px;
-                right: -1px;
-                z-index: 1;
-                width: 32px;
-                height: 32px;
-                background: $COLOR_NAV_BORDER svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="14" height="14"><path fill="#{rgba($COLOR_WHITE, 1)}" d="M50,5,45,0,25,20,5,0,0,5,20,25,0,45l5,5L25,30,45,50l5-5L30,25Z"/></svg>') no-repeat center;
+            .separator, #main_msg {
+                margin-bottom: 20px;
+            }
+            button .barspinner.white {
+                height: 13px;
+                margin: 3px;
+            }
+            fieldset {
+                border: 0;
+                padding: 0;
+            }
+        }
+    }
+    .txt-left {
+        text-align: left;
+    }
+    .separator {
+        height: 2px;
+    }
+    ul.checked.small > li {
+        background-size: 16px;
+        padding-left: 24px;
+    }
+}
 
-                &:hover {
-                    background-color: $COLOR_DARK_BLUE;
+@media (max-width: 1199px) {
+    #mt_account_management {
+        .mt-container {
+            padding: 0 20px;
+        }
+        #accounts_list {
+            font-size: $FONT_SIZE_S;
+
+            .mt-balance {
+                font-size: $FONT_SIZE_XS !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    #mt_account_management .mt-container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    #mt_account_management {
+        margin: 0 -10px;
+
+        .mt-container {
+            padding: 0 10px;
+        }
+        .mt-panel {
+            padding: 0;
+
+            &:nth-child(2) {
+                border-left: none;
+            }
+        }
+        .acc-actions {
+            display: table;
+            border-spacing: 5px;
+
+            > a {
+                display: table-cell !important;
+                width: 1%;
+                text-align: center;
+                padding: 10px !important;
+
+                &.invisible {
+                    display: none !important;
+                }
+                &:hover, &.selected {
+                    border-right: 0 !important;
+                    border-bottom: 5px solid $COLOR_BLUE_SHADE;
+                }
+                img {
+                    height: 36px;
+                    margin-bottom: 5px;
+                }
+                span {
+                    display: block;
                 }
             }
         }
