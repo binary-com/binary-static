@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 /*
  * Display price/spot movement variation to depict price moved up or down
  */
@@ -56,10 +58,37 @@ const processTradingTimesAnswer = (response) => {
 
 const getElement = () => document.getElementById('date_start');
 
+const checkValidTime = (time_start_element, $date_start, time) => {
+    time_start_element = time_start_element || document.getElementById('time_start');
+    $date_start = $date_start || $('#date_start');
+    time = (time_start_element.value || time).split(':');
+    if (time.length) {
+        const hour = +time[0];
+        const minute = +time[1];
+        const date_time = moment.utc(getElement().value * 1000).hour(hour).minute(minute);
+        const min_time = Math.max(getMinMaxTime($date_start).minTime, moment.utc());
+        const max_time = getMinMaxTime($date_start).maxTime;
+        time_start_element.value = date_time.isBefore(min_time) || date_time.isAfter(max_time) ? min_time.add(5, 'minutes').utc().format('HH:mm') : time.join(':');
+        time_start_element.setAttribute('data-value', time_start_element.value);
+    }
+};
+
+const getMinMaxTime = ($setMinMaxSelector, minTime = window.time ? window.time : moment.utc()) => {
+    const $selected_option = $setMinMaxSelector.find('option:selected');
+    minTime = +$selected_option.val() > minTime.unix() ? moment.utc($selected_option.val() * 1000) : minTime;
+    const maxTime = moment.utc($selected_option.attr('data-end') * 1000);
+    return {
+        minTime: minTime,
+        maxTime: maxTime,
+    };
+};
+
 module.exports = {
     displayPriceMovement     : displayPriceMovement,
     countDecimalPlaces       : countDecimalPlaces,
     processTradingTimesAnswer: processTradingTimesAnswer,
     getTradingTimes          : () => trading_times,
     getStartDateNode         : getElement,
+    checkValidTime           : checkValidTime,
+    getMinMaxTime            : getMinMaxTime,
 };

@@ -55,30 +55,44 @@ const StartDates = (() => {
             $('#time_start_row').setVisibility(default_start !== 'now');
 
             let first,
-                selected;
+                selected,
+                day,
+                $duplicated_option,
+                duplicated_length;
             start_dates.list.forEach((start_date) => {
                 let a = moment.unix(start_date.open).utc();
+                const b = moment.unix(start_date.close).utc();
 
                 const rounding = 5 * 60 * 1000;
                 const start = moment.utc();
 
-                if (moment(start).isAfter(moment(a))) {
-                    a = start;
-                }
+                if (b.isAfter(start)) {
+                    if (moment(start).isAfter(moment(a))) {
+                        a = start;
+                    }
 
-                a = moment(Math.ceil((+a) / rounding) * rounding).utc();
-                option = document.createElement('option');
-                option.setAttribute('value', a.utc().unix());
-                content = document.createTextNode(a.format('ddd'));
-                if (option.value >= default_start && !selected) {
-                    selected = true;
-                    option.setAttribute('selected', 'selected');
+                    a = moment(Math.ceil((+a) / rounding) * rounding).utc();
+                    day = a.format('ddd');
+                    $duplicated_option = $(fragment).find(`option:contains(${day})`);
+                    duplicated_length = $duplicated_option.length;
+                    if (duplicated_length && !new RegExp(localize('Session')).test($duplicated_option.text())) {
+                        $($duplicated_option[0]).text(`${$duplicated_option.text()} - ${localize('Session')} ${duplicated_length}`);
+                    }
+
+                    option = document.createElement('option');
+                    option.setAttribute('value', a.utc().unix());
+                    option.setAttribute('data-end', b.unix());
+                    content = document.createTextNode(day + ($duplicated_option.length ? ` - ${localize('Session')} ${duplicated_length + 1}` : ''));
+                    if (option.value >= default_start && !selected) {
+                        selected = true;
+                        option.setAttribute('selected', 'selected');
+                    }
+                    if (typeof first === 'undefined' && !has_now) {
+                        first = a.utc().unix();
+                    }
+                    option.appendChild(content);
+                    fragment.appendChild(option);
                 }
-                if (typeof first === 'undefined' && !has_now) {
-                    first = a.utc().unix();
-                }
-                option.appendChild(content);
-                fragment.appendChild(option);
             });
             target.appendChild(fragment);
             Defaults.set('date_start', target.value);

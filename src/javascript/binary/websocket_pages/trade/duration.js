@@ -391,11 +391,7 @@ const Durations = (() => {
 
         $('#time_start_row').setVisibility(value !== 'now');
         const time_start = document.getElementById('time_start');
-        if (!time_start.value) {
-            const new_time = Defaults.get('time_start') || moment(window.time).add(6, 'minutes').utc().format('HH:mm');
-            time_start.value = new_time;
-            time_start.setAttribute('data-value', new_time);
-        }
+        commonIndependent.checkValidTime(time_start, $date_start_select, Defaults.get('time_start'));
 
         let make_price_request = 1;
         const $expiry_time = $('#expiry_time');
