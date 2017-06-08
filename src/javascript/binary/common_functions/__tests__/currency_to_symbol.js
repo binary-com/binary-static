@@ -15,6 +15,6 @@ describe('formatMoney', () => {
     });
 
     it('works for unexpected currencies', () => {
-        expect(formatMoney('WTV', '123.55')).to.eq('WTV123.55');
+        expect(formatMoney('WTV', '123.55')).to.eq('WTV 123.55');
     });
 });

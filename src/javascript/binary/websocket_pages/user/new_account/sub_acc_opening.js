@@ -45,7 +45,8 @@ const SubAccOpening = (() => {
         const client_currency  = Client.get('currency');
         const currencies       = Client.get('currencies').split(',');
         const is_crypto        = Currency.isCryptocurrency(client_currency);
-        const cryptocurrencies = Currency.getCryptocurrencies();
+        const fiat_currencies  = Currency.getFiatCurrencies();
+        const cryptocurrencies = currencies.filter(c => fiat_currencies.indexOf(c) < 0);
         const sub_currencies   = sub_accounts.length ? sub_accounts.map(a => a.currency) : [];
 
         const has_fiat_sub = sub_accounts.length ? sub_currencies.some(currency => currency && new RegExp(currency, 'i').test(currencies)) : false;
