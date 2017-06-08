@@ -207,10 +207,8 @@ const MetaTraderUI = (() => {
     };
 
     const displayPageError = (message) => {
-        $('#mt_account_management').find('#page_msg').html(message).setVisibility(1)
-            .end()
-            .find('#mt_loading')
-            .remove();
+        $('#page_msg').html(message).setVisibility(1);
+        $('#mt_loading').remove();
     };
 
     const disableButton = () => {
