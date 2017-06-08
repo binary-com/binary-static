@@ -45,7 +45,7 @@
 
 <div class="gr-padding-10 table-body">
     <h3 class="gr-padding-10">
-        <span class="invisible normal_currency">[% l('Bank-wire, credit card, e-cash wallet') %]</span>
+        <span class="invisible normal_currency client_logged_out">[% l('Bank-wire, credit card, e-cash wallet') %]</span>
         <span class="invisible crypto_currency">[% l('Cryptocurrency') %]</span>
     </h3>
     <div class="gr-row">
@@ -58,9 +58,9 @@
             </a>
         </div>
         <div class="gr-5 gr-12-m">
-            <span class="invisible normal_currency">[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</span>
+            <span class="invisible normal_currency client_logged_out">[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</span>
             <span class="invisible crypto_currency">[% l('Deposit or withdraw to your account via bitcoin.') %]</span>
-            <a class="ja-hide invisible normal_currency" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
+            <a class="ja-hide invisible normal_currency client_logged_out" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
                 <p>[% l('View available payment methods') %]</p>
             </a>
         </div>
