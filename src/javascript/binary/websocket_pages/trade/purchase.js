@@ -50,8 +50,11 @@ const Purchase = (() => {
             message_container.hide();
             confirmation_error.show();
             let message = error.message;
-            if (error.code === 'FinancialBinariesRestrictedCountry') {
-                message = `${error.message}. ${localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/volidx-markets')}" >`, '</a>'])}`;
+            if (/RestrictedCountry/.test(error.code)) {
+                const additional_message = /FinancialBinaries/.test(error.code) ?
+                    localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/volidx-markets')}" >`, '</a>']) :
+                    (/Random/.test(error.code) ? localize('Try our other markets.') : '');
+                message = `${error.message}. ${additional_message}`;
             }
             elementInnerHtml(confirmation_error, message);
         } else {

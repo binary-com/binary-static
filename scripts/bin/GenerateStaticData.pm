@@ -164,6 +164,7 @@ sub _texts {
         push @texts, localize('All markets are closed now. Please try again later.');
         push @texts, localize('Account balance:');
         push @texts, localize('Try our [_1]Volatility Indices[_2].');
+        push @texts, localize('Try our other markets.');
         #strings for limits page
         push @texts, localize('Your account is fully authenticated and your withdrawal limits have been lifted.');
         push @texts, localize('Your withdrawal limit is [_1] [_2].');
