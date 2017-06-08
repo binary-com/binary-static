@@ -400,7 +400,7 @@ const Durations = (() => {
             const end_time = moment(parseInt(value) * 1000).add(5, 'minutes').utc();
             Durations.setTime((commonTrading.timeIsValid($expiry_time) && Defaults.get('expiry_time') ?
                                Defaults.get('expiry_time') : end_time.format('HH:mm')));
-            Durations.selectEndDate((commonTrading.timeIsValid($expiry_time) && (Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : end_time)));
+            Durations.selectEndDate(commonTrading.timeIsValid($expiry_time) && Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : end_time);
         }
         commonTrading.timeIsValid($expiry_time);
         Durations.display();
