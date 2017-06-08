@@ -1,5 +1,6 @@
 const urlLang  = require('./language').urlLang;
 const jpClient = require('../common_functions/country_base').jpClient;
+require('url-polyfill');
 
 const Url = (() => {
     'use strict';
@@ -19,7 +20,7 @@ const Url = (() => {
 
     const params = (href) => {
         const arr_params = [];
-        const parsed = (href ? new URL(href) : location_url).search.substr(1).split('&');
+        const parsed = ((href ? new URL(href) : location_url).search || '').substr(1).split('&');
         let p_l = parsed.length;
         while (p_l--) {
             const param = parsed[p_l].split('=');
