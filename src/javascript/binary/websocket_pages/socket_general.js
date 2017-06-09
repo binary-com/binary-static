@@ -29,7 +29,7 @@ const BinarySocketGeneral = (() => {
         let is_available;
         switch (response.msg_type) {
             case 'website_status':
-                is_available = /^up$/i.test(response.website_status.site_status);
+                is_available = /^up$/i.test(getPropertyValue(response, ['website_status', 'site_status']));
                 if (is_available && !BinarySocket.availability()) {
                     window.location.reload();
                 } else if (!is_available) {
