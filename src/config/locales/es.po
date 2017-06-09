@@ -2,10 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-01 02:02-0400\n"
+"PO-Revision-Date: 2017-06-04 21:08-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
-"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,6 +13,7 @@ msgstr ""
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
+"Language: es_ES\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API de Binary.com\" significa el conjunto propio de Binary.com de rutinas de programación, protocolos, herramientas y recursos creados y mantenidos por Binary.com que le permite usar una Aplicación registrada para interactuar con la plataforma de comercio Binary.com."
@@ -360,6 +360,9 @@ msgstr "Los sistemas de %1 están ahora procesando más de 1 millón de transacc
 msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
 msgstr "%1Autentifique su cuenta%2 ahora para aprovechar al máximo todas las opciones de retiro disponibles."
 
+msgid "%1Schedule a video call%2 with our customer support team via live chat."
+msgstr ""
+
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "La iniciativa de caridad de %1 se concentra en pequeñas instituciones de caridad y organizaciones sin fines de lucro en todo el mundo que tengan un impacto positivo en sus comunidades locales. Nuestras donaciones tienen un impacto directo, libre de los gastos generales inherentes a las instituciones benéficas de gran tamaño."
 
@@ -523,8 +526,7 @@ msgid "A Payment Agent acts like an exchange between the Client (that is, our cu
 msgstr "Un Agente de Pagos actua como un intercambio entre el cliente (es decir, nuestro cliente) y %1. El Agente de Pagos procesa los depósitos y retiros para los clientes que desean utilizar un método específico de dinero electrónico o monedas locales que no se ofrecen por defecto en %1. Los gastos de transferencia corren a cargo del cliente."
 
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
-msgstr ""
-"Un binario \"Queda dentro\" se paga si el mercado permanece entre (sin tocar) el límite superior e inferior (AMBOS) durante todo el período establecido. Un binario \"Sale\" se paga si el mercado alcanza el límite superior \n"
+msgstr "Un binario \"Queda dentro\" se paga si el mercado permanece entre (sin tocar) el límite superior e inferior (AMBOS) durante todo el período establecido. Un binario \"Sale\" se paga si el mercado alcanza el límite superior \n"
 "            o el inferior en cualquier momento durante el período establecido."
 
 msgid "A Transaction is opened by either executing a \"Buy\" or \"Sell\" Order based on a specified number of lots (volume) that constitute the underlying instrument of the relevant market."
@@ -546,8 +548,7 @@ msgid "A broad array of HR-related administrative tasks"
 msgstr "Una amplia gama de tareas administrativas relacionadas con recursos humanos"
 
 msgid "A client is someone who has been referred through one of your marketing tools and who has deposited money into their %1 account. They must fulfill the following criteria:"
-msgstr ""
-"<p>Un cliente es alguien que ha sido referido a través de una de nuestras herramientas de marketing y que ha depositado dinero en su cuenta en %1. Deben cumplir con los siguientes criterios: </p>\n"
+msgstr "<p>Un cliente es alguien que ha sido referido a través de una de nuestras herramientas de marketing y que ha depositado dinero en su cuenta en %1. Deben cumplir con los siguientes criterios: </p>\n"
 "<ul>\n"
 "<li>No haber sido anteriormente un cliente de %1.</li>\n"
 "<li>Haber realizado el depósito mínimo.</li>\n"
@@ -911,6 +912,9 @@ msgstr ""
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr ""
 
+msgid "Alternatively, you can also %1authenticate your account by video call%2."
+msgstr ""
+
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "Aunque la Compañía se reserva el derecho de denegar o cerrar la cuenta de un Cliente, la Compañía también garantiza que todas las obligaciones contractuales ya realizadas se cumplan."
 
@@ -924,8 +928,7 @@ msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Un titulo avanzado/superior o una licenciatura"
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr ""
-"Un contrato \"Finaliza dentro\" se paga si el precio de salida del mercado es estrictamente superior al límite de precio bajo Y estrictamente inferior al límite de precio alto. Un contrato \"Finaliza fuera\" se paga si el precio de salida del mercado es O BIEN estrictamente superior \n"
+msgstr "Un contrato \"Finaliza dentro\" se paga si el precio de salida del mercado es estrictamente superior al límite de precio bajo Y estrictamente inferior al límite de precio alto. Un contrato \"Finaliza fuera\" se paga si el precio de salida del mercado es O BIEN estrictamente superior \n"
 "            al límite de precio alto O estrictamente inferior que el límite de precio bajo."
 
 msgid "An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares."
@@ -1181,6 +1184,12 @@ msgid "Australia"
 msgstr "Australia"
 
 msgid "Australia 200 Cash Index"
+msgstr ""
+
+msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
+msgstr ""
+
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply follow the steps below:"
 msgstr ""
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
@@ -1445,8 +1454,7 @@ msgid "Binary option"
 msgstr "Opciones binarias"
 
 msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
-msgstr ""
-"Las opciones binarias son fáciles de entender. Se llaman \"binarias\" porque sólo pueden haber dos resultados - ganar o perder. Si su predicción es correcta, recibe un pago que se determina en el inicio de la operación. Si no es así, perderá sólamente su \n"
+msgstr "Las opciones binarias son fáciles de entender. Se llaman \"binarias\" porque sólo pueden haber dos resultados - ganar o perder. Si su predicción es correcta, recibe un pago que se determina en el inicio de la operación. Si no es así, perderá sólamente su \n"
 "            apuesta inicial."
 
 msgid "Binary options basics"
@@ -1702,8 +1710,7 @@ msgid "Choose the Underlying"
 msgstr ""
 
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
-msgstr ""
-"Lo primero que tiene que hacer es elegir el activo con qué desea negociar, como el oro o el petróleo, las acciones o Forex. (El valor de una opción binaria se deriva del precio del activo subyacente). Una gran ventaja de las opciones binarias es que usted no está comprando \n"
+msgstr "Lo primero que tiene que hacer es elegir el activo con qué desea negociar, como el oro o el petróleo, las acciones o Forex. (El valor de una opción binaria se deriva del precio del activo subyacente). Una gran ventaja de las opciones binarias es que usted no está comprando \n"
 "            o vendiendo el activo real."
 
 msgid "Choose the payment method you'd like to use."
@@ -1770,6 +1777,9 @@ msgid "Click on the <strong>Show advanced settings</strong>."
 msgstr ""
 
 msgid "Click on the <strong>X</strong> button at the top right to save and close."
+msgstr ""
+
+msgid "Click on the link to connect to the video call."
 msgstr ""
 
 msgid "Client Money"
@@ -2381,6 +2391,12 @@ msgstr "Descubra nuestros Índices de Volatilidad."
 msgid "Discovering an easy, low-risk, flexible and, award-winning platform?"
 msgstr "¿Quiere descubrir una plataforma fácil, flexible, premiada y de bajo riesgo?"
 
+msgid "Display your proof of address when prompted."
+msgstr ""
+
+msgid "Display your proof of identity when prompted."
+msgstr ""
+
 msgid "Distribution of dividends will be announced on the Binary.com website."
 msgstr ""
 
@@ -2647,6 +2663,9 @@ msgstr "Garantizar el cumplimiento de los estándares de calidad que rigen el co
 
 msgid "Ensure that any historical trading records and performance figures presented to your referrals related to trading on the website %1 are accurate and not misleading."
 msgstr "Asegurarse de que todos los registros comerciales históricos y las cifras de rendimiento presentadas a sus referencias relativas al comercio en la página web %1 son exactas y no engañosas."
+
+msgid "Ensure that your original documents are ready when the video call starts"
+msgstr ""
 
 msgid "Ensuring that the Binary Group of companies are in full compliance with the legal and regulatory regimes to which they are subject."
 msgstr "Garantizar que el grupo de empresas Binary Group cumple plenamente con los regímenes legales y reglamentarios a los que está sujeto."
@@ -3152,6 +3171,9 @@ msgstr "Generalmente, le contactaremos a través de este sitio web o por correo 
 msgid "Generate periodic and special reports summarizing client trading trends"
 msgstr "Generar informes periódicos y especiales que resumen las tendencias de comercio de los clientes"
 
+msgid "Generated verification code:"
+msgstr ""
+
 msgid "Generous Commission Structure"
 msgstr "Generosa estructura de comisiones"
 
@@ -3225,9 +3247,6 @@ msgid "Go with the leader"
 msgstr "Siga al líder"
 
 msgid "Goes Outside"
-msgstr ""
-
-msgid "Got questions? %1Contact us%2 for help."
 msgstr ""
 
 msgid "Governing Laws and Jurisdiction"
@@ -3686,6 +3705,9 @@ msgstr ""
 msgid "If your complaint relates to an outcome of a trade or a transaction and remains unresolved, it will turn into a dispute. Should you be unsatisfied with our response, you can choose to escalate your complaint to the regulator or to an alternative dispute resolution entity."
 msgstr "Si su queja está relacionada con el resultado de un contrato o una transacción y permanece sin resolver, se convertirá en una disputa. En caso de estar insatisfecho/a con nuestra respuesta, puede elegir escalar su queja al regulador o una entidad de resolución de conflictos alternativa."
 
+msgid "If your documents cannot be verified over video call for any reason, you will be required to send your documents to %1"
+msgstr ""
+
 msgid "If your margin level is still under the stop out level, we will close an open position with the largest loss."
 msgstr ""
 
@@ -3747,8 +3769,7 @@ msgid "In executing orders on your behalf, %1 takes into consideration the follo
 msgstr ""
 
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
-msgstr ""
-"En el mercado de divisas los comerciantes pueden comprar contratos basados en el cambio del precio de una divisa en relación a otra. Por ejemplo, si selecciona Alza en el mercado EUR/USD, usted predice que el valor del Euro\n"
+msgstr "En el mercado de divisas los comerciantes pueden comprar contratos basados en el cambio del precio de una divisa en relación a otra. Por ejemplo, si selecciona Alza en el mercado EUR/USD, usted predice que el valor del Euro\n"
 "            subirá en relación al valor del dólar estadounidense."
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
@@ -4517,9 +4538,6 @@ msgid "Kick back with beautiful beaches, islands, and mountains just a short fli
 msgstr ""
 
 msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
-msgstr ""
-
-msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
 msgstr ""
 
 msgid "Know how much you will win or lose before you purchase the contract"
@@ -5482,6 +5500,9 @@ msgstr "Nuestra empresa sigue creciendo y obtiene una licencia en la Isla de Man
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgstr ""
 
+msgid "Our customer support agent will provide you with a unique link to connect to the video call."
+msgstr ""
+
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "Nuestros clientes claramente confían en nosotros. A mediados de 2014, %1 tiene más de 100 millones de transacciones históricas y más de 130.000 nuevas transacciones diarias."
 
@@ -5866,6 +5887,9 @@ msgstr ""
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
 msgstr ""
 
+msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
+msgstr ""
+
 msgid "Poland"
 msgstr "Polonia"
 
@@ -6060,6 +6084,9 @@ msgstr "El conocimiento probado de las normas auditoriales, los procedimientos, 
 
 msgid "Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration."
 msgstr "Proporcionar el apoyo administrativo en áreas relacionadas con la gestión de proveedores, planificación de eventos, contabilidad y administración de recursos humanos."
+
+msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
+msgstr ""
 
 msgid "Public and corporation bond"
 msgstr "Bonos públicos y corporativos"
@@ -6545,6 +6572,9 @@ msgid "Sell time"
 msgstr ""
 
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
+msgstr ""
+
+msgid "Send the following documents to %1:"
 msgstr ""
 
 msgid "Send us a CV and a covering letter that describes your career interests."
@@ -7436,8 +7466,7 @@ msgid "The first step is to open an account. You can <a target='_blank' href='%1
 msgstr "El primer paso es abrir una cuenta. Puede <a target='_blank' href='%1'>solicitarlo en línea</a> en cuestión de minutos."
 
 msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
-msgstr ""
-"Lo primero que tiene que hacer es elegir el activo con qué desea negociar, como el oro o el petróleo, las acciones o Forex. (El valor de una opción binaria se deriva del precio del activo subyacente). Una gran ventaja de las opciones binarias es que usted no está comprando \n"
+msgstr "Lo primero que tiene que hacer es elegir el activo con qué desea negociar, como el oro o el petróleo, las acciones o Forex. (El valor de una opción binaria se deriva del precio del activo subyacente). Una gran ventaja de las opciones binarias es que usted no está comprando \n"
 "            o vendiendo el activo real."
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
@@ -7582,8 +7611,7 @@ msgid "The use, operation or combination of the %1 API with non-%1 API(s), data,
 msgstr "El uso, la operación o la combinación de la API de %1 con API(s), equipo o documentación que no son de %1 si la responsabilidad se habría evitado pero para dicho uso, operación, o combinación; o"
 
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
-msgstr ""
-"Los índices de volatilidad simulan varias situaciones reales del mercado y proporcionan una plataforma ideal para acostumbrarse al comercio y probar estrategias en varias condiciones del mercado. Estos índices dependen de la volatilidad y la deriva y ayudan a los usuarios a probar\n"
+msgstr "Los índices de volatilidad simulan varias situaciones reales del mercado y proporcionan una plataforma ideal para acostumbrarse al comercio y probar estrategias en varias condiciones del mercado. Estos índices dependen de la volatilidad y la deriva y ayudan a los usuarios a probar\n"
 "                escenarios de - alta volatilidad, baja volatilidad, tendencias alcistas y bajistas."
 
 msgid "Then, make your trade"
@@ -8117,10 +8145,8 @@ msgstr "Martes"
 msgid "Turnover"
 msgstr "Volumen de transacciones"
 
-#, fuzzy
-#| msgid "Turnover"
 msgid "Turnover Limit"
-msgstr "Volumen de transacciones"
+msgstr ""
 
 msgid "Two-way pricing"
 msgstr ""
@@ -8288,6 +8314,9 @@ msgid "Version 4. Last modified 2016-12-30."
 msgstr ""
 
 msgid "Version 43. Last modified 2016-11-09."
+msgstr ""
+
+msgid "Video Room Facility"
 msgstr ""
 
 msgid "View"
@@ -8729,8 +8758,7 @@ msgid "Where we consider, on the basis of the information provided by you that y
 msgstr ""
 
 msgid "Where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
-msgstr ""
-"Cuando no logramos obtener información suficiente para evaluar la idoneidad de un producto o un servicio para usted, del mismo modo\n"
+msgstr "Cuando no logramos obtener información suficiente para evaluar la idoneidad de un producto o un servicio para usted, del mismo modo\n"
 " le informaremos que no estamos en condiciones de evaluar la idoneidad del producto para usted."
 
 msgid "Where we're one big, multicultural family."
@@ -9129,6 +9157,9 @@ msgstr ""
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Usted debe cumplir con estos Términos para poder utilizar la API de %1."
 
+msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
+msgstr ""
+
 msgid "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 msgstr "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 
@@ -9211,6 +9242,9 @@ msgid "You should read these ST&Cs carefully as well as the Summary Order Execut
 msgstr "Tiene que leer estos TCS con mucha atención, así como el resumen de la política de ejecución de órdenes y el resumen de la política de conflictos, los detalles de contrato aplicables y el aviso de divulgación de riesgos, así como cualquier otro documento que hemos ofrecido o en el futuro ofreceremos para su atención."
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
+msgstr ""
+
+msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr ""
 
 msgid "You will be automatically logged out after such time."
@@ -9398,6 +9432,9 @@ msgstr ""
 
 msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "Su violación de cualquier ley, regla o regulación aplicable;"
+
+msgid "Your webcam and microphone must be in good working condition"
+msgstr ""
 
 msgid "Your website request.url (if you have one)"
 msgstr "La request.url de su sitio web (si tiene uno)"
@@ -9598,6 +9635,9 @@ msgid "the platform is user friendly and accessible to all levels of traders."
 msgstr "la plataforma es fácil de usar y accesible para todos los niveles de operadores."
 
 msgid "the specific instructions that we receive from you;"
+msgstr ""
+
+msgid "to set up the video call."
 msgstr ""
 
 msgid "today"

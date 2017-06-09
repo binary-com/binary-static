@@ -38,7 +38,7 @@ const Validation = (() => {
                     } else {
                         const $parent = field.$.parent();
                         // Add indicator to required fields
-                        if (field.validations.indexOf('req') >= 0) {
+                        if (/req/.test(field.validations)) {
                             let $label = $parent.parent().find('label');
                             if (!$label.length) $label = $parent.find('label');
                             if ($label.find('span.required_field_asterisk').length === 0) {
@@ -145,7 +145,7 @@ const Validation = (() => {
         regular      : { func: validRegular,      message: '' },
     };
 
-    const pass_length = { min: 6, max: 25 };
+    const pass_length = type => ({ min: (/^mt$/.test(type) ? 8 : 6), max: 25 });
 
     // --------------------
     // ----- Validate -----
@@ -167,10 +167,10 @@ const Validation = (() => {
                 options = valid[1];
             }
 
-            if (type === 'password' && !validLength(getFieldValue(field), pass_length)) {
+            if (type === 'password' && !validLength(getFieldValue(field), pass_length(options))) {
                 field.is_ok = false;
                 type = 'length';
-                options = pass_length;
+                options = pass_length(options);
             } else {
                 const validator = (type === 'custom' ? options.func : validators_map[type].func);
                 field.is_ok = validator(getFieldValue(field), options, field);
