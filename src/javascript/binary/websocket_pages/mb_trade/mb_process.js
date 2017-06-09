@@ -3,6 +3,7 @@ const MBDefaults      = require('./mb_defaults');
 const MBNotifications = require('./mb_notifications');
 const MBPrice         = require('./mb_price');
 const MBSymbols       = require('./mb_symbols');
+const MBTick          = require('./mb_tick');
 const BinarySocket    = require('../socket');
 const TradingAnalysis = require('../trade/analysis');
 const showHighchart   = require('../trade/charts/chart_frame').showHighchart;
@@ -107,7 +108,8 @@ const MBProcess = (() => {
                         alt  : '',
                         class: 'gr-3',
                     }))
-                    .append($('<span/>', { text: all_symbols[symbol].display, class: 'name gr-6 align-self-center' }));
+                    .append($('<span/>', { text: all_symbols[symbol].display, class: 'name gr-6 align-self-center' }))
+                    .append($('<span/>', { class: 'gr-3 align-self-center still', id: 'spot' }));
                 $list.append($current);
                 if (is_current) {
                     MBContract.setCurrentItem($underlyings, symbol);
@@ -142,6 +144,10 @@ const MBProcess = (() => {
 
         // forget the old tick id i.e. close the old tick stream
         processForgetTicks();
+        // get ticks for current underlying
+        MBTick.request(underlying);
+
+        MBTick.clean();
 
         BinarySocket.clearTimeouts();
 
@@ -349,6 +355,7 @@ const MBProcess = (() => {
         clearSymbolTimeout();
         clearContractTimeout();
         MBSymbols.clearData();
+        MBTick.clean();
     };
 
     return {

@@ -3,6 +3,7 @@ const MBDefaults      = require('./mb_defaults');
 const MBNotifications = require('./mb_notifications');
 const MBPrice         = require('./mb_price');
 const MBProcess       = require('./mb_process');
+const MBTick          = require('./mb_tick');
 const TradingAnalysis = require('../trade/analysis');
 const debounce        = require('../trade/common').debounce;
 const showHighchart   = require('../trade/charts/chart_frame').showHighchart;
@@ -48,7 +49,13 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('underlying', underlying);
                 MBNotifications.hide('SYMBOL_INACTIVE');
 
+                MBTick.clean();
+
                 MBProcess.getContracts(underlying);
+                // forget the old tick id i.e. close the old tick stream
+                MBProcess.processForgetTicks();
+                // get ticks for current underlying
+                MBTick.request(underlying);
 
                 showHighchart();
             });

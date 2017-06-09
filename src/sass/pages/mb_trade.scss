@@ -288,6 +288,14 @@
                 background: rgba(251, 228, 215, 0.7);
             }
         }
+        #spot {
+            &.down {
+                color: $COLOR_BLUE;
+            }
+            &.up {
+                color: $COLOR_RED;
+            }
+        }
         @media screen and (max-width: 768px) {
             .gr-12-p {
                 padding-bottom: 10px;

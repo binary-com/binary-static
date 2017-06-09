@@ -1,12 +1,10 @@
 const moment           = require('moment');
 const MBDefaults       = require('./mb_defaults');
-const MBSymbols        = require('./mb_symbols');
 const Client           = require('../../base/client');
 const getLanguage      = require('../../base/language').get;
 const localize         = require('../../base/localize').localize;
 const isEmptyObject    = require('../../base/utility').isEmptyObject;
 const jpClient         = require('../../common_functions/country_base').jpClient;
-const formatCurrency   = require('../../common_functions/currency_to_symbol').formatCurrency;
 const padLeft          = require('../../common_functions/string_util').padLeft;
 
 /*
