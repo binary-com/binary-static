@@ -316,6 +316,10 @@ button .barspinner.white {
     clear: both;
 }
 
+.sidebar-container {
+    position: relative;
+}
+
 .sidebar {
     @include menu-left;
 }
