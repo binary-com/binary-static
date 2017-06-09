@@ -94,7 +94,6 @@ const MBContract = (() => {
                 }
             });
             MBDefaults.set('period', $period.attr('value'));
-            MBContract.displayDescriptions();
             MBContract.displayRemainingTime(true);
         } else { // update options
             let existing_array = [];
@@ -205,7 +204,7 @@ const MBContract = (() => {
                     });
                     $list.append($current);
                     if (is_current) {
-                        setCurrentItem($category, category.value, 'descr-wrapper');
+                        setCurrentItem($category, category.value);
                     }
                 }
             });
@@ -283,32 +282,12 @@ const MBContract = (() => {
         return contract_type ? templates[contract_type] : templates;
     };
 
-    const displayDescriptions = () => {
-        const contracts = getCurrentContracts();
-        if (!contracts.length) return;
-        const $desc_wrappers = $('.descr-wrapper'),
-            currency = formatCurrency(getCurrency()),
-            payout = Number(MBDefaults.get('payout') * (jpClient() ? 1000 : 1)).toLocaleString(),
-            display_name = MBSymbols.getName(MBDefaults.get('underlying')),
-            date_expiry = periodText(contracts[0].trading_period).end.replace(/\s\(.*\)/, '');
-        contracts.forEach((c) => {
-            const contract_type = c.contract_type,
-                template = getTemplate(contract_type),
-                $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.contract-type').addClass('no-underline')
-                .attr({
-                    'data-balloon'       : localize(template.description, [currency, payout, display_name, date_expiry]),
-                    'data-balloon-length': 'medium',
-                });
-        });
-    };
-
     const getCurrency = () => (Client.get('currency') || $('#currency').attr('value') || 'JPY');
 
-    const setCurrentItem = ($container, value, className) => {
+    const setCurrentItem = ($container, value) => {
         const $selected = $container.find(`.list [value="${value}"]`);
         if ($selected.length) {
-            $container.attr('value', value).find('> .current').html($selected.clone().addClass(className));
+            $container.attr('value', value).find('> .current').html($selected.clone());
 
             const hidden_class = 'invisible';
             $container.find(`.list .${hidden_class}`).removeClass(hidden_class);
@@ -322,7 +301,6 @@ const MBContract = (() => {
         displayRemainingTime: displayRemainingTime,
         getCurrentContracts : getCurrentContracts,
         getTemplate         : getTemplate,
-        displayDescriptions : displayDescriptions,
         getCurrency         : getCurrency,
         getContractsResponse: () => contracts_for_response,
         setContractsResponse: (contracts_for) => { contracts_for_response = contracts_for; },

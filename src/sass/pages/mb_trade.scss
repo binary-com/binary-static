@@ -12,6 +12,9 @@
         .trade_form {
             margin-top: 5px;
 
+            &.no-margin {
+                margin-top: 0;
+            }
             > div:first-child {
                 text-align: center;
                 background: $COLOR_LIGHT_GRAY;
@@ -121,9 +124,13 @@
 
                     > div {
                         line-height: 50px;
-                        height: 63px;
-                        border: 2px solid $COLOR_WHITE;
+                        height: 59px;
+                        border-right: 2px solid $COLOR_WHITE;
+                        margin-bottom: 5px;
 
+                        &:nth-child(4n) {
+                            border-right: none;
+                        }
                         &.plus {
                             color: $COLOR_WHITE;
                             background: $COLOR_RED;
@@ -131,6 +138,14 @@
                         &.minus {
                             color: $COLOR_WHITE;
                             background: $COLOR_LIGHT_BLUE;
+                        }
+                        &.green {
+                            color: $COLOR_WHITE;
+                            background: $COLOR_GREEN;
+                        }
+                        .hint {
+                            margin-top: -35px;
+                            font-size: 75%;
                         }
                     }
                 }

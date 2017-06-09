@@ -24,10 +24,8 @@ const MBTradingEvents = (() => {
         const hidden_class = 'invisible';
 
         $(document).on('click', (e) => {
-            if ($(e.target).parents('#payout').length) return;
-            $form.find('.list, #payout_list').addClass(hidden_class).end()
-                .find('#period, #category')
-                .removeClass(hidden_class);
+            if ($(e.target).parents('#payout_list').length) return;
+            $form.find('.list').addClass(hidden_class).end();
         });
 
         $form.find('.current').on('click', function(e) {
@@ -51,7 +49,6 @@ const MBTradingEvents = (() => {
                 MBNotifications.hide('SYMBOL_INACTIVE');
 
                 MBProcess.getContracts(underlying);
-                MBContract.displayDescriptions();
 
                 showHighchart();
             });
@@ -78,7 +75,6 @@ const MBTradingEvents = (() => {
                 MBProcess.processPriceRequest();
                 $('.remaining-time').removeClass('alert');
                 MBContract.displayRemainingTime('recalculate');
-                MBContract.displayDescriptions();
             });
         }
 
@@ -96,6 +92,7 @@ const MBTradingEvents = (() => {
         };
 
         const $payout = $form.find('#payout');
+        const $payout_list = $form.find('#payout_list');
         if ($payout.length) {
             if (!$payout.attr('value')) {
                 const payout_def = MBDefaults.get('payout') || (jpClient() ? 1 : 10);
@@ -103,27 +100,36 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('payout', payout_def);
                 $payout.attr('value', payout_def).find('.current').html(payout_def);
             }
-            $payout
-                .find('.current').on('click', function () {
-                    const $list = $(`#${$(this).parent().attr('id')}_list`);
-                    const $sublist = $list.find('.list');
-                    $list.toggleClass(hidden_class);
-                    $sublist.toggleClass(hidden_class);
-                    $category.toggleClass(hidden_class);
-                    $period.toggleClass(hidden_class);
-                }).end()
-                .on('click', '> .list > div', debounce(function() {
-                    const payout = +MBDefaults.get('payout');
-                    const new_payout = payout + parseInt($(this).attr('value'));
+            $payout.find('.current').on('click', function () {
+                const $list = $(`#${$(this).parent().attr('id')}_list`);
+                const $sublist = $list.find('.list');
+                $list.toggleClass(hidden_class);
+                $sublist.toggleClass(hidden_class);
+                $category.toggleClass(hidden_class);
+                $period.toggleClass(hidden_class);
+            });
+            $payout_list.on('click', '> .list > div', debounce(function() {
+                const payout = +MBDefaults.get('payout');
+                const value = $(this).attr('value');
+                let new_payout;
+                if (/(\+|\-)/.test(value)) {
+                    new_payout = payout + parseInt(value);
+                } else if (/(ok|clear)/.test(value)) {
+                    if (value === 'clear') new_payout = 10;
+                    $form.find('.list, #payout_list').addClass(hidden_class).end()
+                        .find('#period, #category')
+                        .removeClass(hidden_class);
+                } else {
+                    new_payout = value;
+                }
 
-                    if (validatePayout(new_payout)) {
-                        $('.price-table').setVisibility(1);
-                        MBDefaults.set('payout', new_payout);
-                        $payout.attr('value', new_payout).find('.current').html(new_payout);
-                        MBProcess.processPriceRequest();
-                        MBContract.displayDescriptions();
-                    }
-                }));
+                if (validatePayout(new_payout)) {
+                    $('.price-table').setVisibility(1);
+                    MBDefaults.set('payout', new_payout);
+                    $payout.attr('value', new_payout).find('.current').html(new_payout);
+                    MBProcess.processPriceRequest();
+                }
+            }));
         }
 
         const $currency = $form.find('#currency');
@@ -133,7 +139,6 @@ const MBTradingEvents = (() => {
                 MBContract.setCurrentItem($currency, currency);
                 MBDefaults.set('currency', currency);
                 MBProcess.processPriceRequest();
-                MBContract.displayDescriptions();
             });
         }
 

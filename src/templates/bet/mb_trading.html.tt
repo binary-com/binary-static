@@ -51,15 +51,16 @@
                 <div class="trade_form">
                     [% INCLUDE form_item id='category' class='gr-12' row=1 %]
                 </div>
-                <div class="trade_form">
+                <div class="trade_form no-margin">
                     [% WRAPPER form_item id='payout_list' class='invisible' exclude_current=1 gr_row=1 %]
                         <div class="plus gr-3"  value="+1">+1</div>
                         <div class="plus gr-3"  value="+10">+10</div>
-                        <div class="constant gr-3"  value="50">50</div>
-                        <div class="constant gr-3"  value="50">100</div>
+                        <div class="gr-3"  value="50">50</div>
+                        <div class="gr-3"  value="100">100<div class="hint">[% l('(max)') %]</div></div>
                         <div class="minus gr-3" value="-1">-1</div>
                         <div class="minus gr-3" value="-10">-10</div>
-                        <div class="ok gr-3" value="">-10</div>
+                        <div class="green gr-3" value="ok">[% l('OK') %]</div>
+                        <div class="gr-3" value="clear">[% l('Clear') %]</div>
                     [% END %]
                 </div>
             </div>
