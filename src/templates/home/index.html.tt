@@ -42,6 +42,9 @@
         <div class="center-text">
             <p>[% l("[_1] is the award-winning industry pioneer in online options trading.", website_name) %]</p>
 
+            <div class="gr-3 gr-8-m gr-centered">
+                <img class="responsive" src="[% request.url_for('images/pages/home/awards-opwa.svg') %]"/>
+            </div>
             <div class="gr-padding-10">
                 <img class="small-image" src="[% request.url_for('images/pages/home/awards-t2w.png') %]"/>
                 <img class="small-image" src="[% request.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg') %]"/>
