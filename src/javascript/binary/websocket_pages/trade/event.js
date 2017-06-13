@@ -239,25 +239,10 @@ const TradingEvents = (() => {
             }));
         }
 
-        /*
-         * attach event to start time, display duration based on
-         * whether start time is forward starting or not and request
-         * new price
-         */
-        const date_start_element = getStartDateNode();
-        if (date_start_element) {
-            date_start_element.addEventListener('change', (e) => {
-                Defaults.set('date_start', e.target.value);
-                const r = Durations.onStartDateChange(e.target.value);
-                if (r >= 0) {
-                    Price.processPriceRequest();
-                }
-            });
-        }
-
-        const time_start_element = document.getElementById('time_start');
-        const $date_start = $('#date_start');
-        if (time_start_element) {
+        let timepicker_initialized = false;
+        const initTimePicker = () => {
+            if (timepicker_initialized) return;
+            timepicker_initialized = true;
             attachTimePicker('#time_start', $date_start);
             $('#time_start')
                 .on('focus click', () => { attachTimePicker('#time_start', $date_start); })
@@ -269,6 +254,29 @@ const TradingEvents = (() => {
                     Price.processPriceRequest();
                     return true;
                 });
+        };
+
+        /*
+         * attach event to start time, display duration based on
+         * whether start time is forward starting or not and request
+         * new price
+         */
+        const date_start_element = getStartDateNode();
+        if (date_start_element) {
+            date_start_element.addEventListener('change', (e) => {
+                Defaults.set('date_start', e.target.value);
+                initTimePicker();
+                const r = Durations.onStartDateChange(e.target.value);
+                if (r >= 0) {
+                    Price.processPriceRequest();
+                }
+            });
+        }
+
+        const time_start_element = document.getElementById('time_start');
+        const $date_start = $('#date_start');
+        if (time_start_element && date_start_element.value !== 'now') {
+            initTimePicker();
         }
 
         /*

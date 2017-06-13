@@ -61,18 +61,19 @@ const getElement = () => document.getElementById('date_start');
 const checkValidTime = (time_start_element, $date_start, time) => {
     time_start_element = time_start_element || document.getElementById('time_start');
     $date_start = $date_start || $('#date_start');
-    time = (time_start_element.value || time).split(':');
-    if (time.length) {
-        const hour = +time[0];
-        const minute = +time[1];
-        const date_time = moment.utc(getElement().value * 1000).hour(hour).minute(minute);
-        let min_time = getMinMaxTime($date_start).minTime;
-        const now_time = moment.utc();
-        min_time = min_time.valueOf() > now_time.valueOf() ? min_time : now_time;
-        const max_time = getMinMaxTime($date_start).maxTime;
-        time_start_element.value = date_time.isBefore(min_time) || date_time.isAfter(max_time) ? min_time.add(5, 'minutes').utc().format('HH:mm') : time.join(':');
-        time_start_element.setAttribute('data-value', time_start_element.value);
+    time = (time_start_element.value || time);
+    if (time) {
+        time = time.split(':');
     }
+    const now_time = moment.utc();
+    const hour = time && time.length ? +time[0] : now_time.hour();
+    const minute = time && time.length ? +time[1] : now_time.minute();
+    const date_time = moment.utc(getElement().value * 1000).hour(hour).minute(minute);
+    let min_time = getMinMaxTime($date_start).minTime;
+    min_time = min_time.valueOf() > now_time.valueOf() ? min_time : now_time;
+    const max_time = getMinMaxTime($date_start).maxTime;
+    time_start_element.value = date_time.isBefore(min_time) || date_time.isAfter(max_time) ? min_time.add(5, 'minutes').utc().format('HH:mm') : time.join(':');
+    time_start_element.setAttribute('data-value', time_start_element.value);
 };
 
 const getMinMaxTime = ($setMinMaxSelector, minTime = window.time ? window.time : moment.utc()) => {

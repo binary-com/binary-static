@@ -435,8 +435,15 @@
     #expiry_date, #expiry_time {
         font-size: $FONT_SIZE_N;
     }
-    .time_start {
-        margin-left: 5px;
+    #date_start {
+        margin-bottom: 5px;
+    }
+    #time_start_row {
+        white-space: nowrap;
+
+        .time_start {
+            margin-left: 5px;
+        }
     }
     .barrier_class input {
         width: 175px;
