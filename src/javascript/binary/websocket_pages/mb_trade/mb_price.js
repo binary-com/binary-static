@@ -166,7 +166,7 @@ const MBPrice = (() => {
                 ${is_japan ? `<span class="base-value">(${formatPrice(values.ask_price / values.payout)})</span>` : ''}
             </button>`);
         const $sell = $(`<span class="price-wrapper${!values.sell_price ? ' inactive' : ''}">
-                <span class="dynamics ${values.sell_price_movement || ''}"></span>
+                <span class="${values.sell_price_movement || ''}"></span>
                 ${formatPrice(values.sell_price)}
                 ${is_japan ? `<span class="base-value">(${formatPrice(values.sell_price / values.payout)})</span>` : ''}
             </span>`);

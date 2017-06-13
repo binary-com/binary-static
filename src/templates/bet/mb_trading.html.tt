@@ -70,11 +70,21 @@
             <div id="disable-overlay" class="invisible"></div>
             <div class="prices-wrapper gr-padding-10 gr-12">
                 <div class="gr-row heading">
-                    <div class="gr-2 barrier">[% l('Barrier') %]</div>
-                    <div class="gr-3 buy-price">[% l('Buy Price') %]</div>
-                    <div class="gr-2 sell-price">[% l('Sell Price') %]</div>
-                    <div class="gr-3 buy-price">[% l('Buy Price') %]</div>
-                    <div class="gr-2 sell-price">[% l('Sell Price') %]</div>
+                    <div class="gr-4 barrier">[% l('Barrier') %]</div>
+                    <div class="gr-4 buy-price">
+                        [% l('Buy Price') %]
+                        <div class="hint sell-price">
+                            [% l('Sell Price') %]
+                            <span class="invisible ja-show">[% l('(per lot)') %]</span>
+                        </div>
+                    </div>
+                    <div class="gr-4 buy-price">
+                        [% l('Buy Price') %]
+                        <div class="hint sell-price">
+                            [% l('Sell Price') %]
+                            <span class="invisible ja-show">[% l('(per lot)') %]</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="price-rows"></div>
             </div>
@@ -89,11 +99,15 @@
 
     <div id="templates" class="invisible">
         <div class="gr-row price-row">
-            <div class="gr-2 barrier"></div>
-            <div class="gr-3 buy-price"></div>
-            <div class="gr-2 sell-price"></div>
-            <div class="gr-3 buy-price"></div>
-            <div class="gr-2 sell-price"></div>
+            <div class="gr-4 barrier"></div>
+            <div class="gr-4">
+                <div class="buy-price"></div>
+                <div class="sell-price"></div>
+            </div>
+            <div class="gr-4">
+                <div class="buy-price"></div>
+                <div class="sell-price"></div>
+            </div>
         </div>
     </div>
 </div>

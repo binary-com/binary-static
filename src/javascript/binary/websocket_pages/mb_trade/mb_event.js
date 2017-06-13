@@ -26,14 +26,14 @@ const MBTradingEvents = (() => {
 
         $(document).on('click', (e) => {
             if ($(e.target).parents('#payout_list').length) return;
-            $form.find('.list').addClass(hidden_class).end();
+            makeListsInvisible();
         });
 
         $form.find('.current').on('click', function(e) {
             e.stopPropagation();
             const $list = $(this).siblings('.list');
             if ($list.hasClass(hidden_class)) {
-                $form.find('.list').addClass(hidden_class);
+                makeListsInvisible();
             }
             $list.toggleClass(hidden_class);
         });
@@ -110,6 +110,9 @@ const MBTradingEvents = (() => {
             $payout.find('.current').on('click', function () {
                 const $list = $(`#${$(this).parent().attr('id')}_list`);
                 const $sublist = $list.find('.list');
+                if ($list.hasClass(hidden_class)) {
+                    makeListsInvisible();
+                }
                 $list.toggleClass(hidden_class);
                 $sublist.toggleClass(hidden_class);
                 $category.toggleClass(hidden_class);
@@ -123,9 +126,7 @@ const MBTradingEvents = (() => {
                     new_payout = payout + parseInt(value);
                 } else if (/(ok|clear)/.test(value)) {
                     if (value === 'clear') new_payout = 10;
-                    $form.find('.list, #payout_list').addClass(hidden_class).end()
-                        .find('#period, #category')
-                        .removeClass(hidden_class);
+                    makeListsInvisible();
                 } else {
                     new_payout = value;
                 }
@@ -174,6 +175,12 @@ const MBTradingEvents = (() => {
                 setTradingStatus(status === 'allow');
             });
         }
+
+        const makeListsInvisible = () => {
+            $form.find('.list, #payout_list').setVisibility(0).end()
+                .find('#period, #category')
+                .setVisibility(1);
+        };
     };
 
     return {

@@ -76,7 +76,7 @@ const MBContract = (() => {
             const duration = text.duration.toUpperCase().replace(/([A-Z])/, '$1<br>');
             return $('<div/>', {
                 value: period,
-                html : `<div class="duration gr-3">${duration}</div><div class="end gr-4 gr-no-gutter">${text.end}</div><div class="remaining-time gr-5 gr-no-gutter"></div>`,
+                html : `<div class="duration gr-3">${duration}</div><div class="end gr-6">${text.end}</div><div class="remaining-time gr-3"></div>`,
                 class: 'gr-row',
             });
         };
@@ -161,14 +161,12 @@ const MBContract = (() => {
                 second: duration.seconds(),
             };
             Object.keys(all_durations).forEach((key) => {
-                if (all_durations[key]) {
-                    if (key === 'month') {
-                        remaining_month_day_string.push(padLeft(all_durations[key], 2, '0') + localize('m'));
-                    } else if (key === 'day') {
-                        remaining_month_day_string.push(padLeft(all_durations[key], 2, '0') + localize('d'));
-                    } else {
-                        remaining_time_string.push(padLeft(all_durations[key], 2, '0'));
+                if (/(month|day)/.test(key)) {
+                    if (all_durations[key]) {
+                        remaining_month_day_string.push(all_durations[key] + localize(key[0].toUpperCase()));
                     }
+                } else {
+                    remaining_time_string.push(padLeft(all_durations[key] || 0, 2, '0'));
                 }
             });
             $count_down_timer.text(`${remaining_month_day_string.join('')} ${remaining_time_string.join(':')}`);

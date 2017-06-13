@@ -320,10 +320,8 @@ sub _texts {
         push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Barrier at close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Barrier through close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Barrier through close on [_4].');
-        push @texts, localize('hour');
-        push @texts, localize('mins');
-        push @texts, localize('minute');
-        push @texts, localize('second');
+        push @texts, localize('M');
+        push @texts, localize('D');
         push @texts, localize('Higher');
         push @texts, localize('Lower');
         push @texts, localize('Touches');

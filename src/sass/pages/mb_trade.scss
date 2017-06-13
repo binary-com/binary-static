@@ -5,6 +5,7 @@
         border: 1px solid $COLOR_GRAY;
         padding-right: 1px;
         height: calc(100% - 10px);
+        min-height: 600px;
     }
     #mb_trading {
         font-size: 14px;
@@ -164,8 +165,13 @@
             .prices-wrapper {
                 .heading > div {
                     line-height: 20px;
-                    padding: 10px 0;
+                    padding: 10px;
                     text-align: center;
+                    font-weight: normal;
+
+                    &:not(:first-child) {
+                        text-align: left;
+                    }
                 }
                 .price-row > div {
                     line-height: 35px;
@@ -184,7 +190,12 @@
                         padding-right: 20px;
                     }
                 }
-                .price-row .buy-price:nth-child(4) .price-button {
+                .sell-price {
+                    font-size: $FONT_SIZE_XXS;
+                    height: 15px;
+                    line-height: 20px;
+                }
+                .price-row div:last-child .buy-price .price-button {
                     background: $COLOR_RED;
                 }
                 .price-row:nth-child(odd) {
@@ -233,7 +244,7 @@
                     }
                 }
                 .price-button {
-                    width: 100px;
+                    width: 90%;
                     color: $COLOR_WHITE;
                     text-align: center;
                     line-height: 100%;
@@ -303,7 +314,7 @@
             }
             .price-table .price-row {
                 .barrier, .price-button .value-wrapper, .sell-price {
-                    font-size: 0.9em;
+                    font-size: $FONT_SIZE_S;
                 }
                 .price-button {
                     width: 80%;
