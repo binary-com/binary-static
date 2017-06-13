@@ -76,7 +76,7 @@ const MBContract = (() => {
             const duration = text.duration.toUpperCase().replace(/([A-Z])/, '$1<br>');
             return $('<div/>', {
                 value: period,
-                html : `<div class="duration gr-3">${duration}</div><div class="end gr-5">${text.end}</div><div class="remaining-time gr-4"></div>`,
+                html : `<div class="duration gr-3">${duration}</div><div class="end gr-4 gr-no-gutter">${text.end}</div><div class="remaining-time gr-5 gr-no-gutter"></div>`,
                 class: 'gr-row',
             });
         };
@@ -130,36 +130,49 @@ const MBContract = (() => {
         }
     };
 
-    let period_value,
+    let $durations,
+        $duration,
         $count_down_timer,
         remaining_timeout;
     const displayRemainingTime = (recalculate) => {
-        if (typeof period_value === 'undefined' || recalculate) {
-            period_value = MBDefaults.get('period');
-            $count_down_timer = $('.remaining-time');
+        if (typeof $durations === 'undefined' || recalculate) {
+            // period_value = MBDefaults.get('period');
+            $durations = $('#period').find('.list > div, .current > div');
         }
-        if (!period_value) return;
-        const time_left = parseInt(period_value.split('_')[1]) - window.time.unix();
-        if (time_left <= 0) {
-            location.reload();
-        } else if (time_left < 120) {
-            $count_down_timer.addClass('alert');
-        }
-        const remaining_time_string = [];
-        const duration = moment.duration(time_left * 1000);
-        const all_durations = {
-            month : duration.months(),
-            day   : duration.days(),
-            hour  : duration.hours(),
-            minute: duration.minutes(),
-            second: duration.seconds(),
-        };
-        Object.keys(all_durations).forEach((key) => {
-            if (all_durations[key]) {
-                remaining_time_string.push(padLeft(all_durations[key], 2, '0'));
+        if (!$durations) return;
+        $durations.each((idx) => {
+            $duration = $($durations[idx]);
+            $count_down_timer = $duration.find('.remaining-time');
+
+            const time_left = parseInt($duration.attr('value').split('_')[1]) - window.time.unix();
+            if (time_left <= 0) {
+                location.reload();
+            } else if (time_left < 120) {
+                $count_down_timer.addClass('alert');
             }
+            const remaining_month_day_string = [];
+            const remaining_time_string = [];
+            const duration = moment.duration(time_left * 1000);
+            const all_durations = {
+                month : duration.months(),
+                day   : duration.days(),
+                hour  : duration.hours(),
+                minute: duration.minutes(),
+                second: duration.seconds(),
+            };
+            Object.keys(all_durations).forEach((key) => {
+                if (all_durations[key]) {
+                    if (key === 'month') {
+                        remaining_month_day_string.push(padLeft(all_durations[key], 2, '0') + localize('m'));
+                    } else if (key === 'day') {
+                        remaining_month_day_string.push(padLeft(all_durations[key], 2, '0') + localize('d'));
+                    } else {
+                        remaining_time_string.push(padLeft(all_durations[key], 2, '0'));
+                    }
+                }
+            });
+            $count_down_timer.text(`${remaining_month_day_string.join('')} ${remaining_time_string.join(':')}`);
         });
-        $count_down_timer.text(remaining_time_string.join(':'));
         if (remaining_timeout) clearRemainingTimeout();
         remaining_timeout = setTimeout(displayRemainingTime, 1000);
     };
@@ -304,7 +317,7 @@ const MBContract = (() => {
         setContractsResponse: (contracts_for) => { contracts_for_response = contracts_for; },
         setCurrentItem      : setCurrentItem,
         onUnload            : () => {
-            clearRemainingTimeout(); contracts_for_response = {}; period_value = undefined;
+            clearRemainingTimeout(); contracts_for_response = {}; $durations = undefined;
         },
     };
 })();

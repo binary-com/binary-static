@@ -18,11 +18,6 @@
             > div:first-child {
                 text-align: center;
                 background: $COLOR_LIGHT_GRAY;
-                border-right: 3px solid $COLOR_WHITE;
-
-                &:nth-child(4) {
-                    border-right: none;
-                }
                 position: relative;
                 height: 60px;
 
@@ -70,6 +65,7 @@
             }
             #currency_wrapper, #payout {
                 height: 124px;
+                margin-right: 3px;
             }
             #underlying {
                 margin-top: -7px;
