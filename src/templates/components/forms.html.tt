@@ -9,7 +9,7 @@
     [% IF type=='checkbox' and !spaced -%]
     <div class="gr-row [% row_class %]"[% IF row_id %] id="[% row_id %]"[% END %]>
         <div class="gr-12-m gr-padding-20 gr-centered">
-            <input id="[% id %]" type="checkbox" />
+            <input id="[% id %]" type="checkbox"[% IF checked %] checked[% END %] />
             <label for="[% id %]">[% label %]</label>
         </div>
     </div>

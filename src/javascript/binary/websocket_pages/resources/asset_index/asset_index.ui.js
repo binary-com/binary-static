@@ -61,7 +61,10 @@ const AssetIndexUI = (() => {
 
         $container.empty().append($tabs).append($contents.children());
 
-        $container.tabs('destroy').tabs();
+        if ($container.is(':ui-tabs')) {
+            $container.tabs('destroy');
+        }
+        $container.tabs();
 
         if (is_framed) {
             $container.find('ul').hide();

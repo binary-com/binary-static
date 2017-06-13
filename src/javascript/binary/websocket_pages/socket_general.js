@@ -29,7 +29,7 @@ const BinarySocketGeneral = (() => {
         let is_available;
         switch (response.msg_type) {
             case 'website_status':
-                is_available = /^up$/i.test(response.website_status.site_status);
+                is_available = /^up$/i.test(getPropertyValue(response, ['website_status', 'site_status']));
                 if (is_available && !BinarySocket.availability()) {
                     window.location.reload();
                 } else if (!is_available) {
@@ -54,6 +54,7 @@ const BinarySocketGeneral = (() => {
                         BinarySocket.send({ get_settings: 1 });
                         BinarySocket.send({ get_account_status: 1 });
                         BinarySocket.send({ payout_currencies: 1 });
+                        BinarySocket.send({ mt5_login_list: 1 });
                         setResidence(response.authorize.country || Cookies.get('residence'));
                         if (!Client.get('is_virtual') && !jpResidence()) {
                             BinarySocket.send({ get_self_exclusion: 1 });
