@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-09 05:07-0400\n"
+"PO-Revision-Date: 2017-06-13 01:27-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -443,10 +443,10 @@ msgid "30-50 million JPY"
 msgstr "3,000〜5,000万円"
 
 msgid "30-day limit on losses"
-msgstr "30日間の損失制限"
+msgstr "損失限度額（30日間）"
 
 msgid "30-day turnover limit"
-msgstr "30日の取引数量限度額"
+msgstr "取引限度額（30日間）"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "過去12ヶ月で40以上のお取引"
@@ -470,10 +470,10 @@ msgid "6-10 transactions in the past 12 months"
 msgstr "過去12ヶ月で6~10のお取引"
 
 msgid "7-day limit on losses"
-msgstr "7日間の損失制限"
+msgstr "損失限度額（7日間）"
 
 msgid "7-day turnover limit"
-msgstr "7日の取引数量限度額"
+msgstr "取引限度額（7日間）"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<<職務内容に戻る"
@@ -2226,7 +2226,7 @@ msgid "Daily limit on losses"
 msgstr "損失限度額（1日）"
 
 msgid "Daily turnover limit"
-msgstr "1日の取引数量限度額"
+msgstr "取引限度額（1日）"
 
 msgid "Data Feed"
 msgstr "データフィード"
@@ -2772,7 +2772,7 @@ msgid "Exceptional organizational skills; detail orientation; strong work ethic;
 msgstr "卓越した組織力：細かな気配り、強い労働意欲、効率的なマルチタスク能力"
 
 msgid "Exciting growth in Europe and Asia"
-msgstr "ヨーロッパとアジアにおける激的な成長"
+msgstr "ヨーロッパとアジアにおける激的な発展"
 
 msgid "Exclude me from the website until"
 msgstr "特定日まで利用禁止（日時単位）"
@@ -3793,8 +3793,8 @@ msgid "In order to access our mobile apps and other third-party applications, yo
 msgstr "当社のモバイルアプリケーションまたは第三者開発アプリケーションへアクセスするには、はじめにAPIトークンの作成が必要です。"
 
 msgid "In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days."
-msgstr "入出金にアクセスいただくには、お客様の口座にて30日の取引数量限度額を設定いただくことになっています。\n"
-"取引数量とはオープンにした全トレードの集計金額です。そのため、この制限は30日間で取引されたい合計数量を設定することになります。"
+msgstr "入出金にアクセスいただくには、お客様の口座にて30日間の取引数量限度額を設定いただくことになっています。\n"
+"取引限度とはオープンにした全トレードの集計金額です。そのため、この制限は30日間で取引されたい合計額を設定することになります。"
 
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr "継続的な成長をサポートするために、当社では資格あるコンプライアンス担当者を募集しています。マルタに基づいているため、この新しい役割では、当社の企業コンプライアンス担当者に報告することとなります。"
@@ -4987,16 +4987,16 @@ msgid "Maximum aggregate contract purchases over a 30-day period."
 msgstr "30日の最大取引額(半角)"
 
 msgid "Maximum aggregate contract purchases over a 7-day period."
-msgstr "7日間の最大取引額 (半角)"
+msgstr "7日間の最大取引数量 (半角)"
 
 msgid "Maximum aggregate contract purchases per day."
 msgstr "1日あたりの最大取引額(半角)"
 
 msgid "Maximum aggregate loss over a 30-day period."
-msgstr "30日間の最大損失 (半角)"
+msgstr "30日間で許容できる最大損失額 (半角)"
 
 msgid "Maximum aggregate loss over a 7-day period."
-msgstr "7日間の最大損失 (半角)"
+msgstr "7日間で許容できる最大損失額 (半角)"
 
 msgid "Maximum aggregate loss per day."
 msgstr "1日あたりの最大損失額【1円単位】例 10万円の場合は100000 (半角)"
@@ -5014,7 +5014,7 @@ msgid "Maximum aggregate payouts on open positions per symbol and contract type.
 msgstr "オープンポジションがない場合、未現実利益限度額がペイアウト限度額まで超えることがあります。"
 
 msgid "Maximum daily turnover"
-msgstr "１日の取引数量限度額"
+msgstr "取引限度額（1日）"
 
 msgid "Maximum number of open positions"
 msgstr "最大保有ポジション"
@@ -5593,7 +5593,7 @@ msgid "Our locations"
 msgstr "所在地"
 
 msgid "Our platform is backed by proprietary technology, developed and managed by a highly-skilled and experienced team carefully handpicked from around the world."
-msgstr ""
+msgstr "当社のプラットフォームは世界中から慎重に厳選された高度な技術と豊富な経験を兼ね備えたチームによって開発・管理された、独自の技術が搭載されています。"
 
 msgid "Our prices are benchmarked against the interbank options market. You’ll receive fair and transparent pricing, whatever your position."
 msgstr "当社ではインターバンク市場と同等レベルの算出方法を用い、より良い取引条件をお客さまに提供できるよう努めております。"
@@ -5929,10 +5929,10 @@ msgid "Please set %1country of residence%2 before upgrading to a real-money acco
 msgstr "リアル口座へアップグレードされる前に%居住国%2を設定してください。"
 
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
-msgstr "入金制限を解除するには、%1自己制限%2から30日の取引数量限度額を設定してください。"
+msgstr "入金制限を解除するには、%1自己制限%2から30日間の取引限度額を設定してください。"
 
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
-msgstr "入出金にアクセスするには、<a href=\"%1\">30日の取引数量限度額</a>を設定いただく必要があります。"
+msgstr "入出金にアクセスするには、<a href=\"%1\">30日の取引限度額</a>を設定いただく必要があります。"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "ご希望のリアリティチェック間隔を分単位で指定してください"
@@ -6290,7 +6290,7 @@ msgid "Reference ID"
 msgstr "約定番号"
 
 msgid "Regardless of the type of token, each token will provide you with two rights:"
-msgstr ""
+msgstr "トークンの種類に関係なく、各トークンにつき2つの権利を提供します。"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group LimitedはBinary Ltd.に会社名変更"
@@ -6497,7 +6497,7 @@ msgid "Risks of Investment Products"
 msgstr "投資商品のリスク"
 
 msgid "Roll-over &mdash; In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day."
-msgstr ""
+msgstr "ロールオーバー&mdash; 営業日までにオープンポジションを閉じる注文を当社が受信しなかった場合、当社はそのオープンポジションを翌営業日へ繰り越します。"
 
 msgid "Roll-over Credit/Debit &mdash; Accounts with Open Positions concerned by the Roll-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company at its sole discretion."
 msgstr ""
@@ -6524,10 +6524,10 @@ msgid "Saturday"
 msgstr "土"
 
 msgid "Scalable"
-msgstr ""
+msgstr "スケーラブル"
 
 msgid "Scalable business model"
-msgstr ""
+msgstr "スケーラブルなビジネスモデル"
 
 msgid "Scope and Intent"
 msgstr "対象範囲と意図"
@@ -6581,10 +6581,10 @@ msgid "Select <strong>Accept cookies</strong>."
 msgstr "<strong>Cookieを有効にする</strong>を選択してください。"
 
 msgid "Select <strong>Accept</strong> for both <strong>First-party Cookies</strong> and <strong>Third-party Cookies</strong>."
-msgstr ""
+msgstr "<strong>ファーストパーティCookie</strong>と<strong>サードパーティCookie</strong>を<strong>許可する</strong>を選択してください。"
 
 msgid "Select <strong>Allow local data to be set (recommended)</strong>."
-msgstr ""
+msgstr "<strong>ローカルへのデータ設定を許可する（推奨）</strong>を選択してください。"
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "左の欄にある<strong>Cookie</strong>を選択してください。"
@@ -6596,7 +6596,7 @@ msgid "Select market:"
 msgstr "取引市場を選択："
 
 msgid "Select the <strong>Override automatic cookie handling</strong>."
-msgstr ""
+msgstr "<strong>自動Cookie処理を上書きする</strong>を選択してください。"
 
 msgid "Select your market"
 msgstr "取引市場を選択"
@@ -6839,10 +6839,10 @@ msgid "Specific Instructions"
 msgstr "詳細手順"
 
 msgid "Specific colors the banner should include."
-msgstr ""
+msgstr "バナーの特定の色を含める必要があります。"
 
 msgid "Specific message the banner should include."
-msgstr ""
+msgstr "バナーの特定のメッセージを含める必要があります。"
 
 msgid "Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. %1 offers payouts from $1 to $50,000."
 msgstr "条件が満たされた際に支払われるペイアウトを指定します。当システムでは、トレードの購入kィン額の合計を自動で算出します。%1では1,000円からのペイアウトを提供しています。"
@@ -6935,7 +6935,7 @@ msgid "Stocks trading frequency"
 msgstr "株式取引の頻度"
 
 msgid "Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
-msgstr ""
+msgstr "逆指値注文/ストップロスオーダー&mdash; 価格が指定した価格に達したときに、保有ポジションを決済するよう注文します。"
 
 msgid "Stop Out Level"
 msgstr "ロスカットレベル"
@@ -6950,7 +6950,7 @@ msgid "Storage of Content"
 msgstr "コンテンツの保存"
 
 msgid "Strategic customer acquisition strategy"
-msgstr ""
+msgstr "顧客獲得戦略"
 
 msgid "Strategic licensing"
 msgstr "貴重なライセンスの取得"
@@ -7019,7 +7019,7 @@ msgid "Such materials may be copied and distributed on a limited basis for nonco
 msgstr "そのようなコンテンツは非商業的利用の場合に限り複製及び頒布が可能になる場合がありますが、その際も素材に対していかなる加工も施すことなく、かつ“Copyright 1999- <span class='currentYear'></span>Binary Ltd. All rights reserved.”という文言を明示する必要があります。"
 
 msgid "Such withdrawal would result in your Account Equity being less than zero; and/or"
-msgstr ""
+msgstr "出金後の口座がマイナスになるような場合"
 
 msgid "Summary"
 msgstr "まとめ"
@@ -7040,7 +7040,7 @@ msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "グループのグローバルな人材募集や人材管理のニーズをサポート"
 
 msgid "Suspend the trading of the affected instrument;"
-msgstr ""
+msgstr "影響を受ける商品の取引を一時停止します。"
 
 msgid "Suspending your Real Account and refusing to execute any Orders to enter into further Transactions with you. Whilst your Real Account is suspended, you will be able to place Orders to close your Open Positions, but you will not be able to place Orders which would create Open Positions."
 msgstr ""
@@ -7328,7 +7328,7 @@ msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teac
 msgstr "Eurobasket Wolvesは、2002年に設立されたローカルのバスケットボールクラブです。クラブとスクールプログラムを通じて、子どもたちにバスケットボールを教えています。U8とU10の男女チーム、そしてU14とU16の女子チームが全国レベルでプレイしています。学校のグラウンドで行われるアフタースクール・バスケットボールトレーニングプログラムとしてマルタで設立された初めてのバスケットボールクラブです。"
 
 msgid "The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers."
-msgstr ""
+msgstr "2012年に欧州委員会によってバイナリーオプションが金融商品に認定されました。これにより、ライセンス認定されたブローカーの信頼性が高まりました。"
 
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
 msgstr "当社が取り扱う金融商品は、お客さまと当社の間に締結した契約です。これら契約と関連する契約の特定条件の下、お客さまが当社にお支払いいただくプレミアムまたは価格を考慮して、対象資産と評価が特定の方法で行われた場合、一定の金額を支払うことをお約束致します。そのため、これら契約はそれに応じて当社がお客さまの代わりに保持する金融商品ではなく、当社が破産の場合に顧客の資産の保護からの恩恵は受けません。同様に、お取引を行うためにお支払いになるプレミアムと価格はクライアントマネーとして保持されず、事業費の対価として保持されます。"
@@ -7343,7 +7343,7 @@ msgid "The GBP Index is a weighted Index, measuring the British Pound's value ag
 msgstr "GBPインデックスとは、5グローバル通貨(USD, EUR, AUD, JPY, CAD)のバスケットに対する英国ポンドの価値を計る各荷重20％の荷重インデックスです。"
 
 msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions."
-msgstr ""
+msgstr "ICOは管轄区域の規制及び規則に従い、特定の地域の対象の投資家またはプロの投資家に制限されます。"
 
 msgid "The Margin Level of your Real Account reaches or falls below the Stop Out Level;"
 msgstr "お客さまのリアル口座のマージンレベルがロスカットレベルに達した、あるいは下回りました。"
@@ -7367,10 +7367,10 @@ msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar
 msgstr "シェルターコミュニティ学習センター3とは、第三国の地で離れ離れになった家族を待っている、ミャンマー難民の子どもたちが利用するコミュニティスクールです。ここでは、繊細な年齢である子どもたちに将来への準備となる教育を提供することを目的としています。"
 
 msgid "The Stop Out Level applicable to your Real Account may differ from the default Stop Out Level published on our website."
-msgstr ""
+msgstr "お客様のリアル口座に適用されるロスカットレベルは、当サイトで公開している既定のロスカットレベルとは異なる場合があります。"
 
 msgid "The URL of the site on which the banner is going to appear."
-msgstr ""
+msgstr "バナーにはサイトURLが表示されます。"
 
 msgid "The USD Index is a weighted Index, measuring the US Dollar's value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%."
 msgstr "USDインデックスとは、5グローバル通貨(EUR, GBP, JPY, CAD, AUD)のバスケットに対するアメリカドルの価値を計る各荷重20％の荷重インデックスです。"
@@ -7379,7 +7379,7 @@ msgid "The Volatility 100 Index is twice as volatile as the Volatility 50 Index,
 msgstr "ボラティリティ100指数は、ボラティリティ50指数の2倍、ボラティリティ25指数の４倍の揮発性があります。"
 
 msgid "The Volatility account allows you to profit by speculating on the rise or fall of an instrument."
-msgstr ""
+msgstr "ボラティリティ口座では商品の上昇または下降を予測することで利益を得ることができます。"
 
 msgid "The ability to acquire knowledge of compliance matters in a multitude of international jurisdictions"
 msgstr "国際司法権における多数のコンプライアンス事項の知識獲得能力"
@@ -7449,7 +7449,7 @@ msgid "The best promotional tools and robust online reporting"
 msgstr "最良のプロモーションツールとレポート機能を提供"
 
 msgid "The binary options industry is poised for breakout growth similar to the growth shown by the Forex industry &mdash;&mdash; thanks to key trends and events in emerging and developed markets."
-msgstr ""
+msgstr "バイナリーオプション業界は、&mdash;&mdash;新興市場及び発展市場でのキートレンドやイベントから外国為替業界の成長同様、急速な成長を遂げています。"
 
 msgid "The bonus code can only be entered and activated upon account opening."
 msgstr "ボーナスコードのご入力、及び有効化のためには口座の開設が必須です。"
@@ -7467,7 +7467,7 @@ msgid "The client has reached a turnover that is 5 times the bonus amount"
 msgstr "ボーナス付与価格の５倍以上のお取引が成立した場合"
 
 msgid "The commission report shows you your daily commission earnings, per site / product."
-msgstr ""
+msgstr "報酬レポートでは、毎日のサイト毎または商品毎の収益を確認することができます。"
 
 msgid "The commission you will charge Clients on deposits and withdrawals"
 msgstr "入出金にクライアントへ請求する手数料"
@@ -7581,7 +7581,7 @@ msgid "The first tick is the first tick after the contract is processed by our s
 msgstr "最初のTickとは、当社のサーバにてトレードが処理された後に検出された最初のTickを指します。"
 
 msgid "The hours of closure of the market (for e.g., the hours over the weekend during which trading of certain transactions are not possible);"
-msgstr ""
+msgstr "市場閉鎖時間です（例：週末には特定の決済はご利用いただけません。）"
 
 msgid "The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;"
 msgstr "アフィリエイト会員自身によって、会員登録の過程で提供された情報が真実かつ正確であると保証されたにも関わらず、本契約期間中に虚偽または不適切であると当社が定めた場合。；"
@@ -8287,7 +8287,7 @@ msgid "Turnover"
 msgstr "取引数量"
 
 msgid "Turnover Limit"
-msgstr "取引数量限度額"
+msgstr "取引限度額"
 
 msgid "Two-way pricing"
 msgstr "2ウェイ・プライス（購入・売却）を表示"
@@ -8810,13 +8810,13 @@ msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "優れた組織・管理能力および/または会計スキル"
 
 msgid "We’ve generated over USD 3 billion in turnover since inception, thanks to a rapid growth in business from 2010 onwards."
-msgstr ""
+msgstr "2010年の創業から急速な成長を遂げ、お陰様で30億USD以上の取引高を突破しました。"
 
 msgid "We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in four countries: Malaysia, Malta, Japan, and Germany."
-msgstr ""
+msgstr "長年にわたり、&mdash;&mdash;人材・オフィスともに成長を遂げてきました。現在では、マレーシア・マルタ・日本・ドイツのオフィスで130名を超える従業員が世界中で活躍しています。"
 
 msgid "We’ve obtained financial and gambling licenses to operate in key countries and regions such as Europe, the Isle of Man, the United Kingdom, and Japan."
-msgstr ""
+msgstr "ヨーロッパ・マン島・イギリス・日本の主要国と地域において運営するうえで必要となる金融ライセンスを取得。"
 
 msgid "What are OTC indices and stocks?"
 msgstr "店頭インデックスと店頭株とは"
@@ -9098,7 +9098,7 @@ msgid "Year"
 msgstr "年"
 
 msgid "Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:"
-msgstr ""
+msgstr "はい。バナーのカスタマイズや以下の内容を提供されたい場合は、お客様のアカウントマネージャーまでご連絡ください。"
 
 msgid "Yes. Please email us at <a href=\"mailto:%1\">%1</a> for further assistance."
 msgstr "はい、承ります。<a href=\"mailto:%1\">%1</a>までお問い合わせ下さい。"
@@ -10711,31 +10711,31 @@ msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if 
 msgstr "２つのオプションを用い、バリア価格の高いバイナリーコールオプションとバリア価格の低いバイナリープットオプションを購入すれば、判定レートが２つのオプションのバリア価格で作られた価格帯の外となった場合に収益が得られ、判定レートが所定の価格帯の外であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができます。"
 
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "2016/12/20"
+msgstr "2017/6/13"
 
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "2017/5/30"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "弊社は、2017年5月30日(火)より店頭バイナリーオプションのリアル口座開設の受付を開始いたしました。"
+msgstr "取引概要　改定のお知らせ"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "5月15日付でBinary Ltdより増資3264万円を実施。（増資後資本金1億2000万円）"
+msgstr "6月12日(月): 当社が定める1日の取引上限を一時的に50万円に変更致します。"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
-msgstr "26日の銀行振込からのご入金は、翌日27日に口座へ反映されます<br>26日の出金依頼は、翌27日以降の着金となります"
+msgstr "弊社は、2017年5月30日(火)より店頭バイナリーオプションのリアル口座開設の受付を開始いたしました。"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
-msgstr "12月30日以降のご入金は2017年1月4日以降口座に反映されます<br>12月30日以降の出金依頼は2017年1月4日以降の着金となります"
+msgstr "5月15日付でBinary Ltdより増資3264万円を実施。（増資後資本金1億2000万円）"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
-msgstr "12月31日(土)から1月3日(火)の期間は、国内金融機関（店舗）が休業のため、入出金サービスをご利用頂けません"
+msgstr "."
 
 msgid "{JAPAN ONLY}JSA_Title_1"
-msgstr "重要：口座開設の受付開始のご案内"
+msgstr "重要：お知らせ"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
-msgstr "."
+msgstr "重要：口座開設の受付開始のご案内"
 
 msgid "{JAPAN ONLY}Japan Service Announcements"
 msgstr "お知らせ"
