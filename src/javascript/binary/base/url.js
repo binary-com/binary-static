@@ -63,7 +63,7 @@ const Url = (() => {
             }
         }
 
-        return static_host + normalizePath(path);
+        return `${static_host}${normalizePath(path)}/`;
     };
 
     const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');
