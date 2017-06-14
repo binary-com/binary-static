@@ -26,6 +26,7 @@
     }
     input:not([type='checkbox']), select {
         width: 80%;
+        height: 26px;
     }
     .center-text-m {
         &, div:first-child label {
