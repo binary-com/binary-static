@@ -21,6 +21,12 @@ const TradePage = (() => {
     State.remove('is_trading');
 
     const onLoad = () => {
+        BinarySocket.wait('authorize').then(() => {
+            init();
+        });
+    };
+
+    const init = () => {
         if (jpClient()) {
             BinaryPjax.load('multi_barriers_trading');
             return;
