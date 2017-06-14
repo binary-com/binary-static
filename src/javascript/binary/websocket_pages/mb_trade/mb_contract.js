@@ -76,7 +76,7 @@ const MBContract = (() => {
             const duration = text.duration.toUpperCase().replace(/([A-Z])/, '$1<br>');
             return $('<div/>', {
                 value: period,
-                html : `<div class="duration gr-3">${duration}</div><div class="end gr-6">${text.end}</div><div class="remaining-time gr-3"></div>`,
+                html : `<div class="duration gr-3">${duration}</div><div class="end gr-6 gr-5-m">${text.end}</div><div class="remaining-time gr-3 gr-4-m"></div>`,
                 class: 'gr-row',
             });
         };

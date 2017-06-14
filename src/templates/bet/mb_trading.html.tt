@@ -1,7 +1,7 @@
 <div id="main_loading" class="center-text">
     [% INCLUDE global/loading.html.tt %]
 </div>
-<div id="mb-trading-wrapper" class="gr-centered invisible">
+<div id="mb-trading-wrapper" class="gr-centered gr-12-p gr-12-m invisible">
     <div class="gr-row">
 
     <div class="gr-7 gr-12-m gr-12-p gr-order-2-m gr-order-2-p">
@@ -11,14 +11,14 @@
         </div>
     </div>
 
-    <div class="gr-5 gr-12-m gr-12-p gr-no-gutter-left">
+    <div class="gr-5 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m">
     <div id="mb_trading" class="gr-12">
 
         <div id="notifications_wrapper"></div>
 
         <div class="gr-row">
-            <div id="trading_status" class="gr-4 gr-no-gutter">
-                <div class="gr-padding-10 gr-parent center-text">[% l('Trading Activation') %]</div>
+            <div id="trading_status" class="gr-4 gr-no-gutter-left">
+                <div class="gr-parent center-text">[% l('Trading Activation') %]</div>
                 <div class="gr-row">
                     <div class="gr-6 gr-no-gutter">
                         <a class="button-secondary trading-status" href="javascript:;">
@@ -32,27 +32,27 @@
                     </div>
                 </div>
             </div>
-            <div class="trade_form gr-8 gr-no-gutter">
-                [% INCLUDE form_item id='underlying' class='gr-12' row=1 %]
+            <div class="trade_form gr-8 gr-no-gutter-left">
+                [% INCLUDE form_item id='underlying' row=1 %]
             </div>
         </div>
 
         <div class="gr-row">
-            <div class="trade_form gr-4 gr-no-gutter">
+            <div class="trade_form gr-4 gr-no-gutter-left">
                 <div id="currency_wrapper">
                     [% INCLUDE form_item id='currency' %]
                     [% INCLUDE form_item id='payout' exclude_list=1 %]
                 </div>
             </div>
-            <div class="gr-8 gr-no-gutter">
+            <div class="gr-8 gr-no-gutter-left">
                 <div class="trade_form">
-                    [% INCLUDE form_item id='period' class='gr-12' row=1 %]
+                    [% INCLUDE form_item id='period' row=1 %]
                 </div>
                 <div class="trade_form">
-                    [% INCLUDE form_item id='category' class='gr-12' row=1 %]
+                    [% INCLUDE form_item id='category' row=1 %]
                 </div>
                 <div class="trade_form no-margin">
-                    [% WRAPPER form_item id='payout_list' class='invisible' exclude_current=1 gr_row=1 %]
+                    [% WRAPPER form_item id='payout_list' class='invisible gr-12' exclude_current=1 gr_row=1 %]
                         <div class="plus gr-3"  value="+1">+1</div>
                         <div class="plus gr-3"  value="+10">+10</div>
                         <div class="gr-3"  value="50">50</div>
@@ -68,9 +68,9 @@
 
         <div class="price-table gr-row">
             <div id="disable-overlay" class="invisible"></div>
-            <div class="prices-wrapper gr-padding-10 gr-12">
+            <div class="prices-wrapper gr-12">
                 <div class="gr-row heading">
-                    <div class="gr-4 barrier">[% l('Barrier') %]</div>
+                    <div class="gr-4 barrier align-self-center">[% l('Barrier') %]</div>
                     <div class="gr-4 buy-price">
                         [% l('Buy Price') %]
                         <div class="hint sell-price">
@@ -101,22 +101,22 @@
         <div class="gr-row price-row">
             <div class="gr-4 barrier"></div>
             <div class="gr-4">
-                <div class="buy-price"></div>
-                <div class="sell-price"></div>
+                <div class="buy-price gr-12"></div>
+                <div class="sell-price gr-12"></div>
             </div>
             <div class="gr-4">
-                <div class="buy-price"></div>
-                <div class="sell-price"></div>
+                <div class="buy-price gr-12"></div>
+                <div class="sell-price gr-12"></div>
             </div>
         </div>
     </div>
 </div>
 
 [% BLOCK form_item %]
-<div id="[% id %]"[% IF class %] class="[% class %] gr-no-gutter"[% END %]>
+<div id="[% id %]"[% IF class %] class="[% class %]"[% END %] >
     [% UNLESS exclude_current %]<div class="current"></div>[% END %]
     [% UNLESS exclude_list %]
-        <div class="list [% IF row %]gr-12[% ELSIF gr_row %]gr-row[% END %] invisible">[% content %]</div>
+        <div class="list gr-[% IF gr_row %]row[% ELSE %]12[% END %] invisible">[% content %]</div>
     [% END %]
 </div>
 [% END %]

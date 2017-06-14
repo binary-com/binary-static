@@ -8,8 +8,15 @@
         min-height: 600px;
     }
     #mb_trading {
-        font-size: 14px;
+        font-size: $FONT_SIZE_S;
 
+        .gr-row .gr-no-gutter-left {
+            padding-right: 0;
+
+            &:first-child {
+                padding-right: 5px;
+            }
+        }
         .trade_form {
             margin-top: 5px;
 
@@ -20,10 +27,9 @@
                 text-align: center;
                 background: $COLOR_LIGHT_GRAY;
                 position: relative;
-                height: 60px;
 
                 .current {
-                    height: 50px;
+                    height: 40px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -33,17 +39,16 @@
                     }
                 }
                 > div {
-                    height: 50px;
+                    height: 40px;
                     background: $COLOR_LIGHT_GRAY;
                 }
                 .current, .list > div {
                     padding: 5px !important;
                     cursor: pointer;
-                    height: 50px;
+                    height: 40px;
 
                     &:hover {
                         background-color: $COLOR_GRAY;
-                        height: 50px;
                     }
                 }
                 #currency .list > div {
@@ -65,14 +70,16 @@
                 }
             }
             #currency_wrapper, #payout {
-                height: 124px;
-                margin-right: 3px;
+                height: 105px;
             }
             #underlying {
-                margin-top: -7px;
+                margin-top: -5px;
 
                 div.current > div {
                     display: flex;
+                }
+                img {
+                    height: 100%;
                 }
             }
             .contract-type {
@@ -106,22 +113,21 @@
                 }
             }
             #payout .current {
-                line-height: 109px;
                 font-size: $FONT_SIZE_XXL;
                 font-weight: bold;
-                height: 109px;
+                height: 91px;
                 padding-top: 10px !important;
             }
             #payout_list {
-                height: 124px;
+                height: 130px;
                 background: $COLOR_WHITE;
 
                 .list {
                     background: $COLOR_WHITE;
 
                     > div {
-                        line-height: 50px;
-                        height: 59px;
+                        line-height: 52px;
+                        height: 62px;
                         border-right: 2px solid $COLOR_WHITE;
                         margin-bottom: 5px;
 
@@ -150,6 +156,7 @@
         }
         .price-table {
             position: relative;
+            font-size: $FONT_SIZE_N;
 
             #disable-overlay {
                 position: absolute;
@@ -191,7 +198,7 @@
                     }
                 }
                 .sell-price {
-                    font-size: $FONT_SIZE_XXS;
+                    font-size: $FONT_SIZE_XS;
                     height: 15px;
                     line-height: 20px;
                 }
@@ -202,7 +209,7 @@
                     background: $COLOR_LIGHT_GRAY;
                 }
                 .base-value {
-                    font-size: 9px;
+                    font-size: $FONT_SIZE_XS;
                     display: inline-block;
                     margin-left: 5px;
                 }
@@ -244,7 +251,7 @@
                     }
                 }
                 .price-button {
-                    width: 90%;
+                    width: 100%;
                     color: $COLOR_WHITE;
                     text-align: center;
                     line-height: 100%;
@@ -252,7 +259,7 @@
                     border-radius: 3px;
                     padding: 10px 0;
                     cursor: pointer;
-                    font-size: 14px;
+                    font-size: $FONT_SIZE_S;
                     border: 0;
                     min-height: 34px;
                     position: relative;
@@ -280,12 +287,17 @@
                 }
             }
         }
-        .button-secondary span {
-            width: 36%;
+        .button-secondary {
+            margin: 0;
 
-            &.selected {
-                background-color: $COLOR_BLUE;
-                color: $COLOR_WHITE;
+            span {
+                padding: 8px 0;
+                width: 100%;
+
+                &.selected {
+                    background-color: $COLOR_BLUE;
+                    color: $COLOR_WHITE;
+                }
             }
         }
         .remaining-time {
@@ -315,14 +327,6 @@
             .price-table .price-row {
                 .barrier, .price-button .value-wrapper, .sell-price {
                     font-size: $FONT_SIZE_S;
-                }
-                .price-button {
-                    width: 80%;
-                    margin-left: 15px;
-
-                    .base-value {
-                        bottom: 0;
-                    }
                 }
             }
         }

@@ -108,8 +108,8 @@ const MBProcess = (() => {
                         alt  : '',
                         class: 'gr-3',
                     }))
-                    .append($('<span/>', { text: all_symbols[symbol].display, class: 'name gr-6 align-self-center' }))
-                    .append($('<span/>', { class: 'gr-3 align-self-center still', id: 'spot' }));
+                    .append($('<span/>', { text: all_symbols[symbol].display, class: 'name gr-6 gr-5-m align-self-center' }))
+                    .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' }));
                 $list.append($current);
                 if (is_current) {
                     MBContract.setCurrentItem($underlyings, symbol);
