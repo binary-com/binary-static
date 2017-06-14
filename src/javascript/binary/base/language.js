@@ -22,20 +22,23 @@ const Language = (() => {
         ZH_TW: '繁體中文',
     };
 
-    const setCookieLanguage = (lang, set_anyway) => {
-        if (!Cookies.get('language') || set_anyway) {
+    const setCookieLanguage = (lang) => {
+        if (!Cookies.get('language') || lang) {
             const cookie = new CookieStorage('language');
             cookie.write(lang || getLanguage());
         }
     };
 
     let url_lang = null;
-    const languageFromUrl = () => {
-        if (url_lang) return url_lang;
-        const regex = new RegExp(`^(${Object.keys(all_languages).join('|')})$`, 'i');
-        const url_params = window.location.href.split('/').slice(3);
-        url_lang = (url_params.find(lang => regex.test(lang)) || '');
-        return url_lang;
+    const lang_regex = new RegExp(`^(${Object.keys(all_languages).join('|')})$`, 'i');
+    const languageFromUrl = (custom_url) => {
+        if (url_lang && !custom_url) return url_lang;
+        const url_params = (custom_url || window.location.href).split('/').slice(3);
+        const language = (url_params.find(lang => lang_regex.test(lang)) || '');
+        if (!custom_url) {
+            url_lang = language;
+        }
+        return language;
     };
 
     let current_lang = null;
@@ -60,7 +63,7 @@ const Language = (() => {
             const lang = $this.attr('class');
             if (getLanguage() === lang) return;
             $('#display_language').find('.language').text($this.text());
-            setCookieLanguage(lang, true);
+            setCookieLanguage(lang);
             document.location = urlForLanguage(lang);
         });
     };
