@@ -87,7 +87,7 @@ const BinaryLoader = (() => {
 
     const displayMessage = (message) => {
         const $content = container.find('#content .container');
-        $content.html($('<div/>', { class: 'logged_out_title_container', html: $content.find('h1') }))
+        $content.html($('<div/>', { class: 'logged_out_title_container', html: $content.find('h1')[0] }))
             .append($('<p/>', { class: 'center-text notice-msg', html: localize(message) }));
     };
 
