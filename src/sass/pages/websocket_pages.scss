@@ -61,6 +61,8 @@
 }
 
 #profit-table-container {
+    padding: 10px;
+
     th {
         padding-right: 8px;
     }
@@ -85,6 +87,9 @@
 }
 
 #statement-container {
+
+    padding: 10px;
+
     #download_csv {
         line-height: 28px;
     }

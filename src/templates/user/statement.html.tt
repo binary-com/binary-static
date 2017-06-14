@@ -14,10 +14,19 @@
                 <div class="gr-8 gr-gutter-left">
                     <input type="text" id="jump-to" size="12" readonly="readonly"/>
                 </div>
+
             </div>
         </div>
-        <div class="gr-6 gr-12-m align-end">
-            <div id="download_csv" class="invisible">[% l('[_1] rows displayed:', '<span id="rows_count"></span>') %] <a href="javascript:;">[% l('Download CSV') %]</a></div>
+        <div class="gr-6 gr-12-m">
+            <div class="gr-row gr-gutter-left">
+                <div class="label_form gr-gutter-left">
+                    <label for="search-box">[% l("Search:") %]</label>
+                </div>
+                <div class="gr-8 gr-gutter-left">
+                    <input type="text" id="search-box" size="30" />
+                </div>
+            </div>
         </div>
+        <div id="download_csv" class="invisible">[% l('[_1] rows displayed:', '<span id="rows_count"></span>') %] <a href="javascript:;">[% l('Download CSV') %]</a></div>
     </div>
 </div>

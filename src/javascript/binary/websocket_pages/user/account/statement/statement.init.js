@@ -1,6 +1,6 @@
 const moment               = require('moment');
 const StatementUI          = require('./statement.ui');
-const ViewPopup            = require('../../view_popup/view_popup');
+const ViewPopup            = require('../../view_extend/view_extend');
 const BinarySocket         = require('../../../socket');
 const getLanguage          = require('../../../../base/language').get;
 const localize             = require('../../../../base/localize').localize;
@@ -26,7 +26,9 @@ const StatementInit = (() => {
         pending,
         current_batch,
         transactions_received,
-        transactions_consumed;
+        transactions_consumed,
+        sort_direction = null,
+        current_sortType = [];
 
     const tableExist = () => (document.getElementById('statement-table'));
 
@@ -78,6 +80,13 @@ const StatementInit = (() => {
         if (!tableExist()) {
             StatementUI.createEmptyStatementTable().appendTo('#statement-container');
             $('.act, .credit').addClass('nowrap');
+            $('.act, .credit, .bal, .payout, .date, .ref').addClass('sortable');
+            $('.date').click(function() { sortButton([0, 'date', '.date']); });
+            $('.ref').click(function() { sortButton([1, 'number', '.ref']); });
+            $('.payout').click(function() { sortButton([2, 'number', '.payout']); });
+            $('.act').click(function() { sortButton([3, 'alphabet', '.act']); });
+            $('.credit').click(function() { sortButton([5, 'number', '.credit']); });
+            $('.bal').click(function() { sortButton([6, 'number', '.bal']); });
             StatementUI.updateStatementTable(getNextChunkStatement());
 
             // Show a message when the table is empty
@@ -109,13 +118,16 @@ const StatementInit = (() => {
             const p_from_top = $(document).scrollTop();
 
             if (!tableExist() || p_from_top < hidableHeight(70)) return;
-
             if (finishedConsumed() && !no_more_data && !pending) {
                 getNextBatchStatement();
                 return;
             }
 
-            if (!finishedConsumed()) StatementUI.updateStatementTable(getNextChunkStatement());
+            if (!finishedConsumed()) {
+                StatementUI.updateStatementTable(getNextChunkStatement());
+                sortAction(current_sortType);
+                liveSearchbox(true);
+            }
         });
     };
 
@@ -147,6 +159,7 @@ const StatementInit = (() => {
         });
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
+        liveSearchbox(true);
     };
 
     const attachDatePicker = () => {
@@ -165,12 +178,138 @@ const StatementInit = (() => {
             selector: jump_to,
             maxDate : 0,
         });
-        if ($(jump_to).attr('data-picker') !== 'native') $(jump_to).val(localize('Today'));
+        if ($(jump_to).attr('data-picker') !== 'native') { $(jump_to).val(localize('Today')); }
+    };
+
+    const liveSearchbox = (nextChunk) => {
+        const search_box = '#search-box';
+        const noResultbox = '.no-result-box';
+
+        const searchThru = (toSearch) => {
+            let count = 0;
+            // search through each line of table and search for result, i stands for case-insensitive
+            $('table tbody tr').each(function() {
+                if ($(this).text().search(new RegExp(toSearch.replace(/\\/g, '\\\\'), 'i')) < 0) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                    count++;
+                }
+            });
+            // show a message if there is no result
+            if (count <= 0 && no_more_data) {
+                $('#statement-table').find('tbody')
+                    .append($('<tr/>', { class: 'no-result-box' })
+                        .append($('<td/>', { colspan: 7 })
+                            .append($('<p/>', { class: 'notice-msg center-text', text: localize('No search result found.') }))));
+            }
+        };
+
+        if (nextChunk === true) {
+            const toSearch = $(search_box).val();
+            $(noResultbox).remove();
+            searchThru(toSearch);
+        } else {
+            $(search_box).keyup(function() {
+                const toSearch = $(this).val();
+                $(noResultbox).remove();
+                searchThru(toSearch);
+            });
+        }
+    };
+
+    const sortAction = (typeArray) => { // n(number of column), sortType, m(header)
+        let i,
+            y,
+            z;
+        const sortTable = tableExist();
+        let rows = Array.prototype.slice.call(sortTable.getElementsByTagName('TR'));
+        rows.shift();
+
+        function replaceRegex(x) {
+            if (typeArray[1] === 'number') {
+                x = parseFloat(x.innerText.replace(/,/g, ''));
+                if (isNaN(x)) {
+                    x = 0;
+                }
+            } else if (typeArray[1] === 'alphabet') {
+                x = x.innerHTML.toLowerCase();
+            } else if (typeArray[1] === 'date') {
+                x = x.innerHTML.replace(/[-:GMT \n]/g, '');
+            }
+            return x;
+        }
+
+        function mergeSort(arr) {
+            const len = arr.length;
+            if (len < 2) return arr;
+            const mid = Math.floor(len / 2),
+                left = arr.slice(0, mid),
+                right = arr.slice(mid);
+
+            return merge(mergeSort(left), mergeSort(right));
+        }
+
+        function merge(left, right) {
+            const result = [],
+                lLen = left.length,
+                rLen = right.length;
+            let l = 0,
+                r = 0;
+            while (l < lLen && r < rLen) {
+                y = replaceRegex(left[l].children[typeArray[0]]);
+                z = replaceRegex(right[r].children[typeArray[0]]);
+                if (sort_direction === 'ascending') {
+                    if (y < z) {
+                        result.push(left[l++]);
+                    } else {
+                        result.push(right[r++]);
+                    }
+                } else if (sort_direction === 'descending') {
+                    if (y > z) {
+                        result.push(left[l++]);
+                    } else {
+                        result.push(right[r++]);
+                    }
+                }
+            }
+            return result.concat(left.slice(l)).concat(right.slice(r));
+        }
+
+        if (sort_direction !== null) {
+            rows = mergeSort(rows);
+
+            for (i = 0; i <= rows.length - 1; i++) {
+                $('table tbody tr')[i].outerHTML = rows[i].outerHTML;
+            }
+        }
+    };
+
+    const sortButton = (typeArray) => {
+        if (typeArray[2] !== current_sortType[2]) {
+            $('.ascending').removeClass('ascending');
+            $('.descending').removeClass('descending');
+            current_sortType = typeArray;
+            sort_direction = null;
+        }
+
+        if (sort_direction === null || sort_direction === 'descending') {
+            $(typeArray[2]).removeClass('descending');
+            $(typeArray[2]).addClass('ascending');
+            sort_direction = 'ascending';
+            sortAction(current_sortType);
+        } else if (sort_direction === 'ascending') {
+            $(typeArray[2]).removeClass('ascending');
+            $(typeArray[2]).addClass('descending');
+            sort_direction = 'descending';
+            sortAction(current_sortType);
+        }
     };
 
     const onLoad = () => {
         initPage();
         attachDatePicker();
+        liveSearchbox(false);
         ViewPopup.viewButtonOnClick('#statement-container');
     };
 

@@ -27,12 +27,6 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
-  Data-Section-Simple-0.07
-    pathname: M/MI/MIYAGAWA/Data-Section-Simple-0.07.tar.gz
-    provides:
-      Data::Section::Simple 0.07
-    requirements:
-      ExtUtils::MakeMaker 6.30
   Devel-GlobalDestruction-0.13
     pathname: H/HA/HAARG/Devel-GlobalDestruction-0.13.tar.gz
     provides:
@@ -53,6 +47,7 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       Fcntl 0
       POSIX 0
+      perl 5.004
   Format-Util-0.06
     pathname: B/BI/BINARY/Format-Util-0.06.tar.gz
     provides:
@@ -90,14 +85,6 @@ DISTRIBUTIONS
       HTML::Tagset 3.20
     requirements:
       ExtUtils::MakeMaker 0
-  IO-Socket-IP-0.37
-    pathname: P/PE/PEVANS/IO-Socket-IP-0.37.tar.gz
-    provides:
-      IO::Socket::IP 0.37
-    requirements:
-      IO::Socket 0
-      Socket 1.97
-      Test::More 0.88
   JSON-2.90
     pathname: M/MA/MAKAMAKA/JSON-2.90.tar.gz
     provides:
@@ -115,6 +102,7 @@ DISTRIBUTIONS
       Locale::Maketext::Extract::Plugin::FormFu 1.00
       Locale::Maketext::Extract::Plugin::FormFu::Extractor 1.00
       Locale::Maketext::Extract::Plugin::Generic 1.00
+      Locale::Maketext::Extract::Plugin::Haml 1.00
       Locale::Maketext::Extract::Plugin::Mason 1.00
       Locale::Maketext::Extract::Plugin::PPI 1.00
       Locale::Maketext::Extract::Plugin::Perl 1.00
@@ -134,6 +122,56 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 6.30
       Locale::Maketext 1.17
+  Module-Build-0.4222
+    pathname: L/LE/LEONT/Module-Build-0.4222.tar.gz
+    provides:
+      Module::Build 0.4222
+      Module::Build::Base 0.4222
+      Module::Build::Compat 0.4222
+      Module::Build::Config 0.4222
+      Module::Build::Cookbook 0.4222
+      Module::Build::Dumper 0.4222
+      Module::Build::Notes 0.4222
+      Module::Build::PPMMaker 0.4222
+      Module::Build::Platform::Default 0.4222
+      Module::Build::Platform::MacOS 0.4222
+      Module::Build::Platform::Unix 0.4222
+      Module::Build::Platform::VMS 0.4222
+      Module::Build::Platform::VOS 0.4222
+      Module::Build::Platform::Windows 0.4222
+      Module::Build::Platform::aix 0.4222
+      Module::Build::Platform::cygwin 0.4222
+      Module::Build::Platform::darwin 0.4222
+      Module::Build::Platform::os2 0.4222
+      Module::Build::PodParser 0.4222
+    requirements:
+      CPAN::Meta 2.142060
+      CPAN::Meta::YAML 0.003
+      Cwd 0
+      Data::Dumper 0
+      ExtUtils::CBuilder 0.27
+      ExtUtils::Install 0
+      ExtUtils::Manifest 0
+      ExtUtils::Mkbootstrap 0
+      ExtUtils::ParseXS 2.21
+      File::Basename 0
+      File::Compare 0
+      File::Copy 0
+      File::Find 0
+      File::Path 0
+      File::Spec 0.82
+      File::Temp 0.15
+      Getopt::Long 0
+      Module::Metadata 1.000002
+      Parse::CPAN::Meta 1.4401
+      Perl::OSType 1
+      Pod::Man 2.17
+      TAP::Harness 3.29
+      Test::More 0.49
+      Text::Abbrev 0
+      Text::ParseWords 0
+      perl 5.006001
+      version 0.87
   Module-Runtime-0.014
     pathname: Z/ZE/ZEFRAM/Module-Runtime-0.014.tar.gz
     provides:
@@ -260,6 +298,7 @@ DISTRIBUTIONS
       JSON::PP 2.27103
       Pod::Simple 3.09
       Time::Local 1.2
+      perl 5.010001
   Moo-2.001001
     pathname: H/HA/HAARG/Moo-2.001001.tar.gz
     provides:
@@ -440,128 +479,6 @@ DISTRIBUTIONS
       Test::More 0.47
       Test::Tester 0.107
       perl 5.006
-  Test-Simple-1.302015
-    pathname: E/EX/EXODIST/Test-Simple-1.302015.tar.gz
-    provides:
-      Test2 1.302015
-      Test2::API 1.302015
-      Test2::API::Breakage 1.302015
-      Test2::API::Context 1.302015
-      Test2::API::Instance 1.302015
-      Test2::API::Stack 1.302015
-      Test2::Event 1.302015
-      Test2::Event::Bail 1.302015
-      Test2::Event::Diag 1.302015
-      Test2::Event::Exception 1.302015
-      Test2::Event::Note 1.302015
-      Test2::Event::Ok 1.302015
-      Test2::Event::Plan 1.302015
-      Test2::Event::Skip 1.302015
-      Test2::Event::Subtest 1.302015
-      Test2::Event::Waiting 1.302015
-      Test2::Formatter 1.302015
-      Test2::Formatter::TAP 1.302015
-      Test2::Hub 1.302015
-      Test2::Hub::Interceptor 1.302015
-      Test2::Hub::Interceptor::Terminator 1.302015
-      Test2::Hub::Subtest 1.302015
-      Test2::IPC 1.302015
-      Test2::IPC::Driver 1.302015
-      Test2::IPC::Driver::Files 1.302015
-      Test2::Util 1.302015
-      Test2::Util::ExternalMeta 1.302015
-      Test2::Util::HashBase 1.302015
-      Test2::Util::Trace 1.302015
-      Test::Builder 1.302015
-      Test::Builder::Formatter 1.302015
-      Test::Builder::IO::Scalar 2.113
-      Test::Builder::Module 1.302015
-      Test::Builder::Tester 1.302015
-      Test::Builder::Tester::Color 1.302015
-      Test::Builder::Tester::Tie 1.302015
-      Test::Builder::TodoDiag 1.302015
-      Test::More 1.302015
-      Test::Simple 1.302015
-      Test::Tester 1.302015
-      Test::Tester::Capture 1.302015
-      Test::Tester::CaptureRunner 1.302015
-      Test::Tester::Delegate 1.302015
-      Test::use::ok 1.302015
-      ok 1.302015
-    requirements:
-      Carp 0
-      ExtUtils::MakeMaker 0
-      File::Spec 0
-      File::Temp 0
-      PerlIO 0
-      Scalar::Util 1.13
-      Storable 0
-      perl 5.008001
-      utf8 0
-  URI-1.71
-    pathname: E/ET/ETHER/URI-1.71.tar.gz
-    provides:
-      URI 1.71
-      URI::Escape 3.31
-      URI::Heuristic 4.20
-      URI::IRI 1.71
-      URI::QueryParam 1.71
-      URI::Split 1.71
-      URI::URL 5.04
-      URI::WithBase 2.20
-      URI::_foreign 1.71
-      URI::_generic 1.71
-      URI::_idna 1.71
-      URI::_ldap 1.71
-      URI::_login 1.71
-      URI::_punycode 1.71
-      URI::_query 1.71
-      URI::_segment 1.71
-      URI::_server 1.71
-      URI::_userpass 1.71
-      URI::data 1.71
-      URI::file 4.21
-      URI::file::Base 1.71
-      URI::file::FAT 1.71
-      URI::file::Mac 1.71
-      URI::file::OS2 1.71
-      URI::file::QNX 1.71
-      URI::file::Unix 1.71
-      URI::file::Win32 1.71
-      URI::ftp 1.71
-      URI::gopher 1.71
-      URI::http 1.71
-      URI::https 1.71
-      URI::ldap 1.71
-      URI::ldapi 1.71
-      URI::ldaps 1.71
-      URI::mailto 1.71
-      URI::mms 1.71
-      URI::news 1.71
-      URI::nntp 1.71
-      URI::pop 1.71
-      URI::rlogin 1.71
-      URI::rsync 1.71
-      URI::rtsp 1.71
-      URI::rtspu 1.71
-      URI::sftp 1.71
-      URI::sip 1.71
-      URI::sips 1.71
-      URI::snews 1.71
-      URI::ssh 1.71
-      URI::telnet 1.71
-      URI::tn3270 1.71
-      URI::urn 1.71
-      URI::urn::isbn undef
-      URI::urn::oid 1.71
-    requirements:
-      Exporter 5.57
-      ExtUtils::MakeMaker 0
-      MIME::Base64 2
-      Scalar::Util 0
-      parent 0
-      perl 5.008001
-      utf8 0
   YAML-LibYAML-0.62
     pathname: T/TI/TINITA/YAML-LibYAML-0.62.tar.gz
     provides:

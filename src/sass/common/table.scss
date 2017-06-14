@@ -93,6 +93,26 @@ table {
                 }
             }
         }
+        tr.selectedButton {
+            background-color: $COLOR_YELLOW;
+        }
+        tr.hoverable:hover {
+            background-color: $COLOR_YELLOW;
+            cursor: pointer;
+        }
+        th.ascending {
+            background-color: $COLOR_GREEN;
+            color: $COLOR_WHITE;
+        }
+        th.descending {
+            background-color: $COLOR_RED;
+            color: $COLOR_WHITE;
+        }
+        th.sortable:hover {
+            cursor: pointer;
+            background-color: $COLOR_DARK_GRAY;
+            color: $COLOR_WHITE;
+        }
     }
     @media (max-width: $md) {
         #profit-table tr {

@@ -95,6 +95,7 @@ const ViewPopupUI = (() => {
         button.fadeTo(0, 1);
     };
 
+    // this code show the popup
     const showInpagePopup = (data, containerClass, dragHandle) => {
         const con = container(true);
         if (containerClass) {
