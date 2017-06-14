@@ -1,6 +1,7 @@
 const Client             = require('./client');
 const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
+const urlLang            = require('./language').urlLang;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
 const isEmptyObject      = require('./utility').isEmptyObject;
@@ -47,9 +48,9 @@ const LoggedInHandler = (() => {
             }
         }
         if (set_default) {
-            redirect_url = defaultRedirectUrl();
-            const lang_cookie = Cookies.get('language');
+            const lang_cookie = urlLang(redirect_url) || Cookies.get('language');
             const language = getLanguage();
+            redirect_url = defaultRedirectUrl();
             if (lang_cookie && lang_cookie !== language) {
                 redirect_url = redirect_url.replace(new RegExp(`\/${language}\/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
             }
