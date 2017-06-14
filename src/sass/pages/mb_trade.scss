@@ -174,7 +174,6 @@
                     line-height: 20px;
                     padding: 10px;
                     text-align: center;
-                    font-weight: normal;
 
                     &:not(:first-child) {
                         text-align: left;
@@ -190,17 +189,16 @@
                     display: flex;
                     align-self: center;
                 }
-                .heading {
-                    font-weight: bold;
-
-                    .sell-price {
-                        padding-right: 20px;
-                    }
-                }
                 .sell-price {
                     font-size: $FONT_SIZE_XS;
-                    height: 15px;
                     line-height: 20px;
+
+                    &.hint {
+                        font-size: $FONT_SIZE_XXS;
+                    }
+                }
+                .price-rows .sell-price {
+                    height: 15px;
                 }
                 .price-row div:last-child .buy-price .price-button {
                     background: $COLOR_RED;
@@ -309,7 +307,7 @@
         }
         #spot {
             &.down {
-                color: $COLOR_BLUE;
+                color: $COLOR_LIGHT_BLUE;
             }
             &.up {
                 color: $COLOR_RED;
