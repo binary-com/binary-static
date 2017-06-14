@@ -5,7 +5,6 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
 const urlFor              = require('./url').urlFor;
-const isEmptyObject       = require('./utility').isEmptyObject;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
 const BinarySocket        = require('../websocket_pages/socket');
@@ -189,13 +188,6 @@ const Header = (() => {
 
             const costarica_landing_company = /costarica/.test(Client.get('landing_company_name'));
 
-            const riskAssessment = () => {
-                if (get_account_status.risk_classification === 'high') {
-                    return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
-                }
-                return false;
-            };
-
             const authenticate = () => {
                 // don't show age verification check for costarica clients
                 const should_age_verify = !/age_verification/.test(status) && !costarica_landing_company;
@@ -219,7 +211,7 @@ const Header = (() => {
                 authenticate   : () => authenticate(),
                 financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence      : () => !Client.get('residence'),
-                risk           : () => riskAssessment(),
+                risk           : () => get_account_status.risk_classification === 'high' && /financial_assessment_not_complete/.test(status),
                 tax            : () => Client.shouldCompleteTax(),
                 tnc            : () => Client.shouldAcceptTnc(),
                 unwelcome      : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
@@ -254,7 +246,7 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 checkStatus(check_statuses_virtual);
             } else {
-                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment', 'balance').then(() => {
+                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
                     get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
                     status = get_account_status.status;
                     if (costarica_landing_company && +Client.get('balance') < 200) {
