@@ -173,7 +173,13 @@ const Header = (() => {
     const displayNotification = (message, is_error, msg_code = '') => {
         const $msg_notification = $('#msg_notification');
         $msg_notification.html(message).attr({ 'data-message': message, 'data-code': msg_code });
-        if ($msg_notification.is(':hidden')) $msg_notification.removeClass('error').slideDown(500, () => { if (is_error) $msg_notification.addClass('error'); });
+        if ($msg_notification.is(':hidden')) {
+            $msg_notification.slideDown(500, () => { if (is_error) $msg_notification.addClass('error'); });
+        } else if (is_error) {
+            $msg_notification.addClass('error');
+        } else {
+            $msg_notification.removeClass('error');
+        }
     };
 
     const hideNotification = (msg_code) => {
