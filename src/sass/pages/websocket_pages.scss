@@ -85,6 +85,9 @@
 }
 
 #statement-container {
+    $md: 600px;
+    padding-left: 1%;
+    padding-right: 1%;
     #download_csv {
         line-height: 28px;
     }
@@ -96,6 +99,31 @@
     }
     .act {
         flex: 0.8 1 35px;
+    }
+    .sortModeBox {
+        background-color: $COLOR_BLUE;
+        width: 40%;
+        height: 10%;
+        position: fixed;
+        top: 90%;
+        left: 30%;
+        float: left;
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        .sortMessage {
+            color: $COLOR_WHITE;
+            text-align: center;
+        }
+
+        @media screen and (max-width: $md) {
+            width: 60%;
+            float: left;
+            left: 20%;
+        }
     }
 }
 

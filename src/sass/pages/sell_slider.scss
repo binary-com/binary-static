@@ -1,0 +1,109 @@
+.popup_bet_desc {
+    padding: 5px 0;
+    border: 1px solid $COLOR_GRAY;
+}
+
+#sell_slider_container {
+    width: 100%;
+    font-size: $FONT_SIZE_S;
+    max-width: 500px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    a.close {
+        right: 0;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    .inpage_slider_content {
+        margin: 0;
+    }
+    &.message_popup {
+        width: 500px;
+        line-height: 25px;
+    }
+}
+
+.inpage_slider_container {
+    border: 2px solid $COLOR_BLUE;
+    border-top: 1px solid $COLOR_WHITE;
+    background-color: $COLOR_WHITE;
+    .inpage_slider_content_box {
+        border: 0;
+        #contract_win_status {
+            line-height: 30px;
+            &.won {
+                background-color: rgba(46, 136, 54, 0.2);
+            }
+            &.lost {
+                background-color: rgba(204, 0, 0, 0.1);
+            }
+        }
+        .popup_bet_desc {
+            border: 0;
+            padding: 5px;
+            line-height: 20px;
+            background-color: $COLOR_BLUE;
+            color: $COLOR_WHITE;
+            @include BIDIR_PROP(padding-right, padding-left, 30px);
+        }
+        td {
+            @include BIDIR_PROP(padding-left, padding-right, 6%);
+            @include BIDIR_VALUE(text-align, left, right);
+        }
+        #sell_content_wrapper {
+            max-height: calc(100vh - 35px);
+            overflow: auto;
+            overflow-x: hidden;
+            -ms-overflow-x: hidden;
+            #sell_details_chart_wrapper {
+                border-right: 1px solid $COLOR_DARK_GRAY;
+                margin-right: -1px;
+                padding: 0;
+                min-width: 100%;
+            }
+            #sell_details_table {
+                min-width: 100%;
+                padding: 0;
+                border-left: 1px solid $COLOR_DARK_GRAY;
+                th {
+                    line-height: 24px;
+                    border-bottom: $COLOR_GRAY_SHADE;
+                    cursor: pointer;
+                }
+                td, td[data-balloon] {
+                    border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+                    vertical-align: middle;
+                }
+                #trade_details_profit_loss {
+                    font-weight: bold;
+                    span {
+                        font-size: $FONT_SIZE_XXS;
+                        @include BIDIR_PROP(padding-left, padding-right, 7px);
+                        font-weight: normal;
+                    }
+                }
+                .last_cell {
+                    border-bottom: 0;
+                    min-height: 20px;
+                    padding: 5px 15px;
+                    text-align: center;
+                }
+                #trade_details_message {
+                    font-style: italic;
+                }
+                #contract_sell_message {
+                    font-size: $FONT_SIZE_N;
+                    line-height: 20px;
+                }
+                #sell_at_market_wrapper .note {
+                    line-height: 18px;
+                    margin-bottom: 10px;
+                    font-size: $FONT_SIZE_XS;
+                    padding: 3px 10px;
+                }
+            }
+        }
+    }
+}

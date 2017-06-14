@@ -13,6 +13,7 @@ table {
         background: $COLOR_LIGHT_GRAY;
         border-bottom: 1px solid $COLOR_DARK_GRAY;
         vertical-align: middle;
+        word-wrap: break-word;
     }
     td {
         vertical-align: top;
@@ -51,7 +52,6 @@ table {
     th {
         @include BIDIR_VALUE(text-align, left !important, right !important);
         border-bottom: none !important;
-        overflow: hidden;
     }
     td {
         @include BIDIR_VALUE(text-align, left !important, right !important);
@@ -93,6 +93,42 @@ table {
                 }
             }
         }
+        tr:hover {
+            background-color: $COLOR_YELLOW;
+        }
+        .selectedRow {
+            background-color: $COLOR_YELLOW;
+        }
+        .pointerCursor {
+            cursor: pointer;
+        }
+        .flexContainer {
+            width: 100%;
+            height: 100%;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .flexItemName {
+            width: 80%;
+            height: 100%;
+        }
+        .flexIcon {
+            width: 20%;
+            height: 100%;
+        }
+        .sortIcon {
+            //background: url('./../../images/common/sort.svg');
+            background: url('https://image.flaticon.com/icons/svg/32/32074.svg');
+            background-size: cover;
+            width: 0.8em;
+            height: 0.8em;
+            float: right;
+        }
     }
     @media (max-width: $md) {
         #profit-table tr {
@@ -105,5 +141,13 @@ table {
                 display: none !important;
             }
         }
+    }
+    .sticky {
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        overflow-x: visible;
+        padding-left: 1%;
+        padding-right: 1%;
     }
 }

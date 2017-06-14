@@ -11,10 +11,11 @@ const StatementUI = (() => {
     'use strict';
 
     let all_data = [],
-        oauth_apps = {};
+        oauth_apps = {},
+        sortMessageShown = true;
 
     const table_id = 'statement-table';
-    const columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
+    const columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal'];
 
     const createEmptyStatementTable = () => {
         const header = [
@@ -25,7 +26,6 @@ const StatementUI = (() => {
             localize('Description'),
             localize('Credit/Debit'),
             localize('Balance'),
-            localize('Details'),
         ];
 
         const jp_client = jpClient();
@@ -63,17 +63,18 @@ const StatementUI = (() => {
             '',
             statement_data.amount,
             statement_data.balance,
-            '',
         ], columns, 'data');
 
         $statement_row.children('.credit').addClass(credit_debit_type);
         $statement_row.children('.date').addClass('pre');
         $statement_row.children('.desc').html(`${localize(statement_data.desc)}<br>`);
 
-        // create view button and append
+        // make the entire row clickable
         if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
-            const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: statement_data.id });
-            $statement_row.children('.desc,.details').append($view_button);
+            // make the entire row clickable
+            $statement_row.attr('contract_id', statement_data.id);
+            $statement_row.addClass('open_contract_details_slider');
+            $statement_row.addClass('pointerCursor');
         }
 
         return $statement_row[0];        // return DOM instead of jquery object
@@ -98,12 +99,74 @@ const StatementUI = (() => {
             `Statement_${Client.get('loginid')}_latest${$('#rows_count').text()}_${toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '')}.csv`);
     };
 
+    const showSortMessage = () => {
+        if (!sortMessageShown && $('.sortModeBox') !== undefined) {
+            $('.sortModeBox').animate({
+                top: '90%',
+            }, 100, () => {
+                sortMessageShown = true;
+            });
+        }
+    };
+
+    const hideSortMessage = () => {
+        if (sortMessageShown && $('.sortModeBox') !== undefined) {
+            $('.sortModeBox').animate({
+                top: '100%',
+            }, 100, () => {
+                sortMessageShown = false;
+            });
+        }
+    };
+
+    const renewSortMessage = (message) => {
+        const sortMessage = ('Sort mode : ').concat('<br>').concat(message);
+        $('.sortModeBox').find('.sortMessage').html(sortMessage);
+    };
+
+    const makeSortMessage = () => {
+        const sortModeBox = $('<div>', { class: 'sortModeBox' });
+        sortModeBox.append('<div class="sortMessage"></div>');
+        return sortModeBox;
+    };
+
+    const getStatementTable = () => $('#statement-table');
+
+    const cloneStatementTableHeader = () => getStatementTable().find('thead').clone();
+
+    const makeStickyTable = () => $('<table>', { id: 'statement-table', class: 'sticky' });
+
+    const resizeStickyTable = () => {
+        $('.sticky').css('width', getStatementTable().css('width'));
+    };
+
+    const resizeStickyTableHeader = (referenceArray) => {
+        const stickyHeaderItems = $('.sticky').find('tr').children('th');
+        for (let i = 0; i < stickyHeaderItems.length; i++) {
+            stickyHeaderItems.eq(i).width(referenceArray.eq(i).width());
+        }
+    };
+
+    const stickyHeaderScrollLeft = () => {
+        $('.sticky').css('left', -($('.table-container').scrollLeft() - ($(document).width() * 0.01)));
+    };
+
     return {
         clearTableContent        : clearTableContent,
         createEmptyStatementTable: createEmptyStatementTable,
         updateStatementTable     : updateStatementTable,
         errorMessage             : errorMessage,
         exportCSV                : exportCSV,
+        makeSortMessage          : makeSortMessage,
+        showSortMessage          : showSortMessage,
+        hideSortMessage          : hideSortMessage,
+        renewSortMessage         : renewSortMessage,
+        getStatementTable        : getStatementTable,
+        cloneStatementTableHeader: cloneStatementTableHeader,
+        makeStickyTable          : makeStickyTable,
+        resizeStickyTable        : resizeStickyTable,
+        resizeStickyTableHeader  : resizeStickyTableHeader,
+        stickyHeaderScrollLeft   : stickyHeaderScrollLeft,
         setOauthApps             : values => (oauth_apps = values),
     };
 })();
