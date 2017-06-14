@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-13 01:27-0400\n"
+"PO-Revision-Date: 2017-06-14 02:43-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -189,6 +189,9 @@ msgstr "Binary.com (バイナリードットコム)はPerlコミュニティの�
 
 msgid "%1 is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "Binary.com (バイナリードットコム)ではオープンソースによる開発を推進し、コード内のコンポーネントのオープンソース化を進めています。"
+
+msgid "%1 is awarded Best Binary Options Broker by the UK-based Online Personal Wealth Awards 2017, as voted by investors worldwide."
+msgstr ""
 
 msgid "%1 is entirely web-based and requires no software installation."
 msgstr "当社のプラットフォームはウェブベースですので、特定のソフトウェアをインストールする必要は一切ございません。"
@@ -5005,13 +5008,13 @@ msgid "Maximum aggregate loss per day. Update this value in our %1self exclusion
 msgstr "1日の最大損失に達しました。%1s取引制限%2にてこの値を更新してください。"
 
 msgid "Maximum aggregate payouts on open positions"
-msgstr "未現実利益限度額"
+msgstr "保有ポジション合計ペイアウト上限額"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
-msgstr "未現実利益限度額"
+msgstr "一通貨ごとのペイアウト合計限度額"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
-msgstr "オープンポジションがない場合、未現実利益限度額がペイアウト限度額まで超えることがあります。"
+msgstr "一通貨ごとのペイアウト合計限度額となります。"
 
 msgid "Maximum daily turnover"
 msgstr "取引限度額（1日）"
@@ -5768,6 +5771,9 @@ msgstr "個人情報とプライバシー"
 
 msgid "Personal Details"
 msgstr "お客さま登録情報"
+
+msgid "Personal Wealth Awards 2017"
+msgstr ""
 
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgstr "金融市場や金融商品の内部情報を知る方による当ウェブサイトでのお取引は禁止されています。"
