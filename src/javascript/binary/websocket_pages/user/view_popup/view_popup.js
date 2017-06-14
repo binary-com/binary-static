@@ -247,7 +247,8 @@ const ViewPopup = (() => {
 
         $sections.find('#sell_details_table').append($(
             `<table>
-            <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
+            <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr>
+            <tbody id="contract_information_content">
             ${createRow('Contract ID', '', 'trade_details_contract_id')}
             ${createRow('Reference ID', '', 'trade_details_ref_id')}
             ${createRow('Start Time', '', 'trade_details_start_date')}
@@ -263,12 +264,14 @@ const ViewPopup = (() => {
             <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>
             <tbody id="barrier_change_content" class="invisible"></tbody>
             <tr><th colspan="2" id="trade_details_current_title">${localize('Current')}</th></tr>
+            <tbody id="trade_information_content">
             ${createRow('Spot', 'trade_details_spot_label', 'trade_details_current_spot')}
             ${createRow('Spot Time', 'trade_details_spottime_label', 'trade_details_current_date')}
             ${createRow('Current Time', '', 'trade_details_live_date')}
             ${createRow('Indicative', 'trade_details_indicative_label', 'trade_details_indicative_price')}
             ${createRow('Profit/Loss', '', 'trade_details_profit_loss')}
             <tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>
+            </tbody>
             </table>
             <div id="errMsg" class="notice-msg ${hidden_class}"></div>
             <div id="trade_details_bottom"><div id="contract_sell_wrapper" class="${hidden_class}"></div><div id="contract_sell_message"></div><div id="contract_win_status" class="${hidden_class}"></div></div>`));
@@ -423,6 +426,13 @@ const ViewPopup = (() => {
         }
     };
 
+    const viewOnClick = (container_selector) => {
+        $(container_selector).on('click', '.open_contract_details', function(e) {
+            e.preventDefault();
+            init(this);
+        });
+    };
+
     const viewButtonOnClick = (container_selector) => {
         $(container_selector).on('click', '.open_contract_details', function(e) {
             e.preventDefault();
@@ -433,6 +443,7 @@ const ViewPopup = (() => {
     return {
         init             : init,
         viewButtonOnClick: viewButtonOnClick,
+        viewOnClick      : viewOnClick,
     };
 })();
 

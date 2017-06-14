@@ -28,6 +28,8 @@ const StatementInit = (() => {
         transactions_received,
         transactions_consumed;
 
+    let action_list = [];
+
     const tableExist = () => (document.getElementById('statement-table'));
 
     const finishedConsumed = () => (transactions_consumed === transactions_received);
@@ -76,7 +78,11 @@ const StatementInit = (() => {
         }
 
         if (!tableExist()) {
-            StatementUI.createEmptyStatementTable().appendTo('#statement-container');
+            const $header = StatementUI.createEmptyStatementTable();
+            headerEventHandler();
+            $header.appendTo('#statement-container');
+            $('#statement-container').css('padding-left', '2%');
+            $('#statement-container').css('padding-right', '2%');
             $('.act, .credit').addClass('nowrap');
             StatementUI.updateStatementTable(getNextChunkStatement());
 
@@ -95,8 +101,90 @@ const StatementInit = (() => {
                                       .click(() => { StatementUI.exportCSV(); });
                 }
             }
+            updateActionList();
         }
+
         showLocalTimeOnHover('td.date');
+    };
+
+    const updateActionList = () => {
+        const temp = [];
+        $('#statement-table > tbody > tr').each(function () {
+            const action = String($(this).find('.act').html());
+            if (action_list.indexOf(action) === -1 && temp.indexOf(action) === -1 && action !== 'undefined') {
+                temp.push(action);
+            }
+        });
+        $.each(temp, function(i, action) {
+            $('#action-list').append($('<option>', {
+                value: action.toLowerCase(),
+                text : localize(action),
+            }));
+        });
+        action_list = action_list.concat(temp);
+    };
+
+    const headerEventHandler = () => {
+        $(document.body).find('#reference-input').on('keyup', function() {
+            filterTable();
+        });
+        $(document.body).find('#debit-credit-list').on('change', function() {
+            filterTable();
+        });
+        $(document.body).find('#action-list').on('change', function() {
+            filterTable();
+        });
+    };
+
+    const filterTable = () => {
+        let foundRow = false;
+        const input_ref = $('#reference-input').val();
+        const input_selected = $('#debit-credit-list').val();
+        const input_action = $('#action-list').val();
+        $('#statement-table > tbody > tr').each(function () {
+            const ref_id = $(this).find('.ref > span').html();
+            const profit_loss_class = $(this).find('.credit').attr('class');
+            const action = $(this).find('.act').html();
+            if ($(this).attr('class').indexOf('details') > -1 && findRef(input_ref, ref_id) &&
+            findPL(input_selected, profit_loss_class) && findAction(input_action, action)) {
+                $(this).css('display', '');
+                foundRow = true;
+            } else {
+                $(this).css('display', 'none');
+            }
+        });
+        if (!foundRow) {
+            if ($('.no-record')) {
+                $('#statement-table').find('tbody').append($('<tr/>', { class: 'flex-tr' })
+                    .append($('<td/>', { colspan: 7 })
+                        .append($('<p/>', { class: 'no-record center-text', text: localize('No Search Results found.') }))));
+            }
+
+            $('flex-tr').css('display', '');
+        } else {
+            $('flex-tr').css('display', 'none');
+        }
+    };
+
+    const findRef = (input_ref, ref_id) => {
+        if (ref_id.indexOf(input_ref) > -1) {
+            return true;
+        }
+        return false;
+    };
+
+    const findPL = (input_selected, profit_loss_class) => {
+        if (profit_loss_class.indexOf(input_selected) > -1 || input_selected === 'all') {
+            return true;
+        }
+        return false;
+    };
+
+    const findAction = (input_action, action) => {
+        if (action.toLowerCase() === input_action || input_action === 'all') {
+            return true;
+        }
+        return false;
     };
 
     const loadStatementChunkWhenScroll = () => {
@@ -116,6 +204,8 @@ const StatementInit = (() => {
             }
 
             if (!finishedConsumed()) StatementUI.updateStatementTable(getNextChunkStatement());
+            filterTable();
+            updateActionList();
         });
     };
 
@@ -133,7 +223,7 @@ const StatementInit = (() => {
     };
 
     const initPage = () => {
-        batch_size = 200;
+        batch_size = 20;
         chunk_size = batch_size / 2;
         no_more_data = false;
         pending = false;            // serve as a lock to prevent ws request is sequential
@@ -171,7 +261,7 @@ const StatementInit = (() => {
     const onLoad = () => {
         initPage();
         attachDatePicker();
-        ViewPopup.viewButtonOnClick('#statement-container');
+        ViewPopup.viewOnClick('#statement-container');
     };
 
     return {

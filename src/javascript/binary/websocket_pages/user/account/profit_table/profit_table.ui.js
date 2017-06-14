@@ -94,9 +94,9 @@ const ProfitTableUI = (() => {
             $(this).wrapInner('<div class="new-width"></div>');
         });
 
-        // create view button and append
-        const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: profit_table_data.id });
-        $row.children('.contract,.details').append($view_button);
+        $row.attr('class', 'open_contract_details');
+        $row.attr('contract_id', profit_table_data.id);
+        $row.hover(function() { $(this).css('background-color', '#E98024'); }, function() { $(this).css('background-color', 'white'); });
 
         return $row[0];
     };

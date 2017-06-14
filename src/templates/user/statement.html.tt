@@ -1,12 +1,12 @@
 <div id="statement-container">
     <div class="page-title" id="statement-title">
-        <h1>[% l('Statement') %]</h1>
+        <h1 style="text-align: center;">[% l('Statement Table') %]</h1>
         <div class="loading">[% PROCESS global/loading.html.tt %]</div>
         <br>
         <p class="notice-msg center-text invisible" id="error-msg"></p>
     </div>
     <div class="gr-row gr-padding-10 invisible" id="util_row">
-        <div class="gr-6 gr-12-m">
+        <div class="gr-3 gr-12-m">
             <div class="gr-row gr-gutter-left">
                 <div class="label_form gr-gutter-left">
                     <label for="jump-to">[% l("Start from:") %]</label>
@@ -16,7 +16,39 @@
                 </div>
             </div>
         </div>
-        <div class="gr-6 gr-12-m align-end">
+        <div class="gr-3 gr-12-m">
+            <div class="gr-row gr-gutter-left">
+                <div class="label_form gr-gutter-left">
+                    <label for="reference-input">[% l('Search: ') %]</label>
+                </div>
+                <div class="gr-8 gr-gutter-left">
+                    <input type="text" id="reference-input" size="11" placeholder="Ref."/>
+                </div>
+            </div>
+        </div>
+        <div class="gr-3 gr-12-m">
+            <div class="gr-row gr-gutter-left">
+                <div class="label_form gr-gutter-left">
+                    <label for="debit-credit-list">[% l('Profit/Loss: ') %]</label>
+                    <select id="debit-credit-list">
+                        <option value="all" selected="selected">[% l('All') %]</option>
+                        <option value="profit">[% l('Profit') %]</option>
+                        <option value="loss">[% l('Loss') %]</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="gr-3 gr-12-m">
+            <div class="gr-row gr-gutter-left">
+                <label for="action-list">[% l('Action: ') %]</label>
+                <select id="action-list">
+                    <option value ="all" selected="selected">[% l('All') %]</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="gr-row gr-padding-10" id="util_row">
+        <div class="gr-4 gr-12-m">
             <div id="download_csv" class="invisible">[% l('[_1] rows displayed:', '<span id="rows_count"></span>') %] <a href="javascript:;">[% l('Download CSV') %]</a></div>
         </div>
     </div>

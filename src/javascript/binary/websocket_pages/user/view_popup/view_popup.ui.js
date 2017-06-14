@@ -103,10 +103,13 @@ const ViewPopupUI = (() => {
         if (data) {
             $('.inpage_popup_content', con).html(data);
         }
+
         const body = $(document.body);
         con.css('position', 'fixed').css('z-index', getHighestZIndex() + 100);
         body.append(con);
         con.show();
+        $('#contract_tabs').click(function() { $('#contract_information_content').toggle(); });
+        $('#trade_details_current_title').click(function() { $('#trade_information_content').toggle(); });
         // $('html').addClass('no-scroll');
         $(document.body).append($('<div/>', { class: 'popup_page_overlay' }));
         $('.popup_page_overlay').click(() => { container().find('a.close').click(); });

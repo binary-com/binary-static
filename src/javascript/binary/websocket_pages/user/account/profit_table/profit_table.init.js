@@ -122,7 +122,7 @@ const ProfitTableInit = (() => {
         });
         getNextBatchTransactions();
         onScrollLoad();
-        ViewPopup.viewButtonOnClick('#profit-table-container');
+        ViewPopup.viewOnClick('#profit-table-container');
     };
 
     return {

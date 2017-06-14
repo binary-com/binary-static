@@ -14,7 +14,7 @@ const StatementUI = (() => {
         oauth_apps = {};
 
     const table_id = 'statement-table';
-    const columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
+    const columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal'];
 
     const createEmptyStatementTable = () => {
         const header = [
@@ -25,7 +25,6 @@ const StatementUI = (() => {
             localize('Description'),
             localize('Credit/Debit'),
             localize('Balance'),
-            localize('Details'),
         ];
 
         const jp_client = jpClient();
@@ -63,18 +62,28 @@ const StatementUI = (() => {
             '',
             statement_data.amount,
             statement_data.balance,
-            '',
         ], columns, 'data');
+        let class_name = 'open_contract_details';
+        if (statement_data.action === 'Deposit') {
+            class_name = 'deposit_details';
+        }
+        $statement_row.attr('class', class_name);
+        $statement_row.attr('contract_id', statement_data.id);
 
         $statement_row.children('.credit').addClass(credit_debit_type);
         $statement_row.children('.date').addClass('pre');
         $statement_row.children('.desc').html(`${localize(statement_data.desc)}<br>`);
 
-        // create view button and append
-        if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
-            const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: statement_data.id });
-            $statement_row.children('.desc,.details').append($view_button);
-        }
+        $statement_row.hover(function() {
+            const class_row = $(this).attr('class');
+            if (class_row === 'open_contract_details') {
+                $(this).css('background-color', '#E98024');
+                $(this).css('cursor', 'pointer');
+            }
+        }, function() {
+            $(this).css('background-color', 'white');
+            $(this).css('cursor', 'auto');
+        });
 
         return $statement_row[0];        // return DOM instead of jquery object
     };

@@ -94,7 +94,7 @@ sub all_pages {
         ['user/profit_tablews',              'user/profit_table',                    'default',    'Profit Table'],
         ['user/securityws',                  'user/security',                        'default',    'Security'],
         ['user/settingsws',                  'user/settings',                        'default',    'Settings'],
-        ['user/statementws',                 'user/statement',                       'default',    'Statement'],
+        ['user/statementws',                 'user/statement',                       'full_width',    'Statement'],
         ['user/tnc_approvalws',              'legal/tnc_approval',                   'default',    'Terms and Conditions Approval'],
         ['user/reset_passwordws',            'user/reset_password',                  'default',    'Password Reset'],
         ['user/reality_check_frequency',     'user/reality_check/frequency',         'default',    'Reality Check'],
