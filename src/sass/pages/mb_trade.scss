@@ -29,7 +29,7 @@
                 position: relative;
 
                 .current {
-                    height: 40px;
+                    height: 39px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -39,13 +39,13 @@
                     }
                 }
                 > div {
-                    height: 40px;
+                    height: 39px;
                     background: $COLOR_LIGHT_GRAY;
                 }
                 .current, .list > div {
                     padding: 5px !important;
                     cursor: pointer;
-                    height: 40px;
+                    height: 39px;
 
                     &:hover {
                         background-color: $COLOR_GRAY;
@@ -70,10 +70,10 @@
                 }
             }
             #currency_wrapper, #payout {
-                height: 105px;
+                height: 103px;
             }
             #underlying {
-                margin-top: -5px;
+                margin-top: -7px;
 
                 div.current > div {
                     display: flex;
@@ -92,10 +92,10 @@
             #period {
                 .start, .end {
                     line-height: 20px;
+                    font-weight: bold;
                 }
                 .duration {
                     font-size: $FONT_SIZE_N;
-                    font-weight: bold;
                 }
                 .current > div, .list > div {
                     align-items: center;
@@ -115,19 +115,19 @@
             #payout .current {
                 font-size: $FONT_SIZE_XXL;
                 font-weight: bold;
-                height: 91px;
+                height: 88px;
                 padding-top: 10px !important;
             }
             #payout_list {
-                height: 130px;
+                height: 103px;
                 background: $COLOR_WHITE;
 
                 .list {
                     background: $COLOR_WHITE;
 
                     > div {
-                        line-height: 52px;
-                        height: 62px;
+                        padding: 19px 10px !important;
+                        height: 49px;
                         border-right: 2px solid $COLOR_WHITE;
                         margin-bottom: 5px;
 
@@ -147,7 +147,6 @@
                             background: $COLOR_GREEN;
                         }
                         .hint {
-                            margin-top: -35px;
                             font-size: 75%;
                         }
                     }
@@ -172,12 +171,7 @@
             .prices-wrapper {
                 .heading > div {
                     line-height: 20px;
-                    padding: 10px;
                     text-align: center;
-
-                    &:not(:first-child) {
-                        text-align: left;
-                    }
                 }
                 .price-row > div {
                     line-height: 35px;
@@ -207,7 +201,7 @@
                     background: $COLOR_LIGHT_GRAY;
                 }
                 .base-value {
-                    font-size: $FONT_SIZE_XS;
+                    font-size: $FONT_SIZE_XXS;
                     display: inline-block;
                     margin-left: 5px;
                 }
@@ -255,7 +249,7 @@
                     line-height: 100%;
                     background: $COLOR_LIGHT_BLUE;
                     border-radius: 3px;
-                    padding: 10px 0;
+                    padding: 0;
                     cursor: pointer;
                     font-size: $FONT_SIZE_S;
                     border: 0;
@@ -273,11 +267,6 @@
                                 background-image: svg-icon('down', $COLOR_WHITE);
                             }
                         }
-                    }
-                    .base-value {
-                        position: absolute;
-                        bottom: 1px;
-                        right: 3px;
                     }
                     &:hover {
                         opacity: 0.8;
@@ -322,10 +311,21 @@
             .trade-form .gr-row > div:first-child {
                 padding-bottom: 10px;
             }
-            .price-table .price-row {
-                .barrier, .price-button .value-wrapper, .sell-price {
-                    font-size: $FONT_SIZE_S;
+            .trade_form {
+                font-size: $FONT_SIZE_N;
+
+                #spot, .name {
+                    font-size: $FONT_SIZE_L;
                 }
+            }
+            .price-table .price-row .price-button {
+                font-size: $FONT_SIZE_N;
+            }
+            .sell-price {
+                font-size: $FONT_SIZE_XXS;
+            }
+            .heading {
+                font-size: $FONT_SIZE_S;
             }
         }
     }

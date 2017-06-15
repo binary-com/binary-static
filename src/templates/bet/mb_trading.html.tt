@@ -1,7 +1,7 @@
 <div id="main_loading" class="center-text">
     [% INCLUDE global/loading.html.tt %]
 </div>
-<div id="mb-trading-wrapper" class="gr-centered gr-12-p gr-12-m invisible">
+<div id="mb-trading-wrapper" class="mb-trading-wrapper gr-centered gr-12-p gr-12-m invisible">
     <div class="gr-row">
 
     <div class="gr-7 gr-12-m gr-12-p gr-order-2-m gr-order-2-p">
@@ -70,19 +70,17 @@
             <div id="disable-overlay" class="invisible"></div>
             <div class="prices-wrapper gr-12">
                 <div class="gr-row heading">
-                    <div class="gr-4 barrier align-self-center">[% l('Barrier') %]</div>
-                    <div class="gr-4 buy-price">
+                    <div class="gr-4 gr-padding-10 barrier align-self-center">[% l('Barrier') %]</div>
+                    <div class="gr-4 gr-padding-10 buy-price gr-no-gutter-left">
                         [% l('Buy Price') %]
                         <div class="hint sell-price">
                             [% l('Sell Price') %]
-                            <span class="invisible ja-show">[% l('(per lot)') %]</span>
                         </div>
                     </div>
-                    <div class="gr-4 buy-price">
+                    <div class="gr-4 gr-padding-10 buy-price gr-no-gutter-left">
                         [% l('Buy Price') %]
                         <div class="hint sell-price">
                             [% l('Sell Price') %]
-                            <span class="invisible ja-show">[% l('(per lot)') %]</span>
                         </div>
                     </div>
                 </div>
@@ -101,12 +99,12 @@
         <div class="gr-row price-row">
             <div class="gr-4 barrier"></div>
             <div class="gr-4">
-                <div class="buy-price gr-12"></div>
-                <div class="sell-price gr-12"></div>
+                <div class="buy-price gr-12 gr-no-gutter-left"></div>
+                <div class="sell-price gr-12 gr-no-gutter-left"></div>
             </div>
             <div class="gr-4">
-                <div class="buy-price gr-12"></div>
-                <div class="sell-price gr-12"></div>
+                <div class="buy-price gr-12 gr-no-gutter-left"></div>
+                <div class="sell-price gr-12 gr-no-gutter-left"></div>
             </div>
         </div>
     </div>

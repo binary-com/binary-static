@@ -106,7 +106,7 @@ const MBProcess = (() => {
                     .append($('<img/>', {
                         src  : urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`),
                         alt  : '',
-                        class: 'gr-3',
+                        class: 'gr-3 gr-no-gutter-m',
                     }))
                     .append($('<span/>', { text: all_symbols[symbol].display, class: 'name gr-6 gr-5-m align-self-center' }))
                     .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' }));
