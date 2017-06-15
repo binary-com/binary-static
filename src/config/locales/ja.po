@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-15 04:16-0400\n"
+"PO-Revision-Date: 2017-06-15 04:38-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -1837,8 +1837,8 @@ msgstr "Binary (Europe) Ltdで口座を開設されたお客さまは、%1から
 msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
 msgstr "Binary (IOM) Ltdでご登録されたお客様は、ADR法人の裁定フォームにご記入いただくことで、IBASの裁判外紛争解決法人に未解決の抵触内容をご提出いただけます"
 
-msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the MFSA's Consumer Complaints Manager. Details on making a complaint with the MFSA's Consumer Complaints Manager as well as their contact details can be found here: %1. Complaints to the MFSA's Consumer Complaints Manager should always be made in writing."
-msgstr "Binary Investments (Europe) Ltdに登録いただいたお客さまは、未解決のやりとりをMFSA消費者苦情管理まで問題を提起していただくことが可能です。MFSA消費者苦情管理のお問い合わせ同様、苦情の申し立てについての情報は%1からご確認いただけます。MSFA消費者苦情管理への申し立ては、常に文書での提出をお願い致します。"
+msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found %1here%2."
+msgstr ""
 
 msgid "Clients registered with any Binary Group company, and in particular with Binary (V) Ltd. or Binary (C.R.). S.A., can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
 msgstr "Binary (C.R.) S.A.にご口座を開設されたお客さまは、 complaints@binary.comまでご連絡頂くことで当社のマネージメントに苦情を申し立てることができます。"
@@ -5313,6 +5313,9 @@ msgstr "Nothing in this Force Majeure Event section shall be taken as indicating
 msgid "Notification of Changes"
 msgstr "ポリシー変更に関する通知について"
 
+msgid "Notwithstanding the above, you hereby declare that you are dealing with us outside the scope of your economic or professional activity and we will therefore treat you as an individual retail client for the purposes of EMIR compliance, unless advised otherwise."
+msgstr ""
+
 msgid "Nov"
 msgstr "11"
 
@@ -7586,6 +7589,9 @@ msgstr "まず初めに取引通貨を選択して下さい。バイナリーオ
 msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr "最初のTickとは、当社のサーバにてトレードが処理された後に検出された最初のTickを指します。"
 
+msgid "The full version of our best execution policy is available on request."
+msgstr ""
+
 msgid "The hours of closure of the market (for e.g., the hours over the weekend during which trading of certain transactions are not possible);"
 msgstr "市場閉鎖時間です（例：週末には特定の決済はご利用いただけません。）"
 
@@ -8580,6 +8586,9 @@ msgstr "当社は確立と維持を目的としており、構成からによる
 msgid "We aim to keep a record of the kinds of activity we carry on in which a material conflict could arise or has arisen. We also maintain procedures to manage actual or potential conflicts. This includes procedures to maintain appropriate independence between members of our staff who are involved in potentially conflicting activities, for example, through the operation of information barriers, physical separation of staff, the segregation of duties and responsibilities and maintenance of a policy of independence which requires our staff, when providing services to a client, to act in the best interests of the client and to disregard any conflicts of interest; and, in some circumstances declining to act for a client or potential client."
 msgstr "当社は論争材料が発生しうる、または発生している中で活動種類を記録し続けることを目指しています。実際におきている論争または起きる可能性のある論争の手順を管理しています。これは潜在的論争活動において関係のある当社スタッフメンバー間で独立して管理する手順を含んでいます。例えば、クライアントにサービスを提供している際に、クライアントに最良の利益をもたらすためや、利益相反の放置、ある状況下でのあるクライアントまたは利益相反行為を拒否するために、バリア情報、スタッフが物理的に遠方にいること、必要義務や責任、必要とする当スタッフの独立性に関するポリシーの管理操作を介します。"
 
+msgid "We also collect basic tax residence information for the purposes of CRS/FATCA compliance. The tax information you provide may only be disclosed to the authorities legally charged with collecting this information for the purposes of CRS/FATCA reporting and only to the extent to which BIEL is legally obliged to collect and disclose it. This information shall not be used, disclosed or processed in any other way at any time."
+msgstr ""
+
 msgid "We also offer specialized pay-out structures to affiliates who offer a trading advice in connection with, and in relation to our commodities. <a href=\"mailto:%1\">Contact our affiliate manager, Karen Yap for details</a>."
 msgstr "また、当社では当社の商品に関する取引アドバイスを提供された方へのアフィリエイトに特化したペイアウト構造を提供しています。詳細は、<a href=\"mailto:%1\">当社アフィリエイトマネージャーKaren Yapまでご連絡ください。</a>"
 
@@ -8676,6 +8685,9 @@ msgstr "あらゆる場合においても公正に扱われ、クライアント
 
 msgid "We have the ability to adapt and scale to meet the demands of new clients, thanks to the teams and processes that we’ve put together over the years."
 msgstr "We have the ability to adapt and scale to meet the demands of new clients, thanks to the teams and processes that we’ve put together over the years."
+
+msgid "We have the right and obligation not to accept the information provided by you if we know or have a reason to believe that it is incorrect, inaccurate or incomplete. In such case, we may ask you to clarify or correct the details provided."
+msgstr ""
 
 msgid "We look forward to hearing from you."
 msgstr "皆様からのご応募をお待ちしております。"
@@ -10890,7 +10902,7 @@ msgid "{JAPAN ONLY}Please note the maximum regular withdrawal amount is ¥1,000,
 msgstr "1日の出金可能額は100万円となっております。"
 
 msgid "{JAPAN ONLY}Please note we can only accept payments from your designated bank account and no other account in your name."
-msgstr "振込名義が取引口座名義と相違がある場合は、お客さまの取引口座へ振込が行えません。"
+msgstr "振込名義が取引口座名義と相違がある場合は、お客さまの取引口座へ振込が行えません。また、出金先口座としてご登録の金融機関より、取引口座名義でお振込ください。"
 
 msgid "{JAPAN ONLY}Please note:"
 msgstr "注意"
