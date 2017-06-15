@@ -136,6 +136,9 @@ sub css_files {
 
 sub js_config {
     my @libs;
+
+    push @libs, root_url . "js/texts/$LANG.js?$static_hash";
+
     if (is_dev()) {
         push @libs, root_url . "js/binary.js?$static_hash";
     } else {

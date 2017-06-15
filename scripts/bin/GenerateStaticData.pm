@@ -9,26 +9,26 @@ use File::Slurp;
 use YAML::XS qw(LoadFile);
 # our module in lib
 use BS;
+use Term::ANSIColor;
 
 sub generate_data_files {
     my $js_path = shift;
 
     _make_nobody_dir($js_path);
-    print "\tGenerating $js_path/texts.js\n";
-    my $exports = <<'END_EXPORTS';
 
-module.exports = {
-    texts_json: texts_json,
-};
-END_EXPORTS
-
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts() . $exports);
+    print colored(['cyan'], "\tGenerating files:\n");
+    foreach my $language ((BS::all_languages(), 'ACH')) {
+        my $file = "$js_path/${\lc $language}.js";
+        printf "\t\t%-40s %5s", $file, "  .....  ";
+        File::Slurp::write_file($file, { binmode => ':utf8' }, _texts($language));
+        printf colored(['green'], "Done.\n");
+    }
     return;
 }
 
 sub _texts {
+    my $language = shift;
     my $js = "const texts_json = {};\n";
-    foreach my $language ((BS::all_languages(), 'ACH')) {
         BS::set_lang($language);
 
         my @texts;
@@ -501,7 +501,6 @@ sub _texts {
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
-    }
 
     return $js;
 }
