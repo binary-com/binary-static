@@ -1,5 +1,7 @@
+const MBContract     = require('./mb_contract');
 const MBDefaults     = require('./mb_defaults');
 const Client         = require('../../base/client');
+const localize       = require('../../base/localize').localize;
 const jpClient       = require('../../common_functions/country_base').jpClient;
 const formatCurrency = require('../../common_functions/currency_to_symbol').formatCurrency;
 
@@ -24,11 +26,14 @@ const MBDisplayCurrencies = () => {
     if (currencies.length > 1 && !jpClient()) {
         currencies.forEach((currency) => {
             $list.append($('<div/>', { value: currency, text: formatCurrency(currency) }));
+            if (def_value === currency) {
+                MBContract.setCurrentItem($currency, currency);
+            }
         });
         $currency.css('z-index', '0');
     }
 
-    $currency.attr('value', def_value).find('> .current').html(jpClient() ? '✕' : formatCurrency(def_value));
+    $currency.attr('value', def_value).find('> .current').html(jpClient() ? localize('Lots') : formatCurrency(def_value));
 
     MBDefaults.set('currency', def_value);
 };

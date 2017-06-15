@@ -50,8 +50,13 @@ body.JA {
             width: 100% !important;
         }
     }
-    #mb_trading .payout-input {
-        .hint, label {
+    #mb_trading {
+        .payout-input {
+            .hint, label {
+                font-size: $FONT_SIZE_XXS;
+            }
+        }
+        #currency {
             font-size: $FONT_SIZE_XXS;
         }
     }
