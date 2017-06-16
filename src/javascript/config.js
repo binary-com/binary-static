@@ -1,4 +1,4 @@
-const Cookies = require('./lib/js-cookie');
+const Cookies = require('js-cookie');
 
 /*
  * Configuration values needed in js codes

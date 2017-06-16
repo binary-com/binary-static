@@ -1,3 +1,4 @@
+const Cookies            = require('js-cookie');
 const Client             = require('./client');
 const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
@@ -6,7 +7,6 @@ const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
 const paramsHash         = require('./url').paramsHash;
 const isEmptyObject      = require('./utility').isEmptyObject;
-const Cookies            = require('../../lib/js-cookie');
 
 const LoggedInHandler = (() => {
     'use strict';

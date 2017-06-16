@@ -1,5 +1,5 @@
+const Cookies       = require('js-cookie');
 const CookieStorage = require('./storage').CookieStorage;
-const Cookies       = require('../../lib/js-cookie');
 
 const Language = (() => {
     'use strict';
