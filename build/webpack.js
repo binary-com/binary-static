@@ -13,6 +13,7 @@ module.exports = function (grunt) {
                 filename: '[file].map',
                 exclude: ['vendor.min.js', 'manifest']
             }),
+            new webpack.ContextReplacementPlugin(/moment[\/\\]locale/, /nothing/),
             new webpack.optimize.CommonsChunkPlugin({
                 name: 'vendor',
                 filename: 'vendor.min.js',
