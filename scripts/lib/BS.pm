@@ -139,6 +139,8 @@ sub js_config {
 
     push @libs, root_url . "js/texts/$LANG.js?$static_hash";
 
+    push @libs, root_url . "js/manifest.js?$static_hash";
+    push @libs, root_url . "js/vendor.min.js?$static_hash";
     if (is_dev()) {
         push @libs, root_url . "js/binary.js?$static_hash";
     } else {

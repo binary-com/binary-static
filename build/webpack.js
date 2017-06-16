@@ -1,3 +1,4 @@
+var path = require('path');
 var webpack = require('webpack');
 var CircularDependencyPlugin = require('circular-dependency-plugin');
 // var UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin')["default"];
@@ -8,6 +9,21 @@ module.exports = function (grunt) {
             new CircularDependencyPlugin({
                 failOnError: true,
             }),
+            new webpack.SourceMapDevToolPlugin({
+                filename: '[file].map',
+                exclude: ['vendor.min.js', 'manifest']
+            }),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor',
+                filename: 'vendor.min.js',
+                minChunks: function (module) {
+                    return module.context && module.context.indexOf('node_modules') !== -1;
+                }
+            }),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'manifest',
+                minChunks: Infinity,
+            }),
             // new UnusedFilesWebpackPlugin({
             //     pattern: 'src/javascript/**/*.*',
             //     globOptions: {
@@ -15,6 +31,7 @@ module.exports = function (grunt) {
             //     }
             // }),
         ];
+
     if (isProduction) {
         plugins.push(
             new webpack.optimize.UglifyJsPlugin({
@@ -38,35 +55,42 @@ module.exports = function (grunt) {
         );
     }
 
-    return {
-        all: {
-            node: {
-                fs: 'empty',
-            },
-            devtool: isProduction ? 'source-map' : 'cheap-source-map',
-            watch  : !isProduction,
-            entry  : {
-                'binary.js'    : './src/javascript',
-                'binary.min.js': './src/javascript',
-            },
-            output: {
-                path    : global.dist + '/js/',
-                filename: '[name]',
-            },
-            module: {
-                loaders: [
-                    {
-                        test   : /\.js$/,
-                        exclude: /node_modules/,
-                        loader : 'babel',
-                        query  : {
-                            presets: ['es2015'],
-                            compact: false,
-                        },
-                    },
-                ],
-            },
-            plugins: plugins,
+    var common_options = {
+        node: {
+            fs: 'empty',
         },
+        // devtool: isProduction ? 'source-map' : 'cheap-source-map',
+        cache: true,
+        stats: {
+            chunks: false,
+        },
+        entry: {
+            [isProduction ? 'binary.min' :'binary']: './src/javascript',
+        },
+        output: {
+            path    : path.resolve(__dirname, '../' + global.dist + '/js/'),
+            filename: '[name].js',
+        },
+        module: {
+            loaders: [
+                {
+                    test   : /\.js$/,
+                    exclude: /node_modules/,
+                    loader : 'babel-loader',
+                    query  : {
+                        presets: ['es2015'],
+                        compact: false,
+                    },
+                },
+            ],
+        },
+        plugins: plugins,
     };
+
+    var watch_options = Object.assign({ watch: true }, common_options);
+
+    return {
+        build: common_options,
+        watch: watch_options,
+    }
 };
