@@ -1,8 +1,7 @@
-const Highcharts   = require('highcharts');
+const Highcharts   = require('highstock-release');
 const Symbols      = require('../symbols');
 const BinarySocket = require('../../socket');
 const localize     = require('../../../base/localize').localize;
-require('highcharts/modules/exporting')(Highcharts);
 
 const DigitInfo = (() => {
     'use strict';

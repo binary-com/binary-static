@@ -1,4 +1,4 @@
-const Highcharts   = require('highcharts/highstock');
+const Highcharts   = require('highstock-release');
 const HighchartUI  = require('./highchart.ui');
 const MBContract   = require('../../mb_trade/mb_contract');
 const MBDefaults   = require('../../mb_trade/mb_defaults');
@@ -10,7 +10,7 @@ const localize     = require('../../../base/localize').localize;
 const State        = require('../../../base/storage').State;
 const jpClient     = require('../../../common_functions/country_base').jpClient;
 const addComma     = require('../../../common_functions/currency').addComma;
-require('highcharts/modules/exporting')(Highcharts);
+require('highstock-release/modules/exporting')(Highcharts);
 
 const Highchart = (() => {
     let chart,
