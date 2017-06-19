@@ -46,7 +46,6 @@ const TradingEvents_Beta = (() => {
             Defaults.remove('formname');
             Defaults.remove('underlying');
             Process_Beta.processMarket_Beta();
-            setChart();
         };
 
         const market_nav_element = document.getElementById('contract_markets');

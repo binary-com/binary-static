@@ -2,7 +2,6 @@ const moment                     = require('moment');
 const TradingAnalysis            = require('./analysis');
 const Barriers                   = require('./barriers');
 const commonTrading              = require('./common');
-const setChart                   = require('./charts/webtrader_chart').setChart;
 const Defaults                   = require('./defaults');
 const Durations                  = require('./duration');
 const GetTicks                   = require('./get_ticks');
@@ -46,7 +45,6 @@ const TradingEvents = (() => {
             Defaults.remove('formname');
             Defaults.remove('underlying');
             Process.processMarket();
-            setChart();
         };
 
         const market_nav_element = document.getElementById('contract_markets');

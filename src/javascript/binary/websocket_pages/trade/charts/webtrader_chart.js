@@ -8,7 +8,8 @@ const Config      = require('../../../../config');
 const WebtraderChart = (() => {
     'use strict';
 
-    let chart;
+    let chart,
+        is_initialized;
 
     const showChart = () => {
         if (State.get('is_chart_allowed')) {
@@ -21,7 +22,7 @@ const WebtraderChart = (() => {
     };
 
     const cleanupChart = () => {
-        if (chart && typeof chart.actions.destroy === 'function') {
+        if (chart && chart.actions && typeof chart.actions.destroy === 'function') {
             chart.actions.destroy();
             chart = undefined;
         }
@@ -38,11 +39,15 @@ const WebtraderChart = (() => {
     };
 
     const initChart = () => {
-        WTCharts.init({
-            server: Config.getSocketURL(),
-            appId : Config.getAppId(),
-            lang  : getLanguage().toLowerCase(),
-        });
+        if (!State.get('is_chart_allowed')) return;
+        if (!is_initialized) {
+            WTCharts.init({
+                server: Config.getSocketURL(),
+                appId : Config.getAppId(),
+                lang  : getLanguage().toLowerCase(),
+            });
+            is_initialized = true;
+        }
         const $underlying = $('#underlying');
         const chart_config = {
             instrumentCode    : $underlying.val(),
