@@ -50,7 +50,6 @@ const WebtraderChart = (() => {
             showInstrumentName: true,
             timePeriod        : '1t',
             type              : 'line',
-            delayAmount       : 0,
             lang              : getLanguage().toLowerCase(),
             timezone          : `GMT+${jpClient() ? '9' : '0'}`,
         };
