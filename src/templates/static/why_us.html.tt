@@ -116,19 +116,29 @@
             [% END %]
             [% WRAPPER section id='trust' header=l("Go with the leader") %]
                 <div class="gr-row">
-                    <div class="gr-3 gr-6-m gr-centered-m gr-padding-20">
+                    <div class="gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center">
+                        <img class="responsive" src="[% request.url_for('images/pages/home/awards-t2w.png') %]"/>
+                    </div>
+                    <div class="gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center">
+                        <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg') %]"/>
+                    </div>
+                    <div class="gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center">
+                        <img class="responsive" src="[% request.url_for('images/pages/home/awards-egr.png') %]"/>
+                    </div>
+                    <div class="gr-3 gr-6-m gr-centered-m gr-padding-20 align-self-center">
                         <img class="responsive" src="[% request.url_for('images/pages/home/awards-mena.png') %]"/>
                     </div>
-                    <div class="gr-9 gr-12-m">
-                        <p>[% l("[_1] is the award-winning industry pioneer in online options trading. We boast:", website_name) %]</p>
-                        <ul class="checked">
-                            <li>[% l("Over two billion dollars in trades to date.") %]</li>
-                            <li>[% l("First-class client service.") %]</li>
-                            <li>[% l("Multi award-winning trading platform.") %]</li>
-                            <li>[% l("Exclusive binary trading technology.") %]</li>
-                        </ul>
+                    <div class="gr-3 gr-6-m gr-centered-m gr-padding-20 align-self-center">
+                        <img class="responsive" src="[% request.url_for('images/pages/home/awards-opwa.svg') %]"/>
                     </div>
                 </div>
+                <p>[% l("[_1] is the award-winning industry pioneer in online options trading. We boast:", website_name) %]</p>
+                <ul class="checked">
+                    <li>[% l("Over two billion dollars in trades to date.") %]</li>
+                    <li>[% l("First-class client service.") %]</li>
+                    <li>[% l("Multi award-winning trading platform.") %]</li>
+                    <li>[% l("Exclusive binary trading technology.") %]</li>
+                </ul>
             [% END %]
         </div>
     </div>
