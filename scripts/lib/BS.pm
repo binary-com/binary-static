@@ -11,6 +11,8 @@ use Mojo::URL;
 use Template;
 use Template::Stash;
 use Format::Util::Numbers;
+use Digest::MD5 qw(md5_hex);
+use File::Slurp;
 
 our @EXPORT_OK = qw/
     root_path is_dev set_is_dev branch set_branch
@@ -134,13 +136,16 @@ sub css_files {
     return @css;
 }
 
+my $vendor_checksum;
 sub js_config {
+    $vendor_checksum //= checksum(shift . "/js/vendor.min.js");
+
     my @libs;
 
     push @libs, root_url . "js/texts/$LANG.js?$static_hash";
 
     push @libs, root_url . "js/manifest.js?$static_hash";
-    push @libs, root_url . "js/vendor.min.js?$static_hash";
+    push @libs, root_url . "js/vendor.min.js?$vendor_checksum";
     if (is_dev()) {
         push @libs, root_url . "js/binary.js?$static_hash";
     } else {
@@ -153,6 +158,10 @@ sub js_config {
     return {
         libs => \@libs,
     };
+}
+
+sub checksum {
+    return substr(md5_hex(read_file(shift)), 0, 8);
 }
 
 sub menu {
