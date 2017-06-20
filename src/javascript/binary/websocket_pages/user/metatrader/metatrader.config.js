@@ -17,8 +17,8 @@ const MetaTraderConfig = (() => {
         real_vanuatu_cent    : { account_type: 'financial', mt5_account_type: 'cent',     title: localize('Real Cent'),       order: 2, max_leverage: 1000 },
         real_vanuatu_standard: { account_type: 'financial', mt5_account_type: 'standard', title: localize('Real Standard'),   order: 4, max_leverage: 300 },
         real_vanuatu_stp     : { account_type: 'financial', mt5_account_type: 'stp',      title: localize('Real STP'),        order: 6, max_leverage: 100 },
-        demo_costarica       : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 7, max_leverage: 1000, is_demo: true },
-        real_costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 8, max_leverage: 100 },
+        demo_costarica       : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 7, max_leverage: 500, is_demo: true },
+        real_costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 8, max_leverage: 500 },
     };
 
     const needsRealMessage = () => $(`#msg_${Client.get('has_real') ? 'switch' : 'upgrade'}`).html();
