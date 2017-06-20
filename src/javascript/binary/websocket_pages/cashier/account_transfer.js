@@ -11,13 +11,13 @@ const AccountTransfer = (() => {
     let accounts,
         $transfer;
 
-    const populateAccounts = (response) => {
-        if (response.error) {
-            $('#error_message').find('p').text(response.error.message).end()
+    const populateAccounts = (response_transfer, response_limits) => {
+        if (response_transfer.error || response_limits.error) {
+            $('#error_message').find('p').text((response_transfer.error || response_limits.error).message).end()
                 .setVisibility(1);
             return;
         }
-        accounts = response.accounts;
+        accounts = response_transfer.accounts;
         const $form = $(form_id);
         $transfer = $form.find('#transfer');
         let text,
@@ -34,7 +34,7 @@ const AccountTransfer = (() => {
                     'data-from'    : from_loginid,
                     'data-to'      : to_loginid,
                     'data-currency': accounts[idx].currency,
-                    'data-balance' : accounts[idx].balance,
+                    'data-balance' : Math.min(+accounts[idx].balance, +response_limits.get_limits.remainder),
                 }));
             }
         });
@@ -101,7 +101,10 @@ const AccountTransfer = (() => {
     };
 
     const onLoad = () => {
-        BinarySocket.send({ transfer_between_accounts: 1 }).then(response => populateAccounts(response));
+        BinarySocket.send({ transfer_between_accounts: 1 }).then((response_transfer) => {
+            BinarySocket.send({ get_limits: 1 }).then(response_limits =>
+                populateAccounts(response_transfer, response_limits));
+        });
     };
 
     return {
