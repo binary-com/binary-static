@@ -8,7 +8,7 @@ const toJapanTimeIfNeeded  = require('../../../base/clock').toJapanTimeIfNeeded;
 const localize             = require('../../../base/localize').localize;
 const State                = require('../../../base/storage').State;
 const isEmptyObject        = require('../../../base/utility').isEmptyObject;
-const formatMoney          = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney          = require('../../../common_functions/currency').formatMoney;
 
 const ViewPopup = (() => {
     'use strict';
@@ -146,7 +146,7 @@ const ViewPopup = (() => {
 
         if (!is_started) {
             containerSetText('trade_details_entry_spot', '-');
-            containerSetText('trade_details_message', localize('Contract is not started yet'));
+            containerSetText('trade_details_message', localize('Contract has not started yet'));
         } else {
             if (contract.entry_spot > 0) {
                 containerSetText('trade_details_entry_spot', contract.entry_spot);

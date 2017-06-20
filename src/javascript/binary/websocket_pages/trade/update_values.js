@@ -1,6 +1,6 @@
 const Client      = require('../../base/client');
 const localize    = require('../../base/localize').localize;
-const formatMoney = require('../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney = require('../../common_functions/currency').formatMoney;
 
 const updatePurchaseStatus = (final_price, pnl, contract_status) => {
     $('#contract_purchase_heading').text(localize(contract_status));
@@ -9,12 +9,12 @@ const updatePurchaseStatus = (final_price, pnl, contract_status) => {
     const $profit = $('#contract_purchase_profit');
     const currency = Client.get('currency');
 
-    $payout.html($('<div/>', { text: localize('Buy price') }).append($('<p/>', { text: formatMoney(currency, Math.abs(pnl), 1) })));
-    $cost.html($('<div/>', { text: localize('Final price') }).append($('<p/>', { text: formatMoney(currency, final_price, 1) })));
+    $payout.html($('<div/>', { text: localize('Buy price') }).append($('<p/>', { text: formatMoney(currency, pnl) })));
+    $cost.html($('<div/>', { text: localize('Final price') }).append($('<p/>', { text: formatMoney(currency, final_price) })));
     if (!final_price) {
-        $profit.html($('<div/>', { text: localize('Loss') }).append($('<p/>', { text: formatMoney(currency, pnl, 1) })));
+        $profit.html($('<div/>', { text: localize('Loss') }).append($('<p/>', { text: formatMoney(currency, pnl) })));
     } else {
-        $profit.html($('<div/>', { text: localize('Profit') }).append($('<p/>', { text: formatMoney(currency, Math.round((final_price - pnl) * 100) / 100, 1) })));
+        $profit.html($('<div/>', { text: localize('Profit') }).append($('<p/>', { text: formatMoney(currency, final_price - pnl) })));
         updateContractBalance(Client.get('balance'));
     }
 };

@@ -5,7 +5,7 @@ const localize      = require('../../../base/localize').localize;
 const State         = require('../../../base/storage').State;
 const urlFor        = require('../../../base/url').urlFor;
 const isEmptyObject = require('../../../base/utility').isEmptyObject;
-const formatMoney   = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney   = require('../../../common_functions/currency').formatMoney;
 
 const MetaTraderConfig = (() => {
     'use strict';
