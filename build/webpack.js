@@ -25,6 +25,14 @@ module.exports = function (grunt) {
                 name: 'manifest',
                 minChunks: Infinity,
             }),
+            new webpack.optimize.UglifyJsPlugin({
+                include  : /\.min\.js$/,
+                minimize : true,
+                sourceMap: true,
+                compress : {
+                    warnings: false,
+                },
+            }),
             // new UnusedFilesWebpackPlugin({
             //     pattern: 'src/javascript/**/*.*',
             //     globOptions: {
@@ -33,18 +41,7 @@ module.exports = function (grunt) {
             // }),
         ];
 
-    if (isProduction) {
-        plugins.push(
-            new webpack.optimize.UglifyJsPlugin({
-                include  : /\.min\.js$/,
-                minimize : true,
-                sourceMap: true,
-                compress : {
-                    warnings: false,
-                },
-            })
-        );
-    } else {
+    if (!isProduction) {
         plugins.push(
             function() {
                 this.plugin('watch-run', function(watching, callback) {
