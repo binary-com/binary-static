@@ -10,6 +10,7 @@
             [% INCLUDE last_name %]
             [% INCLUDE date_of_birth %]
             [% INCLUDE residence %]
+            [% INCLUDE account_opening_reason %]
         [% END %]
 
         [% WRAPPER fieldset legend=l('Address') %]
