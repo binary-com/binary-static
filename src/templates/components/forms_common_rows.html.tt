@@ -35,6 +35,16 @@
     [% END %]
 [% END %]
 
+[% BLOCK account_opening_reason %]
+    [% WRAPPER form_row type='select' id='account_opening_reason' label=l('Account opening reason') %]
+        <option value="">[% l('Please select') %]</option>
+        <option value="Speculative">[% l('Speculative') %]</option>
+        <option value="Income Earning">[% l("Income earning") %]</option>
+        <option value="Assets Saving">[% l('Assets saving') %]</option>
+        <option value="Hedging">[% l('Hedging') %]</option>
+    [% END %]
+[% END %]
+
 [% BLOCK address_line_1 %]
     [% INCLUDE form_row type='text' id='address_line_1' label=l('First line of home address') attributes='maxlength="70"'
         hint=hint || (no_hint ? '' : l('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.')) %]
