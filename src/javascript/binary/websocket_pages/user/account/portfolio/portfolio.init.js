@@ -7,7 +7,7 @@ const localize            = require('../../../../base/localize').localize;
 const urlParam            = require('../../../../base/url').param;
 const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
-const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney         = require('../../../../common_functions/currency').formatMoney;
 const GetAppDetails       = require('../../../../common_functions/get_app_details');
 
 const PortfolioInit = (() => {

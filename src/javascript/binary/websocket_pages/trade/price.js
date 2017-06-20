@@ -9,7 +9,7 @@ const BinarySocket         = require('../socket');
 const localize             = require('../../base/localize').localize;
 const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
-const formatMoney          = require('../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney          = require('../../common_functions/currency').formatMoney;
 
 /*
  * Price object handles all the functions we need to display prices
