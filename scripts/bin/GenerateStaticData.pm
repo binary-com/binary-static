@@ -476,6 +476,7 @@ sub _texts {
 
         # strings for account_transfer
         push @texts, localize('from [_1] to [_2]');
+        push @texts, localize('This amount exceeds your withdrawal limit.');
 
         # strings for header notification
         push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.');
