@@ -9,7 +9,7 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
     const decimal_places = getDecimalPlaces(currency_value);
     let money;
     if (amount) amount = String(amount).replace(/,/g, '');
-    if (typeof Intl !== 'undefined' && currency_value && !is_crypto && amount) {
+    if (typeof Intl !== 'undefined' && currency_value && !is_crypto && typeof amount !== 'undefined') {
         const options = exclude_currency ? { minimumFractionDigits: decimal_places, maximumFractionDigits: decimal_places } : { style: 'currency', currency: currency_value };
         const language = getLanguage().toLowerCase();
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
