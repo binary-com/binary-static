@@ -59,6 +59,15 @@ body.JA {
         #currency {
             font-size: $FONT_SIZE_XXS;
         }
+        @media screen and (max-width: 480px) {
+            .trade_form {
+                font-size: $FONT_SIZE_N;
+
+                #spot, .current .name {
+                    font-size: $FONT_SIZE_L;
+                }
+            }
+        }
     }
 }
 /*Vietnamese Language */

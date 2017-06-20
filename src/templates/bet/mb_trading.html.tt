@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="trade_form gr-8 gr-no-gutter-left">
-                [% INCLUDE form_item id='underlying' row=1 class_list='gr-12' %]
+                [% INCLUDE form_item id='underlying' class='gr-12' class_current='gr-row' class_list='gr-row' %]
             </div>
         </div>
 
@@ -46,10 +46,10 @@
             </div>
             <div class="gr-8 gr-no-gutter-left">
                 <div class="trade_form">
-                    [% INCLUDE form_item id='period' row=1 class_list='gr-12' %]
+                    [% INCLUDE form_item id='period' class_list='gr-12' %]
                 </div>
                 <div class="trade_form">
-                    [% INCLUDE form_item id='category' row=1 class_list='gr-12' %]
+                    [% INCLUDE form_item id='category' class_list='gr-12' %]
                 </div>
                 <div class="trade_form no-margin">
                     [% WRAPPER form_item id='payout_list' class='invisible gr-12' exclude_current=1 class_list='gr-row' %]
@@ -115,9 +115,10 @@
     [% text %][% IF hint %]<div class="hint">[% hint %]</div>[% END %]
 </div>
 [% END %]
+
 [% BLOCK form_item %]
 <div id="[% id %]"[% IF class %] class="[% class %]"[% END %] >
-    [% UNLESS exclude_current %]<div class="current"></div>[% END %]
+    [% UNLESS exclude_current %]<div class="current [% class_current %]"></div>[% END %]
     [% UNLESS exclude_list %]
         <div class="list invisible [% class_list %]">[% content %]</div>
     [% END %]

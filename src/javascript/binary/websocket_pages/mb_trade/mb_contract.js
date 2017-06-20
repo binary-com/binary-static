@@ -15,6 +15,7 @@ const MBContract = (() => {
     'use strict';
 
     let contracts_for_response;
+    const hidden_class = 'invisible';
 
     const periodText = (trading_period) => {
         let date_start,
@@ -293,12 +294,18 @@ const MBContract = (() => {
 
     const getCurrency = () => (Client.get('currency') || $('#currency').attr('value') || 'JPY');
 
-    const setCurrentItem = ($container, value) => {
+    const setCurrentItem = ($container, value, is_underlying) => {
         const $selected = $container.find(`.list [value="${value}"]`);
         if ($selected.length) {
-            $container.attr('value', value).find('> .current').html($selected.clone());
+            if (is_underlying) {
+                $container.attr('value', value).find('> .current').find('img').attr('src', $selected.find('img').attr('src'))
+                    .end()
+                    .find('.name')
+                    .text($selected.text());
+            } else {
+                $container.attr('value', value).find('> .current').html($selected.clone());
+            }
 
-            const hidden_class = 'invisible';
             $container.find(`.list .${hidden_class}`).removeClass(hidden_class);
             $selected.addClass(hidden_class);
         }

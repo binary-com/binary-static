@@ -69,6 +69,18 @@
                     }
                 }
             }
+            > div#underlying:first-child .list {
+                height: 375px;
+
+                > div {
+                    line-height: 28px;
+                    height: 75px;
+
+                    > img {
+                        height: 40px;
+                    }
+                }
+            }
             #currency_wrapper, #payout {
                 height: 103px;
             }
@@ -313,6 +325,11 @@
                 color: $COLOR_RED;
             }
         }
+        @media screen and (max-width: 1024px) {
+            .trade_form > div#underlying:first-child .list {
+                height: 525px;
+            }
+        }
         @media screen and (max-width: 768px) {
             .gr-12-p {
                 padding-bottom: 10px;
@@ -321,13 +338,6 @@
         @media screen and (max-width: 480px) {
             .trade-form .gr-row > div:first-child {
                 padding-bottom: 10px;
-            }
-            .trade_form {
-                font-size: $FONT_SIZE_N;
-
-                #spot, .name {
-                    font-size: $FONT_SIZE_L;
-                }
             }
             .price-table {
                 #disable-overlay {

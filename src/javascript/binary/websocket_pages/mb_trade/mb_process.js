@@ -97,22 +97,21 @@ const MBProcess = (() => {
 
         const $list = $underlyings.find('.list');
         $list.empty();
+        $underlyings.find('.current').html($('<div/>', { class: 'gr-row' })
+            .append($('<img/>', { class: 'gr-3 gr-no-gutter-m' }))
+            .append($('<span/>', { class: 'name gr-6 gr-5-m align-self-center' }))
+            .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' })));
 
         if (Object.keys(all_symbols).indexOf(selected) === -1) selected = '';
         Object.keys(all_symbols).forEach((symbol, idx) => {
             if (all_symbols[symbol].is_active) {
                 const is_current = (!selected && idx === 0) || symbol === selected;
-                const $current = $('<div/>', { value: symbol, class: 'gr-row' })
-                    .append($('<img/>', {
-                        src  : urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`),
-                        alt  : '',
-                        class: 'gr-3 gr-no-gutter-m',
-                    }))
-                    .append($('<span/>', { text: all_symbols[symbol].display, class: 'name gr-6 gr-5-m align-self-center' }))
-                    .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' }));
+                const $current = $('<div/>', { value: symbol, class: 'gr-4 gr-6-t gr-6-m' })
+                    .append($('<img/>', { src: urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`), alt: '' }))
+                    .append($('<div/>', { text: all_symbols[symbol].display, class: 'name align-self-center' }));
                 $list.append($current);
                 if (is_current) {
-                    MBContract.setCurrentItem($underlyings, symbol);
+                    MBContract.setCurrentItem($underlyings, symbol, 1);
                 }
             }
         });

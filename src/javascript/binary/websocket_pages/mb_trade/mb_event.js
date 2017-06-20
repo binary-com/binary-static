@@ -45,7 +45,7 @@ const MBTradingEvents = (() => {
         if ($underlying.length) {
             $underlying.on('click', '.list > div', function() {
                 const underlying = $(this).attr('value');
-                MBContract.setCurrentItem($underlying, underlying);
+                MBContract.setCurrentItem($underlying, underlying, 1);
                 MBDefaults.set('underlying', underlying);
                 MBNotifications.hide('SYMBOL_INACTIVE');
 
