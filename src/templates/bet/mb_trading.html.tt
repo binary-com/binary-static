@@ -18,7 +18,7 @@
 
         <div class="gr-row">
             <div id="trading_status" class="gr-4 gr-no-gutter-left">
-                <div class="gr-parent center-text">[% l('Trading Activation') %]</div>
+                <div class="gr-parent center-text nowrap">[% l('Trading Activation') %]</div>
                 <div class="gr-row">
                     <div class="gr-6 gr-no-gutter">
                         <a class="button-secondary trading-status" href="javascript:;">

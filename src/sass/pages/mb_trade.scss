@@ -82,6 +82,9 @@
                     height: 100%;
                 }
             }
+            #category .gr-row {
+                display: -webkit-box;
+            }
             .contract-type {
                 padding-left: 45px;
                 background-repeat: no-repeat;
@@ -326,8 +329,13 @@
                     font-size: $FONT_SIZE_L;
                 }
             }
-            .price-table .price-row .price-button {
-                font-size: $FONT_SIZE_N;
+            .price-table {
+                #disable-overlay {
+                    top: 43px;
+                }
+                .price-row .price-button {
+                    font-size: $FONT_SIZE_N;
+                }
             }
             .sell-price {
                 font-size: $FONT_SIZE_XXS;

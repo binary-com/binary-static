@@ -107,7 +107,9 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('payout', payout_def);
                 $payout.attr('value', payout_def).find('.current').html(payout_def);
             }
+            let old_value = 10;
             $payout.find('.current').on('click', function () {
+                old_value = +$(this).text();
                 const $list = $(`#${$(this).parent().attr('id')}_list`);
                 const $sublist = $list.find('.list');
                 if ($list.hasClass(hidden_class)) {
@@ -125,7 +127,7 @@ const MBTradingEvents = (() => {
                 if (/(\+|\-)/.test(value)) {
                     new_payout = payout + parseInt(value);
                 } else if (/(ok|clear)/.test(value)) {
-                    if (value === 'clear') new_payout = 10;
+                    if (value === 'clear') new_payout = old_value || 10;
                     makeListsInvisible();
                 } else {
                     new_payout = value;
