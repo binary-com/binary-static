@@ -53,14 +53,14 @@
                 </div>
                 <div class="trade_form no-margin">
                     [% WRAPPER form_item id='payout_list' class='invisible gr-12' exclude_current=1 class_list='gr-row' %]
-                        <div class="plus gr-3"  value="+1">+1</div>
-                        <div class="plus gr-3"  value="+10">+10</div>
-                        <div class="gr-3"  value="50">50</div>
-                        <div class="gr-3"  value="100">100<div class="hint">[% l('(max)') %]</div></div>
-                        <div class="minus gr-3" value="-1">-1</div>
-                        <div class="minus gr-3" value="-10">-10</div>
-                        <div class="green gr-3" value="ok">[% l('OK') %]</div>
-                        <div class="gr-3" value="clear">[% l('Clear') %]</div>
+                        [% INCLUDE payout_item class='plus'  value='+1'  text='+1' %]
+                        [% INCLUDE payout_item class='plus'  value='+10' text='+10' %]
+                        [% INCLUDE payout_item value='50'    text='50' %]
+                        [% INCLUDE payout_item value='100'   text='100'  hint=l('(max)') %]
+                        [% INCLUDE payout_item class='minus' value='-1'  text='-1' %]
+                        [% INCLUDE payout_item class='minus' value='-10' text='-10' %]
+                        [% INCLUDE payout_item class='green' value='ok'  text=l('OK') %]
+                        [% INCLUDE payout_item value='clear' text=l('Clear') %]
                     [% END %]
                 </div>
             </div>
@@ -110,6 +110,11 @@
     </div>
 </div>
 
+[% BLOCK payout_item %]
+<div class="[% class %] gr-3" value="[% value %]" unselectable="on" onselectstart="return false;" onmousedown="return false;">
+    [% text %][% IF hint %]<div class="hint">[% hint %]</div>[% END %]
+</div>
+[% END %]
 [% BLOCK form_item %]
 <div id="[% id %]"[% IF class %] class="[% class %]"[% END %] >
     [% UNLESS exclude_current %]<div class="current"></div>[% END %]
