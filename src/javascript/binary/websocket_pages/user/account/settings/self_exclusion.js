@@ -146,10 +146,10 @@ const SelfExclusion = (() => {
 
     const getDate = (elm_id) => {
         const $elm = $(elm_id);
-        return !isNaN(new Date($elm.val()).getTime()) ? $elm.val() : $elm.attr('data-value');
+        return $elm.attr('data-value') ? $elm.attr('data-value') : !isNaN(new Date($elm.val()).getTime()) ? $elm.val() : '';
     };
     const getMoment  = elm_id => moment(new Date(getDate(elm_id)));
-    const getTimeout = () => ($(timeout_date_id).attr('data-value') ? moment(new Date(`${getDate(timeout_date_id)} ${$(timeout_time_id).val()}`)) : '');
+    const getTimeout = () => (getDate(timeout_date_id) ? (moment(new Date(`${getDate(timeout_date_id)}T${$(timeout_time_id).val()}`)).valueOf() / 1000).toFixed(0) : '');
 
     const initDatePicker = () => {
         // timeout_until
@@ -191,8 +191,9 @@ const SelfExclusion = (() => {
     const setExclusionResponse = (response) => {
         if (response.error) {
             const error_msg = response.error.message;
-            const error_fld = response.error.field;
+            let error_fld = response.error.field;
             if (error_fld) {
+                error_fld = /^timeout_until$/.test(error_fld) ? 'timeout_until_date' : error_fld;
                 $(`#${error_fld}`).siblings('.error-msg').setVisibility(1).html(error_msg);
             } else {
                 showFormMessage(localize(error_msg), false);
