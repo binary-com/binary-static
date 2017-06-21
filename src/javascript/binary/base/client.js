@@ -94,7 +94,7 @@ const Client = (() => {
         set('is_virtual', authorize.is_virtual);
         set('landing_company_name', authorize.landing_company_name);
         set('landing_company_fullname', authorize.landing_company_fullname);
-        set('currency', authorize.currency);
+        setCurrency(authorize.currency);
     };
 
     const shouldAcceptTnc = () => {
@@ -123,7 +123,7 @@ const Client = (() => {
         if (client_loginid && tokens) {
             const tokens_obj = JSON.parse(tokens);
             if (tokens_obj.hasOwnProperty(client_loginid) && tokens_obj[client_loginid]) {
-                token = tokens_obj[client_loginid];
+                token = tokens_obj[client_loginid].token;
             }
         }
         return token;
@@ -135,7 +135,7 @@ const Client = (() => {
         }
         const tokens = get('tokens');
         const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
-        tokens_obj[client_loginid] = token;
+        tokens_obj[client_loginid] = { token: token, currency: '' };
         set('tokens', JSON.stringify(tokens_obj));
         return true;
     };
@@ -262,6 +262,17 @@ const Client = (() => {
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
+    const setCurrency = (currency) => {
+        const tokens = get('tokens');
+        const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
+        const loginid = tokens_obj[get('loginid')];
+        if (!loginid.currency) {
+            loginid.currency = currency;
+            set('tokens', JSON.stringify(tokens_obj));
+        }
+        set('currency', currency);
+    };
+
     return {
         init             : init,
         validateLoginid  : validateLoginid,
@@ -279,6 +290,7 @@ const Client = (() => {
         isFinancial      : isFinancial,
         shouldCompleteTax: shouldCompleteTax,
         getMT5AccountType: getMT5AccountType,
+        setCurrency      : setCurrency,
 
         canUpgradeGamingToFinancial : canUpgradeGamingToFinancial,
         canUpgradeVirtualToFinancial: canUpgradeVirtualToFinancial,

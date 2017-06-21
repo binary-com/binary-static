@@ -28,7 +28,7 @@ const LoggedInHandler = (() => {
                 Client.setCookie('loginid',      loginid);
                 Client.setCookie('loginid_list', loginid_list);
             }
-            Client.setCookie('login', tokens[loginid]);
+            Client.setCookie('login', tokens[loginid].token);
 
             // set flags
             GTM.setLoginFlag();
@@ -59,16 +59,25 @@ const LoggedInHandler = (() => {
         window.location.href = redirect_url; // need to redirect not using pjax
     };
 
+
     const storeTokens = () => {
         // Parse hash for loginids and tokens returned by OAuth
-        const hash = (/acct1/i.test(window.location.hash) ? window.location.hash : window.location.search).substr(1).split('&'); // to maintain compatibility till backend change released
+        const hash = (window.location.search).substr(1).split('&');
         const tokens = {};
-        for (let i = 0; i < hash.length; i += 2) {
-            const loginid = getHashValue(hash[i], 'acct');
-            const token   = getHashValue(hash[i + 1], 'token');
+        let i = 0;
+        let index;
+
+        const getAcct = c => new RegExp(`acct${i + 1}`).test(c);
+
+        while (new RegExp(`acct${i + 1}`).test(hash)) {
+            index = hash.findIndex(getAcct);
+            const loginid  = getHashValue(hash[index], 'acct');
+            const token    = getHashValue(hash[index + 1], 'token');
+            const currency = getHashValue(hash[index + 2], 'cur');
             if (loginid && token) {
-                tokens[loginid] = token;
+                tokens[loginid] = { token: token, currency: currency };
             }
+            i++;
         }
         if (!isEmptyObject(tokens)) {
             Client.set('tokens', JSON.stringify(tokens));
