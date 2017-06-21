@@ -3,7 +3,7 @@ const MBDefaults     = require('./mb_defaults');
 const Client         = require('../../base/client');
 const localize       = require('../../base/localize').localize;
 const jpClient       = require('../../common_functions/country_base').jpClient;
-const formatCurrency = require('../../common_functions/currency_to_symbol').formatCurrency;
+const formatCurrency = require('../../common_functions/currency').formatCurrency;
 
 /*
  * Handles currency display

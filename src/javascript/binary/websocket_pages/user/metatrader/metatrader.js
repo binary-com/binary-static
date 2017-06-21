@@ -23,7 +23,7 @@ const MetaTrader = (() => {
                 getAllAccountsInfo();
                 MetaTraderUI.init(submit);
             } else {
-                MetaTraderUI.displayPageError(localize('Sorry, this feature is not available.'));
+                MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
             }
         });
     };
