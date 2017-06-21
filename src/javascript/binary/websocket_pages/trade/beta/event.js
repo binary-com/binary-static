@@ -17,7 +17,7 @@ const BinaryPjax                     = require('../../../base/binary_pjax');
 const GTM                            = require('../../../base/gtm');
 const dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
 const isVisible                      = require('../../../common_functions/common_functions').isVisible;
-const formatMoney                    = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney                    = require('../../../common_functions/currency').formatMoney;
 const onlyNumericOnKeypress          = require('../../../common_functions/event_handler');
 const TimePicker                     = require('../../../components/time_picker');
 

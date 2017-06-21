@@ -1,5 +1,5 @@
 const toJapanTimeIfNeeded = require('../../../base/clock').toJapanTimeIfNeeded;
-const formatMoney         = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney         = require('../../../common_functions/currency').formatMoney;
 const jpClient            = require('../../../common_functions/country_base').jpClient;
 
 const Portfolio = (() => {

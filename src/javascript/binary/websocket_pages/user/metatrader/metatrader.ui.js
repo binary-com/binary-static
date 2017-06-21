@@ -1,6 +1,6 @@
 const Client           = require('../../../base/client');
 const showLoadingImage = require('../../../base/utility').showLoadingImage;
-const formatMoney      = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney      = require('../../../common_functions/currency').formatMoney;
 const Validation       = require('../../../common_functions/form_validation');
 const MetaTraderConfig = require('./metatrader.config');
 

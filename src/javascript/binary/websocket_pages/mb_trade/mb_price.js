@@ -11,7 +11,7 @@ const getPropertyValue = require('../../base/utility').getPropertyValue;
 const isEmptyObject    = require('../../base/utility').isEmptyObject;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 const jpClient         = require('../../common_functions/country_base').jpClient;
-const formatMoney      = require('../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney      = require('../../common_functions/currency').formatMoney;
 
 /*
  * Price object handles all the functions we need to display prices

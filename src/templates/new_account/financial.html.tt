@@ -11,6 +11,7 @@
             [% INCLUDE date_of_birth class='input-disabled' %]
             [% INCLUDE form_row type='select' id='place_of_birth' label=l('Place of birth') %]
             [% INCLUDE residence %]
+            [% INCLUDE account_opening_reason %]
         [% END %]
 
         [% WRAPPER fieldset legend=l('Tax Information') %]
