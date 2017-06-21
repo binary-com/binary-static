@@ -4,6 +4,7 @@ const getLanguage        = require('./language').get;
 const urlLang            = require('./language').urlLang;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
+const paramsHash         = require('./url').paramsHash;
 const isEmptyObject      = require('./utility').isEmptyObject;
 const Cookies            = require('../../lib/js-cookie');
 
@@ -61,19 +62,15 @@ const LoggedInHandler = (() => {
 
 
     const storeTokens = () => {
-        // Parse hash for loginids and tokens returned by OAuth
-        const hash = (window.location.search).substr(1).split('&');
+        // Parse url for loginids, tokens, and currencies returned by OAuth
+        const params = paramsHash(window.location);
         const tokens = {};
-        let i = 0;
-        let index;
+        let i = 1;
 
-        const getAcct = c => new RegExp(`acct${i + 1}`).test(c);
-
-        while (new RegExp(`acct${i + 1}`).test(hash)) {
-            index = hash.findIndex(getAcct);
-            const loginid  = getHashValue(hash[index], 'acct');
-            const token    = getHashValue(hash[index + 1], 'token');
-            const currency = getHashValue(hash[index + 2], 'cur');
+        while (params[`acct${i}`]) {
+            const loginid  = params[`acct${i}`];
+            const token    = params[`token${i}`];
+            const currency = params[`cur${i}`] || '';
             if (loginid && token) {
                 tokens[loginid] = { token: token, currency: currency };
             }
@@ -84,10 +81,6 @@ const LoggedInHandler = (() => {
         }
         return tokens;
     };
-
-    const getHashValue = (source, key) => (
-        source && source.length > 0 ? (new RegExp(`^${key}`).test(source.split('=')[0]) ? source.split('=')[1] : '') : ''
-    );
 
     return {
         onLoad: onLoad,
