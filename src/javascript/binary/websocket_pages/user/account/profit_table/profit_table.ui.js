@@ -3,7 +3,7 @@ const Client              = require('../../../../base/client');
 const localize            = require('../../../../base/localize').localize;
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
-const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney         = require('../../../../common_functions/currency').formatMoney;
 const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
 const Table               = require('../../../../common_functions/attach_dom/table');
 

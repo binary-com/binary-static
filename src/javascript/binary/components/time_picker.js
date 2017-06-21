@@ -17,7 +17,7 @@ const TimePicker = (() => {
         $(window).resize(() => { checkWidth(options.selector); });
     };
 
-    const hide = (selector) => { $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown'); };
+    const hide = (selector) => { $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown keyup input'); };
 
     const create = (selector) => {
         let $this;
@@ -112,7 +112,7 @@ const TimePicker = (() => {
         const time_picker_conf = time_pickers[selector].config_data;
         if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
             hide(selector);
-            $selector.attr({ type: 'time', 'data-picker': 'native' }).removeAttr('readonly');
+            $selector.attr({ type: 'time', 'data-picker': 'native' }).val($selector.attr('data-value')).removeAttr('readonly').removeClass('clear');
 
             const minTime = time_picker_conf.minTime;
             if (minTime) $selector.attr('min', toTime(minTime));
@@ -124,6 +124,9 @@ const TimePicker = (() => {
         if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') || ($(window).width() < 770 && !checkInput('time', 'not-a-time'))) {
             $selector.attr({ type: 'text', 'data-picker': 'jquery', readonly: 'readonly' });
             $selector.removeAttr('min max');
+            if ($selector.attr('data-value') && $selector.hasClass('clearable')) {
+                clearable($selector);
+            }
             create(selector);
         }
     };

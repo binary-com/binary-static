@@ -1,10 +1,8 @@
 const moment                = require('moment');
 const TradingAnalysis       = require('./analysis');
 const Barriers              = require('./barriers');
-const chartFrameSource      = require('./charts/chart_frame').chartFrameSource;
 const commonTrading         = require('./common');
-const getStartDateNode      = require('./common_independent').getStartDateNode;
-const getMinMaxTime         = require('./common_independent').getMinMaxTime;
+const chartFrameSource      = require('./charts/chart_frame').chartFrameSource;
 const Defaults              = require('./defaults');
 const Durations             = require('./duration');
 const GetTicks              = require('./get_ticks');
@@ -12,13 +10,15 @@ const Notifications         = require('./notifications');
 const Price                 = require('./price');
 const Process               = require('./process');
 const Purchase              = require('./purchase');
+const getMinMaxTime         = require('./common_independent').getMinMaxTime;
+const getStartDateNode      = require('./common_independent').getStartDateNode;
 const Tick                  = require('./tick');
 const BinarySocket          = require('../socket');
 const BinaryPjax            = require('../../base/binary_pjax');
 const GTM                   = require('../../base/gtm');
 const dateValueChanged      = require('../../common_functions/common_functions').dateValueChanged;
 const isVisible             = require('../../common_functions/common_functions').isVisible;
-const getDecimalPlaces      = require('../../common_functions/currency_to_symbol').getDecimalPlaces;
+const getDecimalPlaces      = require('../../common_functions/currency').getDecimalPlaces;
 const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 const TimePicker            = require('../../components/time_picker');
 
@@ -231,7 +231,7 @@ const TradingEvents = (() => {
             amount_element.addEventListener('input', commonTrading.debounce((e) => {
                 e.target.value = e.target.value.replace(/[^0-9.]/g, '');
                 if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(getDecimalPlaces(Defaults.get('currency'), e.target.value));
+                    e.target.value = parseFloat(e.target.value).toFixed(getDecimalPlaces(Defaults.get('currency')));
                 }
                 Defaults.set('amount', e.target.value);
                 Price.processPriceRequest();

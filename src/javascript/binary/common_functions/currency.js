@@ -6,10 +6,10 @@ const cryptocurrencies = ['BTC'];
 const formatMoney = (currency_value, amount, exclude_currency) => {
     const is_crypto = isCryptocurrency(currency_value);
     const is_jp = jpClient();
-    const decimal_places = getDecimalPlaces(currency_value, amount);
+    const decimal_places = getDecimalPlaces(currency_value);
     let money;
     if (amount) amount = String(amount).replace(/,/g, '');
-    if (typeof Intl !== 'undefined' && currency_value && !is_crypto && amount) {
+    if (typeof Intl !== 'undefined' && currency_value && !is_crypto && typeof amount !== 'undefined') {
         const options = exclude_currency ? { minimumFractionDigits: decimal_places, maximumFractionDigits: decimal_places } : { style: 'currency', currency: currency_value };
         const language = getLanguage().toLowerCase();
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
@@ -22,7 +22,7 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
                 sign = '-';
             }
         }
-        updated_amount = formatNumber(updated_amount, decimal_places, is_crypto);
+        updated_amount = addComma(updated_amount, decimal_places);
         if (exclude_currency) {
             money = updated_amount;
         } else {
@@ -33,12 +33,8 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
     return money;
 };
 
-const formatNumber = (num, decimal_points, is_crypto) => {
-    let number = (String(num || 0).replace(/,/g, '') * 1);
-    decimal_points = decimal_points || (lengthOfDecimalPlaces(num));
-    if (decimal_points) {
-        number = number.toFixed(decimal_points);
-    }
+const addComma = (num, decimal_points, is_crypto) => {
+    let number = (String(num || 0).replace(/,/g, '') * 1).toFixed(decimal_points || 2);
     if (is_crypto) {
         number = parseFloat(number);
     }
@@ -48,20 +44,12 @@ const formatNumber = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const lengthOfDecimalPlaces = num => (num.toString().split('.')[1] || '').length;
-
-const getDecimalPlaces = (currency, amount) => {
+const getDecimalPlaces = (currency) => {
     let decimal_places = 2;
-    if (typeof currency === 'string') {
-        const is_crypto = isCryptocurrency(currency);
-        const is_jp = jpClient();
-        if (is_crypto) {
-            decimal_places = Math.min(lengthOfDecimalPlaces(parseFloat(amount)) || 0, 8);
-        } else if (is_jp) {
-            decimal_places = 0;
-        }
-    } else {
-        decimal_places = lengthOfDecimalPlaces(parseFloat(amount));
+    if (isCryptocurrency(currency)) {
+        decimal_places = 8;
+    } else if (jpClient()) {
+        decimal_places = 0;
     }
     return decimal_places;
 };
@@ -85,6 +73,6 @@ const isCryptocurrency = currency => (
 module.exports = {
     formatMoney     : formatMoney,
     formatCurrency  : currency => map_currency[currency],
-    getDecimalPlaces: getDecimalPlaces,
     isCryptocurrency: isCryptocurrency,
+    getDecimalPlaces: getDecimalPlaces,
 };

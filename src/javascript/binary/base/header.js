@@ -126,10 +126,11 @@ const Header = (() => {
                     .setVisibility(0);
 
                 const jp_account_status = (State.get(['response', 'get_settings', 'get_settings', 'jp_account_status']) || {}).status;
-                if (jp_account_status && show_upgrade_msg) {
+                if (jp_account_status) {
+                    const has_disabled_jp = jpClient() && loginid_array.some(client => client.real && client.disabled);
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
-                    } else {
+                    } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
                         $upgrade_msg.setVisibility(1);
                         if (jp_account_status === 'jp_activation_pending') {
                             if ($('.activation-message').length === 0) {
@@ -172,7 +173,13 @@ const Header = (() => {
     const displayNotification = (message, is_error, msg_code = '') => {
         const $msg_notification = $('#msg_notification');
         $msg_notification.html(message).attr({ 'data-message': message, 'data-code': msg_code });
-        if ($msg_notification.is(':hidden')) $msg_notification.removeClass('error').slideDown(500, () => { if (is_error) $msg_notification.addClass('error'); });
+        if ($msg_notification.is(':hidden')) {
+            $msg_notification.slideDown(500, () => { if (is_error) $msg_notification.addClass('error'); });
+        } else if (is_error) {
+            $msg_notification.addClass('error');
+        } else {
+            $msg_notification.removeClass('error');
+        }
     };
 
     const hideNotification = (msg_code) => {

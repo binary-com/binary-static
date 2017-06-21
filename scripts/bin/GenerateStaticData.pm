@@ -397,7 +397,7 @@ sub _texts {
         push @texts, localize('Current');
         push @texts, localize('Open');
         push @texts, localize('Closed');
-        push @texts, localize('Contract is not started yet');
+        push @texts, localize('Contract has not started yet');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
         push @texts, localize('Current Time');
@@ -480,6 +480,7 @@ sub _texts {
 
         # strings for account_transfer
         push @texts, localize('from [_1] to [_2]');
+        push @texts, localize('This amount exceeds your withdrawal limit.');
 
         # strings for header notification
         push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.');
@@ -490,7 +491,7 @@ sub _texts {
         push @texts, localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.');
         # browser-update message
-        push @texts, localize('Your web browser ([_1]) is out of date and no longer supported. Update your browser now for the best experience on this site. [_2]Update browser[_3]');
+        push @texts, localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

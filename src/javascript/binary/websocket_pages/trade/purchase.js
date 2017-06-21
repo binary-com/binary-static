@@ -3,11 +3,13 @@ const Symbols            = require('./symbols');
 const Tick               = require('./tick');
 const TickDisplay        = require('./tick_trade');
 const updateValues       = require('./update_values');
+const Client             = require('../../base/client');
 const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
 const isVisible          = require('../../common_functions/common_functions').isVisible;
+const formatMoney        = require('../../common_functions/currency').formatMoney;
 const padLeft            = require('../../common_functions/string_util').padLeft;
 
 /*
@@ -71,6 +73,7 @@ const Purchase = (() => {
             if (barrier_element) barrier_element.textContent = '';
             elementTextContent(reference, `${localize('Your transaction reference is')} ${receipt.transaction_id}`);
 
+            const currency = Client.get('currency');
             let payout_value,
                 cost_value;
 
@@ -81,7 +84,9 @@ const Purchase = (() => {
                 cost_value = passthrough.amount;
                 payout_value = receipt.payout;
             }
-            const profit_value = Math.round((payout_value - cost_value) * 100) / 100;
+            const profit_value = formatMoney(currency, payout_value - cost_value);
+            cost_value = formatMoney(currency, cost_value);
+            payout_value = formatMoney(currency, payout_value);
 
             elementInnerHtml(payout, `${localize('Potential Payout')} <p>${payout_value}</p>`);
             elementInnerHtml(cost,   `${localize('Total Cost')} <p>${cost_value}</p>`);

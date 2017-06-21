@@ -109,7 +109,10 @@ const Validation = (() => {
         let is_ok = true,
             message = '';
 
-        if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
+        if (+options.max < +options.min && options.custom_message) {
+            is_ok = false;
+            message = localize(options.custom_message);
+        } else if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
             is_ok = false;
             message = localize('Should be a valid number');
         } else if (options.type === 'float' && options.decimals &&

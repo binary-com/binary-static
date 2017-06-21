@@ -9,7 +9,7 @@ const ViewPopupUI  = require('../../user/view_popup/view_popup.ui');
 const localize     = require('../../../base/localize').localize;
 const State        = require('../../../base/storage').State;
 const jpClient     = require('../../../common_functions/country_base').jpClient;
-const formatMoney  = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney  = require('../../../common_functions/currency').formatMoney;
 require('highcharts/modules/exporting')(Highcharts);
 
 const Highchart = (() => {
