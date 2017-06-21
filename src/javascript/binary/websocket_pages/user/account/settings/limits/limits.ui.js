@@ -2,7 +2,7 @@ const Table              = require('../../../../../common_functions/attach_dom/t
 const localize           = require('../../../../../base/localize').localize;
 const Client             = require('../../../../../base/client');
 const elementTextContent = require('../../../../../common_functions/common_functions').elementTextContent;
-const formatMoney        = require('../../../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney        = require('../../../../../common_functions/currency').formatMoney;
 
 const LimitsUI = (() => {
     'use strict';

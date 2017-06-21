@@ -394,7 +394,7 @@ sub _texts {
         push @texts, localize('Current');
         push @texts, localize('Open');
         push @texts, localize('Closed');
-        push @texts, localize('Contract is not started yet');
+        push @texts, localize('Contract has not started yet');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
         push @texts, localize('Current Time');
@@ -476,6 +476,7 @@ sub _texts {
 
         # strings for account_transfer
         push @texts, localize('from [_1] to [_2]');
+        push @texts, localize('This amount exceeds your withdrawal limit.');
 
         # strings for header notification
         push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.');
