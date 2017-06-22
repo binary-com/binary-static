@@ -44,7 +44,6 @@ const StartDates_Beta = (() => {
                 option  = document.createElement('option');
                 content = document.createTextNode(localize('Now'));
                 option.setAttribute('value', 'now');
-                $('#date_start').removeClass('light-yellow-background');
                 option.appendChild(content);
                 fragment.appendChild(option);
                 has_now = 1;

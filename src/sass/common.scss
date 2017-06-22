@@ -146,6 +146,11 @@ label {
     margin: -3px 3px;
     font-size: $FONT_SIZE_S;
     color: $COLOR_RED;
+
+    &.no-margin {
+        position: relative;
+        margin: 0;
+    }
 }
 
 .inpage_popup_container {
@@ -197,10 +202,6 @@ label {
     top: 0;
     left: 0;
     z-index: 10;
-}
-
-.light-yellow-background {
-    background-color: $COLOR_YELLOW;
 }
 
 _:-ms-fullscreen, :root #content-holder {

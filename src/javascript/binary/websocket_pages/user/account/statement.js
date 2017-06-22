@@ -2,7 +2,7 @@ const moment              = require('moment');
 const Client              = require('../../../base/client');
 const localize            = require('../../../base/localize').localize;
 const toJapanTimeIfNeeded = require('../../../base/clock').toJapanTimeIfNeeded;
-const formatMoney         = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney         = require('../../../common_functions/currency').formatMoney;
 const toTitleCase         = require('../../../common_functions/string_util').toTitleCase;
 
 const Statement = (() => {

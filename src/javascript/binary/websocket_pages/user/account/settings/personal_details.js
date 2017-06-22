@@ -5,7 +5,7 @@ const Header        = require('../../../../base/header');
 const State         = require('../../../../base/storage').State;
 const detectHedging = require('../../../../common_functions/common_functions').detectHedging;
 const makeOption    = require('../../../../common_functions/common_functions').makeOption;
-const formatMoney   = require('../../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney   = require('../../../../common_functions/currency').formatMoney;
 const FormManager   = require('../../../../common_functions/form_manager');
 const moment        = require('moment');
 require('select2');
