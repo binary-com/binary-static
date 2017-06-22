@@ -4,6 +4,7 @@ const getLanguage        = require('./language').get;
 const urlLang            = require('./language').urlLang;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
+const paramsHash         = require('./url').paramsHash;
 const isEmptyObject      = require('./utility').isEmptyObject;
 const Cookies            = require('../../lib/js-cookie');
 
@@ -28,7 +29,7 @@ const LoggedInHandler = (() => {
                 Client.setCookie('loginid',      loginid);
                 Client.setCookie('loginid_list', loginid_list);
             }
-            Client.setCookie('login', tokens[loginid]);
+            Client.setCookie('login', tokens[loginid].token);
 
             // set flags
             GTM.setLoginFlag();
@@ -59,26 +60,27 @@ const LoggedInHandler = (() => {
         window.location.href = redirect_url; // need to redirect not using pjax
     };
 
+
     const storeTokens = () => {
-        // Parse hash for loginids and tokens returned by OAuth
-        const hash = (/acct1/i.test(window.location.hash) ? window.location.hash : window.location.search).substr(1).split('&'); // to maintain compatibility till backend change released
+        // Parse url for loginids, tokens, and currencies returned by OAuth
+        const params = paramsHash(window.location);
         const tokens = {};
-        for (let i = 0; i < hash.length; i += 2) {
-            const loginid = getHashValue(hash[i], 'acct');
-            const token   = getHashValue(hash[i + 1], 'token');
+        let i = 1;
+
+        while (params[`acct${i}`]) {
+            const loginid  = params[`acct${i}`];
+            const token    = params[`token${i}`];
+            const currency = params[`cur${i}`] || '';
             if (loginid && token) {
-                tokens[loginid] = token;
+                tokens[loginid] = { token: token, currency: currency };
             }
+            i++;
         }
         if (!isEmptyObject(tokens)) {
             Client.set('tokens', JSON.stringify(tokens));
         }
         return tokens;
     };
-
-    const getHashValue = (source, key) => (
-        source && source.length > 0 ? (new RegExp(`^${key}`).test(source.split('=')[0]) ? source.split('=')[1] : '') : ''
-    );
 
     return {
         onLoad: onLoad,
