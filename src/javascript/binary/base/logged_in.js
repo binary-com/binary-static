@@ -63,7 +63,7 @@ const LoggedInHandler = (() => {
 
     const storeTokens = () => {
         // Parse url for loginids, tokens, and currencies returned by OAuth
-        const params = paramsHash(window.location);
+        const params = paramsHash(window.location.href);
         const tokens = {};
         let i = 1;
 
