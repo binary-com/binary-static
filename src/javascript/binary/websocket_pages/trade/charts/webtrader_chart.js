@@ -1,9 +1,10 @@
-const WTCharts    = require('webtrader-charts');
-const getLanguage = require('../../../base/language').get;
-const localize    = require('../../../base/localize').localize;
-const State       = require('../../../base/storage').State;
-const jpClient    = require('../../../common_functions/country_base').jpClient;
-const Config      = require('../../../../config');
+const WTCharts         = require('webtrader-charts');
+const getLanguage      = require('../../../base/language').get;
+const localize         = require('../../../base/localize').localize;
+const State            = require('../../../base/storage').State;
+const getPropertyValue = require('../../../base/utility').getPropertyValue;
+const jpClient         = require('../../../common_functions/country_base').jpClient;
+const Config           = require('../../../../config');
 
 const WebtraderChart = (() => {
     'use strict';
@@ -22,10 +23,10 @@ const WebtraderChart = (() => {
     };
 
     const cleanupChart = () => {
-        if (chart && chart.actions && typeof chart.actions.destroy === 'function') {
+        if (typeof getPropertyValue(chart, ['actions', 'destroy']) === 'function') {
             chart.actions.destroy();
-            chart = undefined;
         }
+        chart = undefined;
     };
 
     const setChart = () => {
