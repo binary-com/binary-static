@@ -1,20 +1,9 @@
 const Cookies = require('../../lib/js-cookie');
 
-const emailRot13 = str => (
-    str.replace(/[a-zA-Z]/g, (c) => {
-        const c2 = c.charCodeAt(0) + 13;
-        return String.fromCharCode((c <= 'Z' ? 90 : 122) >= c2 ? c2 : c2 - 26);
-    })
-);
-
-// hide and show hedging value if trading purpose is set to hedging
+// show hedging value if trading purpose is set to hedging else hide it
 const detectHedging = ($purpose, $hedging) => {
     $purpose.change(() => {
-        if ($purpose.val() === 'Hedging') {
-            $hedging.setVisibility(1);
-        } else {
-            $hedging.setVisibility(0);
-        }
+        $hedging.setVisibility($purpose.val() === 'Hedging');
     });
 };
 
@@ -103,7 +92,6 @@ const getSetElementValue = (element, text, type) => { // eslint-disable-line con
 
 module.exports = {
     getLoginToken         : () => Cookies.get('login'),
-    emailRot13            : emailRot13,
     detectHedging         : detectHedging,
     jqueryuiTabsToDropdown: jqueryuiTabsToDropdown,
     appendTextValueChild  : appendTextValueChild,
