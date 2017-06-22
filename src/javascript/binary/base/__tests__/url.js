@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
-const jsdom  = require('jsdom');
 const Url    = require('../url');
+const setURL = require('./tests_common').setURL;
 
 describe('Url', () => {
     const language     = 'en';
@@ -36,7 +36,7 @@ describe('Url', () => {
     });
 
     describe('.urlFor()', () => {
-        jsdom.changeURL(window, url_no_qs);
+        before(() => { setURL(url_no_qs); });
         const home_url = `${Url.websiteUrl()}${language}/home.html`;
 
         it('returns correct url', () => {

@@ -1,8 +1,6 @@
-const expect   = require('chai').expect;
-const jsdom    = require('jsdom');
-const Clock    = require('../clock');
-const Language = require('../language');
-const Url      = require('../url');
+const expect      = require('chai').expect;
+const Clock       = require('../clock');
+const setJPClient = require('./tests_common').setJPClient;
 
 describe('Clock', () => {
     describe('.toJapanTimeIfNeeded()', () => {
@@ -40,11 +38,7 @@ describe('Clock', () => {
         });
 
         describe('Japanese client', () => {
-            before(() => {
-                jsdom.changeURL(window, `${Url.websiteUrl()}ja/home-jp.html`);
-                Url.reset();
-                Language.reset();
-            });
+            before(setJPClient);
 
             it('returns the correct time', () => {
                 expect(toJapanTimeIfNeeded(gmt_time_str)).to.be.a('string')

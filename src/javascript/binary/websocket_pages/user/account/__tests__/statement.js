@@ -1,5 +1,5 @@
 const statement = require('../statement');
-const { api, expect } = require('../../../../common_functions/tests');
+const { api, expect } = require('../../../../base/__tests__/tests_common');
 
 describe('Statement', () => {
     let statement_ws;

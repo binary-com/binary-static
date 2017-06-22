@@ -1,6 +1,6 @@
 const expect  = require('chai').expect;
 const Utility = require('../utility');
-global.$      = global.jQuery = require('jquery');
+global.$      = require('jquery');
 
 describe('Utility', () => {
     describe('.template()', () => {
