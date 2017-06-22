@@ -42,7 +42,7 @@
                     </span>
                     <ul class="tm-ul-2">
                         [% FOREACH subtab IN item.subtabs %]
-                            <li id="[% item.id %]-[% subtab.id %]" class="tm-li-2"><a href="#[% subtab.id %]" class="tm-a-2">[% subtab.text %]</a></li>
+                            <li id="[% subtab.id %]" class="tm-li-2"><a href="#[% subtab.id %]" class="tm-a-2">[% subtab.text %]</a></li>
                         [% END %]
                     </ul>
                 [% ELSE %]

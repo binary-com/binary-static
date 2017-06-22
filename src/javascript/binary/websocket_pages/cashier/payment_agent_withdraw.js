@@ -53,6 +53,7 @@ const PaymentAgentWithdraw = (() => {
                 form_selector       : form_id,
                 fnc_response_handler: withdrawResponse,
                 fnc_additional_check: setAgentName,
+                enable_button       : true,
             });
         } else {
             showPageError(localize('The Payment Agent facility is currently not available in your country.'));
@@ -107,7 +108,7 @@ const PaymentAgentWithdraw = (() => {
                     setActiveView(view_ids.form);
                     $('#formMessage').setVisibility(1).html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
-                    showPageError(localize('Your token has expired. Please click [_1]here[_2] to restart the verification process.', ['<a href="javascript:;" onclick="window.location.reload();">', '</a>']));
+                    showPageError(localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.', ['<a href="javascript:;" onclick="window.location.reload();">', '</a>']));
                 } else {
                     showPageError(response.error.message);
                 }

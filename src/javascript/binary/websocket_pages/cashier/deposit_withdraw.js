@@ -26,9 +26,17 @@ const DepositWithdraw = (() => {
     };
 
     const initDepositWithdraw = (response) => {
-        if (response && response.error) {
-            showError('custom_error', response.error.message);
-        } else if (cashier_type === 'deposit') {
+        if (response) {
+            if (response.error) {
+                showError('custom_error', response.error.message);
+                return;
+            }
+            if (response.msg_type === 'set_account_currency') {
+                Client.setCurrency(response.echo_req.set_account_currency);
+            }
+        }
+
+        if (cashier_type === 'deposit') {
             getCashierURL();
         } else if (cashier_type === 'withdraw') {
             hideAll('#messages');
