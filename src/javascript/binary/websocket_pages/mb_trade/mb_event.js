@@ -7,7 +7,9 @@ const MBTick          = require('./mb_tick');
 const TradingAnalysis = require('../trade/analysis');
 const debounce        = require('../trade/common').debounce;
 const showHighchart   = require('../trade/charts/chart_frame').showHighchart;
+const localize        = require('../../base/localize').localize;
 const jpClient        = require('../../common_functions/country_base').jpClient;
+const formatMoney     = require('../../common_functions/currency').formatMoney;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -98,16 +100,24 @@ const MBTradingEvents = (() => {
             return is_ok;
         };
 
+
         const $payout = $form.find('#payout');
         const $payout_list = $form.find('#payout_list');
+        const jp_client = jpClient();
         if ($payout.length) {
+            const appendActualPayout = (payout) => {
+                $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', text: formatMoney('JPY', payout * 1000) })));
+            };
+            let old_value = jp_client ? 1 : 10;
             if (!$payout.attr('value')) {
-                const payout_def = MBDefaults.get('payout') || (jpClient() ? 1 : 10);
+                const payout_def = MBDefaults.get('payout') || old_value;
                 $payout.value = payout_def;
                 MBDefaults.set('payout', payout_def);
                 $payout.attr('value', payout_def).find('.current').html(payout_def);
+                if (jp_client) {
+                    appendActualPayout(payout_def);
+                }
             }
-            let old_value = 10;
             $payout.find('.current').on('click', function () {
                 old_value = +$(this).text();
                 const $list = $(`#${$(this).parent().attr('id')}_list`);
@@ -126,6 +136,9 @@ const MBTradingEvents = (() => {
                 let new_payout;
                 if (/(\+|\-)/.test(value)) {
                     new_payout = payout + parseInt(value);
+                    if (new_payout < 1 && jp_client) {
+                        new_payout = 1;
+                    }
                 } else if (/(ok|clear)/.test(value)) {
                     if (value === 'clear') new_payout = old_value || 10;
                     makeListsInvisible();
@@ -137,6 +150,9 @@ const MBTradingEvents = (() => {
                     $('.price-table').setVisibility(1);
                     MBDefaults.set('payout', new_payout);
                     $payout.attr('value', new_payout).find('.current').html(new_payout);
+                    if (jp_client) {
+                        appendActualPayout(new_payout);
+                    }
                     MBProcess.processPriceRequest();
                 }
             }));

@@ -19,6 +19,7 @@ const MBDisplayCurrencies = () => {
     const currencies = Client.get('currencies').split(',');
     const def_curr   = MBDefaults.get('currency');
     const def_value  = def_curr && currencies.indexOf(def_curr) >= 0 ? def_curr : currencies[0];
+    const jp_client  = jpClient();
 
     if (!$currency.length) return;
 
@@ -33,7 +34,7 @@ const MBDisplayCurrencies = () => {
         $currency.css('z-index', '0');
     }
 
-    $currency.attr('value', def_value).find('> .current').html(jpClient() ? localize('Lots') : formatCurrency(def_value));
+    $currency.attr('value', def_value).find('> .current').html(jp_client ? localize('Lots') : formatCurrency(def_value));
 
     MBDefaults.set('currency', def_value);
 };

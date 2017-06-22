@@ -84,6 +84,12 @@
             #currency_wrapper, #payout {
                 height: 103px;
             }
+            #currency_wrapper .hint {
+                font-weight: normal;
+                font-size: $FONT_SIZE_XXS;
+                width: 100%;
+                background-color: transparent;
+            }
             #underlying {
                 margin-top: -7px;
 
@@ -137,8 +143,10 @@
             #payout .current {
                 font-size: $FONT_SIZE_XXL;
                 font-weight: bold;
-                height: 88px;
-                padding-top: 10px !important;
+                height: 62px;
+                display: block;
+                line-height: 32px;
+                padding-top: 35px !important;
             }
             #payout_list {
                 height: 103px;
