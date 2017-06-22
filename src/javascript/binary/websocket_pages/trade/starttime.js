@@ -42,7 +42,6 @@ const StartDates = (() => {
                 option = document.createElement('option');
                 content = document.createTextNode(localize('Now'));
                 option.setAttribute('value', 'now');
-                $('#date_start').removeClass('light-yellow-background');
                 option.appendChild(content);
                 fragment.appendChild(option);
                 has_now = 1;
@@ -51,8 +50,15 @@ const StartDates = (() => {
             }
 
             start_dates.list.sort(compareStartDate);
+            const default_start = Defaults.get('date_start') || 'now';
 
-            let first;
+            $('#time_start_row').setVisibility(default_start !== 'now');
+
+            let first,
+                selected,
+                day,
+                $duplicated_option,
+                duplicated_length;
             start_dates.list.forEach((start_date) => {
                 let a = moment.unix(start_date.open).utc();
                 const b = moment.unix(start_date.close).utc();
@@ -60,27 +66,32 @@ const StartDates = (() => {
                 const rounding = 5 * 60 * 1000;
                 const start = moment.utc();
 
-                if (moment(start).isAfter(moment(a))) {
-                    a = start;
-                }
-
-                a = moment(Math.ceil((+a) / rounding) * rounding).utc();
-
-                while (a.isBefore(b)) {
-                    if (a.unix() - start.unix() > 5 * 60) {
-                        option = document.createElement('option');
-                        option.setAttribute('value', a.utc().unix());
-                        if (typeof first === 'undefined' && !has_now) {
-                            first = a.utc().unix();
-                        }
-                        content = document.createTextNode(a.format('HH:mm ddd').replace(' ', ' GMT, '));
-                        if (option.value === Defaults.get('date_start')) {
-                            option.setAttribute('selected', 'selected');
-                        }
-                        option.appendChild(content);
-                        fragment.appendChild(option);
+                if (b.isAfter(start)) {
+                    if (moment(start).isAfter(moment(a))) {
+                        a = start;
                     }
-                    a.add(5, 'minutes');
+
+                    a = moment(Math.ceil((+a) / rounding) * rounding).utc();
+                    day = a.format('ddd');
+                    $duplicated_option = $(fragment).find(`option:contains(${day})`);
+                    duplicated_length = $duplicated_option.length;
+                    if (duplicated_length && !new RegExp(localize('Session')).test($duplicated_option.text())) {
+                        $($duplicated_option[0]).text(`${$duplicated_option.text()} - ${localize('Session')} ${duplicated_length}`);
+                    }
+
+                    option = document.createElement('option');
+                    option.setAttribute('value', a.utc().unix());
+                    option.setAttribute('data-end', b.unix());
+                    content = document.createTextNode(day + ($duplicated_option.length ? ` - ${localize('Session')} ${duplicated_length + 1}` : ''));
+                    if (option.value >= default_start && !selected) {
+                        selected = true;
+                        option.setAttribute('selected', 'selected');
+                    }
+                    if (typeof first === 'undefined' && !has_now) {
+                        first = a.utc().unix();
+                    }
+                    option.appendChild(content);
+                    fragment.appendChild(option);
                 }
             });
             target.appendChild(fragment);
