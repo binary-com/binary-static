@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-19 22:10-0400\n"
+"PO-Revision-Date: 2017-06-22 22:02-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -736,7 +736,7 @@ msgid "Account not activated, please contact <a href=\"%1\">customer support</a>
 msgstr "帳戶未啟動。欲知詳細資訊，請聯繫<a href=\"%1\">客服部</a>。"
 
 msgid "Account opening reason"
-msgstr ""
+msgstr "開立帳戶的原因"
 
 msgid "Account type"
 msgstr "帳戶類型"
@@ -1147,7 +1147,7 @@ msgid "Asset Index"
 msgstr "資產指數"
 
 msgid "Assets saving"
-msgstr ""
+msgstr "資產保存"
 
 msgid "Assist in the proofreading and recording of video presentations"
 msgstr "協助演示視訊的校對和錄製工作"
@@ -2031,8 +2031,8 @@ msgstr "合約規格 (CFD) - 波動性指數"
 msgid "Contract Specifications - Forex"
 msgstr "合約規格 - 外匯"
 
-msgid "Contract is not started yet"
-msgstr "合約尚未開始"
+msgid "Contract has not started yet"
+msgstr ""
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
 msgstr "公司將參考本網站上公佈的與合約標的指數有關的每日最高價/最低價/收盤價或者公司收到的關於外匯報價或商品價格的銀行間交易資料（如網站所顯示）確定合約賠付額。但是公司有權修正錯誤標價或排印錯誤的資料。客戶需注意，由於交易時段和時區不同，不同市場的收盤時間也不一樣。"
@@ -3862,7 +3862,7 @@ msgid "Income Source"
 msgstr "收入來源"
 
 msgid "Income earning"
-msgstr ""
+msgstr "賺取收入"
 
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
 msgstr "增加您的HackerOne聲譽，以建立信譽和配置文件的可見性。"
@@ -3875,6 +3875,9 @@ msgstr "賠償及責任"
 
 msgid "India 50 Cash Index"
 msgstr "印度 50 現金指數"
+
+msgid "Indicates required field"
+msgstr ""
 
 msgid "Indicative"
 msgstr "指示性"
@@ -6645,6 +6648,9 @@ msgstr "認真交易員"
 msgid "Server"
 msgstr "伺服器"
 
+msgid "Session"
+msgstr ""
+
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "交易期持續時間限制不能大於6週。"
 
@@ -6795,8 +6801,8 @@ msgstr "對不起，在處理您的請求時發生錯誤。"
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "對不起，此功能僅適用虛擬帳戶。"
 
-msgid "Sorry, this feature is not available."
-msgstr "對不起，此功能不可用。"
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr ""
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "對不起，您輸入的收銀台密碼不正確"
@@ -6826,7 +6832,7 @@ msgid "Specify your payout, which is your potential return if your prediction is
 msgstr "確定賠付額，如果您的預測正確的話，這就是您的潛在回報率。我們的系統將進一步計算您的投注額，即購入合約的總成本。 %1提供從1美元到5萬美元的賠付額。"
 
 msgid "Speculative"
-msgstr ""
+msgstr "投機"
 
 msgid "Speed - the speed at which your order can be executed."
 msgstr "速度 - 您的訂單可執行速度。"
@@ -7764,6 +7770,9 @@ msgstr "此政策適用於在買賣%1提供的金融產品的%1零售和專業�
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "此風險披露聲明並非詳盡無遺，也並非包含您可能會接觸到的所有風險的全面聲明。此聲明也並不能描述外匯交易和合約現存的固有風險或將來可能發生的所有風險差異。其目的在於為您提供及讓您合理理解%1在符合我們利益的同時為您提供的最佳外匯與差價合約交易經驗相關的風險資訊。"
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr ""
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "本獎金僅適用於新客戶。現有或以往客戶不符合條件。此類獎金新客戶只能獲取一次。此獎金每一個家庭僅能獲得一次。"
 
@@ -8171,6 +8180,12 @@ msgstr "體驗Webtrader"
 
 msgid "Try it now"
 msgstr "立即嘗試"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr ""
+
+msgid "Try our other markets."
+msgstr ""
 
 msgid "Try our trading page"
 msgstr "體驗我們的交易頁面"
@@ -9459,11 +9474,11 @@ msgstr "交易期持續時間限制將於%1秒內結束。"
 msgid "Your settings have been updated successfully."
 msgstr "您的設定已成功更新。"
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "您的權杖已過期。請點選%1此處%2重啟驗證程序。"
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr ""
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "您的權杖已過期。請點選<a href=\"%1\">此處</a>重啟驗證程序。"
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr ""
 
 msgid "Your trading statistics since %1."
 msgstr "您自 %1 至今的交易統計。"
