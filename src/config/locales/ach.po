@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-19 22:10-0400\n"
+"PO-Revision-Date: 2017-06-22 22:01-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -2031,8 +2031,8 @@ msgstr "crwdns21116:0crwdne21116:0"
 msgid "Contract Specifications - Forex"
 msgstr "crwdns21117:0crwdne21117:0"
 
-msgid "Contract is not started yet"
-msgstr "crwdns21118:0crwdne21118:0"
+msgid "Contract has not started yet"
+msgstr "crwdns27092:0crwdne27092:0"
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
 msgstr "crwdns21119:0crwdne21119:0"
@@ -3875,6 +3875,9 @@ msgstr "crwdns21722:0crwdne21722:0"
 
 msgid "India 50 Cash Index"
 msgstr "crwdns21723:0crwdne21723:0"
+
+msgid "Indicates required field"
+msgstr "crwdns27093:0crwdne27093:0"
 
 msgid "Indicative"
 msgstr "crwdns21724:0crwdne21724:0"
@@ -6645,6 +6648,9 @@ msgstr "crwdns22630:0crwdne22630:0"
 msgid "Server"
 msgstr "crwdns22631:0crwdne22631:0"
 
+msgid "Session"
+msgstr "crwdns27094:0crwdne27094:0"
+
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "crwdns22632:0crwdne22632:0"
 
@@ -6795,8 +6801,8 @@ msgstr "crwdns22680:0crwdne22680:0"
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "crwdns22681:0crwdne22681:0"
 
-msgid "Sorry, this feature is not available."
-msgstr "crwdns22682:0crwdne22682:0"
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr "crwdns27095:0crwdne27095:0"
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "crwdns22683:0crwdne22683:0"
@@ -7764,6 +7770,9 @@ msgstr "crwdns23004:0%1crwdnd23004:0%1crwdne23004:0"
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "crwdns23005:0%1crwdne23005:0"
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr "crwdns27096:0crwdne27096:0"
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "crwdns23006:0crwdne23006:0"
 
@@ -8171,6 +8180,12 @@ msgstr "crwdns23140:0crwdne23140:0"
 
 msgid "Try it now"
 msgstr "crwdns23141:0crwdne23141:0"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr "crwdns27097:0%1crwdnd27097:0%2crwdne27097:0"
+
+msgid "Try our other markets."
+msgstr "crwdns27098:0crwdne27098:0"
 
 msgid "Try our trading page"
 msgstr "crwdns23142:0crwdne23142:0"
@@ -9459,11 +9474,11 @@ msgstr "crwdns23560:0%1crwdne23560:0"
 msgid "Your settings have been updated successfully."
 msgstr "crwdns23561:0crwdne23561:0"
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "crwdns23562:0%1hecrwdnd23562:0%2crwdne23562:0"
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr "crwdns27099:0%1hecrwdnd27099:0%2crwdne27099:0"
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "crwdns23563:0%1crwdne23563:0"
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr "crwdns27100:0%1crwdne27100:0"
 
 msgid "Your trading statistics since %1."
 msgstr "crwdns23564:0%1crwdne23564:0"
