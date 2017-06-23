@@ -1,7 +1,6 @@
 const expect      = require('chai').expect;
 const formatMoney = require('../currency').formatMoney;
 
-
 describe('formatMoney', () => {
     it('works as expected', () => {
         expect(formatMoney('USD', '123.55')).to.eq('$123.55');
@@ -12,6 +11,9 @@ describe('formatMoney', () => {
         expect(formatMoney('JPY', '1234.55')).to.eq('¥1,235');
         expect(formatMoney('BTC', '0.005432110')).to.eq('₿0.00543211');
         expect(formatMoney('BTC', '0.005432116')).to.eq('₿0.00543212');
+        expect(formatMoney('BTC', '0.00000001')).to.eq('₿0.00000001');
+        // don't remove trailing zeroes for now
+        expect(formatMoney('BTC', '0.00010000')).to.eq('₿0.00010000');
     });
 
     it('works for unexpected currencies', () => {
