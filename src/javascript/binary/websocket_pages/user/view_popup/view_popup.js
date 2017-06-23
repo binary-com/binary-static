@@ -141,7 +141,7 @@ const ViewPopup = (() => {
 
         if (final_price) {
             profit_loss = final_price - contract.buy_price;
-            percentage = formatMoney(contract.currency, (profit_loss * 100) / contract.buy_price, 1);
+            percentage = addComma((profit_loss * 100) / contract.buy_price, 2);
             containerSetText('trade_details_profit_loss',
                 `${formatMoney(contract.currency, profit_loss)}<span>(${(percentage > 0 ? '+' : '')}${percentage}%)</span>`, { class: (profit_loss >= 0 ? 'profit' : 'loss') });
         } else {
