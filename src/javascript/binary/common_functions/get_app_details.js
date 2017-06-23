@@ -2,11 +2,10 @@ const localize = require('../base/localize').localize;
 
 const buildOauthApps = (response) => {
     if (!response || !response.oauth_apps) return {};
-    const obj_oauth_apps = {};
+    const obj_oauth_apps = { 2: 'Binary.com Autoexpiry' };
     response.oauth_apps.forEach((app) => {
         obj_oauth_apps[app.app_id] = app.name;
     });
-    obj_oauth_apps[2] = 'Binary.com Autoexpiry';
     return obj_oauth_apps;
 };
 
@@ -27,5 +26,6 @@ const showTooltip = (app_id, oauth_app_id) => (
 module.exports = {
     buildOauthApps: buildOauthApps,
     addTooltip    : addTooltip,
+    addAppIdName  : addAppIdName,
     showTooltip   : showTooltip,
 };
