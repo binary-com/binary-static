@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-19 22:11-0400\n"
+"PO-Revision-Date: 2017-06-22 22:01-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -741,7 +741,7 @@ msgid "Account not activated, please contact <a href=\"%1\">customer support</a>
 msgstr "口座が無効になっています。詳細については<a href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Account opening reason"
-msgstr ""
+msgstr "口座開設の理由"
 
 msgid "Account type"
 msgstr "口座タイプ"
@@ -1154,7 +1154,7 @@ msgid "Asset Index"
 msgstr "取引期間データ"
 
 msgid "Assets saving"
-msgstr ""
+msgstr "資産の保有"
 
 msgid "Assist in the proofreading and recording of video presentations"
 msgstr "校正、動画プレゼンテーションの録画のアシスト"
@@ -2048,8 +2048,8 @@ msgstr "トレード詳細（CFD）- ボラティリティインデックス"
 msgid "Contract Specifications - Forex"
 msgstr "トレード仕様 - 外国為替"
 
-msgid "Contract is not started yet"
-msgstr "トレードはまだ開始していません"
+msgid "Contract has not started yet"
+msgstr ""
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
 msgstr "当社は当社サイトに報告された、トレードの取引対象に関する日ごとの最高値、最安値、終値のデータ、または外国為替市場の価格として当社が受け取り、ウェブサイトに表示されているインターバンク取引データに基づき払い戻し価格を決定します。尚、当社は価格設定ミスや印刷上正しくないデータ修正する権利を有します。お客さまは、世界各地域の市場時間と時差を考慮することで各市場が異なる時間に閉場する場合があることにご留意ください。"
@@ -3881,7 +3881,7 @@ msgid "Income Source"
 msgstr "収入源"
 
 msgid "Income earning"
-msgstr ""
+msgstr "収入を得る為"
 
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
 msgstr "プロファイルの信頼性をあげるために、あなたのHackerOneの評価を高めましょう"
@@ -3894,6 +3894,9 @@ msgstr "賠償と責任範囲"
 
 msgid "India 50 Cash Index"
 msgstr "インド 50現物指数"
+
+msgid "Indicates required field"
+msgstr ""
 
 msgid "Indicative"
 msgstr "参考売却金額"
@@ -6685,6 +6688,9 @@ msgstr "レンジ内/レンジ外 トレード"
 msgid "Server"
 msgstr "サーバー"
 
+msgid "Session"
+msgstr ""
+
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "セッション期間制限は7週間以上に設定できません。"
 
@@ -6835,8 +6841,8 @@ msgstr "通信エラーが発生しましたので、再度ページの読み込
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "申し訳ございません。この機能はデモ口座のみでご利用頂けます。"
 
-msgid "Sorry, this feature is not available."
-msgstr "申し訳ございませんが、この機能はご利用いただけません。"
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr ""
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "申し訳ございませんが、ご入力頂いた入出金パスワードに誤りがあります"
@@ -6866,7 +6872,7 @@ msgid "Specify your payout, which is your potential return if your prediction is
 msgstr "条件が満たされた際に支払われるペイアウトを指定します。当システムでは、トレードの購入kィン額の合計を自動で算出します。%1では1,000円からのペイアウトを提供しています。"
 
 msgid "Speculative"
-msgstr ""
+msgstr "投機目的"
 
 msgid "Speed - the speed at which your order can be executed."
 msgstr "スピード - オーダーが実行される速さ"
@@ -7889,6 +7895,9 @@ msgstr "このポリシーは%1が提供する金融商品を扱う%1のリテ�
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr ""
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "このボーナスは、新たなお客さまに限り有効です。すでにご口座をお持ちのお客さまには適用されません。新たなお客さまに限り当ボーナスが一度限り適用されます。このボーナスは１世帯あたり一回のみ適用されます。"
 
@@ -8297,6 +8306,12 @@ msgstr "ウェブトレーダーを試す"
 
 msgid "Try it now"
 msgstr "今すぐ試す"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr ""
+
+msgid "Try our other markets."
+msgstr ""
 
 msgid "Try our trading page"
 msgstr "トレード画面"
@@ -9614,11 +9629,11 @@ msgstr "お客様の取引継続時間制限は%1秒後に終了します。"
 msgid "Your settings have been updated successfully."
 msgstr "設定は正しく更新されました。"
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "ワンタイムパスワードの有効期限が切れています。再度、%1「最初からやり直し」%2 をクリックしてワンタイムパスワードを発行して下さい。"
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr ""
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "ワンタイムパスワードの有効期限が切れています。再度、<a href=\"%1\">「最初からやり直し」</a> をクリックしてワンタイムパスワードを発行して下さい。"
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr ""
 
 msgid "Your trading statistics since %1."
 msgstr "%1からのお取引統計情報"
