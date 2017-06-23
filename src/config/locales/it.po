@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-19 22:11-0400\n"
+"PO-Revision-Date: 2017-06-22 22:02-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -2037,8 +2037,8 @@ msgstr ""
 msgid "Contract Specifications - Forex"
 msgstr "Specifiche del contratto - Forex"
 
-msgid "Contract is not started yet"
-msgstr "Il contratto non è ancora iniziato"
+msgid "Contract has not started yet"
+msgstr ""
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
 msgstr "I payout del contratto saranno determinati dalla Società in base ai valori quotidiani high/low/di chiusura riportati su questo sito internet relativi all'indice o agli indici del/dei contratto/i oppure dei dati del trading interbancario ricevuti dalla Società per le quotazioni Forex o i prezzi delle materie prime, così come indicati sul sito. La Società avrà il diritto di effettuare correzioni a tali dati in presenza di errate quotazioni o dati tipograficamente errati. I clienti devono notare che i diversi mercati possono chiudere in orari diversi durante la giornata a causa degli orari locali di trading e dei fusi orari."
@@ -3880,6 +3880,9 @@ msgid "Indemnity and Liability"
 msgstr "Garanzie e Responsabilità"
 
 msgid "India 50 Cash Index"
+msgstr ""
+
+msgid "Indicates required field"
 msgstr ""
 
 msgid "Indicative"
@@ -6651,6 +6654,9 @@ msgstr "Trader seri"
 msgid "Server"
 msgstr "Server"
 
+msgid "Session"
+msgstr ""
+
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Il limite di durata della sessione non può essere superiore a 6 settimane."
 
@@ -6801,8 +6807,8 @@ msgstr "Siamo spiacenti, si è verificato un errore durante l'elaborazione della
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Siamo spiacenti, questa funzione è disponibile solo sugli account virtuali."
 
-msgid "Sorry, this feature is not available."
-msgstr "Siamo spiacenti, questa funzione non è disponibile."
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr ""
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Siamo spiacenti, hai inserito una password della cassa non corretta"
@@ -7770,6 +7776,9 @@ msgstr ""
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr ""
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr ""
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "Questo bonus è disponibile solo per i nuovi clienti. I clienti esistenti o precedenti non ne hanno diritto. I nuovi clienti hanno diritto a questa tipologia di bonus solo una volta. Questo bonus è disponibile solo una volta per nucleo familiare."
 
@@ -8177,6 +8186,12 @@ msgstr "Prova Webtrader"
 
 msgid "Try it now"
 msgstr "Provalo adesso"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr ""
+
+msgid "Try our other markets."
+msgstr ""
 
 msgid "Try our trading page"
 msgstr "Prova la nostra pagina di trading"
@@ -9465,11 +9480,11 @@ msgstr "Il limite di durata della tua sessione terminerà tra %1 secondi."
 msgid "Your settings have been updated successfully."
 msgstr "Le tue impostazioni sono state aggiornate con successo."
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "Il tuo token è scaduto. Clicca %1qui%2 per riavviare la procedura di verifica."
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr ""
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "Il tuo token è scaduto. Clicca <a href=\"%1\">qui</a> per riavviare la procedura di verifica."
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr ""
 
 msgid "Your trading statistics since %1."
 msgstr "Le tue statistiche di trading dal %1."
