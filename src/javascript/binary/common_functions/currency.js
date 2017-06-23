@@ -34,9 +34,12 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
 };
 
 const addComma = (num, decimal_points, is_crypto) => {
-    let number = (String(num || 0).replace(/,/g, '') * 1).toFixed(decimal_points || 2);
+    let number = String(num || 0).replace(/,/g, '');
+    if (typeof decimal_points !== 'undefined') {
+        number = (+number).toFixed(decimal_points);
+    }
     if (is_crypto) {
-        number = parseFloat(number);
+        number = parseFloat(+number);
     }
 
     return number.toString().replace(/(^|[^\w.])(\d{4,})/g, ($0, $1, $2) => (
@@ -74,5 +77,6 @@ module.exports = {
     formatMoney     : formatMoney,
     formatCurrency  : currency => map_currency[currency],
     isCryptocurrency: isCryptocurrency,
+    addComma        : addComma,
     getDecimalPlaces: getDecimalPlaces,
 };

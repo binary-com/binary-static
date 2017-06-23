@@ -425,10 +425,12 @@ const TradingEvents = (() => {
             }));
         }
 
-        // For verifying there are 2 digits after decimal
-        const isStandardFloat = (value => (
-            !isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2
-        ));
+        // Verify number of decimal places doesn't exceed the allowed decimal places according to the currency
+        const isStandardFloat = value => (
+            !isNaN(value) &&
+            value % 1 !== 0 &&
+            ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > getDecimalPlaces(Defaults.get('currency'))
+        );
 
         const init_logo = document.getElementById('trading_init_progress');
         if (init_logo) {
