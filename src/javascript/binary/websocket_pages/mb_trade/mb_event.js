@@ -6,7 +6,7 @@ const MBTick          = require('./mb_tick');
 const TradingAnalysis = require('../trade/analysis');
 const debounce        = require('../trade/common').debounce;
 const jpClient        = require('../../common_functions/country_base').jpClient;
-const formatMoney     = require('../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney     = require('../../common_functions/currency').formatMoney;
 
 /*
  * TradingEvents object contains all the event handler function required for

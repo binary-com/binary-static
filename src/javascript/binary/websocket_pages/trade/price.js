@@ -9,7 +9,7 @@ const BinarySocket         = require('../socket');
 const localize             = require('../../base/localize').localize;
 const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
-const formatMoney          = require('../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney          = require('../../common_functions/currency').formatMoney;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -36,7 +36,8 @@ const Price = (() => {
             subscribe: 1,
         };
         const contract_type = type_of_contract;
-        const start_time    = getStartDateNode();
+        const start_date    = getStartDateNode();
+        const start_time       = document.getElementById('time_start');
         const underlying       = document.getElementById('underlying');
         const amount_type      = document.getElementById('amount_type');
         const currency         = document.getElementById('currency');
@@ -70,8 +71,9 @@ const Price = (() => {
             proposal.symbol = underlying.value;
         }
 
-        if (start_time && isVisible(start_time) && start_time.value !== 'now') {
-            proposal.date_start = start_time.value;
+        if (start_date && isVisible(start_date) && start_date.value !== 'now') {
+            const time = start_time.value.split(':');
+            proposal.date_start = moment.utc(Number(start_date.value) * 1000).hour(time[0]).minute(time[1]).unix();
         }
 
         if (expiry_type && isVisible(expiry_type) && expiry_type.value === 'duration') {

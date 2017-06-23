@@ -7,7 +7,7 @@ const localize         = require('../../base/localize').localize;
 const isEmptyObject    = require('../../base/utility').isEmptyObject;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 const jpClient         = require('../../common_functions/country_base').jpClient;
-const formatCurrency   = require('../../common_functions/currency_to_symbol').formatCurrency;
+const formatCurrency   = require('../../common_functions/currency').formatCurrency;
 
 /*
  * Contract object mocks the trading form we have on our website

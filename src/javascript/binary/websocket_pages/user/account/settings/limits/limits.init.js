@@ -2,7 +2,7 @@ const LimitsUI           = require('./limits.ui');
 const Client             = require('../../../../../base/client');
 const localize           = require('../../../../../base/localize').localize;
 const elementTextContent = require('../../../../../common_functions/common_functions').elementTextContent;
-const formatMoney        = require('../../../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney        = require('../../../../../common_functions/currency').formatMoney;
 
 const LimitsInit = (() => {
     'use strict';
