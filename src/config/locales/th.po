@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-19 22:11-0400\n"
+"PO-Revision-Date: 2017-06-22 22:01-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -2036,8 +2036,8 @@ msgstr "ข้อกำหนดสัญญา (CFD) - ดัชนีผัน
 msgid "Contract Specifications - Forex"
 msgstr "ข้อกำหนดสัญญา - ฟอเร็กซ์"
 
-msgid "Contract is not started yet"
-msgstr "สัญญายังไม่เริ่ม"
+msgid "Contract has not started yet"
+msgstr ""
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
 msgstr "การชำระเงินของสัญญาจะถูกกำหนดโดยบริษัทฯ โดยอ้างอิงมูลค่ารายวันในกรณี สูง/ต่ำ/ปิด ที่รายงานทางเว็บไซต์และสัมพันธ์กับดัชนีของผลิตภัณฑ์อ้างอิงต่างๆ ของสัญญา หรือ จากข้อมูลซื้อขายระหว่างธนาคารที่ได้รับจากบริษัทฯ สำหรับมูลค่าฟอเร็กซ์ หรือ ราคาสินค้าโภคภัณฑ์ที่แสดงทางเว็บไซต์ โดยบริษัทฯ ขอสงวนสิทธิ์ในการแก้ไขข้อมูลราคาหากมีความผิดพลาดทางด้านการพิมพ์ ลูกค้าพึงตระหนักว่า ตลาดที่ต่างกันจะปิดทำการในเวลาต่างกัน โดยขึ้นกับเวลาในท้องถิ่นและเขตเวลาของประเทศนั้นๆ"
@@ -3881,6 +3881,9 @@ msgstr "ค่าสินไหมและหนี้สิน"
 
 msgid "India 50 Cash Index"
 msgstr "ดัชนีเงิน India 50"
+
+msgid "Indicates required field"
+msgstr ""
 
 msgid "Indicative"
 msgstr "บ่งชี้"
@@ -6651,6 +6654,9 @@ msgstr "ผู้ซื้อขาย หรือ นักลงทุนต�
 msgid "Server"
 msgstr "เซิร์ฟเวอร์"
 
+msgid "Session"
+msgstr ""
+
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "รอบระยะเวลาการซื้อขายไม่สามารถมากกว่า 6 สัปดาห์"
 
@@ -6801,8 +6807,8 @@ msgstr "ขออภัย มีความผิดพลาดเกิด�
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "ขออภัย ฟังก์ชันนี้มีให้ใช้งานเฉพาะบัญชีทดลองใช้เท่านั้น"
 
-msgid "Sorry, this feature is not available."
-msgstr "ขออภัย ไม่สามารถใช้งานฟังก์ชันนี้ได้"
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr ""
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "ขออภัยค่ะ ท่านป้อนรหัสผ่านแคชเชียร์ไม่ถูกต้อง"
@@ -7772,6 +7778,9 @@ msgstr ""
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr ""
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr ""
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "โบนัสประเภทนี้สำหรับลูกค้าใหม่เท่านั้น ลูกค้าปัจจุบันไม่สามารถเข้าร่วมการส่งเสริมการตลาดนี้ ลูกค้ารายใหม่มีสิทธิ์ได้รับโบนัสประเภทนี้เพียงครั้งเดียว และได้รับสิทธิ์เพียง 1 ครั้ง ต่อครัวเรือน"
 
@@ -8179,6 +8188,12 @@ msgstr "ทดลองใช้ Webtrader"
 
 msgid "Try it now"
 msgstr "ลองเดี๋ยวนี้เลย"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr ""
+
+msgid "Try our other markets."
+msgstr ""
 
 msgid "Try our trading page"
 msgstr "เข้าใช้งานหน้าซื้อขาย"
@@ -9467,11 +9482,11 @@ msgstr "เวลาการซื้อขายของท่านจะส
 msgid "Your settings have been updated successfully."
 msgstr "การตั้งค่าของท่านถูกดำเนินการเรียบร้อยแล้ว"
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "โทเค่นของท่านหมดอายุแล้ว โปรดคลิก %1ที่นี่%2 เพื่อดำเนินกระบวนการตรวจสอบ"
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr ""
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "โทเค่นของท่านหมดอายุแล้ว โปรดคลิก<a href=\"%1\">ที่นี่</a> เพื่อดำเนินกระบวนการตรวจสอบ"
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr ""
 
 msgid "Your trading statistics since %1."
 msgstr "สถิติการซื้อขายของท่านตั้งแต่ %1"
