@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-19 22:11-0400\n"
+"PO-Revision-Date: 2017-06-22 22:02-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -736,7 +736,7 @@ msgid "Account not activated, please contact <a href=\"%1\">customer support</a>
 msgstr "Akun belum diaktifkan, silahkan hubungi <a href=\"%1\">customer support</a> untuk informasi lebih lanjut."
 
 msgid "Account opening reason"
-msgstr ""
+msgstr "Alasan pedaftaran akun"
 
 msgid "Account type"
 msgstr "Jenis Akun"
@@ -1147,7 +1147,7 @@ msgid "Asset Index"
 msgstr "Indeks Aset"
 
 msgid "Assets saving"
-msgstr ""
+msgstr "Simpanan aset"
 
 msgid "Assist in the proofreading and recording of video presentations"
 msgstr "Membantu dalam mengoreksi dan merekam video presentasi"
@@ -2031,8 +2031,8 @@ msgstr "Spesifikasi Kontrak (CFD) - Indeks Volatilitas"
 msgid "Contract Specifications - Forex"
 msgstr "Spesifikasi Kontrak - Forex"
 
-msgid "Contract is not started yet"
-msgstr "Kontrak belum dimulai"
+msgid "Contract has not started yet"
+msgstr ""
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
 msgstr "Hasil kontrak akan ditentukan oleh Perusahaan dengan mengacu pada nilai tinggi/rendah/ penutupan harian yang dilaporkan pada website ini sesuai dengan indeks yang mendasari kontrak atau dari data perdagangan antar bank yang diterima oleh Perusahaan untuk forex atau harga komoditas seperti terlihat pada website dimana Perusahaan berhak untuk mengkoreksi data seperti dalam hal salah harga atau salah tampilan data. Klien harus mengetahui bahwa pasar yang berbeda mungkin akan ditutup pada waktu yang berbeda juga sesuai dengan jam perdagangan lokal dan zona waktu tertentu."
@@ -3862,7 +3862,7 @@ msgid "Income Source"
 msgstr "Sumber Penghasilan"
 
 msgid "Income earning"
-msgstr ""
+msgstr "Hasil pendapatan"
 
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
 msgstr "Kembangkan reputasi HackerOne Anda untuk membangun kredibilitas dan visibilitas profil."
@@ -3875,6 +3875,9 @@ msgstr "Ganti rugi dan Kewajiban"
 
 msgid "India 50 Cash Index"
 msgstr "Indeks Tunai India 50"
+
+msgid "Indicates required field"
+msgstr ""
 
 msgid "Indicative"
 msgstr "Indikatif"
@@ -6645,6 +6648,9 @@ msgstr "Trader Serius"
 msgid "Server"
 msgstr "Server"
 
+msgid "Session"
+msgstr ""
+
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Batas durasi sesi tidak dapat lebih dari 6 minggu."
 
@@ -6795,8 +6801,8 @@ msgstr "Maaf, error terjadi ketika memproses permohonan Anda."
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Maaf, fasilitas ini hanya tersedia untuk rekening virtual saja."
 
-msgid "Sorry, this feature is not available."
-msgstr "Maaf, fasilitas ini tidak tersedia."
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr ""
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Maaf, kata sandi yang Anda masukkan salah"
@@ -6826,7 +6832,7 @@ msgid "Specify your payout, which is your potential return if your prediction is
 msgstr "Tentukan hasil Anda, yaitu potensi laba Anda jika analisa Anda tepat. Sistem kami akan melanjutkan perhitungan modal, yaitu total jumlah pembelian kontrak. %1 menawarkan hasil dari $1 hingga $50,000."
 
 msgid "Speculative"
-msgstr ""
+msgstr "Spekulatif"
 
 msgid "Speed - the speed at which your order can be executed."
 msgstr "Kecepatan - kecepatan pada eksekusi order Anda."
@@ -7765,6 +7771,9 @@ msgstr "Kebijakan ini berlaku untuk pelanggan ritel dan kien profesional %1 yang
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "Pernyataan Pengungkapan Risiko ini tidak lengkap dan tidak dimaksudkan untuk membentuk suatu pernyataan komprehensif dari semua risiko yang mungkin akan terjadi dan tidak menggambarkan semua risiko yang melekat pada forex dan kontrak untuk perbedaan yang ada sekarang atau yang mungkin timbul di masa depan. Tujuan pernyataan ini adalah bukan untuk memberikan informasi bagi Anda dalam memahami risiko yang terkait dengan forex dan kontrak selisih yang ditawarkan oleh %1 melainkan untuk menyediakan pengalaman trading terbaik untuk Anda."
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr ""
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "Bonus hanya berlaku untuk Pelanggan baru. Pelanggan lama tidak memenuhi syarat. Pelanggan baru hanya dapat memperoleh bonus sekali saja. Bonus ini tersedia sekali saja per alamat rumah."
 
@@ -8172,6 +8181,12 @@ msgstr "Coba Webtrader"
 
 msgid "Try it now"
 msgstr "Coba sekarang"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr ""
+
+msgid "Try our other markets."
+msgstr ""
 
 msgid "Try our trading page"
 msgstr "Coba halaman trading kami"
@@ -9460,11 +9475,11 @@ msgstr "Batas durasi sesi Anda akan berakhir dalam %1 detik."
 msgid "Your settings have been updated successfully."
 msgstr "Bagian pengaturan Anda telah berhasil diperbarui."
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "Token Anda telah berakhir. Silahkan klik %1disini%2 untuk memulai proses verifikasi."
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr ""
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "Token Anda telah berakhir. Silahkan klik <a href=\"%1\">disini</a> untuk memulai kembali proses verifikasi."
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr ""
 
 msgid "Your trading statistics since %1."
 msgstr "Statistik trading Anda sejak %1."
