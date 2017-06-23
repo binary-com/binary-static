@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-19 22:11-0400\n"
+"PO-Revision-Date: 2017-06-22 22:01-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -2037,8 +2037,8 @@ msgstr "Характеристики контракта (CFD) – Индексы
 msgid "Contract Specifications - Forex"
 msgstr "Характеристики контрактов — Forex"
 
-msgid "Contract is not started yet"
-msgstr "Контракт ещё не начался"
+msgid "Contract has not started yet"
+msgstr ""
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
 msgstr "Выплата по контрактам будет определяться Компанией по высшим/низшим дневным значениям и значениям закрытия рынков, указанным на данном сайте в отношении соответствующих индексов, или по межбанковской торговой информации, полученной Компанией по котировкам для рынка Форекс или по ценам на сырьевые товары, как указано на данном сайте, с правом внесения коррективов в случае неправильных котировок или типографических ошибок в данных. Клиенты должны обратить внимание, что различные рынки могут закрываться в разное время в течение дня, в связи с разницей во времени открытия и часовыми зонами."
@@ -3881,6 +3881,9 @@ msgstr "Возмещение убытков и ответственность"
 
 msgid "India 50 Cash Index"
 msgstr "India 50 Cash Index"
+
+msgid "Indicates required field"
+msgstr ""
 
 msgid "Indicative"
 msgstr "Ориентировочная цена"
@@ -6651,6 +6654,9 @@ msgstr "Серьёзные трейдеры"
 msgid "Server"
 msgstr "Сервер"
 
+msgid "Session"
+msgstr ""
+
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Лимит на длительность сессии не может превышать 6 недель."
 
@@ -6801,8 +6807,8 @@ msgstr "Извините, при обработке Вашего запроса 
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Извините, эта опция доступна только для демо-счетов."
 
-msgid "Sorry, this feature is not available."
-msgstr "Извините, данная функция недоступна."
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr ""
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Извините, Вы ввели неверный пароль для раздела Касса"
@@ -7770,6 +7776,9 @@ msgstr ""
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "Данное Заявление о риске не является всеобъемлющим документом и не служит универсальным уведомлением обо всех видах риска, которым Вы можете быть подвержены, а также не охватывает все существующие и возможные в будущем риски, присущие торговле на валютных рынках (Forex) и торговле контрактами на разницу. Целью данного Заявления является предоставление Вам информации, чтобы Вы могли разумно осознавать риски, сопряжённые с рынком Forex и контрактами на разницу, предложенными сайтом %1 в рамках стремления предоставить Вам наилучший опыт торговли."
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr ""
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "Данный бонус распространяется только на новых клиентов. Настоящие или бывшие клиенты не могут им воспользоваться. Новые клиенты могут воспользоваться данным бонусом только один раз. Бонус предлагается единожды из расчета на семью и/или адрес."
 
@@ -8177,6 +8186,12 @@ msgstr "Опробуйте Webtrader"
 
 msgid "Try it now"
 msgstr "Попробовать"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr ""
+
+msgid "Try our other markets."
+msgstr ""
 
 msgid "Try our trading page"
 msgstr "Посетите нашу страницу торговли"
@@ -9465,11 +9480,11 @@ msgstr "Ограничение на длительность сессии зак
 msgid "Your settings have been updated successfully."
 msgstr "Ваши настройки обновлены успешно."
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "Срок действия Вашего ключа истёк. Пожалуйста, нажмите %1здесь%2, чтобы повторно запустить процесс проверки."
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr ""
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "Срок действия Вашего ключа истёк. Пожалуйста, нажмите <a href=\"%1\">здесь,</a> чтобы повторно запустить процесс проверки."
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr ""
 
 msgid "Your trading statistics since %1."
 msgstr "Ваша торговая статистика с %1."
