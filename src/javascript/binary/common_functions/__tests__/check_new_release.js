@@ -2,7 +2,6 @@ const expect            = require('chai').expect;
 const moment            = require('moment');
 const shouldForceReload = require('../check_new_release').shouldForceReload;
 
-
 describe('checkNewRelease', () => {
     describe('.shouldForceReload()', () => {
         it('will not force reload if last reload is less than ten minutes ago', () => {

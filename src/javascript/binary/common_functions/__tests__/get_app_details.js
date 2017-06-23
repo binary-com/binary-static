@@ -16,6 +16,7 @@ describe('GetAppDetails', () => {
             expect(GetAppDetails.buildOauthApps(undefined)).to.be.an('object').that.is.empty;
         });
     });
+
     describe('.addAppIdName()', () => {
         it('works as expected', () => {
             expect(GetAppDetails.addAppIdName(1, 'Binary.com')).to.equal('Transaction performed by Binary.com (App ID: 1)');

@@ -18,34 +18,23 @@ const jqueryuiTabsToDropdown = ($container) => {
     return $ddl;
 };
 
-// use function to generate elements and append them
-// element is select and element to append is option
-const appendTextValueChild = (element, text, value, disabled, el_class) => {
-    if (element && !element.nodeName) {
-        if (typeof element === 'string') {
-            element = document.getElementById(element);
-        } else {
-            element = undefined;
-        }
-    }
-    if (!element) return;
-    element.appendChild(makeOption(text, value, disabled, el_class));
-};
-
-const makeOption = (text, value, disabled, el_class) => {
-    const option = document.createElement('option');
-    option.text = text;
+const makeOption = (options) => {
+    const option_el = document.createElement('option');
+    option_el.text = options.text;
     // setting null value helps with detecting required error
     // on 'Please select' options
     // that have no value of their own
-    option.value = value || '';
-    if (disabled && disabled.toLowerCase() === 'disabled') {
-        option.setAttribute('disabled', 'disabled');
+    option_el.value = options.value || '';
+    if (options.is_disabled && options.is_disabled.toLowerCase() === 'disabled') {
+        option_el.setAttribute('disabled', 'disabled');
     }
-    if (el_class) {
-        option.className = el_class;
+    if (options.class) {
+        option_el.className = options.class;
     }
-    return option;
+    if (options.is_selected) {
+        option_el.setAttribute('selected', 'selected');
+    }
+    return option_el;
 };
 
 /*
@@ -94,7 +83,6 @@ module.exports = {
     getLoginToken         : () => Cookies.get('login'),
     detectHedging         : detectHedging,
     jqueryuiTabsToDropdown: jqueryuiTabsToDropdown,
-    appendTextValueChild  : appendTextValueChild,
     makeOption            : makeOption,
     isVisible             : isVisible,
     checkInput            : checkInput,

@@ -6,6 +6,7 @@ const getLanguage      = require('../../base/language').get;
 const localize         = require('../../base/localize').localize;
 const isEmptyObject    = require('../../base/utility').isEmptyObject;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
+const makeOption       = require('../../common_functions/common_functions').makeOption;
 const jpClient         = require('../../common_functions/country_base').jpClient;
 const formatCurrency   = require('../../common_functions/currency').formatCurrency;
 
@@ -56,26 +57,6 @@ const MBContract = (() => {
         return text_value.toString();
     };
 
-    // use function to generate elements and append them
-    // e.g. element is select and element to append is option
-    const appendTextValueChild = (element, string, value, is_selected) => {
-        if (element && !element.nodeName) {
-            if (typeof element === 'string') {
-                element = document.getElementById(element);
-            } else {
-                element = undefined;
-            }
-        }
-        if (!element) return;
-        const option = document.createElement('option');
-        option.text = string;
-        option.value = value;
-        if (is_selected) {
-            option.setAttribute('selected', 'selected');
-        }
-        element.appendChild(option);
-    };
-
     const populatePeriods = (rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         let trading_period,
@@ -101,13 +82,15 @@ const MBContract = (() => {
         }
         if ($period_element.children().length === 0) { // populate for the first time
             const default_value = MBDefaults.get('period');
+            const $periods = $('<div/>');
             for (let j = 0; j < trading_period_array.length; j++) {
-                appendTextValueChild(
-                    'period',
-                    PeriodText(trading_period_array[j]),
-                    trading_period_array[j],
-                    trading_period_array[j] === default_value);
+                $periods.append(makeOption({
+                    text       : PeriodText(trading_period_array[j]),
+                    value      : trading_period_array[j],
+                    is_selected: trading_period_array[j] === default_value,
+                }));
             }
+            $period_element.html($periods.html());
             MBDefaults.set('period', $period_element.val());
             MBContract.displayDescriptions();
             MBContract.displayRemainingTime(true);
@@ -224,13 +207,15 @@ const MBContract = (() => {
         }
         if ($category_element.children().length === 0) {
             const default_value = MBDefaults.get('category');
+            const $categories = $('<div/>');
             for (let j = 0; j < contracts_array.length; j++) {
-                appendTextValueChild(
-                    'category',
-                    category_names[contracts_array[j]],
-                    contracts_array[j],
-                    contracts_array[j] === default_value);
+                $categories.append(makeOption({
+                    text       : category_names[contracts_array[j]],
+                    value      : contracts_array[j],
+                    is_selected: contracts_array[j] === default_value,
+                }));
             }
+            $category_element.html($categories.html());
             MBDefaults.set('category', $category_element.val());
         }
         populatePeriods(rebuild);
