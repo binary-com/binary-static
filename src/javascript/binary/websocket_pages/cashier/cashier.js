@@ -6,7 +6,7 @@ const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
 const urlFor             = require('../../base/url').urlFor;
 const jpClient           = require('../../common_functions/country_base').jpClient;
 const jpResidence        = require('../../common_functions/country_base').jpResidence;
-const isCryptocurrency   = require('../../common_functions/currency_to_symbol').isCryptocurrency;
+const isCryptocurrency   = require('../../common_functions/currency').isCryptocurrency;
 
 const Cashier = (() => {
     'use strict';

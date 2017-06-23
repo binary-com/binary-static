@@ -8,7 +8,7 @@ const localize           = require('../../../base/localize').localize;
 const elementInnerHtml   = require('../../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../common_functions/common_functions').elementTextContent;
 const isVisible          = require('../../../common_functions/common_functions').isVisible;
-const formatMoney        = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney        = require('../../../common_functions/currency').formatMoney;
 const toTitleCase        = require('../../../common_functions/string_util').toTitleCase;
 
 /*

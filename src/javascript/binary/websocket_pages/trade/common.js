@@ -7,7 +7,7 @@ const Client             = require('../../base/client');
 const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
 const isEmptyObject      = require('../../base/utility').isEmptyObject;
-const formatMoney        = require('../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney        = require('../../common_functions/currency').formatMoney;
 const toISOFormat        = require('../../common_functions/string_util').toISOFormat;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
@@ -572,7 +572,7 @@ const commonTrading = (() => {
 
     const reloadPage = () => {
         Defaults.remove('market', 'underlying', 'formname',
-            'date_start', 'expiry_type', 'expiry_date', 'expirt_time', 'duration_units', 'diration_value',
+            'date_start', 'time_start', 'expiry_type', 'expiry_date', 'expirt_time', 'duration_units', 'diration_value',
             'amount', 'amount_type', 'currency', 'prediction');
         location.reload();
     };
