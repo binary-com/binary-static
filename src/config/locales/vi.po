@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-19 22:10-0400\n"
+"PO-Revision-Date: 2017-06-22 22:01-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -2036,8 +2036,8 @@ msgstr "Hợp đồng đặc điểm kỹ thuật (CFD) - chỉ số biến đ�
 msgid "Contract Specifications - Forex"
 msgstr "Các thông số kỹ thuật hợp đồng - Ngoại hối"
 
-msgid "Contract is not started yet"
-msgstr "Hợp đồng chưa được bắt đầu"
+msgid "Contract has not started yet"
+msgstr ""
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
 msgstr "Công ty sẽ quyết định mức tiền thưởng của hợp đồng bằng cách tham khảo giá cao/ thấp/gần được báo cáo trên trang web có liên quan tới chỉ số tài sản cơ sở của hợp đồng hoặc từ dữ liệu giao dịch yết giá ngoại tệ của liên ngân hàng hoặc giá hàng hóa được thể hiện trên trang web. Công ty có quyền chỉnh sửa dữ liệu này trong trường hợp dữ liệu bị nhầm giá hoặc bị đánh máy sai. Khách hàng nên lưu ý rằng thị trường khác nhau thì có thể đóng cửa ở thời điểm khác nhau trong ngày phụ thuộc vào giờ giao dịch và múi giờ."
@@ -3880,6 +3880,9 @@ msgstr "Bồi thường và Trách nhiệm pháp lý"
 
 msgid "India 50 Cash Index"
 msgstr "Chỉ số tiền mặt Ấn Độ 50"
+
+msgid "Indicates required field"
+msgstr ""
 
 msgid "Indicative"
 msgstr "Chỉ thị"
@@ -6650,6 +6653,9 @@ msgstr "Những người giao dịch nghiêm túc"
 msgid "Server"
 msgstr "Máy chủ"
 
+msgid "Session"
+msgstr ""
+
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Giới hạn thời hạn phiên không thể nhiều hơn 6 tuần."
 
@@ -6800,8 +6806,8 @@ msgstr "Rất tiếc, đã xảy ra lỗi khi đang xử lý yêu cầu của 
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Rất tiếc, tính năng này chỉ khả dụng với tài khoản tiền ảo."
 
-msgid "Sorry, this feature is not available."
-msgstr "Xin lỗi, đặc tính này không có."
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr ""
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Xin lỗi, bạn đã nhập sai mật khẩu thu ngân"
@@ -7769,6 +7775,9 @@ msgstr ""
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "Tuyên bố tiết lộ rủi ro này không phải là đầy đủ và không có ý định chiếm một tuyên bố toàn diện của tất cả những rủi ro mà bạn có thể được tiếp xúc với và không có mô tả tất cả rủi ro vốn có cho ngoại hối và các hợp đồng chênh lệch giá mà đang tồn tại hoặc có thể phát sinh trong tương lai. Mục tiêu của nó là để cung cấp cho bạn thông tin hợp lý cho các bạn có thể hiểu những rủi ro liên quan đến ngoại hối và các hợp đồng chênh lệch giá được cung cấp bởi %1 trong quan tâm của chúng tôi để cung cấp cho bạn tốt nhất có thể kinh nghiệm kinh doanh."
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr ""
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "Tiền thưởng này chỉ có cho khách hàng mới. Những khách hàng cũ không được áp dụng. Những khách hàng mới chỉ được nhận loại tiền thưởng này một lần duy nhất. Tiền thưởng này chỉ có một lần cho một hộ gia đình."
 
@@ -8176,6 +8185,12 @@ msgstr "Thử Webtrader"
 
 msgid "Try it now"
 msgstr "Thử ngay bây giờ"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr ""
+
+msgid "Try our other markets."
+msgstr ""
 
 msgid "Try our trading page"
 msgstr "Hãy thử trang kinh doanh của chúng tôi"
@@ -9465,11 +9480,11 @@ msgstr "Giới hạn phiên giao dịch của bạn sẽ kết thúc trong %1 gi
 msgid "Your settings have been updated successfully."
 msgstr "Thiết lập của bạn đã được cập nhật thành công."
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "Chuỗi xác nhận của bạn đã hết hiệu lực. Xin vui lòng nhấp chuột vào %1đây%2 để khởi động lại quá trình xác minh."
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr ""
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "Chuỗi xác nhận của bạn đã hết hiệu lực. Xin vui lòng nhấp chuột vào <a chref=\"%1\">đây</a> để khởi động lại quá trình xác minh."
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr ""
 
 msgid "Your trading statistics since %1."
 msgstr "Số liệu thống kê giao dịch của bạn kể từ %1."
