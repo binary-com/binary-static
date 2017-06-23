@@ -9,6 +9,7 @@ const localize             = require('../../../base/localize').localize;
 const State                = require('../../../base/storage').State;
 const isEmptyObject        = require('../../../base/utility').isEmptyObject;
 const formatMoney          = require('../../../common_functions/currency').formatMoney;
+const addComma             = require('../../../common_functions/currency').addComma;
 
 const ViewPopup = (() => {
     'use strict';
@@ -106,13 +107,14 @@ const ViewPopup = (() => {
                              contract.bid_price : null;
 
         if (contract.barrier_count > 1) {
-            containerSetText('trade_details_barrier',     formatMoney(1, contract.high_barrier, 1), '', true);
-            containerSetText('trade_details_barrier_low', formatMoney(1, contract.low_barrier, 1), '', true);
+            containerSetText('trade_details_barrier',     addComma(contract.high_barrier), '', true);
+            containerSetText('trade_details_barrier_low', addComma(contract.low_barrier), '', true);
         } else if (contract.barrier) {
+            const formatted_barrier = addComma(contract.barrier);
             containerSetText('trade_details_barrier',     contract.entry_tick_time ?
-                (contract.contract_type === 'DIGITMATCH' ? `${localize('Equals')} ${formatMoney(1, contract.barrier, 1)}` :
-                    contract.contract_type === 'DIGITDIFF' ? `${localize('Not')} ${formatMoney(1, contract.barrier, 1)}` :
-                    formatMoney(1, contract.barrier, 1)) : '-',
+                (contract.contract_type === 'DIGITMATCH' ? `${localize('Equals')} ${formatted_barrier}` :
+                    contract.contract_type === 'DIGITDIFF' ? `${localize('Not')} ${formatted_barrier}` :
+                        formatted_barrier) : '-',
                 '', true);
         }
 
@@ -151,7 +153,7 @@ const ViewPopup = (() => {
             containerSetText('trade_details_message', localize('Contract has not started yet'));
         } else {
             if (contract.entry_spot > 0) {
-                containerSetText('trade_details_entry_spot', formatMoney(1, contract.entry_spot, 1));
+                containerSetText('trade_details_entry_spot', addComma(contract.entry_spot));
             }
             containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
