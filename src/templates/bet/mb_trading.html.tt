@@ -16,7 +16,7 @@
 
         <div id="notifications_wrapper"></div>
 
-        <div class="gr-row">
+        <div class="gr-row selection_wrapper">
             <div id="trading_status" class="gr-4 gr-no-gutter-left">
                 <div class="gr-parent center-text nowrap">[% l('Trading Activation') %]</div>
                 <div class="gr-row">
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="gr-row">
+        <div class="gr-row selection_wrapper">
             <div class="trade_form gr-4 gr-no-gutter-left">
                 <div id="currency_wrapper">
                     [% INCLUDE form_item id='currency' %]

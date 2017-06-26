@@ -117,15 +117,25 @@ const MBProcess = (() => {
         });
     };
 
+    const selectors = '.trade-form, .price-table, #trading_bottom_content, .selection_wrapper, #trade_live_chart';
     const handleMarketClosed = () => {
-        $('.trade-form, .price-table, #trading_bottom_content').setVisibility(0);
+        $(selectors).setVisibility(0);
+        hideShowMbTrading('hide');
         MBNotifications.show({ text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
         symbols_timeout = setTimeout(() => { getSymbols(); }, 30000);
     };
 
     const handleMarketOpen = () => {
-        $('.trade-form, .price-table, #trading_bottom_content').setVisibility(1);
+        $(selectors).setVisibility(1);
+        hideShowMbTrading('show');
         MBNotifications.hide('MARKET_CLOSED');
+    };
+
+    const hideShowMbTrading = (action) => {
+        const classes = ['gr-5 ', 'gr-12 ']; // the extra space is so gr-5-m is not replaced
+        const show = action === 'show';
+        const $parent = $('#mb_trading').parent();
+        $parent.attr('class', $parent.attr('class').replace(classes[+show], classes[+!show]));
     };
 
     const clearSymbolTimeout = () => {
