@@ -150,6 +150,8 @@ const MBContract = (() => {
                 location.reload();
             } else if (time_left < 120) {
                 $count_down_timer.addClass('alert');
+                // make all price buttons inactive if less than 2 minutes remaining
+                $('.price-button').addClass('inactive');
             }
             const remaining_month_day_string = [];
             const remaining_time_string = [];
@@ -170,7 +172,7 @@ const MBContract = (() => {
                     remaining_time_string.push(padLeft(all_durations[key] || 0, 2, '0'));
                 }
             });
-            $count_down_timer.text(`${remaining_month_day_string.join('')} ${remaining_time_string.join(':')}`);
+            $count_down_timer.text(`${remaining_month_day_string.join('')} ${remaining_time_string.join(':')}`).attr('value', time_left);
         });
         if (remaining_timeout) clearRemainingTimeout();
         remaining_timeout = setTimeout(displayRemainingTime, 1000);

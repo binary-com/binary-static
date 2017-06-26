@@ -134,11 +134,12 @@ const MBPrice = (() => {
         const barrier      = makeBarrier(proposal);
         const payout       = proposal.echo_req.amount;
         const proposal_opp = prices[barrier][contract_types[contract_type].opposite];
+        const time_left    = $('#period').find('.current .remaining-time').attr('value');
         return {
             payout             : payout / 1000,
             contract_type      : contract_type,
             barrier            : barrier,
-            is_active          : !proposal.error && proposal.ask_price && !is_unwelcome,
+            is_active          : !proposal.error && proposal.ask_price && !is_unwelcome && time_left > 120,
             message            : proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
             ask_price          : getAskPrice(proposal),
             sell_price         : payout - getAskPrice(proposal_opp),

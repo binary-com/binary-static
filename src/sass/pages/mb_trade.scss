@@ -352,10 +352,10 @@
             }
         }
         .remaining-time {
-            color: $COLOR_RED;
+            color: $COLOR_BLACK;
 
             .alert {
-                background: rgba(251, 228, 215, 0.7);
+                color: $COLOR_RED;
             }
         }
         #spot {
