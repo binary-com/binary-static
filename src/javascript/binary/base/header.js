@@ -213,7 +213,7 @@ const Header = (() => {
 
 
             const messages = {
-                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.',        'user/authenticate'),
+                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',           'user/authenticate'),
                 financial_limit: () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                  'user/security/self_exclusionws'),
                 residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                        'user/settings/detailsws'),
                 risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',        'user/settings/assessmentws'),
