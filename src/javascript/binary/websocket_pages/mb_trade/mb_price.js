@@ -246,12 +246,14 @@ const MBPrice = (() => {
 
     const showPriceOverlay = () => {
         $('#disable-overlay').setVisibility(1);
+        $('#loading-overlay').setVisibility(0);
     };
 
     const hidePriceOverlay = () => {
         if (!MBDefaults.get('disable_trading')) {
-            $('#disable-overlay, #loading-overlay').setVisibility(0);
+            $('#disable-overlay').setVisibility(0);
         }
+        $('#loading-overlay').setVisibility(0);
     };
 
     return {

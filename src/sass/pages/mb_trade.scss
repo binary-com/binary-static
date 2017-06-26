@@ -1,11 +1,22 @@
 #mb-trading-wrapper {
     max-width: 1200px;
 
-    #trade_live_chart {
-        border: 1px solid $COLOR_GRAY;
-        padding-right: 1px;
-        height: calc(100% - 2px);
-        min-height: 600px;
+    #chart_wrapper {
+        display: flex;
+
+        #trade_live_chart {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            border: 1px solid $COLOR_GRAY;
+            padding-right: 1px;
+            height: calc(100% - 2px);
+            min-height: 600px;
+
+            iframe#chart_frame {
+                flex: 1;
+            }
+        }
     }
     #mb_trading {
         font-size: $FONT_SIZE_S;
@@ -189,7 +200,7 @@
                 top: 53px;
                 z-index: 1;
                 width: 100%;
-                height: calc(100% - 66px);
+                height: calc(100% - 53px);
                 background-color: rgba(242, 242, 242, 0.5);
             }
             #loading-overlay {
@@ -318,7 +329,6 @@
                     width: 100%;
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: 18px;
                     height: 31px;
 
                     &#allow {
