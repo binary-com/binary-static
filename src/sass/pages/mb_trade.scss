@@ -94,6 +94,7 @@
                 }
                 img {
                     height: 100%;
+                    max-height: 30px;
                 }
             }
             #category .gr-row {
@@ -301,16 +302,42 @@
                 }
             }
         }
-        .button-secondary {
+        #trading_status {
             margin: 0;
+            display: flex;
 
-            span {
-                padding: 8px 0;
-                width: 100%;
+            div > div {
+                &:first-child {
+                    padding-right: 2px;
+                }
+                &:nth-child(2) {
+                    padding-left: 2px;
+                }
+                .button-secondary.trading-status span {
+                    padding: 8px 0;
+                    width: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 18px;
+                    height: 31px;
 
-                &.selected {
-                    background-color: $COLOR_BLUE;
-                    color: $COLOR_WHITE;
+                    &#allow {
+                        background-image: svg-icon('unlock', $COLOR_BLACK);
+
+                        &.selected {
+                            background-image: svg-icon('unlock', $COLOR_WHITE);
+                        }
+                    }
+                    &#disallow {
+                        background-image: svg-icon('lock', $COLOR_BLACK);
+
+                        &.selected {
+                            background-image: svg-icon('lock', $COLOR_WHITE);
+                        }
+                    }
+                    &.selected {
+                        background-color: $COLOR_BLUE;
+                    }
                 }
             }
         }

@@ -18,16 +18,15 @@
 
         <div class="gr-row selection_wrapper">
             <div id="trading_status" class="gr-4 gr-no-gutter-left">
-                <div class="gr-parent center-text nowrap">[% l('Trading Activation') %]</div>
                 <div class="gr-row">
                     <div class="gr-6 gr-no-gutter">
                         <a class="button-secondary trading-status" href="javascript:;">
-                            <span class="selected" id="allow">[% l('ON') %]</span>
+                            <span class="selected" id="allow"></span>
                         </a>
                     </div>
                     <div class="gr-6 gr-no-gutter">
                         <a class="button-secondary trading-status" href="javascript:;">
-                            <span id="disallow">[% l('OFF') %]</span>
+                            <span id="disallow"></span>
                         </a>
                     </div>
                 </div>
