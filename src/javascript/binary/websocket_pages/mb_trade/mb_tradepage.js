@@ -1,5 +1,6 @@
 const MBContract           = require('./mb_contract');
 const MBDisplayCurrencies  = require('./mb_currency');
+const MBDefaults           = require('./mb_defaults');
 const MBTradingEvents      = require('./mb_event');
 const MBPrice              = require('./mb_price');
 const MBProcess            = require('./mb_process');
@@ -18,6 +19,7 @@ const MBTradePage = (() => {
 
     const onLoad = () => {
         State.set('is_mb_trading', true);
+        MBDefaults.set('disable_trading', 1);
 
         if (events_initialized === 0) {
             events_initialized = 1;
