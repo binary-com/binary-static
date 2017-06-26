@@ -3,6 +3,7 @@ const CookieStorage      = require('./storage').CookieStorage;
 const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
+const getPropertyValue   = require('./utility').getPropertyValue;
 const getLoginToken      = require('../common_functions/common_functions').getLoginToken;
 const jpClient           = require('../common_functions/country_base').jpClient;
 const BinarySocket       = require('../websocket_pages/socket');
@@ -43,6 +44,8 @@ const Client = (() => {
         set('email',     Cookies.get('email'));
         set('loginid',   Cookies.get('loginid'));
         set('residence', Cookies.get('residence'));
+
+        backwardCompatibility();
     };
 
     const isLoggedIn = () => (
@@ -117,16 +120,32 @@ const Client = (() => {
         }
     };
 
-    const getToken = (client_loginid) => {
-        let token;
+    const getAccountObj = client_loginid => (getPropertyValue(JSON.parse(get('tokens') || '{}'), [client_loginid]) || {});
+
+    const getToken = client_loginid => getPropertyValue(getAccountObj(client_loginid), ['token']);
+
+    const setCurrency = (currency) => {
         const tokens = get('tokens');
-        if (client_loginid && tokens) {
-            const tokens_obj = JSON.parse(tokens);
-            if (tokens_obj.hasOwnProperty(client_loginid) && tokens_obj[client_loginid]) {
-                token = tokens_obj[client_loginid].token;
-            }
+        const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
+        const account_obj = tokens_obj[get('loginid')];
+        if (!account_obj.currency) {
+            account_obj.currency = currency;
+            set('tokens', JSON.stringify(tokens_obj));
         }
-        return token;
+        set('currency', currency);
+    };
+
+    const backwardCompatibility = () => {
+        // upgrade client.tokens structure to the new one (for clients which already are logged-in with the old version)
+        const account_obj = getAccountObj(get('loginid'));
+        if (typeof account_obj !== 'object') {
+            const tokens = get('tokens');
+            const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
+            Object.keys(tokens_obj).forEach((loginid) => {
+                tokens_obj[loginid] = { token: tokens_obj[loginid] };
+            });
+            set('tokens', JSON.stringify(tokens_obj));
+        }
     };
 
     const addToken = (client_loginid, token) => {
@@ -262,17 +281,6 @@ const Client = (() => {
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
-    const setCurrency = (currency) => {
-        const tokens = get('tokens');
-        const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
-        const loginid = tokens_obj[get('loginid')];
-        if (!loginid.currency) {
-            loginid.currency = currency;
-            set('tokens', JSON.stringify(tokens_obj));
-        }
-        set('currency', currency);
-    };
-
     return {
         init             : init,
         validateLoginid  : validateLoginid,
@@ -282,6 +290,7 @@ const Client = (() => {
         shouldAcceptTnc  : shouldAcceptTnc,
         clear            : clear,
         getToken         : getToken,
+        setCurrency      : setCurrency,
         setCookie        : setCookie,
         processNewAccount: processNewAccount,
         isLoggedIn       : isLoggedIn,
@@ -290,7 +299,6 @@ const Client = (() => {
         isFinancial      : isFinancial,
         shouldCompleteTax: shouldCompleteTax,
         getMT5AccountType: getMT5AccountType,
-        setCurrency      : setCurrency,
 
         canUpgradeGamingToFinancial : canUpgradeGamingToFinancial,
         canUpgradeVirtualToFinancial: canUpgradeVirtualToFinancial,
