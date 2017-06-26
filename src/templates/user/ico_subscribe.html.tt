@@ -1,0 +1,27 @@
+[% PROCESS components/forms.html.tt %]
+
+<h1>[% l('Subscribe to ICO') %]</h1>
+
+<div id="msg_authenticate" class="invisible">
+    <p>[% l("Before subscribing to ICO, you must first [_1]authenticate your account[_2].", "<a href='" _ request.url_for('user/authenticate') _ "'>", "</a>") %]</p>
+</div>
+
+<div id="msg_no_balance" class="invisible">
+    <p>[% l("Before subscribing to ICO, you must first [_1]deposit money into your account[_2].", "<a href='" _ request.url_for('cashier/forwardws') _ "#deposit'>", "</a>") %]</p>
+</div>
+
+<div id="ico_subscribe" class="invisible">
+    <p>[% l("[_1] is offering up to 10,000,000 tokens in an open auction. You may place your bids using the form below. The minimum bid is USD 1 or equivalent in other currency.", website_name) %]</p>
+    <div class="gr-row">
+        <div class="gr-4 gr-12-p gr-12-m center-text">
+            <img src="https://placehold.it/300x300" />
+        </div>
+        <div class="gr-8 gr-12-p gr-12-m">
+            <form id="frm_ico_bid">
+                [% INCLUDE form_row type='text' id='duration' label=l('Number of tokens') attributes='maxlength="30"' %]
+                [% INCLUDE form_row type='text' id='price' label=l('Price/token:') attributes='maxlength="30"' %]
+                [% INCLUDE submit_button type='submit' text=l('Place bid') %]
+            </form>
+        </div>
+    </div>
+</div>
