@@ -69,16 +69,12 @@
                     }
                 }
             }
-            > div#underlying:first-child .list {
-                height: 375px;
+            > div#underlying:first-child .list > div {
+                line-height: 28px;
+                height: 75px;
 
-                > div {
-                    line-height: 28px;
-                    height: 75px;
-
-                    > img {
-                        height: 40px;
-                    }
+                > img {
+                    height: 40px;
                 }
             }
             #currency_wrapper, #payout {
@@ -331,11 +327,6 @@
             }
             &.up {
                 color: $COLOR_RED;
-            }
-        }
-        @media screen and (max-width: 1024px) {
-            .trade_form > div#underlying:first-child .list {
-                height: 525px;
             }
         }
         @media screen and (max-width: 768px) {

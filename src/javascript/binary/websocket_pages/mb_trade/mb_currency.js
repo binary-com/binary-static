@@ -17,25 +17,28 @@ const MBDisplayCurrencies = () => {
     const $currency  = $('.trade_form #currency');
     const $list      = $currency.find('.list');
     const currencies = Client.get('currencies').split(',');
-    const def_curr   = MBDefaults.get('currency');
-    const def_value  = def_curr && currencies.indexOf(def_curr) >= 0 ? def_curr : currencies[0];
     const jp_client  = jpClient();
+    let def_value;
 
     if (!$currency.length) return;
-
     $list.empty();
-    if (currencies.length > 1 && !jpClient()) {
-        currencies.forEach((currency) => {
-            $list.append($('<div/>', { value: currency, text: formatCurrency(currency) }));
-            if (def_value === currency) {
-                MBContract.setCurrentItem($currency, currency);
-            }
-        });
-        $currency.css('z-index', '0');
+    if (!jp_client) {
+        const def_curr  = MBDefaults.get('currency');
+        def_value = def_curr && currencies.indexOf(def_curr) >= 0 ? def_curr : currencies[0];
+        if (currencies.length > 1) {
+            currencies.forEach((currency) => {
+                $list.append($('<div/>', { value: currency, text: formatCurrency(currency) }));
+                if (def_value === currency) {
+                    MBContract.setCurrentItem($currency, currency);
+                }
+            });
+            $currency.css('z-index', '0');
+        }
+    } else {
+        def_value = 'JPY';
     }
 
     $currency.attr('value', def_value).find('> .current').html(jp_client ? localize('Lots') : formatCurrency(def_value));
-
     MBDefaults.set('currency', def_value);
 };
 

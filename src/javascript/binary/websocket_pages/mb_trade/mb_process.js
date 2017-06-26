@@ -106,7 +106,7 @@ const MBProcess = (() => {
         Object.keys(all_symbols).forEach((symbol, idx) => {
             if (all_symbols[symbol].is_active) {
                 const is_current = (!selected && idx === 0) || symbol === selected;
-                const $current = $('<div/>', { value: symbol, class: 'gr-4 gr-6-t gr-6-m' })
+                const $current = $('<div/>', { value: symbol, class: 'gr-4 gr-4-t gr-4-m' })
                     .append($('<img/>', { src: urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`), alt: '' }))
                     .append($('<div/>', { text: all_symbols[symbol].display, class: 'name align-self-center' }));
                 $list.append($current);
@@ -115,6 +115,10 @@ const MBProcess = (() => {
                 }
             }
         });
+        const underlyings_to_add = 3 - (($underlyings.find('.list > div').length - 1) % 3);
+        for (let i = 0; i < underlyings_to_add; i++) {
+            $list.append($('<div/>', { class: 'gr-4 gr-4-t gr-4-m' }));
+        }
     };
 
     const selectors = '.trade-form, .price-table, #trading_bottom_content, .selection_wrapper, #trade_live_chart';
