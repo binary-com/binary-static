@@ -11,7 +11,7 @@ module.exports = function (grunt) {
             }),
             new webpack.SourceMapDevToolPlugin({
                 filename: '[file].map',
-                exclude: ['vendor.min.js', 'manifest']
+                exclude: [/^(?!(binary)).*$/],
             }),
             new webpack.ContextReplacementPlugin(/moment[\/\\]locale/, /nothing/),
             new webpack.optimize.CommonsChunkPlugin({
@@ -66,8 +66,11 @@ module.exports = function (grunt) {
             [isProduction ? 'binary.min' :'binary']: './src/javascript',
         },
         output: {
-            path    : path.resolve(__dirname, '../' + global.dist + '/js/'),
-            filename: '[name].js',
+            path         : path.resolve(__dirname, '../' + global.dist + '/js/'),
+            filename     : '[name].js',
+            chunkFilename: '[name]_[chunkhash].min.js',
+            publicPath   : (isProduction ? '' : '/binary-static') +
+                           (global.branch ? `/${global.branch_prefix}${global.branch}` : '') + '/js/',
         },
         module: {
             loaders: [
