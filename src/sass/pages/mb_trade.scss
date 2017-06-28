@@ -50,7 +50,6 @@
                     }
                 }
                 > div {
-                    height: 39px;
                     background: $COLOR_LIGHT_GRAY;
                 }
                 .current, .list > div {
@@ -354,7 +353,7 @@
         .remaining-time {
             color: $COLOR_BLACK;
 
-            .alert {
+            &.alert {
                 color: $COLOR_RED;
             }
         }

@@ -111,10 +111,6 @@ const MBProcess = (() => {
                 }
             }
         });
-        const underlyings_to_add = 3 - (($underlyings.find('.list > div').length - 1) % 3);
-        for (let i = 0; i < underlyings_to_add; i++) {
-            $list.append($('<div/>', { class: 'gr-4 gr-4-t gr-4-m' }));
-        }
     };
 
     const selectors = '.trade-form, .price-table, #trading_bottom_content, .selection_wrapper, #trade_live_chart';
