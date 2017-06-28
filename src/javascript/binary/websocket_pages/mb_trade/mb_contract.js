@@ -131,14 +131,17 @@ const MBContract = (() => {
         }
     };
 
-    let $durations,
+    let $period,
+        $durations,
         $duration,
         $count_down_timer,
-        remaining_timeout;
+        remaining_timeout,
+        current_time_left;
     const displayRemainingTime = (recalculate) => {
         if (typeof $durations === 'undefined' || recalculate) {
             // period_value = MBDefaults.get('period');
-            $durations = $('#period').find('.list > div, .current > div');
+            $period = $('#period');
+            $durations = $period.find('.list > div, .current > div');
         }
         if (!$durations) return;
         $durations.each((idx) => {
@@ -146,12 +149,8 @@ const MBContract = (() => {
             $count_down_timer = $duration.find('.remaining-time');
 
             const time_left = parseInt($duration.attr('value').split('_')[1]) - window.time.unix();
-            if (time_left <= 0) {
-                location.reload();
-            } else if (time_left < 120) {
+            if (time_left < 120) {
                 $count_down_timer.addClass('alert');
-                // make all price buttons inactive if less than 2 minutes remaining
-                $('.price-button').addClass('inactive');
             }
             const remaining_month_day_string = [];
             const remaining_time_string = [];
@@ -172,8 +171,15 @@ const MBContract = (() => {
                     remaining_time_string.push(padLeft(all_durations[key] || 0, 2, '0'));
                 }
             });
-            $count_down_timer.text(`${remaining_month_day_string.join('')} ${remaining_time_string.join(':')}`).attr('value', time_left);
+            $count_down_timer.text(`${remaining_month_day_string.join('')} ${remaining_time_string.join(':')}`);
         });
+        current_time_left = parseInt($period.attr('value').split('_')[1]) - window.time.unix();
+        if (current_time_left <= 0) {
+            location.reload();
+        } else if (current_time_left < 120) {
+            // make all price buttons inactive if less than 2 minutes remaining
+            $('.price-button').addClass('inactive');
+        }
         if (remaining_timeout) clearRemainingTimeout();
         remaining_timeout = setTimeout(displayRemainingTime, 1000);
     };
@@ -317,6 +323,7 @@ const MBContract = (() => {
         populatePeriods     : populatePeriods,
         populateOptions     : populateOptions,
         displayRemainingTime: displayRemainingTime,
+        getRemainingTime    : () => current_time_left,
         getCurrentContracts : getCurrentContracts,
         getTemplate         : getTemplate,
         getCurrency         : getCurrency,

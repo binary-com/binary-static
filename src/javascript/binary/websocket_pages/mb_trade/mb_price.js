@@ -140,7 +140,7 @@ const MBPrice = (() => {
         const barrier      = makeBarrier(proposal);
         const payout       = proposal.echo_req.amount;
         const proposal_opp = prices[barrier][contract_types[contract_type].opposite];
-        const time_left    = $('#period').find('.current .remaining-time').attr('value');
+        const time_left    = MBContract.getRemainingTime();
         return {
             payout             : payout / 1000,
             contract_type      : contract_type,
