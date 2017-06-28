@@ -6,7 +6,6 @@ const MBProcess       = require('./mb_process');
 const MBTick          = require('./mb_tick');
 const TradingAnalysis = require('../trade/analysis');
 const debounce        = require('../trade/common').debounce;
-const showHighchart   = require('../trade/charts/chart_frame').showHighchart;
 const localize        = require('../../base/localize').localize;
 const jpClient        = require('../../common_functions/country_base').jpClient;
 const formatMoney     = require('../../common_functions/currency').formatMoney;
@@ -58,8 +57,6 @@ const MBTradingEvents = (() => {
                 MBProcess.processForgetTicks();
                 // get ticks for current underlying
                 MBTick.request(underlying);
-
-                showHighchart();
             });
         }
 

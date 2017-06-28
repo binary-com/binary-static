@@ -69,14 +69,15 @@
   "dependencies": {
     "babel-polyfill": "^6.16.0",
     "event-source-polyfill": "0.0.7",
-    "highcharts": "^5.0.6",
-    "jquery": "^2.1.1",
+    "highstock-release": "^5.0.12",
+    "jquery": "^3.2.1",
     "jquery.scrollto": "^2.1.2",
     "kinetic": "^5.2.0",
-    "moment": "^2.17.0",
+    "moment": "^2.18.1",
     "promise-polyfill": "^6.0.2",
     "select2": "^4.0.3",
     "url-polyfill": "^1.0.6",
-    "web-push-notifications": "^2.10.1"
+    "web-push-notifications": "^2.10.1",
+    "webtrader-charts": "^0.2.1"
   }
 }

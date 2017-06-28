@@ -800,7 +800,7 @@
                 border: 1px solid $COLOR_GRAY;
                 overflow-y: auto;
 
-                .toggle-content, #trade_live_chart, #trade_live_chart #chart_frame {
+                .toggle-content, #trade_live_chart, #trade_live_chart #webtrader_chart {
                     height: 100%;
                 }
                 #trade_live_chart table {
@@ -825,6 +825,11 @@
                 }
                 .toggle-content .gr-padding-10 {
                     padding-top: 0;
+                }
+                #webtrader_chart {
+                    width: 100%;
+                    height: 300px;
+                    overflow-y: hidden;
                 }
             }
         }

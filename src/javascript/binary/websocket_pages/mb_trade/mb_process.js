@@ -5,8 +5,6 @@ const MBPrice         = require('./mb_price');
 const MBSymbols       = require('./mb_symbols');
 const MBTick          = require('./mb_tick');
 const BinarySocket    = require('../socket');
-const TradingAnalysis = require('../trade/analysis');
-const showHighchart   = require('../trade/charts/chart_frame').showHighchart;
 const commonTrading   = require('../trade/common');
 const BinaryPjax      = require('../../base/binary_pjax');
 const Client          = require('../../base/client');
@@ -87,8 +85,6 @@ const MBProcess = (() => {
                 MBProcess.processMarketUnderlying();
             }
         }
-
-        showHighchart();
     };
 
     const populateUnderlyings = (selected) => {
@@ -210,7 +206,6 @@ const MBProcess = (() => {
             return;
         }
         processPriceRequest();
-        TradingAnalysis.request();
     };
 
     const checkMarketStatus = (close) => {
