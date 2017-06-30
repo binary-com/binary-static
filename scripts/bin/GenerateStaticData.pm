@@ -493,6 +493,12 @@ sub _texts {
         # browser-update message
         push @texts, localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]');
 
+        # binaryico message
+        push @texts, localize('Cancel Bid');
+        push @texts, localize('Refund Bid');
+        push @texts, localize('Claim Tokens');
+        push @texts, localize('Ended');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }
