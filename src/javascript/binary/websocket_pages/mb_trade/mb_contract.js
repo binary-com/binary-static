@@ -181,7 +181,7 @@ const MBContract = (() => {
             $('.price-button').addClass('inactive');
         }
         if (remaining_timeout) clearRemainingTimeout();
-        remaining_timeout = setTimeout(displayRemainingTime, 1000);
+        remaining_timeout = setTimeout(displayRemainingTime, 500);
     };
 
     const clearRemainingTimeout = () => { clearTimeout(remaining_timeout); };
