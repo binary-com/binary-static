@@ -26,7 +26,7 @@ module.exports = function (grunt) {
                 minChunks: Infinity,
             }),
             new webpack.optimize.UglifyJsPlugin({
-                include  : /\.min\.js$/,
+                include  : /(vendor|binary)\.min\.js$/,
                 minimize : true,
                 sourceMap: true,
                 compress : {

@@ -1,4 +1,3 @@
-const WTCharts         = require('webtrader-charts');
 const getLanguage      = require('../../../base/language').get;
 const localize         = require('../../../base/localize').localize;
 const State            = require('../../../base/storage').State;
@@ -10,6 +9,7 @@ const WebtraderChart = (() => {
     'use strict';
 
     let chart,
+        WebtraderCharts,
         is_initialized;
 
     const showChart = () => {
@@ -42,13 +42,24 @@ const WebtraderChart = (() => {
     const initChart = () => {
         if (!State.get('is_chart_allowed')) return;
         if (!is_initialized) {
-            WTCharts.init({
-                server: Config.getSocketURL(),
-                appId : Config.getAppId(),
-                lang  : getLanguage().toLowerCase(),
-            });
-            is_initialized = true;
+            require.ensure(['highstock-release'], () => {
+                require.ensure([], (require) => {
+                    WebtraderCharts = require('webtrader-charts');
+                    WebtraderCharts.init({
+                        server: Config.getSocketURL(),
+                        appId : Config.getAppId(),
+                        lang  : getLanguage().toLowerCase(),
+                    });
+                    is_initialized = true;
+                    addChart();
+                }, 'webtrader-charts');
+            }, 'highstock');
+        } else {
+            addChart();
         }
+    };
+
+    const addChart = () => {
         const $underlying = $('#underlying');
         const chart_config = {
             instrumentCode    : $underlying.val(),
@@ -59,7 +70,7 @@ const WebtraderChart = (() => {
             lang              : getLanguage().toLowerCase(),
             timezone          : `GMT+${jpClient() ? '9' : '0'}`,
         };
-        chart = WTCharts.chartWindow.addNewChart($('#webtrader_chart'), chart_config);
+        chart = WebtraderCharts.chartWindow.addNewChart($('#webtrader_chart'), chart_config);
     };
 
     return {

@@ -104,7 +104,6 @@ const getSetElementValue = (element, text, type) => { // eslint-disable-line con
 const requireHighstock = callback => (
     require.ensure([], (require) => {
         const Highstock = require('highstock-release');
-        require('highstock-release/modules/exporting')(Highstock);
         return callback(Highstock);
     }, 'highstock')
 );
