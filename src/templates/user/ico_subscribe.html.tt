@@ -3,11 +3,11 @@
 <h1>[% l('Binary Initial Coin Offering (ICO)') %]</h1>
 
 <div id="msg_authenticate" class="invisible">
-    <p>[% l("Before subscribing to ICO, you must first [_1]authenticate your account[_2].", "<a href='" _ request.url_for('user/authenticate') _ "'>", "</a>") %]</p>
+    <p>[% l("Before subscribing to the ICO, you must first [_1]authenticate your account[_2].", "<a href='" _ request.url_for('user/authenticate') _ "'>", "</a>") %]</p>
 </div>
 
 <div id="msg_no_balance" class="invisible">
-    <p>[% l("Before subscribing to ICO, you must first [_1]deposit money into your account[_2].", "<a href='" _ request.url_for('cashier/forwardws') _ "#deposit'>", "</a>") %]</p>
+    <p>[% l("Before subscribing to the ICO, you must first [_1]deposit money into your account[_2].", "<a href='" _ request.url_for('cashier/forwardws') _ "#deposit'>", "</a>") %]</p>
 </div>
 
 <div id="ico_subscribe" class="invisible">
@@ -28,7 +28,7 @@
 
             <div id="portfolio-content" class="invisible">
                 <div id="portfolio-no-contract">
-                    <p>[% l("No open positions.") %]</p>
+                    <p>[% l("You have no open bids.") %]</p>
                 </div>
 
                 [% INCLUDE table scroll=1 id='portfolio-table' tbody_id='portfolio-body' data={
@@ -46,10 +46,10 @@
         </div>
     </div>
     <div class="faded">
-        <p>[% l('Note:') %]</p>
+        <p>[% l('Notes:') %]</p>
         <ol>
-            <li>[% l('Bid cancellation can be done with 2% of cancellation fee.') %]</li>
-            <li>[% l('US investors can only claim tokens after 1 year due to US regulations.') %]</li>
+            <li>[% l('Bid cancellation can be done with a 2% cancellation fee.') %]</li>
+            <li>[% l('Due to US regulations, US investors can only claim their tokens after 1 year.') %]</li>
         </ol>
     </div>
 </div>
