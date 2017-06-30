@@ -104,10 +104,6 @@
                                         </a>
                                         <div class="separator-line-thin-gray"></div>
                                         <div class="login-id-list"></div>
-                                        <a href="[% request.url_for('/user/ico-subscribe') %]" id="link_ico">
-                                            <li>[% l('[_1] ICO', website_name) %]</li>
-                                        </a>
-                                        <div class="separator-line-thin-gray"></div>
                                         <a href="javascript:;" id="btn_logout" class="logout">
                                             <li>[% l("Sign out") %]</li>
                                         </a>
