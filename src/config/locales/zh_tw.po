@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-19 22:10-0400\n"
+"PO-Revision-Date: 2017-06-29 22:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -360,11 +360,8 @@ msgstr "%1的輝煌發展歷程"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1 每天處理超過百萬筆交易(包括虛擬帳戶)。"
 
-msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
-msgstr "立刻進行%1帳戶驗證%2，以獲得取款選項的所有優惠。"
-
-msgid "%1Schedule a video call%2 with our customer support team via live chat."
-msgstr "以即時聊天方式與我們的客服團隊%1安排視訊通話%2。"
+msgid "%1Authenticate your account%2 now to take full advantage of all payment methods available."
+msgstr "立刻進行%1帳戶驗證%2，以獲得付款選項的所有優惠。"
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1的慈善活動側重於捐助世界各地在當地社區有重大影響力的小型慈善機構和非營利組織。 我們的捐款使他們直接受惠，也不需像一些大型慈善機構那樣支付龐大開銷。"
@@ -736,7 +733,7 @@ msgid "Account not activated, please contact <a href=\"%1\">customer support</a>
 msgstr "帳戶未啟動。欲知詳細資訊，請聯繫<a href=\"%1\">客服部</a>。"
 
 msgid "Account opening reason"
-msgstr ""
+msgstr "開立帳戶的原因"
 
 msgid "Account type"
 msgstr "帳戶類型"
@@ -911,9 +908,6 @@ msgstr "為受影響的市場改變正常交易時間;"
 
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "另外，在Binary(IOM)有限公司和Binary(歐洲)有限公司都註冊過的客戶與其將爭端向IBA提出申訴，也可以%1在此%2使用歐洲線上解決爭端委員會(ODR)平台。"
-
-msgid "Alternatively, you can also %1authenticate your account by video call%2."
-msgstr "另外，您還可以%通過視訊通話進行帳戶驗證%2。"
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "儘管公司擁有及保留所有拒絕或關閉客戶帳戶的權利，但公司保證所有開出的合同義務都必須執行。"
@@ -1113,6 +1107,9 @@ msgstr "權杖持有人有權獲取相等於股東分紅的款項。"
 msgid "As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company."
 msgstr "身為帳戶和支付專員，您將負責處理客戶付款、處理和解決客戶端付款查詢、協助集團內部各公司管理帳戶、帳目核對、編寫報告，並與公司內部所有其他部門不斷協調，處理客戶付款和帳戶相關事宜。您將在國際化的團隊中使用公司提供的會計後台系統工作。"
 
+msgid "As an EU citizen, you are also required to verify the above documents by %1video call%2."
+msgstr "身為歐盟公民，您還必須通過%1視訊通話%2驗證上述文檔。"
+
 msgid "As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the %1 API, and all elements, components, and executables of the %1 API."
 msgstr "我們擁有您和我們之間%1的API和其全部元素、組件和可執行的所有權利、標題和利益，包括所有知識產權。"
 
@@ -1147,7 +1144,7 @@ msgid "Asset Index"
 msgstr "資產指數"
 
 msgid "Assets saving"
-msgstr ""
+msgstr "資產保存"
 
 msgid "Assist in the proofreading and recording of video presentations"
 msgstr "協助演示視訊的校對和錄製工作"
@@ -1190,9 +1187,6 @@ msgstr "澳大利亞 200 現金指數"
 
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr "通過視訊會議通話驗證您的帳戶。按照以下步驟進行︰"
-
-msgid "Authenticate your account now by verifying your identity and address. To proceed, simply follow the steps below:"
-msgstr "請提交身份與地址證明，立刻進行帳戶驗證。繼續操作，請按以下步驟操作:"
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
 msgstr "請提交身份與地址證明，立刻進行帳戶驗證。繼續操作，請發送以下文件到%1:"
@@ -2031,7 +2025,7 @@ msgstr "合約規格 (CFD) - 波動性指數"
 msgid "Contract Specifications - Forex"
 msgstr "合約規格 - 外匯"
 
-msgid "Contract is not started yet"
+msgid "Contract has not started yet"
 msgstr "合約尚未開始"
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
@@ -3862,7 +3856,7 @@ msgid "Income Source"
 msgstr "收入來源"
 
 msgid "Income earning"
-msgstr ""
+msgstr "賺取收入"
 
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
 msgstr "增加您的HackerOne聲譽，以建立信譽和配置文件的可見性。"
@@ -3875,6 +3869,9 @@ msgstr "賠償及責任"
 
 msgid "India 50 Cash Index"
 msgstr "印度 50 現金指數"
+
+msgid "Indicates required field"
+msgstr "表示必填欄位"
 
 msgid "Indicative"
 msgstr "指示性"
@@ -6618,9 +6615,6 @@ msgstr "賣出時間"
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "長期合約到期前售出交易，以保護您的盈利或將虧損降至最低"
 
-msgid "Send the following documents to %1:"
-msgstr "向 %1 發送下列文檔︰"
-
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "請將您的履歷以及說明您職業興趣的求職信傳送給我們。"
 
@@ -6644,6 +6638,9 @@ msgstr "認真交易員"
 
 msgid "Server"
 msgstr "伺服器"
+
+msgid "Session"
+msgstr "工作階段"
 
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "交易期持續時間限制不能大於6週。"
@@ -6795,8 +6792,8 @@ msgstr "對不起，在處理您的請求時發生錯誤。"
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "對不起，此功能僅適用虛擬帳戶。"
 
-msgid "Sorry, this feature is not available."
-msgstr "對不起，此功能不可用。"
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr "對不起，您的管轄權內無法使用此功能。"
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "對不起，您輸入的收銀台密碼不正確"
@@ -6826,7 +6823,7 @@ msgid "Specify your payout, which is your potential return if your prediction is
 msgstr "確定賠付額，如果您的預測正確的話，這就是您的潛在回報率。我們的系統將進一步計算您的投注額，即購入合約的總成本。 %1提供從1美元到5萬美元的賠付額。"
 
 msgid "Speculative"
-msgstr ""
+msgstr "投機"
 
 msgid "Speed - the speed at which your order can be executed."
 msgstr "速度 - 您的訂單可執行速度。"
@@ -7764,6 +7761,9 @@ msgstr "此政策適用於在買賣%1提供的金融產品的%1零售和專業�
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "此風險披露聲明並非詳盡無遺，也並非包含您可能會接觸到的所有風險的全面聲明。此聲明也並不能描述外匯交易和合約現存的固有風險或將來可能發生的所有風險差異。其目的在於為您提供及讓您合理理解%1在符合我們利益的同時為您提供的最佳外匯與差價合約交易經驗相關的風險資訊。"
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr "此數額超過取款限額。"
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "本獎金僅適用於新客戶。現有或以往客戶不符合條件。此類獎金新客戶只能獲取一次。此獎金每一個家庭僅能獲得一次。"
 
@@ -8171,6 +8171,12 @@ msgstr "體驗Webtrader"
 
 msgid "Try it now"
 msgstr "立即嘗試"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr "請試試%1波動率指數%2。"
+
+msgid "Try our other markets."
+msgstr "請嘗試我們其他的市場。"
 
 msgid "Try our trading page"
 msgstr "體驗我們的交易頁面"
@@ -9459,11 +9465,11 @@ msgstr "交易期持續時間限制將於%1秒內結束。"
 msgid "Your settings have been updated successfully."
 msgstr "您的設定已成功更新。"
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "您的權杖已過期。請點選%1此處%2重啟驗證程序。"
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr "您的權杖已過期或失效。請點選%1此處%2重啟驗證程序。"
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "您的權杖已過期。請點選<a href=\"%1\">此處</a>重啟驗證程序。"
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr "您的權杖已過期或失效。請點選<a href=\"%1\">此處</a>重啟驗證程序。"
 
 msgid "Your trading statistics since %1."
 msgstr "您自 %1 至今的交易統計。"
