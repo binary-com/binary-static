@@ -163,6 +163,9 @@ sub _texts {
         push @texts, localize('Please log in.');
         push @texts, localize('All markets are closed now. Please try again later.');
         push @texts, localize('Account balance:');
+        push @texts, localize('Try our [_1]Volatility Indices[_2].');
+        push @texts, localize('Try our other markets.');
+        push @texts, localize('Session');
         #strings for limits page
         push @texts, localize('Your account is fully authenticated and your withdrawal limits have been lifted.');
         push @texts, localize('Your withdrawal limit is [_1] [_2].');
@@ -192,7 +195,7 @@ sub _texts {
         #strings for home and virtual account opening page
         push @texts, localize('verification token');
         push @texts, localize('email address');
-        push @texts, localize('Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.');
+        push @texts, localize('Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.');
         push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');
@@ -223,7 +226,7 @@ sub _texts {
         push @texts, localize('Invalid amount, maximum is');
         push @texts, localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.');
         push @texts, localize('Only [_1] decimal points are allowed.');
-        push @texts, localize('Your token has expired. Please click [_1]here[_2] to restart the verification process.');
+        push @texts, localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.');
         #strings for api_token page
         push @texts, localize('New token created.');
         push @texts, localize('The maximum number of tokens ([_1]) has been reached.');
@@ -394,7 +397,7 @@ sub _texts {
         push @texts, localize('Current');
         push @texts, localize('Open');
         push @texts, localize('Closed');
-        push @texts, localize('Contract is not started yet');
+        push @texts, localize('Contract has not started yet');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
         push @texts, localize('Current Time');
@@ -454,6 +457,7 @@ sub _texts {
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('[_1] and [_2] cannot be the same.');
         push @texts, localize('You should enter [_1] characters.');
+        push @texts, localize('Indicates required field');
 
         # strings for metatrader
         push @texts, localize('Congratulations! Your [_1] Account has been created.');
@@ -461,7 +465,7 @@ sub _texts {
         push @texts, localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]');
         push @texts, localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]');
         push @texts, localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.');
-        push @texts, localize('Sorry, this feature is not available.');
+        push @texts, localize('Sorry, this feature is not available in your jurisdiction.');
         push @texts, localize('Main password');
         push @texts, localize('Investor password');
         push @texts, localize('Current password');
@@ -476,9 +480,10 @@ sub _texts {
 
         # strings for account_transfer
         push @texts, localize('from [_1] to [_2]');
+        push @texts, localize('This amount exceeds your withdrawal limit.');
 
         # strings for header notification
-        push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.');
+        push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.');
         push @texts, localize('Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.');
         push @texts, localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.');
         push @texts, localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.');

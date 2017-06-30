@@ -6,7 +6,6 @@ const GTM                  = require('../base/gtm');
 const Header               = require('../base/header');
 const Login                = require('../base/login');
 const getPropertyValue     = require('../base/utility').getPropertyValue;
-const jpResidence          = require('../common_functions/country_base').jpResidence;
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
 const Cookies              = require('../../lib/js-cookie');
 
@@ -58,10 +57,6 @@ const BinarySocketGeneral = (() => {
                         setResidence(response.authorize.country || Cookies.get('residence'));
                         if (!Client.get('is_virtual')) {
                             BinarySocket.send({ get_self_exclusion: 1 });
-                            if (!jpResidence()) {
-                                // TODO: remove this when back-end adds it as a status to get_account_status
-                                BinarySocket.send({ get_financial_assessment: 1 });
-                            }
                         }
                     }
                     BinarySocket.sendBuffered();

@@ -374,13 +374,6 @@ const Durations_Beta = (() => {
             return 0;
         }
 
-        const yellow_border = 'light-yellow-background';
-        if (value !== 'now') {
-            $date_start_select.addClass(yellow_border);
-        } else {
-            $date_start_select.removeClass(yellow_border);
-        }
-
         $date_start_select.val(value);
 
         let make_price_request = 1;
@@ -401,7 +394,6 @@ const Durations_Beta = (() => {
     const setNow = () => {
         const $date_start = $('#date_start');
         if ($date_start.find('option[value="now"]').length) {
-            $date_start.val('now').removeClass('light-yellow-background');
             Defaults.set('date_start', 'now');
         }
     };

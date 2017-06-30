@@ -5,7 +5,6 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
 const urlFor              = require('./url').urlFor;
-const isEmptyObject       = require('./utility').isEmptyObject;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
 const BinarySocket        = require('../websocket_pages/socket');
@@ -192,28 +191,26 @@ const Header = (() => {
         BinarySocket.wait('authorize').then(() => {
             let get_account_status,
                 status,
-                should_authenticate = false;
+                has_mt_account = false;
 
             const costarica_landing_company = /costarica/.test(Client.get('landing_company_name'));
-
-            const riskAssessment = () => {
-                if (get_account_status.risk_classification === 'high') {
-                    return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
-                }
-                return false;
-            };
 
             const authenticate = () => {
                 // don't show age verification check for costarica clients
                 const should_age_verify = !/age_verification/.test(status) && !costarica_landing_company;
-                return (!/authenticated/.test(status) || should_age_verify) && !jpClient() && should_authenticate;
+                return (!/authenticated/.test(status) || should_age_verify) && !jpClient() && has_mt_account;
             };
+
+            const riskAssessment = () => (
+                (get_account_status.risk_classification === 'high' || Client.isFinancial() || has_mt_account) &&
+                /financial_assessment_not_complete/.test(status)
+            );
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
 
 
             const messages = {
-                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.',        'user/authenticate'),
+                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',           'user/authenticate'),
                 financial_limit: () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                  'user/security/self_exclusionws'),
                 residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                        'user/settings/detailsws'),
                 risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',        'user/settings/assessmentws'),
@@ -261,18 +258,18 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 checkStatus(check_statuses_virtual);
             } else {
-                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment', 'balance').then(() => {
+                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
                     get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
                     status = get_account_status.status;
                     if (costarica_landing_company && +Client.get('balance') < 200) {
                         BinarySocket.wait('mt5_login_list').then((response) => {
                             if (response.mt5_login_list.length) {
-                                should_authenticate = true;
+                                has_mt_account = true;
                             }
                             checkStatus(check_statuses_real);
                         });
                     } else {
-                        should_authenticate = true;
+                        has_mt_account = true;
                         checkStatus(check_statuses_real);
                     }
                 });
