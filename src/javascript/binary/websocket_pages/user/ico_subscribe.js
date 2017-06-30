@@ -8,19 +8,18 @@ const ICOSubscribe = (() => {
     let $form_error;
 
     const onLoad = () => {
-        BinarySocket.wait('get_account_status').then((response) => {
-            const authenticated = /authenticated/.test(response.get_account_status.status);
+        BinarySocket.wait('balance').then(() => {
             if (!Client.get('currency') || +Client.get('balance') === 0) {
                 $('#msg_no_balance').setVisibility(1);
-            } else if (authenticated) {
+            } else {
                 $('#ico_subscribe').setVisibility(1);
                 ICOPortfolio.onLoad();
                 const form_id = '#frm_ico_bid';
                 $('label[for="price"]').append(` ${Client.get('currency')}`);
                 $(`${form_id} input`).on('keypress', onlyNumericOnKeypress);
                 FormManager.init(form_id, [
-                    { selector: '#duration', validations: ['req', ['number', { min: 1 }]], parent_node: 'parameters' },
-                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: '1, 2' }]] },
+                    { selector: '#duration', validations: ['req', ['number', { min: 1, max: 1000000 }]], parent_node: 'parameters' },
+                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: '1, 2', min: 0.01, max: 999999999999999 }]] },
 
                     { request_field: 'buy', value: 1 },
                     { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
@@ -36,8 +35,6 @@ const ICOSubscribe = (() => {
                     enable_button       : 1,
                     fnc_response_handler: handleResponse,
                 });
-            } else {
-                $('#msg_authenticate').setVisibility(1);
             }
         });
     };

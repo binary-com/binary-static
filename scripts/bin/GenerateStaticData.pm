@@ -494,6 +494,8 @@ sub _texts {
         push @texts, localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]');
 
         # binaryico message
+        push @texts, localize('Bid');
+        push @texts, localize('Closed Bid');
         push @texts, localize('Cancel Bid');
         push @texts, localize('Refund Bid');
         push @texts, localize('Claim Tokens');
