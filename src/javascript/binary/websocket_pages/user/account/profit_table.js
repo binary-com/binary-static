@@ -25,6 +25,7 @@ const ProfitTable = (() => {
             desc     : transaction.longcode,
             id       : transaction.contract_id,
             app_id   : transaction.app_id,
+            shortcode: transaction.shortcode,
         };
     };
 
