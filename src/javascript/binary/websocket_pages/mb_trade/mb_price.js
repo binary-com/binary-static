@@ -4,6 +4,7 @@ const MBNotifications  = require('./mb_notifications');
 const BinarySocket     = require('../socket');
 const TradingAnalysis  = require('../trade/analysis');
 const ViewPopup        = require('../user/view_popup/view_popup');
+const redrawChart      = require('../trade/charts/webtrader_chart').redrawChart;
 const Client           = require('../../base/client');
 const GTM              = require('../../base/gtm');
 const localize         = require('../../base/localize').localize;
@@ -51,13 +52,22 @@ const MBPrice = (() => {
         });
     };
 
+    const updateTabsAndChart = () => {
+        TradingAnalysis.bindAnalysisTabEvent();
+        TradingAnalysis.request();
+        redrawChart();
+    };
+
     const makeBarrier = (barrier_obj) => {
         if (!barrier_obj.barrier && barrier_obj.error) barrier_obj = barrier_obj.error.details;
         return (barrier_obj.barrier2 ? `${barrier_obj.barrier2}_` : '') + barrier_obj.barrier;
     };
 
     const display = (response) => {
-        if (isEmptyObject(response.proposal_array.proposals)) return; // ignore invalid responses
+        if (isEmptyObject(response.proposal_array.proposals)) { // ignore invalid responses
+            updateTabsAndChart();
+            return;
+        }
         Object.keys(response.proposal_array.proposals).forEach((contract_type) => {
             response.proposal_array.proposals[contract_type].forEach((proposal) => {
                 const barrier                  = makeBarrier(proposal);
@@ -116,8 +126,7 @@ const MBPrice = (() => {
 
         // Analysis should be initialised after contents being displayed,
         // so the chart is able to get the proper container width/height
-        TradingAnalysis.bindAnalysisTabEvent();
-        TradingAnalysis.request();
+        updateTabsAndChart();
     };
 
     const updatePrices = () => {

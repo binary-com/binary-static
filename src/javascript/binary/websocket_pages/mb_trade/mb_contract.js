@@ -216,8 +216,8 @@ const MBContract = (() => {
                     const is_current = (!default_value && idx === 0) || category.value === default_value;
                     const $current   = $('<div/>', {
                         value: category.value,
-                        html : `<span class="contract-type gr-6 ${category.type1}"><span class="text-align-middle">${localize(getTemplate(category.type1).name)}</span></span>
-                                <span class="contract-type gr-6 ${category.type2} negative-color"><span class="text-align-middle">${localize(getTemplate(category.type2).name)}</span></span>`,
+                        html : `<span class="contract-type gr-6 ${category.type1}"><span>${localize(getTemplate(category.type1).name)}</span></span>
+                                <span class="contract-type gr-6 ${category.type2} negative-color"><span>${localize(getTemplate(category.type2).name)}</span></span>`,
                         class: 'gr-row',
                     });
                     $list.append($current);

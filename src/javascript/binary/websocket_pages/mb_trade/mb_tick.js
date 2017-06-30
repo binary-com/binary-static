@@ -62,7 +62,7 @@ const MBTick = (() => {
     const displayPriceMovement = (old_value, current_value) => {
         const class_name = (current_value > old_value) ? 'up' : (current_value < old_value) ? 'down' : 'still';
         const $spot = $('#spot');
-        $spot.attr('class', $spot.attr('class').replace(/(up|down|still)/, class_name));
+        $spot.removeClass('up down still').addClass(class_name);
     };
 
     const request = (symbol) => {
@@ -109,7 +109,7 @@ const MBTick = (() => {
             const $spot = $('#spot');
             $spot.fadeOut(200, () => {
                 // resets spot movement coloring, will continue on the next tick responses
-                $spot.attr('class', $spot.attr('class').replace(/(up|down)/, '')).text('');
+                $spot.removeClass('up down').text('');
             });
         },
         displayPriceMovement: displayPriceMovement,

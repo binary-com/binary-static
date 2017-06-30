@@ -13,8 +13,14 @@
             height: calc(100% - 2px);
             min-height: 600px;
 
-            #webtrader_chart {
+            #webtrader_chart, .webtrader-charts-chart-window-contianer, .chart-view {
+                display: flex;
                 flex: 1;
+                height: auto;
+                flex-direction: column;
+            }
+            #webtrader_chart {
+                min-height: 600px;
             }
         }
     }
@@ -116,12 +122,12 @@
                 background-position: left;
                 line-height: 18px;
                 height: 36px;
-                display: table;
+                display: flex;
                 width: 50%;
 
-                .text-align-middle {
-                    display: table-cell;
-                    vertical-align: middle;
+                span {
+                    margin-top: auto;
+                    margin-bottom: auto;
                 }
             }
             #period {

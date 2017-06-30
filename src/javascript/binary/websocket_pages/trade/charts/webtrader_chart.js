@@ -65,10 +65,17 @@ const WebtraderChart = (() => {
         chart = WTCharts.chartWindow.addNewChart($('#webtrader_chart'), chart_config);
     };
 
+    const redrawChart = () => {
+        if (typeof getPropertyValue(chart, ['actions', 'reflow']) === 'function') {
+            chart.actions.reflow();
+        }
+    };
+
     return {
         showChart   : showChart,
         cleanupChart: cleanupChart,
         setChart    : setChart,
+        redrawChart : redrawChart,
     };
 })();
 
