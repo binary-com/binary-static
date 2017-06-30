@@ -4,7 +4,6 @@ const GTM           = require('../../../base/gtm');
 const localize      = require('../../../base/localize').localize;
 const State         = require('../../../base/storage').State;
 const urlFor        = require('../../../base/url').urlFor;
-const isEmptyObject = require('../../../base/utility').isEmptyObject;
 const formatMoney   = require('../../../common_functions/currency').formatMoney;
 
 const MetaTraderConfig = (() => {
@@ -39,8 +38,8 @@ const MetaTraderConfig = (() => {
                     } else if (Client.get('is_virtual')) {
                         resolve(needsRealMessage());
                     } else if (types_info[acc_type].account_type === 'financial') {
-                        BinarySocket.send({ get_financial_assessment: 1 }).then((response_financial) => {
-                            resolve(isEmptyObject(response_financial.get_financial_assessment) ?
+                        BinarySocket.wait('get_account_status').then((response_get_account_status) => {
+                            resolve(/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status) ?
                                 $('#msg_assessment').find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`).end()
                                     .html() : '');
                         });
