@@ -171,6 +171,7 @@ const Header = (() => {
 
     const displayNotification = (message, is_error, msg_code = '') => {
         const $msg_notification = $('#msg_notification');
+        if ($msg_notification.attr('data-code') === 'STORAGE_NOT_SUPPORTED') return;
         $msg_notification.html(message).attr({ 'data-message': message, 'data-code': msg_code });
         if ($msg_notification.is(':hidden')) {
             $msg_notification.slideDown(500, () => { if (is_error) $msg_notification.addClass('error'); });
@@ -183,6 +184,7 @@ const Header = (() => {
 
     const hideNotification = (msg_code) => {
         const $msg_notification = $('#msg_notification');
+        if ($msg_notification.attr('data-code') === 'STORAGE_NOT_SUPPORTED') return;
         if (msg_code && $msg_notification.attr('data-code') !== msg_code) return;
         if ($msg_notification.is(':visible')) $msg_notification.removeClass('error').slideUp(500, () => { $msg_notification.html('').removeAttr('data-message data-code'); });
     };

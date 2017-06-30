@@ -2,10 +2,12 @@ const BinaryPjax          = require('./binary_pjax');
 const pages_config        = require('./binary_pages');
 const Client              = require('./client');
 const GTM                 = require('./gtm');
+const Header              = require('./header');
 const localize            = require('./localize').localize;
 const Login               = require('./login');
 const Page                = require('./page');
 const defaultRedirectUrl  = require('./url').defaultRedirectUrl;
+const isStorageSupported  = require('./storage').isStorageSupported;
 const BinarySocket        = require('../websocket_pages/socket');
 const BinarySocketGeneral = require('../websocket_pages/socket_general');
 
@@ -19,6 +21,12 @@ const BinaryLoader = (() => {
         if (!/\.html$/i.test(window.location.pathname)) {
             window.location.pathname += '.html';
             return;
+        }
+
+        if (!isStorageSupported(localStorage) || !isStorageSupported(sessionStorage)) {
+            Header.displayNotification(localize('The website needs storages to function properly but they are not supported/enabled on current browser. Please enable them or use another browser.'),
+                true, 'STORAGE_NOT_SUPPORTED');
+            $('#btn_login').addClass('button-disabled');
         }
 
         Client.init();
