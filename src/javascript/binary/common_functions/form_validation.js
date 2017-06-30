@@ -26,7 +26,9 @@ const Validation = (() => {
             forms[form_selector] = { $form: $form };
             if (Array.isArray(fields) && fields.length) {
                 forms[form_selector].fields = fields;
+                const $btn_submit = $form.find('button[type="submit"]');
 
+                let has_required = false;
                 fields.forEach((field) => {
                     field.$ = $form.find(field.selector);
                     if (!field.$.length || !field.validations) return;
@@ -41,8 +43,9 @@ const Validation = (() => {
                         if (/req/.test(field.validations)) {
                             let $label = $parent.parent().find('label');
                             if (!$label.length) $label = $parent.find('label');
-                            if ($label.find('span.required_field_asterisk').length === 0) {
-                                $label.append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
+                            if ($label.length && $label.find('span.required_field_asterisk').length === 0) {
+                                $($label[0]).append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
+                                has_required = true;
                             }
                         }
                         if ($parent.find(`div.${error_class}`).length === 0) {
@@ -63,6 +66,10 @@ const Validation = (() => {
                         });
                     }
                 });
+                if (has_required && $form.find('.required_field_asterisk.no-margin').length === 0) {
+                    $btn_submit.parent().append($('<p/>', { class: 'hint' })
+                        .append($('<span/>', { class: 'required_field_asterisk no-margin', text: '*' })).append($('<span/>', { text: ` ${localize('Indicates required field')}` })));
+                }
             }
         }
     };
@@ -84,7 +91,7 @@ const Validation = (() => {
     const validPostCode     = value => /^[a-zA-Z\d-\s]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
-    const validEmailToken   = value => value.trim().length === 8;
+    const validEmailToken   = value => value.trim().length <= 30;
 
     const validCompare  = (value, options) => value === $(options.to).val();
     const validNotEqual = (value, options) => value !== $(options.to).val();
