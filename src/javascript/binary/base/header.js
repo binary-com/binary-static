@@ -193,6 +193,7 @@ const Header = (() => {
         BinarySocket.wait('authorize').then(() => {
             let get_account_status,
                 status,
+                should_authenticate = false,
                 has_mt_account = false;
 
             const costarica_landing_company = /costarica/.test(Client.get('landing_company_name'));
@@ -200,12 +201,12 @@ const Header = (() => {
             const authenticate = () => {
                 // don't show age verification check for costarica clients
                 const should_age_verify = !/age_verification/.test(status) && !costarica_landing_company;
-                return (!/authenticated/.test(status) || should_age_verify) && !jpClient() && has_mt_account;
+                return (!/authenticated/.test(status) || should_age_verify) && !jpClient() && should_authenticate;
             };
 
             const riskAssessment = () => (
                 (get_account_status.risk_classification === 'high' || Client.isFinancial() || has_mt_account) &&
-                /financial_assessment_not_complete/.test(status)
+                /financial_assessment_not_complete/.test(status) && !jpClient()
             );
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
@@ -266,12 +267,13 @@ const Header = (() => {
                     if (costarica_landing_company && +Client.get('balance') < 200) {
                         BinarySocket.wait('mt5_login_list').then((response) => {
                             if (response.mt5_login_list.length) {
+                                should_authenticate = true;
                                 has_mt_account = true;
                             }
                             checkStatus(check_statuses_real);
                         });
                     } else {
-                        has_mt_account = true;
+                        should_authenticate = true;
                         checkStatus(check_statuses_real);
                     }
                 });

@@ -1,4 +1,3 @@
-const Highcharts           = require('highcharts');
 const moment               = require('moment');
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
@@ -7,7 +6,7 @@ const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const localize             = require('../../base/localize').localize;
 const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
-require('highcharts/modules/exporting')(Highcharts);
+const getHighstock         = require('../../common_functions/common_functions').requireHighstock;
 
 const TickDisplay = (() => {
     'use strict';
@@ -27,6 +26,7 @@ const TickDisplay = (() => {
         ticks_needed,
         x_indicators,
         chart,
+        Highcharts,
         applicable_ticks,
         contract_barrier,
         contract_start_moment,
@@ -269,22 +269,17 @@ const TickDisplay = (() => {
     };
 
     const win = () => {
-        const profit = payout - price;
-        updateUI(payout, profit, localize('This contract won'));
+        updatePurchaseStatus(payout, price, localize('This contract won'));
     };
 
     const lose = () => {
-        updateUI(0, -price, localize('This contract lost'));
+        updatePurchaseStatus(0, -price, localize('This contract lost'));
     };
 
     const plot = () => {
         contract_start_moment = moment(contract_start_ms).utc();
         counter = 0;
         applicable_ticks = [];
-    };
-
-    const updateUI = (final_price, pnl, contract_status) => {
-        updatePurchaseStatus(final_price, final_price - pnl, contract_status);
     };
 
     const dispatch = (data) => {
@@ -376,31 +371,34 @@ const TickDisplay = (() => {
     };
 
     const updateChart = (data, contract) => {
-        subscribe = 'false';
-        if (contract) {
-            tick_underlying = contract.underlying;
-            tick_count = contract.tick_count;
-            tick_longcode = contract.longcode;
-            tick_display_name = contract.display_name;
-            tick_date_start = contract.date_start;
-            absolute_barrier = contract.barrier;
-            tick_shortcode = contract.shortcode;
-            tick_init = '';
-            const request = {
-                ticks_history: contract.underlying,
-                start        : contract.date_start,
-                end          : 'latest',
-            };
-            if (contract.current_spot_time < contract.date_expiry) {
-                request.subscribe = 1;
-                subscribe = 'true';
+        getHighstock((Highstock) => {
+            Highcharts = Highstock;
+            subscribe = 'false';
+            if (contract) {
+                tick_underlying   = contract.underlying;
+                tick_count        = contract.tick_count;
+                tick_longcode     = contract.longcode;
+                tick_display_name = contract.display_name;
+                tick_date_start   = contract.date_start;
+                absolute_barrier  = contract.barrier;
+                tick_shortcode    = contract.shortcode;
+                tick_init         = '';
+                const request     = {
+                    ticks_history: contract.underlying,
+                    start        : contract.date_start,
+                    end          : 'latest',
+                };
+                if (contract.current_spot_time < contract.date_expiry) {
+                    request.subscribe = 1;
+                    subscribe         = 'true';
+                } else {
+                    request.end = contract.date_expiry;
+                }
+                BinarySocket.send(request, { callback: dispatch });
             } else {
-                request.end = contract.date_expiry;
+                dispatch(data);
             }
-            BinarySocket.send(request, { callback: dispatch });
-        } else {
-            dispatch(data);
-        }
+        });
     };
 
     return {

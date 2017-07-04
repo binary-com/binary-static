@@ -1,6 +1,6 @@
+const Cookies          = require('js-cookie');
 const getPropertyValue = require('./utility').getPropertyValue;
 const isEmptyObject    = require('./utility').isEmptyObject;
-const Cookies          = require('../../lib/js-cookie');
 
 const isStorageSupported = (storage) => {
     if (typeof storage === 'undefined') {

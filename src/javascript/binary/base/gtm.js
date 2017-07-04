@@ -1,3 +1,4 @@
+const Cookies      = require('js-cookie');
 const moment       = require('moment');
 const Client       = require('./client');
 const getLanguage  = require('./language').get;
@@ -6,7 +7,6 @@ const State        = require('./storage').State;
 const isVisible    = require('../common_functions/common_functions').isVisible;
 const BinarySocket = require('../websocket_pages/socket');
 const getAppId     = require('../../config').getAppId;
-const Cookies      = require('../../lib/js-cookie');
 
 const GTM = (() => {
     'use strict';
