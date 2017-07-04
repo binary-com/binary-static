@@ -483,7 +483,7 @@ sub _texts {
         push @texts, localize('This amount exceeds your withdrawal limit.');
 
         # strings for header notification
-        push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.');
+        push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.');
         push @texts, localize('Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.');
         push @texts, localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.');
         push @texts, localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.');
@@ -492,6 +492,14 @@ sub _texts {
         push @texts, localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.');
         # browser-update message
         push @texts, localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]');
+
+        # binaryico message
+        push @texts, localize('Bid');
+        push @texts, localize('Closed Bid');
+        push @texts, localize('Cancel Bid');
+        push @texts, localize('Refund Bid');
+        push @texts, localize('Claim Tokens');
+        push @texts, localize('Ended');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

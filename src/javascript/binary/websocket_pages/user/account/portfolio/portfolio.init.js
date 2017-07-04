@@ -84,18 +84,14 @@ const PortfolioInit = (() => {
             return;
         }
 
-        // no open contracts
-        if (data.portfolio.contracts.length === 0) {
-            $('#portfolio-no-contract').show();
-            $('#portfolio-table').setVisibility(0);
-        } else {
+        let portfolio_data;
+        if (data.portfolio.contracts.length !== 0) {
             /**
              * User has at least one contract
              **/
             $('#portfolio-no-contract').hide();
-            let portfolio_data;
             $.each(data.portfolio.contracts, (ci, c) => {
-                if (!values.hasOwnProperty(c.contract_id)) {
+                if (!values.hasOwnProperty(c.contract_id) && c.contract_type !== 'BINARYICO') {
                     values[c.contract_id] = {};
                     values[c.contract_id].buy_price = c.buy_price;
                     portfolio_data = Portfolio.getPortfolioData(c);
@@ -106,8 +102,13 @@ const PortfolioInit = (() => {
                     }, 1000);
                 }
             });
+        }
+        // no open contracts
+        if (!portfolio_data) {
+            $('#portfolio-no-contract').show();
+            $('#portfolio-table').setVisibility(0);
+        } else {
             $('#portfolio-table').setVisibility(1);
-
             // update footer area data
             updateFooter();
 
