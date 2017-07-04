@@ -63,9 +63,12 @@ const ICOSubscribe = (() => {
     };
 
     const handleResponse = (response) => {
-        $form_error.setVisibility(0);
         if (response.error) {
             $form_error.text(response.error.message).setVisibility(1);
+        } else {
+            $form_error.setVisibility(0);
+            $('#duration, #price').val('');
+            $.scrollTo($('#ico_bids'), 500, { offset: -10 });
         }
     };
 
