@@ -8,7 +8,7 @@ const BinarySocket       = require('../websocket_pages/socket');
 
 const VideoFacility = (() => {
     const onLoad = () => {
-        if (Client.get('loginid_array').find(obj => obj.id === Client.get('loginid')).non_financial) {
+        if (!Client.get('loginid_array').find(obj => obj.id === Client.get('loginid')).financial) {
             $('#loading').replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('Sorry, this feature is not available in your jurisdiction.') }));
             return;
         }
