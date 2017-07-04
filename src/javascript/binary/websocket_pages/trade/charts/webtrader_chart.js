@@ -34,13 +34,13 @@ const WebtraderChart = (() => {
         const new_underlying = is_mb_trading ? $('#underlying').attr('value') : document.getElementById('underlying').value;
         if (($('#tab_graph').hasClass('active') || is_mb_trading) && (!chart || chart.data().instrumentCode !== new_underlying)) {
             cleanupChart();
-            initChart(is_mb_trading);
+            initChart();
         }
         $('#chart-error').hide();
         $('#trade_live_chart').show();
     };
 
-    const initChart = (is_mb_trading) => {
+    const initChart = () => {
         if (!State.get('is_chart_allowed')) return;
         if (!is_initialized) {
             require.ensure(['highstock-release'], () => {
@@ -61,6 +61,7 @@ const WebtraderChart = (() => {
     };
 
     const addChart = () => {
+        const is_mb_trading = State.get('is_mb_trading');
         const $underlying = $('#underlying');
         const $underlying_code = is_mb_trading ? $underlying.attr('value') : $underlying.val();
         const $underlying_name = is_mb_trading ? $underlying.find('.current .name').text() : $underlying.find('option:selected').text();
