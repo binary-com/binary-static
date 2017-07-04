@@ -4,7 +4,6 @@ const GTM           = require('../../../base/gtm');
 const localize      = require('../../../base/localize').localize;
 const State         = require('../../../base/storage').State;
 const urlFor        = require('../../../base/url').urlFor;
-const isEmptyObject = require('../../../base/utility').isEmptyObject;
 const formatMoney   = require('../../../common_functions/currency').formatMoney;
 
 const MetaTraderConfig = (() => {
@@ -17,8 +16,8 @@ const MetaTraderConfig = (() => {
         real_vanuatu_cent    : { account_type: 'financial', mt5_account_type: 'cent',     title: localize('Real Cent'),       order: 2, max_leverage: 1000 },
         real_vanuatu_standard: { account_type: 'financial', mt5_account_type: 'standard', title: localize('Real Standard'),   order: 4, max_leverage: 300 },
         real_vanuatu_stp     : { account_type: 'financial', mt5_account_type: 'stp',      title: localize('Real STP'),        order: 6, max_leverage: 100 },
-        demo_costarica       : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 7, max_leverage: 1000, is_demo: true },
-        real_costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 8, max_leverage: 100 },
+        demo_costarica       : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 7, max_leverage: 500, is_demo: true },
+        real_costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 8, max_leverage: 500 },
     };
 
     const needsRealMessage = () => $(`#msg_${Client.get('has_real') ? 'switch' : 'upgrade'}`).html();
@@ -39,8 +38,8 @@ const MetaTraderConfig = (() => {
                     } else if (Client.get('is_virtual')) {
                         resolve(needsRealMessage());
                     } else if (types_info[acc_type].account_type === 'financial') {
-                        BinarySocket.send({ get_financial_assessment: 1 }).then((response_financial) => {
-                            resolve(isEmptyObject(response_financial.get_financial_assessment) ?
+                        BinarySocket.wait('get_account_status').then((response_get_account_status) => {
+                            resolve(/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status) ?
                                 $('#msg_assessment').find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`).end()
                                     .html() : '');
                         });
@@ -54,12 +53,6 @@ const MetaTraderConfig = (() => {
                 $form.find(fields[action].lbl_account_type.id).text(types_info[acc_type].title);
                 // Email
                 $form.find(fields[action].lbl_email.id).text(fields[action].additional_fields(acc_type).email);
-                // Max leverage
-                $form.find(`${fields[action].ddl_leverage.id} option`).each(function() {
-                    if (+$(this).val() > types_info[acc_type].max_leverage) {
-                        $(this).remove();
-                    }
-                });
             },
             onSuccess: (response) => {
                 GTM.mt5NewAccount(response);
@@ -149,7 +142,6 @@ const MetaTraderConfig = (() => {
             lbl_account_type : { id: '#lbl_account_type' },
             lbl_email        : { id: '#lbl_email' },
             txt_name         : { id: '#txt_name',          request_field: 'name' },
-            ddl_leverage     : { id: '#ddl_leverage',      request_field: 'leverage' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_re_main_pass' },
             txt_investor_pass: { id: '#txt_investor_pass', request_field: 'investPassword' },
@@ -159,6 +151,7 @@ const MetaTraderConfig = (() => {
                     {
                         account_type: types_info[acc_type].account_type,
                         email       : Client.get('email'),
+                        leverage    : types_info[acc_type].max_leverage,
                     },
                     types_info[acc_type].mt5_account_type ? {
                         mt5_account_type: types_info[acc_type].mt5_account_type,
@@ -203,7 +196,6 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account.txt_main_pass.id }]] },
             { selector: fields.new_account.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
-            { selector: fields.new_account.ddl_leverage.id,      validations: ['req'] },
             { selector: fields.new_account.chk_tnc.id,           validations: [['req', { message: 'Please accept the terms and conditions.' }]] },
         ],
         password_change: [

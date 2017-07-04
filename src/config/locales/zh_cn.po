@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-18 22:31-0400\n"
+"PO-Revision-Date: 2017-07-03 23:54-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -360,11 +360,8 @@ msgstr "%1的辉煌发展历程"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1 系统每天处理超过百万笔交易（包括虚拟账户）。"
 
-msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
-msgstr "立刻进行%1账户验证%2，以获得取款选项的所有优惠。"
-
-msgid "%1Schedule a video call%2 with our customer support team via live chat."
-msgstr "以实时聊天方式与我们的客服团队%1安排视频通话%2。"
+msgid "%1Authenticate your account%2 now to take full advantage of all payment methods available."
+msgstr "立刻进行%1账户验证%2，以获得付款选项的所有优惠。"
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1的慈善活动侧重于捐助世界各地在当地社区有重大影响力的小型慈善机构和非营利组织。 我们的捐款使他们直接受惠，也不须像一些大型慈善机构那样支付庞大开销。"
@@ -735,6 +732,9 @@ msgstr "账户需要通过年龄验证。欲知详情，请联系<a href=\"%1\">
 msgid "Account not activated, please contact <a href=\"%1\">customer support</a> for more information."
 msgstr "账户未激活。欲知详情，请联系<a href=\"%1\">客服部</a>。"
 
+msgid "Account opening reason"
+msgstr "开立账户的原因"
+
 msgid "Account type"
 msgstr "账户类型"
 
@@ -908,9 +908,6 @@ msgstr "为受影响的市场改变正常交易时间;"
 
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "另外，在Binary(IOM)有限公司和Binary（欧洲）有限公司都注册过的客户与其将争端向IBA提出申诉，也可以%1在此%2使用欧洲在线解决争端委员会(ODR)平台。"
-
-msgid "Alternatively, you can also %1authenticate your account by video call%2."
-msgstr "另外，您还可以%1通过视频通话进行账户验证%2。"
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "尽管公司拥有及保留所有拒绝或关闭客户账户的权利，但公司保证所有开出的合同义务都必须执行。"
@@ -1110,6 +1107,9 @@ msgstr "令牌持有人有权获取相等于股东分红的款项。"
 msgid "As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company."
 msgstr "身为帐户和支付执行员，您将负责客户付款，处理和解决客户端付款查询问题，协助集团各公司管理账户、账目核对、编写报告，并与其他部门协作处理客户付款和帐户相关事宜。您将在国际化的团队中使用公司专用的会计和后台系统工作。"
 
+msgid "As an EU citizen, you are also required to verify the above documents by %1video call%2."
+msgstr "身为欧盟公民，您还必须通过%1视频通话%2验证上述文件。"
+
 msgid "As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the %1 API, and all elements, components, and executables of the %1 API."
 msgstr "我们拥有您和我们之间%1的API和其全部元素、组件和可执行的所有权利、标题和利益，包括所有知识产权。"
 
@@ -1142,6 +1142,9 @@ msgstr "资产"
 
 msgid "Asset Index"
 msgstr "资产指数"
+
+msgid "Assets saving"
+msgstr "资产保存"
 
 msgid "Assist in the proofreading and recording of video presentations"
 msgstr "协助演示视频的校对和录制工作"
@@ -1184,9 +1187,6 @@ msgstr "澳大利亚 200 现金指数"
 
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr "通过视频会议通话验证您的账户。按照以下步骤进行︰"
-
-msgid "Authenticate your account now by verifying your identity and address. To proceed, simply follow the steps below:"
-msgstr "请提交身份与地址证明，立刻进行账户验证。继续操作，请按以下步骤操作："
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
 msgstr "请提交身份与地址证明，立刻进行账户验证。继续操作，请将以下文件发送到%1："
@@ -2026,7 +2026,7 @@ msgstr "合约规格 (CFD) - 波动性指数"
 msgid "Contract Specifications - Forex"
 msgstr "合约规格 - 外汇"
 
-msgid "Contract is not started yet"
+msgid "Contract has not started yet"
 msgstr "合约还未开始"
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
@@ -3856,6 +3856,9 @@ msgstr "非活跃/睡眠账户"
 msgid "Income Source"
 msgstr "收入来源"
 
+msgid "Income earning"
+msgstr "赚取收入"
+
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
 msgstr "增加您的HackerOne声誉，以建立信誉和配置文件的可见性。"
 
@@ -3867,6 +3870,9 @@ msgstr "赔偿及责任"
 
 msgid "India 50 Cash Index"
 msgstr "印度 50 现金指数"
+
+msgid "Indicates required field"
+msgstr "表示必填字段"
 
 msgid "Indicative"
 msgstr "指示性"
@@ -6610,9 +6616,6 @@ msgstr "卖出时间"
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "长期合约到期前售出交易，以保护您的盈利或将亏损降至最低"
 
-msgid "Send the following documents to %1:"
-msgstr "向 %1 发送下列文件︰"
-
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "请将您的简历和求职信发送给我们。"
 
@@ -6636,6 +6639,9 @@ msgstr "认真交易员"
 
 msgid "Server"
 msgstr "服务器"
+
+msgid "Session"
+msgstr "会话"
 
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "交易期持续时间限制不能大于 6周。"
@@ -6787,8 +6793,8 @@ msgstr "对不起，您的请求处理发生错误。"
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "对不起，此功能仅适用虚拟账户。"
 
-msgid "Sorry, this feature is not available."
-msgstr "对不起，此功能不可用。"
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr "对不起，您的管辖权内无法使用此功能。"
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "对不起，您输入的收银台密码不正确"
@@ -6816,6 +6822,9 @@ msgstr "横幅应有的指定消息。"
 
 msgid "Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. %1 offers payouts from $1 to $50,000."
 msgstr "确定赔付额，如果您的预测正确的话，这就是您的潜在回报率。我们的系统将进一步计算您的投注额，即购入合约的总成本。%1提供从1美元到5万美元的赔付额。"
+
+msgid "Speculative"
+msgstr "投机"
 
 msgid "Speed - the speed at which your order can be executed."
 msgstr "速度 - 您的订单可执行速度。"
@@ -7753,6 +7762,9 @@ msgstr "此政策适用于在买卖%1提供的金融产品的%1零售和专业�
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "此风险披露声明并非详尽无遗，也并非包含您可能会接触到的所有风险的全面声明。此声明也并不能描述外汇交易和合约现存的固有风险或将来可能发生的所有风险差异。其目的在于为您提供及让您合理理解%1在符合我们利益的同时为您提供的最佳外汇与差价合约交易经验相关的风险信息。"
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr "此数额超过取款限额。"
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "本奖金仅适用于新客户。现有或以往客户不符合条件。此类奖金新客户只能获取一次。此奖金每一个家庭仅能获得一次。"
 
@@ -8160,6 +8172,12 @@ msgstr "体验Webtrader"
 
 msgid "Try it now"
 msgstr "立即体验"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr "请试试%1波动率指数%2。"
+
+msgid "Try our other markets."
+msgstr "请尝试我们其他的市场。"
 
 msgid "Try our trading page"
 msgstr "体验我们的交易页面"
@@ -9449,11 +9467,11 @@ msgstr "交易期持续时间限制将于%1秒内结束。"
 msgid "Your settings have been updated successfully."
 msgstr "您的设置已成功更新。"
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "您的令牌已过期。请点击%1此处%2重启验证程序。"
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr "您的令牌已过期或失效。请点击%1此处%2重启验证程序。"
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "您的令牌已过期。请点击<a href=\"%1\">此处</a>重启验证程序。"
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr "您的令牌已过期或失效。请点击<a href=\"%1\">此处</a>重启验证程序。"
 
 msgid "Your trading statistics since %1."
 msgstr "您自 %1 至今的交易统计。"

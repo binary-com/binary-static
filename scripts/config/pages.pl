@@ -88,6 +88,7 @@ sub all_pages {
 
         ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/video-facility',              'user/video_facility',                  'default',    'Video Room Facility'],
+        ['user/ico-subscribe',               'user/ico_subscribe',                   'default',    'Subscribe to ICO',        'ja'],
         ['user/lost_passwordws',             'user/lost_password',                   'default',    'Password Reset'],
         ['user/metatrader',                  'user/metatrader',                      'full_width', 'MetaTrader account management'],
         ['user/portfoliows',                 'user/portfolio',                       'default',    'Portfolio'],
