@@ -1,3 +1,4 @@
+const Cookies              = require('js-cookie');
 const BinarySocket         = require('./socket');
 const updateBalance        = require('./user/update_balance');
 const Client               = require('../base/client');
@@ -7,7 +8,6 @@ const Header               = require('../base/header');
 const Login                = require('../base/login');
 const getPropertyValue     = require('../base/utility').getPropertyValue;
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
-const Cookies              = require('../../lib/js-cookie');
 
 const BinarySocketGeneral = (() => {
     'use strict';

@@ -1,3 +1,4 @@
+const Cookies           = require('js-cookie');
 const Client            = require('./client');
 const Contents          = require('./contents');
 const Crowdin           = require('./crowdin');
@@ -16,7 +17,6 @@ const TrafficSource     = require('../common_functions/traffic_source');
 const BinarySocket      = require('../websocket_pages/socket');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
 const AffiliatePopup    = require('../../binary_japan/affiliate_popup');
-const Cookies           = require('../../lib/js-cookie');
 const PushNotification  = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
