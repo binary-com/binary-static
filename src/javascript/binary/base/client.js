@@ -1,3 +1,4 @@
+const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const CookieStorage      = require('./storage').CookieStorage;
 const LocalStore         = require('./storage').LocalStore;
@@ -8,7 +9,6 @@ const getLoginToken      = require('../common_functions/common_functions').getLo
 const jpClient           = require('../common_functions/country_base').jpClient;
 const BinarySocket       = require('../websocket_pages/socket');
 const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
-const Cookies            = require('../../lib/js-cookie');
 
 const Client = (() => {
     'use strict';

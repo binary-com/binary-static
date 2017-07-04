@@ -1,4 +1,4 @@
-const Cookies = require('../../lib/js-cookie');
+const Cookies = require('js-cookie');
 
 const emailRot13 = str => (
     str.replace(/[a-zA-Z]/g, (c) => {
@@ -101,6 +101,13 @@ const getSetElementValue = (element, text, type) => { // eslint-disable-line con
     }
 };
 
+const requireHighstock = callback => (
+    require.ensure([], (require) => {
+        const Highstock = require('highstock-release');
+        return callback(Highstock);
+    }, 'highstock')
+);
+
 module.exports = {
     getLoginToken         : () => Cookies.get('login'),
     emailRot13            : emailRot13,
@@ -114,4 +121,5 @@ module.exports = {
     selectorExists        : selectorExists,
     elementTextContent    : (element, text) => getSetElementValue(element, text, 'textContent'),
     elementInnerHtml      : (element, text) => getSetElementValue(element, text, 'innerHTML'),
+    requireHighstock      : requireHighstock,
 };

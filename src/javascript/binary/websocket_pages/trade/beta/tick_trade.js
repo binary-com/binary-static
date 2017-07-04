@@ -1,4 +1,3 @@
-const Highcharts    = require('highstock-release');
 const moment        = require('moment');
 const commonTrading = require('../common');
 const Tick          = require('../tick');
@@ -6,6 +5,7 @@ const BinarySocket  = require('../../socket');
 const ViewPopupUI   = require('../../user/view_popup/view_popup.ui');
 const localize      = require('../../../base/localize').localize;
 const isVisible     = require('../../../common_functions/common_functions').isVisible;
+const getHighstock  = require('../../../common_functions/common_functions').requireHighstock;
 
 const TickDisplay_Beta = (() => {
     'use strict';
@@ -26,6 +26,7 @@ const TickDisplay_Beta = (() => {
         ticks_needed,
         x_indicators,
         chart,
+        Highcharts,
         applicable_ticks,
         contract_barrier,
         contract_start_moment,
@@ -494,32 +495,35 @@ const TickDisplay_Beta = (() => {
     };
 
     const updateChart = (data, contract) => {
-        subscribe = 'false';
-        if (contract) {
-            tick_underlying = contract.underlying;
-            tick_count = contract.tick_count;
-            tick_longcode = contract.longcode;
-            tick_display_name = contract.display_name;
-            tick_date_start = contract.date_start;
-            absolute_barrier = contract.barrier;
-            tick_shortcode = contract.shortcode;
-            contract_type = contract.contract_type;
-            tick_init = '';
-            const request = {
-                ticks_history: contract.underlying,
-                start        : contract.date_start,
-                end          : 'latest',
-            };
-            if (contract.current_spot_time < contract.date_expiry) {
-                request.subscribe = 1;
-                subscribe  = 'true';
+        getHighstock((Highstock) => {
+            Highcharts = Highstock;
+            subscribe  = 'false';
+            if (contract) {
+                tick_underlying   = contract.underlying;
+                tick_count        = contract.tick_count;
+                tick_longcode     = contract.longcode;
+                tick_display_name = contract.display_name;
+                tick_date_start   = contract.date_start;
+                absolute_barrier  = contract.barrier;
+                tick_shortcode    = contract.shortcode;
+                contract_type     = contract.contract_type;
+                tick_init         = '';
+                const request     = {
+                    ticks_history: contract.underlying,
+                    start        : contract.date_start,
+                    end          : 'latest',
+                };
+                if (contract.current_spot_time < contract.date_expiry) {
+                    request.subscribe = 1;
+                    subscribe         = 'true';
+                } else {
+                    request.end = contract.date_expiry;
+                }
+                BinarySocket.send(request, { callback: dispatch });
             } else {
-                request.end = contract.date_expiry;
+                dispatch(data);
             }
-            BinarySocket.send(request, { callback: dispatch });
-        } else {
-            dispatch(data);
-        }
+        });
     };
 
     return {
