@@ -119,9 +119,12 @@ const Process = (() => {
 
         State.set('is_chart_allowed', !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly'));
 
-        document.getElementById('trading_socket_container').classList.add('show');
+        const trading_socket_container = document.getElementById('trading_socket_container');
+        if (trading_socket_container) {
+            trading_socket_container.classList.add('show');
+        }
         const init_logo = document.getElementById('trading_init_progress');
-        if (init_logo.style.display !== 'none') {
+        if (init_logo && init_logo.style.display !== 'none') {
             init_logo.style.display = 'none';
             Defaults.update();
         }

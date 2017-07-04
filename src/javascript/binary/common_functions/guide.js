@@ -1,6 +1,6 @@
+const Cookies   = require('js-cookie');
 const localize  = require('../base/localize').localize;
 const EnjoyHint = require('../../lib/guide.enjoyhint');
-const Cookies   = require('../../lib/js-cookie');
 
 /*
  *  This is developed to simplify the usage of enjoyhint (https://github.com/xbsoftware/enjoyhint)

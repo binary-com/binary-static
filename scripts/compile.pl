@@ -155,7 +155,7 @@ sub tt2_handle {
 
     my $request = $stash{request};
 
-    $stash{javascript}       = js_config();
+    $stash{javascript}       = js_config($dist_path);
     $stash{css_files}        = [css_files()];
     $stash{iso639a_language} = $request->language;
     $stash{lang}             = $request->language;
