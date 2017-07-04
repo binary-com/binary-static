@@ -269,22 +269,17 @@ const TickDisplay = (() => {
     };
 
     const win = () => {
-        const profit = payout - price;
-        updateUI(payout, profit, localize('This contract won'));
+        updatePurchaseStatus(payout, price, localize('This contract won'));
     };
 
     const lose = () => {
-        updateUI(0, -price, localize('This contract lost'));
+        updatePurchaseStatus(0, -price, localize('This contract lost'));
     };
 
     const plot = () => {
         contract_start_moment = moment(contract_start_ms).utc();
         counter = 0;
         applicable_ticks = [];
-    };
-
-    const updateUI = (final_price, pnl, contract_status) => {
-        updatePurchaseStatus(final_price, final_price - pnl, contract_status);
     };
 
     const dispatch = (data) => {

@@ -2,10 +2,6 @@
 
 <h1>[% l('Binary Initial Coin Offering (ICO)') %]</h1>
 
-<div id="msg_authenticate" class="invisible">
-    <p>[% l("Before subscribing to the ICO, you must first [_1]authenticate your account[_2].", "<a href='" _ request.url_for('user/authenticate') _ "'>", "</a>") %]</p>
-</div>
-
 <div id="msg_no_balance" class="invisible">
     <p>[% l("Before subscribing to the ICO, you must first [_1]deposit money into your account[_2].", "<a href='" _ request.url_for('cashier/forwardws') _ "#deposit'>", "</a>") %]</p>
 </div>
@@ -36,7 +32,8 @@
                             [
                                     { class='ref',               text=l('Ref.') },
                                     { class='payout nowrap',     text=l('No. of Tokens') },
-                                    { class='purchase',          text=l('Bid Price') },
+                                    { class='bid',               text=l('Bid Price Per Token') },
+                                    { class='purchase',          text=l('Total Bid Price') },
                                     { class='details',           text=l('Status') },
                                     { class='button',            text='' },
                                 ],

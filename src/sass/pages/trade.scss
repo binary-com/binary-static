@@ -604,15 +604,17 @@
     }
 }
 
-#spot {
-    line-height: 25px;
-    white-space: nowrap;
-    padding: 3px;
-    border-radius: 5px;
-    @include BIDIR_PROP(margin-right, margin-left, 8px);
+#trading_socket_container, #trading_socket_container_beta {
+    #spot {
+        line-height: 25px;
+        white-space: nowrap;
+        padding: 3px;
+        border-radius: 5px;
+        @include BIDIR_PROP(margin-right, margin-left, 8px);
 
-    &.error {
-        font-style: italic;
+        &.error {
+            font-style: italic;
+        }
     }
 }
 

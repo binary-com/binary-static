@@ -1,5 +1,6 @@
 const MBContract          = require('./mb_contract');
 const MBDisplayCurrencies = require('./mb_currency');
+const MBDefaults          = require('./mb_defaults');
 const MBTradingEvents     = require('./mb_event');
 const MBPrice             = require('./mb_price');
 const MBProcess           = require('./mb_process');
@@ -17,6 +18,7 @@ const MBTradePage = (() => {
 
     const onLoad = () => {
         State.set('is_mb_trading', true);
+        MBDefaults.set('disable_trading', 1);
 
         if (events_initialized === 0) {
             events_initialized = 1;
@@ -24,16 +26,16 @@ const MBTradePage = (() => {
         }
 
         BinarySocket.send({ payout_currencies: 1 }).then(() => {
-            MBDisplayCurrencies('', false);
+            MBDisplayCurrencies();
             MBProcess.getSymbols();
         });
 
         $('#tab_portfolio').find('a').text(localize('Portfolio'));
         $('#tab_graph').find('a').text(localize('Chart'));
         $('#tab_explanation').find('a').text(localize('Explanation'));
-        $('#remaining-time-label').text(localize('Remaining time'));
         State.set('is_chart_allowed', true);
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
+        $('.container').css('max-width', '1200px');
     };
 
     const reload = () => {
@@ -51,6 +53,7 @@ const MBTradePage = (() => {
         MBProcess.onUnload();
         BinarySocket.clear('active_symbols');
         State.remove('ViewPopup.onDisplayed');
+        $('.container').css('max-width', '');
     };
 
     const onDisconnect = () => {

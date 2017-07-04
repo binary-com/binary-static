@@ -30,16 +30,17 @@ const WebtraderChart = (() => {
     };
 
     const setChart = () => {
-        const new_underlying = document.getElementById('underlying').value;
-        if ($('#tab_graph').hasClass('active') && (!chart || chart.data().instrumentCode !== new_underlying)) {
+        const is_mb_trading = State.get('is_mb_trading');
+        const new_underlying = is_mb_trading ? $('#underlying').attr('value') : document.getElementById('underlying').value;
+        if (($('#tab_graph').hasClass('active') || is_mb_trading) && (!chart || chart.data().instrumentCode !== new_underlying)) {
             cleanupChart();
-            initChart();
+            initChart(is_mb_trading);
         }
         $('#chart-error').hide();
         $('#trade_live_chart').show();
     };
 
-    const initChart = () => {
+    const initChart = (is_mb_trading) => {
         if (!State.get('is_chart_allowed')) return;
         if (!is_initialized) {
             require.ensure(['highstock-release'], () => {
@@ -61,9 +62,11 @@ const WebtraderChart = (() => {
 
     const addChart = () => {
         const $underlying = $('#underlying');
+        const $underlying_code = is_mb_trading ? $underlying.attr('value') : $underlying.val();
+        const $underlying_name = is_mb_trading ? $underlying.find('.current .name').text() : $underlying.find('option:selected').text();
         const chart_config = {
-            instrumentCode    : $underlying.val(),
-            instrumentName    : $underlying.find('option:selected').text(),
+            instrumentCode    : $underlying_code,
+            instrumentName    : $underlying_name,
             showInstrumentName: true,
             timePeriod        : '1t',
             type              : 'line',
@@ -73,10 +76,17 @@ const WebtraderChart = (() => {
         chart = WebtraderCharts.chartWindow.addNewChart($('#webtrader_chart'), chart_config);
     };
 
+    const redrawChart = () => {
+        if (typeof getPropertyValue(chart, ['actions', 'reflow']) === 'function') {
+            chart.actions.reflow();
+        }
+    };
+
     return {
         showChart   : showChart,
         cleanupChart: cleanupChart,
         setChart    : setChart,
+        redrawChart : redrawChart,
     };
 })();
 

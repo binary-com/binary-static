@@ -65,6 +65,9 @@ const TradingAnalysis = (() => {
         toggleActiveAnalysisTabs();
 
         JapanPortfolio.init();
+        if (State.get('is_mb_trading')) {
+            showChart();
+        }
         if (current_tab === 'tab_portfolio') {
             JapanPortfolio.show();
         } else {
