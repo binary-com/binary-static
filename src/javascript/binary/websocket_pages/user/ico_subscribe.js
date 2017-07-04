@@ -1,6 +1,9 @@
 const ICOPortfolio          = require('./ico_portfolio');
 const BinarySocket          = require('../socket');
+const BinaryPjax            = require('../../base/binary_pjax');
 const Client                = require('../../base/client');
+const defaultRedirectUrl    = require('../../base/url').defaultRedirectUrl;
+const jpClient              = require('../../common_functions/country_base').jpClient;
 const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 const FormManager           = require('../../common_functions/form_manager');
 
@@ -8,6 +11,11 @@ const ICOSubscribe = (() => {
     let $form_error;
 
     const onLoad = () => {
+        if (jpClient()) {
+            BinaryPjax.load(defaultRedirectUrl());
+            return;
+        }
+
         BinarySocket.wait('balance').then(() => {
             if (!Client.get('currency') || +Client.get('balance') === 0) {
                 $('#msg_no_balance').setVisibility(1);
