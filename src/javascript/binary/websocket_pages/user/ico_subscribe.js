@@ -2,6 +2,7 @@ const ICOPortfolio          = require('./ico_portfolio');
 const BinarySocket          = require('../socket');
 const BinaryPjax            = require('../../base/binary_pjax');
 const Client                = require('../../base/client');
+const localize              = require('../../base/localize').localize;
 const defaultRedirectUrl    = require('../../base/url').defaultRedirectUrl;
 const jpClient              = require('../../common_functions/country_base').jpClient;
 const getDecimalPlaces      = require('../../common_functions/currency').getDecimalPlaces;
@@ -9,6 +10,7 @@ const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 const FormManager           = require('../../common_functions/form_manager');
 
 const ICOSubscribe = (() => {
+    const form_id = '#frm_ico_bid';
     let $form_error;
 
     const onLoad = () => {
@@ -17,6 +19,17 @@ const ICOSubscribe = (() => {
             return;
         }
 
+        BinarySocket.wait('website_status').then((response) => {
+            if (response.website_status.ico_status === 'closed') { // TODO: update property name and value once back-end is done
+                $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO auction is already closed.') }));
+                $('#ico_subscribe').setVisibility(1);
+            } else {
+                init();
+            }
+        });
+    };
+
+    const init = () => {
         BinarySocket.wait('balance').then(() => {
             const currency = Client.get('currency');
             if (!Client.get('currency') || +Client.get('balance') === 0) {
@@ -24,7 +37,6 @@ const ICOSubscribe = (() => {
             } else {
                 $('#ico_subscribe').setVisibility(1);
                 ICOPortfolio.onLoad();
-                const form_id = '#frm_ico_bid';
                 $('label[for="price"]').append(` ${currency}`);
                 $(`${form_id} input`).on('keypress', onlyNumericOnKeypress);
                 const decimal_places = getDecimalPlaces(currency);
