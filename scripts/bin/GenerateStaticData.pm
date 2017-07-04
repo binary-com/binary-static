@@ -323,10 +323,8 @@ sub _texts {
         push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Barrier at close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Barrier through close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Barrier through close on [_4].');
-        push @texts, localize('hour');
-        push @texts, localize('mins');
-        push @texts, localize('minute');
-        push @texts, localize('second');
+        push @texts, localize('M');
+        push @texts, localize('D');
         push @texts, localize('Higher');
         push @texts, localize('Lower');
         push @texts, localize('Touches');
@@ -342,6 +340,7 @@ sub _texts {
         push @texts, localize('Connection error: Please check your internet connection.');
         push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
         push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
+        push @texts, localize('Lots');
         #strings for digit_info
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
