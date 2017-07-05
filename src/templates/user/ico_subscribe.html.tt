@@ -2,17 +2,61 @@
 
 <h1>[% l('Binary Initial Coin Offering (ICO)') %]</h1>
 
-<div id="msg_no_balance" class="invisible">
-    <p>[% l("Before subscribing to the ICO, you must first [_1]deposit money into your account[_2].", "<a href='" _ request.url_for('cashier/forwardws') _ "#deposit'>", "</a>") %]</p>
-</div>
-
 <div id="ico_subscribe" class="invisible">
     <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency.", website_name) %]</p>
-    <form id="frm_ico_bid">
-        [% INCLUDE form_row type='text' id='duration' label=l('Number of tokens') attributes='maxlength="30"' %]
-        [% INCLUDE form_row type='text' id='price' label=l('Price/token:') attributes='maxlength="30"' %]
-        [% INCLUDE submit_button msg_id='form_error' type='submit' text=l('Place bid') %]
-    </form>
+    <div class="gr-row">
+        <div class="gr-7 gr-12-p gr-12-m">
+            <img class="responsive" src="[% request.url_for('/images/pages/ico/auction.svg') %]" />
+        </div>
+        <div class="gr-5 gr-12-p gr-12-m border-gray border-radius">
+            <form id="frm_ico_bid">
+                <div class="gr-row fill-bg-color gr-padding-10 border-radius">
+                    <h3 class="gr-5 no-margin">[% l('Bid Binary ICO:') %]</h3>
+                    <div class="gr-7 hint align-end">
+                        <span class="currency"></span> [% l('Balance:') %]
+                        <strong class="topMenuBalance"></strong>
+                    </div>
+                </div>
+                <div class="gr-row center-text-m">
+                    <div class="gr-12 gr-padding-10">
+                        <label for="duration">[% l('Number of tokens') %]</label>
+                    </div>
+                    <div class="gr-12">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                                <input class="gr-9" type="text" id="duration" maxlength="30" autocomplete="off">
+                                <div class="fill-bg-color gr-3"><div class="center-text margin-top">[% l("Tokens") %]</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gr-row center-text-m ">
+                    <div class="gr-12 gr-padding-10">
+                        <label for="price">[% l('Price/token:') %]</label>
+                    </div>
+                    <div class="gr-12">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                                <input class="gr-9" type="text" id="price" maxlength="30" autocomplete="off">
+                                <div class="fill-bg-color gr-3"><div class="center-text margin-top currency">-</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gr-12 align-end hint">[% l("Total:") %] <span id="total"></span></div>
+                <div class="center-text">
+                    <div id="form_error" class="error-msg invisible"></div>
+                    <div class="gr-padding-10">
+                        <button id="btn_submit" type="submit">[% l('Place bid') %]</button>
+                        <div class="gr-row invisible hint" id="topup_wrapper">
+                            <div class="gr-8 align-start error-msg">[% l('You have insufficient funds in your account.') %]</div>
+                            <div class="gr-4 align-end"><a href="[% request.url_for('/cashier/forwardws') %]#deposit">[% l('top up in cashier') %]</a></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <div id="ico_bids">
         <h1>[% l('Binary ICO Auction Bids') %]</h1>
         [% PROCESS components/elements.html.tt %]
