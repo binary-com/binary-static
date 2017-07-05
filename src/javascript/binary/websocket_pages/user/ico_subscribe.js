@@ -27,6 +27,7 @@ const ICOSubscribe = (() => {
         BinarySocket.wait('website_status').then((response) => {
             if (response.website_status.ico_status === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO auction is already closed.') }));
+                ICOPortfolio.onLoad();
                 $('#ico_subscribe').setVisibility(1);
             } else {
                 init();
@@ -37,7 +38,7 @@ const ICOSubscribe = (() => {
     const init = () => {
         BinarySocket.wait('balance').then((response) => {
             ICOPortfolio.onLoad();
-            currency = Client.get('currency');
+            currency = Client.get('currency') || '';
             if (currency) {
                 $('.currency').text(currency);
             } else {
@@ -61,7 +62,7 @@ const ICOSubscribe = (() => {
                 $form_error = $('#form_error');
                 FormManager.init(form_id, [
                     { selector: '#duration', validations: ['req', ['number', { min: 1, max: 1000000 }]], parent_node: 'parameters' },
-                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places), max: 999999999999999 }]] },
+                        { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places), max: 999999999999999 }]] },
 
                     { request_field: 'buy', value: 1 },
                     { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
