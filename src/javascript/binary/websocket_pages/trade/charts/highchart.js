@@ -1,4 +1,3 @@
-const Highcharts   = require('highcharts/highstock');
 const HighchartUI  = require('./highchart.ui');
 const MBContract   = require('../../mb_trade/mb_contract');
 const MBDefaults   = require('../../mb_trade/mb_defaults');
@@ -8,11 +7,13 @@ const BinarySocket = require('../../socket');
 const ViewPopupUI  = require('../../user/view_popup/view_popup.ui');
 const localize     = require('../../../base/localize').localize;
 const State        = require('../../../base/storage').State;
+const getHighstock = require('../../../common_functions/common_functions').requireHighstock;
 const jpClient     = require('../../../common_functions/country_base').jpClient;
-require('highcharts/modules/exporting')(Highcharts);
+const addComma     = require('../../../common_functions/currency').addComma;
 
 const Highchart = (() => {
     let chart,
+        chart_promise,
         options,
         response_id,
         contract,
@@ -118,7 +119,10 @@ const Highchart = (() => {
 
         // element where chart is to be displayed
         const el = document.getElementById('analysis_live_chart');
-        if (!el) return null;
+        if (!el) {
+            chart = null;
+            return new Promise();
+        }
 
         const JPClient = jpClient();
         HighchartUI.setLabels(is_chart_delayed);
@@ -133,12 +137,14 @@ const Highchart = (() => {
             exit_time : exit_time ? exit_time * 1000 : null,
             user_sold : userSold(),
         });
-        Highcharts.setOptions(HighchartUI.getHighchartOptions(JPClient));
-
-        if (!el) return null;
-        const new_chart = Highcharts.StockChart(el, HighchartUI.getChartOptions());
-        is_initialized = true;
-        return new_chart;
+        return getHighstock((Highcharts) => {
+            Highcharts.setOptions(HighchartUI.getHighchartOptions(JPClient));
+            if (!el) chart = null;
+            else {
+                chart = Highcharts.StockChart(el, HighchartUI.getChartOptions());
+                is_initialized  = true;
+            }
+        });
     };
 
     // type 'x' is used to draw lines such as start and end times
@@ -192,22 +198,24 @@ const Highchart = (() => {
                 }
                 // only initialize chart if it hasn't already been initialized
                 if (!chart && !is_initialized) {
-                    chart = initChart(options);
-                    if (!chart) return;
+                    chart_promise = initChart(options);
+                    chart_promise.then(() => {
+                        if (!chart) return;
 
-                    if (purchase_time !== start_time) {
-                        drawLineX({
-                            value: purchase_time,
-                            label: localize('Purchase Time'),
-                            color: '#7cb5ec',
-                        });
-                    }
+                        if (purchase_time !== start_time) {
+                            drawLineX({
+                                value: purchase_time,
+                                label: localize('Purchase Time'),
+                                color: '#7cb5ec',
+                            });
+                        }
 
-                    // second condition is used to make sure contracts that have purchase time
-                    // but are sold before the start time don't show start time
-                    if (!is_sold || (is_sold && sell_time && sell_time > start_time)) {
-                        drawLineX({ value: start_time });
-                    }
+                        // second condition is used to make sure contracts that have purchase time
+                        // but are sold before the start time don't show start time
+                        if (!is_sold || (is_sold && sell_time && sell_time > start_time)) {
+                            drawLineX({ value: start_time });
+                        }
+                    });
                 }
             } else if ((tick || ohlc) && !stop_streaming) {
                 if (chart && chart.series) {
@@ -215,11 +223,13 @@ const Highchart = (() => {
                 }
             }
             if (entry_tick_time && !is_entry_tick_barrier_selected) {
-                selectEntryTickBarrier();
+                chart_promise.then(selectEntryTickBarrier);
             }
-            if ((is_sold || is_settleable)) {
-                updateZone('exit');
-                endContract();
+            if (is_sold || is_settleable) {
+                chart_promise.then(() => {
+                    updateZone('exit');
+                    endContract();
+                });
             }
         } else if (type === 'ticks_history' && error) {
             HighchartUI.showError('', error.message);
@@ -347,10 +357,10 @@ const Highchart = (() => {
             const high_barrier = contract.high_barrier;
             const low_barrier  = contract.low_barrier;
             if (barrier) {
-                addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [barrier]),           dashStyle: 'Dot' }, 'y');
+                addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
             } else if (high_barrier && low_barrier) {
-                addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize('High Barrier ([_1])', [high_barrier]), dashStyle: 'Dot' }, 'y');
-                addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize('Low Barrier ([_1])', [low_barrier]),   dashStyle: 'Dot' }, 'y');
+                addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
+                addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot' }, 'y');
             }
         }
     };

@@ -5,7 +5,6 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
 const urlFor              = require('./url').urlFor;
-const isEmptyObject       = require('./utility').isEmptyObject;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
 const BinarySocket        = require('../websocket_pages/socket');
@@ -126,10 +125,11 @@ const Header = (() => {
                     .setVisibility(0);
 
                 const jp_account_status = (State.get(['response', 'get_settings', 'get_settings', 'jp_account_status']) || {}).status;
-                if (jp_account_status && show_upgrade_msg) {
+                if (jp_account_status) {
+                    const has_disabled_jp = jpClient() && loginid_array.some(client => client.real && client.disabled);
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
-                    } else {
+                    } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
                         $upgrade_msg.setVisibility(1);
                         if (jp_account_status === 'jp_activation_pending') {
                             if ($('.activation-message').length === 0) {
@@ -172,7 +172,13 @@ const Header = (() => {
     const displayNotification = (message, is_error, msg_code = '') => {
         const $msg_notification = $('#msg_notification');
         $msg_notification.html(message).attr({ 'data-message': message, 'data-code': msg_code });
-        if ($msg_notification.is(':hidden')) $msg_notification.removeClass('error').slideDown(500, () => { if (is_error) $msg_notification.addClass('error'); });
+        if ($msg_notification.is(':hidden')) {
+            $msg_notification.slideDown(500, () => { if (is_error) $msg_notification.addClass('error'); });
+        } else if (is_error) {
+            $msg_notification.addClass('error');
+        } else {
+            $msg_notification.removeClass('error');
+        }
     };
 
     const hideNotification = (msg_code) => {
@@ -185,16 +191,10 @@ const Header = (() => {
         BinarySocket.wait('authorize').then(() => {
             let get_account_status,
                 status,
-                should_authenticate = false;
+                should_authenticate = false,
+                has_mt_account = false;
 
             const costarica_landing_company = /costarica/.test(Client.get('landing_company_name'));
-
-            const riskAssessment = () => {
-                if (get_account_status.risk_classification === 'high') {
-                    return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
-                }
-                return false;
-            };
 
             const authenticate = () => {
                 // don't show age verification check for costarica clients
@@ -202,11 +202,16 @@ const Header = (() => {
                 return (!/authenticated/.test(status) || should_age_verify) && !jpClient() && should_authenticate;
             };
 
+            const riskAssessment = () => (
+                (get_account_status.risk_classification === 'high' || Client.isFinancial() || has_mt_account) &&
+                /financial_assessment_not_complete/.test(status) && !jpClient()
+            );
+
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
 
 
             const messages = {
-                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.',        'user/authenticate'),
+                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',           'user/authenticate'),
                 financial_limit: () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                  'user/security/self_exclusionws'),
                 residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                        'user/settings/detailsws'),
                 risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',        'user/settings/assessmentws'),
@@ -254,13 +259,14 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 checkStatus(check_statuses_virtual);
             } else {
-                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment', 'balance').then(() => {
+                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
                     get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
                     status = get_account_status.status;
                     if (costarica_landing_company && +Client.get('balance') < 200) {
                         BinarySocket.wait('mt5_login_list').then((response) => {
                             if (response.mt5_login_list.length) {
                                 should_authenticate = true;
+                                has_mt_account = true;
                             }
                             checkStatus(check_statuses_real);
                         });

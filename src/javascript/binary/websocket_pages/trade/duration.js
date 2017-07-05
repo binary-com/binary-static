@@ -387,14 +387,11 @@ const Durations = (() => {
             return 0;
         }
 
-        const yellow_border = 'light-yellow-background';
-        if (value !== 'now') {
-            $date_start_select.addClass(yellow_border);
-        } else {
-            $date_start_select.removeClass(yellow_border);
-        }
-
         $date_start_select.val(value);
+
+        $('#time_start_row').setVisibility(value !== 'now');
+        const time_start = document.getElementById('time_start');
+        commonIndependent.checkValidTime(time_start, $date_start_select, Defaults.get('time_start'));
 
         let make_price_request = 1;
         const $expiry_time = $('#expiry_time');
@@ -403,7 +400,7 @@ const Durations = (() => {
             const end_time = moment(parseInt(value) * 1000).add(5, 'minutes').utc();
             Durations.setTime((commonTrading.timeIsValid($expiry_time) && Defaults.get('expiry_time') ?
                                Defaults.get('expiry_time') : end_time.format('HH:mm')));
-            Durations.selectEndDate((commonTrading.timeIsValid($expiry_time) && (Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : end_time)));
+            Durations.selectEndDate(commonTrading.timeIsValid($expiry_time) && Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : end_time);
         }
         commonTrading.timeIsValid($expiry_time);
         Durations.display();
@@ -413,7 +410,6 @@ const Durations = (() => {
     const setNow = () => {
         const $date_start = $('#date_start');
         if ($date_start.find('option[value="now"]').length) {
-            $date_start.val('now').removeClass('light-yellow-background');
             Defaults.set('date_start', 'now');
         }
     };

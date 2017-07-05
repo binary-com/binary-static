@@ -1,6 +1,6 @@
 const TradingAnalysis   = require('./analysis');
 const commonTrading     = require('./common');
-const chartFrameCleanup = require('./charts/chart_frame').chartFrameCleanup;
+const cleanupChart      = require('./charts/webtrader_chart').cleanupChart;
 const displayCurrencies = require('./currency');
 const Defaults          = require('./defaults');
 const TradingEvents     = require('./event');
@@ -21,6 +21,12 @@ const TradePage = (() => {
     State.remove('is_trading');
 
     const onLoad = () => {
+        BinarySocket.wait('authorize').then(() => {
+            init();
+        });
+    };
+
+    const init = () => {
         if (jpClient()) {
             BinaryPjax.load('multi_barriers_trading');
             return;
@@ -65,7 +71,7 @@ const TradePage = (() => {
         Process.forgetTradingStreams();
         BinarySocket.clear();
         Defaults.clear();
-        chartFrameCleanup();
+        cleanupChart();
         commonTrading.clean();
         BinarySocket.clear('active_symbols');
     };
@@ -73,7 +79,7 @@ const TradePage = (() => {
     const onDisconnect = () => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
-        chartFrameCleanup();
+        cleanupChart();
         onLoad();
     };
 

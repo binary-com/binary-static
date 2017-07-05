@@ -9,26 +9,26 @@ use File::Slurp;
 use YAML::XS qw(LoadFile);
 # our module in lib
 use BS;
+use Term::ANSIColor;
 
 sub generate_data_files {
     my $js_path = shift;
 
     _make_nobody_dir($js_path);
-    print "\tGenerating $js_path/texts.js\n";
-    my $exports = <<'END_EXPORTS';
 
-module.exports = {
-    texts_json: texts_json,
-};
-END_EXPORTS
-
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts() . $exports);
+    print colored(['cyan'], "\tGenerating files:\n");
+    foreach my $language ((BS::all_languages(), 'ACH')) {
+        my $file = "$js_path/${\lc $language}.js";
+        printf "\t\t%-40s %5s", $file, "  .....  ";
+        File::Slurp::write_file($file, { binmode => ':utf8' }, _texts($language));
+        printf colored(['green'], "Done.\n");
+    }
     return;
 }
 
 sub _texts {
+    my $language = shift;
     my $js = "const texts_json = {};\n";
-    foreach my $language ((BS::all_languages(), 'ACH')) {
         BS::set_lang($language);
 
         my @texts;
@@ -163,6 +163,9 @@ sub _texts {
         push @texts, localize('Please log in.');
         push @texts, localize('All markets are closed now. Please try again later.');
         push @texts, localize('Account balance:');
+        push @texts, localize('Try our [_1]Volatility Indices[_2].');
+        push @texts, localize('Try our other markets.');
+        push @texts, localize('Session');
         #strings for limits page
         push @texts, localize('Your account is fully authenticated and your withdrawal limits have been lifted.');
         push @texts, localize('Your withdrawal limit is [_1] [_2].');
@@ -192,7 +195,7 @@ sub _texts {
         #strings for home and virtual account opening page
         push @texts, localize('verification token');
         push @texts, localize('email address');
-        push @texts, localize('Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.');
+        push @texts, localize('Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.');
         push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');
@@ -223,7 +226,7 @@ sub _texts {
         push @texts, localize('Invalid amount, maximum is');
         push @texts, localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.');
         push @texts, localize('Only [_1] decimal points are allowed.');
-        push @texts, localize('Your token has expired. Please click [_1]here[_2] to restart the verification process.');
+        push @texts, localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.');
         #strings for api_token page
         push @texts, localize('New token created.');
         push @texts, localize('The maximum number of tokens ([_1]) has been reached.');
@@ -320,10 +323,8 @@ sub _texts {
         push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Barrier at close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Barrier through close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Barrier through close on [_4].');
-        push @texts, localize('hour');
-        push @texts, localize('mins');
-        push @texts, localize('minute');
-        push @texts, localize('second');
+        push @texts, localize('M');
+        push @texts, localize('D');
         push @texts, localize('Higher');
         push @texts, localize('Lower');
         push @texts, localize('Touches');
@@ -339,6 +340,7 @@ sub _texts {
         push @texts, localize('Connection error: Please check your internet connection.');
         push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
         push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
+        push @texts, localize('Lots');
         #strings for digit_info
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
@@ -394,7 +396,7 @@ sub _texts {
         push @texts, localize('Current');
         push @texts, localize('Open');
         push @texts, localize('Closed');
-        push @texts, localize('Contract is not started yet');
+        push @texts, localize('Contract has not started yet');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
         push @texts, localize('Current Time');
@@ -454,6 +456,7 @@ sub _texts {
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('[_1] and [_2] cannot be the same.');
         push @texts, localize('You should enter [_1] characters.');
+        push @texts, localize('Indicates required field');
 
         # strings for metatrader
         push @texts, localize('Congratulations! Your [_1] Account has been created.');
@@ -461,7 +464,7 @@ sub _texts {
         push @texts, localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]');
         push @texts, localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]');
         push @texts, localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.');
-        push @texts, localize('Sorry, this feature is not available.');
+        push @texts, localize('Sorry, this feature is not available in your jurisdiction.');
         push @texts, localize('Main password');
         push @texts, localize('Investor password');
         push @texts, localize('Current password');
@@ -476,9 +479,10 @@ sub _texts {
 
         # strings for account_transfer
         push @texts, localize('from [_1] to [_2]');
+        push @texts, localize('This amount exceeds your withdrawal limit.');
 
         # strings for header notification
-        push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all withdrawal options available.');
+        push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.');
         push @texts, localize('Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.');
         push @texts, localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.');
         push @texts, localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.');
@@ -486,11 +490,19 @@ sub _texts {
         push @texts, localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.');
         # browser-update message
-        push @texts, localize('Your web browser ([_1]) is out of date and no longer supported. Update your browser now for the best experience on this site. [_2]Update browser[_3]');
+        push @texts, localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]');
+
+        # binaryico message
+        push @texts, localize('Bid');
+        push @texts, localize('Closed Bid');
+        push @texts, localize('Cancel Bid');
+        push @texts, localize('Refund Bid');
+        push @texts, localize('Claim Tokens');
+        push @texts, localize('Ended');
+        push @texts, localize('The ICO auction is already closed.');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
-    }
 
     return $js;
 }

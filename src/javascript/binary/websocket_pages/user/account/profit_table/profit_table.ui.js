@@ -3,7 +3,7 @@ const Client              = require('../../../../base/client');
 const localize            = require('../../../../base/localize').localize;
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
-const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney         = require('../../../../common_functions/currency').formatMoney;
 const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
 const Table               = require('../../../../common_functions/attach_dom/table');
 
@@ -78,7 +78,7 @@ const ProfitTableUI = (() => {
         const data = [
             jp_client ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate,
             `<span ${showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id])}>${profit_table_data.ref}</span>`,
-            profit_table_data.payout,
+            /binaryico/i.test(profit_table_data.shortcode) ? '-' : profit_table_data.payout,
             '',
             profit_table_data.buyPrice,
             jp_client ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate,
@@ -94,9 +94,11 @@ const ProfitTableUI = (() => {
             $(this).wrapInner('<div class="new-width"></div>');
         });
 
-        // create view button and append
-        const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: profit_table_data.id });
-        $row.children('.contract,.details').append($view_button);
+        if (!/binaryico/i.test(profit_table_data.shortcode)) {
+            // create view button and append
+            const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: profit_table_data.id });
+            $row.children('.contract,.details').append($view_button);
+        }
 
         return $row[0];
     };

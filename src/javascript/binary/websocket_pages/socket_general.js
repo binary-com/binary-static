@@ -1,3 +1,4 @@
+const Cookies              = require('js-cookie');
 const BinarySocket         = require('./socket');
 const updateBalance        = require('./user/update_balance');
 const Client               = require('../base/client');
@@ -7,9 +8,7 @@ const Header               = require('../base/header');
 const Login                = require('../base/login');
 const State                = require('../base/storage').State;
 const getPropertyValue     = require('../base/utility').getPropertyValue;
-const jpResidence          = require('../common_functions/country_base').jpResidence;
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
-const Cookies              = require('../../lib/js-cookie');
 
 const BinarySocketGeneral = (() => {
     'use strict';
@@ -60,10 +59,8 @@ const BinarySocketGeneral = (() => {
                         BinarySocket.send({ payout_currencies: 1 });
                         BinarySocket.send({ mt5_login_list: 1 });
                         setResidence(response.authorize.country || Cookies.get('residence'));
-                        if (!Client.get('is_virtual') && !jpResidence()) {
+                        if (!Client.get('is_virtual')) {
                             BinarySocket.send({ get_self_exclusion: 1 });
-                            // TODO: remove this when back-end adds it as a status to get_account_status
-                            BinarySocket.send({ get_financial_assessment: 1 });
                         }
                     }
                     BinarySocket.sendBuffered();

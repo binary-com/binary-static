@@ -1,7 +1,7 @@
 [% PROCESS components/forms.html.tt %]
 
 [% BLOCK verification_code %]
-    [% INCLUDE form_row label=l("Verification token") id='verification_code' type='text' attributes='maxlength="8" autocomplete="off"'
+    [% INCLUDE form_row label=l("Verification token") id='verification_code' type='text' attributes='maxlength="30" autocomplete="off"'
             hint=l("Please check your email for the value of this token") %]
 [% END %]
 
@@ -32,6 +32,16 @@
 [% BLOCK residence %]
     [% WRAPPER form_row type='custom' id='residence' label=l('Country of residence') %]
         <label id="lbl_residence"></label>
+    [% END %]
+[% END %]
+
+[% BLOCK account_opening_reason %]
+    [% WRAPPER form_row type='select' id='account_opening_reason' label=l('Account opening reason') %]
+        <option value="">[% l('Please select') %]</option>
+        <option value="Speculative">[% l('Speculative') %]</option>
+        <option value="Income Earning">[% l("Income earning") %]</option>
+        <option value="Assets Saving">[% l('Assets saving') %]</option>
+        <option value="Hedging">[% l('Hedging') %]</option>
     [% END %]
 [% END %]
 

@@ -1,12 +1,13 @@
-const BinarySocket  = require('../../socket');
-const Client        = require('../../../base/client');
-const localize      = require('../../../base/localize').localize;
-const urlFor        = require('../../../base/url').urlFor;
-const makeOption    = require('../../../common_functions/common_functions').makeOption;
-const jpClient      = require('../../../common_functions/country_base').jpClient;
-const FormManager   = require('../../../common_functions/form_manager');
-const TrafficSource = require('../../../common_functions/traffic_source');
-const Cookies       = require('../../../../lib/js-cookie');
+const Cookies          = require('js-cookie');
+const BinarySocket     = require('../../socket');
+const Client           = require('../../../base/client');
+const localize         = require('../../../base/localize').localize;
+const urlFor           = require('../../../base/url').urlFor;
+const getPropertyValue = require('../../../base/utility').getPropertyValue;
+const makeOption       = require('../../../common_functions/common_functions').makeOption;
+const jpClient         = require('../../../common_functions/country_base').jpClient;
+const FormManager      = require('../../../common_functions/form_manager');
+const TrafficSource    = require('../../../common_functions/traffic_source');
 
 const VirtualAccOpening = (() => {
     'use strict';
@@ -106,10 +107,17 @@ const VirtualAccOpening = (() => {
                 true);
         }
 
+        const showInvalidTokenMessage = () => {
+            const message = 'Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.';
+            return showFormError(message, '');
+        };
+
         switch (error.code) {
+            case 'InputValidationFailed': {
+                return getPropertyValue(response, ['error', 'details', 'verification_code']) ? showInvalidTokenMessage() : showError(error.message);
+            }
             case 'InvalidToken': {
-                const message = 'Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.';
-                return showFormError(message, '');
+                return showInvalidTokenMessage();
             }
             case 'duplicate email': {
                 const message = 'The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.';

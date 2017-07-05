@@ -5,7 +5,7 @@ const localize             = require('../../../base/localize').localize;
 const State                = require('../../../base/storage').State;
 const defaultRedirectUrl   = require('../../../base/url').defaultRedirectUrl;
 const appendTextValueChild = require('../../../common_functions/common_functions').appendTextValueChild;
-const Currency             = require('../../../common_functions/currency_to_symbol');
+const Currency             = require('../../../common_functions/currency');
 
 const SubAccOpening = (() => {
     'use strict';

@@ -1,7 +1,7 @@
 const moment      = require('moment');
 const Client      = require('../../../base/client');
 const jpClient    = require('../../../common_functions/country_base').jpClient;
-const formatMoney = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney = require('../../../common_functions/currency').formatMoney;
 
 const ProfitTable = (() => {
     'use strict';
@@ -25,6 +25,7 @@ const ProfitTable = (() => {
             desc     : transaction.longcode,
             id       : transaction.contract_id,
             app_id   : transaction.app_id,
+            shortcode: transaction.shortcode,
         };
     };
 

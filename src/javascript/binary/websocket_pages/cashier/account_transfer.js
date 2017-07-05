@@ -11,36 +11,43 @@ const AccountTransfer = (() => {
     let accounts,
         $transfer;
 
-    const populateAccounts = (response) => {
-        if (response.error) {
-            $('#error_message').find('p').text(response.error.message).end()
+    const populateAccounts = (response_transfer, response_limits) => {
+        if (response_transfer.error || response_limits.error) {
+            $('#error_message').find('p').text((response_transfer.error || response_limits.error).message).end()
                 .setVisibility(1);
             return;
         }
-        accounts = response.accounts;
+        accounts = response_transfer.accounts;
+        const client_loginid = Client.get('loginid');
         const $form = $(form_id);
         $transfer = $form.find('#transfer');
         let text,
             from_loginid,
-            to_loginid;
+            to_loginid,
+            max_balance;
 
         accounts.forEach((account, idx) => {
             if (+account.balance) {
                 from_loginid = accounts[idx].loginid;
                 to_loginid = accounts[1 - idx].loginid;
                 text = localize('from [_1] to [_2]', [from_loginid, to_loginid]);
+                if (client_loginid === from_loginid) {
+                    max_balance = Math.min(+accounts[idx].balance, +response_limits.get_limits.remainder);
+                } else {
+                    max_balance = +accounts[idx].balance;
+                }
                 $transfer.append($('<option/>', {
                     text           : text,
                     'data-from'    : from_loginid,
                     'data-to'      : to_loginid,
                     'data-currency': accounts[idx].currency,
-                    'data-balance' : accounts[idx].balance,
+                    'data-balance' : max_balance,
                 }));
             }
         });
 
         // show client's login id on top
-        const $client_option = $transfer.find(`option[data-from="${Client.get('loginid')}"]`);
+        const $client_option = $transfer.find(`option[data-from="${client_loginid}"]`);
         if ($client_option.length !== 0) {
             $client_option.insertBefore($transfer.find('option:eq(0)')).attr('selected', 'selected');
         }
@@ -73,7 +80,7 @@ const AccountTransfer = (() => {
 
     const bindValidation = () => {
         FormManager.init(form_id, [
-            { selector: '#amount', validations: ['req', ['number', { type: 'float', decimals: '1, 2', min: 0.1, max: getTransferAttr('data-balance') }]] },
+            { selector: '#amount', validations: ['req', ['number', { type: 'float', decimals: '1, 2', min: 0.1, max: getTransferAttr('data-balance'), custom_message: 'This amount exceeds your withdrawal limit.' }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: () => getTransferAttr('data-from') },
@@ -101,7 +108,10 @@ const AccountTransfer = (() => {
     };
 
     const onLoad = () => {
-        BinarySocket.send({ transfer_between_accounts: 1 }).then(response => populateAccounts(response));
+        BinarySocket.send({ transfer_between_accounts: 1 }).then((response_transfer) => {
+            BinarySocket.send({ get_limits: 1 }).then(response_limits =>
+                populateAccounts(response_transfer, response_limits));
+        });
     };
 
     return {

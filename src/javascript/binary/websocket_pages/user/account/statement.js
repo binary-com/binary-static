@@ -2,7 +2,7 @@ const moment              = require('moment');
 const Client              = require('../../../base/client');
 const localize            = require('../../../base/localize').localize;
 const toJapanTimeIfNeeded = require('../../../base/clock').toJapanTimeIfNeeded;
-const formatMoney         = require('../../../common_functions/currency_to_symbol').formatMoney;
+const formatMoney         = require('../../../common_functions/currency').formatMoney;
 const toTitleCase         = require('../../../common_functions/string_util').toTitleCase;
 
 const Statement = (() => {
@@ -16,12 +16,13 @@ const Statement = (() => {
         const payout  = parseFloat(statement.payout);
         const amount  = parseFloat(statement.amount);
         const balance = parseFloat(statement.balance_after);
+        const is_ico_bid = /binaryico/i.test(statement.shortcode);
 
         return {
             date   : jp_client ? toJapanTimeIfNeeded(statement.transaction_time) : `${date_str}\n${time_str}`,
             ref    : statement.transaction_id,
-            payout : isNaN(payout) ? '-' : formatMoney(currency, payout, !jp_client),
-            action : toTitleCase(statement.action_type),
+            payout : isNaN(payout) || is_ico_bid ? '-' : formatMoney(currency, payout, !jp_client),
+            action : is_ico_bid ? (/buy/i.test(statement.action_type) ? localize('Bid') : localize('Closed Bid')) : toTitleCase(statement.action_type),
             amount : isNaN(amount) ? '-' : formatMoney(currency, amount, !jp_client),
             balance: isNaN(balance) ? '-' : formatMoney(currency, balance, !jp_client),
             desc   : statement.longcode.replace(/\n/g, '<br />'),

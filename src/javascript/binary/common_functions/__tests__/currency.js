@@ -1,5 +1,5 @@
 const expect      = require('chai').expect;
-const formatMoney = require('../currency_to_symbol').formatMoney;
+const formatMoney = require('../currency').formatMoney;
 
 
 describe('formatMoney', () => {
@@ -15,6 +15,6 @@ describe('formatMoney', () => {
     });
 
     it('works for unexpected currencies', () => {
-        expect(formatMoney('WTV', '123.55')).to.eq('WTV 123.55');
+        expect(formatMoney('WTV', '123.55')).to.eq('WTV 123.55000000');
     });
 });

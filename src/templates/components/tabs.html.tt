@@ -8,9 +8,11 @@
     <div id="[% id %]">
         <ul id="[% id_ul %]" class="tm-ul follow-default">
             [% FOREACH tab IN tabs %]
+                [% IF not tab.disabled %]
                 <li id="[% tab.id %]" class="tm-li [% tab.class %]">
                     <a href="[% IF no_href %]javascript:;[% END %]#[% tab.id %]" class="tm-a">[% tab.text %]</a>
                 </li>
+                [% END %]
             [% END %]
         </ul>
     </div>
@@ -42,7 +44,7 @@
                     </span>
                     <ul class="tm-ul-2">
                         [% FOREACH subtab IN item.subtabs %]
-                            <li id="[% item.id %]-[% subtab.id %]" class="tm-li-2"><a href="#[% subtab.id %]" class="tm-a-2">[% subtab.text %]</a></li>
+                            <li id="[% subtab.id %]" class="tm-li-2"><a href="#[% subtab.id %]" class="tm-a-2">[% subtab.text %]</a></li>
                         [% END %]
                     </ul>
                 [% ELSE %]

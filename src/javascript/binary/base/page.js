@@ -1,3 +1,4 @@
+const Cookies           = require('js-cookie');
 const Client            = require('./client');
 const Contents          = require('./contents');
 const Crowdin           = require('./crowdin');
@@ -16,7 +17,6 @@ const TrafficSource     = require('../common_functions/traffic_source');
 const BinarySocket      = require('../websocket_pages/socket');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
 const AffiliatePopup    = require('../../binary_japan/affiliate_popup');
-const Cookies           = require('../../lib/js-cookie');
 const PushNotification  = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
@@ -165,7 +165,7 @@ const Page = (() => {
             l      : Language.get().toLowerCase(),
             url    : 'https://whatbrowser.org/',
             noclose: true, // Do not show the 'ignore' button to close the notification
-            text   : localize('Your web browser ([_1]) is out of date and no longer supported. Update your browser now for the best experience on this site. [_2]Update browser[_3]',
+            text   : localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
                 ['{brow_name}', '<a href="https://www.whatbrowser.org/" target="_blank">', '</a>']),
             reminder: 0, // show all the time
         };

@@ -1,25 +1,25 @@
-const moment                     = require('moment');
-const TradingAnalysis            = require('./analysis');
-const Barriers                   = require('./barriers');
-const commonTrading              = require('./common');
-const chartFrameSource           = require('./charts/chart_frame').chartFrameSource;
-const Defaults                   = require('./defaults');
-const Durations                  = require('./duration');
-const GetTicks                   = require('./get_ticks');
-const Notifications              = require('./notifications');
-const Price                      = require('./price');
-const Process                    = require('./process');
-const Purchase                   = require('./purchase');
-const getStartDateNode           = require('./common_independent').getStartDateNode;
-const Tick                       = require('./tick');
-const BinarySocket               = require('../socket');
-const BinaryPjax                 = require('../../base/binary_pjax');
-const GTM                        = require('../../base/gtm');
-const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
-const isVisible                  = require('../../common_functions/common_functions').isVisible;
-const getDecimalPlaces           = require('../../common_functions/currency_to_symbol').getDecimalPlaces;
-const onlyNumericOnKeypress      = require('../../common_functions/event_handler');
-const TimePicker                 = require('../../components/time_picker');
+const moment                = require('moment');
+const TradingAnalysis       = require('./analysis');
+const Barriers              = require('./barriers');
+const commonTrading         = require('./common');
+const Defaults              = require('./defaults');
+const Durations             = require('./duration');
+const GetTicks              = require('./get_ticks');
+const Notifications         = require('./notifications');
+const Price                 = require('./price');
+const Process               = require('./process');
+const Purchase              = require('./purchase');
+const getMinMaxTime         = require('./common_independent').getMinMaxTime;
+const getStartDateNode      = require('./common_independent').getStartDateNode;
+const Tick                  = require('./tick');
+const BinarySocket          = require('../socket');
+const BinaryPjax            = require('../../base/binary_pjax');
+const GTM                   = require('../../base/gtm');
+const dateValueChanged      = require('../../common_functions/common_functions').dateValueChanged;
+const isVisible             = require('../../common_functions/common_functions').isVisible;
+const getDecimalPlaces      = require('../../common_functions/currency').getDecimalPlaces;
+const onlyNumericOnKeypress = require('../../common_functions/event_handler');
+const TimePicker            = require('../../components/time_picker');
 
 /*
  * TradingEvents object contains all the event handler function for
@@ -46,7 +46,6 @@ const TradingEvents = (() => {
             Defaults.remove('formname');
             Defaults.remove('underlying');
             Process.processMarket();
-            chartFrameSource();
         };
 
         const market_nav_element = document.getElementById('contract_markets');
@@ -90,7 +89,6 @@ const TradingEvents = (() => {
         if (underlying_element) {
             underlying_element.addEventListener('change', (e) => {
                 if (e.target) {
-                    chartFrameSource();
                     commonTrading.showFormOverlay();
                     commonTrading.showPriceOverlay();
                     if (e.target.selectedIndex < 0) {
@@ -99,7 +97,6 @@ const TradingEvents = (() => {
                     const underlying = e.target.value;
                     Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                     Defaults.set('underlying', underlying);
-                    TradingAnalysis.request();
 
                     Tick.clean();
 
@@ -204,9 +201,9 @@ const TradingEvents = (() => {
              * attach datepicker and timepicker to end time durations
              * have to use jquery
              */
-            attachTimePicker();
+            attachTimePicker('#expiry_time');
             $('#expiry_time')
-                .on('focus click', attachTimePicker)
+                .on('focus click', () => { attachTimePicker('#expiry_time'); })
                 .on('keypress', (ev) => { onlyNumericOnKeypress(ev, [58]); })
                 .on('change input blur', function() {
                     if (!dateValueChanged(this, 'time')) {
@@ -230,13 +227,30 @@ const TradingEvents = (() => {
             amount_element.addEventListener('input', commonTrading.debounce((e) => {
                 e.target.value = e.target.value.replace(/[^0-9.]/g, '');
                 if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(getDecimalPlaces(Defaults.get('currency'), e.target.value));
+                    e.target.value = parseFloat(e.target.value).toFixed(getDecimalPlaces(Defaults.get('currency')));
                 }
                 Defaults.set('amount', e.target.value);
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
         }
+
+        let timepicker_initialized = false;
+        const initTimePicker = () => {
+            if (timepicker_initialized) return;
+            timepicker_initialized = true;
+            attachTimePicker('#time_start', $date_start);
+            $('#time_start')
+                .on('focus click', () => { attachTimePicker('#time_start', $date_start); })
+                .on('change input blur', function() {
+                    if (!dateValueChanged(this, 'time')) {
+                        return false;
+                    }
+                    Defaults.set('time_start', time_start_element.value);
+                    Price.processPriceRequest();
+                    return true;
+                });
+        };
 
         /*
          * attach event to start time, display duration based on
@@ -247,11 +261,18 @@ const TradingEvents = (() => {
         if (date_start_element) {
             date_start_element.addEventListener('change', (e) => {
                 Defaults.set('date_start', e.target.value);
+                initTimePicker();
                 const r = Durations.onStartDateChange(e.target.value);
                 if (r >= 0) {
                     Price.processPriceRequest();
                 }
             });
+        }
+
+        const time_start_element = document.getElementById('time_start');
+        const $date_start = $('#date_start');
+        if (time_start_element && date_start_element.value !== 'now') {
+            initTimePicker();
         }
 
         /*
@@ -400,10 +421,12 @@ const TradingEvents = (() => {
             }));
         }
 
-        // For verifying there are 2 digits after decimal
-        const isStandardFloat = (value => (
-            !isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2
-        ));
+        // Verify number of decimal places doesn't exceed the allowed decimal places according to the currency
+        const isStandardFloat = value => (
+            !isNaN(value) &&
+            value % 1 !== 0 &&
+            ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > getDecimalPlaces(Defaults.get('currency'))
+        );
 
         const init_logo = document.getElementById('trading_init_progress');
         if (init_logo) {
@@ -420,14 +443,19 @@ const TradingEvents = (() => {
         }
     };
 
-    const attachTimePicker = () => {
-        const date_start = document.getElementById('date_start').value;
-        const now = !date_start || date_start === 'now';
-        const current_moment = now ? (window.time ? window.time : moment.utc()) : parseInt(date_start) * 1000;
-        TimePicker.init({
-            selector: '#expiry_time',
-            minTime : current_moment,
-        });
+    const attachTimePicker = (selector, $setMinMaxSelector) => {
+        let minTime = window.time ? window.time : moment.utc();
+        let maxTime;
+        if ($setMinMaxSelector) {
+            minTime = getMinMaxTime($setMinMaxSelector, minTime).minTime;
+            maxTime = getMinMaxTime($setMinMaxSelector, minTime).maxTime;
+        }
+        const initObj = {
+            selector: selector,
+            minTime : minTime,
+            maxTime : maxTime || null,
+        };
+        TimePicker.init(initObj);
     };
 
     return {

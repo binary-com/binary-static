@@ -248,11 +248,13 @@
         }
         #contract_purchase_reference {
             margin-bottom: 10px;
+            padding: 7px;
         }
         #confirmation_error {
             padding: 20px;
             font-style: italic;
             vertical-align: middle;
+            line-height: $FONT_SIZE_XL;
         }
         .price_container#price_container_top {
             margin-bottom: 1rem;
@@ -281,12 +283,28 @@
             background-color: $COLOR_WHITE;
             border: 2px solid $COLOR_GRAY;
             margin: 0 10px;
-            padding: 10px 5px;
+            padding: 10px;
             text-align: justify;
+            line-height: 1.4em;
         }
         #contract_purchase_profit_list, #contract_purchase_spots .row {
             padding: 3px 0;
             flex-direction: row !important;
+        }
+        #contract_purchase_profit_list {
+            margin: 10px 0;
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                line-height: 1.4em;
+                padding: 0 10px;
+
+                > p {
+                    margin: auto 0 5px;
+                    padding-top: 10px;
+                }
+            }
         }
         #contract_purchase_spots {
             height: 110px;
@@ -298,9 +316,6 @@
             &.lost {
                 background-color: rgba(204, 0, 0, 0.1);
             }
-        }
-        #contract_purchase_heading {
-            padding-bottom: 10px;
         }
         #contract_purchase_payout {
             border-right: 1px solid $COLOR_GRAY;
@@ -433,6 +448,16 @@
     }
     #expiry_date, #expiry_time {
         font-size: $FONT_SIZE_N;
+    }
+    #date_start {
+        margin-bottom: 5px;
+    }
+    #time_start_row {
+        white-space: nowrap;
+
+        .time_start {
+            margin-left: 5px;
+        }
     }
     .barrier_class input {
         width: 175px;
@@ -579,15 +604,17 @@
     }
 }
 
-#spot {
-    line-height: 25px;
-    white-space: nowrap;
-    padding: 3px;
-    border-radius: 5px;
-    @include BIDIR_PROP(margin-right, margin-left, 8px);
+#trading_socket_container, #trading_socket_container_beta {
+    #spot {
+        line-height: 25px;
+        white-space: nowrap;
+        padding: 3px;
+        border-radius: 5px;
+        @include BIDIR_PROP(margin-right, margin-left, 8px);
 
-    &.error {
-        font-style: italic;
+        &.error {
+            font-style: italic;
+        }
     }
 }
 
@@ -668,6 +695,11 @@
     }
     #bet_bottom_content {
         padding-top: 1em;
+    }
+    #webtrader_chart {
+        width: 100%;
+        height: 630px;
+        overflow-y: hidden;
     }
     #last_digit_histo_form {
         overflow: hidden;

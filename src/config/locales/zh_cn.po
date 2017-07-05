@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-06-04 21:08-0400\n"
+"PO-Revision-Date: 2017-07-03 23:54-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -189,6 +189,9 @@ msgstr "%1是 Perl 社区的活跃成员，我们将一些内部模块上传至%
 msgid "%1 is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "%1是开源运动的积极倡导者，并正在开放一批代码库组件。"
 
+msgid "%1 is awarded Best Binary Options Broker by the UK-based Online Personal Wealth Awards 2017, as voted by investors worldwide."
+msgstr "2017 年英国网上个人财富奖中，%1被全球投资人评选为最佳二元期权代理商 。"
+
 msgid "%1 is entirely web-based and requires no software installation."
 msgstr "%1 完全基于网络，无需安装任何软件即可交易。"
 
@@ -357,11 +360,8 @@ msgstr "%1的辉煌发展历程"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1 系统每天处理超过百万笔交易（包括虚拟账户）。"
 
-msgid "%1Authenticate your account%2 now to take full advantage of all withdrawal options available."
-msgstr "立刻进行%1账户验证%2，以获得取款选项的所有优惠。"
-
-msgid "%1Schedule a video call%2 with our customer support team via live chat."
-msgstr "以实时聊天方式与我们的客服团队%1安排视频通话%2。"
+msgid "%1Authenticate your account%2 now to take full advantage of all payment methods available."
+msgstr "立刻进行%1账户验证%2，以获得付款选项的所有优惠。"
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1的慈善活动侧重于捐助世界各地在当地社区有重大影响力的小型慈善机构和非营利组织。 我们的捐款使他们直接受惠，也不须像一些大型慈善机构那样支付庞大开销。"
@@ -732,6 +732,9 @@ msgstr "账户需要通过年龄验证。欲知详情，请联系<a href=\"%1\">
 msgid "Account not activated, please contact <a href=\"%1\">customer support</a> for more information."
 msgstr "账户未激活。欲知详情，请联系<a href=\"%1\">客服部</a>。"
 
+msgid "Account opening reason"
+msgstr "开立账户的原因"
+
 msgid "Account type"
 msgstr "账户类型"
 
@@ -905,9 +908,6 @@ msgstr "为受影响的市场改变正常交易时间;"
 
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "另外，在Binary(IOM)有限公司和Binary（欧洲）有限公司都注册过的客户与其将争端向IBA提出申诉，也可以%1在此%2使用欧洲在线解决争端委员会(ODR)平台。"
-
-msgid "Alternatively, you can also %1authenticate your account by video call%2."
-msgstr "另外，您还可以%1通过视频通话进行账户验证%2。"
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "尽管公司拥有及保留所有拒绝或关闭客户账户的权利，但公司保证所有开出的合同义务都必须执行。"
@@ -1107,6 +1107,9 @@ msgstr "令牌持有人有权获取相等于股东分红的款项。"
 msgid "As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company."
 msgstr "身为帐户和支付执行员，您将负责客户付款，处理和解决客户端付款查询问题，协助集团各公司管理账户、账目核对、编写报告，并与其他部门协作处理客户付款和帐户相关事宜。您将在国际化的团队中使用公司专用的会计和后台系统工作。"
 
+msgid "As an EU citizen, you are also required to verify the above documents by %1video call%2."
+msgstr "身为欧盟公民，您还必须通过%1视频通话%2验证上述文件。"
+
 msgid "As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the %1 API, and all elements, components, and executables of the %1 API."
 msgstr "我们拥有您和我们之间%1的API和其全部元素、组件和可执行的所有权利、标题和利益，包括所有知识产权。"
 
@@ -1139,6 +1142,9 @@ msgstr "资产"
 
 msgid "Asset Index"
 msgstr "资产指数"
+
+msgid "Assets saving"
+msgstr "资产保存"
 
 msgid "Assist in the proofreading and recording of video presentations"
 msgstr "协助演示视频的校对和录制工作"
@@ -1181,9 +1187,6 @@ msgstr "澳大利亚 200 现金指数"
 
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr "通过视频会议通话验证您的账户。按照以下步骤进行︰"
-
-msgid "Authenticate your account now by verifying your identity and address. To proceed, simply follow the steps below:"
-msgstr "请提交身份与地址证明，立刻进行账户验证。继续操作，请按以下步骤操作："
 
 msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
 msgstr "请提交身份与地址证明，立刻进行账户验证。继续操作，请将以下文件发送到%1："
@@ -1818,8 +1821,8 @@ msgstr "在 Binary (Europe) Ltd 注册的客户可以在此就尚未解决的纠
 msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
 msgstr "在 Binary (IOM) Ltd 注册的客户可以在替代性争议解决机构 IBAS 填写仲裁表格，并提交申诉"
 
-msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the MFSA's Consumer Complaints Manager. Details on making a complaint with the MFSA's Consumer Complaints Manager as well as their contact details can be found here: %1. Complaints to the MFSA's Consumer Complaints Manager should always be made in writing."
-msgstr "如有任何无法解决的争议，在 Binary Investments (Europe) Ltd 注册的客户可向 MFSA 的消费者控诉管理员投诉。详细的投诉方法和联系信息可在此查看：%1。任何投诉必须以书面方式进行。"
+msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found %1here%2."
+msgstr "如有任何无法解决的争议，在 Binary Investments (Europe) Ltd 注册的客户可向金融服务仲裁办事处投诉。详细的投诉方法和联系信息可在%1此处%2查看。"
 
 msgid "Clients registered with any Binary Group company, and in particular with Binary (V) Ltd. or Binary (C.R.). S.A., can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
 msgstr "在Binary集团的任何公司，特别是Binary (V) Ltd. 或 Binary (C.R.). S.A.注册的客户可以发送电子邮件到<a href='mailto:%1'> %1</a>就尚未解决的纠纷向管理层投诉。"
@@ -2023,7 +2026,7 @@ msgstr "合约规格 (CFD) - 波动性指数"
 msgid "Contract Specifications - Forex"
 msgstr "合约规格 - 外汇"
 
-msgid "Contract is not started yet"
+msgid "Contract has not started yet"
 msgstr "合约还未开始"
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
@@ -2151,6 +2154,9 @@ msgstr "借方/贷方"
 
 msgid "Credit/Debit Card"
 msgstr "信用卡/借记卡"
+
+msgid "Cryptocurrency"
+msgstr "加密货币"
 
 msgid "Currencies"
 msgstr "货币"
@@ -2289,6 +2295,9 @@ msgstr "存款到"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "通过银行电汇、信用卡或电子现金钱包向您的账户存款或提款。"
+
+msgid "Deposit or withdraw to your account via bitcoin."
+msgstr "通过比特币在您的账户存取款。"
 
 msgid "Deposit: %1 working day"
 msgstr "存款：%1工作日内"
@@ -2985,6 +2994,9 @@ msgstr "一流的客户服务。"
 
 msgid "Firsthand knowledge of other cultures through direct experience"
 msgstr "直接经验获取其他文化的第一手知识"
+
+msgid "Fixed spreads"
+msgstr "固定利差"
 
 msgid "Flexible"
 msgstr "灵活"
@@ -3844,6 +3856,9 @@ msgstr "非活跃/睡眠账户"
 msgid "Income Source"
 msgstr "收入来源"
 
+msgid "Income earning"
+msgstr "赚取收入"
+
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
 msgstr "增加您的HackerOne声誉，以建立信誉和配置文件的可见性。"
 
@@ -3855,6 +3870,9 @@ msgstr "赔偿及责任"
 
 msgid "India 50 Cash Index"
 msgstr "印度 50 现金指数"
+
+msgid "Indicates required field"
+msgstr "表示必填字段"
 
 msgid "Indicative"
 msgstr "指示性"
@@ -3894,6 +3912,9 @@ msgstr "任何标的工具或资产上一次的表现不可保证其当前或未
 
 msgid "Instant access"
 msgstr "即时访问"
+
+msgid "Instant execution"
+msgstr "即时执行"
 
 msgid "Insufficient balance."
 msgstr "余额不足。"
@@ -4651,6 +4672,12 @@ msgstr "杠杆率是基于初始存款的可控制资本额。例如，100: 1 �
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "通过杠杆社交媒体工具标识、引入并转换潜在新客户和业务合作伙伴"
 
+msgid "Leverage up to 1:100"
+msgstr "杠杆率高达 1: 100"
+
+msgid "Leverage up to 1:300"
+msgstr "杠杆率高达 1: 300"
+
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that you would be able to enter into a trade position that is of 50 times higher than your margin. When you invest in a leveraged product, your profit or loss is based on the leveraged position, i.e., the increased/amplified value of your trade determined based on the leverage ratio you set for your account."
 msgstr "融资融券交易中，杠杆指使用保证金增加/扩大交易数值。杠杆的表达方式是比率。举个例子，如果杠杆是50: 1，您将能够持有比保证金高出 50 倍的交易头寸。当您投资一种杠杆产品时，您的盈利或亏损将根据杠杆的头寸计算，也就是说，您为账户设置的杠杆比率决定了您的交易增加/扩大数值。"
 
@@ -4795,9 +4822,6 @@ msgstr "十三、清单错误"
 msgid "MENA FFXPO Award"
 msgstr "中东和北非地区 FFXPO 奖"
 
-msgid "MT5 main password"
-msgstr "MT5 主密码"
-
 msgid "Main password"
 msgstr "主密码"
 
@@ -4890,6 +4914,9 @@ msgstr "市场观点"
 
 msgid "Market Professionals"
 msgstr "市场专业人士"
+
+msgid "Market execution"
+msgstr "市场执行"
 
 msgid "Market exit price"
 msgstr "平仓价"
@@ -4986,6 +5013,9 @@ msgstr "MetaTrader"
 
 msgid "MetaTrader 5"
 msgstr "MetaTrader 5"
+
+msgid "MetaTrader 5 main password"
+msgstr "MetaTrader 5 主密码"
 
 msgid "MetaTrader account management"
 msgstr "MetaTrader 账户管理"
@@ -5194,6 +5224,9 @@ msgstr "No Connections with Antisocial Forces"
 msgid "No Touch trades"
 msgstr "“未触及”交易"
 
+msgid "No commission"
+msgstr "不收佣金"
+
 msgid "No commission is charged on any Transactions."
 msgstr "所有交易都不收取佣金。"
 
@@ -5254,6 +5287,9 @@ msgstr "此不可抗力事件部分的所有内容都不可视为可构成违约
 msgid "Notification of Changes"
 msgstr "变动通知"
 
+msgid "Notwithstanding the above, you hereby declare that you are dealing with us outside the scope of your economic or professional activity and we will therefore treat you as an individual retail client for the purposes of EMIR compliance, unless advised otherwise."
+msgstr "尽管如此，您在此声明，您与我方之间的活动范围属于您当前的经济或职业之外。除非另行通知，我们将视您为符合EMIR规则的个人零售客户。"
+
 msgid "Nov"
 msgstr "十一月"
 
@@ -5301,6 +5337,9 @@ msgstr "十月"
 
 msgid "Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
 msgstr "通过快捷直观和自营的交易平台，提供范围最广泛的货币种类、期权类型和交易期限。"
+
+msgid "Offers the highest leverage – up to 1:1,000"
+msgstr "提供最高的杠杆 — 高达 1: 1000"
 
 msgid "Office worker"
 msgstr "办公室员工"
@@ -5395,9 +5434,6 @@ msgstr "开设模拟帐户"
 msgid "Open a Financial Account"
 msgstr "开设金融账户"
 
-msgid "Open a free Demo account."
-msgstr "开立免费演示账户。"
-
 msgid "Open a free account"
 msgstr "开立免费账户"
 
@@ -5472,6 +5508,15 @@ msgstr "我们公司"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "自2004年3月正式启动以来，我们的国际联盟项目一直及时足额支付款项。在日本，您的佣金将在您介绍的客户符合资格条件的日历月结束后三十天内汇入您的联盟会员账户。"
+
+msgid "Our MetaTrader 5 Cent account is ideal for new traders who want to start trading with a smaller capital."
+msgstr "MetaTrader 5 分钱账户为低额资金的新交易员提供理想的交易平台。"
+
+msgid "Our MetaTrader 5 STP account provides you with the tightest spreads and connects you directly to the market."
+msgstr "MetaTrader 5 STP 账户为您提供最低点差，并让您和市场直接连接。"
+
+msgid "Our MetaTrader 5 Standard account comes with mid-range leverage and variable spreads suitable for a wide range of traders."
+msgstr "MetaTrader 5 标准帐户含中档杠杆和变数点差，适合各类交易员使用。"
 
 msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how %1 executes orders on behalf of our clients."
 msgstr "我们的订单执行政策 （简称\"政策\"） 设置关于%1代替客户执行订单的概述和方法。"
@@ -5701,6 +5746,9 @@ msgstr "个人数据和隐私"
 msgid "Personal Details"
 msgstr "个人资料"
 
+msgid "Personal Wealth Awards 2017"
+msgstr "2017个人财富奖"
+
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgstr "本网站禁止对任何金融市场或工具具有内幕知识的人士进行交易。"
 
@@ -5754,6 +5802,9 @@ msgstr "给客户转账前请先<a href=\"%1\">存款</a>。"
 
 msgid "Please <a href=\"%1\">log in</a> to view this page."
 msgstr "要查看此页面请先<a href=\"%1\">登录</a>。"
+
+msgid "Please <a href=\"%1\">upgrade</a> to be able to create real MetaTrader 5 accounts."
+msgstr "请先<a href=\"%1\">升级</a>，以便开立MetaTrader 5 真实账户。"
 
 msgid "Please accept the terms and conditions."
 msgstr "请接受条款和条件。"
@@ -6565,9 +6616,6 @@ msgstr "卖出时间"
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "长期合约到期前售出交易，以保护您的盈利或将亏损降至最低"
 
-msgid "Send the following documents to %1:"
-msgstr "向 %1 发送下列文件︰"
-
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "请将您的简历和求职信发送给我们。"
 
@@ -6591,6 +6639,9 @@ msgstr "认真交易员"
 
 msgid "Server"
 msgstr "服务器"
+
+msgid "Session"
+msgstr "会话"
 
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "交易期持续时间限制不能大于 6周。"
@@ -6742,8 +6793,8 @@ msgstr "对不起，您的请求处理发生错误。"
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "对不起，此功能仅适用虚拟账户。"
 
-msgid "Sorry, this feature is not available."
-msgstr "对不起，此功能不可用。"
+msgid "Sorry, this feature is not available in your jurisdiction."
+msgstr "对不起，您的管辖权内无法使用此功能。"
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "对不起，您输入的收银台密码不正确"
@@ -6771,6 +6822,9 @@ msgstr "横幅应有的指定消息。"
 
 msgid "Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. %1 offers payouts from $1 to $50,000."
 msgstr "确定赔付额，如果您的预测正确的话，这就是您的潜在回报率。我们的系统将进一步计算您的投注额，即购入合约的总成本。%1提供从1美元到5万美元的赔付额。"
+
+msgid "Speculative"
+msgstr "投机"
 
 msgid "Speed - the speed at which your order can be executed."
 msgstr "速度 - 您的订单可执行速度。"
@@ -7123,9 +7177,6 @@ msgstr "代理将通过您的首选支付方式将取款金额（扣除佣金）
 msgid "The Average"
 msgstr "平均"
 
-msgid "The Cent account offers the highest leverage, as well as low margin call and stop out level."
-msgstr "美分账户提供最大杆杠、以及低额追加保证金与强制平仓水平。"
-
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgstr "公司并不保证所提供的 %1 API运行时功能不会中断或出现错误。特别是，%1 API操作时可能会由于维护、更新或系统及网络故障而中断。公司不承担任何上述运作中断或错误所引起的赔偿责任。"
 
@@ -7285,14 +7336,8 @@ msgstr "考虑到更多关于不同资产类别的细节，我们为政策提供
 msgid "The Program"
 msgstr "计划"
 
-msgid "The STP account provides you with the tightest spreads and connects you directly to the market."
-msgstr "STP账户提供最低价差，并让您与市场直接连接。"
-
 msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr "庇护所社区第3学习中心是为正在缅甸等待与家人被遣至第三国的难民儿童成立的社区学校。 该学校旨在为这些处于最脆弱年龄的儿童提供教育，为他们的未来做好准备。"
-
-msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
-msgstr "标准账户适合广泛的交易者，包括新手和经验丰富的操盘手。"
 
 msgid "The Stop Out Level applicable to your Real Account may differ from the default Stop Out Level published on our website."
 msgstr "适用于您真实账户的强制平仓水平可能与我们网站公布的默认强制平仓水平不一样。"
@@ -7461,6 +7506,9 @@ msgstr "首先选择您要交易的资产，如黄金、原油、股票或外汇
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr "首个跳动点指在我们服务器处理合约后的第一个跳动点。"
+
+msgid "The full version of our best execution policy is available on request."
+msgstr "如果需要，我们可随时提供最佳执行策略的完整版本。"
 
 msgid "The hours of closure of the market (for e.g., the hours over the weekend during which trading of certain transactions are not possible);"
 msgstr "市场关闭时间（例如，某些交易无法在周末期间进行）;"
@@ -7714,6 +7762,9 @@ msgstr "此政策适用于在买卖%1提供的金融产品的%1零售和专业�
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "此风险披露声明并非详尽无遗，也并非包含您可能会接触到的所有风险的全面声明。此声明也并不能描述外汇交易和合约现存的固有风险或将来可能发生的所有风险差异。其目的在于为您提供及让您合理理解%1在符合我们利益的同时为您提供的最佳外汇与差价合约交易经验相关的风险信息。"
 
+msgid "This amount exceeds your withdrawal limit."
+msgstr "此数额超过取款限额。"
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "本奖金仅适用于新客户。现有或以往客户不符合条件。此类奖金新客户只能获取一次。此奖金每一个家庭仅能获得一次。"
 
@@ -7843,8 +7894,8 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "如需更改姓名、生日、居住国或电子邮件，请与<a href=\"%1\">客服人员</a>联系。"
 
-msgid "To create an MT5 Financial Account please complete the <a href=\"%1\">Financial Assessment</a>."
-msgstr "要开立MT5金融账户，请完成<a href=\"%1\">财务评估</a>。"
+msgid "To create an MetaTrader 5 Financial Account please complete the <a href=\"%1\">Financial Assessment</a>."
+msgstr "要开立MetaTrader 5金融账户，请完成<a href=\"%1\">财务评估</a>。"
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "要启用 cookie，请根据您的浏览器版本选择对应的指示说明，并进行操作。"
@@ -7885,8 +7936,8 @@ msgstr "要获得录取资格，您必须拥有物理、金融工程或数学专
 msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
 msgstr "如要重新设置密码，在下面输入您注册的电子邮件并点击“重设密码”。"
 
-msgid "To withdraw from MT5 Financial Account please Authenticate your %1 account."
-msgstr "如果您想从MT5金融账户提款，请验证您的%1账户。"
+msgid "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
+msgstr "如果您想从MetaTrader 5金融账户提款，请验证您的%1账户。"
 
 msgid "Today"
 msgstr "今天"
@@ -8068,11 +8119,11 @@ msgstr "在您的博彩和金融账户之间进行转账。"
 msgid "Transfer from"
 msgstr "转移自"
 
-msgid "Transfer funds from %1 account into your MT5 account:"
-msgstr "把资金从%1账户转移到您的MT5账户︰"
+msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
+msgstr "把资金从%1账户转移到您的MetaTrader 5账户︰"
 
-msgid "Transfer funds from your MT5 account into your %1 account:"
-msgstr "把资金从您的MT5账户转移到%1账户︰"
+msgid "Transfer funds from your MetaTrader 5 account into your %1 account:"
+msgstr "把资金从您的MetaTrader 5账户转移到%1账户︰"
 
 msgid "Transfer into"
 msgstr "转移到"
@@ -8121,6 +8172,12 @@ msgstr "体验Webtrader"
 
 msgid "Try it now"
 msgstr "立即体验"
+
+msgid "Try our %1Volatility Indices%2."
+msgstr "请试试%1波动率指数%2。"
+
+msgid "Try our other markets."
+msgstr "请尝试我们其他的市场。"
 
 msgid "Try our trading page"
 msgstr "体验我们的交易页面"
@@ -8287,6 +8344,9 @@ msgstr "客户可使用本网站进行全天候的货币、指数、股票和大
 msgid "Utilise a variety of tactics - both online and offline - to grow and support the company's network of partners in your designated market"
 msgstr "在您指定的市场利用各种在线和离线策略帮助公司合作伙伴网络成长和提供支持"
 
+msgid "Variable spreads"
+msgstr "变数点差"
+
 msgid "Verification code format incorrect."
 msgstr "验证码格式不正确。"
 
@@ -8389,6 +8449,9 @@ msgstr "正在等待退场跳动点。"
 msgid "Walkthrough Guide"
 msgstr "攻略指南"
 
+msgid "Want to fund your %1 Real Account? <a href=\"%2\">Go to the Cashier</a>"
+msgstr "想将资金转入您的 %1 真实账户？<a href=\"%2\">前往收银台</a>"
+
 msgid "Want to help us enhance the strength and security of our platform?"
 msgstr "想帮我们加强交易平台的坚实稳定和安全？"
 
@@ -8397,6 +8460,9 @@ msgstr "想了解更多？"
 
 msgid "Want to telecommute?"
 msgstr "想在家办公？"
+
+msgid "Want to withdraw funds from your %1 Real Account? <a href=\"%2\">Go to the Cashier</a>"
+msgstr "想在您的 %1 真实账户提款？<a href=\"%2\">前往收银台</a>"
 
 msgid "Warranties"
 msgstr "保证条款"
@@ -8412,6 +8478,9 @@ msgstr "我们旨在建立、保持与运行有效的组织及行政工作，及
 
 msgid "We aim to keep a record of the kinds of activity we carry on in which a material conflict could arise or has arisen. We also maintain procedures to manage actual or potential conflicts. This includes procedures to maintain appropriate independence between members of our staff who are involved in potentially conflicting activities, for example, through the operation of information barriers, physical separation of staff, the segregation of duties and responsibilities and maintenance of a policy of independence which requires our staff, when providing services to a client, to act in the best interests of the client and to disregard any conflicts of interest; and, in some circumstances declining to act for a client or potential client."
 msgstr "我们希望记录持续运行并可能发生利益冲突的活动。我们持续管理实际或潜在冲突，包括让与潜在冲突活动相关的员工保持适当的独立性，例如：通过信息障碍、员工隔离、责任分离制度和保持政策独立性。这需要我们的员工在服务时以客户的最佳利益为主，忽略利益冲突，并在某些情况下拒绝为客户或潜在客户采取行动。"
+
+msgid "We also collect basic tax residence information for the purposes of CRS/FATCA compliance. The tax information you provide may only be disclosed to the authorities legally charged with collecting this information for the purposes of CRS/FATCA reporting and only to the extent to which BIEL is legally obliged to collect and disclose it. This information shall not be used, disclosed or processed in any other way at any time."
+msgstr "为了符合CRS/FATCA 法规，我们也收集基本税务和居留信息 。您所提供的税务信息将仅披露于合法收集信息并向 CRS/FATCA 报告的政府当局， 且其收集和披露程度由BIEL负担法律上的责任。此信息不得于任何时间以任何其他方式使用、披露或处理。"
 
 msgid "We also offer specialized pay-out structures to affiliates who offer a trading advice in connection with, and in relation to our commodities. <a href=\"mailto:%1\">Contact our affiliate manager, Karen Yap for details</a>."
 msgstr "对于向我们的大宗商品提供交易顾问服务的联盟，我们也将为其提供专门的赔付结构。<a href=\"mailto:%2\">请联系我们的联盟经理 Karen Yap 了解详情</a>。"
@@ -8490,6 +8559,9 @@ msgstr "我们拥有完善的内部流程，确保您得到全程的公平对待
 
 msgid "We have the ability to adapt and scale to meet the demands of new clients, thanks to the teams and processes that we’ve put together over the years."
 msgstr "基于我们多年来组合的团队和流程，我们具备适应和扩大能力以满足新客户的需求。"
+
+msgid "We have the right and obligation not to accept the information provided by you if we know or have a reason to believe that it is incorrect, inaccurate or incomplete. In such case, we may ask you to clarify or correct the details provided."
+msgstr "如果我们知道或有理由相信您所提供的信息是不正确、不准确或不完整的，我们有权利和义务不接受此信息。在此情况下，我们可要求您对所提供的详细信息作出澄清或纠正。"
 
 msgid "We look forward to hearing from you."
 msgstr "欢迎联系我们。"
@@ -9395,11 +9467,11 @@ msgstr "交易期持续时间限制将于%1秒内结束。"
 msgid "Your settings have been updated successfully."
 msgstr "您的设置已成功更新。"
 
-msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "您的令牌已过期。请点击%1此处%2重启验证程序。"
+msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
+msgstr "您的令牌已过期或失效。请点击%1此处%2重启验证程序。"
 
-msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "您的令牌已过期。请点击<a href=\"%1\">此处</a>重启验证程序。"
+msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgstr "您的令牌已过期或失效。请点击<a href=\"%1\">此处</a>重启验证程序。"
 
 msgid "Your trading statistics since %1."
 msgstr "您自 %1 至今的交易统计。"
@@ -9421,6 +9493,9 @@ msgstr "不论您是通过访问我们的网站或第三方网站或从网站下
 
 msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "您违反了任何适用的法律、 法规或规定;"
+
+msgid "Your web browser (%1) is out of date and may affect your trading experience. Proceed at your own risk. %2Update browser%3"
+msgstr "您的网络浏览器 (%1) 已过时，并可能会影响您的交易操作。继续操作须自行承担风险。%2更新浏览器%3"
 
 msgid "Your webcam and microphone must be in good working condition"
 msgstr "您的网络摄像头和麦克风必须处于良好的工作状况"
