@@ -1,4 +1,4 @@
-const Cookies = require('../../lib/js-cookie');
+const Cookies = require('js-cookie');
 
 // show hedging value if trading purpose is set to hedging else hide it
 const detectHedging = ($purpose, $hedging) => {
@@ -79,6 +79,13 @@ const getSetElementValue = (element, text, type) => { // eslint-disable-line con
     }
 };
 
+const requireHighstock = callback => (
+    require.ensure([], (require) => {
+        const Highstock = require('highstock-release');
+        return callback(Highstock);
+    }, 'highstock')
+);
+
 module.exports = {
     getLoginToken         : () => Cookies.get('login'),
     detectHedging         : detectHedging,
@@ -90,4 +97,5 @@ module.exports = {
     selectorExists        : selectorExists,
     elementTextContent    : (element, text) => getSetElementValue(element, text, 'textContent'),
     elementInnerHtml      : (element, text) => getSetElementValue(element, text, 'innerHTML'),
+    requireHighstock      : requireHighstock,
 };

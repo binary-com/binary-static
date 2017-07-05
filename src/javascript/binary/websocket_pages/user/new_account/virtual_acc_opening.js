@@ -1,3 +1,4 @@
+const Cookies          = require('js-cookie');
 const BinarySocket     = require('../../socket');
 const Client           = require('../../../base/client');
 const localize         = require('../../../base/localize').localize;
@@ -7,7 +8,6 @@ const makeOption       = require('../../../common_functions/common_functions').m
 const jpClient         = require('../../../common_functions/country_base').jpClient;
 const FormManager      = require('../../../common_functions/form_manager');
 const TrafficSource    = require('../../../common_functions/traffic_source');
-const Cookies          = require('../../../../lib/js-cookie');
 
 const VirtualAccOpening = (() => {
     'use strict';

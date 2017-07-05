@@ -1,3 +1,4 @@
+const Cookies              = require('js-cookie');
 const generateBirthDate    = require('./attach_dom/birth_date_picker');
 const BinaryPjax           = require('../base/binary_pjax');
 const Client               = require('../base/client');
@@ -6,7 +7,6 @@ const State                = require('../base/storage').State;
 const makeOption           = require('../common_functions/common_functions').makeOption;
 const FormManager          = require('../common_functions/form_manager');
 const BinarySocket         = require('../websocket_pages/socket');
-const Cookies              = require('../../lib/js-cookie');
 require('select2');
 
 const AccountOpening = (() => {

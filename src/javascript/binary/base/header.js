@@ -5,7 +5,6 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
 const urlFor              = require('./url').urlFor;
-const isEmptyObject       = require('./utility').isEmptyObject;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
 const BinarySocket        = require('../websocket_pages/socket');
@@ -192,22 +191,21 @@ const Header = (() => {
         BinarySocket.wait('authorize').then(() => {
             let get_account_status,
                 status,
-                should_authenticate = false;
+                should_authenticate = false,
+                has_mt_account = false;
 
             const costarica_landing_company = /costarica/.test(Client.get('landing_company_name'));
-
-            const riskAssessment = () => {
-                if (get_account_status.risk_classification === 'high') {
-                    return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
-                }
-                return false;
-            };
 
             const authenticate = () => {
                 // don't show age verification check for costarica clients
                 const should_age_verify = !/age_verification/.test(status) && !costarica_landing_company;
                 return (!/authenticated/.test(status) || should_age_verify) && !jpClient() && should_authenticate;
             };
+
+            const riskAssessment = () => (
+                (get_account_status.risk_classification === 'high' || Client.isFinancial() || has_mt_account) &&
+                /financial_assessment_not_complete/.test(status) && !jpClient()
+            );
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
 
@@ -261,13 +259,14 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 checkStatus(check_statuses_virtual);
             } else {
-                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment', 'balance').then(() => {
+                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
                     get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
                     status = get_account_status.status;
                     if (costarica_landing_company && +Client.get('balance') < 200) {
                         BinarySocket.wait('mt5_login_list').then((response) => {
                             if (response.mt5_login_list.length) {
                                 should_authenticate = true;
+                                has_mt_account = true;
                             }
                             checkStatus(check_statuses_real);
                         });

@@ -1,3 +1,4 @@
+const Cookies            = require('js-cookie');
 const Client             = require('./client');
 const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
@@ -6,7 +7,6 @@ const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
 const paramsHash         = require('./url').paramsHash;
 const isEmptyObject      = require('./utility').isEmptyObject;
-const Cookies            = require('../../lib/js-cookie');
 
 const LoggedInHandler = (() => {
     'use strict';
@@ -16,24 +16,25 @@ const LoggedInHandler = (() => {
         let redirect_url;
         try {
             const tokens  = storeTokens();
-            let loginid = Cookies.get('loginid');
+            if (!isEmptyObject(tokens)) {
+                let loginid = Cookies.get('loginid');
+                // Need to set cookies if OAuth hasn't set them or redirected to another domain (e.g. github.io)
+                if (!loginid) {
+                    const loginids   = Object.keys(tokens);
+                    let loginid_list = '';
+                    loginids.map((id) => {
+                        loginid_list += `${(loginid_list ? '+' : '')}${id}:${(/^V/i.test(id) ? 'V' : 'R')}:E`; // Assume all are enabled since there is no data source to check. Disabled accounts will be handled on authorize
+                    });
+                    loginid = loginids[0];
+                    // set cookies
+                    Client.setCookie('loginid',      loginid);
+                    Client.setCookie('loginid_list', loginid_list);
+                }
+                Client.setCookie('login', tokens[loginid].token);
 
-            if (!loginid) { // redirected to another domain (e.g. github.io) so those cookie are not accessible here
-                const loginids = Object.keys(tokens);
-                let loginid_list = '';
-                loginids.map((id) => {
-                    loginid_list += `${(loginid_list ? '+' : '')}${id}:${(/^V/i.test(id) ? 'V' : 'R')}:E`; // since there is not any data source to check, so assume all are enabled, disabled accounts will be handled on authorize
-                });
-                loginid = loginids[0];
-                // set cookies
-                Client.setCookie('loginid',      loginid);
-                Client.setCookie('loginid_list', loginid_list);
+                // set flags
+                GTM.setLoginFlag();
             }
-            Client.setCookie('login', tokens[loginid].token);
-
-            // set flags
-            GTM.setLoginFlag();
-
             // redirect url
             redirect_url = sessionStorage.getItem('redirect_url');
             sessionStorage.removeItem('redirect_url');
@@ -59,7 +60,6 @@ const LoggedInHandler = (() => {
         document.getElementById('loading_link').setAttribute('href', redirect_url);
         window.location.href = redirect_url; // need to redirect not using pjax
     };
-
 
     const storeTokens = () => {
         // Parse url for loginids, tokens, and currencies returned by OAuth
