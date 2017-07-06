@@ -18,7 +18,6 @@ const BinaryPushwoosh = (() => {
                 safariWebsitePushID     : 'web.com.binary',
                 defaultNotificationTitle: 'Binary.com',
                 defaultNotificationImage: 'https://style.binary.com/images/logo/logomark.png',
-                serviceWorkerUrl        : urlForStatic('/') + 'pushwoosh-service-worker.js',
             }]);
             initialised = true;
             sendTags();
