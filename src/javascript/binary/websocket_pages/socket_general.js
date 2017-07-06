@@ -7,6 +7,7 @@ const GTM                  = require('../base/gtm');
 const Header               = require('../base/header');
 const Login                = require('../base/login');
 const getPropertyValue     = require('../base/utility').getPropertyValue;
+const setCurrencies        = require('../common_functions/currency').setCurrencies;
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
 
 const BinarySocketGeneral = (() => {
@@ -35,6 +36,7 @@ const BinarySocketGeneral = (() => {
                     Header.displayNotification(response.website_status.message, true);
                 }
                 BinarySocket.availability(is_available);
+                setCurrencies(response.website_status);
                 break;
             case 'authorize':
                 if (response.error) {
