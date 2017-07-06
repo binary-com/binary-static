@@ -26,14 +26,16 @@ const BinarySocketGeneral = (() => {
 
     const onMessage = (response) => {
         Header.hideNotification('CONNECTION_ERROR');
-        let is_available;
+        let is_available = false;
         switch (response.msg_type) {
             case 'website_status':
-                is_available = /^up$/i.test(getPropertyValue(response, ['website_status', 'site_status']));
-                if (is_available && !BinarySocket.availability()) {
-                    window.location.reload();
-                } else if (!is_available) {
-                    Header.displayNotification(response.website_status.message, true);
+                if (response.website_status) {
+                    is_available = /^up$/i.test(response.website_status.site_status);
+                    if (is_available && !BinarySocket.availability()) {
+                        window.location.reload();
+                    } else if (!is_available) {
+                        Header.displayNotification(response.website_status.message, true);
+                    }
                 }
                 BinarySocket.availability(is_available);
                 setCurrencies(response.website_status);
