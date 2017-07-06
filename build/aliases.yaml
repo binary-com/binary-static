@@ -33,9 +33,11 @@ serve:
   - 'concurrent:serve'
 
 livereload:
-  - 'default'
+  - 'test'
+  - 'css'
+  - 'copy'
   - 'connect:livereload'
-  - 'watch'
+  - 'concurrent:serve'
 
 custom:
   - 'clean'
