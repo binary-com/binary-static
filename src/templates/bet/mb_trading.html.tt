@@ -59,7 +59,7 @@
                         [% INCLUDE payout_item class='minus' value='-1'  text='-1' %]
                         [% INCLUDE payout_item class='minus' value='-10' text='-10' %]
                         [% INCLUDE payout_item class='green' value='ok'  text=l('OK') %]
-                        [% INCLUDE payout_item value='clear' text=l('Clear') %]
+                        [% INCLUDE payout_item value='cancel' text=l('Cancel') %]
                     [% END %]
                 </div>
             </div>
@@ -110,7 +110,7 @@
 </div>
 
 [% BLOCK payout_item %]
-<div class="[% class %] gr-3" value="[% value %]" unselectable="on" onselectstart="return false;" onmousedown="return false;">
+<div class="[% class %] gr-3 nowrap" value="[% value %]" unselectable="on" onselectstart="return false;" onmousedown="return false;">
     [% text %][% IF hint %]<div class="hint">[% hint %]</div>[% END %]
 </div>
 [% END %]
