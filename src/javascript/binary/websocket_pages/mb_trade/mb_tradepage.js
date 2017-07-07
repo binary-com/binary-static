@@ -18,7 +18,7 @@ const MBTradePage = (() => {
 
     const onLoad = () => {
         State.set('is_mb_trading', true);
-        MBDefaults.set('disable_trading', 1);
+        disableTrading();
 
         if (events_initialized === 0) {
             events_initialized = 1;
@@ -36,6 +36,12 @@ const MBTradePage = (() => {
         State.set('is_chart_allowed', true);
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
         $('.container').css('max-width', '1200px');
+    };
+
+    const disableTrading = () => {
+        MBDefaults.set('disable_trading', 1);
+        $('#allow').removeClass('selected');
+        $('#disallow').addClass('selected');
     };
 
     const reload = () => {
