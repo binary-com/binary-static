@@ -86,9 +86,13 @@ const BinaryLoader = (() => {
     };
 
     const loadActiveScript = () => {
-        BinarySocket.wait('website_status').then(() => {
+        if (Login.isLoginPages()) {
             active_script.onLoad();
-        });
+        } else {
+            BinarySocket.wait('website_status').then(() => {
+                active_script.onLoad();
+            });
+        }
     };
 
     const displayMessage = (message) => {
