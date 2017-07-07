@@ -262,3 +262,17 @@ body #not_authenticated_financial ul.checked > li {
         width: auto;
     }
 }
+
+.liquidity-solutions-content {
+    .box {
+        border: 1px solid $COLOR_GRAY_SHADE;
+        min-height: 256px;
+
+        img {
+            height: 48px;
+        }
+    }
+    .white-bg {
+        background-color: $COLOR_WHITE;
+    }
+}
