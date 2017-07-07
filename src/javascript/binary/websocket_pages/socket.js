@@ -188,6 +188,7 @@ const BinarySocket = (() => {
         }
 
         binary_socket.onopen = () => {
+            clearTimeout(timeouts.connection_error);
             const api_token = getLoginToken();
             if (api_token && localStorage.getItem('client.tokens')) {
                 send({ authorize: api_token }, { forced: true });
@@ -201,6 +202,7 @@ const BinarySocket = (() => {
         };
 
         binary_socket.onmessage = (msg) => {
+            clearTimeout(timeouts.connection_error);
             const response = JSON.parse(msg.data);
             if (response) {
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
@@ -260,7 +262,9 @@ const BinarySocket = (() => {
 
             if (wrong_app_id !== getAppId()) {
                 if (isClose()) {
-                    config.notify(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
+                    timeouts.connection_error = setTimeout(() => {
+                        config.notify(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
+                    }, 5000);
                 }
                 if (typeof config.onDisconnect === 'function' && !is_disconnect_called) {
                     config.onDisconnect();
