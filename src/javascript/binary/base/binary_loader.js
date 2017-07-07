@@ -73,16 +73,22 @@ const BinaryLoader = (() => {
                         } else if (config.only_real && Client.get('is_virtual')) {
                             displayMessage(error_messages.only_real);
                         } else {
-                            active_script.onLoad();
+                            loadActiveScript();
                         }
                     });
             }
         } else if (config.not_authenticated && Client.isLoggedIn()) {
             BinaryPjax.load(defaultRedirectUrl(), true);
         } else {
-            active_script.onLoad();
+            loadActiveScript();
         }
         BinarySocket.setOnDisconnect(active_script.onDisconnect);
+    };
+
+    const loadActiveScript = () => {
+        BinarySocket.wait('website_status').then(() => {
+            active_script.onLoad();
+        });
     };
 
     const displayMessage = (message) => {
