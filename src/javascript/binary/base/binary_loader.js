@@ -53,7 +53,7 @@ const BinaryLoader = (() => {
     };
 
     const error_messages = {
-        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [Login.loginUrl()]),
+        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [`${'java'}${'script:;'}`]),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
     };
@@ -89,6 +89,7 @@ const BinaryLoader = (() => {
         const $content = container.find('#content .container');
         $content.html($('<div/>', { class: 'logged_out_title_container', html: $content.find('h1')[0] }))
             .append($('<p/>', { class: 'center-text notice-msg', html: localize(message) }));
+        $content.find('a').on('click', () => { Login.redirectToLogin(); });
     };
 
     return {
