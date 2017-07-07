@@ -16,6 +16,7 @@ const MBDisplayCurrencies = () => {
 
     const $currency  = $('.trade_form #currency');
     const $list      = $currency.find('.list');
+    const $current   = $currency.find('.current');
     const currencies = Client.get('currencies').split(',');
     const jp_client  = jpClient();
     let def_value;
@@ -34,15 +35,16 @@ const MBDisplayCurrencies = () => {
             });
             $currency.css('z-index', '0');
         }
+        $current.html(formatCurrency(def_value));
     } else {
         def_value = 'JPY';
+        $current.html($('<span/>', { text: localize('Lots'), 'data-balloon': localize('Payout per lot = ¥1,000') }));
     }
-
-    $currency.attr('value', def_value).find('> .current').html(jp_client ? localize('Lots') : formatCurrency(def_value));
+    $currency.attr('value', def_value);
     MBDefaults.set('currency', def_value);
     // if there is no currency drop down, remove hover style from currency
     if (!$list.children().length) {
-        $currency.find('.current').hover(function() {
+        $current.hover(function() {
             $(this).css({ 'background-color': '#f2f2f2', cursor: 'auto' });
         });
     }
