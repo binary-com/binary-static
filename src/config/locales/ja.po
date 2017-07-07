@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-05 23:17-0400\n"
+"PO-Revision-Date: 2017-07-06 22:11-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -398,7 +398,7 @@ msgid "(Sell Price - Buy Price) x Volume x Price Per Point = Profit"
 msgstr "（売却価格 - 購入価格 ）× 数量 × ポイント単価 = 利益"
 
 msgid "(max)"
-msgstr "（最大）"
+msgstr "（上限）"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* 非課税対象：多くの国では、当社でのお取引から得た利益は非課税対象となりますが、居住国の税理士とご相談下さい。"
@@ -1295,9 +1295,6 @@ msgstr "バリア価格"
 msgid "Basic Platforms"
 msgstr "ベーシック・プラットフォーム"
 
-msgid "Before subscribing to the ICO, you must first %1deposit money into your account%2."
-msgstr "ICOにご参加いただくには、%1最初に口座にご入金いただく必要があります%2。"
-
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "BIELと投資商品でお取引や投資されるアカウントを開設する前に、投資商品かサービスのどちらがお客さまに適しているか評価をさせていただく必要があります。また、場合によっては提供いただいた情報に基づき、いかなる製品、サービスが適さない事があります。口座を開設して、当製品やサービスを利用するのはお客さまの決断次第です。当商品とサービスに関連するリスクを理解いただくことはお客さまの責任になります。"
 
@@ -1345,6 +1342,9 @@ msgstr "ベッティングシステムとその方法"
 
 msgid "Bid"
 msgstr "入札"
+
+msgid "Bid Binary ICO:"
+msgstr "Binary ICOに入札する："
 
 msgid "Bid Price Per Token"
 msgstr "トークンごとの入札価格"
@@ -5794,7 +5794,7 @@ msgid "Payments"
 msgstr "アフィリエイト報酬の支払いについて"
 
 msgid "Payout"
-msgstr "ペイアウト"
+msgstr "合計ペイアウト"
 
 msgid "Pension"
 msgstr "年金"
@@ -8126,6 +8126,9 @@ msgstr "トークン"
 msgid "Token dividends"
 msgstr "トークンの配当"
 
+msgid "Tokens"
+msgstr "トークン"
+
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
 msgstr "Binaryの普通株の配当と同額がトークン保持者に付与されます。"
 
@@ -8152,6 +8155,9 @@ msgstr "合計　損益"
 
 msgid "Total active clients on our platform have almost doubled from 2014 to 2016. This is largely due to our focus on improving customer retention and acquiring new customers via targeted online marketing campaigns."
 msgstr "Total active clients on our platform have almost doubled from 2014 to 2016. This is largely due to our focus on improving customer retention and acquiring new customers via targeted online marketing campaigns."
+
+msgid "Total:"
+msgstr "合計："
 
 msgid "Touch/No Touch"
 msgstr "TOUCH/NO-TOUCH"
@@ -9128,7 +9134,7 @@ msgid "With regards to tracking your referrals accessing %1 via the links on you
 msgstr "獲得会員がプロモーションサイトのリンク、またはアフィリエイトIDを通じてBinay.comへアクセスし、会員登録、または当社でトレードを行う度に、アフィリエイト会員の紹介に由来するものか確実にお調べ致します。しかし、獲得会員の紹介先を当社が特定できない場合、当社が責任を負うことはありません。適切にタグ付けされた獲得会員のみ、各アフィリエイト会員に割り当てられます。全てのリンクに適切なタグが付いていることを確認するのはアフィリエイト会員の責任となります。"
 
 msgid "Withdraw"
-msgstr "出金"
+msgstr "出金依頼"
 
 msgid "Withdraw from"
 msgstr "XXXからご出金"
@@ -9336,6 +9342,9 @@ msgstr "%1 %2 と同等の金額を既に出金されています。"
 
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
+
+msgid "You have insufficient funds in your account."
+msgstr "口座残高が不足しています。"
 
 msgid "You have no open bids."
 msgstr "入札はありません。"
@@ -9912,6 +9921,9 @@ msgstr "本日"
 
 msgid "today, Fridays"
 msgstr "本日：金曜日"
+
+msgid "top up in cashier"
+msgstr "入出金で入金を行う"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
