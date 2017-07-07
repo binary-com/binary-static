@@ -3,6 +3,7 @@ const Client               = require('../../base/client');
 const localize             = require('../../base/localize').localize;
 const template             = require('../../base/utility').template;
 const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
+const isCryptocurrency     = require('../../common_functions/currency').isCryptocurrency;
 const FormManager          = require('../../common_functions/form_manager');
 
 const DepositWithdraw = (() => {
@@ -10,7 +11,8 @@ const DepositWithdraw = (() => {
 
     let cashier_type;
     const container = '#deposit_withdraw';
-    let verification_code;
+    let verification_code,
+        deposit_refresh_timeout;
 
     const init = (cashier_password) => {
         if (cashier_password) {
@@ -90,6 +92,12 @@ const DepositWithdraw = (() => {
         } else if (/deposit/.test(hash_value)) {
             cashier_type = 'deposit';
             $heading.text(localize('Deposit'));
+            if (isCryptocurrency(Client.get('currency'))) {
+                if (deposit_refresh_timeout) clearTimeout(deposit_refresh_timeout);
+                deposit_refresh_timeout = setTimeout(() => {
+                    window.location.reload();
+                }, 300000);
+            }
         }
     };
 
@@ -218,8 +226,13 @@ const DepositWithdraw = (() => {
         });
     };
 
+    const onUnload = () => {
+        if (deposit_refresh_timeout) clearTimeout(deposit_refresh_timeout);
+    };
+
     return {
-        onLoad: onLoad,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
