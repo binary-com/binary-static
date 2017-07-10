@@ -1,7 +1,7 @@
 const jpClient    = require('./country_base').jpClient;
 const getLanguage = require('../base/language').get;
 
-const fiat_currencies = ['USD', 'GBP', 'AUD', 'EUR', 'JPY'];
+const fiat_currencies = [];
 
 const formatMoney = (currency_value, amount, exclude_currency) => {
     const is_crypto = isCryptocurrency(currency_value);
@@ -63,8 +63,17 @@ const map_currency = {
     LTC: 'Ł',
 };
 
+const setCurrencies = (website_status) => {
+    const currencies_config = website_status.currencies_config;
+    Object.keys(currencies_config).forEach((c) => {
+        if (currencies_config[c].type === 'fiat' && fiat_currencies.indexOf(c) < 0) {
+            fiat_currencies.push(c);
+        }
+    });
+};
+
 const isCryptocurrency = currency => (
-    currency ? fiat_currencies.indexOf(currency.toUpperCase()) < 0 : false
+    currency ? !(new RegExp(currency, 'i')).test(fiat_currencies) : false
 );
 
 module.exports = {
@@ -73,5 +82,6 @@ module.exports = {
     isCryptocurrency : isCryptocurrency,
     addComma         : addComma,
     getDecimalPlaces : getDecimalPlaces,
+    setCurrencies    : setCurrencies,
     getFiatCurrencies: () => fiat_currencies,
 };

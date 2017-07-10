@@ -13,12 +13,11 @@ const BinaryPushwoosh = (() => {
         
         if (!initialised) {
             pw.push(['init', {
-                logLevel                : 'none', // or debug
+                logLevel                : 'error', // or info or debug
                 applicationCode         : 'D04E6-FA474',
                 safariWebsitePushID     : 'web.com.binary',
                 defaultNotificationTitle: 'Binary.com',
                 defaultNotificationImage: 'https://style.binary.com/images/logo/logomark.png',
-                serviceWorkerUrl        : urlForStatic('/') + 'pushwoosh-service-worker-light.js',
             }]);
             initialised = true;
             sendTags();
