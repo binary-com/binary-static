@@ -37,9 +37,9 @@ const BinarySocketGeneral = (() => {
                     } else if (!is_available) {
                         Header.displayNotification(response.website_status.message, true);
                     }
+                    BinarySocket.availability(is_available);
+                    setCurrencies(response.website_status);
                 }
-                BinarySocket.availability(is_available);
-                setCurrencies(response.website_status);
                 break;
             case 'authorize':
                 if (State.get('ignoreResponse') === 'authorize') {
