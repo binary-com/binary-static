@@ -74,13 +74,9 @@ const BinarySocketGeneral = (() => {
                 break;
             case 'landing_company':
                 Header.upgradeMessageVisibility();
-                if (!response.error) {
-                    // Header.metatraderMenuItemVisibility(response); // to be uncommented once MetaTrader launched
-                    const company = Client.currentLandingCompany();
-                    if (company) {
-                        Client.set('default_currency', company.legal_default_currency);
-                    }
-                }
+                // if (!response.error) { // to be uncommented when planning to launch MetaTrader
+                //     Header.metatraderMenuItemVisibility(response);
+                // }
                 break;
             case 'get_self_exclusion':
                 SessionDurationLimit.exclusionResponseHandler(response);
