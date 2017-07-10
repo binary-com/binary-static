@@ -36,7 +36,11 @@ const VirtualAccOpening = (() => {
 
             const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
-                $options_with_disabled.append(makeOption(res.text, res.value, res.disabled));
+                $options_with_disabled.append(makeOption({
+                    text       : res.text,
+                    value      : res.value,
+                    is_disabled: res.disabled,
+                }));
             });
             $residence.html($options_with_disabled.html());
 
