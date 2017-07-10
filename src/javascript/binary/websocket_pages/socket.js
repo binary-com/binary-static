@@ -84,7 +84,7 @@ const BinarySocket = (() => {
     const isClose = () => !binary_socket || binary_socket.readyState === 2 || binary_socket.readyState === 3;
 
     const sendBufferedRequests = () => {
-        while (buffered_sends.length > 0) {
+        while (buffered_sends.length > 0 && is_available) {
             const req_obj = buffered_sends.shift();
             send(req_obj.request, req_obj.options);
         }
