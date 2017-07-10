@@ -75,6 +75,7 @@ const Language = (() => {
         onChange : onChangeLanguage,
         urlFor   : urlForLanguage,
         urlLang  : languageFromUrl,
+        reset    : () => { url_lang = null; current_lang = null; },
     };
 })();
 
