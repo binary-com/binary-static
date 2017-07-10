@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-06 22:11-0400\n"
+"PO-Revision-Date: 2017-07-10 00:11-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -211,7 +211,7 @@ msgid "%1 is not available in Costa Rica and is not regulated or supervised by a
 msgstr "%1 n'est pas disponible au Costa Rica et n'est soumise à la réglementation ou à la supervision d'aucun organisme de réglementation dans le système financier du Costa Rica."
 
 msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency."
-msgstr ""
+msgstr "%1 offre jusqu'à <strong>10 000 000</strong> jetons dans une vente aux enchères ouverte. Vous pouvez placer vos offres en utilisant le formulaire ci-dessous. L’enchère minimum est <strong>de 1 dollar US</strong> ou l’équivalent dans une autre devise."
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 est l'une des sociétés les plus anciennes et les plus respectées du secteur des options binaires."
@@ -284,6 +284,9 @@ msgstr "%1 vous doit un devoir de meilleure exécution lorsque l'ordre d'exécut
 
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 propose des services de partenariat d'affaires par le biais des programmes suivants."
+
+msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
+msgstr "%1 fournit des clients institutionnels dans le monde entier avec des cotations de marché et exécution de transaction dans un large éventail d’actifs, y compris les principales paires de devises, les métaux spots, les indices CFD et crypto devises populaires."
 
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "%1 vous offre les meilleures conditions d'exécution en utilisant une méthode d'agrégation intelligente dans la gestion des ordres entrants. La méthode d'agrégation intelligente fonctionne comme suit :"
@@ -394,7 +397,7 @@ msgid "(Sell Price - Buy Price) x Volume x Price Per Point = Profit"
 msgstr "(Prix de vente - Prix d'achat) x Volume x Montant par point = Profit"
 
 msgid "(max)"
-msgstr ""
+msgstr "(max)"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Exonéré d'impôt : les bénéfices issus du trading sont exonérés d'impôt dans de nombreux pays. Cependant, il convient de toujours consulter un conseiller fiscal qualifié."
@@ -684,11 +687,20 @@ msgstr "Accepter les virements bancaires locaux"
 msgid "Acceptance"
 msgstr "Acceptation"
 
+msgid "Access market quotes and trade execution from top-tier liquidity providers, including banks and non-banks."
+msgstr "Accéder aux cotations du marché et à l’exécution de trade par des fournisseurs de liquidité de haut niveau, y compris des banques et des établissements non bancaires."
+
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "Accéder au marchés n'importe quand et n'importe où utilisant des applications natives pour vos appareils IOS ou Android."
 
 msgid "Access to Personal Data"
 msgstr "Accès aux données personnelles"
+
+msgid "Access to STP trading"
+msgstr "Accès au trading STP"
+
+msgid "Access to multi-asset liquidity and back-office functionality via margin accounts"
+msgstr "Accès aux liquidités multi-actifs et fonctionnalité de back office par l’intermédiaire de comptes de marge"
 
 msgid "Access to your personal data is strictly prohibited with the exception of key personnel of the Company and only as needed in the performance of their duties."
 msgstr "L'accès à vos données personnelles est strictement interdit. Seuls certains membres du personnel de la Société peuvent y accéder, et ce uniquement lorsque l'exercice de leurs fonctions l'exige."
@@ -1245,6 +1257,9 @@ msgstr "BIEL est une société basée à Malte sous le numéro d'inscription C70
 msgid "Back"
 msgstr "Retour"
 
+msgid "Back-office support"
+msgstr "Support back office"
+
 msgid "Balance"
 msgstr "Solde"
 
@@ -1333,16 +1348,16 @@ msgid "Betting system and method"
 msgstr "Système et méthode de trading"
 
 msgid "Bid"
-msgstr ""
+msgstr "Faire une mise"
 
 msgid "Bid Binary ICO:"
-msgstr ""
+msgstr "Faire une mise dans le cadre de l'ICO de Binary:"
 
 msgid "Bid Price Per Token"
-msgstr ""
+msgstr "Prix de la Mise Par Jeton"
 
 msgid "Bid cancellation can be done with a 2% cancellation fee."
-msgstr ""
+msgstr "L'annulation de l’enchère peut être faite avec un frais d’annulation de 2 %."
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -1396,10 +1411,10 @@ msgid "Binary Group Services is searching for talented and motivated front-end d
 msgstr "Binary Group Services recrute des développeurs front-end talentueux et motivés, désireux d'exceller dans leur domaine."
 
 msgid "Binary ICO Auction Bids"
-msgstr ""
+msgstr "Mise dans le cadre des enchères de l'ICO Binary"
 
 msgid "Binary Initial Coin Offering (ICO)"
-msgstr ""
+msgstr "Offre de pièces initiale (ICO) pour Binary"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "Binary Investments (Europe) Limited est habilitée à proposer des services au sein d'un autre État membre de l'UE en vertu des droits conférés par le passeport européen. Référez-vous à la carte ci-dessous pour consulter la liste des pays de l'UE qui ont accès à %1 en vertu d'un passeport européen : « libre prestation de services »."
@@ -1624,13 +1639,16 @@ msgid "Canada 60 Cash Index"
 msgstr "Canada 60 Cash Index"
 
 msgid "Cancel Bid"
-msgstr ""
+msgstr "Annuler la soumission"
 
 msgid "Career opportunities for Americans"
 msgstr "Opportunités de carrière pour Américains"
 
 msgid "Careers"
 msgstr "Opportunités de carrière"
+
+msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
+msgstr "Un réseau de fournisseurs de liquidité soigneusement trié sur le volet nous permet de répercuter des spreads serrés et des marges compétitives pour à la fois nos clients individuels et institutionnels"
 
 msgid "Cash Indices"
 msgstr "Indices Cash"
@@ -1753,7 +1771,7 @@ msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, 
 msgstr "Les citoyens des pays suivants ne sont pas autorisés à ouvrir un compte auprès de Binary Investments (Europe) Ltd : Afghanistan, Belgique, Bosnie-Herzégovine, Irak, Laos, Syrie, Ouganda, Vanuatu et Yémen."
 
 msgid "Claim Tokens"
-msgstr ""
+msgstr "Réclamer des Jetons"
 
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
@@ -1762,7 +1780,7 @@ msgid "Cleaners and Helpers"
 msgstr "Ménage et aide à la personne"
 
 msgid "Clear"
-msgstr ""
+msgstr "Supprimer"
 
 msgid "Clerks"
 msgstr "Clercs"
@@ -1873,7 +1891,7 @@ msgid "Closed"
 msgstr "Fermé"
 
 msgid "Closed Bid"
-msgstr ""
+msgstr "Enchère fermée"
 
 msgid "Closes"
 msgstr "Fermetures"
@@ -2224,7 +2242,7 @@ msgid "Cyberjaya Office"
 msgstr "Antenne de Cyberjaya"
 
 msgid "D"
-msgstr ""
+msgstr "D"
 
 msgid "D. Capacity"
 msgstr "D. Capacité"
@@ -2494,7 +2512,7 @@ msgid "Drive rapid growth from key areas of the world, applying a variety of onl
 msgstr "Vous aurez pour mission de favoriser une croissance rapide de nos activités dans des secteurs géographiques clés, en mettant en œuvre différentes initiatives de marketing en ligne et hors ligne afin d'élargir le réseau d'affiliation actif de la société."
 
 msgid "Due to US regulations, US investors can only claim their tokens after 1 year."
-msgstr ""
+msgstr "En raison de la réglementation américaine, les investisseurs américains ne peuvent réclamer leurs jetons qu'après 1 an."
 
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "En raison de récents changements réglementaires, nous sommes dans l'obligation de demander à nos clients de remplir le formulaire d'évaluation financière suivant. Sachez que vous ne pourrez pas poursuivre vos activités de trading avant de l'avoir fait."
@@ -2662,7 +2680,7 @@ msgid "End time must be after start time."
 msgstr "L'heure de fin doit être ultérieure à l'heure de début."
 
 msgid "Ended"
-msgstr ""
+msgstr "Terminé"
 
 msgid "Ends Between"
 msgstr "Termine dans la zone"
@@ -2765,6 +2783,9 @@ msgstr "Événement &mdash; Exemples d’événement comprenant les circonstance
 
 msgid "Everyone"
 msgstr "Tout le monde"
+
+msgid "Everyone else can use the FIX API to connect to our One Zero bridge – subject to a conformance test."
+msgstr "Tout le monde peut utiliser l’API FIX pour se connecter à notre pont Un Zéro – soumis à un test de conformité."
 
 msgid "Excellent English language (written and oral) communication skills"
 msgstr "Excellente maîtrise de la communication (orale et écrite) en anglais"
@@ -2924,6 +2945,9 @@ msgstr "F. Ordres"
 
 msgid "FAQ"
 msgstr "FAQ"
+
+msgid "FIX API"
+msgstr "API FIX"
 
 msgid "FX Bloggers, Mentors & Gurus"
 msgstr "FX blogueur, Mentors & Gurus"
@@ -3369,6 +3393,9 @@ msgstr "Contrats Supérieur/Inférieur"
 msgid "Higher/Lower – Predict that the market will end higher or lower than a price target"
 msgstr "Supérieur/Inférieur</strong : prédisez si le marché affichera un cours supérieur ou inférieur au prix-cible à l'expiration de l'option"
 
+msgid "Highlights"
+msgstr "Faits marquants"
+
 msgid "Hone your security testing skills."
 msgstr "Développez vos compétences en termes de test de sécurité."
 
@@ -3419,6 +3446,9 @@ msgstr "Comment fonctionne le système ?"
 
 msgid "How is margin calculated?"
 msgstr "Comment la marge est-elle calculée ?"
+
+msgid "How it works"
+msgstr "Comment ça marche"
 
 msgid "How much dividend will I receive?"
 msgstr "Quel sera le montant de dividendes que je vais recevoir ?"
@@ -3953,6 +3983,9 @@ msgstr "Solde insuffisant."
 
 msgid "Intellectual property"
 msgstr "Propriété intellectuelle"
+
+msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
+msgstr "Intéressé par nos solutions de liquidité ? Contactez-nous au %1 pour plus d’informations."
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "Cette démarche vous intéresse ? Si vous êtes en mesure de proposer à nos clients un service de paiement électronique qui ne figure pas encore parmi les services fournis par %1 et que vous jouissez d'une solide réputation sur le marché, n'hésitez pas à nous <a href='mailto:%2'>contacter !</a>"
@@ -4578,6 +4611,9 @@ msgstr "Consultez la liste de vos applications autorisées."
 msgid "Key facts"
 msgstr "Informations clés"
 
+msgid "Key features"
+msgstr "Caractéristiques principales"
+
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "À seulement quelques heures d'avion de votre lieu de travail, vous trouverez des plages, des îles et des montagnes magnifiques à découvrir pendant vos loisirs. Au départ de Malte, l'Europe, la Méditerranée et l'Afrique du Nord seront à votre portée. Si vous travaillez en Malaisie, vous pourrez facilement explorer certains des plus beaux paysages d'Asie."
 
@@ -4828,7 +4864,7 @@ msgid "Lot Size (Volume = 1.0)"
 msgstr "Taille du lot (Volume = 1.0)"
 
 msgid "Lots"
-msgstr ""
+msgstr "Lots"
 
 msgid "Low Barrier"
 msgstr "Barrière inférieure"
@@ -4859,6 +4895,9 @@ msgstr "M. Erreur Manifeste"
 
 msgid "MENA FFXPO Award"
 msgstr "Prix MENA FFXPO"
+
+msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
+msgstr "Les courtiers MT4 et MT5 peuvent se connecter directement à notre liquidité sur le pont Un Zéro en utilisant des plugins intégrés."
 
 msgid "Main password"
 msgstr "Mot de passe principal"
@@ -5166,6 +5205,12 @@ msgstr "Mlle"
 msgid "Multi award-winning trading platform."
 msgstr "Une plateforme de trading maintes fois récompensée par différents prix."
 
+msgid "Multi-asset execution"
+msgstr "Exécution multi-actifs"
+
+msgid "Multi-asset liquidity solutions"
+msgstr "Solutions de liquidité multi-actifs"
+
 msgid "Multi-lingual and multi-currency support"
 msgstr "Plateforme multilingue et devises multiples"
 
@@ -5296,7 +5341,7 @@ msgid "No. There's no cost to sign up to the affiliate program."
 msgstr "Non. Votre inscription au programme d'affiliés ne vous coûtera rien."
 
 msgid "No. of Tokens"
-msgstr ""
+msgstr "Nombre de jetons"
 
 msgid "Not"
 msgstr "Pas"
@@ -5350,7 +5395,7 @@ msgid "Number of ticks:"
 msgstr "Nombre de ticks :"
 
 msgid "Number of tokens"
-msgstr ""
+msgstr "Nombre de jetons"
 
 msgid "O. Representations and Warranties"
 msgstr "O. Représentations et garanties"
@@ -5417,6 +5462,9 @@ msgstr "Lorsque vous cliquerez sur le bouton « Envoyer », les fonds seront p
 
 msgid "Once your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:"
 msgstr "Une fois votre compte atteint le niveau de liquidation forcée, vos ordres et positions sont fermés de force dans la séquence suivante :"
+
+msgid "One Zero"
+msgstr "Un Zéro"
 
 msgid "One simple platform"
 msgstr "Une plateforme simple"
@@ -5568,6 +5616,9 @@ msgstr "Notre politique"
 msgid "Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices."
 msgstr "Nos prix sont déterminés par référence au prix de l'instrument sous jacent qui est coté sur des structures d'échanges externes que nous sélectionnons en fonction de notre jugement. Notre infrastructure technologique et notre système d'agrégation des prix facilite la réception des quotations à partir d'une liste de courtiers pré sélectionnés qui agissent en tant que fournisseur de liquidité pour nous et la livraison des quotations, dérivée avec référence contre les marchés et benchmarks pour vous. Vous confirmez que nos prix peuvent varier entre la mise et l'offre fournis par nos structures externes d'échanges et que nous ne sommes responsables d'aucunes pertes que vous pourriez engendrer du fait de ces differences. Cette clause ne s'applique pas aux Indices de Volatilité."
 
+msgid "Our commitment to integrity and reliability means that we always strive to give you access to the best pricing and liquidity possible."
+msgstr "Notre engagement envers l’intégrité et la fiabilité signifie que nous nous efforçons toujours de vous donner accès aux meilleurs prix et liquidité possibles."
+
 msgid "Our commitment to provide you with 'best execution' does not mean that we owe you any fiduciary responsibilities over and above the specific regulatory obligations placed upon us or as may be otherwise contracted between us."
 msgstr "Notre engagement de vous fournir \"la meilleure exécution\" ne signifie pas que nous vous devons des responsabilités fiduciaires en plus des obligations spécifiques légales imposées par nous ou comme peuvent être contractées entre nous."
 
@@ -5660,6 +5711,9 @@ msgstr "Plus de 3 ans"
 
 msgid "Over 5 years"
 msgstr "Plus de 5 ans"
+
+msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
+msgstr "Plus de 50 paires de FX, plus les métaux spots, indices CFD, matières premières et crypto devises."
 
 msgid "Over 90 <a href='%1'>staff</a> and contractors worldwide"
 msgstr "Plus de 90 <a href='%1'>employés</a> et sous-traitants dans le monde"
@@ -5809,7 +5863,7 @@ msgid "Pixel size."
 msgstr "Taille des pixels."
 
 msgid "Place bid"
-msgstr ""
+msgstr "Enchérir"
 
 msgid "Place of birth"
 msgstr "Lieu de naissance"
@@ -6076,7 +6130,7 @@ msgid "Price/Prices &mdash; Bid and Offer Price/Prices."
 msgstr "Le Prix/ les Prix &mdash; Mise et Offre Prix/ les Prix."
 
 msgid "Price/token:"
-msgstr ""
+msgstr "Prix/jeton :"
 
 msgid "Primary"
 msgstr "Principal"
@@ -6294,6 +6348,9 @@ msgstr "Cours en temps réel, référencés sur les marchés d'options du secteu
 msgid "Reality Check"
 msgstr "Avertissement de connexion prolongée"
 
+msgid "Receive back-office support for post-trade risk management and real-time trade/position monitoring."
+msgstr "Reçoit un soutien de back office pour la gestion des risques post-trade et le suivi de trades/positions en temps réel."
+
 msgid "Receive dividend payments"
 msgstr "Recevoir les paiements de dividendes"
 
@@ -6313,7 +6370,7 @@ msgid "Reference ID"
 msgstr "Identifiant de référence"
 
 msgid "Refund Bid"
-msgstr ""
+msgstr "Rembourser la mise"
 
 msgid "Regardless of the type of token, each token will provide you with two rights:"
 msgstr "Quel que soit le type de jeton, chaque jeton vous donnera deux droits :"
@@ -7363,7 +7420,7 @@ msgid "The GBP Index is a weighted Index, measuring the British Pound's value ag
 msgstr "L'indice GBP est un indice pondéré mesurant la valeur du de la livre sterling par rapport à un panier de 5 devises internationales (USD, EUR, AUD, JPY, CAD), dont chacune est pondérée à 20%."
 
 msgid "The ICO auction is already closed."
-msgstr ""
+msgstr "La vente aux enchères de l’ICO est déjà fermée."
 
 msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions."
 msgstr "L’ICO sera limitée à un certain nombre de juridictions aux investisseurs qualifiés ou professionnels, selon les règles et les règlements de ces juridictions."
@@ -7887,8 +7944,8 @@ msgstr "Ce site Web contient des liens vers d'autres sites et peut contenir des 
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Ce site Web ne recueille pas de données personnelles vous concernant, sauf celles que vous nous fournissez pour des besoins spécifiques et en toute connaissance de cause. Il existe des fichiers nommés « cookies » qui peuvent être utilisés pour fournir des informations spécifiques depuis un site Web. Un cookie est un fichier de données qu'un site Web peut envoyer à votre navigateur, qui peut ensuite le stocker sur votre système. Vous pouvez configurer votre navigateur pour qu'il vous envoie une notification lorsque vous recevez un cookie, afin de pouvoir décider de l'accepter ou non. Si vous n'acceptez pas le cookie, vous devrez à nouveau saisir votre identifiant de connexion et votre mot de passe pour chaque formulaire requis pour entrer dans le système. Nous vous conseillons de choisir cette option si vous avez des doutes quant à la sécurité de votre navigateur personnel ou de votre PC."
 
-msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "Ce site internet est commercialisé au Royaume-Uni et l’île de Man par Binary (IOM) Ltd., premier étage, Millennium House, Victoria Road, Douglas, IM2 4RW, île de Man, îles britanniques, autorisée et réglementée par (1) la Commission de Supervision des Jeux dans l’île de Man, îles britanniques, licence actuelle de paris en ligne émise le 31 août 2012 et pour les clients britanniques par (2) la Commission des Jeux du Royaume-Uni - <a href='%1' target='_blank'> Afficher la licence</a>. Ce site internet est commercialisé dans le reste de l’UE, pour des produits d’investissement par Binary Investment (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, licencié et régulé comme un fournisseur de Services d’investissement de catégorie 3 par les Autorités des Services Financiers de Malte (n° de licence. EST / 70156), et pour les produits de paris par Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par (1) l'Autorité des Jeux de Malte à Malte, numéro de licence MGA/CL2/118/2000, 26 mai 2015 et pour les clients britanniques par (2) la Commission des Jeux du Royaume-Uni - <a href='%2' target='_blank'> Afficher la licence</a> et pour les clients irlandais par (3) l’administration fiscale en Irlande , licence actuelle de prise de paris à distance publiée le 29 septembre 2015 (numéro de licence 1010285). Les services du site Internet ne sont pas rendus disponibles dans certains pays comme les Etats-Unis, le Costa Rica, Hong Kong, ou aux personnes de moins de 18 ans."
+msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgstr "Ce site internet est commercialisé au Royaume-Uni et l’île de Man par Binary (IOM) Ltd., premier étage, Millennium House, Victoria Road, Douglas, IM2 4RW, île de Man, îles britanniques, autorisée et réglementée par (1) la Commission de Supervision des Jeux dans l’île de Man, îles britanniques, licence actuelle de paris en ligne émise le 31 août 2012 et pour les clients britanniques par (2) la Commission des Jeux du Royaume-Uni - <a href='%1' target='_blank'> Afficher la licence</a>. Ce site internet est commercialisé dans le reste de l’UE, pour des produits d’investissement par Binary Investment (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, licencié et régulé comme un fournisseur de Services d’investissement de catégorie 3 par les Autorités des Services Financiers de Malte (n° de licence. EST / 70156), et pour les produits de paris par Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par (1) l'Autorité des Jeux de Malte à Malte, numéro de licence MGA/CL2/118/2000, 26 mai 2015 et pour les clients britanniques par (2) la Commission des Jeux du Royaume-Uni - <a href='%2' target='_blank'> Afficher la licence</a> et pour les clients irlandais par (3) l’administration fiscale en Irlande , licence actuelle de prise de paris à distance émise le 1er juillet 2017 (numéro de licence 1010285). Les services du site Internet ne sont pas rendus disponibles dans certains pays comme les Etats-Unis, le Costa Rica, Hong Kong, ou aux personnes de moins de 18 ans."
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "Solide connaissance des scripts Bash et expérience des langages de script tels que Perl et PHP"
@@ -8002,7 +8059,7 @@ msgid "Token dividends"
 msgstr "Dividendes de jeton"
 
 msgid "Tokens"
-msgstr ""
+msgstr "Jetons"
 
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
 msgstr "Les jetons vous donnent droit à une quantité de dividendes équivalente aux Actions Ordinaires Binary."
@@ -8010,11 +8067,14 @@ msgstr "Les jetons vous donnent droit à une quantité de dividendes équivalent
 msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our account authentication process."
 msgstr "Les jetons seront seulement offerts aux clients %1 qui ont un compte en argent réel, et qui ont complété notre processus d’authentification de compte."
 
+msgid "Top-tier liquidity"
+msgstr "Haut niveau de liquidité"
+
 msgid "Total"
 msgstr "Total"
 
 msgid "Total Bid Price"
-msgstr ""
+msgstr "Prix total des offres"
 
 msgid "Total Cost"
 msgstr "Coût total"
@@ -8032,7 +8092,7 @@ msgid "Total active clients on our platform have almost doubled from 2014 to 201
 msgstr "Les actifs clients totaux sur notre plateforme ont presque doublé de 2014 à 2016. C’est en grande partie en raison de notre focalisation sur l’amélioration de la fidélisation de la clientèle et l'acquisition de nouveaux clients via des campagnes de marketing en ligne ciblées."
 
 msgid "Total:"
-msgstr ""
+msgstr "Total :"
 
 msgid "Touch/No Touch"
 msgstr "Touche/Ne touche pas"
@@ -9196,10 +9256,10 @@ msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (i
 msgstr "Vous avez entièrement lu et compris: (i) la déclaration de divulgation du risque; (ii) Politique d’Exécution d'Ordre; (iii) termes et conditions attachés à ce Contrat; avant de demander d'ouvrir un Compte Réel avec nous ;"
 
 msgid "You have insufficient funds in your account."
-msgstr ""
+msgstr "Vous n'avez pas assez de fonds dans votre compte."
 
 msgid "You have no open bids."
-msgstr ""
+msgstr "Vous n’avez aucunes mises ouvertes."
 
 msgid "You have not granted access to any applications."
 msgstr "Vous n'avez acheté aucun contrat."
@@ -9757,7 +9817,7 @@ msgid "today, Fridays"
 msgstr "aujourd'hui, vendredis"
 
 msgid "top up in cashier"
-msgstr ""
+msgstr "rajouter des fonds à la caisse"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "- haut/bas, touche/sans touche, reste dans/sort de."
@@ -11461,6 +11521,9 @@ msgstr "Association caritative"
 msgid "Open-Source Projects"
 msgstr "Projets open source"
 
+msgid "Multi-asset Liquidity Solutions"
+msgstr "Solutions de liquidité multi-actifs"
+
 msgid "Types of Trades"
 msgstr "Types d'options"
 
@@ -11495,7 +11558,7 @@ msgid "Authenticate"
 msgstr "Authentification"
 
 msgid "Subscribe to ICO"
-msgstr ""
+msgstr "Souscrire à ICO"
 
 msgid "Settings"
 msgstr "Paramètres"
