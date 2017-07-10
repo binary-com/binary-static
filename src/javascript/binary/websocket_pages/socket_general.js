@@ -81,9 +81,6 @@ const BinarySocketGeneral = (() => {
             case 'get_self_exclusion':
                 SessionDurationLimit.exclusionResponseHandler(response);
                 break;
-            case 'payout_currencies':
-                Client.set('currencies', response.payout_currencies.join(','));
-                break;
             case 'get_settings':
                 if (response.get_settings) {
                     setResidence(response.get_settings.country_code);

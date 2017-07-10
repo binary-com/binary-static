@@ -1,6 +1,7 @@
 const BinarySocket     = require('../socket');
 const Client           = require('../../base/client');
 const localize         = require('../../base/localize').localize;
+const State            = require('../../base/storage').State;
 const template         = require('../../base/utility').template;
 const makeOption       = require('../../common_functions/common_functions').makeOption;
 const FormManager      = require('../../common_functions/form_manager');
@@ -67,7 +68,7 @@ const DepositWithdraw = (() => {
     };
 
     const showCurrency = () => {
-        const currencies = Client.get('currencies').split(',');
+        const currencies = State.get(['response', 'payout_currencies', 'payout_currencies']);
         const $currencies = $('<div/>');
         currencies.forEach((c) => {
             $currencies.append(makeOption({ text: c, value: c }));
