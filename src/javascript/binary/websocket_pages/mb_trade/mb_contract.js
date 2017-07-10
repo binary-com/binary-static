@@ -17,6 +17,26 @@ const MBContract = (() => {
     let contracts_for_response;
     const hidden_class = 'invisible';
 
+    const durationText = (dur) => {
+        if (dur) {
+            dur = dur.toUpperCase().replace(/([A-Z])/, '$1<br>');
+            if (jpClient()) {
+                const duration_map = {
+                    m: 'minute',
+                    h: 'h',
+                    d: 'day',
+                    W: 'week',
+                    M: 'month',
+                    Y: 'year',
+                };
+                Object.keys(duration_map).forEach((key) => {
+                    dur = dur.replace(key, localize(duration_map[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
+                });
+            }
+        }
+        return dur;
+    };
+
     const periodText = (trading_period) => {
         let date_start,
             date_expiry,
@@ -30,6 +50,7 @@ const MBContract = (() => {
             date_expiry = trading_period.split('_')[1];
             duration = trading_period.split('_')[2];
         }
+        duration = duration ? duration.replace('0d', '1d') : '';
 
         const toDate = (date) => {
             let text_value = moment.utc(date * 1000)
@@ -44,7 +65,7 @@ const MBContract = (() => {
         return {
             start   : toDate(date_start),
             end     : toDate(date_expiry),
-            duration: duration ? duration.replace('0d', '1d') : '',
+            duration: durationText(duration),
         };
     };
 
@@ -74,10 +95,9 @@ const MBContract = (() => {
         }
         const makeItem = (period) => {
             const text = periodText(period);
-            const duration = text.duration.toUpperCase().replace(/([A-Z])/, '$1<br>');
             return $('<div/>', {
                 value: period,
-                html : `<div class="duration gr-3">${duration}</div><div class="end gr-6 gr-5-m">${text.end}</div><div class="remaining-time gr-3 gr-4-m"></div>`,
+                html : `<div class="duration gr-3 gr-no-gutter">${text.duration}</div><div class="end gr-6 gr-5-m">${text.end}</div><div class="remaining-time gr-3 gr-4-m"></div>`,
                 class: 'gr-row',
             });
         };
