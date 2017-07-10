@@ -25,7 +25,7 @@ const Language = (() => {
     const setCookieLanguage = (lang) => {
         if (!Cookies.get('language') || lang) {
             const cookie = new CookieStorage('language');
-            cookie.write(lang || getLanguage());
+            cookie.write((lang || getLanguage()).toUpperCase());
         }
     };
 
@@ -75,6 +75,7 @@ const Language = (() => {
         onChange : onChangeLanguage,
         urlFor   : urlForLanguage,
         urlLang  : languageFromUrl,
+        reset    : () => { url_lang = null; current_lang = null; },
     };
 })();
 

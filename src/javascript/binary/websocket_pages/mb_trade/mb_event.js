@@ -137,7 +137,7 @@ const MBTradingEvents = (() => {
                         new_payout = 1;
                     }
                 } else if (/(ok|clear)/.test(value)) {
-                    if (value === 'clear') new_payout = old_value || 10;
+                    if (value === 'cancel') new_payout = old_value || 10;
                     makeListsInvisible();
                 } else {
                     new_payout = value;
