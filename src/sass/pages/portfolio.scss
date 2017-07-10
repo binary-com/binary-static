@@ -42,12 +42,17 @@
 
 #trading_socket_container_beta #tab_portfolio-content #portfolio {
     @include portfolio_second_row_description;
+}
 
-    [data-balloon] {
-        cursor: initial;
+#trading_socket_container_beta, #mb-trading-wrapper {
+    #tab_portfolio-content #portfolio {
+        [data-balloon] {
+            cursor: initial;
 
-        &:after, &:before {
-            display: none !important;
+            &:after, &:before {
+                display: none !important;
+                border-bottom: none;
+            }
         }
     }
 }
