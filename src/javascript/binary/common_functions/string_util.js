@@ -1,16 +1,20 @@
+const moment     = require('moment');
 const checkInput = require('./common_functions').checkInput;
 
 const toTitleCase = str => (
-    str.replace(/\w[^\s\/\\]*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
+    (str || '').replace(/\w[^\s\/\\]*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
 );
 
-const toISOFormat = date => date.format('YYYY-MM-DD');
+const toISOFormat = date => (date instanceof moment ? date.format('YYYY-MM-DD') : '');
 
 const toReadableFormat = (date) => {
-    if ($(window).width() < 770 && checkInput('date', 'not-a-date')) {
-        return toISOFormat(date);
+    if (date instanceof moment) {
+        if (window.innerWidth < 770 && checkInput('date', 'not-a-date')) {
+            return toISOFormat(date);
+        }
+        return date.format('DD MMM, YYYY');
     }
-    return date.format('DD MMM, YYYY');
+    return '';
 };
 
 const padLeft = (text, len, char) => {
@@ -21,6 +25,9 @@ const padLeft = (text, len, char) => {
 const compareBigUnsignedInt = (a, b) => {
     a = numberToString(a);
     b = numberToString(b);
+    if (!a || !b) {
+        return '';
+    }
     const max_length = Math.max(a.length, b.length);
     a = padLeft(a, max_length, '0');
     b = padLeft(b, max_length, '0');
@@ -34,6 +41,7 @@ module.exports = {
     toReadableFormat: toReadableFormat,
     toTitleCase     : toTitleCase,
     padLeft         : padLeft,
+    numberToString  : numberToString,
 
     compareBigUnsignedInt: compareBigUnsignedInt,
 };
