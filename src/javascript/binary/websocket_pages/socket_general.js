@@ -88,7 +88,6 @@ const BinarySocketGeneral = (() => {
                     if (response.get_settings.is_authenticated_payment_agent) {
                         $('#topMenuPaymentAgent').setVisibility(1);
                     }
-                    Client.set('first_name', response.get_settings.first_name);
                 }
                 break;
             // no default
