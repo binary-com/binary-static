@@ -41,6 +41,7 @@ const SelfExclusion              = require('../websocket_pages/user/account/sett
 const PersonalDetails            = require('../websocket_pages/user/account/settings/personal_details');
 const Statement                  = require('../websocket_pages/user/account/statement/statement.init');
 const TopUpVirtual               = require('../websocket_pages/user/account/top_up_virtual');
+const Accounts                   = require('../websocket_pages/user/accounts');
 const ICOSubscribe               = require('../websocket_pages/user/ico_subscribe');
 const LostPassword               = require('../websocket_pages/user/lost_password');
 const MetaTrader                 = require('../websocket_pages/user/metatrader/metatrader');
@@ -57,6 +58,7 @@ const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test'
 
 const pages_config = {
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true },
+    accounts                 : { module: Accounts,                   is_authenticated: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
     asset_indexws            : { module: AssetIndexUI },

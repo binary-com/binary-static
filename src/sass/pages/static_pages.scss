@@ -233,9 +233,6 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .ico-subscribe-content {
-    .border-gray {
-        border: 1px solid $COLOR_GRAY;
-    }
     .border-radius {
         border-radius: $BORDER_RADIUS;
     }
@@ -274,5 +271,18 @@ body #not_authenticated_financial ul.checked > li {
     }
     .white-bg {
         background-color: $COLOR_WHITE;
+    }
+}
+
+.accounts-content {
+    .table-container table {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+
+        th, td {
+            text-align: center !important;
+            background-color: $COLOR_WHITE;
+            padding: 20px;
+            border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+        }
     }
 }

@@ -116,9 +116,8 @@ const Header = (() => {
                     .html($('<span/>', { text: localize(msg) }));
             };
 
+            const show_upgrade_msg = Client.canUpgrade(landing_company);
             if (Client.get('is_virtual')) {
-                const show_upgrade_msg = !loginid_array.some(client => client.real);
-
                 $upgrade_msg.setVisibility(1)
                     .find('> span').setVisibility(1).end()
                     .find('a')
@@ -142,29 +141,15 @@ const Header = (() => {
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    $upgrade_msg.find('> span').setVisibility(1);
-                    if (Client.canUpgradeVirtualToFinancial(landing_company)) {
-                        showUpgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
-                    } else if (Client.canUpgradeVirtualToJapan(landing_company)) {
-                        showUpgrade('new_account/japanws', 'Upgrade to a Real Account');
-                    } else {
-                        showUpgrade('new_account/realws', 'Upgrade to a Real Account');
-                    }
+                    showUpgrade('accounts', `Upgrade to a ${Client.canUpgradeVirtualToFinancial(landing_company) ? 'Financial' : 'Real'} Account`);
                 } else {
                     $upgrade_msg.find('a').setVisibility(0).html('');
                 }
+            } else if (show_upgrade_msg) {
+                $('#virtual-text').parent().setVisibility(0);
+                showUpgrade('accounts', 'Open a Financial Account');
             } else {
-                let show_financial = false;
-                // also allow UK MLT client to open MF account
-                if (Client.canUpgradeGamingToFinancial(landing_company) || (Client.get('residence') === 'gb' && /^MLT/.test(Client.get('loginid')))) {
-                    show_financial = !loginid_array.some(client => client.financial);
-                }
-                if (show_financial) {
-                    $('#virtual-text').parent().setVisibility(0);
-                    showUpgrade('new_account/maltainvestws', 'Open a Financial Account');
-                } else {
-                    $upgrade_msg.setVisibility(0);
-                }
+                $upgrade_msg.setVisibility(0);
             }
         });
     };

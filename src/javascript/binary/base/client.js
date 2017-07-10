@@ -281,6 +281,17 @@ const Client = (() => {
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
+    const canUpgrade = (landing_company) => {
+        const loginid_array = Client.get('loginid_array');
+        let can_upgrade = false;
+        if (Client.get('is_virtual')) {
+            can_upgrade = !loginid_array.some(client => client.real);
+        } else if (Client.canUpgradeGamingToFinancial(landing_company)) {
+            can_upgrade = !loginid_array.some(client => client.financial);
+        }
+        return can_upgrade;
+    };
+
     return {
         init             : init,
         validateLoginid  : validateLoginid,
@@ -299,6 +310,7 @@ const Client = (() => {
         isFinancial      : isFinancial,
         shouldCompleteTax: shouldCompleteTax,
         getMT5AccountType: getMT5AccountType,
+        canUpgrade       : canUpgrade,
 
         canUpgradeGamingToFinancial : canUpgradeGamingToFinancial,
         canUpgradeVirtualToFinancial: canUpgradeVirtualToFinancial,

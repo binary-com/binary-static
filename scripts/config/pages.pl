@@ -77,6 +77,7 @@ sub all_pages {
         ['trading',                'bet/trading',      'default',    'Trusted by traders since 2000'],
         ['trading_beta',           'bet/beta/trading', 'default',    'Trusted by traders since 2000', 'ja'],
 
+        ['accounts',                     'user/accounts',               'default', 'Accounts'],
         ['new_account/japanws',          'new_account/japan',           'default', 'Real Money Account Opening', 'NOT-ja,en'],
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening', 'NOT-ja,en'],
         ['new_account/maltainvestws',    'new_account/financial',       'default', 'Financial Account Opening'],
