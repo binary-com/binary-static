@@ -96,7 +96,6 @@ const Client = (() => {
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('is_virtual', authorize.is_virtual);
         set('landing_company_name', authorize.landing_company_name);
-        set('landing_company_fullname', authorize.landing_company_fullname);
         setCurrency(authorize.currency);
     };
 
