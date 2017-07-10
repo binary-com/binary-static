@@ -77,6 +77,9 @@ const Page = (() => {
             Url.reset();
         } else {
             init();
+            if (!Login.isLoginPages()) {
+                Language.setCookie(Language.urlLang());
+            }
             Localize.forLang(Language.urlLang());
             Header.onLoad();
             Language.setCookie();

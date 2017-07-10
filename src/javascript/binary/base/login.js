@@ -25,7 +25,7 @@ const Login = (() => {
         );
     };
 
-    const isLoginPages = () => /logged_inws/.test(document.URL);
+    const isLoginPages = () => /logged_inws/i.test(document.URL);
 
     return {
         redirectToLogin: redirectToLogin,

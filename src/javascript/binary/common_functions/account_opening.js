@@ -20,24 +20,30 @@ const AccountOpening = (() => {
         return false;
     };
 
-    const redirectAccount = () => {
-        BinarySocket.wait('landing_company').then((response) => {
-            const is_virtual = Client.get('is_virtual');
-            const landing_company = response.landing_company;
+    const redirectAccount = () => { // eslint-disable-line consistent-return
+        const response_landing_company = State.get(['response', 'landing_company']);
+        if (response_landing_company) {
+            return redirect(response_landing_company);
+        }
+        BinarySocket.wait('landing_company').then(response => redirect(response));
+    };
 
-            // redirect client to correct account opening page if needed
-            if (!State.get('is_financial_opening') &&
-                ((!is_virtual && Client.canUpgradeGamingToFinancial(landing_company)) ||
-                Client.canUpgradeVirtualToFinancial(landing_company))) {
-                BinaryPjax.load('new_account/maltainvestws');
-                return false;
-            }
-            if (!State.get('is_japan_opening') && is_virtual && Client.canUpgradeVirtualToJapan(landing_company)) {
-                BinaryPjax.load('new_account/japanws');
-                return false;
-            }
-            return true;
-        });
+    const redirect = (response) => {
+        const is_virtual = Client.get('is_virtual');
+        const landing_company = response.landing_company;
+
+        // redirect client to correct account opening page if needed
+        if (!State.get('is_financial_opening') &&
+            ((!is_virtual && Client.canUpgradeGamingToFinancial(landing_company)) ||
+            Client.canUpgradeVirtualToFinancial(landing_company))) {
+            BinaryPjax.load('new_account/maltainvestws');
+            return false;
+        }
+        if (!State.get('is_japan_opening') && is_virtual && Client.canUpgradeVirtualToJapan(landing_company)) {
+            BinaryPjax.load('new_account/japanws');
+            return false;
+        }
+        return true;
     };
 
     const populateForm = (form_id, getValidations) => {
@@ -60,7 +66,7 @@ const AccountOpening = (() => {
 
             const $options = $('<div/>');
             residence_list.forEach((res) => {
-                $options.append(makeOption(res.text, res.value));
+                $options.append(makeOption({ text: res.text, value: res.value }));
 
                 if (residence_value === res.value) {
                     residence_text = res.text;
