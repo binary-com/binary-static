@@ -68,7 +68,7 @@ const DepositWithdraw = (() => {
     };
 
     const showCurrency = () => {
-        const currencies = State.get(['response', 'payout_currencies', 'payout_currencies']);
+        const currencies = State.getResponse('payout_currencies');
         const $currencies = $('<div/>');
         currencies.forEach((c) => {
             $currencies.append(makeOption({ text: c, value: c }));

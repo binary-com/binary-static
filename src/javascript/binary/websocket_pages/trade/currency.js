@@ -13,7 +13,7 @@ const displayCurrencies = () => {
 
     const target = document.getElementById('currency');
     const fragment = document.createDocumentFragment();
-    const currencies = State.get(['response', 'payout_currencies', 'payout_currencies']);
+    const currencies = State.getResponse('payout_currencies');
 
     if (!target) {
         return;

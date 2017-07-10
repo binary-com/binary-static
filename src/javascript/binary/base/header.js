@@ -104,7 +104,7 @@ const Header = (() => {
 
     const upgradeMessageVisibility = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
-            const landing_company = State.get(['response', 'landing_company', 'landing_company']);
+            const landing_company = State.getResponse('landing_company');
             const loginid_array = Client.get('loginid_array');
 
             const $upgrade_msg = $('.upgrademessage');
@@ -124,7 +124,7 @@ const Header = (() => {
                     .find('a')
                     .setVisibility(0);
 
-                const jp_account_status = (State.get(['response', 'get_settings', 'get_settings', 'jp_account_status']) || {}).status;
+                const jp_account_status = (State.getResponse('get_settings.jp_account_status') || {}).status;
                 if (jp_account_status) {
                     const has_disabled_jp = jpClient() && loginid_array.some(client => client.real && client.disabled);
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
@@ -262,7 +262,7 @@ const Header = (() => {
                 checkStatus(check_statuses_virtual);
             } else {
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
-                    get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
+                    get_account_status = State.getResponse('get_account_status') || {};
                     status = get_account_status.status;
                     if (costarica_landing_company && +Client.get('balance') < 200) {
                         BinarySocket.wait('mt5_login_list').then((response) => {

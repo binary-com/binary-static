@@ -15,7 +15,7 @@ const TNCApproval = (() => {
     };
 
     const display = () => {
-        const landing_company = State.get(['response', 'authorize', 'authorize', 'landing_company_fullname']);
+        const landing_company = State.getResponse('authorize.landing_company_fullname');
         if (!landing_company) return;
 
         const $container = $('#tnc_container');

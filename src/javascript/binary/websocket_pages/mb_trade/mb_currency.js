@@ -17,7 +17,7 @@ const MBDisplayCurrencies = () => {
     const $currency  = $('.trade_form #currency');
     const $list      = $currency.find('.list');
     const $current   = $currency.find('.current');
-    const currencies = State.get(['response', 'payout_currencies', 'payout_currencies']);
+    const currencies = State.getResponse('payout_currencies');
     const jp_client  = jpClient();
     let def_value;
 

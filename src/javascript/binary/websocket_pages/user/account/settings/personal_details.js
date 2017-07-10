@@ -276,7 +276,7 @@ const PersonalDetails = (() => {
         currency = Client.get('currency');
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
-            get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
+            get_settings_data = State.getResponse('get_settings');
             getDetailsResponse(get_settings_data);
             if (!is_virtual || !residence) {
                 $('#btn_update').setVisibility(1);

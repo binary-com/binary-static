@@ -17,7 +17,7 @@ const CashierJP = (() => {
         BinarySocket.wait('get_settings').then(() => {
             $container.setVisibility(1);
             if (action === 'deposit') {
-                $('#name_id').text(`${(Client.get('loginid') || 'JP12345')} ${(State.get(['response', 'get_settings', 'get_settings', 'first_name']) || 'Joe Bloggs')}`);
+                $('#name_id').text(`${(Client.get('loginid') || 'JP12345')} ${(State.getResponse('get_settings.first_name') || 'Joe Bloggs')}`);
             } else if (action === 'withdraw') {
                 $('#id123-control22598118').val(Client.get('loginid'));
                 $('#id123-control22598060').val(Client.get('email'));

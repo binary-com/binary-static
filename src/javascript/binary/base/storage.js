@@ -61,6 +61,20 @@ InScriptStore.prototype = {
 };
 
 const State = new InScriptStore();
+State.prototype = InScriptStore.prototype;
+/**
+ * Shorthand function to get values from response object of State
+ *
+ * @param {String} path
+ *     e.g. getResponse('authorize.currency') == get(['response', 'authorize', 'authorize', 'currency'])
+ */
+State.prototype.getResponse = function(path) {
+    if (typeof path === 'string') {
+        const keys = path.split('.');
+        path = ['response', keys[0]].concat(keys);
+    }
+    return this.get(path);
+};
 State.set('response', {});
 
 const CookieStorage = function(cookie_name, cookie_domain) {
@@ -134,8 +148,6 @@ if (!SessionStore) {
 
 module.exports = {
     isStorageSupported: isStorageSupported,
-    Store             : Store,
-    InScriptStore     : InScriptStore,
     CookieStorage     : CookieStorage,
     State             : State,
     SessionStore      : SessionStore,

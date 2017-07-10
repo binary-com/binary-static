@@ -101,8 +101,8 @@ const Client = (() => {
 
     const shouldAcceptTnc = () => {
         if (get('is_virtual')) return false;
-        const website_tnc_version = State.get(['response', 'website_status', 'website_status', 'terms_conditions_version']);
-        const get_settings = State.get(['response', 'get_settings', 'get_settings']);
+        const website_tnc_version = State.getResponse('website_status.terms_conditions_version');
+        const get_settings = State.getResponse('get_settings');
         return get_settings.hasOwnProperty('client_tnc_status') && get_settings.client_tnc_status !== website_tnc_version;
     };
 
@@ -264,7 +264,7 @@ const Client = (() => {
     };
 
     const currentLandingCompany = () => {
-        const landing_company_response = State.get(['response', 'landing_company', 'landing_company']) || {};
+        const landing_company_response = State.getResponse('landing_company') || {};
         let client_landing_company = {};
         Object.keys(landing_company_response).forEach((key) => {
             if (client_object.landing_company_name === landing_company_response[key].shortcode) {
@@ -276,7 +276,7 @@ const Client = (() => {
 
     const isFinancial = () => (client_object.loginid_array.find(obj => (obj.id === get('loginid'))) || {}).financial;
 
-    const shouldCompleteTax = () => isFinancial() && !/crs_tin_information/.test((State.get(['response', 'get_account_status', 'get_account_status']) || {}).status);
+    const shouldCompleteTax = () => isFinancial() && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
