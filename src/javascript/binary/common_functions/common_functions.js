@@ -1,20 +1,9 @@
-const Cookies = require('../../lib/js-cookie');
+const Cookies = require('js-cookie');
 
-const emailRot13 = str => (
-    str.replace(/[a-zA-Z]/g, (c) => {
-        const c2 = c.charCodeAt(0) + 13;
-        return String.fromCharCode((c <= 'Z' ? 90 : 122) >= c2 ? c2 : c2 - 26);
-    })
-);
-
-// hide and show hedging value if trading purpose is set to hedging
+// show hedging value if trading purpose is set to hedging else hide it
 const detectHedging = ($purpose, $hedging) => {
     $purpose.change(() => {
-        if ($purpose.val() === 'Hedging') {
-            $hedging.setVisibility(1);
-        } else {
-            $hedging.setVisibility(0);
-        }
+        $hedging.setVisibility($purpose.val() === 'Hedging');
     });
 };
 
@@ -29,34 +18,23 @@ const jqueryuiTabsToDropdown = ($container) => {
     return $ddl;
 };
 
-// use function to generate elements and append them
-// element is select and element to append is option
-const appendTextValueChild = (element, text, value, disabled, el_class) => {
-    if (element && !element.nodeName) {
-        if (typeof element === 'string') {
-            element = document.getElementById(element);
-        } else {
-            element = undefined;
-        }
-    }
-    if (!element) return;
-    element.appendChild(makeOption(text, value, disabled, el_class));
-};
-
-const makeOption = (text, value, disabled, el_class) => {
-    const option = document.createElement('option');
-    option.text = text;
+const makeOption = (options) => {
+    const option_el = document.createElement('option');
+    option_el.text = options.text;
     // setting null value helps with detecting required error
     // on 'Please select' options
     // that have no value of their own
-    option.value = value || '';
-    if (disabled && disabled.toLowerCase() === 'disabled') {
-        option.setAttribute('disabled', 'disabled');
+    option_el.value = options.value || '';
+    if (options.is_disabled && options.is_disabled.toLowerCase() === 'disabled') {
+        option_el.setAttribute('disabled', 'disabled');
     }
-    if (el_class) {
-        option.className = el_class;
+    if (options.class) {
+        option_el.className = options.class;
     }
-    return option;
+    if (options.is_selected) {
+        option_el.setAttribute('selected', 'selected');
+    }
+    return option_el;
 };
 
 /*
@@ -101,12 +79,17 @@ const getSetElementValue = (element, text, type) => { // eslint-disable-line con
     }
 };
 
+const requireHighstock = callback => (
+    require.ensure([], (require) => {
+        const Highstock = require('highstock-release');
+        return callback(Highstock);
+    }, 'highstock')
+);
+
 module.exports = {
     getLoginToken         : () => Cookies.get('login'),
-    emailRot13            : emailRot13,
     detectHedging         : detectHedging,
     jqueryuiTabsToDropdown: jqueryuiTabsToDropdown,
-    appendTextValueChild  : appendTextValueChild,
     makeOption            : makeOption,
     isVisible             : isVisible,
     checkInput            : checkInput,
@@ -114,4 +97,5 @@ module.exports = {
     selectorExists        : selectorExists,
     elementTextContent    : (element, text) => getSetElementValue(element, text, 'textContent'),
     elementInnerHtml      : (element, text) => getSetElementValue(element, text, 'innerHTML'),
+    requireHighstock      : requireHighstock,
 };

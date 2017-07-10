@@ -37,10 +37,11 @@ sub all_pages {
         ['service-announcements',      'japan/service-announcements',  'default',    'Service Announcements', 'NOT-ja,en'],
         ['charity',                    'static/charity',               'default',    'Charity'],
 
-        ['open-source-projects',       'partners/open_source_projects',  'full_width', 'Open-Source Projects'],
-        ['partners',                   'partners/partners',              'full_width', 'Partners',              'ja'],
-        ['payment-agent',              'partners/payment_agent',         'full_width', 'Payment Agents'],
-        ['security-testing',           'partners/security_testing',      'full_width', 'Security Testing'],
+        ['open-source-projects',       'partners/open_source_projects', 'full_width', 'Open-Source Projects'],
+        ['partners',                   'partners/partners',             'full_width', 'Partners',              'ja'],
+        ['payment-agent',              'partners/payment_agent',        'full_width', 'Payment Agents'],
+        ['security-testing',           'partners/security_testing',     'full_width', 'Security Testing'],
+        ['liquidity-solutions',        'partners/liquidity_solutions',  'full_width', 'Multi-asset Liquidity Solutions'],
 
         ['get-started',                              'get_started/index',                         'get_started', 'Get Started',                      'ja'],
         ['get-started/what-is-binary-trading',       'get_started/what_is_binary_trading',        'get_started', 'Why Choose Binary Trading?',       'ja'],
@@ -72,9 +73,9 @@ sub all_pages {
         ['paymentagent/transferws',      'cashier/paymentagent_transfer',             'default', 'Payment Agent Transfer'],
         ['paymentagent/withdrawws',      'cashier/paymentagent_withdraw',             'default', 'Payment Agent Withdrawal'],
 
-        ['multi_barriers_trading', 'bet/mb_trading',   'default', 'Trusted by traders since 2000'],
-        ['trading',                'bet/trading',      'default', 'Trusted by traders since 2000'],
-        ['trading_beta',           'bet/beta/trading', 'default', 'Trusted by traders since 2000', 'ja'],
+        ['multi_barriers_trading', 'bet/mb_trading',   'full_width', 'Trusted by traders since 2000'],
+        ['trading',                'bet/trading',      'default',    'Trusted by traders since 2000'],
+        ['trading_beta',           'bet/beta/trading', 'default',    'Trusted by traders since 2000', 'ja'],
 
         ['new_account/japanws',          'new_account/japan',           'default', 'Real Money Account Opening', 'NOT-ja,en'],
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening', 'NOT-ja,en'],
@@ -88,6 +89,7 @@ sub all_pages {
 
         ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/video-facility',              'user/video_facility',                  'default',    'Video Room Facility'],
+        ['user/ico-subscribe',               'user/ico_subscribe',                   'default',    'Subscribe to ICO',        'ja'],
         ['user/lost_passwordws',             'user/lost_password',                   'default',    'Password Reset'],
         ['user/metatrader',                  'user/metatrader',                      'full_width', 'MetaTrader account management'],
         ['user/portfoliows',                 'user/portfolio',                       'default',    'Portfolio'],

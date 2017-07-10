@@ -2,7 +2,6 @@ const moment                = require('moment');
 const TradingAnalysis       = require('./analysis');
 const Barriers              = require('./barriers');
 const commonTrading         = require('./common');
-const chartFrameSource      = require('./charts/chart_frame').chartFrameSource;
 const Defaults              = require('./defaults');
 const Durations             = require('./duration');
 const GetTicks              = require('./get_ticks');
@@ -47,7 +46,6 @@ const TradingEvents = (() => {
             Defaults.remove('formname');
             Defaults.remove('underlying');
             Process.processMarket();
-            chartFrameSource();
         };
 
         const market_nav_element = document.getElementById('contract_markets');
@@ -91,7 +89,6 @@ const TradingEvents = (() => {
         if (underlying_element) {
             underlying_element.addEventListener('change', (e) => {
                 if (e.target) {
-                    chartFrameSource();
                     commonTrading.showFormOverlay();
                     commonTrading.showPriceOverlay();
                     if (e.target.selectedIndex < 0) {
@@ -100,7 +97,6 @@ const TradingEvents = (() => {
                     const underlying = e.target.value;
                     Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                     Defaults.set('underlying', underlying);
-                    TradingAnalysis.request();
 
                     Tick.clean();
 
@@ -425,10 +421,12 @@ const TradingEvents = (() => {
             }));
         }
 
-        // For verifying there are 2 digits after decimal
-        const isStandardFloat = (value => (
-            !isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2
-        ));
+        // Verify number of decimal places doesn't exceed the allowed decimal places according to the currency
+        const isStandardFloat = value => (
+            !isNaN(value) &&
+            value % 1 !== 0 &&
+            ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > getDecimalPlaces(Defaults.get('currency'))
+        );
 
         const init_logo = document.getElementById('trading_init_progress');
         if (init_logo) {

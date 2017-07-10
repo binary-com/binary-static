@@ -20,7 +20,9 @@ const padLeft            = require('../../common_functions/string_util').padLeft
 const Purchase = (() => {
     'use strict';
 
-    let purchase_data = {};
+    let purchase_data = {},
+        payout_value,
+        cost_value;
 
     const display = (details) => {
         purchase_data = details;
@@ -74,8 +76,6 @@ const Purchase = (() => {
             elementTextContent(reference, `${localize('Your transaction reference is')} ${receipt.transaction_id}`);
 
             const currency = Client.get('currency');
-            let payout_value,
-                cost_value;
 
             if (passthrough.basis === 'payout') {
                 payout_value = passthrough.amount;
@@ -85,11 +85,9 @@ const Purchase = (() => {
                 payout_value = receipt.payout;
             }
             const profit_value = formatMoney(currency, payout_value - cost_value);
-            cost_value = formatMoney(currency, cost_value);
-            payout_value = formatMoney(currency, payout_value);
 
-            elementInnerHtml(payout, `${localize('Potential Payout')} <p>${payout_value}</p>`);
-            elementInnerHtml(cost,   `${localize('Total Cost')} <p>${cost_value}</p>`);
+            elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
+            elementInnerHtml(cost,   `${localize('Total Cost')} <p>${formatMoney(currency, cost_value)}</p>`);
             elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
 
             updateValues.updateContractBalance(receipt.balance_after);
@@ -232,13 +230,13 @@ const Purchase = (() => {
                         (pass_contract_type === 'DIGITUNDER' && +last_digit < pass_barrier)
                     ) {
                         spots.className = 'won';
-                        final_price = $('#contract_purchase_payout').find('p').text();
-                        pnl = $('#contract_purchase_cost').find('p').text();
+                        final_price = payout_value;
+                        pnl = cost_value;
                         contract_status = localize('This contract won');
                     } else {
                         spots.className = 'lost';
                         final_price = 0;
-                        pnl = -$('#contract_purchase_cost').find('p').text();
+                        pnl = -cost_value;
                         contract_status = localize('This contract lost');
                     }
 

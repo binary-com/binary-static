@@ -1,16 +1,18 @@
-const BinarySocket         = require('../socket');
-const Client               = require('../../base/client');
-const localize             = require('../../base/localize').localize;
-const template             = require('../../base/utility').template;
-const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
-const FormManager          = require('../../common_functions/form_manager');
+const BinarySocket     = require('../socket');
+const Client           = require('../../base/client');
+const localize         = require('../../base/localize').localize;
+const template         = require('../../base/utility').template;
+const makeOption       = require('../../common_functions/common_functions').makeOption;
+const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
+const FormManager      = require('../../common_functions/form_manager');
 
 const DepositWithdraw = (() => {
     'use strict';
 
     let cashier_type;
     const container = '#deposit_withdraw';
-    let verification_code;
+    let verification_code,
+        deposit_refresh_timeout;
 
     const init = (cashier_password) => {
         if (cashier_password) {
@@ -26,9 +28,17 @@ const DepositWithdraw = (() => {
     };
 
     const initDepositWithdraw = (response) => {
-        if (response && response.error) {
-            showError('custom_error', response.error.message);
-        } else if (cashier_type === 'deposit') {
+        if (response) {
+            if (response.error) {
+                showError('custom_error', response.error.message);
+                return;
+            }
+            if (response.msg_type === 'set_account_currency') {
+                Client.setCurrency(response.echo_req.set_account_currency);
+            }
+        }
+
+        if (cashier_type === 'deposit') {
             getCashierURL();
         } else if (cashier_type === 'withdraw') {
             hideAll('#messages');
@@ -60,9 +70,11 @@ const DepositWithdraw = (() => {
 
     const showCurrency = () => {
         const currencies = Client.get('currencies').split(',');
+        const $currencies = $('<div/>');
         currencies.forEach((c) => {
-            appendTextValueChild('select_currency', c, c);
+            $currencies.append(makeOption({ text: c, value: c }));
         });
+        $('#select_currency').html($currencies.html());
         showMessage('choose_currency_message');
         const currency_form_id = '#frm_currency';
         $(currency_form_id).setVisibility(1);
@@ -82,6 +94,12 @@ const DepositWithdraw = (() => {
         } else if (/deposit/.test(hash_value)) {
             cashier_type = 'deposit';
             $heading.text(localize('Deposit'));
+            if (isCryptocurrency(Client.get('currency'))) {
+                if (deposit_refresh_timeout) clearTimeout(deposit_refresh_timeout);
+                deposit_refresh_timeout = setTimeout(() => {
+                    window.location.reload();
+                }, 300000);
+            }
         }
     };
 
@@ -210,8 +228,13 @@ const DepositWithdraw = (() => {
         });
     };
 
+    const onUnload = () => {
+        if (deposit_refresh_timeout) clearTimeout(deposit_refresh_timeout);
+    };
+
     return {
-        onLoad: onLoad,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 

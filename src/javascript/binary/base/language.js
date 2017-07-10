@@ -1,5 +1,5 @@
+const Cookies       = require('js-cookie');
 const CookieStorage = require('./storage').CookieStorage;
-const Cookies       = require('../../lib/js-cookie');
 
 const Language = (() => {
     'use strict';
@@ -25,7 +25,7 @@ const Language = (() => {
     const setCookieLanguage = (lang) => {
         if (!Cookies.get('language') || lang) {
             const cookie = new CookieStorage('language');
-            cookie.write(lang || getLanguage());
+            cookie.write((lang || getLanguage()).toUpperCase());
         }
     };
 

@@ -9,7 +9,7 @@ const updatePurchaseStatus = (final_price, pnl, contract_status) => {
     const $profit = $('#contract_purchase_profit');
     const currency = Client.get('currency');
 
-    $payout.html($('<div/>', { text: localize('Buy price') }).append($('<p/>', { text: formatMoney(currency, pnl) })));
+    $payout.html($('<div/>', { text: localize('Buy price') }).append($('<p/>', { text: formatMoney(currency, Math.abs(pnl)) })));
     $cost.html($('<div/>', { text: localize('Final price') }).append($('<p/>', { text: formatMoney(currency, final_price) })));
     if (!final_price) {
         $profit.html($('<div/>', { text: localize('Loss') }).append($('<p/>', { text: formatMoney(currency, pnl) })));

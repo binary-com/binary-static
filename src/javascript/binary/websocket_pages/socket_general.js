@@ -1,3 +1,4 @@
+const Cookies              = require('js-cookie');
 const BinarySocket         = require('./socket');
 const updateBalance        = require('./user/update_balance');
 const Client               = require('../base/client');
@@ -6,9 +7,8 @@ const GTM                  = require('../base/gtm');
 const Header               = require('../base/header');
 const Login                = require('../base/login');
 const getPropertyValue     = require('../base/utility').getPropertyValue;
-const jpResidence          = require('../common_functions/country_base').jpResidence;
+const setCurrencies        = require('../common_functions/currency').setCurrencies;
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
-const Cookies              = require('../../lib/js-cookie');
 
 const BinarySocketGeneral = (() => {
     'use strict';
@@ -26,16 +26,19 @@ const BinarySocketGeneral = (() => {
 
     const onMessage = (response) => {
         Header.hideNotification('CONNECTION_ERROR');
-        let is_available;
+        let is_available = false;
         switch (response.msg_type) {
             case 'website_status':
-                is_available = /^up$/i.test(getPropertyValue(response, ['website_status', 'site_status']));
-                if (is_available && !BinarySocket.availability()) {
-                    window.location.reload();
-                } else if (!is_available) {
-                    Header.displayNotification(response.website_status.message, true);
+                if (response.website_status) {
+                    is_available = /^up$/i.test(response.website_status.site_status);
+                    if (is_available && !BinarySocket.availability()) {
+                        window.location.reload();
+                    } else if (!is_available) {
+                        Header.displayNotification(response.website_status.message, true);
+                    }
                 }
                 BinarySocket.availability(is_available);
+                setCurrencies(response.website_status);
                 break;
             case 'authorize':
                 if (response.error) {
@@ -58,10 +61,6 @@ const BinarySocketGeneral = (() => {
                         setResidence(response.authorize.country || Cookies.get('residence'));
                         if (!Client.get('is_virtual')) {
                             BinarySocket.send({ get_self_exclusion: 1 });
-                            if (!jpResidence()) {
-                                // TODO: remove this when back-end adds it as a status to get_account_status
-                                BinarySocket.send({ get_financial_assessment: 1 });
-                            }
                         }
                     }
                     BinarySocket.sendBuffered();

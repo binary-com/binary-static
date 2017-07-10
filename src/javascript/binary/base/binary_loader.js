@@ -53,7 +53,7 @@ const BinaryLoader = (() => {
     };
 
     const error_messages = {
-        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [Login.loginUrl()]),
+        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [`${'java'}${'script:;'}`]),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
     };
@@ -73,22 +73,33 @@ const BinaryLoader = (() => {
                         } else if (config.only_real && Client.get('is_virtual')) {
                             displayMessage(error_messages.only_real);
                         } else {
-                            active_script.onLoad();
+                            loadActiveScript();
                         }
                     });
             }
         } else if (config.not_authenticated && Client.isLoggedIn()) {
             BinaryPjax.load(defaultRedirectUrl(), true);
         } else {
-            active_script.onLoad();
+            loadActiveScript();
         }
         BinarySocket.setOnDisconnect(active_script.onDisconnect);
+    };
+
+    const loadActiveScript = () => {
+        if (Login.isLoginPages()) {
+            active_script.onLoad();
+        } else {
+            BinarySocket.wait('website_status').then(() => {
+                active_script.onLoad();
+            });
+        }
     };
 
     const displayMessage = (message) => {
         const $content = container.find('#content .container');
         $content.html($('<div/>', { class: 'logged_out_title_container', html: $content.find('h1')[0] }))
             .append($('<p/>', { class: 'center-text notice-msg', html: localize(message) }));
+        $content.find('a').on('click', () => { Login.redirectToLogin(); });
     };
 
     return {

@@ -4,7 +4,7 @@ css:
   - 'cssmin'
 
 js:
-  - 'webpack'
+  - 'webpack:build'
 
 test:
   - 'stylelint'
@@ -29,14 +29,15 @@ deploy:
   - 'gh-pages:main'
 
 serve:
-  - 'webpack'
   - 'connect:livereload'
-  - 'watch'
+  - 'concurrent:serve'
 
 livereload:
-  - 'default'
+  - 'test'
+  - 'css'
+  - 'copy'
   - 'connect:livereload'
-  - 'watch'
+  - 'concurrent:serve'
 
 custom:
   - 'clean'

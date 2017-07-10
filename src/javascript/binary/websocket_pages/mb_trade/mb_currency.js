@@ -1,6 +1,7 @@
+const MBContract     = require('./mb_contract');
 const MBDefaults     = require('./mb_defaults');
 const Client         = require('../../base/client');
-const State          = require('../../base/storage').State;
+const localize       = require('../../base/localize').localize;
 const jpClient       = require('../../common_functions/country_base').jpClient;
 const formatCurrency = require('../../common_functions/currency').formatCurrency;
 
@@ -10,43 +11,42 @@ const formatCurrency = require('../../common_functions/currency').formatCurrency
  * It process 'socket.send({payout_currencies:1})` response
  * and display them
  */
-const MBDisplayCurrencies = (selected, show_class) => {
+const MBDisplayCurrencies = () => {
     'use strict';
 
-    const target = document.getElementById('currency');
-    const fragment =  document.createDocumentFragment();
+    const $currency  = $('.trade_form #currency');
+    const $list      = $currency.find('.list');
+    const $current   = $currency.find('.current');
     const currencies = Client.get('currencies').split(',');
+    const jp_client  = jpClient();
+    let def_value;
 
-    if (!target) {
-        return;
-    }
-
-    while (target && target.firstChild) {
-        target.removeChild(target.firstChild);
-    }
-
-    if (currencies.length > 1 && !jpClient()) {
-        currencies.forEach((currency) => {
-            const option = document.createElement('option');
-            const content = document.createTextNode(currency);
-
-            option.setAttribute('value', currency);
-            /* if (selected && selected == key) {
-                option.setAttribute('selected', 'selected');
-            }*/
-
-            option.appendChild(content);
-            fragment.appendChild(option);
-        });
-
-        target.appendChild(fragment);
-        MBDefaults.set('currency', target.value);
+    if (!$currency.length) return;
+    $list.empty();
+    if (!jp_client) {
+        const def_curr  = MBDefaults.get('currency');
+        def_value = def_curr && currencies.indexOf(def_curr) >= 0 ? def_curr : currencies[0];
+        if (currencies.length > 1) {
+            currencies.forEach((currency) => {
+                $list.append($('<div/>', { value: currency, text: formatCurrency(currency) }));
+                if (def_value === currency) {
+                    MBContract.setCurrentItem($currency, currency);
+                }
+            });
+            $currency.css('z-index', '0');
+        }
+        $current.html(formatCurrency(def_value));
     } else {
-        const class_value = show_class ? target.getAttribute('class') : '';
-        const text_value = State.get('is_mb_trading') && jpClient() ? '✕' : formatCurrency(currencies[0]);
-        $('#currency').replaceWith($('<span/>', { id: target.getAttribute('id'), class: class_value, value: currencies[0], text: text_value }));
-        if ($('.payout-mult:visible').length === 0) $('#payout').width(40); // wider when there is free space
-        MBDefaults.set('currency', currencies[0]);
+        def_value = 'JPY';
+        $current.html($('<span/>', { text: localize('Lots'), 'data-balloon': localize('Payout per lot = ¥1,000') }));
+    }
+    $currency.attr('value', def_value);
+    MBDefaults.set('currency', def_value);
+    // if there is no currency drop down, remove hover style from currency
+    if (!$list.children().length) {
+        $current.hover(function() {
+            $(this).css({ 'background-color': '#f2f2f2', cursor: 'auto' });
+        });
     }
 };
 

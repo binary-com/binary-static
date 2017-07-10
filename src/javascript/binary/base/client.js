@@ -1,13 +1,14 @@
+const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const CookieStorage      = require('./storage').CookieStorage;
 const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
+const getPropertyValue   = require('./utility').getPropertyValue;
 const getLoginToken      = require('../common_functions/common_functions').getLoginToken;
 const jpClient           = require('../common_functions/country_base').jpClient;
 const BinarySocket       = require('../websocket_pages/socket');
 const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
-const Cookies            = require('../../lib/js-cookie');
 
 const Client = (() => {
     'use strict';
@@ -43,6 +44,8 @@ const Client = (() => {
         set('email',     Cookies.get('email'));
         set('loginid',   Cookies.get('loginid'));
         set('residence', Cookies.get('residence'));
+
+        backwardCompatibility();
     };
 
     const isLoggedIn = () => (
@@ -94,7 +97,7 @@ const Client = (() => {
         set('is_virtual', authorize.is_virtual);
         set('landing_company_name', authorize.landing_company_name);
         set('landing_company_fullname', authorize.landing_company_fullname);
-        set('currency', authorize.currency);
+        setCurrency(authorize.currency);
     };
 
     const shouldAcceptTnc = () => {
@@ -117,16 +120,32 @@ const Client = (() => {
         }
     };
 
-    const getToken = (client_loginid) => {
-        let token;
+    const getAccountObj = client_loginid => (getPropertyValue(JSON.parse(get('tokens') || '{}'), [client_loginid]) || {});
+
+    const getToken = client_loginid => getPropertyValue(getAccountObj(client_loginid), ['token']);
+
+    const setCurrency = (currency) => {
         const tokens = get('tokens');
-        if (client_loginid && tokens) {
-            const tokens_obj = JSON.parse(tokens);
-            if (tokens_obj.hasOwnProperty(client_loginid) && tokens_obj[client_loginid]) {
-                token = tokens_obj[client_loginid];
-            }
+        const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
+        const account_obj = tokens_obj[get('loginid')];
+        if (!account_obj.currency) {
+            account_obj.currency = currency;
+            set('tokens', JSON.stringify(tokens_obj));
         }
-        return token;
+        set('currency', currency);
+    };
+
+    const backwardCompatibility = () => {
+        // upgrade client.tokens structure to the new one (for clients which already are logged-in with the old version)
+        const account_obj = getAccountObj(get('loginid'));
+        if (typeof account_obj !== 'object') {
+            const tokens = get('tokens');
+            const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
+            Object.keys(tokens_obj).forEach((loginid) => {
+                tokens_obj[loginid] = { token: tokens_obj[loginid] };
+            });
+            set('tokens', JSON.stringify(tokens_obj));
+        }
     };
 
     const addToken = (client_loginid, token) => {
@@ -135,7 +154,7 @@ const Client = (() => {
         }
         const tokens = get('tokens');
         const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
-        tokens_obj[client_loginid] = token;
+        tokens_obj[client_loginid] = { token: token, currency: '' };
         set('tokens', JSON.stringify(tokens_obj));
         return true;
     };
@@ -271,6 +290,7 @@ const Client = (() => {
         shouldAcceptTnc  : shouldAcceptTnc,
         clear            : clear,
         getToken         : getToken,
+        setCurrency      : setCurrency,
         setCookie        : setCookie,
         processNewAccount: processNewAccount,
         isLoggedIn       : isLoggedIn,

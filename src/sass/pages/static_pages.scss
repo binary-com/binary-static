@@ -32,7 +32,7 @@
     }
 }
 
-.payment-agent .faded {
+.faded {
     color: $COLOR_GRAY_SHADE;
     font-size: $FONT_SIZE_N;
     margin-bottom: 0;
@@ -230,4 +230,49 @@
 
 body #not_authenticated_financial ul.checked > li {
     list-style: none;
+}
+
+.ico-subscribe-content {
+    .border-gray {
+        border: 1px solid $COLOR_GRAY;
+    }
+    .border-radius {
+        border-radius: $BORDER_RADIUS;
+    }
+    .margin-top {
+        margin-top: 4px;
+    }
+    #frm_ico_bid {
+        input {
+            padding: 2px 3px;
+        }
+        button, input {
+            width: 100%;
+        }
+        .inactive {
+            color: $COLOR_GRAY;
+            background: $COLOR_LIGHT_GRAY;
+
+            &:hover {
+                cursor: auto;
+            }
+        }
+    }
+    #portfolio th.details {
+        width: auto;
+    }
+}
+
+.liquidity-solutions-content {
+    .box {
+        border: 1px solid $COLOR_GRAY_SHADE;
+        min-height: 256px;
+
+        img {
+            height: 48px;
+        }
+    }
+    .white-bg {
+        background-color: $COLOR_WHITE;
+    }
 }

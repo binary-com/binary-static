@@ -117,7 +117,6 @@ const ViewPopupUI = (() => {
             handle: dragHandle,
             scroll: false,
         });
-        $(dragHandle).disableSelection();
         repositionConfirmation();
         $(window).resize(() => { repositionConfirmation(); });
         return con;
