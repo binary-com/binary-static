@@ -25,7 +25,7 @@ const AccountOpening = (() => {
         if (response_landing_company) {
             return redirect(response_landing_company);
         }
-        BinarySocket.wait('landing_company').then(redirect);
+        BinarySocket.wait('landing_company').then(response => redirect(response));
     };
 
     const redirect = (response) => {
