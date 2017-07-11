@@ -28,27 +28,27 @@ describe('AccountOpening', () => {
         it('will redirect virtual client from Germany to MF page', () => {
             State.set(['response', 'landing_company'], landing_company_de);
             Client.set('is_virtual', 1);
-            expect(AccountOpening.redirectAccount()).to.eq(false);
+            expect(AccountOpening.redirectAccount()).to.eq(true);
         });
         it('will redirect gaming client to MF page', () => {
             Client.set('is_virtual', 0);
-            expect(AccountOpening.redirectAccount()).to.eq(false);
+            expect(AccountOpening.redirectAccount()).to.eq(true);
         });
         it('will not redirect client who is already on MF page to MF page again', () => {
             State.set('is_financial_opening', 1);
-            expect(AccountOpening.redirectAccount()).to.eq(true);
+            expect(AccountOpening.redirectAccount()).to.eq(false);
         });
         State.set('is_financial_opening', 0);
 
         it('will redirect virtual client from Japan to JP page', () => {
             State.set(['response', 'landing_company'], landing_company_jp);
             Client.set('is_virtual', 1);
-            expect(AccountOpening.redirectAccount()).to.eq(false);
+            expect(AccountOpening.redirectAccount()).to.eq(true);
         });
 
         it('will not redirect other clients to MF or JP page', () => {
             State.set(['response', 'landing_company'], landing_company_id);
-            expect(AccountOpening.redirectAccount()).to.eq(true);
+            expect(AccountOpening.redirectAccount()).to.eq(false);
         });
     });
 });
