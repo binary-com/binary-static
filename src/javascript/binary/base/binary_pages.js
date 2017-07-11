@@ -50,6 +50,7 @@ const JapanAccOpening            = require('../websocket_pages/user/new_account/
 const RealAccOpening             = require('../websocket_pages/user/new_account/real_acc_opening');
 const VirtualAccOpening          = require('../websocket_pages/user/new_account/virtual_acc_opening');
 const ResetPassword              = require('../websocket_pages/user/reset_password');
+const SetCurrency                = require('../websocket_pages/user/set_currency');
 const TNCApproval                = require('../websocket_pages/user/tnc_approval');
 
 const CashierJP     = require('../../binary_japan/cashier');
@@ -112,6 +113,7 @@ const pages_config = {
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
+    'set-currency'           : { module: SetCurrency,                is_authenticated: true },
     'terms-and-conditions'   : { module: TermsAndConditions },
     'terms-and-conditions-jp': { module: TermsAndConditions },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },

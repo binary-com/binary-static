@@ -1,0 +1,24 @@
+<div class="center-text">
+    <img src="[% request.url_for('images/pages/set_currency/account-created.svg') %]" />
+    <h1>[% l("Congratulations!") %]</h1>
+    <p>[% l("You have successfully created your account!") %]</p>
+    <p>[% l("Please select currency for this account:") %]</p>
+</div>
+
+<div class="center-text">
+    <form class="gr-7 gr-centered" id="frm_set_currency">
+        <div class="gr-row gr-row-align-center gr-padding-20 gr-parent" id="currency_list"></div>
+        <p class="invisible error-msg"></p>
+        <button type="submit">[% l('Confirm') %]</button>
+    </form>
+</div>
+
+<div class="faded">
+    <p>[% l('Disclaimer:') %]</p>
+    <ol>
+        <li>[% l('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque.') %]</li>
+        <li>[% l('Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis.') %]</li>
+        <li>[% l('Curabitur lobortis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim.') %]</li>
+        <li>[% l('In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget.') %]</li>
+    </ol>
+</div>

@@ -286,3 +286,24 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
 }
+
+#currency_list {
+    > div {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+        padding: 15px;
+        background-image: url('../images/pages/set_currency/tick-normal.svg');
+        background-repeat: no-repeat;
+        background-position: 115px 4px;
+
+        &:hover {
+            cursor: pointer;
+        }
+        &.selected {
+            border: 1px solid $COLOR_BLACK;
+            background-image: url('../images/pages/set_currency/tick-selected.svg');
+        }
+    }
+    .currency_wrapper > div:last-child {
+        margin-top: 10px;
+    }
+}

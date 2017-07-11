@@ -2,7 +2,6 @@ const BinarySocket      = require('../socket');
 const Client            = require('../../base/client');
 const localize          = require('../../base/localize').localize;
 const urlFor            = require('../../base/url').urlFor;
-const getPropertyValue  = require('../../base/utility').getPropertyValue;
 const toTitleCase       = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
@@ -39,7 +38,7 @@ const Accounts = (() => {
             financial: type === 'financial',
         };
         const market_text = getAvailableMarkets(current_account);
-        const landing_company_object = getLandingCompanyObject(current_account);
+        const landing_company_object = Client.getLandingCompanyObject(current_account, landing_company);
         const currencies = landing_company_object.legal_allowed_currencies.join(', ');
 
         $tbody_new_accounts
@@ -94,20 +93,8 @@ const Accounts = (() => {
         });
     };
 
-    const getLandingCompanyObject = (current_account) => {
-        let landing_company_object;
-        if (current_account.financial) {
-            landing_company_object = getPropertyValue(landing_company, 'financial_company');
-        } else if (current_account.real) {
-            landing_company_object = getPropertyValue(landing_company, 'gaming_company');
-        } else {
-            landing_company_object = $.extend({}, getPropertyValue(landing_company, 'financial_company'), getPropertyValue(landing_company, 'gaming_company'));
-        }
-        return landing_company_object || {};
-    };
-
     const getAvailableMarkets = (current_account) => {
-        const landing_company_object = getLandingCompanyObject(current_account);
+        const landing_company_object = Client.getLandingCompanyObject(current_account, landing_company);
         let market_array = landing_company_object.legal_allowed_markets || '';
         if (typeof market_array === 'object' && market_array.length) {
             market_array = market_array.map(market => getMarketName(market)).filter((value, index, self) => value && self.indexOf(value) === index).join(', ');

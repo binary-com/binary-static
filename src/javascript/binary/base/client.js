@@ -3,6 +3,7 @@ const moment             = require('moment');
 const CookieStorage      = require('./storage').CookieStorage;
 const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
+const urlFor             = require('./url').urlFor;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const getPropertyValue   = require('./utility').getPropertyValue;
 const getLoginToken      = require('../common_functions/common_functions').getLoginToken;
@@ -181,7 +182,7 @@ const Client = (() => {
         localStorage.setItem('GTM_new_account', '1');
         localStorage.setItem('active_loginid', client_loginid);
         RealityCheckData.clear();
-        window.location.href = defaultRedirectUrl(); // need to redirect not using pjax
+        window.location.href = jpClient() ? defaultRedirectUrl() : urlFor('set-currency'); // need to redirect not using pjax
     };
 
     const hasShortCode = (data, code) => ((data || {}).shortcode === code);
@@ -292,6 +293,18 @@ const Client = (() => {
         return can_upgrade;
     };
 
+    const getLandingCompanyObject = (current_account, landing_company) => {
+        let landing_company_object;
+        if (current_account.financial) {
+            landing_company_object = getPropertyValue(landing_company, 'financial_company');
+        } else if (current_account.real) {
+            landing_company_object = getPropertyValue(landing_company, 'gaming_company');
+        } else {
+            landing_company_object = $.extend({}, getPropertyValue(landing_company, 'financial_company'), getPropertyValue(landing_company, 'gaming_company'));
+        }
+        return landing_company_object || {};
+    };
+
     return {
         init             : init,
         validateLoginid  : validateLoginid,
@@ -318,6 +331,7 @@ const Client = (() => {
         hasGamingFinancialEnabled   : hasGamingFinancialEnabled,
         activateByClientType        : activateByClientType,
         currentLandingCompany       : currentLandingCompany,
+        getLandingCompanyObject     : getLandingCompanyObject,
     };
 })();
 
