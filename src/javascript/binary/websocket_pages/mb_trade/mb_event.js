@@ -116,7 +116,7 @@ const MBTradingEvents = (() => {
                 }
             }
             $payout.find('.current').on('click', function () {
-                old_value = +$(this).text();
+                old_value = +this.childNodes[0].nodeValue;
                 const $list = $(`#${$(this).parent().attr('id')}_list`);
                 const $sublist = $list.find('.list');
                 if ($list.hasClass(hidden_class)) {
@@ -136,7 +136,7 @@ const MBTradingEvents = (() => {
                     if (new_payout < 1 && jp_client) {
                         new_payout = 1;
                     }
-                } else if (/(ok|clear)/.test(value)) {
+                } else if (/(ok|cancel)/.test(value)) {
                     if (value === 'cancel') new_payout = old_value || 10;
                     makeListsInvisible();
                 } else {

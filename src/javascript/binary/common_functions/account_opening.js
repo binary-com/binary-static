@@ -37,13 +37,13 @@ const AccountOpening = (() => {
             ((!is_virtual && Client.canUpgradeGamingToFinancial(landing_company)) ||
             Client.canUpgradeVirtualToFinancial(landing_company))) {
             BinaryPjax.load('new_account/maltainvestws');
-            return false;
+            return true;
         }
         if (!State.get('is_japan_opening') && is_virtual && Client.canUpgradeVirtualToJapan(landing_company)) {
             BinaryPjax.load('new_account/japanws');
-            return false;
+            return true;
         }
-        return true;
+        return false;
     };
 
     const populateForm = (form_id, getValidations) => {
