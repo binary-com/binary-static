@@ -52,7 +52,7 @@ const Url = (() => {
         return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${(normalizePath(path) || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
     };
 
-    const urlForStatic = (path) => {
+    const urlForStatic = (path = '') => {
         if (!static_host || static_host.length === 0) {
             static_host = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src');
 
