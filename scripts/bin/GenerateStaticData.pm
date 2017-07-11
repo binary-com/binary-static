@@ -489,7 +489,7 @@ sub _texts {
         push @texts, localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.');
         push @texts, localize('Connection error: Please check your internet connection.');
         push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
-        push @texts, localize('The website needs storages to function properly but they are not supported/enabled on current browser. Please enable them or use another browser.');
+        push @texts, localize('[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.');
         # browser-update message
         push @texts, localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]');
 
