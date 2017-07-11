@@ -15,7 +15,7 @@ const LimitsInit = (() => {
         const el_withdrawn          = document.getElementById('already-withdraw');
         const el_withdraw_limit_agg = document.getElementById('withdrawal-limit-aggregate');
 
-        if (limits.lifetime_limit === 99999999 && limits.num_of_days_limit === 99999999) {
+        if (+limits.lifetime_limit === 99999999 && +limits.num_of_days_limit === 99999999) {
             elementTextContent(el_withdraw_limit, localize('Your account is fully authenticated and your withdrawal limits have been lifted.'));
         } else {
             let txt_withdraw_lim           = 'Your withdrawal limit is [_1] [_2] (or equivalent in other currency).',
