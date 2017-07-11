@@ -48,7 +48,6 @@ const MetaTrader                 = require('../websocket_pages/user/metatrader/m
 const FinancialAccOpening        = require('../websocket_pages/user/new_account/financial_acc_opening');
 const JapanAccOpening            = require('../websocket_pages/user/new_account/japan_acc_opening');
 const RealAccOpening             = require('../websocket_pages/user/new_account/real_acc_opening');
-const SubAccOpening              = require('../websocket_pages/user/new_account/sub_acc_opening');
 const VirtualAccOpening          = require('../websocket_pages/user/new_account/virtual_acc_opening');
 const ResetPassword              = require('../websocket_pages/user/reset_password');
 const TNCApproval                = require('../websocket_pages/user/tnc_approval');
@@ -97,7 +96,6 @@ const pages_config = {
     settingsws               : { module: Settings,                   is_authenticated: true },
     signup                   : { module: StaticPages.AffiliateSignup },
     statementws              : { module: Statement,                  is_authenticated: true },
-    sub_account              : { module: SubAccOpening,              is_authenticated: true, only_real: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage },
