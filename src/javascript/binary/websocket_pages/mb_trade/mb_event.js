@@ -136,7 +136,7 @@ const MBTradingEvents = (() => {
                     if (new_payout < 1 && jp_client) {
                         new_payout = 1;
                     }
-                } else if (/(ok|clear)/.test(value)) {
+                } else if (/(ok|cancel)/.test(value)) {
                     if (value === 'cancel') new_payout = old_value || 10;
                     makeListsInvisible();
                 } else {
