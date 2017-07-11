@@ -116,7 +116,7 @@ const MBTradingEvents = (() => {
                 }
             }
             $payout.find('.current').on('click', function () {
-                old_value = +$(this).text();
+                old_value = +this.childNodes[0].nodeValue;
                 const $list = $(`#${$(this).parent().attr('id')}_list`);
                 const $sublist = $list.find('.list');
                 if ($list.hasClass(hidden_class)) {
