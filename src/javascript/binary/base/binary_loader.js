@@ -90,7 +90,9 @@ const BinaryLoader = (() => {
             active_script.onLoad();
         } else {
             BinarySocket.wait('website_status').then(() => {
-                active_script.onLoad();
+                if (active_script && typeof active_script.onLoad === 'function') {
+                    active_script.onLoad();
+                }
             });
         }
     };
