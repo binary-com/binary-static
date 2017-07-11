@@ -182,7 +182,7 @@ const Client = (() => {
         localStorage.setItem('GTM_new_account', '1');
         localStorage.setItem('active_loginid', client_loginid);
         RealityCheckData.clear();
-        window.location.href = jpClient() ? defaultRedirectUrl() : urlFor('set-currency'); // need to redirect not using pjax
+        window.location.href = jpClient() || virtual_client ? defaultRedirectUrl() : urlFor('user/set-currency'); // need to redirect not using pjax
     };
 
     const hasShortCode = (data, code) => ((data || {}).shortcode === code);
@@ -283,9 +283,9 @@ const Client = (() => {
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
     const canUpgrade = (landing_company) => {
-        const loginid_array = Client.get('loginid_array');
+        const loginid_array = client_object.loginid_array;
         let can_upgrade = false;
-        if (Client.get('is_virtual')) {
+        if (get('is_virtual')) {
             can_upgrade = !loginid_array.some(client => client.real);
         } else if (Client.canUpgradeGamingToFinancial(landing_company)) {
             can_upgrade = !loginid_array.some(client => client.financial);

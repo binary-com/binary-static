@@ -141,13 +141,13 @@ const Header = (() => {
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    showUpgrade('accounts', `Upgrade to a ${Client.canUpgradeVirtualToFinancial(landing_company) ? 'Financial' : 'Real'} Account`);
+                    showUpgrade('user/accounts', `Upgrade to a ${Client.canUpgradeVirtualToFinancial(landing_company) ? 'Financial' : 'Real'} Account`);
                 } else {
                     $upgrade_msg.find('a').setVisibility(0).html('');
                 }
             } else if (show_upgrade_msg) {
                 $('#virtual-text').parent().setVisibility(0);
-                showUpgrade('accounts', 'Open a Financial Account');
+                showUpgrade('user/accounts', 'Open a Financial Account');
             } else {
                 $upgrade_msg.setVisibility(0);
             }

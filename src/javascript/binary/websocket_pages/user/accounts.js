@@ -2,7 +2,6 @@ const BinarySocket      = require('../socket');
 const Client            = require('../../base/client');
 const localize          = require('../../base/localize').localize;
 const urlFor            = require('../../base/url').urlFor;
-const toTitleCase       = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
     'use strict';
@@ -43,7 +42,7 @@ const Accounts = (() => {
 
         $tbody_new_accounts
             .append($('<tr/>')
-                .append($('<td/>', { text: localize(`${toTitleCase(type)} Account`) }))
+                .append($('<td/>', { text: localize(`${(type === 'real' ? 'Real' : 'Investment')} Account`) }))
                 .append($('<td/>', { text: market_text }))
                 .append($('<td/>', { text: currencies }))
                 .append($('<td/>').html($('<a/>', { class: 'button' }).html($('<span/>', { text: localize('Create') })))));

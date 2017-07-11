@@ -13,6 +13,7 @@ const SetCurrency = (() => {
     const onLoad = () => {
         if (Client.get('currency')) {
             BinaryPjax.load(defaultRedirectUrl());
+            return;
         }
         BinarySocket.wait('landing_company').then((response) => {
             const loginid_array = Client.get('loginid_array');
@@ -43,7 +44,7 @@ const SetCurrency = (() => {
                         if (response_c.error) {
                             $error.text(response_c.error.message).setVisibility(1);
                         } else {
-                            window.location.href = urlFor('accounts'); // load without pjax
+                            window.location.href = urlFor('user/accounts'); // load without pjax
                         }
                     });
                 } else {

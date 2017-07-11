@@ -77,18 +77,17 @@ sub all_pages {
         ['trading',                'bet/trading',      'default',    'Trusted by traders since 2000'],
         ['trading_beta',           'bet/beta/trading', 'default',    'Trusted by traders since 2000', 'ja'],
 
-        ['accounts',                     'user/accounts',               'default', 'Accounts'],
         ['new_account/japanws',          'new_account/japan',           'default', 'Real Money Account Opening', 'NOT-ja,en'],
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening', 'NOT-ja,en'],
         ['new_account/maltainvestws',    'new_account/financial',       'default', 'Financial Account Opening'],
         ['new_account/realws',           'new_account/real',            'default', 'Real Money Account Opening'],
         ['new_account/virtualws',        'new_account/virtual',         'default', 'Create New Account'],
-        ['set-currency',                 'user/set_currency',           'default', 'Set Currency'],
 
         ['resources',                'resources/index',         'default', 'Resources'],
         ['resources/asset_indexws',  'resources/asset_index',   'default', 'Asset Index', 'ja'],
         ['resources/market_timesws', 'resources/trading_times', 'default', 'Trading Times'],
 
+        ['user/accounts',                    'user/accounts',                        'default',    'Accounts'],
         ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/video-facility',              'user/video_facility',                  'default',    'Video Room Facility'],
         ['user/ico-subscribe',               'user/ico_subscribe',                   'default',    'Subscribe to ICO',        'ja'],
@@ -112,6 +111,7 @@ sub all_pages {
         ['user/security/self_exclusionws',   'user/security/self_exclusion',         'default',    'Self Exclusion'],
         ['user/settings/assessmentws',       'user/settings/financial_assessment',   'default',    'Financial Assessment',    'ja'],
         ['user/settings/detailsws',          'user/settings/personal_details',       'default',    'Personal Details'],
+        ['user/set-currency',                'user/set_currency',                    'default',    'Set Currency',            'ja'],
 
         ['logged_inws',                'global/logged_in',       undef],
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],

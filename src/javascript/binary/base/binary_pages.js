@@ -113,7 +113,7 @@ const pages_config = {
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
-    'set-currency'           : { module: SetCurrency,                is_authenticated: true },
+    'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true },
     'terms-and-conditions'   : { module: TermsAndConditions },
     'terms-and-conditions-jp': { module: TermsAndConditions },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
