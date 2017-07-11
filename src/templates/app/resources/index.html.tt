@@ -1,6 +1,6 @@
 [% BLOCK column %]
 <div class="gr-3 gr-8-m gr-parent[% IF ja_hide %] ja-hide[% END %]">
-    <div class="gr-8 gr-padding-10">
+    <div class="gr-7 gr-padding-10">
         <a href="[% request.url_for('resources/' _ url) %]">
             <img class="responsive" src="[% request.url_for('images/pages/resources/' _ image _ '-icon.svg') %]"/>
         </a>

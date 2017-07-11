@@ -1,7 +1,9 @@
 <div class="section-content section-3">
     <h1>[% l("Binary Options Basics") %]</h1>
     <p>[% l("Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake.") %]</p>
-    <img class="responsive" id="lga_icon_footer" src="[% request.url_for('images/pages/get-started/binary-option-basics.svg') %]"/>
+    <div class="gr-8 gr-centered">
+        <img class="responsive" id="lga_icon_footer" src="[% request.url_for('images/pages/get-started/binary-option-basics.svg') %]"/>
+    </div>
     <p>[% l("You only need to make four decisions to execute a binary contract.") %]</p>
 
     <h2>1. [% l("Choose the Underlying") %]</h2>

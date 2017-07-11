@@ -44,26 +44,26 @@
             <h1>[% l("Trading Platforms") %]</h1>
             <h2>[% l("Basic Platforms") %]</h2>
             <div class="gr-row">
-                [% INCLUDE platform image_class='gr-12 gr-7-p gr-10-m' image='trading-page' header=website_name description=l("Premier binary options trading platform")
+                [% INCLUDE platform image_class='gr-10 gr-7-p gr-10-m' image='trading-page' header=website_name description=l("Premier binary options trading platform")
                     text=l("Trade in the world’s financial markets with a simple and user-friendly online platform.")
                     url=request.url_for('trading') button_text=l("Trade Now") %]
 
-                [% INCLUDE platform image_class='gr-8 gr-5-p gr-7-m' image='tick-trade' header=l("Binary Tick Trade App") description=l("Ultra fast on-the-go trading")
+                [% INCLUDE platform image_class='gr-7 gr-5-p gr-7-m' image='tick-trade' header=l("Binary Tick Trade App") description=l("Ultra fast on-the-go trading")
                     text=l("Enjoy our fastest type of trading with our Tick Trade app, wherever you are.")
                     google_play_url='https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' %]
             </div>
             <h2>[% l("Advanced Platforms") %]</h2>
             <div class="gr-row">
-                [% INCLUDE platform image_class='gr-8 gr-5-p gr-7-m' image='metatrader' header=l("MetaTrader 5") description=l("Advanced CFD trading platform")
+                [% INCLUDE platform image_class='gr-7 gr-5-p gr-7-m' image='metatrader' header=l("MetaTrader 5") description=l("Advanced CFD trading platform")
                     text=l("Trade with a powerful interface known as the global industry standard.")
                     url='https://mt.binary.com' target='_blank' button_text=l("Try MetaTrader 5") %]
 
-                [% INCLUDE platform image_class='gr-8 gr-5-p gr-7-m' image='webtrader' header=l("Binary Webtrader") description=l("Advanced binary options trading interface")
+                [% INCLUDE platform image_class='gr-7 gr-5-p gr-7-m' image='webtrader' header=l("Binary Webtrader") description=l("Advanced binary options trading interface")
                     text=l("Monitor the movements of your favourite assets and markets at the same time.")
                     url='https://webtrader.binary.com' target='_blank' button_text=l("Try Webtrader") %]
             </div>
             <div class="gr-row">
-                [% INCLUDE platform image_class='gr-12 gr-7-p gr-10-m' image='nextgen' header=l("Binary Next-Gen") description=l("Advanced trading app for web and mobile")
+                [% INCLUDE platform image_class='gr-10 gr-7-p gr-10-m' image='nextgen' header=l("Binary Next-Gen") description=l("Advanced trading app for web and mobile")
                     text=l("Explore advanced trading features with the Next-Gen app for web and mobile.")
                     url='https://app.binary.com' target='_blank' button_text=l("Try Next-Gen")
                     google_play_url='https://play.google.com/store/apps/details?id=app.binary.com&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' %]

@@ -4,7 +4,7 @@
     }
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 960px) {
     #header ul#menu-top.smaller-font a {
         font-size: $FONT_SIZE_XS;
     }
@@ -51,6 +51,10 @@
             font-size: $FONT_SIZE_L;
         }
     }
+    .inner-padding {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -87,6 +91,10 @@
             margin-bottom: 1em;
         }
     }
+    .inner-padding {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
 }
 
 @media print {
@@ -99,6 +107,14 @@
     .center-text-t {
         &, div:first-child label {
             text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 961px) {
+    .why-us, .cashier-content, .resources-content, #explanation_image, .group-information-content, .partners-content, #settingsContainer {
+        img.responsive {
+            width: 80%;
         }
     }
 }

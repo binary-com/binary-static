@@ -54,8 +54,8 @@
         <p>[% l("Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590).") %]</p>
         <p>[% l("Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations.") %]</p>
         <p><strong>[% l("Regulators:") %]</strong></p>
-        [% INCLUDE regulator_image padding='3' padding_m='6' href="http://www.fsa.go.jp" image='images/pages/regulation/fsa-logo.png' %]
-        [% INCLUDE regulator_image padding='4' padding_m='8' href="http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon"
+        [% INCLUDE regulator_image padding='2' padding_m='6' href="http://www.fsa.go.jp" image='images/pages/regulation/fsa-logo.png' %]
+        [% INCLUDE regulator_image padding='3' padding_m='8' href="http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon"
             image='images/pages/regulation/binarykk-logo.gif' %]
         <div class="ja-hide center-text gr-padding-20 gr-child">
             <button id="visit_japan">[% l('View Japanese website') %]</button>
@@ -133,7 +133,7 @@
         <p>[% l("Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - [_1]'s Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\">view licence</a>.", website_name) %]</p>
         <p>[% l("European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd.") %]</p>
         [% INCLUDE regulator_text %]
-        [% INCLUDE regulator_image padding='4' padding_m='8' href="http://www.mga.org.mt/" image='images/pages/why-us/mga-logo2.svg' %]
+        [% INCLUDE regulator_image padding='3' padding_m='8' href="http://www.mga.org.mt/" image='images/pages/why-us/mga-logo2.svg' %]
     [% END %]
 
     [% WRAPPER box header=l("Binary (IOM) Ltd") %]

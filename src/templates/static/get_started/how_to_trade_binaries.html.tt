@@ -39,7 +39,9 @@
             <p>[% l("First, you need to set the parameters of your trade. Here's what you need to consider.") %]</p>
         </div>
 
-        <img class="responsive" src="[% request.url_for('images/pages/get-started/define-your-position.svg') %]"/>
+        <div class="gr-8 gr-centered">
+            <img class="responsive" src="[% request.url_for('images/pages/get-started/define-your-position.svg') %]"/>
+        </div>
         <ol>
             [% WRAPPER li header=l("Underlying market") description=l("Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs.") %]
                 <p>[% l("Choose from five types of markets and their respective assets:") %]</p>

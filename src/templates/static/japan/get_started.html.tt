@@ -1,8 +1,9 @@
 [% PROCESS _common/components/elements.html.tt %]
 [% BLOCK box %]
 <div class="gr-row center-text">
+    <div class="gr-1"></div>
     [% FOREACH box IN boxes %]
-        <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+        <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
             <div class="section fill-bg-color section-jp">
                 <a href="#[% box.id %]">
                     <div id="[% box.id %]-img"></div>
@@ -11,6 +12,7 @@
             </div>
         </div>
     [% END %]
+    <div class="gr-1"></div>
 </div>
 [% END %]
 

@@ -13,6 +13,7 @@ const Portfolio = (() => {
             transaction_id: c.transaction_id,
             contract_id   : c.contract_id,
             payout        : parseFloat(c.payout),
+            expiry_time   : c.expiry_time,
             longcode      : jpClient() ? toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode,
             shortcode     : c.shortcode,
             currency      : c.currency,

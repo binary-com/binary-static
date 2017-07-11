@@ -1,6 +1,6 @@
 [% BLOCK column %]
 <div class="gr-3 gr-6-m gr-parent [% class %]"[% IF id %] id="[% id %]"[% END %]>
-    <div class="gr-8 gr-padding-10">
+    <div class="gr-6 gr-padding-10">
         <a href="[% request.url_for('user/security/' _ url) %]">
             <img class="responsive" src="[% request.url_for('images/pages/settings/' _ image _ '.svg') %]">
         </a>
