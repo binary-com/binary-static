@@ -72,7 +72,8 @@ const WebtraderChart = (() => {
             timePeriod        : '1t',
             type              : 'line',
             lang              : getLanguage().toLowerCase(),
-            timezone          : `GMT+${jpClient() ? '9' : '0'}`,
+            timezoneOffset    : (jpClient() ? -9 : 0) * 60,
+            showShare         : !is_mb_trading,
         };
         chart = WebtraderCharts.chartWindow.addNewChart($('#webtrader_chart'), chart_config);
     };
