@@ -205,7 +205,7 @@
                 top: 53px;
                 z-index: 1;
                 width: 100%;
-                height: calc(100% - 53px);
+                height: calc(100% - 43px);
                 background-color: rgba(242, 242, 242, 0.5);
             }
             #loading-overlay {
@@ -253,7 +253,6 @@
                     display: inline-block;
                     width: 10px;
                     height: 15px;
-                    margin-right: 5px;
                     background-repeat: no-repeat;
                     vertical-align: middle;
 
