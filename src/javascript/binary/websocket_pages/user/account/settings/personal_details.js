@@ -209,8 +209,12 @@ const PersonalDetails = (() => {
             const $options = $('<div/>');
             const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
-                $options.append(makeOption(res.text, res.value));
-                $options_with_disabled.append(makeOption(res.text, res.value, res.disabled));
+                $options.append(makeOption({ text: res.text, value: res.value }));
+                $options_with_disabled.append(makeOption({
+                    text       : res.text,
+                    value      : res.value,
+                    is_disabled: res.disabled,
+                }));
             });
 
             if (residence) {

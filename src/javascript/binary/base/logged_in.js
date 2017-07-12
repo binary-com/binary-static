@@ -1,3 +1,4 @@
+const Cookies            = require('js-cookie');
 const Client             = require('./client');
 const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
@@ -6,7 +7,6 @@ const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
 const paramsHash         = require('./url').paramsHash;
 const isEmptyObject      = require('./utility').isEmptyObject;
-const Cookies            = require('../../lib/js-cookie');
 
 const LoggedInHandler = (() => {
     'use strict';
@@ -43,7 +43,7 @@ const LoggedInHandler = (() => {
         // redirect back
         let set_default = true;
         if (redirect_url) {
-            const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', 'home-jp'];
+            const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', 'home-jp', '404'];
             const reg = new RegExp(do_not_redirect.join('|'), 'i');
             if (!reg.test(redirect_url) && urlFor('') !== redirect_url) {
                 set_default = false;

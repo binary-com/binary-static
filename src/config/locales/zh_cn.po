@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-03 23:54-0400\n"
+"PO-Revision-Date: 2017-07-12 03:59-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -210,6 +210,9 @@ msgstr "%1 与上述所有支付代理不存在附属关系。各支付代理均
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1在哥斯达黎加还不可使用，并不受哥斯达黎加金融体系任何监管机构的监管或监督。"
 
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency."
+msgstr "%1提供高达<strong>10,000,000</strong>个公开拍卖令牌。您可使用下面的表格出价。最低出价金额是<strong>1 美元</strong> 或等值的其他货币。"
+
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 是在线二元交易行业中历史最悠久、声誉最好的佼佼者之一。"
 
@@ -281,6 +284,9 @@ msgstr "当我们代替您执行订单时，也就是说，当您依法托付我
 
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 通过以下方案提供商业伙伴关系服务。"
+
+msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
+msgstr "%1 向世界各地的机构客户提供广泛的资产市场报价和交易执行服务，包括主要货币对、现货金属、差价合约指数和受欢迎的加密货币。"
 
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "%1在管理传入订单时通过采用智能聚合方法为您提供最佳执行方案。智能聚合方法的工作原理是︰"
@@ -384,23 +390,20 @@ msgstr "《Global Banking and Finance Review》颁发的“2012年最佳固定�
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "《 eGaming Review》颁发的“年度最佳金融投注运营商”奖项"
 
-msgid "(Duration)"
-msgstr "（期限）"
-
 msgid "(One) Touch trades"
 msgstr "一触即付交易"
 
 msgid "(Sell Price - Buy Price) x Volume x Price Per Point = Profit"
 msgstr "（售出价 - 购入价） x 交易量 x 每点的价格 = 利润"
 
+msgid "(max)"
+msgstr "（最大）"
+
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "*免税：交易所获之盈利在很多国家免税，但请务必咨询专业税务顾问。"
 
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*为了利于培训和监控，所有通话将被录音"
-
-msgid ",000"
-msgstr ",000"
 
 msgid "0-1 year"
 msgstr "0-1 年"
@@ -684,11 +687,20 @@ msgstr "接受本地银行电汇"
 msgid "Acceptance"
 msgstr "接受"
 
+msgid "Access market quotes and trade execution from top-tier liquidity providers, including banks and non-banks."
+msgstr "通过顶级流动性提供商，包括银行和非银行机构访问市场报价和执行交易。"
+
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "随时随地在iOS或Android设备上使用原装应用能够程序访问市场。"
 
 msgid "Access to Personal Data"
 msgstr "个人数据访问"
+
+msgid "Access to STP trading"
+msgstr "STP 交易访问"
+
+msgid "Access to multi-asset liquidity and back-office functionality via margin accounts"
+msgstr "通过保证金账户访问多个资产的流动性和后台功能"
 
 msgid "Access to your personal data is strictly prohibited with the exception of key personnel of the Company and only as needed in the performance of their duties."
 msgstr "除非公司关键人员在执行职务时有此必要，我们严格禁止任何人访问您的个人数据。"
@@ -1245,6 +1257,9 @@ msgstr "BIEL 是在马耳他成立的公司，注册号为 C70156，公司注册
 msgid "Back"
 msgstr "返回"
 
+msgid "Back-office support"
+msgstr "后台支持"
+
 msgid "Balance"
 msgstr "余额"
 
@@ -1332,6 +1347,18 @@ msgstr "BetOnMarkets.com 于1999年推出，目前营业额达10亿美元"
 msgid "Betting system and method"
 msgstr "博彩系统和方法"
 
+msgid "Bid"
+msgstr "出价"
+
+msgid "Bid Binary ICO:"
+msgstr "出价买入Binary ICO:"
+
+msgid "Bid Price Per Token"
+msgstr "每个令牌的投标报价"
+
+msgid "Bid cancellation can be done with a 2% cancellation fee."
+msgstr "投标可以取消，但须支付2%取消费。"
+
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
 
@@ -1382,6 +1409,12 @@ msgstr "二元期权集团服务组诚招有才华和上进心、正寻求卓越
 
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "二元期权集团服务组诚招有才华和上进心、正寻求卓越工作机会的前端编程员。"
+
+msgid "Binary ICO Auction Bids"
+msgstr "Binary ICO 拍卖出价"
+
+msgid "Binary Initial Coin Offering (ICO)"
+msgstr "Binary首次代币发售 (ICO)"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "Binary Investments (Europe) Limited 有权通过欧盟金融护照权利在另一欧盟成员国提供服务。请参阅以下地图查看有权通过欧盟金融护照（自由提供跨国界服务）权利访问%1的欧盟国家列表。"
@@ -1605,11 +1638,20 @@ msgstr "加拿大"
 msgid "Canada 60 Cash Index"
 msgstr "加拿大 60 现金指数"
 
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancel Bid"
+msgstr "取消出价"
+
 msgid "Career opportunities for Americans"
 msgstr "美国居民的工作机会"
 
 msgid "Careers"
 msgstr "工作机会"
+
+msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
+msgstr "经过仔细挑选的流动性提供商网络使我们能够向零售和机构客户提供低价差和低保证金费率服务"
 
 msgid "Cash Indices"
 msgstr "现金指数"
@@ -1731,6 +1773,9 @@ msgstr "圣诞节"
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "阿富汗、比利时、波斯尼亚和黑塞哥维那、伊拉克、老挝人民民主共和国、叙利亚、乌干达、瓦努阿图或也门等国国民将受禁止于Binary Investments (Europe) Ltd开立账户。"
 
+msgid "Claim Tokens"
+msgstr "索取令牌"
+
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
 
@@ -1845,6 +1890,9 @@ msgstr "以合理可用的平仓水平将所有或任何未平仓头寸平仓；
 
 msgid "Closed"
 msgstr "收盘"
+
+msgid "Closed Bid"
+msgstr "密封出价"
 
 msgid "Closes"
 msgstr "收盘"
@@ -2194,6 +2242,9 @@ msgstr "客户支持"
 msgid "Cyberjaya Office"
 msgstr "Cyberjaya办公室"
 
+msgid "D"
+msgstr "D"
+
 msgid "D. Capacity"
 msgstr "四、能力"
 
@@ -2461,6 +2512,9 @@ msgstr "推动快速增长和业务发展，以支持公司的销售和市场营
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "应用各种在线和离线营销能力扩大公司的活跃联盟网络，在世界各关键区域推动快速增长。"
 
+msgid "Due to US regulations, US investors can only claim their tokens after 1 year."
+msgstr "基于美国规则，美国投资者须等1 年后才能索取令牌。"
+
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "由于最近的法规变更，客户必须填写以下金融评估。您须填写完成才能继续交易。"
 
@@ -2626,6 +2680,9 @@ msgstr "结束时间"
 msgid "End time must be after start time."
 msgstr "结束时间必须在开始时间之后。"
 
+msgid "Ended"
+msgstr "已结束"
+
 msgid "Ends Between"
 msgstr "区间之内结束"
 
@@ -2727,6 +2784,9 @@ msgstr "事件 &mdash; 事件示例包括停止提供与您的订单相关的交
 
 msgid "Everyone"
 msgstr "所有人"
+
+msgid "Everyone else can use the FIX API to connect to our One Zero bridge – subject to a conformance test."
+msgstr "其他人可以使用FIX API 连接到我们的One Zero桥梁，条件是须通过合格测试。"
 
 msgid "Excellent English language (written and oral) communication skills"
 msgstr "优秀的英语 (书面和口语) 沟通技巧"
@@ -2845,9 +2905,6 @@ msgstr "有在国际化环境下工作的经验"
 msgid "Expertise in cloud solutions"
 msgstr "有云计算解决方案专门知识"
 
-msgid "Expiry Time"
-msgstr "到期时间"
-
 msgid "Expiry price"
 msgstr "到期价格"
 
@@ -2890,11 +2947,11 @@ msgstr "六、订单"
 msgid "FAQ"
 msgstr "常见问题"
 
+msgid "FIX API"
+msgstr "FIX API"
+
 msgid "FX Bloggers, Mentors & Gurus"
 msgstr "外汇博客、顾问和导师"
-
-msgid "FX Rate"
-msgstr "外汇兑换率"
 
 msgid "Facility that allows you to set limits on your account."
 msgstr "可让您对帐户设置限制的设施。"
@@ -3337,6 +3394,9 @@ msgstr "“高于/低于”交易"
 msgid "Higher/Lower – Predict that the market will end higher or lower than a price target"
 msgstr "高于/低于 - 预测到期时市场价格是高于还是低于目标价格"
 
+msgid "Highlights"
+msgstr "亮点"
+
 msgid "Hone your security testing skills."
 msgstr "磨练您的安全测试技能。"
 
@@ -3387,6 +3447,9 @@ msgstr "如何运作？"
 
 msgid "How is margin calculated?"
 msgstr "保证金如何计算？"
+
+msgid "How it works"
+msgstr "如何操作"
 
 msgid "How much dividend will I receive?"
 msgstr "我可获得多少分红？"
@@ -3921,6 +3984,9 @@ msgstr "余额不足。"
 
 msgid "Intellectual property"
 msgstr "知识财产"
+
+msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
+msgstr "对流动性解决方案感兴趣吗？通过%1联系我们获取更多信息。"
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "感兴趣，接下来该怎么做？如您可向我们的客户提供特殊的电子付款方式或 %1目前不支持的本地付款选项，且在市场上有良好的记录，我们非常乐意通过<a href='mailto:%2'>收到您的消息!</a>"
@@ -4546,6 +4612,9 @@ msgstr "跟踪您的授权应用程序。"
 msgid "Key facts"
 msgstr "关键资料"
 
+msgid "Key features"
+msgstr "关键功能"
+
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "想放松时只需飞行很短的距离就能尽情探索美丽的海滩、岛屿和山区。您可从马耳他轻松前往欧洲、地中海和北非。此外，您也可在马来西亚饱览亚洲最壮观的美景。"
 
@@ -4795,6 +4864,9 @@ msgstr "亏损"
 msgid "Lot Size (Volume = 1.0)"
 msgstr "手大小 (交易量 = 1.0)"
 
+msgid "Lots"
+msgstr "手数"
+
 msgid "Low Barrier"
 msgstr "低障碍"
 
@@ -4816,11 +4888,17 @@ msgstr "低额最小投入资金"
 msgid "Lower"
 msgstr "低于"
 
+msgid "M"
+msgstr "M"
+
 msgid "M. Manifest Error"
 msgstr "十三、清单错误"
 
 msgid "MENA FFXPO Award"
 msgstr "中东和北非地区 FFXPO 奖"
+
+msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
+msgstr "MT4和MT5 经纪商可以使用内置插件直接与One Zero桥梁的流动性连接。"
 
 msgid "Main password"
 msgstr "主密码"
@@ -5128,6 +5206,12 @@ msgstr "女士"
 msgid "Multi award-winning trading platform."
 msgstr "屡获殊荣的交易平台。"
 
+msgid "Multi-asset execution"
+msgstr "多个资产交易执行"
+
+msgid "Multi-asset liquidity solutions"
+msgstr "多个资产的流动性解决方案"
+
 msgid "Multi-lingual and multi-currency support"
 msgstr "支持多种语言和货币"
 
@@ -5257,6 +5341,9 @@ msgstr "无风险，获得一万美元虚拟资金账户"
 msgid "No. There's no cost to sign up to the affiliate program."
 msgstr "没有，加入联盟计划无需任何费用。"
 
+msgid "No. of Tokens"
+msgstr "令牌数目"
+
 msgid "Not"
 msgstr "不"
 
@@ -5307,6 +5394,9 @@ msgstr "跳动点数目"
 
 msgid "Number of ticks:"
 msgstr "跳动点数目："
+
+msgid "Number of tokens"
+msgstr "令牌数目"
 
 msgid "O. Representations and Warranties"
 msgstr "十五、陈述和保证"
@@ -5373,6 +5463,9 @@ msgstr "一旦您点击“提交”按钮，资金将从您的账户转至客户
 
 msgid "Once your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:"
 msgstr "一旦您的账户达到强制清算水平，您的订单和头寸将按以下顺序强行平仓︰"
+
+msgid "One Zero"
+msgstr "One Zero"
 
 msgid "One simple platform"
 msgstr "一个简单的平台"
@@ -5464,9 +5557,6 @@ msgstr "开户"
 msgid "Opens"
 msgstr "开盘"
 
-msgid "Option Type"
-msgstr "期权类型"
-
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr "二元期权交易和其他类似活动一样，过于沉迷可能会上瘾。为了避免这种风险，我们会定期向您提供交易和财务的实况简报。"
 
@@ -5526,6 +5616,9 @@ msgstr "我们的政策"
 
 msgid "Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices."
 msgstr "我们在参考了由我们自主选定的外部交易所或交易设施所报的基础工具价格之后决定价格。我们拥有信息技术基础设施和价格聚合器系统，便于向充当我们流动性提供商，经过挑选的主要经纪商收集报价，并将经过参考有关基准和市场得来的价格提供给您。您确认我们的价格可能与投标价格和外部交易所或交易设施所提供价格不相同，以及我们不对所述差异所引起的任何损失承担赔偿责任。本条款不适用于波动率指数。"
+
+msgid "Our commitment to integrity and reliability means that we always strive to give you access to the best pricing and liquidity possible."
+msgstr "我们对完整性和可靠性的承诺意味着我们一直都努力为您提供最佳报价和流动性。"
 
 msgid "Our commitment to provide you with 'best execution' does not mean that we owe you any fiduciary responsibilities over and above the specific regulatory obligations placed upon us or as may be otherwise contracted between us."
 msgstr "我们承诺为您提供“最佳执行方案”，但这不表示我们将在规定的义务或双方额外制定的协议范围之外向您承担诚信责任。"
@@ -5619,6 +5712,9 @@ msgstr "3年以上"
 
 msgid "Over 5 years"
 msgstr "5年以上"
+
+msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
+msgstr "超过 50 种外汇交易货币对，加上现货金属、差价合约指数、大宗商品和加密货币。"
 
 msgid "Over 90 <a href='%1'>staff</a> and contractors worldwide"
 msgstr "世界各地拥有超过90名<a href='%1'>职员</a>和合同工"
@@ -5719,8 +5815,8 @@ msgstr "支付"
 msgid "Payout"
 msgstr "赔付"
 
-msgid "Payout Amount"
-msgstr "收益金额"
+msgid "Payout per lot = 1,000"
+msgstr ""
 
 msgid "Pension"
 msgstr "养老金"
@@ -5769,6 +5865,9 @@ msgstr "点（percentage in point，缩写为pip）一般来说是指小数点�
 
 msgid "Pixel size."
 msgstr "像素大小。"
+
+msgid "Place bid"
+msgstr "出价竞拍"
 
 msgid "Place of birth"
 msgstr "出生地点"
@@ -6034,6 +6133,9 @@ msgstr "价格 - 您的订单相关的交易执行价格。"
 msgid "Price/Prices &mdash; Bid and Offer Price/Prices."
 msgstr "价格 &mdash; 出价和要价。"
 
+msgid "Price/token:"
+msgstr "价格/令牌："
+
 msgid "Primary"
 msgstr "主要"
 
@@ -6250,6 +6352,9 @@ msgstr "实时报价，以银行间期权市场为基准。"
 msgid "Reality Check"
 msgstr "真实情况检查"
 
+msgid "Receive back-office support for post-trade risk management and real-time trade/position monitoring."
+msgstr "获取后交易风险管理和实时仓位监测的后台支持。"
+
 msgid "Receive dividend payments"
 msgstr "获取分红支付"
 
@@ -6267,6 +6372,9 @@ msgstr "参考"
 
 msgid "Reference ID"
 msgstr "参考编号"
+
+msgid "Refund Bid"
+msgstr "退还投标金额"
 
 msgid "Regardless of the type of token, each token will provide you with two rights:"
 msgstr "无论是何类型，每一令牌将为您提供两种权利："
@@ -7315,6 +7423,9 @@ msgstr "外汇交易通常以<i>手</i>计量。一个标准 <i>手</i>相当于
 msgid "The GBP Index is a weighted Index, measuring the British Pound's value against a basket of 5 global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%."
 msgstr "英镑指数是加权指数，衡量英镑相对5种全球货币（美元、欧元、澳元、日元、加元）的价值，每种货币的权重均为20%。"
 
+msgid "The ICO auction is already closed."
+msgstr "ICO 拍卖已关闭。"
+
 msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions."
 msgstr "一些管辖区将按照其规则和规定限制合格或专业投资者参与ICO。"
 
@@ -7837,8 +7948,8 @@ msgstr "本网站包含其他网站链接，并可能含有第三方网站的横
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "除了您有意识专门提供的信息，本网站不收集其他个人身份信息。一种被称为“cookies” 的技术可能被用于收集来自特定网站的特定信息。cookie 是一种数据元，可以被网站发送到您的浏览器，然后存储在您的系统中。您可以将浏览器设置为“收到 cookie 时通知您”，以便您决定是否接受。如果您不接受该 cookie，那么您需要在系统的每个表单中分别输入您的登录ID和密码。如果您对个人电脑或浏览器的安全性存在担忧，我们建议您这么做。"
 
-msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "本网站由Binary (IOM) Ltd.在英国和马恩岛经营，地址为：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；由(1)不列颠群岛马恩岛投资监管委员会授予牌照和监管，当前在线博彩牌照于2012 年8 月31 日颁发；而英国客户由(2)英国博采委员会授予牌照和监管- <a href='%1' target='_blank'>查看牌照</a>。此网站市场在欧盟其他地区，投资产品由Binary Investments (Europe) Ltd.管理，地址为  Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由马耳他金融服务机构授予牌照及监管为3级投资服务提供商（牌照号码为 IS/70156)），而博彩产品由Binary (Europe) Ltd.,管理，地址为：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由(1)位于马耳他的马耳他博彩管理局授予牌照和监管，牌照号码为 MGA/CL2/118/2000（2015年5 月26 日），而英国客户由(2)英国博采委员会授予牌照和监管- <a href='%2' target='_blank'>查看牌照</a>，以及爱尔兰客户由 (3) 爱尔兰税务专员办事处授予牌照和监管，当前远程博彩牌照号码为 1010285（2015年9月29日)。本网站不向一些国家如美国、哥斯达黎加、香港及18岁以下的用户提供服务。"
+msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgstr "本网站由Binary (IOM) Ltd. 在英国和马恩岛经营，地址为：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；由(1) 不列颠群岛马恩岛博彩监管委员会授予牌照和监管，当前在线博彩牌照于2012 年8 月31 日颁发；而英国客户由(2) 英国博采委员会授予牌照和监管- <a href='%1' target='_blank'>查看牌照</a>。此网站市场在欧盟其他地区，投资产品由Binary Investments (Europe) Ltd. 管理，地址为 Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由马耳他金融服务机构授予牌照及监管为3级投资服务提供商（牌照号码为 IS/70156)），而博彩产品由Binary (Europe) Ltd., 管理，地址为：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由(1) 位于马耳他的马耳他博彩管理局授予牌照和监管，牌照号码为 MGA/CL2/118/2000（2015年5 月26 日），而英国客户由(2) 英国博采委员会授予牌照和监管- <a href='%2' target='_blank'>查看牌照</a>，以及爱尔兰客户由 (3) 爱尔兰税务专员办事处授予牌照和监管，当前远程博彩牌照号码为 1010285（2017年7月1日颁发)。本网站不向一些国家如美国、哥斯达黎加、香港及18岁以下的用户提供服务。"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "熟悉 bash 脚本编程，对Perl 和 PHP 等脚本语言有丰富经验"
@@ -7951,14 +8062,23 @@ msgstr "令牌"
 msgid "Token dividends"
 msgstr "令牌红利"
 
+msgid "Tokens"
+msgstr "令牌"
+
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
 msgstr "令牌可转换为等值的Binary普通股作为红利。"
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our account authentication process."
 msgstr "令牌仅售予拥有真实资金账户，并已完成账户验证程序的%1客户。"
 
+msgid "Top-tier liquidity"
+msgstr "顶级流动性"
+
 msgid "Total"
 msgstr "总计"
+
+msgid "Total Bid Price"
+msgstr "总出价"
 
 msgid "Total Cost"
 msgstr "成本总计"
@@ -7974,6 +8094,9 @@ msgstr "利润/亏损合计"
 
 msgid "Total active clients on our platform have almost doubled from 2014 to 2016. This is largely due to our focus on improving customer retention and acquiring new customers via targeted online marketing campaigns."
 msgstr "我们平台的活跃客户总数从2014年到2016年将近翻了一倍。主要是因为我们针对在线市场推广活动，集中于改善客户保留和争取新客户的策略。"
+
+msgid "Total:"
+msgstr "总计："
 
 msgid "Touch/No Touch"
 msgstr "触及/未触及"
@@ -9137,6 +9260,12 @@ msgstr "您已提取 %1 %2 的等值。"
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "向我们请求开立真实账户前，您已经完整阅读并理解此协议附上的: (i) 风险披露声明;（ii）订单执行政策; (iii) 条款和条件;"
 
+msgid "You have insufficient funds in your account."
+msgstr "您的账户资金不足。"
+
+msgid "You have no open bids."
+msgstr "无竞标。"
+
 msgid "You have not granted access to any applications."
 msgstr "您没有访问任何应用程序的权限。"
 
@@ -9593,9 +9722,6 @@ msgstr "从10 秒到 365 天..."
 msgid "h"
 msgstr "小时"
 
-msgid "hour"
-msgstr "小时"
-
 msgid "hours"
 msgstr "小时"
 
@@ -9617,23 +9743,11 @@ msgstr "信件"
 msgid "logout"
 msgstr "注销"
 
-msgid "max: 100,000"
-msgstr "最大: 100,000"
-
 msgid "min"
 msgstr "最小"
 
-msgid "min: 1,000"
-msgstr "最小: 1,000"
-
 msgid "minimum available duration"
 msgstr "最短可用期限"
-
-msgid "mins"
-msgstr "分钟"
-
-msgid "minute"
-msgstr "分钟"
 
 msgid "minutes"
 msgstr "分钟"
@@ -9658,9 +9772,6 @@ msgstr "号码"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "包含所有合约精确结算时间的页面。其他网站可能有不同的惯例（比如一些网站采用纽约时间4点或伦敦时间5点），因此，本网站上显示的开盘、高、低或收盘价可能与其他网站不一致。"
-
-msgid "second"
-msgstr "秒"
 
 msgid "seconds"
 msgstr "秒"
@@ -9709,6 +9820,9 @@ msgstr "今天"
 
 msgid "today, Fridays"
 msgstr "今天、周五"
+
+msgid "top up in cashier"
+msgstr "存款入收银台"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "上涨/下跌，触及/未触及，范围内/范围外。"
@@ -11411,6 +11525,9 @@ msgstr "慈善活动"
 msgid "Open-Source Projects"
 msgstr "开源项目"
 
+msgid "Multi-asset Liquidity Solutions"
+msgstr "多个资产的流动性解决方案"
+
 msgid "Types of Trades"
 msgstr "交易类型"
 
@@ -11443,6 +11560,9 @@ msgstr "自2000年以来备受交易员信赖"
 
 msgid "Authenticate"
 msgstr "验证"
+
+msgid "Subscribe to ICO"
+msgstr "ICO 订阅"
 
 msgid "Settings"
 msgstr "设置"

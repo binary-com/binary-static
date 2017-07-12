@@ -9,26 +9,26 @@ use File::Slurp;
 use YAML::XS qw(LoadFile);
 # our module in lib
 use BS;
+use Term::ANSIColor;
 
 sub generate_data_files {
     my $js_path = shift;
 
     _make_nobody_dir($js_path);
-    print "\tGenerating $js_path/texts.js\n";
-    my $exports = <<'END_EXPORTS';
 
-module.exports = {
-    texts_json: texts_json,
-};
-END_EXPORTS
-
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts() . $exports);
+    print colored(['cyan'], "\tGenerating files:\n");
+    foreach my $language ((BS::all_languages(), 'ACH')) {
+        my $file = "$js_path/${\lc $language}.js";
+        printf "\t\t%-40s %5s", $file, "  .....  ";
+        File::Slurp::write_file($file, { binmode => ':utf8' }, _texts($language));
+        printf colored(['green'], "Done.\n");
+    }
     return;
 }
 
 sub _texts {
+    my $language = shift;
     my $js = "const texts_json = {};\n";
-    foreach my $language ((BS::all_languages(), 'ACH')) {
         BS::set_lang($language);
 
         my @texts;
@@ -323,10 +323,8 @@ sub _texts {
         push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Barrier at close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Barrier through close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Barrier through close on [_4].');
-        push @texts, localize('hour');
-        push @texts, localize('mins');
-        push @texts, localize('minute');
-        push @texts, localize('second');
+        push @texts, localize('M');
+        push @texts, localize('D');
         push @texts, localize('Higher');
         push @texts, localize('Lower');
         push @texts, localize('Touches');
@@ -342,6 +340,8 @@ sub _texts {
         push @texts, localize('Connection error: Please check your internet connection.');
         push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
         push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
+        push @texts, localize('Lots');
+        push @texts, localize('Payout per lot = 1,000');
         #strings for digit_info
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
@@ -500,10 +500,10 @@ sub _texts {
         push @texts, localize('Refund Bid');
         push @texts, localize('Claim Tokens');
         push @texts, localize('Ended');
+        push @texts, localize('The ICO auction is already closed.');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
-    }
 
     return $js;
 }

@@ -1,3 +1,4 @@
+const Cookies             = require('js-cookie');
 const KnowledgeTestUI     = require('./knowledge_test.ui');
 const BinaryPjax          = require('../../binary/base/binary_pjax');
 const Client              = require('../../binary/base/client');
@@ -6,7 +7,6 @@ const Header              = require('../../binary/base/header');
 const localize            = require('../../binary/base/localize').localize;
 const Url                 = require('../../binary/base/url');
 const BinarySocket        = require('../../binary/websocket_pages/socket');
-const Cookies             = require('../../lib/js-cookie');
 
 const KnowledgeTest = (() => {
     'use strict';

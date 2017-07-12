@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-03 23:54-0400\n"
+"PO-Revision-Date: 2017-07-12 03:59-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -210,6 +210,9 @@ msgstr "%1 tidak berafiliasi dengan agen pembayaran manapun. Setiap agen pembaya
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 tidak tersedia di Costa Rica dan tidak diatur atau diawasi oleh badan pengawas keuangan di Costa Rica."
 
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency."
+msgstr "%1 menawarkan hingga <strong>10.000.000</strong> token dalam lelang terbuka. Anda dapat menempatkan tawaran Anda menggunakan formulir di bawah ini. Tawaran minimum adalah <strong>USD 1</strong> atau setara dalam mata uang lainnya."
+
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 merupakan salah satu nama yang tertua dan dihormati pada trading online binary."
 
@@ -281,6 +284,9 @@ msgstr "%1 berhutang kewajiban dalam memberi eksekusi terbaik untuk Anda yaitu k
 
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 menyediakan layanan mitra usaha melalui program-program berikut."
+
+msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
+msgstr "%1 menyediakan pelanggan institusi diseluruh dunia dengan kutipan pasar dan eksekusi trading di berbagai aset, termasuk pasangan mata uang utama, logam, indeks CFD dan mata uang crypto populer."
 
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "%1 menyediakan eksekusi terbaik dengan memanfaatkan metode agregasi cerdas ketika mengelola pesanan yang masuk. Metode agregasi cerdas bekerja dengan:"
@@ -384,23 +390,20 @@ msgstr "'Perusahaan Fixed-Odds Terbaik 2012' penghargaan dari Global Banking and
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "'Operator Trading Financial Terbaik' penghargaan oleh eGaming Review"
 
-msgid "(Duration)"
-msgstr "(Durasi)"
-
 msgid "(One) Touch trades"
 msgstr "Kontrak (Sekali) Sentuh"
 
 msgid "(Sell Price - Buy Price) x Volume x Price Per Point = Profit"
 msgstr "(Harga Jual - Harga Beli) x Volume x Harga Per Poin = Profit"
 
+msgid "(max)"
+msgstr "(mak)"
+
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Bebas Pajak: Keuntungan trading pada umumnya adalah bebas pajak di banyak negara, silahkan konsultasikan dengan ahli pajak di negara Anda."
 
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Semua percakapan direkam untuk pelatihan dan pemantauan"
-
-msgid ",000"
-msgstr ",000"
 
 msgid "0-1 year"
 msgstr "0-1 tahun"
@@ -684,11 +687,20 @@ msgstr "Menerima transfer bank lokal"
 msgid "Acceptance"
 msgstr "Penerimaan"
 
+msgid "Access market quotes and trade execution from top-tier liquidity providers, including banks and non-banks."
+msgstr "Akses kutipan pasar dan eksekusi trading dari penyedia likuiditas teratas, termasuk perbankan dan non perbankan."
+
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "Akses pasar kapan saja, dimana saja menggunakan aplikasi iOS atau peralatan Android."
 
 msgid "Access to Personal Data"
 msgstr "Akses ke Data Pribadi"
+
+msgid "Access to STP trading"
+msgstr "Akses ke trading STP"
+
+msgid "Access to multi-asset liquidity and back-office functionality via margin accounts"
+msgstr "Akses kedalam berbagai aset likuiditas dan fungsi kantor belakang melalui akun margin"
 
 msgid "Access to your personal data is strictly prohibited with the exception of key personnel of the Company and only as needed in the performance of their duties."
 msgstr "Akses kedalam data pribadi Anda adalah sangat terbatas kecuali kepada petugas utama Perusahaan yang memerlukan data tersebut dalam menjalankan tugas mereka."
@@ -1245,6 +1257,9 @@ msgstr "BIEL adalah perusahaan yang didirikan di Malta dengan nomor pendaftaran 
 msgid "Back"
 msgstr "Kembali"
 
+msgid "Back-office support"
+msgstr "Layanan kantor belakang"
+
 msgid "Balance"
 msgstr "Saldo"
 
@@ -1332,6 +1347,18 @@ msgstr "BetOnMarkets.com mencapai $1 milyar omset sejak tahun 1999"
 msgid "Betting system and method"
 msgstr "Sistem dan metode trading"
 
+msgid "Bid"
+msgstr "Bid"
+
+msgid "Bid Binary ICO:"
+msgstr "Bid ICO Binary:"
+
+msgid "Bid Price Per Token"
+msgstr "Harga Bid Per Token"
+
+msgid "Bid cancellation can be done with a 2% cancellation fee."
+msgstr "Pembatalan bid dapat dilakukan dengan 2% biaya pembatalan."
+
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
 
@@ -1382,6 +1409,12 @@ msgstr "Binary Group Services sedang mencari pengembang Perl berbakat dan memili
 
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Binary Group Services mencari developer front-end yang berbakat dan termotivasi untuk maju."
+
+msgid "Binary ICO Auction Bids"
+msgstr "Tawaran Lelang ICO Binary"
+
+msgid "Binary Initial Coin Offering (ICO)"
+msgstr "Binary Initial Coin Offering (ICO)"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "Binary Investments (Europe) Limited dapat memberikan layanan kepada Negara Anggota Uni Eropa lainnya melalui hak pemegang paspor Uni Eropa. Lihat peta berikut ini untuk daftar negara Uni Eropa yang dapat mengakses %1 menggunakan hak pemegang paspor Eropa Union - kebebasan untuk memberikan layanan lintas perbatasan."
@@ -1605,11 +1638,20 @@ msgstr "KANADA"
 msgid "Canada 60 Cash Index"
 msgstr "Indeks Tunai Canada 60"
 
+msgid "Cancel"
+msgstr "Batal"
+
+msgid "Cancel Bid"
+msgstr "Membatalkan Bid"
+
 msgid "Career opportunities for Americans"
 msgstr "Peluang karir bagi Amerika"
 
 msgid "Careers"
 msgstr "Karir"
+
+msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
+msgstr "Memilih dengan teliti berbagai jaringan penyedia likuiditas memberi kami spread terbaik dan kompetitif untuk institusi pelanggan dan ritel"
 
 msgid "Cash Indices"
 msgstr "Indeks Tunai"
@@ -1731,6 +1773,9 @@ msgstr "Hari Natal"
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Warga Afghanistan, Belgia, Bosnia dan Herzegovina, Irak, Lao PDR, Suriah, Uganda, Vanuatu atau Yaman tidak dapat mendaftar akun pada Binary Investments (Europe) Ltd."
 
+msgid "Claim Tokens"
+msgstr "Klaim Token"
+
 msgid "Classification of assets requiring hedge"
 msgstr "Klasifikasi aset yang membutuhkan hedge"
 
@@ -1844,6 +1889,9 @@ msgstr "Tutup semua atau Posisi Berjalan lainnya pada level penutupan yang terse
 
 msgid "Closed"
 msgstr "Tutup"
+
+msgid "Closed Bid"
+msgstr "Tutup Bid"
 
 msgid "Closes"
 msgstr "Ditutup"
@@ -2193,6 +2241,9 @@ msgstr "Customer Support"
 msgid "Cyberjaya Office"
 msgstr "Kantor Cyberjaya"
 
+msgid "D"
+msgstr "D"
+
 msgid "D. Capacity"
 msgstr "D. Kapasitas"
 
@@ -2460,6 +2511,9 @@ msgstr "Mendorong pertumbuhan yang cepat dan pengembangan usaha, untuk mendukung
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "Mendorong pertumbuhan yang cepat pada beberapa bidang utama dunia, menerapkan berbagai kemampuan pemasaran online dan offline untuk memperluas jaringan afiliasi aktif bagi perusahaan."
 
+msgid "Due to US regulations, US investors can only claim their tokens after 1 year."
+msgstr "Berdasarkan regulasi AS, para investor AS hanya dapat mengklaim token mereka setelah 1 tahun."
+
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "Berhubung perubahan terbaru dalam peraturan, kami perlu memastikan untuk meminta klien menyelesaikan Penilaian Keuangan berikut. Mohon diketahui bahwa Anda tidak akan dapat melanjutkan pendaftaran hingga proses ini selesai."
 
@@ -2625,6 +2679,9 @@ msgstr "Waktu end"
 msgid "End time must be after start time."
 msgstr "Waktu berakhir harus setelah waktu mulai."
 
+msgid "Ended"
+msgstr "Berakhir"
+
 msgid "Ends Between"
 msgstr "Ends Between"
 
@@ -2726,6 +2783,9 @@ msgstr "Acara &mdash; Contoh acara termasuk situasi dimana jenis Transaksi yang 
 
 msgid "Everyone"
 msgstr "Semua orang"
+
+msgid "Everyone else can use the FIX API to connect to our One Zero bridge – subject to a conformance test."
+msgstr "Semua orang dapat menggunakan API TETAP untuk berhubung dengan jembatan One Zero - tertakluk pada tes kesesuaian."
 
 msgid "Excellent English language (written and oral) communication skills"
 msgstr "Mahir berkomunikasi dalam bahasa Inggris (tertulis dan lisan)"
@@ -2844,9 +2904,6 @@ msgstr "Berpengalaman bekerja dalam lingkungan internasional"
 msgid "Expertise in cloud solutions"
 msgstr "Ahli dalam solusi cloud"
 
-msgid "Expiry Time"
-msgstr "Waktu Berakhir"
-
 msgid "Expiry price"
 msgstr "Harga akhir"
 
@@ -2889,11 +2946,11 @@ msgstr "F. Order"
 msgid "FAQ"
 msgstr "Pertanyaan Umum"
 
+msgid "FIX API"
+msgstr "API TETAP"
+
 msgid "FX Bloggers, Mentors & Gurus"
 msgstr "FX Blogger, Mentor & Guru"
-
-msgid "FX Rate"
-msgstr "Harga FX"
 
 msgid "Facility that allows you to set limits on your account."
 msgstr "Fasilitas yang memungkinkan Anda untuk menetapkan batasan akun."
@@ -3336,6 +3393,9 @@ msgstr "Kontrak Higher/Lower"
 msgid "Higher/Lower – Predict that the market will end higher or lower than a price target"
 msgstr "Higher/Lower – Menganalisa pasar akan berakhir lebih tinggi atau lebih rendah dari harga target"
 
+msgid "Highlights"
+msgstr "Sorotan"
+
 msgid "Hone your security testing skills."
 msgstr "Asah keterampilan menguji Anda."
 
@@ -3386,6 +3446,9 @@ msgstr "Bagaimana cara kerjanya?"
 
 msgid "How is margin calculated?"
 msgstr "Bagaimana cara menghitung margin?"
+
+msgid "How it works"
+msgstr "Cara kerja"
 
 msgid "How much dividend will I receive?"
 msgstr "Berapa dividen yang akan saya terima?"
@@ -3920,6 +3983,9 @@ msgstr "Saldo tidak mencukupi."
 
 msgid "Intellectual property"
 msgstr "Hak milik intelektual"
+
+msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
+msgstr "Tertarik dengan solusi likuiditas kami? Hubungi kami di %1 untuk informasi lebih lanjut."
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode pembayaran tunai atau pembayaran lokal yang tidak disediakan oleh %1 dan Anda memiliki track record yang baik, maka kami ingin <a href='mailto:%2'>mendengar balasan Anda!</a>"
@@ -4545,6 +4611,9 @@ msgstr "Melacak aplikasi resmi Anda."
 msgid "Key facts"
 msgstr "Fakta"
 
+msgid "Key features"
+msgstr "Fitur utama"
+
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "Nikmati keindahan pantai, pulau dan pegunungan dengan penerbangan singkat. Dari Malta, tersedia Eropa, Mediteranian dan Afrika Utara. Dan dari Malaysia, seluruh Asia menanti."
 
@@ -4794,6 +4863,9 @@ msgstr "Rugi"
 msgid "Lot Size (Volume = 1.0)"
 msgstr "Ukuran Lot (Volume = 1.0)"
 
+msgid "Lots"
+msgstr "Lot"
+
 msgid "Low Barrier"
 msgstr "Batasan Rendah"
 
@@ -4815,11 +4887,17 @@ msgstr "Modal minimal rendah"
 msgid "Lower"
 msgstr "Lower"
 
+msgid "M"
+msgstr "M"
+
 msgid "M. Manifest Error"
 msgstr "M. Indikasi Error"
 
 msgid "MENA FFXPO Award"
 msgstr "Penghargaan MENA FFXPO"
+
+msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
+msgstr "Broker MT4 dan MT5 dapat menghubungi langsung likuiditas pada jembatan One Zero dengan menggunakan konektor built-in."
 
 msgid "Main password"
 msgstr "Kata sandi utama"
@@ -5127,6 +5205,12 @@ msgstr "Sdri."
 msgid "Multi award-winning trading platform."
 msgstr "Platform yang memenangi berbagai penghargaan."
 
+msgid "Multi-asset execution"
+msgstr "Eksekusi berbagai aset"
+
+msgid "Multi-asset liquidity solutions"
+msgstr "Solusi likuiditas berbagai aset"
+
 msgid "Multi-lingual and multi-currency support"
 msgstr "Memiliki pilihan bahasa dan mata uang"
 
@@ -5256,6 +5340,9 @@ msgstr "Bebas risiko, $10K akun uang virtual"
 msgid "No. There's no cost to sign up to the affiliate program."
 msgstr "Tidak. Tidak ada biaya untuk mendaftar ke program afiliasi."
 
+msgid "No. of Tokens"
+msgstr "Jumlah Token"
+
 msgid "Not"
 msgstr "Bukan"
 
@@ -5306,6 +5393,9 @@ msgstr "Jumlah tik"
 
 msgid "Number of ticks:"
 msgstr "Jumlah tik:"
+
+msgid "Number of tokens"
+msgstr "Jumlah token"
 
 msgid "O. Representations and Warranties"
 msgstr "O. Perwakilan dan Jaminan"
@@ -5372,6 +5462,9 @@ msgstr "Setelah mengklik tombol 'Kirim', dana akan ditarik dari akun Anda dan di
 
 msgid "Once your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:"
 msgstr "Disaat akun Anda mencapai level liquidasi dengan paksa, order dan posisi Anda akan ditutup dengan urutan sebagai berikut:"
+
+msgid "One Zero"
+msgstr "One Zero"
 
 msgid "One simple platform"
 msgstr "Satu platform sederhana"
@@ -5463,9 +5556,6 @@ msgstr "Mendaftar akun"
 msgid "Opens"
 msgstr "Dibuka"
 
-msgid "Option Type"
-msgstr "Jenis Opsi"
-
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr "Trading opsi dapat menyebabkan ketagihan, sebagaimana kegiatan lain yang dilakukan di luar batas. Untuk menghidari bahaya ketagihan tersebut, kami menyediakan pengecekan yang memberikan ringkasan trading Anda secara teratur."
 
@@ -5525,6 +5615,9 @@ msgstr "Kebijakan Kami"
 
 msgid "Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices."
 msgstr "Harga Kami ditentukan dengan mengacu pada harga instrumen dasar yang dikutip dari bursa eksternal atau fasilitas dealing yang kami pilih sendiri. Sistem infrastruktur IT dan harga aggregator yang kami miliki memfasilitasi penerimaan kutipan harga dari broker utama terpilih yang berperan sebagai penyedia likuiditas untuk kami dan mengirimkan kutipan, dengan mengacu kepada patokan pasar yang relevan, untuk Anda. Anda mengetahui bahwa Harga kami mungkin sedikit berbeda dengan harga bid dan offer yang disediakan pada bursa atau fasilitas dealing eksternal dan kami tidak bertanggung jawab atas kerugian yang timbul dari perbedaan tersebut. Klausul ini tidak berlaku pada Indeks Volatilitas."
+
+msgid "Our commitment to integrity and reliability means that we always strive to give you access to the best pricing and liquidity possible."
+msgstr "Komitmen kami terhadap integritas dan keandalan berarti bahwa kami selalu berusaha untuk memberikan Anda akses ke dalam harga dan likuiditas yang terbaik."
 
 msgid "Our commitment to provide you with 'best execution' does not mean that we owe you any fiduciary responsibilities over and above the specific regulatory obligations placed upon us or as may be otherwise contracted between us."
 msgstr "Komitmen kami untuk menyediakan 'eksekusi terbaik' tidak berarti bahwa kami berutang tanggung jawab fidusia pada Anda atas dan di atas kewajiban regulasi khusus yang ditempatkan pada kami atau mungkin sebaliknya dinyatakan dalam kontrak antara kami."
@@ -5618,6 +5711,9 @@ msgstr "Lebih dari 3 tahun"
 
 msgid "Over 5 years"
 msgstr "Over 5 years"
+
+msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
+msgstr "Lebih dari 50 pasangan FX, logam, indeks CFD, komoditas dan mata uang crypto."
 
 msgid "Over 90 <a href='%1'>staff</a> and contractors worldwide"
 msgstr "Lebih dari 90 <a href='%1'>staff</a> an kontraktor di seluruh dunia"
@@ -5718,8 +5814,8 @@ msgstr "Pembayaran"
 msgid "Payout"
 msgstr "Hasil"
 
-msgid "Payout Amount"
-msgstr "Jumlah Hasil"
+msgid "Payout per lot = 1,000"
+msgstr "Hasil per lot = 1.000"
 
 msgid "Pension"
 msgstr "Pensiun"
@@ -5768,6 +5864,9 @@ msgstr "Pip singkatan dari 'titik persentase' yang umumnya angka desimal keempat
 
 msgid "Pixel size."
 msgstr "Ukuran pixel."
+
+msgid "Place bid"
+msgstr "Tempatkan bid"
 
 msgid "Place of birth"
 msgstr "Tempat lahir"
@@ -6033,6 +6132,9 @@ msgstr "Harga - harga di mana transaksi dalam kaitannya dengan pembelian pesanan
 msgid "Price/Prices &mdash; Bid and Offer Price/Prices."
 msgstr "Harga/Berbagai Harga &mdash; Bid dan Harga/Berbagai Harga Offer."
 
+msgid "Price/token:"
+msgstr "Harga/token:"
+
 msgid "Primary"
 msgstr "Primer"
 
@@ -6249,6 +6351,9 @@ msgstr "Harga tepat waktu, menggunakan nilai standar berdasarkan pasar interbank
 msgid "Reality Check"
 msgstr "Pemeriksaan Realitas"
 
+msgid "Receive back-office support for post-trade risk management and real-time trade/position monitoring."
+msgstr "Dapatkan bantuan kantor belakang untuk menerima manajemen risiko trading dan memonitor trading/kontrak secara langsung."
+
 msgid "Receive dividend payments"
 msgstr "Menerima pembayaran dividen"
 
@@ -6266,6 +6371,9 @@ msgstr "Ref."
 
 msgid "Reference ID"
 msgstr "ID referensi"
+
+msgid "Refund Bid"
+msgstr "Pengembalian Bid"
 
 msgid "Regardless of the type of token, each token will provide you with two rights:"
 msgstr "Terlepas dari jenis token, setiap token akan memberi Anda dua hak:"
@@ -7315,6 +7423,9 @@ msgstr "Forex biasanya ditradingkan dalam jumlah <i>lot</i>. Secara standar, sat
 msgid "The GBP Index is a weighted Index, measuring the British Pound's value against a basket of 5 global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%."
 msgstr "Indeks GBP adalah Indeks yang ditimbang dengan mengukur nilai Pound Inggris melawan 5 mata uang global (USD, EUR, GBP, JPY, CAD), masing-masing ditimbang dengan 20%."
 
+msgid "The ICO auction is already closed."
+msgstr "Lelang ICO sudah ditutup."
+
 msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions."
 msgstr "ICO akan dibatasi pada yurisdiksi tertentu dalam menentukan kelayakan atau investor profesional, sesuai dengan aturan dan regulasi pada yurisdiksi tersebut."
 
@@ -7837,8 +7948,8 @@ msgstr "Website ini berisikan berbagai link yang mengarah kepada website lain da
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Website ini tidak mengumpulkan informasi identitas pribadi mengenai Anda kecuali jika Anda secara khusus dan dengan sadar memberikannya. Terdapat teknologi yang bernama \"cookies\" yang bisa digunakan untuk menyediakan informasi dari sebuah website. Cookie adalah element data dimana sebuah website bisa mengirimkan data dari dan ke dalam browser Anda, yang mungkin lalu menyimpannya pada sistem Anda. Anda bisa memasang browser Anda dimana Anda akan mengetahui saat Anda menerima cookie tersebut dan memberikan Anda kesempatan untuk memutuskan apakah Anda akan menerimanya atau tidak. Jika Anda menolak cookie tersebut maka Anda harus memasukkan login ID dan password setiap kali mengakses sistem. Anda disarankan untuk memilih pilihan ini jika Anda mementingkan keamanan browser atau komputer Anda."
 
-msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "Website ini dipasarkan di negara Inggris dan Isle of Man melalui Binary (IOM) Ltd. Untuk Uni Eropa (kecuali Inggris) melalui Binary (Europe) Ltd dan Binary Investments (Europe) Ltd. Sedangkan untuk negara lain di seluruh dunia melalui Binary (C.R.) S.A. Layanan website ini tidak tersedia untuk di bawah usia 18."
+msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgstr "Website ini dipasarkan di negara Inggris dan Isle of Man melalui Binary (IOM) Ltd. Untuk Uni Eropa (kecuali Inggris) melalui Binary (Europe) Ltd dan Binary Investments (Europe) Ltd. Sedangkan untuk negara lain di seluruh dunia melalui Binary (C. R.) S. A. Layanan website ini tidak tersedia untuk di bawah usia 18."
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "Memiliki pengetahuan mendalam mengenai scripting, dan berpengalaman dengan bahasa scripting seperti Perl dan PHP"
@@ -7951,14 +8062,23 @@ msgstr "Token"
 msgid "Token dividends"
 msgstr "Dividen token"
 
+msgid "Tokens"
+msgstr "Token"
+
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
 msgstr "Token memberi Anda jumlah yang setara dengan dividen sebagai Saham Binary Biasa."
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our account authentication process."
 msgstr "Token hanya akan ditawarkan kepada klien %1 yang memiliki akun Uang Riil, dan yang telah menyelesaikan proses otentikasi akun kami."
 
+msgid "Top-tier liquidity"
+msgstr "Likuiditas teratas"
+
 msgid "Total"
 msgstr "Total"
+
+msgid "Total Bid Price"
+msgstr "Total Harga Bid"
 
 msgid "Total Cost"
 msgstr "Total Biaya"
@@ -7974,6 +8094,9 @@ msgstr "Total Untung/Rugi"
 
 msgid "Total active clients on our platform have almost doubled from 2014 to 2016. This is largely due to our focus on improving customer retention and acquiring new customers via targeted online marketing campaigns."
 msgstr "Total jumlah klien aktif pada platform kami hampir dua kali lipat dari tahun 2014 hingga 2016. Hal ini berhubung kami memfokuskan untuk meningkatkan retensi pelanggan dan memperoleh pelanggan baru melalui kampanye pemasaran online sesuai dengan target."
+
+msgid "Total:"
+msgstr "Total:"
 
 msgid "Touch/No Touch"
 msgstr "Touch/No Touch"
@@ -9136,6 +9259,12 @@ msgstr "Anda telah melakukan penarikan setara dengan %1 %2."
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "Anda telah sepenuhnya membaca dan memahami: (i) pernyataan pengungkapan resiko; (ii) kebijakan eksekusi order; (iii) syarat dan ketentuan yang melekat pada perjanjian ini; sebelum meminta untuk mendaftar Akun Riil bersama kami;"
 
+msgid "You have insufficient funds in your account."
+msgstr "Dana tidak mencukupi pada akun Anda."
+
+msgid "You have no open bids."
+msgstr "Anda tidak memiliki bid terbuka."
+
 msgid "You have not granted access to any applications."
 msgstr "Anda belum diberikan akses ke dalam aplikasi apapun."
 
@@ -9592,9 +9721,6 @@ msgstr "dari 10 detik hingga 365 hari."
 msgid "h"
 msgstr "j"
 
-msgid "hour"
-msgstr "jam"
-
 msgid "hours"
 msgstr "jam"
 
@@ -9616,23 +9742,11 @@ msgstr "huruf"
 msgid "logout"
 msgstr "keluar"
 
-msgid "max: 100,000"
-msgstr "mak: 100,000"
-
 msgid "min"
 msgstr "min"
 
-msgid "min: 1,000"
-msgstr "min: 1,000"
-
 msgid "minimum available duration"
 msgstr "durasi minimal yang tersedia"
-
-msgid "mins"
-msgstr "menit"
-
-msgid "minute"
-msgstr "menit"
 
 msgid "minutes"
 msgstr "menit"
@@ -9657,9 +9771,6 @@ msgstr "nomor"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "halaman untuk waktu tepat penyelesaian seluruh kontrak. Website lain mungkin menggunakan konvensi berbeda (sebagai contoh beberapa website menggunakan jam 4 waktu New York atau jam 5 waktu London). Hal ini menyebabkan harga open, high, low dan close pada website kami akan mengalami perbedaan dengan website lainnya berhubung konvensi waktu penutupan pasar."
-
-msgid "second"
-msgstr "detik"
 
 msgid "seconds"
 msgstr "detik"
@@ -9708,6 +9819,9 @@ msgstr "hari ini"
 
 msgid "today, Fridays"
 msgstr "hari ini, Jumat"
+
+msgid "top up in cashier"
+msgstr "isi ulang pada kasir"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "up/down, touch/no-touch, stays in/goes out."
@@ -11410,6 +11524,9 @@ msgstr "Amal"
 msgid "Open-Source Projects"
 msgstr "Proyek Open-Source"
 
+msgid "Multi-asset Liquidity Solutions"
+msgstr "Solusi Likuiditas Berbagai Aset"
+
 msgid "Types of Trades"
 msgstr "Jenis Kontrak"
 
@@ -11442,6 +11559,9 @@ msgstr "Dipercaya oleh trader sejak 2000"
 
 msgid "Authenticate"
 msgstr "Pembuktian"
+
+msgid "Subscribe to ICO"
+msgstr "Berlangganan ICO"
 
 msgid "Settings"
 msgstr "Pengaturan"

@@ -1,7 +1,7 @@
 const jpClient    = require('./country_base').jpClient;
 const getLanguage = require('../base/language').get;
 
-const cryptocurrencies = ['BTC'];
+const fiat_currencies = [];
 
 const formatMoney = (currency_value, amount, exclude_currency) => {
     const is_crypto = isCryptocurrency(currency_value);
@@ -47,15 +47,7 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const getDecimalPlaces = (currency) => {
-    let decimal_places = 2;
-    if (isCryptocurrency(currency)) {
-        decimal_places = 8;
-    } else if (jpClient()) {
-        decimal_places = 0;
-    }
-    return decimal_places;
-};
+const getDecimalPlaces = currency => (isCryptocurrency(currency) ? 8 : (jpClient() ? 0 : 2));
 
 // Taken with modifications from:
 //    https://github.com/bengourley/currency-symbol-map/blob/master/map.js
@@ -69,8 +61,17 @@ const map_currency = {
     BTC: '₿',
 };
 
+const setCurrencies = (website_status) => {
+    const currencies_config = website_status.currencies_config;
+    Object.keys(currencies_config).forEach((c) => {
+        if (currencies_config[c].type === 'fiat' && fiat_currencies.indexOf(c) < 0) {
+            fiat_currencies.push(c);
+        }
+    });
+};
+
 const isCryptocurrency = currency => (
-    currency ? (new RegExp(currency, 'i')).test(cryptocurrencies) : false
+    currency ? !(new RegExp(currency, 'i')).test(fiat_currencies) : false
 );
 
 module.exports = {
@@ -79,4 +80,5 @@ module.exports = {
     isCryptocurrency: isCryptocurrency,
     addComma        : addComma,
     getDecimalPlaces: getDecimalPlaces,
+    setCurrencies   : setCurrencies,
 };

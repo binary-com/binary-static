@@ -1,9 +1,9 @@
-const BinarySocket         = require('../socket');
-const Client               = require('../../base/client');
-const localize             = require('../../base/localize').localize;
-const template             = require('../../base/utility').template;
-const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
-const FormManager          = require('../../common_functions/form_manager');
+const BinarySocket     = require('../socket');
+const Client           = require('../../base/client');
+const localize         = require('../../base/localize').localize;
+const template         = require('../../base/utility').template;
+const makeOption       = require('../../common_functions/common_functions').makeOption;
+const FormManager      = require('../../common_functions/form_manager');
 
 const DepositWithdraw = (() => {
     'use strict';
@@ -68,9 +68,11 @@ const DepositWithdraw = (() => {
 
     const showCurrency = () => {
         const currencies = Client.get('currencies').split(',');
+        const $currencies = $('<div/>');
         currencies.forEach((c) => {
-            appendTextValueChild('select_currency', c, c);
+            $currencies.append(makeOption({ text: c, value: c }));
         });
+        $('#select_currency').html($currencies.html());
         showMessage('choose_currency_message');
         const currency_form_id = '#frm_currency';
         $(currency_form_id).setVisibility(1);
