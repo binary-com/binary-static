@@ -19,7 +19,7 @@ const check_new_release = () => {
             }
         }
     };
-    xhttp.open('GET', `${urlForStatic()}version?${Math.random().toString(36).slice(2)}`, true);
+    xhttp.open('GET', urlForStatic(`version?${Math.random().toString(36).slice(2)}`), true);
     xhttp.send();
     return true;
 };

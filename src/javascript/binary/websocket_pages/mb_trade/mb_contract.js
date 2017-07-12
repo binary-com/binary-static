@@ -19,7 +19,7 @@ const MBContract = (() => {
 
     const durationText = (dur) => {
         if (dur) {
-            dur = dur.toUpperCase().replace(/([A-Z])/, '$1<br>');
+            dur = dur.replace(/([a-z])/, '$1<br>');
             if (jpClient()) {
                 const duration_map = {
                     m: 'minute',
@@ -34,7 +34,7 @@ const MBContract = (() => {
                 });
             }
         }
-        return dur;
+        return dur.toUpperCase();
     };
 
     const periodText = (trading_period) => {
@@ -97,7 +97,7 @@ const MBContract = (() => {
             const text = periodText(period);
             return $('<div/>', {
                 value: period,
-                html : `<div class="duration gr-3 gr-no-gutter">${text.duration}</div><div class="end gr-6 gr-5-m">${text.end}</div><div class="remaining-time gr-3 gr-4-m"></div>`,
+                html : `<div class="duration gr-3 gr-no-gutter">${text.duration}</div><div class="end gr-6 gr-5-m">${text.end}</div><div class="remaining-time gr-3 gr-4-m gr-no-gutter"></div>`,
                 class: 'gr-row',
             });
         };

@@ -38,7 +38,7 @@ const MBDisplayCurrencies = () => {
         $current.html(formatCurrency(def_value));
     } else {
         def_value = 'JPY';
-        $current.html($('<span/>', { text: localize('Lots'), 'data-balloon': localize('Payout per lot = ¥1,000') }));
+        $current.html($('<span/>', { text: localize('Lots'), 'data-balloon': localize('Payout per lot = 1,000') }));
     }
     $currency.attr('value', def_value);
     MBDefaults.set('currency', def_value);
