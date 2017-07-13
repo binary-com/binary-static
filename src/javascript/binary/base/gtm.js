@@ -151,7 +151,7 @@ const GTM = (() => {
         };
         gtm_data[`mt5_${acc_type}_id`] = response.mt5_new_account.login;
         if (/demo/.test(acc_type) && !Client.get('is_virtual')) {
-            gtm_data.visitorId = Client.get('loginid_array').find(login => !login.real).id;
+            gtm_data.visitorId = Client.getAccountOfType('virtual').loginid;
         }
         pushDataLayer(gtm_data);
     };

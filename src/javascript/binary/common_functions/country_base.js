@@ -1,6 +1,6 @@
-const Cookies                = require('js-cookie');
 const Crowdin                = require('../base/crowdin');
 const Language               = require('../base/language');
+const LocalStore             = require('../base/storage').LocalStore;
 const createLanguageDropDown = require('../common_functions/attach_dom/language_dropdown');
 const BinarySocket           = require('../websocket_pages/socket');
 
@@ -33,7 +33,7 @@ const limitLanguage = (lang) => {
 
 const jpClient = () => (Language.get() === 'JA' || jpResidence());
 
-const jpResidence = () => Cookies.get('residence') === 'jp';
+const jpResidence = () => (LocalStore.getObject('client.accounts')[LocalStore.get('active_loginid')] || {}).residence === 'jp';
 
 const checkLanguage = () => {
     if (Language.get() === 'ID') {

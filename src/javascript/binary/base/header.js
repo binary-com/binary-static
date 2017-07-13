@@ -41,25 +41,21 @@ const Header = (() => {
     const showOrHideLoginForm = () => {
         if (!Client.isLoggedIn()) return;
         const loginid_select = $('<div/>');
-        const loginid_array = Client.get('loginid_array');
-        loginid_array.forEach((client) => {
-            if (!client.disabled) {
-                let type = 'Virtual';
-                if (client.real) {
-                    if (client.financial)          type = 'Investment';
-                    else if (client.non_financial) type = 'Gaming';
-                    else                           type = 'Real';
-                }
-                type += ' Account';
-
-                const curr_id = client.id;
+        const types_map = {
+            virtual  : 'Virtual',
+            gaming   : 'Gaming',
+            financial: 'Investment',
+        };
+        Client.getAllLoginids().forEach((loginid) => {
+            if (Client.get('is_enabled', loginid)) {
+                const type = `${types_map[Client.getAccountType(loginid)] || 'Real'} Account`;
                 const localized_type = localize(type);
-                if (curr_id === Client.get('loginid')) { // default account
+                if (loginid === Client.get('loginid')) { // default account
                     $('.account-type').html(localized_type);
-                    $('.account-id').html(curr_id);
+                    $('.account-id').html(loginid);
                 } else {
-                    loginid_select.append($('<a/>', { href: `${'java'}${'script:;'}`, 'data-value': curr_id })
-                        .append($('<li/>', { text: localized_type }).append($('<div/>', { text: curr_id }))))
+                    loginid_select.append($('<a/>', { href: `${'java'}${'script:;'}`, 'data-value': loginid })
+                        .append($('<li/>', { text: localized_type }).append($('<div/>', { text: loginid }))))
                         .append($('<div/>', { class: 'separator-line-thin-gray' }));
                 }
             }
@@ -83,21 +79,16 @@ const Header = (() => {
 
     const switchLoginid = (loginid) => {
         if (!loginid || loginid.length === 0) return;
-        const token = Client.getToken(loginid);
+        const token = Client.get('token', loginid);
         if (!token || token.length === 0) {
             Client.sendLogoutRequest(true);
             return;
         }
 
-        // cleaning the previous values
-        Client.clear();
         sessionStorage.setItem('active_tab', '1');
-        // set cookies: loginid, login
-        Client.setCookie('loginid', loginid);
-        Client.setCookie('login',   token);
         // set local storage
         GTM.setLoginFlag();
-        localStorage.setItem('active_loginid', loginid);
+        Client.set('loginid', loginid);
         $('.login-id-list a').removeAttr('disabled');
         window.location.reload();
     };
@@ -105,8 +96,6 @@ const Header = (() => {
     const upgradeMessageVisibility = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
             const landing_company = State.getResponse('landing_company');
-            const loginid_array = Client.get('loginid_array');
-
             const $upgrade_msg = $('.upgrademessage');
 
             const showUpgrade = (url, msg) => {
@@ -117,7 +106,7 @@ const Header = (() => {
             };
 
             if (Client.get('is_virtual')) {
-                const show_upgrade_msg = !loginid_array.some(client => client.real);
+                const show_upgrade_msg = !Client.hasAccountType('real');
 
                 $upgrade_msg.setVisibility(1)
                     .find('> span').setVisibility(1).end()
@@ -126,7 +115,7 @@ const Header = (() => {
 
                 const jp_account_status = (State.getResponse('get_settings.jp_account_status') || {}).status;
                 if (jp_account_status) {
-                    const has_disabled_jp = jpClient() && loginid_array.some(client => client.real && client.disabled);
+                    const has_disabled_jp = jpClient() && Client.hasAccountType('real') && !Client.getAccountOfType('real').is_enabled;
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
@@ -157,7 +146,7 @@ const Header = (() => {
                 let show_financial = false;
                 // also allow UK MLT client to open MF account
                 if (Client.canUpgradeGamingToFinancial(landing_company) || (Client.get('residence') === 'gb' && /^MLT/.test(Client.get('loginid')))) {
-                    show_financial = !loginid_array.some(client => client.financial);
+                    show_financial = !Client.hasAccountType('financial');
                 }
                 if (show_financial) {
                     $('#virtual-text').parent().setVisibility(0);
@@ -196,7 +185,7 @@ const Header = (() => {
                 should_authenticate = false,
                 has_mt_account = false;
 
-            const costarica_landing_company = /costarica/.test(Client.get('landing_company_name'));
+            const costarica_landing_company = /costarica/.test(Client.get('landing_company_shortcode'));
 
             const authenticate = () => {
                 // don't show age verification check for costarica clients

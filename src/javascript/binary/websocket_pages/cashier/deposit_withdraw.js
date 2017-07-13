@@ -30,10 +30,8 @@ const DepositWithdraw = (() => {
         if (response) {
             if (response.error) {
                 showError('custom_error', response.error.message);
-                return;
-            }
-            if (response.msg_type === 'set_account_currency') {
-                Client.setCurrency(response.echo_req.set_account_currency);
+            } else if (response.msg_type === 'set_account_currency') {
+                Client.set('currency', response.echo_req.set_account_currency);
             }
         }
 

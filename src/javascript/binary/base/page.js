@@ -8,7 +8,6 @@ const Localize          = require('./localize');
 const localize          = require('./localize').localize;
 const Login             = require('./login');
 const Menu              = require('./menu');
-const LocalStore        = require('./storage').LocalStore;
 const State             = require('./storage').State;
 const Url               = require('./url');
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
@@ -45,12 +44,9 @@ const Page = (() => {
         $(document).ready(() => {
             // Cookies is not always available.
             // So, fall back to a more basic solution.
-            let match = document.cookie.match(/\bloginid=(\w+)/);
-            match = match ? match[1] : '';
             $(window).on('storage', (jq_event) => {
                 switch (jq_event.originalEvent.key) {
                     case 'active_loginid':
-                        if (jq_event.originalEvent.newValue === match) return;
                         if (jq_event.originalEvent.newValue === '') {
                             // logged out
                             reload();
@@ -68,7 +64,6 @@ const Page = (() => {
                 }
             });
             scrollToTop();
-            LocalStore.set('active_loginid', match);
         });
     };
 

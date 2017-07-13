@@ -103,7 +103,7 @@ const VirtualAccOpening = (() => {
         const error = response.error;
         if (!error) {
             const new_account = response.new_account_virtual;
-            Client.setCookie('residence', response.echo_req.residence);
+            Client.set('residence', response.echo_req.residence);
             return Client.processNewAccount(
                 new_account.email,
                 new_account.client_id,
