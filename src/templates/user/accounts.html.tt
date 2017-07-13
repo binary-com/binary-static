@@ -8,7 +8,10 @@
 </div>
 
 <div class="invisible" id="accounts_wrapper">
+    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-10" invisible=1 %]
+
     <h2>[% l("Create New Account") %]</h2>
+
     <div class='invisible' id="new_accounts_wrapper">
         [% INCLUDE table scroll=1 id='new_accounts' data={
         thead=[
@@ -19,11 +22,13 @@
         <p class="center-text gr-padding-30">[% l("You have created all accounts available for you.") %]</p>
     </div>
 
-    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-30" invisible=1 %]
+    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-20" invisible=1 %]
 
     <h2>[% l("Your Accounts") %]</h2>
     [% INCLUDE table scroll=1 id='existing_accounts' data={
     thead=[
         [{ text=l("Account") }, { text=l("Available Markets") }, { text=l("Currency") }],
     ]} %]
+
+    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]
 </div>
