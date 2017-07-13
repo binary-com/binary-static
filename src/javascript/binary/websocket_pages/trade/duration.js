@@ -325,7 +325,6 @@ const Durations = (() => {
 
     const selectEndDate = (end_date) => {
         const expiry_time = document.getElementById('expiry_time');
-        const date_start  = document.getElementById('date_start');
         const end_date_readable = toReadableFormat(end_date);
         const end_date_iso      = toISOFormat(end_date);
         $('#expiry_date').val(end_date_readable)
@@ -334,13 +333,10 @@ const Durations = (() => {
         if (end_date.isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
             Durations.setTime('');
             Defaults.remove('expiry_time');
-            setNow(); // start time
-            date_start.setAttribute('disabled', 'disabled');
             expiry_time.hide();
             Barriers.display();
             processTradingTimesRequest(end_date_iso);
         } else {
-            date_start.removeAttribute('disabled');
             if (!expiry_time.value) {
                 const new_time = moment(window.time).add(5, 'minutes').utc().format('HH:mm');
                 expiry_time.value = new_time;
@@ -405,13 +401,6 @@ const Durations = (() => {
         commonTrading.timeIsValid($expiry_time);
         Durations.display();
         return make_price_request;
-    };
-
-    const setNow = () => {
-        const $date_start = $('#date_start');
-        if ($date_start.find('option[value="now"]').length) {
-            Defaults.set('date_start', 'now');
-        }
     };
 
     return {

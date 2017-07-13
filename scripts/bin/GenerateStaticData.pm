@@ -341,7 +341,7 @@ sub _texts {
         push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
         push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
         push @texts, localize('Lots');
-        push @texts, localize('Payout per lot = ¥1,000');
+        push @texts, localize('Payout per lot = 1,000');
         #strings for digit_info
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
