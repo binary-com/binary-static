@@ -293,7 +293,7 @@ const Client = (() => {
         return can_upgrade;
     };
 
-    const getLandingCompanyObject = (current_account, landing_company) => {
+    const getLandingCompanyValue = (current_account, landing_company, key) => {
         let landing_company_object;
         if (current_account.financial) {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
@@ -305,9 +305,12 @@ const Client = (() => {
                 landing_company_object = getPropertyValue(landing_company, 'financial_company');
             }
         } else {
-            landing_company_object = $.extend({}, getPropertyValue(landing_company, 'financial_company'), getPropertyValue(landing_company, 'gaming_company'));
+            const financial_company = (getPropertyValue(landing_company, 'financial_company') || {})[key];
+            const gaming_company = (getPropertyValue(landing_company, 'gaming_company') || {})[key];
+            landing_company_object = financial_company.concat(gaming_company);
+            return landing_company_object;
         }
-        return landing_company_object || {};
+        return (landing_company_object || {})[key];
     };
 
     return {
@@ -336,7 +339,7 @@ const Client = (() => {
         hasGamingFinancialEnabled   : hasGamingFinancialEnabled,
         activateByClientType        : activateByClientType,
         currentLandingCompany       : currentLandingCompany,
-        getLandingCompanyObject     : getLandingCompanyObject,
+        getLandingCompanyValue      : getLandingCompanyValue,
     };
 })();
 

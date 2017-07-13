@@ -18,8 +18,7 @@ const SetCurrency = (() => {
         BinarySocket.wait('landing_company').then((response) => {
             const loginid_array = Client.get('loginid_array');
             const current_account = loginid_array.find(login => Client.get('loginid') === login.id);
-            const landing_company_object = Client.getLandingCompanyObject(current_account, response.landing_company);
-            const currencies = landing_company_object.legal_allowed_currencies;
+            const currencies = Client.getLandingCompanyValue(current_account, response.landing_company, 'legal_allowed_currencies');
             const $currency_list = $('#currency_list');
             currencies.forEach((c) => {
                 $currency_list

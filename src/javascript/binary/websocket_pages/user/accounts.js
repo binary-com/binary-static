@@ -1,7 +1,8 @@
-const BinarySocket      = require('../socket');
-const Client            = require('../../base/client');
-const localize          = require('../../base/localize').localize;
-const urlFor            = require('../../base/url').urlFor;
+const BinarySocket = require('../socket');
+const Client       = require('../../base/client');
+const localize     = require('../../base/localize').localize;
+const urlFor       = require('../../base/url').urlFor;
+const toTitleCase  = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
     'use strict';
@@ -37,12 +38,11 @@ const Accounts = (() => {
             financial: type === 'financial',
         };
         const market_text = getAvailableMarkets(current_account);
-        const landing_company_object = Client.getLandingCompanyObject(current_account, landing_company);
-        const currencies = landing_company_object.legal_allowed_currencies.join(', ');
+        const currencies = Client.getLandingCompanyValue(current_account, landing_company, 'legal_allowed_currencies').join(', ');
 
         $tbody_new_accounts
             .append($('<tr/>')
-                .append($('<td/>', { text: localize(`${(type === 'real' ? 'Real' : 'Investment')} Account`) }))
+                .append($('<td/>', { text: localize(`${toTitleCase(type)} Account`) }))
                 .append($('<td/>', { text: market_text }))
                 .append($('<td/>', { text: currencies }))
                 .append($('<td/>').html($('<a/>', { class: 'button' }).html($('<span/>', { text: localize('Create') })))));
@@ -93,8 +93,8 @@ const Accounts = (() => {
     };
 
     const getAvailableMarkets = (current_account) => {
-        const landing_company_object = Client.getLandingCompanyObject(current_account, landing_company);
-        let market_array = landing_company_object.legal_allowed_markets || '';
+        const legal_allowed_markets = Client.getLandingCompanyValue(current_account, landing_company, 'legal_allowed_markets');
+        let market_array = legal_allowed_markets || '';
         if (typeof market_array === 'object' && market_array.length) {
             market_array = market_array.map(market => getMarketName(market)).filter((value, index, self) => value && self.indexOf(value) === index).join(', ');
         }
