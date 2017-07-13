@@ -48,6 +48,7 @@
     #tab_portfolio-content #portfolio {
         [data-balloon] {
             cursor: initial;
+            border-bottom: none;
 
             &:after, &:before {
                 display: none !important;
