@@ -2,6 +2,21 @@ const Cookies          = require('js-cookie');
 const getPropertyValue = require('./utility').getPropertyValue;
 const isEmptyObject    = require('./utility').isEmptyObject;
 
+const getObject = function(key) {
+    return JSON.parse(this.getItem(key) || '{}');
+};
+
+const setObject = function(key, value) {
+    if (value && value instanceof Object) {
+        this.setItem(key, JSON.stringify(value));
+    }
+};
+
+if (typeof Storage !== 'undefined') {
+    Storage.prototype.getObject = getObject;
+    Storage.prototype.setObject = setObject;
+}
+
 const isStorageSupported = (storage) => {
     if (typeof storage === 'undefined') {
         return false;
@@ -19,6 +34,8 @@ const isStorageSupported = (storage) => {
 
 const Store = function(storage) {
     this.storage = storage;
+    this.storage.getObject = getObject;
+    this.storage.setObject = setObject;
 };
 
 Store.prototype = {
@@ -29,6 +46,12 @@ Store.prototype = {
         if (typeof value !== 'undefined') {
             this.storage.setItem(key, value);
         }
+    },
+    getObject: function (key) {
+        return this.storage.getObject(key);
+    },
+    setObject: function (key, value) {
+        this.storage.setObject(key, value);
     },
     remove: function(key) { this.storage.removeItem(key); },
     clear : function()    { this.storage.clear(); },
