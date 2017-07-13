@@ -299,6 +299,11 @@ const Client = (() => {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
         } else if (current_account.real) {
             landing_company_object = getPropertyValue(landing_company, 'gaming_company');
+
+            // handle accounts such as japan that don't have gaming company
+            if (!landing_company_object) {
+                landing_company_object = getPropertyValue(landing_company, 'financial_company');
+            }
         } else {
             landing_company_object = $.extend({}, getPropertyValue(landing_company, 'financial_company'), getPropertyValue(landing_company, 'gaming_company'));
         }
