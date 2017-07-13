@@ -1,34 +1,45 @@
-<div class="center-text">
-    <img src="[% request.url_for('images/pages/set_currency/account-created.svg') %]" />
-    <div class="gr-padding-10"></div>
-    <h1>[% l("Congratulations!") %]</h1>
-    <p>[% l("You have successfully created your account!") %]</p>
-
-    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-10" invisible=1 %]
-
-    <p>[% l("Please select currency for this account:") %]</p>
+<div id="set_currency_loading">
+    [% PROCESS global/loading.html.tt %]
 </div>
 
-<div class="center-text">
-    <form class="gr-7 gr-centered" id="frm_set_currency">
-        <div class="gr-row gr-row-align-center gr-padding-20 gr-parent" id="currency_list"></div>
-        <p class="invisible error-msg"></p>
-        <button type="submit">[% l('Confirm') %]</button>
-    </form>
-</div>
+<div class="invisible" id="set_currency">
+    <div class="center-text">
+        <div class="invisible" id="show_new_account">
+            <img src="[% request.url_for('images/pages/set_currency/account-created.svg') %]" />
+            <div class="gr-padding-10"></div>
+            <h1>[% l("Congratulations!") %]</h1>
+            <p>[% l("You have successfully created your account!") %]</p>
+        </div>
+        <div class="invisible" id="hide_new_account">
+            <h1>[% l("Select currency") %]</h1>
+        </div>
 
-[% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-20" invisible=1 %]
+        [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-10" invisible=1 %]
 
-<div class="gr-row">
-    <div class="faded gr-8 gr-centered">
-        <p>[% l('Disclaimer:') %]</p>
-        <ol>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque.</li>
-            <li>Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis.</li>
-            <li>Curabitur lobortis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim.</li>
-            <li>In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget.</li>
-        </ol>
+        <p>[% l("Please select currency for this account:") %]</p>
     </div>
-</div>
 
-[% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]
+    <div class="center-text">
+        <form class="gr-7 gr-centered" id="frm_set_currency">
+            <div class="gr-row gr-row-align-center gr-padding-20 gr-parent" id="currency_list"></div>
+            <p class="invisible error-msg"></p>
+            <button type="submit">[% l('Confirm') %]</button>
+        </form>
+    </div>
+
+    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-20" invisible=1 %]
+
+    <div class="gr-row">
+        <div class="faded gr-8 gr-centered">
+            <p>[% l('Disclaimer:') %]</p>
+            <ol>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque.</li>
+                <li>Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis.</li>
+                <li>Curabitur lobortis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim.</li>
+                <li>In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget.</li>
+            </ol>
+        </div>
+    </div>
+
+    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]
+</div>

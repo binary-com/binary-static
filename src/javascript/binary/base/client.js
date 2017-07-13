@@ -182,7 +182,7 @@ const Client = (() => {
         localStorage.setItem('GTM_new_account', '1');
         localStorage.setItem('active_loginid', client_loginid);
         RealityCheckData.clear();
-        window.location.href = jpClient() || virtual_client ? defaultRedirectUrl() : urlFor('user/set-currency'); // need to redirect not using pjax
+        window.location.href = jpClient() || virtual_client ? defaultRedirectUrl() : `${urlFor('user/set-currency')}#new_account`; // need to redirect not using pjax
     };
 
     const hasShortCode = (data, code) => ((data || {}).shortcode === code);

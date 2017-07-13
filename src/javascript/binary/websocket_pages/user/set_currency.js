@@ -15,6 +15,8 @@ const SetCurrency = (() => {
             BinaryPjax.load(defaultRedirectUrl());
             return;
         }
+        const el = /new_account/.test(window.location.hash) ? 'show' : 'hide';
+        $(`#${el}_new_account`).setVisibility(1);
         BinarySocket.wait('landing_company').then((response) => {
             const loginid_array = Client.get('loginid_array');
             const current_account = loginid_array.find(login => Client.get('loginid') === login.id);
@@ -26,6 +28,9 @@ const SetCurrency = (() => {
                         .append($('<div/>').append($('<img/>', { src: urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
                         .append($('<div/>', { text: `${formatCurrency(c)} ${c}` })));
             });
+
+            $('#set_currency_loading').remove();
+            $('#set_currency').setVisibility(1);
 
             $('.currency_wrapper').on('click', function () {
                 $currency_list.find('> div').removeClass('selected');

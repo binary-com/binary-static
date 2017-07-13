@@ -83,12 +83,17 @@ const Accounts = (() => {
         Object.keys(accounts_obj).forEach((account) => {
             const current_account = loginid_array.find(login => account === login.id);
             const market_text = getAvailableMarkets(current_account);
+            const account_currency = accounts_obj[account].currency;
 
             $tbody_existing_accounts
-                .append($('<tr/>')
-                    .append($('<td/>', { text: account, id: account }))
+                .append($('<tr/>', { id: account })
+                    .append($('<td/>', { text: account }))
                     .append($('<td/>', { text: market_text }))
-                    .append($('<td/>', { text: accounts_obj[account].currency })));
+                    .append($('<td/>', { text: account_currency, class: 'account-currency' })));
+
+            if (!account_currency) {
+                $(`#${account}`).find('.account-currency').html($('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })));
+            }
         });
     };
 
