@@ -8,7 +8,6 @@ const redrawChart      = require('../trade/charts/webtrader_chart').redrawChart;
 const Client           = require('../../base/client');
 const GTM              = require('../../base/gtm');
 const localize         = require('../../base/localize').localize;
-const getPropertyValue = require('../../base/utility').getPropertyValue;
 const isEmptyObject    = require('../../base/utility').isEmptyObject;
 const jpClient         = require('../../common_functions/country_base').jpClient;
 const formatMoney      = require('../../common_functions/currency').formatMoney;
@@ -164,9 +163,8 @@ const MBPrice = (() => {
     };
 
     const getAskPrice = proposal => (
-        (proposal.error || +proposal.ask_price === 0) ?
-            (getPropertyValue(proposal, ['error', 'details', 'display_value']) || proposal.echo_req.amount) : // In case of RateLimit error, there is no display_value, so we display the request amount
-            proposal.ask_price
+        // In case of RateLimit error, there is no display_value, so we display the request amount
+        (proposal.error || +proposal.ask_price === 0) ? proposal.echo_req.amount : proposal.ask_price
     );
 
     const getMovementDirection = (prev, current) => (current > prev ? 'up' : current < prev ? 'down' : '');
