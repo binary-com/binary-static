@@ -1,17 +1,14 @@
 const Client      = require('./client');
 const getLanguage = require('./language').get;
 const getAppId    = require('../../config').getAppId;
+const isStorageSupported = require('./storage').isStorageSupported;
 
 const Login = (() => {
     'use strict';
 
     const redirectToLogin = () => {
-        if (!Client.isLoggedIn() && !isLoginPages()) {
-            try {
-                sessionStorage.setItem('redirect_url', window.location.href);
-            } catch (e) {
-                window.alert('The website needs features which are not enabled on private mode browsing. Please use normal mode.');
-            }
+        if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage)) {
+            sessionStorage.setItem('redirect_url', window.location.href);
             window.location.href = loginUrl();
         }
     };
