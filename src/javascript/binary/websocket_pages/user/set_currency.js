@@ -18,10 +18,8 @@ const SetCurrency = (() => {
         const hash_value = window.location.hash;
         const el = /new_account/.test(hash_value) ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
-        BinarySocket.wait('landing_company').then((response) => {
-            const loginid_array = Client.get('loginid_array');
-            const current_account = loginid_array.find(login => Client.get('loginid') === login.id);
-            const currencies = Client.getLandingCompanyValue(current_account, response.landing_company, 'legal_allowed_currencies');
+        BinarySocket.wait('payout_currencies').then((response) => {
+            const currencies = response.payout_currencies;
             const $currency_list = $('#currency_list');
             currencies.forEach((c) => {
                 $currency_list
