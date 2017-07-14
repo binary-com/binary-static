@@ -15,7 +15,8 @@ const SetCurrency = (() => {
             BinaryPjax.load(defaultRedirectUrl());
             return;
         }
-        const el = /new_account/.test(window.location.hash) ? 'show' : 'hide';
+        const hash_value = window.location.hash;
+        const el = /new_account/.test(hash_value) ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
         BinarySocket.wait('landing_company').then((response) => {
             const loginid_array = Client.get('loginid_array');
@@ -48,7 +49,16 @@ const SetCurrency = (() => {
                         if (response_c.error) {
                             $error.text(response_c.error.message).setVisibility(1);
                         } else {
-                            window.location.href = urlFor('user/accounts'); // load without pjax
+                            let redirect_url = 'user/accounts',
+                                hash = '';
+                            if (/deposit/.test(hash_value)) {
+                                redirect_url = 'cashier/forwardws';
+                                hash = '#deposit';
+                            } else if (/withdraw/.test(hash_value)) {
+                                redirect_url = 'cashier/forwardws';
+                                hash = '#withdraw';
+                            }
+                            window.location.href = urlFor(redirect_url) + hash; // load without pjax
                         }
                     });
                 } else {
