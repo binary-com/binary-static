@@ -16,7 +16,7 @@ sub all_pages {
         ['platforms',                  'static/platforms',             'default',    'Platforms',            'ja'],
         ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading',  'ja'],
         ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents',           'ja'],
-        ['regulation',                 'legal/regulation',             'default',    'Regulation'],
+        ['regulation',                 'legal/regulation',             'default',    'Regulation',           'id'],
         ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions', 'ja'],
         ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions', 'NOT-ja,en'],
         ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate',            'ja'],
