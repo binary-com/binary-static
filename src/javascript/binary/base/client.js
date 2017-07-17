@@ -18,8 +18,8 @@ const Client = (() => {
 
     const init = () => {
         current_loginid = LocalStore.get('active_loginid');
-        client_object = getAllAccountsObject();
         backwardCompatibility();
+        client_object = getAllAccountsObject();
     };
 
     const isLoggedIn = () => (
@@ -133,16 +133,47 @@ const Client = (() => {
         }
     };
 
+    /**
+     * Upgrade the structure of client info to the new one
+     * (for clients which already are logged-in with the old version)
+     */
     const backwardCompatibility = () => {
-        // upgrade client.tokens structure to the new one (for clients which already are logged-in with the old version)
-        const account_obj = getPropertyValue(JSON.parse(get('tokens') || '{}'), [get('loginid')]) || {};
-        if (typeof account_obj !== 'object') {
-            const tokens = get('tokens');
-            const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
-            Object.keys(tokens_obj).forEach((loginid) => {
-                tokens_obj[loginid] = { token: tokens_obj[loginid] };
+        if (!current_loginid) return;
+
+        const accounts_obj    = LocalStore.getObject('client.tokens');
+        const current_account = getPropertyValue(accounts_obj, current_loginid) || {};
+
+        // 1. client.tokens = { loginid1: token1, loginid2, token2 }
+        if (typeof current_account !== 'object') {
+            Object.keys(accounts_obj).forEach((loginid) => {
+                accounts_obj[loginid] = { token: current_account };
             });
-            // set('tokens', JSON.stringify(tokens_obj));
+        }
+
+        // 2. client.tokens = { loginid1: { token: token1, currency: currency1 }, loginid2: { ... } }
+        if (!isEmptyObject(accounts_obj)) {
+            const keys = ['balance', 'currency', 'email', 'is_virtual', 'residence', 'session_start'];
+            // read current client.* values and set in new object
+            const setValue = (old_key, new_key) => {
+                const value = LocalStore.get(`client.${old_key}`);
+                if (value) {
+                    accounts_obj[current_loginid][new_key || old_key] = value;
+                }
+            };
+            keys.forEach((key) => { setValue(key); });
+            setValue('landing_company_name', 'landing_company_shortcode');
+            accounts_obj[current_loginid].is_enabled = 1;
+
+            // remove all client.* and cookies
+            Object.keys(LocalStore.storage).forEach((key) => {
+                if (/^client\./.test(key)) {
+                    LocalStore.remove(key);
+                }
+            });
+            cleanupCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
+
+            // set client.accounts
+            LocalStore.setObject(storage_key, accounts_obj);
         }
     };
 
