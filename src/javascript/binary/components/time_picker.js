@@ -56,8 +56,10 @@ const TimePicker = (() => {
 
         if (options.maxTime) {
             options.maxTime = moment.utc(options.maxTime);
-            const minute = parseInt(options.maxTime.minute());
-            const hour = parseInt(options.maxTime.hour());
+            let minute = parseInt(options.maxTime.minute());
+            let hour = parseInt(options.maxTime.hour());
+            hour = minute < 5 ? hour - 1 : hour;
+            minute = minute < 5 ? 55 : minute - 5;
             obj_config.maxTime = { hour: hour, minute: minute };
         }
 

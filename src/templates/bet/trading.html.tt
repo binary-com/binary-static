@@ -54,7 +54,10 @@
                                     </div>
                                     <div id="expiry_type_endtime">
                                         <input id="expiry_date" type="text" readonly="readonly" autocomplete="off" />
-                                        <input id="expiry_time" type="text" autocomplete="off" />
+                                        <span id="expiry_time_row">
+                                            <input id="expiry_time" type="text" autocomplete="off" readonly="readonly" class="medium_width_input" />
+                                            <span class="hint">GMT</span>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
