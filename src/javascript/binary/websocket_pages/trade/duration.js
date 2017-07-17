@@ -180,7 +180,7 @@ const Durations = (() => {
         expiry_time_el.setAttribute('data-value', expiry_time);
         Defaults.set('expiry_date', expiry_date_iso);
         Defaults.set('expiry_time', expiry_time);
-        Durations.setTime(expiry_time);
+        setTime(expiry_time);
 
         durationPopulate();
     };
@@ -331,7 +331,7 @@ const Durations = (() => {
                          .attr('data-value', end_date_iso);
         Defaults.set('expiry_date', end_date_iso);
         if (end_date.isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
-            Durations.setTime('');
+            setTime('');
             Defaults.remove('expiry_time');
             expiry_time.hide();
             Barriers.display();
@@ -342,7 +342,7 @@ const Durations = (() => {
                 expiry_time.value = new_time;
                 expiry_time.setAttribute('data-value', new_time);
             }
-            Durations.setTime(expiry_time.value);
+            setTime(expiry_time.value);
             Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
             expiry_time.show();
             Barriers.display();
@@ -394,13 +394,18 @@ const Durations = (() => {
         if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
             make_price_request = -1;
             const end_time = moment(parseInt(value) * 1000).add(5, 'minutes').utc();
-            Durations.setTime((commonTrading.timeIsValid($expiry_time) && Defaults.get('expiry_time') ?
+            setTime((commonTrading.timeIsValid($expiry_time) && Defaults.get('expiry_time') ?
                                Defaults.get('expiry_time') : end_time.format('HH:mm')));
-            Durations.selectEndDate(commonTrading.timeIsValid($expiry_time) && Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : end_time);
+            selectEndDate(commonTrading.timeIsValid($expiry_time) && Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : end_time);
         }
         commonTrading.timeIsValid($expiry_time);
-        Durations.display();
+        displayDurations();
         return make_price_request;
+    };
+
+    const setTime = (time) => {
+        $('#expiry_time').val(time);
+        Defaults.set('expiry_time', time);
     };
 
     return {
@@ -410,7 +415,7 @@ const Durations = (() => {
         selectEndDate            : selectEndDate,
         validateMinDurationAmount: validateMinDurationAmount,
         onStartDateChange        : onStartDateChange,
-        setTime                  : (time) => { $('#expiry_time').val(time); Defaults.set('expiry_time', time); },
+        setTime                  : setTime,
         selectAmount             : (a) => { selected_duration.amount = a; },
         selectUnit               : (u) => { selected_duration.unit = u; },
     };

@@ -203,7 +203,7 @@ const TradingEvents = (() => {
              */
             attachTimePicker('#expiry_time');
             $('#expiry_time')
-                .on('focus click', () => { attachTimePicker('#expiry_time'); })
+                .on('focus click', () => { attachTimePicker('#expiry_time', $date_start); })
                 .on('keypress', (ev) => { onlyNumericOnKeypress(ev, [58]); })
                 .on('change input blur', function() {
                     if (!dateValueChanged(this, 'time')) {
@@ -239,7 +239,7 @@ const TradingEvents = (() => {
         const initTimePicker = () => {
             if (timepicker_initialized) return;
             timepicker_initialized = true;
-            attachTimePicker('#time_start', $date_start);
+            attachTimePicker('#time_start');
             $('#time_start')
                 .on('focus click', () => { attachTimePicker('#time_start', $date_start); })
                 .on('change input blur', function() {
@@ -447,8 +447,9 @@ const TradingEvents = (() => {
         let minTime = window.time ? window.time : moment.utc();
         let maxTime;
         if ($setMinMaxSelector) {
-            minTime = getMinMaxTime($setMinMaxSelector, minTime).minTime;
-            maxTime = getMinMaxTime($setMinMaxSelector, minTime).maxTime;
+            const minMaxTime = getMinMaxTime($setMinMaxSelector, minTime);
+            minTime = minMaxTime.minTime;
+            maxTime = minMaxTime.maxTime;
         }
         const initObj = {
             selector: selector,
