@@ -70,37 +70,40 @@
                 </div>
                 [% BLOCK area %]
                     [% square_wh=10.6 default_width=37.8 %]
+                    [% svg_width = 320 %]
+                    [% svg_scale = 900 / svg_width %]
                     [% FOREACH item IN items %]
-                        <area shape="rect" coords="[% item.x * 3 %],[% item.y * 3 %],[% (item.x + (item.width || default_width) + square_wh) * 3 %],[% (item.y + square_wh) * 3 %]" href="[% item.link || request.url_for('download/regulation/' _ item.name.replace(' ', '') _ '.pdf') %]" alt="[% item.name %]" target="_blank">
+                        <area shape="rect" coords="[% item.x * svg_scale %],[% item.y * svg_scale %],[% (item.x + (item.width || default_width) + square_wh) * svg_scale %],[% (item.y + square_wh) * svg_scale %]" href="[% item.link || request.url_for('download/regulation/' _ item.name.replace(' ', '') _ '.pdf') %]" alt="[% item.name %]" target="_blank">
                     [% END %]
                 [% END %]
                 <map name="planetmap" id="planetmap">
                     [%# Inspect country name rectangles in map.svg and use attributes: x, y, width (default: 37.8) %]
                     [% INCLUDE area items=[
-                        { name='Sweden'         x=125.0  y=7.6   },
-                        { name='Denmark'        x=117.7  y=19.7  },
-                        { name='Germany'        x=109.3  y=31.8  },
-                        { name='Netherlands'    x=90.1   y=43.9  width=46.2 },
-                        { name='United Kingdom' x=0.0    y=86.6  width=55.7 },
-                        { name='Luxembourg'     x=8.9    y=114.5 width=46.9 },
-                        { name='France'         x=17.9   y=126.3 },
-                        { name='Spain'          x=0.9    y=144.3 },
-                        { name='Portugal'       x=0.9    y=156.3 },
-                        { name='Italy'          x=11.5   y=168.5 width=27.3 },
-                        { name='Austria'        x=97.7   y=185.3 },
-                        { name='Slovenia'       x=166.2  y=222.0 },
-                        { name='Croatia'        x=177.4  y=209.9 link='http://www.hanfa.hr/capital-market/registers/notifications-from-eu-member-states' },
-                        { name='Greece'         x=251.6  y=180.1 },
-                        { name='Bulgaria'       x=251.6  y=159.5 },
-                        { name='Romania'        x=251.6  y=147.7 },
-                        { name='Hungary'        x=251.5  y=135.9 link='https://alk.mnb.hu/en/left_menu/market_participants/kereso/kereses?ktasearch_value=&ktasearch_label=&ktasearch_prev_value=&pmod=simpleSearch&n=Binary+Investments+%28Europe%29+Ltd&st=0&i=&a=1&x=56&y=8' },
-                        { name='Slovakia'       x=251.6  y=124.2 },
-                        { name='Czech Republic' x=236.2  y=112.4 width=53.2 },
-                        { name='Poland'         x=255.3  y=95.3  width=34.2 },
-                        { name='Lithuania'      x=250.7  y=83.4  width=38.8 link='https://www.lb.lt/en/sfi-financial-market-participants?query=binary&ff=1' },
-                        { name='Latvia'         x=255.3  y=71.7  width=34.2 link='http://www.fktk.lv/en/market/financial-instruments-market/service-providers-from-the-eea/freedom-to-provide-services.html' },
-                        { name='Estonia'        x=255.3  y=60.0  width=34.2 },
-                        { name='Finland'        x=255.3  y=13.9  width=34.2 },
+                        { name='Sweden'         x=127.7  y=7.6   },
+                        { name='Denmark'        x=120.4  y=19.7  },
+                        { name='Germany'        x=112    y=31.8  },
+                        { name='Netherlands'    x=92.8   y=43.9  width=46.2 },
+                        { name='United Kingdom' x=2.7    y=86.6  width=55.7 },
+                        { name='Luxembourg'     x=11.6   y=114.5 width=46.9 },
+                        { name='France'         x=20.6   y=126.3 },
+                        { name='Spain'          x=3.6    y=144.3 },
+                        { name='Portugal'       x=3.6    y=156.3 },
+                        { name='Italy'          x=14.2   y=168.5 width=27.3 },
+                        { name='Austria'        x=100.4  y=185.3 },
+                        { name='Slovenia'       x=109.4  y=201.5 width=37.8 },
+                        { name='Croatia'        x=142.6  y=215.2 link='http://www.hanfa.hr/capital-market/registers/notifications-from-eu-member-states' },
+                        { name='Greece'         x=199.4  y=215.3 },
+                        { name='Cyprus'         x=257.8  y=221.8 width=48.4 - 10.6 link='http://www.cysec.gov.cy/en-GB/entities/investment-firms/member-states/Cross-Border/43503/' },
+                        { name='Bulgaria'       x=254.3  y=159.5 width=48.4 - 10.6 },
+                        { name='Romania'        x=254.3  y=147.7 },
+                        { name='Hungary'        x=254.2  y=135.9 link='https://alk.mnb.hu/en/left_menu/market_participants/kereso/kereses?ktasearch_value=&ktasearch_label=&ktasearch_prev_value=&pmod=simpleSearch&n=Binary+Investments+%28Europe%29+Ltd&st=0&i=&a=1&x=56&y=8' },
+                        { name='Slovakia'       x=254.3  y=124.2 },
+                        { name='Czech Republic' x=238.9  y=112.4 width=53.2 },
+                        { name='Poland'         x=258    y=95.3  width=34.2 },
+                        { name='Lithuania'      x=252.9  y=83.5  width=39.3 link='https://www.lb.lt/en/sfi-financial-market-participants?query=binary&ff=1' },
+                        { name='Latvia'         x=258    y=71.7  width=34.2 link='http://www.fktk.lv/en/market/financial-instruments-market/service-providers-from-the-eea/freedom-to-provide-services.html' },
+                        { name='Estonia'        x=258    y=60.0  width=34.2 },
+                        { name='Finland'        x=258    y=13.9  width=34.2 },
                     ] %]
                 </map>
             </div>
