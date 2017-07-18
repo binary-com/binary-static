@@ -22,7 +22,7 @@ const SetCurrency = (() => {
         $(`#${el}_new_account`).setVisibility(1);
         BinarySocket.wait('landing_company').then((response) => {
             const authorize = State.get(['response', 'authorize', 'authorize']) || {};
-            const currencies = getCurrencies(authorize.sub_accounts, response.landing_company);
+            const currencies = getCurrencies(authorize, response.landing_company);
             const $currency_list = $('#currency_list');
             currencies.forEach((c) => {
                 $currency_list
@@ -76,18 +76,23 @@ const SetCurrency = (() => {
         });
     };
 
-    const getCurrencies = (sub_accounts, landing_company) => {
-        const currency_values = getCurrencyValues(sub_accounts, landing_company);
-        const fiat_currencies = currency_values.fiat_currencies;
+    const getCurrencies = (authorize, landing_company) => {
+        let currencies_to_show;
+        const currency_values = getCurrencyValues(authorize.sub_accounts, landing_company);
         const currencies      = currency_values.currencies;
-        const sub_currencies  = currency_values.sub_currencies;
+        if (authorize.allow_omnibus) {
+            const sub_currencies  = currency_values.sub_currencies;
 
-        const has_fiat_sub = currency_values.has_fiat_sub;
+            currencies_to_show = currencies.filter(c => sub_currencies.indexOf(c) < 0);
 
-        let currencies_to_show = currencies.filter(c => sub_currencies.indexOf(c) < 0);
-
-        if (has_fiat_sub) {
-            currencies_to_show = currencies_to_show.filter(c => fiat_currencies.indexOf(c) < 0);
+            const has_fiat_sub = currency_values.has_fiat_sub;
+            if (has_fiat_sub) {
+                const fiat_currencies = currency_values.fiat_currencies;
+                currencies_to_show = currencies_to_show.filter(c => fiat_currencies.indexOf(c) < 0);
+            }
+        } else {
+            const cryptocurrencies = currency_values.cryptocurrencies;
+            currencies_to_show = currencies.filter(c => cryptocurrencies.indexOf(c) < 0);
         }
 
         return currencies_to_show;
