@@ -103,7 +103,7 @@ const Client = (() => {
     const getAccountOfType = (type, only_enabled) => {
         const id = getAllLoginids().find(loginid => (
             isAccountOfType(type, loginid) &&
-            (only_enabled ? get('is_enabled', loginid) : true)
+            (only_enabled ? !get('is_disabled', loginid) : true)
         ));
         return id ? $.extend({ loginid: id }, get(null, id)) : {};
     };
@@ -166,7 +166,6 @@ const Client = (() => {
             };
             keys.forEach((key) => { setValue(key); });
             setValue('landing_company_name', 'landing_company_shortcode');
-            accounts_obj[current_loginid].is_enabled = 1;
 
             // remove all client.* and cookies
             Object.keys(LocalStore.storage).forEach((key) => {
@@ -192,7 +191,6 @@ const Client = (() => {
         set('token',      token,       loginid);
         set('email',      email,       loginid);
         set('is_virtual', +is_virtual, loginid);
-        set('is_enabled', 1);
         set('loginid',    loginid);
 
         window.location.href = defaultRedirectUrl(); // need to redirect not using pjax

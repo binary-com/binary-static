@@ -71,8 +71,10 @@ const LoggedInHandler = (() => {
                 Client.set('currency',   currency,  loginid);
                 Client.set('email',      email,     loginid);
                 Client.set('residence',  residence, loginid);
-                Client.set('is_enabled', isEnabled(loginid_list, loginid), loginid);
                 Client.set('is_virtual', Client.getAccountType(loginid) === 'virtual' ? 1 : 0, loginid);
+                if (isDisabled(loginid_list, loginid)) {
+                    Client.set('is_disabled', 1, loginid);
+                }
             }
             i++;
         }
@@ -84,7 +86,7 @@ const LoggedInHandler = (() => {
         }
     };
 
-    const isEnabled = (loginid_list, loginid) => (loginid_list ? +!(new RegExp(`${loginid}:[VR]:D`)).test(loginid_list) : 1);
+    const isDisabled = (loginid_list, loginid) => (loginid_list ? +(new RegExp(`${loginid}:[VR]:D`)).test(loginid_list) : 0);
 
     return {
         onLoad: onLoad,

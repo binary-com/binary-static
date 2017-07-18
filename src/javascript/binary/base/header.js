@@ -47,7 +47,7 @@ const Header = (() => {
             financial: 'Investment',
         };
         Client.getAllLoginids().forEach((loginid) => {
-            if (Client.get('is_enabled', loginid)) {
+            if (!Client.get('is_disabled', loginid)) {
                 const type = `${types_map[Client.getAccountType(loginid)] || 'Real'} Account`;
                 const localized_type = localize(type);
                 if (loginid === Client.get('loginid')) { // default account
@@ -115,7 +115,7 @@ const Header = (() => {
 
                 const jp_account_status = (State.getResponse('get_settings.jp_account_status') || {}).status;
                 if (jp_account_status) {
-                    const has_disabled_jp = jpClient() && Client.hasAccountType('real') && !Client.getAccountOfType('real').is_enabled;
+                    const has_disabled_jp = jpClient() && Client.getAccountOfType('real').is_disabled;
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
