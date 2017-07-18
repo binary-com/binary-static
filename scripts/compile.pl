@@ -71,6 +71,7 @@ foreach my $m (@m) {
     my $layout   = $m->[2];
     my $title    = $m->[3];
     my $excludes = $m->[4];
+    my $only_ja  = $excludes and $excludes =~ /^NOT-ja,en$/;
 
     $index++;
 
@@ -104,6 +105,7 @@ foreach my $m (@m) {
             root_url        => root_url(),
             current_path    => $save_as,
             current_route   => $current_route,
+            only_ja         => $only_ja,
             affiliate_email => 'affiliates@binary.com',
             japan_docs_url  => 'https://japan-docs.binary.com'
         );
