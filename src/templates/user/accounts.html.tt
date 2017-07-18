@@ -17,6 +17,11 @@
         thead=[
             [{ text=l("Account") }, { text=l("Available Markets") }, { text=l("Available Currencies") }, { text=l("Action") }],
         ]} %]
+        <div id="note" class="invisible fill-bg-color gr-padding-10 gr-gutter">
+            <div class="gr-gutter hint">
+                [% l("Note: You can only have (1) <span data-balloon=''>fiat currency</span> account and (1) of each <span data-balloon=''>cryptocurrency</span> account.") %]
+            </div>
+        </div>
     </div>
     <div class='border-light-gray invisible' id="no_new_accounts_wrapper">
         <p class="center-text gr-padding-30">[% l("You have created all accounts available for you.") %]</p>

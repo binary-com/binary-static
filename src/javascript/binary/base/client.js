@@ -167,22 +167,23 @@ const Client = (() => {
         cookie.write(Value, cookie_expire, true);
     };
 
-    const processNewAccount = (client_email, client_loginid, token, virtual_client) => {
-        if (!client_email || !client_loginid || !token) {
+    const processNewAccount = (options) => {
+        if (!options.email || !options.loginid || !options.token) {
             return;
         }
         // save token
-        addToken(client_loginid, token);
+        addToken(options.loginid, options.token);
         // set cookies
-        setCookie('email',        client_email);
-        setCookie('login',        token);
-        setCookie('loginid',      client_loginid);
-        setCookie('loginid_list', virtual_client ? `${client_loginid}:V:E` : `${client_loginid}:R:E+${Cookies.get('loginid_list')}`);
+        setCookie('email',        options.email);
+        setCookie('login',        options.token);
+        setCookie('loginid',      options.loginid);
+        setCookie('loginid_list', options.is_virtual ? `${options.loginid}:V:E` : `${options.loginid}:R:E+${Cookies.get('loginid_list')}`);
         // set local storage
         localStorage.setItem('GTM_new_account', '1');
-        localStorage.setItem('active_loginid', client_loginid);
+        localStorage.setItem('active_loginid', options.loginid);
         RealityCheckData.clear();
-        window.location.href = jpClient() || virtual_client ? defaultRedirectUrl() : `${urlFor('user/set-currency')}#new_account`; // need to redirect not using pjax
+        // need to redirect not using pjax
+        window.location.href = jpClient() || options.is_virtual ? defaultRedirectUrl() : (options.redirect_url || `${urlFor('user/set-currency')}#new_account`);
     };
 
     const hasShortCode = (data, code) => ((data || {}).shortcode === code);

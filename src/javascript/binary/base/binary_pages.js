@@ -59,7 +59,7 @@ const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test'
 /* eslint-disable max-len */
 const pages_config = {
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true },
-    accounts                 : { module: Accounts,                   is_authenticated: true },
+    accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
     asset_indexws            : { module: AssetIndexUI },
@@ -114,7 +114,7 @@ const pages_config = {
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
-    'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true },
+    'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
     'terms-and-conditions'   : { module: TermsAndConditions },
     'terms-and-conditions-jp': { module: TermsAndConditions },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },

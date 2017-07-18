@@ -9,6 +9,7 @@ const checkClientsCountry = require('../common_functions/country_base').checkCli
 const jpClient            = require('../common_functions/country_base').jpClient;
 const BinarySocket        = require('../websocket_pages/socket');
 const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
+const showHideNewAccount  = require('../websocket_pages/user/sub_account').showHideNewAccount;
 
 const Header = (() => {
     'use strict';
@@ -73,6 +74,12 @@ const Header = (() => {
                 $this.attr('disabled', 'disabled');
                 switchLoginid($this.attr('data-value'));
             });
+
+        BinarySocket.wait('authorize').then((response) => {
+            if (response.authorize.allow_omnibus) {
+                showHideNewAccount(response.authorize);
+            }
+        });
     };
 
     const metatraderMenuItemVisibility = (landing_company_response) => {

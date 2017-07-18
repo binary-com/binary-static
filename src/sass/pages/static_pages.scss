@@ -285,6 +285,9 @@ body #not_authenticated_financial ul.checked > li {
             border-bottom: 1px solid $COLOR_LIGHT_GRAY;
         }
     }
+    #note .hint {
+        margin-bottom: 3px;
+    }
     #accounts_wrapper #no_new_accounts_wrapper {
         color: $COLOR_GRAY_SHADE;
     }

@@ -509,6 +509,11 @@ sub _texts {
         push @texts, localize('Indices');
         push @texts, localize('Stocks');
         push @texts, localize('Volatility Indices');
+        push @texts, localize('Set Currency');
+        push @texts, localize('Please choose a currency');
+        push @texts, localize('Cryptocurrency');
+        push @texts, localize('Fiat Currency');
+        push @texts, localize('New Account');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

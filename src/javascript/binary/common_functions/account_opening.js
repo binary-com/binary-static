@@ -134,7 +134,12 @@ const AccountOpening = (() => {
             $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
                 .setVisibility(1);
         } else {
-            Client.processNewAccount(Client.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
+            Client.processNewAccount({
+                email     : Client.get('email'),
+                loginid   : response[message_type].client_id,
+                token     : response[message_type].oauth_token,
+                is_virtual: false,
+            });
         }
     };
 

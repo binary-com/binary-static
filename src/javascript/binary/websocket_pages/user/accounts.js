@@ -1,7 +1,9 @@
+const SubAccount   = require('./sub_account');
 const BinarySocket = require('../socket');
 const Client       = require('../../base/client');
 const localize     = require('../../base/localize').localize;
 const urlFor       = require('../../base/url').urlFor;
+const State        = require('../../base/storage').State;
 const toTitleCase  = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
@@ -23,10 +25,20 @@ const Accounts = (() => {
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            $(element_to_show).setVisibility(1);
-            $('#accounts_loading').remove();
-            $('#accounts_wrapper').setVisibility(1);
+            const authorize = State.get(['response', 'authorize', 'authorize']);
+            // only clients with omnibus flag set are allowed to create sub accounts
+            if (authorize && authorize.allow_omnibus) {
+                handleSubAccount(authorize);
+            } else {
+                doneLoading(element_to_show);
+            }
         });
+    };
+
+    const doneLoading = (element_to_show) => {
+        $(element_to_show).setVisibility(1);
+        $('#accounts_loading').remove();
+        $('#accounts_wrapper').setVisibility(1);
     };
 
     const populateNewAccounts = () => {
@@ -89,9 +101,10 @@ const Accounts = (() => {
                 .append($('<tr/>', { id: account })
                     .append($('<td/>', { text: account }))
                     .append($('<td/>', { text: market_text }))
-                    .append($('<td/>', { text: account_currency, class: 'account-currency' })));
+                    .append($('<td/>', { text: account_currency || '-', class: 'account-currency' })));
 
-            if (!account_currency) {
+            // only show set currency for current loginid
+            if (!account_currency && account === Client.get('loginid')) {
                 $(`#${account}`).find('.account-currency').html($('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })));
             }
         });
@@ -117,6 +130,79 @@ const Accounts = (() => {
     const getMarketName = (market) => {
         const market_name = markets[market];
         return market_name ? localize(markets[market]) : '';
+    };
+
+    const handleSubAccount = (authorize) => {
+        const currencies = SubAccount.getCurrencies(authorize.sub_accounts, landing_company);
+        if (!currencies.length) {
+            doneLoading('#no_new_accounts_wrapper');
+            return;
+        }
+
+        const $new_accounts = $('#new_accounts');
+        const $tbody_new_accounts = $new_accounts.find('tbody');
+        const market_text = getAvailableMarkets({ real: 1 });
+
+        const $currencies = $('<div/>');
+        $currencies.append($('<option/>', { value: '', text: localize('Please select') }));
+        currencies.forEach((c) => {
+            $currencies.append($('<option/>', { value: c, text: c }));
+        });
+
+        $tbody_new_accounts
+            .append($('<tr/>', { id: 'create_sub_account' })
+                .append($('<td/>', { text: localize('Real Account') }))
+                .append($('<td/>', { text: market_text }))
+                .append($('<td/>').html($('<select/>', { id: 'sub_account_currency' }).html($currencies.html())))
+                .append($('<td/>').html($('<button/>', { text: localize('Create') }))));
+
+        $('#note').setVisibility(1);
+
+        $('#create_sub_account').find('button').on('click', () => {
+            if (!$('#sub_account_currency').val()) {
+                showError('Please choose a currency');
+            } else {
+                BinarySocket.send({ new_sub_account: 1 }).then((response) => {
+                    if (response.error) {
+                        showError(response.error.message);
+                    } else {
+                        handleNewAccount(response);
+                    }
+                });
+            }
+        });
+
+        doneLoading('#new_accounts_wrapper');
+    };
+
+    const handleNewAccount = (response) => {
+        const new_account = response.new_sub_account;
+        State.set('ignoreResponse', 'authorize');
+        BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_authorize) => {
+            if (response_authorize.error) {
+                showError(response_authorize.error.message);
+            } else {
+                BinarySocket
+                    .send({ set_account_currency: $('#sub_account_currency').val() })
+                    .then((response_set_account_currency) => {
+                        if (response_set_account_currency.error) {
+                            showError(response_set_account_currency.error.message);
+                        } else {
+                            Client.processNewAccount({
+                                email       : Client.get('email'),
+                                loginid     : new_account.client_id,
+                                token       : new_account.oauth_token,
+                                redirect_url: urlFor('user/accounts'),
+                            });
+                        }
+                    });
+            }
+            State.remove('ignoreResponse');
+        });
+    };
+
+    const showError = (message) => {
+        $('#create_sub_account').find('button').parent().append($('<p/>', { class: 'error-msg', text: localize(message) }));
     };
 
     return {
