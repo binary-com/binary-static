@@ -36,7 +36,8 @@
         [% INCLUDE form_row type='text' id='max_30day_losses' label=l("30-day limit on losses") attributes='maxlength="20"'
             hint=l('Maximum aggregate loss over a 30-day period.') %]
 
-        [% INCLUDE form_row type='text' id='max_open_bets' label=l("Maximum number of open positions") attributes='maxlength="4"' %]
+        [% INCLUDE form_row type='text' id='max_open_bets' label=l("Maximum number of open positions") attributes='maxlength="4"'
+            hint=l('Maximum number of contracts that can be open at the same time.') %]
 
         [% INCLUDE form_row type='text' id='session_duration_limit' label=l("Session duration limit, in minutes") attributes='maxlength="5"'
             hint=l('You will be automatically logged out after such time.') %]

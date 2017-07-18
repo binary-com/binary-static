@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-12 22:55-0400\n"
+"PO-Revision-Date: 2017-07-17 23:09-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -302,6 +302,9 @@ msgstr "BetOnMarkets.comは1999年から累計で20億USDのターンオーバ�
 
 msgid "%1 reaches 1 million registered users"
 msgstr "口座数は１００万口座を達成"
+
+msgid "%1 requires your browser's web storage to be enabled in order to function properly. Please enable it or exit private browsing mode."
+msgstr "%1では、適切に機能を果たす上でブラウザのウェブストレージが必要となります。ウェブストレージを有効にするか、ブラウザのプライベートモードを終了してください。"
 
 msgid "%1 rows displayed:"
 msgstr "表示行数 %1："
@@ -5108,6 +5111,9 @@ msgstr "一通貨ごとのペイアウト合計限度額となります。"
 
 msgid "Maximum daily turnover"
 msgstr "取引限度額（1日）"
+
+msgid "Maximum number of contracts that can be open at the same time."
+msgstr "同時に保有できるトレードの最大数。"
 
 msgid "Maximum number of open positions"
 msgstr "最大保有ポジション"
