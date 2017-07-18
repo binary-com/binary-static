@@ -87,10 +87,9 @@ const MBTradingEvents = (() => {
         const validatePayout = (payout_amount) => {
             let is_ok = true;
             const contract = MBContract.getCurrentContracts();
-            const max_amount = (Array.isArray(contract) && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
-            if (!payout_amount || isNaN(payout_amount) ||
-                (jpClient() && (payout_amount < 1 || payout_amount > 100)) ||
-                (payout_amount <= 0 || payout_amount > max_amount)) {
+            const min_amount = 0;
+            const max_amount = jpClient() ? 100 : (Array.isArray(contract) && contract.length && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
+            if (!payout_amount || isNaN(payout_amount) || payout_amount <= min_amount || payout_amount > max_amount) {
                 is_ok = false;
             }
 
@@ -107,7 +106,10 @@ const MBTradingEvents = (() => {
             };
             let old_value = jp_client ? 1 : 10;
             if (!$payout.attr('value')) {
-                const payout_def = MBDefaults.get('payout') || old_value;
+                let payout_def = MBDefaults.get('payout');
+                if (!validatePayout(payout_def)) {
+                    payout_def = old_value;
+                }
                 $payout.value = payout_def;
                 MBDefaults.set('payout', payout_def);
                 $payout.attr('value', payout_def).find('.current').html(payout_def);
