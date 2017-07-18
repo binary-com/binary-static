@@ -7,9 +7,7 @@ const Currency     = require('../../common_functions/currency');
 const SubAccounts = (() => {
     'use strict';
 
-    const getCurrencies = (sub_accounts, landing_company) => {
-        const client_currency  = Client.get('currency');
-        const is_crypto        = Currency.isCryptocurrency(client_currency);
+    const getCurrencyValues = (sub_accounts, landing_company) => {
         const fiat_currencies  = Currency.getFiatCurrencies();
         // TODO: update this when back-end sends cryptocurrencies in website_status and landing_company
         // const currencies = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
@@ -19,6 +17,25 @@ const SubAccounts = (() => {
         const sub_currencies   = sub_accounts.length ? sub_accounts.map(a => a.currency) : [];
 
         const has_fiat_sub = sub_accounts.length ? sub_currencies.some(currency => currency && new RegExp(currency, 'i').test(fiat_currencies)) : false;
+
+        return {
+            fiat_currencies : fiat_currencies,
+            cryptocurrencies: cryptocurrencies,
+            currencies      : currencies,
+            sub_currencies  : sub_currencies,
+            has_fiat_sub    : has_fiat_sub,
+        };
+    };
+
+    const getCurrencies = (sub_accounts, landing_company) => {
+        const client_currency  = Client.get('currency');
+        const is_crypto        = Currency.isCryptocurrency(client_currency);
+        const currency_values  = getCurrencyValues(sub_accounts, landing_company);
+        const cryptocurrencies = currency_values.cryptocurrencies;
+        const currencies       = currency_values.currencies;
+        const sub_currencies   = currency_values.sub_currencies;
+
+        const has_fiat_sub = currency_values.has_fiat_sub;
         const available_crypto =
             cryptocurrencies.filter(c => sub_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0);
         const can_open_crypto = available_crypto.length;
@@ -53,6 +70,7 @@ const SubAccounts = (() => {
     return {
         getCurrencies     : getCurrencies,
         showHideNewAccount: showHideNewAccount,
+        getCurrencyValues : getCurrencyValues,
     };
 })();
 

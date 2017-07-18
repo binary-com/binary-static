@@ -111,12 +111,15 @@ const Accounts = (() => {
     };
 
     const getAvailableMarkets = (current_account) => {
-        const legal_allowed_markets = Client.getLandingCompanyValue(current_account, landing_company, 'legal_allowed_markets');
-        let market_array = legal_allowed_markets || '';
-        if (typeof market_array === 'object' && market_array.length) {
-            market_array = market_array.map(market => getMarketName(market)).filter((value, index, self) => value && self.indexOf(value) === index).join(', ');
+        let legal_allowed_markets = Client.getLandingCompanyValue(current_account, landing_company, 'legal_allowed_markets') || '';
+        if (Array.isArray(legal_allowed_markets) && legal_allowed_markets.length) {
+            legal_allowed_markets =
+                legal_allowed_markets
+                    .map(market => getMarketName(market))
+                    .filter((value, index, self) => value && self.indexOf(value) === index)
+                    .join(', ');
         }
-        return market_array;
+        return legal_allowed_markets;
     };
 
     const markets = {
@@ -127,10 +130,7 @@ const Accounts = (() => {
         volidx     : 'Volatility Indices',
     };
 
-    const getMarketName = (market) => {
-        const market_name = markets[market];
-        return market_name ? localize(markets[market]) : '';
-    };
+    const getMarketName = market => localize(markets[market] || '');
 
     const handleSubAccount = (authorize) => {
         const currencies = SubAccount.getCurrencies(authorize.sub_accounts, landing_company);

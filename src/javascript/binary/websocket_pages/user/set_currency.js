@@ -1,3 +1,4 @@
+const getCurrencyValues  = require('./sub_account').getCurrencyValues;
 const BinarySocket       = require('../socket');
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
@@ -50,9 +51,9 @@ const SetCurrency = (() => {
             $form.on('submit', (evt) => {
                 evt.preventDefault();
                 $error.setVisibility(0);
-                const selected_currency = $currency_list.find('.selected');
-                if (selected_currency.length) {
-                    BinarySocket.send({ set_account_currency: selected_currency.attr('id') }).then((response_c) => {
+                const $selected_currency = $currency_list.find('.selected');
+                if ($selected_currency.length) {
+                    BinarySocket.send({ set_account_currency: $selected_currency.attr('id') }).then((response_c) => {
                         if (response_c.error) {
                             $error.text(response_c.error.message).setVisibility(1);
                         } else {
@@ -76,15 +77,12 @@ const SetCurrency = (() => {
     };
 
     const getCurrencies = (sub_accounts, landing_company) => {
-        const fiat_currencies  = Currency.getFiatCurrencies();
-        // TODO: update this when back-end sends cryptocurrencies in website_status and landing_company
-        // const currencies = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
-        // const cryptocurrencies = currencies.filter(c => fiat_currencies.indexOf(c) < 0);
-        const cryptocurrencies = ['BTC', 'ETH', 'LTC'];
-        const currencies       = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies').concat(cryptocurrencies);
-        const sub_currencies   = sub_accounts.length ? sub_accounts.map(a => a.currency) : [];
+        const currency_values = getCurrencyValues(sub_accounts, landing_company);
+        const fiat_currencies = currency_values.fiat_currencies;
+        const currencies      = currency_values.currencies;
+        const sub_currencies  = currency_values.sub_currencies;
 
-        const has_fiat_sub = sub_accounts.length ? sub_currencies.some(currency => currency && new RegExp(currency, 'i').test(fiat_currencies)) : false;
+        const has_fiat_sub = currency_values.has_fiat_sub;
 
         let currencies_to_show = currencies.filter(c => sub_currencies.indexOf(c) < 0);
 
