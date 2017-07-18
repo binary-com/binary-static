@@ -13,7 +13,7 @@ const AccountOpening = (() => {
     'use strict';
 
     const redirectCookie = () => {
-        if (Client.get('has_real')) {
+        if (Client.hasAccountType('real')) {
             BinaryPjax.load('trading');
             return true;
         }

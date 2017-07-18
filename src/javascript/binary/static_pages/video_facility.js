@@ -7,7 +7,7 @@ const BinarySocket       = require('../websocket_pages/socket');
 
 const VideoFacility = (() => {
     const onLoad = () => {
-        if (!Client.hasAccountType('financial')) {
+        if (!Client.isFinancial()) {
             $('#loading').replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('Sorry, this feature is not available in your jurisdiction.') }));
             return;
         }

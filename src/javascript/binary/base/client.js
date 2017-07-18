@@ -92,19 +92,23 @@ const Client = (() => {
         return account_type;
     };
 
+    const isAccountOfType = (type, loginid = current_loginid) => {
+        const this_type = getAccountType(loginid);
+        return (
+            (type === 'virtual' && this_type === 'virtual') ||
+            (type === 'real'    && this_type !== 'virtual') ||
+            type === this_type);
+    };
+
     const getAccountOfType = (type, only_enabled) => {
         const id = getAllLoginids().find(loginid => (
-            (
-                type === 'virtual' ?  get('is_virtual', loginid) :
-                type === 'real'    ? !get('is_virtual', loginid) :
-                getAccountType(loginid) === type
-            ) &&
+            isAccountOfType(type, loginid) &&
             (only_enabled ? get('is_enabled', loginid) : true)
         ));
         return id ? $.extend({ loginid: id }, get(null, id)) : {};
     };
 
-    const hasAccountType = (type, only_enabled) => !isEmptyObject(getAccountType(type, only_enabled));
+    const hasAccountType = (type, only_enabled) => !isEmptyObject(getAccountOfType(type, only_enabled));
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
@@ -267,7 +271,7 @@ const Client = (() => {
         return landing_company_response[lc_prop] || {};
     };
 
-    const isFinancial = () => getAccountType() === 'financial';
+    const isFinancial = () => isAccountOfType('financial');
 
     const shouldCompleteTax = () => isFinancial() && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
