@@ -337,8 +337,6 @@ sub _texts {
         push @texts, localize('Remaining time');
         push @texts, localize('Market is closed. Please try again later.');
         push @texts, localize('This symbol is not active. Please try another symbol.');
-        push @texts, localize('Connection error: Please check your internet connection.');
-        push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
         push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
         push @texts, localize('Lots');
         push @texts, localize('Payout per lot = 1,000');
@@ -490,6 +488,9 @@ sub _texts {
         push @texts, localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.');
+        push @texts, localize('Connection error: Please check your internet connection.');
+        push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
+        push @texts, localize('[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.');
         # browser-update message
         push @texts, localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]');
 

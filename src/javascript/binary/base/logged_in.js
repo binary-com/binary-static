@@ -3,6 +3,7 @@ const Client             = require('./client');
 const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
 const urlLang            = require('./language').urlLang;
+const isStorageSupported = require('./storage').isStorageSupported;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
 const paramsHash         = require('./url').paramsHash;
@@ -14,7 +15,7 @@ const LoggedInHandler = (() => {
     const onLoad = () => {
         parent.window.is_logging_in = 1; // this flag is used in base.js to prevent auto-reloading this page
         let redirect_url;
-        try {
+        if (isStorageSupported(localStorage) && isStorageSupported(sessionStorage)) {
             const tokens  = storeTokens();
             if (!isEmptyObject(tokens)) {
                 let loginid = Cookies.get('loginid');
@@ -38,7 +39,7 @@ const LoggedInHandler = (() => {
             // redirect url
             redirect_url = sessionStorage.getItem('redirect_url');
             sessionStorage.removeItem('redirect_url');
-        } catch (e) { console.log('storage is not supported'); }
+        }
 
         // redirect back
         let set_default = true;
