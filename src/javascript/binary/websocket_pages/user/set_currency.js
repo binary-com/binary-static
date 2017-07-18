@@ -57,7 +57,7 @@ const SetCurrency = (() => {
                         if (response_c.error) {
                             $error.text(response_c.error.message).setVisibility(1);
                         } else {
-                            let redirect_url = 'user/accounts',
+                            let redirect_url = 'trading',
                                 hash = '';
                             if (/deposit/.test(hash_value)) {
                                 redirect_url = 'cashier/forwardws';
