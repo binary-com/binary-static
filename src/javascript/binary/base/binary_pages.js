@@ -56,6 +56,7 @@ const TNCApproval                = require('../websocket_pages/user/tnc_approval
 const CashierJP     = require('../../binary_japan/cashier');
 const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test');
 
+/* eslint-disable max-len */
 const pages_config = {
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true },
     accounts                 : { module: Accounts,                   is_authenticated: true },
@@ -69,7 +70,7 @@ const pages_config = {
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
     charity                  : { module: Charity },
     contact                  : { module: Contact },
-    detailsws                : { module: PersonalDetails,            is_authenticated: true },
+    detailsws                : { module: PersonalDetails,            is_authenticated: true, needs_currency: true },
     endpoint                 : { module: Endpoint },
     epg_forwardws            : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
     forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
@@ -77,18 +78,18 @@ const pages_config = {
     iphistoryws              : { module: IPHistory,                  is_authenticated: true },
     japanws                  : { module: JapanAccOpening,            is_authenticated: true, only_virtual: true },
     knowledge_testws         : { module: KnowledgeTest,              is_authenticated: true, only_virtual: true },
-    limitsws                 : { module: Limits,                     is_authenticated: true, only_real: true },
+    limitsws                 : { module: Limits,                     is_authenticated: true, only_real: true, needs_currency: true },
     logged_inws              : { module: LoggedInHandler },
     lost_passwordws          : { module: LostPassword,               not_authenticated: true },
     maltainvestws            : { module: FinancialAccOpening,        is_authenticated: true },
     market_timesws           : { module: TradingTimesUI },
-    metatrader               : { module: MetaTrader,                 is_authenticated: true },
-    multi_barriers_trading   : { module: MBTradePage },
+    metatrader               : { module: MetaTrader,                 is_authenticated: true, needs_currency: true },
+    multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
     payment_agent_listws     : { module: PaymentAgentList },
     payment_methods          : { module: Cashier.PaymentMethods },
     platforms                : { module: Platforms },
-    portfoliows              : { module: Portfolio,                  is_authenticated: true },
-    profit_tablews           : { module: ProfitTable,                is_authenticated: true },
+    portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
+    profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     realws                   : { module: RealAccOpening,             is_authenticated: true, only_virtual: true },
     regulation               : { module: Regulation },
     reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
@@ -96,11 +97,11 @@ const pages_config = {
     self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },
     signup                   : { module: StaticPages.AffiliateSignup },
-    statementws              : { module: Statement,                  is_authenticated: true },
+    statementws              : { module: Statement,                  is_authenticated: true, needs_currency: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
-    trading                  : { module: TradePage },
-    trading_beta             : { module: TradePage_Beta },
+    trading                  : { module: TradePage,                  needs_currency: true },
+    trading_beta             : { module: TradePage_Beta,             needs_currency: true },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
@@ -108,7 +109,7 @@ const pages_config = {
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
-    'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, only_real: true },
+    'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
@@ -122,5 +123,6 @@ const pages_config = {
     'why-us-jp'              : { module: WhyUs },
     'withdraw-jp'            : { module: CashierJP.Withdraw,         is_authenticated: true, only_real: true },
 };
+/* eslint-enable max-len */
 
 module.exports = pages_config;
