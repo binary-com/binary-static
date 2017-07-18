@@ -46,13 +46,13 @@
                         [% INCLUDE box_inner class='border-right-top' image='debt-free' text=l("Debt-free") %]
                     [% END %]
                     [% WRAPPER box %]
-                        [% INCLUDE box_inner class='border-right-top' href='/careers' image='staff' text=l("Over 90 <a href='[_1]'>staff</a> and contractors worldwide", request.url_for("/careers")) %]
+                        [% INCLUDE box_inner class='border-right-top' href='/careers' image='staff' text=l("Over [_1] <a href='[_2]'>staff</a> and contractors worldwide", "130", request.url_for("/careers")) %]
                         [% INCLUDE box_inner image='1mil' text=l("Over 1 million registered accounts worldwide") %]
                     [% END %]
                 </div>
                 <div class="gr-row gr-parent">
                     [% WRAPPER box %]
-                        [% INCLUDE box_inner class='border-right-bottom gr-padding-30' image='transacts' text=l("Binary's platform transacts on average 15 [_1]transactions[_2] per second, 24/7", "<a href='https://binarycom.statuspage.io/' target='_blank'>", "</a>") %]
+                        [% INCLUDE box_inner class='border-right-bottom gr-padding-30' image='transacts' text=l("Binary's platform transacts on average [_1] [_2]transactions[_3] per second, 24/7", "20", "<a href='https://binarycom.statuspage.io/' target='_blank'>", "</a>") %]
                         [% INCLUDE box_inner class='border-right-bottom gr-padding-30' href='/contact' image='locations' text=l("<a href='[_1]'>Offices</a> in Malta, Malaysia and Japan", request.url_for("/contact")) %]
                     [% END %]
                     [% WRAPPER box %]

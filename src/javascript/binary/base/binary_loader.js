@@ -81,27 +81,28 @@ const BinaryLoader = (() => {
                         } else if (config.only_real && Client.get('is_virtual')) {
                             displayMessage(error_messages.only_real);
                         } else {
-                            loadActiveScript();
+                            loadActiveScript(config);
                         }
                     });
             }
         } else if (config.not_authenticated && Client.isLoggedIn()) {
             BinaryPjax.load(defaultRedirectUrl(), true);
         } else {
-            loadActiveScript();
+            loadActiveScript(config);
         }
         BinarySocket.setOnDisconnect(active_script.onDisconnect);
     };
 
-    const loadActiveScript = () => {
-        if (Login.isLoginPages()) {
-            active_script.onLoad();
-        } else {
-            BinarySocket.wait('website_status').then(() => {
-                if (active_script && typeof active_script.onLoad === 'function') {
+    const loadActiveScript = (config) => {
+        if (active_script && typeof active_script.onLoad === 'function') {
+            // only pages that call formatMoney should wait for website_status
+            if (config.needs_currency) {
+                BinarySocket.wait('website_status').then(() => {
                     active_script.onLoad();
-                }
-            });
+                });
+            } else {
+                active_script.onLoad();
+            }
         }
     };
 
