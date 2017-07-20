@@ -32,10 +32,10 @@
                                 <div class="col form_label" id="start_time_label">[% l("Start time") %]</div>
                                 <div class="big-col">
                                     <select id="date_start"></select>
-                                    <span id="time_start_row" class="invisible">
+                                    <div id="time_start_row" class="invisible">
                                         <input type="text" id="time_start" autocomplete="off" readonly="readonly" class="medium_width_input" />
                                         <span class="hint">GMT</span>
-                                    </span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row" id="expiry_row">
@@ -54,10 +54,10 @@
                                     </div>
                                     <div id="expiry_type_endtime">
                                         <input id="expiry_date" type="text" readonly="readonly" autocomplete="off" />
-                                        <span id="expiry_time_row">
+                                        <div id="expiry_time_row">
                                             <input id="expiry_time" type="text" autocomplete="off" readonly="readonly" class="medium_width_input" />
                                             <span class="hint">GMT</span>
-                                        </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
