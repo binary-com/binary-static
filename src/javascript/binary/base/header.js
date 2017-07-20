@@ -9,6 +9,7 @@ const checkClientsCountry = require('../common_functions/country_base').checkCli
 const jpClient            = require('../common_functions/country_base').jpClient;
 const BinarySocket        = require('../websocket_pages/socket');
 const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
+const RealityCheckData    = require('../websocket_pages/user/reality_check/reality_check.data');
 
 const Header = (() => {
     'use strict';
@@ -88,6 +89,7 @@ const Header = (() => {
         sessionStorage.setItem('active_tab', '1');
         // set local storage
         GTM.setLoginFlag();
+        RealityCheckData.clear();
         Client.set('loginid', loginid);
         $('.login-id-list a').removeAttr('disabled');
         window.location.reload();

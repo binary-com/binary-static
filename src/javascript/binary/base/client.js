@@ -236,6 +236,7 @@ const Client = (() => {
         cleanupCookies('reality_check', 'affiliate_token', 'affiliate_tracking');
         clearAllAccounts();
         set('loginid', '');
+        RealityCheckData.clear();
         window.location.reload();
     };
 
