@@ -32,6 +32,8 @@ const DepositWithdraw = (() => {
                 showError('custom_error', response.error.message);
             } else if (response.msg_type === 'set_account_currency') {
                 Client.set('currency', response.echo_req.set_account_currency);
+                BinarySocket.send({ balance: 1 });
+                BinarySocket.send({ payout_currencies: 1 }, { forced: true });
             }
         }
 
