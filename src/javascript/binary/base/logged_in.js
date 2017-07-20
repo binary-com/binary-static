@@ -71,7 +71,7 @@ const LoggedInHandler = (() => {
                 Client.set('currency',   currency,  loginid);
                 Client.set('email',      email,     loginid);
                 Client.set('residence',  residence, loginid);
-                Client.set('is_virtual', Client.getAccountType(loginid) === 'virtual' ? 1 : 0, loginid);
+                Client.set('is_virtual', +Client.isAccountOfType('virtual', loginid), loginid);
                 if (isDisabled(loginid_list, loginid)) {
                     Client.set('is_disabled', 1, loginid);
                 }

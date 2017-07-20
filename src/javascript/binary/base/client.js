@@ -31,7 +31,7 @@ const Client = (() => {
     const validateLoginid = () => {
         if (!isLoggedIn()) return;
         const valid_login_ids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG|VRTJ|JP)[0-9]+$', 'i');
-        getAllLoginids().concat(get('loginid')).some((loginid) => {
+        getAllLoginids().some((loginid) => {
             if (!valid_login_ids.test(loginid)) {
                 sendLogoutRequest();
                 return true;
@@ -232,8 +232,8 @@ const Client = (() => {
 
     const doLogout = (response) => {
         if (response.logout !== 1) return;
-        cleanupCookies('login', 'loginid', 'loginid_list', 'email', 'residence'); // backward compatibility
-        cleanupCookies('settings', 'reality_check', 'affiliate_token', 'affiliate_tracking');
+        cleanupCookies('login', 'loginid', 'loginid_list', 'email', 'residence', 'settings'); // backward compatibility
+        cleanupCookies('reality_check', 'affiliate_token', 'affiliate_tracking');
         clearAllAccounts();
         set('loginid', '');
         window.location.reload();
@@ -269,9 +269,7 @@ const Client = (() => {
         return landing_company_response[lc_prop] || {};
     };
 
-    const isFinancial = () => isAccountOfType('financial');
-
-    const shouldCompleteTax = () => isFinancial() && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
+    const shouldCompleteTax = () => isAccountOfType('financial') && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
@@ -283,6 +281,7 @@ const Client = (() => {
         getAllLoginids   : getAllLoginids,
         getAccountType   : getAccountType,
         getAccountOfType : getAccountOfType,
+        isAccountOfType  : isAccountOfType,
         hasAccountType   : hasAccountType,
         responseAuthorize: responseAuthorize,
         shouldAcceptTnc  : shouldAcceptTnc,
@@ -292,7 +291,6 @@ const Client = (() => {
         sendLogoutRequest: sendLogoutRequest,
         cleanupCookies   : cleanupCookies,
         doLogout         : doLogout,
-        isFinancial      : isFinancial,
         shouldCompleteTax: shouldCompleteTax,
         getMT5AccountType: getMT5AccountType,
 

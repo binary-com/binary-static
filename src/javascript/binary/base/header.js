@@ -194,7 +194,7 @@ const Header = (() => {
             };
 
             const riskAssessment = () => (
-                (get_account_status.risk_classification === 'high' || Client.isFinancial() || has_mt_account) &&
+                (get_account_status.risk_classification === 'high' || Client.isAccountOfType('financial') || has_mt_account) &&
                 /financial_assessment_not_complete/.test(status) && !jpClient()
             );
 

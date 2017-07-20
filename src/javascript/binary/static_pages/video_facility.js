@@ -7,7 +7,7 @@ const BinarySocket       = require('../websocket_pages/socket');
 
 const VideoFacility = (() => {
     const onLoad = () => {
-        if (!Client.isFinancial()) {
+        if (!Client.isAccountOfType('financial')) {
             $('#loading').replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('Sorry, this feature is not available in your jurisdiction.') }));
             return;
         }
@@ -21,7 +21,7 @@ const VideoFacility = (() => {
                     BinaryPjax.load(defaultRedirectUrl());
                 } else {
                     DeskWidget.showDeskLink('', '#facility_content');
-                    if (!Client.isFinancial()) {
+                    if (!Client.isAccountOfType('financial')) {
                         $('#not_authenticated').setVisibility(1);
                     }
                     $('.msg_authenticate').setVisibility(1);
