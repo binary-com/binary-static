@@ -13,7 +13,7 @@ const AccountOpening = (() => {
     'use strict';
 
     const redirectCookie = () => {
-        if (Client.get('has_real')) {
+        if (Client.hasAccountType('real')) {
             BinaryPjax.load('trading');
             return true;
         }
@@ -91,7 +91,7 @@ const AccountOpening = (() => {
     };
 
     const getTaxResidence = () => {
-        const tax_residence = State.get(['response', 'get_settings', 'get_settings'] || {}).tax_residence;
+        const tax_residence = State.getResponse('get_settings.tax_residence');
         return (tax_residence ? tax_residence.split(',') : '');
     };
 

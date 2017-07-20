@@ -160,11 +160,11 @@ const PersonalDetails = (() => {
                 { selector: '#address_postcode',   validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
 
-                { selector: '#place_of_birth', validations: Client.isFinancial() ? ['req'] : '' },
-                { selector: '#tax_residence',  validations: Client.isFinancial() ? ['req'] : '' },
+                { selector: '#place_of_birth', validations: Client.isAccountOfType('financial') ? ['req'] : '' },
+                { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
             ];
             const tax_id_validation = { selector: '#tax_identification_number',  validations: ['postcode', ['length', { min: 0, max: 20 }]] };
-            if (Client.isFinancial()) {
+            if (Client.isAccountOfType('financial')) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
@@ -276,7 +276,7 @@ const PersonalDetails = (() => {
         currency = Client.get('currency');
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
-            get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
+            get_settings_data = State.getResponse('get_settings');
             getDetailsResponse(get_settings_data);
             if (!is_virtual || !residence) {
                 $('#btn_update').setVisibility(1);

@@ -1,6 +1,7 @@
 const BinarySocket     = require('../socket');
 const Client           = require('../../base/client');
 const localize         = require('../../base/localize').localize;
+const State            = require('../../base/storage').State;
 const template         = require('../../base/utility').template;
 const makeOption       = require('../../common_functions/common_functions').makeOption;
 const FormManager      = require('../../common_functions/form_manager');
@@ -29,10 +30,8 @@ const DepositWithdraw = (() => {
         if (response) {
             if (response.error) {
                 showError('custom_error', response.error.message);
-                return;
-            }
-            if (response.msg_type === 'set_account_currency') {
-                Client.setCurrency(response.echo_req.set_account_currency);
+            } else if (response.msg_type === 'set_account_currency') {
+                Client.set('currency', response.echo_req.set_account_currency);
             }
         }
 
@@ -67,7 +66,7 @@ const DepositWithdraw = (() => {
     };
 
     const showCurrency = () => {
-        const currencies = Client.get('currencies').split(',');
+        const currencies = State.getResponse('payout_currencies');
         const $currencies = $('<div/>');
         currencies.forEach((c) => {
             $currencies.append(makeOption({ text: c, value: c }));

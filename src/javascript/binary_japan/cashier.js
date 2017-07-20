@@ -1,6 +1,7 @@
 const BinaryPjax         = require('../binary/base/binary_pjax');
 const Client             = require('../binary/base/client');
 const localize           = require('../binary/base/localize').localize;
+const State              = require('../binary/base/storage').State;
 const defaultRedirectUrl = require('../binary/base/url').defaultRedirectUrl;
 const template           = require('../binary/base/utility').template;
 const jpClient           = require('../binary/common_functions/country_base').jpClient;
@@ -16,7 +17,7 @@ const CashierJP = (() => {
         BinarySocket.wait('get_settings').then(() => {
             $container.setVisibility(1);
             if (action === 'deposit') {
-                $('#name_id').text(`${(Client.get('loginid') || 'JP12345')} ${(Client.get('first_name') || 'Joe Bloggs')}`);
+                $('#name_id').text(`${(Client.get('loginid') || 'JP12345')} ${(State.getResponse('get_settings.first_name') || 'Joe Bloggs')}`);
             } else if (action === 'withdraw') {
                 $('#id123-control22598118').val(Client.get('loginid'));
                 $('#id123-control22598060').val(Client.get('email'));

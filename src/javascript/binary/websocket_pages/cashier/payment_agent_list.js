@@ -1,6 +1,6 @@
-const Cookies      = require('js-cookie');
 const BinarySocket = require('../socket');
 const urlForStatic = require('../../base/url').urlForStatic;
+const Client       = require('../../base/client');
 
 const PaymentAgentList = (() => {
     'use strict';
@@ -22,7 +22,7 @@ const PaymentAgentList = (() => {
         $pa_list_container = $('#pa_list');
         $agent_template    = $pa_list_container.find('#accordion').html();
 
-        let residence = Cookies.get('residence');
+        let residence = Client.get('residence');
         if (!residence || residence.length === 0) {
             residence = '00'; // just to get a list of payment agent Countries
         }

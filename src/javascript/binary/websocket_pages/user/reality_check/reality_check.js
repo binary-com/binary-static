@@ -9,8 +9,8 @@ const RealityCheck = (() => {
     const storageHandler = (ev) => {
         const key = ev.key;
         const new_value = ev.newValue;
-        if ((key === 'client.reality_check.ack' && +new_value === 1) ||
-            (key === 'client.reality_check.keep_open' && +new_value === 0)) {
+        if ((key === 'reality_check.ack' && +new_value === 1) ||
+            (key === 'reality_check.keep_open' && +new_value === 0)) {
             RealityCheckUI.closePopUp();
         }
     };

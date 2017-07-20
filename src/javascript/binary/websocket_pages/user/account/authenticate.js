@@ -15,7 +15,7 @@ const Authenticate = (() => {
                 if (authenticated && age_verified) {
                     $('#fully_authenticated').setVisibility(1);
                 } else if (!authenticated) {
-                    if (Client.isFinancial()) {
+                    if (Client.isAccountOfType('financial')) {
                         $('#not_authenticated_financial').setVisibility(1);
                     } else {
                         $('#not_authenticated').setVisibility(1);
