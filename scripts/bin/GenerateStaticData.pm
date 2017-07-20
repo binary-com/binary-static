@@ -513,7 +513,8 @@ sub _texts {
         push @texts, localize('Please choose a currency');
         push @texts, localize('Cryptocurrency');
         push @texts, localize('Fiat Currency');
-        push @texts, localize('New Account');
+        push @texts, localize('Create Account');
+        push @texts, localize('[_1] Account');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

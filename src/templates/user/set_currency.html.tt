@@ -16,7 +16,7 @@
 
         [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-10" invisible=1 %]
 
-        <p>[% l("Please select currency for this account:") %]</p>
+        <p>[% l("Please select the currency of this account:") %]</p>
         <p class="invisible notice-msg hint gr-5 gr-12-m gr-centered" id="currency_notice">
             [% l('Fact: The currency you chose [_1] is a [_2].', '(<span id="chosen_currency"></span>)', '<span id="chosen_currency_type"></span>') %]
         </p>
@@ -28,20 +28,6 @@
             <p class="invisible error-msg"></p>
             <button type="submit">[% l('Confirm') %]</button>
         </form>
-    </div>
-
-    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-20" invisible=1 %]
-
-    <div class="gr-row">
-        <div class="faded gr-8 gr-12-m gr-centered">
-            <p>[% l('Disclaimer:') %]</p>
-            <ol>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque.</li>
-                <li>Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis.</li>
-                <li>Curabitur lobortis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim.</li>
-                <li>In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget.</li>
-            </ol>
-        </div>
     </div>
 
     [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]

@@ -9,7 +9,7 @@ const checkClientsCountry = require('../common_functions/country_base').checkCli
 const jpClient            = require('../common_functions/country_base').jpClient;
 const BinarySocket        = require('../websocket_pages/socket');
 const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
-const showHideNewAccount  = require('../websocket_pages/user/sub_account').showHideNewAccount;
+const getCurrencies       = require('../websocket_pages/user/sub_account').getCurrencies;
 
 const Header = (() => {
     'use strict';
@@ -43,42 +43,40 @@ const Header = (() => {
         if (!Client.isLoggedIn()) return;
         const loginid_select = $('<div/>');
         const loginid_array = Client.get('loginid_array');
-        loginid_array.forEach((client) => {
-            if (!client.disabled) {
-                let type = 'Virtual';
-                if (client.real) {
-                    if (client.financial)          type = 'Investment';
-                    else if (client.non_financial) type = 'Gaming';
-                    else                           type = 'Real';
-                }
-                type += ' Account';
+        BinarySocket.wait('authorize').then(() => {
+            const accounts = JSON.parse(Client.get('tokens'));
+            loginid_array.forEach((client) => {
+                if (!client.disabled) {
+                    const currency = accounts[client.id].currency;
+                    let type = 'Virtual';
+                    if (client.real) {
+                        if (client.financial)          type = 'Investment';
+                        else if (client.non_financial) type = 'Gaming';
+                        else                           type = currency ? '[_1]' : 'Real';
+                    }
+                    type += ' Account';
 
-                const curr_id = client.id;
-                const localized_type = localize(type);
-                if (curr_id === Client.get('loginid')) { // default account
-                    $('.account-type').html(localized_type);
-                    $('.account-id').html(curr_id);
-                } else {
-                    loginid_select.append($('<a/>', { href: `${'java'}${'script:;'}`, 'data-value': curr_id })
-                        .append($('<li/>', { text: localized_type }).append($('<div/>', { text: curr_id }))))
-                        .append($('<div/>', { class: 'separator-line-thin-gray' }));
+                    const curr_id = client.id;
+                    const localized_type = localize(type, [currency]);
+                    if (curr_id === Client.get('loginid')) { // default account
+                        $('.account-type').html(localized_type);
+                        $('.account-id').html(curr_id);
+                    } else {
+                        loginid_select.append($('<a/>', { href: `${'java'}${'script:;'}`, 'data-value': curr_id })
+                            .append($('<li/>', { text: localized_type }).append($('<div/>', { text: curr_id }))))
+                            .append($('<div/>', { class: 'separator-line-thin-gray' }));
+                    }
                 }
-            }
-        });
-        let $this;
-        $('.login-id-list').html(loginid_select)
-            .find('a').off('click')
-            .on('click', function(e) {
-                e.preventDefault();
-                $this = $(this);
-                $this.attr('disabled', 'disabled');
-                switchLoginid($this.attr('data-value'));
             });
-
-        BinarySocket.wait('authorize').then((response) => {
-            if (response.authorize.allow_omnibus) {
-                showHideNewAccount(response.authorize);
-            }
+            let $this;
+            $('.login-id-list').html(loginid_select)
+                .find('a').off('click')
+                .on('click', function(e) {
+                    e.preventDefault();
+                    $this = $(this);
+                    $this.attr('disabled', 'disabled');
+                    switchLoginid($this.attr('data-value'));
+                });
         });
     };
 
@@ -123,7 +121,7 @@ const Header = (() => {
                     .html($('<span/>', { text: localize(msg) }));
             };
 
-            const show_upgrade_msg = Client.canUpgrade(landing_company);
+            let show_upgrade_msg = Client.canUpgrade(landing_company);
             if (Client.get('is_virtual')) {
                 $upgrade_msg.setVisibility(1)
                     .find('> span').setVisibility(1).end()
@@ -135,16 +133,19 @@ const Header = (() => {
                     const has_disabled_jp = jpClient() && loginid_array.some(client => client.real && client.disabled);
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
+                        show_upgrade_msg = false;
                     } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
                         $upgrade_msg.setVisibility(1);
                         if (jp_account_status === 'jp_activation_pending') {
                             if ($('.activation-message').length === 0) {
                                 $('#virtual-text').append($('<div/>', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
                             }
+                            show_upgrade_msg = false;
                         } else if (jp_account_status === 'activated') {
                             if ($('.activated-message').length === 0) {
                                 $('#virtual-text').append($('<div/>', { class: 'activated-message', text: ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}` }));
                             }
+                            show_upgrade_msg = false;
                         }
                     }
                 } else if (show_upgrade_msg) {
@@ -158,7 +159,29 @@ const Header = (() => {
             } else {
                 $upgrade_msg.setVisibility(0);
             }
+            showHideNewAccount(show_upgrade_msg);
         });
+    };
+
+    const showHideNewAccount = (can_upgrade) => {
+        const authorize = State.get(['response', 'authorize', 'authorize']);
+        if (can_upgrade || authorize.allow_omnibus) {
+            if (authorize.allow_omnibus && !can_upgrade) {
+                const landing_company = State.get(['response', 'landing_company', 'landing_company']);
+                const currencies = getCurrencies(authorize.sub_accounts, landing_company);
+                if (!currencies.length) {
+                    return;
+                }
+            }
+            if (!$('#create_new_account').length) {
+                $('#user_accounts').setVisibility(0);
+                $('.topMenuSecurity').parent('a').after($('<a/>', { class: 'link', href: urlFor('user/accounts') })
+                    .append($('<li/>', { id: 'create_new_account', text: localize('Create Account') })));
+            }
+        } else {
+            $('#user_accounts').setVisibility(1);
+            $('#create_new_account').remove();
+        }
     };
 
     const displayNotification = (message, is_error, msg_code = '') => {

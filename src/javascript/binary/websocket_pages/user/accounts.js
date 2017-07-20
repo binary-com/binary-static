@@ -102,6 +102,7 @@ const Accounts = (() => {
                 $tbody_existing_accounts
                     .append($('<tr/>', { id: account })
                         .append($('<td/>', { text: account }))
+                        .append($('<td/>', { text: localize(current_account.real ? 'Real' : current_account.financial ? 'Financial' : current_account.non_financial ? 'Gaming' : 'Virtual') }))
                         .append($('<td/>', { text: market_text }))
                         .append($('<td/>', { text: account_currency || '-', class: 'account-currency' })));
 

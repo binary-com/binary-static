@@ -1,8 +1,5 @@
-const BinarySocket = require('../socket');
-const Client       = require('../../base/client');
-const localize     = require('../../base/localize').localize;
-const urlFor       = require('../../base/url').urlFor;
-const Currency     = require('../../common_functions/currency');
+const Client   = require('../../base/client');
+const Currency = require('../../common_functions/currency');
 
 const SubAccounts = (() => {
     'use strict';
@@ -56,21 +53,9 @@ const SubAccounts = (() => {
         return currencies_to_show;
     };
 
-    const showHideNewAccount = (authorize) => {
-        BinarySocket.wait('landing_company').then((response) => {
-            const currencies = getCurrencies(authorize.sub_accounts, response.landing_company);
-            if (!currencies.length) {
-                return;
-            }
-            $('.topMenuSecurity').parent('a').after($('<a/>', { class: 'link', href: urlFor('user/accounts') })
-                .append($('<li/>', { id: 'create_new_account', text: localize('New Account') })));
-        });
-    };
-
     return {
-        getCurrencies     : getCurrencies,
-        showHideNewAccount: showHideNewAccount,
-        getCurrencyValues : getCurrencyValues,
+        getCurrencies    : getCurrencies,
+        getCurrencyValues: getCurrencyValues,
     };
 })();
 

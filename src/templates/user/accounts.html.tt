@@ -1,16 +1,11 @@
 [% PROCESS components/elements.html.tt %]
 
-<h1>[% l("Accounts") %]</h1>
-<p>Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa.</p>
-
 <div id="accounts_loading">
     [% PROCESS global/loading.html.tt %]
 </div>
 
 <div class="invisible" id="accounts_wrapper">
-    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-10" invisible=1 %]
-
-    <h2>[% l("Create New Account") %]</h2>
+    <h1>[% l("Create New Account") %]</h1>
 
     <div class='invisible' id="new_accounts_wrapper">
         [% INCLUDE table scroll=1 id='new_accounts' data={
@@ -19,7 +14,7 @@
         ]} %]
         <div id="note" class="invisible fill-bg-color gr-padding-10 gr-gutter">
             <div class="gr-gutter hint">
-                [% l("Note: You can only have (1) <span data-balloon=''>fiat currency</span> account and (1) of each <span data-balloon=''>cryptocurrency</span> account.") %]
+                [% l("Note: You can only have one fiat currency account and one of each cryptocurrency account.") %]
             </div>
         </div>
     </div>
@@ -29,10 +24,10 @@
 
     [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-20" invisible=1 %]
 
-    <h2>[% l("Your Accounts") %]</h2>
+    <h1>[% l("Your Existings Accounts") %]</h1>
     [% INCLUDE table scroll=1 id='existing_accounts' data={
     thead=[
-        [{ text=l("Account") }, { text=l("Available Markets") }, { text=l("Currency") }],
+        [{ text=l("Account") }, { text=l("Type") }, { text=l("Available Markets") }, { text=l("Currency") }],
     ]} %]
 
     [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]
