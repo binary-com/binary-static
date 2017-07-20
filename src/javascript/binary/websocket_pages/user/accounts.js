@@ -12,20 +12,19 @@ const Accounts = (() => {
     let landing_company;
 
     const onLoad = () => {
-        BinarySocket.wait('landing_company').then((response) => {
-            landing_company = response.landing_company;
-            const accounts = Client.get('tokens');
-            const accounts_obj = accounts && accounts.length > 0 ? JSON.parse(accounts) : {};
+        BinarySocket.wait('landing_company', 'get_settings').then(() => {
+            landing_company = State.getResponse('landing_company');
 
-            populateExistingAccounts(accounts_obj);
+            populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
-            if (Client.canUpgrade(landing_company)) {
-                populateNewAccounts(accounts_obj);
+            const upgrade_info = Client.getUpgradeInfo(landing_company);
+            if (upgrade_info.can_upgrade) {
+                populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            const authorize = State.get(['response', 'authorize', 'authorize']);
+            const authorize = State.getResponse('authorize');
             // only clients with omnibus flag set are allowed to create sub accounts
             if (authorize && authorize.allow_omnibus) {
                 handleSubAccount(authorize);
@@ -41,80 +40,41 @@ const Accounts = (() => {
         $('#accounts_wrapper').setVisibility(1);
     };
 
-    const populateNewAccounts = () => {
-        const type = getNewAccountType();
-        const $new_accounts = $('#new_accounts');
-        const $tbody_new_accounts = $new_accounts.find('tbody');
-        const current_account = {
-            real     : type === 'real',
-            financial: type === 'financial',
+    const populateNewAccounts = (upgrade_info) => {
+        const new_account = upgrade_info;
+        const account = {
+            real     : new_account.type === 'real',
+            financial: new_account.type === 'financial',
         };
-        const market_text = getAvailableMarkets(current_account);
-        const currencies = Client.getLandingCompanyValue(current_account, landing_company, 'legal_allowed_currencies').join(', ');
 
-        $tbody_new_accounts
+        $('#new_accounts').find('tbody')
             .append($('<tr/>')
-                .append($('<td/>', { text: localize(`${toTitleCase(type)} Account`) }))
-                .append($('<td/>', { text: market_text }))
-                .append($('<td/>', { text: currencies }))
-                .append($('<td/>').html($('<a/>', { class: 'button' }).html($('<span/>', { text: localize('Create') })))));
-
-        const showUpgrade = (url) => {
-            $new_accounts.find('a.button').attr('href', urlFor(url));
-        };
-
-        if (Client.get('is_virtual')) {
-            if (Client.canUpgradeVirtualToFinancial(landing_company)) {
-                showUpgrade('new_account/maltainvestws');
-            } else if (Client.canUpgradeVirtualToJapan(landing_company)) {
-                showUpgrade('new_account/japanws');
-            } else {
-                showUpgrade('new_account/realws');
-            }
-        } else {
-            showUpgrade('new_account/maltainvestws');
-        }
+                .append($('<td/>', { text: localize(`${toTitleCase(new_account.type)} Account`) }))
+                .append($('<td/>', { text: getAvailableMarkets(account) }))
+                .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', ') }))
+                .append($('<td/>')
+                    .html($('<a/>', { class: 'button', href: urlFor(new_account.upgrade_link) })
+                        .html($('<span/>', { text: localize('Create') })))));
     };
 
-    const getNewAccountType = () => {
-        let type = 'real';
-        if (Client.get('is_virtual')) {
-            if (Client.canUpgradeVirtualToFinancial(landing_company)) {
-                type = 'financial';
-            }
-        } else if (Client.canUpgradeGamingToFinancial(landing_company)) {
-            type = 'financial';
-        }
-        return type;
-    };
-
-    const populateExistingAccounts = (accounts_obj) => {
-        const $tbody_existing_accounts = $('#existing_accounts').find('tbody');
-        const loginid_array = Client.get('loginid_array');
-
-        Object.keys(accounts_obj)
+    const populateExistingAccounts = () => {
+        Client.getAllLoginids()
             .sort((a, b) => a > b)
-            .forEach((account) => {
-                const current_account = loginid_array.find(login => account === login.id);
-                const market_text = getAvailableMarkets(current_account);
-                const account_currency = accounts_obj[account].currency;
+            .forEach((loginid) => {
+                const account_currency = Client.get('currency', loginid);
 
-                $tbody_existing_accounts
-                    .append($('<tr/>', { id: account })
-                        .append($('<td/>', { text: account }))
-                        .append($('<td/>', { text: localize(current_account.real ? 'Real' : current_account.financial ? 'Financial' : current_account.non_financial ? 'Gaming' : 'Virtual') }))
-                        .append($('<td/>', { text: market_text }))
-                        .append($('<td/>', { text: account_currency || '-', class: 'account-currency' })));
-
-                // only show set currency for current loginid
-                if (!account_currency && account === Client.get('loginid')) {
-                    $(`#${account}`).find('.account-currency').html($('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })));
-                }
+                $('#existing_accounts').find('tbody')
+                    .append($('<tr/>', { id: loginid })
+                        .append($('<td/>', { text: loginid }))
+                        .append($('<td/>', { text: localize(Client.getAccountTitle(loginid)) }))
+                        .append($('<td/>', { text: getAvailableMarkets(loginid) }))
+                        .append($('<td/>')
+                            .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
             });
     };
 
-    const getAvailableMarkets = (current_account) => {
-        let legal_allowed_markets = Client.getLandingCompanyValue(current_account, landing_company, 'legal_allowed_markets') || '';
+    const getAvailableMarkets = (loginid) => {
+        let legal_allowed_markets = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_markets') || '';
         if (Array.isArray(legal_allowed_markets) && legal_allowed_markets.length) {
             legal_allowed_markets =
                 legal_allowed_markets
@@ -142,14 +102,10 @@ const Accounts = (() => {
             return;
         }
 
-        const $new_accounts = $('#new_accounts');
-        const $tbody_new_accounts = $new_accounts.find('tbody');
-        const market_text = getAvailableMarkets({ real: 1 });
-
-        $tbody_new_accounts
+        $('#new_accounts').find('tbody')
             .append($('<tr/>', { id: 'create_sub_account' })
                 .append($('<td/>', { text: localize('Real Account') }))
-                .append($('<td/>', { text: market_text }))
+                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create') }))));
 
@@ -203,10 +159,9 @@ const Accounts = (() => {
                             showError(response_set_account_currency.error.message);
                         } else {
                             Client.processNewAccount({
-                                email       : Client.get('email'),
-                                loginid     : new_account.client_id,
-                                token       : new_account.oauth_token,
-                                redirect_url: urlFor('user/accounts'),
+                                email  : Client.get('email'),
+                                loginid: new_account.client_id,
+                                token  : new_account.oauth_token,
                             });
                         }
                     });

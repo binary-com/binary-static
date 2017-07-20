@@ -1,4 +1,3 @@
-const Cookies      = require('js-cookie');
 const BinarySocket = require('../socket');
 const Client       = require('../../base/client');
 const localize     = require('../../base/localize').localize;
@@ -100,7 +99,7 @@ const PaymentAgentWithdraw = (() => {
                 setActiveView(view_ids.success);
                 $('#successMessage').css('display', '')
                     .attr('class', 'success-msg')
-                    .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, request.amount, Cookies.get('loginid'), agent_name]) })));
+                    .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, request.amount, Client.get('loginid'), agent_name]) })));
                 break;
 
             default: // error
@@ -144,7 +143,7 @@ const PaymentAgentWithdraw = (() => {
             if (/(withdrawal|cashier)_locked/.test(data.get_account_status.status)) {
                 showPageError('', 'withdrawal-locked-error');
             } else {
-                BinarySocket.send({ paymentagent_list: Cookies.get('residence') })
+                BinarySocket.send({ paymentagent_list: Client.get('residence') })
                     .then(response => populateAgentsList(response));
             }
         });

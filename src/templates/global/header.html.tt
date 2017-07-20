@@ -93,7 +93,6 @@
                                 <li class="account">
                                     [% INCLUDE account %]
                                     <ul>
-                                        <div class="separator-line-thin-gray"></div>
                                         <div class="login-id-list"></div>
                                         <a class="link" href="[% request.url_for('/user/settingsws') %]">
                                             <li class="topMenuProfile">[% l("Profile") %]</li>

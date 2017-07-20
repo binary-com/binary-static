@@ -6,6 +6,7 @@ const Header              = require('../../../../base/header');
 const localize            = require('../../../../base/localize').localize;
 const defaultRedirectUrl  = require('../../../../base/url').defaultRedirectUrl;
 const dateValueChanged    = require('../../../../common_functions/common_functions').dateValueChanged;
+const jpClient            = require('../../../../common_functions/country_base').jpClient;
 const FormManager         = require('../../../../common_functions/form_manager');
 const scrollToHashSection = require('../../../../common_functions/scroll').scrollToHashSection;
 const DatePicker          = require('../../../../components/date_picker');
@@ -208,6 +209,10 @@ const SelfExclusion = (() => {
                 BinaryPjax.load(defaultRedirectUrl());
             } else {
                 getData();
+                if (jpClient()) {
+                    // need to update daily_loss_limit value inside jp_settings object
+                    BinarySocket.send({ get_settings: 1 }, { forced: true });
+                }
             }
         });
     };

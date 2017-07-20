@@ -33,7 +33,7 @@ const FinancialAssessment = (() => {
 
     const handleForm = (response) => {
         if (!response) {
-            response = State.get(['response', 'get_financial_assessment']);
+            response = State.getResponse(['response', 'get_financial_assessment']);
         }
         hideLoadingImg(true);
 

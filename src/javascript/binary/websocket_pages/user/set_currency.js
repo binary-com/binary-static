@@ -21,28 +21,32 @@ const SetCurrency = (() => {
         const el = /new_account/.test(hash_value) ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
         BinarySocket.wait('landing_company').then((response) => {
-            const authorize = State.get(['response', 'authorize', 'authorize']) || {};
+            const authorize = State.getResponse('authorize');
             const currencies = getCurrencies(authorize, response.landing_company);
-            const $currency_list = $('#currency_list');
+            const $currencies = $('<div/>');
             currencies.forEach((c) => {
-                $currency_list
-                    .append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
-                        .append($('<div/>').append($('<img/>', { src: urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
-                        .append($('<div/>', { text: `${Currency.formatCurrency(c)} ${c}` })));
+                $currencies.append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
+                    .append($('<div/>').append($('<img/>', { src: urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
+                    .append($('<div/>', { text: `${Currency.formatCurrency(c)} ${c}` })));
             });
+            const $currency_list = $('#currency_list');
+            $currency_list.html($currencies.html());
 
             $('#set_currency_loading').remove();
             $('#set_currency').setVisibility(1);
 
             const allow_omnibus = authorize.allow_omnibus;
+            const $chosen_currency_type = $('#chosen_currency_type');
+            const $chosen_currency = $('#chosen_currency');
+            const $currency_notice = $('#currency_notice');
             $('.currency_wrapper').on('click', function () {
                 $currency_list.find('> div').removeClass('selected');
                 $(this).addClass('selected');
                 if (allow_omnibus) {
                     const chosen_currency = $(this).attr('id');
-                    $('#chosen_currency_type').text(Currency.isCryptocurrency(chosen_currency) ? localize('Cryptocurrency') : localize('Fiat Currency'));
-                    $('#chosen_currency').text(chosen_currency);
-                    $('#currency_notice').setVisibility(1);
+                    $chosen_currency_type.text(Currency.isCryptocurrency(chosen_currency) ? localize('Cryptocurrency') : localize('Fiat Currency'));
+                    $chosen_currency.text(chosen_currency);
+                    $currency_notice.setVisibility(1);
                 }
             });
 
@@ -91,6 +95,7 @@ const SetCurrency = (() => {
                 currencies_to_show = currencies_to_show.filter(c => fiat_currencies.indexOf(c) < 0);
             }
         } else {
+            // for now we don't want to show cryptocurrencies to accounts without allow_omnibus
             const cryptocurrencies = currency_values.cryptocurrencies;
             currencies_to_show = currencies.filter(c => cryptocurrencies.indexOf(c) < 0);
         }

@@ -1,12 +1,10 @@
 const Cookies            = require('js-cookie');
 const moment             = require('moment');
-const CookieStorage      = require('./storage').CookieStorage;
 const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
-const urlFor             = require('./url').urlFor;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const getPropertyValue   = require('./utility').getPropertyValue;
-const getLoginToken      = require('../common_functions/common_functions').getLoginToken;
+const isEmptyObject      = require('./utility').isEmptyObject;
 const jpClient           = require('../common_functions/country_base').jpClient;
 const BinarySocket       = require('../websocket_pages/socket');
 const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
@@ -14,176 +12,196 @@ const RealityCheckData   = require('../websocket_pages/user/reality_check/realit
 const Client = (() => {
     'use strict';
 
-    const client_object = {};
-
-    const parseLoginIDList = (string) => {
-        if (!string) return [];
-        return string.split('+').sort().map((str) => {
-            const items = str.split(':');
-            const id = items[0];
-            const is_real = items[1] === 'R';
-            const is_financial = /^MF/.test(id);
-            const is_gaming = /^MLT/.test(id);
-
-            if (is_real) client_object.has_real = is_real;
-            if (is_financial) client_object.has_financial = is_financial;
-            if (is_gaming) client_object.has_gaming = is_gaming;
-
-            return {
-                id           : id,
-                real         : is_real,
-                disabled     : items[2] === 'D',
-                financial    : is_financial,
-                non_financial: is_gaming,
-            };
-        });
-    };
+    const storage_key = 'client.accounts';
+    let client_object = {},
+        current_loginid;
 
     const init = () => {
-        client_object.loginid_array = parseLoginIDList(Cookies.get('loginid_list') || '');
-
-        set('email',     Cookies.get('email'));
-        set('loginid',   Cookies.get('loginid'));
-        set('residence', Cookies.get('residence'));
-
+        current_loginid = LocalStore.get('active_loginid');
         backwardCompatibility();
+        client_object = getAllAccountsObject();
     };
 
     const isLoggedIn = () => (
-        get('tokens') &&
-        getLoginToken() &&
-        Cookies.get('loginid') &&
-        client_object.loginid_array.length > 0
+        !isEmptyObject(getAllAccountsObject()) &&
+        get('loginid') &&
+        get('token')
     );
 
     const validateLoginid = () => {
-        const loginid_list = Cookies.get('loginid_list');
-        const client_id    = Cookies.get('loginid');
-        if (!client_id || !loginid_list) return;
-
+        if (!isLoggedIn()) return;
         const valid_login_ids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG|VRTJ|JP)[0-9]+$', 'i');
-
-        if (!valid_login_ids.test(client_id)) {
-            sendLogoutRequest();
-        }
-
-        loginid_list.split('+').forEach((acc_id) => {
-            if (!valid_login_ids.test(acc_id.split(':')[0])) {
+        getAllLoginids().some((loginid) => {
+            if (!valid_login_ids.test(loginid)) {
                 sendLogoutRequest();
+                return true;
             }
+            return false;
         });
     };
 
-    const set = (key, value) => {
-        client_object[key] = value;
-        return LocalStore.set(`client.${key}`, value);
+    /**
+     * Stores the client information in local variable and localStorage
+     *
+     * @param {String} key                 The property name to set
+     * @param {String|Number|Object} value The regarding value
+     * @param {String|null} loginid        The account to set the value for
+     */
+    const set = (key, value, loginid = current_loginid) => {
+        if (key === 'loginid' && value !== current_loginid) {
+            LocalStore.set('active_loginid', value);
+            current_loginid = value;
+        } else {
+            if (!(loginid in client_object)) {
+                client_object[loginid] = {};
+            }
+            client_object[loginid][key] = value;
+            LocalStore.setObject(storage_key, client_object);
+        }
     };
 
-    // use this function to get variables that have values
-    const get = (key) => {
-        let value = client_object[key] || LocalStore.get(`client.${key}`) || '';
+    /**
+     * Returns the client information
+     *
+     * @param {String|null} key     The property name to return the value from, if missing returns the account object
+     * @param {String|null} loginid The account to return the value from
+     */
+    const get = (key, loginid = current_loginid) => {
+        let value;
+        if (key === 'loginid') {
+            value = loginid || LocalStore.get('active_loginid');
+        } else {
+            const current_client = client_object[loginid] || getAllAccountsObject()[loginid] || {};
+            value = key ? current_client[key] : current_client;
+        }
         if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
             value = JSON.parse(value || false);
         }
         return value;
     };
 
+    const getAllAccountsObject = () => LocalStore.getObject(storage_key);
+
+    const getAllLoginids = () => Object.keys(getAllAccountsObject());
+
+    const getAccountType = (loginid = current_loginid) => {
+        let account_type;
+        if (/^VR/.test(loginid))        account_type = 'virtual';
+        else if (/^MF/.test(loginid))   account_type = 'financial';
+        else if (/^MLT/.test(loginid))  account_type = 'gaming';
+        return account_type;
+    };
+
+    const isAccountOfType = (type, loginid = current_loginid) => {
+        const this_type = getAccountType(loginid);
+        return (
+            (type === 'virtual' && this_type === 'virtual') ||
+            (type === 'real'    && this_type !== 'virtual') ||
+            type === this_type);
+    };
+
+    const getAccountOfType = (type, only_enabled) => {
+        const id = getAllLoginids().find(loginid => (
+            isAccountOfType(type, loginid) &&
+            (only_enabled ? !get('is_disabled', loginid) : true)
+        ));
+        return id ? $.extend({ loginid: id }, get(null, id)) : {};
+    };
+
+    const hasAccountType = (type, only_enabled) => !isEmptyObject(getAccountOfType(type, only_enabled));
+
+    const types_map = {
+        virtual  : 'Virtual',
+        gaming   : 'Gaming',
+        financial: 'Investment',
+    };
+    const getAccountTitle = loginid => types_map[getAccountType(loginid)] || 'Real';
+
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
-        if (!Cookies.get('email')) {
-            setCookie('email', authorize.email);
-            set('email', authorize.email);
-        }
+        set('email',         authorize.email);
+        set('currency',      authorize.currency);
+        set('is_virtual',    +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
-        set('is_virtual', authorize.is_virtual);
-        set('landing_company_name', authorize.landing_company_name);
-        set('landing_company_fullname', authorize.landing_company_fullname);
-        setCurrency(authorize.currency);
+        set('landing_company_shortcode', authorize.landing_company_name);
     };
 
     const shouldAcceptTnc = () => {
         if (get('is_virtual')) return false;
-        const website_tnc_version = State.get(['response', 'website_status', 'website_status', 'terms_conditions_version']);
-        const get_settings = State.get(['response', 'get_settings', 'get_settings']);
+        const website_tnc_version = State.getResponse('website_status.terms_conditions_version');
+        const get_settings = State.getResponse('get_settings');
         return get_settings.hasOwnProperty('client_tnc_status') && get_settings.client_tnc_status !== website_tnc_version;
     };
 
-    const clear = () => {
-        // clear all client values from local storage
-        Object.keys(localStorage).forEach((c) => {
-            if (/^client\.(?!(tokens$))/.test(c)) {
-                LocalStore.set(c, '');
-            }
-        });
+    const clearAllAccounts = () => {
+        current_loginid = undefined;
+        client_object = {};
+        LocalStore.setObject(storage_key, client_object);
+
         const hash = window.location.hash;
         if (/no-reality-check/.test(hash)) {
             window.location.hash = hash.replace('no-reality-check', '');
         }
     };
 
-    const getAccountObj = client_loginid => (getPropertyValue(JSON.parse(get('tokens') || '{}'), [client_loginid]) || {});
-
-    const getToken = client_loginid => getPropertyValue(getAccountObj(client_loginid), ['token']);
-
-    const setCurrency = (currency) => {
-        const tokens = get('tokens');
-        const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
-        const account_obj = tokens_obj[get('loginid')];
-        if (!account_obj.currency) {
-            account_obj.currency = currency;
-            set('tokens', JSON.stringify(tokens_obj));
-        }
-        set('currency', currency);
-    };
-
+    /**
+     * Upgrade the structure of client info to the new one
+     * (for clients which already are logged-in with the old version)
+     */
     const backwardCompatibility = () => {
-        // upgrade client.tokens structure to the new one (for clients which already are logged-in with the old version)
-        const account_obj = getAccountObj(get('loginid'));
-        if (typeof account_obj !== 'object') {
-            const tokens = get('tokens');
-            const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
-            Object.keys(tokens_obj).forEach((loginid) => {
-                tokens_obj[loginid] = { token: tokens_obj[loginid] };
+        if (!current_loginid) return;
+
+        const accounts_obj    = LocalStore.getObject('client.tokens');
+        const current_account = getPropertyValue(accounts_obj, current_loginid) || {};
+
+        // 1. client.tokens = { loginid1: token1, loginid2, token2 }
+        if (typeof current_account !== 'object') {
+            Object.keys(accounts_obj).forEach((loginid) => {
+                accounts_obj[loginid] = { token: current_account };
             });
-            set('tokens', JSON.stringify(tokens_obj));
         }
-    };
 
-    const addToken = (client_loginid, token) => {
-        if (!client_loginid || !token || getToken(client_loginid)) {
-            return false;
+        // 2. client.tokens = { loginid1: { token: token1, currency: currency1 }, loginid2: { ... } }
+        if (!isEmptyObject(accounts_obj)) {
+            const keys = ['balance', 'currency', 'email', 'is_virtual', 'residence', 'session_start'];
+            // read current client.* values and set in new object
+            const setValue = (old_key, new_key) => {
+                const value = LocalStore.get(`client.${old_key}`);
+                if (value) {
+                    accounts_obj[current_loginid][new_key || old_key] = value;
+                }
+            };
+            keys.forEach((key) => { setValue(key); });
+            setValue('landing_company_name', 'landing_company_shortcode');
+
+            // remove all client.* and cookies
+            Object.keys(LocalStore.storage).forEach((key) => {
+                if (/^client\./.test(key)) {
+                    LocalStore.remove(key);
+                }
+            });
+            cleanupCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
+
+            // set client.accounts
+            LocalStore.setObject(storage_key, accounts_obj);
         }
-        const tokens = get('tokens');
-        const tokens_obj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
-        tokens_obj[client_loginid] = { token: token, currency: '' };
-        set('tokens', JSON.stringify(tokens_obj));
-        return true;
-    };
-
-    const setCookie = (cookie_name, Value, domain) => {
-        const cookie_expire = new Date();
-        cookie_expire.setDate(cookie_expire.getDate() + 60);
-        const cookie = new CookieStorage(cookie_name, domain);
-        cookie.write(Value, cookie_expire, true);
     };
 
     const processNewAccount = (options) => {
         if (!options.email || !options.loginid || !options.token) {
             return;
         }
-        // save token
-        addToken(options.loginid, options.token);
-        // set cookies
-        setCookie('email',        options.email);
-        setCookie('login',        options.token);
-        setCookie('loginid',      options.loginid);
-        setCookie('loginid_list', options.is_virtual ? `${options.loginid}:V:E` : `${options.loginid}:R:E+${Cookies.get('loginid_list')}`);
-        // set local storage
+
         localStorage.setItem('GTM_new_account', '1');
-        localStorage.setItem('active_loginid', options.loginid);
         RealityCheckData.clear();
+
+        set('token',      options.token,       options.loginid);
+        set('email',      options.email,       options.loginid);
+        set('is_virtual', +options.is_virtual, options.loginid);
+        set('loginid',    options.loginid);
+
         // need to redirect not using pjax
-        window.location.href = jpClient() || options.is_virtual ? defaultRedirectUrl() : (options.redirect_url || `${urlFor('user/set-currency')}#new_account`);
+        window.location.href = options.redirect_url || defaultRedirectUrl();
     };
 
     const hasShortCode = (data, code) => ((data || {}).shortcode === code);
@@ -193,23 +211,6 @@ const Client = (() => {
     const canUpgradeVirtualToFinancial = data => (!data.gaming_company && hasShortCode(data.financial_company, 'maltainvest'));
 
     const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'japan'));
-
-    const hasGamingFinancialEnabled = () => {
-        let has_financial = false,
-            has_gaming = false;
-
-        client_object.loginid_array.forEach((client) => {
-            if (!client.disabled) {
-                if (client.financial) {
-                    has_financial = true;
-                } else if (client.non_financial) {
-                    has_gaming = true;
-                }
-            }
-        });
-
-        return has_gaming && has_financial;
-    };
 
     const activateByClientType = (section = 'body') => {
         if (isLoggedIn()) {
@@ -239,9 +240,15 @@ const Client = (() => {
 
     const doLogout = (response) => {
         if (response.logout !== 1) return;
-        clear();
-        LocalStore.remove('client.tokens');
-        const cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence'];
+        cleanupCookies('login', 'loginid', 'loginid_list', 'email', 'residence', 'settings'); // backward compatibility
+        cleanupCookies('reality_check', 'affiliate_token', 'affiliate_tracking');
+        clearAllAccounts();
+        set('loginid', '');
+        RealityCheckData.clear();
+        window.location.reload();
+    };
+
+    const cleanupCookies = (...cookie_names) => {
         const domains = [
             `.${document.domain.split('.').slice(-2).join('.')}`,
             `.${document.domain}`,
@@ -252,53 +259,58 @@ const Client = (() => {
             parent_path = `/${parent_path}`;
         }
 
-        cookies.forEach((c) => {
-            const regex = new RegExp(c);
+        cookie_names.forEach((c) => {
             Cookies.remove(c, { path: '/', domain: domains[0] });
             Cookies.remove(c, { path: '/', domain: domains[1] });
             Cookies.remove(c);
-            if (regex.test(document.cookie) && parent_path) {
+            if (new RegExp(c).test(document.cookie) && parent_path) {
                 Cookies.remove(c, { path: parent_path, domain: domains[0] });
                 Cookies.remove(c, { path: parent_path, domain: domains[1] });
                 Cookies.remove(c, { path: parent_path });
             }
         });
-        window.location.reload();
     };
 
     const currentLandingCompany = () => {
-        const landing_company_response = State.get(['response', 'landing_company', 'landing_company']) || {};
-        let client_landing_company = {};
-        Object.keys(landing_company_response).forEach((key) => {
-            if (client_object.landing_company_name === landing_company_response[key].shortcode) {
-                client_landing_company = landing_company_response[key];
-            }
-        });
-        return client_landing_company;
+        const landing_company_response = State.getResponse('landing_company') || {};
+        const lc_prop = Object.keys(landing_company_response)
+            .find(key => get('landing_company_shortcode') === landing_company_response[key].shortcode);
+        return landing_company_response[lc_prop] || {};
     };
 
-    const isFinancial = () => (client_object.loginid_array.find(obj => (obj.id === get('loginid'))) || {}).financial;
-
-    const shouldCompleteTax = () => isFinancial() && !/crs_tin_information/.test((State.get(['response', 'get_account_status', 'get_account_status']) || {}).status);
+    const shouldCompleteTax = () => isAccountOfType('financial') && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
-    const canUpgrade = (landing_company) => {
-        const loginid_array = client_object.loginid_array;
+    const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status')) => {
+        let type = 'real';
+        let upgrade_link = 'realws';
         let can_upgrade = false;
         if (get('is_virtual')) {
-            can_upgrade = !loginid_array.some(client => client.real);
-        } else if (Client.canUpgradeGamingToFinancial(landing_company)) {
-            can_upgrade = !loginid_array.some(client => client.financial);
+            if (canUpgradeVirtualToFinancial(landing_company)) {
+                type = 'financial';
+                upgrade_link = 'maltainvestws';
+            } else if (canUpgradeVirtualToJapan(landing_company)) {
+                upgrade_link = 'japanws';
+            }
+            can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
+        } else if (canUpgradeGamingToFinancial(landing_company)) {
+            type = 'financial';
+            upgrade_link = 'maltainvestws';
+            can_upgrade = !hasAccountType('financial');
         }
-        return can_upgrade;
+        return {
+            type        : type,
+            upgrade_link: `new_account/${upgrade_link}`,
+            can_upgrade : can_upgrade,
+        };
     };
 
-    const getLandingCompanyValue = (current_account, landing_company, key) => {
+    const getLandingCompanyValue = (loginid, landing_company, key) => {
         let landing_company_object;
-        if (current_account.financial) {
+        if (isAccountOfType('financial', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
-        } else if (current_account.real) {
+        } else if (isAccountOfType('real', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'gaming_company');
 
             // handle accounts such as japan that don't have gaming company
@@ -319,28 +331,27 @@ const Client = (() => {
         validateLoginid  : validateLoginid,
         set              : set,
         get              : get,
+        getAllLoginids   : getAllLoginids,
+        getAccountType   : getAccountType,
+        getAccountOfType : getAccountOfType,
+        isAccountOfType  : isAccountOfType,
+        hasAccountType   : hasAccountType,
         responseAuthorize: responseAuthorize,
         shouldAcceptTnc  : shouldAcceptTnc,
-        clear            : clear,
-        getToken         : getToken,
-        setCurrency      : setCurrency,
-        setCookie        : setCookie,
+        clearAllAccounts : clearAllAccounts,
         processNewAccount: processNewAccount,
         isLoggedIn       : isLoggedIn,
         sendLogoutRequest: sendLogoutRequest,
+        cleanupCookies   : cleanupCookies,
         doLogout         : doLogout,
-        isFinancial      : isFinancial,
         shouldCompleteTax: shouldCompleteTax,
         getMT5AccountType: getMT5AccountType,
-        canUpgrade       : canUpgrade,
+        getUpgradeInfo   : getUpgradeInfo,
+        getAccountTitle  : getAccountTitle,
 
-        canUpgradeGamingToFinancial : canUpgradeGamingToFinancial,
-        canUpgradeVirtualToFinancial: canUpgradeVirtualToFinancial,
-        canUpgradeVirtualToJapan    : canUpgradeVirtualToJapan,
-        hasGamingFinancialEnabled   : hasGamingFinancialEnabled,
-        activateByClientType        : activateByClientType,
-        currentLandingCompany       : currentLandingCompany,
-        getLandingCompanyValue      : getLandingCompanyValue,
+        activateByClientType  : activateByClientType,
+        currentLandingCompany : currentLandingCompany,
+        getLandingCompanyValue: getLandingCompanyValue,
     };
 })();
 

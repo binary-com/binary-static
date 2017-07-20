@@ -45,9 +45,9 @@ const PersonalDetails = (() => {
     const getDetailsResponse = (data) => {
         const get_settings = $.extend({}, data);
         get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        const loginid_array = Client.get('loginid_array');
+        const accounts = Client.getAllLoginids();
         // for subaccounts, back-end sends loginid of the master account as name
-        const hide_name = loginid_array.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name));
+        const hide_name = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name));
         if (!hide_name) {
             $('#row_name').setVisibility(1);
             get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
@@ -166,11 +166,11 @@ const PersonalDetails = (() => {
                 { selector: '#address_postcode',   validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
 
-                { selector: '#place_of_birth', validations: Client.isFinancial() ? ['req'] : '' },
-                { selector: '#tax_residence',  validations: Client.isFinancial() ? ['req'] : '' },
+                { selector: '#place_of_birth', validations: Client.isAccountOfType('financial') ? ['req'] : '' },
+                { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
             ];
             const tax_id_validation = { selector: '#tax_identification_number',  validations: ['postcode', ['length', { min: 0, max: 20 }]] };
-            if (Client.isFinancial()) {
+            if (Client.isAccountOfType('financial')) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
@@ -282,7 +282,7 @@ const PersonalDetails = (() => {
         currency = Client.get('currency');
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
-            get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
+            get_settings_data = State.getResponse('get_settings');
             getDetailsResponse(get_settings_data);
             if (!is_virtual || !residence) {
                 $('#btn_update').setVisibility(1);

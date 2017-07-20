@@ -1,13 +1,12 @@
-const moment             = require('moment');
-const BinarySocket       = require('../../socket');
-const BinaryPjax         = require('../../../base/binary_pjax');
-const Client             = require('../../../base/client');
-const State              = require('../../../base/storage').State;
-const defaultRedirectUrl = require('../../../base/url').defaultRedirectUrl;
-const isEmptyObject      = require('../../../base/utility').isEmptyObject;
-const AccountOpening     = require('../../../common_functions/account_opening');
-const FormManager        = require('../../../common_functions/form_manager');
-const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
+const moment         = require('moment');
+const BinarySocket   = require('../../socket');
+const BinaryPjax     = require('../../../base/binary_pjax');
+const Client         = require('../../../base/client');
+const State          = require('../../../base/storage').State;
+const isEmptyObject  = require('../../../base/utility').isEmptyObject;
+const AccountOpening = require('../../../common_functions/account_opening');
+const FormManager    = require('../../../common_functions/form_manager');
+const toISOFormat    = require('../../../common_functions/string_util').toISOFormat;
 
 const FinancialAccOpening = (() => {
     'use strict';
@@ -22,19 +21,6 @@ const FinancialAccOpening = (() => {
         } else if (Client.get('has_gaming')) {
             $('.security').hide();
         }
-
-        BinarySocket.wait('landing_company').then((response) => {
-            const landing_company = response.landing_company;
-            if (Client.get('is_virtual')) {
-                if (Client.canUpgradeVirtualToJapan(landing_company)) {
-                    BinaryPjax.load('new_account/japanws');
-                } else if (!Client.canUpgradeVirtualToFinancial(landing_company)) {
-                    BinaryPjax.load('new_account/realws');
-                }
-            } else if (!Client.canUpgradeGamingToFinancial(landing_company)) {
-                BinaryPjax.load(defaultRedirectUrl());
-            }
-        });
 
         if (AccountOpening.redirectAccount()) return;
         AccountOpening.populateForm(form_id, getValidations);
