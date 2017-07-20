@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-12 22:56-0400\n"
+"PO-Revision-Date: 2017-07-19 21:20-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -299,6 +299,9 @@ msgstr "%1从1999年开始运营，目前营业额达到 20 亿美元"
 
 msgid "%1 reaches 1 million registered users"
 msgstr "%1注册用户已达一百万人"
+
+msgid "%1 requires your browser's web storage to be enabled in order to function properly. Please enable it or exit private browsing mode."
+msgstr "您必须启用浏览器的web存储，%1才能正常工作。请启用它或退出私人浏览模式。"
 
 msgid "%1 rows displayed:"
 msgstr "%1 显示行数:"
@@ -691,7 +694,7 @@ msgid "Access market quotes and trade execution from top-tier liquidity provider
 msgstr "通过顶级流动性提供商，包括银行和非银行机构访问市场报价和执行交易。"
 
 msgid "Access multi-asset liquidity from top-tier institutions."
-msgstr ""
+msgstr "顶级机构提供多种资产的流动性服务。"
 
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "随时随地在iOS或Android设备上使用原装应用能够程序访问市场。"
@@ -1518,8 +1521,8 @@ msgstr "Binary 的日本子公司 Binary KK 在东京开设了办公室，并开
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "Binary 的马耳他附属公司 Binary Investments (Europe) Ltd. 由 Malta Financial Services Authority 授予3级投资服务牌照。"
 
-msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
-msgstr "Binary 平台平均每秒钟进行 15  宗 %1交易%2，全天候提供服务，整年无休"
+msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
+msgstr "Binary 平台平均每秒钟进行 %1宗%2交易%3，全天候提供服务，整年无休"
 
 msgid "Binary.com by the numbers"
 msgstr "Binary.com数据"
@@ -4811,7 +4814,7 @@ msgid "Links"
 msgstr "链接"
 
 msgid "Liquidity solutions"
-msgstr ""
+msgstr "流动性解决方案"
 
 msgid "Live chat:"
 msgstr "在线聊天："
@@ -5079,6 +5082,9 @@ msgstr "每个符号和合约类型未平仓头寸的最大累计赔付额。如
 
 msgid "Maximum daily turnover"
 msgstr "最大日成交量"
+
+msgid "Maximum number of contracts that can be open at the same time."
+msgstr "可以同时打开的最大合约数目。"
 
 msgid "Maximum number of open positions"
 msgstr "最大未平仓头寸数目"
@@ -5701,8 +5707,11 @@ msgstr "我们的交易屏幕简单，容易使用："
 msgid "Over $1,000,000"
 msgstr "大于$1,000,000"
 
-msgid "Over $500,001"
-msgstr "大于$500,001"
+msgid "Over $500,000"
+msgstr "$500,000以上"
+
+msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
+msgstr "世界各地拥有超过%1名<a href='%2'>职员</a>和合同工"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "在全球拥有超过一百万个注册账户"
@@ -5721,9 +5730,6 @@ msgstr "5年以上"
 
 msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
 msgstr "超过 50 种外汇交易货币对，加上现货金属、差价合约指数、大宗商品和加密货币。"
-
-msgid "Over 90 <a href='%1'>staff</a> and contractors worldwide"
-msgstr "世界各地拥有超过90名<a href='%1'>职员</a>和合同工"
 
 msgid "Over two billion dollars in trades to date."
 msgstr "迄今为止，交易额已超过二十亿美元。"
@@ -11516,35 +11522,35 @@ msgstr "终结点"
 msgid "Careers For Americans"
 msgstr "美国居民的工作机会"
 
-msgid "Job Details"
-msgstr "工作详情"
+msgid "Charity"
+msgstr "慈善活动"
 
 msgid "Company Profile"
 msgstr "公司详细信息"
 
+msgid "Job Details"
+msgstr "工作详情"
+
 msgid "Service Announcements"
 msgstr "服务公告"
-
-msgid "Charity"
-msgstr "慈善活动"
-
-msgid "Open-Source Projects"
-msgstr "开源项目"
 
 msgid "Multi-asset Liquidity Solutions"
 msgstr "多个资产的流动性解决方案"
 
-msgid "Types of Trades"
-msgstr "交易类型"
-
-msgid "Why Trade with Binary.com"
-msgstr "为何通过Binary.com进行交易"
+msgid "Open-Source Projects"
+msgstr "开源项目"
 
 msgid "How to Trade Binary Options?"
 msgstr "二元期权如何交易？"
 
 msgid "What Are OTC Indices and Stocks?"
 msgstr "场外交易指数和股票有哪些？"
+
+msgid "Types of Trades"
+msgstr "交易类型"
+
+msgid "Why Trade with Binary.com"
+msgstr "为何通过Binary.com进行交易"
 
 msgid "Contract Specifications"
 msgstr "合约规格"

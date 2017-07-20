@@ -2,10 +2,12 @@ const BinaryPjax          = require('./binary_pjax');
 const pages_config        = require('./binary_pages');
 const Client              = require('./client');
 const GTM                 = require('./gtm');
+const Header              = require('./header');
 const localize            = require('./localize').localize;
 const Login               = require('./login');
 const Page                = require('./page');
 const defaultRedirectUrl  = require('./url').defaultRedirectUrl;
+const isStorageSupported  = require('./storage').isStorageSupported;
 const BinarySocket        = require('../websocket_pages/socket');
 const BinarySocketGeneral = require('../websocket_pages/socket_general');
 
@@ -19,6 +21,12 @@ const BinaryLoader = (() => {
         if (!/\.html$/i.test(window.location.pathname)) {
             window.location.pathname += '.html';
             return;
+        }
+
+        if (!isStorageSupported(localStorage) || !isStorageSupported(sessionStorage)) {
+            Header.displayNotification(localize('[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.', 'Binary.com'),
+                true, 'STORAGE_NOT_SUPPORTED');
+            $('#btn_login').addClass('button-disabled');
         }
 
         Client.init();
@@ -73,27 +81,28 @@ const BinaryLoader = (() => {
                         } else if (config.only_real && Client.get('is_virtual')) {
                             displayMessage(error_messages.only_real);
                         } else {
-                            loadActiveScript();
+                            loadActiveScript(config);
                         }
                     });
             }
         } else if (config.not_authenticated && Client.isLoggedIn()) {
             BinaryPjax.load(defaultRedirectUrl(), true);
         } else {
-            loadActiveScript();
+            loadActiveScript(config);
         }
         BinarySocket.setOnDisconnect(active_script.onDisconnect);
     };
 
-    const loadActiveScript = () => {
-        if (Login.isLoginPages()) {
-            active_script.onLoad();
-        } else {
-            BinarySocket.wait('website_status').then(() => {
-                if (active_script && typeof active_script.onLoad === 'function') {
+    const loadActiveScript = (config) => {
+        if (active_script && typeof active_script.onLoad === 'function') {
+            // only pages that call formatMoney should wait for website_status
+            if (config.needs_currency) {
+                BinarySocket.wait('website_status').then(() => {
                     active_script.onLoad();
-                }
-            });
+                });
+            } else {
+                active_script.onLoad();
+            }
         }
     };
 

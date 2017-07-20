@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-12 22:55-0400\n"
+"PO-Revision-Date: 2017-07-19 21:20-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -299,6 +299,9 @@ msgstr "Seit dem Start in 1999 hat %1 einen Umsatz von 2 Milliarden US$ erwirtsc
 
 msgid "%1 reaches 1 million registered users"
 msgstr "%1 erreicht 1 Million registrierte Benutzer"
+
+msgid "%1 requires your browser's web storage to be enabled in order to function properly. Please enable it or exit private browsing mode."
+msgstr "%1 erfordert, dass der Webspeicher Ihres Browsers aktiviert ist, um richtig zu funktionieren. Bitte aktivieren Sie ihn, oder verlassen Sie den Private-Browsing-Modus."
 
 msgid "%1 rows displayed:"
 msgstr "%1 Zeilen angezeigt:"
@@ -691,7 +694,7 @@ msgid "Access market quotes and trade execution from top-tier liquidity provider
 msgstr "Haben Sie Zugang zu Börsenkursen und handeln Sie die Ausführung von erstklassigen Liquiditätsanbietern, darunter Banken und Nichtbanken."
 
 msgid "Access multi-asset liquidity from top-tier institutions."
-msgstr ""
+msgstr "Haben Sie Zugang zu Multi-Asset-Liquidität aus erstklassigen Einrichtungen."
 
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "Greifen Sie jederzeit, von überall aus, auf die Märkte zu, in dem Sie native Apps für iOS oder Android Geräte verwenden."
@@ -1518,8 +1521,8 @@ msgstr "Binary KK, die japanische Tochtergesellschaft von Binary, eröffnet ein 
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "Der Binary Tochtergesellschaft  Binary Investments (Europe) Ltd. wurde von der Maltesischen Finanzdienstleistungsaufsichtsbehörde eine Kategorie 3 Investmentdienstleistungen Lizenz erteilt."
 
-msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
-msgstr "Auf der Binary Platform werden im Durchschnitt 15 %1Transaktionen%2 pro Sekunde, rund um die Uhr, abgewickelt"
+msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
+msgstr "Auf der Binary Platform werden im Durchschnitt %1 %2Transaktionen%3 pro Sekunde, rund um die Uhr, abgewickelt"
 
 msgid "Binary.com by the numbers"
 msgstr "Binary.com in Zahlen"
@@ -1642,7 +1645,7 @@ msgid "Canada 60 Cash Index"
 msgstr "Kanadischer 60 Cash Index"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 msgid "Cancel Bid"
 msgstr "Gebot stornieren"
@@ -4811,7 +4814,7 @@ msgid "Links"
 msgstr "Links"
 
 msgid "Liquidity solutions"
-msgstr ""
+msgstr "Liquidität-Lösungen"
 
 msgid "Live chat:"
 msgstr "Live-Chat:"
@@ -5079,6 +5082,9 @@ msgstr "Maximale Gesamtauszahlungen auf offene Positionen pro Zeichen und Kontra
 
 msgid "Maximum daily turnover"
 msgstr "Maximaler Tagesumsatz"
+
+msgid "Maximum number of contracts that can be open at the same time."
+msgstr "Maximale Anzahl von Kontrakten, die gleichzeitig geöffnet sein können."
 
 msgid "Maximum number of open positions"
 msgstr "Maximale Anzahl offener Positionen"
@@ -5701,8 +5707,11 @@ msgstr "Unser Handelsbildschirm ist einfach zu benützen:"
 msgid "Over $1,000,000"
 msgstr "Über 1.000.000$"
 
-msgid "Over $500,001"
-msgstr "Über 500.001$"
+msgid "Over $500,000"
+msgstr "Über 500.000$"
+
+msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
+msgstr "Über %1 <a href='%2'>Beschäftigte</a> und vertraglich befristete Mitarbeiter"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Weltweit über 1 Million angemeldeter Konten"
@@ -5721,9 +5730,6 @@ msgstr "Over 5 years"
 
 msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
 msgstr "Über 50 FX-Paare plus Edelmetalle, CFD Indizes, Rohstoffe und Kryptowährungen."
-
-msgid "Over 90 <a href='%1'>staff</a> and contractors worldwide"
-msgstr "Über 90 <a href='%1'>Beschäftigte</a> und vertraglich befristete Mitarbeiter"
 
 msgid "Over two billion dollars in trades to date."
 msgstr "Bis heute über zwei Milliarden Dollar Handelsvolumen."
@@ -5822,7 +5828,7 @@ msgid "Payout"
 msgstr "Auszahlung"
 
 msgid "Payout per lot = 1,000"
-msgstr ""
+msgstr "Auszahlung pro Lot = 1.000"
 
 msgid "Pension"
 msgstr "Rente/Pension"
@@ -11519,35 +11525,35 @@ msgstr "Endpunkt"
 msgid "Careers For Americans"
 msgstr "Karrieremöglichkeiten für Amerikaner"
 
-msgid "Job Details"
-msgstr "Jobdetails"
+msgid "Charity"
+msgstr "Stiftung"
 
 msgid "Company Profile"
 msgstr "Firmenprofil"
 
+msgid "Job Details"
+msgstr "Jobdetails"
+
 msgid "Service Announcements"
 msgstr "Öffentliche Ankündigungen"
-
-msgid "Charity"
-msgstr "Stiftung"
-
-msgid "Open-Source Projects"
-msgstr "Open-Source Projekte"
 
 msgid "Multi-asset Liquidity Solutions"
 msgstr "Multi-Asset-Liquiditäts-Lösungen"
 
-msgid "Types of Trades"
-msgstr "Tradingtypen"
-
-msgid "Why Trade with Binary.com"
-msgstr "Warum mit Binary.com handeln"
+msgid "Open-Source Projects"
+msgstr "Open-Source Projekte"
 
 msgid "How to Trade Binary Options?"
 msgstr "Wie handelt man Binäre Optionen?"
 
 msgid "What Are OTC Indices and Stocks?"
 msgstr "Was sind OTC (Freiverkehr) Indizes und Aktien?"
+
+msgid "Types of Trades"
+msgstr "Tradingtypen"
+
+msgid "Why Trade with Binary.com"
+msgstr "Warum mit Binary.com handeln"
 
 msgid "Contract Specifications"
 msgstr "Vertragsspezifikationen"
