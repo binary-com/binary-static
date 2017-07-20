@@ -92,22 +92,24 @@ const Accounts = (() => {
         const $tbody_existing_accounts = $('#existing_accounts').find('tbody');
         const loginid_array = Client.get('loginid_array');
 
-        Object.keys(accounts_obj).forEach((account) => {
-            const current_account = loginid_array.find(login => account === login.id);
-            const market_text = getAvailableMarkets(current_account);
-            const account_currency = accounts_obj[account].currency;
+        Object.keys(accounts_obj)
+            .sort((a, b) => a > b)
+            .forEach((account) => {
+                const current_account = loginid_array.find(login => account === login.id);
+                const market_text = getAvailableMarkets(current_account);
+                const account_currency = accounts_obj[account].currency;
 
-            $tbody_existing_accounts
-                .append($('<tr/>', { id: account })
-                    .append($('<td/>', { text: account }))
-                    .append($('<td/>', { text: market_text }))
-                    .append($('<td/>', { text: account_currency || '-', class: 'account-currency' })));
+                $tbody_existing_accounts
+                    .append($('<tr/>', { id: account })
+                        .append($('<td/>', { text: account }))
+                        .append($('<td/>', { text: market_text }))
+                        .append($('<td/>', { text: account_currency || '-', class: 'account-currency' })));
 
-            // only show set currency for current loginid
-            if (!account_currency && account === Client.get('loginid')) {
-                $(`#${account}`).find('.account-currency').html($('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })));
-            }
-        });
+                // only show set currency for current loginid
+                if (!account_currency && account === Client.get('loginid')) {
+                    $(`#${account}`).find('.account-currency').html($('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })));
+                }
+            });
     };
 
     const getAvailableMarkets = (current_account) => {
@@ -143,23 +145,29 @@ const Accounts = (() => {
         const $tbody_new_accounts = $new_accounts.find('tbody');
         const market_text = getAvailableMarkets({ real: 1 });
 
-        const $currencies = $('<div/>');
-        $currencies.append($('<option/>', { value: '', text: localize('Please select') }));
-        currencies.forEach((c) => {
-            $currencies.append($('<option/>', { value: c, text: c }));
-        });
-
         $tbody_new_accounts
             .append($('<tr/>', { id: 'create_sub_account' })
                 .append($('<td/>', { text: localize('Real Account') }))
                 .append($('<td/>', { text: market_text }))
-                .append($('<td/>').html($('<select/>', { id: 'sub_account_currency' }).html($currencies.html())))
+                .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create') }))));
 
         $('#note').setVisibility(1);
 
-        $('#create_sub_account').find('button').on('click', () => {
-            if (!$('#sub_account_currency').val()) {
+        const $create_sub_account = $('#create_sub_account');
+        if (currencies.length > 1) {
+            const $currencies = $('<div/>');
+            $currencies.append($('<option/>', { value: '', text: localize('Please select') }));
+            currencies.forEach((c) => {
+                $currencies.append($('<option/>', { value: c, text: c }));
+            });
+            $create_sub_account.find('.account-currency').html($('<select/>', { id: 'sub_account_currency' }).html($currencies.html()));
+        } else {
+            $create_sub_account.find('.account-currency').html($('<span/>', { id: 'sub_account_currency', value: currencies, text: currencies }));
+        }
+
+        $create_sub_account.find('button').on('click', () => {
+            if (!getSelectedCurrency()) {
                 showError('Please choose a currency');
             } else {
                 BinarySocket.send({ new_sub_account: 1 }).then((response) => {
@@ -175,6 +183,11 @@ const Accounts = (() => {
         doneLoading('#new_accounts_wrapper');
     };
 
+    const getSelectedCurrency = () => {
+        const sub_account_currency = document.getElementById('sub_account_currency');
+        return sub_account_currency.value || sub_account_currency.getAttribute('value');
+    };
+
     const handleNewAccount = (response) => {
         const new_account = response.new_sub_account;
         State.set('ignoreResponse', 'authorize');
@@ -183,7 +196,7 @@ const Accounts = (() => {
                 showError(response_authorize.error.message);
             } else {
                 BinarySocket
-                    .send({ set_account_currency: $('#sub_account_currency').val() })
+                    .send({ set_account_currency: getSelectedCurrency() })
                     .then((response_set_account_currency) => {
                         if (response_set_account_currency.error) {
                             showError(response_set_account_currency.error.message);

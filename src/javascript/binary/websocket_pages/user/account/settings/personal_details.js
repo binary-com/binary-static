@@ -45,7 +45,13 @@ const PersonalDetails = (() => {
     const getDetailsResponse = (data) => {
         const get_settings = $.extend({}, data);
         get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
+        const loginid_array = Client.get('loginid_array');
+        // for subaccounts, back-end sends loginid of the master account as name
+        const hide_name = loginid_array.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name));
+        if (!hide_name) {
+            $('#row_name').setVisibility(1);
+            get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
+        }
 
         displayGetSettingsData(get_settings);
 
