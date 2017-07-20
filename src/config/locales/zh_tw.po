@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-17 23:09-0400\n"
+"PO-Revision-Date: 2017-07-19 21:20-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -301,7 +301,7 @@ msgid "%1 reaches 1 million registered users"
 msgstr "%1註冊使用者已達1百萬人"
 
 msgid "%1 requires your browser's web storage to be enabled in order to function properly. Please enable it or exit private browsing mode."
-msgstr ""
+msgstr "您必須啟用瀏覽器的web存儲，%1才能正常工作。請啟用它或退出私人瀏覽模式。"
 
 msgid "%1 rows displayed:"
 msgstr "%1顯示列數:"
@@ -1521,8 +1521,8 @@ msgstr "Binary 日本子公司 Binary KK 在東京開設了辦公室，並開始
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "Binary 的馬爾他附屬公司 Binary Investments (Europe) Ltd. 由 Malta Financial Services Authority 授予第3類投資服務執照。"
 
-msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
-msgstr "Binary平台平均每秒鐘進行15宗%1交易%2，全天候提供服務,整年無休"
+msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
+msgstr "Binary平台平均每秒鐘進行%1宗%2交易%3，全天候提供服務，整年無休"
 
 msgid "Binary.com by the numbers"
 msgstr "Binary.com數字"
@@ -5083,7 +5083,7 @@ msgid "Maximum daily turnover"
 msgstr "最大日成交量"
 
 msgid "Maximum number of contracts that can be open at the same time."
-msgstr ""
+msgstr "可以同時打開的最大合約數目。"
 
 msgid "Maximum number of open positions"
 msgstr "最大未平倉頭寸數目"
@@ -5706,8 +5706,11 @@ msgstr "我們的交易屏幕簡單，容易使用:"
 msgid "Over $1,000,000"
 msgstr "大於$1,000,000"
 
-msgid "Over $500,001"
-msgstr "大於$500,001"
+msgid "Over $500,000"
+msgstr "$500,000以上"
+
+msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
+msgstr "世界各地擁有超過%1名<a href='%2'>職員</a>和約聘員工"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "全球各地擁有超過1百萬個註冊帳號"
@@ -5726,9 +5729,6 @@ msgstr "5年以上"
 
 msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
 msgstr "超過 50 種外匯交易貨幣對，加上現貨金屬、差價合約指數、大宗商品和加密貨幣。"
-
-msgid "Over 90 <a href='%1'>staff</a> and contractors worldwide"
-msgstr "世界各地擁有超過90名<a href='%1'>職員</a>和約聘員工"
 
 msgid "Over two billion dollars in trades to date."
 msgstr "迄今為止，交易額已超過二十億美元。"
@@ -11520,35 +11520,35 @@ msgstr "端點"
 msgid "Careers For Americans"
 msgstr "美國居民的工作機會"
 
-msgid "Job Details"
-msgstr "工作詳細資料"
+msgid "Charity"
+msgstr "慈善活動"
 
 msgid "Company Profile"
 msgstr "公司資料"
 
+msgid "Job Details"
+msgstr "工作詳細資料"
+
 msgid "Service Announcements"
 msgstr "服務佈告"
-
-msgid "Charity"
-msgstr "慈善活動"
-
-msgid "Open-Source Projects"
-msgstr "開源專案"
 
 msgid "Multi-asset Liquidity Solutions"
 msgstr "多個資產的流動性解決方案"
 
-msgid "Types of Trades"
-msgstr "交易類型"
-
-msgid "Why Trade with Binary.com"
-msgstr "為何通過Binary.com進行交易"
+msgid "Open-Source Projects"
+msgstr "開源專案"
 
 msgid "How to Trade Binary Options?"
 msgstr "二元期權如何交易?"
 
 msgid "What Are OTC Indices and Stocks?"
 msgstr "場外交易指數和股票有哪些？"
+
+msgid "Types of Trades"
+msgstr "交易類型"
+
+msgid "Why Trade with Binary.com"
+msgstr "為何通過Binary.com進行交易"
 
 msgid "Contract Specifications"
 msgstr "合約規格"

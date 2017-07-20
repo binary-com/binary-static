@@ -55,7 +55,7 @@
                         [% INCLUDE payout_item class='plus'  value='+1'  text='+1' %]
                         [% INCLUDE payout_item class='plus'  value='+10' text='+10' %]
                         [% INCLUDE payout_item value='50'    text='50' %]
-                        [% INCLUDE payout_item value='100'   text='100'  hint=l('(max)') %]
+                        [% INCLUDE payout_item value='100'   text='100'  hint=l('(max)') hint_class='invisible ja-show' %]
                         [% INCLUDE payout_item class='minus' value='-1'  text='-1' %]
                         [% INCLUDE payout_item class='minus' value='-10' text='-10' %]
                         [% INCLUDE payout_item class='green' value='ok'  text=l('OK') %]
@@ -111,7 +111,7 @@
 
 [% BLOCK payout_item %]
 <div class="[% class %] gr-3 nowrap" value="[% value %]" unselectable="on" onselectstart="return false;" onmousedown="return false;">
-    [% text %][% IF hint %]<div class="hint">[% hint %]</div>[% END %]
+    [% text %][% IF hint %]<div class="hint [% hint_class %]">[% hint %]</div>[% END %]
 </div>
 [% END %]
 

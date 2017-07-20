@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-17 23:09-0400\n"
+"PO-Revision-Date: 2017-07-19 21:20-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -1532,8 +1532,8 @@ msgstr "Binary Ltd.の子会社Binary株式会社 (和文名称 バイナリー�
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
 msgstr "Binaryの子会社 Binary Investments (Europe) Ltdはマルタ金融サービス庁によってカテゴリー3投資サービスライセンスが付与されています。"
 
-msgid "Binary's platform transacts on average 15 %1transactions%2 per second, 24/7"
-msgstr "Binaryプラットフォームでは、毎秒15件の%1取引%2が行われています。"
+msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
+msgstr "Binaryのプラットフォームでは、毎秒%1件の%2取引%3が行われています。"
 
 msgid "Binary.com by the numbers"
 msgstr "数字でみるBinary.com"
@@ -5742,8 +5742,11 @@ msgstr "取引方法は次の5つの取引条件を選択・指定："
 msgid "Over $1,000,000"
 msgstr "$1,000,001以上"
 
-msgid "Over $500,001"
-msgstr "$500,002以上"
+msgid "Over $500,000"
+msgstr "$500,001以上"
+
+msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
+msgstr "世界中で%1人を超える<a href='%2'>スタッフ</a>と請負業者"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "世界中で100万口座以上"
@@ -5762,9 +5765,6 @@ msgstr "5年以上"
 
 msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
 msgstr "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
-
-msgid "Over 90 <a href='%1'>staff</a> and contractors worldwide"
-msgstr "世界中で90人を超えるスタッフと請負業者"
 
 msgid "Over two billion dollars in trades to date."
 msgstr "設立以来、累計で20億ドルを超える取引実績（親会社）"
@@ -11695,35 +11695,35 @@ msgstr "ポイント"
 msgid "Careers For Americans"
 msgstr "採用情報（アメリカ出身の方）"
 
-msgid "Job Details"
-msgstr "職務内容"
+msgid "Charity"
+msgstr "チャリティー"
 
 msgid "Company Profile"
 msgstr "会社概要"
 
+msgid "Job Details"
+msgstr "職務内容"
+
 msgid "Service Announcements"
 msgstr "サービス情報"
-
-msgid "Charity"
-msgstr "チャリティー"
-
-msgid "Open-Source Projects"
-msgstr "オープンソースプロジェクト"
 
 msgid "Multi-asset Liquidity Solutions"
 msgstr "複数資産流動性ソリューション"
 
-msgid "Types of Trades"
-msgstr "トレードの種類"
-
-msgid "Why Trade with Binary.com"
-msgstr "Binary.com (バイナリードットコム)が選ばれる理由"
+msgid "Open-Source Projects"
+msgstr "オープンソースプロジェクト"
 
 msgid "How to Trade Binary Options?"
 msgstr "バイナリーオプションの取引方法とは？"
 
 msgid "What Are OTC Indices and Stocks?"
 msgstr "店頭インデックス・店頭株とは？"
+
+msgid "Types of Trades"
+msgstr "トレードの種類"
+
+msgid "Why Trade with Binary.com"
+msgstr "Binary.com (バイナリードットコム)が選ばれる理由"
 
 msgid "Contract Specifications"
 msgstr "トレード詳細"
