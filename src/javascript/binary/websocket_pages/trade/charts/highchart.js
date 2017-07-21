@@ -121,7 +121,7 @@ const Highchart = (() => {
         const el = document.getElementById('analysis_live_chart');
         if (!el) {
             chart = null;
-            return new Promise();
+            return null;
         }
 
         const JPClient = jpClient();
@@ -199,6 +199,7 @@ const Highchart = (() => {
                 // only initialize chart if it hasn't already been initialized
                 if (!chart && !is_initialized) {
                     chart_promise = initChart(options);
+                    if (!chart_promise || typeof chart_promise.then !== 'function') return;
                     chart_promise.then(() => {
                         if (!chart) return;
 

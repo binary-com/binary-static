@@ -1,12 +1,13 @@
-const moment         = require('moment');
-const BinarySocket   = require('../../socket');
-const BinaryPjax     = require('../../../base/binary_pjax');
-const Client         = require('../../../base/client');
-const State          = require('../../../base/storage').State;
-const isEmptyObject  = require('../../../base/utility').isEmptyObject;
-const AccountOpening = require('../../../common_functions/account_opening');
-const FormManager    = require('../../../common_functions/form_manager');
-const toISOFormat    = require('../../../common_functions/string_util').toISOFormat;
+const moment             = require('moment');
+const BinarySocket       = require('../../socket');
+const BinaryPjax         = require('../../../base/binary_pjax');
+const Client             = require('../../../base/client');
+const State              = require('../../../base/storage').State;
+const defaultRedirectUrl = require('../../../base/url').defaultRedirectUrl;
+const isEmptyObject      = require('../../../base/utility').isEmptyObject;
+const AccountOpening     = require('../../../common_functions/account_opening');
+const FormManager        = require('../../../common_functions/form_manager');
+const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
 
 const FinancialAccOpening = (() => {
     'use strict';
@@ -15,10 +16,10 @@ const FinancialAccOpening = (() => {
 
     const onLoad = () => {
         State.set('is_financial_opening', 1);
-        if (Client.get('has_financial') || !Client.get('residence')) {
-            BinaryPjax.load('trading');
+        if (Client.hasAccountType('financial', true) || !Client.get('residence')) {
+            BinaryPjax.load(defaultRedirectUrl());
             return;
-        } else if (Client.get('has_gaming')) {
+        } else if (Client.hasAccountType('gaming', true)) {
             $('.security').hide();
         }
 

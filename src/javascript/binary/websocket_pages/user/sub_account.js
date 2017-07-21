@@ -4,13 +4,12 @@ const Currency = require('../../common_functions/currency');
 const SubAccounts = (() => {
     'use strict';
 
-    const getCurrencyValues = (sub_accounts, landing_company) => {
+    const getCurrencyValues = (sub_accounts) => {
         const fiat_currencies  = Currency.getFiatCurrencies();
         // TODO: update this when back-end sends cryptocurrencies in website_status and landing_company
         // const currencies = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
         // const cryptocurrencies = currencies.filter(c => fiat_currencies.indexOf(c) < 0);
-        const cryptocurrencies = ['BTC', 'ETH', 'LTC'];
-        const currencies       = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies').concat(cryptocurrencies);
+        const cryptocurrencies = ['BTC'];
         const sub_currencies   = sub_accounts.length ? sub_accounts.map(a => a.currency) : [];
 
         const has_fiat_sub = sub_accounts.length ? sub_currencies.some(currency => currency && new RegExp(currency, 'i').test(fiat_currencies)) : false;
@@ -18,7 +17,6 @@ const SubAccounts = (() => {
         return {
             fiat_currencies : fiat_currencies,
             cryptocurrencies: cryptocurrencies,
-            currencies      : currencies,
             sub_currencies  : sub_currencies,
             has_fiat_sub    : has_fiat_sub,
         };
@@ -27,9 +25,9 @@ const SubAccounts = (() => {
     const getCurrencies = (sub_accounts, landing_company) => {
         const client_currency  = Client.get('currency');
         const is_crypto        = Currency.isCryptocurrency(client_currency);
-        const currency_values  = getCurrencyValues(sub_accounts, landing_company);
+        const currency_values  = getCurrencyValues(sub_accounts);
         const cryptocurrencies = currency_values.cryptocurrencies;
-        const currencies       = currency_values.currencies;
+        const currencies       = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies').concat(cryptocurrencies);
         const sub_currencies   = currency_values.sub_currencies;
 
         const has_fiat_sub = currency_values.has_fiat_sub;

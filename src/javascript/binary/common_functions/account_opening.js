@@ -14,14 +14,6 @@ require('select2');
 const AccountOpening = (() => {
     'use strict';
 
-    const redirectCookie = () => {
-        if (Client.hasAccountType('real')) {
-            BinaryPjax.load('trading');
-            return true;
-        }
-        return false;
-    };
-
     const redirectAccount = () => { // eslint-disable-line consistent-return
         const response_landing_company = State.getResponse('landing_company');
         const response_get_settings = State.getResponse('get_settings');
@@ -191,7 +183,6 @@ const AccountOpening = (() => {
     return {
         redirectAccount : redirectAccount,
         populateForm    : populateForm,
-        redirectCookie  : redirectCookie,
         handleNewAccount: handleNewAccount,
 
         commonValidations       : commonValidations,

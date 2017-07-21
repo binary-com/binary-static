@@ -20,9 +20,11 @@ const SetCurrency = (() => {
         const hash_value = window.location.hash;
         const el = /new_account/.test(hash_value) ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
-        BinarySocket.wait('landing_company').then((response) => {
+        BinarySocket.wait('payout_currencies').then((response) => {
             const authorize = State.getResponse('authorize');
-            const currencies = getCurrencies(authorize, response.landing_company);
+            const payout_currencies = response.payout_currencies;
+            const currency_values = getCurrencyValues(authorize.sub_accounts);
+            const currencies = getCurrencies(authorize, payout_currencies, currency_values);
             const $currencies = $('<div/>');
             currencies.forEach((c) => {
                 $currencies.append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
@@ -44,7 +46,7 @@ const SetCurrency = (() => {
                 $(this).addClass('selected');
                 if (allow_omnibus) {
                     const chosen_currency = $(this).attr('id');
-                    $chosen_currency_type.text(Currency.isCryptocurrency(chosen_currency) ? localize('Cryptocurrency') : localize('Fiat Currency'));
+                    $chosen_currency_type.text(currency_values.fiat_currencies.indexOf(chosen_currency) < 0 ? localize('Cryptocurrency') : localize('Fiat Currency'));
                     $chosen_currency.text(chosen_currency);
                     $currency_notice.setVisibility(1);
                 }
@@ -61,6 +63,10 @@ const SetCurrency = (() => {
                         if (response_c.error) {
                             $error.text(response_c.error.message).setVisibility(1);
                         } else {
+                            Client.set('currency', response_c.echo_req.set_account_currency);
+                            BinarySocket.send({ balance: 1 });
+                            BinarySocket.send({ payout_currencies: 1 }, { forced: true });
+
                             let redirect_url = 'trading',
                                 hash = '';
                             if (/deposit/.test(hash_value)) {
@@ -80,14 +86,12 @@ const SetCurrency = (() => {
         });
     };
 
-    const getCurrencies = (authorize, landing_company) => {
+    const getCurrencies = (authorize, payout_currencies, currency_values) => {
         let currencies_to_show;
-        const currency_values = getCurrencyValues(authorize.sub_accounts, landing_company);
-        const currencies      = currency_values.currencies;
         if (authorize.allow_omnibus) {
             const sub_currencies  = currency_values.sub_currencies;
 
-            currencies_to_show = currencies.filter(c => sub_currencies.indexOf(c) < 0);
+            currencies_to_show = payout_currencies.filter(c => sub_currencies.indexOf(c) < 0);
 
             const has_fiat_sub = currency_values.has_fiat_sub;
             if (has_fiat_sub) {
@@ -97,7 +101,7 @@ const SetCurrency = (() => {
         } else {
             // for now we don't want to show cryptocurrencies to accounts without allow_omnibus
             const cryptocurrencies = currency_values.cryptocurrencies;
-            currencies_to_show = currencies.filter(c => cryptocurrencies.indexOf(c) < 0);
+            currencies_to_show = payout_currencies.filter(c => cryptocurrencies.indexOf(c) < 0);
         }
 
         return currencies_to_show;

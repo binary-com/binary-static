@@ -1,8 +1,9 @@
-const BinaryPjax     = require('../../../base/binary_pjax');
-const Client         = require('../../../base/client');
-const State          = require('../../../base/storage').State;
-const AccountOpening = require('../../../common_functions/account_opening');
-const FormManager    = require('../../../common_functions/form_manager');
+const BinaryPjax         = require('../../../base/binary_pjax');
+const Client             = require('../../../base/client');
+const State              = require('../../../base/storage').State;
+const defaultRedirectUrl = require('../../../base/url').defaultRedirectUrl;
+const AccountOpening     = require('../../../common_functions/account_opening');
+const FormManager        = require('../../../common_functions/form_manager');
 
 const RealAccOpening = (() => {
     'use strict';
@@ -10,7 +11,6 @@ const RealAccOpening = (() => {
 
     const onLoad = () => {
         State.set('is_real_opening', 1);
-        if (AccountOpening.redirectCookie()) return;
 
         if (Client.get('residence')) {
             if (AccountOpening.redirectAccount()) return;
@@ -24,7 +24,7 @@ const RealAccOpening = (() => {
                 fnc_response_handler: handleResponse,
             });
         } else {
-            BinaryPjax.load('trading');
+            BinaryPjax.load(defaultRedirectUrl());
         }
     };
 
