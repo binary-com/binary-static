@@ -1,6 +1,5 @@
 const BinaryPjax     = require('../../../base/binary_pjax');
 const Client         = require('../../../base/client');
-const State          = require('../../../base/storage').State;
 const AccountOpening = require('../../../common_functions/account_opening');
 const detectHedging  = require('../../../common_functions/common_functions').detectHedging;
 const FormManager    = require('../../../common_functions/form_manager');
@@ -9,7 +8,6 @@ const JapanAccOpening = (() => {
     'use strict';
 
     const onLoad = () => {
-        State.set('is_japan_opening', 1);
         if (AccountOpening.redirectAccount()) return;
         AccountOpening.populateForm();
         const form_id = '#japan-form';
@@ -49,13 +47,8 @@ const JapanAccOpening = (() => {
         }
     };
 
-    const onUnload = () => {
-        State.set('is_japan_opening', 0);
-    };
-
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad: onLoad,
     };
 })();
 

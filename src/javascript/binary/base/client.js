@@ -300,9 +300,10 @@ const Client = (() => {
             can_upgrade = !hasAccountType('financial');
         }
         return {
-            type        : type,
-            upgrade_link: `new_account/${upgrade_link}`,
-            can_upgrade : can_upgrade,
+            type           : type,
+            upgrade_link   : `new_account/${upgrade_link}`,
+            can_upgrade    : can_upgrade,
+            is_current_path: new RegExp(upgrade_link, 'i').test(window.location.pathname),
         };
     };
 

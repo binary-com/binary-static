@@ -1,6 +1,5 @@
 const BinaryPjax         = require('../../../base/binary_pjax');
 const Client             = require('../../../base/client');
-const State              = require('../../../base/storage').State;
 const defaultRedirectUrl = require('../../../base/url').defaultRedirectUrl;
 const AccountOpening     = require('../../../common_functions/account_opening');
 const FormManager        = require('../../../common_functions/form_manager');
@@ -10,8 +9,6 @@ const RealAccOpening = (() => {
 
 
     const onLoad = () => {
-        State.set('is_real_opening', 1);
-
         if (Client.get('residence')) {
             if (AccountOpening.redirectAccount()) return;
 
@@ -30,13 +27,8 @@ const RealAccOpening = (() => {
 
     const handleResponse = response => (AccountOpening.handleNewAccount(response, response.msg_type));
 
-    const onUnload = () => {
-        State.set('is_real_opening', 0);
-    };
-
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad: onLoad,
     };
 })();
 

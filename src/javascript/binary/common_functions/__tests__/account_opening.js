@@ -1,7 +1,8 @@
 const AccountOpening = require('../account_opening');
 const Client         = require('../../base/client');
 const State          = require('../../base/storage').State;
-const { api, expect, getApiToken } = require('../../base/__tests__/tests_common');
+const Url            = require('../../base/url');
+const { api, expect, getApiToken, setURL } = require('../../base/__tests__/tests_common');
 global.$ = require('jquery');
 
 
@@ -42,10 +43,10 @@ describe('AccountOpening', () => {
             expect(AccountOpening.redirectAccount()).to.eq(true);
         });
         it('will not redirect client who is already on MF page to MF page again', () => {
-            State.set('is_financial_opening', 1);
+            setURL(`${Url.websiteUrl()}en/maltainvestws.html`);
             expect(AccountOpening.redirectAccount()).to.eq(false);
         });
-        State.set('is_financial_opening', 0);
+        setURL(`${Url.websiteUrl()}en/home.html`);
 
         it('will redirect virtual client from Japan to JP page', () => {
             State.set(['response', 'landing_company'], landing_company_jp);

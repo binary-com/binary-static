@@ -30,10 +30,8 @@ const AccountOpening = (() => {
             BinaryPjax.load(defaultRedirectUrl());
             return true;
         }
-        // redirect client to correct account opening page if needed
-        if ((!State.get('is_financial_opening') && upgrade_info.type === 'financial') ||
-            (!State.get('is_real_opening') && upgrade_info.type === 'real') ||
-            (!State.get('is_japan_opening') && /japanws/.test(upgrade_info.upgrade_link))) {
+
+        if (!upgrade_info.is_current_path) {
             BinaryPjax.load(upgrade_info.upgrade_link);
             return true;
         }

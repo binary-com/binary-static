@@ -2,7 +2,6 @@ const moment             = require('moment');
 const BinarySocket       = require('../../socket');
 const BinaryPjax         = require('../../../base/binary_pjax');
 const Client             = require('../../../base/client');
-const State              = require('../../../base/storage').State;
 const defaultRedirectUrl = require('../../../base/url').defaultRedirectUrl;
 const isEmptyObject      = require('../../../base/utility').isEmptyObject;
 const AccountOpening     = require('../../../common_functions/account_opening');
@@ -15,7 +14,6 @@ const FinancialAccOpening = (() => {
     const form_id = '#financial-form';
 
     const onLoad = () => {
-        State.set('is_financial_opening', 1);
         if (Client.hasAccountType('financial') || !Client.get('residence')) {
             BinaryPjax.load(defaultRedirectUrl());
             return;
@@ -88,13 +86,8 @@ const FinancialAccOpening = (() => {
         }
     };
 
-    const onUnload = () => {
-        State.set('is_financial_opening', 0);
-    };
-
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad: onLoad,
     };
 })();
 
