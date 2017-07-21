@@ -319,8 +319,8 @@ const Client = (() => {
                 landing_company_object = getPropertyValue(landing_company, 'financial_company');
             }
         } else {
-            const financial_company = (getPropertyValue(landing_company, 'financial_company') || {})[key];
-            const gaming_company = (getPropertyValue(landing_company, 'gaming_company') || {})[key];
+            const financial_company = (getPropertyValue(landing_company, 'financial_company') || {})[key] || [];
+            const gaming_company = (getPropertyValue(landing_company, 'gaming_company') || {})[key] || [];
             landing_company_object = financial_company.concat(gaming_company);
             return landing_company_object;
         }
