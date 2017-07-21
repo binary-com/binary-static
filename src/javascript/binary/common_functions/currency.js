@@ -78,7 +78,7 @@ const isCryptocurrency = currency => (
 
 module.exports = {
     formatMoney      : formatMoney,
-    formatCurrency   : currency => map_currency[currency],
+    formatCurrency   : currency => map_currency[currency] || '',
     isCryptocurrency : isCryptocurrency,
     addComma         : addComma,
     getDecimalPlaces : getDecimalPlaces,
