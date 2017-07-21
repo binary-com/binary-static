@@ -150,7 +150,7 @@ const Header = (() => {
     };
 
     const showHideNewAccount = (can_upgrade) => {
-        const authorize = State.get(['response', 'authorize', 'authorize']);
+        const authorize = State.getResponse('authorize');
         if (can_upgrade || authorize.allow_omnibus) {
             if (authorize.allow_omnibus && !can_upgrade) {
                 const landing_company = State.getResponse('landing_company');

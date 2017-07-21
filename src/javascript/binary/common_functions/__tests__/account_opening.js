@@ -1,7 +1,7 @@
-const AccountOpening  = require('../account_opening');
-const Client          = require('../../base/client');
-const State           = require('../../base/storage').State;
-const { api, expect } = require('../../base/__tests__/tests_common');
+const AccountOpening = require('../account_opening');
+const Client         = require('../../base/client');
+const State          = require('../../base/storage').State;
+const { api, expect, getApiToken } = require('../../base/__tests__/tests_common');
 global.$ = require('jquery');
 
 
@@ -14,7 +14,7 @@ describe('AccountOpening', () => {
         before(function(done) {
             this.timeout(10000);
             // this is a read token, even if other people take it, won't be able to do any harm
-            api.authorize('hhh9bfrbq0G3dRf').then(() => {
+            api.authorize(getApiToken()).then(() => {
                 api.getAccountSettings().then((response) => {
                     get_settings = response;
                     api.getLandingCompany('de').then((response) => {

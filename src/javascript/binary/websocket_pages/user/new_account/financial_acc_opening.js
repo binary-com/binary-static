@@ -16,10 +16,10 @@ const FinancialAccOpening = (() => {
 
     const onLoad = () => {
         State.set('is_financial_opening', 1);
-        if (Client.hasAccountType('financial', true) || !Client.get('residence')) {
+        if (Client.hasAccountType('financial') || !Client.get('residence')) {
             BinaryPjax.load(defaultRedirectUrl());
             return;
-        } else if (Client.hasAccountType('gaming', true)) {
+        } else if (Client.hasAccountType('gaming')) {
             $('.security').hide();
         }
 

@@ -27,17 +27,17 @@ const FinancialAssessment = (() => {
         });
 
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
-            handleForm(response);
+            handleForm(response.get_financial_assessment);
         });
     };
 
     const handleForm = (response) => {
         if (!response) {
-            response = State.getResponse(['response', 'get_financial_assessment']);
+            response = State.getResponse('get_financial_assessment');
         }
         hideLoadingImg(true);
 
-        financial_assessment = $.extend({}, response.get_financial_assessment);
+        financial_assessment = $.extend({}, response);
 
         if (isEmptyObject(financial_assessment)) {
             BinarySocket.wait('get_account_status').then((data) => {

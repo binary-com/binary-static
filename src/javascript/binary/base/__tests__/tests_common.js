@@ -20,4 +20,5 @@ module.exports = {
     expect,
     setURL,
     setJPClient,
+    getApiToken: () => 'hhh9bfrbq0G3dRf',
 };
