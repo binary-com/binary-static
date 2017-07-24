@@ -52,12 +52,12 @@ const RealityCheckData = (() => {
 
     const set = (key, value) => {
         reality_object[key] = value;
-        return LocalStore.set(`client.reality_check.${key}`, value);
+        return LocalStore.set(`reality_check.${key}`, value);
     };
 
     // use this function to get variables that have values
     const get = (key) => {
-        let value = reality_object[key] || LocalStore.get(`client.reality_check.${key}`) || '';
+        let value = reality_object[key] || LocalStore.get(`reality_check.${key}`) || '';
         if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {
             value = JSON.parse(value || false);
         }
@@ -67,7 +67,7 @@ const RealityCheckData = (() => {
     const clear_storage_values = () => {
         // clear all reality check values from local storage
         Object.keys(localStorage).forEach((c) => {
-            if (/^client\.reality_check\./.test(c)) {
+            if (/^reality_check\./.test(c)) {
                 LocalStore.set(c, '');
             }
         });

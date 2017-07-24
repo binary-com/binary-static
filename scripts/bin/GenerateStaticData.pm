@@ -503,6 +503,24 @@ sub _texts {
         push @texts, localize('Ended');
         push @texts, localize('The ICO auction is already closed.');
 
+        # strings for accounts page
+        push @texts, localize('Create');
+        push @texts, localize('Commodities');
+        push @texts, localize('Indices');
+        push @texts, localize('Stocks');
+        push @texts, localize('Volatility Indices');
+        push @texts, localize('Set Currency');
+        push @texts, localize('Please choose a currency');
+        push @texts, localize('Cryptocurrency');
+        push @texts, localize('Fiat Currency');
+        push @texts, localize('Create Account');
+        push @texts, localize('Accounts List');
+        push @texts, localize('[_1] Account');
+        push @texts, localize('Investment');
+        push @texts, localize('Gaming');
+        push @texts, localize('Virtual');
+        push @texts, localize('Real');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
 

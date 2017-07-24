@@ -22,7 +22,7 @@ const MBProcess = (() => {
 
     const getSymbols = () => {
         BinarySocket.wait('website_status').then((website_status) => {
-            const landing_company_obj = State.get(['response', 'landing_company', 'landing_company']);
+            const landing_company_obj = State.getResponse('landing_company');
             const allowed_markets     = Client.currentLandingCompany().legal_allowed_markets;
             if (Client.isLoggedIn() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
                 BinaryPjax.load('trading');

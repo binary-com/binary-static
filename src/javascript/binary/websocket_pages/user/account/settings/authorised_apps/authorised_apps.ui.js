@@ -53,7 +53,7 @@ const ApplicationsUI = (() => {
             return FlexTableUI.replace(data);
         }
         const headers = ['Name', 'Permissions', 'Last Used'];
-        can_revoke = /admin/.test((State.get(['response', 'authorize', 'authorize']) || {}).scopes);
+        can_revoke = /admin/.test((State.getResponse('authorize') || {}).scopes);
         if (can_revoke) {
             headers.push('Action');
         }

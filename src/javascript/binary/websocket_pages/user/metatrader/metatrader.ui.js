@@ -39,7 +39,7 @@ const MetaTraderUI = (() => {
 
     const populateAccountList = () => {
         const $acc_name = $templates.find('> .acc-name');
-        const no_real   = Client.get('is_virtual') && !Client.get('has_real');
+        const no_real   = Client.get('is_virtual') && !Client.hasAccountType('real');
         $container.find('#top_msg').setVisibility(no_real);
         Object.keys(types_info)
             .sort((a, b) => types_info[a].order > types_info[b].order)

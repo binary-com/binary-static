@@ -93,17 +93,20 @@
                                 <li class="account">
                                     [% INCLUDE account %]
                                     <ul>
+                                        <div class="login-id-list"></div>
                                         <a class="link" href="[% request.url_for('/user/settingsws') %]">
                                             <li class="topMenuProfile">[% l("Profile") %]</li>
                                         </a>
                                         <a class="link" href="[% request.url_for('/user/securityws') %]">
                                             <li class="topMenuSecurity">[% l("Security & Limits") %]</li>
                                         </a>
+                                        <a class="link" id="user_accounts" href="[% request.url_for('/user/accounts') %]">
+                                            <li class="topMenuAccounts">[% l("Accounts List") %]</li>
+                                        </a>
                                         <a class="link invisible" id="user_menu_metatrader" href="[% request.url_for('/user/metatrader') %]">
                                             <li class="topMenuMetaTrader">[% l("MetaTrader") %]</li>
                                         </a>
                                         <div class="separator-line-thin-gray"></div>
-                                        <div class="login-id-list"></div>
                                         <a href="javascript:;" id="btn_logout" class="logout">
                                             <li>[% l("Sign out") %]</li>
                                         </a>

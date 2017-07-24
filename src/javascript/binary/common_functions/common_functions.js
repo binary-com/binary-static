@@ -1,5 +1,3 @@
-const Cookies = require('js-cookie');
-
 // show hedging value if trading purpose is set to hedging else hide it
 const detectHedging = ($purpose, $hedging) => {
     $purpose.change(() => {
@@ -87,7 +85,6 @@ const requireHighstock = callback => (
 );
 
 module.exports = {
-    getLoginToken         : () => Cookies.get('login'),
     detectHedging         : detectHedging,
     jqueryuiTabsToDropdown: jqueryuiTabsToDropdown,
     makeOption            : makeOption,

@@ -1,12 +1,12 @@
 const profitTable = require('../profit_table');
-const { api, expect } = require('../../../../base/__tests__/tests_common');
+const { api, expect, getApiToken } = require('../../../../base/__tests__/tests_common');
 
 describe('Profit Table', () => {
     let profit_table;
     before(function(done) {
         this.timeout(10000);
         // this is a read token, even if other people take it, won't be able to do any harm
-        api.authorize('hhh9bfrbq0G3dRf').then(() => {
+        api.authorize(getApiToken()).then(() => {
             api.getProfitTable({ limit: 1, description: 1, offset: 0 }).then((response) => {
                 profit_table = response.profit_table;
                 done();

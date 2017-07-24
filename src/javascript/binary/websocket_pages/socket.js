@@ -2,7 +2,6 @@ const getLanguage      = require('../base/language').get;
 const localize         = require('../base/localize').localize;
 const State            = require('../base/storage').State;
 const getPropertyValue = require('../base/utility').getPropertyValue;
-const getLoginToken    = require('../common_functions/common_functions').getLoginToken;
 const getAppId         = require('../../config').getAppId;
 const getSocketURL     = require('../../config').getSocketURL;
 
@@ -96,7 +95,7 @@ const BinarySocket = (() => {
         msg_types.forEach((msg_type) => {
             const last_response = State.get(['response', msg_type]);
             if (!last_response) {
-                if (msg_type !== 'authorize' || config.is_logged_in) {
+                if (msg_type !== 'authorize' || config.isLoggedIn()) {
                     waiting_list.add(msg_type, promise_obj);
                     is_resolved = false;
                 }
@@ -189,9 +188,8 @@ const BinarySocket = (() => {
 
         binary_socket.onopen = () => {
             clearTimeout(timeouts.connection_error);
-            const api_token = getLoginToken();
-            if (api_token && localStorage.getItem('client.tokens')) {
-                send({ authorize: api_token }, { forced: true });
+            if (config.isLoggedIn()) {
+                send({ authorize: config.getClientValue('token') }, { forced: true });
             } else {
                 sendBufferedRequests();
             }
