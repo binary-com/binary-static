@@ -1,8 +1,10 @@
 const BinarySocket  = require('../../../socket');
-const localize      = require('../../../../base/localize').localize;
+const BinaryPjax    = require('../../../../base/binary_pjax');
 const Client        = require('../../../../base/client');
 const Header        = require('../../../../base/header');
+const localize      = require('../../../../base/localize').localize;
 const State         = require('../../../../base/storage').State;
+const urlFor        = require('../../../../base/url').urlFor;
 const detectHedging = require('../../../../common_functions/common_functions').detectHedging;
 const makeOption    = require('../../../../common_functions/common_functions').makeOption;
 const formatMoney   = require('../../../../common_functions/currency').formatMoney;
@@ -20,7 +22,8 @@ const PersonalDetails = (() => {
         is_virtual,
         residence,
         get_settings_data,
-        currency;
+        currency,
+        is_for_new_account;
 
     const init = () => {
         editable_fields = {};
@@ -29,14 +32,14 @@ const PersonalDetails = (() => {
         residence = Client.get('residence');
         is_jp = residence === 'jp';
         if (is_jp && !is_virtual) {
-            $('#fieldset_email_consent').setVisibility(1);
+            setVisibility('#fieldset_email_consent');
         }
         showHideTaxMessage();
     };
 
     const showHideTaxMessage = () => {
         if (Client.shouldCompleteTax()) {
-            $('#tax_information_notice').setVisibility(1);
+            setVisibility('#tax_information_notice');
         } else {
             $('#tax_information_notice').setVisibility(0);
         }
@@ -49,8 +52,12 @@ const PersonalDetails = (() => {
         // for subaccounts, back-end sends loginid of the master account as name
         const hide_name = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
         if (!hide_name) {
-            $('#row_name').setVisibility(1);
+            setVisibility('#row_name');
             get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
+        }
+
+        if (get_settings.hasOwnProperty('account_opening_reason')) {
+            $(`#row_${get_settings.account_opening_reason ? 'lbl_' : ''}account_opening_reason`).setVisibility(1);
         }
 
         displayGetSettingsData(get_settings);
@@ -71,12 +78,14 @@ const PersonalDetails = (() => {
             }
             displayGetSettingsData(jp_settings);
             if (jp_settings.hedge_asset !== null && jp_settings.hedge_asset_amount !== null) {
-                $('.hedge').setVisibility(1);
+                setVisibility('.hedge');
             }
-            $('.JpAcc').setVisibility(1);
+            setVisibility('.JpAcc');
         } else {
-            $(real_acc_elements).setVisibility(1);
+            setVisibility(real_acc_elements);
         }
+        setVisibility('#row_country');
+        setVisibility('#row_email');
         $(form_id).setVisibility(1);
         FormManager.handleSubmit({
             form_selector       : form_id,
@@ -149,8 +158,10 @@ const PersonalDetails = (() => {
 
                 { selector: '#email_consent' },
 
-                { selector: '#hedge_asset_amount', validations: ['req', 'number'], parent_node: 'jp_settings' },
-                { selector: '#hedge_asset',        validations: ['req'], parent_node: 'jp_settings' },
+                { selector: '#hedge_asset_amount',     validations: ['req', 'number'], parent_node: 'jp_settings' },
+                { selector: '#hedge_asset',            validations: ['req'], parent_node: 'jp_settings' },
+                { selector: '#account_opening_reason', validations: ['req'] },
+
             ];
             $(form_id).find('select').each(function() {
                 validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
@@ -159,12 +170,13 @@ const PersonalDetails = (() => {
             validations = [{ selector: '#residence', validations: ['req'] }];
         } else {
             validations = [
-                { selector: '#address_line_1',     validations: ['req', 'address'] },
-                { selector: '#address_line_2',     validations: ['address'] },
-                { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
-                { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
-                { selector: '#address_postcode',   validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
-                { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
+                { selector: '#address_line_1',         validations: ['req', 'address'] },
+                { selector: '#address_line_2',         validations: ['address'] },
+                { selector: '#address_city',           validations: ['req', 'letter_symbol'] },
+                { selector: '#address_state',          validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
+                { selector: '#address_postcode',       validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+                { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
+                { selector: '#account_opening_reason', validations: ['req'] },
 
                 { selector: '#place_of_birth', validations: Client.isAccountOfType('financial') ? ['req'] : '' },
                 { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
@@ -191,6 +203,9 @@ const PersonalDetails = (() => {
             // to update the State with latest get_settings data
             BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
                 getDetailsResponse(data.get_settings);
+                if (is_for_new_account) {
+                    BinaryPjax.load(urlFor('user/accounts'));
+                }
             });
         }
         showFormMessage(is_error ?
@@ -229,8 +244,8 @@ const PersonalDetails = (() => {
                 $tax_residence.html($options.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
-                            .val(tax_residence ? tax_residence.split(',') : '').trigger('change')
-                            .setVisibility(1);
+                            .val(tax_residence ? tax_residence.split(',') : '').trigger('change');
+                        setVisibility('#tax_residence');
                     }, 500);
                 });
                 $place_of_birth.val(get_settings_data.place_of_birth || residence);
@@ -278,8 +293,19 @@ const PersonalDetails = (() => {
 
     const initFormManager = () => { FormManager.init(form_id, getValidations(get_settings_data)); };
 
+    const setVisibility = (el) => {
+        if (is_for_new_account) {
+            $(el).setVisibility(0);
+        } else {
+            $(el).setVisibility(1);
+        }
+    };
+
     const onLoad = () => {
         currency = Client.get('currency');
+        is_for_new_account = /new-account/.test(window.location.hash);
+        $('#account_opening_reason_notice').setVisibility(+is_for_new_account);
+
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.getResponse('get_settings');
