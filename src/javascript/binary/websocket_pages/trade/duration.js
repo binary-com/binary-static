@@ -457,8 +457,9 @@ const Durations = (() => {
             new_time = new_time.add(5, 'minutes').utc().format('HH:mm');
             expiry_time.value = new_time;
             expiry_time.setAttribute('data-value', new_time);
+            setTime(expiry_time.value, 1);
         }
-        setTime(expiry_time.value, 1);
+        setTime(expiry_time.value);
         Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
         expiry_time.show();
         Barriers.display();
@@ -538,10 +539,10 @@ const Durations = (() => {
 
     const setTime = (time, process_new_time) => {
         const $expiry_time = $('#expiry_time');
-        if ($expiry_time.attr('data-value') !== time || $expiry_time.val() !== time) {
+        if ($expiry_time.attr('data-value') !== time || $expiry_time.val() !== time || process_new_time) {
             $expiry_time.val(time).attr('data-value', time);
             Defaults.set('expiry_time', time);
-            if (process_new_time && commonTrading.timeIsValid($expiry_time)) {
+            if (commonTrading.timeIsValid($expiry_time)) {
                 Price.processPriceRequest();
             }
         }

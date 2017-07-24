@@ -234,8 +234,7 @@ const TradingEvents = (() => {
                     if (!dateValueChanged(this, 'time')) {
                         return false;
                     }
-                    Durations.setTime(end_time_element.value);
-                    Price.processPriceRequest();
+                    Durations.setTime(end_time_element.value, 1);
                     return true;
                 });
         }
