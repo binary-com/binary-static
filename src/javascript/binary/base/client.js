@@ -110,6 +110,13 @@ const Client = (() => {
 
     const hasAccountType = (type, only_enabled) => !isEmptyObject(getAccountOfType(type, only_enabled));
 
+    const types_map = {
+        virtual  : 'Virtual',
+        gaming   : 'Gaming',
+        financial: 'Investment',
+    };
+    const getAccountTitle = loginid => types_map[getAccountType(loginid)] || 'Real';
+
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
         set('email',         authorize.email);
@@ -180,20 +187,21 @@ const Client = (() => {
         }
     };
 
-    const processNewAccount = (email, loginid, token, is_virtual) => {
-        if (!email || !loginid || !token) {
+    const processNewAccount = (options) => {
+        if (!options.email || !options.loginid || !options.token) {
             return;
         }
 
         localStorage.setItem('GTM_new_account', '1');
         RealityCheckData.clear();
 
-        set('token',      token,       loginid);
-        set('email',      email,       loginid);
-        set('is_virtual', +is_virtual, loginid);
-        set('loginid',    loginid);
+        set('token',      options.token,       options.loginid);
+        set('email',      options.email,       options.loginid);
+        set('is_virtual', +options.is_virtual, options.loginid);
+        set('loginid',    options.loginid);
 
-        window.location.href = defaultRedirectUrl(); // need to redirect not using pjax
+        // need to redirect not using pjax
+        window.location.href = options.redirect_url || defaultRedirectUrl();
     };
 
     const hasShortCode = (data, code) => ((data || {}).shortcode === code);
@@ -274,6 +282,51 @@ const Client = (() => {
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
+    const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status')) => {
+        let type = 'real';
+        let upgrade_link = 'realws';
+        let can_upgrade = false;
+        if (get('is_virtual')) {
+            if (canUpgradeVirtualToFinancial(landing_company)) {
+                type = 'financial';
+                upgrade_link = 'maltainvestws';
+            } else if (canUpgradeVirtualToJapan(landing_company)) {
+                upgrade_link = 'japanws';
+            }
+            can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
+        } else if (canUpgradeGamingToFinancial(landing_company)) {
+            type = 'financial';
+            upgrade_link = 'maltainvestws';
+            can_upgrade = !hasAccountType('financial');
+        }
+        return {
+            type           : type,
+            upgrade_link   : `new_account/${upgrade_link}`,
+            can_upgrade    : can_upgrade,
+            is_current_path: new RegExp(upgrade_link, 'i').test(window.location.pathname),
+        };
+    };
+
+    const getLandingCompanyValue = (loginid, landing_company, key) => {
+        let landing_company_object;
+        if (isAccountOfType('financial', loginid)) {
+            landing_company_object = getPropertyValue(landing_company, 'financial_company');
+        } else if (isAccountOfType('real', loginid)) {
+            landing_company_object = getPropertyValue(landing_company, 'gaming_company');
+
+            // handle accounts such as japan that don't have gaming company
+            if (!landing_company_object) {
+                landing_company_object = getPropertyValue(landing_company, 'financial_company');
+            }
+        } else {
+            const financial_company = (getPropertyValue(landing_company, 'financial_company') || {})[key] || [];
+            const gaming_company = (getPropertyValue(landing_company, 'gaming_company') || {})[key] || [];
+            landing_company_object = financial_company.concat(gaming_company);
+            return landing_company_object;
+        }
+        return (landing_company_object || {})[key];
+    };
+
     return {
         init             : init,
         validateLoginid  : validateLoginid,
@@ -294,12 +347,12 @@ const Client = (() => {
         doLogout         : doLogout,
         shouldCompleteTax: shouldCompleteTax,
         getMT5AccountType: getMT5AccountType,
+        getUpgradeInfo   : getUpgradeInfo,
+        getAccountTitle  : getAccountTitle,
 
-        canUpgradeGamingToFinancial : canUpgradeGamingToFinancial,
-        canUpgradeVirtualToFinancial: canUpgradeVirtualToFinancial,
-        canUpgradeVirtualToJapan    : canUpgradeVirtualToJapan,
-        activateByClientType        : activateByClientType,
-        currentLandingCompany       : currentLandingCompany,
+        activateByClientType  : activateByClientType,
+        currentLandingCompany : currentLandingCompany,
+        getLandingCompanyValue: getLandingCompanyValue,
     };
 })();
 

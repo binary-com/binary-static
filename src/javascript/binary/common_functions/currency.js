@@ -59,6 +59,8 @@ const map_currency = {
     EUR: '€',
     JPY: '¥',
     BTC: '₿',
+    ETH: 'Ξ',
+    LTC: 'Ł',
 };
 
 const setCurrencies = (website_status) => {
@@ -75,10 +77,11 @@ const isCryptocurrency = currency => (
 );
 
 module.exports = {
-    formatMoney     : formatMoney,
-    formatCurrency  : currency => map_currency[currency],
-    isCryptocurrency: isCryptocurrency,
-    addComma        : addComma,
-    getDecimalPlaces: getDecimalPlaces,
-    setCurrencies   : setCurrencies,
+    formatMoney      : formatMoney,
+    formatCurrency   : currency => map_currency[currency] || '',
+    isCryptocurrency : isCryptocurrency,
+    addComma         : addComma,
+    getDecimalPlaces : getDecimalPlaces,
+    setCurrencies    : setCurrencies,
+    getFiatCurrencies: () => fiat_currencies,
 };

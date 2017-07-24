@@ -41,6 +41,7 @@ const SelfExclusion              = require('../websocket_pages/user/account/sett
 const PersonalDetails            = require('../websocket_pages/user/account/settings/personal_details');
 const Statement                  = require('../websocket_pages/user/account/statement/statement.init');
 const TopUpVirtual               = require('../websocket_pages/user/account/top_up_virtual');
+const Accounts                   = require('../websocket_pages/user/accounts');
 const ICOSubscribe               = require('../websocket_pages/user/ico_subscribe');
 const LostPassword               = require('../websocket_pages/user/lost_password');
 const MetaTrader                 = require('../websocket_pages/user/metatrader/metatrader');
@@ -49,6 +50,7 @@ const JapanAccOpening            = require('../websocket_pages/user/new_account/
 const RealAccOpening             = require('../websocket_pages/user/new_account/real_acc_opening');
 const VirtualAccOpening          = require('../websocket_pages/user/new_account/virtual_acc_opening');
 const ResetPassword              = require('../websocket_pages/user/reset_password');
+const SetCurrency                = require('../websocket_pages/user/set_currency');
 const TNCApproval                = require('../websocket_pages/user/tnc_approval');
 
 const CashierJP     = require('../../binary_japan/cashier');
@@ -57,6 +59,7 @@ const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test'
 /* eslint-disable max-len */
 const pages_config = {
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true },
+    accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
     asset_indexws            : { module: AssetIndexUI },
@@ -111,6 +114,7 @@ const pages_config = {
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
+    'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
     'terms-and-conditions'   : { module: TermsAndConditions },
     'terms-and-conditions-jp': { module: TermsAndConditions },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },

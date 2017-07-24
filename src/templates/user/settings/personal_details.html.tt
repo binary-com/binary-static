@@ -29,7 +29,7 @@
 
 <form class="form gr-padding-10 invisible" id="frmPersonalDetails">
     [% WRAPPER fieldset legend=l('Details') %]
-        [% INCLUDE form_row type='label'  label=l('Name')          is_bold=1 id='lbl_name'          row_class='invisible RealAcc JpAcc' %]
+        [% INCLUDE form_row type='label'  label=l('Name')          is_bold=1 id='lbl_name'          row_class='invisible' row_id='row_name' %]
         [% INCLUDE form_row type='label'  label=l('Gender')        is_bold=1 id='lbl_gender'        row_class='invisible JpAcc' %]
         [% INCLUDE form_row type='label'  label=l('Date of birth') is_bold=1 id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' %]
         [% INCLUDE form_row type='select' label=l('Place of birth') id='place_of_birth' row_class='invisible RealAcc' %]
