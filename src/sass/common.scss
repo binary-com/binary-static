@@ -225,6 +225,14 @@ _:-ms-fullscreen, :root #content-holder {
     padding: 0;
 }
 
+.border-light-gray {
+    border: 1px solid $COLOR_LIGHT_GRAY;
+}
+
+.border-gray {
+    border: 1px solid $COLOR_GRAY;
+}
+
 .border-dark-gray {
     border: 1px solid $COLOR_GRAY_SHADE;
 }

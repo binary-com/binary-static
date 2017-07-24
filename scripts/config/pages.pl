@@ -87,6 +87,7 @@ sub all_pages {
         ['resources/asset_indexws',  'resources/asset_index',   'default', 'Asset Index', 'ja'],
         ['resources/market_timesws', 'resources/trading_times', 'default', 'Trading Times'],
 
+        ['user/accounts',                    'user/accounts',                        'default',    'Accounts'],
         ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/video-facility',              'user/video_facility',                  'default',    'Video Room Facility'],
         ['user/ico-subscribe',               'user/ico_subscribe',                   'default',    'Subscribe to ICO',        'ja'],
@@ -110,6 +111,7 @@ sub all_pages {
         ['user/security/self_exclusionws',   'user/security/self_exclusion',         'default',    'Self Exclusion'],
         ['user/settings/assessmentws',       'user/settings/financial_assessment',   'default',    'Financial Assessment',    'ja'],
         ['user/settings/detailsws',          'user/settings/personal_details',       'default',    'Personal Details'],
+        ['user/set-currency',                'user/set_currency',                    'default',    'Set Currency',            'ja'],
 
         ['logged_inws',                'global/logged_in',       undef],
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],

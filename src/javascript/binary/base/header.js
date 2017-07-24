@@ -7,9 +7,11 @@ const State               = require('./storage').State;
 const urlFor              = require('./url').urlFor;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
+const toTitleCase         = require('../common_functions/string_util').toTitleCase;
 const BinarySocket        = require('../websocket_pages/socket');
 const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
 const RealityCheckData    = require('../websocket_pages/user/reality_check/reality_check.data');
+const getCurrencies       = require('../websocket_pages/user/sub_account').getCurrencies;
 
 const Header = (() => {
     'use strict';
@@ -41,35 +43,34 @@ const Header = (() => {
 
     const showOrHideLoginForm = () => {
         if (!Client.isLoggedIn()) return;
-        const loginid_select = $('<div/>');
-        const types_map = {
-            virtual  : 'Virtual',
-            gaming   : 'Gaming',
-            financial: 'Investment',
-        };
-        Client.getAllLoginids().forEach((loginid) => {
-            if (!Client.get('is_disabled', loginid)) {
-                const type = `${types_map[Client.getAccountType(loginid)] || 'Real'} Account`;
-                const localized_type = localize(type);
-                if (loginid === Client.get('loginid')) { // default account
-                    $('.account-type').html(localized_type);
-                    $('.account-id').html(loginid);
-                } else {
-                    loginid_select.append($('<a/>', { href: `${'java'}${'script:;'}`, 'data-value': loginid })
-                        .append($('<li/>', { text: localized_type }).append($('<div/>', { text: loginid }))))
-                        .append($('<div/>', { class: 'separator-line-thin-gray' }));
+        BinarySocket.wait('authorize').then(() => {
+            const loginid_select = $('<div/>');
+            Client.getAllLoginids().forEach((loginid) => {
+                if (!Client.get('is_disabled', loginid)) {
+                    const account_title = Client.getAccountTitle(loginid);
+                    const is_real = /real/i.test(account_title);
+                    const currency = Client.get('currency', loginid);
+                    const localized_type = localize('[_1] Account', [is_real && currency ? currency : account_title]);
+                    if (loginid === Client.get('loginid')) { // default account
+                        $('.account-type').html(localized_type);
+                        $('.account-id').html(loginid);
+                    } else {
+                        loginid_select.append($('<a/>', { href: `${'java'}${'script:;'}`, 'data-value': loginid })
+                            .append($('<li/>', { text: localized_type }).append($('<div/>', { text: loginid }))))
+                            .append($('<div/>', { class: 'separator-line-thin-gray' }));
+                    }
                 }
-            }
-        });
-        let $this;
-        $('.login-id-list').html(loginid_select)
-            .find('a').off('click')
-            .on('click', function(e) {
-                e.preventDefault();
-                $this = $(this);
-                $this.attr('disabled', 'disabled');
-                switchLoginid($this.attr('data-value'));
+                let $this;
+                $('.login-id-list').html(loginid_select)
+                    .find('a').off('click')
+                    .on('click', function(e) {
+                        e.preventDefault();
+                        $this = $(this);
+                        $this.attr('disabled', 'disabled');
+                        switchLoginid($this.attr('data-value'));
+                    });
             });
+        });
     };
 
     const metatraderMenuItemVisibility = (landing_company_response) => {
@@ -107,15 +108,16 @@ const Header = (() => {
                     .html($('<span/>', { text: localize(msg) }));
             };
 
-            if (Client.get('is_virtual')) {
-                const show_upgrade_msg = !Client.hasAccountType('real');
+            const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
+            const upgrade_info = Client.getUpgradeInfo(landing_company, jp_account_status);
+            const show_upgrade_msg = upgrade_info.can_upgrade;
 
+            if (Client.get('is_virtual')) {
                 $upgrade_msg.setVisibility(1)
                     .find('> span').setVisibility(1).end()
                     .find('a')
                     .setVisibility(0);
 
-                const jp_account_status = (State.getResponse('get_settings.jp_account_status') || {}).status;
                 if (jp_account_status) {
                     const has_disabled_jp = jpClient() && Client.getAccountOfType('real').is_disabled;
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
@@ -133,31 +135,38 @@ const Header = (() => {
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    $upgrade_msg.find('> span').setVisibility(1);
-                    if (Client.canUpgradeVirtualToFinancial(landing_company)) {
-                        showUpgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
-                    } else if (Client.canUpgradeVirtualToJapan(landing_company)) {
-                        showUpgrade('new_account/japanws', 'Upgrade to a Real Account');
-                    } else {
-                        showUpgrade('new_account/realws', 'Upgrade to a Real Account');
-                    }
+                    showUpgrade('user/accounts', `Upgrade to a ${toTitleCase(upgrade_info.type)} Account`);
                 } else {
                     $upgrade_msg.find('a').setVisibility(0).html('');
                 }
+            } else if (show_upgrade_msg) {
+                $('#virtual-text').parent().setVisibility(0);
+                showUpgrade('user/accounts', 'Open a Financial Account');
             } else {
-                let show_financial = false;
-                // also allow UK MLT client to open MF account
-                if (Client.canUpgradeGamingToFinancial(landing_company) || (Client.get('residence') === 'gb' && /^MLT/.test(Client.get('loginid')))) {
-                    show_financial = !Client.hasAccountType('financial');
-                }
-                if (show_financial) {
-                    $('#virtual-text').parent().setVisibility(0);
-                    showUpgrade('new_account/maltainvestws', 'Open a Financial Account');
-                } else {
-                    $upgrade_msg.setVisibility(0);
+                $upgrade_msg.setVisibility(0);
+            }
+            showHideNewAccount(show_upgrade_msg);
+        });
+    };
+
+    const showHideNewAccount = (can_upgrade) => {
+        const authorize = State.getResponse('authorize');
+        if (can_upgrade || authorize.allow_omnibus) {
+            if (authorize.allow_omnibus && !can_upgrade) {
+                const landing_company = State.getResponse('landing_company');
+                const currencies = getCurrencies(authorize.sub_accounts, landing_company);
+                if (!currencies.length) {
+                    return;
                 }
             }
-        });
+            changeAccountsText(1, 'Create Account');
+        } else {
+            changeAccountsText(0, 'Accounts List');
+        }
+    };
+
+    const changeAccountsText = (add_new_style, text) => {
+        $('#user_accounts')[`${add_new_style ? 'add' : 'remove'}Class`]('create_new_account').find('li').text(localize(text));
     };
 
     const displayNotification = (message, is_error, msg_code = '') => {
