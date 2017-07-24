@@ -32,7 +32,7 @@ const SubAccounts = (() => {
         const is_crypto        = Currency.isCryptocurrency(client_currency);
         const currency_values  = getCurrencyValues(sub_accounts);
         const cryptocurrencies = currency_values.cryptocurrencies;
-        const currencies       = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies').concat(cryptocurrencies);
+        const currencies       = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
         const sub_currencies   = currency_values.sub_currencies;
 
         const has_fiat_sub = currency_values.has_fiat_sub;
