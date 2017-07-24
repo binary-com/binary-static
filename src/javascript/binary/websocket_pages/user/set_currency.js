@@ -98,10 +98,6 @@ const SetCurrency = (() => {
                 const fiat_currencies = currency_values.fiat_currencies;
                 currencies_to_show = currencies_to_show.filter(c => fiat_currencies.indexOf(c) < 0);
             }
-        } else {
-            // for now we don't want to show cryptocurrencies to accounts without allow_omnibus
-            const cryptocurrencies = currency_values.cryptocurrencies;
-            currencies_to_show = payout_currencies.filter(c => cryptocurrencies.indexOf(c) < 0);
         }
 
         return currencies_to_show;

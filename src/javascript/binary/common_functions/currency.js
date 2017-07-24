@@ -1,7 +1,8 @@
-const jpClient    = require('./country_base').jpClient;
-const getLanguage = require('../base/language').get;
+const jpClient         = require('./country_base').jpClient;
+const getLanguage      = require('../base/language').get;
+const getPropertyValue = require('../base/utility').getPropertyValue;
 
-const fiat_currencies = [];
+let currencies_config = '';
 
 const formatMoney = (currency_value, amount, exclude_currency) => {
     const is_crypto = isCryptocurrency(currency_value);
@@ -64,24 +65,18 @@ const map_currency = {
 };
 
 const setCurrencies = (website_status) => {
-    const currencies_config = website_status.currencies_config;
-    Object.keys(currencies_config).forEach((c) => {
-        if (currencies_config[c].type === 'fiat' && fiat_currencies.indexOf(c) < 0) {
-            fiat_currencies.push(c);
-        }
-    });
+    currencies_config = website_status.currencies_config;
 };
 
-const isCryptocurrency = currency => (
-    currency ? !(new RegExp(currency, 'i')).test(fiat_currencies) : false
-);
+const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type']));
+
 
 module.exports = {
-    formatMoney      : formatMoney,
-    formatCurrency   : currency => map_currency[currency] || '',
-    isCryptocurrency : isCryptocurrency,
-    addComma         : addComma,
-    getDecimalPlaces : getDecimalPlaces,
-    setCurrencies    : setCurrencies,
-    getFiatCurrencies: () => fiat_currencies,
+    formatMoney     : formatMoney,
+    formatCurrency  : currency => map_currency[currency] || '',
+    isCryptocurrency: isCryptocurrency,
+    addComma        : addComma,
+    getDecimalPlaces: getDecimalPlaces,
+    setCurrencies   : setCurrencies,
+    getCurrencies   : () => currencies_config,
 };
