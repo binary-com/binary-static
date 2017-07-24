@@ -27,7 +27,7 @@ const LimitsInit = (() => {
             const withdrawn                = limits.withdrawal_since_inception_monetary;
             const remainder                = formatMoney(currency, limits.remainder, 1);
 
-            if ((/^(iom)$/i).test(Client.get('landing_company_name'))) { // MX
+            if ((/^(iom)$/i).test(Client.get('landing_company_shortcode'))) { // MX
                 txt_withdraw_lim  = 'Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).';
                 txt_withdraw_amt = 'You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.';
                 elementTextContent(el_withdraw_limit,
@@ -35,11 +35,11 @@ const LimitsInit = (() => {
                 elementTextContent(el_withdrawn,
                     localize(txt_withdraw_amt,  [currency, withdrawn, limits.num_of_days]));
             } else {
-                if ((/^(costarica|japan)$/i).test(Client.get('landing_company_name'))) { // CR , JP
+                if ((/^(costarica|japan)$/i).test(Client.get('landing_company_shortcode'))) { // CR , JP
                     txt_withdraw_lim           = 'Your withdrawal limit is [_1] [_2].';
                     txt_withdraw_amt           = 'You have already withdrawn [_1] [_2].';
                     txt_current_max_withdrawal = 'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].';
-                    currency                   = Client.get('currency') || Client.get('default_currency');
+                    currency                   = Client.get('currency') || Client.currentLandingCompany().legal_default_currency;
                 }
                 elementTextContent(el_withdraw_limit, localize(txt_withdraw_lim, [currency, days_limit]));
                 elementTextContent(el_withdrawn, localize(txt_withdraw_amt,  [currency, withdrawn]));

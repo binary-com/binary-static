@@ -1,46 +1,38 @@
-const Cookies              = require('js-cookie');
-const generateBirthDate    = require('./attach_dom/birth_date_picker');
-const BinaryPjax           = require('../base/binary_pjax');
-const Client               = require('../base/client');
-const localize             = require('../base/localize').localize;
-const State                = require('../base/storage').State;
-const makeOption           = require('../common_functions/common_functions').makeOption;
-const FormManager          = require('../common_functions/form_manager');
-const BinarySocket         = require('../websocket_pages/socket');
+const Cookies            = require('js-cookie');
+const generateBirthDate  = require('./attach_dom/birth_date_picker');
+const BinaryPjax         = require('../base/binary_pjax');
+const Client             = require('../base/client');
+const localize           = require('../base/localize').localize;
+const State              = require('../base/storage').State;
+const urlFor             = require('../base/url').urlFor;
+const defaultRedirectUrl = require('../base/url').defaultRedirectUrl;
+const makeOption         = require('../common_functions/common_functions').makeOption;
+const FormManager        = require('../common_functions/form_manager');
+const BinarySocket       = require('../websocket_pages/socket');
 require('select2');
 
 const AccountOpening = (() => {
     'use strict';
 
-    const redirectCookie = () => {
-        if (Client.get('has_real')) {
-            BinaryPjax.load('trading');
-            return true;
-        }
-        return false;
-    };
-
     const redirectAccount = () => { // eslint-disable-line consistent-return
-        const response_landing_company = State.get(['response', 'landing_company']);
-        if (response_landing_company) {
-            return redirect(response_landing_company);
+        const response_landing_company = State.getResponse('landing_company');
+        const response_get_settings = State.getResponse('get_settings');
+        if (response_landing_company && response_get_settings) {
+            return redirect(response_landing_company, response_get_settings);
         }
-        BinarySocket.wait('landing_company').then(response => redirect(response));
+        BinarySocket.wait('landing_company', 'get_settings').then(() => redirect());
     };
 
-    const redirect = (response) => {
-        const is_virtual = Client.get('is_virtual');
-        const landing_company = response.landing_company;
+    const redirect = (response_landing_company) => {
+        const upgrade_info = Client.getUpgradeInfo(response_landing_company || State.getResponse('landing_company'));
 
-        // redirect client to correct account opening page if needed
-        if (!State.get('is_financial_opening') &&
-            ((!is_virtual && Client.canUpgradeGamingToFinancial(landing_company)) ||
-            Client.canUpgradeVirtualToFinancial(landing_company))) {
-            BinaryPjax.load('new_account/maltainvestws');
+        if (!upgrade_info.can_upgrade) {
+            BinaryPjax.load(defaultRedirectUrl());
             return true;
         }
-        if (!State.get('is_japan_opening') && is_virtual && Client.canUpgradeVirtualToJapan(landing_company)) {
-            BinaryPjax.load('new_account/japanws');
+
+        if (!upgrade_info.is_current_path) {
+            BinaryPjax.load(upgrade_info.upgrade_link);
             return true;
         }
         return false;
@@ -91,7 +83,7 @@ const AccountOpening = (() => {
     };
 
     const getTaxResidence = () => {
-        const tax_residence = State.get(['response', 'get_settings', 'get_settings'] || {}).tax_residence;
+        const tax_residence = State.getResponse('get_settings.tax_residence');
         return (tax_residence ? tax_residence.split(',') : '');
     };
 
@@ -134,7 +126,12 @@ const AccountOpening = (() => {
             $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
                 .setVisibility(1);
         } else {
-            Client.processNewAccount(Client.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
+            Client.processNewAccount({
+                email       : Client.get('email'),
+                loginid     : response[message_type].client_id,
+                token       : response[message_type].oauth_token,
+                redirect_url: `${urlFor('user/set-currency')}#new_account`,
+            });
         }
     };
 
@@ -184,7 +181,6 @@ const AccountOpening = (() => {
     return {
         redirectAccount : redirectAccount,
         populateForm    : populateForm,
-        redirectCookie  : redirectCookie,
         handleNewAccount: handleNewAccount,
 
         commonValidations       : commonValidations,

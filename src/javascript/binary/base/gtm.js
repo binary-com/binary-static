@@ -146,12 +146,12 @@ const GTM = (() => {
         const gtm_data = {
             event          : 'mt5_new_account',
             bom_email      : Client.get('email'),
-            bom_country    : State.get(['response', 'get_settings', 'get_settings', 'country']),
+            bom_country    : State.getResponse('get_settings.country'),
             mt5_last_signup: acc_type,
         };
         gtm_data[`mt5_${acc_type}_id`] = response.mt5_new_account.login;
         if (/demo/.test(acc_type) && !Client.get('is_virtual')) {
-            gtm_data.visitorId = Client.get('loginid_array').find(login => !login.real).id;
+            gtm_data.visitorId = Client.getAccountOfType('virtual').loginid;
         }
         pushDataLayer(gtm_data);
     };

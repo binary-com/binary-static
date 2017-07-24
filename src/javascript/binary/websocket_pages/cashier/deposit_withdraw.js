@@ -1,9 +1,10 @@
-const BinarySocket     = require('../socket');
-const Client           = require('../../base/client');
-const localize         = require('../../base/localize').localize;
-const template         = require('../../base/utility').template;
-const makeOption       = require('../../common_functions/common_functions').makeOption;
-const FormManager      = require('../../common_functions/form_manager');
+const BinarySocket = require('../socket');
+const BinaryPjax   = require('../../base/binary_pjax');
+const Client       = require('../../base/client');
+const localize     = require('../../base/localize').localize;
+const urlFor       = require('../../base/url').urlFor;
+const template     = require('../../base/utility').template;
+const FormManager  = require('../../common_functions/form_manager');
 
 const DepositWithdraw = (() => {
     'use strict';
@@ -19,21 +20,16 @@ const DepositWithdraw = (() => {
             return;
         }
         if (!Client.get('currency')) {
-            showCurrency();
+            BinaryPjax.load(`${urlFor('user/set-currency')}#redirect_${cashier_type}`);
         } else {
             initDepositWithdraw();
         }
     };
 
     const initDepositWithdraw = (response) => {
-        if (response) {
-            if (response.error) {
-                showError('custom_error', response.error.message);
-                return;
-            }
-            if (response.msg_type === 'set_account_currency') {
-                Client.setCurrency(response.echo_req.set_account_currency);
-            }
+        if (response && response.error) {
+            showError('custom_error', response.error.message);
+            return;
         }
 
         if (cashier_type === 'deposit') {
@@ -66,23 +62,6 @@ const DepositWithdraw = (() => {
         });
     };
 
-    const showCurrency = () => {
-        const currencies = Client.get('currencies').split(',');
-        const $currencies = $('<div/>');
-        currencies.forEach((c) => {
-            $currencies.append(makeOption({ text: c, value: c }));
-        });
-        $('#select_currency').html($currencies.html());
-        showMessage('choose_currency_message');
-        const currency_form_id = '#frm_currency';
-        $(currency_form_id).setVisibility(1);
-        FormManager.init(currency_form_id, [{ selector: '#select_currency', request_field: 'set_account_currency' }]);
-        FormManager.handleSubmit({
-            form_selector       : currency_form_id,
-            fnc_response_handler: initDepositWithdraw,
-        });
-    };
-
     const getCashierType = () => {
         const $heading = $(container).find('#heading');
         const hash_value = window.location.hash;
@@ -109,7 +88,7 @@ const DepositWithdraw = (() => {
     };
 
     const hideAll = (option) => {
-        $('#frm_withdraw, #frm_currency, #frm_ukgc, #errors').setVisibility(0);
+        $('#frm_withdraw, #frm_ukgc, #errors').setVisibility(0);
         if (option) {
             $(option).setVisibility(0);
         }

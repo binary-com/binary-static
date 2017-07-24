@@ -23,7 +23,6 @@
                                 [% INCLUDE select id='cs_telephone_number' options=[
                                     { text=l("Australia"),      value=l('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') },
                                     { text=l("Canada"),         value="+1 (450) 823 1002" },
-                                    { text=l("Germany"),        value="+49 3025 5553844" },
                                     { text=l("Indonesia"),      value=l('[_1] (Toll Free)', '0018030113641') },
                                     { text=l("Ireland"),        value=l('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') },
                                     { text=l("Poland"),         value="+48 58 881 00 02" },
@@ -64,9 +63,8 @@
             <h1>[% l("Company addresses") %]</h1>
         </div>
         <div class="gr-row">
-            [% INCLUDE info_box padding='4' header=l("Malta")   text=l("Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825") %]
-            [% INCLUDE info_box padding='4' header=l("Japan")   text=l("Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan") %]
-            [% INCLUDE info_box padding='4' header=l("Germany") text=l("Binary Group Services Sdn Bhd, Zweigstelle Berlin, Friedrichstraße 68, 10117 Berlin") %]
+            [% INCLUDE info_box padding='6' header=l("Malta")   text=l("Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825") %]
+            [% INCLUDE info_box padding='6' header=l("Japan")   text=l("Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan") %]
         </div>
 
         <div class="gr-hide-p gr-hide-m gr-padding-20"></div>

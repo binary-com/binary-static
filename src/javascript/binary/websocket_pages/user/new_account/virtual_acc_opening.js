@@ -2,6 +2,7 @@ const Cookies          = require('js-cookie');
 const BinarySocket     = require('../../socket');
 const Client           = require('../../../base/client');
 const localize         = require('../../../base/localize').localize;
+const LocalStore       = require('../../../base/storage').LocalStore;
 const urlFor           = require('../../../base/url').urlFor;
 const getPropertyValue = require('../../../base/utility').getPropertyValue;
 const makeOption       = require('../../../common_functions/common_functions').makeOption;
@@ -81,7 +82,7 @@ const VirtualAccOpening = (() => {
         if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium', value: utm_data.utm_medium });
         if (utm_data.utm_campaign) req.push({ request_field: 'utm_campaign', value: utm_data.utm_campaign });
 
-        const gclid = Client.get('gclid');
+        const gclid = LocalStore.get('gclid');
         if (gclid) req.push({ request_field: 'gclid_url', value: gclid });
 
         if (Cookies.get('affiliate_tracking')) req.push({ request_field: 'affiliate_token', value: Cookies.getJSON('affiliate_tracking').t });
@@ -103,12 +104,14 @@ const VirtualAccOpening = (() => {
         const error = response.error;
         if (!error) {
             const new_account = response.new_account_virtual;
-            Client.setCookie('residence', response.echo_req.residence);
-            return Client.processNewAccount(
-                new_account.email,
-                new_account.client_id,
-                new_account.oauth_token,
-                true);
+            Client.set('residence', response.echo_req.residence, new_account.client_id);
+            LocalStore.remove('gclid');
+            return Client.processNewAccount({
+                email     : new_account.email,
+                loginid   : new_account.client_id,
+                token     : new_account.oauth_token,
+                is_virtual: true,
+            });
         }
 
         const showInvalidTokenMessage = () => {

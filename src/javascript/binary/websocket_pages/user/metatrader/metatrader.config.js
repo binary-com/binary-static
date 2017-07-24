@@ -20,7 +20,7 @@ const MetaTraderConfig = (() => {
         real_costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 8, max_leverage: 500 },
     };
 
-    const needsRealMessage = () => $(`#msg_${Client.get('has_real') ? 'switch' : 'upgrade'}`).html();
+    const needsRealMessage = () => $(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
     const actions_info = {
         new_account: {
@@ -70,7 +70,7 @@ const MetaTraderConfig = (() => {
         deposit: {
             title      : localize('Deposit'),
             success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
-                formatMoney(State.get(['response', 'authorize', 'authorize', 'currency']), response.echo_req.amount),
+                formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_binary,
                 response.echo_req.to_mt5,
                 response.binary_transaction_id,
@@ -98,7 +98,7 @@ const MetaTraderConfig = (() => {
         withdrawal: {
             title      : localize('Withdraw'),
             success_msg: response => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
-                formatMoney(State.get(['response', 'authorize', 'authorize', 'currency']), response.echo_req.amount),
+                formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_mt5,
                 response.echo_req.to_binary,
                 response.binary_transaction_id,

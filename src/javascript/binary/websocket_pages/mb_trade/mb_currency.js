@@ -1,7 +1,7 @@
 const MBContract     = require('./mb_contract');
 const MBDefaults     = require('./mb_defaults');
-const Client         = require('../../base/client');
 const localize       = require('../../base/localize').localize;
+const State          = require('../../base/storage').State;
 const jpClient       = require('../../common_functions/country_base').jpClient;
 const formatCurrency = require('../../common_functions/currency').formatCurrency;
 
@@ -17,7 +17,7 @@ const MBDisplayCurrencies = () => {
     const $currency  = $('.trade_form #currency');
     const $list      = $currency.find('.list');
     const $current   = $currency.find('.current');
-    const currencies = Client.get('currencies').split(',');
+    const currencies = State.getResponse('payout_currencies');
     const jp_client  = jpClient();
     let def_value;
 
