@@ -233,9 +233,6 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .ico-subscribe-content {
-    .border-gray {
-        border: 1px solid $COLOR_GRAY;
-    }
     .border-radius {
         border-radius: $BORDER_RADIUS;
     }
@@ -274,5 +271,50 @@ body #not_authenticated_financial ul.checked > li {
     }
     .white-bg {
         background-color: $COLOR_WHITE;
+    }
+}
+
+.accounts-content {
+    .table-container table {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+
+        th, td {
+            text-align: center !important;
+            background-color: $COLOR_WHITE;
+            padding: 20px;
+            border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+        }
+    }
+    #note .hint {
+        margin-bottom: 3px;
+    }
+    #accounts_wrapper #no_new_accounts_wrapper {
+        color: $COLOR_GRAY_SHADE;
+    }
+}
+
+.set-currency-content {
+    #currency_list {
+        > div {
+            border: 1px solid $COLOR_LIGHT_GRAY;
+            padding: 15px;
+            background-image: url('../images/pages/set_currency/tick-normal.svg');
+            background-repeat: no-repeat;
+            background-position: 115px 4px;
+
+            &:hover {
+                cursor: pointer;
+            }
+            &.selected {
+                border: 1px solid $COLOR_BLACK;
+                background-image: url('../images/pages/set_currency/tick-selected.svg');
+            }
+        }
+        .currency_wrapper > div:last-child {
+            margin-top: 10px;
+        }
+    }
+    .faded {
+        font-size: $FONT_SIZE_XS;
     }
 }

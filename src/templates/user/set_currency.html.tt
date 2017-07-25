@@ -1,0 +1,34 @@
+<div id="set_currency_loading">
+    [% PROCESS global/loading.html.tt %]
+</div>
+
+<div class="invisible" id="set_currency">
+    <div class="center-text">
+        <div class="invisible" id="hide_new_account">
+            <h1>[% l("Select currency") %]</h1>
+        </div>
+        <div class="invisible" id="show_new_account">
+            <img src="[% request.url_for('images/pages/set_currency/account-created.svg') %]" />
+            <div class="gr-padding-10"></div>
+            <h1>[% l("Congratulations!") %]</h1>
+            <p>[% l("You have successfully created your account!") %]</p>
+        </div>
+
+        [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-10" invisible=1 %]
+
+        <p>[% l("Please select the currency of this account:") %]</p>
+        <p class="invisible notice-msg hint gr-5 gr-12-m gr-centered" id="currency_notice">
+            [% l('Fact: The currency you chose [_1] is a [_2].', '(<span id="chosen_currency"></span>)', '<span id="chosen_currency_type"></span>') %]
+        </p>
+    </div>
+
+    <div class="center-text">
+        <form class="gr-7 gr-12-m gr-centered" id="frm_set_currency">
+            <div class="gr-row gr-row-align-center gr-padding-20 gr-parent" id="currency_list"></div>
+            <p class="invisible error-msg"></p>
+            <button type="submit">[% l('Confirm') %]</button>
+        </form>
+    </div>
+
+    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]
+</div>

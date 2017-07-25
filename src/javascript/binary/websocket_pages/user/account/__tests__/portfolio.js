@@ -1,5 +1,5 @@
 const portfolio = require('../portfolio').Portfolio;
-const { api, expect } = require('../../../../base/__tests__/tests_common');
+const { api, expect, getApiToken } = require('../../../../base/__tests__/tests_common');
 
 const portfolio_mock_data = {
     symbol        : 'frxAUDJPY',
@@ -23,7 +23,7 @@ describe('Portfolio', () => {
     before(function(done) {
         this.timeout(10000);
         // this is a read token, even if other people take it, won't be able to do any harm
-        api.authorize('hhh9bfrbq0G3dRf').then(() => {
+        api.authorize(getApiToken()).then(() => {
             api.subscribeToBalance().then((response) => {
                 balance = response;
                 done();

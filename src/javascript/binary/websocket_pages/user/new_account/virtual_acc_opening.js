@@ -106,11 +106,12 @@ const VirtualAccOpening = (() => {
             const new_account = response.new_account_virtual;
             Client.set('residence', response.echo_req.residence, new_account.client_id);
             LocalStore.remove('gclid');
-            return Client.processNewAccount(
-                new_account.email,
-                new_account.client_id,
-                new_account.oauth_token,
-                true);
+            return Client.processNewAccount({
+                email     : new_account.email,
+                loginid   : new_account.client_id,
+                token     : new_account.oauth_token,
+                is_virtual: true,
+            });
         }
 
         const showInvalidTokenMessage = () => {
