@@ -27,14 +27,20 @@
     [% l('Please complete the tax information before proceeding.') %]
 </p>
 
+<p class="notice-msg center-text invisible" id="account_opening_reason_notice">
+    [% l('Please set your account opening reason before proceeding.') %]
+</p>
+
 <form class="form gr-padding-10 invisible" id="frmPersonalDetails">
     [% WRAPPER fieldset legend=l('Details') %]
         [% INCLUDE form_row type='label'  label=l('Name')          is_bold=1 id='lbl_name'          row_class='invisible' row_id='row_name' %]
         [% INCLUDE form_row type='label'  label=l('Gender')        is_bold=1 id='lbl_gender'        row_class='invisible JpAcc' %]
         [% INCLUDE form_row type='label'  label=l('Date of birth') is_bold=1 id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' %]
         [% INCLUDE form_row type='select' label=l('Place of birth') id='place_of_birth' row_class='invisible RealAcc' %]
-        [% INCLUDE form_row type='label'  label=l('Country of Residence') is_bold=1 id='lbl_country' %]
-        [% INCLUDE form_row type='label'  label=l('Email address')        is_bold=1 id='lbl_email' %]
+        [% INCLUDE form_row type='label'  label=l('Country of Residence') is_bold=1 id='lbl_country' row_id='row_country' %]
+        [% INCLUDE form_row type='label'  label=l('Email address')        is_bold=1 id='lbl_email' row_id='row_email' %]
+        [% INCLUDE form_row type='label'  label=l('Account Opening Reason') id='lbl_account_opening_reason' row_id='row_lbl_account_opening_reason' row_class='invisible' %]
+        [% INCLUDE account_opening_reason row_id='row_account_opening_reason' row_class='invisible' %]
         [% WRAPPER form_row type='select' label=l('Occupation') id='occupation' class='jp_value' row_class='invisible JpAcc' %]
             <option value="Office worker">[% l('Office worker') %]</option>
             <option value="Director">[% l('Director') %]</option>

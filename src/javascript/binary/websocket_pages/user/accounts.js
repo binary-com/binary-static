@@ -1,5 +1,6 @@
 const SubAccount   = require('./sub_account');
 const BinarySocket = require('../socket');
+const BinaryPjax   = require('../../base/binary_pjax');
 const Client       = require('../../base/client');
 const localize     = require('../../base/localize').localize;
 const urlFor       = require('../../base/url').urlFor;
@@ -129,7 +130,13 @@ const Accounts = (() => {
             } else {
                 BinarySocket.send({ new_sub_account: 1 }).then((response) => {
                     if (response.error) {
-                        showError(response.error.message);
+                        const account_opening_reason = State.getResponse('get_settings.account_opening_reason');
+                        if (response.error.code === 'InsufficientAccountDetails' && !account_opening_reason) {
+                            // ask client to set account opening reason
+                            BinaryPjax.load(`${urlFor('user/settings/detailsws')}#new-account`);
+                        } else {
+                            showError(response.error.message);
+                        }
                     } else {
                         handleNewAccount(response);
                     }
@@ -171,7 +178,8 @@ const Accounts = (() => {
     };
 
     const showError = (message) => {
-        $('#create_sub_account').find('button').parent().append($('<p/>', { class: 'error-msg', text: localize(message) }));
+        $('#new_account_error').remove();
+        $('#create_sub_account').find('button').parent().append($('<p/>', { class: 'error-msg', id: 'new_account_error', text: localize(message) }));
     };
 
     return {
