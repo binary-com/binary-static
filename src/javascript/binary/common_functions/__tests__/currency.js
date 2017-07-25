@@ -3,7 +3,7 @@ const formatMoney   = require('../currency').formatMoney;
 const setCurrencies = require('../currency').setCurrencies;
 
 describe('formatMoney', () => {
-    setCurrencies({ currencies_config: { AUD: { fractional_digits: 2, type: 'fiat' }, EUR: { fractional_digits: 2, type: 'fiat' }, GBP: { fractional_digits: 2, type: 'fiat' }, JPY: { fractional_digits: 2, type: 'fiat' }, USD: { fractional_digits: 2, type: 'fiat' } } });
+    setCurrencies({ currencies_config: { AUD: { fractional_digits: 2, type: 'fiat' }, EUR: { fractional_digits: 2, type: 'fiat' }, GBP: { fractional_digits: 2, type: 'fiat' }, JPY: { fractional_digits: 2, type: 'fiat' }, USD: { fractional_digits: 2, type: 'fiat' }, BTC: { fractional_digits: 8, type: 'crypto' } } });
 
     it('works as expected', () => {
         expect(formatMoney('USD', '123.55')).to.eq('$123.55');
@@ -20,6 +20,6 @@ describe('formatMoney', () => {
     });
 
     it('works for unexpected currencies', () => {
-        expect(formatMoney('WTV', '123.55')).to.eq('WTV 123.55000000');
+        expect(formatMoney('WTV', '123.55')).to.eq('WTV123.55');
     });
 });
