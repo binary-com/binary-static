@@ -87,7 +87,7 @@ sub all_pages {
         ['resources/asset_indexws',  'resources/asset_index',   'default', 'Asset Index', 'ja'],
         ['resources/market_timesws', 'resources/trading_times', 'default', 'Trading Times'],
 
-        ['user/accounts',                    'user/accounts',                        'default',    'Accounts'],
+        ['user/accounts',                    'user/accounts',                        'default',    'Accounts',                'ja'],
         ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/video-facility',              'user/video_facility',                  'default',    'Video Room Facility'],
         ['user/ico-subscribe',               'user/ico_subscribe',                   'default',    'Subscribe to ICO',        'ja'],
