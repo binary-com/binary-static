@@ -100,7 +100,7 @@
                                         <a class="link" href="[% request.url_for('/user/securityws') %]">
                                             <li class="topMenuSecurity">[% l("Security & Limits") %]</li>
                                         </a>
-                                        <a class="link" id="user_accounts" href="[% request.url_for('/user/accounts') %]">
+                                        <a class="link ja-hide" id="user_accounts" href="[% request.url_for('/user/accounts') %]">
                                             <li class="topMenuAccounts">[% l("Accounts List") %]</li>
                                         </a>
                                         <a class="link invisible" id="user_menu_metatrader" href="[% request.url_for('/user/metatrader') %]">
