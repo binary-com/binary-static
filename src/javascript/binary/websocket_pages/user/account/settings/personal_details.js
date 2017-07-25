@@ -56,8 +56,17 @@ const PersonalDetails = (() => {
             get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
-        if (get_settings.hasOwnProperty('account_opening_reason')) {
-            $(`#row_${get_settings.account_opening_reason ? 'lbl_' : ''}account_opening_reason`).setVisibility(1);
+        if (get_settings.hasOwnProperty('account_opening_reason') && !is_jp) {
+            if (get_settings.account_opening_reason) {
+                // we have to show text here instead of relying on displayGetSettingsData() since it prioritizes
+                // showing data in account_opening_reason instead of lbl_account_opening_reason
+                $('#lbl_account_opening_reason').text(get_settings.account_opening_reason);
+                $('#row_account_opening_reason').setVisibility(0);
+                $('#row_lbl_account_opening_reason').setVisibility(1);
+            } else {
+                $('#row_lbl_account_opening_reason').setVisibility(0);
+                $('#row_account_opening_reason').setVisibility(1);
+            }
         }
 
         displayGetSettingsData(get_settings);
