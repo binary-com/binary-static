@@ -49,7 +49,7 @@ const addComma = (num, decimal_points, is_crypto) => {
 };
 
 const getDecimalPlaces = currency => (
-    getPropertyValue(currencies_config, [currency, 'fractional_digits']) || isCryptocurrency(currency) ? 8 : (jpClient() ? 0 : 2)
+    getPropertyValue(currencies_config, [currency, 'fractional_digits']) || (isCryptocurrency(currency) ? 8 : (jpClient() ? 0 : 2))
 );
 
 // Taken with modifications from:
