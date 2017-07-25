@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-23 23:48-0400\n"
+"PO-Revision-Date: 2017-07-24 23:56-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -739,6 +739,9 @@ msgstr "Управлением счетом и контроль"
 
 msgid "Account Opening"
 msgstr "Открытие счета"
+
+msgid "Account Opening Reason"
+msgstr ""
 
 msgid "Account Password"
 msgstr "Пароль счета"
@@ -6054,6 +6057,9 @@ msgstr "Пожалуйста, укажите 30-дневный лимит на �
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr "Пожалуйста, укажите <a href=\"%1\">30-дневный лимит на объём покупок</a>, чтобы получить доступ к кассе."
 
+msgid "Please set your account opening reason before proceeding."
+msgstr ""
+
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Пожалуйста, укажите желаемый интервал для проверки реальности (в минутах)"
 
@@ -9312,7 +9318,7 @@ msgstr "Вы уже в целом вывели сумму, эквивалент�
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "Вы уже вывели со счета сумму, эквивалентную %1 %2."
 
-msgid "You have created all accounts available for you."
+msgid "You have created all accounts available to you."
 msgstr ""
 
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
@@ -9555,7 +9561,7 @@ msgstr "Необходимо пройти аутентификацию Ваше�
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Ваш клиент получит по электронной почте уведомление о том, что перевод был выполнен."
 
-msgid "Your Existings Accounts"
+msgid "Your Existing Accounts"
 msgstr ""
 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
