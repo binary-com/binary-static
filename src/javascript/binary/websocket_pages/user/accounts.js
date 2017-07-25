@@ -13,6 +13,10 @@ const Accounts = (() => {
     let landing_company;
 
     const onLoad = () => {
+        if (!Client.get('residence')) {
+            // ask client to set residence first since cannot wait landing_company otherwise
+            BinaryPjax.load(urlFor('user/settings/detailsws'));
+        }
         BinarySocket.wait('landing_company', 'get_settings').then(() => {
             landing_company = State.getResponse('landing_company');
 
