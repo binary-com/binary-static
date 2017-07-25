@@ -36,7 +36,7 @@
 [% END %]
 
 [% BLOCK account_opening_reason %]
-    [% WRAPPER form_row type='select' id='account_opening_reason' label=l('Account opening reason') %]
+    [% WRAPPER form_row type='select' id='account_opening_reason' label=l('Account opening reason') row_id row_class %]
         <option value="">[% l('Please select') %]</option>
         <option value="Speculative">[% l('Speculative') %]</option>
         <option value="Income Earning">[% l("Income earning") %]</option>

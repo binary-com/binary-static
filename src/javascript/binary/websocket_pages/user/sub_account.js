@@ -5,11 +5,16 @@ const SubAccounts = (() => {
     'use strict';
 
     const getCurrencyValues = (sub_accounts) => {
-        const fiat_currencies  = Currency.getFiatCurrencies();
-        // TODO: update this when back-end sends cryptocurrencies in website_status and landing_company
-        // const currencies = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
-        // const cryptocurrencies = currencies.filter(c => fiat_currencies.indexOf(c) < 0);
-        const cryptocurrencies = ['BTC'];
+        const currencies  = Currency.getCurrencies();
+        const fiat_currencies = [];
+        const cryptocurrencies = [];
+        Object.keys(currencies).forEach((currency) => {
+            if (currencies[currency].type === 'fiat') {
+                fiat_currencies.push(currency);
+            } else {
+                cryptocurrencies.push(currency);
+            }
+        });
         const sub_currencies   = sub_accounts.length ? sub_accounts.map(a => a.currency) : [];
 
         const has_fiat_sub = sub_accounts.length ? sub_currencies.some(currency => currency && new RegExp(currency, 'i').test(fiat_currencies)) : false;
@@ -27,7 +32,7 @@ const SubAccounts = (() => {
         const is_crypto        = Currency.isCryptocurrency(client_currency);
         const currency_values  = getCurrencyValues(sub_accounts);
         const cryptocurrencies = currency_values.cryptocurrencies;
-        const currencies       = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies').concat(cryptocurrencies);
+        const currencies       = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
         const sub_currencies   = currency_values.sub_currencies;
 
         const has_fiat_sub = currency_values.has_fiat_sub;
