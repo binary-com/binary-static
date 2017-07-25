@@ -48,7 +48,9 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const getDecimalPlaces = currency => (isCryptocurrency(currency) ? 8 : (jpClient() ? 0 : 2));
+const getDecimalPlaces = currency => (
+    getPropertyValue(currencies_config, [currency, 'fractional_digits']) || (isCryptocurrency(currency) ? 8 : (jpClient() ? 0 : 2))
+);
 
 // Taken with modifications from:
 //    https://github.com/bengourley/currency-symbol-map/blob/master/map.js
@@ -69,7 +71,6 @@ const setCurrencies = (website_status) => {
 };
 
 const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type']));
-
 
 module.exports = {
     formatMoney     : formatMoney,
