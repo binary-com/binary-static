@@ -87,21 +87,17 @@ const SetCurrency = (() => {
     };
 
     const getCurrencies = (authorize, payout_currencies, currency_values) => {
-        let currencies_to_show;
+        let currencies_to_show = payout_currencies;
         if (authorize.allow_omnibus) {
             const sub_currencies  = currency_values.sub_currencies;
 
-            currencies_to_show = payout_currencies.filter(c => sub_currencies.indexOf(c) < 0);
+            currencies_to_show = currencies_to_show.filter(c => sub_currencies.indexOf(c) < 0);
 
             const has_fiat_sub = currency_values.has_fiat_sub;
             if (has_fiat_sub) {
                 const fiat_currencies = currency_values.fiat_currencies;
                 currencies_to_show = currencies_to_show.filter(c => fiat_currencies.indexOf(c) < 0);
             }
-        } else {
-            // for now we don't want to show cryptocurrencies to accounts without allow_omnibus
-            const cryptocurrencies = currency_values.cryptocurrencies;
-            currencies_to_show = payout_currencies.filter(c => cryptocurrencies.indexOf(c) < 0);
         }
 
         return currencies_to_show;
