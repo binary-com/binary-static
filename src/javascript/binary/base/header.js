@@ -135,13 +135,13 @@ const Header = (() => {
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    showUpgrade('user/accounts', `Upgrade to a ${toTitleCase(upgrade_info.type)} Account`);
+                    showUpgrade(upgrade_info.upgrade_link, `Upgrade to a ${toTitleCase(upgrade_info.type)} Account`);
                 } else {
                     $upgrade_msg.find('a').setVisibility(0).html('');
                 }
             } else if (show_upgrade_msg) {
                 $('#virtual-text').parent().setVisibility(0);
-                showUpgrade('user/accounts', 'Open a Financial Account');
+                showUpgrade(upgrade_info.upgrade_link, 'Open a Financial Account');
             } else {
                 $upgrade_msg.setVisibility(0);
             }
