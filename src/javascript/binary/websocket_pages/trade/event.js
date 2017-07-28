@@ -319,7 +319,10 @@ const TradingEvents = (() => {
         const currency_element = document.getElementById('currency');
         if (currency_element) {
             currency_element.addEventListener('change', (e) => {
-                Defaults.set('currency', e.target.value);
+                const currency = e.target.value;
+                Defaults.set('currency', currency);
+                const amount = isCryptocurrency(currency) ? 'amount_crypto' : 'amount';
+                if (Defaults.get(amount)) $('#amount').val(Defaults.get(amount));
                 Price.processPriceRequest();
             });
         }
