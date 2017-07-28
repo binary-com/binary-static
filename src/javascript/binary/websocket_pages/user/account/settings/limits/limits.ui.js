@@ -27,7 +27,7 @@ const LimitsUI = (() => {
         const payout          = document.getElementById('payout');
         const payout_per      = document.getElementById('payout-per-symbol-and-contract-type');
 
-        elementTextContent(open_position, formatMoney(currency, limits.open_positions, 1));
+        elementTextContent(open_position, limits.open_positions);
         elementTextContent(account_balance, formatMoney(currency, limits.account_balance, 1));
         elementTextContent(payout, formatMoney(currency, limits.payout, 1));
         elementTextContent(payout_per, formatMoney(currency, limits.payout_per_symbol_and_contract_type, 1));
