@@ -67,7 +67,7 @@
         <option value="">[% l("Please select") %]</option>
         <option value="Employed">[% l("Employed") %]</option>
         <option value="Pensioner">[% l("Pensioner") %]</option>
-        <option value="Self-Employed">[% l("Self Employed") %]</option>
+        <option value="Self-Employed">[% l("Self-Employed") %]</option>
         <option value="Student">[% l("Student") %]</option>
         <option value="Unemployed">[% l("Unemployed") %]</option>
     [% END %]
