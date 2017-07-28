@@ -15,6 +15,7 @@ const BinarySocket              = require('../socket');
 const localize                  = require('../../base/localize').localize;
 const State                     = require('../../base/storage').State;
 const elementInnerHtml          = require('../../common_functions/common_functions').elementInnerHtml;
+const isCryptocurrency          = require('../../common_functions/currency').isCryptocurrency;
 
 const Process = (() => {
     'use strict';
@@ -174,8 +175,17 @@ const Process = (() => {
         }
 
         const currency = Defaults.get('currency') || document.getElementById('currency').value;
-        if (Defaults.get('amount')) $('#amount').val(Defaults.get('amount'));
-        else Defaults.set('amount', /btc/i.test(currency) ? 0.005 : document.getElementById('amount').value);
+        const is_crypto = isCryptocurrency(currency);
+        const amount = is_crypto ? 'amount_crypto' : 'amount';
+        if (Defaults.get(amount)) {
+            $('#amount').val(Defaults.get(amount));
+        } else if (is_crypto) {
+            const default_crypto_value = 0.005;
+            Defaults.set(amount, default_crypto_value);
+            document.getElementById('amount').value = default_crypto_value;
+        } else {
+            Defaults.set(amount, document.getElementById('amount').value);
+        }
         if (Defaults.get('amount_type')) commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
         else Defaults.set('amount_type', document.getElementById('amount_type').value);
         if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
