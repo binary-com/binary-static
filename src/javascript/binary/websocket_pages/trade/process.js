@@ -177,8 +177,15 @@ const Process = (() => {
         const currency = Defaults.get('currency') || document.getElementById('currency').value;
         const is_crypto = isCryptocurrency(currency);
         const amount = is_crypto ? 'amount_crypto' : 'amount';
-        if (Defaults.get(amount)) $('#amount').val(Defaults.get(amount));
-        else Defaults.set(amount, is_crypto ? 0.005 : document.getElementById('amount').value);
+        if (Defaults.get(amount)) {
+            $('#amount').val(Defaults.get(amount));
+        } else if (is_crypto) {
+            const default_crypto_value = 0.005;
+            Defaults.set(amount, default_crypto_value);
+            document.getElementById('amount').value = default_crypto_value;
+        } else {
+            Defaults.set(amount, document.getElementById('amount').value);
+        }
         if (Defaults.get('amount_type')) commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
         else Defaults.set('amount_type', document.getElementById('amount_type').value);
         if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
