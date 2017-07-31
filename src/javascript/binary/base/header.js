@@ -264,7 +264,7 @@ const Header = (() => {
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
                     get_account_status = State.getResponse('get_account_status') || {};
                     status = get_account_status.status;
-                    if (costarica_landing_company && +Client.get('balance') < 200) {
+                    if (costarica_landing_company && +Client.get('balance') < 4000) {
                         BinarySocket.wait('mt5_login_list').then((response) => {
                             if (response.mt5_login_list.length) {
                                 should_authenticate = true;
