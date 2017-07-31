@@ -18,6 +18,7 @@ const GTM                   = require('../../base/gtm');
 const dateValueChanged      = require('../../common_functions/common_functions').dateValueChanged;
 const isVisible             = require('../../common_functions/common_functions').isVisible;
 const getDecimalPlaces      = require('../../common_functions/currency').getDecimalPlaces;
+const isCryptocurrency      = require('../../common_functions/currency').isCryptocurrency;
 const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 const TimePicker            = require('../../components/time_picker');
 
@@ -248,10 +249,11 @@ const TradingEvents = (() => {
 
             amount_element.addEventListener('input', commonTrading.debounce((e) => {
                 e.target.value = e.target.value.replace(/[^0-9.]/g, '');
+                const currency = Defaults.get('currency');
                 if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(getDecimalPlaces(Defaults.get('currency')));
+                    e.target.value = parseFloat(e.target.value).toFixed(getDecimalPlaces(currency));
                 }
-                Defaults.set('amount', e.target.value);
+                Defaults.set(`amount${isCryptocurrency(currency) ? '_crypto' : ''}`, e.target.value);
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
@@ -340,7 +342,10 @@ const TradingEvents = (() => {
         const currency_element = document.getElementById('currency');
         if (currency_element) {
             currency_element.addEventListener('change', (e) => {
-                Defaults.set('currency', e.target.value);
+                const currency = e.target.value;
+                Defaults.set('currency', currency);
+                const amount = isCryptocurrency(currency) ? 'amount_crypto' : 'amount';
+                if (Defaults.get(amount)) $('#amount').val(Defaults.get(amount));
                 Price.processPriceRequest();
             });
         }
