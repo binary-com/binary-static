@@ -212,6 +212,8 @@ const PersonalDetails = (() => {
             // to update the State with latest get_settings data
             BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
                 getDetailsResponse(data.get_settings);
+                // update notification shown for set residence etc
+                Header.displayAccountStatus();
                 if (is_for_new_account) {
                     BinaryPjax.load(urlFor('user/accounts'));
                 }

@@ -9,9 +9,6 @@
 
 [% BLOCK social_icons %]
 <div class="gr-padding-10 gr-row">
-    [% IF is_centered %]
-    <div class="gr-2 gr-1-p gr-3-m"></div>
-    [% END %]
     [% FOREACH networks %]
         <a href="[% href %]" target="_blank" class="[% IF is_centered %]gr-2 gr-1-m[% ELSE %]gr-3[% END %] gr-no-gutter-right">
             <img class="responsive" src="[% request.url_for('images/pages/footer/' _ media _ '.svg') %]"/>
@@ -128,6 +125,7 @@
                         { media='facebook',    href='https://www.facebook.com/binarydotcom' },
                         { media='twitter',     href='https://twitter.com/Binarydotcom' },
                         { media='linkedin',    href='https://www.linkedin.com/company/binary-com' },
+                        { media='telegram',    href='https://t.me/joinchat/CROwo0OY4RGlx0xk2w78Aw' },
                     ] %]
                 </div>
             </div>

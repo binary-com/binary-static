@@ -135,13 +135,13 @@ const Header = (() => {
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    showUpgrade('user/accounts', `Upgrade to a ${toTitleCase(upgrade_info.type)} Account`);
+                    showUpgrade(upgrade_info.upgrade_link, `Upgrade to a ${toTitleCase(upgrade_info.type)} Account`);
                 } else {
                     $upgrade_msg.find('a').setVisibility(0).html('');
                 }
             } else if (show_upgrade_msg) {
                 $('#virtual-text').parent().setVisibility(0);
-                showUpgrade('user/accounts', 'Open a Financial Account');
+                showUpgrade(upgrade_info.upgrade_link, 'Open a Financial Account');
             } else {
                 $upgrade_msg.setVisibility(0);
             }
@@ -264,7 +264,7 @@ const Header = (() => {
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
                     get_account_status = State.getResponse('get_account_status') || {};
                     status = get_account_status.status;
-                    if (costarica_landing_company && +Client.get('balance') < 200) {
+                    if (costarica_landing_company && +Client.get('balance') < 4000) {
                         BinarySocket.wait('mt5_login_list').then((response) => {
                             if (response.mt5_login_list.length) {
                                 should_authenticate = true;
