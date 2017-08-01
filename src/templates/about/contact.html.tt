@@ -42,24 +42,24 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-t gr-12-p gr-12-m">
-                    <div class="gr-padding-10 gr-parent">
+                    <div class="gr-padding-10 gr-parent ja-hide">
                         [% l("Email: ") %]
                     </div>
                     <div class="gr-padding-10 gr-parent">
                         <span class="gr-row">
-                            <label class="gr-5">[% l("For general support:") %]</label>
+                            <label class="gr-5 ja-hide">[% l("For general support:") %]</label>
                             <label class="gr-7">[% "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'support@binary.com') %]</label>
                         </span>
                     </div>
-                    <div class="gr-padding-10">
+                    <div class="gr-padding-10 ja-hide">
                         <span class="gr-row">
                             <label class="gr-5">[% l("For payments-related queries:") %]</label>
                             <label class="gr-7"><a href="mailto:payments@binary.com">payments@binary.com</a></label>
                         </span>
                     </div>
                     <div class="gr-row inline-flex center-align ja-hide invisible" id="live-chat-container">
-                        <label class="gr-4">[% l("Live chat:") %]</label>
-                        <div class="gr-8"><span id="desk-link"></span></div>
+                        <label class="gr-5">[% l("Live chat:") %]</label>
+                        <div class="gr-7"><span id="desk-link"></span></div>
                     </div>
                 </div>
             </div>
