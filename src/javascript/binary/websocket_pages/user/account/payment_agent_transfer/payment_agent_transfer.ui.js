@@ -21,7 +21,7 @@ const PaymentAgentTransferUI = (() => {
 
     const hideConfirmation = () => { $confirm_transfer.setVisibility(0); };
 
-    const showConfirmation = () => { $confirm_transfer.find('.errorfield').setVisibility(0).end().setVisibility(1); };
+    const showConfirmation = () => { $confirm_transfer.find('#msg_form').setVisibility(0).end().setVisibility(1); };
 
     const hideDone = () => { $done_transfer.setVisibility(0); };
 
@@ -31,7 +31,7 @@ const PaymentAgentTransferUI = (() => {
 
     const showNotes = () => { $notes_transfer.setVisibility(1); };
 
-    const showTransferError = (err) => { $confirm_transfer.find('.errorfield').text(localize(err)).setVisibility(1); };
+    const showTransferError = (err) => { $confirm_transfer.find('#msg_form').text(localize(err)).setVisibility(1); };
 
     const updateFormView = (currency) => { $paymentagent_transfer.find('label[for="amount"]').text(`${localize('Amount')} ${currency}`); };
 
