@@ -13,6 +13,7 @@
                 <div class="gr-6 gr-12-t gr-12-p gr-12-m">
                     <div class="gr-padding-10 invisible ja-show gr-parent">
                         [% l("JAPAN ONLY CONTACT TEXT") %]
+                        <p>[% "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'support@binary.com') %]</p>
                     </div>
                     <div class="gr-padding-10 ja-hide gr-parent">
                         <div class="gr-row">
@@ -41,23 +42,23 @@
                         [% l("*All calls are recorded for training and monitoring purposes") %]
                     </div>
                 </div>
-                <div class="gr-6 gr-12-t gr-12-p gr-12-m">
-                    <div class="gr-padding-10 gr-parent ja-hide">
+                <div class="gr-6 gr-12-t gr-12-p gr-12-m ja-hide">
+                    <div class="gr-padding-10 gr-parent">
                         [% l("Email: ") %]
                     </div>
                     <div class="gr-padding-10 gr-parent">
                         <span class="gr-row">
-                            <label class="gr-5 ja-hide">[% l("For general support:") %]</label>
+                            <label class="gr-5">[% l("For general support:") %]</label>
                             <label class="gr-7">[% "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'support@binary.com') %]</label>
                         </span>
                     </div>
-                    <div class="gr-padding-10 ja-hide">
+                    <div class="gr-padding-10">
                         <span class="gr-row">
                             <label class="gr-5">[% l("For payments-related queries:") %]</label>
                             <label class="gr-7"><a href="mailto:payments@binary.com">payments@binary.com</a></label>
                         </span>
                     </div>
-                    <div class="gr-row inline-flex center-align ja-hide invisible" id="live-chat-container">
+                    <div class="gr-row inline-flex center-align invisible" id="live-chat-container">
                         <label class="gr-5">[% l("Live chat:") %]</label>
                         <div class="gr-7"><span id="desk-link"></span></div>
                     </div>
@@ -65,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="gr-padding-30">
+    <div class="gr-padding-30" id="company_addresses">
         <div class="gr-padding-20 center-text gr-parent">
             <h1>[% l("Company addresses") %]</h1>
         </div>
