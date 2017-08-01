@@ -30,7 +30,7 @@
             [% INCLUDE phone %]
         [% END %]
 
-        [% WRAPPER fieldset legend=l('Security') %]
+        [% WRAPPER fieldset legend=l('Security') class='security' %]
             [% PROCESS secret_question %]
             [% PROCESS secret_answer %]
         [% END %]
