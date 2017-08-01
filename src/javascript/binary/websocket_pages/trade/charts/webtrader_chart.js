@@ -1,3 +1,4 @@
+const MBDefaults       = require('../../mb_trade/mb_defaults');
 const getLanguage      = require('../../../base/language').get;
 const localize         = require('../../../base/localize').localize;
 const State            = require('../../../base/storage').State;
@@ -32,7 +33,11 @@ const WebtraderChart = (() => {
     const setChart = () => {
         const is_mb_trading = State.get('is_mb_trading');
         const new_underlying = is_mb_trading ? $('#underlying').attr('value') : document.getElementById('underlying').value;
-        if (($('#tab_graph').hasClass('active') || is_mb_trading) && (!chart || chart.data().instrumentCode !== new_underlying)) {
+        if (($('#tab_graph').hasClass('active') || is_mb_trading) &&
+            (!chart || chart.data().instrumentCode !== new_underlying ||
+                (is_mb_trading &&
+                    (getChartSettings().time_frame !== chart.data().timePeriod ||
+                    getChartSettings().chart_type !== chart.data().type)))) {
             cleanupChart();
             initChart();
         }
@@ -69,8 +74,8 @@ const WebtraderChart = (() => {
             instrumentCode    : $underlying_code,
             instrumentName    : $underlying_name,
             showInstrumentName: true,
-            timePeriod        : '1t',
-            type              : 'line',
+            timePeriod        : getChartSettings().time_frame,
+            type              : getChartSettings().chart_type,
             lang              : getLanguage().toLowerCase(),
             timezoneOffset    : (jpClient() ? -9 : 0) * 60,
             showShare         : !is_mb_trading,
@@ -82,6 +87,23 @@ const WebtraderChart = (() => {
         if (typeof getPropertyValue(chart, ['actions', 'reflow']) === 'function') {
             chart.actions.reflow();
         }
+    };
+
+    const getChartSettings = () => {
+        let chart_settings = { time_frame: '1t',  chart_type: 'line' };
+        if (State.get('is_mb_trading')) {
+            const period = MBDefaults.get('period').split('_')[2].substr(0, 2).toUpperCase();
+            const period_map = {
+                '5H': { time_frame: '1m',  chart_type: 'line' },
+                '0D': { time_frame: '30m', chart_type: 'ohlc' },
+                '1W': { time_frame: '1d',  chart_type: 'ohlc' },
+                '1M': { time_frame: '1d',  chart_type: 'candlestick' },
+                '3M': { time_frame: '1d',  chart_type: 'candlestick' },
+                '1Y': { time_frame: '1d',  chart_type: 'candlestick' },
+            };
+            chart_settings = period_map[period] || chart_settings;
+        }
+        return chart_settings;
     };
 
     return {
