@@ -58,6 +58,7 @@ const PaymentAgentTransfer = (() => {
             form_selector       : form_id,
             fnc_response_handler: responseHandler,
             fnc_additional_check: additionalCheck,
+            enable_button       : 1,
         });
 
         $('#amount').on('input change', function() {
