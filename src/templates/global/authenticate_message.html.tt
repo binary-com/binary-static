@@ -1,4 +1,4 @@
-[% support_link = "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'support@binary.com') %]
+[% support_link = "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'authentications@binary.com') %]
 <p>[% l('Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to [_1]:', support_link) %]</p>
 <ul class="checked">
     <li>[% l('Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth.') %]</li>
