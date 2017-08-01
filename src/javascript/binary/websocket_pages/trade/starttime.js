@@ -72,7 +72,7 @@ const StartDates = (() => {
                     }
 
                     a = moment(Math.ceil((+a) / rounding) * rounding).utc();
-                    day = a.format('ddd');
+                    day = a.format('ddd - DD MMM, YYYY');
                     $duplicated_option = $(fragment).find(`option:contains(${day})`);
                     duplicated_length = $duplicated_option.length;
                     if (duplicated_length && !new RegExp(localize('Session')).test($duplicated_option.text())) {

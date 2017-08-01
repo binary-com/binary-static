@@ -58,11 +58,17 @@ const checkInput = (type, wrong_val) => {
  * if yes, update the data-value. if no, return false.
  */
 const dateValueChanged = (element, type) => {
-    if (element.getAttribute('data-value') === element.value) {
+    let value;
+    if (element.selectedOptions) {
+        value = element.selectedOptions[0].getAttribute('data-value');
+    } else {
+        value = element.value;
+    }
+    if (element.getAttribute('data-value') === value) {
         return false;
     }
     if (element.getAttribute('type') === type) {
-        element.setAttribute('data-value', element.value);
+        element.setAttribute('data-value', value);
     }
     return true;
 };
