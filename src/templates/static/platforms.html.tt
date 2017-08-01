@@ -77,6 +77,25 @@
                     text=l("Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool.")
                     url='https://bot.binary.com' target='_blank' button_text=l("Try Binary Bot") %]
             </div>
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m gr-12-p">
+                    <div class="gr-12 gr-7-p gr-10-m">
+                        <img class="responsive" src="[% request.url_for('images/pages/platforms/trading-page.png') %]" />
+                    </div>
+                    <div class="gr-padding-30">
+                        <h3>[% l("Binary Ladders") %]</h3>
+                        <strong>[% l("Multi-barrier trading") %]</strong>
+                        <p>
+                            [% l("Explore a trading platform that complies with Japanese regulatory requirements.") %]
+                            <p>
+                                <a class="button" href="[% request.url_for('/multi_barriers_trading') %]">
+                                    <span>[% l("Trade Now") %]</span>
+                                </a>
+                            </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="platforms-comparison" class="invisible">
