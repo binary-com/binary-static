@@ -26,18 +26,18 @@ const FinancialAssessment = (() => {
             submitForm();
         });
 
-        BinarySocket.wait('get_financial_assessment').then((response) => {
-            handleForm(response);
+        BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
+            handleForm(response.get_financial_assessment);
         });
     };
 
     const handleForm = (response) => {
         if (!response) {
-            response = State.get(['response', 'get_financial_assessment']);
+            response = State.getResponse('get_financial_assessment');
         }
         hideLoadingImg(true);
 
-        financial_assessment = $.extend({}, response.get_financial_assessment);
+        financial_assessment = $.extend({}, response);
 
         if (isEmptyObject(financial_assessment)) {
             BinarySocket.wait('get_account_status').then((data) => {
@@ -93,7 +93,8 @@ const FinancialAssessment = (() => {
                     showFormMessage('Sorry, an error occurred while processing your request.', false);
                 } else {
                     showFormMessage('Your changes have been updated successfully.', true);
-                    BinarySocket.send({ get_financial_assessment: 1 }).then(() => {
+                    // need to remove financial_assessment_not_complete from status if any
+                    BinarySocket.send({ get_account_status: 1 }).then(() => {
                         Header.displayAccountStatus();
                     });
                 }

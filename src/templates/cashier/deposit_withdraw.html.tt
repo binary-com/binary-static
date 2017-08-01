@@ -7,7 +7,6 @@
     <div id="messages" class="invisible">
         <p id="cashier_locked_message">[% l('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', request.url_for('/user/security/cashier_passwordws')) %]</p>
         <p id="check_email_message">[% l('For added security, please check your email to retrieve the verification token.') %]</p>
-        <p id="choose_currency_message">[% l('Please choose which currency you would like to transact in.') %]</p>
         <p id="personal_details_message">
             [% l('There was a problem validating your personal details. Please update your [_1] <a href="[_2]">here</a>.', '[_1]', request.url_for('/user/settings/detailsws')) %]
             <br /> [% l('If you need assistance feel free to contact our <a href="[_1]">Customer Support</a>.', request.url_for('/contact')) %]
@@ -43,13 +42,6 @@
                 <button class="button" type="submit">[% l('Proceed') %]</button>
             </div>
         </div>
-    </form>
-
-    <form id="frm_currency" class="invisible">
-        [% WRAPPER fieldset %]
-            [% INCLUDE form_row label=l("Transact in") id='select_currency' type='select' %]
-            [% INCLUDE submit_button is_centered=1 type='submit' text=l("Continue") no_error=1 %]
-        [% END %]
     </form>
 
     <form id="frm_withdraw" class="invisible">

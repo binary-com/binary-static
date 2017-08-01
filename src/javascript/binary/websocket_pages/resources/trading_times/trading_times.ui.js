@@ -193,8 +193,10 @@ const TradingTimesUI = (() => {
             req.landing_company = 'japan';
         }
         if (should_request_active_symbols) {
-            BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
-                TradingTimesUI.setActiveSymbols(response);
+            BinarySocket.wait('authorize').then(() => {
+                BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
+                    TradingTimesUI.setActiveSymbols(response);
+                });
             });
         }
         BinarySocket.send({ trading_times: date || 'today' }).then((response) => {

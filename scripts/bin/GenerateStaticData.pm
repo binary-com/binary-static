@@ -9,26 +9,26 @@ use File::Slurp;
 use YAML::XS qw(LoadFile);
 # our module in lib
 use BS;
+use Term::ANSIColor;
 
 sub generate_data_files {
     my $js_path = shift;
 
     _make_nobody_dir($js_path);
-    print "\tGenerating $js_path/texts.js\n";
-    my $exports = <<'END_EXPORTS';
 
-module.exports = {
-    texts_json: texts_json,
-};
-END_EXPORTS
-
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts() . $exports);
+    print colored(['cyan'], "\tGenerating files:\n");
+    foreach my $language ((BS::all_languages(), 'ACH')) {
+        my $file = "$js_path/${\lc $language}.js";
+        printf "\t\t%-40s %5s", $file, "  .....  ";
+        File::Slurp::write_file($file, { binmode => ':utf8' }, _texts($language));
+        printf colored(['green'], "Done.\n");
+    }
     return;
 }
 
 sub _texts {
+    my $language = shift;
     my $js = "const texts_json = {};\n";
-    foreach my $language ((BS::all_languages(), 'ACH')) {
         BS::set_lang($language);
 
         my @texts;
@@ -323,10 +323,8 @@ sub _texts {
         push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Barrier at close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Barrier through close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Barrier through close on [_4].');
-        push @texts, localize('hour');
-        push @texts, localize('mins');
-        push @texts, localize('minute');
-        push @texts, localize('second');
+        push @texts, localize('M');
+        push @texts, localize('D');
         push @texts, localize('Higher');
         push @texts, localize('Lower');
         push @texts, localize('Touches');
@@ -339,9 +337,9 @@ sub _texts {
         push @texts, localize('Remaining time');
         push @texts, localize('Market is closed. Please try again later.');
         push @texts, localize('This symbol is not active. Please try another symbol.');
-        push @texts, localize('Connection error: Please check your internet connection.');
-        push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
         push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
+        push @texts, localize('Lots');
+        push @texts, localize('Payout per lot = 1,000');
         #strings for digit_info
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
@@ -490,12 +488,41 @@ sub _texts {
         push @texts, localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.');
+        push @texts, localize('Connection error: Please check your internet connection.');
+        push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
+        push @texts, localize('[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.');
         # browser-update message
         push @texts, localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]');
 
+        # binaryico message
+        push @texts, localize('Bid');
+        push @texts, localize('Closed Bid');
+        push @texts, localize('Cancel Bid');
+        push @texts, localize('Refund Bid');
+        push @texts, localize('Claim Tokens');
+        push @texts, localize('Ended');
+        push @texts, localize('The ICO auction is already closed.');
+
+        # strings for accounts page
+        push @texts, localize('Create');
+        push @texts, localize('Commodities');
+        push @texts, localize('Indices');
+        push @texts, localize('Stocks');
+        push @texts, localize('Volatility Indices');
+        push @texts, localize('Set Currency');
+        push @texts, localize('Please choose a currency');
+        push @texts, localize('Cryptocurrency');
+        push @texts, localize('Fiat Currency');
+        push @texts, localize('Create Account');
+        push @texts, localize('Accounts List');
+        push @texts, localize('[_1] Account');
+        push @texts, localize('Investment');
+        push @texts, localize('Gaming');
+        push @texts, localize('Virtual');
+        push @texts, localize('Real');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
-    }
 
     return $js;
 }

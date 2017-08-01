@@ -2,7 +2,6 @@ const getLanguage      = require('../base/language').get;
 const localize         = require('../base/localize').localize;
 const State            = require('../base/storage').State;
 const getPropertyValue = require('../base/utility').getPropertyValue;
-const getLoginToken    = require('../common_functions/common_functions').getLoginToken;
 const getAppId         = require('../../config').getAppId;
 const getSocketURL     = require('../../config').getSocketURL;
 
@@ -84,7 +83,7 @@ const BinarySocket = (() => {
     const isClose = () => !binary_socket || binary_socket.readyState === 2 || binary_socket.readyState === 3;
 
     const sendBufferedRequests = () => {
-        while (buffered_sends.length > 0) {
+        while (buffered_sends.length > 0 && is_available) {
             const req_obj = buffered_sends.shift();
             send(req_obj.request, req_obj.options);
         }
@@ -96,7 +95,7 @@ const BinarySocket = (() => {
         msg_types.forEach((msg_type) => {
             const last_response = State.get(['response', msg_type]);
             if (!last_response) {
-                if (msg_type !== 'authorize' || config.is_logged_in) {
+                if (msg_type !== 'authorize' || config.isLoggedIn()) {
                     waiting_list.add(msg_type, promise_obj);
                     is_resolved = false;
                 }
@@ -188,9 +187,9 @@ const BinarySocket = (() => {
         }
 
         binary_socket.onopen = () => {
-            const api_token = getLoginToken();
-            if (api_token && localStorage.getItem('client.tokens')) {
-                send({ authorize: api_token }, { forced: true });
+            clearTimeout(timeouts.connection_error);
+            if (config.isLoggedIn()) {
+                send({ authorize: config.getClientValue('token') }, { forced: true });
             } else {
                 sendBufferedRequests();
             }
@@ -201,6 +200,7 @@ const BinarySocket = (() => {
         };
 
         binary_socket.onmessage = (msg) => {
+            clearTimeout(timeouts.connection_error);
             const response = JSON.parse(msg.data);
             if (response) {
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
@@ -260,7 +260,9 @@ const BinarySocket = (() => {
 
             if (wrong_app_id !== getAppId()) {
                 if (isClose()) {
-                    config.notify(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
+                    timeouts.connection_error = setTimeout(() => {
+                        config.notify(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
+                    }, 5000);
                 }
                 if (typeof config.onDisconnect === 'function' && !is_disconnect_called) {
                     config.onDisconnect();

@@ -264,7 +264,7 @@
                                 </div>
                                 <div class="gr-6 gr-12-m">
                                     <h4>[% l("Global presence") %]</h4>
-                                    <p>[% l("Binary.com employs over 130 people across its offices in Malta, Malaysia, Japan, and Germany.") %]</p>
+                                    <p>[% l("Binary.com employs over 130 people across its offices in Malta, Malaysia and Japan.") %]</p>
                                 </div>
                             </div>
                         </div>
@@ -319,7 +319,7 @@
                         <div class="chart">
                             <h5 class="chart-heading chart-heading-left">[% l("Employees") %]</h5>
                             <img src="[% request.url_for('images/ico/images/nec_chart.svg') %]" />
-                            <p>[% l("We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in four countries: Malaysia, Malta, Japan, and Germany.") %]</p>
+                            <p>[% l("We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in three countries: Malaysia, Malta and Japan.") %]</p>
                         </div>
                     </div>
                     <div class="vertical-line"></div>

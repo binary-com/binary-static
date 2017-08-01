@@ -129,8 +129,10 @@ const AssetIndexUI = (() => {
 
     const sendRequest = () => {
         if (!active_symbols) {
-            BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
-                AssetIndexUI.setActiveSymbols(response);
+            BinarySocket.wait('authorize').then(() => {
+                BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
+                    AssetIndexUI.setActiveSymbols(response);
+                });
             });
         }
         BinarySocket.send({ asset_index: 1 }).then((response) => {

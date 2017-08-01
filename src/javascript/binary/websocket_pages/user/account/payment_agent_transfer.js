@@ -16,7 +16,7 @@ const PaymentAgentTransfer = (() => {
     const onLoad = () => {
         PaymentAgentTransferUI.initValues();
         BinarySocket.wait('get_settings', 'balance').then(() => {
-            is_authenticated_payment_agent = State.get(['response', 'get_settings', 'get_settings', 'is_authenticated_payment_agent']);
+            is_authenticated_payment_agent = State.getResponse('get_settings.is_authenticated_payment_agent');
             if (is_authenticated_payment_agent) {
                 init();
             } else {
@@ -29,7 +29,7 @@ const PaymentAgentTransfer = (() => {
         const form_id = '#frm_paymentagent_transfer';
         const $no_bal_err = $('#no_balance_error');
         const currency = Client.get('currency');
-        balance = State.get(['response', 'balance', 'balance', 'balance']);
+        balance = State.getResponse('balance.balance');
         $form_error = $('#form_error');
 
         if (!currency || +balance === 0) {

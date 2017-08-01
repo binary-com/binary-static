@@ -13,9 +13,7 @@
             [% WRAPPER tab_content id='tab_graph' %]
                 <p class="error-msg" id="chart-error"></p>
                 <div id="trade_live_chart">
-                    <table><tr><td>
-                        <iframe src="" width="100%" height="99%" id="chart_frame" style="overflow-y : hidden;" scrolling="no"></iframe>
-                    </td></tr></table>
+                    <div id="webtrader_chart"></div>
                 </div>
             [% END %]
             [% WRAPPER tab_content id='tab_portfolio' %][% PROCESS user/portfolio.html.tt %][% END %]

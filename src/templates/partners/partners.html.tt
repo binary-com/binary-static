@@ -37,4 +37,8 @@
         [% INCLUDE column url=request.url_for('security-testing') image='tester' header=l("Security Testing")
             text=l("Earn money for any verifiable errors that you find.") %]
     </div>
+    <div class="gr-row gr-clear">
+        [% INCLUDE column url=request.url_for('liquidity-solutions') image='liquidity-solutions' header=l("Liquidity solutions")
+            text=l("Access multi-asset liquidity from top-tier institutions.") %]
+    </div>
 </div>

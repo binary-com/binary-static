@@ -71,6 +71,7 @@ foreach my $m (@m) {
     my $layout   = $m->[2];
     my $title    = $m->[3];
     my $excludes = $m->[4];
+    my $only_ja  = $excludes and $excludes =~ /^NOT-ja,en$/;
 
     $index++;
 
@@ -104,6 +105,7 @@ foreach my $m (@m) {
             root_url        => root_url(),
             current_path    => $save_as,
             current_route   => $current_route,
+            only_ja         => $only_ja,
             affiliate_email => 'affiliates@binary.com',
             japan_docs_url  => 'https://japan-docs.binary.com'
         );
@@ -155,7 +157,7 @@ sub tt2_handle {
 
     my $request = $stash{request};
 
-    $stash{javascript}       = js_config();
+    $stash{javascript}       = js_config($dist_path);
     $stash{css_files}        = [css_files()];
     $stash{iso639a_language} = $request->language;
     $stash{lang}             = $request->language;

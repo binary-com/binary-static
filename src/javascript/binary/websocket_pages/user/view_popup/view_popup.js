@@ -122,7 +122,7 @@ const ViewPopup = (() => {
         const current_spot_time = !is_ended ? contract.current_spot_time : (user_sold ? '' : contract.exit_tick_time);
 
         if (current_spot) {
-            containerSetText('trade_details_current_spot', current_spot);
+            containerSetText('trade_details_current_spot', addComma(current_spot));
         } else {
             $('#trade_details_current_spot').parent().setVisibility(0);
         }

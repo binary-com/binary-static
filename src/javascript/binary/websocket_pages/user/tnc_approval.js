@@ -2,6 +2,7 @@ const BinarySocket       = require('../socket');
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const Header             = require('../../base/header');
+const State              = require('../../base/storage').State;
 const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
 const urlFor             = require('../../base/url').urlFor;
 const template           = require('../../base/utility').template;
@@ -14,7 +15,7 @@ const TNCApproval = (() => {
     };
 
     const display = () => {
-        const landing_company = Client.get('landing_company_fullname');
+        const landing_company = State.getResponse('authorize.landing_company_fullname');
         if (!landing_company) return;
 
         const $container = $('#tnc_container');

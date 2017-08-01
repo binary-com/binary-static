@@ -116,18 +116,9 @@
             </div>
 
             <form id="frm_new_account">
-                [% INCLUDE form_row type='label'  id='lbl_account_type' label=l("Account type") %]
-                [% INCLUDE form_row type='label'  id='lbl_email'        label=l("Email")        %]
-                [% INCLUDE form_row type='text'   id='txt_name'         label=l("Name")     attributes='maxlength="30" autocomplete="off"' %]
-                [% WRAPPER form_row type='select' id='ddl_leverage'     label=l("Leverage") row_class='invisible' %]
-                    <option value="1">1:1</option>
-                    <option value="50">1:50</option>
-                    <option value="100" selected="selected">1:100</option>
-                    <option value="200">1:200</option>
-                    <option value="300">1:300</option>
-                    <option value="500">1:500</option>
-                    <option value="1000">1:1000</option>
-                [% END %]
+                [% INCLUDE form_row type='label'    id='lbl_account_type'  label=l("Account type") %]
+                [% INCLUDE form_row type='label'    id='lbl_email'         label=l("Email")        %]
+                [% INCLUDE form_row type='text'     id='txt_name'          label=l("Name")     attributes='maxlength="30" autocomplete="off"' %]
                 [% INCLUDE form_row type='password' id='txt_main_pass'     label=l("Main password (trading access)")
                     hint=l("Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.") %]
                 [% INCLUDE form_row type='password' id='txt_re_main_pass'  label=l("Verify main password") %]

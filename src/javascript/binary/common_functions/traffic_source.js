@@ -1,5 +1,6 @@
 const Client        = require('../base/client');
 const CookieStorage = require('../base/storage').CookieStorage;
+const LocalStore    = require('../base/storage').LocalStore;
 const Url           = require('../base/url');
 
 /*
@@ -61,7 +62,7 @@ const TrafficSource = (() => {
 
         // Store gclid
         if (params.gclid && !Client.isLoggedIn()) {
-            Client.set('gclid', params.gclid);
+            LocalStore.set('gclid', params.gclid);
         }
 
         const doc_ref  = document.referrer;

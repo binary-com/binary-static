@@ -28,12 +28,6 @@
     }
 }
 
-iframe#chart_frame {
-    width: 1px;
-    min-width: 100%;
-    *width: 100%; /* stylelint-disable-line declaration-block-no-duplicate-properties */
-}
-
 .chart-delay {
     display: block;
     text-align: center;

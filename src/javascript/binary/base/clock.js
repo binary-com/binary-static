@@ -32,11 +32,11 @@ const Clock = (() => {
             time = moment.utc(gmt_time_str * 1000);
         } else if (gmt_time_str) {
             time = moment.utc(gmt_time_str, 'YYYY-MM-DD HH:mm:ss');
-        } else {
+        } else if (match) {
             time = moment.utc(match[0], 'YYYY-MM-DD HH:mm:ss');
         }
 
-        if (!time.isValid()) {
+        if (!time || !time.isValid()) {
             return null;
         }
 

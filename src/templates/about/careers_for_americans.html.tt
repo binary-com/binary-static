@@ -61,16 +61,11 @@
                 <div class="gr-padding-10"></div>
 
                 <div class="gr-row">
-                    [% INCLUDE info_box padding='6' header="Msida, Malta" text="An old scenic fishing village turned bustling university town, thanks to service and infrastructure developments spurred by the University of Malta." %]
-                    [% INCLUDE info_box padding='6' header="Berlin, Germany" text="Germany's capital is steeped in rich history. It is also a global city of cultural and technological significance with world-famous events and venues." %]
+                    [% INCLUDE info_box padding='4' header="Msida, Malta" text="An old scenic fishing village turned bustling university town, thanks to service and infrastructure developments spurred by the University of Malta." %]
+                    [% INCLUDE info_box padding='4' header="Cyberjaya, Malaysia" text="A high-tech green township that seamlessly blends modern infrastructure with acres of green spaces and facilities to give you the ultimate work-life balance." %]
+                    [% INCLUDE info_box padding='4' header="Kuala Lumpur, Malaysia" text="Malaysia's federal capital is a city of contrast and diversity, brimming with modern infrastructure, historical attractions, and a multicultural society." %]
                 </div>
 
-                <div class="gr-hide-m gr-padding-30"></div>
-
-                <div class="gr-row">
-                    [% INCLUDE info_box padding='6' header="Cyberjaya, Malaysia" text="A high-tech green township that seamlessly blends modern infrastructure with acres of green spaces and facilities to give you the ultimate work-life balance." %]
-                    [% INCLUDE info_box padding='6' header="Kuala Lumpur, Malaysia" text="Malaysia's federal capital is a city of contrast and diversity, brimming with modern infrastructure, historical attractions, and a multicultural society." %]
-                </div>
             </div>
             [% PROCESS about/careers_shared.html.tt %]
         </div>

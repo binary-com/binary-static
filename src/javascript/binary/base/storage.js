@@ -1,6 +1,21 @@
+const Cookies          = require('js-cookie');
 const getPropertyValue = require('./utility').getPropertyValue;
 const isEmptyObject    = require('./utility').isEmptyObject;
-const Cookies          = require('../../lib/js-cookie');
+
+const getObject = function(key) {
+    return JSON.parse(this.getItem(key) || '{}');
+};
+
+const setObject = function(key, value) {
+    if (value && value instanceof Object) {
+        this.setItem(key, JSON.stringify(value));
+    }
+};
+
+if (typeof Storage !== 'undefined') {
+    Storage.prototype.getObject = getObject;
+    Storage.prototype.setObject = setObject;
+}
 
 const isStorageSupported = (storage) => {
     if (typeof storage === 'undefined') {
@@ -19,6 +34,8 @@ const isStorageSupported = (storage) => {
 
 const Store = function(storage) {
     this.storage = storage;
+    this.storage.getObject = getObject;
+    this.storage.setObject = setObject;
 };
 
 Store.prototype = {
@@ -28,6 +45,18 @@ Store.prototype = {
     set: function(key, value) {
         if (typeof value !== 'undefined') {
             this.storage.setItem(key, value);
+        }
+    },
+    getObject: function (key) {
+        return typeof this.storage.getObject === 'function' ? // Prevent runtime error in IE
+            this.storage.getObject(key) :
+            JSON.parse(this.storage.getItem(key) || '{}');
+    },
+    setObject: function (key, value) {
+        if (typeof this.storage.setObject === 'function') { // Prevent runtime error in IE
+            this.storage.setObject(key, value);
+        } else {
+            this.storage.setItem(key, JSON.stringify(value));
         }
     },
     remove: function(key) { this.storage.removeItem(key); },
@@ -61,6 +90,20 @@ InScriptStore.prototype = {
 };
 
 const State = new InScriptStore();
+State.prototype = InScriptStore.prototype;
+/**
+ * Shorthand function to get values from response object of State
+ *
+ * @param {String} path
+ *     e.g. getResponse('authorize.currency') == get(['response', 'authorize', 'authorize', 'currency'])
+ */
+State.prototype.getResponse = function(path) {
+    if (typeof path === 'string') {
+        const keys = path.split('.');
+        path = ['response', keys[0]].concat(keys);
+    }
+    return this.get(path);
+};
 State.set('response', {});
 
 const CookieStorage = function(cookie_name, cookie_domain) {
@@ -134,8 +177,6 @@ if (!SessionStore) {
 
 module.exports = {
     isStorageSupported: isStorageSupported,
-    Store             : Store,
-    InScriptStore     : InScriptStore,
     CookieStorage     : CookieStorage,
     State             : State,
     SessionStore      : SessionStore,

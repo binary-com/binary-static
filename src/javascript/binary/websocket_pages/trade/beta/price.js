@@ -168,8 +168,7 @@ const Price_Beta = (() => {
             elementTextContent(h4, display_type);
         }
 
-        const setData = (data) => {
-            if (!data) return;
+        const setData = (data = {}) => {
             if (data.display_value) {
                 $('.stake:hidden').show();
                 elementTextContent(stake, `${localize('Stake')}: `);
@@ -197,7 +196,7 @@ const Price_Beta = (() => {
         if (details.error) {
             purchase.hide();
             comment.hide();
-            setData(details.error.details);
+            setData();
             error.show();
             elementTextContent(error, details.error.message);
         } else {

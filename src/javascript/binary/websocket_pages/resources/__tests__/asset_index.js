@@ -1,5 +1,5 @@
 const asset_index = require('../asset_index');
-const { api, expect } = require('../../../common_functions/tests');
+const { api, expect } = require('../../../base/__tests__/tests_common');
 
 describe('Asset Index', () => {
     let asset_index_res,

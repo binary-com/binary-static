@@ -1,6 +1,6 @@
 const deep = require('deep-diff'); // eslint-disable-line import/no-extraneous-dependencies
 const activeSymbols = require('../active_symbols');
-const { api, expect } = require('../../common_functions/tests');
+const { api, expect } = require('../../base/__tests__/tests_common');
 
 /*
     There is a market called forex, which has a submarket called major_pairs, which has a symbol called frxEURUSD

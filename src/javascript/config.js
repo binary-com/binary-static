@@ -1,4 +1,4 @@
-const Cookies = require('./lib/js-cookie');
+const Cookies = require('js-cookie');
 
 /*
  * Configuration values needed in js codes
@@ -16,7 +16,7 @@ const getAppId = () => (
 const getSocketURL = () => {
     let server_url = window.localStorage.getItem('config.server_url');
     if (!server_url) {
-        const loginid = Cookies.get('loginid'),
+        const loginid = window.localStorage.getItem('active_loginid'),
             isReal  = loginid && !/^VRT/.test(loginid),
             toGreenPercent = { real: 100, virtual: 0, logged_out: 0 }, // default percentage
             categoryMap    = ['real', 'virtual', 'logged_out'],

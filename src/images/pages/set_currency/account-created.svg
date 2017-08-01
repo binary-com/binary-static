@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="94px" height="84px" viewBox="0 0 94 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>ic-account-created</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="128" height="128"></rect>
+        <circle id="path-2" cx="64" cy="40" r="16"></circle>
+        <path d="M30.5880917,78 C37.7430236,67.1555512 50.0358775,60 64,60 C77.9641225,60 90.2569764,67.1555512 97.4119083,78 C90.2569764,88.8444488 77.9641225,96 64,96 C50.0358775,96 37.7430236,88.8444488 30.5880917,78 Z" id="path-3"></path>
+        <circle id="path-4" cx="96" cy="80" r="24"></circle>
+        <filter x="-12.5%" y="-12.5%" width="125.0%" height="125.0%" filterUnits="objectBoundingBox" id="filter-5">
+            <feMorphology radius="2" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="SourceAlpha" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Flows-to-create-CR" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4-Choose-Currency-(Combine-Version)" transform="translate(-607.000000, -162.000000)">
+            <g id="Group-10" transform="translate(305.000000, 138.000000)">
+                <g id="Group-7" transform="translate(158.000000, 0.000000)">
+                    <g id="ic-account-created" transform="translate(114.000000, 0.000000)">
+                        <g id="Rectangle-2" opacity="0">
+                            <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <rect stroke="#979797" stroke-width="4" x="2" y="2" width="124" height="124"></rect>
+                        </g>
+                        <g id="Oval">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                            <circle stroke="#2A3052" stroke-width="3" cx="64" cy="40" r="14.5"></circle>
+                        </g>
+                        <g id="Combined-Shape">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                            <path stroke="#2A3052" stroke-width="3" d="M32.4004851,78 C39.5436458,88.2450948 51.2387793,94.5 64,94.5 C76.7612207,94.5 88.4563542,88.2450948 95.5995149,78 C88.4563542,67.7549052 76.7612207,61.5 64,61.5 C51.2387793,61.5 39.5436458,67.7549052 32.4004851,78 Z"></path>
+                        </g>
+                        <g id="Oval-Copy-3">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                            <circle stroke="#2A3052" stroke-width="3" cx="96" cy="80" r="22.5"></circle>
+                        </g>
+                        <polyline id="Path-2" stroke="#E98024" stroke-width="3" points="84 80 88 84 92.0088735 88 108.008873 72"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

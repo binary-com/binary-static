@@ -1,3 +1,4 @@
+const Cookies           = require('js-cookie');
 const Client            = require('./client');
 const Contents          = require('./contents');
 const Crowdin           = require('./crowdin');
@@ -7,7 +8,6 @@ const Localize          = require('./localize');
 const localize          = require('./localize').localize;
 const Login             = require('./login');
 const Menu              = require('./menu');
-const LocalStore        = require('./storage').LocalStore;
 const State             = require('./storage').State;
 const Url               = require('./url');
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
@@ -16,7 +16,6 @@ const TrafficSource     = require('../common_functions/traffic_source');
 const BinarySocket      = require('../websocket_pages/socket');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
 const AffiliatePopup    = require('../../binary_japan/affiliate_popup');
-const Cookies           = require('../../lib/js-cookie');
 const PushNotification  = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
@@ -45,12 +44,9 @@ const Page = (() => {
         $(document).ready(() => {
             // Cookies is not always available.
             // So, fall back to a more basic solution.
-            let match = document.cookie.match(/\bloginid=(\w+)/);
-            match = match ? match[1] : '';
             $(window).on('storage', (jq_event) => {
                 switch (jq_event.originalEvent.key) {
                     case 'active_loginid':
-                        if (jq_event.originalEvent.newValue === match) return;
                         if (jq_event.originalEvent.newValue === '') {
                             // logged out
                             reload();
@@ -68,7 +64,6 @@ const Page = (() => {
                 }
             });
             scrollToTop();
-            LocalStore.set('active_loginid', match);
         });
     };
 
@@ -77,6 +72,9 @@ const Page = (() => {
             Url.reset();
         } else {
             init();
+            if (!Login.isLoginPages()) {
+                Language.setCookie(Language.urlLang());
+            }
             Localize.forLang(Language.urlLang());
             Header.onLoad();
             Language.setCookie();

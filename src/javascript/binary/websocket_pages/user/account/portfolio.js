@@ -18,6 +18,7 @@ const Portfolio = (() => {
             longcode      : typeof module !== 'undefined' ?
                 c.longcode : (jpClient() ?
                     toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode),
+            shortcode: c.shortcode,
             currency : c.currency,
             buy_price: c.buy_price,
             app_id   : c.app_id,

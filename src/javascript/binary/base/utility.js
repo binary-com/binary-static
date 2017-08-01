@@ -63,7 +63,7 @@ const isEmptyObject = (obj) => {
     return is_empty;
 };
 
-const cloneObject = obj => (!isEmptyObject(obj) ? $.extend({}, obj) : obj);
+const cloneObject = obj => (!isEmptyObject(obj) ? $.extend(true, Array.isArray(obj) ? [] : {}, obj) : obj);
 
 const getPropertyValue = (obj, keys) => {
     if (!Array.isArray(keys)) keys = [keys];

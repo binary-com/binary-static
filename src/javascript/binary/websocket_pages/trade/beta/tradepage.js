@@ -1,19 +1,19 @@
-const TradingAnalysis_Beta      = require('./analysis');
-const TradingEvents_Beta        = require('./event');
-const Price_Beta                = require('./price');
-const Process_Beta              = require('./process');
-const commonTrading             = require('../common');
-const chartFrameCleanup         = require('../charts/chart_frame').chartFrameCleanup;
-const displayCurrencies         = require('../currency');
-const Defaults                  = require('../defaults');
-const BinarySocket              = require('../../socket');
-const PortfolioInit             = require('../../user/account/portfolio/portfolio.init');
-const ViewPopup                 = require('../../user/view_popup/view_popup');
-const BinaryPjax                = require('../../../base/binary_pjax');
-const State                     = require('../../../base/storage').State;
-const jpClient                  = require('../../../common_functions/country_base').jpClient;
-const Guide                     = require('../../../common_functions/guide');
-const ResizeSensor              = require('../../../../lib/resize-sensor');
+const TradingAnalysis_Beta = require('./analysis');
+const TradingEvents_Beta   = require('./event');
+const Price_Beta           = require('./price');
+const Process_Beta         = require('./process');
+const commonTrading        = require('../common');
+const cleanupChart         = require('../charts/webtrader_chart').cleanupChart;
+const displayCurrencies    = require('../currency');
+const Defaults             = require('../defaults');
+const BinarySocket         = require('../../socket');
+const PortfolioInit        = require('../../user/account/portfolio/portfolio.init');
+const ViewPopup            = require('../../user/view_popup/view_popup');
+const BinaryPjax           = require('../../../base/binary_pjax');
+const State                = require('../../../base/storage').State;
+const jpClient             = require('../../../common_functions/country_base').jpClient;
+const Guide                = require('../../../common_functions/guide');
+const ResizeSensor         = require('../../../../lib/resize-sensor');
 
 const TradePage_Beta = (() => {
     'use strict';
@@ -172,7 +172,7 @@ const TradePage_Beta = (() => {
         BinarySocket.clear();
         Defaults.clear();
         PortfolioInit.onUnload();
-        chartFrameCleanup();
+        cleanupChart();
         commonTrading.clean();
         BinarySocket.clear('active_symbols');
     };
@@ -180,7 +180,7 @@ const TradePage_Beta = (() => {
     const onDisconnect = () => {
         commonTrading.showPriceOverlay();
         commonTrading.showFormOverlay();
-        chartFrameCleanup();
+        cleanupChart();
         onLoad();
     };
 

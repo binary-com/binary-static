@@ -1,5 +1,5 @@
 const Defaults       = require('./defaults');
-const Client         = require('../../base/client');
+const State          = require('../../base/storage').State;
 const formatCurrency = require('../../common_functions/currency').formatCurrency;
 
 /*
@@ -13,7 +13,7 @@ const displayCurrencies = () => {
 
     const target = document.getElementById('currency');
     const fragment = document.createDocumentFragment();
-    const currencies = Client.get('currencies').split(',');
+    const currencies = State.getResponse('payout_currencies');
 
     if (!target) {
         return;

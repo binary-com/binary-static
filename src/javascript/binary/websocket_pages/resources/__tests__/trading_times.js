@@ -1,5 +1,5 @@
 const trading_times = require('../trading_times');
-const { api, expect } = require('../../../common_functions/tests');
+const { api, expect } = require('../../../base/__tests__/tests_common');
 
 describe('Trading Times', () => {
     let trading_times_res,

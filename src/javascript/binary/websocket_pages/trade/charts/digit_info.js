@@ -1,8 +1,7 @@
-const Highcharts   = require('highcharts');
 const Symbols      = require('../symbols');
 const BinarySocket = require('../../socket');
 const localize     = require('../../../base/localize').localize;
-require('highcharts/modules/exporting')(Highcharts);
+const getHighstock = require('../../../common_functions/common_functions').requireHighstock;
 
 const DigitInfo = (() => {
     'use strict';
@@ -149,35 +148,37 @@ const DigitInfo = (() => {
     };
 
     const showChart = (underlying, underlying_spots) => {
-        if (typeof underlying_spots === 'undefined' || underlying_spots.length <= 0) {
-            console.log('Unexpected error occured in the charts.');
-            return;
-        }
-        const dec = underlying_spots[0].split('.')[1].length;
-        for (let i = 0; i < underlying_spots.length; i++) {
-            const val = parseFloat(underlying_spots[i]).toFixed(dec);
-            underlying_spots[i] = val.substr(val.length - 1);
-        }
-
-        const getTitle = () => (
-            {
-                text: localize($('#last_digit_title').html(), [underlying_spots.length, $('#digit_underlying option:selected').text()]),
+        getHighstock((Highcharts) => {
+            if (typeof underlying_spots === 'undefined' || underlying_spots.length <= 0) {
+                console.log('Unexpected error occured in the charts.');
+                return;
             }
-        );
+            const dec = underlying_spots[0].split('.')[1].length;
+            for (let i = 0; i < underlying_spots.length; i++) {
+                const val = parseFloat(underlying_spots[i]).toFixed(dec);
+                underlying_spots[i] = val.substr(val.length - 1);
+            }
 
-        spots = underlying_spots;
-        if (chart && $('#last_digit_histo').html()) {
-            chart.xAxis[0].update({ title: getTitle() }, true);
-            chart.series[0].name = underlying;
-        } else {
-            addContent(underlying); // this creates #last_digit_title
-            chart_config.xAxis.title = getTitle();
-            chart = new Highcharts.Chart(chart_config);
-            chart.addSeries({ name: underlying, data: [] });
-            onLatest();
-            stream_id = null;
-        }
-        update();
+            const getTitle = () => (
+                {
+                    text: localize($('#last_digit_title').html(), [underlying_spots.length, $('#digit_underlying option:selected').text()]),
+                }
+            );
+
+            spots = underlying_spots;
+            if (chart && $('#last_digit_histo').html()) {
+                chart.xAxis[0].update({ title: getTitle() }, true);
+                chart.series[0].name = underlying;
+            } else {
+                addContent(underlying); // this creates #last_digit_title
+                chart_config.xAxis.title = getTitle();
+                chart = new Highcharts.Chart(chart_config);
+                chart.addSeries({ name: underlying, data: [] });
+                onLatest();
+                stream_id = null;
+            }
+            update();
+        });
     };
 
     const update = (symbol, latest_spot) => {

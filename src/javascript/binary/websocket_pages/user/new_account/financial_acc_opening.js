@@ -2,7 +2,6 @@ const moment             = require('moment');
 const BinarySocket       = require('../../socket');
 const BinaryPjax         = require('../../../base/binary_pjax');
 const Client             = require('../../../base/client');
-const State              = require('../../../base/storage').State;
 const defaultRedirectUrl = require('../../../base/url').defaultRedirectUrl;
 const isEmptyObject      = require('../../../base/utility').isEmptyObject;
 const AccountOpening     = require('../../../common_functions/account_opening');
@@ -15,26 +14,12 @@ const FinancialAccOpening = (() => {
     const form_id = '#financial-form';
 
     const onLoad = () => {
-        State.set('is_financial_opening', 1);
-        if (Client.get('has_financial') || !Client.get('residence')) {
-            BinaryPjax.load('trading');
+        if (Client.hasAccountType('financial') || !Client.get('residence')) {
+            BinaryPjax.load(defaultRedirectUrl());
             return;
-        } else if (Client.get('has_gaming')) {
+        } else if (Client.hasAccountType('gaming')) {
             $('.security').hide();
         }
-
-        BinarySocket.wait('landing_company').then((response) => {
-            const landing_company = response.landing_company;
-            if (Client.get('is_virtual')) {
-                if (Client.canUpgradeVirtualToJapan(landing_company)) {
-                    BinaryPjax.load('new_account/japanws');
-                } else if (!Client.canUpgradeVirtualToFinancial(landing_company)) {
-                    BinaryPjax.load('new_account/realws');
-                }
-            } else if (!Client.canUpgradeGamingToFinancial(landing_company)) {
-                BinaryPjax.load(defaultRedirectUrl());
-            }
-        });
 
         if (AccountOpening.redirectAccount()) return;
         AccountOpening.populateForm(form_id, getValidations);
@@ -101,13 +86,8 @@ const FinancialAccOpening = (() => {
         }
     };
 
-    const onUnload = () => {
-        State.set('is_financial_opening', 0);
-    };
-
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad: onLoad,
     };
 })();
 
