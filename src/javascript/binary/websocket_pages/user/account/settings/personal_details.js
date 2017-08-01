@@ -283,7 +283,7 @@ const PersonalDetails = (() => {
             $field.empty();
 
             if (states && states.length > 0) {
-                $field.append($('<option/>', { value: '', text: localize('Please select') }));
+                $field.append($('<option/>', { text: localize('Please select') }));
                 states.forEach((state) => {
                     $field.append($('<option/>', { value: state.value, text: state.text }));
                 });
