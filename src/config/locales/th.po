@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-23 23:49-0400\n"
+"PO-Revision-Date: 2017-07-31 22:25-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -534,6 +534,9 @@ msgstr ""
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "ตัวแทนรับชำระเงินเป็นเหมือนตัวกลางแลกเปลี่ยนระหว่างลูกค้าและ %1 ตัวแทนรับชำระเงินอำนวยความสะดวกในการฝากเงินและถอนเงินให้กับลูกค้าที่ปรารถนาจะใช้ช่องทางเงินสดอิเล็กทรอนิกส์ หรือ สกุลเงินท้องถิ่น ที่ไม่ได้บริการโดย %1 โดยค่าธรรมเนียมการโอนเงินรับผิดชอบโดยลูกค้าผู้ทำธุรกรรม"
 
+msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
+msgstr ""
+
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
 msgstr "การซื้อขาย Stays Between จะชำระเงิน หากตลาดมีค่าอยู่ระหว่าง (ไม่แตะเส้น) ทั้ง ค่า Barrier สูง หรือ ค่า Barrier ต่ำ ณ เวลาใดๆ ระหว่างช่วงเวลาที่ผู้ทำการซื้อขาย การซื้อขาย Goes Outside จะชำระเงิน หากตลาดแตะค่าใดค่าหนึ่ง ไม่ว่าจะเป็น ค่า Barrier สูง หรือ ค่า Barrier ต่ำ ณ เวลาใดๆ ระหว่างช่วงเวลาที่ผู้ทำการซื้อขาย"
 
@@ -740,6 +743,9 @@ msgstr "การบริหารบัญชีและรายละเอ
 msgid "Account Opening"
 msgstr "การเปิดบัญชี"
 
+msgid "Account Opening Reason"
+msgstr ""
+
 msgid "Account Password"
 msgstr "รหัสผ่านของบัญชี"
 
@@ -781,6 +787,9 @@ msgstr "บัญชีของเดบิตคงเหลือ (เช่�
 
 msgid "Accounts with debit balances are required to settle the full amount immediately by making a payment to us."
 msgstr "บัญชีที่มียอดเดบิตคงเหลือจะต้องชำระเงินทั้งจำนวนทันทีโดยดำเนินการชำระเงินให้เรา"
+
+msgid "Accumulation of Income/Savings"
+msgstr ""
 
 msgid "Accuracy of Information"
 msgstr "ความแม่นยำของข้อมูล"
@@ -1673,6 +1682,9 @@ msgstr "งาน"
 msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
 msgstr ""
 
+msgid "Cash Business"
+msgstr ""
+
 msgid "Cash Indices"
 msgstr "ดัชนีเงินสกุลต่างๆ"
 
@@ -1966,6 +1978,9 @@ msgstr "ประสบการณ์ในการซื้อขายสิ
 
 msgid "Commodities trading frequency"
 msgstr "ความถี่ในการซื้อขายสินค้าโภคภัณฑ์"
+
+msgid "Company Ownership"
+msgstr ""
 
 msgid "Company addresses"
 msgstr "ที่อยู่บริษัท"
@@ -2474,6 +2489,9 @@ msgstr ""
 msgid "Dividends paid out"
 msgstr ""
 
+msgid "Divorce Settlement"
+msgstr ""
+
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "ฉันต้องฝากเงินเพื่อเปิดบัญชีหรือไม่?"
 
@@ -2684,11 +2702,17 @@ msgstr "โปรดส่งเอกสารของท่านให้เ
 msgid "Email: "
 msgstr "อีเมล์: "
 
+msgid "Employed"
+msgstr ""
+
 msgid "Employee handbook"
 msgstr "คู่มือพนักงาน"
 
 msgid "Employees"
 msgstr "พนักงาน"
+
+msgid "Employment Status"
+msgstr ""
 
 msgid "End Time"
 msgstr "เวลาสิ้นสุด"
@@ -3999,6 +4023,9 @@ msgstr "สารสนเทศเกี่ยวกับข้อมูลน
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "ข้อมูลของการดำเนินงานก่อนหน้านี้ของผลิตภัณฑ์อ้างอิง หรือ สินทรัพย์ใดๆ ไม่ได้รับประกันผลงานในปัจจุบัน และ/หรือ อนาคต ผลการดำเนินงานในอดีตไม่ได้เป็นตัวบ่งชี้การดำเนินงานในอนาคต"
 
+msgid "Inheritance"
+msgstr ""
+
 msgid "Instant access"
 msgstr "เข้าถึงได้ทันที"
 
@@ -4061,6 +4088,9 @@ msgstr ""
 
 msgid "Investment Account"
 msgstr "บัญชีเพื่อการลงทุน"
+
+msgid "Investment Income"
+msgstr ""
 
 msgid "Investment Products to EEA Residents are provided by Binary Investments (Europe) Ltd (\"BIEL\") which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
 msgstr "Binary Investments (Europe) Ltd (\"BIEL\") ให้บริการผลิตภัณฑ์การลงทุนกับประชาชน EEA ซึ่งได้รับการรับรองโดย Malta Financial Services Authority ภายใต้พระราชบัญญัติ Malta Investment Services เกี่ยวกับผลิตภัณฑ์การลงทุน"
@@ -5859,6 +5889,9 @@ msgstr ""
 msgid "Pension"
 msgstr "บำนาญ"
 
+msgid "Pensioner"
+msgstr ""
+
 msgid "Percentage"
 msgstr "ร้อยละ"
 
@@ -6052,6 +6085,9 @@ msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%
 msgstr "โปรดตั้งค่าวงเงินการซื้อขาย 30 วันของท่านจาก %1ตัวเลือกพักการซื้อขาย%2 เพื่อลบวงเงินการฝากเงิน"
 
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
+msgstr ""
+
+msgid "Please set your account opening reason before proceeding."
 msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -6648,6 +6684,9 @@ msgstr "วันที่ขาย"
 msgid "Sale Price"
 msgstr "ราคาขาย"
 
+msgid "Sale of Property"
+msgstr ""
+
 msgid "Saturday"
 msgstr "วันเสาร์"
 
@@ -6959,6 +6998,9 @@ msgstr "ขออภัยค่ะ ท่านป้อนรหัสผ่�
 
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "ขออภัย บัญชีของท่านไม่ได้รับอนุญาตในการซื้อสัญญาเพิ่ม"
+
+msgid "Source of Wealth"
+msgstr ""
 
 msgid "South Africa 40 Cash Index"
 msgstr "ดัชนีเงิน South Africa 40"
@@ -8912,6 +8954,9 @@ msgstr "โปรแกรมพันธมิตรของ %1 คืออ�
 msgid "What is the definition of a 'client'?"
 msgstr "นิยามของ 'ลูกค้า' คืออะไร?"
 
+msgid "What is this?"
+msgstr ""
+
 msgid "What marketing tools do you offer?"
 msgstr "เครื่องมือทางการตลาดมีอะไรบ้าง?"
 
@@ -9314,7 +9359,7 @@ msgstr "ท่านได้ถอน %1 %2 หรือเทียบเท�
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "ท่านได้ถอน %1 %2 หรือเทียบเท่า"
 
-msgid "You have created all accounts available for you."
+msgid "You have created all accounts available to you."
 msgstr ""
 
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
@@ -9557,7 +9602,7 @@ msgstr ""
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "ลูกค้าของท่านจะได้รับอีเมล์แจ้งให้ทราบว่า การโอนได้ถูกดำเนินการแล้ว"
 
-msgid "Your Existings Accounts"
+msgid "Your Existing Accounts"
 msgstr ""
 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
