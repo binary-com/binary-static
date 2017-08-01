@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-30 21:07-0400\n"
+"PO-Revision-Date: 2017-07-31 22:26-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -534,6 +534,9 @@ msgstr "Eine PEP ist eine Einzelperson, die mit einem wichtigen, öffentlichen A
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Ein Zahlungsagent handelt als ein Mittler zwischen dem Kunden (das heißt, unserem Kunden) und %1. Der Zahlungsagent führt für Kunden, die eine besondere e-Cash Methode oder nationale Währung verweden, die nicht von %1 angebotet wird, Einzahlungen und Abhebungen durch. Die Überweisungsgebühren werden vom Kunden getragen."
 
+msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
+msgstr "Eine politisch exponierte Person (PEP) ist eine Person, die mit einem wichtigen öffentlichen Amt anvertraut worden ist oder war, einschließlich seiner/ihrer unmittelbaren Familienangehörigen oder Personen, die bekanntermaßen nahe stehende Personen sind, bezieht sich jedoch nicht auf Beamte mittleren Ranges oder Junior-Beamte. Zu solchen Personen gehören Staatschefs, Minister, parlamentarische Sekretäre, Parlamentarier, Richter, Botschafter, Senior Regierungsbeamte, hochrangige Offiziere in der Armee, Prüfungsausschüsse der Vorstände von Zentralbanken und Direktoren der staatlichen Unternehmen. Die \"Familienmitglieder\" von den obigen Beispielen werden auch als PEP betrachtet, wozu der Ehepartner/Partner, Eltern und Kinder gehören. Darüber hinaus zählen zu den \"Personen, die als nahestehende Personen” der PEP bekannt sind, deren Geschäftspartner, die ebenfalls als solche betrachtet werden. In der Regel gilt, dass eine Person die als PEP betrachtet wird, aber aufgehört hat, mit einem wichtigen öffentlichen Amt, für einen Zeitraum von mindestens zwölf Monaten, betraut zu sein, sich nicht mehr als PEP qualifiziert."
+
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
 msgstr "Ein Bleibt-Zwischen-Kontrakt wird ausgezahlt, wenn der Kurs in der Zeitspanne, die vom Händler ausgewählt wurde, zwischen dem oberen UND unteren Schwellenwert bleibt (diesen aber nicht erreicht). Ein Übersteigt-Kontrakt wird ausgezahlt, wenn der Kurs während der vom Händler ausgewählten Zeitspanne ENTWEDER den oberen oder unteren Schwellenwert über- bzw. untersteigt."
 
@@ -779,6 +782,9 @@ msgstr "Konten mit Schuldsaldo (d.h. Kreditengagement bis %1)"
 
 msgid "Accounts with debit balances are required to settle the full amount immediately by making a payment to us."
 msgstr "Konten mit Schuldensalden sind dazu angehalten, den gesamten Betrag sofort, mittels Zahlung an uns, zu begleichen."
+
+msgid "Accumulation of Income/Savings"
+msgstr "Ansammlung von Einnahmen/Einsparungen"
 
 msgid "Accuracy of Information"
 msgstr "Genauigkeit der Daten"
@@ -1671,6 +1677,9 @@ msgstr "Karrieren"
 msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
 msgstr "Ein sorgfältig ausgesuchtes Netzwerk von Liquiditätsanbietern ermöglicht es uns, enge Spreads und wettbewerbsfähige Margen an Einzelhandels- und institutionelle Kunden weiterzugeben"
 
+msgid "Cash Business"
+msgstr "Cash-Geschäft"
+
 msgid "Cash Indices"
 msgstr "Cash Indizes"
 
@@ -1964,6 +1973,9 @@ msgstr "Rohstoff Handelserfahrung"
 
 msgid "Commodities trading frequency"
 msgstr "Rohstoffe Handelshäufigkeit"
+
+msgid "Company Ownership"
+msgstr "Firmeneigentum"
 
 msgid "Company addresses"
 msgstr "Firmenanschriften"
@@ -2473,6 +2485,9 @@ msgstr "Die Verteilung von Dividenden wird auf der Binary.com Website bekannt ge
 msgid "Dividends paid out"
 msgstr "Ausgezahlte Dividenden"
 
+msgid "Divorce Settlement"
+msgstr "Scheidungsvereinbarung"
+
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "Muss ich, um ein Konto zu eröffnen, Geld einzahlen?"
 
@@ -2683,11 +2698,17 @@ msgstr "Senden Sie uns Ihre Ausweispapiere per E-Mail"
 msgid "Email: "
 msgstr "E-Mail:"
 
+msgid "Employed"
+msgstr "Beschäftigt"
+
 msgid "Employee handbook"
 msgstr "Mitarbeiter-Handbuch"
 
 msgid "Employees"
 msgstr "Mitarbeiter"
+
+msgid "Employment Status"
+msgstr "Beschäftigungsstatus"
 
 msgid "End Time"
 msgstr "Endzeit"
@@ -3997,6 +4018,9 @@ msgstr "Informationen zu den Daten-Feeds, die von unserem Unternehmen verwendet 
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "Die Informationen über die frühere Performance eines zugrundeliegenden Instruments oder einer Anlage garantiert nicht ihre aktuelle und/oder zukünftige Performance. Die Performance aus der Vergangenheit ist kein zuverlässiger Indikator für zukünftige Ergebnisse."
 
+msgid "Inheritance"
+msgstr "Vererbung"
+
 msgid "Instant access"
 msgstr "Sofortiger Zugriff"
 
@@ -4059,6 +4083,9 @@ msgstr "Investition"
 
 msgid "Investment Account"
 msgstr "Investmentkonto"
+
+msgid "Investment Income"
+msgstr "Erträge aus Kapitalanlagen"
 
 msgid "Investment Products to EEA Residents are provided by Binary Investments (Europe) Ltd (\"BIEL\") which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
 msgstr "Die Investmentprodukte für Bewohner des europäischen Wirtschaftsraums werden von Binary Investments (Europe) Ltd (\"BIEL\") angeboten, die von der Maltesischen Finanzdienstleistungsaufsichtsbehörde nach dem Maltesischen Anlagedienstleistungsgesetz genehmigt und beaufsichtigt ist, um Anlageprodukte auf eigene Rechnung zu handeln."
@@ -5857,6 +5884,9 @@ msgstr "Auszahlung pro Lot = 1.000"
 msgid "Pension"
 msgstr "Rente/Pension"
 
+msgid "Pensioner"
+msgstr "Pensionist"
+
 msgid "Percentage"
 msgstr "Prozentsatz"
 
@@ -6649,6 +6679,9 @@ msgstr "Verkaufsdatum"
 msgid "Sale Price"
 msgstr "Verkaufskurs"
 
+msgid "Sale of Property"
+msgstr "Verkauf von Immobilien"
+
 msgid "Saturday"
 msgstr "Samstag"
 
@@ -6960,6 +6993,9 @@ msgstr "Es tut uns leid, aber Sie haben ein ungültiges Kassen-Passwort eingegeb
 
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "Es tut uns leid, aber Ihr Konto ist für den Erwerb weiterer Kontrakte nicht berechtigt."
+
+msgid "Source of Wealth"
+msgstr "Quelle des Reichtums"
 
 msgid "South Africa 40 Cash Index"
 msgstr "Südafrikanischer 40 Cash Index"
@@ -8910,6 +8946,9 @@ msgstr "Um was geht es beim Partnerprogramm von %1?"
 
 msgid "What is the definition of a 'client'?"
 msgstr "Was ist die Definition eines 'Kunden'?"
+
+msgid "What is this?"
+msgstr "Was ist das?"
 
 msgid "What marketing tools do you offer?"
 msgstr "Welche Marketing Tools bieten Sie an?"
