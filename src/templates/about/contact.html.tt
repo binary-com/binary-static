@@ -47,13 +47,13 @@
                     </div>
                     <div class="gr-padding-10 gr-parent">
                         <span class="gr-row">
-                            <label class="gr-5">[% l("For general support: ") %]</label>
+                            <label class="gr-5">[% l("For general support:") %]</label>
                             <label class="gr-7">[% "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'support@binary.com') %]</label>
                         </span>
                     </div>
                     <div class="gr-padding-10">
                         <span class="gr-row">
-                            <label class="gr-5">[% l("For payments-related queries: ") %]</label>
+                            <label class="gr-5">[% l("For payments-related queries:") %]</label>
                             <label class="gr-7"><a href="mailto:payments@binary.com">payments@binary.com</a></label>
                         </span>
                     </div>
