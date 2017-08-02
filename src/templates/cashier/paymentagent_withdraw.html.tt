@@ -7,7 +7,7 @@
     <div id="viewError" class="viewItem invisible">
         <p id="custom-error" class="notice-msg center-text invisible"></p>
         <p id="withdrawal-locked-error" class="notice-msg center-text invisible">
-            [% l('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', '<a href="mailto:support@binary.com">support@binary.com</a>') %]
+            [% l('Withdrawal for your account is not allowed at this moment.') %]
         </p>
     </div>
 
