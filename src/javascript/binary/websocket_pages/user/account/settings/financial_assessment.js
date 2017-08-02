@@ -119,7 +119,7 @@ const FinancialAssessment = (() => {
             $(form_selector).setVisibility(0);
             $('#msg_main').setVisibility(1);
             BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                if ($.inArray('authenticated', response_status.get_account_status.status) === -1) {
+                if (+response_status.get_account_status.prompt_client_to_authenticate) {
                     $('#msg_authenticate').setVisibility(1);
                 }
             });

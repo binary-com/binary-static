@@ -16,16 +16,16 @@ const VideoFacility = (() => {
             if (response.error) {
                 $('#error_message').setVisibility(1).text(response.error.message);
             } else {
-                const status = response.get_account_status.status;
-                if (/authenticated/.test(status)) {
-                    BinaryPjax.load(defaultRedirectUrl());
-                } else {
+                const should_authenticate = +response.get_account_status.prompt_client_to_authenticate;
+                if (should_authenticate) {
                     DeskWidget.showDeskLink('', '#facility_content');
                     if (!Client.isAccountOfType('financial')) {
                         $('#not_authenticated').setVisibility(1);
                     }
                     $('.msg_authenticate').setVisibility(1);
                     $('#generated_token').text(Client.get('token').slice(-4));
+                } else {
+                    BinaryPjax.load(defaultRedirectUrl());
                 }
             }
         });
