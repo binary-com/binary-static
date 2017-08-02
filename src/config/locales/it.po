@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-02 03:19-0400\n"
+"PO-Revision-Date: 2017-08-02 03:24-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -102,8 +102,8 @@ msgstr ""
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr ""
 
-msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
-msgstr "%1 clicca il link sottostante per riavviare la procedura di ripristino della password. Per ulteriore assistenza, contatta la nostra Assistenza Clienti."
+msgid "%1 Please click the link below to restart the password recovery process."
+msgstr ""
 
 msgid "%1 Property"
 msgstr "La proprietà di %1"
@@ -2394,9 +2394,6 @@ msgstr "Deposito: istantaneo"
 msgid "Depositing and withdrawing funds"
 msgstr "Depositare e prelevare fondi"
 
-msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "In questo momento sul tuo account non sono consentiti i depositi e i prelievi. Per sbloccarli, contatta %1."
-
 msgid "Derivative"
 msgstr "Derivato"
 
@@ -3644,9 +3641,6 @@ msgstr "Nel caso in cui alla Società dovesse essere legalmente richiesta la div
 
 msgid "If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
 msgstr ""
-
-msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "Se il problema persiste, contatta l'<a href=\"%1\">assistenza clienti</a>."
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Nel caso in cui il presente Accordo dovesse essere per qualsiasi motivo risolto, dovrai eliminare definitivamente tutto il Contenuto, tranne nel caso in cui in tal modo si vadano a violare eventuali leggi o obblighi imposti dall'autorità governativa."
@@ -6984,7 +6978,7 @@ msgstr "Addetti ai social media"
 msgid "Software (Perl) Development"
 msgstr "Sviluppo software (Perl)"
 
-msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
+msgid "Sorry, account signup is not available in your country."
 msgstr ""
 
 msgid "Sorry, an error occurred while processing your account."
@@ -7344,7 +7338,7 @@ msgstr "I Termini e condizioni di %1;"
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Il sito internet di %1 è protetto da alcuni copyright."
 
-msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
 msgstr ""
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
@@ -7944,8 +7938,8 @@ msgstr "Questi sono trade nei quali il trader seleziona un prezzo obiettivo e pr
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr ""
 
-msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company. If you have questions about these terms or would like information about licensing materials from Binary Ltd., please contact us."
-msgstr "Questo materiale non può essere copiato o redistribuito per scopi commerciali o per compensazione di alcun tipo senza la precedente autorizzazione scritta da parte di una società del Gruppo Binary. Per qualsiasi domanda sui presenti termini o se desideri informazioni sui materiali di licenza da parte di Binary Ltd., contattaci."
+msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
+msgstr ""
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "Il presente Accordo contiene l'intero accordo tra le parti in merito alla questione in oggetto e sostituisce tutti gli accordi precedenti e le intese tra le parti rispetto alla questione in oggetto."
@@ -9171,8 +9165,8 @@ msgstr "Prelievo: non applicabile"
 msgid "Withdrawal Limits"
 msgstr "Limiti per i Prelievi"
 
-msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "In questo momento non è consentito prelevare dal tuo account. Per sbloccarlo, contatta %1."
+msgid "Withdrawal for your account is not allowed at this moment."
+msgstr ""
 
 msgid "Withdrawal of Funds from Real Account"
 msgstr "Prelievo dei fondi dal tuo account reale"
@@ -9453,7 +9447,7 @@ msgstr "Potrai in qualsiasi momento risolvere il presente Accordo ma solo dando 
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "Puoi prelevare l'importo del bonus dopo aver effettuato un turnover dell'account pari a 25 volte l'importo del bonus."
 
-msgid "You must complete the knowledge test to activate this account. Please contact <a href=\"%1\">customer support</a> for more information."
+msgid "You must complete the knowledge test to activate this account."
 msgstr ""
 
 msgid "You must comply with these Terms in order to use the %1 API."
@@ -9626,9 +9620,6 @@ msgstr "Sul tuo account non c'è alcuna attività di Login/Logout."
 
 msgid "Your account has no trading activity."
 msgstr "Sul tuo account non c'è alcuna attività di trading."
-
-msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr "Al momento il tuo account è sospeso. Sono consentiti solo i prelievi. Per ulteriori informazioni, contatta %1."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Il tuo account è stato completamente convalidato e sono stati rimossi i tuoi limiti di prelievo."
