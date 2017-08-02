@@ -10,7 +10,7 @@ const ResetPassword = (() => {
         $('#container_reset_password').setVisibility(0);
         if (response.error) {
             const $form_error = $('#form_error');
-            const reset_error_template = '[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.';
+            const reset_error_template = '[_1] Please click the link below to restart the password recovery process.';
             const error_code = response.error.code;
 
             $('#msg_reset_password').setVisibility(0);

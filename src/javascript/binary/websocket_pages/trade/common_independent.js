@@ -77,7 +77,11 @@ const checkValidTime = (time_start_element, $date_start, time) => {
 };
 
 const getMinMaxTime = ($setMinMaxSelector, minTime = window.time ? window.time : moment.utc()) => {
-    const $selected_option = $setMinMaxSelector.find('option:selected');
+    let $selected_option = $setMinMaxSelector.find('option:selected');
+    // if 'now' is selected, take first option's value
+    if (isNaN(+$setMinMaxSelector.val())) {
+        $selected_option = $($setMinMaxSelector.find('option')[1]);
+    }
     minTime = +$selected_option.val() > minTime.unix() ? moment.utc($selected_option.val() * 1000) : minTime;
     const maxTime = moment.utc($selected_option.attr('data-end') * 1000);
     return {

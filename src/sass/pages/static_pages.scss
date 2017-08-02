@@ -170,11 +170,11 @@
     #cs_telephone_number {
         width: 100%;
     }
-    .border-bottom {
+    #company_addresses .border-bottom {
         min-height: 200px;
     }
     @media screen and (max-width: 480px) {
-        .border-bottom {
+        #company_addresses .border-bottom {
             min-height: 130px;
         }
     }
