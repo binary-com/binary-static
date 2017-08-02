@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-02 03:19-0400\n"
+"PO-Revision-Date: 2017-08-02 03:23-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -102,8 +102,8 @@ msgstr "Pertanyaan Umum ICO %1"
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "ICO %1, Berinvestasi didalam platform trading opsi binary utama dunia"
 
-msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
-msgstr "%1 Silahkan klik link di bawah ini untuk memulai kembali proses pemulihan kata sandi. Jika Anda membutuhkan bantuan lebih lanjut, silakan hubungi Customer Support kami."
+msgid "%1 Please click the link below to restart the password recovery process."
+msgstr ""
 
 msgid "%1 Property"
 msgstr "Properti %1"
@@ -2388,9 +2388,6 @@ msgstr "Deposit: Langsung"
 msgid "Depositing and withdrawing funds"
 msgstr "Penyetoran dan penarikan dana"
 
-msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "Bagian deposit dan penarikan akun Anda tidak tersedia untuk sementara. Silahkan hubungi %1 untuk pengaktifan."
-
 msgid "Derivative"
 msgstr "Derivatif"
 
@@ -3638,9 +3635,6 @@ msgstr "Jika Perusahaan diwajibkan secara hukum untuk menginformasikan data prib
 
 msgid "If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
 msgstr "Jika Margin Level untuk Akun Riil Anda mencapai atau jatuh di bawah Stop Out Level, maka hal ini akan diklasifikasikan sebagai Wanprestasi. Dalam keadaan seperti itu, Posisi Berjalan secara otomatis akan ditutup dengan urutan sebagai berikut: (i) server menganalisa Order klien yang tidak di bawah eksekusi pada saat ini; (ii) server menghapus Order dengan Margin terbesar; (iii) jika Margin Level Anda masih di bawah Stop Out Level, order berikutnya akan dihapus (perintah tanpa persyaratan margin tidak dihapus); (iv) jika Margin Level Anda masih di bawah Stop Out Level, server menutup posisi dengan kerugian terbesar; (V) Posisi Berjalan ditutup hingga Margin Level Anda menjadi lebih tinggi daripada Level Stop Out."
-
-msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "Jika masalah ini terus berlangsung, silahkan hubungi <a href=\"%1\">customer support</a>."
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Jika Perjanjian ini dihentikan berhubung alasan apapun, maka Anda harus menghapus secara permanen semua Konten, kecuali jika melakukan hal tersebut akan menyebabkan Anda melanggar hukum atau kewajiban yang dibebankan oleh sebuah otoritas pemerintah."
@@ -6978,8 +6972,8 @@ msgstr "Social Media Eksekutif"
 msgid "Software (Perl) Development"
 msgstr "Pengembangan Software (Perl)"
 
-msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "Maaf, pendaftaran akun tidak tersedia untuk negara domisili Anda. Silahkan hubungi <a href=\"%1\">customer support</a> untuk info lebih lanjut."
+msgid "Sorry, account signup is not available in your country."
+msgstr ""
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Maaf, error terjadi ketika memproses rekening Anda."
@@ -7339,8 +7333,8 @@ msgstr "Syarat dan Kondisi %1;"
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Website %1 dilindungi oleh hak cipta."
 
-msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
-msgstr "Website Binary.com dilindungi oleh beberapa hak cipta tertentu. Semua materi yang ditampilkan pada situs (tidak terbatas pada semua artikel, teks, gambar, logo, kompilasi, sistem, kode dan desain) adalah merupakan Hak Cipta Grup Perusahaan Binary 1999-2016. Materi tersebut dapat disalin dan didistribusikan secara terbatas untuk tujuan non-komersial saja, asalkan setiap bahan yang disalin tetap utuh dan memastikan pemberitahuan jelas sebagai berikut: \"Hak Cipta Binary Ltd 1999-2016.\" Bahan-bahan tersebut tidak dapat disalin atau disebarkan untuk tujuan komersial atau kompensasi dalam bentuk apapun tanpa izin tertulis dari anggota Grup Binary. Jika Anda memiliki pertanyaan tentang hal ini atau memerlukan informasi tentang lisensi bahan dari Binary Ltd, silahkan hubungi kami di %2. %1 dan logo bull/bear adalah merek dagang terdaftar."
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
+msgstr ""
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "Konten statik %1 (CSS, Javascript) tersedia pada proyek open-source %2binary-static%3 github. Apakah Anda ingin merubah website %1 atau memperbaiki kecocokan browser, kecepatan website atau tampilan Javascript?. Silahkan lihat proyek dan kirimkan kritik dan saran perubahan kode Anda."
@@ -7939,8 +7933,8 @@ msgstr "Ini adalah kontrak dimana trader memilih target harga dan menganalisa ap
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "Metrik utama ini akan menunjukkan kepada Anda seperti apa pertumbuhan dan kesuksesan pemenang penghargaan platform trading opsi binary."
 
-msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company. If you have questions about these terms or would like information about licensing materials from Binary Ltd., please contact us."
-msgstr "Material ini tidak dapat disalin atau disebarluaskan untuk tujuan komersial atau kepuasan apa saja tanpa terlebih dahulu meminta izin tertulis dari Perusahaan Binary Group. Jika Anda memiliki pertanyaan tentang syarat ini atau memerlukan informasi tentang perijinan material dari Binary Ltd., silakan hubungi kami."
+msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
+msgstr ""
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "Perjanjian ini berisi keseluruhan perjanjian antara para pihak sehubungan dengan materi pelajaran dan menggantikan semua perjanjian sebelumnya dan pemahaman antara para pihak sehubungan dengan materi subjek."
@@ -9166,8 +9160,8 @@ msgstr "Penarikan: Tidak tersedia"
 msgid "Withdrawal Limits"
 msgstr "Batas Penarikan"
 
-msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "Penarikan untuk akun Anda tidak dapat dilanjutkan untuk saat ini. Silahkan hubungi %1 untuk pengaktifan."
+msgid "Withdrawal for your account is not allowed at this moment."
+msgstr ""
 
 msgid "Withdrawal of Funds from Real Account"
 msgstr "Penarikan dana dari Akun Riil"
@@ -9448,8 +9442,8 @@ msgstr "Anda dapat mengakhiri Perjanjian ini setiap saat, tetapi hanya dengan me
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "Bonus hanya dapat dicairkan jika Anda telah melebihi total pembelian kontrak sebesar 25 kali jumlah bonus."
 
-msgid "You must complete the knowledge test to activate this account. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "Anda harus menyelesaikan tes pengetahuan untuk mengaktifkan akun ini. Silahkan hubungi <a href=\"%1\">customer support</a> untuk informasi lebih lanjut."
+msgid "You must complete the knowledge test to activate this account."
+msgstr ""
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Anda harus mematuhi Persyaratan ini untuk menggunakan API %1."
@@ -9621,9 +9615,6 @@ msgstr "Akun Anda tidak memiliki aktifitas Login/Logout."
 
 msgid "Your account has no trading activity."
 msgstr "Akun Anda tidak memiliki aktifitas trading."
-
-msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr "Saat ini akun Anda ditangguhkan. Hanya penarikan yang dapat Anda lakukan. Untuk informasi lanjut, silahkan hubungi %1."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Akun Anda telah terbukti dan batasan penarikan Anda telah dihapuskan."
