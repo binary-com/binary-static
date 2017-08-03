@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-31 22:25-0400\n"
+"PO-Revision-Date: 2017-08-02 21:17-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -102,8 +102,8 @@ msgstr "OIM %1 Perguntas Frequentes"
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "OIM %1, Invista na principal plataforma para a negociação de opções binárias"
 
-msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
-msgstr "%1 Clique no link abaixo para reiniciar o processo de recuperação de senha. Caso você necessite de assistência adicional, contate o Apoio ao Cliente."
+msgid "%1 Please click the link below to restart the password recovery process."
+msgstr "%1 Clique no link abaixo para reiniciar o processo de recuperação de senha."
 
 msgid "%1 Property"
 msgstr "Propriedade da %1"
@@ -2398,9 +2398,6 @@ msgstr "Depósito: Instantâneo"
 msgid "Depositing and withdrawing funds"
 msgstr "Depositar e retirar fundos"
 
-msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "Depósitos e retiradas de sua conta não estão permitidos no momento. Por favor contate %1 para o desbloqueio."
-
 msgid "Derivative"
 msgstr "Derivado"
 
@@ -3157,6 +3154,12 @@ msgstr "Para as cotações de câmbio, os horários de fechamento são definidos
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "Para Forex: O mercado forex é um mercado OTC (over the counter - mercado de balcão), no qual os bancos e outras grandes instituições financeiras negociam moedas entre si, sem a existência de qualquer câmara de compensação central. Desta forma, não há nenhuma fonte de preço \"oficial\" para as cotações forex. Os diversos feeds de dados conterão cotações de um sub-conjunto de bancos internacionais distintos. Por conseguinte, os preços podem variar entre os prestadores, dependendo do(s) banco(s) a partir dos quais obtêm os preços."
 
+msgid "For general support:"
+msgstr "Para apoio geral:"
+
+msgid "For payments-related queries:"
+msgstr "Para assuntos relacionados com pagamentos:"
+
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "Pelo terceiro ano consecutivo, a BetOnMarkets.com foi eleita o \"Melhor Provedor de Negociação Financeira de Probabilidades Fixas\" pela Shares Magazine UK. Esta será a última vez que ganhamos, pois a Shares Magazine UK vai parar a premiação nesta categoria."
 
@@ -3642,9 +3645,6 @@ msgstr "Se a Empresa for legalmente obrigada a divulgar as suas informações pe
 
 msgid "If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
 msgstr "Se o nível de margem da sua conta real atingir ou descer abaixo o nível de interrupção, isto será classificado como um evento de incumprimento. Em tais circunstâncias, posições em aberto serão automaticamente fechadas na seguinte ordem: (i) o servidor analisa as ordens do cliente que não estejam sob execução no momento; (ii) o servidor exclui ordens com a maior margem; (iii) se o seu nível de margem ainda estiver abaixo do nível de interrupção, a próxima ordem é excluída (ordens sem requisitos de margem não são excluídas); (iv) se o seu nível de margem ainda estiver abaixo do nível de interrupção, o servidor fecha uma posição com a maior perda; (v) Posições em aberto são fechadas até que o seu nível de margem se torne superior ao nível de interrupção. "
-
-msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "Caso o problema persista, contate o <a href=\"%1\">Apoio ao Cliente</a>."
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Se este acordo for rescindido por qualquer motivo, você deverá excluir todos os conteúdos imediatamente, exceto quando tal ato puder levá-lo a violar quaisquer leis ou obrigações impostas por uma entidade governamental."
@@ -6983,8 +6983,8 @@ msgstr "Executivo de mídia social"
 msgid "Software (Perl) Development"
 msgstr "Desenvolvimento de software (Perl)"
 
-msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "Lamentamos, a abertura de contas não está disponível no seu país. Contate o <a href=\"%1\">apoio ao cliente</a> para mais informações."
+msgid "Sorry, account signup is not available in your country."
+msgstr "Lamentamos, mas o registro de contas não está disponível no seu país."
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Lamentamos, ocorreu um erro durante o processamento da sua conta."
@@ -7343,8 +7343,8 @@ msgstr "Os termos e condições da %1;"
 msgid "The %1 website is protected by certain copyrights."
 msgstr "O website da %1 está protegido por determinados direitos de autor."
 
-msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
-msgstr "O site %1 está protegido por certos direitos autorais. Os materiais que constituem o site (incluindo, sem limitação, todos os artigos, textos, imagens, logotipos, compilações, sistemas, códigos e projetos) são protegidos por direitos de autor 1999-2017 do grupo de empresas Binary. Todos os direitos reservados. Tais materiais podem ser copiados e distribuídos numa base limitada apenas para fins não comerciais, desde que qualquer material copiado permaneça intacto e que todas as cópias incluam o seguinte aviso numa posição claramente visível: \"Copyright 1999-2017 Binary Ltd. Todos os direitos reservados.\" Estes materiais não podem ser copiados ou redistribuídos para fins comerciais ou para compensação de qualquer natureza sem permissão prévia, por escrito, de um membro do grupo Binary. Se você tiver quaisquer perguntas sobre estes termos ou quiser receber informações sobre o licenciamento de materiais da Binary Ltd., por favor contacte-nos em <a href='mailto:%1'> %2</a>. A %1 e o logotipo do touro/urso são marcas registradas."
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
+msgstr "O site %1 está protegido por certos direitos autorais. Os materiais que constituem o site (incluindo, sem limitação, todos os artigos, textos, imagens, logotipos, compilações, sistemas, códigos e projetos) são protegidos por direitos de autor 1999-2017 do grupo de empresas Binary. Todos os direitos reservados. Tais materiais podem ser copiados e distribuídos numa base limitada apenas para fins não comerciais, desde que qualquer material copiado permaneça intacto e que todas as cópias incluam o seguinte aviso numa posição claramente visível: \"Copyright 1999-2017 Binary Ltd. Todos os direitos reservados.\" Estes materiais não podem ser copiados ou redistribuídos para fins comerciais ou para compensação de qualquer natureza sem autorização prévia, por escrito, de um membro do grupo Binary. A %1 e o logotipo do touro/urso são marcas registradas."
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "O conteúdo estático do site %1 (CSS, Javascript) está disponível como <a target='_blank' href='%1'>binary-static</a>, um projeto de código aberto no github. Gostaria de recriar o site %1 ou melhorar a compatibilidade com navegadores, aumentar a velocidade do site ou o desempenho do Javascript? Então, crie uma cópia do projeto e envie um pedido com as suas sugestões de mudança de código."
@@ -7945,8 +7945,8 @@ msgstr "Estas são negociações em que o negociador escolhe um preço-alvo e pr
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "Estas métricas-chave lhe mostrarão o crescimento e o sucesso de uma plataforma de negociação de opções binárias premiada."
 
-msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company. If you have questions about these terms or would like information about licensing materials from Binary Ltd., please contact us."
-msgstr "Este material não pode ser copiado ou redistribuído para fins comerciais ou para compensação de qualquer espécie, sem permissão prévia por escrito de uma empresa do Grupo Binary. Se tiver dúvidas sobre estes termos ou queira receber informações sobre os materiais de licenciamento da Binary Ltd, entre em contato conosco."
+msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
+msgstr "Estes materiais não podem ser copiados ou redistribuídos para fins comerciais ou para compensação de qualquer tipo sem autorização prévia por escrito de uma empresa do grupo Binary."
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "O presente Acordo contém o acordo integral entre as partes relativamente à sua matéria e substitui todos os acordos e entendimentos anteriores entre as partes relativamente à sua matéria."
@@ -9172,8 +9172,8 @@ msgstr "Retirada: Não aplicável"
 msgid "Withdrawal Limits"
 msgstr "Limites de retirada"
 
-msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "Retiradas de sua conta não estão permitidas no momento. Por favor contate %1 para desbloqueio."
+msgid "Withdrawal for your account is not allowed at this moment."
+msgstr "Retiradas da sua conta não são permitidas neste momento."
 
 msgid "Withdrawal of Funds from Real Account"
 msgstr "Retirada de fundos de uma conta real"
@@ -9454,8 +9454,8 @@ msgstr "Você pode rescindir este acordo a qualquer momento, mas apenas por via 
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "Você pode levantar a quantia do bónus depois de exceder um volume de negócios da conta de 25 vezes o valor da quantia do bónus."
 
-msgid "You must complete the knowledge test to activate this account. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "É necessário completar o teste de conhecimentos para ativar esta conta. Por favor contate o <a class=\"pjaxload\" href=\"%1\">apoio ao cliente</a> para mais informações."
+msgid "You must complete the knowledge test to activate this account."
+msgstr "Você deve completar o teste de conhecimentos para ativar esta conta."
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Você deve cumprir estes termos para poder usar a API %1."
@@ -9627,9 +9627,6 @@ msgstr "A sua conta não tem nenhuma atividade de login/sair."
 
 msgid "Your account has no trading activity."
 msgstr "A sua conta não tem nenhuma atividade de negociação."
-
-msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr "Sua conta está atualmente suspensa e apenas saques estão permitidos. Para mais informações, por favor contacte %1."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "A sua conta está totalmente autenticada e os seus limites de retirada de fundos foram aumentados."

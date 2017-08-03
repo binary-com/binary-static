@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-31 22:25-0400\n"
+"PO-Revision-Date: 2017-08-02 21:17-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -102,8 +102,8 @@ msgstr "%1 ICO FAQ"
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr ""
 
-msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
-msgstr "%1 โปรดคลิกที่ลิงค์ด้านล่างเพื่อเริ่มกระบวนการกู้คืนรหัสผ่าน หากท่านต้องการความช่วยเหลือ โปรดติดต่อฝ่ายบริการลูกค้าของเรา"
+msgid "%1 Please click the link below to restart the password recovery process."
+msgstr ""
 
 msgid "%1 Property"
 msgstr "ทรัพย์สินของ %1"
@@ -2393,9 +2393,6 @@ msgstr "ฝากเงิน: ทันที"
 msgid "Depositing and withdrawing funds"
 msgstr "เงินในการฝากและการถอน"
 
-msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "ท่านไม่ได้รับอนุญาตในการดำเนินการฝากเงินและการถอนเงินในบัญชีของท่านในขณะนี้ โปรดติดต่อ %1 เพื่อปลดล็อค"
-
 msgid "Derivative"
 msgstr "อนุพันธ์"
 
@@ -3152,6 +3149,12 @@ msgstr "สำหรับราคาฟอเร็กซ์ในเวลา
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "สำหรับฟอเร็กซ์ หรือ ตลาดค้าสกุลเงิน: ตลาดฟอเร็กซ์เป็นตลาดที่ซื้อขายได้เอง ขณะที่ธนาคารและสถาบันการเงินหลักอื่นๆ ค้าสกุลเงินในกลุ่มของเขาโดยปราศจากศูนย์กลางการจัดการซื้อขาย ตามหลักการนี้ จึงไม่มีราคาอย่างเป็นทางการในการซื้อขายฟอเร็กซ์ หรือ สกุลเงินต่างๆ ฟีดข้อมูลประกอบด้วยราคาที่ได้รับจากธนาคารนานาชาติต่างๆ และราคาอาจจะมีความแตกต่างกันในแต่ละกลุ่มผู้ให้ข้อมูล ขึ้นกับธนาคารต่างๆ ที่พวกเขาได้รับราคามา"
 
+msgid "For general support:"
+msgstr ""
+
+msgid "For payments-related queries:"
+msgstr ""
+
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "สำหรับสามปีที่ต่อเนื่อง BetOnMarkets.com ได้รับคัดเลือกจากคะแนนนิยมกับตำแหน่ง 'Best Fixed-Odds Financial Trading Provider' โดย Shares Magazine UK ซึ่งเป็นครั้งสุดท้ายที่ชนะ เนื่องจาก Shares Magazine ยุติการให้รางวัลในหมวดนี้หลังจากนั้น"
 
@@ -3637,9 +3640,6 @@ msgstr "หากบริษัทฯ แสดงความจำนงท�
 
 msgid "If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
 msgstr ""
-
-msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "หากท่านยังพบปัญหา โปรดติดต่อ <a href=\"%1\">เจ้าหน้าที่ลูกค้าสัมพันธ์</a>"
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "หากข้อตกลงนี้ถูกทำให้สิ้นสุดไม่ว่าด้วยกรณีใด ท่านต้องลบข้อมูลที่เกี่ยวข้องอย่างถาวร ยกเว้นการการกระทำต่างๆ ที่อาจจะส่งผลให้ท่านฝ่าฝืนกฎหมายใดๆ หรือ หน้าที่ความรับผิดชอบตามประกาศภาครัฐ"
@@ -6978,8 +6978,8 @@ msgstr "เจ้าหน้าที่สื่อสังคม"
 msgid "Software (Perl) Development"
 msgstr "พัฒนาซอฟท์แวร์ด้วยภาษา Perl"
 
-msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "ขออภัย ยังไม่มีการบริการบัญชีในประเทศของท่าน โปรดติดต่อ <a href=\"%1\">ฝ่ายลูกค้าสัมพันธ์</a> สำหรับข้อมูลเพิ่มเติม"
+msgid "Sorry, account signup is not available in your country."
+msgstr ""
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "ขออภัย มีความผิดพลาดเกิดขึ้นขณะที่ประมวลผลบัญชีของท่าน"
@@ -7338,7 +7338,7 @@ msgstr "ข้อตกลงและเงื่อนไขของ %1"
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1 เว็บไซต์ถูกป้องกันโดยการมีลิขสิทธิ์"
 
-msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
 msgstr ""
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
@@ -7940,8 +7940,8 @@ msgstr "การซื้อขายเหล่านี้ดำเนิน
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr ""
 
-msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company. If you have questions about these terms or would like information about licensing materials from Binary Ltd., please contact us."
-msgstr "เอกสารเหล่านี้จะไม่สามารถคัดลอก ส่งต่อเพื่อการค้า หรือ เพื่อประโยชน์ใดๆ ก่อนการได้รับอนุญาตอย่างเป็นลายลักษณ์อักษรจากบริษัทในเครือ Binary หากมีข้อสงสัยใดๆ หรือ ต้องการข้อมูลเกี่ยวกับใบอนุญาตจาก Binary Ltd. โปรดติดต่อพวกเรา"
+msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
+msgstr ""
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "ข้อตกลงฉบับนี้บันทึกข้อตกลงทั้งหมดระหว่างผู้เกี่ยวข้อง และผู้ดำเนินการแทนในข้อตกลงก่อนหน้าและมีความเข้าใจระหว่างผู้เกี่ยวข้องทั้งหมด"
@@ -9167,8 +9167,8 @@ msgstr "ถอนเงิน: ไม่เกี่ยวข้อง"
 msgid "Withdrawal Limits"
 msgstr "วงเงินในการถอน"
 
-msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "ในขณะนี้ บัญชีของท่านไม่ได้รับอนุญาตให้ดำเนินการถอนเงิน โปรดติดต่อ %1 เพื่อปลดล็อค"
+msgid "Withdrawal for your account is not allowed at this moment."
+msgstr ""
 
 msgid "Withdrawal of Funds from Real Account"
 msgstr "ถอนเงินจากบัญชีจริง"
@@ -9449,8 +9449,8 @@ msgstr "ท่านอาจจะยุติข้อตกลงนี้เ
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "ท่านอาจจะถอนโบนัสเมื่อท่านมีมูลค่าการซื้อขายหลักทรัพย์เกิน 25 เท่าของมูลค่าโบนัส"
 
-msgid "You must complete the knowledge test to activate this account. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "ท่านต้องทำการทดสอบความรู้ของท่านให้แล้วเสร็จเพื่อเปิดใช้งานบัญชีนี้ โปรดติดต่อ <a href=\"%1\">ฝ่ายลูกค้าสัมพันธ์</a> สำหรับข้อมูลเพิ่มเติม"
+msgid "You must complete the knowledge test to activate this account."
+msgstr ""
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "ท่านต้องปฏิบัติตามข้อตกลงเหล่านี้ในการใช้ API ของ %1"
@@ -9622,9 +9622,6 @@ msgstr "บัญชีของท่านไม่มีประวัติ
 
 msgid "Your account has no trading activity."
 msgstr "บัญชีของท่านไม่มีประวัติการซื้อขาย"
-
-msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr "ในขณะนี้บัญชีของท่านถูกพักชั่วคราว ท่านสามารถทำรายการถอนได้เท่านั้น หากต้องการข้อมูล โปรดติดต่อ %1"
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "บัญชีของท่านได้รับการยืนยันตัวตนอย่างสมบูรณ์แล้ว และวงเงินการถอนเงินของท่านได้รับการยกระดับโดยการเพิ่มวงเงินแล้ว"

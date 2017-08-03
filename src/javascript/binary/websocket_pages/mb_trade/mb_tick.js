@@ -67,33 +67,20 @@ const MBTick = (() => {
 
     const request = (symbol) => {
         BinarySocket.send({
-            ticks_history: symbol,
-            style        : 'ticks',
-            end          : 'latest',
-            subscribe    : 1,
-        }, { callback: processTickHistory });
+            ticks    : symbol,
+            subscribe: 1,
+        }, { callback: processTickStream });
     };
 
-    const processTickHistory = (response) => {
-        if (response.msg_type === 'tick') {
+    const processTickStream = (response) => {
+        if (response.msg_type === 'tick' && MBDefaults.get('underlying') === (response.echo_req.ticks || response.echo_req.ticks_history)) {
             if (response.hasOwnProperty('error')) {
                 MBNotifications.show({ text: response.error.message, uid: 'TICK_ERROR' });
                 return;
             }
-            const symbol = MBDefaults.get('underlying');
-            if (response.echo_req.ticks === symbol || (response.tick && response.tick.symbol === symbol)) {
-                details(response);
-                display();
-            }
-        } else if (response.history && response.history.times && response.history.prices) {
-            for (let i = 0; i < response.history.times.length; i++) {
-                details({
-                    tick: {
-                        epoch: response.history.times[i],
-                        quote: response.history.prices[i],
-                    },
-                });
-            }
+
+            details(response);
+            display();
         }
     };
 
@@ -113,7 +100,7 @@ const MBTick = (() => {
             });
         },
         displayPriceMovement: displayPriceMovement,
-        processTickHistory  : processTickHistory,
+        processTickStream   : processTickStream,
     };
 })();
 

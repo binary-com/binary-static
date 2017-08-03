@@ -43,7 +43,7 @@ const GetTicks = (() => {
                         callback(response);
                     }
                     if (State.get('is_mb_trading')) {
-                        MBTick.processTickHistory(response);
+                        MBTick.processTickStream(response);
                         return;
                     }
                     if (type === 'tick') {
