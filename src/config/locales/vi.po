@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-02 03:18-0400\n"
+"PO-Revision-Date: 2017-08-02 21:18-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -102,8 +102,8 @@ msgstr "%1 ICO FAQ"
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO, đầu tư trong nền tảng hàng đầu của thế giới về giao dịch lựa chọn nhị phân"
 
-msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
-msgstr "%1 Vui lòng nhấn vào đường dẫn dưới đây để bắt đầu lại quá trình khôi phục mật khẩu. Nếu bạn cần thêm trợ giúp, vui lòng liên hệ với Trung tâm hỗ trợ khách hàng của chúng tôi."
+msgid "%1 Please click the link below to restart the password recovery process."
+msgstr ""
 
 msgid "%1 Property"
 msgstr "Tài sản %1"
@@ -2393,9 +2393,6 @@ msgstr "Gửi tiền: tức thì"
 msgid "Depositing and withdrawing funds"
 msgstr "Gửi tiền và rút tiền"
 
-msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "Chức năng gửi tiền và rút tiền tại tài khoản của bạn không được phép tại thời điểm này. Xin vui lòng liên hệ với %1 để mở khóa."
-
 msgid "Derivative"
 msgstr "Phái sinh"
 
@@ -3643,9 +3640,6 @@ msgstr "Nếu Công ty được yêu cầu phải tiết lộ thông tin cá n
 
 msgid "If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
 msgstr "Nếu mức lề cho tài khoản thực của bạn đạt hoặc hạ thấp hơn ngưỡng dừng, điều này sẽ được phân loại như một sự kiện mặc định. Trong những hoàn cảnh như vậy, phiên tăng giá là hoàn toàn tự động được đóng lại theo thứ tự sau: (i) máy chủ phân tích lệnh của khách hàng đang không trong thời gian thực thi; (ii) máy chủ thực hiện xóa lệnh với giá lề cao nhất; (iii) nếu mức độ giá lề của bạn vẫn thấp hơn ngưỡng dừng, lệnh tiếp theo sẽ bị xóa (các lệnh không đòi hỏi giá lề sẽ không bị xóa); (iv) nếu mức giá lề của bạn vẫn thấp hơn ngưỡng dừng, máy chủ đóng các phiên với thiệt hại lớn nhất; (v) thế tăng giá sẽ bị đóng lại cho đến khi mức giá lề của bạn cao hơn ngưỡng dừng."
-
-msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "Nếu vấn đề vẫn xảy ra, xin vui lòng liên hệ với <a href=\"%1\">hỗ trợ khách hàng</a>."
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Nếu Thoả thuận này bị chấm dứt bởi bất kỳ lý do gì, bạn phải xoá vĩnh viễn tất cả Nội dung, trừ khi việc làm đó có thể khiến bạn vi phạm bất kỳ luật hay quy định nào được đưa ra bởi cơ quan nhà nước."
@@ -6983,8 +6977,8 @@ msgstr "Chuyên Viên Truyền Thông Xã Hội"
 msgid "Software (Perl) Development"
 msgstr "Lập trình viên Phần mềm (Perl)"
 
-msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "Xin lỗi, tài khoản đăng ký là không có sẵn ở quốc gia của bạn. Xin vui lòng liên hệ với <a href=\"%1\"> hỗ trợ khách hàng</a> để biết thêm thông tin."
+msgid "Sorry, account signup is not available in your country."
+msgstr ""
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Xin lỗi, Lỗi xảy ra trong khi đang xử lý tài khoản của bạn."
@@ -7343,7 +7337,7 @@ msgstr "%1 Điều khoản và Điều kiện"
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Trang web %1 được bảo vệ bởi bản quyền tác giả nhất định."
 
-msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
 msgstr ""
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
@@ -7943,8 +7937,8 @@ msgstr "Những giao dịch này là nhà giao dịch đã chọn một gi
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr ""
 
-msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company. If you have questions about these terms or would like information about licensing materials from Binary Ltd., please contact us."
-msgstr "Những tài liệu này không được sao chép hoặc truyền đi cho các mục đích thương mại hoặc để bồi thường bất cứ loại nào mà không có sự cho phép trước bằng văn bản từ công ty Binary Group. Nếu bạn có thắc mắc về những điều khoản này hoặc muốn biết thông tin về việc cấp phép tài liệu từ Công ty Binary, xin vui lòng liên hệ với chúng tôi."
+msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
+msgstr ""
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "Hiệp định này bao gồm toàn bộ thỏa thuận giữa các bên, và thay thế mọi hiệp định trước đó và bao gồm cả sự hiểu biết lẫn nhau giữa các bên liên quan."
@@ -9170,8 +9164,8 @@ msgstr "Rút tiền: Không áp dụng"
 msgid "Withdrawal Limits"
 msgstr "Giới hạn Rút tiền"
 
-msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "Rút tiền tại tài khoản của bạn không được phép tại thời điểm này. Xin vui lòng liên hệ với %1 để mở khóa."
+msgid "Withdrawal for your account is not allowed at this moment."
+msgstr ""
 
 msgid "Withdrawal of Funds from Real Account"
 msgstr "Rút tiền từ tài khoản thực"
@@ -9452,8 +9446,8 @@ msgstr "Bạn có thể chấm dứt Thỏa thuận này bất cứ lúc nào, n
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "Bạn có thể rút số tiền thưởng khi vốn luân chuyển của bạn đã vượt quá 25 lần giá trị của tiền thưởng."
 
-msgid "You must complete the knowledge test to activate this account. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "Bạn phải hoàn tất bài kiểm tra kiến thức để kích hoạt tài khoản này. Xin vui lòng liên hệ với <a href=\"%1\"> hỗ trợ khách hàng</a> để biết thêm thông tin."
+msgid "You must complete the knowledge test to activate this account."
+msgstr ""
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Bạn phải tuân thủ những Điều khoản này để có thể sử dụng %1 API."
@@ -9626,9 +9620,6 @@ msgstr "Không có hoạt động Đăng nhập/Đăng xuất nào trên tài kh
 
 msgid "Your account has no trading activity."
 msgstr "Không có hoạt động giao dịch nào trên tài khoản của bạn."
-
-msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr "Tài khoản của bạn hiện đang bị khóa. Chỉ tính năng rút tiền được cho phép. Để biết thêm chi tiết, xin vui lòng liên hệ với %1."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Tài khoản của bạn được xác thực đầy đủ và mức giới hạn rút tiền của bạn đã được nâng lên."
