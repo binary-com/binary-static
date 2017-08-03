@@ -192,13 +192,10 @@ const Header = (() => {
     const displayAccountStatus = () => {
         BinarySocket.wait('authorize').then(() => {
             let get_account_status,
-                status,
-                has_mt_account = false;
-
-            const costarica_landing_company = /costarica/.test(Client.get('landing_company_shortcode'));
+                status;
 
             const riskAssessment = () => (
-                (get_account_status.risk_classification === 'high' || Client.isAccountOfType('financial') || has_mt_account) &&
+                (get_account_status.risk_classification === 'high' || Client.isAccountOfType('financial')) &&
                 /financial_assessment_not_complete/.test(status) && !jpClient()
             );
 
@@ -257,16 +254,7 @@ const Header = (() => {
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
                     get_account_status = State.getResponse('get_account_status') || {};
                     status = get_account_status.status;
-                    if (costarica_landing_company && +Client.get('balance') < 4000) {
-                        BinarySocket.wait('mt5_login_list').then((response) => {
-                            if (response.mt5_login_list.length) {
-                                has_mt_account = true;
-                            }
-                            checkStatus(check_statuses_real);
-                        });
-                    } else {
-                        checkStatus(check_statuses_real);
-                    }
+                    checkStatus(check_statuses_real);
                 });
             }
         });
