@@ -159,7 +159,7 @@ const PortfolioInit = (() => {
             removeContract(proposal.contract_id);
         } else {
             if (+proposal.is_valid_to_sell !== 1) {
-                no_resale_html = $('<span/>', { text: localize('Resale not offered') });
+                no_resale_html = $('<span/>', { class: 'message', text: localize('Resale not offered') });
                 $td.addClass('no_resale');
             } else {
                 status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
