@@ -1,4 +1,4 @@
-[% support_link = "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'support@binary.com') %]
+[% support_link = "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'authentications@binary.com') %]
 
 <div class="static_full">
     <h1>[% l('Video Room Facility') %]</h1>
