@@ -1,7 +1,7 @@
 const Table              = require('../../../../../common_functions/attach_dom/table');
 const localize           = require('../../../../../base/localize').localize;
 const Client             = require('../../../../../base/client');
-const elementTextContent = require('../../../../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml   = require('../../../../../common_functions/common_functions').elementInnerHtml;
 const formatMoney        = require('../../../../../common_functions/currency').formatMoney;
 
 const LimitsUI = (() => {
@@ -12,7 +12,7 @@ const LimitsUI = (() => {
     const appendRowTable = (name, turnover_limit, padding, font_weight) => {
         client_limits.append($('<tr/>', { class: 'flex-tr' })
             .append($('<td/>', { class: 'flex-tr-child', style: `padding-left: ${padding}; font-weight: ${font_weight};`, text: localize(name) }))
-            .append($('<td/>', { text: turnover_limit })));
+            .append($('<td/>', { html: turnover_limit })));
     };
 
     const fillLimitsTable = (limits) => {
@@ -27,10 +27,10 @@ const LimitsUI = (() => {
         const payout          = document.getElementById('payout');
         const payout_per      = document.getElementById('payout-per-symbol-and-contract-type');
 
-        elementTextContent(open_position, limits.open_positions);
-        elementTextContent(account_balance, formatMoney(currency, limits.account_balance, 1));
-        elementTextContent(payout, formatMoney(currency, limits.payout, 1));
-        elementTextContent(payout_per, formatMoney(currency, limits.payout_per_symbol_and_contract_type, 1));
+        elementInnerHtml(open_position, limits.open_positions);
+        elementInnerHtml(account_balance, formatMoney(currency, limits.account_balance, 1));
+        elementInnerHtml(payout, formatMoney(currency, limits.payout, 1));
+        elementInnerHtml(payout_per, formatMoney(currency, limits.payout_per_symbol_and_contract_type, 1));
 
         const market_specific = limits.market_specific;
         client_limits = $('#client-limits');

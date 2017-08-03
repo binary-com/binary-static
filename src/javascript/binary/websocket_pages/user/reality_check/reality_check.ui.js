@@ -51,12 +51,12 @@ const RealityCheckUI = (() => {
 
         $('#loginid').text(summary.loginid);
         $('#rc_currency').text(summary.currency);
-        $('#turnover').text(summary.turnover);
-        $('#profit_loss').text(summary.profit_loss);
+        $('#turnover').html(summary.turnover);
+        $('#profit_loss').html(summary.profit_loss);
         $('#bought').text(summary.contracts_bought);
         $('#sold').text(summary.contracts_sold);
         $('#open').text(summary.open_contracts);
-        $('#potential').text(summary.potential_profit);
+        $('#potential').html(summary.potential_profit);
 
         showLocalTimeOnHover('#start_time, #login_time, #current_time');
     };
