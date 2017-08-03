@@ -288,9 +288,6 @@ sub _texts {
         push @texts, localize('Virtual money credit to account');
         #strings for authenticate page
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
-        push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
-        push @texts, localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
-        push @texts, localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
         #strings for japan account opening page
         push @texts, localize('Japan');
         push @texts, localize('Questions');
@@ -425,7 +422,7 @@ sub _texts {
         push @texts, localize('Read');
         push @texts, localize('Payments');
         # Strings for lost_password
-        push @texts, localize('[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.');
+        push @texts, localize('[_1] Please click the link below to restart the password recovery process.');
         push @texts, localize('Your password has been successfully reset. Please log into your account using your new password.');
         push @texts, localize('Verification code format incorrect.');
         # strings for cashier page
@@ -436,7 +433,7 @@ sub _texts {
         push @texts, localize('This is a staging server - For testing purposes only');
         push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
         # strings for account signup error
-        push @texts, localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.');
+        push @texts, localize('Sorry, account signup is not available in your country.');
         # strings from back-end
         push @texts, localize('There was a problem accessing the server.');
         push @texts, localize('There was a problem accessing the server during purchase.');
