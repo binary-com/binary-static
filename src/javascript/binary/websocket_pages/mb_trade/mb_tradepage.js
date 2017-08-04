@@ -25,9 +25,11 @@ const MBTradePage = (() => {
             MBTradingEvents.init();
         }
 
-        BinarySocket.send({ payout_currencies: 1 }).then(() => {
-            MBDisplayCurrencies();
-            MBProcess.getSymbols();
+        BinarySocket.wait('authroize').then(() => {
+            BinarySocket.send({ payout_currencies: 1 }).then(() => {
+                MBDisplayCurrencies();
+                MBProcess.getSymbols();
+            });
         });
 
         $('#tab_portfolio').find('a').text(localize('Portfolio'));

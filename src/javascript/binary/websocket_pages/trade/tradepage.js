@@ -38,9 +38,11 @@ const TradePage = (() => {
             TradingEvents.init();
         }
 
-        BinarySocket.send({ payout_currencies: 1 }).then(() => {
-            displayCurrencies();
-            Process.processActiveSymbols();
+        BinarySocket.wait('authroize').then(() => {
+            BinarySocket.send({ payout_currencies: 1 }).then(() => {
+                displayCurrencies();
+                Process.processActiveSymbols();
+            });
         });
 
         if (document.getElementById('websocket_form')) {

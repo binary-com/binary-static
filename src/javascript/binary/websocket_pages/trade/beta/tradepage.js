@@ -34,9 +34,11 @@ const TradePage_Beta = (() => {
             TradingEvents_Beta.init();
         }
 
-        BinarySocket.send({ payout_currencies: 1 }).then(() => {
-            displayCurrencies();
-            Process_Beta.processActiveSymbols_Beta();
+        BinarySocket.wait('authroize').then(() => {
+            BinarySocket.send({ payout_currencies: 1 }).then(() => {
+                displayCurrencies();
+                Process_Beta.processActiveSymbols_Beta();
+            });
         });
 
         if (document.getElementById('websocket_form')) {
