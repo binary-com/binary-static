@@ -37,7 +37,7 @@ const ChangePassword = (() => {
 
     const onLoad = () => {
         BinarySocket.wait('get_account_status').then((response) => {
-            if (/has_password/.test(response.get_account_status.status)) {
+            if (!/social_signup/.test(response.get_account_status.status)) {
                 init();
             } else {
                 BinaryPjax.load('user/settingsws');
