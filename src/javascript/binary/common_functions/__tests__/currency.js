@@ -31,6 +31,10 @@ describe('formatMoney', () => {
         expect(formatMoney('BTC', '0.00010000')).to.eq(`${formatCurrency('BTC')}0.00010000`);
     });
 
+    it('works with negative values', () => {
+        expect(formatMoney('USD', '-123.55')).to.eq(`-${formatCurrency('USD')}123.55`);
+    });
+
     it('works when exclude currency', () => {
         expect(formatMoney('USD', '123.55', 1)).to.eq('123.55');
     });
