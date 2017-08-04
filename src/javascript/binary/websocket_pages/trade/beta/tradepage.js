@@ -34,7 +34,7 @@ const TradePage_Beta = (() => {
             TradingEvents_Beta.init();
         }
 
-        BinarySocket.wait('authroize').then(() => {
+        BinarySocket.wait('authorize').then(() => {
             BinarySocket.send({ payout_currencies: 1 }).then(() => {
                 displayCurrencies();
                 Process_Beta.processActiveSymbols_Beta();
