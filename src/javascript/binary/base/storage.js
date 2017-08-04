@@ -80,6 +80,12 @@ InScriptStore.prototype = {
             obj[key[0]] = value;
         }
     },
+    getObject: function (key) {
+        return JSON.parse(this.get(key) || '{}');
+    },
+    setObject: function (key, value) {
+        this.set(key, JSON.stringify(value));
+    },
     remove: function(...keys) {
         keys.forEach((key) => { delete this.store[key]; });
     },
