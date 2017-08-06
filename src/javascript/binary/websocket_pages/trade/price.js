@@ -8,6 +8,7 @@ const Defaults             = require('./defaults');
 const BinarySocket         = require('../socket');
 const localize             = require('../../base/localize').localize;
 const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
 const formatMoney          = require('../../common_functions/currency').formatMoney;
 
@@ -174,7 +175,7 @@ const Price = (() => {
             if (data.display_value) {
                 $('.stake:hidden').show();
                 elementTextContent(stake, `${localize('Stake')}: `);
-                elementTextContent(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
+                elementInnerHtml(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
                 $('.stake_wrapper:hidden').show();
             } else {
                 $('.stake_wrapper:visible').hide();
@@ -182,7 +183,7 @@ const Price = (() => {
 
             if (data.payout) {
                 elementTextContent(payout, `${localize('Payout')}: `);
-                elementTextContent(payout_amount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
+                elementInnerHtml(payout_amount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
                 $('.payout_wrapper:hidden').show();
             } else {
                 $('.payout_wrapper:visible').hide();

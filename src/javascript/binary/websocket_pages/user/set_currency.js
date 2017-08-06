@@ -29,7 +29,7 @@ const SetCurrency = (() => {
             currencies.forEach((c) => {
                 $currencies.append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
                     .append($('<div/>').append($('<img/>', { src: urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
-                    .append($('<div/>', { text: `${Currency.formatCurrency(c)} ${c}` })));
+                    .append($('<div/>', { html: `${Currency.formatCurrency(c)} ${c}` })));
             });
             const $currency_list = $('#currency_list');
             $currency_list.html($currencies.html());

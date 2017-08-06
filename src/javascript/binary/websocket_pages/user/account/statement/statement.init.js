@@ -9,6 +9,7 @@ const addTooltip           = require('../../../../common_functions/get_app_detai
 const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
 const dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
 const jpClient             = require('../../../../common_functions/country_base').jpClient;
+const jpResidence          = require('../../../../common_functions/country_base').jpResidence;
 const toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
 const DatePicker           = require('../../../../components/date_picker');
 
@@ -88,7 +89,7 @@ const StatementInit = (() => {
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             } else {
                 $('#util_row').setVisibility(1);
-                if (getLanguage() === 'JA') {
+                if (getLanguage() === 'JA' && jpResidence()) {
                     $('#download_csv').setVisibility(1)
                                       .find('a')
                                       .unbind('click')
