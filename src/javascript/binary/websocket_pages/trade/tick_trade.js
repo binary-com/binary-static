@@ -66,11 +66,14 @@ const TickDisplay = (() => {
         const end_time = parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * 5);
 
         setXIndicators();
-        initializeChart({
-            plot_from: data.previous_tick_epoch * 1000,
-            plot_to  : new Date(end_time * 1000).getTime(),
-            minimize : minimize,
-            width    : data.width ? data.width : undefined,
+        getHighstock((Highstock) => {
+            Highcharts = Highstock;
+            initializeChart({
+                plot_from: data.previous_tick_epoch * 1000,
+                plot_to  : new Date(end_time * 1000).getTime(),
+                minimize : minimize,
+                width    : data.width ? data.width : undefined,
+            });
         });
     };
 
@@ -371,40 +374,36 @@ const TickDisplay = (() => {
     };
 
     const updateChart = (data, contract) => {
-        getHighstock((Highstock) => {
-            Highcharts = Highstock;
-            subscribe = 'false';
-            if (contract) {
-                tick_underlying   = contract.underlying;
-                tick_count        = contract.tick_count;
-                tick_longcode     = contract.longcode;
-                tick_display_name = contract.display_name;
-                tick_date_start   = contract.date_start;
-                absolute_barrier  = contract.barrier;
-                tick_shortcode    = contract.shortcode;
-                tick_init         = '';
-                const request     = {
-                    ticks_history: contract.underlying,
-                    start        : contract.date_start,
-                    end          : 'latest',
-                };
-                if (contract.current_spot_time < contract.date_expiry) {
-                    request.subscribe = 1;
-                    subscribe         = 'true';
-                } else {
-                    request.end = contract.date_expiry;
-                }
-                BinarySocket.send(request, { callback: dispatch });
+        subscribe = 'false';
+        if (contract) {
+            tick_underlying   = contract.underlying;
+            tick_count        = contract.tick_count;
+            tick_longcode     = contract.longcode;
+            tick_display_name = contract.display_name;
+            tick_date_start   = contract.date_start;
+            absolute_barrier  = contract.barrier;
+            tick_shortcode    = contract.shortcode;
+            tick_init         = '';
+            const request     = {
+                ticks_history: contract.underlying,
+                start        : contract.date_start,
+                end          : 'latest',
+            };
+            if (contract.current_spot_time < contract.date_expiry) {
+                request.subscribe = 1;
+                subscribe         = 'true';
             } else {
-                dispatch(data);
+                request.end = contract.date_expiry;
             }
-        });
+            BinarySocket.send(request, { callback: dispatch });
+        } else {
+            dispatch(data);
+        }
     };
 
     return {
         init       : initialize,
         updateChart: updateChart,
-        dispatch   : dispatch,
         resetSpots : () => { spots_list = {}; },
     };
 })();
