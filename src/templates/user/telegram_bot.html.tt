@@ -2,7 +2,7 @@
 
 <h1>[% l('Telegram Bot') %]</h1>
 
-<p>[% l("In order to access <strong>Telegram Bot</strong>, you'll first need to generate an API Token and then enter it in the input box below.") %]</p>
+<p>[% l('In order to access Telegram Bot, please <a href="[_1]">generate an API Token</a> and enter it in the input box below.', request.url_for('/user/security/api_tokenws')) %]</p>
 
 <form class="gr-padding-10" id="frm_telegram_bot">
     [% WRAPPER fieldset %]
