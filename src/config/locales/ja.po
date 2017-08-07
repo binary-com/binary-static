@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-23 23:49-0400\n"
+"PO-Revision-Date: 2017-08-02 21:18-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -86,7 +86,7 @@ msgid "%1 (Toll Free)"
 msgstr "==フリーダイヤル=="
 
 msgid "%1 Account"
-msgstr ""
+msgstr "%1口座"
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "当社アフィリエイトプログラム・利用規約"
@@ -103,8 +103,8 @@ msgstr "%1 ICO よくあるご質問"
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO: 世界最高水準のバイナリーオプションプラットフォームでお取引"
 
-msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
-msgstr "%1下記リンクをクリックしてパスワードの再設定を再度お試しください。サポートが必要な場合は、 カスタマーサポートまでご連絡ください。"
+msgid "%1 Please click the link below to restart the password recovery process."
+msgstr "%1 パスワード回復の手順を初めから行うには、次のリンクをクリックしてください。"
 
 msgid "%1 Property"
 msgstr "不動産"
@@ -539,6 +539,9 @@ msgstr "PEPとは公的地位に有するまたは委託されている個人を
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "決済サービスエージェントは、お客さま（当社の顧客）と当社の間で取引所のような役割を果たします。決済サービスエージェントは、当社が取り扱いをしていない特定のEキャッシュ手段や現地通貨を利用したいお客さまに入出金の処理をします。振込や送金手数料はお客さま負担です。"
 
+msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
+msgstr "公的地位に有するまたはそのような機関から委託されている個人（PEP）は、彼/彼女の近親にPEPがいたり、密接関係者がいる場合も該当します。しかし、中堅または次席公務員は含まれません。国家元首、大臣、議会秘書、議員、裁判官、大使、政府高官、高位の軍役員、中央銀行の監査委員、国営企業の取締役がそれにあたります。上記の「近親」に関しては、配偶者/パートナー、両親、子供がPEPの対象になります。また、「密接関係者がいる場合」とは、ビジネスパートナーも含まれます。原則として、PEPに該当すると判断されても、12ヶ月以上は公的機関から委任されていない場合はPEPの対象ではありません。"
+
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
 msgstr "レンジトレードにおける「STAY-IN」トレードは、取引期間中常に上限バリア、及び下限バリアの間に価格が留まれば条件が満たされたと判定され、上下どちらかのバリア値にタッチした瞬間に条件が満たされないと判定されます。「BREAK-OUT」では取引期間以内に一度でも上限バリア、または下限バリアにタッチすれば条件が満たされたと判定されます。"
 
@@ -720,7 +723,7 @@ msgid "Access to your personal data is strictly prohibited with the exception of
 msgstr "お客さまの個人データへのアクセスは、当社の主要な担当者のみ職務執行に必要な場合に限り可能とし、それ以外の者は厳しく禁止されています。"
 
 msgid "Account"
-msgstr ""
+msgstr "口座"
 
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "口座残高 - 現在の口座残高："
@@ -739,6 +742,9 @@ msgstr "ご口座管理とデータ照合"
 
 msgid "Account Opening"
 msgstr "口座開設時確認書類"
+
+msgid "Account Opening Reason"
+msgstr "口座開設の理由"
 
 msgid "Account Password"
 msgstr "パスワード変更"
@@ -774,13 +780,16 @@ msgid "Accounts And Payments Executive"
 msgstr "顧客・支払担当者"
 
 msgid "Accounts List"
-msgstr ""
+msgstr "口座リスト"
 
 msgid "Accounts with debit balance (i.e. credit exposure to %1)"
 msgstr "借越残高がある口座（例：%1への与信額）"
 
 msgid "Accounts with debit balances are required to settle the full amount immediately by making a payment to us."
 msgstr "借越残高がある口座は直ちに全額を当社へ支払う必要があります。"
+
+msgid "Accumulation of Income/Savings"
+msgstr "収入と貯蓄"
 
 msgid "Accuracy of Information"
 msgstr "情報の精度"
@@ -1242,7 +1251,7 @@ msgid "Available 24/7"
 msgstr "平日24時間ご利用いただけます"
 
 msgid "Available Currencies"
-msgstr ""
+msgstr "ご利用いただける通貨"
 
 msgid "Available Markets"
 msgstr "ご利用いただける市場"
@@ -1548,7 +1557,7 @@ msgid "Binary.com by the numbers"
 msgstr "数字でみるBinary.com"
 
 msgid "Binary.com employs over 130 people across its offices in Malta, Malaysia and Japan."
-msgstr ""
+msgstr "マルタ、マレーシア、日本オフィス全体で130人以上の従業員が活躍しています。"
 
 msgid "Binary.com is a successful and growing platform, with several ongoing initiatives to enhance future profitability. These include our entry into new regulated markets with significant growth potential, and the innovation and expansion of our product offerings."
 msgstr "Binary.com is a successful and growing platform, with several ongoing initiatives to enhance future profitability. These include our entry into new regulated markets with significant growth potential, and the innovation and expansion of our product offerings."
@@ -1679,6 +1688,9 @@ msgstr "採用情報"
 
 msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
 msgstr "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
+
+msgid "Cash Business"
+msgstr "現金ビジネス"
 
 msgid "Cash Indices"
 msgstr "店頭インデックス"
@@ -1979,6 +1991,9 @@ msgstr "コモディティ取引のご経験"
 msgid "Commodities trading frequency"
 msgstr "コモデティ取引頻度"
 
+msgid "Company Ownership"
+msgstr "会社所有権"
+
 msgid "Company addresses"
 msgstr "会社所在地"
 
@@ -2037,7 +2052,7 @@ msgid "Conflicts Policy"
 msgstr "利益相反ポリシー"
 
 msgid "Congratulations!"
-msgstr ""
+msgstr "おめでとうございます！"
 
 msgid "Congratulations! Your %1 Account has been created."
 msgstr "おめでとうございます！%1口座の作成が完了しました。"
@@ -2390,9 +2405,6 @@ msgstr "ご入金：即時"
 msgid "Depositing and withdrawing funds"
 msgstr "入金/出金について"
 
-msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "お客様の口座への入出金手続きは、現在許可されていません。解除するには%1までご連絡ください。"
-
 msgid "Derivative"
 msgstr "デリバティブ"
 
@@ -2485,6 +2497,9 @@ msgstr "配当金の支払いはBinary.comのウェブサイト上で発表さ�
 
 msgid "Dividends paid out"
 msgstr "配当"
+
+msgid "Divorce Settlement"
+msgstr "離婚調停"
 
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "口座を開設するにあたり入金は必須でしょうか？"
@@ -2696,11 +2711,17 @@ msgstr "マイナンバー確認書類＆本人確認書類の送付"
 msgid "Email: "
 msgstr "Email: "
 
+msgid "Employed"
+msgstr "雇用者"
+
 msgid "Employee handbook"
 msgstr "従業員便覧"
 
 msgid "Employees"
 msgstr "従業員"
+
+msgid "Employment Status"
+msgstr "雇用状況"
 
 msgid "End Time"
 msgstr "判定時刻"
@@ -2988,7 +3009,7 @@ msgid "Facility that allows you to set limits on your account."
 msgstr "アカウントの制限をユーザー自身で設定していただける機能。"
 
 msgid "Fact: The currency you chose %1 is a %2."
-msgstr ""
+msgstr "事実：選択された通貨%1は%2です。"
 
 msgid "Failed"
 msgstr "失敗しました"
@@ -3024,7 +3045,7 @@ msgid "Female"
 msgstr "女性"
 
 msgid "Fiat Currency"
-msgstr ""
+msgstr "不換紙幣"
 
 msgid "Fifteen years on, and we're still innovating, growing and working on new ways to serve our customers better. For the first time, we offer short-term touch/no-touch trades and introduce a new charting application. We believe we have the most competitive and comprehensive digital options platform available to the retail public."
 msgstr "創業１５年を迎えてもなお、当社は進化と成長を続けることで顧客目線の新たなサービスの提供に注力しています。短期間でのタッチ/ノータッチ・トレードの提供と新しいチャートアプリケーションを開発。個人向けのオプション取引にて他の追従を許さない、かつ理解しやすいシステムを提供しているという確かな自信と共にサービスを提供します。"
@@ -3140,6 +3161,12 @@ msgstr "当社は外国為替市場の市場終了時刻は当社サイト内の
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "外国為替：外国為替市場は、取引所を介さずに主要な銀行や証券会社がそれぞれの通貨を直接もしくは為替ブローカーを通して取引しておりますので、外国為替相場に関する公式な価格は存在しません。各データフィードは、それぞれ異なる主要金融機関が提供する部分集合的な価格を含みますので、価格情報はどの金融機関の提示価格を採用したかに依存します。"
 
+msgid "For general support:"
+msgstr "一般的なお問い合わせ："
+
+msgid "For payments-related queries:"
+msgstr "支払に関するお問い合わせ："
+
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "３年連続でBetOnMarkets.comは、Shares Magazine UKから「最優秀な固定オッズ金融取引業者」を認定されてきましたが、同誌がこの分野への授与を中止したため、これが当社が同賞を受賞する最後の年になります。"
 
@@ -3246,7 +3273,7 @@ msgid "GamCare"
 msgstr "GamCare"
 
 msgid "Gaming"
-msgstr ""
+msgstr "ゲーム"
 
 msgid "Gaming Account"
 msgstr "ゲームアカウント"
@@ -3626,9 +3653,6 @@ msgstr "管轄裁判所または政府機関の命に従い、法律により当
 
 msgid "If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
 msgstr "If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
-
-msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "解決されない場合は、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "政府機関によって課せられた法律や義務に違反した場合を除き、いかなる理由で本契約が終了した場合、すべてのコンテンツを完全に削除していただく必要があります。"
@@ -4012,6 +4036,9 @@ msgstr "当社で用いるデータフィード、及びシステム上にデー
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "商品または原資産の以前の実績情報は現在および/または将来の業績を保証するものではありません。過去の実績は将来の成果を示すものではありません。"
 
+msgid "Inheritance"
+msgstr "相続"
+
 msgid "Instant access"
 msgstr "インスタントアクセス"
 
@@ -4071,10 +4098,13 @@ msgid "Investing or trading in Contracts exposes you to the performance of the u
 msgstr "契約への投資と取引は外国為替独自の機能とリスクを含んだバイナリー契約の基礎または関連の商品や資産を言います。"
 
 msgid "Investment"
-msgstr ""
+msgstr "投資"
 
 msgid "Investment Account"
 msgstr "投資口座"
+
+msgid "Investment Income"
+msgstr "投資収益"
 
 msgid "Investment Products to EEA Residents are provided by Binary Investments (Europe) Ltd (\"BIEL\") which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
 msgstr "EEA（欧州経済領域）住民への投資商品は、投資商品で自身のアカウントに対処するためにMalta Financial Services Act（マルタ金融サービス法）の下、Malta Investment Services Authority（マルタ投資サービス機構）が承認・規制しているBinary Investments (Europe) Ltd (\"BIEL\")によって提供されています。"
@@ -5428,7 +5458,7 @@ msgid "Note: Withdrawal via payment agent is available only if you deposit exclu
 msgstr "ご注意：決済サービスでのご出金は、ご入金の際に決済サービスをご利用いただいた場合にのみご利用いただけます。"
 
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
-msgstr ""
+msgstr "注意：不換紙幣口座と各暗号通貨口座はお一人様一口座となります。"
 
 msgid "Notes:"
 msgstr "ご注意："
@@ -5889,6 +5919,9 @@ msgstr "ペイアウトは1ロットあたり1,000円"
 msgid "Pension"
 msgstr "年金"
 
+msgid "Pensioner"
+msgstr "年金受給者"
+
 msgid "Percentage"
 msgstr "割合"
 
@@ -5986,7 +6019,7 @@ msgid "Please check your email to retrieve the token needed to reset your passwo
 msgstr "パスワードの再設定にはワンタイムパスワードが必要となりますので、メールをご確認ください。"
 
 msgid "Please choose a currency"
-msgstr ""
+msgstr "通貨を選択してください"
 
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
 msgstr "取引上限と出金限度額を引き上げるには下記財務評価書にご記入をお願いします。"
@@ -6073,7 +6106,7 @@ msgid "Please select the checkbox."
 msgstr "チェックボックスを選択してください"
 
 msgid "Please select the currency of this account:"
-msgstr ""
+msgstr "この口座に使用される通貨を選択してください："
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "リアル口座へアップグレードされる前に%居住国%2を設定してください。"
@@ -6083,6 +6116,9 @@ msgstr "入金制限を解除するには、%1自己制限%2から30日間の取
 
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr "入出金にアクセスするには、<a href=\"%1\">30日の取引限度額</a>を設定いただく必要があります。"
+
+msgid "Please set your account opening reason before proceeding."
+msgstr "続行される前に口座開設の理由を選択してください。"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "ご希望のリアリティチェック間隔を分単位で指定してください"
@@ -6398,7 +6434,7 @@ msgid "Read the answers to some common questions."
 msgstr "よくあるご質問事項に対する回答はこちらから"
 
 msgid "Real"
-msgstr ""
+msgstr "リアルマネー口座"
 
 msgid "Real Account"
 msgstr "リアル口座番号"
@@ -6677,10 +6713,13 @@ msgid "Salaried Employee"
 msgstr "サラリーマン"
 
 msgid "Sale Date"
-msgstr "売却/判定時刻"
+msgstr "口座残高反映時間"
 
 msgid "Sale Price"
 msgstr "売却 / ペイアウト金額"
+
+msgid "Sale of Property"
+msgstr "不動産売却"
 
 msgid "Saturday"
 msgstr "土"
@@ -6752,7 +6791,7 @@ msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "左の欄にある<strong>Cookie</strong>を選択してください。"
 
 msgid "Select currency"
-msgstr ""
+msgstr "通貨を選択してください"
 
 msgid "Select market"
 msgstr "取引市場を選択"
@@ -6848,7 +6887,7 @@ msgid "Set \"<strong>Firefox will</strong>\" to \"<strong>Remember history</stro
 msgstr "\"<strong>Firefox</strong>\"を\"<strong>履歴を記憶する</strong>\"に設定してください。"
 
 msgid "Set Currency"
-msgstr ""
+msgstr "通貨選択"
 
 msgid "Set barrier(s) to define your position and trigger the payout you will receive."
 msgstr "バリア価格の設定はポジションの要素であり、ペイアウトに影響します。"
@@ -6973,8 +7012,8 @@ msgstr "ソーシャルメディア管理者"
 msgid "Software (Perl) Development"
 msgstr "ソフトウェア（Perl）開発"
 
-msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "申し訳ございませんが、お客様の国では口座の開設ができません。詳細については<a href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
+msgid "Sorry, account signup is not available in your country."
+msgstr "申し訳ありませんが、あなたの国から口座開設はできません。"
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "通信エラーが発生しましたので、再度ページの読み込みをしてください"
@@ -6993,6 +7032,9 @@ msgstr "申し訳ございませんが、ご入力頂いた入出金パスワー
 
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "申し訳ございませんが、これ以上のトレードの購入を可能にする権限がお客さまのご口座に存在しておりません。"
+
+msgid "Source of Wealth"
+msgstr "富源"
 
 msgid "South Africa 40 Cash Index"
 msgstr "南アフリカ 40現物指数"
@@ -7100,7 +7142,7 @@ msgid "Stock market indices measure the value of a selection of companies in the
 msgstr "株式市場インデックスは、株式市場での企業の選択値を測定します。"
 
 msgid "Stocks"
-msgstr ""
+msgstr "株式"
 
 msgid "Stocks trading experience"
 msgstr "株式取引のご経験"
@@ -7330,8 +7372,8 @@ msgstr "店頭バイナリーオプション取引約款"
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1のウェブサイトは特定の著作権で保護されています。"
 
-msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
-msgstr "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
+msgstr "％1ウェブサイトはある特定の著作権によって保護されています。ウェブサイトを構成する資料（すべての記事、テキスト、画像、ロゴ、編集、システム、コード、デザインを含み、これらに限定されない）は、1999-2017の間、バイナリーグループ会社によって全著作権を所有しています。これらの資料は、原型のままであり、又、すべてのコピーには明確な目に見える位置に「Copyright 1999-2017 Binary Ltd. All rights reserved.」と記載があれば、非営利目的でのみ限定的に複製および配布することができます。これらの資料は、バイナリグループ会社から書面による事前の許可なく、商業目的またはあらゆる種類の報酬のために複製または再配布することはできません。 ％1とbull / bearロゴは登録商標です。"
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "github上のオープンソース・プロジェクトである%2binary-static%3にて、%1 (バイナリードットコム)のウェブサイトの静的コンテンツ (CSS, Javascript)は利用可能です。Binary.com (バイナリードットコム)のウェブサイトのカスタマイズ、ブラウザ互換性の向上、サイトスピードの向上、 Javascriptのパフォーマンスの向上をお望みの場合はプロジェクトをフォークし、コード変更の提案に関するプルリクエストを送信して下さい。"
@@ -8015,8 +8057,8 @@ msgstr "ターゲット価格を設定し、取引対象の価格が取引終了
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "受賞歴を誇る当社のバイナリーオプション取引プラットフォームのこれまでの発展をグラフでご紹介します。"
 
-msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company. If you have questions about these terms or would like information about licensing materials from Binary Ltd., please contact us."
-msgstr "Binaryのグループ会社による事前の書面による許可無しでは、そのようなコンテンツのいかなる商業目的、または報酬獲得目的での複製、及び頒布は不可能である可能性があります。これら取り決めやBinary Ltd.に帰属する著作物の情報に疑問点がございましたら当社までお問い合わせ下さい。"
+msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
+msgstr "これらの資料は、バイナリ・グループ会社から事前の書面による許可なく、商業目的またはあらゆる種類の報酬のために複写または再配布することはできません。"
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "本契約は、本契約に規定する事項に関し、当事者間の完全な合意を含むものであり、当事者間における従前のすべての関連する合意と理解に代わるものとします。"
@@ -8491,7 +8533,7 @@ msgid "Two-way pricing"
 msgstr "2ウェイ・プライス（購入・売却）を表示"
 
 msgid "Type"
-msgstr ""
+msgstr "タイプ"
 
 msgid "Types of trades"
 msgstr "トレードの種類"
@@ -8710,7 +8752,7 @@ msgid "View your trading and withdrawal limits."
 msgstr "取引上限と出金限度額を確認する"
 
 msgid "Virtual"
-msgstr ""
+msgstr "デモ口座"
 
 msgid "Virtual Account"
 msgstr "デモ口座番号"
@@ -9023,7 +9065,7 @@ msgid "We’ve generated over USD 3 billion in turnover since inception, thanks 
 msgstr "2010年の創業から急速な成長を遂げ、お陰様で30億USD以上の取引高を突破しました。"
 
 msgid "We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in three countries: Malaysia, Malta and Japan."
-msgstr ""
+msgstr "長年にわたり、&mdash;&mdash;人材・オフィスともに成長を遂げてきました。現在では、マレーシア・マルタ・日本のオフィスで130名を超える従業員が世界中で活躍しています。"
 
 msgid "We’ve obtained financial and gambling licenses to operate in key countries and regions such as Europe, the Isle of Man, the United Kingdom, and Japan."
 msgstr "ヨーロッパ・マン島・イギリス・日本の主要国と地域において運営するうえで必要となる金融ライセンスを取得。"
@@ -9048,6 +9090,9 @@ msgstr "%1のアフィリエイトプログラムについて教えて下さい�
 
 msgid "What is the definition of a 'client'?"
 msgstr "「獲得会員」の定義について教えて下さい。"
+
+msgid "What is this?"
+msgstr "これはなんですか？"
 
 msgid "What marketing tools do you offer?"
 msgstr "どのようなマーケティングツールを利用できるか教えて下さい。"
@@ -9262,8 +9307,8 @@ msgstr "ご出金：未対応"
 msgid "Withdrawal Limits"
 msgstr "出金限度額"
 
-msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "お客様の口座の出金手続きは現在許可されていません。解除するには%1までご連絡ください。"
+msgid "Withdrawal for your account is not allowed at this moment."
+msgstr "現在、この取引口座では出金のお手続きができなくなっております。"
 
 msgid "Withdrawal of Funds from Real Account"
 msgstr "リアル口座から資金のご出金"
@@ -9454,8 +9499,8 @@ msgstr "直近%3日間に累計%1 %2 と同等の金額を既に出金されて�
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "%1 %2 と同等の金額を既に出金されています。"
 
-msgid "You have created all accounts available for you."
-msgstr ""
+msgid "You have created all accounts available to you."
+msgstr "現在開設いただける口座はありません。"
 
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
@@ -9485,7 +9530,7 @@ msgid "You have sold this contract at %1 %2"
 msgstr "%1 %2でこのトレードを売却しました"
 
 msgid "You have successfully created your account!"
-msgstr ""
+msgstr "口座の開設が完了しました！"
 
 msgid "You have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site."
 msgstr "当社サービスを通じて金融トレードを購入するメリットとリスクを評価でき、かつ当社サイトに掲載されている情報に依存せずに金融トレードを行ったことのあるような金融トレードにおける十分な経験と知識があります。"
@@ -9545,8 +9590,8 @@ msgstr "あなたはいつでも本契約を終了することができますが
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "ボーナス金額の２５倍に相当する取引高を達成された場合に限り、出金可能です。"
 
-msgid "You must complete the knowledge test to activate this account. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "口座を有効にするには、知識確認テストを行っていただく必要があります。詳細については<a href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
+msgid "You must complete the knowledge test to activate this account."
+msgstr "リアル口座を有効にするには知識確認テストに合格する必要があります。"
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "%1 APIのご使用にあたり、これらの規約を遵守していただく必要があります。"
@@ -9698,8 +9743,8 @@ msgstr "%1で開設されたリアル口座は、開設日より5日以内に認
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "あなたのクライアントに送金が処理されたことをお知らせする通知メールが届きます。"
 
-msgid "Your Existings Accounts"
-msgstr ""
+msgid "Your Existing Accounts"
+msgstr "ご利用中の口座"
 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "お客さまのIDはクッキーに保存され、お客さまのアフィリエイトリンクがクリックされる度に識別され、%1に伝わります。"
@@ -9718,9 +9763,6 @@ msgstr "お客さまのご口座はログイン/ログアウトのアクティ�
 
 msgid "Your account has no trading activity."
 msgstr "取引履歴はありません"
-
-msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr "現在お客様の口座は、一時的にご利用いただけません。詳細は、%1までご連絡ください。"
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "お客さまのご口座はアップグレード済みですので、ご出金制限が引き上げられました。"
@@ -11792,7 +11834,7 @@ msgid "Trusted by traders since 2000"
 msgstr "Trusted by traders since 2000"
 
 msgid "Accounts"
-msgstr ""
+msgstr "口座"
 
 msgid "Authenticate"
 msgstr "口座アップグレード"

@@ -64,7 +64,7 @@ const ProfitTableUI = (() => {
         const jp_client = jpClient();
         const sub_total_type = (total_profit >= 0) ? 'profit' : 'loss';
 
-        $('#pl-day-total').find(' > .pl').text(formatMoney(currency, Number(total_profit), !jp_client))
+        $('#pl-day-total').find(' > .pl').html(formatMoney(currency, Number(total_profit), !jp_client))
             .removeClass('profit loss')
             .addClass(sub_total_type);
     };

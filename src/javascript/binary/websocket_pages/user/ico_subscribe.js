@@ -42,7 +42,7 @@ const ICOSubscribe = (() => {
             if (currency) {
                 $('.currency').text(currency);
             } else {
-                $(form_id).find('.topMenuBalance').text(formatMoney(currency, 0));
+                $(form_id).find('.topMenuBalance').html(formatMoney(currency, 0));
             }
             $duration = $('#duration');
             $price = $('#price');
@@ -90,7 +90,7 @@ const ICOSubscribe = (() => {
         if (duration_val && price_val) {
             total = +duration_val * +price_val;
         }
-        $total.text(formatMoney(currency, total));
+        $total.html(formatMoney(currency, total));
     };
 
     const handleResponse = (response) => {

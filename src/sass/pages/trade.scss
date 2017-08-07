@@ -407,6 +407,9 @@
                 align-items: center;
                 margin-bottom: 10px;
 
+                &, .contract_amount, .contract_payout {
+                    vertical-align: middle;
+                }
                 div {
                     flex-grow: 1;
                 }
@@ -442,9 +445,6 @@
         width: 175px;
         @include BIDIR_PROP(margin-right, margin-left, 5px);
         margin-bottom: 5px;
-    }
-    #expiry_time {
-        width: 80px;
     }
     #expiry_date, #expiry_time {
         font-size: $FONT_SIZE_N;

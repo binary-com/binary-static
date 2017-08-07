@@ -57,9 +57,9 @@ const PortfolioInit = (() => {
         const $div = $('<div/>');
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
                 .append($('<td/>', { class: 'ref' }).append($(`<span ${GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id])} data-balloon-position="right">${data.transaction_id}</span>`)))
-                .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: formatMoney(data.currency, data.payout) })))
+                .append($('<td/>', { class: 'payout' }).append($('<strong/>', { html: formatMoney(data.currency, data.payout) })))
                 .append($('<td/>', { class: 'details', text: long_code }))
-                .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { text: formatMoney(data.currency, data.buy_price) })))
+                .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price) })))
                 .append($('<td/>', { class: 'indicative' }).append($('<strong/>', { class: 'indicative_price', text: '--.--' })))
                 .append($('<td/>', { class: 'button' }).append($('<button/>', { class: 'button open_contract_details nowrap', contract_id: data.contract_id, text: localize('View') }))))
             .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));
@@ -69,7 +69,7 @@ const PortfolioInit = (() => {
     const updateBalance = () => {
         const $portfolio_balance = $('#portfolio-balance');
         if ($portfolio_balance.length === 0) return;
-        $portfolio_balance.text(Portfolio.getBalance(Client.get('balance'), Client.get('currency')));
+        $portfolio_balance.html(Portfolio.getBalance(Client.get('balance'), Client.get('currency')));
         const $if_balance_zero = $('#if-balance-zero');
         if (Client.get('balance') > 0 || Client.get('is_virtual')) {
             $if_balance_zero.setVisibility(0);
@@ -159,13 +159,13 @@ const PortfolioInit = (() => {
             removeContract(proposal.contract_id);
         } else {
             if (+proposal.is_valid_to_sell !== 1) {
-                no_resale_html = $('<span/>', { text: localize('Resale not offered') });
+                no_resale_html = $('<span/>', { class: 'message', text: localize('Resale not offered') });
                 $td.addClass('no_resale');
             } else {
                 status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
                 $td.removeClass('no_resale');
             }
-            $td.html($('<strong/>', { class: `indicative_price ${status_class}`, text: formatMoney(proposal.currency, values[proposal.contract_id].indicative) })
+            $td.html($('<strong/>', { class: `indicative_price ${status_class}`, html: formatMoney(proposal.currency, values[proposal.contract_id].indicative) })
                 .append(no_resale_html));
         }
 
@@ -194,8 +194,8 @@ const PortfolioInit = (() => {
     };
 
     const updateFooter = () => {
-        $('#cost-of-open-positions').text(formatMoney(currency, Portfolio.getSumPurchase(values)));
-        $('#value-of-open-positions').text(formatMoney(currency, Portfolio.getIndicativeSum(values)));
+        $('#cost-of-open-positions').html(formatMoney(currency, Portfolio.getSumPurchase(values)));
+        $('#value-of-open-positions').html(formatMoney(currency, Portfolio.getIndicativeSum(values)));
     };
 
     const errorMessage = (msg) => {

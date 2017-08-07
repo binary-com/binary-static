@@ -48,10 +48,16 @@ Store.prototype = {
         }
     },
     getObject: function (key) {
-        return this.storage.getObject(key);
+        return typeof this.storage.getObject === 'function' ? // Prevent runtime error in IE
+            this.storage.getObject(key) :
+            JSON.parse(this.storage.getItem(key) || '{}');
     },
     setObject: function (key, value) {
-        this.storage.setObject(key, value);
+        if (typeof this.storage.setObject === 'function') { // Prevent runtime error in IE
+            this.storage.setObject(key, value);
+        } else {
+            this.storage.setItem(key, JSON.stringify(value));
+        }
     },
     remove: function(key) { this.storage.removeItem(key); },
     clear : function()    { this.storage.clear(); },
@@ -73,6 +79,12 @@ InScriptStore.prototype = {
         } else {
             obj[key[0]] = value;
         }
+    },
+    getObject: function (key) {
+        return JSON.parse(this.get(key) || '{}');
+    },
+    setObject: function (key, value) {
+        this.set(key, JSON.stringify(value));
     },
     remove: function(...keys) {
         keys.forEach((key) => { delete this.store[key]; });

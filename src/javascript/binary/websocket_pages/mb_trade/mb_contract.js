@@ -169,7 +169,9 @@ const MBContract = (() => {
             $count_down_timer = $duration.find('.remaining-time');
 
             const time_left = parseInt($duration.attr('value').split('_')[1]) - window.time.unix();
-            if (time_left < 120) {
+            if (time_left <= 0) {
+                location.reload();
+            } else if (time_left < 120) {
                 $count_down_timer.addClass('alert');
             }
             const remaining_month_day_string = [];
@@ -194,9 +196,7 @@ const MBContract = (() => {
             $count_down_timer.text(`${remaining_month_day_string.join('')} ${remaining_time_string.join(':')}`);
         });
         current_time_left = parseInt($period.attr('value').split('_')[1]) - window.time.unix();
-        if (current_time_left <= 0) {
-            location.reload();
-        } else if (current_time_left < 120) {
+        if (current_time_left < 120) {
             // make all price buttons inactive if less than 2 minutes remaining
             $('.price-button').addClass('inactive');
         }

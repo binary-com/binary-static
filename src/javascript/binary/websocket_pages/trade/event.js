@@ -18,6 +18,7 @@ const GTM                   = require('../../base/gtm');
 const dateValueChanged      = require('../../common_functions/common_functions').dateValueChanged;
 const isVisible             = require('../../common_functions/common_functions').isVisible;
 const getDecimalPlaces      = require('../../common_functions/currency').getDecimalPlaces;
+const isCryptocurrency      = require('../../common_functions/currency').isCryptocurrency;
 const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 const TimePicker            = require('../../components/time_picker');
 
@@ -33,6 +34,39 @@ const TradingEvents = (() => {
     'use strict';
 
     const initiate = () => {
+        const attachTimePicker = (selector, checkEndTime) => {
+            let minTime = window.time || moment.utc();
+            let maxTime;
+            if ($date_start && $date_start.val()) {
+                const minMaxTime = getMinMaxTime($date_start, minTime);
+                minTime = minMaxTime.minTime;
+                maxTime = minMaxTime.maxTime;
+                const date_start_val = $date_start.val();
+                // if date_start is not 'now'
+                if (checkEndTime && !Durations.isNow(date_start_val)) {
+                    const $expiry_date = $('#expiry_date');
+                    const endTime = moment($expiry_date.attr('data-value'));
+                    const start_time_val = $time_start.val().split(':');
+                    const compare = isNaN(+date_start_val) ? window.time : moment(+date_start_val * 1000);
+                    // if expiry time is one day after start time, minTime can be 0
+                    // but maxTime should be 24 hours after start time, so exact value of start time
+                    if (endTime.isAfter(compare.format('YYYY-MM-DD HH:mm'), 'day')) {
+                        minTime = 0;
+                        maxTime = endTime.utc().hour(start_time_val[0]).minute(start_time_val[1]);
+                    } else {
+                        // if expiry time is same as today, min time should be the selected start time
+                        minTime = minTime.hour(start_time_val[0]).minute(start_time_val[1]);
+                    }
+                }
+            }
+            const initObj = {
+                selector: selector,
+                minTime : minTime,
+                maxTime : maxTime || null,
+            };
+            TimePicker.init(initObj);
+        };
+
         /*
          * attach event to market list, so when client change market we need to update undelryings
          * and request for new Contract details to populate the form and request price accordingly
@@ -184,35 +218,24 @@ const TradingEvents = (() => {
         if (end_date_element) {
             // need to use jquery as datepicker is used, if we switch to some other
             // datepicker we can move back to javascript
-            $('#expiry_date').on('change input', function() {
-                if (!dateValueChanged(this, 'date')) {
-                    return false;
-                }
-                if (commonTrading.timeIsValid($('#expiry_date'))) {
-                    Durations.selectEndDate(moment(this.getAttribute('data-value')));
-                }
-                return true;
-            });
+            Durations.expiryDateOnChange($('#expiry_date'));
         }
 
         const end_time_element = document.getElementById('expiry_time');
+        const $expiry_time = $('#expiry_time');
         if (end_time_element) {
             /*
              * attach datepicker and timepicker to end time durations
              * have to use jquery
              */
             attachTimePicker('#expiry_time');
-            $('#expiry_time')
-                .on('focus click', () => { attachTimePicker('#expiry_time'); })
-                .on('keypress', (ev) => { onlyNumericOnKeypress(ev, [58]); })
+            $expiry_time
+                .on('focus click', () => { attachTimePicker('#expiry_time', 1); })
                 .on('change input blur', function() {
                     if (!dateValueChanged(this, 'time')) {
                         return false;
                     }
-                    if (commonTrading.timeIsValid($('#expiry_time'))) {
-                        Durations.setTime(end_time_element.value);
-                        Price.processPriceRequest();
-                    }
+                    Durations.setTime(end_time_element.value, 1);
                     return true;
                 });
         }
@@ -226,10 +249,11 @@ const TradingEvents = (() => {
 
             amount_element.addEventListener('input', commonTrading.debounce((e) => {
                 e.target.value = e.target.value.replace(/[^0-9.]/g, '');
+                const currency = Defaults.get('currency');
                 if (isStandardFloat(e.target.value)) {
-                    e.target.value = parseFloat(e.target.value).toFixed(getDecimalPlaces(Defaults.get('currency')));
+                    e.target.value = parseFloat(e.target.value).toFixed(getDecimalPlaces(currency));
                 }
-                Defaults.set('amount', e.target.value);
+                Defaults.set(`amount${isCryptocurrency(currency) ? '_crypto' : ''}`, e.target.value);
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));
@@ -239,9 +263,9 @@ const TradingEvents = (() => {
         const initTimePicker = () => {
             if (timepicker_initialized) return;
             timepicker_initialized = true;
-            attachTimePicker('#time_start', $date_start);
-            $('#time_start')
-                .on('focus click', () => { attachTimePicker('#time_start', $date_start); })
+            attachTimePicker('#time_start');
+            $time_start
+                .on('focus click', () => { attachTimePicker('#time_start'); })
                 .on('change input blur', function() {
                     if (!dateValueChanged(this, 'time')) {
                         return false;
@@ -271,6 +295,7 @@ const TradingEvents = (() => {
 
         const time_start_element = document.getElementById('time_start');
         const $date_start = $('#date_start');
+        const $time_start = $('#time_start');
         if (time_start_element && date_start_element.value !== 'now') {
             initTimePicker();
         }
@@ -317,7 +342,10 @@ const TradingEvents = (() => {
         const currency_element = document.getElementById('currency');
         if (currency_element) {
             currency_element.addEventListener('change', (e) => {
-                Defaults.set('currency', e.target.value);
+                const currency = e.target.value;
+                Defaults.set('currency', currency);
+                const amount = isCryptocurrency(currency) ? 'amount_crypto' : 'amount';
+                if (Defaults.get(amount)) $('#amount').val(Defaults.get(amount));
                 Price.processPriceRequest();
             });
         }
@@ -441,21 +469,6 @@ const TradingEvents = (() => {
                 BinaryPjax.load(e.target.getAttribute('target'));
             }));
         }
-    };
-
-    const attachTimePicker = (selector, $setMinMaxSelector) => {
-        let minTime = window.time ? window.time : moment.utc();
-        let maxTime;
-        if ($setMinMaxSelector) {
-            minTime = getMinMaxTime($setMinMaxSelector, minTime).minTime;
-            maxTime = getMinMaxTime($setMinMaxSelector, minTime).maxTime;
-        }
-        const initObj = {
-            selector: selector,
-            minTime : minTime,
-            maxTime : maxTime || null,
-        };
-        TimePicker.init(initObj);
     };
 
     return {

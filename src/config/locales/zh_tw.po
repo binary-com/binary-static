@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-23 23:49-0400\n"
+"PO-Revision-Date: 2017-08-02 21:18-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,7 @@ msgid "%1 (Toll Free)"
 msgstr "%1(免費電話)"
 
 msgid "%1 Account"
-msgstr ""
+msgstr "%1帳戶"
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "%1 聯盟計劃的條款和條件"
@@ -102,8 +102,8 @@ msgstr "%1 ICO 常見問題集"
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO。在全球領先的二元期權交易平台投資"
 
-msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
-msgstr "%1 請點選以下連結重啟密碼恢復過程。如需要幫助，請聯繫我們的客服部。"
+msgid "%1 Please click the link below to restart the password recovery process."
+msgstr "%1 請點擊下方連結，重新開啟密碼恢復過程。"
 
 msgid "%1 Property"
 msgstr "%1的財產"
@@ -534,6 +534,9 @@ msgstr "PEP是被委託進行特出公眾任務的個人。此身份包括了PEP
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "付款代理人扮演客戶（即我們的顧客）和 %1之間的兌換員。如果客戶希望使用某種特定電子貨幣或1%不支持的本地貨幣，付款代理人將負責為客戶處理充值和提款事宜。匯款費用由客戶支付。"
 
+msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
+msgstr "政治公眾人士(PEP) 是被委託進行特出公眾任務的個人。此身份包括了其直系親屬和眾所周知為其親近的人，但不包括中級或初級官員。所指個人包括國家首長、部長、國會秘書、國會議員、法官、大使、高級政府官員、軍事高層官員、中央銀行的審計委員、國營企業董事等。以上各例的直系親屬也都屬於政治公眾人士，包括其配偶/伴侶、父母和孩子。再者，眾所周知的與政治公眾人士有親密關係的人士包括其商業合夥人也屬於政治公眾人士。一般來說，已經停止被委託進行特出公眾任務為期超過十二個月的個人不屬於政治公眾人士。"
+
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
 msgstr "如果市場在所選期限內一直保持在（沒有觸及）高障礙或低障礙之間，所選擇的「保持在範圍之內」交易即可獲利。如果市場在所選期限內只要觸及高障礙或低障礙，所選擇的「超出範圍之外」交易即可獲利。"
 
@@ -715,7 +718,7 @@ msgid "Access to your personal data is strictly prohibited with the exception of
 msgstr "除非公司關鍵人員在執行職務時有此必要，我們嚴格禁止任何人存取您的個人資料。"
 
 msgid "Account"
-msgstr ""
+msgstr "帳戶"
 
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "帳戶餘額 &mdash; 您的帳戶餘額代表:"
@@ -734,6 +737,9 @@ msgstr "帳戶管理及追蹤"
 
 msgid "Account Opening"
 msgstr "帳戶開立"
+
+msgid "Account Opening Reason"
+msgstr "開立帳戶的原因"
 
 msgid "Account Password"
 msgstr "帳戶密碼"
@@ -769,13 +775,16 @@ msgid "Accounts And Payments Executive"
 msgstr "帳戶和付款執行員"
 
 msgid "Accounts List"
-msgstr ""
+msgstr "帳戶清單"
 
 msgid "Accounts with debit balance (i.e. credit exposure to %1)"
 msgstr "帳戶的借方餘額 （即對 %1的信貸風險）"
 
 msgid "Accounts with debit balances are required to settle the full amount immediately by making a payment to us."
 msgstr "有借方餘額的帳戶需立即付款給我們結算全額。"
+
+msgid "Accumulation of Income/Savings"
+msgstr "收入/儲蓄積累"
 
 msgid "Accuracy of Information"
 msgstr "資訊的準確性"
@@ -1234,7 +1243,7 @@ msgid "Available 24/7"
 msgstr "全天候無休"
 
 msgid "Available Currencies"
-msgstr ""
+msgstr "可用的貨幣"
 
 msgid "Available Markets"
 msgstr "可用的市場"
@@ -1537,7 +1546,7 @@ msgid "Binary.com by the numbers"
 msgstr "Binary.com數字"
 
 msgid "Binary.com employs over 130 people across its offices in Malta, Malaysia and Japan."
-msgstr ""
+msgstr "Binary.com在馬爾他、馬來西亞和日本均開設辦事處，僱員人數超過130人。"
 
 msgid "Binary.com is a successful and growing platform, with several ongoing initiatives to enhance future profitability. These include our entry into new regulated markets with significant growth potential, and the innovation and expansion of our product offerings."
 msgstr "Binary.com是個成功、陸續成長的平台，擁有多項持久性改革，以增加利潤，包括以顯著的成長潛能加入新興監控市場，以及為產品優惠提供創新和擴展。"
@@ -1667,6 +1676,9 @@ msgstr "工作機會"
 
 msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
 msgstr "經過仔細挑選的流動性提供商網絡使我們能夠向零售和機構客戶提供低價差和低保證金費率服務"
+
+msgid "Cash Business"
+msgstr "現金業務"
 
 msgid "Cash Indices"
 msgstr "現金指數"
@@ -1962,6 +1974,9 @@ msgstr "商品交易經驗"
 msgid "Commodities trading frequency"
 msgstr "商品交易頻率"
 
+msgid "Company Ownership"
+msgstr "公司擁有權"
+
 msgid "Company addresses"
 msgstr "公司地址"
 
@@ -2020,7 +2035,7 @@ msgid "Conflicts Policy"
 msgstr "衝突政策"
 
 msgid "Congratulations!"
-msgstr ""
+msgstr "祝賀您！"
 
 msgid "Congratulations! Your %1 Account has been created."
 msgstr "恭喜! 您已成功開立%1帳戶。"
@@ -2373,9 +2388,6 @@ msgstr "存款：即時"
 msgid "Depositing and withdrawing funds"
 msgstr "存款及取款"
 
-msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "您的帳戶現時無法存取款。請聯繫 %1進行解鎖。"
-
 msgid "Derivative"
 msgstr "衍生工具"
 
@@ -2468,6 +2480,9 @@ msgstr "分紅訊息將在Binary.com網站公布。"
 
 msgid "Dividends paid out"
 msgstr "紅利支付"
+
+msgid "Divorce Settlement"
+msgstr "離婚協定"
 
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "我需要入金才能開戶嗎？"
@@ -2679,11 +2694,17 @@ msgstr "將身份證件以電子郵件方式發送給我們"
 msgid "Email: "
 msgstr "電子郵件: "
 
+msgid "Employed"
+msgstr "就業"
+
 msgid "Employee handbook"
 msgstr "員工手冊"
 
 msgid "Employees"
 msgstr "僱員"
+
+msgid "Employment Status"
+msgstr "就業狀況"
 
 msgid "End Time"
 msgstr "結束時間"
@@ -2971,7 +2992,7 @@ msgid "Facility that allows you to set limits on your account."
 msgstr "可讓您對帳戶設定限制的設施。"
 
 msgid "Fact: The currency you chose %1 is a %2."
-msgstr ""
+msgstr "事實： 您選擇的 %1貨幣是 %2。"
 
 msgid "Failed"
 msgstr "失敗"
@@ -3007,7 +3028,7 @@ msgid "Female"
 msgstr "Female"
 
 msgid "Fiat Currency"
-msgstr ""
+msgstr "法定貨幣"
 
 msgid "Fifteen years on, and we're still innovating, growing and working on new ways to serve our customers better. For the first time, we offer short-term touch/no-touch trades and introduce a new charting application. We believe we have the most competitive and comprehensive digital options platform available to the retail public."
 msgstr "十五年過去了，我們仍在不斷地創新、成長，尋求新方式為客戶提供更好的服務。我們首次提供短期「觸及/未觸及」交易，推出新的圖表應用程式。我們相信自己為散戶投資人提供了最有競爭力、最全面的數字期權平台。"
@@ -3123,6 +3144,12 @@ msgstr "對於外匯報價的收盤時間，公司在本網站「市場開放時
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "關於外匯交易：外匯市場是銀行和其它大型金融機構相互交易外匯的場外交易（OTC）市場，沒有中央結算行。因此，外匯交易報價也沒有「官方」價格來源。不同的資料源包含不同類型國際銀行的報價。因此，根據其獲得價格的銀行不同，各外匯報價提供者的價格也不相同。"
 
+msgid "For general support:"
+msgstr "一般支援："
+
+msgid "For payments-related queries:"
+msgstr "付款相關的查詢："
+
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "BetOnMarkets.com 連續三年被英國股票雜誌《Shares Magazine》選為「最佳固定賠率金融交易提供商」。這是我們最後一次獲獎，因為該雜誌已停止頒發這一類獎項。"
 
@@ -3229,7 +3256,7 @@ msgid "GamCare"
 msgstr "GamCare賭博關懷協會"
 
 msgid "Gaming"
-msgstr ""
+msgstr "遊戲"
 
 msgid "Gaming Account"
 msgstr "博彩帳戶"
@@ -3608,9 +3635,6 @@ msgstr "如果公司根據法律和法規需求，或遵從具司法管轄權法
 
 msgid "If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
 msgstr "如果您真實帳戶的保證金層次達到或低於強制平倉層次，將被歸類為默認事件。在這種情況下，未平倉頭寸將按照以下順序自動平倉: (i) 伺服器分析當前沒在執行的客戶訂單;（ii）伺服器刪除保證金最高的訂單;（iii）如果您的保證金層次仍然低於強制平倉層次，下一個訂單將被刪除（沒有保證金要求的訂單不會被刪除）;（iv）如果您的保證金層次仍然低於強制平倉層次，伺服器將虧損最大的頭寸平倉; （v）未平倉頭寸將強制平倉，直到您的保證金層次高於強制平倉層次。"
-
-msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "如持續發生問題，請聯繫<a href=\"%1\">客戶支援人員</a>。"
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "如果協議因任何原因被終止，您必須立即刪除所有內容，除非這樣做將導致您違反任何法律或政府部門所規定的義務。"
@@ -3993,6 +4017,9 @@ msgstr "我們公司所用資料源的相關資訊，以及資料在導入系統
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "任何標的工具或資產前次的效能資訊不可用於保證其目前或未來的效能。以前的效能並不可當作未來結果的可靠指標。"
 
+msgid "Inheritance"
+msgstr "繼承"
+
 msgid "Instant access"
 msgstr "即時存取"
 
@@ -4051,10 +4078,13 @@ msgid "Investing or trading in Contracts exposes you to the performance of the u
 msgstr "合同投資或交易將您顯示在 Binary 合同所指的標的或參考工具或資產的效能中，包括外匯、指數、股票和商品，每一種都各有其自身的特點和風險。"
 
 msgid "Investment"
-msgstr ""
+msgstr "投資"
 
 msgid "Investment Account"
 msgstr "投資帳戶"
+
+msgid "Investment Income"
+msgstr "投資收入"
 
 msgid "Investment Products to EEA Residents are provided by Binary Investments (Europe) Ltd (\"BIEL\") which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
 msgstr "想要進行產品投資的 EEA 居民由 Binary 投資(歐洲) 有限公司 (\"BIEL\") 提供服務，其受馬爾他金融投資服務機構根據馬爾他投資服務法授予執照及監管，使用者可通過自己的帳戶進行產品投資。"
@@ -5395,7 +5425,7 @@ msgid "Note: Withdrawal via payment agent is available only if you deposit exclu
 msgstr "注意:您必須完全通過付款代理存款才可使用付款代理提款"
 
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
-msgstr ""
+msgstr "注： 您只能擁有一個法定貨幣帳戶以及每種加密貨幣一個帳戶。"
 
 msgid "Notes:"
 msgstr "注："
@@ -5853,6 +5883,9 @@ msgstr "每手賠付額 = 1,000"
 msgid "Pension"
 msgstr "退休金"
 
+msgid "Pensioner"
+msgstr "退休金領取人"
+
 msgid "Percentage"
 msgstr "百分比"
 
@@ -5950,7 +5983,7 @@ msgid "Please check your email to retrieve the token needed to reset your passwo
 msgstr "請檢查您的電郵領取重設密碼所需的權杖編號。"
 
 msgid "Please choose a currency"
-msgstr ""
+msgstr "請選擇一種貨幣"
 
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
 msgstr "請完成%1財務評估表格%2，以便提升您的取款和交易限額。"
@@ -6037,7 +6070,7 @@ msgid "Please select the checkbox."
 msgstr "請選擇核取方塊。"
 
 msgid "Please select the currency of this account:"
-msgstr ""
+msgstr "請選擇此帳戶的幣種："
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "升級到真實資金帳戶前請先設定%1居住國%2。"
@@ -6047,6 +6080,9 @@ msgstr "請到%1自我限制工具%2設定30天交易限額，以移除存款限
 
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr "請設定<a href=\"%1\">30天交易限額</a>，以存取收銀台。"
+
+msgid "Please set your account opening reason before proceeding."
+msgstr "繼續操作前請設定開立帳戶的原因。"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "請指定您的優選實況調查間隔時間分鐘數"
@@ -6361,7 +6397,7 @@ msgid "Read the answers to some common questions."
 msgstr "檢視一些常見問題的回答。"
 
 msgid "Real"
-msgstr ""
+msgstr "真實"
 
 msgid "Real Account"
 msgstr "真實帳戶"
@@ -6642,6 +6678,9 @@ msgstr "賣出日期"
 msgid "Sale Price"
 msgstr "賣出價格"
 
+msgid "Sale of Property"
+msgstr "財產出售"
+
 msgid "Saturday"
 msgstr "星期六"
 
@@ -6712,7 +6751,7 @@ msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "從左欄選擇<strong>Cookies設定</strong>。"
 
 msgid "Select currency"
-msgstr ""
+msgstr "選擇貨幣"
 
 msgid "Select market"
 msgstr "選擇市場"
@@ -6808,7 +6847,7 @@ msgid "Set \"<strong>Firefox will</strong>\" to \"<strong>Remember history</stro
 msgstr "將\"<strong>Firefox will</strong>\"設定為 \"<strong>記住歷史</strong>\"。"
 
 msgid "Set Currency"
-msgstr ""
+msgstr "設定貨幣"
 
 msgid "Set barrier(s) to define your position and trigger the payout you will receive."
 msgstr "您可設定障礙水平用於確認頭寸參數以及觸發賠付。"
@@ -6933,8 +6972,8 @@ msgstr "社交媒體專員"
 msgid "Software (Perl) Development"
 msgstr "軟體 (Perl) 開發"
 
-msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "對不起，您的國家不能註冊帳戶。欲知詳細資訊，請聯繫<a href=\"%1\">客服部</a>。"
+msgid "Sorry, account signup is not available in your country."
+msgstr "對不起，您的所在國內不可註冊帳戶。"
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "對不起，在處理您的帳戶時出錯。"
@@ -6953,6 +6992,9 @@ msgstr "對不起，您輸入的收銀台密碼不正確"
 
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "對不起，您的帳戶沒有進一步買入任何合約的權限。"
+
+msgid "Source of Wealth"
+msgstr "財富來源"
 
 msgid "South Africa 40 Cash Index"
 msgstr "南非 40 現金指數"
@@ -7060,7 +7102,7 @@ msgid "Stock market indices measure the value of a selection of companies in the
 msgstr "股市指數衡量股市中部份公司的價值。"
 
 msgid "Stocks"
-msgstr ""
+msgstr "股票"
 
 msgid "Stocks trading experience"
 msgstr "股票交易經驗"
@@ -7290,8 +7332,8 @@ msgstr "%1條款和條件"
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1網站受版權保護。"
 
-msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
-msgstr "%1網站受版權保護。網站所包含的各種材料（包括但不限於所有文章、文字、圖像、標誌、整理材料、系統、代碼和設計）由 Binary Group 各公司版權（1999-2017年）所有。公司保留所有權利。可對此類材料進行受限複製和分佈，僅用於非商業目的，前提是所有復製材料都必須保持完整且須在明顯位置標註以下聲明：1999-2017 Binary 有限公司版權所有，並保留一切權利。未經 Binary Group 公司事先書面許可，不得基於商業目的或者以其他任何有償方式複製或者傳播這些材料。如果您對這些條款有任何疑問，或者希望從 Binary Ltd. 處獲得有關許可材料的資訊，請通過%2與我們聯繫。%1和牛/熊標誌是註冊商標。"
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
+msgstr "%1網站受版權保護。網站所包含的各種材料（包括但不限於所有文章、文字、圖像、標誌、整理材料、系統、代碼和設計）由 Binary Group 各公司版權（1999-2017年）所有。公司保留所有權利。可對此類材料進行受限複製和分佈，僅用於非商業目的，前提是所有復製材料都必須保持完整且須在明顯位置標註以下聲明：1999-2017 Binary 有限公司版權所有，並保留一切權利。未經 Binary Group 公司事先書面許可，不得基於商業目的或者以其他任何有償方式複製或者傳播這些材料。%1和牛/熊標誌是註冊商標。"
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "%1網站的靜態內容（CSS，Javascript）可在github以%2二進位靜態%3開源專案中使用。您是否想重新設定%1網站的面板設計，提高瀏覽器的相容性、網站的呈現速度或者Javascript效能？請分支處理專案並送上您所建議的代碼更改的提取要求。"
@@ -7890,8 +7932,8 @@ msgstr "交易者選擇一個目標價並預測市場在合約到期前將會觸
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "這些關鍵指標將顯示一個屢獲殊榮的二元期權交易平台增長與成功的一面。"
 
-msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company. If you have questions about these terms or would like information about licensing materials from Binary Ltd., please contact us."
-msgstr "未經 Binary Group 公司事先書面許可，不得基於商業目的或者以其他任何有償方式複製或者傳播這些材料。如果您對這些條款有任何疑問，或者希望從 Binary Ltd. 處獲得有關許可材料的資訊，請與我們聯繫。"
+msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
+msgstr "未經 Binary Group 公司事先書面許可，不得基於商業目的或者以其他任何有償方式複製或者傳播這些材料。"
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "本協議載有各方關於其主題的全部約定，並取代各方關於其主題的所有先前協議及解釋。"
@@ -8365,7 +8407,7 @@ msgid "Two-way pricing"
 msgstr "雙向報價"
 
 msgid "Type"
-msgstr ""
+msgstr "類型"
 
 msgid "Types of trades"
 msgstr "交易類型"
@@ -8584,7 +8626,7 @@ msgid "View your trading and withdrawal limits."
 msgstr "檢視您的交易和取款限額。"
 
 msgid "Virtual"
-msgstr ""
+msgstr "虛擬"
 
 msgid "Virtual Account"
 msgstr "虛擬帳戶"
@@ -8878,7 +8920,7 @@ msgid "We’ve generated over USD 3 billion in turnover since inception, thanks 
 msgstr "由於我們的業務自2010年以來快速增長，成立以來的總營業額高達30多億美元。"
 
 msgid "We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in three countries: Malaysia, Malta and Japan."
-msgstr ""
+msgstr "多年來，無論在人力和辦公室方面，&mdash;&mdash; 我們的規模不斷擴大。目前在馬來西亞、馬爾他和日本這三個國家有五個辦事處和130多名員工。"
 
 msgid "We’ve obtained financial and gambling licenses to operate in key countries and regions such as Europe, the Isle of Man, the United Kingdom, and Japan."
 msgstr "我們已經在歐洲、曼島、英國和日本等關鍵國家和地區獲得金融和博彩經營許可證。"
@@ -8903,6 +8945,9 @@ msgstr "什麼是 %1 聯盟計劃？"
 
 msgid "What is the definition of a 'client'?"
 msgstr "「客戶」的定義是什麼？"
+
+msgid "What is this?"
+msgstr "這是甚麽？"
 
 msgid "What marketing tools do you offer?"
 msgstr "你們提供怎麼樣的行銷工具？"
@@ -9114,8 +9159,8 @@ msgstr "取款：不適用"
 msgid "Withdrawal Limits"
 msgstr "取款限額"
 
-msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "您的帳戶現時無法取款。請聯繫 %1進行解鎖。"
+msgid "Withdrawal for your account is not allowed at this moment."
+msgstr "此時您的帳戶不允許提款。"
 
 msgid "Withdrawal of Funds from Real Account"
 msgstr "從真實帳戶提出資金"
@@ -9306,8 +9351,8 @@ msgstr "過去 %3 天裡您已累計提取 %1 %2 的等值。"
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "您已提取 %1 %2 的等值。"
 
-msgid "You have created all accounts available for you."
-msgstr ""
+msgid "You have created all accounts available to you."
+msgstr "您已開立所有可用的帳戶。"
 
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "向我們請求開立真實帳戶前，您已經完整閱讀並理解此協定附上的: (i) 風險披露聲明;（ii）訂單執行政策; (iii) 條款和條件;"
@@ -9337,7 +9382,7 @@ msgid "You have sold this contract at %1 %2"
 msgstr "您已經以 %1 %2 賣出此合約"
 
 msgid "You have successfully created your account!"
-msgstr ""
+msgstr "您已成功開立帳戶！"
 
 msgid "You have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site."
 msgstr "您擁有足夠的金融交易經驗和知識，有能力評估經由本網站購買金融合約的收益與風險，並且不依賴於本網站包含的任何資訊作出購買決定。"
@@ -9396,8 +9441,8 @@ msgstr "您可以隨時終止本協議，但須預先給公司最少7天書面�
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "一旦您帳戶的交易額超過獎勵金額的25倍，您就可以從帳戶中取出獎金。"
 
-msgid "You must complete the knowledge test to activate this account. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "要啟動此帳戶，您必須完成知識測試。欲知詳情請聯繫<a href=\"%1\">客服部</a>。"
+msgid "You must complete the knowledge test to activate this account."
+msgstr "要啟動此帳戶，您必須完成知識測試。"
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "要使用%1 API，您必須遵守這些條款。"
@@ -9549,8 +9594,8 @@ msgstr "您的%1二元期權真實帳戶如要保持有效，須在開戶後五�
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "您的客戶將收到電子郵件通知，告知其轉帳交易已處理。"
 
-msgid "Your Existings Accounts"
-msgstr ""
+msgid "Your Existing Accounts"
+msgstr "您的目前帳戶"
 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "您的 ID 將存入 cookie，每次有潛在客戶在您的聯盟連結上點選並在 %1 著陸，從而開立我們的帳戶，即會被識別出來。"
@@ -9569,9 +9614,6 @@ msgstr "您的帳戶沒有登入/登出活動。"
 
 msgid "Your account has no trading activity."
 msgstr "您的帳號沒有交易活動。"
-
-msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr "您的帳戶已被暫時禁用。現僅允許取款。欲知詳情，請聯繫%1。"
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "您的帳戶已經得到完全驗證，且您的取款限額已經取消。"
@@ -11617,7 +11659,7 @@ msgid "Trusted by traders since 2000"
 msgstr "自2000年以來備受交易員信賴"
 
 msgid "Accounts"
-msgstr ""
+msgstr "帳戶"
 
 msgid "Authenticate"
 msgstr "驗證"

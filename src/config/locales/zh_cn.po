@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-07-24 23:52-0400\n"
+"PO-Revision-Date: 2017-08-02 21:19-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -102,8 +102,8 @@ msgstr "%1 ICO 常见问题集"
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO，在全球领先的二元期权交易平台投资"
 
-msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
-msgstr "%1 请点击以下链接重启密码恢复过程。如果需要帮助，请联系客服部。"
+msgid "%1 Please click the link below to restart the password recovery process."
+msgstr "%1 请点击下方的链接，重新启动密码恢复过程。"
 
 msgid "%1 Property"
 msgstr "%1的财产"
@@ -534,6 +534,9 @@ msgstr "PEP是被委托进行特出公众任务的个人。此身份包括了PEP
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "付款代理人扮演客户（即我们的顾客）和 %1之间的兑换员。付款代理人负责为希望使用某一特定电子货币方法或%1不支持的本地货币的客户处理充值和提款事宜。汇款费用由客户支付。"
 
+msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
+msgstr "政治公众人士(PEP) 是被委托进行特出公众任务的个人。此身份包括了其直系亲属和众所周知为其亲近的人，但不包括中级或初级官员。所指个人包括国家首长、部长、国会秘书、国会议员、法官、大使、高级政府官员、军事高层官员、中央银行的审计委员、国营企业董事等。以上各例的直系亲属也都属于政治公众人士，包括其配偶/伴侣、父母和孩子。再者，众所周知的与政治公众人士有亲密关系的人士包括其商业合伙人也属于政治公众人士。一般来说，已经停止被委托进行特出公众任务为期超过十二个月的个人不属于政治公众人士。"
+
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
 msgstr "如果市场在所选期限内一直保持在（没有触及）高障碍或低障碍之间，所选择的“保持在范围之内”交易即可获利。如果市场在所选期限内只要触及高障碍或低障碍，所选择的“超出范围之外”交易即可获利。"
 
@@ -735,6 +738,9 @@ msgstr "账户管理及追踪"
 msgid "Account Opening"
 msgstr "账户开立"
 
+msgid "Account Opening Reason"
+msgstr "开立账户的原因"
+
 msgid "Account Password"
 msgstr "账户密码"
 
@@ -776,6 +782,9 @@ msgstr "账户的借方余额 （即对 %1的信贷风险）"
 
 msgid "Accounts with debit balances are required to settle the full amount immediately by making a payment to us."
 msgstr "有借方余额的账户需立即付款给我们结算全额。"
+
+msgid "Accumulation of Income/Savings"
+msgstr "收入/储蓄积累"
 
 msgid "Accuracy of Information"
 msgstr "信息的准确性"
@@ -1668,6 +1677,9 @@ msgstr "工作机会"
 msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
 msgstr "经过仔细挑选的流动性提供商网络使我们能够向零售和机构客户提供低价差和低保证金费率服务"
 
+msgid "Cash Business"
+msgstr "现金业务"
+
 msgid "Cash Indices"
 msgstr "现金指数"
 
@@ -1962,6 +1974,9 @@ msgstr "大宗商品交易经验"
 
 msgid "Commodities trading frequency"
 msgstr "大宗商品交易频率"
+
+msgid "Company Ownership"
+msgstr "公司所有权"
 
 msgid "Company addresses"
 msgstr "公司地址"
@@ -2374,9 +2389,6 @@ msgstr "存款：实时"
 msgid "Depositing and withdrawing funds"
 msgstr "存款及取款"
 
-msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "您的账户现时无法存取款。请联系%1进行解锁。"
-
 msgid "Derivative"
 msgstr "衍生工具"
 
@@ -2469,6 +2481,9 @@ msgstr "分红详情将在Binary.com网站公布。"
 
 msgid "Dividends paid out"
 msgstr "红利支付"
+
+msgid "Divorce Settlement"
+msgstr "离婚协议"
 
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "我需要入金才能开户吗？"
@@ -2680,11 +2695,17 @@ msgstr "将身份证件以电子邮件方式发送给我们"
 msgid "Email: "
 msgstr "电子邮件: "
 
+msgid "Employed"
+msgstr "就业"
+
 msgid "Employee handbook"
 msgstr "员工手册"
 
 msgid "Employees"
 msgstr "雇员"
+
+msgid "Employment Status"
+msgstr "就业状况"
 
 msgid "End Time"
 msgstr "结束时间"
@@ -3123,6 +3144,12 @@ msgstr "对于外汇报价的收盘时间，公司在本网站“市场开放时
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "关于外汇交易：外汇市场是银行和其他大型金融机构相互交易外汇的场外交易（OTC）市场，没有中央结算行。因此，外汇交易报价也没有“官方”价格来源。不同的数据源包含不同类型国际银行的报价。因此，根据其获得价格的银行不同，各外汇报价提供者的价格也不相同。"
+
+msgid "For general support:"
+msgstr "一般支持："
+
+msgid "For payments-related queries:"
+msgstr "付款相关的查询："
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "连续第三年，BetOnMarkets.com被英国财经杂志《Shares Magazine》评为“最佳固定赔率金融交易提供商”。这是我们最后一次获奖，因为该杂志已停止颁发这一类奖项。"
@@ -3610,9 +3637,6 @@ msgstr "如果公司因法律法规或具有司法管辖权的法庭或政府机
 msgid "If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
 msgstr "如果您真实账户的保证金水平达到或低于强制平仓水平，将被归类为默认事件。在这种情况下，未平仓头寸将按照以下顺序自动平仓: (i) 服务器分析当前没在执行的客户订单;（ii） 服务器删除保证金最高的订单;（iii） 如果您的保证金水平仍然低于强制平仓水平，下一个订单将被删除 （没有保证金要求的订单不会被删除）;（iv）如果您的保证金水平仍然低于强制平仓水平，服务器将亏损最大的头寸平仓;（v） 未平仓头寸将强制平仓，直到您的保证金水平高于强制平仓水平。"
 
-msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "如问题持续发生，请联系<a href=\"%1\">客服人员</a>。"
-
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "如果协议因任何原因被终止，您必须立即删除所有内容，除非这样做将导致您违反任何法律或政府部门所规定的义务。"
 
@@ -3994,6 +4018,9 @@ msgstr "我们公司所用数据源的相关信息，以及数据在导入系统
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "任何标的工具或资产上一次的表现不可保证其当前或未来的表现。以前的表现并不能作为未来结果的可靠指标。"
 
+msgid "Inheritance"
+msgstr "继承"
+
 msgid "Instant access"
 msgstr "即时访问"
 
@@ -4056,6 +4083,9 @@ msgstr "投资"
 
 msgid "Investment Account"
 msgstr "投资账户"
+
+msgid "Investment Income"
+msgstr "投资收入"
 
 msgid "Investment Products to EEA Residents are provided by Binary Investments (Europe) Ltd (\"BIEL\") which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
 msgstr "想进行产品投资的EEA居民由Binary投资 (欧洲) 有限公司 (\"BIEL\") 提供服务，该公司由马耳他金融服务机构根据当地投资服务法授予许可证并监管，用户可通过自己的账户进行产品投资。"
@@ -5854,6 +5884,9 @@ msgstr "每手赔付额 = 1,000"
 msgid "Pension"
 msgstr "养老金"
 
+msgid "Pensioner"
+msgstr "养老金领取人"
+
 msgid "Percentage"
 msgstr "百分比"
 
@@ -6048,6 +6081,9 @@ msgstr "请到%1自我禁止工具%2设置30天交易限额，以移除存款限
 
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr "请设置<a href=\"%1\">30天交易限额</a>，以访问收银台。"
+
+msgid "Please set your account opening reason before proceeding."
+msgstr "继续操作前请设置开立账户的原因。"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "请指定您的优选实况调查间隔时间分钟数"
@@ -6643,6 +6679,9 @@ msgstr "卖出日期"
 msgid "Sale Price"
 msgstr "卖出价格"
 
+msgid "Sale of Property"
+msgstr "财产出售"
+
 msgid "Saturday"
 msgstr "周六"
 
@@ -6934,8 +6973,8 @@ msgstr "社交媒体执行"
 msgid "Software (Perl) Development"
 msgstr "软件 (Perl) 开发"
 
-msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "对不起，您的国家不可注册账户。欲知详情，请联系<a href=\"%1\">客服部</a>。"
+msgid "Sorry, account signup is not available in your country."
+msgstr "对不起，您的所在国内不可注册账户。"
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "对不起，您的账户处理发生错误。"
@@ -6954,6 +6993,9 @@ msgstr "对不起，您输入的收银台密码不正确"
 
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "对不起，您的账户无权进一步买入任何合约。"
+
+msgid "Source of Wealth"
+msgstr "财富来源"
 
 msgid "South Africa 40 Cash Index"
 msgstr "南非 40 现金指数"
@@ -7291,8 +7333,8 @@ msgstr "%1条款和条件"
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1网站受版权保护。"
 
-msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at %2. %1 and the bull/bear logo are registered trademarks."
-msgstr "%1网站受版权保护。网站所包含的各种材料（包括但不限于所有文章、文字、图片、标识、整理材料、系统、代码和设计）版权归由 Binary Group 各公司（1999-2017年）所有 。公司保留所有权利。这类材料可以复制和传播，并用于非商业目的，前提是所有复制的材料必须保持完整，且在明显位置标注以下声明：1999-2017 Binary有限公司版权所有，并保留一切权利。在未得到 Binary Group 公司书面许可的情况下，用户不得因商业目的以其他任何有偿方式复制或者传播这些材料。如果您对这些条款有任何疑问，或者希望从 Binary Ltd. 处获得有关许可的信息，请通过%2与我们联系。%1和牛/熊徽标是注册商标。"
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
+msgstr "%1网站受版权保护。网站所包含的各种材料（包括但不限于所有文章、文字、图片、标识、整理材料、系统、代码和设计）版权归由 Binary Group 各公司（1999-2017年）所有 。公司保留所有权利。这类材料可以复制和传播，并用于非商业目的，前提是所有复制的材料必须保持完整，且在明显位置标注以下声明：1999-2017 Binary有限公司版权所有，并保留一切权利。在未得到 Binary Group 公司书面许可的情况下，用户不得因商业目的以其他任何有偿方式复制或者传播这些材料。%1和牛/熊徽标是注册商标。"
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "%1网站的静态内容（CSS，Javascript）可在github以%2二进制静态%3开源项目中使用。您是否想重新设定%1网站的设计版面，提高浏览器兼容性、网站成像速度或Javascript性能？请加入项目，提交您的代码修改上拉请求。"
@@ -7891,8 +7933,8 @@ msgstr "交易者选择一个目标价并预测市场在合约到期前将会触
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "这些关键指标将显示一个屡获殊荣的二元期权交易平台增长与成功的一面。"
 
-msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company. If you have questions about these terms or would like information about licensing materials from Binary Ltd., please contact us."
-msgstr "在未得到 Binary Group 公司书面许可的情况下，用户不得因商业目的以其他任何有偿方式复制或者传播这些材料。如果您对这些条款有任何疑问，或者希望从 Binary Ltd. 处获得有关许可的信息，请与我们联系。"
+msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
+msgstr "在未得到 Binary Group 公司书面许可的情况下，用户不得因商业目的以其他任何有偿方式复制或者传播这些材料。"
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "本协议包含各方关于其标的的全部约定，并取代各方所有关于其标的的先前协议及解释。"
@@ -8905,6 +8947,9 @@ msgstr "什么是 %1 联盟计划？"
 msgid "What is the definition of a 'client'?"
 msgstr "“客户”的定义是什么？"
 
+msgid "What is this?"
+msgstr "这是什么？"
+
 msgid "What marketing tools do you offer?"
 msgstr "你们提供哪些营销工具？"
 
@@ -9115,8 +9160,8 @@ msgstr "取款：不适用"
 msgid "Withdrawal Limits"
 msgstr "取款限额"
 
-msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr "您的账户现时无法取款。请联系%1进行解锁。"
+msgid "Withdrawal for your account is not allowed at this moment."
+msgstr "您的账户此时不可提款。"
 
 msgid "Withdrawal of Funds from Real Account"
 msgstr "从真实账户提出资金"
@@ -9308,7 +9353,7 @@ msgstr "过去 %3 天里您已累计提取 %1 %2 的等值。"
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "您已提取 %1 %2 的等值。"
 
-msgid "You have created all accounts available for you."
+msgid "You have created all accounts available to you."
 msgstr "您已开立所有可用的账户。"
 
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
@@ -9398,8 +9443,8 @@ msgstr "您可以随时终止本协议，但须预先给公司最少7天书面�
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "一旦您账户的交易额超过奖励金额的25倍，您就可以从账户中取出奖金。"
 
-msgid "You must complete the knowledge test to activate this account. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "要激活此账户，您必须完成知识测试。欲知详情请联系<a href=\"%1\">客服部</a>。"
+msgid "You must complete the knowledge test to activate this account."
+msgstr "要激活此账户，您必须完成知识测试。"
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "要使用%1 API，您必须遵守这些条款。"
@@ -9551,7 +9596,7 @@ msgstr "您的%1二元期权真实账户如要保持有效，须在开户后五�
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "您的客户将收到电子邮件通知，告知其转账交易已处理。"
 
-msgid "Your Existings Accounts"
+msgid "Your Existing Accounts"
 msgstr "您的当前账户"
 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
@@ -9571,9 +9616,6 @@ msgstr "您的账户无交易活动。"
 
 msgid "Your account has no trading activity."
 msgstr "您的账户无交易活动。"
-
-msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr "您的账户已被暂时禁用，现仅允许取款。欲知详情，请联系 %1。"
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "您的账户已经得到完全验证，且您的取款限额已经取消。"

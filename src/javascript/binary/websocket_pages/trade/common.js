@@ -365,7 +365,7 @@ const commonTrading = (() => {
                 node.hide();
             } else {
                 node.show();
-                elementTextContent(node, comment);
+                elementInnerHtml(node, comment);
             }
         }
     };
