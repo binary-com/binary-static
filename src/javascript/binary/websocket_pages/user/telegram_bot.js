@@ -1,9 +1,10 @@
 const TelegramBot = (() => {
     'use strict';
 
+    const submit_button = $('#go_to_telegram');
+
     const onLoad = () => {
         const bot_name = 'binary_test_bot';
-        const submit_button = $('#go_to_telegram');
         submit_button.click((e) => {
             e.preventDefault();
             const token = $('#token').val();
@@ -13,7 +14,6 @@ const TelegramBot = (() => {
     };
 
     const onUnload = () => {
-        const submit_button = $('#go_to_telegram');
         submit_button.off('click');
     };
 
