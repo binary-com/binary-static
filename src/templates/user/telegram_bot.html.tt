@@ -4,7 +4,7 @@
 
 <p>[% l("In order to access <strong>Telegram Bot</strong>, you'll first need to generate an API Token and then enter it in the input box below.") %]</p>
 
-<form class="gr-padding-10" id="frm_change_password">
+<form class="gr-padding-10" id="frm_telegram_bot">
     [% WRAPPER fieldset %]
         [% INCLUDE form_row type='text' id='token' label=l('API Token') %]
         [% INCLUDE submit_button type='submit' id="go_to_telegram" text=l('Go') %]

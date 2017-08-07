@@ -1,11 +1,11 @@
 const TelegramBot = (() => {
     'use strict';
 
-    const submit_button = $('#go_to_telegram');
+    const form = '#frm_telegram_bot';
 
     const onLoad = () => {
         const bot_name = 'binary_test_bot';
-        submit_button.click((e) => {
+        $(form).on('submit', (e) => {
             e.preventDefault();
             const token = $('#token').val();
             const url = `https://t.me/${bot_name}/?start=${token}`;
@@ -14,7 +14,7 @@ const TelegramBot = (() => {
     };
 
     const onUnload = () => {
-        submit_button.off('click');
+        $(form).off('submit');
     };
 
     return {
