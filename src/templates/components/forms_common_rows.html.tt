@@ -40,7 +40,6 @@
         <option value="">[% l('Please select') %]</option>
         <option value="Speculative">[% l('Speculative') %]</option>
         <option value="Income Earning">[% l("Income earning") %]</option>
-        <option value="Assets Saving">[% l('Assets saving') %]</option>
         <option value="Hedging">[% l('Hedging') %]</option>
     [% END %]
 [% END %]
