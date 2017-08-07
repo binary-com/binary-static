@@ -6,7 +6,7 @@
 
 <form class="gr-padding-10" id="frm_telegram_bot">
     [% WRAPPER fieldset %]
-        [% INCLUDE form_row type='text' id='token' label=l('API Token') %]
+        [% INCLUDE form_row type='text' id='token' label=l('API Token') maxlength='128' %]
         [% INCLUDE submit_button type='submit' id="go_to_telegram" text=l('Go') %]
     [% END %]
 </form>

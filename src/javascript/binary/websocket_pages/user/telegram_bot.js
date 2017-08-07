@@ -9,16 +9,16 @@ const TelegramBot = (() => {
         const bot_name = 'binary_test_bot';
 
         FormManager.init(form, [
-            { selector: '#token', validations: ['req'], exclude_request: 1 }
+            { selector: '#token', validations: ['req'], exclude_request: 1 },
         ]);
 
         FormManager.handleSubmit({
-            form_selector: form,
+            form_selector       : form,
             fnc_response_handler: () => {
                 const token = $('#token').val();
                 const url = `https://t.me/${bot_name}/?start=${token}`;
                 window.location.assign(url);
-            }
+            },
         });
     };
 
@@ -27,7 +27,7 @@ const TelegramBot = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad  : onLoad,
         onUnload: onUnload,
     };
 })();
