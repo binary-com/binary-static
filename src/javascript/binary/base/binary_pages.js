@@ -52,6 +52,7 @@ const VirtualAccOpening          = require('../websocket_pages/user/new_account/
 const ResetPassword              = require('../websocket_pages/user/reset_password');
 const SetCurrency                = require('../websocket_pages/user/set_currency');
 const TNCApproval                = require('../websocket_pages/user/tnc_approval');
+const TelegramBot                = require('../websocket_pages/user/telegram_bot');
 
 const CashierJP     = require('../../binary_japan/cashier');
 const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test');
@@ -122,6 +123,7 @@ const pages_config = {
     'why-us'                 : { module: WhyUs },
     'why-us-jp'              : { module: WhyUs },
     'withdraw-jp'            : { module: CashierJP.Withdraw,         is_authenticated: true, only_real: true },
+    'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
 };
 /* eslint-enable max-len */
 
