@@ -16,13 +16,23 @@
 
         [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-10" invisible=1 %]
 
-        <p>[% l("Please select the currency of this account:") %]</p>
-        <p class="invisible notice-msg hint gr-5 gr-12-m gr-centered" id="currency_notice">
-            [% l('Fact: The currency you chose [_1] is a [_2].', '(<span id="chosen_currency"></span>)', '<span id="chosen_currency_type"></span>') %]
-        </p>
+        <div class="invisible" id="has_currency">
+            <div>
+                <a class="button-secondary" href="[% request.url_for('cashier/forwardws#deposit') %]"><span>[% l("Deposit page") %]</span></a>
+                <a class="button-secondary gr-gutter-left" href="[% request.url_for('trading') %]"><span>[% l("Trade page") %]</span></a>
+            </div>
+            <p class="hint">[% l('or go to [_1]Accounts page[_2]', '<a href="' _ request.url_for('user/accounts') _'">', '</a>') %]</p>
+        </div>
+
+        <div class="invisible select_currency">
+            <p>[% l("Please select the currency of this account:") %]</p>
+            <p class="invisible notice-msg hint gr-5 gr-12-m gr-centered" id="currency_notice">
+                [% l('Fact: The currency you chose [_1] is a [_2].', '(<span id="chosen_currency"></span>)', '<span id="chosen_currency_type"></span>') %]
+            </p>
+        </div>
     </div>
 
-    <div class="center-text">
+    <div class="center-text invisible select_currency">
         <form class="gr-7 gr-12-m gr-centered" id="frm_set_currency">
             <div class="gr-row gr-row-align-center gr-padding-20 gr-parent" id="currency_list"></div>
             <p class="invisible error-msg"></p>
