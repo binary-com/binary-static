@@ -323,3 +323,15 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
 }
+
+#mt5_types_of_accounts {
+    .box {
+        border: 1px solid $COLOR_GRAY;
+        border-radius: $BORDER_RADIUS;
+        padding: 20px;
+
+        img {
+            width: 40px;
+        }
+    }
+}

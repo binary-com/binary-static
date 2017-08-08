@@ -118,6 +118,7 @@ const pages_config = {
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
     'terms-and-conditions'   : { module: TermsAndConditions },
     'terms-and-conditions-jp': { module: TermsAndConditions },
+    'types-of-accounts'      : { module: StaticPages.TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'volidx-markets'         : { module: StaticPages.VolidxMarkets },
     'why-us'                 : { module: WhyUs },

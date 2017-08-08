@@ -1,0 +1,89 @@
+[% PROCESS components/elements.html.tt %]
+
+[% BLOCK box %]
+    <div class="gr-padding-10">
+        <div class="box">
+            <div class="gr-row gr-row-align-middle">
+                <div class="gr-2 gr-3-p gr-12-m center-text gr-centered">
+                    <img class="gr-padding-10 gr-parent" src="[% request.url_for('images/pages/metatrader/icons/acc_' _ title.lower _ '.svg') %]" />
+                    <h3 class="center-text secondary-color no-margin">[% title %]</h3>
+                </div>
+                <div class="gr-10 gr-9-p gr-12-m">
+                    <p class="no-margin">[% text %]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+[% END %]
+
+[% BLOCK foot_note %]
+    <div class="gr-padding-30">
+        <a name="note-[% number %]"></a>
+        <h3 class="secondary-color">[% number _ '. ' _ title %]</h3>
+        <div class="separator-line border-bottom"></div>
+        [% FOREACH text IN texts %]
+            <p>[% text %]</p>
+        [% END %]
+        [% content %]
+    </div>
+[% END %]
+
+<div id="mt5_types_of_accounts" class="static_full">
+    <h1>[% l("MetaTrader 5 Types of Accounts") %]</h1>
+    <p>[% l("[_1] Binary.com offers a variety of account types to cater to the diverse needs of traders everywhere, whether you are an experienced trader or just starting out. Each account has been tailored to provide you with a unique opportunity in the world of Forex trading.", website_name) %]</p>
+    <p>[% l("Best of all, there is no minimum deposit requirement and no commission per trade.") %]</p>
+    [% INCLUDE box title=l("Cent")       text=l("The Cent account offers the highest leverage, as well as low margin call and stop out level. It is ideal for new traders who want to start trading with a smaller capital.") %]
+    [% INCLUDE box title=l("Standard")   text=l("The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.") %]
+    [% INCLUDE box title=l("STP")        text=l("The STP account provides you with the tightest spreads and connects you directly to the market, and provides you with different prices from a variety of liquidity providers such as banks and brokerages. STP stands for 'Straight Through Processing' –– meaning your orders are sent directly to our liquidity providers.") %]
+    [% INCLUDE box title=l("Volatility") text=l("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.a. Ut enim ad minim veniam, quis nostrud exercitation.") %]
+
+    <div class="gr-padding-30"></div>
+
+    <h2 class="center-text">[% l("Account Comparison") %]</h2>
+    <div class="gr-padding-10">
+        [% INCLUDE table scroll=1 data={
+            thead= [
+                [
+                    { text='' },
+                    { text=l("Cent") },
+                    { text=l("Standard") },
+                    { text=l("STP") },
+                    { text=l("Volatility") },
+                ],
+            ],
+            tbody= [
+                [{ text=l("Account currency")    _ '<a href="#note-1" class="sup">1</a>' }, { text=l('USD') },           { text=l('USD') },              { text=l('USD') },              { text=l('USD') }],
+                [{ text=l("Maximum leverage")    _ '<a href="#note-2" class="sup">2</a>' }, { text=l('Up to 1:1,000') }, { text=l('Up to 1:300') },      { text=l('Up to 1:100') },      { text=l('Up to 1:500') }],
+                [{ text=l("Order execution")     _ '<a href="#note-3" class="sup">3</a>' }, { text=l('Market') },        { text=l('Market') },           { text=l('Market') },           { text=l('Market') }],
+                [{ text=l("Forex spread")        _ '<a href="#note-4" class="sup">4</a>' }, { text=l('Fixed spreads') }, { text=l('Variable spreads') }, { text=l('Variable spreads') }, { text=l('Variable spreads') }],
+                [{ text=l("Commission")          _ '<a href="#note-5" class="sup">5</a>' }, { text=l('No') },            { text=l('No') },               { text=l('No') },               { text=l('No') }],
+                [{ text=l("Margin call")         _ '<a href="#note-6" class="sup">6</a>' }, { text=l('50%') },           { text=l('100%') },             { text=l('100%') },             { text=l('100%') }],
+                [{ text=l("Stop out level")      _ '<a href="#note-7" class="sup">7</a>' }, { text=l('20%') },           { text=l('50%') },              { text=l('50%') },              { text=l('50%') }],
+                [{ text=l("Maximum ticket size") _ '<a href="#note-8" class="sup">8</a>' }, { text=l('20 lots') },       { text=l('50 lots') },          { text=l('100 lots') },         { text=l('50 lots') }],
+            ],
+        } %]
+    </div>
+
+    <div class="gr-padding-30"></div>
+
+    [% INCLUDE foot_note number=1 title=l("Account currency") texts=[l("Is the currency of the funds accepted in your trading account.")] %]
+    [% WRAPPER foot_note number=2 title=l("Leverage") texts=[
+        l("Is the ability to control a large amount of money using a minimal capital from yourself. Where does the rest of the money come from? Your trusted broker provides the rest."),
+        l("Let's say you fork out a capital of USD 50 and we're offering a leverage of 1:1,000. How much money, or margin, is available to you when you start trading?"),
+    ] %]
+        <div class="gr-8 gr-push-2 gr-padding-10 fill-bg-color center-text">
+            <div class="gr-prefix-1">
+                <p>[% l('USD 50 x 1,000 = USD 50,000 (is the margin available)') %]</p>
+            </div>
+        </div>
+    [% END %]
+    [% INCLUDE foot_note number=3 title=l("Order execution") texts=[
+        l("Typically comes in two varieties: market execution and instant execution. With market execution, you place an order at the broker's price. You agree on the price in advance. There are no requotes with market execution."),
+        l("What about instant execution? In this case, your order is place at the price that's available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."),
+    ] %]
+    [% INCLUDE foot_note number=4 title=l("Forex spread") texts=[l("Is the difference between the buy price and sell price. When you enter into a trade, you are buying an asset that you will be selling at a later time or date for a profit or loss. The difference in price is called a spread. A fixed spread means that the spread will remain as it is no matter the market condition. A variable spread means that the spread may increase depending on market conditions, as it is subject to market volatility caused by news events.")] %]
+    [% INCLUDE foot_note number=5 title=l("Commission") texts=[l("Refers to the commission fees that we charge for each trade you place with us. ChampionFX currently charges no commission for all accounts.")] %]
+    [% INCLUDE foot_note number=6 title=l("Margin call") texts=[l("Refers to the state where the remaining funds in your account is unable to cover the leverage or margin requirement. You can deposit additional funds to prevent a margin call escalating to a stop out level.")] %]
+    [% INCLUDE foot_note number=7 title=l("Stop out level") texts=[l("Is the level where your margin ratio has become unsustainable, and we issue a forced closure of pending orders, and any open positions. A stop out level usually results from a high negative balance in your trading account.")] %]
+    [% INCLUDE foot_note number=8 title=l("Maximum ticket size") texts=[l("Refers to the maximum volume of lots allowed per trade. It might vary across instruments.")] %]
+</div>

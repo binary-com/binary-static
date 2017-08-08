@@ -21,6 +21,14 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
+sup, .sup, .sup:visited {
+    font-size: $FONT_SIZE_XS !important;
+    color: $COLOR_ORANGE;
+    vertical-align: super;
+    font-weight: normal;
+    margin-left: 2px;
+}
+
 select, input, button, textarea {
     background: $COLOR_WHITE;
     border: 1px solid $COLOR_GRAY;

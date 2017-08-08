@@ -105,6 +105,10 @@ const Scroll = (() => {
             }
         },
         goToHashSection: () => {
+            $('a[href^="#"]').click(function() {
+                $.scrollTo($(`a[name="${$(this).attr('href').substr(1)}"]`), 500, { offset: -10 });
+                return false;
+            });
             const hash = window.location.hash;
             if (hash) $(`a[href="${hash}"]`).click();
         },

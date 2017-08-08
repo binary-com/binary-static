@@ -21,4 +21,7 @@ module.exports = {
     handleTab: {
         onLoad: () => { tabListener(); handleHash(); },
     },
+    TypesOfAccounts: {
+        onLoad: () => { Scroll.goToHashSection(); return false; },
+    },
 };
