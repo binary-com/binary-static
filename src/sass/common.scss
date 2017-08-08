@@ -48,6 +48,12 @@ a.button:hover {
     text-decoration: none;
 }
 
+.button.full-width {
+    &, span {
+        display: block;
+    }
+}
+
 input, button, textarea, select, optgroup, option, xmp {
     font-family: inherit;
     font-size: inherit;

@@ -10,6 +10,7 @@ const Home = (() => {
     let clients_country;
 
     const onLoad = () => {
+        tabListener();
         if (getLanguage() === 'JA' && !/home-jp/.test(window.location.pathname)) {
             BinaryPjax.load('home-jp');
             return;

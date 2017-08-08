@@ -1,4 +1,5 @@
 [% PROCESS components/elements.html.tt %]
+[% PROCESS components/tabs.html.tt %]
 [% BLOCK payment_logo %]
     [% FOREACH item IN items %]
     <div class="payment-logo" id="[% item %]"></div>
@@ -14,25 +15,59 @@
     </div>
 </div>
 
+[% INCLUDE global/separator_line.html.tt class='container gr-padding-30' %]
+
 <div class="container">
-    <div class="gr-parent">
-        <h2 class="center-text gr-padding-10">[% l("The easiest way to get started in the financial markets") %]</h2>
-        <p class="center-text">[% l("Trade in the world's financial markets in a simple, user-friendly platform.") %]</p>
-
-        <div class="gr-row gr-row-align-middle">
-            <div class="gr-7 gr-12-m gr-parent">
-                <img class="responsive" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
-            </div>
-
-            <div class="gr-5 gr-12-m gr-parent">
-                [% INCLUDE list items=[
-                    { header=l("All markets:"),           text=l("currencies, stocks, indices, and commodities.") },
-                    { header=l("All market conditions:"), text=l("up/down, touch/no-touch, stays in/goes out.") },
-                    { header=l("All durations:"),         text=l("from 10 seconds to 365 days.") },
-                    { header=l("All payouts:"),           text=l("from \$1 to \$50,000.") },
-                ] %]
-            </div>
-        </div>
+    [% WRAPPER tab_container class='gr-padding-30 gr-parent' theme='light' %]
+        [% INCLUDE tabs_subtabs id='home_tabs' class='gr-padding-20 gr-parent' items=[
+            { id='binary', text=l('Binary Options'), class='active' },
+            { id='mt5',    text=l('MetaTrader 5') },
+        ] %]
+        <div class="tab-content">
+        [% WRAPPER tab_content_container %]
+            [% WRAPPER tab_content id='binary' visible=1 %]
+                <div class="gr-row gr-row-align-middle">
+                    <div class="gr-7 gr-12-m gr-parent">
+                        <img class="responsive" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]" />
+                    </div>
+                    <div class="gr-5 gr-12-m gr-parent">
+                        <p>[% l("Trade in the world's financial markets in a simple, user-friendly platform.") %]</p>
+                        [% INCLUDE list class='checked' items=[
+                            { header=l("All markets:"),           text=l("currencies, stocks, indices, and commodities.") },
+                            { header=l("All market conditions:"), text=l("up/down, touch/no-touch, stays in/goes out.") },
+                            { header=l("All durations:"),         text=l("from 10 seconds to 365 days.") },
+                            { header=l("All payouts:"),           text=l("from \$1 to \$50,000.") },
+                        ] %]
+                        <p>
+                            <a class="button button-secondary full-width" href="[% request.url_for('platforms') %]">
+                                <span>[% l("Learn more") %]</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            [% END %]
+            [% WRAPPER tab_content id='mt5' %]
+                <div class="gr-row gr-row-align-middle">
+                    <div class="gr-6 gr-12-m gr-parent">
+                        <img class="responsive" src="[% request.url_for('images/pages/home/mt5.png') %]" />
+                    </div>
+                    <div class="gr-5 gr-push-1 gr-12-m gr-push-0-m gr-parent">
+                        <p>[% l("[_1] enters Forex and CFD trading with the universally acclaimed MetaTrader 5.", website_name) %]</p>
+                        [% INCLUDE list class='checked' items=[
+                            { text=l("Trade Forex and CFD asset classes with an award-wining broker.") },
+                            { text=l("Access advanced tools for fundamental and technical analysis, all in one platform") },
+                            { text=l("Subscribe to a wide range of algorithmic on trading strategies.") },
+                        ] %]
+                        <p>
+                            <a class="button button-secondary full-width" href="[% request.url_for('platforms') %]#mt5">
+                                <span>[% l("Learn more") %]</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            [% END %]
+        [% END %]
+    [% END %]
     </div>
 </div>
 
