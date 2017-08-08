@@ -1,24 +1,30 @@
 const getCurrencyValues = require('./sub_account').getCurrencyValues;
 const BinarySocket      = require('../socket');
+const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
 const localize          = require('../../base/localize').localize;
 const State             = require('../../base/storage').State;
-const urlFor            = require('../../base/url').urlFor;
-const urlForStatic      = require('../../base/url').urlForStatic;
+const Url               = require('../../base/url');
 const Currency          = require('../../common_functions/currency');
 
 const SetCurrency = (() => {
     'use strict';
 
     const onLoad = () => {
-        if (Client.get('currency')) {
-            $('#set_currency_loading').remove();
-            $('#has_currency').setVisibility(1);
-            return;
-        }
         const hash_value = window.location.hash;
         const el = /new_account/.test(hash_value) ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
+
+        if (Client.get('currency')) {
+            if (/new_account/.test(hash_value)) {
+                $('#set_currency_loading').remove();
+                $('#has_currency, #set_currency').setVisibility(1);
+            } else {
+                BinaryPjax.load(Url.defaultRedirectUrl());
+            }
+            return;
+        }
+
         BinarySocket.wait('payout_currencies').then((response) => {
             const authorize = State.getResponse('authorize');
             const payout_currencies = response.payout_currencies;
@@ -27,14 +33,14 @@ const SetCurrency = (() => {
             const $currencies = $('<div/>');
             currencies.forEach((c) => {
                 $currencies.append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
-                    .append($('<div/>').append($('<img/>', { src: urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
+                    .append($('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
                     .append($('<div/>', { html: `${Currency.formatCurrency(c)} ${c}` })));
             });
             const $currency_list = $('#currency_list');
             $currency_list.html($currencies.html());
 
             $('#set_currency_loading').remove();
-            $('#set_currency').setVisibility(1);
+            $('#set_currency, .select_currency').setVisibility(1);
 
             const allow_omnibus = authorize.allow_omnibus;
             const $chosen_currency_type = $('#chosen_currency_type');
@@ -76,9 +82,9 @@ const SetCurrency = (() => {
                                 hash = '#withdraw';
                             }
                             if (redirect_url) {
-                                window.location.href = urlFor(redirect_url) + hash; // load without pjax
+                                window.location.href = Url.urlFor(redirect_url) + hash; // load without pjax
                             } else {
-                                $('#set_currency').setVisibility(0);
+                                $('.select_currency').setVisibility(0);
                                 $('#has_currency').setVisibility(1);
                             }
                         }

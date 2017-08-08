@@ -173,7 +173,7 @@ const Accounts = (() => {
                                 email       : Client.get('email'),
                                 loginid     : new_account.client_id,
                                 token       : new_account.oauth_token,
-                                redirect_url: urlFor('user/set-currency'),
+                                redirect_url: `${urlFor('user/set-currency')}#new_account`,
                             });
                         }
                     });
