@@ -1,0 +1,86 @@
+[% PROCESS components/elements.html.tt %]
+
+[% BLOCK step %]
+    <div class="gr-row">
+        <div class="gr-9 gr-push-3">
+            [% UNLESS is_first %]
+                [% INCLUDE global/separator_line.html.tt class='gr-padding-30' %]
+            [% END %]
+            <h2>[% title %]</h2>
+        </div>
+    </div>
+    <div class="gr-row">
+        <div class="gr-3 center-text">
+            <h3 class="secondary-color">[% step %]</h3>
+            <img src="[% request.url_for('images/pages/metatrader/how-to/step' _ number _ '.svg') %]" />
+            [% UNLESS is_last %]<div class="vertical-dashed"></div>[% END %]
+        </div>
+        <div class="gr-9">
+            [% content %]
+        </div>
+    </div>
+[% END %]
+
+<div id="forex_how_to">
+    <div class="gr-row">
+        <div class="gr-10 gr-push-1 center-text">
+            <h2>[% l("How to trade Forex") %]</h2>
+            <p>[% l("A Forex trader has one objective in mind when trading which is:") %]</p>
+            <p class="border-box">[% l("To exchange one currency for another in order to make profit.") %]</p>
+            <p>[% l("But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade.") %]</p>
+        </div>
+    </div>
+
+    [% INCLUDE global/separator_line.html.tt class='gr-padding-30' %]
+
+    [% WRAPPER step title=l("Learn to read currency pairs") step=l("Step 1") number=1 is_first=1 %]
+        <div>[% l("Can't make heads or tails of currency pairs? Here is a simple way of looking at it:") %]</div>
+        [% INCLUDE table class='middle thin-border' data={
+            tbody= [
+                [{ text=l("EUR") }, { text='<img src="' _ request.url_for('images/pages/metatrader/how-to/flag_us.svg') _ '" />' }, { text='<h3 class="no-margin">' _ l("Based currency") _ '</h3>' _ l("Also known as transaction currency") class='align-start' }],
+                [{ text=l("USD") class='no-border' }, { text='<img src="' _ request.url_for('images/pages/metatrader/how-to/flag_uk.svg') _ '" />' class='no-border' }, { text='<h3 class="no-margin">' _ l("Quote currency") _ '</h3>' _ l("Also known as counter money") class='no-border align-start' }],
+            ],
+        } %]
+        <p>[% l("Tips:") %]</p>
+        [% INCLUDE list class='checked' items=[
+            { text=l("The base currency is always equal to one unit") },
+            { text=l("The price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate.") },
+        ] %]
+        <p>[% l("Example:") %]</p>
+        <p>[% l("If you see EUR/USD has a bid price of 1.05229, you will sell USD 1.05229 for every EUR 1 that you buy.") %]</p>
+        <p>[% l("If you see EUR/USD has a bid price of 1.05229, you will sell USD 1.05229 for every EUR 1 that you buy.") %]</p>
+    [% END %]
+
+    [% WRAPPER step title=l("Understand when to buy and sell") step=l("Step 2") number=2 %]
+        <div>[% l("You want to buy a certain currency pair if you think the base currency will go up. The reverse holds true:") %]</div>
+        <p class="border-box">[% l("You want to sell that currency pair if you think the base currency will go down.") %]</p>
+        <p>[% l("You have probably seen the terms 'going long' and 'going short' being used by a lot of Forex brokers and traders. Let's compare the differences between the two terms:") %]</p>
+        <p>[% l("Long:") %]</p>
+        [% INCLUDE list class='checked' items=[
+            { text=l("Go long = buy") },
+            { text=l("You are buying the base currency and selling the quote currency.") },
+            { text=l("You are expecting the base currency to rise in value so you can sell it back for a profit.") },
+        ] %]
+        <p>[% l("Short:") %]</p>
+        [% INCLUDE list class='checked' items=[
+            { text=l("Go short = sell") },
+            { text=l("You are selling the base currency and buying the quote currency.") },
+            { text=l("You are expecting the base currency to fall in value so you can buy it back at a lower price and make profit.") },
+        ] %]
+        <p>[% l("Example:") %]</p>
+        <p>[% l("After your analysis, you have come to the conclusion that the British economy will outperform its U.S. counterpart. Thus, you decide to go long and buy into the GBP/USD, expecting the GBP to rise in value.") %]</p>
+        <p>[% l("If you decided that the British economy will underperform instead, then you will go short on the GBP/USD.") %]</p>
+    [% END %]
+
+    [% WRAPPER step title=l("Buy your first currency pairs") step=l("Step 3") number=3 is_last=1 %]
+        <div>[% l("After you have decided which position you want to take whether long or short you are well on your way to buying your first currency pair.") %]</div>
+        <p>[% l("Example:") %]</p>
+        <div class="gr-row gr-nowrap gr-wrap-m gr-padding-20 gr-row-align-middle">
+            <div class="gr-adapt gr-12-m gr-padding-10 gr-parent">
+                <img src="[% request.url_for('images/pages/metatrader/how-to/trade_button.svg') %]" />
+            </div>
+            <div class="gr-grow gr-12-m">[% l("GBP/USD currency pair and its bid-ask price.") %]</div>
+        </div>
+        <p>[% l("To go long, you will click on 'Buy' to purchase GBP 1 for USD 1.22781. To go short, you will click on 'Sell' to sell GBP 1 and receive USD 1.22771 in return.") %]</p>
+    [% END %]
+</div>

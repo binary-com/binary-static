@@ -335,3 +335,32 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
 }
+
+#how_to_trade_mt5 {
+    .border-box {
+        display: inline-flex;
+        border: 1px solid $COLOR_BLUE;
+        border-radius: $BORDER_RADIUS;
+        padding: 25px 50px;
+        margin: 20px auto;
+    }
+    .vertical-dashed {
+        height: calc(100% - 100px);
+        width: 1px;
+        margin: 30px auto;
+        background-image: linear-gradient(to bottom, $COLOR_BLACK 70%, rgba(255, 255, 255, 0) 0%);
+        background-position: left;
+        background-size: 1px 15px;
+        background-repeat: repeat-y;
+    }
+    table.thin-border {
+        width: auto;
+
+        td {
+            padding: 15px 20px;
+        }
+    }
+    img.math-sign {
+        margin: 0 15px;
+    }
+}

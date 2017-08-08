@@ -1,0 +1,73 @@
+[% PROCESS components/elements.html.tt %]
+
+<div id="forex_how_to">
+    <div class="gr-row">
+        <div class="gr-8 gr-push-2 center-text">
+            <h2>[% l("How to trade Metals?") %]</h2>
+            <p>[% l("Learn the basic concepts of trading Meta assets on MetaTrader 5.") %]</p>
+            <p class="border-box">[% l("When you are trading metals, you can choose to open a buy position if you think that the price of an asset will rise or a sell position if you think that the price of an asset will fall.") %]</p>
+        </div>
+    </div>
+
+    [% INCLUDE global/separator_line.html.tt class='gr-padding-30' %]
+
+    <div class="center-text">
+        <h2>[% l("When to buy and sell?") %]</h2>
+        <p>[% l("Can't figure it out on when to buy and sell? Here is a simple way of looking at it:") %]</p>
+        <div class="gr-row">
+            <div class="gr-8 gr-push-2">
+                [% INCLUDE table class='middle thin-border' data={
+                    tbody= [
+                        [{ text=l("Buy") }, { text='<img src="' _ request.url_for('images/pages/metatrader/how-to/buy.svg') _ '" />' }, { text=l("In this case, you predict that the price will rise. This is also known as 'going long'.") class='align-start' }],
+                        [{ text=l("Sell") class='no-border' }, { text='<img src="' _ request.url_for('images/pages/metatrader/how-to/sell.svg') _ '" />' class='no-border' }, { text=l("In this case, you predict that the price will fall. This is also known as 'going short'.") class='no-border align-start' }],
+                    ],
+                } %]
+            </div>
+        </div>
+        <div class="gr-row">
+            <div class="gr-10 gr-push-1">
+                <p>[% l("Example: XAU/USD (Gold vs US Dollar) symbol pair") %]</p>
+                <p>[% l("If you decide to buy or 'go long' on the XAU/USD, you will profit if the price of the XAU/USD rises, and incur losses if the price falls.") %]</p>
+                <p>[% l("If you decide to sell or 'go short' on XAU/USD, you will profit if the price of the XAU/USD falls, and incur losses if the price rises.") %]</p>
+            </div>
+        </div>
+    </div>
+
+    [% INCLUDE global/separator_line.html.tt class='gr-padding-30' %]
+
+    <div class="gr-row">
+        <div class="gr-10 gr-push-1 center-text">
+            <h2>[% l("Factors that affect precious metal prices") %]</h2>
+            <p>[% l("Knowing when to buy and sell precious metals largely depends on how well you know the factors that influence market prices. The most common influencing factors are:") %]</p>
+            [% INCLUDE list class='checked align-start' items=[
+                { text=l("Supply - Decline or increase in supply") },
+                { text=l("Demand – Driven by industrial and commercial applications, including new technological products or fashion trends") },
+                { text=l("Market volatility – Political, economic, or social instability may lead to more volatile financial markets that affect the prices of certain metals") },
+            ] %]
+            <p>[% l("As conclusion, keeping up with market news and trends in a certain sector can help you always ") %]</p>
+        </div>
+    </div>
+
+    [% INCLUDE global/separator_line.html.tt class='gr-padding-30' %]
+
+    <div class="gr-row">
+        <div class="gr-10 gr-push-1 center-text">
+            <h2>[% l("How to calculate your profit and losses?") %]</h2>
+            <p>[% l("Example: XAU/USD (Gold vs US Dollar) symbol pair") %]</p>
+            <p>[% l("Please note that one lot is equivalent to 100 units, based on our contract specifications. Your profit or loss will be calculated as follows:") %]</p>
+            <p class="border-box">[% l("When you are trading metals, you can choose to open a buy position if you think that the price of an asset will rise or a sell position if you think that the price of an asset will fall.") %]</p>
+            <p>[% INCLUDE equation operand_1=l("Closing price") operand_2=l("Opening price") operand_3=l("Lot units") operand_4=l("Profit or Loss") %]</p>
+            <p class="border-box">[% INCLUDE equation operand_1='US<span class="symbols usd"></span>1,255.80' operand_2='US<span class="symbols usd"></span>1,255.06' operand_3='100' operand_4='US<span class="symbols usd"></span>74' %]</p>
+        </div>
+    </div>
+</div>
+
+[% BLOCK equation %]
+    [% operand_1 %]
+    <img class="math-sign" src="[% request.url_for('images/pages/metatrader/how-to/minus.svg') %]" />
+    [% operand_2 %]
+    <img class="math-sign" src="[% request.url_for('images/pages/metatrader/how-to/multiply.svg') %]" />
+    [% operand_3 %]
+    <img class="math-sign" src="[% request.url_for('images/pages/metatrader/how-to/equal.svg') %]" />
+    [% operand_4 %]
+[% END %]

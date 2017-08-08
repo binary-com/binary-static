@@ -58,7 +58,8 @@ sub all_pages {
 
         ['metatrader/contract-specifications', 'metatrader/contract_specifications', 'default',    'Contract Specifications'],
         ['metatrader/download',                'metatrader/download',                'default',    'Start Trading with MetaTrader 5'],
-        ['metatrader/margin-policy',           'metatrader/margin_policy',           'full_width', 'MetaTrader Margin Policy'],
+        ['metatrader/how-to-trade-mt5',        'metatrader/how_to_trade_mt5',        'default',    'How to Trade in MetaTrader 5'],
+        ['metatrader/margin-policy',           'metatrader/margin_policy',           'full_width', 'MetaTrader 5 Margin Policy'],
         ['metatrader/types-of-accounts',       'metatrader/types_of_accounts',       'default',    'MetaTrader 5 Types of Accounts'],
 
         ['cashier',                      'cashier/index',                             'default', 'Cashier'],

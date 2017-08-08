@@ -1,0 +1,19 @@
+[% PROCESS components/tabs.html.tt %]
+
+<div id="how_to_trade_mt5" class="static_full">
+    <h1>[% l('How to Trade in MetaTrader 5') %]</h1>
+    [% WRAPPER tab_container class='how-to-content' theme='light full-width' %]
+        [% INCLUDE tabs_subtabs id='how_to_menu' items=[
+            { id='forex',      text=l('Forex'), class='active' },
+            { id='volatility', text=l('Volatility Indices') },
+            { id='metals',     text=l('Metals') },
+        ] %]
+        <div class="tab-content">
+            [% WRAPPER tab_content_container %]
+                [% WRAPPER tab_content id='forex' visible=1 %][% PROCESS metatrader/how_to_trade_mt5/forex.html.tt %][% END %]
+                [% WRAPPER tab_content id='volatility' %][% PROCESS metatrader/how_to_trade_mt5/volatility_indices.html.tt %][% END %]
+                [% WRAPPER tab_content id='metals' %][% PROCESS metatrader/how_to_trade_mt5/metals.html.tt %][% END %]
+            [% END %]
+        </div>
+    [% END %]
+</div>

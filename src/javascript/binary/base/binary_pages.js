@@ -110,6 +110,7 @@ const pages_config = {
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
+    'how-to-trade-mt5'       : { module: StaticPages.handleTab },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
     'open-positions'         : { module: StaticPages.OpenPositions },

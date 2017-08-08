@@ -85,7 +85,7 @@
 
 [% BLOCK table %]
     [% IF scroll %]<div class="table-container">[% END %]
-    <table[% IF id %] id="[% id %]"[% END %]>
+    <table[% IF id %] id="[% id %]"[% END %][% IF class %] class="[% class %]"[% END %]>
         [% IF data.thead %]
         <thead>
             [% FOREACH row IN data.thead %]

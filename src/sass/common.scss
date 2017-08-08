@@ -29,6 +29,18 @@ sup, .sup, .sup:visited {
     margin-left: 2px;
 }
 
+table {
+    &.middle td {
+        vertical-align: middle;
+    }
+    &.thin-border td {
+        border-bottom: 1px solid $COLOR_GRAY;
+    }
+    td.no-border {
+        border: 0;
+    }
+}
+
 select, input, button, textarea {
     background: $COLOR_WHITE;
     border: 1px solid $COLOR_GRAY;
