@@ -309,3 +309,17 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
 }
+
+.platforms-content {
+    #binary-content img.responsive {
+        max-height: 150px;
+    }
+    #mt5-content {
+        .enhanced img.responsive, img.step {
+            max-height: 128px;
+        }
+        img.step-arrow {
+            max-height: 24px;
+        }
+    }
+}

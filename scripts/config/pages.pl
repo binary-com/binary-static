@@ -13,7 +13,7 @@ sub all_pages {
         ['why-us-jp',                  'static/why_us_jp',             'full_width', 'Why Us',               'NOT-ja,en'],
         ['tour',                       'static/tour',                  'full_width', 'Tour',                 'ja'],
         ['tour-jp',                    'static/tour_jp',               'full_width', 'Tour',                 'NOT-ja,en'],
-        ['platforms',                  'static/platforms',             'default',    'Platforms',            'ja'],
+        ['platforms',                  'static/platforms',             'full_width', 'Trading Platforms',    'ja'],
         ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading',  'ja'],
         ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents',           'ja'],
         ['regulation',                 'legal/regulation',             'default',    'Regulation',           'id'],

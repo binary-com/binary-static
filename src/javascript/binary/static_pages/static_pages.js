@@ -18,7 +18,7 @@ module.exports = {
         onLoad  : () => { Scroll.sidebarScroll($('.payment-agent')); },
         onUnload: () => { Scroll.offScroll(); },
     },
-    AffiliateSignup: {
+    handleTab: {
         onLoad: () => { tabListener(); handleHash(); },
     },
 };

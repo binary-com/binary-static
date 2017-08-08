@@ -8,7 +8,6 @@ const GetStartedJP       = require('../static_pages/get_started_jp');
 const Home               = require('../static_pages/home');
 const HomeJP             = require('../static_pages/home_jp');
 const JobDetails         = require('../static_pages/job_details');
-const Platforms          = require('../static_pages/platforms');
 const Regulation         = require('../static_pages/regulation');
 const StaticPages        = require('../static_pages/static_pages');
 const TermsAndConditions = require('../static_pages/tnc');
@@ -88,7 +87,7 @@ const pages_config = {
     multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
     payment_agent_listws     : { module: PaymentAgentList },
     payment_methods          : { module: Cashier.PaymentMethods },
-    platforms                : { module: Platforms },
+    platforms                : { module: StaticPages.handleTab },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     realws                   : { module: RealAccOpening,             is_authenticated: true, only_virtual: true },
@@ -97,7 +96,7 @@ const pages_config = {
     securityws               : { module: Settings,                   is_authenticated: true },
     self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },
-    signup                   : { module: StaticPages.AffiliateSignup },
+    signup                   : { module: StaticPages.handleTab },
     statementws              : { module: Statement,                  is_authenticated: true, needs_currency: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },

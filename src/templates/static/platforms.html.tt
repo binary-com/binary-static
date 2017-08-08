@@ -1,7 +1,8 @@
 [% PROCESS components/elements.html.tt %]
+[% PROCESS components/tabs.html.tt %]
 
 [% BLOCK platform %]
-<div class="gr-6 gr-12-m gr-12-p">
+<div class="gr-5 gr-12-m gr-12-p">
     <div class="[% image_class %]">
         <img class="responsive" src="[% request.url_for('images/pages/platforms/' _ image _ '.png') %]" />
     </div>
@@ -28,118 +29,165 @@
 </div>
 [% END %]
 
-[% dash = { text= '<div class="small-padding-top">-</div>', class='vertical-align-middle center-text' };
-    tick = { text= '<ul class="checked"><li></li></ul>'}; %]
-
-<div class="gr-row static_full">
-    <div class="gr-3 gr-hide-m gr-hide-p sidebar-container">
-        <div class="sidebar">
-            [% INCLUDE list class='sidebar-nav' items=[
-                { href='#trading-platforms',    text=l("Trading Platforms") },
-                { href='#platforms-comparison', text=l("Platform Comparison"), class='invisible' },
-                { href='#more-tools',           text=l("More Tools") },
-            ] %]
-        </div>
+[% BLOCK enhanced_items %]
+    <div class="gr-4 gr-6-p gr-12-m gr-padding-20 gr-parent">
+        <img class="responsive" src="[% request.url_for('images/pages/platforms/mt5/' _ image _ '.svg') %]" alt="" />
+        <p class="no-margin">[% text %]</p>
     </div>
+[% END %]
 
-    <div class="gr-9 gr-12-m platforms-section">
-        <div id="trading-platforms" class="sections invisible">
-            <h1>[% l("Trading Platforms") %]</h1>
-            <h2>[% l("Basic Platforms") %]</h2>
-            <div class="gr-row">
-                [% INCLUDE platform image_class='gr-12 gr-7-p gr-10-m' image='trading-page' header=website_name description=l("Premier binary options trading platform")
-                    text=l("Trade in the world’s financial markets with a simple and user-friendly online platform.")
-                    url=request.url_for('trading') button_text=l("Trade Now") %]
-
-                [% INCLUDE platform image_class='gr-8 gr-5-p gr-7-m' image='tick-trade' header=l("Binary Tick Trade App") description=l("Ultra fast on-the-go trading")
-                    text=l("Enjoy our fastest type of trading with our Tick Trade app, wherever you are.")
-                    app_store_url='https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=platforms_page&mt=8'
-                    google_play_url='https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' %]
-            </div>
-            <h2>[% l("Advanced Platforms") %]</h2>
-            <div class="gr-row">
-                [% INCLUDE platform image_class='gr-8 gr-5-p gr-7-m' image='metatrader' header=l("MetaTrader 5") description=l("Advanced CFD trading platform")
-                    text=l("Trade with a powerful interface known as the global industry standard.")
-                    url='https://mt.binary.com' target='_blank' button_text=l("Try MetaTrader 5") %]
-
-                [% INCLUDE platform image_class='gr-8 gr-5-p gr-7-m' image='webtrader' header=l("Binary Webtrader") description=l("Advanced binary options trading interface")
-                    text=l("Monitor the movements of your favourite assets and markets at the same time.")
-                    url='https://webtrader.binary.com' target='_blank' button_text=l("Try Webtrader") %]
-            </div>
-            <div class="gr-row">
-                [% INCLUDE platform image_class='gr-12 gr-7-p gr-10-m' image='nextgen' header=l("Binary Next-Gen") description=l("Advanced trading app for web and mobile")
-                    text=l("Explore advanced trading features with the Next-Gen app for web and mobile.")
-                    url='https://app.binary.com' target='_blank' button_text=l("Try Next-Gen")
-                    app_store_url='https://itunes.apple.com/app/apple-store/id1134884301?pt=117911266&ct=platforms_page&mt=8'
-                    google_play_url='https://play.google.com/store/apps/details?id=app.binary.com&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' %]
-
-                [% INCLUDE platform image_class='gr-10 gr-7-p gr-9-m' image='binarybot' header=l("Binary Bot") description=l("Auto-trader programming tool")
-                    text=l("Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool.")
-                    url='https://bot.binary.com' target='_blank' button_text=l("Try Binary Bot") %]
-            </div>
-        </div>
-
-        <div id="platforms-comparison" class="invisible">
-            <h1>[% l("Platform Comparison") %]</h1>
-            <p>[% l("Compare all the trading platforms that we offer. Choose the ideal platform for your preferred trading strategy.") %]</p>
-            <div class="gr-padding-30">
-                <p class="hint">[% l("Note: Scroll the table to the right to see all platforms.") %]</p>
-                <div class="outer">
-                    <div class="inner">
-                        <div class="fade-to-left"></div>
-                        [% INCLUDE table data={
-                            tbody=[
-                                [{ header=' ' },
-                                 { text=website_name },      { text=l("Next-Gen") },  { text=l("Tick Trade") },
-                                 { text=l("MetaTrader 5") }, { text=l("Webtrader") }, { text=l("Binary Bot") } ],
-
-                                [{ header=l("Environment") },
-                                 { text=l("Web (Including Mobile)") }, { text=l("Web, iOS, Android") },  { text=l("iOS, Android") },
-                                 { text=l("Windows, macOS, Linux") },  { text=l("Web (Desktop Only)") }, { text=l("Web (Desktop Only)") } ],
-
-                                [{ header=l("Price") },
-                                 { text=l("Free") }, { text=l("Free") }, { text=l("Free") },
-                                 { text=l("Free") }, { text=l("Free") }, { text=l("Free") } ],
-
-                                [{ header=l("Ideal Users") },
-                                 { text=l("Everyone") },        { text=l("Everyone") },        { text=l("Short interval traders") },
-                                 { text=l("Serious traders") }, { text=l("Serious traders") }, { text=l("Serious traders") } ],
-
-                                [{ header=l("Available Products") },
-                                 { text=l("Binary Options") },                 { text=l("Binary Options") }, { text=l("Binary Options") },
-                                 { text=l("Contracts for Difference (CFD)") }, { text=l("Binary Options") }, { text=l("Binary Options") } ],
-
-                                [{ header=l("Available Markets") },
-                                 { text=l("Forex, Indices, Stocks, Commodities, Volatility Indices") }, { text=l("Forex, Indices, Stocks, Commodities, Volatility Indices") },
-                                 { text=l("Forex, Volatility Indices") },                               { text=l("Volatility Indices") },
-                                 { text=l("Forex, Indices, Stocks, Commodities, Volatility Indices") }, { text=l("Forex, Indices, Stocks, Commodities, Volatility Indices") } ],
-
-                                [{ header=l("Trade Durations") },
-                                 { text=l("5 ticks to 1 year") }, { text=l("5 ticks to 1 year") }, { text=l("5 to 10 ticks") },
-                                 { text=l("Any") },               { text=l("5 ticks to 1 year") }, { text=l("5 ticks to 1 year") } ],
-
-                                [{ header=l("Multiple Charts"),     class='auto-height' }, dash, tick, dash, tick, tick, dash ],
-                                [{ header=l("Chart Indicators"),    class='auto-height' }, tick, dash, dash, tick, tick, tick ],
-                                [{ header=l("Chart Comparison"),    class='auto-height' }, tick, dash, dash, dash, tick, dash ],
-                                [{ header=l("Advanced Automation"), class='auto-height' }, dash, dash, dash, tick, dash, tick ],
-                            ],
-                        } %]
-                        <div class="fade-to-right"></div>
-                    </div>
+[% BLOCK steps %]
+    <div class="steps gr-row">
+    [% FOREACH step IN items %]
+        <div class="gr-4 gr-12-m gr-no-gutter gr-padding-30 gr-parent">
+            <div class="step">
+                <div class="border-bottom"></div>
+                <div class="circle">[% loop.index + 1 %]</div>
+                <div class="gr-padding-20 gr-parent gr-gutter center-text">
+                    <img class="gr-6 gr-centered" src="[% request.url_for('images/pages/platforms/mt5/step' _ (loop.index + 1) _ '.svg') %]" />
+                    <p class="no-margin">[% step.text %]</p>
                 </div>
             </div>
         </div>
-
-        <div id="more-tools" class="sections invisible">
-            <h1>[% l("More Tools") %]</h1>
-            <div class="gr-row">
-                [% INCLUDE platform image_class='gr-10 gr-5-p gr-9-m' image='tradingview' header=l("TradingView for [_1]", website_name) description=l("Powerful charting and technical analysis")
-                    text=l("Analyse the markets with an extensive range of indicators, price bands, and overlays.")
-                    url='https://tradingview.binary.com' target='_blank' button_text=l("Try TradingView") %]
-            </div>
-            <h2>[% l("Buy an App, or Build Your Own") %]</h2>
-            <p>[% l("Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>.") %]</p>
-            <p>[% l("You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>.") %]</p>
-        </div>
+    [% END %]
     </div>
+[% END %]
+
+<div class="static_full">
+    <div class="container">
+        <h1 class="center-text">[% l("Trading Platforms") %]</h1>
+    </div>
+    [% WRAPPER tab_container class='static_full' theme='light' %]
+        [% INCLUDE tabs_subtabs id='platforms_tabs' class='gr-padding-20 gr-parent' items=[
+            { id='binary',     text=l('Binary Options'),      class='active' },
+            { id='mt5',        text=l('MetaTrader 5') },
+            { id='comparison', text=l('Platform Comparison'), class='invisible' },
+        ] %]
+    <div class="tab-content">
+        [% WRAPPER tab_content_container %]
+            [% WRAPPER tab_content id='binary' visible=1 %]
+                <div id="binary" class="container">
+                    <div class="gr-row gr-padding-30">
+                        [% INCLUDE platform image_class='gr-12 gr-7-p gr-10-m' image='trading-page' header=website_name description=l("Premier binary options trading platform")
+                            text=l("Trade in the world’s financial markets with a simple and user-friendly online platform.")
+                            url=request.url_for('trading') button_text=l("Trade Now") %]
+                        <div class="gr-2"></div>
+                        [% INCLUDE platform image_class='gr-7 gr-5-p gr-7-m' image='tick-trade' header=l("Binary Tick Trade App") description=l("Ultra fast on-the-go trading")
+                            text=l("Enjoy our fastest type of trading with our Tick Trade app, wherever you are.")
+                            app_store_url='https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=platforms_page&mt=8'
+                            google_play_url='https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' %]
+                    </div>
+                    <div class="gr-row gr-padding-30">
+                        [% INCLUDE platform image_class='gr-8 gr-5-p gr-7-m' image='webtrader' header=l("Binary Webtrader") description=l("Advanced binary options trading interface")
+                            text=l("Monitor the movements of your favourite assets and markets at the same time.")
+                            url='https://webtrader.binary.com' target='_blank' button_text=l("Try Webtrader") %]
+                        <div class="gr-2"></div>
+                        [% INCLUDE platform image_class='gr-12 gr-7-p gr-10-m' image='nextgen' header=l("Binary Next-Gen") description=l("Advanced trading app for web and mobile")
+                            text=l("Explore advanced trading features with the Next-Gen app for web and mobile.")
+                            url='https://app.binary.com' target='_blank' button_text=l("Try Next-Gen")
+                            app_store_url='https://itunes.apple.com/app/apple-store/id1134884301?pt=117911266&ct=platforms_page&mt=8'
+                            google_play_url='https://play.google.com/store/apps/details?id=app.binary.com&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' %]
+                    </div>
+                    <div class="gr-row gr-padding-30">
+                        [% INCLUDE platform image_class='gr-10 gr-7-p gr-9-m' image='binarybot' header=l("Binary Bot") description=l("Auto-trader programming tool")
+                            text=l("Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool.")
+                            url='https://bot.binary.com' target='_blank' button_text=l("Try Binary Bot") %]
+                        <div class="gr-2"></div>
+                        [% INCLUDE platform image_class='gr-10 gr-5-p gr-9-m' image='tradingview' header=l("TradingView for [_1]", website_name) description=l("Powerful charting and technical analysis")
+                            text=l("Analyse the markets with an extensive range of indicators, price bands, and overlays.")
+                            url='https://tradingview.binary.com' target='_blank' button_text=l("Try TradingView") %]
+                    </div>
+                </div>
+            [% END %]
+            [% WRAPPER tab_content id='mt5' %]
+                <div id="mt5">
+                    <div class="container">
+                        <h2 class="center-text">[% l("Introducing MetaTrader 5 for [_1]", website_name) %]</h2>
+                        <p class="center-text">[% l("MetaTrader 5 is an institutional multi-asset platform offering outstanding trading possibilities and technical analysis tools. It allows trading Foex, Stocks, Futures, CFDs and it provides everything needed for full-fledged and flexible trading operations.") %]</p>
+                        <div class="gr-row gr-padding-30">
+                            <div class="gr-6 gr-12-m gr-padding-30 gr-parent">
+                                <img class="responsive" src="[% request.url_for('images/pages/home/mt5.png') %]" />
+                            </div>
+                            <div class="gr-5 gr-push-1 gr-12-m gr-push-0-m">
+                                <h3>[% l("MetaTrader 5") %]</h3>
+                                <p>[% l("[_1] enters Forex and CFD trading with the universally acclaimed MetaTrader 5 to its continued leadership presence in the binary options market.", website_name) %]</p>
+                                <p>[% l("Trade Forex and Contracts for Difference (CFD) assets with highly-competitive leverage and zero commission.") %]</p>
+                                <p>
+                                    <a class="button" href="[% request.url_for('user/metatrader') %]">
+                                        <span>[% l("Create MetaTrader 5 Account in [_1]", website_name) %]</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gr-padding-10 fill-bg-color">
+                        <div class="container gr-padding-30">
+                            <h2 class="center-text">[% l("Enhanced Trading with MetaTrader 5") %]</h2>
+                            <div class="gr-row center-text enhanced">
+                                [% INCLUDE enhanced_items image='trade'      text=l("Trade Forex and CFD asset classes with an award winning broker") %]
+                                [% INCLUDE enhanced_items image='leverage'   text=l("Trade the Forex markets with leverage up to 100:1, and Volatility Indices with leverage up to 500:1") %]
+                                [% INCLUDE enhanced_items image='demo'       text=l("Open a free Demo account. Upgrade to a Real account by depositing funds thru your Binary.com account cashier") %]
+                                [% INCLUDE enhanced_items image='tools'      text=l("Access advanced tools for fundamental and technical analysis, all available in one platform") %]
+                                [% INCLUDE enhanced_items image='algorithms' text=l("Subscribe to a wide range of algorithmic trading strategies from the built-in MetaTrader Market") %]
+                                [% INCLUDE enhanced_items image='platforms'  text=l("Trade using the mobile and desktop apps, or use the web platform from any web browser") %]
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container gr-padding-30">
+                        <h2 class="center-text gr-padding-20">[% l("Trade with a powerful interface provided") %]</h2>
+                        <div class="gr-row gr-padding-30 gr-parent">
+                            <div class="gr-6 gr-12-m">
+                                <img class="responsive" src="[% request.url_for('images/pages/platforms/mt5/interface.svg') %]" alt="" />
+                            </div>
+                            <div class="gr-5 gr-push-1 gr-12-m gr-push-0-m">
+                                <p>[% l("We provide powerful interface platforms of desktop, mobile and browsers.") %]</p>
+                                <div class="gr-row">
+                                    <div class="gr-6">
+                                        <ul class="checked">
+                                            <li>[% l("iOS") %]</li>
+                                            <li>[% l("Android") %]</li>
+                                            <li>[% l("Windows") %]</li>
+                                            <li>[% l("MacOS") %]</li>
+                                            <li>[% l("Linux") %]</li>
+                                        </ul>
+                                    </div>
+                                    <div class="gr-6">
+                                        <ul class="checked">
+                                            <li>[% l("Chrome") %]</li>
+                                            <li>[% l("Safari") %]</li>
+                                            <li>[% l("Firefox") %]</li>
+                                            <li>[% l("Edge") %]</li>
+                                            <li>[% l("Opera") %]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="center-text">
+                                    <a class="button button-secondary full-width" href="[% request.url_for('metatrader/download') %]">
+                                        <span>[% l("Lear more") %]</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <h2 class="center-text gr-padding-30">[% l("How to start trading with MetaTrader 5?") %]</h2>
+                        <div class="gr-row center-text">
+                            [% INCLUDE steps items=[
+                                { text=l("Open a [_1] account", website_name) },
+                                { text=l("Create a MetaTrader 5 account") },
+                                { text=l("Make a deposit into your account and start trading") },
+                            ] %]
+                        </div>
+                        <div class="center-text">
+                            <a class="button" href="[% request.url_for('user/metatrader') %]">
+                                <span>[% l("Create MetaTrader 5 Account in [_1]", website_name) %]</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            [% END %]
+        [% END %]
+    </div>
+    [% END %]
 </div>
