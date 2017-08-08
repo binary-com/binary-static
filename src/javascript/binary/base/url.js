@@ -46,8 +46,8 @@ const Url = (() => {
 
     const normalizePath = path => (path ? path.replace(/(^\/|\/$|[^a-zA-Z0-9-_/])/g, '') : '');
 
-    const urlFor = (path, pars) => {
-        const lang = urlLang().toLowerCase();
+    const urlFor = (path, pars, language) => {
+        const lang = (language || urlLang()).toLowerCase();
         const url = window.location.href;
         return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${(normalizePath(path) || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
     };

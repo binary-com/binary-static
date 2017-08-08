@@ -1,10 +1,5 @@
 [% PROCESS components/forms.html.tt %]
 
-[% BLOCK verification_code %]
-    [% INCLUDE form_row label=l("Verification token") id='verification_code' type='text' attributes='maxlength="30" autocomplete="off"'
-            hint=l("Please check your email for the value of this token") %]
-[% END %]
-
 [% BLOCK salutation %]
     [% WRAPPER form_row type='select' id='salutation' class label=l('Title') %]
         <option value="Mr">[% l('Mr') %]</option>

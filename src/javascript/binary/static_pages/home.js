@@ -38,7 +38,7 @@ const Home = (() => {
     const handler = (response) => {
         const error = response.error;
         if (!error) {
-            BinaryPjax.load('new_account/virtualws');
+            $('.signup-box div').replaceWith($('<p/>', { text: localize('Thank you for signing up! Please check your email to complete the registration process.'), class: 'gr-10 gr-centered center-text' }));
         } else {
             $('#signup_error').setVisibility(1).text(error.message);
         }

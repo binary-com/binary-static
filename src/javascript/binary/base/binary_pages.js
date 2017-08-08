@@ -1,4 +1,5 @@
 const LoggedInHandler = require('./logged_in');
+const Redirect        = require('./redirect');
 
 const Charity            = require('../static_pages/charity');
 const Contact            = require('../static_pages/contact');
@@ -93,6 +94,7 @@ const pages_config = {
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     realws                   : { module: RealAccOpening,             is_authenticated: true, only_virtual: true },
+    redirect                 : { module: Redirect },
     regulation               : { module: Regulation },
     reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
     securityws               : { module: Settings,                   is_authenticated: true },

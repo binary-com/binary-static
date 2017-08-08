@@ -34,7 +34,6 @@
 
         <form class="form gr-padding-10" id="frmWithdrawal">
             [% WRAPPER fieldset %]
-                [% PROCESS verification_code %]
                 [% INCLUDE form_row label=l('Transfer to Payment Agent') id='ddlAgents' type='select' %]
                 [% INCLUDE form_row label=l('Amount') id='txtAmount' type='text'
                     hint=l('Min: 10 Max: 2000') %]

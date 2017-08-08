@@ -13,10 +13,9 @@ const PaymentAgentWithdraw = (() => {
         form   : '#viewForm',
     };
     const field_ids = {
-        verification_code: '#verification_code',
-        ddl_agents       : '#ddlAgents',
-        txt_amount       : '#txtAmount',
-        txt_desc         : '#txtDescription',
+        ddl_agents: '#ddlAgents',
+        txt_amount: '#txtAmount',
+        txt_desc  : '#txtDescription',
     };
 
     let $views,
@@ -43,12 +42,11 @@ const PaymentAgentWithdraw = (() => {
                 { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
                 { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: '1, 2', min: 10, max: 2000 }]], request_field: 'amount' },
                 { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
-                { selector: field_ids.verification_code, validations: ['req', 'email_token'] },
 
                 { request_field: 'currency',              value: currency },
                 { request_field: 'paymentagent_withdraw', value: 1 },
                 { request_field: 'dry_run',               value: 1 },
-            ]);
+            ], true);
 
             FormManager.handleSubmit({
                 form_selector       : form_id,
@@ -82,10 +80,9 @@ const PaymentAgentWithdraw = (() => {
                     { request_field: 'paymentagent_loginid',  value: request.paymentagent_loginid },
                     { request_field: 'amount',                value: request.amount },
                     { request_field: 'description',           value: request.description },
-                    { request_field: 'verification_code',     value: request.verification_code },
                     { request_field: 'currency',              value: request.currency },
                     { request_field: 'paymentagent_withdraw', value: 1 },
-                ]);
+                ], true);
 
                 FormManager.handleSubmit({
                     form_selector       : view_ids.confirm,

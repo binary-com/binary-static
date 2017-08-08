@@ -117,6 +117,7 @@ sub all_pages {
         ['user/telegram-bot',                'user/telegram_bot',                    'default',    'Telegram Bot'],
 
         ['logged_inws',                'global/logged_in',       undef],
+        ['redirect',                   'global/logged_in',       undef, 'Redirecting...'],
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],
         ['ico',                        'static/ico',             undef, 'Initial Coin Offering', 'ja'],
     );

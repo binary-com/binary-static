@@ -71,9 +71,8 @@ const VirtualAccOpening = (() => {
         const utm_data = TrafficSource.getData();
 
         const req = [
-            { selector: '#verification_code', validations: ['req', 'email_token'] },
-            { selector: '#client_password',   validations: ['req', 'password'], re_check_field: '#repeat_password' },
-            { selector: '#repeat_password',   validations: ['req', ['compare', { to: '#client_password' }]], exclude_request: 1 },
+            { selector: '#client_password', validations: ['req', 'password'], re_check_field: '#repeat_password' },
+            { selector: '#repeat_password', validations: ['req', ['compare', { to: '#client_password' }]], exclude_request: 1 },
 
             { selector: '#residence' },
             { selector: '#email_consent' },
@@ -89,7 +88,7 @@ const VirtualAccOpening = (() => {
 
         if (Cookies.get('affiliate_tracking')) req.push({ request_field: 'affiliate_token', value: Cookies.getJSON('affiliate_tracking').t });
 
-        FormManager.init(form, req);
+        FormManager.init(form, req, true);
     };
 
     const handleJPForm = () => {
@@ -143,7 +142,6 @@ const VirtualAccOpening = (() => {
     };
 
     const showFormError = (message, url) => {
-        $('.notice-message').remove();
         $('#virtual-form').html($('<p/>', { html: localize(message, [urlFor(url)]) }));
     };
 

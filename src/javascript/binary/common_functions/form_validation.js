@@ -1,5 +1,6 @@
 const localize              = require('../base/localize').localize;
 const addComma              = require('../common_functions/currency').addComma;
+const urlParam              = require('../base/url').param;
 const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
@@ -21,8 +22,17 @@ const Validation = (() => {
 
     const getFieldValue = field => (field.type === 'checkbox' ? (field.$.is(':checked') ? '1' : '') : field.$.val()) || '';
 
-    const initForm = (form_selector, fields) => {
+    const initForm = (form_selector, fields, needs_token) => {
         const $form = $(`${form_selector}:visible`);
+
+        if (needs_token) {
+            const token = urlParam('token') || '';
+            if (!validEmailToken(token)) {
+                $form.replaceWith($('<div/>', { class: error_class, text: localize('Verification code is wrong. Please use the link sent to your email.') }));
+                return;
+            }
+        }
+
         if ($form.length) {
             forms[form_selector] = { $form: $form };
             if (Array.isArray(fields) && fields.length) {
@@ -92,7 +102,7 @@ const Validation = (() => {
     const validPostCode     = value => /^[a-zA-Z\d-\s]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
-    const validEmailToken   = value => value.trim().length <= 30;
+    const validEmailToken   = value => value.trim().length === 8;
 
     const validCompare  = (value, options) => value === $(options.to).val();
     const validNotEqual = (value, options) => value !== $(options.to).val();
@@ -147,7 +157,6 @@ const Validation = (() => {
         letter_symbol: { func: validLetterSymbol, message: 'Only letters, space, hyphen, period, and apostrophe are allowed.' },
         postcode     : { func: validPostCode,     message: 'Only letters, numbers, space, and hyphen are allowed.' },
         phone        : { func: validPhone,        message: 'Only numbers and spaces are allowed.' },
-        email_token  : { func: validEmailToken,   message: 'Please submit a valid verification token.' },
         compare      : { func: validCompare,      message: 'The two passwords that you entered do not match.' },
         not_equal    : { func: validNotEqual,     message: '[_1] and [_2] cannot be the same.' },
         min          : { func: validMin,          message: 'Minimum of [_1] characters required.' },
@@ -240,6 +249,8 @@ const Validation = (() => {
     return {
         init    : initForm,
         validate: validate,
+
+        validEmailToken: validEmailToken,
     };
 })();
 
