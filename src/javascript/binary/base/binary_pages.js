@@ -105,6 +105,7 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
+    'contract-specifications': { module: StaticPages.handleTab },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },

@@ -1,0 +1,63 @@
+[% PROCESS components/elements.html.tt %]
+
+<div id="metals_specs" class="gr-row">
+    <div class="gr-12 gr-padding-10">
+        [% INCLUDE table scroll=1 data={
+            thead= [
+                [
+                    { text=l('Symbol') },
+                    { text=l('Description') },
+                    { text=l('Volume 1.0<br>(Lot Size)') },
+                    { text=l('Min. Volume<br>(Lot Size)') },
+                    { text=l('Main. Volume Increment') },
+                ],
+            ],
+            tbody= [
+                [{ text='XAU/USD' }, { text=l('Gold vs US Dollar') },      { text='100' }, { text='0.01' }, { text='0.01' }],
+                [{ text='XAG/USD' }, { text=l('Silver vs US Dollar') },    { text='5000' }, { text='0.01' }, { text='0.01' }],
+                [{ text='XPD/USD' }, { text=l('Palladium vs US Dollar') }, { text='100' }, { text='0.01' }, { text='0.01' }],
+                [{ text='XPT/USD' }, { text=l('Platinum vs US Dollar') },  { text='100' }, { text='0.01' }, { text='0.01' }],
+            ],
+        } %]
+    </div>
+
+    <div class="gr-4 gr-push-4 gr-padding-30">
+        <div class="fill-bg-color gr-padding-10">
+            <div class="gr-prefix-1">
+                <h2>[% l('Maximum Leverage') %]</h2>
+                [% INCLUDE list class='bullet' items=[
+                    { text=l("Cent account: 1:1,000") },
+                    { text=l("Standard account: 1:300") },
+                    { text=l("STP account: 1:100") },
+                    { text=l("Volatility account: 1:500") },
+                ] %]
+            </div>
+        </div>
+    </div>
+
+    <div class="gr-12 gr-padding-10">
+        <h2>[% l('How to read the table above') %]</h2>
+        <p>[% l('Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5.000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots.') %]</p>
+        <p>[% l('Leverage indicates how much capital you can control based on your initial deposit. For example, a 1:100 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.') %]</p>
+        <p>[% l('To learn more, read our <a href="[_1]">Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs.', request.url_for('/metatrader/margin-policy')) %]</p>
+
+        <h2>[% l('Important notes on our swap rates (overnight funding)') %]</h2>
+        <p>[% l('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open. This adjustment is based on interbank lending rates, on top of a 2% fee.') %]</p>
+        <p>[% l('The interest adjustment is calculated in points, meaning we will convert the relevant market rates to points in the base instrument.') %]</p>
+        <p>[% l('The swap rate will depend on the direction of the position you take:') %]</p>
+        <div class="gr-prefix-1">
+            <ul class="bullet">
+                <li><strong>[% l('Long positions') %]</strong>: [% l('We charge a 2% fee on top of market rates.') %]</li>
+                <li><strong>[% l('Short positions') %]</strong>: [% l('We charge a 2% fee on top of market rates.') %]</li>
+            </ul>
+        </div>
+        <p>[% l('Please take note that our swap rate also depends on the time and days you hold your positions open: ') %]</p>
+        <div class="gr-prefix-1">
+            <ul class="bullet">
+                <li>[% l('You will be subjected to swap rates if you keep a position open past the market close.') %]</li>
+                <li>[% l('Positions that are still open on Friday at market close will be charged three times the swap rate to account for weekends, a standard practice for all brokers.') %]</li>
+                <li>[% l('Our swap rate may also be adjusted to take holidays into account.') %]</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -3,9 +3,8 @@
     txt_5000 = { text='5000' }; txt_100 = { text='100' };
 %]
 
-<div id="forex-specs" class="gr-row">
+<div id="forex_specs" class="gr-row">
     <div class="gr-12 gr-padding-10">
-        <h1>[% l('Contract Specifications - Forex') %]</h1>
         [% INCLUDE table scroll=1 data={
             thead= [
                 [

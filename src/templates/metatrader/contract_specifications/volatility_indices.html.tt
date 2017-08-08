@@ -2,9 +2,8 @@
 [% usd = { text=l('USD 1 per point') }; txt_100 = { text='100' }; txt_01 = { text='0.01' };
     percentage = { text='0.2%' }; high_frequency = l('High frequency (2 ticks per second)') %]
 
-<div id="volatility-specs" class="gr-row">
+<div id="volatility_specs" class="gr-row">
     <div class="gr-12 gr-padding-10">
-        <h1>[% l('Contract Specifications (CFD) - Volatility Indices') %]</h1>
         [% INCLUDE table scroll=1 data={
             thead= [
                 [
