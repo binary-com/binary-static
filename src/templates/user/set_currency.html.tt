@@ -32,3 +32,21 @@
 
     [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]
 </div>
+
+<div class="invisible" id="has_currency">
+    <div class="center-text">
+        <img class="gr-padding-10 gr-parent" src="[% request.url_for('images/pages/set_currency/tick.svg') %]">
+        <h1>[% l("New Account Created") %]</h1>
+        <p class="gr-9 gr-centered">Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at.</p>
+
+        [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-10" invisible=1 %]
+
+        <div>
+            <a class="button-secondary" href="[% request.url_for('cashier/forwardws#deposit') %]"><span>[% l("Deposit page") %]</span></a>
+            <a class="button-secondary gr-gutter-left" href="[% request.url_for('trading') %]"><span>[% l("Trade page") %]</span></a>
+        </div>
+        <p class="hint">[% l('or go to [_1]Accounts page[_2]', '<a href="' _ request.url_for('user/accounts') _'">', '</a>') %]</p>
+    </div>
+
+    [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]
+</div>

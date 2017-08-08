@@ -1,20 +1,19 @@
-const getCurrencyValues  = require('./sub_account').getCurrencyValues;
-const BinarySocket       = require('../socket');
-const BinaryPjax         = require('../../base/binary_pjax');
-const Client             = require('../../base/client');
-const localize           = require('../../base/localize').localize;
-const State              = require('../../base/storage').State;
-const urlFor             = require('../../base/url').urlFor;
-const urlForStatic       = require('../../base/url').urlForStatic;
-const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
-const Currency           = require('../../common_functions/currency');
+const getCurrencyValues = require('./sub_account').getCurrencyValues;
+const BinarySocket      = require('../socket');
+const Client            = require('../../base/client');
+const localize          = require('../../base/localize').localize;
+const State             = require('../../base/storage').State;
+const urlFor            = require('../../base/url').urlFor;
+const urlForStatic      = require('../../base/url').urlForStatic;
+const Currency          = require('../../common_functions/currency');
 
 const SetCurrency = (() => {
     'use strict';
 
     const onLoad = () => {
         if (Client.get('currency')) {
-            BinaryPjax.load(defaultRedirectUrl());
+            $('#set_currency_loading').remove();
+            $('#has_currency').setVisibility(1);
             return;
         }
         const hash_value = window.location.hash;
@@ -67,8 +66,8 @@ const SetCurrency = (() => {
                             BinarySocket.send({ balance: 1 });
                             BinarySocket.send({ payout_currencies: 1 }, { forced: true });
 
-                            let redirect_url = 'trading',
-                                hash = '';
+                            let redirect_url,
+                                hash;
                             if (/deposit/.test(hash_value)) {
                                 redirect_url = 'cashier/forwardws';
                                 hash = '#deposit';
@@ -76,7 +75,12 @@ const SetCurrency = (() => {
                                 redirect_url = 'cashier/forwardws';
                                 hash = '#withdraw';
                             }
-                            window.location.href = urlFor(redirect_url) + hash; // load without pjax
+                            if (redirect_url) {
+                                window.location.href = urlFor(redirect_url) + hash; // load without pjax
+                            } else {
+                                $('#set_currency').setVisibility(0);
+                                $('#has_currency').setVisibility(1);
+                            }
                         }
                     });
                 } else {
