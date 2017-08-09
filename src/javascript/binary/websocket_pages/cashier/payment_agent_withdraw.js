@@ -1,13 +1,16 @@
-const BinarySocket = require('../socket');
-const Client       = require('../../base/client');
-const localize     = require('../../base/localize').localize;
-const FormManager  = require('../../common_functions/form_manager');
+const BinarySocket    = require('../socket');
+const Client          = require('../../base/client');
+const localize        = require('../../base/localize').localize;
+const urlParam        = require('../../base/url').param;
+const FormManager     = require('../../common_functions/form_manager');
+const validEmailToken = require('../../common_functions/form_validation').validEmailToken;
 
 const PaymentAgentWithdraw = (() => {
     'use strict';
 
     const view_ids = {
         error  : '#viewError',
+        notice : '#viewNotice',
         success: '#viewSuccess',
         confirm: '#viewConfirm',
         form   : '#viewForm',
@@ -29,7 +32,20 @@ const PaymentAgentWithdraw = (() => {
         $ddl_agents.empty();
         const pa_list = (response.paymentagent_list || {}).list;
         if (pa_list.length > 0) {
+            checkToken($ddl_agents, pa_list);
+        } else {
+            showPageError(localize('The Payment Agent facility is currently not available in your country.'));
+        }
+    };
+
+    const checkToken = ($ddl_agents, pa_list) => {
+        const token = urlParam('token') || '';
+        if (!token) {
             BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
+            setActiveView(view_ids.notice);
+        } else if (!validEmailToken(token)) {
+            showPageError('token_error');
+        } else {
             insertListOption($ddl_agents, localize('Please select a payment agent'), '');
             for (let i = 0; i < pa_list.length; i++) {
                 insertListOption($ddl_agents, pa_list[i].name, pa_list[i].paymentagent_loginid);
@@ -54,8 +70,6 @@ const PaymentAgentWithdraw = (() => {
                 fnc_additional_check: setAgentName,
                 enable_button       : true,
             });
-        } else {
-            showPageError(localize('The Payment Agent facility is currently not available in your country.'));
         }
     };
 
