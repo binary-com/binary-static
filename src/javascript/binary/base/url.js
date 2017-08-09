@@ -1,6 +1,7 @@
-const urlLang       = require('./language').urlLang;
-const jpClient      = require('../common_functions/country_base').jpClient;
-const isEmptyObject = require('./utility').isEmptyObject;
+const urlLang        = require('./language').urlLang;
+const urlForLanguage = require('./language').urlFor;
+const jpClient       = require('../common_functions/country_base').jpClient;
+const isEmptyObject  = require('./utility').isEmptyObject;
 require('url-polyfill');
 
 const Url = (() => {
@@ -48,8 +49,12 @@ const Url = (() => {
 
     const urlFor = (path, pars, language) => {
         const lang = (language || urlLang()).toLowerCase();
+        // url language might differ from passed language, so we will always replace using the url language
+        const url_lang = (language ? urlLang().toLowerCase() : lang);
         const url = window.location.href;
-        return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${(normalizePath(path) || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
+        const new_url = `${url.substring(0, url.indexOf(`/${url_lang}/`) + url_lang.length + 2)}${(normalizePath(path) || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
+        // replace old lang with new lang
+        return urlForLanguage(lang, new_url);
     };
 
     const urlForStatic = (path = '') => {
