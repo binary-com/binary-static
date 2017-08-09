@@ -22,12 +22,11 @@ const Login = (() => {
         );
     };
 
-    const isLoginPages = () => /logged_inws/i.test(document.URL);
+    const isLoginPages = () => /logged_inws|redirect/i.test(document.URL);
 
     return {
         redirectToLogin: redirectToLogin,
         isLoginPages   : isLoginPages,
-        loginUrl       : loginUrl,
     };
 })();
 
