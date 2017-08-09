@@ -44,7 +44,7 @@ const TickDisplay = (() => {
         subscribe,
         responseID;
 
-    const initialize = (data) => {
+    const initialize = (data, options) => {
         // setting up globals
         number_of_ticks      = parseInt(data.number_of_ticks);
         display_symbol       = data.display_symbol;
@@ -73,7 +73,7 @@ const TickDisplay = (() => {
                 plot_to  : new Date(end_time * 1000).getTime(),
                 minimize : minimize,
                 width    : data.width ? data.width : undefined,
-            });
+            }, options);
         });
     };
 
@@ -111,7 +111,7 @@ const TickDisplay = (() => {
         }
     };
 
-    const initializeChart = (config) => {
+    const initializeChart = (config, data) => {
         chart = new Highcharts.Chart({
             chart: {
                 type           : 'line',
@@ -154,6 +154,9 @@ const TickDisplay = (() => {
         Highcharts.setOptions({
             lang: { thousandsSep: ',' },
         });
+        if (data) {
+            dispatch(data);
+        }
     };
 
     const applyChartBackgroundColor = (tick) => {
@@ -322,9 +325,10 @@ const TickDisplay = (() => {
                     abs_barrier         : absolute_barrier,
                     display_decimals    : chart_display_decimals,
                     show_contract_result: 0,
-                });
+                }, data);
                 spots_list = {};
                 tick_init = 'initialized';
+                return;
             }
         }
         if (data.tick) {
