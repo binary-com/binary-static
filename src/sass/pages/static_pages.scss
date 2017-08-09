@@ -1,11 +1,11 @@
 // styling for static pages that are too short or simple to need their own styling page
 
-.about-us {
+.box-inlay-borders {
     .border-right-top {
-        height: 200px;
+        min-height: 200px;
     }
     .border-right-bottom {
-        height: 300px;
+        min-height: 300px;
     }
     .border-right-top, .border-right-bottom {
         @include BIDIR_PROP(border-right, border-left, 1px solid $COLOR_GRAY);
