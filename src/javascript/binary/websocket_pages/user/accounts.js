@@ -170,9 +170,10 @@ const Accounts = (() => {
                             showError(response_set_account_currency.error.message);
                         } else {
                             Client.processNewAccount({
-                                email  : Client.get('email'),
-                                loginid: new_account.client_id,
-                                token  : new_account.oauth_token,
+                                email       : Client.get('email'),
+                                loginid     : new_account.client_id,
+                                token       : new_account.oauth_token,
+                                redirect_url: `${urlFor('user/set-currency')}#new_account`,
                             });
                         }
                     });

@@ -7,6 +7,7 @@ const localize            = require('../../../../base/localize').localize;
 const defaultRedirectUrl  = require('../../../../base/url').defaultRedirectUrl;
 const dateValueChanged    = require('../../../../common_functions/common_functions').dateValueChanged;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
+const getDecimalPlaces    = require('../../../../common_functions/currency').getDecimalPlaces;
 const FormManager         = require('../../../../common_functions/form_manager');
 const scrollToHashSection = require('../../../../common_functions/scroll').scrollToHashSection;
 const DatePicker          = require('../../../../components/date_picker');
@@ -86,6 +87,10 @@ const SelfExclusion = (() => {
                 options.max = self_exclusion_data[id];
             } else {
                 options.allow_empty = true;
+            }
+            if (!/(session_duration_limit|max_open_bets)/.test(id)) {
+                options.type = 'float';
+                options.decimals = `0, ${getDecimalPlaces(Client.get('currency'))}`;
             }
             checks.push(['number', options]);
 

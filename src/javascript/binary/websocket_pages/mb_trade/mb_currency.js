@@ -28,7 +28,7 @@ const MBDisplayCurrencies = () => {
         def_value = def_curr && currencies.indexOf(def_curr) >= 0 ? def_curr : currencies[0];
         if (currencies.length > 1) {
             currencies.forEach((currency) => {
-                $list.append($('<div/>', { value: currency, text: formatCurrency(currency) }));
+                $list.append($('<div/>', { value: currency, html: formatCurrency(currency) }));
                 if (def_value === currency) {
                     MBContract.setCurrentItem($currency, currency);
                 }
