@@ -14,7 +14,7 @@
             <p>[% l("You have successfully created your account!") %]</p>
         </div>
 
-        [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-10" invisible=1 %]
+        [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-parent gr-padding-10" invisible=1 %]
 
         <div class="invisible" id="has_currency">
             <div>
@@ -26,15 +26,24 @@
 
         <div class="invisible select_currency">
             <p>[% l("Please select the currency of this account:") %]</p>
-            <p class="invisible notice-msg hint gr-5 gr-12-m gr-centered" id="currency_notice">
-                [% l('Fact: The currency you chose [_1] is a [_2].', '(<span id="chosen_currency"></span>)', '<span id="chosen_currency_type"></span>') %]
-            </p>
         </div>
     </div>
 
     <div class="center-text invisible select_currency">
-        <form class="gr-7 gr-12-m gr-centered" id="frm_set_currency">
-            <div class="gr-row gr-row-align-center gr-padding-20 gr-parent" id="currency_list"></div>
+        <form id="frm_set_currency">
+            [% BLOCK currencies %]
+                <div class="section-divider gr-padding-20 gr-row invisible" id="[% id %]_currencies">
+                    <div class="align-self-center border-bottom-light-gray"></div>
+                    <div class="faded">[% text %]</div>
+                    <div class="align-self-center border-bottom-light-gray"></div>
+                </div>
+                <div class="gr-5 gr-12-m gr-centered">
+                    <div class="gr-row gr-row-align-center gr-padding-20 gr-parent currency_list" id="[% id %]_currency_list"></div>
+                </div>
+            [% END %]
+            [% INCLUDE currencies id='fiat' text=l('Fiat Currency') %]
+            [% INCLUDE currencies id='crypto' text=l('Cryptocurrency') %]
+
             <p class="invisible error-msg"></p>
             <button type="submit">[% l('Confirm') %]</button>
         </form>
