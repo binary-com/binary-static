@@ -1,0 +1,99 @@
+<div class="static_full">
+    <div class="container">
+        <h1>[% l('Multiple Accounts Manager (MAM) for MetaTrader 5 (MT5)') %]</h1>
+        <p>[% l('Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM).') %]</p>
+        <p>[% l('The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control.') %]</p>
+    </div>
+</div>
+
+[% BLOCK box_inner %]
+<div class="gr-4 gr-12-m center-text[% IF class %] [% class %][% END %]">
+    <img class="gr-4 gr-2-m gr-centered" src="[% request.url_for('images/pages/mam/' _ image _ '.svg') %]"/>
+    <p>[% text %]</p>
+</div>
+[% END %]
+
+[% BLOCK box %]
+<div class="gr-12[% IF class %] [% class %][% END %]">
+    <div class="gr-row">
+        [% content %]
+    </div>
+</div>
+[% END %]
+
+<div class="gr-padding-30">
+    <div class="fill-bg-color box-inlay-borders">
+        <div class="gr-padding-30 center-text container">
+            <h2>[% l('Key features') %]</h2>
+
+            [% INCLUDE global/separator_line.html.tt class='gr-parent gr-padding-20' invisible=1 %]
+
+            [% WRAPPER box class='border-bottom' %]
+                [% INCLUDE box_inner class='border-right-top' image='deposit'
+                   text='Client\'s deposits or withdrawals are immediately reflected in the corresponding master account balance in real time' %]
+
+                [% INCLUDE box_inner class='border-right-top' image='methods'
+                   text='Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes' %]
+
+                [% INCLUDE box_inner image='tools'
+                   text='Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types' %]
+            [% END %]
+
+            [% WRAPPER box class='border-bottom' %]
+                [% INCLUDE box_inner class='border-right-top gr-padding-20 gr-child' image='info'
+                   text='View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price, SL, TP, swap, and profit' %]
+
+                [% INCLUDE box_inner class='border-right-top gr-padding-20 gr-child' image='exclude'
+                   text='Use multiple exclusion rules to temporarily exclude client accounts from allocations without affecting their current positions' %]
+
+                [% INCLUDE box_inner class='gr-padding-30 gr-child' image='manage'
+                   text='View all the information you need to manage your client list – including login ID, group, leverage, balance, equity, and margin' %]
+            [% END %]
+
+            [% WRAPPER box %]
+                [% INCLUDE box_inner class='border-right-top gr-padding-30 gr-child' image='money'
+                   text='Instant, daily, and monthly commissions available to money managers' %]
+
+                [% INCLUDE box_inner class='border-right-top gr-padding-20 gr-child' image='trade'
+                   text='Clients\' trade allocations start from 0.01 lots' %]
+
+                [% INCLUDE box_inner class='gr-padding-20 gr-child' image='close'
+                   text='Clients can close out trades' %]
+            [% END %]
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="center-text">[% l('How it works') %]</h2>
+
+    [% INCLUDE global/separator_line.html.tt class='gr-parent gr-padding-30' invisible=1 %]
+
+    [% counter = 1 %]
+    [% BLOCK step %]
+        <div class="step">
+            <div class="border-bottom"></div>
+            <div class="circle">[% counter %]</div>
+            <div style="padding: 20px 10px;">
+                <div class="center-text">
+                    <img class="gr-4 gr-8-m gr-centered" src="[% request.url_for('images/pages/mam/' _ image _ '.svg') %]"/>
+                </div>
+                <p>[% text %]</p>
+            </div>
+        </div>
+        [% counter = counter + 1 %]
+    [% END %]
+
+    <div class="steps">
+        [% INCLUDE step image='download'
+            text='Download the interface and log in with your master account credentials.' %]
+
+        [% INCLUDE step image='mt5'
+            text='Start trading using our MetaTrader 5 platform.' %]
+
+        [% INCLUDE step image='monitor'
+            text='Manage and monitor your client list, trading activity, and volume allocation.' %]
+    </div>
+
+    <p>[% l('Interested in our MAM tool for MetaTrader 5? Contact us at [_1] for more info.', '<a href="mailto:marketing@binary.com">marketing@binary.com</a>') %]</p>
+</div>
