@@ -31,9 +31,15 @@ const Durations = (() => {
     let selected_duration = {},
         has_end_date = 0;
 
-    const displayDurations = () => {
+    const displayDurations = (time_start_val) => {
+        let date_time_start = moment(Defaults.get('date_start') * 1000);
+        if (time_start_val) {
+            const start_time = time_start_val.split(':');
+            date_time_start = date_time_start.utc().hour(start_time[0]).minute(start_time[1]);
+        }
+
         let start_type;
-        if (Defaults.get('date_start') !== 'now' && State.get('is_start_dates_displayed') && moment(Defaults.get('date_start') * 1000).isAfter(moment())) {
+        if (Defaults.get('date_start') !== 'now' && State.get('is_start_dates_displayed') && date_time_start.isAfter(moment())) {
             start_type = 'forward';
         } else {
             start_type = 'spot';
@@ -533,7 +539,7 @@ const Durations = (() => {
             hideExpiryTime(document.getElementById('expiry_time_row'));
         }
         commonTrading.timeIsValid($expiry_time);
-        displayDurations();
+        displayDurations(time_start.value);
         return make_price_request;
     };
 
