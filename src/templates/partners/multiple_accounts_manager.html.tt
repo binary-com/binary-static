@@ -1,7 +1,9 @@
-<div class="container static_full">
-    <h1>[% l('Multiple Accounts Manager (MAM) for MetaTrader 5 (MT5)') %]</h1>
-    <p>[% l('Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM).') %]</p>
-    <p>[% l('The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control.') %]</p>
+<div class="static_full">
+    <div class="container">
+        <h1>[% l('Multiple Accounts Manager (MAM) for MetaTrader 5 (MT5)') %]</h1>
+        <p>[% l('Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM).') %]</p>
+        <p>[% l('The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control.') %]</p>
+    </div>
 </div>
 
 [% BLOCK box_inner %]
