@@ -242,10 +242,13 @@ const Price = (() => {
      */
     const processForgetProposals = () => {
         commonTrading.showPriceOverlay();
-        BinarySocket.send({
+        const forget_proposal = BinarySocket.send({
             forget_all: 'proposal',
         });
-        Price.clearMapping();
+        forget_proposal.then(() => {
+            Price.clearMapping();
+        });
+        return forget_proposal;
     };
 
     /*
@@ -254,7 +257,6 @@ const Price = (() => {
      */
     const processPriceRequest = () => {
         Price.incrFormId();
-        processForgetProposals();
         commonTrading.showPriceOverlay();
         let types = Contract.contractType()[Contract.form()];
         if (Contract.form() === 'digits') {
@@ -281,15 +283,17 @@ const Price = (() => {
                     break;
             }
         }
-        Object.keys(types).forEach((type_of_contract) => {
-            BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
-                if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
-                    response.echo_req.passthrough.form_id === form_id) {
-                    commonTrading.hideOverlayContainer();
-                    Price.display(response, Contract.contractType()[Contract.form()]);
-                    commonTrading.hidePriceOverlay();
-                }
-            } });
+        processForgetProposals().then(() => {
+            Object.keys(types).forEach((type_of_contract) => {
+                BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
+                    if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
+                        response.echo_req.passthrough.form_id === form_id) {
+                        commonTrading.hideOverlayContainer();
+                        Price.display(response, Contract.contractType()[Contract.form()]);
+                        commonTrading.hidePriceOverlay();
+                    }
+                } });
+            });
         });
     };
 
