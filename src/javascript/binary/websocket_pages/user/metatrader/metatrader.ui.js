@@ -102,7 +102,7 @@ const MetaTraderUI = (() => {
         $acc_item.find('.mt-type').text(`${types_info[acc_type].title}`);
         if (types_info[acc_type].account_info) {
             $acc_item.find('.mt-login').text(types_info[acc_type].account_info.login);
-            $acc_item.find('.mt-balance').text(formatMoney('USD', +types_info[acc_type].account_info.balance));
+            $acc_item.find('.mt-balance').html(formatMoney('USD', +types_info[acc_type].account_info.balance));
             $acc_item.find('.mt-new').setVisibility(0);
         } else {
             $acc_item.find('.mt-new').setVisibility(1);
@@ -119,7 +119,7 @@ const MetaTraderUI = (() => {
             $detail.find('.acc-info div[data]').map(function () {
                 const key  = $(this).attr('data');
                 const info = types_info[acc_type].account_info[key];
-                $(this).text(
+                $(this).html(
                     key === 'balance' ? formatMoney('USD', +info) :
                         key === 'leverage' ? `1:${info}` : info);
             });

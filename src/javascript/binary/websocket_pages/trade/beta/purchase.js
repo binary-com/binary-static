@@ -93,7 +93,7 @@ const Purchase_Beta = (() => {
             commonTrading.labelValue(payout, localize('Payout'), formatMoney(currency, payout_value, 1));
             commonTrading.labelValue(cost,   localize('Stake'),  formatMoney(currency, cost_value, 1));
 
-            elementTextContent(balance, `${localize('Account balance:')} ${formatMoney(currency, receipt.balance_after)}`);
+            elementInnerHtml(balance, `${localize('Account balance:')} ${formatMoney(currency, receipt.balance_after)}`);
 
             if (show_chart) {
                 chart.show();

@@ -82,7 +82,7 @@
                 #trade_details_profit_loss {
                     font-weight: bold;
 
-                    span {
+                    span.percent {
                         font-size: $FONT_SIZE_XXS;
                         @include BIDIR_PROP(padding-left, padding-right, 7px);
                         font-weight: normal;

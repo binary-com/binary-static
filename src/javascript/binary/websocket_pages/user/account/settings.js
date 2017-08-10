@@ -16,7 +16,7 @@ const Settings = (() => {
                 $(class_real).not((jpClient() ? '.ja-hide' : '')).removeClass(class_hidden);
             }
 
-            if (/has_password/.test(response.get_account_status.status)) {
+            if (!/social_signup/.test(response.get_account_status.status)) {
                 $('#change_password').removeClass(class_hidden);
             }
 

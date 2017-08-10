@@ -8,7 +8,7 @@
 [% END %]
 
 [% BLOCK social_icons %]
-<div class="gr-padding-10 gr-row">
+<div class="gr-padding-10 gr-row[% IF is_centered %] gr-row-align-center[% END %]">
     [% FOREACH networks %]
         <a href="[% href %]" target="_blank" class="[% IF is_centered %]gr-2 gr-1-m[% ELSE %]gr-3[% END %] gr-no-gutter-right">
             <img class="responsive" src="[% request.url_for('images/pages/footer/' _ media _ '.svg') %]"/>
@@ -124,7 +124,6 @@
                         { media='google-plus', href='https://plus.google.com/106251151552682209951' },
                         { media='facebook',    href='https://www.facebook.com/binarydotcom' },
                         { media='twitter',     href='https://twitter.com/Binarydotcom' },
-                        { media='linkedin',    href='https://www.linkedin.com/company/binary-com' },
                         { media='telegram',    href='https://t.me/joinchat/CROwo0OY4RGlx0xk2w78Aw' },
                     ] %]
                 </div>

@@ -112,6 +112,7 @@ sub all_pages {
         ['user/settings/assessmentws',       'user/settings/financial_assessment',   'default',    'Financial Assessment',    'ja'],
         ['user/settings/detailsws',          'user/settings/personal_details',       'default',    'Personal Details'],
         ['user/set-currency',                'user/set_currency',                    'default',    'Set Currency',            'ja'],
+        ['user/telegram-bot',                'user/telegram_bot',                    'default',    'Telegram Bot'],
 
         ['logged_inws',                'global/logged_in',       undef],
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],

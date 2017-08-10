@@ -127,7 +127,7 @@ const PersonalDetails = (() => {
                     } else if (/(SELECT|INPUT)/.test($key.prop('nodeName'))) {
                         $key.val(data_key.split(',')).trigger('change');
                     } else if (key !== 'country') {
-                        $key.text(data_key ? localize(data_key) : '-');
+                        $key.html(data_key ? localize(data_key) : '-');
                     }
                 }
             }
