@@ -1,7 +1,6 @@
 const moment                    = require('moment');
 const TradingAnalysis           = require('./analysis');
 const commonTrading             = require('./common');
-const processTradingTimesAnswer = require('./common_independent').processTradingTimesAnswer;
 const Contract                  = require('./contract');
 const Defaults                  = require('./defaults');
 const Durations                 = require('./duration');
@@ -88,15 +87,15 @@ const Process = (() => {
 
         BinarySocket.clearTimeouts();
 
-        getContracts(underlying);
+        getContracts(underlying, 1);
 
         commonTrading.displayTooltip(Defaults.get('market'), underlying);
     };
 
-    const getContracts = (underlying) => {
+    const getContracts = (underlying, send_proposal) => {
         BinarySocket.send({ contracts_for: underlying }).then((response) => {
             Notifications.hide('CONNECTION_ERROR');
-            processContract(response);
+            processContract(response, send_proposal);
         });
     };
 
@@ -228,11 +227,6 @@ const Process = (() => {
         });
     };
 
-    const processTradingTimes = (response) => {
-        processTradingTimesAnswer(response);
-        Price.processPriceRequest();
-    };
-
     const onExpiryTypeChange = (value) => {
         const $expiry_type = $('#expiry_type');
         if (!value || !$expiry_type.find(`option[value=${value}]`).length) {
@@ -287,8 +281,6 @@ const Process = (() => {
         processContract     : processContract,
         processContractForm : processContractForm,
         forgetTradingStreams: forgetTradingStreams,
-        processForgetTicks  : processForgetTicks,
-        processTradingTimes : processTradingTimes,
         onExpiryTypeChange  : onExpiryTypeChange,
         onDurationUnitChange: onDurationUnitChange,
     };
