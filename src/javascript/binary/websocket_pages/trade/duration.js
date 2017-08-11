@@ -172,7 +172,7 @@ const Durations = (() => {
             expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm'),
             expiry_date_iso = toISOFormat(expiry_date);
 
-        if (moment(`${expiry_date_iso} ${expiry_time}`).valueOf() < current_moment.valueOf()) {
+        if (moment.utc(`${expiry_date_iso} ${expiry_time}`).valueOf() < current_moment.valueOf()) {
             expiry_date = current_moment;
             expiry_date_iso = toISOFormat(expiry_date);
             expiry_time = current_moment.format('HH:mm');
@@ -465,7 +465,7 @@ const Durations = (() => {
             expiry_time.setAttribute('data-value', new_time);
             setTime(expiry_time.value, 1);
         }
-        setTime(expiry_time.value);
+        setTime(Defaults.get('expiry_time') || expiry_time.value);
         Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
         expiry_time.show();
         Barriers.display();

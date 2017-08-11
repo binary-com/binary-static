@@ -136,7 +136,7 @@ const TradingEvents = (() => {
 
                     commonTrading.updateWarmChart();
 
-                    getContracts(underlying);
+                    getContracts(underlying, 1);
 
                     // get ticks for current underlying
                     GetTicks.request(underlying);
@@ -145,10 +145,10 @@ const TradingEvents = (() => {
             });
         }
 
-        const getContracts = (underlying) => {
+        const getContracts = (underlying, send_proposal) => {
             BinarySocket.send({ contracts_for: underlying }).then((response) => {
                 Notifications.hide('CONNECTION_ERROR');
-                Process.processContract(response);
+                Process.processContract(response, send_proposal);
             });
         };
 

@@ -103,7 +103,7 @@ const Process = (() => {
     /*
      * Function to display contract form for current underlying
      */
-    const processContract = (contracts) => {
+    const processContract = (contracts, send_proposal) => {
         if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
             Price.processForgetProposals();
             const container          = document.getElementById('contract_confirmation_container');
@@ -152,14 +152,14 @@ const Process = (() => {
 
         commonTrading.displayContractForms('contract_form_name_nav', contract_categories, formname);
 
-        processContractForm();
+        processContractForm(send_proposal);
 
         TradingAnalysis.request();
 
         commonTrading.hideFormOverlay();
     };
 
-    const processContractForm = () => {
+    const processContractForm = (send_proposal) => {
         Contract.details(sessionStorage.getItem('formname'));
 
         StartDates.display();
@@ -193,7 +193,7 @@ const Process = (() => {
         const expiry_type = Defaults.get('expiry_type') || 'duration';
         const make_price_request = onExpiryTypeChange(expiry_type);
 
-        if (make_price_request >= 0) {
+        if (send_proposal || make_price_request >= 0) {
             Price.processPriceRequest();
         }
     };
