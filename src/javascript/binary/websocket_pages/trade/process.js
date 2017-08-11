@@ -1,7 +1,6 @@
 const moment                    = require('moment');
 const TradingAnalysis           = require('./analysis');
 const commonTrading             = require('./common');
-const processTradingTimesAnswer = require('./common_independent').processTradingTimesAnswer;
 const Contract                  = require('./contract');
 const Defaults                  = require('./defaults');
 const Durations                 = require('./duration');
@@ -228,11 +227,6 @@ const Process = (() => {
         });
     };
 
-    const processTradingTimes = (response) => {
-        processTradingTimesAnswer(response);
-        Price.processPriceRequest();
-    };
-
     const onExpiryTypeChange = (value) => {
         const $expiry_type = $('#expiry_type');
         if (!value || !$expiry_type.find(`option[value=${value}]`).length) {
@@ -287,8 +281,6 @@ const Process = (() => {
         processContract     : processContract,
         processContractForm : processContractForm,
         forgetTradingStreams: forgetTradingStreams,
-        processForgetTicks  : processForgetTicks,
-        processTradingTimes : processTradingTimes,
         onExpiryTypeChange  : onExpiryTypeChange,
         onDurationUnitChange: onDurationUnitChange,
     };
