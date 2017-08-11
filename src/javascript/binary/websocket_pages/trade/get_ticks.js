@@ -24,50 +24,58 @@ const GetTicks = (() => {
         if (underlying && req && callback && (underlying !== req.ticks_history || !req.subscribe)) {
             BinarySocket.send(req, { callback: callback });
         } else {
-            if (!req || req.subscribe) {
-                BinarySocket.send({ forget_all: 'ticks' });
-                BinarySocket.send({ forget_all: 'candles' });
-            }
-            BinarySocket.send(req || {
-                ticks_history: symbol || underlying,
-                style        : 'ticks',
-                end          : 'latest',
-                count        : 20,
-                subscribe    : 1,
-            }, {
-                callback: (response) => {
-                    const type = response.msg_type;
-                    const is_digit = getActiveTab() === 'tab_last_digit';
-                    const is_digit_beta = getActiveTab_Beta() === 'tab_last_digit';
-                    if (typeof callback === 'function') {
-                        callback(response);
-                    }
-                    if (State.get('is_mb_trading')) {
-                        MBTick.processTickStream(response);
-                        return;
-                    }
-                    if (type === 'tick') {
-                        if (State.get('is_trading')) {
-                            processTick(response);
+            const sendRequest = () => {
+                BinarySocket.send(req || {
+                    ticks_history: symbol || underlying,
+                    style        : 'ticks',
+                    end          : 'latest',
+                    count        : 20,
+                    subscribe    : 1,
+                }, {
+                    callback: (response) => {
+                        const type = response.msg_type;
+                        const is_digit = getActiveTab() === 'tab_last_digit';
+                        const is_digit_beta = getActiveTab_Beta() === 'tab_last_digit';
+                        if (typeof callback === 'function') {
+                            callback(response);
+                        }
+                        if (State.get('is_mb_trading')) {
+                            MBTick.processTickStream(response);
+                            return;
+                        }
+                        if (type === 'tick') {
+                            if (State.get('is_trading')) {
+                                processTick(response);
+                                if (is_digit) {
+                                    DigitInfo.updateChart(response);
+                                }
+                            } else if (State.get('is_beta_trading')) {
+                                processTick_Beta(response);
+                                if (is_digit_beta) {
+                                    DigitInfo_Beta.updateChart(response);
+                                }
+                            }
+                        } else if (type === 'history') {
+                            processHistory(response);
                             if (is_digit) {
-                                DigitInfo.updateChart(response);
-                            }
-                        } else if (State.get('is_beta_trading')) {
-                            processTick_Beta(response);
-                            if (is_digit_beta) {
-                                DigitInfo_Beta.updateChart(response);
+                                DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
+                            } else if (is_digit_beta) {
+                                DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
                             }
                         }
-                    } else if (type === 'history') {
-                        processHistory(response);
-                        if (is_digit) {
-                            DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
-                        } else if (is_digit_beta) {
-                            DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
-                        }
-                    }
-                },
-            });
+                    },
+                });
+            };
+
+            if (!req || req.subscribe) {
+                const forget_tick = BinarySocket.send({ forget_all: 'ticks' });
+                const forget_candle = BinarySocket.send({ forget_all: 'candles' });
+                Promise.all([forget_tick, forget_candle]).then(() => {
+                    sendRequest();
+                });
+            } else {
+                sendRequest();
+            }
         }
     };
 
