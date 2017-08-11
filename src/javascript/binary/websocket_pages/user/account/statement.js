@@ -2,6 +2,7 @@ const moment              = require('moment');
 const Client              = require('../../../base/client');
 const localize            = require('../../../base/localize').localize;
 const toJapanTimeIfNeeded = require('../../../base/clock').toJapanTimeIfNeeded;
+const formatCurrency      = require('../../../common_functions/currency').formatCurrency;
 const formatMoney         = require('../../../common_functions/currency').formatMoney;
 const toTitleCase         = require('../../../common_functions/string_util').toTitleCase;
 
@@ -40,7 +41,7 @@ const Statement = (() => {
         let csv = [header.join(sep)];
         if (all_data && all_data.length > 0) {
             // eslint-disable-next-line no-control-regex
-            csv = csv.concat(all_data.map(data => columns.map(key => (data[key] ? data[key].replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '')).join(sep)));
+            csv = csv.concat(all_data.map(data => columns.map(key => (data[key] ? data[key].replace(formatCurrency(currency), '¥').replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '')).join(sep)));
         }
         return csv.join('\r\n');
     };

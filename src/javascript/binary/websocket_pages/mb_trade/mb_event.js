@@ -54,9 +54,10 @@ const MBTradingEvents = (() => {
 
                 MBProcess.getContracts(underlying);
                 // forget the old tick id i.e. close the old tick stream
-                MBProcess.processForgetTicks();
-                // get ticks for current underlying
-                MBTick.request(underlying);
+                MBProcess.processForgetTicks().then(() => {
+                    // get ticks for current underlying
+                    MBTick.request(underlying);
+                });
             });
         }
 
@@ -102,7 +103,7 @@ const MBTradingEvents = (() => {
         const jp_client = jpClient();
         if ($payout.length) {
             const appendActualPayout = (payout) => {
-                $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', text: formatMoney('JPY', payout * 1000) })));
+                $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', html: formatMoney('JPY', payout * 1000) })));
             };
             let old_value = jp_client ? 1 : 10;
             if (!$payout.attr('value')) {

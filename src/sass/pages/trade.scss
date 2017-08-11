@@ -407,6 +407,9 @@
                 align-items: center;
                 margin-bottom: 10px;
 
+                &, .contract_amount, .contract_payout {
+                    vertical-align: middle;
+                }
                 div {
                     flex-grow: 1;
                 }

@@ -19,7 +19,7 @@ const updateBalance = (response) => {
         }
         const view = formatMoney(currency, balance);
         updateContractBalance(balance);
-        $('.topMenuBalance').text(view)
+        $('.topMenuBalance').html(view)
             .css('visibility', 'visible');
     });
 };

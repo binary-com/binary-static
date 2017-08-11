@@ -8,6 +8,7 @@ const Defaults             = require('./defaults');
 const BinarySocket         = require('../socket');
 const localize             = require('../../base/localize').localize;
 const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
 const formatMoney          = require('../../common_functions/currency').formatMoney;
 
@@ -174,7 +175,7 @@ const Price = (() => {
             if (data.display_value) {
                 $('.stake:hidden').show();
                 elementTextContent(stake, `${localize('Stake')}: `);
-                elementTextContent(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
+                elementInnerHtml(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
                 $('.stake_wrapper:hidden').show();
             } else {
                 $('.stake_wrapper:visible').hide();
@@ -182,7 +183,7 @@ const Price = (() => {
 
             if (data.payout) {
                 elementTextContent(payout, `${localize('Payout')}: `);
-                elementTextContent(payout_amount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
+                elementInnerHtml(payout_amount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
                 $('.payout_wrapper:hidden').show();
             } else {
                 $('.payout_wrapper:visible').hide();
@@ -241,10 +242,13 @@ const Price = (() => {
      */
     const processForgetProposals = () => {
         commonTrading.showPriceOverlay();
-        BinarySocket.send({
+        const forget_proposal = BinarySocket.send({
             forget_all: 'proposal',
         });
-        Price.clearMapping();
+        forget_proposal.then(() => {
+            Price.clearMapping();
+        });
+        return forget_proposal;
     };
 
     /*
@@ -253,7 +257,6 @@ const Price = (() => {
      */
     const processPriceRequest = () => {
         Price.incrFormId();
-        processForgetProposals();
         commonTrading.showPriceOverlay();
         let types = Contract.contractType()[Contract.form()];
         if (Contract.form() === 'digits') {
@@ -280,15 +283,17 @@ const Price = (() => {
                     break;
             }
         }
-        Object.keys(types).forEach((type_of_contract) => {
-            BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
-                if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
-                    response.echo_req.passthrough.form_id === form_id) {
-                    commonTrading.hideOverlayContainer();
-                    Price.display(response, Contract.contractType()[Contract.form()]);
-                    commonTrading.hidePriceOverlay();
-                }
-            } });
+        processForgetProposals().then(() => {
+            Object.keys(types).forEach((type_of_contract) => {
+                BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
+                    if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
+                        response.echo_req.passthrough.form_id === form_id) {
+                        commonTrading.hideOverlayContainer();
+                        Price.display(response, Contract.contractType()[Contract.form()]);
+                        commonTrading.hidePriceOverlay();
+                    }
+                } });
+            });
         });
     };
 

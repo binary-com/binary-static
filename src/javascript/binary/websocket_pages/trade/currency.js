@@ -37,7 +37,7 @@ const displayCurrencies = () => {
         target.appendChild(fragment);
         Defaults.set('currency', target.value);
     } else {
-        $('#currency').replaceWith($('<span/>', { id: target.getAttribute('id'), class: target.getAttribute('class'), value: currencies[0], text: formatCurrency(currencies[0]) }));
+        $('#currency').replaceWith($('<span/>', { id: target.getAttribute('id'), class: target.getAttribute('class'), value: currencies[0], html: formatCurrency(currencies[0]) }));
         Defaults.set('currency', currencies[0]);
     }
 };

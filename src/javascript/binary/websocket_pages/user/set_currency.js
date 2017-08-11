@@ -1,55 +1,61 @@
-const getCurrencyValues  = require('./sub_account').getCurrencyValues;
-const BinarySocket       = require('../socket');
-const BinaryPjax         = require('../../base/binary_pjax');
-const Client             = require('../../base/client');
-const localize           = require('../../base/localize').localize;
-const State              = require('../../base/storage').State;
-const urlFor             = require('../../base/url').urlFor;
-const urlForStatic       = require('../../base/url').urlForStatic;
-const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
-const Currency           = require('../../common_functions/currency');
+const getCurrencyValues = require('./sub_account').getCurrencyValues;
+const BinarySocket      = require('../socket');
+const BinaryPjax        = require('../../base/binary_pjax');
+const Client            = require('../../base/client');
+const localize          = require('../../base/localize').localize;
+const State             = require('../../base/storage').State;
+const Url               = require('../../base/url');
+const isCryptocurrency  = require('../../common_functions/currency').isCryptocurrency;
 
 const SetCurrency = (() => {
     'use strict';
 
     const onLoad = () => {
-        if (Client.get('currency')) {
-            BinaryPjax.load(defaultRedirectUrl());
-            return;
-        }
         const hash_value = window.location.hash;
         const el = /new_account/.test(hash_value) ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
+
+        if (Client.get('currency')) {
+            if (/new_account/.test(hash_value)) {
+                $('#set_currency_loading').remove();
+                $('#has_currency, #set_currency').setVisibility(1);
+            } else {
+                BinaryPjax.load(Url.defaultRedirectUrl());
+            }
+            return;
+        }
+
         BinarySocket.wait('payout_currencies').then((response) => {
             const authorize = State.getResponse('authorize');
             const payout_currencies = response.payout_currencies;
             const currency_values = getCurrencyValues(authorize.sub_accounts);
             const currencies = getCurrencies(authorize, payout_currencies, currency_values);
-            const $currencies = $('<div/>');
+            const $fiat_currencies = $('<div/>');
+            const $cryptocurrencies = $('<div/>');
             currencies.forEach((c) => {
-                $currencies.append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
-                    .append($('<div/>').append($('<img/>', { src: urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
-                    .append($('<div/>', { text: `${Currency.formatCurrency(c)} ${c}` })));
+                (isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies)
+                    .append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
+                        .append($('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
+                        .append($('<div/>', { html: c })));
             });
-            const $currency_list = $('#currency_list');
-            $currency_list.html($currencies.html());
+            const fiat_currencies = $fiat_currencies.html();
+            if (fiat_currencies) {
+                $('#fiat_currencies').setVisibility(1);
+                $('#fiat_currency_list').html(fiat_currencies);
+            }
+            const crytpo_currencies = $cryptocurrencies.html();
+            if (crytpo_currencies) {
+                $('#crypto_currencies').setVisibility(1);
+                $('#crypto_currency_list').html(crytpo_currencies);
+            }
 
             $('#set_currency_loading').remove();
-            $('#set_currency').setVisibility(1);
+            $('#set_currency, .select_currency').setVisibility(1);
 
-            const allow_omnibus = authorize.allow_omnibus;
-            const $chosen_currency_type = $('#chosen_currency_type');
-            const $chosen_currency = $('#chosen_currency');
-            const $currency_notice = $('#currency_notice');
+            const $currency_list = $('.currency_list');
             $('.currency_wrapper').on('click', function () {
                 $currency_list.find('> div').removeClass('selected');
                 $(this).addClass('selected');
-                if (allow_omnibus) {
-                    const chosen_currency = $(this).attr('id');
-                    $chosen_currency_type.text(currency_values.fiat_currencies.indexOf(chosen_currency) < 0 ? localize('Cryptocurrency') : localize('Fiat Currency'));
-                    $chosen_currency.text(chosen_currency);
-                    $currency_notice.setVisibility(1);
-                }
             });
 
             const $form = $('#frm_set_currency');
@@ -67,8 +73,8 @@ const SetCurrency = (() => {
                             BinarySocket.send({ balance: 1 });
                             BinarySocket.send({ payout_currencies: 1 }, { forced: true });
 
-                            let redirect_url = 'trading',
-                                hash = '';
+                            let redirect_url,
+                                hash;
                             if (/deposit/.test(hash_value)) {
                                 redirect_url = 'cashier/forwardws';
                                 hash = '#deposit';
@@ -76,7 +82,12 @@ const SetCurrency = (() => {
                                 redirect_url = 'cashier/forwardws';
                                 hash = '#withdraw';
                             }
-                            window.location.href = urlFor(redirect_url) + hash; // load without pjax
+                            if (redirect_url) {
+                                window.location.href = Url.urlFor(redirect_url) + hash; // load without pjax
+                            } else {
+                                $('.select_currency').setVisibility(0);
+                                $('#has_currency').setVisibility(1);
+                            }
                         }
                     });
                 } else {
