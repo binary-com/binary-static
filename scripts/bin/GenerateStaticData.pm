@@ -479,6 +479,7 @@ sub _texts {
 
         # strings for header notification
         push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.');
+        push @texts, localize('Please set the [_1]currency[_2] of your account.');
         push @texts, localize('Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.');
         push @texts, localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.');
         push @texts, localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.');

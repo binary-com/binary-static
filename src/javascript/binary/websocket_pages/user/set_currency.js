@@ -1,11 +1,9 @@
-const getCurrencyValues = require('./sub_account').getCurrencyValues;
-const BinarySocket      = require('../socket');
-const BinaryPjax        = require('../../base/binary_pjax');
-const Client            = require('../../base/client');
-const localize          = require('../../base/localize').localize;
-const State             = require('../../base/storage').State;
-const Url               = require('../../base/url');
-const isCryptocurrency  = require('../../common_functions/currency').isCryptocurrency;
+const BinarySocket     = require('../socket');
+const BinaryPjax       = require('../../base/binary_pjax');
+const Client           = require('../../base/client');
+const localize         = require('../../base/localize').localize;
+const Url              = require('../../base/url');
+const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 
 const SetCurrency = (() => {
     'use strict';
@@ -26,13 +24,10 @@ const SetCurrency = (() => {
         }
 
         BinarySocket.wait('payout_currencies').then((response) => {
-            const authorize = State.getResponse('authorize');
             const payout_currencies = response.payout_currencies;
-            const currency_values = getCurrencyValues(authorize.sub_accounts);
-            const currencies = getCurrencies(authorize, payout_currencies, currency_values);
             const $fiat_currencies = $('<div/>');
             const $cryptocurrencies = $('<div/>');
-            currencies.forEach((c) => {
+            payout_currencies.forEach((c) => {
                 (isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies)
                     .append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
                         .append($('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
@@ -95,23 +90,6 @@ const SetCurrency = (() => {
                 }
             });
         });
-    };
-
-    const getCurrencies = (authorize, payout_currencies, currency_values) => {
-        let currencies_to_show = payout_currencies;
-        if (authorize.allow_omnibus) {
-            const sub_currencies  = currency_values.sub_currencies;
-
-            currencies_to_show = currencies_to_show.filter(c => sub_currencies.indexOf(c) < 0);
-
-            const has_fiat_sub = currency_values.has_fiat_sub;
-            if (has_fiat_sub) {
-                const fiat_currencies = currency_values.fiat_currencies;
-                currencies_to_show = currencies_to_show.filter(c => fiat_currencies.indexOf(c) < 0);
-            }
-        }
-
-        return currencies_to_show;
     };
 
     return {

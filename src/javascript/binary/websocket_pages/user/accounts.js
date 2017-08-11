@@ -1,11 +1,12 @@
-const SubAccount   = require('./sub_account');
-const BinarySocket = require('../socket');
-const BinaryPjax   = require('../../base/binary_pjax');
-const Client       = require('../../base/client');
-const localize     = require('../../base/localize').localize;
-const urlFor       = require('../../base/url').urlFor;
-const State        = require('../../base/storage').State;
-const toTitleCase  = require('../../common_functions/string_util').toTitleCase;
+const moment        = require('moment');
+const getCurrencies = require('./get_currency').getCurrencies;
+const BinarySocket  = require('../socket');
+const BinaryPjax    = require('../../base/binary_pjax');
+const Client        = require('../../base/client');
+const localize      = require('../../base/localize').localize;
+const urlFor        = require('../../base/url').urlFor;
+const State         = require('../../base/storage').State;
+const toTitleCase   = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
     'use strict';
@@ -29,10 +30,10 @@ const Accounts = (() => {
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            const authorize = State.getResponse('authorize');
-            // only clients with omnibus flag set are allowed to create sub accounts
-            if (authorize && authorize.allow_omnibus) {
-                handleSubAccount(authorize);
+            const currencies = getCurrencies(landing_company);
+            // only allow opening of multi account to costarica clients with remaining currency
+            if (Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
+                populateMultiAccount(currencies);
             } else {
                 doneLoading(element_to_show);
             }
@@ -100,15 +101,9 @@ const Accounts = (() => {
 
     const getMarketName = market => localize(markets[market] || '');
 
-    const handleSubAccount = (authorize) => {
-        const currencies = SubAccount.getCurrencies(authorize.sub_accounts, landing_company);
-        if (!currencies.length) {
-            doneLoading('#no_new_accounts_wrapper');
-            return;
-        }
-
+    const populateMultiAccount = (currencies) => {
         $('#new_accounts').find('tbody')
-            .append($('<tr/>', { id: 'create_sub_account' })
+            .append($('<tr/>', { id: 'new_account_opening' })
                 .append($('<td/>', { text: localize('Real Account') }))
                 .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
@@ -116,23 +111,24 @@ const Accounts = (() => {
 
         $('#note').setVisibility(1);
 
-        const $create_sub_account = $('#create_sub_account');
+        const $new_account_opening = $('#new_account_opening');
         if (currencies.length > 1) {
             const $currencies = $('<div/>');
             $currencies.append($('<option/>', { value: '', text: localize('Please select') }));
             currencies.forEach((c) => {
                 $currencies.append($('<option/>', { value: c, text: c }));
             });
-            $create_sub_account.find('.account-currency').html($('<select/>', { id: 'sub_account_currency' }).html($currencies.html()));
+            $new_account_opening.find('.account-currency').html($('<select/>', { id: 'new_account_currency' }).html($currencies.html()));
         } else {
-            $create_sub_account.find('.account-currency').html($('<span/>', { id: 'sub_account_currency', value: currencies, text: currencies }));
+            $new_account_opening.find('.account-currency').html($('<span/>', { id: 'new_account_currency', value: currencies, text: currencies }));
         }
 
-        $create_sub_account.find('button').on('click', () => {
+        $new_account_opening.find('button').on('click', () => {
             if (!getSelectedCurrency()) {
                 showError('Please choose a currency');
             } else {
-                BinarySocket.send({ new_sub_account: 1 }).then((response) => {
+                const req = populateReq();
+                BinarySocket.send(req).then((response) => {
                     if (response.error) {
                         const account_opening_reason = State.getResponse('get_settings.account_opening_reason');
                         if (response.error.code === 'InsufficientAccountDetails' && !account_opening_reason) {
@@ -152,12 +148,12 @@ const Accounts = (() => {
     };
 
     const getSelectedCurrency = () => {
-        const sub_account_currency = document.getElementById('sub_account_currency');
-        return sub_account_currency.value || sub_account_currency.getAttribute('value');
+        const new_account_currency = document.getElementById('new_account_currency');
+        return new_account_currency.value || new_account_currency.getAttribute('value');
     };
 
     const handleNewAccount = (response) => {
-        const new_account = response.new_sub_account;
+        const new_account = response.new_account_real;
         State.set('ignoreResponse', 'authorize');
         BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_authorize) => {
             if (response_authorize.error) {
@@ -184,7 +180,29 @@ const Accounts = (() => {
 
     const showError = (message) => {
         $('#new_account_error').remove();
-        $('#create_sub_account').find('button').parent().append($('<p/>', { class: 'error-msg', id: 'new_account_error', text: localize(message) }));
+        $('#new_account_opening').find('button').parent().append($('<p/>', { class: 'error-msg', id: 'new_account_error', text: localize(message) }));
+    };
+
+    const populateReq = () => {
+        const get_settings = State.getResponse('get_settings');
+        const date_of_birth = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
+        return {
+            new_account_real         : 1,
+            salutation               : get_settings.salutation,
+            first_name               : get_settings.first_name,
+            last_name                : get_settings.last_name,
+            date_of_birth            : date_of_birth,
+            address_line_1           : get_settings.address_line_1,
+            address_line_2           : get_settings.address_line_2,
+            address_city             : get_settings.address_city,
+            address_state            : get_settings.address_state,
+            address_postcode         : get_settings.address_postcode,
+            phone                    : get_settings.phone,
+            account_opening_reason   : get_settings.account_opening_reason,
+            residence                : get_settings.country,
+            tax_identification_number: get_settings.tax_identification_number,
+            tax_residence            : get_settings.tax_residence,
+        };
     };
 
     return {
