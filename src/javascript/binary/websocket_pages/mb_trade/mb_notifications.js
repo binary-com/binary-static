@@ -30,7 +30,7 @@ const MBNotifications = (() => {
     };
 
     const generateMessage = (options) => {
-        const $message = $(`<div class="notice-msg center-text${(options.dismissible ? ' dismissible' : '')}"
+        const $message = $(`<div class="notice-msg gr-12 center-text${(options.dismissible ? ' dismissible' : '')}"
             ${(options.uid ? ` id="${options.uid}"` : '')}>${localize(options.text)}
                 ${(options.dismissible ? '<div class="notification-dismiss">x</div>' : '')}
             </div>`);

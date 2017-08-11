@@ -113,7 +113,7 @@ const MBProcess = (() => {
         });
     };
 
-    const selectors = '.trade-form, .price-table, #trading_bottom_content, .selection_wrapper, #trade_live_chart';
+    const selectors = '.trade_form, .price-table, #trading_bottom_content, .selection_wrapper, #trade_live_chart';
     const handleMarketClosed = () => {
         $(selectors).setVisibility(0);
         hideShowMbTrading('hide');
@@ -227,11 +227,12 @@ const MBProcess = (() => {
         MBPrice.showPriceOverlay();
         const available_contracts = MBContract.getCurrentContracts();
         const durations = MBDefaults.get('period').split('_');
+        const jp_client = jpClient();
         const req = {
             proposal_array: 1,
             subscribe     : 1,
-            basis         : 'payout',
-            amount        : jpClient() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
+            basis         : jp_client ? 'payout' : MBDefaults.get('amount_type'),
+            amount        : jp_client ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
             currency      : MBContract.getCurrency(),
             symbol        : MBDefaults.get('underlying'),
             passthrough   : { req_id: MBPrice.getReqId() },

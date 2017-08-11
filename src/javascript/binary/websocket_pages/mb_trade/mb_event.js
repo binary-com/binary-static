@@ -1,14 +1,15 @@
-const MBContract      = require('./mb_contract');
-const MBDefaults      = require('./mb_defaults');
-const MBNotifications = require('./mb_notifications');
-const MBPrice         = require('./mb_price');
-const MBProcess       = require('./mb_process');
-const MBTick          = require('./mb_tick');
-const TradingAnalysis = require('../trade/analysis');
-const debounce        = require('../trade/common').debounce;
-const localize        = require('../../base/localize').localize;
-const jpClient        = require('../../common_functions/country_base').jpClient;
-const formatMoney     = require('../../common_functions/currency').formatMoney;
+const MBContract            = require('./mb_contract');
+const MBDefaults            = require('./mb_defaults');
+const MBNotifications       = require('./mb_notifications');
+const MBPrice               = require('./mb_price');
+const MBProcess             = require('./mb_process');
+const MBTick                = require('./mb_tick');
+const TradingAnalysis       = require('../trade/analysis');
+const debounce              = require('../trade/common').debounce;
+const localize              = require('../../base/localize').localize;
+const jpClient              = require('../../common_functions/country_base').jpClient;
+const Currency              = require('../../common_functions/currency');
+const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -99,13 +100,16 @@ const MBTradingEvents = (() => {
 
 
         const $payout = $form.find('#payout');
-        const $payout_list = $form.find('#payout_list');
-        const jp_client = jpClient();
         if ($payout.length) {
+            const $payout_list = $form.find('#payout_list');
+            const jp_client = jpClient();
+
             const appendActualPayout = (payout) => {
-                $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', html: formatMoney('JPY', payout * 1000) })));
+                $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', html: Currency.formatMoney('JPY', payout * 1000) })));
             };
-            let old_value = jp_client ? 1 : 10;
+
+            const is_crypto = Currency.isCryptocurrency(MBDefaults.get('currency'));
+            let old_value = jp_client ? 1 : (is_crypto ? 0.005 : 10);
             if (!$payout.attr('value')) {
                 let payout_def = MBDefaults.get('payout');
                 if (!validatePayout(payout_def)) {
@@ -118,44 +122,63 @@ const MBTradingEvents = (() => {
                     appendActualPayout(payout_def);
                 }
             }
-            $payout.find('.current').on('click', function () {
-                old_value = +this.childNodes[0].nodeValue;
-                const $list = $(`#${$(this).parent().attr('id')}_list`);
-                const $sublist = $list.find('.list');
-                if ($list.hasClass(hidden_class)) {
-                    makeListsInvisible();
-                }
-                $list.toggleClass(hidden_class);
-                $sublist.toggleClass(hidden_class);
-                $category.toggleClass(hidden_class);
-                $period.toggleClass(hidden_class);
-            });
-            $payout_list.on('click', '> .list > div', debounce(function() {
-                const payout = +MBDefaults.get('payout');
-                const value = $(this).attr('value');
-                let new_payout;
-                if (/(\+|\-)/.test(value)) {
-                    new_payout = payout + parseInt(value);
-                    if (new_payout < 1 && jp_client) {
-                        new_payout = 1;
+            if (jp_client) {
+                $payout.find('.current').on('click', function () {
+                    old_value = +this.childNodes[0].nodeValue;
+                    const $list = $(`#${$(this).parent().attr('id')}_list`);
+                    const $sublist = $list.find('.list');
+                    if ($list.hasClass(hidden_class)) {
+                        makeListsInvisible();
                     }
-                } else if (/(ok|cancel)/.test(value)) {
-                    if (value === 'cancel') new_payout = old_value || 10;
-                    makeListsInvisible();
-                } else {
-                    new_payout = value;
-                }
+                    $list.toggleClass(hidden_class);
+                    $sublist.toggleClass(hidden_class);
+                    $category.toggleClass(hidden_class);
+                    $period.toggleClass(hidden_class);
+                });
+            } else {
+                $payout
+                    .on('keypress', onlyNumericOnKeypress)
+                    .on('input', (e) => {
+                        old_value = e.target.getAttribute('value');
+                        const new_payout = e.target.value;
+                        if (!validatePayout(new_payout)) {
+                            e.target.value = old_value;
+                        } else {
+                            e.target.value = new_payout;
+                            e.target.setAttribute('value', new_payout);
+                            MBDefaults.set('payout', new_payout);
+                            MBProcess.processPriceRequest();
+                        }
+                    });
+            }
+            if ($payout_list.length) {
+                $payout_list.on('click', '> .list > div', debounce(function() {
+                    const payout = +MBDefaults.get('payout');
+                    const value = $(this).attr('value');
+                    let new_payout;
+                    if (/(\+|\-)/.test(value)) {
+                        new_payout = payout + parseInt(value);
+                        if (new_payout < 1 && jp_client) {
+                            new_payout = 1;
+                        }
+                    } else if (/(ok|cancel)/.test(value)) {
+                        if (value === 'cancel') new_payout = old_value || 10;
+                        makeListsInvisible();
+                    } else {
+                        new_payout = value;
+                    }
 
-                if (validatePayout(new_payout)) {
-                    $('.price-table').setVisibility(1);
-                    MBDefaults.set('payout', new_payout);
-                    $payout.attr('value', new_payout).find('.current').html(new_payout);
-                    if (jp_client) {
-                        appendActualPayout(new_payout);
+                    if (validatePayout(new_payout)) {
+                        $('.price-table').setVisibility(1);
+                        MBDefaults.set('payout', new_payout);
+                        $payout.attr('value', new_payout).find('.current').html(new_payout);
+                        if (jp_client) {
+                            appendActualPayout(new_payout);
+                        }
+                        MBProcess.processPriceRequest();
                     }
-                    MBProcess.processPriceRequest();
-                }
-            }));
+                }));
+            }
         }
 
         const $currency = $form.find('#currency');
@@ -168,8 +191,7 @@ const MBTradingEvents = (() => {
             });
         }
 
-        const trading_status = '.trading-status';
-        const $trading_status = $(trading_status);
+        const $trading_status = $('.trading-status');
         const $allow_trading = $trading_status.find('#allow');
         const $disallow_trading = $trading_status.find('#disallow');
         const setTradingStatus = (is_enabled) => {
@@ -192,6 +214,26 @@ const MBTradingEvents = (() => {
                 setTradingStatus(status === 'allow');
             });
         }
+
+        const $amount_type = $('.amount-type');
+        const $payout_amount = $amount_type.find('#payout_amount');
+        const $stake_amount = $amount_type.find('#stake_amount');
+        $amount_type.on('click', (e) => {
+            if (/selected/.test(e.target.className)) {
+                return;
+            }
+            const amount_type = e.target.getAttribute('id');
+            const is_stake = amount_type === 'stake_amount';
+            MBDefaults.set('amount_type', is_stake ? 'stake' : 'payout');
+            if (is_stake) {
+                $stake_amount.addClass('selected');
+                $payout_amount.removeClass('selected');
+            } else {
+                $payout_amount.addClass('selected');
+                $stake_amount.removeClass('selected');
+            }
+            MBProcess.processPriceRequest();
+        });
 
         const makeListsInvisible = () => {
             $form.find('.list, #payout_list').setVisibility(0).end()

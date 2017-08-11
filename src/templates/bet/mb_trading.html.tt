@@ -14,53 +14,95 @@
     <div class="gr-5 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m">
     <div id="mb_trading" class="gr-12">
 
-        <div id="notifications_wrapper"></div>
+        <div id="notifications_wrapper" class="gr-row"></div>
 
-        <div class="gr-row selection_wrapper">
-            <div id="trading_status" class="gr-4 gr-no-gutter-left">
-                <div class="gr-row">
-                    <div class="gr-6 gr-no-gutter">
-                        <a class="button-secondary trading-status" href="javascript:;">
-                            <span class="selected" id="allow"></span>
-                        </a>
+        <div class="ja-hide" id="panel">
+            <div class="gr-row selection_wrapper">
+                <div class="trade_form gr-6 gr-no-gutter-left">
+                    [% INCLUDE form_item id='underlying' class='gr-12' class_current='gr-row' class_list='gr-row' %]
+                </div>
+                <div class="trade_form gr-2 align-self-center gr-no-gutter" id="amount_type">
+                    <div class="gr-12 gr-no-gutter">
+                        <div id="amount_wrapper">
+                            <div>
+                                <a class="button-secondary amount-type" href="javascript:;">
+                                    <span class="selected" id="payout_amount">[% l('Payout') %]</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a class="button-secondary amount-type" href="javascript:;">
+                                    <span id="stake_amount">[% l('Stake') %]</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="gr-6 gr-no-gutter">
-                        <a class="button-secondary trading-status" href="javascript:;">
-                            <span id="disallow"></span>
-                        </a>
+                </div>
+                <div class="trade_form gr-4 gr-no-gutter-right">
+                    <div class="gr-row">
+                        [% INCLUDE form_item id='currency' class='gr-4 gr-no-gutter' class_current='gr-row' class_list='gr-4 gr-no-gutter' %]
+                        <input class="gr-8 center-text" type="text" id="payout" onclick="select()" />
                     </div>
                 </div>
             </div>
-            <div class="trade_form gr-8 gr-no-gutter-left">
-                [% INCLUDE form_item id='underlying' class='gr-12' class_current='gr-row' class_list='gr-row' %]
+            <div class="gr-row selection_wrapper">
+                <div class="gr-12 gr-no-gutter">
+                    <div class="trade_form">
+                        [% INCLUDE form_item id='period' class_list='gr-12' %]
+                    </div>
+                    <div class="trade_form">
+                        [% INCLUDE form_item id='category' class_list='gr-12' %]
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="gr-row selection_wrapper">
-            <div class="trade_form gr-4 gr-no-gutter-left">
-                <div id="currency_wrapper">
-                    [% INCLUDE form_item id='currency' %]
-                    [% INCLUDE form_item id='payout' exclude_list=1 class_list='gr-12' %]
+        <div class="invisible ja-show" id="ja-panel">
+            <div class="gr-row selection_wrapper">
+                <div id="trading_status" class="gr-4 gr-no-gutter-left">
+                    <div class="gr-row">
+                        <div class="gr-6 gr-no-gutter">
+                            <a class="button-secondary trading-status" href="javascript:;">
+                                <span class="selected" id="allow"></span>
+                            </a>
+                        </div>
+                        <div class="gr-6 gr-no-gutter">
+                            <a class="button-secondary trading-status" href="javascript:;">
+                                <span id="disallow"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trade_form gr-8 gr-no-gutter-left">
+                    [% INCLUDE form_item id='underlying' class='gr-12' class_current='gr-row' class_list='gr-row' %]
                 </div>
             </div>
-            <div class="gr-8 gr-no-gutter-left">
-                <div class="trade_form">
-                    [% INCLUDE form_item id='period' class_list='gr-12' %]
+
+            <div class="gr-row selection_wrapper">
+                <div class="trade_form gr-4 gr-no-gutter-left">
+                    <div id="currency_wrapper">
+                        [% INCLUDE form_item id='currency' %]
+                        [% INCLUDE form_item id='payout' exclude_list=1 class_list='gr-12' %]
+                    </div>
                 </div>
-                <div class="trade_form">
-                    [% INCLUDE form_item id='category' class_list='gr-12' %]
-                </div>
-                <div class="trade_form no-margin">
-                    [% WRAPPER form_item id='payout_list' class='invisible gr-12' exclude_current=1 class_list='gr-row' %]
-                        [% INCLUDE payout_item class='plus'  value='+1'  text='+1' %]
-                        [% INCLUDE payout_item class='plus'  value='+10' text='+10' %]
-                        [% INCLUDE payout_item value='50'    text='50' %]
-                        [% INCLUDE payout_item value='100'   text='100'  hint=l('(max)') hint_class='invisible ja-show' %]
-                        [% INCLUDE payout_item class='minus' value='-1'  text='-1' %]
-                        [% INCLUDE payout_item class='minus' value='-10' text='-10' %]
-                        [% INCLUDE payout_item class='green' value='ok'  text=l('OK') %]
-                        [% INCLUDE payout_item value='cancel' text=l('Cancel') %]
-                    [% END %]
+                <div class="gr-8 gr-no-gutter-left">
+                    <div class="trade_form">
+                        [% INCLUDE form_item id='period' class_list='gr-12' %]
+                    </div>
+                    <div class="trade_form">
+                        [% INCLUDE form_item id='category' class_list='gr-12' %]
+                    </div>
+                    <div class="trade_form no-margin">
+                        [% WRAPPER form_item id='payout_list' class='invisible gr-12' exclude_current=1 class_list='gr-row' %]
+                            [% INCLUDE payout_item class='plus'  value='+1'  text='+1' %]
+                            [% INCLUDE payout_item class='plus'  value='+10' text='+10' %]
+                            [% INCLUDE payout_item value='50'    text='50' %]
+                            [% INCLUDE payout_item value='100'   text='100'  hint=l('(max)') hint_class='invisible ja-show' %]
+                            [% INCLUDE payout_item class='minus' value='-1'  text='-1' %]
+                            [% INCLUDE payout_item class='minus' value='-10' text='-10' %]
+                            [% INCLUDE payout_item class='green' value='ok'  text=l('OK') %]
+                            [% INCLUDE payout_item value='cancel' text=l('Cancel') %]
+                        [% END %]
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@
 
     #chart_wrapper {
         display: flex;
+        padding-right: 5px;
 
         #trade_live_chart {
             display: flex;
@@ -27,72 +28,79 @@
     #mb_trading {
         font-size: $FONT_SIZE_S;
 
-        .gr-row .gr-no-gutter-left {
-            padding-right: 0;
+        #panel {
+            .selection_wrapper:first-child > .trade_form > div {
+                margin-top: -7px;
+                border-radius: $BORDER_RADIUS;
+            }
+            #payout:focus {
+                outline: none;
+            }
+            .gr-row {
+                .gr-no-gutter-left {
+                    padding-right: 5px;
+                }
+                .gr-no-gutter-right {
+                    padding-left: 5px;
+                }
+            }
+            #amount_type {
+                > div {
+                    margin-top: -3px;
+                }
+                div > div {
+                    &#amount_wrapper {
+                        height: 49px;
+                    }
+                    &:first-child {
+                        padding-right: 0;
+                    }
+                    &:nth-child(2) {
+                        padding-left: 0;
+                    }
+                    .button-secondary span {
+                        height: auto;
+                        padding: 0;
+                        line-height: calc(49px / 2);
 
-            &:first-child {
-                padding-right: 5px;
+                        &#payout_amount, &#stake_amount {
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+            #currency {
+                line-height: 40px;
+            }
+            .trade_form {
+                border-radius: $BORDER_RADIUS;
+
+                > div .list {
+                    background-color: $COLOR_WHITE;
+                    border: 1px solid $COLOR_LIGHT_GRAY;
+                    border-top: none;
+
+                    > div {
+                        background-color: $COLOR_WHITE;
+
+                        &:hover {
+                            background-color: $COLOR_GRAY !important;
+                        }
+                    }
+                    &:hover {
+                        background-color: $COLOR_WHITE;
+                    }
+                }
+            }
+            .trade_form#amount_type > div {
+                background-color: inherit;
+
+                > div {
+                    background-color: inherit;
+                }
             }
         }
-        .trade_form {
-            margin-top: 5px;
-
-            &.no-margin {
-                margin-top: 0;
-            }
-            > div:first-child {
-                text-align: center;
-                background: $COLOR_LIGHT_GRAY;
-                position: relative;
-
-                .current {
-                    height: 39px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    > div {
-                        width: 100%;
-                    }
-                }
-                > div {
-                    background: $COLOR_LIGHT_GRAY;
-                }
-                .current, .list > div {
-                    padding: 5px !important;
-                    cursor: pointer;
-                    height: 39px;
-
-                    &:hover {
-                        background-color: $COLOR_GRAY;
-                    }
-                }
-                #currency .list > div {
-                    height: 15px;
-
-                    &:hover {
-                        height: 15px;
-                    }
-                }
-                .list {
-                    position: absolute;
-                    z-index: 2;
-                    width: 100%;
-                    background-color: $COLOR_LIGHT_GRAY;
-
-                    > div {
-                        background: $COLOR_LIGHT_GRAY;
-                    }
-                }
-            }
-            > div#underlying:first-child .list > div {
-                line-height: 28px;
-                height: 75px;
-
-                > img {
-                    height: 40px;
-                }
-            }
+        #ja-panel {
             #currency_wrapper, #payout {
                 height: 103px;
             }
@@ -101,57 +109,6 @@
                 font-size: $FONT_SIZE_XXS;
                 width: 100%;
                 background-color: transparent;
-            }
-            #underlying {
-                margin-top: -7px;
-
-                div.current > div {
-                    display: flex;
-                }
-                img {
-                    height: 100%;
-                    max-height: 30px;
-                }
-            }
-            #category .gr-row {
-                display: -webkit-box;
-            }
-            .contract-type {
-                padding-left: 45px;
-                background-repeat: no-repeat;
-                background-position: left;
-                line-height: 18px;
-                height: 36px;
-                display: flex;
-                width: 50%;
-
-                span {
-                    margin-top: auto;
-                    margin-bottom: auto;
-                }
-            }
-            #period {
-                .start, .end {
-                    line-height: 20px;
-                    font-weight: bold;
-                }
-                .duration {
-                    font-size: $FONT_SIZE_N;
-                }
-                .current > div, .list > div {
-                    align-items: center;
-                }
-            }
-            #currency {
-                position: absolute;
-                width: 100%;
-                height: initial;
-
-                .current {
-                    height: 15px;
-                    line-height: 15px;
-                    padding-top: 35px;
-                }
             }
             #payout .current {
                 font-size: $FONT_SIZE_XXL;
@@ -193,6 +150,124 @@
                             font-size: 75%;
                         }
                     }
+                }
+            }
+            #currency {
+                position: absolute;
+                width: 100%;
+                height: initial;
+
+                .current {
+                    height: 15px;
+                    line-height: 15px;
+                    padding-top: 35px;
+                }
+            }
+            #currency .list > div {
+                height: 15px;
+
+                &:hover {
+                    height: 15px;
+                }
+            }
+            .gr-row .gr-no-gutter-left {
+                padding-right: 0;
+
+                &:first-child {
+                    padding-right: 5px;
+                }
+            }
+        }
+        .trade_form {
+            margin-top: 5px;
+
+            &.no-margin {
+                margin-top: 0;
+            }
+            > div {
+                text-align: center;
+                background: $COLOR_LIGHT_GRAY;
+                position: relative;
+
+                .current {
+                    height: 39px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    > div {
+                        width: 100%;
+                    }
+                }
+                > div {
+                    background: $COLOR_LIGHT_GRAY;
+                }
+                .current, .list > div {
+                    padding: 5px !important;
+                    cursor: pointer;
+                    height: 39px;
+
+                    &:hover {
+                        background-color: $COLOR_GRAY;
+                    }
+                }
+                .list {
+                    position: absolute;
+                    z-index: 2;
+                    width: 100%;
+                    background-color: $COLOR_LIGHT_GRAY;
+
+                    > div {
+                        background: $COLOR_LIGHT_GRAY;
+                    }
+                }
+            }
+            > div#underlying:first-child .list > div {
+                line-height: 28px;
+                height: 75px;
+
+                > img {
+                    height: 40px;
+                }
+            }
+            #underlying {
+                margin-top: -7px;
+
+                div.current > div {
+                    display: flex;
+                }
+                img {
+                    height: 100%;
+                    max-height: 30px;
+                }
+            }
+            #category .gr-row {
+                display: -webkit-box;
+            }
+            .contract-type {
+                padding-left: 45px;
+                background-repeat: no-repeat;
+                background-position: left;
+                line-height: 18px;
+                height: 36px;
+                display: flex;
+                width: 50%;
+
+                span {
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+            }
+            #period {
+                .start, .end {
+                    line-height: 20px;
+                    font-weight: bold;
+                }
+                .duration {
+                    font-size: $FONT_SIZE_N;
+                }
+                .current > div, .list > div {
+                    align-items: center;
                 }
             }
         }
@@ -317,7 +392,7 @@
                 }
             }
         }
-        #trading_status {
+        #trading_status, #amount_type {
             margin: 0;
             display: flex;
 
@@ -328,12 +403,13 @@
                 &:nth-child(2) {
                     padding-left: 2px;
                 }
-                .button-secondary.trading-status span {
+                .button-secondary span {
                     padding: 8px 0;
                     width: 100%;
                     background-repeat: no-repeat;
                     background-position: center;
                     height: 31px;
+                    line-height: 31px;
 
                     &#allow {
                         background-image: svg-icon('unlock', $COLOR_BLACK);
@@ -350,6 +426,7 @@
                         }
                     }
                     &.selected {
+                        color: $COLOR_WHITE;
                         background-color: $COLOR_BLUE;
                     }
                 }
@@ -376,7 +453,7 @@
             }
         }
         @media screen and (max-width: 480px) {
-            .trade-form .gr-row > div:first-child {
+            .trade_form .gr-row > div:first-child {
                 padding-bottom: 10px;
             }
             .price-table {
