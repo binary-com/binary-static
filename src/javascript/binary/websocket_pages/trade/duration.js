@@ -424,12 +424,11 @@ const Durations = (() => {
             if (isNow()) {
                 hideExpiryTime(expiry_time);
                 processTradingTimesRequest(end_date_iso);
-            } else {
-                showExpiryTime(expiry_time);
-            }
-        } else {
-            showExpiryTime(expiry_time);
-        }
+                return 0;
+            } // else
+            return showExpiryTime(expiry_time);
+        } // else
+        return showExpiryTime(expiry_time);
     };
 
     const hideExpiryTime = (expiry_time) => {
@@ -459,16 +458,19 @@ const Durations = (() => {
             const time = time_start_val.split(':');
             new_time = moment(window.time).hour(time[0]).minute(time[1]);
         }
+        let time_changed;
         if (new_time) {
             new_time = new_time.add(5, 'minutes').utc().format('HH:mm');
             expiry_time.value = new_time;
             expiry_time.setAttribute('data-value', new_time);
-            setTime(expiry_time.value, 1);
+            time_changed = setTime(expiry_time.value, 1);
+        } else {
+            time_changed = setTime(Defaults.get('expiry_time') || expiry_time.value);
         }
-        setTime(Defaults.get('expiry_time') || expiry_time.value);
         Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
         expiry_time.show();
         Barriers.display();
+        return time_changed;
     };
 
     let old_date;
@@ -550,8 +552,10 @@ const Durations = (() => {
             Defaults.set('expiry_time', time);
             if (commonTrading.timeIsValid($expiry_time)) {
                 Price.processPriceRequest();
+                return true;
             }
         }
+        return false;
     };
 
     return {

@@ -87,22 +87,22 @@ const Process = (() => {
 
         BinarySocket.clearTimeouts();
 
-        getContracts(underlying, 1);
+        getContracts(underlying);
 
         commonTrading.displayTooltip(Defaults.get('market'), underlying);
     };
 
-    const getContracts = (underlying, send_proposal) => {
+    const getContracts = (underlying) => {
         BinarySocket.send({ contracts_for: underlying }).then((response) => {
             Notifications.hide('CONNECTION_ERROR');
-            processContract(response, send_proposal);
+            processContract(response);
         });
     };
 
     /*
      * Function to display contract form for current underlying
      */
-    const processContract = (contracts, send_proposal) => {
+    const processContract = (contracts) => {
         if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
             Price.processForgetProposals();
             const container          = document.getElementById('contract_confirmation_container');
@@ -151,14 +151,14 @@ const Process = (() => {
 
         commonTrading.displayContractForms('contract_form_name_nav', contract_categories, formname);
 
-        processContractForm(send_proposal);
+        processContractForm();
 
         TradingAnalysis.request();
 
         commonTrading.hideFormOverlay();
     };
 
-    const processContractForm = (send_proposal) => {
+    const processContractForm = () => {
         Contract.details(sessionStorage.getItem('formname'));
 
         StartDates.display();
@@ -192,7 +192,7 @@ const Process = (() => {
         const expiry_type = Defaults.get('expiry_type') || 'duration';
         const make_price_request = onExpiryTypeChange(expiry_type);
 
-        if (send_proposal || make_price_request >= 0) {
+        if (make_price_request >= 0) {
             Price.processPriceRequest();
         }
     };
@@ -238,8 +238,8 @@ const Process = (() => {
         if (value === 'endtime') {
             Durations.displayEndTime();
             if (Defaults.get('expiry_date')) {
-                Durations.selectEndDate(moment(Defaults.get('expiry_date')));
-                make_price_request = -1;
+                // if time changed, proposal will be sent there if not we should send it here
+                make_price_request = Durations.selectEndDate(moment(Defaults.get('expiry_date'))) ? -1 : 1;
             }
             Defaults.remove('duration_units', 'duration_amount');
         } else {
