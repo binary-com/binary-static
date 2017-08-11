@@ -238,8 +238,8 @@ const Process = (() => {
         if (value === 'endtime') {
             Durations.displayEndTime();
             if (Defaults.get('expiry_date')) {
-                Durations.selectEndDate(moment(Defaults.get('expiry_date')));
-                make_price_request = -1;
+                // if time changed, proposal will be sent there if not we should send it here
+                make_price_request = Durations.selectEndDate(moment(Defaults.get('expiry_date'))) ? -1 : 1;
             }
             Defaults.remove('duration_units', 'duration_amount');
         } else {
