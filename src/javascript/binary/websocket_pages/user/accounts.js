@@ -186,23 +186,28 @@ const Accounts = (() => {
     const populateReq = () => {
         const get_settings = State.getResponse('get_settings');
         const date_of_birth = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
-        return {
-            new_account_real         : 1,
-            salutation               : get_settings.salutation,
-            first_name               : get_settings.first_name,
-            last_name                : get_settings.last_name,
-            date_of_birth            : date_of_birth,
-            address_line_1           : get_settings.address_line_1,
-            address_line_2           : get_settings.address_line_2,
-            address_city             : get_settings.address_city,
-            address_state            : get_settings.address_state,
-            address_postcode         : get_settings.address_postcode,
-            phone                    : get_settings.phone,
-            account_opening_reason   : get_settings.account_opening_reason,
-            residence                : get_settings.country,
-            tax_identification_number: get_settings.tax_identification_number,
-            tax_residence            : get_settings.tax_residence,
+        const req = {
+            new_account_real      : 1,
+            salutation            : get_settings.salutation,
+            first_name            : get_settings.first_name,
+            last_name             : get_settings.last_name,
+            date_of_birth         : date_of_birth,
+            address_line_1        : get_settings.address_line_1,
+            address_line_2        : get_settings.address_line_2,
+            address_city          : get_settings.address_city,
+            address_state         : get_settings.address_state,
+            address_postcode      : get_settings.address_postcode,
+            phone                 : get_settings.phone,
+            account_opening_reason: get_settings.account_opening_reason,
+            residence             : Client.get('residence'),
         };
+        if (get_settings.tax_identification_number) {
+            req.tax_identification_number = get_settings.tax_identification_number;
+        }
+        if (get_settings.tax_residence) {
+            req.tax_residence = get_settings.tax_residence;
+        }
+        return req;
     };
 
     return {

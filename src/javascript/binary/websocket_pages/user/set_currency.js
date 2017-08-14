@@ -1,6 +1,7 @@
 const BinarySocket     = require('../socket');
 const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
+const Header           = require('../../base/header');
 const localize         = require('../../base/localize').localize;
 const Url              = require('../../base/url');
 const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
@@ -67,6 +68,7 @@ const SetCurrency = (() => {
                             Client.set('currency', response_c.echo_req.set_account_currency);
                             BinarySocket.send({ balance: 1 });
                             BinarySocket.send({ payout_currencies: 1 }, { forced: true });
+                            Header.displayAccountStatus();
 
                             let redirect_url,
                                 hash;

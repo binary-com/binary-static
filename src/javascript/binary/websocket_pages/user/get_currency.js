@@ -10,7 +10,10 @@ const GetCurrency = (() => {
         all_loginids.forEach((loginid) => {
             // if it's not current client or virtual client, consider the currency
             if (Client.get('loginid') !== loginid && Client.getAccountType(loginid) !== 'virtual') {
-                other_currencies.push(Client.get('currency', loginid));
+                const currency = Client.get('currency', loginid);
+                if (currency) {
+                    other_currencies.push(currency);
+                }
             }
         });
         return other_currencies;
@@ -32,7 +35,7 @@ const GetCurrency = (() => {
         return {
             cryptocurrencies: cryptocurrencies,
             other_currencies: other_currencies,
-            has_fiat        : other_currencies.some(currency => fiat_currencies.indexOf(currency) > 0),
+            has_fiat        : other_currencies.some(currency => fiat_currencies.indexOf(currency) > -1),
         };
     };
 
