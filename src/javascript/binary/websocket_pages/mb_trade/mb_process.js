@@ -148,11 +148,11 @@ const MBProcess = (() => {
         commonTrading.showFormOverlay();
 
         // forget the old tick id i.e. close the old tick stream
-        processForgetTicks();
-        // get ticks for current underlying
-        MBTick.request(underlying);
-
-        MBTick.clean();
+        processForgetTicks().then(() => {
+            // get ticks for current underlying
+            MBTick.request(underlying);
+            MBTick.clean();
+        });
 
         BinarySocket.clearTimeouts();
 
@@ -224,7 +224,6 @@ const MBProcess = (() => {
 
     const processPriceRequest = () => {
         MBPrice.increaseReqId();
-        processForgetProposals();
         MBPrice.showPriceOverlay();
         const available_contracts = MBContract.getCurrentContracts();
         const durations = MBDefaults.get('period').split('_');
@@ -263,11 +262,13 @@ const MBProcess = (() => {
             }
         });
 
-        // send request
-        if (req.barriers.length) {
-            MBPrice.addPriceObj(req);
-            BinarySocket.send(req, { callback: processProposal });
-        }
+        processForgetProposals().then(() => {
+            // send request
+            if (req.barriers.length) {
+                MBPrice.addPriceObj(req);
+                BinarySocket.send(req, { callback: processProposal });
+            }
+        });
 
         // all barriers expired
         if (all_expired) {
@@ -329,17 +330,16 @@ const MBProcess = (() => {
 
     const processForgetProposals = () => {
         MBPrice.showPriceOverlay();
-        BinarySocket.send({
+        const forget_proposal = BinarySocket.send({
             forget_all: 'proposal_array',
         });
-        MBPrice.cleanup();
+        forget_proposal.then(() => {
+            MBPrice.cleanup();
+        });
+        return forget_proposal;
     };
 
-    const processForgetTicks = () => {
-        BinarySocket.send({
-            forget_all: 'ticks',
-        });
-    };
+    const processForgetTicks = () => BinarySocket.send({ forget_all: 'ticks' });
 
     const forgetTradingStreams = () => {
         processForgetProposals();
