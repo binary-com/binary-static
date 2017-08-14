@@ -23,6 +23,7 @@ const MBTradePage = (() => {
             disableTrading();
             $('#panel').remove();
         } else {
+            MBDefaults.set('disable_trading', 0);
             $('#ja-panel').remove();
         }
 

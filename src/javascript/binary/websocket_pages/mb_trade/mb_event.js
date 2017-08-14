@@ -6,6 +6,7 @@ const MBProcess             = require('./mb_process');
 const MBTick                = require('./mb_tick');
 const TradingAnalysis       = require('../trade/analysis');
 const debounce              = require('../trade/common').debounce;
+const Client                = require('../../base/client');
 const localize              = require('../../base/localize').localize;
 const jpClient              = require('../../common_functions/country_base').jpClient;
 const Currency              = require('../../common_functions/currency');
@@ -89,9 +90,10 @@ const MBTradingEvents = (() => {
         const validatePayout = (payout_amount) => {
             let is_ok = true;
             const contract = MBContract.getCurrentContracts();
-            const min_amount = 0;
-            const max_amount = jpClient() ? 100 : (Array.isArray(contract) && contract.length && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
-            if (!payout_amount || isNaN(payout_amount) || payout_amount <= min_amount || payout_amount > max_amount) {
+            const jp_client = jpClient();
+            const min_amount = jp_client ? 1 : 0;
+            const max_amount = jp_client ? 100 : (Array.isArray(contract) && contract.length && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
+            if (payout_amount === '' || isNaN(payout_amount) || payout_amount < min_amount || payout_amount > max_amount) {
                 is_ok = false;
             }
 
@@ -108,17 +110,19 @@ const MBTradingEvents = (() => {
                 $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', html: Currency.formatMoney('JPY', payout * 1000) })));
             };
 
-            const is_crypto = Currency.isCryptocurrency(MBDefaults.get('currency'));
+            const is_crypto = Currency.isCryptocurrency(Client.get('currency') || MBDefaults.get('currency'));
             let old_value = jp_client ? 1 : (is_crypto ? 0.005 : 10);
             if (!$payout.attr('value')) {
-                let payout_def = MBDefaults.get('payout');
+                const amount = `payout${is_crypto ? '_crypto' : ''}`;
+                let payout_def = MBDefaults.get(amount);
                 if (!validatePayout(payout_def)) {
                     payout_def = old_value;
                 }
                 $payout.value = payout_def;
-                MBDefaults.set('payout', payout_def);
-                $payout.attr('value', payout_def).find('.current').html(payout_def);
+                MBDefaults.set(amount, payout_def);
+                $payout.attr('value', payout_def);
                 if (jp_client) {
+                    $payout.find('.current').html(payout_def);
                     appendActualPayout(payout_def);
                 }
             }
@@ -136,24 +140,35 @@ const MBTradingEvents = (() => {
                     $period.toggleClass(hidden_class);
                 });
             } else {
+                // Verify number of decimal places doesn't exceed the allowed decimal places according to the currency
+                const isStandardFloat = value => (
+                    !isNaN(value) &&
+                    value % 1 !== 0 &&
+                    ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > Currency.getDecimalPlaces(MBDefaults.get('currency'))
+                );
+
                 $payout
                     .on('keypress', onlyNumericOnKeypress)
-                    .on('input', (e) => {
+                    .on('input', debounce((e) => {
                         old_value = e.target.getAttribute('value');
-                        const new_payout = e.target.value;
+                        let new_payout = e.target.value;
+                        const currency = MBDefaults.get('currency');
+                        if (isStandardFloat(new_payout)) {
+                            new_payout = parseFloat(new_payout).toFixed(Currency.getDecimalPlaces(currency));
+                            e.target.value = new_payout;
+                        }
                         if (!validatePayout(new_payout)) {
                             e.target.value = old_value;
-                        } else {
-                            e.target.value = new_payout;
+                        } else if (+new_payout !== +old_value) {
                             e.target.setAttribute('value', new_payout);
-                            MBDefaults.set('payout', new_payout);
+                            MBDefaults.set(`payout${Currency.isCryptocurrency(currency) ? '_crypto' : ''}`, new_payout);
                             MBProcess.processPriceRequest();
                         }
-                    });
+                    }));
             }
             if ($payout_list.length) {
                 $payout_list.on('click', '> .list > div', debounce(function() {
-                    const payout = +MBDefaults.get('payout');
+                    const payout = +MBDefaults.get(`payout${Currency.isCryptocurrency(MBDefaults.get('currency')) ? '_crypto' : ''}`);
                     const value = $(this).attr('value');
                     let new_payout;
                     if (/(\+|\-)/.test(value)) {
@@ -187,6 +202,14 @@ const MBTradingEvents = (() => {
                 const currency = $(this).attr('value');
                 MBContract.setCurrentItem($currency, currency);
                 MBDefaults.set('currency', currency);
+                if (!jpClient()) {
+                    const is_crypto = Currency.isCryptocurrency(currency);
+                    const amount = `payout${is_crypto ? '_crypto' : ''}`;
+                    if (!MBDefaults.get(amount)) {
+                        MBDefaults.set(`payout${is_crypto ? '_crypto' : ''}`, is_crypto ? 0.005 : 10);
+                    }
+                    $payout.val(MBDefaults.get(amount)).attr('value', MBDefaults.get(amount));
+                }
                 MBProcess.processPriceRequest();
             });
         }
@@ -218,6 +241,7 @@ const MBTradingEvents = (() => {
         const $amount_type = $('.amount-type');
         const $payout_amount = $amount_type.find('#payout_amount');
         const $stake_amount = $amount_type.find('#stake_amount');
+        MBDefaults.set('amount_type', 'payout');
         $amount_type.on('click', (e) => {
             if (/selected/.test(e.target.className)) {
                 return;

@@ -40,7 +40,7 @@
                 <div class="trade_form gr-4 gr-no-gutter-right">
                     <div class="gr-row">
                         [% INCLUDE form_item id='currency' class='gr-4 gr-no-gutter' class_current='gr-row' class_list='gr-4 gr-no-gutter' %]
-                        <input class="gr-8 center-text" type="text" id="payout" onclick="select()" />
+                        <input class="gr-8 center-text" type="text" id="payout" onclick="select()" maxlength="15" />
                     </div>
                 </div>
             </div>
