@@ -21,22 +21,6 @@
                 <div class="trade_form gr-6 gr-no-gutter-left">
                     [% INCLUDE form_item id='underlying' class='gr-12' class_current='gr-row' class_list='gr-row' %]
                 </div>
-                <div class="trade_form gr-2 align-self-center gr-no-gutter" id="amount_type">
-                    <div class="gr-12 gr-no-gutter">
-                        <div id="amount_wrapper">
-                            <div>
-                                <a class="button-secondary amount-type" href="javascript:;">
-                                    <span class="selected" id="payout_amount">[% l('Payout') %]</span>
-                                </a>
-                            </div>
-                            <div>
-                                <a class="button-secondary amount-type" href="javascript:;">
-                                    <span id="stake_amount">[% l('Stake') %]</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="trade_form gr-4 gr-no-gutter-right">
                     <div class="gr-row">
                         [% INCLUDE form_item id='currency' class='gr-4 gr-no-gutter' class_current='gr-row' class_list='gr-4 gr-no-gutter' %]

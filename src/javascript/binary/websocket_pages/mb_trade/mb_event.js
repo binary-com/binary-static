@@ -238,27 +238,6 @@ const MBTradingEvents = (() => {
             });
         }
 
-        const $amount_type = $('.amount-type');
-        const $payout_amount = $amount_type.find('#payout_amount');
-        const $stake_amount = $amount_type.find('#stake_amount');
-        MBDefaults.set('amount_type', 'payout');
-        $amount_type.on('click', (e) => {
-            if (/selected/.test(e.target.className)) {
-                return;
-            }
-            const amount_type = e.target.getAttribute('id');
-            const is_stake = amount_type === 'stake_amount';
-            MBDefaults.set('amount_type', is_stake ? 'stake' : 'payout');
-            if (is_stake) {
-                $stake_amount.addClass('selected');
-                $payout_amount.removeClass('selected');
-            } else {
-                $payout_amount.addClass('selected');
-                $stake_amount.removeClass('selected');
-            }
-            MBProcess.processPriceRequest();
-        });
-
         const makeListsInvisible = () => {
             $form.find('.list, #payout_list').setVisibility(0).end()
                 .find('#period, #category')

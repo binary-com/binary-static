@@ -232,7 +232,7 @@ const MBPrice = (() => {
             parameters: {
                 amount               : proposal.echo_req.amount,
                 barrier              : proposal.barrier,
-                basis                : (jpClient() ? 'payout' : (MBDefaults.get('amount_type') || 'payout')),
+                basis                : 'payout',
                 contract_type        : contract_type,
                 currency             : MBContract.getCurrency(),
                 symbol               : proposal.echo_req.symbol,

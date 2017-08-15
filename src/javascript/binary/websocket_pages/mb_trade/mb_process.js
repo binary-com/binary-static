@@ -234,7 +234,7 @@ const MBProcess = (() => {
         const req = {
             proposal_array: 1,
             subscribe     : 1,
-            basis         : (jp_client ? 'payout' : (MBDefaults.get('amount_type') || 'payout')),
+            basis         : 'payout',
             amount        : jp_client ? (parseInt(payout) || 1) * 1000 : payout,
             currency      : MBContract.getCurrency(),
             symbol        : MBDefaults.get('underlying'),
