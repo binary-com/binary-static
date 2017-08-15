@@ -35,11 +35,12 @@ sub all_pages {
         ['open-positions/job-details', 'about/job_details',            'full_width', 'Job Details'],
         ['service-announcements',      'japan/service-announcements',  'default',    'Service Announcements', 'NOT-ja,en'],
 
-        ['liquidity-solutions',        'partners/liquidity_solutions',  'full_width', 'Multi-asset Liquidity Solutions'],
-        ['open-source-projects',       'partners/open_source_projects', 'full_width', 'Open-Source Projects'],
-        ['partners',                   'partners/partners',             'full_width', 'Partners',              'ja'],
-        ['payment-agent',              'partners/payment_agent',        'full_width', 'Payment Agents'],
-        ['security-testing',           'partners/security_testing',     'full_width', 'Security Testing'],
+        ['liquidity-solutions',        'partners/liquidity_solutions',       'full_width', 'Multi-asset Liquidity Solutions', 'ja'],
+        ['open-source-projects',       'partners/open_source_projects',      'full_width', 'Open-Source Projects',            'ja'],
+        ['partners',                   'partners/partners',                  'full_width', 'Partners',                        'ja'],
+        ['payment-agent',              'partners/payment_agent',             'full_width', 'Payment Agents',                  'ja'],
+        ['security-testing',           'partners/security_testing',          'full_width', 'Security Testing',                'ja'],
+        ['multiple-accounts-manager',  'partners/multiple_accounts_manager', 'full_width', 'Multiple Accounts Manager',       'ja'],
 
         ['get-started',                              'get_started/index',                         'get_started', 'Get Started',                      'ja'],
         ['get-started/beginners-faq',                'get_started/beginners_faq',                 'get_started', 'FAQ',                              'ja'],
