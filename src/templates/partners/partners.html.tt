@@ -1,5 +1,5 @@
 [% BLOCK column %]
-<div class="gr-4 gr-12-m">
+<div class="gr-4 gr-12-m gr-no-gutter">
     <div class="gr-6 gr-padding-10">
         <a href="[% url %]"[% IF target %] target="[% target %]"[% END %]>
             <img class="responsive" src="[% request.url_for('images/pages/partners/' _ image _ '.svg') %]"/>
@@ -40,5 +40,8 @@
     <div class="gr-row gr-clear">
         [% INCLUDE column url=request.url_for('liquidity-solutions') image='liquidity-solutions' header=l("Liquidity solutions")
             text=l("Access multi-asset liquidity from top-tier institutions.") %]
+
+        [% INCLUDE column url=request.url_for('multiple-accounts-manager') image='mam' header=l("Multiple Accounts Manager (MAM)")
+            text=l("Trade and manage multiple MT5 client accounts from a single interface.") %]
     </div>
 </div>
