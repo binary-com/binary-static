@@ -69,29 +69,27 @@
 
     [% INCLUDE global/separator_line.html.tt class='gr-parent gr-padding-30' invisible=1 %]
 
-    [% counter = 1 %]
     [% BLOCK step %]
         <div class="step">
             <div class="border-bottom"></div>
-            <div class="circle">[% counter %]</div>
-            <div style="padding: 20px 10px;">
+            <div class="circle">[% circle_no %]</div>
+            <div class="gr-padding-20 gr-gutter">
                 <div class="center-text">
                     <img class="gr-4 gr-8-m gr-centered" src="[% request.url_for('images/pages/mam/' _ image _ '.svg') %]"/>
                 </div>
                 <p>[% text %]</p>
             </div>
         </div>
-        [% counter = counter + 1 %]
     [% END %]
 
     <div class="steps">
-        [% INCLUDE step image='download'
+        [% INCLUDE step image='download' circle_no=1
             text='Download the interface and log in with your master account credentials.' %]
 
-        [% INCLUDE step image='mt5'
+        [% INCLUDE step image='mt5' circle_no=2
             text='Start trading using our MetaTrader 5 platform.' %]
 
-        [% INCLUDE step image='monitor'
+        [% INCLUDE step image='monitor' circle_no=3
             text='Manage and monitor your client list, trading activity, and volume allocation.' %]
     </div>
 
