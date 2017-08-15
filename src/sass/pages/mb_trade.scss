@@ -29,12 +29,15 @@
         font-size: $FONT_SIZE_S;
 
         #panel {
-            .selection_wrapper:first-child > .trade_form > div {
-                margin-top: -7px;
-                border-radius: $BORDER_RADIUS;
+            .selection_wrapper.less-margin-top .trade_form > div {
+                margin-top: -5px;
             }
-            #payout:focus {
-                outline: none;
+            #payout {
+                height: auto;
+
+                &:focus {
+                    outline: none;
+                }
             }
             .gr-row {
                 .gr-no-gutter-left {
@@ -49,29 +52,24 @@
             }
             #payout_amount {
                 line-height: 49px;
-                border-radius: 0;
             }
-            .trade_form {
-                border-radius: $BORDER_RADIUS;
+            .trade_form > div .list {
+                background-color: $COLOR_WHITE;
+                border: 1px solid $COLOR_LIGHT_GRAY;
+                border-top: none;
 
-                > div .list {
+                &.invisible {
+                    border: none;
+                }
+                > div {
                     background-color: $COLOR_WHITE;
-                    border: 1px solid $COLOR_LIGHT_GRAY;
-                    border-top: none;
 
-                    &.invisible {
-                        border: none;
-                    }
-                    > div {
-                        background-color: $COLOR_WHITE;
-
-                        &:hover {
-                            background-color: $COLOR_GRAY !important;
-                        }
-                    }
                     &:hover {
-                        background-color: $COLOR_WHITE;
+                        background-color: $COLOR_GRAY !important;
                     }
+                }
+                &:hover {
+                    background-color: $COLOR_WHITE;
                 }
             }
         }
@@ -428,9 +426,6 @@
             }
         }
         @media screen and (max-width: 480px) {
-            .trade_form .gr-row > div:first-child {
-                padding-bottom: 10px;
-            }
             .price-table {
                 #disable-overlay {
                     top: 43px;
