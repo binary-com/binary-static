@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-13 21:31-0400\n"
+"PO-Revision-Date: 2017-08-14 21:22-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -3724,7 +3724,7 @@ msgid "If you select \"Does Not Touch\", you win the payout if the market never 
 msgstr "Если Вы выбираете \"Не коснется\", Вы получаете прибыль, если рынок не коснется заданного <strong>ценового барьера</strong> в любое время в <strong>течение контракта</strong>."
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
-msgstr "Если Вы выбираете \"Закончится между\", Вы получаете прибыль, если <strong>выходная цена рынка</strong> строго выше, чем <strong>Нижний барьер</strong> и строго ниже, чем <strong>Верхний барьер</strong>."
+msgstr "Если Вы выбираете \"Закончится внутри\", Вы получаете прибыль, если <strong>выходная цена рынка</strong> строго выше, чем <strong>Нижний барьер</strong> и строго ниже, чем <strong>Верхний барьер</strong>."
 
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
 msgstr "Если Вы выбираете \"Закончится вне\", Вы выиграете, если <strong>выходная цена рынка</strong> ЛИБО строго выше, чем <strong>Верхний барьер</strong>, ЛИБО строго ниже, чем <strong>Нижний барьер</strong>."
@@ -3757,7 +3757,7 @@ msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</str
 msgstr "Если Вы выбираете \"Повысится\", Вы выигрываете, если <strong>выходная котировка</strong> строго выше, чем <strong>входная котировка</strong>."
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "Если Вы выбираете \"Останется между\", Вы получаете прибыль, если рынок останется между <strong>верхним</strong> и <strong>нижним</strong> барьером (не коснется ни одного из них) за все время <strong>действия контракта</strong>."
+msgstr "Если Вы выбираете \"Останется внутри\", Вы получаете прибыль, если рынок останется между <strong>верхним</strong> и <strong>нижним</strong> барьером (не коснется ни одного из них) за все время <strong>действия контракта</strong>."
 
 msgid "If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "Если Вы выбираете \"Коснется\", Вы получаете прибыль, если рынок коснется заданного <strong>барьера</strong> в любое время в <strong>течение контракта</strong>."
