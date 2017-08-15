@@ -5,7 +5,7 @@
 
     <div id="loading">[% PROCESS global/loading.html.tt %]</div>
 
-    <div class="gr-padding-10 invisible" id="facility_content">
+    <div class="gr-padding-10" id="facility_content">
         <div class="invisible msg_authenticate">
             <p>[% l('Authenticate your account by video conference call. Follow these steps to proceed:') %]</p>
             <ol>
@@ -18,7 +18,7 @@
             </ol>
         </div>
 
-        <div class="gr-padding-20 fill-bg-color center-text">
+        <div class="gr-padding-20 fill-bg-color center-text invisible">
             <span class="gr-gutter-right">[% l('Generated verification code:') %]</span>
             <strong id="generated_token"></strong>
         </div>

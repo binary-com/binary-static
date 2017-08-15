@@ -6,7 +6,6 @@ const Contact = (() => {
             const val = $(this).val().split(',');
             $('#display_cs_telephone').html(val[0] + (val.length > 1 ? `<br />${val[1]}` : ''));
         });
-        $('#loading').remove();
     };
 
     return {
