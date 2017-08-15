@@ -11,7 +11,7 @@ const toTitleCase         = require('../common_functions/string_util').toTitleCa
 const BinarySocket        = require('../websocket_pages/socket');
 const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
 const RealityCheckData    = require('../websocket_pages/user/reality_check/reality_check.data');
-const getCurrencies       = require('../websocket_pages/user/sub_account').getCurrencies;
+const getCurrencies       = require('../websocket_pages/user/get_currency').getCurrencies;
 
 const Header = (() => {
     'use strict';
@@ -150,15 +150,9 @@ const Header = (() => {
     };
 
     const showHideNewAccount = (can_upgrade) => {
-        const authorize = State.getResponse('authorize');
-        if (can_upgrade || authorize.allow_omnibus) {
-            if (authorize.allow_omnibus && !can_upgrade) {
-                const landing_company = State.getResponse('landing_company');
-                const currencies = getCurrencies(authorize.sub_accounts, landing_company);
-                if (!currencies.length) {
-                    return;
-                }
-            }
+        const landing_company = State.getResponse('landing_company');
+        // only allow opening of multi account to costarica clients with remaining currency
+        if (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length)) {
             changeAccountsText(1, 'Create Account');
         } else {
             changeAccountsText(0, 'Accounts List');
@@ -203,17 +197,19 @@ const Header = (() => {
 
 
             const messages = {
-                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',           'user/authenticate'),
-                financial_limit: () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                  'user/security/self_exclusionws'),
-                residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                        'user/settings/detailsws'),
-                risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',        'user/settings/assessmentws'),
-                tax            : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                 'user/settings/detailsws'),
-                tnc            : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',       'user/tnc_approvalws'),
-                unwelcome      : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                      'contact'),
+                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',     'user/authenticate'),
+                currency       : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                   'user/set-currency'),
+                financial_limit: () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                            'user/security/self_exclusionws'),
+                residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                  'user/settings/detailsws'),
+                risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',  'user/settings/assessmentws'),
+                tax            : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',           'user/settings/detailsws'),
+                tnc            : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.', 'user/tnc_approvalws'),
+                unwelcome      : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                'contact'),
             };
 
             const validations = {
                 authenticate   : () => +get_account_status.prompt_client_to_authenticate,
+                currency       : () => !Client.get('currency'),
                 financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence      : () => !Client.get('residence'),
                 risk           : () => riskAssessment(),
@@ -228,6 +224,7 @@ const Header = (() => {
                 'financial_limit',
                 'risk',
                 'tax',
+                'currency',
                 'authenticate',
                 'unwelcome',
             ];
