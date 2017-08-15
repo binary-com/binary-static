@@ -19,6 +19,7 @@ const Accounts = (() => {
             BinaryPjax.load(urlFor('user/settings/detailsws'));
         }
         BinarySocket.wait('landing_company', 'get_settings').then(() => {
+            const authorize = State.getResponse('authorize');
             landing_company = State.getResponse('landing_company');
 
             populateExistingAccounts();
@@ -30,9 +31,9 @@ const Accounts = (() => {
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            const currencies = getCurrencies(landing_company);
+            const currencies = getCurrencies(landing_company, authorize);
             // only allow opening of multi account to costarica clients with remaining currency
-            if (Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
+            if (authorize.allow_omnibus || (Client.get('landing_company_shortcode') === 'costarica' && currencies.length)) {
                 populateMultiAccount(currencies);
             } else {
                 doneLoading(element_to_show);

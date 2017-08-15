@@ -39,11 +39,14 @@ const GetCurrency = (() => {
         };
     };
 
-    const getCurrencies = (landing_company) => {
+    const getCurrencies = (landing_company, authorize = {}) => {
+        if (authorize.allow_omnibus) {
+            return Client.getLandingCompanyValue(Client.get('loginid'), landing_company, 'legal_allowed_currencies');
+        }
         const client_currency  = Client.get('currency');
         const is_crypto        = Currency.isCryptocurrency(client_currency);
-        const currency_values  = getCurrencyValues();
         const currencies       = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
+        const currency_values  = getCurrencyValues();
 
         const available_crypto =
             currency_values.cryptocurrencies.filter(c =>
