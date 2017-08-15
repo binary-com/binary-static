@@ -287,7 +287,8 @@ const MBProcess = (() => {
         const req_id = MBPrice.getReqId();
         if (response.passthrough.req_id === req_id) {
             if (response.error) {
-                MBNotifications.show({ text: response.error.message, uid: 'PROPOSAL', dismissible: false });
+                const error_message = response.error.error ? response.error.error.message : response.error.message;
+                MBNotifications.show({ text: error_message, uid: 'PROPOSAL', dismissible: false });
                 return;
             }
             MBNotifications.hide('PROPOSAL');

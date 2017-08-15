@@ -18,13 +18,13 @@
 
         <div class="ja-hide" id="panel">
             <div class="gr-row selection_wrapper">
-                <div class="trade_form gr-6 gr-no-gutter-left">
+                <div class="trade_form gr-7 gr-no-gutter-left">
                     [% INCLUDE form_item id='underlying' class='gr-12' class_current='gr-row' class_list='gr-row' %]
                 </div>
                 <div class="trade_form gr-2 align-self-center gr-no-gutter">
                     <div id="payout_amount">[% l('Payout') %]</div>
                 </div>
-                <div class="trade_form gr-4 gr-no-gutter">
+                <div class="trade_form gr-3 gr-no-gutter">
                     <div class="gr-row">
                         [% INCLUDE form_item id='currency' class='gr-4 gr-no-gutter' class_current='gr-row' class_list='gr-4 gr-no-gutter' %]
                         <input class="gr-8 center-text" type="text" id="payout" onclick="select()" maxlength="15" />
