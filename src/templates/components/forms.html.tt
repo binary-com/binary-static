@@ -27,7 +27,7 @@
                         [%= content -%]
                     </select>
                 [%- CASE ['text', 'password', 'number', 'checkbox'] -%]
-                    [% input_prefix %]<input type="[% type %]" id="[% id %]"[% IF type=='password' %] maxlength="25"[% END %] [% attributes %] />
+                    [% input_prefix %]<input type="[% type %]"[% IF class %] class="[% class %]"[% END %] id="[% id %]"[% IF type=='password' %] maxlength="25"[% END %] [% attributes %] />
                 [%- CASE 'label' -%]
                     <span class="text-display">
                         [% IF is_bold -%]
