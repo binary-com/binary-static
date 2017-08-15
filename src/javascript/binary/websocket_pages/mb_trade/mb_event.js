@@ -54,9 +54,10 @@ const MBTradingEvents = (() => {
 
                 MBProcess.getContracts(underlying);
                 // forget the old tick id i.e. close the old tick stream
-                MBProcess.processForgetTicks();
-                // get ticks for current underlying
-                MBTick.request(underlying);
+                MBProcess.processForgetTicks().then(() => {
+                    // get ticks for current underlying
+                    MBTick.request(underlying);
+                });
             });
         }
 
