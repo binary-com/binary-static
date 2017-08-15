@@ -61,7 +61,6 @@
     [% INCLUDE row id='qiwi'          currencies='USD EUR'         deposit=['5 - 200 (USD)', '5 - 150 (EUR)'] withdrawal=['5 - 200 (USD)', '5 - 150 (EUR)'] time=[l('Deposit: Instant'), l('Withdraw: [_1] working day', 1)] %]
     [% INCLUDE row id='yandex'        currencies='USD EUR'         deposit='25 - 640'   withdrawal=''           time=l('Deposit: Instant') %]
     [% INCLUDE row id='paysafecard'   currencies='USD EUR'         deposit='5 - 750'    withdrawal='5 - 750'    time=[l('Deposit: Instant'), l('Withdraw: [_1] working day', 1)] %]
-    [% INCLUDE row id='bitcoin'       currencies='USD'             deposit='5 - 10,000' withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdraw: [_1] working day', 1)] %]
     </div>
 
     <div class="gr-padding-10">
