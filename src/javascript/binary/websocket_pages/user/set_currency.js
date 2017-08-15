@@ -3,6 +3,7 @@ const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const Header           = require('../../base/header');
 const localize         = require('../../base/localize').localize;
+const State            = require('../../base/storage').State;
 const Url              = require('../../base/url');
 const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 
@@ -71,13 +72,18 @@ const SetCurrency = (() => {
                             Header.displayAccountStatus();
 
                             let redirect_url,
-                                hash;
+                                hash = '';
                             if (/deposit/.test(hash_value)) {
                                 redirect_url = 'cashier/forwardws';
                                 hash = '#deposit';
                             } else if (/withdraw/.test(hash_value)) {
                                 redirect_url = 'cashier/forwardws';
                                 hash = '#withdraw';
+                            } else if (/new_account/.test(hash_value) && Client.isAccountOfType('financial')) {
+                                const get_account_status = State.getResponse('get_account_status');
+                                if (!/authenticated/.test(get_account_status.status)) {
+                                    redirect_url = 'user/authenticate';
+                                }
                             }
                             if (redirect_url) {
                                 window.location.href = Url.urlFor(redirect_url) + hash; // load without pjax
