@@ -4,7 +4,7 @@ const BinaryPjax          = require('../../../../base/binary_pjax');
 const Client              = require('../../../../base/client');
 const Header              = require('../../../../base/header');
 const localize            = require('../../../../base/localize').localize;
-const defaultRedirectUrl  = require('../../../../base/url').defaultRedirectUrl;
+const urlFor              = require('../../../../base/url').urlFor;
 const dateValueChanged    = require('../../../../common_functions/common_functions').dateValueChanged;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
 const Currency            = require('../../../../common_functions/currency');
@@ -213,7 +213,7 @@ const SelfExclusion = (() => {
         BinarySocket.send({ get_account_status: 1 }).then(() => {
             Header.displayAccountStatus();
             if (set_30day_turnover) {
-                BinaryPjax.load(defaultRedirectUrl());
+                BinaryPjax.load(`${urlFor('cashier/forwardws')}#deposit`);
             } else {
                 getData();
                 if (jpClient()) {
