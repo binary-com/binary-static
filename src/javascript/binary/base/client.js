@@ -309,9 +309,9 @@ const Client = (() => {
 
     const getLandingCompanyValue = (loginid, landing_company, key) => {
         let landing_company_object;
-        if (isAccountOfType('financial', loginid)) {
+        if (loginid.financial || isAccountOfType('financial', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
-        } else if (isAccountOfType('real', loginid)) {
+        } else if (loginid.real || isAccountOfType('real', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'gaming_company');
 
             // handle accounts such as japan that don't have gaming company
