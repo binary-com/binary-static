@@ -144,7 +144,7 @@ const MBTradingEvents = (() => {
                 const isStandardFloat = value => (
                     !isNaN(value) &&
                     value % 1 !== 0 &&
-                    ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > Currency.getDecimalPlaces(MBDefaults.get('currency'))
+                    value.replace(/^-?\d*\.?|0+$/, '').length > Currency.getDecimalPlaces(MBDefaults.get('currency'))
                 );
 
                 $payout
