@@ -2,7 +2,6 @@ const BinaryPjax         = require('../base/binary_pjax');
 const Client             = require('../base/client');
 const localize           = require('../base/localize').localize;
 const defaultRedirectUrl = require('../base/url').defaultRedirectUrl;
-const DeskWidget         = require('../common_functions/attach_dom/desk_widget');
 const BinarySocket       = require('../websocket_pages/socket');
 
 const VideoFacility = (() => {
@@ -18,12 +17,12 @@ const VideoFacility = (() => {
             } else {
                 const should_authenticate = +response.get_account_status.prompt_client_to_authenticate;
                 if (should_authenticate) {
-                    DeskWidget.showDeskLink('', '#facility_content');
                     if (!Client.isAccountOfType('financial')) {
                         $('#not_authenticated').setVisibility(1);
                     }
                     $('.msg_authenticate').setVisibility(1);
                     $('#generated_token').text(Client.get('token').slice(-4));
+                    $('#loading').remove();
                 } else {
                     BinaryPjax.load(defaultRedirectUrl());
                 }

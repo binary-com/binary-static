@@ -9,9 +9,7 @@
         <div class="invisible msg_authenticate">
             <p>[% l('Authenticate your account by video conference call. Follow these steps to proceed:') %]</p>
             <ol>
-                <li><span id="desk-link"></span> [% l('to set up the video call.') %]</li>
-                <li>[% l('Our customer support agent will provide you with a unique link to connect to the video call.') %]</li>
-                <li>[% l('Click on the link to connect to the video call.') %]</li>
+                <li>[% l('[_1]Contact us[_2] to arrange a date and time for the video call.', '<a href="' _ request.url_for('contact') _ '">', '</a>') %]</li>
                 <li>[% l('You will be asked to prove that you are the owner of the account being authenticated.') %]</li>
                 <li>[% l('Provide the customer support agent with the four-digit verification code below for confirmation.') %]</li>
                 <li>[% l('Display your proof of identity when prompted.') %]</li>
