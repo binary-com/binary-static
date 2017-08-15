@@ -131,7 +131,9 @@ const Accounts = (() => {
                 BinarySocket.send(req).then((response) => {
                     if (response.error) {
                         const account_opening_reason = State.getResponse('get_settings.account_opening_reason');
-                        if (response.error.code === 'InsufficientAccountDetails' && !account_opening_reason) {
+                        if (!account_opening_reason && response.error.details.hasOwnProperty('account_opening_reason') &&
+                            (response.error.code === 'InsufficientAccountDetails' ||
+                            response.error.code === 'InputValidationFailed')) {
                             // ask client to set account opening reason
                             BinaryPjax.load(`${urlFor('user/settings/detailsws')}#new-account`);
                         } else {
