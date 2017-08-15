@@ -47,6 +47,10 @@
             #currency {
                 line-height: 40px;
             }
+            #payout_amount {
+                line-height: 49px;
+                border-radius: 0;
+            }
             .trade_form {
                 border-radius: $BORDER_RADIUS;
 
@@ -55,6 +59,9 @@
                     border: 1px solid $COLOR_LIGHT_GRAY;
                     border-top: none;
 
+                    &.invisible {
+                        border: none;
+                    }
                     > div {
                         background-color: $COLOR_WHITE;
 
