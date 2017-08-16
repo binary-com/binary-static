@@ -20,9 +20,7 @@ const AssetIndexUI = (() => {
 
     const onLoad = (config) => {
         if (jpClient()) {
-            if (!State.get('is_beta_trading')) {
-                BinaryPjax.load('resources');
-            }
+            BinaryPjax.loadPreviousUrl();
             return;
         }
 

@@ -32,7 +32,7 @@ const KnowledgeTest = (() => {
             const jp_status = response.get_settings.jp_account_status;
 
             if (!jp_status) {
-                BinaryPjax.load(Url.defaultRedirectUrl());
+                BinaryPjax.loadPreviousUrl();
                 return;
             }
 
