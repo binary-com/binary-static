@@ -96,12 +96,15 @@ const DepositWithdraw = (() => {
 
     const showError = (id, error) => {
         hideAll();
-        if (error) $(`#${id}`).text(error);
-        showMessage(id, 'errors');
+        showMessage(id, error, 'errors');
     };
 
-    const showMessage = (id, parent = 'messages') => {
-        $(`#${id}`).siblings().setVisibility(0).end()
+    const showMessage = (id, message, parent = 'messages') => {
+        const $element = $(`#${id}`);
+        if (message) {
+            $element.text(message);
+        }
+        $element.siblings().setVisibility(0).end()
             .setVisibility(1);
         $(container).find(`#${parent}`).setVisibility(1);
     };
@@ -162,7 +165,7 @@ const DepositWithdraw = (() => {
                     initUKGC();
                     break;
                 case 'ASK_AUTHENTICATE':
-                    showMessage('not_authenticated_message');
+                    showMessage('not_authenticated_message', error.message);
                     break;
                 case 'ASK_FINANCIAL_RISK_APPROVAL':
                     showError('financial_risk_error');
