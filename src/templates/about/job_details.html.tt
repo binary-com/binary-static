@@ -529,7 +529,7 @@
 
                         [% INCLUDE ul_text text=l("Duties and Responsibilities:") class='bullet' items=[
                             { text=l("Resolve complex customer care issues in the best interest of our global clients and the company") },
-                            { text=l("Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems") },
+                            { text=l("Respond to client queries using our state of the art telephone and electronic mail") },
                             { text=l("Work to expand our international client base by applying creative marketing and customer support strategies") },
                             { text=l("Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance") },
                         ] %]

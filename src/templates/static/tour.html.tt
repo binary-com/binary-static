@@ -65,7 +65,7 @@
         <div class="section border-bottom">
             <div class="section-content center-text gr-padding-30 gr-child">
                 <h1>[% l("Talk to us") %]</h1>
-                <p>[% l("Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via live chat, email and telephone.") %]</p>
+                <p>[% l("Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via email and telephone.") %]</p>
                 <div class="gr-4 gr-8-m gr-centered">
                     <a class="button" href="[% request.url_for('contact') %]">
                         <img class="responsive" src="[% request.url_for('images/pages/tour/tour-customer-support.png') %]"/>

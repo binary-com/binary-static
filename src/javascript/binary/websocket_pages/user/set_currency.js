@@ -79,11 +79,16 @@ const SetCurrency = (() => {
                             } else if (/withdraw/.test(hash_value)) {
                                 redirect_url = 'cashier/forwardws';
                                 hash = '#withdraw';
-                            } else if (/new_account/.test(hash_value) && Client.isAccountOfType('financial')) {
-                                const get_account_status = State.getResponse('get_account_status');
-                                if (!/authenticated/.test(get_account_status.status)) {
-                                    redirect_url = 'user/authenticate';
+                            } else if (/new_account/.test(hash_value)) {
+                                if (Client.isAccountOfType('financial')) {
+                                    const get_account_status = State.getResponse('get_account_status');
+                                    if (!/authenticated/.test(get_account_status.status)) {
+                                        redirect_url = 'user/authenticate';
+                                    }
                                 }
+                            } else {
+                                redirect_url = 'cashier/forwardws';
+                                hash = '#deposit';
                             }
                             if (redirect_url) {
                                 window.location.href = Url.urlFor(redirect_url) + hash; // load without pjax
