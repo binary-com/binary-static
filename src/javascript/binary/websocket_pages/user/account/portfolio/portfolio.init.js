@@ -17,7 +17,8 @@ const PortfolioInit = (() => {
         currency,
         oauth_apps,
         is_initialized,
-        is_first_response;
+        is_first_response,
+        $portfolio_loading;
 
     const init = () => {
         updateBalance();
@@ -27,7 +28,7 @@ const PortfolioInit = (() => {
         values = {};
         currency = '';
         oauth_apps = {};
-        const $portfolio_loading = $('#portfolio-loading');
+        $portfolio_loading = $('#portfolio-loading');
         $portfolio_loading.show();
         showLoadingImage($portfolio_loading);
         is_first_response = true;
@@ -116,7 +117,7 @@ const PortfolioInit = (() => {
             BinarySocket.send({ proposal_open_contract: 1, subscribe: 1 }, { callback: updateIndicative });
         }
         // ready to show portfolio table
-        $('#portfolio-loading').hide();
+        $portfolio_loading.hide();
         $('#portfolio-content').setVisibility(1);
         is_first_response = false;
     };
@@ -202,6 +203,7 @@ const PortfolioInit = (() => {
         const $err = $('#portfolio').find('#error-msg');
         if (msg) {
             $err.setVisibility(1).text(msg);
+            $portfolio_loading.hide();
         } else {
             $err.setVisibility(0).text('');
         }
