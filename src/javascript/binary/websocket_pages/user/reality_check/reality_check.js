@@ -19,7 +19,6 @@ const RealityCheck = (() => {
         if (RealityCheckUI.shouldShowPopup()) {
             BinarySocket.wait('landing_company').then(() => {
                 if ((Client.currentLandingCompany() || {}).has_reality_check) {
-                    RealityCheckUI.setLoginTime(Client.get('session_start') * 1000);
                     window.addEventListener('storage', storageHandler, false);
 
                     RealityCheckData.resetInvalid();
