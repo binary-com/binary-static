@@ -30,6 +30,8 @@ const RealityCheck = (() => {
                     } else {
                         RealityCheckUI.startSummaryTimer();
                     }
+                } else {
+                    clearTimeout(RealityCheckUI.getRealityTimeout());
                 }
             });
         }

@@ -16,6 +16,8 @@ const RealityCheckUI = (() => {
         num_reality_duration: '#num_reality_duration',
     };
 
+    let reality_timeout;
+
     const getAjax = (summary) => {
         $.ajax({
             url     : summary ? summary_url : frequency_url,
@@ -106,7 +108,8 @@ const RealityCheckUI = (() => {
     const startSummaryTimer = () => {
         const interval = +RealityCheckData.get('interval');
 
-        setTimeout(() => {
+        clearTimeout(reality_timeout);
+        reality_timeout = setTimeout(() => {
             RealityCheckData.set('keep_open', 1);
             getSummaryAsync();
         }, interval);
@@ -131,6 +134,7 @@ const RealityCheckUI = (() => {
         startSummaryTimer   : startSummaryTimer,
         getSummaryAsync     : getSummaryAsync,
         shouldShowPopup     : shouldShowPopup,
+        getRealityTimeout   : () => reality_timeout,
     };
 })();
 
