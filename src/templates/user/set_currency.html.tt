@@ -18,10 +18,8 @@
 
         <div class="invisible" id="has_currency">
             <div>
-                <a class="button-secondary" href="[% request.url_for('cashier/forwardws#deposit') %]"><span>[% l("Deposit page") %]</span></a>
-                <a class="button-secondary gr-gutter-left" href="[% request.url_for('trading') %]"><span>[% l("Trade page") %]</span></a>
+                <a class="button" href="[% request.url_for('cashier/forwardws#deposit') %]"><span>[% l("Make a Deposit") %]</span></a>
             </div>
-            <p class="hint">[% l('or go to [_1]Accounts page[_2]', '<a href="' _ request.url_for('user/accounts') _'">', '</a>') %]</p>
         </div>
 
         <div class="invisible select_currency">
