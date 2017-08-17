@@ -58,7 +58,7 @@
                 } else if (!/-jp/.test(match) && /ja/i.test(lang)) {
                     redirect_to = match.replace(/\.html/i, '-jp.html');
                 }
-                return redirect_to;
+                return redirect_to || match;
             });
         }
 
@@ -71,7 +71,7 @@
 
         // if not alternate page, redirect to 404 page
         if (!redirect_to) {
-            href = href.replace(new RegExp('(/' + lang + '/)(\.*)(.html)', 'i'), '$1404$3');
+            href = href.replace(new RegExp('(/' + lang + '/)(\.*)(.html)', 'i'), '$1404.html');
         }
 
         window.location = href;
