@@ -4,10 +4,10 @@ const BinaryPjax          = require('../../../../base/binary_pjax');
 const Client              = require('../../../../base/client');
 const Header              = require('../../../../base/header');
 const localize            = require('../../../../base/localize').localize;
-const defaultRedirectUrl  = require('../../../../base/url').defaultRedirectUrl;
+const urlFor              = require('../../../../base/url').urlFor;
 const dateValueChanged    = require('../../../../common_functions/common_functions').dateValueChanged;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
-const getDecimalPlaces    = require('../../../../common_functions/currency').getDecimalPlaces;
+const Currency            = require('../../../../common_functions/currency');
 const FormManager         = require('../../../../common_functions/form_manager');
 const scrollToHashSection = require('../../../../common_functions/scroll').scrollToHashSection;
 const DatePicker          = require('../../../../components/date_picker');
@@ -34,6 +34,8 @@ const SelfExclusion = (() => {
         $form.find('input').each(function() {
             fields[this.name] = '';
         });
+
+        $('.prepend_currency').parent().prepend(Currency.formatCurrency(Client.get('currency')));
 
         initDatePicker();
         getData(true);
@@ -90,7 +92,7 @@ const SelfExclusion = (() => {
             }
             if (!/(session_duration_limit|max_open_bets)/.test(id)) {
                 options.type = 'float';
-                options.decimals = `0, ${getDecimalPlaces(Client.get('currency'))}`;
+                options.decimals = `0, ${Currency.getDecimalPlaces(Client.get('currency'))}`;
             }
             checks.push(['number', options]);
 
@@ -211,7 +213,7 @@ const SelfExclusion = (() => {
         BinarySocket.send({ get_account_status: 1 }).then(() => {
             Header.displayAccountStatus();
             if (set_30day_turnover) {
-                BinaryPjax.load(defaultRedirectUrl());
+                BinaryPjax.load(`${urlFor('cashier/forwardws')}#deposit`);
             } else {
                 getData();
                 if (jpClient()) {
