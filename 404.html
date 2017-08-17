@@ -8,23 +8,24 @@
         'use strict';
         return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
     }
+
+    var langs = {
+        'ar': 'dz|bh|km|dj|eg|iq|jo|kw|lb|ly|mr|ma|om|ps|qa|sa|so|sd|sy|tn|ae|ye',
+        'de': 'de|at|li',
+        'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
+        'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
+        'id': 'id',
+        'it': 'it',
+        'ja': 'jp',
+        'pl': 'po',
+        'pt': 'br|mz|ao|pt|gw|pg|cv|st',
+        'ru': 'ru|ua|by|kz',
+        'th': 'th',
+        'vi': 'vn',
+        'zh_tw': 'tw|mo',
+        'zh_cn': 'cn|sg',
+    };
     function getLanguage(country) {
-        var langs = {
-            'ar': 'dz|bh|km|dj|eg|iq|jo|kw|lb|ly|mr|ma|om|ps|qa|sa|so|sd|sy|tn|ae|ye',
-            'de': 'de|at|li',
-            'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
-            'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
-            'id': 'id',
-            'it': 'it',
-            'ja': 'jp',
-            'pl': 'po',
-            'pt': 'br|mz|ao|pt|gw|pg|cv|st',
-            'ru': 'ru|ua|by|kz',
-            'th': 'th',
-            'vi': 'vn',
-            'zh_tw': 'tw|mo',
-            'zh_cn': 'cn|sg',
-        };
         var conLang = 'en';
         if (country) {
             var keys = Object.keys(langs);
@@ -47,7 +48,24 @@
     }
 
     function redirect() {
-        window.location = getRoot() + '/' + (lang || 'en').toLowerCase() + '/404.html';
+        var alternative_pages = ['home', 'why-us', 'tour', 'terms-and-conditions', 'signup', 'get-started'];
+        var path = window.location.href.split('/');
+        var page = path[path.length - 1].split('.')[0];
+        var redirect_to = '404';
+        var is_jp = false;
+        if (/-jp/.test(page)) {
+            page = page.replace('-jp', '');
+            is_jp = true;
+        }
+        if (alternative_pages.indexOf(page) > -1) {
+            // if current page has '-jp' redirect to non-jp version else redirect to jp version
+            redirect_to = page + (is_jp ? '' : '-jp');
+            var url_params = path.slice(3);
+            var lang_regex = new RegExp(`^(${Object.keys(langs).join('|')})$`, 'i');
+            // prioritize url language
+            lang = url_params.find(lang => lang_regex.test(lang)) || lang;
+        }
+        window.location = getRoot() + '/' + (lang || 'en').toLowerCase() + '/' + redirect_to + '.html';
     }
 
     var lang = getCookieItem('language');
