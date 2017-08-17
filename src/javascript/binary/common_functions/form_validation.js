@@ -48,8 +48,8 @@ const Validation = (() => {
                                 has_required = true;
                             }
                         }
-                        if ($parent.find(`div.${error_class}`).length === 0) {
-                            $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
+                        if ($parent.find(`p.${error_class}`).length === 0) {
+                            $parent.append($('<p/>', { class: `${error_class} ${hidden_class} no-margin` }));
                         }
                         field.$error = $parent.find(`.${error_class}`);
                     }
@@ -218,7 +218,7 @@ const Validation = (() => {
 
     const showError = (field, message) => {
         clearError(field);
-        field.$error.text(localize(message)).setVisibility(1);
+        field.$error.html(localize(message)).setVisibility(1);
     };
 
     const validate = (form_selector) => {

@@ -68,9 +68,13 @@ a.button:hover {
     text-decoration: none;
 }
 
-.button.full-width {
+button.full-width, .button.full-width {
     &, span {
         display: block;
+        width: 100%;
+    }
+    .barspinner {
+        display: inline-block;
     }
 }
 
@@ -109,11 +113,12 @@ fieldset {
     .text-display { /* TODO: replace all occurrences of id with the class */
         line-height: 25px;
     }
-    .error-msg {
-        width: 100%;
-        text-align: left;
-        margin-top: 5px;
-    }
+}
+
+.error-msg {
+    width: 100%;
+    text-align: left;
+    margin-top: 5px !important;
 }
 
 textarea {
@@ -145,6 +150,16 @@ label {
     div:first-child label {
         display: block;
         text-align: right;
+    }
+}
+
+.form-row.two-rows {
+    div:first-child label {
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    input {
+        width: calc(100% - 6px);
     }
 }
 

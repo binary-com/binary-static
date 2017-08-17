@@ -460,6 +460,7 @@ sub _texts {
         push @texts, localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]');
         push @texts, localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]');
         push @texts, localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.');
+        push @texts, localize('You have insufficient fund in your Binary account, please <a href="[_1]">add fund</a>.');
         push @texts, localize('Sorry, this feature is not available in your jurisdiction.');
         push @texts, localize('Main password');
         push @texts, localize('Investor password');

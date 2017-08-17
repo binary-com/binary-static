@@ -77,7 +77,7 @@ const MetaTrader = (() => {
 
     const getDefaultAccount = login_list => (
         Object.keys(types_info).indexOf(location.hash.substring(1)) >= 0 ? location.hash.substring(1) :
-            Client.get('mt5_account') ||
+            ((types_info[Client.get('mt5_account')] || {}).account_info && Client.get('mt5_account')) ||
             (login_list && login_list.length ?
                 Client.getMT5AccountType(
                     ((login_list.find(login => /real/.test(login.group)) || login_list.find(login => /demo/.test(login.group))) || {}).group) :
@@ -117,38 +117,41 @@ const MetaTrader = (() => {
 
     const submit = (e) => {
         e.preventDefault();
-        MetaTraderUI.hideFormMessage();
         const $btn_submit = $(e.target);
         const acc_type = $btn_submit.attr('acc_type');
-        const action = $btn_submit.attr('action');
+        const action   = $btn_submit.attr('action');
+        MetaTraderUI.hideFormMessage(action);
         if (Validation.validate(`#frm_${action}`)) {
-            MetaTraderUI.disableButton();
+            MetaTraderUI.disableButton(action);
             // further validations before submit (password_check)
             MetaTraderUI.postValidate(acc_type, action).then((is_ok) => {
                 if (!is_ok) {
-                    MetaTraderUI.enableButton();
+                    MetaTraderUI.enableButton(action);
                     return;
                 }
 
                 const req = makeRequestObject(acc_type, action);
                 BinarySocket.send(req).then((response) => {
                     if (response.error) {
-                        MetaTraderUI.displayFormMessage(response.error.message);
-                        MetaTraderUI.enableButton();
+                        MetaTraderUI.displayFormMessage(response.error.message, action);
+                        MetaTraderUI.enableButton(action);
                     } else {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : types_info[acc_type].account_info.login;
                         if (!types_info[acc_type].account_info) {
                             types_info[acc_type].account_info = { login: login };
+                            MetaTraderUI.setAccountType(acc_type, true);
                         }
                         MetaTraderUI.loadAction(null, acc_type);
-                        MetaTraderUI.displayMainMessage(actions_info[action].success_msg(response));
                         getAccountDetails(login, acc_type);
+                        if (typeof actions_info[action].success_msg === 'function') {
+                            MetaTraderUI.displayMainMessage(actions_info[action].success_msg(response));
+                        }
                         if (typeof actions_info[action].onSuccess === 'function') {
                             actions_info[action].onSuccess(response, acc_type);
                         }
                     }
-                    MetaTraderUI.enableButton();
+                    MetaTraderUI.enableButton(action);
                 });
             });
         }
