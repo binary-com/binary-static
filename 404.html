@@ -49,27 +49,37 @@
 
     function redirect() {
         var alternative_pages = ['home', 'why-us', 'tour', 'terms-and-conditions', 'signup', 'get-started'];
-        var path = window.location.href.split('/');
-        var page = path[path.length - 1].split('.')[0];
-        var redirect_to = '404';
-        var is_jp = false;
-        if (/-jp/.test(page)) {
-            page = page.replace('-jp', '');
-            is_jp = true;
+        var redirect_to;
+        var alt_regex = new RegExp('(' + alternative_pages.map(function(page) { return page + '.html|' + page + '-jp.html' }).join('|') + ')', 'i');
+        if (alt_regex.test(href)) {
+            href = href.replace(alt_regex, function(match) {
+                if (/-jp/.test(match) && !/ja/i.test(lang)) {
+                    redirect_to = match.replace(/-jp/i, '');
+                } else if (!/-jp/.test(match) && /ja/i.test(lang)) {
+                    redirect_to = match.replace(/\.html/i, '-jp.html');
+                }
+                return redirect_to;
+            });
         }
-        if (alternative_pages.indexOf(page) > -1) {
-            // if current page has '-jp' redirect to non-jp version else redirect to jp version
-            redirect_to = page + (is_jp ? '' : '-jp');
-            var url_params = path.slice(3);
-            var lang_regex = new RegExp(`^(${Object.keys(langs).join('|')})$`, 'i');
-            // prioritize url language
-            lang = url_params.find(lang => lang_regex.test(lang)) || lang;
+
+        // if language is wrong, we need to rebuild the url
+        var lang_regex = new RegExp('/(' + Object.keys(langs).join('|') + ')/', 'i');
+        if (!lang_regex.test(href)) {
+            redirect_to = redirect_to || '404';
+            href = getRoot() + '/' + lang.toLowerCase() + '/' + redirect_to.replace(/\.html/i, '') + '.html';
         }
-        window.location = getRoot() + '/' + (lang || 'en').toLowerCase() + '/' + redirect_to + '.html';
+
+        // if not alternate page, redirect to 404 page
+        if (!redirect_to) {
+            href = href.replace(new RegExp('(/' + lang + '/)(\.*)(.html)', 'i'), '$1404$3');
+        }
+
+        window.location = href;
     }
 
-    var lang = getCookieItem('language');
-    if (lang) {
+    var href = window.location.href;
+    var lang = href.split('/').slice(3).find(function(language) { return langs[language] }) || getCookieItem('language');
+    if (lang && Object.keys(langs).indexOf(lang.toLowerCase()) > -1) {
         redirect();
     } else {
         var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
