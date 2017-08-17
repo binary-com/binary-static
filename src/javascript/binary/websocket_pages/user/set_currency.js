@@ -10,9 +10,11 @@ const isCryptocurrency = require('../../common_functions/currency').isCryptocurr
 const SetCurrency = (() => {
     'use strict';
 
-    let is_new_account = false;
+    let is_new_account;
 
     const onLoad = () => {
+        is_new_account = localStorage.getItem('is_new_account');
+        localStorage.removeItem('is_new_account');
         const el = is_new_account ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
 
@@ -74,7 +76,6 @@ const SetCurrency = (() => {
 
                             let redirect_url;
                             if (is_new_account) {
-                                is_new_account = false;
                                 if (Client.isAccountOfType('financial')) {
                                     const get_account_status = State.getResponse('get_account_status');
                                     if (!/authenticated/.test(get_account_status.status)) {
@@ -101,8 +102,6 @@ const SetCurrency = (() => {
 
     return {
         onLoad: onLoad,
-
-        setIsNewAccount: (bool) => { is_new_account = bool; },
     };
 })();
 

@@ -8,7 +8,6 @@ const urlFor            = require('../base/url').urlFor;
 const makeOption        = require('../common_functions/common_functions').makeOption;
 const FormManager       = require('../common_functions/form_manager');
 const BinarySocket      = require('../websocket_pages/socket');
-const setIsNewAccount   = require('../websocket_pages/user/set_currency').setIsNewAccount;
 require('select2');
 
 const AccountOpening = (() => {
@@ -126,7 +125,7 @@ const AccountOpening = (() => {
             $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
                 .setVisibility(1);
         } else {
-            setIsNewAccount(true);
+            localStorage.setItem('is_new_account', 1);
             Client.processNewAccount({
                 email       : Client.get('email'),
                 loginid     : response[message_type].client_id,

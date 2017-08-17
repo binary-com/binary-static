@@ -1,6 +1,5 @@
 const moment             = require('moment');
 const setIsForNewAccount = require('./account/settings/personal_details').setIsForNewAccount;
-const setIsNewAccount    = require('./set_currency').setIsNewAccount;
 const getCurrencies      = require('./get_currency').getCurrencies;
 const BinarySocket       = require('../socket');
 const BinaryPjax         = require('../../base/binary_pjax');
@@ -174,7 +173,7 @@ const Accounts = (() => {
                         if (response_set_account_currency.error) {
                             showError(response_set_account_currency.error.message);
                         } else {
-                            setIsNewAccount(true);
+                            localStorage.setItem('is_new_account', 1);
                             Client.processNewAccount({
                                 email       : Client.get('email'),
                                 loginid     : new_account.client_id,

@@ -179,6 +179,9 @@ const BinaryPjax = (() => {
     };
 
     const loadPreviousUrl = () => {
+        if (window.location.href === previous_url) {
+            previous_url = '';
+        }
         processUrl(previous_url || Url.defaultRedirectUrl());
     };
 
