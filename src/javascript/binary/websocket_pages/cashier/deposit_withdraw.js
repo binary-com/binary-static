@@ -189,7 +189,7 @@ const DepositWithdraw = (() => {
         } else {
             const $iframe = $(container).find('iframe');
             if (isCryptocurrency(Client.get('currency'))) {
-                $iframe.css('height', '600px');
+                $iframe.css('height', '700px');
             }
             $iframe.attr('src', response.cashier).parent().setVisibility(1);
         }
