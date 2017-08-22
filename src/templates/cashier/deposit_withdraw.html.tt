@@ -11,7 +11,7 @@
             [% l('There was a problem validating your personal details. Please update your [_1] <a href="[_2]">here</a>.', '[_1]', request.url_for('/user/settings/detailsws')) %]
             <br /> [% l('If you need assistance feel free to contact our <a href="[_1]">Customer Support</a>.', request.url_for('/contact')) %]
         </p>
-        <p id="not_authenticated_message">[% l('Your account is not fully authenticated.') %]</p>
+        <p id="not_authenticated_message"></p>
     </div>
 
     <div id="errors" class="invisible">

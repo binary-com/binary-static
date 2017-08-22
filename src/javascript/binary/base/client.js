@@ -193,7 +193,6 @@ const Client = (() => {
         }
 
         localStorage.setItem('GTM_new_account', '1');
-        RealityCheckData.clear();
 
         set('token',      options.token,       options.loginid);
         set('email',      options.email,       options.loginid);

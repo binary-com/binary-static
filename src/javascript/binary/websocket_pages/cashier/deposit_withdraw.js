@@ -1,10 +1,11 @@
-const BinarySocket = require('../socket');
-const BinaryPjax   = require('../../base/binary_pjax');
-const Client       = require('../../base/client');
-const localize     = require('../../base/localize').localize;
-const urlFor       = require('../../base/url').urlFor;
-const template     = require('../../base/utility').template;
-const FormManager  = require('../../common_functions/form_manager');
+const BinarySocket     = require('../socket');
+const BinaryPjax       = require('../../base/binary_pjax');
+const Client           = require('../../base/client');
+const localize         = require('../../base/localize').localize;
+const urlFor           = require('../../base/url').urlFor;
+const template         = require('../../base/utility').template;
+const FormManager      = require('../../common_functions/form_manager');
+const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 
 const DepositWithdraw = (() => {
     'use strict';
@@ -96,12 +97,15 @@ const DepositWithdraw = (() => {
 
     const showError = (id, error) => {
         hideAll();
-        if (error) $(`#${id}`).text(error);
-        showMessage(id, 'errors');
+        showMessage(id, error, 'errors');
     };
 
-    const showMessage = (id, parent = 'messages') => {
-        $(`#${id}`).siblings().setVisibility(0).end()
+    const showMessage = (id, message, parent = 'messages') => {
+        const $element = $(`#${id}`);
+        if (message) {
+            $element.text(message);
+        }
+        $element.siblings().setVisibility(0).end()
             .setVisibility(1);
         $(container).find(`#${parent}`).setVisibility(1);
     };
@@ -162,7 +166,7 @@ const DepositWithdraw = (() => {
                     initUKGC();
                     break;
                 case 'ASK_AUTHENTICATE':
-                    showMessage('not_authenticated_message');
+                    showMessage('not_authenticated_message', error.message);
                     break;
                 case 'ASK_FINANCIAL_RISK_APPROVAL':
                     showError('financial_risk_error');
@@ -183,8 +187,11 @@ const DepositWithdraw = (() => {
                     showError('custom_error', error.message);
             }
         } else {
-            $(container).find('iframe').attr('src', response.cashier).parent()
-                .setVisibility(1);
+            const $iframe = $(container).find('iframe');
+            if (isCryptocurrency(Client.get('currency'))) {
+                $iframe.css('height', '700px');
+            }
+            $iframe.attr('src', response.cashier).parent().setVisibility(1);
         }
     };
 
