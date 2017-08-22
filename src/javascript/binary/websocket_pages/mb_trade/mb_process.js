@@ -1,18 +1,19 @@
-const MBContract      = require('./mb_contract');
-const MBDefaults      = require('./mb_defaults');
-const MBNotifications = require('./mb_notifications');
-const MBPrice         = require('./mb_price');
-const MBSymbols       = require('./mb_symbols');
-const MBTick          = require('./mb_tick');
-const BinarySocket    = require('../socket');
-const commonTrading   = require('../trade/common');
-const BinaryPjax      = require('../../base/binary_pjax');
-const Client          = require('../../base/client');
-const getLanguage     = require('../../base/language').get;
-const localize        = require('../../base/localize').localize;
-const urlForStatic    = require('../../base/url').urlForStatic;
-const State           = require('../../base/storage').State;
-const jpClient        = require('../../common_functions/country_base').jpClient;
+const MBContract       = require('./mb_contract');
+const MBDefaults       = require('./mb_defaults');
+const MBNotifications  = require('./mb_notifications');
+const MBPrice          = require('./mb_price');
+const MBSymbols        = require('./mb_symbols');
+const MBTick           = require('./mb_tick');
+const BinarySocket     = require('../socket');
+const commonTrading    = require('../trade/common');
+const BinaryPjax       = require('../../base/binary_pjax');
+const Client           = require('../../base/client');
+const getLanguage      = require('../../base/language').get;
+const localize         = require('../../base/localize').localize;
+const urlForStatic     = require('../../base/url').urlForStatic;
+const State            = require('../../base/storage').State;
+const jpClient         = require('../../common_functions/country_base').jpClient;
+const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 
 const MBProcess = (() => {
     'use strict';
@@ -113,7 +114,7 @@ const MBProcess = (() => {
         });
     };
 
-    const selectors = '.trade-form, .price-table, #trading_bottom_content, .selection_wrapper, #trade_live_chart';
+    const selectors = '.trade_form, .price-table, #trading_bottom_content, .selection_wrapper, #trade_live_chart';
     const handleMarketClosed = () => {
         $(selectors).setVisibility(0);
         hideShowMbTrading('hide');
@@ -227,11 +228,14 @@ const MBProcess = (() => {
         MBPrice.showPriceOverlay();
         const available_contracts = MBContract.getCurrentContracts();
         const durations = MBDefaults.get('period').split('_');
+        const jp_client = jpClient();
+        const is_crypto = isCryptocurrency(MBDefaults.get('currency'));
+        const payout = parseFloat(MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`));
         const req = {
             proposal_array: 1,
             subscribe     : 1,
             basis         : 'payout',
-            amount        : jpClient() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
+            amount        : jp_client ? (parseInt(payout) || 1) * 1000 : payout,
             currency      : MBContract.getCurrency(),
             symbol        : MBDefaults.get('underlying'),
             passthrough   : { req_id: MBPrice.getReqId() },
@@ -283,7 +287,8 @@ const MBProcess = (() => {
         const req_id = MBPrice.getReqId();
         if (response.passthrough.req_id === req_id) {
             if (response.error) {
-                MBNotifications.show({ text: response.error.message, uid: 'PROPOSAL', dismissible: false });
+                const error_message = response.error.error ? response.error.error.message : response.error.message;
+                MBNotifications.show({ text: error_message, uid: 'PROPOSAL', dismissible: false });
                 return;
             }
             MBNotifications.hide('PROPOSAL');

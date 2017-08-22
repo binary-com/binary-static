@@ -218,15 +218,15 @@ const Client = (() => {
                 $('.client_logged_in').setVisibility(1);
                 if (get('is_virtual')) {
                     $(section).find('.client_virtual').setVisibility(1);
-                    $('#topbar').addClass('secondary-bg-color').removeClass('primary-color-dark');
+                    $('#topbar').addClass('secondary-bg-color').removeClass('primary-bg-color-dark');
                 } else {
                     $(section).find('.client_real').not((jpClient() ? '.ja-hide' : '')).setVisibility(1);
-                    $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
+                    $('#topbar').addClass('primary-bg-color-dark').removeClass('secondary-bg-color');
                 }
             });
         } else {
             $(section).find('.client_logged_out').setVisibility(1);
-            $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
+            $('#topbar').addClass('primary-bg-color-dark').removeClass('secondary-bg-color');
         }
     };
 

@@ -18,21 +18,19 @@ const MBContract = (() => {
     const hidden_class = 'invisible';
 
     const durationText = (dur) => {
-        if (dur) {
+        if (dur && jpClient()) {
             dur = dur.replace(/([a-z])/, '$1<br>');
-            if (jpClient()) {
-                const duration_map = {
-                    m: 'minute',
-                    h: 'h',
-                    d: 'day',
-                    W: 'week',
-                    M: 'month',
-                    Y: 'year',
-                };
-                Object.keys(duration_map).forEach((key) => {
-                    dur = dur.replace(key, localize(duration_map[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
-                });
-            }
+            const duration_map = {
+                m: 'minute',
+                h: 'h',
+                d: 'day',
+                W: 'week',
+                M: 'month',
+                Y: 'year',
+            };
+            Object.keys(duration_map).forEach((key) => {
+                dur = dur.replace(key, localize(duration_map[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
+            });
         }
         return dur.toUpperCase();
     };
