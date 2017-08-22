@@ -17,6 +17,7 @@
                 top.location = self.location;
             }
         </script>
+        <META HTTP-EQUIV='Content-Security-Policy' CONTENT="default-src 'self' *.binary.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.binary.com www.googletagmanager.com cdn.pushwoosh.com browser-update.org; style-src 'self' 'unsafe-inline' *.binary.com fonts.googleapis.com; img-src 'self' data: *.binary.com; font-src *; connect-src wss://blue.binaryws.com; wss://green.binaryws.com;">
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
         <meta name="description" content="
