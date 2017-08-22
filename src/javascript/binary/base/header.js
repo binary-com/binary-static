@@ -258,6 +258,7 @@ const Header = (() => {
     return {
         onLoad: onLoad,
 
+        showOrHideLoginForm         : showOrHideLoginForm,
         upgradeMessageVisibility    : upgradeMessageVisibility,
         metatraderMenuItemVisibility: metatraderMenuItemVisibility,
         displayNotification         : displayNotification,
