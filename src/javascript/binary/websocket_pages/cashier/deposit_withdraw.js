@@ -1,10 +1,10 @@
-const BinarySocket = require('../socket');
-const BinaryPjax   = require('../../base/binary_pjax');
-const Client       = require('../../base/client');
-const localize     = require('../../base/localize').localize;
-const urlFor       = require('../../base/url').urlFor;
-const template     = require('../../base/utility').template;
-const FormManager  = require('../../common_functions/form_manager');
+const BinarySocket     = require('../socket');
+const BinaryPjax       = require('../../base/binary_pjax');
+const Client           = require('../../base/client');
+const localize         = require('../../base/localize').localize;
+const urlFor           = require('../../base/url').urlFor;
+const template         = require('../../base/utility').template;
+const FormManager      = require('../../common_functions/form_manager');
 const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 
 const DepositWithdraw = (() => {
