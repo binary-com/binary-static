@@ -5,6 +5,7 @@ const localize     = require('../../base/localize').localize;
 const urlFor       = require('../../base/url').urlFor;
 const template     = require('../../base/utility').template;
 const FormManager  = require('../../common_functions/form_manager');
+const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 
 const DepositWithdraw = (() => {
     'use strict';
@@ -186,8 +187,11 @@ const DepositWithdraw = (() => {
                     showError('custom_error', error.message);
             }
         } else {
-            $(container).find('iframe').attr('src', response.cashier).parent()
-                .setVisibility(1);
+            const $iframe = $(container).find('iframe');
+            if (isCryptocurrency(Client.get('currency'))) {
+                $iframe.css('height', '600px');
+            }
+            $iframe.attr('src', response.cashier).parent().setVisibility(1);
         }
     };
 
