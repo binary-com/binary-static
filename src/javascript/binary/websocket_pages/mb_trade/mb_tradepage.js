@@ -8,6 +8,7 @@ const BinarySocket        = require('../socket');
 const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupChart;
 const localize            = require('../../base/localize').localize;
 const State               = require('../../base/storage').State;
+const jpClient            = require('../../common_functions/country_base').jpClient;
 const JapanPortfolio      = require('../../../binary_japan/trade_japan/portfolio');
 
 const MBTradePage = (() => {
@@ -18,7 +19,13 @@ const MBTradePage = (() => {
 
     const onLoad = () => {
         State.set('is_mb_trading', true);
-        disableTrading();
+        if (jpClient()) {
+            disableTrading();
+            $('#panel').remove();
+        } else {
+            MBDefaults.set('disable_trading', 0);
+            $('#ja-panel').remove();
+        }
 
         if (events_initialized === 0) {
             events_initialized = 1;
