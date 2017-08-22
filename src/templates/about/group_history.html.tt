@@ -26,7 +26,8 @@
         <div class="timeline">
             [% INCLUDE ul items=[
                 { class="year center-text", text="2017" },
-                { class="event", header=l("Personal Wealth Awards 2017"), text=l("[_1] is awarded Best Binary Options Broker by the UK-based Online Personal Wealth Awards 2017, as voted by investors worldwide.", website_name) },
+                { class="event",                header=l("Personal Wealth Awards 2017"),                  text=l("[_1] is awarded Best Binary Options Broker by the UK-based Online Personal Wealth Awards 2017, as voted by investors worldwide.", website_name) },
+                { class="event right featured", header=l("[_1] launches Bitcoin accounts", website_name), text=l("[_1] launches Bitcoin (BTC) accounts for non-EU customers.", website_name) },
 
                 { class="year center-text", text="2016" },
                 { class="event featured",       header=l("Binary KK granted Japan license"),    text=l("Binary's Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan.") },

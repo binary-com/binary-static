@@ -1,12 +1,13 @@
-const moment        = require('moment');
-const getCurrencies = require('./get_currency').getCurrencies;
-const BinarySocket  = require('../socket');
-const BinaryPjax    = require('../../base/binary_pjax');
-const Client        = require('../../base/client');
-const localize      = require('../../base/localize').localize;
-const urlFor        = require('../../base/url').urlFor;
-const State         = require('../../base/storage').State;
-const toTitleCase   = require('../../common_functions/string_util').toTitleCase;
+const moment           = require('moment');
+const getCurrencies    = require('./get_currency').getCurrencies;
+const BinarySocket     = require('../socket');
+const BinaryPjax       = require('../../base/binary_pjax');
+const Client           = require('../../base/client');
+const localize         = require('../../base/localize').localize;
+const State            = require('../../base/storage').State;
+const urlFor           = require('../../base/url').urlFor;
+const getPropertyValue = require('../../base/utility').getPropertyValue;
+const toTitleCase      = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
     'use strict';
@@ -46,6 +47,8 @@ const Accounts = (() => {
         $('#accounts_wrapper').setVisibility(1);
     };
 
+    const getCompanyName = account => Client.getLandingCompanyValue(account, landing_company, 'name');
+
     const populateNewAccounts = (upgrade_info) => {
         const new_account = upgrade_info;
         const account = {
@@ -55,7 +58,7 @@ const Accounts = (() => {
 
         $('#new_accounts').find('tbody')
             .append($('<tr/>')
-                .append($('<td/>', { text: localize(`${toTitleCase(new_account.type)} Account`) }))
+                .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': getCompanyName(account) })))
                 .append($('<td/>', { text: getAvailableMarkets(account) }))
                 .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', ') }))
                 .append($('<td/>')
@@ -68,11 +71,12 @@ const Accounts = (() => {
             .sort((a, b) => a > b)
             .forEach((loginid) => {
                 const account_currency = Client.get('currency', loginid);
+                const company_name = Client.isAccountOfType('virtual', loginid) ? toTitleCase(getPropertyValue(landing_company, 'virtual_company')) : getCompanyName(loginid);
 
                 $('#existing_accounts').find('tbody')
                     .append($('<tr/>', { id: loginid })
                         .append($('<td/>', { text: loginid }))
-                        .append($('<td/>', { text: localize(Client.getAccountTitle(loginid)) }))
+                        .append($('<td/>').html($('<span/>', { text: localize(Client.getAccountTitle(loginid)), 'data-balloon': company_name })))
                         .append($('<td/>', { text: getAvailableMarkets(loginid) }))
                         .append($('<td/>')
                             .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
@@ -104,7 +108,7 @@ const Accounts = (() => {
     const populateMultiAccount = (currencies) => {
         $('#new_accounts').find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
-                .append($('<td/>', { text: localize('Real Account') }))
+                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': getCompanyName({ real: 1 }) })))
                 .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create') }))));
@@ -131,7 +135,9 @@ const Accounts = (() => {
                 BinarySocket.send(req).then((response) => {
                     if (response.error) {
                         const account_opening_reason = State.getResponse('get_settings.account_opening_reason');
-                        if (response.error.code === 'InsufficientAccountDetails' && !account_opening_reason) {
+                        if (!account_opening_reason && response.error.details.hasOwnProperty('account_opening_reason') &&
+                            (response.error.code === 'InsufficientAccountDetails' ||
+                            response.error.code === 'InputValidationFailed')) {
                             // ask client to set account opening reason
                             BinaryPjax.load(`${urlFor('user/settings/detailsws')}#new-account`);
                         } else {
