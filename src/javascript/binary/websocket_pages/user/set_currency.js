@@ -93,6 +93,7 @@ const SetCurrency = (() => {
                             if (redirect_url) {
                                 window.location.href = Url.urlFor(redirect_url) + hash; // load without pjax
                             } else {
+                                Header.showOrHideLoginForm(); // update account title
                                 $('.select_currency').setVisibility(0);
                                 $('#has_currency').setVisibility(1);
                             }

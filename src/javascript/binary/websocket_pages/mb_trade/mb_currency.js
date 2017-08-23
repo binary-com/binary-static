@@ -33,7 +33,6 @@ const MBDisplayCurrencies = () => {
                     MBContract.setCurrentItem($currency, currency);
                 }
             });
-            $currency.css('z-index', '0');
         }
         $current.html(formatCurrency(def_value));
     } else {
