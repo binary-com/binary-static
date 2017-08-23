@@ -26,9 +26,11 @@ sudo carton install
 ```
 
 #### Note: 
-You need to have the latest `node` & `npm` versions 
+You need to have:
 
-Make sure to use `Perl 5.18.2`
+- The latest version of `node`
+- Version 4.x.x of `npm` (`npm install npm@4 -g`)
+- `Perl v5.18.2`
 
 In Mac systems, the safest way to install an old version of Perl is: 
 
@@ -46,23 +48,10 @@ How to work with this project
 
 ### Deploy to your gh-pages for the first time
 
-1. You need to have your own application registered at Binary.com because it should redirect client to your github pages after login. There is no UI for it yet, so you can send the following request for now (change *YOUR_APP_NAME* and *YOUR_GITHUB_USERNAME* as well):
+1. Register your application [here](https://developers.binary.com/applications/). This will give you the ability to redirect back to your github pages after login.
+Use `https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/logged_inws.html` for Redirect URL.
 
-    ```json
-    {
-      "app_register": 1,
-      "name": "YOUR_APP_NAME",
-      "scopes": [
-        "read",
-        "admin",
-        "trade",
-        "payments"
-      ],
-      "redirect_uri": "https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/logged_inws.html"
-    }
-    ```
-
-2. Put the `app_id` returned by WebSocket in `src/javascript/config.js`
+2. In `src/javascript/config.js`: Replace the number `1` in `getAppId()` function with the `Application ID` of your registered application.
   * **NOTE:** In order to avoid accidentally committing personal changes to this file, use `git update-index --assume-unchanged src/javascript/config.js`
 
 3. Run `grunt dev`
