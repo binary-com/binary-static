@@ -223,14 +223,16 @@ const Highchart = (() => {
                     updateChart(options);
                 }
             }
-            if (entry_tick_time && !is_entry_tick_barrier_selected) {
-                chart_promise.then(selectEntryTickBarrier);
-            }
-            if (is_sold || is_settleable) {
-                chart_promise.then(() => {
-                    updateZone('exit');
-                    endContract();
-                });
+            if (chart_promise && typeof chart_promise.then === 'function') {
+                if (entry_tick_time && !is_entry_tick_barrier_selected) {
+                    chart_promise.then(selectEntryTickBarrier);
+                }
+                if (is_sold || is_settleable) {
+                    chart_promise.then(() => {
+                        updateZone('exit');
+                        endContract();
+                    });
+                }
             }
         } else if (type === 'ticks_history' && error) {
             HighchartUI.showError('', error.message);
