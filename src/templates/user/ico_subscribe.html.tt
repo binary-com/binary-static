@@ -89,8 +89,8 @@
     <div class="faded">
         <p>[% l('Notes:') %]</p>
         <ol>
-            <li>[% l('Bid cancellation can be done with a 2% cancellation fee.') %]</li>
-            <li>[% l('Due to US regulations, US investors can only claim their tokens after 1 year.') %]</li>
+            <li>[% l('Each bid cancellation will be subject to a 2% cancellation fee.') %]</li>
+            <li>[% l('Unsuccessful bidders will receive a full refund of their deposits.') %]</li>
         </ol>
     </div>
 </div>
