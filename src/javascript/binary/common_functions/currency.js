@@ -1,5 +1,6 @@
 const jpClient         = require('./country_base').jpClient;
 const getLanguage      = require('../base/language').get;
+const localize         = require('../base/localize').localize;
 const getPropertyValue = require('../base/utility').getPropertyValue;
 
 let currencies_config = {};
@@ -47,12 +48,23 @@ const setCurrencies = (website_status) => {
 
 const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type']));
 
+const currency_names = {
+    BTC: 'Bitcoin',
+    BCH: 'Bitcoin Cash',
+    ETH: 'Ether',
+    ETC: 'Ether Classic',
+    LTC: 'Litecoin',
+};
+
+const getCurrencyName = currency => localize(currency_names[currency] || '');
+
 module.exports = {
     formatMoney     : formatMoney,
     formatCurrency  : formatCurrency,
-    isCryptocurrency: isCryptocurrency,
     addComma        : addComma,
     getDecimalPlaces: getDecimalPlaces,
     setCurrencies   : setCurrencies,
     getCurrencies   : () => currencies_config,
+    isCryptocurrency: isCryptocurrency,
+    getCurrencyName : getCurrencyName,
 };
