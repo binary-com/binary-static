@@ -6,6 +6,7 @@ const localize         = require('../../base/localize').localize;
 const State            = require('../../base/storage').State;
 const Url              = require('../../base/url');
 const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
+const getCurrencyName  = require('../../common_functions/currency').getCurrencyName;
 
 const SetCurrency = (() => {
     'use strict';
@@ -36,7 +37,7 @@ const SetCurrency = (() => {
                 (isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies)
                     .append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
                         .append($('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
-                        .append($('<div/>', { html: c })));
+                        .append($('<div/>', { class: 'currency-name', html: (isCryptocurrency(c) ? `${getCurrencyName(c)}<br />(${c})` : c) })));
             });
             const fiat_currencies = $fiat_currencies.html();
             if (fiat_currencies) {
