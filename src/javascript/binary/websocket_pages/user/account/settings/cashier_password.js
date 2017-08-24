@@ -7,7 +7,7 @@ const CashierPassword = (() => {
     'use strict';
 
     let $form,
-        redirect_url;
+        should_redirect = false;
     const form_id = '#frm_cashier_password';
 
     const onLoad = () => {
@@ -67,21 +67,22 @@ const CashierPassword = (() => {
             $form_error.text(localize(message)).setVisibility(1);
             return;
         }
-        redirect_url = sessionStorage.getItem('cashier_lock_redirect') || '';
         $form.setVisibility(0);
         $form_message.text(localize('Your settings have been updated successfully.'));
         setTimeout(redirect, 2000);
     };
 
     const redirect = () => {
-        if (redirect_url) {
-            sessionStorage.removeItem('cashier_lock_redirect');
-            BinaryPjax.load(redirect_url);
+        if (should_redirect) {
+            should_redirect = false;
+            BinaryPjax.loadPreviousUrl();
         }
     };
 
     return {
         onLoad: onLoad,
+
+        setShouldRedirect: (bool) => { should_redirect = bool; },
     };
 })();
 
