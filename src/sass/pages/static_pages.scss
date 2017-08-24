@@ -319,5 +319,9 @@ body #not_authenticated_financial ul.checked > li {
         &.selected {
             background-image: url('../images/pages/set_currency/tick-selected.svg');
         }
+        .currency-name {
+            line-height: 22px;
+            padding: 4px 0;
+        }
     }
 }

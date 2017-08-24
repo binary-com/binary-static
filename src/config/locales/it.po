@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-16 23:21-0400\n"
+"PO-Revision-Date: 2017-08-23 20:53-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -70,10 +70,10 @@ msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through
 msgstr "Il payout di %1 %2 se %3 termina al di fuori dei valori inferiori e superiori della Barriera vicino a %4."
 
 msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
-msgstr ""
+msgstr "Il payout di %1 %2 se %3 è molto più alto o uguale alla Barriera vicino a %4."
 
 msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
-msgstr ""
+msgstr "Il payout di %1 %2 se %3 è molto più basso alla Barriera vicino a %4."
 
 msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
 msgstr "Il payout di %1 %2 se %3 termina tra i valori inferiori e superiori della Barriera vicino a %4."
@@ -94,7 +94,7 @@ msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Termini e condizioni dell'interfaccia del programma di affiliazione di %1 (\"API\")"
 
 msgid "%1 ICO <br /> Pre-announcement"
-msgstr ""
+msgstr "%1 ICO <br /> Pre-annuncio"
 
 msgid "%1 ICO FAQ"
 msgstr "FAQ dell'ICO di %1"
@@ -127,7 +127,7 @@ msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "%1 e il logo toro/orso sono marchi registrati."
 
 msgid "%1 assesses the choice of external execution venues regularly (at least once a year) with the intention of achieving a better result for you based on our best execution obligation."
-msgstr ""
+msgstr "%1 valuta regolarmente la scelta di luoghi di esecuzione esterni (almeno una volta all'anno) con l'intenzione di raggiungere un risultato migliore per te sulla base del nostro obbligo di miglior esecuzione."
 
 msgid "%1 continues to innovate and grow"
 msgstr "%1 continua a innovarsi e a crescere"
@@ -193,7 +193,7 @@ msgid "%1 is an active proponent of the open-source movement and is in the proce
 msgstr "%1 è un sostenitore attivo del movimento di open-source ed è in fase di libera offerta di un certo numero di componenti del suo codebase."
 
 msgid "%1 is awarded Best Binary Options Broker by the UK-based Online Personal Wealth Awards 2017, as voted by investors worldwide."
-msgstr ""
+msgstr "%1 è stato premiato come Miglior broker in opzioni binarie da parte dell'Online Personal Wealth Awards 2017 del Regno Unito, come votato dagli investitori a livello mondiale."
 
 msgid "%1 is entirely web-based and requires no software installation."
 msgstr "%1 si basa completamente sul web e non richiede l'installazione di alcun software."
@@ -214,7 +214,7 @@ msgid "%1 is not available in Costa Rica and is not regulated or supervised by a
 msgstr "%1 non è disponibile in Costa Rica e non è regolamentato o supervisionato da alcun ente regolatore nel sistema finanziario della Costa Rica."
 
 msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency."
-msgstr ""
+msgstr "%1 offre fino a <strong>10.000.000</strong> token in un'asta aperta. Puoi piazzare le tue offerte utilizzando il modulo qui sotto. L'offerta minima è pari a <strong>USD 1</strong> o equivalente in altra valuta."
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 è uno dei primi e più stimati nomi nel trading in opzioni binarie."
@@ -241,10 +241,10 @@ msgid "%1 is the award-winning industry pioneer in online options trading. We bo
 msgstr "%1 è il pioniere pluripremiato nel settore del trading di opzioni online. Vantiamo:"
 
 msgid "%1 launches Bitcoin (BTC) accounts for non-EU customers."
-msgstr ""
+msgstr "%1 lancia degli account di Bitcoin (BTC) per i clienti non europei."
 
 msgid "%1 launches Bitcoin accounts"
-msgstr ""
+msgstr "%1 lancia gli account di Bitcoin"
 
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 lancia un %2sito di e-commerce per prodotti marchiati%3 – per consentire ai clienti, agli affiliati e agli sviluppatori di acquistare e vendere i prodotti di %1."
@@ -1272,7 +1272,7 @@ msgid "Avoid the need to have an e-wallet"
 msgstr "Evitare l'esigenza di avere un e-wallet"
 
 msgid "Award-winning online trading platform"
-msgstr ""
+msgstr "Piattaforma di trading online pluripremiata"
 
 msgid "Award-winning platforms"
 msgstr "Piattaforme pluripremiate"
@@ -1284,7 +1284,7 @@ msgid "B. Commencement and Cancellation"
 msgstr ""
 
 msgid "B. Scope"
-msgstr ""
+msgstr "B. Scopo"
 
 msgid "BIEL Terms"
 msgstr "Termini di BIEL"
@@ -1299,7 +1299,7 @@ msgid "Back"
 msgstr "Precedente"
 
 msgid "Back-office support"
-msgstr ""
+msgstr "Assistenza di back-office"
 
 msgid "Balance"
 msgstr "Saldo"
@@ -1323,7 +1323,7 @@ msgid "Banks, hedge funds and professional investors routinely trade binary opti
 msgstr "Le banche, i fondi speculativi e gli investitori professionisti negoziano abitualmente opzioni binarie nei mercati OTC dei derivati. Molti professionisti dei mercati utilizzano e si affidano alla piattaforma di %1 per i trade flessibili ad alto volume."
 
 msgid "Banner placement."
-msgstr ""
+msgstr "Posizionamento del banner."
 
 msgid "Barrier"
 msgstr "Barriera"
@@ -1397,9 +1397,6 @@ msgstr ""
 msgid "Bid Price Per Token"
 msgstr ""
 
-msgid "Bid cancellation can be done with a 2% cancellation fee."
-msgstr ""
-
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
 
@@ -1452,7 +1449,7 @@ msgid "Binary ICO Auction Bids"
 msgstr ""
 
 msgid "Binary Initial Coin Offering (ICO)"
-msgstr ""
+msgstr "Binary Initial Coin Offering (ICO)"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr ""
@@ -1574,6 +1571,12 @@ msgstr ""
 msgid "Binary.com will issue a number of tokens during the ICO."
 msgstr ""
 
+msgid "Bitcoin"
+msgstr ""
+
+msgid "Bitcoin Cash"
+msgstr ""
+
 msgid "Both the above"
 msgstr "Both the above"
 
@@ -1644,7 +1647,7 @@ msgid "C. Provision of Services"
 msgstr ""
 
 msgid "CAD 1 per point"
-msgstr ""
+msgstr "CAD 1 per punto"
 
 msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
 msgstr ""
@@ -1695,7 +1698,7 @@ msgid "Cash Business"
 msgstr ""
 
 msgid "Cash Indices"
-msgstr ""
+msgstr "Indici Cash"
 
 msgid "Cashier"
 msgstr "Cassa"
@@ -1785,7 +1788,7 @@ msgid "Choose the Touch/No Touch trade if you want to predict the market touchin
 msgstr ""
 
 msgid "Choose the Underlying"
-msgstr ""
+msgstr "Scegli l'asset sottostante"
 
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
 msgstr "La prima cosa da fare è scegliere l'asset che desideri negoziare, come ad esempio l'oro o il petrolio, azioni o tassi FX (il valore di un'opzione binaria deriva dal prezzo dell'asset sottostante). Un grande vantaggio del trading di opzioni è che non stai acquistando\n"
@@ -1798,10 +1801,10 @@ msgid "Choose the specific type of API token that you need, based on the capabil
 msgstr "Scegli la tipologia specifica di token API di cui hai bisogno, sulla base delle capacità che desideri rendere disponibili."
 
 msgid "Choose timeframes from 10 seconds to 365 days"
-msgstr ""
+msgstr "Scegli periodi da 10 secondi a 365 giorni"
 
 msgid "Choose token Name"
-msgstr ""
+msgstr "Scegli il nome del token"
 
 msgid "Choose your Stake and Potential Return"
 msgstr ""
@@ -1849,16 +1852,16 @@ msgid "Click on the <strong>OK</strong> button to save and close."
 msgstr ""
 
 msgid "Click on the <strong>OK</strong> button to save your settings."
-msgstr ""
+msgstr "Clicca sul pulsante <strong>OK</strong> per salvare le impostazioni."
 
 msgid "Click on the <strong>Privacy</strong> tab."
-msgstr ""
+msgstr "Clicca sul tab <strong>Privacy</strong>."
 
 msgid "Click on the <strong>Show advanced settings</strong>."
-msgstr ""
+msgstr "Clicca su <strong>Mostra impostazioni avanzate</strong>."
 
 msgid "Click on the <strong>X</strong> button at the top right to save and close."
-msgstr ""
+msgstr "Clicca sul pulsante <strong>X</strong> in alto a destra per salvare e chiudere."
 
 msgid "Client Money"
 msgstr "Denaro dei clienti"
@@ -1870,7 +1873,7 @@ msgid "Client funds"
 msgstr "Fondi dei clienti"
 
 msgid "Client transactions"
-msgstr ""
+msgstr "Transazioni dei clienti"
 
 msgid "Client's Liability"
 msgstr "Responsabilità del cliente"
@@ -1930,7 +1933,7 @@ msgid "Closed"
 msgstr "Chiuso"
 
 msgid "Closed Bid"
-msgstr ""
+msgstr "Offerta chiusa"
 
 msgid "Closes"
 msgstr "Chiude"
@@ -1999,7 +2002,7 @@ msgid "Compare all the trading platforms that we offer. Choose the ideal platfor
 msgstr "Confronta tutte le piattaforme di trading da noi offerte. Scegli la piattaforma ideale per la tua strategia di trading preferita."
 
 msgid "Competitive and transparent pricing"
-msgstr ""
+msgstr "Prezzi competitivi e trasparenti"
 
 msgid "Complaints"
 msgstr "Reclami"
@@ -2047,13 +2050,13 @@ msgid "Conflicts Policy"
 msgstr "Risoluzione Controversie"
 
 msgid "Congratulations!"
-msgstr ""
+msgstr "Congratulazioni!"
 
 msgid "Congratulations! Your %1 Account has been created."
 msgstr "Congratulazioni! Il tuo account %1 è stato creato."
 
 msgid "Connection error: Please check your internet connection."
-msgstr ""
+msgstr "Errore di connessione: verifica la tua connessione internet."
 
 msgid "Construction"
 msgstr "Costruzione"
@@ -2116,7 +2119,7 @@ msgid "Contract Specifications - Forex"
 msgstr "Specifiche del contratto - Forex"
 
 msgid "Contract has not started yet"
-msgstr ""
+msgstr "Il contratto non è ancora iniziato"
 
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
 msgstr "I payout del contratto saranno determinati dalla Società in base ai valori quotidiani high/low/di chiusura riportati su questo sito internet relativi all'indice o agli indici del/dei contratto/i oppure dei dati del trading interbancario ricevuti dalla Società per le quotazioni Forex o i prezzi delle materie prime, così come indicati sul sito. La Società avrà il diritto di effettuare correzioni a tali dati in presenza di errate quotazioni o dati tipograficamente errati. I clienti devono notare che i diversi mercati possono chiudere in orari diversi durante la giornata a causa degli orari locali di trading e dei fusi orari."
@@ -2176,7 +2179,7 @@ msgid "Controlled risk"
 msgstr "Rischio controllato"
 
 msgid "Convert your tokens into shares"
-msgstr ""
+msgstr "Converti i tuoi token in azioni"
 
 msgid "Cookies"
 msgstr "Cookie"
@@ -2287,10 +2290,10 @@ msgid "Cyberjaya Office"
 msgstr "Ufficio di Cyberjaya"
 
 msgid "D"
-msgstr ""
+msgstr "D"
 
 msgid "D. Capacity"
-msgstr ""
+msgstr "D. Capacità"
 
 msgid "D. Client Instructions"
 msgstr ""
@@ -2391,9 +2394,6 @@ msgstr ""
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Deposita o preleva dal tuo account tramite bonifico bancario, carta di credito o e-cash wallet."
 
-msgid "Deposit or withdraw to your account via bitcoin."
-msgstr ""
-
 msgid "Deposit: %1 working day"
 msgstr "Deposito: %1 giorno lavorativo"
 
@@ -2419,7 +2419,7 @@ msgid "Design engaging, visually inspiring content for the company's website and
 msgstr "Progettare contenuti coinvolgenti e visivamente stimolanti per il sito internet della società e per molte altre forme multimediali, compresi materiali online e offline."
 
 msgid "Desired language."
-msgstr ""
+msgstr "Lingua desiderata."
 
 msgid "Detailed report:"
 msgstr ""
@@ -2497,7 +2497,7 @@ msgid "Distribution of dividends will be announced on the Binary.com website."
 msgstr ""
 
 msgid "Dividends paid out"
-msgstr ""
+msgstr "Dividendi distribuiti"
 
 msgid "Divorce Settlement"
 msgstr ""
@@ -2559,9 +2559,6 @@ msgstr "Guidare la rapida crescita e lo sviluppo aziendale per supportare le ven
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "Guidare la rapida crescita di aree chiave del mondo, applicando una varietà di capacità commerciali online e offline per ampliare la rete di affiliati attivi della società."
 
-msgid "Due to US regulations, US investors can only claim their tokens after 1 year."
-msgstr ""
-
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "A seguito di recenti variazioni normative, ai nostri clienti richiediamo di completare la seguente Valutazione finanziaria. Ti preghiamo di notare che non potrai continuare a fare trading fino a quando non l'avrai completato."
 
@@ -2615,6 +2612,9 @@ msgstr ""
 
 msgid "EUR 1 per point"
 msgstr "EUR 1 per punto"
+
+msgid "Each bid cancellation will be subject to a 2% cancellation fee."
+msgstr ""
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "Ogni contratto di opzioni binarie è valido per un determinato periodo di tempo. Con %1 puoi scegliere un contratto con durata da 10 secondi a 365 giorni."
@@ -2811,6 +2811,12 @@ msgstr "Equities"
 msgid "Estimated Net Worth"
 msgstr "Valore netto stimato"
 
+msgid "Ether"
+msgstr ""
+
+msgid "Ether Classic"
+msgstr ""
+
 msgid "Ethics Code"
 msgstr "Ethics Code"
 
@@ -2818,7 +2824,7 @@ msgid "Euro 50 Cash Index"
 msgstr ""
 
 msgid "Eurobasket Wolves"
-msgstr ""
+msgstr "Eurobasket Wolves"
 
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "I soggetti residenti nell'Unione Europea, ad eccezione del Regno Unito, che desiderano fare trading con i prodotti del gioco d'azzardo, apriranno il proprio account con Binary (Europe) Ltd."
@@ -2986,7 +2992,7 @@ msgid "Extensive product range"
 msgstr ""
 
 msgid "External forces"
-msgstr ""
+msgstr "Forze esterne"
 
 msgid "Extra revenue stream:"
 msgstr ""
@@ -3001,7 +3007,7 @@ msgid "FAQ"
 msgstr "FAQ"
 
 msgid "FIX API"
-msgstr ""
+msgstr "FIX API"
 
 msgid "FX Bloggers, Mentors & Gurus"
 msgstr ""
@@ -3109,7 +3115,7 @@ msgid "Firsthand knowledge of other cultures through direct experience"
 msgstr "Conoscenza diretta di altre culture attraverso esperienza personale"
 
 msgid "Fixed spreads"
-msgstr ""
+msgstr "Spread fissi"
 
 msgid "Flexible"
 msgstr "Flessibile"
@@ -3220,7 +3226,7 @@ msgid "Free webinars"
 msgstr "Webinar gratuiti"
 
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "Domande frequenti"
 
 msgid "Fresh graduates who meet our basic requirements and are passionate about pursuing a professional career in administrative services are welcome to apply."
 msgstr "Sono i benvenuti giovani laureati che soddisfino i nostri requisiti di base e che abbiano la passione per il raggiungimento di una carriera professionale nei servizi amministrativi."
@@ -3235,7 +3241,7 @@ msgid "Front-End (Javascript) Development"
 msgstr "Sviluppo front-end (Javascript)"
 
 msgid "Fund Transfers"
-msgstr ""
+msgstr "Trasferimenti di fondi"
 
 msgid "Funding of Real Account"
 msgstr ""
@@ -3298,7 +3304,7 @@ msgid "Generate periodic and special reports summarizing client trading trends"
 msgstr "Generare report periodici e speciali per sintetizzare i trend di trading dei clienti"
 
 msgid "Generated verification code:"
-msgstr ""
+msgstr "Codice di verifica generato:"
 
 msgid "Generous Commission Structure"
 msgstr "Sistema vantaggioso di provvigioni"
@@ -3514,7 +3520,7 @@ msgid "How is margin calculated?"
 msgstr ""
 
 msgid "How it works"
-msgstr ""
+msgstr "Come funziona"
 
 msgid "How much dividend will I receive?"
 msgstr ""
@@ -4887,6 +4893,9 @@ msgstr "Link"
 msgid "Liquidity solutions"
 msgstr ""
 
+msgid "Litecoin"
+msgstr ""
+
 msgid "Lock Cashier"
 msgstr "Blocca la Cassa"
 
@@ -5015,6 +5024,9 @@ msgstr "Gestire le misure di sicurezza, di rilevamento delle intrusioni, di prot
 
 msgid "Manage the company's cashier system"
 msgstr "Gestire il sistema di cassa della società"
+
+msgid "Manage the funds in your cryptocurrency account."
+msgstr ""
 
 msgid "Manage your authorised applications."
 msgstr "Gestisci le tue applicazioni autorizzate."
@@ -8534,6 +8546,9 @@ msgstr ""
 
 msgid "Unlock Cashier"
 msgstr "Sblocca Cassa"
+
+msgid "Unsuccessful bidders will receive a full refund of their deposits."
+msgstr ""
 
 msgid "Up - Predict that the market will end higher than the average price"
 msgstr "Up - prevedi che il mercato chiuderà a un prezzo più alto di quello medio"
