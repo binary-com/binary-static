@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-14 21:23-0400\n"
+"PO-Revision-Date: 2017-08-22 20:54-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -240,6 +240,12 @@ msgstr "%1 ist der preisgekrönte Branchenpionier im Bereich des Online-Handels 
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 ist der preisgekrönte Branchenpionier im Bereich des Online-Handels mit Optionen. Wir bieten:"
 
+msgid "%1 launches Bitcoin (BTC) accounts for non-EU customers."
+msgstr "%1 startet Bitcoin (BTC) Konten für Kunden außerhalb der EU."
+
+msgid "%1 launches Bitcoin accounts"
+msgstr "%1 startet Bitcoin Konten"
+
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 führt eine %2eCommerce Site für Markenartikel%3 ein, die es Kunden, Geschäftspartnern und Entwicklern ermöglicht, %1 Produkte zu kaufen und zu verkaufen."
 
@@ -294,8 +300,8 @@ msgstr "%1 bietet institutionellen Kunden auf der ganzen Welt Börsenkurse und H
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "%1 bietet Ihnen beim Verwalten eingehender Order die beste Ausführung, indem eine schlaue Aggregations-Methode angewandt wird. Die schlaue Aggregations-Methode funktioniert indem:"
 
-msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:"
-msgstr "%1 bietet Ihnen die Möglichkeit Ihre Handelstätigkeiten auf dieser Webseite entweder auszuschließen oder <a href=\"%2\">ihnen Limits zu setzen</a>. Sie können <a href=\"%3\">uns auch kontaktieren</a>, um die gewünschten Limits via live Chat, E-mail oder Telefon anzugeben. Verfügbare Limits sind:"
+msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via email or phone. Available limits are:"
+msgstr "%1 bietet Ihnen die Möglichkeit Ihre Handelstätigkeiten auf dieser Webseite entweder auszuschließen oder <a href=\"%2\">Ihnen Limits zu setzen</a>. Sie können <a href=\"%3\">uns auch kontaktieren</a>, um die gewünschten Limits via E-mail oder Telefon anzugeben. Verfügbare Limits sind:"
 
 msgid "%1 reaches $2 billion turnover since starting in 1999"
 msgstr "Seit dem Start in 1999 hat %1 einen Umsatz von 2 Milliarden US$ erwirtschaftet"
@@ -374,6 +380,9 @@ msgstr "Die Systeme von %1 verarbeiten jetzt über 1 Millionen Transaktionen/Tag
 
 msgid "%1Authenticate your account%2 now to take full advantage of all payment methods available."
 msgstr "Bitte %1Authentifizieren Sie Ihr Konto%2 jetzt, um von allen Zahlungsmethoden Gebrauch zu machen."
+
+msgid "%1Contact us%2 to arrange a date and time for the video call."
+msgstr "%1Kontaktieren Sie uns%2, um ein Datum und eine Uhrzeit für den Videoanruf festzulegen."
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1s gemeinnützige Initiative konzentriert sich auf kleine Stiftungen und Non-Profit-Organisationen auf der ganzen Welt, die einen Unterschied für die lokale Bevölkerung machen. Im Gegensatz zu größeren Stiftungen, haben unsere Spenden einen direkten Einfluss, da sie von der Belastung mit Betriebskosten frei sind."
@@ -1180,7 +1189,7 @@ msgid "Asset Index"
 msgstr "Vermögensindex"
 
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
-msgstr ""
+msgstr "Übertragen und verwalten Sie mehrere Sub-Konten nahtlos über eine einzige Schnittstelle - dem Multiple Accounts Manager (MAM)."
 
 msgid "Assist in the proofreading and recording of video presentations"
 msgstr "Unterstützung beim Korrekturlesen und der Aufnahme von Video-Präsentationen"
@@ -1845,9 +1854,6 @@ msgstr "Klicken Sie auf <strong>Erweiterte Einstellungen anzeigen</strong>."
 msgid "Click on the <strong>X</strong> button at the top right to save and close."
 msgstr "Klicken Sie auf die <strong>X</strong> Schaltfläche rechts oben, um zu speichern und zu schließen."
 
-msgid "Click on the link to connect to the video call."
-msgstr "Klicken Sie auf den Link, um das Video-Gespräch herzustellen."
-
 msgid "Client Money"
 msgstr "Kundengelder"
 
@@ -2233,6 +2239,9 @@ msgstr "Gutschrift/Lastschrift"
 msgid "Credit/Debit Card"
 msgstr "Kredit-/Debitkarte"
 
+msgid "Cryptocurrencies"
+msgstr "Kryptowährungen"
+
 msgid "Cryptocurrency"
 msgstr "Kryptowährung"
 
@@ -2380,11 +2389,11 @@ msgstr "Ein- oder Auszahlung von oder auf Ihr Konto über Banküberweisung, Kred
 msgid "Deposit or withdraw to your account via bitcoin."
 msgstr "Zahlen Sie auf Ihr Konto über Bitcoin ein, oder heben Sie davon über Bitcoin ab."
 
-msgid "Deposit page"
-msgstr "Einzahlungsseite"
-
 msgid "Deposit: %1 working day"
 msgstr "Einzahlung: %1 Werktag"
+
+msgid "Deposit: 3 blockchain confirmations"
+msgstr "Einzahlung: 3 Blockchain Bestätigungen"
 
 msgid "Deposit: Instant"
 msgstr "Einzahlung: Sofort"
@@ -3022,8 +3031,8 @@ msgstr "Feb"
 msgid "February"
 msgstr "Februar"
 
-msgid "Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via live chat, email and telephone."
-msgstr "Sie können gerne unsere freundlichen und hilfsbereiten Kundenbetreuer fragen. Sie sind immer dazu bereit, Ihre Fragen zu beantworten. Sie können sich mit uns über Live-Chat, E-Mail und Telefon in Verbindung setzen."
+msgid "Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via email and telephone."
+msgstr "Sie können gerne unsere freundlichen und hilfsbereiten Kundenbetreuer fragen. Sie sind immer dazu bereit, Ihre Fragen zu beantworten. Sie können sich mit uns über E-Mail und Telefon in Verbindung setzen."
 
 msgid "Female"
 msgstr "Female"
@@ -4040,7 +4049,7 @@ msgid "Intellectual property"
 msgstr "Geistiges Eigentum"
 
 msgid "Interested in our MAM tool for MetaTrader 5? Contact us at %1 for more info."
-msgstr ""
+msgstr "Interesse an unserem MAM Tool für MetaTrader 5? Kontaktieren Sie uns unter %1 für weitere Informationen."
 
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Sie interessieren sich für unsere Liquiditätslösungen? Kontaktieren Sie uns unter %1 für weitere Informationen."
@@ -4873,9 +4882,6 @@ msgstr "Links"
 msgid "Liquidity solutions"
 msgstr "Liquidität-Lösungen"
 
-msgid "Live chat:"
-msgstr "Live-Chat:"
-
 msgid "Lock Cashier"
 msgstr "Kasse blockieren"
 
@@ -5170,6 +5176,9 @@ msgstr "MetaTrader Kontenverwaltung"
 msgid "Method"
 msgstr "Methode"
 
+msgid "Min Withdrawal"
+msgstr "Min Auszahlung"
+
 msgid "Min-Max Deposit"
 msgstr "Min-Max Einzahlung"
 
@@ -5285,10 +5294,10 @@ msgid "Multi-lingual and multi-currency support"
 msgstr "Mehrsprachige Betreuung und Unterstützung mehrerer Währungen"
 
 msgid "Multiple Accounts Manager (MAM)"
-msgstr ""
+msgstr "Multiple Accounts Manager (MAM)"
 
 msgid "Multiple Accounts Manager (MAM) for MetaTrader 5 (MT5)"
-msgstr ""
+msgstr "Multiple Accounts Manager (MAM) für MetaTrader 5 (MT5)"
 
 msgid "Multiple Charts"
 msgstr "Multiple-Charts"
@@ -5707,9 +5716,6 @@ msgstr "Unser Unternehmen ist weiterhin erfolgreich und erhält auf der Isle of 
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgstr "Unsere Kosten und Gebühren für die Geldeinzahlung und Auszahlung sind <a href=\"%1\">hier</a> aufgeführt. Bitte beachten Sie alle für Sie geltenden Kosten und Gebühren, da sie die Rentabilität beeinflussen."
 
-msgid "Our customer support agent will provide you with a unique link to connect to the video call."
-msgstr "Unser Kunden-Support-Mitarbeiter bieten Ihnen einen einzigartigen Link zum Herstellen einer Video-Unterhaltung."
-
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "Es ist eindeutig, dass unsere Kunden uns mögen. Mitte 2014 hat %1 über 100 Millionen historische Überweisungen und mehr als 130.000 neue Überweisungen täglich abgewickelt."
 
@@ -6090,6 +6096,9 @@ msgstr "Bitte wählen Sie die Währung für dieses Konto:"
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "Bitte legen Sie ein %1Wohnsitzland%2 fest, bevor Sie auf ein Echtgeldkonto aufrüsten."
+
+msgid "Please set the %1currency%2 of your account."
+msgstr "Bitte legen Sie die %1Währung%2 für Ihr Konto fest."
 
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr "Bitte legen Sie Ihre 30-Tage Umsatzgrenze in unseren %1Selbstausschluss Einrichtungen%2 fest, um Einzahlungslimits zu entfernen."
@@ -6571,8 +6580,8 @@ msgstr "Lösung von komplexen Kundendienstproblemen im besten Interesse unserer 
 msgid "Resources"
 msgstr "Quellen"
 
-msgid "Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems"
-msgstr "Beantwortung von Kundenanfragen mit unseren modernsten Telefon-, E-Mail- und online Chatsystemen"
+msgid "Respond to client queries using our state of the art telephone and electronic mail"
+msgstr "Beantwortung von Kundenanfragen mit unseren modernsten Telefonen und E-Mail"
 
 msgid "Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing."
 msgstr "Die Zuständigkeiten beinhalten den Hardware- und Softwareeinsatz, die Netzwerksicherheit, die Eindringungserkennung und den Belastungsausgleich."
@@ -7538,7 +7547,7 @@ msgid "The ICO will be restricted in a number of jurisdictions to qualified or p
 msgstr "Die ICO wird in einer Reihe von Ländern auf qualifizierte oder professionelle Investoren, in Übereinstimmung mit den Regeln und Vorschriften von solchen Ländern, beschränkt werden."
 
 msgid "The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control."
-msgstr ""
+msgstr "Das MAM-Tool ist ideal für Vermögensverwalter, die mehrere Kundenkonten einfach verwalten möchten. Es gibt Ihnen die Möglichkeit, im Namen aller MT5 Kundenkonten unter Ihrer Kontrolle, diese gleichzeitig einzusehen, zu verfolgen und zu handeln."
 
 msgid "The Margin Level of your Real Account reaches or falls below the Stop Out Level;"
 msgstr "Das Margin Level Ihres echten Kontos erreicht, oder fällt unter das Stop Out Level;"
@@ -8249,7 +8258,7 @@ msgid "Trade all major currencies, indices, stocks, and commodities."
 msgstr "Alle wichtigen Währungen, Indizes, Aktien und Rohstoffe handeln."
 
 msgid "Trade and manage multiple MT5 client accounts from a single interface."
-msgstr ""
+msgstr "Handeln und verwalten Sie mehrere MT5 Kundenkonten über eine einzige Schnittstelle."
 
 msgid "Trade anytime, anywhere with our desktop, web, and mobile platforms."
 msgstr "Handeln Sie jederzeit und überall mit unseren Desktop-, Web- und Mobile-Plattformen."
@@ -8271,9 +8280,6 @@ msgstr "Handeln Sie auf den weltweiten Finanzmärkten mit einer einfachen und an
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Handeln Sie nur mit Geld, das Sie sich leisten können, zu verlieren. Spielen Sie niemals mit geliehenem Geld."
-
-msgid "Trade page"
-msgstr "Handelsseite"
 
 msgid "Trade short-term or long-term contracts, from ticks to days."
 msgstr "Handeln Sie kurz- oder langfristige Kontrakte, von Ticks bis zu Tagen."
@@ -9440,8 +9446,8 @@ msgstr "Mit einem Antrag für den Inhalt über die %1 API, dürfen Sie den Inhal
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Sie können sich mit uns in Verbindung setzen, wenn Sie Ihr beim Unternehmen geführtes Konto kündigen möchten. Ihr Konto kann gekündigt werden, wenn es keine offenen Handelsposten hat und Sie die erforderlichen \"Kenne Deinen Kunden\" Verfahren erfüllt haben, die Sie ermächtigen, auf Ihrem Konto befindliches Guthaben abzuheben."
 
-msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "Sie können sich mit uns über diese Website, mittels Live Chat, E-Mail, Telefon oder ausnahmsweise auf dem normalen Postweg in Verbindung setzen. Die entsprechenden Angaben finden Sie auf unserer Kontakt-Seite."
+msgid "You may communicate with us through this website by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
+msgstr "Sie können sich mit uns über diese Website, mittels E-Mail, Telefon oder ausnahmsweise auf dem normalen Postweg in Verbindung setzen. Die entsprechenden Angaben finden Sie auf unserer Kontakt-Seite."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "Sobald Sie eine Anwendung angemeldet haben und den folgenden Bedingungen zustimmen, können Sie Anwendungen unter Verwendung des %1 API entwickeln."
@@ -9652,9 +9658,6 @@ msgstr "Ihr Konto ist vollständig authentifiziert und Ihr Abhebelimit wurde ang
 
 msgid "Your account is fully authenticated. You can view your <a href=\"%1\">trading limits here</a>."
 msgstr "Ihr Konto ist vollständig authentifiziert. Ihre <a href=\"%1\">Abschlusslimits sind hier ersichtlich</a>."
-
-msgid "Your account is not fully authenticated."
-msgstr "Ihr Konto ist nicht vollständig authentifiziert."
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Ihr Konto ist eingeschränkt. Bitte %1kontaktieren Sie die Kundenbetreuung%2 für Hilfe."
@@ -9902,9 +9905,6 @@ msgstr "Netto von realisierten Gewinnen, die Ihrem Echtgeldkonto gutgeschrieben 
 msgid "numbers"
 msgstr "Zahlen"
 
-msgid "or go to %1Accounts page%2"
-msgstr "oder gehen Sie zur %1Kontenseite%2"
-
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "die Seite für die genaue Zeit für alle Kontraktabrechnungen. Andere Websites mögen andere Vereinbarungen getroffen haben (z. B. wählen einige Websites 16 Uhr (New York) oder 17 Uhr (London)). Dadurch können sich die Eröffnungs-, Höchst-, Tiefst- und Schlussnotierungen auf unserer Website aufgrund des Börsenschlusses von denen anderer Websites unterscheiden ."
 
@@ -9946,9 +9946,6 @@ msgstr "die Plattform ist bedieungsfreundlich und für alle Arten von Händlern 
 
 msgid "the specific instructions that we receive from you;"
 msgstr "die spezifischen Anweisungen, die wir von Ihnen erhalten;"
-
-msgid "to set up the video call."
-msgstr "um das Video-Gespräch einzurichten."
 
 msgid "today"
 msgstr "heute"
@@ -11664,7 +11661,7 @@ msgid "Open-Source Projects"
 msgstr "Open-Source Projekte"
 
 msgid "Multiple Accounts Manager"
-msgstr ""
+msgstr "Multiple Accounts Manager"
 
 msgid "How to Trade Binary Options?"
 msgstr "Wie handelt man Binäre Optionen?"
