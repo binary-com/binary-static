@@ -47,6 +47,7 @@
             origin;
     }
 
+    const all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
     function redirect() {
         var alternative_pages = ['home', 'why-us', 'tour', 'terms-and-conditions', 'signup', 'get-started'];
         var redirect_to;
@@ -63,7 +64,7 @@
         }
 
         // if language is wrong, we need to rebuild the url
-        var lang_regex = new RegExp('/(' + Object.keys(langs).join('|') + ')/', 'i');
+        var lang_regex = new RegExp('/(' + all_languages.join('|') + ')/', 'i');
         if (!lang_regex.test(href)) {
             redirect_to = redirect_to || '404';
             href = getRoot() + '/' + lang.toLowerCase() + '/' + redirect_to.replace(/\.html/i, '') + '.html';
@@ -78,8 +79,8 @@
     }
 
     var href = window.location.href;
-    var lang = href.split('/').slice(3).find(function(language) { return langs[language] }) || getCookieItem('language');
-    if (lang && Object.keys(langs).indexOf(lang.toLowerCase()) > -1) {
+    var lang = href.split('/').slice(3).find(function(language) { return all_languages.indexOf(language.toLowerCase()) > -1 }) || getCookieItem('language');
+    if (lang && all_languages.indexOf(lang.toLowerCase()) > -1) {
         redirect();
     } else {
         var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
