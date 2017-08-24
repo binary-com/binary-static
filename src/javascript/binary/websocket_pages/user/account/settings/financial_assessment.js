@@ -18,7 +18,7 @@ const FinancialAssessment = (() => {
 
     const onLoad = () => {
         if (jpClient()) {
-            BinaryPjax.load('user/settingsws');
+            BinaryPjax.loadPreviousUrl();
         }
 
         $(form_selector).on('submit', (event) => {

@@ -1,11 +1,12 @@
 const getLanguage = require('./language').get;
 const State       = require('./storage').State;
-const urlFor      = require('./url').urlFor;
+const Url         = require('./url');
 
 const BinaryPjax = (() => {
     'use strict';
 
     let xhr;
+    let previous_url;
     const params   = {};
     const defaults = {
         type    : 'GET',
@@ -95,7 +96,7 @@ const BinaryPjax = (() => {
         State.set('is_loaded_by_pjax', true);
 
         if (!/^http/i.test(url)) {
-            url = urlFor(url);
+            url = Url.urlFor(url);
         }
         const cached_content = cacheGet(url);
         if (cached_content) {
@@ -145,6 +146,7 @@ const BinaryPjax = (() => {
     };
 
     const replaceContent = (url, content, replace) => {
+        previous_url = window.location.href;
         window.history[replace ? 'replaceState' : 'pushState']({ url: url }, content.title, url);
 
         params.container.trigger('binarypjax:before');
@@ -176,9 +178,19 @@ const BinaryPjax = (() => {
         window.location.replace(url);
     };
 
+    const loadPreviousUrl = () => {
+        if (window.location.href === previous_url) {
+            previous_url = '';
+        }
+        processUrl(previous_url || Url.defaultRedirectUrl());
+    };
+
     return {
         init: init,
         load: processUrl,
+
+        loadPreviousUrl: loadPreviousUrl,
+        getPreviousUrl : () => previous_url,
     };
 })();
 
