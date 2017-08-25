@@ -117,5 +117,21 @@ module.exports = function (grunt) {
                 stdout: true
             }
         },
+        remove_folder: {
+            command: grunt.option('folder') ?
+                [
+                    ghpagesCommand(),
+                    prompt('Removing folders...'),
+                    `rm -rf ${grunt.option('folder').split(',').join(' ')}`,
+                    prompt('Committing...'),
+                    'git commit -a -m "Remove folders" --quiet',
+                    prompt('Pushing to origin...'),
+                    'git push origin gh-pages --quiet'
+                ].join(' && ') :
+                prompt('Need to specify folders to remove: --folder=br_fix,br_beta,...', 'warn'),
+            options: {
+                stdout: true
+            }
+        },
     }
 };
