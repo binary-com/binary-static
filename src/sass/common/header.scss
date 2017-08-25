@@ -14,13 +14,6 @@ body #topbar {
     #gmt-clock, #contact-us, .upgrademessage {
         align-self: center;
     }
-    .upgrademessage a {
-        @include link-button;
-        font-size: $FONT_SIZE_XS;
-        padding: 2px 4px;
-        text-transform: none;
-        @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
-    }
     a {
         color: $COLOR_WHITE;
         white-space: nowrap;
@@ -28,6 +21,16 @@ body #topbar {
     }
     #select_language {
         top: -3px;
+    }
+}
+
+body #topbar, .landing_page-content {
+    .upgrademessage a {
+        @include link-button;
+        font-size: $FONT_SIZE_XS;
+        padding: 2px 4px;
+        text-transform: none;
+        @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
     }
 }
 

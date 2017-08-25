@@ -19,7 +19,7 @@ const APIToken = (() => {
 
     const onLoad = () => {
         if (jpClient()) {
-            BinaryPjax.load('user/settingsws');
+            BinaryPjax.loadPreviousUrl();
             return;
         }
 
