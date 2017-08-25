@@ -1,5 +1,20 @@
 module.exports = function (grunt) {
     var error_missing_target = `Target is required: use ${Object.keys(global.release_config).map(t => `--${t}`).join(' or ')} to do a release.`;
+    var colors = {
+        error: '\\033[0;31m',
+        info : '\\033[0;32m',
+        warn : '\\033[1;33m',
+        reset: '\\033[0m',
+    };
+    var prompt = (message, type) => (`echo "${colors[type || 'info']}>>${colors.reset} ${message}"`);
+    var ghpagesCommand = () => (
+        [
+            `cd ${process.cwd()}/.grunt/grunt-gh-pages/gh-pages/main`,
+            prompt('Updating...'),
+            'git fetch origin gh-pages --quiet',
+            'git reset --hard origin/gh-pages --quiet'
+        ].join(' && ')
+    );
 
     return {
         compile_dev: {
@@ -15,13 +30,13 @@ module.exports = function (grunt) {
             }
         },
         sitemap: {
-            command: 'cd ' + process.cwd() + '/scripts && carton exec perl sitemap.pl',
+            command: `cd ${process.cwd()}/scripts && carton exec perl sitemap.pl`,
             options: {
                 stdout: true
             }
         },
         trigger_tests: {
-            command: grunt.option('staging') ? 'grunt gh-pages:trigger_tests --staging' : 'echo "Tests are triggered only when releasing to Staging."',
+            command: grunt.option('staging') ? 'grunt gh-pages:trigger_tests --staging' : prompt('Tests are triggered only when releasing to Staging.', 'warn'),
             options: {
                 stdout: true
             }
@@ -39,7 +54,7 @@ module.exports = function (grunt) {
                             }
                             if (CNAME) {
                                 grunt.file.write(global.dist + '/CNAME', CNAME + "\n");
-                                grunt.log.ok('CNAME file created: ' + CNAME);
+                                grunt.log.ok(`CNAME file created: ${CNAME}`);
                             } else {
                                 grunt.log.error('CNAME file is not created: remote origin does not match.');
                             }
@@ -56,7 +71,7 @@ module.exports = function (grunt) {
                 callback: function (err, stdout, stderr, cb) {
                     if(!err) {
                         var origin = stdout.replace('\n', '');
-                        grunt.log.ok('Remote origin: ' + origin);
+                        grunt.log.ok(`Remote origin: ${origin}`);
                         if (!global.release_target) {
                             grunt.fail.fatal(error_missing_target);
                         } else if (origin !== global.release_info.origin) {
@@ -78,12 +93,28 @@ module.exports = function (grunt) {
                         if (!global.release_target) {
                             grunt.fail.fatal(error_missing_target);
                         } else if (branch !== global.release_info.branch) {
-                            grunt.fail.fatal('Current branch is not correct.\nIn order to release to ' + global.release_target.toUpperCase() + ', please checkout the "' + global.release_info.branch + '" branch.');
+                            grunt.fail.fatal(`Current branch is not correct.\nIn order to release to ${global.release_target.toUpperCase()}, please checkout the "${global.release_info.branch}" branch.`);
                         }
                     }
                     cb();
                 },
                 stdout: false
+            }
+        },
+        reset_ghpages: {
+            command: grunt.option('staging') && grunt.option('reset') ?
+                [
+                    ghpagesCommand(),
+                    prompt('Resetting to the first commit...'),
+                    'git reset $(git rev-list --max-parents=0 --abbrev-commit HEAD) --quiet',
+                    prompt('Pushing to origin...'),
+                    'git push origin gh-pages -f --quiet',
+                    prompt('Cleaning up...'),
+                    'git reset --hard origin/gh-pages --quiet'
+                ].join(' && ') :
+                prompt('Reset runs only on staging.', 'warn'),
+            options: {
+                stdout: true
             }
         },
     }
