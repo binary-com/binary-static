@@ -36,7 +36,7 @@
                 text=l('Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders.') %]
             <div class="gr-8 gr-12-m gr-12-p">
                 <div class="gr-row">
-                    [% INCLUDE download image='window' href=request.url_for('/download/binarycom_mt5_setup.exe') %]
+                    [% INCLUDE download image='window' href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' %]
                     [% INCLUDE download image='osx'    href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg' download %]
                     [% INCLUDE download image='linux'  href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux' target='_blank' %]
                 </div>
