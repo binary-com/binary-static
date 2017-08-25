@@ -94,7 +94,7 @@ This will deploy your changes to a sub-folder named: `br_branchname` and it can 
 ## Release to Production
 
 ```
-grunt release --staging=1|--production=1|--translations=1 [--cleanup]
+grunt release --staging=1|--production=1|--translations=1 [--cleanup] [--reset]
 ```
 (The value is needed when more than one option is used)
 
@@ -106,3 +106,5 @@ grunt release --staging=1|--production=1|--translations=1 [--cleanup]
 - `--cleanup` [optional]
   - Create CNAME file with proper value according to remote origin
   - Deploy to gh-pages with the option `add: false`
+- `--reset` [optional]
+  - Removes all commits from `gh-pages` branch before release (staging only)
