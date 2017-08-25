@@ -14,7 +14,7 @@
         <p>[% l('Or, if you want to apply straight away, please click the button below:') %]</p>
 
         <div class="gr-row gr-centered gr-parent gr-padding-20">
-            <a class="button gr-gutter" href="[% request.url_for('new_account/knowledge_testws') %]">
+            <a class="button gr-gutter" href="[% request.url_for('new_account/japanws') %]">
                 <span>[% l('Apply for Real Money Account') %]</span>
             </a>
             <a class="button button-secondary" href="[% request.url_for('multi_barriers_trading') %]">
