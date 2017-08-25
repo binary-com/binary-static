@@ -1,4 +1,6 @@
 const GetStarted = require('./get_started');
+const BinaryPjax = require('../base/binary_pjax');
+const Client     = require('../base/client');
 const handleHash = require('../base/utility').handleHash;
 const Scroll     = require('../common_functions/scroll');
 
@@ -20,5 +22,8 @@ module.exports = {
     },
     AffiliateSignup: {
         onLoad: () => { tabListener(); handleHash(); },
+    },
+    LandingPage: {
+        onLoad: () => { if (Client.hasAccountType('real')) BinaryPjax.loadPreviousUrl(); },
     },
 };
