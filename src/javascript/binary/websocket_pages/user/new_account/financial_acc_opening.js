@@ -2,7 +2,6 @@ const moment             = require('moment');
 const BinarySocket       = require('../../socket');
 const BinaryPjax         = require('../../../base/binary_pjax');
 const Client             = require('../../../base/client');
-const defaultRedirectUrl = require('../../../base/url').defaultRedirectUrl;
 const isEmptyObject      = require('../../../base/utility').isEmptyObject;
 const AccountOpening     = require('../../../common_functions/account_opening');
 const FormManager        = require('../../../common_functions/form_manager');
@@ -15,7 +14,7 @@ const FinancialAccOpening = (() => {
 
     const onLoad = () => {
         if (Client.hasAccountType('financial') || !Client.get('residence')) {
-            BinaryPjax.load(defaultRedirectUrl());
+            BinaryPjax.loadPreviousUrl();
             return;
         } else if (Client.hasAccountType('gaming')) {
             $('.security').hide();

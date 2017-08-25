@@ -38,7 +38,9 @@ const ApplicationsUI = (() => {
                         displayError(response.error.message);
                     } else {
                         BinarySocket.send({ oauth_apps: 1 }).then((res) => {
-                            update(res.oauth_apps.map(ApplicationsData.parse));
+                            if (res.oauth_apps) {
+                                update(res.oauth_apps.map(ApplicationsData.parse));
+                            }
                         });
                     }
                 });

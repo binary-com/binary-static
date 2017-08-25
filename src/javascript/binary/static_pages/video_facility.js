@@ -1,8 +1,7 @@
-const BinaryPjax         = require('../base/binary_pjax');
-const Client             = require('../base/client');
-const localize           = require('../base/localize').localize;
-const defaultRedirectUrl = require('../base/url').defaultRedirectUrl;
-const BinarySocket       = require('../websocket_pages/socket');
+const BinaryPjax   = require('../base/binary_pjax');
+const Client       = require('../base/client');
+const localize     = require('../base/localize').localize;
+const BinarySocket = require('../websocket_pages/socket');
 
 const VideoFacility = (() => {
     const onLoad = () => {
@@ -24,7 +23,7 @@ const VideoFacility = (() => {
                     $('.msg_authenticate').setVisibility(1);
                     $('#generated_token').text(Client.get('token').slice(-4)).parent().setVisibility(1);
                 } else {
-                    BinaryPjax.load(defaultRedirectUrl());
+                    BinaryPjax.loadPreviousUrl();
                 }
             }
         });

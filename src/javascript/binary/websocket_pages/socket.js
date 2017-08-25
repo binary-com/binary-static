@@ -2,6 +2,7 @@ const getLanguage      = require('../base/language').get;
 const localize         = require('../base/localize').localize;
 const State            = require('../base/storage').State;
 const getPropertyValue = require('../base/utility').getPropertyValue;
+const isEmptyObject    = require('../base/utility').isEmptyObject;
 const getAppId         = require('../../config').getAppId;
 const getSocketURL     = require('../../config').getSocketURL;
 
@@ -118,6 +119,8 @@ const BinarySocket = (() => {
      */
     const send = function(data, options = {}) {
         const promise_obj = options.promise || new PromiseClass();
+
+        if (!data || isEmptyObject(data)) return promise_obj.promise;
 
         const msg_type = options.msg_type || no_duplicate_requests.find(c => c in data);
         if (!options.forced && msg_type) {

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-16 20:55-0400\n"
+"PO-Revision-Date: 2017-08-23 20:53-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -240,6 +240,12 @@ msgstr "%1 是在线期权交易领域屡获殊荣的领先企业。"
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 是在线期权交易领域屡获殊荣的领先企业。我们拥有："
 
+msgid "%1 launches Bitcoin (BTC) accounts for non-EU customers."
+msgstr "%1 为非欧盟客户推出比特币 (BTC) 账户。"
+
+msgid "%1 launches Bitcoin accounts"
+msgstr "%1 推出比特币账户"
+
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 启动了品牌商品%3专用电子商务网站%2– 让客户、联盟会员和程序开发员买卖%1的产品。"
 
@@ -294,8 +300,8 @@ msgstr "%1 向世界各地的机构客户提供广泛的资产市场报价和交
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "%1在管理传入订单时通过采用智能聚合方法为您提供最佳执行方案。智能聚合方法的工作原理是︰"
 
-msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:"
-msgstr "通过 %1，您可以在网站上自我禁止或 <a href='%2'>为自己的交易活动设限</a>。您也可以通过在线交谈、电邮或电话 <a href='%3'>联系我们</a> 告诉我们您想要设定的限额。可用的限额如下："
+msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via email or phone. Available limits are:"
+msgstr "通过 %1，您可以在网站上自我禁止或 <a href='%2'>为自己的交易活动设限</a>。您也可以通过在线交谈、电邮或电话 <a href='%3'>联系我们</a>，告诉我们您想要设定的限额。可用的限额如下："
 
 msgid "%1 reaches $2 billion turnover since starting in 1999"
 msgstr "%1从1999年开始运营，目前营业额达到 20 亿美元"
@@ -374,6 +380,9 @@ msgstr "%1 系统每天处理超过百万笔交易（包括虚拟账户）。"
 
 msgid "%1Authenticate your account%2 now to take full advantage of all payment methods available."
 msgstr "立刻进行%1账户验证%2，以获得付款选项的所有优惠。"
+
+msgid "%1Contact us%2 to arrange a date and time for the video call."
+msgstr "%1联系我们%2 安排视频通话日期和时间。"
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1的慈善活动侧重于捐助世界各地在当地社区有重大影响力的小型慈善机构和非营利组织。 我们的捐款使他们直接受惠，也不须像一些大型慈善机构那样支付庞大开销。"
@@ -1383,9 +1392,6 @@ msgstr "出价买入Binary ICO:"
 msgid "Bid Price Per Token"
 msgstr "每个令牌的投标报价"
 
-msgid "Bid cancellation can be done with a 2% cancellation fee."
-msgstr "投标可以取消，但须支付2%取消费。"
-
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
 
@@ -1559,6 +1565,12 @@ msgstr "Binary.com是在线二元期权交易的领先企业。我们的成长�
 
 msgid "Binary.com will issue a number of tokens during the ICO."
 msgstr "初步代币发售期内，Binary.com将发售多个令牌。"
+
+msgid "Bitcoin"
+msgstr ""
+
+msgid "Bitcoin Cash"
+msgstr ""
 
 msgid "Both the above"
 msgstr "Both the above"
@@ -1844,9 +1856,6 @@ msgstr "点击<strong>显示高级设置</strong>。"
 
 msgid "Click on the <strong>X</strong> button at the top right to save and close."
 msgstr "点击右上方的<strong>X</strong>按钮保存并关闭。"
-
-msgid "Click on the link to connect to the video call."
-msgstr "单击链接以连接视频通话。"
 
 msgid "Client Money"
 msgstr "客户资金"
@@ -2380,12 +2389,6 @@ msgstr "存款到"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "通过银行电汇、信用卡或电子现金钱包向您的账户存款或提款。"
 
-msgid "Deposit or withdraw to your account via bitcoin."
-msgstr "通过比特币在您的账户存取款。"
-
-msgid "Deposit page"
-msgstr "存款页面"
-
 msgid "Deposit: %1 working day"
 msgstr "存款：%1工作日内"
 
@@ -2551,9 +2554,6 @@ msgstr "推动快速增长和业务发展，以支持公司的销售和市场营
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "应用各种在线和离线营销能力扩大公司的活跃联盟网络，在世界各关键区域推动快速增长。"
 
-msgid "Due to US regulations, US investors can only claim their tokens after 1 year."
-msgstr "基于美国规则，美国投资者须等1 年后才能索取令牌。"
-
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "由于最近的法规变更，客户必须填写以下金融评估。您须填写完成才能继续交易。"
 
@@ -2607,6 +2607,9 @@ msgstr "欧盟认证"
 
 msgid "EUR 1 per point"
 msgstr "每点 1 欧元"
+
+msgid "Each bid cancellation will be subject to a 2% cancellation fee."
+msgstr ""
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "每个二元期权合约都有固定期限- 在 %1，您可选择从10秒至365天之间的任何期限。"
@@ -2802,6 +2805,12 @@ msgstr "权益"
 
 msgid "Estimated Net Worth"
 msgstr "估计净值"
+
+msgid "Ether"
+msgstr ""
+
+msgid "Ether Classic"
+msgstr ""
 
 msgid "Ethics Code"
 msgstr "道德标准"
@@ -3028,8 +3037,8 @@ msgstr "二月"
 msgid "February"
 msgstr "二月"
 
-msgid "Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via live chat, email and telephone."
-msgstr "请随时联系我们热情友好的客服专员。他们将全天候回答您的问题。您可通过在线聊天、电子邮件和电话与我们联系。"
+msgid "Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via email and telephone."
+msgstr "请随时联系我们热情友好的客服专员。他们将全天候回答您的问题。您可通过电子邮件和电话与我们联系。"
 
 msgid "Female"
 msgstr "女"
@@ -4879,8 +4888,8 @@ msgstr "链接"
 msgid "Liquidity solutions"
 msgstr "流动性解决方案"
 
-msgid "Live chat:"
-msgstr "在线聊天："
+msgid "Litecoin"
+msgstr ""
 
 msgid "Lock Cashier"
 msgstr "锁定收银台"
@@ -5010,6 +5019,9 @@ msgstr "管理和服务器相关的安全、入侵检测、DDoS 保护和PCI 法
 
 msgid "Manage the company's cashier system"
 msgstr "管理公司的出纳系统"
+
+msgid "Manage the funds in your cryptocurrency account."
+msgstr "管理加密货币账户资金。"
 
 msgid "Manage your authorised applications."
 msgstr "管理您的授权应用程序。"
@@ -5715,9 +5727,6 @@ msgstr "我们公司继续茁壮成长，并在马恩岛获得牌照，可以为
 
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgstr "我们的存款和提款成本与费用详细请参考 <a href=\"%1\">此处</a>。请先了解所有跟您有关的成本和费用，因为这些将会影响您的收益。"
-
-msgid "Our customer support agent will provide you with a unique link to connect to the video call."
-msgstr "我们的客服代理将为您提供专门的链接，以便连接到视频通话。"
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "毋庸置疑，我们深受客户喜爱。2014 年中期，%1的历史交易数量和每日新交易数量分别超过1亿笔和13万笔。"
@@ -6583,8 +6592,8 @@ msgstr "维护全球客户和公司最大利益，解决复杂的客户服务问
 msgid "Resources"
 msgstr "资源"
 
-msgid "Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems"
-msgstr "通过电话、电子邮件和在线聊天系统对客户的咨询作出反馈"
+msgid "Respond to client queries using our state of the art telephone and electronic mail"
+msgstr "通过先进的电话和电子邮件对客户的咨询作出反应"
 
 msgid "Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing."
 msgstr "职责包括硬件软件配置、网络安全、入侵检测和负载平衡工作。"
@@ -8284,9 +8293,6 @@ msgstr "在简单、人性化的全球性金融市场在线平台进行交易。
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "根据您的风险承受能力进行交易。切勿借钱交易。"
 
-msgid "Trade page"
-msgstr "交易页面"
-
 msgid "Trade short-term or long-term contracts, from ticks to days."
 msgstr "开立短期或长期合约，论点数或日数进行交易。"
 
@@ -8535,6 +8541,9 @@ msgstr "除非已被证实出错，我们的记录将作为您使用我们根据
 
 msgid "Unlock Cashier"
 msgstr "解锁收银台"
+
+msgid "Unsuccessful bidders will receive a full refund of their deposits."
+msgstr ""
 
 msgid "Up - Predict that the market will end higher than the average price"
 msgstr "高于 - 预测市价在收盘时高于平均价格"
@@ -9449,8 +9458,8 @@ msgstr "通过%1 API对指定内容提出请求后可保留该内容缓存为时
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "您可以和我们联系，关闭在本公司开立的账户。如您没有任何未平仓交易头寸，且满足“了解您的客户“的要求，可以提取账户内的待领款项，您的账户就可以关闭。"
 
-msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "您可以通过此网站以实时聊天、电子邮件、电话或在特殊情况下以邮寄方式和我们沟通。详情请参阅“联系我们”页面。"
+msgid "You may communicate with us through this website by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
+msgstr "您可以通过此网站以电子邮件、电话或在特殊情况下以邮寄方式和我们沟通。详情请参阅“联系我们”页面。"
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "一旦您注册好应用程序并同意遵守这些条款即可使用%1 API开发应用程序。"
@@ -9661,9 +9670,6 @@ msgstr "您的账户已经得到完全验证，且您的取款限额已经取消
 
 msgid "Your account is fully authenticated. You can view your <a href=\"%1\">trading limits here</a>."
 msgstr "您的账户已经得到完全验证，且您可在此查看您的<a href=\"%1\">交易限额</a>。"
-
-msgid "Your account is not fully authenticated."
-msgstr "您的账户未完成身份验证。"
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "您的账户已被限制。请%1联系客服部%2，以获得帮助。"
@@ -9911,9 +9917,6 @@ msgstr "借记到您真实账户的实现利润和从您真实账户扣除的实
 msgid "numbers"
 msgstr "号码"
 
-msgid "or go to %1Accounts page%2"
-msgstr "或者前往%1账户页面%2"
-
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "包含所有合约精确结算时间的页面。其他网站可能有不同的惯例（比如一些网站采用纽约时间4点或伦敦时间5点），因此，本网站上显示的开盘、高、低或收盘价可能与其他网站不一致。"
 
@@ -9955,9 +9958,6 @@ msgstr "人性化平台，各级别交易者皆可使用。"
 
 msgid "the specific instructions that we receive from you;"
 msgstr "您所提供的特定指令；"
-
-msgid "to set up the video call."
-msgstr "以便设置视频通话。"
 
 msgid "today"
 msgstr "今天"

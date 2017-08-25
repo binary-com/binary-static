@@ -5,7 +5,7 @@ const jpClient      = require('../../../../common_functions/country_base').jpCli
 const IPHistory = (() => {
     const onLoad = () => {
         if (jpClient()) {
-            BinaryPjax.load('user/settingsws');
+            BinaryPjax.loadPreviousUrl();
         }
         IPHistoryInit.init();
     };

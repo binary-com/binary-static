@@ -22,8 +22,7 @@ const TradePage_Beta = (() => {
     State.remove('is_beta_trading');
 
     const onLoad = () => {
-        const is_jp_client = jpClient();
-        if (is_jp_client) {
+        if (jpClient()) {
             BinaryPjax.load('multi_barriers_trading');
             return;
         }
@@ -43,10 +42,8 @@ const TradePage_Beta = (() => {
 
         if (document.getElementById('websocket_form')) {
             commonTrading.addEventListenerForm();
-            if (!is_jp_client) {
-                new ResizeSensor($('.col-left .content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
-                new ResizeSensor($('.col-right'), moreTabsHandler);
-            }
+            new ResizeSensor($('.col-left .content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
+            new ResizeSensor($('.col-right'), moreTabsHandler);
         }
 
         // Walktrough Guide

@@ -40,7 +40,7 @@ const ChangePassword = (() => {
             if (!/social_signup/.test(response.get_account_status.status)) {
                 init();
             } else {
-                BinaryPjax.load('user/settingsws');
+                BinaryPjax.loadPreviousUrl();
             }
         });
     };

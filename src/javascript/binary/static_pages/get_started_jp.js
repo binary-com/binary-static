@@ -1,6 +1,4 @@
-const Client     = require('../base/client');
-const BinaryPjax = require('../base/binary_pjax');
-const jpClient   = require('../common_functions/country_base').jpClient;
+const Client = require('../base/client');
 
 const GetStartedJP = (() => {
     'use strict';
@@ -25,10 +23,6 @@ const GetStartedJP = (() => {
     };
 
     const onLoad = () => {
-        if (!jpClient()) {
-            BinaryPjax.load('get-started');
-        }
-
         Client.activateByClientType();
         $contents = $('.contents');
         $sidebar_li = $('.sidebar ul li');

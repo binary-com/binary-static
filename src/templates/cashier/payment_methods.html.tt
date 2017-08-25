@@ -63,7 +63,11 @@
     [% INCLUDE row id='paysafecard'   currencies='USD EUR'         deposit='5 - 750'    withdrawal='5 - 750'    time=[l('Deposit: Instant'), l('Withdraw: [_1] working day', 1)] %]
 
     [% INCLUDE section title=l('Cryptocurrencies') withdrawal=l('Min Withdrawal') %]
-    [% INCLUDE row id='bitcoin' currencies='BTC' deposit='-' withdrawal='0.002' time=[l('Deposit: 3 blockchain confirmations'), l('Withdraw: [_1] working day', 1)] %]
+    [% INCLUDE row id='btc' currencies='BTC' deposit='-' withdrawal='0.002' time=[l('Deposit: 3 blockchain confirmations'), l('Withdraw: [_1] working day', 1)] %]
+    [%# INCLUDE row id='bch' currencies='BCH' deposit='-' withdrawal='0.002' time=[l('Deposit: 3 blockchain confirmations'), l('Withdraw: [_1] working day', 1)] %]
+    [%# INCLUDE row id='eth' currencies='ETH' deposit='-' withdrawal='0.002' time=[l('Deposit: 3 blockchain confirmations'), l('Withdraw: [_1] working day', 1)] %]
+    [%# INCLUDE row id='etc' currencies='ETC' deposit='-' withdrawal='0.002' time=[l('Deposit: 3 blockchain confirmations'), l('Withdraw: [_1] working day', 1)] %]
+    [% INCLUDE row id='ltc' currencies='LTC' deposit='-' withdrawal='0.002' time=[l('Deposit: 3 blockchain confirmations'), l('Withdraw: [_1] working day', 1)] %]
     </div>
 
     <div class="gr-padding-10">

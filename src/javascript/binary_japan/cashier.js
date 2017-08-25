@@ -1,18 +1,17 @@
-const BinaryPjax         = require('../binary/base/binary_pjax');
-const Client             = require('../binary/base/client');
-const localize           = require('../binary/base/localize').localize;
-const State              = require('../binary/base/storage').State;
-const defaultRedirectUrl = require('../binary/base/url').defaultRedirectUrl;
-const template           = require('../binary/base/utility').template;
-const jpClient           = require('../binary/common_functions/country_base').jpClient;
-const jpResidence        = require('../binary/common_functions/country_base').jpResidence;
-const BinarySocket       = require('../binary/websocket_pages/socket');
+const BinaryPjax   = require('../binary/base/binary_pjax');
+const Client       = require('../binary/base/client');
+const localize     = require('../binary/base/localize').localize;
+const State        = require('../binary/base/storage').State;
+const template     = require('../binary/base/utility').template;
+const jpClient     = require('../binary/common_functions/country_base').jpClient;
+const jpResidence  = require('../binary/common_functions/country_base').jpResidence;
+const BinarySocket = require('../binary/websocket_pages/socket');
 
 const CashierJP = (() => {
     'use strict';
 
     const onLoad = (action) => {
-        if (jpClient() && !jpResidence()) BinaryPjax.load(defaultRedirectUrl());
+        if (jpClient() && !jpResidence()) BinaryPjax.loadPreviousUrl();
         const $container = $('#japan_cashier_container');
         BinarySocket.wait('get_settings').then(() => {
             $container.setVisibility(1);

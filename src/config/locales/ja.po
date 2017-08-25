@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-16 20:55-0400\n"
+"PO-Revision-Date: 2017-08-23 20:52-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -241,6 +241,12 @@ msgstr "%1は受賞履歴を有するオンライン上のオプション取引�
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "当社は受賞履歴を有するオンライン上のオプション取引業界でのパイオニアであり、下記の実績を誇ります："
 
+msgid "%1 launches Bitcoin (BTC) accounts for non-EU customers."
+msgstr "EU加盟国と日本以外のお客様へビットコイン（BTC）口座の提供を開始します。"
+
+msgid "%1 launches Bitcoin accounts"
+msgstr "ビットコイン口座の提供を開始（日本を除く）"
+
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "海外で自社ブランド商品の%2ECサイト%3を開設 - お客様、アフィリエイト会員、開発者の方々が自社ブランドの売買がご利用いただけます。"
 
@@ -297,8 +303,8 @@ msgstr "%1 provides institutional clients around the world with market quotes an
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "%1は受注を管理する際に、スマート集計メソッドを活用して最良執行を提供しています。スマート集計メソッドは以下の内容から動作します。"
 
-msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:"
-msgstr "%1では健全なトレードを行って頂くために、<a href='%2'>トレードの自己制限</a>の設定を提供しています。ご希望の制限を設定いただくには、ライブチャット、Eメール、お電話から <a href='%3'>お問い合わせ</a>いただけます。ご利用いただける制限はこちらです。"
+msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via email or phone. Available limits are:"
+msgstr "%1では、自己制限を設けるか、サイト上で<a href='%2'>取引制限を設定<a href='%2'>いただくことができます。Eメールまたはお電話にてご希望の制限を設定するには、<a href='%3'>お問い合わせ</a>からご連絡ください。ご利用いただける制限は以下の通りです。"
 
 msgid "%1 reaches $2 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.comは1999年から累計で20億USDのターンオーバーを達成"
@@ -377,6 +383,9 @@ msgstr "当システムは1日に100万件を超える取引（仮想アカウ�
 
 msgid "%1Authenticate your account%2 now to take full advantage of all payment methods available."
 msgstr "%1アカウントを認証%2して当社の機能を最大限活用しましょう"
+
+msgid "%1Contact us%2 to arrange a date and time for the video call."
+msgstr "%1お問い合わせ%2よりビデオ通話の日時を調整いただくことができます。"
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1の慈善活動では、地域社会においてプラスの影響を少しでも与えられるよう、世界中の小規模慈善団体や非営利団体に焦点を当てています。\n"
@@ -1391,9 +1400,6 @@ msgstr "Binary ICOに入札する："
 msgid "Bid Price Per Token"
 msgstr "トークンごとの入札価格"
 
-msgid "Bid cancellation can be done with a 2% cancellation fee."
-msgstr "入札のキャンセルには2%キャンセル手数料がかかります。"
-
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
 
@@ -1551,7 +1557,7 @@ msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a
 msgstr "Binaryの子会社 Binary Investments (Europe) Ltdはマルタ金融サービス庁によってカテゴリー3投資サービスライセンスが付与されています。"
 
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
-msgstr "Binaryのプラットフォームでは、毎秒%1件の%2取引%3が行われています。"
+msgstr "Binaryのプラットフォームでは、毎秒%1件の取引が行われています。"
 
 msgid "Binary.com by the numbers"
 msgstr "数字でみるBinary.com"
@@ -1570,6 +1576,12 @@ msgstr "Binary.com は、バイナリーオプションオンライン取引の�
 
 msgid "Binary.com will issue a number of tokens during the ICO."
 msgstr "Binary.comがICOの間にいくつかのトークンを発行します。"
+
+msgid "Bitcoin"
+msgstr ""
+
+msgid "Bitcoin Cash"
+msgstr ""
 
 msgid "Both the above"
 msgstr "上記の両方"
@@ -1856,9 +1868,6 @@ msgstr "<strong>高度な設定を表示する</strong>をクリックしてく�
 
 msgid "Click on the <strong>X</strong> button at the top right to save and close."
 msgstr "保存をして閉じるには、右上にある<strong>X</strong>ボタンをクリックしてください。"
-
-msgid "Click on the link to connect to the video call."
-msgstr "リンクをクリックして、ビデオ通話に接続してください。"
 
 msgid "Client Money"
 msgstr "お客さまマネー"
@@ -2249,7 +2258,7 @@ msgid "Credit/Debit Card"
 msgstr "クレジット・デビットカード"
 
 msgid "Cryptocurrencies"
-msgstr ""
+msgstr "暗号通貨"
 
 msgid "Cryptocurrency"
 msgstr "暗号通貨"
@@ -2395,17 +2404,11 @@ msgstr "XXXへご入金"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "銀行振込によりお客さまのリアル口座に入出金を行います"
 
-msgid "Deposit or withdraw to your account via bitcoin."
-msgstr "ビットコインを介して口座に入出金を行います。"
-
-msgid "Deposit page"
-msgstr "入金ページ"
-
 msgid "Deposit: %1 working day"
 msgstr "ご入金: %1営業日"
 
 msgid "Deposit: 3 blockchain confirmations"
-msgstr ""
+msgstr "ご入金：3段認証"
 
 msgid "Deposit: Instant"
 msgstr "ご入金：即時"
@@ -2566,9 +2569,6 @@ msgstr "セールス及びマーケティング目標をサポートする急速
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "当社のアフィリエイトネットワーク展開へ、多様なオンライン/オフラインマーケティング能力を活用して世界の重要地域での急速な成長を推進します。"
 
-msgid "Due to US regulations, US investors can only claim their tokens after 1 year."
-msgstr "米国の規制に基づき、米国の投資家の皆様は1年後にのみトークンをリクエストすることができます。"
-
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "規制変更により、下記財務評価にご記入頂く必要があります。こちらが完了しない限り、お取引を引き続きご利用いただけませんのでご注意ください。"
 
@@ -2622,6 +2622,9 @@ msgstr "EUで認可済み"
 
 msgid "EUR 1 per point"
 msgstr "1ポイント＝EUR 1"
+
+msgid "Each bid cancellation will be subject to a 2% cancellation fee."
+msgstr ""
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "通貨バイナリーオプション取引は、期間を設定して取引頂けます。"
@@ -2817,6 +2820,12 @@ msgstr "株式"
 
 msgid "Estimated Net Worth"
 msgstr "推定純資産"
+
+msgid "Ether"
+msgstr ""
+
+msgid "Ether Classic"
+msgstr ""
 
 msgid "Ethics Code"
 msgstr "倫理コード"
@@ -3043,8 +3052,8 @@ msgstr "2"
 msgid "February"
 msgstr "２月"
 
-msgid "Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via live chat, email and telephone."
-msgstr "ご不明な点がございましたら、当社のカスタマーサポートまでメールにてお気軽にお問い合わせください。"
+msgid "Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via email and telephone."
+msgstr "どうぞお気軽にカスタマーサポートまでご連絡ください。喜んでサポートさせていただきます。Eメールまたはお電話にてお問い合わせください。"
 
 msgid "Female"
 msgstr "女性"
@@ -4907,8 +4916,8 @@ msgstr "サイト内のリンクについて"
 msgid "Liquidity solutions"
 msgstr "流動性ソリューション"
 
-msgid "Live chat:"
-msgstr "ライブチャット："
+msgid "Litecoin"
+msgstr ""
 
 msgid "Lock Cashier"
 msgstr "入出金をロック"
@@ -5038,6 +5047,9 @@ msgstr "当社が展開するサーバーのセキュリティ・侵入検知・
 
 msgid "Manage the company's cashier system"
 msgstr "入出金のシステム管理"
+
+msgid "Manage the funds in your cryptocurrency account."
+msgstr "仮想通貨口座の資金を管理します。"
 
 msgid "Manage your authorised applications."
 msgstr "承認済みアプリケーションを管理します。"
@@ -5205,7 +5217,7 @@ msgid "Method"
 msgstr "決済方法"
 
 msgid "Min Withdrawal"
-msgstr ""
+msgstr "最小出金額"
 
 msgid "Min-Max Deposit"
 msgstr "最低ー最高　ご入金額"
@@ -5481,7 +5493,7 @@ msgid "Note: Withdrawal via payment agent is available only if you deposit exclu
 msgstr "ご注意：決済サービスでのご出金は、ご入金の際に決済サービスをご利用いただいた場合にのみご利用いただけます。"
 
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
-msgstr "注意：不換紙幣口座と各暗号通貨口座はお一人様一口座となります。"
+msgstr "注意：不換紙幣口座と各仮想通貨口座はお一人様一口座となります。"
 
 msgid "Notes:"
 msgstr "ご注意："
@@ -5749,9 +5761,6 @@ msgstr "英国居住者へのサービスを向上を目指し、マン島に法
 
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgstr "入金と出金に関する当社費用・手数料は、<a href=\"%1\">こちら</a>で定められています。収益に影響がある可能性があるため、適用される全費用と手数料にご注意ください。"
-
-msgid "Our customer support agent will provide you with a unique link to connect to the video call."
-msgstr "カスタマーサポートのスタッフが、ビデオ通話に接続するための専用リンクを送信します。"
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "顧客からの高い評価を得て、２０１４年の中頃には累計で１億件の取引を達成し、１３万件以上の新たな取引が日々行われています。"
@@ -6135,7 +6144,7 @@ msgid "Please set %1country of residence%2 before upgrading to a real-money acco
 msgstr "リアル口座へアップグレードされる前に%居住国%2を設定してください。"
 
 msgid "Please set the %1currency%2 of your account."
-msgstr ""
+msgstr "口座に使用する%1通貨%2をご選択ください。"
 
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr "入金制限を解除するには、%1自己制限%2から30日間の取引限度額を設定してください。"
@@ -6618,8 +6627,8 @@ msgstr "世界中の顧客および企業が直面する複雑な問題を解決
 msgid "Resources"
 msgstr "取引参考情報"
 
-msgid "Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems"
-msgstr "当社最新式の電話、電子メール、チャットシステムを使用して顧客のお問い合わせに対応"
+msgid "Respond to client queries using our state of the art telephone and electronic mail"
+msgstr "当社最新式の電話、電子メールを使用して顧客のお問い合わせに対応"
 
 msgid "Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing."
 msgstr "ハードウェアとソフトウェアの展開・ネットワークセキュリティ・侵入検知・ロードバランシングを担当していただきます。"
@@ -8407,9 +8416,6 @@ msgstr "見やすく利便性の高いプラットフォームにてお取引を
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "損を出しても納得のできる金額でのトレードのみ実行しましょう。借金をしてまでトレード資金を準備することは見合わせましょう。"
 
-msgid "Trade page"
-msgstr "取引ページ"
-
 msgid "Trade short-term or long-term contracts, from ticks to days."
 msgstr "Trade short-term or long-term contracts, from ticks to days."
 
@@ -8659,6 +8665,9 @@ msgstr "Unless proven to be wrong, our records shall be used as evidence of your
 
 msgid "Unlock Cashier"
 msgstr "入出金ロック解除"
+
+msgid "Unsuccessful bidders will receive a full refund of their deposits."
+msgstr ""
 
 msgid "Up - Predict that the market will end higher than the average price"
 msgstr "HIGH - 取引期間終了時に市場価格が平均価格を上回ると予想"
@@ -9595,8 +9604,9 @@ msgstr "%1 APIを介したコンテンツのリクエストから24時間まで�
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "当社で開設されたご口座を閉鎖するには当社までご連絡いただく必要がございます。お客さまのご口座にオープンポジションのご契約がなく、保留中の資金を出金できるようにする「Know Your Client」の手順に応じられている場合にご口座の閉鎖が可能です。"
 
-msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "当社はお客さまへ当サイトを通して、ライブチャット、メール、電話 または 例外として郵送でご連絡させていただきます。詳細はお問い合わせページにてご確認いただけます。"
+msgid "You may communicate with us through this website by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
+msgstr "お客さまへ当サイトを通してメール、電話 または 例外として郵送でご連絡致します。\n"
+"詳細はお問い合わせページにてご確認いただけます。"
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "アプリケーションを登録して、これらの規約に同意されるとすぐに%1 APIを利用してアプリケーション開発ができます。"
@@ -9807,9 +9817,6 @@ msgstr "お客さまのご口座はアップグレード済みですので、ご
 
 msgid "Your account is fully authenticated. You can view your <a href=\"%1\">trading limits here</a>."
 msgstr "お客様のご口座はアップグレード済みです。トレードの上限条件を<a href=\"%1\">こちらから</a>ご確認頂けます。"
-
-msgid "Your account is not fully authenticated."
-msgstr "お客様の口座認証はまだ完了していません。"
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "お客さまの口座は、現在ご利用制限が掛っております。<a href=\"%1\">カスタマーサポート</a>までご連絡下さい。"
@@ -10074,9 +10081,6 @@ msgstr "net of realised profits credited to your Real Account and realised losse
 msgid "numbers"
 msgstr "数字"
 
-msgid "or go to %1Accounts page%2"
-msgstr "または、%1口座ページ%2に移動してください。"
-
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "から、全てのトレードに関する正確な終値の適用時間をご確認下さい。他のウェブサイトでは、異なるデータを採用している可能性があります。（例：ニューヨーク時間・午前４時、ロンドン時間・午前５時など）ゆえに、当社が公表している始値、最高値、最安値、及び市場閉場価格は、他のウェブサイトで公表している価格と異なる可能性があります。"
 
@@ -10118,9 +10122,6 @@ msgstr "当プラットフォームは全レベルのトレーダーがご利用
 
 msgid "the specific instructions that we receive from you;"
 msgstr "お客さまよりいただいた具体的なご指示"
-
-msgid "to set up the video call."
-msgstr "ビデオ通話を設定するには"
 
 msgid "today"
 msgstr "本日"

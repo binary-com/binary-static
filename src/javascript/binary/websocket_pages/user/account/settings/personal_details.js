@@ -4,7 +4,6 @@ const Client        = require('../../../../base/client');
 const Header        = require('../../../../base/header');
 const localize      = require('../../../../base/localize').localize;
 const State         = require('../../../../base/storage').State;
-const urlFor        = require('../../../../base/url').urlFor;
 const detectHedging = require('../../../../common_functions/common_functions').detectHedging;
 const makeOption    = require('../../../../common_functions/common_functions').makeOption;
 const formatMoney   = require('../../../../common_functions/currency').formatMoney;
@@ -23,7 +22,7 @@ const PersonalDetails = (() => {
         residence,
         get_settings_data,
         currency,
-        is_for_new_account;
+        is_for_new_account = false;
 
     const init = () => {
         editable_fields = {};
@@ -215,7 +214,8 @@ const PersonalDetails = (() => {
                 // update notification shown for set residence etc
                 Header.displayAccountStatus();
                 if (is_for_new_account) {
-                    BinaryPjax.load(urlFor('user/accounts'));
+                    is_for_new_account = false;
+                    BinaryPjax.loadPreviousUrl();
                 }
             });
         }
@@ -314,13 +314,13 @@ const PersonalDetails = (() => {
 
     const onLoad = () => {
         currency = Client.get('currency');
-        is_for_new_account = /new-account/.test(window.location.hash);
-        $('#account_opening_reason_notice').setVisibility(+is_for_new_account);
-
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.getResponse('get_settings');
             getDetailsResponse(get_settings_data);
+
+            $('#account_opening_reason_notice').setVisibility(+is_for_new_account);
+
             if (!is_virtual || !residence) {
                 $('#btn_update').setVisibility(1);
                 if (!is_jp) {
@@ -337,6 +337,8 @@ const PersonalDetails = (() => {
 
     return {
         onLoad: onLoad,
+
+        setIsForNewAccount: (bool) => { is_for_new_account = bool; },
     };
 })();
 

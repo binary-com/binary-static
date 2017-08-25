@@ -3,7 +3,6 @@ const BinarySocket          = require('../socket');
 const BinaryPjax            = require('../../base/binary_pjax');
 const Client                = require('../../base/client');
 const localize              = require('../../base/localize').localize;
-const defaultRedirectUrl    = require('../../base/url').defaultRedirectUrl;
 const jpClient              = require('../../common_functions/country_base').jpClient;
 const getDecimalPlaces      = require('../../common_functions/currency').getDecimalPlaces;
 const formatMoney           = require('../../common_functions/currency').formatMoney;
@@ -20,7 +19,7 @@ const ICOSubscribe = (() => {
 
     const onLoad = () => {
         if (jpClient()) {
-            BinaryPjax.load(defaultRedirectUrl());
+            BinaryPjax.loadPreviousUrl();
             return;
         }
 
