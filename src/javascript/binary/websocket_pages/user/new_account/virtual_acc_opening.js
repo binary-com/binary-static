@@ -113,7 +113,7 @@ const VirtualAccOpening = (() => {
                 loginid     : new_account.client_id,
                 token       : new_account.oauth_token,
                 is_virtual  : true,
-                redirect_url: jp_client ? urlFor('new_account/landing_company') : '',
+                redirect_url: jp_client ? urlFor('new_account/landing_page') : '',
             });
         }
 
