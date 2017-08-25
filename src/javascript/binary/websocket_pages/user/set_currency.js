@@ -6,21 +6,25 @@ const localize         = require('../../base/localize').localize;
 const State            = require('../../base/storage').State;
 const Url              = require('../../base/url');
 const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
+const getCurrencyName  = require('../../common_functions/currency').getCurrencyName;
 
 const SetCurrency = (() => {
     'use strict';
 
+    let is_new_account;
+
     const onLoad = () => {
-        const hash_value = window.location.hash;
-        const el = /new_account/.test(hash_value) ? 'show' : 'hide';
+        is_new_account = localStorage.getItem('is_new_account');
+        localStorage.removeItem('is_new_account');
+        const el = is_new_account ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
 
         if (Client.get('currency')) {
-            if (/new_account/.test(hash_value)) {
+            if (is_new_account) {
                 $('#set_currency_loading').remove();
                 $('#has_currency, #set_currency').setVisibility(1);
             } else {
-                BinaryPjax.load(Url.defaultRedirectUrl());
+                BinaryPjax.loadPreviousUrl();
             }
             return;
         }
@@ -33,7 +37,7 @@ const SetCurrency = (() => {
                 (isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies)
                     .append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
                         .append($('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
-                        .append($('<div/>', { html: c })));
+                        .append($('<div/>', { class: 'currency-name', html: (isCryptocurrency(c) ? `${getCurrencyName(c)}<br />(${c})` : c) })));
             });
             const fiat_currencies = $fiat_currencies.html();
             if (fiat_currencies) {
@@ -71,28 +75,21 @@ const SetCurrency = (() => {
                             BinarySocket.send({ payout_currencies: 1 }, { forced: true });
                             Header.displayAccountStatus();
 
-                            let redirect_url,
-                                hash = '';
-                            if (/deposit/.test(hash_value)) {
-                                redirect_url = 'cashier/forwardws';
-                                hash = '#deposit';
-                            } else if (/withdraw/.test(hash_value)) {
-                                redirect_url = 'cashier/forwardws';
-                                hash = '#withdraw';
-                            } else if (/new_account/.test(hash_value)) {
+                            let redirect_url;
+                            if (is_new_account) {
                                 if (Client.isAccountOfType('financial')) {
                                     const get_account_status = State.getResponse('get_account_status');
                                     if (!/authenticated/.test(get_account_status.status)) {
-                                        redirect_url = 'user/authenticate';
+                                        redirect_url = Url.urlFor('user/authenticate');
                                     }
                                 }
                             } else {
-                                redirect_url = 'cashier/forwardws';
-                                hash = '#deposit';
+                                redirect_url = BinaryPjax.getPreviousUrl();
                             }
                             if (redirect_url) {
-                                window.location.href = Url.urlFor(redirect_url) + hash; // load without pjax
+                                window.location.href = redirect_url; // load without pjax
                             } else {
+                                Header.showOrHideLoginForm(); // update account title
                                 $('.select_currency').setVisibility(0);
                                 $('#has_currency').setVisibility(1);
                             }

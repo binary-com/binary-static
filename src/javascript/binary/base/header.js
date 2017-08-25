@@ -4,7 +4,7 @@ const GTM                 = require('./gtm');
 const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
-const urlFor              = require('./url').urlFor;
+const Url                 = require('./url');
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
 const toTitleCase         = require('../common_functions/string_util').toTitleCase;
@@ -29,7 +29,7 @@ const Header = (() => {
 
     const bindClick = () => {
         $('#logo').off('click').on('click', () => {
-            BinaryPjax.load(urlFor(Client.isLoggedIn() ? (jpClient() ? 'multi_barriers_trading' : 'trading') : ''));
+            BinaryPjax.load(Client.isLoggedIn() ? Url.defaultRedirectUrl() : Url.urlFor(''));
         });
         $('#btn_login').off('click').on('click', (e) => {
             e.preventDefault();
@@ -102,7 +102,7 @@ const Header = (() => {
             const showUpgrade = (url, msg) => {
                 $upgrade_msg.setVisibility(1)
                     .find('a').setVisibility(1)
-                    .attr('href', urlFor(url))
+                    .attr('href', Url.urlFor(url))
                     .html($('<span/>', { text: localize(msg) }));
             };
 
@@ -191,7 +191,7 @@ const Header = (() => {
                 /financial_assessment_not_complete/.test(status) && !jpClient()
             );
 
-            const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${urlFor(path)}${hash}">`, '</a>']);
+            const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
 
 
             const messages = {
@@ -258,6 +258,7 @@ const Header = (() => {
     return {
         onLoad: onLoad,
 
+        showOrHideLoginForm         : showOrHideLoginForm,
         upgradeMessageVisibility    : upgradeMessageVisibility,
         metatraderMenuItemVisibility: metatraderMenuItemVisibility,
         displayNotification         : displayNotification,

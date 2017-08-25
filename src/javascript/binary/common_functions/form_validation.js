@@ -1,4 +1,5 @@
 const localize              = require('../base/localize').localize;
+const addComma              = require('../common_functions/currency').addComma;
 const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
@@ -121,13 +122,13 @@ const Validation = (() => {
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
         } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
             is_ok = false;
-            message = localize('Should be between [_1] and [_2]', [options.min, options.max]);
+            message = localize('Should be between [_1] and [_2]', [options.min, addComma(options.max)]);
         } else if ('min' in options && +value < +options.min) {
             is_ok = false;
             message = localize('Should be more than [_1]', [options.min]);
         } else if ('max' in options && isMoreThanMax(value, options)) {
             is_ok = false;
-            message = localize('Should be less than [_1]', [options.max]);
+            message = localize('Should be less than [_1]', [addComma(options.max)]);
         }
 
         validators_map.number.message = message;

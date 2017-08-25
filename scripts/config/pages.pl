@@ -6,7 +6,7 @@ use warnings;
 sub all_pages {
     return (
         # url pathname,                template file path,             layout,       title,                  exclude languages
-        ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
+        ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'ja'],
         ['home-jp',                    'home/index_jp',                'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
         ['404',                        'static/404',                   'full_width', '404'],
         ['why-us',                     'static/why_us',                'full_width', 'Why Us',               'ja'],

@@ -1,10 +1,12 @@
-const BinarySocket = require('../socket');
-const BinaryPjax   = require('../../base/binary_pjax');
-const Client       = require('../../base/client');
-const localize     = require('../../base/localize').localize;
-const urlFor       = require('../../base/url').urlFor;
-const template     = require('../../base/utility').template;
-const FormManager  = require('../../common_functions/form_manager');
+const BinarySocket      = require('../socket');
+const setShouldRedirect = require('../user/account/settings/cashier_password').setShouldRedirect;
+const BinaryPjax        = require('../../base/binary_pjax');
+const Client            = require('../../base/client');
+const localize          = require('../../base/localize').localize;
+const urlFor            = require('../../base/url').urlFor;
+const template          = require('../../base/utility').template;
+const FormManager       = require('../../common_functions/form_manager');
+const isCryptocurrency  = require('../../common_functions/currency').isCryptocurrency;
 
 const DepositWithdraw = (() => {
     'use strict';
@@ -16,11 +18,11 @@ const DepositWithdraw = (() => {
     const init = (cashier_password) => {
         if (cashier_password) {
             showMessage('cashier_locked_message');
-            sessionStorage.setItem('cashier_lock_redirect', window.location.href);
+            setShouldRedirect(true);
             return;
         }
         if (!Client.get('currency')) {
-            BinaryPjax.load(`${urlFor('user/set-currency')}#redirect_${cashier_type}`);
+            BinaryPjax.load(urlFor('user/set-currency'));
         } else {
             initDepositWithdraw();
         }
@@ -186,8 +188,11 @@ const DepositWithdraw = (() => {
                     showError('custom_error', error.message);
             }
         } else {
-            $(container).find('iframe').attr('src', response.cashier).parent()
-                .setVisibility(1);
+            const $iframe = $(container).find('iframe');
+            if (isCryptocurrency(Client.get('currency'))) {
+                $iframe.css('height', '700px');
+            }
+            $iframe.attr('src', response.cashier).parent().setVisibility(1);
         }
     };
 

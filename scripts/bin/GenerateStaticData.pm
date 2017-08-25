@@ -520,6 +520,13 @@ sub _texts {
         push @texts, localize('Virtual');
         push @texts, localize('Real');
 
+        # currency names
+        push @texts, localize('Bitcoin');
+        push @texts, localize('Bitcoin Cash');
+        push @texts, localize('Ether');
+        push @texts, localize('Ether Classic');
+        push @texts, localize('Litecoin');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
 

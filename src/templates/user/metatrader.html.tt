@@ -84,7 +84,7 @@
                         </li>
                         <li>
                             <img src="[% request.url_for('images/pages/metatrader/dashboard/windows.svg') %]" />
-                            <a href="[% request.url_for('/download/binarycom_mt5_setup.exe') %]" download>[% l('Download for Windows') %]</a>
+                            <a href="https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe" download>[% l('Download for Windows') %]</a>
                         </li>
                         <li>
                             <img src="[% request.url_for('images/pages/metatrader/dashboard/linux.svg') %]" />

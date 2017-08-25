@@ -17,7 +17,7 @@
         <h3>[% l('For Desktop') %]</h3>
         <p>[% l('Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders.') %]</p>
         <div class="gr-row">
-            [% INCLUDE download image='windows' title=l('Windows') desc=l('Windows 7 or later')    href=request.url_for('/download/binarycom_mt5_setup.exe') %]
+            [% INCLUDE download image='windows' title=l('Windows') desc=l('Windows 7 or later')    href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' %]
             [% INCLUDE download image='apple'   title=l('MacOS')   desc=l('All versions of MacOS') href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg' download %]
             [% INCLUDE download image='linux'   title=l('Linux')   desc=l('All versions of Linux') href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux' target='_blank' %]
         </div>

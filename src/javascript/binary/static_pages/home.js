@@ -1,5 +1,4 @@
 const BinaryPjax   = require('../base/binary_pjax');
-const getLanguage  = require('../base/language').get;
 const localize     = require('../base/localize').localize;
 const FormManager  = require('../common_functions/form_manager');
 const BinarySocket = require('../websocket_pages/socket');
@@ -11,10 +10,6 @@ const Home = (() => {
 
     const onLoad = () => {
         tabListener();
-        if (getLanguage() === 'JA' && !/home-jp/.test(window.location.pathname)) {
-            BinaryPjax.load('home-jp');
-            return;
-        }
         BinarySocket.wait('website_status').then((response) => {
             clients_country = response.website_status.clients_country;
             const form_id = '#frm_verify_email';
