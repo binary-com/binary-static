@@ -1,9 +1,9 @@
 [% PROCESS components/forms.html.tt %]
 
-<h1>[% l('Binary Initial Coin Offering (ICO)') %]</h1>
+<h1>[% l('[_1] Initial Coin Offering (ICO)', website_name) %]</h1>
 
 <div id="ico_subscribe" class="invisible">
-    <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency.", website_name) %]</p>
+    <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency.", website_name) %]</p>
     <div class="gr-row">
         <div class="gr-7 gr-12-p gr-12-m">
             <img class="responsive" src="[% request.url_for('/images/pages/ico/auction.svg') %]" />
@@ -11,7 +11,7 @@
         <div class="gr-5 gr-12-p gr-12-m border-gray border-radius">
             <form id="frm_ico_bid">
                 <div class="gr-row fill-bg-color gr-padding-10 border-radius">
-                    <h3 class="gr-5 no-margin">[% l('Bid Binary ICO:') %]</h3>
+                    <h3 class="gr-5 no-margin">[% l('Bid on the ICO:') %]</h3>
                     <div class="gr-7 hint align-end">
                         <span class="currency"></span> [% l('Balance:') %]
                         <strong class="topMenuBalance"></strong>
@@ -58,7 +58,7 @@
         </div>
     </div>
     <div id="ico_bids">
-        <h1>[% l('Binary ICO Auction Bids') %]</h1>
+        <h1>[% l('[_1] ICO Auction Bids', website_name) %]</h1>
         [% PROCESS components/elements.html.tt %]
 
         <div id="portfolio">
@@ -90,7 +90,7 @@
         <p>[% l('Notes:') %]</p>
         <ol>
             <li>[% l('Each bid cancellation will be subject to a 2% cancellation fee.') %]</li>
-            <li>[% l('Unsuccessful bidders will receive a full refund of their deposits.') %]</li>
+            <li>[% l('Unsuccessful bidders will receive a full refund.') %]</li>
         </ol>
     </div>
 </div>
