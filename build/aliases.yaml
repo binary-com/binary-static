@@ -51,7 +51,7 @@ release:
   - 'clean'
   - 'default'
   - 'shell:compile_production'
-  - 'shell:make_cname'
   - 'shell:reset_ghpages'
+  - 'shell:make_cname'
   - 'gh-pages:main'
   - 'shell:trigger_tests'

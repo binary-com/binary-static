@@ -46,7 +46,7 @@ module.exports = function (grunt) {
             options: {
                 callback: function (err, stdout, stderr, cb) {
                     if(!err) {
-                        if(grunt.option('cleanup')) {
+                        if(grunt.option('cleanup') || grunt.option('reset')) {
                             var origin = stdout.replace('\n', ''),
                                 CNAME;
                             if (origin === global.release_info.origin) {
