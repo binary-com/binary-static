@@ -143,8 +143,8 @@
 
         <div class="gr-11 gr-centered">
             <div class="gr-row">
-                [% INCLUDE steps step='1' image='demo'       text=l('Open a Demo Account') %]
-                [% INCLUDE steps step='2' image='real_money' text=l('Apply for a Real Money Account') %]
+                [% INCLUDE steps step='1' image='demo'          text=l('Open a Demo Account') %]
+                [% INCLUDE steps step='2' image='personal_info' text=l('Input personal information') %]
             </div>
 
             <div class="gr-row">
