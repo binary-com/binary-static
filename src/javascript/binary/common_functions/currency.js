@@ -53,7 +53,7 @@ const crypto_config = {
     BCH: { name: 'Bitcoin Cash' },
     ETH: { name: 'Ether' },
     ETC: { name: 'Ether Classic' },
-    LTC: { name: 'Litecoin',      min_payout: 0.01 },
+    LTC: { name: 'Litecoin',      min_payout: 0.1 },
 };
 
 const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
