@@ -66,6 +66,19 @@ const getMinPayout = currency => (
             10)
 );
 
+const getCurrencyList = (currencies) => {
+    const $currencies = $('<select/>');
+    const $fiat_currencies = $('<optgroup/>', { label: localize('Fiat Currency') });
+    const $cryptocurrencies = $('<optgroup/>', { label: localize('Cryptocurrency') });
+
+    currencies.forEach((currency) => {
+        (isCryptocurrency(currency) ? $cryptocurrencies : $fiat_currencies)
+            .append($('<option/>', { value: currency, text: currency }));
+    });
+
+    return $currencies.append($fiat_currencies.children().length ? $fiat_currencies : '').append($cryptocurrencies.children().length ? $cryptocurrencies : '');
+};
+
 module.exports = {
     formatMoney     : formatMoney,
     formatCurrency  : formatCurrency,
@@ -76,4 +89,5 @@ module.exports = {
     isCryptocurrency: isCryptocurrency,
     getCurrencyName : getCurrencyName,
     getMinPayout    : getMinPayout,
+    getCurrencyList : getCurrencyList,
 };
