@@ -1,5 +1,4 @@
 const Defaults = require('./defaults');
-const localize = require('../../base/localize').localize;
 const State    = require('../../base/storage').State;
 const Currency = require('../../common_functions/currency');
 
@@ -21,15 +20,7 @@ const displayCurrencies = () => {
     const currencies = State.getResponse('payout_currencies');
 
     if (currencies.length > 1) {
-        const $fiat_currencies = $('<optgroup/>', { label: localize('Fiat Currency') });
-        const $cryptocurrencies = $('<optgroup/>', { label: localize('Cryptocurrency') });
-
-        currencies.forEach((currency) => {
-            (Currency.isCryptocurrency(currency) ? $cryptocurrencies : $fiat_currencies)
-                .append($('<option/>', { value: currency, text: currency }));
-        });
-
-        $currency.html($fiat_currencies).append($cryptocurrencies);
+        $currency.html(Currency.getCurrencyList(currencies).html());
         Defaults.set('currency', $currency.val());
     } else {
         $currency.replaceWith($('<span/>', { id: $currency.attr('id'), class: $currency.attr('class'), value: currencies[0], html: Currency.formatCurrency(currencies[0]) }));
