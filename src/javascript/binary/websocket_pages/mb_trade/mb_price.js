@@ -90,6 +90,8 @@ const MBPrice = (() => {
         if (!$table) {
             $table = $(price_selector);
         }
+        $table.off('click', 'button.price-button').on('click', 'button.price-button', processBuy);
+
         if (!barriers.length) {
             barriers = Object.keys(prices).sort((a, b) => +b.split('_')[0] - (+a.split('_')[0]));
         }
@@ -171,7 +173,7 @@ const MBPrice = (() => {
 
     const updatePriceRow = (values) => {
         const $buy = $(`<button class="price-button${values.is_active ? '' : ' inactive'}"
-            ${values.is_active ? ` onclick="return HandleClick('MBPrice', '${values.barrier}', '${values.contract_type}')"` : ''}
+            data-barrier="${values.barrier}" data-contract_type=${values.contract_type}
             ${values.message ? ` data-balloon="${values.message}"` : ''}>
                 <span class="value-wrapper">
                     <span class="dynamics ${values.ask_price_movement || ''}"></span>
@@ -191,12 +193,24 @@ const MBPrice = (() => {
         $row.find(`.sell-price:eq(${order})`).html($sell);
     };
 
-    const processBuy = (barrier, contract_type) => {
+    const processBuy = (e) => {
+        e.preventDefault();
+        let $btn = $(e.target);
+        if ($btn.prop('tagName').toLowerCase() !== 'button') {
+            $btn = $btn.parents('button.price-button');
+        }
+
+        if ($btn.hasClass('inactive')) return;
+
+        const barrier       = $btn.attr('data-barrier');
+        const contract_type = $btn.attr('data-contract_type');
         if (!barrier || !contract_type) return;
+
         if (!Client.isLoggedIn()) {
             MBNotifications.show({ text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
             return;
         }
+
         MBPrice.showPriceOverlay();
         MBPrice.sendBuyRequest(barrier, contract_type);
     };
