@@ -339,3 +339,23 @@ body #not_authenticated_financial ul.checked > li {
     margin-left: 5px;
     margin-bottom: 3px;
 }
+
+.authenticate-content {
+    .fields > .gr-row > div {
+        > .button-secondary {
+            width: 100%;
+
+            > img.add {
+                display: inline-flex;
+                width: 1em;
+                height: 1em;
+                margin-left: 10px;
+                margin-top: -2px;
+                content: url('../images/pages/authenticate/add.svg');
+            }
+        }
+        > input[type=file] {
+            display: none;
+        }
+    }
+}
