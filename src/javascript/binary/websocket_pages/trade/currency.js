@@ -25,17 +25,14 @@ const displayCurrencies = () => {
         const $cryptocurrencies = $('<optgroup/>', { label: localize('Cryptocurrency') });
 
         currencies.forEach((currency) => {
-            if (Currency.isCryptocurrency(currency)) {
-                $cryptocurrencies.append($('<option/>', { value: currency, text: currency }));
-            } else {
-                $fiat_currencies.append($('<option/>', { value: currency, text: currency }));
-            }
+            (Currency.isCryptocurrency(currency) ? $cryptocurrencies : $fiat_currencies)
+                .append($('<option/>', { value: currency, text: currency }));
         });
 
         $currency.html($fiat_currencies).append($cryptocurrencies);
-        Defaults.set('currency', $currency.value);
+        Defaults.set('currency', $currency.val());
     } else {
-        $currency.replaceWith($('<span/>', { id: $currency.getAttribute('id'), class: $currency.getAttribute('class'), value: currencies[0], html: Currency.formatCurrency(currencies[0]) }));
+        $currency.replaceWith($('<span/>', { id: $currency.attr('id'), class: $currency.attr('class'), value: currencies[0], html: Currency.formatCurrency(currencies[0]) }));
         Defaults.set('currency', currencies[0]);
     }
 };
