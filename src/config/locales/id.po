@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-23 20:53-0400\n"
+"PO-Revision-Date: 2017-08-27 22:37-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -96,11 +96,17 @@ msgstr "Syarat dan Ketentuan Application Program Interface (\"API\") %1"
 msgid "%1 ICO <br /> Pre-announcement"
 msgstr "Pra-pengumuman <br /> ICO %1"
 
+msgid "%1 ICO Auction Bids"
+msgstr "Tawaran Lelang ICO %1"
+
 msgid "%1 ICO FAQ"
 msgstr "Pertanyaan Umum ICO %1"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "ICO %1, Berinvestasi didalam platform trading opsi binary utama dunia"
+
+msgid "%1 Initial Coin Offering (ICO)"
+msgstr "Penawaran Koin Perdana (ICO) %1"
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 Silahkan klik link dibawah untuk mengulang proses pembuatan kata sandi."
@@ -213,8 +219,8 @@ msgstr "%1 tidak berafiliasi dengan agen pembayaran manapun. Setiap agen pembaya
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 tidak tersedia di Costa Rica dan tidak diatur atau diawasi oleh badan pengawas keuangan di Costa Rica."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency."
-msgstr "%1 menawarkan hingga <strong>10.000.000</strong> token dalam lelang terbuka. Anda dapat menempatkan tawaran Anda menggunakan formulir di bawah ini. Tawaran minimum adalah <strong>USD 1</strong> atau setara dalam mata uang lainnya."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
+msgstr "%1 menawarkan hingga <strong>10.000.000</strong> token pada lelang terbuka. Anda dapat menempatkan tawaran Anda menggunakan formulir di bawah ini. Tawaran minimum adalah <strong>USD 1</strong> atau setara dalam mata uang lainnya."
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 merupakan salah satu nama yang tertua dan dihormati pada trading online binary."
@@ -1074,9 +1080,6 @@ msgstr "Aplikasi"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials."
 msgstr "Cermat dan detail, mengoreksi dan memperbaiki konten yang muncul di website perusahaan, blog, media sosial dan materi pemasaran."
 
-msgid "Apply for a Real Money Account"
-msgstr "Mendaftar Akun Uang Riil"
-
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "Khusus untuk exchanger, ajukan pendaftaran sebagai <a href=\"%2\">agen pembayaran</a> %1."
 
@@ -1386,11 +1389,11 @@ msgstr "Sistem dan metode trading"
 msgid "Bid"
 msgstr "Bid"
 
-msgid "Bid Binary ICO:"
-msgstr "Bid ICO Binary:"
-
 msgid "Bid Price Per Token"
 msgstr "Harga Bid Per Token"
+
+msgid "Bid on the ICO:"
+msgstr "Bid pada ICO:"
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -1439,12 +1442,6 @@ msgstr "Binary Group Services sedang mencari pengembang Perl berbakat dan memili
 
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Binary Group Services mencari developer front-end yang berbakat dan termotivasi untuk maju."
-
-msgid "Binary ICO Auction Bids"
-msgstr "Tawaran Lelang ICO Binary"
-
-msgid "Binary Initial Coin Offering (ICO)"
-msgstr "Binary Initial Coin Offering (ICO)"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "Binary Investments (Europe) Limited dapat memberikan layanan kepada Negara Anggota Uni Eropa lainnya melalui hak pemegang paspor Uni Eropa. Lihat peta berikut ini untuk daftar negara Uni Eropa yang dapat mengakses %1 menggunakan hak pemegang paspor Eropa Union - kebebasan untuk memberikan layanan lintas perbatasan."
@@ -1567,10 +1564,10 @@ msgid "Binary.com will issue a number of tokens during the ICO."
 msgstr "Binary.com akan mengeluarkan sejumlah token selama ICO berlangsung."
 
 msgid "Bitcoin"
-msgstr ""
+msgstr "Bitcoin"
 
 msgid "Bitcoin Cash"
-msgstr ""
+msgstr "Bitcoin Cash"
 
 msgid "Both the above"
 msgstr "Keduanya diatas"
@@ -2547,6 +2544,9 @@ msgstr "Download CSV"
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "Download MT5 pada desktop atau laptop Anda untuk mengakses peralatan canggih dan fasilitas yang dinikmati oleh jutaan trader."
 
+msgid "Download Now"
+msgstr "Download Sekarang"
+
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Mendorong pertumbuhan yang cepat dan pengembangan usaha, untuk mendukung penjualan perusahaan dan tujuan pemasaran"
 
@@ -2608,7 +2608,7 @@ msgid "EUR 1 per point"
 msgstr "1 EUR per poin"
 
 msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr ""
+msgstr "Setiap pembatalan bid dikenakan biaya pembatalan sebesar 2%."
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "Setiap kontrak opsi binary memiliki periode waktu tertentu – dengan %1 Anda dapat memilih kontrak dengan durasi antara 10 detik hingga 365 hari."
@@ -2806,10 +2806,10 @@ msgid "Estimated Net Worth"
 msgstr "Estimasi Nilai Bersih"
 
 msgid "Ether"
-msgstr ""
+msgstr "Ether"
 
 msgid "Ether Classic"
-msgstr ""
+msgstr "Ether Classic"
 
 msgid "Ethics Code"
 msgstr "Ethics Code"
@@ -4041,6 +4041,9 @@ msgstr "Informasi dari kinerja sebelumnya untuk setiap instrumen dasar atau aset
 msgid "Inheritance"
 msgstr "Warisan"
 
+msgid "Input personal information"
+msgstr "Masukkan informasi pribadi"
+
 msgid "Instant access"
 msgstr "Akses cepat"
 
@@ -4888,7 +4891,7 @@ msgid "Liquidity solutions"
 msgstr "Solusi likuiditas"
 
 msgid "Litecoin"
-msgstr ""
+msgstr "Litecoin"
 
 msgid "Lock Cashier"
 msgstr "Kunci Kasir"
@@ -8542,8 +8545,8 @@ msgstr "Kecuali terbukti bersalah, catatan yang kami miliki adalah digunakan seb
 msgid "Unlock Cashier"
 msgstr "Buka Kasir"
 
-msgid "Unsuccessful bidders will receive a full refund of their deposits."
-msgstr ""
+msgid "Unsuccessful bidders will receive a full refund."
+msgstr "Penawar yang gagal akan menerima pengembalian penuh."
 
 msgid "Up - Predict that the market will end higher than the average price"
 msgstr "Up - Menganalisa pasar akan berakhir lebih tinggi dari harga rata-rata"
@@ -10459,6 +10462,9 @@ msgstr "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the ti
 msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 msgstr "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 
+msgid "{JAPAN ONLY}Apply for Real Money Account"
+msgstr "{JAPAN ONLY}Apply for Real Money Account"
+
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 msgstr "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 
@@ -10482,6 +10488,9 @@ msgstr "{JAPAN ONLY}As well as our Japanese financial licence, we also operate i
 
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
+
+msgid "{JAPAN ONLY}At the top of the page as shown above."
+msgstr "{JAPAN ONLY}At the top of the page as shown above."
 
 msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
 msgstr "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
@@ -10942,6 +10951,9 @@ msgstr "{JAPAN ONLY}Options are said to be leveraged products because in the cas
 msgid "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 msgstr "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 
+msgid "{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:"
+msgstr "{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:"
+
 msgid "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 
@@ -11016,6 +11028,9 @@ msgstr "{JAPAN ONLY}Pre-Contract Documents"
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
+
+msgid "{JAPAN ONLY}Proceed to Virtual Account"
+msgstr "{JAPAN ONLY}Proceed to Virtual Account"
 
 msgid "{JAPAN ONLY}Proceed to official site"
 msgstr "{JAPAN ONLY}Proceed to official site"
@@ -11509,6 +11524,9 @@ msgstr "{JAPAN ONLY}We are required to request copies of your My Number Card as 
 msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 
+msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
+msgstr "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
+
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 
@@ -11536,6 +11554,9 @@ msgstr "{JAPAN ONLY}We will process your request and transfer the funds to your 
 msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 msgstr "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 
+msgid "{JAPAN ONLY}Welcome to %1"
+msgstr "{JAPAN ONLY}Welcome to %1"
+
 msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
 msgstr "{JAPAN ONLY}Welcome to the site of Binary KK."
 
@@ -11553,6 +11574,12 @@ msgstr "{JAPAN ONLY}Why become an Affiliate?"
 
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "{JAPAN ONLY}Win Loss Ratio"
+
+msgid "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
+msgstr "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
+
+msgid "{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:"
+msgstr "{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
@@ -11703,6 +11730,9 @@ msgstr "Transfer Agen Pembayaran"
 
 msgid "Trusted by traders since 2000"
 msgstr "Dipercaya oleh trader sejak 2000"
+
+msgid "Welcome to Binary.com"
+msgstr "Selamat datang di Binary.com"
 
 msgid "Accounts"
 msgstr "Akun"

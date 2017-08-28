@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-23 20:52-0400\n"
+"PO-Revision-Date: 2017-08-27 22:36-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -96,11 +96,17 @@ msgstr "Termos e condições da Application Program Interface (\"API\") %1"
 msgid "%1 ICO <br /> Pre-announcement"
 msgstr "OIM %1 <br /> Pré-anúncio"
 
+msgid "%1 ICO Auction Bids"
+msgstr ""
+
 msgid "%1 ICO FAQ"
 msgstr "OIM %1 Perguntas Frequentes"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "OIM %1, Invista na principal plataforma para a negociação de opções binárias"
+
+msgid "%1 Initial Coin Offering (ICO)"
+msgstr ""
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 Clique no link abaixo para reiniciar o processo de recuperação de senha."
@@ -213,8 +219,8 @@ msgstr "A %1 não está afiliada com nenhum dos agentes de pagamentos acima refe
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "A %1 não está disponível na Costa Rica e não é regulamentada nem supervisionada por nenhuma entidade regulamentar no sistema financeiro costa-riquenho."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency."
-msgstr "A %1 está disponibilizando até <strong>10.000.000</strong> tokens em leilão aberto. Você pode lançar a sua proposta usando o formulário abaixo. O lance mínimo é de <strong>US$ 1</strong> ou equivalente em outra moeda."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
+msgstr ""
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "A %1 é um dos nomes mais antigos e mais respeitados na negociação online de opções binárias."
@@ -1082,9 +1088,6 @@ msgstr "Aplicativos"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials."
 msgstr "Ter uma visão meticulosa para os detalhes nas revisões dos conteúdos que aparecem no site, nos blogs e nas mídias sociais e materiais de marketing da empresa."
 
-msgid "Apply for a Real Money Account"
-msgstr "Inscreva-se para abrir uma conta de dinheiro real"
-
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "Candidate-se para se tornar um <a class=\"pjaxload\" href=\"%2\">agente de pagamentos</a> da %1."
 
@@ -1394,11 +1397,11 @@ msgstr "Sistema e método de apostas"
 msgid "Bid"
 msgstr "Lance"
 
-msgid "Bid Binary ICO:"
-msgstr "Lance OIM Binary:"
-
 msgid "Bid Price Per Token"
 msgstr "Preço de lance por token"
+
+msgid "Bid on the ICO:"
+msgstr ""
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -1447,12 +1450,6 @@ msgstr "O Binary Group Services está procurando desenvolvedores talentosos e mo
 
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Binary Group Services está procurando desenvolvedores front-end talentosos e motivados que buscam uma oportunidade de brilhar nas suas carreiras."
-
-msgid "Binary ICO Auction Bids"
-msgstr "Lances de leilão da OIM Binary"
-
-msgid "Binary Initial Coin Offering (ICO)"
-msgstr "Oferta Inicial de Moedas (OIM)"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "A Binary Investments (Europe) Limited tem o direito de prestar serviços em outros estados membros da UE através dos direitos de passaporte da UE. Consulte o mapa abaixo para ver uma lista de países da UE que têm acesso à %1 através dos direitos de passaporte da UE - a liberdade de prestar serviços transfronteiriços."
@@ -1576,7 +1573,7 @@ msgid "Binary.com will issue a number of tokens during the ICO."
 msgstr "A Binary.com irá emitir um grande número de tokens durante a OIM."
 
 msgid "Bitcoin"
-msgstr ""
+msgstr "Bitcoin"
 
 msgid "Bitcoin Cash"
 msgstr ""
@@ -2557,6 +2554,9 @@ msgstr "Baixar CSV"
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "Baixe a MT5 para o seu desktop ou laptop para acessar as ferramentas e recursos poderosos desfrutados por milhões de negociadores."
 
+msgid "Download Now"
+msgstr ""
+
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Impulsionar o crescimento rápido e o desenvolvimento de negócios para auxiliar os objetivos de vendas e marketing da empresa"
 
@@ -2618,7 +2618,7 @@ msgid "EUR 1 per point"
 msgstr "1 EUR por ponto"
 
 msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr ""
+msgstr "Cada cancelamento de uma licitação será sujeito a uma taxa de cancelamento de 2%."
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "Cada contrato de opção binária dura um determinado tempo – com a %1 você pode escolher um contrato que dura de 10 segundos a 365 dias."
@@ -2816,10 +2816,10 @@ msgid "Estimated Net Worth"
 msgstr "Patrimônio líquido estimado"
 
 msgid "Ether"
-msgstr ""
+msgstr "Ethereum"
 
 msgid "Ether Classic"
-msgstr ""
+msgstr "Ethereum Classic"
 
 msgid "Ethics Code"
 msgstr "Ethics Code"
@@ -4052,6 +4052,9 @@ msgstr "Informações sobre o desempenho anterior de qualquer instrumento ou ati
 msgid "Inheritance"
 msgstr "Herança"
 
+msgid "Input personal information"
+msgstr ""
+
 msgid "Instant access"
 msgstr "Acesso instantâneo"
 
@@ -4899,7 +4902,7 @@ msgid "Liquidity solutions"
 msgstr "Soluções de liquidez"
 
 msgid "Litecoin"
-msgstr ""
+msgstr "Litecoin"
 
 msgid "Lock Cashier"
 msgstr "Bloquear Caixa"
@@ -8554,7 +8557,7 @@ msgstr "Salvo prova em contrário, os nossos registros devem ser usados como pro
 msgid "Unlock Cashier"
 msgstr "Desbloquear o Caixa"
 
-msgid "Unsuccessful bidders will receive a full refund of their deposits."
+msgid "Unsuccessful bidders will receive a full refund."
 msgstr ""
 
 msgid "Up - Predict that the market will end higher than the average price"
@@ -10471,6 +10474,9 @@ msgstr "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the ti
 msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 msgstr "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 
+msgid "{JAPAN ONLY}Apply for Real Money Account"
+msgstr ""
+
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 msgstr "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 
@@ -10494,6 +10500,9 @@ msgstr "{JAPAN ONLY}As well as our Japanese financial licence, we also operate i
 
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
+
+msgid "{JAPAN ONLY}At the top of the page as shown above."
+msgstr ""
 
 msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
 msgstr "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
@@ -10954,6 +10963,9 @@ msgstr "{JAPAN ONLY}Options are said to be leveraged products because in the cas
 msgid "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 msgstr "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 
+msgid "{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:"
+msgstr ""
+
 msgid "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 
@@ -11028,6 +11040,9 @@ msgstr "{JAPAN ONLY}Pre-Contract Documents"
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of the underlying spot price, and are dependent on multiple factors which may vary."
+
+msgid "{JAPAN ONLY}Proceed to Virtual Account"
+msgstr ""
 
 msgid "{JAPAN ONLY}Proceed to official site"
 msgstr "{JAPAN ONLY}Proceed to official site"
@@ -11521,6 +11536,9 @@ msgstr "{JAPAN ONLY}We are required to request copies of your My Number Card as 
 msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 
+msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
+msgstr ""
+
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 
@@ -11548,6 +11566,9 @@ msgstr "{JAPAN ONLY}We will process your request and transfer the funds to your 
 msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 msgstr "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 
+msgid "{JAPAN ONLY}Welcome to %1"
+msgstr ""
+
 msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
 msgstr "{JAPAN ONLY}Welcome to the site of Binary KK."
 
@@ -11565,6 +11586,12 @@ msgstr "{JAPAN ONLY}Why become an Affiliate?"
 
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "{JAPAN ONLY}Win Loss Ratio"
+
+msgid "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
+msgstr ""
+
+msgid "{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:"
+msgstr ""
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
@@ -11715,6 +11742,9 @@ msgstr "Transferência do agente de pagamentos"
 
 msgid "Trusted by traders since 2000"
 msgstr "Corretora de confiança desde 2000"
+
+msgid "Welcome to Binary.com"
+msgstr ""
 
 msgid "Accounts"
 msgstr "Contas"
