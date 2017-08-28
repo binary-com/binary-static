@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-23 20:52-0400\n"
+"PO-Revision-Date: 2017-08-27 22:37-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -96,11 +96,17 @@ msgstr "Điều kiện và Điều khoản của %1 Giao Diện Chương Trình 
 msgid "%1 ICO <br /> Pre-announcement"
 msgstr "%1 ICO <br /> Pre-announcement"
 
+msgid "%1 ICO Auction Bids"
+msgstr ""
+
 msgid "%1 ICO FAQ"
 msgstr "%1 ICO FAQ"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO, đầu tư trong nền tảng hàng đầu của thế giới về giao dịch lựa chọn nhị phân"
+
+msgid "%1 Initial Coin Offering (ICO)"
+msgstr ""
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 xin vui lòng nhấp vào liên kết dưới đây để khởi động lại quá trình phục hồi mật khẩu."
@@ -213,8 +219,8 @@ msgstr "không liên kết với bất kỳ Đại Lý Thanh Toán nào được
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "là không có sẵn ở Costa Rica và không quy định hoặc giám sát bởi bất kỳ cơ quan quy định trong hệ thống tài chính Costa Rica."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency."
-msgstr "%1 cung cấp đến <strong>10.000.000</strong> thẻ trong một phiên đấu giá mở cửa. Bạn có thể đặt giá thầu của bạn bằng cách sử dụng mẫu dưới đây. Giá thầu tối thiểu là <strong>1 USD</strong> hoặc tương đương trong các loại tiền tệ khác."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
+msgstr ""
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 là một trong những tên tuổi lâu đời nhất và được đánh giá cao trong lĩnh vực giao dịch nhị phân trực tuyến."
@@ -1079,9 +1085,6 @@ msgstr "Các ứng dụng"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials."
 msgstr "Sử dụng đôi mắt cẩn thận, tỉ mỉ để phát hiện lỗi và sửa nội dung thử nghiệm trên trang web, blog, phương tiện truyền thông xã hội và tài liệu tiếp thị của công ty."
 
-msgid "Apply for a Real Money Account"
-msgstr "Áp dụng cho tài khoản tiền thực"
-
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "Đăng ký để trở thành %1 <a href=\"%2\">đại lý thanh toán</a>."
 
@@ -1391,10 +1394,10 @@ msgstr "Hệ thống và phương thức Cá cược"
 msgid "Bid"
 msgstr ""
 
-msgid "Bid Binary ICO:"
+msgid "Bid Price Per Token"
 msgstr ""
 
-msgid "Bid Price Per Token"
+msgid "Bid on the ICO:"
 msgstr ""
 
 msgid "Binary (C.R.) S.A."
@@ -1444,12 +1447,6 @@ msgstr "Binary Group Services đang tìm kiếm những nhân viên tài năng v
 
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Binary Group Services đang tìm kiếm những nhà phát triển ngoại vi tài năng và nhiệt tình những người đang tìm kiếm một cơ hội để khẳng định mình."
-
-msgid "Binary ICO Auction Bids"
-msgstr ""
-
-msgid "Binary Initial Coin Offering (ICO)"
-msgstr ""
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr ""
@@ -2551,6 +2548,9 @@ msgstr "Tải xuồng CSV"
 
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "Tải về MT5 cho máy tính để bàn hoặc máy tính xách tay của bạn để truy cập công cụ mạnh mẽ và các tính năng rất được thích bởi hàng triệu của nhà giao dịch."
+
+msgid "Download Now"
+msgstr ""
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Tạo sự tăng trưởng nhanh chóng và phát triển kinh doanh để hỗ trợ các mục tiêu bán hàng và tiếp thị của công ty"
@@ -4045,6 +4045,9 @@ msgstr "Thông tin của bất kỳ lần giao dịch công cụ tài sản c�
 
 msgid "Inheritance"
 msgstr "Di sản thừa kế"
+
+msgid "Input personal information"
+msgstr ""
 
 msgid "Instant access"
 msgstr "Truy cập tức thì"
@@ -8547,7 +8550,7 @@ msgstr "Trừ khi được chứng minh là sai lầm, hồ sơ của chúng tô
 msgid "Unlock Cashier"
 msgstr "Mở khóa Thu ngân"
 
-msgid "Unsuccessful bidders will receive a full refund of their deposits."
+msgid "Unsuccessful bidders will receive a full refund."
 msgstr ""
 
 msgid "Up - Predict that the market will end higher than the average price"
@@ -10465,6 +10468,9 @@ msgstr "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the ti
 msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 msgstr "{Nhật bản}Bất kỳ công ty mà thực chất thuộc sở hữu hoặc kiểm soát bởi một người nào đó được mô tả trong các danh mục 1) tới 4)"
 
+msgid "{JAPAN ONLY}Apply for Real Money Account"
+msgstr ""
+
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 msgstr "{CHỈ ĐỐI VỚI NHẬT BẢN} Bạn có phải là một chuyên gia đầu tư hoặc người đào tạo tiến hành các thị trường tài chính?"
 
@@ -10488,6 +10494,9 @@ msgstr "{JAPAN ONLY}As well as our Japanese financial licence, we also operate i
 
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
+
+msgid "{JAPAN ONLY}At the top of the page as shown above."
+msgstr ""
 
 msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
 msgstr "{Nhật bản}Giành giải thưởng, nền tảng kinh doanh tài chính được cấp bằng sáng chế quốc tế, vừa được du nhập vào Nhật Bản"
@@ -10948,6 +10957,9 @@ msgstr "{JAPAN ONLY}Options are said to be leveraged products because in the cas
 msgid "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 msgstr "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 
+msgid "{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:"
+msgstr ""
+
 msgid "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 
@@ -11022,6 +11034,9 @@ msgstr "{JAPAN ONLY}Pre-Contract Documents"
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
+
+msgid "{JAPAN ONLY}Proceed to Virtual Account"
+msgstr ""
 
 msgid "{JAPAN ONLY}Proceed to official site"
 msgstr ""
@@ -11515,6 +11530,9 @@ msgstr "{JAPAN ONLY}We are required to request copies of your My Number Card as 
 msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr "{Nhật bản}Chúng tôi không thể chấp thuận các đơn yêu cầu từ bất cứ cá nhân nào có ảnh hưởng chính trị ngoại quốc, mà được xác định bởi Đạo Luật về Phòng Chống Tội Phạm Rửa Tiền năm 2007 hay như bất cứ ai trong các danh mục sau:"
 
+msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
+msgstr ""
+
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 
@@ -11542,6 +11560,9 @@ msgstr "{CHỈ ĐỐI VỚI NHẬT BẢN} Chúng tôi sẽ xử lý yêu cầu c
 msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 msgstr "{Nhật bản}Chúng tôi sẽ cung cấp cho bạn tất cả các công cụ bạn cần để biến hệ thống của bạn thành một nguồn thu nhập"
 
+msgid "{JAPAN ONLY}Welcome to %1"
+msgstr ""
+
 msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
 msgstr ""
 
@@ -11559,6 +11580,12 @@ msgstr "{Nhật bản}Tai sao lại trở thành một hội viên?"
 
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "{JAPAN ONLY}Win Loss Ratio"
+
+msgid "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
+msgstr ""
+
+msgid "{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:"
+msgstr ""
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{Nhật bản}Bạn có thể áp dụng để mở một tài khoản trực tuyến. Chỉ cần nhấp vào <a href=\"%1\"> đây</a> để bắt đầu quá trình bằng cách mở một tài khoản mô phỏng. Một khi bạn đã quen thuộc với các trang web của chúng tôi và cảm thấy thoải mái trong kiến thức của các tùy chọn nhị phân, chúng tôi mời bạn để nâng cấp lên một tài khoản tiền thật."
@@ -11709,6 +11736,9 @@ msgstr "Chuyển Khoản cho Đại lý Thanh toán"
 
 msgid "Trusted by traders since 2000"
 msgstr "Tin cậy bởi các thương nhân từ năm 2000"
+
+msgid "Welcome to Binary.com"
+msgstr ""
 
 msgid "Accounts"
 msgstr "Các tài khoản"
