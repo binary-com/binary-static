@@ -1,6 +1,89 @@
-[% support_link = "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'authentications@binary.com') %]
-<p>[% l('Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to [_1]:', support_link) %]</p>
-<ul class="checked">
-    <li>[% l('Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth.') %]</li>
-    <li>[% l('Proof of address - A scanned copy of a utility bill or bank statement that\'s not more than six months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation.') %]</li>
-</ul>
+[% BLOCK file_selector %]
+    <div class="gr-row gr-12">
+        <fieldset>
+            <div class="gr-padding-30 gr-gutter-left gr-gutter-right">
+                <h2>[% heading %]</h2>
+                <div class="gr-row">
+                    <div class="gr-6 gr-12-m">
+                        <strong>We accept:</strong>
+                        <ul class="bullet">
+                            [% FOREACH document IN allowed_documents %]
+                                <li>[% document %]</li>
+                            [% END %]
+                        </ul>
+                        <strong>Please make sure document is:</strong>
+                        <ul class="bullet">
+                            [% FOREACH instruction IN instructions %]
+                                <li>[% instruction %]</li>
+                            [% END %]
+                        </ul>
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <p class="font-s">Submit at least <strong>1 Document(s)</strong> below</p>            
+                        <div class="files">
+                            [% FOREACH document IN accepted_documents %]
+                                <h3>[% document %]</h3>
+                                <div class="fields" data-type="[% document %]">
+                                    [% IF type == 'poi' %]
+                                        <div class="gr-row center-text-m">
+                                            <div class="gr-4 gr-12-m">
+                                                <label for="id_number_[% loop.count %]">ID Number:</label>
+                                            </div>
+                                            <div class="gr-8 gr-12-m">
+                                                <input id="id_number_[% loop.count %]" type="text" maxlength="200">
+                                            </div>
+                                        </div>
+                                        <div class="gr-row center-text-m">
+                                            <div class="gr-4 gr-12-m">
+                                                <label for="exp_date_[% loop.count %]">ID Number:</label>
+                                            </div>
+                                            <div class="gr-8 gr-12-m">
+                                                <input id="exp_date_[% loop.count %]" type="text" maxlength="200">
+                                            </div>
+                                        </div>
+                                        <div class="gr-row center-text-m">
+                                            <div class="gr-6 gr-12-m">
+                                                <button class="button-secondary">Front</button>
+                                            </div>
+                                            <div class="gr-6 gr-12-m">
+                                                <button class="button-secondary">Back</button>
+                                            </div>
+                                        </div>
+                                    [% END %]
+                                    [% IF type == 'poa' %]
+                                        <button class="button-secondary">Add</button>
+                                    [% END %]
+                                </div>
+                            [% END %]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+[% END %]
+
+
+
+<p>[% l('Authenticate your account by verifying your identity and address.') %]</p>
+
+[% INCLUDE file_selector heading="1. Proof of identity"
+    allowed_documents=['Passport', 'Driving License', '
+        National ID card or any government issued document which contains a photo ID, your name and date of birth']
+    instructions=['A clear color copy/image/scan', 'Valid and not expired', 
+        'Only JPG, JPEG, GIF, PNG or PDF formats are accepted', 
+        'Maximum upload file size for each file is 3MB']
+    type="poi"
+    accepted_documents=['Passport', 'Identity Card', 'Driving License']
+%]
+[% INCLUDE global/separator_line.html.tt invisible=1 class="gr-padding-10" %]
+[% INCLUDE file_selector heading="2. Proof of address"
+    allowed_documents=['Utility bills (Gas, Electricity, Phone)', 
+        'Current bank statement or any government issued letter which contains your name and address']
+    instructions=['Issued on your own name', 'Dated within the last 3 months', 'Clear and in focus',
+        'Only JPG, JPEG, GIF, PNG or PDF formats are accepted', 
+        'Maximum upload file size for each file is 3MB'],
+    type="poa"
+    accepted_documents=['Utility Bill', 'Bank Statement']
+%]
+

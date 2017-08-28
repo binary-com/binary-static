@@ -13,6 +13,11 @@ const Authenticate = (() => {
                     const status = get_account_status.status;
                     if (!/authenticated/.test(status)) {
                         $(`#not_authenticated${Client.isAccountOfType('financial') ? '_financial' : ''}`).setVisibility(1);
+                        $(".files").accordion({
+                            heightStyle : 'content',
+                            collapsible : true,
+                            active      : false
+                        });
                     } else if (!/age_verification/.test(status)) {
                         $('#needs_age_verification').setVisibility(1);
                     }
