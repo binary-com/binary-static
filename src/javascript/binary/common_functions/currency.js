@@ -48,15 +48,23 @@ const setCurrencies = (website_status) => {
 
 const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type']));
 
-const currency_names = {
-    BTC: 'Bitcoin',
-    BCH: 'Bitcoin Cash',
-    ETH: 'Ether',
-    ETC: 'Ether Classic',
-    LTC: 'Litecoin',
+const crypto_config = {
+    BTC: { name: 'Bitcoin',       min_payout: 0.005 },
+    BCH: { name: 'Bitcoin Cash' },
+    ETH: { name: 'Ether' },
+    ETC: { name: 'Ether Classic' },
+    LTC: { name: 'Litecoin',      min_payout: 0.1 },
 };
 
-const getCurrencyName = currency => localize(currency_names[currency] || '');
+const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
+
+const getMinPayout = currency => (
+    jpClient() ?
+        1 :
+        (isCryptocurrency(currency) ?
+            (getPropertyValue(crypto_config, [currency, 'min_payout']) || 0.005) :
+            10)
+);
 
 const getCurrencyList = (currencies) => {
     const $currencies = $('<select/>');
@@ -80,5 +88,6 @@ module.exports = {
     getCurrencies   : () => currencies_config,
     isCryptocurrency: isCryptocurrency,
     getCurrencyName : getCurrencyName,
+    getMinPayout    : getMinPayout,
     getCurrencyList : getCurrencyList,
 };
