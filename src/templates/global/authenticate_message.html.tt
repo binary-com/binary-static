@@ -43,20 +43,20 @@
                                         </div>
                                         <div class="gr-row form-row center-text-m">
                                             <div class="gr-6 gr-12-m">
-                                                <input type="file" accept=".jpg, .jpeg, .gif, .png, .pdf">
-                                                <button class="button-secondary">Front <img class="add" /></button>
+                                                <input id="front_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf">
+                                                <label for="front_file[% loop.count %]" class="button">Front <img class="add" /></button>
                                             </div>
                                             <div class="gr-6 gr-12-m">
-                                                <input type="file" accept=".jpg, .jpeg, .gif, .png, .pdf">
-                                                <button class="button-secondary">Back <img class="add" /></button>
+                                                <input id="back_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf">
+                                                <label for="back_file[% loop.count %]" class="button">Back <img class="add" /></button>
                                             </div>
                                         </div>
                                     [% END %]
                                     [% IF type == 'poa' %]
                                         <div class="gr-row form-row gr-centered">
                                             <div class="gr-12">
-                                                <input type="file" accept=".jpg, .jpeg, .gif, .png, .pdf">
-                                                <button class="button-secondary">Add <img class="add" /></button>
+                                                <input id="add_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf">
+                                                <label for="add_file[% loop.count %]" class="button">Add <img class="add" /></button>
                                             </div>
                                         </div>
                                     [% END %]
@@ -94,3 +94,11 @@
     accepted_documents=['Utility Bill', 'Bank Statement']
 %]
 
+<div class="center-text">
+    <div id="msg_form" class="error-msg invisible"></div>
+    <div class="gr-padding-10">
+        <a class="button-disabled" id="btn_submit" type="submit">
+            <span>Submit for Review</span>
+        </a>
+    </div>
+</div>

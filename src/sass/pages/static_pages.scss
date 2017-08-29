@@ -342,7 +342,12 @@ body #not_authenticated_financial ul.checked > li {
 
 .authenticate-content {
     .fields > .gr-row > div {
-        > .button-secondary {
+        > .button {
+            display: block;
+            text-align: center;
+            background: $COLOR_LIGHT_GRAY;
+            padding: 5px 0;
+            border-radius: $BORDER_RADIUS;
             width: 100%;
 
             > img.add {
@@ -352,6 +357,14 @@ body #not_authenticated_financial ul.checked > li {
                 margin-left: 10px;
                 margin-top: -2px;
                 content: url('../images/pages/authenticate/add.svg');
+            }
+            > img.remove {
+                display: inline-flex;
+                width: 1em;
+                height: 1em;
+                margin-left: 10px;
+                margin-top: -2px;
+                content: url('../images/pages/authenticate/delete/Red.svg');
             }
         }
         > input[type=file] {

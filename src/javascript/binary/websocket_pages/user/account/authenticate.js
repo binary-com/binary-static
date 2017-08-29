@@ -27,19 +27,34 @@ const Authenticate = (() => {
     const init = () => {
         // Setup accordion
         $(".files").accordion({
-            heightStyle : 'content',
-            collapsible : true,
-            active      : false
+            heightStyle: 'content',
+            collapsible: true,
+            active: false
         });
         // Setup Date picker
-        var date = new Date();
+        const date = new Date();
         $('.date-picker').datepicker({
-          dateFormat: 'yy-mm-dd',
-          changeMonth: true,
-          changeYear: true,
-          minDate: date,
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            minDate: date,
         });
-    }
+
+        $('.file-picker').on('change', (event) => {
+            if (!event.target.files) return;
+            const file_name = event.target.files[0].name || '';
+            const display_name = file_name.slice(0, 5) + '..' + file_name.slice(-5);
+            $(event.target).parent().find('label').html(display_name)
+                .append($('<img/>', { class: 'remove' }))
+                .find('.remove').click((e) => {
+                    const default_text = event.target.id.split('_')[0]
+                        .replace(/^\w/, w => w.toUpperCase());
+                    $(event.target).val('') // Remove previously selected file.
+                    $(event.target).parent().find('label').html(default_text)
+                        .append($('<img/>', { class: 'add' }))
+                });
+        });
+    };
 
     return {
         onLoad,
