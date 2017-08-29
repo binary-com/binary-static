@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-22 20:53-0400\n"
+"PO-Revision-Date: 2017-08-27 22:37-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -96,11 +96,17 @@ msgstr "Regulamin dot. interfejsu programistycznego aplikacji („API”) %1"
 msgid "%1 ICO <br /> Pre-announcement"
 msgstr "ICO %1 <br /> Zapowiedź"
 
+msgid "%1 ICO Auction Bids"
+msgstr "%1 uruchamia aukcję ICO"
+
 msgid "%1 ICO FAQ"
 msgstr "ICO %1 – Często zadawane pytania"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "ICO %1 – Zainwestuj w najlepszą na świecie platformę do handlowania opcjami binarnymi"
+
+msgid "%1 Initial Coin Offering (ICO)"
+msgstr "%1 ICO (Initial Coin Offering)"
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 Aby ponownie rozpocząć proces odzyskiwania konta, kliknij poniższe łącze."
@@ -213,7 +219,7 @@ msgstr "Firma %1 nie jest powiązana z żadnym pośrednikiem płatności wymieni
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "Usługi %1 nie są dostępne w Kostaryce, a firma %1 nie podlega żadnym przepisom ani nadzorowi organów regulacyjnych w ramach systemu finansowego Kostaryki."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
 msgstr "%1 oferuje na aukcji otwartej aż do <strong>10 000 000</strong>tokenów. Oferty kupna można składać przy użyciu poniższego formularza. Minimalna kwota oferty wynosi <strong>1 USD</strong> lub ekwiwalent tej kwoty w innej walucie."
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
@@ -241,10 +247,10 @@ msgid "%1 is the award-winning industry pioneer in online options trading. We bo
 msgstr "%1 jest utytułowanym pionierem rynku w branży handlu opcjami w internecie. Nasze atuty:"
 
 msgid "%1 launches Bitcoin (BTC) accounts for non-EU customers."
-msgstr ""
+msgstr "%1 uruchamia konta Bitcoin (BTC) dla klientów spoza UE."
 
 msgid "%1 launches Bitcoin accounts"
-msgstr ""
+msgstr "%1 uruchamia konta Bitcoin"
 
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 uruchamia %2sklep internetowy z produktami z logiem firmy%3, umożliwiając klientom, partnerom i programistom zakup i sprzedaż produktów %1."
@@ -301,7 +307,7 @@ msgid "%1 provides you best execution by utilising a smart aggregation method wh
 msgstr "%1 zapewnia Ci najlepszą możliwą realizację zlecenia, korzystając z inteligentnej metody agregacji do zarządzania przychodzącymi zleceniami. Inteligentna metoda agregacji polega na:"
 
 msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via email or phone. Available limits are:"
-msgstr ""
+msgstr "%1 umożliwia samodzielne wyłączenie lub <a href='%2'>ustawienie limitów dla operacji handlowych</a> na tym portalu. Możesz także <a href='%3'>skontaktować się z nami</a>, aby ustawić żądane limity przez e-mail lub telefon. Dostępne limity to:"
 
 msgid "%1 reaches $2 billion turnover since starting in 1999"
 msgstr "%1 osiąga obrót w wysokości 2 mld $ od rozpoczęcia działalności w 1999 r."
@@ -382,7 +388,7 @@ msgid "%1Authenticate your account%2 now to take full advantage of all payment m
 msgstr "%1Zweryfikuj swoje konto%2 już teraz, aby w pełni korzystać ze wszystkich dostępnych metod płatności."
 
 msgid "%1Contact us%2 to arrange a date and time for the video call."
-msgstr ""
+msgstr "%1Skontaktuj się z nami%2, aby ustalić dzień i godzinę wideo-rozmowy."
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "Działania charytatywne %1 wspierają małe organizacje charytatywne i non-profit na całym świecie, które podejmują korzystne działania w lokalnych społecznościach. Nasze darowizny wywierają bezpośredni wpływ, gdyż nie ma u nas ogólnych kosztów działania, tak jak w przypadku większych organizacji charytatywnych."
@@ -1079,9 +1085,6 @@ msgstr "Aplikacje"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials."
 msgstr "Zwracanie uwagi na szczegóły podczas dokładnego sprawdzania treści pojawiających się na stronie internetowej firmy, na blogach, w mediach społecznościowych i materiałach marketingowych."
 
-msgid "Apply for a Real Money Account"
-msgstr "Złóż wniosek o konto z prawdziwymi pieniędzmi"
-
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "Złóż wniosek, aby zostać <a href=\"%2\">pośrednikiem płatności %1</a>."
 
@@ -1391,14 +1394,11 @@ msgstr "System i metody zawierania zakładów"
 msgid "Bid"
 msgstr "Oferta kupna"
 
-msgid "Bid Binary ICO:"
-msgstr "Złóż ofertę kupna Binary ICO:"
-
 msgid "Bid Price Per Token"
 msgstr "Cena oferowana za token"
 
-msgid "Bid cancellation can be done with a 2% cancellation fee."
-msgstr "Przy anulowaniu oferty kupna pobierana jest 2% opłata anulacyjna."
+msgid "Bid on the ICO:"
+msgstr "Złóż ofertę kupna ICO:"
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -1447,12 +1447,6 @@ msgstr "Binary Group Services poszukuje utalentowanych i zmotywowanych programis
 
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Firma Binary Group Services poszukuje utalentowanego i zmotywowanego programisty front-end, któremu zależy na możliwości rozwoju."
-
-msgid "Binary ICO Auction Bids"
-msgstr "Aukcyjna oferta kupna Binary ICO"
-
-msgid "Binary Initial Coin Offering (ICO)"
-msgstr "Binary ICO (Initial Coin Offering)"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "Firma Binary Investments (Europe) Limited jest upoważniona do świadczenia usług w innych państwach członkowskich UE, gdyż posiada prawo dostępu do rynków UE. Na poniższej mapie można zobaczyć listę krajów UE posiadających dostęp do usług %1 dzięki udzielonym zezwoleniom – wolności świadczenia usług transgranicznych."
@@ -1573,6 +1567,12 @@ msgstr "Binary.com jest pionierem w internetowym handlu opcjami binarnymi. Nasza
 
 msgid "Binary.com will issue a number of tokens during the ICO."
 msgstr "W czasie ICO Binary.com wyemituje określoną liczbę tokenów."
+
+msgid "Bitcoin"
+msgstr "Bitcoin"
+
+msgid "Bitcoin Cash"
+msgstr ""
 
 msgid "Both the above"
 msgstr "Both the above"
@@ -2390,14 +2390,11 @@ msgstr "Wpłata na"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Wpłaty i wypłaty na Twoje konto za pośrednictwem przelewu bankowego, karty kredytowej lub e-gotówki."
 
-msgid "Deposit or withdraw to your account via bitcoin."
-msgstr "Wpłacaj lub wypłacaj środki na swoje konto, korzystając z bitcoin."
-
 msgid "Deposit: %1 working day"
 msgstr "Wpłata: %1 dzień roboczy"
 
 msgid "Deposit: 3 blockchain confirmations"
-msgstr ""
+msgstr "Wpłata: 3 potwierdzenia blockchain"
 
 msgid "Deposit: Instant"
 msgstr "Wpłata: błyskawiczna"
@@ -2552,14 +2549,14 @@ msgstr "Pobierz CSV"
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "Pobierz platformę MT5 na komputer stancjonarny lub laptop, aby uzyskać dostęp do różnorodnych funkcji i narzędzi, z których korzysta już ponad milion graczy."
 
+msgid "Download Now"
+msgstr "Pobierz teraz"
+
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Dbanie o szybki wzrost i rozwój biznesowy w celu realizacji celów sprzedażowych i marketingowych firmy"
 
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "Dbanie o szybki wzrost w kluczowych obszarach na świecie, stosując różnorodne umiejętności marketingowe, zarówno online i offline, w celu zapewnienia rozwoju sieci aktywnych partnerów firmy."
-
-msgid "Due to US regulations, US investors can only claim their tokens after 1 year."
-msgstr "Zgodnie z przepisami Stanów Zjednoczonych inwestorzy mogą odebrać swoje tokeny dopiero po roku."
 
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "Z powodu niedawnych zmian w przepisach jesteśmy zobowiązani poprosić klientów o wypełnienie następującego formularza oceny sytuacji finansowej. Kontynuowanie handlowania będzie niemożliwe dopóki formularz nie zostanie wypełniony."
@@ -2614,6 +2611,9 @@ msgstr "Rozpoznawalność w UE"
 
 msgid "EUR 1 per point"
 msgstr "1 EUR za punkt"
+
+msgid "Each bid cancellation will be subject to a 2% cancellation fee."
+msgstr "W przypadku każdego anulowania oferty kupna pobierana jest 2% opłata anulacyjna."
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "Każda opcja binarna trwa przez określony czas – na %1 wybierasz kontrakt, który może trwać od 10 sekund do 365 dni."
@@ -2809,6 +2809,12 @@ msgstr "Equities"
 
 msgid "Estimated Net Worth"
 msgstr "Szacowana wartość netto"
+
+msgid "Ether"
+msgstr "Ether"
+
+msgid "Ether Classic"
+msgstr "Ether Classic"
 
 msgid "Ethics Code"
 msgstr "Ethics Code"
@@ -3036,7 +3042,7 @@ msgid "February"
 msgstr "Luty"
 
 msgid "Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via email and telephone."
-msgstr ""
+msgstr "W każdej chwili możesz skontaktować się z ekspertami z naszego zespołu obsługi klienta. Zawsze chętnie odpowiedzą na Twoje pytania. Możesz skontaktować się z nami drogą e-mailową lub telefoniczną."
 
 msgid "Female"
 msgstr "Female"
@@ -4040,6 +4046,9 @@ msgstr "Informacje dotyczące wcześniejszej wydajności jakiegokolwiek instrume
 msgid "Inheritance"
 msgstr "Spadek"
 
+msgid "Input personal information"
+msgstr "Wprowadź dane osobowe"
+
 msgid "Instant access"
 msgstr "Błyskawiczny dostęp"
 
@@ -4886,6 +4895,9 @@ msgstr "Łącza"
 msgid "Liquidity solutions"
 msgstr "Rozwiązania w zakresie płynności"
 
+msgid "Litecoin"
+msgstr "Litecoin"
+
 msgid "Lock Cashier"
 msgstr "Zablokuj sekcję Kasjer"
 
@@ -5014,6 +5026,9 @@ msgstr "Dbanie o bezpieczeństwo, wykrywanie zagrożeń, ochronę DDoS i zgodno�
 
 msgid "Manage the company's cashier system"
 msgstr "Zarządzanie firmowym systemem „Kasjer”"
+
+msgid "Manage the funds in your cryptocurrency account."
+msgstr "Zarządzaj funduszami na swoim koncie w kryptowalucie."
 
 msgid "Manage your authorised applications."
 msgstr "Zarządzaj zatwierdzonymi aplikacjami."
@@ -5181,7 +5196,7 @@ msgid "Method"
 msgstr "Metoda"
 
 msgid "Min Withdrawal"
-msgstr ""
+msgstr "Minimalna wypłata"
 
 msgid "Min-Max Deposit"
 msgstr "Wpłata min-max"
@@ -6102,7 +6117,7 @@ msgid "Please set %1country of residence%2 before upgrading to a real-money acco
 msgstr "Przed aktualizacją do konta z prawdziwymi pieniędzmi ustaw %1kraj zamieszkania%2."
 
 msgid "Please set the %1currency%2 of your account."
-msgstr ""
+msgstr "Ustaw %1walutę%2 swojego konta."
 
 msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%2 to remove deposit limits."
 msgstr "Aby usunąć limity wpłat, proszę ustawić 30-dniowy limit obrotów w sekcji dot. %1samodzielnego wyłączenia%2."
@@ -6477,7 +6492,7 @@ msgid "Reference ID"
 msgstr "ID referencyjne"
 
 msgid "Refund Bid"
-msgstr ""
+msgstr "Zwrot kosztów oferty kupna"
 
 msgid "Regardless of the type of token, each token will provide you with two rights:"
 msgstr "Niezależnie od jego rodzaju, każdy token zapewni Ci dwa prawa:"
@@ -6585,7 +6600,7 @@ msgid "Resources"
 msgstr "Środki"
 
 msgid "Respond to client queries using our state of the art telephone and electronic mail"
-msgstr ""
+msgstr "Odpowiadanie na zapytania klientów, korzystając z naszych najnowocześniejszych systemów telefonicznych oraz mailowych"
 
 msgid "Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing."
 msgstr "Do obowiązków będzie należało wdrażanie sprzętu i oprogramowania, zapewnianie bezpieczeństwa sieci, wykrywania zagrożeń i równoważenie obciążenia."
@@ -8534,6 +8549,9 @@ msgstr "O ile nie zostanie udowodnione, że nasze dane i zapisy są nieprawidło
 msgid "Unlock Cashier"
 msgstr "Odblokuj sekcję Kasjer"
 
+msgid "Unsuccessful bidders will receive a full refund."
+msgstr "W przypadku odrzuconych ofert kupna przysługuje pełny zwrot kosztów."
+
 msgid "Up - Predict that the market will end higher than the average price"
 msgstr "Góra – Prognozuj, czy cena rynkowa będzie wyższa czy niższa od średniej ceny"
 
@@ -9447,7 +9465,7 @@ msgid "You may choose to contact us to close your account held with the Company.
 msgstr "Możesz skontaktować się z nami w celu zamknięcia konta prowadzonego przez Firmę. Twoje konto może zostać zamknięte, jeśli nie masz żadnych otwartych pozycji handlowych i jeśli spełnione zostały procedury nałożone przez regulacje „Poznaj swojego klienta” w celu umożliwienia wypłaty środków zgromadzonych na Twoim koncie."
 
 msgid "You may communicate with us through this website by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr ""
+msgstr "Możesz komunikować się z nami poprzez tę stronę internetową drogą e-mailową i telefoniczną lub, w szczególnych przypadkach, pocztą tradycyjną. Szczegóły można znaleźć w sekcji Napisz do nas."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "Użytkownik może rozpocząć tworzenie Aplikacji przy użyciu API %1 od razy po zarejestrowaniu Aplikacji i zaakceptowaniu niniejszych Warunków."
@@ -10448,6 +10466,9 @@ msgstr "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the ti
 msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 msgstr "{JAPAN ONLY}Jakakolwiek korporacja, której właścicielem jest osoba opisana w kategorii od 1) do 4) lub korporacja będąca kontrolowana przez taką osobę"
 
+msgid "{JAPAN ONLY}Apply for Real Money Account"
+msgstr "{JAPAN ONLY}Apply for Real Money Account"
+
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 msgstr "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 
@@ -10471,6 +10492,9 @@ msgstr "{JAPAN ONLY}As well as our Japanese financial licence, we also operate i
 
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
+
+msgid "{JAPAN ONLY}At the top of the page as shown above."
+msgstr "{JAPAN ONLY}At the top of the page as shown above."
 
 msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
 msgstr "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
@@ -10931,6 +10955,9 @@ msgstr "Options are said to be leveraged products because in the case of large m
 msgid "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 msgstr "Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 
+msgid "{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:"
+msgstr "{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:"
+
 msgid "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 msgstr "Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 
@@ -11005,6 +11032,9 @@ msgstr "Pre-Contract Documents"
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
+
+msgid "{JAPAN ONLY}Proceed to Virtual Account"
+msgstr "{JAPAN ONLY}Proceed to Virtual Account"
 
 msgid "{JAPAN ONLY}Proceed to official site"
 msgstr "{JAPAN ONLY}Proceed to official site"
@@ -11498,6 +11528,9 @@ msgstr "We are required to request copies of your My Number Card as well as proo
 msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr "{JAPAN ONLY}Nie możemy akceptować zgłoszeń od osób zajmujących eksponowane stanowiska polityczne zgodnie z ustawą: Act on Prevention of Transfer of Criminal Proceeds z 2007 r., czyli od osób podlegającym następującym kategoriom:"
 
+msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
+msgstr "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
+
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 
@@ -11525,6 +11558,9 @@ msgstr "{JAPAN ONLY}We will process your request and transfer the funds to your 
 msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 msgstr "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 
+msgid "{JAPAN ONLY}Welcome to %1"
+msgstr "{JAPAN ONLY}Welcome to %1"
+
 msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
 msgstr "{JAPAN ONLY}Welcome to the site of Binary KK."
 
@@ -11542,6 +11578,12 @@ msgstr "{JAPAN ONLY}Why become an Affiliate?"
 
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "{JAPAN ONLY}Win Loss Ratio"
+
+msgid "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
+msgstr "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
+
+msgid "{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:"
+msgstr "{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\"> 1here</a> 2 to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
@@ -11692,6 +11734,9 @@ msgstr "Przelew dla pośrednika płatności"
 
 msgid "Trusted by traders since 2000"
 msgstr "Zaufanie graczy od 2000 r."
+
+msgid "Welcome to Binary.com"
+msgstr "Witamy w Binary.com"
 
 msgid "Accounts"
 msgstr "Konta"

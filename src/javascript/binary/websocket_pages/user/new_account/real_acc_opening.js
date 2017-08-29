@@ -1,8 +1,7 @@
-const BinaryPjax         = require('../../../base/binary_pjax');
-const Client             = require('../../../base/client');
-const defaultRedirectUrl = require('../../../base/url').defaultRedirectUrl;
-const AccountOpening     = require('../../../common_functions/account_opening');
-const FormManager        = require('../../../common_functions/form_manager');
+const BinaryPjax     = require('../../../base/binary_pjax');
+const Client         = require('../../../base/client');
+const AccountOpening = require('../../../common_functions/account_opening');
+const FormManager    = require('../../../common_functions/form_manager');
 
 const RealAccOpening = (() => {
     'use strict';
@@ -21,7 +20,7 @@ const RealAccOpening = (() => {
                 fnc_response_handler: handleResponse,
             });
         } else {
-            BinaryPjax.load(defaultRedirectUrl());
+            BinaryPjax.loadPreviousUrl();
         }
     };
 

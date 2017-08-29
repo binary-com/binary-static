@@ -1,13 +1,15 @@
-const moment           = require('moment');
-const getCurrencies    = require('./get_currency').getCurrencies;
-const BinarySocket     = require('../socket');
-const BinaryPjax       = require('../../base/binary_pjax');
-const Client           = require('../../base/client');
-const localize         = require('../../base/localize').localize;
-const State            = require('../../base/storage').State;
-const urlFor           = require('../../base/url').urlFor;
-const getPropertyValue = require('../../base/utility').getPropertyValue;
-const toTitleCase      = require('../../common_functions/string_util').toTitleCase;
+const moment             = require('moment');
+const setIsForNewAccount = require('./account/settings/personal_details').setIsForNewAccount;
+const getCurrencies      = require('./get_currency').getCurrencies;
+const BinarySocket       = require('../socket');
+const BinaryPjax         = require('../../base/binary_pjax');
+const Client             = require('../../base/client');
+const localize           = require('../../base/localize').localize;
+const State              = require('../../base/storage').State;
+const urlFor             = require('../../base/url').urlFor;
+const getPropertyValue   = require('../../base/utility').getPropertyValue;
+const getCurrencyList    = require('../../common_functions/currency').getCurrencyList;
+const toTitleCase        = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
     'use strict';
@@ -118,10 +120,7 @@ const Accounts = (() => {
         const $new_account_opening = $('#new_account_opening');
         if (currencies.length > 1) {
             const $currencies = $('<div/>');
-            $currencies.append($('<option/>', { value: '', text: localize('Please select') }));
-            currencies.forEach((c) => {
-                $currencies.append($('<option/>', { value: c, text: c }));
-            });
+            $currencies.append(getCurrencyList(currencies).html());
             $new_account_opening.find('.account-currency').html($('<select/>', { id: 'new_account_currency' }).html($currencies.html()));
         } else {
             $new_account_opening.find('.account-currency').html($('<span/>', { id: 'new_account_currency', value: currencies, text: currencies }));
@@ -138,8 +137,9 @@ const Accounts = (() => {
                         if (!account_opening_reason && response.error.details.hasOwnProperty('account_opening_reason') &&
                             (response.error.code === 'InsufficientAccountDetails' ||
                             response.error.code === 'InputValidationFailed')) {
+                            setIsForNewAccount(true);
                             // ask client to set account opening reason
-                            BinaryPjax.load(`${urlFor('user/settings/detailsws')}#new-account`);
+                            BinaryPjax.load(urlFor('user/settings/detailsws'));
                         } else {
                             showError(response.error.message);
                         }
@@ -171,11 +171,12 @@ const Accounts = (() => {
                         if (response_set_account_currency.error) {
                             showError(response_set_account_currency.error.message);
                         } else {
+                            localStorage.setItem('is_new_account', 1);
                             Client.processNewAccount({
                                 email       : Client.get('email'),
                                 loginid     : new_account.client_id,
                                 token       : new_account.oauth_token,
-                                redirect_url: `${urlFor('user/set-currency')}#new_account`,
+                                redirect_url: urlFor('user/set-currency'),
                             });
                         }
                     });

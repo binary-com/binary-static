@@ -1,11 +1,10 @@
-const BinarySocket       = require('../socket');
-const BinaryPjax         = require('../../base/binary_pjax');
-const Client             = require('../../base/client');
-const Header             = require('../../base/header');
-const State              = require('../../base/storage').State;
-const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
-const urlFor             = require('../../base/url').urlFor;
-const template           = require('../../base/utility').template;
+const BinarySocket = require('../socket');
+const BinaryPjax   = require('../../base/binary_pjax');
+const Client       = require('../../base/client');
+const Header       = require('../../base/header');
+const State        = require('../../base/storage').State;
+const urlFor       = require('../../base/url').urlFor;
+const template     = require('../../base/utility').template;
 
 const TNCApproval = (() => {
     'use strict';
@@ -60,7 +59,7 @@ const TNCApproval = (() => {
     const redirectBack = (redirect_anyway) => {
         if (redirect_anyway) {
             setTimeout(() => {
-                BinaryPjax.load(defaultRedirectUrl());
+                BinaryPjax.loadPreviousUrl();
             }, 500);
         }
     };

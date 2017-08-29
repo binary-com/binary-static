@@ -34,10 +34,12 @@ const PaymentAgentList = (() => {
         BinarySocket.send({
             paymentagent_list: country || $(ddl_countries_id).val(),
         }).then((response) => {
-            if (is_list) {
-                populateCountriesList(response);
-            } else {
-                populateAgentsList(response.paymentagent_list.list);
+            if (response.paymentagent_list) {
+                if (is_list) {
+                    populateCountriesList(response);
+                } else {
+                    populateAgentsList(response.paymentagent_list.list);
+                }
             }
         });
     };

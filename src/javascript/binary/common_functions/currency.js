@@ -1,5 +1,6 @@
 const jpClient         = require('./country_base').jpClient;
 const getLanguage      = require('../base/language').get;
+const localize         = require('../base/localize').localize;
 const getPropertyValue = require('../base/utility').getPropertyValue;
 
 let currencies_config = {};
@@ -21,7 +22,7 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
     return sign + (exclude_currency ? '' : formatCurrency(currency_value)) + money;
 };
 
-const formatCurrency = currency => `<span class="symbols ${currency.toLowerCase()}"></span>`; // defined in binary-style
+const formatCurrency = currency => `<span class="symbols ${(currency || '').toLowerCase()}"></span>`; // defined in binary-style
 
 const addComma = (num, decimal_points, is_crypto) => {
     let number = String(num || 0).replace(/,/g, '');
@@ -47,12 +48,46 @@ const setCurrencies = (website_status) => {
 
 const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type']));
 
+const crypto_config = {
+    BTC: { name: 'Bitcoin',       min_payout: 0.005 },
+    BCH: { name: 'Bitcoin Cash' },
+    ETH: { name: 'Ether' },
+    ETC: { name: 'Ether Classic' },
+    LTC: { name: 'Litecoin',      min_payout: 0.1 },
+};
+
+const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
+
+const getMinPayout = currency => (
+    jpClient() ?
+        1 :
+        (isCryptocurrency(currency) ?
+            (getPropertyValue(crypto_config, [currency, 'min_payout']) || 0.005) :
+            10)
+);
+
+const getCurrencyList = (currencies) => {
+    const $currencies = $('<select/>');
+    const $fiat_currencies = $('<optgroup/>', { label: localize('Fiat Currency') });
+    const $cryptocurrencies = $('<optgroup/>', { label: localize('Cryptocurrency') });
+
+    currencies.forEach((currency) => {
+        (isCryptocurrency(currency) ? $cryptocurrencies : $fiat_currencies)
+            .append($('<option/>', { value: currency, text: currency }));
+    });
+
+    return $currencies.append($fiat_currencies.children().length ? $fiat_currencies : '').append($cryptocurrencies.children().length ? $cryptocurrencies : '');
+};
+
 module.exports = {
     formatMoney     : formatMoney,
     formatCurrency  : formatCurrency,
-    isCryptocurrency: isCryptocurrency,
     addComma        : addComma,
     getDecimalPlaces: getDecimalPlaces,
     setCurrencies   : setCurrencies,
     getCurrencies   : () => currencies_config,
+    isCryptocurrency: isCryptocurrency,
+    getCurrencyName : getCurrencyName,
+    getMinPayout    : getMinPayout,
+    getCurrencyList : getCurrencyList,
 };

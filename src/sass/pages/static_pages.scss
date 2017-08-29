@@ -80,8 +80,8 @@
     }
     .payment-logo {
         width: 72px;
-        height: 57px;
-        background-image: url('../images/pages/cashier/payment_methods_sprite.png');
+        height: 58px;
+        background-image: url('../images/pages/cashier/payment_methods_sprite_new.png');
     }
     div {
         align-self: center;
@@ -140,8 +140,20 @@
     #okpay {
         background-position: -285px -426px;
     }
-    #bitcoin {
-        background-position: -12px -499px;
+    #btc {
+        background-position: -12px -498px;
+    }
+    #bch {
+        background-position: -106px -498px;
+    }
+    #eth {
+        background-position: -285px -498px;
+    }
+    #etc {
+        background-position: -373px -498px;
+    }
+    #ltc {
+        background-position: -200px -498px;
     }
 }
 
@@ -307,5 +319,18 @@ body #not_authenticated_financial ul.checked > li {
         &.selected {
             background-image: url('../images/pages/set_currency/tick-selected.svg');
         }
+        .currency-name {
+            line-height: 22px;
+            padding: 4px 0;
+        }
+    }
+}
+
+.landing_page-content {
+    .bordered {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+    }
+    .box {
+        padding: 10px 30px;
     }
 }

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-22 20:53-0400\n"
+"PO-Revision-Date: 2017-08-28 21:02-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -96,11 +96,17 @@ msgstr "%1 應用程式編程介面(\"API\")的條款和條件"
 msgid "%1 ICO <br /> Pre-announcement"
 msgstr "%1 ICO <br />預告"
 
+msgid "%1 ICO Auction Bids"
+msgstr "%1 ICO 拍賣出價"
+
 msgid "%1 ICO FAQ"
 msgstr "%1 ICO 常見問題集"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO。在全球領先的二元期權交易平台投資"
+
+msgid "%1 Initial Coin Offering (ICO)"
+msgstr "%1首次代幣發售 (ICO)"
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 請點擊下方連結，重新開啟密碼恢復過程。"
@@ -213,7 +219,7 @@ msgstr "%1 與上述所有支付代理不存在附屬關係。各支付代理均
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1在哥斯大黎加還不可使用，並不受哥斯大黎加金融體系任何監管機構的監管或監督。"
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
 msgstr "%1提供高達<strong>10,000,000</strong>個公開拍賣權杖。您可使用下面的表格出價。最低出價金額是<strong>1 美元</strong>或等值的其他貨幣。"
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
@@ -1074,9 +1080,6 @@ msgstr "應用程式"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials."
 msgstr "非常注重細節，對公司網站、部落格、社交媒體網站和行銷材料內容進行校對和更正工作。"
 
-msgid "Apply for a Real Money Account"
-msgstr "申請真實資金帳戶"
-
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "申請成為 %1 <a href=\"%2\">支付代理</a>。"
 
@@ -1386,14 +1389,11 @@ msgstr "博彩系統和方法"
 msgid "Bid"
 msgstr "出價"
 
-msgid "Bid Binary ICO:"
-msgstr "出價買入Binary ICO:"
-
 msgid "Bid Price Per Token"
 msgstr "每個權杖的投標報價"
 
-msgid "Bid cancellation can be done with a 2% cancellation fee."
-msgstr "投標可取消，但須付2%取消費。"
+msgid "Bid on the ICO:"
+msgstr "在 ICO 出價："
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -1442,12 +1442,6 @@ msgstr "二元期權集團服務組誠招具有才華和上進心、正尋求卓
 
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "二元期權集團服務組誠招具有才華和上進心、正尋求卓越工作機會的前端編程師。"
-
-msgid "Binary ICO Auction Bids"
-msgstr "Binary ICO 拍賣出價"
-
-msgid "Binary Initial Coin Offering (ICO)"
-msgstr "Binary首次代幣發售 (ICO)"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "Binary Investments (Europe) Limited 有權通過歐盟金融護照權利在另一歐盟成員國提供服務。 請參閱以下地圖查看有權通過歐盟金融護照（自由提供跨國界服務）權利訪問%1的歐盟國家清單。"
@@ -1568,6 +1562,12 @@ msgstr "Binary.com是線上二元期權交易的領先企業。我們的成長�
 
 msgid "Binary.com will issue a number of tokens during the ICO."
 msgstr "初步代幣發售期內，Binary.com將發售多個權杖。"
+
+msgid "Bitcoin"
+msgstr "比特幣"
+
+msgid "Bitcoin Cash"
+msgstr "比特幣現金"
 
 msgid "Both the above"
 msgstr "Both the above"
@@ -2385,9 +2385,6 @@ msgstr "存款到"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "通過銀行電匯、信用卡或電子現金錢包存款進入您的帳戶或提款。"
 
-msgid "Deposit or withdraw to your account via bitcoin."
-msgstr "通過比特幣在您的帳戶存取款。"
-
 msgid "Deposit: %1 working day"
 msgstr "存款：%1工作日內"
 
@@ -2547,14 +2544,14 @@ msgstr "下載CSV"
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "MT5是強大的多功能交易工具，備受百萬多名交易員的愛載，請下載到桌上型電腦或膝上型電腦上使用。"
 
+msgid "Download Now"
+msgstr "立刻下載"
+
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
 
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "應用各種線上和離線行銷能力擴大公司的活躍聯盟網路，在世界各關鍵區域推動快速增長。"
-
-msgid "Due to US regulations, US investors can only claim their tokens after 1 year."
-msgstr "基於美國規則，美國投資者須等1 年後才能索取權杖。"
 
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "由於最近的法規變更，客戶必須填寫以下金融評估。您須填寫完成才能繼續交易。"
@@ -2609,6 +2606,9 @@ msgstr "歐盟認證"
 
 msgid "EUR 1 per point"
 msgstr "每點 1 歐元"
+
+msgid "Each bid cancellation will be subject to a 2% cancellation fee."
+msgstr "每次取消投標須付2%取消費。"
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "每個二元期權合約都有固定期限- 在 %1，您可選擇從10秒至365天之間的任何期限。"
@@ -2804,6 +2804,12 @@ msgstr "權益"
 
 msgid "Estimated Net Worth"
 msgstr "估計淨值"
+
+msgid "Ether"
+msgstr "以太幣"
+
+msgid "Ether Classic"
+msgstr "古典以太幣"
 
 msgid "Ethics Code"
 msgstr "道德標準"
@@ -4035,6 +4041,9 @@ msgstr "任何標的工具或資產前次的效能資訊不可用於保證其目
 msgid "Inheritance"
 msgstr "繼承"
 
+msgid "Input personal information"
+msgstr "輸入個人資訊"
+
 msgid "Instant access"
 msgstr "即時存取"
 
@@ -4881,6 +4890,9 @@ msgstr "連結"
 msgid "Liquidity solutions"
 msgstr "流動性解決方案"
 
+msgid "Litecoin"
+msgstr "萊特幣"
+
 msgid "Lock Cashier"
 msgstr "鎖定收銀台"
 
@@ -5009,6 +5021,9 @@ msgstr "我們所部署的所有伺服器相關的安全、入侵檢測、DDoS �
 
 msgid "Manage the company's cashier system"
 msgstr "管理公司的出納系統"
+
+msgid "Manage the funds in your cryptocurrency account."
+msgstr "管理加密貨幣帳戶資金。"
 
 msgid "Manage your authorised applications."
 msgstr "管理您的授權應用程式。"
@@ -8529,6 +8544,9 @@ msgstr "除非已被證實出錯，我們的記錄將作為您使用我們根據
 msgid "Unlock Cashier"
 msgstr "解鎖收銀台"
 
+msgid "Unsuccessful bidders will receive a full refund."
+msgstr "競標失敗者獲得全額退款。"
+
 msgid "Up - Predict that the market will end higher than the average price"
 msgstr "高於 - 預測到期時市場價格高於平均價格"
 
@@ -10443,6 +10461,9 @@ msgstr "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the ti
 msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 msgstr "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 
+msgid "{JAPAN ONLY}Apply for Real Money Account"
+msgstr "{JAPAN ONLY}Apply for Real Money Account"
+
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 msgstr "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 
@@ -10466,6 +10487,9 @@ msgstr "{JAPAN ONLY}As well as our Japanese financial licence, we also operate i
 
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
+
+msgid "{JAPAN ONLY}At the top of the page as shown above."
+msgstr "{JAPAN ONLY}At the top of the page as shown above."
 
 msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
 msgstr "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
@@ -10926,6 +10950,9 @@ msgstr "{JAPAN ONLY}Options are said to be leveraged products because in the cas
 msgid "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 msgstr "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 
+msgid "{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:"
+msgstr "{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:"
+
 msgid "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 
@@ -11000,6 +11027,9 @@ msgstr "{JAPAN ONLY}Pre-Contract Documents"
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
+
+msgid "{JAPAN ONLY}Proceed to Virtual Account"
+msgstr "{JAPAN ONLY}Proceed to Virtual Account"
 
 msgid "{JAPAN ONLY}Proceed to official site"
 msgstr "{JAPAN ONLY}Proceed to official site"
@@ -11493,6 +11523,9 @@ msgstr "{JAPAN ONLY}We are required to request copies of your My Number Card as 
 msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 
+msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
+msgstr "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
+
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 
@@ -11520,6 +11553,9 @@ msgstr "{JAPAN ONLY}We will process your request and transfer the funds to your 
 msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 msgstr "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 
+msgid "{JAPAN ONLY}Welcome to %1"
+msgstr "{JAPAN ONLY}Welcome to %1"
+
 msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
 msgstr "{JAPAN ONLY}Welcome to the site of Binary KK."
 
@@ -11537,6 +11573,12 @@ msgstr "{JAPAN ONLY}Why become an Affiliate?"
 
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "{JAPAN ONLY}Win Loss Ratio"
+
+msgid "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
+msgstr "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
+
+msgid "{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:"
+msgstr "{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
@@ -11687,6 +11729,9 @@ msgstr "支付代理轉帳"
 
 msgid "Trusted by traders since 2000"
 msgstr "自2000年以來備受交易員信賴"
+
+msgid "Welcome to Binary.com"
+msgstr "歡迎來到 Binary.com"
 
 msgid "Accounts"
 msgstr "帳戶"
