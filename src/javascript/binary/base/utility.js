@@ -1,11 +1,14 @@
 /**
  * Write loading image to a container for ajax request
  *
- * @param container: a jQuery object
+ * @param $container: a jQuery object
  * @param theme: dark or white
  */
-const showLoadingImage = (container, theme = 'dark') => {
-    container.empty().append(`<div class="barspinner ${theme}"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>`);
+const showLoadingImage = ($container, theme = 'dark') => {
+    $container.html($('<div/>', {
+        class: `barspinner ${theme}`,
+        html : Array.from(new Array(5)).map((x, i) => `<div class="rect${i + 1}"></div>`).join(''),
+    }));
 };
 
 /**
