@@ -8,6 +8,7 @@ const localize           = require('../../base/localize').localize;
 const State              = require('../../base/storage').State;
 const urlFor             = require('../../base/url').urlFor;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
+const getCurrencyList    = require('../../common_functions/currency').getCurrencyList;
 const toTitleCase        = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
@@ -119,10 +120,7 @@ const Accounts = (() => {
         const $new_account_opening = $('#new_account_opening');
         if (currencies.length > 1) {
             const $currencies = $('<div/>');
-            $currencies.append($('<option/>', { value: '', text: localize('Please select') }));
-            currencies.forEach((c) => {
-                $currencies.append($('<option/>', { value: c, text: c }));
-            });
+            $currencies.append(getCurrencyList(currencies).html());
             $new_account_opening.find('.account-currency').html($('<select/>', { id: 'new_account_currency' }).html($currencies.html()));
         } else {
             $new_account_opening.find('.account-currency').html($('<span/>', { id: 'new_account_currency', value: currencies, text: currencies }));

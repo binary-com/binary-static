@@ -110,8 +110,9 @@ const MBTradingEvents = (() => {
                 $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', html: Currency.formatMoney('JPY', payout * 1000) })));
             };
 
-            const is_crypto = Currency.isCryptocurrency(Client.get('currency') || MBDefaults.get('currency'));
-            let old_value = jp_client ? 1 : (is_crypto ? 0.005 : 10);
+            const client_currency = Client.get('currency') || MBDefaults.get('currency');
+            const is_crypto = Currency.isCryptocurrency(client_currency);
+            let old_value = Currency.getMinPayout(client_currency);
             if (!$payout.attr('value')) {
                 const amount = `payout${is_crypto ? '_crypto' : ''}`;
                 let payout_def = MBDefaults.get(amount);
@@ -206,7 +207,7 @@ const MBTradingEvents = (() => {
                     const is_crypto = Currency.isCryptocurrency(currency);
                     const amount = `payout${is_crypto ? '_crypto' : ''}`;
                     if (!MBDefaults.get(amount)) {
-                        MBDefaults.set(`payout${is_crypto ? '_crypto' : ''}`, is_crypto ? 0.005 : 10);
+                        MBDefaults.set(`payout${is_crypto ? '_crypto' : ''}`, Currency.getMinPayout(currency));
                     }
                     $payout.val(MBDefaults.get(amount)).attr('value', MBDefaults.get(amount));
                 }
