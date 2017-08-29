@@ -220,6 +220,12 @@ const MBPrice = (() => {
 
     const processBuy = (e) => {
         e.preventDefault();
+
+        if (!Client.isLoggedIn()) {
+            MBNotifications.show({ text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
+            return;
+        }
+
         let $btn = $(e.target);
         if ($btn.prop('tagName').toLowerCase() !== 'button') {
             $btn = $btn.parents('button.price-button');
@@ -230,11 +236,6 @@ const MBPrice = (() => {
         const barrier       = $btn.attr('data-barrier');
         const contract_type = $btn.attr('data-contract_type');
         if (!barrier || !contract_type) return;
-
-        if (!Client.isLoggedIn()) {
-            MBNotifications.show({ text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
-            return;
-        }
 
         MBPrice.showPriceOverlay();
         MBPrice.sendBuyRequest(barrier, contract_type);
