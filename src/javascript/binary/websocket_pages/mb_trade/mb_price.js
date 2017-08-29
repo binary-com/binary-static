@@ -92,17 +92,6 @@ const MBPrice = (() => {
         }
         $table.off('click', 'button.price-button').on('click', 'button.price-button', processBuy);
 
-        if (!barriers.length) {
-            barriers = Object.keys(prices).sort((a, b) => +b.split('_')[0] - (+a.split('_')[0]));
-        }
-
-        const $price_row = $('#templates .price-row');
-        barriers.forEach((barrier) => {
-            $rows[barrier] = $price_row.clone().attr('data-barrier', barrier);
-            $rows[barrier].find('.barrier').html(barrier.split('_').join('<br />'));
-            $table.append($rows[barrier]);
-        });
-
         BinarySocket.wait('get_account_status').then((response) => {
             is_unwelcome = /unwelcome/.test(response.get_account_status.status);
             if (is_unwelcome) {
@@ -114,11 +103,32 @@ const MBPrice = (() => {
             }
         });
 
+        if (!barriers.length) {
+            barriers = Object.keys(prices).sort((a, b) => +b.split('_')[0] - (+a.split('_')[0]));
+        }
+
+        const $price_row = $('#templates .price-row');
         barriers.forEach((barrier) => {
+            $rows[barrier] = {};
+            const $row = $price_row.clone().attr('data-barrier', barrier);
+            $row.find('.barrier').html(barrier.split('_').join('<br />'));
+            $row.find('.base-value').setVisibility(+is_japan);
             Object.keys(contract_types).forEach((contract_type) => {
-                $($table[+contract_types[contract_type].order])
-                    .append(updatePriceRow(getValues(prices[barrier][contract_type], contract_type)));
+                if (!$rows[barrier][contract_type]) {
+                    $rows[barrier][contract_type] = {};
+                }
+                const order = contract_types[contract_type].order;
+                $rows[barrier][contract_type] = {
+                    $buy : $row.find(`.buy-price:eq(${order}) button`),
+                    $sell: $row.find(`.sell-price:eq(${order}) .price-wrapper`),
+                };
+                $rows[barrier][contract_type].$buy.attr({
+                    'data-barrier'      : barrier,
+                    'data-contract_type': contract_type,
+                });
+                updatePriceRow(getValues(prices[barrier][contract_type], contract_type));
             });
+            $table.append($row);
         });
 
         MBPrice.hidePriceOverlay();
@@ -172,25 +182,24 @@ const MBPrice = (() => {
     const getMovementDirection = (prev, current) => (current > prev ? 'up' : current < prev ? 'down' : '');
 
     const updatePriceRow = (values) => {
-        const $buy = $(`<button class="price-button${values.is_active ? '' : ' inactive'}"
-            data-barrier="${values.barrier}" data-contract_type=${values.contract_type}
-            ${values.message ? ` data-balloon="${values.message}"` : ''}>
-                <span class="value-wrapper">
-                    <span class="dynamics ${values.ask_price_movement || ''}"></span>
-                    ${formatPrice(values.ask_price)}
-                </span>
-                ${is_japan ? `<span class="base-value">(${formatPrice(values.ask_price / values.payout)})</span>` : ''}
-            </button>`);
-        const $sell = $(`<span class="price-wrapper${!values.sell_price ? ' inactive' : ''}">
-                <span class="${values.sell_price_movement || ''}"></span>
-                ${formatPrice(values.sell_price)}
-                ${is_japan ? `<span class="base-value">(${formatPrice(values.sell_price / values.payout)})</span>` : ''}
-            </span>`);
+        const $buy  = $rows[values.barrier][values.contract_type].$buy;
+        const $sell = $rows[values.barrier][values.contract_type].$sell;
 
-        const $row = $rows[values.barrier];
-        const order = contract_types[values.contract_type].order;
-        $row.find(`.buy-price:eq(${order})`).html($buy);
-        $row.find(`.sell-price:eq(${order})`).html($sell);
+        $buy[values.is_active ? 'removeClass' : 'addClass']('inactive')
+            .attr('data-balloon', values.message || null)
+            .find('.dynamics')
+                .attr('class', `dynamics ${values.ask_price_movement || ''}`)
+                .end()
+            .find('.value')
+                .text(formatPrice(values.ask_price));
+
+        $sell[values.sell_price ? 'removeClass' : 'addClass']('inactive')
+            .find('.value').text(formatPrice(values.sell_price));
+
+        if (is_japan) {
+            $buy.find('.base-value').text(formatPrice(values.ask_price / values.payout));
+            $sell.find('.base-value').text(formatPrice(values.sell_price / values.payout));
+        }
     };
 
     const processBuy = (e) => {

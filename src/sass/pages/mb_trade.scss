@@ -296,6 +296,13 @@
                     font-size: $FONT_SIZE_XXS;
                     display: inline-block;
                     margin-left: 5px;
+
+                    &:before {
+                        content: '(';
+                    }
+                    &:after {
+                        content: ')';
+                    }
                 }
                 .dynamics {
                     display: inline-block;
