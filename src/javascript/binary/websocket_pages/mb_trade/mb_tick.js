@@ -1,6 +1,7 @@
-const MBDefaults      = require('./mb_defaults');
-const MBNotifications = require('./mb_notifications');
-const BinarySocket    = require('../socket');
+const MBDefaults       = require('./mb_defaults');
+const MBNotifications  = require('./mb_notifications');
+const BinarySocket     = require('../socket');
+const getPropertyValue = require('../../base/utility').getPropertyValue;
 
 /*
  * MBTick object handles all the process/display related to tick streaming
@@ -20,8 +21,8 @@ const BinarySocket    = require('../socket');
 const MBTick = (() => {
     'use strict';
 
-    let quote = '',
-        error_message = '';
+    let quote = '';
+    let error_message = '';
 
     const details = (data) => {
         error_message = '';
@@ -60,7 +61,10 @@ const MBTick = (() => {
      * Display price/spot movement variation to depict price moved up or down
      */
     const displayPriceMovement = (old_value, current_value) => {
-        const class_name = (current_value > old_value) ? 'up' : (current_value < old_value) ? 'down' : 'still';
+        let class_name = 'still';
+        if (old_value !== current_value) {
+            class_name = current_value > old_value ? 'up' : 'down';
+        }
         const $spot = $('#spot');
         $spot.removeClass('up down still').addClass(class_name);
     };
@@ -74,7 +78,7 @@ const MBTick = (() => {
 
     const processTickStream = (response) => {
         if (response.msg_type === 'tick' && MBDefaults.get('underlying') === (response.echo_req.ticks || response.echo_req.ticks_history)) {
-            if (response.hasOwnProperty('error')) {
+            if (getPropertyValue(response, 'error')) {
                 MBNotifications.show({ text: response.error.message, uid: 'TICK_ERROR' });
                 return;
             }

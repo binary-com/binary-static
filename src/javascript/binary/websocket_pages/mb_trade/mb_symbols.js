@@ -19,11 +19,11 @@ const ActiveSymbols = require('../../common_functions/active_symbols');
 const MBSymbols = (() => {
     'use strict';
 
-    let trade_markets      = {},
-        trade_markets_list = {},
-        trade_underlyings  = {},
-        all_symbols        = {},
-        names              = {};
+    let trade_markets      = {};
+    let trade_markets_list = {};
+    let trade_underlyings  = {};
+    let all_symbols        = {};
+    let names              = {};
 
     const details = (data) => {
         ActiveSymbols.clearData();

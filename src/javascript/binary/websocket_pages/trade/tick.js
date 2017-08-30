@@ -23,11 +23,11 @@ const isVisible            = require('../../common_functions/common_functions').
 const Tick = (() => {
     'use strict';
 
-    let quote = '',
-        id = '',
-        epoch = '',
-        spots = {},
-        error_message = '';
+    let quote         = '';
+    let id            = '';
+    let epoch         = '';
+    let error_message = '';
+    let spots         = {};
 
     const details = (data) => {
         error_message = '';

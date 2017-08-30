@@ -65,7 +65,7 @@ const Purchase_Beta = (() => {
                 $(this).text('').removeAttr('class', '');
             });
             const purchase_passthrough = purchase_data.echo_req.passthrough;
-            elementTextContent(brief, `${$('#underlying').find('option:selected').text()} / ${toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type])}${(Contract_Beta.form() === 'digits' && !/(even|odd)/i.test(purchase_passthrough.contract_type) ? ` ${purchase_passthrough.barrier}` : '')}`);
+            elementTextContent(brief, `${$('#underlying').find('option:selected').text()} / ${toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type])}${(Contract_Beta.form() === 'digits' && !/even|odd/i.test(purchase_passthrough.contract_type) ? ` ${purchase_passthrough.barrier}` : '')}`);
 
             elementTextContent(heading, localize('Contract Confirmation'));
             elementTextContent(descr, receipt.longcode);
@@ -137,14 +137,9 @@ const Purchase_Beta = (() => {
                 }
             }
 
-            let barrier;
-            if (sessionStorage.getItem('formname') === 'higherlower') {
-                barrier = passthrough.barrier;
-            }
-
             TickDisplay_Beta.init({
                 symbol              : passthrough.symbol,
-                barrier             : barrier,
+                barrier             : sessionStorage.getItem('formname') === 'higherlower' ? passthrough.barrier : '',
                 number_of_ticks     : passthrough.duration,
                 previous_tick_epoch : receipt.start_time,
                 contract_category   : sessionStorage.getItem('formname') === 'asian' ? 'asian' : 'callput',

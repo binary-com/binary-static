@@ -11,7 +11,8 @@ const Localize = (() => {
         moment.locale(lang.toLowerCase());
     };
 
-    const doLocalize = (text, params) => {
+    const doLocalize = (txt, params) => {
+        let text = txt;
         const index = text.replace(/[\s|.]/g, '_');
         text = (localized_texts && localized_texts[index]) || text;
         // only use template when explicitly required

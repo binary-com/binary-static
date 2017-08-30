@@ -42,8 +42,8 @@ const Barriers_Beta = (() => {
                     const elm     = document.getElementById('barrier');
                     const tooltip = document.getElementById('barrier_tooltip');
                     const span    = document.getElementById('barrier_span');
-                    let barrier_def = defaults_barrier && !isNaN(defaults_barrier) ? defaults_barrier : barrier.barrier,
-                        value;
+                    let barrier_def = defaults_barrier && !isNaN(defaults_barrier) ? defaults_barrier : barrier.barrier;
+                    let value;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
                         (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
                         !String(barrier.barrier).match(/^[+-]/)) {
@@ -88,10 +88,10 @@ const Barriers_Beta = (() => {
                     const defaults_barrier_high = Defaults.get('barrier_high');
                     const defaults_barrier_low  = Defaults.get('barrier_low');
                     let barrier_high = defaults_barrier_high && !isNaN(defaults_barrier_high) ?
-                            defaults_barrier_high : barrier.barrier,
-                        barrier_low  = defaults_barrier_low  && !isNaN(defaults_barrier_low) ?
-                            defaults_barrier_low  : barrier.barrier1,
-                        value_high,
+                            defaults_barrier_high : barrier.barrier;
+                    let barrier_low  = defaults_barrier_low  && !isNaN(defaults_barrier_low) ?
+                            defaults_barrier_low  : barrier.barrier1;
+                    let value_high,
                         value_low;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
                         (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||

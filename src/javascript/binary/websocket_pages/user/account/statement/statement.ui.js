@@ -10,8 +10,8 @@ const Table               = require('../../../../common_functions/attach_dom/tab
 const StatementUI = (() => {
     'use strict';
 
-    let all_data = [],
-        oauth_apps = {};
+    let all_data   = [];
+    let oauth_apps = {};
 
     const table_id = 'statement-table';
     const columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];

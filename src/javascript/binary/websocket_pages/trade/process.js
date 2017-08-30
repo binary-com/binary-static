@@ -13,6 +13,7 @@ const Tick             = require('./tick');
 const BinarySocket     = require('../socket');
 const localize         = require('../../base/localize').localize;
 const State            = require('../../base/storage').State;
+const getPropertyValue = require('../../base/utility').getPropertyValue;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 const getMinPayout     = require('../../common_functions/currency').getMinPayout;
@@ -46,8 +47,8 @@ const Process = (() => {
     const processMarket = () => {
         // we can get market from sessionStorage as allowed market
         // is already set when this is called
-        let market = Defaults.get('market'),
-            symbol = Defaults.get('underlying');
+        let market = Defaults.get('market');
+        let symbol = Defaults.get('underlying');
 
         // change to default market if query string contains an invalid market
         if (!market || !Symbols.underlyings()[market]) {
@@ -104,7 +105,7 @@ const Process = (() => {
      * Function to display contract form for current underlying
      */
     const processContract = (contracts) => {
-        if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
+        if (getPropertyValue(contracts, ['error', 'code']) === 'InvalidSymbol') {
             Price.processForgetProposals();
             const container          = document.getElementById('contract_confirmation_container');
             const message_container  = document.getElementById('confirmation_message');
@@ -230,13 +231,11 @@ const Process = (() => {
 
     const onExpiryTypeChange = (value) => {
         const $expiry_type = $('#expiry_type');
-        if (!value || !$expiry_type.find(`option[value=${value}]`).length) {
-            value = 'duration';
-        }
-        $expiry_type.val(value);
+        const validated_value = value && $expiry_type.find(`option[value=${value}]`).length ? value : 'duration';
+        $expiry_type.val(validated_value);
 
         let make_price_request = 0;
-        if (value === 'endtime') {
+        if (validated_value === 'endtime') {
             Durations.displayEndTime();
             if (Defaults.get('expiry_date')) {
                 // if time changed, proposal will be sent there if not we should send it here

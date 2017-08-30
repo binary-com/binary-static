@@ -7,6 +7,7 @@ const Contract             = require('./contract');
 const Defaults             = require('./defaults');
 const BinarySocket         = require('../socket');
 const localize             = require('../../base/localize').localize;
+const getPropertyValue     = require('../../base/utility').getPropertyValue;
 const elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
 const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
@@ -28,8 +29,8 @@ const formatMoney          = require('../../common_functions/currency').formatMo
 const Price = (() => {
     'use strict';
 
-    let type_display_id_mapping = {},
-        form_id = 0;
+    let type_display_id_mapping = {};
+    let form_id = 0;
 
     const createProposal = (type_of_contract) => {
         const proposal = {
@@ -85,7 +86,7 @@ const Price = (() => {
             let end_time2 = Defaults.get('expiry_time');
             if (!end_time2) {
                 const trading_times = getTradingTimes();
-                if (trading_times.hasOwnProperty(end_date2) && typeof trading_times[end_date2][underlying.value] === 'object' && trading_times[end_date2][underlying.value].length && trading_times[end_date2][underlying.value][0] !== '--') {
+                if (getPropertyValue(trading_times, [end_date2, underlying.value]).length && trading_times[end_date2][underlying.value][0] !== '--') {
                     if (trading_times[end_date2][underlying.value].length > 1) {
                         end_time2 = trading_times[end_date2][underlying.value][1];
                     } else {

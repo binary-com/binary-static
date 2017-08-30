@@ -16,12 +16,9 @@ const getAppId = () => (
 const getSocketURL = () => {
     let server_url = window.localStorage.getItem('config.server_url');
     if (!server_url) {
-        const loginid = window.localStorage.getItem('active_loginid'),
-            isReal  = loginid && !/^VRT/.test(loginid),
-            toGreenPercent = { real: 100, virtual: 0, logged_out: 0 }, // default percentage
-            categoryMap    = ['real', 'virtual', 'logged_out'],
-            randomPercent = Math.random() * 100,
-            percentValues = Cookies.get('connection_setup'); // set by GTM
+        const toGreenPercent = { real: 100, virtual: 0, logged_out: 0 }; // default percentage
+        const categoryMap    = ['real', 'virtual', 'logged_out'];
+        const percentValues  = Cookies.get('connection_setup'); // set by GTM
 
         // override defaults by cookie values
         if (percentValues && percentValues.indexOf(',') > 0) {
@@ -33,11 +30,23 @@ const getSocketURL = () => {
             });
         }
 
-        server_url = `${(/staging\.binary\.com/i.test(window.location.hostname) ? 'blue' :
-                (isReal  ? (randomPercent < toGreenPercent.real       ? 'green' : 'blue') :
-                 loginid ? (randomPercent < toGreenPercent.virtual    ? 'green' : 'blue') :
-                           (randomPercent < toGreenPercent.logged_out ? 'green' : 'blue'))
-            )}.binaryws.com`;
+        let server = 'blue';
+        if (/staging\.binary\.com/i.test(window.location.hostname)) {
+            server = 'blue';
+        } else {
+            const loginid = window.localStorage.getItem('active_loginid');
+            let client_type = categoryMap[2];
+            if (loginid) {
+                client_type = /^VRT/.test(loginid) ? categoryMap[1] : categoryMap[0];
+            }
+
+            const randomPercent = Math.random() * 100;
+            if (randomPercent < toGreenPercent[client_type]) {
+                server = 'green';
+            }
+        }
+
+        server_url = `${server}.binaryws.com`;
     }
     return `wss://${server_url}/websockets/v3`;
 };

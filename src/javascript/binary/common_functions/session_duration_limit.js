@@ -1,6 +1,7 @@
-const moment   = require('moment');
-const Client   = require('../base/client');
-const localize = require('../base/localize').localize;
+const moment           = require('moment');
+const Client           = require('../base/client');
+const localize         = require('../base/localize').localize;
+const getPropertyValue = require('../base/utility').getPropertyValue;
 
 const SessionDurationLimit = (() => {
     'use strict';
@@ -40,7 +41,7 @@ const SessionDurationLimit = (() => {
     };
 
     const exclusionResponseHandler = (response) => {
-        if (response.hasOwnProperty('error') || !response.hasOwnProperty('get_self_exclusion')) {
+        if (getPropertyValue(response, 'error') || !getPropertyValue(response, 'get_self_exclusion')) {
             return;
         }
 

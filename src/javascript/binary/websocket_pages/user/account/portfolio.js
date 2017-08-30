@@ -5,23 +5,20 @@ const jpClient            = require('../../../common_functions/country_base').jp
 const Portfolio = (() => {
     'use strict';
 
-    const getBalance = (balance, currency) => {
-        balance = parseFloat(balance);
-        return currency ? formatMoney(currency, balance) : balance;
-    };
+    const getBalance = (balance, currency) => (
+        currency ? formatMoney(currency, parseFloat(balance)) : parseFloat(balance)
+    );
 
     const getPortfolioData = c => (
         {
             transaction_id: c.transaction_id,
             contract_id   : c.contract_id,
             payout        : parseFloat(c.payout),
-            longcode      : typeof module !== 'undefined' ?
-                c.longcode : (jpClient() ?
-                    toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode),
-            shortcode: c.shortcode,
-            currency : c.currency,
-            buy_price: c.buy_price,
-            app_id   : c.app_id,
+            longcode      : jpClient() ? toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode,
+            shortcode     : c.shortcode,
+            currency      : c.currency,
+            buy_price     : c.buy_price,
+            app_id        : c.app_id,
         }
     );
 

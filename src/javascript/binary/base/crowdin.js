@@ -18,8 +18,10 @@ const Crowdin = (() => {
     const init = () => {
         if (isInContextEnvironment()) {
             $('#topbar ul[id$="_language"]').setVisibility(0);
+            /* eslint-disable no-underscore-dangle */
             window._jipt = [];
             window._jipt.push(['project', 'binary-static']);
+            /* eslint-enable no-underscore-dangle */
             $('body').append($('<script/>', {
                 type: 'text/javascript',
                 src : `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`,

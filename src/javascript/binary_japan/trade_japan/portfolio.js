@@ -3,11 +3,12 @@ const State         = require('../../binary/base/storage').State;
 const PortfolioInit = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init');
 
 const JapanPortfolio = (() => {
-    let $portfolio,
-        is_portfolio_active = false;
+    let $portfolio;
+
+    let is_portfolio_active = false;
 
     const init = () => {
-        if (isActive()) {
+        if (Client.isLoggedIn() && isTradePage()) {
             $('#tab_portfolio').setVisibility(1);
         }
 
@@ -27,8 +28,6 @@ const JapanPortfolio = (() => {
         }
     };
 
-    const isActive = () => !!(Client.isLoggedIn() && isTradePage());
-
     const hide = () => {
         if (isTradePage() && is_portfolio_active) {
             PortfolioInit.onUnload();
@@ -40,10 +39,9 @@ const JapanPortfolio = (() => {
     const isTradePage = () => State.get('is_mb_trading');
 
     return {
-        init    : init,
-        show    : show,
-        hide    : hide,
-        isActive: isActive,
+        init: init,
+        show: show,
+        hide: hide,
     };
 })();
 

@@ -29,9 +29,8 @@ const Defaults = (() => {
         return p_value || s_value;
     };
 
-    const setDefault = (key, value) => {
+    const setDefault = (key, value = '') => {
         if (!key) return;
-        value = value || '';
         if (isEmptyObject(params)) params = Url.paramsHash();
         if (params[key] !== value) {
             params[key] = value;

@@ -10,16 +10,19 @@ const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const getLanguage      = require('../../base/language').get;
 const localize         = require('../../base/localize').localize;
-const urlForStatic     = require('../../base/url').urlForStatic;
 const State            = require('../../base/storage').State;
+const urlForStatic     = require('../../base/url').urlForStatic;
+const getPropertyValue = require('../../base/utility').getPropertyValue;
 const jpClient         = require('../../common_functions/country_base').jpClient;
 const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 
 const MBProcess = (() => {
     'use strict';
 
-    let market_status = '',
-        symbols_timeout;
+    let market_status = '';
+
+    let symbols_timeout,
+        contract_timeout;
 
     const getSymbols = () => {
         BinarySocket.wait('website_status').then((website_status) => {
@@ -49,7 +52,7 @@ const MBProcess = (() => {
      * and underlying list
      */
     const processActiveSymbols = (data) => {
-        if (data.hasOwnProperty('error')) {
+        if (getPropertyValue(data, 'error')) {
             MBNotifications.show({ text: data.error.message, uid: 'ACTIVE_SYMBOLS' });
             return;
         }
@@ -83,7 +86,7 @@ const MBProcess = (() => {
             if (symbol && !symbols_list[symbol].is_active) {
                 MBNotifications.show({ text: localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
             } else {
-                MBProcess.processMarketUnderlying();
+                processMarketUnderlying();
             }
         }
     };
@@ -99,10 +102,11 @@ const MBProcess = (() => {
             .append($('<span/>', { class: 'name gr-6 gr-5-m align-self-center' }))
             .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' })));
 
-        if (Object.keys(all_symbols).indexOf(selected) === -1) selected = '';
+        let selected_symbol = selected;
+        if (Object.keys(all_symbols).indexOf(selected_symbol) === -1) selected_symbol = '';
         Object.keys(all_symbols).forEach((symbol, idx) => {
             if (all_symbols[symbol].is_active) {
-                const is_current = (!selected && idx === 0) || symbol === selected;
+                const is_current = (!selected_symbol && idx === 0) || symbol === selected_symbol;
                 const $current = $('<div/>', { value: symbol, class: 'gr-4 gr-4-t gr-4-m' })
                     .append($('<img/>', { src: urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`), alt: '' }))
                     .append($('<div/>', { text: all_symbols[symbol].display, class: 'name align-self-center' }));
@@ -160,7 +164,6 @@ const MBProcess = (() => {
         getContracts(underlying);
     };
 
-    let contract_timeout;
     const getContracts = (underlying) => {
         const req = {
             contracts_for: (underlying || MBDefaults.get('underlying')),
@@ -185,7 +188,7 @@ const MBProcess = (() => {
      * Function to display contract form for current underlying
      */
     const processContract = (contracts) => {
-        if (contracts.hasOwnProperty('error')) {
+        if (getPropertyValue(contracts, 'error')) {
             MBNotifications.show({ text: contracts.error.message, uid: contracts.error.code });
             return;
         }
@@ -194,9 +197,7 @@ const MBProcess = (() => {
 
         checkMarketStatus(contracts.contracts_for.close);
 
-        const no_rebuild = contracts.hasOwnProperty('passthrough') &&
-                        contracts.passthrough.hasOwnProperty('action') &&
-                        contracts.passthrough.action === 'no-proposal';
+        const no_rebuild = getPropertyValue(contracts, ['passthrough', 'action']) === 'no-proposal';
         MBContract.populateOptions((no_rebuild ? null : 'rebuild'));
         if (no_rebuild) {
             processExpiredBarriers();
@@ -327,7 +328,7 @@ const MBProcess = (() => {
     const processForgetProposal = (expired_barrier) => {
         const prices = MBPrice.getPrices();
         Object.keys(prices[expired_barrier]).forEach((c) => {
-            if (!prices[expired_barrier][c].hasOwnProperty('error')) {
+            if (!getPropertyValue(prices[expired_barrier][c], 'error')) {
                 BinarySocket.send({ forget: prices[expired_barrier][c].proposal.id });
             }
         });
@@ -356,7 +357,7 @@ const MBProcess = (() => {
         for (let i = 0; i < array.length; i++) {
             hash[array[i]] = i;
         }
-        return hash.hasOwnProperty(val);
+        return getPropertyValue(hash, val);
     };
 
     const onUnload = () => {
@@ -368,16 +369,11 @@ const MBProcess = (() => {
     };
 
     return {
-        getSymbols             : getSymbols,
-        processActiveSymbols   : processActiveSymbols,
-        processMarketUnderlying: processMarketUnderlying,
-        getContracts           : getContracts,
-        processContract        : processContract,
-        processPriceRequest    : processPriceRequest,
-        processProposal        : processProposal,
-        processForgetTicks     : processForgetTicks,
-        forgetTradingStreams   : forgetTradingStreams,
-        onUnload               : onUnload,
+        getSymbols         : getSymbols,
+        getContracts       : getContracts,
+        processPriceRequest: processPriceRequest,
+        processForgetTicks : processForgetTicks,
+        onUnload           : onUnload,
     };
 })();
 

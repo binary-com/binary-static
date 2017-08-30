@@ -1,9 +1,10 @@
-const Portfolio           = require('./account/portfolio').Portfolio;
-const ViewPopup           = require('./view_popup/view_popup');
-const BinarySocket        = require('../socket');
-const localize            = require('../../base/localize').localize;
-const showLoadingImage    = require('../../base/utility').showLoadingImage;
-const formatMoney         = require('../../common_functions/currency').formatMoney;
+const Portfolio        = require('./account/portfolio').Portfolio;
+const ViewPopup        = require('./view_popup/view_popup');
+const BinarySocket     = require('../socket');
+const localize         = require('../../base/localize').localize;
+const showLoadingImage = require('../../base/utility').showLoadingImage;
+const getPropertyValue = require('../../base/utility').getPropertyValue;
+const formatMoney      = require('../../common_functions/currency').formatMoney;
 
 const ICOPortfolio = (() => {
     'use strict';
@@ -31,9 +32,18 @@ const ICOPortfolio = (() => {
     const createPortfolioRow = (data, is_first) => {
         const long_code = data.longcode;
 
+        let status_text = 'Ended';
+        if (/unsuccessful/i.test(long_code)) {
+            status_text = 'Refund Bid';
+        } else if (/successful/i.test(long_code)) {
+            status_text = 'Claim Tokens';
+        } else if (/bid/i.test(long_code)) {
+            status_text = 'Cancel Bid';
+        }
+
         const new_class = is_first ? '' : 'new';
-        const status = (/unsuccessful/i.test(long_code) ? 'Refund Bid' : (/successful/i.test(long_code) ? 'Claim Tokens' : (/bid/i.test(long_code) ? 'Cancel Bid' : 'Ended')));
-        const button_class = /(cancel|end)/i.test(status) ? 'button-secondary' : '';
+        const status = status_text;
+        const button_class = /cancel|end/i.test(status) ? 'button-secondary' : '';
         const action = / successful/i.test(long_code) ? 'claim' : 'cancel';
         const shortcode = data.shortcode.split('_');
         const $div = $('<div/>');
@@ -49,7 +59,7 @@ const ICOPortfolio = (() => {
     };
 
     const updatePortfolio = (data) => {
-        if (data.hasOwnProperty('error')) {
+        if (getPropertyValue(data, 'error')) {
             errorMessage(data.error.message);
             return;
         }
@@ -61,7 +71,7 @@ const ICOPortfolio = (() => {
              **/
             $('#portfolio-no-contract').hide();
             $.each(data.portfolio.contracts, (ci, c) => {
-                if (!values.hasOwnProperty(c.contract_id) && c.contract_type === 'BINARYICO') {
+                if (!getPropertyValue(values, c.contract_id) && c.contract_type === 'BINARYICO') {
                     values[c.contract_id] = {};
                     values[c.contract_id].buy_price = c.buy_price;
                     portfolio_data = Portfolio.getPortfolioData(c);
@@ -92,7 +102,7 @@ const ICOPortfolio = (() => {
     };
 
     const transactionResponseHandler = (response) => {
-        if (response.hasOwnProperty('error')) {
+        if (getPropertyValue(response, 'error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
             BinarySocket.send({ portfolio: 1 }).then((res) => {
@@ -140,10 +150,8 @@ const ICOPortfolio = (() => {
     };
 
     return {
-        updatePortfolio           : updatePortfolio,
-        transactionResponseHandler: transactionResponseHandler,
-        onLoad                    : onLoad,
-        onUnload                  : onUnload,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 

@@ -13,8 +13,8 @@ const Client = (() => {
     'use strict';
 
     const storage_key = 'client.accounts';
-    let client_object = {},
-        current_loginid;
+    let client_object = {};
+    let current_loginid;
 
     const init = () => {
         current_loginid = LocalStore.get('active_loginid');
@@ -130,7 +130,7 @@ const Client = (() => {
         if (get('is_virtual')) return false;
         const website_tnc_version = State.getResponse('website_status.terms_conditions_version');
         const get_settings = State.getResponse('get_settings');
-        return get_settings.hasOwnProperty('client_tnc_status') && get_settings.client_tnc_status !== website_tnc_version;
+        return getPropertyValue(get_settings, 'client_tnc_status') !== website_tnc_version;
     };
 
     const clearAllAccounts = () => {

@@ -119,9 +119,11 @@ const MetaTraderUI = (() => {
             $detail.find('.acc-info div[data]').map(function () {
                 const key  = $(this).attr('data');
                 const info = types_info[acc_type].account_info[key];
-                $(this).html(
-                    key === 'balance' ? formatMoney('USD', +info) :
-                        key === 'leverage' ? `1:${info}` : info);
+                const mapping = {
+                    balance : () => formatMoney('USD', +info),
+                    leverage: () =>`1:${info}`,
+                };
+                $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
             $detail.find('.act_deposit, .act_withdrawal').setVisibility(!types_info[acc_type].is_demo);
             $detail.find('.has-account').setVisibility(1);
@@ -139,11 +141,13 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const defaultAction = acc_type => (
-        types_info[acc_type].account_info ?
-            (types_info[acc_type].is_demo ? 'password_change' : 'deposit') :
-            'new_account'
-    );
+    const defaultAction = acc_type => {
+        let type = 'new_account';
+        if (types_info[acc_type].account_info) {
+            type = types_info[acc_type].is_demo ? 'password_change' : 'deposit';
+        }
+        return type;
+    };
 
     const loadAction = (action, acc_type) => {
         $detail.find(`.acc-actions [class*=act_${action || defaultAction(acc_type)}]`).click();

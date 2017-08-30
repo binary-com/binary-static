@@ -19,10 +19,10 @@ const ActiveSymbols = require('../../common_functions/active_symbols');
 const Symbols = (() => {
     'use strict';
 
-    let trade_markets = {},
-        trade_markets_list = {},
-        trade_underlyings = {},
-        names = {};
+    let trade_markets      = {};
+    let trade_markets_list = {};
+    let trade_underlyings  = {};
+    let names              = {};
 
     const details = (data) => {
         const all_symbols  = data.active_symbols;

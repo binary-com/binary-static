@@ -75,9 +75,9 @@ const TimePicker = (() => {
             if (!time.match(/^(:?[0-3]\d):(:?[0-5]\d):(:?[0-5]\d)$/)) {
                 time_now = timeNow();
                 const invalid = time.match(/([a-z0-9]*):([a-z0-9]*):?([a-z0-9]*)?/);
-                let hour = time_now.format('hh'),
-                    minute = time_now.format('mm'),
-                    second = time_now.format('ss');
+                let hour = time_now.format('hh');
+                let minute = time_now.format('mm');
+                let second = time_now.format('ss');
 
                 if (typeof invalid[1] !== 'undefined' && isFinite(invalid[1])) hour   = formatTime(invalid[1]);
                 if (typeof invalid[2] !== 'undefined' && isFinite(invalid[2])) minute = formatTime(invalid[2]);

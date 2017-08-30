@@ -15,11 +15,20 @@ const Validation = (() => {
         checkbox: 'change',
     };
 
-    const getFieldType = $field => (
-        $field.length ? ($field.attr('type') === 'checkbox' ? 'checkbox' : $field.get(0).localName) : null
-    );
+    const getFieldType = ($field) => {
+        let type = null;
+        if ($field.length) {
+            type = $field.attr('type') === 'checkbox' ? 'checkbox' : $field.get(0).localName;
+        }
+        return type;
+    };
 
-    const getFieldValue = field => (field.type === 'checkbox' ? (field.$.is(':checked') ? '1' : '') : field.$.val()) || '';
+    const isChecked = field => field.$.is(':checked') ? '1' : '';
+
+    const getFieldValue = (field) => {
+        const value = field.type === 'checkbox' ? isChecked(field) : field.$.val();
+        return value || '';
+    };
 
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
@@ -86,9 +95,9 @@ const Validation = (() => {
     };
     const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);
     const validPassword     = value => /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value);
-    const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(value);
-    const validGeneral      = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><|]+/.test(value);
-    const validAddress      = value => !/[`~!#$%^&*)(_=+\[}{\]\\";:\?><|]+/.test(value);
+    const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d]+/.test(value);
+    const validGeneral      = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><|]+/.test(value);
+    const validAddress      = value => !/[`~!#$%^&*)(_=+[}{\]\\";:?><|]+/.test(value);
     const validPostCode     = value => /^[a-zA-Z\d-\s]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
@@ -107,8 +116,8 @@ const Validation = (() => {
             return true;
         }
 
-        let is_ok = true,
-            message = '';
+        let is_ok   = true;
+        let message = '';
 
         if (+options.max < +options.min && options.custom_message) {
             is_ok = false;
@@ -163,13 +172,13 @@ const Validation = (() => {
     // --------------------
     const checkField = (field) => {
         if (!field.$.is(':visible') || !field.validations) return true;
-        let all_is_ok = true,
-            message;
+        let all_is_ok = true;
+        let message   = '';
 
         field.validations.some((valid) => {
             if (!valid) return false; // check next validation
-            let type,
-                options = {};
+            let type;
+            let options = {};
 
             if (typeof valid === 'string') {
                 type = valid;

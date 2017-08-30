@@ -79,7 +79,7 @@ const SelfExclusion = (() => {
         $form.find('input[type="text"]').each(function() {
             const id = $(this).attr('id');
 
-            if (/(timeout_until|exclude_until)/.test(id)) return;
+            if (/timeout_until|exclude_until/.test(id)) return;
 
             const checks = [];
             const options = { min: 0 };
@@ -89,7 +89,7 @@ const SelfExclusion = (() => {
             } else {
                 options.allow_empty = true;
             }
-            if (!/(session_duration_limit|max_open_bets)/.test(id)) {
+            if (!/session_duration_limit|max_open_bets/.test(id)) {
                 options.type = 'float';
                 options.decimals = `0, ${Currency.getDecimalPlaces(Client.get('currency'))}`;
             }
@@ -153,7 +153,7 @@ const SelfExclusion = (() => {
 
     const getDate = (elm_id) => {
         const $elm = $(elm_id);
-        return $elm.attr('data-value') ? $elm.attr('data-value') : !isNaN(new Date($elm.val()).getTime()) ? $elm.val() : '';
+        return $elm.attr('data-value') || (!isNaN(new Date($elm.val()).getTime()) ? $elm.val() : '');
     };
     const getMoment  = elm_id => moment(new Date(getDate(elm_id)));
     const getTimeout = () => (getDate(timeout_date_id) ? (moment(new Date(`${getDate(timeout_date_id)}T${$(timeout_time_id).val()}`)).valueOf() / 1000).toFixed(0) : '');
@@ -181,7 +181,7 @@ const SelfExclusion = (() => {
 
     const additionalCheck = (data) => {
         const is_changed = Object.keys(data).some(key => ( // using != in next line since response types is inconsistent
-            key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] != data[key]) // eslint-disable-line eqeqeq
+            key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] !== data[key]) // eslint-disable-line eqeqeq
         ));
         if (!is_changed) {
             showFormMessage('You did not change anything.', false);

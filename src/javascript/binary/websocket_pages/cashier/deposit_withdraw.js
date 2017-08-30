@@ -11,9 +11,10 @@ const isCryptocurrency  = require('../../common_functions/currency').isCryptocur
 const DepositWithdraw = (() => {
     'use strict';
 
-    let cashier_type;
+    let cashier_type,
+        verification_code;
+
     const container = '#deposit_withdraw';
-    let verification_code;
 
     const init = (cashier_password) => {
         if (cashier_password) {

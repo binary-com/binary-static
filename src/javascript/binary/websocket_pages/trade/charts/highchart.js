@@ -12,6 +12,8 @@ const jpClient     = require('../../../common_functions/country_base').jpClient;
 const addComma     = require('../../../common_functions/currency').addComma;
 
 const Highchart = (() => {
+    'use strict';
+
     let chart,
         chart_promise,
         options,
@@ -20,9 +22,8 @@ const Highchart = (() => {
         request,
         min_point,
         max_point,
-        lines_drawn;
-
-    let start_time,
+        lines_drawn,
+        start_time,
         purchase_time,
         now_time,
         end_time,
@@ -34,9 +35,8 @@ const Highchart = (() => {
         exit_tick_time,
         exit_time,
         underlying,
-        margin;
-
-    let is_initialized,
+        margin,
+        is_initialized,
         is_chart_delayed,
         is_chart_subscribed,
         stop_streaming,
@@ -70,27 +70,27 @@ const Highchart = (() => {
 
     // initialize the chart only once with ticks or candles data
     const initChart = (init_options) => {
-        let data = [],
-            type = '',
-            i;
+        let data = [];
+        let type = '';
+        let i;
 
         const pushTicks = (time, price) => {
             // we need to add the marker as we are pushing the data points
             // since for large arrays, data doesn't get pushed to series[0].data
             // and we can't update markers if data is empty
-            time = parseInt(time);
-            const is_match_entry = time === entry_tick_time;
-            const is_match_exit = time === exit_tick_time;
+            const f_time = parseInt(time);
+            const is_match_entry = f_time === entry_tick_time;
+            const is_match_exit = f_time === exit_tick_time;
             const tick_type = is_match_entry ? 'entry' : 'exit';
             data.push({
-                x     : time * 1000,
+                x     : f_time * 1000,
                 y     : price * 1,
                 marker: is_match_entry || is_match_exit ? HighchartUI.getMarkerObject(tick_type) : '',
             });
         };
 
-        let history = '',
-            candles = '';
+        let history = '';
+        let candles = '';
         if (init_options.history) { // indicates line chart
             type = 'line';
             history = init_options.history;
@@ -159,7 +159,7 @@ const Highchart = (() => {
     const handleResponse = (response) => {
         const type  = response.msg_type;
         const error = response.error;
-        if (/(history|candles|tick|ohlc)/.test(type) && !error) {
+        if (/history|candles|tick|ohlc/.test(type) && !error) {
             options = { title: contract.display_name };
             options[type] = response[type];
             const history = response.history;

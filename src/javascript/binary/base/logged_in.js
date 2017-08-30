@@ -37,7 +37,7 @@ const LoggedInHandler = (() => {
             const language = getLanguage();
             redirect_url = defaultRedirectUrl();
             if (lang_cookie && lang_cookie !== language) {
-                redirect_url = redirect_url.replace(new RegExp(`\/${language}\/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
+                redirect_url = redirect_url.replace(new RegExp(`/${language}/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
             }
         }
         document.getElementById('loading_link').setAttribute('href', redirect_url);

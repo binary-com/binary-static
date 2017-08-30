@@ -9,6 +9,7 @@ module.exports = {
                 'mock-local-storage'
             ],
 		},
-		src: ['src/javascript/binary/**/__tests__/*.js']
+		// src: ['src/javascript/binary/**/__tests__/*.js']
+		src: ['src/javascript/binary/base/__tests__/url.js']
 	}
 };

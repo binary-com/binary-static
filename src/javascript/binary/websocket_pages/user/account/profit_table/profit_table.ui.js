@@ -10,9 +10,10 @@ const Table               = require('../../../../common_functions/attach_dom/tab
 const ProfitTableUI = (() => {
     'use strict';
 
-    let oauth_apps = {},
-        currency,
-        total_profit = 0;
+    let oauth_apps   = {};
+    let total_profit = 0;
+
+    let currency;
 
     const profit_table_id = 'profit-table';
     const cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
@@ -33,7 +34,7 @@ const ProfitTableUI = (() => {
         const jp_client = jpClient();
         currency = Client.get('currency');
 
-        header[7] += (jp_client ? '' : (currency ? ` (${currency})` : ''));
+        header[7] += currency && !jp_client ? ` (${currency})` : '';
 
         const footer = [localize('Total Profit/Loss'), '', '', '', '', '', '', '', ''];
 

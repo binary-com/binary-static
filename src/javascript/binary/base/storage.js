@@ -71,7 +71,8 @@ InScriptStore.prototype = {
     get: function(key) {
         return getPropertyValue(this.store, key);
     },
-    set: function(key, value, obj = this.store) {
+    set: function(k, value, obj = this.store) {
+        let key = k;
         if (!Array.isArray(key)) key = [key];
         if (key.length > 1) {
             if (!(key[0] in obj) || isEmptyObject(obj[key[0]])) obj[key[0]] = {};
@@ -100,10 +101,11 @@ State.prototype = InScriptStore.prototype;
 /**
  * Shorthand function to get values from response object of State
  *
- * @param {String} path
+ * @param {String} p
  *     e.g. getResponse('authorize.currency') == get(['response', 'authorize', 'authorize', 'currency'])
  */
-State.prototype.getResponse = function(path) {
+State.prototype.getResponse = function(p) {
+    let path = p;
     if (typeof path === 'string') {
         const keys = path.split('.');
         path = ['response', keys[0]].concat(keys);

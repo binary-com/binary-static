@@ -20,9 +20,13 @@ const StartDates_Beta = (() => {
     let has_now = 0;
     State.remove('is_start_dates_displayed');
 
-    const compareStartDate = (a, b) => (
-        (a.date < b.date) ? -1 : (a.date > b.date ? 1 : 0)
-    );
+    const compareStartDate = (a, b) => {
+        let sort = 0;
+        if (a.date !== b.date) {
+            sort = a.date > b.date ? 1 : -1;
+        }
+        return sort;
+    };
 
     const displayStartDates = () => {
         const start_dates = Contract_Beta.startDates();
@@ -32,7 +36,8 @@ const StartDates_Beta = (() => {
             const fragment =  document.createDocumentFragment();
             const row      = document.getElementById('date_start_row');
             let option,
-                content;
+                content,
+                first;
 
             row.style.display = 'flex';
 
@@ -53,7 +58,6 @@ const StartDates_Beta = (() => {
 
             start_dates.list.sort(compareStartDate);
 
-            let first;
             start_dates.list.forEach((start_date) => {
                 let a = moment.unix(start_date.open).utc();
                 const b = moment.unix(start_date.close).utc();

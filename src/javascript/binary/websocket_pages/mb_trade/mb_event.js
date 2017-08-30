@@ -92,8 +92,9 @@ const MBTradingEvents = (() => {
             const contract = MBContract.getCurrentContracts();
             const jp_client = jpClient();
             const min_amount = jp_client ? 1 : 0;
-            const max_amount = jp_client ? 100 : (Array.isArray(contract) && contract.length && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
-            if (payout_amount === '' || isNaN(payout_amount) || payout_amount < min_amount || payout_amount > max_amount) {
+            const max_contract_amount = Array.isArray(contract) && contract.length && contract[0].expiry_type !== 'intraday' ? 20000 : 5000;
+            const max_client_amount = jp_client ? 100 : max_contract_amount;
+            if (payout_amount === '' || isNaN(payout_amount) || payout_amount < min_amount || payout_amount > max_client_amount) {
                 is_ok = false;
             }
 
@@ -172,12 +173,12 @@ const MBTradingEvents = (() => {
                     const payout = +MBDefaults.get(`payout${Currency.isCryptocurrency(MBDefaults.get('currency')) ? '_crypto' : ''}`);
                     const value = $(this).attr('value');
                     let new_payout;
-                    if (/(\+|\-)/.test(value)) {
+                    if (/\+|-/.test(value)) {
                         new_payout = payout + parseInt(value);
                         if (new_payout < 1 && jp_client) {
                             new_payout = 1;
                         }
-                    } else if (/(ok|cancel)/.test(value)) {
+                    } else if (/ok|cancel/.test(value)) {
                         if (value === 'cancel') new_payout = old_value || 10;
                         makeListsInvisible();
                     } else {

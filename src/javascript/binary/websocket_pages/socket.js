@@ -14,14 +14,15 @@ const getSocketURL     = require('../../config').getSocketURL;
 const BinarySocket = (() => {
     'use strict';
 
-    let binary_socket,
-        config         = {},
-        buffered_sends = [],
-        req_number     = 0,
-        req_id         = 0,
-        wrong_app_id   = 0,
-        is_available   = true,
-        is_disconnect_called = false;
+    let binary_socket;
+
+    let config         = {};
+    let buffered_sends = [];
+    let req_number     = 0;
+    let req_id         = 0;
+    let wrong_app_id   = 0;
+    let is_available   = true;
+    let is_disconnect_called = false;
 
     const socket_url = `${getSocketURL()}?app_id=${getAppId()}&l=${getLanguage()}`;
     const timeouts   = {};
@@ -152,7 +153,7 @@ const BinarySocket = (() => {
 
         if (isReady() && is_available) {
             is_disconnect_called = false;
-            if (!data.hasOwnProperty('passthrough') && !data.hasOwnProperty('verify_email')) {
+            if (!getPropertyValue(data, 'passthrough') && !getPropertyValue(data, 'verify_email')) {
                 data.passthrough = {};
             }
             if (+data.time === 1) {
@@ -218,7 +219,7 @@ const BinarySocket = (() => {
                 const type = response.msg_type;
 
                 // store in State
-                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /(balance|website_status)/.test(type)) {
+                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|website_status/.test(type)) {
                     State.set(['response', type], $.extend({}, response));
                 }
                 // resolve the send promise

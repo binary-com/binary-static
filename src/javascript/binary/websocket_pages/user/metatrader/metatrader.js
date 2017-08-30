@@ -3,6 +3,7 @@ const MetaTraderUI     = require('./metatrader.ui');
 const BinarySocket     = require('../../socket');
 const Client           = require('../../../base/client');
 const localize         = require('../../../base/localize').localize;
+const getPropertyValue = require('../../../base/utility').getPropertyValue;
 const Validation       = require('../../../common_functions/form_validation');
 
 const MetaTrader = (() => {
@@ -32,9 +33,9 @@ const MetaTrader = (() => {
         let is_eligible = false;
         if (!landing_company_response.error) {
             const lc              = landing_company_response.landing_company;
-            has_financial_company = lc.hasOwnProperty('mt_financial_company') && lc.mt_financial_company.shortcode === 'vanuatu';
-            has_gaming_company    = lc.hasOwnProperty('mt_gaming_company') && lc.mt_gaming_company.shortcode === 'costarica';
-            if (lc.hasOwnProperty('financial_company') && lc.financial_company.shortcode === 'costarica' &&
+            has_financial_company = getPropertyValue(lc, ['mt_financial_company', 'shortcode']) === 'vanuatu';
+            has_gaming_company    = getPropertyValue(lc, ['mt_gaming_company', 'shortcode']) === 'costarica';
+            if (getPropertyValue(lc, ['financial_company', 'shortcode']) === 'costarica' &&
                 (has_financial_company || has_gaming_company)) {
                 is_eligible = true;
             }

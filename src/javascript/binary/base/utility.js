@@ -20,12 +20,9 @@ const showLoadingImage = ($container, theme = 'dark') => {
  * @param selector: a jquery style selector for target elements
  * @return int|null
  */
-const getHighestZIndex = (selector) => {
-    if (!selector) {
-        selector = 'div,p,area,nav,section,header,canvas,aside,span';
-    }
+const getHighestZIndex = (selector = 'div,p,area,nav,section,header,canvas,aside,span') => {
     const all = [];
-    const _store_zindex = function() {
+    const store_zindex = function() {
         if ($(this).is(':visible')) {
             const z = $(this).css('z-index');
             if (!isNaN(z)) {
@@ -33,13 +30,12 @@ const getHighestZIndex = (selector) => {
             }
         }
     };
-    $(selector).each(_store_zindex);
+    $(selector).each(store_zindex);
 
     return all.length ? Math.max(...all) : null;
 };
 
-const downloadCSV = (csv_contents, filename) => {
-    filename = filename || 'data.csv';
+const downloadCSV = (csv_contents, filename = 'data.csv') => {
     if (navigator.msSaveBlob) { // IE 10+
         navigator.msSaveBlob(new Blob([csv_contents], { type: 'text/csv;charset=utf-8;' }), filename);
     } else { // Other browsers
@@ -60,7 +56,7 @@ const isEmptyObject = (obj) => {
     let is_empty = true;
     if (obj && obj instanceof Object) {
         Object.keys(obj).forEach((key) => {
-            if (obj.hasOwnProperty(key)) is_empty = false;
+            if (getPropertyValue(obj, key)) is_empty = false;
         });
     }
     return is_empty;
@@ -68,7 +64,8 @@ const isEmptyObject = (obj) => {
 
 const cloneObject = obj => (!isEmptyObject(obj) ? $.extend(true, Array.isArray(obj) ? [] : {}, obj) : obj);
 
-const getPropertyValue = (obj, keys) => {
+const getPropertyValue = (obj, k) => {
+    let keys = k;
     if (!Array.isArray(keys)) keys = [keys];
     if (!isEmptyObject(obj) && keys[0] in obj && keys && keys.length > 1) {
         return getPropertyValue(obj[keys[0]], keys.slice(1));
@@ -89,7 +86,7 @@ const clearable = (element) => {
     $(document).on('mousemove', '.clear', function(e) {
         e.stopPropagation();
         $(e.currentTarget)[toggleAddRemoveClass(this.offsetWidth - 18 < e.clientX - this.getBoundingClientRect().left)]('onClear');
-    }).on('mousedown', '.onClear', function(e) {
+    }).on('mousedown', '.onClear', (e) => {
         e.stopPropagation();
         $(e.currentTarget).attr('data-value', '');
         $(e.currentTarget).removeClass('clear onClear').val('').change();

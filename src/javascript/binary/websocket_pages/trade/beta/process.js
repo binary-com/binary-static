@@ -1,21 +1,22 @@
-const moment                         = require('moment');
-const TradingAnalysis_Beta           = require('./analysis');
-const Contract_Beta                  = require('./contract');
-const Durations_Beta                 = require('./duration');
-const Price_Beta                     = require('./price');
-const StartDates_Beta                = require('./starttime');
-const commonTrading                  = require('../common');
-const Defaults                       = require('../defaults');
-const GetTicks                       = require('../get_ticks');
-const Notifications                  = require('../notifications');
-const Symbols                        = require('../symbols');
-const Tick                           = require('../tick');
-const BinarySocket                   = require('../../socket');
-const AssetIndexUI                   = require('../../resources/asset_index/asset_index.ui');
-const TradingTimesUI                 = require('../../resources/trading_times/trading_times.ui');
-const localize                       = require('../../../base/localize').localize;
-const State                          = require('../../../base/storage').State;
-const elementInnerHtml               = require('../../../common_functions/common_functions').elementInnerHtml;
+const moment               = require('moment');
+const TradingAnalysis_Beta = require('./analysis');
+const Contract_Beta        = require('./contract');
+const Durations_Beta       = require('./duration');
+const Price_Beta           = require('./price');
+const StartDates_Beta      = require('./starttime');
+const commonTrading        = require('../common');
+const Defaults             = require('../defaults');
+const GetTicks             = require('../get_ticks');
+const Notifications        = require('../notifications');
+const Symbols              = require('../symbols');
+const Tick                 = require('../tick');
+const BinarySocket         = require('../../socket');
+const AssetIndexUI         = require('../../resources/asset_index/asset_index.ui');
+const TradingTimesUI       = require('../../resources/trading_times/trading_times.ui');
+const localize             = require('../../../base/localize').localize;
+const State                = require('../../../base/storage').State;
+const getPropertyValue     = require('../../../base/utility').getPropertyValue;
+const elementInnerHtml     = require('../../../common_functions/common_functions').elementInnerHtml;
 
 const Process_Beta = (() => {
     'use strict';
@@ -48,8 +49,8 @@ const Process_Beta = (() => {
     const processMarket_Beta = () => {
         // we can get market from sessionStorage as allowed market
         // is already set when this is called
-        let market = Defaults.get('market'),
-            symbol = Defaults.get('underlying');
+        let market = Defaults.get('market');
+        let symbol = Defaults.get('underlying');
 
         // change to default market if query string contains an invalid market
         if (!market || !Symbols.underlyings()[market]) {
@@ -102,7 +103,7 @@ const Process_Beta = (() => {
      * Function to display contract form for current underlying
      */
     const processContract_Beta = (contracts) => {
-        if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
+        if (getPropertyValue(contracts, ['error', 'code']) === 'InvalidSymbol') {
             Price_Beta.processForgetProposals_Beta();
             const container                   = document.getElementById('contract_confirmation_container');
             const message_container           = document.getElementById('confirmation_message');
@@ -218,13 +219,11 @@ const Process_Beta = (() => {
 
     const onExpiryTypeChange = (value) => {
         const $expiry_type = $('#expiry_type');
-        if (!value || !$expiry_type.find(`option[value=${value}]`).length) {
-            value = 'duration';
-        }
-        $expiry_type.val(value);
+        const validated_value = value && $expiry_type.find(`option[value=${value}]`).length ? value : 'duration';
+        $expiry_type.val(validated_value);
 
         let make_price_request = 0;
-        if (value === 'endtime') {
+        if (validated_value === 'endtime') {
             Durations_Beta.displayEndTime();
             if (Defaults.get('expiry_date')) {
                 Durations_Beta.selectEndDate(moment(Defaults.get('expiry_date')));

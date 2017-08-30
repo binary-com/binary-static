@@ -10,7 +10,7 @@ const Url = (() => {
         static_host;
 
     const init = (url) => {
-        location_url = url ? getLocation(url) : window ? window.location : '';
+        location_url = url ? getLocation(url) : window.location;
     };
 
     const getLocation = url => $('<a>', { href: decodeURIComponent(url) })[0];

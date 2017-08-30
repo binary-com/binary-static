@@ -19,11 +19,16 @@ const Statement = (() => {
         const balance = parseFloat(statement.balance_after);
         const is_ico_bid = /binaryico/i.test(statement.shortcode);
 
+        let action = toTitleCase(statement.action_type);
+        if (is_ico_bid) {
+            action = /buy/i.test(statement.action_type) ? localize('Bid') : localize('Closed Bid');
+        }
+
         return {
             date   : jp_client ? toJapanTimeIfNeeded(statement.transaction_time) : `${date_str}\n${time_str}`,
             ref    : statement.transaction_id,
             payout : isNaN(payout) || is_ico_bid ? '-' : formatMoney(currency, payout, !jp_client),
-            action : is_ico_bid ? (/buy/i.test(statement.action_type) ? localize('Bid') : localize('Closed Bid')) : toTitleCase(statement.action_type),
+            action : action,
             amount : isNaN(amount) ? '-' : formatMoney(currency, amount, !jp_client),
             balance: isNaN(balance) ? '-' : formatMoney(currency, balance, !jp_client),
             desc   : statement.longcode.replace(/\n/g, '<br />'),

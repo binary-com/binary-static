@@ -1,4 +1,5 @@
-const moment = require('moment');
+const moment           = require('moment');
+const getPropertyValue = require('../../base/utility').getPropertyValue;
 
 /*
  * Display price/spot movement variation to depict price moved up or down
@@ -35,7 +36,7 @@ const countDecimalPlaces = (num) => {
 const trading_times = {};
 
 const processTradingTimesAnswer = (response) => {
-    if (!trading_times.hasOwnProperty(response.echo_req.trading_times) && response.hasOwnProperty('trading_times') && response.trading_times.hasOwnProperty('markets')) {
+    if (!getPropertyValue(trading_times, ['response', 'echo_req', 'trading_times']) && getPropertyValue(response, ['trading_times', 'markets'])) {
         for (let i = 0; i < response.trading_times.markets.length; i++) {
             const submarkets = response.trading_times.markets[i].submarkets;
             if (submarkets) {
@@ -58,21 +59,19 @@ const processTradingTimesAnswer = (response) => {
 
 const getElement = () => document.getElementById('date_start');
 
-const checkValidTime = (time_start_element, $date_start, time) => {
-    time_start_element = time_start_element || document.getElementById('time_start');
-    $date_start = $date_start || $('#date_start');
-    time = (time_start_element.value || time);
+const checkValidTime = (time_start_element = document.getElementById('time_start'), $date_start = $('#date_start'), time = time_start_element.value) => {
+    let time_array;
     if (time) {
-        time = time.split(':');
+        time_array = time.split(':');
     }
     const now_time = moment.utc();
-    const hour = time && time.length ? +time[0] : now_time.hour();
-    const minute = time && time.length ? +time[1] : now_time.minute();
+    const hour = time_array.length ? +time_array[0] : now_time.hour();
+    const minute = time_array.length ? +time_array[1] : now_time.minute();
     const date_time = moment.utc(getElement().value * 1000).hour(hour).minute(minute);
     let min_time = getMinMaxTime($date_start).minTime;
     min_time = min_time.valueOf() > now_time.valueOf() ? min_time : now_time;
     const max_time = getMinMaxTime($date_start).maxTime;
-    time_start_element.value = date_time.isBefore(min_time) || date_time.isAfter(max_time) || !time ? min_time.add(5, 'minutes').utc().format('HH:mm') : time.join(':');
+    time_start_element.value = date_time.isBefore(min_time) || date_time.isAfter(max_time) || !time ? min_time.add(5, 'minutes').utc().format('HH:mm') : time_array.join(':');
     time_start_element.setAttribute('data-value', time_start_element.value);
 };
 
@@ -82,11 +81,9 @@ const getMinMaxTime = ($setMinMaxSelector, minTime = window.time ? window.time :
     if (isNaN(+$setMinMaxSelector.val())) {
         $selected_option = $($setMinMaxSelector.find('option')[1]);
     }
-    minTime = +$selected_option.val() > minTime.unix() ? moment.utc($selected_option.val() * 1000) : minTime;
-    const maxTime = moment.utc($selected_option.attr('data-end') * 1000);
     return {
-        minTime: minTime,
-        maxTime: maxTime,
+        minTime: +$selected_option.val() > minTime.unix() ? moment.utc($selected_option.val() * 1000) : minTime,
+        maxTime: moment.utc($selected_option.attr('data-end') * 1000),
     };
 };
 

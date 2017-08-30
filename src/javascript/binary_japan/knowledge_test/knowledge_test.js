@@ -20,11 +20,12 @@ const KnowledgeTest = (() => {
     let submit_completed = false;
     let random_picks     = [];
     let result_score     = 0;
-    let $container;
-    let $header;
-    let $message;
-    let $questions;
-    let $instructions;
+
+    let $container,
+        $header,
+        $message,
+        $questions,
+        $instructions;
 
     const onLoad = () => {
         // need to send get_settings because client status needs to be checked against latest available data

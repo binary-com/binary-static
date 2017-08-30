@@ -81,7 +81,7 @@ const Menu = (() => {
 
     const activeMainMenu = () => {
         let pathname = window.location.pathname;
-        if (/cashier/i.test(pathname) && !(/(cashier_password|payment_methods)/.test(pathname))) {
+        if (/cashier/i.test(pathname) && !(/cashier_password|payment_methods/.test(pathname))) {
             pathname = $('#topMenuCashier').find('a').attr('href');
         }
         let $item,

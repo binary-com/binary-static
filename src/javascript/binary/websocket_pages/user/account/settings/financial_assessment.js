@@ -11,8 +11,8 @@ const Validation       = require('../../../../common_functions/form_validation')
 const FinancialAssessment = (() => {
     'use strict';
 
-    let financial_assessment = {},
-        arr_validation = [];
+    let financial_assessment = {};
+    let arr_validation       = [];
 
     const form_selector = '#frm_assessment';
 
@@ -31,10 +31,7 @@ const FinancialAssessment = (() => {
         });
     };
 
-    const handleForm = (response) => {
-        if (!response) {
-            response = State.getResponse('get_financial_assessment');
-        }
+    const handleForm = (response = State.getResponse('get_financial_assessment')) => {
         hideLoadingImg(true);
 
         financial_assessment = $.extend({}, response);
@@ -134,9 +131,7 @@ const FinancialAssessment = (() => {
     };
 
     return {
-        onLoad    : onLoad,
-        handleForm: handleForm,
-        submitForm: submitForm,
+        onLoad: onLoad,
     };
 })();
 

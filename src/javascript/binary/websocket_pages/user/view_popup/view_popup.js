@@ -7,6 +7,7 @@ const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover
 const toJapanTimeIfNeeded  = require('../../../base/clock').toJapanTimeIfNeeded;
 const localize             = require('../../../base/localize').localize;
 const State                = require('../../../base/storage').State;
+const getPropertyValue     = require('../../../base/utility').getPropertyValue;
 const isEmptyObject        = require('../../../base/utility').isEmptyObject;
 const addComma             = require('../../../common_functions/currency').addComma;
 const formatMoney          = require('../../../common_functions/currency').formatMoney;
@@ -21,10 +22,10 @@ const ViewPopup = (() => {
         chart_started,
         chart_init,
         chart_updated,
-        sell_text_updated;
-    let $container,
-        $loading,
-        btn_view;
+        sell_text_updated,
+        btn_view,
+        $container,
+        $loading;
 
     const popupbox_id   = 'inpage_popup_content_box';
     const wrapper_id    = 'sell_content_wrapper';
@@ -59,7 +60,7 @@ const ViewPopup = (() => {
         }
         // In case of error such as legacy shortcode, this call is returning the error message
         // but no error field. To specify those cases, we check for other fields existence
-        if (!response.proposal_open_contract.hasOwnProperty('shortcode')) {
+        if (!getPropertyValue(response, ['proposal_open_contract', 'shortcode'])) {
             showErrorPopup(response, response.proposal_open_contract.validation_error);
             return;
         }
@@ -102,24 +103,32 @@ const ViewPopup = (() => {
         const is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const user_sold        = contract.sell_time && contract.sell_time < contract.date_expiry;
         const is_ended         = contract.is_settleable || contract.is_sold || user_sold;
-        const indicative_price = final_price && is_ended ?
-                             (contract.sell_price || contract.bid_price) : contract.bid_price ?
-                             contract.bid_price : null;
+        const indicative_price = final_price && is_ended ? final_price : (contract.bid_price || null);
 
         if (contract.barrier_count > 1) {
             containerSetText('trade_details_barrier',     addComma(contract.high_barrier), '', true);
             containerSetText('trade_details_barrier_low', addComma(contract.low_barrier), '', true);
         } else if (contract.barrier) {
             const formatted_barrier = addComma(contract.barrier);
-            containerSetText('trade_details_barrier',     contract.entry_tick_time ?
-                (contract.contract_type === 'DIGITMATCH' ? `${localize('Equals')} ${formatted_barrier}` :
-                    contract.contract_type === 'DIGITDIFF' ? `${localize('Not')} ${formatted_barrier}` :
-                        formatted_barrier) : '-',
-                '', true);
+            const mapping = {
+                DIGITMATCH: 'Equals',
+                DIGITDIFF : 'Not',
+            };
+            const contract_text  = mapping[contract.contract_type];
+            const barrier_prefix = contract_text ? `${localize(contract_text)} ` : '';
+            containerSetText(
+                'trade_details_barrier',
+                contract.entry_tick_time ? (barrier_prefix + formatted_barrier) : '-',
+                '',
+                true);
         }
 
-        const current_spot = !is_ended ? contract.current_spot : (user_sold ? '' : contract.exit_tick);
-        const current_spot_time = !is_ended ? contract.current_spot_time : (user_sold ? '' : contract.exit_tick_time);
+        let current_spot      = contract.current_spot;
+        let current_spot_time = contract.current_spot_time;
+        if (is_ended) {
+            current_spot      = user_sold ? '' : contract.exit_tick;
+            current_spot_time = user_sold ? '' : contract.exit_tick_time;
+        }
 
         if (current_spot) {
             containerSetText('trade_details_current_spot', addComma(current_spot));
@@ -207,8 +216,8 @@ const ViewPopup = (() => {
             if ((!is_started || is_ended || now >= contract.date_expiry) && document.getElementById('trade_details_live_remaining')) {
                 containerSetText('trade_details_live_remaining', '-');
             } else {
-                let remained = contract.date_expiry - now,
-                    days = 0;
+                let remained = contract.date_expiry - now;
+                let days     = 0;
                 const day_seconds = 24 * 60 * 60;
                 if (remained > day_seconds) {
                     days = Math.floor(remained / day_seconds);
@@ -248,6 +257,12 @@ const ViewPopup = (() => {
 
         $container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode }));
         const $sections = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
+        let barrier_text = 'Barrier';
+        if (contract.barrier_count > 1) {
+            barrier_text = 'High Barrier';
+        } else if (/^DIGIT(MATCH|DIFF)$/.test(contract.contract_type)) {
+            barrier_text = 'Target';
+        }
 
         $sections.find('#sell_details_table').append($(
             `<table>
@@ -258,8 +273,7 @@ const ViewPopup = (() => {
             ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
                 createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
             ${createRow('Entry Spot', '', 'trade_details_entry_spot')}
-            ${createRow(contract.barrier_count > 1 ? 'High Barrier' :
-                /^DIGIT(MATCH|DIFF)$/.test(contract.contract_type) ? 'Target' : 'Barrier', '', 'trade_details_barrier', true)}
+            ${createRow(barrier_text, '', 'trade_details_barrier', true)}
             ${(contract.barrier_count > 1 ? createRow('Low Barrier', '', 'trade_details_barrier_low', true) : '')}
             ${createRow('Potential Payout', '', 'trade_details_payout')}
             ${createRow('Purchase Price', '', 'trade_details_purchase_price')}
@@ -334,8 +348,7 @@ const ViewPopup = (() => {
     };
 
     const showErrorPopup = (response, message) => {
-        message = message || 'Sorry, an error occurred while processing your request.';
-        showMessagePopup(localize(message), 'There was an error', 'notice-msg');
+        showMessagePopup(localize(message || 'Sorry, an error occurred while processing your request.'), 'There was an error', 'notice-msg');
         console.log(response);
     };
 
@@ -400,7 +413,7 @@ const ViewPopup = (() => {
     };
 
     const responseSell = (response) => {
-        if (response.hasOwnProperty('error')) {
+        if (getPropertyValue(response, 'error')) {
             if (response.error.code === 'NoOpenPosition') {
                 getContract();
             } else {

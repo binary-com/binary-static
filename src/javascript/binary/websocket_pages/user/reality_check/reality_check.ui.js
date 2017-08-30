@@ -65,7 +65,6 @@ const RealityCheckUI = (() => {
         const char = String.fromCharCode(ev.which);
         if ((!/[0-9]/.test(char) && [8, 37, 39].indexOf(ev.keyCode) < 0) ||
             /['%]/.test(char)) { // similarity to arrows key code in some browsers
-            ev.returnValue = false;
             ev.preventDefault();
         }
     };

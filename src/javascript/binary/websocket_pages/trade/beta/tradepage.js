@@ -42,8 +42,10 @@ const TradePage_Beta = (() => {
 
         if (document.getElementById('websocket_form')) {
             commonTrading.addEventListenerForm();
+            /* eslint-disable no-new */
             new ResizeSensor($('.col-left .content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
             new ResizeSensor($('.col-right'), moreTabsHandler);
+            /* eslint-enable no-new */
         }
 
         // Walktrough Guide
@@ -67,8 +69,7 @@ const TradePage_Beta = (() => {
         $('#trading_analysis_content').height(sum_height);
     };
 
-    const moreTabsHandler = ($ul) => {
-        if (!$ul) $ul = $('#analysis_tabs');
+    const moreTabsHandler = ($ul = $('#analysis_tabs')) => {
         const see_more_class  = 'see-more';
         const more_tabs_class = 'more-tabs';
         const max_width       = $ul.outerWidth();

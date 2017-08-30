@@ -8,6 +8,7 @@ const Defaults                  = require('../defaults');
 const BinarySocket              = require('../../socket');
 const localize                  = require('../../../base/localize').localize;
 const State                     = require('../../../base/storage').State;
+const getPropertyValue          = require('../../../base/utility').getPropertyValue;
 const elementTextContent        = require('../../../common_functions/common_functions').elementTextContent;
 const isVisible                 = require('../../../common_functions/common_functions').isVisible;
 const toISOFormat               = require('../../../common_functions/string_util').toISOFormat;
@@ -27,8 +28,8 @@ const DatePicker                = require('../../../components/date_picker');
 const Durations_Beta = (() => {
     'use strict';
 
-    let selected_duration = {},
-        has_end_date      = 0;
+    let selected_duration = {};
+    let has_end_date      = 0;
 
     const displayDurations = () => {
         let start_type;
@@ -56,7 +57,7 @@ const Durations_Beta = (() => {
 
         Object.keys(durations).forEach((key) => {
             Object.keys(durations[key][form_name]).forEach((form) => {
-                if (durations[key][form_name].hasOwnProperty(form)) {
+                if (getPropertyValue(durations[key][form_name], form)) {
                     let obj = {};
                     if (barrier_category) {
                         obj = durations[key][form_name][barrier_category];
@@ -65,10 +66,10 @@ const Durations_Beta = (() => {
                     }
                     Object.keys(obj).forEach((type) => {
                         if (start_type) {
-                            if (start_type === type && !duration_container.hasOwnProperty(start_type)) {
+                            if (start_type === type && !getPropertyValue(duration_container, start_type)) {
                                 duration_container[key] = obj[start_type];
                             }
-                        } else if (!duration_container.hasOwnProperty(type)) {
+                        } else if (!getPropertyValue(duration_container, type)) {
                             duration_container[key] = obj[type];
                         }
                     });
@@ -113,7 +114,7 @@ const Durations_Beta = (() => {
             if (d !== 't') {
                 has_end_date = 1;
             }
-            if (duration_list.hasOwnProperty(d)) {
+            if (getPropertyValue(duration_list, d)) {
                 target.appendChild(duration_list[d]);
             }
         }
@@ -162,9 +163,9 @@ const Durations_Beta = (() => {
         const date_start = document.getElementById('date_start').value;
         const now = !date_start || date_start === 'now';
         const current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
-        let expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment,
-            expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm'),
-            expiry_date_iso = toISOFormat(expiry_date);
+        let expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment;
+        let expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
+        let expiry_date_iso = toISOFormat(expiry_date);
 
 
         if (moment(`${expiry_date_iso} ${expiry_time}`).valueOf() < current_moment.valueOf()) {
@@ -248,8 +249,8 @@ const Durations_Beta = (() => {
                 if ($duration_amount_val) {
                     day_diff = $duration_amount_val;
                 } else {
-                    value = value.target.getAttribute('data-value');
-                    const date = value ? new Date(value) : new Date();
+                    const data_value = value.target.getAttribute('data-value');
+                    const date = data_value ? new Date(data_value) : new Date();
                     const today = window.time ? window.time.valueOf() : new Date();
                     day_diff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
                 }
@@ -283,8 +284,8 @@ const Durations_Beta = (() => {
             Defaults.set('expiry_type', target.value);
         }
         const current_selected = Defaults.get('expiry_type') || target.value || 'duration';
-        let hide_id = (current_selected === 'duration') ? 'endtime' : 'duration',
-            id = current_selected;
+        let hide_id = (current_selected === 'duration') ? 'endtime' : 'duration';
+        let id = current_selected;
 
         id = document.getElementById(`expiry_type_${id}`);
         if (id) {
@@ -300,8 +301,8 @@ const Durations_Beta = (() => {
             target.removeChild(target.firstChild);
         }
 
-        let option = document.createElement('option'),
-            content = document.createTextNode(localize('Duration'));
+        let option = document.createElement('option');
+        let content = document.createTextNode(localize('Duration'));
 
         option.setAttribute('value', 'duration');
         if (current_selected === 'duration') {
@@ -400,7 +401,7 @@ const Durations_Beta = (() => {
 
     const processTradingTimesRequest_Beta = (date) => {
         const trading_times = Durations_Beta.trading_times();
-        if (trading_times.hasOwnProperty(date)) {
+        if (getPropertyValue(trading_times, date)) {
             Price_Beta.processPriceRequest_Beta();
         } else {
             commonTrading.showPriceOverlay();

@@ -5,7 +5,8 @@ const getPropertyValue = require('../base/utility').getPropertyValue;
 
 let currencies_config = {};
 
-const formatMoney = (currency_value, amount, exclude_currency) => {
+const formatMoney = (currency_value, amt, exclude_currency) => {
+    let amount = amt;
     if (amount) amount = String(amount).replace(/,/g, '');
     const sign = amount && Number(amount) < 0 ? '-' : '';
     const decimal_places = getDecimalPlaces(currency_value);
@@ -38,8 +39,10 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
+const getFiatDecimalPlaces = () => jpClient() ? 0 : 2;
+
 const getDecimalPlaces = currency => (
-    currencies_config[currency] ? getPropertyValue(currencies_config, [currency, 'fractional_digits']) : (isCryptocurrency(currency) ? 8 : (jpClient() ? 0 : 2))
+    getPropertyValue(currencies_config, [currency, 'fractional_digits']) || (isCryptocurrency(currency) ? 8 : getFiatDecimalPlaces())
 );
 
 const setCurrencies = (website_status) => {
@@ -58,8 +61,10 @@ const crypto_config = {
 
 const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
 
+const getFiatPayout = () => jpClient() ? 1 : 10;
+
 const getMinPayout = currency => (
-    jpClient() ? 1 : (isCryptocurrency(currency) ? getPropertyValue(currencies_config, [currency, 'stake_default']) : 10)
+    isCryptocurrency(currency) ? getPropertyValue(currencies_config, [currency, 'stake_default']) : getFiatPayout()
 );
 
 const getCurrencyList = (currencies) => {

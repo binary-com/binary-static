@@ -32,7 +32,7 @@ const TradingAnalysis_Beta = (() => {
     const requestTradeAnalysis = () => {
         form_name = ((State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall').replace('matchdiff', 'digits');
 
-        $('#tab_last_digit').setVisibility(/(digits|overunder|evenodd)/.test(form_name));
+        $('#tab_last_digit').setVisibility(/digits|overunder|evenodd/.test(form_name));
         sessionStorage.setItem('currentAnalysisTab_Beta', getActiveTab());
         loadAnalysisTab();
     };

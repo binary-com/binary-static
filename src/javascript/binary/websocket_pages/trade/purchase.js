@@ -20,8 +20,9 @@ const padLeft            = require('../../common_functions/string_util').padLeft
 const Purchase = (() => {
     'use strict';
 
-    let purchase_data = {},
-        payout_value,
+    let purchase_data = {};
+
+    let payout_value,
         cost_value;
 
     const display = (details) => {
@@ -55,9 +56,12 @@ const Purchase = (() => {
             confirmation_error.show();
             let message = error.message;
             if (/RestrictedCountry/.test(error.code)) {
-                const additional_message = /FinancialBinaries/.test(error.code) ?
-                    localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/volidx-markets')}" >`, '</a>']) :
-                    (/Random/.test(error.code) ? localize('Try our other markets.') : '');
+                let additional_message = '';
+                if (/FinancialBinaries/.test(error.code)) {
+                    additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/volidx-markets')}" >`, '</a>']);
+                } else if (/Random/.test(error.code)) {
+                    additional_message = localize('Try our other markets.');
+                }
                 message = `${error.message}. ${additional_message}`;
             }
             elementInnerHtml(confirmation_error, message);
@@ -138,14 +142,9 @@ const Purchase = (() => {
                 }
             }
 
-            let barrier;
-            if (sessionStorage.getItem('formname') === 'higherlower') {
-                barrier = passthrough.barrier;
-            }
-
             TickDisplay.init({
                 symbol              : passthrough.symbol,
-                barrier             : barrier,
+                barrier             : sessionStorage.getItem('formname') === 'higherlower' ? passthrough.barrier : '',
                 number_of_ticks     : passthrough.duration,
                 previous_tick_epoch : receipt.start_time,
                 contract_category   : sessionStorage.getItem('formname') === 'asian' ? 'asian' : 'callput',

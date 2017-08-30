@@ -1,6 +1,7 @@
 const getFormNameBarrierCategory = require('../common').getFormNameBarrierCategory;
 const getLanguage                = require('../../../base/language').get;
 const localize                   = require('../../../base/localize').localize;
+const getPropertyValue           = require('../../../base/utility').getPropertyValue;
 const isEmptyObject              = require('../../../base/utility').isEmptyObject;
 
 /*
@@ -23,11 +24,13 @@ const Contract_Beta = (() => {
     'use strict';
 
     const contract_type = {};
-    let contract_details = {},
-        durations = {},
-        start_dates = {},
-        barriers = {},
-        open,
+
+    let contract_details = {};
+    let durations        = {};
+    let start_dates      = {};
+    let barriers         = {};
+
+    let open,
         close,
         form,
         barrier;
@@ -73,13 +76,13 @@ const Contract_Beta = (() => {
         close = contracts.close;
 
         const form_barrier = getFormNameBarrierCategory(form_name);
-        form = form_name = form_barrier.form_name;
+        form = form_barrier.form_name;
         barrier = barrier_category = form_barrier.barrier_category;
 
         contracts.available.forEach((current_obj) => {
             const contract_category = current_obj.contract_category;
 
-            if (form_name && form_name === contract_category) {
+            if (form && form === contract_category) {
                 if (barrier_category) {
                     if (barrier_category === current_obj.barrier_category) {
                         populateDurations(current_obj);
@@ -96,7 +99,7 @@ const Contract_Beta = (() => {
 
                 const symbol = current_obj.underlying_symbol;
                 if (current_obj.barrier_category && current_obj.barrier_category !== 'non_financial') {
-                    if (!barriers.hasOwnProperty(symbol)) {
+                    if (!getPropertyValue(barriers, symbol)) {
                         barriers[symbol] = {};
                     }
                     if (current_obj.barriers === 1) {
@@ -119,15 +122,15 @@ const Contract_Beta = (() => {
                     contract_type[contract_category] = {};
                 }
 
-                if (!contract_type[contract_category].hasOwnProperty(current_obj.contract_type)) {
+                if (!getPropertyValue(contract_type[contract_category], current_obj.contract_type)) {
                     contract_type[contract_category][current_obj.contract_type] =
                         localize(current_obj.contract_display);
                 }
             }
         });
 
-        if (form_name && barrier_category) {
-            if (barriers && barriers[form_name] && barriers[form_name].barrier_category !== barrier_category) {
+        if (form && barrier_category) {
+            if (barriers && barriers[form] && barriers[form].barrier_category !== barrier_category) {
                 barriers = {};
             }
         }
@@ -141,7 +144,7 @@ const Contract_Beta = (() => {
 
         contracts.available.forEach((current_obj) => {
             const contract_category = current_obj.contract_category;
-            if (contract_category && !trade_contract_forms.hasOwnProperty(contract_category)) {
+            if (contract_category && !getPropertyValue(trade_contract_forms, contract_category)) {
                 if (contract_category === 'callput') {
                     if (current_obj.barrier_category === 'euro_atm') {
                         trade_contract_forms.risefall = localize('Rise/Fall');

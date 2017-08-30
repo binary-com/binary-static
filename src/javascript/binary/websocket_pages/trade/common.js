@@ -6,6 +6,7 @@ const Tick               = require('./tick');
 const Client             = require('../../base/client');
 const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
+const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const isEmptyObject      = require('../../base/utility').isEmptyObject;
 const formatMoney        = require('../../common_functions/currency').formatMoney;
 const toISOFormat        = require('../../common_functions/string_util').toISOFormat;
@@ -44,8 +45,8 @@ const commonTrading = (() => {
 
                 if (typeof el1 === 'object') {
                     const fragment2 = document.createDocumentFragment();
-                    let flag = 0,
-                        first = '';
+                    let flag = 0;
+                    let first = '';
                     for (let j = 0; j < el1[1].length; j++) {
                         const el2 = el1[1][j];
                         const li2 = document.createElement('li');
@@ -200,7 +201,7 @@ const commonTrading = (() => {
         const keys = Object.keys(elements).sort((a, b) => elements[a].display.localeCompare(elements[b].display));
         const submarkets = {};
         for (let i = 0; i < keys.length; i++) {
-            if (!submarkets.hasOwnProperty(elements[keys[i]].submarket)) {
+            if (!getPropertyValue(submarkets, elements[keys[i]].submarket)) {
                 submarkets[elements[keys[i]].submarket] = [];
             }
             submarkets[elements[keys[i]].submarket].push(keys[i]);
@@ -227,12 +228,23 @@ const commonTrading = (() => {
      * trading form to the actual we send it to backend
      * for e.g risefall is mapped to callput with barrierCategory euro_atm
      */
-    const getFormNameBarrierCategory = form_name => (
-        {
-            form_name       : form_name && !/(risefall|higherlower|callput)/.test(form_name) ? (/(overunder|evenodd|matchdiff)/.test(form_name) ? 'digits' : form_name) : 'callput',
-            barrier_category: form_name && !/(risefall|callput)/.test(form_name) ? (/higherlower/.test(form_name) ? 'euro_non_atm' : '') : 'euro_atm',
+    const getFormNameBarrierCategory = (form_name = '') => {
+        let name    = form_name;
+        let barrier = '';
+        if (/higherlower/.test(form_name)) {
+            name = 'callput';
+            barrier = 'euro_non_atm';
+        } else if (/risefall|callput/.test(form_name)) {
+            name = 'callput';
+            barrier = 'euro_atm';
+        } else if (/overunder|evenodd|matchdiff/.test(form_name)) {
+            name = 'digits';
         }
-    );
+        return {
+            form_name       : name,
+            barrier_category: barrier,
+        };
+    };
 
     /*
      * This maps the contract type to where we display on trading form
@@ -299,15 +311,16 @@ const commonTrading = (() => {
 
         if (elements) {
             tree = tree.map((e) => {
-                if (typeof e === 'object') {
-                    e[1] = e[1].filter(e1 => elements[e1]);
-                    if (!e[1].length) {
-                        e = '';
+                let value = e;
+                if (typeof value === 'object') {
+                    value[1] = value[1].filter(value1 => elements[value1]);
+                    if (!value[1].length) {
+                        value = '';
                     }
-                } else if (!elements[e]) {
-                    e = '';
+                } else if (!elements[value]) {
+                    value = '';
                 }
-                return e;
+                return value;
             });
             tree = tree.filter(v => v.length);
         }
@@ -379,12 +392,11 @@ const commonTrading = (() => {
      * Reference
      * http://davidwalsh.name/javascript-debounce-function
      */
-    const debounce = (func, wait, immediate) => {
+    const debounce = (func, wait, immediate, ...args) => {
         let timeout;
         const delay = wait || 500;
         return function() {
             const context = this;
-            const args = arguments;
             const later = () => {
                 timeout = null;
                 if (!immediate) func.apply(context, args);
@@ -580,21 +592,21 @@ const commonTrading = (() => {
     // ============= Functions used in /trading_beta =============
 
     const updatePurchaseStatus_Beta = (final_price, pnl, contract_status) => {
-        final_price = String(final_price).replace(/,/g, '') * 1;
-        pnl = String(pnl).replace(/,/g, '') * 1;
+        const f_price = String(final_price).replace(/,/g, '') * 1;
+        const f_pnl  = String(pnl).replace(/,/g, '') * 1;
         $('#contract_purchase_heading').text(localize(contract_status));
         const payout  = document.getElementById('contract_purchase_payout');
         const cost    = document.getElementById('contract_purchase_cost');
         const profit  = document.getElementById('contract_purchase_profit');
         const currency = Client.get('currency');
 
-        labelValue(cost, localize('Stake'), formatMoney(currency, Math.abs(pnl), 1));
-        labelValue(payout, localize('Payout'), formatMoney(currency, final_price, 1));
+        labelValue(cost, localize('Stake'), formatMoney(currency, Math.abs(f_pnl), 1));
+        labelValue(payout, localize('Payout'), formatMoney(currency, f_price, 1));
 
-        const isWin = (final_price > 0);
+        const isWin = (f_price > 0);
         $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
         labelValue(profit, isWin ? localize('Profit') : localize('Loss'),
-            formatMoney(currency, isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl), 1));
+            formatMoney(currency, isWin ? Math.round((f_price - f_pnl) * 100) / 100 : -Math.abs(f_pnl), 1));
     };
 
     const displayTooltip_Beta = (market, symbol) => {
@@ -632,9 +644,9 @@ const commonTrading = (() => {
     };
 
     const timeIsValid = ($element) => {
-        let end_date_value   = document.getElementById('expiry_date').getAttribute('data-value'),
-            start_date_value = document.getElementById('date_start').value,
-            end_time_value   = document.getElementById('expiry_time').value;
+        let end_date_value   = document.getElementById('expiry_date').getAttribute('data-value');
+        let start_date_value = document.getElementById('date_start').value;
+        let end_time_value   = document.getElementById('expiry_time').value;
         const $invalid_time = $('#invalid-time');
 
         if ($element.attr('id') === $('#expiry_time') && end_time_value &&
@@ -650,6 +662,7 @@ const commonTrading = (() => {
         $invalid_time.remove();
 
         end_date_value = end_date_value ? toISOFormat(Moment(end_date_value)) : toISOFormat(new Moment());
+        // eslint-disable-next-line no-underscore-dangle
         start_date_value = start_date_value === 'now' ? Math.floor(window.time._i / 1000) : start_date_value;
         end_time_value = end_time_value || '23:59:59';
 
@@ -668,7 +681,6 @@ const commonTrading = (() => {
 
     return {
         displayUnderlyings        : displayUnderlyings,
-        generateUnderlyingOptions : generateUnderlyingOptions,
         getFormNameBarrierCategory: getFormNameBarrierCategory,
         contractTypeDisplayMapping: contractTypeDisplayMapping,
         showPriceOverlay          : () => { showHideOverlay('loading_container2', 'block'); },

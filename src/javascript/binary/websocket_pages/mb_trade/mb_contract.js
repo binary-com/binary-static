@@ -14,10 +14,18 @@ const padLeft          = require('../../common_functions/string_util').padLeft;
 const MBContract = (() => {
     'use strict';
 
-    let contracts_for_response;
+    let contracts_for_response,
+        $period,
+        $durations,
+        $duration,
+        $count_down_timer,
+        remaining_timeout,
+        current_time_left;
+
     const hidden_class = 'invisible';
 
-    const durationText = (dur) => {
+    const durationText = (duration) => {
+        let dur = duration;
         if (dur && jpClient()) {
             dur = dur.replace(/([a-z])/, '$1<br>');
             const duration_map = {
@@ -71,10 +79,10 @@ const MBContract = (() => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         let trading_period,
             start_end;
-        const trading_period_array = [],
-            available_contracts = contracts_for_response.contracts_for.available,
-            selected_option = MBDefaults.get('category'),
-            $period = $('#period');
+        const trading_period_array = [];
+        const available_contracts  = contracts_for_response.contracts_for.available;
+        const selected_option      = MBDefaults.get('category');
+        $period = $('#period');
         if (!selected_option || !available_contracts) return;
         for (let i = 0; i < available_contracts.length; i++) {
             if (available_contracts[i].contract_category === selected_option) {
@@ -149,12 +157,6 @@ const MBContract = (() => {
         }
     };
 
-    let $period,
-        $durations,
-        $duration,
-        $count_down_timer,
-        remaining_timeout,
-        current_time_left;
     const displayRemainingTime = (recalculate) => {
         if (typeof $durations === 'undefined' || recalculate) {
             // period_value = MBDefaults.get('period');
@@ -183,7 +185,7 @@ const MBContract = (() => {
                 second: duration.seconds(),
             };
             Object.keys(all_durations).forEach((key) => {
-                if (/(month|day)/.test(key)) {
+                if (/month|day/.test(key)) {
                     if (all_durations[key]) {
                         remaining_month_day_string.push(all_durations[key] + localize(key[0].toUpperCase()));
                     }
@@ -214,8 +216,8 @@ const MBContract = (() => {
 
     const populateOptions = (rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
-        const available_contracts = contracts_for_response.contracts_for.available,
-            $category = $('#category');
+        const available_contracts = contracts_for_response.contracts_for.available;
+        const $category = $('#category');
         const categories = [
             { value: 'callput',      type1: 'PUT',          type2: 'CALLE'      },
             { value: 'touchnotouch', type1: 'ONETOUCH',     type2: 'NOTOUCH'    },

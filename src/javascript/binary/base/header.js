@@ -213,7 +213,7 @@ const Header = (() => {
                 risk           : () => riskAssessment(),
                 tax            : () => Client.shouldCompleteTax(),
                 tnc            : () => Client.shouldAcceptTnc(),
-                unwelcome      : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
+                unwelcome      : () => /unwelcome|(cashier|withdrawal)_locked/.test(status),
             };
 
             // real account checks in order

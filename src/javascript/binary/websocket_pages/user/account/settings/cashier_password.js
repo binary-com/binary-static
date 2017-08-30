@@ -6,9 +6,11 @@ const FormManager  = require('../../../../common_functions/form_manager');
 const CashierPassword = (() => {
     'use strict';
 
-    let $form,
-        should_redirect = false;
     const form_id = '#frm_cashier_password';
+
+    let should_redirect = false;
+
+    let $form;
 
     const onLoad = () => {
         $form = $(form_id);

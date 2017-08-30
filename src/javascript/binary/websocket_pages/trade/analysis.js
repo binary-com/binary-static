@@ -33,7 +33,7 @@ const TradingAnalysis = (() => {
         const regex = new RegExp(Object.keys(map_obj).join('|'), 'gi');
         form_name = form_name.replace(regex, matched => map_obj[matched]);
 
-        $('#tab_last_digit').setVisibility(/(digits|overunder|evenodd)/.test(form_name));
+        $('#tab_last_digit').setVisibility(/digits|overunder|evenodd/.test(form_name));
         sessionStorage.setItem('currentAnalysisTab', getActiveTab());
         loadAnalysisTab();
     };

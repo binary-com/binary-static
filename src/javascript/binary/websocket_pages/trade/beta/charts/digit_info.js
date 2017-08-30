@@ -7,12 +7,13 @@ const getHighstock     = require('../../../../common_functions/common_functions'
 const DigitInfo_Beta = (() => {
     'use strict';
 
-    let spots = [],
-        stream_id = null,
-        chart,
-        // To avoid too many greens and reds
-        prev_min_index = -1,
-        prev_max_index = -1;
+    let spots = [];
+    let stream_id = null;
+    // To avoid too many greens and reds
+    let prev_min_index = -1;
+    let prev_max_index = -1;
+
+    let chart;
 
     const chart_config = {
         chart: {
@@ -151,21 +152,22 @@ const DigitInfo_Beta = (() => {
 
     const showChart = (underlying, underlying_spots) => {
         getHighstock((Highcharts) => {
-            if (typeof underlying_spots === 'undefined' || underlying_spots.length <= 0) {
+            const new_spots = underlying_spots;
+            if (typeof new_spots === 'undefined' || new_spots.length <= 0) {
                 console.log('Unexpected error occured in the charts.');
                 return;
             }
-            const dec = underlying_spots[0].split('.')[1].length;
-            for (let i = 0; i < underlying_spots.length; i++) {
-                const val = parseFloat(underlying_spots[i]).toFixed(dec);
-                underlying_spots[i] = val.substr(val.length - 1);
+            const dec = new_spots[0].split('.')[1].length;
+            for (let i = 0; i < new_spots.length; i++) {
+                const val = parseFloat(new_spots[i]).toFixed(dec);
+                new_spots[i] = val.substr(val.length - 1);
             }
 
             const getTitle = () => (
-                { text: template($('#last_digit_title').html(), [underlying_spots.length, $('#digit_underlying option:selected').text()]) }
+                { text: template($('#last_digit_title').html(), [new_spots.length, $('#digit_underlying option:selected').text()]) }
             );
 
-            spots = underlying_spots;
+            spots = new_spots;
             if (chart && $('#last_digit_histo').html()) {
                 chart.xAxis[0].update({ title: getTitle() }, true);
                 chart.series[0].name = underlying;
@@ -187,11 +189,8 @@ const DigitInfo_Beta = (() => {
         }
 
         const series = chart.series[0]; // Where we put the final data.
-        if (series.name !== symbol) {
-            latest_spot = undefined; // This simplifies the logic a bit later.
-        }
 
-        if (typeof latest_spot !== 'undefined') { // This is a bit later. :D
+        if (!latest_spot || series.name !== symbol) {
             spots.unshift(latest_spot.slice(-1)); // Only last digit matters
             spots.pop();
         }

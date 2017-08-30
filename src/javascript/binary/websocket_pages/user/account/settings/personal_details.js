@@ -1,14 +1,15 @@
-const BinarySocket  = require('../../../socket');
-const BinaryPjax    = require('../../../../base/binary_pjax');
-const Client        = require('../../../../base/client');
-const Header        = require('../../../../base/header');
-const localize      = require('../../../../base/localize').localize;
-const State         = require('../../../../base/storage').State;
-const detectHedging = require('../../../../common_functions/common_functions').detectHedging;
-const makeOption    = require('../../../../common_functions/common_functions').makeOption;
-const formatMoney   = require('../../../../common_functions/currency').formatMoney;
-const FormManager   = require('../../../../common_functions/form_manager');
-const moment        = require('moment');
+const BinarySocket     = require('../../../socket');
+const BinaryPjax       = require('../../../../base/binary_pjax');
+const Client           = require('../../../../base/client');
+const Header           = require('../../../../base/header');
+const localize         = require('../../../../base/localize').localize;
+const State            = require('../../../../base/storage').State;
+const getPropertyValue = require('../../../../base/utility').getPropertyValue;
+const detectHedging    = require('../../../../common_functions/common_functions').detectHedging;
+const makeOption       = require('../../../../common_functions/common_functions').makeOption;
+const formatMoney      = require('../../../../common_functions/currency').formatMoney;
+const FormManager      = require('../../../../common_functions/form_manager');
+const moment           = require('moment');
 require('select2');
 
 const PersonalDetails = (() => {
@@ -16,13 +17,15 @@ const PersonalDetails = (() => {
 
     const form_id = '#frmPersonalDetails';
     const real_acc_elements = '.RealAcc';
+
+    let is_for_new_account = false;
+
     let editable_fields,
         is_jp,
         is_virtual,
         residence,
         get_settings_data,
-        currency,
-        is_for_new_account = false;
+        currency;
 
     const init = () => {
         editable_fields = {};
@@ -55,7 +58,7 @@ const PersonalDetails = (() => {
             get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
-        if (get_settings.hasOwnProperty('account_opening_reason') && !is_jp) {
+        if (getPropertyValue(get_settings, 'account_opening_reason') && !is_jp) {
             if (get_settings.account_opening_reason) {
                 // we have to show text here instead of relying on displayGetSettingsData() since it prioritizes
                 // showing data in account_opening_reason instead of lbl_account_opening_reason
@@ -107,23 +110,19 @@ const PersonalDetails = (() => {
     const displayGetSettingsData = (data, populate = true) => {
         let $key,
             $lbl_key,
-            data_key,
-            has_key,
-            has_lbl_key;
+            data_key;
         Object.keys(data).forEach((key) => {
             $key = $(`#${key}`);
             $lbl_key = $(`#lbl_${key}`);
-            has_key = $key.length > 0;
-            has_lbl_key = $lbl_key.length > 0;
             // prioritise labels for japan account
-            $key = has_key && has_lbl_key ? (is_jp ? $lbl_key : $key) : (has_key ? $key : $lbl_key);
+            $key = is_jp ? $lbl_key || $key : $key || $lbl_key;
             if ($key.length > 0) {
-                data_key = data[key] === null ? '' : $key.hasClass('format_money') ? formatMoney(currency, data[key]) : data[key];
+                data_key = $key.hasClass('format_money') ? formatMoney(currency, data[key]) : (data[key] || '');
                 editable_fields[key] = data_key;
                 if (populate) {
                     if ($key.is(':checkbox')) {
                         $key.prop('checked', !!data_key);
-                    } else if (/(SELECT|INPUT)/.test($key.prop('nodeName'))) {
+                    } else if (/SELECT|INPUT/.test($key.prop('nodeName'))) {
                         $key.val(data_key.split(',')).trigger('change');
                     } else if (key !== 'country') {
                         $key.html(data_key ? localize(data_key) : '-');

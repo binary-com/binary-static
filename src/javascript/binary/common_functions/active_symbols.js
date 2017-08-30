@@ -20,9 +20,9 @@ const ActiveSymbols = (() => {
 
     const clone = obj => extend({}, obj);
 
-    let markets = {},
-        submarkets = {},
-        symbols = {};
+    let markets = {};
+    let submarkets = {};
+    let symbols = {};
 
     const getMarkets = (all_symbols) => {
         if (!isEmptyObject(markets)) {

@@ -32,15 +32,13 @@ const TrafficSource = (() => {
         initCookie();
         const data = cookie.value;
         Object.keys(data).map((key) => {
-            data[key] = (data[key] || '').replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
+            data[key] = (data[key] || '').replace(/[^a-zA-Z0-9\s-._]/gi, '').substring(0, 100);
         });
         return data;
     };
 
-    const getSource = (utm_data) => {
-        if (!utm_data) utm_data = getData();
-        return utm_data.utm_source || utm_data.referrer || 'direct'; // in order of precedence
-    };
+    // get source in order of precedence
+    const getSource = (utm_data = getData()) => utm_data.utm_source || utm_data.referrer || 'direct';
 
     const setData = () => {
         if (Client.isLoggedIn()) {

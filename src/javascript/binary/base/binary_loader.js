@@ -14,8 +14,8 @@ const BinarySocketGeneral = require('../websocket_pages/socket_general');
 const BinaryLoader = (() => {
     'use strict';
 
-    let container,
-        active_script = null;
+    let container;
+    let active_script = null;
 
     const init = () => {
         if (!/\.html$/i.test(window.location.pathname)) {

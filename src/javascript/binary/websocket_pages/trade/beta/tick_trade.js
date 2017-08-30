@@ -31,9 +31,8 @@ const TickDisplay_Beta = (() => {
         contract_barrier,
         contract_start_moment,
         counter,
-        spots_list;
-
-    let tick_underlying,
+        spots_list,
+        tick_underlying,
         tick_count,
         tick_longcode,
         tick_display_name,
@@ -76,22 +75,22 @@ const TickDisplay_Beta = (() => {
         });
 
         // add tooltip events to highcharts
-        Highcharts.wrap(Highcharts.Tooltip.prototype, 'hide', function(proceed) {
+        Highcharts.wrap(Highcharts.Tooltip.prototype, 'hide', function(proceed, ...args) {
             const tooltip = this.chart.options.tooltip;
 
             // Run the original proceed method
-            proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+            proceed.apply(this, args);
 
             if (!this.isHidden && tooltip.events && tooltip.events.hide) {
                 tooltip.events.hide();
             }
         });
 
-        Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function(proceed) {
+        Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function(proceed, ...args) {
             const tooltip = this.chart.options.tooltip;
 
             // Run the original proceed method
-            proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+            proceed.apply(this, args);
 
             if (tooltip.events && tooltip.events.show) {
                 tooltip.events.show(this.chart.hoverPoints);
@@ -140,7 +139,7 @@ const TickDisplay_Beta = (() => {
             chart: {
                 type           : 'line',
                 renderTo       : 'tick_chart',
-                width          : config.width ? config.width : (config.minimize ? 394 : null),
+                width          : config.width || (config.minimize ? 394 : null),
                 height         : config.minimize ? 120 : null,
                 backgroundColor: null,
                 events         : { load: plot(config.plot_from, config.plot_to) },
@@ -415,10 +414,16 @@ const TickDisplay_Beta = (() => {
                 }
             }
             if (!tick_init || tick_init === '') {
+                let category = 'callput';
+                if (/asian/i.test(tick_shortcode)) {
+                    category = 'asian';
+                } else if (/digit/i.test(tick_shortcode)) {
+                    category = 'digits';
+                }
                 initialize({
                     symbol              : tick_underlying,
                     number_of_ticks     : tick_count,
-                    contract_category   : ((/asian/i).test(tick_shortcode) ? 'asian' : (/digit/i).test(tick_shortcode) ? 'digits' : 'callput'),
+                    contract_category   : category,
                     longcode            : tick_longcode,
                     display_symbol      : tick_display_name,
                     contract_start      : tick_date_start,

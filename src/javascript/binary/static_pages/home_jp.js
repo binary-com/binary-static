@@ -57,7 +57,10 @@ const HomeJP = (() => {
             return;
         }
         const window_width = $(window).width();
-        const width = window_width <= 959 ? (window_width <= 480 ? 203 : 603) : 800;
+        let width = 800;
+        if (window_width <= 959) {
+            width = window_width <= 480 ? 203 : 603;
+        }
 
         // get current visible element
         const id_no_current = Number($('.product_visible').attr('id').split(product_prefix)[1]);

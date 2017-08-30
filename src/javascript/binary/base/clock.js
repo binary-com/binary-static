@@ -5,8 +5,8 @@ const BinarySocket = require('../websocket_pages/socket');
 const Clock = (() => {
     'use strict';
 
-    let clock_started = false,
-        client_time,
+    let clock_started = false;
+    let client_time,
         timeout;
 
     const showLocalTimeOnHover = (s) => {
@@ -21,13 +21,13 @@ const Clock = (() => {
     };
 
     const toJapanTimeIfNeeded = (gmt_time_str, show_time_zone, longcode, hide_seconds) => {
-        let match;
+        let match,
+            time;
         if (longcode && longcode !== '') {
             match = longcode.match(/((?:\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?(?:\sGMT)?)/);
             if (!match) return longcode;
         }
 
-        let time;
         if (typeof gmt_time_str === 'number') {
             time = moment.utc(gmt_time_str * 1000);
         } else if (gmt_time_str) {
@@ -41,7 +41,10 @@ const Clock = (() => {
         }
 
         const jp_client = jpClient();
-        const time_str = time.utcOffset(jp_client ? '+09:00' : '+00:00').format((hide_seconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss') + (show_time_zone && show_time_zone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
+
+        const getTimeZone = () => jp_client ? ' zZ' : ' Z';
+
+        const time_str = time.utcOffset(jp_client ? '+09:00' : '+00:00').format((hide_seconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss') + (show_time_zone ? getTimeZone() : ''));
 
         return (longcode ? longcode.replace(match[0], time_str) : time_str);
     };

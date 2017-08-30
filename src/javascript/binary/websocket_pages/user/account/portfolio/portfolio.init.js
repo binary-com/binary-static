@@ -6,6 +6,7 @@ const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeede
 const localize            = require('../../../../base/localize').localize;
 const urlParam            = require('../../../../base/url').param;
 const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
+const getPropertyValue    = require('../../../../base/utility').getPropertyValue;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
 const formatMoney         = require('../../../../common_functions/currency').formatMoney;
 const GetAppDetails       = require('../../../../common_functions/get_app_details');
@@ -50,9 +51,7 @@ const PortfolioInit = (() => {
     };
 
     const createPortfolioRow = (data, is_first) => {
-        const long_code = typeof module !== 'undefined' ?
-            data.longcode :
-            (jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
+        const long_code = jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode;
 
         const new_class = is_first ? '' : 'new';
         const $div = $('<div/>');
@@ -80,7 +79,7 @@ const PortfolioInit = (() => {
     };
 
     const updatePortfolio = (data) => {
-        if (data.hasOwnProperty('error')) {
+        if (getPropertyValue(data, 'error')) {
             errorMessage(data.error.message);
             return;
         }
@@ -92,7 +91,7 @@ const PortfolioInit = (() => {
              **/
             $('#portfolio-no-contract').hide();
             $.each(data.portfolio.contracts, (ci, c) => {
-                if (!values.hasOwnProperty(c.contract_id) && c.contract_type !== 'BINARYICO') {
+                if (!getPropertyValue(values, c.contract_id) && c.contract_type !== 'BINARYICO') {
                     values[c.contract_id] = {};
                     values[c.contract_id].buy_price = c.buy_price;
                     portfolio_data = Portfolio.getPortfolioData(c);
@@ -123,7 +122,7 @@ const PortfolioInit = (() => {
     };
 
     const transactionResponseHandler = (response) => {
-        if (response.hasOwnProperty('error')) {
+        if (getPropertyValue(response, 'error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
             BinarySocket.send({ portfolio: 1 }).then((res) => {
@@ -135,13 +134,13 @@ const PortfolioInit = (() => {
     };
 
     const updateIndicative = (data) => {
-        if (data.hasOwnProperty('error') || !values) {
+        if (getPropertyValue(data, 'error') || !values) {
             return;
         }
 
         const proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
         // avoid updating 'values' before the new contract row added to the table
-        if (!values.hasOwnProperty(proposal.contract_id)) {
+        if (!getPropertyValue(values, proposal.contract_id)) {
             return;
         }
 
@@ -154,8 +153,8 @@ const PortfolioInit = (() => {
         const old_indicative = values[proposal.contract_id].indicative || 0.00;
         values[proposal.contract_id].indicative = proposal.bid_price;
 
-        let status_class = '',
-            no_resale_html = '';
+        let status_class   = '';
+        let no_resale_html = '';
         if (+proposal.is_sold === 1) {
             removeContract(proposal.contract_id);
         } else {
@@ -163,7 +162,9 @@ const PortfolioInit = (() => {
                 no_resale_html = $('<span/>', { class: 'message', text: localize('Resale not offered') });
                 $td.addClass('no_resale');
             } else {
-                status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
+                if (values[proposal.contract_id].indicative !== old_indicative) {
+                    status_class = values[proposal.contract_id].indicative > old_indicative ? 'price_moved_up' : 'price_moved_down';
+                }
                 $td.removeClass('no_resale');
             }
             $td.html($('<strong/>', { class: `indicative_price ${status_class}`, html: formatMoney(proposal.currency, values[proposal.contract_id].indicative) })
@@ -223,13 +224,9 @@ const PortfolioInit = (() => {
     };
 
     return {
-        updateBalance             : updateBalance,
-        updatePortfolio           : updatePortfolio,
-        updateIndicative          : updateIndicative,
-        updateOAuthApps           : updateOAuthApps,
-        transactionResponseHandler: transactionResponseHandler,
-        onLoad                    : onLoad,
-        onUnload                  : onUnload,
+        updateBalance: updateBalance,
+        onLoad       : onLoad,
+        onUnload     : onUnload,
     };
 })();
 

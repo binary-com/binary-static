@@ -6,7 +6,7 @@ const onlyNumericOnKeypress = (ev, optional_value) => {
         array_of_char = array_of_char.concat(optional_value);
     }
     if ((char === '.' && ev.target.value.indexOf(char) >= 0) ||
-        (!/[0-9\.]/.test(char) && array_of_char.indexOf(key) < 0) ||
+        (!/[0-9.]/.test(char) && array_of_char.indexOf(key) < 0) ||
         /['%]/.test(char)) { // similarity to arrows key code in some browsers
         ev.returnValue = false;
         ev.preventDefault();

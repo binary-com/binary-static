@@ -311,8 +311,8 @@ const TradingEvents_Beta = (() => {
                 const params = { buy: id, price: ask_price, passthrough: {} };
                 Object.keys(this.attributes).forEach(function(attr) {
                     if (attr && this.attributes[attr] && this.attributes[attr].name &&
-                            !/data\-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
-                        const m = this.attributes[attr].name.match(/data\-(.+)/);
+                            !/data-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
+                        const m = this.attributes[attr].name.match(/data-(.+)/);
 
                         if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
                             params.passthrough[m[1]] = this.attributes[attr].value;
@@ -416,7 +416,7 @@ const TradingEvents_Beta = (() => {
     const attachTimePicker = () => {
         const date_start = document.getElementById('date_start').value;
         const now = !date_start || date_start === 'now';
-        const current_moment = now ? (window.time ? window.time : moment.utc()) : parseInt(date_start) * 1000;
+        const current_moment = now ? (window.time || moment.utc()) : parseInt(date_start) * 1000;
         TimePicker.init({
             selector: '#expiry_time',
             minTime : current_moment,

@@ -1,16 +1,16 @@
-const MBContract       = require('./mb_contract');
-const MBDefaults       = require('./mb_defaults');
-const MBNotifications  = require('./mb_notifications');
-const BinarySocket     = require('../socket');
-const TradingAnalysis  = require('../trade/analysis');
-const ViewPopup        = require('../user/view_popup/view_popup');
-const redrawChart      = require('../trade/charts/webtrader_chart').redrawChart;
-const Client           = require('../../base/client');
-const GTM              = require('../../base/gtm');
-const localize         = require('../../base/localize').localize;
-const isEmptyObject    = require('../../base/utility').isEmptyObject;
-const jpClient         = require('../../common_functions/country_base').jpClient;
-const formatMoney      = require('../../common_functions/currency').formatMoney;
+const MBContract      = require('./mb_contract');
+const MBDefaults      = require('./mb_defaults');
+const MBNotifications = require('./mb_notifications');
+const BinarySocket    = require('../socket');
+const TradingAnalysis = require('../trade/analysis');
+const ViewPopup       = require('../user/view_popup/view_popup');
+const redrawChart     = require('../trade/charts/webtrader_chart').redrawChart;
+const Client          = require('../../base/client');
+const GTM             = require('../../base/gtm');
+const localize        = require('../../base/localize').localize;
+const isEmptyObject   = require('../../base/utility').isEmptyObject;
+const jpClient        = require('../../common_functions/country_base').jpClient;
+const formatMoney     = require('../../common_functions/currency').formatMoney;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -27,14 +27,15 @@ const MBPrice = (() => {
     const price_selector = '.prices-wrapper .price-rows';
     const is_japan       = jpClient();
 
-    let prices         = {},
-        contract_types = {},
-        barriers       = [],
-        req_id         = 0,
-        is_displayed   = false,
-        is_unwelcome   = false,
-        el_rows        = {},
-        $table;
+    let prices         = {};
+    let contract_types = {};
+    let el_rows        = {};
+    let barriers       = [];
+    let req_id         = 0;
+    let is_displayed   = false;
+    let is_unwelcome   = false;
+
+    let $table;
 
     const addPriceObj = (req) => {
         req.barriers.forEach((barrier_obj) => {
@@ -57,8 +58,12 @@ const MBPrice = (() => {
         redrawChart();
     };
 
-    const makeBarrier = (barrier_obj) => {
-        if (!barrier_obj.barrier && barrier_obj.error) barrier_obj = barrier_obj.error.details;
+    const makeBarrier = (barrier_object) => {
+        let barrier_obj = $.extend({}, barrier_object);
+        if (!barrier_obj.barrier && barrier_obj.error) {
+            // error.details will include the barrier value in case of error
+            barrier_obj = barrier_obj.error.details;
+        }
         return (barrier_obj.barrier2 ? `${barrier_obj.barrier2}_` : '') + barrier_obj.barrier;
     };
 
@@ -198,7 +203,13 @@ const MBPrice = (() => {
         (proposal.error || +proposal.ask_price === 0) ? proposal.echo_req.amount : proposal.ask_price
     );
 
-    const getMovementDirection = (prev, current) => (current > prev ? 'up' : current < prev ? 'down' : '');
+    const getMovementDirection = (prev, current) => {
+        let movement = '';
+        if (prev !== current) {
+            movement = current > prev ? 'up' : 'down';
+        }
+        return movement;
+    };
 
     const updatePriceRow = (values) => {
         const el_buy  = el_rows[values.barrier][values.contract_type].buy;
@@ -313,7 +324,6 @@ const MBPrice = (() => {
     return {
         display         : display,
         addPriceObj     : addPriceObj,
-        processBuy      : processBuy,
         cleanup         : cleanup,
         sendBuyRequest  : sendBuyRequest,
         showPriceOverlay: showPriceOverlay,

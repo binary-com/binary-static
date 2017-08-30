@@ -5,8 +5,8 @@ const Url         = require('./url');
 const BinaryPjax = (() => {
     'use strict';
 
-    let xhr;
-    let previous_url;
+    let xhr,
+        previous_url;
     const params   = {};
     const defaults = {
         type    : 'GET',
@@ -22,9 +22,9 @@ const BinaryPjax = (() => {
             return;
         }
 
-        container = $(container);
+        const $container = $(container);
 
-        if (!container.length) {
+        if (!$container.length) {
             console.warn('Could not find container');
             return;
         }
@@ -34,12 +34,12 @@ const BinaryPjax = (() => {
             return;
         }
 
-        params.container = container;
+        params.container = $container;
         params.content_selector = content_selector;
 
         const url = window.location.href;
         const title = document.title;
-        const content = container.find(content_selector);
+        const content = $container.find(content_selector);
 
         // put current content to cache, so we won't need to load it again
         if (content && content.length) {
@@ -54,7 +54,7 @@ const BinaryPjax = (() => {
     };
 
     const setDataPage = (content, url) => {
-        content.attr('data-page', url.match('.+\/(.+)\.html.*')[1]);
+        content.attr('data-page', url.match('.+/(.+).html.*')[1]);
     };
 
     const handleClick = (event) => {
@@ -95,14 +95,15 @@ const BinaryPjax = (() => {
     const processUrl = (url, replace) => {
         State.set('is_loaded_by_pjax', true);
 
-        if (!/^http/i.test(url)) {
-            url = Url.urlFor(url);
+        let complete_url = url;
+        if (!/^http/i.test(complete_url)) {
+            complete_url = Url.urlFor(url);
         }
-        const cached_content = cacheGet(url);
+        const cached_content = cacheGet(complete_url);
         if (cached_content) {
-            replaceContent(url, cached_content, replace);
+            replaceContent(complete_url, cached_content, replace);
         } else {
-            load(url, replace);
+            load(complete_url, replace);
         }
     };
 
@@ -112,7 +113,7 @@ const BinaryPjax = (() => {
     const load = (url, replace) => {
         const lang = getLanguage();
         const options = $.extend(true, {}, $.ajaxSettings, defaults, {
-            url: url.replace(new RegExp(`\/${lang}\/`, 'i'), `/${lang.toLowerCase()}/pjax/`) });
+            url: url.replace(new RegExp(`/${lang}/`, 'i'), `/${lang.toLowerCase()}/pjax/`) });
 
         options.success = (data) => {
             const result = {};

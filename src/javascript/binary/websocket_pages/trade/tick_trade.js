@@ -31,9 +31,8 @@ const TickDisplay = (() => {
         contract_barrier,
         contract_start_moment,
         counter,
-        spots_list;
-
-    let tick_underlying,
+        spots_list,
+        tick_underlying,
         tick_count,
         tick_longcode,
         tick_display_name,
@@ -116,7 +115,7 @@ const TickDisplay = (() => {
             chart: {
                 type           : 'line',
                 renderTo       : 'tick_chart',
-                width          : config.width ? config.width : (config.minimize ? 394 : null),
+                width          : config.width || (config.minimize ? 394 : null),
                 height         : config.minimize ? 143 : null,
                 backgroundColor: null,
                 events         : { load: plot(config.plot_from, config.plot_to) },
@@ -315,10 +314,16 @@ const TickDisplay = (() => {
                 }
             }
             if (!tick_init) {
+                let category = 'callput';
+                if (/asian/i.test(tick_shortcode)) {
+                    category = 'asian';
+                } else if (/digit/i.test(tick_shortcode)) {
+                    category = 'digits';
+                }
                 initialize({
                     symbol              : tick_underlying,
                     number_of_ticks     : tick_count,
-                    contract_category   : ((/asian/i).test(tick_shortcode) ? 'asian' : (/digit/i).test(tick_shortcode) ? 'digits' : 'callput'),
+                    contract_category   : category,
                     longcode            : tick_longcode,
                     display_symbol      : tick_display_name,
                     contract_start      : tick_date_start,

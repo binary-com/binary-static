@@ -26,9 +26,8 @@ const MBDefaults = (() => {
         localStorage.setItem('mb_trading', JSON.stringify(params));
     };
 
-    const setDefault = (key, value) => {
+    const setDefault = (key, value = '') => {
         if (!key) return;
-        value = value || '';
         loadParams();
         if (params[key] !== value) {
             params[key] = value;
