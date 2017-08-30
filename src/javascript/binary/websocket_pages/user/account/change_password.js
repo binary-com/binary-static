@@ -44,7 +44,7 @@ const ChangePassword = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

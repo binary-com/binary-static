@@ -1,12 +1,12 @@
-const showChart        = require('./charts/webtrader_chart').showChart;
-const Defaults         = require('./defaults');
-const getActiveTab     = require('./get_active_tab').getActiveTab;
-const GetTicks         = require('./get_ticks');
-const MBDefaults       = require('../mb_trade/mb_defaults');
-const getLanguage      = require('../../base/language').get;
-const State            = require('../../base/storage').State;
-const Url              = require('../../base/url');
-const JapanPortfolio   = require('../../../binary_japan/trade_japan/portfolio');
+const showChart      = require('./charts/webtrader_chart').showChart;
+const Defaults       = require('./defaults');
+const getActiveTab   = require('./get_active_tab').getActiveTab;
+const GetTicks       = require('./get_ticks');
+const MBDefaults     = require('../mb_trade/mb_defaults');
+const getLanguage    = require('../../base/language').get;
+const State          = require('../../base/storage').State;
+const Url            = require('../../base/url');
+const JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -161,8 +161,8 @@ const TradingAnalysis = (() => {
     };
 
     return {
-        request             : requestTradeAnalysis,
-        bindAnalysisTabEvent: bindAnalysisTabEvent,
+        request: requestTradeAnalysis,
+        bindAnalysisTabEvent,
     };
 })();
 

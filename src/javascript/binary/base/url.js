@@ -67,18 +67,17 @@ const Url = (() => {
     const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');
 
     return {
-        init      : init,
-        reset     : reset,
-        paramsHash: paramsHash,
+        init,
+        reset,
+        paramsHash,
+        getLocation,
+        paramsHashToString,
+        urlFor,
+        urlForStatic,
+        defaultRedirectUrl,
 
-        param      : name => paramsHash()[name],
-        getLocation: getLocation,
-
-        paramsHashToString: paramsHashToString,
-        urlFor            : urlFor,
-        urlForStatic      : urlForStatic,
-        defaultRedirectUrl: defaultRedirectUrl,
-        websiteUrl        : () => 'https://www.binary.com/',
+        param     : name => paramsHash()[name],
+        websiteUrl: () => 'https://www.binary.com/',
     };
 })();
 

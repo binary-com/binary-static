@@ -46,7 +46,7 @@ const JapanAccOpening = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

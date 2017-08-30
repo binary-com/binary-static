@@ -58,9 +58,10 @@ const LimitsInit = (() => {
     };
 
     return {
-        limitsHandler: limitsHandler,
-        limitsError  : limitsError,
-        clean        : initTable,
+        limitsHandler,
+        limitsError,
+
+        clean: initTable,
     };
 })();
 

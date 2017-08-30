@@ -25,7 +25,7 @@ const Endpoint = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

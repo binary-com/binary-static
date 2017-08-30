@@ -25,7 +25,7 @@ const RealAccOpening = (() => {
     const handleResponse = response => (AccountOpening.handleNewAccount(response, response.msg_type));
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

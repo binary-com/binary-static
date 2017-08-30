@@ -63,8 +63,8 @@ const TNCApproval = (() => {
     };
 
     return {
-        onLoad             : onLoad,
-        requiresTNCApproval: requiresTNCApproval,
+        onLoad,
+        requiresTNCApproval,
     };
 })();
 

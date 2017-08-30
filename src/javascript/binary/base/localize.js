@@ -22,8 +22,8 @@ const Localize = (() => {
     );
 
     return {
-        forLang : localizeForLang,
-        localize: localize,
+        forLang: localizeForLang,
+        localize,
     };
 })();
 

@@ -86,9 +86,9 @@ const Clock = (() => {
     };
 
     return {
-        startClock          : startClock,
-        showLocalTimeOnHover: showLocalTimeOnHover,
-        toJapanTimeIfNeeded : toJapanTimeIfNeeded,
+        startClock,
+        showLocalTimeOnHover,
+        toJapanTimeIfNeeded,
     };
 })();
 

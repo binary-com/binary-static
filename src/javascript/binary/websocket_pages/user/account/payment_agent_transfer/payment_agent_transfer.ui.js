@@ -66,20 +66,20 @@ const PaymentAgentTransferUI = (() => {
     };
 
     return {
-        initValues       : initValues,
-        hideForm         : hideForm,
-        showForm         : showForm,
-        hideConfirmation : hideConfirmation,
-        showConfirmation : showConfirmation,
-        hideDone         : hideDone,
-        showDone         : showDone,
-        hideNotes        : hideNotes,
-        showNotes        : showNotes,
-        showTransferError: showTransferError,
-        updateFormView   : updateFormView,
-        updateConfirmView: updateConfirmView,
-        updateDoneView   : updateDoneView,
-        hideFirstForm    : hideFirstForm,
+        initValues,
+        hideForm,
+        showForm,
+        hideConfirmation,
+        showConfirmation,
+        hideDone,
+        showDone,
+        hideNotes,
+        showNotes,
+        showTransferError,
+        updateFormView,
+        updateConfirmView,
+        updateDoneView,
+        hideFirstForm,
     };
 })();
 

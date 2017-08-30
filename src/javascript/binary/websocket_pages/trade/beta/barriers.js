@@ -162,8 +162,8 @@ const Barriers_Beta = (() => {
     };
 
     return {
-        display         : display,
-        validateBarrier : validateBarrier,
+        display,
+        validateBarrier,
         isBarrierUpdated: () => is_barrier_updated,
         setBarrierUpdate: (flag) => { is_barrier_updated = flag; },
     };

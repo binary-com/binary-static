@@ -28,7 +28,7 @@ const ProfitTable = (() => {
     };
 
     return {
-        getProfitTabletData: getProfitTabletData,
+        getProfitTabletData,
     };
 })();
 

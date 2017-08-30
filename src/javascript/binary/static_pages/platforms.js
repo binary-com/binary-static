@@ -70,8 +70,8 @@ const Platforms = (() => {
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

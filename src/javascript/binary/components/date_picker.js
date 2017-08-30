@@ -148,8 +148,8 @@ const DatePicker = (() => {
     };
 
     return {
-        init: init,
-        hide: hide,
+        init,
+        hide,
     };
 })();
 

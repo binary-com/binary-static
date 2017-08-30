@@ -62,7 +62,7 @@ const ApplicationsUI = (() => {
             header   : headers.map(localize),
             id       : 'applications-table',
             cols     : headers.map(title => title.toLowerCase().replace(/\s/g, '-')),
-            data     : data,
+            data,
             style    : ($row, app) => {
                 if (can_revoke) {
                     $row.children('.action').first().append(createRevokeButton($row, app));
@@ -95,10 +95,10 @@ const ApplicationsUI = (() => {
     };
 
     return {
-        init        : init,
-        clean       : clean,
-        update      : update,
-        displayError: displayError,
+        init,
+        clean,
+        update,
+        displayError,
     };
 })();
 

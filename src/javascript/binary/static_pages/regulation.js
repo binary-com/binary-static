@@ -27,7 +27,7 @@ const Regulation = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

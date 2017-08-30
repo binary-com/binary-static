@@ -24,7 +24,7 @@ const LostPassword = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

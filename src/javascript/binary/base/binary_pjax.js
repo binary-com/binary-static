@@ -34,7 +34,7 @@ const BinaryPjax = (() => {
 
         // put current content to cache, so we won't need to load it again
         if (content && content.length) {
-            window.history.replaceState({ url: url }, title, url);
+            window.history.replaceState({ url }, title, url);
             setDataPage(content, url);
             params.container.trigger('binarypjax:after', content);
         }
@@ -86,10 +86,8 @@ const BinaryPjax = (() => {
     const processUrl = (url, replace) => {
         State.set('is_loaded_by_pjax', true);
 
-        let complete_url = url;
-        if (!/^http/i.test(complete_url)) {
-            complete_url = Url.urlFor(url);
-        }
+        const complete_url = /^http/i.test(url) ? url : Url.urlFor(url);
+
         const cached_content = cacheGet(complete_url);
         if (cached_content) {
             replaceContent(complete_url, cached_content, replace);
@@ -139,7 +137,7 @@ const BinaryPjax = (() => {
 
     const replaceContent = (url, content, replace) => {
         previous_url = window.location.href;
-        window.history[replace ? 'replaceState' : 'pushState']({ url: url }, content.title, url);
+        window.history[replace ? 'replaceState' : 'pushState']({ url }, content.title, url);
 
         params.container.trigger('binarypjax:before');
 
@@ -178,11 +176,11 @@ const BinaryPjax = (() => {
     };
 
     return {
-        init: init,
+        init,
         load: processUrl,
 
-        loadPreviousUrl: loadPreviousUrl,
-        getPreviousUrl : () => previous_url,
+        loadPreviousUrl,
+        getPreviousUrl: () => previous_url,
     };
 })();
 

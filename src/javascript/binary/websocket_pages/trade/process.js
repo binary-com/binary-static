@@ -274,13 +274,13 @@ const Process = (() => {
     };
 
     return {
-        processActiveSymbols: processActiveSymbols,
-        processMarket       : processMarket,
-        processContract     : processContract,
-        processContractForm : processContractForm,
-        forgetTradingStreams: forgetTradingStreams,
-        onExpiryTypeChange  : onExpiryTypeChange,
-        onDurationUnitChange: onDurationUnitChange,
+        processActiveSymbols,
+        processMarket,
+        processContract,
+        processContractForm,
+        forgetTradingStreams,
+        onExpiryTypeChange,
+        onDurationUnitChange,
     };
 })();
 

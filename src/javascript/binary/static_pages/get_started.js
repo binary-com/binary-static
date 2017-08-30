@@ -57,7 +57,7 @@ const GetStarted = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

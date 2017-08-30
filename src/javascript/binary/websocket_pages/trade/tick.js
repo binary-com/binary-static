@@ -147,9 +147,9 @@ const Tick = (() => {
     };
 
     return {
-        details     : details,
-        display     : display,
-        clean       : clean,
+        details,
+        display,
+        clean,
         quote       : () => quote,
         id          : () => id,
         epoch       : () => epoch,

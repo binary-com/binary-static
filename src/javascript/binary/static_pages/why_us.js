@@ -12,8 +12,8 @@ const WhyUs = (() => {
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

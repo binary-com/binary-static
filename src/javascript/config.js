@@ -52,6 +52,6 @@ const getSocketURL = () => {
 };
 
 module.exports = {
-    getAppId    : getAppId,
-    getSocketURL: getSocketURL,
+    getAppId,
+    getSocketURL,
 };

@@ -61,10 +61,10 @@ const IPHistoryUI = (() => {
     };
 
     return {
-        init        : init,
-        clean       : clean,
-        update      : update,
-        displayError: displayError,
+        init,
+        clean,
+        update,
+        displayError,
     };
 })();
 

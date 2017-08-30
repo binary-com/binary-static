@@ -109,9 +109,9 @@ const Menu = (() => {
     };
 
     return {
-        init          : init,
-        onUnload      : onUnload,
-        makeMobileMenu: makeMobileMenu,
+        init,
+        onUnload,
+        makeMobileMenu,
     };
 })();
 

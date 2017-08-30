@@ -1,8 +1,8 @@
-const Symbols          = require('../../symbols');
-const BinarySocket     = require('../../../socket');
-const localize         = require('../../../../base/localize').localize;
-const template         = require('../../../../base/utility').template;
-const getHighstock     = require('../../../../common_functions/common_functions').requireHighstock;
+const Symbols      = require('../../symbols');
+const BinarySocket = require('../../../socket');
+const localize     = require('../../../../base/localize').localize;
+const template     = require('../../../../base/utility').template;
+const getHighstock = require('../../../../common_functions/common_functions').requireHighstock;
 
 const DigitInfo_Beta = (() => {
     let spots = [];
@@ -33,7 +33,7 @@ const DigitInfo_Beta = (() => {
         },
         tooltip: {
             borderWidth: 1,
-            formatter  : function() {
+            formatter() {
                 const total      = $('#tick_count').val();
                 const percentage = (this.y / total) * 100;
                 return `<strong>${localize('Digit')}:</strong> ${this.x}<br/><strong>${localize('Percentage')}:</strong> ${percentage.toFixed(1)}%`;
@@ -56,7 +56,7 @@ const DigitInfo_Beta = (() => {
                         textShadow: false,
                         fontSize  : '10px',
                     },
-                    formatter: function() {
+                    formatter() {
                         const total = $('#tick_count').val();
                         const percentage = (this.point.y / total) * 100;
                         return `${percentage.toFixed(2)}%`;
@@ -83,10 +83,10 @@ const DigitInfo_Beta = (() => {
             opposite     : false,
 
             labels: {
-                align    : 'left',
-                x        : 0,
-                enabled  : false,
-                formatter: function() {
+                align  : 'left',
+                x      : 0,
+                enabled: false,
+                formatter() {
                     const total = $('#tick_count').val();
                     const percentage = parseInt((this.value / total) * 100);
                     return `${percentage}%`;
@@ -124,7 +124,7 @@ const DigitInfo_Beta = (() => {
             const request = {
                 ticks_history: symbol,
                 end          : 'latest',
-                count        : count,
+                count,
             };
             if (chart.series[0].name !== symbol) {
                 if ($('#underlying').find('option:selected').val() !== $('#digit_underlying').val()) {
@@ -255,8 +255,8 @@ const DigitInfo_Beta = (() => {
     };
 
     return {
-        showChart  : showChart,
-        updateChart: updateChart,
+        showChart,
+        updateChart,
     };
 })();
 

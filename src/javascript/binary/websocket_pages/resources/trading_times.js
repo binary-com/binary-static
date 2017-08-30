@@ -6,8 +6,8 @@ const TradingTimes = (() => {
         active_symbols.filter(sy => (sy.symbol === q_symbol));
 
     return {
-        getSubmarketInfo: getSubmarketInfo,
-        getSymbolInfo   : getSymbolInfo,
+        getSubmarketInfo,
+        getSymbolInfo,
     };
 })();
 

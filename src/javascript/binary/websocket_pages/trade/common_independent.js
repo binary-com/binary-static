@@ -84,11 +84,11 @@ const getMinMaxTime = ($setMinMaxSelector, minTime = window.time ? window.time :
 };
 
 module.exports = {
-    displayPriceMovement     : displayPriceMovement,
-    countDecimalPlaces       : countDecimalPlaces,
-    processTradingTimesAnswer: processTradingTimesAnswer,
-    getTradingTimes          : () => trading_times,
-    getStartDateNode         : getElement,
-    checkValidTime           : checkValidTime,
-    getMinMaxTime            : getMinMaxTime,
+    displayPriceMovement,
+    countDecimalPlaces,
+    processTradingTimesAnswer,
+    getTradingTimes : () => trading_times,
+    getStartDateNode: getElement,
+    checkValidTime,
+    getMinMaxTime,
 };

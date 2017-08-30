@@ -31,7 +31,7 @@ const Symbols = (() => {
     };
 
     return {
-        details      : details,
+        details,
         markets      : list   => (list ? trade_markets_list : trade_markets),
         underlyings  : ()     => trade_underlyings,
         getName      : symbol => names[symbol],

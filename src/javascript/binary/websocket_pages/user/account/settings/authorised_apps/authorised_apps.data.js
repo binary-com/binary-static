@@ -12,7 +12,7 @@ const ApplicationsData = (() => {
     };
 
     return {
-        parse: parse,
+        parse,
     };
 })();
 

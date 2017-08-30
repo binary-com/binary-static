@@ -1,11 +1,11 @@
-const moment           = require('moment');
-const MBDefaults       = require('./mb_defaults');
-const Client           = require('../../base/client');
-const getLanguage      = require('../../base/language').get;
-const localize         = require('../../base/localize').localize;
-const isEmptyObject    = require('../../base/utility').isEmptyObject;
-const jpClient         = require('../../common_functions/country_base').jpClient;
-const padLeft          = require('../../common_functions/string_util').padLeft;
+const moment        = require('moment');
+const MBDefaults    = require('./mb_defaults');
+const Client        = require('../../base/client');
+const getLanguage   = require('../../base/language').get;
+const localize      = require('../../base/localize').localize;
+const isEmptyObject = require('../../base/utility').isEmptyObject;
+const jpClient      = require('../../common_functions/country_base').jpClient;
+const padLeft       = require('../../common_functions/string_util').padLeft;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -13,12 +13,12 @@ const padLeft          = require('../../common_functions/string_util').padLeft;
  */
 const MBContract = (() => {
     let contracts_for_response,
+        remaining_timeout,
+        current_time_left,
         $period,
         $durations,
         $duration,
-        $count_down_timer,
-        remaining_timeout,
-        current_time_left;
+        $count_down_timer;
 
     const hidden_class = 'invisible';
 
@@ -338,19 +338,17 @@ const MBContract = (() => {
     };
 
     return {
-        populatePeriods     : populatePeriods,
-        populateOptions     : populateOptions,
-        displayRemainingTime: displayRemainingTime,
+        populatePeriods,
+        populateOptions,
+        displayRemainingTime,
+        getCurrentContracts,
+        getTemplate,
+        getCurrency,
+        setCurrentItem,
         getRemainingTime    : () => current_time_left,
-        getCurrentContracts : getCurrentContracts,
-        getTemplate         : getTemplate,
-        getCurrency         : getCurrency,
         getContractsResponse: () => contracts_for_response,
         setContractsResponse: (contracts_for) => { contracts_for_response = contracts_for; },
-        setCurrentItem      : setCurrentItem,
-        onUnload            : () => {
-            clearRemainingTimeout(); contracts_for_response = {}; $durations = undefined;
-        },
+        onUnload            : () => { clearRemainingTimeout(); contracts_for_response = {}; $durations = undefined; },
     };
 })();
 

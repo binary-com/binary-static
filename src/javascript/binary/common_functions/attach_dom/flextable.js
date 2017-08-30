@@ -39,7 +39,7 @@ const FlexTableUI = (() => {
 
     const displayError = (message, colspan) => {
         const $tr = $('<tr/>', { class: 'flex-tr' });
-        const $td = $('<td/>', { colspan: colspan });
+        const $td = $('<td/>', { colspan });
         const $p  = $('<p/>', { class: 'notice-msg center-text', text: message });
         return $(`#${config.id} tbody`).append($tr.append($td.append($p)));
     };
@@ -59,10 +59,10 @@ const FlexTableUI = (() => {
     };
 
     return {
-        init        : init,
-        displayError: displayError,
-        replace     : replace,
-        clear       : clear,
+        init,
+        displayError,
+        replace,
+        clear,
     };
 })();
 

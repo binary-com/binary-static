@@ -32,7 +32,7 @@ const DigitInfo = (() => {
         },
         tooltip: {
             borderWidth: 1,
-            formatter  : function() {
+            formatter() {
                 const total =  $('#tick_count').val();
                 const percentage = (this.y / total) * 100;
                 return `<strong>${localize('Digit')}:</strong> ${this.x}<br/><strong>${localize('Percentage')}:</strong> ${percentage.toFixed(1)}%`;
@@ -53,7 +53,7 @@ const DigitInfo = (() => {
                     style  : {
                         textShadow: false,
                     },
-                    formatter: function() {
+                    formatter() {
                         const total = $('#tick_count').val();
                         const percentage = (this.point.y / total) * 100;
                         return `${percentage.toFixed(2)}%`;
@@ -79,10 +79,10 @@ const DigitInfo = (() => {
             endOnTick    : true,
             opposite     : false,
             labels       : {
-                align    : 'left',
-                x        : 0,
-                enabled  : false,
-                formatter: function() {
+                align  : 'left',
+                x      : 0,
+                enabled: false,
+                formatter() {
                     const total = $('#tick_count').val();
                     const percentage = parseInt((this.value / total) * 100);
                     return `${percentage}%`;
@@ -120,7 +120,7 @@ const DigitInfo = (() => {
             const request = {
                 ticks_history: symbol,
                 end          : 'latest',
-                count        : count,
+                count,
             };
             if (chart.series[0].name !== symbol) {
                 if ($('#underlying').find('option:selected').val() !== $('#digit_underlying').val()) {
@@ -255,8 +255,8 @@ const DigitInfo = (() => {
     };
 
     return {
-        showChart  : showChart,
-        updateChart: updateChart,
+        showChart,
+        updateChart,
     };
 })();
 

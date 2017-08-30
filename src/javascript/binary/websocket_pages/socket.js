@@ -292,13 +292,13 @@ const BinarySocket = (() => {
     };
 
     return {
-        init              : init,
-        wait              : wait,
-        send              : send,
-        clear             : clear,
-        clearTimeouts     : clearTimeouts,
+        init,
+        wait,
+        send,
+        clear,
+        clearTimeouts,
         sendBuffered      : sendBufferedRequests,
-        availability      : availability,
+        availability,
         setOnDisconnect   : (onDisconnect) => { config.onDisconnect = onDisconnect; },
         removeOnDisconnect: () => { delete config.onDisconnect; },
     };

@@ -8,7 +8,7 @@ const Contents = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

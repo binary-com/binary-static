@@ -7,7 +7,7 @@ const Contact = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

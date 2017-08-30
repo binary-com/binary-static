@@ -333,7 +333,7 @@ const PersonalDetails = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
 
         setIsForNewAccount: (bool) => { is_for_new_account = bool; },
     };

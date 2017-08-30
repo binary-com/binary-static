@@ -129,7 +129,7 @@ const FinancialAssessment = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

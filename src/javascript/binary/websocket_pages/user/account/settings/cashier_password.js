@@ -80,7 +80,7 @@ const CashierPassword = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
 
         setShouldRedirect: (bool) => { should_redirect = bool; },
     };

@@ -41,8 +41,11 @@ const addComma = (num, decimal_points, is_crypto) => {
 
 const getFiatDecimalPlaces = () => jpClient() ? 0 : 2;
 
-const getDecimalPlaces = currency => (
-    getPropertyValue(currencies_config, [currency, 'fractional_digits']) || (isCryptocurrency(currency) ? 8 : getFiatDecimalPlaces())
+const calcDecimalPlaces = (currency) => isCryptocurrency(currency) ? 8 : getFiatDecimalPlaces();
+
+const getDecimalPlaces = (currency) => (
+    // need to check currencies_config[currency] exists instead of || in case of 0 value
+    currencies_config[currency] ? getPropertyValue(currencies_config, [currency, 'fractional_digits']) : calcDecimalPlaces(currency)
 );
 
 const setCurrencies = (website_status) => {
@@ -81,14 +84,14 @@ const getCurrencyList = (currencies) => {
 };
 
 module.exports = {
-    formatMoney     : formatMoney,
-    formatCurrency  : formatCurrency,
-    addComma        : addComma,
-    getDecimalPlaces: getDecimalPlaces,
-    setCurrencies   : setCurrencies,
-    getCurrencies   : () => currencies_config,
-    isCryptocurrency: isCryptocurrency,
-    getCurrencyName : getCurrencyName,
-    getMinPayout    : getMinPayout,
-    getCurrencyList : getCurrencyList,
+    formatMoney,
+    formatCurrency,
+    addComma,
+    getDecimalPlaces,
+    setCurrencies,
+    isCryptocurrency,
+    getCurrencyName,
+    getMinPayout,
+    getCurrencyList,
+    getCurrencies: () => currencies_config,
 };

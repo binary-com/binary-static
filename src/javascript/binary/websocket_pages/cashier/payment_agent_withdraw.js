@@ -155,7 +155,7 @@ const PaymentAgentWithdraw = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

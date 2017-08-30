@@ -146,7 +146,7 @@ const Guide = (() => {
 
 
     return {
-        init: init,
+        init,
     };
 })();
 

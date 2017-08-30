@@ -100,15 +100,15 @@ const BinarySocketGeneral = (() => {
     };
 
     const initOptions = () => ({
-        onOpen        : onOpen,
-        onMessage     : onMessage,
+        onOpen,
+        onMessage,
         notify        : Header.displayNotification,
         isLoggedIn    : Client.isLoggedIn,
         getClientValue: Client.get,
     });
 
     return {
-        initOptions: initOptions,
+        initOptions,
     };
 })();
 

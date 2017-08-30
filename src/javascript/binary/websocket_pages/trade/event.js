@@ -58,9 +58,9 @@ const TradingEvents = (() => {
                 }
             }
             const initObj = {
-                selector: selector,
-                minTime : minTime,
-                maxTime : maxTime || null,
+                selector,
+                minTime,
+                maxTime: maxTime || null,
             };
             TimePicker.init(initObj);
         };

@@ -144,7 +144,7 @@ const Purchase_Beta = (() => {
                 display_symbol      : Symbols.getName(passthrough.symbol),
                 contract_start      : receipt.start_time,
                 display_decimals    : decimal_points,
-                contract_sentiment  : contract_sentiment,
+                contract_sentiment,
                 price               : passthrough['ask-price'],
                 payout              : receipt.payout,
                 show_contract_result: 1,
@@ -254,8 +254,8 @@ const Purchase_Beta = (() => {
     };
 
     return {
-        display       : display,
-        updateSpotList: updateSpotList,
+        display,
+        updateSpotList,
     };
 })();
 

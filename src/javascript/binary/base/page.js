@@ -166,13 +166,13 @@ const Page = (() => {
             reminder: 0, // show all the time
         };
         $(document).ready(() => {
-            $('body').append($('<script/>', { src: src }));
+            $('body').append($('<script/>', { src }));
         });
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

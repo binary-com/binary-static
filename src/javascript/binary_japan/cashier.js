@@ -42,9 +42,10 @@ const CashierJP = (() => {
     };
 
     return {
-        errorHandler: errorHandler,
-        Deposit     : { onLoad: () => { onLoad('deposit'); } },
-        Withdraw    : { onLoad: () => { onLoad('withdraw'); } },
+        errorHandler,
+
+        Deposit : { onLoad: () => { onLoad('deposit'); } },
+        Withdraw: { onLoad: () => { onLoad('withdraw'); } },
     };
 })();
 

@@ -169,13 +169,13 @@ const Accounts = (() => {
 
     const populateReq = () => {
         const get_settings = State.getResponse('get_settings');
-        const date_of_birth = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
+        const dob = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
         const req = {
             new_account_real      : 1,
             salutation            : get_settings.salutation,
             first_name            : get_settings.first_name,
             last_name             : get_settings.last_name,
-            date_of_birth         : date_of_birth,
+            date_of_birth         : dob,
             address_line_1        : get_settings.address_line_1,
             address_line_2        : get_settings.address_line_2,
             address_city          : get_settings.address_city,
@@ -196,7 +196,7 @@ const Accounts = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

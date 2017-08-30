@@ -68,8 +68,8 @@ const TickDisplay_Beta = (() => {
             plot_from: data.previous_tick_epoch * 1000,
             plot_to  : new Date((parseInt(data.contract_start) +
                 parseInt((number_of_ticks + 2) * 5)) * 1000).getTime(),
-            minimize: minimize,
-            width   : data.width ? data.width : undefined,
+            minimize,
+            width: data.width ? data.width : undefined,
         });
 
         // add tooltip events to highcharts
@@ -145,7 +145,7 @@ const TickDisplay_Beta = (() => {
             },
             credits: { enabled: false },
             tooltip: {
-                formatter: function() {
+                formatter() {
                     const new_y = this.y.toFixed(display_decimals);
                     const mom = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
                     return `${mom}<br/>${display_symbol} ${new_y}`;
@@ -161,7 +161,7 @@ const TickDisplay_Beta = (() => {
 
                 labels: {
                     autoRotation: false,
-                    formatter   : function() { return this.value + (is_start_on_first_tick ? 1 : 0); },
+                    formatter() { return this.value + (is_start_on_first_tick ? 1 : 0); },
                 },
                 crosshair: {
                     color : '#E98024',
@@ -205,7 +205,7 @@ const TickDisplay_Beta = (() => {
                 tooltip: {
                     style: { display: 'none' },
 
-                    formatter: function() {
+                    formatter() {
                         const time = moment.utc(applicable_ticks[this.x].epoch * 1000).format('HH:mm:ss');
                         const this_price = this.y;
                         showValues(+this.x + (is_start_on_first_tick ? 1 : 0), time, this_price);
@@ -530,9 +530,9 @@ const TickDisplay_Beta = (() => {
     };
 
     return {
-        init       : initialize,
-        updateChart: updateChart,
-        resetSpots : () => { spots_list = {}; },
+        init      : initialize,
+        updateChart,
+        resetSpots: () => { spots_list = {}; },
     };
 })();
 

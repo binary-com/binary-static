@@ -24,7 +24,7 @@ const Authenticate = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

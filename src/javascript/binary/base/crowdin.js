@@ -28,7 +28,7 @@ const Crowdin = (() => {
     };
 
     return {
-        init       : init,
+        init,
         isInContext: isInContextEnvironment,
     };
 })();

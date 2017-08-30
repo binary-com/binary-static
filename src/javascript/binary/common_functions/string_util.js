@@ -18,7 +18,7 @@ const toReadableFormat = (date) => {
 };
 
 const padLeft = (txt, len, char) => {
-    const text = String(text || '');
+    const text = String(txt || '');
     return text.length >= len ? text : `${Array((len - text.length) + 1).join(char)}${text}`;
 };
 
@@ -44,11 +44,11 @@ const compareBigUnsignedInt = (a, b) => {
 const numberToString = n => (typeof n === 'number' ? String(n) : n);
 
 module.exports = {
-    toISOFormat     : toISOFormat,
-    toReadableFormat: toReadableFormat,
-    toTitleCase     : toTitleCase,
-    padLeft         : padLeft,
-    numberToString  : numberToString,
+    toISOFormat,
+    toReadableFormat,
+    toTitleCase,
+    padLeft,
+    numberToString,
 
-    compareBigUnsignedInt: compareBigUnsignedInt,
+    compareBigUnsignedInt,
 };

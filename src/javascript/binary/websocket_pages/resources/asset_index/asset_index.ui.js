@@ -138,7 +138,7 @@ const AssetIndexUI = (() => {
     };
 
     return {
-        onLoad          : onLoad,
+        onLoad,
         setActiveSymbols: (response) => {
             active_symbols = response.active_symbols.slice(0); // clone
             if (asset_index) populateTable();

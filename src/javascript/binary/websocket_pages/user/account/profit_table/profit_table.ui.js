@@ -38,8 +38,8 @@ const ProfitTableUI = (() => {
 
         const data = [];
         const metadata = {
-            cols: cols,
-            id  : profit_table_id,
+            cols,
+            id: profit_table_id,
         };
         const $table_container = Table.createFlexTable(data, metadata, header, footer);
 
@@ -123,10 +123,10 @@ const ProfitTableUI = (() => {
     };
 
     return {
-        createEmptyTable : createEmptyTable,
-        updateProfitTable: updateProfitTable,
+        createEmptyTable,
+        updateProfitTable,
+        errorMessage,
         cleanTableContent: clearTableContent,
-        errorMessage     : errorMessage,
         setOauthApps     : values => (oauth_apps = values),
     };
 })();

@@ -126,11 +126,12 @@ const RealityCheckUI = (() => {
     };
 
     return {
+        closePopUp,
+        startSummaryTimer,
+        getSummaryAsync,
+        shouldShowPopup,
+
         renderFrequencyPopUp: () => { getAjax(); },
-        closePopUp          : closePopUp,
-        startSummaryTimer   : startSummaryTimer,
-        getSummaryAsync     : getSummaryAsync,
-        shouldShowPopup     : shouldShowPopup,
         getRealityTimeout   : () => reality_timeout,
     };
 })();

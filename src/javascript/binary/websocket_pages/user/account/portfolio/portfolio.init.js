@@ -44,7 +44,7 @@ const PortfolioInit = (() => {
         // Display ViewPopup according to contract_id in query string
         const contract_id = urlParam('contract_id');
         if (contract_id) {
-            ViewPopup.init($('<div />', { contract_id: contract_id }).get(0));
+            ViewPopup.init($('<div />', { contract_id }).get(0));
         }
     };
 
@@ -222,9 +222,9 @@ const PortfolioInit = (() => {
     };
 
     return {
-        updateBalance: updateBalance,
-        onLoad       : onLoad,
-        onUnload     : onUnload,
+        updateBalance,
+        onLoad,
+        onUnload,
     };
 })();
 

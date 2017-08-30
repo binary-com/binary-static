@@ -91,14 +91,14 @@ const requireHighstock = callback => (
 );
 
 module.exports = {
-    detectHedging         : detectHedging,
-    jqueryuiTabsToDropdown: jqueryuiTabsToDropdown,
-    makeOption            : makeOption,
-    isVisible             : isVisible,
-    checkInput            : checkInput,
-    dateValueChanged      : dateValueChanged,
-    selectorExists        : selectorExists,
-    elementTextContent    : (element, text) => getSetElementValue(element, text, 'textContent'),
-    elementInnerHtml      : (element, text) => getSetElementValue(element, text, 'innerHTML'),
-    requireHighstock      : requireHighstock,
+    detectHedging,
+    jqueryuiTabsToDropdown,
+    makeOption,
+    isVisible,
+    checkInput,
+    dateValueChanged,
+    selectorExists,
+    requireHighstock,
+    elementTextContent: (element, text) => getSetElementValue(element, text, 'textContent'),
+    elementInnerHtml  : (element, text) => getSetElementValue(element, text, 'innerHTML'),
 };

@@ -142,7 +142,7 @@ const PaymentAgentTransfer = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

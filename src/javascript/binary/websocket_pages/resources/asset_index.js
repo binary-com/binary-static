@@ -71,8 +71,8 @@ const AssetIndex = (() => {
     };
 
     return {
-        getAssetIndexData: getAssetIndexData,
-        getMarketColumns : () => market_columns,
+        getAssetIndexData,
+        getMarketColumns: () => market_columns,
     };
 })();
 

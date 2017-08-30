@@ -204,7 +204,7 @@ const TradingTimesUI = (() => {
     };
 
     return {
-        onLoad          : onLoad,
+        onLoad,
         setActiveSymbols: (response) => {
             active_symbols = response.active_symbols.slice(0); // clone
             if (trading_times) populateTable();

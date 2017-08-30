@@ -35,7 +35,7 @@ const AccountTransfer = (() => {
                     max_balance = +accounts[idx].balance;
                 }
                 $transfer.append($('<option/>', {
-                    text           : text,
+                    text,
                     'data-from'    : from_loginid,
                     'data-to'      : to_loginid,
                     'data-currency': accounts[idx].currency,
@@ -113,7 +113,7 @@ const AccountTransfer = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

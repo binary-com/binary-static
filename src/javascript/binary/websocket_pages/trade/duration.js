@@ -558,17 +558,17 @@ const Durations = (() => {
     };
 
     return {
-        display                  : displayDurations,
-        displayEndTime           : displayEndTime,
-        populate                 : durationPopulate,
-        selectEndDate            : selectEndDate,
-        validateMinDurationAmount: validateMinDurationAmount,
-        onStartDateChange        : onStartDateChange,
-        setTime                  : setTime,
-        selectAmount             : (a) => { selected_duration.amount = a; },
-        selectUnit               : (u) => { selected_duration.unit = u; },
-        isNow                    : isNow,
-        expiryDateOnChange       : expiryDateOnChange,
+        display     : displayDurations,
+        displayEndTime,
+        populate    : durationPopulate,
+        selectEndDate,
+        validateMinDurationAmount,
+        onStartDateChange,
+        setTime,
+        selectAmount: (a) => { selected_duration.amount = a; },
+        selectUnit  : (u) => { selected_duration.unit = u; },
+        isNow,
+        expiryDateOnChange,
     };
 })();
 

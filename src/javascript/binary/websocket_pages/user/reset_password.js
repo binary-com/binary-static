@@ -59,7 +59,7 @@ const ResetPassword = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

@@ -55,8 +55,8 @@ const checkLanguage = () => {
 };
 
 module.exports = {
-    checkClientsCountry: checkClientsCountry,
-    jpClient           : jpClient,
-    jpResidence        : jpResidence,
-    checkLanguage      : checkLanguage,
+    checkClientsCountry,
+    jpClient,
+    jpResidence,
+    checkLanguage,
 };

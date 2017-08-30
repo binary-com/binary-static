@@ -254,14 +254,14 @@ const Header = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
 
-        showOrHideLoginForm         : showOrHideLoginForm,
-        upgradeMessageVisibility    : upgradeMessageVisibility,
-        metatraderMenuItemVisibility: metatraderMenuItemVisibility,
-        displayNotification         : displayNotification,
-        hideNotification            : hideNotification,
-        displayAccountStatus        : displayAccountStatus,
+        showOrHideLoginForm,
+        upgradeMessageVisibility,
+        metatraderMenuItemVisibility,
+        displayNotification,
+        hideNotification,
+        displayAccountStatus,
     };
 })();
 

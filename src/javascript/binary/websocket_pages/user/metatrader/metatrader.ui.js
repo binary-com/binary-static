@@ -180,7 +180,7 @@ const MetaTraderUI = (() => {
             $form = $templates.find(`#frm_${action}`).clone();
             const formValues = actions_info[action].formValues;
             if (formValues) formValues($form, acc_type, action);
-            $form.find('#btn_submit').attr({ acc_type: acc_type, action: action }).on('click dblclick', submit);
+            $form.find('#btn_submit').attr({ acc_type, action }).on('click dblclick', submit);
 
             // append form
             $action.find('#frm_action').html($form).setVisibility(1).end()
@@ -231,17 +231,18 @@ const MetaTraderUI = (() => {
     };
 
     return {
-        init              : init,
-        $form             : () => $form,
-        loadAction        : loadAction,
-        updateAccount     : updateAccount,
-        postValidate      : postValidate,
-        hideFormMessage   : hideFormMessage,
-        displayFormMessage: displayFormMessage,
-        displayMainMessage: displayMainMessage,
-        displayPageError  : displayPageError,
-        disableButton     : disableButton,
-        enableButton      : enableButton,
+        init,
+        loadAction,
+        updateAccount,
+        postValidate,
+        hideFormMessage,
+        displayFormMessage,
+        displayMainMessage,
+        displayPageError,
+        disableButton,
+        enableButton,
+
+        $form: () => $form,
     };
 })();
 

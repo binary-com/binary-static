@@ -36,7 +36,7 @@ const RealityCheck = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

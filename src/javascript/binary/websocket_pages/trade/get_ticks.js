@@ -1,20 +1,20 @@
-const Barriers             = require('./barriers');
-const Barriers_Beta        = require('./beta/barriers');
-const DigitInfo_Beta       = require('./beta/charts/digit_info');
-const Purchase_Beta        = require('./beta/purchase');
-const TickDisplay_Beta     = require('./beta/tick_trade');
-const updateWarmChart      = require('./common').updateWarmChart;
-const DigitInfo            = require('./charts/digit_info');
-const Defaults             = require('./defaults');
-const getActiveTab         = require('./get_active_tab').getActiveTab;
-const getActiveTab_Beta    = require('./get_active_tab').getActiveTab_Beta;
-const Purchase             = require('./purchase');
-const Tick                 = require('./tick');
-const TickDisplay          = require('./tick_trade');
-const MBDefaults           = require('../mb_trade/mb_defaults');
-const MBTick               = require('../mb_trade/mb_tick');
-const BinarySocket         = require('../socket');
-const State                = require('../../base/storage').State;
+const Barriers          = require('./barriers');
+const Barriers_Beta     = require('./beta/barriers');
+const DigitInfo_Beta    = require('./beta/charts/digit_info');
+const Purchase_Beta     = require('./beta/purchase');
+const TickDisplay_Beta  = require('./beta/tick_trade');
+const updateWarmChart   = require('./common').updateWarmChart;
+const DigitInfo         = require('./charts/digit_info');
+const Defaults          = require('./defaults');
+const getActiveTab      = require('./get_active_tab').getActiveTab;
+const getActiveTab_Beta = require('./get_active_tab').getActiveTab_Beta;
+const Purchase          = require('./purchase');
+const Tick              = require('./tick');
+const TickDisplay       = require('./tick_trade');
+const MBDefaults        = require('../mb_trade/mb_defaults');
+const MBTick            = require('../mb_trade/mb_tick');
+const BinarySocket      = require('../socket');
+const State             = require('../../base/storage').State;
 
 const GetTicks = (() => {
     let underlying;
@@ -22,7 +22,7 @@ const GetTicks = (() => {
     const request = (symbol, req, callback) => {
         underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
         if (underlying && req && callback && (underlying !== req.ticks_history || !req.subscribe)) {
-            BinarySocket.send(req, { callback: callback });
+            BinarySocket.send(req, { callback });
         } else {
             const sendRequest = () => {
                 BinarySocket.send(req || {
@@ -125,7 +125,7 @@ const GetTicks = (() => {
     };
 
     return {
-        request: request,
+        request,
     };
 })();
 

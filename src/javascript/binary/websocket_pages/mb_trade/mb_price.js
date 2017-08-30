@@ -153,7 +153,7 @@ const MBPrice = (() => {
             $table.append(el_row);
         });
 
-        MBPrice.hidePriceOverlay();
+        hidePriceOverlay();
         MBNotifications.hideSpinnerShowTrading();
         is_displayed = true;
 
@@ -185,8 +185,8 @@ const MBPrice = (() => {
         const time_left    = MBContract.getRemainingTime();
         return {
             payout             : payout / 1000,
-            contract_type      : contract_type,
-            barrier            : barrier,
+            contract_type,
+            barrier,
             is_active          : !proposal.error && proposal.ask_price && !is_unwelcome && time_left > 120,
             message            : proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
             ask_price          : getAskPrice(proposal),
@@ -246,8 +246,8 @@ const MBPrice = (() => {
         const contract_type = $btn.attr('data-contract_type');
         if (!barrier || !contract_type) return;
 
-        MBPrice.showPriceOverlay();
-        MBPrice.sendBuyRequest(barrier, contract_type);
+        showPriceOverlay();
+        sendBuyRequest(barrier, contract_type);
     };
 
     const formatPrice = price => formatMoney(MBContract.getCurrency(), price, 1);
@@ -282,7 +282,7 @@ const MBPrice = (() => {
                 amount               : proposal.echo_req.amount,
                 barrier              : proposal.barrier,
                 basis                : 'payout',
-                contract_type        : contract_type,
+                contract_type,
                 currency             : MBContract.getCurrency(),
                 symbol               : proposal.echo_req.symbol,
                 date_expiry          : proposal.echo_req.date_expiry,
@@ -320,16 +320,16 @@ const MBPrice = (() => {
     };
 
     return {
-        display         : display,
-        addPriceObj     : addPriceObj,
-        cleanup         : cleanup,
-        sendBuyRequest  : sendBuyRequest,
-        showPriceOverlay: showPriceOverlay,
-        hidePriceOverlay: hidePriceOverlay,
-        getReqId        : () => req_id,
-        increaseReqId   : () => { req_id++; cleanup(); },
-        getPrices       : () => prices,
-        onUnload        : () => { cleanup(); req_id = 0; $table = undefined; },
+        display,
+        addPriceObj,
+        cleanup,
+        showPriceOverlay,
+        hidePriceOverlay,
+
+        getReqId     : () => req_id,
+        increaseReqId: () => { req_id++; cleanup(); },
+        getPrices    : () => prices,
+        onUnload     : () => { cleanup(); req_id = 0; $table = undefined; },
     };
 })();
 

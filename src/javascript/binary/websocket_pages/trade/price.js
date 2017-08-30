@@ -119,7 +119,7 @@ const Price = (() => {
         }
 
         proposal.passthrough = {
-            form_id: form_id,
+            form_id,
         };
 
         commonTrading.resetPriceMovement();
@@ -298,14 +298,14 @@ const Price = (() => {
 
     return {
         proposal        : createProposal,
-        display         : display,
-        clearMapping    : clearMapping,
-        clearFormId     : clearFormId,
+        display,
+        clearMapping,
+        clearFormId,
         idDisplayMapping: () => type_display_id_mapping,
         incrFormId      : () => { form_id++; },
 
-        processForgetProposals: processForgetProposals,
-        processPriceRequest   : processPriceRequest,
+        processForgetProposals,
+        processPriceRequest,
     };
 })();
 

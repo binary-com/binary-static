@@ -177,12 +177,11 @@ const AccountOpening = (() => {
     };
 
     return {
-        redirectAccount : redirectAccount,
-        populateForm    : populateForm,
-        handleNewAccount: handleNewAccount,
-
-        commonValidations       : commonValidations,
-        selectCheckboxValidation: selectCheckboxValidation,
+        redirectAccount,
+        populateForm,
+        handleNewAccount,
+        commonValidations,
+        selectCheckboxValidation,
     };
 })();
 

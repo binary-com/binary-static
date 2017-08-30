@@ -23,10 +23,10 @@ const Statement = (() => {
         }
 
         return {
+            action,
             date   : jp_client ? toJapanTimeIfNeeded(statement.transaction_time) : `${date_str}\n${time_str}`,
             ref    : statement.transaction_id,
             payout : isNaN(payout) || is_ico_bid ? '-' : formatMoney(currency, payout, !jp_client),
-            action : action,
             amount : isNaN(amount) ? '-' : formatMoney(currency, amount, !jp_client),
             balance: isNaN(balance) ? '-' : formatMoney(currency, balance, !jp_client),
             desc   : statement.longcode.replace(/\n/g, '<br />'),
@@ -50,8 +50,8 @@ const Statement = (() => {
     };
 
     return {
-        getStatementData: getStatementData,
-        generateCSV     : generateCSV,
+        getStatementData,
+        generateCSV,
     };
 })();
 

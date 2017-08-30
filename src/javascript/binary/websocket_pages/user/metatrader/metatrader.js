@@ -86,7 +86,7 @@ const MetaTrader = (() => {
     const getAccountDetails = (login, acc_type) => {
         BinarySocket.send({
             mt5_get_settings: 1,
-            login           : login,
+            login,
         }).then((response) => {
             if (response.mt5_get_settings) {
                 types_info[acc_type].account_info = response.mt5_get_settings;
@@ -138,7 +138,7 @@ const MetaTrader = (() => {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : types_info[acc_type].account_info.login;
                         if (!types_info[acc_type].account_info) {
-                            types_info[acc_type].account_info = { login: login };
+                            types_info[acc_type].account_info = { login };
                         }
                         MetaTraderUI.loadAction(null, acc_type);
                         MetaTraderUI.displayMainMessage(actions_info[action].success_msg(response));
@@ -154,8 +154,8 @@ const MetaTrader = (() => {
     };
 
     return {
-        onLoad    : onLoad,
-        isEligible: isEligible,
+        onLoad,
+        isEligible,
     };
 })();
 

@@ -165,10 +165,10 @@ const Barriers = (() => {
     };
 
     return {
-        display         : display,
+        display,
         isBarrierUpdated: () => is_barrier_updated,
         setBarrierUpdate: (flag) => { is_barrier_updated = flag; },
-        validateBarrier : validateBarrier,
+        validateBarrier,
     };
 })();
 

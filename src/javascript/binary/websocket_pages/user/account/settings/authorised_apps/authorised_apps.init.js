@@ -19,8 +19,8 @@ const ApplicationsInit = (() => {
     };
 
     return {
-        init : init,
-        clean: clean,
+        init,
+        clean,
     };
 })();
 

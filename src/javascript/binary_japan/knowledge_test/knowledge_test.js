@@ -76,13 +76,13 @@ const KnowledgeTest = (() => {
         const questions = {};
         // retrieve questions text from html
         $container.find('#data-questions').find('> div').each(function() { // sections
-            const category = +$(this).attr('data-section-id');
-            questions[`section${category}`] = [];
+            const category_name = +$(this).attr('data-section-id');
+            questions[`section${category_name}`] = [];
 
             $(this).find('> div').each(function() { // questions
                 const question_id = +$(this).attr('data-question-id');
-                questions[`section${category}`].push({
-                    category          : category,
+                questions[`section${category_name}`].push({
+                    category          : category_name,
                     id                : question_id,
                     question          : $(this).attr('data-question-en'),
                     question_localized: $(this).text(),
@@ -173,12 +173,12 @@ const KnowledgeTest = (() => {
         submit_completed = true;
     };
 
-    const sendResult = (questions) => {
+    const sendResult = (all_questions) => {
         BinarySocket.send({
             jp_knowledge_test: 1,
             score            : result_score,
             status           : result_score >= passing_score ? 'pass' : 'fail',
-            questions        : questions,
+            questions        : all_questions,
         }).then((response) => {
             if (!response.error) {
                 showResult(result_score, response.jp_knowledge_test.test_taken_epoch * 1000);
@@ -221,7 +221,7 @@ const KnowledgeTest = (() => {
     );
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

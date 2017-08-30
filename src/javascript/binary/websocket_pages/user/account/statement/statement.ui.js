@@ -97,12 +97,13 @@ const StatementUI = (() => {
     };
 
     return {
-        clearTableContent        : clearTableContent,
-        createEmptyStatementTable: createEmptyStatementTable,
-        updateStatementTable     : updateStatementTable,
-        errorMessage             : errorMessage,
-        exportCSV                : exportCSV,
-        setOauthApps             : values => (oauth_apps = values),
+        clearTableContent,
+        createEmptyStatementTable,
+        updateStatementTable,
+        errorMessage,
+        exportCSV,
+
+        setOauthApps: values => (oauth_apps = values),
     };
 })();
 

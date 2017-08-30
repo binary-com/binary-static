@@ -174,10 +174,8 @@ const StatementInit = (() => {
     };
 
     return {
-        init            : initPage,
-        statementHandler: statementHandler,
-        onLoad          : onLoad,
-        onUnload        : onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

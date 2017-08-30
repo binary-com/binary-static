@@ -42,7 +42,7 @@ const TopUpVirtual = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

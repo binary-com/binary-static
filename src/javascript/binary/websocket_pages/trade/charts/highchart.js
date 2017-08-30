@@ -127,10 +127,10 @@ const Highchart = (() => {
         HighchartUI.setChartOptions({
             height    : el.parentElement.offsetHeight,
             title     : localize(init_options.title),
-            JPClient  : JPClient,
+            JPClient,
             decimals  : history ? history.prices[0] : candles[0].open,
-            type      : type,
-            data      : data,
+            type,
+            data,
             entry_time: entry_tick_time ? entry_tick_time * 1000 : start_time * 1000,
             exit_time : exit_time ? exit_time * 1000 : null,
             user_sold : userSold(),
@@ -600,7 +600,7 @@ const Highchart = (() => {
     );
 
     return {
-        showChart: showChart,
+        showChart,
     };
 })();
 

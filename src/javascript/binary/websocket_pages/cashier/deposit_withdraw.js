@@ -207,7 +207,7 @@ const DepositWithdraw = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

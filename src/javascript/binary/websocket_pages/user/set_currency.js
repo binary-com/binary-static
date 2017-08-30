@@ -101,7 +101,7 @@ const SetCurrency = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

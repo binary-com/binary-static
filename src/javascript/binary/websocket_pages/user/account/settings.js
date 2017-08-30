@@ -23,7 +23,7 @@ const Settings = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

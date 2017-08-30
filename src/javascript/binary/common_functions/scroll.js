@@ -33,9 +33,9 @@ const Scroll = (() => {
                 // otherwise change it back to relative
                 if (scroll_top + $sidebar[0].offsetHeight >
                     $sidebar_container[0].offsetHeight + $sidebar_container.offset().top) {
-                    $sidebar.css({ position: 'absolute', bottom: 0, top: '', width: width });
+                    $sidebar.css({ position: 'absolute', bottom: 0, top: '', width });
                 } else if (scroll_top > sticky_navigation_offset_top) {
-                    $sidebar.css({ position: 'fixed', top: 0, bottom: '', width: width });
+                    $sidebar.css({ position: 'fixed', top: 0, bottom: '', width });
                 } else {
                     $sidebar.css({ position: 'relative' });
                 }
@@ -93,9 +93,9 @@ const Scroll = (() => {
     };
 
     return {
-        sidebarScroll: sidebarScroll,
-        scrollToTop  : scrollToTop,
-        offScroll    : () => {
+        sidebarScroll,
+        scrollToTop,
+        offScroll: () => {
             $(window).off('scroll');
             if ($main_container) {
                 $main_container.find('#sidebar-nav li').off('click');

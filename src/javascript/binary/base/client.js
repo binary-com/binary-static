@@ -281,8 +281,8 @@ const Client = (() => {
 
     const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status')) => {
         let type = 'real';
-        let upgrade_link = 'realws';
         let can_upgrade = false;
+        let upgrade_link = 'realws';
         if (get('is_virtual')) {
             if (canUpgradeVirtualToFinancial(landing_company)) {
                 type = 'financial';
@@ -293,13 +293,13 @@ const Client = (() => {
             can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
         } else if (canUpgradeGamingToFinancial(landing_company)) {
             type = 'financial';
-            upgrade_link = 'maltainvestws';
             can_upgrade = !hasAccountType('financial');
+            upgrade_link = 'maltainvestws';
         }
         return {
-            type           : type,
+            type,
+            can_upgrade,
             upgrade_link   : `new_account/${upgrade_link}`,
-            can_upgrade    : can_upgrade,
             is_current_path: new RegExp(upgrade_link, 'i').test(window.location.pathname),
         };
     };
@@ -325,31 +325,31 @@ const Client = (() => {
     };
 
     return {
-        init             : init,
-        validateLoginid  : validateLoginid,
-        set              : set,
-        get              : get,
-        getAllLoginids   : getAllLoginids,
-        getAccountType   : getAccountType,
-        getAccountOfType : getAccountOfType,
-        isAccountOfType  : isAccountOfType,
-        hasAccountType   : hasAccountType,
-        responseAuthorize: responseAuthorize,
-        shouldAcceptTnc  : shouldAcceptTnc,
-        clearAllAccounts : clearAllAccounts,
-        processNewAccount: processNewAccount,
-        isLoggedIn       : isLoggedIn,
-        sendLogoutRequest: sendLogoutRequest,
-        cleanupCookies   : cleanupCookies,
-        doLogout         : doLogout,
-        shouldCompleteTax: shouldCompleteTax,
-        getMT5AccountType: getMT5AccountType,
-        getUpgradeInfo   : getUpgradeInfo,
-        getAccountTitle  : getAccountTitle,
+        init,
+        validateLoginid,
+        set,
+        get,
+        getAllLoginids,
+        getAccountType,
+        getAccountOfType,
+        isAccountOfType,
+        hasAccountType,
+        responseAuthorize,
+        shouldAcceptTnc,
+        clearAllAccounts,
+        processNewAccount,
+        isLoggedIn,
+        sendLogoutRequest,
+        cleanupCookies,
+        doLogout,
+        shouldCompleteTax,
+        getMT5AccountType,
+        getUpgradeInfo,
+        getAccountTitle,
 
-        activateByClientType  : activateByClientType,
-        currentLandingCompany : currentLandingCompany,
-        getLandingCompanyValue: getLandingCompanyValue,
+        activateByClientType,
+        currentLandingCompany,
+        getLandingCompanyValue,
     };
 })();
 

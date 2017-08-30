@@ -29,8 +29,8 @@ const GTM = (() => {
         delete data_layer_info.event;
 
         return {
-            data : data_layer_info,
-            event: event,
+            data: data_layer_info,
+            event,
         };
     };
 
@@ -155,11 +155,11 @@ const GTM = (() => {
     };
 
     return {
-        pushDataLayer   : pushDataLayer,
-        eventHandler    : eventHandler,
-        pushPurchaseData: pushPurchaseData,
-        mt5NewAccount   : mt5NewAccount,
-        setLoginFlag    : () => { if (isGtmApplicable()) localStorage.setItem('GTM_login', '1'); },
+        pushDataLayer,
+        eventHandler,
+        pushPurchaseData,
+        mt5NewAccount,
+        setLoginFlag: () => { if (isGtmApplicable()) localStorage.setItem('GTM_login', '1'); },
     };
 })();
 

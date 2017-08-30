@@ -99,8 +99,8 @@ const KnowledgeTestUI = (() => {
     };
 
     return {
-        createQuestionTable: createQuestionTable,
-        createResultUI     : createResultUI,
+        createQuestionTable,
+        createResultUI,
     };
 })();
 

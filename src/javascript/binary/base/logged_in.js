@@ -87,7 +87,7 @@ const LoggedInHandler = (() => {
     const isDisabled = (loginid_list, loginid) => (loginid_list ? +(new RegExp(`${loginid}:[VR]:D`)).test(loginid_list) : 0);
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

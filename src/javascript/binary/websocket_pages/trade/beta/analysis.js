@@ -1,15 +1,15 @@
-const showChart        = require('../charts/webtrader_chart').showChart;
-const Defaults         = require('../defaults');
-const getActiveTab     = require('../get_active_tab').getActiveTab_Beta;
-const GetTicks         = require('../get_ticks');
-const MBDefaults       = require('../../mb_trade/mb_defaults');
-const AssetIndexUI     = require('../../resources/asset_index/asset_index.ui');
-const TradingTimesUI   = require('../../resources/trading_times/trading_times.ui');
-const PortfolioInit    = require('../../user/account/portfolio/portfolio.init');
-const Client           = require('../../../base/client');
-const getLanguage      = require('../../../base/language').get;
-const State            = require('../../../base/storage').State;
-const Url              = require('../../../base/url');
+const showChart      = require('../charts/webtrader_chart').showChart;
+const Defaults       = require('../defaults');
+const getActiveTab   = require('../get_active_tab').getActiveTab_Beta;
+const GetTicks       = require('../get_ticks');
+const MBDefaults     = require('../../mb_trade/mb_defaults');
+const AssetIndexUI   = require('../../resources/asset_index/asset_index.ui');
+const TradingTimesUI = require('../../resources/trading_times/trading_times.ui');
+const PortfolioInit  = require('../../user/account/portfolio/portfolio.init');
+const Client         = require('../../../base/client');
+const getLanguage    = require('../../../base/language').get;
+const State          = require('../../../base/storage').State;
+const Url            = require('../../../base/url');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -175,9 +175,9 @@ const TradingAnalysis_Beta = (() => {
     };
 
     return {
-        request             : requestTradeAnalysis,
-        getActiveTab        : getActiveTab,
-        bindAnalysisTabEvent: bindAnalysisTabEvent,
+        request: requestTradeAnalysis,
+        getActiveTab,
+        bindAnalysisTabEvent,
     };
 })();
 

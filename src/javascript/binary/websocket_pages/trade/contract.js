@@ -176,7 +176,7 @@ const Contract = (() => {
     };
 
     return {
-        details      : details,
+        details,
         contractForms: getContractForms,
         open         : () => open,
         close        : () => close,

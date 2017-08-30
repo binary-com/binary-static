@@ -57,7 +57,7 @@ const Cashier = (() => {
     };
 
     return {
-        onLoad        : onLoad,
+        onLoad,
         PaymentMethods: { onLoad: () => { showContent(); } },
     };
 })();

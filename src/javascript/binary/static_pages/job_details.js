@@ -3,8 +3,8 @@ const urlFor   = require('../base/url').urlFor;
 
 const JobDetails = (() => {
     let dept,
-        $sections_div,
         dept_class,
+        $sections_div,
         $senior_perl_message,
         $sidebar,
         $sidebar_dept;
@@ -55,8 +55,8 @@ const JobDetails = (() => {
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

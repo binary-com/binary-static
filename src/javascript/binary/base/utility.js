@@ -56,7 +56,7 @@ const isEmptyObject = (obj) => {
     let is_empty = true;
     if (obj && obj instanceof Object) {
         Object.keys(obj).forEach((key) => {
-            if (getPropertyValue(obj, key)) is_empty = false;
+            if (Object.prototype.hasOwnProperty.call(obj, key)) is_empty = false;
         });
     }
     return is_empty;
@@ -96,12 +96,12 @@ const clearable = (element) => {
 const toggleAddRemoveClass = condition => (condition ? 'addClass' : 'removeClass');
 
 module.exports = {
-    showLoadingImage: showLoadingImage,
-    getHighestZIndex: getHighestZIndex,
-    downloadCSV     : downloadCSV,
-    template        : template,
-    isEmptyObject   : isEmptyObject,
-    getPropertyValue: getPropertyValue,
-    handleHash      : handleHash,
-    clearable       : clearable,
+    showLoadingImage,
+    getHighestZIndex,
+    downloadCSV,
+    template,
+    isEmptyObject,
+    getPropertyValue,
+    handleHash,
+    clearable,
 };

@@ -110,10 +110,10 @@ const Table = (() => {
     };
 
     return {
-        createFlexTable   : createFlexTable,
-        createFlexTableRow: createFlexTableRow,
-        clearTableBody    : clearTableBody,
-        appendTableBody   : appendTableBody,
+        createFlexTable,
+        createFlexTableRow,
+        clearTableBody,
+        appendTableBody,
     };
 })();
 

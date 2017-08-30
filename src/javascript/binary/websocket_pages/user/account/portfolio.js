@@ -44,14 +44,14 @@ const Portfolio = (() => {
     };
 
     return {
-        getBalance             : getBalance,
-        getPortfolioData       : getPortfolioData,
-        getProposalOpenContract: getProposalOpenContract,
-        getIndicativeSum       : values => getSum(values, 'indicative'),
-        getSumPurchase         : values => getSum(values, 'buy_price'),
+        getBalance,
+        getPortfolioData,
+        getProposalOpenContract,
+        getIndicativeSum: values => getSum(values, 'indicative'),
+        getSumPurchase  : values => getSum(values, 'buy_price'),
     };
 })();
 
 module.exports = {
-    Portfolio: Portfolio,
+    Portfolio,
 };

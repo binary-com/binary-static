@@ -105,10 +105,10 @@ const WebtraderChart = (() => {
     };
 
     return {
-        showChart   : showChart,
-        cleanupChart: cleanupChart,
-        setChart    : setChart,
-        redrawChart : redrawChart,
+        showChart,
+        cleanupChart,
+        setChart,
+        redrawChart,
     };
 })();
 

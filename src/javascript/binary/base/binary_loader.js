@@ -112,7 +112,7 @@ const BinaryLoader = (() => {
     };
 
     return {
-        init: init,
+        init,
     };
 })();
 

@@ -150,7 +150,7 @@ const VirtualAccOpening = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

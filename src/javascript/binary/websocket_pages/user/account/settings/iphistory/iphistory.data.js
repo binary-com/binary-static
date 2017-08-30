@@ -37,12 +37,12 @@ const IPHistoryData = (() => {
             action : activity.action,
             success: activity.status === 1,
             browser: parseUA(user_agent),
-            ip_addr: ip_addr,
+            ip_addr,
         };
     };
 
     return {
-        parse         : parse,
+        parse,
         parseUserAgent: parseUA,
     };
 })();

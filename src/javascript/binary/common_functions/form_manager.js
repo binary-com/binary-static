@@ -135,8 +135,8 @@ const FormManager = (() => {
     };
 
     return {
-        init        : initForm,
-        handleSubmit: handleSubmit,
+        handleSubmit,
+        init: initForm,
     };
 })();
 

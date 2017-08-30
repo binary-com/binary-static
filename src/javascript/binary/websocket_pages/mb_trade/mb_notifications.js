@@ -58,10 +58,10 @@ const MBNotifications = (() => {
     };
 
     return {
+        hideSpinnerShowTrading,
+
         show: showErrorMessage,
         hide: hideErrorMessage,
-
-        hideSpinnerShowTrading: hideSpinnerShowTrading,
     };
 })();
 

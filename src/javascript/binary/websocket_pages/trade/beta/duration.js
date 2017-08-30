@@ -411,12 +411,12 @@ const Durations_Beta = (() => {
     };
 
     return {
-        display                  : displayDurations,
-        displayEndTime           : displayEndTime,
-        populate                 : durationPopulate,
-        selectEndDate            : selectEndDate,
-        validateMinDurationAmount: validateMinDurationAmount,
-        onStartDateChange        : onStartDateChange,
+        display : displayDurations,
+        displayEndTime,
+        populate: durationPopulate,
+        selectEndDate,
+        validateMinDurationAmount,
+        onStartDateChange,
 
         setTime     : (time) => { $('#expiry_time').val(time); Defaults.set('expiry_time', time); },
         selectAmount: (a) => { selected_duration.amount = a; },

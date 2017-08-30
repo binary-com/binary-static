@@ -174,14 +174,15 @@ const ViewPopupUI = (() => {
     };
 
     return {
-        cleanup               : cleanup,
-        forgetStreams         : forgetStreams,
-        disableButton         : disableButton,
-        enableButton          : enableButton,
-        showInpagePopup       : showInpagePopup,
-        repositionConfirmation: repositionConfirmation,
-        storeSubscriptionID   : storeSubscriptionID,
-        setStreamFunction     : (streamFnc) => { getPageTickStream = streamFnc; },
+        cleanup,
+        forgetStreams,
+        disableButton,
+        enableButton,
+        showInpagePopup,
+        repositionConfirmation,
+        storeSubscriptionID,
+
+        setStreamFunction: (streamFnc) => { getPageTickStream = streamFnc; },
     };
 })();
 

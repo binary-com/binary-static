@@ -119,5 +119,5 @@ const StartDates = (() => {
 })();
 
 module.exports = {
-    StartDates: StartDates,
+    StartDates,
 };

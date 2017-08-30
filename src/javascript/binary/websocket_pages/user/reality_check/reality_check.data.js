@@ -31,9 +31,8 @@ const RealityCheckData = (() => {
         const turnover = +(data.buy_amount) + (+(data.sell_amount));
         const profit_loss = +(data.sell_amount) - (+(data.buy_amount));
 
-        const start_time_string = localize('Your trading statistics since [_1].', [`${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`]);
         return {
-            start_time_string: start_time_string,
+            start_time_string: localize('Your trading statistics since [_1].', [`${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`]),
             login_time       : `${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`,
             current_time     : `${current_time.format('YYYY-MM-DD HH:mm:ss')} GMT`,
             session_duration : duration_string,
@@ -72,11 +71,12 @@ const RealityCheckData = (() => {
     };
 
     return {
-        resetInvalid: resetInvalid,
-        summaryData : summaryData,
-        set         : set,
-        get         : get,
-        clear       : clear_storage_values,
+        resetInvalid,
+        summaryData,
+        set,
+        get,
+
+        clear: clear_storage_values,
     };
 })();
 

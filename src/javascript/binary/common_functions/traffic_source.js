@@ -78,10 +78,10 @@ const TrafficSource = (() => {
     };
 
     return {
-        getData  : getData,
-        setData  : setData,
-        clearData: clearData,
-        getSource: getSource,
+        getData,
+        setData,
+        clearData,
+        getSource,
     };
 })();
 

@@ -31,7 +31,7 @@ const Validation = (() => {
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
         if ($form.length) {
-            forms[form_selector] = { $form: $form };
+            forms[form_selector] = { $form };
             if (Array.isArray(fields) && fields.length) {
                 forms[form_selector].fields = fields;
                 const $btn_submit = $form.find('button[type="submit"]');
@@ -245,8 +245,8 @@ const Validation = (() => {
     };
 
     return {
-        init    : initForm,
-        validate: validate,
+        validate,
+        init: initForm,
     };
 })();
 

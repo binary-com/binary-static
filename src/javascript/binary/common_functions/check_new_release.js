@@ -25,6 +25,6 @@ const check_new_release = () => {
 };
 
 module.exports = {
-    shouldForceReload: shouldForceReload,
-    check_new_release: check_new_release,
+    shouldForceReload,
+    check_new_release,
 };

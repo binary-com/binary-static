@@ -211,10 +211,10 @@ const MetaTraderConfig = (() => {
     };
 
     return {
-        types_info  : types_info,
-        actions_info: actions_info,
-        fields      : fields,
-        validations : validations,
+        types_info,
+        actions_info,
+        fields,
+        validations,
     };
 })();
 

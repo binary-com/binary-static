@@ -59,7 +59,7 @@ const SessionDurationLimit = (() => {
     };
 
     return {
-        exclusionResponseHandler: exclusionResponseHandler,
+        exclusionResponseHandler,
     };
 })();
 

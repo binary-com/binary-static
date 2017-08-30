@@ -44,7 +44,7 @@ const Home = (() => {
 
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

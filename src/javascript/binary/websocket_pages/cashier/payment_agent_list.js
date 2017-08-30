@@ -133,7 +133,7 @@ const PaymentAgentList = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

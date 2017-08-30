@@ -27,8 +27,8 @@ const IPHistoryInit = (() => {
     };
 
     return {
-        init : init,
-        clean: clean,
+        init,
+        clean,
     };
 })();
 

@@ -39,9 +39,9 @@ const JapanPortfolio = (() => {
     const isTradePage = () => State.get('is_mb_trading');
 
     return {
-        init: init,
-        show: show,
-        hide: hide,
+        init,
+        show,
+        hide,
     };
 })();
 

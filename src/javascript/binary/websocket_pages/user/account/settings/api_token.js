@@ -163,7 +163,7 @@ const APIToken = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

@@ -126,9 +126,8 @@ const ProfitTableInit = (() => {
     };
 
     return {
-        profitTableHandler: profitTableHandler,
-        onLoad            : onLoad,
-        onUnload          : onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

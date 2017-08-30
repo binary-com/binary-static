@@ -24,6 +24,6 @@ const updateContractBalance = (balance) => {
 };
 
 module.exports = {
-    updatePurchaseStatus : updatePurchaseStatus,
-    updateContractBalance: updateContractBalance,
+    updatePurchaseStatus,
+    updateContractBalance,
 };

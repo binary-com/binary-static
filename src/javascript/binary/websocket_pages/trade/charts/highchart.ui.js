@@ -164,15 +164,15 @@ const HighchartUI = (() => {
     };
 
     return {
-        setLabels               : setLabels,
-        getLabels               : getLabels,
-        setChartOptions         : setChartOptions,
-        getChartOptions         : () => chart_options,
-        getHighchartOptions     : getHighchartOptions,
-        replaceExitLabelWithSell: replaceExitLabelWithSell,
-        getPlotlineOptions      : getPlotlineOptions,
-        showError               : showError,
-        getMarkerObject         : getMarkerObject,
+        setLabels,
+        getLabels,
+        setChartOptions,
+        getChartOptions: () => chart_options,
+        getHighchartOptions,
+        replaceExitLabelWithSell,
+        getPlotlineOptions,
+        showError,
+        getMarkerObject,
     };
 })();
 

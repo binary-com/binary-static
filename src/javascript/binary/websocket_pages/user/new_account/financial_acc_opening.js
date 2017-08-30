@@ -1,11 +1,11 @@
-const moment             = require('moment');
-const BinarySocket       = require('../../socket');
-const BinaryPjax         = require('../../../base/binary_pjax');
-const Client             = require('../../../base/client');
-const isEmptyObject      = require('../../../base/utility').isEmptyObject;
-const AccountOpening     = require('../../../common_functions/account_opening');
-const FormManager        = require('../../../common_functions/form_manager');
-const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
+const moment         = require('moment');
+const BinarySocket   = require('../../socket');
+const BinaryPjax     = require('../../../base/binary_pjax');
+const Client         = require('../../../base/client');
+const isEmptyObject  = require('../../../base/utility').isEmptyObject;
+const AccountOpening = require('../../../common_functions/account_opening');
+const FormManager    = require('../../../common_functions/form_manager');
+const toISOFormat    = require('../../../common_functions/string_util').toISOFormat;
 
 const FinancialAccOpening = (() => {
     const form_id = '#financial-form';
@@ -84,7 +84,7 @@ const FinancialAccOpening = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

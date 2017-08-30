@@ -402,8 +402,8 @@ const ViewPopup = (() => {
         if (contract_id) {
             ViewPopupUI.forgetStreams();
             const req = {
+                contract_id,
                 proposal_open_contract: 1,
-                contract_id           : contract_id,
                 subscribe             : 1,
             };
             if (option === 'no-subscribe') delete req.subscribe;
@@ -462,8 +462,8 @@ const ViewPopup = (() => {
     };
 
     return {
-        init             : init,
-        viewButtonOnClick: viewButtonOnClick,
+        init,
+        viewButtonOnClick,
     };
 })();
 

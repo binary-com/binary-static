@@ -367,11 +367,11 @@ const MBProcess = (() => {
     };
 
     return {
-        getSymbols         : getSymbols,
-        getContracts       : getContracts,
-        processPriceRequest: processPriceRequest,
-        processForgetTicks : processForgetTicks,
-        onUnload           : onUnload,
+        getSymbols,
+        getContracts,
+        processPriceRequest,
+        processForgetTicks,
+        onUnload,
     };
 })();
 

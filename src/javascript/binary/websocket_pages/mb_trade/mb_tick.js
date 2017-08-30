@@ -87,9 +87,9 @@ const MBTick = (() => {
     };
 
     return {
-        details     : details,
-        display     : display,
-        request     : request,
+        details,
+        display,
+        request,
         quote       : ()  => quote,
         errorMessage: ()  => error_message,
         setQuote    : (q) => { quote = q; },
@@ -101,8 +101,8 @@ const MBTick = (() => {
                 $spot.removeClass('up down').text('');
             });
         },
-        displayPriceMovement: displayPriceMovement,
-        processTickStream   : processTickStream,
+        displayPriceMovement,
+        processTickStream,
     };
 })();
 

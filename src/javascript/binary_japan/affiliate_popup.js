@@ -29,7 +29,7 @@ const AffiliatePopup = (() => {
     };
 
     return {
-        show: show,
+        show,
     };
 })();
 

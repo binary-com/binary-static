@@ -84,10 +84,10 @@ const TradePage = (() => {
     };
 
     return {
-        onLoad      : onLoad,
-        reload      : reload,
-        onUnload    : onUnload,
-        onDisconnect: onDisconnect,
+        onLoad,
+        reload,
+        onUnload,
+        onDisconnect,
     };
 })();
 

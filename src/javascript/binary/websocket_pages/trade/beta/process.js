@@ -262,14 +262,14 @@ const Process_Beta = (() => {
     };
 
     return {
-        processActiveSymbols_Beta: processActiveSymbols_Beta,
-        processMarket_Beta       : processMarket_Beta,
-        processContract_Beta     : processContract_Beta,
-        processContractForm_Beta : processContractForm_Beta,
-        forgetTradingStreams_Beta: forgetTradingStreams_Beta,
-        processForgetTicks_Beta  : processForgetTicks_Beta,
-        onExpiryTypeChange       : onExpiryTypeChange,
-        onDurationUnitChange     : onDurationUnitChange,
+        processActiveSymbols_Beta,
+        processMarket_Beta,
+        processContract_Beta,
+        processContractForm_Beta,
+        forgetTradingStreams_Beta,
+        processForgetTicks_Beta,
+        onExpiryTypeChange,
+        onDurationUnitChange,
     };
 })();
 

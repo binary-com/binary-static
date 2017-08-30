@@ -31,9 +31,10 @@ const GetCurrency = (() => {
         const other_currencies = getCurrenciesOfOtherAccounts();
 
         return {
-            cryptocurrencies: cryptocurrencies,
-            other_currencies: other_currencies,
-            has_fiat        : other_currencies.some(currency => fiat_currencies.indexOf(currency) > -1),
+            cryptocurrencies,
+            other_currencies,
+
+            has_fiat: other_currencies.some(currency => fiat_currencies.indexOf(currency) > -1),
         };
     };
 
@@ -66,7 +67,7 @@ const GetCurrency = (() => {
     };
 
     return {
-        getCurrencies: getCurrencies,
+        getCurrencies,
     };
 })();
 

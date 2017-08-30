@@ -1,8 +1,8 @@
-const Table              = require('../../../../../common_functions/attach_dom/table');
-const localize           = require('../../../../../base/localize').localize;
-const Client             = require('../../../../../base/client');
-const elementInnerHtml   = require('../../../../../common_functions/common_functions').elementInnerHtml;
-const formatMoney        = require('../../../../../common_functions/currency').formatMoney;
+const Table            = require('../../../../../common_functions/attach_dom/table');
+const localize         = require('../../../../../base/localize').localize;
+const Client           = require('../../../../../base/client');
+const elementInnerHtml = require('../../../../../common_functions/common_functions').elementInnerHtml;
+const formatMoney      = require('../../../../../common_functions/currency').formatMoney;
 
 const LimitsUI = (() => {
     let client_limits = '';
@@ -58,8 +58,8 @@ const LimitsUI = (() => {
     };
 
     return {
-        clearTableContent: clearTableContent,
-        fillLimitsTable  : fillLimitsTable,
+        clearTableContent,
+        fillLimitsTable,
     };
 })();
 

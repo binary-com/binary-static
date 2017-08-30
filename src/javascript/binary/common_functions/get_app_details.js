@@ -24,8 +24,8 @@ const showTooltip = (app_id, oauth_app_id) => (
 );
 
 module.exports = {
-    buildOauthApps: buildOauthApps,
-    addTooltip    : addTooltip,
-    addAppIdName  : addAppIdName,
-    showTooltip   : showTooltip,
+    buildOauthApps,
+    addTooltip,
+    addAppIdName,
+    showTooltip,
 };

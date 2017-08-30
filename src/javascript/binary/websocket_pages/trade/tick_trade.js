@@ -68,7 +68,7 @@ const TickDisplay = (() => {
             initializeChart({
                 plot_from: data.previous_tick_epoch * 1000,
                 plot_to  : new Date(end_time * 1000).getTime(),
-                minimize : minimize,
+                minimize,
                 width    : data.width ? data.width : undefined,
             }, options);
         });
@@ -121,7 +121,7 @@ const TickDisplay = (() => {
             },
             credits: { enabled: false },
             tooltip: {
-                formatter: function() {
+                formatter() {
                     const new_y = this.y.toFixed(display_decimals);
                     const mom = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
                     return `${mom}<br/>${display_symbol} ${new_y}`;
@@ -409,9 +409,9 @@ const TickDisplay = (() => {
     };
 
     return {
-        init       : initialize,
-        updateChart: updateChart,
-        resetSpots : () => { spots_list = {}; },
+        init      : initialize,
+        updateChart,
+        resetSpots: () => { spots_list = {}; },
     };
 })();
 
