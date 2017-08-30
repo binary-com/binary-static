@@ -23,7 +23,7 @@
                         <div class="files">
                             [% FOREACH document IN accepted_documents %]
                                 <h3>[% document %]</h3>
-                                <div class="fields" data-type="[% document %]">
+                                <div class="fields">
                                     [% IF type == 'poi' %]
                                         <div class="gr-row form-row center-text-m">
                                             <div class="gr-4 gr-12-m">
@@ -43,11 +43,11 @@
                                         </div>
                                         <div class="gr-row form-row center-text-m">
                                             <div class="gr-6 gr-12-m">
-                                                <input id="front_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf">
+                                                <input id="front_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document %]">
                                                 <label for="front_file[% loop.count %]" class="button">Front <img class="add" /></button>
                                             </div>
                                             <div class="gr-6 gr-12-m">
-                                                <input id="back_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf">
+                                                <input id="back_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document %]">
                                                 <label for="back_file[% loop.count %]" class="button">Back <img class="add" /></button>
                                             </div>
                                         </div>
@@ -55,7 +55,7 @@
                                     [% IF type == 'poa' %]
                                         <div class="gr-row form-row gr-centered">
                                             <div class="gr-12">
-                                                <input id="add_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf">
+                                                <input id="add_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document %]">
                                                 <label for="add_file[% loop.count %]" class="button">Add <img class="add" /></button>
                                             </div>
                                         </div>

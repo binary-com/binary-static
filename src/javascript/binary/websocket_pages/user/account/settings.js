@@ -18,8 +18,8 @@ const Settings = (() => {
                 $('#change_password').removeClass(class_hidden);
             }
 
-            if(!response.get_account_status.prompt_client_to_authenticate) {
-                $("#authenticate").addClass(class_hidden);
+            if (!response.get_account_status.prompt_client_to_authenticate) {
+                $('#authenticate').addClass(class_hidden);
             }
 
             $('#settings_container').removeClass(class_hidden);
