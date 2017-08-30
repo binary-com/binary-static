@@ -15,10 +15,10 @@ const AccountTransfer = (() => {
                 .setVisibility(1);
             return;
         }
-        accounts = response_transfer.accounts;
+        accounts             = response_transfer.accounts;
         const client_loginid = Client.get('loginid');
-        const $form = $(form_id);
-        $transfer = $form.find('#transfer');
+        const $form          = $(form_id);
+        $transfer            = $form.find('#transfer');
         let text,
             from_loginid,
             to_loginid,
@@ -27,8 +27,8 @@ const AccountTransfer = (() => {
         accounts.forEach((account, idx) => {
             if (+account.balance) {
                 from_loginid = accounts[idx].loginid;
-                to_loginid = accounts[1 - idx].loginid;
-                text = localize('from [_1] to [_2]', [from_loginid, to_loginid]);
+                to_loginid   = accounts[1 - idx].loginid;
+                text         = localize('from [_1] to [_2]', [from_loginid, to_loginid]);
                 if (client_loginid === from_loginid) {
                     max_balance = Math.min(+accounts[idx].balance, +response_limits.get_limits.remainder);
                 } else {
@@ -59,7 +59,7 @@ const AccountTransfer = (() => {
 
     const showForm = ($form) => {
         const $currency = $form.find('#currency');
-        $transfer.on('change', function() {
+        $transfer.on('change', function () {
             updateCurrency($currency, $(this));
             bindValidation();
         });

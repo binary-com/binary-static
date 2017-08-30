@@ -76,12 +76,12 @@ const Highchart = (() => {
             // we need to add the marker as we are pushing the data points
             // since for large arrays, data doesn't get pushed to series[0].data
             // and we can't update markers if data is empty
-            const f_time = parseInt(time);
-            const is_match_entry = f_time === entry_tick_time;
-            const is_match_exit = f_time === exit_tick_time;
-            const tick_type = is_match_entry ? 'entry' : 'exit';
+            const int_time         = parseInt(time);
+            const is_match_entry = int_time === entry_tick_time;
+            const is_match_exit  = int_time === exit_tick_time;
+            const tick_type      = is_match_entry ? 'entry' : 'exit';
             data.push({
-                x     : f_time * 1000,
+                x     : int_time * 1000,
                 y     : price * 1,
                 marker: is_match_entry || is_match_exit ? HighchartUI.getMarkerObject(tick_type) : '',
             });
@@ -90,9 +90,9 @@ const Highchart = (() => {
         let history = '';
         let candles = '';
         if (init_options.history) { // indicates line chart
-            type = 'line';
-            history = init_options.history;
-            const times = history.times;
+            type         = 'line';
+            history      = init_options.history;
+            const times  = history.times;
             const prices = history.prices;
             if (is_chart_delayed) {
                 for (i = 0; i < times.length; ++i) {
@@ -111,8 +111,8 @@ const Highchart = (() => {
             }
         } else if (init_options.candles) { // indicates candle chart
             candles = init_options.candles;
-            type = 'candlestick';
-            data = candles.map(c => [c.epoch * 1000, c.open * 1, c.high * 1, c.low * 1, c.close * 1]);
+            type    = 'candlestick';
+            data    = candles.map(c => [c.epoch * 1000, c.open * 1, c.high * 1, c.low * 1, c.close * 1]);
         }
 
         // element where chart is to be displayed
@@ -125,12 +125,12 @@ const Highchart = (() => {
         const JPClient = jpClient();
         HighchartUI.setLabels(is_chart_delayed);
         HighchartUI.setChartOptions({
-            height    : el.parentElement.offsetHeight,
-            title     : localize(init_options.title),
             JPClient,
-            decimals  : history ? history.prices[0] : candles[0].open,
             type,
             data,
+            height    : el.parentElement.offsetHeight,
+            title     : localize(init_options.title),
+            decimals  : history ? history.prices[0] : candles[0].open,
             entry_time: entry_tick_time ? entry_tick_time * 1000 : start_time * 1000,
             exit_time : exit_time ? exit_time * 1000 : null,
             user_sold : userSold(),
@@ -139,8 +139,8 @@ const Highchart = (() => {
             Highcharts.setOptions(HighchartUI.getHighchartOptions(JPClient));
             if (!el) chart = null;
             else {
-                chart = Highcharts.StockChart(el, HighchartUI.getChartOptions());
-                is_initialized  = true;
+                chart          = Highcharts.StockChart(el, HighchartUI.getChartOptions());
+                is_initialized = true;
             }
         });
     };
@@ -158,13 +158,13 @@ const Highchart = (() => {
         const type  = response.msg_type;
         const error = response.error;
         if (/history|candles|tick|ohlc/.test(type) && !error) {
-            options = { title: contract.display_name };
+            options       = { title: contract.display_name };
             options[type] = response[type];
             const history = response.history;
             const candles = response.candles;
             const tick    = response.tick;
             const ohlc    = response.ohlc;
-            response_id = response[type].id;
+            response_id   = response[type].id;
             // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
             if (response_id && !is_response_id_set) {
                 if (State.get('is_trading') || State.get('is_mb_trading') || State.get('is_beta_trading')) {
@@ -256,8 +256,9 @@ const Highchart = (() => {
 
     const requestData = (update) => {
         const calculate_granularity = calculateGranularity();
-        const granularity = calculate_granularity[0];
-        const duration    = calculate_granularity[1];
+        const granularity           = calculate_granularity[0];
+        const duration              = calculate_granularity[1];
+
         margin = granularity === 0 ? Math.max(300, (30 * duration) / (60 * 60) || 0) : 3 * granularity;
 
         request = {
@@ -287,7 +288,7 @@ const Highchart = (() => {
         }
 
         const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : State.get(['response', 'contracts_for']);
-        const stored_delay = sessionStorage.getItem(`license.${underlying}`);
+        const stored_delay       = sessionStorage.getItem(`license.${underlying}`);
 
         if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
             delayedChart(contracts_response);
@@ -354,7 +355,7 @@ const Highchart = (() => {
 
     const drawBarrier = () => {
         if (chart.yAxis[0].plotLinesAndBands.length === 0) {
-            const barrier = contract.barrier;
+            const barrier      = contract.barrier;
             const high_barrier = contract.high_barrier;
             const low_barrier  = contract.low_barrier;
             if (barrier) {
@@ -440,7 +441,7 @@ const Highchart = (() => {
         );
         let i,
             current_candle;
-        const candles_length = candles.length;
+        const candles_length     = candles.length;
         for (i = 1; i < candles_length; i++) {
             current_candle = candles[i];
             if (candle_before_time(entry_tick_time) || candle_before_time(purchase_time)) {
@@ -453,14 +454,14 @@ const Highchart = (() => {
 
     // calculate where to display the maximum value of the x-axis of the chart for candle
     const getMaxCandle = (candles) => {
-        const end = sell_spot_time && sell_time < end_time ? sell_spot_time : end_time;
+        const end           = sell_spot_time && sell_time < end_time ? sell_spot_time : end_time;
         const candle_length = candles.length;
         let current_candle,
             next_candle;
         if (is_settleable || is_sold) {
             for (let i = candle_length - 2; i >= 0; i--) {
                 current_candle = candles[i];
-                next_candle = candles[i + 1];
+                next_candle    = candles[i + 1];
                 if (!current_candle) return;
                 if (parseInt(next_candle.epoch) < end) {
                     max_point = end_time;
@@ -525,9 +526,9 @@ const Highchart = (() => {
     const setStopStreaming = () => {
         if (chart && (is_sold || is_settleable) &&
             chart.series && chart.series[0].options.data.length > 0) {
-            const data = chart.series[0].options.data;
+            const data    = chart.series[0].options.data;
             let last_data = data[data.length - 1];
-            let i = 2;
+            let i         = 2;
             while (last_data.y === null) {
                 last_data = data[data.length - i];
                 i++;
@@ -547,13 +548,13 @@ const Highchart = (() => {
         const duration = Math.min(exit_time, now_time) - (purchase_time || start_time);
         let granularity;
         // days * hours * minutes * seconds
-        if      (duration <=            60 * 60) granularity = 0;     // less than 1 hour
-        else if (duration <=        2 * 60 * 60) granularity = 120;   // 2 hours
-        else if (duration <=        6 * 60 * 60) granularity = 600;   // 6 hours
-        else if (duration <=       24 * 60 * 60) granularity = 900;   // 1 day
-        else if (duration <=   5 * 24 * 60 * 60) granularity = 3600;  // 5 days
-        else if (duration <=  30 * 24 * 60 * 60) granularity = 14400; // 30 days
-        else                                     granularity = 86400; // more than 30 days
+        if      (duration <=           60 * 60) granularity = 0;     // less than 1 hour
+        else if (duration <=       2 * 60 * 60) granularity = 120;   // 2 hours
+        else if (duration <=       6 * 60 * 60) granularity = 600;   // 6 hours
+        else if (duration <=      24 * 60 * 60) granularity = 900;   // 1 day
+        else if (duration <=  5 * 24 * 60 * 60) granularity = 3600;  // 5 days
+        else if (duration <= 30 * 24 * 60 * 60) granularity = 14400; // 30 days
+        else                                    granularity = 86400; // more than 30 days
 
         return [granularity, duration];
     };
@@ -561,12 +562,12 @@ const Highchart = (() => {
     // add new data points to the chart
     const updateChart = (update_options) => {
         const granularity = calculateGranularity()[0];
-        const series = chart.series[0];
+        const series      = chart.series[0];
         if (granularity === 0) {
             const data = update_options.tick;
             chart.series[0].addPoint({ x: data.epoch * 1000, y: data.quote * 1 });
         } else {
-            const c = update_options.ohlc;
+            const c    = update_options.ohlc;
             const last = series.data[series.data.length - 1];
             if (!c || !last) return;
             const ohlc = [c.open_time * 1000, c.open * 1, c.high * 1, c.low * 1, c.close * 1];
@@ -580,7 +581,7 @@ const Highchart = (() => {
     };
 
     const saveFeedLicense = (save_contract, license) => {
-        const regex = new RegExp(`license.${contract}`);
+        const regex     = new RegExp(`license.${contract}`);
         let match_found = false;
 
         for (let i = 0; i < sessionStorage.length; i++) {

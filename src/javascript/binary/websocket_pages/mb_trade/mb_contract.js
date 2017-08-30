@@ -22,18 +22,19 @@ const MBContract = (() => {
 
     const hidden_class = 'invisible';
 
+    const duration_map = {
+        m: 'minute',
+        h: 'h',
+        d: 'day',
+        W: 'week',
+        M: 'month',
+        Y: 'year',
+    };
+
     const durationText = (duration) => {
         let dur = duration;
         if (dur && jpClient()) {
             dur = dur.replace(/([a-z])/, '$1<br>');
-            const duration_map = {
-                m: 'minute',
-                h: 'h',
-                d: 'day',
-                W: 'week',
-                M: 'month',
-                Y: 'year',
-            };
             Object.keys(duration_map).forEach((key) => {
                 dur = dur.replace(key, localize(duration_map[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
             });
@@ -46,13 +47,13 @@ const MBContract = (() => {
             date_expiry,
             duration;
         if (typeof trading_period === 'object') {
-            date_start = trading_period.date_start.epoch;
+            date_start  = trading_period.date_start.epoch;
             date_expiry = trading_period.date_expiry.epoch;
-            duration = trading_period.duration;
+            duration    = trading_period.duration;
         } else {
-            date_start = trading_period.split('_')[0];
+            date_start  = trading_period.split('_')[0];
             date_expiry = trading_period.split('_')[1];
-            duration = trading_period.split('_')[2];
+            duration    = trading_period.split('_')[2];
         }
         duration = duration ? duration.replace('0d', '1d') : '';
 
@@ -80,7 +81,7 @@ const MBContract = (() => {
         const trading_period_array = [];
         const available_contracts  = contracts_for_response.contracts_for.available;
         const selected_option      = MBDefaults.get('category');
-        $period = $('#period');
+        $period                    = $('#period');
         if (!selected_option || !available_contracts) return;
         for (let i = 0; i < available_contracts.length; i++) {
             if (available_contracts[i].contract_category === selected_option) {
@@ -110,7 +111,7 @@ const MBContract = (() => {
             if (trading_period_array.indexOf(default_value) === -1) default_value = '';
             trading_period_array.forEach((period, idx) => {
                 const is_current = (!default_value && idx === 0) || period === default_value;
-                const $current = makeItem(period);
+                const $current   = makeItem(period);
                 $list.append($current);
                 if (is_current) {
                     setCurrentItem($period, period);
@@ -119,9 +120,9 @@ const MBContract = (() => {
             MBDefaults.set('period', $period.attr('value'));
             MBContract.displayRemainingTime(true);
         } else { // update options
-            let existing_array = [];
-            const missing_array  = [];
-            $list.find('> div').each(function() {
+            let existing_array  = [];
+            const missing_array = [];
+            $list.find('> div').each(function () {
                 existing_array.push($(this).val());
             });
 
@@ -158,12 +159,12 @@ const MBContract = (() => {
     const displayRemainingTime = (recalculate) => {
         if (typeof $durations === 'undefined' || recalculate) {
             // period_value = MBDefaults.get('period');
-            $period = $('#period');
+            $period    = $('#period');
             $durations = $period.find('.list > div, .current > div');
         }
         if (!$durations) return;
         $durations.each((idx) => {
-            $duration = $($durations[idx]);
+            $duration         = $($durations[idx]);
             $count_down_timer = $duration.find('.remaining-time');
 
             const time_left = parseInt($duration.attr('value').split('_')[1]) - window.time.unix();
@@ -173,8 +174,10 @@ const MBContract = (() => {
                 $count_down_timer.addClass('alert');
             }
             const remaining_month_day_string = [];
-            const remaining_time_string = [];
+            const remaining_time_string      = [];
+
             const duration = moment.duration(time_left * 1000);
+
             const all_durations = {
                 month : duration.months(),
                 day   : duration.days(),
@@ -182,6 +185,7 @@ const MBContract = (() => {
                 minute: duration.minutes(),
                 second: duration.seconds(),
             };
+
             Object.keys(all_durations).forEach((key) => {
                 if (/month|day/.test(key)) {
                     if (all_durations[key]) {
@@ -191,6 +195,7 @@ const MBContract = (() => {
                     remaining_time_string.push(padLeft(all_durations[key] || 0, 2, '0'));
                 }
             });
+
             $count_down_timer.text(`${remaining_month_day_string.join('')} ${remaining_time_string.join(':')}`);
         });
         current_time_left = parseInt($period.attr('value').split('_')[1]) - window.time.unix();
@@ -207,23 +212,26 @@ const MBContract = (() => {
     const sortByExpiryTime = (first, second) => {
         const a = first.split('_');
         const b = second.split('_');
+
         const duration1 = a[1] - a[0];
         const duration2 = b[1] - b[0];
+
         return a[1] === b[1] ? duration1 - duration2 : a[1] - b[1];
     };
+
+    const categories  = [
+        { value: 'callput',      type1: 'PUT',          type2: 'CALLE' },
+        { value: 'touchnotouch', type1: 'ONETOUCH',     type2: 'NOTOUCH' },
+        { value: 'endsinout',    type1: 'EXPIRYRANGEE', type2: 'EXPIRYMISS' },
+        { value: 'staysinout',   type1: 'RANGE',        type2: 'UPORDOWN' },
+    ];
 
     const populateOptions = (rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         const available_contracts = contracts_for_response.contracts_for.available;
-        const $category = $('#category');
-        const categories = [
-            { value: 'callput',      type1: 'PUT',          type2: 'CALLE'      },
-            { value: 'touchnotouch', type1: 'ONETOUCH',     type2: 'NOTOUCH'    },
-            { value: 'endsinout',    type1: 'EXPIRYRANGEE', type2: 'EXPIRYMISS' },
-            { value: 'staysinout',   type1: 'RANGE',        type2: 'UPORDOWN'   },
-        ];
 
-        const $list = $category.find('.list');
+        const $category = $('#category');
+        const $list     = $category.find('.list');
         if (rebuild) {
             $list.empty();
         }
@@ -256,8 +264,8 @@ const MBContract = (() => {
         const periods   = MBDefaults.get('period').split('_');
         contracts_for_response.contracts_for.available.forEach((c) => {
             if (c.contract_category === category && c.trading_period &&
-                    +c.trading_period.date_start.epoch  === +periods[0] &&
-                    +c.trading_period.date_expiry.epoch === +periods[1]) {
+                +c.trading_period.date_start.epoch === +periods[0] &&
+                +c.trading_period.date_expiry.epoch === +periods[1]) {
                 contracts.push(c);
             }
         });
@@ -348,7 +356,9 @@ const MBContract = (() => {
         getRemainingTime    : () => current_time_left,
         getContractsResponse: () => contracts_for_response,
         setContractsResponse: (contracts_for) => { contracts_for_response = contracts_for; },
-        onUnload            : () => { clearRemainingTimeout(); contracts_for_response = {}; $durations = undefined; },
+        onUnload            : () => {
+            clearRemainingTimeout(); contracts_for_response = {}; $durations = undefined;
+        },
     };
 })();
 

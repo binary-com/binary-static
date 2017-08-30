@@ -22,8 +22,8 @@ const MBDisplayCurrencies = () => {
     if (!$currency.length) return;
     $list.empty();
     if (!jp_client) {
-        const def_curr  = MBDefaults.get('currency');
-        def_value = def_curr && currencies.indexOf(def_curr) >= 0 ? def_curr : currencies[0];
+        const def_curr = MBDefaults.get('currency');
+        def_value      = def_curr && currencies.indexOf(def_curr) >= 0 ? def_curr : currencies[0];
         if (currencies.length > 1) {
             currencies.forEach((currency) => {
                 $list.append($('<div/>', { value: currency, html: formatCurrency(currency) }));
@@ -41,7 +41,7 @@ const MBDisplayCurrencies = () => {
     MBDefaults.set('currency', def_value);
     // if there is no currency drop down, remove hover style from currency
     if (!$list.children().length) {
-        $current.hover(function() {
+        $current.hover(function () {
             $(this).css({ 'background-color': '#f2f2f2', cursor: 'auto' });
         });
     }

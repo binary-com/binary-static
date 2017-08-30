@@ -16,9 +16,9 @@ const setJPClient = () => {
 };
 
 module.exports = {
-    api: new LiveApi({ websocket, appId: 1 }),
     expect,
     setURL,
     setJPClient,
     getApiToken: () => 'hhh9bfrbq0G3dRf',
+    api        : new LiveApi({ websocket, appId: 1 }),
 };

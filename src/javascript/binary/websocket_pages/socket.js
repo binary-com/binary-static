@@ -14,17 +14,18 @@ const getSocketURL     = require('../../config').getSocketURL;
 const BinarySocket = (() => {
     let binary_socket;
 
-    let config         = {};
-    let buffered_sends = [];
-    let req_number     = 0;
-    let req_id         = 0;
-    let wrong_app_id   = 0;
-    let is_available   = true;
+    let config               = {};
+    let buffered_sends       = [];
+    let req_number           = 0;
+    let req_id               = 0;
+    let wrong_app_id         = 0;
+    let is_available         = true;
     let is_disconnect_called = false;
 
     const socket_url = `${getSocketURL()}?app_id=${getAppId()}&l=${getLanguage()}`;
     const timeouts   = {};
     const promises   = {};
+
     const no_duplicate_requests = [
         'authorize',
         'get_settings',
@@ -33,15 +34,17 @@ const BinarySocket = (() => {
         'payout_currencies',
         'asset_index',
     ];
+
     const sent_requests = {
         items : [],
         clear : () => { sent_requests.items = []; },
-        has   : msg_type   => sent_requests.items.indexOf(msg_type) >= 0,
+        has   : msg_type => sent_requests.items.indexOf(msg_type) >= 0,
         add   : (msg_type) => { if (!sent_requests.has(msg_type)) sent_requests.items.push(msg_type); },
         remove: (msg_type) => {
             if (sent_requests.has(msg_type)) sent_requests.items.splice(sent_requests.items.indexOf(msg_type, 1));
         },
     };
+
     const waiting_list = {
         items: {},
         add  : (msg_type, promise_obj) => {
@@ -51,7 +54,7 @@ const BinarySocket = (() => {
             waiting_list.items[msg_type].push(promise_obj);
         },
         resolve: (response) => {
-            const msg_type = response.msg_type;
+            const msg_type      = response.msg_type;
             const this_promises = waiting_list.items[msg_type];
             if (this_promises && this_promises.length) {
                 this_promises.forEach((pr) => {
@@ -91,7 +94,7 @@ const BinarySocket = (() => {
 
     const wait = (...msg_types) => {
         const promise_obj = new PromiseClass();
-        let is_resolved = true;
+        let is_resolved   = true;
         msg_types.forEach((msg_type) => {
             const last_response = State.get(['response', msg_type]);
             if (!last_response) {
@@ -116,7 +119,7 @@ const BinarySocket = (() => {
      *      msg_type: {string}   specify the type of request call
      *      callback: {function} to call on response of streaming requests
      */
-    const send = function(data, options = {}) {
+    const send = function (data, options = {}) {
         const promise_obj = options.promise || new PromiseClass();
 
         if (!data || isEmptyObject(data)) return promise_obj.promise;
@@ -156,7 +159,7 @@ const BinarySocket = (() => {
             }
             if (+data.time === 1) {
                 data.passthrough.req_number = ++req_number;
-                timeouts[req_number] = setTimeout(binary_socket.onclose, 10 * 1000);
+                timeouts[req_number]        = setTimeout(binary_socket.onclose, 10 * 1000);
             }
 
             binary_socket.send(JSON.stringify(data));
@@ -178,7 +181,7 @@ const BinarySocket = (() => {
             return;
         }
         if (typeof options === 'object') {
-            config = options;
+            config         = options;
             buffered_sends = [];
         }
         clearTimeouts();
@@ -222,7 +225,7 @@ const BinarySocket = (() => {
                 }
                 // resolve the send promise
                 const this_req_id = response.req_id;
-                const pr = this_req_id ? promises[this_req_id] : null;
+                const pr          = this_req_id ? promises[this_req_id] : null;
                 if (pr && typeof pr.callback === 'function') {
                     pr.callback(response);
                     if (!pr.subscribe) {
@@ -297,8 +300,8 @@ const BinarySocket = (() => {
         send,
         clear,
         clearTimeouts,
-        sendBuffered      : sendBufferedRequests,
         availability,
+        sendBuffered      : sendBufferedRequests,
         setOnDisconnect   : (onDisconnect) => { config.onDisconnect = onDisconnect; },
         removeOnDisconnect: () => { delete config.onDisconnect; },
     };
@@ -307,7 +310,7 @@ const BinarySocket = (() => {
 class PromiseClass {
     constructor() {
         this.promise = new Promise((resolve, reject) => {
-            this.reject = reject;
+            this.reject  = reject;
             this.resolve = resolve;
         });
     }

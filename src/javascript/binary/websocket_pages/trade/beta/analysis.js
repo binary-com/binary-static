@@ -76,7 +76,7 @@ const TradingAnalysis_Beta = (() => {
                 break;
             case 'tab_last_digit': {
                 const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
-                const tick = $('#tick_count').val() || 100;
+                const tick       = $('#tick_count').val() || 100;
                 GetTicks.request('', {
                     ticks_history: underlying,
                     end          : 'latest',
@@ -103,13 +103,13 @@ const TradingAnalysis_Beta = (() => {
      * function to toggle the active element for analysis menu
      */
     const toggleActiveAnalysisTabs = () => {
-        const current_tab = getActiveTab();
+        const current_tab        = getActiveTab();
         const analysis_container = document.getElementById('analysis_content');
 
         if (analysis_container) {
-            const child_elements = analysis_container.children;
+            const child_elements      = analysis_container.children;
             const current_tab_element = document.getElementById(`${current_tab}-content`);
-            const classes = current_tab_element.classList;
+            const classes             = current_tab_element.classList;
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
                 child_elements[i].classList.remove('selectedTab');
@@ -166,7 +166,7 @@ const TradingAnalysis_Beta = (() => {
         };
 
         if (images[form_name]) {
-            const language = getLanguage().toLowerCase();
+            const language   = getLanguage().toLowerCase();
             const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(language === 'ja' ? `${language}/` : '')}`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
@@ -175,9 +175,9 @@ const TradingAnalysis_Beta = (() => {
     };
 
     return {
-        request: requestTradeAnalysis,
         getActiveTab,
         bindAnalysisTabEvent,
+        request: requestTradeAnalysis,
     };
 })();
 

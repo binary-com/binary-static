@@ -25,15 +25,15 @@ const LoggedInHandler = (() => {
         let set_default = true;
         if (redirect_url) {
             const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', 'home-jp', '404'];
-            const reg = new RegExp(do_not_redirect.join('|'), 'i');
+            const reg            = new RegExp(do_not_redirect.join('|'), 'i');
             if (!reg.test(redirect_url) && urlFor('') !== redirect_url) {
                 set_default = false;
             }
         }
         if (set_default) {
             const lang_cookie = urlLang(redirect_url) || Cookies.get('language');
-            const language = getLanguage();
-            redirect_url = defaultRedirectUrl();
+            const language    = getLanguage();
+            redirect_url      = defaultRedirectUrl();
             if (lang_cookie && lang_cookie !== language) {
                 redirect_url = redirect_url.replace(new RegExp(`/${language}/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
             }

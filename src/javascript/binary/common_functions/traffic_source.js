@@ -21,7 +21,7 @@ const TrafficSource = (() => {
             cookie = new CookieStorage('utm_data');
             cookie.read();
             // expiration date is used when writing cookie
-            const now = new Date();
+            const now      = new Date();
             cookie.expires = now.setMonth(now.getMonth() + 3);
         }
     };
@@ -45,8 +45,8 @@ const TrafficSource = (() => {
         }
 
         const current_values = getData();
-        const params = Url.paramsHash();
-        const param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
+        const params         = Url.paramsHash();
+        const param_keys     = ['utm_source', 'utm_medium', 'utm_campaign'];
 
         if (params.utm_source) { // url params can be stored only if utm_source is available
             param_keys.map((key) => {
@@ -61,8 +61,8 @@ const TrafficSource = (() => {
             LocalStore.set('gclid', params.gclid);
         }
 
-        const doc_ref  = document.referrer;
-        let referrer = localStorage.getItem('index_referrer') || doc_ref;
+        const doc_ref = document.referrer;
+        let referrer  = localStorage.getItem('index_referrer') || doc_ref;
         localStorage.removeItem('index_referrer');
         if (doc_ref && !(new RegExp(window.location.hostname, 'i')).test(doc_ref)) {
             referrer = doc_ref;

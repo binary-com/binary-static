@@ -38,7 +38,7 @@ const StatementInit = (() => {
 
         const jump_to_val = $('#jump-to').attr('data-value');
         if (jump_to_val && jump_to_val !== '') {
-            req.date_to = moment.utc(jump_to_val).unix() + ((jpClient() ? 15 : 24) * (60 * 60));
+            req.date_to   = moment.utc(jump_to_val).unix() + ((jpClient() ? 15 : 24) * (60 * 60));
             req.date_from = 0;
         }
         BinarySocket.send(req).then((response) => {
@@ -67,7 +67,7 @@ const StatementInit = (() => {
         pending = false;
 
         const statement = response.statement;
-        current_batch = statement.transactions;
+        current_batch   = statement.transactions;
         transactions_received += current_batch.length;
 
         if (current_batch.length < batch_size) {
@@ -88,10 +88,11 @@ const StatementInit = (() => {
             } else {
                 $('#util_row').setVisibility(1);
                 if (getLanguage() === 'JA' && jpResidence()) {
-                    $('#download_csv').setVisibility(1)
-                                      .find('a')
-                                      .unbind('click')
-                                      .click(() => { StatementUI.exportCSV(); });
+                    $('#download_csv')
+                        .setVisibility(1)
+                        .find('a')
+                        .unbind('click')
+                        .click(() => { StatementUI.exportCSV(); });
                 }
             }
         }
@@ -119,7 +120,7 @@ const StatementInit = (() => {
     };
 
     const onUnload = () => {
-        pending = false;
+        pending      = false;
         no_more_data = false;
 
         current_batch = [];
@@ -132,11 +133,11 @@ const StatementInit = (() => {
     };
 
     const initPage = () => {
-        batch_size = 200;
-        chunk_size = batch_size / 2;
-        no_more_data = false;
-        pending = false;            // serve as a lock to prevent ws request is sequential
-        current_batch = [];
+        batch_size            = 200;
+        chunk_size            = batch_size / 2;
+        no_more_data          = false;
+        pending               = false;            // serve as a lock to prevent ws request is sequential
+        current_batch         = [];
         transactions_received = 0;
         transactions_consumed = 0;
 
@@ -151,15 +152,15 @@ const StatementInit = (() => {
     const attachDatePicker = () => {
         const jump_to = '#jump-to';
         $(jump_to).attr('data-value', toISOFormat(moment()))
-             .change(function() {
-                 if (!dateValueChanged(this, 'date')) {
-                     return false;
-                 }
-                 $('.table-container').remove();
-                 StatementUI.clearTableContent();
-                 initPage();
-                 return true;
-             });
+            .change(function () {
+                if (!dateValueChanged(this, 'date')) {
+                    return false;
+                }
+                $('.table-container').remove();
+                StatementUI.clearTableContent();
+                initPage();
+                return true;
+            });
         DatePicker.init({
             selector: jump_to,
             maxDate : 0,

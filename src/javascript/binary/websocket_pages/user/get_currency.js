@@ -3,7 +3,7 @@ const Currency = require('../../common_functions/currency');
 
 const GetCurrency = (() => {
     const getCurrenciesOfOtherAccounts = () => {
-        const all_loginids = Client.getAllLoginids();
+        const all_loginids     = Client.getAllLoginids();
         const other_currencies = [];
         all_loginids.forEach((loginid) => {
             // if it's not current client or virtual client, consider the currency
@@ -18,8 +18,8 @@ const GetCurrency = (() => {
     };
 
     const getCurrencyValues = () => {
-        const currencies  = Currency.getCurrencies();
-        const fiat_currencies = [];
+        const currencies       = Currency.getCurrencies();
+        const fiat_currencies  = [];
         const cryptocurrencies = [];
         Object.keys(currencies).forEach((currency) => {
             if (currencies[currency].type === 'fiat') {
@@ -39,15 +39,15 @@ const GetCurrency = (() => {
     };
 
     const getCurrencies = (landing_company) => {
-        const client_currency  = Client.get('currency');
-        const is_crypto        = Currency.isCryptocurrency(client_currency);
-        const currency_values  = getCurrencyValues();
-        const currencies       = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
+        const client_currency = Client.get('currency');
+        const is_crypto       = Currency.isCryptocurrency(client_currency);
+        const currency_values = getCurrencyValues();
+        const currencies      = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
 
         const available_crypto =
-            currency_values.cryptocurrencies.filter(c =>
-                currency_values.other_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0);
-        const can_open_crypto = available_crypto.length;
+              currency_values.cryptocurrencies.filter(c =>
+                  currency_values.other_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0);
+        const can_open_crypto  = available_crypto.length;
 
         let currencies_to_show = [];
         // only allow client to open more sub accounts if the last currency is not to be reserved for master account

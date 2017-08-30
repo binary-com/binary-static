@@ -53,7 +53,7 @@ const TermsAndConditions = (() => {
             .find(content_to_show)
             .setVisibility(1);
 
-        const section = urlParam('section');
+        const section  = urlParam('section');
         const $content = $('#content');
         if (section) {
             const $section = $content.find(`a#${section}`);

@@ -55,7 +55,7 @@ const CashierPassword = (() => {
     };
 
     const handleResponse = (response) => {
-        const $form_error = $('#form_error');
+        const $form_error   = $('#form_error');
         const $form_message = $('#form_message');
         $form_message.text('');
         $form_error.setVisibility(0);

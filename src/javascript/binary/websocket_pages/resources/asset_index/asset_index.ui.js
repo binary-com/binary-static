@@ -22,7 +22,7 @@ const AssetIndexUI = (() => {
             return;
         }
 
-        $container = $('#asset-index');
+        $container  = $('#asset-index');
         asset_index = market_columns = undefined;
         if (!State.get('is_beta_trading')) active_symbols = undefined;
 
@@ -41,10 +41,10 @@ const AssetIndexUI = (() => {
         if (!active_symbols || !asset_index) return;
 
         $('#errorMsg').setVisibility(0);
-        asset_index = AssetIndex.getAssetIndexData(asset_index, active_symbols);
+        asset_index    = AssetIndex.getAssetIndexData(asset_index, active_symbols);
         market_columns = AssetIndex.getMarketColumns();
-        $tabs = $('<ul/>');
-        $contents = $('<div/>');
+        $tabs          = $('<ul/>');
+        $contents      = $('<div/>');
 
         for (let i = 0; i < asset_index.length; i++) {
             const asset_item  = asset_index[i];

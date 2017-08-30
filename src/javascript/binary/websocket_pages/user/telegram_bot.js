@@ -14,7 +14,7 @@ const TelegramBot = (() => {
             form_selector       : form,
             fnc_response_handler: () => {
                 const token = $('#token').val();
-                const url = `https://t.me/${bot_name}/?start=${token}`;
+                const url   = `https://t.me/${bot_name}/?start=${token}`;
                 window.location.assign(url);
             },
         });

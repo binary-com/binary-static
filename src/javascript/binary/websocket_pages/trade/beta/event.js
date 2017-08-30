@@ -1,25 +1,25 @@
-const moment                         = require('moment');
-const TradingAnalysis_Beta           = require('./analysis');
-const Barriers_Beta                  = require('./barriers');
-const Durations_Beta                 = require('./duration');
-const Price_Beta                     = require('./price');
-const Process_Beta                   = require('./process');
-const Purchase_Beta                  = require('./purchase');
-const setChart                       = require('../charts/webtrader_chart').setChart;
-const Defaults                       = require('../defaults');
-const GetTicks                       = require('../get_ticks');
-const Tick                           = require('../tick');
-const commonTrading                  = require('../common');
-const getStartDateNode               = require('../common_independent').getStartDateNode;
-const Notifications                  = require('../notifications');
-const BinarySocket                   = require('../../socket');
-const BinaryPjax                     = require('../../../base/binary_pjax');
-const GTM                            = require('../../../base/gtm');
-const dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
-const isVisible                      = require('../../../common_functions/common_functions').isVisible;
-const formatMoney                    = require('../../../common_functions/currency').formatMoney;
-const onlyNumericOnKeypress          = require('../../../common_functions/event_handler');
-const TimePicker                     = require('../../../components/time_picker');
+const moment                = require('moment');
+const TradingAnalysis_Beta  = require('./analysis');
+const Barriers_Beta         = require('./barriers');
+const Durations_Beta        = require('./duration');
+const Price_Beta            = require('./price');
+const Process_Beta          = require('./process');
+const Purchase_Beta         = require('./purchase');
+const setChart              = require('../charts/webtrader_chart').setChart;
+const Defaults              = require('../defaults');
+const GetTicks              = require('../get_ticks');
+const Tick                  = require('../tick');
+const commonTrading         = require('../common');
+const getStartDateNode      = require('../common_independent').getStartDateNode;
+const Notifications         = require('../notifications');
+const BinarySocket          = require('../../socket');
+const BinaryPjax            = require('../../../base/binary_pjax');
+const GTM                   = require('../../../base/gtm');
+const dateValueChanged      = require('../../../common_functions/common_functions').dateValueChanged;
+const isVisible             = require('../../../common_functions/common_functions').isVisible;
+const formatMoney           = require('../../../common_functions/currency').formatMoney;
+const onlyNumericOnKeypress = require('../../../common_functions/event_handler');
+const TimePicker            = require('../../../components/time_picker');
 
 /*
  * TradingEvents object contains all the event handler function for
@@ -129,7 +129,7 @@ const TradingEvents_Beta = (() => {
             commonTrading.submitForm(document.getElementById('websocket_form'));
         };
         const duration_amount_element = document.getElementById('duration_amount');
-        let input_event_triggered = false;          // For triggering one of the two events.
+        let input_event_triggered     = false;          // For triggering one of the two events.
         if (duration_amount_element) {
             duration_amount_element.addEventListener('keypress', onlyNumericOnKeypress);
             // jquery needed for datepicker
@@ -182,7 +182,7 @@ const TradingEvents_Beta = (() => {
         if (end_date_element) {
             // need to use jquery as datepicker is used, if we switch to some other
             // datepicker we can move back to javascript
-            $('#expiry_date').on('change input', function() {
+            $('#expiry_date').on('change input', function () {
                 if (!dateValueChanged(this, 'date')) {
                     return false;
                 }
@@ -204,7 +204,7 @@ const TradingEvents_Beta = (() => {
             $('#expiry_time')
                 .on('focus, click', attachTimePicker)
                 .on('keypress', (ev) => { onlyNumericOnKeypress(ev, [58]); })
-                .on('change input blur', function() {
+                .on('change input blur', function () {
                     if (!dateValueChanged(this, 'time')) {
                         return false;
                     }
@@ -271,7 +271,7 @@ const TradingEvents_Beta = (() => {
         if (submarket_element) {
             submarket_element.addEventListener('change', (e) => {
                 if (e.target) {
-                    const elem = document.getElementById('underlying');
+                    const elem        = document.getElementById('underlying');
                     const underlyings = elem.children;
 
                     for (let i = 0, len = underlyings.length; i < len; i++) {
@@ -301,15 +301,15 @@ const TradingEvents_Beta = (() => {
         /*
          * attach event to purchase buttons to buy the current contract
          */
-        $('.purchase_button').on('click dblclick', function() {
+        $('.purchase_button').on('click dblclick', function () {
             if (!isVisible(document.getElementById('confirmation_message_container'))) {
                 const id        = this.getAttribute('data-purchase-id');
                 const ask_price = this.getAttribute('data-ask-price');
 
                 const params = { buy: id, price: ask_price, passthrough: {} };
-                Object.keys(this.attributes).forEach(function(attr) {
+                Object.keys(this.attributes).forEach(function (attr) {
                     if (attr && this.attributes[attr] && this.attributes[attr].name &&
-                            !/data-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
+                        !/data-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
                         const m = this.attributes[attr].name.match(/data-(.+)/);
 
                         if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
@@ -335,7 +335,7 @@ const TradingEvents_Beta = (() => {
             if (e.target) {
                 e.preventDefault();
                 document.getElementById('contract_confirmation_container').style.display = 'none';
-                document.getElementById('contracts_list').style.display = 'flex';
+                document.getElementById('contracts_list').style.display                  = 'flex';
                 Price_Beta.processPriceRequest_Beta();
             }
         });
@@ -412,8 +412,8 @@ const TradingEvents_Beta = (() => {
     };
 
     const attachTimePicker = () => {
-        const date_start = document.getElementById('date_start').value;
-        const now = !date_start || date_start === 'now';
+        const date_start     = document.getElementById('date_start').value;
+        const now            = !date_start || date_start === 'now';
         const current_moment = now ? (window.time || moment.utc()) : parseInt(date_start) * 1000;
         TimePicker.init({
             selector: '#expiry_time',

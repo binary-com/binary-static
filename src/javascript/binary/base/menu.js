@@ -36,8 +36,8 @@ const Menu = (() => {
             .find('li.sub_item a')
             .removeClass('a-active');
 
-        const active = activeMainMenu();
-        const active_item = active.item;
+        const active         = activeMainMenu();
+        const active_item    = active.item;
         const active_subitem = active.subitem;
         if (active_subitem) {
             active_subitem.addClass('a-active');
@@ -60,7 +60,7 @@ const Menu = (() => {
                 if (active_item) active_item.addClass('hover');
             })
             .find('.item')
-            .on('mouseenter', function() {
+            .on('mouseenter', function () {
                 removeHover();
                 $(this).addClass('hover');
             });
@@ -69,7 +69,7 @@ const Menu = (() => {
     const activeMenuTop = () => {
         let active = '';
         const path = window.location.pathname;
-        $('#menu-top').find('li a').each(function() {
+        $('#menu-top').find('li a').each(function () {
             if (path.indexOf(this.pathname.replace(/\.html/i, '')) >= 0) {
                 active = $(this).closest('li');
             }
@@ -82,17 +82,18 @@ const Menu = (() => {
         if (/cashier/i.test(pathname) && !(/cashier_password|payment_methods/.test(pathname))) {
             pathname = $('#topMenuCashier').find('a').attr('href');
         }
-        let $item,
-            $subitem;
-        // Is something selected in main items list
-        $item = $main_menu.find(`a[href*="${pathname}"]`);
+        let $subitem;
+        let $item = $main_menu.find(`a[href*="${pathname}"]`);
+
         const $parent = $item.closest('li');
+        // Is something selected in main items list
         if ($parent.hasClass('sub_item')) {
             $subitem = $item;
-            $item = $subitem.closest('.item');
+            $item    = $subitem.closest('.item');
         } else {
             $item = $parent;
         }
+
         return { item: $item, subitem: $subitem };
     };
 

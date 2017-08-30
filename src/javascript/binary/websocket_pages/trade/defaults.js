@@ -14,7 +14,7 @@ const State         = require('../../base/storage').State;
  */
 
 const Defaults = (() => {
-    let params = {};
+    let params       = {};
     const getDefault = (key) => {
         const p_value = params[key] || Url.param(key);
         const s_value = sessionStorage.getItem(key);

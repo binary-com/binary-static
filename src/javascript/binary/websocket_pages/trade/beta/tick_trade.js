@@ -57,7 +57,7 @@ const TickDisplay_Beta = (() => {
         contract_sentiment   = data.contract_sentiment;
 
         if (data.show_contract_result) {
-            price = parseFloat(data.price);
+            price  = parseFloat(data.price);
             payout = parseFloat(data.payout);
         }
 
@@ -65,15 +65,15 @@ const TickDisplay_Beta = (() => {
 
         setXIndicators();
         initializeChart({
+            minimize,
             plot_from: data.previous_tick_epoch * 1000,
             plot_to  : new Date((parseInt(data.contract_start) +
                 parseInt((number_of_ticks + 2) * 5)) * 1000).getTime(),
-            minimize,
             width: data.width ? data.width : undefined,
         });
 
         // add tooltip events to highcharts
-        Highcharts.wrap(Highcharts.Tooltip.prototype, 'hide', function(proceed, ...args) {
+        Highcharts.wrap(Highcharts.Tooltip.prototype, 'hide', function (proceed, ...args) {
             const tooltip = this.chart.options.tooltip;
 
             // Run the original proceed method
@@ -84,7 +84,7 @@ const TickDisplay_Beta = (() => {
             }
         });
 
-        Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function(proceed, ...args) {
+        Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function (proceed, ...args) {
             const tooltip = this.chart.options.tooltip;
 
             // Run the original proceed method
@@ -147,7 +147,7 @@ const TickDisplay_Beta = (() => {
             tooltip: {
                 formatter() {
                     const new_y = this.y.toFixed(display_decimals);
-                    const mom = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
+                    const mom   = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
                     return `${mom}<br/>${display_symbol} ${new_y}`;
                 },
                 crosshairs: [true],
@@ -188,7 +188,7 @@ const TickDisplay_Beta = (() => {
             legend   : { enabled: false },
         };
         // Trading page's chart
-        const showValues = (tick, time, this_price) => {
+        const showValues    = (tick, time, this_price) => {
             $('#contract_purchase_profit_list').find('#chart-values')
                 .css('display', 'flex').end()
                 .find('#contract-values')
@@ -206,7 +206,7 @@ const TickDisplay_Beta = (() => {
                     style: { display: 'none' },
 
                     formatter() {
-                        const time = moment.utc(applicable_ticks[this.x].epoch * 1000).format('HH:mm:ss');
+                        const time       = moment.utc(applicable_ticks[this.x].epoch * 1000).format('HH:mm:ss');
                         const this_price = this.y;
                         showValues(+this.x + (is_start_on_first_tick ? 1 : 0), time, this_price);
                     },
@@ -301,7 +301,7 @@ const TickDisplay_Beta = (() => {
             });
 
             contract_barrier = barrier_tick.quote;
-            set_barrier = false;
+            set_barrier      = false;
         }
 
         if (barrier_type === 'asian') {
@@ -309,8 +309,8 @@ const TickDisplay_Beta = (() => {
             for (let i = 0; i < applicable_ticks.length; i++) {
                 total += parseFloat(applicable_ticks[i].quote);
             }
-            let calc_barrier =  total / applicable_ticks.length;
-            calc_barrier = calc_barrier.toFixed(parseInt(display_decimals) + 1); // round calculated barrier
+            // round calculated barrier
+            const calc_barrier = (total / applicable_ticks.length).toFixed(parseInt(display_decimals) + 1);
 
             chart.yAxis[0].removePlotLine('tick-barrier');
             chart.yAxis[0].addPlotLine({
@@ -349,7 +349,7 @@ const TickDisplay_Beta = (() => {
         }
 
         const exit_tick_index = applicable_ticks.length - 1;
-        const exit_spot = applicable_ticks[exit_tick_index].quote;
+        const exit_spot       = applicable_ticks[exit_tick_index].quote;
 
         if (contract_sentiment === 'up') {
             if (exit_spot > contract_barrier) {
@@ -377,8 +377,8 @@ const TickDisplay_Beta = (() => {
 
     const plot = () => {
         contract_start_moment = moment(contract_start_ms).utc();
-        counter = 0;
-        applicable_ticks = [];
+        counter               = 0;
+        applicable_ticks      = [];
     };
 
     const updateUI = (final_price, pnl, contract_status) => {
@@ -431,11 +431,11 @@ const TickDisplay_Beta = (() => {
                     show_contract_result: 0,
                 });
                 spots_list = {};
-                tick_init = 'initialized';
+                tick_init  = 'initialized';
             }
         }
         if (data.tick) {
-            spots2 = Tick.spots();
+            spots2  = Tick.spots();
             epoches = Object.keys(spots2).sort((a, b) => a - b);
         } else if (data.history) {
             epoches = data.history.times;
@@ -464,7 +464,7 @@ const TickDisplay_Beta = (() => {
                     chart.series[0].addPoint([counter, tick.quote], true, false);
                     applicable_ticks.push(tick);
                     spots_list[tick.epoch] = tick.quote;
-                    const indicator_key = `_${counter}`;
+                    const indicator_key    = `_${counter}`;
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
                         x_indicators[indicator_key].index = counter;
                         add(x_indicators[indicator_key]);
@@ -476,9 +476,9 @@ const TickDisplay_Beta = (() => {
             }
 
             if (is_trading_page) {
-                const is_up   = contract_sentiment === 'up';
-                const min     = chart.yAxis[0].getExtremes().min;
-                const max     = chart.yAxis[0].getExtremes().max;
+                const is_up = contract_sentiment === 'up';
+                const min   = chart.yAxis[0].getExtremes().min;
+                const max   = chart.yAxis[0].getExtremes().max;
                 chart.yAxis[0].removePlotBand('win-area');
                 chart.yAxis[0].addPlotBand({
                     id   : 'win-area',
@@ -530,8 +530,8 @@ const TickDisplay_Beta = (() => {
     };
 
     return {
-        init      : initialize,
         updateChart,
+        init      : initialize,
         resetSpots: () => { spots_list = {}; },
     };
 })();

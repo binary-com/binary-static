@@ -13,7 +13,7 @@ const JapanPortfolio = (() => {
         }
 
         const $container = $('#tab_portfolio-content');
-        $portfolio = $portfolio || $('#portfolio');
+        $portfolio       = $portfolio || $('#portfolio');
 
         if ($portfolio && (!$portfolio.parent().length || $portfolio.parent().get(0).id !== 'tab_portfolio-content')) {
             $portfolio.detach();
@@ -32,7 +32,7 @@ const JapanPortfolio = (() => {
         if (isTradePage() && is_portfolio_active) {
             PortfolioInit.onUnload();
             is_portfolio_active = false;
-            $portfolio = undefined;
+            $portfolio          = undefined;
         }
     };
 

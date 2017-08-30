@@ -81,7 +81,7 @@ const ViewPopupUI = (() => {
     };
 
     const disableButton = (button) => {
-        $('.open_contract_details[disabled]').each(function() {
+        $('.open_contract_details[disabled]').each(function () {
             enableButton($(this));
         });
         button.attr('disabled', 'disabled');
@@ -109,9 +109,7 @@ const ViewPopupUI = (() => {
         $(document.body).append($('<div/>', { class: 'popup_page_overlay' }));
         $('.popup_page_overlay').click(() => { container().find('a.close').click(); });
         con.draggable({
-            stop: () => {
-                repositionConfirmationOnDrag();
-            },
+            stop  : () => { repositionConfirmationOnDrag(); },
             handle: dragHandle,
             scroll: false,
         });
@@ -121,8 +119,8 @@ const ViewPopupUI = (() => {
     };
 
     const repositionConfirmationOnDrag = () => {
-        const con = container();
-        const offset = con.offset();
+        const con     = container();
+        const offset  = con.offset();
         const $window = $(window);
         // top
         if (offset.top < $window.scrollTop()) { con.offset({ top: $window.scrollTop() }); }
@@ -133,10 +131,10 @@ const ViewPopupUI = (() => {
     };
 
     const repositionConfirmation = (x, y) => {
-        const con = container();
+        const con     = container();
         const $window = $(window);
-        let x_min = 0;
-        let y_min = 500;
+        let x_min     = 0;
+        let y_min     = 500;
         if ($window.width() < 767) { // To be responsive, on mobiles and phablets we show popup as full screen.
             x_min = 0;
             y_min = 0;
@@ -145,7 +143,7 @@ const ViewPopupUI = (() => {
             new_y;
         if (x === undefined) {
             new_x = Math
-                .max(Math.floor(($window.width() - $window.scrollLeft() - con.width()) / 2), x_min)
+                    .max(Math.floor(($window.width() - $window.scrollLeft() - con.width()) / 2), x_min)
                 + $window.scrollLeft();
         }
         if (y === undefined) {

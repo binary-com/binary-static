@@ -19,7 +19,7 @@ const getPropertyValue = require('../../base/utility').getPropertyValue;
  */
 
 const MBTick = (() => {
-    let quote = '';
+    let quote         = '';
     let error_message = '';
 
     const details = (data) => {
@@ -90,19 +90,19 @@ const MBTick = (() => {
         details,
         display,
         request,
-        quote       : ()  => quote,
-        errorMessage: ()  => error_message,
+        displayPriceMovement,
+        processTickStream,
+        quote       : () => quote,
+        errorMessage: () => error_message,
         setQuote    : (q) => { quote = q; },
-        clean       : ()  => {
-            quote = '';
+        clean       : () => {
+            quote       = '';
             const $spot = $('#spot');
             $spot.fadeOut(200, () => {
                 // resets spot movement coloring, will continue on the next tick responses
                 $spot.removeClass('up down').text('');
             });
         },
-        displayPriceMovement,
-        processTickStream,
     };
 })();
 

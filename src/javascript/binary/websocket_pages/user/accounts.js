@@ -25,7 +25,7 @@ const Accounts = (() => {
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
-            const upgrade_info = Client.getUpgradeInfo(landing_company);
+            const upgrade_info  = Client.getUpgradeInfo(landing_company);
             if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
@@ -51,7 +51,7 @@ const Accounts = (() => {
 
     const populateNewAccounts = (upgrade_info) => {
         const new_account = upgrade_info;
-        const account = {
+        const account     = {
             real     : new_account.type === 'real',
             financial: new_account.type === 'financial',
         };
@@ -71,7 +71,7 @@ const Accounts = (() => {
             .sort((a, b) => a > b)
             .forEach((loginid) => {
                 const account_currency = Client.get('currency', loginid);
-                const company_name = Client.isAccountOfType('virtual', loginid) ? toTitleCase(getPropertyValue(landing_company, 'virtual_company')) : getCompanyName(loginid);
+                const company_name     = Client.isAccountOfType('virtual', loginid) ? toTitleCase(getPropertyValue(landing_company, 'virtual_company')) : getCompanyName(loginid);
 
                 $('#existing_accounts').find('tbody')
                     .append($('<tr/>', { id: loginid })
@@ -169,13 +169,13 @@ const Accounts = (() => {
 
     const populateReq = () => {
         const get_settings = State.getResponse('get_settings');
-        const dob = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
-        const req = {
+        const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
+        const req          = {
             new_account_real      : 1,
+            date_of_birth         : dob,
             salutation            : get_settings.salutation,
             first_name            : get_settings.first_name,
             last_name             : get_settings.last_name,
-            date_of_birth         : dob,
             address_line_1        : get_settings.address_line_1,
             address_line_2        : get_settings.address_line_2,
             address_city          : get_settings.address_city,

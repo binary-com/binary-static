@@ -37,7 +37,7 @@ const FinancialAccOpening = (() => {
                 value;
             Object.keys(get_settings).forEach((key) => {
                 $element = $(`#${key}`);
-                value = get_settings[key];
+                value    = get_settings[key];
                 if (key === 'date_of_birth') {
                     const moment_val = moment.utc(value * 1000);
                     value = moment_val.format('DD MMM, YYYY');

@@ -58,7 +58,7 @@ const TradePage_Beta = (() => {
     const adjustAnalysisColumnHeight = () => {
         let sum_height = 0;
         if (window.innerWidth > 767) {
-            $('.col-left').children().each(function() {
+            $('.col-left').children().each(function () {
                 if ($(this).is(':visible')) sum_height += $(this).outerHeight(true);
             });
         } else {
@@ -71,7 +71,7 @@ const TradePage_Beta = (() => {
         const see_more_class  = 'see-more';
         const more_tabs_class = 'more-tabs';
         const max_width       = $ul.outerWidth();
-        let total_width = 0;
+        let total_width       = 0;
 
         // add seeMore tab
         let $see_more = $ul.find(`li.${see_more_class}`);

@@ -5,7 +5,7 @@ const Platforms = (() => {
         sections = ['more-tools', 'trading-platforms'];
 
         const sidebar_list_item = $('.sidebar-nav li');
-        sidebar_list_item.click(function() {
+        sidebar_list_item.click(function () {
             sidebar_list_item.removeClass('selected');
             $(this).addClass('selected');
         });

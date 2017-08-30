@@ -21,8 +21,8 @@ const onlyNumericOnKeypress = require('../../common_functions/event_handler');
  *
  */
 const MBTradingEvents = (() => {
-    const initiate =  () => {
-        const $form = $('.trade_form');
+    const initiate = () => {
+        const $form        = $('.trade_form');
         const hidden_class = 'invisible';
 
         $(document).on('click', (e) => {
@@ -30,7 +30,7 @@ const MBTradingEvents = (() => {
             makeListsInvisible();
         });
 
-        $form.find('.current').on('click', function(e) {
+        $form.find('.current').on('click', function (e) {
             e.stopPropagation();
             const $list = $(this).siblings('.list');
             if ($list.hasClass(hidden_class)) {
@@ -44,7 +44,7 @@ const MBTradingEvents = (() => {
          */
         const $underlying = $form.find('#underlying');
         if ($underlying.length) {
-            $underlying.on('click', '.list > div', function() {
+            $underlying.on('click', '.list > div', function () {
                 const underlying = $(this).attr('value');
                 MBContract.setCurrentItem($underlying, underlying, 1);
                 MBDefaults.set('underlying', underlying);
@@ -63,7 +63,7 @@ const MBTradingEvents = (() => {
 
         const $category = $form.find('#category');
         if ($category.length) {
-            $category.on('click', '.list > div', function() {
+            $category.on('click', '.list > div', function () {
                 const category = $(this).attr('value');
                 MBContract.setCurrentItem($category, category);
                 MBDefaults.set('category', category);
@@ -75,7 +75,7 @@ const MBTradingEvents = (() => {
 
         const $period = $form.find('#period');
         if ($period.length) {
-            $period.on('click', '.list > div', function() {
+            $period.on('click', '.list > div', function () {
                 const period = $(this).attr('value');
                 MBContract.setCurrentItem($period, period);
                 MBDefaults.set('period', period);
@@ -86,34 +86,32 @@ const MBTradingEvents = (() => {
         }
 
         const validatePayout = (payout_amount) => {
-            let is_ok = true;
-            const contract = MBContract.getCurrentContracts();
-            const jp_client = jpClient();
-            const min_amount = jp_client ? 1 : 0;
+            const contract            = MBContract.getCurrentContracts();
+            const jp_client           = jpClient();
+            const min_amount          = jp_client ? 1 : 0;
             const max_contract_amount = Array.isArray(contract) && contract.length && contract[0].expiry_type !== 'intraday' ? 20000 : 5000;
-            const max_client_amount = jp_client ? 100 : max_contract_amount;
-            if (payout_amount === '' || isNaN(payout_amount) || payout_amount < min_amount || payout_amount > max_client_amount) {
-                is_ok = false;
-            }
+            const max_client_amount   = jp_client ? 100 : max_contract_amount;
 
-            return is_ok;
+
+            return (payout_amount && !isNaN(payout_amount) &&
+                payout_amount >= min_amount && payout_amount <= max_client_amount);
         };
 
 
         const $payout = $form.find('#payout');
         if ($payout.length) {
             const $payout_list = $form.find('#payout_list');
-            const jp_client = jpClient();
+            const jp_client    = jpClient();
 
             const appendActualPayout = (payout) => {
                 $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', html: Currency.formatMoney('JPY', payout * 1000) })));
             };
 
             const client_currency = Client.get('currency') || MBDefaults.get('currency');
-            const is_crypto = Currency.isCryptocurrency(client_currency);
-            let old_value = Currency.getMinPayout(client_currency);
+            const is_crypto       = Currency.isCryptocurrency(client_currency);
+            let old_value         = Currency.getMinPayout(client_currency);
             if (!$payout.attr('value')) {
-                const amount = `payout${is_crypto ? '_crypto' : ''}`;
+                const amount   = `payout${is_crypto ? '_crypto' : ''}`;
                 let payout_def = MBDefaults.get(amount);
                 if (!validatePayout(payout_def)) {
                     payout_def = old_value;
@@ -128,8 +126,8 @@ const MBTradingEvents = (() => {
             }
             if (jp_client) {
                 $payout.find('.current').on('click', function () {
-                    old_value = +this.childNodes[0].nodeValue;
-                    const $list = $(`#${$(this).parent().attr('id')}_list`);
+                    old_value      = +this.childNodes[0].nodeValue;
+                    const $list    = $(`#${$(this).parent().attr('id')}_list`);
                     const $sublist = $list.find('.list');
                     if ($list.hasClass(hidden_class)) {
                         makeListsInvisible();
@@ -150,11 +148,11 @@ const MBTradingEvents = (() => {
                 $payout
                     .on('keypress', onlyNumericOnKeypress)
                     .on('input', debounce((e) => {
-                        old_value = e.target.getAttribute('value');
+                        old_value      = e.target.getAttribute('value');
                         let new_payout = e.target.value;
                         const currency = MBDefaults.get('currency');
                         if (isStandardFloat(new_payout)) {
-                            new_payout = parseFloat(new_payout).toFixed(Currency.getDecimalPlaces(currency));
+                            new_payout     = parseFloat(new_payout).toFixed(Currency.getDecimalPlaces(currency));
                             e.target.value = new_payout;
                         }
                         if (!validatePayout(new_payout)) {
@@ -167,9 +165,9 @@ const MBTradingEvents = (() => {
                     }));
             }
             if ($payout_list.length) {
-                $payout_list.on('click', '> .list > div', debounce(function() {
+                $payout_list.on('click', '> .list > div', debounce(function () {
                     const payout = +MBDefaults.get(`payout${Currency.isCryptocurrency(MBDefaults.get('currency')) ? '_crypto' : ''}`);
-                    const value = $(this).attr('value');
+                    const value  = $(this).attr('value');
                     let new_payout;
                     if (/\+|-/.test(value)) {
                         new_payout = payout + parseInt(value);
@@ -198,13 +196,13 @@ const MBTradingEvents = (() => {
 
         const $currency = $form.find('#currency');
         if ($currency.length) {
-            $currency.on('click', '.list > div', function() {
+            $currency.on('click', '.list > div', function () {
                 const currency = $(this).attr('value');
                 MBContract.setCurrentItem($currency, currency);
                 MBDefaults.set('currency', currency);
                 if (!jpClient()) {
                     const is_crypto = Currency.isCryptocurrency(currency);
-                    const amount = `payout${is_crypto ? '_crypto' : ''}`;
+                    const amount    = `payout${is_crypto ? '_crypto' : ''}`;
                     if (!MBDefaults.get(amount)) {
                         MBDefaults.set(`payout${is_crypto ? '_crypto' : ''}`, Currency.getMinPayout(currency));
                     }
@@ -214,10 +212,10 @@ const MBTradingEvents = (() => {
             });
         }
 
-        const $trading_status = $('.trading-status');
-        const $allow_trading = $trading_status.find('#allow');
+        const $trading_status   = $('.trading-status');
+        const $allow_trading    = $trading_status.find('#allow');
         const $disallow_trading = $trading_status.find('#disallow');
-        const setTradingStatus = (is_enabled) => {
+        const setTradingStatus  = (is_enabled) => {
             if (is_enabled) {
                 MBPrice.hidePriceOverlay();
                 MBNotifications.hide('TRADING_DISABLED');

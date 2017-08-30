@@ -8,9 +8,9 @@ const FormManager          = require('../../../../common_functions/form_manager'
 const toTitleCase          = require('../../../../common_functions/string_util').toTitleCase;
 
 const APIToken = (() => {
-    const error_class  = 'errorfield';
-    const form_id      = '#token_form';
-    const max_tokens   = 30;
+    const error_class = 'errorfield';
+    const form_id     = '#token_form';
+    const max_tokens  = 30;
 
     let $table_container,
         $form;
@@ -22,7 +22,7 @@ const APIToken = (() => {
         }
 
         $table_container = $('#tokens_list');
-        $form = $(form_id);
+        $form            = $(form_id);
 
         BinarySocket.send({ api_token: 1 }).then(populateTokensList);
 
@@ -52,7 +52,7 @@ const APIToken = (() => {
     };
 
     const getScopes = () => (
-        $form.find('[id*="chk_scopes_"]:checked').map(function() { return $(this).val(); }).get()
+        $form.find('[id*="chk_scopes_"]:checked').map(function () { return $(this).val(); }).get()
     );
 
     // -----------------------
@@ -114,7 +114,7 @@ const APIToken = (() => {
 
     const formatToken = (token) => {
         const last_used = (token.last_used ? `${token.last_used} GMT` : localize('Never Used'));
-        const scopes = token.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
+        const scopes    = token.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
         return [
             token.display_name,
             token.token,
@@ -132,7 +132,7 @@ const APIToken = (() => {
             $(`#${response.echo_req.delete_token}`)
                 .removeClass('new')
                 .addClass('deleting')
-                .fadeOut(700, function() {
+                .fadeOut(700, function () {
                     $(this).remove();
                     populateTokensList(response);
                 });

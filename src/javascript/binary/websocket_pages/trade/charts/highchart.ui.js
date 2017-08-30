@@ -124,7 +124,7 @@ const HighchartUI = (() => {
 
     const replaceExitLabelWithSell = (subtitle) => {
         const subtitle_length = subtitle.childNodes.length;
-        const textnode = document.createTextNode(` ${localize('Sell time')} `);
+        const textnode        = document.createTextNode(` ${localize('Sell time')} `);
         for (let i = 0; i < subtitle_length; i++) {
             const item = subtitle.childNodes[i];
             if (/End time/.test(item.nodeValue)) {
@@ -135,7 +135,7 @@ const HighchartUI = (() => {
 
     const getPlotlineOptions = (params, type) => {
         const is_plotx = type === 'x';
-        const options = {
+        const options  = {
             value    : params.value,
             id       : params.id || (is_plotx ? params.value : params.label),
             label    : { text: params.label || '' },
@@ -165,14 +165,13 @@ const HighchartUI = (() => {
 
     return {
         setLabels,
-        getLabels,
         setChartOptions,
-        getChartOptions: () => chart_options,
         getHighchartOptions,
         replaceExitLabelWithSell,
         getPlotlineOptions,
         showError,
         getMarkerObject,
+        getChartOptions: () => chart_options,
     };
 })();
 

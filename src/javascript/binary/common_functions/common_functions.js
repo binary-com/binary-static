@@ -7,10 +7,10 @@ const detectHedging = ($purpose, $hedging) => {
 
 const jqueryuiTabsToDropdown = ($container) => {
     const $ddl = $('<select/>');
-    $container.find('li a').each(function() {
+    $container.find('li a').each(function () {
         $ddl.append($('<option/>', { text: $(this).text(), value: $(this).attr('href') }));
     });
-    $ddl.change(function() {
+    $ddl.change(function () {
         $container.find(`li a[href="${$(this).val()}"]`).click();
     });
     return $ddl;
@@ -18,7 +18,7 @@ const jqueryuiTabsToDropdown = ($container) => {
 
 const makeOption = (options) => {
     const option_el = document.createElement('option');
-    option_el.text = options.text;
+    option_el.text  = options.text;
     // setting null value helps with detecting required error
     // on 'Please select' options
     // that have no value of their own

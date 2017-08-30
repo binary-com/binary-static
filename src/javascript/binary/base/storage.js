@@ -2,11 +2,11 @@ const Cookies          = require('js-cookie');
 const getPropertyValue = require('./utility').getPropertyValue;
 const isEmptyObject    = require('./utility').isEmptyObject;
 
-const getObject = function(key) {
+const getObject = function (key) {
     return JSON.parse(this.getItem(key) || '{}');
 };
 
-const setObject = function(key, value) {
+const setObject = function (key, value) {
     if (value && value instanceof Object) {
         this.setItem(key, JSON.stringify(value));
     }
@@ -32,8 +32,8 @@ const isStorageSupported = (storage) => {
     }
 };
 
-const Store = function(storage) {
-    this.storage = storage;
+const Store = function (storage) {
+    this.storage           = storage;
     this.storage.getObject = getObject;
     this.storage.setObject = setObject;
 };
@@ -63,7 +63,7 @@ Store.prototype = {
     clear()     { this.storage.clear(); },
 };
 
-const InScriptStore = function(object) {
+const InScriptStore = function (object) {
     this.store = typeof object !== 'undefined' ? object : {};
 };
 
@@ -90,13 +90,13 @@ InScriptStore.prototype = {
     remove(...keys) {
         keys.forEach((key) => { delete this.store[key]; });
     },
-    clear()    { this.store = {}; },
-    has(key)   { return this.get(key) !== undefined; },
-    keys()     { return Object.keys(this.store); },
-    call(key)  { if (typeof this.get(key) === 'function') this.get(key)(); },
+    clear()   { this.store = {}; },
+    has(key)  { return this.get(key) !== undefined; },
+    keys()    { return Object.keys(this.store); },
+    call(key) { if (typeof this.get(key) === 'function') this.get(key)(); },
 };
 
-const State = new InScriptStore();
+const State     = new InScriptStore();
 State.prototype = InScriptStore.prototype;
 /**
  * Shorthand function to get values from response object of State
@@ -104,7 +104,7 @@ State.prototype = InScriptStore.prototype;
  * @param {String} pathname
  *     e.g. getResponse('authorize.currency') == get(['response', 'authorize', 'authorize', 'currency'])
  */
-State.prototype.getResponse = function(pathname) {
+State.prototype.getResponse = function (pathname) {
     let path = pathname;
     if (typeof path === 'string') {
         const keys = path.split('.');
@@ -114,14 +114,15 @@ State.prototype.getResponse = function(pathname) {
 };
 State.set('response', {});
 
-const CookieStorage = function(cookie_name, cookie_domain) {
+const CookieStorage = function (cookie_name, cookie_domain) {
+    const hostname = window.location.hostname;
+
     this.initialized = false;
     this.cookie_name = cookie_name;
-    const hostname = window.location.hostname;
-    this.domain = cookie_domain || (/\.binary\.com/i.test(hostname) ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
-    this.path = '/';
-    this.expires = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
-    this.value = {};
+    this.domain      = cookie_domain || (/\.binary\.com/i.test(hostname) ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
+    this.path        = '/';
+    this.expires     = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
+    this.value       = {};
 };
 
 CookieStorage.prototype = {

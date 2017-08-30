@@ -7,7 +7,7 @@ const RealityCheckData = (() => {
     const reality_object = {};
 
     const resetInvalid = () => {
-        const ack = get('ack');
+        const ack      = get('ack');
         const interval = +(get('interval'));
         if (ack !== 0 && ack !== 1) {
             set('ack', 0);
@@ -18,17 +18,17 @@ const RealityCheckData = (() => {
     };
 
     const summaryData = (data) => {
-        const start_time = moment.utc(new Date(data.start_time * 1000));
+        const start_time   = moment.utc(new Date(data.start_time * 1000));
         const current_time = moment.utc();
 
         const session_duration = moment.duration(current_time.diff(start_time));
-        const duration_string = localize('[_1] days [_2] hours [_3] minutes', [
+        const duration_string  = localize('[_1] days [_2] hours [_3] minutes', [
             session_duration.get('days'),
             session_duration.get('hours'),
             session_duration.get('minutes'),
         ]);
 
-        const turnover = +(data.buy_amount) + (+(data.sell_amount));
+        const turnover    = +(data.buy_amount) + (+(data.sell_amount));
         const profit_loss = +(data.sell_amount) - (+(data.buy_amount));
 
         return {

@@ -8,7 +8,7 @@ const FormManager = (() => {
 
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
-        const $btn = $form.find('button[type="submit"]');
+        const $btn  = $form.find('button[type="submit"]');
         if ($form.length) {
             forms[form_selector] = {
                 $btn_submit: $btn,
@@ -33,7 +33,7 @@ const FormManager = (() => {
     };
 
     const getFormData = (form_selector) => {
-        const data = {};
+        const data   = {};
         const fields = forms[form_selector].fields;
         if (!fields) return data;
         let key,
@@ -112,9 +112,9 @@ const FormManager = (() => {
 
         $(options.form_selector).off('submit').on('submit', (evt) => {
             evt.preventDefault();
-            form = forms[options.form_selector];
+            form        = forms[options.form_selector];
             $btn_submit = form.$btn_submit;
-            can_submit = form.can_submit;
+            can_submit  = form.can_submit;
             if (!can_submit) return;
             if (Validation.validate(options.form_selector)) {
                 const req = $.extend({}, options.obj_request, getFormData(options.form_selector));

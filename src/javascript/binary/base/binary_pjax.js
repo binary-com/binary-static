@@ -5,12 +5,13 @@ const Url         = require('./url');
 const BinaryPjax = (() => {
     let xhr,
         previous_url;
+
     const params   = {};
+    const cache    = {};
     const defaults = {
         type    : 'GET',
         dataType: 'html',
     };
-    const cache = {};
 
     const init = (container, content_selector) => {
         if (!(window.history && window.history.pushState && window.history.replaceState &&
@@ -25,11 +26,11 @@ const BinaryPjax = (() => {
             return;
         }
 
-        params.container = $container;
+        params.container        = $container;
         params.content_selector = content_selector;
 
-        const url = window.location.href;
-        const title = document.title;
+        const url     = window.location.href;
+        const title   = document.title;
         const content = $container.find(content_selector);
 
         // put current content to cache, so we won't need to load it again
@@ -100,9 +101,10 @@ const BinaryPjax = (() => {
      * Load url from server
      */
     const load = (url, replace) => {
-        const lang = getLanguage();
+        const lang    = getLanguage();
         const options = $.extend(true, {}, $.ajaxSettings, defaults, {
-            url: url.replace(new RegExp(`/${lang}/`, 'i'), `/${lang.toLowerCase()}/pjax/`) });
+            url: url.replace(new RegExp(`/${lang}/`, 'i'), `/${lang.toLowerCase()}/pjax/`),
+        });
 
         options.success = (data) => {
             const result = {};
@@ -177,9 +179,9 @@ const BinaryPjax = (() => {
 
     return {
         init,
-        load: processUrl,
-
         loadPreviousUrl,
+
+        load          : processUrl,
         getPreviousUrl: () => previous_url,
     };
 })();

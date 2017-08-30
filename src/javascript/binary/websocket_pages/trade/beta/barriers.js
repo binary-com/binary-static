@@ -23,23 +23,25 @@ const Barriers_Beta = (() => {
         if (barriers && form_name && Defaults.get('formname') !== 'risefall') {
             const barrier = barriers[form_name];
             if (barrier) {
-                const unit     = document.getElementById('duration_units');
-                const end_time = document.getElementById('expiry_date');
                 const current_tick   = Tick.quote();
                 const decimal_places = countDecimalPlaces(current_tick);
+
+                const unit                            = document.getElementById('duration_units');
+                const end_time                        = document.getElementById('expiry_date');
                 const indicative_barrier_tooltip      = document.getElementById('indicative_barrier_tooltip');
                 const indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
                 const indicative_low_barrier_tooltip  = document.getElementById('indicative_low_barrier_tooltip');
 
                 if (barrier.count === 1) {
                     document.getElementById('high_barrier_row').style.display = 'none';
-                    document.getElementById('low_barrier_row').style.display = 'none';
+                    document.getElementById('low_barrier_row').style.display  = 'none';
                     document.getElementById('barrier_row').setAttribute('style', '');
 
                     const defaults_barrier = Defaults.get('barrier');
-                    const elm     = document.getElementById('barrier');
-                    const tooltip = document.getElementById('barrier_tooltip');
-                    const span    = document.getElementById('barrier_span');
+                    const elm              = document.getElementById('barrier');
+                    const tooltip          = document.getElementById('barrier_tooltip');
+                    const span             = document.getElementById('barrier_span');
+
                     let barrier_def = defaults_barrier && !isNaN(defaults_barrier) ? defaults_barrier : barrier.barrier;
                     let value;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
@@ -51,17 +53,17 @@ const Barriers_Beta = (() => {
                             value = parseFloat(barrier_def);
                         }
                         tooltip.style.display = 'none';
-                        span.style.display = 'inherit';
+                        span.style.display    = 'inherit';
                         // no need to display indicative barrier in case of absolute barrier
                         elementTextContent(indicative_barrier_tooltip, '');
                     } else {
                         if (!String(barrier_def).match(/^[+-]/)) barrier_def = barrier.barrier; // override Defaults value, because it's changing from absolute to relative barrier
-                        value = barrier_def;
-                        span.style.display = 'none';
+                        value                 = barrier_def;
+                        span.style.display    = 'none';
                         tooltip.style.display = 'inherit';
                         if (current_tick && !isNaN(current_tick)) {
                             elementTextContent(indicative_barrier_tooltip, (parseFloat(current_tick) +
-                              parseFloat(barrier_def)).toFixed(decimal_places));
+                                parseFloat(barrier_def)).toFixed(decimal_places));
                         } else {
                             elementTextContent(indicative_barrier_tooltip, '');
                         }
@@ -85,10 +87,10 @@ const Barriers_Beta = (() => {
 
                     const defaults_barrier_high = Defaults.get('barrier_high');
                     const defaults_barrier_low  = Defaults.get('barrier_low');
-                    let barrier_high = defaults_barrier_high && !isNaN(defaults_barrier_high) ?
-                            defaults_barrier_high : barrier.barrier;
-                    let barrier_low  = defaults_barrier_low  && !isNaN(defaults_barrier_low) ?
-                            defaults_barrier_low  : barrier.barrier1;
+                    let barrier_high            = defaults_barrier_high && !isNaN(defaults_barrier_high) ?
+                        defaults_barrier_high : barrier.barrier;
+                    let barrier_low             = defaults_barrier_low && !isNaN(defaults_barrier_low) ?
+                        defaults_barrier_low : barrier.barrier1;
                     let value_high,
                         value_low;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
@@ -103,9 +105,9 @@ const Barriers_Beta = (() => {
                         }
 
                         high_tooltip.style.display = 'none';
-                        high_span.style.display = 'inherit';
-                        low_tooltip.style.display = 'none';
-                        low_span.style.display = 'inherit';
+                        high_span.style.display    = 'inherit';
+                        low_tooltip.style.display  = 'none';
+                        low_span.style.display     = 'inherit';
 
                         elementTextContent(indicative_high_barrier_tooltip, '');
                         elementTextContent(indicative_low_barrier_tooltip, '');
@@ -118,10 +120,10 @@ const Barriers_Beta = (() => {
                         value_high = barrier_high;
                         value_low  = barrier_low;
 
-                        high_span.style.display = 'none';
+                        high_span.style.display    = 'none';
                         high_tooltip.style.display = 'inherit';
-                        low_span.style.display = 'none';
-                        low_tooltip.style.display = 'inherit';
+                        low_span.style.display     = 'none';
+                        low_tooltip.style.display  = 'inherit';
 
                         if (current_tick && !isNaN(current_tick)) {
                             elementTextContent(indicative_high_barrier_tooltip, (parseFloat(current_tick) +

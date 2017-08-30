@@ -57,6 +57,7 @@ const PaymentAgentList = (() => {
         }
 
         const requested_country = response.echo_req.paymentagent_list;
+
         let found = false;
         countries.map((country) => {
             if (country === requested_country) {

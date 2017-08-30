@@ -22,8 +22,8 @@ const Purchase_Beta = (() => {
     const display = (details) => {
         purchase_data = details;
 
-        const receipt     = details.buy;
-        const passthrough = details.echo_req.passthrough;
+        const receipt                     = details.buy;
+        const passthrough                 = details.echo_req.passthrough;
         const container                   = document.getElementById('contract_confirmation_container');
         const message_container           = document.getElementById('confirmation_message');
         const heading                     = document.getElementById('contract_purchase_heading');
@@ -40,7 +40,7 @@ const Purchase_Beta = (() => {
         const contracts_list              = document.getElementById('contracts_list');
         const button                      = document.getElementById('contract_purchase_button');
 
-        const error = details.error;
+        const error      = details.error;
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
 
         contracts_list.style.display = 'none';
@@ -49,7 +49,7 @@ const Purchase_Beta = (() => {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            elementInnerHtml(confirmation_error_contents,  error.message);
+            elementInnerHtml(confirmation_error_contents, error.message);
         } else {
             const guide_btn = document.getElementById('guideBtn');
             if (guide_btn) {
@@ -59,7 +59,7 @@ const Purchase_Beta = (() => {
             message_container.show();
             confirmation_error.hide();
 
-            $('#contract-values').find('td').each(function() {
+            $('#contract-values').find('td').each(function () {
                 $(this).text('').removeAttr('class', '');
             });
             const purchase_passthrough = purchase_data.echo_req.passthrough;
@@ -77,9 +77,9 @@ const Purchase_Beta = (() => {
 
             if (passthrough.basis === 'payout') {
                 payout_value = passthrough.amount;
-                cost_value = passthrough['ask-price'];
+                cost_value   = passthrough['ask-price'];
             } else {
-                cost_value = passthrough.amount;
+                cost_value   = passthrough.amount;
                 payout_value = receipt.payout;
             }
 
@@ -89,7 +89,7 @@ const Purchase_Beta = (() => {
             const currency = Client.get('currency');
 
             commonTrading.labelValue(payout, localize('Payout'), formatMoney(currency, payout_value, 1));
-            commonTrading.labelValue(cost,   localize('Stake'),  formatMoney(currency, cost_value, 1));
+            commonTrading.labelValue(cost, localize('Stake'), formatMoney(currency, cost_value, 1));
 
             elementInnerHtml(balance, `${localize('Account balance:')} ${formatMoney(currency, receipt.balance_after)}`);
 
@@ -124,8 +124,8 @@ const Purchase_Beta = (() => {
 
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying
-            let decimal_points = 2;
-            const tick_spots = Tick.spots();
+            let decimal_points     = 2;
+            const tick_spots       = Tick.spots();
             const tick_spot_epochs = Object.keys(tick_spots);
             if (tick_spot_epochs.length > 0) {
                 const last_quote = tick_spots[tick_spot_epochs[0]].toString();
@@ -136,6 +136,7 @@ const Purchase_Beta = (() => {
             }
 
             TickDisplay_Beta.init({
+                contract_sentiment,
                 symbol              : passthrough.symbol,
                 barrier             : sessionStorage.getItem('formname') === 'higherlower' ? passthrough.barrier : '',
                 number_of_ticks     : passthrough.duration,
@@ -144,7 +145,6 @@ const Purchase_Beta = (() => {
                 display_symbol      : Symbols.getName(passthrough.symbol),
                 contract_start      : receipt.start_time,
                 display_decimals    : decimal_points,
-                contract_sentiment,
                 price               : passthrough['ask-price'],
                 payout              : receipt.payout,
                 show_contract_result: 1,
@@ -161,16 +161,16 @@ const Purchase_Beta = (() => {
         }
 
         let duration = purchase_data.echo_req && purchase_data.echo_req.passthrough ?
-                            purchase_data.echo_req.passthrough.duration : null;
+            purchase_data.echo_req.passthrough.duration : null;
 
         if (!duration) {
             return;
         }
 
-        const container  = document.getElementById('contract_purchase_spots');
-        const tick_elem  = document.getElementById('current_tick_number');
-        const spot_elem  = document.getElementById('current_tick_spot');
-        const list_elem  = document.getElementById('last_digits_list');
+        const container = document.getElementById('contract_purchase_spots');
+        const tick_elem = document.getElementById('current_tick_number');
+        const spot_elem = document.getElementById('current_tick_spot');
+        const list_elem = document.getElementById('last_digits_list');
         if (container) {
             tick_elem.innerHTML = spot_elem.innerHTML = list_elem.innerHTML = '&nbsp;';
         }
@@ -192,11 +192,11 @@ const Purchase_Beta = (() => {
             list_elem.appendChild(fragment);
         }
 
-        const spots2 = Tick.spots();
-        const epoches = Object.keys(spots2).sort((a, b) => a - b);
+        const spots2    = Tick.spots();
+        const epoches   = Object.keys(spots2).sort((a, b) => a - b);
         let tick_number = 0;
 
-        const is_win = (last_digit) => {
+        const is_win   = (last_digit) => {
             const contract_type = purchase_data.echo_req.passthrough.contract_type;
             const barrier       = purchase_data.echo_req.passthrough.barrier;
             return ((contract_type === 'DIGITMATCH' && last_digit === barrier) ||
@@ -207,7 +207,7 @@ const Purchase_Beta = (() => {
                     (contract_type === 'DIGITUNDER' && last_digit < barrier));
         };
         let last_digit = null;
-        const replace = (d) => {
+        const replace  = (d) => {
             last_digit = d;
             return `<span class="${(is_win(d) ? 'profit' : 'loss')}">${d}</span>`;
         };
@@ -233,12 +233,12 @@ const Purchase_Beta = (() => {
                         pnl;
 
                     if (is_win(last_digit)) {
-                        final_price = $('#contract_purchase_payout_value').attr('value');
-                        pnl = $('#contract_purchase_cost_value').attr('value');
+                        final_price     = $('#contract_purchase_payout_value').attr('value');
+                        pnl             = $('#contract_purchase_cost_value').attr('value');
                         contract_status = localize('This contract won');
                     } else {
-                        final_price = 0;
-                        pnl = -$('#contract_purchase_cost_value').attr('value');
+                        final_price     = 0;
+                        pnl             = -$('#contract_purchase_cost_value').attr('value');
                         contract_status = localize('This contract lost');
                     }
 

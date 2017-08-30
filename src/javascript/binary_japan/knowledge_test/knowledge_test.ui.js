@@ -4,8 +4,8 @@ const urlForStatic = require('../../binary/base/url').urlForStatic;
 
 const KnowledgeTestUI = (() => {
     const createTrueFalseBox = (question, show_answer) => {
-        const qid = question.id;
-        const true_id = `${qid}true`;
+        const qid      = question.id;
+        const true_id  = `${qid}true`;
         const false_id = `${qid}false`;
 
         const $true_button = $('<input />', {
@@ -14,7 +14,7 @@ const KnowledgeTestUI = (() => {
             id   : true_id,
             value: '1',
         });
-        const $true_td = $('<td></td>').append($true_button);
+        const $true_td     = $('<td></td>').append($true_button);
 
         const $false_button = $('<input />', {
             type : 'radio',
@@ -22,7 +22,7 @@ const KnowledgeTestUI = (() => {
             id   : false_id,
             value: '0',
         });
-        const $false_td = $('<td></td>').append($false_button);
+        const $false_td     = $('<td></td>').append($false_button);
 
         if (show_answer) {
             if (question.correct_answer) {
@@ -38,7 +38,7 @@ const KnowledgeTestUI = (() => {
     };
 
     const createQuestionRow = (question_no, question, show_answer) => {
-        const $question_row = $('<tr></tr>', { id: question_no, class: 'question' });
+        const $question_row  = $('<tr></tr>', { id: question_no, class: 'question' });
         const $question_data = $('<td></td>').text(localize(question.question_localized));
         const $question_link = $('<a></a>', {
             name : question.id,
@@ -57,7 +57,7 @@ const KnowledgeTestUI = (() => {
     };
 
     const createQuestionTable = (questions, show_answer) => {
-        const $header = $('<tr></tr>');
+        const $header              = $('<tr></tr>');
         const $question_col_header = $('<th></th>', { id: 'question-header', class: 'question-col' })
             .text(localize('Questions'));
 
@@ -86,9 +86,9 @@ const KnowledgeTestUI = (() => {
 
     const createResultUI = (score) => {
         const $result_table = $('<table></table>', { class: 'kv-pairs' });
-        const $score_row = $('<tr/>').append($('<td/>', { text: localize('Score') })).append($('<td/>', { text: score }));
+        const $score_row    = $('<tr/>').append($('<td/>', { text: localize('Score') })).append($('<td/>', { text: score }));
 
-        const date = moment();
+        const date        = moment();
         const submit_date = `${moment.utc(date).format('YYYY')}${localize('Year')}${moment.utc(date).format('MM')}${localize('Month')}${moment.utc(date).format('DD')}${localize('Day')} (${localize('Weekday')})`;
 
         const $date_row = $('<tr/>').append($('<td/>', { text: localize('Date') })).append($('<td/>', { text: submit_date }));

@@ -105,11 +105,11 @@ const Process = (() => {
     const processContract = (contracts) => {
         if (getPropertyValue(contracts, ['error', 'code']) === 'InvalidSymbol') {
             Price.processForgetProposals();
-            const container          = document.getElementById('contract_confirmation_container');
-            const message_container  = document.getElementById('confirmation_message');
-            const confirmation_error = document.getElementById('confirmation_error');
-            const contracts_list     = document.getElementById('contracts_list');
-            container.style.display = 'block';
+            const container              = document.getElementById('contract_confirmation_container');
+            const message_container      = document.getElementById('confirmation_message');
+            const confirmation_error     = document.getElementById('confirmation_error');
+            const contracts_list         = document.getElementById('contracts_list');
+            container.style.display      = 'block';
             contracts_list.style.display = 'none';
             message_container.hide();
             confirmation_error.show();
@@ -173,9 +173,9 @@ const Process = (() => {
             Durations.display();
         }
 
-        const currency = Defaults.get('currency') || document.getElementById('currency').value;
+        const currency  = Defaults.get('currency') || document.getElementById('currency').value;
         const is_crypto = isCryptocurrency(currency);
-        const amount = is_crypto ? 'amount_crypto' : 'amount';
+        const amount    = is_crypto ? 'amount_crypto' : 'amount';
         if (Defaults.get(amount)) {
             $('#amount').val(Defaults.get(amount));
         } else if (is_crypto) {
@@ -189,7 +189,7 @@ const Process = (() => {
         else Defaults.set('amount_type', document.getElementById('amount_type').value);
         if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
 
-        const expiry_type = Defaults.get('expiry_type') || 'duration';
+        const expiry_type        = Defaults.get('expiry_type') || 'duration';
         const make_price_request = onExpiryTypeChange(expiry_type);
 
         if (make_price_request >= 0) {
@@ -228,7 +228,7 @@ const Process = (() => {
     };
 
     const onExpiryTypeChange = (value) => {
-        const $expiry_type = $('#expiry_type');
+        const $expiry_type    = $('#expiry_type');
         const validated_value = value && $expiry_type.find(`option[value=${value}]`).length ? value : 'duration';
         $expiry_type.val(validated_value);
 

@@ -2,7 +2,7 @@ const Home = require('./home');
 
 const HomeJP = (() => {
     const visible_product = 'product_visible';
-    const product_prefix = 'product_';
+    const product_prefix  = 'product_';
 
     let margin,
         $go_right,
@@ -18,16 +18,16 @@ const HomeJP = (() => {
             $.scrollTo($('#frm_verify_email'), 500, { offset: -10 });
         });
 
-        margin = 0;
-        $go_right = $('.go-right');
-        $go_left = $('.go-left');
+        margin             = 0;
+        $go_right          = $('.go-right');
+        $go_left           = $('.go-left');
         number_of_products = $('.product').length;
-        $first_product = $('.product:eq(0)');
+        $first_product     = $('.product:eq(0)');
 
-        $go_right.on('click', function() {
+        $go_right.on('click', function () {
             slide(this, 'right');
         });
-        $go_left.on('click', function() {
+        $go_left.on('click', function () {
             slide(this, 'left');
         });
 
@@ -55,18 +55,18 @@ const HomeJP = (() => {
             return;
         }
         const window_width = $(window).width();
-        let width = 800;
+        let width          = 800;
         if (window_width <= 959) {
             width = window_width <= 480 ? 203 : 603;
         }
 
         // get current visible element
         const id_no_current = Number($('.product_visible').attr('id').split(product_prefix)[1]);
-        let id_no_to_show = direction === 'right' ? id_no_current + 1 : id_no_current - 1;
+        let id_no_to_show   = direction === 'right' ? id_no_current + 1 : id_no_current - 1;
 
         if (id_no_to_show > number_of_products) {
             id_no_to_show = 1;
-            margin = 0;
+            margin        = 0;
         } else {
             margin += (width * (direction === 'right' ? -1 : 1));
         }
@@ -87,9 +87,9 @@ const HomeJP = (() => {
     };
 
     const changeIconVisibility = ($element, should_disable) => {
-        const src = $element.attr('src');
+        const src         = $element.attr('src');
         const replacement = ['enabled', 'disabled'];
-        $element[`${should_disable ? 'add' : 'remove'}Class`]('disabled').attr('src',  src.replace(replacement[+!should_disable], replacement[+should_disable]));
+        $element[`${should_disable ? 'add' : 'remove'}Class`]('disabled').attr('src', src.replace(replacement[+!should_disable], replacement[+should_disable]));
     };
 
     const onUnload = () => {

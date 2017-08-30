@@ -42,7 +42,7 @@ const TradingTimesUI = (() => {
             minDate : 0,
             maxDate : 364,
         });
-        $date.change(function() {
+        $date.change(function () {
             if (!dateValueChanged(this, 'date')) {
                 return false;
             }
@@ -65,7 +65,7 @@ const TradingTimesUI = (() => {
 
         const markets = trading_times.markets;
 
-        const $ul = $('<ul/>', { class: is_japan_trading ? 'invisible' : '' });
+        const $ul       = $('<ul/>', { class: is_japan_trading ? 'invisible' : '' });
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {

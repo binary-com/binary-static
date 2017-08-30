@@ -12,8 +12,8 @@ const KnowledgeTest = (() => {
     const submitted        = {};
     const obj_random_picks = {};
     const passing_score    = 14; // minimum score to pass the test
-    const msg_pass = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
-    const msg_fail = '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.';
+    const msg_pass         = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
+    const msg_fail         = '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.';
 
     let submit_completed = false;
     let random_picks     = [];
@@ -75,11 +75,11 @@ const KnowledgeTest = (() => {
     const randomPick20 = () => {
         const questions = {};
         // retrieve questions text from html
-        $container.find('#data-questions').find('> div').each(function() { // sections
+        $container.find('#data-questions').find('> div').each(function () { // sections
             const category_name = +$(this).attr('data-section-id');
             questions[`section${category_name}`] = [];
 
-            $(this).find('> div').each(function() { // questions
+            $(this).find('> div').each(function () { // questions
                 const question_id = +$(this).attr('data-question-id');
                 questions[`section${category_name}`].push({
                     category          : category_name,
@@ -112,7 +112,7 @@ const KnowledgeTest = (() => {
 
     const answers = {
         /* eslint-disable */
-        1: false,  2: true,   3: true,   4: true,   5: true,   6: true,   7: true,   8: true,   9: false,   10: true,
+         1: false,  2: true,   3: true,   4: true,   5: true,   6: true,   7: true,   8: true,   9: false,  10: true,
         11: false, 12: true,  13: false, 14: true,  15: true,  16: true,  17: false, 18: true,  19: true,   20: true,
         21: true,  22: false, 23: true,  24: false, 25: false, 26: true,  27: true,  28: true,  29: true,   30: true,
         31: false, 32: true,  33: false, 34: true,  35: false, 36: true,  37: true,  38: false, 39: true,   40: false,
@@ -157,8 +157,8 @@ const KnowledgeTest = (() => {
         // compute score
         const questions = [];
         Object.keys(submitted).forEach((k) => {
-            const question_info = obj_random_picks[k];
-            const score = submitted[k] === question_info.correct_answer ? 1 : 0;
+            const question_info  = obj_random_picks[k];
+            const score          = submitted[k] === question_info.correct_answer ? 1 : 0;
             result_score += score;
             question_info.answer = submitted[k];
             questions.push({

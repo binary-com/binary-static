@@ -21,8 +21,8 @@ const showLoadingImage = ($container, theme = 'dark') => {
  * @return int|null
  */
 const getHighestZIndex = (selector = 'div,p,area,nav,section,header,canvas,aside,span') => {
-    const all = [];
-    const store_zindex = function() {
+    const all          = [];
+    const store_zindex = function () {
         if ($(this).is(':visible')) {
             const z = $(this).css('z-index');
             if (!isNaN(z)) {
@@ -39,9 +39,9 @@ const downloadCSV = (csv_contents, filename = 'data.csv') => {
     if (navigator.msSaveBlob) { // IE 10+
         navigator.msSaveBlob(new Blob([csv_contents], { type: 'text/csv;charset=utf-8;' }), filename);
     } else { // Other browsers
-        const csv = `data:text/csv;charset=utf-8,${csv_contents}`;
-        const download_link = document.createElement('a');
-        download_link.href = encodeURI(csv);
+        const csv              = `data:text/csv;charset=utf-8,${csv_contents}`;
+        const download_link    = document.createElement('a');
+        download_link.href     = encodeURI(csv);
         download_link.download = filename;
 
         document.body.appendChild(download_link);
@@ -83,7 +83,7 @@ const handleHash = () => {
 
 const clearable = (element) => {
     element.addClass('clear');
-    $(document).on('mousemove', '.clear', function(e) {
+    $(document).on('mousemove', '.clear', function (e) {
         e.stopPropagation();
         $(e.currentTarget)[toggleAddRemoveClass(this.offsetWidth - 18 < e.clientX - this.getBoundingClientRect().left)]('onClear');
     }).on('mousedown', '.onClear', (e) => {

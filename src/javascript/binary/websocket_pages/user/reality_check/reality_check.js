@@ -5,7 +5,7 @@ const Client           = require('../../../base/client');
 
 const RealityCheck = (() => {
     const storageHandler = (ev) => {
-        const key = ev.key;
+        const key       = ev.key;
         const new_value = ev.newValue;
         if ((key === 'reality_check.ack' && +new_value === 1) ||
             (key === 'reality_check.keep_open' && +new_value === 0)) {

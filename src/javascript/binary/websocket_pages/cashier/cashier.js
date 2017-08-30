@@ -16,15 +16,15 @@ const Cashier = (() => {
 
     const displayTopUpButton = () => {
         BinarySocket.wait('balance').then((response) => {
-            const currency = response.balance.currency;
-            const balance = +response.balance.balance;
+            const currency  = response.balance.currency;
+            const balance   = +response.balance.balance;
             const can_topup = (currency !== 'JPY' && balance <= 1000) || (currency === 'JPY' && balance <= 100000);
             const top_up_id = '#VRT_topup_link';
-            const $a = $(top_up_id);
-            const classes = ['toggle', 'button-disabled'];
-            const new_el = { class: $a.attr('class').replace(classes[+can_topup], classes[1 - +can_topup]), html: $a.html(), id: $a.attr('id') };
+            const $a        = $(top_up_id);
+            const classes   = ['toggle', 'button-disabled'];
+            const new_el    = { class: $a.attr('class').replace(classes[+can_topup], classes[1 - +can_topup]), html: $a.html(), id: $a.attr('id') };
             if (can_topup) {
-                href = href || urlFor('/cashier/top_up_virtualws');
+                href        = href || urlFor('/cashier/top_up_virtualws');
                 new_el.href = href;
             }
             $a.replaceWith($('<a/>', new_el));
@@ -40,7 +40,7 @@ const Cashier = (() => {
             BinarySocket.wait('authorize').then(() => {
                 Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
                 const is_virtual = Client.get('is_virtual');
-                const is_crypto = isCryptocurrency(Client.get('currency'));
+                const is_crypto  = isCryptocurrency(Client.get('currency'));
                 if (is_virtual) {
                     displayTopUpButton();
                 }

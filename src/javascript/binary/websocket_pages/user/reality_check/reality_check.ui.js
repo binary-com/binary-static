@@ -7,9 +7,9 @@ require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
 
 const RealityCheckUI = (() => {
-    const summary_url = urlFor('user/reality_check_summary');
+    const summary_url   = urlFor('user/reality_check_summary');
     const frequency_url = urlFor('user/reality_check_frequency');
-    const form = {
+    const form          = {
         selector            : '#frm_reality_check',
         num_reality_duration: '#num_reality_duration',
     };

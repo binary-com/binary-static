@@ -60,13 +60,13 @@ const checkValidTime = (time_start_element = document.getElementById('time_start
     if (time) {
         time_array = time.split(':');
     }
-    const now_time = moment.utc();
-    const hour = time_array.length ? +time_array[0] : now_time.hour();
-    const minute = time_array.length ? +time_array[1] : now_time.minute();
-    const date_time = moment.utc(getElement().value * 1000).hour(hour).minute(minute);
-    let min_time = getMinMaxTime($date_start).minTime;
-    min_time = min_time.valueOf() > now_time.valueOf() ? min_time : now_time;
-    const max_time = getMinMaxTime($date_start).maxTime;
+    const now_time           = moment.utc();
+    const hour               = time_array.length ? +time_array[0] : now_time.hour();
+    const minute             = time_array.length ? +time_array[1] : now_time.minute();
+    const date_time          = moment.utc(getElement().value * 1000).hour(hour).minute(minute);
+    let min_time             = getMinMaxTime($date_start).minTime;
+    min_time                 = min_time.valueOf() > now_time.valueOf() ? min_time : now_time;
+    const max_time           = getMinMaxTime($date_start).maxTime;
     time_start_element.value = date_time.isBefore(min_time) || date_time.isAfter(max_time) || !time ? min_time.add(5, 'minutes').utc().format('HH:mm') : time_array.join(':');
     time_start_element.setAttribute('data-value', time_start_element.value);
 };
@@ -87,8 +87,8 @@ module.exports = {
     displayPriceMovement,
     countDecimalPlaces,
     processTradingTimesAnswer,
-    getTradingTimes : () => trading_times,
     getStartDateNode: getElement,
     checkValidTime,
     getMinMaxTime,
+    getTradingTimes : () => trading_times,
 };

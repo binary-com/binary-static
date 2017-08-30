@@ -12,7 +12,7 @@ const StatementUI = (() => {
     let oauth_apps = {};
 
     const table_id = 'statement-table';
-    const columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
+    const columns  = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
 
     const createEmptyStatementTable = () => {
         const header = [
@@ -27,7 +27,7 @@ const StatementUI = (() => {
         ];
 
         const jp_client = jpClient();
-        const currency = Client.get('currency');
+        const currency  = Client.get('currency');
 
         header[6] += (jp_client || !currency ? '' : ` (${currency})`);
 

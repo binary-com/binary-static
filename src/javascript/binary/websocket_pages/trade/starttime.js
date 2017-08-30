@@ -30,9 +30,9 @@ const StartDates = (() => {
         const start_dates = Contract.startDates();
 
         if (start_dates && start_dates.list && start_dates.list.length) {
-            const target = getStartDateNode();
+            const target   = getStartDateNode();
             const fragment = document.createDocumentFragment();
-            const row = document.getElementById('date_start_row');
+            const row      = document.getElementById('date_start_row');
             let option,
                 content,
                 first,
@@ -48,7 +48,7 @@ const StartDates = (() => {
             }
 
             if (start_dates.has_spot) {
-                option = document.createElement('option');
+                option  = document.createElement('option');
                 content = document.createTextNode(localize('Now'));
                 option.setAttribute('value', 'now');
                 option.appendChild(content);
@@ -64,21 +64,21 @@ const StartDates = (() => {
             $('#time_start_row').setVisibility(default_start !== 'now');
 
             start_dates.list.forEach((start_date) => {
-                let a = moment.unix(start_date.open).utc();
+                let a   = moment.unix(start_date.open).utc();
                 const b = moment.unix(start_date.close).utc();
 
                 const rounding = 5 * 60 * 1000;
-                const start = moment.utc();
+                const start    = moment.utc();
 
                 if (b.isAfter(start)) {
                     if (moment(start).isAfter(moment(a))) {
                         a = start;
                     }
 
-                    a = moment(Math.ceil((+a) / rounding) * rounding).utc();
+                    a   = moment(Math.ceil((+a) / rounding) * rounding).utc();
                     day = a.format('ddd - DD MMM, YYYY');
                     $duplicated_option = $(fragment).find(`option:contains(${day})`);
-                    duplicated_length = $duplicated_option.length;
+                    duplicated_length  = $duplicated_option.length;
                     if (duplicated_length && !new RegExp(localize('Session')).test($duplicated_option.text())) {
                         $($duplicated_option[0]).text(`${$duplicated_option.text()} - ${localize('Session')} ${duplicated_length}`);
                     }

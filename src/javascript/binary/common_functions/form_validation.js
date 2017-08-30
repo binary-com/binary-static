@@ -3,7 +3,7 @@ const addComma              = require('../common_functions/currency').addComma;
 const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
-    const forms = {};
+    const forms        = {};
     const error_class  = 'error-msg';
     const hidden_class = 'invisible';
 
@@ -34,7 +34,7 @@ const Validation = (() => {
             forms[form_selector] = { $form };
             if (Array.isArray(fields) && fields.length) {
                 forms[form_selector].fields = fields;
-                const $btn_submit = $form.find('button[type="submit"]');
+                const $btn_submit           = $form.find('button[type="submit"]');
 
                 let has_required = false;
                 fields.forEach((field) => {
@@ -85,7 +85,7 @@ const Validation = (() => {
     // ------------------------------
     // ----- Validation Methods -----
     // ------------------------------
-    const validRequired = (value, options, field) => {
+    const validRequired     = (value, options, field) => {
         if ((typeof value === 'string' ? value.trim() : value).length) return true;
         // else
         validators_map.req.message = field.type === 'checkbox' ? 'Please select the checkbox.' : 'This field is required.';
@@ -118,23 +118,23 @@ const Validation = (() => {
         let message = '';
 
         if (+options.max < +options.min && options.custom_message) {
-            is_ok = false;
+            is_ok   = false;
             message = localize(options.custom_message);
         } else if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
-            is_ok = false;
+            is_ok   = false;
             message = localize('Should be a valid number');
         } else if (options.type === 'float' && options.decimals &&
             !(new RegExp(`^\\d+(\\.\\d{${options.decimals.replace(/ /g, '')}})?$`).test(value))) {
-            is_ok = false;
+            is_ok   = false;
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
         } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
-            is_ok = false;
+            is_ok   = false;
             message = localize('Should be between [_1] and [_2]', [options.min, addComma(options.max)]);
         } else if ('min' in options && +value < +options.min) {
-            is_ok = false;
+            is_ok   = false;
             message = localize('Should be more than [_1]', [options.min]);
         } else if ('max' in options && isMoreThanMax(value, options)) {
-            is_ok = false;
+            is_ok   = false;
             message = localize('Should be less than [_1]', [addComma(options.max)]);
         }
 
@@ -187,8 +187,8 @@ const Validation = (() => {
 
             if (type === 'password' && !validLength(getFieldValue(field), pass_length(options))) {
                 field.is_ok = false;
-                type = 'length';
-                options = pass_length(options);
+                type        = 'length';
+                options     = pass_length(options);
             } else {
                 const validator = (type === 'custom' ? options.func : validators_map[type].func);
                 field.is_ok = validator(getFieldValue(field), options, field);

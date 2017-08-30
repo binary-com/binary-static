@@ -44,8 +44,8 @@ const ICOSubscribe = (() => {
                 $(form_id).find('.topMenuBalance').html(formatMoney(currency, 0));
             }
             $duration = $('#duration');
-            $price = $('#price');
-            $total = $('#total');
+            $price    = $('#price');
+            $total    = $('#total');
             calculateTotal();
             $('#ico_subscribe').setVisibility(1);
 
@@ -58,10 +58,10 @@ const ICOSubscribe = (() => {
                 $('#topup_wrapper').setVisibility(1);
             } else {
                 const decimal_places = getDecimalPlaces(currency);
-                $form_error = $('#form_error');
+                $form_error          = $('#form_error');
                 FormManager.init(form_id, [
                     { selector: '#duration', validations: ['req', ['number', { min: 1, max: 1000000 }]], parent_node: 'parameters' },
-                        { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places), max: 999999999999999 }]] },
+                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places), max: 999999999999999 }]] },
 
                     { request_field: 'buy', value: 1 },
                     { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
@@ -84,8 +84,8 @@ const ICOSubscribe = (() => {
 
     const calculateTotal = () => {
         const duration_val = $duration.val();
-        const price_val = $price.val();
-        let total = 0;
+        const price_val    = $price.val();
+        let total          = 0;
         if (duration_val && price_val) {
             total = +duration_val * +price_val;
         }

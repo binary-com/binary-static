@@ -39,12 +39,12 @@ const ICOPortfolio = (() => {
             status_text = 'Cancel Bid';
         }
 
-        const new_class = is_first ? '' : 'new';
-        const status = status_text;
+        const new_class    = is_first ? '' : 'new';
+        const status       = status_text;
         const button_class = /cancel|end/i.test(status) ? 'button-secondary' : '';
-        const action = / successful/i.test(long_code) ? 'claim' : 'cancel';
-        const shortcode = data.shortcode.split('_');
-        const $div = $('<div/>');
+        const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
+        const shortcode    = data.shortcode.split('_');
+        const $div         = $('<div/>');
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref', text: data.transaction_id }))
             .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: shortcode[2] })))
@@ -70,9 +70,9 @@ const ICOPortfolio = (() => {
             $('#portfolio-no-contract').hide();
             $.each(data.portfolio.contracts, (ci, c) => {
                 if (!getPropertyValue(values, c.contract_id) && c.contract_type === 'BINARYICO') {
-                    values[c.contract_id] = {};
+                    values[c.contract_id]           = {};
                     values[c.contract_id].buy_price = c.buy_price;
-                    portfolio_data = Portfolio.getPortfolioData(c);
+                    portfolio_data                  = Portfolio.getPortfolioData(c);
                     createPortfolioRow(portfolio_data, is_first_response);
                     setTimeout(() => {
                         $(`tr.${c.contract_id}`).removeClass('new');
@@ -85,7 +85,7 @@ const ICOPortfolio = (() => {
             $('#portfolio-no-contract').show();
             $('#portfolio-table').setVisibility(0);
         } else {
-            $('button[action="cancel"]').on('click', function() {
+            $('button[action="cancel"]').on('click', function () {
                 BinarySocket.send({
                     sell : $(this).attr('contract_id'),
                     price: 0,
@@ -116,7 +116,7 @@ const ICOPortfolio = (() => {
         $(`tr.${contract_id}`)
             .removeClass('new')
             .css('opacity', '0.5')
-            .fadeOut(1000, function() {
+            .fadeOut(1000, function () {
                 $(this).remove();
                 if ($('#portfolio-body').find('tr').length === 0) {
                     $('#portfolio-table').setVisibility(0);

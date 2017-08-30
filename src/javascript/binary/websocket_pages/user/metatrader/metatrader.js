@@ -118,8 +118,8 @@ const MetaTrader = (() => {
         e.preventDefault();
         MetaTraderUI.hideFormMessage();
         const $btn_submit = $(e.target);
-        const acc_type = $btn_submit.attr('acc_type');
-        const action = $btn_submit.attr('action');
+        const acc_type    = $btn_submit.attr('acc_type');
+        const action      = $btn_submit.attr('action');
         if (Validation.validate(`#frm_${action}`)) {
             MetaTraderUI.disableButton();
             // further validations before submit (password_check)

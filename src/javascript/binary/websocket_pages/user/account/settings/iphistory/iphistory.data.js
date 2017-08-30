@@ -16,7 +16,7 @@ const IPHistoryData = (() => {
             { name: 'Firefox',   regex: /firefox\/([\d\w.-]+)/i },
         ];
         for (let i = 0; i < lookup.length; i++) {
-            const info = lookup[i];
+            const info  = lookup[i];
             const match = user_agent.match(info.regex);
             if (match !== null) {
                 return {
@@ -28,18 +28,13 @@ const IPHistoryData = (() => {
         return null;
     };
 
-    const parse = (activity) => {
-        const environ    = activity.environment;
-        const ip_addr    = environ.split(' ')[2].split('=')[1];
-        const user_agent = environ.match('User_AGENT=(.+) LANG')[1];
-        return {
-            time   : activity.time,
-            action : activity.action,
-            success: activity.status === 1,
-            browser: parseUA(user_agent),
-            ip_addr,
-        };
-    };
+    const parse = (activity) => ({
+        time   : activity.time,
+        action : activity.action,
+        success: activity.status === 1,
+        browser: parseUA(activity.environment.match('User_AGENT=(.+) LANG')[1]),
+        ip_addr: activity.environment.split(' ')[2].split('=')[1],
+    });
 
     return {
         parse,

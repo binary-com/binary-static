@@ -1,5 +1,5 @@
-const moment     = require('moment');
-const template   = require('./utility').template;
+const moment   = require('moment');
+const template = require('./utility').template;
 
 const Localize = (() => {
     let localized_texts;
@@ -11,8 +11,11 @@ const Localize = (() => {
 
     const doLocalize = (txt, params) => {
         let text = txt;
+
         const index = text.replace(/[\s|.]/g, '_');
+
         text = (localized_texts && localized_texts[index]) || text;
+
         // only use template when explicitly required
         return params ? template(text, params) : text;
     };
@@ -22,8 +25,8 @@ const Localize = (() => {
     );
 
     return {
-        forLang: localizeForLang,
         localize,
+        forLang: localizeForLang,
     };
 })();
 

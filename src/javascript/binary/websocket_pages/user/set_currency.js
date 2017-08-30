@@ -29,7 +29,7 @@ const SetCurrency = (() => {
 
         BinarySocket.wait('payout_currencies').then((response) => {
             const payout_currencies = response.payout_currencies;
-            const $fiat_currencies = $('<div/>');
+            const $fiat_currencies  = $('<div/>');
             const $cryptocurrencies = $('<div/>');
             payout_currencies.forEach((c) => {
                 (isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies)
@@ -57,7 +57,7 @@ const SetCurrency = (() => {
                 $(this).addClass('selected');
             });
 
-            const $form = $('#frm_set_currency');
+            const $form  = $('#frm_set_currency');
             const $error = $form.find('.error-msg');
             $form.on('submit', (evt) => {
                 evt.preventDefault();

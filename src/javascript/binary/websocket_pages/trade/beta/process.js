@@ -108,8 +108,8 @@ const Process_Beta = (() => {
             const confirmation_error          = document.getElementById('confirmation_error');
             const confirmation_error_contents = document.getElementById('confirmation_error_contents');
             const contracts_list              = document.getElementById('contracts_list');
-            container.style.display = 'block';
-            contracts_list.style.display = 'none';
+            container.style.display           = 'block';
+            contracts_list.style.display      = 'none';
             message_container.hide();
             confirmation_error.show();
             elementInnerHtml(confirmation_error_contents, `${contracts.error.message} <a href="javascript:;" onclick="sessionStorage.removeItem('underlying'); window.location.reload();">${localize('Please reload the page')}</a>`);
@@ -177,7 +177,7 @@ const Process_Beta = (() => {
 
         if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
 
-        const expiry_type = Defaults.get('expiry_type') || 'duration';
+        const expiry_type        = Defaults.get('expiry_type') || 'duration';
         const make_price_request = onExpiryTypeChange(expiry_type);
 
         if (make_price_request >= 0) {
@@ -216,7 +216,7 @@ const Process_Beta = (() => {
     };
 
     const onExpiryTypeChange = (value) => {
-        const $expiry_type = $('#expiry_type');
+        const $expiry_type    = $('#expiry_type');
         const validated_value = value && $expiry_type.find(`option[value=${value}]`).length ? value : 'duration';
         $expiry_type.val(validated_value);
 

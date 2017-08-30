@@ -4,7 +4,7 @@ const Scroll = (() => {
     const sidebarScroll = ($container) => {
         $main_container = $container;
 
-        $container.on('click', '#sidebar-nav li', function() {
+        $container.on('click', '#sidebar-nav li', function () {
             const clicked_li = $(this);
             $.scrollTo($(`.section:eq(${clicked_li.index()})`), 500);
             return false;
@@ -12,9 +12,9 @@ const Scroll = (() => {
 
         if ($container.length) {
             // grab the initial top offset of the navigation
-            const $sidebar = $container.find('.sidebar');
-            const $sidebar_container = $container.find('.sidebar-container');
-            let width = $sidebar.width();
+            const $sidebar                   = $container.find('.sidebar');
+            const $sidebar_container         = $container.find('.sidebar-container');
+            let width                        = $sidebar.width();
             let sticky_navigation_offset_top = $sidebar.offset().top;
 
             // With thanks:
@@ -24,7 +24,7 @@ const Scroll = (() => {
             const sticky_navigation = () => {
                 if (!$sidebar.is(':visible')) return;
                 if (!width) {
-                    width = $sidebar.width();
+                    width                        = $sidebar.width();
                     sticky_navigation_offset_top = $sidebar.offset().top;
                 }
                 const scroll_top = $(window).scrollTop(); // our current vertical position from the top
@@ -45,16 +45,16 @@ const Scroll = (() => {
             sticky_navigation();
 
             const sidebar_nav = $sidebar.find('#sidebar-nav');
-            const length = $container.find('.section').length;
-            $(window).on('scroll', function() {
+            const length      = $container.find('.section').length;
+            $(window).on('scroll', function () {
                 if (!sidebar_nav.is(':visible')) return;
                 // and run it again every time you scroll
                 sticky_navigation();
 
                 for (let i = 0; i < length; i++) {
-                    const section = $(`.section:eq(${i})`);
+                    const section        = $(`.section:eq(${i})`);
                     const section_offset = section.offset();
-                    const is_offset_top = section_offset && $(this).scrollTop() >= section_offset.top - 5;
+                    const is_offset_top  = section_offset && $(this).scrollTop() >= section_offset.top - 5;
                     if (($(window).scrollTop() === 0 || is_offset_top) && section.css('display') !== 'none') { // ignore hidden elements
                         sidebar_nav.find('li').removeClass('selected');
 
@@ -75,8 +75,8 @@ const Scroll = (() => {
 
     const scrollToTop = () => {
         let is_displaying = false;
-        const $scrollup = $('#scrollup');
-        $(document).scroll(function() {
+        const $scrollup   = $('#scrollup');
+        $(document).scroll(function () {
             if ($(this).scrollTop() > 100) {
                 if (is_displaying) return;
                 $scrollup.fadeIn();

@@ -31,9 +31,7 @@ const getSocketURL = () => {
         }
 
         let server = 'blue';
-        if (/staging\.binary\.com/i.test(window.location.hostname)) {
-            server = 'blue';
-        } else {
+        if (!/staging\.binary\.com/i.test(window.location.hostname)) {
             const loginid = window.localStorage.getItem('active_loginid');
             let client_type = categoryMap[2];
             if (loginid) {

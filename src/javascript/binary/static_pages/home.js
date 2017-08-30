@@ -9,7 +9,7 @@ const Home = (() => {
     const onLoad = () => {
         BinarySocket.wait('website_status').then((response) => {
             clients_country = response.website_status.clients_country;
-            const form_id = '#frm_verify_email';
+            const form_id   = '#frm_verify_email';
 
             FormManager.init(form_id, [
                 { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },

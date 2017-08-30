@@ -48,7 +48,7 @@ const FinancialAssessment = (() => {
         });
 
         arr_validation = [];
-        $(form_selector).find('select').map(function() {
+        $(form_selector).find('select').map(function () {
             const id = $(this).attr('id');
             arr_validation.push({ selector: `#${id}`, validations: ['req'] });
             if (financial_assessment[id] === undefined) {  // handle fields not previously set by client
@@ -79,7 +79,7 @@ const FinancialAssessment = (() => {
 
             const data = { set_financial_assessment: 1 };
             showLoadingImage($('#msg_form'));
-            $(form_selector).find('select').each(function() {
+            $(form_selector).find('select').each(function () {
                 financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val();
             });
             BinarySocket.send(data).then((response) => {

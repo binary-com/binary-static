@@ -22,9 +22,9 @@ const GetStartedJP = (() => {
 
     const onLoad = () => {
         Client.activateByClientType();
-        $contents = $('.contents');
+        $contents   = $('.contents');
         $sidebar_li = $('.sidebar ul li');
-        $index = $('#index');
+        $index      = $('#index');
 
         const tab = window.location.hash;
         if (tab && tab !== '') {
@@ -37,7 +37,7 @@ const GetStartedJP = (() => {
             showSelectedTab();
         });
 
-        $sidebar_li.click(function() {
+        $sidebar_li.click(function () {
             $('.sidebar ul li').removeClass('selected');
             $(this).addClass('selected');
         });

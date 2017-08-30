@@ -4,7 +4,7 @@ const IPHistoryData = require('../settings/iphistory/iphistory.data');
 describe('IPHistoryData', () => {
     describe('.parseUserAgent()', () => {
         // TODO: add more user agent test strings
-        const parse = IPHistoryData.parseUserAgent;
+        const parse  = IPHistoryData.parseUserAgent;
         const common = [
             {
                 ua     : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:48.0) Gecko/20100101 Firefox/48.0',

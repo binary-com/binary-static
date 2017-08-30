@@ -1,10 +1,10 @@
-const BinarySocket  = require('../../socket');
-const Client        = require('../../../base/client');
-const GTM           = require('../../../base/gtm');
-const localize      = require('../../../base/localize').localize;
-const State         = require('../../../base/storage').State;
-const urlFor        = require('../../../base/url').urlFor;
-const formatMoney   = require('../../../common_functions/currency').formatMoney;
+const BinarySocket = require('../../socket');
+const Client       = require('../../../base/client');
+const GTM          = require('../../../base/gtm');
+const localize     = require('../../../base/localize').localize;
+const State        = require('../../../base/storage').State;
+const urlFor       = require('../../../base/url').urlFor;
+const formatMoney  = require('../../../common_functions/currency').formatMoney;
 
 const MetaTraderConfig = (() => {
     const types_info = {
@@ -14,7 +14,7 @@ const MetaTraderConfig = (() => {
         real_vanuatu_cent    : { account_type: 'financial', mt5_account_type: 'cent',     title: localize('Real Cent'),       order: 2, max_leverage: 1000 },
         real_vanuatu_standard: { account_type: 'financial', mt5_account_type: 'standard', title: localize('Real Standard'),   order: 4, max_leverage: 300 },
         real_vanuatu_stp     : { account_type: 'financial', mt5_account_type: 'stp',      title: localize('Real STP'),        order: 6, max_leverage: 100 },
-        demo_costarica       : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 7, max_leverage: 500, is_demo: true },
+        demo_costarica       : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 7, max_leverage: 500,  is_demo: true },
         real_costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 8, max_leverage: 500 },
     };
 

@@ -4,9 +4,9 @@ const formatMoney = require('../../common_functions/currency').formatMoney;
 
 const updatePurchaseStatus = (final_price, pnl, contract_status) => {
     $('#contract_purchase_heading').text(localize(contract_status));
-    const $payout = $('#contract_purchase_payout');
-    const $cost   = $('#contract_purchase_cost');
-    const $profit = $('#contract_purchase_profit');
+    const $payout  = $('#contract_purchase_payout');
+    const $cost    = $('#contract_purchase_cost');
+    const $profit  = $('#contract_purchase_profit');
     const currency = Client.get('currency');
 
     $payout.html($('<div/>', { text: localize('Buy price') }).append($('<p/>', { html: formatMoney(currency, Math.abs(pnl)) })));

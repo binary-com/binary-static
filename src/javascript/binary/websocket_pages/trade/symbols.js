@@ -32,10 +32,10 @@ const Symbols = (() => {
 
     return {
         details,
-        markets      : list   => (list ? trade_markets_list : trade_markets),
-        underlyings  : ()     => trade_underlyings,
+        markets      : list => (list ? trade_markets_list : trade_markets),
         getName      : symbol => names[symbol],
-        getAllSymbols: ()     => names,
+        underlyings  : () => trade_underlyings,
+        getAllSymbols: () => names,
     };
 })();
 

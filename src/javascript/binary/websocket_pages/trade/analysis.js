@@ -28,8 +28,8 @@ const TradingAnalysis = (() => {
         form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
 
         const map_obj = { matchdiff: 'digits', callput: 'higherlower' };
-        const regex = new RegExp(Object.keys(map_obj).join('|'), 'gi');
-        form_name = form_name.replace(regex, matched => map_obj[matched]);
+        const regex   = new RegExp(Object.keys(map_obj).join('|'), 'gi');
+        form_name     = form_name.replace(regex, matched => map_obj[matched]);
 
         $('#tab_last_digit').setVisibility(/digits|overunder|evenodd/.test(form_name));
         sessionStorage.setItem('currentAnalysisTab', getActiveTab());
@@ -74,7 +74,7 @@ const TradingAnalysis = (() => {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
                 const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
-                const tick = $('#tick_count').val() || 100;
+                const tick       = $('#tick_count').val() || 100;
                 GetTicks.request('', {
                     ticks_history: underlying,
                     count        : tick.toString(),
@@ -90,13 +90,13 @@ const TradingAnalysis = (() => {
      * function to toggle the active element for analysis menu
      */
     const toggleActiveAnalysisTabs = () => {
-        const current_tab = getActiveTab();
+        const current_tab        = getActiveTab();
         const analysis_container = document.getElementById('bet_bottom_content');
 
         if (analysis_container) {
-            const child_elements = analysis_container.children;
+            const child_elements      = analysis_container.children;
             const current_tab_element = document.getElementById(`${current_tab}-content`);
-            const classes = current_tab_element.classList;
+            const classes             = current_tab_element.classList;
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
                 child_elements[i].classList.remove('selectedTab');
@@ -161,8 +161,8 @@ const TradingAnalysis = (() => {
     };
 
     return {
-        request: requestTradeAnalysis,
         bindAnalysisTabEvent,
+        request: requestTradeAnalysis,
     };
 })();
 

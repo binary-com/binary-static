@@ -20,10 +20,10 @@ const ProfitTableInit = (() => {
     const finishedConsumed = () => (transaction_consumed === transactions_received);
 
     const onUnload = () => {
-        current_batch = [];
-        transaction_consumed = 0;
+        current_batch         = [];
+        transaction_consumed  = 0;
         transactions_received = 0;
-        pending = false;
+        pending               = false;
 
         ProfitTableUI.errorMessage(null);
 
@@ -49,9 +49,9 @@ const ProfitTableInit = (() => {
             return;
         }
 
-        pending = false;
+        pending            = false;
         const profit_table = response.profit_table;
-        current_batch = profit_table.transactions;
+        current_batch      = profit_table.transactions;
         transactions_received += current_batch.length;
 
         if (current_batch.length < batch_size) {
@@ -66,7 +66,7 @@ const ProfitTableInit = (() => {
             if ((transactions_received === 0) && (current_batch.length === 0)) {
                 $('#profit-table').find('tbody')
                     .append($('<tr/>', { class: 'flex-tr' })
-                        .append($('<td/>',  { colspan: 8 })
+                        .append($('<td/>', { colspan: 8 })
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             }
         }
@@ -109,13 +109,13 @@ const ProfitTableInit = (() => {
     };
 
     const onLoad = () => {
-        batch_size = 100;
-        chunk_size = batch_size / 2;
+        batch_size            = 100;
+        chunk_size            = batch_size / 2;
         transactions_received = 0;
-        transaction_consumed = 0;
-        no_more_data = false;
-        pending = false;
-        current_batch = [];
+        transaction_consumed  = 0;
+        no_more_data          = false;
+        pending               = false;
+        current_batch         = [];
 
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response)));

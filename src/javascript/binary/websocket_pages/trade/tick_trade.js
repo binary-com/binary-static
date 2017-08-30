@@ -55,8 +55,8 @@ const TickDisplay = (() => {
 
         if (data.show_contract_result) {
             contract_sentiment = data.contract_sentiment;
-            price = parseFloat(data.price);
-            payout = parseFloat(data.payout);
+            price              = parseFloat(data.price);
+            payout             = parseFloat(data.payout);
         }
 
         const minimize = data.show_contract_result;
@@ -66,9 +66,9 @@ const TickDisplay = (() => {
         getHighstock((Highstock) => {
             Highcharts = Highstock;
             initializeChart({
+                minimize,
                 plot_from: data.previous_tick_epoch * 1000,
                 plot_to  : new Date(end_time * 1000).getTime(),
-                minimize,
                 width    : data.width ? data.width : undefined,
             }, options);
         });
@@ -123,7 +123,7 @@ const TickDisplay = (() => {
             tooltip: {
                 formatter() {
                     const new_y = this.y.toFixed(display_decimals);
-                    const mom = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
+                    const mom   = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
                     return `${mom}<br/>${display_symbol} ${new_y}`;
                 },
             },
@@ -206,7 +206,7 @@ const TickDisplay = (() => {
                 zIndex: 2,
             });
             contract_barrier = barrier_tick.quote;
-            set_barrier = false;
+            set_barrier      = false;
         }
 
         if (barrier_type === 'asian') {
@@ -214,8 +214,8 @@ const TickDisplay = (() => {
             for (let i = 0; i < applicable_ticks.length; i++) {
                 total += parseFloat(applicable_ticks[i].quote);
             }
-            let calc_barrier =  total / applicable_ticks.length;
-            calc_barrier = calc_barrier.toFixed(parseInt(display_decimals) + 1); // round calculated barrier
+            // round calculated barrier
+            const calc_barrier = (total / applicable_ticks.length).toFixed(parseInt(display_decimals) + 1);
 
             chart.yAxis[0].removePlotLine('tick-barrier');
             chart.yAxis[0].addPlotLine({
@@ -254,7 +254,7 @@ const TickDisplay = (() => {
         }
 
         const exit_tick_index = applicable_ticks.length - 1;
-        const exit_spot = applicable_ticks[exit_tick_index].quote;
+        const exit_spot       = applicable_ticks[exit_tick_index].quote;
 
         if (contract_sentiment === 'up') {
             if (exit_spot > contract_barrier) {
@@ -281,8 +281,8 @@ const TickDisplay = (() => {
 
     const plot = () => {
         contract_start_moment = moment(contract_start_ms).utc();
-        counter = 0;
-        applicable_ticks = [];
+        counter               = 0;
+        applicable_ticks      = [];
     };
 
     const dispatch = (data) => {
@@ -330,12 +330,12 @@ const TickDisplay = (() => {
                     show_contract_result: 0,
                 }, data);
                 spots_list = {};
-                tick_init = 'initialized';
+                tick_init  = 'initialized';
                 return;
             }
         }
         if (data.tick) {
-            spots2 = Tick.spots();
+            spots2  = Tick.spots();
             epoches = Object.keys(spots2).sort((a, b) => a - b);
         } else if (data.history) {
             epoches = data.history.times;
@@ -366,7 +366,7 @@ const TickDisplay = (() => {
                     chart.series[0].addPoint([counter, tick.quote], true, false);
                     applicable_ticks.push(tick);
                     spots_list[tick.epoch] = tick.quote;
-                    const indicator_key = `_${counter}`;
+                    const indicator_key    = `_${counter}`;
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
                         x_indicators[indicator_key].index = counter;
                         add(x_indicators[indicator_key]);
@@ -409,8 +409,8 @@ const TickDisplay = (() => {
     };
 
     return {
-        init      : initialize,
         updateChart,
+        init      : initialize,
         resetSpots: () => { spots_list = {}; },
     };
 })();

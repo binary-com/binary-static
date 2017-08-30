@@ -69,13 +69,13 @@ const Contract = (() => {
         if (!contracts) return;
 
         start_dates = { has_spot: 0, list: [] };
-        durations = {};
-        open = contracts.open;
-        close = contracts.close;
+        durations   = {};
+        open        = contracts.open;
+        close       = contracts.close;
 
         const form_barrier = getFormNameBarrierCategory(form_name);
-        form = form_barrier.form_name;
-        barrier = barrier_category = form_barrier.barrier_category;
+        form               = form_barrier.form_name;
+        barrier            = barrier_category = form_barrier.barrier_category;
 
         contracts.available.forEach((current_obj) => {
             const contract_category = current_obj.contract_category;
@@ -135,7 +135,7 @@ const Contract = (() => {
     };
 
     const getContractForms = () => {
-        const contracts = Contract.contracts().contracts_for;
+        const contracts            = Contract.contracts().contracts_for;
         const trade_contract_forms = {};
 
         if (!contracts) return null;
@@ -154,7 +154,7 @@ const Contract = (() => {
                     if (contract_category === 'digits') {
                         trade_contract_forms.matchdiff = localize('Matches/Differs');
                         if (getLanguage() !== 'ID') {
-                            trade_contract_forms.evenodd = localize('Even/Odd');
+                            trade_contract_forms.evenodd   = localize('Even/Odd');
                             trade_contract_forms.overunder = localize('Over/Under');
                         }
                     }

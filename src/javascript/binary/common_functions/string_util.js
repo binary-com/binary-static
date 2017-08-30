@@ -23,14 +23,14 @@ const padLeft = (txt, len, char) => {
 };
 
 const compareBigUnsignedInt = (a, b) => {
-    let first_num = numberToString(a);
+    let first_num  = numberToString(a);
     let second_num = numberToString(b);
     if (!first_num || !second_num) {
         return '';
     }
     const max_length = Math.max(first_num.length, second_num.length);
-    first_num = padLeft(first_num, max_length, '0');
-    second_num = padLeft(second_num, max_length, '0');
+    first_num        = padLeft(first_num, max_length, '0');
+    second_num       = padLeft(second_num, max_length, '0');
 
     // lexicographical comparison
     let order = 0;

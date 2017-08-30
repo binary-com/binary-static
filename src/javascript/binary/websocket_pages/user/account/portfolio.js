@@ -3,9 +3,10 @@ const formatMoney         = require('../../../common_functions/currency').format
 const jpClient            = require('../../../common_functions/country_base').jpClient;
 
 const Portfolio = (() => {
-    const getBalance = (balance, currency) => (
-        currency ? formatMoney(currency, parseFloat(balance)) : parseFloat(balance)
-    );
+    const getBalance = (balance, currency) => {
+        const float_balance = parseFloat(balance);
+        return currency ? formatMoney(currency, float_balance) : float_balance;
+    };
 
     const getPortfolioData = c => (
         {
@@ -31,7 +32,7 @@ const Portfolio = (() => {
     );
 
     const getSum = (values, value_type) => { // value_type is: indicative or buy_price
-        let sum = 0;
+        let sum    = 0;
         const keys = Object.keys(values);
         for (let i = 0; i < keys.length; i++) {
             const key = keys[i];

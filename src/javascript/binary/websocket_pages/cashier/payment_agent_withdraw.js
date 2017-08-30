@@ -4,7 +4,7 @@ const localize     = require('../../base/localize').localize;
 const FormManager  = require('../../common_functions/form_manager');
 
 const PaymentAgentWithdraw = (() => {
-    const view_ids = {
+    const view_ids  = {
         error  : '#viewError',
         success: '#viewSuccess',
         confirm: '#viewConfirm',
@@ -35,7 +35,7 @@ const PaymentAgentWithdraw = (() => {
             }
             setActiveView(view_ids.form);
             const currency = Client.get('currency');
-            const form_id = `#${$(view_ids.form).find('form').attr('id')}`;
+            const form_id  = `#${$(view_ids.form).find('form').attr('id')}`;
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
                 { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },

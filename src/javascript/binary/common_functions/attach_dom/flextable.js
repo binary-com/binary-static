@@ -5,11 +5,13 @@ const FlexTableUI = (() => {
 
     const init = (conf) => {
         config = conf;
+
         const $tableContainer = Table.createFlexTable(
             [],
             getMetadata(),
             config.header,
             config.footer);
+
         // Table.appendTablebody expects the table to already
         // exist in the DOM, so we need to append first
         $tableContainer.appendTo(config.container);
@@ -25,9 +27,9 @@ const FlexTableUI = (() => {
     );
 
     const extend = (data) => {
-        const cols = config.cols;
+        const cols      = config.cols;
         const formatter = config.formatter;
-        const style = config.style;
+        const style     = config.style;
         Table.appendTableBody(config.id, data, (datum) => {
             const $row = Table.createFlexTableRow(formatter(datum), cols, 'data');
             if (style) {

@@ -11,7 +11,7 @@ const ApplicationsUI = (() => {
     let can_revoke = false;
 
     const container_selector = '#applications-container';
-    const messages = {
+    const messages           = {
         no_apps       : 'You have not granted access to any applications.',
         revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
         revoke_access : 'Revoke access',
@@ -19,8 +19,8 @@ const ApplicationsUI = (() => {
 
     const formatApp = (app) => {
         const last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : localize('Never');
-        const scopes = app.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
-        const data = [app.name, scopes, last_used];
+        const scopes    = app.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
+        const data      = [app.name, scopes, last_used];
         if (can_revoke) {
             data.push(''); // for the "Revoke App" button
         }
@@ -53,16 +53,16 @@ const ApplicationsUI = (() => {
             return FlexTableUI.replace(data);
         }
         const headers = ['Name', 'Permissions', 'Last Used'];
-        can_revoke = /admin/.test((State.getResponse('authorize') || {}).scopes);
+        can_revoke    = /admin/.test((State.getResponse('authorize') || {}).scopes);
         if (can_revoke) {
             headers.push('Action');
         }
         FlexTableUI.init({
+            data,
             container: container_selector,
             header   : headers.map(localize),
             id       : 'applications-table',
             cols     : headers.map(title => title.toLowerCase().replace(/\s/g, '-')),
-            data,
             style    : ($row, app) => {
                 if (can_revoke) {
                     $row.children('.action').first().append(createRevokeButton($row, app));

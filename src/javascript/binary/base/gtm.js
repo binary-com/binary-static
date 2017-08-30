@@ -29,14 +29,14 @@ const GTM = (() => {
         delete data_layer_info.event;
 
         return {
-            data: data_layer_info,
             event,
+            data: data_layer_info,
         };
     };
 
     const pushDataLayer = (data) => {
         if (isGtmApplicable() && !Login.isLoginPages()) {
-            const info = gtmDataLayerInfo(data && typeof data === 'object' ? data : null);
+            const info   = gtmDataLayerInfo(data && typeof data === 'object' ? data : null);
             dataLayer[0] = info.data;
             dataLayer.push(info.data);
             dataLayer.push({ event: info.event });
@@ -100,7 +100,7 @@ const GTM = (() => {
         if (!isGtmApplicable() || Client.get('is_virtual')) return;
         const buy = response.buy;
         if (!buy) return;
-        const req = response.echo_req.passthrough;
+        const req  = response.echo_req.passthrough;
         const data = {
             event             : 'buy_contract',
             visitorId         : Client.get('loginid'),
@@ -131,7 +131,7 @@ const GTM = (() => {
             data.bom_barrier_low  = req.barrier2;
         }
         if (isVisible(document.getElementById('prediction'))) {
-            data.bom_prediction  = req.barrier;
+            data.bom_prediction = req.barrier;
         }
 
         pushDataLayer(data);
@@ -141,16 +141,20 @@ const GTM = (() => {
         const acc_type = response.mt5_new_account.mt5_account_type ?
             `${response.mt5_new_account.account_type}_${response.mt5_new_account.mt5_account_type}` : // financial_cent, demo_cent, ...
             `${response.mt5_new_account.account_type === 'demo' ? 'demo' : 'real'}_gaming`;           // demo_gaming, real_gaming
+
         const gtm_data = {
             event          : 'mt5_new_account',
             bom_email      : Client.get('email'),
             bom_country    : State.getResponse('get_settings.country'),
             mt5_last_signup: acc_type,
         };
+
         gtm_data[`mt5_${acc_type}_id`] = response.mt5_new_account.login;
+
         if (/demo/.test(acc_type) && !Client.get('is_virtual')) {
             gtm_data.visitorId = Client.getAccountOfType('virtual').loginid;
         }
+
         pushDataLayer(gtm_data);
     };
 

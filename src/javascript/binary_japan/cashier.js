@@ -24,7 +24,7 @@ const CashierJP = (() => {
 
     const errorHandler = () => {
         $('.error-msg').remove();
-        const $id = $('#id123-control22598145');
+        const $id               = $('#id123-control22598145');
         const withdrawal_amount = $id.val();
 
         const showError = (message) => {

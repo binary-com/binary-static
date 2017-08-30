@@ -35,11 +35,11 @@ const MBSymbols = (() => {
 
     return {
         details,
-        markets      : list    => (list ? trade_markets_list : trade_markets),
-        underlyings  : ()      => trade_underlyings,
-        getName      : symbol  => names[symbol],
-        getAllSymbols: ()      => all_symbols,
-        clearData    : ()      => { ActiveSymbols.clearData(); },
+        markets      : list => (list ? trade_markets_list : trade_markets),
+        getName      : symbol => names[symbol],
+        underlyings  : () => trade_underlyings,
+        getAllSymbols: () => all_symbols,
+        clearData    : () => { ActiveSymbols.clearData(); },
     };
 })();
 

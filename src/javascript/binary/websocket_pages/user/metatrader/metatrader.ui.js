@@ -21,8 +21,8 @@ const MetaTraderUI = (() => {
     const validations  = MetaTraderConfig.validations;
 
     const init = (submit_func) => {
-        submit = submit_func;
-        $container = $('#mt_account_management');
+        submit       = submit_func;
+        $container   = $('#mt_account_management');
         $mt5_account = $container.find('#mt5_account');
         $list_cont   = $container.find('#accounts_list');
         $list        = $list_cont.find('> div');
@@ -69,7 +69,7 @@ const MetaTraderUI = (() => {
                 hideList();
             }
         });
-        $list.off('click').on('click', '.acc-name', function() {
+        $list.off('click').on('click', '.acc-name', function () {
             if (!$(this).hasClass('disabled')) {
                 setAccountType($(this).attr('value'), true);
             }
@@ -115,11 +115,11 @@ const MetaTraderUI = (() => {
         if (types_info[acc_type].account_info) {
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
-                const key  = $(this).attr('data');
-                const info = types_info[acc_type].account_info[key];
+                const key     = $(this).attr('data');
+                const info    = types_info[acc_type].account_info[key];
                 const mapping = {
                     balance : () => formatMoney('USD', +info),
-                    leverage: () =>`1:${info}`,
+                    leverage: () => `1:${info}`,
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
@@ -158,7 +158,7 @@ const MetaTraderUI = (() => {
         }
 
         const acc_type = Client.get('mt5_account');
-        const action = $target.attr('class').split(' ').find(c => /^act_/.test(c)).replace('act_', '');
+        const action   = $target.attr('class').split(' ').find(c => /^act_/.test(c)).replace('act_', '');
 
         // set active, update title
         $detail.find('[class*="act_"]').removeClass('selected');

@@ -60,7 +60,7 @@ const MBProcess = (() => {
 
         const is_show_all  = Client.isLoggedIn() && !jpClient();
         const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
-        let symbol = MBDefaults.get('underlying');
+        let symbol         = MBDefaults.get('underlying');
 
         if (!symbol || !symbols_list[symbol]) {
             symbol = undefined;
@@ -91,7 +91,7 @@ const MBProcess = (() => {
 
     const populateUnderlyings = (selected) => {
         const $underlyings = $('#underlying');
-        const all_symbols = MBSymbols.getAllSymbols();
+        const all_symbols  = MBSymbols.getAllSymbols();
 
         const $list = $underlyings.find('.list');
         $list.empty();
@@ -101,11 +101,11 @@ const MBProcess = (() => {
             .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' })));
 
         let selected_symbol = selected;
-        if (Object.keys(all_symbols).indexOf(selected_symbol) === -1) selected_symbol = '';
+        if (Object.keys(all_symbols).indexOf(selected) === -1) selected_symbol = '';
         Object.keys(all_symbols).forEach((symbol, idx) => {
             if (all_symbols[symbol].is_active) {
                 const is_current = (!selected_symbol && idx === 0) || symbol === selected_symbol;
-                const $current = $('<div/>', { value: symbol, class: 'gr-4 gr-4-t gr-4-m' })
+                const $current   = $('<div/>', { value: symbol, class: 'gr-4 gr-4-t gr-4-m' })
                     .append($('<img/>', { src: urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`), alt: '' }))
                     .append($('<div/>', { text: all_symbols[symbol].display, class: 'name align-self-center' }));
                 $list.append($current);
@@ -117,6 +117,7 @@ const MBProcess = (() => {
     };
 
     const selectors = '.trade_form, .price-table, #trading_bottom_content, .selection_wrapper, #trade_live_chart';
+
     const handleMarketClosed = () => {
         $(selectors).setVisibility(0);
         hideShowMbTrading('hide');
@@ -132,7 +133,7 @@ const MBProcess = (() => {
 
     const hideShowMbTrading = (action) => {
         const classes = ['gr-5 ', 'gr-12 ']; // the extra space is so gr-5-m is not replaced
-        const show = action === 'show';
+        const show    = action === 'show';
         const $parent = $('#mb_trading').parent();
         $parent.attr('class', $parent.attr('class').replace(classes[+show], classes[+!show]));
     };
@@ -226,10 +227,11 @@ const MBProcess = (() => {
         MBPrice.increaseReqId();
         MBPrice.showPriceOverlay();
         const available_contracts = MBContract.getCurrentContracts();
-        const durations = MBDefaults.get('period').split('_');
-        const jp_client = jpClient();
-        const is_crypto = isCryptocurrency(MBDefaults.get('currency'));
-        const payout = parseFloat(MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`));
+        const durations           = MBDefaults.get('period').split('_');
+        const jp_client           = jpClient();
+        const is_crypto           = isCryptocurrency(MBDefaults.get('currency'));
+        const payout              = parseFloat(MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`));
+
         const req = {
             proposal_array: 1,
             subscribe     : 1,
@@ -250,7 +252,7 @@ const MBProcess = (() => {
 
         // barriers
         let all_expired = true;
-        const contract = available_contracts[0];
+        const contract  = available_contracts[0];
         contract.available_barriers.forEach((barrier) => {
             const barrier_item = {};
             if (+contract.barriers === 2) {

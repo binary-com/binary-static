@@ -34,7 +34,7 @@ const MBNotifications = (() => {
             </div>`);
 
         if (options.dismissible) {
-            $message.click(function() { dismissMessage(this); });
+            $message.click(function () { dismissMessage(this); });
         }
 
         return $message;

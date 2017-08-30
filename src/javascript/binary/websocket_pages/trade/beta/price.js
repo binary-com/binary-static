@@ -28,27 +28,28 @@ const formatMoney          = require('../../../common_functions/currency').forma
  */
 const Price_Beta = (() => {
     let type_display_id_mapping = {};
-    let form_id = 0;
+    let form_id                 = 0;
 
     const createProposal = (type_of_contract) => {
         const proposal = {
             proposal : 1,
             subscribe: 1,
         };
+
         const contract_type = type_of_contract;
         const start_time    = getStartDateNode();
-        const underlying       = document.getElementById('underlying');
-        const amount_type      = document.getElementById('amount_type');
-        const currency         = document.getElementById('currency');
-        const payout           = document.getElementById('amount');
-        const expiry_type      = document.getElementById('expiry_type');
-        const duration         = document.getElementById('duration_amount');
-        const duration_unit    = document.getElementById('duration_units');
-        const end_date         = document.getElementById('expiry_date');
-        const barrier          = document.getElementById('barrier');
-        const high_barrier     = document.getElementById('barrier_high');
-        const low_barrier      = document.getElementById('barrier_low');
-        const prediction       = document.getElementById('prediction');
+        const underlying    = document.getElementById('underlying');
+        const amount_type   = document.getElementById('amount_type');
+        const currency      = document.getElementById('currency');
+        const payout        = document.getElementById('amount');
+        const expiry_type   = document.getElementById('expiry_type');
+        const duration      = document.getElementById('duration_amount');
+        const duration_unit = document.getElementById('duration_units');
+        const end_date      = document.getElementById('expiry_date');
+        const barrier       = document.getElementById('barrier');
+        const high_barrier  = document.getElementById('barrier_high');
+        const low_barrier   = document.getElementById('barrier_low');
+        const prediction    = document.getElementById('prediction');
 
         if (payout && isVisible(payout) && payout.value) {
             proposal.amount = parseFloat(payout.value);
@@ -75,11 +76,11 @@ const Price_Beta = (() => {
         }
 
         if (expiry_type && isVisible(expiry_type) && expiry_type.value === 'duration') {
-            proposal.duration = parseInt(duration.value);
+            proposal.duration      = parseInt(duration.value);
             proposal.duration_unit = duration_unit.value;
         } else if (expiry_type && isVisible(expiry_type) && expiry_type.value === 'endtime') {
             const end_date2 = end_date.getAttribute('data-value');
-            let end_time2 = Defaults.get('expiry_time');
+            let end_time2   = Defaults.get('expiry_time');
             if (!end_time2) {
                 const trading_times = getTradingTimes();
                 if (getPropertyValue(trading_times, [end_date2, underlying.value]).length && trading_times[end_date2][underlying.value][0] !== '--') {
@@ -91,7 +92,7 @@ const Price_Beta = (() => {
                 }
             }
 
-            proposal.date_expiry = moment.utc(`${end_date2} ${(end_time2 || '23:59:59')}`).unix();
+            proposal.date_expiry   = moment.utc(`${end_date2} ${(end_time2 || '23:59:59')}`).unix();
             // For stopping tick trade behaviour
             proposal.duration_unit = 'm';
         }
@@ -127,8 +128,8 @@ const Price_Beta = (() => {
 
     const display = (details, contract_type) => {
         const proposal = details.proposal;
-        const id = proposal ? proposal.id : '';
-        const params = details.echo_req;
+        const id       = proposal ? proposal.id : '';
+        const params   = details.echo_req;
 
         let type = params.contract_type;
         if (id && !type) {
@@ -160,7 +161,7 @@ const Price_Beta = (() => {
         const description   = container.getElementsByClassName('contract_description')[0];
         const comment       = container.getElementsByClassName('price_comment')[0];
         const error         = container.getElementsByClassName('contract_error')[0];
-        const currency = document.getElementById('currency');
+        const currency      = document.getElementById('currency');
 
         const display_type = type && contract_type ? contract_type[type] : '';
         if (display_type) {
