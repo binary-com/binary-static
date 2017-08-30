@@ -95,6 +95,7 @@ In order to remove the created folders from your gh-pages, you can use either:
 - To test changes made to templates, you need to re-compile them:
   - `grunt shell:compile_dev` to re-compile all templates.
   - `grunt shell:compile_dev --path=about-us` to re-compile only template(s) which serve about-us path in URL.
+- To fix eslint errors run `npm run eslint`
 
 
 ## Release to Production
