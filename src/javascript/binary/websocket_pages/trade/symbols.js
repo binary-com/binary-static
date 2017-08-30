@@ -17,8 +17,6 @@ const ActiveSymbols = require('../../common_functions/active_symbols');
  */
 
 const Symbols = (() => {
-    'use strict';
-
     let trade_markets      = {};
     let trade_markets_list = {};
     let trade_underlyings  = {};

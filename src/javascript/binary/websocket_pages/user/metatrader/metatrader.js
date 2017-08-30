@@ -7,8 +7,6 @@ const getPropertyValue = require('../../../base/utility').getPropertyValue;
 const Validation       = require('../../../common_functions/form_validation');
 
 const MetaTrader = (() => {
-    'use strict';
-
     const types_info   = MetaTraderConfig.types_info;
     const actions_info = MetaTraderConfig.actions_info;
     const fields       = MetaTraderConfig.fields;

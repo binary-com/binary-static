@@ -1,6 +1,4 @@
 const Contact = (() => {
-    'use strict';
-
     const onLoad = () => {
         $('.contact-content').on('change', '#cs_telephone_number', function() {
             const val = $(this).val().split(',');

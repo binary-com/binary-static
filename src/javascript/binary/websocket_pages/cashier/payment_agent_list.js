@@ -3,8 +3,6 @@ const urlForStatic = require('../../base/url').urlForStatic;
 const Client       = require('../../base/client');
 
 const PaymentAgentList = (() => {
-    'use strict';
-
     let $pa_list_container,
         $agent_template;
 

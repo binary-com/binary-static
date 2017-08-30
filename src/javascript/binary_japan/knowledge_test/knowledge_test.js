@@ -9,8 +9,6 @@ const Url                 = require('../../binary/base/url');
 const BinarySocket        = require('../../binary/websocket_pages/socket');
 
 const KnowledgeTest = (() => {
-    'use strict';
-
     const submitted        = {};
     const obj_random_picks = {};
     const passing_score    = 14; // minimum score to pass the test

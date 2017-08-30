@@ -4,8 +4,6 @@ const jpClient    = require('../../../common_functions/country_base').jpClient;
 const formatMoney = require('../../../common_functions/currency').formatMoney;
 
 const ProfitTable = (() => {
-    'use strict';
-
     const getProfitTabletData = (transaction) => {
         const currency = Client.get('currency');
         const is_jp_client = jpClient();

@@ -17,8 +17,6 @@ const jpClient         = require('../../common_functions/country_base').jpClient
 const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 
 const MBProcess = (() => {
-    'use strict';
-
     let market_status = '';
 
     let symbols_timeout,

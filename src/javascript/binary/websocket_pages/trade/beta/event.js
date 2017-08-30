@@ -30,8 +30,6 @@ const TimePicker                     = require('../../../components/time_picker'
  *
  */
 const TradingEvents_Beta = (() => {
-    'use strict';
-
     const initiate = () => {
         /*
          * attach event to market list, so when client change market we need to update undelryings

@@ -2,8 +2,6 @@ const Client = require('./client');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 const Menu = (() => {
-    'use strict';
-
     let $main_menu;
 
     const init = () => {

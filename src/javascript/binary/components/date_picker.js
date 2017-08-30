@@ -7,8 +7,6 @@ const toReadableFormat = require('../common_functions/string_util').toReadableFo
 const padLeft          = require('../common_functions/string_util').padLeft;
 
 const DatePicker = (() => {
-    'use strict';
-
     const date_pickers = {};
     let localizations = {};
 

@@ -21,8 +21,6 @@ const onlyNumericOnKeypress = require('../../common_functions/event_handler');
  *
  */
 const MBTradingEvents = (() => {
-    'use strict';
-
     const initiate =  () => {
         const $form = $('.trade_form');
         const hidden_class = 'invisible';

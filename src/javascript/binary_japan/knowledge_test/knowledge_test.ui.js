@@ -3,8 +3,6 @@ const localize     = require('../../binary/base/localize').localize;
 const urlForStatic = require('../../binary/base/url').urlForStatic;
 
 const KnowledgeTestUI = (() => {
-    'use strict';
-
     const createTrueFalseBox = (question, show_answer) => {
         const qid = question.id;
         const true_id = `${qid}true`;

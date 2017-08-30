@@ -13,8 +13,6 @@ const addComma             = require('../../../common_functions/currency').addCo
 const formatMoney          = require('../../../common_functions/currency').formatMoney;
 
 const ViewPopup = (() => {
-    'use strict';
-
     let contract_id,
         contract,
         is_sold,
@@ -349,6 +347,7 @@ const ViewPopup = (() => {
 
     const showErrorPopup = (response, message) => {
         showMessagePopup(localize(message || 'Sorry, an error occurred while processing your request.'), 'There was an error', 'notice-msg');
+        // eslint-disable-next-line no-console
         console.log(response);
     };
 

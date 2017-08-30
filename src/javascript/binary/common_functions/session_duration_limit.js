@@ -4,8 +4,6 @@ const localize         = require('../base/localize').localize;
 const getPropertyValue = require('../base/utility').getPropertyValue;
 
 const SessionDurationLimit = (() => {
-    'use strict';
-
     let warning,
         timeout_before,
         timeout,

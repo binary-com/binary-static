@@ -1,8 +1,6 @@
 const FormManager = require('../../common_functions/form_manager');
 
 const TelegramBot = (() => {
-    'use strict';
-
     const form = '#frm_telegram_bot';
 
     const onLoad = () => {

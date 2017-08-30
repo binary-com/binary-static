@@ -5,8 +5,6 @@ const checkInput = require('../common_functions/common_functions').checkInput;
 const padLeft    = require('../common_functions/string_util').padLeft;
 
 const TimePicker = (() => {
-    'use strict';
-
     const time_pickers = {};
 
     const init = (options) => {

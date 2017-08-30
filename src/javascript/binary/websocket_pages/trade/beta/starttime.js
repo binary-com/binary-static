@@ -15,8 +15,6 @@ const State            = require('../../../base/storage').State;
  */
 
 const StartDates_Beta = (() => {
-    'use strict';
-
     let has_now = 0;
     State.remove('is_start_dates_displayed');
 

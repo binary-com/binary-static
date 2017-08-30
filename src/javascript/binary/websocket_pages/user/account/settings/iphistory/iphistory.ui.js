@@ -4,8 +4,6 @@ const localize             = require('../../../../../base/localize').localize;
 const FlexTableUI          = require('../../../../../common_functions/attach_dom/flextable');
 
 const IPHistoryUI = (() => {
-    'use strict';
-
     const container_selector = '#login-history-container';
     const no_messages_error  = 'Your account has no Login/Logout activity.';
 

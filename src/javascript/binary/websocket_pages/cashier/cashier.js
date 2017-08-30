@@ -8,8 +8,6 @@ const jpResidence      = require('../../common_functions/country_base').jpReside
 const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 
 const Cashier = (() => {
-    'use strict';
-
     let href = '';
 
     const showContent = () => {

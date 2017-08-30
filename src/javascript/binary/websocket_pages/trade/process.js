@@ -19,8 +19,6 @@ const isCryptocurrency = require('../../common_functions/currency').isCryptocurr
 const getMinPayout     = require('../../common_functions/currency').getMinPayout;
 
 const Process = (() => {
-    'use strict';
-
     /*
      * This function process the active symbols to get markets
      * and underlying list

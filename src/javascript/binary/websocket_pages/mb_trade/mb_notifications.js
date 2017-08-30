@@ -6,8 +6,6 @@ const localize = require('../../base/localize').localize;
  */
 
 const MBNotifications = (() => {
-    'use strict';
-
     /*
      * options: Object {
      *     text       : {string}  message text to display

@@ -8,8 +8,6 @@ const jpResidence  = require('../binary/common_functions/country_base').jpReside
 const BinarySocket = require('../binary/websocket_pages/socket');
 
 const CashierJP = (() => {
-    'use strict';
-
     const onLoad = (action) => {
         if (jpClient() && !jpResidence()) BinaryPjax.loadPreviousUrl();
         const $container = $('#japan_cashier_container');

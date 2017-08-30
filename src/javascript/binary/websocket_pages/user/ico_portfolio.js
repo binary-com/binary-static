@@ -7,8 +7,6 @@ const getPropertyValue = require('../../base/utility').getPropertyValue;
 const formatMoney      = require('../../common_functions/currency').formatMoney;
 
 const ICOPortfolio = (() => {
-    'use strict';
-
     let values,
         is_initialized,
         is_first_response;

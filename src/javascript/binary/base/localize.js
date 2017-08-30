@@ -2,8 +2,6 @@ const moment     = require('moment');
 const template   = require('./utility').template;
 
 const Localize = (() => {
-    'use strict';
-
     let localized_texts;
 
     const localizeForLang = (lang) => {

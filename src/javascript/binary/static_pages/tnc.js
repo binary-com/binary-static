@@ -4,8 +4,6 @@ const Scroll      = require('../common_functions/scroll');
 const TNCApproval = require('../websocket_pages/user/tnc_approval');
 
 const TermsAndConditions = (() => {
-    'use strict';
-
     const onLoad = () => {
         handleActiveTab();
         TNCApproval.requiresTNCApproval(

@@ -1,8 +1,6 @@
 const localize = require('../../../../base/localize').localize;
 
 const PaymentAgentTransferUI = (() => {
-    'use strict';
-
     let $paymentagent_transfer,
         $confirm_transfer,
         $done_transfer,

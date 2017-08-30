@@ -1,6 +1,4 @@
 const AssetIndex = (() => {
-    'use strict';
-
     let market_columns;
 
     // Search and Remove (to decrease the next search count)

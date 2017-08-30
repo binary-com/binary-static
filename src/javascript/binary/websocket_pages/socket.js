@@ -12,8 +12,6 @@ const getSocketURL     = require('../../config').getSocketURL;
  * reopen the closed connection and process the buffered requests
  */
 const BinarySocket = (() => {
-    'use strict';
-
     let binary_socket;
 
     let config         = {};

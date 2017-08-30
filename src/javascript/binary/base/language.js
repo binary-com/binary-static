@@ -2,8 +2,6 @@ const Cookies       = require('js-cookie');
 const CookieStorage = require('./storage').CookieStorage;
 
 const Language = (() => {
-    'use strict';
-
     const all_languages = {
         ACH  : 'Translations',
         EN   : 'English',

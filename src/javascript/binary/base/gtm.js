@@ -9,8 +9,6 @@ const BinarySocket = require('../websocket_pages/socket');
 const getAppId     = require('../../config').getAppId;
 
 const GTM = (() => {
-    'use strict';
-
     const isGtmApplicable = () => (/^(1|1098)$/.test(getAppId()));
 
     const gtmDataLayerInfo = (data) => {

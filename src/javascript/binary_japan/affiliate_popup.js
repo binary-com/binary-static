@@ -4,8 +4,6 @@ const jpClient     = require('../binary/common_functions/country_base').jpClient
 const BinarySocket = require('../binary/websocket_pages/socket');
 
 const AffiliatePopup = (() => {
-    'use strict';
-
     const container_id = 'affiliate_disclaimer_popup';
 
     const show = () => {

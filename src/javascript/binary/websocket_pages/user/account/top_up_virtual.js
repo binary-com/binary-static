@@ -3,8 +3,6 @@ const Client       = require('../../../base/client');
 const localize     = require('../../../base/localize').localize;
 
 const TopUpVirtual = (() => {
-    'use strict';
-
     let $views;
 
     const view_ids = {

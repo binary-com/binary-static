@@ -24,8 +24,6 @@ const Url              = require('../../../base/url');
  */
 
 const TradingAnalysis_Beta = (() => {
-    'use strict';
-
     const hidden_class = 'invisible';
     let form_name;
 

@@ -10,8 +10,6 @@ const setCurrencies        = require('../common_functions/currency').setCurrenci
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
 
 const BinarySocketGeneral = (() => {
-    'use strict';
-
     const onOpen = (is_ready) => {
         Header.hideNotification();
         if (is_ready) {

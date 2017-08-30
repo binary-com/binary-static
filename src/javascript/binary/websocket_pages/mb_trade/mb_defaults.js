@@ -10,9 +10,8 @@ const isEmptyObject = require('../../base/utility').isEmptyObject;
  */
 
 const MBDefaults = (() => {
-    'use strict';
-
     let params = {};
+
     const getDefault = (key) => {
         loadParams();
         return params[key];

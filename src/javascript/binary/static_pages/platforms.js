@@ -1,6 +1,4 @@
 const Platforms = (() => {
-    'use strict';
-
     let sections = [];
 
     const onLoad = () => {

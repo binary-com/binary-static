@@ -5,8 +5,6 @@ const getPropertyValue = require('../../base/utility').getPropertyValue;
  * Display price/spot movement variation to depict price moved up or down
  */
 const displayPriceMovement = (element, old_value, current_value) => {
-    'use strict';
-
     element.classList.remove('price_moved_down');
     element.classList.remove('price_moved_up');
     if (parseFloat(current_value) > parseFloat(old_value)) {
@@ -22,8 +20,6 @@ const displayPriceMovement = (element, old_value, current_value) => {
  * count number of decimal places in spot so that we can make barrier to same decimal places
  */
 const countDecimalPlaces = (num) => {
-    'use strict';
-
     if (!isNaN(num)) {
         const str = num.toString();
         if (str.indexOf('.') !== -1) {

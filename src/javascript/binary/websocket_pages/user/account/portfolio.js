@@ -3,8 +3,6 @@ const formatMoney         = require('../../../common_functions/currency').format
 const jpClient            = require('../../../common_functions/country_base').jpClient;
 
 const Portfolio = (() => {
-    'use strict';
-
     const getBalance = (balance, currency) => (
         currency ? formatMoney(currency, parseFloat(balance)) : parseFloat(balance)
     );

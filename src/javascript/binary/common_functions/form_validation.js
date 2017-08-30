@@ -3,8 +3,6 @@ const addComma              = require('../common_functions/currency').addComma;
 const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
-    'use strict';
-
     const forms = {};
     const error_class  = 'error-msg';
     const hidden_class = 'invisible';

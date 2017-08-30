@@ -4,8 +4,6 @@ const getAppId    = require('../../config').getAppId;
 const isStorageSupported = require('./storage').isStorageSupported;
 
 const Login = (() => {
-    'use strict';
-
     const redirectToLogin = () => {
         if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage)) {
             sessionStorage.setItem('redirect_url', window.location.href);

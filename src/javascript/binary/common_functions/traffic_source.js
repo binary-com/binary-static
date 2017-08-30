@@ -14,8 +14,6 @@ const Url           = require('../base/url');
  */
 
 const TrafficSource = (() => {
-    'use strict';
-
     let cookie;
 
     const initCookie = () => {

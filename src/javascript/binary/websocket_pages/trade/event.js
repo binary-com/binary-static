@@ -31,8 +31,6 @@ const TimePicker            = require('../../components/time_picker');
  *
  */
 const TradingEvents = (() => {
-    'use strict';
-
     const initiate = () => {
         const attachTimePicker = (selector, checkEndTime) => {
             let minTime = window.time || moment.utc();

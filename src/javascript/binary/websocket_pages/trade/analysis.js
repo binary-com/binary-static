@@ -21,8 +21,6 @@ const JapanPortfolio   = require('../../../binary_japan/trade_japan/portfolio');
  */
 
 const TradingAnalysis = (() => {
-    'use strict';
-
     const hidden_class = 'invisible';
     let form_name;
 

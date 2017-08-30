@@ -27,8 +27,6 @@ const DatePicker         = require('../../components/date_picker');
  */
 
 const Durations = (() => {
-    'use strict';
-
     let selected_duration = {};
     let has_end_date = 0;
 

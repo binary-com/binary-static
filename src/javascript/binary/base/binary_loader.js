@@ -12,8 +12,6 @@ const BinarySocket        = require('../websocket_pages/socket');
 const BinarySocketGeneral = require('../websocket_pages/socket_general');
 
 const BinaryLoader = (() => {
-    'use strict';
-
     let container;
     let active_script = null;
 

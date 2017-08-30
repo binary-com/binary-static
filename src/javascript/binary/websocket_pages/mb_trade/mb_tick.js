@@ -19,8 +19,6 @@ const getPropertyValue = require('../../base/utility').getPropertyValue;
  */
 
 const MBTick = (() => {
-    'use strict';
-
     let quote = '';
     let error_message = '';
 

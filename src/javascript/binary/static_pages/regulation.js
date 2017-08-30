@@ -1,6 +1,4 @@
 const Regulation = (() => {
-    'use strict';
-
     const onLoad = () => {
         $(() => {
             $('#accordion').accordion({

@@ -1,8 +1,6 @@
 const Client = require('../base/client');
 
 const GetStarted = (() => {
-    'use strict';
-
     const selectNavElement = () => {
         $('.nav li').removeClass('selected')
             .find(`a[href="${window.location.pathname}"]`)

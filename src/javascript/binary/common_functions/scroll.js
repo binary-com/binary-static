@@ -1,6 +1,4 @@
 const Scroll = (() => {
-    'use strict';
-
     let $main_container;
 
     const sidebarScroll = ($container) => {

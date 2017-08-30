@@ -7,8 +7,6 @@ const formatMoney         = require('../../../common_functions/currency').format
 const toTitleCase         = require('../../../common_functions/string_util').toTitleCase;
 
 const Statement = (() => {
-    'use strict';
-
     const getStatementData = (statement, currency, jp_client) => {
         const date_obj = new Date(statement.transaction_time * 1000);
         const moment_obj = moment.utc(date_obj);

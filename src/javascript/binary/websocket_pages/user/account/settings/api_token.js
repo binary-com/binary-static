@@ -8,8 +8,6 @@ const FormManager          = require('../../../../common_functions/form_manager'
 const toTitleCase          = require('../../../../common_functions/string_util').toTitleCase;
 
 const APIToken = (() => {
-    'use strict';
-
     const error_class  = 'errorfield';
     const form_id      = '#token_form';
     const max_tokens   = 30;

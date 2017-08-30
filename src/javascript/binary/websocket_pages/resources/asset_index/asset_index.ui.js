@@ -8,8 +8,6 @@ const jqueryuiTabsToDropdown = require('../../../common_functions/common_functio
 const jpClient               = require('../../../common_functions/country_base').jpClient;
 
 const AssetIndexUI = (() => {
-    'use strict';
-
     let $container,
         $tabs,
         $contents,

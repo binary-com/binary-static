@@ -7,8 +7,6 @@ const urlFor       = require('../../base/url').urlFor;
 const template     = require('../../base/utility').template;
 
 const TNCApproval = (() => {
-    'use strict';
-
     const onLoad = () => {
         requiresTNCApproval($('#btn_accept'), display, null, true);
     };

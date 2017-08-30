@@ -1,8 +1,6 @@
 const Client = require('../base/client');
 
 const GetStartedJP = (() => {
-    'use strict';
-
     let $contents,
         $sidebar_li,
         $index;

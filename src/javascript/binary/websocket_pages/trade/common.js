@@ -18,8 +18,6 @@ const elementTextContent = require('../../common_functions/common_functions').el
  */
 
 const commonTrading = (() => {
-    'use strict';
-
     /*
      * display contract form as element of ul
      */

@@ -12,8 +12,6 @@ const padLeft          = require('../../common_functions/string_util').padLeft;
  * It parses the contracts json we get from socket.send({contracts_for: 'R_50'})
  */
 const MBContract = (() => {
-    'use strict';
-
     let contracts_for_response,
         $period,
         $durations,

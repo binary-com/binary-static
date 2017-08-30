@@ -21,8 +21,6 @@ const isVisible            = require('../../common_functions/common_functions').
  * 'Tick.display()` to display current spot
  */
 const Tick = (() => {
-    'use strict';
-
     let quote         = '';
     let id            = '';
     let epoch         = '';

@@ -12,8 +12,6 @@ const formatMoney         = require('../../../../common_functions/currency').for
 const GetAppDetails       = require('../../../../common_functions/get_app_details');
 
 const PortfolioInit = (() => {
-    'use strict';
-
     let values,
         currency,
         oauth_apps,

@@ -6,8 +6,6 @@ const State                  = require('../../../base/storage').State;
 const FormManager            = require('../../../common_functions/form_manager');
 
 const PaymentAgentTransfer = (() => {
-    'use strict';
-
     let balance,
         is_authenticated_payment_agent,
         common_request_fields,

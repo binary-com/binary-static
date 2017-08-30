@@ -4,8 +4,6 @@ const isEmptyObject = require('./utility').isEmptyObject;
 require('url-polyfill');
 
 const Url = (() => {
-    'use strict';
-
     let location_url,
         static_host;
 

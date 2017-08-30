@@ -2,8 +2,6 @@ const BinarySocket     = require('../../socket');
 const getHighestZIndex = require('../../../base/utility').getHighestZIndex;
 
 const ViewPopupUI = (() => {
-    'use strict';
-
     let $container,
         stream_ids,
         chart_stream_ids,

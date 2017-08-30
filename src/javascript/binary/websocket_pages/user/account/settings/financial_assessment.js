@@ -9,8 +9,6 @@ const jpClient         = require('../../../../common_functions/country_base').jp
 const Validation       = require('../../../../common_functions/form_validation');
 
 const FinancialAssessment = (() => {
-    'use strict';
-
     let financial_assessment = {};
     let arr_validation       = [];
 

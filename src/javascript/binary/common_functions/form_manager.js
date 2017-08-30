@@ -4,8 +4,6 @@ const showLoadingImage = require('../base/utility').showLoadingImage;
 const BinarySocket     = require('../websocket_pages/socket');
 
 const FormManager = (() => {
-    'use strict';
-
     const forms = {};
 
     const initForm = (form_selector, fields) => {

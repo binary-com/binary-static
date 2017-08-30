@@ -4,8 +4,6 @@ const localize     = require('../../base/localize').localize;
 const FormManager  = require('../../common_functions/form_manager');
 
 const PaymentAgentWithdraw = (() => {
-    'use strict';
-
     const view_ids = {
         error  : '#viewError',
         success: '#viewSuccess',

@@ -14,8 +14,6 @@ const toISOFormat          = require('../../../../common_functions/string_util')
 const DatePicker           = require('../../../../components/date_picker');
 
 const StatementInit = (() => {
-    'use strict';
-
     // Batch refer to number of data get from ws service per request
     // chunk refer to number of data populate to ui for each append
     // receive means receive from ws service

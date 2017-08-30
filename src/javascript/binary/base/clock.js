@@ -3,8 +3,6 @@ const jpClient     = require('../common_functions/country_base').jpClient;
 const BinarySocket = require('../websocket_pages/socket');
 
 const Clock = (() => {
-    'use strict';
-
     let clock_started = false;
     let client_time,
         timeout;

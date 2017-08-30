@@ -16,8 +16,6 @@ const Guide                = require('../../../common_functions/guide');
 const ResizeSensor         = require('../../../../lib/resize-sensor');
 
 const TradePage_Beta = (() => {
-    'use strict';
-
     let events_initialized = 0;
     State.remove('is_beta_trading');
 

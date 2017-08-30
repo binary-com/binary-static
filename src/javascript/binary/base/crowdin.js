@@ -1,8 +1,6 @@
 const urlLang = require('./language').urlLang;
 
 const Crowdin = (() => {
-    'use strict';
-
     /**
      * in-context translation provided at: https://staging.binary.com/translations/
      * and uses 'ach' as pseudo language code

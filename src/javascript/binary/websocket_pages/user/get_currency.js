@@ -2,8 +2,6 @@ const Client   = require('../../base/client');
 const Currency = require('../../common_functions/currency');
 
 const GetCurrency = (() => {
-    'use strict';
-
     const getCurrenciesOfOtherAccounts = () => {
         const all_loginids = Client.getAllLoginids();
         const other_currencies = [];

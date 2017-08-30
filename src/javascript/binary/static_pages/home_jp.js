@@ -1,8 +1,6 @@
 const Home = require('./home');
 
 const HomeJP = (() => {
-    'use strict';
-
     const visible_product = 'product_visible';
     const product_prefix = 'product_';
 

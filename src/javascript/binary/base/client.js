@@ -10,8 +10,6 @@ const BinarySocket       = require('../websocket_pages/socket');
 const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
 
 const Client = (() => {
-    'use strict';
-
     const storage_key = 'client.accounts';
     let client_object = {};
     let current_loginid;

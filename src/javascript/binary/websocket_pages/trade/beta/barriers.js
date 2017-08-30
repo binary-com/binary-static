@@ -14,8 +14,6 @@ const isVisible          = require('../../../common_functions/common_functions')
  */
 
 const Barriers_Beta = (() => {
-    'use strict';
-
     let is_barrier_updated = false;
 
     const display = () => {

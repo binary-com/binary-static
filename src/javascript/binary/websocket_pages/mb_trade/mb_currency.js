@@ -12,8 +12,6 @@ const formatCurrency = require('../../common_functions/currency').formatCurrency
  * and display them
  */
 const MBDisplayCurrencies = () => {
-    'use strict';
-
     const $currency  = $('.trade_form #currency');
     const $list      = $currency.find('.list');
     const $current   = $currency.find('.current');

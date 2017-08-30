@@ -3,8 +3,6 @@ const ApplicationsUI   = require('./authorised_apps.ui');
 const BinarySocket     = require('../../../../socket');
 
 const ApplicationsInit = (() => {
-    'use strict';
-
     const init = () => {
         ApplicationsUI.init();
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {

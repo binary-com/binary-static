@@ -13,8 +13,6 @@ const DatePicker          = require('../../../../components/date_picker');
 const TimePicker          = require('../../../../components/time_picker');
 
 const SelfExclusion = (() => {
-    'use strict';
-
     let $form,
         fields,
         self_exclusion_data,

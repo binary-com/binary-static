@@ -1,6 +1,4 @@
 const Table = (() => {
-    'use strict';
-
     /**
      *
      * @param {Array[]} body ordered data to pump into table body

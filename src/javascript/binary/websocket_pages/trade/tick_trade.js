@@ -9,8 +9,6 @@ const isVisible            = require('../../common_functions/common_functions').
 const getHighstock         = require('../../common_functions/common_functions').requireHighstock;
 
 const TickDisplay = (() => {
-    'use strict';
-
     let number_of_ticks,
         display_symbol,
         contract_start_ms,

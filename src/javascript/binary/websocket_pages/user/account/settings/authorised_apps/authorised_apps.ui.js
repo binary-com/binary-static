@@ -8,8 +8,6 @@ const FlexTableUI          = require('../../../../../common_functions/attach_dom
 const toTitleCase          = require('../../../../../common_functions/string_util').toTitleCase;
 
 const ApplicationsUI = (() => {
-    'use strict';
-
     let can_revoke = false;
 
     const container_selector = '#applications-container';

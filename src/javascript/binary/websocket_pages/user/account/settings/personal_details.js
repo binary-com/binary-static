@@ -13,8 +13,6 @@ const moment           = require('moment');
 require('select2');
 
 const PersonalDetails = (() => {
-    'use strict';
-
     const form_id = '#frmPersonalDetails';
     const real_acc_elements = '.RealAcc';
 

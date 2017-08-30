@@ -7,8 +7,6 @@ const jpClient         = require('../../../common_functions/country_base').jpCli
 const Config           = require('../../../../config');
 
 const WebtraderChart = (() => {
-    'use strict';
-
     let chart,
         WebtraderCharts,
         is_initialized;

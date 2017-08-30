@@ -4,8 +4,6 @@ const LocalStore  = require('../../../base/storage').LocalStore;
 const formatMoney = require('../../../common_functions/currency').formatMoney;
 
 const RealityCheckData = (() => {
-    'use strict';
-
     const reality_object = {};
 
     const resetInvalid = () => {

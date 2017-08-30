@@ -4,8 +4,6 @@
  */
 
 const Notifications = (() => {
-    'use strict';
-
     /*
      * options: Object {
      *     text       : {string}  message text to display

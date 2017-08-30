@@ -6,8 +6,6 @@ const elementInnerHtml   = require('../../../../../common_functions/common_funct
 const formatMoney        = require('../../../../../common_functions/currency').formatMoney;
 
 const LimitsInit = (() => {
-    'use strict';
-
     const limitsHandler = (response) => {
         const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);

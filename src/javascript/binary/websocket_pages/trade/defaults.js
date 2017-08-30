@@ -14,8 +14,6 @@ const State         = require('../../base/storage').State;
  */
 
 const Defaults = (() => {
-    'use strict';
-
     let params = {};
     const getDefault = (key) => {
         const p_value = params[key] || Url.param(key);

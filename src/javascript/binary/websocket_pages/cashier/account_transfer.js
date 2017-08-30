@@ -4,8 +4,6 @@ const localize     = require('../../base/localize').localize;
 const FormManager  = require('../../common_functions/form_manager');
 
 const AccountTransfer = (() => {
-    'use strict';
-
     const form_id = '#frm_account_transfer';
 
     let accounts,

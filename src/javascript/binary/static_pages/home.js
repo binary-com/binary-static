@@ -4,8 +4,6 @@ const FormManager  = require('../common_functions/form_manager');
 const BinarySocket = require('../websocket_pages/socket');
 
 const Home = (() => {
-    'use strict';
-
     let clients_country;
 
     const onLoad = () => {

@@ -5,8 +5,6 @@ const Validation       = require('../../../common_functions/form_validation');
 const MetaTraderConfig = require('./metatrader.config');
 
 const MetaTraderUI = (() => {
-    'use strict';
-
     let $container,
         $list_cont,
         $mt5_account,

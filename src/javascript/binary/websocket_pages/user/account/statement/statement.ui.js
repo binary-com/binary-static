@@ -8,8 +8,6 @@ const showTooltip         = require('../../../../common_functions/get_app_detail
 const Table               = require('../../../../common_functions/attach_dom/table');
 
 const StatementUI = (() => {
-    'use strict';
-
     let all_data   = [];
     let oauth_apps = {};
 

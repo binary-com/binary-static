@@ -2,8 +2,6 @@ const urlParam = require('../base/url').param;
 const urlFor   = require('../base/url').urlFor;
 
 const JobDetails = (() => {
-    'use strict';
-
     let dept,
         $sections_div,
         dept_class,

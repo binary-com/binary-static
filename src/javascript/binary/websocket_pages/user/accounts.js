@@ -12,8 +12,6 @@ const getCurrencyList    = require('../../common_functions/currency').getCurrenc
 const toTitleCase        = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
-    'use strict';
-
     let landing_company;
 
     const onLoad = () => {

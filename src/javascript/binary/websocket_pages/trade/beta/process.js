@@ -19,8 +19,6 @@ const getPropertyValue     = require('../../../base/utility').getPropertyValue;
 const elementInnerHtml     = require('../../../common_functions/common_functions').elementInnerHtml;
 
 const Process_Beta = (() => {
-    'use strict';
-
     /*
      * This function process the active symbols to get markets
      * and underlying list

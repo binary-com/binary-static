@@ -21,8 +21,6 @@ const isEmptyObject              = require('../../base/utility').isEmptyObject;
  * `Contract.barriers` if applicable for current underlying
  */
 const Contract = (() => {
-    'use strict';
-
     const contract_type = {};
 
     let contract_details = {};

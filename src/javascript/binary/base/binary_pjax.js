@@ -3,8 +3,6 @@ const State       = require('./storage').State;
 const Url         = require('./url');
 
 const BinaryPjax = (() => {
-    'use strict';
-
     let xhr,
         previous_url;
     const params   = {};
@@ -18,19 +16,12 @@ const BinaryPjax = (() => {
         if (!(window.history && window.history.pushState && window.history.replaceState &&
             // pushState isn't reliable on iOS until 5.
             !navigator.userAgent.match(/((iPod|iPhone|iPad).+\bOS\s+[1-4]\D|WebApps\/.+CFNetwork)/))) {
-            console.error('Unable to initialize router');
             return;
         }
 
         const $container = $(container);
 
-        if (!$container.length) {
-            console.warn('Could not find container');
-            return;
-        }
-
-        if (!(content_selector && content_selector.length)) {
-            console.warn('No content selector provided');
+        if (!$container.length || !(content_selector && content_selector.length)) {
             return;
         }
 

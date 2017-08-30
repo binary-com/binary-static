@@ -27,8 +27,6 @@ const formatMoney          = require('../../../common_functions/currency').forma
  * `Price.display()` to display the price details returned from server
  */
 const Price_Beta = (() => {
-    'use strict';
-
     let type_display_id_mapping = {};
     let form_id = 0;
 

@@ -8,8 +8,6 @@ const showTooltip         = require('../../../../common_functions/get_app_detail
 const Table               = require('../../../../common_functions/attach_dom/table');
 
 const ProfitTableUI = (() => {
-    'use strict';
-
     let oauth_apps   = {};
     let total_profit = 0;
 

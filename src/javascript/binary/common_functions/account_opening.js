@@ -11,8 +11,6 @@ const BinarySocket      = require('../websocket_pages/socket');
 require('select2');
 
 const AccountOpening = (() => {
-    'use strict';
-
     const redirectAccount = () => { // eslint-disable-line consistent-return
         const response_landing_company = State.getResponse('landing_company');
         const response_get_settings = State.getResponse('get_settings');

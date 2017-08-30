@@ -2,8 +2,6 @@ const Client = require('../../../base/client');
 const BinarySocket = require('../../socket');
 
 const Authenticate = (() => {
-    'use strict';
-
     const onLoad = () => {
         BinarySocket.send({ get_account_status: 1 }).then((response) => {
             if (response.error) {

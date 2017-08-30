@@ -4,8 +4,6 @@ const BinarySocket     = require('../../socket');
 const Client           = require('../../../base/client');
 
 const RealityCheck = (() => {
-    'use strict';
-
     const storageHandler = (ev) => {
         const key = ev.key;
         const new_value = ev.newValue;

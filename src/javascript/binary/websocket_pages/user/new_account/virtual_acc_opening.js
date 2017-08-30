@@ -11,8 +11,6 @@ const FormManager      = require('../../../common_functions/form_manager');
 const TrafficSource    = require('../../../common_functions/traffic_source');
 
 const VirtualAccOpening = (() => {
-    'use strict';
-
     const form = '#virtual-form';
     let jp_client;
 

@@ -7,7 +7,6 @@ const BinarySocket          = require('../../websocket_pages/socket');
 
 const updateBalance = (response) => {
     if (getPropertyValue(response, 'error')) {
-        console.log(response.error.message);
         return;
     }
     BinarySocket.wait('website_status').then(() => {

@@ -8,8 +8,6 @@ const FormManager        = require('../../../common_functions/form_manager');
 const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
 
 const FinancialAccOpening = (() => {
-    'use strict';
-
     const form_id = '#financial-form';
 
     const onLoad = () => {

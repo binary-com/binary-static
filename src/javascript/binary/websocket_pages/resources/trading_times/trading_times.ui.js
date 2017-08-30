@@ -13,8 +13,6 @@ const toReadableFormat       = require('../../../common_functions/string_util').
 const DatePicker             = require('../../../components/date_picker');
 
 const TradingTimesUI = (() => {
-    'use strict';
-
     let $date,
         $container,
         columns,

@@ -1,6 +1,4 @@
 const Charity = (() => {
-    'use strict';
-
     let interval = null;
 
     const onLoad = () => {

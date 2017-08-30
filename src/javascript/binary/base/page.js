@@ -21,8 +21,6 @@ require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 
 const Page = (() => {
-    'use strict';
-
     const init = () => {
         State.set('is_loaded_by_pjax', false);
         Url.init();

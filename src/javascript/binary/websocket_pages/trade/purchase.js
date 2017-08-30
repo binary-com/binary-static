@@ -18,8 +18,6 @@ const padLeft            = require('../../common_functions/string_util').padLeft
  */
 
 const Purchase = (() => {
-    'use strict';
-
     let purchase_data = {};
 
     let payout_value,

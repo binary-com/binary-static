@@ -5,8 +5,6 @@ const template         = require('../../../../base/utility').template;
 const getHighstock     = require('../../../../common_functions/common_functions').requireHighstock;
 
 const DigitInfo_Beta = (() => {
-    'use strict';
-
     let spots = [];
     let stream_id = null;
     // To avoid too many greens and reds
@@ -154,7 +152,6 @@ const DigitInfo_Beta = (() => {
         getHighstock((Highcharts) => {
             const new_spots = underlying_spots;
             if (typeof new_spots === 'undefined' || new_spots.length <= 0) {
-                console.log('Unexpected error occured in the charts.');
                 return;
             }
             const dec = new_spots[0].split('.')[1].length;

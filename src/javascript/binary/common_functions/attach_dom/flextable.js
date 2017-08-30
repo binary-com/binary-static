@@ -1,8 +1,6 @@
 const Table = require('./table');
 
 const FlexTableUI = (() => {
-    'use strict';
-
     let config;
 
     const init = (conf) => {

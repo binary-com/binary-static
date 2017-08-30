@@ -17,8 +17,6 @@ const toTitleCase        = require('../../../common_functions/string_util').toTi
  */
 
 const Purchase_Beta = (() => {
-    'use strict';
-
     let purchase_data = {};
 
     const display = (details) => {

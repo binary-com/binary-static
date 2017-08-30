@@ -4,8 +4,6 @@ const generateBirthDate = require('../../common_functions/attach_dom/birth_date_
 const FormManager       = require('../../common_functions/form_manager');
 
 const ResetPassword = (() => {
-    'use strict';
-
     const responseHandler = (response) => {
         $('#container_reset_password').setVisibility(0);
         if (response.error) {

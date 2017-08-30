@@ -7,8 +7,6 @@ const urlFor        = require('../../../base/url').urlFor;
 const formatMoney   = require('../../../common_functions/currency').formatMoney;
 
 const MetaTraderConfig = (() => {
-    'use strict';
-
     const types_info = {
         demo_vanuatu_cent    : { account_type: 'demo',      mt5_account_type: 'cent',     title: localize('Demo Cent'),       order: 1, max_leverage: 1000, is_demo: true },
         demo_vanuatu_standard: { account_type: 'demo',      mt5_account_type: 'standard', title: localize('Demo Standard'),   order: 3, max_leverage: 300,  is_demo: true },

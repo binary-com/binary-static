@@ -12,8 +12,6 @@ const jpClient     = require('../../../common_functions/country_base').jpClient;
 const addComma     = require('../../../common_functions/currency').addComma;
 
 const Highchart = (() => {
-    'use strict';
-
     let chart,
         chart_promise,
         options,

@@ -5,8 +5,6 @@ const elementInnerHtml   = require('../../../../../common_functions/common_funct
 const formatMoney        = require('../../../../../common_functions/currency').formatMoney;
 
 const LimitsUI = (() => {
-    'use strict';
-
     let client_limits = '';
 
     const appendRowTable = (name, turnover_limit, padding, font_weight) => {

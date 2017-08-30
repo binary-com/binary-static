@@ -13,8 +13,6 @@ const MetaTrader          = require('../websocket_pages/user/metatrader/metatrad
 const getCurrencies       = require('../websocket_pages/user/get_currency').getCurrencies;
 
 const Header = (() => {
-    'use strict';
-
     const onLoad = () => {
         showOrHideLoginForm();
         bindClick();

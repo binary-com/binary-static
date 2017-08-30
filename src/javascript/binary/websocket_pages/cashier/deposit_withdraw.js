@@ -9,8 +9,6 @@ const FormManager       = require('../../common_functions/form_manager');
 const isCryptocurrency  = require('../../common_functions/currency').isCryptocurrency;
 
 const DepositWithdraw = (() => {
-    'use strict';
-
     let cashier_type,
         verification_code;
 

@@ -2,8 +2,6 @@ const getAppId     = require('../../config').getAppId;
 const getSocketURL = require('../../config').getSocketURL;
 
 const Endpoint = (() => {
-    'use strict';
-
     const onLoad = () => {
         const $server_url = $('#server_url');
         const $app_id = $('#app_id');

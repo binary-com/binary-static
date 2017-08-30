@@ -22,8 +22,6 @@ const formatMoney     = require('../../common_functions/currency').formatMoney;
  */
 
 const MBPrice = (() => {
-    'use strict';
-
     const price_selector = '.prices-wrapper .price-rows';
     const is_japan       = jpClient();
 

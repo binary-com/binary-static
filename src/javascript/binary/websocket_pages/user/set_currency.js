@@ -9,8 +9,6 @@ const isCryptocurrency = require('../../common_functions/currency').isCryptocurr
 const getCurrencyName  = require('../../common_functions/currency').getCurrencyName;
 
 const SetCurrency = (() => {
-    'use strict';
-
     let is_new_account;
 
     const onLoad = () => {
