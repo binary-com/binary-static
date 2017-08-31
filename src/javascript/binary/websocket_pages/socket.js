@@ -206,7 +206,7 @@ const BinarySocket = (() => {
 
         binary_socket.onmessage = (msg) => {
             clearTimeout(timeouts.connection_error);
-            const response = JSON.parse(msg.data);
+            const response = msg.data ? JSON.parse(msg.data) : undefined;
             if (response) {
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
                 if (passthrough) {

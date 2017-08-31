@@ -1,6 +1,6 @@
 const Client       = require('../../../base/client');
 const BinarySocket = require('../../socket');
-// const upload = require('binary-document-uploader');
+const upload = require('binary-document-uploader');
 
 const Authenticate = (() => {
     const onLoad = () => {
@@ -68,7 +68,10 @@ const Authenticate = (() => {
                 });
         });
 
-        // Enables the submit button if any file is selected, also adds the event handler for the button.
+        /**
+         * Enables the submit button if any file is selected, also adds the event handler for the button.
+         * Disables the button if it already is enabled.
+         */
         const show_submit = () => {
             let file_selected = false;
             const $ele = $('#authentication-message > div').not('.invisible');
@@ -117,9 +120,14 @@ const Authenticate = (() => {
         };
 
         const process_files = (files) => {
-            // const promises = [];
-            read_files(files).then((result) => {
-                console.log(result);
+            const promises = [];
+            read_files(files).then((objects) => {
+                objects.forEach(
+                    obj => promises.push(upload(obj)),
+                );
+                Promise.all(promises)
+                    .then(() => console.log('Success'))
+                    .catch(e => console.log(e));
             }).catch((e) => {
                 console.error(e);
             });
@@ -129,6 +137,7 @@ const Authenticate = (() => {
         const read_files = (files) => {
             const promises = [];
             const ws = BinarySocket.get();
+            console.log(ws);
             files.forEach((f) => {
                 const fr = new FileReader();
                 const promise = new Promise((resolve, reject) => {
