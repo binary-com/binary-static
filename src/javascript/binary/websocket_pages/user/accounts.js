@@ -144,7 +144,14 @@ const Accounts = (() => {
                             showError(response.error.message);
                         }
                     } else {
-                        handleNewAccount(response);
+                        const new_account = response.new_account_real;
+                        localStorage.setItem('is_new_account', 1);
+                        Client.processNewAccount({
+                            email       : Client.get('email'),
+                            loginid     : new_account.client_id,
+                            token       : new_account.oauth_token,
+                            redirect_url: urlFor('user/set-currency'),
+                        });
                     }
                 });
             }
@@ -156,33 +163,6 @@ const Accounts = (() => {
     const getSelectedCurrency = () => {
         const new_account_currency = document.getElementById('new_account_currency');
         return new_account_currency.value || new_account_currency.getAttribute('value');
-    };
-
-    const handleNewAccount = (response) => {
-        const new_account = response.new_account_real;
-        State.set('ignoreResponse', 'authorize');
-        BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_authorize) => {
-            if (response_authorize.error) {
-                showError(response_authorize.error.message);
-            } else {
-                BinarySocket
-                    .send({ set_account_currency: getSelectedCurrency() })
-                    .then((response_set_account_currency) => {
-                        if (response_set_account_currency.error) {
-                            showError(response_set_account_currency.error.message);
-                        } else {
-                            localStorage.setItem('is_new_account', 1);
-                            Client.processNewAccount({
-                                email       : Client.get('email'),
-                                loginid     : new_account.client_id,
-                                token       : new_account.oauth_token,
-                                redirect_url: urlFor('user/set-currency'),
-                            });
-                        }
-                    });
-            }
-            State.remove('ignoreResponse');
-        });
     };
 
     const showError = (message) => {
@@ -207,6 +187,7 @@ const Accounts = (() => {
             phone                 : get_settings.phone,
             account_opening_reason: get_settings.account_opening_reason,
             residence             : Client.get('residence'),
+            currency              : getSelectedCurrency(),
         };
         if (get_settings.tax_identification_number) {
             req.tax_identification_number = get_settings.tax_identification_number;
