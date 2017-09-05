@@ -57,12 +57,12 @@ const MBPrice = (() => {
     };
 
     const makeBarrier = (barrier_object) => {
-        let barrier_obj = $.extend({}, barrier_object);
-        if (!barrier_obj.barrier && barrier_obj.error) {
+        if (!barrier_object.barrier && barrier_object.error) {
             // error.details will include the barrier value in case of error
-            barrier_obj = barrier_obj.error.details;
+            // it is intended to change the original object as we need the barrier value
+            barrier_object = barrier_object.error.details; // eslint-disable-line no-param-reassign
         }
-        return (barrier_obj.barrier2 ? `${barrier_obj.barrier2}_` : '') + barrier_obj.barrier;
+        return (barrier_object.barrier2 ? `${barrier_object.barrier2}_` : '') + barrier_object.barrier;
     };
 
     const display = (response) => {

@@ -46,7 +46,7 @@ const BinaryPjax = (() => {
     };
 
     const setDataPage = (content, url) => {
-        content.attr('data-page', url.match('.+/(.+).html.*')[1]);
+        content.attr('data-page', url.match(/.+\/(.+)\.html.*/)[1]);
     };
 
     const handleClick = (event) => {

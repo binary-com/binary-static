@@ -5,19 +5,18 @@ const getPropertyValue = require('../base/utility').getPropertyValue;
 
 let currencies_config = {};
 
-const formatMoney = (currency_value, amt, exclude_currency) => {
-    let amount = amt;
-    if (amount) amount = String(amount).replace(/,/g, '');
-    const sign           = amount && Number(amount) < 0 ? '-' : '';
+const formatMoney = (currency_value, amount, exclude_currency) => {
+    let money = amount;
+    if (money) money = String(money).replace(/,/g, '');
+    const sign           = money && Number(money) < 0 ? '-' : '';
     const decimal_places = getDecimalPlaces(currency_value);
-    let money;
 
-    amount = isNaN(amount) ? 0 : Math.abs(amount);
+    money = isNaN(money) ? 0 : Math.abs(money);
     if (typeof Intl !== 'undefined') {
         const options = { minimumFractionDigits: decimal_places, maximumFractionDigits: decimal_places };
-        money         = new Intl.NumberFormat(getLanguage().toLowerCase().replace('_', '-'), options).format(amount);
+        money    = new Intl.NumberFormat(getLanguage().toLowerCase().replace('_', '-'), options).format(money);
     } else {
-        money = addComma(amount, decimal_places);
+        money = addComma(money, decimal_places);
     }
 
     return sign + (exclude_currency ? '' : formatCurrency(currency_value)) + money;
