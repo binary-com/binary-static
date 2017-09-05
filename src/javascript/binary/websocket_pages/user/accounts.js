@@ -8,6 +8,7 @@ const localize           = require('../../base/localize').localize;
 const State              = require('../../base/storage').State;
 const urlFor             = require('../../base/url').urlFor;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
+const getCurrencyList    = require('../../common_functions/currency').getCurrencyList;
 const toTitleCase        = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
@@ -119,10 +120,7 @@ const Accounts = (() => {
         const $new_account_opening = $('#new_account_opening');
         if (currencies.length > 1) {
             const $currencies = $('<div/>');
-            $currencies.append($('<option/>', { value: '', text: localize('Please select') }));
-            currencies.forEach((c) => {
-                $currencies.append($('<option/>', { value: c, text: c }));
-            });
+            $currencies.append(getCurrencyList(currencies).html());
             $new_account_opening.find('.account-currency').html($('<select/>', { id: 'new_account_currency' }).html($currencies.html()));
         } else {
             $new_account_opening.find('.account-currency').html($('<span/>', { id: 'new_account_currency', value: currencies, text: currencies }));
@@ -146,7 +144,14 @@ const Accounts = (() => {
                             showError(response.error.message);
                         }
                     } else {
-                        handleNewAccount(response);
+                        const new_account = response.new_account_real;
+                        localStorage.setItem('is_new_account', 1);
+                        Client.processNewAccount({
+                            email       : Client.get('email'),
+                            loginid     : new_account.client_id,
+                            token       : new_account.oauth_token,
+                            redirect_url: urlFor('user/set-currency'),
+                        });
                     }
                 });
             }
@@ -158,33 +163,6 @@ const Accounts = (() => {
     const getSelectedCurrency = () => {
         const new_account_currency = document.getElementById('new_account_currency');
         return new_account_currency.value || new_account_currency.getAttribute('value');
-    };
-
-    const handleNewAccount = (response) => {
-        const new_account = response.new_account_real;
-        State.set('ignoreResponse', 'authorize');
-        BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_authorize) => {
-            if (response_authorize.error) {
-                showError(response_authorize.error.message);
-            } else {
-                BinarySocket
-                    .send({ set_account_currency: getSelectedCurrency() })
-                    .then((response_set_account_currency) => {
-                        if (response_set_account_currency.error) {
-                            showError(response_set_account_currency.error.message);
-                        } else {
-                            localStorage.setItem('is_new_account', 1);
-                            Client.processNewAccount({
-                                email       : Client.get('email'),
-                                loginid     : new_account.client_id,
-                                token       : new_account.oauth_token,
-                                redirect_url: urlFor('user/set-currency'),
-                            });
-                        }
-                    });
-            }
-            State.remove('ignoreResponse');
-        });
     };
 
     const showError = (message) => {
@@ -209,6 +187,7 @@ const Accounts = (() => {
             phone                 : get_settings.phone,
             account_opening_reason: get_settings.account_opening_reason,
             residence             : Client.get('residence'),
+            currency              : getSelectedCurrency(),
         };
         if (get_settings.tax_identification_number) {
             req.tax_identification_number = get_settings.tax_identification_number;

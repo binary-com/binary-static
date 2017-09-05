@@ -19,6 +19,10 @@ const MBTradePage = (() => {
 
     const onLoad = () => {
         State.set('is_mb_trading', true);
+        BinarySocket.wait('authorize').then(init);
+    };
+
+    const init = () => {
         if (jpClient()) {
             disableTrading();
             $('#panel').remove();
@@ -32,11 +36,9 @@ const MBTradePage = (() => {
             MBTradingEvents.init();
         }
 
-        BinarySocket.wait('authorize').then(() => {
-            BinarySocket.send({ payout_currencies: 1 }).then(() => {
-                MBDisplayCurrencies();
-                MBProcess.getSymbols();
-            });
+        BinarySocket.send({ payout_currencies: 1 }).then(() => {
+            MBDisplayCurrencies();
+            MBProcess.getSymbols();
         });
 
         $('#tab_portfolio').find('a').text(localize('Portfolio'));

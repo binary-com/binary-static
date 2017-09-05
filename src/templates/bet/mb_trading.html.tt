@@ -130,17 +130,29 @@
     <div id="templates" class="invisible">
         <div class="gr-row price-row">
             <div class="gr-4 barrier"></div>
-            <div class="gr-4">
-                <div class="buy-price gr-12 gr-no-gutter-left"></div>
-                <div class="sell-price gr-12 gr-no-gutter-left"></div>
-            </div>
-            <div class="gr-4">
-                <div class="buy-price gr-12 gr-no-gutter-left"></div>
-                <div class="sell-price gr-12 gr-no-gutter-left"></div>
-            </div>
+            <div class="gr-4">[% INCLUDE buy_sell_template %]</div>
+            <div class="gr-4">[% INCLUDE buy_sell_template %]</div>
         </div>
     </div>
 </div>
+
+[% BLOCK buy_sell_template %]
+    <div class="buy-price gr-12 gr-no-gutter-left">
+        <button class="price-button">
+            <span class="value-wrapper">
+                <span class="dynamics"></span>
+                <span class="value"></span>
+            </span>
+            <span class="base-value invisible"></span>
+        </button>
+    </div>
+    <div class="sell-price gr-12 gr-no-gutter-left">
+        <span class="price-wrapper">
+            <span class="value"></span>
+            <span class="base-value invisible"></span>
+        </span>
+    </div>
+[% END %]
 
 [% BLOCK payout_item %]
 <div class="[% class %] gr-3 nowrap" value="[% value %]" unselectable="on" onselectstart="return false;" onmousedown="return false;">
