@@ -62,7 +62,7 @@ const getMinPayout = currency => (
     jpClient() ?
         1 :
         (isCryptocurrency(currency) ?
-            (getPropertyValue(crypto_config, [currency, 'min_payout']) || 0.005) :
+            (getPropertyValue(currencies_config, [currency, 'stake_default']) || getPropertyValue(crypto_config, [currency, 'min_payout']) || 0.005) :
             10)
 );
 
