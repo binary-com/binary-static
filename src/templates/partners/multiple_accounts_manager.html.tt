@@ -30,35 +30,35 @@
 
             [% WRAPPER box class='border-bottom' %]
                 [% INCLUDE box_inner class='border-right-top' image='deposit'
-                   text='Client\'s deposits or withdrawals are immediately reflected in the corresponding master account balance in real time' %]
+                   text=l('Client\'s deposits or withdrawals are immediately reflected in the corresponding master account balance in real time') %]
 
                 [% INCLUDE box_inner class='border-right-top' image='methods'
-                   text='Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes' %]
+                   text=l('Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes') %]
 
                 [% INCLUDE box_inner image='tools'
-                   text='Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types' %]
+                   text=l('Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types') %]
             [% END %]
 
             [% WRAPPER box class='border-bottom' %]
                 [% INCLUDE box_inner class='border-right-top gr-padding-20 gr-child' image='info'
-                   text='View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price, SL, TP, swap, and profit' %]
+                   text=l('View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price, SL, TP, swap, and profit') %]
 
                 [% INCLUDE box_inner class='border-right-top gr-padding-20 gr-child' image='exclude'
-                   text='Use multiple exclusion rules to temporarily exclude client accounts from allocations without affecting their current positions' %]
+                   text=l('Use multiple exclusion rules to temporarily exclude client accounts from allocations without affecting their current positions') %]
 
                 [% INCLUDE box_inner class='gr-padding-30 gr-child' image='manage'
-                   text='View all the information you need to manage your client list – including login ID, group, leverage, balance, equity, and margin' %]
+                   text=l('View all the information you need to manage your client list – including login ID, group, leverage, balance, equity, and margin') %]
             [% END %]
 
             [% WRAPPER box %]
                 [% INCLUDE box_inner class='border-right-top gr-padding-30 gr-child' image='money'
-                   text='Instant, daily, and monthly commissions available to money managers' %]
+                   text=l('Instant, daily, and monthly commissions available to money managers') %]
 
                 [% INCLUDE box_inner class='border-right-top gr-padding-20 gr-child' image='trade'
-                   text='Clients\' trade allocations start from 0.01 lots' %]
+                   text=l('Clients\' trade allocations start from 0.01 lots') %]
 
                 [% INCLUDE box_inner class='gr-padding-20 gr-child' image='close'
-                   text='Clients can close out trades' %]
+                   text=l('Clients can close out trades') %]
             [% END %]
         </div>
     </div>
@@ -78,21 +78,22 @@
                 <div class="center-text">
                     <img class="gr-4 gr-8-m gr-centered" src="[% request.url_for('images/pages/mam/' _ image _ '.svg') %]"/>
                 </div>
-                <p>[% text %]</p>
+                <div class="gr-padding-20 gr-child"><strong>[% header %]</strong></div>
+                <p class="no-margin gr-padding-10">[% text %]</p>
             </div>
         </div>
         [% circle_no = circle_no + 1 %]
     [% END %]
 
     <div class="steps">
-        [% PROCESS step image='download'
-            text='Download the interface and log in with your master account credentials.' %]
+        [% PROCESS step image='talktous' header=l('Talk to us')
+            text=l('Learn how to set up and authenticate your master account, link sub accounts, and more.') %]
 
-        [% PROCESS step image='mt5'
-            text='Start trading using our MetaTrader 5 platform.' %]
+        [% PROCESS step image='download' header=l('Download MAM')
+            text=l('Download the MAM application after setup is completed. Log in with your master account credentials.') %]
 
-        [% PROCESS step image='monitor'
-            text='Manage and monitor your client list, trading activity, and volume allocation.' %]
+        [% PROCESS step image='monitor' header=l('Manage sub accounts')
+            text=l('Monitor and manage your client list, set allocations and exclusions for individual sub accounts, and more.') %]
     </div>
 
     <div class="center-text">
