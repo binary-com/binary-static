@@ -49,21 +49,17 @@ const setCurrencies = (website_status) => {
 const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type']));
 
 const crypto_config = {
-    BTC: { name: 'Bitcoin',       min_payout: 0.005 },
+    BTC: { name: 'Bitcoin' },
     BCH: { name: 'Bitcoin Cash' },
     ETH: { name: 'Ether' },
     ETC: { name: 'Ether Classic' },
-    LTC: { name: 'Litecoin',      min_payout: 0.1 },
+    LTC: { name: 'Litecoin' },
 };
 
 const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
 
 const getMinPayout = currency => (
-    jpClient() ?
-        1 :
-        (isCryptocurrency(currency) ?
-            (getPropertyValue(currencies_config, [currency, 'stake_default']) || getPropertyValue(crypto_config, [currency, 'min_payout']) || 0.005) :
-            10)
+    jpClient() ? 1 : (isCryptocurrency(currency) ? getPropertyValue(currencies_config, [currency, 'stake_default']) : 10)
 );
 
 const getCurrencyList = (currencies) => {
