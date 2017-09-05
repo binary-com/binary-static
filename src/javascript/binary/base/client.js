@@ -100,11 +100,13 @@ const Client = (() => {
             type === this_type);
     };
 
+    const hasAccount = (type, loginid, only_enabled) => (
+        isAccountOfType(type, loginid) &&
+        (only_enabled ? !get('is_disabled', loginid) : true)
+    );
+
     const getAccountOfType = (type, only_enabled) => {
-        const id = getAllLoginids().find(loginid => (
-            isAccountOfType(type, loginid) &&
-            (only_enabled ? !get('is_disabled', loginid) : true)
-        ));
+        const id = getAllLoginids().find(loginid => hasAccount(type, loginid, only_enabled));
         return id ? $.extend({ loginid: id }, get(null, id)) : {};
     };
 
@@ -116,6 +118,17 @@ const Client = (() => {
         financial: 'Investment',
     };
     const getAccountTitle = loginid => types_map[getAccountType(loginid)] || 'Real';
+
+    const hasMultiAccountsOfType = (type, only_enabled) => {
+        let number_of_accounts = 0;
+        return Object.keys(client_object).some((loginid) => {
+            if (hasAccount(type, loginid, only_enabled)) {
+                number_of_accounts += 1;
+            }
+            // as long as has more than one account of type, return true
+            return number_of_accounts > 1;
+        });
+    };
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
@@ -349,6 +362,7 @@ const Client = (() => {
         getUpgradeInfo   : getUpgradeInfo,
         getAccountTitle  : getAccountTitle,
 
+        hasMultiAccountsOfType: hasMultiAccountsOfType,
         activateByClientType  : activateByClientType,
         currentLandingCompany : currentLandingCompany,
         getLandingCompanyValue: getLandingCompanyValue,

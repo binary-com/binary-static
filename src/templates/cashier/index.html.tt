@@ -95,7 +95,7 @@
             </a>
         </div>
         <div class="gr-5 gr-12-m">
-            <span>[% l('Transfer between your gaming and financial accounts.') %]</span>
+            <span>[% l('Transfer between your real money accounts.') %]</span>
         </div>
         <div class="gr-5 gr-12-m gr-padding-10 gr-parent">
             <a class="toggle button client_real invisible" href="[% request.url_for('/cashier/account_transfer') %]">
