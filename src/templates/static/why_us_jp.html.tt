@@ -22,7 +22,7 @@
                     { id='sidebar-link-section-5', href='#section-five',  text=l("Trust") },
                 ] %]
                 <div class="center-text gr-padding-10 client_logged_out invisible">
-                    <a class="button" href="[% request.url_for('/') %]">
+                    <a class="button" href="[% request.url_for('home-jp') %]">
                         <span>[% l("Open a free account") %]</span>
                     </a>
                 </div>
