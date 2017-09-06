@@ -115,7 +115,7 @@ const PersonalDetails = (() => {
             // prioritise labels for japan account
             el_key     = is_jp ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
             if (el_key) {
-                data_key             = /format_money/.test(el_key.className) ? formatMoney(currency, data[key]) : (data[key] || '');
+                data_key             = /format_money/.test(el_key.className) && data[key] !== null ? formatMoney(currency, data[key]) : (data[key] || '');
                 editable_fields[key] = data_key;
                 if (populate) {
                     if (el_key.type === 'checkbox') {

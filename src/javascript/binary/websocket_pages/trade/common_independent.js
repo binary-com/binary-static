@@ -32,7 +32,7 @@ const countDecimalPlaces = (num) => {
 const trading_times = {};
 
 const processTradingTimesAnswer = (response) => {
-    if (!getPropertyValue(trading_times, ['response', 'echo_req', 'trading_times']) && getPropertyValue(response, ['trading_times', 'markets'])) {
+    if (!getPropertyValue(trading_times, response.echo_req.trading_times) && getPropertyValue(response, ['trading_times', 'markets'])) {
         for (let i = 0; i < response.trading_times.markets.length; i++) {
             const submarkets = response.trading_times.markets[i].submarkets;
             if (submarkets) {
@@ -56,7 +56,7 @@ const processTradingTimesAnswer = (response) => {
 const getElement = () => document.getElementById('date_start');
 
 const checkValidTime = (time_start_element = document.getElementById('time_start'), $date_start = $('#date_start'), time = time_start_element.value) => {
-    let time_array;
+    let time_array = '';
     if (time) {
         time_array = time.split(':');
     }

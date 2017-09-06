@@ -86,11 +86,12 @@ const Price = (() => {
             let end_time2   = Defaults.get('expiry_time');
             if (!end_time2) {
                 const trading_times = getTradingTimes();
-                if (getPropertyValue(trading_times, [end_date2, underlying.value]).length && trading_times[end_date2][underlying.value][0] !== '--') {
-                    if (trading_times[end_date2][underlying.value].length > 1) {
-                        end_time2 = trading_times[end_date2][underlying.value][1];
+                const trading_times_end_date2 = getPropertyValue(trading_times, [end_date2, underlying.value]);
+                if (trading_times_end_date2 && trading_times_end_date2.length && trading_times_end_date2[0] !== '--') {
+                    if (trading_times_end_date2.length > 1) {
+                        end_time2 = trading_times_end_date2[1];
                     } else {
-                        end_time2 = trading_times[end_date2][underlying.value];
+                        end_time2 = trading_times_end_date2;
                     }
                 }
             }
