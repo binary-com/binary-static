@@ -141,6 +141,8 @@ const TradingEvents = (() => {
                     // get ticks for current underlying
                     GetTicks.request(underlying);
                     commonTrading.displayTooltip(Defaults.get('market'), underlying);
+
+                    GetTicks.populateDigits();
                 }
             });
         }

@@ -124,8 +124,19 @@ const GetTicks = (() => {
         }
     };
 
+    const populateDigits = () => {
+      const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
+      const tick = $('#tick_count').val() || 100;
+      GetTicks.request('', {
+          ticks_history: underlying,
+          count        : tick.toString(),
+          end          : 'latest',
+      });
+    };
+
     return {
-        request: request,
+        request       : request,
+        populateDigits: populateDigits,
     };
 })();
 
