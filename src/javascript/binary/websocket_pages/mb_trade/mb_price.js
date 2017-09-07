@@ -33,7 +33,7 @@ const MBPrice = (() => {
         req_id         = 0,
         is_displayed   = false,
         is_unwelcome   = false,
-        $rows          = {},
+        el_rows        = {},
         $table;
 
     const addPriceObj = (req) => {
@@ -90,16 +90,7 @@ const MBPrice = (() => {
         if (!$table) {
             $table = $(price_selector);
         }
-        if (!barriers.length) {
-            barriers = Object.keys(prices).sort((a, b) => +b.split('_')[0] - (+a.split('_')[0]));
-        }
-
-        const $price_row = $('#templates .price-row');
-        barriers.forEach((barrier) => {
-            $rows[barrier] = $price_row.clone().attr('data-barrier', barrier);
-            $rows[barrier].find('.barrier').html(barrier.split('_').join('<br />'));
-            $table.append($rows[barrier]);
-        });
+        $table.off('click', 'button.price-button').on('click', 'button.price-button', processBuy);
 
         BinarySocket.wait('get_account_status').then((response) => {
             is_unwelcome = /unwelcome/.test(response.get_account_status.status);
@@ -112,11 +103,51 @@ const MBPrice = (() => {
             }
         });
 
-        barriers.forEach((barrier) => {
-            Object.keys(contract_types).forEach((contract_type) => {
-                $($table[+contract_types[contract_type].order])
-                    .append(updatePriceRow(getValues(prices[barrier][contract_type], contract_type)));
+        if (!barriers.length) {
+            barriers = Object.keys(prices).sort((a, b) => +b.split('_')[0] - (+a.split('_')[0]));
+        }
+
+        const el_price_row = document.querySelector('#templates .price-row');
+        if (is_japan) {
+            el_price_row.querySelectorAll('.base-value').forEach((el) => {
+                el.classList.remove('invisible');
             });
+        }
+        barriers.forEach((barrier) => {
+            el_rows[barrier] = {};
+            const el_row = el_price_row.cloneNode(true);
+            el_row.setAttribute('data-barrier', barrier);
+            el_row.querySelector('.barrier').innerHTML = barrier.replace(/_/g, '<br />');
+            Object.keys(contract_types).forEach((contract_type) => {
+                if (!el_rows[barrier][contract_type]) {
+                    el_rows[barrier][contract_type] = {};
+                }
+
+                const order = contract_types[contract_type].order;
+                const el_buy  = el_row.querySelectorAll('.buy-price button')[order];
+                const el_sell = el_row.querySelectorAll('.sell-price .price-wrapper')[order];
+
+                el_buy.setAttribute('data-barrier', barrier);
+                el_buy.setAttribute('data-contract_type', contract_type);
+
+                el_rows[barrier][contract_type].buy = {
+                    btn: el_buy,
+                    dyn: el_buy.getElementsByClassName('dynamics')[0],
+                    val: el_buy.getElementsByClassName('value')[0],
+                };
+                el_rows[barrier][contract_type].sell = {
+                    sell: el_sell,
+                    val : el_sell.getElementsByClassName('value')[0],
+                };
+
+                if (is_japan) {
+                    el_rows[barrier][contract_type].buy.base_value  = el_buy.getElementsByClassName('base-value')[0];
+                    el_rows[barrier][contract_type].sell.base_value = el_sell.getElementsByClassName('base-value')[0];
+                }
+
+                updatePriceRow(getValues(prices[barrier][contract_type], contract_type));
+            });
+            $table.append(el_row);
         });
 
         MBPrice.hidePriceOverlay();
@@ -170,33 +201,42 @@ const MBPrice = (() => {
     const getMovementDirection = (prev, current) => (current > prev ? 'up' : current < prev ? 'down' : '');
 
     const updatePriceRow = (values) => {
-        const $buy = $(`<button class="price-button${values.is_active ? '' : ' inactive'}"
-            ${values.is_active ? ` onclick="return HandleClick('MBPrice', '${values.barrier}', '${values.contract_type}')"` : ''}
-            ${values.message ? ` data-balloon="${values.message}"` : ''}>
-                <span class="value-wrapper">
-                    <span class="dynamics ${values.ask_price_movement || ''}"></span>
-                    ${formatPrice(values.ask_price)}
-                </span>
-                ${is_japan ? `<span class="base-value">(${formatPrice(values.ask_price / values.payout)})</span>` : ''}
-            </button>`);
-        const $sell = $(`<span class="price-wrapper${!values.sell_price ? ' inactive' : ''}">
-                <span class="${values.sell_price_movement || ''}"></span>
-                ${formatPrice(values.sell_price)}
-                ${is_japan ? `<span class="base-value">(${formatPrice(values.sell_price / values.payout)})</span>` : ''}
-            </span>`);
+        const el_buy  = el_rows[values.barrier][values.contract_type].buy;
+        const el_sell = el_rows[values.barrier][values.contract_type].sell;
 
-        const $row = $rows[values.barrier];
-        const order = contract_types[values.contract_type].order;
-        $row.find(`.buy-price:eq(${order})`).html($buy);
-        $row.find(`.sell-price:eq(${order})`).html($sell);
+        el_buy.btn.classList[values.is_active ? 'remove' : 'add']('inactive');
+        el_buy.btn[values.message ? 'setAttribute' : 'removeAttribute']('data-balloon', values.message);
+        el_buy.dyn.setAttribute('class', `dynamics ${values.ask_price_movement || ''}`);
+        el_buy.val.textContent = formatPrice(values.ask_price);
+
+        el_sell.sell.classList[values.sell_price ? 'remove' : 'add']('inactive');
+        el_sell.val.textContent = formatPrice(values.sell_price);
+
+        if (is_japan) {
+            el_buy.base_value.textContent  = formatPrice(values.ask_price / values.payout);
+            el_sell.base_value.textContent = formatPrice(values.sell_price / values.payout);
+        }
     };
 
-    const processBuy = (barrier, contract_type) => {
-        if (!barrier || !contract_type) return;
+    const processBuy = (e) => {
+        e.preventDefault();
+
         if (!Client.isLoggedIn()) {
             MBNotifications.show({ text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
             return;
         }
+
+        let $btn = $(e.target);
+        if ($btn.prop('tagName').toLowerCase() !== 'button') {
+            $btn = $btn.parents('button.price-button');
+        }
+
+        if ($btn.hasClass('inactive')) return;
+
+        const barrier       = $btn.attr('data-barrier');
+        const contract_type = $btn.attr('data-contract_type');
+        if (!barrier || !contract_type) return;
+
         MBPrice.showPriceOverlay();
         MBPrice.sendBuyRequest(barrier, contract_type);
     };
@@ -208,7 +248,7 @@ const MBPrice = (() => {
         contract_types = {};
         barriers       = [];
         is_displayed   = false;
-        $rows          = {};
+        el_rows        = {};
         // display loading
         if ($(price_selector).html()) {
             $('#loading-overlay').height($(price_selector).height()).setVisibility(1);

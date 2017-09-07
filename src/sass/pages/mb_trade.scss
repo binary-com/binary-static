@@ -204,7 +204,7 @@
                 }
             }
             #underlying {
-                margin-top: -7px;
+                margin-top: -5px;
 
                 div.current > div {
                     display: flex;
@@ -296,6 +296,13 @@
                     font-size: $FONT_SIZE_XXS;
                     display: inline-block;
                     margin-left: 5px;
+
+                    &:before {
+                        content: '(';
+                    }
+                    &:after {
+                        content: ')';
+                    }
                 }
                 .dynamics {
                     display: inline-block;
@@ -376,31 +383,36 @@
                 &:nth-child(2) {
                     padding-left: 2px;
                 }
-                .button-secondary span {
-                    padding: 8px 0;
-                    width: 100%;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    height: 31px;
-                    line-height: 31px;
+                .trading-status {
+                    height: 40px;
+                    display: block;
 
-                    &#allow {
-                        background-image: svg-icon('unlock', $COLOR_BLACK);
+                    span {
+                        padding: 9px 0;
+                        width: 100%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        height: 31px;
+                        line-height: 31px;
 
-                        &.selected {
-                            background-image: svg-icon('unlock', $COLOR_WHITE);
+                        &#allow {
+                            background-image: svg-icon('unlock', $COLOR_BLACK);
+
+                            &.selected {
+                                background-image: svg-icon('unlock', $COLOR_WHITE);
+                            }
                         }
-                    }
-                    &#disallow {
-                        background-image: svg-icon('lock', $COLOR_BLACK);
+                        &#disallow {
+                            background-image: svg-icon('lock', $COLOR_BLACK);
 
-                        &.selected {
-                            background-image: svg-icon('lock', $COLOR_WHITE);
+                            &.selected {
+                                background-image: svg-icon('lock', $COLOR_WHITE);
+                            }
                         }
-                    }
-                    &.selected {
-                        color: $COLOR_WHITE;
-                        background-color: $COLOR_BLUE;
+                        &.selected {
+                            color: $COLOR_WHITE;
+                            background-color: $COLOR_BLUE;
+                        }
                     }
                 }
             }

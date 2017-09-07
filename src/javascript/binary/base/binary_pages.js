@@ -79,6 +79,7 @@ const pages_config = {
     iphistoryws              : { module: IPHistory,                  is_authenticated: true },
     japanws                  : { module: JapanAccOpening,            is_authenticated: true, only_virtual: true },
     knowledge_testws         : { module: KnowledgeTest,              is_authenticated: true, only_virtual: true },
+    landing_page             : { module: StaticPages.LandingPage,    is_authenticated: true, only_virtual: true },
     limitsws                 : { module: Limits,                     is_authenticated: true, only_real: true, needs_currency: true },
     logged_inws              : { module: LoggedInHandler },
     lost_passwordws          : { module: LostPassword,               not_authenticated: true },

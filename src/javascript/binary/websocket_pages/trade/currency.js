@@ -1,6 +1,6 @@
-const Defaults       = require('./defaults');
-const State          = require('../../base/storage').State;
-const formatCurrency = require('../../common_functions/currency').formatCurrency;
+const Defaults = require('./defaults');
+const State    = require('../../base/storage').State;
+const Currency = require('../../common_functions/currency');
 
 /*
  * Handles currency display
@@ -11,33 +11,19 @@ const formatCurrency = require('../../common_functions/currency').formatCurrency
 const displayCurrencies = () => {
     'use strict';
 
-    const target = document.getElementById('currency');
-    const fragment = document.createDocumentFragment();
-    const currencies = State.getResponse('payout_currencies');
+    const $currency = $('#currency');
 
-    if (!target) {
+    if (!$currency.length) {
         return;
     }
 
-    while (target && target.firstChild) {
-        target.removeChild(target.firstChild);
-    }
+    const currencies = State.getResponse('payout_currencies');
 
     if (currencies.length > 1) {
-        currencies.forEach((currency) => {
-            const option = document.createElement('option');
-            const content = document.createTextNode(currency);
-
-            option.setAttribute('value', currency);
-
-            option.appendChild(content);
-            fragment.appendChild(option);
-        });
-
-        target.appendChild(fragment);
-        Defaults.set('currency', target.value);
+        $currency.html(Currency.getCurrencyList(currencies).html());
+        Defaults.set('currency', $currency.val());
     } else {
-        $('#currency').replaceWith($('<span/>', { id: target.getAttribute('id'), class: target.getAttribute('class'), value: currencies[0], html: formatCurrency(currencies[0]) }));
+        $currency.replaceWith($('<span/>', { id: $currency.attr('id'), class: $currency.attr('class'), value: currencies[0], html: Currency.formatCurrency(currencies[0]) }));
         Defaults.set('currency', currencies[0]);
     }
 };

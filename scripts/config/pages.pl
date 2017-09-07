@@ -83,6 +83,7 @@ sub all_pages {
         ['new_account/maltainvestws',    'new_account/financial',       'default', 'Financial Account Opening'],
         ['new_account/realws',           'new_account/real',            'default', 'Real Money Account Opening'],
         ['new_account/virtualws',        'new_account/virtual',         'default', 'Create New Account'],
+        ['new_account/landing_page',     'new_account/landing_page',    'default', 'Welcome to Binary.com',      'NOT-ja,en'],
 
         ['resources',                'resources/index',         'default', 'Resources'],
         ['resources/asset_indexws',  'resources/asset_index',   'default', 'Asset Index', 'ja'],

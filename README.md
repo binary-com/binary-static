@@ -79,9 +79,15 @@ grunt dev --path=about-us
 
 
 ### Using sub-folders
-There are times that you're working on various branches at the same time, and you want to deploy/test each branch separately on your gh-pages, you can simply use `--branch=branchname` for grunt commands:
+There are times that you are working on various branches at the same time, and you want to deploy/test each branch separately on your gh-pages, you can simply use `--branch=branchname` for grunt commands:
 - `grunt dev --branch=branchname`
 This will deploy your changes to a sub-folder named: `br_branchname` and it can be browsed at: https://YOUR_GITHUB_USERNAME.github.io/binary-static/br_branchname/
+
+In order to remove the created folders from your gh-pages, you can use either:
+- `grunt dev --cleanup`: removes all `br_*` folders and deploys to the root folder.
+
+  or
+- `grunt shell:remove_folder --folder=br_branchname1,br_branchname2,...`: only removes the specified folder(s) from your gh-pages.
 
 ### Preview on your local machine
 - To preview your changes locally, run `sudo grunt serve`
@@ -94,7 +100,7 @@ This will deploy your changes to a sub-folder named: `br_branchname` and it can 
 ## Release to Production
 
 ```
-grunt release --staging=1|--production=1|--translations=1 [--cleanup]
+grunt release --staging=1|--production=1|--translations=1 [--cleanup] [--reset]
 ```
 (The value is needed when more than one option is used)
 
@@ -106,3 +112,5 @@ grunt release --staging=1|--production=1|--translations=1 [--cleanup]
 - `--cleanup` [optional]
   - Create CNAME file with proper value according to remote origin
   - Deploy to gh-pages with the option `add: false`
+- `--reset` [optional]
+  - Removes all commits from `gh-pages` branch before release (staging only)

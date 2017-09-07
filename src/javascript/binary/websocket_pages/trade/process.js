@@ -1,20 +1,21 @@
-const moment                    = require('moment');
-const TradingAnalysis           = require('./analysis');
-const commonTrading             = require('./common');
-const Contract                  = require('./contract');
-const Defaults                  = require('./defaults');
-const Durations                 = require('./duration');
-const GetTicks                  = require('./get_ticks');
-const Notifications             = require('./notifications');
-const Price                     = require('./price');
-const StartDates                = require('./starttime').StartDates;
-const Symbols                   = require('./symbols');
-const Tick                      = require('./tick');
-const BinarySocket              = require('../socket');
-const localize                  = require('../../base/localize').localize;
-const State                     = require('../../base/storage').State;
-const elementInnerHtml          = require('../../common_functions/common_functions').elementInnerHtml;
-const isCryptocurrency          = require('../../common_functions/currency').isCryptocurrency;
+const moment           = require('moment');
+const TradingAnalysis  = require('./analysis');
+const commonTrading    = require('./common');
+const Contract         = require('./contract');
+const Defaults         = require('./defaults');
+const Durations        = require('./duration');
+const GetTicks         = require('./get_ticks');
+const Notifications    = require('./notifications');
+const Price            = require('./price');
+const StartDates       = require('./starttime').StartDates;
+const Symbols          = require('./symbols');
+const Tick             = require('./tick');
+const BinarySocket     = require('../socket');
+const localize         = require('../../base/localize').localize;
+const State            = require('../../base/storage').State;
+const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
+const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
+const getMinPayout     = require('../../common_functions/currency').getMinPayout;
 
 const Process = (() => {
     'use strict';
@@ -179,7 +180,7 @@ const Process = (() => {
         if (Defaults.get(amount)) {
             $('#amount').val(Defaults.get(amount));
         } else if (is_crypto) {
-            const default_crypto_value = 0.005;
+            const default_crypto_value = getMinPayout(currency);
             Defaults.set(amount, default_crypto_value);
             document.getElementById('amount').value = default_crypto_value;
         } else {

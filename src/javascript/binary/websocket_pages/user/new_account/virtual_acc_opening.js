@@ -14,9 +14,11 @@ const VirtualAccOpening = (() => {
     'use strict';
 
     const form = '#virtual-form';
+    let jp_client;
 
     const onLoad = () => {
-        if (jpClient()) {
+        jp_client = jpClient();
+        if (jp_client) {
             handleJPForm();
         } else {
             BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
@@ -107,10 +109,11 @@ const VirtualAccOpening = (() => {
             Client.set('residence', response.echo_req.residence, new_account.client_id);
             LocalStore.remove('gclid');
             return Client.processNewAccount({
-                email     : new_account.email,
-                loginid   : new_account.client_id,
-                token     : new_account.oauth_token,
-                is_virtual: true,
+                email       : new_account.email,
+                loginid     : new_account.client_id,
+                token       : new_account.oauth_token,
+                is_virtual  : true,
+                redirect_url: jp_client ? urlFor('new_account/landing_page') : '',
             });
         }
 
