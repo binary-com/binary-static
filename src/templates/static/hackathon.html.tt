@@ -19,10 +19,8 @@
         </script>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
-        <meta name="description" content="
-            [%= l("[_1] Hackathon Competition", broker_name) =%]" />
-        <meta name="keywords" content="
-                    [%= l('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading, hackathon') =%]" />
+        <meta name="description" content="[%= broker_name _ ' Hackathon Competition' =%]" />
+        <meta name="keywords" content="binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading, hackathon" />
         <meta name="author" content="[%= broker_name =%]" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="dcterms.rightsHolder" content="[%= broker_name =%]" />
