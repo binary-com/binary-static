@@ -1,0 +1,219 @@
+[% BLOCK link %]
+    [% FOREACH favicon IN favicons %]
+        [% sizes = favicon.size _ 'x' _ favicon.size %]
+    <link rel="[% (favicon.is_image ? '' : 'apple-touch-') _ 'icon' %]" sizes="[% sizes %]"[% IF favicon.is_image %] type="image/png"[% END %] href="https://style.binary.com/images/favicons/[% favicon.is_image ? 'fav' : 'apple-touch-' %]icon-[% sizes %].png">
+    [% END %]
+[% END %]
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style id="antiClickjack">body{display:none !important;}</style>
+        <script type="text/javascript">
+            if (self === top) {
+                var antiClickjack = document.getElementById("antiClickjack");
+                antiClickjack.parentNode.removeChild(antiClickjack);
+            } else {
+                top.location = self.location;
+            }
+        </script>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
+        <meta name="description" content="
+        [%= l("[_1] Hackathon Competition", broker_name) =%]" />
+        <meta name="keywords" content="
+                [%= l('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading, hackathon') =%]" />
+        <meta name="author" content="[%= broker_name =%]" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="dcterms.rightsHolder" content="[%= broker_name =%]" />
+        <meta name="dcterms.rights" content="[%= broker_name =%]" />
+        <meta property="og:title" content="[%= broker_name =%]" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
+
+        [% PROCESS global/title.html.tt %]
+
+        [% INCLUDE link favicons=[
+            { size='57' },
+            { size='114' },
+            { size='72' },
+            { size='144' },
+            { size='60' },
+            { size='120' },
+            { size='76' },
+            { size='152' },
+            { size='180' },
+            { is_image=1, size='192' },
+            { is_image=1, size='160' },
+            { is_image=1, size='96' },
+            { is_image=1, size='16' },
+            { is_image=1, size='32' },
+        ] %]
+
+        <link href="[% request.url_for('css/hackathon.css') %]" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                <span id="toggle-menu" href="button" class="navbar-toggle"></span>
+                <a class="navbar-brand page-scroll logo" href="#page-top"></a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="invisible">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#register">[% l("Register") %]</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#agenda">[% l("Agenda") %]</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#faq">[% l("FAQ") %]</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#judging">[% l("Judging Criteria") %]</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section id="page-top" class="intro">
+            <h1 class="text-uppercase"><span class="text-bold">[% l('Hackathon') %] </span><span class="text-thin">[% l('Competition') %]</span></h1>
+            <div class="intro-bg"></div>
+            <div id="register" class="white-bg">
+                <h1 class="text-uppercase">[% l('30th September 2017') %]</h1>
+                <a class="button-outline" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfiVU7zo_ldaBpx32xXi6PM25Ev3VhEA_bVyNB94utcESXAGw/viewform">[% l('Register now for free') %]</a>
+            </div>
+        </section>
+
+        <section class="prize">
+            <div class="container">
+                <h2>[% l('Prizes') %]</h2>
+                <div class="gr-row">
+                    <div class="gr-4 gr-12-m gr-push-0-m">
+                        <div class="prizes">
+                            <span class="prizes--number">
+                                <img src="[% request.url_for('images/hackathon/1st.svg') %]"/>
+                            </span>
+                            <div class="prizes--content">
+                                <p>[% l('1st Prize') %]</p>
+                                <p>RM 1000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gr-4 gr-12-m gr-push-0-m">
+                        <div class="prizes">
+                            <span class="prizes--number">
+                                <img src="[% request.url_for('images/hackathon/2nd.svg') %]"/>
+                            </span>
+                            <div class="prizes--content">
+                                <p>[% l('2nd Prize') %]</p>
+                                <p>RM 500</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gr-4 gr-12-m gr-push-0-m">
+                        <div class="prizes">
+                            <span class="prizes--number">
+                                <img src="[% request.url_for('images/hackathon/3rd.svg') %]"/>
+                            </span>
+                            <div class="prizes--content">
+                                <p>[% l('3rd Prize') %]</p>
+                                <p>RM 250</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <p class="line-on-side"><span>[% l('and') %]</span></p>
+                    </div>
+                </div>
+                <h2 class="text-bold">[% l('A career and internship opportunity with Binary!') %]</h2>
+            </div>
+        </section>
+
+        <section id="agenda">
+            <div class="white-bg">
+                <div class="container">
+                    <h2>[% l('Agenda') %]</h2>
+                    <p>[% l('To be confirmed') %]</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>[% l('More info?') %]</h2>
+                <div class="gr-row">
+                    <div class="gr-4 gr-12-m">
+                        <img src="[% request.url_for('images/hackathon/clock.svg') %]"/>
+                        <p class="text-bold">[% l('Date and Time') %]</p>
+                        <p>[% l('Saturday, 30th September 2017,') %]<br> 10am - 7pm</p>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <img src="[% request.url_for('images/hackathon/location.svg') %]"/>
+                        <p class="text-bold">[% l('Binary Group Services') %]</p>
+                        <p>C-13-02, iTech Tower, Jalan Impact, <br>Cyber 6, Cyberjaya</p>
+                    </div>
+                    <div class="gr-4 gr-12-m">
+                        <img src="[% request.url_for('images/hackathon/email.svg') %]"/>
+                        <p class="text-bold">[% l('Email') %]</p>
+                        <p>[% l('Do send us your details to') %] <a class="text-bold" href="mailto:hackathon@binary.com">hackathon@binary.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="white-bg">
+                <div class="container">
+                    <div class="gr-row">
+                        <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
+                            <h2>FAQ</h2>
+                            <h3>[% l('What is a Hackathon?') %]</h3>
+                            <hr>
+                            <p>[% l('A hackathon is an event where programmers collaboratively code on a given challenge in a extreme and competitive manner over a short period of time.') %]</p>
+                            <h3>[% l('Who can participate?') %]</h3>
+                            <hr>
+                            <p>[% l('Any individual 18 years old and above with an interest to work with technologies can sign up for this event. Encourage your friends with similar interests to join too!') %]</p>
+                            <h3>[% l('Do you have to pay to attend the event?') %]</h3>
+                            <hr>
+                            <p>[% l('Nope! It is absolutely free; no hidden charges involved. Your meals for the day are provided too and there\'ll be plenty of snacks and drinks to keep you energized.') %]</p>
+                            <h3>[% l('Any further inquiries?') %]</h3>
+                            <hr>
+                            <p>[% l('If you have any additional questions email us at [_1]', '<a class="text-bold" href="mailto:hackathon@binary.com">hackathon@binary.com</a>') %]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="judging">
+            <div class="container">
+                <h2>[% l('Judging Criteria') %]</h2>
+                <p>[% l('To be confirmed') %]</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="white-bg">
+                <div class="container">
+                    <h2>[% l('Sponsored by:') %]</h2>
+                    <img class="responsive" src="[% request.url_for('images/hackathon/amazon_ws.svg') %]"/>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center">
+            <div class="container">
+                <p>[% l('Visit our <a class="text-bold" target="_blank" href="https://www.binary.com/en/careers.html">career page</a> for more opportunities at Binary!') %]</p>
+            </div>
+        </footer>
+
+        <script src="[% request.url_for('js/hackathon/hackathon.js') %]"></script>
+    </body>
+</html>
