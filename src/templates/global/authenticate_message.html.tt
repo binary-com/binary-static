@@ -5,13 +5,13 @@
                 <h2>[% heading %]</h2>
                 <div class="gr-row">
                     <div class="gr-7 gr-12-m">
-                        <strong>We accept:</strong>
+                        <strong>[% l('We accept') %]:</strong>
                         <ul class="bullet">
                             [% FOREACH document IN allowed_documents %]
                                 <li>[% document %]</li>
                             [% END %]
                         </ul>
-                        <strong>Please make sure document is:</strong>
+                        <strong>[% l('Requirements') %]:</strong>
                         <ul class="bullet">
                             [% FOREACH instruction IN instructions %]
                                 <li>[% instruction %]</li>
@@ -19,7 +19,7 @@
                         </ul>
                     </div>
                     <div class="gr-5 gr-12-m">
-                        <p class="font-s">Submit at least <strong>1 Document(s)</strong> below</p>            
+                        <p class="font-s">[% l('Submit one of the documents below') %]:</p>            
                         <div class="files">
                             [% FOREACH document IN accepted_documents %]
                                 <h3>[% document %]</h3>
@@ -27,7 +27,7 @@
                                     [% IF type == 'poi' %]
                                         <div class="gr-row form-row center-text-m">
                                             <div class="gr-4 gr-12-m">
-                                                <label for="id_number_[% loop.count %]">ID Number:</label>
+                                                <label for="id_number_[% loop.count %]">[% l('ID number') %]:</label>
                                             </div>
                                             <div class="gr-8 gr-12-m">
                                                 <input id="id_number_[% loop.count %]" type="text" maxlength="200">
@@ -35,7 +35,7 @@
                                         </div>
                                         <div class="gr-row form-row center-text-m">
                                             <div class="gr-4 gr-12-m">
-                                                <label for="exp_date_[% loop.count %]">Expiry Date:</label>
+                                                <label for="exp_date_[% loop.count %]">[% l('Expiry date') %]:</label>
                                             </div>
                                             <div class="gr-8 gr-12-m">
                                                 <input class="date-picker" id="exp_date_[% loop.count %]" type="text" maxlength="200" readonly="true">
@@ -44,11 +44,11 @@
                                         <div class="gr-row form-row center-text-m">
                                             <div class="gr-6 gr-12-m">
                                                 <input id="front_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document %]">
-                                                <label for="front_file[% loop.count %]" class="button">Front <img class="add" /></button>
+                                                <label for="front_file[% loop.count %]" class="button">[% l('Front') %] <img class="add" /></button>
                                             </div>
                                             <div class="gr-6 gr-12-m">
                                                 <input id="back_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document %]">
-                                                <label for="back_file[% loop.count %]" class="button">Back <img class="add" /></button>
+                                                <label for="back_file[% loop.count %]" class="button">[% l('Back') %] <img class="add" /></button>
                                             </div>
                                         </div>
                                     [% END %]
@@ -56,7 +56,7 @@
                                         <div class="gr-row form-row gr-centered">
                                             <div class="gr-12">
                                                 <input id="add_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document %]">
-                                                <label for="add_file[% loop.count %]" class="button">Add <img class="add" /></button>
+                                                <label for="add_file[% loop.count %]" class="button">[% l('Add') %] <img class="add" /></button>
                                             </div>
                                         </div>
                                     [% END %]
@@ -74,31 +74,32 @@
 
 <p>[% l('Authenticate your account by verifying your identity and address.') %]</p>
 
-[% INCLUDE file_selector heading="1. Proof of identity"
-    allowed_documents=['Passport', 'Driving License', '
-        National ID card or any government issued document which contains a photo ID, your name and date of birth']
-    instructions=['A clear color copy/image/scan', 'Valid and not expired', 
-        'Only JPG, JPEG, GIF, PNG or PDF formats are accepted', 
-        'Maximum upload file size for each file is 3MB']
+[% INCLUDE file_selector heading=l("1. Proof of identity")
+    allowed_documents=[l('Passport'), l('Driving licence'), 
+        l('National ID card or any government issued document which contains a photo ID, your name and date of birth')]
+    instructions=[l('Must be a photo or scanned image'), l('Still valid'), 
+        l('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'), 
+        l('Maximum upload size for each file is 3MB')]
     type="poi"
-    accepted_documents=['Passport', 'Identity Card', 'Driving License']
+    accepted_documents=[l('Passport'), l('Identity card'), l('Driving license')]
 %]
 [% INCLUDE global/separator_line.html.tt invisible=1 class="gr-padding-10" %]
-[% INCLUDE file_selector heading="2. Proof of address"
-    allowed_documents=['Utility bills (Gas, Electricity, Phone)', 
-        'Current bank statement or any government issued letter which contains your name and address']
-    instructions=['Issued on your own name', 'Dated within the last 3 months', 'Clear and in focus',
-        'Only JPG, JPEG, GIF, PNG or PDF formats are accepted', 
-        'Maximum upload file size for each file is 3MB'],
+[% INCLUDE file_selector heading=l("2. Proof of address")
+    allowed_documents=[l('Utility bills (gas, electricity, phone)'), 
+        l('Latest bank statement or any government-issued letter which contains your name and address')]
+    instructions=[ l('Must be a clear, colour photo or scanned image'),
+        l('Issued under your own name'), l('Dated within the last three months'), 
+        l('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'), 
+        l('Maximum upload size for each file is 3MB')]
     type="poa"
-    accepted_documents=['Utility Bill', 'Bank Statement']
+    accepted_documents=[l('Utility bill'), l('Bank statement')]
 %]
 
 <div class="center-text">
     <div id="msg_form" class="error-msg invisible"></div>
     <div class="gr-padding-10">
         <a class="button-disabled" id="btn_submit" type="submit">
-            <span>Submit for Review</span>
+            <span>[% l('Submit for review') %]</span>
         </a>
     </div>
 </div>
