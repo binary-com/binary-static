@@ -1,5 +1,6 @@
-const BinarySocket     = require('../../socket');
-const getHighestZIndex = require('../../../base/utility').getHighestZIndex;
+const BinarySocket      = require('../../socket');
+const getHighestZIndex  = require('../../../base/utility').getHighestZIndex;
+const setViewPopupTimer = require('../../../base/clock').setViewPopupTimer;
 
 const ViewPopupUI = (() => {
     let $container,
@@ -39,7 +40,7 @@ const ViewPopupUI = (() => {
     const cleanup = () => {
         forgetStreams();
         forgetChartStreams();
-        clearTimer();
+        setViewPopupTimer(null);
         closeContainer();
         init();
         if (typeof getPageTickStream === 'function') getPageTickStream();
@@ -61,13 +62,6 @@ const ViewPopupUI = (() => {
             if (id && id.length > 0) {
                 BinarySocket.send({ forget: id });
             }
-        }
-    };
-
-    const clearTimer = () => {
-        if (window.ViewPopupTimerInterval) {
-            clearInterval(window.ViewPopupTimerInterval);
-            window.ViewPopupTimerInterval = undefined;
         }
     };
 

@@ -5,6 +5,7 @@ const Highchart            = require('../../trade/charts/highchart');
 const TickDisplay          = require('../../trade/tick_trade');
 const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
 const toJapanTimeIfNeeded  = require('../../../base/clock').toJapanTimeIfNeeded;
+const setViewPopupTimer    = require('../../../base/clock').setViewPopupTimer;
 const localize             = require('../../../base/localize').localize;
 const State                = require('../../../base/storage').State;
 const getPropertyValue     = require('../../../base/utility').getPropertyValue;
@@ -87,7 +88,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
 
-        updateTimers();
+        setViewPopupTimer(updateTimers);
         update();
         ViewPopupUI.repositionConfirmation();
 
@@ -135,6 +136,10 @@ const ViewPopup = (() => {
         }
 
         if (current_spot_time) {
+            if (window.time && current_spot_time > window.time.unix()) {
+                window.time = moment(current_spot_time).utc();
+                updateTimers();
+            }
             containerSetText('trade_details_current_date', toJapanTimeIfNeeded(epochToDateTime(current_spot_time)));
         } else {
             $('#trade_details_current_date').parent().setVisibility(0);
@@ -203,35 +208,30 @@ const ViewPopup = (() => {
         contract.validation_error       = '';
     };
 
+    // This is called by clock.js in order to sync time updates on header as well as view popup
     const updateTimers = () => {
-        const update_time = () => {
-            const now = Math.max(Math.ceil((window.time || 0) / 1000), contract.current_spot_time || 0);
-            containerSetText('trade_details_live_date', toJapanTimeIfNeeded(epochToDateTime(now)));
-            showLocalTimeOnHover('#trade_details_live_date');
+        const now = Math.max(Math.floor((window.time || 0) / 1000), contract.current_spot_time || 0);
+        containerSetText('trade_details_live_date', toJapanTimeIfNeeded(epochToDateTime(now)));
+        showLocalTimeOnHover('#trade_details_live_date');
 
-            const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-            const is_ended   = contract.is_settleable || contract.is_sold;
-            if ((!is_started || is_ended || now >= contract.date_expiry) && document.getElementById('trade_details_live_remaining')) {
-                containerSetText('trade_details_live_remaining', '-');
-            } else {
-                let remained      = contract.date_expiry - now;
-                let days          = 0;
-                const day_seconds = 24 * 60 * 60;
-                if (remained > day_seconds) {
-                    days = Math.floor(remained / day_seconds);
-                    remained %= day_seconds;
-                }
-                if (document.getElementById('trade_details_live_remaining')) {
-                    containerSetText('trade_details_live_remaining',
-                        (days > 0 ? `${days} ${localize(days > 1 ? 'days' : 'day')}, ` : '') +
-                        moment((remained) * 1000).utc().format('HH:mm:ss'));
-                }
+        const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
+        const is_ended   = contract.is_settleable || contract.is_sold;
+        if ((!is_started || is_ended || now >= contract.date_expiry) && document.getElementById('trade_details_live_remaining')) {
+            containerSetText('trade_details_live_remaining', '-');
+        } else {
+            let remained = contract.date_expiry - now;
+            let days = 0;
+            const day_seconds = 24 * 60 * 60;
+            if (remained > day_seconds) {
+                days = Math.floor(remained / day_seconds);
+                remained %= day_seconds;
             }
-        };
-        update_time();
-
-        clearInterval(window.ViewPopupTimerInterval);
-        window.ViewPopupTimerInterval = setInterval(update_time, 500);
+            if (document.getElementById('trade_details_live_remaining')) {
+                containerSetText('trade_details_live_remaining',
+                    (days > 0 ? `${days} ${localize(days > 1 ? 'days' : 'day')}, ` : '') +
+                    moment((remained) * 1000).utc().format('HH:mm:ss'));
+            }
+        }
     };
 
     const contractEnded = () => {
