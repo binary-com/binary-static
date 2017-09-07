@@ -156,8 +156,8 @@
                     </div>
                     <div class="gr-4 gr-12-m">
                         <img src="[% request.url_for('images/hackathon/location.svg') %]"/>
-                        <p class="text-bold">[% l('Binary Group Services') %]</p>
-                        <p>C-13-02, iTech Tower, Jalan Impact, <br>Cyber 6, Cyberjaya</p>
+                        <p class="text-bold">[% l('Address') %]</p>
+                        <p>Binary Group Services, C-13-02, iTech Tower, Jalan Impact, <br>Cyber 6, Cyberjaya</p>
                     </div>
                     <div class="gr-4 gr-12-m">
                         <img src="[% request.url_for('images/hackathon/email.svg') %]"/>
