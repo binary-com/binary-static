@@ -1,117 +1,210 @@
-const BinarySocket = require('../socket');
-const Client       = require('../../base/client');
-const localize     = require('../../base/localize').localize;
-const FormManager  = require('../../common_functions/form_manager');
+const BinarySocket       = require('../socket');
+const Client             = require('../../base/client');
+const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
+const isCryptocurrency   = require('../../common_functions/currency').isCryptocurrency;
+const FormManager        = require('../../common_functions/form_manager');
 
 const AccountTransfer = (() => {
     'use strict';
 
-    const form_id = '#frm_account_transfer';
+    const form_id       = 'frm_account_transfer';
+    const form_id_hash  = `#${form_id}`;
+
+    const messages = {
+        parent : 'client_message',
+        error  : 'no_account',
+        deposit: 'no_balance',
+    };
 
     let accounts,
-        $transfer;
+        el_transfer_from,
+        el_transfer_to,
+        el_currency;
 
     const populateAccounts = (response_transfer, response_limits) => {
-        if (response_transfer.error || response_limits.error) {
-            $('#error_message').find('p').text((response_transfer.error || response_limits.error).message).end()
-                .setVisibility(1);
+        const error = response_transfer.error || response_limits.error;
+        if (error) {
+            const el_error = document.getElementById('error_message').getElementsByTagName('p')[0];
+            elementTextContent(el_error, error.message);
+            el_error.parentNode.setVisibility(1);
             return;
         }
+
         accounts = response_transfer.accounts;
+        if (!accounts || !accounts.length) {
+            showError();
+            return;
+        }
+
         const client_loginid = Client.get('loginid');
-        const $form = $(form_id);
-        $transfer = $form.find('#transfer');
-        let text,
-            from_loginid,
-            to_loginid,
-            max_balance;
+
+        el_transfer_from = document.getElementById('transfer_from');
+        el_transfer_to   = document.getElementById('transfer_to');
+
+        const fragment_transfer_from = document.createElement('div');
+        const fragment_transfer_to   = document.createElement('div');
+
+        const createOption = (fragments, loginid, currency, balance, data_to_get) => {
+            const option  = document.createElement('option');
+            option.setAttribute(`data-${data_to_get}`, loginid);
+            option.setAttribute('data-currency', currency);
+            option.setAttribute('data-balance', balance);
+            option.appendChild(document.createTextNode(loginid));
+            fragments.appendChild(option);
+        };
 
         accounts.forEach((account, idx) => {
+            const loginid  = accounts[idx].loginid;
+            const currency = accounts[idx].currency;
+            const balance  = accounts[idx].balance;
+
             if (+account.balance) {
-                from_loginid = accounts[idx].loginid;
-                to_loginid = accounts[1 - idx].loginid;
-                text = localize('from [_1] to [_2]', [from_loginid, to_loginid]);
-                if (client_loginid === from_loginid) {
-                    max_balance = Math.min(+accounts[idx].balance, +response_limits.get_limits.remainder);
-                } else {
-                    max_balance = +accounts[idx].balance;
-                }
-                $transfer.append($('<option/>', {
-                    text           : text,
-                    'data-from'    : from_loginid,
-                    'data-to'      : to_loginid,
-                    'data-currency': accounts[idx].currency,
-                    'data-balance' : max_balance,
-                }));
+                createOption(fragment_transfer_from, loginid, currency, balance, 'from');
+            }
+
+            createOption(fragment_transfer_to, loginid, currency, balance, 'to');
+        });
+
+        if (!fragment_transfer_from.childElementCount || !fragment_transfer_to.childElementCount) {
+            showError();
+            return;
+        }
+
+        const appendTransferOptions = (fragments, element) => {
+            if (fragments.childElementCount > 1) {
+                element.innerHTML = fragments.innerHTML;
+            } else {
+                const label = document.createElement('label');
+                label.appendChild(document.createTextNode(fragments.innerText));
+
+                element.parentNode.replaceChild(label, element);
+            }
+        };
+
+        appendTransferOptions(fragment_transfer_from, el_transfer_from);
+        appendTransferOptions(fragment_transfer_to, el_transfer_to);
+
+        // show client's login id on top
+        const opt_client = el_transfer_from.querySelector(`option[data-from="${client_loginid}"]`);
+        if (opt_client && opt_client.index !== 0) {
+            el_transfer_from.removeChild(opt_client);
+            el_transfer_from.add(opt_client, el_transfer_from.firstChild);
+            el_transfer_from.selectedIndex = 0;
+        }
+
+        showForm();
+    };
+
+    const showError = () => {
+        document.getElementById(messages.parent).setVisibility(1);
+        document.getElementById(messages.error).setVisibility(1);
+    };
+
+    const showForm = () => {
+        el_currency = document.querySelector(`${form_id_hash} #currency`);
+
+        hideSelectedInTransferTo();
+        updateCurrency(el_currency);
+        document.getElementById(form_id).setVisibility(1);
+        bindValidation();
+
+        el_transfer_from.addEventListener('change', function () {
+            hideSelectedInTransferTo();
+            updateCurrency(el_currency);
+
+            // to update amount min and max as per selected account_from
+            bindValidation();
+
+            // update amount error
+            const el_amount = document.getElementById('amount');
+            if (el_amount && el_amount.value) {
+                el_amount.dispatchEvent(new Event('change'));
             }
         });
 
-        // show client's login id on top
-        const $client_option = $transfer.find(`option[data-from="${client_loginid}"]`);
-        if ($client_option.length !== 0) {
-            $client_option.insertBefore($transfer.find('option:eq(0)')).attr('selected', 'selected');
-        }
-
-        if (from_loginid) {
-            showForm($form);
-        } else {
-            $('#client_message').setVisibility(1);
-        }
-    };
-
-    const showForm = ($form) => {
-        const $currency = $form.find('#currency');
-        $transfer.on('change', function() {
-            updateCurrency($currency, $(this));
-            bindValidation();
-        });
-        updateCurrency($currency);
-        $form.setVisibility(1);
-        bindValidation();
         FormManager.handleSubmit({
-            form_selector       : form_id,
+            form_selector       : form_id_hash,
             fnc_response_handler: responseHandler,
         });
     };
 
-    const updateCurrency = ($currency) => { $currency.text(getTransferAttr('data-currency')); };
+    const hideSelectedInTransferTo = () => {
+        const val_selected = getTransferAttr(el_transfer_from, 'data-from');
+        const opt_to_hide  = el_transfer_to.querySelector(`option[data-to="${val_selected}"]`);
 
-    const getTransferAttr = attribute => $transfer.find('option:selected').attr(attribute);
+        const el_hidden = el_transfer_to.querySelectorAll('option.invisible');
+        el_hidden.forEach((el) => {
+            el.setVisibility(1);
+        });
+
+        if (opt_to_hide) {
+            opt_to_hide.setVisibility(0);
+            const opt_to_hide_idx = opt_to_hide.index;
+            if (opt_to_hide_idx === el_transfer_to.selectedIndex) {
+                el_transfer_to.selectedIndex =
+                    opt_to_hide_idx === el_transfer_to.children.length - 1 ? 0 : opt_to_hide_idx + 1;
+            }
+        }
+    };
+
+    const updateCurrency = () => { elementTextContent(el_currency, getTransferAttr(el_transfer_from, 'data-currency')); };
+
+    const getTransferAttr = (el, attribute) => el.options[el.selectedIndex].getAttribute(attribute);
+
+    // TODO: change values when back-end updates logic
+    const getMinAmount = () => (isCryptocurrency(getTransferAttr(el_transfer_from, 'data-currency')) ? 0.002 : 0.1);
+
+    const getDecimals = () => (isCryptocurrency(getTransferAttr(el_transfer_from, 'data-currency')) ? '1, 3' : '1, 2');
 
     const bindValidation = () => {
-        FormManager.init(form_id, [
-            { selector: '#amount', validations: ['req', ['number', { type: 'float', decimals: '1, 2', min: 0.1, max: getTransferAttr('data-balance'), custom_message: 'This amount exceeds your withdrawal limit.' }]] },
+        FormManager.init(form_id_hash, [
+            { selector: '#amount', validations: ['req', ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: getTransferAttr(el_transfer_from, 'data-balance'), custom_message: 'This amount exceeds your withdrawal limit.' }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
-            { request_field: 'account_from',              value: () => getTransferAttr('data-from') },
-            { request_field: 'account_to',                value: () => getTransferAttr('data-to') },
-            { request_field: 'currency',                  value: () => getTransferAttr('data-currency') },
+            { request_field: 'account_from',              value: () => getTransferAttr(el_transfer_from, 'data-from') },
+            { request_field: 'account_to',                value: () => getTransferAttr(el_transfer_to, 'data-to') },
+            { request_field: 'currency',                  value: () => getTransferAttr(el_transfer_from, 'data-currency') },
         ]);
     };
 
     const responseHandler = (response) => {
         if (response.error) {
-            $('#form_error').text(response.error.message).setVisibility(1);
+            const el_error = document.getElementById('form_error');
+            elementTextContent(el_error, response.error.message);
+            el_error.setVisibility(1);
         } else {
             BinarySocket.send({ transfer_between_accounts: 1 }).then(data => populateReceipt(data));
         }
     };
 
     const populateReceipt = (response) => {
-        $(form_id).setVisibility(0);
+        document.getElementById(form_id).setVisibility(0);
         accounts = response.accounts;
         accounts.forEach((account, idx) => {
-            $(`#loginid_${(idx + 1)}`).text(account.loginid);
-            $(`#balance_${(idx + 1)}`).text(`${account.currency} ${account.balance}`);
+            elementTextContent(document.getElementById(`loginid_${(idx + 1)}`), account.loginid);
+            elementTextContent(document.getElementById(`balance_${(idx + 1)}`), account.balance);
         });
-        $('#success_form').setVisibility(1);
+        document.getElementById('success_form').setVisibility(1);
     };
 
     const onLoad = () => {
-        BinarySocket.send({ transfer_between_accounts: 1 }).then((response_transfer) => {
-            BinarySocket.send({ get_limits: 1 }).then(response_limits =>
-                populateAccounts(response_transfer, response_limits));
-        });
+        const error_element_to_show = [messages.parent];
+        if (!Client.hasMultiAccountsOfType('real', true)) {
+            error_element_to_show.push(messages.error);
+        }
+        if (!Client.get('balance') || +Client.get('balance') === 0) {
+            error_element_to_show.push(messages.deposit);
+        }
+        if (error_element_to_show.length > 1) {
+            error_element_to_show.forEach((id) => {
+                document.getElementById(id).setVisibility(1);
+            });
+        } else {
+            BinarySocket.send({ transfer_between_accounts: 1 }).then((response_transfer) => {
+                BinarySocket.send({ get_limits: 1 }).then(response_limits =>
+                    populateAccounts(response_transfer, response_limits));
+            });
+        }
     };
 
     return {

@@ -15,7 +15,7 @@
 
 <div class="invisible" id="client_message">
     <p class="center-text notice-msg">
-        [% l("The account transfer is unavailable. Please [_1]deposit[_2] to your account.", '<a href="' _ request.url_for('/cashier/forwardws#deposit') _ '">', '</a>') %]
+        <span class="invisible" id="no_account">[% l("Account transfer is unavailable.") %]</span> <span class="invisible" id="no_balance">[% l("Please [_1]deposit[_2] to your account.", '<a href="' _ request.url_for('/cashier/forwardws#deposit') _ '">', '</a>') %]</span>
     </p>
 </div>
 
@@ -31,10 +31,11 @@
 
 <form class="invisible" id="frm_account_transfer">
     [% WRAPPER fieldset legend=l('Details') %]
-        [% INCLUDE form_row label=l("Transfer") type='select' id='transfer' %]
+        [% INCLUDE form_row label=l("Transfer from") type='select' id='transfer_from' %]
+        [% INCLUDE form_row label=l("Transfer to") type='select' id='transfer_to' %]
         [% WRAPPER form_row label=l("Amount") type='custom' id='transfer_amount' %]
             <label id="currency"></label>
-            <input id="amount" name="amount" type="text" maxlength="20" />
+            <input id="amount" name="amount" type="text" maxlength="20" autocomplete="off" />
         [% END %]
     [% END %]
 

@@ -14,13 +14,22 @@ if (!('remove' in Element.prototype)) {
     };
 }
 
+Element.prototype.toggleClass = function(class_name, should_add) {
+    if (typeof should_add === 'undefined') { // toggle
+        should_add = !this.classList.contains(class_name);
+    }
+    this.classList[should_add ? 'add' : 'remove'](class_name);
+    return this;
+};
+
+Element.prototype.setVisibility = function(make_visible) {
+    this.toggleClass('invisible', !make_visible);
+    return this;
+};
+
 (function ($) {
     $.fn.setVisibility = function(make_visible) {
-        if (make_visible) {
-            this.removeClass('invisible');
-        } else {
-            this.addClass('invisible');
-        }
+        this[(make_visible ? 'remove' : 'add') + 'Class']('invisible');
         return this;
     };
 })(jQuery);
