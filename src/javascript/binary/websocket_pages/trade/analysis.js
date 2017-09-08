@@ -76,7 +76,6 @@ const TradingAnalysis = (() => {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
                 GetTicks.populateDigits();
-
             } else if (current_tab === 'tab_explanation') {
                 showExplanation();
             }
