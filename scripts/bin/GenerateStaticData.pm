@@ -395,6 +395,7 @@ sub _texts {
         push @texts, localize('Open');
         push @texts, localize('Closed');
         push @texts, localize('Contract has not started yet');
+        push @texts, localize('Resale of this contract is not offered.');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
         push @texts, localize('Current Time');
