@@ -9,11 +9,10 @@ const FormManager       = require('../../common_functions/form_manager');
 const isCryptocurrency  = require('../../common_functions/currency').isCryptocurrency;
 
 const DepositWithdraw = (() => {
-    'use strict';
+    let cashier_type,
+        verification_code;
 
-    let cashier_type;
     const container = '#deposit_withdraw';
-    let verification_code;
 
     const init = (cashier_password) => {
         if (cashier_password) {
@@ -65,7 +64,7 @@ const DepositWithdraw = (() => {
     };
 
     const getCashierType = () => {
-        const $heading = $(container).find('#heading');
+        const $heading   = $(container).find('#heading');
         const hash_value = window.location.hash;
         if (/withdraw/.test(hash_value)) {
             cashier_type = 'withdraw';
@@ -78,10 +77,13 @@ const DepositWithdraw = (() => {
 
     const populateReq = (send_verification) => {
         const req = { cashier: cashier_type };
+
         const verification_code_val = $('#verification_code').val();
         if (verification_code_val) verification_code = verification_code_val;
         if (send_verification && verification_code) req.verification_code = verification_code;
+
         if (/epg/.test(window.location.pathname)) req.provider = 'epg';
+
         return req;
     };
 
@@ -125,7 +127,7 @@ const DepositWithdraw = (() => {
                 email   : 'Email address',
             };
         }
-        const $el = $(`#${msg_id}`);
+        const $el     = $(`#${msg_id}`);
         const err_msg = template($el.html(), [localize(details ? error_fields[details] : 'details')]);
         $el.html(err_msg);
         showMessage(msg_id);
@@ -208,7 +210,7 @@ const DepositWithdraw = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

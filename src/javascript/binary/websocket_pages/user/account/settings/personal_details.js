@@ -1,35 +1,36 @@
-const BinarySocket  = require('../../../socket');
-const BinaryPjax    = require('../../../../base/binary_pjax');
-const Client        = require('../../../../base/client');
-const Header        = require('../../../../base/header');
-const localize      = require('../../../../base/localize').localize;
-const State         = require('../../../../base/storage').State;
-const detectHedging = require('../../../../common_functions/common_functions').detectHedging;
-const makeOption    = require('../../../../common_functions/common_functions').makeOption;
-const formatMoney   = require('../../../../common_functions/currency').formatMoney;
-const FormManager   = require('../../../../common_functions/form_manager');
-const moment        = require('moment');
+const BinarySocket     = require('../../../socket');
+const BinaryPjax       = require('../../../../base/binary_pjax');
+const Client           = require('../../../../base/client');
+const Header           = require('../../../../base/header');
+const localize         = require('../../../../base/localize').localize;
+const State            = require('../../../../base/storage').State;
+const detectHedging    = require('../../../../common_functions/common_functions').detectHedging;
+const elementInnerHtml = require('../../../../common_functions/common_functions').elementInnerHtml;
+const makeOption       = require('../../../../common_functions/common_functions').makeOption;
+const formatMoney      = require('../../../../common_functions/currency').formatMoney;
+const FormManager      = require('../../../../common_functions/form_manager');
+const moment           = require('moment');
 require('select2');
 
 const PersonalDetails = (() => {
-    'use strict';
-
-    const form_id = '#frmPersonalDetails';
+    const form_id           = '#frmPersonalDetails';
     const real_acc_elements = '.RealAcc';
+
+    let is_for_new_account = false;
+
     let editable_fields,
         is_jp,
         is_virtual,
         residence,
         get_settings_data,
-        currency,
-        is_for_new_account = false;
+        currency;
 
     const init = () => {
-        editable_fields = {};
+        editable_fields   = {};
         get_settings_data = {};
-        is_virtual = Client.get('is_virtual');
-        residence = Client.get('residence');
-        is_jp = residence === 'jp';
+        is_virtual        = Client.get('is_virtual');
+        residence         = Client.get('residence');
+        is_jp             = residence === 'jp';
         if (is_jp && !is_virtual) {
             setVisibility('#fieldset_email_consent');
         }
@@ -45,17 +46,17 @@ const PersonalDetails = (() => {
     };
 
     const getDetailsResponse = (data) => {
-        const get_settings = $.extend({}, data);
+        const get_settings         = $.extend({}, data);
         get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        const accounts = Client.getAllLoginids();
+        const accounts             = Client.getAllLoginids();
         // for subaccounts, back-end sends loginid of the master account as name
-        const hide_name = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
+        const hide_name            = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
         if (!hide_name) {
             setVisibility('#row_name');
             get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
-        if (get_settings.hasOwnProperty('account_opening_reason') && !is_jp) {
+        if (Object.prototype.hasOwnProperty.call(get_settings, 'account_opening_reason') && !is_jp) {
             if (get_settings.account_opening_reason) {
                 // we have to show text here instead of relying on displayGetSettingsData() since it prioritizes
                 // showing data in account_opening_reason instead of lbl_account_opening_reason
@@ -105,28 +106,25 @@ const PersonalDetails = (() => {
     };
 
     const displayGetSettingsData = (data, populate = true) => {
-        let $key,
-            $lbl_key,
-            data_key,
-            has_key,
-            has_lbl_key;
+        let el_key,
+            el_lbl_key,
+            data_key;
         Object.keys(data).forEach((key) => {
-            $key = $(`#${key}`);
-            $lbl_key = $(`#lbl_${key}`);
-            has_key = $key.length > 0;
-            has_lbl_key = $lbl_key.length > 0;
+            el_key     = document.getElementById(key);
+            el_lbl_key = document.getElementById(`lbl_${key}`);
             // prioritise labels for japan account
-            $key = has_key && has_lbl_key ? (is_jp ? $lbl_key : $key) : (has_key ? $key : $lbl_key);
-            if ($key.length > 0) {
-                data_key = data[key] === null ? '' : $key.hasClass('format_money') ? formatMoney(currency, data[key]) : data[key];
+            el_key     = is_jp ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
+            if (el_key) {
+                data_key             = /format_money/.test(el_key.className) && data[key] !== null ? formatMoney(currency, data[key]) : (data[key] || '');
                 editable_fields[key] = data_key;
                 if (populate) {
-                    if ($key.is(':checkbox')) {
-                        $key.prop('checked', !!data_key);
-                    } else if (/(SELECT|INPUT)/.test($key.prop('nodeName'))) {
-                        $key.val(data_key.split(',')).trigger('change');
+                    if (el_key.type === 'checkbox') {
+                        el_key.checked = !!data_key;
+                    } else if (/select|text/i.test(el_key.type)) {
+                        el_key.value = data_key.split(',');
+                        $(el_key).trigger('change');
                     } else if (key !== 'country') {
-                        $key.html(data_key ? localize(data_key) : '-');
+                        elementInnerHtml(el_key, data_key ? localize(data_key) : '-');
                     }
                 }
             }
@@ -167,11 +165,11 @@ const PersonalDetails = (() => {
                 { selector: '#email_consent' },
 
                 { selector: '#hedge_asset_amount',     validations: ['req', 'number'], parent_node: 'jp_settings' },
-                { selector: '#hedge_asset',            validations: ['req'], parent_node: 'jp_settings' },
+                { selector: '#hedge_asset',            validations: ['req'],           parent_node: 'jp_settings' },
                 { selector: '#account_opening_reason', validations: ['req'] },
 
             ];
-            $(form_id).find('select').each(function() {
+            $(form_id).find('select').each(function () {
                 validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
             });
         } else if (is_virtual) {
@@ -189,7 +187,7 @@ const PersonalDetails = (() => {
                 { selector: '#place_of_birth', validations: Client.isAccountOfType('financial') ? ['req'] : '' },
                 { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
             ];
-            const tax_id_validation = { selector: '#tax_identification_number',  validations: ['postcode', ['length', { min: 0, max: 20 }]] };
+            const tax_id_validation = { selector: '#tax_identification_number', validations: ['postcode', ['length', { min: 0, max: 20 }]] };
             if (Client.isAccountOfType('financial')) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
@@ -234,11 +232,11 @@ const PersonalDetails = (() => {
     };
 
     const populateResidence = (response) => {
-        const residence_list = response.residence_list;
+        const residence_list  = response.residence_list;
         const $place_of_birth = $('#place_of_birth');
         const $tax_residence  = $('#tax_residence');
         if (residence_list.length > 0) {
-            const $options = $('<div/>');
+            const $options               = $('<div/>');
             const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
                 $options.append(makeOption({ text: res.text, value: res.value }));
@@ -278,7 +276,7 @@ const PersonalDetails = (() => {
             $('#lbl_address_state').text(state_text || get_settings_data.address_state);
         } else {
             const address_state = '#address_state';
-            let $field = $(address_state);
+            let $field          = $(address_state);
 
             $field.empty();
 
@@ -336,7 +334,7 @@ const PersonalDetails = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
 
         setIsForNewAccount: (bool) => { is_for_new_account = bool; },
     };

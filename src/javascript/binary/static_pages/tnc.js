@@ -4,8 +4,6 @@ const Scroll      = require('../common_functions/scroll');
 const TNCApproval = require('../websocket_pages/user/tnc_approval');
 
 const TermsAndConditions = (() => {
-    'use strict';
-
     const onLoad = () => {
         handleActiveTab();
         TNCApproval.requiresTNCApproval(
@@ -55,7 +53,7 @@ const TermsAndConditions = (() => {
             .find(content_to_show)
             .setVisibility(1);
 
-        const section = urlParam('section');
+        const section  = urlParam('section');
         const $content = $('#content');
         if (section) {
             const $section = $content.find(`a#${section}`);
@@ -70,8 +68,8 @@ const TermsAndConditions = (() => {
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

@@ -5,8 +5,6 @@ const localize     = require('../../../base/localize').localize;
 const FormManager  = require('../../../common_functions/form_manager');
 
 const ChangePassword = (() => {
-    'use strict';
-
     const form_id = '#frm_change_password';
 
     const init = () => {
@@ -46,7 +44,7 @@ const ChangePassword = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

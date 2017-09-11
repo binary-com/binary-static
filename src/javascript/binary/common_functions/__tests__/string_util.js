@@ -1,7 +1,7 @@
 const expect     = require('chai').expect;
 const moment     = require('moment');
 const StringUtil = require('../string_util');
-global.$ = require('jquery');
+global.$         = require('jquery');
 
 describe('StringUtil', () => {
     describe('.toTitleCase()', () => {
@@ -15,7 +15,7 @@ describe('StringUtil', () => {
     });
 
     const readable_date = '22 Jun, 2017';
-    const iso_date = '2017-06-22';
+    const iso_date      = '2017-06-22';
     describe('.toISOFormat()', () => {
         it('works as expected', () => {
             expect(StringUtil.toISOFormat(moment.utc(iso_date))).to.eq(iso_date);

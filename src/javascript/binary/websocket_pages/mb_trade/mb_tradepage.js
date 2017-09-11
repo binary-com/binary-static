@@ -12,8 +12,6 @@ const jpClient            = require('../../common_functions/country_base').jpCli
 const JapanPortfolio      = require('../../../binary_japan/trade_japan/portfolio');
 
 const MBTradePage = (() => {
-    'use strict';
-
     let events_initialized = 0;
     State.remove('is_mb_trading');
 
@@ -80,10 +78,10 @@ const MBTradePage = (() => {
     };
 
     return {
-        onLoad      : onLoad,
-        reload      : reload,
-        onUnload    : onUnload,
-        onDisconnect: onDisconnect,
+        onLoad,
+        reload,
+        onUnload,
+        onDisconnect,
     };
 })();
 
