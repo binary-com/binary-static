@@ -5,8 +5,6 @@ const isCryptocurrency   = require('../../common_functions/currency').isCryptocu
 const FormManager        = require('../../common_functions/form_manager');
 
 const AccountTransfer = (() => {
-    'use strict';
-
     const form_id       = 'frm_account_transfer';
     const form_id_hash  = `#${form_id}`;
 
@@ -105,7 +103,7 @@ const AccountTransfer = (() => {
         document.getElementById(form_id).setVisibility(1);
         bindValidation();
 
-        el_transfer_from.addEventListener('change', function () {
+        el_transfer_from.addEventListener('change', () => {
             hideSelectedInTransferTo();
             updateCurrency(el_currency);
 
@@ -217,7 +215,7 @@ const AccountTransfer = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

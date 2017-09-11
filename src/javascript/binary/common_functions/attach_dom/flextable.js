@@ -1,17 +1,17 @@
 const Table = require('./table');
 
 const FlexTableUI = (() => {
-    'use strict';
-
     let config;
 
     const init = (conf) => {
         config = conf;
+
         const $tableContainer = Table.createFlexTable(
             [],
             getMetadata(),
             config.header,
             config.footer);
+
         // Table.appendTablebody expects the table to already
         // exist in the DOM, so we need to append first
         $tableContainer.appendTo(config.container);
@@ -27,9 +27,9 @@ const FlexTableUI = (() => {
     );
 
     const extend = (data) => {
-        const cols = config.cols;
+        const cols      = config.cols;
         const formatter = config.formatter;
-        const style = config.style;
+        const style     = config.style;
         Table.appendTableBody(config.id, data, (datum) => {
             const $row = Table.createFlexTableRow(formatter(datum), cols, 'data');
             if (style) {
@@ -41,7 +41,7 @@ const FlexTableUI = (() => {
 
     const displayError = (message, colspan) => {
         const $tr = $('<tr/>', { class: 'flex-tr' });
-        const $td = $('<td/>', { colspan: colspan });
+        const $td = $('<td/>', { colspan });
         const $p  = $('<p/>', { class: 'notice-msg center-text', text: message });
         return $(`#${config.id} tbody`).append($tr.append($td.append($p)));
     };
@@ -61,10 +61,10 @@ const FlexTableUI = (() => {
     };
 
     return {
-        init        : init,
-        displayError: displayError,
-        replace     : replace,
-        clear       : clear,
+        init,
+        displayError,
+        replace,
+        clear,
     };
 })();
 

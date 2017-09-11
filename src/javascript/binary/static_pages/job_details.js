@@ -2,12 +2,9 @@ const urlParam = require('../base/url').param;
 const urlFor   = require('../base/url').urlFor;
 
 const JobDetails = (() => {
-    'use strict';
-
-    let dept;
-
-    let $sections_div,
+    let dept,
         dept_class,
+        $sections_div,
         $senior_perl_message,
         $sidebar,
         $sidebar_dept;
@@ -23,11 +20,11 @@ const JobDetails = (() => {
     };
 
     const onLoad = () => {
-        dept = urlParam('dept');
-        dept_class = `.${dept}`;
-        $sidebar = $('.sidebar');
-        $sidebar_dept = $sidebar.filter(dept_class);
-        $sections_div = $('.sections > div > div');
+        dept                 = urlParam('dept');
+        dept_class           = `.${dept}`;
+        $sidebar             = $('.sidebar');
+        $sidebar_dept        = $sidebar.filter(dept_class);
+        $sections_div        = $('.sections > div > div');
         $senior_perl_message = $('.senior_perl_message');
         // hide all first (to handle pjaxload)
         $sidebar.setVisibility(0);
@@ -43,7 +40,7 @@ const JobDetails = (() => {
 
     const addEventListeners = () => {
         const $sidebar_list_item = $sidebar_dept.find('#sidebar-nav li');
-        $sidebar_list_item.click(function() {
+        $sidebar_list_item.click(function () {
             $sidebar_list_item.removeClass('selected');
             $(this).addClass('selected');
         });
@@ -58,8 +55,8 @@ const JobDetails = (() => {
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

@@ -13,13 +13,12 @@ const Tick             = require('./tick');
 const BinarySocket     = require('../socket');
 const localize         = require('../../base/localize').localize;
 const State            = require('../../base/storage').State;
+const getPropertyValue = require('../../base/utility').getPropertyValue;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
 const getMinPayout     = require('../../common_functions/currency').getMinPayout;
 
 const Process = (() => {
-    'use strict';
-
     /*
      * This function process the active symbols to get markets
      * and underlying list
@@ -46,8 +45,8 @@ const Process = (() => {
     const processMarket = () => {
         // we can get market from sessionStorage as allowed market
         // is already set when this is called
-        let market = Defaults.get('market'),
-            symbol = Defaults.get('underlying');
+        let market = Defaults.get('market');
+        let symbol = Defaults.get('underlying');
 
         // change to default market if query string contains an invalid market
         if (!market || !Symbols.underlyings()[market]) {
@@ -104,13 +103,13 @@ const Process = (() => {
      * Function to display contract form for current underlying
      */
     const processContract = (contracts) => {
-        if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
+        if (getPropertyValue(contracts, ['error', 'code']) === 'InvalidSymbol') {
             Price.processForgetProposals();
-            const container          = document.getElementById('contract_confirmation_container');
-            const message_container  = document.getElementById('confirmation_message');
-            const confirmation_error = document.getElementById('confirmation_error');
-            const contracts_list     = document.getElementById('contracts_list');
-            container.style.display = 'block';
+            const container              = document.getElementById('contract_confirmation_container');
+            const message_container      = document.getElementById('confirmation_message');
+            const confirmation_error     = document.getElementById('confirmation_error');
+            const contracts_list         = document.getElementById('contracts_list');
+            container.style.display      = 'block';
             contracts_list.style.display = 'none';
             message_container.hide();
             confirmation_error.show();
@@ -174,9 +173,9 @@ const Process = (() => {
             Durations.display();
         }
 
-        const currency = Defaults.get('currency') || document.getElementById('currency').value;
+        const currency  = Defaults.get('currency') || document.getElementById('currency').value;
         const is_crypto = isCryptocurrency(currency);
-        const amount = is_crypto ? 'amount_crypto' : 'amount';
+        const amount    = is_crypto ? 'amount_crypto' : 'amount';
         if (Defaults.get(amount)) {
             $('#amount').val(Defaults.get(amount));
         } else if (is_crypto) {
@@ -190,7 +189,7 @@ const Process = (() => {
         else Defaults.set('amount_type', document.getElementById('amount_type').value);
         if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
 
-        const expiry_type = Defaults.get('expiry_type') || 'duration';
+        const expiry_type        = Defaults.get('expiry_type') || 'duration';
         const make_price_request = onExpiryTypeChange(expiry_type);
 
         if (make_price_request >= 0) {
@@ -229,14 +228,12 @@ const Process = (() => {
     };
 
     const onExpiryTypeChange = (value) => {
-        const $expiry_type = $('#expiry_type');
-        if (!value || !$expiry_type.find(`option[value=${value}]`).length) {
-            value = 'duration';
-        }
-        $expiry_type.val(value);
+        const $expiry_type    = $('#expiry_type');
+        const validated_value = value && $expiry_type.find(`option[value=${value}]`).length ? value : 'duration';
+        $expiry_type.val(validated_value);
 
         let make_price_request = 0;
-        if (value === 'endtime') {
+        if (validated_value === 'endtime') {
             Durations.displayEndTime();
             if (Defaults.get('expiry_date')) {
                 // if time changed, proposal will be sent there if not we should send it here
@@ -277,13 +274,13 @@ const Process = (() => {
     };
 
     return {
-        processActiveSymbols: processActiveSymbols,
-        processMarket       : processMarket,
-        processContract     : processContract,
-        processContractForm : processContractForm,
-        forgetTradingStreams: forgetTradingStreams,
-        onExpiryTypeChange  : onExpiryTypeChange,
-        onDurationUnitChange: onDurationUnitChange,
+        processActiveSymbols,
+        processMarket,
+        processContract,
+        processContractForm,
+        forgetTradingStreams,
+        onExpiryTypeChange,
+        onDurationUnitChange,
     };
 })();
 

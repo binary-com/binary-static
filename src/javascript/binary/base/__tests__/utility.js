@@ -17,7 +17,7 @@ describe('Utility', () => {
 
     describe('.isEmptyObject()', () => {
         it('returns true for empty objects or non-objects', () => {
-            [{ }, 1, undefined, null, false, true, ''].forEach((value) => {
+            [{}, 1, undefined, null, false, true, ''].forEach((value) => {
                 expect(Utility.isEmptyObject(value)).to.eq(true);
             });
         });
@@ -63,18 +63,18 @@ describe('Utility', () => {
 
         it('returns cloned array to prevent unwanted changes to the source', () => {
             const cloned_array = Utility.getPropertyValue(obj, 'array');
-            cloned_array[0] = 'AA';
+            cloned_array[0]    = 'AA';
             expect(Utility.getPropertyValue(obj, 'array')[0]).to.eq('a');
             expect(cloned_array[0]).to.eq('AA');
         });
 
         it('returns deeply cloned object to prevent unwanted changes to the source', () => {
-            let cloned_obj = Utility.getPropertyValue(obj, 'nested');
+            let cloned_obj     = Utility.getPropertyValue(obj, 'nested');
             cloned_obj.level_2 = { new_prop: 'new value' };
             expect(Utility.getPropertyValue(obj, 'nested')).to.deep.eq({ level_2: { level_3: 'some text' } });
             expect(cloned_obj).to.deep.eq({ level_2: { new_prop: 'new value' } });
 
-            cloned_obj = Utility.getPropertyValue(obj, ['nested', 'level_2']);
+            cloned_obj         = Utility.getPropertyValue(obj, ['nested', 'level_2']);
             cloned_obj.level_3 = 'new text';
             expect(Utility.getPropertyValue(obj, ['nested', 'level_2', 'level_3'])).to.eq('some text');
             expect(cloned_obj.level_3).to.eq('new text');

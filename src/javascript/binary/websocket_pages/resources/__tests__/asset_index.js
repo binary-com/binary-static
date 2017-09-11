@@ -1,10 +1,10 @@
-const asset_index = require('../asset_index');
+const asset_index     = require('../asset_index');
 const { api, expect } = require('../../../base/__tests__/tests_common');
 
 describe('Asset Index', () => {
     let asset_index_res,
         active_symbols_res;
-    before(function(done) {
+    before(function (done) {
         this.timeout(10000);
         api.getAssetIndex().then((response) => {
             asset_index_res = response.asset_index;

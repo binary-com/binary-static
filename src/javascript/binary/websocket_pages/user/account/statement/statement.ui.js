@@ -8,13 +8,11 @@ const showTooltip         = require('../../../../common_functions/get_app_detail
 const Table               = require('../../../../common_functions/attach_dom/table');
 
 const StatementUI = (() => {
-    'use strict';
-
-    let all_data = [],
-        oauth_apps = {};
+    let all_data   = [];
+    let oauth_apps = {};
 
     const table_id = 'statement-table';
-    const columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
+    const columns  = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
 
     const createEmptyStatementTable = () => {
         const header = [
@@ -29,7 +27,7 @@ const StatementUI = (() => {
         ];
 
         const jp_client = jpClient();
-        const currency = Client.get('currency');
+        const currency  = Client.get('currency');
 
         header[6] += (jp_client || !currency ? '' : ` (${currency})`);
 
@@ -99,12 +97,13 @@ const StatementUI = (() => {
     };
 
     return {
-        clearTableContent        : clearTableContent,
-        createEmptyStatementTable: createEmptyStatementTable,
-        updateStatementTable     : updateStatementTable,
-        errorMessage             : errorMessage,
-        exportCSV                : exportCSV,
-        setOauthApps             : values => (oauth_apps = values),
+        clearTableContent,
+        createEmptyStatementTable,
+        updateStatementTable,
+        errorMessage,
+        exportCSV,
+
+        setOauthApps: values => (oauth_apps = values),
     };
 })();
 

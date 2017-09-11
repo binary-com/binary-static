@@ -3,8 +3,6 @@ const localize    = require('../../base/localize').localize;
 const FormManager = require('../../common_functions/form_manager');
 
 const LostPassword = (() => {
-    'use strict';
-
     const responseHandler = (response) => {
         if (response.verify_email) {
             BinaryPjax.load('user/reset_passwordws');
@@ -26,7 +24,7 @@ const LostPassword = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 
