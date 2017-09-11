@@ -41,3 +41,11 @@
 
     [% INCLUDE submit_button msg_id='form_error' type='submit' text=l("Transfer") %]
 </form>
+
+<div class="hint invisible" id="transfer_fee">
+    <p>[% l('Note: Transfer funds between your fiat and cryptocurrency accounts for a fee:') %]</p>
+    <ul class="bullet">
+        <li>[% l('From fiat to cryptocurrency: 1% transfer fee') %]</li>
+        <li>[% l('From cryptocurrency to fiat: 0.5% transfer fee') %]</li>
+    </ul>
+</div>

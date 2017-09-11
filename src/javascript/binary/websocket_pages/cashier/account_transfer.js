@@ -37,6 +37,8 @@ const AccountTransfer = (() => {
             fragments.appendChild(option);
         };
 
+        let has_crypto = false;
+        let has_fiat   = false;
         accounts.forEach((account, idx) => {
             const loginid  = accounts[idx].loginid;
             const currency = accounts[idx].currency;
@@ -47,7 +49,19 @@ const AccountTransfer = (() => {
             }
 
             createOption(fragment_transfer_to, loginid, currency, balance, 'to');
+
+            if (currency) {
+                if (isCryptocurrency(currency)) {
+                    has_crypto = true;
+                } else {
+                    has_fiat = true;
+                }
+            }
         });
+
+        if (has_fiat && has_crypto) {
+            document.getElementById('transfer_fee').setVisibility(1);
+        }
 
         if (!fragment_transfer_from.childElementCount || !fragment_transfer_to.childElementCount) {
             showError();
