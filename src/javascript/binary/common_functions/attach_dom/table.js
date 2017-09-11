@@ -1,6 +1,4 @@
 const Table = (() => {
-    'use strict';
-
     /**
      *
      * @param {Array[]} body ordered data to pump into table body
@@ -14,8 +12,8 @@ const Table = (() => {
      */
     const createFlexTable = (body, metadata, header, footer) => {
         const $table_container = $('<div></div>', { class: 'table-container' });
-        const $table = $('<table></table>', { class: metadata.tableClass || '', id: metadata.id });
-        const $body = createFlexTableTopGroup(body, metadata.cols, 'body');
+        const $table           = $('<table></table>', { class: metadata.tableClass || '', id: metadata.id });
+        const $body            = createFlexTableTopGroup(body, metadata.cols, 'body');
 
         if (header) {
             const $header = createFlexTableTopGroup([header], metadata.cols, 'header');
@@ -54,7 +52,7 @@ const Table = (() => {
 
         for (let i = 0; i < data.length; i++) {
             const inner_type = (opt === 'body') ? 'data' : 'header';
-            const $tr = createFlexTableRow(data[i], metadata, inner_type);
+            const $tr        = createFlexTableRow(data[i], metadata, inner_type);
             $tr.appendTo($outer);
         }
 
@@ -76,7 +74,7 @@ const Table = (() => {
 
         const $tr = $('<tr></tr>');
         for (let i = 0; i < data.length; i++) {
-            const class_name = metadata[i].toLowerCase().replace(/\s/g, '-');
+            const class_name  = metadata[i].toLowerCase().replace(/\s/g, '-');
             const row_element = (is_data) ?
                 $('<td></td>', { class: class_name, html: data[i] }) :
                 $('<th></th>', { class: class_name, html: data[i] });
@@ -112,10 +110,10 @@ const Table = (() => {
     };
 
     return {
-        createFlexTable   : createFlexTable,
-        createFlexTableRow: createFlexTableRow,
-        clearTableBody    : clearTableBody,
-        appendTableBody   : appendTableBody,
+        createFlexTable,
+        createFlexTableRow,
+        clearTableBody,
+        appendTableBody,
     };
 })();
 

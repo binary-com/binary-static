@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-08-23 20:52-0400\n"
+"PO-Revision-Date: 2017-09-05 21:01-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -97,11 +97,17 @@ msgstr "%1アプリケーション・プログラム・インターフェース(
 msgid "%1 ICO <br /> Pre-announcement"
 msgstr "%1 ICO <br /> 事前告知"
 
+msgid "%1 ICO Auction Bids"
+msgstr "%1 ICO オークションビット"
+
 msgid "%1 ICO FAQ"
 msgstr "%1 ICO よくあるご質問"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO: 世界最高水準のバイナリーオプションプラットフォームでお取引"
+
+msgid "%1 Initial Coin Offering (ICO)"
+msgstr "%1 イニシャル・コイン・オファリング（ICO）"
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 パスワード回復の手順を初めから行うには、次のリンクをクリックしてください。"
@@ -214,7 +220,7 @@ msgstr "%1は上記の決済サービス会社と提携していません。各�
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "コスタリカの金融システムを監督する金融機関または規制機関がないため、コスタリカではBinay.com (バイナリードットコム)をご利用いただけません。"
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or equivalent in other currency."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
 msgstr "%1では<strong>10,000,000</strong>までのトークンを提供しています。下のフォームから応札をしてください。最小入札価格は<strong>USD 1</strong>またはそれに相当する他通貨になります。"
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
@@ -1080,9 +1086,6 @@ msgstr "アプリケーション"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials."
 msgstr "細部にまで目を配りながら当社のウェブサイト、ブログ、ソーシャルメディア、マーケティングコンテンツの校正。"
 
-msgid "Apply for a Real Money Account"
-msgstr "リアル口座のお申込み"
-
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "%1での <a href=\"%2\">決済サービスエージェント</a>として申し込む"
 
@@ -1394,11 +1397,11 @@ msgstr "ベッティングシステムとその方法"
 msgid "Bid"
 msgstr "入札"
 
-msgid "Bid Binary ICO:"
-msgstr "Binary ICOに入札する："
-
 msgid "Bid Price Per Token"
 msgstr "トークンごとの入札価格"
+
+msgid "Bid on the ICO:"
+msgstr "ICOに入札する："
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -1450,12 +1453,6 @@ msgstr "Binaryグループでは活躍の場を求める才能とやる気ある
 
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Binaryグループサービスでは活躍の場を求める才能とやる気にあふれるフロントエンド開発者を探しています。"
-
-msgid "Binary ICO Auction Bids"
-msgstr "Binary ICO オークション"
-
-msgid "Binary Initial Coin Offering (ICO)"
-msgstr "Binary イニシャル・コイン・オファリング（ICO）"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "Binary Investments (Europe) Limitedは、EU単一市場へのアクセス権を通して他のEU加盟国へサービスを提供する権利を有しています。EU単一市場へのアクセス権を通して、Binary.com (バイナリードットコム)へ国境を超えて自由にアクセスできるEU加盟国は以下のとおりです。"
@@ -1578,10 +1575,10 @@ msgid "Binary.com will issue a number of tokens during the ICO."
 msgstr "Binary.comがICOの間にいくつかのトークンを発行します。"
 
 msgid "Bitcoin"
-msgstr ""
+msgstr "ビットコイン"
 
 msgid "Bitcoin Cash"
-msgstr ""
+msgstr "ビットコインキャッシュ"
 
 msgid "Both the above"
 msgstr "上記の両方"
@@ -2225,13 +2222,13 @@ msgid "Create"
 msgstr "作成"
 
 msgid "Create Account"
-msgstr "デモ口座開設"
+msgstr "口座開設"
 
 msgid "Create Free Account"
-msgstr "デモ口座開設"
+msgstr "口座開設"
 
 msgid "Create New Account"
-msgstr "デモ口座開設"
+msgstr "次へ"
 
 msgid "Create New Token"
 msgstr "新しいトークンを作成"
@@ -2563,6 +2560,9 @@ msgstr "CSVファイルでダウンロード"
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "デスクトップまたはノートパソコンにMT5をダウンロードして、何百万のトレーダーに選ばれたパワフルなツールと機能を活用しましょう。"
 
+msgid "Download Now"
+msgstr "今すぐダウンロード"
+
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "セールス及びマーケティング目標をサポートする急速な成長と事業開発の推進"
 
@@ -2624,7 +2624,7 @@ msgid "EUR 1 per point"
 msgstr "1ポイント＝EUR 1"
 
 msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr ""
+msgstr "キャンセルには2%のキャンセル手数料がかかります。"
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "通貨バイナリーオプション取引は、期間を設定して取引頂けます。"
@@ -2798,7 +2798,7 @@ msgid "Enter the barrier in terms of the difference from the spot price. If you 
 msgstr "スポット価格に差異を付加する目的でバリア値を設定しましょう。もしバリア値として+0.005を設定した場合はスポット価格より0.005高値のバリアが設定されたトレードを購入することになります。尚、スポット価格は注文を受けた次のTickが採用されます。"
 
 msgid "Enter your email"
-msgstr "メールアドレスを入力してデモ口座を開設"
+msgstr "メールアドレスを入力して口座を開設"
 
 msgid "Entry Spot"
 msgstr "取引開始時刻直後のティック"
@@ -2822,10 +2822,10 @@ msgid "Estimated Net Worth"
 msgstr "推定純資産"
 
 msgid "Ether"
-msgstr ""
+msgstr "Ether（イーサ）"
 
 msgid "Ether Classic"
-msgstr ""
+msgstr "イーサクラシック"
 
 msgid "Ethics Code"
 msgstr "倫理コード"
@@ -3335,7 +3335,7 @@ msgid "Get more virtual money"
 msgstr "もっとバーチャルマネーを入手する"
 
 msgid "Get started"
-msgstr "デモ口座開設"
+msgstr "口座開設"
 
 msgid "Get your price"
 msgstr "価格を確認"
@@ -4058,6 +4058,9 @@ msgstr "商品または原資産の以前の実績情報は現在および/ま�
 
 msgid "Inheritance"
 msgstr "相続"
+
+msgid "Input personal information"
+msgstr "口座開設申込みフォームに記入"
 
 msgid "Instant access"
 msgstr "インスタントアクセス"
@@ -4917,7 +4920,7 @@ msgid "Liquidity solutions"
 msgstr "流動性ソリューション"
 
 msgid "Litecoin"
-msgstr ""
+msgstr "ライトコイン"
 
 msgid "Lock Cashier"
 msgstr "入出金をロック"
@@ -5655,13 +5658,13 @@ msgid "Open Source"
 msgstr "オープンソース"
 
 msgid "Open a Demo Account"
-msgstr "デモ口座のお申込み"
+msgstr "口座開設のお申込み"
 
 msgid "Open a Financial Account"
 msgstr "金融口座の開設"
 
 msgid "Open a free account"
-msgstr "デモ口座開設"
+msgstr "口座開設"
 
 msgid "Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7"
 msgstr "数分で口座を開設。すぐに取引を始められます。"
@@ -5829,7 +5832,7 @@ msgid "Over $500,000"
 msgstr "$500,001以上"
 
 msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
-msgstr "世界中で%1人を超える<a href='%2'>スタッフ</a>と請負業者"
+msgstr "世界中で%1人を超えるスタッフと請負業者"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "世界中で100万口座以上"
@@ -6481,7 +6484,7 @@ msgid "Real Cent"
 msgstr "リアルセント"
 
 msgid "Real Money Account Opening"
-msgstr "リアル口座開設"
+msgstr "JPY口座開設"
 
 msgid "Real STP"
 msgstr "リアルSTP"
@@ -7123,7 +7126,7 @@ msgid "Start learning"
 msgstr "学習をはじめる"
 
 msgid "Start now"
-msgstr "デモ口座申込みはこちら"
+msgstr "口座申込みはこちら"
 
 msgid "Start time"
 msgstr "開始時間"
@@ -8666,8 +8669,8 @@ msgstr "Unless proven to be wrong, our records shall be used as evidence of your
 msgid "Unlock Cashier"
 msgstr "入出金ロック解除"
 
-msgid "Unsuccessful bidders will receive a full refund of their deposits."
-msgstr ""
+msgid "Unsuccessful bidders will receive a full refund."
+msgstr "入札に失敗した場合、購入金額の全額が払い戻されます。"
 
 msgid "Up - Predict that the market will end higher than the average price"
 msgstr "HIGH - 取引期間終了時に市場価格が平均価格を上回ると予想"
@@ -8691,7 +8694,7 @@ msgid "Upgrade to a Financial Account"
 msgstr "金融口座へアップグレード"
 
 msgid "Upgrade to a Real Account"
-msgstr "リアル口座へアップグレード"
+msgstr "JPY口座申込みはこちら"
 
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
@@ -9777,7 +9780,7 @@ msgid "You won't lose your shirt"
 msgstr "万全なリスク管理"
 
 msgid "You're using a Virtual Account."
-msgstr "現在デモ口座を使用されています。"
+msgstr "現在バーチャル口座を使用されています。"
 
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "お客さまの%1日の出金限度額は現在%2 %3です。限度額以上の出金額をご希望される場合、本人確認が必要となります。"
@@ -10610,7 +10613,7 @@ msgid "{JAPAN ONLY}Acknowledgment"
 msgstr "出金依頼の確認書"
 
 msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
-msgstr "リアル口座開設完了後にお客さまへ簡易書留郵便で口座認証コードを郵送いたします。当社から送信したメールに口座認証コードを記載のうえ返信してください。"
+msgstr "JPY口座開設完了後にお客さまへ簡易書留郵便で口座認証コードを郵送いたします。当社から送信したメールに口座認証コードを記載のうえ返信してください。"
 
 msgid "{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away."
 msgstr "当社でご登録頂いた情報をもとに審査をさせて頂きます。審査が終了、当社のアフィリエイトプログラムを開始するにあたり販促材料としてアフィリエイトIDを含むリンクを提供されます。"
@@ -10626,6 +10629,9 @@ msgstr "本源的価値に時間的価値を加えた値はオプション価格
 
 msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 msgstr "1〜4が実質的支配者である法人"
+
+msgid "{JAPAN ONLY}Apply for Real Money Account"
+msgstr "JPY口座申込み"
 
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 msgstr "投資についてよくご存知ですか?"
@@ -10650,6 +10656,9 @@ msgstr "当社は日本で第一種金融商品取引業者として登録して
 
 msgid "{JAPAN ONLY}Association of join"
 msgstr "加入する協会"
+
+msgid "{JAPAN ONLY}At the top of the page as shown above."
+msgstr "バーチャル取引画面上の上部にも表示されております。"
 
 msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
 msgstr "当社は、数々の受賞歴があり、米国特許取得済みの価格設定テクノロジーによりインターバンク市場でのトレードと同等の環境を提供しています"
@@ -10753,7 +10762,7 @@ msgid "{JAPAN ONLY}Do you run a website or publish an FX blog?"
 msgstr "websiteの運営、またはFXブログを書いてますか？"
 
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
-msgstr "デモ口座にて擬似取引を行って頂き、操作方法等に慣れて頂くことをお勧め致します"
+msgstr "バーチャル口座にて擬似取引を行って頂き、操作方法等に慣れて頂くことをお勧め致します"
 
 msgid "{JAPAN ONLY}Download"
 msgstr "ダウンロード"
@@ -11005,22 +11014,22 @@ msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if 
 msgstr "２つのオプションを用い、バリア価格の高いバイナリーコールオプションとバリア価格の低いバイナリープットオプションを購入すれば、判定レートが２つのオプションのバリア価格で作られた価格帯の外となった場合に収益が得られ、判定レートが所定の価格帯の外であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができます。"
 
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "2017/7/13"
+msgstr "2017/9/5"
 
 msgid "{JAPAN ONLY}JSA_Date_2"
-msgstr "2017/7/12"
+msgstr "2017/7/13"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "取引概要　改定のお知らせ"
+msgstr "不具合のお知らせ"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "当社が定める保有ポジション合計ペイアウト上限額を50万円に変更致します<br>当社が定める一通貨ごとのペイアウト合計限度額を20万円に変更致します"
+msgstr "9月4日に発生したバリア価格が正しく表示されていない不具合について、現在は復旧し正常に表示されていることをお知らせ致します。<br>ご迷惑おかけし、誠に申し訳ありません"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
-msgstr "お取引画面をリニューアル致しました"
+msgstr "取引概要　改定のお知らせ"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
-msgstr "."
+msgstr "当社が定める保有ポジション合計ペイアウト上限額を50万円に変更致します<br>当社が定める一通貨ごとのペイアウト合計限度額を20万円に変更致します"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
 msgstr "."
@@ -11114,11 +11123,14 @@ msgstr "買い手はオプションのレバレッジ効果により、オプシ
 msgid "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 msgstr "オプション取引の種類は、ヨ－ロピアンタイプとアメリカンタイプの２種類がありますが、取引期間の満期時だけに権利行使できるものはヨーロピアンタイプです。"
 
+msgid "{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:"
+msgstr "または、JPY口座を直接お申込み頂く場合は、下記の\"JPY口座申込み\"ボタンを<br>クリックして下さい。"
+
 msgid "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
-msgstr "リアル口座開設の手続きを進める上で、ご不明な点等がございましたら、当社カスタマーサポートまでご連絡ください。また、下記ダウンロードボタンをクリックして頂きリアル口座開設の手順を参照することができます。"
+msgstr "JPY口座開設の手続きを進める上で、ご不明な点等がございましたら、当社カスタマーサポートまでご連絡ください。また、下記ダウンロードボタンをクリックして頂きリアル口座開設の手順を参照することができます。"
 
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
-msgstr "リアル口座開設完了までの４ステップ:"
+msgstr "JPY口座開設完了までの４ステップ:"
 
 msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href='mailto:%1'>%1</a>"
 msgstr "当社のカスタマーサポートでは取引画面の操作方法がご不明な場合、丁寧にご説明させて頂きます。<br>サポートが必要な場合は%1までお問い合わせください。"
@@ -11188,6 +11200,9 @@ msgstr "契約締結前交付書面"
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "店頭通貨オプションの価格は、複数の要素に基づく計算値であり、基本的には相対取引で価格は決定されます。"
+
+msgid "{JAPAN ONLY}Proceed to Virtual Account"
+msgstr "Virtual口座へ"
 
 msgid "{JAPAN ONLY}Proceed to official site"
 msgstr "公式サイトへ進む"
@@ -11683,6 +11698,9 @@ msgstr "新規口座開設して頂くお客さまには、本人確認書類と
 msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr "2015年改正犯罪収益移転防止法政省令の犯罪により、外国PEPs（重要な公的地位を有する者）との取引に当該するお客さまは当社では口座開設を行うことができません。下記の者との取引する方が該当します。"
 
+msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
+msgstr "当社は仮想マネー100万円を付与したバーチャル口座（当社での呼称：Virtual口座）を<br>準備しております。"
+
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr "ラダー、タッチ、レンジと複数の種類のバイナリーオプションを提供いたします"
 
@@ -11710,6 +11728,9 @@ msgstr "支払処理は出金依頼日、または出金承認日から最大5�
 msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 msgstr "当社は、アフィリエイト会員様が広告活動を効果的にできますよう必要なツールを提供させていただきます"
 
+msgid "{JAPAN ONLY}Welcome to %1"
+msgstr "口座開設のご案内"
+
 msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
 msgstr "Binary株式会社のウェブサイトへようこそ"
 
@@ -11728,8 +11749,14 @@ msgstr "当社のアフィリエイトプログラムに参加するメリット
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "バイナリーオプション取引月次取引実績"
 
+msgid "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
+msgstr "Virtual口座を使用して擬似取引を行い、取引プラットフォームに慣れ親しむことをお勧めいたします。\n"
+
+msgid "{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:"
+msgstr "下記の”JPY口座申込みはこちら”をクリックしてリアル口座開設（当社での呼称:JPY口座）をお申込み頂くことができます。"
+
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
-msgstr "リアル口座開設の流れについてご案内致します。まず、<a href=\"%1\"> こちらを</a>クリックしてデモ口座を開設して頂く必要があります。デモ口座は、取引ツールの操作性及びバイナリーオプション取引の理解を高める上で非常にお役に立ちます。デモ取引をお試し後、実際の取引への準備ができましたらリアル口座開設の手続きをしてください。"
+msgstr "リアル(JPY口座)口座開設の流れについてご案内致します。まず、<a href=\"%1\"> こちらを</a>クリックしてメールアドレスのご登録して口座開設を行って下さい。口座開設お申込時に、取引ツールの操作性及びバイナリーオプション取引の理解を高めるためにバーチャル口座（当社での呼称：Virtual口座）を先にお試しいただけます。ご不要な方は、直接、リアル口座（当社での呼称：JPY口座）開設手続きにお進みください。なお、Virtual口座は、JPY口座開設後でもお試しいただけます。"
 
 msgid "{JAPAN ONLY}You can protect your account value further by setting other limits to encourage trading discipline"
 msgstr "過度の取引を防止するため、お客さまご自身で取引する時間を制限する機能があります"
@@ -11878,6 +11905,9 @@ msgstr "決済サービスでのご送金"
 msgid "Trusted by traders since 2000"
 msgstr "Trusted by traders since 2000"
 
+msgid "Welcome to Binary.com"
+msgstr "Binary.comへようこそ"
+
 msgid "Accounts"
 msgstr "口座"
 
@@ -11898,3 +11928,4 @@ msgstr "ご利用制限額"
 
 msgid "Initial Coin Offering"
 msgstr "イニシャル・コイン・オファリング（IPO）"
+

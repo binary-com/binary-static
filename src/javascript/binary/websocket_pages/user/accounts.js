@@ -8,11 +8,10 @@ const localize           = require('../../base/localize').localize;
 const State              = require('../../base/storage').State;
 const urlFor             = require('../../base/url').urlFor;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
+const getCurrencyList    = require('../../common_functions/currency').getCurrencyList;
 const toTitleCase        = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
-    'use strict';
-
     let landing_company;
 
     const onLoad = () => {
@@ -26,7 +25,7 @@ const Accounts = (() => {
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
-            const upgrade_info = Client.getUpgradeInfo(landing_company);
+            const upgrade_info  = Client.getUpgradeInfo(landing_company);
             if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
@@ -52,7 +51,7 @@ const Accounts = (() => {
 
     const populateNewAccounts = (upgrade_info) => {
         const new_account = upgrade_info;
-        const account = {
+        const account     = {
             real     : new_account.type === 'real',
             financial: new_account.type === 'financial',
         };
@@ -72,7 +71,7 @@ const Accounts = (() => {
             .sort((a, b) => a > b)
             .forEach((loginid) => {
                 const account_currency = Client.get('currency', loginid);
-                const company_name = Client.isAccountOfType('virtual', loginid) ? toTitleCase(getPropertyValue(landing_company, 'virtual_company')) : getCompanyName(loginid);
+                const company_name     = Client.isAccountOfType('virtual', loginid) ? toTitleCase(getPropertyValue(landing_company, 'virtual_company')) : getCompanyName(loginid);
 
                 $('#existing_accounts').find('tbody')
                     .append($('<tr/>', { id: loginid })
@@ -119,10 +118,7 @@ const Accounts = (() => {
         const $new_account_opening = $('#new_account_opening');
         if (currencies.length > 1) {
             const $currencies = $('<div/>');
-            $currencies.append($('<option/>', { value: '', text: localize('Please select') }));
-            currencies.forEach((c) => {
-                $currencies.append($('<option/>', { value: c, text: c }));
-            });
+            $currencies.append(getCurrencyList(currencies).html());
             $new_account_opening.find('.account-currency').html($('<select/>', { id: 'new_account_currency' }).html($currencies.html()));
         } else {
             $new_account_opening.find('.account-currency').html($('<span/>', { id: 'new_account_currency', value: currencies, text: currencies }));
@@ -136,9 +132,8 @@ const Accounts = (() => {
                 BinarySocket.send(req).then((response) => {
                     if (response.error) {
                         const account_opening_reason = State.getResponse('get_settings.account_opening_reason');
-                        if (!account_opening_reason && response.error.details.hasOwnProperty('account_opening_reason') &&
-                            (response.error.code === 'InsufficientAccountDetails' ||
-                            response.error.code === 'InputValidationFailed')) {
+                        if (!account_opening_reason && getPropertyValue(response, ['error', 'details', 'account_opening_reason']) &&
+                            /InsufficientAccountDetails|InputValidationFailed/.test(response.error.code)) {
                             setIsForNewAccount(true);
                             // ask client to set account opening reason
                             BinaryPjax.load(urlFor('user/settings/detailsws'));
@@ -146,7 +141,14 @@ const Accounts = (() => {
                             showError(response.error.message);
                         }
                     } else {
-                        handleNewAccount(response);
+                        const new_account = response.new_account_real;
+                        localStorage.setItem('is_new_account', 1);
+                        Client.processNewAccount({
+                            email       : Client.get('email'),
+                            loginid     : new_account.client_id,
+                            token       : new_account.oauth_token,
+                            redirect_url: urlFor('user/set-currency'),
+                        });
                     }
                 });
             }
@@ -160,33 +162,6 @@ const Accounts = (() => {
         return new_account_currency.value || new_account_currency.getAttribute('value');
     };
 
-    const handleNewAccount = (response) => {
-        const new_account = response.new_account_real;
-        State.set('ignoreResponse', 'authorize');
-        BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_authorize) => {
-            if (response_authorize.error) {
-                showError(response_authorize.error.message);
-            } else {
-                BinarySocket
-                    .send({ set_account_currency: getSelectedCurrency() })
-                    .then((response_set_account_currency) => {
-                        if (response_set_account_currency.error) {
-                            showError(response_set_account_currency.error.message);
-                        } else {
-                            localStorage.setItem('is_new_account', 1);
-                            Client.processNewAccount({
-                                email       : Client.get('email'),
-                                loginid     : new_account.client_id,
-                                token       : new_account.oauth_token,
-                                redirect_url: urlFor('user/set-currency'),
-                            });
-                        }
-                    });
-            }
-            State.remove('ignoreResponse');
-        });
-    };
-
     const showError = (message) => {
         $('#new_account_error').remove();
         $('#new_account_opening').find('button').parent().append($('<p/>', { class: 'error-msg', id: 'new_account_error', text: localize(message) }));
@@ -194,13 +169,13 @@ const Accounts = (() => {
 
     const populateReq = () => {
         const get_settings = State.getResponse('get_settings');
-        const date_of_birth = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
-        const req = {
+        const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
+        const req          = {
             new_account_real      : 1,
+            date_of_birth         : dob,
             salutation            : get_settings.salutation,
             first_name            : get_settings.first_name,
             last_name             : get_settings.last_name,
-            date_of_birth         : date_of_birth,
             address_line_1        : get_settings.address_line_1,
             address_line_2        : get_settings.address_line_2,
             address_city          : get_settings.address_city,
@@ -209,6 +184,7 @@ const Accounts = (() => {
             phone                 : get_settings.phone,
             account_opening_reason: get_settings.account_opening_reason,
             residence             : Client.get('residence'),
+            currency              : getSelectedCurrency(),
         };
         if (get_settings.tax_identification_number) {
             req.tax_identification_number = get_settings.tax_identification_number;
@@ -220,7 +196,7 @@ const Accounts = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

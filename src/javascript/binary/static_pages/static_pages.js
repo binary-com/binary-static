@@ -1,4 +1,7 @@
 const GetStarted = require('./get_started');
+const BinaryPjax = require('../base/binary_pjax');
+const Client     = require('../base/client');
+const Header     = require('../base/header');
 const handleHash = require('../base/utility').handleHash;
 const Scroll     = require('../common_functions/scroll');
 
@@ -23,5 +26,14 @@ module.exports = {
     },
     TypesOfAccounts: {
         onLoad: () => { Scroll.goToHashSection(); return false; },
+    },
+    LandingPage: {
+        onLoad: () => {
+            if (Client.hasAccountType('real')) {
+                BinaryPjax.loadPreviousUrl();
+            } else {
+                Header.upgradeMessageVisibility();
+            }
+        },
     },
 };

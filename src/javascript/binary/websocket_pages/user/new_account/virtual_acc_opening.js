@@ -11,12 +11,12 @@ const FormManager      = require('../../../common_functions/form_manager');
 const TrafficSource    = require('../../../common_functions/traffic_source');
 
 const VirtualAccOpening = (() => {
-    'use strict';
-
     const form = '#virtual-form';
+    let jp_client;
 
     const onLoad = () => {
-        if (jpClient()) {
+        jp_client = jpClient();
+        if (jp_client) {
             handleJPForm();
         } else {
             BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
@@ -79,7 +79,7 @@ const VirtualAccOpening = (() => {
             { request_field: 'new_account_virtual', value: 1 },
         ];
 
-        if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium', value: utm_data.utm_medium });
+        if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium',   value: utm_data.utm_medium });
         if (utm_data.utm_campaign) req.push({ request_field: 'utm_campaign', value: utm_data.utm_campaign });
 
         const gclid = LocalStore.get('gclid');
@@ -107,10 +107,11 @@ const VirtualAccOpening = (() => {
             Client.set('residence', response.echo_req.residence, new_account.client_id);
             LocalStore.remove('gclid');
             return Client.processNewAccount({
-                email     : new_account.email,
-                loginid   : new_account.client_id,
-                token     : new_account.oauth_token,
-                is_virtual: true,
+                email       : new_account.email,
+                loginid     : new_account.client_id,
+                token       : new_account.oauth_token,
+                is_virtual  : true,
+                redirect_url: jp_client ? urlFor('new_account/landing_page') : '',
             });
         }
 
@@ -149,7 +150,7 @@ const VirtualAccOpening = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

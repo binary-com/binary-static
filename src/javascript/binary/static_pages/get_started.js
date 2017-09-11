@@ -1,8 +1,6 @@
 const Client = require('../base/client');
 
 const GetStarted = (() => {
-    'use strict';
-
     const selectNavElement = () => {
         $('.nav li').removeClass('selected')
             .find(`a[href="${window.location.pathname}"]`)
@@ -41,13 +39,13 @@ const GetStarted = (() => {
         const $nav = $('.get-started').find('.subsection-navigation');
 
         if ($nav.length) {
-            $nav.on('click', 'a', function() {
+            $nav.on('click', 'a', function () {
                 const $button = $(this);
                 if ($button.hasClass('button-disabled')) {
                     return false;
                 }
                 const $now_showing = $('.subsection:not(.invisible)');
-                const $to_show = $button.hasClass('next') ? $now_showing.next('.subsection') : $now_showing.prev('.subsection');
+                const $to_show     = $button.hasClass('next') ? $now_showing.next('.subsection') : $now_showing.prev('.subsection');
                 return updateActiveSubsection($nav, $to_show);
             });
 
@@ -59,7 +57,7 @@ const GetStarted = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

@@ -6,8 +6,6 @@ const State                  = require('../../../base/storage').State;
 const FormManager            = require('../../../common_functions/form_manager');
 
 const PaymentAgentTransfer = (() => {
-    'use strict';
-
     let balance,
         is_authenticated_payment_agent,
         common_request_fields,
@@ -26,10 +24,11 @@ const PaymentAgentTransfer = (() => {
     };
 
     const init = () => {
-        const form_id = '#frm_paymentagent_transfer';
+        const form_id     = '#frm_paymentagent_transfer';
         const $no_bal_err = $('#no_balance_error');
-        const currency = Client.get('currency');
-        balance = State.getResponse('balance.balance');
+        const currency    = Client.get('currency');
+
+        balance     = State.getResponse('balance.balance');
         $form_error = $('#form_error');
 
         if (!currency || +balance === 0) {
@@ -61,7 +60,7 @@ const PaymentAgentTransfer = (() => {
             enable_button       : 1,
         });
 
-        $('#amount').on('input change', function() {
+        $('#amount').on('input change', function () {
             checkBalance($(this).val());
         });
     };
@@ -93,7 +92,7 @@ const PaymentAgentTransfer = (() => {
     };
 
     const responseHandler = (response) => {
-        const req = response.echo_req;
+        const req   = response.echo_req;
         const error = response.error;
 
         if (error) {
@@ -144,7 +143,7 @@ const PaymentAgentTransfer = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

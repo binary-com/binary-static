@@ -166,6 +166,8 @@ sub _texts {
         push @texts, localize('Try our [_1]Volatility Indices[_2].');
         push @texts, localize('Try our other markets.');
         push @texts, localize('Session');
+        push @texts, localize('Cryptocurrency');
+        push @texts, localize('Fiat Currency');
         #strings for limits page
         push @texts, localize('Your account is fully authenticated and your withdrawal limits have been lifted.');
         push @texts, localize('Your withdrawal limit is [_1] [_2].');
@@ -510,8 +512,6 @@ sub _texts {
         push @texts, localize('Volatility Indices');
         push @texts, localize('Set Currency');
         push @texts, localize('Please choose a currency');
-        push @texts, localize('Cryptocurrency');
-        push @texts, localize('Fiat Currency');
         push @texts, localize('Create Account');
         push @texts, localize('Accounts List');
         push @texts, localize('[_1] Account');

@@ -17,13 +17,11 @@ const ActiveSymbols = require('../../common_functions/active_symbols');
  */
 
 const MBSymbols = (() => {
-    'use strict';
-
-    let trade_markets      = {},
-        trade_markets_list = {},
-        trade_underlyings  = {},
-        all_symbols        = {},
-        names              = {};
+    let trade_markets      = {};
+    let trade_markets_list = {};
+    let trade_underlyings  = {};
+    let all_symbols        = {};
+    let names              = {};
 
     const details = (data) => {
         ActiveSymbols.clearData();
@@ -36,12 +34,12 @@ const MBSymbols = (() => {
     };
 
     return {
-        details      : details,
-        markets      : list    => (list ? trade_markets_list : trade_markets),
-        underlyings  : ()      => trade_underlyings,
-        getName      : symbol  => names[symbol],
-        getAllSymbols: ()      => all_symbols,
-        clearData    : ()      => { ActiveSymbols.clearData(); },
+        details,
+        markets      : list => (list ? trade_markets_list : trade_markets),
+        getName      : symbol => names[symbol],
+        underlyings  : () => trade_underlyings,
+        getAllSymbols: () => all_symbols,
+        clearData    : () => { ActiveSymbols.clearData(); },
     };
 })();
 

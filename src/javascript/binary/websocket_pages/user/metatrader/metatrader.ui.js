@@ -6,8 +6,6 @@ const Validation       = require('../../../common_functions/form_validation');
 const MetaTraderConfig = require('./metatrader.config');
 
 const MetaTraderUI = (() => {
-    'use strict';
-
     let $container,
         $list_cont,
         $mt5_account,
@@ -22,11 +20,11 @@ const MetaTraderUI = (() => {
     const types_info   = MetaTraderConfig.types_info;
     const actions_info = MetaTraderConfig.actions_info;
     const validations  = MetaTraderConfig.validations;
-    const mt5_currency = MetaTraderConfig.mt5_currency();
+    const mt5_currency = MetaTraderConfig.mt5Currency();
 
     const init = (submit_func) => {
-        submit = submit_func;
-        $container = $('#mt_account_management');
+        submit       = submit_func;
+        $container   = $('#mt_account_management');
         $mt5_account = $container.find('#mt5_account');
         $list_cont   = $container.find('#accounts_list');
         $list        = $list_cont.find('> div.list');
@@ -65,7 +63,7 @@ const MetaTraderUI = (() => {
                 hideList();
             }
         });
-        $list.off('click').on('click', '.acc-name', function() {
+        $list.off('click').on('click', '.acc-name', function () {
             if (!$(this).hasClass('disabled')) {
                 setAccountType($(this).attr('value'), true);
             }
@@ -122,11 +120,13 @@ const MetaTraderUI = (() => {
         if (types_info[acc_type].account_info) {
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
-                const key  = $(this).attr('data');
-                const info = types_info[acc_type].account_info[key];
-                $(this).html(
-                    key === 'balance' ? formatMoney(mt5_currency, +info) :
-                        key === 'leverage' ? `1:${info}` : info);
+                const key     = $(this).attr('data');
+                const info    = types_info[acc_type].account_info[key];
+                const mapping = {
+                    balance : () => formatMoney(mt5_currency, +info),
+                    leverage: () => `1:${info}`,
+                };
+                $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
             // $container.find('.act_cashier').setVisibility(!types_info[acc_type].is_demo);
             $container.find('.has-account').setVisibility(1);
@@ -143,11 +143,13 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const defaultAction = acc_type => (
-        types_info[acc_type].account_info ?
-            (types_info[acc_type].is_demo ? 'password_change' : 'cashier') :
-            'new_account'
-    );
+    const defaultAction = acc_type => {
+        let type = 'new_account';
+        if (types_info[acc_type].account_info) {
+            type = types_info[acc_type].is_demo ? 'password_change' : 'cashier';
+        }
+        return type;
+    };
 
     const loadAction = (action, acc_type) => {
         $container.find(`[class*=act_${action || defaultAction(acc_type)}]`).click();
@@ -160,7 +162,7 @@ const MetaTraderUI = (() => {
         }
 
         const acc_type = Client.get('mt5_account');
-        const action = $target.attr('class').split(' ').find(c => /^act_/.test(c)).replace('act_', '');
+        const action   = $target.attr('class').split(' ').find(c => /^act_/.test(c)).replace('act_', '');
 
         const cloneForm = () => {
             $form = $templates.find(`#frm_${action}`).clone();
@@ -175,7 +177,7 @@ const MetaTraderUI = (() => {
             $form.find('button[type="submit"]').each(function() { // cashier has two different actions
                 const this_action = $(this).attr('action');
                 actions_info[this_action].$form = $(this).parents('form');
-                $(this).attr({ acc_type: acc_type }).on('click dblclick', submit);
+                $(this).attr({ acc_type }).on('click dblclick', submit);
                 Validation.init(`#frm_${this_action}`, validations[this_action]);
             });
 
@@ -352,18 +354,19 @@ const MetaTraderUI = (() => {
     };
 
     return {
-        init              : init,
-        $form             : () => $form,
-        setAccountType    : setAccountType,
-        loadAction        : loadAction,
-        updateAccount     : updateAccount,
-        postValidate      : postValidate,
-        hideFormMessage   : hideFormMessage,
-        displayFormMessage: displayFormMessage,
-        displayMainMessage: displayMainMessage,
-        displayPageError  : displayPageError,
-        disableButton     : disableButton,
-        enableButton      : enableButton,
+        init,
+        setAccountType,
+        loadAction,
+        updateAccount,
+        postValidate,
+        hideFormMessage,
+        displayFormMessage,
+        displayMainMessage,
+        displayPageError,
+        disableButton,
+        enableButton,
+
+        $form: () => $form,
     };
 })();
 

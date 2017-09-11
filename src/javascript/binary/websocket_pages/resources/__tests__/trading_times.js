@@ -1,10 +1,10 @@
-const trading_times = require('../trading_times');
+const trading_times   = require('../trading_times');
 const { api, expect } = require('../../../base/__tests__/tests_common');
 
 describe('Trading Times', () => {
     let trading_times_res,
         active_symbols_res;
-    before(function(done) {
+    before(function (done) {
         this.timeout(10000);
         api.getTradingTimes(new Date()).then((response) => {
             trading_times_res = response.trading_times;

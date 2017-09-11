@@ -6,13 +6,12 @@ const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeede
 const localize            = require('../../../../base/localize').localize;
 const urlParam            = require('../../../../base/url').param;
 const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
+const getPropertyValue    = require('../../../../base/utility').getPropertyValue;
 const jpClient            = require('../../../../common_functions/country_base').jpClient;
 const formatMoney         = require('../../../../common_functions/currency').formatMoney;
 const GetAppDetails       = require('../../../../common_functions/get_app_details');
 
 const PortfolioInit = (() => {
-    'use strict';
-
     let values,
         currency,
         oauth_apps,
@@ -25,9 +24,9 @@ const PortfolioInit = (() => {
 
         if (is_initialized) return;
 
-        values = {};
-        currency = '';
-        oauth_apps = {};
+        values             = {};
+        currency           = '';
+        oauth_apps         = {};
         $portfolio_loading = $('#portfolio-loading');
         $portfolio_loading.show();
         showLoadingImage($portfolio_loading);
@@ -45,17 +44,15 @@ const PortfolioInit = (() => {
         // Display ViewPopup according to contract_id in query string
         const contract_id = urlParam('contract_id');
         if (contract_id) {
-            ViewPopup.init($('<div />', { contract_id: contract_id }).get(0));
+            ViewPopup.init($('<div />', { contract_id }).get(0));
         }
     };
 
     const createPortfolioRow = (data, is_first) => {
-        const long_code = typeof module !== 'undefined' ?
-            data.longcode :
-            (jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
+        const long_code = jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode;
 
         const new_class = is_first ? '' : 'new';
-        const $div = $('<div/>');
+        const $div      = $('<div/>');
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
                 .append($('<td/>', { class: 'ref' }).append($(`<span ${GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id])} data-balloon-position="right">${data.transaction_id}</span>`)))
                 .append($('<td/>', { class: 'payout' }).append($('<strong/>', { html: formatMoney(data.currency, data.payout) })))
@@ -80,7 +77,7 @@ const PortfolioInit = (() => {
     };
 
     const updatePortfolio = (data) => {
-        if (data.hasOwnProperty('error')) {
+        if (getPropertyValue(data, 'error')) {
             errorMessage(data.error.message);
             return;
         }
@@ -92,11 +89,11 @@ const PortfolioInit = (() => {
              **/
             $('#portfolio-no-contract').hide();
             $.each(data.portfolio.contracts, (ci, c) => {
-                if (!values.hasOwnProperty(c.contract_id) && c.contract_type !== 'BINARYICO') {
-                    values[c.contract_id] = {};
+                if (!getPropertyValue(values, c.contract_id) && c.contract_type !== 'BINARYICO') {
+                    values[c.contract_id]           = {};
                     values[c.contract_id].buy_price = c.buy_price;
-                    portfolio_data = Portfolio.getPortfolioData(c);
-                    currency = portfolio_data.currency;
+                    portfolio_data                  = Portfolio.getPortfolioData(c);
+                    currency                        = portfolio_data.currency;
                     createPortfolioRow(portfolio_data, is_first_response);
                     setTimeout(() => {
                         $(`tr.${c.contract_id}`).removeClass('new');
@@ -123,7 +120,7 @@ const PortfolioInit = (() => {
     };
 
     const transactionResponseHandler = (response) => {
-        if (response.hasOwnProperty('error')) {
+        if (getPropertyValue(response, 'error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
             BinarySocket.send({ portfolio: 1 }).then((res) => {
@@ -135,13 +132,13 @@ const PortfolioInit = (() => {
     };
 
     const updateIndicative = (data) => {
-        if (data.hasOwnProperty('error') || !values) {
+        if (getPropertyValue(data, 'error') || !values) {
             return;
         }
 
         const proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
         // avoid updating 'values' before the new contract row added to the table
-        if (!values.hasOwnProperty(proposal.contract_id)) {
+        if (!getPropertyValue(values, proposal.contract_id)) {
             return;
         }
 
@@ -154,8 +151,8 @@ const PortfolioInit = (() => {
         const old_indicative = values[proposal.contract_id].indicative || 0.00;
         values[proposal.contract_id].indicative = proposal.bid_price;
 
-        let status_class = '',
-            no_resale_html = '';
+        let status_class   = '';
+        let no_resale_html = '';
         if (+proposal.is_sold === 1) {
             removeContract(proposal.contract_id);
         } else {
@@ -163,7 +160,9 @@ const PortfolioInit = (() => {
                 no_resale_html = $('<span/>', { class: 'message', text: localize('Resale not offered') });
                 $td.addClass('no_resale');
             } else {
-                status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
+                if (values[proposal.contract_id].indicative !== old_indicative) {
+                    status_class = values[proposal.contract_id].indicative > old_indicative ? 'price_moved_up' : 'price_moved_down';
+                }
                 $td.removeClass('no_resale');
             }
             $td.html($('<strong/>', { class: `indicative_price ${status_class}`, html: formatMoney(proposal.currency, values[proposal.contract_id].indicative) })
@@ -183,7 +182,7 @@ const PortfolioInit = (() => {
         $(`tr.${contract_id}`)
             .removeClass('new')
             .css('opacity', '0.5')
-            .fadeOut(1000, function() {
+            .fadeOut(1000, function () {
                 $(this).remove();
                 if ($('#portfolio-body').find('tr').length === 0) {
                     $('#portfolio-table').setVisibility(0);
@@ -223,13 +222,9 @@ const PortfolioInit = (() => {
     };
 
     return {
-        updateBalance             : updateBalance,
-        updatePortfolio           : updatePortfolio,
-        updateIndicative          : updateIndicative,
-        updateOAuthApps           : updateOAuthApps,
-        transactionResponseHandler: transactionResponseHandler,
-        onLoad                    : onLoad,
-        onUnload                  : onUnload,
+        updateBalance,
+        onLoad,
+        onUnload,
     };
 })();
 

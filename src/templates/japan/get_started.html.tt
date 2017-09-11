@@ -54,7 +54,7 @@
     <div class="gr-6 gr-12-m gr-parent contents" style="display:none">
         <div id="content-how-to-open-an-account">
             <h1>[% l('{JAPAN ONLY}How to Open an Account') %]</h1>
-            <p>[% l('{JAPAN ONLY}You can apply to open an account online. Simply click <a href="[_1]">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account.', request.url_for('/')) %]</p>
+            <p>[% l('{JAPAN ONLY}You can apply to open an account online. Simply click <a href="[_1]">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account.', request.url_for('home-jp')) %]</p>
             <p>
                 [% l('{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:') %]
                 <ol>

@@ -1,10 +1,9 @@
 const Charity = (() => {
-    'use strict';
-
     let interval = null;
 
     const onLoad = () => {
         const $gallery = $('.gallery');
+
         let images;
         const switchPicture = () => {
             images = $gallery.find('img');
@@ -12,6 +11,7 @@ const Charity = (() => {
                 images.eq(images.length - 1).prependTo($gallery);
             }
         };
+
         interval = setInterval(switchPicture, 5000);
     };
 
@@ -23,8 +23,8 @@ const Charity = (() => {
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

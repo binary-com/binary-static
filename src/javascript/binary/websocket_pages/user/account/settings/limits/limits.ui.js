@@ -1,12 +1,10 @@
-const Table              = require('../../../../../common_functions/attach_dom/table');
-const localize           = require('../../../../../base/localize').localize;
-const Client             = require('../../../../../base/client');
-const elementInnerHtml   = require('../../../../../common_functions/common_functions').elementInnerHtml;
-const formatMoney        = require('../../../../../common_functions/currency').formatMoney;
+const Table            = require('../../../../../common_functions/attach_dom/table');
+const localize         = require('../../../../../base/localize').localize;
+const Client           = require('../../../../../base/client');
+const elementInnerHtml = require('../../../../../common_functions/common_functions').elementInnerHtml;
+const formatMoney      = require('../../../../../common_functions/currency').formatMoney;
 
 const LimitsUI = (() => {
-    'use strict';
-
     let client_limits = '';
 
     const appendRowTable = (name, turnover_limit, padding, font_weight) => {
@@ -33,7 +31,7 @@ const LimitsUI = (() => {
         elementInnerHtml(payout_per, formatMoney(currency, limits.payout_per_symbol_and_contract_type, 1));
 
         const market_specific = limits.market_specific;
-        client_limits = $('#client-limits');
+        client_limits         = $('#client-limits');
         Object.keys(market_specific).forEach((key) => {
             const object = market_specific[key];
             if (object.length && object.length > 0) {
@@ -47,7 +45,7 @@ const LimitsUI = (() => {
                 appendRowTable(object.name, object.turnover_limit !== 'null' ? formatMoney(currency, object.turnover_limit, 1) : 0, 'auto', 'bold');
             }
         });
-        const login_id =  Client.get('loginid');
+        const login_id = Client.get('loginid');
         if (login_id) {
             $('#trading-limits').prepend(`${login_id} - `);
             $('#withdrawal-title').prepend(`${login_id} - `);
@@ -55,13 +53,13 @@ const LimitsUI = (() => {
         $('#withdrawal-limits, #limits-title').setVisibility(1);
     };
 
-    const clearTableContent = () =>  {
+    const clearTableContent = () => {
         Table.clearTableBody('client-limits');
     };
 
     return {
-        clearTableContent: clearTableContent,
-        fillLimitsTable  : fillLimitsTable,
+        clearTableContent,
+        fillLimitsTable,
     };
 })();
 

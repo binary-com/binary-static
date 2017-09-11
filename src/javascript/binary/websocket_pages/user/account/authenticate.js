@@ -1,15 +1,13 @@
-const Client = require('../../../base/client');
+const Client       = require('../../../base/client');
 const BinarySocket = require('../../socket');
 
 const Authenticate = (() => {
-    'use strict';
-
     const onLoad = () => {
         BinarySocket.send({ get_account_status: 1 }).then((response) => {
             if (response.error) {
                 $('#error_message').setVisibility(1).text(response.error.message);
             } else {
-                const get_account_status = response.get_account_status;
+                const get_account_status  = response.get_account_status;
                 const should_authenticate = +get_account_status.prompt_client_to_authenticate;
                 if (should_authenticate) {
                     const status = get_account_status.status;
@@ -26,7 +24,7 @@ const Authenticate = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

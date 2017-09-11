@@ -2,11 +2,11 @@ const Cookies          = require('js-cookie');
 const getPropertyValue = require('./utility').getPropertyValue;
 const isEmptyObject    = require('./utility').isEmptyObject;
 
-const getObject = function(key) {
+const getObject = function (key) {
     return JSON.parse(this.getItem(key) || '{}');
 };
 
-const setObject = function(key, value) {
+const setObject = function (key, value) {
     if (value && value instanceof Object) {
         this.setItem(key, JSON.stringify(value));
     }
@@ -32,46 +32,47 @@ const isStorageSupported = (storage) => {
     }
 };
 
-const Store = function(storage) {
-    this.storage = storage;
+const Store = function (storage) {
+    this.storage           = storage;
     this.storage.getObject = getObject;
     this.storage.setObject = setObject;
 };
 
 Store.prototype = {
-    get: function(key) {
+    get(key) {
         return this.storage.getItem(key) || undefined;
     },
-    set: function(key, value) {
+    set(key, value) {
         if (typeof value !== 'undefined') {
             this.storage.setItem(key, value);
         }
     },
-    getObject: function (key) {
+    getObject(key) {
         return typeof this.storage.getObject === 'function' ? // Prevent runtime error in IE
             this.storage.getObject(key) :
             JSON.parse(this.storage.getItem(key) || '{}');
     },
-    setObject: function (key, value) {
+    setObject(key, value) {
         if (typeof this.storage.setObject === 'function') { // Prevent runtime error in IE
             this.storage.setObject(key, value);
         } else {
             this.storage.setItem(key, JSON.stringify(value));
         }
     },
-    remove: function(key) { this.storage.removeItem(key); },
-    clear : function()    { this.storage.clear(); },
+    remove(key) { this.storage.removeItem(key); },
+    clear()     { this.storage.clear(); },
 };
 
-const InScriptStore = function(object) {
+const InScriptStore = function (object) {
     this.store = typeof object !== 'undefined' ? object : {};
 };
 
 InScriptStore.prototype = {
-    get: function(key) {
+    get(key) {
         return getPropertyValue(this.store, key);
     },
-    set: function(key, value, obj = this.store) {
+    set(k, value, obj = this.store) {
+        let key = k;
         if (!Array.isArray(key)) key = [key];
         if (key.length > 1) {
             if (!(key[0] in obj) || isEmptyObject(obj[key[0]])) obj[key[0]] = {};
@@ -80,30 +81,31 @@ InScriptStore.prototype = {
             obj[key[0]] = value;
         }
     },
-    getObject: function (key) {
+    getObject(key) {
         return JSON.parse(this.get(key) || '{}');
     },
-    setObject: function (key, value) {
+    setObject(key, value) {
         this.set(key, JSON.stringify(value));
     },
-    remove: function(...keys) {
+    remove(...keys) {
         keys.forEach((key) => { delete this.store[key]; });
     },
-    clear: function()    { this.store = {}; },
-    has  : function(key) { return this.get(key) !== undefined; },
-    keys : function()    { return Object.keys(this.store); },
-    call : function(key) { if (typeof this.get(key) === 'function') this.get(key)(); },
+    clear()   { this.store = {}; },
+    has(key)  { return this.get(key) !== undefined; },
+    keys()    { return Object.keys(this.store); },
+    call(key) { if (typeof this.get(key) === 'function') this.get(key)(); },
 };
 
-const State = new InScriptStore();
+const State     = new InScriptStore();
 State.prototype = InScriptStore.prototype;
 /**
  * Shorthand function to get values from response object of State
  *
- * @param {String} path
+ * @param {String} pathname
  *     e.g. getResponse('authorize.currency') == get(['response', 'authorize', 'authorize', 'currency'])
  */
-State.prototype.getResponse = function(path) {
+State.prototype.getResponse = function (pathname) {
+    let path = pathname;
     if (typeof path === 'string') {
         const keys = path.split('.');
         path = ['response', keys[0]].concat(keys);
@@ -112,18 +114,19 @@ State.prototype.getResponse = function(path) {
 };
 State.set('response', {});
 
-const CookieStorage = function(cookie_name, cookie_domain) {
+const CookieStorage = function (cookie_name, cookie_domain) {
+    const hostname = window.location.hostname;
+
     this.initialized = false;
     this.cookie_name = cookie_name;
-    const hostname = window.location.hostname;
-    this.domain = cookie_domain || (/\.binary\.com/i.test(hostname) ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
-    this.path = '/';
-    this.expires = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
-    this.value = {};
+    this.domain      = cookie_domain || (/\.binary\.com/i.test(hostname) ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
+    this.path        = '/';
+    this.expires     = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
+    this.value       = {};
 };
 
 CookieStorage.prototype = {
-    read: function() {
+    read() {
         const cookie_value = Cookies.get(this.cookie_name);
         try {
             this.value = cookie_value ? JSON.parse(cookie_value) : {};
@@ -132,7 +135,7 @@ CookieStorage.prototype = {
         }
         this.initialized = true;
     },
-    write: function(val, expireDate, isSecure) {
+    write(val, expireDate, isSecure) {
         if (!this.initialized) this.read();
         this.value = val;
         if (expireDate) this.expires = expireDate;
@@ -143,11 +146,11 @@ CookieStorage.prototype = {
             secure : !!isSecure,
         });
     },
-    get: function(key) {
+    get(key) {
         if (!this.initialized) this.read();
         return this.value[key];
     },
-    set: function(key, val) {
+    set(key, val) {
         if (!this.initialized) this.read();
         this.value[key] = val;
         Cookies.set(this.cookie_name, this.value, {
@@ -156,7 +159,7 @@ CookieStorage.prototype = {
             domain : this.domain,
         });
     },
-    remove: function() {
+    remove() {
         Cookies.remove(this.cookie_name, {
             path  : this.path,
             domain: this.domain,
@@ -182,9 +185,9 @@ if (!SessionStore) {
 }
 
 module.exports = {
-    isStorageSupported: isStorageSupported,
-    CookieStorage     : CookieStorage,
-    State             : State,
-    SessionStore      : SessionStore,
-    LocalStore        : LocalStore,
+    isStorageSupported,
+    CookieStorage,
+    State,
+    SessionStore,
+    LocalStore,
 };

@@ -1,9 +1,9 @@
-const statement = require('../statement');
+const statement                    = require('../statement');
 const { api, expect, getApiToken } = require('../../../../base/__tests__/tests_common');
 
 describe('Statement', () => {
     let statement_ws;
-    before(function(done) {
+    before(function (done) {
         this.timeout(10000);
         // this is a read token, even if other people take it, won't be able to do any harm
         api.authorize(getApiToken()).then(() => {

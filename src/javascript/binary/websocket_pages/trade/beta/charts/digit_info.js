@@ -1,18 +1,17 @@
-const Symbols          = require('../../symbols');
-const BinarySocket     = require('../../../socket');
-const localize         = require('../../../../base/localize').localize;
-const template         = require('../../../../base/utility').template;
-const getHighstock     = require('../../../../common_functions/common_functions').requireHighstock;
+const Symbols      = require('../../symbols');
+const BinarySocket = require('../../../socket');
+const localize     = require('../../../../base/localize').localize;
+const template     = require('../../../../base/utility').template;
+const getHighstock = require('../../../../common_functions/common_functions').requireHighstock;
 
 const DigitInfo_Beta = (() => {
-    'use strict';
+    let spots          = [];
+    let stream_id      = null;
+    // To avoid too many greens and reds
+    let prev_min_index = -1;
+    let prev_max_index = -1;
 
-    let spots = [],
-        stream_id = null,
-        chart,
-        // To avoid too many greens and reds
-        prev_min_index = -1,
-        prev_max_index = -1;
+    let chart;
 
     const chart_config = {
         chart: {
@@ -34,7 +33,7 @@ const DigitInfo_Beta = (() => {
         },
         tooltip: {
             borderWidth: 1,
-            formatter  : function() {
+            formatter() {
                 const total      = $('#tick_count').val();
                 const percentage = (this.y / total) * 100;
                 return `<strong>${localize('Digit')}:</strong> ${this.x}<br/><strong>${localize('Percentage')}:</strong> ${percentage.toFixed(1)}%`;
@@ -57,8 +56,8 @@ const DigitInfo_Beta = (() => {
                         textShadow: false,
                         fontSize  : '10px',
                     },
-                    formatter: function() {
-                        const total = $('#tick_count').val();
+                    formatter() {
+                        const total      = $('#tick_count').val();
                         const percentage = (this.point.y / total) * 100;
                         return `${percentage.toFixed(2)}%`;
                     },
@@ -84,11 +83,11 @@ const DigitInfo_Beta = (() => {
             opposite     : false,
 
             labels: {
-                align    : 'left',
-                x        : 0,
-                enabled  : false,
-                formatter: function() {
-                    const total = $('#tick_count').val();
+                align  : 'left',
+                x      : 0,
+                enabled: false,
+                formatter() {
+                    const total      = $('#tick_count').val();
                     const percentage = parseInt((this.value / total) * 100);
                     return `${percentage}%`;
                 },
@@ -97,8 +96,8 @@ const DigitInfo_Beta = (() => {
     };
 
     const addContent = (underlying) => {
-        const domain = document.domain.split('.').slice(-2).join('.');
-        const symbols = Symbols.getAllSymbols();
+        const domain    = document.domain.split('.').slice(-2).join('.');
+        const symbols   = Symbols.getAllSymbols();
         let underlyings = [];
         Object.keys(symbols).forEach((key) => {
             if (/^(R_|RD)/.test(key)) {
@@ -106,7 +105,7 @@ const DigitInfo_Beta = (() => {
             }
         });
         underlyings = underlyings.sort();
-        let elem = '';
+        let elem    = '';
         for (let i = 0; i < underlyings.length; i++) {
             elem += `<option value="${underlyings[i]}">${localize(symbols[underlyings[i]])}</option>`;
         }
@@ -118,19 +117,19 @@ const DigitInfo_Beta = (() => {
     const onLatest = () => {
         const getLatest = () => {
             const $digit_underlying_option = $('#digit_underlying option:selected');
-            const symbol = $digit_underlying_option.val();
-            const count = $('#tick_count').val();
+            const symbol                   = $digit_underlying_option.val();
+            const count                    = $('#tick_count').val();
             $('#digit_info_underlying').text($digit_underlying_option.text());
             $('#digit_info_count').text(count);
             const request = {
                 ticks_history: symbol,
                 end          : 'latest',
-                count        : count,
+                count,
             };
             if (chart.series[0].name !== symbol) {
                 if ($('#underlying').find('option:selected').val() !== $('#digit_underlying').val()) {
                     request.subscribe = 1;
-                    request.style = 'ticks';
+                    request.style     = 'ticks';
                 }
                 if (stream_id !== null) {
                     BinarySocket.send({ forget: stream_id });
@@ -151,21 +150,21 @@ const DigitInfo_Beta = (() => {
 
     const showChart = (underlying, underlying_spots) => {
         getHighstock((Highcharts) => {
-            if (typeof underlying_spots === 'undefined' || underlying_spots.length <= 0) {
-                console.log('Unexpected error occured in the charts.');
+            const new_spots = underlying_spots;
+            if (typeof new_spots === 'undefined' || new_spots.length <= 0) {
                 return;
             }
-            const dec = underlying_spots[0].split('.')[1].length;
-            for (let i = 0; i < underlying_spots.length; i++) {
-                const val = parseFloat(underlying_spots[i]).toFixed(dec);
-                underlying_spots[i] = val.substr(val.length - 1);
+            const dec = new_spots[0].split('.')[1].length;
+            for (let i = 0; i < new_spots.length; i++) {
+                const val    = parseFloat(new_spots[i]).toFixed(dec);
+                new_spots[i] = val.substr(val.length - 1);
             }
 
             const getTitle = () => (
-                { text: template($('#last_digit_title').html(), [underlying_spots.length, $('#digit_underlying option:selected').text()]) }
+                { text: template($('#last_digit_title').html(), [new_spots.length, $('#digit_underlying option:selected').text()]) }
             );
 
-            spots = underlying_spots;
+            spots = new_spots;
             if (chart && $('#last_digit_histo').html()) {
                 chart.xAxis[0].update({ title: getTitle() }, true);
                 chart.series[0].name = underlying;
@@ -187,31 +186,28 @@ const DigitInfo_Beta = (() => {
         }
 
         const series = chart.series[0]; // Where we put the final data.
-        if (series.name !== symbol) {
-            latest_spot = undefined; // This simplifies the logic a bit later.
-        }
 
-        if (typeof latest_spot !== 'undefined') { // This is a bit later. :D
+        if (typeof latest_spot !== 'undefined' && series.name === symbol) {
             spots.unshift(latest_spot.slice(-1)); // Only last digit matters
             spots.pop();
         }
 
         // Always recompute and draw, even if theres no new data.
         // This is especially useful on first reuqest, but maybe in other ways.
-        const filtered_spots = [];
-        const filterFunc = el => +el === digit;
+        const filtered_spots  = [];
+        const filterFunc      = el => +el === digit;
         const min_max_counter = [];
-        let digit = 10;
+        let digit             = 10;
         while (digit--) {
-            const val = spots.filter(filterFunc).length;
+            const val             = spots.filter(filterFunc).length;
             filtered_spots[digit] = val;
             if (typeof min_max_counter[val] === 'undefined') {
                 min_max_counter[val] = 0;
             }
             min_max_counter[val]++;
         }
-        const min = Math.min.apply(null, filtered_spots);
-        const max = Math.max.apply(null, filtered_spots);
+        const min       = Math.min.apply(null, filtered_spots);
+        const max       = Math.max.apply(null, filtered_spots);
         const min_index = filtered_spots.indexOf(min);
         const max_index = filtered_spots.indexOf(max);
         // changing color
@@ -259,8 +255,8 @@ const DigitInfo_Beta = (() => {
     };
 
     return {
-        showChart  : showChart,
-        updateChart: updateChart,
+        showChart,
+        updateChart,
     };
 })();
 

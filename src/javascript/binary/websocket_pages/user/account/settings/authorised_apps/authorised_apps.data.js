@@ -1,8 +1,6 @@
 const moment = require('moment');
 
 const ApplicationsData = (() => {
-    'use strict';
-
     const parse = (app) => {
         const last = app.last_used ? moment.utc(app.last_used) : null;
         return {
@@ -14,7 +12,7 @@ const ApplicationsData = (() => {
     };
 
     return {
-        parse: parse,
+        parse,
     };
 })();
 

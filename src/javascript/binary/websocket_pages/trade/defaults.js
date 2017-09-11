@@ -14,9 +14,7 @@ const State         = require('../../base/storage').State;
  */
 
 const Defaults = (() => {
-    'use strict';
-
-    let params = {};
+    let params       = {};
     const getDefault = (key) => {
         const p_value = params[key] || Url.param(key);
         const s_value = sessionStorage.getItem(key);
@@ -29,9 +27,8 @@ const Defaults = (() => {
         return p_value || s_value;
     };
 
-    const setDefault = (key, value) => {
+    const setDefault = (key, value = '') => {
         if (!key) return;
-        value = value || '';
         if (isEmptyObject(params)) params = Url.paramsHash();
         if (params[key] !== value) {
             params[key] = value;

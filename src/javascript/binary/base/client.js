@@ -10,11 +10,9 @@ const BinarySocket       = require('../websocket_pages/socket');
 const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
 
 const Client = (() => {
-    'use strict';
-
     const storage_key = 'client.accounts';
-    let client_object = {},
-        current_loginid;
+    let client_object = {};
+    let current_loginid;
 
     const init = () => {
         current_loginid = LocalStore.get('active_loginid');
@@ -72,6 +70,7 @@ const Client = (() => {
             value = loginid || LocalStore.get('active_loginid');
         } else {
             const current_client = client_object[loginid] || getAllAccountsObject()[loginid] || {};
+
             value = key ? current_client[key] : current_client;
         }
         if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
@@ -86,9 +85,9 @@ const Client = (() => {
 
     const getAccountType = (loginid = current_loginid) => {
         let account_type;
-        if (/^VR/.test(loginid))        account_type = 'virtual';
-        else if (/^MF/.test(loginid))   account_type = 'financial';
-        else if (/^MLT/.test(loginid))  account_type = 'gaming';
+        if (/^VR/.test(loginid))       account_type = 'virtual';
+        else if (/^MF/.test(loginid))  account_type = 'financial';
+        else if (/^MLT/.test(loginid)) account_type = 'gaming';
         return account_type;
     };
 
@@ -115,13 +114,14 @@ const Client = (() => {
         gaming   : 'Gaming',
         financial: 'Investment',
     };
+
     const getAccountTitle = loginid => types_map[getAccountType(loginid)] || 'Real';
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
-        set('email',         authorize.email);
-        set('currency',      authorize.currency);
-        set('is_virtual',    +authorize.is_virtual);
+        set('email',      authorize.email);
+        set('currency',   authorize.currency);
+        set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
     };
@@ -129,13 +129,13 @@ const Client = (() => {
     const shouldAcceptTnc = () => {
         if (get('is_virtual')) return false;
         const website_tnc_version = State.getResponse('website_status.terms_conditions_version');
-        const get_settings = State.getResponse('get_settings');
-        return get_settings.hasOwnProperty('client_tnc_status') && get_settings.client_tnc_status !== website_tnc_version;
+        const client_tnc_status   = State.getResponse('get_settings.client_tnc_status');
+        return typeof client_tnc_status !== 'undefined' && client_tnc_status !== website_tnc_version;
     };
 
     const clearAllAccounts = () => {
         current_loginid = undefined;
-        client_object = {};
+        client_object   = {};
         LocalStore.setObject(storage_key, client_object);
 
         const hash = window.location.hash;
@@ -163,7 +163,7 @@ const Client = (() => {
 
         // 2. client.tokens = { loginid1: { token: token1, currency: currency1 }, loginid2: { ... } }
         if (!isEmptyObject(accounts_obj)) {
-            const keys = ['balance', 'currency', 'email', 'is_virtual', 'residence', 'session_start'];
+            const keys     = ['balance', 'currency', 'email', 'is_virtual', 'residence', 'session_start'];
             // read current client.* values and set in new object
             const setValue = (old_key, new_key) => {
                 const value = LocalStore.get(`client.${old_key}`);
@@ -272,7 +272,7 @@ const Client = (() => {
 
     const currentLandingCompany = () => {
         const landing_company_response = State.getResponse('landing_company') || {};
-        const lc_prop = Object.keys(landing_company_response)
+        const lc_prop                  = Object.keys(landing_company_response)
             .find(key => get('landing_company_shortcode') === landing_company_response[key].shortcode);
         return landing_company_response[lc_prop] || {};
     };
@@ -282,26 +282,26 @@ const Client = (() => {
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
     const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status')) => {
-        let type = 'real';
+        let type         = 'real';
+        let can_upgrade  = false;
         let upgrade_link = 'realws';
-        let can_upgrade = false;
         if (get('is_virtual')) {
             if (canUpgradeVirtualToFinancial(landing_company)) {
-                type = 'financial';
+                type         = 'financial';
                 upgrade_link = 'maltainvestws';
             } else if (canUpgradeVirtualToJapan(landing_company)) {
                 upgrade_link = 'japanws';
             }
             can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
         } else if (canUpgradeGamingToFinancial(landing_company)) {
-            type = 'financial';
+            type         = 'financial';
+            can_upgrade  = !hasAccountType('financial');
             upgrade_link = 'maltainvestws';
-            can_upgrade = !hasAccountType('financial');
         }
         return {
-            type           : type,
+            type,
+            can_upgrade,
             upgrade_link   : `new_account/${upgrade_link}`,
-            can_upgrade    : can_upgrade,
             is_current_path: new RegExp(upgrade_link, 'i').test(window.location.pathname),
         };
     };
@@ -319,39 +319,38 @@ const Client = (() => {
             }
         } else {
             const financial_company = (getPropertyValue(landing_company, 'financial_company') || {})[key] || [];
-            const gaming_company = (getPropertyValue(landing_company, 'gaming_company') || {})[key] || [];
-            landing_company_object = financial_company.concat(gaming_company);
+            const gaming_company    = (getPropertyValue(landing_company, 'gaming_company') || {})[key] || [];
+            landing_company_object  = financial_company.concat(gaming_company);
             return landing_company_object;
         }
         return (landing_company_object || {})[key];
     };
 
     return {
-        init             : init,
-        validateLoginid  : validateLoginid,
-        set              : set,
-        get              : get,
-        getAllLoginids   : getAllLoginids,
-        getAccountType   : getAccountType,
-        getAccountOfType : getAccountOfType,
-        isAccountOfType  : isAccountOfType,
-        hasAccountType   : hasAccountType,
-        responseAuthorize: responseAuthorize,
-        shouldAcceptTnc  : shouldAcceptTnc,
-        clearAllAccounts : clearAllAccounts,
-        processNewAccount: processNewAccount,
-        isLoggedIn       : isLoggedIn,
-        sendLogoutRequest: sendLogoutRequest,
-        cleanupCookies   : cleanupCookies,
-        doLogout         : doLogout,
-        shouldCompleteTax: shouldCompleteTax,
-        getMT5AccountType: getMT5AccountType,
-        getUpgradeInfo   : getUpgradeInfo,
-        getAccountTitle  : getAccountTitle,
-
-        activateByClientType  : activateByClientType,
-        currentLandingCompany : currentLandingCompany,
-        getLandingCompanyValue: getLandingCompanyValue,
+        init,
+        validateLoginid,
+        set,
+        get,
+        getAllLoginids,
+        getAccountType,
+        getAccountOfType,
+        isAccountOfType,
+        hasAccountType,
+        responseAuthorize,
+        shouldAcceptTnc,
+        clearAllAccounts,
+        processNewAccount,
+        isLoggedIn,
+        sendLogoutRequest,
+        cleanupCookies,
+        doLogout,
+        shouldCompleteTax,
+        getMT5AccountType,
+        getUpgradeInfo,
+        getAccountTitle,
+        activateByClientType,
+        currentLandingCompany,
+        getLandingCompanyValue,
     };
 })();
 

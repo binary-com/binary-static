@@ -380,3 +380,12 @@ body #not_authenticated_financial ul.checked > li {
         margin: 0 15px;
     }
 }
+
+.landing_page-content {
+    .bordered {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+    }
+    .box {
+        padding: 10px 30px;
+    }
+}
