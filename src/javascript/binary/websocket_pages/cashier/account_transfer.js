@@ -21,21 +21,7 @@ const AccountTransfer = (() => {
         el_transfer_to,
         el_currency;
 
-    const populateAccounts = (response_transfer, response_limits) => {
-        const error = response_transfer.error || response_limits.error;
-        if (error) {
-            const el_error = document.getElementById('error_message').getElementsByTagName('p')[0];
-            elementTextContent(el_error, error.message);
-            el_error.parentNode.setVisibility(1);
-            return;
-        }
-
-        accounts = response_transfer.accounts;
-        if (!accounts || !accounts.length) {
-            showError();
-            return;
-        }
-
+    const populateAccounts = () => {
         const client_loginid = Client.get('loginid');
 
         el_transfer_from = document.getElementById('transfer_from');
@@ -93,6 +79,17 @@ const AccountTransfer = (() => {
         }
 
         showForm();
+    };
+
+    const hasError = (response) => {
+        const error = response.error;
+        if (error) {
+            const el_error = document.getElementById('error_message').getElementsByTagName('p')[0];
+            elementTextContent(el_error, error.message);
+            el_error.parentNode.setVisibility(1);
+            return true;
+        }
+        return false;
     };
 
     const showError = () => {
@@ -201,8 +198,20 @@ const AccountTransfer = (() => {
             });
         } else {
             BinarySocket.send({ transfer_between_accounts: 1 }).then((response_transfer) => {
-                BinarySocket.send({ get_limits: 1 }).then(response_limits =>
-                    populateAccounts(response_transfer, response_limits));
+                if (hasError(response_transfer)) {
+                    return;
+                }
+                accounts = response_transfer.accounts;
+                if (!accounts || !accounts.length) {
+                    showError();
+                    return;
+                }
+                BinarySocket.send({ get_limits: 1 }).then((response_limits) => {
+                    if (hasError(response_limits)) {
+                        return;
+                    }
+                    populateAccounts();
+                });
             });
         }
     };
