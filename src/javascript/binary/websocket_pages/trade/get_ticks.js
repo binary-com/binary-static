@@ -124,9 +124,9 @@ const GetTicks = (() => {
         }
     };
 
-    const populateDigits = (underlying) => {
+    const populateDigits = () => {
         const tick = $('#tick_count').val() || 100;
-        GetTicks.request('', {
+        request('', {
             ticks_history: underlying,
             count        : tick.toString(),
             end          : 'latest',
