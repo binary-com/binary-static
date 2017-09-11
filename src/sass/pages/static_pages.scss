@@ -357,11 +357,11 @@ body #not_authenticated_financial ul.checked > li {
                 margin-left: 10px;
                 margin-top: -2px;
 
-                .add {
+                &.add {
                     content: url('../images/pages/authenticate/add.svg');
                 }
-                .remove {
-                    content: url('../images/pages/authenticate/delete/Red.svg');
+                &.remove {
+                    content: url('../images/pages/authenticate/remove.svg');
                 }
             }
         }

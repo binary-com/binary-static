@@ -3,6 +3,9 @@ css:
   - 'postcss'
   - 'cssmin'
 
+svg:
+  - 'svgo'
+
 js:
   - 'webpack:build'
 
