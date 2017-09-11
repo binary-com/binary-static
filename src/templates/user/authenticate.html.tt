@@ -16,8 +16,8 @@
     </div>
     <div id="success-message" class="center-text invisible">
         [% INCLUDE global/separator_line.html.tt invisible=1 class="gr-padding-10" %]
-        <h2>Thank you for submitting the required documents</h2>
-        <p>We are reviewing your documents and will get back to you within one working day.</p>
+        <h2>[% l('Thank you for submitting the required documents') %]</h2>
+        <p>[% l('We are reviewing your documents and will get back to you within one working day.') %]</p>
     </div>
 
     <p class="center-text notice-msg invisible" id="error_message"></p>
