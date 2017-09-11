@@ -4,12 +4,10 @@ const LocalStore  = require('../../../base/storage').LocalStore;
 const formatMoney = require('../../../common_functions/currency').formatMoney;
 
 const RealityCheckData = (() => {
-    'use strict';
-
     const reality_object = {};
 
     const resetInvalid = () => {
-        const ack = get('ack');
+        const ack      = get('ack');
         const interval = +(get('interval'));
         if (ack !== 0 && ack !== 1) {
             set('ack', 0);
@@ -20,22 +18,21 @@ const RealityCheckData = (() => {
     };
 
     const summaryData = (data) => {
-        const start_time = moment.utc(new Date(data.start_time * 1000));
+        const start_time   = moment.utc(new Date(data.start_time * 1000));
         const current_time = moment.utc();
 
         const session_duration = moment.duration(current_time.diff(start_time));
-        const duration_string = localize('[_1] days [_2] hours [_3] minutes', [
+        const duration_string  = localize('[_1] days [_2] hours [_3] minutes', [
             session_duration.get('days'),
             session_duration.get('hours'),
             session_duration.get('minutes'),
         ]);
 
-        const turnover = +(data.buy_amount) + (+(data.sell_amount));
+        const turnover    = +(data.buy_amount) + (+(data.sell_amount));
         const profit_loss = +(data.sell_amount) - (+(data.buy_amount));
 
-        const start_time_string = localize('Your trading statistics since [_1].', [`${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`]);
         return {
-            start_time_string: start_time_string,
+            start_time_string: localize('Your trading statistics since [_1].', [`${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`]),
             login_time       : `${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`,
             current_time     : `${current_time.format('YYYY-MM-DD HH:mm:ss')} GMT`,
             session_duration : duration_string,
@@ -74,11 +71,12 @@ const RealityCheckData = (() => {
     };
 
     return {
-        resetInvalid: resetInvalid,
-        summaryData : summaryData,
-        set         : set,
-        get         : get,
-        clear       : clear_storage_values,
+        resetInvalid,
+        summaryData,
+        set,
+        get,
+
+        clear: clear_storage_values,
     };
 })();
 

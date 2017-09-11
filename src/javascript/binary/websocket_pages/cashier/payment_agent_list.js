@@ -3,8 +3,6 @@ const urlForStatic = require('../../base/url').urlForStatic;
 const Client       = require('../../base/client');
 
 const PaymentAgentList = (() => {
-    'use strict';
-
     let $pa_list_container,
         $agent_template;
 
@@ -59,6 +57,7 @@ const PaymentAgentList = (() => {
         }
 
         const requested_country = response.echo_req.paymentagent_list;
+
         let found = false;
         countries.map((country) => {
             if (country === requested_country) {
@@ -135,7 +134,7 @@ const PaymentAgentList = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

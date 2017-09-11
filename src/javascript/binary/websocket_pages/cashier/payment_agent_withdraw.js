@@ -6,9 +6,7 @@ const FormManager     = require('../../common_functions/form_manager');
 const validEmailToken = require('../../common_functions/form_validation').validEmailToken;
 
 const PaymentAgentWithdraw = (() => {
-    'use strict';
-
-    const view_ids = {
+    const view_ids  = {
         error  : '#viewError',
         notice : '#viewNotice',
         success: '#viewSuccess',
@@ -52,7 +50,7 @@ const PaymentAgentWithdraw = (() => {
             }
             setActiveView(view_ids.form);
             const currency = Client.get('currency');
-            const form_id = `#${$(view_ids.form).find('form').attr('id')}`;
+            const form_id  = `#${$(view_ids.form).find('form').attr('id')}`;
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
                 { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
@@ -168,7 +166,7 @@ const PaymentAgentWithdraw = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

@@ -5,6 +5,7 @@ const setJPClient = require('./tests_common').setJPClient;
 describe('Clock', () => {
     describe('.toJapanTimeIfNeeded()', () => {
         const toJapanTimeIfNeeded = Clock.toJapanTimeIfNeeded;
+
         const gmt_time_str = '2017-06-14 20:34:56';
         const jp_time_str  = '2017-06-15 05:34:56';
         const longCode     = time => (`Win payout if AUD/JPY is higher than or equal to 82.676 at ${time}.`);

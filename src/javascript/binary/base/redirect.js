@@ -1,8 +1,6 @@
 const Url = require('./url');
 
 const Redirect = (() => {
-    'use strict';
-
     const onLoad = () => {
         const actions_map = {
             signup                : { path: 'new_account/virtualws' },
@@ -20,7 +18,7 @@ const Redirect = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

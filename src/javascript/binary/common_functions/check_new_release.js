@@ -9,8 +9,10 @@ const check_new_release = () => {
     const last_reload = localStorage.getItem('new_release_reload_time');
     if (!shouldForceReload(last_reload)) return false;
     localStorage.setItem('new_release_reload_time', moment().valueOf());
+
     const currect_hash = ($('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src') || '').split('?')[1];
-    const xhttp = new XMLHttpRequest();
+    const xhttp        = new XMLHttpRequest();
+
     xhttp.onreadystatechange = () => {
         if (+xhttp.readyState === 4 && +xhttp.status === 200) {
             const latest_hash = xhttp.responseText;
@@ -21,10 +23,11 @@ const check_new_release = () => {
     };
     xhttp.open('GET', urlForStatic(`version?${Math.random().toString(36).slice(2)}`), true);
     xhttp.send();
+
     return true;
 };
 
 module.exports = {
-    shouldForceReload: shouldForceReload,
-    check_new_release: check_new_release,
+    shouldForceReload,
+    check_new_release,
 };

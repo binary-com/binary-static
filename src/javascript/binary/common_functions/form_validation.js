@@ -4,9 +4,7 @@ const urlParam              = require('../base/url').param;
 const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
-    'use strict';
-
-    const forms = {};
+    const forms        = {};
     const error_class  = 'error-msg';
     const hidden_class = 'invisible';
 
@@ -16,11 +14,20 @@ const Validation = (() => {
         checkbox: 'change',
     };
 
-    const getFieldType = $field => (
-        $field.length ? ($field.attr('type') === 'checkbox' ? 'checkbox' : $field.get(0).localName) : null
-    );
+    const getFieldType = ($field) => {
+        let type = null;
+        if ($field.length) {
+            type = $field.attr('type') === 'checkbox' ? 'checkbox' : $field.get(0).localName;
+        }
+        return type;
+    };
 
-    const getFieldValue = field => (field.type === 'checkbox' ? (field.$.is(':checked') ? '1' : '') : field.$.val()) || '';
+    const isChecked = field => field.$.is(':checked') ? '1' : '';
+
+    const getFieldValue = (field) => {
+        const value = field.type === 'checkbox' ? isChecked(field) : field.$.val();
+        return value || '';
+    };
 
     const initForm = (form_selector, fields, needs_token) => {
         const $form = $(`${form_selector}:visible`);
@@ -34,10 +41,10 @@ const Validation = (() => {
         }
 
         if ($form.length) {
-            forms[form_selector] = { $form: $form };
+            forms[form_selector] = { $form };
             if (Array.isArray(fields) && fields.length) {
                 forms[form_selector].fields = fields;
-                const $btn_submit = $form.find('button[type="submit"]');
+                const $btn_submit           = $form.find('button[type="submit"]');
 
                 let has_required = false;
                 fields.forEach((field) => {
@@ -88,7 +95,7 @@ const Validation = (() => {
     // ------------------------------
     // ----- Validation Methods -----
     // ------------------------------
-    const validRequired = (value, options, field) => {
+    const validRequired     = (value, options, field) => {
         if ((typeof value === 'string' ? value.trim() : value).length) return true;
         // else
         validators_map.req.message = field.type === 'checkbox' ? 'Please select the checkbox.' : 'This field is required.';
@@ -96,9 +103,9 @@ const Validation = (() => {
     };
     const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);
     const validPassword     = value => /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value);
-    const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(value);
-    const validGeneral      = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><|]+/.test(value);
-    const validAddress      = value => !/[`~!#$%^&*)(_=+\[}{\]\\";:\?><|]+/.test(value);
+    const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d]+/.test(value);
+    const validGeneral      = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><|]+/.test(value);
+    const validAddress      = value => !/[`~!#$%^&*)(_=+[}{\]\\";:?><|]+/.test(value);
     const validPostCode     = value => /^[a-zA-Z\d-\s]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
@@ -117,27 +124,27 @@ const Validation = (() => {
             return true;
         }
 
-        let is_ok = true,
-            message = '';
+        let is_ok   = true;
+        let message = '';
 
         if (+options.max < +options.min && options.custom_message) {
-            is_ok = false;
+            is_ok   = false;
             message = localize(options.custom_message);
         } else if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
-            is_ok = false;
+            is_ok   = false;
             message = localize('Should be a valid number');
         } else if (options.type === 'float' && options.decimals &&
             !(new RegExp(`^\\d+(\\.\\d{${options.decimals.replace(/ /g, '')}})?$`).test(value))) {
-            is_ok = false;
+            is_ok   = false;
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
         } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
-            is_ok = false;
+            is_ok   = false;
             message = localize('Should be between [_1] and [_2]', [options.min, addComma(options.max)]);
         } else if ('min' in options && +value < +options.min) {
-            is_ok = false;
+            is_ok   = false;
             message = localize('Should be more than [_1]', [options.min]);
         } else if ('max' in options && isMoreThanMax(value, options)) {
-            is_ok = false;
+            is_ok   = false;
             message = localize('Should be less than [_1]', [addComma(options.max)]);
         }
 
@@ -172,13 +179,13 @@ const Validation = (() => {
     // --------------------
     const checkField = (field) => {
         if (!field.$.is(':visible') || !field.validations) return true;
-        let all_is_ok = true,
-            message;
+        let all_is_ok = true;
+        let message   = '';
 
         field.validations.some((valid) => {
             if (!valid) return false; // check next validation
-            let type,
-                options = {};
+            let type;
+            let options = {};
 
             if (typeof valid === 'string') {
                 type = valid;
@@ -189,8 +196,8 @@ const Validation = (() => {
 
             if (type === 'password' && !validLength(getFieldValue(field), pass_length(options))) {
                 field.is_ok = false;
-                type = 'length';
-                options = pass_length(options);
+                type        = 'length';
+                options     = pass_length(options);
             } else {
                 const validator = (type === 'custom' ? options.func : validators_map[type].func);
                 field.is_ok = validator(getFieldValue(field), options, field);
@@ -247,10 +254,10 @@ const Validation = (() => {
     };
 
     return {
-        init    : initForm,
-        validate: validate,
+        validate,
+        validEmailToken,
 
-        validEmailToken: validEmailToken,
+        init: initForm,
     };
 })();
 

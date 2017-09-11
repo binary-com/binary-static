@@ -1,15 +1,15 @@
-const showChart        = require('../charts/webtrader_chart').showChart;
-const Defaults         = require('../defaults');
-const getActiveTab     = require('../get_active_tab').getActiveTab_Beta;
-const GetTicks         = require('../get_ticks');
-const MBDefaults       = require('../../mb_trade/mb_defaults');
-const AssetIndexUI     = require('../../resources/asset_index/asset_index.ui');
-const TradingTimesUI   = require('../../resources/trading_times/trading_times.ui');
-const PortfolioInit    = require('../../user/account/portfolio/portfolio.init');
-const Client           = require('../../../base/client');
-const getLanguage      = require('../../../base/language').get;
-const State            = require('../../../base/storage').State;
-const Url              = require('../../../base/url');
+const showChart      = require('../charts/webtrader_chart').showChart;
+const Defaults       = require('../defaults');
+const getActiveTab   = require('../get_active_tab').getActiveTab_Beta;
+const GetTicks       = require('../get_ticks');
+const MBDefaults     = require('../../mb_trade/mb_defaults');
+const AssetIndexUI   = require('../../resources/asset_index/asset_index.ui');
+const TradingTimesUI = require('../../resources/trading_times/trading_times.ui');
+const PortfolioInit  = require('../../user/account/portfolio/portfolio.init');
+const Client         = require('../../../base/client');
+const getLanguage    = require('../../../base/language').get;
+const State          = require('../../../base/storage').State;
+const Url            = require('../../../base/url');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -24,15 +24,13 @@ const Url              = require('../../../base/url');
  */
 
 const TradingAnalysis_Beta = (() => {
-    'use strict';
-
     const hidden_class = 'invisible';
     let form_name;
 
     const requestTradeAnalysis = () => {
         form_name = ((State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall').replace('matchdiff', 'digits');
 
-        $('#tab_last_digit').setVisibility(/(digits|overunder|evenodd)/.test(form_name));
+        $('#tab_last_digit').setVisibility(/digits|overunder|evenodd/.test(form_name));
         sessionStorage.setItem('currentAnalysisTab_Beta', getActiveTab());
         loadAnalysisTab();
     };
@@ -78,7 +76,7 @@ const TradingAnalysis_Beta = (() => {
                 break;
             case 'tab_last_digit': {
                 const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
-                const tick = $('#tick_count').val() || 100;
+                const tick       = $('#tick_count').val() || 100;
                 GetTicks.request('', {
                     ticks_history: underlying,
                     end          : 'latest',
@@ -105,13 +103,13 @@ const TradingAnalysis_Beta = (() => {
      * function to toggle the active element for analysis menu
      */
     const toggleActiveAnalysisTabs = () => {
-        const current_tab = getActiveTab();
+        const current_tab        = getActiveTab();
         const analysis_container = document.getElementById('analysis_content');
 
         if (analysis_container) {
-            const child_elements = analysis_container.children;
+            const child_elements      = analysis_container.children;
             const current_tab_element = document.getElementById(`${current_tab}-content`);
-            const classes = current_tab_element.classList;
+            const classes             = current_tab_element.classList;
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
                 child_elements[i].classList.remove('selectedTab');
@@ -168,7 +166,7 @@ const TradingAnalysis_Beta = (() => {
         };
 
         if (images[form_name]) {
-            const language = getLanguage().toLowerCase();
+            const language   = getLanguage().toLowerCase();
             const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(language === 'ja' ? `${language}/` : '')}`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
@@ -177,9 +175,9 @@ const TradingAnalysis_Beta = (() => {
     };
 
     return {
-        request             : requestTradeAnalysis,
-        getActiveTab        : getActiveTab,
-        bindAnalysisTabEvent: bindAnalysisTabEvent,
+        getActiveTab,
+        bindAnalysisTabEvent,
+        request: requestTradeAnalysis,
     };
 })();
 

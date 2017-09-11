@@ -4,14 +4,12 @@ const generateBirthDate = require('../../common_functions/attach_dom/birth_date_
 const FormManager       = require('../../common_functions/form_manager');
 
 const ResetPassword = (() => {
-    'use strict';
-
     const responseHandler = (response) => {
         $('#container_reset_password').setVisibility(0);
         if (response.error) {
-            const $form_error = $('#form_error');
+            const $form_error          = $('#form_error');
             const reset_error_template = '[_1] Please click the link below to restart the password recovery process.';
-            const error_code = response.error.code;
+            const error_code           = response.error.code;
 
             $('#msg_reset_password').setVisibility(0);
 
@@ -36,7 +34,7 @@ const ResetPassword = (() => {
     const onLoad = () => {
         generateBirthDate();
 
-        $('#have_real_account').off('click').on('click', function() {
+        $('#have_real_account').off('click').on('click', function () {
             if ($(this).is(':checked')) {
                 $('#dob_field').setVisibility(1);
             } else {
@@ -60,7 +58,7 @@ const ResetPassword = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

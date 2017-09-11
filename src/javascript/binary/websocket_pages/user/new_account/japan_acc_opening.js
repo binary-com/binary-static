@@ -5,8 +5,6 @@ const detectHedging  = require('../../../common_functions/common_functions').det
 const FormManager    = require('../../../common_functions/form_manager');
 
 const JapanAccOpening = (() => {
-    'use strict';
-
     const onLoad = () => {
         if (AccountOpening.redirectAccount()) return;
         AccountOpening.populateForm();
@@ -48,7 +46,7 @@ const JapanAccOpening = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

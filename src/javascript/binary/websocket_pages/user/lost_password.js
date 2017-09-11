@@ -2,8 +2,6 @@ const localize    = require('../../base/localize').localize;
 const FormManager = require('../../common_functions/form_manager');
 
 const LostPassword = (() => {
-    'use strict';
-
     const form_id = '#frm_lost_password';
 
     const responseHandler = (response) => {
@@ -26,7 +24,7 @@ const LostPassword = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

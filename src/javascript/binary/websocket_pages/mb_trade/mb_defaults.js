@@ -10,9 +10,8 @@ const isEmptyObject = require('../../base/utility').isEmptyObject;
  */
 
 const MBDefaults = (() => {
-    'use strict';
-
     let params = {};
+
     const getDefault = (key) => {
         loadParams();
         return params[key];
@@ -26,9 +25,8 @@ const MBDefaults = (() => {
         localStorage.setItem('mb_trading', JSON.stringify(params));
     };
 
-    const setDefault = (key, value) => {
+    const setDefault = (key, value = '') => {
         if (!key) return;
-        value = value || '';
         loadParams();
         if (params[key] !== value) {
             params[key] = value;

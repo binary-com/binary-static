@@ -3,8 +3,6 @@ const IPHistoryUI   = require('./iphistory.ui');
 const BinarySocket  = require('../../../../socket');
 
 const IPHistoryInit = (() => {
-    'use strict';
-
     const responseHandler = (response) => {
         if (response.error && response.error.message) {
             return IPHistoryUI.displayError(response.error.message);
@@ -29,8 +27,8 @@ const IPHistoryInit = (() => {
     };
 
     return {
-        init : init,
-        clean: clean,
+        init,
+        clean,
     };
 })();
 

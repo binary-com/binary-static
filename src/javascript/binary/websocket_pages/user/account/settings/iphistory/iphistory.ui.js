@@ -4,8 +4,6 @@ const localize             = require('../../../../../base/localize').localize;
 const FlexTableUI          = require('../../../../../common_functions/attach_dom/flextable');
 
 const IPHistoryUI = (() => {
-    'use strict';
-
     const container_selector = '#login-history-container';
     const no_messages_error  = 'Your account has no Login/Logout activity.';
 
@@ -15,12 +13,12 @@ const IPHistoryUI = (() => {
     };
 
     const formatRow = (data) => {
-        const timestamp = `${moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n')} GMT`;
-        const status    = localize(data.success ? 'Successful' : 'Failed');
-        const action    = localize(data.action);
-        const browser   = data.browser;
+        const timestamp    = `${moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n')} GMT`;
+        const status       = localize(data.success ? 'Successful' : 'Failed');
+        const action       = localize(data.action);
+        const browser      = data.browser;
         let browser_string = browser ? `${browser.name} v${browser.version}` : 'Unknown';
-        const patt = /^(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium) v[0-9.]+$/i;
+        const patt         = /^(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium) v[0-9.]+$/i;
         if (!patt.test(browser_string) && browser_string !== 'Unknown') {
             browser_string = 'Error';
         }
@@ -63,10 +61,10 @@ const IPHistoryUI = (() => {
     };
 
     return {
-        init        : init,
-        clean       : clean,
-        update      : update,
-        displayError: displayError,
+        init,
+        clean,
+        update,
+        displayError,
     };
 })();
 

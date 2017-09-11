@@ -8,8 +8,6 @@ const jpResidence  = require('../binary/common_functions/country_base').jpReside
 const BinarySocket = require('../binary/websocket_pages/socket');
 
 const CashierJP = (() => {
-    'use strict';
-
     const onLoad = (action) => {
         if (jpClient() && !jpResidence()) BinaryPjax.loadPreviousUrl();
         const $container = $('#japan_cashier_container');
@@ -26,7 +24,7 @@ const CashierJP = (() => {
 
     const errorHandler = () => {
         $('.error-msg').remove();
-        const $id = $('#id123-control22598145');
+        const $id               = $('#id123-control22598145');
         const withdrawal_amount = $id.val();
 
         const showError = (message) => {
@@ -44,9 +42,10 @@ const CashierJP = (() => {
     };
 
     return {
-        errorHandler: errorHandler,
-        Deposit     : { onLoad: () => { onLoad('deposit'); } },
-        Withdraw    : { onLoad: () => { onLoad('withdraw'); } },
+        errorHandler,
+
+        Deposit : { onLoad: () => { onLoad('deposit'); } },
+        Withdraw: { onLoad: () => { onLoad('withdraw'); } },
     };
 })();
 

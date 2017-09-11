@@ -15,22 +15,31 @@ const State            = require('../../base/storage').State;
  */
 
 const StartDates = (() => {
-    'use strict';
-
     let has_now = 0;
     State.remove('is_start_dates_displayed');
 
-    const compareStartDate = (a, b) => (a.date < b.date ? -1 : (a.date > b.date ? 1 : 0));
+    const compareStartDate = (a, b) => {
+        let sort = 0;
+        if (a.date !== b.date) {
+            sort = a.date > b.date ? 1 : -1;
+        }
+        return sort;
+    };
 
     const displayStartDates = () => {
         const start_dates = Contract.startDates();
 
         if (start_dates && start_dates.list && start_dates.list.length) {
-            const target = getStartDateNode();
+            const target   = getStartDateNode();
             const fragment = document.createDocumentFragment();
-            const row = document.getElementById('date_start_row');
+            const row      = document.getElementById('date_start_row');
             let option,
-                content;
+                content,
+                first,
+                selected,
+                day,
+                $duplicated_option,
+                duplicated_length;
 
             row.style.display = 'flex';
 
@@ -39,7 +48,7 @@ const StartDates = (() => {
             }
 
             if (start_dates.has_spot) {
-                option = document.createElement('option');
+                option  = document.createElement('option');
                 content = document.createTextNode(localize('Now'));
                 option.setAttribute('value', 'now');
                 option.appendChild(content);
@@ -54,27 +63,22 @@ const StartDates = (() => {
 
             $('#time_start_row').setVisibility(default_start !== 'now');
 
-            let first,
-                selected,
-                day,
-                $duplicated_option,
-                duplicated_length;
             start_dates.list.forEach((start_date) => {
-                let a = moment.unix(start_date.open).utc();
+                let a   = moment.unix(start_date.open).utc();
                 const b = moment.unix(start_date.close).utc();
 
                 const rounding = 5 * 60 * 1000;
-                const start = moment.utc();
+                const start    = moment.utc();
 
                 if (b.isAfter(start)) {
                     if (moment(start).isAfter(moment(a))) {
                         a = start;
                     }
 
-                    a = moment(Math.ceil((+a) / rounding) * rounding).utc();
+                    a   = moment(Math.ceil((+a) / rounding) * rounding).utc();
                     day = a.format('ddd - DD MMM, YYYY');
                     $duplicated_option = $(fragment).find(`option:contains(${day})`);
-                    duplicated_length = $duplicated_option.length;
+                    duplicated_length  = $duplicated_option.length;
                     if (duplicated_length && !new RegExp(localize('Session')).test($duplicated_option.text())) {
                         $($duplicated_option[0]).text(`${$duplicated_option.text()} - ${localize('Session')} ${duplicated_length}`);
                     }
@@ -115,5 +119,5 @@ const StartDates = (() => {
 })();
 
 module.exports = {
-    StartDates: StartDates,
+    StartDates,
 };

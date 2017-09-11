@@ -5,13 +5,11 @@ const isEmptyObject  = require('./utility').isEmptyObject;
 require('url-polyfill');
 
 const Url = (() => {
-    'use strict';
-
     let location_url,
         static_host;
 
     const init = (url) => {
-        location_url = url ? getLocation(url) : window ? window.location : '';
+        location_url = url ? getLocation(url) : window.location;
     };
 
     const getLocation = url => $('<a>', { href: decodeURIComponent(url) })[0];
@@ -22,8 +20,8 @@ const Url = (() => {
 
     const params = (href) => {
         const arr_params = [];
-        const parsed = ((href ? new URL(href) : location_url).search || '').substr(1).split('&');
-        let p_l = parsed.length;
+        const parsed     = ((href ? new URL(href) : location_url).search || '').substr(1).split('&');
+        let p_l          = parsed.length;
         while (p_l--) {
             const param = parsed[p_l].split('=');
             arr_params.push(param);
@@ -34,7 +32,7 @@ const Url = (() => {
     const paramsHash = (href) => {
         const param_hash = {};
         const arr_params = params(href);
-        let param = arr_params.length;
+        let param        = arr_params.length;
         while (param--) {
             if (arr_params[param][0]) {
                 param_hash[arr_params[param][0]] = arr_params[param][1] || '';
@@ -74,18 +72,17 @@ const Url = (() => {
     const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');
 
     return {
-        init      : init,
-        reset     : reset,
-        paramsHash: paramsHash,
+        init,
+        reset,
+        paramsHash,
+        getLocation,
+        paramsHashToString,
+        urlFor,
+        urlForStatic,
+        defaultRedirectUrl,
 
-        param      : name => paramsHash()[name],
-        getLocation: getLocation,
-
-        paramsHashToString: paramsHashToString,
-        urlFor            : urlFor,
-        urlForStatic      : urlForStatic,
-        defaultRedirectUrl: defaultRedirectUrl,
-        websiteUrl        : () => 'https://www.binary.com/',
+        param     : name => paramsHash()[name],
+        websiteUrl: () => 'https://www.binary.com/',
     };
 })();
 

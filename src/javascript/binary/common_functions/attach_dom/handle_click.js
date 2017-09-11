@@ -10,5 +10,5 @@ const HandleClick = (param) => {
 };
 
 module.exports = {
-    HandleClick: HandleClick,
+    HandleClick,
 };

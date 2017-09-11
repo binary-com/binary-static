@@ -1,13 +1,11 @@
 const Platforms = (() => {
-    'use strict';
-
     let sections = [];
 
     const onLoad = () => {
         sections = ['more-tools', 'trading-platforms'];
 
         const sidebar_list_item = $('.sidebar-nav li');
-        sidebar_list_item.click(function() {
+        sidebar_list_item.click(function () {
             sidebar_list_item.removeClass('selected');
             $(this).addClass('selected');
         });
@@ -72,8 +70,8 @@ const Platforms = (() => {
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 
