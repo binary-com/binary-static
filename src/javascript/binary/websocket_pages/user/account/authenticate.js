@@ -1,5 +1,5 @@
-const Client       = require('../../../base/client');
-const BinarySocket = require('../../socket');
+const Client           = require('../../../base/client');
+const BinarySocket     = require('../../socket');
 const DocumentUploader = require('binary-document-uploader');
 const showLoadingImage = require('../../../base/utility').showLoadingImage;
 
@@ -135,7 +135,7 @@ const Authenticate = (() => {
                     const $e = $(e);
                     const id = $e.attr('id');
                     const type = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}_${id.split('_')[0]}`;
-                    const $inputs = $e.parent().parent().parent().find('input[type="text"]');
+                    const $inputs = $e.closest('.fields').find('input[type="text"]');
                     const file_obj = {
                         file: e.files[0],
                         type,
@@ -202,13 +202,13 @@ const Authenticate = (() => {
             const $error = $('.error-msg');
             const message = e.message || e.message_to_client;
             enableButton();
-            $error.removeClass('invisible').text(message);
-            setTimeout(() => { $error.empty().addClass('invisible'); }, 3000);
+            $error.setVisibility(1).text(message);
+            setTimeout(() => { $error.empty().setVisibility(0); }, 3000);
         };
 
         const showSuccess = () => {
-            $('#authentication-message > div').not('.invisible').addClass('invisible');
-            $('#success-message').removeClass('invisible');
+            $('#authentication-message > div').not('.invisible').setVisibility(0);
+            $('#success-message').setVisibility(1);
         };
     };
 

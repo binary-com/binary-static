@@ -277,13 +277,13 @@ const Header = (() => {
 
             const validations = {
                 authenticate   : () => +get_account_status.prompt_client_to_authenticate,
-                under_review   : () => get_account_status.status.indexOf('under_review') !== -1,
                 currency       : () => !Client.get('currency'),
                 financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence      : () => !Client.get('residence'),
                 risk           : () => riskAssessment(),
                 tax            : () => Client.shouldCompleteTax(),
                 tnc            : () => Client.shouldAcceptTnc(),
+                under_review   : () => get_account_status.status.indexOf('under_review') !== -1,
                 unwelcome      : () => /unwelcome|(cashier|withdrawal)_locked/.test(status),
             };
 
