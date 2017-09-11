@@ -3,11 +3,10 @@ const MetaTraderUI     = require('./metatrader.ui');
 const BinarySocket     = require('../../socket');
 const Client           = require('../../../base/client');
 const localize         = require('../../../base/localize').localize;
+const getPropertyValue = require('../../../base/utility').getPropertyValue;
 const Validation       = require('../../../common_functions/form_validation');
 
 const MetaTrader = (() => {
-    'use strict';
-
     const types_info   = MetaTraderConfig.types_info;
     const actions_info = MetaTraderConfig.actions_info;
     const fields       = MetaTraderConfig.fields;
@@ -32,9 +31,9 @@ const MetaTrader = (() => {
         let is_eligible = false;
         if (!landing_company_response.error) {
             const lc              = landing_company_response.landing_company;
-            has_financial_company = lc.hasOwnProperty('mt_financial_company') && lc.mt_financial_company.shortcode === 'vanuatu';
-            has_gaming_company    = lc.hasOwnProperty('mt_gaming_company') && lc.mt_gaming_company.shortcode === 'costarica';
-            if (lc.hasOwnProperty('financial_company') && lc.financial_company.shortcode === 'costarica' &&
+            has_financial_company = getPropertyValue(lc, ['mt_financial_company', 'shortcode']) === 'vanuatu';
+            has_gaming_company    = getPropertyValue(lc, ['mt_gaming_company', 'shortcode']) === 'costarica';
+            if (getPropertyValue(lc, ['financial_company', 'shortcode']) === 'costarica' &&
                 (has_financial_company || has_gaming_company)) {
                 is_eligible = true;
             }
@@ -87,7 +86,7 @@ const MetaTrader = (() => {
     const getAccountDetails = (login, acc_type) => {
         BinarySocket.send({
             mt5_get_settings: 1,
-            login           : login,
+            login,
         }).then((response) => {
             if (response.mt5_get_settings) {
                 types_info[acc_type].account_info = response.mt5_get_settings;
@@ -119,8 +118,8 @@ const MetaTrader = (() => {
         e.preventDefault();
         MetaTraderUI.hideFormMessage();
         const $btn_submit = $(e.target);
-        const acc_type = $btn_submit.attr('acc_type');
-        const action = $btn_submit.attr('action');
+        const acc_type    = $btn_submit.attr('acc_type');
+        const action      = $btn_submit.attr('action');
         if (Validation.validate(`#frm_${action}`)) {
             MetaTraderUI.disableButton();
             // further validations before submit (password_check)
@@ -139,7 +138,7 @@ const MetaTrader = (() => {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : types_info[acc_type].account_info.login;
                         if (!types_info[acc_type].account_info) {
-                            types_info[acc_type].account_info = { login: login };
+                            types_info[acc_type].account_info = { login };
                         }
                         MetaTraderUI.loadAction(null, acc_type);
                         MetaTraderUI.displayMainMessage(actions_info[action].success_msg(response));
@@ -155,8 +154,8 @@ const MetaTrader = (() => {
     };
 
     return {
-        onLoad    : onLoad,
-        isEligible: isEligible,
+        onLoad,
+        isEligible,
     };
 })();
 

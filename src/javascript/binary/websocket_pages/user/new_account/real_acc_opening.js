@@ -4,8 +4,6 @@ const AccountOpening = require('../../../common_functions/account_opening');
 const FormManager    = require('../../../common_functions/form_manager');
 
 const RealAccOpening = (() => {
-    'use strict';
-
 
     const onLoad = () => {
         if (Client.get('residence')) {
@@ -27,7 +25,7 @@ const RealAccOpening = (() => {
     const handleResponse = response => (AccountOpening.handleNewAccount(response, response.msg_type));
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

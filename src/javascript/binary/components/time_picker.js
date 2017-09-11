@@ -5,8 +5,6 @@ const checkInput = require('../common_functions/common_functions').checkInput;
 const padLeft    = require('../common_functions/string_util').padLeft;
 
 const TimePicker = (() => {
-    'use strict';
-
     const time_pickers = {};
 
     const init = (options) => {
@@ -21,7 +19,7 @@ const TimePicker = (() => {
 
     const create = (selector) => {
         let $this;
-        $(selector).keydown(function(e) {
+        $(selector).keydown(function (e) {
             if (e.which === 13) {
                 $this = $(this);
                 e.preventDefault();
@@ -55,31 +53,31 @@ const TimePicker = (() => {
         }
 
         if (options.maxTime) {
-            options.maxTime = moment.utc(options.maxTime);
-            let minute = parseInt(options.maxTime.minute());
-            let hour = parseInt(options.maxTime.hour());
-            hour = minute < 5 ? hour - 1 : hour;
-            minute = minute < 5 ? 55 : minute - 5;
-            obj_config.maxTime = { hour: hour, minute: minute };
+            options.maxTime    = moment.utc(options.maxTime);
+            let minute         = parseInt(options.maxTime.minute());
+            let hour           = parseInt(options.maxTime.hour());
+            hour               = minute < 5 ? hour - 1 : hour;
+            minute             = minute < 5 ? 55 : minute - 5;
+            obj_config.maxTime = { hour, minute };
         }
 
         let $this;
-        obj_config.onSelect = function(time) {
-            $this = $(this);
+        obj_config.onSelect = function (time) {
+            $this               = $(this);
             const this_selector = `#${$this.attr('id')}`;
-            const old_value = $(this_selector).attr('data-value');
+            const old_value     = $(this_selector).attr('data-value');
 
             if (old_value && old_value === time) return false;
 
             let new_time;
             if (!time.match(/^(:?[0-3]\d):(:?[0-5]\d):(:?[0-5]\d)$/)) {
-                time_now = timeNow();
+                time_now      = timeNow();
                 const invalid = time.match(/([a-z0-9]*):([a-z0-9]*):?([a-z0-9]*)?/);
-                let hour = time_now.format('hh'),
-                    minute = time_now.format('mm'),
-                    second = time_now.format('ss');
+                let hour      = time_now.format('hh');
+                let minute    = time_now.format('mm');
+                let second    = time_now.format('ss');
 
-                if (typeof invalid[1] !== 'undefined' && isFinite(invalid[1])) hour   = formatTime(invalid[1]);
+                if (typeof invalid[1] !== 'undefined' && isFinite(invalid[1])) hour = formatTime(invalid[1]);
                 if (typeof invalid[2] !== 'undefined' && isFinite(invalid[2])) minute = formatTime(invalid[2]);
                 if (typeof invalid[3] !== 'undefined' && isFinite(invalid[3])) second = formatTime(invalid[3]);
 
@@ -108,7 +106,7 @@ const TimePicker = (() => {
     const toTime = time => [formatTime(time.hour), formatTime(time.minute), '00'].join(':');
 
     const checkWidth = (selector) => {
-        const $selector = $(selector);
+        const $selector        = $(selector);
         const time_picker_conf = time_pickers[selector].config_data;
         if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
             hide(selector);
@@ -132,7 +130,7 @@ const TimePicker = (() => {
     };
 
     return {
-        init: init,
+        init,
     };
 })();
 

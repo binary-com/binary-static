@@ -10,8 +10,6 @@ const setCurrencies        = require('../common_functions/currency').setCurrenci
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
 
 const BinarySocketGeneral = (() => {
-    'use strict';
-
     const onOpen = (is_ready) => {
         Header.hideNotification();
         if (is_ready) {
@@ -102,15 +100,15 @@ const BinarySocketGeneral = (() => {
     };
 
     const initOptions = () => ({
-        onOpen        : onOpen,
-        onMessage     : onMessage,
+        onOpen,
+        onMessage,
         notify        : Header.displayNotification,
         isLoggedIn    : Client.isLoggedIn,
         getClientValue: Client.get,
     });
 
     return {
-        initOptions: initOptions,
+        initOptions,
     };
 })();
 

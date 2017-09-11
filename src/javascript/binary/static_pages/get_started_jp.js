@@ -1,8 +1,6 @@
 const Client = require('../base/client');
 
 const GetStartedJP = (() => {
-    'use strict';
-
     let $contents,
         $sidebar_li,
         $index;
@@ -24,9 +22,9 @@ const GetStartedJP = (() => {
 
     const onLoad = () => {
         Client.activateByClientType();
-        $contents = $('.contents');
+        $contents   = $('.contents');
         $sidebar_li = $('.sidebar ul li');
-        $index = $('#index');
+        $index      = $('#index');
 
         const tab = window.location.hash;
         if (tab && tab !== '') {
@@ -39,7 +37,7 @@ const GetStartedJP = (() => {
             showSelectedTab();
         });
 
-        $sidebar_li.click(function() {
+        $sidebar_li.click(function () {
             $('.sidebar ul li').removeClass('selected');
             $(this).addClass('selected');
         });
@@ -50,8 +48,8 @@ const GetStartedJP = (() => {
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 
