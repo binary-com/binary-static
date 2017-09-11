@@ -277,7 +277,7 @@ const Header = (() => {
 
             const validations = {
                 authenticate   : () => +get_account_status.prompt_client_to_authenticate,
-                under_review   : () => ~get_account_status.status.indexOf('under_review'),
+                under_review   : () => get_account_status.status.indexOf('under_review') !== -1,
                 currency       : () => !Client.get('currency'),
                 financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence      : () => !Client.get('residence'),

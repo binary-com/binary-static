@@ -1,6 +1,6 @@
 const Client       = require('../../../base/client');
 const BinarySocket = require('../../socket');
-const upload = require('binary-document-uploader');
+const DocumentUploader = require('binary-document-uploader');
 const showLoadingImage = require('../../../base/utility').showLoadingImage;
 
 const Authenticate = (() => {
@@ -31,15 +31,15 @@ const Authenticate = (() => {
         $('.files').accordion({
             heightStyle: 'content',
             collapsible: true,
-            active: false,
+            active     : false,
         });
         // Setup Date picker
         const date = new Date();
         $('.date-picker').datepicker({
-            dateFormat: 'yy-mm-dd',
+            dateFormat : 'yy-mm-dd',
             changeMonth: true,
-            changeYear: true,
-            minDate: date,
+            changeYear : true,
+            minDate    : date,
         });
 
         // Submit button
@@ -49,7 +49,7 @@ const Authenticate = (() => {
 
         /**
          * Listens for file changes.
-         * @param {*} event 
+         * @param {*} event
          */
         const onFileSelected = (event) => {
             if (!event.target.files) return;
@@ -85,7 +85,7 @@ const Authenticate = (() => {
         const showSubmit = () => {
             let file_selected = false;
             const $ele = $('#authentication-message > div').not('.invisible');
-            $button = $ele.find('#btn_submit')
+            $button = $ele.find('#btn_submit');
             const $files = $ele.find('input[type="file"]');
 
             // Check if any files are selected or not.
@@ -152,8 +152,14 @@ const Authenticate = (() => {
 
         const processFiles = (files) => {
             const promises = [];
+            const ws = BinarySocket.get();
+            const config = {
+                connection: ws,
+            };
+            const uploader = new DocumentUploader(config);
+
             readFiles(files).then((objects) => {
-                objects.forEach(obj => promises.push(upload(obj)));
+                objects.forEach(obj => promises.push(uploader.upload(obj)));
                 Promise.all(promises)
                     .then(() => showSuccess())
                     .catch(showError);
@@ -165,17 +171,15 @@ const Authenticate = (() => {
         // Returns file promise.
         const readFiles = (files) => {
             const promises = [];
-            const ws = BinarySocket.get();
             files.forEach((f) => {
                 const fr = new FileReader();
                 const promise = new Promise((resolve, reject) => {
                     fr.onload = () => {
                         const format = (f.file.type.split('/')[1]).toUpperCase();
                         const obj = {
-                            connection: ws,
-                            filename: f.file.name,
-                            buffer: fr.result,
-                            documentType: f.type,
+                            filename      : f.file.name,
+                            buffer        : fr.result,
+                            documentType  : f.type,
                             documentFormat: format,
                         };
                         obj.documentId = f.id_number || '';
@@ -202,7 +206,7 @@ const Authenticate = (() => {
             const message = e.message || e.message_to_client;
             enableButton();
             $error.removeClass('invisible').text(message);
-            setTimeout(() => { $error.empty().addClass('invisible') }, 3000);
+            setTimeout(() => { $error.empty().addClass('invisible'); }, 3000);
         };
 
         const showSuccess = () => {
