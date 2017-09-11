@@ -138,7 +138,7 @@ const Authenticate = (() => {
                     const $inputs = $e.parent().parent().parent().find('input[type="text"]');
                     const file_obj = {
                         file: e.files[0],
-                        type: type,
+                        type,
                     };
                     if ($inputs.length) {
                         file_obj.id_number = $($inputs[0]).val();
@@ -163,9 +163,7 @@ const Authenticate = (() => {
                 Promise.all(promises)
                     .then(() => showSuccess())
                     .catch(showError);
-            }).catch((e) => {
-                console.error(e);
-            });
+            }).catch(showError);
         };
 
         // Returns file promise.
@@ -201,7 +199,6 @@ const Authenticate = (() => {
         };
 
         const showError = (e) => {
-            console.log(e);
             const $error = $('.error-msg');
             const message = e.message || e.message_to_client;
             enableButton();

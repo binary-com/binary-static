@@ -302,7 +302,6 @@ const BinarySocket = (() => {
         clearTimeouts,
         availability,
         sendBuffered      : sendBufferedRequests,
-        availability      : availability,
         get               : () => binary_socket,
         setOnDisconnect   : (onDisconnect) => { config.onDisconnect = onDisconnect; },
         removeOnDisconnect: () => { delete config.onDisconnect; },
