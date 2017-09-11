@@ -92,21 +92,17 @@ const Client = (() => {
         return account_type;
     };
 
-    const isAccountOfType = (type, loginid = current_loginid) => {
+    const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
         const this_type = getAccountType(loginid);
-        return (
+        return ((
             (type === 'virtual' && this_type === 'virtual') ||
             (type === 'real'    && this_type !== 'virtual') ||
-            type === this_type);
+            type === this_type) &&
+            only_enabled ? !get('is_disabled', loginid) : true);
     };
 
-    const hasAccount = (type, loginid, only_enabled) => (
-        isAccountOfType(type, loginid) &&
-        (only_enabled ? !get('is_disabled', loginid) : true)
-    );
-
     const getAccountOfType = (type, only_enabled) => {
-        const id = getAllLoginids().find(loginid => hasAccount(type, loginid, only_enabled));
+        const id = getAllLoginids().find(loginid => isAccountOfType(type, loginid, only_enabled));
         return id ? $.extend({ loginid: id }, get(null, id)) : {};
     };
 
@@ -121,10 +117,8 @@ const Client = (() => {
 
     const hasMultiAccountsOfType = (type, only_enabled) => {
         let number_of_accounts = 0;
-        return Object.keys(client_object).some((loginid) => {
-            if (hasAccount(type, loginid, only_enabled)) {
-                number_of_accounts += 1;
-            }
+        return getAllLoginids().some((loginid) => {
+            number_of_accounts += isAccountOfType(type, loginid, only_enabled);
             // as long as has more than one account of type, return true
             return number_of_accounts > 1;
         });
