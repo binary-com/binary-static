@@ -123,16 +123,24 @@ const AccountTransfer = (() => {
             elementTextContent(el_error, response.error.message);
             el_error.setVisibility(1);
         } else {
-            BinarySocket.send({ transfer_between_accounts: 1 }).then(data => populateReceipt(data));
+            BinarySocket.send({ transfer_between_accounts: 1 }).then(data => populateReceipt(response, data));
         }
     };
 
-    const populateReceipt = (response) => {
+    const populateReceipt = (response_submit_success, response) => {
         document.getElementById(form_id).setVisibility(0);
-        response.accounts.forEach((account, idx) => {
-            elementTextContent(document.getElementById(`loginid_${(idx + 1)}`), account.loginid);
-            elementTextContent(document.getElementById(`balance_${(idx + 1)}`), account.balance);
+
+        elementTextContent(document.getElementById('from_loginid'), client_loginid);
+        elementTextContent(document.getElementById('to_loginid'), response_submit_success.client_to_loginid);
+
+        response.accounts.forEach((account) => {
+            if (account.loginid === client_loginid) {
+                elementTextContent(document.getElementById('from_balance'), account.balance);
+            } else if (account.loginid === response_submit_success.client_to_loginid) {
+                elementTextContent(document.getElementById('to_balance'), account.balance);
+            }
         });
+
         document.getElementById('transfer_fee').setVisibility(0);
         document.getElementById('success_form').setVisibility(1);
     };
