@@ -5,8 +5,6 @@ const Validation       = require('../../../common_functions/form_validation');
 const MetaTraderConfig = require('./metatrader.config');
 
 const MetaTraderUI = (() => {
-    'use strict';
-
     let $container,
         $list_cont,
         $mt5_account,
@@ -23,8 +21,8 @@ const MetaTraderUI = (() => {
     const validations  = MetaTraderConfig.validations;
 
     const init = (submit_func) => {
-        submit = submit_func;
-        $container = $('#mt_account_management');
+        submit       = submit_func;
+        $container   = $('#mt_account_management');
         $mt5_account = $container.find('#mt5_account');
         $list_cont   = $container.find('#accounts_list');
         $list        = $list_cont.find('> div');
@@ -71,7 +69,7 @@ const MetaTraderUI = (() => {
                 hideList();
             }
         });
-        $list.off('click').on('click', '.acc-name', function() {
+        $list.off('click').on('click', '.acc-name', function () {
             if (!$(this).hasClass('disabled')) {
                 setAccountType($(this).attr('value'), true);
             }
@@ -117,11 +115,13 @@ const MetaTraderUI = (() => {
         if (types_info[acc_type].account_info) {
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
-                const key  = $(this).attr('data');
-                const info = types_info[acc_type].account_info[key];
-                $(this).html(
-                    key === 'balance' ? formatMoney('USD', +info) :
-                        key === 'leverage' ? `1:${info}` : info);
+                const key     = $(this).attr('data');
+                const info    = types_info[acc_type].account_info[key];
+                const mapping = {
+                    balance : () => formatMoney('USD', +info),
+                    leverage: () => `1:${info}`,
+                };
+                $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
             $detail.find('.act_deposit, .act_withdrawal').setVisibility(!types_info[acc_type].is_demo);
             $detail.find('.has-account').setVisibility(1);
@@ -139,11 +139,13 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const defaultAction = acc_type => (
-        types_info[acc_type].account_info ?
-            (types_info[acc_type].is_demo ? 'password_change' : 'deposit') :
-            'new_account'
-    );
+    const defaultAction = acc_type => {
+        let type = 'new_account';
+        if (types_info[acc_type].account_info) {
+            type = types_info[acc_type].is_demo ? 'password_change' : 'deposit';
+        }
+        return type;
+    };
 
     const loadAction = (action, acc_type) => {
         $detail.find(`.acc-actions [class*=act_${action || defaultAction(acc_type)}]`).click();
@@ -156,7 +158,7 @@ const MetaTraderUI = (() => {
         }
 
         const acc_type = Client.get('mt5_account');
-        const action = $target.attr('class').split(' ').find(c => /^act_/.test(c)).replace('act_', '');
+        const action   = $target.attr('class').split(' ').find(c => /^act_/.test(c)).replace('act_', '');
 
         // set active, update title
         $detail.find('[class*="act_"]').removeClass('selected');
@@ -178,7 +180,7 @@ const MetaTraderUI = (() => {
             $form = $templates.find(`#frm_${action}`).clone();
             const formValues = actions_info[action].formValues;
             if (formValues) formValues($form, acc_type, action);
-            $form.find('#btn_submit').attr({ acc_type: acc_type, action: action }).on('click dblclick', submit);
+            $form.find('#btn_submit').attr({ acc_type, action }).on('click dblclick', submit);
 
             // append form
             $action.find('#frm_action').html($form).setVisibility(1).end()
@@ -229,17 +231,18 @@ const MetaTraderUI = (() => {
     };
 
     return {
-        init              : init,
-        $form             : () => $form,
-        loadAction        : loadAction,
-        updateAccount     : updateAccount,
-        postValidate      : postValidate,
-        hideFormMessage   : hideFormMessage,
-        displayFormMessage: displayFormMessage,
-        displayMainMessage: displayMainMessage,
-        displayPageError  : displayPageError,
-        disableButton     : disableButton,
-        enableButton      : enableButton,
+        init,
+        loadAction,
+        updateAccount,
+        postValidate,
+        hideFormMessage,
+        displayFormMessage,
+        displayMainMessage,
+        displayPageError,
+        disableButton,
+        enableButton,
+
+        $form: () => $form,
     };
 })();
 

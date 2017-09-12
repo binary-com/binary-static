@@ -13,7 +13,7 @@ const generateBirthDate = () => {
     });
     $(date_of_birth)
         .attr('data-value', toISOFormat(moment()))
-        .change(function() {
+        .change(function () {
             return dateValueChanged(this, 'date');
         })
         .val('');

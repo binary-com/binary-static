@@ -9,8 +9,6 @@ const Currency = require('../../common_functions/currency');
  * and display them
  */
 const displayCurrencies = () => {
-    'use strict';
-
     const $currency = $('#currency');
 
     if (!$currency.length) {

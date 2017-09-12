@@ -7,11 +7,9 @@ require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
 
 const RealityCheckUI = (() => {
-    'use strict';
-
-    const summary_url = urlFor('user/reality_check_summary');
+    const summary_url   = urlFor('user/reality_check_summary');
     const frequency_url = urlFor('user/reality_check_frequency');
-    const form = {
+    const form          = {
         selector            : '#frm_reality_check',
         num_reality_duration: '#num_reality_duration',
     };
@@ -65,7 +63,6 @@ const RealityCheckUI = (() => {
         const char = String.fromCharCode(ev.which);
         if ((!/[0-9]/.test(char) && [8, 37, 39].indexOf(ev.keyCode) < 0) ||
             /['%]/.test(char)) { // similarity to arrows key code in some browsers
-            ev.returnValue = false;
             ev.preventDefault();
         }
     };
@@ -129,11 +126,12 @@ const RealityCheckUI = (() => {
     };
 
     return {
+        closePopUp,
+        startSummaryTimer,
+        getSummaryAsync,
+        shouldShowPopup,
+
         renderFrequencyPopUp: () => { getAjax(); },
-        closePopUp          : closePopUp,
-        startSummaryTimer   : startSummaryTimer,
-        getSummaryAsync     : getSummaryAsync,
-        shouldShowPopup     : shouldShowPopup,
         getRealityTimeout   : () => reality_timeout,
     };
 })();

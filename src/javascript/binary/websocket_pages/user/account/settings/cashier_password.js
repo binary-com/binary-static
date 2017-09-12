@@ -4,11 +4,11 @@ const localize     = require('../../../../base/localize').localize;
 const FormManager  = require('../../../../common_functions/form_manager');
 
 const CashierPassword = (() => {
-    'use strict';
-
-    let $form,
-        should_redirect = false;
     const form_id = '#frm_cashier_password';
+
+    let should_redirect = false;
+
+    let $form;
 
     const onLoad = () => {
         $form = $(form_id);
@@ -55,7 +55,7 @@ const CashierPassword = (() => {
     };
 
     const handleResponse = (response) => {
-        const $form_error = $('#form_error');
+        const $form_error   = $('#form_error');
         const $form_message = $('#form_message');
         $form_message.text('');
         $form_error.setVisibility(0);
@@ -80,7 +80,7 @@ const CashierPassword = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
 
         setShouldRedirect: (bool) => { should_redirect = bool; },
     };

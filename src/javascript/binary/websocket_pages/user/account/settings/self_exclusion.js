@@ -13,8 +13,6 @@ const DatePicker          = require('../../../../components/date_picker');
 const TimePicker          = require('../../../../components/time_picker');
 
 const SelfExclusion = (() => {
-    'use strict';
-
     let $form,
         fields,
         self_exclusion_data,
@@ -30,7 +28,7 @@ const SelfExclusion = (() => {
         $form = $(form_id);
 
         fields = {};
-        $form.find('input').each(function() {
+        $form.find('input').each(function () {
             fields[this.name] = '';
         });
 
@@ -76,12 +74,12 @@ const SelfExclusion = (() => {
     const bindValidation = () => {
         const validations = [{ request_field: 'set_self_exclusion', value: 1 }];
 
-        $form.find('input[type="text"]').each(function() {
+        $form.find('input[type="text"]').each(function () {
             const id = $(this).attr('id');
 
-            if (/(timeout_until|exclude_until)/.test(id)) return;
+            if (/timeout_until|exclude_until/.test(id)) return;
 
-            const checks = [];
+            const checks  = [];
             const options = { min: 0 };
             if (id in self_exclusion_data) {
                 checks.push('req');
@@ -89,8 +87,8 @@ const SelfExclusion = (() => {
             } else {
                 options.allow_empty = true;
             }
-            if (!/(session_duration_limit|max_open_bets)/.test(id)) {
-                options.type = 'float';
+            if (!/session_duration_limit|max_open_bets/.test(id)) {
+                options.type     = 'float';
                 options.decimals = `0, ${Currency.getDecimalPlaces(Client.get('currency'))}`;
             }
             checks.push(['number', options]);
@@ -114,7 +112,7 @@ const SelfExclusion = (() => {
                 exclude_if_empty: 1,
                 value           : getTimeout,
                 validations     : [
-                    ['custom', { func: () => ($(timeout_time_id).val() ? $(timeout_date_id).val().length : true), message: 'This field is required.' }],
+                    ['custom', { func: () => ($(timeout_time_id).val() ? $(timeout_date_id).val().length : true),                         message: 'This field is required.' }],
                     ['custom', { func: value => !value.length || getMoment(timeout_date_id).isAfter(moment().subtract(1, 'days'), 'day'), message: 'Time out must be after today.' }],
                     ['custom', { func: value => !value.length || getMoment(timeout_date_id).isBefore(moment().add(6, 'weeks')),           message: 'Time out cannot be more than 6 weeks.' }],
                 ],
@@ -149,11 +147,11 @@ const SelfExclusion = (() => {
     };
 
     const validSessionDuration = value => (+value <= moment.duration(6, 'weeks').as('minutes'));
-    const validTime            = value => !value.length || moment(value,           'HH:mm',      true).isValid();
+    const validTime            = value => !value.length || moment(value, 'HH:mm', true).isValid();
 
-    const getDate = (elm_id) => {
+    const getDate    = (elm_id) => {
         const $elm = $(elm_id);
-        return $elm.attr('data-value') ? $elm.attr('data-value') : !isNaN(new Date($elm.val()).getTime()) ? $elm.val() : '';
+        return $elm.attr('data-value') || (!isNaN(new Date($elm.val()).getTime()) ? $elm.val() : '');
     };
     const getMoment  = elm_id => moment(new Date(getDate(elm_id)));
     const getTimeout = () => (getDate(timeout_date_id) ? (moment(new Date(`${getDate(timeout_date_id)}T${$(timeout_time_id).val()}`)).valueOf() / 1000).toFixed(0) : '');
@@ -174,7 +172,7 @@ const SelfExclusion = (() => {
             maxDate : 5 * 365, // 5 years
         });
 
-        $(`${timeout_date_id}, ${exclude_until_id}`).change(function() {
+        $(`${timeout_date_id}, ${exclude_until_id}`).change(function () {
             dateValueChanged(this, 'date');
         });
     };
@@ -198,7 +196,7 @@ const SelfExclusion = (() => {
     const setExclusionResponse = (response) => {
         if (response.error) {
             const error_msg = response.error.message;
-            let error_fld = response.error.field;
+            let error_fld   = response.error.field;
             if (error_fld) {
                 error_fld = /^timeout_until$/.test(error_fld) ? 'timeout_until_date' : error_fld;
                 $(`#${error_fld}`).siblings('.error-msg').setVisibility(1).html(error_msg);
@@ -233,7 +231,7 @@ const SelfExclusion = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 
