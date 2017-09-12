@@ -1,20 +1,20 @@
-const Barriers             = require('./barriers');
-const Barriers_Beta        = require('./beta/barriers');
-const DigitInfo_Beta       = require('./beta/charts/digit_info');
-const Purchase_Beta        = require('./beta/purchase');
-const TickDisplay_Beta     = require('./beta/tick_trade');
-const updateWarmChart      = require('./common').updateWarmChart;
-const DigitInfo            = require('./charts/digit_info');
-const Defaults             = require('./defaults');
-const getActiveTab         = require('./get_active_tab').getActiveTab;
-const getActiveTab_Beta    = require('./get_active_tab').getActiveTab_Beta;
-const Purchase             = require('./purchase');
-const Tick                 = require('./tick');
-const TickDisplay          = require('./tick_trade');
-const MBDefaults           = require('../mb_trade/mb_defaults');
-const MBTick               = require('../mb_trade/mb_tick');
-const BinarySocket         = require('../socket');
-const State                = require('../../base/storage').State;
+const Barriers          = require('./barriers');
+const Barriers_Beta     = require('./beta/barriers');
+const DigitInfo_Beta    = require('./beta/charts/digit_info');
+const Purchase_Beta     = require('./beta/purchase');
+const TickDisplay_Beta  = require('./beta/tick_trade');
+const updateWarmChart   = require('./common').updateWarmChart;
+const DigitInfo         = require('./charts/digit_info');
+const Defaults          = require('./defaults');
+const getActiveTab      = require('./get_active_tab').getActiveTab;
+const getActiveTab_Beta = require('./get_active_tab').getActiveTab_Beta;
+const Purchase          = require('./purchase');
+const Tick              = require('./tick');
+const TickDisplay       = require('./tick_trade');
+const MBDefaults        = require('../mb_trade/mb_defaults');
+const MBTick            = require('../mb_trade/mb_tick');
+const BinarySocket      = require('../socket');
+const State             = require('../../base/storage').State;
 
 const GetTicks = (() => {
     let underlying;
@@ -22,7 +22,7 @@ const GetTicks = (() => {
     const request = (symbol, req, callback) => {
         underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
         if (underlying && req && callback && (underlying !== req.ticks_history || !req.subscribe)) {
-            BinarySocket.send(req, { callback: callback });
+            BinarySocket.send(req, { callback });
         } else {
             const sendRequest = () => {
                 BinarySocket.send(req || {
@@ -34,32 +34,33 @@ const GetTicks = (() => {
                 }, {
                     callback: (response) => {
                         const type = response.msg_type;
-                        const is_digit = getActiveTab() === 'tab_last_digit';
-                        const is_digit_beta = getActiveTab_Beta() === 'tab_last_digit';
+
                         if (typeof callback === 'function') {
                             callback(response);
                         }
+
                         if (State.get('is_mb_trading')) {
                             MBTick.processTickStream(response);
                             return;
                         }
+
                         if (type === 'tick') {
                             if (State.get('is_trading')) {
                                 processTick(response);
-                                if (is_digit) {
+                                if (getActiveTab() === 'tab_last_digit') {
                                     DigitInfo.updateChart(response);
                                 }
                             } else if (State.get('is_beta_trading')) {
                                 processTick_Beta(response);
-                                if (is_digit_beta) {
+                                if (getActiveTab_Beta() === 'tab_last_digit') {
                                     DigitInfo_Beta.updateChart(response);
                                 }
                             }
                         } else if (type === 'history') {
                             processHistory(response);
-                            if (is_digit) {
+                            if (getActiveTab() === 'tab_last_digit') {
                                 DigitInfo.showChart(response.echo_req.ticks_history, response.history.prices);
-                            } else if (is_digit_beta) {
+                            } else if (getActiveTab_Beta() === 'tab_last_digit') {
                                 DigitInfo_Beta.showChart(response.echo_req.ticks_history, response.history.prices);
                             }
                         }
@@ -68,7 +69,7 @@ const GetTicks = (() => {
             };
 
             if (!req || req.subscribe) {
-                const forget_tick = BinarySocket.send({ forget_all: 'ticks' });
+                const forget_tick   = BinarySocket.send({ forget_all: 'ticks' });
                 const forget_candle = BinarySocket.send({ forget_all: 'candles' });
                 Promise.all([forget_tick, forget_candle]).then(() => {
                     sendRequest();
@@ -124,18 +125,8 @@ const GetTicks = (() => {
         }
     };
 
-    const populateDigits = () => {
-        const tick = $('#tick_count').val() || 100;
-        request('', {
-            ticks_history: underlying,
-            count        : tick.toString(),
-            end          : 'latest',
-        });
-    };
-
     return {
-        request       : request,
-        populateDigits: populateDigits,
+        request,
     };
 })();
 

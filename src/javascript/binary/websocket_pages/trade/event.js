@@ -31,23 +31,23 @@ const TimePicker            = require('../../components/time_picker');
  *
  */
 const TradingEvents = (() => {
-    'use strict';
-
     const initiate = () => {
         const attachTimePicker = (selector, checkEndTime) => {
             let minTime = window.time || moment.utc();
             let maxTime;
             if ($date_start && $date_start.val()) {
-                const minMaxTime = getMinMaxTime($date_start, minTime);
+                const date_start_val = $date_start.val();
+                const minMaxTime     = getMinMaxTime($date_start, minTime);
+
                 minTime = minMaxTime.minTime;
                 maxTime = minMaxTime.maxTime;
-                const date_start_val = $date_start.val();
+
                 // if date_start is not 'now'
                 if (checkEndTime && !Durations.isNow(date_start_val)) {
-                    const $expiry_date = $('#expiry_date');
-                    const endTime = moment($expiry_date.attr('data-value'));
+                    const $expiry_date   = $('#expiry_date');
+                    const endTime        = moment($expiry_date.attr('data-value'));
                     const start_time_val = $time_start.val().split(':');
-                    const compare = isNaN(+date_start_val) ? window.time : moment(+date_start_val * 1000);
+                    const compare        = isNaN(+date_start_val) ? window.time : moment(+date_start_val * 1000);
                     // if expiry time is one day after start time, minTime can be 0
                     // but maxTime should be 24 hours after start time, so exact value of start time
                     if (endTime.isAfter(compare.format('YYYY-MM-DD HH:mm'), 'day')) {
@@ -60,9 +60,9 @@ const TradingEvents = (() => {
                 }
             }
             const initObj = {
-                selector: selector,
-                minTime : minTime,
-                maxTime : maxTime || null,
+                selector,
+                minTime,
+                maxTime: maxTime || null,
             };
             TimePicker.init(initObj);
         };
@@ -141,12 +141,6 @@ const TradingEvents = (() => {
                     // get ticks for current underlying
                     GetTicks.request(underlying);
                     commonTrading.displayTooltip(Defaults.get('market'), underlying);
-
-                    // sync digits_underlying select dropdown with underlying
-                    const underlyingText = $('#underlying :selected').text();
-                    $('#digit_info_underlying').text(underlyingText);
-                    $('#digit_underlying').val(underlying).change();
-                    GetTicks.populateDigits();
                 }
             });
         }
@@ -171,7 +165,7 @@ const TradingEvents = (() => {
             commonTrading.submitForm(document.getElementById('websocket_form'));
         };
         const duration_amount_element = document.getElementById('duration_amount');
-        let input_event_triggered = false;          // For triggering one of the two events.
+        let input_event_triggered     = false;          // For triggering one of the two events.
         if (duration_amount_element) {
             duration_amount_element.addEventListener('keypress', onlyNumericOnKeypress);
             // jquery needed for datepicker
@@ -228,7 +222,7 @@ const TradingEvents = (() => {
         }
 
         const end_time_element = document.getElementById('expiry_time');
-        const $expiry_time = $('#expiry_time');
+        const $expiry_time     = $('#expiry_time');
         if (end_time_element) {
             /*
              * attach datepicker and timepicker to end time durations
@@ -237,7 +231,7 @@ const TradingEvents = (() => {
             attachTimePicker('#expiry_time');
             $expiry_time
                 .on('focus click', () => { attachTimePicker('#expiry_time', 1); })
-                .on('change input blur', function() {
+                .on('change input blur', function () {
                     if (!dateValueChanged(this, 'time')) {
                         return false;
                     }
@@ -266,13 +260,13 @@ const TradingEvents = (() => {
         }
 
         let timepicker_initialized = false;
-        const initTimePicker = () => {
+        const initTimePicker       = () => {
             if (timepicker_initialized) return;
             timepicker_initialized = true;
             attachTimePicker('#time_start');
             $time_start
                 .on('focus click', () => { attachTimePicker('#time_start'); })
-                .on('change input blur', function() {
+                .on('change input blur', function () {
                     if (!dateValueChanged(this, 'time')) {
                         return false;
                     }
@@ -300,8 +294,8 @@ const TradingEvents = (() => {
         }
 
         const time_start_element = document.getElementById('time_start');
-        const $date_start = $('#date_start');
-        const $time_start = $('#time_start');
+        const $date_start        = $('#date_start');
+        const $time_start        = $('#time_start');
         if (time_start_element && date_start_element.value !== 'now') {
             initTimePicker();
         }
@@ -326,7 +320,7 @@ const TradingEvents = (() => {
         if (submarket_element) {
             submarket_element.addEventListener('change', (e) => {
                 if (e.target) {
-                    const elem = document.getElementById('underlying');
+                    const elem        = document.getElementById('underlying');
                     const underlyings = elem.children;
 
                     for (let i = 0, len = underlyings.length; i < len; i++) {
@@ -359,16 +353,16 @@ const TradingEvents = (() => {
         /*
          * attach event to purchase buttons to buy the current contract
          */
-        $('.purchase_button').on('click dblclick', function() {
+        $('.purchase_button').on('click dblclick', function () {
             if (!isVisible(document.getElementById('confirmation_message_container'))) {
                 const id        = this.getAttribute('data-purchase-id');
                 const ask_price = this.getAttribute('data-ask-price');
 
                 const params = { buy: id, price: ask_price, passthrough: {} };
-                Object.keys(this.attributes).forEach(function(attr) {
+                Object.keys(this.attributes).forEach(function (attr) {
                     if (attr && this.attributes[attr] && this.attributes[attr].name &&
-                            !/data\-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
-                        const m = this.attributes[attr].name.match(/data\-(.+)/);
+                        !/data-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
+                        const m = this.attributes[attr].name.match(/data-(.+)/);
 
                         if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
                             params.passthrough[m[1]] = this.attributes[attr].value;
@@ -404,7 +398,7 @@ const TradingEvents = (() => {
         const barrier_element = document.getElementById('barrier');
         if (barrier_element) {
             $('#barrier')
-                .on('keypress', (ev) =>  { onlyNumericOnKeypress(ev, [43, 45, 46]); })
+                .on('keypress', (ev) => { onlyNumericOnKeypress(ev, [43, 45, 46]); })
                 .on('input', commonTrading.debounce((e) => {
                     Barriers.validateBarrier();
                     Defaults.set('barrier', e.target.value);

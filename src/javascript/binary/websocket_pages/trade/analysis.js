@@ -1,12 +1,12 @@
-const showChart        = require('./charts/webtrader_chart').showChart;
-const Defaults         = require('./defaults');
-const getActiveTab     = require('./get_active_tab').getActiveTab;
-const GetTicks         = require('./get_ticks');
-const MBDefaults       = require('../mb_trade/mb_defaults');
-const getLanguage      = require('../../base/language').get;
-const State            = require('../../base/storage').State;
-const Url              = require('../../base/url');
-const JapanPortfolio   = require('../../../binary_japan/trade_japan/portfolio');
+const showChart      = require('./charts/webtrader_chart').showChart;
+const Defaults       = require('./defaults');
+const getActiveTab   = require('./get_active_tab').getActiveTab;
+const GetTicks       = require('./get_ticks');
+const MBDefaults     = require('../mb_trade/mb_defaults');
+const getLanguage    = require('../../base/language').get;
+const State          = require('../../base/storage').State;
+const Url            = require('../../base/url');
+const JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -21,8 +21,6 @@ const JapanPortfolio   = require('../../../binary_japan/trade_japan/portfolio');
  */
 
 const TradingAnalysis = (() => {
-    'use strict';
-
     const hidden_class = 'invisible';
     let form_name;
 
@@ -30,10 +28,10 @@ const TradingAnalysis = (() => {
         form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
 
         const map_obj = { matchdiff: 'digits', callput: 'higherlower' };
-        const regex = new RegExp(Object.keys(map_obj).join('|'), 'gi');
-        form_name = form_name.replace(regex, matched => map_obj[matched]);
+        const regex   = new RegExp(Object.keys(map_obj).join('|'), 'gi');
+        form_name     = form_name.replace(regex, matched => map_obj[matched]);
 
-        $('#tab_last_digit').setVisibility(/(digits|overunder|evenodd)/.test(form_name));
+        $('#tab_last_digit').setVisibility(/digits|overunder|evenodd/.test(form_name));
         sessionStorage.setItem('currentAnalysisTab', getActiveTab());
         loadAnalysisTab();
     };
@@ -75,7 +73,13 @@ const TradingAnalysis = (() => {
             if (current_tab === 'tab_graph') {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
-                GetTicks.populateDigits();
+                const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
+                const tick       = $('#tick_count').val() || 100;
+                GetTicks.request('', {
+                    ticks_history: underlying,
+                    count        : tick.toString(),
+                    end          : 'latest',
+                });
             } else if (current_tab === 'tab_explanation') {
                 showExplanation();
             }
@@ -86,13 +90,13 @@ const TradingAnalysis = (() => {
      * function to toggle the active element for analysis menu
      */
     const toggleActiveAnalysisTabs = () => {
-        const current_tab = getActiveTab();
+        const current_tab        = getActiveTab();
         const analysis_container = document.getElementById('bet_bottom_content');
 
         if (analysis_container) {
-            const child_elements = analysis_container.children;
+            const child_elements      = analysis_container.children;
             const current_tab_element = document.getElementById(`${current_tab}-content`);
-            const classes = current_tab_element.classList;
+            const classes             = current_tab_element.classList;
 
             for (let i = 0, len = child_elements.length; i < len; i++) {
                 child_elements[i].classList.remove('selectedTab');
@@ -157,8 +161,8 @@ const TradingAnalysis = (() => {
     };
 
     return {
-        request             : requestTradeAnalysis,
-        bindAnalysisTabEvent: bindAnalysisTabEvent,
+        bindAnalysisTabEvent,
+        request: requestTradeAnalysis,
     };
 })();
 
