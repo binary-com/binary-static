@@ -73,13 +73,7 @@ const TradingAnalysis = (() => {
             if (current_tab === 'tab_graph') {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
-                const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
-                const tick       = $('#tick_count').val() || 100;
-                GetTicks.request('', {
-                    ticks_history: underlying,
-                    count        : tick.toString(),
-                    end          : 'latest',
-                });
+                GetTicks.populateDigits();
             } else if (current_tab === 'tab_explanation') {
                 showExplanation();
             }
