@@ -1,5 +1,6 @@
 const BinarySocket       = require('../socket');
 const Client             = require('../../base/client');
+const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
 const isCryptocurrency   = require('../../common_functions/currency').isCryptocurrency;
 const FormManager        = require('../../common_functions/form_manager');
@@ -17,7 +18,8 @@ const AccountTransfer = (() => {
     let el_transfer_from,
         el_transfer_to,
         client_loginid,
-        client_currency;
+        client_currency,
+        client_balance;
 
     const populateAccounts = (accounts) => {
         client_loginid  = Client.get('loginid');
@@ -61,8 +63,10 @@ const AccountTransfer = (() => {
             const label = document.createElement('label');
             label.appendChild(document.createTextNode(fragment_transfer_to.innerText));
             label.setAttribute('data-value', fragment_transfer_to.innerText);
+            label.id = 'transfer_to';
 
             el_transfer_to.parentNode.replaceChild(label, el_transfer_to);
+            el_transfer_to = document.getElementById('transfer_to');
         }
 
         showForm();
@@ -99,7 +103,7 @@ const AccountTransfer = (() => {
         document.getElementById(form_id).setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: ['req', ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: Client.get('balance'), custom_message: 'This amount exceeds your withdrawal limit.' }]] },
+            { selector: '#amount', validations: ['req', ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: client_balance, custom_message: 'This amount exceeds your withdrawal limit.' }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -129,16 +133,18 @@ const AccountTransfer = (() => {
             elementTextContent(document.getElementById(`loginid_${(idx + 1)}`), account.loginid);
             elementTextContent(document.getElementById(`balance_${(idx + 1)}`), account.balance);
         });
+        document.getElementById('transfer_fee').setVisibility(0);
         document.getElementById('success_form').setVisibility(1);
     };
 
     const onLoad = () => {
-        BinarySocket.wait('balance').then(() => {
+        BinarySocket.wait('balance').then((response) => {
+            client_balance = getPropertyValue(response, ['balance', 'balance']);
             const error_element_to_show = [messages.parent];
             if (!Client.hasMultiAccountsOfType('real', true)) {
                 error_element_to_show.push(messages.error);
             }
-            if (!Client.get('balance') || +Client.get('balance') === 0) {
+            if (!client_balance || +client_balance === 0) {
                 error_element_to_show.push(messages.deposit);
             }
             if (error_element_to_show.length > 1) {
