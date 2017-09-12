@@ -88,7 +88,7 @@ const Validation = (() => {
     const validPassword     = value => /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value);
     const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(value);
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><|]+/.test(value);
-    const validAddress      = value => !/[`~!$%^&*_=+\[}{\]\\"\?><|]+/.test(value);
+    const validAddress      = value => !/[`~!#$%^&*)(_=+\[}{\]\\";:\?><|]+/.test(value);
     const validPostCode     = value => /^[a-zA-Z\d-\s]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
