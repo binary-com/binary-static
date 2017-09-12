@@ -1,18 +1,18 @@
-const BinaryPjax  = require('../../base/binary_pjax');
 const localize    = require('../../base/localize').localize;
 const FormManager = require('../../common_functions/form_manager');
 
 const LostPassword = (() => {
+    const form_id = '#frm_lost_password';
+
     const responseHandler = (response) => {
         if (response.verify_email) {
-            BinaryPjax.load('user/reset_passwordws');
+            $(form_id).html($('<div/>', { class: 'notice-msg', text: localize('Please check your email to complete the process.') }));
         } else if (response.error) {
             $('#form_error').setVisibility(1).text(localize(response.error.message));
         }
     };
 
     const onLoad = () => {
-        const form_id = '#frm_lost_password';
         FormManager.init(form_id, [
             { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
             { request_field: 'type', value: 'reset_password' },

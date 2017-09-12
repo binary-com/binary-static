@@ -1,4 +1,5 @@
 const Validation       = require('./form_validation');
+const urlParam         = require('../base/url').param;
 const isEmptyObject    = require('../base/utility').isEmptyObject;
 const showLoadingImage = require('../base/utility').showLoadingImage;
 const BinarySocket     = require('../websocket_pages/socket');
@@ -6,7 +7,7 @@ const BinarySocket     = require('../websocket_pages/socket');
 const FormManager = (() => {
     const forms = {};
 
-    const initForm = (form_selector, fields) => {
+    const initForm = (form_selector, fields, needs_token) => {
         const $form = $(`${form_selector}:visible`);
         const $btn  = $form.find('button[type="submit"]');
         if ($form.length) {
@@ -15,6 +16,10 @@ const FormManager = (() => {
                 can_submit : true,
             };
             if (Array.isArray(fields) && fields.length) {
+                if (needs_token) {
+                    // eslint-disable-next-line no-param-reassign
+                    fields = fields.concat({ request_field: 'verification_code', value: urlParam('token') });
+                }
                 forms[form_selector].fields = fields;
 
                 fields.forEach((field) => {
@@ -29,7 +34,7 @@ const FormManager = (() => {
         }
         // handle firefox
         $btn.removeAttr('disabled');
-        Validation.init(form_selector, fields);
+        Validation.init(form_selector, fields, needs_token);
     };
 
     const getFormData = (form_selector) => {
