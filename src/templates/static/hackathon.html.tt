@@ -95,9 +95,9 @@
                 <div class="gr-row">
                     <div class="gr-4 gr-12-m gr-push-0-m">
                         <div class="prizes">
-                                    <span class="prizes--number">
-                                        <img src="[% request.url_for('images/hackathon/1st.svg') %]"/>
-                                    </span>
+                            <span class="prizes--number">
+                                <img src="[% request.url_for('images/hackathon/1st.svg') %]"/>
+                            </span>
                             <div class="prizes--content">
                                 <p>1st Prize</p>
                                 <p>RM 1000</p>
@@ -106,9 +106,9 @@
                     </div>
                     <div class="gr-4 gr-12-m gr-push-0-m">
                         <div class="prizes">
-                                    <span class="prizes--number">
-                                        <img src="[% request.url_for('images/hackathon/2nd.svg') %]"/>
-                                    </span>
+                            <span class="prizes--number">
+                                <img src="[% request.url_for('images/hackathon/2nd.svg') %]"/>
+                            </span>
                             <div class="prizes--content">
                                 <p>2nd Prize</p>
                                 <p>RM 500</p>
@@ -117,9 +117,9 @@
                     </div>
                     <div class="gr-4 gr-12-m gr-push-0-m">
                         <div class="prizes">
-                                    <span class="prizes--number">
-                                        <img src="[% request.url_for('images/hackathon/3rd.svg') %]"/>
-                                    </span>
+                            <span class="prizes--number">
+                                <img src="[% request.url_for('images/hackathon/3rd.svg') %]"/>
+                            </span>
                             <div class="prizes--content">
                                 <p>3rd Prize</p>
                                 <p>RM 250</p>
