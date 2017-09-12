@@ -91,7 +91,7 @@ const AccountTransfer = (() => {
     // TODO: change values when back-end updates logic
     const getMinAmount = () => (isCryptocurrency(client_currency) ? 0.002 : 0.1);
 
-    const getDecimals = () => (isCryptocurrency(client_currency) ? '1, 3' : '1, 2');
+    const getDecimals = () => (isCryptocurrency(client_currency) ? '1, 8' : '1, 2');
 
     const showForm = () => {
         elementTextContent(document.querySelector(`${form_id_hash} #currency`), client_currency);
