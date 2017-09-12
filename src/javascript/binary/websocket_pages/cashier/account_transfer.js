@@ -23,7 +23,7 @@ const AccountTransfer = (() => {
         client_loginid  = Client.get('loginid');
         client_currency = Client.get('currency');
 
-        el_transfer_from = document.getElementById('transfer_from');
+        el_transfer_from = document.getElementById('lbl_transfer_from');
         el_transfer_to   = document.getElementById('transfer_to');
 
         elementTextContent(el_transfer_from, client_loginid);
@@ -60,6 +60,7 @@ const AccountTransfer = (() => {
         } else {
             const label = document.createElement('label');
             label.appendChild(document.createTextNode(fragment_transfer_to.innerText));
+            label.setAttribute('data-value', fragment_transfer_to.innerText);
 
             el_transfer_to.parentNode.replaceChild(label, el_transfer_to);
         }
@@ -102,7 +103,7 @@ const AccountTransfer = (() => {
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
-            { request_field: 'account_to',                value: () => el_transfer_to.value },
+            { request_field: 'account_to',                value: () => el_transfer_to.value || el_transfer_to.getAttribute('data-value') },
             { request_field: 'currency',                  value: client_currency },
         ]);
 
