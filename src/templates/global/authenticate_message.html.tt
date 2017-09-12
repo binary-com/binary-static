@@ -22,7 +22,7 @@
                         <p class="font-s">[% l('Submit one of the documents below') %]:</p>            
                         <div class="files">
                             [% FOREACH document IN accepted_documents %]
-                                <h3>[% document %]</h3>
+                                <h3>[% document.name %]</h3>
                                 <div class="fields">
                                     [% IF type == 'poi' %]
                                         <div class="gr-row form-row center-text-m">
@@ -43,11 +43,11 @@
                                         </div>
                                         <div class="gr-row form-row center-text-m">
                                             <div class="gr-6 gr-12-m">
-                                                <input id="front_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document %]">
+                                                <input id="front_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
                                                 <label for="front_file[% loop.count %]" class="button">[% l('Front') %] <img class="add" /></button>
                                             </div>
                                             <div class="gr-6 gr-12-m">
-                                                <input id="back_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document %]">
+                                                <input id="back_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
                                                 <label for="back_file[% loop.count %]" class="button">[% l('Back') %] <img class="add" /></button>
                                             </div>
                                         </div>
@@ -55,7 +55,7 @@
                                     [% IF type == 'poa' %]
                                         <div class="gr-row form-row gr-centered">
                                             <div class="gr-12">
-                                                <input id="add_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document %]">
+                                                <input id="add_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
                                                 <label for="add_file[% loop.count %]" class="button">[% l('Add') %] <img class="add" /></button>
                                             </div>
                                         </div>
@@ -81,7 +81,10 @@
         l('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'), 
         l('Maximum upload size for each file is 3MB')]
     type="poi"
-    accepted_documents=[l('Passport'), l('Identity card'), l('Driving license')]
+    accepted_documents=[{name => l('Passport'), value => 'passport'},
+        {name => l('Identity card'), value => 'proofid'}, 
+        {name => l('Driving license'), value => 'driverslicense'}
+    ]
 %]
 [% INCLUDE global/separator_line.html.tt invisible=1 class="gr-padding-10" %]
 [% INCLUDE file_selector heading=l("2. Proof of address")
@@ -92,7 +95,9 @@
         l('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'), 
         l('Maximum upload size for each file is 3MB')]
     type="poa"
-    accepted_documents=[l('Utility bill'), l('Bank statement')]
+    accepted_documents=[{name => l('Utility bill'), value => 'proofaddress'}, 
+        {name => l('Bank statement'), value => 'bankstatement'}
+    ]
 %]
 
 <div class="center-text">

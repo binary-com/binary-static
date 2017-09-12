@@ -133,8 +133,7 @@ const Authenticate = (() => {
             $files.each((i, e) => {
                 if (e.files && e.files.length) {
                     const $e = $(e);
-                    const id = $e.attr('id');
-                    const type = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}_${id.split('_')[0]}`;
+                    const type = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
                     const $inputs = $e.closest('.fields').find('input[type="text"]');
                     const file_obj = {
                         file: e.files[0],
