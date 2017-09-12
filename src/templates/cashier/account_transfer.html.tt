@@ -31,7 +31,7 @@
 
 <form class="invisible" id="frm_account_transfer">
     [% WRAPPER fieldset legend=l('Details') %]
-        [% INCLUDE form_row label=l("Transfer from") type='select' id='transfer_from' %]
+        [% INCLUDE form_row label=l("Transfer from") type='label' id='transfer_from' %]
         [% INCLUDE form_row label=l("Transfer to") type='select' id='transfer_to' %]
         [% WRAPPER form_row label=l("Amount") type='custom' id='transfer_amount' %]
             <label id="currency"></label>
