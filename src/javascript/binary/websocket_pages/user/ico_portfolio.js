@@ -1,13 +1,12 @@
-const Portfolio           = require('./account/portfolio').Portfolio;
-const ViewPopup           = require('./view_popup/view_popup');
-const BinarySocket        = require('../socket');
-const localize            = require('../../base/localize').localize;
-const showLoadingImage    = require('../../base/utility').showLoadingImage;
-const formatMoney         = require('../../common_functions/currency').formatMoney;
+const Portfolio        = require('./account/portfolio').Portfolio;
+const ViewPopup        = require('./view_popup/view_popup');
+const BinarySocket     = require('../socket');
+const localize         = require('../../base/localize').localize;
+const showLoadingImage = require('../../base/utility').showLoadingImage;
+const getPropertyValue = require('../../base/utility').getPropertyValue;
+const formatMoney      = require('../../common_functions/currency').formatMoney;
 
 const ICOPortfolio = (() => {
-    'use strict';
-
     let values,
         is_initialized,
         is_first_response;
@@ -31,25 +30,34 @@ const ICOPortfolio = (() => {
     const createPortfolioRow = (data, is_first) => {
         const long_code = data.longcode;
 
-        const new_class = is_first ? '' : 'new';
-        const status = (/unsuccessful/i.test(long_code) ? 'Refund Bid' : (/successful/i.test(long_code) ? 'Claim Tokens' : (/bid/i.test(long_code) ? 'Cancel Bid' : 'Ended')));
-        const button_class = /(cancel|end)/i.test(status) ? 'button-secondary' : '';
-        const action = / successful/i.test(long_code) ? 'claim' : 'cancel';
-        const shortcode = data.shortcode.split('_');
-        const $div = $('<div/>');
+        let status_text = 'Ended';
+        if (/unsuccessful/i.test(long_code)) {
+            status_text = 'Refund Bid';
+        } else if (/successful/i.test(long_code)) {
+            status_text = 'Claim Tokens';
+        } else if (/bid/i.test(long_code)) {
+            status_text = 'Cancel Bid';
+        }
+
+        const new_class    = is_first ? '' : 'new';
+        const status       = status_text;
+        const button_class = /cancel|end/i.test(status) ? 'button-secondary' : '';
+        const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
+        const shortcode    = data.shortcode.split('_');
+        const $div         = $('<div/>');
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref', text: data.transaction_id }))
             .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: shortcode[2] })))
             .append($('<td/>', { class: 'bid' }).append($('<strong/>', { html: formatMoney(data.currency, shortcode[1]) })))
             .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price) })))
             .append($('<td/>', { class: 'details', text: long_code }))
-            .append($('<td/>', { class: 'button' }).append($('<button/>', { class: `button ${button_class} nowrap`, contract_id: data.contract_id, action: action, text: localize(status) }))))
+            .append($('<td/>', { class: 'button' }).append($('<button/>', { class: `button ${button_class} nowrap`, contract_id: data.contract_id, action, text: localize(status) }))))
             .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));
         $('#portfolio-body').prepend($div.html());
     };
 
     const updatePortfolio = (data) => {
-        if (data.hasOwnProperty('error')) {
+        if (getPropertyValue(data, 'error')) {
             errorMessage(data.error.message);
             return;
         }
@@ -61,10 +69,10 @@ const ICOPortfolio = (() => {
              **/
             $('#portfolio-no-contract').hide();
             $.each(data.portfolio.contracts, (ci, c) => {
-                if (!values.hasOwnProperty(c.contract_id) && c.contract_type === 'BINARYICO') {
-                    values[c.contract_id] = {};
+                if (!getPropertyValue(values, c.contract_id) && c.contract_type === 'BINARYICO') {
+                    values[c.contract_id]           = {};
                     values[c.contract_id].buy_price = c.buy_price;
-                    portfolio_data = Portfolio.getPortfolioData(c);
+                    portfolio_data                  = Portfolio.getPortfolioData(c);
                     createPortfolioRow(portfolio_data, is_first_response);
                     setTimeout(() => {
                         $(`tr.${c.contract_id}`).removeClass('new');
@@ -77,7 +85,7 @@ const ICOPortfolio = (() => {
             $('#portfolio-no-contract').show();
             $('#portfolio-table').setVisibility(0);
         } else {
-            $('button[action="cancel"]').on('click', function() {
+            $('button[action="cancel"]').on('click', function () {
                 BinarySocket.send({
                     sell : $(this).attr('contract_id'),
                     price: 0,
@@ -92,7 +100,7 @@ const ICOPortfolio = (() => {
     };
 
     const transactionResponseHandler = (response) => {
-        if (response.hasOwnProperty('error')) {
+        if (getPropertyValue(response, 'error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
             BinarySocket.send({ portfolio: 1 }).then((res) => {
@@ -108,7 +116,7 @@ const ICOPortfolio = (() => {
         $(`tr.${contract_id}`)
             .removeClass('new')
             .css('opacity', '0.5')
-            .fadeOut(1000, function() {
+            .fadeOut(1000, function () {
                 $(this).remove();
                 if ($('#portfolio-body').find('tr').length === 0) {
                     $('#portfolio-table').setVisibility(0);
@@ -140,10 +148,8 @@ const ICOPortfolio = (() => {
     };
 
     return {
-        updatePortfolio           : updatePortfolio,
-        transactionResponseHandler: transactionResponseHandler,
-        onLoad                    : onLoad,
-        onUnload                  : onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

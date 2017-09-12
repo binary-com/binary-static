@@ -4,14 +4,13 @@ const localize     = require('../../../base/localize').localize;
 const getHighstock = require('../../../common_functions/common_functions').requireHighstock;
 
 const DigitInfo = (() => {
-    'use strict';
+    let spots          = [];
+    let stream_id      = null;
+    // To avoid too many greens and reds
+    let prev_min_index = -1;
+    let prev_max_index = -1;
 
-    let spots = [],
-        stream_id = null,
-        chart,
-        // To avoid too many greens and reds
-        prev_min_index = -1,
-        prev_max_index = -1;
+    let chart;
 
     const chart_config = {
         chart: {
@@ -33,8 +32,8 @@ const DigitInfo = (() => {
         },
         tooltip: {
             borderWidth: 1,
-            formatter  : function() {
-                const total =  $('#tick_count').val();
+            formatter() {
+                const total      = $('#tick_count').val();
                 const percentage = (this.y / total) * 100;
                 return `<strong>${localize('Digit')}:</strong> ${this.x}<br/><strong>${localize('Percentage')}:</strong> ${percentage.toFixed(1)}%`;
             },
@@ -54,8 +53,8 @@ const DigitInfo = (() => {
                     style  : {
                         textShadow: false,
                     },
-                    formatter: function() {
-                        const total = $('#tick_count').val();
+                    formatter() {
+                        const total      = $('#tick_count').val();
                         const percentage = (this.point.y / total) * 100;
                         return `${percentage.toFixed(2)}%`;
                     },
@@ -80,11 +79,11 @@ const DigitInfo = (() => {
             endOnTick    : true,
             opposite     : false,
             labels       : {
-                align    : 'left',
-                x        : 0,
-                enabled  : false,
-                formatter: function() {
-                    const total = $('#tick_count').val();
+                align  : 'left',
+                x      : 0,
+                enabled: false,
+                formatter() {
+                    const total      = $('#tick_count').val();
                     const percentage = parseInt((this.value / total) * 100);
                     return `${percentage}%`;
                 },
@@ -93,16 +92,16 @@ const DigitInfo = (() => {
     };
 
     const addContent = (underlying) => {
-        const domain = document.domain.split('.').slice(-2).join('.');
+        const domain    = document.domain.split('.').slice(-2).join('.');
         let underlyings = [];
-        const symbols = Symbols.getAllSymbols();
+        const symbols   = Symbols.getAllSymbols();
         Object.keys(symbols).forEach((key) => {
             if (/^(R_|RD)/.test(key)) {
                 underlyings.push(key);
             }
         });
         underlyings = underlyings.sort();
-        let elem = '';
+        let elem    = '';
         for (let i = 0; i < underlyings.length; i++) {
             elem += `<option value="${underlyings[i]}">${localize(symbols[underlyings[i]])}</option>`;
         }
@@ -114,14 +113,14 @@ const DigitInfo = (() => {
     const onLatest = () => {
         const getLatest = () => {
             const $digit_underlying_option = $('#digit_underlying option:selected');
-            const symbol = $digit_underlying_option.val();
-            const count = $('#tick_count').val();
+            const symbol                   = $digit_underlying_option.val();
+            const count                    = $('#tick_count').val();
             $('#digit_info_underlying').text($digit_underlying_option.text());
             $('#digit_info_count').text(count);
             const request = {
                 ticks_history: symbol,
                 end          : 'latest',
-                count        : count,
+                count,
             };
             if (chart.series[0].name !== symbol) {
                 if ($('#underlying').find('option:selected').val() !== $('#digit_underlying').val()) {
@@ -133,39 +132,37 @@ const DigitInfo = (() => {
                     stream_id = null;
                 }
             }
-            BinarySocket.send(request, {
-                callback: (response) => {
-                    const type = response.msg_type;
-                    if (type === 'tick') {
-                        updateChart(response);
-                    } else if (type === 'history') {
-                        showChart(response.echo_req.ticks_history, response.history.prices);
-                    }
-                },
-            });
+            BinarySocket.send(request, { callback: (response) => {
+                const type = response.msg_type;
+                if (type === 'tick') {
+                    updateChart(response);
+                } else if (type === 'history') {
+                    showChart(response.echo_req.ticks_history, response.history.prices);
+                }
+            } });
         };
         $('#digit_underlying, #tick_count').off('change').on('change', getLatest);
     };
 
     const showChart = (underlying, underlying_spots) => {
         getHighstock((Highcharts) => {
-            if (typeof underlying_spots === 'undefined' || underlying_spots.length <= 0) {
-                console.log('Unexpected error occured in the charts.');
+            const new_spots = underlying_spots;
+            if (typeof new_spots === 'undefined' || new_spots.length <= 0) {
                 return;
             }
-            const dec = underlying_spots[0].split('.')[1].length;
-            for (let i = 0; i < underlying_spots.length; i++) {
-                const val = parseFloat(underlying_spots[i]).toFixed(dec);
-                underlying_spots[i] = val.substr(val.length - 1);
+            const dec = new_spots[0].split('.')[1].length;
+            for (let i = 0; i < new_spots.length; i++) {
+                const val    = parseFloat(new_spots[i]).toFixed(dec);
+                new_spots[i] = val.substr(val.length - 1);
             }
 
             const getTitle = () => (
                 {
-                    text: localize($('#last_digit_title').html(), [underlying_spots.length, $('#digit_underlying option:selected').text()]),
+                    text: localize($('#last_digit_title').html(), [new_spots.length, $('#digit_underlying option:selected').text()]),
                 }
             );
 
-            spots = underlying_spots;
+            spots = new_spots;
             if (chart && $('#last_digit_histo').html()) {
                 chart.xAxis[0].update({ title: getTitle() }, true);
                 chart.series[0].name = underlying;
@@ -187,31 +184,28 @@ const DigitInfo = (() => {
         }
 
         const series = chart.series[0]; // Where we put the final data.
-        if (series.name !== symbol) {
-            latest_spot = undefined; // This simplifies the logic a bit later.
-        }
 
-        if (typeof latest_spot !== 'undefined') { // This is a bit later. :D
+        if (typeof latest_spot !== 'undefined' && series.name === symbol) {
             spots.unshift(latest_spot.slice(-1)); // Only last digit matters
             spots.pop();
         }
 
         // Always recompute and draw, even if theres no new data.
         // This is especially useful on first reuqest, but maybe in other ways.
-        const filtered_spots = [];
-        const filterFunc = el => +el === digit;
-        let digit = 10;
+        const filtered_spots  = [];
+        const filterFunc      = el => +el === digit;
+        let digit             = 10;
         const min_max_counter = [];
         while (digit--) {
-            const val = spots.filter(filterFunc).length;
+            const val             = spots.filter(filterFunc).length;
             filtered_spots[digit] = val;
             if (typeof min_max_counter[val] === 'undefined') {
                 min_max_counter[val] = 0;
             }
             min_max_counter[val]++;
         }
-        const min = Math.min.apply(null, filtered_spots);
-        const max = Math.max.apply(null, filtered_spots);
+        const min       = Math.min.apply(null, filtered_spots);
+        const max       = Math.max.apply(null, filtered_spots);
         const min_index = filtered_spots.indexOf(min);
         const max_index = filtered_spots.indexOf(max);
         // changing color
@@ -259,8 +253,8 @@ const DigitInfo = (() => {
     };
 
     return {
-        showChart  : showChart,
-        updateChart: updateChart,
+        showChart,
+        updateChart,
     };
 })();
 

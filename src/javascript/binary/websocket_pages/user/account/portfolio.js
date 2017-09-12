@@ -3,11 +3,9 @@ const formatMoney         = require('../../../common_functions/currency').format
 const jpClient            = require('../../../common_functions/country_base').jpClient;
 
 const Portfolio = (() => {
-    'use strict';
-
     const getBalance = (balance, currency) => {
-        balance = parseFloat(balance);
-        return currency ? formatMoney(currency, balance) : balance;
+        const float_balance = parseFloat(balance);
+        return currency ? formatMoney(currency, float_balance) : float_balance;
     };
 
     const getPortfolioData = c => (
@@ -15,13 +13,11 @@ const Portfolio = (() => {
             transaction_id: c.transaction_id,
             contract_id   : c.contract_id,
             payout        : parseFloat(c.payout),
-            longcode      : typeof module !== 'undefined' ?
-                c.longcode : (jpClient() ?
-                    toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode),
-            shortcode: c.shortcode,
-            currency : c.currency,
-            buy_price: c.buy_price,
-            app_id   : c.app_id,
+            longcode      : jpClient() ? toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode,
+            shortcode     : c.shortcode,
+            currency      : c.currency,
+            buy_price     : c.buy_price,
+            app_id        : c.app_id,
         }
     );
 
@@ -36,7 +32,7 @@ const Portfolio = (() => {
     );
 
     const getSum = (values, value_type) => { // value_type is: indicative or buy_price
-        let sum = 0;
+        let sum    = 0;
         const keys = Object.keys(values);
         for (let i = 0; i < keys.length; i++) {
             const key = keys[i];
@@ -49,14 +45,14 @@ const Portfolio = (() => {
     };
 
     return {
-        getBalance             : getBalance,
-        getPortfolioData       : getPortfolioData,
-        getProposalOpenContract: getProposalOpenContract,
-        getIndicativeSum       : values => getSum(values, 'indicative'),
-        getSumPurchase         : values => getSum(values, 'buy_price'),
+        getBalance,
+        getPortfolioData,
+        getProposalOpenContract,
+        getIndicativeSum: values => getSum(values, 'indicative'),
+        getSumPurchase  : values => getSum(values, 'buy_price'),
     };
 })();
 
 module.exports = {
-    Portfolio: Portfolio,
+    Portfolio,
 };

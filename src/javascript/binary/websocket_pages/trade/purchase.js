@@ -18,17 +18,16 @@ const padLeft            = require('../../common_functions/string_util').padLeft
  */
 
 const Purchase = (() => {
-    'use strict';
+    let purchase_data = {};
 
-    let purchase_data = {},
-        payout_value,
+    let payout_value,
         cost_value;
 
     const display = (details) => {
         purchase_data = details;
 
-        const receipt     = details.buy;
-        const passthrough = details.echo_req.passthrough;
+        const receipt            = details.buy;
+        const passthrough        = details.echo_req.passthrough;
         const container          = document.getElementById('contract_confirmation_container');
         const message_container  = document.getElementById('confirmation_message');
         const heading            = document.getElementById('contract_purchase_heading');
@@ -44,7 +43,7 @@ const Purchase = (() => {
         const contracts_list     = document.getElementById('contracts_list');
         const button             = document.getElementById('contract_purchase_button');
 
-        const error = details.error;
+        const error      = details.error;
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
 
         contracts_list.style.display = 'none';
@@ -55,9 +54,12 @@ const Purchase = (() => {
             confirmation_error.show();
             let message = error.message;
             if (/RestrictedCountry/.test(error.code)) {
-                const additional_message = /FinancialBinaries/.test(error.code) ?
-                    localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/volidx-markets')}" >`, '</a>']) :
-                    (/Random/.test(error.code) ? localize('Try our other markets.') : '');
+                let additional_message = '';
+                if (/FinancialBinaries/.test(error.code)) {
+                    additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/volidx-markets')}" >`, '</a>']);
+                } else if (/Random/.test(error.code)) {
+                    additional_message = localize('Try our other markets.');
+                }
                 message = `${error.message}. ${additional_message}`;
             }
             elementInnerHtml(confirmation_error, message);
@@ -79,9 +81,9 @@ const Purchase = (() => {
 
             if (passthrough.basis === 'payout') {
                 payout_value = passthrough.amount;
-                cost_value = passthrough['ask-price'];
+                cost_value   = passthrough['ask-price'];
             } else {
-                cost_value = passthrough.amount;
+                cost_value   = passthrough.amount;
                 payout_value = receipt.payout;
             }
             const profit_value = formatMoney(currency, payout_value - cost_value);
@@ -127,8 +129,8 @@ const Purchase = (() => {
 
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying
-            let decimal_points = 2;
-            const tick_spots = Tick.spots();
+            let decimal_points     = 2;
+            const tick_spots       = Tick.spots();
             const tick_spot_epochs = Object.keys(tick_spots);
             if (tick_spot_epochs.length > 0) {
                 const last_quote = tick_spots[tick_spot_epochs[0]].toString();
@@ -138,21 +140,16 @@ const Purchase = (() => {
                 }
             }
 
-            let barrier;
-            if (sessionStorage.getItem('formname') === 'higherlower') {
-                barrier = passthrough.barrier;
-            }
-
             TickDisplay.init({
+                contract_sentiment,
                 symbol              : passthrough.symbol,
-                barrier             : barrier,
+                barrier             : sessionStorage.getItem('formname') === 'higherlower' ? passthrough.barrier : undefined,
                 number_of_ticks     : passthrough.duration,
                 previous_tick_epoch : receipt.start_time,
                 contract_category   : sessionStorage.getItem('formname') === 'asian' ? 'asian' : 'callput',
                 display_symbol      : Symbols.getName(passthrough.symbol),
                 contract_start      : receipt.start_time,
                 display_decimals    : decimal_points,
-                contract_sentiment  : contract_sentiment,
                 price               : passthrough['ask-price'],
                 payout              : receipt.payout,
                 show_contract_result: 1,
@@ -168,15 +165,15 @@ const Purchase = (() => {
         }
 
         let duration = purchase_data.echo_req && purchase_data.echo_req.passthrough ?
-                        purchase_data.echo_req.passthrough.duration : null;
+            purchase_data.echo_req.passthrough.duration : null;
 
         if (!duration) {
             return;
         }
 
-        const spots = document.getElementById('contract_purchase_spots');
-        const spots2 = Tick.spots();
-        const epoches = Object.keys(spots2).sort((a, b) =>  a - b);
+        const spots   = document.getElementById('contract_purchase_spots');
+        const spots2  = Tick.spots();
+        const epoches = Object.keys(spots2).sort((a, b) => a - b);
         if (spots) spots.textContent = '';
 
         let last_digit;
@@ -198,7 +195,7 @@ const Purchase = (() => {
 
                 const el2 = document.createElement('div');
                 el2.classList.add('col');
-                const date = new Date(tick_d.epoch * 1000);
+                const date    = new Date(tick_d.epoch * 1000);
                 const hours   = padLeft(date.getUTCHours(), 2, '0');
                 const minutes = padLeft(date.getUTCMinutes(), 2, '0');
                 const seconds = padLeft(date.getUTCSeconds(), 2, '0');
@@ -206,7 +203,7 @@ const Purchase = (() => {
                 fragment.appendChild(el2);
 
                 const tick = tick_d.quote.replace(/\d$/, replace);
-                const el3 = document.createElement('div');
+                const el3  = document.createElement('div');
                 el3.classList.add('col');
                 elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
@@ -230,13 +227,13 @@ const Purchase = (() => {
                         (pass_contract_type === 'DIGITUNDER' && +last_digit < pass_barrier)
                     ) {
                         spots.className = 'won';
-                        final_price = payout_value;
-                        pnl = cost_value;
+                        final_price     = payout_value;
+                        pnl             = cost_value;
                         contract_status = localize('This contract won');
                     } else {
                         spots.className = 'lost';
-                        final_price = 0;
-                        pnl = -cost_value;
+                        final_price     = 0;
+                        pnl             = -cost_value;
                         contract_status = localize('This contract lost');
                     }
 
@@ -252,8 +249,8 @@ const Purchase = (() => {
     };
 
     return {
-        display       : display,
-        updateSpotList: updateSpotList,
+        display,
+        updateSpotList,
     };
 })();
 

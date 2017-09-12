@@ -3,8 +3,6 @@ const getHighestZIndex  = require('../../../base/utility').getHighestZIndex;
 const setViewPopupTimer = require('../../../base/clock').setViewPopupTimer;
 
 const ViewPopupUI = (() => {
-    'use strict';
-
     let $container,
         stream_ids,
         chart_stream_ids,
@@ -77,7 +75,7 @@ const ViewPopupUI = (() => {
     };
 
     const disableButton = (button) => {
-        $('.open_contract_details[disabled]').each(function() {
+        $('.open_contract_details[disabled]').each(function () {
             enableButton($(this));
         });
         button.attr('disabled', 'disabled');
@@ -105,9 +103,7 @@ const ViewPopupUI = (() => {
         $(document.body).append($('<div/>', { class: 'popup_page_overlay' }));
         $('.popup_page_overlay').click(() => { container().find('a.close').click(); });
         con.draggable({
-            stop: () => {
-                repositionConfirmationOnDrag();
-            },
+            stop  : () => { repositionConfirmationOnDrag(); },
             handle: dragHandle,
             scroll: false,
         });
@@ -117,35 +113,38 @@ const ViewPopupUI = (() => {
     };
 
     const repositionConfirmationOnDrag = () => {
-        const con = container();
-        const offset = con.offset();
-        const win_ = $(window);
+        const con     = container();
+        const offset  = con.offset();
+        const $window = $(window);
         // top
-        if (offset.top < win_.scrollTop()) { con.offset({ top: win_.scrollTop() }); }
+        if (offset.top < $window.scrollTop()) { con.offset({ top: $window.scrollTop() }); }
         // left
         if (offset.left < 0) { con.offset({ left: 0 }); }
         // right
-        if (offset.left > win_.width() - con.width()) { con.offset({ left: win_.width() - con.width() }); }
+        if (offset.left > $window.width() - con.width()) { con.offset({ left: $window.width() - con.width() }); }
     };
 
     const repositionConfirmation = (x, y) => {
-        const con = container();
-        const win_ = $(window);
-        let x_min = 0,
-            y_min = 500;
-        if (win_.width() < 767) { // To be responsive, on mobiles and phablets we show popup as full screen.
+        const con     = container();
+        const $window = $(window);
+        let x_min     = 0;
+        let y_min     = 500;
+        if ($window.width() < 767) { // To be responsive, on mobiles and phablets we show popup as full screen.
             x_min = 0;
             y_min = 0;
         }
+        let new_x,
+            new_y;
         if (x === undefined) {
-            x = Math
-                .max(Math.floor((win_.width() - win_.scrollLeft() - con.width()) / 2), x_min) + win_.scrollLeft();
+            new_x = Math
+                    .max(Math.floor(($window.width() - $window.scrollLeft() - con.width()) / 2), x_min)
+                + $window.scrollLeft();
         }
         if (y === undefined) {
-            y = Math.min(Math.floor((win_.height() - con.height()) / 2), y_min) + win_.scrollTop();
-            if (y < win_.scrollTop()) { y = win_.scrollTop(); }
+            new_y = Math.min(Math.floor(($window.height() - con.height()) / 2), y_min) + $window.scrollTop();
+            if (y < $window.scrollTop()) { new_y = $window.scrollTop(); }
         }
-        con.offset({ left: x, top: y });
+        con.offset({ left: x || new_x, top: y || new_y });
         repositionConfirmationOnDrag();
     };
 
@@ -167,14 +166,15 @@ const ViewPopupUI = (() => {
     };
 
     return {
-        cleanup               : cleanup,
-        forgetStreams         : forgetStreams,
-        disableButton         : disableButton,
-        enableButton          : enableButton,
-        showInpagePopup       : showInpagePopup,
-        repositionConfirmation: repositionConfirmation,
-        storeSubscriptionID   : storeSubscriptionID,
-        setStreamFunction     : (streamFnc) => { getPageTickStream = streamFnc; },
+        cleanup,
+        forgetStreams,
+        disableButton,
+        enableButton,
+        showInpagePopup,
+        repositionConfirmation,
+        storeSubscriptionID,
+
+        setStreamFunction: (streamFnc) => { getPageTickStream = streamFnc; },
     };
 })();
 

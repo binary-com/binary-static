@@ -9,22 +9,21 @@ const Url                 = require('../../binary/base/url');
 const BinarySocket        = require('../../binary/websocket_pages/socket');
 
 const KnowledgeTest = (() => {
-    'use strict';
-
     const submitted        = {};
     const obj_random_picks = {};
     const passing_score    = 14; // minimum score to pass the test
-    const msg_pass = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
-    const msg_fail = '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.';
+    const msg_pass         = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
+    const msg_fail         = '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.';
 
     let submit_completed = false;
     let random_picks     = [];
     let result_score     = 0;
-    let $container;
-    let $header;
-    let $message;
-    let $questions;
-    let $instructions;
+
+    let $container,
+        $header,
+        $message,
+        $questions,
+        $instructions;
 
     const onLoad = () => {
         // need to send get_settings because client status needs to be checked against latest available data
@@ -76,14 +75,14 @@ const KnowledgeTest = (() => {
     const randomPick20 = () => {
         const questions = {};
         // retrieve questions text from html
-        $container.find('#data-questions').find('> div').each(function() { // sections
-            const category = +$(this).attr('data-section-id');
-            questions[`section${category}`] = [];
+        $container.find('#data-questions').find('> div').each(function () { // sections
+            const category_name = +$(this).attr('data-section-id');
+            questions[`section${category_name}`] = [];
 
-            $(this).find('> div').each(function() { // questions
+            $(this).find('> div').each(function () { // questions
                 const question_id = +$(this).attr('data-question-id');
-                questions[`section${category}`].push({
-                    category          : category,
+                questions[`section${category_name}`].push({
+                    category          : category_name,
                     id                : question_id,
                     question          : $(this).attr('data-question-en'),
                     question_localized: $(this).text(),
@@ -113,7 +112,7 @@ const KnowledgeTest = (() => {
 
     const answers = {
         /* eslint-disable */
-        1: false,  2: true,   3: true,   4: true,   5: true,   6: true,   7: true,   8: true,   9: false,   10: true,
+         1: false,  2: true,   3: true,   4: true,   5: true,   6: true,   7: true,   8: true,   9: false,  10: true,
         11: false, 12: true,  13: false, 14: true,  15: true,  16: true,  17: false, 18: true,  19: true,   20: true,
         21: true,  22: false, 23: true,  24: false, 25: false, 26: true,  27: true,  28: true,  29: true,   30: true,
         31: false, 32: true,  33: false, 34: true,  35: false, 36: true,  37: true,  38: false, 39: true,   40: false,
@@ -158,8 +157,8 @@ const KnowledgeTest = (() => {
         // compute score
         const questions = [];
         Object.keys(submitted).forEach((k) => {
-            const question_info = obj_random_picks[k];
-            const score = submitted[k] === question_info.correct_answer ? 1 : 0;
+            const question_info  = obj_random_picks[k];
+            const score          = submitted[k] === question_info.correct_answer ? 1 : 0;
             result_score += score;
             question_info.answer = submitted[k];
             questions.push({
@@ -174,12 +173,12 @@ const KnowledgeTest = (() => {
         submit_completed = true;
     };
 
-    const sendResult = (questions) => {
+    const sendResult = (all_questions) => {
         BinarySocket.send({
             jp_knowledge_test: 1,
             score            : result_score,
             status           : result_score >= passing_score ? 'pass' : 'fail',
-            questions        : questions,
+            questions        : all_questions,
         }).then((response) => {
             if (!response.error) {
                 showResult(result_score, response.jp_knowledge_test.test_taken_epoch * 1000);
@@ -222,7 +221,7 @@ const KnowledgeTest = (() => {
     );
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

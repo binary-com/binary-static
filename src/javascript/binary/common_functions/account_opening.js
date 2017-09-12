@@ -11,11 +11,9 @@ const BinarySocket      = require('../websocket_pages/socket');
 require('select2');
 
 const AccountOpening = (() => {
-    'use strict';
-
     const redirectAccount = () => { // eslint-disable-line consistent-return
         const response_landing_company = State.getResponse('landing_company');
-        const response_get_settings = State.getResponse('get_settings');
+        const response_get_settings    = State.getResponse('get_settings');
         if (response_landing_company && response_get_settings) {
             return redirect(response_landing_company, response_get_settings);
         }
@@ -53,7 +51,7 @@ const AccountOpening = (() => {
             const $tax_residence  = $('#tax_residence');
             const $phone          = $('#phone');
             const residence_value = Client.get('residence') || '';
-            let residence_text = '';
+            let residence_text    = '';
 
             const $options = $('<div/>');
             residence_list.forEach((res) => {
@@ -137,19 +135,19 @@ const AccountOpening = (() => {
 
     const commonValidations = () => {
         const req = [
-            { selector: '#salutation',         validations: ['req'] },
-            { selector: '#first_name',         validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: '#last_name',          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: '#date_of_birth',      validations: ['req'] },
-            { selector: '#address_line_1',     validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
-            { selector: '#address_line_2',     validations: ['address', ['length', { min: 0, max: 70 }]] },
-            { selector: '#address_city',       validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
-            { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['general', ['length', { min: 0, max: 35 }]] },
-            { selector: '#address_postcode',   validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
-            { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
-            { selector: '#secret_question',    validations: ['req'] },
-            { selector: '#secret_answer',      validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
-            { selector: '#tnc',                validations: [['req', { message: 'Please accept the terms and conditions.' }]], exclude_request: 1 },
+            { selector: '#salutation',       validations: ['req'] },
+            { selector: '#first_name',       validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: '#last_name',        validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: '#date_of_birth',    validations: ['req'] },
+            { selector: '#address_line_1',   validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
+            { selector: '#address_line_2',   validations: ['address', ['length', { min: 0, max: 70 }]] },
+            { selector: '#address_city',     validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
+            { selector: '#address_state',    validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['general', ['length', { min: 0, max: 35 }]] },
+            { selector: '#address_postcode', validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+            { selector: '#phone',            validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
+            { selector: '#secret_question',  validations: ['req'] },
+            { selector: '#secret_answer',    validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
+            { selector: '#tnc',              validations: [['req', { message: 'Please accept the terms and conditions.' }]], exclude_request: 1 },
 
             { request_field: 'residence', value: Client.get('residence') },
         ];
@@ -165,7 +163,7 @@ const AccountOpening = (() => {
         const validations = [];
         let validation,
             id;
-        $(form_id).find('select, input[type=checkbox]').each(function() {
+        $(form_id).find('select, input[type=checkbox]').each(function () {
             id = $(this).attr('id');
             if (!/^(tnc|address_state)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
@@ -179,12 +177,11 @@ const AccountOpening = (() => {
     };
 
     return {
-        redirectAccount : redirectAccount,
-        populateForm    : populateForm,
-        handleNewAccount: handleNewAccount,
-
-        commonValidations       : commonValidations,
-        selectCheckboxValidation: selectCheckboxValidation,
+        redirectAccount,
+        populateForm,
+        handleNewAccount,
+        commonValidations,
+        selectCheckboxValidation,
     };
 })();
 

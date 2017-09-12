@@ -1,6 +1,4 @@
 const AssetIndex = (() => {
-    'use strict';
-
     let market_columns;
 
     // Search and Remove (to decrease the next search count)
@@ -38,7 +36,7 @@ const AssetIndex = (() => {
         };
 
         for (let i = 0; i < asset_index.length; i++) {
-            const asset_item = asset_index[i];
+            const asset_item  = asset_index[i];
             const symbol_info = getSymbolInfo(asset_item[idx.symbol], active_symbols)[0];
             if (symbol_info) {
                 const market = symbol_info.market;
@@ -54,9 +52,9 @@ const AssetIndex = (() => {
                 }
 
                 const asset_cells = asset_item[idx.cells];
-                const values = {};
+                const values      = {};
                 for (let j = 0; j < asset_cells.length; j++) {
-                    const col  = asset_cells[j][idx.cell_props.cell_name];
+                    const col = asset_cells[j][idx.cell_props.cell_name];
 
                     values[col] = [asset_cells[j][idx.cell_props.cell_from], asset_cells[j][idx.cell_props.cell_to]].join(' - ');
 
@@ -73,8 +71,8 @@ const AssetIndex = (() => {
     };
 
     return {
-        getAssetIndexData: getAssetIndexData,
-        getMarketColumns : () => market_columns,
+        getAssetIndexData,
+        getMarketColumns: () => market_columns,
     };
 })();
 

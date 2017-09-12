@@ -8,7 +8,7 @@ const checkClientsCountry = () => {
     if (Crowdin.isInContext()) return;
     BinarySocket.wait('website_status').then((response) => {
         if (response.error) return;
-        const website_status = response.website_status;
+        const website_status  = response.website_status;
         const clients_country = website_status.clients_country;
         if (clients_country === 'jp') {
             limitLanguage('JA');
@@ -38,8 +38,8 @@ const jpResidence = () => (LocalStore.getObject('client.accounts')[LocalStore.ge
 const checkLanguage = () => {
     if (Language.get() === 'ID') {
         const $academy_link = $('.academy a');
-        const academy_href = $academy_link.attr('href');
-        const regex = /id/;
+        const academy_href  = $academy_link.attr('href');
+        const regex         = /id/;
         if (!regex.test(academy_href)) {
             $academy_link.attr('href', academy_href + regex);
         }
@@ -55,8 +55,8 @@ const checkLanguage = () => {
 };
 
 module.exports = {
-    checkClientsCountry: checkClientsCountry,
-    jpClient           : jpClient,
-    jpResidence        : jpResidence,
-    checkLanguage      : checkLanguage,
+    checkClientsCountry,
+    jpClient,
+    jpResidence,
+    checkLanguage,
 };

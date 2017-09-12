@@ -13,8 +13,8 @@ describe('CommonFunctions', () => {
             '<div></div>' +
             '<input data-value="2017-06-21" type="date" value="2017-06-21">',
             done: (error, window) => {
-                date_element = window.document.querySelector('input');
-                text_element = window.document.querySelector('div');
+                date_element    = window.document.querySelector('input');
+                text_element    = window.document.querySelector('div');
                 invalid_element = window.document.getElementById('invalid');
             },
         });

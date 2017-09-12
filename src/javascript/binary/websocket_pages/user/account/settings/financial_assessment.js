@@ -9,10 +9,8 @@ const jpClient         = require('../../../../common_functions/country_base').jp
 const Validation       = require('../../../../common_functions/form_validation');
 
 const FinancialAssessment = (() => {
-    'use strict';
-
-    let financial_assessment = {},
-        arr_validation = [];
+    let financial_assessment = {};
+    let arr_validation       = [];
 
     const form_selector = '#frm_assessment';
 
@@ -31,10 +29,7 @@ const FinancialAssessment = (() => {
         });
     };
 
-    const handleForm = (response) => {
-        if (!response) {
-            response = State.getResponse('get_financial_assessment');
-        }
+    const handleForm = (response = State.getResponse('get_financial_assessment')) => {
         hideLoadingImg(true);
 
         financial_assessment = $.extend({}, response);
@@ -53,7 +48,7 @@ const FinancialAssessment = (() => {
         });
 
         arr_validation = [];
-        $(form_selector).find('select').map(function() {
+        $(form_selector).find('select').map(function () {
             const id = $(this).attr('id');
             arr_validation.push({ selector: `#${id}`, validations: ['req'] });
             if (financial_assessment[id] === undefined) {  // handle fields not previously set by client
@@ -84,7 +79,7 @@ const FinancialAssessment = (() => {
 
             const data = { set_financial_assessment: 1 };
             showLoadingImage($('#msg_form'));
-            $(form_selector).find('select').each(function() {
+            $(form_selector).find('select').each(function () {
                 financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val();
             });
             BinarySocket.send(data).then((response) => {
@@ -134,9 +129,7 @@ const FinancialAssessment = (() => {
     };
 
     return {
-        onLoad    : onLoad,
-        handleForm: handleForm,
-        submitForm: submitForm,
+        onLoad,
     };
 })();
 

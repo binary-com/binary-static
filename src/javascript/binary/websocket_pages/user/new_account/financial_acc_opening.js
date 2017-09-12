@@ -1,15 +1,13 @@
-const moment             = require('moment');
-const BinarySocket       = require('../../socket');
-const BinaryPjax         = require('../../../base/binary_pjax');
-const Client             = require('../../../base/client');
-const isEmptyObject      = require('../../../base/utility').isEmptyObject;
-const AccountOpening     = require('../../../common_functions/account_opening');
-const FormManager        = require('../../../common_functions/form_manager');
-const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
+const moment         = require('moment');
+const BinarySocket   = require('../../socket');
+const BinaryPjax     = require('../../../base/binary_pjax');
+const Client         = require('../../../base/client');
+const isEmptyObject  = require('../../../base/utility').isEmptyObject;
+const AccountOpening = require('../../../common_functions/account_opening');
+const FormManager    = require('../../../common_functions/form_manager');
+const toISOFormat    = require('../../../common_functions/string_util').toISOFormat;
 
 const FinancialAccOpening = (() => {
-    'use strict';
-
     const form_id = '#financial-form';
 
     const onLoad = () => {
@@ -39,7 +37,7 @@ const FinancialAccOpening = (() => {
                 value;
             Object.keys(get_settings).forEach((key) => {
                 $element = $(`#${key}`);
-                value = get_settings[key];
+                value    = get_settings[key];
                 if (key === 'date_of_birth') {
                     const moment_val = moment.utc(value * 1000);
                     value = moment_val.format('DD MMM, YYYY');
@@ -86,7 +84,7 @@ const FinancialAccOpening = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

@@ -1,8 +1,6 @@
 const FormManager = require('../../common_functions/form_manager');
 
 const TelegramBot = (() => {
-    'use strict';
-
     const form = '#frm_telegram_bot';
 
     const onLoad = () => {
@@ -16,7 +14,7 @@ const TelegramBot = (() => {
             form_selector       : form,
             fnc_response_handler: () => {
                 const token = $('#token').val();
-                const url = `https://t.me/${bot_name}/?start=${token}`;
+                const url   = `https://t.me/${bot_name}/?start=${token}`;
                 window.location.assign(url);
             },
         });
@@ -27,8 +25,8 @@ const TelegramBot = (() => {
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 
