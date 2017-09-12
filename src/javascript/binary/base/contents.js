@@ -1,8 +1,6 @@
 const Client = require('./client');
 
 const Contents = (() => {
-    'use strict';
-
     const onLoad = () => {
         Client.activateByClientType('#header');
         // This is required for our css to work.
@@ -10,7 +8,7 @@ const Contents = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

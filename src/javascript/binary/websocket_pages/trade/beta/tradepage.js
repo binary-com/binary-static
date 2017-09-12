@@ -16,8 +16,6 @@ const Guide                = require('../../../common_functions/guide');
 const ResizeSensor         = require('../../../../lib/resize-sensor');
 
 const TradePage_Beta = (() => {
-    'use strict';
-
     let events_initialized = 0;
     State.remove('is_beta_trading');
 
@@ -42,8 +40,10 @@ const TradePage_Beta = (() => {
 
         if (document.getElementById('websocket_form')) {
             commonTrading.addEventListenerForm();
+            /* eslint-disable no-new */
             new ResizeSensor($('.col-left .content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
             new ResizeSensor($('.col-right'), moreTabsHandler);
+            /* eslint-enable no-new */
         }
 
         // Walktrough Guide
@@ -58,7 +58,7 @@ const TradePage_Beta = (() => {
     const adjustAnalysisColumnHeight = () => {
         let sum_height = 0;
         if (window.innerWidth > 767) {
-            $('.col-left').children().each(function() {
+            $('.col-left').children().each(function () {
                 if ($(this).is(':visible')) sum_height += $(this).outerHeight(true);
             });
         } else {
@@ -67,12 +67,11 @@ const TradePage_Beta = (() => {
         $('#trading_analysis_content').height(sum_height);
     };
 
-    const moreTabsHandler = ($ul) => {
-        if (!$ul) $ul = $('#analysis_tabs');
+    const moreTabsHandler = ($ul = $('#analysis_tabs')) => {
         const see_more_class  = 'see-more';
         const more_tabs_class = 'more-tabs';
         const max_width       = $ul.outerWidth();
-        let total_width = 0;
+        let total_width       = 0;
 
         // add seeMore tab
         let $see_more = $ul.find(`li.${see_more_class}`);
@@ -184,10 +183,10 @@ const TradePage_Beta = (() => {
     };
 
     return {
-        onLoad      : onLoad,
-        reload      : reload,
-        onUnload    : onUnload,
-        onDisconnect: onDisconnect,
+        onLoad,
+        reload,
+        onUnload,
+        onDisconnect,
     };
 })();
 

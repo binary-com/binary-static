@@ -15,8 +15,6 @@ const jpClient          = require('../../common_functions/country_base').jpClien
 const Guide             = require('../../common_functions/guide');
 
 const TradePage = (() => {
-    'use strict';
-
     let events_initialized = 0;
     State.remove('is_trading');
 
@@ -86,10 +84,10 @@ const TradePage = (() => {
     };
 
     return {
-        onLoad      : onLoad,
-        reload      : reload,
-        onUnload    : onUnload,
-        onDisconnect: onDisconnect,
+        onLoad,
+        reload,
+        onUnload,
+        onDisconnect,
     };
 })();
 

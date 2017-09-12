@@ -1,28 +1,26 @@
-const Cookies           = require('js-cookie');
-const Client            = require('./client');
-const Contents          = require('./contents');
-const Crowdin           = require('./crowdin');
-const Header            = require('./header');
-const Language          = require('./language');
-const Localize          = require('./localize');
-const localize          = require('./localize').localize;
-const Login             = require('./login');
-const Menu              = require('./menu');
-const State             = require('./storage').State;
-const Url               = require('./url');
-const checkLanguage     = require('../common_functions/country_base').checkLanguage;
-const scrollToTop       = require('../common_functions/scroll').scrollToTop;
-const TrafficSource     = require('../common_functions/traffic_source');
-const BinarySocket      = require('../websocket_pages/socket');
-const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
-const AffiliatePopup    = require('../../binary_japan/affiliate_popup');
-const PushNotification  = require('../../lib/push_notification');
+const Cookies          = require('js-cookie');
+const Client           = require('./client');
+const Contents         = require('./contents');
+const Crowdin          = require('./crowdin');
+const Header           = require('./header');
+const Language         = require('./language');
+const Localize         = require('./localize');
+const localize         = require('./localize').localize;
+const Login            = require('./login');
+const Menu             = require('./menu');
+const State            = require('./storage').State;
+const Url              = require('./url');
+const checkLanguage    = require('../common_functions/country_base').checkLanguage;
+const scrollToTop      = require('../common_functions/scroll').scrollToTop;
+const TrafficSource    = require('../common_functions/traffic_source');
+const BinarySocket     = require('../websocket_pages/socket');
+const RealityCheck     = require('../websocket_pages/user/reality_check/reality_check');
+const AffiliatePopup   = require('../../binary_japan/affiliate_popup');
+const PushNotification = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 
 const Page = (() => {
-    'use strict';
-
     const init = () => {
         State.set('is_loaded_by_pjax', false);
         Url.init();
@@ -112,7 +110,7 @@ const Page = (() => {
 
         AffiliatePopup.show();
 
-        const token_length = token.length;
+        const token_length  = token.length;
         const is_subsidiary = /\w{1}/.test(Url.param('s'));
 
         const cookie_token = Cookies.getJSON('affiliate_tracking');
@@ -148,7 +146,9 @@ const Page = (() => {
             const message = `${(/www\.binary\.com/i.test(window.location.hostname) ? '' :
                 `${localize('This is a staging server - For testing purposes only')} - `)}
                 ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
+
             const $end_note = $('#end-note');
+
             $end_note.html(message).setVisibility(1);
             $('#footer').css('padding-bottom', $end_note.height());
         }
@@ -168,13 +168,13 @@ const Page = (() => {
             reminder: 0, // show all the time
         };
         $(document).ready(() => {
-            $('body').append($('<script/>', { src: src }));
+            $('body').append($('<script/>', { src }));
         });
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad,
+        onUnload,
     };
 })();
 

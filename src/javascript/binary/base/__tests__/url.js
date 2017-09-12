@@ -18,9 +18,9 @@ describe('Url', () => {
 
         it('returns empty object when there is no query string', () => {
             expect(Url.paramsHash(url_no_qs)).to.be.an('Object')
-                .and.to.deep.equal({ });
+                .and.to.deep.equal({});
             expect(Url.paramsHash(`${url_no_qs}?`)).to.be.an('Object')
-                .and.to.deep.equal({ });
+                .and.to.deep.equal({});
         });
     });
 
@@ -30,7 +30,7 @@ describe('Url', () => {
         });
 
         it('works for empty object or undefined value', () => {
-            expect(Url.paramsHashToString({ })).to.eq('');
+            expect(Url.paramsHashToString({})).to.eq('');
             expect(Url.paramsHashToString()).to.eq('');
         });
     });

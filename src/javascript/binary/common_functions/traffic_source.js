@@ -14,8 +14,6 @@ const Url           = require('../base/url');
  */
 
 const TrafficSource = (() => {
-    'use strict';
-
     let cookie;
 
     const initCookie = () => {
@@ -23,7 +21,7 @@ const TrafficSource = (() => {
             cookie = new CookieStorage('utm_data');
             cookie.read();
             // expiration date is used when writing cookie
-            const now = new Date();
+            const now      = new Date();
             cookie.expires = now.setMonth(now.getMonth() + 3);
         }
     };
@@ -32,15 +30,13 @@ const TrafficSource = (() => {
         initCookie();
         const data = cookie.value;
         Object.keys(data).map((key) => {
-            data[key] = (data[key] || '').replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
+            data[key] = (data[key] || '').replace(/[^a-zA-Z0-9\s-._]/gi, '').substring(0, 100);
         });
         return data;
     };
 
-    const getSource = (utm_data) => {
-        if (!utm_data) utm_data = getData();
-        return utm_data.utm_source || utm_data.referrer || 'direct'; // in order of precedence
-    };
+    // get source in order of precedence
+    const getSource = (utm_data = getData()) => utm_data.utm_source || utm_data.referrer || 'direct';
 
     const setData = () => {
         if (Client.isLoggedIn()) {
@@ -49,8 +45,8 @@ const TrafficSource = (() => {
         }
 
         const current_values = getData();
-        const params = Url.paramsHash();
-        const param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
+        const params         = Url.paramsHash();
+        const param_keys     = ['utm_source', 'utm_medium', 'utm_campaign'];
 
         if (params.utm_source) { // url params can be stored only if utm_source is available
             param_keys.map((key) => {
@@ -65,8 +61,8 @@ const TrafficSource = (() => {
             LocalStore.set('gclid', params.gclid);
         }
 
-        const doc_ref  = document.referrer;
-        let referrer = localStorage.getItem('index_referrer') || doc_ref;
+        const doc_ref = document.referrer;
+        let referrer  = localStorage.getItem('index_referrer') || doc_ref;
         localStorage.removeItem('index_referrer');
         if (doc_ref && !(new RegExp(window.location.hostname, 'i')).test(doc_ref)) {
             referrer = doc_ref;
@@ -82,10 +78,10 @@ const TrafficSource = (() => {
     };
 
     return {
-        getData  : getData,
-        setData  : setData,
-        clearData: clearData,
-        getSource: getSource,
+        getData,
+        setData,
+        clearData,
+        getSource,
     };
 })();
 

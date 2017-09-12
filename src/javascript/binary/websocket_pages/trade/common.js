@@ -6,6 +6,7 @@ const Tick               = require('./tick');
 const Client             = require('../../base/client');
 const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
+const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const isEmptyObject      = require('../../base/utility').isEmptyObject;
 const formatMoney        = require('../../common_functions/currency').formatMoney;
 const toISOFormat        = require('../../common_functions/string_util').toISOFormat;
@@ -17,14 +18,12 @@ const elementTextContent = require('../../common_functions/common_functions').el
  */
 
 const commonTrading = (() => {
-    'use strict';
-
     /*
      * display contract form as element of ul
      */
     const displayContractForms = (id, elements, selected) => {
         if (!id || !elements || !selected) return;
-        const target = document.getElementById(id);
+        const target   = document.getElementById(id);
         const fragment = document.createDocumentFragment();
 
         elementInnerHtml(target, '');
@@ -33,7 +32,7 @@ const commonTrading = (() => {
             const tree = getContractCategoryTree(elements);
             for (let i = 0; i < tree.length; i++) {
                 const el1 = tree[i];
-                const li = document.createElement('li');
+                const li  = document.createElement('li');
 
                 li.classList.add('tm-li');
                 if (i === 0) {
@@ -44,12 +43,12 @@ const commonTrading = (() => {
 
                 if (typeof el1 === 'object') {
                     const fragment2 = document.createDocumentFragment();
-                    let flag = 0,
-                        first = '';
+                    let flag        = 0;
+                    let first       = '';
                     for (let j = 0; j < el1[1].length; j++) {
-                        const el2 = el1[1][j];
-                        const li2 = document.createElement('li');
-                        const a2  = document.createElement('a');
+                        const el2      = el1[1][j];
+                        const li2      = document.createElement('li');
+                        const a2       = document.createElement('a');
                         const content2 = document.createTextNode(elements[el2]);
                         li2.classList.add('tm-li-2');
 
@@ -76,8 +75,8 @@ const commonTrading = (() => {
                         fragment2.appendChild(li2);
                     }
                     if (fragment2.hasChildNodes()) {
-                        const ul = document.createElement('ul');
-                        const a  = document.createElement('a');
+                        const ul      = document.createElement('ul');
+                        const a       = document.createElement('a');
                         const content = document.createTextNode(elements[el1[0]]);
 
                         a.appendChild(content);
@@ -96,7 +95,7 @@ const commonTrading = (() => {
                     }
                 } else {
                     const content3 = document.createTextNode(elements[el1]);
-                    const a3 = document.createElement('a');
+                    const a3       = document.createElement('a');
 
                     if (selected && selected === el1.toLowerCase()) {
                         a3.classList.add('a-active');
@@ -115,10 +114,10 @@ const commonTrading = (() => {
                 const list = target.getElementsByClassName('tm-li');
                 for (let k = 0; k < list.length; k++) {
                     const li4 = list[k];
-                    li4.addEventListener('mouseover', function() {
+                    li4.addEventListener('mouseover', function () {
                         this.classList.add('hover');
                     });
-                    li4.addEventListener('mouseout', function() {
+                    li4.addEventListener('mouseout', function () {
                         this.classList.remove('hover');
                     });
                 }
@@ -127,7 +126,7 @@ const commonTrading = (() => {
     };
 
     const displayMarkets = (id, elements, selected) => {
-        const target = document.getElementById(id);
+        const target   = document.getElementById(id);
         const fragment = document.createDocumentFragment();
 
         while (target && target.firstChild) {
@@ -136,9 +135,9 @@ const commonTrading = (() => {
 
         const keys1 = Object.keys(elements).sort(submarketSort);
         for (let i = 0; i < keys1.length; i++) {
-            const key = keys1[i];
+            const key     = keys1[i];
             const content = document.createTextNode(elements[key].name);
-            let option = document.createElement('option');
+            let option    = document.createElement('option');
             option.setAttribute('value', key);
             if (selected && selected === key) {
                 option.setAttribute('selected', 'selected');
@@ -150,7 +149,7 @@ const commonTrading = (() => {
                 const keys2 = Object.keys(elements[key].submarkets).sort(submarketSort);
                 for (let j = 0; j < keys2.length; j++) {
                     const key2 = keys2[j];
-                    option = document.createElement('option');
+                    option     = document.createElement('option');
                     option.setAttribute('value', key2);
                     if (selected && selected === key2) {
                         option.setAttribute('selected', 'selected');
@@ -196,11 +195,11 @@ const commonTrading = (() => {
     };
 
     const generateUnderlyingOptions = (elements, selected) => {
-        const fragment = document.createDocumentFragment();
-        const keys = Object.keys(elements).sort((a, b) => elements[a].display.localeCompare(elements[b].display));
+        const fragment   = document.createDocumentFragment();
+        const keys       = Object.keys(elements).sort((a, b) => elements[a].display.localeCompare(elements[b].display));
         const submarkets = {};
         for (let i = 0; i < keys.length; i++) {
-            if (!submarkets.hasOwnProperty(elements[keys[i]].submarket)) {
+            if (!getPropertyValue(submarkets, elements[keys[i]].submarket)) {
                 submarkets[elements[keys[i]].submarket] = [];
             }
             submarkets[elements[keys[i]].submarket].push(keys[i]);
@@ -208,8 +207,8 @@ const commonTrading = (() => {
         const keys2 = Object.keys(submarkets).sort(submarketSort);
         for (let j = 0; j < keys2.length; j++) {
             for (let k = 0; k < submarkets[keys2[j]].length; k++) {
-                const key = submarkets[keys2[j]][k];
-                const option = document.createElement('option');
+                const key     = submarkets[keys2[j]][k];
+                const option  = document.createElement('option');
                 const content = document.createTextNode(localize(elements[key].display));
                 option.setAttribute('value', key);
                 if (selected && selected === key) {
@@ -227,12 +226,23 @@ const commonTrading = (() => {
      * trading form to the actual we send it to backend
      * for e.g risefall is mapped to callput with barrierCategory euro_atm
      */
-    const getFormNameBarrierCategory = form_name => (
-        {
-            form_name       : form_name && !/(risefall|higherlower|callput)/.test(form_name) ? (/(overunder|evenodd|matchdiff)/.test(form_name) ? 'digits' : form_name) : 'callput',
-            barrier_category: form_name && !/(risefall|callput)/.test(form_name) ? (/higherlower/.test(form_name) ? 'euro_non_atm' : '') : 'euro_atm',
+    const getFormNameBarrierCategory = (form_name = '') => {
+        let name    = form_name;
+        let barrier = '';
+        if (/higherlower/.test(form_name)) {
+            name    = 'callput';
+            barrier = 'euro_non_atm';
+        } else if (/risefall|callput/.test(form_name)) {
+            name    = 'callput';
+            barrier = 'euro_atm';
+        } else if (/overunder|evenodd|matchdiff/.test(form_name)) {
+            name = 'digits';
         }
-    );
+        return {
+            form_name       : name,
+            barrier_category: barrier,
+        };
+    };
 
     /*
      * This maps the contract type to where we display on trading form
@@ -299,15 +309,16 @@ const commonTrading = (() => {
 
         if (elements) {
             tree = tree.map((e) => {
-                if (typeof e === 'object') {
-                    e[1] = e[1].filter(e1 => elements[e1]);
-                    if (!e[1].length) {
-                        e = '';
+                let value = e;
+                if (typeof value === 'object') {
+                    value[1] = value[1].filter(value1 => elements[value1]);
+                    if (!value[1].length) {
+                        value = '';
                     }
-                } else if (!elements[e]) {
-                    e = '';
+                } else if (!elements[value]) {
+                    value = '';
                 }
-                return e;
+                return value;
             });
             tree = tree.filter(v => v.length);
         }
@@ -328,8 +339,8 @@ const commonTrading = (() => {
 
     const toggleActiveCatMenuElement = (nav, event_element_id) => {
         const event_element = document.getElementById(event_element_id);
-        const li_elements = nav.querySelectorAll('.active, .a-active');
-        const classes = event_element.classList;
+        const li_elements   = nav.querySelectorAll('.active, .a-active');
+        const classes       = event_element.classList;
         let i,
             len;
 
@@ -340,7 +351,7 @@ const commonTrading = (() => {
             }
             classes.add('a-active');
 
-            i = 0;
+            i          = 0;
             let parent = event_element.parentElement;
             while (parent && parent.id !== nav.id && i < 10) {
                 if (parent.tagName === 'LI') {
@@ -357,9 +368,9 @@ const commonTrading = (() => {
      */
     const displayCommentPrice = (node, currency, type, payout) => {
         if (node && type && payout) {
-            const profit = payout - type;
+            const profit         = payout - type;
             const return_percent = (profit / type) * 100;
-            const comment = `${localize('Net profit')}: ${formatMoney(currency, profit)} | ${localize('Return')} ${return_percent.toFixed(1)}%`;
+            const comment        = `${localize('Net profit')}: ${formatMoney(currency, profit)} | ${localize('Return')} ${return_percent.toFixed(1)}%`;
 
             if (isNaN(profit) || isNaN(return_percent)) {
                 node.hide();
@@ -382,10 +393,9 @@ const commonTrading = (() => {
     const debounce = (func, wait, immediate) => {
         let timeout;
         const delay = wait || 500;
-        return function() {
-            const context = this;
-            const args = arguments;
-            const later = () => {
+        return function (...args) {
+            const context  = this;
+            const later    = () => {
                 timeout = null;
                 if (!immediate) func.apply(context, args);
             };
@@ -400,12 +410,12 @@ const commonTrading = (() => {
      * check if selected market is allowed for current user
      */
     const getDefaultMarket = () => {
-        let mkt = Defaults.get('market');
+        let mkt       = Defaults.get('market');
         const markets = Symbols.markets(1);
         if (!mkt || !markets[mkt]) {
             const sorted_markets = Object.keys(Symbols.markets()).filter(v => markets[v].is_active)
                 .sort((a, b) => getMarketsOrder(a) - getMarketsOrder(b));
-            mkt = sorted_markets[0];
+            mkt                  = sorted_markets[0];
         }
         return mkt;
     };
@@ -436,9 +446,9 @@ const commonTrading = (() => {
      * this creates a button, clicks it, and destroys it to invoke the listener
      */
     const submitForm = (form) => {
-        const button = form.ownerDocument.createElement('input');
+        const button         = form.ownerDocument.createElement('input');
         button.style.display = 'none';
-        button.type = 'submit';
+        button.type          = 'submit';
         form.appendChild(button).click();
         form.removeChild(button);
     };
@@ -528,7 +538,7 @@ const commonTrading = (() => {
 
     const selectOption = (option, select) => {
         const options = select.getElementsByTagName('option');
-        let contains = 0;
+        let contains  = 0;
         for (let i = 0; i < options.length; i++) {
             if (options[i].value === option && !options[i].hasAttribute('disabled')) {
                 contains = 1;
@@ -558,8 +568,8 @@ const commonTrading = (() => {
     let $chart;
 
     const updateWarmChart = () => {
-        $chart = $chart || $('#trading_worm_chart');
-        const spots =  Object.keys(Tick.spots()).sort((a, b) => a - b).map(v => Tick.spots()[v]);
+        $chart      = $chart || $('#trading_worm_chart');
+        const spots = Object.keys(Tick.spots()).sort((a, b) => a - b).map(v => Tick.spots()[v]);
         if ($chart && typeof $chart.sparkline === 'function') {
             $chart.sparkline(spots, chart_config);
             if (spots.length) {
@@ -580,21 +590,21 @@ const commonTrading = (() => {
     // ============= Functions used in /trading_beta =============
 
     const updatePurchaseStatus_Beta = (final_price, pnl, contract_status) => {
-        final_price = String(final_price).replace(/,/g, '') * 1;
-        pnl = String(pnl).replace(/,/g, '') * 1;
+        const f_price = String(final_price).replace(/,/g, '') * 1;
+        const f_pnl   = String(pnl).replace(/,/g, '') * 1;
         $('#contract_purchase_heading').text(localize(contract_status));
-        const payout  = document.getElementById('contract_purchase_payout');
-        const cost    = document.getElementById('contract_purchase_cost');
-        const profit  = document.getElementById('contract_purchase_profit');
+        const payout   = document.getElementById('contract_purchase_payout');
+        const cost     = document.getElementById('contract_purchase_cost');
+        const profit   = document.getElementById('contract_purchase_profit');
         const currency = Client.get('currency');
 
-        labelValue(cost, localize('Stake'), formatMoney(currency, Math.abs(pnl), 1));
-        labelValue(payout, localize('Payout'), formatMoney(currency, final_price, 1));
+        labelValue(cost, localize('Stake'), formatMoney(currency, Math.abs(f_pnl), 1));
+        labelValue(payout, localize('Payout'), formatMoney(currency, f_price, 1));
 
-        const isWin = (final_price > 0);
+        const isWin = (f_price > 0);
         $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
         labelValue(profit, isWin ? localize('Profit') : localize('Loss'),
-            formatMoney(currency, isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl), 1));
+            formatMoney(currency, isWin ? Math.round((f_price - f_pnl) * 100) / 100 : -Math.abs(f_pnl), 1));
     };
 
     const displayTooltip_Beta = (market, symbol) => {
@@ -632,10 +642,10 @@ const commonTrading = (() => {
     };
 
     const timeIsValid = ($element) => {
-        let end_date_value   = document.getElementById('expiry_date').getAttribute('data-value'),
-            start_date_value = document.getElementById('date_start').value,
-            end_time_value   = document.getElementById('expiry_time').value;
-        const $invalid_time = $('#invalid-time');
+        let end_date_value   = document.getElementById('expiry_date').getAttribute('data-value');
+        let start_date_value = document.getElementById('date_start').value;
+        let end_time_value   = document.getElementById('expiry_time').value;
+        const $invalid_time  = $('#invalid-time');
 
         if ($element.attr('id') === $('#expiry_time') && end_time_value &&
             !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(end_time_value)) {
@@ -649,9 +659,10 @@ const commonTrading = (() => {
         $element.removeClass('error-field');
         $invalid_time.remove();
 
-        end_date_value = end_date_value ? toISOFormat(Moment(end_date_value)) : toISOFormat(new Moment());
+        end_date_value   = end_date_value ? toISOFormat(Moment(end_date_value)) : toISOFormat(new Moment());
+        // eslint-disable-next-line no-underscore-dangle
         start_date_value = start_date_value === 'now' ? Math.floor(window.time._i / 1000) : start_date_value;
-        end_time_value = end_time_value || '23:59:59';
+        end_time_value   = end_time_value || '23:59:59';
 
         if (Moment.utc(`${end_date_value} ${end_time_value}`).unix() <= start_date_value) {
             $element.addClass('error-field');
@@ -667,35 +678,34 @@ const commonTrading = (() => {
     };
 
     return {
-        displayUnderlyings        : displayUnderlyings,
-        generateUnderlyingOptions : generateUnderlyingOptions,
-        getFormNameBarrierCategory: getFormNameBarrierCategory,
-        contractTypeDisplayMapping: contractTypeDisplayMapping,
-        showPriceOverlay          : () => { showHideOverlay('loading_container2', 'block'); },
-        hidePriceOverlay          : () => { showHideOverlay('loading_container2', 'none'); },
-        hideFormOverlay           : () => { showHideOverlay('loading_container3', 'none'); },
-        showFormOverlay           : () => { showHideOverlay('loading_container3', 'block'); },
-        hideOverlayContainer      : hideOverlayContainer,
-        getContractCategoryTree   : getContractCategoryTree,
-        resetPriceMovement        : resetPriceMovement,
-        toggleActiveCatMenuElement: toggleActiveCatMenuElement,
-        displayCommentPrice       : displayCommentPrice,
-        debounce                  : debounce,
-        getDefaultMarket          : getDefaultMarket,
-        addEventListenerForm      : addEventListenerForm,
-        submitForm                : submitForm,
-        durationOrder             : duration => duration_order[duration],
-        displayTooltip            : displayTooltip,
-        selectOption              : selectOption,
-        updateWarmChart           : updateWarmChart,
-        reloadPage                : reloadPage,
-        displayContractForms      : displayContractForms,
-        displayMarkets            : displayMarkets,
-        updatePurchaseStatus_Beta : updatePurchaseStatus_Beta,
-        displayTooltip_Beta       : displayTooltip_Beta,
-        labelValue                : labelValue,
-        timeIsValid               : timeIsValid,
-        clean                     : () => { $chart = null; },
+        displayUnderlyings,
+        getFormNameBarrierCategory,
+        contractTypeDisplayMapping,
+        hideOverlayContainer,
+        getContractCategoryTree,
+        resetPriceMovement,
+        toggleActiveCatMenuElement,
+        displayCommentPrice,
+        debounce,
+        getDefaultMarket,
+        addEventListenerForm,
+        submitForm,
+        displayTooltip,
+        selectOption,
+        updateWarmChart,
+        reloadPage,
+        displayContractForms,
+        displayMarkets,
+        updatePurchaseStatus_Beta,
+        displayTooltip_Beta,
+        labelValue,
+        timeIsValid,
+        showPriceOverlay: () => { showHideOverlay('loading_container2', 'block'); },
+        hidePriceOverlay: () => { showHideOverlay('loading_container2', 'none'); },
+        hideFormOverlay : () => { showHideOverlay('loading_container3', 'none'); },
+        showFormOverlay : () => { showHideOverlay('loading_container3', 'block'); },
+        durationOrder   : duration => duration_order[duration],
+        clean           : () => { $chart = null; },
     };
 })();
 
