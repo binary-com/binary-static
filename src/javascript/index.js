@@ -8,6 +8,7 @@ window.$ = window.jQuery = require('jquery');
 
 require('babel-polyfill');
 require('promise-polyfill');
+require('./lib/polyfills/nodelist.foreach');
 
 // created for handling global onclick
 exportAllFunctions(require('./binary/common_functions/attach_dom/handle_click'));
