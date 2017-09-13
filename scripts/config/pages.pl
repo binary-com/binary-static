@@ -121,6 +121,7 @@ sub all_pages {
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],
         ['ico',                        'static/ico',             undef, 'Initial Coin Offering', 'ja'],
         ['hackathon',                  'static/hackathon',       undef, 'Hackathon Competition', 'NOT-en'],
+        ['landing/signup-frame',       'landing/signup_frame',   undef, 'Sign up'],
     );
 }
 
