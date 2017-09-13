@@ -391,3 +391,35 @@ input[type='text']:focus, input[type='submit']:focus {
         margin: 1.25em 0 1.25em 2em; // overwrite binary.css
     }
 }
+
+#read-im-section {
+    button {
+        padding: 20px;
+        font-size: 20px;
+    }
+}
+
+.disclaimer {
+    padding: 120px 0 60px;
+    @media (max-width: 1199px) {
+        padding: 30px 0;
+    }
+
+    select {
+        max-width: 100%;
+    }
+    button {
+        margin: 10px 0;
+    }
+    label {
+        font-weight: bold;
+
+        input {
+            vertical-align: bottom;
+        }
+    }
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}

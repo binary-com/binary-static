@@ -207,6 +207,15 @@
                 </div>
             </div>
 
+            <div id="read-im-section" class="content-section primary-bg-color center-text">
+                <div class="gr-row">
+                    <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
+                        <h2 class="content-inverse-color">[% l("Read the draft Information Memorandum for further information about the proposed offer.") %]</h2>
+                        <button onclick="window.location.href='[% request.url_for('ico-disclaimer.html') %]'" class="button">[% l("View now") %]</button>
+                    </div>
+                </div>
+            </div>
+
             <div id="faq-section" class="content-section fill-bg-color center-text">
                 <div class="gr-row">
                     <div class="gr-12">
