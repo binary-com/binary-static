@@ -23,7 +23,7 @@ const Header = (() => {
             $('ul#menu-top').addClass('smaller-font');
             displayAccountStatus();
             if (!Client.get('virtual')) {
-                BinarySocket.wait('website_status').then(() => {
+                BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
                     if (Client.canTransferFunds()) {
                         document.getElementById('user_menu_account_transfer').setVisibility(1);
                     }
