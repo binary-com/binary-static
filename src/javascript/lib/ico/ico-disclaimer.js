@@ -49,7 +49,6 @@ window.onload = function() {
         var country_name;
         country_names.map(function(item, idx) {
             if (item.code === val) {
-                notice_msg = item.message;
                 country_name = item.name;
             }
         });
@@ -60,12 +59,16 @@ window.onload = function() {
 
     function showDisclaimer(val) {
         if (isRestrictedCountry(val)) {
+            var code;
             // eu countries code
             if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|ru|sm|sk|si|es|se|ch|ua|va)$/.test(val)) {
-                val = 'eu';
+                code = 'eu';
+            } else {
+                code = val;
             }
-            if (/^(ca|jp|sg|hk|uk|ch|eu)$/.test(val)) {
-                showSecondNotice(val);
+
+            if (/^(ca|jp|sg|hk|uk|ch|eu)$/.test(code)) {
+                showSecondNotice(code);
             } else {
                 document.getElementById('access_denied_msg').classList.remove('invisible');
             }
