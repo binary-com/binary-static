@@ -431,10 +431,6 @@
     #duration_units {
         @include BIDIR_PROP(margin-right, margin-left, 10px);
     }
-    #duration_tooltip_wrapper {
-        line-height: 28px;
-        white-space: nowrap;
-    }
     .small_width_input {
         width: 70px;
     }

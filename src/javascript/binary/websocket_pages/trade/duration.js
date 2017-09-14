@@ -228,6 +228,7 @@ const Durations = (() => {
             document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
                 Defaults.get('duration_units') : unit.value;
         elementTextContent(document.getElementById('duration_minimum'), unit_min_value);
+        elementTextContent(document.getElementById('duration_unit'), unit.options[unit.selectedIndex].textContent);
         elementTextContent(document.getElementById('duration_maximum'), unit_max_value);
         if (selected_duration.amount && selected_duration.unit > unit_value) {
             unit_value = selected_duration.amount;
@@ -494,16 +495,19 @@ const Durations = (() => {
     };
 
     const validateMinDurationAmount = () => {
-        const duration_amount_element = document.getElementById('duration_amount');
-        const duration_min_element    = document.getElementById('duration_minimum');
-        const duration_max_element    = document.getElementById('duration_maximum');
+        const duration_amount_element  = document.getElementById('duration_amount');
+        const duration_min_element     = document.getElementById('duration_minimum');
+        const duration_max_element     = document.getElementById('duration_maximum');
+        const duration_wrapper_element = document.getElementById('duration_wrapper');
         if (!isVisible(duration_amount_element) || !isVisible(duration_min_element)) return;
         if (+duration_amount_element.value < +duration_min_element.textContent ||
            (+duration_max_element.textContent &&
            (+duration_amount_element.value > +duration_max_element.textContent))) {
             duration_amount_element.classList.add('error-field');
+            duration_wrapper_element.classList.add('error-msg');
         } else {
             duration_amount_element.classList.remove('error-field');
+            duration_wrapper_element.classList.remove('error-msg');
         }
     };
 
