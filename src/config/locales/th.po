@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-10 23:19-0400\n"
+"PO-Revision-Date: 2017-09-13 21:30-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -3161,9 +3161,6 @@ msgstr "สำหรับเครื่องเดสก์ทอป"
 msgid "For Mobile"
 msgstr "สำหรับอุปกรณ์เคลื่อนที่"
 
-msgid "For added security, please check your email to retrieve the verification token."
-msgstr "โปรดตรวจสอบอีเมล์ของท่านเพื่อรับโทเค่นในการยืนยันตัวตน และความปลอดภัย"
-
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "สำหรับเงินอิเล็กทรอนิกส์ หรือ สกุลเงินท้องถิ่น ไม่สามารถใช้ได้กับ %1"
 
@@ -6048,11 +6045,8 @@ msgstr "โปรดยอมรับข้อตกลงและเงื่
 msgid "Please check the above form for pending errors."
 msgstr "โปรดตรวจสอบแบบฟอร์มข้างต้นสำหรับรายการข้อผิดพลาด"
 
-msgid "Please check your email for the value of this token"
-msgstr "โปรดตรวจสอบอีเมล์ของท่านเพื่อการใช้งานโทเค่นนี้"
-
-msgid "Please check your email to retrieve the token needed to reset your password."
-msgstr "โปรดตรวจสอบอีเมล์ของท่านเพื่อใช้โทเค่นในการตั้งรหัสผ่านใหม่ของท่าน"
+msgid "Please check your email to complete the process."
+msgstr ""
 
 msgid "Please choose a currency"
 msgstr ""
@@ -6108,8 +6102,8 @@ msgstr "โปรดทราบว่า ราคาในช่วงวั�
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "ท่านสามารถปรับปรุงข้อมูลส่วนตัวของท่านได้ตามต้องการ โดยการแก้ไขจากเมนู \"การตั้งค่า (Settings)\" ในบัญชีของท่าน และเป็นความรับผิดชอบของท่านเพื่อทำให้แน่ใจว่า %1 มีการปรับปรุงข้อมูลส่วนบุคคลของท่านมีการแจ้งให้ทราบทันทีและสม่ำเสมอ"
 
-msgid "Please provide us with the following information, after retrieving the verification token from your email:"
-msgstr "โปรดให้ข้อมูลต่อไปนี้ ภายหลังการเรียกข้อมูลโทเค่นจากอีเมล์ของท่าน:"
+msgid "Please provide us with the following information:"
+msgstr ""
 
 msgid "Please refer to the following commission plan."
 msgstr "โปรดอ้างอิงแผนค่าตอบแทนต่อไปนี้"
@@ -6161,9 +6155,6 @@ msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "โปรดระบุช่วงเวลาการตรวจสอบสภาพความเป็นจริงที่ท่านต้องการเป็นหน่วยนาทีที่จะเกิดขึ้นจริงระหว่างการซื้อขาย"
-
-msgid "Please submit a valid verification token."
-msgstr "โปรดส่งโทเค่นที่ถูกต้องเพื่อการตรวจสอบ"
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "โปรดส่งข้อมูลข้างต้นมาที่ <a href='mailto:%1'>%1</a>"
@@ -7386,8 +7377,8 @@ msgstr "พฤ"
 msgid "Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5."
 msgstr "ขอบคุณสำหรับทำแบบประเมินทางการเงิน และลงทะเบียนบัญชีของท่าน ท่านสามารถฝากเงินและซื้อขายฟอเร็กซ์ด้วยเงินจริงบน MT5 ในขณะนี้"
 
-msgid "Thank you for signing up! Please check your email to retrieve the verification token."
-msgstr "ขอบคุณสำหรับการลงทะเบียน! โปรดตรวจสอบอีเมล์ของท่านเพื่อรับโทเค่น"
+msgid "Thank you for signing up! Please check your email to complete the registration process."
+msgstr ""
 
 msgid "Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO."
 msgstr ""
@@ -8654,11 +8645,8 @@ msgstr "ใช้ยุทธวิธีที่หลากหลาย ท�
 msgid "Variable spreads"
 msgstr ""
 
-msgid "Verification code format incorrect."
-msgstr "รูปแบบของรหัสตรวจสอบไม่ถูกต้อง"
-
-msgid "Verification token"
-msgstr "โทเค่นเพื่อตรวจสอบ"
+msgid "Verification code is wrong. Please use the link sent to your email."
+msgstr ""
 
 msgid "Verify main password"
 msgstr "ตรวจสอบรหัสผ่านหลัก"
@@ -11800,6 +11788,9 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Account Limits"
 msgstr "วงเงินในบัญชี"
+
+msgid "Redirecting..."
+msgstr ""
 
 msgid "Initial Coin Offering"
 msgstr ""
