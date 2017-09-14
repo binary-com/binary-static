@@ -167,6 +167,7 @@ const Price = (() => {
         const error         = container.getElementsByClassName('contract_error')[0];
         const currency      = document.getElementById('currency');
 
+
         const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
             h4.setAttribute('class', `contract_heading ${type}`);
@@ -174,22 +175,17 @@ const Price = (() => {
         }
 
         const setData = (data = {}) => {
-            if (data.display_value) {
-                $('.stake:hidden').show();
-                elementTextContent(stake, `${localize('Stake')}: `);
-                elementInnerHtml(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
-                $('.stake_wrapper:hidden').show();
-            } else {
-                $('.stake_wrapper:visible').hide();
+            if (!data.display_value) {
+                amount.classList.remove('price_moved_up', 'price_moved_down');
             }
+            elementTextContent(stake, `${localize('Stake')}: `);
+            elementInnerHtml(amount, data.display_value ? formatMoney((currency.value || currency.getAttribute('value')), data.display_value) : '-');
 
-            if (data.payout) {
-                elementTextContent(payout, `${localize('Payout')}: `);
-                elementInnerHtml(payout_amount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
-                $('.payout_wrapper:hidden').show();
-            } else {
-                $('.payout_wrapper:visible').hide();
+            if (!data.payout) {
+                amount.classList.remove('price_moved_up', 'price_moved_down');
             }
+            elementTextContent(payout, `${localize('Payout')}: `);
+            elementInnerHtml(payout_amount, data.payout ? formatMoney((currency.value || currency.getAttribute('value')), data.payout) : '-');
 
             if (data.longcode && window.innerWidth > 500) {
                 description.setAttribute('data-balloon', data.longcode);
@@ -199,18 +195,14 @@ const Price = (() => {
         };
 
         if (details.error) {
-            purchase.hide();
+            purchase.parentNode.classList.add('button-disabled');
             comment.hide();
             setData();
             error.show();
             elementTextContent(error, details.error.message);
         } else {
             setData(proposal);
-            if ($('#websocket_form').find('.error-field:visible').length > 0) {
-                purchase.hide();
-            } else {
-                purchase.show();
-            }
+            purchase.parentNode.classList.remove('button-disabled');
             comment.show();
             error.hide();
             commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
