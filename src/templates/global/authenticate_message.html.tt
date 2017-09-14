@@ -77,11 +77,14 @@
 [% INCLUDE file_selector heading=l("1. Proof of identity")
     allowed_documents=[l('Passport'), l('Driving licence'), 
         l('National ID card or any government issued document which contains a photo ID, your name and date of birth')]
-    instructions=[l('Must be a photo or scanned image'), l('Still valid'), 
+    instructions=[
+        l('Must be a photo or scanned image'), l('Still valid'), 
         l('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'), 
-        l('Maximum upload size for each file is 3MB')]
+        l('Maximum upload size for each file is 3MB')
+    ]
     type="poi"
-    accepted_documents=[{name => l('Passport'), value => 'passport'},
+    accepted_documents=[
+        {name => l('Passport'), value => 'passport'},
         {name => l('Identity card'), value => 'proofid'}, 
         {name => l('Driving license'), value => 'driverslicense'}
     ]
@@ -90,12 +93,15 @@
 [% INCLUDE file_selector heading=l("2. Proof of address")
     allowed_documents=[l('Utility bills (gas, electricity, phone)'), 
         l('Latest bank statement or any government-issued letter which contains your name and address')]
-    instructions=[ l('Must be a clear, colour photo or scanned image'),
+    instructions=[
+        l('Must be a clear, colour photo or scanned image'),
         l('Issued under your own name'), l('Dated within the last three months'), 
         l('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'), 
-        l('Maximum upload size for each file is 3MB')]
+        l('Maximum upload size for each file is 3MB')
+    ]
     type="poa"
-    accepted_documents=[{name => l('Utility bill'), value => 'proofaddress'}, 
+    accepted_documents=[
+        {name => l('Utility bill'), value => 'proofaddress'}, 
         {name => l('Bank statement'), value => 'bankstatement'}
     ]
 %]
