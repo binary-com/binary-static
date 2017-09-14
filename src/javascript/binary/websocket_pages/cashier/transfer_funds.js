@@ -36,7 +36,7 @@ const AccountTransfer = (() => {
         accounts.forEach((account, idx) => {
             if (accounts[idx].loginid !== client_loginid) {
                 const option  = document.createElement('option');
-                option.appendChild(document.createTextNode(accounts[idx].loginid));
+                option.appendChild(document.createTextNode(`${accounts[idx].loginid} (${accounts[idx].currency})`));
                 fragment_transfer_to.appendChild(option);
             }
         });
@@ -46,10 +46,10 @@ const AccountTransfer = (() => {
             return;
         }
         if (fragment_transfer_to.childElementCount > 1) {
-            el_transfer_to.innerHTML = `${fragment_transfer_to.innerHTML} (${client_currency})`;
+            el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
         } else {
             const label = document.createElement('label');
-            label.appendChild(document.createTextNode(`${fragment_transfer_to.innerText} (${client_currency})`));
+            label.appendChild(document.createTextNode(fragment_transfer_to.innerText));
             label.setAttribute('data-value', fragment_transfer_to.innerText);
             label.id = 'transfer_to';
 
