@@ -1,9 +1,11 @@
-const BinarySocket    = require('../socket');
-const Client          = require('../../base/client');
-const localize        = require('../../base/localize').localize;
-const urlParam        = require('../../base/url').param;
-const FormManager     = require('../../common_functions/form_manager');
-const validEmailToken = require('../../common_functions/form_validation').validEmailToken;
+const BinarySocket     = require('../socket');
+const BinaryPjax       = require('../../base/binary_pjax');
+const Client           = require('../../base/client');
+const localize         = require('../../base/localize').localize;
+const urlParam         = require('../../base/url').param;
+const isCryptocurrency = require('../../common_functions/currency').isCryptocurrency;
+const FormManager      = require('../../common_functions/form_manager');
+const validEmailToken  = require('../../common_functions/form_validation').validEmailToken;
 
 const PaymentAgentWithdraw = (() => {
     const view_ids  = {
@@ -147,6 +149,10 @@ const PaymentAgentWithdraw = (() => {
     };
 
     const onLoad = () => {
+        if (isCryptocurrency(Client.get('currency'))) {
+            BinaryPjax.loadPreviousUrl();
+            return;
+        }
         BinarySocket.wait('get_account_status').then((data) => {
             $views = $('#paymentagent_withdrawal').find('.viewItem');
             $views.setVisibility(0);
