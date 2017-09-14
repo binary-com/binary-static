@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-13 21:19-0400\n"
+"PO-Revision-Date: 2017-09-13 21:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -3156,9 +3156,6 @@ msgstr "用於桌上型電腦"
 msgid "For Mobile"
 msgstr "用於手機"
 
-msgid "For added security, please check your email to retrieve the verification token."
-msgstr "為提高安全保障，請檢視郵件並提取驗證權杖。"
-
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "%1不支持的電子現金方式或本地貨幣。"
 
@@ -6042,11 +6039,8 @@ msgstr "請接受條款和條件。"
 msgid "Please check the above form for pending errors."
 msgstr "請檢查以上表格是否有待定錯誤。"
 
-msgid "Please check your email for the value of this token"
-msgstr "請檢查您的電郵領取此權杖編號"
-
-msgid "Please check your email to retrieve the token needed to reset your password."
-msgstr "請檢查您的電郵領取重設密碼所需的權杖編號。"
+msgid "Please check your email to complete the process."
+msgstr ""
 
 msgid "Please choose a currency"
 msgstr "請選擇一種貨幣"
@@ -6102,8 +6096,8 @@ msgstr "請注意，為進行合約結算，週末報價將忽略不計。週末
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "請注意，您可以隨時登入帳戶的「設定」部份更新您的個人資料。您應確保始終及時向%1告知您個人資料的任何變化。"
 
-msgid "Please provide us with the following information, after retrieving the verification token from your email:"
-msgstr "從電郵領取權杖後請提供下列資訊："
+msgid "Please provide us with the following information:"
+msgstr ""
 
 msgid "Please refer to the following commission plan."
 msgstr "請參考下列佣金計劃。"
@@ -6155,9 +6149,6 @@ msgstr "繼續操作前請設定開立帳戶的原因。"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "請指定您的優選實況調查間隔時間分鐘數"
-
-msgid "Please submit a valid verification token."
-msgstr "請提交有效的驗證權杖。"
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "請將以上資訊傳到<a href='mailto:%1'>%1</a>。"
@@ -7380,8 +7371,8 @@ msgstr "星期四"
 msgid "Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5."
 msgstr "謝謝您完成財務評估及註冊金融帳戶。現在您可以存入資金並在MT5以真實資金開始外匯交易。"
 
-msgid "Thank you for signing up! Please check your email to retrieve the verification token."
-msgstr "謝謝您的註冊！請檢視郵件並提取驗證權杖。"
+msgid "Thank you for signing up! Please check your email to complete the registration process."
+msgstr ""
 
 msgid "Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO."
 msgstr "感謝您訂閱 ！留意收件匣收取ICO最新消息 。"
@@ -8646,11 +8637,8 @@ msgstr "在您指定的市場利用各種線上和離線策略幫助公司合作
 msgid "Variable spreads"
 msgstr "變數點差"
 
-msgid "Verification code format incorrect."
-msgstr "驗證碼格式不正確。"
-
-msgid "Verification token"
-msgstr "驗證權杖"
+msgid "Verification code is wrong. Please use the link sent to your email."
+msgstr ""
 
 msgid "Verify main password"
 msgstr "主密碼驗證"
@@ -11792,6 +11780,9 @@ msgstr "條款和條件審批"
 
 msgid "Account Limits"
 msgstr "帳戶限額"
+
+msgid "Redirecting..."
+msgstr ""
 
 msgid "Initial Coin Offering"
 msgstr "首次代幣預售"
