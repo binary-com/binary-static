@@ -1,20 +1,22 @@
-const BinarySocket = require('../socket');
-const Client       = require('../../base/client');
-const localize     = require('../../base/localize').localize;
-const FormManager  = require('../../common_functions/form_manager');
+const BinarySocket    = require('../socket');
+const Client          = require('../../base/client');
+const localize        = require('../../base/localize').localize;
+const urlParam        = require('../../base/url').param;
+const FormManager     = require('../../common_functions/form_manager');
+const validEmailToken = require('../../common_functions/form_validation').validEmailToken;
 
 const PaymentAgentWithdraw = (() => {
     const view_ids  = {
         error  : '#viewError',
+        notice : '#viewNotice',
         success: '#viewSuccess',
         confirm: '#viewConfirm',
         form   : '#viewForm',
     };
     const field_ids = {
-        verification_code: '#verification_code',
-        ddl_agents       : '#ddlAgents',
-        txt_amount       : '#txtAmount',
-        txt_desc         : '#txtDescription',
+        ddl_agents: '#ddlAgents',
+        txt_amount: '#txtAmount',
+        txt_desc  : '#txtDescription',
     };
 
     let $views,
@@ -28,7 +30,20 @@ const PaymentAgentWithdraw = (() => {
         $ddl_agents.empty();
         const pa_list = (response.paymentagent_list || {}).list;
         if (pa_list.length > 0) {
+            checkToken($ddl_agents, pa_list);
+        } else {
+            showPageError(localize('The Payment Agent facility is currently not available in your country.'));
+        }
+    };
+
+    const checkToken = ($ddl_agents, pa_list) => {
+        const token = urlParam('token') || '';
+        if (!token) {
             BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
+            setActiveView(view_ids.notice);
+        } else if (!validEmailToken(token)) {
+            showPageError('token_error');
+        } else {
             insertListOption($ddl_agents, localize('Please select a payment agent'), '');
             for (let i = 0; i < pa_list.length; i++) {
                 insertListOption($ddl_agents, pa_list[i].name, pa_list[i].paymentagent_loginid);
@@ -41,12 +56,11 @@ const PaymentAgentWithdraw = (() => {
                 { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
                 { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: '1, 2', min: 10, max: 2000 }]], request_field: 'amount' },
                 { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
-                { selector: field_ids.verification_code, validations: ['req', 'email_token'] },
 
                 { request_field: 'currency',              value: currency },
                 { request_field: 'paymentagent_withdraw', value: 1 },
                 { request_field: 'dry_run',               value: 1 },
-            ]);
+            ], true);
 
             FormManager.handleSubmit({
                 form_selector       : form_id,
@@ -54,8 +68,6 @@ const PaymentAgentWithdraw = (() => {
                 fnc_additional_check: setAgentName,
                 enable_button       : true,
             });
-        } else {
-            showPageError(localize('The Payment Agent facility is currently not available in your country.'));
         }
     };
 
@@ -80,10 +92,9 @@ const PaymentAgentWithdraw = (() => {
                     { request_field: 'paymentagent_loginid',  value: request.paymentagent_loginid },
                     { request_field: 'amount',                value: request.amount },
                     { request_field: 'description',           value: request.description },
-                    { request_field: 'verification_code',     value: request.verification_code },
                     { request_field: 'currency',              value: request.currency },
                     { request_field: 'paymentagent_withdraw', value: 1 },
-                ]);
+                ], true);
 
                 FormManager.handleSubmit({
                     form_selector       : view_ids.confirm,

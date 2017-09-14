@@ -203,6 +203,7 @@ sub _texts {
         push @texts, localize('Password is not strong enough.');
         push @texts, localize('Your session duration limit will end in [_1] seconds.');
         push @texts, localize('Invalid email address');
+        push @texts, localize('Thank you for signing up! Please check your email to complete the registration process.');
         #strings for real account opening page
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
@@ -426,7 +427,7 @@ sub _texts {
         # Strings for lost_password
         push @texts, localize('[_1] Please click the link below to restart the password recovery process.');
         push @texts, localize('Your password has been successfully reset. Please log into your account using your new password.');
-        push @texts, localize('Verification code format incorrect.');
+        push @texts, localize('Please check your email to complete the process.');
         # strings for cashier page
         push @texts, localize('details');
         push @texts, localize('Withdraw');
@@ -450,11 +451,11 @@ sub _texts {
         push @texts, localize('Only letters, numbers, and hyphen are allowed.');
         push @texts, localize('Only numbers, space, and hyphen are allowed.');
         push @texts, localize('Only numbers and spaces are allowed.');
-        push @texts, localize('Please submit a valid verification token.');
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('[_1] and [_2] cannot be the same.');
         push @texts, localize('You should enter [_1] characters.');
         push @texts, localize('Indicates required field');
+        push @texts, localize('Verification code is wrong. Please use the link sent to your email.');
 
         # strings for metatrader
         push @texts, localize('Congratulations! Your [_1] Account has been created.');
