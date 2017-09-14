@@ -68,6 +68,9 @@
                             <a href="#page-top"></a>
                         </li>
                         <li>
+                            <a href="[% request.url_for('ico-disclaimer.html') %]">[% l("Information Memorandum") %]</a>
+                        </li>
+                        <li>
                             <a class="page-scroll" href="#how-ico-works">[% l("How the ICO works") %]</a>
                         </li>
                         <li>
@@ -203,6 +206,15 @@
                         <img class="icon" src="[% request.url_for('images/ico/icons/dvnd_icon.svg') %]" />
                         <h4>[% l("How much dividend will I receive?") %]</h4>
                         <p>[% l("Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares.") %]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="read-im-section" class="content-section primary-bg-color center-text">
+                <div class="gr-row">
+                    <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
+                        <h2 class="content-inverse-color">[% l("Read the draft Information Memorandum for further information about the proposed offer.") %]</h2>
+                        <button onclick="window.location.href='[% request.url_for('ico-disclaimer.html') %]'" class="button">[% l("View memorandum") %]</button>
                     </div>
                 </div>
             </div>

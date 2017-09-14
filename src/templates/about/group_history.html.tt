@@ -26,6 +26,7 @@
         <div class="timeline">
             [% INCLUDE ul items=[
                 { class="year center-text", text="2017" },
+                { class="event right featured", header=l("Initial Coin Offering (ICO)"),                  text=l("[_1] announces plans for an [_2]IPO on the blockchain[_3].", website_name, "<a target='_blank' href='" _ request.url_for('ico') _ "'>", "</a>") },
                 { class="event",                header=l("Personal Wealth Awards 2017"),                  text=l("[_1] is awarded Best Binary Options Broker by the UK-based Online Personal Wealth Awards 2017, as voted by investors worldwide.", website_name) },
                 { class="event right featured", header=l("[_1] launches Bitcoin accounts", website_name), text=l("[_1] launches Bitcoin (BTC) accounts for non-EU customers.", website_name) },
 
