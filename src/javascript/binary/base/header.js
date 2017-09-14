@@ -22,8 +22,12 @@ const Header = (() => {
         if (Client.isLoggedIn()) {
             $('ul#menu-top').addClass('smaller-font');
             displayAccountStatus();
-            if (!Client.get('virtual') && Client.canTransferFunds()) {
-                document.getElementById('user_menu_transfer_funds').setVisibility(1);
+            if (!Client.get('virtual')) {
+                BinarySocket.wait('website_status').then(() => {
+                    if (Client.canTransferFunds()) {
+                        document.getElementById('user_menu_transfer_funds').setVisibility(1);
+                    }
+                });
             }
         }
     };
