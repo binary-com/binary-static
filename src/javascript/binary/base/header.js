@@ -25,7 +25,7 @@ const Header = (() => {
             if (!Client.get('virtual')) {
                 BinarySocket.wait('website_status').then(() => {
                     if (Client.canTransferFunds()) {
-                        document.getElementById('user_menu_transfer_funds').setVisibility(1);
+                        document.getElementById('user_menu_account_transfer').setVisibility(1);
                     }
                 });
             }

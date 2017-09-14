@@ -11,11 +11,11 @@
     </div>
 [% END %]
 
-<h1>[% l("Transfer Funds") %]</h1>
+<h1>[% l("Transfer Between Accounts") %]</h1>
 
 <div class="invisible" id="client_message">
     <p class="center-text notice-msg">
-        <span class="invisible" id="no_account">[% l("Fund transfer is unavailable.") %]</span> <span class="invisible" id="no_balance">[% l("Please [_1]deposit[_2] to your account.", '<a href="' _ request.url_for('/cashier/forwardws#deposit') _ '">', '</a>') %]</span>
+        <span class="invisible" id="no_account">[% l("Fund transfer between accounts is unavailable.") %]</span> <span class="invisible" id="no_balance">[% l("Please [_1]deposit[_2] to your account.", '<a href="' _ request.url_for('/cashier/forwardws#deposit') _ '">', '</a>') %]</span>
     </p>
 </div>
 
@@ -29,7 +29,9 @@
     [% INCLUDE row id='to' %]
 </div>
 
-<form class="invisible" id="frm_transfer_funds">
+<form class="invisible" id="frm_account_transfer">
+    <p>[% l('Transfer funds between your real money accounts.') %]</p>
+
     [% WRAPPER fieldset legend=l('Details') %]
         [% INCLUDE form_row label=l("Transfer from") type='label' id='lbl_transfer_from' %]
         [% INCLUDE form_row label=l("Transfer to") type='select' id='transfer_to' %]

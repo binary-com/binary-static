@@ -7,7 +7,7 @@ const isCryptocurrency   = require('../../common_functions/currency').isCryptocu
 const FormManager        = require('../../common_functions/form_manager');
 
 const AccountTransfer = (() => {
-    const form_id       = 'frm_transfer_funds';
+    const form_id       = 'frm_account_transfer';
     const form_id_hash  = `#${form_id}`;
 
     const messages = {

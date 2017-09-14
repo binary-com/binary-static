@@ -16,7 +16,7 @@ const TermsAndConditions = require('../static_pages/tnc');
 const VideoFacility      = require('../static_pages/video_facility');
 const WhyUs              = require('../static_pages/why_us');
 
-const AccountTransfer      = require('../websocket_pages/cashier/transfer_funds');
+const AccountTransfer      = require('../websocket_pages/cashier/account_transfer');
 const Cashier              = require('../websocket_pages/cashier/cashier');
 const DepositWithdraw      = require('../websocket_pages/cashier/deposit_withdraw');
 const PaymentAgentList     = require('../websocket_pages/cashier/payment_agent_list');
