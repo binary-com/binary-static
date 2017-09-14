@@ -23,11 +23,12 @@ window.onload = function() {
     }
 
     function isRestrictedCountry(val) {
-        // restricted non-eu countries code
-        if (/^(au|io|ca|hk|jp|nz|sg|sz|us)$/.test(val)) {
-            return true;
-            // restricted eu countries code
-        } else if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|rs|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|ru|sm|rs|sk|si|es|se|ch|ua|va|rs)$/.test(val)) {
+        // restricted countries code
+        var regex = new RegExp(['^(',
+            'as|af|at|au|be|bg|ca|ch|cy|cz|de|dk|ee|es|fi|fr|gb|gg|gr|gu|hk|hr|hu|ie|il|im|it|',
+            'iq|ir|je|jp|kp|lt|lu|lv|mp|mt|my|nl|nz|pl|pt|pr|ro|se|sg|si|sk|sy|sz|us|vi|vg|vu',
+            ')$'].join(''));
+        if (regex.test(val)) {
             return true;
         }
         return false;
@@ -50,7 +51,7 @@ window.onload = function() {
         var val = document.getElementById('checkbox').checked; // true or false
         var url = 'https://ico_documents.binary.com/draft_im.pdf';
         if (val) {
-            history.back();
+            history.go(-1);
             window.open(url);
         } else {
             document.getElementById('frm_accept_disclaimer_error').classList.remove('invisible');

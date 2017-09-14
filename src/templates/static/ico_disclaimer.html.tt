@@ -59,7 +59,6 @@
     <div class="navbar-fixed-top primary-bg-color" role="navigation">
         <div class="">
             <div class="navbar-header">
-                <span id="toggle-menu" href="button" class="navbar-toggle"></span>
                 <a class="navbar-brand page-scroll logo" href="[% request.url_for('ico.html') %]"></a>
             </div>
         </div>
@@ -85,49 +84,55 @@
                     </div>
                 </form>
             </div>
-            <div class="gr-10 gr-push-1 invisible error-msg" id="access_denied_msg">
-                <p>[% l('Access Denied') %]</p>
-                <p class="text-uppercase">[% l('The information included in this section is restricted due to applicable securities laws in your country of residence. The information in this section of the website is, therefore, not available to persons located in your country of residence.') %]</p>
+            <div class="gr-10 gr-push-1 invisible" id="access_denied_msg">
+                <h3>[% l('Access Denied') %]</h3>
+                <p class="text-uppercase disclaimer-container">[% l('The information included in this section is restricted due to applicable securities laws in your country of residence. The information in this section of the website is, therefore, not available to persons located in your country of residence.') %]</p>
             </div>
             <div class="gr-10 gr-push-1 invisible" id="disclaimer_msg">
                 <h1>[% l('Disclaimer') %]</h1>
-                <p>[% l('ELECTRONIC VERSIONS OF THE MATERIALS YOU ARE SEEKING TO ACCESS ARE BEING MADE AVAILABLE ON THIS WEBPAGE BY BINARY GROUP LTD. IN GOOD FAITH AND FOR INFORMATION PURPOSES ONLY.
-') %]</p>
-                <p>[% l('Please read this notice carefully - it applies to all persons who view this webpage. Please note that the disclaimer set out below may be altered or updated, at any time in whole or in part at the sole discretion of Binary Group Ltd. You should read it in full each time you visit the site.') %]</p>
+                <div class="disclaimer-container">
+                    <p>[% l('ELECTRONIC VERSIONS OF THE MATERIALS YOU ARE SEEKING TO ACCESS ARE BEING MADE AVAILABLE ON THIS WEBPAGE BY BINARY GROUP LTD. IN GOOD FAITH AND FOR INFORMATION PURPOSES ONLY.
+    ') %]</p>
+                    <p>[% l('Please read this notice carefully - it applies to all persons who view this webpage. Please note that the disclaimer set out below may be altered or updated, at any time in whole or in part at the sole discretion of Binary Group Ltd. You should read it in full each time you visit the site.') %]</p>
 
-                <p>[% l('Viewing the materials available hereafter may not be lawful in certain jurisdictions. In other jurisdictions, only certain categories of person may be allowed to view such materials. Any person who wishes to view these materials must first satisfy themselves that they are not subject to any local requirements that prohibit or restrict them from doing so. In particular, unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, it is not intended that any offering of the tokens mentioned in such materials (the "Tokens") by Binary Group Ltd. should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, New Zealand, Singapore, Switzerland, the USA (each, a “Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction.') %]</p>
+                    <p>[% l('Viewing the materials available hereafter may not be lawful in certain jurisdictions. In other jurisdictions, only certain categories of person may be allowed to view such materials. Any person who wishes to view these materials must first satisfy themselves that they are not subject to any local requirements that prohibit or restrict them from doing so. In particular, unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, it is not intended that any offering of the tokens mentioned in such materials (the "Tokens") by Binary Group Ltd. should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, New Zealand, Singapore, Switzerland, the USA (each, a “Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction.') %]</p>
 
-                <p>[% l('The materials are for information purposes only and do not constitute or form a part of any offer or invitation to sell or issue, or solicitation of any offer, to purchase or subscribe for the Tokens in any jurisdiction or jurisdictions in which such offers or sales are unlawful prior to registration or qualification under the securities laws of any such jurisdiction. In particular, the Tokens have not been and will not be registered under the US Securities Act of 1933, as amended (the "Securities Act"), and may not be offered, sold, resold, pledged, taken up, exercised, renounced, transferred or delivered, directly or indirectly, in or into the United States except pursuant to an exemption from, or in a transaction not subject to, the registration requirements of the Securities Act. The Securities will not be registered under applicable securities laws of any state, province, territory, county or jurisdiction of a Restricted Territory.') %]</p>
-                <p>[% l('Accordingly, unless an exemption under the relevant securities law is applicable, the Tokens may not be offered, sold, pledged, taken up, exercised, resold, renounced, transferred or delivered, directly or indirectly, in or into a Restricted Territory where to do so would constitute a violation of the relevant laws of, or require registration thereof in, such jurisdiction.') %]</p>
+                    <p>[% l('The materials are for information purposes only and do not constitute or form a part of any offer or invitation to sell or issue, or solicitation of any offer, to purchase or subscribe for the Tokens in any jurisdiction or jurisdictions in which such offers or sales are unlawful prior to registration or qualification under the securities laws of any such jurisdiction. In particular, the Tokens have not been and will not be registered under the US Securities Act of 1933, as amended (the "Securities Act"), and may not be offered, sold, resold, pledged, taken up, exercised, renounced, transferred or delivered, directly or indirectly, in or into the United States except pursuant to an exemption from, or in a transaction not subject to, the registration requirements of the Securities Act. The Securities will not be registered under applicable securities laws of any state, province, territory, county or jurisdiction of a Restricted Territory.') %]</p>
+                    <p>[% l('Accordingly, unless an exemption under the relevant securities law is applicable, the Tokens may not be offered, sold, pledged, taken up, exercised, resold, renounced, transferred or delivered, directly or indirectly, in or into a Restricted Territory where to do so would constitute a violation of the relevant laws of, or require registration thereof in, such jurisdiction.') %]</p>
 
-                <p>[% l('There will be no public offering of the Tokens in the United States. If you are not permitted to view materials on this webpage or are in any doubt as to whether you are permitted to view these materials, please exit this webpage.') %]</p>
+                    <p>[% l('There will be no public offering of the Tokens in the United States. If you are not permitted to view materials on this webpage or are in any doubt as to whether you are permitted to view these materials, please exit this webpage.') %]</p>
 
-                <h1>[% l('Basis of access') %]</h1>
-                <p>[% l('Access to electronic versions of these materials is being made available on this webpage by Binary Group Ltd. in good faith and for information purposes only. Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the Tokens. Further, it does not constitute a recommendation by Binary Group Ltd. or any other party to sell or buy Tokens or any other securities.') %]</p>
-                <p>[% l('All information is provided without any warranties of any kind and Binary Group Ltd. and its advisors make no representations and disclaim all express and implied warranties and conditions of any kind, including, without limitation, representations, warranties or conditions regarding accuracy, timeliness, completeness, non-infringement, suitability of the Tokens for any prospective investor, and Binary Group Ltd. and its employees, officers or professional advisors assume no responsibility to you or any third party for the consequence of errors or omissions.') %]</p>
-                <p>[% l('The information contained on this webpage and documents posted thereon may contain statements that are deemed to be “forward looking statements”. Such statements are prospective in nature. All statements other than historical statements of facts may be forward-looking statements. Statements containing the words “targets”, “plans”, “believes”, “expects”, “aims”, “intends”, “will”, “may”, “anticipates”, “estimates”, “projects” or “considers” or other similar words may be forward-looking statements.
-') %]</p>
-                <p>[% l('Forward looking statements inherently contain risks and uncertainties as they relate to events or circumstances in the future. Users of this webpage should not place undue reliance on forward-looking statements. Binary Group Ltd. expressly disclaims any obligation or undertaking to update or revise any forward-looking statements except to the extent required by law and neither Binary Group Ltd., its employees, officers or professional advisors make any assurance, representation or guarantee that any event referred to in a forward-looking statement will actually occur.') %]</p>
+                    <h2>[% l('Basis of access') %]</h2>
+                    <p>[% l('Access to electronic versions of these materials is being made available on this webpage by Binary Group Ltd. in good faith and for information purposes only. Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the Tokens. Further, it does not constitute a recommendation by Binary Group Ltd. or any other party to sell or buy Tokens or any other securities.') %]</p>
+                    <p>[% l('All information is provided without any warranties of any kind and Binary Group Ltd. and its advisors make no representations and disclaim all express and implied warranties and conditions of any kind, including, without limitation, representations, warranties or conditions regarding accuracy, timeliness, completeness, non-infringement, suitability of the Tokens for any prospective investor, and Binary Group Ltd. and its employees, officers or professional advisors assume no responsibility to you or any third party for the consequence of errors or omissions.') %]</p>
+                    <p>[% l('The information contained on this webpage and documents posted thereon may contain statements that are deemed to be “forward looking statements”. Such statements are prospective in nature. All statements other than historical statements of facts may be forward-looking statements. Statements containing the words “targets”, “plans”, “believes”, “expects”, “aims”, “intends”, “will”, “may”, “anticipates”, “estimates”, “projects” or “considers” or other similar words may be forward-looking statements.
+    ') %]</p>
+                    <p>[% l('Forward looking statements inherently contain risks and uncertainties as they relate to events or circumstances in the future. Users of this webpage should not place undue reliance on forward-looking statements. Binary Group Ltd. expressly disclaims any obligation or undertaking to update or revise any forward-looking statements except to the extent required by law and neither Binary Group Ltd., its employees, officers or professional advisors make any assurance, representation or guarantee that any event referred to in a forward-looking statement will actually occur.') %]</p>
 
-                <p>[% l('Unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, copies of the contents of the following pages (including documents posted thereon) are not being, and must not be, released or otherwise distributed or transmitted in or into a Restricted Territory and persons receiving such documents (including custodians, nominees and trustees) must not distribute, forward to or transmit them in or into a Restricted Territory.') %]</p>
+                    <p>[% l('Unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, copies of the contents of the following pages (including documents posted thereon) are not being, and must not be, released or otherwise distributed or transmitted in or into a Restricted Territory and persons receiving such documents (including custodians, nominees and trustees) must not distribute, forward to or transmit them in or into a Restricted Territory.') %]</p>
 
-                <p>[% l('Binary Group Ltd. makes no representations that the information contained in this site is appropriate or available for use in other locations. Binary Group Ltd. shall not have any responsibility in respect of access to it from territories whose laws prohibit such access or where any aspect of the content of the site may be illegal. Those who choose to access this site from other locations do so on their own initiative and at their own risk, and are responsible for compliance with applicable local laws.
-') %]</p>
-                <h1>[% l('Confirmation of understanding and acceptance of disclaimer') %]</h1>
-                <p>[% l('BY CLICKING ON THE "AGREE" BUTTON, YOU CERTIFY (BOTH TO BINARY GROUP LTD. AND ITS ADVISORS) THAT:') %]</p>
-                <ul class="bullet">
-                    <li>[% l('YOU ARE NOT IN THE UNITED STATES OR ANY OTHER RESTRICTED TERRITORY;') %]</li>
-                    <li>[% l('YOU ARE NOT A U.S. PERSON (AS DEFINED IN RULE 902 OF THE SECURITIES ACT) OR OTHERWISE RESIDENT IN THE UNITED STATES OR ANY OTHER RESTRICTED TERRITORY;') %]</li>
-                    <li>[% l('YOU ARE NOT INVESTING OR OTHERWISE ACTING FOR THE ACCOUNT OR BENEFIT OF A U.S. PERSON OR A RESIDENT OF THE UNITED STATES OR ANY OTHER RESTRICTED TERRITORY; ') %]</li>
-                    <li>[% l('YOU HAVE COMPLIED WITH ALL APPLICABLE SECURITIES LAWS AND ARE ABLE TO RECEIVE THE CONTENTS OF THE FOLLOWING PAGES (INCLUDING DOCUMENTS POSTED THEREON);') %]</li>
-                    <li>[% l('YOU REPRESENT AND WARRANT THAT YOU ARE ACCESSING THESE WEBPAGES FOR INFORMATION PURPOSES ONLY; ') %]</li>
-                    <li>[% l('YOU REPRESENT AND WARRANT THAT SHOULD YOU WISH TO MAKE ANY INVESTMENT IN BINARY GROUP LTD. OR PURCHASE OR SUBSCRIBE FOR ANY TOKENS YOU WILL SATISFY YOURSELF AS TO FULL OBSERVANCE OF THE LAWS OF ANY RELEVANT TERRITORY IN CONNECTION WITH ANY SUCH INVESTMENT INCLUDING OBTAINING ANY REQUISITE GOVERNMENTAL OR OTHER CONSENTS THAT MAY BE REQUIRED AND AS TO DUE AND PROPER COMPLIANCE THEREWITH; AND') %]</li>
-                    <li>[% l('YOU HAVE READ, UNDERSTOOD AND AGREE TO THE DISCLAIMER ABOVE.') %]</li>
-                </ul>
-                <form id="frm_accept_disclaimer">
-                    <label><input type="checkbox" id="checkbox" /> <span>[% l('I UNDERSTAND THAT THE DISCLAIMER ABOVE MAY AFFECT MY RIGHTS. I AGREE TO BE BOUND BY ITS TERMS.') %]</span></label>
+                    <p>[% l('Binary Group Ltd. makes no representations that the information contained in this site is appropriate or available for use in other locations. Binary Group Ltd. shall not have any responsibility in respect of access to it from territories whose laws prohibit such access or where any aspect of the content of the site may be illegal. Those who choose to access this site from other locations do so on their own initiative and at their own risk, and are responsible for compliance with applicable local laws.
+    ') %]</p>
+                    <h2>[% l('Confirmation of understanding and acceptance of disclaimer') %]</h2>
+                    <p>[% l('BY CLICKING ON THE "AGREE" BUTTON, YOU CERTIFY (BOTH TO BINARY GROUP LTD. AND ITS ADVISORS) THAT:') %]</p>
+                    <ul class="bullet">
+                        <li>[% l('YOU ARE NOT IN THE UNITED STATES OR ANY OTHER RESTRICTED TERRITORY;') %]</li>
+                        <li>[% l('YOU ARE NOT A U.S. PERSON (AS DEFINED IN RULE 902 OF THE SECURITIES ACT) OR OTHERWISE RESIDENT IN THE UNITED STATES OR ANY OTHER RESTRICTED TERRITORY;') %]</li>
+                        <li>[% l('YOU ARE NOT INVESTING OR OTHERWISE ACTING FOR THE ACCOUNT OR BENEFIT OF A U.S. PERSON OR A RESIDENT OF THE UNITED STATES OR ANY OTHER RESTRICTED TERRITORY; ') %]</li>
+                        <li>[% l('YOU HAVE COMPLIED WITH ALL APPLICABLE SECURITIES LAWS AND ARE ABLE TO RECEIVE THE CONTENTS OF THE FOLLOWING PAGES (INCLUDING DOCUMENTS POSTED THEREON);') %]</li>
+                        <li>[% l('YOU REPRESENT AND WARRANT THAT YOU ARE ACCESSING THESE WEBPAGES FOR INFORMATION PURPOSES ONLY; ') %]</li>
+                        <li>[% l('YOU REPRESENT AND WARRANT THAT SHOULD YOU WISH TO MAKE ANY INVESTMENT IN BINARY GROUP LTD. OR PURCHASE OR SUBSCRIBE FOR ANY TOKENS YOU WILL SATISFY YOURSELF AS TO FULL OBSERVANCE OF THE LAWS OF ANY RELEVANT TERRITORY IN CONNECTION WITH ANY SUCH INVESTMENT INCLUDING OBTAINING ANY REQUISITE GOVERNMENTAL OR OTHER CONSENTS THAT MAY BE REQUIRED AND AS TO DUE AND PROPER COMPLIANCE THEREWITH; AND') %]</li>
+                        <li>[% l('YOU HAVE READ, UNDERSTOOD AND AGREE TO THE DISCLAIMER ABOVE.') %]</li>
+                    </ul>
+                </div>
+                <form id="frm_accept_disclaimer" class="center-text">
+                    <label>
+                        <input type="checkbox" id="checkbox" /> <span>[% l('I UNDERSTAND THAT THE DISCLAIMER ABOVE MAY AFFECT MY RIGHTS. I AGREE TO BE BOUND BY ITS TERMS.') %]</span>
+                    </label>
                     <p id="frm_accept_disclaimer_error" class="error-msg invisible">[% l('This field is required.') %]</p>
-                    <button id="btn-submit">[% l('Submit') %]</button>
+                    <div>
+                        <button id="btn-submit">[% l('Submit') %]</button>
+                    </div>
                 </form>
 
             </div>

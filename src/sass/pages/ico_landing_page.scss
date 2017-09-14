@@ -27,7 +27,7 @@ h1, h2, h3 {
 }
 
 .content-section {
-    padding: 50px 15px;
+    padding: 100px 15px;
 }
 
 // Intro section
@@ -120,13 +120,13 @@ hr {
 
 .boxed-heading, .chart-heading {
     position: absolute;
-    padding: 15px;
+    padding: 40px 15px;
     color: $COLOR_WHITE;
     background-color: $COLOR_BLUE;
 }
 
 .boxed-heading-center {
-    top: -30px;
+    top: -60px;
     right: 0;
     left: 0;
     width: 80vw;
@@ -185,7 +185,7 @@ hr {
     background-color: $COLOR_ORANGE;
     width: 23vw;
     position: absolute;
-    top: -59px;
+    top: -109px;
 }
 
 .footnote {
@@ -244,7 +244,6 @@ input[type='text']:focus, input[type='submit']:focus {
     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     overflow: auto;
-    padding: 10px 0;
 }
 
 .navbar-brand {
@@ -393,9 +392,20 @@ input[type='text']:focus, input[type='submit']:focus {
 }
 
 #read-im-section {
+    background: url('../images/ico/images/img4@2x.png') no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: 50px 15px;
+
+    h2 {
+        line-height: 1.4;
+    }
     button {
-        padding: 20px;
-        font-size: 20px;
+        padding: 30px 50px;
+        font-size: 36px;
+        text-transform: none;
     }
 }
 
@@ -405,11 +415,14 @@ input[type='text']:focus, input[type='submit']:focus {
         padding: 30px 0;
     }
 
+    form {
+        margin: 30px 0;
+    }
     select {
         max-width: 100%;
     }
     button {
-        margin: 10px 0;
+        margin: 20px 0;
     }
     label {
         font-weight: bold;
@@ -418,8 +431,34 @@ input[type='text']:focus, input[type='submit']:focus {
             vertical-align: bottom;
         }
     }
+    .disclaimer-container {
+        padding: 30px;
+        margin: 20px 0;
+        text-align: justify;
+        background: $COLOR_LIGHT_GRAY;
+
+        h2 {
+            color: $COLOR_BLUE;
+            font-weight: 400;
+        }
+        p, ul li {
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 575px) {
+        h2 {
+            font-size: 22px;
+        }
+        p, ul li {
+            font-size: 14px;
+        }
+    }
 }
 
 .text-uppercase {
     text-transform: uppercase;
+}
+
+button {
+    outline: none;
 }
