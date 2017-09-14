@@ -1,5 +1,6 @@
 // Handler when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function(){
+    dataLayer.push({ event: 'page_load'});
 
     // Handle form submission
     if (window.location.hash === '#done') {
