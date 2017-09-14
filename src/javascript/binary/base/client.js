@@ -109,11 +109,17 @@ const Client = (() => {
     const hasAccountType = (type, only_enabled) => !isEmptyObject(getAccountOfType(type, only_enabled));
 
     // only considers currency of real money accounts
+    // @param {String} type = crypto|fiat
     const hasCurrencyType = (type) => {
-        const accounts = getAllAccountsObject();
-        const is_crypto = Object.keys(accounts).find(account =>
-            !account.is_virtual && isCryptocurrency(accounts[account].currency));
-        return (type === 'crypto' ? is_crypto : !is_crypto);
+        const loginids = getAllLoginids();
+        if (type === 'crypto') {
+            // find if has crypto currency account
+            return loginids.find(loginid =>
+                !get('is_virtual', loginid) && isCryptocurrency(get('currency', loginid)));
+        }
+        // else find if have fiat currency account
+        return loginids.find(loginid =>
+            !get('is_virtual', loginid) && !isCryptocurrency(get('currency', loginid)));
     };
 
     const types_map = {

@@ -1,6 +1,7 @@
 const localize              = require('../base/localize').localize;
 const addComma              = require('../common_functions/currency').addComma;
 const urlParam              = require('../base/url').param;
+const isEmptyObject         = require('../base/utility').isEmptyObject;
 const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
@@ -58,7 +59,7 @@ const Validation = (() => {
                     } else {
                         const $parent = field.$.parent();
                         // Add indicator to required fields
-                        if (/req/.test(field.validations) && !/hide_asterisk/.test(field.validations)) {
+                        if (field.validations.find(v => /^req$/.test(v) && (isEmptyObject(v[1]) || !v[1].hide_asterisk))) {
                             let $label = $parent.parent().find('label');
                             if (!$label.length) $label = $parent.find('label');
                             if ($label.length && $label.find('span.required_field_asterisk').length === 0) {
