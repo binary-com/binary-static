@@ -211,7 +211,7 @@
                 <div class="gr-row">
                     <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
                         <h2 class="content-inverse-color">[% l("Read the draft Information Memorandum for further information about the proposed offer.") %]</h2>
-                        <button onclick="window.location.href='[% request.url_for('ico-disclaimer.html') %]'" class="button">[% l("View now") %]</button>
+                        <button onclick="window.location.href='[% request.url_for('ico-disclaimer.html') %]'" class="button">[% l("View memorandum") %]</button>
                     </div>
                 </div>
             </div>

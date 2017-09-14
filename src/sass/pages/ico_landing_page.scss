@@ -403,14 +403,9 @@ input[type='text']:focus, input[type='submit']:focus {
         line-height: 1.4;
     }
     button {
-        padding: 30px 50px;
-        font-size: 36px;
+        padding: 20px 30px;
+        font-size: 28px;
         text-transform: none;
-
-        @media (max-width: 1199px) {
-            padding: 20px 30px;
-            font-size: 28px;
-        }
     }
 }
 

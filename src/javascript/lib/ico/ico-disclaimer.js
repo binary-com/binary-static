@@ -1,6 +1,7 @@
 window.onload = function() {
     var frm_select_residence  = document.getElementById('frm_select_residence');
     var frm_accept_disclaimer = document.getElementById('frm_accept_disclaimer');
+    var frm_accept_second_notice = document.getElementById('frm_accept_second_notice');
     var el_residence_list     = document.getElementById('residence_list');
 
     var ws = new WebSocket('wss://blue.binaryws.com/websockets/v3?app_id=1&l=' + (getParamValue(window.top.location.href, 'lang') || 'en'));
@@ -34,9 +35,40 @@ window.onload = function() {
         return false;
     }
 
+    var country_names = [
+        { code: 'ca', name: 'Canada' },
+        { code: 'uk', name: 'the United Kingdom' },
+        { code: 'eu', name: 'the European Economic Area' },
+        { code: 'hk', name: 'Hong Kong' },
+        { code: 'jp', name: 'Japan' },
+        { code: 'sg', name: 'Singapore' },
+        { code: 'ch', name: 'Switzerland' },
+    ]
+
+    function showSecondNotice(val) {
+        var country_name;
+        country_names.map(function(item, idx) {
+            if (item.code === val) {
+                notice_msg = item.message;
+                country_name = item.name;
+            }
+        });
+        document.getElementById('country_name').appendChild(document.createTextNode(country_name));
+        document.getElementById('notice_msg').classList.remove('invisible');
+        document.getElementById(val).classList.remove('invisible');
+    }
+
     function showDisclaimer(val) {
         if (isRestrictedCountry(val)) {
-            document.getElementById('access_denied_msg').classList.remove('invisible');
+            // eu countries code
+            if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|ru|sm|sk|si|es|se|ch|ua|va)$/.test(val)) {
+                val = 'eu';
+            }
+            if (/^(ca|jp|sg|hk|uk|ch|eu)$/.test(val)) {
+                showSecondNotice(val);
+            } else {
+                document.getElementById('access_denied_msg').classList.remove('invisible');
+            }
         } else {
             document.getElementById('disclaimer_msg').classList.remove('invisible');
         }
@@ -63,6 +95,18 @@ window.onload = function() {
         hideForm();
         showDisclaimer(val);
     });
+
+    frm_accept_second_notice.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var val = document.getElementById('checkbox-2').checked; // true or false
+        var url = 'https://ico_documents.binary.com/draft_im.pdf';
+        if (val) {
+            document.getElementById('notice_msg').classList.add('invisible');
+            showDisclaimer(val);
+        } else {
+            document.getElementById('frm_accept_notice_error').classList.remove('invisible');
+        }
+    })
 
     if (ws.readyState === 1) {
         sendResidenceList();

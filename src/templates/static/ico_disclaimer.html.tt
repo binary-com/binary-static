@@ -76,11 +76,56 @@
         <div class="gr-row invisible" id="disclaimer_form">
             <div class="gr-10 gr-push-1">
                 <h1>[% l('Disclaimer') %]</h1>
-                <p>[% l('Access to these materials is restricted in certain jurisdictions. Please indicate your country of residence. By clicking the “SUBMIT” button below you certify that you are an individual resident in the country you stipulated.') %]</p>
+                <p>[% l('Access to these materials is restricted in certain jurisdictions. Please indicate your country of residence. By clicking the “Submit” button below you certify that you are an individual resident in the country you stipulated.') %]</p>
                 <form id="frm_select_residence">
                     <select id="residence_list"></select>
                     <div>
                         <button id="btn-select-residence">[% l('Submit') %]</button>
+                    </div>
+                </form>
+            </div>
+            <div class="gr-10 gr-push-1 invisible" id="notice_msg">
+                <h2>[% l('Notice to prospective investors in') %] <span id="country_name"></span></h2>
+                <div class="msg disclaimer-container">
+                    <div id="ca" class="invisible">
+                        <p>[% l('The Tokens have not been nor will they be qualified for sale to the public under applicable Canadian securities laws and, accordingly, any offer and sale of the Tokens in Canada will be made on a basis which is exempt from the prospectus requirements of Canadian securities laws. Any resale of the Tokens must be made in accordance with, or pursuant to an exemption from, or in a transaction not subject to, the prospectus requirements of those laws. In addition, in order to comply with the dealer registration requirements of Canadian securities laws, any resale of the Tokens must be made either by a person not required to register as a dealer under applicable Canadian securities laws, or through an appropriately registered dealer or in accordance with an exemption from the dealer registration requirements. Purchasers of Tokens are advised to seek Canadian legal advice prior to any resale of Tokens.
+') %]</p>
+                    </div>
+                    <div id="uk" class="invisible">
+                        <p>[% l('This Information Memorandum is only being distributed to, and is only directed at, persons in the United Kingdom that are “qualified investors” within the meaning of Article 2(1)(e) of the Prospectus Directive that are also: (i) investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (the “Order”); or (ii) high net worth entities, and other persons to whom it may lawfully be communicated, falling within Article 49(2)(a) to (d) of the Order (each such person being referred to as a “relevant person”). This document and its contents are confidential and should not be distributed, published or reproduced (in whole or in part) or disclosed by recipients to any other persons in the United Kingdom. Any person in the United Kingdom that is not a relevant person should not act or rely on this document or any of its contents. Any investment or investment activity to which this document relates is available only in the United Kingdom to relevant persons, and will be engaged in only with such persons.') %]</p>
+                    </div>
+                    <div id="eu" class="invisible">
+                        <p>[% l('In relation to each member state of the European Economic Area that has implemented the Prospectus Directive (each, a “relevant member state”), with effect from and including the date on which the Prospectus Directive is implemented in that relevant member state (the “relevant implementation date”), an offer of Tokens described in this document may not be made to the public in that relevant member state, except that an offer to the public in that relevant member state may be made at any time under the following exemptions under the Prospectus Directive (to the extent that they have been implemented in that relevant member state):
+to any legal entity which is a qualified investor as defined in the Prospectus Directive;
+to fewer than 150 natural or legal persons (other than qualified investors as defined in the Prospectus Directive), as permitted under the Prospectus Directive; or
+in any other circumstances falling within Article 3(2) of the Prospectus Directive, provided that no such offer of Tokens shall require the Company to publish a prospectus pursuant to Article 3 of the Prospectus Directive.
+For purposes of this provision, the expression an “offer of Tokens to the public” in any relevant member state means the communication in any form and by any means of sufficient information on the terms of the offer and the Tokens to be offered so as to enable an investor to decide to purchase or subscribe for the Tokens, as the expression may be varied in that member state by any measure implementing the Prospectus Directive in that member state.
+') %]</p>
+                        <p>[% l('In the case of any Tokens being offered to a financial intermediary as that term is used in Article 3(2) of the Prospectus Directive, such financial intermediary will also be deemed to have represented, warranted, and agreed to and with the Company that (i) Tokens acquired by it have not been acquired on behalf of, nor have they been acquired with a view to their offer or resale to, persons in any relevant member state other than qualified investors, or (ii) where Tokens have been acquired by it on behalf of persons in any relevant member state other than qualified investors, the offer of those Tokens is not treated under the Prospectus Directive as having been made to such persons. The Company will rely on the truth and accuracy of the foregoing representation, warranty and agreement.') %]</p>
+                    </div>
+                    <div id="hk" class="invisible">
+                        <p>[% l('The Tokens may not be offered or sold in Hong Kong by means of any document other than (i) in circumstances which do not constitute an offer to the public within the meaning of the Companies Ordinance (Cap.32, Laws of Hong Kong), or (ii) to “professional investors” within the meaning of the Securities and Futures Ordinance (Cap.571, Laws of Hong Kong) and any rules made thereunder, or (iii) in other circumstances which do not result in the document being a “prospectus” within the meaning of the Companies Ordinance (Cap.32, Laws of Hong Kong), and no advertisement, invitation or document relating to the tokens may be issued or may be in the possession of any person for the purpose of issue (in each case whether in Hong Kong or elsewhere), which is directed at, or the contents of which are likely to be accessed or read by, the public in Hong Kong (except if permitted to do so under the laws of Hong Kong) other than with respect to Tokens which are or are intended to be disposed of only to persons outside Hong Kong or only to “professional investors” within the meaning of the Securities and Futures Ordinance (Cap. 571, Laws of Hong Kong) and any rules made thereunder.') %]</p>
+                    </div>
+                    <div id="jp" class="invisible">
+                        <p>[% l('The Tokens have not been and will not be registered under the Financial Instruments and Exchange Act, as amended (the “FIEA”). This document is not an offer of securities for sale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan (which term as used herein means any person resident in Japan, including any corporation or entity organized under the laws of Japan) or to others for reoffer or resale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan, except pursuant to an exemption from the securities registration requirements under the FIEA and otherwise in compliance with such law and any other applicable laws, regulations, and ministerial guidelines of Japan.
+') %]</p>
+                    </div>
+                    <div id="sg" class="invisible">
+                        <p>[% l('This Information Memorandum has not been and will not be registered as a prospectus with the Monetary Authority of Singapore. Accordingly, this Information Memorandum and any other document or material in connection with the offer or sale, or invitation for subscription or purchase, of the Tokens may not be circulated or distributed, nor may the Tokens be offered or sold, or be made the subject of an invitation for subscription or purchase, whether directly or indirectly, to persons in Singapore other than (i) to an institutional investor under Section 274 of the Securities and Futures Act, Chapter 289 of Singapore (the “SFA”), (ii) to a relevant person, or any person pursuant to Section 275(1A), and in accordance with the conditions, specified in Section 275 of the SFA, (iii) where the transfer is by operation of law; (iv) as specified in Section 276(7) of the SFA or (v) pursuant to, and in accordance with the conditions of, any other applicable provisions of the SFA.') %]</p>
+                    </div>
+                    <div id="ch" class="invisible">
+                        <p>[% l('The Tokens may not be publicly offered in Switzerland and will not be listed on the SIX Swiss Exchange, or SIX, or on any other stock exchange or regulated trading facility in Switzerland. This Information Memorandum has been prepared without regard to the disclosure standards for issuance prospectuses under art. 652a or art. 1156 of the Swiss Code of Obligations or the disclosure standards for listing prospectuses under art. 27 ff. of the SIX Listing Rules or the listing rules of any other stock exchange or regulated trading facility in Switzerland. Neither this Information Memorandum nor any other offering or marketing material relating to the Tokens or the offering may be publicly distributed or otherwise made publicly available in Switzerland.') %]</p>
+                        <p>[% l('Neither this Information Memorandum nor any other offering or marketing material relating to the offering, the Company or the Tokens have been or will be filed with or approved by any Swiss regulatory authority. In particular, this Information Memorandum will not be filed with, and the offer of Tokens will not be supervised by, the Swiss Financial Market Supervisory Authority FINMA, and the offer of Tokens has not been and will not be authorized under the Swiss Federal Act on Collective Investment Schemes (the “CISA”). The investor protection afforded to acquirers of interests in collective investment schemes under the CISA does not extend to acquirers of Tokens.
+') %]</p>
+                    </div>
+                </div>
+                <form id="frm_accept_second_notice" class="center-text">
+                    <label>
+                        <input type="checkbox" id="checkbox-2" /> <span>[% l('I have read and understood the above and confirm that I am suitably qualified to receive the information hereafter.') %]</span>
+                    </label>
+                    <p id="frm_accept_notice_error" class="error-msg invisible">[% l('This field is required.') %]</p>
+                    <div>
+                        <button id="btn-submit">[% l('Submit') %]</button>
                     </div>
                 </form>
             </div>
@@ -129,7 +174,7 @@
                     <label>
                         <input type="checkbox" id="checkbox" /> <span>[% l('I UNDERSTAND THAT THE DISCLAIMER ABOVE MAY AFFECT MY RIGHTS. I AGREE TO BE BOUND BY ITS TERMS.') %]</span>
                     </label>
-                    <p id="frm_accept_disclaimer_error" class="error-msg invisible">[% l('This field is required.') %]</p>
+                    <p id="frm_accept_disclaimer_error" class="error-msg invisible">[% l('You must accept the disclaimer to be able to view this content.') %]</p>
                     <div>
                         <button id="btn-submit">[% l('Submit') %]</button>
                     </div>
