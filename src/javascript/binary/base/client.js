@@ -6,6 +6,7 @@ const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const getPropertyValue   = require('./utility').getPropertyValue;
 const isEmptyObject      = require('./utility').isEmptyObject;
 const jpClient           = require('../common_functions/country_base').jpClient;
+const isCryptocurrency   = require('../common_functions/currency').isCryptocurrency;
 const BinarySocket       = require('../websocket_pages/socket');
 const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
 
@@ -107,6 +108,14 @@ const Client = (() => {
 
     const hasAccountType = (type, only_enabled) => !isEmptyObject(getAccountOfType(type, only_enabled));
 
+    // only considers currency of real money accounts
+    const hasCurrencyType = (type) => {
+        const accounts = getAllAccountsObject();
+        const is_crypto = Object.keys(accounts).find(account =>
+            !account.is_virtual && isCryptocurrency(accounts[account].currency));
+        return (type === 'crypto' ? is_crypto : !is_crypto);
+    };
+
     const types_map = {
         virtual  : 'Virtual',
         gaming   : 'Gaming',
@@ -114,15 +123,6 @@ const Client = (() => {
     };
 
     const getAccountTitle = loginid => types_map[getAccountType(loginid)] || 'Real';
-
-    const hasMultiAccountsOfType = (type, only_enabled) => {
-        let number_of_accounts = 0;
-        return getAllLoginids().some((loginid) => {
-            number_of_accounts += isAccountOfType(type, loginid, only_enabled);
-            // as long as has more than one account of type, return true
-            return number_of_accounts > 1;
-        });
-    };
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
@@ -333,6 +333,10 @@ const Client = (() => {
         return (landing_company_object || {})[key];
     };
 
+    const canTransferFunds = () =>
+        (Client.hasAccountType('financial', true) && Client.hasAccountType('gaming', true)) ||
+        (hasCurrencyType('crypto') && hasCurrencyType('fiat'));
+
     return {
         init,
         validateLoginid,
@@ -343,6 +347,7 @@ const Client = (() => {
         getAccountOfType,
         isAccountOfType,
         hasAccountType,
+        hasCurrencyType,
         responseAuthorize,
         shouldAcceptTnc,
         clearAllAccounts,
@@ -355,10 +360,10 @@ const Client = (() => {
         getMT5AccountType,
         getUpgradeInfo,
         getAccountTitle,
-        hasMultiAccountsOfType,
         activateByClientType,
         currentLandingCompany,
         getLandingCompanyValue,
+        canTransferFunds,
     };
 })();
 

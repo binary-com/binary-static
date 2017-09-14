@@ -106,6 +106,9 @@
                                         <a class="link invisible" id="user_menu_metatrader" href="[% request.url_for('/user/metatrader') %]">
                                             <li class="topMenuMetaTrader">[% l("MetaTrader") %]</li>
                                         </a>
+                                        <a class="link invisible" id="user_menu_transfer_funds" href="[% request.url_for('/cashier/account_transfer') %]">
+                                            <li>[% l("Transfer Funds") %]</li>
+                                        </a>
                                         <div class="separator-line-thin-gray"></div>
                                         <a href="javascript:;" id="btn_logout" class="logout">
                                             <li>[% l("Sign out") %]</li>

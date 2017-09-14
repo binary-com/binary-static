@@ -86,21 +86,3 @@
         [% INCLUDE deposit_withdraw %]
     </div>
 </div>
-
-<div class="gr-padding-10 table-body ja-hide invisible" id="account-transfer-section">
-    <div class="gr-row">
-        <div class="gr-2 gr-4-m">
-            <a href="[% request.url_for('/cashier/account_transfer') %]" id="account_transfer">
-                <img class="responsive" id="acc_transfer_icon" src="[% request.url_for('images/pages/cashier/account-transfer.svg') %]" />
-            </a>
-        </div>
-        <div class="gr-5 gr-12-m">
-            <span>[% l('Transfer between your real money accounts.') %]</span>
-        </div>
-        <div class="gr-5 gr-12-m gr-padding-10 gr-parent">
-            <a class="toggle button client_real invisible" href="[% request.url_for('/cashier/account_transfer') %]">
-                <span class="withdraw">[% l('Transfer') %]</span>
-            </a>
-        </div>
-    </div>
-</div>

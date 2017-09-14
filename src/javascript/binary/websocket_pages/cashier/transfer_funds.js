@@ -1,4 +1,5 @@
 const BinarySocket       = require('../socket');
+const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
@@ -6,7 +7,7 @@ const isCryptocurrency   = require('../../common_functions/currency').isCryptocu
 const FormManager        = require('../../common_functions/form_manager');
 
 const AccountTransfer = (() => {
-    const form_id       = 'frm_account_transfer';
+    const form_id       = 'frm_transfer_funds';
     const form_id_hash  = `#${form_id}`;
 
     const messages = {
@@ -28,28 +29,15 @@ const AccountTransfer = (() => {
         el_transfer_from = document.getElementById('lbl_transfer_from');
         el_transfer_to   = document.getElementById('transfer_to');
 
-        elementTextContent(el_transfer_from, client_loginid);
+        elementTextContent(el_transfer_from, `${client_loginid} (${client_currency})`);
 
         const fragment_transfer_to   = document.createElement('div');
 
-        let has_crypto = false;
-        let has_fiat   = false;
         accounts.forEach((account, idx) => {
-            const loginid  = accounts[idx].loginid;
-            const currency = accounts[idx].currency;
-
-            if (loginid !== client_loginid) {
+            if (accounts[idx].loginid !== client_loginid) {
                 const option  = document.createElement('option');
-                option.appendChild(document.createTextNode(loginid));
+                option.appendChild(document.createTextNode(accounts[idx].loginid));
                 fragment_transfer_to.appendChild(option);
-            }
-
-            if (currency) {
-                if (isCryptocurrency(currency)) {
-                    has_crypto = true;
-                } else {
-                    has_fiat = true;
-                }
             }
         });
 
@@ -58,10 +46,10 @@ const AccountTransfer = (() => {
             return;
         }
         if (fragment_transfer_to.childElementCount > 1) {
-            el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
+            el_transfer_to.innerHTML = `${fragment_transfer_to.innerHTML} (${client_currency})`;
         } else {
             const label = document.createElement('label');
-            label.appendChild(document.createTextNode(fragment_transfer_to.innerText));
+            label.appendChild(document.createTextNode(`${fragment_transfer_to.innerText} (${client_currency})`));
             label.setAttribute('data-value', fragment_transfer_to.innerText);
             label.id = 'transfer_to';
 
@@ -71,7 +59,7 @@ const AccountTransfer = (() => {
 
         showForm();
 
-        if (has_fiat && has_crypto) {
+        if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
             document.getElementById('transfer_fee').setVisibility(1);
         }
     };
@@ -103,7 +91,7 @@ const AccountTransfer = (() => {
         document.getElementById(form_id).setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: ['req', ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: client_balance, custom_message: 'This amount exceeds your withdrawal limit.' }]] },
+            { selector: '#amount', validations: ['req', ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: client_balance, custom_message: 'This amount exceeds your withdrawal limit.' }], 'hide_asterisk'] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -146,19 +134,14 @@ const AccountTransfer = (() => {
     };
 
     const onLoad = () => {
+        if (!Client.canTransferFunds()) {
+            BinaryPjax.loadPreviousUrl();
+        }
         BinarySocket.wait('balance').then((response) => {
             client_balance = getPropertyValue(response, ['balance', 'balance']);
-            const error_element_to_show = [messages.parent];
-            if (!Client.hasMultiAccountsOfType('real', true)) {
-                error_element_to_show.push(messages.error);
-            }
             if (!client_balance || +client_balance === 0) {
-                error_element_to_show.push(messages.deposit);
-            }
-            if (error_element_to_show.length > 1) {
-                error_element_to_show.forEach((id) => {
-                    document.getElementById(id).setVisibility(1);
-                });
+                document.getElementById(messages.parent).setVisibility(1);
+                document.getElementById(messages.deposit).setVisibility(1);
             } else {
                 BinarySocket.send({ transfer_between_accounts: 1 }).then((response_transfer) => {
                     if (hasError(response_transfer)) {

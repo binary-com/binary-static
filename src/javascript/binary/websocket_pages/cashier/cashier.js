@@ -48,9 +48,6 @@ const Cashier = (() => {
                     $('#payment-agent-section').setVisibility(1);
                 }
                 $(is_crypto ? '.crypto_currency' : '.normal_currency').setVisibility(1);
-                if (Client.hasMultiAccountsOfType('real', true)) {
-                    $('#account-transfer-section').setVisibility(1);
-                }
             });
         }
         showContent();

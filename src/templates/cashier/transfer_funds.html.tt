@@ -11,11 +11,11 @@
     </div>
 [% END %]
 
-<h1>[% l("Account Transfer") %]</h1>
+<h1>[% l("Transfer Funds") %]</h1>
 
 <div class="invisible" id="client_message">
     <p class="center-text notice-msg">
-        <span class="invisible" id="no_account">[% l("Account transfer is unavailable.") %]</span> <span class="invisible" id="no_balance">[% l("Please [_1]deposit[_2] to your account.", '<a href="' _ request.url_for('/cashier/forwardws#deposit') _ '">', '</a>') %]</span>
+        <span class="invisible" id="no_account">[% l("Fund transfer is unavailable.") %]</span> <span class="invisible" id="no_balance">[% l("Please [_1]deposit[_2] to your account.", '<a href="' _ request.url_for('/cashier/forwardws#deposit') _ '">', '</a>') %]</span>
     </p>
 </div>
 
@@ -24,12 +24,12 @@
 </div>
 
 <div class="invisible" id="success_form">
-    <p>[% l("Your account transfer is successful. Your new balances are:") %]</p>
+    <p>[% l("Your fund transfer is successful. Your new balances are:") %]</p>
     [% INCLUDE row id='from' %]
     [% INCLUDE row id='to' %]
 </div>
 
-<form class="invisible" id="frm_account_transfer">
+<form class="invisible" id="frm_transfer_funds">
     [% WRAPPER fieldset legend=l('Details') %]
         [% INCLUDE form_row label=l("Transfer from") type='label' id='lbl_transfer_from' %]
         [% INCLUDE form_row label=l("Transfer to") type='select' id='transfer_to' %]
@@ -43,7 +43,8 @@
 </form>
 
 <div class="hint invisible" id="transfer_fee">
-    <p>[% l('Note: Transfer funds between your fiat and cryptocurrency accounts for a fee:') %]</p>
+    <p>[% l('Note: You may only transfer funds between a fiat account and a cryptocurrency account.') %]</p>
+    <p>[% l('Transfer funds between your fiat and cryptocurrency accounts for a fee:') %]</p>
     <ul class="bullet">
         <li>[% l('From fiat to cryptocurrency: 1% transfer fee') %]</li>
         <li>[% l('From cryptocurrency to fiat: 0.5% transfer fee') %]</li>

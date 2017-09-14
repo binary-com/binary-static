@@ -15,7 +15,7 @@ const TermsAndConditions = require('../static_pages/tnc');
 const VideoFacility      = require('../static_pages/video_facility');
 const WhyUs              = require('../static_pages/why_us');
 
-const AccountTransfer      = require('../websocket_pages/cashier/account_transfer');
+const AccountTransfer      = require('../websocket_pages/cashier/transfer_funds');
 const Cashier              = require('../websocket_pages/cashier/cashier');
 const DepositWithdraw      = require('../websocket_pages/cashier/deposit_withdraw');
 const PaymentAgentList     = require('../websocket_pages/cashier/payment_agent_list');
@@ -59,7 +59,7 @@ const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test'
 
 /* eslint-disable max-len */
 const pages_config = {
-    account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true },
+    account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true, needs_currency: true },
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },

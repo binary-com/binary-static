@@ -61,7 +61,7 @@ sub all_pages {
         ['metatrader/margin-policy',           'metatrader/margin_policy',           'full_width', 'MetaTrader Margin Policy'],
 
         ['cashier',                      'cashier/index',                             'default', 'Cashier'],
-        ['cashier/account_transfer',     'cashier/account_transfer',                  'default', 'Account Transfer'],
+        ['cashier/account_transfer',     'cashier/transfer_funds',                    'default', 'Transfer Funds'],
         ['cashier/deposit-jp',           'japan/cashier/deposit',                     'default', 'Deposit',         'NOT-ja,en'],
         ['cashier/epg_forwardws',        'cashier/deposit_withdraw',                  'default', 'Cashier'],
         ['cashier/forwardws',            'cashier/deposit_withdraw',                  'default', 'Cashier',         'ja'],
