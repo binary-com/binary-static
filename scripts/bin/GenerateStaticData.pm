@@ -120,10 +120,14 @@ sub _texts {
         push @texts, localize('day');
         push @texts, localize('days');
         push @texts, localize('h');
+        push @texts, localize('hour');
         push @texts, localize('hours');
         push @texts, localize('min');
+        push @texts, localize('minute');
         push @texts, localize('minutes');
         push @texts, localize('seconds');
+        push @texts, localize('tick');
+        push @texts, localize('ticks');
         push @texts, localize('Loss');
         push @texts, localize('Profit');
         push @texts, localize('Payout');

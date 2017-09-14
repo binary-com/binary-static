@@ -241,11 +241,11 @@
                 display: inline-flex;
 
                 .purchase_button {
-                    width: 100%;
                     cursor: pointer;
+                    width: 100%;
                 }
                 &.button-disabled .purchase_button {
-                    cursor: inherit;
+                    cursor: auto;
                 }
             }
         }

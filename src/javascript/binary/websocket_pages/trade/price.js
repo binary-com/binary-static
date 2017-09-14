@@ -167,7 +167,6 @@ const Price = (() => {
         const error         = container.getElementsByClassName('contract_error')[0];
         const currency      = document.getElementById('currency');
 
-
         const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
             h4.setAttribute('class', `contract_heading ${type}`);
@@ -194,15 +193,23 @@ const Price = (() => {
             }
         };
 
+        const setPurchaseStatus = (enable) => {
+            purchase.parentNode.classList[enable ? 'remove' : 'add']('button-disabled');
+        };
+
         if (details.error) {
-            purchase.parentNode.classList.add('button-disabled');
+            setPurchaseStatus(0);
             comment.hide();
             setData();
             error.show();
             elementTextContent(error, details.error.message);
         } else {
             setData(proposal);
-            purchase.parentNode.classList.remove('button-disabled');
+            if ($('#websocket_form').find('.error-field:visible').length > 0) {
+                setPurchaseStatus(0);
+            } else {
+                setPurchaseStatus(1);
+            }
             comment.show();
             error.hide();
             commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);

@@ -235,7 +235,7 @@ const Durations = (() => {
             document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
                 Defaults.get('duration_units') : unit.value;
         elementTextContent(document.getElementById('duration_minimum'), unit_min_value);
-        elementTextContent(document.getElementById('duration_unit'), localize(duration_map[unit.options[unit.selectedIndex].value] + (+unit_min_value > 1 ? 's' : '')));
+        elementTextContent(document.getElementById('duration_unit'), localize(duration_map[unit.value] + (+unit_min_value > 1 ? 's' : '')));
         elementTextContent(document.getElementById('duration_maximum'), unit_max_value);
         if (selected_duration.amount && selected_duration.unit > unit_value) {
             unit_value = selected_duration.amount;
