@@ -43,10 +43,8 @@ window.onload = function () {
 
     ws.onmessage = function(msg) {
         var data = JSON.parse(msg.data);
-        if (data.error) {
-            el_email.classList.add(error_class);
-        } else {
-            el_email.classList.remove(error_class);
+        setValidationStyle(el_email, data.error);
+        if (!data.error) {
             el_signup.classList.add('invisible');
             el_success.classList.remove('invisible');
         }
