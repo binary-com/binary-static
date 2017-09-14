@@ -95,7 +95,7 @@ const AccountTransfer = (() => {
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
-            { request_field: 'account_to',                value: () => el_transfer_to.value || el_transfer_to.getAttribute('data-value') },
+            { request_field: 'account_to',                value: () => (el_transfer_to.value || el_transfer_to.getAttribute('data-value') || '').split(' (')[0] },
             { request_field: 'currency',                  value: client_currency },
         ]);
 
