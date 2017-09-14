@@ -51,8 +51,7 @@ window.onload = function() {
         var val = document.getElementById('checkbox').checked; // true or false
         var url = 'https://ico_documents.binary.com/draft_im.pdf';
         if (val) {
-            history.go(-1);
-            window.open(url);
+            window.open(url, '_self');
         } else {
             document.getElementById('frm_accept_disclaimer_error').classList.remove('invisible');
         }
