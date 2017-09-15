@@ -220,6 +220,7 @@ const Durations = (() => {
 
     const duration_map = {
         t: 'tick',
+        s: 'second',
         m: 'minute',
         h: 'hour',
         d: 'day',

@@ -125,6 +125,7 @@ sub _texts {
         push @texts, localize('min');
         push @texts, localize('minute');
         push @texts, localize('minutes');
+        push @texts, localize('second');
         push @texts, localize('seconds');
         push @texts, localize('tick');
         push @texts, localize('ticks');
