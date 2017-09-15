@@ -103,6 +103,7 @@ foreach my $m (@m) {
             layout          => $layout,
             language        => uc $lang,
             root_url        => root_url(),
+            static_hash     => get_static_hash(),
             current_path    => $save_as,
             current_route   => $current_route,
             only_ja         => $only_ja,

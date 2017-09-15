@@ -50,8 +50,8 @@
             { is_image=1, size='32' },
         ] %]
 
-        <link href="[% request.url_for('css/ico.css') %]" rel="stylesheet" />
-        <link href="https://style.binary.com/binary.css" rel="stylesheet" />
+        <link href="[% request.url_for('css/ico.css') _ '?' _ static_hash %]" rel="stylesheet" />
+        <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
     </head>
 
     <body>
@@ -185,7 +185,7 @@ For purposes of this provision, the expression an “offer of Tokens to the publ
 
     </div>
 
-    <script src="[% request.url_for('js/ico/ico-disclaimer.js') %]"></script>
+    <script src="[% request.url_for('js/ico/ico-disclaimer.js') _ '?' _ static_hash %]"></script>
     </body>
 
 </html>

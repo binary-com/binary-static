@@ -50,8 +50,8 @@
             { is_image=1, size='32' },
         ] %]
 
-        <link href="[% request.url_for('css/ico.css') %]" rel="stylesheet" />
-        <link href="https://style.binary.com/binary.css" rel="stylesheet" />
+        <link href="[% request.url_for('css/ico.css') _ '?' _ static_hash %]" rel="stylesheet" />
+        <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
     </head>
 
     <body>
@@ -550,7 +550,7 @@
                 <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
             </div>
         </div>
-        <script src="[% request.url_for('js/ico/ico.js') %]"></script>
+        <script src="[% request.url_for('js/ico/ico.js') _ '?' _ static_hash %]"></script>
     </body>
 
 </html>
