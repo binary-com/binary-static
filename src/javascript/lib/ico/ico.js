@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // Handle form submission
     if (window.location.hash === '#done') {
+        dataLayer.push({ event: 'ico_success' });
         for (let i = 0; i < 2; i++) {
             document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
             document.getElementsByTagName('form')[i].classList.add('invisible');
