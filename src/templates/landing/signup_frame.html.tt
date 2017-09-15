@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    [% FOREACH css_file IN css_files =%]
+        <link rel="stylesheet" href="[%= css_file =%]" />
+    [% END %]
+    <script src="[% request.url_for('js/landing/signup_frame.js') _ '?' _ static_hash %]"></script>
+</head>
+<body>
+    <div class="home-content">
+        [% WRAPPER global/form_verify_email.html.tt class='secondary-bg-color' dark_button=1 text=l('Create Free Account') %]
+            <div class="invisible" id="success">
+                <div class="gr-padding-10 center-text hint gr-12 align-self-center">
+                    [% l('Thank you for signing up! Please check your email to complete the registration process.') %]
+                </div>
+            </div>
+        [% END %]
+    </div>
+</body>
+</html>

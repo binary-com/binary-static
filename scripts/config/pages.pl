@@ -122,6 +122,7 @@ sub all_pages {
         ['ico',                        'static/ico',             undef, 'Initial Coin Offering', 'ja'],
         ['ico-disclaimer',             'static/ico_disclaimer',  undef, 'Initial Coin Offering Disclaimer', 'ja'],
         ['hackathon',                  'static/hackathon',       undef, 'Hackathon Competition', 'NOT-en'],
+        ['landing/signup-frame',       'landing/signup_frame',   undef, 'Sign up'],
     );
 }
 
