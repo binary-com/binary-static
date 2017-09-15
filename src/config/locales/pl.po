@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-10 23:19-0400\n"
+"PO-Revision-Date: 2017-09-13 21:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -3161,9 +3161,6 @@ msgstr "Na komputery stacjonarne"
 msgid "For Mobile"
 msgstr "Na urządzenia mobilne"
 
-msgid "For added security, please check your email to retrieve the verification token."
-msgstr "Ze względów bezpieczeństwa token weryfikujący został wysłany na Twój adres e-mail. Sprawdź swoją skrzynkę odbiorczą."
-
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "Rozwiązanie stosowane w przypadku metod e-gotówkowych i lokalnych walut nieobsługiwanych przez %1."
 
@@ -6047,11 +6044,8 @@ msgstr "Proszę zaakceptować regulamin."
 msgid "Please check the above form for pending errors."
 msgstr "Zapoznaj się z listą nierozwiązanych błędów w powyższym formularzu."
 
-msgid "Please check your email for the value of this token"
-msgstr "Informacja na temat tego tokenu została wysłana na Twój adres e-mail"
-
-msgid "Please check your email to retrieve the token needed to reset your password."
-msgstr "Sprawdź pocztę e-mail, aby odzyskać token potrzebny do zresetowania hasła."
+msgid "Please check your email to complete the process."
+msgstr ""
 
 msgid "Please choose a currency"
 msgstr "Proszę wybrać walutę"
@@ -6107,8 +6101,8 @@ msgstr "Uwaga: zakłady zawierane w weekendy nie będą brane pod uwagę przy ro
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "Możesz zaktualizować swoje dane osobowe w dowolnym momencie, logując się do sekcji „Ustawienia” na swoim koncie. W Twojej gestii leży upewnienie się, że Firma %1 jest szybko i stale informowana o każdej zmianie Twoich danych osobowych."
 
-msgid "Please provide us with the following information, after retrieving the verification token from your email:"
-msgstr "Po odzyskaniu tokenu weryfikującego wysłanego na Twój adres e-mail, podaj następujące informacje:"
+msgid "Please provide us with the following information:"
+msgstr ""
 
 msgid "Please refer to the following commission plan."
 msgstr "Prosimy o zapoznanie się z następującym planem prowizyjnym."
@@ -6160,9 +6154,6 @@ msgstr "Zanim przejdziesz dalej, wybierz powód otwarcia konta."
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Proszę określić w minutach preferowany odstęp czasu pomiędzy kontrolami konta"
-
-msgid "Please submit a valid verification token."
-msgstr "Proszę podać poprawny  token weryfikujący."
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "Proszę przesłać powyższe informacje na adres: <a href='mailto:%1'>%1</a>."
@@ -7385,8 +7376,8 @@ msgstr "Cz"
 msgid "Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5."
 msgstr "Dziękujemy za wypełnienie formularza oceny sytuacji finansowej i zarejestrowanie Konta finansowego. Możesz teraz wpłacać środki i zawierać zakłady Forex za prawdziwe pieniądze na platformie MT5."
 
-msgid "Thank you for signing up! Please check your email to retrieve the verification token."
-msgstr "Dziękujemy za rejestrację! Token weryfikujący został wysłany na Twój adres e-mail."
+msgid "Thank you for signing up! Please check your email to complete the registration process."
+msgstr ""
 
 msgid "Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO."
 msgstr ""
@@ -8651,11 +8642,8 @@ msgstr "Stosowanie różnorodnych taktyk – zarówno online, jak i offline – 
 msgid "Variable spreads"
 msgstr "Różne spready"
 
-msgid "Verification code format incorrect."
-msgstr "Format kodu weryfikującego jest nieprawidłowy."
-
-msgid "Verification token"
-msgstr "Token weryfikacyjny"
+msgid "Verification code is wrong. Please use the link sent to your email."
+msgstr ""
 
 msgid "Verify main password"
 msgstr "Zweryfikuj hasło główne"
@@ -11797,6 +11785,9 @@ msgstr "Akceptacja regulaminu"
 
 msgid "Account Limits"
 msgstr "Limity na koncie"
+
+msgid "Redirecting..."
+msgstr ""
 
 msgid "Initial Coin Offering"
 msgstr "Initial Coin Offering (ICO)"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-10 23:19-0400\n"
+"PO-Revision-Date: 2017-09-13 21:30-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -3162,9 +3162,6 @@ msgstr "Для ПК"
 msgid "For Mobile"
 msgstr "Для мобильного"
 
-msgid "For added security, please check your email to retrieve the verification token."
-msgstr "Для дополнительной безопасности, пожалуйста, проверьте электронную почту, на которую должен прийти проверочный ключ."
-
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "Для методов электронной оплаты или местных валют, не поддерживаемых %1."
 
@@ -6048,11 +6045,8 @@ msgstr "Пожалуйста, примите правила и условия."
 msgid "Please check the above form for pending errors."
 msgstr "Пожалуйста, исправьте указанные ошибки в форме выше."
 
-msgid "Please check your email for the value of this token"
-msgstr "Пожалуйста, проверьте свой email; Вам должен прийти ключ"
-
-msgid "Please check your email to retrieve the token needed to reset your password."
-msgstr "Пожалуйста, проверьте свой эл. адрес; Вам должен прийти ключ для изменения пароля."
+msgid "Please check your email to complete the process."
+msgstr ""
 
 msgid "Please choose a currency"
 msgstr "Пожалуйста, выберите валюту"
@@ -6108,8 +6102,8 @@ msgstr "Обратите внимание, что котировки в выхо
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "Примите во внимание, что Вы можете изменить Вашу личную информацию в любое время в секции \"Настройки\" на Вашем счету. Вашей обязанностью является своевременно информировать %1 о любых изменениях личной информации."
 
-msgid "Please provide us with the following information, after retrieving the verification token from your email:"
-msgstr "Просим предоставить следующую информацию после получения проверочного ключа на электронный адрес:"
+msgid "Please provide us with the following information:"
+msgstr ""
 
 msgid "Please refer to the following commission plan."
 msgstr "Просим обратить внимание на следующий план комиссий."
@@ -6161,9 +6155,6 @@ msgstr "Чтобы продолжить, укажите причину откр�
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Пожалуйста, укажите желаемый интервал для проверки реальности (в минутах)"
-
-msgid "Please submit a valid verification token."
-msgstr "Пожалуйста, введите правильный проверочный ключ."
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "Пожалуйста, отправьте вышеуказанную информацию по адресу <a href='mailto:%1'>%1</a>."
@@ -7386,8 +7377,8 @@ msgstr "Чт"
 msgid "Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5."
 msgstr "Спасибо за то, что заполнили форму Финансовой оценки и зарегистрировали Финансовый счёт. Теперь Вы можете внести на счёт средства и торговать на рынке Forex на реальные деньги, пользуюсь счётом на MT5."
 
-msgid "Thank you for signing up! Please check your email to retrieve the verification token."
-msgstr "Спасибо за регистрацию! Теперь проверьте электронную почту, на которую должен прийти проверочный ключ."
+msgid "Thank you for signing up! Please check your email to complete the registration process."
+msgstr ""
 
 msgid "Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO."
 msgstr ""
@@ -8652,11 +8643,8 @@ msgstr "Использование различных онлайн и оффла
 msgid "Variable spreads"
 msgstr "Переменные спреды"
 
-msgid "Verification code format incorrect."
-msgstr "Неправильный формат кода проверки личности."
-
-msgid "Verification token"
-msgstr "Проверочный ключ"
+msgid "Verification code is wrong. Please use the link sent to your email."
+msgstr ""
 
 msgid "Verify main password"
 msgstr "Подтвердите основной пароль"
@@ -11798,6 +11786,9 @@ msgstr "Согласие с правилами и условиями"
 
 msgid "Account Limits"
 msgstr "Лимиты счета"
+
+msgid "Redirecting..."
+msgstr ""
 
 msgid "Initial Coin Offering"
 msgstr "Первичное предложение средств"
