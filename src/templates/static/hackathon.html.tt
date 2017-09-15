@@ -40,7 +40,7 @@
             { is_image=1, size='32' },
         ] %]
 
-        <link href="[% request.url_for('css/hackathon.css') %]" rel="stylesheet" />
+        <link href="[% request.url_for('css/hackathon.css') _ '?' _ static_hash %]" rel="stylesheet" />
     </head>
 
     <body>
@@ -204,6 +204,6 @@
             </div>
         </footer>
 
-        <script src="[% request.url_for('js/hackathon/hackathon.js') %]"></script>
+        <script src="[% request.url_for('js/hackathon/hackathon.js') _ '?' _ static_hash %]"></script>
     </body>
 </html>

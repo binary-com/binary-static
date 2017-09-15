@@ -42,8 +42,8 @@
             { is_image=1, size='32' },
         ] %]
 
-        <link href="[% request.url_for('css/ico.css') %]" rel="stylesheet" />
-        <link href="https://style.binary.com/binary.css" rel="stylesheet" />
+        <link href="[% request.url_for('css/ico.css') _ '?' _ static_hash %]" rel="stylesheet" />
+        <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
     </head>
 
     <body>
@@ -58,6 +58,9 @@
                     <ul class="nav navbar-nav">
                         <li class="invisible">
                             <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a href="[% request.url_for('ico-disclaimer.html') %]">[% l("Information Memorandum") %]</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#how-ico-works">[% l("How the ICO works") %]</a>
@@ -195,6 +198,15 @@
                         <img class="icon" src="[% request.url_for('images/ico/icons/dvnd_icon.svg') %]" />
                         <h4>[% l("How much dividend will I receive?") %]</h4>
                         <p>[% l("Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares.") %]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="read-im-section" class="content-section primary-bg-color center-text">
+                <div class="gr-row">
+                    <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
+                        <h2 class="content-inverse-color">[% l("Read the draft Information Memorandum for further information about the proposed offer.") %]</h2>
+                        <button onclick="window.location.href='[% request.url_for('ico-disclaimer.html') %]'" class="button">[% l("View memorandum") %]</button>
                     </div>
                 </div>
             </div>
@@ -530,7 +542,7 @@
                 <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
             </div>
         </div>
-        <script src="[% request.url_for('js/ico/ico.js') %]"></script>
+        <script src="[% request.url_for('js/ico/ico.js') _ '?' _ static_hash %]"></script>
     </body>
 
 </html>
