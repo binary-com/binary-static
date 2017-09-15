@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style id="antiClickjack">body{display:none !important;}</style>
-    <script type="text/javascript">
-        if (self === top) {
-            var antiClickjack = document.getElementById("antiClickjack");
-            antiClickjack.parentNode.removeChild(antiClickjack);
-        } else {
-            top.location = self.location;
-        }
-    </script>
-[%= FOREACH js IN javascript.libs =%]
-    <script src='[%= js =%]'></script>
-[%= END =%]
+    [% INCLUDE global/anti_clickjack.html.tt %]
+    [%= FOREACH js IN javascript.libs =%]
+        <script src='[%= js =%]'></script>
+    [%= END =%]
     <style>
         body {margin: 0;}
         #header-binary {height: 55px; background: #2a3052; border-bottom: 4px solid #e98024; text-align: center; padding: 10px 0;}

@@ -8,15 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style id="antiClickjack">body{display:none !important;}</style>
-        <script type="text/javascript">
-            if (self === top) {
-                var antiClickjack = document.getElementById("antiClickjack");
-                antiClickjack.parentNode.removeChild(antiClickjack);
-            } else {
-                top.location = self.location;
-            }
-        </script>
+        [% INCLUDE global/anti_clickjack.html.tt %]
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
         <meta name="description" content="[%= broker_name _ ' Hackathon Competition' =%]" />
@@ -48,7 +40,7 @@
             { is_image=1, size='32' },
         ] %]
 
-        <link href="[% request.url_for('css/hackathon.css') %]" rel="stylesheet" />
+        <link href="[% request.url_for('css/hackathon.css') _ '?' _ static_hash %]" rel="stylesheet" />
     </head>
 
     <body>
@@ -212,6 +204,6 @@
             </div>
         </footer>
 
-        <script src="[% request.url_for('js/hackathon/hackathon.js') %]"></script>
+        <script src="[% request.url_for('js/hackathon/hackathon.js') _ '?' _ static_hash %]"></script>
     </body>
 </html>
