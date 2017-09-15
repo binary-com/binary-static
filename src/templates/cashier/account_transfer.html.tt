@@ -15,7 +15,7 @@
 
 <div class="invisible" id="client_message">
     <p class="center-text notice-msg">
-        <span class="invisible" id="no_account">[% l("Fund transfer between accounts is unavailable.") %]</span> <span class="invisible" id="no_balance">[% l("Please [_1]deposit[_2] to your account.", '<a href="' _ request.url_for('/cashier/forwardws#deposit') _ '">', '</a>') %]</span>
+        <span class="invisible" id="no_account">[% l("Fund transfers between accounts are unavailable.") %]</span> <span class="invisible" id="no_balance">[% l("Please [_1]deposit[_2] to your account.", '<a href="' _ request.url_for('/cashier/forwardws#deposit') _ '">', '</a>') %]</span>
     </p>
 </div>
 
