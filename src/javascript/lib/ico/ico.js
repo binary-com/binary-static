@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         let navbarHeight = checkWidth();
         const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
-        scrollTo(document.body, to, 1000);
+        scrollTo(to);
     }
 
     // Toggle mobile menu
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function(){
             }
             let navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
-            scrollTo(document.body, to, 1000);
+            scrollTo(to);
             e.preventDefault();
         }
     });
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const faqButton = document.getElementById('faq-btn');
     faqButton.addEventListener('click', function(e) {
         document.getElementById('faq').classList.remove('invisible');
-        scrollTo(document.body, 0, 1000);
+        scrollTo(0);
         e.stopPropagation();
         document.getElementById('home').classList.add('invisible');
     });
@@ -93,11 +93,9 @@ function checkBrowser() {
 
 // scrollTo function with animation
 // - Gist reference: https://gist.github.com/andjosh/6764939
-function scrollTo(element, to, duration) {
-    if (checkBrowser()) {
-        element = document.documentElement;
-    }
-    let start = element.scrollTop,
+function scrollTo(to, duration) {
+    if (!duration) duration = 1000;
+    let start = window.pageYOffset,
         change = to - start,
         currentTime = 0,
         increment = 20;
@@ -105,7 +103,8 @@ function scrollTo(element, to, duration) {
     const animateScroll = function(){
         currentTime += increment;
         let val = Math.easeInOutQuad(currentTime, start, change, duration);
-        element.scrollTop = val;
+        document.body.scrollTop = val;
+        document.documentElement.scrollTop = val;
         if(currentTime < duration) {
             setTimeout(animateScroll, increment);
         }

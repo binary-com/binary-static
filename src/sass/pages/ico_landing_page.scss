@@ -253,16 +253,18 @@ input[type='text']:focus, input[type='submit']:focus {
 .logo {
     background: url('https://style.binary.com/images/logo/binary_logo_light.svg') no-repeat;
     width: 48vw !important;
-    height: 36px;
+    height: 40px;
     margin: 15px;
 }
 
 .navbar-nav {
-    float: right;
     display: flex;
+    justify-content: flex-end;
 
     > li {
+        flex-grow: 1;
         padding: 10px 15px;
+        white-space: nowrap;
     }
     a, a:visited {
         color: $COLOR_WHITE !important;
