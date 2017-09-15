@@ -427,9 +427,7 @@ sub _texts {
         # Strings for lost_password
         push @texts, localize('[_1] Please click the link below to restart the password recovery process.');
         push @texts, localize('Your password has been successfully reset. Please log into your account using your new password.');
-        push @texts, localize('Please check your email for the verification link to complete the process.');
-        push @texts, localize('If you don’t receive the email within the next few minutes, please check your junk/spam folder.');
-        push @texts, localize('To reset your password, enter the email address you used to create your account into the field below and click \'Reset password\'.');
+        push @texts, localize('Please check your email for the password reset link.');
         # strings for cashier page
         push @texts, localize('details');
         push @texts, localize('Withdraw');
