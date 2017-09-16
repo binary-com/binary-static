@@ -1,20 +1,22 @@
 // Handler when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function(){
+    dataLayer.push({ event: 'page_load' });
 
     // Handle form submission
     if (window.location.hash === '#done') {
+        dataLayer.push({ event: 'ico_success' });
         for (let i = 0; i < 2; i++) {
             document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
             document.getElementsByTagName('form')[i].classList.add('invisible');
         }
-        if(window.history.pushState) {
+        if (window.history.pushState) {
             window.history.pushState('', '/', window.location.pathname)
         } else {
             window.location.hash = '';
         }
         let navbarHeight = checkWidth();
         const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
-        scrollTo(document.body, to, 1000);
+        scrollTo(to);
     }
 
     // Toggle mobile menu
@@ -35,13 +37,10 @@ document.addEventListener("DOMContentLoaded", function(){
             document.getElementById('home').classList.remove('invisible');
             document.getElementById('faq').classList.add('invisible');
             const target = e.target.getAttribute('href').substr(1);
-            let offset = 0;
-            if (target === 'who-we-are' || target === 'page-top') {
-                offset = 55;
-            }
+            const offset = /who-we-are|page-top/.test(target) ? 55 : 0;
             let navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
-            scrollTo(document.body, to, 1000);
+            scrollTo(to);
             e.preventDefault();
         }
     });
@@ -49,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const faqButton = document.getElementById('faq-btn');
     faqButton.addEventListener('click', function(e) {
         document.getElementById('faq').classList.remove('invisible');
-        scrollTo(document.body, 0, 1000);
+        scrollTo(0);
         e.stopPropagation();
         document.getElementById('home').classList.add('invisible');
     });
@@ -62,11 +61,7 @@ document.addEventListener("DOMContentLoaded", function(){
 // Collapse navbar on scroll
 function collapseNavbar() {
     const navbarFixedTopEl = document.getElementsByClassName('navbar-fixed-top');
-    if (window.scrollY > 50) {
-        navbarFixedTopEl[0].classList.add('top-nav-collapse');
-    } else {
-        navbarFixedTopEl[0].classList.remove('top-nav-collapse');
-    }
+    navbarFixedTopEl[0].classList[window.scrollY > 50 ? 'add' : 'remove']('top-nav-collapse');
 }
 
 // Check view width, add navbar height as offset if on desktop
@@ -82,21 +77,14 @@ function checkWidth() {
 function checkBrowser() {
     const isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
     const isIE = /*@cc_on!@*/false || !!document.documentMode; // Internet Explorer 6-11
-
-    if (isFirefox || isIE) {
-        return true;
-    } else {
-        return false;
-    }
+    return (isFirefox || isIE);
 }
 
 // scrollTo function with animation
 // - Gist reference: https://gist.github.com/andjosh/6764939
-function scrollTo(element, to, duration) {
-    if (checkBrowser()) {
-        element = document.documentElement;
-    }
-    let start = element.scrollTop,
+function scrollTo(to, duration) {
+    if (!duration) duration = 1000;
+    let start = window.pageYOffset,
         change = to - start,
         currentTime = 0,
         increment = 20;
@@ -104,7 +92,8 @@ function scrollTo(element, to, duration) {
     const animateScroll = function(){
         currentTime += increment;
         let val = Math.easeInOutQuad(currentTime, start, change, duration);
-        element.scrollTop = val;
+        document.body.scrollTop = val;
+        document.documentElement.scrollTop = val;
         if(currentTime < duration) {
             setTimeout(animateScroll, increment);
         }
