@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-22082 -18601 900 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-13056 -18265 900 400">
     <defs>
         <style>
-            .cls-1 {
+            .cls-1, .cls-8 {
             fill: #fff;
             }
 
@@ -9,7 +9,7 @@
             stroke: #95989a;
             }
 
-            .cls-2, .cls-8 {
+            .cls-10, .cls-2 {
             fill: none;
             }
 
@@ -21,27 +21,35 @@
             font-size: 11px;
             }
 
-            .cls-3, .cls-4, .cls-5 {
+            .cls-3, .cls-4, .cls-5, .cls-8 {
             font-family: Roboto-Regular, Roboto;
             }
 
-            .cls-4, .cls-6 {
+            .cls-4, .cls-6, .cls-7 {
             fill: #2a3052;
             }
 
-            .cls-5 {
+            .cls-5, .cls-8 {
             font-size: 12px;
             }
 
             .cls-7 {
+            opacity: 0.6;
+            }
+
+            .cls-8 {
+            letter-spacing: 0.3em;
+            }
+
+            .cls-9 {
             stroke: none;
             }
         </style>
     </defs>
-    <g id="Group_435" data-name="Group 435" transform="translate(1617 -147)">
+    <g id="Group_457" data-name="Group 457" transform="translate(10643 189)">
         <g id="Rectangle_312" data-name="Rectangle 312" class="cls-1" transform="translate(-23699 -18454)">
-            <rect class="cls-7" width="900" height="400"/>
-            <rect class="cls-8" x="0.5" y="0.5" width="899" height="399"/>
+            <rect class="cls-9" width="900" height="400"/>
+            <rect class="cls-10" x="0.5" y="0.5" width="899" height="399"/>
         </g>
         <g id="Group_434" data-name="Group 434">
             <line id="Line_91" data-name="Line 91" class="cls-2" x2="731.949" transform="translate(-23567.5 -18338.5)"/>
@@ -88,7 +96,7 @@
             <text id="_0" data-name="0" class="cls-5" transform="translate(-23579 -18115)"><tspan x="-6.762" y="0">0</tspan></text>
             <rect id="Rectangle_313" data-name="Rectangle 313" class="cls-6" width="26" height="13" transform="translate(-23567 -18376)"/>
             <rect id="Rectangle_314" data-name="Rectangle 314" class="cls-6" width="23" height="167" transform="translate(-22941 -18286)"/>
-            <rect id="Rectangle_329" data-name="Rectangle 329" class="cls-6" width="23" height="201" transform="translate(-22864 -18320)"/>
+            <rect id="Rectangle_329" data-name="Rectangle 329" class="cls-7" width="23" height="201" transform="translate(-22864 -18320)"/>
             <rect id="Rectangle_671" data-name="Rectangle 671" class="cls-6" width="23" height="186" transform="translate(-22903 -18305)"/>
             <rect id="Rectangle_315" data-name="Rectangle 315" class="cls-6" width="23" height="98" transform="translate(-22980 -18217)"/>
             <rect id="Rectangle_316" data-name="Rectangle 316" class="cls-6" width="23" height="101" transform="translate(-23019 -18220)"/>
@@ -106,6 +114,7 @@
             <rect id="Rectangle_325" data-name="Rectangle 325" class="cls-6" width="23" height="22" transform="translate(-23290 -18141)"/>
             <rect id="Rectangle_326" data-name="Rectangle 326" class="cls-6" width="23" height="36" transform="translate(-23096 -18155)"/>
             <rect id="Rectangle_327" data-name="Rectangle 327" class="cls-6" width="23" height="19" transform="translate(-23135 -18138)"/>
+            <text id="projected" class="cls-8" transform="translate(-22861.5 -18184.5) rotate(-90)"><tspan x="18.714" y="13">projected</tspan></text>
         </g>
     </g>
 </svg>

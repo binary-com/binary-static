@@ -120,10 +120,15 @@ sub _texts {
         push @texts, localize('day');
         push @texts, localize('days');
         push @texts, localize('h');
+        push @texts, localize('hour');
         push @texts, localize('hours');
         push @texts, localize('min');
+        push @texts, localize('minute');
         push @texts, localize('minutes');
+        push @texts, localize('second');
         push @texts, localize('seconds');
+        push @texts, localize('tick');
+        push @texts, localize('ticks');
         push @texts, localize('Loss');
         push @texts, localize('Profit');
         push @texts, localize('Payout');
@@ -427,7 +432,7 @@ sub _texts {
         # Strings for lost_password
         push @texts, localize('[_1] Please click the link below to restart the password recovery process.');
         push @texts, localize('Your password has been successfully reset. Please log into your account using your new password.');
-        push @texts, localize('Please check your email to complete the process.');
+        push @texts, localize('Please check your email for the password reset link.');
         # strings for cashier page
         push @texts, localize('details');
         push @texts, localize('Withdraw');
@@ -477,7 +482,6 @@ sub _texts {
         push @texts, localize('Change Password');
 
         # strings for account_transfer
-        push @texts, localize('from [_1] to [_2]');
         push @texts, localize('This amount exceeds your withdrawal limit.');
 
         # strings for header notification

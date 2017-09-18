@@ -8,15 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style id="antiClickjack">body{display:none !important;}</style>
-        <script type="text/javascript">
-            if (self === top) {
-                var antiClickjack = document.getElementById("antiClickjack");
-                antiClickjack.parentNode.removeChild(antiClickjack);
-            } else {
-                top.location = self.location;
-            }
-        </script>
+        [% INCLUDE global/anti_clickjack.html.tt %]
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
         <meta name="description" content="
@@ -50,8 +42,8 @@
             { is_image=1, size='32' },
         ] %]
 
-        <link href="[% request.url_for('css/ico.css') %]" rel="stylesheet" />
-        <link href="https://style.binary.com/binary.css" rel="stylesheet" />
+        <link href="[% request.url_for('css/ico.css') _ '?' _ static_hash %]" rel="stylesheet" />
+        <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
     </head>
 
     <body>
@@ -114,6 +106,7 @@
                                             <input type="hidden" name="meta_message" value="1001" />
                                             <input type="hidden" name="meta_required" value="email" />
                                             <input type="hidden" name="meta_tooltip" value="" />
+                                            <input type="hidden" name="custom language" value="" class="frm-language" />
                                         </div>
                                         <div id="af-form-713141817" class="af-form">
                                             <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
@@ -335,6 +328,44 @@
                         </div>
                     </div>
                     <div class="vertical-line"></div>
+                    <p class="chart-note">[% l('Note: 2017 numbers are projected from August interim figures') %]</p>
+                </div>
+            </div>
+            <div id="board-of-directors" class="content-section">
+                <div class="gr-row center-text">
+                    <div class="gr-4">
+                        <h2 class="boxed-heading-center">[% l("Board of Directors") %]</h2>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="gr-row">
+                        <div class="gr-4 gr-12-m">
+                            <div class="center-text">
+                                <img class="responsive" src="[% request.url_for('images/ico/images/jy@2x.png') %]" />
+                                <h4>Jean-Yves Sireau</h4>
+                                <a href="https://www.linkedin.com/in/jeanyvessireau/" target="_blank"><img class="icon--sm social--linkedin" /></a>
+                                <a href="https://twitter.com/jysireau" target="_blank"><img class="icon--sm social--twitter" /></a>
+                            </div>
+                            <p>[% l('Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and Binary.com (formerly known as Betonmarkets.com) in 1999.') %]</p>
+                        </div>
+                        <div class="gr-4 gr-12-m">
+                            <div class="center-text">
+                                <img class="responsive" src="[% request.url_for('images/ico/images/joanna@2x.png') %]" />
+                                <h4>Joanna Frendo</h4>
+                                <a href="https://www.linkedin.com/in/joanna-frendo-prof-pgdip-fcc-4449975/" target="_blank"><img class="icon--sm social--linkedin" /></a>
+                            </div>
+                            <p>[% l('Joanna oversees the Group\'s procedural and regulatory compliance with the various licensing compliance jurisdictions of the Binary.com Group, in addition to overseeing a number of the Group\'s key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association.') %]</p>
+                        </div>
+                        <div class="gr-4 gr-12-m">
+                            <div class="center-text">
+                                <img class="responsive" src="[% request.url_for('images/ico/images/jm@2x.png') %]" />
+                                <h4>Jim Mellon</h4>
+                                <a href="https://twitter.com/jimmhk" target="_blank"><img class="icon--sm social--twitter" /></a>
+                                <a href="https://www.youtube.com/results?search_query=jim+mellon" target="_blank"><img class="icon--sm social--youtube" /></a>
+                            </div>
+                            <p>[% ('Jim Mellon is a well-known and successful entrepreneur, starting his career in fund management and now including biopharma, property, mining, and information technology amongst his many investments. Jim is listed at number 140 on the Sunday Times Rich List with a net worth of &pound;920 million, and holds directorships in a number of publicly quoted companies. He is the founder and principal shareholder of the Regent Pacific Group, quoted on the Hong Kong Stock Exchange, who were the founding investor of Binary.com in 1999.') %]</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="content-section blue-bg">
@@ -518,6 +549,7 @@
                                 <input type="hidden" name="meta_message" value="1001" />
                                 <input type="hidden" name="meta_required" value="email" />
                                 <input type="hidden" name="meta_tooltip" value="" />
+                                <input type="hidden" name="custom language" value="" class="frm-language" />
                             </div>
                             <div id="af-form-713141817" class="af-form">
                                 <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
@@ -550,7 +582,7 @@
                 <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
             </div>
         </div>
-        <script src="[% request.url_for('js/ico/ico.js') %]"></script>
+        <script src="[% request.url_for('js/ico/ico.js') _ '?' _ static_hash %]"></script>
     </body>
 
 </html>

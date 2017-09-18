@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-21117 -19213 900 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12091 -18877 900 400">
     <defs>
         <style>
-            .cls-1 {
+            .cls-1, .cls-8 {
             fill: #fff;
             }
 
@@ -9,7 +9,7 @@
             stroke: #95989a;
             }
 
-            .cls-2, .cls-8 {
+            .cls-10, .cls-2 {
             fill: none;
             }
 
@@ -19,6 +19,9 @@
 
             .cls-3, .cls-4 {
             font-size: 11px;
+            }
+
+            .cls-3, .cls-4, .cls-8 {
             font-family: Roboto-Regular, Roboto;
             }
 
@@ -31,14 +34,23 @@
             }
 
             .cls-7 {
+            opacity: 0.6;
+            }
+
+            .cls-8 {
+            font-size: 9px;
+            letter-spacing: 0.3em;
+            }
+
+            .cls-9 {
             stroke: none;
             }
         </style>
     </defs>
-    <g id="Group_432" data-name="Group 432" transform="translate(2730 -110)">
+    <g id="Group_455" data-name="Group 455" transform="translate(11756 226)">
         <g id="Rectangle_276" data-name="Rectangle 276" class="cls-1" transform="translate(-23847 -19103)">
-            <rect class="cls-7" width="900" height="400"/>
-            <rect class="cls-8" x="0.5" y="0.5" width="899" height="399"/>
+            <rect class="cls-9" width="900" height="400"/>
+            <rect class="cls-10" x="0.5" y="0.5" width="899" height="399"/>
         </g>
         <g id="Group_431" data-name="Group 431" transform="translate(-0.001)">
             <line id="Line_87" data-name="Line 87" class="cls-2" x2="733.025" transform="translate(-23723.5 -18987.5)"/>
@@ -142,7 +154,7 @@
                 <rect id="Rectangle_301" data-name="Rectangle 301" class="cls-6" width="10" height="76" transform="translate(-23080 -18844)"/>
                 <rect id="Rectangle_302" data-name="Rectangle 302" class="cls-5" width="10" height="122" transform="translate(-23093 -18890)"/>
             </g>
-            <g id="Group_430" data-name="Group 430">
+            <g id="Group_430" data-name="Group 430" class="cls-7">
                 <rect id="Rectangle_310" data-name="Rectangle 310" class="cls-6" width="10" height="151" transform="translate(-23006 -18919)"/>
                 <rect id="Rectangle_311" data-name="Rectangle 311" class="cls-5" width="10" height="190" transform="translate(-23019 -18958)"/>
             </g>
@@ -157,6 +169,8 @@
             <rect id="Rectangle_305" data-name="Rectangle 305" class="cls-6" width="10" height="1" transform="translate(-23621 -18768)"/>
             <rect id="Rectangle_306" data-name="Rectangle 306" class="cls-6" width="10" height="1" transform="translate(-23461 -18768)"/>
             <line id="Line_90" data-name="Line 90" class="cls-2" x2="733.025" transform="translate(-23723.5 -18767.5)"/>
+            <text id="projected" class="cls-8" transform="translate(-23007.5 -18815.5) rotate(-90)"><tspan x="9.661" y="9">projected</tspan></text>
+            <text id="projected-2" data-name="projected" class="cls-8" transform="translate(-23020.5 -18815.5) rotate(-90)"><tspan x="9.661" y="9">projected</tspan></text>
         </g>
     </g>
 </svg>
