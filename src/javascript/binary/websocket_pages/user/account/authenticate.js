@@ -221,6 +221,12 @@ const Authenticate = (() => {
             if (file.buffer && file.buffer.byteLength > 3000000) {
                 return buildMessage('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB', [file.filename]);
             }
+            if (!file.documentId.length && file.type.toLowerCase() == 'passport') {
+                return buildMessage('Document ID is required for [_1].', [file.type]);
+            }
+            if (!file.expirationDate.length && file.type.toLowerCase() == 'passport') {
+                return buildMessage('Expiration date is required for [_1].', [file.type]);
+            }
             return null;
         };
 
