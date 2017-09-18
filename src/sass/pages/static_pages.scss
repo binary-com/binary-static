@@ -350,18 +350,20 @@ body #not_authenticated_financial ul.checked > li {
             border-radius: $BORDER_RADIUS;
             width: 100%;
 
-            > img {
+            > span {
+                position: relative;
+                top: 2px;
+                padding: 0;
                 display: inline-flex;
                 width: 1em;
                 height: 1em;
                 margin-left: 10px;
-                margin-top: -2px;
 
                 &.add {
-                    content: url('../images/pages/authenticate/add.svg');
+                    background: url('../images/pages/authenticate/add.svg') no-repeat;
                 }
                 &.remove {
-                    content: url('../images/pages/authenticate/remove.svg');
+                    background: url('../images/pages/authenticate/remove.svg');
                 }
             }
         }

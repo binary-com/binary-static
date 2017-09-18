@@ -1,7 +1,10 @@
-const Client           = require('../../../base/client');
-const BinarySocket     = require('../../socket');
+const Client = require('../../../base/client');
+const BinarySocket = require('../../socket');
 const DocumentUploader = require('binary-document-uploader');
 const showLoadingImage = require('../../../base/utility').showLoadingImage;
+const localize = require('../../../base/localize').localize;
+const displayNotification = require('../../../base/header').displayNotification;
+const Url = require('../../../base/url');
 
 const Authenticate = (() => {
     const onLoad = () => {
@@ -14,7 +17,9 @@ const Authenticate = (() => {
                 if (should_authenticate) {
                     const status = get_account_status.status;
                     if (!/authenticated/.test(status)) {
-                        $(`#not_authenticated${Client.isAccountOfType('financial') ? '_financial' : ''}`).setVisibility(1);
+                        $('#not_authenticated').setVisibility(1);
+                        if(Client.isAccountOfType('financial')) 
+                            $('#not_authenticated_financial').setVisibility(1);
                         init();
                     } else if (!/age_verification/.test(status)) {
                         $('#needs_age_verification').setVisibility(1);
@@ -31,15 +36,15 @@ const Authenticate = (() => {
         $('.files').accordion({
             heightStyle: 'content',
             collapsible: true,
-            active     : false,
+            active: false,
         });
         // Setup Date picker
         const date = new Date();
         $('.date-picker').datepicker({
-            dateFormat : 'yy-mm-dd',
+            dateFormat: 'yy-mm-dd',
             changeMonth: true,
-            changeYear : true,
-            minDate    : date,
+            changeYear: true,
+            minDate: date,
         });
 
         // Submit button
@@ -52,7 +57,11 @@ const Authenticate = (() => {
          * @param {*} event
          */
         const onFileSelected = (event) => {
-            if (!event.target.files) return;
+            console.log(1);
+            if (!event.target.files || !event.target.files.length) {
+                resetLabel(event);
+                return;
+            }
             // Change submit button state
             showSubmit();
             const file_name = event.target.files[0].name || '';
@@ -62,20 +71,23 @@ const Authenticate = (() => {
                 .off('click')
                 // Prevent opening file selector.
                 .on('click', (e) => {
-                    if ($(e.target).is('img.remove')) e.preventDefault();
+                    if ($(e.target).is('span.remove')) e.preventDefault();
                 })
                 .text(display_name)
-                .append($('<img/>', { class: 'remove' }))
+                .append($('<span/>', { class: 'remove' }))
                 .find('.remove')
-                .click(() => {
-                    const default_text = event.target.id.split('_')[0]
-                        .replace(/^\w/, w => w.toUpperCase());
-                    $(event.target).val(''); // Remove previously selected file.
-                    $(event.target).parent().find('label').text(default_text)
-                        .append($('<img/>', { class: 'add' }));
-                    // Change submit button state
-                    showSubmit();
-                });
+                .click(() => resetLabel(event));
+        };
+
+        // Reset file-selector label
+        const resetLabel = (event) => {
+            const default_text = event.target.id.split('_')[0]
+                .replace(/^\w/, w => w.toUpperCase());
+            $(event.target).val(''); // Remove previously selected file.
+            $(event.target).parent().find('label').text(default_text)
+                .append($('<span/>', { class: 'add' }));
+            // Change submit button state
+            showSubmit();
         };
 
         /**
@@ -84,7 +96,7 @@ const Authenticate = (() => {
          */
         const showSubmit = () => {
             let file_selected = false;
-            const $ele = $('#authentication-message > div').not('.invisible');
+            const $ele = $('#authentication-message > div#not_authenticated');
             $button = $ele.find('#btn_submit');
             const $files = $ele.find('input[type="file"]');
 
@@ -174,13 +186,17 @@ const Authenticate = (() => {
                     fr.onload = () => {
                         const format = (f.file.type.split('/')[1]).toUpperCase();
                         const obj = {
-                            filename      : f.file.name,
-                            buffer        : fr.result,
-                            documentType  : f.type,
+                            filename: f.file.name,
+                            buffer: fr.result,
+                            documentType: f.type,
                             documentFormat: format,
                         };
                         obj.documentId = f.id_number || '';
                         obj.expirationDate = f.exp_date || '';
+                        const error = validate(obj);
+                        if (error)
+                            reject(error);
+
                         resolve(obj);
                     };
 
@@ -197,6 +213,20 @@ const Authenticate = (() => {
             return Promise.all(promises);
         };
 
+        // Validate user input
+        const validate = (file) => {
+            if (!(file.documentFormat || '').match(/^(PNG|JPG|JPEG|GIF|PDF)$/i)) {
+                return buildMessage('Invalid document format: "[_1]"', [file.documentFormat]);
+            }
+            if (file.buffer && file.buffer.byteLength > 3000000) {
+                return buildMessage("File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB", [file.filename]);
+            }
+            return null;
+        };
+
+        // Build localize messages
+        const buildMessage = (m, arg) => ({ message: localize(m, arg) });
+
         const showError = (e) => {
             const $error = $('.error-msg');
             const message = e.message || e.message_to_client;
@@ -206,7 +236,11 @@ const Authenticate = (() => {
         };
 
         const showSuccess = () => {
-            $('#authentication-message > div').not('.invisible').setVisibility(0);
+            const msg = buildMessage('We are reviewing your account. For more details [_1]contact us[_2].',
+                [`<a href="${Url.urlFor('contact')}">`, '</a>']);
+            displayNotification(msg.message, false, 'under_review');
+            $('#authentication-message > div#not_authenticated').setVisibility(0);
+            $('#authentication-message > div#not_authenticated_financial').setVisibility(0); // Just hide it. ✓ 
             $('#success-message').setVisibility(1);
         };
     };

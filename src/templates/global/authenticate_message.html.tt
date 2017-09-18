@@ -30,7 +30,7 @@
                                                 <label for="id_number_[% loop.count %]">[% l('ID number') %]:</label>
                                             </div>
                                             <div class="gr-8 gr-12-m">
-                                                <input id="id_number_[% loop.count %]" type="text" maxlength="200">
+                                                <input id="id_number_[% loop.count %]" type="text" maxlength="30">
                                             </div>
                                         </div>
                                         <div class="gr-row form-row center-text-m">
@@ -44,11 +44,11 @@
                                         <div class="gr-row form-row center-text-m">
                                             <div class="gr-6 gr-12-m">
                                                 <input id="front_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
-                                                <label for="front_file[% loop.count %]" class="button">[% l('Front') %] <img class="add" /></button>
+                                                <label for="front_file[% loop.count %]" class="button">[% l('Front') %] <span class="add" /></button>
                                             </div>
                                             <div class="gr-6 gr-12-m">
                                                 <input id="back_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
-                                                <label for="back_file[% loop.count %]" class="button">[% l('Back') %] <img class="add" /></button>
+                                                <label for="back_file[% loop.count %]" class="button">[% l('Back') %] <span class="add" /></button>
                                             </div>
                                         </div>
                                     [% END %]
@@ -56,7 +56,7 @@
                                         <div class="gr-row form-row gr-centered">
                                             <div class="gr-12">
                                                 <input id="add_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
-                                                <label for="add_file[% loop.count %]" class="button">[% l('Add') %] <img class="add" /></button>
+                                                <label for="add_file[% loop.count %]" class="button">[% l('Add') %] <span class="add" /></button>
                                             </div>
                                         </div>
                                     [% END %]
@@ -76,9 +76,9 @@
 
 [% INCLUDE file_selector heading=l("1. Proof of identity")
     allowed_documents=[l('Passport'), l('Driving licence'), 
-        l('National ID card or any government issued document which contains a photo ID, your name and date of birth')]
+        l('National ID card or any government issued document which contains a photo , your name, and date of birth')]
     instructions=[
-        l('Must be a photo or scanned image'), l('Still valid'), 
+        l('Must be a clear, colour photo or scanned image'), l('Still valid'), 
         l('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'), 
         l('Maximum upload size for each file is 3MB')
     ]
@@ -86,12 +86,14 @@
     accepted_documents=[
         {name => l('Passport'), value => 'passport'},
         {name => l('Identity card'), value => 'proofid'}, 
-        {name => l('Driving license'), value => 'driverslicense'}
+        {name => l('Driving licence'), value => 'driverslicense'}
     ]
 %]
+
 [% INCLUDE global/separator_line.html.tt invisible=1 class="gr-padding-10" %]
+
 [% INCLUDE file_selector heading=l("2. Proof of address")
-    allowed_documents=[l('Utility bills (gas, electricity, phone)'), 
+    allowed_documents=[l('Utility bills (gas, electricity, and phone)'), 
         l('Latest bank statement or any government-issued letter which contains your name and address')]
     instructions=[
         l('Must be a clear, colour photo or scanned image'),

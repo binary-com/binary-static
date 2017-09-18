@@ -555,6 +555,10 @@ sub _texts {
         push @texts, localize('Ether Classic');
         push @texts, localize('Litecoin');
 
+        # Authentication errors
+        push @texts, localize('Invalid document format: "[_1]"');
+        push @texts, localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
 
