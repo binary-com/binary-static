@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     dataLayer.push({ event: 'page_load' });
 
+    // Get client's country
     var clients_country = sessionStorage.getItem('clients_country');
     if (!clients_country) {
         var accounts = JSON.parse(localStorage.getItem('client.accounts') || null);
@@ -17,20 +18,23 @@ document.addEventListener("DOMContentLoaded", function(){
         if (!clients_country) {
             var ws = wsConnect();
 
-            function sendWebsiteStatus() {
+            function sendRequests() {
                 ws.send(JSON.stringify({ website_status: 1 }));
+                ws.send(JSON.stringify({ residence_list: 1 }));
             }
 
             if (ws.readyState === 1) {
-                sendWebsiteStatus();
+                sendRequests();
             } else {
-                ws.onopen = sendWebsiteStatus;
+                ws.onopen = sendRequests;
             }
             ws.onmessage = function (msg) {
                 var response = JSON.parse(msg.data);
                 if (response.website_status) {
                     clients_country = response.website_status.clients_country;
                     setSession('clients_country', clients_country);
+                } else if (response.residence_list) {
+                    setSession('residence_list', JSON.stringify(response.residence_list));
                 }
             }
         }

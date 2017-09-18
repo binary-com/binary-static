@@ -1,27 +1,12 @@
+var el_residence_list;
 window.onload = function() {
-    var frm_select_residence  = document.getElementById('frm_select_residence');
-    var frm_accept_disclaimer = document.getElementById('frm_accept_disclaimer');
+    var frm_select_residence     = document.getElementById('frm_select_residence');
+    var frm_accept_disclaimer    = document.getElementById('frm_accept_disclaimer');
     var frm_accept_second_notice = document.getElementById('frm_accept_second_notice');
-    var el_residence_list     = document.getElementById('residence_list');
+    el_residence_list            = document.getElementById('residence_list');
 
-    var ws = wsConnect();
-
-    function sendResidenceList() {
-        ws.send(JSON.stringify({
-            residence_list: 1
-        }));
-    }
-
-    function populateResidenceList(residence_list) {
-        residence_list.forEach(function(res) {
-            var el_option = document.createElement('option');
-            el_option.text = res.text;
-            el_option.value = res.value;
-            el_residence_list.appendChild(el_option);
-        });
-        document.getElementById('disclaimer_form').classList.remove('invisible');
-        document.getElementsByClassName('barspinner')[0].classList.add('invisible');
-    }
+    // Get and then Populate residence list
+    getResidenceList();
 
     function isRestrictedCountry(val) {
         // restricted countries code
@@ -106,17 +91,41 @@ window.onload = function() {
             document.getElementById('frm_accept_notice_error').classList.remove('invisible');
         }
     })
+};
 
-    if (ws.readyState === 1) {
-        sendResidenceList();
+function getResidenceList() {
+    var residence_list = JSON.parse(sessionStorage.getItem('residence_list') || null);
+    if (residence_list) {
+        populateResidenceList(residence_list);
     } else {
-        ws.onopen = function() {
+        var ws = wsConnect();
+        function sendResidenceList() {
+            ws.send(JSON.stringify({ residence_list: 1 }));
+        }
+
+        if (ws.readyState === 1) {
             sendResidenceList();
+        } else {
+            ws.onopen = sendResidenceList;
+        }
+
+        ws.onmessage = function(msg) {
+            var response = JSON.parse(msg.data);
+            if (response.residence_list) {
+                populateResidenceList(response.residence_list);
+                setSession('residence_list', JSON.stringify(response.residence_list));
+            }
         }
     }
+}
 
-    ws.onmessage = function(response) {
-        var data = JSON.parse(response.data);
-        populateResidenceList(data.residence_list);
-    }
-};
+function populateResidenceList(residence_list) {
+    residence_list.forEach(function(res) {
+        var el_option = document.createElement('option');
+        el_option.text  = res.text;
+        el_option.value = res.value;
+        el_residence_list.appendChild(el_option);
+    });
+    document.getElementById('loading').classList.add('invisible');
+    document.getElementById('disclaimer_form').classList.remove('invisible');
+}
