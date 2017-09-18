@@ -559,6 +559,7 @@ sub _texts {
         push @texts, localize('Invalid document format: "[_1]"');
         push @texts, localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB');
         push @texts, localize('ID number is required for [_1].');
+        push @texts, localize('Only letters, numbers, spaces, underscore (_), and dash (-) are allowed for ID number.')
         push @texts, localize('Expiry date is required for [_1].');
         push @texts, localize('Passport');
         push @texts, localize('ID card');

@@ -184,7 +184,7 @@ const Authenticate = (() => {
                 const fr = new FileReader();
                 const promise = new Promise((resolve, reject) => {
                     fr.onload = () => {
-                        const format = (f.file.type.split('/')[1]).toUpperCase();
+                        const format = (f.file.type.split('/')[1] || (f.file.name.match(/\.([\w\d]+)$/) || [])[1]).toUpperCase();
                         const obj = {
                             filename      : f.file.name,
                             buffer        : fr.result,
@@ -230,6 +230,9 @@ const Authenticate = (() => {
             }
             if (!file.documentId.length && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
                 return buildMessage('ID number is required for [_1].', [doc_name[file.documentType]]);
+            }
+            if (file.documentId && !/^[\w\s-]{0,30}$/.test(file.documentId)) {
+                return buildMessage('Only letters, numbers, spaces, underscore (_), and dash (-) are allowed for ID number.', [doc_name[file.documentType]]);
             }
             if (!file.expirationDate.length && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
                 return buildMessage('Expiry date is required for [_1].', [doc_name[file.documentType]]);
