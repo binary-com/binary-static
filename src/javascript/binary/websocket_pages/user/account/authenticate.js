@@ -19,7 +19,7 @@ const Authenticate = (() => {
                     if (!/authenticated/.test(status)) {
                         $('#not_authenticated').setVisibility(1);
                         if(Client.isAccountOfType('financial')) 
-                            $('#not_authenticated_financial').setVisibility(1);
+                            {$('#not_authenticated_financial').setVisibility(1);}
                         init();
                     } else if (!/age_verification/.test(status)) {
                         $('#needs_age_verification').setVisibility(1);
@@ -36,15 +36,15 @@ const Authenticate = (() => {
         $('.files').accordion({
             heightStyle: 'content',
             collapsible: true,
-            active: false,
+            active     : false,
         });
         // Setup Date picker
         const date = new Date();
         $('.date-picker').datepicker({
-            dateFormat: 'yy-mm-dd',
+            dateFormat : 'yy-mm-dd',
             changeMonth: true,
-            changeYear: true,
-            minDate: date,
+            changeYear : true,
+            minDate    : date,
         });
 
         // Submit button
@@ -186,16 +186,16 @@ const Authenticate = (() => {
                     fr.onload = () => {
                         const format = (f.file.type.split('/')[1]).toUpperCase();
                         const obj = {
-                            filename: f.file.name,
-                            buffer: fr.result,
-                            documentType: f.type,
+                            filename      : f.file.name,
+                            buffer        : fr.result,
+                            documentType  : f.type,
                             documentFormat: format,
                         };
                         obj.documentId = f.id_number || '';
                         obj.expirationDate = f.exp_date || '';
                         const error = validate(obj);
                         if (error)
-                            reject(error);
+                            {reject(error);}
 
                         resolve(obj);
                     };
@@ -219,7 +219,7 @@ const Authenticate = (() => {
                 return buildMessage('Invalid document format: "[_1]"', [file.documentFormat]);
             }
             if (file.buffer && file.buffer.byteLength > 3000000) {
-                return buildMessage("File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB", [file.filename]);
+                return buildMessage('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB', [file.filename]);
             }
             return null;
         };
