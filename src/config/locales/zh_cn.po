@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-17 22:22-0400\n"
+"PO-Revision-Date: 2017-09-17 22:32-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -780,9 +780,6 @@ msgstr "账户密码"
 
 msgid "Account Security"
 msgstr "账户安全"
-
-msgid "Account Transfer"
-msgstr "账户转账"
 
 msgid "Account balance:"
 msgstr "账户余额："
@@ -3286,11 +3283,20 @@ msgstr "星期五"
 msgid "Fridays"
 msgstr "星期五"
 
+msgid "From cryptocurrency to fiat: 0.5% transfer fee"
+msgstr ""
+
+msgid "From fiat to cryptocurrency: 1% transfer fee"
+msgstr ""
+
 msgid "Front-End (Javascript) Development"
 msgstr "前端 (Javascript) 开发"
 
 msgid "Fund Transfers"
 msgstr "基金转汇"
+
+msgid "Fund transfers between accounts are unavailable."
+msgstr ""
 
 msgid "Funding of Real Account"
 msgstr "真实账户资金存入"
@@ -5562,6 +5568,9 @@ msgstr "注意：您必须完全通过付款代理存款才可使用付款代理
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "注： 您只能拥有一个法定货币账户以及每种加密货币一个账户。"
 
+msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr ""
+
 msgid "Notes:"
 msgstr "注："
 
@@ -6092,6 +6101,9 @@ msgstr "请%1接受更新条款和条件%2，以提高存取款限额。"
 
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "请%1完成账户资料%2，以提高取款和交易限额。"
+
+msgid "Please %1deposit%2 to your account."
+msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "请<a href=\"%1\">接受更新条款和条件</a>。"
@@ -7743,9 +7755,6 @@ msgstr "能够使用测试驱动开发技术写出高质量、自记录代码"
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "对于上述的个人数据，我们将在法律法规允许的范围内进行持有或处理。我们可能将个人信息转移给 Binary 集团的公司、我们的业务伙伴或资金提供者，不论其是否位于 EEA 区域，包括一些没有达到相同个人数据保护水平的国家。"
 
-msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
-msgstr "账户不可转账。请将资金%1存入%2您的账户。"
-
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "联盟项目让您通过推荐客户到网站而获利。有能力给网站带来新客户的联盟会员可以一起分享成长和成功。"
 
@@ -8506,11 +8515,17 @@ msgstr "交易执行者为%1 (应用程序 ID: %2)"
 msgid "Transfer"
 msgstr "转账"
 
-msgid "Transfer between your gaming and financial accounts."
-msgstr "在您的博彩和金融账户之间进行转账。"
+msgid "Transfer Between Accounts"
+msgstr ""
 
 msgid "Transfer from"
 msgstr "转移自"
+
+msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgstr ""
+
+msgid "Transfer funds between your real money accounts."
+msgstr ""
 
 msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
 msgstr "把资金从%1账户转移到您的MetaTrader 5账户︰"
@@ -9857,9 +9872,6 @@ msgstr "您的账户不应被用作银行信贷，其中的存款只应视为交
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "您的账户不应被用作银行信贷，其中的存款只应视为交易资金。本公司并不是金融机构，客户存款不会有利息。如果您重复进行存、取款，却没有进行相应的交易，在关闭账户之前，我们保留权利在不事先通知的情况下把相关银行费用转加到您的账户。"
 
-msgid "Your account transfer is successful. Your new balances are:"
-msgstr "您的账户转账已失败。最新余额是："
-
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "随后，我们的审核和营销部门将审核您的申请。一经通过，我们就会把您列入 <a href='%1'>付款代理</a>列表。"
 
@@ -9889,6 +9901,9 @@ msgstr "您无法在到期时还清债务;"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "您与 %1的外汇和差价合约交易与一种标的金融工具相连接，您将承受与金融工具有关的价格、汇率、利率或其他市场波动率的风险，特别是如果市场所属的管辖权与你无关。通过电子交易平台在网络上进行的外汇和差价合约交易承受潜在数据风险，可能导致订单执行的延误。"
+
+msgid "Your fund transfer is successful. Your new balances are:"
+msgstr ""
 
 msgid "Your name, email address and contact number"
 msgstr "您的名字、 电子邮件和电话"
@@ -10036,9 +10051,6 @@ msgstr "电子邮件地址"
 
 msgid "from $1 to $50,000."
 msgstr "1 美元到 5 万美元。"
-
-msgid "from %1 to %2"
-msgstr "从%1到%2"
 
 msgid "from 10 seconds to 365 days."
 msgstr "从10 秒到 365 天..."
