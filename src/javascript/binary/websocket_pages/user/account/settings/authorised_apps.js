@@ -1,6 +1,7 @@
 const moment               = require('moment');
 const BinarySocket         = require('../../../socket');
 const BinaryPjax           = require('../../../../base/binary_pjax');
+const Client               = require('../../../../base/client');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const localize             = require('../../../../base/localize').localize;
 const State                = require('../../../../base/storage').State;
@@ -8,7 +9,6 @@ const FlexTableUI          = require('../../../../common_functions/attach_dom/fl
 const elementTextContent   = require('../../../../common_functions/common_functions').elementTextContent;
 const jpClient             = require('../../../../common_functions/country_base').jpClient;
 const toTitleCase          = require('../../../../common_functions/string_util').toTitleCase;
-const getAppId             = require('../../../../../config').getAppId;
 
 const AuthorisedApps = (() => {
     let can_revoke = false;
@@ -42,7 +42,11 @@ const AuthorisedApps = (() => {
     const updateApps = () => {
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             if (response.error) {
-                displayError(response.error.message);
+                if (/InvalidToken/.test(response.error.code)) { // if application revoked is current application, log client out
+                    Client.sendLogoutRequest(true);
+                } else {
+                    displayError(response.error.message);
+                }
             } else {
                 const apps = response.oauth_apps.map(app => ({
                     name     : app.name,
@@ -76,8 +80,6 @@ const AuthorisedApps = (() => {
                 BinarySocket.send({ revoke_oauth_app: app.id }).then((response) => {
                     if (response.error) {
                         displayError(response.error.message);
-                    } else if (+app.id === +getAppId()) { // if application revoked is current application, log client out
-                        window.location.reload();
                     } else {
                         updateApps();
                     }
