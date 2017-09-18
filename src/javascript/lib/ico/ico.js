@@ -19,6 +19,13 @@ document.addEventListener("DOMContentLoaded", function(){
         scrollTo(to);
     }
 
+    // Set language fields
+    const language = getLanguage();
+    const el_langs = document.getElementsByClassName('frm-language');
+    for (let i = 0; i < el_langs.length; i++) {
+        el_langs[i].value = language;
+    }
+
     // Toggle mobile menu
     const toggleButton = document.getElementById('toggle-menu');
     const navbar = document.getElementsByClassName('navbar-fixed-top')[0];
@@ -111,3 +118,9 @@ Math.easeInOutQuad = function (t, b, c, d) {
     t--;
     return -c/2 * (t*(t-2) - 1) + b;
 };
+
+function getLanguage() {
+    var all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
+    var language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return all_languages.indexOf(l) >= 0; });
+    return language || 'en';
+}
