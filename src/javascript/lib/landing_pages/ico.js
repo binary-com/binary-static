@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // Handle form submission
     if (window.location.hash === '#done') {
-        dataLayer.push({ bom_country: clients_country || '' });
+        dataLayer.push({ bom_country_abbrev: clients_country || '' });
         dataLayer.push({ event: 'ico_success' });
         for (let i = 0; i < 2; i++) {
             document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
