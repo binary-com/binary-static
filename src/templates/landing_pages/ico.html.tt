@@ -48,7 +48,7 @@
 
     <body>
         [% PROCESS global/gtm.html.tt %]
-        <div class="navbar-fixed-top" role="navigation">
+        <div class="navbar-fixed-top" role="navigation" id="navigation">
             <div class="">
                 <div class="navbar-header">
                     <span id="toggle-menu" href="button" class="navbar-toggle"></span>
@@ -544,7 +544,8 @@
                 <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
             </div>
         </div>
-        <script src="[% request.url_for('js/ico/ico.js') _ '?' _ static_hash %]"></script>
+        <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
+        <script src="[% request.url_for('js/landing_pages/ico.js') _ '?' _ static_hash %]"></script>
     </body>
 
 </html>

@@ -4,7 +4,7 @@ window.onload = function() {
     var frm_accept_second_notice = document.getElementById('frm_accept_second_notice');
     var el_residence_list     = document.getElementById('residence_list');
 
-    var ws = new WebSocket('wss://blue.binaryws.com/websockets/v3?app_id=1&l=' + getLanguage());
+    var ws = wsConnect();
 
     function sendResidenceList() {
         ws.send(JSON.stringify({
@@ -120,16 +120,3 @@ window.onload = function() {
         populateResidenceList(data.residence_list);
     }
 };
-
-function getParamValue(url, key) {
-    var regex   = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
-    var results = regex.exec(url);
-    if (!results || !results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
-function getLanguage() {
-    var all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
-    var language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return all_languages.indexOf(l) >= 0; });
-    return language || 'en';
-}

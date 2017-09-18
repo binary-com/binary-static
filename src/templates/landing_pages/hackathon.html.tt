@@ -44,7 +44,7 @@
     </head>
 
     <body>
-        <div class="navbar">
+        <div class="navbar" id="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <span id="toggle-menu" href="button" class="navbar-toggle"></span>
@@ -204,6 +204,7 @@
             </div>
         </footer>
 
-        <script src="[% request.url_for('js/hackathon/hackathon.js') _ '?' _ static_hash %]"></script>
+        <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
+        <script src="[% request.url_for('js/landing_pages/hackathon.js') _ '?' _ static_hash %]"></script>
     </body>
 </html>

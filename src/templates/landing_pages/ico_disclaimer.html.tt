@@ -177,7 +177,8 @@ For purposes of this provision, the expression an “offer of Tokens to the publ
 
     </div>
 
-    <script src="[% request.url_for('js/ico/ico-disclaimer.js') _ '?' _ static_hash %]"></script>
+    <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
+    <script src="[% request.url_for('js/landing_pages/ico_disclaimer.js') _ '?' _ static_hash %]"></script>
     </body>
 
 </html>
