@@ -477,7 +477,6 @@ sub _texts {
         push @texts, localize('Change Password');
 
         # strings for account_transfer
-        push @texts, localize('from [_1] to [_2]');
         push @texts, localize('This amount exceeds your withdrawal limit.');
 
         # strings for header notification
