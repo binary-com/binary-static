@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-14 22:41-0400\n"
+"PO-Revision-Date: 2017-09-17 22:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -784,9 +784,6 @@ msgstr "Mật khẩu tài khoản"
 
 msgid "Account Security"
 msgstr "Bảo mật Tài khoản"
-
-msgid "Account Transfer"
-msgstr "Chuyển Tài khoản"
 
 msgid "Account balance:"
 msgstr "Số dư tài khoản:"
@@ -3289,11 +3286,20 @@ msgstr "Thứ Sáu"
 msgid "Fridays"
 msgstr "Thứ Sáu"
 
+msgid "From cryptocurrency to fiat: 0.5% transfer fee"
+msgstr ""
+
+msgid "From fiat to cryptocurrency: 1% transfer fee"
+msgstr ""
+
 msgid "Front-End (Javascript) Development"
 msgstr "Lập trình Front-End (Javascript)"
 
 msgid "Fund Transfers"
 msgstr "Chuyển tiền quỹ"
+
+msgid "Fund transfers between accounts are unavailable."
+msgstr ""
 
 msgid "Funding of Real Account"
 msgstr "Quỹ của tài khoản thực"
@@ -3757,8 +3763,8 @@ msgstr "Nếu bạn chọn giao dịch Hợp đồng với chúng tôi, ba�
 msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
 msgstr "Nếu bạn không có ý định sử dụng tính năng đòn bẩy, xin hãy thiết lập tỷ lệ đòn bẩy về 1:1."
 
-msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
-msgstr "Nếu bạn không nhận được email trong vòng vài phút tới, xin vui lòng kiểm tra hòm thư rác."
+msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
+msgstr ""
 
 msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr "Nếu bạn thất bại trong việc ngay lập tức làm cho việc giải quyết đầy đủ số tiền do chúng tôi theo thỏa thuận này, chúng tôi giữ lại quyền để tích lũy lãi suất trên tổng tiền do bạn gửi cho chúng tôi đối với bất kỳ một phiên giao dịch nào mà bạn không thể trả cho chúng tôi đúng hạn. Lợi ích sẽ được cộng dồn hàng ngày dựa trên ngày liên quan cho đến khi ngày nhận chuyển khoản được nhận đầy đủ tiền với lãi suất sàn của ngân hàng chính thức cho khoản tiền ngắn hại được xác định vởi chúng tôi, và sẽ có thể được trả theo yêu cầu."
@@ -5562,6 +5568,9 @@ msgstr "Lưu ý: Rút tiền thông qua đại lý thanh toán chỉ khả dụn
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr ""
 
+msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr ""
+
 msgid "Notes:"
 msgstr "Chú ý:"
 
@@ -6093,6 +6102,9 @@ msgstr "Xin %1 vui lòng chấp nhận cập nhật các điều khoản và đi
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "Xin %1 vui lòng hoàn thành hồ sơ tài khoản %2 của bạn để nâng mức rút tiền và các giới hạn giao dịch."
 
+msgid "Please %1deposit%2 to your account."
+msgstr ""
+
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Xin <a href=\"%1\"> vui lòng chấp nhận các điều khoản và điều kiện Cập Nhật</a>."
 
@@ -6111,7 +6123,10 @@ msgstr "Xin vui lòng chấp nhận các điều khoản và điều kiện."
 msgid "Please check the above form for pending errors."
 msgstr "Vui lòng kiểm tra các mục nêu trên cho những lỗi đang chờ xử lý."
 
-msgid "Please check your email to complete the process."
+msgid "Please check your email for the password reset link."
+msgstr ""
+
+msgid "Please check your email for the verification link to complete the process."
 msgstr ""
 
 msgid "Please choose a currency"
@@ -7740,9 +7755,6 @@ msgstr "Khả năng viết mã chất lượng cao, elf-documenting code, bằng
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "Các dữ liệu cá nhân trên mà chúng tôi thu thập chúng tôi sẽ giữ và xử lý cho mục đích nào đó có thể được cho phép hoặc yêu cầu của pháp luật. Chúng tôi cũng có thể chuyển dữ liệu cá nhân đó cho bất kỳ công ty nào trong Tập đoàn Binary, bất kì tổ chức kinh tế nào hoặc người thanh toán của chúng tôi, bên trong hoặc bên ngoài EEA bao gồm cả ở những nước mà không được cung cấp mức bảo vệ thông tin cá nhân tương đương."
 
-msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
-msgstr "Chuyển giữa hai tài khoản không khả dụng. %1 vui lòng gửi tiền %2 vào tài khoản."
-
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "Chương trình liên kết cho phép bạn kiếm lời từ việc giới thiệu khách hàng cho trang web. Sự lớn mạnh và thành công được chia sẻ cho liên kết người mà có khả năng mang Khách hàng mới tới cho trang web."
 
@@ -7920,6 +7932,9 @@ msgstr "Thất thoát lớn nhất có thể xẩy ra cho Khách hàng 
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Đã đạt đến độ dài tối đa của mã token (%1)."
+
+msgid "The minimum duration is"
+msgstr ""
 
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 msgstr "Quảng bá tối thiểu (trong đó bao gồm quảng bá thị trường và quảng bá của chúng tôi) được công bố trên website của chúng tôi có thể thay đổi, theo ý kiến chúng tôi quyết định tuyệt đối. Bạn thừa nhận rằng trong khi chúng tôi cố gắng để duy trì quảng bá cạnh tranh, cả hai quảng bá thị trường và quảng bá của chúng tôi có thể mở rộng đáng kể trong một số trường hợp và con số đó sẽ được xác định bởi chúng tôi theo chúng tôi quyết định hợp lý."
@@ -8308,8 +8323,8 @@ msgstr "Để thực hiện hành động này, xin vui lòng chuyển sang tài
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Để đủ điều kiện, bạn cần phải tốt nghiệp với văn bằng khá chuyên ngành Vật lý, Kỹ thuật Tài chính hay Toán học"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
-msgstr "Để thiết lập lại mật khẩu, nhập địa chỉ email bạn đã đăng kí vào ô dưới đây và nhấp chuột vào  'Đặt lại mật khẩu'."
+msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
+msgstr ""
 
 msgid "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
 msgstr ""
@@ -8500,11 +8515,17 @@ msgstr "Giao dịch thực hiện bởi %1 (ID ứng dụng: %2)"
 msgid "Transfer"
 msgstr "Chuyển khoản"
 
-msgid "Transfer between your gaming and financial accounts."
-msgstr "Chuyển khoản giữa tài khoản cá cược và tài khoản tài chính của bạn."
+msgid "Transfer Between Accounts"
+msgstr ""
 
 msgid "Transfer from"
 msgstr "Chuyển từ"
+
+msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgstr ""
+
+msgid "Transfer funds between your real money accounts."
+msgstr ""
 
 msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
 msgstr ""
@@ -9072,9 +9093,6 @@ msgstr "Chúng tôi sẽ cung cấp cho bạn tất cả các công cụ bạn c
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "Chúng tôi sẽ sử dụng các nỗ lực hợp lý trong vòng kiểm soát của chúng tôi để đảm bảo rằng tất cả các dữ liệu điện tử được cung cấp trên nền tảng thương mại MT5 và tất cả các giao dịch điện tử hướng dẫn và chấp nhận bạn cho chúng tôi, và thực hiện bởi chúng tôi không phụ thuộc vào độ trễ mạng."
-
-msgid "We'll then send you an e-mail asking you to verify your identity."
-msgstr "Sau đó chúng tôi sẽ gửi cho bạn một email yêu cầu xác nhận danh tính."
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "Chúng tôi được cấp bằng sáng chế cho 'Hệ thống kinh doanh máy tính và phương pháp suy đoán trên thị trường tài chính' và 'Hệ thống giao dịch máy tính để cung cấp hoạt động suy đoán thị trường tài chính tùy chỉnh'. Các bằng sáng chế cho thấy khả năng của chúng tôi trong việc đổi mới và luôn hướng về phía trước."
@@ -9854,9 +9872,6 @@ msgstr "Tài khoản của bạn không nên được sử dụng như một th
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Tài khoản của bạn không nên được sử dụng như một thiết bị ngân hàng và bạn chỉ nên gửi tiền với mục đích sử dụng nó để đặt hợp đồng. Công ty không phải là tổ chức tài chính. Khách hàng cũng không nhận được lãi suất từ tiền gửi. Nếu bạn gửi tiền và rút tiền nhiều lần mà không đặt hợp đồng tương xứng, chúng tôi có quyền thu hồi tài khoản của bạn, mà không cần thông báo trước, bất kỳ khoản phí ngân hàng nào chúng tôi sẽ thu của bạn trước khi đóng tài khoản."
 
-msgid "Your account transfer is successful. Your new balances are:"
-msgstr "Chuyển khoản thành công. Số dư mới của bạn là:"
-
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Hồ sơ đăng kí của bạn sẽ được xem xét bởi phòng thủ tục và marketing. Khi đã được duyệt, chúng tôi sẽ xếp bạn vào danh sách <a href='%1'>đại lý thanh toán</a> của chúng tôi."
 
@@ -9886,6 +9901,9 @@ msgstr "Các khoản nợ không được giải quyết và khi họ phá sản
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "Ngoại hối và các hợp đồng chênh lệch giá thiết lập giao dịch với %1 của bạn được liên kết với một công cụ tài chính tiềm ẩn và bạn sẽ được tiếp xúc với giá, quy đổi Ngoại tệ, lãi suất hay biến động của thị trường mà công cụ tài chính của bạn là liên quan đến, đặc biệt là nếu thị trường là một thẩm quyền đó là nước ngoài với bạn. Ngoại hối và các hợp đồng chênh lệch giá kinh doanh trên internet thông qua một nền tảng thương mại điện tử là tùy thuộc vào rủi ro độ trễ dữ liệu có thể gây ra sự chậm trễ trong thứ tự thực hiện."
+
+msgid "Your fund transfer is successful. Your new balances are:"
+msgstr ""
 
 msgid "Your name, email address and contact number"
 msgstr "Tên, địa chỉ email và số điện thoại liên lạc của bạn"
@@ -10034,14 +10052,14 @@ msgstr "địa chỉ hòm thư"
 msgid "from $1 to $50,000."
 msgstr ""
 
-msgid "from %1 to %2"
-msgstr "từ %1 đến %2"
-
 msgid "from 10 seconds to 365 days."
 msgstr ""
 
 msgid "h"
 msgstr "h"
+
+msgid "hour"
+msgstr ""
 
 msgid "hours"
 msgstr "giờ"
@@ -10070,6 +10088,9 @@ msgstr "tối thiểu"
 msgid "minimum available duration"
 msgstr "khoảng thời gian có sẵn tối thiểu"
 
+msgid "minute"
+msgstr ""
+
 msgid "minutes"
 msgstr "phút"
 
@@ -10093,6 +10114,9 @@ msgstr "các số"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "trang dành cho quyết toán tại thời gian chính xác đối với tất cả các hợp đồng. Các trang web khác có thể áp dụng quy ước khác nhau (ví dụ như một số trang web chọn thời gian 04:00 NY, hoặc 5:00 theo giờ Luân Đôn). Kết quả là, giá đóng, mở, cao, thấp hiển thị trên trang web của chúng tôi có thể khác với những giá trên các trang web khác, do quy ước thời gian đóng cửa thị trường."
+
+msgid "second"
+msgstr ""
 
 msgid "seconds"
 msgstr "giây"
@@ -10132,6 +10156,12 @@ msgstr "sàn giao dịch này là công cụ thân thiện và có thể 
 
 msgid "the specific instructions that we receive from you;"
 msgstr "Các hướng dẫn cụ thể mà chúng tôi nhận được từ bạn;"
+
+msgid "tick"
+msgstr ""
+
+msgid "ticks"
+msgstr ""
 
 msgid "today"
 msgstr "hôm nay"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-14 22:41-0400\n"
+"PO-Revision-Date: 2017-09-17 22:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -784,9 +784,6 @@ msgstr "รหัสผ่านของบัญชี"
 
 msgid "Account Security"
 msgstr "ความปลอดภัยของบัญชี"
-
-msgid "Account Transfer"
-msgstr "การโอนบัญชี"
 
 msgid "Account balance:"
 msgstr "ยอดคงเหลือในบัญชี:"
@@ -3289,11 +3286,20 @@ msgstr "วันศุกร์"
 msgid "Fridays"
 msgstr "วันศุกร์"
 
+msgid "From cryptocurrency to fiat: 0.5% transfer fee"
+msgstr ""
+
+msgid "From fiat to cryptocurrency: 1% transfer fee"
+msgstr ""
+
 msgid "Front-End (Javascript) Development"
 msgstr "การพัฒนาเว็บส่วนหน้า (ใช้จาวาสคริป)"
 
 msgid "Fund Transfers"
 msgstr "การโอนเงิน"
+
+msgid "Fund transfers between accounts are unavailable."
+msgstr ""
 
 msgid "Funding of Real Account"
 msgstr "หลักทรัพย์ของบัญชีจริง"
@@ -3757,8 +3763,8 @@ msgstr "หากท่านเลือกซื้อขายสัญญา
 msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
 msgstr "หากท่านไม่ตั้งใจจะใช้เลเวอเลจ ให้ตั้งค่าอัตราเลเวอเลจ 1:1"
 
-msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
-msgstr "หากท่านไม่ได้รับอีเมล์ในอีก 2-3 นาที โปรดตรวจสอบอีเมล์ในกล่องขยะหรือสแปมของท่าน"
+msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
+msgstr ""
 
 msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr ""
@@ -5562,6 +5568,9 @@ msgstr "หมายเหตุ: การถอนเงินผ่านต�
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr ""
 
+msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr ""
+
 msgid "Notes:"
 msgstr "บันทึก:"
 
@@ -6093,6 +6102,9 @@ msgstr "โปรด %1ยอมรับข้อตกลงและเงื
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "โปรด %1ปรับปรุงประวัติของท่าน%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
 
+msgid "Please %1deposit%2 to your account."
+msgstr ""
+
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "โปรด <a href=\"%1\">ยอมรับข้อตกลงและเงื่อนไข</a>"
 
@@ -6111,7 +6123,10 @@ msgstr "โปรดยอมรับข้อตกลงและเงื่
 msgid "Please check the above form for pending errors."
 msgstr "โปรดตรวจสอบแบบฟอร์มข้างต้นสำหรับรายการข้อผิดพลาด"
 
-msgid "Please check your email to complete the process."
+msgid "Please check your email for the password reset link."
+msgstr ""
+
+msgid "Please check your email for the verification link to complete the process."
 msgstr ""
 
 msgid "Please choose a currency"
@@ -7740,9 +7755,6 @@ msgstr "ความสามารถในการเขียนโปรแ
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "ข้อมูลส่วนบุคคลข้างต้นที่พวกเราได้เก็บรวบรวมจะถูกนำไปใช้เป็นไปตามวัตถุประสงค์ที่กำหนดตามกฎหมาย หรือ ชอบด้วยกฎหมาย พวกเราอาจจะถ่ายโอนข้อมูลส่วนบุคคลให้กับบริษัทอื่นภายในเครือ Binary หรือ บริษัทที่เกี่ยวข้อง หรือ บริษัทฯ ผู้ให้บริการชำระเงินไม่ว่า จะอยู่ในหรือนอก EEA รวมถึงประเทศที่อาจจะไม่มีการป้องกันข้อมูลส่วนบุคคลในระดับที่เทียบเท่า"
 
-msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
-msgstr "การโอนบัญชีไม่สามารถทำได้ โปรด %1ฝากเงิน%2ในบัญชีของท่าน"
-
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "โปรแกรมพันธมิตรทำให้ท่านได้รับผลประโยชน์จากการแนะนำลูกค้ามาที่เว็บไซต์ การเติบโตและความสำเร็จที่แบ่งสรรปันส่วนซึ่งกันและกันกับผู้ที่มีความสามารถในการหาลูกค้าใหม่ๆ ให้กับเว็บไซต์"
 
@@ -7920,6 +7932,9 @@ msgstr "จำนวนเงินขาดทุนที่มากที่
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "จำนวนมากที่สุดของโทเค่น (%1) ถูกใช้หมดแล้ว"
+
+msgid "The minimum duration is"
+msgstr ""
 
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 msgstr ""
@@ -8310,8 +8325,8 @@ msgstr "เพื่อดำเนินการส่วนนี้ โป�
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "สำหรับตำแหน่งนี้ ท่านต้องสำเร็จการศึกษาขั้นสูงในสาขา ฟิสิกส์ วิศวกรรมการเงิน หรือ คณิตศาสตร์"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
-msgstr "เพื่อตั้งค่ารหัสผ่านของท่านใหม่ ป้อนอีเมล์ที่ท่านลงทะเบียนไว้ในช่องว่างข้างล่างและคลิก 'ตั้งรหัสผ่านใหม่'"
+msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
+msgstr ""
 
 msgid "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
 msgstr ""
@@ -8502,11 +8517,17 @@ msgstr "ดำเนินธุรกรรมโดย %1 (App ID: %2)"
 msgid "Transfer"
 msgstr "โอน"
 
-msgid "Transfer between your gaming and financial accounts."
-msgstr "โอนระหว่างการซื้อขายของท่านและบัญชีของท่าน"
+msgid "Transfer Between Accounts"
+msgstr ""
 
 msgid "Transfer from"
 msgstr "โอนจาก"
+
+msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgstr ""
+
+msgid "Transfer funds between your real money accounts."
+msgstr ""
 
 msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
 msgstr ""
@@ -9074,9 +9095,6 @@ msgstr "พวกเราจะเตรียมเครื่องมือ
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr ""
-
-msgid "We'll then send you an e-mail asking you to verify your identity."
-msgstr "พวกเราจะส่งอีเมล์ให้ท่านเพื่อให้ท่านดำเนินการตรวจสอบข้อมูลส่วนบุคคลของท่าน"
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "พวกเราได้รับสิทธิบัตรสำหรับ 'ระบบคอมพิวเตอร์สำหรับการซื้อขายและวิธีในการเก็งกำไรในตลาดการเงิน' และ 'ระบบคอมพิวเตอร์สำหรับการซื้อขายที่นำเสนอการเก็งกำไรในตลาดการเงิน' สิทธิบัตรแสดงถึงความสามารถของพวกเราในการสร้างสรรค์และนำหน้าตลาด"
@@ -9855,9 +9873,6 @@ msgstr "บัญชีของท่านไม่ควรใช้สำห
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "บัญชีของท่านไม่ควรใช้สำหรับการอำนวยความสะดวกในการฝากเงิน และการฝากเงินควรดำเนินการเมื่อท่านต้องการลงเงินในสัญญา บริษัทฯ ไม่ได้ประพฤติเยี่ยงสถาบันการเงิน ลูกค้าจะไม่ได้รับดอกเบี้ยจากการฝากเงิน ในการดำเนินการของท่านไม่ว่าจะฝากเงินหรือถอนเงินปราศจากสัญญาที่มีสัดส่วนเงินที่พอดีกัน ทางบริษัทฯ ขอสงวนสิทธิ์ในการดำเนินการกับบัญชีของท่าน โดยไม่ต้องแจ้งให้ทราบล่วงหน้า รวมถึงค่าธรรมเนียมต่างๆ ของธนาคารที่เกิดขึ้นก่อนการปิดบัญชี"
 
-msgid "Your account transfer is successful. Your new balances are:"
-msgstr "การโอนเงินของบัญชีท่านเสร็จสมบูรณ์ ยอดคงเหลือของท่าน คือ:"
-
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "ใบสมัครของท่านจะถูกทวนสอบโดยฝ่ายการตลาดและธรรมาภิบาลของเรา เมื่อมีการอนุมัติ ท่านจะสามารถใช้งานระบบ <a href='%1'>ตัวแทนรับชำระเงิน</a> ของเราได้"
 
@@ -9886,6 +9901,9 @@ msgid "Your debts are not settled as, and when, they fall due;"
 msgstr "หนี้ของท่านยังไม่ได้รับชำระและถึงกำหนดแล้ว"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
+msgstr ""
+
+msgid "Your fund transfer is successful. Your new balances are:"
 msgstr ""
 
 msgid "Your name, email address and contact number"
@@ -10035,14 +10053,14 @@ msgstr "อีเมล์"
 msgid "from $1 to $50,000."
 msgstr ""
 
-msgid "from %1 to %2"
-msgstr "จาก %1 ถึง %2"
-
 msgid "from 10 seconds to 365 days."
 msgstr ""
 
 msgid "h"
 msgstr "ชม."
+
+msgid "hour"
+msgstr ""
 
 msgid "hours"
 msgstr "ชั่วโมง"
@@ -10071,6 +10089,9 @@ msgstr "ค่าต่ำสุด"
 msgid "minimum available duration"
 msgstr "ช่วงเวลาต่ำสุด"
 
+msgid "minute"
+msgstr ""
+
 msgid "minutes"
 msgstr "นาที"
 
@@ -10094,6 +10115,9 @@ msgstr "ตัวเลข"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "หน้าสำหรับเวลาที่ใช้เป็นข้อตกลงสำหรับทุกสัญญา เว็บไซต์อื่นอาจใช้การกำหนดเวลาที่แตกต่างออกไป (เช่น บางเว็บไซต์ใช้เวลา 4.00 น. เวลานิวยอร์ก หรือ 5.00 น. เวลาลอนดอน) ทำให้ราคาเปิด สูง ต่ำ และ ราคาปิดที่แสดงในเว็บไซต์ของเราจะแตกต่างจากเว็บไซต์อื่นๆ เนื่องจากการกำหนดเวลาปิดของตลาด"
+
+msgid "second"
+msgstr ""
 
 msgid "seconds"
 msgstr "วินาที"
@@ -10133,6 +10157,12 @@ msgstr "เป็นระบบที่ใช้งานง่ายและ
 
 msgid "the specific instructions that we receive from you;"
 msgstr "คำสั่งเฉพาะที่พวกเราได้รับจากท่าน"
+
+msgid "tick"
+msgstr ""
+
+msgid "ticks"
+msgstr ""
 
 msgid "today"
 msgstr "วันนี้"

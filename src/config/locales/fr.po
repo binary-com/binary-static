@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-17 22:03-0400\n"
+"PO-Revision-Date: 2017-09-17 22:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -779,9 +779,6 @@ msgstr "Mot de passe du compte"
 
 msgid "Account Security"
 msgstr "Sécurité du compte"
-
-msgid "Account Transfer"
-msgstr "Virement de compte à compte"
 
 msgid "Account balance:"
 msgstr "Solde du compte :"
@@ -3284,11 +3281,20 @@ msgstr "vendredi"
 msgid "Fridays"
 msgstr "Vendredis"
 
+msgid "From cryptocurrency to fiat: 0.5% transfer fee"
+msgstr ""
+
+msgid "From fiat to cryptocurrency: 1% transfer fee"
+msgstr ""
+
 msgid "Front-End (Javascript) Development"
 msgstr "Développement front-end (Javascript)"
 
 msgid "Fund Transfers"
 msgstr "Transferts de fonds"
+
+msgid "Fund transfers between accounts are unavailable."
+msgstr ""
 
 msgid "Funding of Real Account"
 msgstr "Approvisionnement du compte réel"
@@ -3752,8 +3758,8 @@ msgstr "Si vous décidez de conclure un Contrat avec nous, il est primordial que
 msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
 msgstr "Si vous n'avez pas l'intention d'utiliser l'effet de levier, s'il vous plait établissez le ratio de levier à 1:1."
 
-msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
-msgstr "Si vous ne recevez pas le mail dans les minutes suivantes, veuillez vérifier votre dossier spam/courrier indésirable."
+msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
+msgstr ""
 
 msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr "Si vous échouez à immédiatement faire un règlement complet des sommes qui nous sommes dues en accord avec ce Contrat, nous nous réservons le droit de retenir des intérêts sur les sommes que vous nous devez par rapport à n'importe Transaction que vous échouez à payer à la date correspondante. Les intérêts seront composés sur une base journalière à partir de la date pertinente jusqu'à la date où le paiement est reçu en totalité à partir du taux de base officiel de la banque pour les fonds à court terme déterminé par nous, et sera payable sur demande."
@@ -5556,6 +5562,9 @@ msgstr "N.B. Le retrait par agent de paiement n'est disponible que si vous effec
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "Remarque : Vous ne pouvez avoir qu'un compte en monnaie fiduciaire et un pour chaque monnaie digitale."
 
+msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr ""
+
 msgid "Notes:"
 msgstr "Remarques :"
 
@@ -6087,6 +6096,9 @@ msgstr "S'il vous plait %1acceptez les termes et conditions mises à jour%2 pour
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "S'il vous plait %1complétez le profile de votre compte%2 pour supprimer vos limites de retrait et de trading."
 
+msgid "Please %1deposit%2 to your account."
+msgstr ""
+
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Veuillez <a href=\"%1\">accepter la dernière version des conditions générales</a>."
 
@@ -6105,8 +6117,11 @@ msgstr "Veuillez accepter les conditions générales."
 msgid "Please check the above form for pending errors."
 msgstr "Veuillez vérifier que les informations ci-dessus ne contiennent pas d'erreurs."
 
-msgid "Please check your email to complete the process."
-msgstr "Veuillez vérifier votre email pour terminer le processus."
+msgid "Please check your email for the password reset link."
+msgstr ""
+
+msgid "Please check your email for the verification link to complete the process."
+msgstr ""
 
 msgid "Please choose a currency"
 msgstr "Veuillez choisir une monnaie"
@@ -7734,9 +7749,6 @@ msgstr "Capacité à rédiger un code auto-descriptif de haute qualité en utili
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "Lesdites données personnelles que nous collectons seront conservées par nos soins et utilisées à toute fin autorisée par la loi ou lorsque la loi l'exige. Nous sommes également susceptibles de communiquer ces données personnelles à toute société de Binary Group, à l'un de nos partenaires commerciaux ou fournisseurs de services de paiement, que ce soit au sein de l'EEE ou ailleurs, y compris dans certains pays susceptibles de ne pas offrir un niveau de protection des données personnelles équivalent."
 
-msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
-msgstr "Le virement de compte à compte est indisponible. Veuillez %1effectuer un dépôt%2 sur votre compte."
-
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "Le programme d'affiliation vous permet de générer des revenus en recommandant notre site à des clients. Les affiliés ayant la possibilité d'attirer de nouveaux clients sur notre site profitent ainsi de notre croissance et de notre succès."
 
@@ -7914,6 +7926,9 @@ msgstr "La perte maximale que peut encourir tout Client correspond au montant de
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Le nombre maximum de jetons d'authentification (%1) est atteint."
+
+msgid "The minimum duration is"
+msgstr ""
 
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 msgstr "Le spread minimum (qui inclus le spread de marché et notre spread) publié sur notre site internet est sujet à des changements, à notre absolue discrétion. Vous reconnaissez que lorsque nous nous efforçons d'entretenir un spread compétitif, à la fois un spread de marché et notre spread pourrait s'élargir significativement dans certaines circonstances et de telles chiffres seront déterminés par nous à notre raisonnable discrétion."
@@ -8302,8 +8317,8 @@ msgstr "Pour effectuer cette action, veuillez vous connecter à votre compte ré
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Un diplôme d'études supérieures en physique, en ingénierie financière ou en mathématiques"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
-msgstr "Pour réinitialiser votre mot de passe, saisissez dans le champ ci-dessous l'adresse e-mail que vous avez utilisé lors de votre inscription, puis cliquez sur « Réinitialiser le mot de passe »."
+msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
+msgstr ""
 
 msgid "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
 msgstr "Pour effectuer un retrait depuis votre Compte Financier MetaTrader 5, veuillez authentifier votre compte %1."
@@ -8494,11 +8509,17 @@ msgstr "Transaction effectuée par %1 (identifiant d'application : %2)"
 msgid "Transfer"
 msgstr "Transfert"
 
-msgid "Transfer between your gaming and financial accounts."
-msgstr "Transfert entre votre compte de jeu et financier."
+msgid "Transfer Between Accounts"
+msgstr ""
 
 msgid "Transfer from"
 msgstr "Virement depuis"
+
+msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgstr ""
+
+msgid "Transfer funds between your real money accounts."
+msgstr ""
 
 msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
 msgstr "Transférer des fonds du compte %1 à votre compte MetaTrader 5 :"
@@ -9066,9 +9087,6 @@ msgstr "Nous vous fournirons l'ensemble des outils dont vous avez besoin pour fa
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "Nous nous efforcerons raisonnablement dans notre contrôle d'assurer que toute donnée électronique fournie sur la plateforme d'échange MT5 et que toute transaction électronique ordonnée et acceptée de vous à nous, et exécuté par nous ne sont pas sujettes à la latence de réseau."
-
-msgid "We'll then send you an e-mail asking you to verify your identity."
-msgstr "Nous vous enverrons ensuite un e-mail vous demandant de valider votre identité."
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "La société obtient des brevets en tant que « Système de courtage en ligne et méthode de spéculation sur un marché financier » et en tant que « Système de courtage en ligne fournissant des services de spéculation personnalisés sur les marchés financiers ». Ces brevets reflètent notre capacité à innover et à rester à la pointe du secteur."
@@ -9847,9 +9865,6 @@ msgstr "Votre compte ne sera pas utilisé comme une facilité bancaire et les d�
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Votre compte ne sera pas utilisé comme un service bancaire et les dépôts ne doivent être effectués que dans l'optique d'utiliser ces fonds pour placer des contrats. La Société n'est pas une institution financière. Les Clients ne reçoivent pas d'intérêts sur les dépôts. Si vous effectuez plusieurs dépôts et retraits sans placer des contrats d'un volume correspondant, nous nous réservons le droit de facturer à votre compte, sans avis préalable, tous les frais bancaires que nous pourrions avoir contracté avant de fermer le compte concerné."
 
-msgid "Your account transfer is successful. Your new balances are:"
-msgstr "Le virement a bien été effectué sur votre compte. Vos nouveaux soldes sont :"
-
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Votre demande sera ensuite examinée par nos départements chargés de la conformité et du marketing. Une fois votre demande validée, nous vous ajouterons à notre liste d'<a href='%1'>agents de paiement</a> en ligne."
 
@@ -9879,6 +9894,9 @@ msgstr "Vos dettes ne sont pas réglés comme, et lorsqu'elles sont dues;"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "Vos transactions de contrat de forex et pour différences avec %1 sont liés à un instrument financier sous jacent et vous serez exposé au prix, au échange de devises, au taux d’intérêt ou d'autre volatilité de marché pour laquelle votre instrument financier est en rapport, spécialement si le marché est d'une juridiction qui vous est étrangère. Le Forex et les contrats pour différences échangés sur Internet via une plateforme d'échange électronique sont sujets à des risques de latence de données qui peuvent conduire à des délais dans l’exécution des ordres."
+
+msgid "Your fund transfer is successful. Your new balances are:"
+msgstr ""
 
 msgid "Your name, email address and contact number"
 msgstr "Vos nom, adresse e-mail et numéro de contact"
@@ -10027,14 +10045,14 @@ msgstr "Adresse e-mail"
 msgid "from $1 to $50,000."
 msgstr "de 1 $ à 50 000 $."
 
-msgid "from %1 to %2"
-msgstr "de %1 à %2"
-
 msgid "from 10 seconds to 365 days."
 msgstr "de 10 secondes à 365 jours."
 
 msgid "h"
 msgstr "h"
+
+msgid "hour"
+msgstr ""
 
 msgid "hours"
 msgstr "heures"
@@ -10063,6 +10081,9 @@ msgstr "min"
 msgid "minimum available duration"
 msgstr "durée minimale disponible"
 
+msgid "minute"
+msgstr ""
+
 msgid "minutes"
 msgstr "minutes"
 
@@ -10086,6 +10107,9 @@ msgstr "chiffres"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "afin d'obtenir l'heure exacte de la clôture de tous les contrats. Les autres sites web peuvent adopter une convention différente (par exemple, certains sites web choisissent 4 heures, heure de NY, ou 5 heures, heure de Londres). Par conséquent, les prix à l'ouverture, supérieurs, inférieurs et à la clôture affichés sur notre site web peuvent différer de ceux affichés sur d'autres sites web, du fait de leur convention sur l'heure de clôture du marché."
+
+msgid "second"
+msgstr ""
 
 msgid "seconds"
 msgstr "secondes"
@@ -10125,6 +10149,12 @@ msgstr "une plate-forme simple d'utilisation et accessible aux traders de tous n
 
 msgid "the specific instructions that we receive from you;"
 msgstr "les instructions spécifiques que nous recevons de vous ;"
+
+msgid "tick"
+msgstr ""
+
+msgid "ticks"
+msgstr ""
 
 msgid "today"
 msgstr "aujourd'hui"
