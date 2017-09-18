@@ -780,9 +780,6 @@ msgstr ""
 msgid "Account Security"
 msgstr ""
 
-msgid "Account Transfer"
-msgstr ""
-
 msgid "Account balance:"
 msgstr ""
 
@@ -3286,10 +3283,19 @@ msgstr ""
 msgid "Fridays"
 msgstr ""
 
+msgid "From cryptocurrency to fiat: 0.5% transfer fee"
+msgstr ""
+
+msgid "From fiat to cryptocurrency: 1% transfer fee"
+msgstr ""
+
 msgid "Front-End (Javascript) Development"
 msgstr ""
 
 msgid "Fund Transfers"
+msgstr ""
+
+msgid "Fund transfers between accounts are unavailable."
 msgstr ""
 
 msgid "Funding of Real Account"
@@ -5559,6 +5565,9 @@ msgstr ""
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr ""
 
+msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr ""
+
 msgid "Notes:"
 msgstr ""
 
@@ -6088,6 +6097,9 @@ msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawa
 msgstr ""
 
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1deposit%2 to your account."
 msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
@@ -7740,9 +7752,6 @@ msgstr ""
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr ""
 
-msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
-msgstr ""
-
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr ""
 
@@ -8504,10 +8513,16 @@ msgstr ""
 msgid "Transfer"
 msgstr ""
 
-msgid "Transfer between your gaming and financial accounts."
+msgid "Transfer Between Accounts"
 msgstr ""
 
 msgid "Transfer from"
+msgstr ""
+
+msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgstr ""
+
+msgid "Transfer funds between your real money accounts."
 msgstr ""
 
 msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
@@ -9854,9 +9869,6 @@ msgstr ""
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr ""
 
-msgid "Your account transfer is successful. Your new balances are:"
-msgstr ""
-
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr ""
 
@@ -9885,6 +9897,9 @@ msgid "Your debts are not settled as, and when, they fall due;"
 msgstr ""
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
+msgstr ""
+
+msgid "Your fund transfer is successful. Your new balances are:"
 msgstr ""
 
 msgid "Your name, email address and contact number"
@@ -10032,9 +10047,6 @@ msgid "email address"
 msgstr ""
 
 msgid "from $1 to $50,000."
-msgstr ""
-
-msgid "from %1 to %2"
 msgstr ""
 
 msgid "from 10 seconds to 365 days."
