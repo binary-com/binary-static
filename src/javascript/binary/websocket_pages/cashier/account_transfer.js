@@ -29,14 +29,18 @@ const AccountTransfer = (() => {
         el_transfer_from = document.getElementById('lbl_transfer_from');
         el_transfer_to   = document.getElementById('transfer_to');
 
-        elementTextContent(el_transfer_from, `${client_loginid} (${client_currency})`);
+        let currency_text = client_currency ? `(${client_currency})` : '';
+
+        elementTextContent(el_transfer_from, `${client_loginid} ${currency_text}`);
 
         const fragment_transfer_to   = document.createElement('div');
 
         accounts.forEach((account, idx) => {
             if (accounts[idx].loginid !== client_loginid) {
-                const option  = document.createElement('option');
-                option.appendChild(document.createTextNode(`${accounts[idx].loginid} (${accounts[idx].currency})`));
+                const option   = document.createElement('option');
+                const currency = accounts[idx].currency;
+                currency_text  = currency ? `(${currency})` : '';
+                option.appendChild(document.createTextNode(`${accounts[idx].loginid} ${currency_text}`));
                 fragment_transfer_to.appendChild(option);
             }
         });

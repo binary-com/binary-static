@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-17 22:03-0400\n"
+"PO-Revision-Date: 2017-09-17 22:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -784,9 +784,6 @@ msgstr "パスワード変更"
 
 msgid "Account Security"
 msgstr "アカウントセキュリティ"
-
-msgid "Account Transfer"
-msgstr "口座振替"
 
 msgid "Account balance:"
 msgstr "口座残高："
@@ -3301,11 +3298,20 @@ msgstr "金曜日"
 msgid "Fridays"
 msgstr "金曜日"
 
+msgid "From cryptocurrency to fiat: 0.5% transfer fee"
+msgstr ""
+
+msgid "From fiat to cryptocurrency: 1% transfer fee"
+msgstr ""
+
 msgid "Front-End (Javascript) Development"
 msgstr "フロントエンド（Javascript）開発"
 
 msgid "Fund Transfers"
 msgstr "口座振替"
+
+msgid "Fund transfers between accounts are unavailable."
+msgstr ""
 
 msgid "Funding of Real Account"
 msgstr "リアル口座へ振替"
@@ -3770,8 +3776,8 @@ msgstr "当社との契約をご締結いただく場合、そのようなリス
 msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
 msgstr "レバレッジ機能をご利用されない場合、レバレッジ比率を1:1に設定してください。"
 
-msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
-msgstr "お客さまによっては迷惑メールフォルダーに入る場合もありますので、あわせてご確認ください。"
+msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
+msgstr ""
 
 msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
@@ -5589,6 +5595,9 @@ msgstr "ご注意：決済サービスでのご出金は、ご入金の際に決
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "注意：不換紙幣口座と各仮想通貨口座はお一人様一口座となります。"
 
+msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr ""
+
 msgid "Notes:"
 msgstr "ご注意："
 
@@ -6123,6 +6132,9 @@ msgstr "出金制限及び取引制限を解除するには、%1改訂版利用�
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "出金制限及び取引制限を解除するには、%1口座情報の入力を完了%2していただく必要があります。"
 
+msgid "Please %1deposit%2 to your account."
+msgstr ""
+
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "利用規約に同意していただく必要があります。"
 
@@ -6141,8 +6153,11 @@ msgstr "利用規約に同意していただく必要があります。"
 msgid "Please check the above form for pending errors."
 msgstr "未入力の項目がありますのでご確認ください"
 
-msgid "Please check your email to complete the process."
-msgstr "完了するには当社から送信したメールをご確認ください。"
+msgid "Please check your email for the password reset link."
+msgstr ""
+
+msgid "Please check your email for the verification link to complete the process."
+msgstr ""
 
 msgid "Please choose a currency"
 msgstr "通貨を選択してください"
@@ -7780,9 +7795,6 @@ msgstr "テスト駆動開発の技術を使用して高品質な自己文書化
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "当社が収集する上記の個人情報は当社にて保管し、法律、または任意の法律の求めに応じて利用される場合があります。これらの個人情報を当社グループ内、またはビジネスパートナー、支払提供者などの同レベルの個人情報保護を提供していない国を含むEEA内外で共有する場合があります。"
 
-msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
-msgstr "口座振替はご利用いただけません。お客さまの口座へご入金ください。"
-
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "アフィリエイトプログラムサイトにクライアントをご紹介いただくことで、利益をお受け取りいただけます。サイトへ新しいクライアントを集客するスキルのあるアフィリエイトで成長と成功をわかち合いましょう。"
 
@@ -8012,6 +8024,9 @@ msgstr "（取引価格）\n"
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "トークンの最大数(%1) に達しました。"
+
+msgid "The minimum duration is"
+msgstr ""
 
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 msgstr "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
@@ -8427,8 +8442,8 @@ msgstr "このアクションを実行するには、お客さまの%1リアル�
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "物理学、金融工学、数学の大学上級学位が必要となります。"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
-msgstr "パスワードを再設定される場合は下記の入力欄に登録されたメールアドレスを入力し、「パスワード再設定」をクリックしてください。"
+msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
+msgstr ""
 
 msgid "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
 msgstr "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
@@ -8620,11 +8635,17 @@ msgstr "%1(App ID:%2)によって取引が実行されました"
 msgid "Transfer"
 msgstr "送金"
 
-msgid "Transfer between your gaming and financial accounts."
-msgstr "お客さまのゲーム口座と金融口座間での送金"
+msgid "Transfer Between Accounts"
+msgstr ""
 
 msgid "Transfer from"
 msgstr "送金元"
+
+msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgstr ""
+
+msgid "Transfer funds between your real money accounts."
+msgstr ""
 
 msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
 msgstr "Transfer funds from %1 account into your MetaTrader 5 account:"
@@ -9211,9 +9232,6 @@ msgstr "サイト訪問数を収入に転化するツールを提供"
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
-
-msgid "We'll then send you an e-mail asking you to verify your identity."
-msgstr "その際に、本人確認のためメールを送信させていただきます。"
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "米国で「金融市場投機用コンピューター取引システムとメソッド」と「カスタムの金融市場投機用コンピューター取引システムとメソッド」に関する特許を取得。この特許取得により、当社の進化を証明し、及び競合他社との差別化を実現。"
@@ -10003,9 +10021,6 @@ msgstr "（期限の利益を喪失した場合等における本取引の反対
 "1.　お客さまが前条第１項各号のいずれかに該当した時は、当社が任意に、お客さまが保有しているポジションの決済に必要な反対売買を、お客さまに事前に通知することなくお客さまの計算において行うものとします。\n"
 "2.　お客さまが前条第２校第１号に掲げる債務のうち、本取引に係る債務について一部でも履行を遅滞した時は、当社が任意に当該遅滞に係る本取引を決済するために必要な決済を、お客さまに事前に通知することなく、お客さまの計算にて行うものとします。"
 
-msgid "Your account transfer is successful. Your new balances are:"
-msgstr "口座振替が完了しました。移行後残高："
-
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "当社コンプライアンス部門およびマーケティング部門により申請の審査に入ります。承認されましたら、当社<a href='%1'>決済サービスエージェント</a>リストに登録させていただきます。"
 
@@ -10035,6 +10050,9 @@ msgstr "Your debts are not settled as, and when, they fall due;"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
+
+msgid "Your fund transfer is successful. Your new balances are:"
+msgstr ""
 
 msgid "Your name, email address and contact number"
 msgstr "氏名、メールアドレス、電話番号"
@@ -10194,14 +10212,14 @@ msgstr "メールアドレス"
 msgid "from $1 to $50,000."
 msgstr "ペイアウトは1ロット1,000円、最大100ロットまで選択可能です"
 
-msgid "from %1 to %2"
-msgstr "%1から%2まで"
-
 msgid "from 10 seconds to 365 days."
 msgstr "取引期間は2時間から最長365日まで！"
 
 msgid "h"
 msgstr "時間"
+
+msgid "hour"
+msgstr ""
 
 msgid "hours"
 msgstr "時間"
@@ -10230,6 +10248,9 @@ msgstr "最小値"
 msgid "minimum available duration"
 msgstr "最短取引期間"
 
+msgid "minute"
+msgstr ""
+
 msgid "minutes"
 msgstr "分"
 
@@ -10253,6 +10274,9 @@ msgstr "数字"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "から、全てのトレードに関する正確な終値の適用時間をご確認下さい。他のウェブサイトでは、異なるデータを採用している可能性があります。（例：ニューヨーク時間・午前４時、ロンドン時間・午前５時など）ゆえに、当社が公表している始値、最高値、最安値、及び市場閉場価格は、他のウェブサイトで公表している価格と異なる可能性があります。"
+
+msgid "second"
+msgstr ""
 
 msgid "seconds"
 msgstr "秒"
@@ -10292,6 +10316,12 @@ msgstr "当プラットフォームは全レベルのトレーダーがご利用
 
 msgid "the specific instructions that we receive from you;"
 msgstr "お客さまよりいただいた具体的なご指示"
+
+msgid "tick"
+msgstr ""
+
+msgid "ticks"
+msgstr ""
 
 msgid "today"
 msgstr "本日"
