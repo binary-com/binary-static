@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-17 22:22-0400\n"
+"PO-Revision-Date: 2017-09-17 22:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -779,9 +779,6 @@ msgstr "Kata Sandi Akun"
 
 msgid "Account Security"
 msgstr "Keamanan Akun"
-
-msgid "Account Transfer"
-msgstr "Transfer Akun"
 
 msgid "Account balance:"
 msgstr "Saldo akun:"
@@ -3284,11 +3281,20 @@ msgstr "Jum'at"
 msgid "Fridays"
 msgstr "Jum'at"
 
+msgid "From cryptocurrency to fiat: 0.5% transfer fee"
+msgstr ""
+
+msgid "From fiat to cryptocurrency: 1% transfer fee"
+msgstr ""
+
 msgid "Front-End (Javascript) Development"
 msgstr "Pengembangan Bagian Depan (Javascript)"
 
 msgid "Fund Transfers"
 msgstr "Transfer Dana"
+
+msgid "Fund transfers between accounts are unavailable."
+msgstr ""
 
 msgid "Funding of Real Account"
 msgstr "Deposit ke Akun Riil"
@@ -5556,6 +5562,9 @@ msgstr "Nota: Penarikan via agen pembayaran hanya tersedia jika Anda mendeposit 
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "Catatan: Anda hanya dapat memiliki satu akun mata uang fiat dan satu setiap akun mata uang kripto."
 
+msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr ""
+
 msgid "Notes:"
 msgstr "Catatan:"
 
@@ -6086,6 +6095,9 @@ msgstr "Silahkan %1setujui Syarat dan Ketentuan terbaru%2 untuk meningkatkan bat
 
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "Silahkan %1lengkapi profil akun Anda%2 untuk meningkatkan batasan penarikan dan trading."
+
+msgid "Please %1deposit%2 to your account."
+msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Silahkan <a href=\"%1\">setujui Syarat dan Ketentuan terbaru</a>."
@@ -7738,9 +7750,6 @@ msgstr "Mampu menulis dengan kualitas tinggi, mendokumentasikan kode sendiri, me
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "Data pribadi diatas yang kami kumpulkan akan diselenggarakan oleh kami dan diproses untuk tujuan apapun yang mungkin diizinkan oleh hukum atau diwajibkan oleh hukum apapun. Kami juga dapat mentransfer data pribadi tersebut untuk setiap perusahaan dalam Binary Grup perusahaan, salah satu rekan bisnis kami atau penyedia pembayaran, baik di dalam maupun di luar EEA termasuk di negara-negara yang mungkin tidak menawarkan tingkat setara dengan perlindungan data pribadi."
 
-msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
-msgstr "Transfer antar akun tidak tersedia. Silahkan %1deposit%2 ke dalam akun Anda."
-
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "Program afiliasi memberi Anda manfaat dengan memperkenalkan klien kepada situs. Perkembangan dan sukses akan dibagikan kepada afiliasi yang memiliki kemampuan untuk membawa klien baru kedalam situs."
 
@@ -8501,11 +8510,17 @@ msgstr "Transaksi dilakukan oleh %1 (App ID: %2)"
 msgid "Transfer"
 msgstr "Transfer"
 
-msgid "Transfer between your gaming and financial accounts."
-msgstr "Transfer antara akun gaming dan akun finansial Anda."
+msgid "Transfer Between Accounts"
+msgstr ""
 
 msgid "Transfer from"
 msgstr "Transfer dari"
+
+msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgstr ""
+
+msgid "Transfer funds between your real money accounts."
+msgstr ""
 
 msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
 msgstr "Transfer dana dari akun %1 kedalam akun MetaTrader 5:"
@@ -9851,9 +9866,6 @@ msgstr "Akun Anda tidak boleh digunakan sebagai fasilitas perbankan dan deposito
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Akun Anda sebaiknya tidak digunakan sebagai fasilitas perbankan dan deposit hanya dilakukan untuk melakukan pembelian kontrak. Perusahaan adalah bukan institusi bank. Klien tidak akan menerima bunga pada deposit. Jika Anda melakukan deposit berulang ulang dan penarikan tanpa melakukan pembelian kontrak, kami berhak untuk menutup akun Anda tanpa pemberitahuan sebelumnya, membebankan biaya bank yang terlibat sebelum menutup akun Anda."
 
-msgid "Your account transfer is successful. Your new balances are:"
-msgstr "Transfer akun Anda sukses. Saldo terbaru Anda adalah:"
-
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Permohonan Anda akan ditinjau oleh departemen compliance dan marketing kami. Setelah disetujui, kami akan mengaktifkan Anda di dalam daftar <a href='%1'>agen pembayaran</a>."
 
@@ -9883,6 +9895,9 @@ msgstr "Hutang Anda tidak terselesaikan, dan ketika jatuh tempo;"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "Transaksi forex dan transaksi berdasarkan selisih pada %1 adalah terhubung dengan instrumen finansial dasar dan Anda akan terkena harga, nilai tukar, tingkat bunga atau volatilitas lain pasar terkait dengan instrumen finansial Anda, khususnya pasar asing. Forex dan kontrak berdasarkan selisih yang ditradingkan di internet menggunakan platform trading elektronik adalah tergantung kepada risiko keterlambatan data yang mungkin dapat memperlambat eksekusi order Anda."
+
+msgid "Your fund transfer is successful. Your new balances are:"
+msgstr ""
 
 msgid "Your name, email address and contact number"
 msgstr "Nama, alamat email dan nomor kontak Anda"
@@ -10030,9 +10045,6 @@ msgstr "alamat email"
 
 msgid "from $1 to $50,000."
 msgstr "dari $1 hingga $50.000."
-
-msgid "from %1 to %2"
-msgstr "dari %1 ke %2"
 
 msgid "from 10 seconds to 365 days."
 msgstr "dari 10 detik hingga 365 hari."
