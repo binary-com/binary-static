@@ -13,17 +13,29 @@ const getAppId             = require('../../../../../config').getAppId;
 const AuthorisedApps = (() => {
     let can_revoke = false;
 
-    const messages           = {
+    const messages = {
         no_apps       : 'You have not granted access to any applications.',
         revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
         revoke_access : 'Revoke access',
     };
+
+    const element_ids = {
+        container: 'applications-container',
+        table    : 'applications-table',
+        loading  : 'applications_loading',
+        error    : 'applications_error',
+    };
+
+    const elements = {};
 
     const onLoad = () => {
         if (jpClient()) {
             BinaryPjax.loadPreviousUrl();
             return;
         }
+        Object.keys(element_ids).forEach((id) => {
+            elements[id] = document.getElementById(element_ids[id]);
+        });
         updateApps();
     };
 
@@ -38,7 +50,7 @@ const AuthorisedApps = (() => {
                     last_used: app.last_used ? moment.utc(app.last_used) : null,
                     id       : app.app_id,
                 }));
-                document.getElementById('applications_loading').remove();
+                if (elements.loading) elements.loading.remove();
                 createTable(apps);
                 if (!apps.length) {
                     FlexTableUI.displayError(localize(messages.no_apps), 7);
@@ -77,7 +89,7 @@ const AuthorisedApps = (() => {
     };
 
     const createTable = (data) => {
-        if (document.getElementById('applications-table')) {
+        if (elements.table) {
             return FlexTableUI.replace(data);
         }
         const headers = ['Name', 'Permissions', 'Last Used'];
@@ -87,9 +99,9 @@ const AuthorisedApps = (() => {
         }
         FlexTableUI.init({
             data,
-            container: '#applications-container',
+            container: `#${element_ids.container}`,
             header   : headers.map(localize),
-            id       : 'applications-table',
+            id       : element_ids.table,
             cols     : headers.map(title => title.toLowerCase().replace(/\s/g, '-')),
             style    : ($row, app) => {
                 if (can_revoke) {
@@ -98,15 +110,16 @@ const AuthorisedApps = (() => {
             },
             formatter: formatApp,
         });
+        elements.table = document.getElementById(element_ids.table);
         return showLocalTimeOnHover('td.last_used');
     };
 
     const displayError = (message) => {
-        elementTextContent(document.getElementById('applications_error'), message);
+        elementTextContent(elements.error, message);
     };
 
     const onUnload = () => {
-        elementTextContent(document.getElementById('applications_error'), '');
+        elementTextContent(elements.error, '');
         FlexTableUI.clear();
     };
 
