@@ -560,6 +560,9 @@ sub _texts {
         push @texts, localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB');
         push @texts, localize('ID number is required for [_1].');
         push @texts, localize('Expiry date is required for [_1].');
+        push @texts, localize('Passport');
+        push @texts, localize('ID card');
+        push @texts, localize('Driving licence');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

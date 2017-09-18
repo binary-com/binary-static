@@ -215,17 +215,24 @@ const Authenticate = (() => {
 
         // Validate user input
         const validate = (file) => {
+            const required_docs = ['passport', 'proofid', 'driverslicense'];
+            const doc_name = {
+                passport      : localize('Passport'),
+                proofid       : localize('Identity card'),
+                driverslicense: localize('Driving licence'),
+            };
+
             if (!(file.documentFormat || '').match(/^(PNG|JPG|JPEG|GIF|PDF)$/i)) {
                 return buildMessage('Invalid document format: "[_1]"', [file.documentFormat]);
             }
             if (file.buffer && file.buffer.byteLength > 3000000) {
                 return buildMessage('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB', [file.filename]);
             }
-            if (!file.documentId.length && file.documentType.toLowerCase() === 'passport') {
-                return buildMessage('ID number is required for [_1].', [file.documentType]);
+            if (!file.documentId.length && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
+                return buildMessage('ID number is required for [_1].', [doc_name[file.documentType]]);
             }
-            if (!file.expirationDate.length && file.documentType.toLowerCase() === 'passport') {
-                return buildMessage('Expiry date is required for [_1].', [file.documentType]);
+            if (!file.expirationDate.length && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
+                return buildMessage('Expiry date is required for [_1].', [doc_name[file.documentType]]);
             }
             return null;
         };

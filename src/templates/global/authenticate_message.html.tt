@@ -76,7 +76,7 @@
 
 [% INCLUDE file_selector heading=l("1. Proof of identity")
     allowed_documents=[l('Passport'), l('Driving licence'), 
-        l('National ID card or any government issued document which contains a photo , your name, and date of birth')]
+        l('National ID card or any government issued document which contains a photo, your name, and date of birth')]
     instructions=[
         l('Must be a clear, colour photo or scanned image'), l('Still valid'), 
         l('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'), 
