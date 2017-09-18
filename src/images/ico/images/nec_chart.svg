@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-21117 -18011 900 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12091 -17675 900 400">
     <defs>
         <style>
-            .cls-1 {
+            .cls-1, .cls-8 {
             fill: #fff;
             }
 
@@ -9,7 +9,7 @@
             stroke: #95989a;
             }
 
-            .cls-2, .cls-8 {
+            .cls-10, .cls-2 {
             fill: none;
             }
 
@@ -21,7 +21,7 @@
             font-size: 11px;
             }
 
-            .cls-3, .cls-4, .cls-5 {
+            .cls-3, .cls-4, .cls-5, .cls-8 {
             font-family: Roboto-Regular, Roboto;
             }
 
@@ -29,23 +29,31 @@
             fill: #95989a;
             }
 
-            .cls-5 {
+            .cls-5, .cls-8 {
             font-size: 12px;
             }
 
-            .cls-6 {
+            .cls-6, .cls-7 {
             fill: #e98024;
             }
 
             .cls-7 {
+            opacity: 0.6;
+            }
+
+            .cls-8 {
+            letter-spacing: 0.3em;
+            }
+
+            .cls-9 {
             stroke: none;
             }
         </style>
     </defs>
-    <g id="Group_438" data-name="Group 438" transform="translate(2683 229)">
+    <g id="Group_460" data-name="Group 460" transform="translate(11709 565)">
         <g id="Rectangle_339" data-name="Rectangle 339" class="cls-1" transform="translate(-23800 -18240)">
-            <rect class="cls-7" width="900" height="400"/>
-            <rect class="cls-8" x="0.5" y="0.5" width="899" height="399"/>
+            <rect class="cls-9" width="900" height="400"/>
+            <rect class="cls-10" x="0.5" y="0.5" width="899" height="399"/>
         </g>
         <g id="Group_437" data-name="Group 437">
             <line id="Line_97" data-name="Line 97" class="cls-2" x2="693.654" transform="translate(-23679.215 -18124.5)"/>
@@ -85,7 +93,7 @@
             <path id="Path_257" data-name="Path 257" class="cls-6" d="M0,0H26V13H0Z" transform="translate(-23679 -18163)"/>
             <rect id="Rectangle_340" data-name="Rectangle 340" class="cls-6" width="23" height="133" transform="translate(-23094 -18038)"/>
             <rect id="Rectangle_341" data-name="Rectangle 341" class="cls-6" width="23" height="196" transform="translate(-23053 -18101)"/>
-            <rect id="Rectangle_342" data-name="Rectangle 342" class="cls-6" width="23" height="209" transform="translate(-23012 -18114)"/>
+            <rect id="Rectangle_342" data-name="Rectangle 342" class="cls-7" width="23" height="209" transform="translate(-23012 -18114)"/>
             <path id="Path_538" data-name="Path 538" class="cls-6" d="M0,.672H23L23,92.43H0Z" transform="translate(-23135 -17997.43)"/>
             <rect id="Rectangle_344" data-name="Rectangle 344" class="cls-6" width="23" height="70" transform="translate(-23176 -17975)"/>
             <path id="Path_258" data-name="Path 258" class="cls-6" d="M0-4.592H23V41.287H0Z" transform="translate(-23217 -17946.287)"/>
@@ -100,6 +108,7 @@
             <rect id="Rectangle_347" data-name="Rectangle 347" class="cls-6" width="23" height="34" transform="translate(-23464 -17939)"/>
             <path id="Path_265" data-name="Path 265" class="cls-6" d="M0-.943H23v48.82H0Z" transform="translate(-23258 -17952.877)"/>
             <path id="Path_266" data-name="Path 266" class="cls-6" d="M0-17.07H23V41.15H0Z" transform="translate(-23299 -17946.15)"/>
+            <text id="projected" class="cls-8" transform="translate(-23009.5 -17957.5) rotate(-90)"><tspan x="18.714" y="13">projected</tspan></text>
         </g>
     </g>
 </svg>
