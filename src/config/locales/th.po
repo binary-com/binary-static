@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-14 22:41-0400\n"
+"PO-Revision-Date: 2017-09-17 22:21-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -3757,8 +3757,8 @@ msgstr "หากท่านเลือกซื้อขายสัญญา
 msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
 msgstr "หากท่านไม่ตั้งใจจะใช้เลเวอเลจ ให้ตั้งค่าอัตราเลเวอเลจ 1:1"
 
-msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
-msgstr "หากท่านไม่ได้รับอีเมล์ในอีก 2-3 นาที โปรดตรวจสอบอีเมล์ในกล่องขยะหรือสแปมของท่าน"
+msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
+msgstr ""
 
 msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr ""
@@ -6111,7 +6111,10 @@ msgstr "โปรดยอมรับข้อตกลงและเงื่
 msgid "Please check the above form for pending errors."
 msgstr "โปรดตรวจสอบแบบฟอร์มข้างต้นสำหรับรายการข้อผิดพลาด"
 
-msgid "Please check your email to complete the process."
+msgid "Please check your email for the password reset link."
+msgstr ""
+
+msgid "Please check your email for the verification link to complete the process."
 msgstr ""
 
 msgid "Please choose a currency"
@@ -7921,6 +7924,9 @@ msgstr "จำนวนเงินขาดทุนที่มากที่
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "จำนวนมากที่สุดของโทเค่น (%1) ถูกใช้หมดแล้ว"
 
+msgid "The minimum duration is"
+msgstr ""
+
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 msgstr ""
 
@@ -8310,8 +8316,8 @@ msgstr "เพื่อดำเนินการส่วนนี้ โป�
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "สำหรับตำแหน่งนี้ ท่านต้องสำเร็จการศึกษาขั้นสูงในสาขา ฟิสิกส์ วิศวกรรมการเงิน หรือ คณิตศาสตร์"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
-msgstr "เพื่อตั้งค่ารหัสผ่านของท่านใหม่ ป้อนอีเมล์ที่ท่านลงทะเบียนไว้ในช่องว่างข้างล่างและคลิก 'ตั้งรหัสผ่านใหม่'"
+msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
+msgstr ""
 
 msgid "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
 msgstr ""
@@ -9074,9 +9080,6 @@ msgstr "พวกเราจะเตรียมเครื่องมือ
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr ""
-
-msgid "We'll then send you an e-mail asking you to verify your identity."
-msgstr "พวกเราจะส่งอีเมล์ให้ท่านเพื่อให้ท่านดำเนินการตรวจสอบข้อมูลส่วนบุคคลของท่าน"
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "พวกเราได้รับสิทธิบัตรสำหรับ 'ระบบคอมพิวเตอร์สำหรับการซื้อขายและวิธีในการเก็งกำไรในตลาดการเงิน' และ 'ระบบคอมพิวเตอร์สำหรับการซื้อขายที่นำเสนอการเก็งกำไรในตลาดการเงิน' สิทธิบัตรแสดงถึงความสามารถของพวกเราในการสร้างสรรค์และนำหน้าตลาด"
@@ -10044,6 +10047,9 @@ msgstr ""
 msgid "h"
 msgstr "ชม."
 
+msgid "hour"
+msgstr ""
+
 msgid "hours"
 msgstr "ชั่วโมง"
 
@@ -10071,6 +10077,9 @@ msgstr "ค่าต่ำสุด"
 msgid "minimum available duration"
 msgstr "ช่วงเวลาต่ำสุด"
 
+msgid "minute"
+msgstr ""
+
 msgid "minutes"
 msgstr "นาที"
 
@@ -10094,6 +10103,9 @@ msgstr "ตัวเลข"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "หน้าสำหรับเวลาที่ใช้เป็นข้อตกลงสำหรับทุกสัญญา เว็บไซต์อื่นอาจใช้การกำหนดเวลาที่แตกต่างออกไป (เช่น บางเว็บไซต์ใช้เวลา 4.00 น. เวลานิวยอร์ก หรือ 5.00 น. เวลาลอนดอน) ทำให้ราคาเปิด สูง ต่ำ และ ราคาปิดที่แสดงในเว็บไซต์ของเราจะแตกต่างจากเว็บไซต์อื่นๆ เนื่องจากการกำหนดเวลาปิดของตลาด"
+
+msgid "second"
+msgstr ""
 
 msgid "seconds"
 msgstr "วินาที"
@@ -10133,6 +10145,12 @@ msgstr "เป็นระบบที่ใช้งานง่ายและ
 
 msgid "the specific instructions that we receive from you;"
 msgstr "คำสั่งเฉพาะที่พวกเราได้รับจากท่าน"
+
+msgid "tick"
+msgstr ""
+
+msgid "ticks"
+msgstr ""
 
 msgid "today"
 msgstr "วันนี้"
