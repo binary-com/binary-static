@@ -22,12 +22,27 @@ const AuthorisedApps = (() => {
     const onLoad = () => {
         if (jpClient()) {
             BinaryPjax.loadPreviousUrl();
+            return;
         }
+        updateApps();
+    };
+
+    const updateApps = () => {
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             if (response.error) {
                 displayError(response.error.message);
             } else {
-                update(response.oauth_apps.map(parse));
+                const apps = response.oauth_apps.map(app => ({
+                    name     : app.name,
+                    scopes   : app.scopes,
+                    last_used: app.last_used ? moment.utc(app.last_used) : null,
+                    id       : app.app_id,
+                }));
+                document.getElementById('applications_loading').remove();
+                createTable(apps);
+                if (!apps.length) {
+                    FlexTableUI.displayError(localize(messages.no_apps), 7);
+                }
             }
         });
     };
@@ -52,13 +67,7 @@ const AuthorisedApps = (() => {
                     } else if (+app.id === +getAppId()) { // if application revoked is current application, log client out
                         window.location.reload();
                     } else {
-                        BinarySocket.send({ oauth_apps: 1 }).then((res) => {
-                            if (response.error) {
-                                displayError(response.error.message);
-                            } else if (res.oauth_apps) {
-                                update(res.oauth_apps.map(parse));
-                            }
-                        });
+                        updateApps();
                     }
                 });
                 container.css({ opacity: 0.5 });
@@ -66,13 +75,6 @@ const AuthorisedApps = (() => {
         });
         return $button;
     };
-
-    const parse = (app) => ({
-        name     : app.name,
-        scopes   : app.scopes,
-        last_used: app.last_used ? moment.utc(app.last_used) : null,
-        id       : app.app_id,
-    });
 
     const createTable = (data) => {
         if (document.getElementById('applications-table')) {
@@ -97,14 +99,6 @@ const AuthorisedApps = (() => {
             formatter: formatApp,
         });
         return showLocalTimeOnHover('td.last_used');
-    };
-
-    const update = (apps) => {
-        document.getElementById('applications_loading').remove();
-        createTable(apps);
-        if (!apps.length) {
-            FlexTableUI.displayError(localize(messages.no_apps), 7);
-        }
     };
 
     const displayError = (message) => {
