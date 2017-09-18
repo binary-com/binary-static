@@ -1,10 +1,10 @@
-const Client = require('../../../base/client');
-const BinarySocket = require('../../socket');
-const DocumentUploader = require('binary-document-uploader');
-const showLoadingImage = require('../../../base/utility').showLoadingImage;
-const localize = require('../../../base/localize').localize;
+const Client              = require('../../../base/client');
+const BinarySocket        = require('../../socket');
+const DocumentUploader    = require('binary-document-uploader');
+const showLoadingImage    = require('../../../base/utility').showLoadingImage;
+const localize            = require('../../../base/localize').localize;
 const displayNotification = require('../../../base/header').displayNotification;
-const Url = require('../../../base/url');
+const Url                 = require('../../../base/url');
 
 const Authenticate = (() => {
     const onLoad = () => {
@@ -18,7 +18,7 @@ const Authenticate = (() => {
                     const status = get_account_status.status;
                     if (!/authenticated/.test(status)) {
                         $('#not_authenticated').setVisibility(1);
-                        if(Client.isAccountOfType('financial')) {
+                        if (Client.isAccountOfType('financial')) {
                             $('#not_authenticated_financial').setVisibility(1);
                         }
                         init();
