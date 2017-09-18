@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
             Object.keys(accounts).some(function (l) {
                 if (accounts[l].residence) {
                     clients_country = accounts[l].residence;
-                    sessionStorage.setItem('clients_country', clients_country);
+                    setSession('clients_country', clients_country);
                     return true;
                 }
             });
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 var response = JSON.parse(msg.data);
                 if (response.website_status) {
                     clients_country = response.website_status.clients_country;
-                    sessionStorage.setItem('clients_country', clients_country);
+                    setSession('clients_country', clients_country);
                 }
             }
         }

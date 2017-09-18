@@ -67,3 +67,14 @@ function getLanguage() {
 function wsConnect() {
     return new WebSocket('wss://blue.binaryws.com/websockets/v3?app_id=1&l=' + getLanguage());
 }
+
+function setSession(key, value) {
+    if (typeof storage !== 'undefined') {
+        try {
+            sessionStorage.setItem(key, value);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+}
