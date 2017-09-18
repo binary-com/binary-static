@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-17 22:21-0400\n"
+"PO-Revision-Date: 2017-09-17 22:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -784,9 +784,6 @@ msgstr "Mật khẩu tài khoản"
 
 msgid "Account Security"
 msgstr "Bảo mật Tài khoản"
-
-msgid "Account Transfer"
-msgstr "Chuyển Tài khoản"
 
 msgid "Account balance:"
 msgstr "Số dư tài khoản:"
@@ -3289,11 +3286,20 @@ msgstr "Thứ Sáu"
 msgid "Fridays"
 msgstr "Thứ Sáu"
 
+msgid "From cryptocurrency to fiat: 0.5% transfer fee"
+msgstr ""
+
+msgid "From fiat to cryptocurrency: 1% transfer fee"
+msgstr ""
+
 msgid "Front-End (Javascript) Development"
 msgstr "Lập trình Front-End (Javascript)"
 
 msgid "Fund Transfers"
 msgstr "Chuyển tiền quỹ"
+
+msgid "Fund transfers between accounts are unavailable."
+msgstr ""
 
 msgid "Funding of Real Account"
 msgstr "Quỹ của tài khoản thực"
@@ -5562,6 +5568,9 @@ msgstr "Lưu ý: Rút tiền thông qua đại lý thanh toán chỉ khả dụn
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr ""
 
+msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr ""
+
 msgid "Notes:"
 msgstr "Chú ý:"
 
@@ -6092,6 +6101,9 @@ msgstr "Xin %1 vui lòng chấp nhận cập nhật các điều khoản và đi
 
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "Xin %1 vui lòng hoàn thành hồ sơ tài khoản %2 của bạn để nâng mức rút tiền và các giới hạn giao dịch."
+
+msgid "Please %1deposit%2 to your account."
+msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Xin <a href=\"%1\"> vui lòng chấp nhận các điều khoản và điều kiện Cập Nhật</a>."
@@ -7743,9 +7755,6 @@ msgstr "Khả năng viết mã chất lượng cao, elf-documenting code, bằng
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "Các dữ liệu cá nhân trên mà chúng tôi thu thập chúng tôi sẽ giữ và xử lý cho mục đích nào đó có thể được cho phép hoặc yêu cầu của pháp luật. Chúng tôi cũng có thể chuyển dữ liệu cá nhân đó cho bất kỳ công ty nào trong Tập đoàn Binary, bất kì tổ chức kinh tế nào hoặc người thanh toán của chúng tôi, bên trong hoặc bên ngoài EEA bao gồm cả ở những nước mà không được cung cấp mức bảo vệ thông tin cá nhân tương đương."
 
-msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
-msgstr "Chuyển giữa hai tài khoản không khả dụng. %1 vui lòng gửi tiền %2 vào tài khoản."
-
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "Chương trình liên kết cho phép bạn kiếm lời từ việc giới thiệu khách hàng cho trang web. Sự lớn mạnh và thành công được chia sẻ cho liên kết người mà có khả năng mang Khách hàng mới tới cho trang web."
 
@@ -8506,11 +8515,17 @@ msgstr "Giao dịch thực hiện bởi %1 (ID ứng dụng: %2)"
 msgid "Transfer"
 msgstr "Chuyển khoản"
 
-msgid "Transfer between your gaming and financial accounts."
-msgstr "Chuyển khoản giữa tài khoản cá cược và tài khoản tài chính của bạn."
+msgid "Transfer Between Accounts"
+msgstr ""
 
 msgid "Transfer from"
 msgstr "Chuyển từ"
+
+msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgstr ""
+
+msgid "Transfer funds between your real money accounts."
+msgstr ""
 
 msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
 msgstr ""
@@ -9857,9 +9872,6 @@ msgstr "Tài khoản của bạn không nên được sử dụng như một th
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Tài khoản của bạn không nên được sử dụng như một thiết bị ngân hàng và bạn chỉ nên gửi tiền với mục đích sử dụng nó để đặt hợp đồng. Công ty không phải là tổ chức tài chính. Khách hàng cũng không nhận được lãi suất từ tiền gửi. Nếu bạn gửi tiền và rút tiền nhiều lần mà không đặt hợp đồng tương xứng, chúng tôi có quyền thu hồi tài khoản của bạn, mà không cần thông báo trước, bất kỳ khoản phí ngân hàng nào chúng tôi sẽ thu của bạn trước khi đóng tài khoản."
 
-msgid "Your account transfer is successful. Your new balances are:"
-msgstr "Chuyển khoản thành công. Số dư mới của bạn là:"
-
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Hồ sơ đăng kí của bạn sẽ được xem xét bởi phòng thủ tục và marketing. Khi đã được duyệt, chúng tôi sẽ xếp bạn vào danh sách <a href='%1'>đại lý thanh toán</a> của chúng tôi."
 
@@ -9889,6 +9901,9 @@ msgstr "Các khoản nợ không được giải quyết và khi họ phá sản
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr "Ngoại hối và các hợp đồng chênh lệch giá thiết lập giao dịch với %1 của bạn được liên kết với một công cụ tài chính tiềm ẩn và bạn sẽ được tiếp xúc với giá, quy đổi Ngoại tệ, lãi suất hay biến động của thị trường mà công cụ tài chính của bạn là liên quan đến, đặc biệt là nếu thị trường là một thẩm quyền đó là nước ngoài với bạn. Ngoại hối và các hợp đồng chênh lệch giá kinh doanh trên internet thông qua một nền tảng thương mại điện tử là tùy thuộc vào rủi ro độ trễ dữ liệu có thể gây ra sự chậm trễ trong thứ tự thực hiện."
+
+msgid "Your fund transfer is successful. Your new balances are:"
+msgstr ""
 
 msgid "Your name, email address and contact number"
 msgstr "Tên, địa chỉ email và số điện thoại liên lạc của bạn"
@@ -10036,9 +10051,6 @@ msgstr "địa chỉ hòm thư"
 
 msgid "from $1 to $50,000."
 msgstr ""
-
-msgid "from %1 to %2"
-msgstr "từ %1 đến %2"
 
 msgid "from 10 seconds to 365 days."
 msgstr ""
