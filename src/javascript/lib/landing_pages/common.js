@@ -69,7 +69,7 @@ function wsConnect() {
 }
 
 function setSession(key, value) {
-    if (typeof storage !== 'undefined') {
+    if (typeof sessionStorage !== 'undefined') {
         try {
             sessionStorage.setItem(key, value);
             return true;
