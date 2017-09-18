@@ -18,8 +18,9 @@ const Authenticate = (() => {
                     const status = get_account_status.status;
                     if (!/authenticated/.test(status)) {
                         $('#not_authenticated').setVisibility(1);
-                        if(Client.isAccountOfType('financial')) 
-                            {$('#not_authenticated_financial').setVisibility(1);}
+                        if(Client.isAccountOfType('financial')) {
+                            $('#not_authenticated_financial').setVisibility(1);
+                        }
                         init();
                     } else if (!/age_verification/.test(status)) {
                         $('#needs_age_verification').setVisibility(1);
@@ -192,9 +193,9 @@ const Authenticate = (() => {
                         };
                         obj.documentId = f.id_number || '';
                         obj.expirationDate = f.exp_date || '';
+
                         const error = validate(obj);
-                        if (error)
-                            {reject(error);}
+                        if (error) reject(error);
 
                         resolve(obj);
                     };
