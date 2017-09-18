@@ -2,8 +2,43 @@
 document.addEventListener("DOMContentLoaded", function(){
     dataLayer.push({ event: 'page_load' });
 
+    var clients_country = sessionStorage.getItem('clients_country');
+    if (!clients_country) {
+        var accounts = JSON.parse(localStorage.getItem('client.accounts') || null);
+        if (accounts) {
+            Object.keys(accounts).some(function (l) {
+                if (accounts[l].residence) {
+                    clients_country = accounts[l].residence;
+                    sessionStorage.setItem('clients_country', clients_country);
+                    return true;
+                }
+            });
+        }
+        if (!clients_country) {
+            var ws = wsConnect();
+
+            function sendWebsiteStatus() {
+                ws.send(JSON.stringify({ website_status: 1 }));
+            }
+
+            if (ws.readyState === 1) {
+                sendWebsiteStatus();
+            } else {
+                ws.onopen = sendWebsiteStatus;
+            }
+            ws.onmessage = function (msg) {
+                var response = JSON.parse(msg.data);
+                if (response.website_status) {
+                    clients_country = response.website_status.clients_country;
+                    sessionStorage.setItem('clients_country', clients_country);
+                }
+            }
+        }
+    }
+
     // Handle form submission
     if (window.location.hash === '#done') {
+        dataLayer.push({ bom_country: clients_country || '' });
         dataLayer.push({ event: 'ico_success' });
         for (let i = 0; i < 2; i++) {
             document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
