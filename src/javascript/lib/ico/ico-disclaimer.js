@@ -59,15 +59,13 @@ window.onload = function() {
 
     function showDisclaimer(val) {
         if (isRestrictedCountry(val)) {
-            var code;
             // eu countries code
-
             if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(val)) {
                 val = 'eu';
             }
 
-            if (/^(ca|jp|sg|hk|uk|ch|eu)$/.test(code)) {
-                showSecondNotice(code);
+            if (/^(ca|jp|sg|hk|uk|ch|eu)$/.test(val)) {
+                showSecondNotice(val);
             } else {
                 document.getElementById('access_denied_msg').classList.remove('invisible');
             }
