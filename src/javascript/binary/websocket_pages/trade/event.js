@@ -146,7 +146,7 @@ const TradingEvents = (() => {
                     const underlyingText = $('#underlying :selected').text();
                     $('#digit_info_underlying').text(underlyingText);
                     $('#digit_underlying').val(underlying).change();
-                    GetTicks.populateDigits();
+                    GetTicks.populateDigits(underlying);
                 }
             });
         }

@@ -73,7 +73,8 @@ const TradingAnalysis = (() => {
             if (current_tab === 'tab_graph') {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
-                GetTicks.populateDigits();
+                const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
+                GetTicks.populateDigits(underlying);
             } else if (current_tab === 'tab_explanation') {
                 showExplanation();
             }
