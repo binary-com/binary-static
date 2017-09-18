@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-17 22:22-0400\n"
+"PO-Revision-Date: 2017-09-17 22:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -784,9 +784,6 @@ msgstr "Password dell'account"
 
 msgid "Account Security"
 msgstr "Sicurezza dell'account"
-
-msgid "Account Transfer"
-msgstr "Trasferimento dell'account"
 
 msgid "Account balance:"
 msgstr "Saldo dell'account:"
@@ -3290,11 +3287,20 @@ msgstr "Venerdì"
 msgid "Fridays"
 msgstr "Venerdì"
 
+msgid "From cryptocurrency to fiat: 0.5% transfer fee"
+msgstr ""
+
+msgid "From fiat to cryptocurrency: 1% transfer fee"
+msgstr ""
+
 msgid "Front-End (Javascript) Development"
 msgstr "Sviluppo front-end (Javascript)"
 
 msgid "Fund Transfers"
 msgstr "Trasferimenti di fondi"
+
+msgid "Fund transfers between accounts are unavailable."
+msgstr ""
 
 msgid "Funding of Real Account"
 msgstr ""
@@ -5562,6 +5568,9 @@ msgstr "Nota: i prelievi tramite agente di pagamento sono disponibili solo se si
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr ""
 
+msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
+msgstr ""
+
 msgid "Notes:"
 msgstr "Note:"
 
@@ -6091,6 +6100,9 @@ msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawa
 msgstr ""
 
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1deposit%2 to your account."
 msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
@@ -7743,9 +7755,6 @@ msgstr "La capcità di scrivere codici di alta qualità e auto documentati, util
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "I dati personali di cui sopra dai noi raccolti, verranno conservati da parte nostra ed elaborati per qualsiasi scopo consentito dalla legge o richiesto da qualsiasi regolamento. Possiamo inoltre trasferire tali dati personali a qualsiasi società del Gruppo Binary, a qualsiasi nostro associato commerciale o società di gestione dei pagamenti, dentro o fuori lo Spazio Economico Europeo (EEA) inclusi i paesi in cui potrebbe non essere offerto un livello di protezione equivalente dei dati personali."
 
-msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
-msgstr "Il trasferimento dell'account non è disponibile. %1Deposita%2 sul tuo account."
-
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "Il programma di affiliazione ti consente di trarre vantaggio dai clienti invitati sul sito. La crescita e il successo vengono condivisi con gli affiliati che hanno la capacità di portare nuovi Clienti sul sito."
 
@@ -8506,11 +8515,17 @@ msgstr "Transazione eseguita da %1 (ID dell'app ID: %2)"
 msgid "Transfer"
 msgstr "Trasferisci"
 
-msgid "Transfer between your gaming and financial accounts."
-msgstr "Trasferisci fondi tra il tuo account di gioco e quello finanziario."
+msgid "Transfer Between Accounts"
+msgstr ""
 
 msgid "Transfer from"
 msgstr "Trasferisci da"
+
+msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgstr ""
+
+msgid "Transfer funds between your real money accounts."
+msgstr ""
 
 msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
 msgstr ""
@@ -9856,9 +9871,6 @@ msgstr "Il tuo account non dovrebbe avere una funzione bancaria e i depositi dov
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Il tuo account non dovrebbe avere una funzione bancaria e i depositi dovrebbero essere effettuati solo con l'obiettivo di utilizzare i fondi per piazzare dei contratti. La Società non è un istituto finanziario. I Clienti non riceveranno interessi sui depositi. Nel caso in cui vengano ripetutamente effettuati depositi e prelievi senza l'esecuzione di relativi contratti, prima della chiusura del conto, ci riserviamo il diritto di applicare sui tuoi account, senza alcun preavviso, qualsiasi onere bancario da noi sostenuto."
 
-msgid "Your account transfer is successful. Your new balances are:"
-msgstr "Il tuo trasferimento sull'account è riuscito. I tuoi nuovi saldi sono:"
-
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "La tua richiesta verrà dunque esaminata dal nostro dipartimento di compliance e marketing. Una volta approvata, ti inseriremo nel nostro elenco di <a href='%1'>agenti di pagamento</a>."
 
@@ -9887,6 +9899,9 @@ msgid "Your debts are not settled as, and when, they fall due;"
 msgstr ""
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
+msgstr ""
+
+msgid "Your fund transfer is successful. Your new balances are:"
 msgstr ""
 
 msgid "Your name, email address and contact number"
@@ -10035,9 +10050,6 @@ msgstr "indirizzo email"
 
 msgid "from $1 to $50,000."
 msgstr "da $1 a $50.000."
-
-msgid "from %1 to %2"
-msgstr "da %1 a %2"
 
 msgid "from 10 seconds to 365 days."
 msgstr "da 10 secondi a 365 giorni."
