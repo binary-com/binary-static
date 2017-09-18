@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-17 22:03-0400\n"
+"PO-Revision-Date: 2017-09-17 22:21-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -3752,8 +3752,8 @@ msgstr "如您選擇與我們共同修訂合同，重要的是您必須完全了
 msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
 msgstr "如果您不打算使用槓桿功能，請將槓桿比率設為 1:1。"
 
-msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
-msgstr "如果在幾分鐘內您未收到電子郵件，請檢查您的垃圾/廣告郵件夾。"
+msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
+msgstr ""
 
 msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr "如果您無法按照本協定規定立即將拖欠我們的款項全額結清，我們保留權利對有關的任何到期未還交易款項追加累計利息。利息按照我方決定的銀行官方短期資金基準利率從相關到期日按日累計，直到收到全額付款為止，並將按需求隨時支付。"
@@ -6109,7 +6109,10 @@ msgstr "請接受條款和條件。"
 msgid "Please check the above form for pending errors."
 msgstr "請檢查以上表格是否有待定錯誤。"
 
-msgid "Please check your email to complete the process."
+msgid "Please check your email for the password reset link."
+msgstr ""
+
+msgid "Please check your email for the verification link to complete the process."
 msgstr ""
 
 msgid "Please choose a currency"
@@ -7919,6 +7922,9 @@ msgstr "客戶可能蒙受的最大損失就是其向本公司支付的金額。
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "已達權杖 (%1) 最大限數。"
 
+msgid "The minimum duration is"
+msgstr ""
+
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 msgstr "在我們網站公佈的最低價差 （由市場點差與我們的點差組成）可能在我們絕對的自主權下更改。您確認，雖然我們努力保持價差競爭力，但在某些情況下市場點差和我們的點差可能會有顯著差距，這些數字將由我們根據合理的自主權確定。"
 
@@ -8306,8 +8312,8 @@ msgstr "如要執行此操作，請切換到 %1 真實帳戶。"
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "要獲得錄取資格，您必須擁有物理、金融工程或數學專業的大學學位"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
-msgstr "如要重新設定密碼，在下面的欄位中輸入您註冊的電子郵件地址並點選「重設密碼」。"
+msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
+msgstr ""
 
 msgid "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
 msgstr "如果您想從MetaTrader 5金融帳戶提款，請驗證您的%1帳戶。"
@@ -9070,9 +9076,6 @@ msgstr "我們將向您提供所有必要的工具，將您的流量轉化為可
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "我們將在可控制範圍內合理地努力，確保您通過 MT5 交易平台和所有電子交易指示所收到並由我們執行提供的所有電子資料均不會受到網絡延遲。"
-
-msgid "We'll then send you an e-mail asking you to verify your identity."
-msgstr "然後我們將會通過電子郵件要求您確認您的身份。"
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "我們獲得「用於金融市場投機的電腦交易系統及方法」和「用於自訂金融市場投機的電腦交易系統」的專利授權。這些專利表明我們的創新和保持領先群雄的能力。"
@@ -10040,6 +10043,9 @@ msgstr "從10 秒到365 天。"
 msgid "h"
 msgstr "小時"
 
+msgid "hour"
+msgstr ""
+
 msgid "hours"
 msgstr "小時"
 
@@ -10067,6 +10073,9 @@ msgstr "最小"
 msgid "minimum available duration"
 msgstr "最短可用期限"
 
+msgid "minute"
+msgstr ""
+
 msgid "minutes"
 msgstr "分鐘"
 
@@ -10090,6 +10099,9 @@ msgstr "號碼"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "所有合約準確結算時間的頁面。其他網站可能會有不同的慣例（比如一些網站採用紐約時間4點或倫敦時間5點）。由於不同的收盤時間慣例，在本網站顯示的開盤、高、低或收盤價可能跟其他網站不一致。"
+
+msgid "second"
+msgstr ""
 
 msgid "seconds"
 msgstr "秒"
@@ -10129,6 +10141,12 @@ msgstr "人性化平台，各等級交易者皆可使用。"
 
 msgid "the specific instructions that we receive from you;"
 msgstr "您所提供的特定指令；"
+
+msgid "tick"
+msgstr ""
+
+msgid "ticks"
+msgstr ""
 
 msgid "today"
 msgstr "今天"
