@@ -1,4 +1,5 @@
 const LoggedInHandler = require('./logged_in');
+const Redirect        = require('./redirect');
 
 const Charity            = require('../static_pages/charity');
 const Contact            = require('../static_pages/contact');
@@ -59,7 +60,7 @@ const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test'
 
 /* eslint-disable max-len */
 const pages_config = {
-    account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true },
+    account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true, needs_currency: true },
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
@@ -93,6 +94,7 @@ const pages_config = {
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     realws                   : { module: RealAccOpening,             is_authenticated: true, only_virtual: true },
+    redirect                 : { module: Redirect },
     regulation               : { module: Regulation },
     reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
     securityws               : { module: Settings,                   is_authenticated: true },

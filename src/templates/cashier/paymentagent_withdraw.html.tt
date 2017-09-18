@@ -11,6 +11,10 @@
         </p>
     </div>
 
+    <div id="viewNotice" class="viewItem invisible">
+        [% l('Please check your email for the verification link to complete the process.') %]
+    </div>
+
     <div id="viewSuccess" class="viewItem invisible">
         <p id="successMessage"></p>
         <p>
@@ -30,11 +34,10 @@
     </form>
 
     <div id="viewForm" class="viewItem invisible">
-        <p>[% l('Please provide us with the following information, after retrieving the verification token from your email:') %]</p>
+        <p>[% l('Please provide us with the following information:') %]</p>
 
         <form class="form gr-padding-10" id="frmWithdrawal">
             [% WRAPPER fieldset %]
-                [% PROCESS verification_code %]
                 [% INCLUDE form_row label=l('Transfer to Payment Agent') id='ddlAgents' type='select' %]
                 [% INCLUDE form_row label=l('Amount') id='txtAmount' type='text'
                     hint=l('Min: 10 Max: 2000') %]
