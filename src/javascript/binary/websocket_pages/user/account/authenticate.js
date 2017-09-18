@@ -221,11 +221,11 @@ const Authenticate = (() => {
             if (file.buffer && file.buffer.byteLength > 3000000) {
                 return buildMessage('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB', [file.filename]);
             }
-            if (!file.documentId.length && file.type.toLowerCase() == 'passport') {
-                return buildMessage('Document ID is required for [_1].', [file.type]);
+            if (!file.documentId.length && file.documentType.toLowerCase() === 'passport') {
+                return buildMessage('ID number is required for [_1].', [file.documentType]);
             }
-            if (!file.expirationDate.length && file.type.toLowerCase() == 'passport') {
-                return buildMessage('Expiration date is required for [_1].', [file.type]);
+            if (!file.expirationDate.length && file.documentType.toLowerCase() === 'passport') {
+                return buildMessage('Expiry date is required for [_1].', [file.documentType]);
             }
             return null;
         };

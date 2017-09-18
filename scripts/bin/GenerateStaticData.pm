@@ -558,8 +558,8 @@ sub _texts {
         # Authentication errors
         push @texts, localize('Invalid document format: "[_1]"');
         push @texts, localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB');
-        push @texts, localize('Document ID is required for [_1].');
-        push @texts, localize('Expiration date is required for [_1].');
+        push @texts, localize('ID number is required for [_1].');
+        push @texts, localize('Expiry date is required for [_1].');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
