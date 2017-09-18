@@ -57,7 +57,6 @@ const Authenticate = (() => {
          * @param {*} event
          */
         const onFileSelected = (event) => {
-            console.log(1);
             if (!event.target.files || !event.target.files.length) {
                 resetLabel(event);
                 return;
