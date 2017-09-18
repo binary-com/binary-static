@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-17 22:03-0400\n"
+"PO-Revision-Date: 2017-09-17 22:21-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -3770,8 +3770,8 @@ msgstr "当社との契約をご締結いただく場合、そのようなリス
 msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
 msgstr "レバレッジ機能をご利用されない場合、レバレッジ比率を1:1に設定してください。"
 
-msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
-msgstr "お客さまによっては迷惑メールフォルダーに入る場合もありますので、あわせてご確認ください。"
+msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
+msgstr ""
 
 msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
@@ -6141,8 +6141,11 @@ msgstr "利用規約に同意していただく必要があります。"
 msgid "Please check the above form for pending errors."
 msgstr "未入力の項目がありますのでご確認ください"
 
-msgid "Please check your email to complete the process."
-msgstr "完了するには当社から送信したメールをご確認ください。"
+msgid "Please check your email for the password reset link."
+msgstr ""
+
+msgid "Please check your email for the verification link to complete the process."
+msgstr ""
 
 msgid "Please choose a currency"
 msgstr "通貨を選択してください"
@@ -8013,6 +8016,9 @@ msgstr "（取引価格）\n"
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "トークンの最大数(%1) に達しました。"
 
+msgid "The minimum duration is"
+msgstr ""
+
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 msgstr "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 
@@ -8427,8 +8433,8 @@ msgstr "このアクションを実行するには、お客さまの%1リアル�
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "物理学、金融工学、数学の大学上級学位が必要となります。"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
-msgstr "パスワードを再設定される場合は下記の入力欄に登録されたメールアドレスを入力し、「パスワード再設定」をクリックしてください。"
+msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
+msgstr ""
 
 msgid "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
 msgstr "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
@@ -9211,9 +9217,6 @@ msgstr "サイト訪問数を収入に転化するツールを提供"
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
-
-msgid "We'll then send you an e-mail asking you to verify your identity."
-msgstr "その際に、本人確認のためメールを送信させていただきます。"
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "米国で「金融市場投機用コンピューター取引システムとメソッド」と「カスタムの金融市場投機用コンピューター取引システムとメソッド」に関する特許を取得。この特許取得により、当社の進化を証明し、及び競合他社との差別化を実現。"
@@ -10203,6 +10206,9 @@ msgstr "取引期間は2時間から最長365日まで！"
 msgid "h"
 msgstr "時間"
 
+msgid "hour"
+msgstr ""
+
 msgid "hours"
 msgstr "時間"
 
@@ -10230,6 +10236,9 @@ msgstr "最小値"
 msgid "minimum available duration"
 msgstr "最短取引期間"
 
+msgid "minute"
+msgstr ""
+
 msgid "minutes"
 msgstr "分"
 
@@ -10253,6 +10262,9 @@ msgstr "数字"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "から、全てのトレードに関する正確な終値の適用時間をご確認下さい。他のウェブサイトでは、異なるデータを採用している可能性があります。（例：ニューヨーク時間・午前４時、ロンドン時間・午前５時など）ゆえに、当社が公表している始値、最高値、最安値、及び市場閉場価格は、他のウェブサイトで公表している価格と異なる可能性があります。"
+
+msgid "second"
+msgstr ""
 
 msgid "seconds"
 msgstr "秒"
@@ -10292,6 +10304,12 @@ msgstr "当プラットフォームは全レベルのトレーダーがご利用
 
 msgid "the specific instructions that we receive from you;"
 msgstr "お客さまよりいただいた具体的なご指示"
+
+msgid "tick"
+msgstr ""
+
+msgid "ticks"
+msgstr ""
 
 msgid "today"
 msgstr "本日"
