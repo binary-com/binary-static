@@ -6,6 +6,7 @@ const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const getPropertyValue   = require('./utility').getPropertyValue;
 const isEmptyObject      = require('./utility').isEmptyObject;
 const jpClient           = require('../common_functions/country_base').jpClient;
+const isCryptocurrency   = require('../common_functions/currency').isCryptocurrency;
 const BinarySocket       = require('../websocket_pages/socket');
 const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
 
@@ -91,23 +92,35 @@ const Client = (() => {
         return account_type;
     };
 
-    const isAccountOfType = (type, loginid = current_loginid) => {
+    const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
         const this_type = getAccountType(loginid);
-        return (
+        return ((
             (type === 'virtual' && this_type === 'virtual') ||
             (type === 'real'    && this_type !== 'virtual') ||
-            type === this_type);
+            type === this_type) &&
+            (only_enabled ? !get('is_disabled', loginid) : true));
     };
 
     const getAccountOfType = (type, only_enabled) => {
-        const id = getAllLoginids().find(loginid => (
-            isAccountOfType(type, loginid) &&
-            (only_enabled ? !get('is_disabled', loginid) : true)
-        ));
+        const id = getAllLoginids().find(loginid => isAccountOfType(type, loginid, only_enabled));
         return id ? $.extend({ loginid: id }, get(null, id)) : {};
     };
 
     const hasAccountType = (type, only_enabled) => !isEmptyObject(getAccountOfType(type, only_enabled));
+
+    // only considers currency of real money accounts
+    // @param {String} type = crypto|fiat
+    const hasCurrencyType = (type) => {
+        const loginids = getAllLoginids();
+        if (type === 'crypto') {
+            // find if has crypto currency account
+            return loginids.find(loginid =>
+                !get('is_virtual', loginid) && isCryptocurrency(get('currency', loginid)));
+        }
+        // else find if have fiat currency account
+        return loginids.find(loginid =>
+            !get('is_virtual', loginid) && !isCryptocurrency(get('currency', loginid)));
+    };
 
     const types_map = {
         virtual  : 'Virtual',
@@ -326,6 +339,10 @@ const Client = (() => {
         return (landing_company_object || {})[key];
     };
 
+    const canTransferFunds = () =>
+        (Client.hasAccountType('financial', true) && Client.hasAccountType('gaming', true)) ||
+        (hasCurrencyType('crypto') && hasCurrencyType('fiat'));
+
     return {
         init,
         validateLoginid,
@@ -336,6 +353,7 @@ const Client = (() => {
         getAccountOfType,
         isAccountOfType,
         hasAccountType,
+        hasCurrencyType,
         responseAuthorize,
         shouldAcceptTnc,
         clearAllAccounts,
@@ -351,6 +369,7 @@ const Client = (() => {
         activateByClientType,
         currentLandingCompany,
         getLandingCompanyValue,
+        canTransferFunds,
     };
 })();
 
