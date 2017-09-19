@@ -2,5 +2,5 @@ project_identifier: 'binary-static'
 api_key_env: CROWDIN_API_KEY
 
 files:
-  - source: /src/config/locales/messages.pot
-    translation: /src/config/locales/%locale_with_underscore%.po
+  - source: /src/translations/messages.pot
+    translation: /src/translations/%locale_with_underscore%.po

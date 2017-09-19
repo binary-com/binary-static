@@ -63,18 +63,13 @@ EOP
 sub configs_for {
     my $config = {};
 
-    my $locales_dir = path(root_path())->child('src')->child('config');
+    my $locales_dir = path(root_path())->child('src')->child('translations');
     warn("Unable to locate locales directory. Looking in $locales_dir") unless (-d $locales_dir);
 
     my @supported_languages = (all_languages(), 'ACH');
     foreach my $language (@supported_languages) {
         my $l = $__language_map{lc $language};
-        my $po_file_path;
-        if ($l eq 'en') {
-            $po_file_path = path($locales_dir)->child($l . '.po');
-        } else {
-            $po_file_path = path($locales_dir)->child("locales")->child($l . '.po');
-        }
+        my $po_file_path = path($locales_dir)->child($l . '.po');
         $config->{$l} = [Gettext => "$po_file_path"];
     }
 
