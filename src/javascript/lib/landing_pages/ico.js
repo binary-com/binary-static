@@ -2,43 +2,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     dataLayer.push({ event: 'page_load' });
 
-    // Get client's country
-    var clients_country = sessionStorage.getItem('clients_country');
-    if (!clients_country) {
-        var accounts = JSON.parse(localStorage.getItem('client.accounts') || null);
-        if (accounts) {
-            Object.keys(accounts).some(function (l) {
-                if (accounts[l].residence) {
-                    clients_country = accounts[l].residence;
-                    setSession('clients_country', clients_country);
-                    return true;
-                }
-            });
-        }
-        if (!clients_country) {
-            var ws = wsConnect();
-
-            function sendRequests() {
-                ws.send(JSON.stringify({ website_status: 1 }));
-                ws.send(JSON.stringify({ residence_list: 1 }));
-            }
-
-            if (ws.readyState === 1) {
-                sendRequests();
-            } else {
-                ws.onopen = sendRequests;
-            }
-            ws.onmessage = function (msg) {
-                var response = JSON.parse(msg.data);
-                if (response.website_status) {
-                    clients_country = response.website_status.clients_country;
-                    setSession('clients_country', clients_country);
-                } else if (response.residence_list) {
-                    setSession('residence_list', JSON.stringify(response.residence_list));
-                }
-            }
-        }
-    }
+    const clients_country = getClientCountry();
 
     // Handle form submission
     if (window.location.hash === '#done') {
@@ -93,6 +57,46 @@ document.addEventListener("DOMContentLoaded", function(){
     window.onscroll = collapseNavbar;
     document.ready = collapseNavbar;
 });
+
+function getClientCountry() {
+    let clients_country = sessionStorage.getItem('clients_country');
+    if (!clients_country) {
+        const accounts = JSON.parse(localStorage.getItem('client.accounts') || null);
+        if (accounts) {
+            Object.keys(accounts).some(function (loginid) {
+                if (accounts[loginid].residence) {
+                    clients_country = accounts[loginid].residence;
+                    setSession('clients_country', clients_country);
+                    return true;
+                }
+            });
+        }
+        if (!clients_country) {
+            const ws = wsConnect();
+
+            function sendRequests() {
+                ws.send(JSON.stringify({ website_status: 1 }));
+                ws.send(JSON.stringify({ residence_list: 1 }));
+            }
+
+            if (ws.readyState === 1) {
+                sendRequests();
+            } else {
+                ws.onopen = sendRequests;
+            }
+            ws.onmessage = function (msg) {
+                const response = JSON.parse(msg.data);
+                if (response.website_status) {
+                    clients_country = response.website_status.clients_country;
+                    setSession('clients_country', clients_country);
+                } else if (response.residence_list) {
+                    setSession('residence_list', JSON.stringify(response.residence_list));
+                }
+            }
+        }
+    }
+    return clients_country;
+}
 
 // Collapse navbar on scroll
 function collapseNavbar() {
