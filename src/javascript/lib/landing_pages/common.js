@@ -40,15 +40,11 @@ function scrollTo(to, duration) {
     animateScroll();
 }
 
-//t = current time
-//b = start value
-//c = change in value
-//d = duration
-Math.easeInOutQuad = function (t, b, c, d) {
-    t /= d/2;
-    if (t < 1) return c/2*t*t + b;
-    t--;
-    return -c/2 * (t*(t-2) - 1) + b;
+Math.easeInOutQuad = function (current_time, start_value, change_in_value, duration) {
+    current_time /= duration / 2;
+    if (current_time < 1) return change_in_value / 2 * current_time * current_time + start_value;
+    current_time--;
+    return -change_in_value / 2 * (current_time * (current_time - 2) - 1) + start_value;
 };
 
 function getParamValue(url, key) {
