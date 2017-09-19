@@ -60,6 +60,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function getClientCountry() {
     let clients_country = sessionStorage.getItem('clients_country');
+    let residence_list  = sessionStorage.getItem('residence_list');
+
+    // Try to get residence from client's info if logged-in
     if (!clients_country) {
         const accounts = JSON.parse(localStorage.getItem('client.accounts') || null);
         if (accounts) {
@@ -71,30 +74,34 @@ function getClientCountry() {
                 }
             });
         }
-        if (!clients_country) {
-            const ws = wsConnect();
+    }
 
-            function sendRequests() {
-                ws.send(JSON.stringify({ website_status: 1 }));
-                ws.send(JSON.stringify({ residence_list: 1 }));
-            }
+    // Get required info from WebSocket
+    if (!clients_country || !residence_list) {
+        const ws = wsConnect();
 
-            if (ws.readyState === 1) {
-                sendRequests();
-            } else {
-                ws.onopen = sendRequests;
-            }
-            ws.onmessage = function (msg) {
-                const response = JSON.parse(msg.data);
-                if (response.website_status) {
-                    clients_country = response.website_status.clients_country;
-                    setSession('clients_country', clients_country);
-                } else if (response.residence_list) {
-                    setSession('residence_list', JSON.stringify(response.residence_list));
-                }
+        function sendRequests() {
+            if (!clients_country) ws.send(JSON.stringify({ website_status: 1 }));
+            if (!residence_list)  ws.send(JSON.stringify({ residence_list: 1 }));
+        }
+
+        if (ws.readyState === 1) {
+            sendRequests();
+        } else {
+            ws.onopen = sendRequests;
+        }
+
+        ws.onmessage = function (msg) {
+            const response = JSON.parse(msg.data);
+            if (response.website_status) {
+                clients_country = response.website_status.clients_country;
+                setSession('clients_country', clients_country);
+            } else if (response.residence_list) {
+                setSession('residence_list', JSON.stringify(response.residence_list));
             }
         }
     }
+
     return clients_country;
 }
 
