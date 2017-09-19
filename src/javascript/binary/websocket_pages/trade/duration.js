@@ -169,7 +169,7 @@ const Durations = (() => {
         const date_start     = document.getElementById('date_start').value;
         const now            = !date_start || date_start === 'now';
         const current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
-        let expiry_date      = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment;
+        let expiry_date      = current_moment;
         let expiry_time      = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         let expiry_date_iso  = toISOFormat(expiry_date);
 
@@ -306,7 +306,7 @@ const Durations = (() => {
             let $expiry_date     = $('#expiry_date');
             const date_start_val = document.getElementById('date_start').value;
             const is_now         = isNow(date_start_val);
-            if (is_now) {
+            if (is_now || !date_start_val) {
                 if (!$expiry_date.is('input')) {
                     $expiry_date.replaceWith($('<input/>', { id: 'expiry_date', type: 'text', readonly: 'readonly', autocomplete: 'off', 'data-value': $expiry_date.attr('data-value') }))
                         .val(toReadableFormat($expiry_date.attr('data-value')));
