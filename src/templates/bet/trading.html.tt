@@ -46,11 +46,10 @@
                                     <div id="expiry_type_duration">
                                         <input id="duration_amount" type="number" class="small_width_input" autocomplete="off" /><label></label>
                                         <select id="duration_units" class="medium_width_input"></select>
-                                        <span id="duration_tooltip_wrapper">
-                                            <span id="duration_tooltip" data-balloon="[% l('minimum available duration') %]">[% l("min") %]</span>
-                                            <span id="duration_minimum"></span>
-                                            <span id="duration_maximum" class="invisible"></span>
-                                        </span>
+                                    </div>
+                                    <div id="duration_wrapper" class="hint">
+                                        <span id="duration_tooltip">[% l("The minimum duration is") %]</span> <span id="duration_minimum"></span> <span id="duration_unit"></span>
+                                        <span id="duration_maximum" class="invisible"></span>
                                     </div>
                                     <div id="expiry_type_endtime">
                                         <input id="expiry_date" type="text" readonly="readonly" autocomplete="off" />

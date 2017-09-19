@@ -1,14 +1,15 @@
 // Handler when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function(){
-    dataLayer.push({ event: 'page_load'});
+    dataLayer.push({ event: 'page_load' });
 
     // Handle form submission
     if (window.location.hash === '#done') {
+        dataLayer.push({ event: 'ico_success' });
         for (let i = 0; i < 2; i++) {
             document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
             document.getElementsByTagName('form')[i].classList.add('invisible');
         }
-        if(window.history.pushState) {
+        if (window.history.pushState) {
             window.history.pushState('', '/', window.location.pathname)
         } else {
             window.location.hash = '';
@@ -16,6 +17,13 @@ document.addEventListener("DOMContentLoaded", function(){
         let navbarHeight = checkWidth();
         const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
         scrollTo(to);
+    }
+
+    // Set language fields
+    const language = getLanguage();
+    const el_langs = document.getElementsByClassName('frm-language');
+    for (let i = 0; i < el_langs.length; i++) {
+        el_langs[i].value = language;
     }
 
     // Toggle mobile menu
@@ -36,10 +44,7 @@ document.addEventListener("DOMContentLoaded", function(){
             document.getElementById('home').classList.remove('invisible');
             document.getElementById('faq').classList.add('invisible');
             const target = e.target.getAttribute('href').substr(1);
-            let offset = 0;
-            if (target === 'who-we-are' || target === 'page-top') {
-                offset = 55;
-            }
+            const offset = /who-we-are|page-top/.test(target) ? 55 : 0;
             let navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
             scrollTo(to);
@@ -63,11 +68,7 @@ document.addEventListener("DOMContentLoaded", function(){
 // Collapse navbar on scroll
 function collapseNavbar() {
     const navbarFixedTopEl = document.getElementsByClassName('navbar-fixed-top');
-    if (window.scrollY > 50) {
-        navbarFixedTopEl[0].classList.add('top-nav-collapse');
-    } else {
-        navbarFixedTopEl[0].classList.remove('top-nav-collapse');
-    }
+    navbarFixedTopEl[0].classList[window.scrollY > 50 ? 'add' : 'remove']('top-nav-collapse');
 }
 
 // Check view width, add navbar height as offset if on desktop
@@ -83,12 +84,7 @@ function checkWidth() {
 function checkBrowser() {
     const isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
     const isIE = /*@cc_on!@*/false || !!document.documentMode; // Internet Explorer 6-11
-
-    if (isFirefox || isIE) {
-        return true;
-    } else {
-        return false;
-    }
+    return (isFirefox || isIE);
 }
 
 // scrollTo function with animation
@@ -122,3 +118,9 @@ Math.easeInOutQuad = function (t, b, c, d) {
     t--;
     return -c/2 * (t*(t-2) - 1) + b;
 };
+
+function getLanguage() {
+    var all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
+    var language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return all_languages.indexOf(l) >= 0; });
+    return language || 'en';
+}

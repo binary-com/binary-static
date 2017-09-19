@@ -86,6 +86,12 @@ hr {
     margin: 20px;
 }
 
+.icon--sm {
+    width: 32px;
+    height: 32px;
+    margin: 20px;
+}
+
 .box {
     border: 1px solid $COLOR_DARK_BLUE;
     margin: 15px 0;
@@ -130,7 +136,7 @@ hr {
     right: 0;
     left: 0;
     width: 80vw;
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -168,6 +174,13 @@ hr {
 
 .chart-heading-left {
     left: 0;
+}
+
+.chart-note {
+    margin: auto;
+    font-style: italic;
+    font-weight: bold;
+    color: $COLOR_BLUE_SHADE;
 }
 
 // What are binary options section
@@ -463,4 +476,39 @@ input[type='text']:focus, input[type='submit']:focus {
 
 button {
     outline: none;
+}
+
+#board-of-directors {
+    position: relative;
+    border-top: 5px solid $COLOR_ORANGE;
+
+    img {
+        display: block;
+        margin: auto;
+        max-width: 200px;
+    }
+    a {
+        display: inline-block;
+    }
+    h2 {
+        position: absolute;
+        padding: 35px 15px;
+        color: $COLOR_WHITE;
+        background-color: $COLOR_ORANGE;
+    }
+    h4 {
+        margin: 1em 0;
+    }
+}
+
+.social--linkedin {
+    content: url('../images/ico/icons/linkedin.svg');
+}
+
+.social--twitter {
+    content: url('../images/ico/icons/twitter.svg');
+}
+
+.social--youtube {
+    content: url('../images/ico/icons/youtube.svg');
 }
