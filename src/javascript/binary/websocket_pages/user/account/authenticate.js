@@ -184,7 +184,7 @@ const Authenticate = (() => {
                 const fr = new FileReader();
                 const promise = new Promise((resolve, reject) => {
                     fr.onload = () => {
-                        const format = (f.file.type.split('/')[1] || (f.file.name.match(/\.([\w\d]+)$/) || [])[1]).toUpperCase();
+                        const format = (f.file.type.split('/')[1] || (f.file.name.match(/\.([\w\d]+)$/) || [])[1] || '').toUpperCase();
                         const obj = {
                             filename      : f.file.name,
                             buffer        : fr.result,
