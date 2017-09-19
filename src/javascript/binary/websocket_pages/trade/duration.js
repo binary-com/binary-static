@@ -507,7 +507,11 @@ const Durations = (() => {
         const duration_min_element     = document.getElementById('duration_minimum');
         const duration_max_element     = document.getElementById('duration_maximum');
         const duration_wrapper_element = document.getElementById('duration_wrapper');
-        if (!isVisible(duration_amount_element) || !isVisible(duration_min_element)) return;
+        if (!isVisible(duration_amount_element)) {
+            duration_wrapper_element.setVisibility(0);
+            return;
+        }
+        duration_wrapper_element.setVisibility(1);
         if (+duration_amount_element.value < +duration_min_element.textContent ||
            (+duration_max_element.textContent &&
            (+duration_amount_element.value > +duration_max_element.textContent))) {
