@@ -10,6 +10,7 @@ const Login            = require('./login');
 const Menu             = require('./menu');
 const State            = require('./storage').State;
 const Url              = require('./url');
+const elementInnerHtml = require('../common_functions/common_functions').elementInnerHtml;
 const checkLanguage    = require('../common_functions/country_base').checkLanguage;
 const scrollToTop      = require('../common_functions/scroll').scrollToTop;
 const TrafficSource    = require('../common_functions/traffic_source');
@@ -42,7 +43,7 @@ const Page = (() => {
         $(document).ready(() => {
             // Cookies is not always available.
             // So, fall back to a more basic solution.
-            $(window).on('storage', (jq_event) => {
+            window.addEventListener('storage', (jq_event) => {
                 switch (jq_event.originalEvent.key) {
                     case 'active_loginid':
                         if (jq_event.originalEvent.newValue === '') {
@@ -62,6 +63,7 @@ const Page = (() => {
                 }
             });
             scrollToTop();
+            showNotificationOutdatedBrowser();
         });
     };
 
@@ -79,7 +81,6 @@ const Page = (() => {
             Menu.makeMobileMenu();
             recordAffiliateExposure();
             endpointNotification();
-            showNotificationOutdatedBrowser();
         }
         Menu.init();
         Contents.onLoad();
@@ -147,16 +148,17 @@ const Page = (() => {
                 `${localize('This is a staging server - For testing purposes only')} - `)}
                 ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
 
-            const $end_note = $('#end-note');
+            const end_note = document.getElementById('end-note');
 
-            $end_note.html(message).setVisibility(1);
-            $('#footer').css('padding-bottom', $end_note.height());
+            elementInnerHtml(end_note, message);
+            end_note.setVisibility(1);
+            document.getElementById('footer').style['padding-bottom'] = end_note.offsetHeight;
         }
     };
 
     const showNotificationOutdatedBrowser = () => {
         const src = '//browser-update.org/update.min.js';
-        if ($(`script[src*="${src}"]`).length) return;
+        if (document.querySelector(`script[src*="${src}"]`)) return;
         window.$buoop = {
             vs     : { i: 11, f: -4, o: -4, s: 9, c: -4 },
             api    : 4,
@@ -167,9 +169,9 @@ const Page = (() => {
                 ['{brow_name}', '<a href="https://www.whatbrowser.org/" target="_blank">', '</a>']),
             reminder: 0, // show all the time
         };
-        $(document).ready(() => {
-            $('body').append($('<script/>', { src }));
-        });
+        const script = document.createElement('script');
+        script.setAttribute('src', src);
+        document.getElementsByTagName('body')[0].appendChild(script);
     };
 
     return {

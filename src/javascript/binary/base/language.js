@@ -1,5 +1,6 @@
-const Cookies       = require('js-cookie');
-const CookieStorage = require('./storage').CookieStorage;
+const Cookies            = require('js-cookie');
+const CookieStorage      = require('./storage').CookieStorage;
+const elementTextContent = require('../common_functions/common_functions').elementTextContent;
 
 const Language = (() => {
     const all_languages = {
@@ -48,7 +49,7 @@ const Language = (() => {
             const crowdin_lang = Cookies.get('jipt_language_code_binary-static'); // selected language for in-context translation
             if (crowdin_lang) {
                 current_lang = crowdin_lang.toUpperCase().replace('-', '_').toUpperCase();
-                $('body').addClass(current_lang); // set the body class removed by crowdin code
+                document.getElementsByTagName('body')[0].addClass(current_lang); // set the body class removed by crowdin code
             }
         }
         current_lang = (current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase());
@@ -59,15 +60,17 @@ const Language = (() => {
         url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${lang.trim().toLowerCase()}/`);
 
     const onChangeLanguage = () => {
-        let $this;
-        $('#select_language').find('li').on('click', function () {
-            $this      = $(this);
-            const lang = $this.attr('class');
-            if (getLanguage() === lang) return;
-            $('#display_language').find('.language').text($this.text());
-            setCookieLanguage(lang);
-            document.location = urlForLanguage(lang);
-        });
+        const select_language = document.getElementById('select_language').getElementsByTagName('li');
+        for (let i = 0; i < select_language.length; i++) {
+            select_language[i].addEventListener('click', (e) => {
+                const lang = e.target.getAttribute('class');
+                if (getLanguage() === lang) return;
+                const display_language = document.getElementById('display_language').getElementsByClassName('language');
+                elementTextContent(display_language, e.target.textContent);
+                setCookieLanguage(lang);
+                document.location = urlForLanguage(lang);
+            });
+        }
     };
 
     return {

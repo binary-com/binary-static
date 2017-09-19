@@ -12,7 +12,11 @@ const Url = (() => {
         location_url = url ? getLocation(url) : window.location;
     };
 
-    const getLocation = url => $('<a>', { href: decodeURIComponent(url) })[0];
+    const getLocation = url => {
+        const link = document.createElement('a');
+        link.setAttribute('href', decodeURIComponent(url));
+        return link;
+    };
 
     const reset = () => {
         location_url = window ? window.location : location_url;
@@ -57,7 +61,7 @@ const Url = (() => {
 
     const urlForStatic = (path = '') => {
         if (!static_host || static_host.length === 0) {
-            static_host = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src');
+            static_host = document.querySelector('script[src*="binary.min.js"],script[src*="binary.js"]').getAttribute('src');
 
             if (static_host && static_host.length > 0) {
                 static_host = static_host.substr(0, static_host.indexOf('/js/') + 1);

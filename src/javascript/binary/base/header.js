@@ -5,6 +5,8 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
 const Url                 = require('./url');
+const elementInnerHtml    = require('../common_functions/common_functions').elementInnerHtml;
+const elementTextContent  = require('../common_functions/common_functions').elementTextContent;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
 const toTitleCase         = require('../common_functions/string_util').toTitleCase;
@@ -20,7 +22,7 @@ const Header = (() => {
             checkClientsCountry();
         }
         if (Client.isLoggedIn()) {
-            $('ul#menu-top').addClass('smaller-font');
+            document.getElementById('menu-top').classList.add('smaller-font');
             displayAccountStatus();
             if (!Client.get('virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
@@ -33,22 +35,35 @@ const Header = (() => {
     };
 
     const bindClick = () => {
-        $('#logo').off('click').on('click', () => {
-            BinaryPjax.load(Client.isLoggedIn() ? Url.defaultRedirectUrl() : Url.urlFor(''));
-        });
-        $('#btn_login').off('click').on('click', (e) => {
-            e.preventDefault();
-            Login.redirectToLogin();
-        });
-        $('a.logout').off('click').on('click', () => {
-            Client.sendLogoutRequest();
-        });
+        const logo = document.getElementById('logo');
+        logo.removeEventListener('click', logoOnClick);
+        logo.addEventListener('click', logoOnClick);
+
+        const btn_login = document.getElementById('btn_login');
+        btn_login.removeEventListener('click', loginOnClick);
+        btn_login.addEventListener('click', loginOnClick);
+
+        const logout = document.querySelectorAll('a.logout');
+        for (let i = 0; i < logout.length; i++) {
+            logout[i].addEventListener('click', () => {
+                Client.sendLogoutRequest();
+            });
+        }
+    };
+
+    const logoOnClick = () => {
+        BinaryPjax.load(Client.isLoggedIn() ? Url.defaultRedirectUrl() : Url.urlFor(''));
+    };
+
+    const loginOnClick = (e) => {
+        e.preventDefault();
+        Login.redirectToLogin();
     };
 
     const showOrHideLoginForm = () => {
         if (!Client.isLoggedIn()) return;
         BinarySocket.wait('authorize').then(() => {
-            const loginid_select = $('<div/>');
+            const loginid_select = document.createElement('div');
             Client.getAllLoginids().forEach((loginid) => {
                 if (!Client.get('is_disabled', loginid)) {
                     const account_title  = Client.getAccountTitle(loginid);
@@ -56,30 +71,54 @@ const Header = (() => {
                     const currency       = Client.get('currency', loginid);
                     const localized_type = localize('[_1] Account', [is_real && currency ? currency : account_title]);
                     if (loginid === Client.get('loginid')) { // default account
-                        $('.account-type').html(localized_type);
-                        $('.account-id').html(loginid);
+                        const account_type = document.getElementsByClassName('account-type');
+                        for (let i = 0; i < account_type.length; i++) {
+                            elementInnerHtml(account_type[i], localized_type);
+                        }
+                        const account_id = document.getElementsByClassName('account-id');
+                        for (let i = 0; i < account_id.length; i++) {
+                            elementInnerHtml(account_id[i], loginid);
+                        }
                     } else {
-                        loginid_select.append($('<a/>', { href: `${'java'}${'script:;'}`, 'data-value': loginid })
-                            .append($('<li/>', { text: localized_type }).append($('<div/>', { text: loginid }))))
-                            .append($('<div/>', { class: 'separator-line-thin-gray' }));
+                        const link          = document.createElement('a');
+                        const div_loginid   = document.createElement('div');
+                        const div_separator = document.createElement('div');
+                        const li_type       = document.createElement('li');
+
+                        link.setAttribute('href', `${'java'}${'script:;'}`);
+                        link.setAttribute('data-value', loginid);
+                        div_loginid.textContent = loginid;
+                        li_type.textContent     = localized_type;
+                        div_separator.className = 'separator-line-thin-gray';
+
+                        li_type.appendChild(div_loginid);
+                        link.appendChild(li_type);
+                        loginid_select.appendChild(link).appendChild(div_separator);
                     }
                 }
-                let $this;
-                $('.login-id-list').html(loginid_select)
-                    .find('a').off('click')
-                    .on('click', function (e) {
-                        e.preventDefault();
-                        $this = $(this);
-                        $this.attr('disabled', 'disabled');
-                        switchLoginid($this.attr('data-value'));
-                    });
+                const loginid_list = document.getElementsByClassName('login-id-list');
+                for (let i = 0; i < loginid_list.length; i++) {
+                    elementInnerHtml(loginid_list[i], loginid_select.innerHTML);
+                    const links = loginid_list[i].getElementsByTagName('a');
+                    for (let j = 0; j < links.length; j++) {
+                        links[j].removeEventListener('click', loginIDOnClick);
+                        links[j].addEventListener('click', loginIDOnClick);
+                    }
+                }
             });
         });
     };
 
+    const loginIDOnClick =  (e) => {
+        e.preventDefault();
+        const el_loginid = e.target.closest('A');
+        el_loginid.setAttribute('disabled', 'disabled');
+        switchLoginid(el_loginid.getAttribute('data-value'));
+    };
+
     const metatraderMenuItemVisibility = (landing_company_response) => {
         if (MetaTrader.isEligible(landing_company_response)) {
-            $('#all-accounts').find('#user_menu_metatrader').setVisibility(1);
+            document.getElementById('user_menu_metatrader').setVisibility(1);
         }
     };
 
@@ -95,20 +134,31 @@ const Header = (() => {
         // set local storage
         GTM.setLoginFlag();
         Client.set('loginid', loginid);
-        $('.login-id-list a').removeAttr('disabled');
+        const loginid_list = document.querySelectorAll('.login-id-list a');
+        for (let i = 0; i < loginid_list.length; i++) {
+            loginid_list[i].removeAttribute('disabled');
+        }
         window.location.reload();
     };
 
     const upgradeMessageVisibility = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
             const landing_company = State.getResponse('landing_company');
-            const $upgrade_msg    = $('.upgrademessage');
+            const upgrade_msg     = document.getElementsByClassName('upgrademessage');
 
             const showUpgrade = (url, msg) => {
-                $upgrade_msg.setVisibility(1)
-                    .find('a').setVisibility(1)
-                    .attr('href', Url.urlFor(url))
-                    .html($('<span/>', { text: localize(msg) }));
+                const span = document.createElement('span');
+                span.textContent = localize(msg);
+
+                for (let i = 0; i < upgrade_msg.length; i++) {
+                    upgrade_msg[i].setVisibility(1);
+
+                    const links = upgrade_msg[i].getElementsByTagName('a');
+                    for (let j = 0; j < links.length; j++) {
+                        links[j].setVisibility(1).setAttribute('href', Url.urlFor(url));
+                        elementInnerHtml(links[j], span);
+                    }
+                }
             };
 
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
@@ -116,37 +166,62 @@ const Header = (() => {
             const show_upgrade_msg  = upgrade_info.can_upgrade;
 
             if (Client.get('is_virtual')) {
-                $upgrade_msg.setVisibility(1)
-                    .find('> span').setVisibility(1).end()
-                    .find('a')
-                    .setVisibility(0);
+                for (let i = 0; i < upgrade_msg.length; i++) {
+                    upgrade_msg[i].setVisibility(1);
+                    const span = upgrade_msg[i].getElementsByTagName('span')[0];
+                    if (span) {
+                        span.setVisibility(1);
+                    }
+
+                    const links = upgrade_msg[i].getElementsByTagName('a');
+                    for (let j = 0; j < links.length; j++) {
+                        links[j].setVisibility(0);
+                    }
+                }
 
                 if (jp_account_status) {
                     const has_disabled_jp = jpClient() && Client.getAccountOfType('real').is_disabled;
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
-                        $upgrade_msg.setVisibility(1);
+                        for (let i = 0; i < upgrade_msg.length; i++) {
+                            upgrade_msg[i].setVisibility(1);
+                        }
                         if (jp_account_status === 'jp_activation_pending') {
-                            if ($('.activation-message').length === 0) {
-                                $('#virtual-text').append($('<div/>', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
+                            if (document.getElementsByClassName('activation-message').length === 0) {
+                                const div = document.createElement('div');
+                                div.className   = 'activation-message';
+                                div.textContent = ` ${localize('Your Application is Being Processed.')}`;
+                                document.getElementById('virtual-text').appendChild(div);
                             }
                         } else if (jp_account_status === 'activated') {
-                            if ($('.activated-message').length === 0) {
-                                $('#virtual-text').append($('<div/>', { class: 'activated-message', text: ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}` }));
+                            if (document.getElementsByClassName('activated-message').length === 0) {
+                                const div = document.createElement('div');
+                                div.className   = 'activated-message';
+                                div.textContent = ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}`;
+                                document.getElementById('virtual-text').appendChild(div);
                             }
                         }
                     }
                 } else if (show_upgrade_msg) {
                     showUpgrade(upgrade_info.upgrade_link, `Upgrade to a ${toTitleCase(upgrade_info.type)} Account`);
                 } else {
-                    $upgrade_msg.find('a').setVisibility(0).html('');
+                    for (let i = 0; i < upgrade_msg.length; i++) {
+                        const links = upgrade_msg[i].getElementsByTagName('a');
+
+                        for (let j = 0; j < links.length; j++) {
+                            links[j].setVisibility(0);
+                            links[j].innerHTML = '';
+                        }
+                    }
                 }
             } else if (show_upgrade_msg) {
-                $('#virtual-text').parent().setVisibility(0);
+                document.getElementById('virtual-text').parentNode.setVisibility(0);
                 showUpgrade(upgrade_info.upgrade_link, 'Open a Financial Account');
             } else {
-                $upgrade_msg.setVisibility(0);
+                for (let i = 0; i < upgrade_msg.length; i++) {
+                    upgrade_msg[i].setVisibility(0);
+                }
             }
             showHideNewAccount(show_upgrade_msg);
         });
@@ -163,27 +238,46 @@ const Header = (() => {
     };
 
     const changeAccountsText = (add_new_style, text) => {
-        $('#user_accounts')[`${add_new_style ? 'add' : 'remove'}Class`]('create_new_account').find('li').text(localize(text));
+        const user_accounts = document.getElementById('user_accounts');
+        user_accounts.classList[add_new_style ? 'add' : 'remove']('create_new_account');
+        const li_user_accounts = user_accounts.getElementsByTagName('li');
+        const localized_text = localize(text);
+        for (let i = 0; i < li_user_accounts; i++) {
+            elementTextContent(li_user_accounts[i], localized_text);
+        }
     };
 
     const displayNotification = (message, is_error, msg_code = '') => {
-        const $msg_notification = $('#msg_notification');
-        if ($msg_notification.attr('data-code') === 'STORAGE_NOT_SUPPORTED') return;
-        $msg_notification.html(message).attr({ 'data-message': message, 'data-code': msg_code });
-        if ($msg_notification.is(':hidden')) {
-            $msg_notification.slideDown(500, () => { if (is_error) $msg_notification.addClass('error'); });
+        const msg_notification = document.getElementById('msg_notification');
+        if (msg_notification.getAttribute('data-code') === 'STORAGE_NOT_SUPPORTED') return;
+
+        elementInnerHtml(msg_notification, message);
+        msg_notification.setAttribute('data-message', message);
+        msg_notification.setAttribute('data-code', msg_code);
+
+        if (!msg_notification.offsetParent) {
+            $(msg_notification).slideDown(500, () => { if (is_error) msg_notification.classList.add('error'); });
         } else if (is_error) {
-            $msg_notification.addClass('error');
+            msg_notification.classList.add('error');
         } else {
-            $msg_notification.removeClass('error');
+            msg_notification.classList.remove('error');
         }
     };
 
     const hideNotification = (msg_code) => {
-        const $msg_notification = $('#msg_notification');
-        if ($msg_notification.attr('data-code') === 'STORAGE_NOT_SUPPORTED') return;
-        if (msg_code && $msg_notification.attr('data-code') !== msg_code) return;
-        if ($msg_notification.is(':visible')) $msg_notification.removeClass('error').slideUp(500, () => { $msg_notification.html('').removeAttr('data-message data-code'); });
+        const msg_notification = document.getElementById('msg_notification');
+        if (msg_notification.getAttribute('data-code') === 'STORAGE_NOT_SUPPORTED' ||
+            msg_code && msg_notification.getAttribute('data-code') !== msg_code) {
+            return;
+        }
+
+        if (msg_notification.offsetParent) {
+            msg_notification.classList.remove('error');
+            $(msg_notification).slideUp(500, () => {
+                elementInnerHtml(msg_notification, '');
+                msg_notification.removeAttribute('data-message data-code');
+            });
+        }
     };
 
     const displayAccountStatus = () => {

@@ -3,15 +3,10 @@ const State       = require('./storage').State;
 const Url         = require('./url');
 
 const BinaryPjax = (() => {
-    let xhr,
-        previous_url;
+    let previous_url;
 
     const params   = {};
     const cache    = {};
-    const defaults = {
-        type    : 'GET',
-        dataType: 'html',
-    };
 
     const init = (container, content_selector) => {
         if (!(window.history && window.history.pushState && window.history.replaceState &&
@@ -20,40 +15,52 @@ const BinaryPjax = (() => {
             return;
         }
 
-        const $container = $(container);
-
-        if (!$container.length || !(content_selector && content_selector.length)) {
+        if (!container || !content_selector) {
             return;
         }
 
-        params.container        = $container;
+        params.container        = container;
         params.content_selector = content_selector;
 
         const url     = window.location.href;
         const title   = document.title;
-        const content = $container.find(content_selector);
+        const content = document.querySelector(content_selector);
 
         // put current content to cache, so we won't need to load it again
-        if (content && content.length) {
+        if (content) {
             window.history.replaceState({ url }, title, url);
             setDataPage(content, url);
-            params.container.trigger('binarypjax:after', content);
+            params.container.dispatchEvent(new CustomEvent('binarypjax:after', { detail: content }));
         }
 
-        $(document).find('#all-accounts a').on('click', handleClick);
-        $(document).on('click', 'a', handleClick);
-        $(window).on('popstate', handlePopstate);
+        const links_accounts = document.getElementById('all-accounts').getElementsByTagName('a');
+        for (let i = 0; i < links_accounts.length; i++) {
+            links_accounts[i].addEventListener('click', handleClick);
+        }
+        const links_document = document.getElementsByTagName('a');
+        for (let i = 0; i < links_document.length; i++) {
+            links_document[i].addEventListener('click', handleClick);
+        }
+        window.addEventListener('popstate', handlePopstate);
     };
 
     const setDataPage = (content, url) => {
-        content.attr('data-page', url.match(/.+\/(.+)\.html.*/)[1]);
+        content.setAttribute('data-page', url.match(/.+\/(.+)\.html.*/)[1]);
     };
 
     const handleClick = (event) => {
-        const link = event.currentTarget;
+        let link;
+        if (event.target.nodeName === 'A') {
+            link = event.target;
+        } else if (event.target.parentNode.nodeName === 'A') {
+            link = event.target.parentNode;
+        } else {
+            return;
+        }
+
         const url  = link.href;
 
-        if (url.length <= 0) {
+        if (!url) {
             return;
         }
 
@@ -73,7 +80,7 @@ const BinaryPjax = (() => {
         }
 
         // Ignore event with default prevented
-        if (event.isDefaultPrevented()) {
+        if (event.defaultPrevented) {
             return;
         }
 
@@ -102,18 +109,22 @@ const BinaryPjax = (() => {
      */
     const load = (url, replace) => {
         const lang    = getLanguage();
-        const options = $.extend(true, {}, $.ajaxSettings, defaults, {
-            url: url.replace(new RegExp(`/${lang}/`, 'i'), `/${lang.toLowerCase()}/pjax/`),
-        });
+        const xhttp   = new XMLHttpRequest();
 
-        options.success = (data) => {
-            const result = {};
+        xhttp.onreadystatechange = function() {
+            if (this.readyState !== 4 || this.status !== 200) {
+                return;
+            }
+            const div = document.createElement('div');
+            div.innerHTML = this.responseText;
 
-            result.title   = $(data).find('title').text().trim();
-            result.content = $('<div/>', { html: data }).find(params.content_selector);
+            const result = {
+                title  : div.getElementsByTagName('title')[0].textContent.trim(),
+                content: div.querySelector(params.content_selector),
+            };
 
             // If failed to find title or content, load the page in traditional way
-            if (result.title.length === 0 || result.content.length === 0) {
+            if (!result.title || !result.content) {
                 locationReplace(url);
                 return;
             }
@@ -123,10 +134,8 @@ const BinaryPjax = (() => {
             replaceContent(url, result, replace);
         };
 
-        // Cancel the current request if we're already loading some page
-        abortXHR(xhr);
-
-        xhr = $.ajax(options);
+        xhttp.open('GET', url.replace(new RegExp(`/${lang}/`, 'i'), `/${lang.toLowerCase()}/pjax/`), true);
+        xhttp.send();
     };
 
     const handlePopstate = (e) => {
@@ -141,20 +150,14 @@ const BinaryPjax = (() => {
         previous_url = window.location.href;
         window.history[replace ? 'replaceState' : 'pushState']({ url }, content.title, url);
 
-        params.container.trigger('binarypjax:before');
+        params.container.dispatchEvent(new Event('binarypjax:before'));
 
         document.title = content.title;
-        params.container.find(params.content_selector).remove();
-        params.container.append(content.content.clone());
+        params.container.querySelector(params.content_selector).remove();
+        $(params.container).append($(content.content).clone());
 
-        params.container.trigger('binarypjax:after', content.content);
+        params.container.dispatchEvent(new CustomEvent('binarypjax:after', { detail: content.content }));
         $.scrollTo('body', 500);
-    };
-
-    const abortXHR = (xhr_obj) => {
-        if (xhr_obj && xhr_obj.readyState < 4) {
-            xhr_obj.abort();
-        }
     };
 
     const cachePut = (url, content) => {

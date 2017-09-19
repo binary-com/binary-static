@@ -224,22 +224,45 @@ const Client = (() => {
 
     const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'japan'));
 
-    const activateByClientType = (section = 'body') => {
+    const activateByClientType = (section_id) => {
+        const el_section   = section_id ? document.getElementById(section_id) : document.getElementsByTagName('body')[0];
+        const topbar_class = document.getElementById('topbar').classList;
+
+        const primary_bg_color_dark = 'primary-bg-color-dark';
+        const secondary_bg_color    = 'secondary-bg-color';
+
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status').then(() => {
-                $('#client-logged-in').addClass('gr-centered');
-                $('.client_logged_in').setVisibility(1);
+                document.getElementById('client-logged-in').classList.add('gr-centered');
+                const client_logged_in = document.getElementsByClassName('client_logged_in');
+                for (let i = 0; i < client_logged_in.length; i++) {
+                    client_logged_in[i].setVisibility(1);
+                }
                 if (get('is_virtual')) {
-                    $(section).find('.client_virtual').setVisibility(1);
-                    $('#topbar').addClass('secondary-bg-color').removeClass('primary-bg-color-dark');
+                    const client_virtual = el_section.getElementsByClassName('client_virtual');
+                    for (let i = 0; i < client_virtual.length; i++) {
+                        client_virtual[i].setVisibility(1);
+                    }
+                    topbar_class.add(secondary_bg_color);
+                    topbar_class.remove(primary_bg_color_dark);
                 } else {
-                    $(section).find('.client_real').not((jpClient() ? '.ja-hide' : '')).setVisibility(1);
-                    $('#topbar').addClass('primary-bg-color-dark').removeClass('secondary-bg-color');
+                    const client_real = el_section.getElementsByClassName('client_real');
+                    for (let i = 0; i < client_real.length; i++) {
+                        if (!jpClient() || !/ja-hide/.test(client_real[i].classList)) {
+                            client_real[i].setVisibility(1);
+                        }
+                    }
+                    topbar_class.add(primary_bg_color_dark);
+                    topbar_class.remove(secondary_bg_color);
                 }
             });
         } else {
-            $(section).find('.client_logged_out').setVisibility(1);
-            $('#topbar').addClass('primary-bg-color-dark').removeClass('secondary-bg-color');
+            const client_logged_out = el_section.getElementsByClassName('client_logged_out');
+            for (let i = 0; i < client_logged_out.length; i++) {
+                client_logged_out[i].setVisibility(1);
+            }
+            topbar_class.add(primary_bg_color_dark);
+            topbar_class.remove(secondary_bg_color);
         }
     };
 

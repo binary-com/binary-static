@@ -28,7 +28,7 @@ const TradingTimesUI = (() => {
 
         if ($container.contents().length) return;
 
-        showLoadingImage($container);
+        showLoadingImage($container[0]);
 
         is_framed = (config && config.framed);
         if (!trading_times) {
@@ -47,7 +47,7 @@ const TradingTimesUI = (() => {
                 return false;
             }
             $container.empty();
-            showLoadingImage($container);
+            showLoadingImage($container[0]);
             trading_times = null;
             sendRequest($date.attr('data-value'), !active_symbols);
             return true;

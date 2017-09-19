@@ -1,14 +1,16 @@
 /**
  * Write loading image to a container for ajax request
  *
- * @param $container: a jQuery object
+ * @param container: a DOM element
  * @param theme: dark or white
  */
-const showLoadingImage = ($container, theme = 'dark') => {
-    $container.html($('<div/>', {
-        class: `barspinner ${theme}`,
-        html : Array.from(new Array(5)).map((x, i) => `<div class="rect${i + 1}"></div>`).join(''),
-    }));
+const showLoadingImage = (container, theme = 'dark') => {
+    if (container) {
+        const div = document.createElement('div');
+        div.className = `barspinner ${theme}`;
+        div.innerHTML = Array.from(new Array(5)).map((x, i) => `<div class="rect${i + 1}"></div>`).join('');
+        container.innerHTML(div);
+    }
 };
 
 /**
@@ -21,16 +23,20 @@ const showLoadingImage = ($container, theme = 'dark') => {
  * @return int|null
  */
 const getHighestZIndex = (selector = 'div,p,area,nav,section,header,canvas,aside,span') => {
-    const all          = [];
-    const store_zindex = function () {
-        if ($(this).is(':visible')) {
-            const z = $(this).css('z-index');
-            if (!isNaN(z)) {
-                all.push(z);
+    const elements = selector.split(',');
+    const all      = [];
+
+    for (let i = 0; i < elements.length; i++) {
+        const els = document.getElementsByTagName(elements);
+        for (let j = 0; j < els.length; j++) {
+            if (els[i].offsetParent) {
+                const z = els[i].style['z-index'];
+                if (!isNaN(z)) {
+                    all.push(z);
+                }
             }
         }
-    };
-    $(selector).each(store_zindex);
+    }
 
     return all.length ? Math.max(...all) : null;
 };
@@ -77,23 +83,30 @@ const getPropertyValue = (obj, k) => {
 const handleHash = () => {
     const hash = window.location.hash;
     if (hash) {
-        $(`a[href="${hash}"]`).click();
+        document.querySelector(`a[href="${hash}"]`).click();
     }
 };
 
 const clearable = (element) => {
     element.addClass('clear');
-    $(document).on('mousemove', '.clear', function (e) {
-        e.stopPropagation();
-        $(e.currentTarget)[toggleAddRemoveClass(this.offsetWidth - 18 < e.clientX - this.getBoundingClientRect().left)]('onClear');
-    }).on('mousedown', '.onClear', (e) => {
-        e.stopPropagation();
-        $(e.currentTarget).attr('data-value', '');
-        $(e.currentTarget).removeClass('clear onClear').val('').change();
+    document.addEventListener('mousemove', (e) => {
+        if (/clear/.test(e.target.classList)) {
+            e.stopPropagation();
+            e.target.classList[toggleAddRemoveClass(e.target.offsetWidth - 18 < e.clientX - e.target.getBoundingClientRect().left)]('onClear');
+        }
+    });
+    document.addEventListener('mousedown', (e) => {
+        if (/onClear/.test(e.target.classList)) {
+            e.stopPropagation();
+            e.target.setAttribute('data-value', '');
+            e.target.classList.remove('clear', 'onClear');
+            e.target.value = '';
+            e.target.dispatchEvent(new Event('change'));
+        }
     });
 };
 
-const toggleAddRemoveClass = condition => (condition ? 'addClass' : 'removeClass');
+const toggleAddRemoveClass = condition => (condition ? 'add' : 'remove');
 
 module.exports = {
     showLoadingImage,

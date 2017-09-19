@@ -2,9 +2,9 @@ const Client = require('./client');
 
 const Contents = (() => {
     const onLoad = () => {
-        Client.activateByClientType('#header');
+        Client.activateByClientType('header');
         // This is required for our css to work.
-        $('#content').removeClass().addClass($('#content_class').text());
+        document.getElementById('content').className = document.getElementById('content_class').textContent;
     };
 
     return {
