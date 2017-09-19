@@ -68,6 +68,12 @@ function wsConnect() {
     return new WebSocket('wss://blue.binaryws.com/websockets/v3?app_id=1&l=' + getLanguage());
 }
 
+function wsSend(ws, request) {
+    if (ws && request && typeof request === 'object') {
+        ws.send(JSON.stringify(request));
+    }
+}
+
 function setSession(key, value) {
     if (typeof sessionStorage !== 'undefined') {
         try {

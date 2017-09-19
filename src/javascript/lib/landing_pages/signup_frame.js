@@ -8,10 +8,10 @@ window.onload = function () {
     var ws = wsConnect();
 
     function sendVerifyEmail() {
-        ws.send(JSON.stringify({
+        wsSend(ws, {
             verify_email: el_email.value,
             type        : 'account_opening'
-        }));
+        });
     }
 
     var validation_set = false; // To prevent validating before submit
@@ -35,16 +35,14 @@ window.onload = function () {
         if (ws.readyState === 1) {
             sendVerifyEmail();
         } else {
-            ws.onopen = function() {
-                sendVerifyEmail()
-            };
+            ws.onopen = sendVerifyEmail;
         }
     });
 
     ws.onmessage = function(msg) {
-        var data = JSON.parse(msg.data);
-        setValidationStyle(el_email, data.error);
-        if (!data.error) {
+        var response = JSON.parse(msg.data);
+        setValidationStyle(el_email, response.error);
+        if (!response.error) {
             el_signup.classList.add('invisible');
             el_success.classList.remove('invisible');
         }

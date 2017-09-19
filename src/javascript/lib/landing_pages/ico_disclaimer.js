@@ -101,7 +101,7 @@ function getResidenceList() {
     } else {
         var ws = wsConnect();
         function sendResidenceList() {
-            ws.send(JSON.stringify({ residence_list: 1 }));
+            wsSend(ws, { residence_list: 1 });
         }
 
         if (ws.readyState === 1) {

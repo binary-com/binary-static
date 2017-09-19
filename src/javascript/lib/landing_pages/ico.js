@@ -81,8 +81,8 @@ function getClientCountry() {
         const ws = wsConnect();
 
         function sendRequests() {
-            if (!clients_country) ws.send(JSON.stringify({ website_status: 1 }));
-            if (!residence_list)  ws.send(JSON.stringify({ residence_list: 1 }));
+            if (!clients_country) wsSend(ws, { website_status: 1 });
+            if (!residence_list)  wsSend(ws, { residence_list: 1 });
         }
 
         if (ws.readyState === 1) {
