@@ -354,30 +354,31 @@ const TradingEvents = (() => {
          * attach event to purchase buttons to buy the current contract
          */
         $('.purchase_button').on('click dblclick', function () {
-            if (!isVisible(document.getElementById('confirmation_message_container'))) {
-                const id        = this.getAttribute('data-purchase-id');
-                const ask_price = this.getAttribute('data-ask-price');
+            if (isVisible(document.getElementById('confirmation_message_container')) || /disabled/.test(this.parentNode.classList)) {
+                return;
+            }
+            const id        = this.getAttribute('data-purchase-id');
+            const ask_price = this.getAttribute('data-ask-price');
 
-                const params = { buy: id, price: ask_price, passthrough: {} };
-                Object.keys(this.attributes).forEach(function (attr) {
-                    if (attr && this.attributes[attr] && this.attributes[attr].name &&
-                        !/data-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
-                        const m = this.attributes[attr].name.match(/data-(.+)/);
+            const params = { buy: id, price: ask_price, passthrough: {} };
+            Object.keys(this.attributes).forEach(function (attr) {
+                if (attr && this.attributes[attr] && this.attributes[attr].name &&
+                    !/data-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
+                    const m = this.attributes[attr].name.match(/data-(.+)/);
 
-                        if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
-                            params.passthrough[m[1]] = this.attributes[attr].value;
-                        }
+                    if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
+                        params.passthrough[m[1]] = this.attributes[attr].value;
                     }
-                }, this);
-                if (id && ask_price) {
-                    $('.purchase_button').css('visibility', 'hidden');
-                    BinarySocket.send(params).then((response) => {
-                        Purchase.display(response);
-                        GTM.pushPurchaseData(response);
-                    });
-                    Price.incrFormId();
-                    Price.processForgetProposals();
                 }
+            }, this);
+            if (id && ask_price) {
+                $('.purchase_button').css('visibility', 'hidden');
+                BinarySocket.send(params).then((response) => {
+                    Purchase.display(response);
+                    GTM.pushPurchaseData(response);
+                });
+                Price.incrFormId();
+                Price.processForgetProposals();
             }
         });
 

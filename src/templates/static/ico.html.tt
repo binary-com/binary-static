@@ -8,15 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style id="antiClickjack">body{display:none !important;}</style>
-        <script type="text/javascript">
-            if (self === top) {
-                var antiClickjack = document.getElementById("antiClickjack");
-                antiClickjack.parentNode.removeChild(antiClickjack);
-            } else {
-                top.location = self.location;
-            }
-        </script>
+        [% INCLUDE global/anti_clickjack.html.tt %]
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
         <meta name="description" content="
@@ -50,8 +42,8 @@
             { is_image=1, size='32' },
         ] %]
 
-        <link href="[% request.url_for('css/ico.css') %]" rel="stylesheet" />
-        <link href="https://style.binary.com/binary.css" rel="stylesheet" />
+        <link href="[% request.url_for('css/ico.css') _ '?' _ static_hash %]" rel="stylesheet" />
+        <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
     </head>
 
     <body>
@@ -66,6 +58,9 @@
                     <ul class="nav navbar-nav">
                         <li class="invisible">
                             <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a href="[% request.url_for('ico-disclaimer.html') %]">[% l("Information Memorandum") %]</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#how-ico-works">[% l("How the ICO works") %]</a>
@@ -111,6 +106,7 @@
                                             <input type="hidden" name="meta_message" value="1001" />
                                             <input type="hidden" name="meta_required" value="email" />
                                             <input type="hidden" name="meta_tooltip" value="" />
+                                            <input type="hidden" name="custom language" value="" class="frm-language" />
                                         </div>
                                         <div id="af-form-713141817" class="af-form">
                                             <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
@@ -151,7 +147,7 @@
                         <div class="box">
                             <img class="icon" src="[% request.url_for('images/ico/icons/coins_icon.svg') %]" />
                             <h4>[% l("Purchase our tokens") %]</h4>
-                            <p>[% l("Binary.com will issue a number of tokens during the ICO.") %]</p>
+                            <p>[% l("[_1] will issue a number of tokens during the ICO.", broker_name) %]</p>
                         </div>
                         <img class="arrow" src="[% request.url_for('images/ico/icons/arrow1.svg') %]" />
                     </div>
@@ -197,12 +193,21 @@
                     <div class="gr-4 gr-12-m">
                         <img class="icon" src="[% request.url_for('images/ico/icons/ich_icon.svg') %]" />
                         <h4>[% l("How do you inform tokenholders?") %]</h4>
-                        <p>[% l("Distribution of dividends will be announced on the Binary.com website.") %]</p>
+                        <p>[% l("Distribution of dividends will be announced on the [_1] website.", broker_name) %]</p>
                     </div>
                     <div class="gr-4 gr-12-m">
                         <img class="icon" src="[% request.url_for('images/ico/icons/dvnd_icon.svg') %]" />
                         <h4>[% l("How much dividend will I receive?") %]</h4>
                         <p>[% l("Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares.") %]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="read-im-section" class="content-section primary-bg-color center-text">
+                <div class="gr-row">
+                    <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
+                        <h2 class="content-inverse-color">[% l("Read the draft Information Memorandum for further information about the proposed offer.") %]</h2>
+                        <button onclick="window.location.href='[% request.url_for('ico-disclaimer.html') %]'" class="button">[% l("View memorandum") %]</button>
                     </div>
                 </div>
             </div>
@@ -222,7 +227,7 @@
             <div id="who-we-are" class="content-section who-we-are-bg">
                 <div class="gr-row center-text">
                     <div class="gr-4">
-                        <h2 class="boxed-heading boxed-heading-center">[% l("Who is Binary.com") %]</h2>
+                        <h2 class="boxed-heading boxed-heading-center">[% l("Who is [_1]", broker_name) %]</h2>
                     </div>
                 </div>
                 <div class="container">
@@ -230,7 +235,7 @@
                         <div class="gr-4 gr-12-m">
                             <div class="content-inverse-color gr-padding-30">
                                 <div class="gr-row">
-                                    <p>[% l("Binary.com is the pioneer of online binary options trading. We grew from one simple idea: to make binary options easily accessible to retail investors worldwide.") %]</p>
+                                    <p>[% l("[_1] is the pioneer of online binary options trading. We grew from one simple idea: to make binary options easily accessible to retail investors worldwide.", broker_name) %]</p>
                                     <p>[% l("Today, we’ve established ourselves as a market leader and one of the most popular online binary options trading platforms in the world.") %]</p>
                                     <p>[% l("Our track record speaks for itself; we recorded a turnover of USD 847.6 million in 2016 &mdash;&mdash; bringing our total turnover to over USD 3 billion since we launched in 2000.") %]</p>
                                 </div>
@@ -240,7 +245,7 @@
                             <div class="gr-row">
                                 <div class="gr-6 gr-12-m">
                                     <h4>[% l("Licensed and regulated") %]</h4>
-                                    <p>[% l("Binary.com is licensed and regulated in Malta, the British Isles, Japan, and Vanuatu.") %]</p>
+                                    <p>[% l("[_1] is licensed and regulated in Malta, the British Isles, Japan, and Vanuatu.", broker_name) %]</p>
                                 </div>
                                 <div class="gr-6 gr-12-m">
                                     <h4>[% l("Extensive product range") %]</h4>
@@ -264,7 +269,7 @@
                                 </div>
                                 <div class="gr-6 gr-12-m">
                                     <h4>[% l("Global presence") %]</h4>
-                                    <p>[% l("Binary.com employs over 130 people across its offices in Malta, Malaysia and Japan.") %]</p>
+                                    <p>[% l("[_1] employs over 130 people across its offices in Malta, Malaysia and Japan.", broker_name) %]</p>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +280,7 @@
             <div id="our-growth" class="content-section center-text">
                 <div class="gr-row">
                     <div class="gr-12">
-                        <h2>[% l("Binary.com by the numbers") %]</h2>
+                        <h2>[% l("[_1] by the numbers", broker_name) %]</h2>
                         <p class="section-intro">[% l("These key metrics will show you what growth and success looks like for an award-winning binary options trading platform.") %]</p>
                     </div>
                 </div>
@@ -291,7 +296,7 @@
                         <div class="chart">
                             <h5 class="chart-heading chart-heading-left">[% l("Gross and net profit") %]</h5>
                             <img src="[% request.url_for('images/ico/images/gn_chart.svg') %]" />
-                            <p>[% l("Binary.com is a successful and growing platform, with several ongoing initiatives to enhance future profitability. These include our entry into new regulated markets with significant growth potential, and the innovation and expansion of our product offerings.") %]</p>
+                            <p>[% l("[_1] is a successful and growing platform, with several ongoing initiatives to enhance future profitability. These include our entry into new regulated markets with significant growth potential, and the innovation and expansion of our product offerings.", broker_name) %]</p>
                         </div>
                     </div>
                     <div class="gr-6 gr-12-m">
@@ -323,6 +328,44 @@
                         </div>
                     </div>
                     <div class="vertical-line"></div>
+                    <p class="chart-note">[% l('Note: 2017 numbers are projected from August interim figures') %]</p>
+                </div>
+            </div>
+            <div id="board-of-directors" class="content-section">
+                <div class="gr-row center-text">
+                    <div class="gr-4">
+                        <h2 class="boxed-heading-center">[% l("Board of Directors") %]</h2>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="gr-row">
+                        <div class="gr-4 gr-12-m">
+                            <div class="center-text">
+                                <img class="responsive" src="[% request.url_for('images/ico/images/jy@2x.png') %]" />
+                                <h4>Jean-Yves Sireau</h4>
+                                <a href="https://www.linkedin.com/in/jeanyvessireau/" target="_blank"><img class="icon--sm social--linkedin" /></a>
+                                <a href="https://twitter.com/jysireau" target="_blank"><img class="icon--sm social--twitter" /></a>
+                            </div>
+                            <p>[% l('Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and [_1] (formerly known as Betonmarkets.com) in 1999.', broker_name) %]</p>
+                        </div>
+                        <div class="gr-4 gr-12-m">
+                            <div class="center-text">
+                                <img class="responsive" src="[% request.url_for('images/ico/images/joanna@2x.png') %]" />
+                                <h4>Joanna Frendo</h4>
+                                <a href="https://www.linkedin.com/in/joanna-frendo-prof-pgdip-fcc-4449975/" target="_blank"><img class="icon--sm social--linkedin" /></a>
+                            </div>
+                            <p>[% l('Joanna oversees the Group\'s procedural and regulatory compliance with the various licensing compliance jurisdictions of the [_1] Group, in addition to overseeing a number of the Group\'s key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association.', broker_name) %]</p>
+                        </div>
+                        <div class="gr-4 gr-12-m">
+                            <div class="center-text">
+                                <img class="responsive" src="[% request.url_for('images/ico/images/jm@2x.png') %]" />
+                                <h4>Jim Mellon</h4>
+                                <a href="https://twitter.com/jimmhk" target="_blank"><img class="icon--sm social--twitter" /></a>
+                                <a href="https://www.youtube.com/results?search_query=jim+mellon" target="_blank"><img class="icon--sm social--youtube" /></a>
+                            </div>
+                            <p>[% ('Jim Mellon is a well-known and successful entrepreneur, starting his career in fund management and now including biopharma, property, mining, and information technology amongst his many investments. Jim is listed at number 140 on the Sunday Times Rich List with a net worth of &pound;920 million, and holds directorships in a number of publicly quoted companies. He is the founder and principal shareholder of the Regent Pacific Group, quoted on the Hong Kong Stock Exchange, who were the founding investor of Binary.com in 1999.') %]</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="content-section blue-bg">
@@ -433,7 +476,7 @@
                     </div>
                     <div class="gr-12">
                         <div class="faq">
-                            <h4>[% l("Why is Binary.com performing an ICO?") %]</h4>
+                            <h4>[% l("Why is [_1] performing an ICO?", broker_name) %]</h4>
                             <p>[% l("[_1] is a well-established company founded in 1999. The growth of our business led us to consider an IPO, as is the case with most successful companies. However, we believe that stock exchanges will be gradually replaced by cryptocurrency exchanges in the coming decade, and IPOs will be gradually replaced by ICOs. This is why we decided to perform an ICO instead of an IPO.", broker_name) %]</p>
                         </div>
                     </div>
@@ -482,7 +525,7 @@
                     </div>
                     <div class="gr-12">
                         <div class="faq">
-                            <h4>[% l("How do I stay informed on the Binary.com ICO?") %]</h4>
+                            <h4>[% l("How do I stay informed on the [_1] ICO?", broker_name) %]</h4>
                             <p>[% l("Please subscribe to our mailing list using the form below for occasional announcements relating to the ICO.") %]</p>
                         </div>
                     </div>
@@ -506,6 +549,7 @@
                                 <input type="hidden" name="meta_message" value="1001" />
                                 <input type="hidden" name="meta_required" value="email" />
                                 <input type="hidden" name="meta_tooltip" value="" />
+                                <input type="hidden" name="custom language" value="" class="frm-language" />
                             </div>
                             <div id="af-form-713141817" class="af-form">
                                 <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
@@ -538,7 +582,7 @@
                 <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
             </div>
         </div>
-        <script src="[% request.url_for('js/ico/ico.js') %]"></script>
+        <script src="[% request.url_for('js/ico/ico.js') _ '?' _ static_hash %]"></script>
     </body>
 
 </html>
