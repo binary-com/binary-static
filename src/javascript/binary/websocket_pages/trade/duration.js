@@ -443,10 +443,11 @@ const Durations = (() => {
     };
 
     const hideExpiryTime = (expiry_time) => {
-        setTime('');
+        const requested = setTime('');
         Defaults.remove('expiry_time');
         expiry_time.hide();
         Barriers.display();
+        return requested;
     };
 
     const showExpiryTime = (expiry_time) => {
@@ -556,7 +557,10 @@ const Durations = (() => {
             }
             selectEndDate(expiry_date || end_time);
         } else {
-            hideExpiryTime(document.getElementById('expiry_time_row'));
+            const requested = hideExpiryTime(document.getElementById('expiry_time_row'));
+            if (requested) {
+                make_price_request = -1;
+            }
         }
         commonTrading.timeIsValid($expiry_time);
         displayDurations(time_start.value);
