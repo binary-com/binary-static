@@ -2,5 +2,5 @@
 <p>[% l('Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to [_1]:', support_link) %]</p>
 <ul class="checked">
     <li>[% l('Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth.') %]</li>
-    <li>[% l('Proof of address - A scanned copy of a utility bill or bank statement that\'s not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation.') %]</li>
+    <li>[% l('Proof of address - A scanned copy of a utility bill or bank statement that\'s not more than six months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation.') %]</li>
 </ul>
