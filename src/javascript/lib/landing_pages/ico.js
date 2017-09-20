@@ -1,5 +1,6 @@
 // Handler when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function(){
+    dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
 
     const clients_country = getClientCountry();
