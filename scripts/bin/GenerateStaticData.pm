@@ -364,7 +364,6 @@ sub _texts {
         push @texts, localize('Your account has no Login/Logout activity.');
         push @texts, localize('logout');
         #strings for reality_check
-        push @texts, localize('Please enter a number between [_1].');
         push @texts, localize('[_1] days [_2] hours [_3] minutes');
         push @texts, localize('Your trading statistics since [_1].');
         #strings for security
