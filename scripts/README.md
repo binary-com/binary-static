@@ -40,7 +40,7 @@ After HTML build, you can run `sudo grunt connect` then visits [https://localhos
 **IMPORTANT!** This key gives full access to all your Crowdin project data. Treat this just like a password and never push it to any public repo.
 
 #### Update translations
-* Simply run `./scripts/update_translation.sh` to do these tasks:<br/>
+* Simply run `./scripts/update_translation.sh` from root to do these tasks:<br/>
 (It is possible to confirm/skip each task by answering y/n to questions, only first one is mandatory):
   * Check out and update the translations branch
   * Update master and merge into translations
