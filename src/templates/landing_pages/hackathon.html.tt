@@ -126,11 +126,39 @@
             </div>
         </section>
 
+        [% agendas=[
+                { icon="register"     time="09.00 AM" title="Registration of participants and breakfast" },
+                { icon="microphone"   time="09.30 AM" title="Briefing about the Hackathon challenge and house rules" },
+                { icon="start"        time="10.00 AM" title="Hackathon begins" },
+                { icon="lunch"        time="12.30 PM" title="Lunch" },
+                { icon="tea_time"     time="05.00 PM" title="Hackathon ends and tea time" },
+                { icon="presentation" time="05.30 PM" title="Presentation" },
+                { icon="winner"       time="06.30 PM" title="Announcement of winners" },
+                { icon="photos"       time="06.45 PM" title="Group photo" },
+                { icon="finish"       time="07.00 PM" title="Event ends" },
+            ]
+        %]
         <section id="agenda">
             <div class="white-bg">
                 <div class="container">
                     <h2>Agenda</h2>
-                    <p>To be confirmed</p>
+                    <h3 class="text-bold">Saturday, 30th September 2017</h3>
+                    <div class="gr-row">
+                        <div class="gr-10 gr-push-1 gr-12-m gr-push-0-m">
+                            <div class="agenda">
+                                <div class="agenda__vertical-line"></div>
+                                [% FOREACH agenda IN agendas %]
+                                    <div class="agenda__box">
+                                        <span class="agenda__box__icon icon-[% agenda.icon %]"></span>
+                                        <ul>
+                                            <li class="agenda__box__time">[% agenda.time %]</li>
+                                            <li class="agenda__box__title">[% agenda.title %]</li>
+                                        </ul>
+                                    </div>
+                                [% END %]
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
