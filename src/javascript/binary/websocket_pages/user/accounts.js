@@ -72,13 +72,18 @@ const Accounts = (() => {
         Client.getAllLoginids()
             .sort((a, b) => a > b)
             .forEach((loginid) => {
-                const account_currency = Client.get('currency', loginid);
-                const company_name     = Client.isAccountOfType('virtual', loginid) ? toTitleCase(getPropertyValue(landing_company, 'virtual_company')) : getCompanyName(loginid);
+                const account_currency  = Client.get('currency', loginid);
+                const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
+
+                if (!Client.isAccountOfType('virtual', loginid)) {
+                    const company_name = getCompanyName(loginid);
+                    account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
+                }
 
                 $('#existing_accounts').find('tbody')
                     .append($('<tr/>', { id: loginid })
                         .append($('<td/>', { text: loginid }))
-                        .append($('<td/>').html($('<span/>', { text: localize(Client.getAccountTitle(loginid)), 'data-balloon': company_name })))
+                        .append($('<td/>').html($('<span/>', account_type_prop)))
                         .append($('<td/>', { text: getAvailableMarkets(loginid) }))
                         .append($('<td/>')
                             .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
