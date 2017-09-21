@@ -4,7 +4,8 @@
     [% FOREACH css_file IN css_files =%]
         <link rel="stylesheet" href="[%= css_file =%]" />
     [% END %]
-    <script src="[% request.url_for('js/landing/signup_frame.js') _ '?' _ static_hash %]"></script>
+    <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
+    <script src="[% request.url_for('js/landing_pages/signup_frame.js') _ '?' _ static_hash %]"></script>
 </head>
 <body>
     <div class="home-content">
