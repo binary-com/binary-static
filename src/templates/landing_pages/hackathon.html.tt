@@ -147,18 +147,15 @@
                         <div class="gr-10 gr-push-1 gr-12-m gr-push-0-m">
                             <div class="agenda">
                                 <div class="agenda__vertical-line"></div>
-                                [% BLOCK agenda_list %]
-                                    [% FOREACH agenda IN agendas %]
-                                        <div class="agenda__box">
-                                            <span class="agenda__box__icon icon-[% agenda.icon %] horizontal-line"></span>
-                                            <ul>
-                                                <li class="agenda__box__time">[% agenda.time %]</li>
-                                                <li class="agenda__box__title">[% agenda.title %]</li>
-                                            </ul>
-                                        </div>
-                                    [% END %]
+                                [% FOREACH agenda IN agendas %]
+                                    <div class="agenda__box">
+                                        <span class="agenda__box__icon icon-[% agenda.icon %]"></span>
+                                        <ul>
+                                            <li class="agenda__box__time">[% agenda.time %]</li>
+                                            <li class="agenda__box__title">[% agenda.title %]</li>
+                                        </ul>
+                                    </div>
                                 [% END %]
-                                [% INCLUDE agenda_list %]
                             </div>
                         </div>
                     </div>
