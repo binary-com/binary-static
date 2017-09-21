@@ -113,7 +113,7 @@ const Accounts = (() => {
                 .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': getCompanyName({ real: 1 }) })))
                 .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
-                .append($('<td/>').html($('<button/>', { text: localize('Create') }))));
+                .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
 
         $('#note').setVisibility(1);
 
@@ -123,18 +123,19 @@ const Accounts = (() => {
             $currencies.append(getCurrencyList(currencies).html());
             $new_account_opening.find('.account-currency').html($('<select/>', { id: 'new_account_currency' }).html($currencies.html()));
         } else {
-            $new_account_opening.find('.account-currency').html($('<span/>', { id: 'new_account_currency', value: currencies, text: currencies }));
+            $new_account_opening.find('.account-currency').html($('<label/>', { id: 'new_account_currency', 'data-value': currencies, text: currencies }));
         }
 
-        FormManager.init(form_id, [{ selector: '#new_account_currency', request_field: 'currency', validations: ['req'] }].concat(populateReq()));
+        // need to make it visible before adding the form manager event on it
+        doneLoading('#new_accounts_wrapper');
+
+        const el_select_currency = /select/i.test(document.getElementById('new_account_currency').nodeName);
+        FormManager.init(form_id, [{ selector: '#new_account_currency', request_field: 'currency', validations: [el_select_currency ? 'req' : ''], hide_asterisk: true }].concat(populateReq()));
 
         FormManager.handleSubmit({
             form_selector       : form_id,
             fnc_response_handler: newAccountResponse,
-            enable_button       : true,
         });
-
-        doneLoading('#new_accounts_wrapper');
     };
 
     const newAccountResponse = (response) => {
