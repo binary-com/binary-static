@@ -28,12 +28,12 @@ const getHighstock         = require('../../common_functions/common_functions').
  * `Price.display()` to display the price details returned from server
  */
 const Price = (() => {
-    'use strict';
+    
 
-    let type_display_id_mapping = {},
-        form_id                 = 0,
-        price_history           = {}, // For saving price history, which is displayed in the sparkline.
-        Highcharts;
+    let type_display_id_mapping = {};
+    let form_id                 = 0;
+    let price_history           = {}; // For saving price history, which is displayed in the sparkline.
+    let Highcharts;
     const sparkline_options = {
         chart: {
             type  : 'line',
@@ -77,7 +77,7 @@ const Price = (() => {
             tickPositions: [0],
         },
         tooltip: {
-            formatter: function () {
+            formatter () {
                 return `<span>${this.y}</span>`;
             },
             backgroundColor: null,
@@ -87,7 +87,7 @@ const Price = (() => {
             hideDelay      : 1,
             shared         : true,
             padding        : 0,
-            positioner     : function (w, h, point) {
+            positioner (w, h, point) {
                 return { x: point.plotX - (w / 2), y: point.plotY - h };
             },
         },
@@ -270,6 +270,7 @@ const Price = (() => {
         const setData = (data = {}) => {
             if (!data.display_value) {
                 amount.classList.remove('price_moved_up', 'price_moved_down');
+            } else {
                 showSparkline(amount_sparkline, data.display_value, type);
             }
             elementTextContent(stake, `${localize('Stake')}: `);
@@ -331,8 +332,8 @@ const Price = (() => {
      * @param {*} type : type of data being added to chart, can be any arbitrary value.
      * @param {*} data_points : Maximum number of data points allowed.
      */
-    const showSparkline = (ele, value, type, data_points = 10) => {
-        value = parseFloat(value);
+    const showSparkline = (ele, val, type, data_points = 10) => {
+        const value = parseFloat(val);
         const chart = typeof $(ele).highcharts === 'function' && $(ele).highcharts();
         if (!price_history[type]) { // No data, initialise array.
             price_history[type] = [];
@@ -340,7 +341,11 @@ const Price = (() => {
         if (value) {
             // Start adding point directly
             if (chart) {
-                chart.series[0].addPoint({ y: value }, true, true);
+                if(chart.series[0].data.length < data_points){
+                    chart.series[0].addPoint({ y: value }, true);
+                } else {
+                    chart.series[0].addPoint({ y: value }, true, true);
+                }
                 return;
             }
             if (price_history[type].length < data_points) {
@@ -348,7 +353,7 @@ const Price = (() => {
             }
         }
         // Highcharts has not yet been initialised, Wait until all the data is collected.
-        if (!chart && price_history[type].length >= data_points) {
+        if (!chart) {
             sparkline_options.series = [{
                 name: `Price ${type}`,
                 data: price_history[type],
