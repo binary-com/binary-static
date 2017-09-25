@@ -331,6 +331,16 @@
                     <p class="chart-note">[% l('Note: 2017 numbers are projected from August interim figures') %]</p>
                 </div>
             </div>
+            <div id="acquired-section" class="content-section center-text acquired-bg">
+                <div class="container">
+                    <div class="gr-row">
+                        <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
+                            <h2 class="content-inverse-color">[% l("Binary Group Ltd. acquired 100% of Binary Ltd. in August 2017 for the purposes of the ICO.") %]</h2>
+                            <button onclick="window.location.href='[% request.url_for('https://ico_documents.binary.com/binary_ltd_2016_annual_report.pdf') %]'" class="button">[% l("View Binary Group Ltd's 2016 annual report") %]</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="board-of-directors" class="content-section">
                 <div class="gr-row center-text">
                     <div class="gr-4">

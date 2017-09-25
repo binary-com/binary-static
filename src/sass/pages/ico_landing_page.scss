@@ -512,3 +512,22 @@ button {
 .social--youtube {
     content: url('../images/ico/icons/youtube.svg');
 }
+
+.acquired-bg {
+    position: relative;
+    background: url('../images/ico/images/img5@2x.png') no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#acquired-section {
+    h2 {
+        line-height: 1.4;
+    }
+    button {
+        text-transform: none !important;
+    }
+    margin-bottom: 200px;
+}
