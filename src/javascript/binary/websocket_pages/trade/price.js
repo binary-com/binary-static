@@ -12,6 +12,7 @@ const elementTextContent   = require('../../common_functions/common_functions').
 const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
 const formatMoney          = require('../../common_functions/currency').formatMoney;
+const getHighstock         = require('../../common_functions/common_functions').requireHighstock;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -27,8 +28,100 @@ const formatMoney          = require('../../common_functions/currency').formatMo
  * `Price.display()` to display the price details returned from server
  */
 const Price = (() => {
-    let type_display_id_mapping = {};
-    let form_id                 = 0;
+    'use strict';
+
+    let type_display_id_mapping = {},
+        form_id                 = 0,
+        price_history           = {}, // For saving price history, which is displayed in the sparkline.
+        Highcharts;
+    const sparkline_options = {
+        chart: {
+            type  : 'line',
+            margin: [2, 0, 2, 0],
+            width : 100,
+            height: 20,
+            style : {
+                overflow: 'visible',
+            },
+        },
+        title: {
+            text: '',
+        },
+        credits: {
+            enabled: false,
+        },
+        exporting: { enabled: false },
+        legend   : {
+            enabled: false,
+        },
+        xAxis: {
+            labels: {
+                enabled: false,
+            },
+            title: {
+                text: null,
+            },
+            startOnTick  : false,
+            endOnTick    : false,
+            tickPositions: [],
+        },
+        yAxis: {
+            endOnTick  : false,
+            startOnTick: false,
+            labels     : {
+                enabled: false,
+            },
+            title: {
+                text: null,
+            },
+            tickPositions: [0],
+        },
+        tooltip: {
+            formatter: function () {
+                return `<span>${this.y}</span>`;
+            },
+            backgroundColor: null,
+            borderWidth    : 0,
+            shadow         : false,
+            useHTML        : true,
+            hideDelay      : 1,
+            shared         : true,
+            padding        : 0,
+            positioner     : function (w, h, point) {
+                return { x: point.plotX - (w / 2), y: point.plotY - h };
+            },
+        },
+        plotOptions: {
+            series: {
+                animation: false,
+                lineWidth: 1,
+                shadow   : false,
+                states   : {
+                    hover: {
+                        lineWidth: 1,
+                    },
+                },
+                marker: {
+                    radius: 1,
+                    states: {
+                        hover: {
+                            radius: 2,
+                        },
+                    },
+                },
+                fillOpacity: 0.25,
+            },
+        },
+        series: [{
+            name: 'Price',
+            data: [],
+        }],
+    };
+
+    // Initialize Highcharts.
+    getHighstock((H) => {
+        Highcharts = H;
+    });
 
     const createProposal = (type_of_contract) => {
         const proposal = {
@@ -156,16 +249,17 @@ const Price = (() => {
             $(container).fadeIn(200);
         }
 
-        const h4            = container.getElementsByClassName('contract_heading')[0];
-        const amount        = container.getElementsByClassName('contract_amount')[0];
-        const payout_amount = container.getElementsByClassName('contract_payout')[0];
-        const stake         = container.getElementsByClassName('stake')[0];
-        const payout        = container.getElementsByClassName('payout')[0];
-        const purchase      = container.getElementsByClassName('purchase_button')[0];
-        const description   = container.getElementsByClassName('contract_description')[0];
-        const comment       = container.getElementsByClassName('price_comment')[0];
-        const error         = container.getElementsByClassName('contract_error')[0];
-        const currency      = document.getElementById('currency');
+        const h4               = container.getElementsByClassName('contract_heading')[0];
+        const amount_sparkline = container.getElementsByClassName('amount_sparkline')[0];
+        const amount           = container.getElementsByClassName('contract_amount')[0];
+        const payout_amount    = container.getElementsByClassName('contract_payout')[0];
+        const stake            = container.getElementsByClassName('stake')[0];
+        const payout           = container.getElementsByClassName('payout')[0];
+        const purchase         = container.getElementsByClassName('purchase_button')[0];
+        const description      = container.getElementsByClassName('contract_description')[0];
+        const comment          = container.getElementsByClassName('price_comment')[0];
+        const error            = container.getElementsByClassName('contract_error')[0];
+        const currency         = document.getElementById('currency');
 
         const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
@@ -176,6 +270,7 @@ const Price = (() => {
         const setData = (data = {}) => {
             if (!data.display_value) {
                 amount.classList.remove('price_moved_up', 'price_moved_down');
+                showSparkline(amount_sparkline, data.display_value, type);
             }
             elementTextContent(stake, `${localize('Stake')}: `);
             elementInnerHtml(amount, data.display_value ? formatMoney((currency.value || currency.getAttribute('value')), data.display_value) : '-');
@@ -230,7 +325,47 @@ const Price = (() => {
         }
     };
 
+    /**
+     * @param {*} ele : ele which needs to be updated or needs to have a sparkline chart.
+     * @param {*} value : value of point to be added
+     * @param {*} type : type of data being added to chart, can be any arbitrary value.
+     * @param {*} data_points : Maximum number of data points allowed.
+     */
+    const showSparkline = (ele, value, type, data_points = 10) => {
+        value = parseFloat(value);
+        const chart = typeof $(ele).highcharts === 'function' && $(ele).highcharts();
+        if (!price_history[type]) { // No data, initialise array.
+            price_history[type] = [];
+        }
+        if (value) {
+            // Start adding point directly
+            if (chart) {
+                chart.series[0].addPoint({ y: value }, true, true);
+                return;
+            }
+            if (price_history[type].length < data_points) {
+                price_history[type].push({ y: value }); // accumulating data.
+            }
+        }
+        // Highcharts has not yet been initialised, Wait until all the data is collected.
+        if (!chart && price_history[type].length >= data_points) {
+            sparkline_options.series = [{
+                name: `Price ${type}`,
+                data: price_history[type],
+            }];
+            Highcharts.chart(ele, sparkline_options);
+        }
+    };
+
     const clearMapping = () => {
+        $('.amount_sparkline').each((i, e) => {
+            const chart = $(e).highcharts && $(e).highcharts();
+            if (chart) {
+                chart.destroy(); // Remove chart.
+            }
+        });
+        // Reset price history.
+        price_history = {};
         type_display_id_mapping = {};
     };
 
@@ -286,14 +421,16 @@ const Price = (() => {
         }
         processForgetProposals().then(() => {
             Object.keys(types).forEach((type_of_contract) => {
-                BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
-                    if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
-                        response.echo_req.passthrough.form_id === form_id) {
-                        commonTrading.hideOverlayContainer();
-                        Price.display(response, Contract.contractType()[Contract.form()]);
-                        commonTrading.hidePriceOverlay();
-                    }
-                } });
+                BinarySocket.send(Price.proposal(type_of_contract), {
+                    callback: (response) => {
+                        if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
+                            response.echo_req.passthrough.form_id === form_id) {
+                            commonTrading.hideOverlayContainer();
+                            Price.display(response, Contract.contractType()[Contract.form()]);
+                            commonTrading.hidePriceOverlay();
+                        }
+                    },
+                });
             });
         });
     };
