@@ -1,27 +1,12 @@
+var el_residence_list;
 window.onload = function() {
-    var frm_select_residence  = document.getElementById('frm_select_residence');
-    var frm_accept_disclaimer = document.getElementById('frm_accept_disclaimer');
+    var frm_select_residence     = document.getElementById('frm_select_residence');
+    var frm_accept_disclaimer    = document.getElementById('frm_accept_disclaimer');
     var frm_accept_second_notice = document.getElementById('frm_accept_second_notice');
-    var el_residence_list     = document.getElementById('residence_list');
+    el_residence_list            = document.getElementById('residence_list');
 
-    var ws = new WebSocket('wss://blue.binaryws.com/websockets/v3?app_id=1&l=' + getLanguage());
-
-    function sendResidenceList() {
-        ws.send(JSON.stringify({
-            residence_list: 1
-        }));
-    }
-
-    function populateResidenceList(residence_list) {
-        residence_list.forEach(function(res) {
-            var el_option = document.createElement('option');
-            el_option.text = res.text;
-            el_option.value = res.value;
-            el_residence_list.appendChild(el_option);
-        });
-        document.getElementById('disclaimer_form').classList.remove('invisible');
-        document.getElementsByClassName('barspinner')[0].classList.add('invisible');
-    }
+    // Get and then Populate residence list
+    getResidenceList();
 
     function isRestrictedCountry(val) {
         // restricted countries code
@@ -63,6 +48,7 @@ window.onload = function() {
             if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(val)) {
                 val = 'eu';
             }
+
             if (/^(ca|jp|sg|hk|uk|ch|eu)$/.test(val)) {
                 showSecondNotice(val);
             } else {
@@ -106,30 +92,41 @@ window.onload = function() {
             document.getElementById('frm_accept_notice_error').classList.remove('invisible');
         }
     })
-
-    if (ws.readyState === 1) {
-        sendResidenceList();
-    } else {
-        ws.onopen = function() {
-            sendResidenceList();
-        }
-    }
-
-    ws.onmessage = function(response) {
-        var data = JSON.parse(response.data);
-        populateResidenceList(data.residence_list);
-    }
 };
 
-function getParamValue(url, key) {
-    var regex   = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
-    var results = regex.exec(url);
-    if (!results || !results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+function getResidenceList() {
+    var residence_list = JSON.parse(sessionStorage.getItem('residence_list') || null);
+    if (residence_list) {
+        populateResidenceList(residence_list);
+    } else {
+        var ws = wsConnect();
+        function sendResidenceList() {
+            wsSend(ws, { residence_list: 1 });
+        }
+
+        if (ws.readyState === 1) {
+            sendResidenceList();
+        } else {
+            ws.onopen = sendResidenceList;
+        }
+
+        ws.onmessage = function(msg) {
+            var response = JSON.parse(msg.data);
+            if (response.residence_list) {
+                populateResidenceList(response.residence_list);
+                setSession('residence_list', JSON.stringify(response.residence_list));
+            }
+        }
+    }
 }
 
-function getLanguage() {
-    var all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
-    var language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return all_languages.indexOf(l) >= 0; });
-    return language || 'en';
+function populateResidenceList(residence_list) {
+    residence_list.forEach(function(res) {
+        var el_option = document.createElement('option');
+        el_option.text  = res.text;
+        el_option.value = res.value;
+        el_residence_list.appendChild(el_option);
+    });
+    document.getElementById('loading').classList.add('invisible');
+    document.getElementById('disclaimer_form').classList.remove('invisible');
 }

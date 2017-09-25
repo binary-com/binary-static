@@ -22,6 +22,11 @@ h1, h2, h3 {
     font-weight: 500 !important;
 }
 
+button {
+    outline: none;
+    text-transform: none !important;
+}
+
 .container {
     max-width: 1200px !important;
 }
@@ -86,6 +91,12 @@ hr {
     margin: 20px;
 }
 
+.icon--sm {
+    width: 32px;
+    height: 32px;
+    margin: 20px;
+}
+
 .box {
     border: 1px solid $COLOR_DARK_BLUE;
     margin: 15px 0;
@@ -130,7 +141,7 @@ hr {
     right: 0;
     left: 0;
     width: 80vw;
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -168,6 +179,13 @@ hr {
 
 .chart-heading-left {
     left: 0;
+}
+
+.chart-note {
+    margin: auto;
+    font-style: italic;
+    font-weight: bold;
+    color: $COLOR_BLUE_SHADE;
 }
 
 // What are binary options section
@@ -368,10 +386,6 @@ input[type='text']:focus, input[type='submit']:focus {
 
 #faq-section {
     padding: 100px 15px;
-
-    #faq-btn {
-        text-transform: none !important;
-    }
 }
 
 .faq {
@@ -407,7 +421,6 @@ input[type='text']:focus, input[type='submit']:focus {
     button {
         padding: 20px 30px;
         font-size: 28px;
-        text-transform: none;
     }
 }
 
@@ -461,6 +474,54 @@ input[type='text']:focus, input[type='submit']:focus {
     text-transform: uppercase;
 }
 
-button {
-    outline: none;
+#board-of-directors {
+    position: relative;
+    border-top: 5px solid $COLOR_ORANGE;
+
+    img {
+        display: block;
+        margin: auto;
+        max-width: 200px;
+    }
+    a {
+        display: inline-block;
+    }
+    h2 {
+        position: absolute;
+        padding: 35px 15px;
+        color: $COLOR_WHITE;
+        background-color: $COLOR_ORANGE;
+    }
+    h4 {
+        margin: 1em 0;
+    }
+}
+
+.social--linkedin {
+    content: url('../images/ico/icons/linkedin.svg');
+}
+
+.social--twitter {
+    content: url('../images/ico/icons/twitter.svg');
+}
+
+.social--youtube {
+    content: url('../images/ico/icons/youtube.svg');
+}
+
+.acquired-bg {
+    position: relative;
+    background: url('../images/ico/images/img5@2x.png') no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#acquired-section {
+    margin-bottom: 160px;
+
+    h2 {
+        line-height: 1.4;
+    }
 }
