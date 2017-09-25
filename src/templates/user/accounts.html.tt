@@ -8,10 +8,12 @@
     <h1>[% l("Create New Account") %]</h1>
 
     <div class='invisible' id="new_accounts_wrapper">
-        [% INCLUDE table scroll=1 id='new_accounts' data={
-        thead=[
-            [{ text=l("Account") }, { text=l("Available Markets") }, { text=l("Available Currencies") }, { text=l("Action") }],
-        ]} %]
+        <form id='new_accounts'>
+            [% INCLUDE table scroll=1 data={
+            thead=[
+                [{ text=l("Account") }, { text=l("Available Markets") }, { text=l("Available Currencies") }, { text=l("Action") }],
+            ]} %]
+        </form>
         <div id="note" class="invisible fill-bg-color gr-padding-10 gr-gutter">
             <div class="gr-gutter hint">
                 [% l("Note: You can only have one fiat currency account and one of each cryptocurrency account.") %]
