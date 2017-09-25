@@ -32,7 +32,6 @@ const Price = (() => {
 
     let type_display_id_mapping = {};
     let form_id                 = 0;
-    let price_history           = {}; // For saving price history, which is displayed in the sparkline.
     let Highcharts;
     const sparkline_options = {
         chart: {
@@ -335,30 +334,21 @@ const Price = (() => {
     const showSparkline = (ele, val, type, data_points = 10) => {
         const value = parseFloat(val);
         const chart = typeof $(ele).highcharts === 'function' && $(ele).highcharts();
-        if (!price_history[type]) { // No data, initialise array.
-            price_history[type] = [];
-        }
         if (value) {
-            // Start adding point directly
-            if (chart) {
+            if (chart) { // Start adding point
                 if(chart.series[0].data.length < data_points){
                     chart.series[0].addPoint({ y: value }, true);
                 } else {
                     chart.series[0].addPoint({ y: value }, true, true);
                 }
-                return;
+                
+            } else { // Highcharts has not yet been initialised.
+                sparkline_options.series = [{
+                    name: `Price ${type}`,
+                    data: [{y: value}],
+                }];
+                Highcharts.chart(ele, sparkline_options);
             }
-            if (price_history[type].length < data_points) {
-                price_history[type].push({ y: value }); // accumulating data.
-            }
-        }
-        // Highcharts has not yet been initialised, Wait until all the data is collected.
-        if (!chart) {
-            sparkline_options.series = [{
-                name: `Price ${type}`,
-                data: price_history[type],
-            }];
-            Highcharts.chart(ele, sparkline_options);
         }
     };
 
@@ -369,8 +359,6 @@ const Price = (() => {
                 chart.destroy(); // Remove chart.
             }
         });
-        // Reset price history.
-        price_history = {};
         type_display_id_mapping = {};
     };
 
