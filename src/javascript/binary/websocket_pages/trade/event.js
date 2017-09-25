@@ -141,12 +141,6 @@ const TradingEvents = (() => {
                     // get ticks for current underlying
                     GetTicks.request(underlying);
                     commonTrading.displayTooltip(Defaults.get('market'), underlying);
-
-                    // sync digits_underlying select dropdown with underlying
-                    const underlyingText = $('#underlying :selected').text();
-                    $('#digit_info_underlying').text(underlyingText);
-                    $('#digit_underlying').val(underlying).change();
-                    GetTicks.populateDigits(underlying);
                 }
             });
         }

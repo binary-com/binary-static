@@ -125,18 +125,8 @@ const GetTicks = (() => {
         }
     };
 
-    const populateDigits = (value) => {
-        const tick = $('#tick_count').val() || 100;
-        request('', {
-            ticks_history: value,
-            count        : tick.toString(),
-            end          : 'latest',
-        });
-    };
-
     return {
         request,
-        populateDigits,
     };
 })();
 

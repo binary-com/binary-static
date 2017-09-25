@@ -57,11 +57,9 @@ const TradingAnalysis = (() => {
      */
     const loadAnalysisTab = (tab) => {
         const current_tab = tab || getActiveTab();
-
         $('#betsBottomPage').find('li').removeClass('active');
         $(`#${current_tab}`).addClass('active');
         toggleActiveAnalysisTabs();
-
         JapanPortfolio.init();
         if (State.get('is_mb_trading')) {
             showChart();
@@ -73,8 +71,34 @@ const TradingAnalysis = (() => {
             if (current_tab === 'tab_graph') {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
+                const populateDigits = (value) => {
+                    const tick = $('#tick_count').val() || 100;
+                    GetTicks.request('', {
+                        ticks_history: value,
+                        count        : tick.toString(),
+                        end          : 'latest',
+                    });
+                };
+
                 const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
-                GetTicks.populateDigits(underlying);
+                populateDigits(underlying);
+
+                const syncDigits = () => {
+                    if(getActiveTab() === 'tab_last_digit' && getActiveTab() !== 'tab_graph' && getActiveTab() !== 'tab_explanation') {
+                        if($('#digit_underlying option:selected').val() !== $('#underlying option:selected').val()) {
+                            if($('#contract_markets option:selected').val() === 'volidx' || $('#contract_markets option:selected').val() === 'random_index' || $('#contract_markets option:selected').val() === 'random_daily') {
+                                const parent_underlying = $('#underlying option:selected').val();
+                                populateDigits(parent_underlying);
+                                const underlyingText = $('#underlying :selected').text();
+                                $('#digit_info_underlying').text(underlyingText);
+                                $('#digit_underlying').val(parent_underlying).change();
+                            }
+                        }
+                    }
+                };
+                $('#contract_markets').off('change').on('change',syncDigits);
+                $('#underlying').off('change').on('change',syncDigits);
+
             } else if (current_tab === 'tab_explanation') {
                 showExplanation();
             }
