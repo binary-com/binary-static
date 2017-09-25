@@ -49,7 +49,7 @@ window.onload = function () {
     };
 
     // Store gclid
-    var gclid = getParamValue(window.top.location.href, 'gclid');
+    var gclid = getParamValue(document.referrer, 'gclid');
     if (gclid) {
         localStorage.setItem('gclid', gclid);
     }
