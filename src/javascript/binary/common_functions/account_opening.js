@@ -169,6 +169,7 @@ const AccountOpening = (() => {
                 validation = { selector: `#${id}`, validations: ['req'] };
                 if (id === 'not_pep') {
                     validation.exclude_request = 1;
+                    validation.validations = [['req', { message: localize('Please confirm that you are not a politically exposed person.') }]];
                 }
                 validations.push(validation);
             }
