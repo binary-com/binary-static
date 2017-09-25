@@ -213,6 +213,7 @@ sub _texts {
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
         push @texts, localize('Minimum of [_1] characters required.');
+        push @texts, localize('Please confirm that you are not a politically exposed person.');
         #strings for trading times page
         push @texts, localize('Asset');
         push @texts, localize('Opens');
@@ -523,6 +524,7 @@ sub _texts {
         push @texts, localize('Gaming');
         push @texts, localize('Virtual');
         push @texts, localize('Real');
+        push @texts, localize('Counterparty');
 
         # currency names
         push @texts, localize('Bitcoin');

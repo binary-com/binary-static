@@ -324,7 +324,7 @@
                         <div class="chart">
                             <h5 class="chart-heading chart-heading-left">[% l("Employees and Contractors") %]</h5>
                             <img src="[% request.url_for('images/ico/images/nec_chart.svg') %]" />
-                            <p>[% l("We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in three countries: Malaysia, Malta and Japan.") %]</p>
+                            <p>[% l("We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across four offices in three countries: Malaysia, Malta and Japan.") %]</p>
                         </div>
                     </div>
                     <div class="vertical-line"></div>
