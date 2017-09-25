@@ -1,5 +1,6 @@
 const localize              = require('../base/localize').localize;
 const addComma              = require('../common_functions/currency').addComma;
+const Password              = require('../base/check_password');
 const urlParam              = require('../base/url').param;
 const isEmptyObject         = require('../base/utility').isEmptyObject;
 const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
@@ -103,7 +104,14 @@ const Validation = (() => {
         return false;
     };
     const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);
-    const validPassword     = value => /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value);
+    const validPassword     = (value, options, field) => {
+        if (/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value)) {
+            Password.checkPassword(document.getElementById(field.selector.slice(1)));
+            return true;
+        }
+        // else
+        return false;
+    };
     const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d]+/.test(value);
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><|]+/.test(value);
     const validAddress      = value => !/[`~!#$%^&*)(_=+[}{\]\\";:?><|]+/.test(value);
@@ -236,6 +244,7 @@ const Validation = (() => {
 
     const showError = (field, message) => {
         clearError(field);
+        Password.removeCheck(document.getElementById(field.selector.slice(1)));
         field.$error.text(localize(message)).setVisibility(1);
     };
 

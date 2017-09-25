@@ -360,3 +360,15 @@ button .barspinner.white {
         }
     }
 }
+
+#days_to_crack {
+    &.red {
+        color: $COLOR_RED;
+    }
+    &.yellow {
+        color: $COLOR_ACTIVE;
+    }
+    &.green {
+        color: $COLOR_GREEN;
+    }
+}
