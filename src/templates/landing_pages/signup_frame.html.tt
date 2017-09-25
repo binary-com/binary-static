@@ -7,6 +7,12 @@
     <style type="text/css">
         body {
             background: transparent !important;
+            display: flex;
+            flex-direction: column;
+        }
+        .home-content {
+            margin-top: auto;
+            margin-bottom: auto;
         }
     </style>
     <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
