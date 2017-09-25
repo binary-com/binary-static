@@ -418,6 +418,13 @@ sub _texts {
         push @texts, localize('Reference ID');
         push @texts, localize('Remaining Time');
         push @texts, localize('Barrier Change');
+        push @texts, localize('Audit');
+        push @texts, localize('Remark');
+        push @texts, localize('If you select a <strong>start time</strong> of "Now", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter.');
+        push @texts, localize('If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time.');
+        push @texts, localize('The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>.');
+        push @texts, localize('If you select a <strong>start time</strong> of "Now", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).');
+        push @texts, localize('If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time.');
         # strings for financial assessment
         push @texts, localize('Please select a value');
         # Strings for authorised_apps
