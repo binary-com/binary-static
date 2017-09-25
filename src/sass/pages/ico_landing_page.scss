@@ -22,6 +22,11 @@ h1, h2, h3 {
     font-weight: 500 !important;
 }
 
+button {
+    outline: none;
+    text-transform: none !important;
+}
+
 .container {
     max-width: 1200px !important;
 }
@@ -381,10 +386,6 @@ input[type='text']:focus, input[type='submit']:focus {
 
 #faq-section {
     padding: 100px 15px;
-
-    #faq-btn {
-        text-transform: none !important;
-    }
 }
 
 .faq {
@@ -420,7 +421,6 @@ input[type='text']:focus, input[type='submit']:focus {
     button {
         padding: 20px 30px;
         font-size: 28px;
-        text-transform: none;
     }
 }
 
@@ -474,10 +474,6 @@ input[type='text']:focus, input[type='submit']:focus {
     text-transform: uppercase;
 }
 
-button {
-    outline: none;
-}
-
 #board-of-directors {
     position: relative;
     border-top: 5px solid $COLOR_ORANGE;
@@ -523,11 +519,9 @@ button {
 }
 
 #acquired-section {
+    margin-bottom: 160px;
+
     h2 {
         line-height: 1.4;
     }
-    button {
-        text-transform: none !important;
-    }
-    margin-bottom: 200px;
 }
