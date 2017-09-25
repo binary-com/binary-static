@@ -300,3 +300,118 @@ hr {
         padding: 0;
     }
 }
+
+// Agenda
+.agenda {
+    position: relative;
+    padding-top: 40px;
+
+    &__vertical-line {      // do not use self closing elements i.e. <hr /> with this class
+        position: absolute; // browsers doesn't support pseudo elements on self-closing elements
+        height: 95%;
+        border-left: 1px solid $COLOR_GRAY;
+        margin: 0;
+        left: 50%;
+    }
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        height: 65px;
+        margin: 40px 0;
+
+        ul {
+            width: 50%;
+
+            li {
+                margin: 10px 0;
+            }
+        }
+        &__icon {
+            position: absolute;
+            display: block;
+
+            &:after {
+                position: absolute;
+                content: '';
+                top: 50%;
+                width: 60%;
+                height: 1px;
+                background: $COLOR_GRAY;
+                @media (max-width: 768px) {
+                    display: none;
+                }
+            }
+        }
+        &__time {
+            font-weight: bold;
+            font-size: 22px;
+        }
+        &:nth-of-type(even) {
+            .agenda__box__icon {
+                &:after {
+                    left: -60%;
+                }
+            }
+            ul {
+                text-align: right;
+                margin-right: 60%;
+                @media (max-width: 400px) {
+                    margin-right: 65%;
+                }
+            }
+        }
+        &:nth-of-type(odd) {
+            .agenda__box__icon {
+                &:after {
+                    right: -60%;
+                }
+            }
+            ul {
+                text-align: left;
+                margin-left: 60%;
+                @media (max-width: 400px) {
+                    margin-left: 65%;
+                }
+            }
+        }
+    }
+}
+
+// Agenda icons
+.icon-finish:before {
+    content: url('../images/hackathon/finish.svg');
+}
+
+.icon-lunch:before {
+    content: url('../images/hackathon/lunch.svg');
+}
+
+.icon-microphone:before {
+    content: url('../images/hackathon/microphone.svg');
+}
+
+.icon-photos:before {
+    content: url('../images/hackathon/photos.svg');
+}
+
+.icon-presentation:before {
+    content: url('../images/hackathon/presentation.svg');
+}
+
+.icon-register:before {
+    content: url('../images/hackathon/register.svg');
+}
+
+.icon-start:before {
+    content: url('../images/hackathon/start.svg');
+}
+
+.icon-tea_time:before {
+    content: url('../images/hackathon/tea_time.svg');
+}
+
+.icon-winner:before {
+    content: url('../images/hackathon/winner.svg');
+}
