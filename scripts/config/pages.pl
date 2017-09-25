@@ -119,6 +119,7 @@ sub all_pages {
         ['logged_inws',                'global/logged_in',       undef],
         ['redirect',                   'global/logged_in',       undef, 'Redirecting...'],
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],
+        ['explanation',                'bet/explanation',        undef],
 
         ['ico',                        'landing_pages/ico',            undef, 'Initial Coin Offering', 'ja'],
         ['ico-disclaimer',             'landing_pages/ico_disclaimer', undef, 'Initial Coin Offering Disclaimer', 'ja'],

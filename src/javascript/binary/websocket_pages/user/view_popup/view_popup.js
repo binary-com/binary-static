@@ -8,6 +8,7 @@ const toJapanTimeIfNeeded  = require('../../../base/clock').toJapanTimeIfNeeded;
 const setViewPopupTimer    = require('../../../base/clock').setViewPopupTimer;
 const localize             = require('../../../base/localize').localize;
 const State                = require('../../../base/storage').State;
+const urlFor               = require('../../../base/url').urlFor;
 const getPropertyValue     = require('../../../base/utility').getPropertyValue;
 const isEmptyObject        = require('../../../base/utility').isEmptyObject;
 const jpClient             = require('../../../common_functions/country_base').jpClient;
@@ -303,15 +304,42 @@ const ViewPopup = (() => {
         div.setVisibility(0);
         div.appendChild(table);
 
-        div.appendChild(createExplanation('Entry Spot', [
-            'If you select a <strong>start time</strong> of "Now", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter.',
-            'If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time.',
-        ]));
-        div.appendChild(createExplanation('Exit Spot', [
-            'The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>.',
-            'If you select a <strong>start time</strong> of "Now", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).',
-            'If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time.',
-        ]));
+        let explanation_section = 'explain_';
+        if (/expiry/i.test(contract.contract_type)) {
+            explanation_section += 'endsinout';
+        } else if (/asian/i.test(contract.contract_type)) {
+            explanation_section += 'asian';
+        } else if (/even|odd/i.test(contract.contract_type)) {
+            explanation_section += 'evenodd';
+        } else if (/over|under/i.test(contract.contract_type)) {
+            explanation_section += 'overunder';
+        } else if (/digit/i.test(contract.contract_type)) {
+            explanation_section += 'digits';
+        } else if (/upordown|range/i.test(contract.contract_type)) {
+            explanation_section += 'staysinout';
+        } else if (/touch/i.test(contract.contract_type)) {
+            explanation_section += 'touchnotouch';
+        } else if (/call|put/i.test(contract.contract_type)) {
+            explanation_section += +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower';
+        }
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState !== 4 || this.status !== 200) {
+                return;
+            }
+            const div_response = document.createElement('div');
+            div_response.innerHTML = this.responseText;
+
+            const div_to_show = div_response.querySelector(`#${explanation_section}`);
+            if (div_to_show) {
+                div_to_show.classList.add('align-start', 'gr-padding-20', 'gr-12');
+                div.appendChild(div_to_show);
+                div_to_show.setVisibility(1);
+            }
+        };
+        xhttp.open('GET', urlFor('explanation'), true);
+        xhttp.send();
 
         div.insertAfter(document.getElementById('sell_details_chart_wrapper'));
     };
@@ -325,7 +353,7 @@ const ViewPopup = (() => {
             const td_empty  = document.createElement('td');
 
             td_date.textContent   = date && !isNaN(date) ? moment.utc(+date * 1000).format('YYYY-MM-DD HH:mm:ss') : date;
-            td_tick.textContent   = tick;
+            td_tick.textContent   = addComma(tick);
             td_remark.textContent = remark;
 
             td_date.className = 'audit-dates';
@@ -344,6 +372,9 @@ const ViewPopup = (() => {
 
         const parseTicksResponse = (response, tick_time, remark) => (
             new Promise((resolve) => {
+                if (!response.history) {
+                    return;
+                }
                 response.history.times.forEach((time, idx) => {
                     if (+time === +tick_time) {
                         let i = idx - 2;
@@ -361,48 +392,31 @@ const ViewPopup = (() => {
                 });
             })
         );
-        
+
         BinarySocket.send({
             ticks_history: contract.underlying,
             start        : +contract.entry_tick_time - (5 * 60),
             end          : +contract.entry_tick_time + (5 * 60),
         }).then((response_entry) => {
             parseTicksResponse(response_entry, contract.entry_tick_time, localize('Entry Spot')).then(() => {
-                BinarySocket.send({
-                    ticks_history: contract.underlying,
-                    start        : +contract.exit_tick_time - (5 * 60),
-                    end          : +contract.exit_tick_time + (5 * 60),
-                }).then((response_exit) => {
-                    createAuditRow();
-                    parseTicksResponse(response_exit, contract.exit_tick_time, localize('Exit Spot'));
-                }).then(() => {
-                    showLocalTimeOnHover('.audit-dates');
+                // don't show exit tick information if missing or manual sold
+                if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)) {
+                    BinarySocket.send({
+                        ticks_history: contract.underlying,
+                        start        : +contract.exit_tick_time - (5 * 60),
+                        end          : +contract.exit_tick_time + (5 * 60),
+                    }).then((response_exit) => {
+                        createAuditRow();
+                        parseTicksResponse(response_exit, contract.exit_tick_time, localize('Exit Spot'));
+                    }).then(() => {
+                        showLocalTimeOnHover('.audit-dates');
+                        setAuditVisibility(1);
+                    });
+                } else {
                     setAuditVisibility(1);
-                });
+                }
             });
         });
-    };
-
-    const createExplanation = (header, array_text) => {
-        const div = document.createElement('div');
-        div.classList = 'align-start gr-12 gr-padding-20';
-
-        const h3 = document.createElement('h3');
-        h3.textContent = localize(header);
-        div.appendChild(h3);
-
-        const p = document.createElement('p');
-        array_text.forEach((text, idx) => {
-            const span = document.createElement('span');
-            span.innerHTML = localize(text);
-            if (idx > 0) {
-                p.appendChild(document.createElement('br'));
-            }
-            p.appendChild(span);
-            div.appendChild(p);
-        });
-
-        return div;
     };
 
     const makeTemplate = () => {
