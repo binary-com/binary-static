@@ -25,7 +25,7 @@ const BinaryPjax = (() => {
 
         const url     = window.location.href;
         const title   = document.title;
-        const content = document.querySelector(content_selector);
+        const content = container.querySelector(content_selector);
 
         // put current content to cache, so we won't need to load it again
         if (content) {

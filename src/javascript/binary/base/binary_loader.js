@@ -113,7 +113,10 @@ const BinaryLoader = (() => {
 
         elementInnerHtml(content, div_container);
         content.appendChild(div_notice);
-        content.getElementsByTagName('a')[0].addEventListener('click', () => { Login.redirectToLogin(); });
+        const link = content.getElementsByTagName('a')[0];
+        if (link) {
+            link.addEventListener('click', () => { Login.redirectToLogin(); });
+        }
     };
 
     return {
