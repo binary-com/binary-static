@@ -463,7 +463,7 @@ sub _texts {
         push @texts, localize('Indicates required field');
         push @texts, localize('Verification code is wrong. Please use the link sent to your email.');
         push @texts, localize('The password you entered is one of the world\'s most commonly used passwords. You should not be using this password.');
-        push @texts, localize('It takes approximately [_1][_2] to crack this password.');
+        push @texts, localize('Hint: it takes approximately [_1][_2] to crack this password.');
         push @texts, localize('thousand');
         push @texts, localize('million');
 

@@ -23,17 +23,13 @@ const checkPassword = (password_selector) => {
             }
         }
         div.textContent = localize(
-            'It takes approximately [_1][_2] to crack this password.', [
+            'Hint: it takes approximately [_1][_2] to crack this password.', [
                 (daysToCrack === 1000000000 ? '>' : ''),
                 years ? `${years} ${localize('years')}` : `${daysToCrack} ${localize('days')}`,
             ],
         );
     }
-    let color = 'red';
-    if (daysToCrack > 7) {
-        color = daysToCrack < 30 ? 'yellow' : 'green';
-    }
-    div.classList = `days_to_crack hint ${color}`;
+    div.classList = `days_to_crack fill-bg-color hint ${daysToCrack < 30 ? 'red' : 'green'}`;
     el_password.parentNode.appendChild(div);
 };
 
