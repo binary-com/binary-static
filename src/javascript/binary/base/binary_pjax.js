@@ -38,10 +38,11 @@ const BinaryPjax = (() => {
         for (let i = 0; i < links_accounts.length; i++) {
             links_accounts[i].addEventListener('click', handleClick);
         }
-        const links_document = document.getElementsByTagName('a');
-        for (let i = 0; i < links_document.length; i++) {
-            links_document[i].addEventListener('click', handleClick);
-        }
+        document.addEventListener('click', (event) => {
+            if (event.target.nodeName === 'A') {
+                handleClick(event);
+            }
+        });
         window.addEventListener('popstate', handlePopstate);
     };
 
