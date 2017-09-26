@@ -15,31 +15,20 @@ const CommonPasswords = require('./common-passwords');
  * common passwords list is from Mark Burnett's password collection (which
  * is excellent). You can of course use your own password file instead.
  */
-const Mellt = function () {
+const Mellt = (() => {
 
-    /**
-     * @var integer HashesPerSecond The number of attempts per second you expect
-     * an attacker to be able to attempt. Set to 1 billion by default.
-     */
-    this.HashesPerSecond = 1000000000;
-
-    /**
-     * @var array $CharacterSets An array of strings, each string containing a
-     * character set. These should proceed in the order of simplest (0-9) to most
-     * complex (all characters). More complex = more characters.
-     */
-    this.CharacterSets = [
-        // We're making some guesses here about human nature (again much of this is
-        // based on the TGP password strength checker, and Timothy "Thor" Mullen
-        // deserves the credit for the thinking behind this). Basically we're combining
-        // what we know about users (SHIFT+numbers are more common than other
-        // punctuation for example) combined with how an attacker will attack a
-        // password (most common letters first, expanding outwards).
-        //
-        // If you want to support passwords that use non-english characters, and
-        // your attacker knows this (for example, a Russian site would be expected
-        // to contain passwords in Russian characters) add your characters to one of
-        // the sets below, or create new sets and insert them in the right places.
+    // We're making some guesses here about human nature (again much of this is
+    // based on the TGP password strength checker, and Timothy "Thor" Mullen
+    // deserves the credit for the thinking behind this). Basically we're combining
+    // what we know about users (SHIFT+numbers are more common than other
+    // punctuation for example) combined with how an attacker will attack a
+    // password (most common letters first, expanding outwards).
+    //
+    // If you want to support passwords that use non-english characters, and
+    // your attacker knows this (for example, a Russian site would be expected
+    // to contain passwords in Russian characters) add your characters to one of
+    // the sets below, or create new sets and insert them in the right places.
+    const character_sets = [
         "0123456789",
         "abcdefghijklmnopqrstuvwxyz",
         "abcdefghijklmnopqrstuvwxyz0123456789",
@@ -48,9 +37,6 @@ const Mellt = function () {
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-=_+",
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-=_+[]\"{}|;':,./<>?`~"
     ];
-};
-
-Mellt.prototype = {
 
     /**
      * Tests password strength by simulating how long it would take a cracker to
@@ -76,39 +62,36 @@ Mellt.prototype = {
      * force a password, obviously more if you're a bank or other secure system.
      * @throws Exception If an error is encountered.
      */
-    CheckPassword: function (password) {
+    const checkPassword = (password) => {
 
         // First check passwords in the common password file if available.
         // We do this because "password" takes 129 seconds, but is the first
         // thing an attacker will try.
-        for (let t = 0; t < CommonPasswords.length; t++) {
-            if (CommonPasswords[t] === password.toLowerCase()) {
-                // If their password exists in the common file, then it's
-                // zero time to crack this terrible password.
-                return -1;
-            }
+        if (CommonPasswords.find(pass => pass === password.toLowerCase())) {
+            // If their password exists in the common file, then it's
+            // zero time to crack this terrible password.
+            return -1;
         }
 
-        // Figure out which character set the password is using (based on the most
-        // "complex" character in it).
-        let base = '';
-        let baseKey = null;
-        for (let t = 0; t < password.length; t++) {
-            const char = password[t];
-            let foundChar = false;
-            for (let characterSetKey = 0; characterSetKey < this.CharacterSets.length; characterSetKey++) {
-                const characterSet = this.CharacterSets[characterSetKey];
-                if (baseKey <= characterSetKey && characterSet.indexOf(char) > -1) {
-                    baseKey = characterSetKey;
-                    base = characterSet;
-                    foundChar = true;
-                    break;
+        // Figure out which character set the password is using (based on the most "complex" character in it).
+        let base     = '';
+        let base_key = null;
+        let found_char;
+        for (let i = 0; i < password.length; i++) {
+            found_char = false;
+            character_sets.some((character_set, idx) => {
+                if (base_key <= idx && character_set.indexOf(password[i]) > -1) {
+                    base_key   = idx;
+                    base       = character_set;
+                    found_char = true;
+                    return true;
                 }
-            }
+                return false;
+            });
             // If the character we were looking for wasn't anywhere in any of the
             // character sets, assign the largest (last) character set as default.
-            if (!foundChar) {
-                base = this.CharacterSets[this.CharacterSets.length - 1];
+            if (!found_char) {
+                base = character_sets[character_sets.length - 1];
                 break;
             }
         }
@@ -127,9 +110,7 @@ Mellt.prototype = {
         // ignore anything between 6530 and 9999. Using this logic, 'aaa' would be a worse
         // password than 'zzz', because the attacker would encounter 'aaa' first.
         let attempts = 0;
-        const charactersInBase = base.length;
-        const charactersInPassword = password.length;
-        for (let position = 0; position < charactersInPassword; position++) {
+        for (let i = 0; i < password.length; i++) {
             // We power up to the reverse position in the string. For example, if we're trying
             // to hack the 4 character PING code in the example above:
             // First number * (number of characters possible in the charset ^ length of password)
@@ -141,14 +122,14 @@ Mellt.prototype = {
             // and add on the last number
             // 9
             // Totals: 6000 + 500 + 20 + 9 = 6529 attempts before we encounter the correct password.
-            const powerOf = charactersInPassword - position - 1;
+            const power_of = password.length - i - 1;
             // Character position within the base set. We add one on because strpos is base
             // 0, we want base 1.
-            const charAtPosition = base.indexOf(password[position]) + 1;
+            const char_at_position = base.indexOf(password[i]) + 1;
             // If we're at the last character, simply add it's position in the character set
             // this would be the "9" in the pin code example above.
-            if (powerOf === 0) {
-                attempts = attempts + charAtPosition;
+            if (power_of === 0) {
+                attempts += char_at_position;
             }
             // Otherwise we need to iterate through all the other characters positions to
             // get here. For example, to find the 5 in 25 we can't just guess 2 and then 5
@@ -161,32 +142,28 @@ Mellt.prototype = {
                 // that by this character's position.
 
                 // Multiplier is the (10^4) or (10^3), etc in the pin code example above.
-                const multiplier = Math.pow(charactersInBase, powerOf);
                 // New attempts is the number of attempts we're adding for this position.
-                const newAttempts = charAtPosition * multiplier;
                 // Add that on to our existing number of attempts.
-                attempts = attempts + newAttempts;
+                attempts += char_at_position * Math.pow(base.length, power_of);
             }
         }
 
         // We can (worst case) try a billion passwords a second. Calculate how many days it
         // will take us to get to the password.
-        const perDay = this.HashesPerSecond * 60 * 60 * 24;
-
         // This allows us to calculate a number of days to crack. We use days because anything
         // that can be cracked in less than a day is basically useless, so there's no point in
         // having a smaller granularity (hours for example).
-        const days = attempts / perDay;
+        const days = attempts / (1000000000 * 60 * 60 * 24);
 
         // If it's going to take more than a billion days to crack, just return a billion. This
         // helps when code outside this function isn't using bcmath. Besides, if the password
         // can survive 2.7 million years it's probably ok.
-        if (days > 1000000000) {
-            return 1000000000;
-        }
+        return (days > 1000000000 ? 1000000000 : Math.round(days));
+    };
 
-        return Math.round(days);
+    return {
+        checkPassword,
     }
-};
+})();
 
-module.exports = new Mellt();
+module.exports = Mellt;

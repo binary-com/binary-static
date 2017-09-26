@@ -106,7 +106,7 @@ const Validation = (() => {
     const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);
     const validPassword     = (value, options, field) => {
         if (/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value)) {
-            Password.checkPassword(document.getElementById(field.selector.slice(1)));
+            Password.checkPassword(field.selector);
             return true;
         }
         // else
@@ -244,7 +244,7 @@ const Validation = (() => {
 
     const showError = (field, message) => {
         clearError(field);
-        Password.removeCheck(document.getElementById(field.selector.slice(1)));
+        Password.removeCheck(field.selector);
         field.$error.text(localize(message)).setVisibility(1);
     };
 

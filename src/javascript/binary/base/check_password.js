@@ -1,14 +1,15 @@
 const localize = require('./localize').localize;
 const Mellt    = require('../../lib/Mellt/Mellt');
 
-const checkPassword = (el_password) => {
-    let div = document.getElementById('days_to_crack');
-    if (!div) {
-        div    = document.createElement('div');
-        div.id = 'days_to_crack';
+const checkPassword = (password_selector) => {
+    const el_password = document.querySelector(password_selector);
+    if (!el_password) {
+        return;
     }
 
-    const daysToCrack = Mellt.CheckPassword(el_password.value.trim());
+    const div = el_password.parentNode.querySelector('.days_to_crack') || document.createElement('div');
+
+    const daysToCrack = Mellt.checkPassword(el_password.value.trim());
     if (daysToCrack < 0) {
         div.textContent = localize('The password you entered is one of the world\'s most commonly used passwords. You should not be using this password.');
     } else {
@@ -32,12 +33,12 @@ const checkPassword = (el_password) => {
     if (daysToCrack > 7) {
         color = daysToCrack < 30 ? 'yellow' : 'green';
     }
-    div.classList = `hint ${color}`;
+    div.classList = `days_to_crack hint ${color}`;
     el_password.parentNode.appendChild(div);
 };
 
-const removeCheck = (el_password) => {
-    const el_message  = el_password.parentNode.querySelector('#days_to_crack');
+const removeCheck = (password_selector) => {
+    const el_message = document.querySelector(password_selector).parentNode.querySelector('.days_to_crack');
     if (el_message) {
         el_message.remove();
     }
