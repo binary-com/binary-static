@@ -19,6 +19,7 @@
     <script src="[% request.url_for('js/landing_pages/signup_frame.js') _ '?' _ static_hash %]"></script>
 </head>
 <body>
+    [% PROCESS global/gtm.html.tt %]
     <div class="home-content">
         [% WRAPPER global/form_verify_email.html.tt class='secondary-bg-color' dark_button=1 text=l('Create Free Account') %]
             <div class="invisible" id="success">
