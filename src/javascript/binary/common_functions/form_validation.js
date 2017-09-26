@@ -1,9 +1,9 @@
+const Password              = require('./check_password');
+const addComma              = require('./currency').addComma;
+const compareBigUnsignedInt = require('./string_util').compareBigUnsignedInt;
 const localize              = require('../base/localize').localize;
-const addComma              = require('../common_functions/currency').addComma;
-const Password              = require('../base/check_password');
 const urlParam              = require('../base/url').param;
 const isEmptyObject         = require('../base/utility').isEmptyObject;
-const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
     const forms        = {};

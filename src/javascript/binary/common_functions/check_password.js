@@ -1,4 +1,4 @@
-const localize = require('./localize').localize;
+const localize = require('../base/localize').localize;
 const Mellt    = require('../../lib/Mellt/Mellt');
 
 const checkPassword = (password_selector) => {
