@@ -5,6 +5,7 @@ const Symbols            = require('../symbols');
 const Tick               = require('../tick');
 const Client             = require('../../../base/client');
 const localize           = require('../../../base/localize').localize;
+const createElement      = require('../../../base/utility').createElement;
 const elementInnerHtml   = require('../../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../common_functions/common_functions').elementTextContent;
 const isVisible          = require('../../../common_functions/common_functions').isVisible;
@@ -175,17 +176,13 @@ const Purchase_Beta = (() => {
             tick_elem.innerHTML = spot_elem.innerHTML = list_elem.innerHTML = '&nbsp;';
         }
         for (let i = 1; i <= duration; i++) {
-            const fragment = document.createElement('div');
-            fragment.classList.add('gr-grow');
+            const fragment = createElement('div', { class: 'gr-row' });
 
-            const digit_elem = document.createElement('div');
-            digit_elem.classList.add('digit');
-            digit_elem.id = `tick_digit_${i}`;
+            const digit_elem = createElement('div', { class: 'digit', id: `tick_digit_${i}` });
             elementInnerHtml(digit_elem, '&nbsp;');
             fragment.appendChild(digit_elem);
 
-            const number_elem = document.createElement('div');
-            number_elem.classList.add('number');
+            const number_elem = createElement('div', { class: 'number' });
             elementInnerHtml(number_elem, i);
             fragment.appendChild(number_elem);
 

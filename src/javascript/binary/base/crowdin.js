@@ -1,4 +1,5 @@
-const urlLang = require('./language').urlLang;
+const urlLang       = require('./language').urlLang;
+const createElement = require('./utility').createElement;
 
 const Crowdin = (() => {
     /**
@@ -20,10 +21,7 @@ const Crowdin = (() => {
             window._jipt = [];
             window._jipt.push(['project', 'binary-static']);
             /* eslint-enable no-underscore-dangle */
-            const script = document.createElement('script');
-            script.setAttribute('type', 'text/javascript');
-            script.setAttribute('src', `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`);
-            document.getElementsByTagName('body')[0].appendChild(script);
+            document.getElementsByTagName('body')[0].appendChild(createElement('script', { type: 'text/javascript', src: `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js` }));
         }
     };
 

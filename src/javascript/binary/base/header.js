@@ -5,6 +5,7 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
 const Url                 = require('./url');
+const createElement       = require('./utility').createElement;
 const elementInnerHtml    = require('../common_functions/common_functions').elementInnerHtml;
 const elementTextContent  = require('../common_functions/common_functions').elementTextContent;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
@@ -80,20 +81,12 @@ const Header = (() => {
                             elementInnerHtml(account_id[i], loginid);
                         }
                     } else {
-                        const link          = document.createElement('a');
-                        const div_loginid   = document.createElement('div');
-                        const div_separator = document.createElement('div');
-                        const li_type       = document.createElement('li');
+                        const link    = createElement('a', { href: `${'java'}${'script:;'}`, 'data-value': loginid });
+                        const li_type = createElement('li', { text: localized_type });
 
-                        link.setAttribute('href', `${'java'}${'script:;'}`);
-                        link.setAttribute('data-value', loginid);
-                        div_loginid.textContent = loginid;
-                        li_type.textContent     = localized_type;
-                        div_separator.className = 'separator-line-thin-gray';
-
-                        li_type.appendChild(div_loginid);
+                        li_type.appendChild(createElement('div', { text: loginid }));
                         link.appendChild(li_type);
-                        loginid_select.appendChild(link).appendChild(div_separator);
+                        loginid_select.appendChild(link).appendChild(createElement('div', { class: 'separator-line-thin-gray' }));
                     }
                 }
                 const loginid_list = document.getElementsByClassName('login-id-list');
@@ -147,8 +140,7 @@ const Header = (() => {
             const upgrade_msg     = document.getElementsByClassName('upgrademessage');
 
             const showUpgrade = (url, msg) => {
-                const span = document.createElement('span');
-                span.textContent = localize(msg);
+                const span = createElement('span', { text: localize(msg) });
 
                 for (let i = 0; i < upgrade_msg.length; i++) {
                     upgrade_msg[i].setVisibility(1);
@@ -189,17 +181,11 @@ const Header = (() => {
                         }
                         if (jp_account_status === 'jp_activation_pending') {
                             if (document.getElementsByClassName('activation-message').length === 0) {
-                                const div = document.createElement('div');
-                                div.className   = 'activation-message';
-                                div.textContent = ` ${localize('Your Application is Being Processed.')}`;
-                                document.getElementById('virtual-text').appendChild(div);
+                                document.getElementById('virtual-text').appendChild(createElement('div', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
                             }
                         } else if (jp_account_status === 'activated') {
                             if (document.getElementsByClassName('activated-message').length === 0) {
-                                const div = document.createElement('div');
-                                div.className   = 'activated-message';
-                                div.textContent = ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}`;
-                                document.getElementById('virtual-text').appendChild(div);
+                                document.getElementById('virtual-text').appendChild(createElement('div', { class: 'activated-message', text: ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}` }));
                             }
                         }
                     }

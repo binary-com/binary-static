@@ -6,6 +6,7 @@ const updateValues       = require('./update_values');
 const Client             = require('../../base/client');
 const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
+const createElement      = require('../../base/utility').createElement;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
 const isVisible          = require('../../common_functions/common_functions').isVisible;
@@ -185,16 +186,12 @@ const Purchase = (() => {
             };
 
             if (isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
-                const fragment = document.createElement('div');
-                fragment.classList.add('row');
-
-                const el1 = document.createElement('div');
-                el1.classList.add('col');
+                const fragment = createElement('div', { class: 'row' });
+                const el1      = createElement('div', { class: 'col' });
                 elementTextContent(el1, `${localize('Tick')} ${(spots.getElementsByClassName('row').length + 1)}`);
                 fragment.appendChild(el1);
 
-                const el2 = document.createElement('div');
-                el2.classList.add('col');
+                const el2     = createElement('div', { class: 'col' });
                 const date    = new Date(tick_d.epoch * 1000);
                 const hours   = padLeft(date.getUTCHours(), 2, '0');
                 const minutes = padLeft(date.getUTCMinutes(), 2, '0');
@@ -203,8 +200,7 @@ const Purchase = (() => {
                 fragment.appendChild(el2);
 
                 const tick = tick_d.quote.replace(/\d$/, replace);
-                const el3  = document.createElement('div');
-                el3.classList.add('col');
+                const el3  = createElement('div', { class: 'col' });
                 elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
 

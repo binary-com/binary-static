@@ -10,6 +10,7 @@ const Login            = require('./login');
 const Menu             = require('./menu');
 const State            = require('./storage').State;
 const Url              = require('./url');
+const createElement    = require('./utility').createElement;
 const elementInnerHtml = require('../common_functions/common_functions').elementInnerHtml;
 const checkLanguage    = require('../common_functions/country_base').checkLanguage;
 const scrollToTop      = require('../common_functions/scroll').scrollToTop;
@@ -169,9 +170,7 @@ const Page = (() => {
                 ['{brow_name}', '<a href="https://www.whatbrowser.org/" target="_blank">', '</a>']),
             reminder: 0, // show all the time
         };
-        const script = document.createElement('script');
-        script.setAttribute('src', src);
-        document.getElementsByTagName('body')[0].appendChild(script);
+        document.getElementsByTagName('body')[0].appendChild(createElement('script', { src }));
     };
 
     return {

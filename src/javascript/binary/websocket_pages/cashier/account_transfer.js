@@ -2,6 +2,7 @@ const BinarySocket       = require('../socket');
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
+const createElement      = require('../../base/utility').createElement;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
 const isCryptocurrency   = require('../../common_functions/currency').isCryptocurrency;
 const FormManager        = require('../../common_functions/form_manager');
@@ -33,7 +34,7 @@ const AccountTransfer = (() => {
 
         elementTextContent(el_transfer_from, `${client_loginid} ${currency_text}`);
 
-        const fragment_transfer_to   = document.createElement('div');
+        const fragment_transfer_to = document.createElement('div');
 
         accounts.forEach((account, idx) => {
             if (accounts[idx].loginid !== client_loginid) {
@@ -52,9 +53,8 @@ const AccountTransfer = (() => {
         if (fragment_transfer_to.childElementCount > 1) {
             el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
         } else {
-            const label = document.createElement('label');
+            const label = createElement('label', { 'data-value': fragment_transfer_to.innerText });
             label.appendChild(document.createTextNode(fragment_transfer_to.innerText));
-            label.setAttribute('data-value', fragment_transfer_to.innerText);
             label.id = 'transfer_to';
 
             el_transfer_to.parentNode.replaceChild(label, el_transfer_to);

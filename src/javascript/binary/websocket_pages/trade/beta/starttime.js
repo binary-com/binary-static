@@ -5,6 +5,7 @@ const getStartDateNode = require('../common_independent').getStartDateNode;
 const Defaults         = require('../defaults');
 const localize         = require('../../../base/localize').localize;
 const State            = require('../../../base/storage').State;
+const createElement    = require('../../../base/utility').createElement;
 
 /*
  * Handles start time display
@@ -44,9 +45,8 @@ const StartDates_Beta = (() => {
             }
 
             if (start_dates.has_spot) {
-                option  = document.createElement('option');
+                option  = createElement('option', { value: 'now' });
                 content = document.createTextNode(localize('Now'));
-                option.setAttribute('value', 'now');
                 option.appendChild(content);
                 fragment.appendChild(option);
                 has_now = 1;
@@ -71,8 +71,7 @@ const StartDates_Beta = (() => {
 
                 while (a.isBefore(b)) {
                     if (a.unix() - start.unix() > 5 * 60) {
-                        option = document.createElement('option');
-                        option.setAttribute('value', a.utc().unix());
+                        option = createElement('option', { value: a.utc().unix()} );
                         if (typeof first === 'undefined' && !has_now) {
                             first = a.utc().unix();
                         }

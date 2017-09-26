@@ -6,10 +6,7 @@
  */
 const showLoadingImage = (container, theme = 'dark') => {
     if (container) {
-        const div = document.createElement('div');
-        div.className = `barspinner ${theme}`;
-        div.innerHTML = Array.from(new Array(5)).map((x, i) => `<div class="rect${i + 1}"></div>`).join('');
-        container.innerHTML(div);
+        container.innerHTML(createElement('div', { class: `barspinner ${theme}`, html: Array.from(new Array(5)).map((x, i) => `<div class="rect${i + 1}"></div>`).join('') }));
     }
 };
 
@@ -45,10 +42,8 @@ const downloadCSV = (csv_contents, filename = 'data.csv') => {
     if (navigator.msSaveBlob) { // IE 10+
         navigator.msSaveBlob(new Blob([csv_contents], { type: 'text/csv;charset=utf-8;' }), filename);
     } else { // Other browsers
-        const csv              = `data:text/csv;charset=utf-8,${csv_contents}`;
-        const download_link    = document.createElement('a');
-        download_link.href     = encodeURI(csv);
-        download_link.download = filename;
+        const csv           = `data:text/csv;charset=utf-8,${csv_contents}`;
+        const download_link = createElement('a', { href: encodeURI(csv), download: filename });
 
         document.body.appendChild(download_link);
         download_link.click();
@@ -108,6 +103,28 @@ const clearable = (element) => {
 
 const toggleAddRemoveClass = condition => (condition ? 'add' : 'remove');
 
+/**
+ * Creates a DOM element and adds any attributes to it.
+ *
+ * @param tag_name: string of the tag to create, e.g. 'div', 'a', etc
+ * @param attributes: an object with all the attributes to assign, e.g. { id: '...', class: '...', html: '...', ... }
+ * @return the created DOM element
+ */
+const createElement = (tag_name, attributes) => {
+    const el = document.createElement(tag_name);
+    Object.keys(attributes).forEach((attr) => {
+        const value = attributes[attr];
+        if (attr === 'text') {
+            el.textContent = value;
+        } else if (attr === 'html') {
+            el.innerHTML = value;
+        } else {
+            el.setAttribute(attr, value);
+        }
+    });
+    return el;
+};
+
 module.exports = {
     showLoadingImage,
     getHighestZIndex,
@@ -117,4 +134,5 @@ module.exports = {
     getPropertyValue,
     handleHash,
     clearable,
+    createElement,
 };

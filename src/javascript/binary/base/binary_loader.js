@@ -6,8 +6,9 @@ const Header              = require('./header');
 const localize            = require('./localize').localize;
 const Login               = require('./login');
 const Page                = require('./page');
-const defaultRedirectUrl  = require('./url').defaultRedirectUrl;
 const isStorageSupported  = require('./storage').isStorageSupported;
+const defaultRedirectUrl  = require('./url').defaultRedirectUrl;
+const createElement       = require('./utility').createElement;
 const elementInnerHtml    = require('../common_functions/common_functions').elementInnerHtml;
 const BinarySocket        = require('../websocket_pages/socket');
 const BinarySocketGeneral = require('../websocket_pages/socket_general');
@@ -106,15 +107,9 @@ const BinaryLoader = (() => {
     };
 
     const displayMessage = (message) => {
-        const content = container.querySelector('#content .container');
-
-        const div_container = document.createElement('div');
-        div_container.className = 'logged_out_title_container';
-        div_container.innerHTML = content.getElementsByTagName('h1')[0];
-
-        const div_notice = document.createElement('div');
-        div_notice.className = 'center-text notice-msg';
-        div_notice.innerHTML = localize(message);
+        const content       = container.querySelector('#content .container');
+        const div_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
+        const div_notice    = createElement('div', { class: 'center-text notice-msg', html: localize(message) });
 
         elementInnerHtml(content, div_container);
         content.appendChild(div_notice);

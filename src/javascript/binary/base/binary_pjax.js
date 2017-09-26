@@ -1,6 +1,7 @@
-const getLanguage = require('./language').get;
-const State       = require('./storage').State;
-const Url         = require('./url');
+const getLanguage   = require('./language').get;
+const State         = require('./storage').State;
+const Url           = require('./url');
+const createElement = require('./utility').createElement;
 
 const BinaryPjax = (() => {
     let previous_url;
@@ -115,8 +116,7 @@ const BinaryPjax = (() => {
             if (this.readyState !== 4 || this.status !== 200) {
                 return;
             }
-            const div = document.createElement('div');
-            div.innerHTML = this.responseText;
+            const div = createElement('div', { html: this.responseText });
 
             const result = {
                 title  : div.getElementsByTagName('title')[0].textContent.trim(),

@@ -5,6 +5,7 @@ const Defaults         = require('./defaults');
 const Durations        = require('./duration');
 const localize         = require('../../base/localize').localize;
 const State            = require('../../base/storage').State;
+const createElement    = require('../../base/utility').createElement;
 
 /*
  * Handles start time display
@@ -48,9 +49,8 @@ const StartDates = (() => {
             }
 
             if (start_dates.has_spot) {
-                option  = document.createElement('option');
+                option  = createElement('option', { value: 'now' });
                 content = document.createTextNode(localize('Now'));
-                option.setAttribute('value', 'now');
                 option.appendChild(content);
                 fragment.appendChild(option);
                 has_now = 1;
@@ -83,9 +83,7 @@ const StartDates = (() => {
                         $($duplicated_option[0]).text(`${$duplicated_option.text()} - ${localize('Session')} ${duplicated_length}`);
                     }
 
-                    option = document.createElement('option');
-                    option.setAttribute('value', a.utc().unix());
-                    option.setAttribute('data-end', b.unix());
+                    option  = createElement('option', { value: a.utc().unix(), 'data-end': b.unix() });
                     content = document.createTextNode(day + ($duplicated_option.length ? ` - ${localize('Session')} ${duplicated_length + 1}` : ''));
                     if (option.value >= default_start && !selected) {
                         selected = true;
