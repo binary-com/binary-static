@@ -114,10 +114,21 @@
                         cursor: pointer;
                     }
                 }
-                #audit_table td {
-                    text-align: center;
-                    padding-left: 4px;
+                .audit-table {
+                    padding: 40px;
+
+                    &:nth-child(3) {
+                        padding-top: 0;
+                    }
+                    td {
+                        text-align: center;
+                        padding-left: 4px;
+                        border: none;
+                    }
                 }
+            }
+            #sell_details_audit {
+                border-left: none;
             }
         }
     }

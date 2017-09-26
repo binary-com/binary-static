@@ -419,7 +419,10 @@ sub _texts {
         push @texts, localize('Remaining Time');
         push @texts, localize('Barrier Change');
         push @texts, localize('Audit');
-        push @texts, localize('Remark');
+        push @texts, localize('Audit Page');
+        push @texts, localize('View Chart');
+        push @texts, localize('Contract Starts');
+        push @texts, localize('Contract Ends');
         # strings for financial assessment
         push @texts, localize('Please select a value');
         # Strings for authorised_apps
