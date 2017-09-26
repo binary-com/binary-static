@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     toggleMobileMenu();
 
+    const navbar = document.getElementsByClassName('navbar')[0];
     // Scroll to section
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('page-scroll')) {
