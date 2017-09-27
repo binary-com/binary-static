@@ -4,14 +4,12 @@ const generateBirthDate = require('../../common_functions/attach_dom/birth_date_
 const FormManager       = require('../../common_functions/form_manager');
 
 const ResetPassword = (() => {
-    'use strict';
-
     const responseHandler = (response) => {
         $('#container_reset_password').setVisibility(0);
         if (response.error) {
-            const $form_error = $('#form_error');
+            const $form_error          = $('#form_error');
             const reset_error_template = '[_1] Please click the link below to restart the password recovery process.';
-            const error_code = response.error.code;
+            const error_code           = response.error.code;
 
             $('#msg_reset_password').setVisibility(0);
 
@@ -26,7 +24,7 @@ const ResetPassword = (() => {
             $('#form_error_msg').text(err_msg);
             $form_error.setVisibility(1);
         } else {
-            $('#msg_reset_password').text(localize('Your password has been successfully reset. Please log into your account using your new password.'));
+            $('#msg_reset_password').text(localize('Your password has been successfully reset. Please log into your account using your new password.')).setVisibility(1);
             setTimeout(() => {
                 Login.redirectToLogin();
             }, 5000);
@@ -36,7 +34,7 @@ const ResetPassword = (() => {
     const onLoad = () => {
         generateBirthDate();
 
-        $('#have_real_account').off('click').on('click', function() {
+        $('#have_real_account').off('click').on('click', function () {
             if ($(this).is(':checked')) {
                 $('#dob_field').setVisibility(1);
             } else {
@@ -46,13 +44,12 @@ const ResetPassword = (() => {
 
         const form_id = '#frm_reset_password';
         FormManager.init(form_id, [
-            { selector: '#verification_code', validations: ['req', 'email_token'] },
-            { selector: '#new_password',      validations: ['req', 'password'], re_check_field: '#repeat_password' },
-            { selector: '#repeat_password',   validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
-            { selector: '#date_of_birth',     validations: ['req'] },
+            { selector: '#new_password',    validations: ['req', 'password'], re_check_field: '#repeat_password' },
+            { selector: '#repeat_password', validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
+            { selector: '#date_of_birth',   validations: ['req'] },
 
             { request_field: 'reset_password', value: 1 },
-        ]);
+        ], true);
 
         FormManager.handleSubmit({
             form_selector       : form_id,
@@ -61,7 +58,7 @@ const ResetPassword = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

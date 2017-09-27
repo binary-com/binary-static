@@ -4,10 +4,8 @@ const BinarySocket     = require('../../socket');
 const Client           = require('../../../base/client');
 
 const RealityCheck = (() => {
-    'use strict';
-
     const storageHandler = (ev) => {
-        const key = ev.key;
+        const key       = ev.key;
         const new_value = ev.newValue;
         if ((key === 'reality_check.ack' && +new_value === 1) ||
             (key === 'reality_check.keep_open' && +new_value === 0)) {
@@ -38,7 +36,7 @@ const RealityCheck = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

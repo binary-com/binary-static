@@ -1,16 +1,15 @@
-const urlLang       = require('./language').urlLang;
-const jpClient      = require('../common_functions/country_base').jpClient;
-const isEmptyObject = require('./utility').isEmptyObject;
+const urlLang        = require('./language').urlLang;
+const urlForLanguage = require('./language').urlFor;
+const jpClient       = require('../common_functions/country_base').jpClient;
+const isEmptyObject  = require('./utility').isEmptyObject;
 require('url-polyfill');
 
 const Url = (() => {
-    'use strict';
-
     let location_url,
         static_host;
 
     const init = (url) => {
-        location_url = url ? getLocation(url) : window ? window.location : '';
+        location_url = url ? getLocation(url) : window.location;
     };
 
     const getLocation = url => $('<a>', { href: decodeURIComponent(url) })[0];
@@ -21,8 +20,8 @@ const Url = (() => {
 
     const params = (href) => {
         const arr_params = [];
-        const parsed = ((href ? new URL(href) : location_url).search || '').substr(1).split('&');
-        let p_l = parsed.length;
+        const parsed     = ((href ? new URL(href) : location_url).search || '').substr(1).split('&');
+        let p_l          = parsed.length;
         while (p_l--) {
             const param = parsed[p_l].split('=');
             arr_params.push(param);
@@ -33,7 +32,7 @@ const Url = (() => {
     const paramsHash = (href) => {
         const param_hash = {};
         const arr_params = params(href);
-        let param = arr_params.length;
+        let param        = arr_params.length;
         while (param--) {
             if (arr_params[param][0]) {
                 param_hash[arr_params[param][0]] = arr_params[param][1] || '';
@@ -46,10 +45,14 @@ const Url = (() => {
 
     const normalizePath = path => (path ? path.replace(/(^\/|\/$|[^a-zA-Z0-9-_/])/g, '') : '');
 
-    const urlFor = (path, pars) => {
-        const lang = urlLang().toLowerCase();
+    const urlFor = (path, pars, language) => {
+        const lang = (language || urlLang()).toLowerCase();
+        // url language might differ from passed language, so we will always replace using the url language
+        const url_lang = (language ? urlLang().toLowerCase() : lang);
         const url = window.location.href;
-        return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${(normalizePath(path) || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
+        const new_url = `${url.substring(0, url.indexOf(`/${url_lang}/`) + url_lang.length + 2)}${(normalizePath(path) || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
+        // replace old lang with new lang
+        return urlForLanguage(lang, new_url);
     };
 
     const urlForStatic = (path = '') => {
@@ -69,18 +72,17 @@ const Url = (() => {
     const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');
 
     return {
-        init      : init,
-        reset     : reset,
-        paramsHash: paramsHash,
+        init,
+        reset,
+        paramsHash,
+        getLocation,
+        paramsHashToString,
+        urlFor,
+        urlForStatic,
+        defaultRedirectUrl,
 
-        param      : name => paramsHash()[name],
-        getLocation: getLocation,
-
-        paramsHashToString: paramsHashToString,
-        urlFor            : urlFor,
-        urlForStatic      : urlForStatic,
-        defaultRedirectUrl: defaultRedirectUrl,
-        websiteUrl        : () => 'https://www.binary.com/',
+        param     : name => paramsHash()[name],
+        websiteUrl: () => 'https://www.binary.com/',
     };
 })();
 

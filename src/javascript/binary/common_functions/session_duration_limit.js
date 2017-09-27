@@ -1,10 +1,9 @@
-const moment   = require('moment');
-const Client   = require('../base/client');
-const localize = require('../base/localize').localize;
+const moment           = require('moment');
+const Client           = require('../base/client');
+const localize         = require('../base/localize').localize;
+const getPropertyValue = require('../base/utility').getPropertyValue;
 
 const SessionDurationLimit = (() => {
-    'use strict';
-
     let warning,
         timeout_before,
         timeout,
@@ -22,11 +21,11 @@ const SessionDurationLimit = (() => {
         const now        = moment().unix();
         const start      = Client.get('session_start') * 1;
         const math_limit = Math.pow(2, 31) - 1;
-        let remained  = ((limit + start) - now) * 1000;
+        let remained     = ((limit + start) - now) * 1000;
         if (remained < 0) remained = warning;
 
         const setTimeOut = () => {
-            timeout = setTimeout(displayWarning, remained - warning);
+            timeout        = setTimeout(displayWarning, remained - warning);
             timeout_logout = setTimeout(Client.sendLogoutRequest, remained);
         };
 
@@ -40,7 +39,7 @@ const SessionDurationLimit = (() => {
     };
 
     const exclusionResponseHandler = (response) => {
-        if (response.hasOwnProperty('error') || !response.hasOwnProperty('get_self_exclusion')) {
+        if (getPropertyValue(response, 'error') || !getPropertyValue(response, 'get_self_exclusion')) {
             return;
         }
 
@@ -56,11 +55,11 @@ const SessionDurationLimit = (() => {
     const displayWarning = () => {
         $('body').append($('<div/>', { id: 'session_limit', class: 'lightbox' })
             .append($('<div/>', { class: 'gr-padding-10 gr-gutter', text: localize('Your session duration limit will end in [_1] seconds.', [warning / 1000]) })));
-        $('#session_limit').click(function() { $(this).remove(); });
+        $('#session_limit').click(function () { $(this).remove(); });
     };
 
     return {
-        exclusionResponseHandler: exclusionResponseHandler,
+        exclusionResponseHandler,
     };
 })();
 

@@ -35,13 +35,7 @@ const Guide = (() => {
         btn_next    = { className: 'button', html: $('<span/>', { text: localize('Next') }) };
         btn_finish  = { className: 'button btnFinish', html: $('<span/>', { text: localize('Finish') }) };
 
-        if ($(opt.guideBtnID).length === 0) {
-            console.warn(`Could not find the button placeholder: <div id="${opt.guideBtnID}"></div>`);
-            return;
-        }
-
-        if (opt.script.length === 0) {
-            console.warn('"script" name should be specified');
+        if ($(opt.guideBtnID).length === 0 || opt.script.length === 0) {
             return;
         }
 
@@ -152,7 +146,7 @@ const Guide = (() => {
 
 
     return {
-        init: init,
+        init,
     };
 })();
 

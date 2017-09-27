@@ -61,7 +61,7 @@ sub all_pages {
         ['metatrader/margin-policy',           'metatrader/margin_policy',           'full_width', 'MetaTrader Margin Policy'],
 
         ['cashier',                      'cashier/index',                             'default', 'Cashier'],
-        ['cashier/account_transfer',     'cashier/account_transfer',                  'default', 'Account Transfer'],
+        ['cashier/account_transfer',     'cashier/account_transfer',                  'default', 'Transfer Between Accounts'],
         ['cashier/deposit-jp',           'japan/cashier/deposit',                     'default', 'Deposit',         'NOT-ja,en'],
         ['cashier/epg_forwardws',        'cashier/deposit_withdraw',                  'default', 'Cashier'],
         ['cashier/forwardws',            'cashier/deposit_withdraw',                  'default', 'Cashier',         'ja'],
@@ -117,9 +117,10 @@ sub all_pages {
         ['user/telegram-bot',                'user/telegram_bot',                    'default',    'Telegram Bot'],
 
         ['logged_inws',                'global/logged_in',       undef],
+        ['redirect',                   'global/logged_in',       undef, 'Redirecting...'],
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],
-        ['ico',                        'static/ico',             undef, 'Initial Coin Offering', 'ja'],
 
+        ['ico',                        'landing_pages/ico',                         undef,        'Initial Coin Offering', 'ja'],
         ['ico-disclaimer',             'landing_pages/ico_disclaimer',              undef,        'Initial Coin Offering Disclaimer', 'ja'],
         ['hackathon',                  'landing_pages/hackathon',                   undef,        'Hackathon Competition', 'NOT-en'],
         ['landing/signup-frame',       'landing_pages/signup_frame',                undef,        'Sign up'],

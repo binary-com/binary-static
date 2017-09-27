@@ -2,8 +2,6 @@ const Cookies       = require('js-cookie');
 const CookieStorage = require('./storage').CookieStorage;
 
 const Language = (() => {
-    'use strict';
-
     const all_languages = {
         ACH  : 'Translations',
         EN   : 'English',
@@ -30,11 +28,13 @@ const Language = (() => {
     };
 
     let url_lang = null;
+
     const lang_regex = new RegExp(`^(${Object.keys(all_languages).join('|')})$`, 'i');
+
     const languageFromUrl = (custom_url) => {
         if (url_lang && !custom_url) return url_lang;
         const url_params = (custom_url || window.location.href).split('/').slice(3);
-        const language = (url_params.find(lang => lang_regex.test(lang)) || '');
+        const language   = (url_params.find(lang => lang_regex.test(lang)) || '');
         if (!custom_url) {
             url_lang = language;
         }
@@ -42,6 +42,7 @@ const Language = (() => {
     };
 
     let current_lang = null;
+
     const getLanguage = () => {
         if (/ach/i.test(current_lang) || /ach/i.test(languageFromUrl())) {
             const crowdin_lang = Cookies.get('jipt_language_code_binary-static'); // selected language for in-context translation
@@ -54,12 +55,13 @@ const Language = (() => {
         return current_lang;
     };
 
-    const urlForLanguage = lang => window.location.href.replace(new RegExp(`\/${getLanguage()}\/`, 'i'), `/${lang.trim().toLowerCase()}/`);
+    const urlForLanguage = (lang, url = window.location.href) =>
+        url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${lang.trim().toLowerCase()}/`);
 
     const onChangeLanguage = () => {
         let $this;
-        $('#select_language').find('li').on('click', function() {
-            $this = $(this);
+        $('#select_language').find('li').on('click', function () {
+            $this      = $(this);
             const lang = $this.attr('class');
             if (getLanguage() === lang) return;
             $('#display_language').find('.language').text($this.text());

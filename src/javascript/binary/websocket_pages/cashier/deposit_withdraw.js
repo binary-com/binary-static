@@ -3,17 +3,17 @@ const setShouldRedirect = require('../user/account/settings/cashier_password').s
 const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
 const localize          = require('../../base/localize').localize;
-const urlFor            = require('../../base/url').urlFor;
+const Url               = require('../../base/url');
 const template          = require('../../base/utility').template;
 const FormManager       = require('../../common_functions/form_manager');
 const isCryptocurrency  = require('../../common_functions/currency').isCryptocurrency;
+const validEmailToken   = require('../../common_functions/form_validation').validEmailToken;
 
 const DepositWithdraw = (() => {
-    'use strict';
+    let cashier_type,
+        token;
 
-    let cashier_type;
     const container = '#deposit_withdraw';
-    let verification_code;
 
     const init = (cashier_password) => {
         if (cashier_password) {
@@ -21,51 +21,42 @@ const DepositWithdraw = (() => {
             setShouldRedirect(true);
             return;
         }
-        if (!Client.get('currency')) {
-            BinaryPjax.load(urlFor('user/set-currency'));
-        } else {
-            initDepositWithdraw();
-        }
-    };
 
-    const initDepositWithdraw = (response) => {
-        if (response && response.error) {
-            showError('custom_error', response.error.message);
+        if (!Client.get('currency')) {
+            BinaryPjax.load(`${Url.urlFor('user/set-currency')}#redirect_${cashier_type}`);
             return;
         }
 
         if (cashier_type === 'deposit') {
+            token = '';
             getCashierURL();
         } else if (cashier_type === 'withdraw') {
-            hideAll('#messages');
-            initWithdrawForm();
+            checkToken();
         }
     };
 
-    const initWithdrawForm = () => {
-        BinarySocket.send({
-            verify_email: Client.get('email'),
-            type        : 'payment_withdraw',
-        }).then((response) => {
-            if ('error' in response) {
-                showError('custom_error', response.error.message);
-            } else {
-                showMessage('check_email_message');
-                const withdraw_form_id = '#frm_withdraw';
-                $(withdraw_form_id).setVisibility(1);
-                FormManager.init(withdraw_form_id, [{ selector: '#verification_code', validations: ['req', 'email_token'] }]);
-                const req = populateReq();
-                FormManager.handleSubmit({
-                    form_selector       : withdraw_form_id,
-                    obj_request         : req,
-                    fnc_response_handler: handleCashierResponse,
-                });
-            }
-        });
+    const checkToken = () => {
+        token = Url.param('token') || '';
+        if (!token) {
+            BinarySocket.send({
+                verify_email: Client.get('email'),
+                type        : 'payment_withdraw',
+            }).then((response_withdraw) => {
+                if ('error' in response_withdraw) {
+                    showError('custom_error', response_withdraw.error.message);
+                } else {
+                    showMessage('check_email_message');
+                }
+            });
+        } else if (!validEmailToken(token)) {
+            showError('token_error');
+        } else {
+            getCashierURL();
+        }
     };
 
     const getCashierType = () => {
-        const $heading = $(container).find('#heading');
+        const $heading   = $(container).find('#heading');
         const hash_value = window.location.hash;
         if (/withdraw/.test(hash_value)) {
             cashier_type = 'withdraw';
@@ -76,17 +67,18 @@ const DepositWithdraw = (() => {
         }
     };
 
-    const populateReq = (send_verification) => {
+    const populateReq = () => {
         const req = { cashier: cashier_type };
-        const verification_code_val = $('#verification_code').val();
-        if (verification_code_val) verification_code = verification_code_val;
-        if (send_verification && verification_code) req.verification_code = verification_code;
+        if (token) {
+            req.verification_code = token;
+        }
         if (/epg/.test(window.location.pathname)) req.provider = 'epg';
+
         return req;
     };
 
     const getCashierURL = () => {
-        BinarySocket.send(populateReq(1)).then(response => handleCashierResponse(response));
+        BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
     };
 
     const hideAll = (option) => {
@@ -125,7 +117,7 @@ const DepositWithdraw = (() => {
                 email   : 'Email address',
             };
         }
-        const $el = $(`#${msg_id}`);
+        const $el     = $(`#${msg_id}`);
         const err_msg = template($el.html(), [localize(details ? error_fields[details] : 'details')]);
         $el.html(err_msg);
         showMessage(msg_id);
@@ -157,6 +149,9 @@ const DepositWithdraw = (() => {
         const error = response.error;
         if (error) {
             switch (error.code) {
+                case 'ASK_EMAIL_VERIFY':
+                    checkToken();
+                    break;
                 case 'ASK_TNC_APPROVAL':
                     showError('tnc_error');
                     break;
@@ -198,17 +193,17 @@ const DepositWithdraw = (() => {
 
     const onLoad = () => {
         getCashierType();
-        BinarySocket.send({ cashier_password: 1 }).then((data) => {
-            if ('error' in data) {
-                showError('custom_error', data.error.message);
+        BinarySocket.send({ cashier_password: 1 }).then((response) => {
+            if ('error' in response) {
+                showError('custom_error', response.error.message);
             } else {
-                init(data.cashier_password);
+                init(response.cashier_password);
             }
         });
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

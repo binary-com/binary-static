@@ -13,8 +13,6 @@ const MetaTrader          = require('../websocket_pages/user/metatrader/metatrad
 const getCurrencies       = require('../websocket_pages/user/get_currency').getCurrencies;
 
 const Header = (() => {
-    'use strict';
-
     const onLoad = () => {
         showOrHideLoginForm();
         bindClick();
@@ -24,6 +22,13 @@ const Header = (() => {
         if (Client.isLoggedIn()) {
             $('ul#menu-top').addClass('smaller-font');
             displayAccountStatus();
+            if (!Client.get('virtual')) {
+                BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
+                    if (Client.canTransferFunds()) {
+                        document.getElementById('user_menu_account_transfer').setVisibility(1);
+                    }
+                });
+            }
         }
     };
 
@@ -46,9 +51,9 @@ const Header = (() => {
             const loginid_select = $('<div/>');
             Client.getAllLoginids().forEach((loginid) => {
                 if (!Client.get('is_disabled', loginid)) {
-                    const account_title = Client.getAccountTitle(loginid);
-                    const is_real = /real/i.test(account_title);
-                    const currency = Client.get('currency', loginid);
+                    const account_title  = Client.getAccountTitle(loginid);
+                    const is_real        = /real/i.test(account_title);
+                    const currency       = Client.get('currency', loginid);
                     const localized_type = localize('[_1] Account', [is_real && currency ? currency : account_title]);
                     if (loginid === Client.get('loginid')) { // default account
                         $('.account-type').html(localized_type);
@@ -62,7 +67,7 @@ const Header = (() => {
                 let $this;
                 $('.login-id-list').html(loginid_select)
                     .find('a').off('click')
-                    .on('click', function(e) {
+                    .on('click', function (e) {
                         e.preventDefault();
                         $this = $(this);
                         $this.attr('disabled', 'disabled');
@@ -97,7 +102,7 @@ const Header = (() => {
     const upgradeMessageVisibility = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
             const landing_company = State.getResponse('landing_company');
-            const $upgrade_msg = $('.upgrademessage');
+            const $upgrade_msg    = $('.upgrademessage');
 
             const showUpgrade = (url, msg) => {
                 $upgrade_msg.setVisibility(1)
@@ -107,8 +112,8 @@ const Header = (() => {
             };
 
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
-            const upgrade_info = Client.getUpgradeInfo(landing_company, jp_account_status);
-            const show_upgrade_msg = upgrade_info.can_upgrade;
+            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
+            const show_upgrade_msg  = upgrade_info.can_upgrade;
 
             if (Client.get('is_virtual')) {
                 $upgrade_msg.setVisibility(1)
@@ -213,7 +218,7 @@ const Header = (() => {
                 risk           : () => riskAssessment(),
                 tax            : () => Client.shouldCompleteTax(),
                 tnc            : () => Client.shouldAcceptTnc(),
-                unwelcome      : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
+                unwelcome      : () => /unwelcome|(cashier|withdrawal)_locked/.test(status),
             };
 
             // real account checks in order
@@ -248,7 +253,7 @@ const Header = (() => {
             } else {
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
                     get_account_status = State.getResponse('get_account_status') || {};
-                    status = get_account_status.status;
+                    status             = get_account_status.status;
                     checkStatus(check_statuses_real);
                 });
             }
@@ -256,14 +261,14 @@ const Header = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
 
-        showOrHideLoginForm         : showOrHideLoginForm,
-        upgradeMessageVisibility    : upgradeMessageVisibility,
-        metatraderMenuItemVisibility: metatraderMenuItemVisibility,
-        displayNotification         : displayNotification,
-        hideNotification            : hideNotification,
-        displayAccountStatus        : displayAccountStatus,
+        showOrHideLoginForm,
+        upgradeMessageVisibility,
+        metatraderMenuItemVisibility,
+        displayNotification,
+        hideNotification,
+        displayAccountStatus,
     };
 })();
 

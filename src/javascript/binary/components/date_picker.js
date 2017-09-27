@@ -7,10 +7,8 @@ const toReadableFormat = require('../common_functions/string_util').toReadableFo
 const padLeft          = require('../common_functions/string_util').padLeft;
 
 const DatePicker = (() => {
-    'use strict';
-
     const date_pickers = {};
-    let localizations = {};
+    let localizations  = {};
 
     const init = (options) => {
         hide(options.selector);
@@ -36,7 +34,7 @@ const DatePicker = (() => {
     const create = (selector) => {
         let $this;
         const date_picker = date_pickers[selector];
-        $(selector).keydown(function(e) {
+        $(selector).keydown(function (e) {
             if (e.which === 13) {
                 $this = $(this);
                 e.preventDefault();
@@ -87,13 +85,13 @@ const DatePicker = (() => {
         }
 
         let $this;
-        obj_config.onSelect = function(date_text) {
-            const year = $('.ui-datepicker-year').val();
-            const month = formatDate(Number($('.ui-datepicker-month').val()), 1);
-            const day = date_text.split(' ')[0];
-            const date = [year, month, day].join('-');
-            $this = $(this);
-            const old_value = $this.attr('data-value');
+        obj_config.onSelect = function (date_text) {
+            const year          = $('.ui-datepicker-year').val();
+            const month         = formatDate(Number($('.ui-datepicker-month').val()), 1);
+            const day           = date_text.split(' ')[0];
+            const date          = [year, month, day].join('-');
+            $this               = $(this);
+            const old_value     = $this.attr('data-value');
             const this_selector = `#${$this.attr('id')}`;
 
             $this.attr('data-value', date);
@@ -120,7 +118,7 @@ const DatePicker = (() => {
     const toDate = date => [date.getFullYear(), formatDate(date.getMonth(), 1), formatDate(date.getDate())].join('-');
 
     const checkWidth = (selector) => {
-        const $selector = $(selector);
+        const $selector        = $(selector);
         const date_picker_conf = date_pickers[selector].config_data;
         if ($(window).width() < 770) {
             if (!date_picker_conf.native) {
@@ -138,7 +136,7 @@ const DatePicker = (() => {
             }
         }
         if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') || ($(window).width() < 770 && !checkInput('date', 'not-a-date'))) {
-            const value = $selector.attr('data-value') || $selector.val();
+            const value        = $selector.attr('data-value') || $selector.val();
             const format_value = value && date_picker_conf.type !== 'diff' ? toReadableFormat(moment(value)) : $selector.val();
             $selector.attr({ type: 'text', 'data-picker': 'jquery', 'data-value': value }).removeAttr('min max').val(format_value);
             if ($selector.attr('data-readonly')) $selector.attr('readonly', 'readonly').removeAttr('data-readonly');
@@ -150,8 +148,8 @@ const DatePicker = (() => {
     };
 
     return {
-        init: init,
-        hide: hide,
+        init,
+        hide,
     };
 })();
 

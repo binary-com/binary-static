@@ -86,12 +86,13 @@
 
 .home-jp-content {
     #banner {
-        background: url('../images/pages/home-jp/banner.png') 0 0/cover no-repeat;
+        background: url('../images/pages/home-jp/home-jp-banner.png') 0 0/cover no-repeat;
         opacity: 0.3;
         z-index: -1;
         position: absolute;
         height: 100%;
         width: 100%;
+        background-position: center;
     }
     .relative {
         position: relative;

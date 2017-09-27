@@ -1,8 +1,6 @@
 const localize = require('../../../../base/localize').localize;
 
 const PaymentAgentTransferUI = (() => {
-    'use strict';
-
     let $paymentagent_transfer,
         $confirm_transfer,
         $done_transfer,
@@ -10,9 +8,9 @@ const PaymentAgentTransferUI = (() => {
 
     const initValues = () => {
         $paymentagent_transfer = $('#frm_paymentagent_transfer');
-        $confirm_transfer = $('#frm_confirm_transfer');
-        $done_transfer = $('#pa_transfer_done');
-        $notes_transfer = $('#paymentagent_transfer_notes');
+        $confirm_transfer      = $('#frm_confirm_transfer');
+        $done_transfer         = $('#pa_transfer_done');
+        $notes_transfer        = $('#paymentagent_transfer_notes');
     };
 
     const hideForm = () => { $paymentagent_transfer.setVisibility(0); };
@@ -52,7 +50,7 @@ const PaymentAgentTransferUI = (() => {
 
     const updateDoneView = (from_id, to_id, amount, currency) => {
         const template_string = 'Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.';
-        const confirm_msg = localize(template_string, [
+        const confirm_msg     = localize(template_string, [
             amount,
             currency,
             from_id,
@@ -68,20 +66,20 @@ const PaymentAgentTransferUI = (() => {
     };
 
     return {
-        initValues       : initValues,
-        hideForm         : hideForm,
-        showForm         : showForm,
-        hideConfirmation : hideConfirmation,
-        showConfirmation : showConfirmation,
-        hideDone         : hideDone,
-        showDone         : showDone,
-        hideNotes        : hideNotes,
-        showNotes        : showNotes,
-        showTransferError: showTransferError,
-        updateFormView   : updateFormView,
-        updateConfirmView: updateConfirmView,
-        updateDoneView   : updateDoneView,
-        hideFirstForm    : hideFirstForm,
+        initValues,
+        hideForm,
+        showForm,
+        hideConfirmation,
+        showConfirmation,
+        hideDone,
+        showDone,
+        hideNotes,
+        showNotes,
+        showTransferError,
+        updateFormView,
+        updateConfirmView,
+        updateDoneView,
+        hideFirstForm,
     };
 })();
 

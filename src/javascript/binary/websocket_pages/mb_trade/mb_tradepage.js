@@ -12,13 +12,15 @@ const jpClient            = require('../../common_functions/country_base').jpCli
 const JapanPortfolio      = require('../../../binary_japan/trade_japan/portfolio');
 
 const MBTradePage = (() => {
-    'use strict';
-
     let events_initialized = 0;
     State.remove('is_mb_trading');
 
     const onLoad = () => {
         State.set('is_mb_trading', true);
+        BinarySocket.wait('authorize').then(init);
+    };
+
+    const init = () => {
         if (jpClient()) {
             disableTrading();
             $('#panel').remove();
@@ -32,11 +34,9 @@ const MBTradePage = (() => {
             MBTradingEvents.init();
         }
 
-        BinarySocket.wait('authorize').then(() => {
-            BinarySocket.send({ payout_currencies: 1 }).then(() => {
-                MBDisplayCurrencies();
-                MBProcess.getSymbols();
-            });
+        BinarySocket.send({ payout_currencies: 1 }).then(() => {
+            MBDisplayCurrencies();
+            MBProcess.getSymbols();
         });
 
         $('#tab_portfolio').find('a').text(localize('Portfolio'));
@@ -78,10 +78,10 @@ const MBTradePage = (() => {
     };
 
     return {
-        onLoad      : onLoad,
-        reload      : reload,
-        onUnload    : onUnload,
-        onDisconnect: onDisconnect,
+        onLoad,
+        reload,
+        onUnload,
+        onDisconnect,
     };
 })();
 

@@ -1,17 +1,14 @@
-const BinaryPjax   = require('../base/binary_pjax');
 const localize     = require('../base/localize').localize;
 const FormManager  = require('../common_functions/form_manager');
 const BinarySocket = require('../websocket_pages/socket');
 
 const Home = (() => {
-    'use strict';
-
     let clients_country;
 
     const onLoad = () => {
         BinarySocket.wait('website_status').then((response) => {
             clients_country = response.website_status.clients_country;
-            const form_id = '#frm_verify_email';
+            const form_id   = '#frm_verify_email';
 
             FormManager.init(form_id, [
                 { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
@@ -38,7 +35,7 @@ const Home = (() => {
     const handler = (response) => {
         const error = response.error;
         if (!error) {
-            BinaryPjax.load('new_account/virtualws');
+            $('.signup-box div').replaceWith($('<p/>', { text: localize('Thank you for signing up! Please check your email to complete the registration process.'), class: 'gr-10 gr-centered center-text' }));
         } else {
             $('#signup_error').setVisibility(1).text(error.message);
         }
@@ -46,7 +43,7 @@ const Home = (() => {
 
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

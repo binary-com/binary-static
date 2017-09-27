@@ -9,12 +9,12 @@ const State              = require('../../base/storage').State;
 const urlFor             = require('../../base/url').urlFor;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const getCurrencyList    = require('../../common_functions/currency').getCurrencyList;
+const FormManager        = require('../../common_functions/form_manager');
 const toTitleCase        = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
-    'use strict';
-
     let landing_company;
+    const form_id = '#new_accounts';
 
     const onLoad = () => {
         if (!Client.get('residence')) {
@@ -27,7 +27,7 @@ const Accounts = (() => {
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
-            const upgrade_info = Client.getUpgradeInfo(landing_company);
+            const upgrade_info  = Client.getUpgradeInfo(landing_company);
             if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
@@ -53,12 +53,12 @@ const Accounts = (() => {
 
     const populateNewAccounts = (upgrade_info) => {
         const new_account = upgrade_info;
-        const account = {
+        const account     = {
             real     : new_account.type === 'real',
             financial: new_account.type === 'financial',
         };
 
-        $('#new_accounts').find('tbody')
+        $(form_id).find('tbody')
             .append($('<tr/>')
                 .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': getCompanyName(account) })))
                 .append($('<td/>', { text: getAvailableMarkets(account) }))
@@ -72,13 +72,18 @@ const Accounts = (() => {
         Client.getAllLoginids()
             .sort((a, b) => a > b)
             .forEach((loginid) => {
-                const account_currency = Client.get('currency', loginid);
-                const company_name = Client.isAccountOfType('virtual', loginid) ? toTitleCase(getPropertyValue(landing_company, 'virtual_company')) : getCompanyName(loginid);
+                const account_currency  = Client.get('currency', loginid);
+                const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
+
+                if (!Client.isAccountOfType('virtual', loginid)) {
+                    const company_name = getCompanyName(loginid);
+                    account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
+                }
 
                 $('#existing_accounts').find('tbody')
                     .append($('<tr/>', { id: loginid })
                         .append($('<td/>', { text: loginid }))
-                        .append($('<td/>').html($('<span/>', { text: localize(Client.getAccountTitle(loginid)), 'data-balloon': company_name })))
+                        .append($('<td/>').html($('<span/>', account_type_prop)))
                         .append($('<td/>', { text: getAvailableMarkets(loginid) }))
                         .append($('<td/>')
                             .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
@@ -108,12 +113,12 @@ const Accounts = (() => {
     const getMarketName = market => localize(markets[market] || '');
 
     const populateMultiAccount = (currencies) => {
-        $('#new_accounts').find('tbody')
+        $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
                 .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': getCompanyName({ real: 1 }) })))
                 .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
-                .append($('<td/>').html($('<button/>', { text: localize('Create') }))));
+                .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
 
         $('#note').setVisibility(1);
 
@@ -123,66 +128,42 @@ const Accounts = (() => {
             $currencies.append(getCurrencyList(currencies).html());
             $new_account_opening.find('.account-currency').html($('<select/>', { id: 'new_account_currency' }).html($currencies.html()));
         } else {
-            $new_account_opening.find('.account-currency').html($('<span/>', { id: 'new_account_currency', value: currencies, text: currencies }));
+            $new_account_opening.find('.account-currency').html($('<label/>', { id: 'new_account_currency', 'data-value': currencies, text: currencies }));
         }
 
-        $new_account_opening.find('button').on('click', () => {
-            if (!getSelectedCurrency()) {
-                showError('Please choose a currency');
-            } else {
-                const req = populateReq();
-                BinarySocket.send(req).then((response) => {
-                    if (response.error) {
-                        const account_opening_reason = State.getResponse('get_settings.account_opening_reason');
-                        if (!account_opening_reason && response.error.details.hasOwnProperty('account_opening_reason') &&
-                            (response.error.code === 'InsufficientAccountDetails' ||
-                            response.error.code === 'InputValidationFailed')) {
-                            setIsForNewAccount(true);
-                            // ask client to set account opening reason
-                            BinaryPjax.load(urlFor('user/settings/detailsws'));
-                        } else {
-                            showError(response.error.message);
-                        }
-                    } else {
-                        handleNewAccount(response);
-                    }
-                });
-            }
-        });
-
+        // need to make it visible before adding the form manager event on it
         doneLoading('#new_accounts_wrapper');
-    };
 
-    const getSelectedCurrency = () => {
-        const new_account_currency = document.getElementById('new_account_currency');
-        return new_account_currency.value || new_account_currency.getAttribute('value');
-    };
+        const el_select_currency = /select/i.test(document.getElementById('new_account_currency').nodeName);
+        FormManager.init(form_id, [{ selector: '#new_account_currency', request_field: 'currency', validations: [el_select_currency ? 'req' : ''], hide_asterisk: true }].concat(populateReq()));
 
-    const handleNewAccount = (response) => {
-        const new_account = response.new_account_real;
-        State.set('ignoreResponse', 'authorize');
-        BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_authorize) => {
-            if (response_authorize.error) {
-                showError(response_authorize.error.message);
-            } else {
-                BinarySocket
-                    .send({ set_account_currency: getSelectedCurrency() })
-                    .then((response_set_account_currency) => {
-                        if (response_set_account_currency.error) {
-                            showError(response_set_account_currency.error.message);
-                        } else {
-                            localStorage.setItem('is_new_account', 1);
-                            Client.processNewAccount({
-                                email       : Client.get('email'),
-                                loginid     : new_account.client_id,
-                                token       : new_account.oauth_token,
-                                redirect_url: urlFor('user/set-currency'),
-                            });
-                        }
-                    });
-            }
-            State.remove('ignoreResponse');
+        FormManager.handleSubmit({
+            form_selector       : form_id,
+            fnc_response_handler: newAccountResponse,
         });
+    };
+
+    const newAccountResponse = (response) => {
+        if (response.error) {
+            const account_opening_reason = State.getResponse('get_settings.account_opening_reason');
+            if (!account_opening_reason && getPropertyValue(response, ['error', 'details', 'account_opening_reason']) &&
+                /InsufficientAccountDetails|InputValidationFailed/.test(response.error.code)) {
+                setIsForNewAccount(true);
+                // ask client to set account opening reason
+                BinaryPjax.load(urlFor('user/settings/detailsws'));
+            } else {
+                showError(response.error.message);
+            }
+        } else {
+            const new_account = response.new_account_real;
+            localStorage.setItem('is_new_account', 1);
+            Client.processNewAccount({
+                email       : Client.get('email'),
+                loginid     : new_account.client_id,
+                token       : new_account.oauth_token,
+                redirect_url: urlFor('user/set-currency'),
+            });
+        }
     };
 
     const showError = (message) => {
@@ -192,33 +173,33 @@ const Accounts = (() => {
 
     const populateReq = () => {
         const get_settings = State.getResponse('get_settings');
-        const date_of_birth = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
-        const req = {
-            new_account_real      : 1,
-            salutation            : get_settings.salutation,
-            first_name            : get_settings.first_name,
-            last_name             : get_settings.last_name,
-            date_of_birth         : date_of_birth,
-            address_line_1        : get_settings.address_line_1,
-            address_line_2        : get_settings.address_line_2,
-            address_city          : get_settings.address_city,
-            address_state         : get_settings.address_state,
-            address_postcode      : get_settings.address_postcode,
-            phone                 : get_settings.phone,
-            account_opening_reason: get_settings.account_opening_reason,
-            residence             : Client.get('residence'),
-        };
+        const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
+        const req          = [
+            { request_field: 'new_account_real',       value: 1 },
+            { request_field: 'date_of_birth',          value: dob },
+            { request_field: 'salutation',             value: get_settings.salutation },
+            { request_field: 'first_name',             value: get_settings.first_name },
+            { request_field: 'last_name',              value: get_settings.last_name },
+            { request_field: 'address_line_1',         value: get_settings.address_line_1 },
+            { request_field: 'address_line_2',         value: get_settings.address_line_2 },
+            { request_field: 'address_city',           value: get_settings.address_city },
+            { request_field: 'address_state',          value: get_settings.address_state },
+            { request_field: 'address_postcode',       value: get_settings.address_postcode },
+            { request_field: 'phone',                  value: get_settings.phone },
+            { request_field: 'account_opening_reason', value: get_settings.account_opening_reason },
+            { request_field: 'residence',              value: Client.get('residence') },
+        ];
         if (get_settings.tax_identification_number) {
-            req.tax_identification_number = get_settings.tax_identification_number;
+            req.push({ request_field: 'tax_identification_number', value: get_settings.tax_identification_number });
         }
         if (get_settings.tax_residence) {
-            req.tax_residence = get_settings.tax_residence;
+            req.push({ request_field: 'tax_residence', value: get_settings.tax_residence });
         }
         return req;
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

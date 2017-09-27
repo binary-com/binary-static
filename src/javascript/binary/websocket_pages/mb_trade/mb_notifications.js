@@ -6,8 +6,6 @@ const localize = require('../../base/localize').localize;
  */
 
 const MBNotifications = (() => {
-    'use strict';
-
     /*
      * options: Object {
      *     text       : {string}  message text to display
@@ -36,7 +34,7 @@ const MBNotifications = (() => {
             </div>`);
 
         if (options.dismissible) {
-            $message.click(function() { dismissMessage(this); });
+            $message.click(function () { dismissMessage(this); });
         }
 
         return $message;
@@ -60,10 +58,10 @@ const MBNotifications = (() => {
     };
 
     return {
+        hideSpinnerShowTrading,
+
         show: showErrorMessage,
         hide: hideErrorMessage,
-
-        hideSpinnerShowTrading: hideSpinnerShowTrading,
     };
 })();
 

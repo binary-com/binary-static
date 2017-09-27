@@ -8,15 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style id="antiClickjack">body{display:none !important;}</style>
-        <script type="text/javascript">
-            if (self === top) {
-                var antiClickjack = document.getElementById("antiClickjack");
-                antiClickjack.parentNode.removeChild(antiClickjack);
-            } else {
-                top.location = self.location;
-            }
-        </script>
+        [% INCLUDE global/anti_clickjack.html.tt %]
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
         <meta name="description" content="
@@ -35,7 +27,7 @@
         [% PROCESS global/title.html.tt %]
 
         <link rel="manifest" href="[% root_url _ 'manifest.json' %]">
-        <script type="text/javascript" src="//cdn.pushwoosh.com/webpush/v3/pushwoosh-web-notifications.js" async></script>
+        <script type="text/javascript" data-cfasync="true" src="//cdn.pushwoosh.com/webpush/v3/pushwoosh-web-notifications.js" async></script>
 
         [% INCLUDE link favicons=[
             { size='57' },
@@ -67,6 +59,6 @@
             <link rel="stylesheet" href="[%= css_file =%]" />
         [% END %]
         [% FOREACH js IN javascript.libs =%]
-            <script src='[%= js =%]'></script>
+            <script data-cfasync="true" src='[%= js =%]'></script>
         [% END %]
     </head>

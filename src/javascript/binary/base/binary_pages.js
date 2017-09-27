@@ -1,4 +1,5 @@
 const LoggedInHandler = require('./logged_in');
+const Redirect        = require('./redirect');
 
 const Charity            = require('../static_pages/charity');
 const Contact            = require('../static_pages/contact');
@@ -15,51 +16,51 @@ const TermsAndConditions = require('../static_pages/tnc');
 const VideoFacility      = require('../static_pages/video_facility');
 const WhyUs              = require('../static_pages/why_us');
 
-const AccountTransfer            = require('../websocket_pages/cashier/account_transfer');
-const Cashier                    = require('../websocket_pages/cashier/cashier');
-const DepositWithdraw            = require('../websocket_pages/cashier/deposit_withdraw');
-const PaymentAgentList           = require('../websocket_pages/cashier/payment_agent_list');
-const PaymentAgentWithdraw       = require('../websocket_pages/cashier/payment_agent_withdraw');
-const MBTradePage                = require('../websocket_pages/mb_trade/mb_tradepage');
-const AssetIndexUI               = require('../websocket_pages/resources/asset_index/asset_index.ui');
-const TradingTimesUI             = require('../websocket_pages/resources/trading_times/trading_times.ui');
-const TradePage_Beta             = require('../websocket_pages/trade/beta/tradepage');
-const TradePage                  = require('../websocket_pages/trade/tradepage');
-const Authenticate               = require('../websocket_pages/user/account/authenticate');
-const ChangePassword             = require('../websocket_pages/user/account/change_password');
-const PaymentAgentTransfer       = require('../websocket_pages/user/account/payment_agent_transfer');
-const Portfolio                  = require('../websocket_pages/user/account/portfolio/portfolio.init');
-const ProfitTable                = require('../websocket_pages/user/account/profit_table/profit_table.init');
-const APIToken                   = require('../websocket_pages/user/account/settings/api_token');
-const AuthorisedApps             = require('../websocket_pages/user/account/settings/authorised_apps');
-const CashierPassword            = require('../websocket_pages/user/account/settings/cashier_password');
-const FinancialAssessment        = require('../websocket_pages/user/account/settings/financial_assessment');
-const IPHistory                  = require('../websocket_pages/user/account/settings/iphistory');
-const Limits                     = require('../websocket_pages/user/account/settings/limits');
-const Settings                   = require('../websocket_pages/user/account/settings');
-const SelfExclusion              = require('../websocket_pages/user/account/settings/self_exclusion');
-const PersonalDetails            = require('../websocket_pages/user/account/settings/personal_details');
-const Statement                  = require('../websocket_pages/user/account/statement/statement.init');
-const TopUpVirtual               = require('../websocket_pages/user/account/top_up_virtual');
-const Accounts                   = require('../websocket_pages/user/accounts');
-const ICOSubscribe               = require('../websocket_pages/user/ico_subscribe');
-const LostPassword               = require('../websocket_pages/user/lost_password');
-const MetaTrader                 = require('../websocket_pages/user/metatrader/metatrader');
-const FinancialAccOpening        = require('../websocket_pages/user/new_account/financial_acc_opening');
-const JapanAccOpening            = require('../websocket_pages/user/new_account/japan_acc_opening');
-const RealAccOpening             = require('../websocket_pages/user/new_account/real_acc_opening');
-const VirtualAccOpening          = require('../websocket_pages/user/new_account/virtual_acc_opening');
-const ResetPassword              = require('../websocket_pages/user/reset_password');
-const SetCurrency                = require('../websocket_pages/user/set_currency');
-const TNCApproval                = require('../websocket_pages/user/tnc_approval');
-const TelegramBot                = require('../websocket_pages/user/telegram_bot');
+const AccountTransfer      = require('../websocket_pages/cashier/account_transfer');
+const Cashier              = require('../websocket_pages/cashier/cashier');
+const DepositWithdraw      = require('../websocket_pages/cashier/deposit_withdraw');
+const PaymentAgentList     = require('../websocket_pages/cashier/payment_agent_list');
+const PaymentAgentWithdraw = require('../websocket_pages/cashier/payment_agent_withdraw');
+const MBTradePage          = require('../websocket_pages/mb_trade/mb_tradepage');
+const AssetIndexUI         = require('../websocket_pages/resources/asset_index/asset_index.ui');
+const TradingTimesUI       = require('../websocket_pages/resources/trading_times/trading_times.ui');
+const TradePage_Beta       = require('../websocket_pages/trade/beta/tradepage');
+const TradePage            = require('../websocket_pages/trade/tradepage');
+const Authenticate         = require('../websocket_pages/user/account/authenticate');
+const ChangePassword       = require('../websocket_pages/user/account/change_password');
+const PaymentAgentTransfer = require('../websocket_pages/user/account/payment_agent_transfer');
+const Portfolio            = require('../websocket_pages/user/account/portfolio/portfolio.init');
+const ProfitTable          = require('../websocket_pages/user/account/profit_table/profit_table.init');
+const APIToken             = require('../websocket_pages/user/account/settings/api_token');
+const AuthorisedApps       = require('../websocket_pages/user/account/settings/authorised_apps');
+const CashierPassword      = require('../websocket_pages/user/account/settings/cashier_password');
+const FinancialAssessment  = require('../websocket_pages/user/account/settings/financial_assessment');
+const IPHistory            = require('../websocket_pages/user/account/settings/iphistory');
+const Limits               = require('../websocket_pages/user/account/settings/limits');
+const Settings             = require('../websocket_pages/user/account/settings');
+const SelfExclusion        = require('../websocket_pages/user/account/settings/self_exclusion');
+const PersonalDetails      = require('../websocket_pages/user/account/settings/personal_details');
+const Statement            = require('../websocket_pages/user/account/statement/statement.init');
+const TopUpVirtual         = require('../websocket_pages/user/account/top_up_virtual');
+const Accounts             = require('../websocket_pages/user/accounts');
+const ICOSubscribe         = require('../websocket_pages/user/ico_subscribe');
+const LostPassword         = require('../websocket_pages/user/lost_password');
+const MetaTrader           = require('../websocket_pages/user/metatrader/metatrader');
+const FinancialAccOpening  = require('../websocket_pages/user/new_account/financial_acc_opening');
+const JapanAccOpening      = require('../websocket_pages/user/new_account/japan_acc_opening');
+const RealAccOpening       = require('../websocket_pages/user/new_account/real_acc_opening');
+const VirtualAccOpening    = require('../websocket_pages/user/new_account/virtual_acc_opening');
+const ResetPassword        = require('../websocket_pages/user/reset_password');
+const SetCurrency          = require('../websocket_pages/user/set_currency');
+const TNCApproval          = require('../websocket_pages/user/tnc_approval');
+const TelegramBot          = require('../websocket_pages/user/telegram_bot');
 
 const CashierJP     = require('../../binary_japan/cashier');
 const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test');
 
 /* eslint-disable max-len */
 const pages_config = {
-    account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true },
+    account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true, needs_currency: true },
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
@@ -93,6 +94,7 @@ const pages_config = {
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     realws                   : { module: RealAccOpening,             is_authenticated: true, only_virtual: true },
+    redirect                 : { module: Redirect },
     regulation               : { module: Regulation },
     reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
     securityws               : { module: Settings,                   is_authenticated: true },

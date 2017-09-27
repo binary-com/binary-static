@@ -22,12 +22,17 @@ h1, h2, h3 {
     font-weight: 500 !important;
 }
 
+button {
+    outline: none;
+    text-transform: none !important;
+}
+
 .container {
     max-width: 1200px !important;
 }
 
 .content-section {
-    padding: 50px 15px;
+    padding: 100px 15px;
 }
 
 // Intro section
@@ -86,6 +91,12 @@ hr {
     margin: 20px;
 }
 
+.icon--sm {
+    width: 32px;
+    height: 32px;
+    margin: 20px;
+}
+
 .box {
     border: 1px solid $COLOR_DARK_BLUE;
     margin: 15px 0;
@@ -120,17 +131,17 @@ hr {
 
 .boxed-heading, .chart-heading {
     position: absolute;
-    padding: 15px;
+    padding: 40px 15px;
     color: $COLOR_WHITE;
     background-color: $COLOR_BLUE;
 }
 
 .boxed-heading-center {
-    top: -30px;
+    top: -60px;
     right: 0;
     left: 0;
     width: 80vw;
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -170,6 +181,13 @@ hr {
     left: 0;
 }
 
+.chart-note {
+    margin: auto;
+    font-style: italic;
+    font-weight: bold;
+    color: $COLOR_BLUE_SHADE;
+}
+
 // What are binary options section
 .blue-bg {
     background: url('../images/ico/images/img2@2x.png') no-repeat bottom center scroll;
@@ -185,7 +203,7 @@ hr {
     background-color: $COLOR_ORANGE;
     width: 23vw;
     position: absolute;
-    top: -59px;
+    top: -109px;
 }
 
 .footnote {
@@ -244,7 +262,6 @@ input[type='text']:focus, input[type='submit']:focus {
     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     overflow: auto;
-    padding: 10px 0;
 }
 
 .navbar-brand {
@@ -254,16 +271,18 @@ input[type='text']:focus, input[type='submit']:focus {
 .logo {
     background: url('https://style.binary.com/images/logo/binary_logo_light.svg') no-repeat;
     width: 48vw !important;
-    height: 36px;
+    height: 40px;
     margin: 15px;
 }
 
 .navbar-nav {
-    float: right;
     display: flex;
+    justify-content: flex-end;
 
     > li {
+        flex-grow: 1;
         padding: 10px 15px;
+        white-space: nowrap;
     }
     a, a:visited {
         color: $COLOR_WHITE !important;
@@ -330,7 +349,7 @@ input[type='text']:focus, input[type='submit']:focus {
         }
     }
     .navbar-fixed-top.expand {
-        height: 180px;
+        height: 220px;
     }
     .navbar-brand {
         float: none;
@@ -367,10 +386,6 @@ input[type='text']:focus, input[type='submit']:focus {
 
 #faq-section {
     padding: 100px 15px;
-
-    #faq-btn {
-        text-transform: none !important;
-    }
 }
 
 .faq {
@@ -389,5 +404,124 @@ input[type='text']:focus, input[type='submit']:focus {
     }
     ol {
         margin: 1.25em 0 1.25em 2em; // overwrite binary.css
+    }
+}
+
+#read-im-section {
+    background: url('../images/ico/images/img4@2x.png') no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: 50px 15px;
+
+    h2 {
+        line-height: 1.4;
+    }
+    button {
+        padding: 20px 30px;
+        font-size: 28px;
+    }
+}
+
+.disclaimer {
+    padding: 120px 0 60px;
+    @media (max-width: 1199px) {
+        padding: 30px 0;
+    }
+
+    form {
+        margin: 30px 0;
+    }
+    select {
+        max-width: 100%;
+    }
+    button {
+        margin: 20px 0;
+    }
+    label {
+        font-weight: bold;
+
+        input {
+            vertical-align: bottom;
+        }
+    }
+    .disclaimer-container {
+        padding: 30px;
+        margin: 20px 0;
+        text-align: justify;
+        background: $COLOR_LIGHT_GRAY;
+
+        h2 {
+            color: $COLOR_BLUE;
+            font-weight: 400;
+        }
+        p, ul li {
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 575px) {
+        h2 {
+            font-size: 22px;
+        }
+        p, ul li {
+            font-size: 14px;
+        }
+    }
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+#board-of-directors {
+    position: relative;
+    border-top: 5px solid $COLOR_ORANGE;
+
+    img {
+        display: block;
+        margin: auto;
+        max-width: 200px;
+    }
+    a {
+        display: inline-block;
+    }
+    h2 {
+        position: absolute;
+        padding: 35px 15px;
+        color: $COLOR_WHITE;
+        background-color: $COLOR_ORANGE;
+    }
+    h4 {
+        margin: 1em 0;
+    }
+}
+
+.social--linkedin {
+    content: url('../images/ico/icons/linkedin.svg');
+}
+
+.social--twitter {
+    content: url('../images/ico/icons/twitter.svg');
+}
+
+.social--youtube {
+    content: url('../images/ico/icons/youtube.svg');
+}
+
+.acquired-bg {
+    position: relative;
+    background: url('../images/ico/images/img5@2x.png') no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#acquired-section {
+    margin-bottom: 160px;
+
+    h2 {
+        line-height: 1.4;
     }
 }

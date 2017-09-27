@@ -3,47 +3,39 @@ const State       = require('./storage').State;
 const Url         = require('./url');
 
 const BinaryPjax = (() => {
-    'use strict';
+    let xhr,
+        previous_url;
 
-    let xhr;
-    let previous_url;
     const params   = {};
+    const cache    = {};
     const defaults = {
         type    : 'GET',
         dataType: 'html',
     };
-    const cache = {};
 
     const init = (container, content_selector) => {
         if (!(window.history && window.history.pushState && window.history.replaceState &&
             // pushState isn't reliable on iOS until 5.
             !navigator.userAgent.match(/((iPod|iPhone|iPad).+\bOS\s+[1-4]\D|WebApps\/.+CFNetwork)/))) {
-            console.error('Unable to initialize router');
             return;
         }
 
-        container = $(container);
+        const $container = $(container);
 
-        if (!container.length) {
-            console.warn('Could not find container');
+        if (!$container.length || !(content_selector && content_selector.length)) {
             return;
         }
 
-        if (!(content_selector && content_selector.length)) {
-            console.warn('No content selector provided');
-            return;
-        }
-
-        params.container = container;
+        params.container        = $container;
         params.content_selector = content_selector;
 
-        const url = window.location.href;
-        const title = document.title;
-        const content = container.find(content_selector);
+        const url     = window.location.href;
+        const title   = document.title;
+        const content = $container.find(content_selector);
 
         // put current content to cache, so we won't need to load it again
         if (content && content.length) {
-            window.history.replaceState({ url: url }, title, url);
+            window.history.replaceState({ url }, title, url);
             setDataPage(content, url);
             params.container.trigger('binarypjax:after', content);
         }
@@ -54,7 +46,7 @@ const BinaryPjax = (() => {
     };
 
     const setDataPage = (content, url) => {
-        content.attr('data-page', url.match('.+\/(.+)\.html.*')[1]);
+        content.attr('data-page', url.match(/.+\/(.+)\.html.*/)[1]);
     };
 
     const handleClick = (event) => {
@@ -95,14 +87,13 @@ const BinaryPjax = (() => {
     const processUrl = (url, replace) => {
         State.set('is_loaded_by_pjax', true);
 
-        if (!/^http/i.test(url)) {
-            url = Url.urlFor(url);
-        }
-        const cached_content = cacheGet(url);
+        const complete_url = /^http/i.test(url) ? url : Url.urlFor(url);
+
+        const cached_content = cacheGet(complete_url);
         if (cached_content) {
-            replaceContent(url, cached_content, replace);
+            replaceContent(complete_url, cached_content, replace);
         } else {
-            load(url, replace);
+            load(complete_url, replace);
         }
     };
 
@@ -110,9 +101,10 @@ const BinaryPjax = (() => {
      * Load url from server
      */
     const load = (url, replace) => {
-        const lang = getLanguage();
+        const lang    = getLanguage();
         const options = $.extend(true, {}, $.ajaxSettings, defaults, {
-            url: url.replace(new RegExp(`\/${lang}\/`, 'i'), `/${lang.toLowerCase()}/pjax/`) });
+            url: url.replace(new RegExp(`/${lang}/`, 'i'), `/${lang.toLowerCase()}/pjax/`),
+        });
 
         options.success = (data) => {
             const result = {};
@@ -147,7 +139,7 @@ const BinaryPjax = (() => {
 
     const replaceContent = (url, content, replace) => {
         previous_url = window.location.href;
-        window.history[replace ? 'replaceState' : 'pushState']({ url: url }, content.title, url);
+        window.history[replace ? 'replaceState' : 'pushState']({ url }, content.title, url);
 
         params.container.trigger('binarypjax:before');
 
@@ -186,11 +178,11 @@ const BinaryPjax = (() => {
     };
 
     return {
-        init: init,
-        load: processUrl,
+        init,
+        loadPreviousUrl,
 
-        loadPreviousUrl: loadPreviousUrl,
-        getPreviousUrl : () => previous_url,
+        load          : processUrl,
+        getPreviousUrl: () => previous_url,
     };
 })();
 

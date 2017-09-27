@@ -30,7 +30,7 @@ const VideoFacility = (() => {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad,
     };
 })();
 

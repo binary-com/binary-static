@@ -1,22 +1,25 @@
 const Validation       = require('./form_validation');
+const urlParam         = require('../base/url').param;
 const isEmptyObject    = require('../base/utility').isEmptyObject;
 const showLoadingImage = require('../base/utility').showLoadingImage;
 const BinarySocket     = require('../websocket_pages/socket');
 
 const FormManager = (() => {
-    'use strict';
-
     const forms = {};
 
-    const initForm = (form_selector, fields) => {
+    const initForm = (form_selector, fields, needs_token) => {
         const $form = $(`${form_selector}:visible`);
-        const $btn = $form.find('button[type="submit"]');
+        const $btn  = $form.find('button[type="submit"]');
         if ($form.length) {
             forms[form_selector] = {
                 $btn_submit: $btn,
                 can_submit : true,
             };
             if (Array.isArray(fields) && fields.length) {
+                if (needs_token) {
+                    // eslint-disable-next-line no-param-reassign
+                    fields = fields.concat({ request_field: 'verification_code', value: urlParam('token') });
+                }
                 forms[form_selector].fields = fields;
 
                 fields.forEach((field) => {
@@ -31,18 +34,17 @@ const FormManager = (() => {
         }
         // handle firefox
         $btn.removeAttr('disabled');
-        Validation.init(form_selector, fields);
+        Validation.init(form_selector, fields, needs_token);
     };
 
     const getFormData = (form_selector) => {
-        const data = {};
+        const data   = {};
         const fields = forms[form_selector].fields;
         if (!fields) return data;
         let key,
             $selector,
             val,
-            value,
-            native;
+            value;
 
         fields.forEach((field) => {
             if (!field.exclude_request) {
@@ -50,16 +52,21 @@ const FormManager = (() => {
                 if ($selector.is(':visible') || field.value) {
                     val = $selector.val();
                     key = field.request_field || field.selector;
-                    native = $selector.attr('data-picker') === 'native';
 
-                    // prioritise data-value
-                    // if label, take the text
-                    // if checkbox, take checked value
-                    // otherwise take the value
-                    value = field.value ? (typeof field.value === 'function' ? field.value() : field.value) :
-                        native ? val : ($selector.attr('data-value') || (/lbl_/.test(key) ? (field.value || $selector.text()) :
-                            $selector.is(':checkbox') ? ($selector.is(':checked') ? 1 : 0) :
-                                Array.isArray(val) ? val.join(',') : (val || '')));
+                    value = val || '';
+                    if (field.value) {
+                        value = typeof field.value === 'function' ? field.value() : field.value;
+                    } else if ($selector.attr('data-picker') === 'native') {
+                        value = val;
+                    } else if ($selector.attr('data-value')) {
+                        value = $selector.attr('data-value');
+                    } else if (/lbl_/.test(key)) {
+                        value = field.value || $selector.text();
+                    } else if ($selector.is(':checkbox')) {
+                        value = $selector.is(':checked') ? 1 : 0;
+                    } else if (Array.isArray(val)) {
+                        value = val.join(',');
+                    }
 
                     if (!(field.exclude_if_empty && val.length === 0)) {
                         key = key.replace(/lbl_|#|\./g, '');
@@ -110,9 +117,9 @@ const FormManager = (() => {
 
         $(options.form_selector).off('submit').on('submit', (evt) => {
             evt.preventDefault();
-            form = forms[options.form_selector];
+            form        = forms[options.form_selector];
             $btn_submit = form.$btn_submit;
-            can_submit = form.can_submit;
+            can_submit  = form.can_submit;
             if (!can_submit) return;
             if (Validation.validate(options.form_selector)) {
                 const req = $.extend({}, options.obj_request, getFormData(options.form_selector));
@@ -133,8 +140,8 @@ const FormManager = (() => {
     };
 
     return {
-        init        : initForm,
-        handleSubmit: handleSubmit,
+        handleSubmit,
+        init: initForm,
     };
 })();
 

@@ -7,8 +7,6 @@ const jpClient         = require('../../../common_functions/country_base').jpCli
 const Config           = require('../../../../config');
 
 const WebtraderChart = (() => {
-    'use strict';
-
     let chart,
         WebtraderCharts,
         is_initialized;
@@ -31,7 +29,7 @@ const WebtraderChart = (() => {
     };
 
     const setChart = () => {
-        const is_mb_trading = State.get('is_mb_trading');
+        const is_mb_trading  = State.get('is_mb_trading');
         const new_underlying = is_mb_trading ? $('#underlying').attr('value') : document.getElementById('underlying').value;
         if (($('#tab_graph').hasClass('active') || is_mb_trading) &&
             (!chart || chart.data().instrumentCode !== new_underlying ||
@@ -66,10 +64,11 @@ const WebtraderChart = (() => {
     };
 
     const addChart = () => {
-        const is_mb_trading = State.get('is_mb_trading');
-        const $underlying = $('#underlying');
+        const is_mb_trading    = State.get('is_mb_trading');
+        const $underlying      = $('#underlying');
         const $underlying_code = is_mb_trading ? $underlying.attr('value') : $underlying.val();
         const $underlying_name = is_mb_trading ? $underlying.find('.current .name').text() : $underlying.find('option:selected').text();
+
         const chart_config = {
             instrumentCode    : $underlying_code,
             instrumentName    : $underlying_name,
@@ -80,6 +79,7 @@ const WebtraderChart = (() => {
             timezoneOffset    : (jpClient() ? -9 : 0) * 60,
             showShare         : !is_mb_trading,
         };
+
         chart = WebtraderCharts.chartWindow.addNewChart($('#webtrader_chart'), chart_config);
     };
 
@@ -90,9 +90,9 @@ const WebtraderChart = (() => {
     };
 
     const getChartSettings = () => {
-        let chart_settings = { time_frame: '1t',  chart_type: 'line' };
+        let chart_settings = { time_frame: '1t', chart_type: 'line' };
         if (State.get('is_mb_trading')) {
-            const period = MBDefaults.get('period').split('_')[2].substr(0, 2).toUpperCase();
+            const period     = MBDefaults.get('period').split('_')[2].substr(0, 2).toUpperCase();
             const period_map = {
                 '5H': { time_frame: '1m',  chart_type: 'line' },
                 '0D': { time_frame: '30m', chart_type: 'ohlc' },
@@ -101,16 +101,16 @@ const WebtraderChart = (() => {
                 '3M': { time_frame: '1d',  chart_type: 'candlestick' },
                 '1Y': { time_frame: '1d',  chart_type: 'candlestick' },
             };
-            chart_settings = period_map[period] || chart_settings;
+            chart_settings   = period_map[period] || chart_settings;
         }
         return chart_settings;
     };
 
     return {
-        showChart   : showChart,
-        cleanupChart: cleanupChart,
-        setChart    : setChart,
-        redrawChart : redrawChart,
+        showChart,
+        cleanupChart,
+        setChart,
+        redrawChart,
     };
 })();
 

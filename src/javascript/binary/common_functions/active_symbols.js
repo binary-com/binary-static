@@ -1,8 +1,6 @@
 const isEmptyObject = require('../base/utility').isEmptyObject;
 
 const ActiveSymbols = (() => {
-    'use strict';
-
     const groupBy = (xs, key) => (
         xs.reduce((rv, x) => {
             (rv[x[key]] = rv[x[key]] || []).push(x);
@@ -20,9 +18,9 @@ const ActiveSymbols = (() => {
 
     const clone = obj => extend({}, obj);
 
-    let markets = {},
-        submarkets = {},
-        symbols = {};
+    let markets    = {};
+    let submarkets = {};
+    let symbols    = {};
 
     const getMarkets = (all_symbols) => {
         if (!isEmptyObject(markets)) {
@@ -31,9 +29,9 @@ const ActiveSymbols = (() => {
 
         const all_markets = groupBy(all_symbols, 'market');
         Object.keys(all_markets).forEach((key) => {
-            const market_name = key;
+            const market_name    = key;
             const market_symbols = all_markets[key];
-            const symbol = market_symbols[0];
+            const symbol         = market_symbols[0];
             markets[market_name] = {
                 name     : symbol.market_display_name,
                 is_active: !symbol.is_trading_suspended && symbol.exchange_is_open,
@@ -44,8 +42,8 @@ const ActiveSymbols = (() => {
     };
 
     const clearData = () => {
-        markets = {};
-        symbols = {};
+        markets    = {};
+        symbols    = {};
         submarkets = {};
     };
 
@@ -54,15 +52,19 @@ const ActiveSymbols = (() => {
             return clone(market.submarkets);
         }
         market.submarkets = {};
+
         const all_submarkets = groupBy(all_symbols, 'submarket');
+
         Object.keys(all_submarkets).forEach((key) => {
-            const submarket_name = key;
+            const submarket_name    = key;
             const submarket_symbols = all_submarkets[key];
-            const symbol = submarket_symbols[0];
+            const symbol            = submarket_symbols[0];
+
             market.submarkets[submarket_name] = {
                 name     : symbol.submarket_display_name,
                 is_active: !symbol.is_trading_suspended && symbol.exchange_is_open,
             };
+
             getSymbolsForSubmarket(submarket_symbols, market.submarkets[submarket_name]);
         });
         return clone(market.submarkets);
@@ -89,7 +91,7 @@ const ActiveSymbols = (() => {
         if (isEmptyObject(submarkets)) {
             const all_markets = getMarkets(active_symbols);
             Object.keys(all_markets).forEach((key) => {
-                const market = all_markets[key];
+                const market         = all_markets[key];
                 const all_submarkets = getSubmarketsForMarket(active_symbols, market);
                 extend(submarkets, all_submarkets);
             });
@@ -101,7 +103,7 @@ const ActiveSymbols = (() => {
         if (isEmptyObject(symbols)) {
             const all_submarkets = getSubmarkets(active_symbols);
             Object.keys(all_submarkets).forEach((key) => {
-                const submarket = all_submarkets[key];
+                const submarket   = all_submarkets[key];
                 const all_symbols = getSymbolsForSubmarket(active_symbols, submarket);
                 extend(symbols, all_symbols);
             });
@@ -118,7 +120,7 @@ const ActiveSymbols = (() => {
 
     const getTradeUnderlyings = (active_symbols) => {
         const trade_underlyings = {};
-        const all_symbols = getSymbols(active_symbols);
+        const all_symbols       = getSymbols(active_symbols);
         Object.keys(all_symbols).forEach((key) => {
             const symbol = all_symbols[key];
             if (!trade_underlyings[symbol.market]) {
@@ -127,7 +129,7 @@ const ActiveSymbols = (() => {
             if (!trade_underlyings[symbol.submarket]) {
                 trade_underlyings[symbol.submarket] = {};
             }
-            trade_underlyings[symbol.market][key] = symbol;
+            trade_underlyings[symbol.market][key]    = symbol;
             trade_underlyings[symbol.submarket][key] = symbol;
         });
         return trade_underlyings;
@@ -142,13 +144,13 @@ const ActiveSymbols = (() => {
     };
 
     return {
-        getMarkets         : getMarkets,
-        getSubmarkets      : getSubmarkets,
-        getMarketsList     : getMarketsList,
-        getTradeUnderlyings: getTradeUnderlyings,
-        getSymbolNames     : getSymbolNames,
-        clearData          : clearData,
-        getSymbols         : getSymbols,
+        getMarkets,
+        getSubmarkets,
+        getMarketsList,
+        getTradeUnderlyings,
+        getSymbolNames,
+        clearData,
+        getSymbols,
     };
 })();
 
