@@ -98,8 +98,8 @@ const toggleAddRemoveClass = condition => (condition ? 'addClass' : 'removeClass
 /**
  * Creates a DOM element and adds any attributes to it.
  *
- * @param tag_name: string of the tag to create, e.g. 'div', 'a', etc
- * @param attributes: an object with all the attributes to assign, e.g. { id: '...', class: '...', html: '...', ... }
+ * @param {String} tag_name: the tag to create, e.g. 'div', 'a', etc
+ * @param {Object} attributes: all the attributes to assign, e.g. { id: '...', class: '...', html: '...', ... }
  * @return the created DOM element
  */
 const createElement = (tag_name, attributes) => {
