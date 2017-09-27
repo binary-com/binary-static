@@ -12,7 +12,7 @@ const elementTextContent   = require('../../common_functions/common_functions').
 const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
 const formatMoney          = require('../../common_functions/currency').formatMoney;
-const getHighstock         = require('../../common_functions/common_functions').requireHighstock;
+const showSparkline        = require('../../common_functions/sparkline_chart').showSparkline;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -28,99 +28,9 @@ const getHighstock         = require('../../common_functions/common_functions').
  * `Price.display()` to display the price details returned from server
  */
 const Price = (() => {
-    
 
     let type_display_id_mapping = {};
     let form_id                 = 0;
-    let Highcharts;
-    const sparkline_options = {
-        chart: {
-            type  : 'line',
-            margin: [2, 0, 2, 0],
-            width : 100,
-            height: 20,
-            style : {
-                overflow: 'visible',
-            },
-        },
-        title: {
-            text: '',
-        },
-        credits: {
-            enabled: false,
-        },
-        exporting: { enabled: false },
-        legend   : {
-            enabled: false,
-        },
-        xAxis: {
-            labels: {
-                enabled: false,
-            },
-            title: {
-                text: null,
-            },
-            startOnTick  : false,
-            endOnTick    : false,
-            tickPositions: [],
-        },
-        yAxis: {
-            endOnTick  : false,
-            startOnTick: false,
-            labels     : {
-                enabled: false,
-            },
-            title: {
-                text: null,
-            },
-            tickPositions: [0],
-        },
-        tooltip: {
-            formatter () {
-                return `<span>${this.y}</span>`;
-            },
-            backgroundColor: null,
-            borderWidth    : 0,
-            shadow         : false,
-            useHTML        : true,
-            hideDelay      : 1,
-            shared         : true,
-            padding        : 0,
-            positioner (w, h, point) {
-                return { x: point.plotX - (w / 2), y: point.plotY - h };
-            },
-        },
-        plotOptions: {
-            series: {
-                animation: false,
-                lineWidth: 1,
-                shadow   : false,
-                states   : {
-                    hover: {
-                        lineWidth: 1,
-                    },
-                },
-                marker: {
-                    radius: 1,
-                    states: {
-                        hover: {
-                            radius: 2,
-                        },
-                    },
-                },
-                fillOpacity: 0.25,
-            },
-        },
-        series: [{
-            name: 'Price',
-            data: [],
-        }],
-    };
-
-    // Initialize Highcharts.
-    getHighstock((H) => {
-        Highcharts = H;
-    });
 
     const createProposal = (type_of_contract) => {
         const proposal = {
@@ -270,7 +180,11 @@ const Price = (() => {
             if (!data.display_value) {
                 amount.classList.remove('price_moved_up', 'price_moved_down');
             } else {
-                showSparkline(amount_sparkline, data.display_value, type);
+                if(params && params.basis === 'payout') {
+                    showSparkline(amount_sparkline, data.display_value);
+                } else {
+                    showSparkline(amount_sparkline, data.payout);
+                }
             }
             elementTextContent(stake, `${localize('Stake')}: `);
             elementInnerHtml(amount, data.display_value ? formatMoney((currency.value || currency.getAttribute('value')), data.display_value) : '-');
@@ -322,33 +236,6 @@ const Price = (() => {
                     purchase.setAttribute(`data-${key}`, params[key]);
                 }
             });
-        }
-    };
-
-    /**
-     * @param {*} ele : ele which needs to be updated or needs to have a sparkline chart.
-     * @param {*} value : value of point to be added
-     * @param {*} type : type of data being added to chart, can be any arbitrary value.
-     * @param {*} data_points : Maximum number of data points allowed.
-     */
-    const showSparkline = (ele, val, type, data_points = 10) => {
-        const value = parseFloat(val);
-        const chart = typeof $(ele).highcharts === 'function' && $(ele).highcharts();
-        if (value) {
-            if (chart) { // Start adding point
-                if(chart.series[0].data.length < data_points){
-                    chart.series[0].addPoint({ y: value }, true);
-                } else {
-                    chart.series[0].addPoint({ y: value }, true, true);
-                }
-                
-            } else { // Highcharts has not yet been initialised.
-                sparkline_options.series = [{
-                    name: `Price ${type}`,
-                    data: [{y: value}],
-                }];
-                Highcharts.chart(ele, sparkline_options);
-            }
         }
     };
 
