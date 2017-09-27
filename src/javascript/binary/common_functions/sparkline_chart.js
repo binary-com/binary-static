@@ -3,49 +3,49 @@ const getHighstock = require('./common_functions').requireHighstock;
 let Highcharts;
 const sparkline_options = {
     chart: {
-        type: 'spline',
+        type  : 'spline',
         margin: [2, 0, 2, 0],
-        width: 80,
+        width : 80,
         height: 20,
-        style: { overflow: 'visible' },
+        style : { overflow: 'visible' },
     },
-    title: { text: '' },
-    credits: { enabled: false },
+    title    : { text: '' },
+    credits  : { enabled: false },
     exporting: { enabled: false },
-    legend: { enabled: false },
-    xAxis: {
-        labels: { enabled: false },
-        title: { text: null },
-        startOnTick: false,
-        lineWidth: 0,
+    legend   : { enabled: false },
+    xAxis    : {
+        labels            : { enabled: false },
+        title             : { text: null },
+        startOnTick       : false,
+        lineWidth         : 0,
         minorGridLineWidth: 0,
-        lineColor: 'transparent',
-        gridLineColor: 'transparent',
-        endOnTick: false,
-        tickPositions: [],
+        lineColor         : 'transparent',
+        gridLineColor     : 'transparent',
+        endOnTick         : false,
+        tickPositions     : [],
     },
     yAxis: {
-        endOnTick: false,
-        startOnTick: false,
-        labels: { enabled: false },
-        lineWidth: 0,
+        endOnTick         : false,
+        startOnTick       : false,
+        labels            : { enabled: false },
+        lineWidth         : 0,
         minorGridLineWidth: 0,
-        lineColor: 'transparent',
-        gridLineColor: 'transparent',
-        title: { text: null },
-        tickPositions: [0],
+        lineColor         : 'transparent',
+        gridLineColor     : 'transparent',
+        title             : { text: null },
+        tickPositions     : [0],
     },
     tooltip: {
         formatter() {
             return `<span>${this.y}</span>`;
         },
         backgroundColor: null,
-        borderWidth: 0,
-        shadow: false,
-        useHTML: true,
-        hideDelay: 1,
-        shared: true,
-        padding: 0,
+        borderWidth    : 0,
+        shadow         : false,
+        useHTML        : true,
+        hideDelay      : 1,
+        shared         : true,
+        padding        : 0,
         positioner(w, h, point) {
             return { x: point.plotX - (w / 2), y: point.plotY - h };
         },
@@ -54,12 +54,12 @@ const sparkline_options = {
         series: {
             animation: false,
             lineWidth: 1,
-            shadow: false,
-            states: {
+            shadow   : false,
+            states   : {
                 hover: { lineWidth: 1 },
             },
             marker: {
-                radius: 2,
+                radius : 2,
                 enabled: false,
             },
             fillOpacity: 0.25,
@@ -93,7 +93,7 @@ const showSparkline = (ele, val, data_points = 10) => {
             // Hide last point marker.
             if (last_point) {
                 last_point.update({
-                    marker: { enabled: false }
+                    marker: { enabled: false },
                 });
             }
 
@@ -106,7 +106,7 @@ const showSparkline = (ele, val, data_points = 10) => {
             setTimeout(() => {
                 last_point = data.slice(-1)[0];
                 last_point.update({
-                    marker: { enabled: true }
+                    marker: { enabled: true },
                 });
             }, 500);
 
@@ -121,5 +121,5 @@ const showSparkline = (ele, val, data_points = 10) => {
 };
 
 module.exports = {
-    showSparkline
-}
+    showSparkline,
+};

@@ -179,12 +179,10 @@ const Price = (() => {
         const setData = (data = {}) => {
             if (!data.display_value) {
                 amount.classList.remove('price_moved_up', 'price_moved_down');
+            } else if(params && params.basis === 'payout') {
+                showSparkline(amount_sparkline, data.display_value);
             } else {
-                if(params && params.basis === 'payout') {
-                    showSparkline(amount_sparkline, data.display_value);
-                } else {
-                    showSparkline(amount_sparkline, data.payout);
-                }
+                showSparkline(amount_sparkline, data.payout);
             }
             elementTextContent(stake, `${localize('Stake')}: `);
             elementInnerHtml(amount, data.display_value ? formatMoney((currency.value || currency.getAttribute('value')), data.display_value) : '-');
