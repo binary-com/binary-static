@@ -110,24 +110,44 @@
                     a {
                         float: right;
                         padding-right: 20px;
-                        text-decoration: underline;
                         cursor: pointer;
                     }
                 }
                 .audit-table {
-                    padding: 40px;
+                    padding: 30px 40px;
 
                     &:nth-child(3) {
                         padding-top: 0;
+                        padding-bottom: 20px;
                     }
-                    td {
+                    legend {
+                        font-size: $FONT_SIZE_L;
+                    }
+                    table td {
                         text-align: center;
+                        line-height: 24px;
                         padding-left: 4px;
                         border: none;
+                        font-size: $FONT_SIZE_S;
 
-                        &.start-time, &.secondary-bg-color {
+                        &.remark, &.start-time, &.secondary-bg-color {
                             font-weight: bold;
                         }
+                        &.start-time {
+                            border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
+                        }
+                        &.audit-dates {
+                            border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
+                        }
+                        &.secondary-color {
+                            font-size: $FONT_SIZE_N;
+                        }
+                    }
+                    @media screen and (max-width: 768px) {
+                        padding: 20px;
+                    }
+                    @media screen and (max-width: 480px) {
+                        padding: 5px;
                     }
                 }
             }

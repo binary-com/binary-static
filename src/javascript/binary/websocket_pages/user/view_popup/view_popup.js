@@ -255,12 +255,17 @@ const ViewPopup = (() => {
     };
 
     const appendAuditLink = (element_id) => {
-        const link = createElement('a', { text: localize('Audit'), href: `${'java'}${'script:;'}` });
+        const link = createElement('a', { text: localize('Audit'), href: `${'java'}${'script:;'}`, class: 'link-audit' });
         link.addEventListener('click', showAuditTable);
         document.getElementById(element_id).appendChild(link);
     };
 
-    const setAuditVisibility = (show) => {
+    // by default shows audit table and hides chart
+    const setAuditVisibility = (show = true) => {
+        const links = document.getElementsByClassName('link-audit');
+        for (let i = 0; i < links.length; i++) {
+            links[i].setVisibility(!show);
+        }
         document.getElementById('sell_details_chart_wrapper').setVisibility(!show);
         document.getElementById('sell_details_audit').setVisibility(show);
     };
@@ -276,11 +281,9 @@ const ViewPopup = (() => {
         const tr          = createElement('tr', { class: 'gr-row' });
         const th_previous = createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' });
         const link        = createElement('a', { class: 'previous-wrapper' });
-        const span_icon   = createElement('span', { class: 'previous align-self-center' });
-        const span_text   = createElement('span', { class: 'nowrap', text: localize('View Chart') });
 
-        link.appendChild(span_icon);
-        link.appendChild(span_text);
+        link.appendChild(createElement('span', { class: 'previous align-self-center' }));
+        link.appendChild(createElement('span', { class: 'nowrap', text: localize('View Chart') }));
         link.addEventListener('click', () => { setAuditVisibility(0); });
         th_previous.appendChild(link);
 
@@ -294,84 +297,92 @@ const ViewPopup = (() => {
         div.insertAfter(document.getElementById('sell_details_chart_wrapper'));
     };
 
-    const populateAuditTable = () => {
-        const createAuditRow = (table, date, tick, remark, td_class) => {
-            const tr      = document.createElement('tr');
-            const td_tick = createElement('td', { text: (tick ? addComma(tick) : '') });
-            const td_date = createElement('td', { class: 'audit-dates', 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.utc(+date * 1000).format('YYYY-MM-DD HH:mm:ss') : date) });
-
-            tr.appendChild(createElement('td', { text: remark }));
-            if (tick) {
-                tr.appendChild(td_tick);
-            } else {
-                td_date.setAttribute('colspan', 2);
+    const parseTicksResponse = (table, response, tick_time, remark) => (
+        new Promise((resolve) => {
+            if (!response.history) {
+                return;
             }
-            tr.appendChild(td_date);
-
-            if (td_class && td_class.length) {
-                td_class.forEach((c) => {
-                    td_tick.classList.add(c);
-                    td_date.classList.add(c);
-                });
-            }
-
-            table.appendChild(tr);
-        };
-
-        const parseTicksResponse = (table, response, tick_time, remark) => (
-            new Promise((resolve) => {
-                if (!response.history) {
-                    return;
-                }
-                let has_start_time = !/entry/i.test(remark);
-                response.history.times.forEach((time, idx) => {
-                    if (+time === +tick_time) {
-                        let i = idx - 3;
-                        for (i; i < idx + 4; i++) {
-                            const this_time     = response.history.times[i];
-                            const this_price    = response.history.prices[i];
-                            const is_start_time = +this_time === +contract.date_start;
-                            if (is_start_time) {
-                                has_start_time = true;
-                            } else if (!has_start_time && +this_time > +contract.date_start) {
-                                createAuditRow(table, contract.date_start, '', localize('Start Time'), ['fill-bg-color', 'start-time']);
-                                has_start_time = true;
-                            }
-                            if (i === idx) {
-                                createAuditRow(table, this_time, this_price, remark, ['secondary-bg-color', 'content-inverse-color']);
-                            } else {
-                                createAuditRow(table, this_time, this_price, is_start_time ? localize('Start Time') : '', is_start_time ? ['fill-bg-color', 'start-time'] : '');
-                            }
+            let has_start_time = !/entry/i.test(remark);
+            const start_time_classes = ['fill-bg-color', 'start-time'];
+            response.history.times.forEach((time, idx) => {
+                if (+time === +tick_time) {
+                    let i = idx - 3;
+                    for (i; i < idx + 4; i++) {
+                        const this_time     = response.history.times[i];
+                        const this_price    = response.history.prices[i];
+                        const is_start_time = +this_time === +contract.date_start;
+                        if (is_start_time) {
+                            has_start_time = true;
+                        } else if (!has_start_time && +this_time > +contract.date_start) {
+                            createAuditRow(table, contract.date_start, '-', localize('Start Time'), start_time_classes);
+                            has_start_time = true;
                         }
-                        resolve();
+                        if (i === idx) {
+                            createAuditRow(table, this_time, this_price, remark, ['secondary-bg-color', 'content-inverse-color']);
+                        } else {
+                            createAuditRow(table, this_time, this_price, is_start_time ? localize('Start Time') : '', is_start_time ? start_time_classes : '');
+                        }
                     }
-                });
-            })
-        );
+                    resolve();
+                }
+            });
+        })
+    );
 
-        const createAuditTable = (title) => {
-            const div      = createElement('div', { class: 'audit-table' });
-            const fieldset = createElement('fieldset', { class: 'align-start' });
-            const table    = document.createElement('table');
-            fieldset.appendChild(createElement('legend', { text: localize(`Contract ${title}`) }));
-            fieldset.appendChild(table);
-            div.appendChild(fieldset);
-            let insert_after = document.getElementById('audit_header');
-            const audit_table  = document.getElementsByClassName('audit-table')[0];
-            if (audit_table) {
-                insert_after = audit_table;
-            }
-            div.insertAfter(insert_after);
-            return table;
-        };
+    const createAuditTable = (title) => {
+        const div      = createElement('div', { class: 'audit-table' });
+        const fieldset = createElement('fieldset', { class: 'align-start' });
+        const table    = createElement('table', { class: 'gr-10 gr-centered gr-12-p gr-12-m' });
+        fieldset.appendChild(createElement('legend', { text: localize(`Contract ${title}`) }));
+        fieldset.appendChild(table);
+        div.appendChild(fieldset);
+        let insert_after = document.getElementById('audit_header');
+        const audit_table  = document.getElementsByClassName('audit-table')[0];
+        if (audit_table) {
+            insert_after = audit_table;
+        }
+        div.insertAfter(insert_after);
+        return table;
+    };
 
+    const createAuditHeader = (table) => {
+        const tr = createElement('tr', { class: 'gr-row' });
+
+        tr.appendChild(createElement('td', { class: 'gr-3' }));
+        tr.appendChild(createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot') }));
+        tr.appendChild(createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time') }));
+
+        table.appendChild(tr);
+    };
+
+    const createAuditRow = (table, date, tick, remark, td_class) => {
+        const tr        = createElement('tr', { class: 'gr-row' });
+        const td_remark = createElement('td', { class: 'gr-3 remark', text: remark });
+        const td_tick   = createElement('td', { class: 'gr-4', text: (tick && !isNaN(tick) ? addComma(tick) : tick) });
+        const td_date   = createElement('td', { class: 'gr-5 audit-dates', 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.utc(+date * 1000).format('YYYY-MM-DD HH:mm:ss') : date) });
+
+        tr.appendChild(td_remark);
+        tr.appendChild(td_tick);
+        tr.appendChild(td_date);
+
+        if (td_class && td_class.length) {
+            td_class.forEach((c) => {
+                td_tick.classList.add(c);
+                td_date.classList.add(c);
+            });
+        }
+
+        table.appendChild(tr);
+    };
+
+    const populateAuditTable = () => {
         BinarySocket.send({
             ticks_history: contract.underlying,
             start        : +contract.entry_tick_time - (5 * 60),
             end          : +contract.entry_tick_time + (5 * 60),
         }).then((response_entry) => {
             const table_one = createAuditTable('Starts');
-
+            createAuditHeader(table_one);
             parseTicksResponse(table_one, response_entry, contract.entry_tick_time, localize('Entry Spot')).then(() => {
                 // don't show exit tick information if missing or manual sold
                 if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)) {
@@ -381,6 +392,7 @@ const ViewPopup = (() => {
                         end          : +contract.exit_tick_time + (5 * 60),
                     }).then((response_exit) => {
                         const table_two = createAuditTable('Ends');
+                        createAuditHeader(table_two);
                         parseTicksResponse(table_two, response_exit, contract.exit_tick_time, localize('Exit Spot'));
                     }).then(() => {
                         showLocalTimeOnHover('.audit-dates');
