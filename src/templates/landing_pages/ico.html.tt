@@ -177,6 +177,11 @@
                             </div>
                         </div>
                     </div>
+                    <p class="gr-12">
+                        <a class="button" href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">
+                            <span>[% l('How to participate in the [_1] ICO', broker_name) %]</span>
+                        </a>
+                    </p>
                 </div>
             </div>
             <hr>
@@ -336,7 +341,9 @@
                     <div class="gr-row">
                         <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
                             <h2 class="content-inverse-color">[% l("Binary Group Ltd. acquired 100% of Binary Ltd. in August 2017 for the purposes of the ICO.") %]</h2>
-                            <button onclick="window.location.href='[% request.url_for('https://ico_documents.binary.com/binary_ltd_2016_annual_report.pdf') %]'" class="button">[% l("View Binary Group Ltd's 2016 annual report") %]</button>
+                            <a class="button" href="https://ico_documents.binary.com/binary_ltd_2016_annual_report.pdf" target="_blank">
+                                <span>[% l('View Binary Ltd.\'s 2016 annual report') %]</span>
+                            </a>
                         </div>
                     </div>
                 </div>
