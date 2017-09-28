@@ -4,9 +4,7 @@ let Highcharts;
 const sparkline_options = {
     chart: {
         type  : 'spline',
-        margin: [2, 0, 2, 0],
-        width : 80,
-        height: 20,
+        margin: [2,0,2,0],
         style : { overflow: 'visible' },
     },
     title    : { text: '' },
@@ -115,7 +113,8 @@ const showSparkline = (ele, val, data_points = 10) => {
                 name: 'Price',
                 data: [{ y: value }],
             }];
-            Highcharts.chart(ele, sparkline_options);
+            const chart = new Highcharts.chart(ele, sparkline_options);
+            // chart.reflow(); // make the chart fit the container.
         }
     }
 };

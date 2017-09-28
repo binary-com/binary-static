@@ -384,7 +384,7 @@
     #contract_prices_container .price_container .price_wrapper {
         text-align: center;
         align-items: center;
-        width: 100%;
+        width: 90%;
         justify-content: flex-start;
         @include BIDIR_PROP(padding-left, padding-right, 30px);
 
@@ -394,41 +394,46 @@
         div {
             padding: 0 5px;
         }
+        > .col.gr-row {
+            width: 60%;
+        }
         .amount_sparkline {
-            padding: 5px;
+            width: 90%;
+            height: 20px;
+            padding: 0 5px;
+        }
+        .amount_wrapper_div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+
+            &, .contract_amount, .contract_payout {
+                vertical-align: middle;
+            }
+            div {
+                flex-grow: 1;
+            }
+            .stake_wrapper {
+                margin-left: 20px;
+            }
+            .payout_wrapper {
+                margin-right: 20px;
+            }
         }
         .contract_heading {
             display: block;
             float: left;
-            width: 80px;
+            width: 100%;
             padding-left: 5px;
+            margin-bottom: 5px;
         }
         .amount_wrapper {
             float: left;
-            width: 100%;
-
-            .amount_wrapper_div {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                margin-bottom: 10px;
-
-                &, .contract_amount, .contract_payout {
-                    vertical-align: middle;
-                }
-                div {
-                    flex-grow: 1;
-                }
-                .stake_wrapper {
-                    margin-left: 20px;
-                }
-                .payout_wrapper {
-                    margin-right: 20px;
-                }
-            }
+            width: 60%;
         }
         .contract_amount, .contract_payout, .stake, .payout {
-            display: inline-flex;
+            display: block;
         }
     }
     #duration_amount {
