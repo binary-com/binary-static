@@ -40,6 +40,20 @@
                     [% content %]
             [%- END %]
             [% IF hint %]<div class="hint">[% hint %]</div>[% END %]
+            [% IF id == 'address_line_1' %]
+                <div class="error-msg invisible"></div>
+                <div class="gr-8 gr-12-m form-validation-message">
+                    <input class="form-validation-toggle" id="address_validation_message" type="checkbox">
+                    <label for="address_validation_message" class="gr-row form-validation-header">
+                        [% INCLUDE address_validation_header %]
+                    </label>
+                    <div class = "gr-8 gr-10-m gr-push-1-m">
+                        <div class="gr-row form-validation-desc">
+                            [% INCLUDE address_validation_desc %]
+                          </div>
+                    </div>
+                </div>
+            [% END %]
         </div>
     </div>
     [%- END %]

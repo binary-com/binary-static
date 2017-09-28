@@ -44,6 +44,26 @@
         hint=hint || (no_hint ? '' : l('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.')) %]
 [% END %]
 
+[% BLOCK address_validation_header %]
+    <span>[% l("Please refer to the") %]<strong>&nbsp[% l("characters that can be used") %]</strong></span>
+[% END %]
+
+[% BLOCK address_validation_desc %]
+    <span class="gr-6">
+        <p>[% l(" - Letters (A-Z and a-z)") %]</p>
+        <p>[% l(" - Numbers (0-9)") %]</p>
+        <p>[% l(" - Hyphens (-)") %]</p>
+        <p>[% l(" - Periods (.)") %]</p>
+        <p>[% l(" - Apostrophe (')") %]</p>
+    </span>
+    <span class="gr-6">
+        <p>[% l(" - Hashes (#)") %]</p>
+        <p>[% l(" - Semi-colons") %]</p>
+        <p>[% l(" - Colons") %]</p>
+        <p>[% l(" - Brackets (())") %]</p>
+    </span>
+[% END %]
+
 [% BLOCK address_line_2 %]
     [% INCLUDE form_row type='text' id='address_line_2' label=l('Second line of home address') attributes='maxlength="70"' hint=hint %]
 [% END %]
