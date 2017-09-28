@@ -13,6 +13,7 @@ const AccountTransfer = (() => {
     const messages = {
         parent : 'client_message',
         error  : 'no_account',
+        balance: 'not_enough_balance',
         deposit: 'no_balance',
     };
 
@@ -24,9 +25,7 @@ const AccountTransfer = (() => {
         max_transfer_allowed;
 
     const populateAccounts = (accounts) => {
-        client_loginid  = Client.get('loginid');
-        client_currency = Client.get('currency');
-
+        client_loginid   = Client.get('loginid');
         el_transfer_from = document.getElementById('lbl_transfer_from');
         el_transfer_to   = document.getElementById('transfer_to');
 
@@ -143,9 +142,14 @@ const AccountTransfer = (() => {
             BinaryPjax.loadPreviousUrl();
         }
         BinarySocket.wait('balance').then((response) => {
-            client_balance = getPropertyValue(response, ['balance', 'balance']);
+            client_balance  = getPropertyValue(response, ['balance', 'balance']);
+            client_currency = Client.get('currency');
             if (!client_balance || +client_balance < getMinAmount()) {
                 document.getElementById(messages.parent).setVisibility(1);
+                if (client_currency) {
+                    document.getElementById('min_required_amount').textContent = `${client_currency} ${getMinAmount()}`;
+                    document.getElementById(messages.balance).setVisibility(1);
+                }
                 document.getElementById(messages.deposit).setVisibility(1);
             } else {
                 BinarySocket.send({ transfer_between_accounts: 1 }).then((response_transfer) => {
