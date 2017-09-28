@@ -23,7 +23,7 @@ const checkPassword = (password_selector) => {
             }
         }
         div.textContent = localize(
-            'Hint: it takes approximately [_1][_2] to crack this password.', [
+            'Hint: it would take approximately [_1][_2] to crack this password.', [
                 (daysToCrack === 1000000000 ? '>' : ''),
                 years ? `${years} ${localize('years')}` : `${daysToCrack} ${localize('days')}`,
             ],
