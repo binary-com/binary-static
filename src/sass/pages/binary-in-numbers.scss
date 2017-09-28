@@ -54,18 +54,18 @@
         }
         .transaction {
             .icon {
-                background-image: url('../images/pages/binary_in_numbers/icons/ic-active-trading-clients.svg');
-            }
-            .chart {
-                background-image: url('../images/pages/binary_in_numbers/charts/chart-active-trading-clients.svg');
-            }
-        }
-        .turnover {
-            .icon {
                 background-image: url('../images/pages/binary_in_numbers/icons/ic-num-transactions.svg');
             }
             .chart {
                 background-image: url('../images/pages/binary_in_numbers/charts/chart-num-transactions.svg');
+            }
+        }
+        .turnover {
+            .icon {
+                background-image: url('../images/pages/binary_in_numbers/icons/ic-turnover.svg');
+            }
+            .chart {
+                background-image: url('../images/pages/binary_in_numbers/charts/chart-turnover.svg');
             }
         }
         .withdrawal {
