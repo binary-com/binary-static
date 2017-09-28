@@ -20,7 +20,8 @@ const AccountTransfer = (() => {
         el_transfer_to,
         client_loginid,
         client_currency,
-        client_balance;
+        client_balance,
+        max_transfer_allowed;
 
     const populateAccounts = (accounts) => {
         client_loginid  = Client.get('loginid');
@@ -95,7 +96,7 @@ const AccountTransfer = (() => {
         document.getElementById(form_id).setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: client_balance }]] },
+            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: max_transfer_allowed }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -160,6 +161,7 @@ const AccountTransfer = (() => {
                         if (hasError(response_limits)) {
                             return;
                         }
+                        max_transfer_allowed = Math.min(+client_balance, +response_limits.get_limits.remainder);
                         populateAccounts(accounts);
                     });
                 });
