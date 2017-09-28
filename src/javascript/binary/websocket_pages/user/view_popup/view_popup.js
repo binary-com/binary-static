@@ -248,7 +248,8 @@ const ViewPopup = (() => {
         $container.find('#errMsg').setVisibility(0);
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
-        if (!jpClient()) {
+        // don't show for japanese clients or contracts that are manually sold before starting
+        if (!jpClient() && (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
             appendAuditLink('trade_details_entry_spot');
             appendAuditLink('trade_details_current_spot');
         }
