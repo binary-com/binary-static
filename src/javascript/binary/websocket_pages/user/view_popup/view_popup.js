@@ -341,13 +341,7 @@ const ViewPopup = (() => {
         let insert_after = document.getElementById('audit_header');
         const audit_table  = document.getElementsByClassName('audit-table')[0];
         if (audit_table) {
-            if (contract.tick_count && contract.tick_count === 10) {
-                const div_two = createElement('div', { class: 'audit-table secondary-color', text: '...' });
-                div_two.insertAfter(audit_table);
-                insert_after = div_two;
-            } else {
-                insert_after = audit_table;
-            }
+            insert_after = audit_table;
         }
         div.insertAfter(insert_after);
         return table;

@@ -142,11 +142,6 @@
                             font-size: $FONT_SIZE_N;
                         }
                     }
-                    &.secondary-color {
-                        font-size: 45px;
-                        letter-spacing: 20px;
-                        padding: 0;
-                    }
                     @media screen and (max-width: 768px) {
                         padding: 20px;
                     }
