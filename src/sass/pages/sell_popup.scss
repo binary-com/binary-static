@@ -114,10 +114,9 @@
                     }
                 }
                 .audit-table {
-                    padding: 30px 40px;
+                    padding: 0 40px;
 
-                    &:nth-child(3) {
-                        padding-top: 0;
+                    &:nth-child(4) {
                         padding-bottom: 20px;
                     }
                     legend {
@@ -143,11 +142,16 @@
                             font-size: $FONT_SIZE_N;
                         }
                     }
+                    &.secondary-color {
+                        font-size: 45px;
+                        letter-spacing: 20px;
+                        padding: 0 0 20px;
+                    }
                     @media screen and (max-width: 768px) {
-                        padding: 20px;
+                        padding: 0 20px;
                     }
                     @media screen and (max-width: 480px) {
-                        padding: 5px;
+                        padding: 0 5px;
                     }
                 }
             }
