@@ -319,7 +319,8 @@ const ViewPopup = (() => {
                             has_start_time = true;
                         }
                         if (i === idx) {
-                            createAuditRow(table, this_time, this_price, remark, ['secondary-bg-color', 'content-inverse-color']);
+                            // handle when start time and entry spot fall on the same time
+                            createAuditRow(table, this_time, this_price, localize(`${is_start_time ? 'Start Time and' : ''} ${remark}`), ['secondary-bg-color', 'content-inverse-color', 'align-self-center']);
                         } else {
                             createAuditRow(table, this_time, this_price, is_start_time ? localize('Start Time') : '', is_start_time ? start_time_classes : '');
                         }
@@ -395,7 +396,7 @@ const ViewPopup = (() => {
         }).then((response_entry) => {
             const table_one = createAuditTable('Starts');
             createAuditHeader(table_one);
-            parseTicksResponse(table_one, response_entry, contract.entry_tick_time, localize('Entry Spot')).then(() => {
+            parseTicksResponse(table_one, response_entry, contract.entry_tick_time, 'Entry Spot').then(() => {
                 // don't show exit tick information if missing or manual sold
                 if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)) {
                     BinarySocket.send({
@@ -405,7 +406,7 @@ const ViewPopup = (() => {
                     }).then((response_exit) => {
                         const table_two = createAuditTable('Ends');
                         createAuditHeader(table_two);
-                        parseTicksResponse(table_two, response_exit, contract.exit_tick_time, localize('Exit Spot'));
+                        parseTicksResponse(table_two, response_exit, contract.exit_tick_time, 'Exit Spot');
                     }).then(() => {
                         showLocalTimeOnHover('.audit-dates');
                         setAuditVisibility(1);
