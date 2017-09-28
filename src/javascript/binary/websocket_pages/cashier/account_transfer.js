@@ -15,6 +15,7 @@ const AccountTransfer = (() => {
         error  : 'no_account',
         balance: 'not_enough_balance',
         deposit: 'no_balance',
+        limit  : 'limit_reached',
     };
 
     let el_transfer_from,
@@ -163,6 +164,11 @@ const AccountTransfer = (() => {
                     }
                     BinarySocket.send({ get_limits: 1 }).then((response_limits) => {
                         if (hasError(response_limits)) {
+                            return;
+                        }
+                        if (+response_limits.get_limits.remainder < getMinAmount()) {
+                            document.getElementById(messages.limit).setVisibility(1);
+                            document.getElementById(messages.parent).setVisibility(1);
                             return;
                         }
                         max_transfer_allowed = Math.min(+client_balance, +response_limits.get_limits.remainder);
