@@ -33,7 +33,7 @@ const AccountTransfer = (() => {
 
         elementTextContent(el_transfer_from, `${client_loginid} ${currency_text}`);
 
-        const fragment_transfer_to   = document.createElement('div');
+        const fragment_transfer_to = document.createElement('div');
 
         accounts.forEach((account, idx) => {
             if (accounts[idx].loginid !== client_loginid) {
@@ -95,7 +95,7 @@ const AccountTransfer = (() => {
         document.getElementById(form_id).setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: client_balance, custom_message: 'This amount exceeds your withdrawal limit.' }]] },
+            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: client_balance }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -143,7 +143,7 @@ const AccountTransfer = (() => {
         }
         BinarySocket.wait('balance').then((response) => {
             client_balance = getPropertyValue(response, ['balance', 'balance']);
-            if (!client_balance || +client_balance === 0) {
+            if (!client_balance || +client_balance < getMinAmount()) {
                 document.getElementById(messages.parent).setVisibility(1);
                 document.getElementById(messages.deposit).setVisibility(1);
             } else {
