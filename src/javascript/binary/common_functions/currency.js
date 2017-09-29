@@ -14,7 +14,7 @@ const formatMoney = (currency_value, amount, exclude_currency) => {
     money = isNaN(money) ? 0 : Math.abs(money);
     if (typeof Intl !== 'undefined') {
         const options = { minimumFractionDigits: decimal_places, maximumFractionDigits: decimal_places };
-        money    = new Intl.NumberFormat(getLanguage().toLowerCase().replace('_', '-'), options).format(money);
+        money = new Intl.NumberFormat(getLanguage().toLowerCase().replace('_', '-'), options).format(money);
     } else {
         money = addComma(money, decimal_places);
     }
