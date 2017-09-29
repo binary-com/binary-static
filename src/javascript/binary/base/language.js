@@ -1,5 +1,6 @@
 const Cookies            = require('js-cookie');
 const CookieStorage      = require('./storage').CookieStorage;
+const applyToAllElements = require('./utility').applyToAllElements;
 const elementTextContent = require('../common_functions/common_functions').elementTextContent;
 
 const Language = (() => {
@@ -60,9 +61,8 @@ const Language = (() => {
         url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${lang.trim().toLowerCase()}/`);
 
     const onChangeLanguage = () => {
-        const select_language = document.getElementById('select_language').getElementsByTagName('li');
-        for (let i = 0; i < select_language.length; i++) {
-            select_language[i].addEventListener('click', (e) => {
+        applyToAllElements('li', (el) => {
+            el.addEventListener('click', (e) => {
                 const lang = e.target.getAttribute('class');
                 if (getLanguage() === lang) return;
                 const display_language = document.getElementById('display_language').getElementsByClassName('language');
@@ -70,7 +70,7 @@ const Language = (() => {
                 setCookieLanguage(lang);
                 document.location = urlForLanguage(lang);
             });
-        }
+        }, '', document.getElementById('select_language'));
     };
 
     return {

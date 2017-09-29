@@ -1,4 +1,5 @@
-const Client = require('./client');
+const Client             = require('./client');
+const applyToAllElements = require('./utility').applyToAllElements;
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 const Menu = (() => {
@@ -11,10 +12,7 @@ const Menu = (() => {
         menu_top  = document.getElementById('menu-top');
         items     = main_menu.getElementsByClassName('item');
 
-        const li_menu = menu_top.getElementsByTagName('li');
-        for (let i = 0; i < li_menu.length; i++) {
-            li_menu[i].classList.remove('active');
-        }
+        applyToAllElements('li', (el) => { el.classList.remove('active'); }, '', menu_top);
         hideMainMenu();
 
         const active = activeMenuTop();
@@ -36,13 +34,8 @@ const Menu = (() => {
 
     const activateMainMenu = () => {
         // First unset everything.
-        for (let i = 0; i < items.length; i++) {
-            items[i].classList.remove('active', 'hover');
-        }
-        const link_sub_items = main_menu.querySelectorAll('.sub_item a');
-        for (let i = 0; i < link_sub_items.length; i++) {
-            link_sub_items[i].classList.remove('a-active');
-        }
+        applyToAllElements(items, (el) => { el.classList.remove('active', 'hover'); });
+        applyToAllElements('.sub_item a', (el) => { el.classList.remove('a-active'); }, '', main_menu);
 
         const active         = activeMainMenu();
         const active_item    = active.item;
@@ -59,24 +52,18 @@ const Menu = (() => {
 
     const onUnload = () => {
         main_menu.removeEventListener('mouseleave', onMouseLeave);
-        for (let i = 0; i < items.length; i++) {
-            items[i].removeEventListener('mouseenter', onMouseEnter);
-        }
+        applyToAllElements(items, (el) => { el.classList.removeEventListener('mouseenter', onMouseEnter); });
     };
 
     const removeHover = () => {
-        for (let i = 0; i < items.length; i++) {
-            items[i].classList.remove('hover');
-        }
+        applyToAllElements(items, (el) => { el.classList.remove('hover'); });
     };
 
     const onMouseHover = (active_item) => {
         main_menu.addEventListener('mouseleave', () => {
             onMouseLeave(active_item);
         });
-        for (let i = 0; i < items.length; i++) {
-            items[i].addEventListener('mouseenter', onMouseEnter);
-        }
+        applyToAllElements(items, (el) => { el.addEventListener('mouseenter', onMouseEnter); });
     };
 
     const onMouseLeave = (active_item) => {

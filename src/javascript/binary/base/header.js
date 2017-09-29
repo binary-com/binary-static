@@ -6,6 +6,7 @@ const Login               = require('./login');
 const State               = require('./storage').State;
 const Url                 = require('./url');
 const createElement       = require('./utility').createElement;
+const applyToAllElements  = require('./utility').applyToAllElements;
 const elementInnerHtml    = require('../common_functions/common_functions').elementInnerHtml;
 const elementTextContent  = require('../common_functions/common_functions').elementTextContent;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
@@ -44,11 +45,10 @@ const Header = (() => {
         btn_login.removeEventListener('click', loginOnClick);
         btn_login.addEventListener('click', loginOnClick);
 
-        const logout = document.querySelectorAll('a.logout');
-        for (let i = 0; i < logout.length; i++) {
-            logout[i].removeEventListener('click', Client.sendLogoutRequest);
-            logout[i].addEventListener('click', Client.sendLogoutRequest);
-        }
+        applyToAllElements('a.logout', (el) => {
+            el.removeEventListener('click', Client.sendLogoutRequest);
+            el.addEventListener('click', Client.sendLogoutRequest);
+        });
     };
 
     const logoOnClick = () => {
@@ -71,14 +71,8 @@ const Header = (() => {
                     const currency       = Client.get('currency', loginid);
                     const localized_type = localize('[_1] Account', [is_real && currency ? currency : account_title]);
                     if (loginid === Client.get('loginid')) { // default account
-                        const account_type = document.getElementsByClassName('account-type');
-                        for (let i = 0; i < account_type.length; i++) {
-                            elementInnerHtml(account_type[i], localized_type);
-                        }
-                        const account_id = document.getElementsByClassName('account-id');
-                        for (let i = 0; i < account_id.length; i++) {
-                            elementInnerHtml(account_id[i], loginid);
-                        }
+                        applyToAllElements('.account-type', (el) => { elementInnerHtml(el, localized_type); });
+                        applyToAllElements('.account-id', (el) => { elementInnerHtml(el, localized_type); });
                     } else {
                         const link    = createElement('a', { href: `${'java'}${'script:;'}`, 'data-value': loginid });
                         const li_type = createElement('li', { text: localized_type });
@@ -88,15 +82,13 @@ const Header = (() => {
                         loginid_select.appendChild(link).appendChild(createElement('div', { class: 'separator-line-thin-gray' }));
                     }
                 }
-                const loginid_list = document.getElementsByClassName('login-id-list');
-                for (let i = 0; i < loginid_list.length; i++) {
-                    elementInnerHtml(loginid_list[i], loginid_select.innerHTML);
-                    const links = loginid_list[i].getElementsByTagName('a');
-                    for (let j = 0; j < links.length; j++) {
-                        links[j].removeEventListener('click', loginIDOnClick);
-                        links[j].addEventListener('click', loginIDOnClick);
-                    }
-                }
+                applyToAllElements('.login-id-list', (el) => {
+                    elementInnerHtml(el, loginid_select.innerHTML);
+                    applyToAllElements('a', (ele) => {
+                        ele.removeEventListener('click', loginIDOnClick);
+                        ele.addEventListener('click', loginIDOnClick);
+                    }, '', el);
+                });
             });
         });
     };
@@ -126,10 +118,7 @@ const Header = (() => {
         // set local storage
         GTM.setLoginFlag();
         Client.set('loginid', loginid);
-        const loginid_list = document.querySelectorAll('.login-id-list a');
-        for (let i = 0; i < loginid_list.length; i++) {
-            loginid_list[i].removeAttribute('disabled');
-        }
+        applyToAllElements('.login-id-list a', (el) => { el.removeAttribute('disabled'); });
         window.location.reload();
     };
 
@@ -141,15 +130,13 @@ const Header = (() => {
             const showUpgrade = (url, msg) => {
                 const span = createElement('span', { text: localize(msg) });
 
-                for (let i = 0; i < upgrade_msg.length; i++) {
-                    upgrade_msg[i].setVisibility(1);
-
-                    const links = upgrade_msg[i].getElementsByTagName('a');
-                    for (let j = 0; j < links.length; j++) {
-                        links[j].setVisibility(1).setAttribute('href', Url.urlFor(url));
-                        elementInnerHtml(links[j], span);
-                    }
-                }
+                applyToAllElements(upgrade_msg, (el) => {
+                    el.setVisibility(1);
+                    applyToAllElements('a', (ele) => {
+                        ele.setVisibility(1).setAttribute('href', Url.urlFor(url));
+                        elementInnerHtml(ele, span);
+                    }, '', el);
+                });
             };
 
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
@@ -157,27 +144,21 @@ const Header = (() => {
             const show_upgrade_msg  = upgrade_info.can_upgrade;
 
             if (Client.get('is_virtual')) {
-                for (let i = 0; i < upgrade_msg.length; i++) {
-                    upgrade_msg[i].setVisibility(1);
-                    const span = upgrade_msg[i].getElementsByTagName('span')[0];
+                applyToAllElements(upgrade_msg, (el) => {
+                    el.setVisibility(1);
+                    const span = el.getElementsByTagName('span')[0];
                     if (span) {
                         span.setVisibility(1);
                     }
-
-                    const links = upgrade_msg[i].getElementsByTagName('a');
-                    for (let j = 0; j < links.length; j++) {
-                        links[j].setVisibility(0);
-                    }
-                }
+                    applyToAllElements('a', (ele) => { ele.setVisibility(0); }, '', el);
+                });
 
                 if (jp_account_status) {
                     const has_disabled_jp = jpClient() && Client.getAccountOfType('real').is_disabled;
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
-                        for (let i = 0; i < upgrade_msg.length; i++) {
-                            upgrade_msg[i].setVisibility(1);
-                        }
+                        applyToAllElements(upgrade_msg, (el) => { el.setVisibility(1); });
                         if (jp_account_status === 'jp_activation_pending') {
                             if (document.getElementsByClassName('activation-message').length === 0) {
                                 document.getElementById('virtual-text').appendChild(createElement('div', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
@@ -191,22 +172,18 @@ const Header = (() => {
                 } else if (show_upgrade_msg) {
                     showUpgrade(upgrade_info.upgrade_link, `Upgrade to a ${toTitleCase(upgrade_info.type)} Account`);
                 } else {
-                    for (let i = 0; i < upgrade_msg.length; i++) {
-                        const links = upgrade_msg[i].getElementsByTagName('a');
-
-                        for (let j = 0; j < links.length; j++) {
-                            links[j].setVisibility(0);
-                            links[j].innerHTML = '';
-                        }
-                    }
+                    applyToAllElements(upgrade_msg, (el) => {
+                        applyToAllElements('a', (ele) => {
+                            ele.setVisibility(0);
+                            ele.innerHTML = '';
+                        }, '', el);
+                    });
                 }
             } else if (show_upgrade_msg) {
                 document.getElementById('virtual-text').parentNode.setVisibility(0);
                 showUpgrade(upgrade_info.upgrade_link, 'Open a Financial Account');
             } else {
-                for (let i = 0; i < upgrade_msg.length; i++) {
-                    upgrade_msg[i].setVisibility(0);
-                }
+                applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
             }
             showHideNewAccount(show_upgrade_msg);
         });
@@ -225,11 +202,8 @@ const Header = (() => {
     const changeAccountsText = (add_new_style, text) => {
         const user_accounts = document.getElementById('user_accounts');
         user_accounts.classList[add_new_style ? 'add' : 'remove']('create_new_account');
-        const li_user_accounts = user_accounts.getElementsByTagName('li');
         const localized_text = localize(text);
-        for (let i = 0; i < li_user_accounts; i++) {
-            elementTextContent(li_user_accounts[i], localized_text);
-        }
+        applyToAllElements('li', (el) => { elementTextContent(el, localized_text); }, '', user_accounts);
     };
 
     const displayNotification = (message, is_error, msg_code = '') => {

@@ -1,7 +1,8 @@
-const getLanguage   = require('./language').get;
-const State         = require('./storage').State;
-const Url           = require('./url');
-const createElement = require('./utility').createElement;
+const getLanguage        = require('./language').get;
+const State              = require('./storage').State;
+const Url                = require('./url');
+const createElement      = require('./utility').createElement;
+const applyToAllElements = require('./utility').applyToAllElements;
 
 const BinaryPjax = (() => {
     let previous_url;
@@ -34,10 +35,7 @@ const BinaryPjax = (() => {
             params.container.dispatchEvent(new CustomEvent('binarypjax:after', { detail: content }));
         }
 
-        const links_accounts = document.getElementById('all-accounts').getElementsByTagName('a');
-        for (let i = 0; i < links_accounts.length; i++) {
-            links_accounts[i].addEventListener('click', handleClick);
-        }
+        applyToAllElements('a', (el) => { el.addEventListener('click', handleClick); }, '', document.getElementById('all-accounts'));
         document.addEventListener('click', (event) => {
             if (event.target.nodeName === 'A') {
                 handleClick(event);

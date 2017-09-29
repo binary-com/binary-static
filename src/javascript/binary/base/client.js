@@ -3,6 +3,7 @@ const moment             = require('moment');
 const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
+const applyToAllElements = require('./utility').applyToAllElements;
 const getPropertyValue   = require('./utility').getPropertyValue;
 const isEmptyObject      = require('./utility').isEmptyObject;
 const jpClient           = require('../common_functions/country_base').jpClient;
@@ -234,33 +235,22 @@ const Client = (() => {
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status').then(() => {
                 document.getElementById('client-logged-in').classList.add('gr-centered');
-                const client_logged_in = document.getElementsByClassName('client_logged_in');
-                for (let i = 0; i < client_logged_in.length; i++) {
-                    client_logged_in[i].setVisibility(1);
-                }
+                applyToAllElements('.client_logged_in', (el) => { el.setVisibility(1); });
                 if (get('is_virtual')) {
-                    const client_virtual = el_section.getElementsByClassName('client_virtual');
-                    for (let i = 0; i < client_virtual.length; i++) {
-                        client_virtual[i].setVisibility(1);
-                    }
+                    applyToAllElements('.client_virtual', (el) => { el.setVisibility(1); }, '', el_section);
                     topbar_class.add(secondary_bg_color);
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
-                    const client_real = el_section.getElementsByClassName('client_real');
-                    for (let i = 0; i < client_real.length; i++) {
-                        if (!jpClient() || !/ja-hide/.test(client_real[i].classList)) {
-                            client_real[i].setVisibility(1);
-                        }
-                    }
+                    applyToAllElements('.client_real', (el) => {
+                        if (!jpClient() || !/ja-hide/.test(el.classList)) {
+                            el.setVisibility(1);
+                        }}, '', el_section);
                     topbar_class.add(primary_bg_color_dark);
                     topbar_class.remove(secondary_bg_color);
                 }
             });
         } else {
-            const client_logged_out = el_section.getElementsByClassName('client_logged_out');
-            for (let i = 0; i < client_logged_out.length; i++) {
-                client_logged_out[i].setVisibility(1);
-            }
+            applyToAllElements('.client_logged_out', (el) => { el.setVisibility(1); }, '', el_section);
             topbar_class.add(primary_bg_color_dark);
             topbar_class.remove(secondary_bg_color);
         }

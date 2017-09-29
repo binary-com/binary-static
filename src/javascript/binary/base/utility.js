@@ -106,8 +106,8 @@ const toggleAddRemoveClass = condition => (condition ? 'add' : 'remove');
 /**
  * Creates a DOM element and adds any attributes to it.
  *
- * @param tag_name: string of the tag to create, e.g. 'div', 'a', etc
- * @param attributes: an object with all the attributes to assign, e.g. { id: '...', class: '...', html: '...', ... }
+ * @param {String} tag_name: the tag to create, e.g. 'div', 'a', etc
+ * @param {Object} attributes: all the attributes to assign, e.g. { id: '...', class: '...', html: '...', ... }
  * @return the created DOM element
  */
 const createElement = (tag_name, attributes) => {
@@ -125,6 +125,34 @@ const createElement = (tag_name, attributes) => {
     return el;
 };
 
+/**
+ * Apply function to all elements based on selector passed
+ *
+ * @param {String|Element} selector: selector of the elements to apply the function to, e.g. '.class', '#id', 'tag', etc
+ * can also be a DOM element
+ * @param {Function} funcToRun: function to apply
+ * @param {String} func_selector: method of finding the selector, optional
+ * @param {Element} el_parent: parent of the selector, document by default
+ */
+const applyToAllElements = (selector, funcToRun, func_selector, el_parent = document) => {
+    let function_selector = func_selector;
+    let element_to_select = selector;
+    if (!func_selector && !element_to_select.nodeName) {
+        if (/[\s#]/.test(element_to_select) || element_to_select.lastIndexOf('.') !== 0) {
+            function_selector = 'querySelectorAll';
+        } else if (element_to_select.lastIndexOf('.') === 0) {
+            function_selector = 'getElementsByClassName';
+            element_to_select = element_to_select.substring(1);
+        } else if (/^[a-zA-Z]$/.test(element_to_select)) {
+            function_selector = 'getElementsByTagName';
+        }
+    }
+    const el = element_to_select.nodeName ? element_to_select : el_parent[function_selector](element_to_select);
+    for (let i = 0; i < el.length; i++) {
+        funcToRun(el[i]);
+    }
+};
+
 module.exports = {
     showLoadingImage,
     getHighestZIndex,
@@ -135,4 +163,5 @@ module.exports = {
     handleHash,
     clearable,
     createElement,
+    applyToAllElements,
 };
