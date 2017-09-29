@@ -46,9 +46,8 @@ const Header = (() => {
 
         const logout = document.querySelectorAll('a.logout');
         for (let i = 0; i < logout.length; i++) {
-            logout[i].addEventListener('click', () => {
-                Client.sendLogoutRequest();
-            });
+            logout[i].removeEventListener('click', Client.sendLogoutRequest);
+            logout[i].addEventListener('click', Client.sendLogoutRequest);
         }
     };
 
