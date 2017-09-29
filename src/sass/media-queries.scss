@@ -29,6 +29,9 @@
     .table-container {
         overflow-x: auto;
     }
+    .form-validation-desc span {
+        font-size: $FONT_SIZE_XXS;
+    }
 }
 
 @media screen and (max-width: 480px) {

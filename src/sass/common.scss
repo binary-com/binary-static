@@ -122,52 +122,30 @@ label {
     }
 }
 
-.form-validation-message {
-    padding: 0px 5px !important;
-}
-
-.form-validation-message > .form-validation-header {
-    font-style: italic;
+#form_validation_message h4 {
     font-size: 13px;
-    padding: 5px 0px;
+    font-style: italic;
+    color: $COLOR_BLACK;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    padding: 5px 0px 10px;
 }
 
-.form-validation-header > span {
-    padding: 5px;
-}
-
-.form-validation-toggle {
-    display: none;
-}
-
-.form-validation-toggle + label {
-    cursor: pointer;
-    display: block;
-}
-
-.form-validation-toggle + label + div {
-    display: none;
+#form_validation_message h4:after {
+    content: '\25BE';
+    font-style: normal;
 }
 
 .form-validation-desc {
+    padding: 0px 10px !important;
+    border: 0 !important;
     background-color: $COLOR_LIGHT_GRAY;
 }
 
-.form-validation-toggle:checked + label + div {
-    display: block;
-    padding: 0px 5px;
-    font-size: 10px;
-}
-
-.form-validation-toggle + label:after {
-    content: '\25BC';
-    display: inline-block;
-    font-style: normal;
-}
-
-.form-validation-toggle:checked + label:after {
-    content: '\25B2';
-    font-style: normal;
+.form-validation-desc span {
+    font-size: $FONT_SIZE_XS;
+    background-color: $COLOR_LIGHT_GRAY;
 }
 
 .input {

@@ -7,6 +7,7 @@ const compareBigUnsignedInt = require('../common_functions/string_util').compare
 const Validation = (() => {
     const forms        = {};
     const error_class  = 'error-msg';
+    const error_address_class = 'error-address-msg';
     const hidden_class = 'invisible';
 
     const events_map = {
@@ -71,6 +72,7 @@ const Validation = (() => {
                             $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
                         }
                         field.$error = $parent.find(`.${error_class}`);
+                        field.$error_address = $parent.find(`.${error_address_class}`);
                     }
 
                     const event = events_map[field.type];
@@ -161,7 +163,7 @@ const Validation = (() => {
         email        : { func: validEmail,        message: 'Invalid email address' },
         password     : { func: validPassword,     message: 'Password should have lower and uppercase letters with numbers.' },
         general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
-        address      : { func: validAddress,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
+        address      : { func: validAddress,      message: 'Invalid character used.' },
         letter_symbol: { func: validLetterSymbol, message: 'Only letters, space, hyphen, period, and apostrophe are allowed.' },
         postcode     : { func: validPostCode,     message: 'Only letters, numbers, space, and hyphen are allowed.' },
         phone        : { func: validPhone,        message: 'Only numbers and spaces are allowed.' },
@@ -232,11 +234,21 @@ const Validation = (() => {
         if (field.$error && field.$error.length) {
             field.$error.setVisibility(0);
         }
+
+        if (field.$error_address && field.$error.length) {
+            field.$error_address.setVisibility(0);
+        }
     };
 
     const showError = (field, message) => {
-        clearError(field);
-        field.$error.text(localize(message)).setVisibility(1);
+        if (field.selector === '#address_line_1') {
+            clearError(field);
+            field.$error.text(localize(message)).setVisibility(1);
+            field.$error_address.setVisibility(1);
+        } else {
+            clearError(field);
+            field.$error.text(localize(message)).setVisibility(1);
+        }
     };
 
     const validate = (form_selector) => {
