@@ -39,6 +39,7 @@
         [% WRAPPER form_row label=l("Amount") type='custom' id='transfer_amount' %]
             <label id="currency"></label>
             <input id="amount" name="amount" type="text" maxlength="20" autocomplete="off" />
+            <div class="hint" id="range_hint"></div>
         [% END %]
     [% END %]
 

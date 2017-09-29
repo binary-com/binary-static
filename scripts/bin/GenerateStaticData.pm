@@ -482,6 +482,12 @@ sub _texts {
         push @texts, localize('Create Account');
         push @texts, localize('Change Password');
 
+        # strings for account_transfer
+        push @texts, localize('Min');
+        push @texts, localize('Max');
+        push @texts, localize('Current balance');
+        push @texts, localize('Withdrawal limit');
+
         # strings for header notification
         push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.');
         push @texts, localize('Please set the [_1]currency[_2] of your account.');

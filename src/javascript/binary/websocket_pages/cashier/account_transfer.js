@@ -1,6 +1,7 @@
 const BinarySocket       = require('../socket');
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
+const localize           = require('../../base/localize').localize;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
 const isCryptocurrency   = require('../../common_functions/currency').isCryptocurrency;
@@ -23,7 +24,7 @@ const AccountTransfer = (() => {
         client_loginid,
         client_currency,
         client_balance,
-        max_transfer_allowed;
+        withdrawal_limit;
 
     const populateAccounts = (accounts) => {
         client_loginid   = Client.get('loginid');
@@ -96,7 +97,7 @@ const AccountTransfer = (() => {
         document.getElementById(form_id).setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: max_transfer_allowed }]] },
+            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: Math.min(+withdrawal_limit, +client_balance) }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -143,12 +144,13 @@ const AccountTransfer = (() => {
             BinaryPjax.loadPreviousUrl();
         }
         BinarySocket.wait('balance').then((response) => {
-            client_balance  = getPropertyValue(response, ['balance', 'balance']);
-            client_currency = Client.get('currency');
-            if (!client_balance || +client_balance < getMinAmount()) {
+            client_balance   = getPropertyValue(response, ['balance', 'balance']);
+            client_currency  = Client.get('currency');
+            const min_amount = getMinAmount();
+            if (!client_balance || +client_balance < min_amount) {
                 document.getElementById(messages.parent).setVisibility(1);
                 if (client_currency) {
-                    document.getElementById('min_required_amount').textContent = `${client_currency} ${getMinAmount()}`;
+                    document.getElementById('min_required_amount').textContent = `${client_currency} ${min_amount}`;
                     document.getElementById(messages.balance).setVisibility(1);
                 }
                 document.getElementById(messages.deposit).setVisibility(1);
@@ -166,12 +168,13 @@ const AccountTransfer = (() => {
                         if (hasError(response_limits)) {
                             return;
                         }
-                        if (+response_limits.get_limits.remainder < getMinAmount()) {
+                        if (+response_limits.get_limits.remainder < min_amount) {
                             document.getElementById(messages.limit).setVisibility(1);
                             document.getElementById(messages.parent).setVisibility(1);
                             return;
                         }
-                        max_transfer_allowed = Math.min(+client_balance, +response_limits.get_limits.remainder);
+                        withdrawal_limit = response_limits.get_limits.remainder;
+                        document.getElementById('range_hint').textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${localize(+client_balance <= +withdrawal_limit ? 'Current balance' : 'Withdrawal limit')}`;
                         populateAccounts(accounts);
                     });
                 });

@@ -128,16 +128,16 @@ const Validation = (() => {
         let is_ok   = true;
         let message = '';
 
-        if (+options.max < +options.min && options.custom_message) {
-            is_ok   = false;
-            message = localize(options.custom_message);
-        } else if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
+        if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
             is_ok   = false;
             message = localize('Should be a valid number');
         } else if (options.type === 'float' && options.decimals &&
             !(new RegExp(`^\\d+(\\.\\d{${options.decimals.replace(/ /g, '')}})?$`).test(value))) {
             is_ok   = false;
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
+        } else if ('min' in options && 'max' in options && options.min === options.max) {
+            is_ok   = false;
+            message = localize('Should be [_1]', [options.min]);
         } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
             is_ok   = false;
             message = localize('Should be between [_1] and [_2]', [options.min, addComma(options.max)]);
