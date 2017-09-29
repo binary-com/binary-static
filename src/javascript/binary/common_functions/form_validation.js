@@ -135,7 +135,7 @@ const Validation = (() => {
             !(new RegExp(`^\\d+(\\.\\d{${options.decimals.replace(/ /g, '')}})?$`).test(value))) {
             is_ok   = false;
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
-        } else if ('min' in options && 'max' in options && options.min === options.max) {
+        } else if ('min' in options && 'max' in options && +options.min === +options.max && +value !== +options.min) {
             is_ok   = false;
             message = localize('Should be [_1]', [options.min]);
         } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
