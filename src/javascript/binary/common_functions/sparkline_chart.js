@@ -113,8 +113,7 @@ const showSparkline = (ele, val, data_points = 10) => {
                 name: 'Price',
                 data: [{ y: value }],
             }];
-            const chart = new Highcharts.chart(ele, sparkline_options);
-            // chart.reflow(); // make the chart fit the container.
+            Highcharts.chart(ele, sparkline_options);
         }
     }
 };
