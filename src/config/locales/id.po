@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-01 23:30-0400\n"
+"PO-Revision-Date: 2017-10-02 02:52-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -171,6 +171,9 @@ msgstr "%1 menciptakan Indeks Volatilitas dimana Anda dapat bertrading 24/7. And
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 telah memperoleh reputasi tinggi untuk komitmen kami yang memenuhi standar etika dan kualitas pengalaman trading yang kami sediakan."
 
+msgid "%1 has entered into an agreement to list the tokens on the %2Lykke.com%3 cryptocurrency exchange. Lykke is a Swiss fintech company building a global blockchain-powered marketplace for securities-linked tokens."
+msgstr "%1 telah menandatangani perjanjian untuk mencantumkan token pada pertukaran mata uang kripto %2Lykke.com%3. Lykke adalah perusahaan Swiss yang membangun pasar global blockchain berkaitan dengan token sekuritas."
+
 msgid "%1 has over 800,000 clients in its database and reaches the US$ 2 billion milestone in our 15th year, making us one of the leading binary options providers."
 msgstr "%1 memiliki lebih dari 800.000 Pelanggan dalam database dan mencapai  $ 2 miliar dolar AS total penjualan kontrak di tahun ke-15, menjadikan kami salah satu platform penyedia trading binary terkemuka."
 
@@ -197,9 +200,6 @@ msgstr "%1 adalah platform trading berlisensi dan diatur yang melayani lebih dar
 
 msgid "%1 is a successful and growing platform, with several ongoing initiatives to enhance future profitability. These include our entry into new regulated markets with significant growth potential, and the innovation and expansion of our product offerings."
 msgstr "%1 adalah platform yang sukses dan berkembang dengan beberapa inisiatif berkelanjutan untuk meningkatkan profitabilitas masa depan. Ini termasuk masuknya pasar baru yang diatur dengan potensi pertumbuhan yang signifikan, dan inovasi dan perluasan penawaran produk kami."
-
-msgid "%1 is a well-established company founded in 1999. The growth of our business led us to consider an IPO, as is the case with most successful companies. However, we believe that stock exchanges will be gradually replaced by cryptocurrency exchanges in the coming decade, and IPOs will be gradually replaced by ICOs. This is why we decided to perform an ICO instead of an IPO."
-msgstr "%1 adalah perusahaan mapan yang didirikan pada tahun 1999. Pertumbuhan bisnis kami mendorong kami untuk mempertimbangkan IPO, seperti halnya dengan perusahaan sukses lainnya. Namun, kami percaya bahwa bursa saham akan diganti secara bertahap oleh bursa mata uang kripto dalam beberapa dekade mendatang, dan IPO akan diganti secara bertahap oleh ICO. Inilah salah satu sebab mengapa kami memutuskan untuk melakukan ICO dan bukan IPO."
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 selalu mencari profesional berpengalaman untuk bergabung di dalam tim administrasi, kontributor teknikal dan beberapa manajer berbakat. Untuk mendukung perkembangan kami, kami telah mengembangkan beberapa peluang karir pada area berikut ini:"
@@ -236,9 +236,6 @@ msgstr "%1 tidak tersedia di Costa Rica dan tidak diatur atau diawasi oleh badan
 
 msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
 msgstr "%1 menawarkan hingga <strong>10.000.000</strong> token pada lelang terbuka. Anda dapat menempatkan tawaran Anda menggunakan formulir di bawah ini. Tawaran minimum adalah <strong>USD 1</strong> atau setara dalam mata uang lainnya."
-
-msgid "%1 is one of the oldest and most respected names in online binary trading."
-msgstr "%1 merupakan salah satu nama yang tertua dan dihormati pada trading online binary."
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 dimiliki dan dioperasikan oleh grup perusahaan Binary Ltd. Untuk informasi lanjut, <a href='%2'>kunjungi halaman sejarah kami</a>."
@@ -357,11 +354,14 @@ msgstr " "
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 membawa pulang hadiah utama pada acara EGR Operator Awards 2015, yang diadakan di London."
 
+msgid "%1 was founded in 1999. Today, it is a well-established, and very successful, company. Like many successful companies, the growth of our business led us to consider an IPO."
+msgstr "%1 didirikan pada tahun 1999. Saat ini, merupakan perusahaan yang mapan dan sangat sukses. Seperti banyak perusahaan sukses lainnya, pertumbuhan bisnis kami membuat kami mempertimbangkan IPO."
+
 msgid "%1 will issue a number of tokens during the ICO."
 msgstr "%1 akan mengeluarkan sejumlah token selama ICO berlangsung."
 
-msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘coloured coins’ on the Bitcoin blockchain, and ‘ERC20’ tokens on the Ethereum blockchain."
-msgstr "%1 akan menawarkan sejumlah token blockchain kepada para investor. Token ini bisa dikeluarkan dalam berbagai bentuk dari beragam jenis blockchain, seperti ‘coloured coin’ pada Bitcoin blockchain, dan token ‘ERC20’ pada blockchain Ethereum."
+msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘ERC20’ tokens on the Ethereum blockchain."
+msgstr "%1 akan menawarkan sejumlah token blockchain kepada para investor. Token ini bisa dikeluarkan dalam berbagai bentuk dari beragam jenis blockchain, seperti token ‘ERC20’ pada Ethereum."
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "%1 penarikan dari akun %2 ke %3 telah berhasil. ID Transaksi: %4"
@@ -996,6 +996,9 @@ msgstr "Rubah waktu trading normal untuk pasar yang terlibat;"
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "Atau, klien yang terdaftar pada Binary (IOM) Ltd dan Binary (Europe) Ltd, bukan mengajukan sengketa mereka kepada IBAS, mereka dapat menggunakan platform Penyelesaian Sengketa Online Komisi Eropa (ODR) %1disini%2."
 
+msgid "Although %1 has been a successful company since its inception in 1999, the tokens should be considered a high risk investment. The %1 business is subject to a number of risks which could adversely affect the company and hence affect the future value of the tokens. These risks are detailed in the %2Information Memorandum%3 and should be considered very carefully before proceeding with any investment in the tokens."
+msgstr "Meskipun %1 telah menjadi perusahaan yang sukses sejak didirikan pada tahun 1999, token tetap dapat dianggap sebagai investasi berisiko tinggi. Bisnis %1 tunduk pada sejumlah risiko yang dapat mempengaruhi perusahaan secara negatif dan karenanya mempengaruhi nilai token di masa depan. Risiko ini dirincikan dalam %2Memorandum Informasi%3 dan harus dipertimbangkan dengan sangat berhati-hati sebelum melanjutkan investasi pada token."
+
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "Meskipun Perusahaan memiliki dan menguasai semua hak untuk menolak atau menutup akun Pelanggan, Perusahaan menjamin bahwa semua kewajiban telah dilaksanakan."
 
@@ -1029,8 +1032,8 @@ msgstr "Memiliki gelar sarjana dari universitas terakreditasi di bidang Matemati
 msgid "An assertive, sales-driven personality, able to adapt quickly and achieve powerful results"
 msgstr "Sebuah ketegasan, kepribadian mendorong penjualan, mampu beradaptasi dengan cepat dan mencapai hasil yang kuat"
 
-msgid "An ‘Initial Coin Offering’ (or ‘ICO’ for short) is a fundraising method that’s relatively similar to an Initial Public Offering (IPO). In an ICO, cryptocurrency such as ‘coloured coins’ or ‘Ethereum tokens’ are issued instead of shares."
-msgstr "‘Initial Coin Offering’ (atau disingkat ‘ICO’) adalah metode penggalangan dana yang relatif serupa dengan Initial Public Offering (IPO). Pada ICO, mata uang kripto seperti ‘coloured coin’ atau ‘token Ethereum’ yang dihasilkan dan bukan saham."
+msgid "An ‘Initial Coin Offering’ (or ‘ICO’) is a fundraising method that is relatively similar to an Initial Public Offering (IPO). However, in an ICO, cryptocurrency - such as ‘coloured coins’ or ‘Ethereum tokens’ - is issued to investors instead of shares."
+msgstr "‘Initial Coin Offering’ (atau ‘ICO’) adalah metode penggalangan dana yang relatif serupa dengan Initial Public Offering (IPO). Namun pada ICO, mata uang kripto seperti ‘coloured coin’ atau ‘token Ethereum’ - dikeluarkan untuk investor bukan saham."
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "Menganalisa dan menguji domain dan subdomain yang tercantum dalam ruang lingkup."
@@ -1507,8 +1510,8 @@ msgstr "Binary Investments (Europe) Ltd"
 msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA dan semua anggota Group Binary lainnya yang kadang disebut secara kolektif sebagai \"%1\", \"kita\" atau \"kami\"."
 
-msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
-msgstr "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Berlisensi dan diatur sebagai Penyedia Layanan Investasi Kategori 3 oleh Otoritas Jasa Keuangan Malta (Nomor Lisensi: IS/70156). Warga Uni Eropa kecuali Inggris yang ingin bertrading pada produk investasi, akan terdaftar dibawah Binary Investments (Europe) Ltd."
+msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href='%1' target='_blank' download=1>licence no. IS/70156</a>). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
+msgstr "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Berlisensi dan diatur sebagai Penyedia Layanan Investasi Kategori 3 oleh Otoritas Jasa Keuangan Malta (<a href='%1' target='_blank' download=1>nomor lisensi: IS/70156</a>). Warga Uni Eropa kecuali Inggris yang ingin bertrading pada produk investasi, akan terdaftar dibawah Binary Investments (Europe) Ltd."
 
 msgid "Binary K.K."
 msgstr "Binary K.K."
@@ -2230,6 +2233,9 @@ msgstr "Hak Cipta"
 msgid "Copywriter"
 msgstr "Copywriter"
 
+msgid "Corporate laws in most jurisdictions (including the British Virgin Islands, where our Group company is incorporated) do not yet support blockchain-based share registers."
+msgstr "Undang-undang perusahaan di sebagian besar yurisdiksi (termasuk British Virgin Islands, tempat perusahaan Grup kami didirikan) belum mendukung pendaftaran saham berbasis blockchain."
+
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "Biaya - biaya mengeksekusi pesanan Anda terdiri dari spread, yaitu, selisih antara harga bid dan harga penawaran kami."
 
@@ -2544,9 +2550,6 @@ msgstr "Penyelesaian Perceraian"
 
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "Apakah saya perlu mendeposit dana untuk mendaftar akun?"
-
-msgid "Do I need to send any documents?"
-msgstr "Apakah saya perlu mengirimkan dokumen?"
 
 msgid "Do not trade more than you can afford."
 msgstr "Jangan bertrading melebihi kemampuan Anda."
@@ -3155,6 +3158,9 @@ msgstr "Nama depan"
 msgid "First, define your position..."
 msgstr "Pertama, tentukan posisi Anda..."
 
+msgid "First, token holders will receive dividend-linked payments equivalent to the dividends paid by the Company on its Ordinary Shares. Therefore, token holders will share in the future success of the Company in the same way as do shareholders."
+msgstr "Pertama, pemegang token akan menerima pembayaran dividen terkait dengan dividen yang dibayarkan oleh Perusahaan pada Saham Biasa. Oleh karena itu, pemegang token akan berbagi kesuksesan masa depan Perusahaan dengan cara yang sama seperti pemegang saham."
+
 msgid "First, you need to set the parameters of your trade. Here's what you need to consider."
 msgstr "Pertama, Anda perlu menentukan parameter kontrak. Berikut adalah hal yang perlu Anda pertimbangkan."
 
@@ -3250,6 +3256,9 @@ msgstr "Forex, Indeks Volatilitas"
 
 msgid "Forward looking statements inherently contain risks and uncertainties as they relate to events or circumstances in the future. Users of this webpage should not place undue reliance on forward-looking statements. Binary Group Ltd. expressly disclaims any obligation or undertaking to update or revise any forward-looking statements except to the extent required by law and neither Binary Group Ltd., its employees, officers or professional advisors make any assurance, representation or guarantee that any event referred to in a forward-looking statement will actually occur."
 msgstr "Pernyataan berwawasan ke depan secara inheren mengandung risiko dan ketidakpastian karena berkaitan dengan kejadian atau keadaan di masa hadapan. Pengguna halaman situs ini tidak boleh menempatkan ketergantungan yang tidak semestinya pada pernyataan berwawasan hadapan. Binary Group Ltd. secara tegas menolak setiap kewajiban atau usaha untuk memperbarui atau merevisi pernyataan berwawasan ke depan kecuali sejauh yang ditentukan oleh undang-undang dan baik Binary Group Ltd., karyawan, petugas atau penasihat profesionalnya akan memastikan, mewakilkan atau menjamin acara apapun yang dimaksud dalam sebuah pernyataan berwawasan ke depan adalah benar terjadi."
+
+msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
+msgstr "Didirikan pada tahun 1999, %1 merupakan salah satu nama tertua dan dihormati pada trading online binary."
 
 msgid "Fr"
 msgstr "Jum"
@@ -3545,10 +3554,13 @@ msgstr "Bagaimana dan kapan saya akan menerima komisi afiliasi?"
 msgid "How can I become an affiliate?"
 msgstr "Bagaimana cara menjadi afiliasi?"
 
+msgid "How can I find out more about %1?"
+msgstr "Bagaimana saya bisa tahu lebih banyak tentang %1?"
+
 msgid "How can I learn more about ICOs and cryptocurrencies?"
 msgstr "Bagaimana saya bisa belajar lebih banyak tentang ICO dan cryptocurrencies?"
 
-msgid "How can I purchase your tokens?"
+msgid "How can I purchase tokens?"
 msgstr "Bagaimana cara membeli token?"
 
 msgid "How do I change my payment method?"
@@ -3599,6 +3611,9 @@ msgstr "Bagaimana cara kerja ICO"
 msgid "How to begin"
 msgstr "Bagaimana memulainya"
 
+msgid "How to participate in the %1 ICO"
+msgstr "Bagaimana cara berpartisipasi dalam ICO %1"
+
 msgid "How to read the table above"
 msgstr "Bagaimana cara membaca tabel di atas"
 
@@ -3619,6 +3634,9 @@ msgstr "Bagaimana cara kerja ICO?"
 
 msgid "How will the tokens be offered?"
 msgstr "Bagaimana cara penawaran token?"
+
+msgid "However, we believe that in the coming decade traditional stock exchanges will gradually be replaced by blockchain exchanges, and IPOs will gradually be replaced by ICOs. This is because blockchain technologies are much more performant than the legacy technologies of traditional stock exchanges, leading to lower transaction fees, faster settlement times, and error-free immutable audit trails. Hence, we decided to perform an ICO instead of an IPO."
+msgstr ""
 
 msgid "Human Resource Executive"
 msgstr "Eksekutif Sumber Daya Manusia"
@@ -6618,8 +6636,8 @@ msgstr "ID referensi"
 msgid "Refund Bid"
 msgstr "Pengembalian Bid"
 
-msgid "Regardless of the type of token, each token will provide you with two rights:"
-msgstr "Terlepas dari jenis token, setiap token akan memberi Anda dua hak:"
+msgid "Regardless of the type of token issued, each token will provide investors with two rights:"
+msgstr "Terlepas dari jenis token yang dikeluarkan, masing-masing token akan memberi investor dua hak:"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Ltd. mengganti nama ke Binary Ltd."
@@ -6872,6 +6890,9 @@ msgstr "Trader berpengalaman dapat menggunakan platform %1 untuk keuntungan maks
 
 msgid "Second line of home address"
 msgstr "R.T/R.W"
+
+msgid "Second, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares."
+msgstr ""
 
 msgid "Secondary"
 msgstr "Sekunder"
@@ -7687,8 +7708,8 @@ msgstr "Indeks GBP adalah Indeks yang ditimbang dengan mengukur nilai Pound Ingg
 msgid "The ICO auction is already closed."
 msgstr "Lelang ICO sudah ditutup."
 
-msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions."
-msgstr "ICO akan dibatasi pada yurisdiksi tertentu dalam menentukan kelayakan atau investor profesional, sesuai dengan aturan dan regulasi pada yurisdiksi tersebut."
+msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions. In particular, the ICO is not available to US investors."
+msgstr "ICO akan dibatasi pada yurisdiksi tertentu dalam menentukan kelayakan atau investor profesional, sesuai dengan aturan dan regulasi pada yurisdiksi tersebut. Secara khusus, ICO tidak tersedia bagi investor AS."
 
 msgid "The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control."
 msgstr "Fasilitas MAM cocok untuk manager dana yang ingin mengelola beberapa akun secara mudah. Memberi Anda kemudahan simultan dalam memantau, melacak dan bertrading untuk semua akun klien MT5 dibawah kontrol Anda."
@@ -7861,6 +7882,9 @@ msgstr "Alamat email yang Anda sediakan sudah pernah di daftarkan. Jika Anda lup
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Harga spot masuk adalah harga awal kontrak yang dibeli oleh trader."
 
+msgid "The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017."
+msgstr ""
+
 msgid "The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients."
 msgstr "Tempat-tempat eksekusi adalah dinilai, secara berkala, apakah mereka menyediakan hasil terbaik bagi Klien kami."
 
@@ -8000,11 +8024,11 @@ msgstr "Hasil adalah dana yang diperoleh setelah kontrak berakhir (lihat 'Hasil'
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect."
 msgstr "Perusahaan juga berhak untuk melakukan perubahan aturan sewaktu waktu. Setiap perubahan peraturan yang dibuat sementara situs ini dalam operasi tidak akan berlaku retrospektif dan hanya akan berlaku untuk perolehan kontrak keuangan yang dibuat setelah perubahan tersebut. Merupakan tanggung jawab perusahaan untuk memberitahu klien sebelum perubahan ketentuan-ketentuannya mulai berlaku."
 
-msgid "The right to convert tokens into Ordinary Shares"
-msgstr "Hak untuk mengubah token menjadi Saham Biasa"
+msgid "The right to convert tokens into Ordinary Shares."
+msgstr "Hak untuk mengubah token menjadi Saham Biasa."
 
-msgid "The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares"
-msgstr "Hak untuk menerima pembayaran setara dengan dividen yang dibayarkan pada Saham Biasa Binary Group Ltd."
+msgid "The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares; and"
+msgstr "Hak untuk menerima pembayaran setara dengan dividen yang dibayarkan pada Saham Biasa Binary Group Ltd, dan"
 
 msgid "The server <a href=\"%1\">endpoint</a> is: %2"
 msgstr "Titik akhir <a href=\"%1\">server</a> adalah: %2"
@@ -8030,8 +8054,11 @@ msgstr "Istilah 'kita', 'kami', 'milik kami', 'Perusahaan', atau '%1' adalah men
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "Istilah 'kita', 'kami', 'milik kami', 'Perusahaan', atau '%1' adalah menunjukkan pada Binary (V) Ltd. atau Binary (C.R.) S.A., tergantung pada jurisdiksi dimana Klien terdaftar sesuai dengan prosedur pendaftaran akun pada website."
 
-msgid "The tokens will be offered over a period of one month. The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017. The ICO price and auction method will be announced in due course."
-msgstr "Token akan ditawarkan selama satu bulan. Tanggal pasti ICO masih belum ditentukan, namun kami menargetkan pada caturwulan akhir 2017. Metode harga dan lelang ICO akan diumumkan pada waktunya."
+msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
+msgstr ""
+
+msgid "The tokens will be offered via an auction process. View our %1guide%2 to the token auction."
+msgstr ""
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
 msgstr "Transaksi yang dilakukan di situs ini dan hubungan antara klien dan perusahaan adalah diatur dan ditafsirkan sesuai dengan hukum negara pendirian perusahaan (\"Yurisdiksi\"), yaitu di Isle of Man , Malta, atau Costa Rica. Anda bersetuju bahwa pengadilan yurisdiksi akan memiliki kewenangan tunggal untuk menyelesaikan perselisihan yang mungkin timbul dalam kaitan tersebut. Untuk tujuan tersebut, Anda tidak dapat ditarik kembali tunduk kepada yurisdiksi pengadilan dari yurisdiksi berkaitan dengan masalah tersebut dan Anda setuju bahwa setiap klaim yang mungkin Anda miliki terhadap perusahaan hanya akan dibawa ke pengadilan dari yurisdiksi. Untuk informasi lebih lanjut tentang keluhan dan perselisihan, silakan lihat bagian keluhan dan perselisihan perusahaan."
@@ -8090,11 +8117,17 @@ msgstr "Tidak akan ada biaya untuk mentransfer dana dari Akun Riil Opsi Binary k
 msgid "There will be no public offering of the Tokens in the United States. If you are not permitted to view materials on this webpage or are in any doubt as to whether you are permitted to view these materials, please exit this webpage."
 msgstr "Penawaran umum Token tidak tersedia di Amerika Serikat. Jika Anda tidak diizinkan melihat materi pada halaman situs ini atau memiliki keraguan apakah Anda diizinkan untuk melihat materi ini, silahkan tinggalkan halaman situs ini."
 
+msgid "There will be two main benefits of purchasing tokens."
+msgstr ""
+
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
 msgstr "Maka dengan itu jumlah maksimal yang dapat Anda tarik (tergantung pada saldo tunai yang tersedia) adalah %1 %2 (atau setara dengan mata uang lainnya)."
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2."
 msgstr "Oleh karena itu jumlah maksimal yang dapat Anda cairkan langsung (jika saldo mencukupi) adalah %1 %2."
+
+msgid "Therefore, the tokens are issued as derivative securities, convertible into Ordinary Shares."
+msgstr ""
 
 msgid "These ST&Cs are to be governed by and construed in accordance with Maltese law and the parties hereto agree to submit to the non exclusive jurisdiction of the Maltese courts."
 msgstr "Ketentuan ini akan diatur dan ditafsirkan sesuai dengan hukum Malta dan kedua belah pihak  bersetuju untuk tunduk pada yurisdiksi non eksklusif pengadilan di Malta."
@@ -8306,14 +8339,14 @@ msgstr "Untuk mendaftar Akun Finansial MetaTrader 5, silahkan lengkapi <a href=\
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "Untuk mengaktifkan cookie, ikuti petunjuk di bawah ini untuk versi browser yang anda gunakan."
 
-msgid "To learn how to trade cryptocurrency assets, we recommend that you open an account with US-based cryptocurrency exchange, <a href='https://poloniex.com/'>POLONIEX</a>."
-msgstr "Untuk mempelajari cara bertrading aset mata uang kripto, kami merekomendasikan Anda untuk mendaftar akun pada exchanger mata uang kripto berbasis AS, <a href='https://poloniex.com/'>POLONIEX</a>."
+msgid "To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the %1Information Memorandum%2 page."
+msgstr ""
 
-msgid "To learn more about Bitcoin, we recommend that you <a href='https://blockchain.info/wallet/#/'>open a Bitcoin wallet with Blockchain</a> and <a href='https://www.bitcoin.com/buy-bitcoin'>purchase bitcoins using a local exchange</a> in your country."
-msgstr "Untuk mempelajari lebih lanjut tentang Bitcoin, kami merekomendasikan Anda <a href='https://blockchain.info/wallet/#/'>daftar wallet Bitcoin menggunakan Blockchain</a> dan <a href='https://www.bitcoin.com/buy-bitcoin'>beli bitcoins menggunakan pertukaran lokal</a> di negara Anda."
+msgid "To find out more about %1, you can read about our %2group history%3, %4regulatory status%3, and %5company culture%3. You can also read the %6company blog%3."
+msgstr ""
 
-msgid "To learn more about Ethereum, we recommend that you install the <a href='https://metamask.io/'>Metamask plugin for Chrome</a>, which will allow you to convert your Bitcoin into Ether."
-msgstr "Untuk mempelajari lebih lanjut tentang Ethereum, kami merekomendasikan agar Anda menginstal <a href='https://metamask.io/'>Metamask plugin untuk Chrome</a>, yang akan menukar Bitcoin kedalam Ether."
+msgid "To learn more about Bitcoin, we recommend that you open a Bitcoin wallet with %1%2’s simple bitcoin wallet%3, and purchase bitcoins using a local exchange in your country."
+msgstr "Untuk mempelajari lebih lanjut tentang Bitcoin, kami merekomendasikan Anda untuk mendaftar Bitcoin wallet menggunakan %1%2 yaitu bitcoin wallet sederhana %3, dan membeli bitcoin menggunakan exchanger lokal di negara Anda."
 
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
 msgstr "Untuk mempelajari lebih lanjut, baca <a href=\"%1\">Kebijakan Margin</a> kami yang menjelaskan lebih lanjut tentang 100% tingkat likuidasi paksa untuk Forex."
@@ -8363,8 +8396,8 @@ msgstr "Token"
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
 msgstr "Token memberi Anda jumlah yang setara dengan dividen sebagai Saham Binary Biasa."
 
-msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our account authentication process."
-msgstr "Token hanya akan ditawarkan kepada klien %1 yang memiliki akun Uang Riil, dan yang telah menyelesaikan proses otentikasi akun kami."
+msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our %2account authentication/KYC process%3."
+msgstr "Token hanya akan ditawarkan kepada klien %1 yang memiliki akun Uang Riil, dan yang telah melengkapi %2otentikasi akun/proses KYC%3."
 
 msgid "Top-tier liquidity"
 msgstr "Likuiditas teratas"
@@ -8807,8 +8840,8 @@ msgstr "Fasilitas Ruang Video"
 msgid "View"
 msgstr "Lihat"
 
-msgid "View Binary Group Ltd's 2016 annual report"
-msgstr "Lihat laporan tahunan Binary Group Ltd tahun 2016"
+msgid "View Binary Ltd.'s 2016 annual report"
+msgstr "Lihat laporan tahunan Binary Ltd. 2016"
 
 msgid "View Details"
 msgstr "Lihat Rincian"
@@ -8984,9 +9017,6 @@ msgstr "Kami akan menghapus order dengan margin terbesar."
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "Kami melakukannya lagi. BetOnMarkets.com mempertahankan penghargaan 2007 dengan terpilih kembali sebagai \"Penyedia Trading Financial Fixed-Odds Terbaik' untuk 2008."
 
-msgid "We don't usually require any documents as we can verify your identity online."
-msgstr "Pada dasarnya kami tidak memerlukan dokumen pada saat pendaftaran kecuali Anda diminta untuk melengkapi pembuktian akun."
-
 msgid "We employ a wide range of unique marketing initiatives to acquire customers. We are focused primarily on untapped markets."
 msgstr "Kami menggunakan berbagai inisiatif pemasaran unik untuk mendapatkan pelanggan. Kami memfokuskan terutama pada pasar yang belum dimanfaatkan."
 
@@ -9041,8 +9071,8 @@ msgstr "Kami mungkin, dengan kebijaksanaan mutlak, menolak Order Anda jika terja
 msgid "We may, however, withhold your withdrawal request from your Real Account to your Binary Options Real Account, in whole or in part, if:"
 msgstr "Kami mungkin, bagaimanapun juga dapat menahan permohonan penarikan Akun Riil Anda ke Akun Riil Opsi Binary, secara keseluruhan atau sebagian, jika:"
 
-msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta or Malaysia."
-msgstr "Kami menawarkan gaji berdasarkan pasar, bonus kinerja tahunan, manfaat kesehatan, wisata dan tunjangan internet dan perjalanan perusahaan. Menikmati standar hidup yang tinggi, baik Anda di Malta atau Malaysia."
+msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, Malaysia, or Japan."
+msgstr "Kami menawarkan gaji berdasarkan pasar, bonus kinerja tahunan, manfaat kesehatan, wisata dan tunjangan internet dan perjalanan perusahaan. Menikmati standar hidup yang tinggi, baik Anda di Malta, Malaysia, atau Jepang."
 
 msgid "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 msgstr "Kami menawarkan rangkaian produk inovatif untuk pelanggan yang terdiri dari instrumen keuangan dan sintetis dengan jangka waktu mulai dari 10 detik hingga 365 hari."
@@ -9167,6 +9197,12 @@ msgstr "Apa itu indeks dan saham OTC?"
 msgid "What are binary options"
 msgstr "Apa itu opsi binary"
 
+msgid "What are the benefits of purchasing tokens?"
+msgstr "Apa keuntungan membeli token?"
+
+msgid "What are the risks of purchasing tokens?"
+msgstr "Apa sajakah risiko pembelian token?"
+
 msgid "What commission plan do you offer?"
 msgstr "Apa rencana komisi yang Anda tawarkan?"
 
@@ -9214,6 +9250,9 @@ msgstr "Ketika kami berurusan dengan akun sendiri (dealing desk), kami berperan 
 
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
 msgstr "Ketika kami memberikan Kontrak, kami akan mengambil semua tanggung jawab untuk memperoleh hasil terbaik untuk Anda di dalam mengeksekusi Kontrak tersebut berdasarkan kebijaksanaan eksekusi dan instruksi khusus yang kami terima dari Anda. Kebijaksanaan eksekusi order kami terdiri dari satu set tata cara yang dirancang untuk memperoleh hasil eksekusi terbaik yang dipertimbangkan pada akun Anda: (a) sifat Kontrak Anda (b) prioritas yang telah Anda identifikasi kepada kami sehubungan pembelian Kontrak dan (c) praktek yang berkaitan dengan market bersangkutan dengan tujuan menghasilkan hasil yang menyediakan, dalam pandangan kami, keseimbangan terbaik pada berbagai faktor terkadang bertentangan. Kebijaksanaan kami tidak dapat menjamin, namun demikian ketika melakukan pembelian Kontrak., harga akan selalu terbaik dibandingkan tempat manapun."
+
+msgid "When will the tokens be offered?"
+msgstr "Kapan token akan ditawarkan?"
 
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no invisible fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "Bila Anda puas dengan harga yang Anda terima, eksekusi trading Anda segera. Dengan platform kami yang unik, Anda tidak akan harus bersaing dengan 'slippages' atau gaping pasar. Dan yang terpenting, tanpa biaya tersembunyi. Anda juga dapat menjual kembali setiap kontrak jangka panjang setiap saat sebelum kontrak tersebut berakhir untuk melindungi keuntungan yang telah Anda dapatkan atau untuk mengurangi risiko kerugian Anda."
@@ -9278,6 +9317,9 @@ msgstr "Di mana kami tidak berhasil mendapatkan informasi yang cukup untuk menil
 msgid "Where we're one big, multicultural family."
 msgstr "Dimana kami adalah satu keluarga multikultural besar."
 
+msgid "Where will the tokens be listed?"
+msgstr "Di manakah tokennya akan terdaftar?"
+
 msgid "Where you can go"
 msgstr "Kemana Anda dapat melangkah"
 
@@ -9319,6 +9361,9 @@ msgstr "Mengapa Memilih Trading Binary?"
 
 msgid "Why Us?"
 msgstr "Mengapa Kami?"
+
+msgid "Why are the tokens convertible into shares, rather than representing shares directly?"
+msgstr "Mengapa token dikonversi menjadi saham, bukan mewakili saham secara langsung?"
 
 msgid "Why become an Affiliate?"
 msgstr "Mengapa menjadi Afiliasi?"
@@ -9659,6 +9704,12 @@ msgstr "Anda sepenuhnya tidak dapat membatalkan, tidak memiliki kekuasaan penuh 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
 msgstr "Dengan menyetujui Perjanjian ini, Anda membuat pernyataan dan jaminan dan bersetuju dengan segala sesuatu yang disebutkan setiap saat Anda melakukan penutupan atau pembelian Transaksi:"
 
+msgid "You may also %1open a free %2 account%3."
+msgstr "Anda juga bisa %1mendaftar %2akun%3 gratis."
+
+msgid "You may also read about the ICO on %1FinanceMagnates%2 and %3Leaprate%2."
+msgstr "Anda juga bisa membaca tentang ICO pada %1FinanceMagnates%2 dan %3Leaprate%2."
+
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "Anda mungkin dapat menyimpan Konten hingga 24 jam dari permintaan melalui API %1."
 
@@ -9793,6 +9844,9 @@ msgstr "Anda perlu membaca Ketentuan Lanjutan secara berhati hati termasuk Ringk
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
 msgstr "Anda mengerti bahwa produk tersebut adalah berdasarkan angka acak yang dihasilkan (\"Indeks Volatilitas\") yang bukan merupakan produk berdasarkan indeks pasar finansial seperti (forex, saham dan komoditas) yang merupakan instrumen finansial."
+
+msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
+msgstr ""
 
 msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr "Anda akan diminta untuk membuktikan bahwa Anda adalah pemilik akun yang diautentikasi."
@@ -9994,9 +10048,6 @@ msgstr "Batas penarikan Anda adalah %1 %2 (atau setara dengan mata uang lain)."
 
 msgid "Your withdrawal limit is %1 %2."
 msgstr "Batas penarikan Anda adalah %1 %2."
-
-msgid "You’ll be able to purchase our tokens using the funds in your %1 account. We will soon be introducing native <strong>BTC (Bitcoin)</strong> and <strong>ETH (Ethereum)</strong> account facilities to enable your participation in the ICO."
-msgstr "Anda dapat membeli token menggunakan dana pada akun %1 Anda. Kami akan segera memperkenalkan fasilitas akun <strong>BTC (Bitcoin)</strong> dan <strong>ETH (Ethereum)</strong> untuk mempermudah partisipasi Anda pada ICO."
 
 msgid "ZAR 1 per point"
 msgstr "1 ZAR per poin"
