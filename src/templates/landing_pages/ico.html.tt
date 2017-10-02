@@ -71,6 +71,9 @@
                         <li>
                             <a class="page-scroll" href="#our-growth">[% l("Our growth") %]</a>
                         </li>
+                        <li>
+                            <a href="javascript:;" class="faq-btn">[% l("FAQ") %]</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -223,7 +226,7 @@
                         <h2>[% l("Need more information on the ICO?") %]</h2>
                     </div>
                     <div class="gr-12">
-                        <button id="faq-btn" class="button">[% l("Read our FAQ") %]</button>
+                        <button id="faq-btn" class="button faq-btn">[% l("Read our FAQ") %]</button>
                     </div>
                 </div>
             </div>
