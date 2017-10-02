@@ -46,13 +46,15 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
 
-    const faqButton = document.getElementById('faq-btn');
-    faqButton.addEventListener('click', function(e) {
-        document.getElementById('faq').classList.remove('invisible');
-        scrollTo(0);
-        e.stopPropagation();
-        document.getElementById('home').classList.add('invisible');
-    });
+    const faqButtons = document.getElementsByClassName('faq-btn');
+    for (let i = 0; i < faqButtons.length; i++) {
+        faqButtons[i].addEventListener('click', function(e) {
+            document.getElementById('faq').classList.remove('invisible');
+            scrollTo(0);
+            e.stopPropagation();
+            document.getElementById('home').classList.add('invisible');
+        });
+    };
 
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
