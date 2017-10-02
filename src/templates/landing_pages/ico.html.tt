@@ -548,7 +548,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I purchase tokens?") %]</h4>
-                            <p>[% l("You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.", broker_name, '<a href="' _ request.url_for('/cashier/payment_methods') _ '">', '</a>') %]</p>
+                            <p>[% l("You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.", broker_name, '<a href="' _ request.url_for('/cashier/payment_methods') _ '" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -574,7 +574,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I find out more about [_1]?", broker_name) %]</h4>
-                            <p>[% l("To find out more about [_1], you can read about our [_2]group history[_3], [_4]regulatory status[_3], and [_5]company culture[_3]. You can also read the [_6]company blog[_3].", broker_name, '<a href="' _ request.url_for('group-history') _ '">', '</a>', '<a href="' _ request.url_for('regulation') _ '">', '<a href="' _ request.url_for('careers') _ '">', '<a href="https://blog.binary.com/" target="_blank">') %]</p>
+                            <p>[% l("To find out more about [_1], you can read about our [_2]group history[_3], [_4]regulatory status[_3], and [_5]company culture[_3]. You can also read the [_6]company blog[_3].", broker_name, '<a href="' _ request.url_for('group-history') _ '" target="_blank">', '</a>', '<a href="' _ request.url_for('regulation') _ '" target="_blank">', '<a href="' _ request.url_for('careers') _ '" target="_blank">', '<a href="https://blog.binary.com/" target="_blank">') %]</p>
                             <p>[% l("You may also read about the ICO on [_1]FinanceMagnates[_2] and [_3]Leaprate[_2].", '<a href="https://www.financemagnates.com/binary-options/brokers/exclusive-binary-com-ico-shows-company-profits-surpass-20-mln-2017/" target="_blank">', '</a>', '<a href="https://www.leaprate.com/binary-options/broker/binary-com-ico-finances-binary-options-broker/" target="_blank">') %]</p>
                         </div>
                     </div>
@@ -588,7 +588,7 @@
                         <div class="faq">
                             <h4>[% l("How do I stay informed on the [_1] ICO?", broker_name) %]</h4>
                             <p>[% l("Please subscribe to our mailing list using the form below for occasional announcements relating to the ICO.") %]</p>
-                            <p>[% l("You may also [_1]open a free [_2] account[_3].", '<a href="' _ request.url_for('home') _ '">', broker_name, '</a>') %]</p>
+                            <p>[% l("You may also [_1]open a free [_2] account[_3].", '<a href="' _ request.url_for('home') _ '" target="_blank">', broker_name, '</a>') %]</p>
                         </div>
                     </div>
                 </div>
