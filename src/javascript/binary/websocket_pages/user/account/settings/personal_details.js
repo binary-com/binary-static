@@ -312,7 +312,12 @@ const PersonalDetails = (() => {
 
     const onLoad = () => {
         $(() => {
-            $('#form_validation_message').accordion({
+            $('#form_addressline1_message').accordion({
+                heightStyle: 'content',
+                collapsible: true,
+                active     : false,
+            });
+            $('#form_addressline2_message').accordion({
                 heightStyle: 'content',
                 collapsible: true,
                 active     : false,

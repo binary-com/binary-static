@@ -241,7 +241,7 @@ const Validation = (() => {
     };
 
     const showError = (field, message) => {
-        if (field.selector === '#address_line_1') {
+        if (field.selector === '#address_line_1' || field.selector === '#address_line_2') {
             clearError(field);
             field.$error.text(localize(message)).setVisibility(1);
             field.$error_address.setVisibility(1);
