@@ -581,7 +581,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I learn more about ICOs and cryptocurrencies?") %]</h4>
-                            <p>[% l("To learn more about Bitcoin, we recommend that you <a href='https://blockchain.info/wallet/#/'>open a Bitcoin wallet with Blockchain</a> and <a href='https://www.bitcoin.com/buy-bitcoin'>purchase bitcoins using a local exchange</a> in your country.") %]</p>
+                            <p>[% l("To learn more about Bitcoin, we recommend that you open a Bitcoin wallet with [_1][_2]\’s simple bitcoin wallet[_3], and purchase bitcoins using a local exchange in your country.", '<a href="https://bitcoin-wallet.binary.com/" target="_blank">', broker_name, '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
