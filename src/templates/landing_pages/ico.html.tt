@@ -535,7 +535,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Who can purchase the tokens?") %]</h4>
-                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account, and who have completed our account authentication/KYC process.", broker_name) %]</p>
+                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account, and who have completed our [_2]account authentication/KYC process[_3].", broker_name, '<a href="https://ico_documents.binary.com/2017_Authentication_Process.pdf" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
