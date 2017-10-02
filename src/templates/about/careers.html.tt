@@ -66,7 +66,7 @@
         <div class="gr-row gr-padding-30">
             [% INCLUDE column_md header=l("Want to telecommute?") paragraph=l("[_1] is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it.", website_name) %]
             [% INCLUDE column_md header=l("Where you can go")     paragraph=l("Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.") %]
-            [% INCLUDE column_md header=l("More benefits")        paragraph=l("We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta or Malaysia.") %]
+            [% INCLUDE column_md header=l("More benefits")        paragraph=l("We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, Malaysia, or Japan.") %]
 
             [% INCLUDE fill_box image='images/pages/careers/blog.svg' href='https://blog.binary.com' center=1 padding='9'
                 text=l("Read our blog for the stories and ideas that inspire us") target='_blank' %]
