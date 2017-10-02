@@ -120,10 +120,11 @@ sub all_pages {
         ['redirect',                   'global/logged_in',       undef, 'Redirecting...'],
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],
 
-        ['ico',                        'landing_pages/ico',            undef, 'Initial Coin Offering', 'ja'],
-        ['ico-disclaimer',             'landing_pages/ico_disclaimer', undef, 'Initial Coin Offering Disclaimer', 'ja'],
-        ['hackathon',                  'landing_pages/hackathon',      undef, 'Hackathon Competition', 'NOT-en'],
-        ['landing/signup-frame',       'landing_pages/signup_frame',   undef, 'Sign up'],
+        ['ico',                        'landing_pages/ico',                         undef,        'Initial Coin Offering', 'ja'],
+        ['ico-disclaimer',             'landing_pages/ico_disclaimer',              undef,        'Initial Coin Offering Disclaimer', 'ja'],
+        ['hackathon',                  'landing_pages/hackathon',                   undef,        'Hackathon Competition', 'NOT-en'],
+        ['landing/signup-frame',       'landing_pages/signup_frame',                undef,        'Sign up'],
+        ['binary-in-numbers',          'landing_pages/binary_in_numbers',           'default',    'Binary in Numbers'],
     );
 }
 
