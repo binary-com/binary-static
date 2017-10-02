@@ -529,7 +529,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How will the tokens be offered?") %]</h4>
-                            <p>[% l("The tokens will be offered via an auction process. View our guide to the token auction.") %]</p>
+                            <p>[% l("The tokens will be offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
