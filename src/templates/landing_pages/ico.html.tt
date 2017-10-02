@@ -554,7 +554,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Where will the tokens be listed?") %]</h4>
-                            <p>[% l("[_1] has entered into an agreement to list the tokens on the Lykke.com cryptocurrency exchange. Lykke is a Swiss fintech company building a global blockchain-powered marketplace for securities-linked tokens.", broker_name) %]</p>
+                            <p>[% l("[_1] has entered into an agreement to list the tokens on the [_2]Lykke.com[_3] cryptocurrency exchange. Lykke is a Swiss fintech company building a global blockchain-powered marketplace for securities-linked tokens.", broker_name, '<a href="https://www.lykke.com" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
