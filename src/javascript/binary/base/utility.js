@@ -87,7 +87,7 @@ const clearable = (element) => {
     document.addEventListener('mousemove', (e) => {
         if (/clear/.test(e.target.classList)) {
             e.stopPropagation();
-            e.target.classList[toggleAddRemoveClass(e.target.offsetWidth - 18 < e.clientX - e.target.getBoundingClientRect().left)]('onClear');
+            e.target.toggleClass('onClear', e.target.offsetWidth - 18 < e.clientX - e.target.getBoundingClientRect().left);
         }
     });
     document.addEventListener('mousedown', (e) => {
@@ -100,8 +100,6 @@ const clearable = (element) => {
         }
     });
 };
-
-const toggleAddRemoveClass = condition => (condition ? 'add' : 'remove');
 
 /**
  * Creates a DOM element and adds any attributes to it.
@@ -135,6 +133,10 @@ const createElement = (tag_name, attributes) => {
  * @param {Element} el_parent: parent of the selector, document by default
  */
 const applyToAllElements = (selector, funcToRun, func_selector, el_parent = document) => {
+    if (!selector || !funcToRun) {
+        return;
+    }
+
     let function_selector = func_selector;
     let element_to_select = selector;
     if (!func_selector && !element_to_select.nodeName) {
@@ -143,11 +145,11 @@ const applyToAllElements = (selector, funcToRun, func_selector, el_parent = docu
         } else if (element_to_select.lastIndexOf('.') === 0) {
             function_selector = 'getElementsByClassName';
             element_to_select = element_to_select.substring(1);
-        } else if (/^[a-zA-Z]$/.test(element_to_select)) {
+        } else if (/^[a-zA-Z]+$/.test(element_to_select)) {
             function_selector = 'getElementsByTagName';
         }
     }
-    const el = element_to_select.nodeName ? element_to_select : el_parent[function_selector](element_to_select);
+    const el = element_to_select.nodeName || typeof element_to_select === 'object' ? element_to_select : el_parent[function_selector](element_to_select);
     for (let i = 0; i < el.length; i++) {
         funcToRun(el[i]);
     }

@@ -131,8 +131,7 @@ const Durations_Beta = (() => {
     };
 
     const makeDurationOption = (map_min, map_max, is_selected) => {
-        const option  = createElement('option', { value: map_min.unit, 'data-minimum': map_min.value });
-        const content = document.createTextNode(map_min.text);
+        const option  = createElement('option', { value: map_min.unit, 'data-minimum': map_min.value, text: map_min.text });
         if (map_max.value && map_max.unit) {
             const max = convertDurationUnit(map_max.value, map_max.unit, map_min.unit);
             if (max) {
@@ -142,7 +141,6 @@ const Durations_Beta = (() => {
         if (is_selected) {
             option.setAttribute('selected', 'selected');
         }
-        option.appendChild(content);
         return option;
     };
 
@@ -299,22 +297,18 @@ const Durations_Beta = (() => {
             target.removeChild(target.firstChild);
         }
 
-        let option  = createElement('option', { value: 'duration' });
-        let content = document.createTextNode(localize('Duration'));
+        let option = createElement('option', { value: 'duration', text: localize('Duration') });
 
         if (current_selected === 'duration') {
             option.setAttribute('selected', 'selected');
         }
-        option.appendChild(content);
         fragment.appendChild(option);
 
         if (has_end_date) {
-            option  = createElement('option', { value: 'endtime' });
-            content = document.createTextNode(localize('End Time'));
+            option = createElement('option', { value: 'endtime', text: localize('End Time') });
             if (current_selected === 'endtime') {
                 option.setAttribute('selected', 'selected');
             }
-            option.appendChild(content);
             fragment.appendChild(option);
         }
         target.appendChild(fragment);

@@ -21,7 +21,7 @@ const Crowdin = (() => {
             window._jipt = [];
             window._jipt.push(['project', 'binary-static']);
             /* eslint-enable no-underscore-dangle */
-            document.getElementsByTagName('body')[0].appendChild(createElement('script', { type: 'text/javascript', src: `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js` }));
+            document.body.appendChild(createElement('script', { type: 'text/javascript', src: `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js` }));
         }
     };
 

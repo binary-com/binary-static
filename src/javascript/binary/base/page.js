@@ -170,7 +170,7 @@ const Page = (() => {
                 ['{brow_name}', '<a href="https://www.whatbrowser.org/" target="_blank">', '</a>']),
             reminder: 0, // show all the time
         };
-        document.getElementsByTagName('body')[0].appendChild(createElement('script', { src }));
+        document.body.appendChild(createElement('script', { src }));
     };
 
     return {

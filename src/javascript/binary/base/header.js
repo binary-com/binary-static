@@ -72,7 +72,7 @@ const Header = (() => {
                     const localized_type = localize('[_1] Account', [is_real && currency ? currency : account_title]);
                     if (loginid === Client.get('loginid')) { // default account
                         applyToAllElements('.account-type', (el) => { elementInnerHtml(el, localized_type); });
-                        applyToAllElements('.account-id', (el) => { elementInnerHtml(el, localized_type); });
+                        applyToAllElements('.account-id', (el) => { elementInnerHtml(el, loginid); });
                     } else {
                         const link    = createElement('a', { href: `${'java'}${'script:;'}`, 'data-value': loginid });
                         const li_type = createElement('li', { text: localized_type });
@@ -118,7 +118,6 @@ const Header = (() => {
         // set local storage
         GTM.setLoginFlag();
         Client.set('loginid', loginid);
-        applyToAllElements('.login-id-list a', (el) => { el.removeAttribute('disabled'); });
         window.location.reload();
     };
 
@@ -216,10 +215,8 @@ const Header = (() => {
 
         if (!msg_notification.offsetParent) {
             $(msg_notification).slideDown(500, () => { if (is_error) msg_notification.classList.add('error'); });
-        } else if (is_error) {
-            msg_notification.classList.add('error');
         } else {
-            msg_notification.classList.remove('error');
+            msg_notification.toggleClass('error', is_error);
         }
     };
 

@@ -35,7 +35,6 @@ const StartDates = (() => {
             const fragment = document.createDocumentFragment();
             const row      = document.getElementById('date_start_row');
             let option,
-                content,
                 first,
                 selected,
                 day,
@@ -49,9 +48,7 @@ const StartDates = (() => {
             }
 
             if (start_dates.has_spot) {
-                option  = createElement('option', { value: 'now' });
-                content = document.createTextNode(localize('Now'));
-                option.appendChild(content);
+                option = createElement('option', { value: 'now', text: localize('Now') });
                 fragment.appendChild(option);
                 has_now = 1;
             } else {
@@ -83,8 +80,7 @@ const StartDates = (() => {
                         $($duplicated_option[0]).text(`${$duplicated_option.text()} - ${localize('Session')} ${duplicated_length}`);
                     }
 
-                    option  = createElement('option', { value: a.utc().unix(), 'data-end': b.unix() });
-                    content = document.createTextNode(day + ($duplicated_option.length ? ` - ${localize('Session')} ${duplicated_length + 1}` : ''));
+                    option = createElement('option', { value: a.utc().unix(), 'data-end': b.unix(), text: day + ($duplicated_option.length ? ` - ${localize('Session')} ${duplicated_length + 1}` : '') });
                     if (option.value >= default_start && !selected) {
                         selected = true;
                         option.setAttribute('selected', 'selected');
@@ -92,7 +88,6 @@ const StartDates = (() => {
                     if (typeof first === 'undefined' && !has_now) {
                         first = a.utc().unix();
                     }
-                    option.appendChild(content);
                     fragment.appendChild(option);
                 }
             });

@@ -69,11 +69,9 @@ const commonTrading = (() => {
                         fragment2.appendChild(li2);
                     }
                     if (fragment2.hasChildNodes()) {
-                        const ul      = createElement('ul', { class: 'tm-ul-2', id: `${el1[0]}-submenu` });
-                        const a       = createElement('a', { class: 'tm-a', menuitem: first });
-                        const content = document.createTextNode(elements[el1[0]]);
+                        const ul = createElement('ul', { class: 'tm-ul-2', id: `${el1[0]}-submenu` });
+                        const a  = createElement('a', { class: 'tm-a', menuitem: first, text: elements[el1[0]] });
 
-                        a.appendChild(content);
                         ul.appendChild(fragment2);
 
                         if (flag) {
@@ -123,12 +121,10 @@ const commonTrading = (() => {
         const keys1 = Object.keys(elements).sort(submarketSort);
         for (let i = 0; i < keys1.length; i++) {
             const key     = keys1[i];
-            const content = document.createTextNode(elements[key].name);
-            let option    = createElement('option', { value: key });
+            let option    = createElement('option', { value: key, text: elements[key].name });
             if (selected && selected === key) {
                 option.setAttribute('selected', 'selected');
             }
-            option.appendChild(content);
             fragment.appendChild(option);
 
             if (elements[key].submarkets && !isEmptyObject(elements[key].submarkets)) {
@@ -192,13 +188,11 @@ const commonTrading = (() => {
         const keys2 = Object.keys(submarkets).sort(submarketSort);
         for (let j = 0; j < keys2.length; j++) {
             for (let k = 0; k < submarkets[keys2[j]].length; k++) {
-                const key     = submarkets[keys2[j]][k];
-                const option  = createElement('option', { value: key });
-                const content = document.createTextNode(localize(elements[key].display));
+                const key    = submarkets[keys2[j]][k];
+                const option = createElement('option', { value: key, text: localize(elements[key].display) });
                 if (selected && selected === key) {
                     option.setAttribute('selected', 'selected');
                 }
-                option.appendChild(content);
                 fragment.appendChild(option);
             }
         }

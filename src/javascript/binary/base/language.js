@@ -50,7 +50,7 @@ const Language = (() => {
             const crowdin_lang = Cookies.get('jipt_language_code_binary-static'); // selected language for in-context translation
             if (crowdin_lang) {
                 current_lang = crowdin_lang.toUpperCase().replace('-', '_').toUpperCase();
-                document.getElementsByTagName('body')[0].classList.add(current_lang); // set the body class removed by crowdin code
+                document.body.classList.add(current_lang); // set the body class removed by crowdin code
             }
         }
         current_lang = (current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase());

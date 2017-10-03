@@ -226,7 +226,7 @@ const Client = (() => {
     const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'japan'));
 
     const activateByClientType = (section_id) => {
-        const el_section   = section_id ? document.getElementById(section_id) : document.getElementsByTagName('body')[0];
+        const el_section   = section_id ? document.getElementById(section_id) : document.body;
         const topbar_class = document.getElementById('topbar').classList;
 
         const primary_bg_color_dark = 'primary-bg-color-dark';

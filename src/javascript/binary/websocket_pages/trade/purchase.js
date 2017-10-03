@@ -187,8 +187,7 @@ const Purchase = (() => {
 
             if (isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
                 const fragment = createElement('div', { class: 'row' });
-                const el1      = createElement('div', { class: 'col' });
-                elementTextContent(el1, `${localize('Tick')} ${(spots.getElementsByClassName('row').length + 1)}`);
+                const el1      = createElement('div', { class: 'col', text: `${localize('Tick')} ${(spots.getElementsByClassName('row').length + 1)}` });
                 fragment.appendChild(el1);
 
                 const el2     = createElement('div', { class: 'col' });
