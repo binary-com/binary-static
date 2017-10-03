@@ -311,18 +311,6 @@ const PersonalDetails = (() => {
     };
 
     const onLoad = () => {
-        $(() => {
-            $('#form_addressline1_message').accordion({
-                heightStyle: 'content',
-                collapsible: true,
-                active     : false,
-            });
-            $('#form_addressline2_message').accordion({
-                heightStyle: 'content',
-                collapsible: true,
-                active     : false,
-            });
-        });
         currency = Client.get('currency');
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();

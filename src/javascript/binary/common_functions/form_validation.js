@@ -74,7 +74,10 @@ const Validation = (() => {
                             $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
                         }
                         field.$error = $parent.find(`.${error_class}`);
-                        field.$error_address = $parent.find(`.${error_address_class}`);
+
+                        if (field.selector === '#address_line_1' || '#address_line_2') {
+                            field.$error_address = $parent.find(`.${error_address_class}`);
+                        }
                     }
 
                     const event = events_map[field.type];
@@ -243,14 +246,12 @@ const Validation = (() => {
     };
 
     const showError = (field, message) => {
-        if (field.selector === '#address_line_1' || field.selector === '#address_line_2') {
-            clearError(field);
-            field.$error.text(localize(message)).setVisibility(1);
+        if (/#address_line_[1|2]/.test(field.selector)) {
             field.$error_address.setVisibility(1);
         } else {
             clearError(field);
-            field.$error.text(localize(message)).setVisibility(1);
         }
+        field.$error.text(localize(message)).setVisibility(1);
     };
 
     const validate = (form_selector) => {

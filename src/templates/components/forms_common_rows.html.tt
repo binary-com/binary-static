@@ -40,12 +40,12 @@
 [% END %]
 
 [% BLOCK address_line_1 %]
-    [% INCLUDE form_row type='text' id='address_line_1' label=l('First line of home address') attributes='maxlength="70"'
+    [% INCLUDE form_row type='text' id='address_line_1' label=l('First line of home address') attributes='maxlength="70"' address_id='form_addressline1_message'
         hint=hint || (no_hint ? '' : l('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.')) %]
 [% END %]
 
 [% BLOCK address_validation_header %]
-    <span>[% l("Please refer to the") %]<strong>&nbsp[% l("characters that can be used") %]</strong></span>
+    <span>[% l("Please refer to the [_1]characters that can be used", "<strong>") %]</strong></span>
 [% END %]
 
 [% BLOCK address_validation_desc %]
@@ -65,7 +65,7 @@
 [% END %]
 
 [% BLOCK address_line_2 %]
-    [% INCLUDE form_row type='text' id='address_line_2' label=l('Second line of home address') attributes='maxlength="70"' hint=hint %]
+    [% INCLUDE form_row type='text' id='address_line_2' label=l('Second line of home address') attributes='maxlength="70"' address_id='form_addressline2_message' hint=hint %]
 [% END %]
 
 [% BLOCK address_city %]

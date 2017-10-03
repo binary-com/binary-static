@@ -35,6 +35,18 @@ const FormManager = (() => {
         // handle firefox
         $btn.removeAttr('disabled');
         Validation.init(form_selector, fields, needs_token);
+        $(() => {
+            $('#form_addressline1_message').accordion({
+                heightStyle: 'content',
+                collapsible: true,
+                active     : false,
+            });
+            $('#form_addressline2_message').accordion({
+                heightStyle: 'content',
+                collapsible: true,
+                active     : false,
+            });
+        });
     };
 
     const getFormData = (form_selector) => {

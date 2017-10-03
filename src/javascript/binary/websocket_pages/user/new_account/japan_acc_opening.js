@@ -6,18 +6,6 @@ const FormManager    = require('../../../common_functions/form_manager');
 
 const JapanAccOpening = (() => {
     const onLoad = () => {
-        $(() => {
-            $('#form_addressline1_message').accordion({
-                heightStyle: 'content',
-                collapsible: true,
-                active     : false,
-            });
-            $('#form_addressline2_message').accordion({
-                heightStyle: 'content',
-                collapsible: true,
-                active     : false,
-            });
-        });
         if (AccountOpening.redirectAccount()) return;
         AccountOpening.populateForm();
         const form_id = '#japan-form';

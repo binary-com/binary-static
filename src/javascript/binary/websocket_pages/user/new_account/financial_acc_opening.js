@@ -11,18 +11,6 @@ const FinancialAccOpening = (() => {
     const form_id = '#financial-form';
 
     const onLoad = () => {
-        $(() => {
-            $('#form_addressline1_message').accordion({
-                heightStyle: 'content',
-                collapsible: true,
-                active     : false,
-            });
-            $('#form_addressline2_message').accordion({
-                heightStyle: 'content',
-                collapsible: true,
-                active     : false,
-            });
-        });
         if (Client.hasAccountType('financial') || !Client.get('residence')) {
             BinaryPjax.loadPreviousUrl();
             return;

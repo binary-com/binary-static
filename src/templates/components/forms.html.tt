@@ -40,22 +40,9 @@
                     [% content %]
             [%- END %]
             [% IF hint %]<div class="hint">[% hint %]</div>[% END %]
-            [% IF id == 'address_line_1' %]
+            [% IF id == 'address_line_1' || id == 'address_line_2' %]
                 <div class="error-msg invisible"></div>
-                <div class="error-address-msg invisible gr-8 gr-12-m form-validation-message" id="form_addressline1_message">
-                    <h4 class="gr-9 gr-12-m">
-                        [% INCLUDE address_validation_header %]
-                    </h4>
-                    <div class = "gr-9 gr-10-m gr-push-1-m form-validation-desc">
-                        <div class="gr-row">
-                            [% INCLUDE address_validation_desc %]
-                          </div>
-                    </div>
-                </div>
-            [% END %]
-            [% IF id == 'address_line_2' %]
-                <div class="error-msg invisible"></div>
-                <div class="error-address-msg invisible gr-8 gr-12-m form-validation-message" id="form_addressline2_message">
+                <div class="error-address-msg invisible gr-8 gr-12-m form-validation-message" id="[% address_id %]">
                     <h4 class="gr-9 gr-12-m">
                         [% INCLUDE address_validation_header %]
                     </h4>
