@@ -74,8 +74,10 @@ const TradingAnalysis = (() => {
                 const el_digit_underlying = $('#digit_underlying');
                 const underlying = $('#underlying option:selected').val();
                 const tick       = $('#tick_count').val() || 100;
-                if (underlying !== el_digit_underlying.find('option:selected').val()) {
+                if (underlying !== el_digit_underlying.val() && el_digit_underlying.val() !== null ) {
                     el_digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
+                }
+                else {
                     GetTicks.request('', {
                         ticks_history: underlying,
                         count        : tick.toString(),
