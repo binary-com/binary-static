@@ -7,10 +7,10 @@ const getDecimalPlaces      = require('../common_functions/currency').getDecimal
 const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
-    const forms        = {};
-    const error_class  = 'error-msg';
+    const forms               = {};
+    const error_class         = 'error-msg';
     const error_address_class = 'error-address-msg';
-    const hidden_class = 'invisible';
+    const hidden_class        = 'invisible';
 
     const events_map = {
         input   : 'input change',
