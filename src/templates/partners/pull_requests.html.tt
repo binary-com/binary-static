@@ -89,11 +89,10 @@
 
         <div class="padding-top-20">
             <h2>[% l('Can I discuss the codebases with the [_1] development team?', website_name) %]</h2>
-            <!-- p>[% l('Of course! Please join our [_1] channel.', '<a target="_blank" href="https://binary-group.slack.com">Slack</a>') %]</p -->
-            <p>[% l('Of course! We look forward to getting your pull-requests.') %]</p>
+            <p>[% l('Of course! Please send an email to <a href="mailto:[_1]">[_1]</a> to request an invite to our Slack channel.', 'pull-requests@binary.com') %]</p>
         </div>
 
-        <div class="padding-top-20">
+        <div class="section">
             <i>[% l('The [_1] team', website_name) %]</i>
         </div>
     </div>
