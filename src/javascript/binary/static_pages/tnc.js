@@ -57,7 +57,7 @@ const TermsAndConditions = (() => {
         const $content = $('#content');
         if (section) {
             const $section = $content.find(`a#${section}`);
-            if ($section.length) setTimeout(() => { $.scrollTo($section, 0, { offset: -10 }); }, 500);
+            if ($section.length) setTimeout(() => { $.scrollTo($section, 0, { offset: -5 }); }, 500);
         } else if (window.location.hash) {
             setTimeout(() => { $.scrollTo($content.find('.tab-menu'), 0, { offset: -10 }); }, 500);
         }
