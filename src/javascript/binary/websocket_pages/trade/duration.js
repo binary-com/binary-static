@@ -518,6 +518,7 @@ const Durations = (() => {
         } else if (+duration_max_element.textContent &&
             +duration_amount_element.value > +duration_max_element.textContent) {
             duration_amount_element.classList.add('error-field');
+            duration_wrapper_element.classList.remove('error-msg');
         } else {
             duration_amount_element.classList.remove('error-field');
             duration_wrapper_element.classList.remove('error-msg');
