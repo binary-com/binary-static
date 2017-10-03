@@ -256,7 +256,9 @@ const ViewPopup = (() => {
     };
 
     const appendAuditLink = (element_id) => {
-        const link = createElement('a', { text: localize('Audit'), href: `${'java'}${'script:;'}`, class: 'link-audit' });
+        const link = createElement('a', { href: `${'java'}${'script:;'}`, class: 'link-audit button-secondary' });
+        const span = createElement('span', { text: localize('Audit') });
+        link.appendChild(span);
         link.addEventListener('click', showAuditTable);
         document.getElementById(element_id).appendChild(link);
     };
@@ -304,7 +306,8 @@ const ViewPopup = (() => {
                 return;
             }
             let has_start_time = !/entry/i.test(remark);
-            const start_time_classes = ['fill-bg-color', 'start-time'];
+            let has_end_time   = !/exit/i.test(remark);
+            const secondary_classes = ['fill-bg-color', 'secondary-time'];
             response.history.times.forEach((time, idx) => {
                 if (+time === +tick_time) {
                     let i = idx - 3;
@@ -312,17 +315,31 @@ const ViewPopup = (() => {
                         const this_time     = response.history.times[i];
                         const this_price    = response.history.prices[i];
                         const is_start_time = +this_time === +contract.date_start;
-                        if (is_start_time) {
+                        const is_end_time   = +this_time === +contract.date_expiry;
+
+                        if (!has_start_time && +this_time > +contract.date_start) {
+                            createAuditRow(table, contract.date_start, '', localize('Start Time'), secondary_classes);
                             has_start_time = true;
-                        } else if (!has_start_time && +this_time > +contract.date_start) {
-                            createAuditRow(table, contract.date_start, '-', localize('Start Time'), start_time_classes);
-                            has_start_time = true;
+                        } else if (!has_end_time && +this_time > +contract.date_expiry) {
+                            createAuditRow(table, contract.date_expiry, '', localize('End Time'), secondary_classes);
+                            has_end_time = true;
                         }
+
+                        let pre_remark = is_end_time ? 'End Time and' : '';
+                        if (is_start_time) {
+                            pre_remark = 'Start Time and';
+                        }
+
                         if (i === idx) {
-                            // handle when start time and entry spot fall on the same time
-                            createAuditRow(table, this_time, this_price, localize(`${is_start_time ? 'Start Time and' : ''} ${remark}`), ['secondary-bg-color', 'content-inverse-color', 'align-self-center']);
+                            createAuditRow(table, this_time, this_price, localize(`${pre_remark} ${remark}`), ['secondary-bg-color', 'content-inverse-color', 'align-self-center']);
+                        } else if (is_start_time) {
+                            createAuditRow(table, this_time, this_price, localize('Start Time'), secondary_classes);
+                            has_start_time = true;
+                        } else if (is_end_time) {
+                            createAuditRow(table, this_time, this_price, localize('End Time'), secondary_classes);
+                            has_end_time = true;
                         } else {
-                            createAuditRow(table, this_time, this_price, is_start_time ? localize('Start Time') : '', is_start_time ? start_time_classes : '');
+                            createAuditRow(table, this_time, this_price);
                         }
                     }
                     resolve();

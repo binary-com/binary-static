@@ -107,9 +107,11 @@
                     padding: 3px 10px;
                 }
                 #trade_details_entry_spot, #trade_details_current_spot {
+                    line-height: 32px;
+
                     a {
                         float: right;
-                        padding-right: 20px;
+                        margin-bottom: 0;
                         cursor: pointer;
                     }
                 }
@@ -129,10 +131,10 @@
                         border: none;
                         font-size: $FONT_SIZE_S;
 
-                        &.remark, &.start-time, &.secondary-bg-color {
+                        &.remark, &.secondary-time, &.secondary-bg-color {
                             font-weight: bold;
                         }
-                        &.start-time {
+                        &.secondary-time {
                             border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
                         }
                         &.audit-dates {

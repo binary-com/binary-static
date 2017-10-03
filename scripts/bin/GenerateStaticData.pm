@@ -424,6 +424,7 @@ sub _texts {
         push @texts, localize('Contract Starts');
         push @texts, localize('Contract Ends');
         push @texts, localize('Start Time and Entry Spot');
+        push @texts, localize('Exit Time and Exit Spot');
         # strings for financial assessment
         push @texts, localize('Please select a value');
         # Strings for authorised_apps
