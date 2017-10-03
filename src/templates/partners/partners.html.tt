@@ -43,5 +43,8 @@
 
         [% INCLUDE column url=request.url_for('multiple-accounts-manager') image='mam' header=l("Multiple Accounts Manager (MAM)")
             text=l("Trade and manage multiple MT5 client accounts from a single interface.") %]
+
+        [% INCLUDE column url=request.url_for('pull-requests') image='' header=l("Pull Requests")
+            text=l("Get paid for pull requests.") %]
     </div>
 </div>
