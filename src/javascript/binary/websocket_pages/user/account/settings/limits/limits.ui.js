@@ -57,14 +57,14 @@ const LimitsUI = (() => {
         elementInnerHtml(payout, formatMoney(currency, limits.payout, 1));
         elementInnerHtml(payout_per_contract, formatMoney(currency, limits.payout_per_symbol_and_contract_type, 1));
 
-        Object.keys(limits.payout_per_symbol).sort((a, b) => a > b).forEach((key) => {
+        Object.keys(limits.payout_per_symbol).sort().forEach((key) => {
             if (typeof limits.payout_per_symbol[key] === 'object') {
                 appendRowTable(key, '', '25px', 'bold', true);
-                Object.keys(limits.payout_per_symbol[key]).sort((a, b) => a > b).forEach((sub_key) => {
-                    appendRowTable(sub_key || sub_key, formatMoney(currency, limits.payout_per_symbol[key][sub_key], 1), '50px', 'normal', true);
+                Object.keys(limits.payout_per_symbol[key]).sort().forEach((sub_key) => {
+                    appendRowTable(sub_key, formatMoney(currency, limits.payout_per_symbol[key][sub_key], 1), '50px', 'normal', true);
                 });
             } else {
-                appendRowTable(key || key, formatMoney(currency, limits.payout_per_symbol[key], 1), '25px', 'bold', true);
+                appendRowTable(key, formatMoney(currency, limits.payout_per_symbol[key], 1), '25px', 'bold', true);
             }
         });
 
