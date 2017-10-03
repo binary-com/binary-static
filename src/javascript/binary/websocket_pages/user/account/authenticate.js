@@ -190,9 +190,9 @@ const Authenticate = (() => {
                             buffer        : fr.result,
                             documentType  : f.type,
                             documentFormat: format,
+                            documentId    : f.id_number || undefined,
+                            expirationDate: f.exp_date || undefined,
                         };
-                        obj.documentId = f.id_number || '';
-                        obj.expirationDate = f.exp_date || '';
 
                         const error = validate(obj);
                         if (error) reject(error);
