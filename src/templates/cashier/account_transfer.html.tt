@@ -15,7 +15,8 @@
 
 <div class="invisible" id="client_message">
     <p class="center-text notice-msg">
-        <span class="invisible" id="no_account">[% l("Fund transfers between accounts are unavailable.") %]</span> <span class="invisible" id="no_balance">[% l("Please [_1]deposit[_2] to your account.", '<a href="' _ request.url_for('/cashier/forwardws#deposit') _ '">', '</a>') %]</span>
+        <span class="invisible" id="no_account">[% l("Fund transfers between accounts are unavailable.") %]</span> <span class="invisible" id="not_enough_balance">[% l("The minimum required amount for using the account transfer facility is [_1].", '<span id="min_required_amount"></span>') %]</span> <span class="invisible" id="no_balance">[% l("Please [_1]deposit[_2] to your account.", '<a href="' _ request.url_for('/cashier/forwardws#deposit') _ '">', '</a>') %]</span>
+        <span class="invisible" id="limit_reached">[% l("You have reached your withdrawal limit.") %]</span>
     </p>
 </div>
 
@@ -38,6 +39,7 @@
         [% WRAPPER form_row label=l("Amount") type='custom' id='transfer_amount' %]
             <label id="currency"></label>
             <input id="amount" name="amount" type="text" maxlength="20" autocomplete="off" />
+            <div class="hint" id="range_hint"></div>
         [% END %]
     [% END %]
 
