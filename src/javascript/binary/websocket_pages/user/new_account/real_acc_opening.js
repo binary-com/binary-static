@@ -6,6 +6,18 @@ const FormManager    = require('../../../common_functions/form_manager');
 const RealAccOpening = (() => {
 
     const onLoad = () => {
+        $(() => {
+            $('#form_addressline1_message').accordion({
+                heightStyle: 'content',
+                collapsible: true,
+                active     : false,
+            });
+            $('#form_addressline2_message').accordion({
+                heightStyle: 'content',
+                collapsible: true,
+                active     : false,
+            });
+        });
         if (Client.get('residence')) {
             if (AccountOpening.redirectAccount()) return;
 
