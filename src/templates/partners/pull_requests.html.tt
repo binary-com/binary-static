@@ -68,7 +68,7 @@
                 <li>[% l('Trivial changes – generally $5-20') %]</li>
                 <li>[% l('Smallish changes – generally $20-50') %]</li>
                 <li>[% l('Average-sized changes – generally $50-250') %]</li>
-                <li>[% l('Medium-sizes changes – generally $250-750') %]</li>
+                <li>[% l('Medium-sized changes – generally $250-750') %]</li>
                 <li>[% l('Large changes – generally $750-2,500') %]</li>
                 <li>[% l('Very large changes/entire new projects – $2,500-10,000') %]</li>
             </ul>
@@ -80,7 +80,7 @@
         </div>
         <div class="padding-top-20">
             <h2>[% l('If rewards are not agreed in advance, how do I know I\'ll be paid fairly?') %]</h2>
-            <p>[% l('We want to keep improving our platform, so, it\'s in our interest to pay contributors fairly. If we don\'t, then they\'ll stop contributing pull requests, which will make this project self-defeating.') %]</p>
+            <p>[% l('We want to keep improving our platform, so, it\'s in our interest to pay contributors fairly. If we don\'t, then you\'ll stop contributing pull requests, which will make this project self-defeating.') %]</p>
         </div>
         <div class="padding-top-20">
             <h2>[% l('Can I work for [_1] full-time?', website_name) %]</h2>
@@ -90,11 +90,11 @@
         <div class="padding-top-20">
             <h2>[% l('Can I discuss the codebases with the [_1] development team?', website_name) %]</h2>
             <!-- p>[% l('Of course! Please join our [_1] channel.', '<a target="_blank" href="https://binary-group.slack.com">Slack</a>') %]</p -->
-            <p>[% l('We look forward to getting your pull-requests.') %]</p>
+            <p>[% l('Of course! We look forward to getting your pull-requests.') %]</p>
         </div>
 
         <div class="padding-top-20">
-            <h3>[% l('The [_1] team', website_name) %]</h3>
+            <i>[% l('The [_1] team', website_name) %]</i>
         </div>
     </div>
 </div>
