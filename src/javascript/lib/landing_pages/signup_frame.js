@@ -1,17 +1,19 @@
 var error_class = 'error-field';
 
 window.onload = function () {
+    dataLayer.push({ event: 'page_load' });
+
     var el_email   = document.getElementById('email');
     var el_signup  = document.getElementById('signup');
     var el_success = document.getElementById('success');
 
-    var ws = new WebSocket('wss://blue.binaryws.com/websockets/v3?app_id=1&l=' + getLanguage());
+    var ws = wsConnect();
 
     function sendVerifyEmail() {
-        ws.send(JSON.stringify({
+        wsSend(ws, {
             verify_email: el_email.value,
             type        : 'account_opening'
-        }));
+        });
     }
 
     var validation_set = false; // To prevent validating before submit
@@ -35,23 +37,21 @@ window.onload = function () {
         if (ws.readyState === 1) {
             sendVerifyEmail();
         } else {
-            ws.onopen = function() {
-                sendVerifyEmail()
-            };
+            ws.onopen = sendVerifyEmail;
         }
     });
 
     ws.onmessage = function(msg) {
-        var data = JSON.parse(msg.data);
-        setValidationStyle(el_email, data.error);
-        if (!data.error) {
+        var response = JSON.parse(msg.data);
+        setValidationStyle(el_email, response.error);
+        if (!response.error) {
             el_signup.classList.add('invisible');
             el_success.classList.remove('invisible');
         }
     };
 
     // Store gclid
-    var gclid = getParamValue(window.top.location.href, 'gclid');
+    var gclid = getParamValue(document.referrer, 'gclid');
     if (gclid) {
         localStorage.setItem('gclid', gclid);
     }
@@ -63,17 +63,4 @@ function validateEmail(email) {
 
 function setValidationStyle(element, has_error) {
     element.classList[has_error ? 'add' : 'remove'](error_class);
-}
-
-function getParamValue(url, key) {
-    var regex   = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
-    var results = regex.exec(url);
-    if (!results || !results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
-function getLanguage() {
-    var all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
-    var language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return all_languages.indexOf(l) >= 0; });
-    return language || 'en';
 }

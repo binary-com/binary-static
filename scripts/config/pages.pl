@@ -41,6 +41,7 @@ sub all_pages {
         ['payment-agent',              'partners/payment_agent',             'full_width', 'Payment Agents',                  'ja'],
         ['security-testing',           'partners/security_testing',          'full_width', 'Security Testing',                'ja'],
         ['multiple-accounts-manager',  'partners/multiple_accounts_manager', 'full_width', 'Multiple Accounts Manager',       'ja'],
+        ['pull-requests',              'partners/pull_requests',             'full_width', 'Get Paid for Pull Requests',      'ja'],
 
         ['get-started',                              'get_started/index',                         'get_started', 'Get Started',                      'ja'],
         ['get-started/beginners-faq',                'get_started/beginners_faq',                 'get_started', 'FAQ',                              'ja'],
@@ -119,10 +120,12 @@ sub all_pages {
         ['logged_inws',                'global/logged_in',       undef],
         ['redirect',                   'global/logged_in',       undef, 'Redirecting...'],
         ['affiliate_disclaimer',       'japan/affiliates/popup', undef, '', 'NOT-ja,en'],
-        ['ico',                        'static/ico',             undef, 'Initial Coin Offering', 'ja'],
-        ['ico-disclaimer',             'static/ico_disclaimer',  undef, 'Initial Coin Offering Disclaimer', 'ja'],
-        ['hackathon',                  'static/hackathon',       undef, 'Hackathon Competition', 'NOT-en'],
-        ['landing/signup-frame',       'landing/signup_frame',   undef, 'Sign up'],
+
+        ['ico',                        'landing_pages/ico',                         undef,        'Initial Coin Offering', 'ja'],
+        ['ico-disclaimer',             'landing_pages/ico_disclaimer',              undef,        'Initial Coin Offering Disclaimer', 'ja'],
+        ['hackathon',                  'landing_pages/hackathon',                   undef,        'Hackathon Competition', 'NOT-en'],
+        ['landing/signup-frame',       'landing_pages/signup_frame',                undef,        'Sign up'],
+        ['binary-in-numbers',          'landing_pages/binary_in_numbers',           'default',    'Binary in Numbers'],
     );
 }
 

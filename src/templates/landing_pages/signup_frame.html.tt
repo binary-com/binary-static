@@ -4,9 +4,22 @@
     [% FOREACH css_file IN css_files =%]
         <link rel="stylesheet" href="[%= css_file =%]" />
     [% END %]
-    <script src="[% request.url_for('js/landing/signup_frame.js') _ '?' _ static_hash %]"></script>
+    <style type="text/css">
+        body {
+            background: transparent !important;
+            display: flex;
+            flex-direction: column;
+        }
+        .home-content {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    </style>
+    <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
+    <script src="[% request.url_for('js/landing_pages/signup_frame.js') _ '?' _ static_hash %]"></script>
 </head>
 <body>
+    [% PROCESS global/gtm.html.tt %]
     <div class="home-content">
         [% WRAPPER global/form_verify_email.html.tt class='secondary-bg-color' dark_button=1 text=l('Create Free Account') %]
             <div class="invisible" id="success">

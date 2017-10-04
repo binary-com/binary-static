@@ -213,6 +213,7 @@ sub _texts {
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
         push @texts, localize('Minimum of [_1] characters required.');
+        push @texts, localize('Please confirm that you are not a politically exposed person.');
         #strings for trading times page
         push @texts, localize('Asset');
         push @texts, localize('Opens');
@@ -482,7 +483,10 @@ sub _texts {
         push @texts, localize('Change Password');
 
         # strings for account_transfer
-        push @texts, localize('This amount exceeds your withdrawal limit.');
+        push @texts, localize('Min');
+        push @texts, localize('Max');
+        push @texts, localize('Current balance');
+        push @texts, localize('Withdrawal limit');
 
         # strings for header notification
         push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.');
@@ -523,6 +527,7 @@ sub _texts {
         push @texts, localize('Gaming');
         push @texts, localize('Virtual');
         push @texts, localize('Real');
+        push @texts, localize('Counterparty');
 
         # currency names
         push @texts, localize('Bitcoin');

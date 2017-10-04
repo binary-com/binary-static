@@ -1,7 +1,9 @@
+const Client                = require('../base/client');
 const localize              = require('../base/localize').localize;
-const addComma              = require('../common_functions/currency').addComma;
 const urlParam              = require('../base/url').param;
 const isEmptyObject         = require('../base/utility').isEmptyObject;
+const addComma              = require('../common_functions/currency').addComma;
+const getDecimalPlaces      = require('../common_functions/currency').getDecimalPlaces;
 const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
@@ -128,25 +130,25 @@ const Validation = (() => {
         let is_ok   = true;
         let message = '';
 
-        if (+options.max < +options.min && options.custom_message) {
-            is_ok   = false;
-            message = localize(options.custom_message);
-        } else if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
+        if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
             is_ok   = false;
             message = localize('Should be a valid number');
         } else if (options.type === 'float' && options.decimals &&
             !(new RegExp(`^\\d+(\\.\\d{${options.decimals.replace(/ /g, '')}})?$`).test(value))) {
             is_ok   = false;
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
+        } else if ('min' in options && 'max' in options && +options.min === +options.max && +value !== +options.min) {
+            is_ok   = false;
+            message = localize('Should be [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined )]);
         } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
             is_ok   = false;
-            message = localize('Should be between [_1] and [_2]', [options.min, addComma(options.max)]);
+            message = localize('Should be between [_1] and [_2]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined ), addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined )]);
         } else if ('min' in options && +value < +options.min) {
             is_ok   = false;
-            message = localize('Should be more than [_1]', [options.min]);
+            message = localize('Should be more than [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined )]);
         } else if ('max' in options && isMoreThanMax(value, options)) {
             is_ok   = false;
-            message = localize('Should be less than [_1]', [addComma(options.max)]);
+            message = localize('Should be less than [_1]', [addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
         }
 
         validators_map.number.message = message;
