@@ -270,6 +270,7 @@ const ViewPopup = (() => {
         }
         document.getElementById('sell_details_chart_wrapper').setVisibility(!show);
         document.getElementById('sell_details_audit').setVisibility(show);
+        ViewPopupUI.repositionConfirmation();
     };
 
     const initAuditTable = (show) => {
