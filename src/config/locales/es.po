@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-20 22:16-0400\n"
+"PO-Revision-Date: 2017-09-25 22:20-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 se ha acreditado en su cuenta de dinero virtual %3"
 
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
-msgstr ""
+msgstr "Pago de %1 %2 si %3 no toca la barrera hasta el cierre en %4."
 
 msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
 msgstr ""
@@ -240,8 +240,8 @@ msgstr ""
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 es uno de los nombres más antiguos y respetados de comercio binario en línea."
 
-msgid "%1 is owned and operated by the Binary Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 es propiedad de y está operado por el grupo de grupo de compañías Binary Ltd. Para más información <a href='%2'>visite la página con nuestra historia</a>."
+msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
+msgstr ""
 
 msgid "%1 is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team."
 msgstr "%1 busca un profesional en el principio o mitad de su carrera profesional y con capacidades excepcionales de administración y organización para unirse a nuestro Equipo de Asuntos Generales."
@@ -445,7 +445,7 @@ msgid "* Tax Free: Profits from trading are tax free in many countries but you s
 msgstr "* Libre de impuestos: En muchos países, los beneficios procedentes de operaciones binarias son libres de impuestos pero en todo caso tiene que consultar a un asesor fiscal."
 
 msgid "*All calls are recorded for training and monitoring purposes"
-msgstr ""
+msgstr "*Todas nuestras llamadas se graban para fines de capacitación y supervisión"
 
 msgid "0-1 year"
 msgstr "0-1 año(s)"
@@ -550,7 +550,7 @@ msgid "<strong>Long positions</strong>: We charge a 2% fee on top of interbank l
 msgstr "<strong>Posiciones largas</strong>: Cobramos un importe de 2% sobre la tasa de interés interbancaria."
 
 msgid "<strong>Open menu</strong> and select <strong>Preferences</strong>."
-msgstr ""
+msgstr "<strong>Desplegar el menú</strong> y seleccione <strong>Preferencias</strong>."
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr "<strong>Otros riesgoss</strong>: Existen otros riesgos que se relacionan con los productos de inversión y el comercio de divisas que no pueden ser descritos en detalle en este documento. Generalmente, sin embargo, los valores, las opciones y las transacciones con divisas implican la exposición a una combinación de los siguientes factores de riesgo: riesgo de mercado, riesgo de crédito, riesgo de liquidación, riesgo de liquidez, riesgo operacional y riesgo legal. Por ejemplo, pueden haber perturbaciones graves del mercado si se producen acontecimientos imprevistos económicos o políticos o de otro tipo a nivel local o en el extranjero que afectan al mercado. Además de estos tipos de riesgo pueden haber otros factores, tales como las cuestiones de contabilidad y tratamiento fiscal, que usted debe considerar."
@@ -1480,8 +1480,17 @@ msgstr "Robot Binario"
 msgid "Binary Bot released"
 msgstr "Binary Bot lanzado"
 
+msgid "Binary Group Ltd."
+msgstr ""
+
+msgid "Binary Group Ltd. acquired 100% of Binary Ltd. in August 2017 for the purposes of the ICO."
+msgstr ""
+
 msgid "Binary Group Ltd. makes no representations that the information contained in this site is appropriate or available for use in other locations. Binary Group Ltd. shall not have any responsibility in respect of access to it from territories whose laws prohibit such access or where any aspect of the content of the site may be illegal. Those who choose to access this site from other locations do so on their own initiative and at their own risk, and are responsible for compliance with applicable local laws.\n"
 "    "
+msgstr ""
+
+msgid "Binary Group Ltd., with registered office address situated at Kingston Chambers, Road Town, Tortola, British Virgin Islands, is the holding company for the Binary group."
 msgstr ""
 
 msgid "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
@@ -1522,12 +1531,6 @@ msgstr ""
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokio 150-0012, Japón"
-
-msgid "Binary Ltd"
-msgstr ""
-
-msgid "Binary Ltd, with registered office address situated at 47 Esplanade, St. Helier, Jersey, JE1 0BD Channel Islands, is the holding company for the Binary group."
-msgstr ""
 
 msgid "Binary Next-Gen"
 msgstr ""
@@ -2242,6 +2245,9 @@ msgstr ""
 msgid "Costs and Charges"
 msgstr "Costos y gastos"
 
+msgid "Counterparty"
+msgstr ""
+
 msgid "Country of Residence"
 msgstr "País de residencia"
 
@@ -2774,7 +2780,7 @@ msgstr ""
 msgid "Employee handbook"
 msgstr "Manual del empleado"
 
-msgid "Employees"
+msgid "Employees and Contractors"
 msgstr ""
 
 msgid "Employment Status"
@@ -6154,6 +6160,9 @@ msgstr ""
 msgid "Please complete the tax information before proceeding."
 msgstr ""
 
+msgid "Please confirm that you are not a politically exposed person."
+msgstr ""
+
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "Confirme los detalles de la transacción para completar la transferencia:"
 
@@ -8809,6 +8818,9 @@ msgstr ""
 msgid "View"
 msgstr "Ver"
 
+msgid "View Binary Group Ltd's 2016 annual report"
+msgstr ""
+
 msgid "View Details"
 msgstr "Ver Detalles"
 
@@ -9154,7 +9166,7 @@ msgstr "Conocimients bien desarrollados de organización, administración y/o co
 msgid "We’ve generated over USD 3 billion in turnover since inception, thanks to a rapid growth in business from 2010 onwards."
 msgstr ""
 
-msgid "We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in three countries: Malaysia, Malta and Japan."
+msgid "We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across four offices in three countries: Malaysia, Malta and Japan."
 msgstr ""
 
 msgid "We’ve obtained financial and gambling licenses to operate in key countries and regions such as Europe, the Isle of Man, the United Kingdom, and Japan."

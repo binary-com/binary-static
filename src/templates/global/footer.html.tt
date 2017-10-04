@@ -33,8 +33,8 @@
                             { text=l("Contact Us"),             href=request.url_for('contact'),           class='gr-hide gr-show-m' },
                             { text=l('Regulatory Information'), href=request.url_for('regulation'),        class='id-hide ar-hide' },
                             { text=l('Group History'),          href=request.url_for('group-history') },
+                            { text=l('Binary in Numbers'),      href=request.url_for('binary-in-numbers') },
                             { text=l('Careers'),                href=request.url_for('careers'),           class='ja-hide' },
-                            { text=l('Network Status'),         href='https://binarycom.statuspage.io',    class='ja-hide', target='_blank' },
                             { text=l('Patents'),                href=request.url_for('/legal/us_patents'), class='ja-hide id-hide' },
                         ] %]
 
@@ -72,6 +72,7 @@
                         [% INCLUDE footer_column header=l('Trading') wrapper_class='ja-hide' items=[
                             { text=l('Platforms'),   href=request.url_for('platforms') },
                             { text=l('Asset Index'), href=request.url_for('resources/asset_indexws') },
+                            { text=l('Network Status'),         href='https://binarycom.statuspage.io',    class='ja-hide', target='_blank' },
                         ] %]
 
                         [% INCLUDE footer_column header=l('Partner With Us') wrapper_class='ja-hide' items=[
