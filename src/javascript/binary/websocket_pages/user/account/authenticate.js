@@ -228,13 +228,13 @@ const Authenticate = (() => {
             if (file.buffer && file.buffer.byteLength > 3000000) {
                 return buildMessage('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB', [file.filename]);
             }
-            if (!file.documentId.length && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
+            if (!file.documentId && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
                 return buildMessage('ID number is required for [_1].', [doc_name[file.documentType]]);
             }
             if (file.documentId && !/^[\w\s-]{0,30}$/.test(file.documentId)) {
                 return buildMessage('Only letters, numbers, spaces, underscore (_), and dash (-) are allowed for ID number.', [doc_name[file.documentType]]);
             }
-            if (!file.expirationDate.length && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
+            if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
                 return buildMessage('Expiry date is required for [_1].', [doc_name[file.documentType]]);
             }
             return null;
