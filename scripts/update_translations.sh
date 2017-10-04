@@ -30,13 +30,11 @@ then
     git merge upstream/master --no-edit
 fi &&
 
-cd scripts
-
 confirm "Update the source file (messages.pot) and push to Crowdin?" &&
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     message "Updating translations source file" &&
-    ./translation.sh &&
+    ./scripts/translation.sh &&
     message "Uploading source file to Crowdin"
     crowdin upload sources
 fi &&
@@ -47,7 +45,7 @@ then
     message "Downloading translation files from Crowdin (*.po)" &&
     crowdin download &&
     message "Updating javascript translation files (*.js)"
-    ./js_translation.sh
+#    ./scripts/js_translation.sh
 fi &&
 
 confirm "Commit changes and push to origin?" &&
