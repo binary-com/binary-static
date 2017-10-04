@@ -418,6 +418,13 @@ sub _texts {
         push @texts, localize('Reference ID');
         push @texts, localize('Remaining Time');
         push @texts, localize('Barrier Change');
+        push @texts, localize('Audit');
+        push @texts, localize('Audit Page');
+        push @texts, localize('View Chart');
+        push @texts, localize('Contract Starts');
+        push @texts, localize('Contract Ends');
+        push @texts, localize('Start Time and Entry Spot');
+        push @texts, localize('Exit Time and Exit Spot');
         # strings for financial assessment
         push @texts, localize('Please select a value');
         # Strings for authorised_apps
