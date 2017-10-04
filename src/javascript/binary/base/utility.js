@@ -95,6 +95,28 @@ const clearable = (element) => {
 
 const toggleAddRemoveClass = condition => (condition ? 'addClass' : 'removeClass');
 
+/**
+ * Creates a DOM element and adds any attributes to it.
+ *
+ * @param {String} tag_name: the tag to create, e.g. 'div', 'a', etc
+ * @param {Object} attributes: all the attributes to assign, e.g. { id: '...', class: '...', html: '...', ... }
+ * @return the created DOM element
+ */
+const createElement = (tag_name, attributes) => {
+    const el = document.createElement(tag_name);
+    Object.keys(attributes).forEach((attr) => {
+        const value = attributes[attr];
+        if (attr === 'text') {
+            el.textContent = value;
+        } else if (attr === 'html') {
+            el.innerHTML = value;
+        } else {
+            el.setAttribute(attr, value);
+        }
+    });
+    return el;
+};
+
 module.exports = {
     showLoadingImage,
     getHighestZIndex,
@@ -104,4 +126,5 @@ module.exports = {
     getPropertyValue,
     handleHash,
     clearable,
+    createElement,
 };

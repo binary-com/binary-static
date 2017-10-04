@@ -66,7 +66,7 @@
                 margin-right: -1px;
                 padding: 0;
             }
-            #sell_details_table {
+            #sell_details_table, #sell_details_audit {
                 padding: 0;
                 border-left: 1px solid $COLOR_DARK_GRAY;
 
@@ -106,6 +106,54 @@
                     font-size: $FONT_SIZE_XS;
                     padding: 3px 10px;
                 }
+                #trade_details_entry_spot, #trade_details_current_spot {
+                    line-height: 32px;
+
+                    a {
+                        float: right;
+                        margin-bottom: 0;
+                        cursor: pointer;
+                    }
+                }
+                .audit-table {
+                    padding: 40px;
+
+                    &:nth-child(2) {
+                        padding-bottom: 0;
+                    }
+                    legend {
+                        font-size: $FONT_SIZE_L;
+                    }
+                    table td {
+                        text-align: center;
+                        line-height: 24px;
+                        padding-left: 4px;
+                        border: none;
+                        font-size: $FONT_SIZE_S;
+
+                        &.remark, &.secondary-time, &.secondary-bg-color {
+                            font-weight: bold;
+                        }
+                        &.secondary-time {
+                            border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
+                        }
+                        &.audit-dates {
+                            border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
+                        }
+                        &.secondary-color {
+                            font-size: $FONT_SIZE_N;
+                        }
+                    }
+                    @media screen and (max-width: 768px) {
+                        padding: 20px;
+                    }
+                    @media screen and (max-width: 480px) {
+                        padding: 5px;
+                    }
+                }
+            }
+            #sell_details_audit {
+                border-left: none;
             }
         }
     }
