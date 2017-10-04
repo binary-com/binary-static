@@ -103,15 +103,19 @@ const VirtualAccOpening = (() => {
         const error = response.error;
         if (!error) {
             const new_account = response.new_account_virtual;
-            Client.set('residence', response.echo_req.residence, new_account.client_id);
+            const residence   = response.echo_req.residence;
+            Client.set('residence', residence, new_account.client_id);
             LocalStore.remove('gclid');
-            return Client.processNewAccount({
-                email       : new_account.email,
-                loginid     : new_account.client_id,
-                token       : new_account.oauth_token,
-                is_virtual  : true,
-                redirect_url: jp_client ? urlFor('new_account/landing_page') : '',
+            BinarySocket.send({ landing_company: residence }).then((response_lc) => {
+                Client.processNewAccount({
+                    email       : new_account.email,
+                    loginid     : new_account.client_id,
+                    token       : new_account.oauth_token,
+                    is_virtual  : true,
+                    redirect_url: jp_client ? urlFor('new_account/landing_page') : urlFor(Client.getUpgradeInfo(response_lc).upgrade_link),
+                });
             });
+            return true;
         }
 
         const showInvalidTokenMessage = () => {

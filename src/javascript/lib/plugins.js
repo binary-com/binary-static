@@ -27,6 +27,10 @@ Element.prototype.setVisibility = function(make_visible) {
     return this;
 };
 
+Element.prototype.insertAfter = function(referenceNode) {
+    referenceNode.parentNode.insertBefore(this, referenceNode.nextSibling);
+};
+
 (function ($) {
     $.fn.setVisibility = function(make_visible) {
         this[(make_visible ? 'remove' : 'add') + 'Class']('invisible');
