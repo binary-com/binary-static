@@ -75,7 +75,7 @@ const Validation = (() => {
                         }
                         field.$error = $parent.find(`.${error_class}`);
 
-                        if (field.selector === '#address_line_1' || '#address_line_2') {
+                        if (/#address_line_[1|2]/.test(field.selector)) {
                             field.$error_address = $parent.find(`.${error_address_class}`);
                         }
                     }
@@ -247,6 +247,7 @@ const Validation = (() => {
 
     const showError = (field, message) => {
         if (/#address_line_[1|2]/.test(field.selector)) {
+            clearError(field);
             field.$error_address.setVisibility(1);
         } else {
             clearError(field);
