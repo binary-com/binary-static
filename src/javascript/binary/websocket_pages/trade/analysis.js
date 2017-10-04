@@ -57,11 +57,9 @@ const TradingAnalysis = (() => {
      */
     const loadAnalysisTab = (tab) => {
         const current_tab = tab || getActiveTab();
-
         $('#betsBottomPage').find('li').removeClass('active');
         $(`#${current_tab}`).addClass('active');
         toggleActiveAnalysisTabs();
-
         JapanPortfolio.init();
         if (State.get('is_mb_trading')) {
             showChart();
@@ -73,13 +71,19 @@ const TradingAnalysis = (() => {
             if (current_tab === 'tab_graph') {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
-                const underlying = $('#digit_underlying option:selected').val() || $('#underlying').find('option:selected').val();
+                const el_digit_underlying = $('#digit_underlying');
+                const underlying = $('#underlying option:selected').val();
                 const tick       = $('#tick_count').val() || 100;
-                GetTicks.request('', {
-                    ticks_history: underlying,
-                    count        : tick.toString(),
-                    end          : 'latest',
-                });
+                if (underlying !== el_digit_underlying.val() && el_digit_underlying.val() !== null ) {
+                    el_digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
+                }
+                else {
+                    GetTicks.request('', {
+                        ticks_history: underlying,
+                        count        : tick.toString(),
+                        end          : 'latest',
+                    });
+                }
             } else if (current_tab === 'tab_explanation') {
                 showExplanation();
             }

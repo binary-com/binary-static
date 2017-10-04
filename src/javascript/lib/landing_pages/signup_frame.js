@@ -1,6 +1,8 @@
 var error_class = 'error-field';
 
 window.onload = function () {
+    dataLayer.push({ event: 'page_load' });
+
     var el_email   = document.getElementById('email');
     var el_signup  = document.getElementById('signup');
     var el_success = document.getElementById('success');

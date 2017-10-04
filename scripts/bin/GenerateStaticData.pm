@@ -490,7 +490,10 @@ sub _texts {
         push @texts, localize('Change Password');
 
         # strings for account_transfer
-        push @texts, localize('This amount exceeds your withdrawal limit.');
+        push @texts, localize('Min');
+        push @texts, localize('Max');
+        push @texts, localize('Current balance');
+        push @texts, localize('Withdrawal limit');
 
         # strings for header notification
         push @texts, localize('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.');
