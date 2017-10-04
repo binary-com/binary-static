@@ -128,7 +128,7 @@ const AccountOpening = (() => {
                 email       : Client.get('email'),
                 loginid     : response[message_type].client_id,
                 token       : response[message_type].oauth_token,
-                redirect_url: urlFor('cashier'),
+                redirect_url: urlFor('user/set-currency'),
             });
         }
     };

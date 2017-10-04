@@ -81,6 +81,9 @@ const SetCurrency = (() => {
                                         redirect_url = Url.urlFor('user/authenticate');
                                     }
                                 }
+                                if (!redirect_url) {
+                                    redirect_url = Url.urlFor('cashier');
+                                }
                             } else {
                                 redirect_url = BinaryPjax.getPreviousUrl();
                             }
