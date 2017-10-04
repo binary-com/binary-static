@@ -544,8 +544,7 @@ const Durations = (() => {
 
         let make_price_request = 1;
         const $expiry_time     = $('#expiry_time');
-        const el_expiry_date   = document.getElementById('expiry_date').getAttribute('data-value');
-        if ((value !== 'now' && moment(el_expiry_date).format('dd') === moment().format('dd')) && Defaults.get('expiry_type') === 'endtime') {
+        if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
             make_price_request = -1;
             const end_time     = moment(parseInt(value) * 1000).add(5, 'minutes').utc();
             setTime(Defaults.get('expiry_time') ? Defaults.get('expiry_time') : end_time.format('HH:mm'));
