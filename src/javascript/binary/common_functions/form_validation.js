@@ -131,8 +131,8 @@ const Validation = (() => {
     const validNotEqual = (value, options) => value !== $(options.to).val();
     const validMin      = (value, options) => (options.min ? value.trim().length >= options.min : true);
     const validLength   = (value, options) => (
-        (options.min ? value.replace(/^\+/, '').trim().length >= options.min : true) &&
-        (options.max ? value.replace(/^\+/, '').trim().length <= options.max : true)
+        (options.min ? value.trim().length >= options.min : true) &&
+        (options.max ? value.trim().length <= options.max : true)
     );
 
     const validNumber = (value, options) => {
