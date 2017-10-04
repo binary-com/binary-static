@@ -132,7 +132,7 @@ const ViewPopup = (() => {
         }
 
         if (current_spot) {
-            containerSetText('trade_details_current_spot', addComma(current_spot));
+            containerSetText('trade_details_current_spot > span', addComma(current_spot));
         } else {
             $('#trade_details_current_spot').parent().setVisibility(0);
         }
@@ -163,11 +163,11 @@ const ViewPopup = (() => {
         }
 
         if (!is_started) {
-            containerSetText('trade_details_entry_spot', '-');
+            containerSetText('trade_details_entry_spot > span', '-');
             containerSetText('trade_details_message', localize('Contract has not started yet'));
         } else {
             if (contract.entry_spot > 0) {
-                containerSetText('trade_details_entry_spot', addComma(contract.entry_spot));
+                containerSetText('trade_details_entry_spot > span', addComma(contract.entry_spot));
             }
             containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
@@ -264,17 +264,26 @@ const ViewPopup = (() => {
 
     // by default shows audit table and hides chart
     const setAuditVisibility = (show = true) => {
-        const links = document.getElementsByClassName('link-audit');
-        for (let i = 0; i < links.length; i++) {
-            links[i].setVisibility(!show);
-        }
+        setAuditButtonsVisibility(!show);
         document.getElementById('sell_details_chart_wrapper').setVisibility(!show);
         document.getElementById('sell_details_audit').setVisibility(show);
+        ViewPopupUI.repositionConfirmation();
+    };
+
+    const setAuditButtonsVisibility = (show = true) => {
+        const links = document.getElementsByClassName('link-audit');
+        for (let i = 0; i < links.length; i++) {
+            links[i].setVisibility(show);
+        }
     };
 
     const initAuditTable = (show) => {
         if (document.getElementById('sell_details_audit')) {
-            setAuditVisibility(1);
+            if (show) {
+                setAuditVisibility(1);
+            } else {
+                setAuditButtonsVisibility(1);
+            }
             return;
         }
 
@@ -459,7 +468,7 @@ const ViewPopup = (() => {
             ${createRow('Start Time', '', 'trade_details_start_date')}
             ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
                 createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
-            ${createRow('Entry Spot', '', 'trade_details_entry_spot')}
+            ${createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>')}
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
             ${(contract.barrier_count > 1 ? createRow('Low Barrier', '', 'trade_details_barrier_low', true) : '')}
             ${createRow('Potential Payout', '', 'trade_details_payout')}
@@ -468,7 +477,7 @@ const ViewPopup = (() => {
             <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>
             <tbody id="barrier_change_content" class="invisible"></tbody>
             <tr><th colspan="2" id="trade_details_current_title">${localize('Current')}</th></tr>
-            ${createRow('Spot', 'trade_details_spot_label', 'trade_details_current_spot')}
+            ${createRow('Spot', 'trade_details_spot_label', 'trade_details_current_spot', 0, '<span></span>')}
             ${createRow('Spot Time', 'trade_details_spottime_label', 'trade_details_current_date')}
             ${createRow('Current Time', '', 'trade_details_live_date')}
             ${createRow('Indicative', 'trade_details_indicative_label', 'trade_details_indicative_price')}
