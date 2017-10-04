@@ -274,7 +274,7 @@ const ViewPopup = (() => {
     };
 
     const initAuditTable = (show) => {
-        if (document.getElementById('sell_details_audit')) {
+        if (document.getElementById('sell_details_audit') && show) {
             setAuditVisibility(1);
             return;
         }
