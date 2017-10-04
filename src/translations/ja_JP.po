@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-09-18 05:24-0400\n"
+"PO-Revision-Date: 2017-10-04 02:02-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: crowdin.com\n"
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: ja\n"
-"X-Crowdin-File: /translations/src/config/locales/messages.pot\n"
+"X-Crowdin-File: messages.pot\n"
 "Language: ja_JP\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -134,13 +134,14 @@ msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "当社の社名とブル/ベアのロゴは、登録商標です。"
 
 msgid "%1 announces plans for an %2IPO on the blockchain%3."
-msgstr "%1 announces plans for an %2IPO on the blockchain%3."
+msgstr "%1 announces plans for an %2IPO on the blockchain%3.\n"
+"%1は%2ブロックチェーンを用いたIPO（新規株式公開）計画を発表（日本を除く）。"
 
 msgid "%1 assesses the choice of external execution venues regularly (at least once a year) with the intention of achieving a better result for you based on our best execution obligation."
 msgstr "%1は最良執行義務に基いてお客さまへより良い結果を導くことができるよう、定期的（年に一度）に最良執行への選択を評価しています。"
 
 msgid "%1 by the numbers"
-msgstr ""
+msgstr "数字で見る%1"
 
 msgid "%1 continues to innovate and grow"
 msgstr "日々進化、成長への歩みを止めません"
@@ -161,7 +162,7 @@ msgid "%1 earns a return from the difference between the total amount of all cus
 msgstr "バイナリーオプション取引について、当社と取引する顧客全体が当社に支払う金額と顧客全体が当社から受け取る金額の差額が当社の収益の源泉となっていること。（契約締結前交付書面「店頭バイナリーオプション取引のリスク等重要事項について」-9参照）"
 
 msgid "%1 employs over 130 people across its offices in Malta, Malaysia and Japan."
-msgstr ""
+msgstr "マルタ、マレーシア、日本オフィス全体で130人以上の従業員が活躍しています。"
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "最高水準 のFXバイナリーオプション取引環境を提供し、又、業界最多の9通貨ペアとラダー、タッチ、レンジにより多数の取引機会を提供します。"
@@ -171,6 +172,9 @@ msgstr "当社では平日24時間お取引いただけるボラティリティ�
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "当社の高い倫理観のある取り組みと当社が提供する取引経験の質から好評化を頂いております。"
+
+msgid "%1 has entered into an agreement to list the tokens on the %2Lykke.com%3 cryptocurrency exchange. Lykke is a Swiss fintech company building a global blockchain-powered marketplace for securities-linked tokens."
+msgstr ""
 
 msgid "%1 has over 800,000 clients in its database and reaches the US$ 2 billion milestone in our 15th year, making us one of the leading binary options providers."
 msgstr "口座数が80万を超え、創業15年目で20億ドルの取引額を達成、バイナリーオプション業界にて確固たる地位を確立しました。"
@@ -187,6 +191,9 @@ msgstr "<a href=\"%2\">取引約款</a>を改定いたします。当社でお�
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "口座数が100万口座を超え、社史に残る実績を達成、業界トップのポジションを確実なものにしました。"
 
+msgid "%1 in Numbers"
+msgstr "数字で見る%1"
+
 msgid "%1 introduces an %2auto-trader programming tool%3, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "「ドラッグ&ドロップ」操作で自動売買ロボットを作成し、システムトレードを可能にする%2自動トレーダープログラミングツール%3を導入しました。"
 
@@ -197,10 +204,7 @@ msgid "%1 is a licensed and regulated trading platform that serves over 1,000,00
 msgstr "Binary.com (バイナリードットコム)は、各国の監督局からライセンスを付与され、世界中のお客さまに取引を提供し100万口座以上を保持しています。1999年以来、揺らぐことのない一定の整合性と信頼性でお客さまへのサービスに尽力してまいりました。当社の規制要件に加えて、最高の倫理基準に基いて行動しています。"
 
 msgid "%1 is a successful and growing platform, with several ongoing initiatives to enhance future profitability. These include our entry into new regulated markets with significant growth potential, and the innovation and expansion of our product offerings."
-msgstr ""
-
-msgid "%1 is a well-established company founded in 1999. The growth of our business led us to consider an IPO, as is the case with most successful companies. However, we believe that stock exchanges will be gradually replaced by cryptocurrency exchanges in the coming decade, and IPOs will be gradually replaced by ICOs. This is why we decided to perform an ICO instead of an IPO."
-msgstr "%1 is a well-established company founded in 1999. The growth of our business led us to consider an IPO, as is the case with most successful companies. However, we believe that stock exchanges will be gradually replaced by cryptocurrency exchanges in the coming decade, and IPOs will be gradually replaced by ICOs. This is why we decided to perform an ICO instead of an IPO."
+msgstr "%1 is a successful and growing platform, with several ongoing initiatives to enhance future profitability. These include our entry into new regulated markets with significant growth potential, and the innovation and expansion of our product offerings."
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1は常に管理者、技術的貢献者、および管理者の有能なチームに経験豊富な専門家を迎えたいと考えています。当社の継続的な成長をサポートするために、我々は以下の分野での魅力的な数々のキャリア機会を展開してきました。"
@@ -221,7 +225,7 @@ msgid "%1 is honoured as the world's \"Best Binary Options Broker\" at the 16th 
 msgstr "ドバイで開催された第16回 MENA国際金融会議/展示会において「最優秀バイナリーオプションブローカー」を受賞しました。"
 
 msgid "%1 is licensed and regulated in Malta, the British Isles, Japan, and Vanuatu."
-msgstr ""
+msgstr "マルタ共和国、ブリテン諸島、日本、バヌアツにおいて認可済。"
 
 msgid "%1 is looking to recruit highly skilled, experienced designers who are passionate about developing attractive visuals for both online and offline applications."
 msgstr "当社ではオンライン/オフラインアプリケーション双方の魅力的なビジュアル開発へ情熱を注ぐことができる経験豊富で熟練したデザイナーを募集しています。"
@@ -238,11 +242,8 @@ msgstr "コスタリカの金融システムを監督する金融機関または
 msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
 msgstr "%1では<strong>10,000,000</strong>までのトークンを提供しています。下のフォームから応札をしてください。最小入札価格は<strong>USD 1</strong>またはそれに相当する他通貨になります。"
 
-msgid "%1 is one of the oldest and most respected names in online binary trading."
-msgstr "%1 はオンラインバイナリーオプション取引業界の中でパイオニアであり、世界中の個人投資家にサービスを提供しています。"
-
-msgid "%1 is owned and operated by the Binary Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "Binary 株式会社はBinary Ltdの子会社です。詳細は<a href='%2'>グループの沿革</a>よりご確認いただけます。"
+msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
+msgstr "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 
 msgid "%1 is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team."
 msgstr "当社では総務チームに参加できる特別な管理力と組織力のある未経験者からミドルキャリアの人材を募集しています。"
@@ -263,7 +264,7 @@ msgid "%1 is the award-winning industry pioneer in online options trading. We bo
 msgstr "当社は受賞履歴を有するオンライン上のオプション取引業界でのパイオニアであり、下記の実績を誇ります："
 
 msgid "%1 is the pioneer of online binary options trading. We grew from one simple idea: to make binary options easily accessible to retail investors worldwide."
-msgstr ""
+msgstr "%1は、バイナリーオプションオンライン取引のパイオニアです。「世界中の投資家の皆様が少しでもバイナリーオプションにアクセスしやすくなるように」という1つのシンプルな理念を基に成長してきました。"
 
 msgid "%1 launches Bitcoin (BTC) accounts for non-EU customers."
 msgstr "EU加盟国と日本以外のお客様へビットコイン（BTC）口座の提供を開始します。"
@@ -360,11 +361,14 @@ msgstr "%1は、ギャンブルに関連する害を最小限にすることを�
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "ロンドンで開催された名誉あるEGRオペレーター賞授賞式にて金融ベッティングオペレーター部門で最優秀賞を受賞しました。"
 
-msgid "%1 will issue a number of tokens during the ICO."
+msgid "%1 was founded in 1999. Today, it is a well-established, and very successful, company. Like many successful companies, the growth of our business led us to consider an IPO."
 msgstr ""
 
-msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘coloured coins’ on the Bitcoin blockchain, and ‘ERC20’ tokens on the Ethereum blockchain."
-msgstr "%1ではトレーダの皆様へ多数のブロックチェーントークンの提供を予定しています。ビットコインのブロックチェーン「カラードコイン」やイーサリアムのブロックチェーン「ERC20」トークンなど多種多様なブロックチェーンで発行することができます。"
+msgid "%1 will issue a number of tokens during the ICO."
+msgstr "%1ではICO期間中にトークンを発行します。"
+
+msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘ERC20’ tokens on the Ethereum blockchain."
+msgstr "%1ではトレーダの皆様へ多数のブロックチェーントークンの提供を予定しています。イーサリアムのブロックチェーン「ERC20」トークンなど多様なブロックチェーンで発行することができます。"
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "口座番号%2から%3へのご出金が完了しました。取引参照ID：%4"
@@ -417,6 +421,9 @@ msgstr "%1お問い合わせ%2よりビデオ通話の日時を調整いただ�
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1の慈善活動では、地域社会においてプラスの影響を少しでも与えられるよう、世界中の小規模慈善団体や非営利団体に焦点を当てています。\n"
 "慈善団体の規模が大きいほど抱える間接費の負担を削減できるよう、当社の寄付は直接的に用いられます。"
+
+msgid "%1’s number of active clients has risen nearly 5-fold in the last 5 years."
+msgstr "%1利用者数は、過去5年間でほぼ5倍に増加しています。"
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "”Investors Chronicle”において「最優秀カスタマーサポート」を受賞"
@@ -759,7 +766,7 @@ msgid "Access to STP trading"
 msgstr "Access to STP trading"
 
 msgid "Access to electronic versions of these materials is being made available on this webpage by Binary Group Ltd. in good faith and for information purposes only. Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the Tokens. Further, it does not constitute a recommendation by Binary Group Ltd. or any other party to sell or buy Tokens or any other securities."
-msgstr ""
+msgstr "Access to electronic versions of these materials is being made available on this webpage by Binary Group Ltd. in good faith and for information purposes only. Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the Tokens. Further, it does not constitute a recommendation by Binary Group Ltd. or any other party to sell or buy Tokens or any other securities."
 
 msgid "Access to multi-asset liquidity and back-office functionality via margin accounts"
 msgstr "Access to multi-asset liquidity and back-office functionality via margin accounts"
@@ -771,7 +778,7 @@ msgid "Access to your personal data is strictly prohibited with the exception of
 msgstr "お客さまの個人データへのアクセスは、当社の主要な担当者のみ職務執行に必要な場合に限り可能とし、それ以外の者は厳しく禁止されています。"
 
 msgid "Accordingly, unless an exemption under the relevant securities law is applicable, the Tokens may not be offered, sold, pledged, taken up, exercised, resold, renounced, transferred or delivered, directly or indirectly, in or into a Restricted Territory where to do so would constitute a violation of the relevant laws of, or require registration thereof in, such jurisdiction."
-msgstr ""
+msgstr "Accordingly, unless an exemption under the relevant securities law is applicable, the Tokens may not be offered, sold, pledged, taken up, exercised, resold, renounced, transferred or delivered, directly or indirectly, in or into a Restricted Territory where to do so would constitute a violation of the relevant laws of, or require registration thereof in, such jurisdiction."
 
 msgid "Account"
 msgstr "口座"
@@ -850,6 +857,9 @@ msgid "Action"
 msgstr "売買"
 
 msgid "Active clients"
+msgstr "利用者数"
+
+msgid "Active trading clients"
 msgstr "利用者数"
 
 msgid "Adapt affiliate-marketing tactics and promotional materials as needed, to localise all content for maximum effectiveness"
@@ -955,7 +965,7 @@ msgid "All fund transfers from your Binary Options Real Account to your Real Acc
 msgstr "バイナリーオプションのリアル口座からご自身のリアル口座への全資金の送金は、必ずご自身で行うようにしてください。"
 
 msgid "All information is provided without any warranties of any kind and Binary Group Ltd. and its advisors make no representations and disclaim all express and implied warranties and conditions of any kind, including, without limitation, representations, warranties or conditions regarding accuracy, timeliness, completeness, non-infringement, suitability of the Tokens for any prospective investor, and Binary Group Ltd. and its employees, officers or professional advisors assume no responsibility to you or any third party for the consequence of errors or omissions."
-msgstr ""
+msgstr "All information is provided without any warranties of any kind and Binary Group Ltd. and its advisors make no representations and disclaim all express and implied warranties and conditions of any kind, including, without limitation, representations, warranties or conditions regarding accuracy, timeliness, completeness, non-infringement, suitability of the Tokens for any prospective investor, and Binary Group Ltd. and its employees, officers or professional advisors assume no responsibility to you or any third party for the consequence of errors or omissions."
 
 msgid "All intellectual property rights in the MT5 Trading Platform are owned by the Licensor and shall remain the exclusive property of the Licensor. Nothing in this Agreement intends to transfer any such rights or to vest any such rights in you."
 msgstr "MT5取引プラットフォームでの全知的財産権はライセンサーが所有し、ライセンサーの独占的財産でなければいけません。本契約では、そのような権利を譲渡することは意図していません。"
@@ -1002,6 +1012,9 @@ msgstr "影響を受ける市場の通常取引時間を変更します；"
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
 msgstr "また、Binary (IOM) LtdおよびBinary (ヨーロッパ) Ltdにご登録されているお客さまは、IBASへ紛争内容をご提出される代わりに、欧州委員会のオンライン紛争解決（ODR）プラットフォームを%1こちら%2からご利用いただけます。"
 
+msgid "Although %1 has been a successful company since its inception in 1999, the tokens should be considered a high risk investment. The %1 business is subject to a number of risks which could adversely affect the company and hence affect the future value of the tokens. These risks are detailed in the %2Information Memorandum%3 and should be considered very carefully before proceeding with any investment in the tokens."
+msgstr ""
+
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "当社は一部のお客さまのアカウントの拒否、または閉鎖する全ての権利を保持していますが、既に行われた契約上の義務は守らせていただきます。"
 
@@ -1035,8 +1048,8 @@ msgstr "数学、物理学、工学の修士または博士の大学学位"
 msgid "An assertive, sales-driven personality, able to adapt quickly and achieve powerful results"
 msgstr "積極的であり、販売志向型の性格、そして迅速な適応力をもって大きな実績を挙げることができる。"
 
-msgid "An ‘Initial Coin Offering’ (or ‘ICO’ for short) is a fundraising method that’s relatively similar to an Initial Public Offering (IPO). In an ICO, cryptocurrency such as ‘coloured coins’ or ‘Ethereum tokens’ are issued instead of shares."
-msgstr "An ‘Initial Coin Offering’ (or ‘ICO’ for short) is a fundraising method that’s relatively similar to an Initial Public Offering (IPO). In an ICO, cryptocurrency such as ‘coloured coins’ or ‘Ethereum tokens’ are issued instead of shares."
+msgid "An ‘Initial Coin Offering’ (or ‘ICO’) is a fundraising method that is relatively similar to an Initial Public Offering (IPO). However, in an ICO, cryptocurrency - such as ‘coloured coins’ or ‘Ethereum tokens’ - is issued to investors instead of shares."
+msgstr ""
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "スコープに記載されているドメインとサブドメインの分析とテスト"
@@ -1468,8 +1481,8 @@ msgstr "Binary (IOM) Ltd"
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd 所在地：<br> First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" target=\"_blank\">view licence</a>."
-msgstr "Binary (IOM) Ltd はマン島のライセンス当局GSCによってライセンスを付与され監督下におります。"
+msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" target=\"_blank\">view licence</a>."
+msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" target=\"_blank\">view licence</a>."
 
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
@@ -1484,9 +1497,18 @@ msgstr "Binary Bot"
 msgid "Binary Bot released"
 msgstr "バイナリーボット(ロボット)を導入(日本を除く)"
 
+msgid "Binary Group Ltd."
+msgstr "Binary Group Ltd."
+
+msgid "Binary Group Ltd. acquired 100% of Binary Ltd. in August 2017 for the purposes of the ICO."
+msgstr "Binary Group Ltd. acquired 100% of Binary Ltd. in August 2017 for the purposes of the ICO."
+
 msgid "Binary Group Ltd. makes no representations that the information contained in this site is appropriate or available for use in other locations. Binary Group Ltd. shall not have any responsibility in respect of access to it from territories whose laws prohibit such access or where any aspect of the content of the site may be illegal. Those who choose to access this site from other locations do so on their own initiative and at their own risk, and are responsible for compliance with applicable local laws.\n"
 "    "
-msgstr ""
+msgstr "Binary Group Ltd. makes no representations that the information contained in this site is appropriate or available for use in other locations. Binary Group Ltd. shall not have any responsibility in respect of access to it from territories whose laws prohibit such access or where any aspect of the content of the site may be illegal. Those who choose to access this site from other locations do so on their own initiative and at their own risk, and are responsible for compliance with applicable local laws."
+
+msgid "Binary Group Ltd., with registered office address situated at Kingston Chambers, Road Town, Tortola, British Virgin Islands, is the holding company for the Binary group."
+msgstr "Binary Group Ltd., with registered office address situated at Kingston Chambers, Road Town, Tortola, British Virgin Islands, is the holding company for the Binary group."
 
 msgid "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
 msgstr "Binary Group Services Sdn Bhd<br>所在地：30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
@@ -1509,7 +1531,7 @@ msgstr "Binary Investments (Europe) Ltd"
 msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA とその全てのバイナリーグループのメンバーは\"%1\", \"私達（us）\" or \"当社（we）\"と総称されことがあります。"
 
-msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
+msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href='%1' target='_blank' download=1>licence no. IS/70156</a>). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
 msgstr "Binary Investments (Europe) Ltdはマルタ金融サービス庁（MFSA ）によりカテゴリー3　投資サービス・プロバイダとしてライセンス認定、監督されています。"
 
 msgid "Binary K.K."
@@ -1526,12 +1548,6 @@ msgstr "【加入協会】 一般社団法人金融先物取引業協会"
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary株式会社 (和文名称 バイナリー株式会社) 所在地：<br>150-0012 東京都渋谷区広尾1-9-16 広尾宮田ビル3F"
-
-msgid "Binary Ltd"
-msgstr "Binary Ltd"
-
-msgid "Binary Ltd, with registered office address situated at 47 Esplanade, St. Helier, Jersey, JE1 0BD Channel Islands, is the holding company for the Binary group."
-msgstr "Binary Ltdはバイナリーグループの持株会社です。"
 
 msgid "Binary Next-Gen"
 msgstr "Binary Next-Gen"
@@ -1559,6 +1575,9 @@ msgstr "Binaryでは通常、委員会の裁量で年に一度配当金が分配
 
 msgid "Binary granted Investment Services license"
 msgstr "Binary (Europe) Ltd.は、投資サービスライセンスを付与されています。"
+
+msgid "Binary in Numbers"
+msgstr "数字で見るバイナリー"
 
 msgid "Binary opens Japan office"
 msgstr "日本オフィスを開設"
@@ -1609,7 +1628,7 @@ msgid "Bitcoin Cash"
 msgstr "ビットコインキャッシュ"
 
 msgid "Board of Directors"
-msgstr ""
+msgstr "取締役会"
 
 msgid "Both the above"
 msgstr "上記の両方"
@@ -1908,6 +1927,12 @@ msgstr "クライアント資金"
 
 msgid "Client transactions"
 msgstr "顧客による取引数"
+
+msgid "Client withdrawals"
+msgstr "顧客出金額"
+
+msgid "Client withdrawals have grown nearly 8-fold over the last 5 years, to nearly USD 120 million."
+msgstr "顧客出金額は過去5年間で約8倍に成長し、1億2,000万USDに達しました。"
 
 msgid "Client's Liability"
 msgstr "お客さまの責任"
@@ -2243,11 +2268,17 @@ msgstr "著作権"
 msgid "Copywriter"
 msgstr "コピーライター"
 
+msgid "Corporate laws in most jurisdictions (including the British Virgin Islands, where our Group company is incorporated) do not yet support blockchain-based share registers."
+msgstr ""
+
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "費用 - 注文実行の費用は主にスプレッドです。例: 当社の付け値と当社の提案価格の差額"
 
 msgid "Costs and Charges"
 msgstr "コストと料金"
+
+msgid "Counterparty"
+msgstr "Counterparty"
 
 msgid "Country of Residence"
 msgstr "居住国"
@@ -2320,6 +2351,9 @@ msgstr "現在"
 
 msgid "Current Time"
 msgstr "現在時刻："
+
+msgid "Current balance"
+msgstr "現在の残高"
 
 msgid "Current password"
 msgstr "現在のパスワード"
@@ -2544,7 +2578,7 @@ msgid "Display your proof of identity when prompted."
 msgstr "要求されましたら、本人確認ができるものをご提示ください。"
 
 msgid "Distribution of dividends will be announced on the %1 website."
-msgstr ""
+msgstr "配当金の支払いは%1のウェブサイト上で発表されます。"
 
 msgid "Dividends paid out"
 msgstr "配当"
@@ -2554,9 +2588,6 @@ msgstr "離婚調停"
 
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "口座を開設するにあたり入金は必須でしょうか？"
-
-msgid "Do I need to send any documents?"
-msgstr "口座を開設するにあたり、各種証明書を送付する必要はありますか？"
 
 msgid "Do not trade more than you can afford."
 msgstr "資金繰りが苦しくなるようなトレードの購入は見合わせましょう。"
@@ -2782,8 +2813,8 @@ msgstr "雇用者"
 msgid "Employee handbook"
 msgstr "従業員便覧"
 
-msgid "Employees"
-msgstr "従業員"
+msgid "Employees and Contractors"
+msgstr "Employees and Contractors"
 
 msgid "Employment Status"
 msgstr "雇用状況"
@@ -3166,6 +3197,9 @@ msgstr "フリガナ (全角)"
 msgid "First, define your position..."
 msgstr "まず、どのようなポジションを持つか決めましょう"
 
+msgid "First, token holders will receive dividend-linked payments equivalent to the dividends paid by the Company on its Ordinary Shares. Therefore, token holders will share in the future success of the Company in the same way as do shareholders."
+msgstr ""
+
 msgid "First, you need to set the parameters of your trade. Here's what you need to consider."
 msgstr "まず初めにお取引のパラメータを設定します。設定すべき要素は下記の通りです。"
 
@@ -3260,7 +3294,10 @@ msgid "Forex, Volatility Indices"
 msgstr "外国為替、ボラティリティインデックス"
 
 msgid "Forward looking statements inherently contain risks and uncertainties as they relate to events or circumstances in the future. Users of this webpage should not place undue reliance on forward-looking statements. Binary Group Ltd. expressly disclaims any obligation or undertaking to update or revise any forward-looking statements except to the extent required by law and neither Binary Group Ltd., its employees, officers or professional advisors make any assurance, representation or guarantee that any event referred to in a forward-looking statement will actually occur."
-msgstr ""
+msgstr "Forward looking statements inherently contain risks and uncertainties as they relate to events or circumstances in the future. Users of this webpage should not place undue reliance on forward-looking statements. Binary Group Ltd. expressly disclaims any obligation or undertaking to update or revise any forward-looking statements except to the extent required by law and neither Binary Group Ltd., its employees, officers or professional advisors make any assurance, representation or guarantee that any event referred to in a forward-looking statement will actually occur."
+
+msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
+msgstr "1999年に創立した%1 はオンラインバイナリーオプション取引業界でのパイオニアであり、世界中の個人投資家にサービスを提供しています。"
 
 msgid "Fr"
 msgstr "金"
@@ -3302,10 +3339,10 @@ msgid "Fridays"
 msgstr "金曜日"
 
 msgid "From cryptocurrency to fiat: 0.5% transfer fee"
-msgstr ""
+msgstr "From cryptocurrency to fiat: 0.5% transfer fee"
 
 msgid "From fiat to cryptocurrency: 1% transfer fee"
-msgstr ""
+msgstr "From fiat to cryptocurrency: 1% transfer fee"
 
 msgid "Front-End (Javascript) Development"
 msgstr "フロントエンド（Javascript）開発"
@@ -3314,7 +3351,7 @@ msgid "Fund Transfers"
 msgstr "口座振替"
 
 msgid "Fund transfers between accounts are unavailable."
-msgstr ""
+msgstr "口座振替はご利用いただけません。"
 
 msgid "Funding of Real Account"
 msgstr "リアル口座へ振替"
@@ -3556,11 +3593,14 @@ msgstr "アフィリエイト報酬の受領方法と受領スケジュールに
 msgid "How can I become an affiliate?"
 msgstr "アフィリエイトプログラムの参加方法について教えて下さい。"
 
+msgid "How can I find out more about %1?"
+msgstr "%1の詳細はどこで確認できますか？"
+
 msgid "How can I learn more about ICOs and cryptocurrencies?"
 msgstr "ICOと暗号通貨の詳細情報はどこで確認できますか？"
 
-msgid "How can I purchase your tokens?"
-msgstr "どうやってトークンを購入できますか？"
+msgid "How can I purchase tokens?"
+msgstr "トークンの購入方法は？"
 
 msgid "How do I change my payment method?"
 msgstr "報酬の受領方法の変更のし方について教えて下さい。"
@@ -3572,7 +3612,7 @@ msgid "How do I know how much I have earned?"
 msgstr "アフィリエイト報酬データの参照方法を教えて下さい。"
 
 msgid "How do I stay informed on the %1 ICO?"
-msgstr ""
+msgstr "今後の%1 ICOに関する通知を受取るにはどうしたらいいですか？"
 
 msgid "How do we calculate interest fees for long positions?"
 msgstr "ロングポジションの金利手数料の算出方法は？"
@@ -3610,6 +3650,9 @@ msgstr "ICOの仕組み"
 msgid "How to begin"
 msgstr "口座開設から取引開始までの流れ"
 
+msgid "How to participate in the %1 ICO"
+msgstr "%1ICOの参加方法"
+
 msgid "How to read the table above"
 msgstr "上記テーブルの読み方"
 
@@ -3630,6 +3673,9 @@ msgstr "ICOの流れを教えてください"
 
 msgid "How will the tokens be offered?"
 msgstr "トークンはどのように提供されますか？"
+
+msgid "However, we believe that in the coming decade traditional stock exchanges will gradually be replaced by blockchain exchanges, and IPOs will gradually be replaced by ICOs. This is because blockchain technologies are much more performant than the legacy technologies of traditional stock exchanges, leading to lower transaction fees, faster settlement times, and error-free immutable audit trails. Hence, we decided to perform an ICO instead of an IPO."
+msgstr ""
 
 msgid "Human Resource Executive"
 msgstr "人材管理"
@@ -3780,7 +3826,7 @@ msgid "If you do not intend to utilise the leverage feature, please set the leve
 msgstr "レバレッジ機能をご利用されない場合、レバレッジ比率を1:1に設定してください。"
 
 msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
-msgstr ""
+msgstr "お客さまによっては迷惑メールフォルダーに受信される場合もありますので、あわせてご確認ください。"
 
 msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
@@ -3971,6 +4017,9 @@ msgstr "すべての状況において、当社はこれらの利用規約を変
 msgid "In any event of an error in current prices, published odds or trading software."
 msgstr "現行価格、公開されたオッズ、トレーディングソフトウェアでのあらゆるエラーにおいても"
 
+msgid "In business since 2000, %1 is the world’s leading binary options company."
+msgstr "2000年の設立依頼、%1が世界のバイナリーオプション会社をリードしてきました。"
+
 msgid "In carrying out OTC binary option trading, a customer needs expert knowledge such as the theoretical value of options, in order to make reasonable investment decisions."
 msgstr "バイナリーオプション取引について、合理的な投資判断をもって行うためには、オプション取引の理論的根拠などに関する専門知識が必要であること。（契約締結前交付書面「店頭バイナリーオプション取引のリスクについての説明」-①参照）"
 
@@ -3985,6 +4034,9 @@ msgstr "注文代行に関して、%1は最良の結果をもたらせるよう�
 
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr "外国為替市場では、任意の通貨が特定の通貨に対する価格の変化の予測に基づくトレードを実施できます。例えば、EUR/USD市場が上昇すると予測した場合は、米ドルに対してユーロの価値が上がると予測したことになります。"
+
+msgid "In last two years alone, over 276 million contracts were bought and sold on our platform."
+msgstr "過去2年の間だけでも2億7,600万もの取引が当プラットフォームで行われました。"
 
 msgid "In order to access Telegram Bot, please <a href=\"%1\">generate an API Token</a> and enter it in the input box below."
 msgstr "Telegram Botにアクセスいただくには<a href=\"%1\">APIトークンを作成</a>し、下のボックスに入力していただく必要があります。"
@@ -4013,7 +4065,11 @@ msgid "In relation to each member state of the European Economic Area that has i
 "to fewer than 150 natural or legal persons (other than qualified investors as defined in the Prospectus Directive), as permitted under the Prospectus Directive; or\n"
 "in any other circumstances falling within Article 3(2) of the Prospectus Directive, provided that no such offer of Tokens shall require the Company to publish a prospectus pursuant to Article 3 of the Prospectus Directive.\n"
 "For purposes of this provision, the expression an “offer of Tokens to the public” in any relevant member state means the communication in any form and by any means of sufficient information on the terms of the offer and the Tokens to be offered so as to enable an investor to decide to purchase or subscribe for the Tokens, as the expression may be varied in that member state by any measure implementing the Prospectus Directive in that member state.\n"
-msgstr ""
+msgstr "In relation to each member state of the European Economic Area that has implemented the Prospectus Directive (each, a “relevant member state”), with effect from and including the date on which the Prospectus Directive is implemented in that relevant member state (the “relevant implementation date”), an offer of Tokens described in this document may not be made to the public in that relevant member state, except that an offer to the public in that relevant member state may be made at any time under the following exemptions under the Prospectus Directive (to the extent that they have been implemented in that relevant member state):\n"
+"to any legal entity which is a qualified investor as defined in the Prospectus Directive;\n"
+"to fewer than 150 natural or legal persons (other than qualified investors as defined in the Prospectus Directive), as permitted under the Prospectus Directive; or\n"
+"in any other circumstances falling within Article 3(2) of the Prospectus Directive, provided that no such offer of Tokens shall require the Company to publish a prospectus pursuant to Article 3 of the Prospectus Directive.\n"
+"For purposes of this provision, the expression an “offer of Tokens to the public” in any relevant member state means the communication in any form and by any means of sufficient information on the terms of the offer and the Tokens to be offered so as to enable an investor to decide to purchase or subscribe for the Tokens, as the expression may be varied in that member state by any measure implementing the Prospectus Directive in that member state."
 
 msgid "In relation to some Contracts, at the time at which you give us an order there may be no functioning or open market or exchange on which the reference product is traded. In such cases, we set out to determine a fair underlying price based on a number of factors such as price movements on associated markets and other market influences and information about our clients' own orders."
 msgstr "契約に関して、お客さまが当社にご注文された商品が、市場が機能していなかったり開いていない、または参照商品が取引され交換できない場合があります。その際は、関連市場とその他市場の影響による価格変動や当社お客さまのご注文情報などの多くの要因に基いて公平な基礎価格を取り決めています。"
@@ -4034,7 +4090,7 @@ msgid "In the case of a Stop Order, you acknowledge that we will endeavour to op
 msgstr "逆指値注文の場合、当社が次に利用可能な価格で取引をオープン/クローズすることを承諾します。"
 
 msgid "In the case of any Tokens being offered to a financial intermediary as that term is used in Article 3(2) of the Prospectus Directive, such financial intermediary will also be deemed to have represented, warranted, and agreed to and with the Company that (i) Tokens acquired by it have not been acquired on behalf of, nor have they been acquired with a view to their offer or resale to, persons in any relevant member state other than qualified investors, or (ii) where Tokens have been acquired by it on behalf of persons in any relevant member state other than qualified investors, the offer of those Tokens is not treated under the Prospectus Directive as having been made to such persons. The Company will rely on the truth and accuracy of the foregoing representation, warranty and agreement."
-msgstr ""
+msgstr "In the case of any Tokens being offered to a financial intermediary as that term is used in Article 3(2) of the Prospectus Directive, such financial intermediary will also be deemed to have represented, warranted, and agreed to and with the Company that (i) Tokens acquired by it have not been acquired on behalf of, nor have they been acquired with a view to their offer or resale to, persons in any relevant member state other than qualified investors, or (ii) where Tokens have been acquired by it on behalf of persons in any relevant member state other than qualified investors, the offer of those Tokens is not treated under the Prospectus Directive as having been made to such persons. The Company will rely on the truth and accuracy of the foregoing representation, warranty and agreement."
 
 msgid "In the case of single stock and stock index prices, the final closing price as reported by the relevant official Exchange shall apply for all settlements (this final settlement price may, at times, be reported by the relevant Exchange 30-90 minutes after the official closing time of the market, and may differ from the latest tick price that occurred at the closing time)."
 msgstr "個別株式、及び株価指数の終値は、公式な取引所の終了価格によって決定されますが、該当取引の終了後30分〜90分後に発表される場合があり、かつ終了時間に発生した最終のTick価格と異なる場合があります。"
@@ -4142,7 +4198,7 @@ msgid "Inheritance"
 msgstr "相続"
 
 msgid "Initial Coin Offering (ICO)"
-msgstr "イニシャル・コイン・オファリング（ICO)"
+msgstr "イニシャル・コイン・オファリング（ICO) 日本を除く"
 
 msgid "Input personal information"
 msgstr "口座開設申込みフォームに記入"
@@ -4773,10 +4829,10 @@ msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "こちらからダウンロードして、お読みください。"
 
 msgid "Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and %1 (formerly known as Betonmarkets.com) in 1999."
-msgstr ""
+msgstr "Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and %1 (formerly known as Betonmarkets.com) in 1999."
 
 msgid "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
-msgstr ""
+msgstr "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 
 msgid "Join now"
 msgstr "アフィリエイト申込み"
@@ -5244,6 +5300,9 @@ msgstr "MATCH/DIFFER"
 msgid "Matches/Differs - Predict that the last digit will match or not match"
 msgstr "MATCH/UNMATCH：下一桁が予め予想した数字に合致するかしないかを予測します"
 
+msgid "Max"
+msgstr "最大"
+
 msgid "Maximum Leverage"
 msgstr "最大レバレッジ"
 
@@ -5318,6 +5377,9 @@ msgstr "MetaTraderアカウント管理"
 
 msgid "Method"
 msgstr "決済方法"
+
+msgid "Min"
+msgstr "最小"
 
 msgid "Min Withdrawal"
 msgstr "最小出金額"
@@ -5481,7 +5543,7 @@ msgid "Neither the Company nor any of its directors, officers, managers, employe
 msgstr "Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of, or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney's fees) incurred arising out of your failure to comply with any and all of your obligations set forth in this Agreement and/or the Company's enforcement against you of any and all of its rights under this Agreement."
 
 msgid "Neither this Information Memorandum nor any other offering or marketing material relating to the offering, the Company or the Tokens have been or will be filed with or approved by any Swiss regulatory authority. In particular, this Information Memorandum will not be filed with, and the offer of Tokens will not be supervised by, the Swiss Financial Market Supervisory Authority FINMA, and the offer of Tokens has not been and will not be authorized under the Swiss Federal Act on Collective Investment Schemes (the “CISA”). The investor protection afforded to acquirers of interests in collective investment schemes under the CISA does not extend to acquirers of Tokens.\n"
-msgstr ""
+msgstr "Neither this Information Memorandum nor any other offering or marketing material relating to the offering, the Company or the Tokens have been or will be filed with or approved by any Swiss regulatory authority. In particular, this Information Memorandum will not be filed with, and the offer of Tokens will not be supervised by, the Swiss Financial Market Supervisory Authority FINMA, and the offer of Tokens has not been and will not be authorized under the Swiss Federal Act on Collective Investment Schemes (the “CISA”). The investor protection afforded to acquirers of interests in collective investment schemes under the CISA does not extend to acquirers of Tokens."
 
 msgid "Neither you, your direct relatives, or any persons you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled persons."
 msgstr "アフィリエイト会員の近しい立場の親族または制御できる人を獲得会員にすることはできません。また、アフィリエイト会員はアフィリエイト報酬や当社からのいかなる報酬もそのような親族や友人と共有することはできません。近しい立場の親族とは、配偶者、両親、子、兄弟姉妹と定義します。"
@@ -5590,7 +5652,7 @@ msgid "Note"
 msgstr "注意"
 
 msgid "Note: 2017 numbers are projected from August interim figures"
-msgstr ""
+msgstr "注：2017年の数字は8月の中間決済からの予測を含みます"
 
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
 msgstr "注意：決済サービスの送金はBinary (CR) SAにご登録いただいたアカウントのみ可能です。取引はUSドルのみご利用いただけます。"
@@ -5608,7 +5670,7 @@ msgid "Note: You can only have one fiat currency account and one of each cryptoc
 msgstr "注意：不換紙幣口座と各仮想通貨口座はお一人様一口座となります。"
 
 msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr ""
+msgstr "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
 
 msgid "Notes:"
 msgstr "ご注意："
@@ -5637,6 +5699,9 @@ msgstr "初心者のトレーダーの方々は当社の直感的なビジュア
 msgid "Now"
 msgstr "Now"
 
+msgid "Number of employees and contractors"
+msgstr "従業員数と請負業者数"
+
 msgid "Number of ticks"
 msgstr "Tickの総数"
 
@@ -5645,6 +5710,9 @@ msgstr "Tickの総数："
 
 msgid "Number of tokens"
 msgstr "トークンの数"
+
+msgid "Number of transactions"
+msgstr "取引回数"
 
 msgid "O. Representations and Warranties"
 msgstr "O. 表明・保証条項"
@@ -6145,7 +6213,7 @@ msgid "Please %1complete your account profile%2 to lift your withdrawal and trad
 msgstr "出金制限及び取引制限を解除するには、%1口座情報の入力を完了%2していただく必要があります。"
 
 msgid "Please %1deposit%2 to your account."
-msgstr ""
+msgstr "ご口座に%1d入金%2してください。"
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "利用規約に同意していただく必要があります。"
@@ -6166,10 +6234,10 @@ msgid "Please check the above form for pending errors."
 msgstr "未入力の項目がありますのでご確認ください"
 
 msgid "Please check your email for the password reset link."
-msgstr ""
+msgstr "ご登録いただいたメールアドレスに認証専用のURLを送信いたしました。"
 
 msgid "Please check your email for the verification link to complete the process."
-msgstr ""
+msgstr "本人確認のためご登録頂いたメールアドレスに認証専用のURLを送信しましたのでご確認ください。"
 
 msgid "Please choose a currency"
 msgstr "通貨を選択してください"
@@ -6179,6 +6247,9 @@ msgstr "取引上限と出金限度額を引き上げるには下記財務評価
 
 msgid "Please complete the tax information before proceeding."
 msgstr "続行する前に、税務情報を入力してください。"
+
+msgid "Please confirm that you are not a politically exposed person."
+msgstr "Please confirm that you are not a politically exposed person."
 
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "送金を完了するために、取引明細をご確認ください。"
@@ -6471,8 +6542,8 @@ msgstr "損益"
 msgid "Prohibited Trades"
 msgstr "取引を禁止しています"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
-msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください"
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than six months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
+msgstr "Proof of address - A scanned copy of a utility bill or bank statement that's not more than six months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
 msgstr "身分確認 - 氏名と生年月日が表示されているパスポートか運転免許証、または住民基本台帳カードをスキャンしたコピー。"
@@ -6646,7 +6717,7 @@ msgstr "約定番号"
 msgid "Refund Bid"
 msgstr "入札金額の返金"
 
-msgid "Regardless of the type of token, each token will provide you with two rights:"
+msgid "Regardless of the type of token issued, each token will provide investors with two rights:"
 msgstr "トークンの種類に関係なく、各トークンにつき2つの権利を提供します。"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
@@ -6903,6 +6974,9 @@ msgstr "ベテランのトレーダーは取引の範囲を広げたり、当社
 
 msgid "Second line of home address"
 msgstr "マンション（建物）名"
+
+msgid "Second, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares."
+msgstr ""
 
 msgid "Secondary"
 msgstr "第二"
@@ -7190,7 +7264,7 @@ msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "申し訳ございませんが、ご入力頂いた入出金パスワードに誤りがあります"
 
 msgid "Sorry, your account is not authorised for any further contract purchases."
-msgstr "申し訳ございませんが、これ以上のトレードの購入を可能にする権限がお客さまのご口座に存在しておりません。"
+msgstr "申し訳ございませんが、お客さまの取引口座に制限をさせていただいております。お手数ですが、カスタマーサポートへご連絡ください。"
 
 msgid "Source of Wealth"
 msgstr "富源"
@@ -7723,8 +7797,8 @@ msgstr "GBPインデックスとは、5グローバル通貨(USD, EUR, AUD, JPY,
 msgid "The ICO auction is already closed."
 msgstr "ICOオークションは既に終了しました。"
 
-msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions."
-msgstr "ICOは管轄区域の規制及び規則に従い、特定の地域の対象の投資家またはプロの投資家に制限されます。"
+msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions. In particular, the ICO is not available to US investors."
+msgstr "ICOは管轄区域の規制及び規則に従い、特定の地域の対象の投資家またはプロの投資家に制限されます。特に、アメリカにお住まいの投資家の皆様はご利用いただけませんのでご注意ください。"
 
 msgid "The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control."
 msgstr "MAMツールは、複数のクライアントの口座をより簡単に管理されたいマネージャーに最適です。あなたのコントロール下で、全MT5クライアントに代わって表示、追跡、取引をシームレスに行うことができるようになります。"
@@ -7754,16 +7828,16 @@ msgid "The Stop Out Level applicable to your Real Account may differ from the de
 msgstr "お客様のリアル口座に適用されるロスカットレベルは、当サイトで公開している既定のロスカットレベルとは異なる場合があります。"
 
 msgid "The Tokens have not been and will not be registered under the Financial Instruments and Exchange Act, as amended (the “FIEA”). This document is not an offer of securities for sale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan (which term as used herein means any person resident in Japan, including any corporation or entity organized under the laws of Japan) or to others for reoffer or resale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan, except pursuant to an exemption from the securities registration requirements under the FIEA and otherwise in compliance with such law and any other applicable laws, regulations, and ministerial guidelines of Japan.\n"
-msgstr ""
+msgstr "The Tokens have not been and will not be registered under the Financial Instruments and Exchange Act, as amended (the “FIEA”). This document is not an offer of securities for sale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan (which term as used herein means any person resident in Japan, including any corporation or entity organized under the laws of Japan) or to others for reoffer or resale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan, except pursuant to an exemption from the securities registration requirements under the FIEA and otherwise in compliance with such law and any other applicable laws, regulations, and ministerial guidelines of Japan.\n"
 
 msgid "The Tokens have not been nor will they be qualified for sale to the public under applicable Canadian securities laws and, accordingly, any offer and sale of the Tokens in Canada will be made on a basis which is exempt from the prospectus requirements of Canadian securities laws. Any resale of the Tokens must be made in accordance with, or pursuant to an exemption from, or in a transaction not subject to, the prospectus requirements of those laws. In addition, in order to comply with the dealer registration requirements of Canadian securities laws, any resale of the Tokens must be made either by a person not required to register as a dealer under applicable Canadian securities laws, or through an appropriately registered dealer or in accordance with an exemption from the dealer registration requirements. Purchasers of Tokens are advised to seek Canadian legal advice prior to any resale of Tokens.\n"
-msgstr ""
+msgstr "The Tokens have not been nor will they be qualified for sale to the public under applicable Canadian securities laws and, accordingly, any offer and sale of the Tokens in Canada will be made on a basis which is exempt from the prospectus requirements of Canadian securities laws. Any resale of the Tokens must be made in accordance with, or pursuant to an exemption from, or in a transaction not subject to, the prospectus requirements of those laws. In addition, in order to comply with the dealer registration requirements of Canadian securities laws, any resale of the Tokens must be made either by a person not required to register as a dealer under applicable Canadian securities laws, or through an appropriately registered dealer or in accordance with an exemption from the dealer registration requirements. Purchasers of Tokens are advised to seek Canadian legal advice prior to any resale of Tokens.\n"
 
 msgid "The Tokens may not be offered or sold in Hong Kong by means of any document other than (i) in circumstances which do not constitute an offer to the public within the meaning of the Companies Ordinance (Cap.32, Laws of Hong Kong), or (ii) to “professional investors” within the meaning of the Securities and Futures Ordinance (Cap.571, Laws of Hong Kong) and any rules made thereunder, or (iii) in other circumstances which do not result in the document being a “prospectus” within the meaning of the Companies Ordinance (Cap.32, Laws of Hong Kong), and no advertisement, invitation or document relating to the tokens may be issued or may be in the possession of any person for the purpose of issue (in each case whether in Hong Kong or elsewhere), which is directed at, or the contents of which are likely to be accessed or read by, the public in Hong Kong (except if permitted to do so under the laws of Hong Kong) other than with respect to Tokens which are or are intended to be disposed of only to persons outside Hong Kong or only to “professional investors” within the meaning of the Securities and Futures Ordinance (Cap. 571, Laws of Hong Kong) and any rules made thereunder."
-msgstr ""
+msgstr "The Tokens may not be offered or sold in Hong Kong by means of any document other than (i) in circumstances which do not constitute an offer to the public within the meaning of the Companies Ordinance (Cap.32, Laws of Hong Kong), or (ii) to “professional investors” within the meaning of the Securities and Futures Ordinance (Cap.571, Laws of Hong Kong) and any rules made thereunder, or (iii) in other circumstances which do not result in the document being a “prospectus” within the meaning of the Companies Ordinance (Cap.32, Laws of Hong Kong), and no advertisement, invitation or document relating to the tokens may be issued or may be in the possession of any person for the purpose of issue (in each case whether in Hong Kong or elsewhere), which is directed at, or the contents of which are likely to be accessed or read by, the public in Hong Kong (except if permitted to do so under the laws of Hong Kong) other than with respect to Tokens which are or are intended to be disposed of only to persons outside Hong Kong or only to “professional investors” within the meaning of the Securities and Futures Ordinance (Cap. 571, Laws of Hong Kong) and any rules made thereunder."
 
 msgid "The Tokens may not be publicly offered in Switzerland and will not be listed on the SIX Swiss Exchange, or SIX, or on any other stock exchange or regulated trading facility in Switzerland. This Information Memorandum has been prepared without regard to the disclosure standards for issuance prospectuses under art. 652a or art. 1156 of the Swiss Code of Obligations or the disclosure standards for listing prospectuses under art. 27 ff. of the SIX Listing Rules or the listing rules of any other stock exchange or regulated trading facility in Switzerland. Neither this Information Memorandum nor any other offering or marketing material relating to the Tokens or the offering may be publicly distributed or otherwise made publicly available in Switzerland."
-msgstr ""
+msgstr "The Tokens may not be publicly offered in Switzerland and will not be listed on the SIX Swiss Exchange, or SIX, or on any other stock exchange or regulated trading facility in Switzerland. This Information Memorandum has been prepared without regard to the disclosure standards for issuance prospectuses under art. 652a or art. 1156 of the Swiss Code of Obligations or the disclosure standards for listing prospectuses under art. 27 ff. of the SIX Listing Rules or the listing rules of any other stock exchange or regulated trading facility in Switzerland. Neither this Information Memorandum nor any other offering or marketing material relating to the Tokens or the offering may be publicly distributed or otherwise made publicly available in Switzerland."
 
 msgid "The URL of the site on which the banner is going to appear."
 msgstr "バナーにはサイトURLが表示されます。"
@@ -7929,6 +8003,9 @@ msgstr "ご入力いただいたメールアドレスは既に他のログイン
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "取引時レートとは、購入時のレートのことです。"
 
+msgid "The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017."
+msgstr "ICOの日程はまだ確定していません。現在のところ、2017年度の第四半期を予定しております。"
+
 msgid "The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients."
 msgstr "The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients."
 
@@ -7981,7 +8058,7 @@ msgstr "市場閉鎖時間です（例：週末中はご利用いただけませ
 
 msgid "The information contained on this webpage and documents posted thereon may contain statements that are deemed to be “forward looking statements”. Such statements are prospective in nature. All statements other than historical statements of facts may be forward-looking statements. Statements containing the words “targets”, “plans”, “believes”, “expects”, “aims”, “intends”, “will”, “may”, “anticipates”, “estimates”, “projects” or “considers” or other similar words may be forward-looking statements.\n"
 "    "
-msgstr ""
+msgstr "The information contained on this webpage and documents posted thereon may contain statements that are deemed to be “forward looking statements”. Such statements are prospective in nature. All statements other than historical statements of facts may be forward-looking statements. Statements containing the words “targets”, “plans”, “believes”, “expects”, “aims”, “intends”, “will”, “may”, “anticipates”, “estimates”, “projects” or “considers” or other similar words may be forward-looking statements.    "
 
 msgid "The information included in this section is restricted due to applicable securities laws in your country of residence. The information in this section of the website is, therefore, not available to persons located in your country of residence."
 msgstr "このセクションに含まれる情報は、お住いの国の証券取引法令によって制限されています。そのため、ウェブサイトのこのセクションの情報は、お客様の国にお住まいの方はご利用いただけません。"
@@ -8020,7 +8097,7 @@ msgid "The market exit price is the price in effect at the end of the contract p
 msgstr "市場出口価格とは、トレードの終了期間に影響を及ぼす価格のことです。"
 
 msgid "The materials are for information purposes only and do not constitute or form a part of any offer or invitation to sell or issue, or solicitation of any offer, to purchase or subscribe for the Tokens in any jurisdiction or jurisdictions in which such offers or sales are unlawful prior to registration or qualification under the securities laws of any such jurisdiction. In particular, the Tokens have not been and will not be registered under the US Securities Act of 1933, as amended (the \"Securities Act\"), and may not be offered, sold, resold, pledged, taken up, exercised, renounced, transferred or delivered, directly or indirectly, in or into the United States except pursuant to an exemption from, or in a transaction not subject to, the registration requirements of the Securities Act. The Securities will not be registered under applicable securities laws of any state, province, territory, county or jurisdiction of a Restricted Territory."
-msgstr ""
+msgstr "The materials are for information purposes only and do not constitute or form a part of any offer or invitation to sell or issue, or solicitation of any offer, to purchase or subscribe for the Tokens in any jurisdiction or jurisdictions in which such offers or sales are unlawful prior to registration or qualification under the securities laws of any such jurisdiction. In particular, the Tokens have not been and will not be registered under the US Securities Act of 1933, as amended (the \"Securities Act\"), and may not be offered, sold, resold, pledged, taken up, exercised, renounced, transferred or delivered, directly or indirectly, in or into the United States except pursuant to an exemption from, or in a transaction not subject to, the registration requirements of the Securities Act. The Securities will not be registered under applicable securities laws of any state, province, territory, county or jurisdiction of a Restricted Territory."
 
 msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-<span class='currentYear'></span> Binary Group of companies. All rights reserved."
 msgstr "%1のウェブサイトを構成しているコンテンツ（記事、文章、イメージ、ロゴ、編集物、システム、プログラミング、及びデザイン）は、1999-<span class='currentYear'></span> Binary グループ会社による著作物であり、全ての権利が当社に帰属します。"
@@ -8038,7 +8115,10 @@ msgid "The maximum number of tokens (%1) has been reached."
 msgstr "トークンの最大数(%1) に達しました。"
 
 msgid "The minimum duration is"
-msgstr ""
+msgstr "最小期間は"
+
+msgid "The minimum required amount for using the account transfer facility is %1."
+msgstr "ご選択いただい決済方法での最小金額は%1です。"
 
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 msgstr "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
@@ -8089,11 +8169,11 @@ msgstr "ペイアウトとは、トレードの予測が正しかった場合に
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect."
 msgstr "当社はルールや範囲を適切に修正または変更する権利を有します。修正点や変更点はそれらが作成された以前の状況にさかのぼって適用されることはありませんが、作成後に取得された金融トレードに対して適用されます。お客さまにはご利用規約での全ての変更点を確認する義務があります。"
 
-msgid "The right to convert tokens into Ordinary Shares"
-msgstr "The right to convert tokens into Ordinary Shares"
+msgid "The right to convert tokens into Ordinary Shares."
+msgstr "トークンを普通株式に変換"
 
-msgid "The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares"
-msgstr "The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares"
+msgid "The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares; and"
+msgstr "Binary Group Ltdの普通株式の配当と相当の金額をお受け取りいただけます"
 
 msgid "The server <a href=\"%1\">endpoint</a> is: %2"
 msgstr "サーバーの <a href=\"%1\">エンドポイント</a> : %2"
@@ -8135,8 +8215,11 @@ msgstr "「当社」「我々」「私達」「%1」はBinary (V) Ltdを示す�
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "「当社」、「私達」、「当社の」、「私達の」、「%1」という表記は、口座開設におけるサイトの手順に従って所属した管轄によってBinary (V) Ltd.またはBinary (C.R.) S.A.を示します。"
 
-msgid "The tokens will be offered over a period of one month. The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017. The ICO price and auction method will be announced in due course."
-msgstr "The tokens will be offered over a period of one month. The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017. The ICO price and auction method will be announced in due course."
+msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
+msgstr ""
+
+msgid "The tokens will be offered via an auction process. View our %1guide%2 to the token auction."
+msgstr "オークション方式でトークンは提供されます。詳細は%1ガイド%2からご確認いただけます。"
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
 msgstr "（取引内容の照会）\n"
@@ -8201,11 +8284,17 @@ msgstr "バイナリーオプションのリアル口座からご自身のリア
 msgid "There will be no public offering of the Tokens in the United States. If you are not permitted to view materials on this webpage or are in any doubt as to whether you are permitted to view these materials, please exit this webpage."
 msgstr "アメリカ居住者の方にはトークンの公募は行っておりません。このウェブページの資料閲覧の許可がなされていない、または許可がされているか不明な場合は、このウェブページの閲覧を終了してください。"
 
+msgid "There will be two main benefits of purchasing tokens."
+msgstr "トークン購入の２つの利点"
+
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
 msgstr "そのため、現在即座にご出金いただける限度金額（ただし、ご口座残高が不足していない場合）は%1 %2までです。"
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2."
 msgstr "現在、出金可能な限度額（口座残高が不足していない場合）は¥ %2となります。"
+
+msgid "Therefore, the tokens are issued as derivative securities, convertible into Ordinary Shares."
+msgstr "そのため、トークンはデリバティブ証券で発行され、普通株式に変換されます。"
 
 msgid "These ST&Cs are to be governed by and construed in accordance with Maltese law and the parties hereto agree to submit to the non exclusive jurisdiction of the Maltese courts."
 msgstr "これらST＆Cs（特別条件と事業条件）は、マルタ裁判所の非専属管轄権に服することに同意し、マルタの法律や当事者によって規制されることを解します。"
@@ -8272,19 +8361,16 @@ msgid "This Document"
 msgstr "本文書"
 
 msgid "This Information Memorandum has not been and will not be registered as a prospectus with the Monetary Authority of Singapore. Accordingly, this Information Memorandum and any other document or material in connection with the offer or sale, or invitation for subscription or purchase, of the Tokens may not be circulated or distributed, nor may the Tokens be offered or sold, or be made the subject of an invitation for subscription or purchase, whether directly or indirectly, to persons in Singapore other than (i) to an institutional investor under Section 274 of the Securities and Futures Act, Chapter 289 of Singapore (the “SFA”), (ii) to a relevant person, or any person pursuant to Section 275(1A), and in accordance with the conditions, specified in Section 275 of the SFA, (iii) where the transfer is by operation of law; (iv) as specified in Section 276(7) of the SFA or (v) pursuant to, and in accordance with the conditions of, any other applicable provisions of the SFA."
-msgstr ""
+msgstr "This Information Memorandum has not been and will not be registered as a prospectus with the Monetary Authority of Singapore. Accordingly, this Information Memorandum and any other document or material in connection with the offer or sale, or invitation for subscription or purchase, of the Tokens may not be circulated or distributed, nor may the Tokens be offered or sold, or be made the subject of an invitation for subscription or purchase, whether directly or indirectly, to persons in Singapore other than (i) to an institutional investor under Section 274 of the Securities and Futures Act, Chapter 289 of Singapore (the “SFA”), (ii) to a relevant person, or any person pursuant to Section 275(1A), and in accordance with the conditions, specified in Section 275 of the SFA, (iii) where the transfer is by operation of law; (iv) as specified in Section 276(7) of the SFA or (v) pursuant to, and in accordance with the conditions of, any other applicable provisions of the SFA."
 
 msgid "This Information Memorandum is only being distributed to, and is only directed at, persons in the United Kingdom that are “qualified investors” within the meaning of Article 2(1)(e) of the Prospectus Directive that are also: (i) investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (the “Order”); or (ii) high net worth entities, and other persons to whom it may lawfully be communicated, falling within Article 49(2)(a) to (d) of the Order (each such person being referred to as a “relevant person”). This document and its contents are confidential and should not be distributed, published or reproduced (in whole or in part) or disclosed by recipients to any other persons in the United Kingdom. Any person in the United Kingdom that is not a relevant person should not act or rely on this document or any of its contents. Any investment or investment activity to which this document relates is available only in the United Kingdom to relevant persons, and will be engaged in only with such persons."
-msgstr ""
+msgstr "This Information Memorandum is only being distributed to, and is only directed at, persons in the United Kingdom that are “qualified investors” within the meaning of Article 2(1)(e) of the Prospectus Directive that are also: (i) investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (the “Order”); or (ii) high net worth entities, and other persons to whom it may lawfully be communicated, falling within Article 49(2)(a) to (d) of the Order (each such person being referred to as a “relevant person”). This document and its contents are confidential and should not be distributed, published or reproduced (in whole or in part) or disclosed by recipients to any other persons in the United Kingdom. Any person in the United Kingdom that is not a relevant person should not act or rely on this document or any of its contents. Any investment or investment activity to which this document relates is available only in the United Kingdom to relevant persons, and will be engaged in only with such persons."
 
 msgid "This Policy applies to retail and professional clients of %1 dealing in financial products offered by %1."
 msgstr "このポリシーは%1が提供する金融商品を扱う%1のリテール及びクライアントに適用されます。"
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
-
-msgid "This amount exceeds your withdrawal limit."
-msgstr "この金額はお客様の出金限度額を超えています。"
 
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "このボーナスは、新たなお客さまに限り有効です。すでにご口座をお持ちのお客さまには適用されません。新たなお客さまに限り当ボーナスが一度限り適用されます。このボーナスは１世帯あたり一回のみ適用されます。"
@@ -8421,14 +8507,14 @@ msgstr "To create an MetaTrader 5 Financial Account please complete the <a href=
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "ご利用中のブラウザのバージョンの指示に従ってクッキーを有効化して下さい。"
 
-msgid "To learn how to trade cryptocurrency assets, we recommend that you open an account with US-based cryptocurrency exchange, <a href='https://poloniex.com/'>POLONIEX</a>."
-msgstr "To learn how to trade cryptocurrency assets, we recommend that you open an account with US-based cryptocurrency exchange, <a href='https://poloniex.com/'>POLONIEX</a>."
+msgid "To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the %1Information Memorandum%2 page."
+msgstr "お住まいの国でICOが利用できるか、またはトークンに関する購読ができるか確認するには、%1インフォメーション・メモランダム%2ページにあるドロップダウンリストから居住国をご選択ください。"
 
-msgid "To learn more about Bitcoin, we recommend that you <a href='https://blockchain.info/wallet/#/'>open a Bitcoin wallet with Blockchain</a> and <a href='https://www.bitcoin.com/buy-bitcoin'>purchase bitcoins using a local exchange</a> in your country."
-msgstr "To learn more about Bitcoin, we recommend that you <a href='https://blockchain.info/wallet/#/'>open a Bitcoin wallet with Blockchain</a> and <a href='https://www.bitcoin.com/buy-bitcoin'>purchase bitcoins using a local exchange</a> in your country."
+msgid "To find out more about %1, you can read about our %2group history%3, %4regulatory status%3, and %5company culture%3. You can also read the %6company blog%3."
+msgstr "To find out more about %1, you can read about our %2group history%3, %4regulatory status%3, and %5company culture%3. You can also read the %6company blog%3."
 
-msgid "To learn more about Ethereum, we recommend that you install the <a href='https://metamask.io/'>Metamask plugin for Chrome</a>, which will allow you to convert your Bitcoin into Ether."
-msgstr "To learn more about Ethereum, we recommend that you install the <a href='https://metamask.io/'>Metamask plugin for Chrome</a>, which will allow you to convert your Bitcoin into Ether."
+msgid "To learn more about Bitcoin, we recommend that you open a Bitcoin wallet with %1%2’s simple bitcoin wallet%3, and purchase bitcoins using a local exchange in your country."
+msgstr "To learn more about Bitcoin, we recommend that you open a Bitcoin wallet with %1%2’s simple bitcoin wallet%3, and purchase bitcoins using a local exchange in your country."
 
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
 msgstr "詳細については、外国為替の100%強制ロスカットレベルが記載されている<a href=\"%1\">マージンポリシー</a>をご確認ください。"
@@ -8455,7 +8541,7 @@ msgid "To qualify, you'll need an advanced university degree in Physics, Financi
 msgstr "物理学、金融工学、数学の大学上級学位が必要となります。"
 
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
-msgstr ""
+msgstr "パスワードを再設定される場合は、口座開設時に登録されたメールアドレスを下の欄に入力し、「パスワード再設定」をクリックしてください。"
 
 msgid "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
 msgstr "To withdraw from MetaTrader 5 Financial Account please Authenticate your %1 account."
@@ -8478,8 +8564,8 @@ msgstr "トークン"
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
 msgstr "Binaryの普通株の配当と同額がトークン保持者に付与されます。"
 
-msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our account authentication process."
-msgstr "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our account authentication process."
+msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our %2account authentication/KYC process%3."
+msgstr "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our %2account authentication/KYC process%3."
 
 msgid "Top-tier liquidity"
 msgstr "Top-tier liquidity"
@@ -8648,16 +8734,16 @@ msgid "Transfer"
 msgstr "送金"
 
 msgid "Transfer Between Accounts"
-msgstr ""
+msgstr "口座振替"
 
 msgid "Transfer from"
 msgstr "送金元"
 
 msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr ""
+msgstr "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
 
 msgid "Transfer funds between your real money accounts."
-msgstr ""
+msgstr "リアル口座に口座振替"
 
 msgid "Transfer funds from %1 account into your MetaTrader 5 account:"
 msgstr "Transfer funds from %1 account into your MetaTrader 5 account:"
@@ -8822,7 +8908,7 @@ msgid "Unless otherwise advised, we shall treat you as a Retail Client. You may 
 msgstr "他にお勧されない場合に限り、個人顧客として扱わせていただきます。当社宛に書面で分類されるカテゴリの変更のリクエスができます。これはお客さまへ与えられる保護レベルに影響します。当社は種類の変更に関して承諾または拒否する権利を留保します。"
 
 msgid "Unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, copies of the contents of the following pages (including documents posted thereon) are not being, and must not be, released or otherwise distributed or transmitted in or into a Restricted Territory and persons receiving such documents (including custodians, nominees and trustees) must not distribute, forward to or transmit them in or into a Restricted Territory."
-msgstr ""
+msgstr "Unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, copies of the contents of the following pages (including documents posted thereon) are not being, and must not be, released or otherwise distributed or transmitted in or into a Restricted Territory and persons receiving such documents (including custodians, nominees and trustees) must not distribute, forward to or transmit them in or into a Restricted Territory."
 
 msgid "Unless proven to be wrong, our records shall be used as evidence of your dealings with us in connection with the margin trading services described in this Agreement. You agree to use our records as evidence in any such legal or regulatory proceedings and you agree to keep your own record of your dealings with us that will help us investigate any complaints or disputes. If the records used as evidence of your dealings with us are not originals, are in the form of diagrams or charts, or are system generated content, you will not object to the use of such records as evidence."
 msgstr "Unless proven to be wrong, our records shall be used as evidence of your dealings with us in connection with the margin trading services described in this Agreement. You agree to use our records as evidence in any such legal or regulatory proceedings and you agree to keep your own record of your dealings with us that will help us investigate any complaints or disputes. If the records used as evidence of your dealings with us are not originals, are in the form of diagrams or charts, or are system generated content, you will not object to the use of such records as evidence."
@@ -8923,6 +9009,9 @@ msgstr "ビデオ通話設備"
 msgid "View"
 msgstr "表示"
 
+msgid "View Binary Ltd.'s 2016 annual report"
+msgstr "View Binary Ltd.'s 2016 annual report"
+
 msgid "View Details"
 msgstr "お客さま基本情報"
 
@@ -8975,7 +9064,7 @@ msgid "View your trading and withdrawal limits."
 msgstr "取引上限と出金限度額を確認する"
 
 msgid "Viewing the materials available hereafter may not be lawful in certain jurisdictions. In other jurisdictions, only certain categories of person may be allowed to view such materials. Any person who wishes to view these materials must first satisfy themselves that they are not subject to any local requirements that prohibit or restrict them from doing so. In particular, unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, it is not intended that any offering of the tokens mentioned in such materials (the \"Tokens\") by Binary Group Ltd. should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, New Zealand, Singapore, Switzerland, the USA (each, a “Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction."
-msgstr ""
+msgstr "Viewing the materials available hereafter may not be lawful in certain jurisdictions. In other jurisdictions, only certain categories of person may be allowed to view such materials. Any person who wishes to view these materials must first satisfy themselves that they are not subject to any local requirements that prohibit or restrict them from doing so. In particular, unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, it is not intended that any offering of the tokens mentioned in such materials (the \"Tokens\") by Binary Group Ltd. should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, New Zealand, Singapore, Switzerland, the USA (each, a “Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction."
 
 msgid "Virtual"
 msgstr "デモ口座"
@@ -9116,9 +9205,6 @@ msgstr "We delete an order with the largest margin reserved."
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "BetOnMarkets.comは2007年度に引き続き、「最優秀固定オッズ金融取引業者」を受賞。"
 
-msgid "We don't usually require any documents as we can verify your identity online."
-msgstr "通常は口座開設に際し各種証明書の郵送を求めることはありません。オンラインで送付いただくことで手続きは完了いたします。"
-
 msgid "We employ a wide range of unique marketing initiatives to acquire customers. We are focused primarily on untapped markets."
 msgstr "We employ a wide range of unique marketing initiatives to acquire customers. We are focused primarily on untapped markets."
 
@@ -9173,8 +9259,8 @@ msgstr "We may, at our absolute discretion, disregard your Order if an Event tak
 msgid "We may, however, withhold your withdrawal request from your Real Account to your Binary Options Real Account, in whole or in part, if:"
 msgstr "We may, however, withhold your withdrawal request from your Real Account to your Binary Options Real Account, in whole or in part, if:"
 
-msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta or Malaysia."
-msgstr "当社では、ボーナス、健康保険、旅行、インターネット、社員旅行といった魅力的な福利厚生を提供しています。マルタまたはマレーシアでハイスタンダードな生活をお楽しみいただけます。"
+msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, Malaysia, or Japan."
+msgstr "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, Malaysia, or Japan."
 
 msgid "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 msgstr "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
@@ -9251,6 +9337,12 @@ msgstr "米国で「金融市場投機用コンピューター取引システム
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "この受賞は大変光栄なものです。当社は、倫理的で顧客を重視したトレード機会を提供することに注力します。そしてこの受賞は、BetOnMarketsがトレード初心者、及び上級者に対し、顧客の声を重視したサービスを提供するブランドであることを示します。当社は英語、インドネシア語、ロシア語、中国語、及びスペイン語でのカスタマーサービスを提供します。"
 
+msgid "We've generated over USD 3 billion in turnover since inception, thanks to a rapid growth in business from 2010 onwards."
+msgstr "We've generated over USD 3 billion in turnover since inception, thanks to a rapid growth in business from 2010 onwards."
+
+msgid "We've grown in size over the years -- both in terms of manpower and offices. We currently have over 130 employees across four offices in three countries: Malaysia, Malta and Japan."
+msgstr "We've grown in size over the years -- both in terms of manpower and offices. We currently have over 130 employees across four offices in three countries: Malaysia, Malta and Japan."
+
 msgid "Web (Desktop Only)"
 msgstr "ウェブ（デスクトップのみ）"
 
@@ -9287,8 +9379,8 @@ msgstr "優れた組織・管理能力および/または会計スキル"
 msgid "We’ve generated over USD 3 billion in turnover since inception, thanks to a rapid growth in business from 2010 onwards."
 msgstr "2010年の創業から急速な成長を遂げ、お陰様で30億USD以上の取引高を突破しました。"
 
-msgid "We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across five offices in three countries: Malaysia, Malta and Japan."
-msgstr "長年にわたり、&mdash;&mdash;人材・オフィスともに成長を遂げてきました。現在では、マレーシア・マルタ・日本のオフィスで130名を超える従業員が世界中で活躍しています。"
+msgid "We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across four offices in three countries: Malaysia, Malta and Japan."
+msgstr "We’ve grown in size over the years &mdash;&mdash; both in terms of manpower and offices. We currently have over 130 employees across four offices in three countries: Malaysia, Malta and Japan."
 
 msgid "We’ve obtained financial and gambling licenses to operate in key countries and regions such as Europe, the Isle of Man, the United Kingdom, and Japan."
 msgstr "ヨーロッパ・マン島・イギリス・日本の主要国と地域において運営するうえで必要となる金融ライセンスを取得。"
@@ -9298,6 +9390,12 @@ msgstr "店頭インデックスと店頭株とは"
 
 msgid "What are binary options"
 msgstr "バイナリーオプションとは"
+
+msgid "What are the benefits of purchasing tokens?"
+msgstr "What are the benefits of purchasing tokens?"
+
+msgid "What are the risks of purchasing tokens?"
+msgstr "What are the risks of purchasing tokens?"
 
 msgid "What commission plan do you offer?"
 msgstr "アフィリエイトの報酬体系について教えて下さい。"
@@ -9346,6 +9444,9 @@ msgstr "当社の口座（Dealing Desk）を取り扱う際、当社は当事者
 
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
 msgstr "お客さまと契約を締結する際、お客さまから頂いた特定の指示への当社注文執行ポリシーと対象に応じて、それら契約の執行により可能な限り最良の結果をお客さまへもたらせられるようあらゆる合理的な措置を講じます。当社注文執行ポリシーは、対象となるお客さまへ可能な限り最良の結果をもたらすよう考慮し設計されている一連の手順を含みます。： (a)お客さまの契約の性質 (b)これら契約を締結するのに関連してお客さまに同意いただいた特定の優先順位 (c)論争要素の範囲にわたる最適なバランスを提供して結果を生成する目的をもって、対象のマーケットに関連した実践。当社ポリシーは保証を提供することはできませんが、お客さまと契約締結の際、価格は常により良いものであるか、他の場所で利用できるようなものになる場合があります。"
+
+msgid "When will the tokens be offered?"
+msgstr "When will the tokens be offered?"
 
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no invisible fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "満足のいく価格が表示されたら、すぐに取引を実行してください。当社独自のプラットフォームでは、市場との差やズレに関してご心配いただく必要ありません。そして一番重要なことは、追加料金が発生しない点です。利益を守り、損失を最小限に抑えるために、トレードによっては取引期間が終了する前にトレードを売却することも可能です。"
@@ -9410,6 +9511,9 @@ msgstr "当社がお客さまのへの商品またはサービスの妥当性を
 msgid "Where we're one big, multicultural family."
 msgstr "私達は多文化が集まる一つの大きな家族です。"
 
+msgid "Where will the tokens be listed?"
+msgstr "Where will the tokens be listed?"
+
 msgid "Where you can go"
 msgstr "余暇の過ごし方"
 
@@ -9441,7 +9545,7 @@ msgid "Who can purchase the tokens?"
 msgstr "どんな人がトークンを購入することができますか？"
 
 msgid "Who is %1"
-msgstr ""
+msgstr "%1とは"
 
 msgid "Who we are"
 msgstr "Binary.comとは"
@@ -9451,6 +9555,9 @@ msgstr "バイナリー取引が選ばれる理由"
 
 msgid "Why Us?"
 msgstr "サービス概要"
+
+msgid "Why are the tokens convertible into shares, rather than representing shares directly?"
+msgstr "Why are the tokens convertible into shares, rather than representing shares directly?"
 
 msgid "Why become an Affiliate?"
 msgstr "アフィリエイトに参加するメリット"
@@ -9465,7 +9572,7 @@ msgid "Why do Clients choose to use Payment Agents?"
 msgstr "決済サービスをクライアントが利用される理由"
 
 msgid "Why is %1 performing an ICO?"
-msgstr ""
+msgstr "%1がICOを実施するのはなぜですか？"
 
 msgid "Why limit yourself? Whatever your market view, %1 allows you to put your strategy to work and profit from your predictions."
 msgstr "Binary.com (バイナリードットコム)ならどのような相場の見通しを立てても、その投資戦略を実行に移すことができます。"
@@ -9533,6 +9640,9 @@ msgstr "出金限度額"
 msgid "Withdrawal for your account is not allowed at this moment."
 msgstr "現在、この取引口座では出金のお手続きができなくなっております。"
 
+msgid "Withdrawal limit"
+msgstr "Withdrawal limit"
+
 msgid "Withdrawal of Funds from Real Account"
 msgstr "リアル口座から資金のご出金"
 
@@ -9588,7 +9698,7 @@ msgid "YOU HAVE READ, UNDERSTOOD AND AGREE TO THE DISCLAIMER ABOVE."
 msgstr "私は上記の免責事項を一読して理解したうえで、同意します。"
 
 msgid "YOU REPRESENT AND WARRANT THAT SHOULD YOU WISH TO MAKE ANY INVESTMENT IN BINARY GROUP LTD. OR PURCHASE OR SUBSCRIBE FOR ANY TOKENS YOU WILL SATISFY YOURSELF AS TO FULL OBSERVANCE OF THE LAWS OF ANY RELEVANT TERRITORY IN CONNECTION WITH ANY SUCH INVESTMENT INCLUDING OBTAINING ANY REQUISITE GOVERNMENTAL OR OTHER CONSENTS THAT MAY BE REQUIRED AND AS TO DUE AND PROPER COMPLIANCE THEREWITH; AND"
-msgstr ""
+msgstr "YOU REPRESENT AND WARRANT THAT SHOULD YOU WISH TO MAKE ANY INVESTMENT IN BINARY GROUP LTD. OR PURCHASE OR SUBSCRIBE FOR ANY TOKENS YOU WILL SATISFY YOURSELF AS TO FULL OBSERVANCE OF THE LAWS OF ANY RELEVANT TERRITORY IN CONNECTION WITH ANY SUCH INVESTMENT INCLUDING OBTAINING ANY REQUISITE GOVERNMENTAL OR OTHER CONSENTS THAT MAY BE REQUIRED AND AS TO DUE AND PROPER COMPLIANCE THEREWITH; AND"
 
 msgid "YOU REPRESENT AND WARRANT THAT YOU ARE ACCESSING THESE WEBPAGES FOR INFORMATION PURPOSES ONLY; "
 msgstr "私はこれらウェブサイトに情報提供目的にのみアクセスすることをここに表明し、保証します。"
@@ -9764,6 +9874,9 @@ msgstr "アフィリエイト会員が運営するまたはビジネスターゲ
 msgid "You have reached the rate limit of requests per second. Please try later."
 msgstr "ページを更新して頂くか、もう一度お試しください。"
 
+msgid "You have reached your withdrawal limit."
+msgstr "You have reached your withdrawal limit."
+
 msgid "You have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
 msgstr "個人情報に関するお取り扱いを通読し、それに基づいて個人情報が処理されることを承知しています。"
 
@@ -9794,6 +9907,12 @@ msgstr "あなたのコントリビューションを使用する当社の権利
 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
 msgstr "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
+
+msgid "You may also %1open a free %2 account%3."
+msgstr "%1無料口座%2の開設%3を行っていいただく場合があります。"
+
+msgid "You may also read about the ICO on %1FinanceMagnates%2 and %3Leaprate%2."
+msgstr "You may also read about the ICO on %1FinanceMagnates%2 and %3Leaprate%2."
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "%1 APIを介したコンテンツのリクエストから24時間までコンテンツをキャッシュすることができます。"
@@ -9931,6 +10050,9 @@ msgstr "リスク開示通知と当社が提供する、または将来お客さ
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
 msgstr "乱数ジェネレーター（ボラティリティ・インデックス）に基づいた商品は金融市場インデックス（外国為替、株式、コモディティ）に基づく商品が金融商品であるのと同じように、賭博商品であることを十分にご理解ください。"
 
+msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
+msgstr "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
+
 msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr "認証する口座の所有者であることを証明いただくよう伺います。"
 
@@ -10064,7 +10186,7 @@ msgid "Your forex and contracts for differences transactions with %1 are linked 
 msgstr "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 
 msgid "Your fund transfer is successful. Your new balances are:"
-msgstr ""
+msgstr "口座振替が完了しました。移行後残高："
 
 msgid "Your name, email address and contact number"
 msgstr "氏名、メールアドレス、電話番号"
@@ -10138,9 +10260,6 @@ msgstr "お客さまの出金限度額は ¥ %2 です。限度額以上の出�
 msgid "Your withdrawal limit is %1 %2."
 msgstr "お客さまの出金限度額は%1 %2です。限度額以上の出金額をご希望される場合は、本人確認が必要となりますので\n"
 "カスタマーサポートへご連絡ください。"
-
-msgid "You’ll be able to purchase our tokens using the funds in your %1 account. We will soon be introducing native <strong>BTC (Bitcoin)</strong> and <strong>ETH (Ethereum)</strong> account facilities to enable your participation in the ICO."
-msgstr "You’ll be able to purchase our tokens using the funds in your %1 account. We will soon be introducing native <strong>BTC (Bitcoin)</strong> and <strong>ETH (Ethereum)</strong> account facilities to enable your participation in the ICO."
 
 msgid "ZAR 1 per point"
 msgstr "1ポイント＝ZAR 1"
@@ -10231,7 +10350,7 @@ msgid "h"
 msgstr "時間"
 
 msgid "hour"
-msgstr ""
+msgstr "時間"
 
 msgid "hours"
 msgstr "時間"
@@ -10261,7 +10380,7 @@ msgid "minimum available duration"
 msgstr "最短取引期間"
 
 msgid "minute"
-msgstr ""
+msgstr "分"
 
 msgid "minutes"
 msgstr "分"
@@ -10288,7 +10407,7 @@ msgid "page for the exact time of settlement for all contracts. Other websites m
 msgstr "から、全てのトレードに関する正確な終値の適用時間をご確認下さい。他のウェブサイトでは、異なるデータを採用している可能性があります。（例：ニューヨーク時間・午前４時、ロンドン時間・午前５時など）ゆえに、当社が公表している始値、最高値、最安値、及び市場閉場価格は、他のウェブサイトで公表している価格と異なる可能性があります。"
 
 msgid "second"
-msgstr ""
+msgstr "秒"
 
 msgid "seconds"
 msgstr "秒"
@@ -10330,10 +10449,10 @@ msgid "the specific instructions that we receive from you;"
 msgstr "お客さまよりいただいた具体的なご指示"
 
 msgid "tick"
-msgstr ""
+msgstr "tick"
 
 msgid "ticks"
-msgstr ""
+msgstr "tick"
 
 msgid "today"
 msgstr "本日"
@@ -10819,7 +10938,7 @@ msgid "{JAPAN ONLY}Account Type"
 msgstr "口座種類"
 
 msgid "{JAPAN ONLY}Acknowledgment"
-msgstr "出金依頼の確認書"
+msgstr "ご出金依頼の受付完了"
 
 msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
 msgstr "JPY口座開設完了後にお客さまへ簡易書留郵便で口座認証コードを郵送いたします。当社から送信したメールに口座認証コードを記載のうえ返信してください。"
