@@ -23,8 +23,9 @@ const Header = (() => {
         if (!Login.isLoginPages()) {
             checkClientsCountry();
         }
-        if (Client.isLoggedIn()) {
-            document.getElementById('menu-top').classList.add('smaller-font');
+        const menu = document.getElementById('menu-top');
+        if (menu && Client.isLoggedIn()) {
+            menu.classList.add('smaller-font');
             displayAccountStatus();
             if (!Client.get('virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
@@ -211,6 +212,7 @@ const Header = (() => {
 
     const displayNotification = (message, is_error, msg_code = '') => {
         const msg_notification = document.getElementById('msg_notification');
+        if (!msg_notification) return;
         if (msg_notification.getAttribute('data-code') === 'STORAGE_NOT_SUPPORTED') return;
 
         elementInnerHtml(msg_notification, message);
@@ -251,7 +253,6 @@ const Header = (() => {
             );
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
-
 
             const messages = {
                 authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',     'user/authenticate'),
