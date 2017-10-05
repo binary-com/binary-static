@@ -26,8 +26,7 @@ const checkPassword = (password_selector) => {
             'Hint: it would take approximately [_1][_2] to crack this password.', [
                 (daysToCrack === 1000000000 ? '>' : ''),
                 years ? `${years} ${localize('years')}` : `${daysToCrack} ${localize('days')}`,
-            ],
-        );
+            ]);
     }
     div.classList = `days_to_crack fill-bg-color hint ${daysToCrack < 30 ? 'red' : 'green'}`;
     el_password.parentNode.appendChild(div);
