@@ -25,6 +25,7 @@ const TradePage_Beta = (() => {
             return;
         }
         State.set('is_beta_trading', true);
+        $('.container').css('max-width', '1200px');
         Price_Beta.clearFormId();
         if (events_initialized === 0) {
             events_initialized = 1;
@@ -173,6 +174,7 @@ const TradePage_Beta = (() => {
         cleanupChart();
         commonTrading.clean();
         BinarySocket.clear('active_symbols');
+        $('.container').css('max-width', '');
     };
 
     const onDisconnect = () => {
