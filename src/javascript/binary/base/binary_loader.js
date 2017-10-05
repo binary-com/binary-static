@@ -9,7 +9,6 @@ const Page                = require('./page');
 const isStorageSupported  = require('./storage').isStorageSupported;
 const defaultRedirectUrl  = require('./url').defaultRedirectUrl;
 const createElement       = require('./utility').createElement;
-const elementInnerHtml    = require('../common_functions/common_functions').elementInnerHtml;
 const BinarySocket        = require('../websocket_pages/socket');
 const BinarySocketGeneral = require('../websocket_pages/socket_general');
 
@@ -108,10 +107,18 @@ const BinaryLoader = (() => {
 
     const displayMessage = (message) => {
         const content       = container.querySelector('#content .container');
-        const div_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
-        const div_notice    = createElement('div', { class: 'center-text notice-msg', html: localize(message) });
+        const header        = createElement('h1', { text: content.getElementsByTagName('h1')[0].textContent });
+        const div_container = createElement('div', { class: 'logged_out_title_container' });
+        const div_notice    = createElement('p', { class: 'center-text notice-msg', html: localize(message) });
 
-        elementInnerHtml(content, div_container);
+        div_container.appendChild(header);
+
+        const el_to_remove = content.children;
+        while(el_to_remove.length) {
+            el_to_remove[0].remove();
+        }
+
+        content.appendChild(div_container);
         content.appendChild(div_notice);
         const link = content.getElementsByTagName('a')[0];
         if (link) {
