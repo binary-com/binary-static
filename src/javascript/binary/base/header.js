@@ -50,8 +50,8 @@ const Header = (() => {
         }
 
         applyToAllElements('a.logout', (el) => {
-            el.removeEventListener('click', Client.sendLogoutRequest);
-            el.addEventListener('click', Client.sendLogoutRequest);
+            el.removeEventListener('click', () => { Client.sendLogoutRequest(); });
+            el.addEventListener('click', () => { Client.sendLogoutRequest(); });
         });
     };
 
