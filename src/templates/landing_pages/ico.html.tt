@@ -71,6 +71,9 @@
                         <li>
                             <a class="page-scroll" href="#our-growth">[% l("Our growth") %]</a>
                         </li>
+                        <li>
+                            <a href="javascript:;" class="faq-btn">[% l("FAQ") %]</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -177,6 +180,11 @@
                             </div>
                         </div>
                     </div>
+                    <p class="gr-12">
+                        <a class="button" href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">
+                            <span>[% l('How to participate in the [_1] ICO', broker_name) %]</span>
+                        </a>
+                    </p>
                 </div>
             </div>
             <hr>
@@ -218,7 +226,7 @@
                         <h2>[% l("Need more information on the ICO?") %]</h2>
                     </div>
                     <div class="gr-12">
-                        <button id="faq-btn" class="button">[% l("Read our FAQ") %]</button>
+                        <button id="faq-btn" class="button faq-btn">[% l("Read our FAQ") %]</button>
                     </div>
                 </div>
             </div>
@@ -336,7 +344,9 @@
                     <div class="gr-row">
                         <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
                             <h2 class="content-inverse-color">[% l("Binary Group Ltd. acquired 100% of Binary Ltd. in August 2017 for the purposes of the ICO.") %]</h2>
-                            <button onclick="window.location.href='[% request.url_for('https://ico_documents.binary.com/binary_ltd_2016_annual_report.pdf') %]'" class="button">[% l("View Binary Group Ltd's 2016 annual report") %]</button>
+                            <a class="button" href="https://ico_documents.binary.com/binary_ltd_2016_annual_report.pdf" target="_blank">
+                                <span>[% l('View Binary Ltd.\'s 2016 annual report') %]</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -481,62 +491,104 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("What is an ICO?") %]</h4>
-                            <p>[% l("An \‘Initial Coin Offering\’ (or \‘ICO\’ for short) is a fundraising method that\’s relatively similar to an Initial Public Offering (IPO). In an ICO, cryptocurrency such as \‘coloured coins\’ or \‘Ethereum tokens\’ are issued instead of shares.") %]</p>
+                            <p>[% l("An \‘Initial Coin Offering\’ (or \‘ICO\’) is a fundraising method that is relatively similar to an Initial Public Offering (IPO). However, in an ICO, cryptocurrency - such as \‘coloured coins\’ or \‘Ethereum tokens\’ - is issued to investors instead of shares.") %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Why is [_1] performing an ICO?", broker_name) %]</h4>
-                            <p>[% l("[_1] is a well-established company founded in 1999. The growth of our business led us to consider an IPO, as is the case with most successful companies. However, we believe that stock exchanges will be gradually replaced by cryptocurrency exchanges in the coming decade, and IPOs will be gradually replaced by ICOs. This is why we decided to perform an ICO instead of an IPO.", broker_name) %]</p>
+                            <p>[% l("[_1] was founded in 1999. Today, it is a well-established, and very successful, company. Like many successful companies, the growth of our business led us to consider an IPO.", broker_name) %]</p>
+                            <p>[% l("However, we believe that in the coming decade traditional stock exchanges will gradually be replaced by blockchain exchanges, and IPOs will gradually be replaced by ICOs. This is because blockchain technologies are much more performant than the legacy technologies of traditional stock exchanges, leading to lower transaction fees, faster settlement times, and error-free immutable audit trails. Hence, we decided to perform an ICO instead of an IPO.") %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How will the ICO work?") %]</h4>
-                            <p>[% l("[_1] will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as \‘coloured coins\’ on the Bitcoin blockchain, and \‘ERC20\’ tokens on the Ethereum blockchain.", broker_name) %]</p>
-                            <p>[% l("Regardless of the type of token, each token will provide you with two rights:") %]</p>
+                            <p>[% l("[_1] will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as \‘ERC20\’ tokens on the Ethereum blockchain.", broker_name) %]</p>
+                            <p>[% l("Regardless of the type of token issued, each token will provide investors with two rights:") %]</p>
                             <ol>
-                                <li>[% l("The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares") %]</li>
-                                <li>[% l("The right to convert tokens into Ordinary Shares") %]</li>
+                                <li>[% l("The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares; and") %]</li>
+                                <li>[% l("The right to convert tokens into Ordinary Shares.") %]</li>
                             </ol>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
+                            <h4>[% l("Why are the tokens convertible into shares, rather than representing shares directly?") %]</h4>
+                            <p>[% l("Corporate laws in most jurisdictions (including the British Virgin Islands, where our Group company is incorporated) do not yet support blockchain-based share registers.") %]</p>
+                            <p>[% l("Therefore, the tokens are issued as derivative securities, convertible into Ordinary Shares.") %]</p>
+                            <p>[% l("The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("When will the tokens be offered?") %]</h4>
+                            <p>[% l("The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
                             <h4>[% l("How will the tokens be offered?") %]</h4>
-                            <p>[% l("The tokens will be offered over a period of one month. The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017. The ICO price and auction method will be announced in due course.") %]</p>
+                            <p>[% l("The tokens will be offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Who can purchase the tokens?") %]</h4>
-                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account, and who have completed our account authentication process.", broker_name) %]</p>
+                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account, and who have completed our [_2]account authentication/KYC process[_3].", broker_name, '<a href="https://ico_documents.binary.com/2017_Authentication_Process.pdf" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Is the ICO available in all jurisdictions?") %]</h4>
-                            <p>[% l("The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions.") %]</p>
+                            <p>[% l("The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions. In particular, the ICO is not available to US investors.") %]</p>
+                            <p>[% l("To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the [_1]Information Memorandum[_2] page.", '<a href="' _ request.url_for('ico-disclaimer') _ '">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
-                            <h4>[% l("How can I purchase your tokens?") %]</h4>
-                            <p>[% l("You\’ll be able to purchase our tokens using the funds in your [_1] account. We will soon be introducing native <strong>BTC (Bitcoin)</strong> and <strong>ETH (Ethereum)</strong> account facilities to enable your participation in the ICO.", broker_name) %]</p>
+                            <h4>[% l("How can I purchase tokens?") %]</h4>
+                            <p>[% l("You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.", broker_name, '<a href="' _ request.url_for('/cashier/payment_methods') _ '" target="_blank">', '</a>') %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Where will the tokens be listed?") %]</h4>
+                            <p>[% l("[_1] has entered into an agreement to list the tokens on the [_2]Lykke.com[_3] cryptocurrency exchange. Lykke is a Swiss fintech company building a global blockchain-powered marketplace for securities-linked tokens.", broker_name, '<a href="https://www.lykke.com" target="_blank">', '</a>') %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("What are the benefits of purchasing tokens?") %]</h4>
+                            <p>[% l("There will be two main benefits of purchasing tokens.") %]</p>
+                            <p>[% l("First, token holders will receive dividend-linked payments equivalent to the dividends paid by the Company on its Ordinary Shares. Therefore, token holders will share in the future success of the Company in the same way as do shareholders.") %]</p>
+                            <p>[% l("Second, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("What are the risks of purchasing tokens?") %]</h4>
+                            <p>[% l("Although [_1] has been a successful company since its inception in 1999, the tokens should be considered a high risk investment. The [_1] business is subject to a number of risks which could adversely affect the company and hence affect the future value of the tokens. These risks are detailed in the [_2]Information Memorandum[_3] and should be considered very carefully before proceeding with any investment in the tokens.", broker_name, '<a href="' _ request.url_for('ico-disclaimer') _ '">', '</a>') %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("How can I find out more about [_1]?", broker_name) %]</h4>
+                            <p>[% l("To find out more about [_1], you can read about our [_2]group history[_3], [_4]regulatory status[_3], and [_5]company culture[_3]. You can also read the [_6]company blog[_3].", broker_name, '<a href="' _ request.url_for('group-history') _ '" target="_blank">', '</a>', '<a href="' _ request.url_for('regulation') _ '" target="_blank">', '<a href="' _ request.url_for('careers') _ '" target="_blank">', '<a href="https://blog.binary.com/" target="_blank">') %]</p>
+                            <p>[% l("You may also read about the ICO on [_1]FinanceMagnates[_2] and [_3]Leaprate[_2].", '<a href="https://www.financemagnates.com/binary-options/brokers/exclusive-binary-com-ico-shows-company-profits-surpass-20-mln-2017/" target="_blank">', '</a>', '<a href="https://www.leaprate.com/binary-options/broker/binary-com-ico-finances-binary-options-broker/" target="_blank">') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I learn more about ICOs and cryptocurrencies?") %]</h4>
-                            <p>[% l("To learn more about Bitcoin, we recommend that you <a href='https://blockchain.info/wallet/#/'>open a Bitcoin wallet with Blockchain</a> and <a href='https://www.bitcoin.com/buy-bitcoin'>purchase bitcoins using a local exchange</a> in your country.") %]</p>
-                            <p>[% l("To learn more about Ethereum, we recommend that you install the <a href='https://metamask.io/'>Metamask plugin for Chrome</a>, which will allow you to convert your Bitcoin into Ether.") %]</p>
-                            <p>[% l("To learn how to trade cryptocurrency assets, we recommend that you open an account with US-based cryptocurrency exchange, <a href='https://poloniex.com/'>POLONIEX</a>.") %]</p>
+                            <p>[% l("To learn more about Bitcoin, we recommend that you open a Bitcoin wallet with [_1][_2]\’s simple bitcoin wallet[_3], and purchase bitcoins using a local exchange in your country.", '<a href="https://bitcoin-wallet.binary.com/" target="_blank">', broker_name, '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How do I stay informed on the [_1] ICO?", broker_name) %]</h4>
                             <p>[% l("Please subscribe to our mailing list using the form below for occasional announcements relating to the ICO.") %]</p>
+                            <p>[% l("You may also [_1]open a free [_2] account[_3].", '<a href="' _ request.url_for('home') _ '" target="_blank">', broker_name, '</a>') %]</p>
                         </div>
                     </div>
                 </div>

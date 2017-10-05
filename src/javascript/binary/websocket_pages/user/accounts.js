@@ -60,7 +60,7 @@ const Accounts = (() => {
 
         $(form_id).find('tbody')
             .append($('<tr/>')
-                .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': getCompanyName(account) })))
+                .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account)}` })))
                 .append($('<td/>', { text: getAvailableMarkets(account) }))
                 .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', ') }))
                 .append($('<td/>')
@@ -115,7 +115,7 @@ const Accounts = (() => {
     const populateMultiAccount = (currencies) => {
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
-                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': getCompanyName({ real: 1 }) })))
+                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 })}` })))
                 .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));

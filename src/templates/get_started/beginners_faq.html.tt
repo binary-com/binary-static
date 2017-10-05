@@ -5,9 +5,6 @@
     <h3>[% l("I'm new to binaries, where do I start?") %]</h3>
     <p>[% l("The first step is to open an account. You can <a target='_blank' href='[_1]'>apply online</a> in just a few minutes.", request.url_for('/')) %]</p>
 
-    <h3>[% l("Do I need to send any documents?") %]</h3>
-    <p>[% l("We don't usually require any documents as we can verify your identity online.") %]</p>
-
     <h2>[% l("Client funds") %]</h2>
     <h3>[% l("Where does [_1] hold my funds?", website_name) %]</h3>
     <p>[% l("We segregate all client funds and hold them in secure and licensed financial institutions, according to the conditions of our trading licenses.") %]</p>
