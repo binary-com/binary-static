@@ -123,32 +123,14 @@ label {
 }
 
 .form-validation-message {
-    h4 {
-        &:after {
-            content: '\25BE';
-            font-style: normal;
-        }
-        font-size: 13px !important;
-        font-style: italic !important;
-        color: $COLOR_BLACK !important;
-        background-color: transparent !important;
-        background-image: none !important;
-        border: 0 !important;
-        padding: 5px 0px 10px !important;
-    }
-    .ui-accordion-header-collapsed {
-        margin-bottom: -15px !important;
-    }
+    padding: 0;
 }
 
 .form-validation-desc {
-    padding: 0px 10px !important;
-    border: 0 !important;
-    background-color: $COLOR_LIGHT_GRAY;
-
     span {
         font-size: $FONT_SIZE_XS;
-        background-color: $COLOR_LIGHT_GRAY;
+        margin-bottom: -15px;
+        padding: 0;
     }
 }
 
