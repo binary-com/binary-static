@@ -44,25 +44,23 @@ const Page = (() => {
         $(document).ready(() => {
             // Cookies is not always available.
             // So, fall back to a more basic solution.
-            window.addEventListener('storage', (jq_event) => {
-                if (jq_event.originalEvent && jq_event.originalEvent.key) {
-                    switch (jq_event.originalEvent.key) {
-                        case 'active_loginid':
-                            if (jq_event.originalEvent.newValue === '') {
-                                // logged out
-                                reload();
-                            } else if (!window.is_logging_in) {
-                                // loginid switch
-                                reload();
-                            }
-                            break;
-                        case 'new_release_reload_time':
-                            if (jq_event.originalEvent.newValue !== jq_event.originalEvent.oldValue) {
-                                reload(true);
-                            }
-                            break;
-                        // no default
-                    }
+            window.addEventListener('storage', (evt) => {
+                switch (evt.key) {
+                    case 'active_loginid':
+                        if (evt.newValue === '') {
+                            // logged out
+                            reload();
+                        } else if (!window.is_logging_in) {
+                            // loginid switch
+                            reload();
+                        }
+                        break;
+                    case 'new_release_reload_time':
+                        if (evt.newValue !== evt.oldValue) {
+                            reload(true);
+                        }
+                        break;
+                    // no default
                 }
             });
             scrollToTop();
