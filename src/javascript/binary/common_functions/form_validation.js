@@ -1,10 +1,11 @@
+const Password              = require('./check_password');
+const addComma              = require('./currency').addComma;
+const getDecimalPlaces      = require('./currency').getDecimalPlaces;
+const compareBigUnsignedInt = require('./string_util').compareBigUnsignedInt;
 const Client                = require('../base/client');
 const localize              = require('../base/localize').localize;
 const urlParam              = require('../base/url').param;
 const isEmptyObject         = require('../base/utility').isEmptyObject;
-const addComma              = require('../common_functions/currency').addComma;
-const getDecimalPlaces      = require('../common_functions/currency').getDecimalPlaces;
-const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
     const forms               = {};
@@ -110,7 +111,14 @@ const Validation = (() => {
         return false;
     };
     const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);
-    const validPassword     = value => /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value);
+    const validPassword     = (value, options, field) => {
+        if (/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value)) {
+            Password.checkPassword(field.selector);
+            return true;
+        }
+        // else
+        return false;
+    };
     const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d]+/.test(value);
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><|]+/.test(value);
     const validAddress      = value => !/[`~!$%^&*_=+[}{\]\\"?><|]+/.test(value);
@@ -246,13 +254,12 @@ const Validation = (() => {
     };
 
     const showError = (field, message) => {
-        if (/#address_line_[1|2]/.test(field.selector)) {
-            clearError(field);
-            field.$error_address.setVisibility(1);
-        } else {
-            clearError(field);
-        }
+        clearError(field);
+        Password.removeCheck(field.selector);
         field.$error.text(localize(message)).setVisibility(1);
+        if (/#address_line_[1|2]/.test(field.selector)) {
+            field.$error_address.setVisibility(1);
+        }
     };
 
     const validate = (form_selector) => {
