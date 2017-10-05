@@ -812,16 +812,8 @@
                         border: 0;
                     }
                 }
-                #tab_asset_index-content .ui-tabs-panel {
-                    border: none;
-                }
-                #portfolio #portfolio-content > div, #tab_trading_times-content > p {
+                #portfolio #portfolio-content > div {
                     margin: 0 10px 10px;
-                }
-                #tab_trading_times-content, #tab_asset_index-content {
-                    select {
-                        margin-bottom: 10px;
-                    }
                 }
                 .toggle-content .gr-padding-10 {
                     padding-top: 0;
