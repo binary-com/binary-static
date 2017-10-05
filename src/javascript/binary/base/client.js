@@ -226,9 +226,12 @@ const Client = (() => {
     const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'japan'));
 
     const activateByClientType = (section_id) => {
-        const el_section   = section_id ? document.getElementById(section_id) : document.body;
-        const topbar_class = document.getElementById('topbar').classList;
-
+        const topbar = document.getElementById('topbar');
+        if (!topbar) {
+            return;
+        }
+        const topbar_class          = topbar.classList;
+        const el_section            = section_id ? document.getElementById(section_id) : document.body;
         const primary_bg_color_dark = 'primary-bg-color-dark';
         const secondary_bg_color    = 'secondary-bg-color';
 

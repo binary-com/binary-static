@@ -131,7 +131,7 @@ const createElement = (tag_name, attributes) => {
  * @param {String} func_selector: method of finding the selector, optional
  * @param {Element} el_parent: parent of the selector, document by default
  */
-const applyToAllElements = (selector, funcToRun, func_selector, el_parent = document) => {
+const applyToAllElements = (selector, funcToRun, func_selector, el_parent) => {
     if (!selector || !funcToRun) {
         return;
     }
@@ -148,7 +148,8 @@ const applyToAllElements = (selector, funcToRun, func_selector, el_parent = docu
             function_selector = 'getElementsByTagName';
         }
     }
-    const el = element_to_select.nodeName || typeof element_to_select === 'object' ? element_to_select : el_parent[function_selector](element_to_select);
+    const parent_element = el_parent || document;
+    const el = element_to_select.nodeName || typeof element_to_select === 'object' ? element_to_select : parent_element[function_selector](element_to_select);
     for (let i = 0; i < el.length; i++) {
         funcToRun(el[i]);
     }

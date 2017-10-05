@@ -10,7 +10,11 @@ const Menu = (() => {
     const init = () => {
         main_menu = document.getElementById('main-menu');
         menu_top  = document.getElementById('menu-top');
-        items     = main_menu.getElementsByClassName('item');
+        if (!main_menu || !menu_top) {
+            return;
+        }
+
+        items = main_menu.getElementsByClassName('item');
 
         applyToAllElements('li', (el) => { el.classList.remove('active'); }, '', menu_top);
         hideMainMenu();
@@ -111,7 +115,8 @@ const Menu = (() => {
     };
 
     const makeMobileMenu = () => {
-        if (document.getElementById('mobile-menu-container').offsetParent) {
+        const mobile_menu = document.getElementById('mobile-menu-container');
+        if (mobile_menu && mobile_menu.offsetParent) {
             $('#mobile-menu').mmenu({
                 position       : 'right',
                 zposition      : 'front',

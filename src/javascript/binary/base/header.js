@@ -38,12 +38,16 @@ const Header = (() => {
 
     const bindClick = () => {
         const logo = document.getElementById('logo');
-        logo.removeEventListener('click', logoOnClick);
-        logo.addEventListener('click', logoOnClick);
+        if (logo) {
+            logo.removeEventListener('click', logoOnClick);
+            logo.addEventListener('click', logoOnClick);
+        }
 
         const btn_login = document.getElementById('btn_login');
-        btn_login.removeEventListener('click', loginOnClick);
-        btn_login.addEventListener('click', loginOnClick);
+        if (btn_login) {
+            btn_login.removeEventListener('click', loginOnClick);
+            btn_login.addEventListener('click', loginOnClick);
+        }
 
         applyToAllElements('a.logout', (el) => {
             el.removeEventListener('click', Client.sendLogoutRequest);

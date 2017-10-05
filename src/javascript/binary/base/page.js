@@ -154,8 +154,10 @@ const Page = (() => {
             const end_note = document.getElementById('end-note');
 
             elementInnerHtml(end_note, message);
-            end_note.setVisibility(1);
-            document.getElementById('footer').style['padding-bottom'] = end_note.offsetHeight;
+            if (end_note) end_note.setVisibility(1);
+
+            const footer = document.getElementById('footer');
+            if (footer) footer.style['padding-bottom'] = end_note.offsetHeight;
         }
     };
 
