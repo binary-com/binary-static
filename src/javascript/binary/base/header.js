@@ -210,12 +210,12 @@ const Header = (() => {
         applyToAllElements('li', (el) => { elementTextContent(el, localized_text); }, '', user_accounts);
     };
 
-    const displayNotification = (message, is_error, msg_code = '') => {
+    const displayNotification = (message, is_error = false, msg_code = '') => {
         const msg_notification = document.getElementById('msg_notification');
         if (!msg_notification) return;
         if (msg_notification.getAttribute('data-code') === 'STORAGE_NOT_SUPPORTED') return;
 
-        elementInnerHtml(msg_notification, message);
+        msg_notification.html(message);
         msg_notification.setAttribute('data-message', message);
         msg_notification.setAttribute('data-code', msg_code);
 
