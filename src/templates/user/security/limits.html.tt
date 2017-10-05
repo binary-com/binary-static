@@ -19,8 +19,8 @@
                     [{ text=l("Maximum account cash balance") _ account_balance },       { id="account-balance" }],
                     [{ text=l("Maximum aggregate payouts on open positions") _ payout }, { id="payout" }],
 
-                    [{ class="ja-hide" text=l("Maximum aggregate payouts on open positions per symbol and contract type") _ payout_per_symbol_and_contract_type },
-                     { class="ja-hide" id="payout-per-symbol-and-contract-type" }],
+                    [{ text=l("Maximum aggregate payouts on open positions per symbol and contract type") _ payout_per_symbol_and_contract_type },
+                     { id="payout-per-symbol-and-contract-type" }],
 
                     [{ text=l("Maximum aggregate payouts on open positions per symbol") },
                      { id="payout-per-symbol" }],
