@@ -107,19 +107,13 @@ const BinaryLoader = (() => {
 
     const displayMessage = (message) => {
         const content       = container.querySelector('#content .container');
-        const header        = createElement('h1', { text: content.getElementsByTagName('h1')[0].textContent });
-        const div_container = createElement('div', { class: 'logged_out_title_container' });
+        const div_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
         const div_notice    = createElement('p', { class: 'center-text notice-msg', html: localize(message) });
 
-        div_container.appendChild(header);
+        div_container.appendChild(div_notice);
 
-        const el_to_remove = content.children;
-        while(el_to_remove.length) {
-            el_to_remove[0].remove();
-        }
+        content.html(div_container);
 
-        content.appendChild(div_container);
-        content.appendChild(div_notice);
         const link = content.getElementsByTagName('a')[0];
         if (link) {
             link.addEventListener('click', () => { Login.redirectToLogin(); });

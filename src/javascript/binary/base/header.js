@@ -83,7 +83,7 @@ const Header = (() => {
                     }
                 }
                 applyToAllElements('.login-id-list', (el) => {
-                    elementInnerHtml(el, loginid_select.innerHTML);
+                    el.html(loginid_select.innerHTML);
                     applyToAllElements('a', (ele) => {
                         ele.removeEventListener('click', loginIDOnClick);
                         ele.addEventListener('click', loginIDOnClick);

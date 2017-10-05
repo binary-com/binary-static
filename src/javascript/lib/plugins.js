@@ -31,6 +31,15 @@ Element.prototype.insertAfter = function(referenceNode) {
     referenceNode.parentNode.insertBefore(this, referenceNode.nextSibling);
 };
 
+Element.prototype.html = function(content) {
+    if (typeof content === 'object') {
+        this.innerHTML = '';
+        this.appendChild(content);
+    } else {
+        this.innerHTML = content;
+    }
+};
+
 (function ($) {
     $.fn.setVisibility = function(make_visible) {
         this[(make_visible ? 'remove' : 'add') + 'Class']('invisible');

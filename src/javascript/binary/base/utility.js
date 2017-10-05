@@ -5,9 +5,8 @@
  * @param theme: dark or white
  */
 const showLoadingImage = (container, theme = 'dark') => {
-    if (container) {
-        container.innerHTML = createElement('div', { class: `barspinner ${theme}`, html: Array.from(new Array(5)).map((x, i) => `<div class="rect${i + 1}"></div>`).join('') });
-    }
+    const loading_div = createElement('div', { class: `barspinner ${theme}`, html: Array.from(new Array(5)).map((x, i) => `<div class="rect${i + 1}"></div>`).join('') });
+    container.html(loading_div);
 };
 
 /**
@@ -115,7 +114,7 @@ const createElement = (tag_name, attributes) => {
         if (attr === 'text') {
             el.textContent = value;
         } else if (attr === 'html') {
-            el.innerHTML = value;
+            el.html(value);
         } else {
             el.setAttribute(attr, value);
         }
