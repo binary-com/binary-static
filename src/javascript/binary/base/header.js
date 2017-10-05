@@ -137,7 +137,7 @@ const Header = (() => {
                     el.setVisibility(1);
                     applyToAllElements('a', (ele) => {
                         ele.setVisibility(1).setAttribute('href', Url.urlFor(url));
-                        elementInnerHtml(ele, span);
+                        ele.html(span);
                     }, '', el);
                 });
             };
