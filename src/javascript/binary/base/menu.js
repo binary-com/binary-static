@@ -52,7 +52,7 @@ const Menu = (() => {
 
     const onUnload = () => {
         main_menu.removeEventListener('mouseleave', onMouseLeave);
-        applyToAllElements(items, (el) => { el.classList.removeEventListener('mouseenter', onMouseEnter); });
+        applyToAllElements(items, (el) => { el.removeEventListener('mouseenter', onMouseEnter); });
     };
 
     const removeHover = () => {
