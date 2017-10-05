@@ -254,7 +254,7 @@ const Authenticate = (() => {
         const showSuccess = () => {
             const msg = buildMessage('We are reviewing your account. For more details [_1]contact us[_2].',
                 [`<a href="${Url.urlFor('contact')}">`, '</a>']);
-            displayNotification(msg.message, false, 'under_review');
+            displayNotification(msg.message, false, 'document_under_review');
             $('#authentication-message > div#not_authenticated').setVisibility(0);
             $('#authentication-message > div#not_authenticated_financial').setVisibility(0); // Just hide it. ✓ 
             $('#success-message').setVisibility(1);
