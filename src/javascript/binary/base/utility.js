@@ -6,7 +6,7 @@
  */
 const showLoadingImage = (container, theme = 'dark') => {
     if (container) {
-        container.innerHTML(createElement('div', { class: `barspinner ${theme}`, html: Array.from(new Array(5)).map((x, i) => `<div class="rect${i + 1}"></div>`).join('') }));
+        container.innerHTML = createElement('div', { class: `barspinner ${theme}`, html: Array.from(new Array(5)).map((x, i) => `<div class="rect${i + 1}"></div>`).join('') });
     }
 };
 
