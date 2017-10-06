@@ -339,7 +339,7 @@ const ViewPopup = (() => {
                         }
 
                         if (i === idx) {
-                            createAuditRow(table, this_time, this_price, localize(`${pre_remark} ${remark}`), ['secondary-bg-color', 'content-inverse-color', 'align-self-center']);
+                            createAuditRow(table, this_time, this_price, localize(`${pre_remark} ${remark}`), ['secondary-bg-color', 'content-inverse-color']);
                         } else if (is_start_time) {
                             createAuditRow(table, this_time, this_price, localize('Start Time'), secondary_classes);
                             has_start_time = true;
