@@ -35,7 +35,7 @@ After HTML build, you can run `sudo grunt connect` then visits [https://localhos
 #### Setup
 * Install `Homebrew` by `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 * Install `GNU gettext` by `brew install gettext`
-* Install `Crowdin CLI` by `brew install crowdin`
+* Install `Crowdin CLI` by `brew install crowdin` or follow the instructions here: [https://support.crowdin.com/cli-tool/](https://support.crowdin.com/cli-tool/)
 * Get [Crowdin API Key](https://crowdin.com/project/binary-static/settings#api) and add this line to your _.bash_profile_: `export CROWDIN_API_KEY='put API Key here'`<br/>
 **IMPORTANT!** This key gives full access to all your Crowdin project data. Treat this just like a password and never push it to any public repo.
 
