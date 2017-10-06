@@ -8,9 +8,9 @@ const urlParam              = require('../base/url').param;
 const isEmptyObject         = require('../base/utility').isEmptyObject;
 
 const Validation = (() => {
-    const forms               = {};
-    const error_class         = 'error-msg';
-    const hidden_class        = 'invisible';
+    const forms        = {};
+    const error_class  = 'error-msg';
+    const hidden_class = 'invisible';
 
     const events_map = {
         input   : 'input change',
