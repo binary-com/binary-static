@@ -28,7 +28,7 @@ const AssetIndexUI = (() => {
 
         if ($container.contents().length) return;
 
-        showLoadingImage($container);
+        showLoadingImage($container[0]);
 
         is_framed = (config && config.framed);
         if (!asset_index) {
