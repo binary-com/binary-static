@@ -109,10 +109,11 @@
                 #trade_details_entry_spot, #trade_details_current_spot {
                     line-height: 32px;
 
+                    span {
+                        padding-right: 20px;
+                    }
                     a {
-                        float: right;
                         margin-bottom: 0;
-                        cursor: pointer;
                     }
                 }
                 .audit-table {
