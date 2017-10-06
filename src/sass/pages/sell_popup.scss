@@ -133,6 +133,8 @@
 
                         &.remark, &.secondary-time, &.secondary-bg-color {
                             font-weight: bold;
+                            display: flex;
+                            justify-content: center;
                         }
                         &.secondary-time {
                             border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
