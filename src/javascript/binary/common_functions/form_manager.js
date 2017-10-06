@@ -89,7 +89,7 @@ const FormManager = (() => {
         if ($btn.length && !$btn.find('.barspinner').length) {
             $btn.attr('disabled', 'disabled');
             const $btn_text = $('<span/>', { text: $btn.text(), class: 'invisible' });
-            showLoadingImage($btn, 'white');
+            showLoadingImage($btn[0], 'white');
             $btn.append($btn_text);
         }
     };

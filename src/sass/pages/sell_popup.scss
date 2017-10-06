@@ -109,10 +109,11 @@
                 #trade_details_entry_spot, #trade_details_current_spot {
                     line-height: 32px;
 
+                    span {
+                        padding-right: 20px;
+                    }
                     a {
-                        float: right;
                         margin-bottom: 0;
-                        cursor: pointer;
                     }
                 }
                 .audit-table {
@@ -133,6 +134,8 @@
 
                         &.remark, &.secondary-time, &.secondary-bg-color {
                             font-weight: bold;
+                            display: flex;
+                            justify-content: center;
                         }
                         &.secondary-time {
                             border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
