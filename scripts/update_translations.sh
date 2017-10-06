@@ -5,6 +5,15 @@ YELLOW='\033[0;33m'
 WHITE='\033[1;37m'
 RESET='\033[0m'
 
+if ! [ -x "$(command -v crowdin)" ]; then
+    if [ -f /usr/local/bin/crowdin-cli.jar ]; then
+        alias crowdin="java -jar /usr/local/bin/crowdin-cli.jar"
+    else
+        echo ${YELLOW}"crowdin-cli not found. Please follow the instructions here: https://support.crowdin.com/cli-tool/#installation"${RESET}
+        exit 1
+    fi
+fi
+
 function message {
     echo ${GREEN}"  >"${RESET} $1
 }
