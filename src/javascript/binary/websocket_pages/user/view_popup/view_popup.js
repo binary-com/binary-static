@@ -306,25 +306,30 @@ const ViewPopup = (() => {
         populateAuditTable(show);
 
         div.appendChild(table);
+        showExplanation(div);
+        div.insertAfter(document.getElementById('sell_details_chart_wrapper'));
+    };
 
+    const map_contract_type = {
+        'expiry'        : 'endsinout',
+        'asian'         : 'asian',
+        'even|odd'      : 'evenodd',
+        'over|under'    : 'overunder',
+        'digit'         : 'digits',
+        'upordown|range': 'staysinout',
+        'touch'         : 'touchnotouch',
+        'call|put'      : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
+    };
+
+    const showExplanation = (div) => {
         let explanation_section = 'explain_';
-        if (/expiry/i.test(contract.contract_type)) {
-            explanation_section += 'endsinout';
-        } else if (/asian/i.test(contract.contract_type)) {
-            explanation_section += 'asian';
-        } else if (/even|odd/i.test(contract.contract_type)) {
-            explanation_section += 'evenodd';
-        } else if (/over|under/i.test(contract.contract_type)) {
-            explanation_section += 'overunder';
-        } else if (/digit/i.test(contract.contract_type)) {
-            explanation_section += 'digits';
-        } else if (/upordown|range/i.test(contract.contract_type)) {
-            explanation_section += 'staysinout';
-        } else if (/touch/i.test(contract.contract_type)) {
-            explanation_section += 'touchnotouch';
-        } else if (/call|put/i.test(contract.contract_type)) {
-            explanation_section += +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower';
-        }
+        Object.keys(map_contract_type).some((type) => {
+            if (new RegExp(type, 'i').test(contract.contract_type)) {
+                explanation_section += typeof map_contract_type[type] === 'function' ? map_contract_type[type]() : map_contract_type[type];
+                return true;
+            }
+            return false;
+        });
         const xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState !== 4 || this.status !== 200) {
@@ -340,8 +345,6 @@ const ViewPopup = (() => {
         };
         xhttp.open('GET', urlFor('explanation'), true);
         xhttp.send();
-
-        div.insertAfter(document.getElementById('sell_details_chart_wrapper'));
     };
 
     const parseTicksResponse = (table, response, tick_time, remark) => (
