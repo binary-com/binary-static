@@ -792,14 +792,8 @@
                 .toggle-content, #trade_live_chart, #trade_live_chart #webtrader_chart {
                     height: 100%;
                 }
-                #trade_live_chart table {
-                    width: 100%;
-                    height: 98%;
-
-                    td {
-                        height: 100%;
-                        border: 0;
-                    }
+                #trade_live_chart .webtrader-charts-chart-window-contianer {
+                    padding-top: 10px;
                 }
                 #portfolio #portfolio-content > div {
                     margin: 0 10px 10px;
