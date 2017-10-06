@@ -127,6 +127,7 @@
         }
         .col-right {
             @include BIDIR_PROP(padding-left, padding-right, 0);
+            max-height: 520px;
         }
         #contract_prices_container {
             margin-top: 5px;
