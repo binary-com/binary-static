@@ -1,3 +1,5 @@
+const createElement = require('../base/utility').createElement;
+
 // show hedging value if trading purpose is set to hedging else hide it
 const detectHedging = ($purpose, $hedging) => {
     $purpose.change(() => {
@@ -17,12 +19,11 @@ const jqueryuiTabsToDropdown = ($container) => {
 };
 
 const makeOption = (options) => {
-    const option_el = document.createElement('option');
-    option_el.text  = options.text;
     // setting null value helps with detecting required error
     // on 'Please select' options
     // that have no value of their own
-    option_el.value = options.value || '';
+    const option_el = createElement('option', { text: options.text, value: options.value || '' });
+
     if (options.is_disabled && options.is_disabled.toLowerCase() === 'disabled') {
         option_el.setAttribute('disabled', 'disabled');
     }
@@ -47,9 +48,7 @@ const isVisible = elem => !(!elem || (elem.offsetWidth === 0 && elem.offsetHeigh
  * send a wrong val in case browser 'pretends' to support
  */
 const checkInput = (type, wrong_val) => {
-    const input = document.createElement('input');
-    input.setAttribute('type', type);
-    input.setAttribute('value', wrong_val);
+    const input = createElement('input', { type, value: wrong_val });
     return (input.value !== wrong_val);
 };
 
