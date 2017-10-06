@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-06 03:49-0400\n"
+"PO-Revision-Date: 2017-10-06 05:05-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -701,6 +701,9 @@ msgstr "Token API"
 
 msgid "API token for third party applications."
 msgstr "Token de API para aplicaciones de terceros."
+
+msgid "ATM"
+msgstr ""
 
 msgid "AUD 1 per point"
 msgstr ""
@@ -2263,6 +2266,12 @@ msgstr "Los contratos ofrecidos por iBinary Investments (Europe) Ltd. tienen un 
 msgid "Contracts sold"
 msgstr "Contratos expirados"
 
+msgid "Contracts where the barrier is different from the entry spot."
+msgstr ""
+
+msgid "Contracts where the barrier is the same as entry spot."
+msgstr ""
+
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "Generalmente no se ofrecerán contratos con ventajas inferiores a 0.05 a 1 (por ejemplo, pagas de menos de USD/GBP/EUR/AUD 1.05 por cada USD/GBP/EUR/AUD 1 apostado)."
 
@@ -2694,6 +2703,12 @@ msgstr "Debido a recientes cambios en las regulaciones, nos vemos obligados a pe
 
 msgid "Duration"
 msgstr "Duración"
+
+msgid "Duration above 7 days"
+msgstr ""
+
+msgid "Duration up to 7 days"
+msgstr ""
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "Durante los mercados rápidos (por ejemplo, en períodos de movimientos muy rápidos del mercado), puede que se ofrezcan contratos con precios menos favorables que los ofrecidos en las condiciones habituales del mercado."
@@ -5413,6 +5428,9 @@ msgstr ""
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Máximo de pagos agregados en posiciones abiertas"
 
+msgid "Maximum aggregate payouts on open positions per symbol"
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr ""
 
@@ -5723,6 +5741,9 @@ msgid "No. There's no cost to sign up to the affiliate program."
 msgstr "No. No hay ningún costo para acceder al programa de afiliados."
 
 msgid "No. of Tokens"
+msgstr ""
+
+msgid "Non-ATM"
 msgstr ""
 
 msgid "Not"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-06 03:50-0400\n"
+"PO-Revision-Date: 2017-10-06 05:07-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -700,6 +700,9 @@ msgstr "Mã API Token"
 
 msgid "API token for third party applications."
 msgstr "Mã API cho ứng dụng của bên thứ ba."
+
+msgid "ATM"
+msgstr ""
 
 msgid "AUD 1 per point"
 msgstr "1 AUD cho 1 điểm"
@@ -2259,6 +2262,12 @@ msgstr "Các hợp đồng được cung cấp bởi Công ty TNHH Đầu tư Bi
 msgid "Contracts sold"
 msgstr "Hợp đồng đã được bán"
 
+msgid "Contracts where the barrier is different from the entry spot."
+msgstr ""
+
+msgid "Contracts where the barrier is the same as entry spot."
+msgstr ""
+
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "Hợp đồng thường sẽ không được chào tại tỉ lệ cược dưới 0.05-tới-1 (ví dụ tiền thưởng của dưới USD/GBP/EUR/AUD 1.05 cho mỗi 1 đơn vị vốn USD/GBP/EUR/AUD)."
 
@@ -2690,6 +2699,12 @@ msgstr "Vì những thay đổi gần đây trong các quy định, chúng tôi 
 
 msgid "Duration"
 msgstr "Khoảng thời gian"
+
+msgid "Duration above 7 days"
+msgstr ""
+
+msgid "Duration up to 7 days"
+msgstr ""
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "Trong suốt thời kì thị trường nhanh (ví dụ thời kì biến động thị trường rất nhanh), hợp đồng có thể được chào bán với mức giá bất lợi hơn những hợp đồng đã được chào bán trong điều kiện thị trường bình thường."
@@ -5409,6 +5424,9 @@ msgstr ""
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Tập hợp tiền thưởng tối đa trên vị thế mở"
 
+msgid "Maximum aggregate payouts on open positions per symbol"
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "Tập hợp tiền thưởng tối đa trên vị thế mở cho mỗi biểu tượng và loại hợp đồng"
 
@@ -5719,6 +5737,9 @@ msgid "No. There's no cost to sign up to the affiliate program."
 msgstr "Không. Không mất chi phí để đăng kí chương trình liên kết."
 
 msgid "No. of Tokens"
+msgstr ""
+
+msgid "Non-ATM"
 msgstr ""
 
 msgid "Not"

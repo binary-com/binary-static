@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-06 03:50-0400\n"
+"PO-Revision-Date: 2017-10-06 05:07-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -695,6 +695,9 @@ msgstr "API權杖"
 
 msgid "API token for third party applications."
 msgstr "第三方應用之API權杖。"
+
+msgid "ATM"
+msgstr ""
 
 msgid "AUD 1 per point"
 msgstr "每點 1 澳元"
@@ -2254,6 +2257,12 @@ msgstr "Binary 投資(歐洲)有限公司的合約最小購入價是5美元/英�
 msgid "Contracts sold"
 msgstr "售出合約"
 
+msgid "Contracts where the barrier is different from the entry spot."
+msgstr ""
+
+msgid "Contracts where the barrier is the same as entry spot."
+msgstr ""
+
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "所提供合約的賠率通常不會低於0.05比1（即每下注1美元/英鎊/歐元/澳元將獲得1.05美元/英鎊/歐元/澳元的賠付）。"
 
@@ -2685,6 +2694,12 @@ msgstr "由於最近的法規變更，客戶必須填寫以下金融評估。您
 
 msgid "Duration"
 msgstr "期限"
+
+msgid "Duration above 7 days"
+msgstr ""
+
+msgid "Duration up to 7 days"
+msgstr ""
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "市場快速波動期間的合約價格可能差於普通市況。"
@@ -4892,7 +4907,7 @@ msgid "Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at 
 msgstr "Jean-Yves Sireau 是公司創始人。他是天生的多元企業家，他的第一家公司成立於1991年。由於他的非凡成就，僅21歲就榮獲法國總理Edith Cresson 頒發年青創業家Foundation Jacques Dounce獎以及當時未來的法國總統Nicolas Sarkozy頒發Neuilly Professions獎。 Jean-Yves Sireau於1993年成立了Fortitude Fund Management對沖資金管理集團，並於1999年成立了%1（前名為Betonmarkets.com）。"
 
 msgid "Jim Mellon is a well-known and successful entrepreneur, starting his career in fund management and now including biopharma, property, mining, and information technology amongst his many investments. Jim is listed at number 140 on the Sunday Times Rich List with a net worth of &pound;920 million, and holds directorships in a number of publicly quoted companies. He is the founder and principal shareholder of the Regent Pacific Group, quoted on the Hong Kong Stock Exchange, who were the founding investor of Binary.com in 1999."
-msgstr ""
+msgstr "Jim Mellon是知名和成功的企業家。他的職業生涯從基金管理開始，如今在許多領域都有投資，包括生物醫藥、地產、採礦和信息技術。Jim在《週日時報 》的富豪榜排名第 140，擁有財富淨值九億二千萬&英鎊;，在多個公開上市公司擔任董事。他是香港股票交易所掛牌的Regent Pacific集團創始人和最大股東，而這個集團於1999 年創始投資Binary.com。"
 
 msgid "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 msgstr "Joanna監督%1集團各種發牌司法管轄區的程序和法規遵從性。除了監督集團的各個領域如付款和客戶帳戶管理等關鍵性業務以外，Joanna自1999 年以來曾是馬爾他管理研究所成員，擁有金融服務運營與法規遵從性文憑，以及國際法規遵從性協會的金融犯罪法規遵從性專業研究生文憑。"
@@ -5407,6 +5422,9 @@ msgstr "每日最大累計虧損。在%1自我禁止工具%2更新此值。"
 msgid "Maximum aggregate payouts on open positions"
 msgstr "未平倉頭寸的最大賠付總額"
 
+msgid "Maximum aggregate payouts on open positions per symbol"
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "每個符號和合約未平倉頭寸的最大累積賠付額"
 
@@ -5718,6 +5736,9 @@ msgstr "沒有，加入聯盟計劃無需任何費用。"
 
 msgid "No. of Tokens"
 msgstr "權杖數目"
+
+msgid "Non-ATM"
+msgstr ""
 
 msgid "Not"
 msgstr "不"

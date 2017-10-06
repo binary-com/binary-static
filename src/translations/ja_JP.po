@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-06 03:49-0400\n"
+"PO-Revision-Date: 2017-10-06 05:06-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -701,6 +701,9 @@ msgstr "APIトークン"
 
 msgid "API token for third party applications."
 msgstr "第三者開発アプリケーションのAPIトークン"
+
+msgid "ATM"
+msgstr ""
 
 msgid "AUD 1 per point"
 msgstr "1ポイント＝AUD1"
@@ -2271,6 +2274,12 @@ msgstr "Binary Investments (Europe) Ltd.による提供のトレードの最小�
 msgid "Contracts sold"
 msgstr "契約は転売されました"
 
+msgid "Contracts where the barrier is different from the entry spot."
+msgstr ""
+
+msgid "Contracts where the barrier is the same as entry spot."
+msgstr ""
+
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "0.05-1（USD/GBP/EUR/AUD）単位で指定するようなトレードは通常提供されません。例）1.05（USD/GBP/EUR/AUD）の払い戻し金額を提供する、購入価格1（USD/GBP/EUR/AUD）のトレード。"
 
@@ -2702,6 +2711,12 @@ msgstr "規制変更により、下記財務評価にご記入頂く必要があ
 
 msgid "Duration"
 msgstr "取引期間"
+
+msgid "Duration above 7 days"
+msgstr ""
+
+msgid "Duration up to 7 days"
+msgstr ""
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "変化の激しい市場（著しい市場変動を示す期間）においては、平常時の市場に比べて劣る価格条件でトレードが提供される場合があります。"
@@ -5438,6 +5453,9 @@ msgstr "1日の最大損失に達しました。%1s取引制限%2にてこの値
 msgid "Maximum aggregate payouts on open positions"
 msgstr "保有ポジション合計ペイアウト上限額"
 
+msgid "Maximum aggregate payouts on open positions per symbol"
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "一通貨ごとのペイアウト合計限度額"
 
@@ -5752,6 +5770,9 @@ msgstr "アフィリエイトプログラムへのご参加費用は一切発生
 
 msgid "No. of Tokens"
 msgstr "トークン番号"
+
+msgid "Non-ATM"
+msgstr ""
 
 msgid "Not"
 msgstr "ない"
