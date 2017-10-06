@@ -28,8 +28,13 @@ const Validation = (() => {
 
     const isChecked = field => field.$.is(':checked') ? '1' : '';
 
-    const getFieldValue = (field) => {
-        const value = field.type === 'checkbox' ? isChecked(field) : field.$.val();
+    const getFieldValue = (field, options) => {
+        let value;
+        if (typeof options.value === 'function') {
+            value = options.value();
+        } else {
+            value = field.type === 'checkbox' ? isChecked(field) : field.$.val();
+        }
         return value || '';
     };
 
@@ -205,13 +210,13 @@ const Validation = (() => {
                 options = valid[1];
             }
 
-            if (type === 'password' && !validLength(getFieldValue(field), pass_length(options))) {
+            if (type === 'password' && !validLength(getFieldValue(field, options), pass_length(options))) {
                 field.is_ok = false;
                 type        = 'length';
                 options     = pass_length(options);
             } else {
                 const validator = (type === 'custom' ? options.func : validators_map[type].func);
-                field.is_ok = validator(getFieldValue(field), options, field);
+                field.is_ok = validator(getFieldValue(field, options), options, field);
             }
 
             if (!field.is_ok) {

@@ -6,8 +6,9 @@ const Header              = require('./header');
 const localize            = require('./localize').localize;
 const Login               = require('./login');
 const Page                = require('./page');
-const defaultRedirectUrl  = require('./url').defaultRedirectUrl;
 const isStorageSupported  = require('./storage').isStorageSupported;
+const defaultRedirectUrl  = require('./url').defaultRedirectUrl;
+const createElement       = require('./utility').createElement;
 const BinarySocket        = require('../websocket_pages/socket');
 const BinarySocketGeneral = require('../websocket_pages/socket_general');
 
@@ -24,15 +25,15 @@ const BinaryLoader = (() => {
         if (!isStorageSupported(localStorage) || !isStorageSupported(sessionStorage)) {
             Header.displayNotification(localize('[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.', ['Binary.com']),
                 true, 'STORAGE_NOT_SUPPORTED');
-            $('#btn_login').addClass('button-disabled');
+            document.getElementById('btn_login').classList.add('button-disabled');
         }
 
         Client.init();
         BinarySocket.init(BinarySocketGeneral.initOptions());
 
-        container = $('#content-holder');
-        container.on('binarypjax:before', beforeContentChange);
-        container.on('binarypjax:after',  afterContentChange);
+        container = document.getElementById('content-holder');
+        container.addEventListener('binarypjax:before', beforeContentChange);
+        container.addEventListener('binarypjax:after',  afterContentChange);
         BinaryPjax.init(container, '#content');
     };
 
@@ -47,10 +48,10 @@ const BinaryLoader = (() => {
         }
     };
 
-    const afterContentChange = (e, content) => {
+    const afterContentChange = (e) => {
         Page.onLoad();
         GTM.pushDataLayer();
-        const this_page = content.getAttribute('data-page');
+        const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {
             loadHandler(pages_config[this_page]);
         } else if (/\/get-started\//i.test(window.location.pathname)) {
@@ -105,10 +106,18 @@ const BinaryLoader = (() => {
     };
 
     const displayMessage = (message) => {
-        const $content = container.find('#content .container');
-        $content.html($('<div/>', { class: 'logged_out_title_container', html: $content.find('h1')[0] }))
-            .append($('<p/>', { class: 'center-text notice-msg', html: localize(message) }));
-        $content.find('a').on('click', () => { Login.redirectToLogin(); });
+        const content       = container.querySelector('#content .container');
+        const div_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
+        const div_notice    = createElement('p', { class: 'center-text notice-msg', html: localize(message) });
+
+        div_container.appendChild(div_notice);
+
+        content.html(div_container);
+
+        const link = content.getElementsByTagName('a')[0];
+        if (link) {
+            link.addEventListener('click', () => { Login.redirectToLogin(); });
+        }
     };
 
     return {
