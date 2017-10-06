@@ -17,7 +17,7 @@ const ICOPortfolio = (() => {
         values = {};
         const $portfolio_loading = $('#portfolio-loading');
         $portfolio_loading.show();
-        showLoadingImage($portfolio_loading);
+        showLoadingImage($portfolio_loading[0]);
         is_first_response = true;
         BinarySocket.send({ portfolio: 1 }).then((response) => {
             updatePortfolio(response);
