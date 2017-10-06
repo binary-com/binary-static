@@ -44,12 +44,6 @@
         hint=hint || (no_hint ? '' : l('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.')) %]
 [% END %]
 
-[% BLOCK address_validation_text %]
-    <span class="gr-12">
-        <p>[% l("You can use letters and numbers (A-Z, a-z, 0-9) and the following special characters: -.'#;:()") %]</p>
-    </span>
-[% END %]
-
 [% BLOCK address_line_2 %]
     [% INCLUDE form_row type='text' id='address_line_2' label=l('Second line of home address') attributes='maxlength="70"' hint=hint %]
 [% END %]
