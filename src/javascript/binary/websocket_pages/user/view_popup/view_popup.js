@@ -8,6 +8,7 @@ const toJapanTimeIfNeeded  = require('../../../base/clock').toJapanTimeIfNeeded;
 const setViewPopupTimer    = require('../../../base/clock').setViewPopupTimer;
 const localize             = require('../../../base/localize').localize;
 const State                = require('../../../base/storage').State;
+const urlFor               = require('../../../base/url').urlFor;
 const createElement        = require('../../../base/utility').createElement;
 const getPropertyValue     = require('../../../base/utility').getPropertyValue;
 const isEmptyObject        = require('../../../base/utility').isEmptyObject;
@@ -305,6 +306,41 @@ const ViewPopup = (() => {
         populateAuditTable(show);
 
         div.appendChild(table);
+
+        let explanation_section = 'explain_';
+        if (/expiry/i.test(contract.contract_type)) {
+            explanation_section += 'endsinout';
+        } else if (/asian/i.test(contract.contract_type)) {
+            explanation_section += 'asian';
+        } else if (/even|odd/i.test(contract.contract_type)) {
+            explanation_section += 'evenodd';
+        } else if (/over|under/i.test(contract.contract_type)) {
+            explanation_section += 'overunder';
+        } else if (/digit/i.test(contract.contract_type)) {
+            explanation_section += 'digits';
+        } else if (/upordown|range/i.test(contract.contract_type)) {
+            explanation_section += 'staysinout';
+        } else if (/touch/i.test(contract.contract_type)) {
+            explanation_section += 'touchnotouch';
+        } else if (/call|put/i.test(contract.contract_type)) {
+            explanation_section += +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower';
+        }
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState !== 4 || this.status !== 200) {
+                return;
+            }
+            const div_response = createElement('div', { html: this.responseText });
+            const div_to_show = div_response.querySelector(`#${explanation_section}`);
+            if (div_to_show) {
+                div_to_show.classList.add('align-start', 'gr-padding-20', 'explanation-section', 'gr-parent');
+                div.appendChild(div_to_show);
+                div_to_show.setVisibility(1);
+            }
+        };
+        xhttp.open('GET', urlFor('explanation'), true);
+        xhttp.send();
+
         div.insertAfter(document.getElementById('sell_details_chart_wrapper'));
     };
 
