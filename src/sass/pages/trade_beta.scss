@@ -117,6 +117,13 @@
 
         .col-left {
             @include BIDIR_PROP(padding-right, padding-left, 5px);
+            display: flex;
+
+            .content-tab-container {
+                display: flex;
+                flex: auto;
+                flex-direction: column;
+            }
         }
         .col-right {
             @include BIDIR_PROP(padding-left, padding-right, 0);
@@ -291,11 +298,13 @@
             }
             .contract_purchase {
                 margin-bottom: 0;
-                margin-top: 10px;
+                padding-top: 10px !important;
+                margin-top: auto;
 
                 .purchase_button {
                     cursor: pointer;
                     width: 100%;
+                    margin-top: auto;
                 }
             }
         }
@@ -326,6 +335,7 @@
             padding: 5px;
             text-align: center;
             flex: 0 0 auto;
+            margin-top: auto;
         }
         #contract_purchase_balance {
             position: absolute;
@@ -471,12 +481,19 @@
     }
     #contract_prices_container .price_container .price_wrapper {
         padding: 10px 15px;
+        display: flex;
+        flex-direction: column;
+        flex: auto;
 
         &.small {
             width: 95px;
         }
         div {
             padding: 0 5px;
+        }
+        > div {
+            display: flex;
+            flex: auto;
         }
         .contract_heading {
             @include BIDIR_VALUE(text-align, left, right);
@@ -714,34 +731,6 @@
                     border-left: 4px solid transparent;
                     display: inline-block;
                     padding-bottom: 3px;
-                }
-            }
-            .more-tabs {
-                display: none;
-                position: absolute;
-                z-index: 2;
-                background: $COLOR_LIGHT_GRAY;
-                @include BIDIR_PROP(right, left, -1px);
-                border: 1px solid $COLOR_GRAY;
-
-                li {
-                    display: block;
-                    margin: 0;
-                    padding: 0;
-                    white-space: nowrap;
-
-                    &.active {
-                        border-radius: 0;
-                    }
-                    a {
-                        display: block;
-                        font-size: $FONT_SIZE_S;
-                        text-decoration: none;
-
-                        &a:hover {
-                            background: $COLOR_GRAY;
-                        }
-                    }
                 }
             }
         }
