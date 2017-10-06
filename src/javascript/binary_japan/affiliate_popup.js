@@ -7,7 +7,7 @@ const AffiliatePopup = (() => {
     const container_id = 'affiliate_disclaimer_popup';
 
     const show = () => {
-        if (Client.isLoggedIn()) return;
+        if (Client.isLoggedIn() || $(`#${container_id}`).length) return;
         BinarySocket.wait('website_status').then((response) => {
             if ((jpClient() || response.website_status.clients_country === 'jp')) {
                 $.ajax({
@@ -15,6 +15,7 @@ const AffiliatePopup = (() => {
                     dataType: 'html',
                     method  : 'GET',
                     success : (contents) => {
+                        if ($(`#${container_id}`).length) return;
                         $('body').append($('<div/>', { id: container_id, class: 'lightbox' })
                             .append($('<div/>').append($(contents))));
                         $('#btn_affiliate_proceed').off('click').on('click', close);

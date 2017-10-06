@@ -41,6 +41,7 @@ sub all_pages {
         ['payment-agent',              'partners/payment_agent',             'full_width', 'Payment Agents',                  'ja'],
         ['security-testing',           'partners/security_testing',          'full_width', 'Security Testing',                'ja'],
         ['multiple-accounts-manager',  'partners/multiple_accounts_manager', 'full_width', 'Multiple Accounts Manager',       'ja'],
+        ['pull-requests',              'partners/pull_requests',             'full_width', 'Get Paid for Pull Requests',      'ja'],
 
         ['get-started',                              'get_started/index',                         'get_started', 'Get Started',                      'ja'],
         ['get-started/beginners-faq',                'get_started/beginners_faq',                 'get_started', 'FAQ',                              'ja'],

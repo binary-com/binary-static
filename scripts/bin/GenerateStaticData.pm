@@ -424,6 +424,13 @@ sub _texts {
         push @texts, localize('Reference ID');
         push @texts, localize('Remaining Time');
         push @texts, localize('Barrier Change');
+        push @texts, localize('Audit');
+        push @texts, localize('Audit Page');
+        push @texts, localize('View Chart');
+        push @texts, localize('Contract Starts');
+        push @texts, localize('Contract Ends');
+        push @texts, localize('Start Time and Entry Spot');
+        push @texts, localize('Exit Time and Exit Spot');
         # strings for financial assessment
         push @texts, localize('Please select a value');
         # Strings for authorised_apps
@@ -468,6 +475,10 @@ sub _texts {
         push @texts, localize('You should enter [_1] characters.');
         push @texts, localize('Indicates required field');
         push @texts, localize('Verification code is wrong. Please use the link sent to your email.');
+        push @texts, localize('The password you entered is one of the world\'s most commonly used passwords. You should not be using this password.');
+        push @texts, localize('Hint: it would take approximately [_1][_2] to crack this password.');
+        push @texts, localize('thousand');
+        push @texts, localize('million');
 
         # strings for metatrader
         push @texts, localize('Congratulations! Your [_1] Account has been created.');
