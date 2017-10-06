@@ -9,6 +9,7 @@ const BinarySocket       = require('../socket');
 const localize           = require('../../base/localize').localize;
 const State              = require('../../base/storage').State;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
+const createElement      = require('../../base/utility').createElement;
 const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
 const dateValueChanged   = require('../../common_functions/common_functions').dateValueChanged;
 const isVisible          = require('../../common_functions/common_functions').isVisible;
@@ -136,10 +137,7 @@ const Durations = (() => {
     };
 
     const makeDurationOption = (map_min, map_max, is_selected) => {
-        const option  = document.createElement('option');
-        const content = document.createTextNode(map_min.text);
-        option.setAttribute('value', map_min.unit);
-        option.setAttribute('data-minimum', map_min.value);
+        const option  = createElement('option', { value: map_min.unit, 'data-minimum': map_min.value, text: map_min.text });
         if (map_max.value && map_max.unit) {
             const max = convertDurationUnit(map_max.value, map_max.unit, map_min.unit);
             if (max) {
@@ -149,7 +147,6 @@ const Durations = (() => {
         if (is_selected) {
             option.setAttribute('selected', 'selected');
         }
-        option.appendChild(content);
         return option;
     };
 
@@ -383,24 +380,18 @@ const Durations = (() => {
             target.removeChild(target.firstChild);
         }
 
-        let option  = document.createElement('option');
-        let content = document.createTextNode(localize('Duration'));
+        let option = createElement('option', { value: 'duration', text: localize('Duration') });
 
-        option.setAttribute('value', 'duration');
         if (current_selected === 'duration') {
             option.setAttribute('selected', 'selected');
         }
-        option.appendChild(content);
         fragment.appendChild(option);
 
         if (has_end_date) {
-            option  = document.createElement('option');
-            content = document.createTextNode(localize('End Time'));
-            option.setAttribute('value', 'endtime');
+            option = createElement('option', { value: 'endtime', text: localize('End Time') });
             if (current_selected === 'endtime') {
                 option.setAttribute('selected', 'selected');
             }
-            option.appendChild(content);
             fragment.appendChild(option);
         }
         target.appendChild(fragment);
