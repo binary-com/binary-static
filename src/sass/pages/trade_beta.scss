@@ -82,6 +82,9 @@
             }
         }
     }
+    #guideBtn {
+        margin-left: 0;
+    }
     .button button {
         cursor: pointer;
     }
@@ -115,8 +118,8 @@
     #contract_form_content_wrapper {
         padding-top: 0.5em;
 
-        .col-left {
-            @include BIDIR_PROP(padding-right, padding-left, 5px);
+        .col-trade {
+            padding-left: 5px;
             display: flex;
 
             .content-tab-container {
@@ -125,8 +128,8 @@
                 flex-direction: column;
             }
         }
-        .col-right {
-            @include BIDIR_PROP(padding-left, padding-right, 0);
+        .col-analyse {
+            padding-right: 0;
             max-height: 520px;
         }
         #contract_prices_container {
@@ -578,11 +581,7 @@
                 }
             }
             #underlying_spot_wrapper {
-                max-width: 50%;
-
                 #underlying_container {
-                    width: 100%;
-
                     #underlying {
                         max-width: calc(100% - 26px);
                     }
@@ -592,17 +591,17 @@
                 }
             }
         }
-        .col-left, .col-right {
+        .col-trade, .col-analyse {
             padding: 0 5px !important;
         }
-        .col-right {
-            @include BIDIR_PROP(padding-left, padding-right, 0 !important);
+        .col-analyse {
+            padding-right: 0;
         }
     }
 }
 @media all and (max-width: 767px) {
     #trading_socket_container_beta {
-        .col-left, .col-right {
+        .col-trade, .col-analyse {
             padding: 0 5px !important;
         }
         #trading_analysis_content {
@@ -616,7 +615,7 @@
 }
 @media all and (max-width: 480px) {
     #trading_socket_container_beta {
-        .col-left, .col-right {
+        .col-trade, .col-analyse {
             padding: 0 !important;
         }
         .price-left, .price-right {
@@ -660,6 +659,9 @@
 }
 @media all and (max-width: 768px) {
     #trading_socket_container_beta {
+        .col-analyse {
+            order: 2;
+        }
         div#contract_market_form_container {
             ul#contract_form_name_nav {
                 white-space: nowrap !important;
