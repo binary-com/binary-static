@@ -57,6 +57,9 @@
         [% INCLUDE regulator_image padding='3' padding_m='6' href="http://www.fsa.go.jp" image='images/pages/regulation/fsa-logo.png' %]
         [% INCLUDE regulator_image padding='4' padding_m='8' href="http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon"
             image='images/pages/regulation/binarykk-logo.gif' %]
+        <div class="ja-hide center-text gr-padding-20 gr-child">
+            <button id="visit_japan">[% l('View Japanese website') %]</button>
+        </div>
     [% END %]
 
     [% WRAPPER box header=l("Binary Investments (Europe) Ltd") %]
