@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-06 05:07-0400\n"
+"PO-Revision-Date: 2017-10-09 03:40-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -697,7 +697,7 @@ msgid "API token for third party applications."
 msgstr "第三方應用之API權杖。"
 
 msgid "ATM"
-msgstr ""
+msgstr "自動取款機"
 
 msgid "AUD 1 per point"
 msgstr "每點 1 澳元"
@@ -2258,10 +2258,10 @@ msgid "Contracts sold"
 msgstr "售出合約"
 
 msgid "Contracts where the barrier is different from the entry spot."
-msgstr ""
+msgstr "障礙水平與現貨價格相差的合約。"
 
 msgid "Contracts where the barrier is the same as entry spot."
-msgstr ""
+msgstr "障礙水平與現貨價格相同的合約。"
 
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "所提供合約的賠率通常不會低於0.05比1（即每下注1美元/英鎊/歐元/澳元將獲得1.05美元/英鎊/歐元/澳元的賠付）。"
@@ -2696,10 +2696,10 @@ msgid "Duration"
 msgstr "期限"
 
 msgid "Duration above 7 days"
-msgstr ""
+msgstr "持續時間超過7天"
 
 msgid "Duration up to 7 days"
-msgstr ""
+msgstr "持續時間不超過 7 天"
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "市場快速波動期間的合約價格可能差於普通市況。"
@@ -3895,9 +3895,6 @@ msgstr "如果您以<strong>100,000 大小的合約</strong>和<strong>100:1的�
 
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "如您選擇與我們共同修訂合同，重要的是您必須完全了解所涉及的風險，以及您有足夠投資資源能夠擔當這些風險，並確保您將慎重地監管您的頭寸。"
-
-msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
-msgstr "如果您不打算使用槓桿功能，請將槓桿比率設為 1:1。"
 
 msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "如果在幾分鐘內您未收到電子郵件，請檢查您的垃圾/廣告資料夾。"
@@ -5423,7 +5420,7 @@ msgid "Maximum aggregate payouts on open positions"
 msgstr "未平倉頭寸的最大賠付總額"
 
 msgid "Maximum aggregate payouts on open positions per symbol"
-msgstr ""
+msgstr "每種符號未平倉頭寸最大累積賠付額"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "每個符號和合約未平倉頭寸的最大累積賠付額"
@@ -5738,7 +5735,7 @@ msgid "No. of Tokens"
 msgstr "權杖數目"
 
 msgid "Non-ATM"
-msgstr ""
+msgstr "非自動取款機"
 
 msgid "Not"
 msgstr "不"
@@ -5904,6 +5901,9 @@ msgstr "成立後僅五年，我們的線上交易服務即斬獲這一重要獎
 
 msgid "Only letters, numbers, and hyphen are allowed."
 msgstr "只允許字母、數字和連字符。"
+
+msgid "Only letters, numbers, space, and these special characters are allowed: - . ' # ; : ( ) , @ /"
+msgstr ""
 
 msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed."
 msgstr "只允許使用字母、數字、空格、連字號、句號和所有格號。"
@@ -9064,6 +9064,9 @@ msgstr "檢視圖表"
 
 msgid "View Details"
 msgstr "檢視詳細資料"
+
+msgid "View Japanese website"
+msgstr ""
 
 msgid "View Statement"
 msgstr "檢視帳單"
