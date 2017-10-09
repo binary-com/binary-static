@@ -23,6 +23,7 @@ const Menu = (() => {
         if (active) active.classList.add('active');
 
         if (Client.isLoggedIn() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
+            Client.activateByClientType('main-menu');
             showMainMenu();
         }
     };

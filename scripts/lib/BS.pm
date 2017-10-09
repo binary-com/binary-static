@@ -256,6 +256,15 @@ sub menu {
         text       => localize('Payment Agent'),
         };
 
+    push @menu,
+        {
+        id         => 'topMenuDeposit',
+        class      => 'client_real ja-hide invisible secondary-bg-color center-text',
+        url        => url_for('cashier/forwardws') . '#deposit',
+        text       => localize('Deposit'),
+        svg        => url_for('/images/common/plus.svg'),
+        };
+
     # push @{$menu}, $self->_main_menu_trading();
 
     return \@menu;

@@ -95,8 +95,19 @@ body #topbar, .landing_page-content {
     margin-bottom: 40px;
     color: $COLOR_GRAY;
 
-    .items li a {
-        white-space: nowrap;
+    .items li {
+        a {
+            white-space: nowrap;
+        }
+        &#topMenuDeposit {
+            float: right;
+            width: 165px;
+            margin: 0;
+
+            a {
+                color: $COLOR_WHITE;
+            }
+        }
     }
 }
 
