@@ -6,8 +6,6 @@
             { text=l('Portfolio'),        id='tab_portfolio',     class='invisible' },
             { text=l('Explanation'),      id='tab_explanation' },
             { text=l('Last Digit Stats'), id='tab_last_digit',    class='invisible', no_href=1 },
-            { text=l('Asset Index'),      id='tab_asset_index',   class='invisible' },
-            { text=l('Trading Times'),    id='tab_trading_times', class='invisible', no_href=1 },
         ] %]
         [% WRAPPER tab_content_container id='analysis_content' %]
             [% WRAPPER tab_content id='tab_graph' %]
@@ -21,8 +19,6 @@
                 [% INCLUDE bet/beta/explanation.html.tt %]
             [% END %]
             [% WRAPPER tab_content id='tab_last_digit' %][% PROCESS bet/beta/last_digit.html.tt %][% END %]
-            [% WRAPPER tab_content id='tab_asset_index' %][% PROCESS resources/asset_index.html.tt %][% END %]
-            [% WRAPPER tab_content id='tab_trading_times' %][% PROCESS resources/trading_times.html.tt %][% END %]
         [% END %]
     [% END %]
 </div>
