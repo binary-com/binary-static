@@ -355,7 +355,7 @@ const ViewPopup = (() => {
             let has_start_time = !/entry/i.test(remark);
             let has_end_time   = !/exit/i.test(remark);
             const secondary_classes = ['fill-bg-color', 'secondary-time'];
-            response.history.times.forEach((time, idx) => {
+            const found = response.history.times.some((time, idx) => {
                 if (+time === +tick_time) {
                     let i = idx - 3;
                     for (i; i < idx + 4; i++) {
@@ -389,9 +389,11 @@ const ViewPopup = (() => {
                             createAuditRow(table, this_time, this_price);
                         }
                     }
-                    resolve();
+                    return true;
                 }
+                return false;
             });
+            resolve(found);
         })
     );
 
@@ -408,7 +410,10 @@ const ViewPopup = (() => {
             insert_after = audit_table;
         }
         div.insertAfter(insert_after);
-        return table;
+        return {
+            table,
+            div,
+        };
     };
 
     const createAuditHeader = (table) => {
@@ -418,7 +423,7 @@ const ViewPopup = (() => {
         tr.appendChild(createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot') }));
         tr.appendChild(createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time') }));
 
-        table.appendChild(tr);
+        table.insertBefore(tr, table.childNodes[0]);
     };
 
     const createAuditRow = (table, date, tick, remark, td_class) => {
@@ -455,11 +460,14 @@ const ViewPopup = (() => {
             if (response_entry.error) {
                 return;
             }
-            appendAuditLink('trade_details_entry_spot');
-            appendAuditLink('trade_details_current_spot');
-            const table_one = createAuditTable('Starts');
-            createAuditHeader(table_one);
-            parseTicksResponse(table_one, response_entry, contract.entry_tick_time, 'Entry Spot').then(() => {
+            const contract_starts = createAuditTable('Starts');
+            parseTicksResponse(contract_starts.table, response_entry, contract.entry_tick_time, 'Entry Spot').then((found_entry) => {
+                if (found_entry) {
+                    createAuditHeader(contract_starts.table);
+                    appendAuditLink('trade_details_entry_spot');
+                } else {
+                    contract_starts.div.remove();
+                }
                 // don't show exit tick information if missing or manual sold
                 if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)) {
                     BinarySocket.send({
@@ -467,9 +475,15 @@ const ViewPopup = (() => {
                         start        : +contract.exit_tick_time - (5 * 60),
                         end          : +contract.exit_tick_time + (5 * 60),
                     }).then((response_exit) => {
-                        const table_two = createAuditTable('Ends');
-                        createAuditHeader(table_two);
-                        parseTicksResponse(table_two, response_exit, contract.exit_tick_time, 'Exit Spot');
+                        const contract_ends = createAuditTable('Ends');
+                        parseTicksResponse(contract_ends.table, response_exit, contract.exit_tick_time, 'Exit Spot').then((found_exit) => {
+                            if (found_exit) {
+                                createAuditHeader(contract_ends.table);
+                                appendAuditLink('trade_details_current_spot');
+                            } else {
+                                contract_ends.div.remove();
+                            }
+                        });
                     }).then(() => {
                         onAuditTableComplete(show_audit_table);
                     });
