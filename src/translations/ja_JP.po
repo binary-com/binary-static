@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-04 22:12-0400\n"
+"PO-Revision-Date: 2017-10-09 03:39-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -701,6 +701,9 @@ msgstr "APIトークン"
 
 msgid "API token for third party applications."
 msgstr "第三者開発アプリケーションのAPIトークン"
+
+msgid "ATM"
+msgstr ""
 
 msgid "AUD 1 per point"
 msgstr "1ポイント＝AUD1"
@@ -2271,6 +2274,12 @@ msgstr "Binary Investments (Europe) Ltd.による提供のトレードの最小�
 msgid "Contracts sold"
 msgstr "契約は転売されました"
 
+msgid "Contracts where the barrier is different from the entry spot."
+msgstr ""
+
+msgid "Contracts where the barrier is the same as entry spot."
+msgstr ""
+
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "0.05-1（USD/GBP/EUR/AUD）単位で指定するようなトレードは通常提供されません。例）1.05（USD/GBP/EUR/AUD）の払い戻し金額を提供する、購入価格1（USD/GBP/EUR/AUD）のトレード。"
 
@@ -2702,6 +2711,12 @@ msgstr "規制変更により、下記財務評価にご記入頂く必要があ
 
 msgid "Duration"
 msgstr "取引期間"
+
+msgid "Duration above 7 days"
+msgstr "1ヶ月以上（1通貨ペア毎）"
+
+msgid "Duration up to 7 days"
+msgstr "1週間以下（1通貨ペア毎）"
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "変化の激しい市場（著しい市場変動を示す期間）においては、平常時の市場に比べて劣る価格条件でトレードが提供される場合があります。"
@@ -3900,9 +3915,6 @@ msgstr "<strong>トレードサイズ100,000</strong>で<strong>EUR/USDシンボ
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "当社との契約をご締結いただく場合、そのようなリスクを負うのに十分な投資資産をお持ちであること、また自身のポジションを慎重にモニターできるかといった起こりうるリスクに注意し続けられることが重要です。"
 
-msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
-msgstr "レバレッジ機能をご利用されない場合、レバレッジ比率を1:1に設定してください。"
-
 msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "お客さまによっては迷惑メールフォルダーに受信される場合もありますので、あわせてご確認ください。"
 
@@ -4921,6 +4933,9 @@ msgstr "こちらからダウンロードして、お読みください。"
 msgid "Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and %1 (formerly known as Betonmarkets.com) in 1999."
 msgstr "Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and %1 (formerly known as Betonmarkets.com) in 1999."
 
+msgid "Jim Mellon is a well-known and successful entrepreneur, starting his career in fund management and now including biopharma, property, mining, and information technology amongst his many investments. Jim is listed at number 140 on the Sunday Times Rich List with a net worth of &pound;920 million, and holds directorships in a number of publicly quoted companies. He is the founder and principal shareholder of the Regent Pacific Group, quoted on the Hong Kong Stock Exchange, who were the founding investor of Binary.com in 1999."
+msgstr ""
+
 msgid "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 msgstr "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 
@@ -5435,6 +5450,9 @@ msgstr "1日の最大損失に達しました。%1s取引制限%2にてこの値
 msgid "Maximum aggregate payouts on open positions"
 msgstr "保有ポジション合計ペイアウト上限額"
 
+msgid "Maximum aggregate payouts on open positions per symbol"
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "一通貨ごとのペイアウト合計限度額"
 
@@ -5750,6 +5768,9 @@ msgstr "アフィリエイトプログラムへのご参加費用は一切発生
 msgid "No. of Tokens"
 msgstr "トークン番号"
 
+msgid "Non-ATM"
+msgstr ""
+
 msgid "Not"
 msgstr "ない"
 
@@ -5914,6 +5935,9 @@ msgstr "サービス開始からわずか5年にて、当社のオンライン�
 
 msgid "Only letters, numbers, and hyphen are allowed."
 msgstr "文字、数字、ハイフンのみご利用いただけます。"
+
+msgid "Only letters, numbers, space, and these special characters are allowed: - . ' # ; : ( ) , @ /"
+msgstr ""
 
 msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed."
 msgstr "文字、数字、スペース、ハイフン(-)、ピリオド(.)、アポストロフィ(')のみご利用いただけます。"
@@ -9168,6 +9192,9 @@ msgstr ""
 msgid "View Details"
 msgstr "お客さま基本情報"
 
+msgid "View Japanese website"
+msgstr ""
+
 msgid "View Statement"
 msgstr "取引履歴を表示する"
 
@@ -11525,24 +11552,23 @@ msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if 
 msgstr "２つのオプションを用い、バリア価格の高いバイナリーコールオプションとバリア価格の低いバイナリープットオプションを購入すれば、判定レートが２つのオプションのバリア価格で作られた価格帯の外となった場合に収益が得られ、判定レートが所定の価格帯の外であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができます。"
 
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "2017/9/12"
+msgstr "2017/10/9"
 
 msgid "{JAPAN ONLY}JSA_Date_2"
-msgstr "2017/9/5"
+msgstr "2017/9/12"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "契約締結前交付書面の改定のお知らせ"
+msgstr "取引概要　改定のお知らせ"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "2017年9月12日（火）付けで契約締結前交付書面を改定いたします。契約締結前交付書面を必ずご確認いただく必要がございます。<br>店頭通貨バイナリーオプション取引の概要と仕組みについて(P12)<br>店頭バイナリーオプション取引の手続きについて(P24)<br>店頭バイナリーオプション取引概要\n"
-"<br>当社の概要について"
+msgstr "2017年10月9日（月）付で当社が定める1通貨毎のペイアウト合計限度額を以下のように変更致します。<br>1週間以下（1通貨ペア毎）20万円<br>1ヶ月以上（1通貨ペア毎）20万円"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
-msgstr "不具合の復旧のお知らせ"
+msgstr "契約締結前交付書面の改定のお知らせ"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
-msgstr "9月4日に発生したバリア価格が正しく表示されていない不具合について、\n"
-"現在は復旧し正常に表示されていることをお知らせ致します。<br>ご迷惑おかけし、誠に申し訳ありませんでした。"
+msgstr "2017年9月12日（火）付けで契約締結前交付書面を改定いたします。契約締結前交付書面を必ずご確認いただく必要がございます。<br>店頭通貨バイナリーオプション取引の概要と仕組みについて(P12)<br>店頭バイナリーオプション取引の手続きについて(P24)<br>店頭バイナリーオプション取引概要\n"
+"<br>当社の概要について"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
 msgstr "."

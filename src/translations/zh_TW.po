@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-04 22:13-0400\n"
+"PO-Revision-Date: 2017-10-09 03:40-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -695,6 +695,9 @@ msgstr "API權杖"
 
 msgid "API token for third party applications."
 msgstr "第三方應用之API權杖。"
+
+msgid "ATM"
+msgstr "自動取款機"
 
 msgid "AUD 1 per point"
 msgstr "每點 1 澳元"
@@ -2219,7 +2222,7 @@ msgid "Contract Specifications - Forex"
 msgstr "合約規格 - 外匯"
 
 msgid "Contract Starts"
-msgstr ""
+msgstr "合約開始時間"
 
 msgid "Contract has not started yet"
 msgstr "合約尚未開始"
@@ -2253,6 +2256,12 @@ msgstr "Binary 投資(歐洲)有限公司的合約最小購入價是5美元/英�
 
 msgid "Contracts sold"
 msgstr "售出合約"
+
+msgid "Contracts where the barrier is different from the entry spot."
+msgstr "障礙水平與現貨價格相差的合約。"
+
+msgid "Contracts where the barrier is the same as entry spot."
+msgstr "障礙水平與現貨價格相同的合約。"
 
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "所提供合約的賠率通常不會低於0.05比1（即每下注1美元/英鎊/歐元/澳元將獲得1.05美元/英鎊/歐元/澳元的賠付）。"
@@ -2618,7 +2627,7 @@ msgid "Do I need to deposit any funds to open an account?"
 msgstr "我需要入金才能開戶嗎？"
 
 msgid "Do I retain ownership of the code?"
-msgstr ""
+msgstr "我是否保留代碼的擁有權？"
 
 msgid "Do not trade more than you can afford."
 msgstr "不得操作您承受能力範圍之外的交易。"
@@ -2685,6 +2694,12 @@ msgstr "由於最近的法規變更，客戶必須填寫以下金融評估。您
 
 msgid "Duration"
 msgstr "期限"
+
+msgid "Duration above 7 days"
+msgstr "持續時間超過7天"
+
+msgid "Duration up to 7 days"
+msgstr "持續時間不超過 7 天"
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "市場快速波動期間的合約價格可能差於普通市況。"
@@ -3042,7 +3057,7 @@ msgid "Exit Spot Time"
 msgstr "退市現價時間"
 
 msgid "Exit Time and Exit Spot"
-msgstr ""
+msgstr "退出時間和退出點"
 
 msgid "Exit spot"
 msgstr "退市現價"
@@ -3159,7 +3174,7 @@ msgid "Family name"
 msgstr "姓"
 
 msgid "Faster rendering"
-msgstr ""
+msgstr "更快呈現"
 
 msgid "Favourite artist"
 msgstr "最愛的藝術家"
@@ -3330,7 +3345,7 @@ msgid "Forex, Volatility Indices"
 msgstr "外匯、波動率指數"
 
 msgid "Fork the relevant Github repository"
-msgstr ""
+msgstr "對有關 Github 存儲庫進行分叉"
 
 msgid "Forward looking statements inherently contain risks and uncertainties as they relate to events or circumstances in the future. Users of this webpage should not place undue reliance on forward-looking statements. Binary Group Ltd. expressly disclaims any obligation or undertaking to update or revise any forward-looking statements except to the extent required by law and neither Binary Group Ltd., its employees, officers or professional advisors make any assurance, representation or guarantee that any event referred to in a forward-looking statement will actually occur."
 msgstr "由於與將來事件或情況有關，預測性陳述必然包含風險和不確定性。此網頁的使用者不應過分依賴預測性陳述。Binary集團有限公司明確表明，除非屬於法律所需範圍內，不對任何預測性聲明承擔任何更新或修正的義務和責任。Binary集團有限公司、其僱員、職員或專業顧問不確認、表示或保證任何預測性聲明所述的事件一定會發生。"
@@ -3474,10 +3489,10 @@ msgid "Get more virtual money"
 msgstr "獲取更多虛擬資金"
 
 msgid "Get paid for pull requests"
-msgstr ""
+msgstr "因拉動請求獲得報酬"
 
 msgid "Get paid for pull requests."
-msgstr ""
+msgstr "因拉動請求獲得報酬。"
 
 msgid "Get started"
 msgstr "開始交易"
@@ -3624,7 +3639,7 @@ msgid "Highlights"
 msgstr "亮點"
 
 msgid "Hint: it would take approximately %1%2 to crack this password."
-msgstr ""
+msgstr "提示： 破解這個密碼需要大約 %1%2 。"
 
 msgid "Hone your security testing skills."
 msgstr "磨練您的安全測試技能。"
@@ -3663,10 +3678,10 @@ msgid "How do I stay informed on the %1 ICO?"
 msgstr "如何繼續獲悉關於%1 ICO的更新消息？"
 
 msgid "How do I submit a pull request?"
-msgstr ""
+msgstr "如何提交拉動請求？"
 
 msgid "How do I test my changes?"
-msgstr ""
+msgstr "如何測試更改？"
 
 msgid "How do we calculate interest fees for long positions?"
 msgstr "多頭頭寸的利息費用如何計算?"
@@ -3720,7 +3735,7 @@ msgid "How to use a payment agent?"
 msgstr "如何使用支付代理?"
 
 msgid "How will I get paid?"
-msgstr ""
+msgstr "如何獲得報酬？"
 
 msgid "How will the ICO work"
 msgstr "ICO將如何操作"
@@ -3834,7 +3849,7 @@ msgid "If any provision of this Agreement shall be held invalid or unenforceable
 msgstr "如果本協議的任何條款經法院或有管轄權的監管機構判定為無效或不可執行，本協議其餘部分將繼續生效及執行。"
 
 msgid "If rewards are not agreed in advance, how do I know I'll be paid fairly?"
-msgstr ""
+msgstr "如果獎勵沒事先商定，我怎麼知道所獲報酬是合理的？"
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "如果公司（自行決定）不確定客戶是否遵守這些條款，或者如客戶拒絕向公司提供所要求的合理資料，公司可以取消客戶的賬戶並扣留任何累積資金。"
@@ -3880,9 +3895,6 @@ msgstr "如果您以<strong>100,000 大小的合約</strong>和<strong>100:1的�
 
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "如您選擇與我們共同修訂合同，重要的是您必須完全了解所涉及的風險，以及您有足夠投資資源能夠擔當這些風險，並確保您將慎重地監管您的頭寸。"
-
-msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
-msgstr "如果您不打算使用槓桿功能，請將槓桿比率設為 1:1。"
 
 msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "如果在幾分鐘內您未收到電子郵件，請檢查您的垃圾/廣告資料夾。"
@@ -4059,16 +4071,16 @@ msgid "Improve your trading skills with our free educational & training resource
 msgstr "利用我們免費的教育和培訓資源來改進您的交易技能。"
 
 msgid "Improved browser compatibility"
-msgstr ""
+msgstr "已改進的瀏覽器相容性"
 
 msgid "Improved documentation"
-msgstr ""
+msgstr "已改進的文檔"
 
 msgid "Improved responsiveness"
-msgstr ""
+msgstr "已改進的回應能力"
 
 msgid "Improved usability"
-msgstr ""
+msgstr "已提高的可用性"
 
 msgid "Improvements"
 msgstr "改進"
@@ -4891,6 +4903,9 @@ msgstr "Japan website Terms and Conditions Paragraph 1"
 msgid "Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and %1 (formerly known as Betonmarkets.com) in 1999."
 msgstr "Jean-Yves Sireau 是公司創始人。他是天生的多元企業家，他的第一家公司成立於1991年。由於他的非凡成就，僅21歲就榮獲法國總理Edith Cresson 頒發年青創業家Foundation Jacques Dounce獎以及當時未來的法國總統Nicolas Sarkozy頒發Neuilly Professions獎。 Jean-Yves Sireau於1993年成立了Fortitude Fund Management對沖資金管理集團，並於1999年成立了%1（前名為Betonmarkets.com）。"
 
+msgid "Jim Mellon is a well-known and successful entrepreneur, starting his career in fund management and now including biopharma, property, mining, and information technology amongst his many investments. Jim is listed at number 140 on the Sunday Times Rich List with a net worth of &pound;920 million, and holds directorships in a number of publicly quoted companies. He is the founder and principal shareholder of the Regent Pacific Group, quoted on the Hong Kong Stock Exchange, who were the founding investor of Binary.com in 1999."
+msgstr "Jim Mellon是知名和成功的企業家。他的職業生涯從基金管理開始，如今在許多領域都有投資，包括生物醫藥、地產、採礦和信息技術。Jim在《週日時報 》的富豪榜排名第 140，擁有財富淨值九億二千萬&英鎊;，在多個公開上市公司擔任董事。他是香港股票交易所掛牌的Regent Pacific集團創始人和最大股東，而這個集團於1999 年創始投資Binary.com。"
+
 msgid "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 msgstr "Joanna監督%1集團各種發牌司法管轄區的程序和法規遵從性。除了監督集團的各個領域如付款和客戶帳戶管理等關鍵性業務以外，Joanna自1999 年以來曾是馬爾他管理研究所成員，擁有金融服務運營與法規遵從性文憑，以及國際法規遵從性協會的金融犯罪法規遵從性專業研究生文憑。"
 
@@ -4979,7 +4994,7 @@ msgid "Languages Classes for Refugees (LCFR)"
 msgstr "難民語言課程(LCFR)"
 
 msgid "Large changes – generally $750-2,500"
-msgstr ""
+msgstr "大變化 — 一般為 750-2,500 美元"
 
 msgid "Last Digit Prediction"
 msgstr "最後數字的預測"
@@ -5246,7 +5261,7 @@ msgid "Make a Deposit"
 msgstr "存入資金"
 
 msgid "Make your code changes in your fork"
-msgstr ""
+msgstr "在分叉中更改代碼"
 
 msgid "Make your trade"
 msgstr "執行交易"
@@ -5404,6 +5419,9 @@ msgstr "每日最大累計虧損。在%1自我禁止工具%2更新此值。"
 msgid "Maximum aggregate payouts on open positions"
 msgstr "未平倉頭寸的最大賠付總額"
 
+msgid "Maximum aggregate payouts on open positions per symbol"
+msgstr "每種符號未平倉頭寸最大累積賠付額"
+
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "每個符號和合約未平倉頭寸的最大累積賠付額"
 
@@ -5423,7 +5441,7 @@ msgid "May"
 msgstr "五月"
 
 msgid "Medium-sized changes – generally $250-750"
-msgstr ""
+msgstr "中等變化 —一般為 250-750 美元"
 
 msgid "Memorable date"
 msgstr "難忘的日子"
@@ -5642,7 +5660,7 @@ msgid "New Year's Day"
 msgstr "新年"
 
 msgid "New features"
-msgstr ""
+msgstr "新功能"
 
 msgid "New password"
 msgstr "新密碼"
@@ -5651,7 +5669,7 @@ msgid "New regulations in Japan"
 msgstr "日本新規則"
 
 msgid "New technical indicators"
-msgstr ""
+msgstr "新的技術指標"
 
 msgid "New token created."
 msgstr "已建立新權杖。"
@@ -5708,13 +5726,16 @@ msgid "No risk, $10K virtual money account"
 msgstr "無任何風險，獲得一萬美元虛擬資金帳戶"
 
 msgid "No. Once your pull request is merged into master by our development team, and you have been paid, you have effectively handed over the rights to the code. It then becomes part of the master %1 codebase under the open-source license of the relevant repository."
-msgstr ""
+msgstr "不。一旦我們的開發團隊將您的拉動請求合併到主程式內，以及您已獲取報酬後，表示您已有效交付代碼的權利。它將按照有關存儲庫的開放源許可證成為主程式%1 代碼庫的一部分 。"
 
 msgid "No. There's no cost to sign up to the affiliate program."
 msgstr "沒有，加入聯盟計劃無需任何費用。"
 
 msgid "No. of Tokens"
 msgstr "權杖數目"
+
+msgid "Non-ATM"
+msgstr "非自動取款機"
 
 msgid "Not"
 msgstr "不"
@@ -5816,7 +5837,7 @@ msgid "October"
 msgstr "十月"
 
 msgid "Of course! Please send an email to <a href=\"mailto:%1\">%1</a> to request an invite to our Slack channel."
-msgstr ""
+msgstr "答案是肯定的！請發送電子郵件至 <a href=\"mailto:%1\"> %1</a>，請求受邀前往slack通道。"
 
 msgid "Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
 msgstr "通過快捷直覺化和專屬的交易平台提供範圍最廣泛的貨幣種類、期權類型和交易期限。"
@@ -5880,6 +5901,9 @@ msgstr "成立後僅五年，我們的線上交易服務即斬獲這一重要獎
 
 msgid "Only letters, numbers, and hyphen are allowed."
 msgstr "只允許字母、數字和連字符。"
+
+msgid "Only letters, numbers, space, and these special characters are allowed: - . ' # ; : ( ) , @ /"
+msgstr ""
 
 msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed."
 msgstr "只允許使用字母、數字、空格、連字號、句號和所有格號。"
@@ -6011,7 +6035,7 @@ msgid "Our Prices are determined by reference to the price of the underlying ins
 msgstr "我們在參考了由我們自主選定的外部交易所或交易設施所報的基礎工具價格之後決定價格。我們擁有資訊技術基礎設施和價格聚合器系統，便於向充當我們流動性提供商，經過挑選的主要經紀商收集報價，並將經過參考有關基準和市場得來的價格提供給您。您確認我們的價格可能與投標價格和外部交易所或交易設施所提供價格不相同，以及我們不對所述差異所引起的任何損失承擔賠償責任。本條款不適用於波動率指數。"
 
 msgid "Our back-end code is mainly in Perl, and our open-source contributions may be found on <a target=\"_blank\" href=\"%1\">CPAN</a>. The corresponding source code can be found in our <a target=\"_blank\" href=\"%2\">Github repositories</a> that start with the prefix \"perl-\". We welcome contributions to these repositories, notably improved documentation and test coverage."
-msgstr ""
+msgstr "我們的後端代碼主要是在 Perl 中，而我們的開源貢獻可能會在 <a target=\"_blank\"href=\"%1\"> CPAN</a>出現。對應的原始程式碼會在以首碼\"perl-\"開頭的 <a target=\"_blank\"href=\"%2\"> Github 資料庫</a> 中出現。我們歡迎大家對這些資料庫提供貢獻，特別是經過改進的文檔和測試覆蓋率。"
 
 msgid "Our commitment to integrity and reliability means that we always strive to give you access to the best pricing and liquidity possible."
 msgstr "我們對完整性和可靠性的承諾意味著我們一直都努力為您提供最佳報價和流動性。"
@@ -6041,7 +6065,7 @@ msgid "Our determination of the relative importance of the execution factors may
 msgstr "在某些情況下，我們所決心的執行因素相對重要性可能與您的不相同。我們根據最佳執行義務操作，為您爭取最大利益。"
 
 msgid "Our development team will determine how much you get paid. You can expect the following range of payments:"
-msgstr ""
+msgstr "我們的開發團隊將決定您可以得到多少報酬。您可以期待以下的報酬範圍："
 
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "我們獲取了主要競爭對手之一 BetsForTraders 的客戶群，補充了公司快速的有機增長。"
@@ -6659,7 +6683,7 @@ msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, Fren
 msgstr "以英文、印尼文、日文、中文、波蘭文、德文、法文、西班牙文、葡萄牙文、意大利文、俄文和泰文發佈"
 
 msgid "Pull Requests"
-msgstr ""
+msgstr "拉動請求"
 
 msgid "Purchase"
 msgstr "買入"
@@ -7157,7 +7181,7 @@ msgid "Sell your long-term contracts before expiry to protect any profits you ma
 msgstr "長期合約到期前售出交易，以保護您的盈利或將虧損降至最低"
 
 msgid "Send an email to %1 to ask our development team to review your pull request"
-msgstr ""
+msgstr "發送電子郵件到 %1 以便要求我們的開發團隊審查您的拉動請求"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "請將您的履歷以及說明您職業興趣的求職信傳送給我們。"
@@ -7307,7 +7331,7 @@ msgid "Skill in the use of financial information sources such as Bloomberg and R
 msgstr "金融資料（如彭博社和路透社）的使用技能"
 
 msgid "Smallish changes – generally $20-50"
-msgstr ""
+msgstr "小量變化 —一般為 20-50 美元"
 
 msgid "Smart FX"
 msgstr "智慧外匯"
@@ -7397,7 +7421,7 @@ msgid "Start Time"
 msgstr "開始時間"
 
 msgid "Start Time and Entry Spot"
-msgstr ""
+msgstr "開始時間和進入點"
 
 msgid "Start Trading with MetaTrader 5"
 msgstr "開始使用MetaTrader 5交易"
@@ -7541,7 +7565,7 @@ msgid "Submit"
 msgstr "送出"
 
 msgid "Submit a pull request to master in the original GitHub repository "
-msgstr ""
+msgstr "提交拉動請求到 GitHub 原始存儲庫中的主程式 "
 
 msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
 msgstr "如果發現任何潛在安全問題，請在HackerOne提交報表，並附上解決問題的建議。"
@@ -7580,7 +7604,7 @@ msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "支持集團的全球招聘和人才管理需求"
 
 msgid "Sure. We welcome projects such as new mobile apps, chatbot apps, browser extensions, and new charting tools."
-msgstr ""
+msgstr "確定。我們歡迎新手機應用、聊天機器人應用、瀏覽器延伸軟體和新的圖表工具等專案。"
 
 msgid "Suspend the trading of the affected instrument;"
 msgstr "受影響工具的交易被暫停;"
@@ -7700,7 +7724,7 @@ msgid "The %1 Terms and Conditions;"
 msgstr "%1條款和條件"
 
 msgid "The %1 team"
-msgstr ""
+msgstr "%1 團隊"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1網站受版權保護。"
@@ -8169,7 +8193,7 @@ msgid "The page you requested could not be found. Either it no longer exists or 
 msgstr "找不到您要求的頁面。它不再存在或輸入網址出錯。請檢查是否輸入錯誤。"
 
 msgid "The password you entered is one of the world's most commonly used passwords. You should not be using this password."
-msgstr ""
+msgstr "您輸入的密碼是世界上最常用的密碼之一。您不應該使用此密碼。"
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "該專利意味著Regent Markets 為公認的二元投注先驅。這項專利有助於保護我們的創新。"
@@ -8523,7 +8547,7 @@ msgid "To enable cookies, follow the instructions below for the browser version 
 msgstr "要啟用cookie，請按下面符合您瀏覽器版本的指示說明進行操作。"
 
 msgid "To encourage transparency and improve the performance and functionality of our website, %1 has open-sourced the entire front-end of our codebase, and we are now actively encouraging the community to contribute to its development. "
-msgstr ""
+msgstr "為了促進我們網站的透明度和提高功能與性能，%1 的整個代碼庫前端已提供開源，我們現在也正在積極鼓勵社會對其發展作出貢獻。 "
 
 msgid "To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the %1Information Memorandum%2 page."
 msgstr "要曉得 ICO 是否可在貴國管轄範圍內使用，並且，如果可用，您是否合格訂購權杖，請從 %1資訊備忘錄%2 頁面上的下拉清單中選擇您的國家。"
@@ -8793,7 +8817,7 @@ msgid "Transparent risk and potential reward"
 msgstr "透明風險和潛在獎勵"
 
 msgid "Trivial changes – generally $5-20"
-msgstr ""
+msgstr "極小量變化 —一般為 5-20 美元"
 
 msgid "True"
 msgstr "True"
@@ -9024,7 +9048,7 @@ msgid "Version 43. Last modified 2016-11-09."
 msgstr "版本43。最後修改時間為 2016年11月09日。"
 
 msgid "Very large changes/entire new projects – $2,500-10,000"
-msgstr ""
+msgstr "非常大的變化/整個新專案 — 2,500 -10,000 美元"
 
 msgid "Video Room Facility"
 msgstr "視訊室設施"
@@ -9036,10 +9060,13 @@ msgid "View Binary Ltd.'s 2016 annual report"
 msgstr "檢視Binary有限公司 2016年年度報告"
 
 msgid "View Chart"
-msgstr ""
+msgstr "檢視圖表"
 
 msgid "View Details"
 msgstr "檢視詳細資料"
+
+msgid "View Japanese website"
+msgstr ""
 
 msgid "View Statement"
 msgstr "檢視帳單"
@@ -9174,7 +9201,7 @@ msgid "We are always on the lookout for small, local charities where our contrib
 msgstr "我們一直都在尋找可讓受益人直接受惠的小型本地慈善活動。如您想要我們支持您的慈善活動，請通過%1和我們聯繫。"
 
 msgid "We are always on the lookout for talent – please apply via our <a target='_blank' href='%1'>careers</a> page."
-msgstr ""
+msgstr "我們一直都在尋找人才 — 請通過我們的 <a target='_blank' href='%1'> 職業</a> 頁面提出申請。"
 
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "我們由馬爾他金融服務機構(「MFSA」）授予許可證和監管，根據投資服務法令(馬爾他法令第370章）（「法令」）開展投資業務。我們受MFSA授權對自己帳戶進行交易（即提供服務和將交易對手作為客戶進行交易）及代替他人執行訂單。這兩種服務和金融衍生產品（主要是二元期權）有關，也跟外匯、指數、股票和其他金融產品或資產（「金融產品」）有關。出了以上所述，我們沒有權限，也不提供任何其他投資諮詢或投資服務。如您需要以上所述以外的投資諮詢或服務，須聯繫獨立的金融顧問或公司。"
@@ -9276,7 +9303,7 @@ msgid "We offer an innovative product range for customers consisting of financia
 msgstr "我們為客戶提供創新的產品系列，包括金融和合成工具，持續時間為10秒至365天。"
 
 msgid "We only pay for pull requests that are approved by our development team and merged into master. If the development team approves your pull request, we'll pay you in cryptocurrency. You can choose Bitcoin, Litecoin or Ether. "
-msgstr ""
+msgstr "我們只對經過開發團隊批准並合併到主程式的拉動請求給予報酬。如果開發團隊批准您的拉動請求，我們會付加密貨幣給您。您可以選擇比特幣、萊特幣或以太幣。 "
 
 msgid "We possess a number of attributes which differentiate us from other players in the market."
 msgstr "我們具備多項比市場其他提供商優越的特性。"
@@ -9324,7 +9351,7 @@ msgid "We use identity verification services and real-time fraud detection measu
 msgstr "我們通過身份驗證服務和即時防欺詐措施來防止您的帳戶遭到非法存取。另外，我們還會對您的帳戶活動進行監控以發現不正常的欺詐活動跡象，我們還會和收債代理和執法機關合作來應對欺詐問題。"
 
 msgid "We want to keep improving our platform, so, it's in our interest to pay contributors fairly. If we don't, then you'll stop contributing pull requests, which will make this project self-defeating."
-msgstr ""
+msgstr "我們要不斷改進我們的平台，所以，給予貢獻者合理的報酬符合我們的利益。如果我們不這樣做，您就會停止貢獻拉動請求，導致這個項目弄巧成拙。"
 
 msgid "We will act on any instructions given, or appearing to be given by you and received by us in relation to the margin trading services provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us."
 msgstr "我們會根據我們所收到的，由您提供或看來是您提供的關於通過 MT5 交易平台進行保證金交易的任何指示採取行動。然而，我們沒有義務對您所給的任何指示採取行動，我們也沒有義務對拒絕採取行動向您提供任何理由。我們從您收到的指示被視為最後並不可撤銷指示。確保您給我們的指示真實性和準確性是您的責任。"
@@ -9348,7 +9375,7 @@ msgid "We will use reasonable endeavours within our control to ensure that all e
 msgstr "我們將在可控制範圍內合理地努力，確保您通過 MT5 交易平台和所有電子交易指示所收到並由我們執行提供的所有電子資料均不會受到網絡延遲。"
 
 msgid "We'll pay for any pull request that is accepted and merged into the master codebase."
-msgstr ""
+msgstr "我們會對任何被接受並合併到主代碼庫的拉動請求提供報酬。"
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "我們獲得「用於金融市場投機的電腦交易系統及方法」和「用於自訂金融市場投機的電腦交易系統」的專利授權。這些專利表明我們的創新和保持領先群雄的能力。"
@@ -9417,7 +9444,7 @@ msgid "What are the risks of purchasing tokens?"
 msgstr "購買權杖的風險是什麼？"
 
 msgid "What can I expect to get paid?"
-msgstr ""
+msgstr "我可以獲得什麼報酬？"
 
 msgid "What commission plan do you offer?"
 msgstr "你們的佣金計劃如何？"
@@ -9438,7 +9465,7 @@ msgid "What is this?"
 msgstr "這是甚麽？"
 
 msgid "What kind of changes can I submit?"
-msgstr ""
+msgstr "我可以提交什麼樣的變化？"
 
 msgid "What marketing tools do you offer?"
 msgstr "你們提供怎麼樣的行銷工具？"
@@ -9549,7 +9576,7 @@ msgid "Where your experience, drive and talent can propel you in unknown directi
 msgstr "在這裡，您的經驗、奮鬥精神和天賦可以推動你往未知的方向邁進，而且您可以自由地踏入新的領域。"
 
 msgid "Which projects are available?"
-msgstr ""
+msgstr "哪些專案是可用的？"
 
 msgid "Whilst we act as principal in respect of your orders, we also assess the execution venues that we use and upon which we place significant reliance to provide the best possible result for the execution of your orders. These venues typically consist of third party investment firms, brokers, and/or liquidity providers."
 msgstr "作為您的訂單委託人，我們也對我們高度依賴的執行場地進行評估，以便為您的訂單執行提供最佳效益。這些場地通常由第三方投資公司、經紀人和/或流動性提供商組成。"
@@ -9732,7 +9759,7 @@ msgid "Year"
 msgstr "年"
 
 msgid "Yes, but we'd prefer you to submit security vulnerabilities via our <a target=\"_blank\" href=\"%1\">bug bounty</a> program."
-msgstr ""
+msgstr "是的。但我們寧願您通過我們的<a target=\"_blank\"href=\"%1\"> bug賞金</a> 項目提交安全漏洞。"
 
 msgid "Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:"
 msgstr "是的。如果您需要自訂橫幅，請跟帳戶管理員聯繫，並提供以下資料:"
@@ -10383,7 +10410,7 @@ msgid "logout"
 msgstr "登出"
 
 msgid "million"
-msgstr ""
+msgstr "百萬"
 
 msgid "min"
 msgstr "最小"
@@ -10461,7 +10488,7 @@ msgid "the specific instructions that we receive from you;"
 msgstr "您所提供的特定指令；"
 
 msgid "thousand"
-msgstr ""
+msgstr "千"
 
 msgid "tick"
 msgstr "跳動點"
@@ -12210,7 +12237,7 @@ msgid "Multiple Accounts Manager"
 msgstr "多個帳戶管理器"
 
 msgid "Get Paid for Pull Requests"
-msgstr ""
+msgstr "提交拉動請求獲得報酬"
 
 msgid "How to Trade Binary Options?"
 msgstr "二元期權如何交易?"

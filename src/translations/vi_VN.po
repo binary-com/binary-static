@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-04 22:13-0400\n"
+"PO-Revision-Date: 2017-10-09 03:40-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgid "%1 ICO <br /> Pre-announcement"
 msgstr "%1 ICO <br /> Pre-announcement"
 
 msgid "%1 ICO Auction Bids"
-msgstr ""
+msgstr "%1 Giá thầu ICO"
 
 msgid "%1 ICO FAQ"
 msgstr "%1 ICO FAQ"
@@ -106,7 +106,7 @@ msgid "%1 ICO, Invest in the world's premier platform for binary options trading
 msgstr "%1 ICO, đầu tư trong nền tảng hàng đầu của thế giới về giao dịch lựa chọn nhị phân"
 
 msgid "%1 Initial Coin Offering (ICO)"
-msgstr ""
+msgstr "%1 Initial Coin Offering (ICO)"
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 xin vui lòng nhấp vào liên kết dưới đây để khởi động lại quá trình phục hồi mật khẩu."
@@ -133,13 +133,13 @@ msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "Logo %1 và logo bò/gấu là nhãn hiệu đã được đăng ký."
 
 msgid "%1 announces plans for an %2IPO on the blockchain%3."
-msgstr ""
+msgstr "%1 công bố kế hoạch cho một %2IPO trên blockchain%3."
 
 msgid "%1 assesses the choice of external execution venues regularly (at least once a year) with the intention of achieving a better result for you based on our best execution obligation."
 msgstr "%1 đánh giá sự lựa chọn thực hiện bên ngoài các địa điểm thường xuyên (ít nhất một lần một năm) với mục đích đạt được một kết quả tốt hơn cho bạn dựa trên các nghĩa vụ thực hiện tốt nhất của chúng tôi."
 
 msgid "%1 by the numbers"
-msgstr ""
+msgstr "%1 bởi những con số"
 
 msgid "%1 continues to innovate and grow"
 msgstr "%1 tiếp tục lớn mạnh và đổi mới"
@@ -160,7 +160,7 @@ msgid "%1 earns a return from the difference between the total amount of all cus
 msgstr "%1 kiếm được một khoản do sự chênh lệch giữa tổng số tiền của tất cả thanh toán của khách hàng và tổng số tiền của tất cả hóa đơn của khách hàng."
 
 msgid "%1 employs over 130 people across its offices in Malta, Malaysia and Japan."
-msgstr ""
+msgstr "%1 tuyển dụng hơn 130 người qua các văn phòng ở Malta, Malaysia và Nhật bản."
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1 mang lại cho mọi người một cách gia nhập thị trường tài chính dễ dàng. Bắt đầu giao dịch chỉ với $1 đô la Mỹ với nhiều loại tiền tệ, chứng khoán, chỉ số, và hàng hóa khác."
@@ -700,6 +700,9 @@ msgstr "Mã API Token"
 
 msgid "API token for third party applications."
 msgstr "Mã API cho ứng dụng của bên thứ ba."
+
+msgid "ATM"
+msgstr ""
 
 msgid "AUD 1 per point"
 msgstr "1 AUD cho 1 điểm"
@@ -2259,6 +2262,12 @@ msgstr "Các hợp đồng được cung cấp bởi Công ty TNHH Đầu tư Bi
 msgid "Contracts sold"
 msgstr "Hợp đồng đã được bán"
 
+msgid "Contracts where the barrier is different from the entry spot."
+msgstr ""
+
+msgid "Contracts where the barrier is the same as entry spot."
+msgstr ""
+
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "Hợp đồng thường sẽ không được chào tại tỉ lệ cược dưới 0.05-tới-1 (ví dụ tiền thưởng của dưới USD/GBP/EUR/AUD 1.05 cho mỗi 1 đơn vị vốn USD/GBP/EUR/AUD)."
 
@@ -2690,6 +2699,12 @@ msgstr "Vì những thay đổi gần đây trong các quy định, chúng tôi 
 
 msgid "Duration"
 msgstr "Khoảng thời gian"
+
+msgid "Duration above 7 days"
+msgstr ""
+
+msgid "Duration up to 7 days"
+msgstr ""
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "Trong suốt thời kì thị trường nhanh (ví dụ thời kì biến động thị trường rất nhanh), hợp đồng có thể được chào bán với mức giá bất lợi hơn những hợp đồng đã được chào bán trong điều kiện thị trường bình thường."
@@ -3886,9 +3901,6 @@ msgstr "Nếu bạn mua <strong> một khối EUR/USD</strong> biểu tượng v
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "Nếu bạn chọn giao dịch Hợp đồng với chúng tôi, bạn phải ý thức được những rủi rui có liên quan, đó là bạn cần phải có đủ nguồn lực đầu tư để có thể chịu được những rủi ro này và bạn phải theo dõi vị thế của bạn một cách cẩn thận."
 
-msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
-msgstr "Nếu bạn không có ý định sử dụng tính năng đòn bẩy, xin hãy thiết lập tỷ lệ đòn bẩy về 1:1."
-
 msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
 msgstr ""
 
@@ -4893,6 +4905,9 @@ msgstr "Japan website Terms and Conditions Paragraph 1"
 msgid "Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and %1 (formerly known as Betonmarkets.com) in 1999."
 msgstr ""
 
+msgid "Jim Mellon is a well-known and successful entrepreneur, starting his career in fund management and now including biopharma, property, mining, and information technology amongst his many investments. Jim is listed at number 140 on the Sunday Times Rich List with a net worth of &pound;920 million, and holds directorships in a number of publicly quoted companies. He is the founder and principal shareholder of the Regent Pacific Group, quoted on the Hong Kong Stock Exchange, who were the founding investor of Binary.com in 1999."
+msgstr ""
+
 msgid "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 msgstr ""
 
@@ -5406,6 +5421,9 @@ msgstr ""
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Tập hợp tiền thưởng tối đa trên vị thế mở"
 
+msgid "Maximum aggregate payouts on open positions per symbol"
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "Tập hợp tiền thưởng tối đa trên vị thế mở cho mỗi biểu tượng và loại hợp đồng"
 
@@ -5718,6 +5736,9 @@ msgstr "Không. Không mất chi phí để đăng kí chương trình liê
 msgid "No. of Tokens"
 msgstr ""
 
+msgid "Non-ATM"
+msgstr ""
+
 msgid "Not"
 msgstr "Không"
 
@@ -5882,6 +5903,9 @@ msgstr "Chỉ năm năm sau khi thành lập, chúng tôi đã nhận được g
 
 msgid "Only letters, numbers, and hyphen are allowed."
 msgstr "Chỉ các chữ cái, số và dấu nối là được phép."
+
+msgid "Only letters, numbers, space, and these special characters are allowed: - . ' # ; : ( ) , @ /"
+msgstr ""
 
 msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed."
 msgstr "Chỉ chữ cái, số, khoảng trắng, dấu gạch nối, dấu chấm, và dấu gạch ngang được cho phép."
@@ -9043,6 +9067,9 @@ msgstr ""
 msgid "View Details"
 msgstr "Xem chi tiết"
 
+msgid "View Japanese website"
+msgstr ""
+
 msgid "View Statement"
 msgstr "Xem tuyên bố"
 
@@ -10680,7 +10707,7 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
 msgstr "{NHẬT BẢN} Chương trình liên kết T & C phần 14 tiêu đề"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1. %1Link to binary_affiliate_guidelines.pdf%2."
-msgstr ""
+msgstr "{JAPAN ONLY} Chương trình Liên Kết T & C phần 2 đoạn 1. %1Link tới binary_affiliate_guidelines.pdf%2."
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
 msgstr "{NHẬT BẢN} Chương trình liên kết T & C phần 2 đoạn 2"
@@ -10974,7 +11001,7 @@ msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by
 msgstr "{Nhật bản}Bất kỳ công ty mà thực chất thuộc sở hữu hoặc kiểm soát bởi một người nào đó được mô tả trong các danh mục 1) tới 4)"
 
 msgid "{JAPAN ONLY}Apply for Real Money Account"
-msgstr ""
+msgstr "{JAPAN ONLY}Áp dụng cho các tài khoản tiền thật"
 
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 msgstr "{CHỈ ĐỐI VỚI NHẬT BẢN} Bạn có phải là một chuyên gia đầu tư hoặc người đào tạo tiến hành các thị trường tài chính?"
@@ -11001,7 +11028,7 @@ msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
 
 msgid "{JAPAN ONLY}At the top of the page as shown above."
-msgstr ""
+msgstr "{JAPAN ONLY}Ở đầu trang như trên."
 
 msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
 msgstr "{Nhật bản}Giành giải thưởng, nền tảng kinh doanh tài chính được cấp bằng sáng chế quốc tế, vừa được du nhập vào Nhật Bản"
@@ -11016,7 +11043,7 @@ msgid "{JAPAN ONLY}Best Tracking with \"Forever Cookies\""
 msgstr "{Nhật bản}Theo dõi tốt nhất với \"Cookie mãi mãi\""
 
 msgid "{JAPAN ONLY}Binary Co., Ltd."
-msgstr ""
+msgstr "{JAPAN ONLY}Binary Co., Ltd."
 
 msgid "{JAPAN ONLY}Binary K. K."
 msgstr "{JAPAN ONLY}Binary K. K."
@@ -11409,7 +11436,7 @@ msgid "{JAPAN ONLY}Learning to trade online?"
 msgstr "{Nhật bản}Học cách giao dịch trực tuyến?"
 
 msgid "{JAPAN ONLY}Licensed by the Kanto Local Financial Bureau (Finance Division) No. 2949"
-msgstr ""
+msgstr "{JAPAN ONLY}Được cấp phép bởi cơ quan tài chính địa phương Kanto (bộ phận tài chính) số 2949"
 
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
@@ -11424,7 +11451,7 @@ msgid "{JAPAN ONLY}Matters to attend:"
 msgstr "{JAPAN ONLY}Matters to attend:"
 
 msgid "{JAPAN ONLY}Member Associations: Financial Futures Association Japan"
-msgstr ""
+msgstr "{JAPAN ONLY}Hiệp hội thành viên: Hiệp hội tài chính tương lai Nhật bản"
 
 msgid "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
 msgstr "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
@@ -11463,7 +11490,7 @@ msgid "{JAPAN ONLY}Options may be European or American style of exercise, and th
 msgstr "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
 
 msgid "{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:"
-msgstr ""
+msgstr "{JAPAN ONLY}Hoặc, nếu bạn muốn áp dụng ngay lập tức, hãy bấm vào nút dưới đây:"
 
 msgid "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
@@ -11517,13 +11544,13 @@ msgid "{JAPAN ONLY}Please make a bank transfer from your designated bank account
 msgstr "{CHỈ ĐỐI VỚI NHẬT BẢN} Xin vui lòng làm cho một ngân hàng chuyển từ tài khoản khu vực cho phép của bạn đến:"
 
 msgid "{JAPAN ONLY}Please make sure you add your %1 account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
-msgstr ""
+msgstr "{JAPAN ONLY}Xin vui lòng chắc chắn rằng bạn thêm ID tài khoản %1 của bạn vào tên tài khoản của Remitter, hoặc nó sẽ trì hoãn việc nạp tiền vào tài khoản của bạn:"
 
 msgid "{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000."
 msgstr "{CHỈ ĐỐI VỚI NHẬT BẢN} Xin lưu ý chúng tôi giới hạn tối đa khoản tiền gửi cho một giao dịch đơn là ¥ 1.000.000."
 
 msgid "{JAPAN ONLY}Please note that the website that you have just visited is not our site. Information regarding the Company's financial instruments that have been posted on that site, any evaluation, impression, etc. are the sole responsibility of the administrators of that website, and has been created by them only. We can make no guarantee or accept any responsibility for their content."
-msgstr ""
+msgstr "{JAPAN ONLY}Vui lòng lưu ý rằng các trang web mà bạn đã chỉ cần truy cập không phải là trang web của chúng tôi. Thông tin về công cụ tài chính của công ty đã được đăng trên trang web đó, bất kỳ đánh giá, Ấn tượng, vv là trách nhiệm duy nhất của các quản trị viên của trang web đó, và đã được tạo ra bởi chúng chỉ. Chúng tôi có thể làm cho không có bảo đảm hoặc chấp nhận bất kỳ trách nhiệm nào đối với nội dung của họ."
 
 msgid "{JAPAN ONLY}Please note the maximum regular withdrawal amount is ¥1,000,000."
 msgstr "{CHỈ ĐỐI VỚI NHẬT BẢN} Xin lưu ý số tiền rút tối đa bình thường là 1.000.000 ¥."
@@ -11541,10 +11568,10 @@ msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 
 msgid "{JAPAN ONLY}Proceed to Virtual Account"
-msgstr ""
+msgstr "{JAPAN ONLY}Đi tới tài khoản ảo"
 
 msgid "{JAPAN ONLY}Proceed to official site"
-msgstr ""
+msgstr "{JAPAN ONLY}Đi tới trang web chính thức"
 
 msgid "{JAPAN ONLY}Professional service"
 msgstr "{Nhật bản}Dịch vụ chuyên nghiệp"
@@ -11613,7 +11640,7 @@ msgid "{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate 
 msgstr "{Nhật bản}Vậy bạn đang mong chờ điều gì? Hãy tham gia với chúng tôi để trở thành liên kết ngay hôm nay."
 
 msgid "{JAPAN ONLY}Social Media"
-msgstr ""
+msgstr "{JAPAN ONLY}Phương tiện truyền thông"
 
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
@@ -11622,85 +11649,85 @@ msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
 
 msgid "{JAPAN ONLY}TIP_1"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_1"
 
 msgid "{JAPAN ONLY}TIP_10"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_10"
 
 msgid "{JAPAN ONLY}TIP_100"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_100"
 
 msgid "{JAPAN ONLY}TIP_11"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_11"
 
 msgid "{JAPAN ONLY}TIP_12"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_12"
 
 msgid "{JAPAN ONLY}TIP_13"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_13"
 
 msgid "{JAPAN ONLY}TIP_14"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_14"
 
 msgid "{JAPAN ONLY}TIP_15"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_15"
 
 msgid "{JAPAN ONLY}TIP_16"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_16"
 
 msgid "{JAPAN ONLY}TIP_17"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_17"
 
 msgid "{JAPAN ONLY}TIP_18"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_18"
 
 msgid "{JAPAN ONLY}TIP_19"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_19"
 
 msgid "{JAPAN ONLY}TIP_2"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_2"
 
 msgid "{JAPAN ONLY}TIP_20"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_20"
 
 msgid "{JAPAN ONLY}TIP_21"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_21"
 
 msgid "{JAPAN ONLY}TIP_22"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_22"
 
 msgid "{JAPAN ONLY}TIP_23"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_23"
 
 msgid "{JAPAN ONLY}TIP_24"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_24"
 
 msgid "{JAPAN ONLY}TIP_25"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_25"
 
 msgid "{JAPAN ONLY}TIP_26"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_26"
 
 msgid "{JAPAN ONLY}TIP_27"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_27"
 
 msgid "{JAPAN ONLY}TIP_28"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_28"
 
 msgid "{JAPAN ONLY}TIP_29"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_29"
 
 msgid "{JAPAN ONLY}TIP_3"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_3"
 
 msgid "{JAPAN ONLY}TIP_30"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_30"
 
 msgid "{JAPAN ONLY}TIP_31"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_31"
 
 msgid "{JAPAN ONLY}TIP_32"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_32"
 
 msgid "{JAPAN ONLY}TIP_33"
 msgstr "{JAPAN ONLY}TIP_33"
@@ -11853,73 +11880,73 @@ msgid "{JAPAN ONLY}TIP_78"
 msgstr "{JAPAN ONLY}TIP_78"
 
 msgid "{JAPAN ONLY}TIP_79"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_79"
 
 msgid "{JAPAN ONLY}TIP_8"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_8"
 
 msgid "{JAPAN ONLY}TIP_80"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_80"
 
 msgid "{JAPAN ONLY}TIP_81"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_81"
 
 msgid "{JAPAN ONLY}TIP_82"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_82"
 
 msgid "{JAPAN ONLY}TIP_83"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_83"
 
 msgid "{JAPAN ONLY}TIP_84"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_84"
 
 msgid "{JAPAN ONLY}TIP_85"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_85"
 
 msgid "{JAPAN ONLY}TIP_86"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_86"
 
 msgid "{JAPAN ONLY}TIP_87"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_87"
 
 msgid "{JAPAN ONLY}TIP_88"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_88"
 
 msgid "{JAPAN ONLY}TIP_89"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_89"
 
 msgid "{JAPAN ONLY}TIP_9"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_9"
 
 msgid "{JAPAN ONLY}TIP_90"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_90"
 
 msgid "{JAPAN ONLY}TIP_91"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_91"
 
 msgid "{JAPAN ONLY}TIP_92"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_92"
 
 msgid "{JAPAN ONLY}TIP_93"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_93"
 
 msgid "{JAPAN ONLY}TIP_94"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_94"
 
 msgid "{JAPAN ONLY}TIP_95"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_95"
 
 msgid "{JAPAN ONLY}TIP_96"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_96"
 
 msgid "{JAPAN ONLY}TIP_97"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_97"
 
 msgid "{JAPAN ONLY}TIP_98"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_98"
 
 msgid "{JAPAN ONLY}TIP_99"
-msgstr ""
+msgstr "{JAPAN ONLY}TIP_99"
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
@@ -12036,7 +12063,7 @@ msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Po
 msgstr "{Nhật bản}Chúng tôi không thể chấp thuận các đơn yêu cầu từ bất cứ cá nhân nào có ảnh hưởng chính trị ngoại quốc, mà được xác định bởi Đạo Luật về Phòng Chống Tội Phạm Rửa Tiền năm 2007 hay như bất cứ ai trong các danh mục sau:"
 
 msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
-msgstr ""
+msgstr "{JAPAN ONLY}Chúng tôi đã mở một tài khoản ảo cho bạn và nạp nó với ¥ 1.000.000 tiền ảo."
 
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
@@ -12066,10 +12093,10 @@ msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your 
 msgstr "{Nhật bản}Chúng tôi sẽ cung cấp cho bạn tất cả các công cụ bạn cần để biến hệ thống của bạn thành một nguồn thu nhập"
 
 msgid "{JAPAN ONLY}Welcome to %1"
-msgstr ""
+msgstr "{JAPAN ONLY}Chào Mừng tới %1"
 
 msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
-msgstr ""
+msgstr "{JAPAN ONLY}Chào mừng vào trang web của Binary KK."
 
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
@@ -12087,10 +12114,10 @@ msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "{JAPAN ONLY}Win Loss Ratio"
 
 msgid "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
-msgstr ""
+msgstr "{JAPAN ONLY}Bạn có thể thoái mái sử dụng tài khoản này để thực hành giao dịch và làm quen với nền tảng giao dịch của chúng tôi."
 
 msgid "{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:"
-msgstr ""
+msgstr "{JAPAN ONLY}Bạn có thể áp dụng để mở một tài khoản tiền thật bất kỳ lúc nào bằng cách nhấp vào:"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{Nhật bản}Bạn có thể áp dụng để mở một tài khoản trực tuyến. Chỉ cần nhấp vào <a href=\"%1\"> đây</a> để bắt đầu quá trình bằng cách mở một tài khoản mô phỏng. Một khi bạn đã quen thuộc với các trang web của chúng tôi và cảm thấy thoải mái trong kiến thức của các tùy chọn nhị phân, chúng tôi mời bạn để nâng cấp lên một tài khoản tiền thật."
@@ -12141,34 +12168,34 @@ msgid "{JAPAN ONLY}Your investments are immediately reflected in your account ba
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 
 msgid "{JAPANY ONLY}1 week to 1 year terms"
-msgstr ""
+msgstr "{JAPANY ONLY}Điều khoản từ 1 tuần tới 1 năm"
 
 msgid "{JAPANY ONLY}2 hours to 1 year terms"
-msgstr ""
+msgstr "{JAPANY ONLY}Điều khoản từ 2 giờ tới 1 năm"
 
 msgid "{JAPANY ONLY}Ladder Options"
-msgstr ""
+msgstr "{JAPANY ONLY}Các lựa chọn Ladder"
 
 msgid "{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range."
-msgstr ""
+msgstr "{JAPANY ONLY}Dự đoán nếu có một tỷ lệ FX sẽ kết thúc bên trong hay bên ngoài một phạm vi nhất định."
 
 msgid "{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
-msgstr ""
+msgstr "{JAPANY ONLY}Dự đoán nếu có một tỷ lệ FX sẽ kết thúc cao hơn hoặc thấp hơn so với một rào cản mục tiêu."
 
 msgid "{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not."
-msgstr ""
+msgstr "{JAPANY ONLY}Dự đoán nếu mà một tỷ lệ FX sẽ chạm vào một rào cản mục tiêu hay không."
 
 msgid "{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry."
-msgstr ""
+msgstr "{JAPANY ONLY}Dự đoán nếu mà một tỷ lệ FX sẽ chạm vào một trong hai rào cản mục tiêu trước khi hết hạn."
 
 msgid "{JAPANY ONLY}Range Options: End-In / End-Out"
-msgstr ""
+msgstr "{JAPANY ONLY}Các tùy chọn Range: Kết thúc trong / Kết thúc ngoài"
 
 msgid "{JAPANY ONLY}Range Options: Stay-In / Break-Out"
-msgstr ""
+msgstr "{JAPANY ONLY}Các tùy chọn Range: Ở lại / Thoát ra"
 
 msgid "{JAPANY ONLY}Touch Options"
-msgstr ""
+msgstr "{JAPANY ONLY}Các lựa chọn Touch"
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
@@ -12204,16 +12231,16 @@ msgid "Service Announcements"
 msgstr "Thông báo dịch vụ"
 
 msgid "Multi-asset Liquidity Solutions"
-msgstr ""
+msgstr "Các giải pháp thanh khoản đa tài sản"
 
 msgid "Open-Source Projects"
 msgstr "Các Dự Án Nguồn Mở"
 
 msgid "Multiple Accounts Manager"
-msgstr ""
+msgstr "Quản lý nhiều tài khoản"
 
 msgid "Get Paid for Pull Requests"
-msgstr ""
+msgstr "Được trả tiền cho các yêu cầu kéo"
 
 msgid "How to Trade Binary Options?"
 msgstr "Làm thế nào để xử dụng giao dịch các tùy chọn nhị phân?"
@@ -12246,7 +12273,7 @@ msgid "Trusted by traders since 2000"
 msgstr "Tin cậy bởi các thương nhân từ năm 2000"
 
 msgid "Welcome to Binary.com"
-msgstr ""
+msgstr "Chào mừng đến với Binary.com"
 
 msgid "Accounts"
 msgstr "Các tài khoản"
@@ -12267,17 +12294,17 @@ msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
 
 msgid "Redirecting..."
-msgstr ""
+msgstr "Chuyển hướng..."
 
 msgid "Initial Coin Offering"
 msgstr "Cung cấp đầu tiên xu"
 
 msgid "Initial Coin Offering Disclaimer"
-msgstr ""
+msgstr "Khước từ Initial Coin Offering"
 
 msgid "Hackathon Competition"
-msgstr ""
+msgstr "Cuộc thi Hackathon"
 
 msgid "Sign up"
-msgstr ""
+msgstr "Đăng kí"
 
