@@ -63,6 +63,15 @@
     label {
         line-height: 28px;
     }
+    #contract_symbol_container {
+        flex-direction: row;
+        display: flex;
+        padding-left: 5px;
+
+        #contract_markets, #underlying, #symbol_tip, #spot {
+            margin: 0 10px 5px 0;
+        }
+    }
     #contract_market_form_container, #analysis_tab_container {
         height: 28px;
 
@@ -140,41 +149,6 @@
             }
             .price-right {
                 @include BIDIR_PROP(padding-left, padding-right, 2.5px);
-            }
-        }
-    }
-    #contract_symbol_container {
-        #market_container, #underlying_spot_wrapper, #underlying_container, #underlying, #spot_container {
-            @include BIDIR_VALUE(float, left, right);
-        }
-        #market_container, #underlying, #symbol_tip, #spot {
-            @include BIDIR_PROP(margin-right, margin-left, 5px);
-        }
-        #underlying_spot_wrapper {
-            #underlying_container {
-                #underlying {
-                    margin-bottom: 5px;
-                }
-                #symbol_tip {
-                    line-height: 28px;
-                    cursor: pointer;
-                }
-            }
-            #spot_container {
-                #spot {
-                    line-height: 20px;
-                    display: inline-block;
-                    white-space: nowrap;
-                    padding: 3px;
-                    border-radius: $BORDER_RADIUS;
-
-                    &.error {
-                        font-style: italic;
-                    }
-                }
-                #trading_worm_chart {
-                    display: inline-block;
-                }
             }
         }
     }
@@ -577,25 +551,6 @@
 
 @media all and (max-width: 959px) {
     #trading_socket_container_beta {
-        #contract_symbol_container {
-            #market_container {
-                max-width: calc(50% - 5px);
-
-                #contract_markets {
-                    max-width: 100%;
-                }
-            }
-            #underlying_spot_wrapper {
-                #underlying_container {
-                    #underlying {
-                        max-width: calc(100% - 26px);
-                    }
-                }
-                #spot {
-                    font-size: $FONT_SIZE_S;
-                }
-            }
-        }
         .col-trade, .col-analyse {
             padding: 0 5px !important;
         }
@@ -620,14 +575,14 @@
 }
 @media all and (max-width: 480px) {
     #trading_socket_container_beta {
-        .col-trade, .col-analyse {
-            padding: 0 !important;
-        }
         .price-left, .price-right {
             padding: 0 10px !important;
         }
         .price-right {
             margin-top: 5px;
+        }
+        #underlying {
+            width: 100%;
         }
         #contract_market_form_container {
             ul#contract_form_name_nav {
