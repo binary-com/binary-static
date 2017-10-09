@@ -595,10 +595,11 @@
             </div>
         </div>
         <!-- Subscribe section -->
-        <div class="content-section primary-bg-color-dark center-text">
+        <div class="content-section fill-bg-color center-text">
             <div class="gr-row">
                 <div class="gr-12">
-                    <h3 class="content-inverse-color intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO, including the official launch date.") %]</h3>
+                    <h2>[% l("Subscribe to our mailing list") %]</h2>
+                    <p>[% l("for exclusive updates on the ICO, including the official launch date.") %]</p>
                     <div class="form-container">
                         <!-- AWeber Web Form Generator 3.0.1 -->
                         <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
@@ -634,6 +635,15 @@
                         </script>
                         <!-- /AWeber Web Form Generator 3.0.1 -->
                         <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
+                    </div>
+                    <p>[% l("Join the conversion in our social channels for all news and updates related to our upcoming ICO.") %]</p>
+                    <div class="gr-row gr-row-align-center">
+                        <a href="https://t.me/binarydotcom" target="_blank" class="gr-gutter-right">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/telegram.svg") %]" />
+                        </a>
+                        <a href="https://www.reddit.com/r/binarydotcom/" target="_blank">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
+                        </a>
                     </div>
                 </div>
             </div>
