@@ -35,12 +35,12 @@ After HTML build, you can run `sudo grunt connect` then visits [https://localhos
 #### Setup
 * Install `Homebrew` by `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 * Install `GNU gettext` by `brew install gettext`
-* Install `Crowdin CLI` by `brew install crowdin`
+* Install `Crowdin CLI` by `brew install crowdin` or follow the instructions here: [https://support.crowdin.com/cli-tool/#installation](https://support.crowdin.com/cli-tool/#installation)
 * Get [Crowdin API Key](https://crowdin.com/project/binary-static/settings#api) and add this line to your _.bash_profile_: `export CROWDIN_API_KEY='put API Key here'`<br/>
 **IMPORTANT!** This key gives full access to all your Crowdin project data. Treat this just like a password and never push it to any public repo.
 
 #### Update translations
-* Simply run `./scripts/update_translation.sh` from root to do these tasks:<br/>
+* Simply run `./scripts/update_translations.sh` in root folder of project to do these tasks:<br/>
 (It is possible to confirm/skip each task by answering y/n to questions, only first one is mandatory):
   * Check out and update the translations branch
   * Update master and merge into translations

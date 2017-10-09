@@ -25,7 +25,7 @@ const AssetIndexUI = (() => {
 
         if ($container.contents().length) return;
 
-        showLoadingImage($container);
+        showLoadingImage($container[0]);
 
         if (!asset_index) {
             sendRequest();

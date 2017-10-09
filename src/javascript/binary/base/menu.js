@@ -1,17 +1,26 @@
-const Client = require('./client');
+const Client             = require('./client');
+const applyToAllElements = require('./utility').applyToAllElements;
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 const Menu = (() => {
-    let $main_menu;
+    let main_menu,
+        menu_top,
+        items;
 
     const init = () => {
-        $main_menu = $('#main-menu');
+        main_menu = document.getElementById('main-menu');
+        menu_top  = document.getElementById('menu-top');
+        if (!main_menu || !menu_top) {
+            return;
+        }
 
-        $('#menu-top').find('li').removeClass('active');
+        items = main_menu.getElementsByClassName('item');
+
+        applyToAllElements('li', (el) => { el.classList.remove('active'); }, '', menu_top);
         hideMainMenu();
 
         const active = activeMenuTop();
-        if (active) active.addClass('active');
+        if (active) active.classList.add('active');
 
         if (Client.isLoggedIn() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
             showMainMenu();
@@ -19,86 +28,95 @@ const Menu = (() => {
     };
 
     const showMainMenu = () => {
-        $main_menu.setVisibility(1);
+        main_menu.setVisibility(1);
         activateMainMenu();
     };
 
     const hideMainMenu = () => {
-        $main_menu.setVisibility(0);
+        main_menu.setVisibility(0);
     };
 
     const activateMainMenu = () => {
         // First unset everything.
-        $main_menu
-            .find('li.item')
-            .removeClass('active hover')
-            .end()
-            .find('li.sub_item a')
-            .removeClass('a-active');
+        applyToAllElements(items, (el) => { el.classList.remove('active', 'hover'); });
+        applyToAllElements('.sub_item a', (el) => { el.classList.remove('a-active'); }, '', main_menu);
 
         const active         = activeMainMenu();
         const active_item    = active.item;
         const active_subitem = active.subitem;
         if (active_subitem) {
-            active_subitem.addClass('a-active');
+            active_subitem.classList.add('a-active');
         }
 
         if (active_item) {
-            active_item.addClass('active hover');
+            active_item.classList.add('active', 'hover');
             onMouseHover(active_item);
         }
     };
 
-    const onUnload = () => { $main_menu.unbind().find('.item').unbind(); };
+    const onUnload = () => {
+        main_menu.removeEventListener('mouseleave', onMouseLeave);
+        applyToAllElements(items, (el) => { el.removeEventListener('mouseenter', onMouseEnter); });
+    };
 
-    const removeHover = () => { $main_menu.find('li.item').removeClass('hover'); };
+    const removeHover = () => {
+        applyToAllElements(items, (el) => { el.classList.remove('hover'); });
+    };
 
     const onMouseHover = (active_item) => {
-        $main_menu
-            .on('mouseleave', () => {
-                removeHover();
-                if (active_item) active_item.addClass('hover');
-            })
-            .find('.item')
-            .on('mouseenter', function () {
-                removeHover();
-                $(this).addClass('hover');
-            });
+        main_menu.addEventListener('mouseleave', () => {
+            onMouseLeave(active_item);
+        });
+        applyToAllElements(items, (el) => { el.addEventListener('mouseenter', onMouseEnter); });
+    };
+
+    const onMouseLeave = (active_item) => {
+        removeHover();
+        if (active_item) active_item.classList.add('hover');
+    };
+
+    const onMouseEnter = (e) => {
+        removeHover();
+        e.target.classList.add('hover');
     };
 
     const activeMenuTop = () => {
         let active = '';
         const path = window.location.pathname;
-        $('#menu-top').find('li a').each(function () {
-            if (path.indexOf(this.pathname.replace(/\.html/i, '')) >= 0) {
-                active = $(this).closest('li');
+        const link_menu_top = menu_top.getElementsByTagName('a');
+        for (let i = 0; i < link_menu_top.length; i++) {
+            if (path.indexOf(link_menu_top[i].pathname.replace(/\.html/i, '')) >= 0) {
+                active = link_menu_top[i].closest('li');
             }
-        });
+        }
         return active;
     };
 
     const activeMainMenu = () => {
         let pathname = window.location.pathname;
         if (/cashier/i.test(pathname) && !(/cashier_password|payment_methods/.test(pathname))) {
-            pathname = $('#topMenuCashier').find('a').attr('href');
+            pathname = document.getElementById('topMenuCashier').getElementsByTagName('a')[0].getAttribute('href');
         }
-        let $subitem;
-        let $item = $main_menu.find(`a[href*="${pathname}"]`);
+        let subitem;
+        let item = main_menu.querySelector(`a[href*="${pathname}"]`);
 
-        const $parent = $item.closest('li');
-        // Is something selected in main items list
-        if ($parent.hasClass('sub_item')) {
-            $subitem = $item;
-            $item    = $subitem.closest('.item');
-        } else {
-            $item = $parent;
+        if (item) {
+            const parent = item.closest('li');
+            // Is something selected in main items list
+            if (parent.classList.contains('sub_item')) {
+                subitem = item;
+                item    = subitem.closest('.item');
+            } else {
+                item = parent;
+            }
         }
 
-        return { item: $item, subitem: $subitem };
+        return { item, subitem };
     };
 
     const makeMobileMenu = () => {
-        if ($('#mobile-menu-container').is(':visible')) {
+        const mobile_menu = document.getElementById('mobile-menu-container');
+        if (mobile_menu && mobile_menu.offsetParent) {
             $('#mobile-menu').mmenu({
                 position       : 'right',
                 zposition      : 'front',

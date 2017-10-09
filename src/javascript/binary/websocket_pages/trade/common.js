@@ -6,6 +6,7 @@ const Tick               = require('./tick');
 const Client             = require('../../base/client');
 const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
+const createElement      = require('../../base/utility').createElement;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const isEmptyObject      = require('../../base/utility').isEmptyObject;
 const formatMoney        = require('../../common_functions/currency').formatMoney;
@@ -32,9 +33,8 @@ const commonTrading = (() => {
             const tree = getContractCategoryTree(elements);
             for (let i = 0; i < tree.length; i++) {
                 const el1 = tree[i];
-                const li  = document.createElement('li');
+                const li  = createElement('li', { class: 'tm-li' });
 
-                li.classList.add('tm-li');
                 if (i === 0) {
                     li.classList.add('first');
                 } else if (i === tree.length - 1) {
@@ -47,10 +47,9 @@ const commonTrading = (() => {
                     let first       = '';
                     for (let j = 0; j < el1[1].length; j++) {
                         const el2      = el1[1][j];
-                        const li2      = document.createElement('li');
-                        const a2       = document.createElement('a');
+                        const li2      = createElement('li', { class: 'tm-li-2' });
+                        const a2       = createElement('a', { class: 'tm-a-2', menuitem: el2.toLowerCase(), id: el2.toLowerCase() });
                         const content2 = document.createTextNode(elements[el2]);
-                        li2.classList.add('tm-li-2');
 
                         if (j === 0) {
                             first = el2.toLowerCase();
@@ -65,26 +64,15 @@ const commonTrading = (() => {
                             flag = 1;
                         }
 
-                        a2.classList.add('tm-a-2');
                         a2.appendChild(content2);
-                        a2.setAttribute('menuitem', el2.toLowerCase());
-                        a2.setAttribute('id', el2.toLowerCase());
-
                         li2.appendChild(a2);
-
                         fragment2.appendChild(li2);
                     }
                     if (fragment2.hasChildNodes()) {
-                        const ul      = document.createElement('ul');
-                        const a       = document.createElement('a');
-                        const content = document.createTextNode(elements[el1[0]]);
+                        const ul = createElement('ul', { class: 'tm-ul-2', id: `${el1[0]}-submenu` });
+                        const a  = createElement('a', { class: 'tm-a', menuitem: first, text: elements[el1[0]] });
 
-                        a.appendChild(content);
-                        a.setAttribute('class', 'tm-a');
-                        a.setAttribute('menuitem', first);
                         ul.appendChild(fragment2);
-                        ul.setAttribute('class', 'tm-ul-2');
-                        ul.setAttribute('id', `${el1[0]}-submenu`);
 
                         if (flag) {
                             li.classList.add('active');
@@ -95,16 +83,13 @@ const commonTrading = (() => {
                     }
                 } else {
                     const content3 = document.createTextNode(elements[el1]);
-                    const a3       = document.createElement('a');
+                    const a3       = createElement('a', { class: 'tm-a', menuitem: el1, id: el1.toLowerCase() });
 
                     if (selected && selected === el1.toLowerCase()) {
                         a3.classList.add('a-active');
                         li.classList.add('active');
                     }
                     a3.appendChild(content3);
-                    a3.classList.add('tm-a');
-                    a3.setAttribute('menuitem', el1);
-                    a3.setAttribute('id', el1.toLowerCase());
                     li.appendChild(a3);
                 }
                 fragment.appendChild(li);
@@ -136,21 +121,17 @@ const commonTrading = (() => {
         const keys1 = Object.keys(elements).sort(submarketSort);
         for (let i = 0; i < keys1.length; i++) {
             const key     = keys1[i];
-            const content = document.createTextNode(elements[key].name);
-            let option    = document.createElement('option');
-            option.setAttribute('value', key);
+            let option    = createElement('option', { value: key, text: elements[key].name });
             if (selected && selected === key) {
                 option.setAttribute('selected', 'selected');
             }
-            option.appendChild(content);
             fragment.appendChild(option);
 
             if (elements[key].submarkets && !isEmptyObject(elements[key].submarkets)) {
                 const keys2 = Object.keys(elements[key].submarkets).sort(submarketSort);
                 for (let j = 0; j < keys2.length; j++) {
                     const key2 = keys2[j];
-                    option     = document.createElement('option');
-                    option.setAttribute('value', key2);
+                    option     = createElement('option', { value: key2 });
                     if (selected && selected === key2) {
                         option.setAttribute('selected', 'selected');
                     }
@@ -207,14 +188,11 @@ const commonTrading = (() => {
         const keys2 = Object.keys(submarkets).sort(submarketSort);
         for (let j = 0; j < keys2.length; j++) {
             for (let k = 0; k < submarkets[keys2[j]].length; k++) {
-                const key     = submarkets[keys2[j]][k];
-                const option  = document.createElement('option');
-                const content = document.createTextNode(localize(elements[key].display));
-                option.setAttribute('value', key);
+                const key    = submarkets[keys2[j]][k];
+                const option = createElement('option', { value: key, text: localize(elements[key].display) });
                 if (selected && selected === key) {
                     option.setAttribute('selected', 'selected');
                 }
-                option.appendChild(content);
                 fragment.appendChild(option);
             }
         }
