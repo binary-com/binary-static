@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-06 03:49-0400\n"
+"PO-Revision-Date: 2017-10-06 05:06-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -700,6 +700,9 @@ msgstr "Ключ API"
 
 msgid "API token for third party applications."
 msgstr "Ключ API для независимых приложений."
+
+msgid "ATM"
+msgstr ""
 
 msgid "AUD 1 per point"
 msgstr "AUD 1 за пункт"
@@ -2261,6 +2264,12 @@ msgstr "Минимальная цена контрактов, предложен
 msgid "Contracts sold"
 msgstr "Проданные контракты"
 
+msgid "Contracts where the barrier is different from the entry spot."
+msgstr ""
+
+msgid "Contracts where the barrier is the same as entry spot."
+msgstr ""
+
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "Обычно контракты не предлагаются при шансах ниже 0.05 до 1 (то есть, с выплатой 1.05 USD/GBP/EUR/AUD на каждый поставленный 1 USD/GBP/EUR/AUD)."
 
@@ -2692,6 +2701,12 @@ msgstr "Ввиду последних изменений в нормативны
 
 msgid "Duration"
 msgstr "Длительность"
+
+msgid "Duration above 7 days"
+msgstr ""
+
+msgid "Duration up to 7 days"
+msgstr ""
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "Во время нестабильного рынка (то есть, при быстрых движениях рынка) контракты могут предлагаться по менее выгодным ценам, чем контракты при обычных условиях."
@@ -5410,6 +5425,9 @@ msgstr "Максимальная сумма дневных убытков. Об�
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Максимальная совокупная выплата по открытым позициям"
 
+msgid "Maximum aggregate payouts on open positions per symbol"
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "Максимальные совокупные выплаты по открытым позициям с одного актива и типа контракта"
 
@@ -5721,6 +5739,9 @@ msgstr "Нет. Участие в партнерской программе бе
 
 msgid "No. of Tokens"
 msgstr "Кол. токенов"
+
+msgid "Non-ATM"
+msgstr ""
 
 msgid "Not"
 msgstr "Не"

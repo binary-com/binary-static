@@ -31,7 +31,9 @@ Element.prototype.setVisibility = function(make_visible) {
 };
 
 Element.prototype.insertAfter = function(referenceNode) {
-    referenceNode.parentNode.insertBefore(this, referenceNode.nextSibling);
+    if (referenceNode && referenceNode.parentNode) {
+        referenceNode.parentNode.insertBefore(this, referenceNode.nextSibling);
+    }
     return this;
 };
 

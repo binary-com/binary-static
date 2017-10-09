@@ -8,6 +8,7 @@ const toJapanTimeIfNeeded  = require('../../../base/clock').toJapanTimeIfNeeded;
 const setViewPopupTimer    = require('../../../base/clock').setViewPopupTimer;
 const localize             = require('../../../base/localize').localize;
 const State                = require('../../../base/storage').State;
+const urlFor               = require('../../../base/url').urlFor;
 const createElement        = require('../../../base/utility').createElement;
 const getPropertyValue     = require('../../../base/utility').getPropertyValue;
 const isEmptyObject        = require('../../../base/utility').isEmptyObject;
@@ -305,7 +306,45 @@ const ViewPopup = (() => {
         populateAuditTable(show);
 
         div.appendChild(table);
+        showExplanation(div);
         div.insertAfter(document.getElementById('sell_details_chart_wrapper'));
+    };
+
+    const map_contract_type = {
+        'expiry'        : 'endsinout',
+        'asian'         : 'asian',
+        'even|odd'      : 'evenodd',
+        'over|under'    : 'overunder',
+        'digit'         : 'digits',
+        'upordown|range': 'staysinout',
+        'touch'         : 'touchnotouch',
+        'call|put'      : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
+    };
+
+    const showExplanation = (div) => {
+        let explanation_section = 'explain_';
+        Object.keys(map_contract_type).some((type) => {
+            if (new RegExp(type, 'i').test(contract.contract_type)) {
+                explanation_section += typeof map_contract_type[type] === 'function' ? map_contract_type[type]() : map_contract_type[type];
+                return true;
+            }
+            return false;
+        });
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState !== 4 || this.status !== 200) {
+                return;
+            }
+            const div_response = createElement('div', { html: this.responseText });
+            const div_to_show = div_response.querySelector(`#${explanation_section}`);
+            if (div_to_show) {
+                div_to_show.classList.add('align-start', 'gr-padding-20', 'explanation-section', 'gr-parent');
+                div.appendChild(div_to_show);
+                div_to_show.setVisibility(1);
+            }
+        };
+        xhttp.open('GET', urlFor('explanation'), true);
+        xhttp.send();
     };
 
     const parseTicksResponse = (table, response, tick_time, remark) => (
@@ -339,7 +378,7 @@ const ViewPopup = (() => {
                         }
 
                         if (i === idx) {
-                            createAuditRow(table, this_time, this_price, localize(`${pre_remark} ${remark}`), ['secondary-bg-color', 'content-inverse-color', 'align-self-center']);
+                            createAuditRow(table, this_time, this_price, localize(`${pre_remark} ${remark}`), ['secondary-bg-color', 'content-inverse-color']);
                         } else if (is_start_time) {
                             createAuditRow(table, this_time, this_price, localize('Start Time'), secondary_classes);
                             has_start_time = true;

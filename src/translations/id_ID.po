@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-06 03:50-0400\n"
+"PO-Revision-Date: 2017-10-06 05:07-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -695,6 +695,9 @@ msgstr "Token API"
 
 msgid "API token for third party applications."
 msgstr "Token API bagi aplikasi pihak ketiga."
+
+msgid "ATM"
+msgstr ""
 
 msgid "AUD 1 per point"
 msgstr "1 AUD per poin"
@@ -2254,6 +2257,12 @@ msgstr "Kontrak yang ditawarkan oleh Binary Investments (Europe) Ltd. minimal ha
 msgid "Contracts sold"
 msgstr "Kontrak terjual"
 
+msgid "Contracts where the barrier is different from the entry spot."
+msgstr ""
+
+msgid "Contracts where the barrier is the same as entry spot."
+msgstr ""
+
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "Kontrak tidak tersedia jika selisih dibawah 0.05-hingga-1 (yaitu hasil dibawah USD1.05 untuk harga kontrak sebesar USD1)."
 
@@ -2685,6 +2694,12 @@ msgstr "Berhubung perubahan terbaru dalam peraturan, kami perlu memastikan untuk
 
 msgid "Duration"
 msgstr "Durasi"
+
+msgid "Duration above 7 days"
+msgstr ""
+
+msgid "Duration up to 7 days"
+msgstr ""
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "Selama pasar cepat (yaitu periode pergerakan pasar yang sangat cepat), kontrak mungkin akan ditawarkan dengan harga lebih menguntungkan berbanding dalam kondisi normal."
@@ -4888,7 +4903,7 @@ msgid "Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at 
 msgstr "Jean-Yves Sireau adalah pendiri Perusahaan. Seorang pengusaha sejati, beliau mendirikan perusahaan pertamanya pada tahun 1991. Prestasinya di usia yang hanya 21 tahun membuatnya mendapatkan penghargaan bergengsi Jacques Dounce sebagai pengusaha muda oleh perdana menteri Prancis Edith Cresson, dan penghargaan profesi Neuilly oleh calon presiden Prancis Nicolas Sarkozy. Jean-Yves mendirikan Fortune Fund Management, sebuah grup pengelolaan hedge fund, pada tahun 1993, dan %1 (sebelumnya dikenal sebagai Betonmarkets.com) pada tahun 1999."
 
 msgid "Jim Mellon is a well-known and successful entrepreneur, starting his career in fund management and now including biopharma, property, mining, and information technology amongst his many investments. Jim is listed at number 140 on the Sunday Times Rich List with a net worth of &pound;920 million, and holds directorships in a number of publicly quoted companies. He is the founder and principal shareholder of the Regent Pacific Group, quoted on the Hong Kong Stock Exchange, who were the founding investor of Binary.com in 1999."
-msgstr ""
+msgstr "Jim Mellon adalah seorang pengusaha terkenal dan sukses, beliau memulai karirnya sebagai pengelola dana dan saat ini mulai merambah bidang teknologi biopharma, properti, pertambangan, dan teknologi informasi di antara beberapa investasinya. Jim tercantum sebagai nomor 140 pada Daftar Orang Kaya Sunday Times dengan kekayaan bersih sebesar &pound;920 juta, dan memegang jabatan direktur di sejumlah perusahaan publik. Beliau adalah pendiri dan pemegang saham utama dari Regent Pacific Group, dikutip pada Bursa Saham Hong Kong, yang merupakan investor pendiri Binary.com pada tahun 1999."
 
 msgid "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 msgstr "Joanna mengawasi prosedural dan peraturan kepatuhan pada berbagai yurisdiksi kepatuhan yang mengatur perizinan Grup %1, di samping sejumlah area operasional utama Grup seperti pembayaran dan pengelolaan akun klien. Joanna telah menjadi anggota Institut Manajemen Malta sejak tahun 1999, memegang ijazah Operasi dan Kepatuhan Jasa Keuangan, dan Diploma Pasca Sarjana Profesional dalam Kepatuhan Keuangan pada Asosiasi Kepatuhan Internasional."
@@ -5403,6 +5418,9 @@ msgstr "Maksimal jumlah kerugian per hari. Perbarui nilai ini pada %1fasilitas p
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Jumlah maksimal hasil rata-rata pada posisi terbuka"
 
+msgid "Maximum aggregate payouts on open positions per symbol"
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "Jumlah maksimal hasil pada kontrak berjalan per simbol dan jenis kontrak"
 
@@ -5714,6 +5732,9 @@ msgstr "Tidak. Tidak ada biaya untuk mendaftar ke program afiliasi."
 
 msgid "No. of Tokens"
 msgstr "Jumlah Token"
+
+msgid "Non-ATM"
+msgstr ""
 
 msgid "Not"
 msgstr "Bukan"
