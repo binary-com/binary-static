@@ -47,11 +47,8 @@ const Page = (() => {
             window.addEventListener('storage', (evt) => {
                 switch (evt.key) {
                     case 'active_loginid':
-                        if (evt.newValue === '') {
-                            // logged out
-                            reload();
-                        } else if (!window.is_logging_in) {
-                            // loginid switch
+                        // not the active tab and logged out or loginid switch
+                        if (document.hidden && (evt.newValue === '' || !window.is_logging_in)) {
                             reload();
                         }
                         break;
