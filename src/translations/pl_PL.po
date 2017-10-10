@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-04 22:13-0400\n"
+"PO-Revision-Date: 2017-10-10 02:46-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -701,6 +701,9 @@ msgstr "Token API"
 msgid "API token for third party applications."
 msgstr "Token API dla aplikacji zewnętrznych."
 
+msgid "ATM"
+msgstr "Bankomat"
+
 msgid "AUD 1 per point"
 msgstr "1 AUD za punkt"
 
@@ -1278,10 +1281,10 @@ msgid "At least five years of experience with affiliate marketing, growth hackin
 msgstr "Co najmniej pięcioletnie doświadczenie w prowadzeniu marketingu partnerskiego, stosowaniu techniki „growth hacking”, dbaniu o rozwój biznesu oraz posiadanie innych pokrewnych umiejętności"
 
 msgid "Audit"
-msgstr ""
+msgstr "Audyt"
 
 msgid "Audit Page"
-msgstr ""
+msgstr "Strona audytowa"
 
 msgid "Audit deposit patterns and take action on fraud or abuse"
 msgstr "Sprawdzanie prawidłowości widocznych we wpłatach klientów oraz podejmowanie działań w odpowiedzi na oszustwa i nadużycia"
@@ -1332,7 +1335,7 @@ msgid "Available payment methods"
 msgstr "Dostępne metody płatności"
 
 msgid "Average-sized changes – generally $50-250"
-msgstr ""
+msgstr "Zmiany średniej wielkości – zazwyczaj 50-250 $"
 
 msgid "Avoid the need to have an e-wallet"
 msgstr "Nie trzeba mieć e-portfela"
@@ -1458,7 +1461,7 @@ msgid "BetOnMarkets.com reaches $1 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.com osiąga obrót w wysokości miliarda dolarów od rozpoczęcia działalności w 1999 r."
 
 msgid "Better charting facilities"
-msgstr ""
+msgstr "Ulepszone funkcje wykresów"
 
 msgid "Better test coverage"
 msgstr ""
@@ -1660,7 +1663,7 @@ msgid "Browser"
 msgstr "Przeglądarka"
 
 msgid "Bug fixes"
-msgstr ""
+msgstr "Usunięcie usterek"
 
 msgid "Bull Market and Bear Market Indices start at 00:00 GMT each day, replicating a bullish and bearish market respectively."
 msgstr "Wskaźniki hossy i bessy rozpoczynają się codziennie o godz. 00:00 GMT, naśladując odpowiednio rynek w hossie i w bessie."
@@ -1729,16 +1732,16 @@ msgid "Can I contribute to back-end code?"
 msgstr ""
 
 msgid "Can I discuss the codebases with the %1 development team?"
-msgstr ""
+msgstr "Czy mogę omówić bazy kodów z zespołem programistów %1?"
 
 msgid "Can I offer my referrals an incentive to sign up through my link rather than sign up directly?"
 msgstr "Czy mogę oferować osobom, którym polecam portal, wynagrodzenie finansowe, jeśli zarejestrują się przez link ode mnie, a nie bezpośrednio?"
 
 msgid "Can I submit security vulnerabilities?"
-msgstr ""
+msgstr "Czy mogę przesłać informacje o lukach w zabezpieczeniach?"
 
 msgid "Can I work for %1 full-time?"
-msgstr ""
+msgstr "Czy mogę pracować dla %1 na pełen etat?"
 
 msgid "Can I write a new front-end from scratch?"
 msgstr ""
@@ -1963,7 +1966,7 @@ msgid "Client withdrawals"
 msgstr "Wypłaty klientów"
 
 msgid "Client withdrawals have grown nearly 8-fold over the last 5 years, to nearly USD 120 million."
-msgstr ""
+msgstr "W okresie ostatnich 5 lat wypłaty dokonywane przez Klientów zwiększyły się 8-krotnie, osiągając wartość 120 milionów USD."
 
 msgid "Client's Liability"
 msgstr "Odpowiedzialność klienta"
@@ -2194,7 +2197,7 @@ msgid "Contract Details"
 msgstr "Szczegóły kontraktu"
 
 msgid "Contract Ends"
-msgstr ""
+msgstr "Kontrakt kończy się"
 
 msgid "Contract Expiry"
 msgstr "Wygaśnięcie kontraktu"
@@ -2224,7 +2227,7 @@ msgid "Contract Specifications - Forex"
 msgstr "Szczegóły kontraktu – Forex"
 
 msgid "Contract Starts"
-msgstr ""
+msgstr "Kontrakt zaczyna się"
 
 msgid "Contract has not started yet"
 msgstr "Kontrakt jeszcze się nie rozpoczął"
@@ -2258,6 +2261,12 @@ msgstr "Kontrakty oferowane przez Binary Investments (Europe) Ltd. posiadają mi
 
 msgid "Contracts sold"
 msgstr "Sprzedane kontrakty"
+
+msgid "Contracts where the barrier is different from the entry spot."
+msgstr "Kontrakty, w przypadku których limit różni się od punktu wejściowego."
+
+msgid "Contracts where the barrier is the same as entry spot."
+msgstr "Kontrakty, w przypadku których limit jest taki sam jak punkt wejściowy."
 
 msgid "Contracts will not usually be offered at odds under 0.05-to-1 (i.e. payouts of under USD/GBP/EUR/AUD 1.05 for each USD/GBP/EUR/AUD 1 staked)."
 msgstr "Kontrakty będą zazwyczaj oferowane z różnicą od 0,05 do 1 (tzn. wypłaty poniżej 1,05 USD/GBP/EUR/AUD dla każdej stawki w wysokości 1 USD/GBP/EUR/AUD)."
@@ -2311,7 +2320,7 @@ msgid "Costs and Charges"
 msgstr "Koszty i opłaty"
 
 msgid "Counterparty"
-msgstr ""
+msgstr "Kontrahent"
 
 msgid "Country of Residence"
 msgstr "Kraj zamieszkania"
@@ -2623,7 +2632,7 @@ msgid "Do I need to deposit any funds to open an account?"
 msgstr "Czy muszę wpłacić jakąś sumę, żeby otworzyć konto?"
 
 msgid "Do I retain ownership of the code?"
-msgstr ""
+msgstr "Czy zachowam prawa własności kodu?"
 
 msgid "Do not trade more than you can afford."
 msgstr "Nie obstawiaj kwoty większej niż taka, na którą Cię stać."
@@ -2690,6 +2699,12 @@ msgstr "Z powodu niedawnych zmian w przepisach jesteśmy zobowiązani poprosić 
 
 msgid "Duration"
 msgstr "Czas trwania"
+
+msgid "Duration above 7 days"
+msgstr "Czas trwania przekraczający 7 dni"
+
+msgid "Duration up to 7 days"
+msgstr "Czas trwania do 7 dni"
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
 msgstr "W czasie „szybkiego rynku” (tzn. w okresach bardzo szybkich ruchów na rynkach) kontrakty mogą być oferowane w cenach mniej korzystnych niż w zwykłych warunkach rynkowych."
@@ -3164,7 +3179,7 @@ msgid "Family name"
 msgstr "Nazwisko"
 
 msgid "Faster rendering"
-msgstr ""
+msgstr "Szybsze renderowanie"
 
 msgid "Favourite artist"
 msgstr "Ulubiony artysta"
@@ -3335,7 +3350,7 @@ msgid "Forex, Volatility Indices"
 msgstr "Forex, wskaźniki zmienności"
 
 msgid "Fork the relevant Github repository"
-msgstr ""
+msgstr "Forkuj odpowiednie repozytorium Github"
 
 msgid "Forward looking statements inherently contain risks and uncertainties as they relate to events or circumstances in the future. Users of this webpage should not place undue reliance on forward-looking statements. Binary Group Ltd. expressly disclaims any obligation or undertaking to update or revise any forward-looking statements except to the extent required by law and neither Binary Group Ltd., its employees, officers or professional advisors make any assurance, representation or guarantee that any event referred to in a forward-looking statement will actually occur."
 msgstr ""
@@ -3479,10 +3494,10 @@ msgid "Get more virtual money"
 msgstr "Uzyskaj więcej wirtualnych pieniędzy"
 
 msgid "Get paid for pull requests"
-msgstr ""
+msgstr "Zarabiaj, wysyłając żądania typu „pull”"
 
 msgid "Get paid for pull requests."
-msgstr ""
+msgstr "Zarabiaj, wysyłając żądania typu „pull."
 
 msgid "Get started"
 msgstr "Rozpocznij"
@@ -3629,7 +3644,7 @@ msgid "Highlights"
 msgstr "Najważniejsze zalety"
 
 msgid "Hint: it would take approximately %1%2 to crack this password."
-msgstr ""
+msgstr "Podpowiedź: Złamanie tego hasła zajmie około %1%2."
 
 msgid "Hone your security testing skills."
 msgstr "Dojdź do perfekcji w testach bezpieczeństwa."
@@ -3668,10 +3683,10 @@ msgid "How do I stay informed on the %1 ICO?"
 msgstr "W jaki sposób mogę otrzymywać informacje na temat ICO %1?"
 
 msgid "How do I submit a pull request?"
-msgstr ""
+msgstr "W jaki sposób wysłać żądanie typu „pull”?"
 
 msgid "How do I test my changes?"
-msgstr ""
+msgstr "W jaki sposób sprawdzić wprowadzone zmiany?"
 
 msgid "How do we calculate interest fees for long positions?"
 msgstr "W jaki sposób obliczamy wysokość opłat dla pozycji długich?"
@@ -3886,9 +3901,6 @@ msgstr "Jeżeli kupisz<strong>jedną partię symbolu EUR/USD</strong> z kontrakt
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "Jeśli chcesz zawrzeć z nami kontrakt, musisz mieć świadomość ryzyk z tym związanych oraz pewność, że posiadasz odpowiednie środki inwestycyjne na pokrycie ewentualnych strat wynikających z tych ryzyk i że śledzisz dokładnie swoje pozycje."
 
-msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
-msgstr "Jeśli nie chcesz skorzystać z funkcji dźwigni, ustaw dźwignię na 1:1."
-
 msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "Jeśli nie otrzymasz od nas wiadomości e-mail w ciągu kilku minut, sprawdź folder spam."
 
@@ -4064,16 +4076,16 @@ msgid "Improve your trading skills with our free educational & training resource
 msgstr "Doskonal swoje zdolności handlowe, korzystając z naszych darmowych materiałów edukacyjnych i szkoleniowych."
 
 msgid "Improved browser compatibility"
-msgstr ""
+msgstr "Lepsza zgodność z przeglądarkami"
 
 msgid "Improved documentation"
-msgstr ""
+msgstr "Ulepszona dokumentacja"
 
 msgid "Improved responsiveness"
-msgstr ""
+msgstr "Lepszy czas reakcji"
 
 msgid "Improved usability"
-msgstr ""
+msgstr "Zwiększona użyteczność"
 
 msgid "Improvements"
 msgstr "Ulepszenia"
@@ -4094,7 +4106,7 @@ msgid "In any event of an error in current prices, published odds or trading sof
 msgstr "W jakimkolwiek przypadku wystąpienia błędu w aktualnych cenach, notowaniach podanych do publicznej wiadomości lub w oprogramowaniu do handlowania."
 
 msgid "In business since 2000, %1 is the world’s leading binary options company."
-msgstr ""
+msgstr "%1, będąca na rynku od 2000 roku, jest wiodącą na rynku firmą z branży opcji binarnych."
 
 msgid "In carrying out OTC binary option trading, a customer needs expert knowledge such as the theoretical value of options, in order to make reasonable investment decisions."
 msgstr "In carrying out OTC binary option trading, a customer needs expert knowledge such as the theoretical value of options, in order to make reasonable investment decisions."
@@ -4892,6 +4904,9 @@ msgstr "Japan website Terms and Conditions Paragraph 1"
 msgid "Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and %1 (formerly known as Betonmarkets.com) in 1999."
 msgstr ""
 
+msgid "Jim Mellon is a well-known and successful entrepreneur, starting his career in fund management and now including biopharma, property, mining, and information technology amongst his many investments. Jim is listed at number 140 on the Sunday Times Rich List with a net worth of &pound;920 million, and holds directorships in a number of publicly quoted companies. He is the founder and principal shareholder of the Regent Pacific Group, quoted on the Hong Kong Stock Exchange, who were the founding investor of Binary.com in 1999."
+msgstr ""
+
 msgid "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 msgstr ""
 
@@ -4980,7 +4995,7 @@ msgid "Languages Classes for Refugees (LCFR)"
 msgstr "Zajęcia językowe dla uchodźców (LCFR)"
 
 msgid "Large changes – generally $750-2,500"
-msgstr ""
+msgstr "Duże zmiany – zazwyczaj 750-2500 $"
 
 msgid "Last Digit Prediction"
 msgstr "Przewidywanie ostatniej cyfry"
@@ -5405,6 +5420,9 @@ msgstr "Maksymalna łączna dzienna strata. Zaktualizuj tę wartość w sekcji %
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Maksymalne zagregowane wypłaty dla pozycji otwartych"
 
+msgid "Maximum aggregate payouts on open positions per symbol"
+msgstr ""
+
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "Maksymalne zagregowane wypłaty dla pozycji otwartych przypadająca na symbol i rodzaj kontraktu"
 
@@ -5424,7 +5442,7 @@ msgid "May"
 msgstr "Maj"
 
 msgid "Medium-sized changes – generally $250-750"
-msgstr ""
+msgstr "Zmiany średniej wielkości – zazwyczaj 250-750 $"
 
 msgid "Memorable date"
 msgstr "Pamiętna data"
@@ -5643,7 +5661,7 @@ msgid "New Year's Day"
 msgstr "Nowy Rok"
 
 msgid "New features"
-msgstr ""
+msgstr "Nowe funkcje"
 
 msgid "New password"
 msgstr "Nowe hasło"
@@ -5652,7 +5670,7 @@ msgid "New regulations in Japan"
 msgstr "Nowe przepisy w Japonii"
 
 msgid "New technical indicators"
-msgstr ""
+msgstr "Nowe wskaźniki techniczne"
 
 msgid "New token created."
 msgstr "Utworzono nowy token."
@@ -5716,6 +5734,9 @@ msgstr "Nie. Dołączenie do programu partnerskiego nic nie kosztuje."
 
 msgid "No. of Tokens"
 msgstr "Liczba tokenów"
+
+msgid "Non-ATM"
+msgstr ""
 
 msgid "Not"
 msgstr "Nie"
@@ -5881,6 +5902,9 @@ msgstr "Zaledwie pięć lat od powstania zdobyliśmy tę ważną nagrodę za nas
 
 msgid "Only letters, numbers, and hyphen are allowed."
 msgstr "Dozwolone są tylko litery, cyfry i myślnik."
+
+msgid "Only letters, numbers, space, and these special characters are allowed: - . ' # ; : ( ) , @ /"
+msgstr ""
 
 msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed."
 msgstr "Dozwolone są wyłącznie litery, cyfry, znak spacji, myślnik, kropka i apostrof."
@@ -6660,7 +6684,7 @@ msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, Fren
 msgstr "Dostępność w języku angielskim, indonezyjskim, japońskim, chińskim, polskim, niemieckim, francuskim, hiszpańskim, portugalskim, włoskim, rosyjskim i tajskim"
 
 msgid "Pull Requests"
-msgstr ""
+msgstr "Żądania typu „pull”"
 
 msgid "Purchase"
 msgstr "Kup"
@@ -7158,7 +7182,7 @@ msgid "Sell your long-term contracts before expiry to protect any profits you ma
 msgstr "Sprzedaj swoje kontrakty długoterminowe przed datą wygaśnięcia, aby zachować potencjalne zyski lub ograniczyć straty"
 
 msgid "Send an email to %1 to ask our development team to review your pull request"
-msgstr ""
+msgstr "Wyślij wiadomość e-mail do %1, aby poprosić nasz zespół programistów o sprawdzenie Twojego żądania typu „pull”"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Prześlij nam CV i list motywacyjny, w którym przedstawiasz swoje plany dot. rozwoju kariery."
@@ -7542,7 +7566,7 @@ msgid "Submit"
 msgstr "Prześlij"
 
 msgid "Submit a pull request to master in the original GitHub repository "
-msgstr ""
+msgstr "Wyślij żądanie typu „pull”, aby ulepszyć oryginalne repozytorium GitHub "
 
 msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
 msgstr "Wyślij raport na HackerOne dotyczący wszelkich potencjalnych problemów zabezpieczeń, które znajdziesz, razem z sugestiami, jak je rozwiązać."
@@ -8794,7 +8818,7 @@ msgid "Transparent risk and potential reward"
 msgstr "Brak ukrytego ryzyka i znana wysokość potencjalnego zysku"
 
 msgid "Trivial changes – generally $5-20"
-msgstr ""
+msgstr "Drobne zmiany – zazwyczaj 5-20 $"
 
 msgid "True"
 msgstr "Prawda"
@@ -9037,10 +9061,13 @@ msgid "View Binary Ltd.'s 2016 annual report"
 msgstr "Zobacz sprawozdanie roczne firmy Binary Ltd. za 2016 r."
 
 msgid "View Chart"
-msgstr ""
+msgstr "Zobacz wykres"
 
 msgid "View Details"
 msgstr "Zobacz szczegóły"
+
+msgid "View Japanese website"
+msgstr ""
 
 msgid "View Statement"
 msgstr "Zobacz oświadczenie"
@@ -9439,7 +9466,7 @@ msgid "What is this?"
 msgstr "Co to jest?"
 
 msgid "What kind of changes can I submit?"
-msgstr ""
+msgstr "Jakiego rodzaju zmiany mogę wprowadzić?"
 
 msgid "What marketing tools do you offer?"
 msgstr "Jakie narzędzia marketingowe oferujecie?"
@@ -9550,7 +9577,7 @@ msgid "Where your experience, drive and talent can propel you in unknown directi
 msgstr "Tu Twoje doświadczenie, energia i talent zaprowadzą Cię w nieznane. A Ciebie nie ograniczają żadne bariery."
 
 msgid "Which projects are available?"
-msgstr ""
+msgstr "Które projekty są dostępne?"
 
 msgid "Whilst we act as principal in respect of your orders, we also assess the execution venues that we use and upon which we place significant reliance to provide the best possible result for the execution of your orders. These venues typically consist of third party investment firms, brokers, and/or liquidity providers."
 msgstr "Działając w roli zlecającego w odniesieniu do Twoich zleceń, oceniamy również wykorzystywane przez nas środki realizacji, do których mamy duże zaufanie, w celu zapewnienia najlepszych możliwych rezultatów realizacji Twojego zlecenia. Jako środki realizacji zazwyczaj rozumie się firmy inwestycyjne, brokerów lub dostawców płynności."
@@ -10384,7 +10411,7 @@ msgid "logout"
 msgstr "Wyloguj"
 
 msgid "million"
-msgstr ""
+msgstr "milion"
 
 msgid "min"
 msgstr "min."
@@ -10462,7 +10489,7 @@ msgid "the specific instructions that we receive from you;"
 msgstr "instrukcje, które od Ciebie otrzymaliśmy,"
 
 msgid "thousand"
-msgstr ""
+msgstr "tysiąc"
 
 msgid "tick"
 msgstr "najmniejsza zmiana ceny"
@@ -12211,7 +12238,7 @@ msgid "Multiple Accounts Manager"
 msgstr "Menedżer wielu kont"
 
 msgid "Get Paid for Pull Requests"
-msgstr ""
+msgstr "Zarabiaj, wysyłając żądania typu „pull”"
 
 msgid "How to Trade Binary Options?"
 msgstr "Jak handlować opcjami binarnymi?"

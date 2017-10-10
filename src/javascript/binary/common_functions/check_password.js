@@ -28,7 +28,7 @@ const checkPassword = (password_selector) => {
                 years ? `${years} ${localize('years')}` : `${daysToCrack} ${localize('days')}`,
             ]);
     }
-    div.classList = `days_to_crack fill-bg-color hint ${daysToCrack < 30 ? 'red' : 'green'}`;
+    div.className = `days_to_crack fill-bg-color hint ${daysToCrack < 30 ? 'red' : 'green'}`;
     el_password.parentNode.appendChild(div);
 };
 

@@ -470,6 +470,7 @@ sub _texts {
         push @texts, localize('Only letters, numbers, and hyphen are allowed.');
         push @texts, localize('Only numbers, space, and hyphen are allowed.');
         push @texts, localize('Only numbers and spaces are allowed.');
+        push @texts, localize('Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /');
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('[_1] and [_2] cannot be the same.');
         push @texts, localize('You should enter [_1] characters.');

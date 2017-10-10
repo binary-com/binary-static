@@ -2,11 +2,9 @@ const moment                 = require('moment');
 const TradingTimes           = require('../trading_times');
 const BinarySocket           = require('../../socket');
 const localize               = require('../../../base/localize').localize;
-const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
 const Table                  = require('../../../common_functions/attach_dom/table');
 const dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
-const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
 const jpClient               = require('../../../common_functions/country_base').jpClient;
 const toISOFormat            = require('../../../common_functions/string_util').toISOFormat;
 const toReadableFormat       = require('../../../common_functions/string_util').toReadableFormat;
@@ -17,20 +15,18 @@ const TradingTimesUI = (() => {
         $container,
         columns,
         active_symbols,
-        trading_times,
-        is_framed;
+        trading_times;
 
-    const onLoad = (config) => {
+    const onLoad = () => {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
-        if (!State.get('is_beta_trading')) active_symbols = trading_times = undefined;
+        active_symbols = trading_times = undefined;
 
         if ($container.contents().length) return;
 
         showLoadingImage($container[0]);
 
-        is_framed = (config && config.framed);
         if (!trading_times) {
             sendRequest('today', !(active_symbols && active_symbols.length));
         }
@@ -90,11 +86,6 @@ const TradingTimesUI = (() => {
             $container.tabs('destroy');
         }
         $container.tabs();
-
-        if (is_framed) {
-            $container.find('ul').hide();
-            $('<div/>', { class: 'center-text' }).append(jqueryuiTabsToDropdown($container)).prependTo($container);
-        }
     };
 
     const createMarketTables = (market, is_japan_trading) => {

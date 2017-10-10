@@ -273,7 +273,12 @@ const Client = (() => {
         clearAllAccounts();
         set('loginid', '');
         RealityCheckData.clear();
-        window.location.reload();
+        const redirect_to = getPropertyValue(response, ['echo_req', 'passthrough', 'redirect_to']);
+        if (redirect_to) {
+            window.location.href = redirect_to;
+        } else {
+            window.location.reload();
+        }
     };
 
     const cleanupCookies = (...cookie_names) => {

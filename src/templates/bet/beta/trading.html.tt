@@ -3,30 +3,26 @@
         <div id="notifications_wrapper"></div>
         <div id="loading_container" class="overlay_container"></div>
 
-        <div class="gr-row" id="contract_symbol_container">
-            <div class="gr-8 gr-6-p gr-12-m gr-no-gutter-m">
-                <div id="market_container">
-                    <select id="contract_markets"></select>
-                </div>
-                <div id="underlying_spot_wrapper">
-                    <div id="underlying_container">
-                        <select id="underlying"></select>
-                        <span class="unicode-info-icon" id="symbol_tip" target="">&#9432;</span>
-                    </div>
-                    <div id="spot_container">
-                        <span id="spot"></span>
-                        <span id="trading_worm_chart"></span>
-                        <ul id="market_menu"></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="gr-4 gr-6-p gr-hide-m align-end">
+        <div class="gr-row">
+            <div class="gr-6 gr-5-t gr-hide-p">
                 <div id="guideBtn"></div>
+            </div>
+            <div class="gr-6 gr-7-t gr-12-p gr-12-m" id="contract_symbol_container">
+                <select id="contract_markets"></select>
+                <div>
+                    <select id="underlying"></select>
+                    <span class="unicode-info-icon" id="symbol_tip" target="">&#9432;</span>
+                    <span id="spot"></span>
+                    <span id="trading_worm_chart"></span>
+                </div>
             </div>
         </div>
 
         <div class="gr-row" id="contract_form_content_wrapper">
-            <div class="col-left gr-6 gr-7-t gr-12-p gr-12-m">
+            <div class="col-analyse gr-6 gr-5-t gr-12-p gr-12-m">
+                [% PROCESS bet/beta/analysis.html.tt %]
+            </div>
+            <div class="col-trade gr-6 gr-7-t gr-12-p gr-12-m">
                 <div class="content-tab-container">
                     <div id="contract_market_form_container">
                         <ul class="nav tm-ul follow-default" id="contract_form_name_nav"></ul>
@@ -263,9 +259,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-right gr-6 gr-5-t gr-12-p gr-12-m">
-                [% PROCESS bet/beta/analysis.html.tt %]
             </div>
         </div>
     </div>

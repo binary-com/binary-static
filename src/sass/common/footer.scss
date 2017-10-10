@@ -5,6 +5,11 @@
         }
         li {
             line-height: 1;
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
         }
     }
     .content-inverse-color a {

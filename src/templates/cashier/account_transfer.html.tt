@@ -2,7 +2,7 @@
 [% BLOCK row %]
     <div class="gr-padding-10 gr-row table-body">
         <div class="gr-1"></div>
-        <div class="gr-2">
+        <div>
             <span id="[% id %]_loginid"></span>
         </div>
         <div class="gr-5">

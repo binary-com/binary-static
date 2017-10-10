@@ -359,9 +359,6 @@ button .barspinner.white {
             display: block;
         }
     }
-    .padding-top-20 {
-        padding-top: 20px;
-    }
 }
 
 .days_to_crack {
@@ -375,4 +372,12 @@ button .barspinner.white {
     &.green {
         color: $COLOR_GREEN;
     }
+}
+
+ul.bullet.gr-row > li {
+    display: list-item;
+}
+
+.pull-requests-content {
+    margin-bottom: 0 !important;
 }
