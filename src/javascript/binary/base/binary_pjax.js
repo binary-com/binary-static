@@ -36,11 +36,7 @@ const BinaryPjax = (() => {
         }
 
         applyToAllElements('a', (el) => { el.addEventListener('click', handleClick); }, '', document.getElementById('all-accounts'));
-        document.addEventListener('click', (event) => {
-            if (event.target.nodeName === 'A') {
-                handleClick(event);
-            }
-        });
+        document.addEventListener('click', handleClick);
         window.addEventListener('popstate', handlePopstate);
     };
 
