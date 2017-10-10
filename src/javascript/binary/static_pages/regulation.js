@@ -31,7 +31,7 @@ const Regulation = (() => {
         $(window).resize(relocateLinks);
 
         document.getElementById('visit_japan').addEventListener('click', () => {
-            const redirect_to = urlFor('home-jp');
+            const redirect_to = urlFor('home-jp', '', 'ja');
             if (Client.isLoggedIn()) {
                 BinarySocket.send({ logout: '1', passthrough: { redirect_to } });
             } else {
