@@ -3,17 +3,12 @@ const Client             = require('../../../../../base/client');
 const localize           = require('../../../../../base/localize').localize;
 const elementTextContent = require('../../../../../common_functions/common_functions').elementTextContent;
 const elementInnerHtml   = require('../../../../../common_functions/common_functions').elementInnerHtml;
-const jpClient           = require('../../../../../common_functions/country_base').jpClient;
 const formatMoney        = require('../../../../../common_functions/currency').formatMoney;
 
 const LimitsInit = (() => {
     const limitsHandler = (response) => {
         const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);
-
-        if (jpClient()) {
-            return;
-        }
 
         const el_withdraw_limit     = document.getElementById('withdrawal-limit');
         const el_withdrawn          = document.getElementById('already-withdraw');

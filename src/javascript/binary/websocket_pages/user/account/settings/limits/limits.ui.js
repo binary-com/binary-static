@@ -3,7 +3,6 @@ const localize         = require('../../../../../base/localize').localize;
 const Client           = require('../../../../../base/client');
 const urlForStatic     = require('../../../../../base/url').urlForStatic;
 const elementInnerHtml = require('../../../../../common_functions/common_functions').elementInnerHtml;
-const jpClient         = require('../../../../../common_functions/country_base').jpClient;
 const formatMoney      = require('../../../../../common_functions/currency').formatMoney;
 
 const LimitsUI = (() => {
@@ -58,20 +57,16 @@ const LimitsUI = (() => {
         elementInnerHtml(payout, formatMoney(currency, limits.payout, 1));
         elementInnerHtml(payout_per_contract, formatMoney(currency, limits.payout_per_symbol_and_contract_type, 1));
 
-        if (limits.payout_per_symbol) {
-            Object.keys(limits.payout_per_symbol).sort().forEach((key) => {
-                if (typeof limits.payout_per_symbol[key] === 'object') {
-                    appendRowTable(key, '', '25px', 'bold', true);
-                    Object.keys(limits.payout_per_symbol[key]).sort().forEach((sub_key) => {
-                        appendRowTable(sub_key, formatMoney(currency, limits.payout_per_symbol[key][sub_key], 1), '50px', 'normal', true);
-                    });
-                } else {
-                    appendRowTable(key, formatMoney(currency, limits.payout_per_symbol[key], 1), '25px', 'bold', true);
-                }
-            });
-        } else {
-            document.getElementById('payout-per-symbol').closest('tr').setVisibility(0);
-        }
+        Object.keys(limits.payout_per_symbol).sort().forEach((key) => {
+            if (typeof limits.payout_per_symbol[key] === 'object') {
+                appendRowTable(key, '', '25px', 'bold', true);
+                Object.keys(limits.payout_per_symbol[key]).sort().forEach((sub_key) => {
+                    appendRowTable(sub_key, formatMoney(currency, limits.payout_per_symbol[key][sub_key], 1), '50px', 'normal', true);
+                });
+            } else {
+                appendRowTable(key, formatMoney(currency, limits.payout_per_symbol[key], 1), '25px', 'bold', true);
+            }
+        });
 
         Object.keys(limits.market_specific).forEach((key) => {
             const object = limits.market_specific[key];
@@ -86,16 +81,12 @@ const LimitsUI = (() => {
                 appendRowTable(object.name, object.turnover_limit !== 'null' ? formatMoney(currency, object.turnover_limit, 1) : 0, 'auto', 'bold');
             }
         });
-
         const login_id = Client.get('loginid');
         if (login_id) {
             $('#trading-limits').prepend(`${login_id} - `);
             $('#withdrawal-title').prepend(`${login_id} - `);
         }
-        $('#limits-title').setVisibility(1);
-        if (!jpClient()) {
-            $('#withdrawal-limits').setVisibility(1);
-        }
+        $('#withdrawal-limits, #limits-title').setVisibility(1);
     };
 
     const clearTableContent = () => {

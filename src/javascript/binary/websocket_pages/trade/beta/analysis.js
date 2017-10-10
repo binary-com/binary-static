@@ -3,6 +3,8 @@ const Defaults       = require('../defaults');
 const getActiveTab   = require('../get_active_tab').getActiveTab_Beta;
 const GetTicks       = require('../get_ticks');
 const MBDefaults     = require('../../mb_trade/mb_defaults');
+const AssetIndexUI   = require('../../resources/asset_index/asset_index.ui');
+const TradingTimesUI = require('../../resources/trading_times/trading_times.ui');
 const PortfolioInit  = require('../../user/account/portfolio/portfolio.init');
 const Client         = require('../../../base/client');
 const getLanguage    = require('../../../base/language').get;
@@ -41,6 +43,9 @@ const TradingAnalysis_Beta = (() => {
         if (Client.isLoggedIn()) {
             $('#tab_portfolio').setVisibility(1);
         }
+        $('#tab_asset_index').setVisibility(1);
+        $('#tab_trading_times').setVisibility(1);
+
         $('#analysis_tabs').find('li a').on('click', (e) => {
             e.preventDefault();
             const li = e.target.parentElement;
@@ -79,6 +84,14 @@ const TradingAnalysis_Beta = (() => {
                 });
                 break;
             }
+            case 'tab_asset_index':
+                AssetIndexUI.onLoad({ framed: true });
+                $('#tab_asset').find('index-content').find('h1').hide();
+                break;
+            case 'tab_trading_times':
+                TradingTimesUI.onLoad({ framed: true });
+                $('#tab_trading').find('times-content').find('h1').hide();
+                break;
             default: {
                 showExplanation();
                 break;

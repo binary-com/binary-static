@@ -13,6 +13,7 @@ const BinaryPjax           = require('../../../base/binary_pjax');
 const State                = require('../../../base/storage').State;
 const jpClient             = require('../../../common_functions/country_base').jpClient;
 const Guide                = require('../../../common_functions/guide');
+const ResizeSensor         = require('../../../../lib/resize-sensor');
 
 const TradePage_Beta = (() => {
     let events_initialized = 0;
@@ -24,7 +25,6 @@ const TradePage_Beta = (() => {
             return;
         }
         State.set('is_beta_trading', true);
-        $('.container').css('max-width', '1200px');
         Price_Beta.clearFormId();
         if (events_initialized === 0) {
             events_initialized = 1;
@@ -40,6 +40,10 @@ const TradePage_Beta = (() => {
 
         if (document.getElementById('websocket_form')) {
             commonTrading.addEventListenerForm();
+            /* eslint-disable no-new */
+            new ResizeSensor($('.col-left .content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
+            new ResizeSensor($('.col-right'), moreTabsHandler);
+            /* eslint-enable no-new */
         }
 
         // Walktrough Guide
@@ -49,6 +53,109 @@ const TradePage_Beta = (() => {
         TradingAnalysis_Beta.bindAnalysisTabEvent();
 
         ViewPopup.viewButtonOnClick('#contract_confirmation_container');
+    };
+
+    const adjustAnalysisColumnHeight = () => {
+        let sum_height = 0;
+        if (window.innerWidth > 767) {
+            $('.col-left').children().each(function () {
+                if ($(this).is(':visible')) sum_height += $(this).outerHeight(true);
+            });
+        } else {
+            sum_height = 'auto';
+        }
+        $('#trading_analysis_content').height(sum_height);
+    };
+
+    const moreTabsHandler = ($ul = $('#analysis_tabs')) => {
+        const see_more_class  = 'see-more';
+        const more_tabs_class = 'more-tabs';
+        const max_width       = $ul.outerWidth();
+        let total_width       = 0;
+
+        // add seeMore tab
+        let $see_more = $ul.find(`li.${see_more_class}`);
+        if ($see_more.length === 0) {
+            $see_more = $('<li/>', { class: `tm-li ${see_more_class}` }).append($('<a/>', { class: 'tm-a', href: `${'java'}${'script:;'}` })
+                .append($('<span/>', { class: 'caret-down' })));
+            $ul.append($see_more);
+        }
+        $see_more.removeClass('active');
+
+        // add moreTabs container
+        let $more_tabs = $ul.find(`.${more_tabs_class}`);
+        if ($more_tabs.length === 0) {
+            $more_tabs = $('<div/>', { class: more_tabs_class }).appendTo($see_more);
+        } else {
+            $more_tabs.find('>li').each((index, tab) => {
+                $(tab).insertBefore($see_more);
+            });
+        }
+        $more_tabs.css('top', $ul.find('li:visible').outerHeight() - 1).unbind('click').click(() => { hideDropDown('fast'); });
+
+        // move additional tabs to moreTabs
+        const $visible_tabs = $ul.find('>li:visible');
+        $visible_tabs.each((index, tab) => {
+            total_width += $(tab).outerWidth(true);
+        });
+        let result_width = total_width;
+        while (result_width >= max_width) {
+            const $thisTab = $ul.find(`>li:not(.${see_more_class}):visible`).last();
+            result_width -= $thisTab.outerWidth(true);
+            $thisTab.prependTo($more_tabs);
+        }
+
+        if ($more_tabs.children().length === 0) {
+            $see_more.hide();
+            return;
+        }
+
+        $see_more.show();
+        if ($more_tabs.find('>li.active').length > 0) {
+            $see_more.addClass('active');
+        }
+
+        // drop down behaviour
+        const showDropDown = () => {
+            $more_tabs.slideDown();
+            if ($see_more.find('.over').length === 0) {
+                $('<div/>', { class: 'over' }).insertBefore($see_more.find('>a'));
+                $see_more.find('.over').width($see_more.width());
+            }
+            $see_more.addClass('open');
+        };
+        const hideDropDown = (duration) => {
+            $more_tabs.slideUp(duration || 400, () => {
+                $see_more.removeClass('open');
+            });
+        };
+        let timeout;
+        $see_more.find('> a').unbind('click').on('click', (e) => {
+            e.stopPropagation();
+            if ($more_tabs.is(':visible')) {
+                hideDropDown();
+                clearTimeout(timeout);
+            } else {
+                clearTimeout(timeout);
+                showDropDown();
+                timeout = setTimeout(() => {
+                    hideDropDown();
+                    clearTimeout(timeout);
+                }, 3000);
+            }
+        });
+        $(document).unbind('click').on('click', () => { hideDropDown(); });
+
+        $more_tabs.mouseenter(() => {
+            clearTimeout(timeout);
+        });
+
+        $more_tabs.mouseleave(() => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                hideDropDown();
+            }, 1000);
+        });
     };
 
     const reload = () => {
@@ -66,7 +173,6 @@ const TradePage_Beta = (() => {
         cleanupChart();
         commonTrading.clean();
         BinarySocket.clear('active_symbols');
-        $('.container').css('max-width', '');
     };
 
     const onDisconnect = () => {
