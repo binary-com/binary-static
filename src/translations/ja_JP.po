@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-09 03:39-0400\n"
+"PO-Revision-Date: 2017-10-10 02:46-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -2275,7 +2275,7 @@ msgid "Contracts sold"
 msgstr "契約は転売されました"
 
 msgid "Contracts where the barrier is different from the entry spot."
-msgstr ""
+msgstr "1週間以下（1通貨ペア毎）または1ヶ月以上（1通貨ペア毎）のそれぞれのペイアウト合計限度額となります。\n"
 
 msgid "Contracts where the barrier is the same as entry spot."
 msgstr ""
@@ -5451,13 +5451,13 @@ msgid "Maximum aggregate payouts on open positions"
 msgstr "保有ポジション合計ペイアウト上限額"
 
 msgid "Maximum aggregate payouts on open positions per symbol"
-msgstr ""
+msgstr "一通貨ごとのペイアウト合計限度額の内訳"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
-msgstr "一通貨ごとのペイアウト合計限度額"
+msgstr "一通貨ごとのペイアウト総合計限度額"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
-msgstr "一通貨ごとのペイアウト合計限度額となります。"
+msgstr "1通貨ごとのペイアウト合計限度額となります。"
 
 msgid "Maximum daily turnover"
 msgstr "取引限度額（1日）"
@@ -5769,7 +5769,7 @@ msgid "No. of Tokens"
 msgstr "トークン番号"
 
 msgid "Non-ATM"
-msgstr ""
+msgstr "内訳の詳細"
 
 msgid "Not"
 msgstr "ない"
@@ -11552,7 +11552,7 @@ msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if 
 msgstr "２つのオプションを用い、バリア価格の高いバイナリーコールオプションとバリア価格の低いバイナリープットオプションを購入すれば、判定レートが２つのオプションのバリア価格で作られた価格帯の外となった場合に収益が得られ、判定レートが所定の価格帯の外であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができます。"
 
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "2017/10/9"
+msgstr "2017/10/10"
 
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "2017/9/12"
@@ -11561,7 +11561,7 @@ msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
 msgstr "取引概要　改定のお知らせ"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "2017年10月9日（月）付で当社が定める1通貨毎のペイアウト合計限度額を以下のように変更致します。<br>1週間以下（1通貨ペア毎）20万円<br>1ヶ月以上（1通貨ペア毎）20万円"
+msgstr "2017年10月10日（火）付で当社が定める1通貨毎のペイアウト合計限度額を以下のように変更致します。<br>1週間以下（1通貨ペア毎）20万円<br>1ヶ月以上（1通貨ペア毎）20万円"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
 msgstr "契約締結前交付書面の改定のお知らせ"
