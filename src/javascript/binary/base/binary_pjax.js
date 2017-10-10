@@ -1,8 +1,9 @@
 const getLanguage        = require('./language').get;
 const State              = require('./storage').State;
 const Url                = require('./url');
-const createElement      = require('./utility').createElement;
 const applyToAllElements = require('./utility').applyToAllElements;
+const createElement      = require('./utility').createElement;
+const findParent         = require('./utility').findParent;
 
 const BinaryPjax = (() => {
     let previous_url;
@@ -36,11 +37,7 @@ const BinaryPjax = (() => {
         }
 
         applyToAllElements('a', (el) => { el.addEventListener('click', handleClick); }, '', document.getElementById('all-accounts'));
-        document.addEventListener('click', (event) => {
-            if (event.target.nodeName === 'A') {
-                handleClick(event);
-            }
-        });
+        document.addEventListener('click', handleClick);
         window.addEventListener('popstate', handlePopstate);
     };
 
@@ -49,17 +46,12 @@ const BinaryPjax = (() => {
     };
 
     const handleClick = (event) => {
-        let link;
-        if (event.target.nodeName === 'A') {
-            link = event.target;
-        } else if (event.target.parentNode.nodeName === 'A') {
-            link = event.target.parentNode;
-        } else {
+        const link = findParent(event.target, 'a');
+        if (!link) {
             return;
         }
 
-        const url  = link.href;
-
+        const url = link.href;
         if (!url) {
             return;
         }
