@@ -1,4 +1,3 @@
-const BinaryPjax   = require('../base/binary_pjax');
 const Client       = require('../base/client');
 const urlFor       = require('../base/url').urlFor;
 const BinarySocket = require('../websocket_pages/socket');
@@ -31,11 +30,11 @@ const Regulation = (() => {
         $(window).resize(relocateLinks);
 
         document.getElementById('visit_japan').addEventListener('click', () => {
-            const redirect_to = urlFor('home-jp');
+            const redirect_to = urlFor('home-jp', '', 'ja');
             if (Client.isLoggedIn()) {
                 BinarySocket.send({ logout: '1', passthrough: { redirect_to } });
             } else {
-                BinaryPjax.load(redirect_to);
+                window.location.href = redirect_to;
             }
         });
     };
