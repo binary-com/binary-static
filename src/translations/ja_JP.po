@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-09 22:15-0400\n"
+"PO-Revision-Date: 2017-10-10 02:46-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -2275,7 +2275,7 @@ msgid "Contracts sold"
 msgstr "契約は転売されました"
 
 msgid "Contracts where the barrier is different from the entry spot."
-msgstr ""
+msgstr "1週間以下（1通貨ペア毎）または1ヶ月以上（1通貨ペア毎）のそれぞれのペイアウト合計限度額となります。\n"
 
 msgid "Contracts where the barrier is the same as entry spot."
 msgstr ""
@@ -5451,13 +5451,13 @@ msgid "Maximum aggregate payouts on open positions"
 msgstr "保有ポジション合計ペイアウト上限額"
 
 msgid "Maximum aggregate payouts on open positions per symbol"
-msgstr ""
+msgstr "一通貨ごとのペイアウト合計限度額の内訳"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
-msgstr "一通貨ごとのペイアウト合計限度額"
+msgstr "一通貨ごとのペイアウト総合計限度額"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
-msgstr "一通貨ごとのペイアウト合計限度額となります。"
+msgstr "1通貨ごとのペイアウト合計限度額となります。"
 
 msgid "Maximum daily turnover"
 msgstr "取引限度額（1日）"
@@ -5769,7 +5769,7 @@ msgid "No. of Tokens"
 msgstr "トークン番号"
 
 msgid "Non-ATM"
-msgstr ""
+msgstr "内訳の詳細"
 
 msgid "Not"
 msgstr "ない"
