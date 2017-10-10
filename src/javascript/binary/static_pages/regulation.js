@@ -1,4 +1,3 @@
-const BinaryPjax   = require('../base/binary_pjax');
 const Client       = require('../base/client');
 const urlFor       = require('../base/url').urlFor;
 const BinarySocket = require('../websocket_pages/socket');
@@ -35,7 +34,7 @@ const Regulation = (() => {
             if (Client.isLoggedIn()) {
                 BinarySocket.send({ logout: '1', passthrough: { redirect_to } });
             } else {
-                BinaryPjax.load(redirect_to);
+                window.location.href = redirect_to;
             }
         });
     };
