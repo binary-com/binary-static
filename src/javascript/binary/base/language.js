@@ -63,6 +63,7 @@ const Language = (() => {
     const onChangeLanguage = () => {
         applyToAllElements('li', (el) => {
             el.addEventListener('click', (e) => {
+                if (e.target.nodeName !== 'LI') return;
                 const lang = e.target.getAttribute('class');
                 if (getLanguage() === lang) return;
                 const display_language = document.getElementById('display_language').getElementsByClassName('language');
