@@ -54,7 +54,7 @@ then
     message "Downloading translation files from Crowdin (*.po)" &&
     crowdin download &&
     message "Updating javascript translation files (*.js)"
-#    ./scripts/js_translation.sh
+    ./scripts/js_translation.sh
 fi &&
 
 confirm "Commit changes and push to origin?" &&
