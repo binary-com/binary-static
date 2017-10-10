@@ -3,6 +3,7 @@ const moment             = require('moment');
 const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
+const applyToAllElements = require('./utility').applyToAllElements;
 const getPropertyValue   = require('./utility').getPropertyValue;
 const isEmptyObject      = require('./utility').isEmptyObject;
 const jpClient           = require('../common_functions/country_base').jpClient;
@@ -224,22 +225,37 @@ const Client = (() => {
 
     const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'japan'));
 
-    const activateByClientType = (section = 'body') => {
+    const activateByClientType = (section_id) => {
+        const topbar = document.getElementById('topbar');
+        if (!topbar) {
+            return;
+        }
+        const topbar_class          = topbar.classList;
+        const el_section            = section_id ? document.getElementById(section_id) : document.body;
+        const primary_bg_color_dark = 'primary-bg-color-dark';
+        const secondary_bg_color    = 'secondary-bg-color';
+
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status').then(() => {
-                $('#client-logged-in').addClass('gr-centered');
-                $('.client_logged_in').setVisibility(1);
+                document.getElementById('client-logged-in').classList.add('gr-centered');
+                applyToAllElements('.client_logged_in', (el) => { el.setVisibility(1); });
                 if (get('is_virtual')) {
-                    $(section).find('.client_virtual').setVisibility(1);
-                    $('#topbar').addClass('secondary-bg-color').removeClass('primary-bg-color-dark');
+                    applyToAllElements('.client_virtual', (el) => { el.setVisibility(1); }, '', el_section);
+                    topbar_class.add(secondary_bg_color);
+                    topbar_class.remove(primary_bg_color_dark);
                 } else {
-                    $(section).find('.client_real').not((jpClient() ? '.ja-hide' : '')).setVisibility(1);
-                    $('#topbar').addClass('primary-bg-color-dark').removeClass('secondary-bg-color');
+                    applyToAllElements('.client_real', (el) => {
+                        if (!jpClient() || !/ja-hide/.test(el.classList)) {
+                            el.setVisibility(1);
+                        }}, '', el_section);
+                    topbar_class.add(primary_bg_color_dark);
+                    topbar_class.remove(secondary_bg_color);
                 }
             });
         } else {
-            $(section).find('.client_logged_out').setVisibility(1);
-            $('#topbar').addClass('primary-bg-color-dark').removeClass('secondary-bg-color');
+            applyToAllElements('.client_logged_out', (el) => { el.setVisibility(1); }, '', el_section);
+            topbar_class.add(primary_bg_color_dark);
+            topbar_class.remove(secondary_bg_color);
         }
     };
 
@@ -257,7 +273,12 @@ const Client = (() => {
         clearAllAccounts();
         set('loginid', '');
         RealityCheckData.clear();
-        window.location.reload();
+        const redirect_to = getPropertyValue(response, ['echo_req', 'passthrough', 'redirect_to']);
+        if (redirect_to) {
+            window.location.href = redirect_to;
+        } else {
+            window.location.reload();
+        }
     };
 
     const cleanupCookies = (...cookie_names) => {

@@ -5,6 +5,7 @@ const getStartDateNode = require('../common_independent').getStartDateNode;
 const Defaults         = require('../defaults');
 const localize         = require('../../../base/localize').localize;
 const State            = require('../../../base/storage').State;
+const createElement    = require('../../../base/utility').createElement;
 
 /*
  * Handles start time display
@@ -34,7 +35,6 @@ const StartDates_Beta = (() => {
             const fragment = document.createDocumentFragment();
             const row      = document.getElementById('date_start_row');
             let option,
-                content,
                 first;
 
             row.style.display = 'flex';
@@ -44,10 +44,7 @@ const StartDates_Beta = (() => {
             }
 
             if (start_dates.has_spot) {
-                option  = document.createElement('option');
-                content = document.createTextNode(localize('Now'));
-                option.setAttribute('value', 'now');
-                option.appendChild(content);
+                option = createElement('option', { value: 'now', text: localize('Now') });
                 fragment.appendChild(option);
                 has_now = 1;
             } else {
@@ -71,16 +68,13 @@ const StartDates_Beta = (() => {
 
                 while (a.isBefore(b)) {
                     if (a.unix() - start.unix() > 5 * 60) {
-                        option = document.createElement('option');
-                        option.setAttribute('value', a.utc().unix());
+                        option = createElement('option', { value: a.utc().unix(), text: a.format('HH:mm ddd').replace(' ', ' GMT, ') });
                         if (typeof first === 'undefined' && !has_now) {
                             first = a.utc().unix();
                         }
-                        content = document.createTextNode(a.format('HH:mm ddd').replace(' ', ' GMT, '));
                         if (option.value === Defaults.get('date_start')) {
                             option.setAttribute('selected', 'selected');
                         }
-                        option.appendChild(content);
                         fragment.appendChild(option);
                     }
                     a.add(5, 'minutes');

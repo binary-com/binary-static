@@ -28,8 +28,13 @@ const Validation = (() => {
 
     const isChecked = field => field.$.is(':checked') ? '1' : '';
 
-    const getFieldValue = (field) => {
-        const value = field.type === 'checkbox' ? isChecked(field) : field.$.val();
+    const getFieldValue = (field, options) => {
+        let value;
+        if (typeof options.value === 'function') {
+            value = options.value();
+        } else {
+            value = field.type === 'checkbox' ? isChecked(field) : field.$.val();
+        }
         return value || '';
     };
 
@@ -116,7 +121,7 @@ const Validation = (() => {
     };
     const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d]+/.test(value);
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><|]+/.test(value);
-    const validAddress      = value => !/[`~!#$%^&*)(_=+[}{\]\\";:?><|]+/.test(value);
+    const validAddress      = value => !/[`~!$%^&*_=+[}{\]\\"?><|]+/.test(value);
     const validPostCode     = value => /^[a-zA-Z\d-\s]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
@@ -171,7 +176,7 @@ const Validation = (() => {
         email        : { func: validEmail,        message: 'Invalid email address' },
         password     : { func: validPassword,     message: 'Password should have lower and uppercase letters with numbers.' },
         general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
-        address      : { func: validAddress,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
+        address      : { func: validAddress,      message: 'Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /' },
         letter_symbol: { func: validLetterSymbol, message: 'Only letters, space, hyphen, period, and apostrophe are allowed.' },
         postcode     : { func: validPostCode,     message: 'Only letters, numbers, space, and hyphen are allowed.' },
         phone        : { func: validPhone,        message: 'Only numbers and spaces are allowed.' },
@@ -205,13 +210,13 @@ const Validation = (() => {
                 options = valid[1];
             }
 
-            if (type === 'password' && !validLength(getFieldValue(field), pass_length(options))) {
+            if (type === 'password' && !validLength(getFieldValue(field, options), pass_length(options))) {
                 field.is_ok = false;
                 type        = 'length';
                 options     = pass_length(options);
             } else {
                 const validator = (type === 'custom' ? options.func : validators_map[type].func);
-                field.is_ok = validator(getFieldValue(field), options, field);
+                field.is_ok = validator(getFieldValue(field, options), options, field);
             }
 
             if (!field.is_ok) {

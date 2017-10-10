@@ -183,6 +183,12 @@ sub _texts {
         push @texts, localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).');
         push @texts, localize('Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).');
         push @texts, localize('You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.');
+        push @texts, localize('Contracts where the barrier is the same as entry spot.');
+        push @texts, localize('Contracts where the barrier is different from the entry spot.');
+        push @texts, localize('ATM');
+        push @texts, localize('Non-ATM');
+        push @texts, localize('Duration up to 7 days');
+        push @texts, localize('Duration above 7 days');
         # back-end strings for limits page
         push @texts, localize('Major Pairs');
         push @texts, localize('Forex');
@@ -464,6 +470,7 @@ sub _texts {
         push @texts, localize('Only letters, numbers, and hyphen are allowed.');
         push @texts, localize('Only numbers, space, and hyphen are allowed.');
         push @texts, localize('Only numbers and spaces are allowed.');
+        push @texts, localize('Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /');
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('[_1] and [_2] cannot be the same.');
         push @texts, localize('You should enter [_1] characters.');

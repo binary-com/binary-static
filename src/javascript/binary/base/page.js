@@ -10,6 +10,8 @@ const Login            = require('./login');
 const Menu             = require('./menu');
 const State            = require('./storage').State;
 const Url              = require('./url');
+const createElement    = require('./utility').createElement;
+const elementInnerHtml = require('../common_functions/common_functions').elementInnerHtml;
 const checkLanguage    = require('../common_functions/country_base').checkLanguage;
 const scrollToTop      = require('../common_functions/scroll').scrollToTop;
 const TrafficSource    = require('../common_functions/traffic_source');
@@ -42,19 +44,16 @@ const Page = (() => {
         $(document).ready(() => {
             // Cookies is not always available.
             // So, fall back to a more basic solution.
-            $(window).on('storage', (jq_event) => {
-                switch (jq_event.originalEvent.key) {
+            window.addEventListener('storage', (evt) => {
+                switch (evt.key) {
                     case 'active_loginid':
-                        if (jq_event.originalEvent.newValue === '') {
-                            // logged out
-                            reload();
-                        } else if (!window.is_logging_in) {
-                            // loginid switch
+                        // not the active tab and logged out or loginid switch
+                        if (document.hidden && (evt.newValue === '' || !window.is_logging_in)) {
                             reload();
                         }
                         break;
                     case 'new_release_reload_time':
-                        if (jq_event.originalEvent.newValue !== jq_event.originalEvent.oldValue) {
+                        if (evt.newValue !== evt.oldValue) {
                             reload(true);
                         }
                         break;
@@ -62,6 +61,7 @@ const Page = (() => {
                 }
             });
             scrollToTop();
+            showNotificationOutdatedBrowser();
         });
     };
 
@@ -79,7 +79,6 @@ const Page = (() => {
             Menu.makeMobileMenu();
             recordAffiliateExposure();
             endpointNotification();
-            showNotificationOutdatedBrowser();
         }
         Menu.init();
         Contents.onLoad();
@@ -147,16 +146,19 @@ const Page = (() => {
                 `${localize('This is a staging server - For testing purposes only')} - `)}
                 ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
 
-            const $end_note = $('#end-note');
+            const end_note = document.getElementById('end-note');
 
-            $end_note.html(message).setVisibility(1);
-            $('#footer').css('padding-bottom', $end_note.height());
+            elementInnerHtml(end_note, message);
+            if (end_note) end_note.setVisibility(1);
+
+            const footer = document.getElementById('footer');
+            if (footer) footer.style['padding-bottom'] = end_note.offsetHeight;
         }
     };
 
     const showNotificationOutdatedBrowser = () => {
         const src = '//browser-update.org/update.min.js';
-        if ($(`script[src*="${src}"]`).length) return;
+        if (document.querySelector(`script[src*="${src}"]`)) return;
         window.$buoop = {
             vs     : { i: 11, f: -4, o: -4, s: 9, c: -4 },
             api    : 4,
@@ -167,9 +169,7 @@ const Page = (() => {
                 ['{brow_name}', '<a href="https://www.whatbrowser.org/" target="_blank">', '</a>']),
             reminder: 0, // show all the time
         };
-        $(document).ready(() => {
-            $('body').append($('<script/>', { src }));
-        });
+        document.body.appendChild(createElement('script', { src }));
     };
 
     return {

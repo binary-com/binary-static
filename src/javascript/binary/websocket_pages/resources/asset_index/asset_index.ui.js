@@ -1,10 +1,8 @@
 const AssetIndex             = require('../asset_index');
 const BinarySocket           = require('../../socket');
 const BinaryPjax             = require('../../../base/binary_pjax');
-const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
 const Table                  = require('../../../common_functions/attach_dom/table');
-const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
 const jpClient               = require('../../../common_functions/country_base').jpClient;
 
 const AssetIndexUI = (() => {
@@ -13,10 +11,9 @@ const AssetIndexUI = (() => {
         $contents,
         active_symbols,
         asset_index,
-        market_columns,
-        is_framed;
+        market_columns;
 
-    const onLoad = (config) => {
+    const onLoad = () => {
         if (jpClient()) {
             BinaryPjax.loadPreviousUrl();
             return;
@@ -24,13 +21,12 @@ const AssetIndexUI = (() => {
 
         $container  = $('#asset-index');
         asset_index = market_columns = undefined;
-        if (!State.get('is_beta_trading')) active_symbols = undefined;
+        active_symbols = undefined;
 
         if ($container.contents().length) return;
 
-        showLoadingImage($container);
+        showLoadingImage($container[0]);
 
-        is_framed = (config && config.framed);
         if (!asset_index) {
             sendRequest();
         }
@@ -61,11 +57,6 @@ const AssetIndexUI = (() => {
             $container.tabs('destroy');
         }
         $container.tabs();
-
-        if (is_framed) {
-            $container.find('ul').hide();
-            $('<div/>', { class: 'center-text' }).append(jqueryuiTabsToDropdown($container)).prependTo($container);
-        }
     };
 
     const getSubmarketTable = (asset_item, symbol_info) => {
