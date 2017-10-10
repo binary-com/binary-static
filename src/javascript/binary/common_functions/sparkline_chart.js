@@ -1,6 +1,5 @@
 const getHighstock = require('./common_functions').requireHighstock;
 
-let Highcharts;
 const sparkline_options = {
     chart: {
         type  : 'spline',
@@ -74,11 +73,6 @@ const sparkline_options = {
     }],
 };
 
-// Initialize Highcharts.
-getHighstock((H) => {
-    Highcharts = H;
-    sparkline_options.chart.animation = Highcharts.svg;
-});
 
 /**
  * @param {*} ele : ele which needs to be updated or needs to have a sparkline chart.
@@ -100,11 +94,8 @@ const showSparkline = (ele, val, data_points = 20) => {
                 });
             }
 
-            if (data.length < data_points) {
-                series.addPoint({ y: value }, true);
-            } else {
-                series.addPoint({ y: value }, true, true);
-            }
+            series.addPoint({ y: value }, true, data.length >= data_points);
+
             // Show last_point marker
             setTimeout(() => {
                 last_point = data.slice(-1)[0];
@@ -120,7 +111,12 @@ const showSparkline = (ele, val, data_points = 20) => {
                 name: 'Price',
                 data: [{ y: value }],
             }];
-            Highcharts.chart(ele, sparkline_options);
+            
+            // Initialize Highcharts.
+            getHighstock((Highcharts) => {
+                sparkline_options.chart.animation = Highcharts.svg;
+                Highcharts.chart(ele, sparkline_options);
+            });
         }
     }
 };
