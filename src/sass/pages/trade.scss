@@ -399,8 +399,7 @@
         }
         .amount_sparkline {
             width: 90%;
-            height: 20px;
-            padding: 0 5px;
+            padding: 5px;
         }
         .amount_wrapper_div {
             display: flex;
@@ -410,6 +409,7 @@
 
             &, .contract_amount, .contract_payout {
                 vertical-align: middle;
+                width: 100%;
             }
             div {
                 flex-grow: 1;

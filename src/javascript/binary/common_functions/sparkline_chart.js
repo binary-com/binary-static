@@ -5,7 +5,12 @@ const sparkline_options = {
     chart: {
         type  : 'spline',
         margin: [2,0,2,0],
+        height: 30,
         style : { overflow: 'visible' },
+        boost : {
+            seriesThreshold   : 1, // Enable by default
+            useGPUTranslations: true, // For better boost
+        },
     },
     title    : { text: '' },
     credits  : { enabled: false },
@@ -80,7 +85,7 @@ getHighstock((H) => {
  * @param {*} value : value of point to be added
  * @param {*} data_points : Maximum number of data points allowed.
  */
-const showSparkline = (ele, val, data_points = 10) => {
+const showSparkline = (ele, val, data_points = 20) => {
     const value = parseFloat(val);
     const chart = typeof $(ele).highcharts === 'function' && $(ele).highcharts();
     if (value) {
@@ -103,9 +108,11 @@ const showSparkline = (ele, val, data_points = 10) => {
             // Show last_point marker
             setTimeout(() => {
                 last_point = data.slice(-1)[0];
-                last_point.update({
-                    marker: { enabled: true },
-                });
+                if(last_point && typeof last_point.update === 'function') {
+                    last_point.update({
+                        marker: { enabled: true },
+                    });
+                }
             }, 500);
 
         } else { // Highcharts has not yet been initialised.
