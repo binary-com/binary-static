@@ -1,10 +1,11 @@
+const Password              = require('./check_password');
+const addComma              = require('./currency').addComma;
+const getDecimalPlaces      = require('./currency').getDecimalPlaces;
+const compareBigUnsignedInt = require('./string_util').compareBigUnsignedInt;
 const Client                = require('../base/client');
 const localize              = require('../base/localize').localize;
 const urlParam              = require('../base/url').param;
 const isEmptyObject         = require('../base/utility').isEmptyObject;
-const addComma              = require('../common_functions/currency').addComma;
-const getDecimalPlaces      = require('../common_functions/currency').getDecimalPlaces;
-const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
     const forms        = {};
@@ -27,8 +28,13 @@ const Validation = (() => {
 
     const isChecked = field => field.$.is(':checked') ? '1' : '';
 
-    const getFieldValue = (field) => {
-        const value = field.type === 'checkbox' ? isChecked(field) : field.$.val();
+    const getFieldValue = (field, options) => {
+        let value;
+        if (typeof options.value === 'function') {
+            value = options.value();
+        } else {
+            value = field.type === 'checkbox' ? isChecked(field) : field.$.val();
+        }
         return value || '';
     };
 
@@ -105,10 +111,17 @@ const Validation = (() => {
         return false;
     };
     const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);
-    const validPassword     = value => /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value);
+    const validPassword     = (value, options, field) => {
+        if (/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value)) {
+            Password.checkPassword(field.selector);
+            return true;
+        }
+        // else
+        return false;
+    };
     const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d]+/.test(value);
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><|]+/.test(value);
-    const validAddress      = value => !/[`~!#$%^&*)(_=+[}{\]\\";:?><|]+/.test(value);
+    const validAddress      = value => !/[`~!$%^&*_=+[}{\]\\"?><|]+/.test(value);
     const validPostCode     = value => /^[a-zA-Z\d-\s]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
@@ -163,7 +176,7 @@ const Validation = (() => {
         email        : { func: validEmail,        message: 'Invalid email address' },
         password     : { func: validPassword,     message: 'Password should have lower and uppercase letters with numbers.' },
         general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
-        address      : { func: validAddress,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
+        address      : { func: validAddress,      message: 'Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /' },
         letter_symbol: { func: validLetterSymbol, message: 'Only letters, space, hyphen, period, and apostrophe are allowed.' },
         postcode     : { func: validPostCode,     message: 'Only letters, numbers, space, and hyphen are allowed.' },
         phone        : { func: validPhone,        message: 'Only numbers and spaces are allowed.' },
@@ -197,13 +210,13 @@ const Validation = (() => {
                 options = valid[1];
             }
 
-            if (type === 'password' && !validLength(getFieldValue(field), pass_length(options))) {
+            if (type === 'password' && !validLength(getFieldValue(field, options), pass_length(options))) {
                 field.is_ok = false;
                 type        = 'length';
                 options     = pass_length(options);
             } else {
                 const validator = (type === 'custom' ? options.func : validators_map[type].func);
-                field.is_ok = validator(getFieldValue(field), options, field);
+                field.is_ok = validator(getFieldValue(field, options), options, field);
             }
 
             if (!field.is_ok) {
@@ -238,6 +251,7 @@ const Validation = (() => {
 
     const showError = (field, message) => {
         clearError(field);
+        Password.removeCheck(field.selector);
         field.$error.text(localize(message)).setVisibility(1);
     };
 

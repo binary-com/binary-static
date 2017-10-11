@@ -360,3 +360,24 @@ button .barspinner.white {
         }
     }
 }
+
+.days_to_crack {
+    width: fit-content;
+    padding: 5px;
+    margin-top: 5px;
+
+    &.red {
+        color: $COLOR_RED;
+    }
+    &.green {
+        color: $COLOR_GREEN;
+    }
+}
+
+ul.bullet.gr-row > li {
+    display: list-item;
+}
+
+.pull-requests-content {
+    margin-bottom: 0 !important;
+}

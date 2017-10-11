@@ -1,28 +1,3 @@
-@mixin ul_segmented_navigation {
-    box-shadow: inset 0 0 0 1px rgba($COLOR_BLUE, 0.2);
-    background-color: $COLOR_LIGHT_GRAY;
-    color: $COLOR_BLUE;
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-}
-
-@mixin li_segmented_element {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    margin: 0;
-    text-transform: capitalize;
-    padding: 3px 0;
-    text-align: center;
-
-    &.active {
-        color: $COLOR_WHITE;
-        background-color: $COLOR_BLUE;
-    }
-}
-
 @keyframes fade {
     from {
         opacity: 0;
@@ -63,6 +38,15 @@
     label {
         line-height: 28px;
     }
+    #contract_symbol_container {
+        flex-direction: row;
+        display: flex;
+        padding-left: 5px;
+
+        #contract_markets, #underlying, #symbol_tip, #spot {
+            margin: 0 10px 5px 0;
+        }
+    }
     #contract_market_form_container, #analysis_tab_container {
         height: 28px;
 
@@ -81,6 +65,9 @@
                 }
             }
         }
+    }
+    #guideBtn {
+        margin-left: 0;
     }
     .button button {
         cursor: pointer;
@@ -115,11 +102,19 @@
     #contract_form_content_wrapper {
         padding-top: 0.5em;
 
-        .col-left {
-            @include BIDIR_PROP(padding-right, padding-left, 5px);
+        .col-trade {
+            padding-left: 5px;
+            display: flex;
+
+            .content-tab-container {
+                display: flex;
+                flex: auto;
+                flex-direction: column;
+            }
         }
-        .col-right {
-            @include BIDIR_PROP(padding-left, padding-right, 0);
+        .col-analyse {
+            padding-right: 0;
+            max-height: 520px;
         }
         #contract_prices_container {
             margin-top: 5px;
@@ -129,41 +124,6 @@
             }
             .price-right {
                 @include BIDIR_PROP(padding-left, padding-right, 2.5px);
-            }
-        }
-    }
-    #contract_symbol_container {
-        #market_container, #underlying_spot_wrapper, #underlying_container, #underlying, #spot_container {
-            @include BIDIR_VALUE(float, left, right);
-        }
-        #market_container, #underlying, #symbol_tip, #spot {
-            @include BIDIR_PROP(margin-right, margin-left, 5px);
-        }
-        #underlying_spot_wrapper {
-            #underlying_container {
-                #underlying {
-                    margin-bottom: 5px;
-                }
-                #symbol_tip {
-                    line-height: 28px;
-                    cursor: pointer;
-                }
-            }
-            #spot_container {
-                #spot {
-                    line-height: 20px;
-                    display: inline-block;
-                    white-space: nowrap;
-                    padding: 3px;
-                    border-radius: $BORDER_RADIUS;
-
-                    &.error {
-                        font-style: italic;
-                    }
-                }
-                #trading_worm_chart {
-                    display: inline-block;
-                }
             }
         }
     }
@@ -291,11 +251,18 @@
             }
             .contract_purchase {
                 margin-bottom: 0;
-                margin-top: 10px;
+                padding-top: 10px !important;
+                margin-top: auto;
 
                 .purchase_button {
                     cursor: pointer;
                     width: 100%;
+                    margin-top: auto;
+                    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+
+                    &:hover {
+                        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                    }
                 }
             }
         }
@@ -326,6 +293,7 @@
             padding: 5px;
             text-align: center;
             flex: 0 0 auto;
+            margin-top: auto;
         }
         #contract_purchase_balance {
             position: absolute;
@@ -471,12 +439,19 @@
     }
     #contract_prices_container .price_container .price_wrapper {
         padding: 10px 15px;
+        display: flex;
+        flex-direction: column;
+        flex: auto;
 
         &.small {
             width: 95px;
         }
         div {
             padding: 0 5px;
+        }
+        > div {
+            display: flex;
+            flex: auto;
         }
         .contract_heading {
             @include BIDIR_VALUE(text-align, left, right);
@@ -551,40 +526,17 @@
 
 @media all and (max-width: 959px) {
     #trading_socket_container_beta {
-        #contract_symbol_container {
-            #market_container {
-                max-width: calc(50% - 5px);
-
-                #contract_markets {
-                    max-width: 100%;
-                }
-            }
-            #underlying_spot_wrapper {
-                max-width: 50%;
-
-                #underlying_container {
-                    width: 100%;
-
-                    #underlying {
-                        max-width: calc(100% - 26px);
-                    }
-                }
-                #spot {
-                    font-size: $FONT_SIZE_S;
-                }
-            }
-        }
-        .col-left, .col-right {
+        .col-trade, .col-analyse {
             padding: 0 5px !important;
         }
-        .col-right {
-            @include BIDIR_PROP(padding-left, padding-right, 0 !important);
+        .col-analyse {
+            padding-right: 0;
         }
     }
 }
 @media all and (max-width: 767px) {
     #trading_socket_container_beta {
-        .col-left, .col-right {
+        .col-trade, .col-analyse {
             padding: 0 5px !important;
         }
         #trading_analysis_content {
@@ -598,14 +550,14 @@
 }
 @media all and (max-width: 480px) {
     #trading_socket_container_beta {
-        .col-left, .col-right {
-            padding: 0 !important;
-        }
         .price-left, .price-right {
             padding: 0 10px !important;
         }
         .price-right {
             margin-top: 5px;
+        }
+        #underlying {
+            width: 100%;
         }
         #contract_market_form_container {
             ul#contract_form_name_nav {
@@ -642,6 +594,9 @@
 }
 @media all and (max-width: 768px) {
     #trading_socket_container_beta {
+        .col-analyse {
+            order: 2;
+        }
         div#contract_market_form_container {
             ul#contract_form_name_nav {
                 white-space: nowrap !important;
@@ -684,66 +639,6 @@
             top: 29px;
             margin-top: -1px;
             border-top: 1px solid $COLOR_GRAY;
-        }
-        &.see-more {
-            transition: none;
-            position: relative;
-            height: 27px;
-            border: 1px solid $COLOR_LIGHT_GRAY;
-            border-bottom: 0;
-
-            &.open {
-                border-color: $COLOR_GRAY;
-
-                .over {
-                    width: 23px;
-                    height: 1px;
-                    background: $COLOR_LIGHT_GRAY;
-                    position: absolute;
-                    bottom: -1px;
-                    @include BIDIR_PROP(right, left, 0);
-                    z-index: 3;
-                }
-            }
-            > a {
-                line-height: 27px;
-
-                .caret-down {
-                    border-top: 4px dashed;
-                    border-right: 4px solid transparent;
-                    border-left: 4px solid transparent;
-                    display: inline-block;
-                    padding-bottom: 3px;
-                }
-            }
-            .more-tabs {
-                display: none;
-                position: absolute;
-                z-index: 2;
-                background: $COLOR_LIGHT_GRAY;
-                @include BIDIR_PROP(right, left, -1px);
-                border: 1px solid $COLOR_GRAY;
-
-                li {
-                    display: block;
-                    margin: 0;
-                    padding: 0;
-                    white-space: nowrap;
-
-                    &.active {
-                        border-radius: 0;
-                    }
-                    a {
-                        display: block;
-                        font-size: $FONT_SIZE_S;
-                        text-decoration: none;
-
-                        &a:hover {
-                            background: $COLOR_GRAY;
-                        }
-                    }
-                }
-            }
         }
     }
 }
@@ -803,25 +698,11 @@
                 .toggle-content, #trade_live_chart, #trade_live_chart #webtrader_chart {
                     height: 100%;
                 }
-                #trade_live_chart table {
-                    width: 100%;
-                    height: 98%;
-
-                    td {
-                        height: 100%;
-                        border: 0;
-                    }
+                #trade_live_chart .webtrader-charts-chart-window-contianer {
+                    padding-top: 10px;
                 }
-                #tab_asset_index-content .ui-tabs-panel {
-                    border: none;
-                }
-                #portfolio #portfolio-content > div, #tab_trading_times-content > p {
+                #portfolio #portfolio-content > div {
                     margin: 0 10px 10px;
-                }
-                #tab_trading_times-content, #tab_asset_index-content {
-                    select {
-                        margin-bottom: 10px;
-                    }
                 }
                 .toggle-content .gr-padding-10 {
                     padding-top: 0;
