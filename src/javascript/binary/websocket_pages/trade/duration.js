@@ -303,7 +303,9 @@ const Durations = (() => {
             let $expiry_date     = $('#expiry_date');
             const date_start_val = document.getElementById('date_start').value;
             const is_now         = isNow(date_start_val);
-            if (is_now) {
+            const is_risefall    = /risefall/.test(Defaults.get('formname')) || false;
+
+            if (is_now || !is_risefall) {
                 if (!$expiry_date.is('input')) {
                     $expiry_date.replaceWith($('<input/>', { id: 'expiry_date', type: 'text', readonly: 'readonly', autocomplete: 'off', 'data-value': $expiry_date.attr('data-value') }))
                         .val(toReadableFormat($expiry_date.attr('data-value')));
@@ -434,10 +436,11 @@ const Durations = (() => {
     };
 
     const hideExpiryTime = (expiry_time) => {
-        setTime('');
+        const requested = setTime('');
         Defaults.remove('expiry_time');
         expiry_time.hide();
         Barriers.display();
+        return requested;
     };
 
     const showExpiryTime = (expiry_time) => {
@@ -534,8 +537,7 @@ const Durations = (() => {
 
         let make_price_request = 1;
         const $expiry_time     = $('#expiry_time');
-        const el_expiry_date   = document.getElementById('expiry_date').getAttribute('data-value');
-        if ((value !== 'now' || moment(el_expiry_date).format('dd') === moment().format('dd')) && Defaults.get('expiry_type') === 'endtime') {
+        if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
             make_price_request = -1;
             const end_time     = moment(parseInt(value) * 1000).add(5, 'minutes').utc();
             setTime(Defaults.get('expiry_time') ? Defaults.get('expiry_time') : end_time.format('HH:mm'));
@@ -549,7 +551,10 @@ const Durations = (() => {
             }
             selectEndDate(expiry_date || end_time);
         } else {
-            hideExpiryTime(document.getElementById('expiry_time_row'));
+            const requested = hideExpiryTime(document.getElementById('expiry_time_row'));
+            if (requested) {
+                make_price_request = -1;
+            }
         }
         commonTrading.timeIsValid($expiry_time);
         displayDurations(time_start.value);
