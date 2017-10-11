@@ -85,7 +85,6 @@
 
 <div class="container">
     <h2 class="center-text gr-padding-10">[% l("Trade in the world's financial markets") %]</h2>
-    <div id="market_tabs_selector"></div>
     [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
         [% INCLUDE tabs_subtabs id='market_tabs' class='gr-padding-20 gr-parent' items=[
             { id='binary', text=l('Binary options'), class='active' },
@@ -93,6 +92,7 @@
             { id='cfds',   text=l('CFDs') },
             { id='metals', text=l('Metals') },
             { id='crypto', text=l('Crypto') },
+            { id='market_tabs_selector' },
         ] %]
         <div class="tab-content">
             [% WRAPPER tab_content_container %]
@@ -141,11 +141,11 @@
 
 <div class="container gr-padding-30">
     <h2 class="center-text">[% l("Diverse platforms and account types") %]</h2>
-    <div id="account_tabs_selector"></div>
     [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
         [% INCLUDE tabs_subtabs id='account_tabs' class='gr-padding-20 gr-parent' items=[
             { id='binary_options', text=l('Binary Options'), class='active' },
             { id='mt5',            text=l('MetaTrader 5') },
+            { id='account_tabs_selector' },
         ] %]
         <div class="tab-content">
             [% WRAPPER tab_content_container %]

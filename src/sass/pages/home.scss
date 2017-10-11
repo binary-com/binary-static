@@ -99,15 +99,17 @@
     #market_tabs_selector, #account_tabs_selector {
         height: 5px;
         background-color: $COLOR_BLUE;
-        position: relative;
         z-index: 1;
-        top: 41px;
+        position: absolute;
+        left: 0;
+        top: 36px;
+        border-radius: $BORDER_RADIUS;
     }
     #market_tabs_selector {
-        width: 20%;
+        right: 80%;
     }
     #account_tabs_selector {
-        width: 50%;
+        right: 50%;
     }
 }
 
