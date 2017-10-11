@@ -40,12 +40,13 @@ const Authenticate = (() => {
             active     : false,
         });
         // Setup Date picker
-        const date = new Date();
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
         $('.date-picker').datepicker({
             dateFormat : 'yy-mm-dd',
             changeMonth: true,
             changeYear : true,
-            minDate    : date,
+            minDate    : tomorrow,
         });
 
         // Submit button
