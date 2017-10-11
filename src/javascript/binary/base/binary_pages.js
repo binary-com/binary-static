@@ -7,6 +7,7 @@ const Endpoint           = require('../static_pages/endpoint');
 const GetStarted         = require('../static_pages/get_started');
 const GetStartedJP       = require('../static_pages/get_started_jp');
 const Home               = require('../static_pages/home');
+const HomeBeta           = require('../static_pages/home_beta');
 const HomeJP             = require('../static_pages/home_jp');
 const JobDetails         = require('../static_pages/job_details');
 const Platforms          = require('../static_pages/platforms');
@@ -117,6 +118,7 @@ const pages_config = {
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
+    'home-beta'              : { module: HomeBeta,                   not_authenticated: true },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
     'ico-info'               : { module: ICOInfo,                    is_authenticated: true, only_real: true, needs_currency: true },

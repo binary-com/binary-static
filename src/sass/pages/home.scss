@@ -1,4 +1,4 @@
-.home-content, .home-jp-content {
+.home-content, .home-beta-content, .home-jp-content {
     .signup-box {
         border-radius: $BORDER_RADIUS;
 
@@ -22,7 +22,7 @@
     }
 }
 
-.home-content {
+.home-content, .home-beta-content {
     #banner {
         background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
     }
@@ -81,6 +81,33 @@
     .xquoter-left p span, .xquoter-right p span {
         font-size: $FONT_SIZE_XS;
         font-style: italic;
+    }
+}
+
+#content.home-beta-content {
+    .go-left, .go-right {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    h3 {
+        line-height: 30px;
+    }
+    .border-right {
+        border-right: 2px solid $COLOR_GRAY;
+    }
+    #market_tabs_selector, #account_tabs_selector {
+        height: 5px;
+        background-color: $COLOR_BLUE;
+        position: relative;
+        z-index: 1;
+        top: 41px;
+    }
+    #market_tabs_selector {
+        width: 20%;
+    }
+    #account_tabs_selector {
+        width: 50%;
     }
 }
 
@@ -162,12 +189,20 @@
 }
 
 @media screen and (max-width: 480px) {
-    .home-content {
+    .home-content, .home-beta-content {
         .small-image {
             width: 30%;
         }
         .mena {
             width: 32%;
+        }
+    }
+    #content.home-beta-content {
+        .border-right {
+            border-right: none;
+        }
+        .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li {
+            font-size: $FONT_SIZE_S;
         }
     }
     .home-jp-content {
