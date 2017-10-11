@@ -1,5 +1,3 @@
-var error_class = 'error-field';
-
 window.onload = function() {
     var el_email   = document.getElementById('email');
 
@@ -37,11 +35,3 @@ window.onload = function() {
         }
     });
 };
-
-function validateEmail(email) {
-    return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(email);
-}
-
-function setValidationStyle(element, has_error) {
-    element.classList[has_error ? 'add' : 'remove'](error_class);
-}

@@ -80,3 +80,12 @@ function setSession(key, value) {
         }
     }
 }
+
+function validateEmail(email) {
+    return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(email);
+}
+
+var error_class = 'error-field';
+function setValidationStyle(element, has_error) {
+    element.classList[has_error ? 'add' : 'remove'](error_class);
+}
