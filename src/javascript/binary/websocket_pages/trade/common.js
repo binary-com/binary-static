@@ -482,21 +482,17 @@ const commonTrading = (() => {
     const displayTooltip = (market, symbol) => {
         const tip      = document.getElementById('symbol_tip');
         const guide    = document.getElementById('guideBtn');
-        const app      = document.getElementById('androidApp');
-        const appstore = document.getElementById('appstore');
         const markets  = document.getElementById('contract_markets').value;
+
+        if (guide) guide.show();
+
         if (!market || !symbol) return;
+
         if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
-            if (guide) guide.hide();
             tip.show();
             tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
-            app.show();
-            appstore.show();
         } else {
-            app.hide();
-            appstore.hide();
             tip.hide();
-            if (guide) guide.show();
         }
         if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
             tip.show();
