@@ -1,7 +1,7 @@
 [% BLOCK patents %]
     <ul>
         [% FOREACH items %]
-            <li><a onclick="window.open('https://www.google.com/patents/[% doc %]')" href="javascript:void(0);" rel="noopener noreferrer">[% text %]</a></li>
+            <li><a onclick="window.open('https://www.google.com/patents/[% doc %]')" href="javascript:void(0);">[% text %]</a></li>
         [% END %]
     </ul>
 [% END %]
