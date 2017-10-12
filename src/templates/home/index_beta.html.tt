@@ -16,7 +16,7 @@
         
 [% BLOCK markets_tab_content %]
     <div class="gr-row gr-row-align-middle">
-        [% INCLUDE arrows parent="market_tabs" direction="left" %]
+        [% PROCESS arrows parent="market_tabs" direction="left" %]
         <div class="gr-5 gr-12-m gr-parent">
             <strong>[% header %]</strong>
             <p>[% text %]</p>
@@ -24,7 +24,7 @@
         <div class="gr-5 gr-12-m gr-parent center-text">
             <img class="responsive" src="[% request.url_for(image) %]" />
         </div>
-        [% INCLUDE arrows parent="market_tabs" direction="right" %]
+        [% PROCESS arrows parent="market_tabs" direction="right" %]
     </div>
 [% END %]
 
@@ -43,16 +43,16 @@
 [% BLOCK accounts_tab_content %]
     <p class="center-text gr-10 gr-no-gutter gr-centered">[% header %]</p>
     <div class="gr-row gr-padding-30">
-        [% INCLUDE arrows parent="account_tabs" direction="left" %]
+        [% PROCESS arrows parent="account_tabs" direction="left" %]
         <div class="gr-5 gr-12-m align-self-center">
             <img class="responsive" src="[% image %]">
         </div>
         <div class="gr-5 gr-12-m">
-            [% INCLUDE accounts_list_item image=image_one   list_header=list_header_one   list_text=list_text_one %]
-            [% INCLUDE accounts_list_item image=image_two   list_header=list_header_two   list_text=list_text_two %]
-            [% INCLUDE accounts_list_item image=image_three list_header=list_header_three list_text=list_text_three %]
+            [% PROCESS accounts_list_item image=image_one   list_header=list_header_one   list_text=list_text_one %]
+            [% PROCESS accounts_list_item image=image_two   list_header=list_header_two   list_text=list_text_two %]
+            [% PROCESS accounts_list_item image=image_three list_header=list_header_three list_text=list_text_three %]
         </div>
-        [% INCLUDE arrows parent="account_tabs" direction="right" %]
+        [% PROCESS arrows parent="account_tabs" direction="right" %]
     </div>
 [% END %]
 
@@ -92,28 +92,28 @@
             { id='cfds',   text=l('CFDs') },
             { id='metals', text=l('Metals') },
             { id='crypto', text=l('Crypto') },
-            { id='market_tabs_selector' },
+            { id='market_tabs_selector', class='tab-selector' },
         ] %]
         <div class="tab-content">
             [% WRAPPER tab_content_container %]
                 [% WRAPPER tab_content id='binary' visible=1 %]
-                    [% INCLUDE markets_tab_content header=l("Binary options") text=l("Options that offer a fixed payout based on a simple yes/no proposition.")
+                    [% PROCESS markets_tab_content header=l("Binary options") text=l("Options that offer a fixed payout based on a simple yes/no proposition.")
                         image="images/pages/home-beta/binary_options.svg" %]
                 [% END %]
                 [% WRAPPER tab_content id='forex' %]
-                    [% INCLUDE markets_tab_content header=l("Forex") text=l("Major, minor and exotic currency pairs.")
+                    [% PROCESS markets_tab_content header=l("Forex") text=l("Major, minor and exotic currency pairs.")
                         image="images/pages/home-beta/forex.svg" %]
                 [% END %]
                 [% WRAPPER tab_content id='cfds' %]
-                    [% INCLUDE markets_tab_content header=l("CFDs") text=l("Derivatives that reflect the movement of underlying assets.")
+                    [% PROCESS markets_tab_content header=l("CFDs") text=l("Derivatives that reflect the movement of underlying assets.")
                         image="images/pages/home-beta/cfds.svg" %]
                 [% END %]
                 [% WRAPPER tab_content id='metals' %]
-                    [% INCLUDE markets_tab_content header=l("Metals") text=l("Precious metal pairs including gold (XAU/USD) and platinum (XPT/USD).")
+                    [% PROCESS markets_tab_content header=l("Metals") text=l("Precious metal pairs including gold (XAU/USD) and platinum (XPT/USD).")
                         image="images/pages/home-beta/metals.svg" %]
                 [% END %]
                 [% WRAPPER tab_content id='crypto' %]
-                    [% INCLUDE markets_tab_content header=l("Cryptocurrencies") text=l("Cryptocurrency pairs including Bitcoin (BTC/USD), Ethereum (ETH/USD), and Litecoin (LTC/USD).")
+                    [% PROCESS markets_tab_content header=l("Cryptocurrencies") text=l("Cryptocurrency pairs including Bitcoin (BTC/USD), Ethereum (ETH/USD), and Litecoin (LTC/USD).")
                         image="images/pages/home-beta/crypto.svg" %]
                 [% END %]
             [% END %]
@@ -145,19 +145,19 @@
         [% INCLUDE tabs_subtabs id='account_tabs' class='gr-padding-20 gr-parent' items=[
             { id='binary_options', text=l('Binary Options'), class='active' },
             { id='mt5',            text=l('MetaTrader 5') },
-            { id='account_tabs_selector' },
+            { id='account_tabs_selector', class='tab-selector' },
         ] %]
         <div class="tab-content">
             [% WRAPPER tab_content_container %]
                 [% WRAPPER tab_content id='binary_options' visible=1 %]
-                    [% INCLUDE accounts_tab_content header=l("Trade binary options on a wide range of web and mobile apps. Each comes with unique strengths that complement a variety of trading strategies.")
+                    [% PROCESS accounts_tab_content header=l("Trade binary options on a wide range of web and mobile apps. Each comes with unique strengths that complement a variety of trading strategies.")
                         image="https://placehold.it/350x200"
                         image_one="https://placehold.it/50x50" list_header_one=l("Virtual Account") list_text_one=l("Practice account with replenishable USD 10,000 virtual credit.")
                         image_two="https://placehold.it/50x50" list_header_two=l("Real Account") list_text_two=l("Real-money accounts with your choice of fiat currency.")
                         image_three="https://placehold.it/50x50" list_header_three=l("Crypto Account") list_text_three=l("Real-money accounts with your choice of cryptocurrency.") %]
                 [% END %]
                 [% WRAPPER tab_content id='mt5' %]
-                    [% INCLUDE accounts_tab_content header=l("Trade Forex and CFD assets with up to 1,000:1 leverage on the world's most popular institutional multi-asset platform.")
+                    [% PROCESS accounts_tab_content header=l("Trade Forex and CFD assets with up to 1,000:1 leverage on the world's most popular institutional multi-asset platform.")
                         image="https://placehold.it/350x200"
                         image_one="https://placehold.it/50x50" list_header_one=l("MT5 Demo") list_text_one=l("Practice account with replenishable USD 5,000 virtual credit.")
                         image_two="https://placehold.it/50x50" list_header_two=l("MT5 Financial") list_text_two=l("MT5 real-money account for Forex and CFDs.")
@@ -198,9 +198,9 @@
     <h2 class="center-text gr-padding-20">[% l("[_1] Academy", website_name) %]</h2>
     <p class="center-text">[% l("Learn to be a better trader and keep up with the latest news and trends in financial trading - all for free.") %]</p>
     <div class="gr-row">
-        [% INCLUDE academy_section image="https://placehold.it/50x50" header=l("Interactive Webinars")     text=l("Free training sessions by professional traders.") %]
-        [% INCLUDE academy_section image="https://placehold.it/50x50" header=l("Daily market reports")     text=l("Daily insights into markets around the world.") %]
-        [% INCLUDE academy_section image="https://placehold.it/50x50" header=l("Ebooks, videos, and more") text=l("Expert analysis and learning resources.") %]
+        [% PROCESS academy_section image="https://placehold.it/50x50" header=l("Interactive Webinars")     text=l("Free training sessions by professional traders.") %]
+        [% PROCESS academy_section image="https://placehold.it/50x50" header=l("Daily market reports")     text=l("Daily insights into markets around the world.") %]
+        [% PROCESS academy_section image="https://placehold.it/50x50" header=l("Ebooks, videos, and more") text=l("Expert analysis and learning resources.") %]
     </div>
     <div class="center-text gr-padding-30">
         <a class="button-secondary" href="https://academy.binary.com" target="_blank"><span>[% l("Learn more") %]</span></a>
@@ -217,7 +217,7 @@
         <div class="gr-12 gr-padding-30">
             <a href="[% request.url_for('/cashier/payment_methods') %]">
                 <div class="gr-row gr-row-align-center">
-                    [% INCLUDE payment_logo items=[
+                    [% PROCESS payment_logo items=[
                         'visa',
                         'mastercard',
                         'int_bank_wire',

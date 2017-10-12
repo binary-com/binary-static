@@ -96,21 +96,6 @@
     .border-right {
         border-right: 2px solid $COLOR_GRAY;
     }
-    #market_tabs_selector, #account_tabs_selector {
-        height: 5px;
-        background-color: $COLOR_BLUE;
-        z-index: 1;
-        position: absolute;
-        left: 0;
-        top: 36px;
-        border-radius: $BORDER_RADIUS;
-    }
-    #market_tabs_selector {
-        right: 80%;
-    }
-    #account_tabs_selector {
-        right: 50%;
-    }
 }
 
 .home-jp-content {
@@ -205,6 +190,9 @@
         }
         .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li {
             font-size: $FONT_SIZE_S;
+        }
+        #market_tabs_selector, #account_tabs_selector {
+            top: 24px;
         }
     }
     .home-jp-content {

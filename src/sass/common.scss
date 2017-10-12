@@ -470,7 +470,7 @@ ul.bullet.gr-row > li {
                     background: none;
                     margin: 0;
                     padding: 0;
-                    font-size: $FONT_SIZE_N;
+                    font-size: $FONT_SIZE_XL;
                     margin-bottom: -1px;
                     border-bottom: 1px solid $COLOR_GRAY;
 
@@ -481,9 +481,16 @@ ul.bullet.gr-row > li {
                         display: block;
                         padding: 0 20px;
                     }
-                }
-                li.active, li.ui-tabs-active {
-                    //border-bottom: 3px solid $COLOR_BLUE;
+                    &.tab-selector {
+                        height: 3px;
+                        background-color: $COLOR_BLUE;
+                        z-index: 1;
+                        position: absolute;
+                        margin-left: 0;
+                        top: 37px;
+                        border-radius: $BORDER_RADIUS;
+                        transition: margin-left 0.4s ease-in-out, width 0.2s 0.1s ease-in-out;
+                    }
                 }
             }
         }
@@ -495,11 +502,6 @@ ul.bullet.gr-row > li {
                     flex: 1;
                 }
             }
-        }
-    }
-    .content-tab-container, .content-tab-container {
-        &.light .tab-menu-wrap ul.tm-ul li.tm-li {
-            font-size: $FONT_SIZE_XL;
         }
     }
 }
