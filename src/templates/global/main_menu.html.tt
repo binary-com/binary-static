@@ -4,9 +4,6 @@
             <ul class="items">
             [%= FOREACH item IN menu=%]
                 <li id="[%= item.id =%]" class="item [%= item.class =%]">
-                    [%= IF item.svg =%]
-                        <img src="[% item.svg %]" />
-                    [%= END =%]
                     <a class="link[% IF item.link_class %] [% item.link_class %][% END %]" target="[% IF item.target %][% item.target %][% END %]" href="[%= item.url =%]">[%= item.text =%]</a>
                     [% IF item.sub_items %]
                         <ul class="sub_items">
