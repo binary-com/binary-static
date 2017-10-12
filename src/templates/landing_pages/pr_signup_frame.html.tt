@@ -6,28 +6,27 @@
     [% END %]
     <style type="text/css">
         body {
-            background: transparent !important;
+            background: transparent;
             display: flex;
             flex-direction: column;
+            font-size: 18px;
         }
         .center {
-            margin: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        input[type='text'], input[type='submit'] {
+            padding: 10px;
+            border-radius: 3px;
+            margin: 5px;
+            width: 95%;
         }
         input[type='text'] {
-            width: 280px;
-            font-size: 18px;
-            padding: 10px;
-            margin: 6px 0;
-            border-radius: 3px;
             border: 1px solid #F2F2F2;
             color: #000;
         }
         input[type='submit'] {
-            font-size: 18px;
-            border-radius: 3px;
-            width: 100px;
-            padding: 10px;
-            margin: 5px 0;
+            height: auto !important;
             background: #2E8836;
             color: #FFF;
             border: none;
@@ -35,13 +34,11 @@
             -webkit-appearance: none;
             -moz-appearance: none;
         }
-
         input[type='submit']:hover {
              background: #14602B;
         }
-
         input[type='text']:focus, input[type='submit']:focus {
-            outline: none !important;
+            outline: none;
         }
     </style>
     <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
@@ -64,10 +61,15 @@
 
             <input type="hidden" name="meta_tooltip" value="email||Enter your email" />
         </div>
-            <div id="af-form-382779290" class="af-form"><div id="af-body-382779290" class="af-body af-standards">
-                <div class="af-element">
-                    <input id="email" class="text" id="awf_field-93544706" type="text" name="email" placeholder="Enter your email" tabindex="500" onfocus=" if (this.value == 'Enter your email') { this.value = ''; }" onblur="if (this.value == '') { this.value='Enter your email';} " />
-                    <input class="submit" type="submit" value="Submit" tabindex="501" />
+        <div id="af-form-382779290" class="af-form">
+            <div id="af-body-382779290" class="af-body af-standards">
+                <div class="af-element gr-row">
+                    <div class="gr-7 gr-11-m">
+                        <input id="email" class="text" id="awf_field-93544706" type="text" name="email" placeholder="Enter your email" tabindex="500" onfocus=" if (this.value == 'Enter your email') { this.value = ''; }" onblur="if (this.value == '') { this.value='Enter your email';} " />
+                    </div>
+                    <div class="gr-5 gr-push-2-m gr-8-m">
+                        <input class="submit" type="submit" value="Submit" tabindex="501" />
+                    </div>
                 </div>
             </div>
         </div>
