@@ -1,5 +1,8 @@
 module.exports = {
     all: {
+        options: {
+            inline: ['none'],
+        },
         files: [
             {
                 src: [global.dist + '/css/binary.css'],
