@@ -11,7 +11,7 @@
 [% BLOCK download %]
 <div class="gr-4 gr-6-m center-text gr-padding-10">
     <img class="gr-8 gr-padding-30 gr-centered" src="[% request.url_for('images/pages/metatrader/icons/' _ image _ '.svg') %]" />
-    <a class="button" href="[% href %]"[% IF download %] download[% END %][% IF target %] target="[% target %]"[% END %] rel="noopener noreferrer">
+    <a class="button" href="[% href %]"[% IF download %] download[% END %][% IF target %] target="[% target %]"[% END %]>
         <span>[% l('Download') %]</span>
     </a>
 </div>
@@ -20,7 +20,7 @@
 [% BLOCK download_mobile %]
 <div class="gr-6 center-text[% IF center_m %]-m[% END %] gr-padding-10">
     <img class="gr-5 gr-8-m gr-padding-30 gr-centered[% IF center_m %]-m[% END %]" src="[% request.url_for('images/pages/metatrader/icons/' _ image _ '.svg') %]" />
-    <a href="https://download.mql5.com/cdn/mobile/mt5/[% os %]?server=Binary.com-Server" target="_blank" rel="noopener noreferrer">
+    <a href="https://download.mql5.com/cdn/mobile/mt5/[% os %]?server=Binary.com-Server" target="_blank">
         <span class="[% badge %]"></span>
     </a>
 </div>
@@ -74,7 +74,7 @@
                     [% END %]
                 </div>
                 <div class="center-text">
-                    <a class="button" href="https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server" target="_blank" rel="noopener noreferrer">
+                    <a class="button" href="https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server" target="_blank">
                         <span>[% l('Download') %]</span>
                     </a>
                 </div>

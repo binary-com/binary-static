@@ -10,7 +10,7 @@
                 <p><strong>[% charity.title %]</strong></p>
                 <p>[% charity.text %]</p>
                 [% FOREACH contact IN charity.contacts %]
-                    <p><strong>[% contact.text %]: <a href="[% IF contact.mailto %]mailto:[% END %][% contact.href %]" [% contact.attr %]>[% contact.href %]</a></strong></p>
+                    <p><strong>[% contact.text %]: <a href="[% IF contact.mailto %]mailto:[% END %][% contact.href %]">[% contact.href %]</a></strong></p>
                 [% END %]
             </div>
         </div>
@@ -40,11 +40,11 @@
             [% INCLUDE charity country=l("Malaysia") charities=[
                 { image='learning_centre', title=l("Shelter Home’s Shelter Community Learning Centre 3"), text=l("The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."),
                     contacts=[
-                        { text=l("URL"), href='http://www.shelterhome.org', attr='rel="noopener noreferrer"' },
+                        { text=l("URL"), href='http://www.shelterhome.org' },
                     ] },
                 { image='languages_refugee', title=l("Languages Classes for Refugees (LCFR)"), text=l("Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."),
                     contacts=[
-                        { text=l("URL"), href='https://www.facebook.com/languagesclassesforrefugees', attr='rel="noopener noreferrer"' },
+                        { text=l("URL"), href='https://www.facebook.com/languagesclassesforrefugees' },
                         { text=l("Contact"), mailto=1, href='spreadlnrevents@gmail.com' },
                     ] },
             ] %]

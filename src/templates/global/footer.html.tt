@@ -10,7 +10,7 @@
 [% BLOCK social_icons %]
 <div class="gr-padding-10 gr-row[% IF is_centered %] gr-row-align-center[% END %]">
     [% FOREACH networks %]
-        <a href="[% href %]" target="_blank" class="[% IF is_centered %]gr-2 gr-1-m[% ELSE %]gr-3[% END %] gr-no-gutter-right" rel="noopener noreferrer">
+        <a href="[% href %]" target="_blank" class="[% IF is_centered %]gr-2 gr-1-m[% ELSE %]gr-3[% END %] gr-no-gutter-right">
             <img class="responsive" src="[% request.url_for('images/pages/footer/' _ media _ '.svg') %]"/>
         </a>
     [% END %]
@@ -39,17 +39,17 @@
                         ] %]
 
                         [% INCLUDE footer_column header=l('Education') items=[
-                            { text=l('Why Us?'),                           href=request.url_for('why-us'),                class='ja-hide' },
-                            { text=l('Why Us?'),                           href=request.url_for('why-us-jp'),             class='invisible ja-show' },
-                            { text=l('Getting Started'),                   href=request.url_for('get-started'),           class='ja-hide' },
-                            { text=l('Getting Started'),                   href=request.url_for('get-started-jp'),        class='invisible ja-show' },
-                            { text=l('Platform Tour'),                     href=request.url_for('tour'),                  class='ja-hide' },
-                            { text=l('Platform Tour'),                     href=request.url_for('tour-jp'),               class='invisible ja-show' },
-                            { text=l('{JAPAN ONLY}Service Announcements'), href=request.url_for('service-announcements'), class='invisible ja-show' },
-                            { text=l('Affiliate Program'),                 href=request.url_for('affiliate/signup-jp'),   class='invisible ja-show' },
-                            { text=l('GamCare'),                           href='http://www.gamcare.org.uk/',             class='ja-hide id-hide', target='_blank' },
-                            { text=l('Academy'),                           href='https://academy.binary.com',             class='ja-hide academy', target='_blank' },
-                            { text=l('Webinars'),                          href='https://academy.binary.com/en/events/',  class='ja-hide id-hide', target='_blank' },
+                            { text=l('Why Us?'),                           href=request.url_for('why-us'),                                class='ja-hide' },
+                            { text=l('Why Us?'),                           href=request.url_for('why-us-jp'),                             class='invisible ja-show' },
+                            { text=l('Getting Started'),                   href=request.url_for('get-started'),                           class='ja-hide' },
+                            { text=l('Getting Started'),                   href=request.url_for('get-started-jp'),                        class='invisible ja-show' },
+                            { text=l('Platform Tour'),                     href=request.url_for('tour'),                                  class='ja-hide' },
+                            { text=l('Platform Tour'),                     href=request.url_for('tour-jp'),                               class='invisible ja-show' },
+                            { text=l('{JAPAN ONLY}Service Announcements'), href=request.url_for('service-announcements'),                 class='invisible ja-show' },
+                            { text=l('Affiliate Program'),                 href=request.url_for('affiliate/signup-jp'),                   class='invisible ja-show' },
+                            { text=l('GamCare'),                           href=request.url_for('http://www.gamcare.org.uk/'),            class='ja-hide id-hide', target='_blank' },
+                            { text=l('Academy'),                           href=request.url_for('https://academy.binary.com'),            class='ja-hide academy', target='_blank' },
+                            { text=l('Webinars'),                          href=request.url_for('https://academy.binary.com/en/events/'), class='ja-hide id-hide', target='_blank' },
                         ] %]
 
                         [% INCLUDE footer_column header=l('Banking') items=[
@@ -104,17 +104,17 @@
         <div class="container">
             <div class="gr-row">
                 <p id="regulatory-text" class="gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color no-margin">
-                    [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - [_1]view license[_2]. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - [_3]view license[_2], and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.", "<a href='https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172' target='_blank' rel='noopener noreferrer'>", "</a>", "<a href='https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495' target='_blank' rel='noopener noreferrer'>") %]
+                    [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
                 </p>
                 <div class="ja-hide gr-3 gr-12-m gr-5-p center-text" id="social-networks">
                     <div class="gr-row ja-hide id-hide">
                         <div class="gr-5">
-                            <a href="https://www.gov.im/gambling/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.gov.im/gambling/" target="_blank">
                                 <img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
                             </a>
                         </div>
                         <div class="gr-7">
-                            <a href="https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1" target="_blank">
                                 <img id="lga_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/mga-logo-footer.svg') %]"/>
                             </a>
                         </div>

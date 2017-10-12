@@ -25,10 +25,10 @@
             <div class="gr-6 gr-12-p gr-12-m">
                 <div class="gr-7 gr-8-m gr-centered gr-padding-30 gr-child">
                     <div class="gr-row">
-                        <a href="http://www.fsa.go.jp/index.html" target="_blank" class="gr-4 gr-no-gutter" rel="noopener noreferrer">
+                        <a href="http://www.fsa.go.jp/index.html" target="_blank" class="gr-4 gr-no-gutter">
                             <img class="responsive" src="[% request.url_for('images/pages/regulation/fsa-logo.png') %]">
                         </a>
-                        <a href="http://www.ffaj.or.jp/index.html" target="_blank" class="gr-8 gr-no-gutter" rel="noopener noreferrer">
+                        <a href="http://www.ffaj.or.jp/index.html" target="_blank" class="gr-8 gr-no-gutter">
                             <img class="responsive" src="[% request.url_for('images/pages/regulation/binarykk-logo.gif') %]">
                         </a>
                     </div>
@@ -42,7 +42,7 @@
             <div class="gr-6 gr-12-p gr-12-m">
                 <div class="gr-7 gr-8-m gr-centered gr-padding-30 gr-child">
                     <div class="gr-8 gr-no-gutter">
-                        <a href="https://www.jsftb.co.jp/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.jsftb.co.jp/" target="_blank">
                             <img class="responsive" src="[% request.url_for('images/pages/home-jp/JSF.png') %]">
                         </a>
                     </div>

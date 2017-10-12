@@ -1,6 +1,6 @@
 [% BLOCK browsers %]
 <div class="gr-6 gr-12-m">
-    <a id="[% id %]" target="_blank" href="[% href %]" class="li-boxes-content-icon" rel="noopener noreferrer">[% company %]</a>
+    <a id="[% id %]" target="_blank" href="[% href %]" class="li-boxes-content-icon">[% company %]</a>
     <div class="li-2-boxes-content li-boxes-content-extra-height">
         <h2>[% header %]</h2>
         <ul>
