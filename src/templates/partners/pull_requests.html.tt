@@ -54,12 +54,12 @@
 
         <div class="gr-padding-10">
             <h2>[% l('Can I submit security vulnerabilities?') %]</h2>
-            <p>[% l('Yes, but we\'d prefer you to submit security vulnerabilities via our <a target="_blank" href="[_1]">bug bounty</a> program.', 'https://hackerone.com/binary') %]</p>
+            <p>[% l('Yes, but we\'d prefer you to submit security vulnerabilities via our [_1]bug bounty[_2] program.', '<a target="_blank" href="https://hackerone.com/binary" rel="noopener noreferrer">', '</a>') %]</p>
         </div>
 
         <div class="gr-padding-10">
             <h2>[% l('Can I contribute to back-end code?') %]</h2>
-            <p>[% l('Our back-end code is mainly in Perl, and our open-source contributions may be found on <a target="_blank" href="[_1]">CPAN</a>. The corresponding source code can be found in our <a target="_blank" href="[_2]">Github repositories</a> that start with the prefix "perl-". We welcome contributions to these repositories, notably improved documentation and test coverage.', 'http://search.cpan.org/~binary', 'https://github.com/binary-com') %]</p>
+            <p>[% l('Our back-end code is mainly in Perl, and our open-source contributions may be found on [_1]CPAN[_2]. The corresponding source code can be found in our [_3]Github repositories[_2] that start with the prefix "perl-". We welcome contributions to these repositories, notably improved documentation and test coverage.', '<a target="_blank" href="http://search.cpan.org/~binary" rel="noopener noreferrer">', '</a>', '<a target="_blank" href="https://github.com/binary-com" rel="noopener noreferrer">') %]</p>
         </div>
 
         <div class="gr-padding-10">
