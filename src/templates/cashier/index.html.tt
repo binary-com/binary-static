@@ -4,7 +4,7 @@
     <div class="gr-5 gr-12-m[% IF ja_hide %] ja-hide[% ELSIF ja_show %] invisible ja-show[% END %]">
         <div class="gr-padding-10 client_real invisible gr-parent">
             <a class="toggle button client_real invisible" href="[% request.url_for(deposit_url) %]">
-                <span class="deposit">[% l('Deposit') %]</span>
+                <span class="deposit"[% IF id %] id="[% id %]"[% END %]>[% l('Deposit') %]</span>
             </a>
         </div>
         <div class="gr-padding-10 client_real invisible">
@@ -70,7 +70,7 @@
                 <p>[% l('View available payment methods') %]</p>
             </a>
         </div>
-        [% INCLUDE deposit_withdraw ja_hide=1 show_upgrade=1 %]
+        [% INCLUDE deposit_withdraw ja_hide=1 show_upgrade=1 id='deposit_btn_cashier' %]
         [% INCLUDE deposit_withdraw ja_show=1 show_upgrade=1 %]
     </div>
 </div>
