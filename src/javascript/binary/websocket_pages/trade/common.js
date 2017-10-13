@@ -480,11 +480,8 @@ const commonTrading = (() => {
     };
 
     const displayTooltip = (market, symbol) => {
-        const tip      = document.getElementById('symbol_tip');
-        const guide    = document.getElementById('guideBtn');
-        const markets  = document.getElementById('contract_markets').value;
-
-        if (guide) guide.show();
+        const tip     = document.getElementById('symbol_tip');
+        const markets = document.getElementById('contract_markets').value;
 
         if (!market || !symbol) return;
 
