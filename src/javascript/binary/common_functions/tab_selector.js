@@ -11,6 +11,9 @@ const TabSelector = (() => {
             // set initial width and margin-left of tab selector
             changeTab(undefined, undefined, tab_id);
 
+            window.removeEventListener('resize', () => {
+                changeTab(undefined, undefined, tab_id);
+            });
             window.addEventListener('resize', () => {
                 changeTab(undefined, undefined, tab_id);
             });
@@ -42,12 +45,14 @@ const TabSelector = (() => {
                     slideSelector(selector, elements[i]);
                     break;
                 }
-                let el_to_show;
+                let index_to_show;
                 if (go_left) {
-                    el_to_show = elements[i - 1] ? elements[i - 1] : elements[elements.length - 2];
+                    index_to_show = elements[i - 1] ? i - 1 : elements.length - 2;
                 } else {
-                    el_to_show = i + 1 !== elements.length - 1 && elements[i + 1] ? elements[i + 1] : elements[0];
+                    index_to_show = i + 1 !== elements.length - 1 && elements[i + 1] ? i + 1 : 0;
                 }
+                const el_to_show = elements[index_to_show];
+                selectCircle(selector, i, index_to_show);
                 slideSelector(selector, el_to_show);
                 elements[i].classList.remove('active');
                 document.getElementById(`${elements[i].getAttribute('id')}-content`).classList.add('invisible');
@@ -60,6 +65,15 @@ const TabSelector = (() => {
 
     const slideSelector = (selector, el_to_show) => {
         document.getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
+    };
+
+    const selectCircle = (selector, old_index, index_to_show) => {
+        const el_circle = document.getElementById(`${selector}_circles`);
+        if (el_circle) {
+            const all_circles = el_circle.children;
+            all_circles[old_index].classList.remove('selected');
+            all_circles[index_to_show].classList.add('selected');
+        }
     };
 
     const clean = (tab_ids, has_arrows) => {
