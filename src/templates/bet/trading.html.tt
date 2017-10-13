@@ -1,11 +1,13 @@
 <div id="trading_socket_container" class="tab-menu-wrap">
     <div id="notifications_wrapper"></div>
     <div id="loading_container" class="overlay_container"></div>
-    <div id="guideBtn"></div>
-    <div class="center-text">
-        <a href="https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=trading_page&mt=8" target="_blank" id="appstore" rel="noopener noreferrer"></a>
-        <a href="https://goo.gl/5KmSsU" target="_blank" id="androidApp" rel="noopener noreferrer"></a>
+    <div id="deposit_btn_trade" class="client_real invisible secondary-bg-color center-text gr-hide-m">
+        <a href="[% request.url_for('cashier/forwardws') %]#deposit">
+            <img src="[% request.url_for('images/common/plus.svg') %]">
+            [% l("Deposit") %]
+        </a>
     </div>
+    <div class="client_virtual client_logged_out invisible" id="guideBtn"></div>
     <div class="row" id="contract_symbol_container">
         <div id="contract_markets_container">
             <select id="contract_markets"></select>

@@ -705,6 +705,24 @@
         margin-bottom: 20px;
     }
 }
+
+#deposit_btn_trade {
+    float: right;
+    padding: 10px 20px;
+    border-radius: $BORDER_RADIUS;
+
+    a {
+        color: $COLOR_WHITE;
+
+        &:hover {
+            text-decoration: none;
+        }
+        img {
+            margin-right: 5px;
+        }
+    }
+}
+
 @media all and (max-width: 768px) {
     #trading_bottom_content ul#betsBottomPage {
         flex-direction: column;
