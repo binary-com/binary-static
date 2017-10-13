@@ -1,8 +1,8 @@
 <div id="trading_socket_container" class="tab-menu-wrap">
     <div id="notifications_wrapper"></div>
     <div id="loading_container" class="overlay_container"></div>
-    <div id="deposit_btn_trade" class="client_real invisible secondary-bg-color center-text gr-hide-m">
-        <a href="[% request.url_for('cashier/forwardws') %]#deposit">
+    <div id="deposit_btn_wrapper" class="client_real invisible secondary-bg-color center-text gr-hide-m">
+        <a id="deposit_btn_trade" href="[% request.url_for('cashier/forwardws') %]#deposit">
             <img src="[% request.url_for('images/common/plus.svg') %]">
             [% l("Deposit") %]
         </a>
