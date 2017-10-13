@@ -22,6 +22,12 @@
 
 <h1>[% l('Cashier') %]</h1>
 
+<div class="invisible" id="message_bitcoin_cash">
+    <div class="notice-msg center-text">
+        <div class="gr-padding-10">[% l("This is a [_1]Bitcoin Cash[_2] (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin.", '<a href="https://www.bitcoincash.org" target="_blank" rel="noopener noreferrer">', '</a>') %]</div>
+    </div>
+</div>
+
 <div class="gr-padding-10 table-body client_virtual invisible gr-parent">
     <h3 class="gr-padding-10">[% l('Get more virtual money') %]</h3>
     <div class="gr-row">

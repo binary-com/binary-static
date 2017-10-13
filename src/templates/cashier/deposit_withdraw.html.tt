@@ -28,6 +28,11 @@
     </div>
 
     <div class="invisible">
+        <div class="gr-padding-10 gr-parent invisible" id="message_bitcoin_cash">
+            <div class="notice-msg center-text">
+                <div class="gr-padding-10">[% l("This is a [_1]Bitcoin Cash[_2] (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin.", '<a href="https://www.bitcoincash.org" target="_blank" rel="noopener noreferrer">', '</a>') %]</div>
+            </div>
+        </div>
         <iframe src="" frameborder="0" width="100%" scrolling="auto"></iframe>
     </div>
 

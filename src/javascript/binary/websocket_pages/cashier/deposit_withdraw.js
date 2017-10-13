@@ -187,6 +187,9 @@ const DepositWithdraw = (() => {
             if (isCryptocurrency(Client.get('currency'))) {
                 $iframe.css('height', '700px');
             }
+            if (/^BCH/.test(Client.get('currency'))) {
+                document.getElementById('message_bitcoin_cash').setVisibility(1);
+            }
             $iframe.attr('src', response.cashier).parent().setVisibility(1);
         }
     };
