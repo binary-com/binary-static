@@ -636,7 +636,7 @@
                         <!-- /AWeber Web Form Generator 3.0.1 -->
                         <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
                     </div>
-                    <p class="margin-top-40">[% l("Join the conversion on our social channels for all news and updates related to our upcoming ICO.") %]</p>
+                    <p class="margin-top-40">[% l("Join the conversation on our social channels for all news and updates related to our upcoming ICO.") %]</p>
                     <div class="gr-row gr-row-align-center">
                         <a href="https://t.me/binarydotcom" target="_blank" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/telegram.svg") %]" />
