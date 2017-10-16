@@ -98,7 +98,7 @@
 
     <div class="center-text">
         <div class="gr-parent gr-padding-20">
-            <a class="button" href="https://s3.amazonaws.com/binary-mt5/binarycom_mam.rar"><span>[% l('Download Now') %]</span></a>
+            <a class="button" href="https://s3.amazonaws.com/binary-mt5/binarycom_mam.rar" rel="noopener noreferrer"><span>[% l('Download Now') %]</span></a>
         </div>
 
         <p>[% l('Interested in our MAM tool for MetaTrader 5? Contact us at [_1] for more info.', '<a href="mailto:marketing@binary.com">marketing@binary.com</a>') %]</p>

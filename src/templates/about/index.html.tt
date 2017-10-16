@@ -52,7 +52,7 @@
                 </div>
                 <div class="gr-row gr-parent">
                     [% WRAPPER box %]
-                        [% INCLUDE box_inner class='border-right-bottom gr-padding-30' image='transacts' text=l("Binary's platform transacts on average [_1] [_2]transactions[_3] per second, 24/7", "20", "<a href='https://binarycom.statuspage.io/' target='_blank'>", "</a>") %]
+                        [% INCLUDE box_inner class='border-right-bottom gr-padding-30' image='transacts' text=l("Binary's platform transacts on average [_1] [_2]transactions[_3] per second, 24/7", "20", "<a href='https://binarycom.statuspage.io/' target='_blank' rel='noopener noreferrer'>", "</a>") %]
                         [% INCLUDE box_inner class='border-right-bottom gr-padding-30' href='/contact' image='locations' text=l("<a href='[_1]'>Offices</a> in Malta, Malaysia and Japan", request.url_for("/contact")) %]
                     [% END %]
                     [% WRAPPER box %]

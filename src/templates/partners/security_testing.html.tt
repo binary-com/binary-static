@@ -19,7 +19,7 @@
                 <li>[% l("Read and understand our HackerOne bug bounty programme policy.") %]</li>
                 <li>[% l("Analyse and test the domains and subdomains listed in the scope.") %]</li>
                 <li>[% l("Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue.") %]</li>
-                <li>[% l("If you find any vulnerabilities in our <a target='_blank' href='[_1]'>open-source code</a>, feel free to submit a pull request on GitHub.", 'https://github.com/binary-com') %]</li>
+                <li>[% l("If you find any vulnerabilities in our [_1]open-source code[_2], feel free to submit a pull request on GitHub.", "<a target='_blank' href='https://github.com/binary-com' rel='noopener noreferrer'>", "</a>") %]</li>
             </ul>
 
             [% INCLUDE fill_box center=1 padding='6' href='https://hackerone.com/binary' target='_blank'

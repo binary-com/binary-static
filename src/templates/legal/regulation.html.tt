@@ -28,7 +28,7 @@
 
 [% BLOCK regulator_image %]
     <div class="gr-[% padding || 2 %] gr-[% padding_m || 4 %]-m gr-centered gr-padding-10">
-        <a href="[% href %]" target="_blank">
+        <a href="[% href %]" target="_blank" rel="noopener noreferrer">
             <img class="responsive" src="[% request.url_for(image) %]">
         </a>
     </div>
@@ -76,7 +76,7 @@
                     [% svg_width = 320 %]
                     [% svg_scale = 900 / svg_width %]
                     [% FOREACH item IN items %]
-                        <area shape="rect" coords="[% item.x * svg_scale %],[% item.y * svg_scale %],[% (item.x + (item.width || default_width) + square_wh) * svg_scale %],[% (item.y + square_wh) * svg_scale %]" href="[% item.link || request.url_for('download/regulation/' _ item.name.replace(' ', '') _ '.pdf') %]" alt="[% item.name %]" target="_blank">
+                        <area shape="rect" coords="[% item.x * svg_scale %],[% item.y * svg_scale %],[% (item.x + (item.width || default_width) + square_wh) * svg_scale %],[% (item.y + square_wh) * svg_scale %]" href="[% item.link || request.url_for('download/regulation/' _ item.name.replace(' ', '') _ '.pdf') %]" alt="[% item.name %]" target="_blank" rel="noopener noreferrer">
                     [% END %]
                 [% END %]
                 <map name="planetmap" id="planetmap">

@@ -4,7 +4,7 @@
         <div class="inline-flex center-align gr-gutter">
             [% IF image %]<img class="half-sized-picture gr-gutter-right" src="[% request.url_for(image) %]"/>[% END %]
             [% IF href %]
-            <a href="[% href %]"[% IF target %] target="[% target %]"[% END %][% IF download %] download[% END %][% IF color == 'dark' %] class="content-inverse-color"[% END %]>
+            <a href="[% href %]"[% IF target %] target="[% target %]"[% END %][% IF download %] download[% END %][% IF color == 'dark' %] class="content-inverse-color"[% END %][% IF href.search('^http') %] rel="noopener noreferrer"[% END %]>
             [% ELSE %]
             <p class="gr-gutter">
             [% END %]
@@ -37,7 +37,7 @@
 [% BLOCK li %]
 <li[% IF class %] class="[% class %]"[% END %][% IF id %] id="[% id %]"[% END %]>
     [% IF header %][% IF !text %]<h3>[% ELSE %]<strong>[% END %][% header %][% IF text %]</strong>[% ELSE %]</h3>[% END %] [% END %]
-    [% IF href %]<a href="[% href %][% param %]" [% IF target %] target="[% target %]"[% END %]>[% END %]
+    [% IF href %]<a href="[% href %][% param %]"[% IF target %] target="[% target %]"[% END %][% IF href.search('^http') %] rel="noopener noreferrer"[% END %]>[% END %]
     [% IF p %]<p>[% END %]
     [%= text =%]
     [% IF p %]</p>[% END %]
