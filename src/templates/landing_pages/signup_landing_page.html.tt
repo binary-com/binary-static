@@ -191,11 +191,11 @@
                     <div class="gr-9 gr-12-m align-self-center">
                         <div class="gr-row gr-row-align-center">
                             <div class="gr-1 gr-hide-m border-right"></div>
-                            <div class="gr-2 gr-3-m align-self-center gr-padding-10"><img class="gr-10 gr-centered" src="[% request.url_for('images/signup_landing_page/icons/awards/awards-t2w.png') %]"></div>
-                            <div class="gr-2 gr-3-m align-self-center gr-padding-10"><img class="gr-11 gr-centered" src="[% request.url_for('images/signup_landing_page/icons/awards/why-us-GBAF-award-2012.svg') %]"></div>
-                            <div class="gr-2 gr-3-m align-self-center gr-padding-10"><img class="responsive" src="[% request.url_for('images/signup_landing_page/icons/awards/awards-opwa.svg') %]"></div>
-                            <div class="gr-2 gr-3-m align-self-center gr-padding-10"><img class="gr-10 gr-centered" src="[% request.url_for('images/signup_landing_page/icons/awards/awards-mena.png') %]"></div>
-                            <div class="gr-2 gr-3-m align-self-center gr-padding-10"><img class="gr-10 gr-centered" src="[% request.url_for('images/signup_landing_page/icons/awards/awards-egr.png') %]"></div>
+                            <div class="gr-2 gr-3-m align-self-center gr-padding-10"><img class="gr-10 gr-centered" src="[% request.url_for('images/pages/home/awards-t2w.png') %]"></div>
+                            <div class="gr-2 gr-3-m align-self-center gr-padding-10"><img class="gr-11 gr-centered" src="[% request.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg') %]"></div>
+                            <div class="gr-2 gr-3-m align-self-center gr-padding-10"><img class="responsive" src="[% request.url_for('images/pages/home/awards-opwa.svg') %]"></div>
+                            <div class="gr-2 gr-3-m align-self-center gr-padding-10"><img class="gr-10 gr-centered" src="[% request.url_for('images/pages/home/awards-mena.png') %]"></div>
+                            <div class="gr-2 gr-3-m align-self-center gr-padding-10"><img class="gr-10 gr-centered" src="[% request.url_for('images/pages/home/awards-egr.png') %]"></div>
                             <div class="gr-1 gr-hide-m"></div>
                         </div>
                     </div>
