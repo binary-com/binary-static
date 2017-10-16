@@ -155,23 +155,23 @@
                     [% WRAPPER tab_content_container %]
                         [% WRAPPER tab_content id='binary' visible=1 %]
                             [% INCLUDE markets_tab_content header=l("Binary options") text=l("Options that offer a fixed payout based on a simple yes/no proposition.")
-                                image="images/pages/signup_landing_page/icons/trade/Binary_image.svg" %]
+                                image="images/signup_landing_page/icons/trade/Binary_image.svg" %]
                         [% END %]
                         [% WRAPPER tab_content id='forex' %]
                             [% INCLUDE markets_tab_content header=l("Forex") text=l("Major, minor and exotic currency pairs.")
-                                image="images/pages/signup_landing_page/icons/trade/Forex_Image.svg" %]
+                                image="images/signup_landing_page/icons/trade/Forex_Image.svg" %]
                         [% END %]
                         [% WRAPPER tab_content id='cfds' %]
                             [% INCLUDE markets_tab_content header=l("CFDs") text=l("Derivatives that reflect the movement of underlying assets.")
-                                image="images/pages/signup_landing_page/icons/trade/CFDs_Image.svg" %]
+                                image="images/signup_landing_page/icons/trade/CFDs_Image.svg" %]
                         [% END %]
                         [% WRAPPER tab_content id='metals' %]
                             [% INCLUDE markets_tab_content header=l("Metals") text=l("Precious metal pairs including gold (XAU/USD) and platinum (XPT/USD).")
-                                image="images/pages/signup_landing_page/icons/trade/Metals_Image.svg" %]
+                                image="images/signup_landing_page/icons/trade/Metals_Image.svg" %]
                         [% END %]
                         [% WRAPPER tab_content id='crypto' %]
                             [% INCLUDE markets_tab_content header=l("Cryptocurrencies") text=l("Cryptocurrency pairs including Bitcoin (BTC/USD), Ethereum (ETH/USD), and Litecoin (LTC/USD).")
-                                image="images/pages/signup_landing_page/icons/trade/Crypto_Image.svg" %]
+                                image="images/signup_landing_page/icons/trade/Crypto_Image.svg" %]
                         [% END %]
                     [% END %]
                 </div>
