@@ -364,7 +364,16 @@ hr {
     }
 }
 
+@media screen and (max-width: 767) {
+    .payment .payment-icons {
+        width: 64px;
+    }
+}
+
 @media screen and (max-width: 479px) {
+    .payment .payment-icons {
+        width: 96px;
+    }
     .tab-markets {
         .light {
             .tab-menu-wrap {
