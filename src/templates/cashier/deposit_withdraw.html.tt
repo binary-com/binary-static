@@ -28,6 +28,11 @@
     </div>
 
     <div class="invisible">
+        <div class="gr-padding-10 gr-parent invisible" id="message_bitcoin_cash">
+            <div class="notice-msg center-text">
+                <div class="gr-padding-10">[% l("This is a [_1]Bitcoin Cash[_2] (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin.", '<a href="https://www.bitcoincash.org" target="_blank" rel="noopener noreferrer">', '</a>') %]</div>
+            </div>
+        </div>
         <iframe src="" frameborder="0" width="100%" scrolling="auto"></iframe>
     </div>
 
@@ -37,7 +42,8 @@
         </div>
 
         <div class="gr-10 gr-12-m">
-            <p>[% l("We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency <a href='[_1]' target='_blank'>[_1]</a>.", "http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx") %]</p>
+            [%= gambling_link = "<a href='%' target='_blank' rel='noopener noreferrer'>%</a>" | replace("%", "http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx") %]
+            <p>[% l("We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency [_1].", gambling_link) %]</p>
             <p>[% l("The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>.") %]</p>
             <div class='gr-3 gr-6-m gr-centered'>
                 <button class="button" type="submit">[% l('Proceed') %]</button>
