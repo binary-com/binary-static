@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-12 21:36-0400\n"
+"PO-Revision-Date: 2017-10-15 22:26-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -242,7 +242,7 @@ msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auctio
 msgstr "%1では<strong>10,000,000</strong>までのトークンを提供しています。下のフォームから応札をしてください。最小入札価格は<strong>USD 1</strong>またはそれに相当する他通貨になります。"
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
+msgstr "Binary 株式会社はBinary Group Ltdの子会社です。詳細は<a href='%2'>グループの沿革</a>よりご確認いただけます。"
 
 msgid "%1 is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team."
 msgstr "当社では総務チームに参加できる特別な管理力と組織力のある未経験者からミドルキャリアの人材を募集しています。"
@@ -1361,8 +1361,8 @@ msgstr "B. 範囲"
 msgid "BIEL Terms"
 msgstr "BIEL規約"
 
-msgid "BIEL forms part of <a href=\"%1\" target=\"_blank\">the Investor Compensation Scheme</a> (the \"Scheme\") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
-msgstr "MFSAによりライセンスを受けた失敗に終わった投資会社のクライアントである投資者への救済基金、<a href=\"%1\" target=\"_blank\">投資家補償スキーム</a> (スキーム)の一部をBIELが構成しています。このスキームは1人へ最大支払€20,000の投資サービス法の名の下で補償対象となる投資に関して、クライアントへの当社純負債の90%をカバーします。このスキームはEC指令 97/9に基づいています。"
+msgid "BIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
+msgstr ""
 
 msgid "BIEL is a company established in Malta under registration number C70156 and having its registered office at Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta."
 msgstr "BIELは登録番号C70156の下マルタに設立され、Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Maltaに登録事務所を有しています。"
@@ -1532,7 +1532,7 @@ msgid "Binary Group Ltd. makes no representations that the information contained
 msgstr "Binary Group Ltd. makes no representations that the information contained in this site is appropriate or available for use in other locations. Binary Group Ltd. shall not have any responsibility in respect of access to it from territories whose laws prohibit such access or where any aspect of the content of the site may be illegal. Those who choose to access this site from other locations do so on their own initiative and at their own risk, and are responsible for compliance with applicable local laws."
 
 msgid "Binary Group Ltd., with registered office address situated at Kingston Chambers, Road Town, Tortola, British Virgin Islands, is the holding company for the Binary group."
-msgstr "Binary Group Ltdの所在地：registered office address situated at Kingston Chambers, Road Town, Tortola, British Virgin IslandsーBinary groupの持株会社"
+msgstr "Binaryグループの持株会社であるBinary Group Ltdの所在地は Kingston Chambers, Road Town, Tortola, British Virgin Islandsです。"
 
 msgid "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
 msgstr "Binary Group Services Sdn Bhd<br>所在地：30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
@@ -3921,8 +3921,8 @@ msgstr "お客さまによっては迷惑メールフォルダーに受信され
 msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 
-msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
-msgstr "当社の<a target='_blank' href='%1'>オープンソースコード</a>で脆弱性を発見されましたら、お気軽にGitHubでプルリクエストをしてください。"
+msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
+msgstr ""
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
@@ -4104,8 +4104,8 @@ msgstr "改定済ユーザビリティ"
 msgid "Improvements"
 msgstr "改善"
 
-msgid "In April, <a target='_blank' href='http://www.betonmarkets.com'>Betonmarkets.com</a> (formerly known as <a target='_blank' href='http://www.xodds.com'>Xodds.com</a>) goes live, establishing a round-the-clock financial betting service on a variety of financial indices. Business grows quickly, and we soon become the market leader in fixed-odds financial betting."
-msgstr "４月に<a target='_blank' href='http://www.betonmarkets.com'>Betonmarkets.com</a> (旧サービス名：<a target='_blank' href='http://www.xodds.com'>Xodds.com</a>)のサービスの提供を開始し、24時間のオンライトレードで様々な金融商品を展開したところ瞬く間に成長、固定オッズ方式の金融オンライントレード業界のリーダーとなりました。"
+msgid "In April, %1Betonmarkets.com%2 (formerly known as %3Xodds.com%2) goes live, establishing a round-the-clock financial betting service on a variety of financial indices. Business grows quickly, and we soon become the market leader in fixed-odds financial betting."
+msgstr ""
 
 msgid "In October 1999, Regent Markets receives US$ 2 million investment funding from Jim Mellon through his Regent Pacific Group, a Hong Kong based fund management company."
 msgstr "1999年10月、Regent Marketsは香港のファンドマネジメント企業のRegent Pacific Groupより2億USDの投資を受けました。"
@@ -6074,7 +6074,7 @@ msgstr "当社ポリシー"
 msgid "Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices."
 msgstr "Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices."
 
-msgid "Our back-end code is mainly in Perl, and our open-source contributions may be found on <a target=\"_blank\" href=\"%1\">CPAN</a>. The corresponding source code can be found in our <a target=\"_blank\" href=\"%2\">Github repositories</a> that start with the prefix \"perl-\". We welcome contributions to these repositories, notably improved documentation and test coverage."
+msgid "Our back-end code is mainly in Perl, and our open-source contributions may be found on %1CPAN%2. The corresponding source code can be found in our %3Github repositories%2 that start with the prefix \"perl-\". We welcome contributions to these repositories, notably improved documentation and test coverage."
 msgstr ""
 
 msgid "Our commitment to integrity and reliability means that we always strive to give you access to the best pricing and liquidity possible."
@@ -6900,8 +6900,8 @@ msgstr "Regent Marketsはオンライン上のトレードシステム開始の�
 msgid "Regent Markets sets up a programming centre in Cyberjaya, Malaysia"
 msgstr "Regent Marketsは、サイバージャヤ（マレーシア）に開発センターを設立"
 
-msgid "Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of %1, <a href='%2' target='_blank'>disposes of its stake</a> at a valuation of US$ 50.5 million."
-msgstr "%1の大株主で香港取引所に上場しているRegent Pacific Group Ltd は<a href=\"%2\" target=\"_blank\">保有する当社の株式5,050万US$</a> をすべて売却しました。"
+msgid "Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of %1, %2disposes of its stake%3 at a valuation of US$ 50.5 million."
+msgstr ""
 
 msgid "Regent Pacific transaction"
 msgstr "Regent Pacific株式売却"
@@ -8573,6 +8573,9 @@ msgstr "この機能は、決済サービスアカウントのみご利用いた
 msgid "This field is required."
 msgstr "この項目は必須です。"
 
+msgid "This is a %1Bitcoin Cash%2 (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin."
+msgstr ""
+
 msgid "This is a staging server - For testing purposes only"
 msgstr "これはテストを目的としたステージングサーバーです"
 
@@ -8615,8 +8618,8 @@ msgstr "当社サイトには他のウェブサイトへのリンクが含まれ
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "当社サイトではお客さまが具体的かつ能動的に提供される場合を除き、個人を特定できるような情報を収集することはありません。ウェブサイトから最適化された情報を提供する目的でCookie（クッキー）が用いることができます。Cookie（クッキー）とは、ウェブサイトが閲覧者のブラウザーに送信できるデータ要素のことで、閲覧者のシステムに蓄積される場合があります。お客さまは、ご利用のブラウザーをCookie（クッキー）を受け取る際に通知させることで、Cookie（クッキー）の受信を許可するかどうか決定できるように設定することができます。もし、Cookie（クッキー）の受信を望まれない場合は、お客さまのログインIDとパスワードをシステムにアクセスする毎にご入力して頂く必要があります。ご利用中のブラウザーやコンピューターのセキュリティに関する懸念がおありの場合は、このような設定を施されることをお勧めいたします。"
 
-msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合は支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。1)1取引の取引上限は100ロット。2)1日の取引上限額は50万円。前記2)に達した時点でその日は取引ができなくなります。■取引手数料は無料。当該日から遡り12ヶ月間、新規又は売却取引がなかった場合は口座維持手数料（2,500円税込）が発生、引き続き取引等がない場合、6ヶ月毎に同額が発生します。3,000円未満を出金の際は250円（税込）の出金手数料がかかります。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引開始前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
+msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - %1view license%2. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - %3view license%2, and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "PerlやPHP などのスクリプト言語の経験とBashスクリプトの深い知識"
@@ -9354,30 +9357,11 @@ msgstr "ブリテン諸島、マルタ共和国、日本、マルタで認可済
 msgid "We are looking for energetic and enthusiastic individuals who love challenges, are detail-oriented and highly analytical to join our Internal Audit team."
 msgstr "当社では挑戦を好むエネルギッシュで熱心な方で、細部にまで気を配り、高度な分析能力がある方を内部監査チームに求めています。"
 
-msgid "We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency <a href='%1' target='_blank'>%1</a>."
-msgstr "（取引口座の停止または解約）\n"
-"第18条\n"
-"1.　次の各号のいずれかに該当した時は、当社はお客さまの取引口座の機能（預託金の入出金、取引注文等）の全部もしくは一部を停止できるものとします。\n"
-"(1)　お客さまが当社に対し、取引口座の停止の申し入れをした時。\n"
-"(2)　本約款および取引説明書の変更にお客さまが同意しない時。\n"
-"(3)　お客さまが本約款の条項に違反し、当社がお客さまの取引口座の停止を通告した時。\n"
-"(4)　当社が、お客さまが本約款第３条に定める適格要件を満たさなくなったと合理的に判断した場合。\n"
-"(5)　店頭通貨バイナリーオプション取引口座が停止された時。\n"
-"(6)　当社により過誤入出金がなされた時。\n"
-"(7)　前各号の他、やむを得ない事由により、当社が取引を継続することが不適切であると判断した時。\n"
-"2.　次の各号のいずれかに該当した時は、お客さまの取引口座は解約されることとします。\n"
-"(1)　お客さまが当社に対し、取引口座の解約の申し入れをした時。\n"
-"(2)　一定期間にわたり、取引口座の停止が継続した場合。\n"
-"(3)　お客さまが本約款の条項に違反し、当社がお客さまの取引口座の解約を通告した時。\n"
-"(4)　お客さまが反社会的勢力の一員であると当社が合理的に判断した場合。\n"
-"(5)　お客さまがマネーロンダリング等の社会的秩序に反する取引等、不正な取引の手段として本取引を行っていると当社が合理的に判断した場合。\n"
-"(6)　当社が認めていないシステムツール等を用いて本取引を行っていると当社が判断した場合。\n"
-"(7)　店頭通貨バイナリーオプションが解約された時。\n"
-"(8)　当社が、お客さまが本約款第３条に定める適格要件を満たさなくなったと合理的に判断した場合。\n"
-"(9)　前各号の他、やむを得ない事由により、当社が取引口座を存続することが不適切であると判断した場合。"
+msgid "We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency %1."
+msgstr ""
 
-msgid "We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency <a href='%1' target='_blank'>%1</a>."
-msgstr "当社はライセンスにより、当社が保持しているお客さまの口座の資金に何か起きた場合、及び支払不能になった場合にどの資金が保護されるかその範囲をお知らせする必要があります。<a href='%1' target='_blank'>%1</a>"
+msgid "We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency %1."
+msgstr ""
 
 msgid "We are required to do so in accordance with any relevant law or regulation."
 msgstr "当社は関連する法律や規則に基いて行います。"
@@ -9536,10 +9520,10 @@ msgid "We're really proud of this award. We're strongly committed to offering an
 msgstr "この受賞は大変光栄なものです。当社は、倫理的で顧客を重視したトレード機会を提供することに注力します。そしてこの受賞は、BetOnMarketsがトレード初心者、及び上級者に対し、顧客の声を重視したサービスを提供するブランドであることを示します。当社は英語、インドネシア語、ロシア語、中国語、及びスペイン語でのカスタマーサービスを提供します。"
 
 msgid "We've generated over USD 3 billion in turnover since inception, thanks to a rapid growth in business from 2010 onwards."
-msgstr "We've generated over USD 3 billion in turnover since inception, thanks to a rapid growth in business from 2010 onwards."
+msgstr "2010年以降のビジネスの急速な成長により、創業以来30億ドル以上の売上高を達成しました。"
 
 msgid "We've grown in size over the years -- both in terms of manpower and offices. We currently have over 130 employees across four offices in three countries: Malaysia, Malta and Japan."
-msgstr "We've grown in size over the years -- both in terms of manpower and offices. We currently have over 130 employees across four offices in three countries: Malaysia, Malta and Japan."
+msgstr "私たちは創業以来、優秀な人材とすぱらしいオフィス環境に恵まれ成長し続けてします。現在、マレーシア、マルタ、日本の3カ国4拠点に130人以上の従業員がいます。"
 
 msgid "Web (Desktop Only)"
 msgstr "ウェブ（デスクトップのみ）"
@@ -9913,7 +9897,7 @@ msgstr "私はこれらウェブサイトに情報提供目的にのみアクセ
 msgid "Year"
 msgstr "年"
 
-msgid "Yes, but we'd prefer you to submit security vulnerabilities via our <a target=\"_blank\" href=\"%1\">bug bounty</a> program."
+msgid "Yes, but we'd prefer you to submit security vulnerabilities via our %1bug bounty%2 program."
 msgstr ""
 
 msgid "Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:"
@@ -11567,10 +11551,10 @@ msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "2017/10/10"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "契約締結前交付書面の改定のお知らせ"
+msgstr "取引期間変更のお知らせ"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "2017年10月23日（月）付けで契約締結前交付書面を改定いたします。契約締結前交付書面を必ずご確認いただく必要がございます。<br>店頭通貨バイナリーオプション取引の概要と仕組みについて(P9)\n"
+msgstr "2017年10月23日（月）より、2時間と5時間の取引期間が変更（2時間15分が2時間、5時間15分が6時間に）になります。詳しくは、契約締結前交付書面をご確認いただきますようお願い申し上げます。<br>店頭通貨バイナリーオプション取引の概要と仕組みについて(P9)\n"
 "店頭バイナリーオプション取引概要（P38)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
