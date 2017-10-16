@@ -706,16 +706,15 @@
     }
 }
 
-#deposit_btn_wrapper {
+#deposit_btn_trade {
     float: right;
-    padding: 10px 20px;
-    border-radius: $BORDER_RADIUS;
+    margin: 0;
 
-    a {
-        color: $COLOR_WHITE;
+    span {
+        background-color: $COLOR_ORANGE;
 
         &:hover {
-            text-decoration: none;
+            background-color: $COLOR_DARK_ORANGE;
         }
         img {
             margin-right: 5px;
