@@ -1,5 +1,5 @@
 [% BLOCK tab_container %]
-    <div class="content-tab-container [% class %]">
+    <div class="content-tab-container [% class %] [% theme || '' %]">
         [% content %]
     </div>
 [% END %]

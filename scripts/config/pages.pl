@@ -126,6 +126,7 @@ sub all_pages {
         ['ico-disclaimer',             'landing_pages/ico_disclaimer',              undef,        'Initial Coin Offering Disclaimer', 'ja'],
         ['hackathon',                  'landing_pages/hackathon',                   undef,        'Hackathon Competition', 'NOT-en'],
         ['landing/signup-frame',       'landing_pages/signup_frame',                undef,        'Sign up'],
+        ['landing/signup-page',        'landing_pages/signup_landing_page',         undef,        'Sign up'],
         ['binary-in-numbers',          'landing_pages/binary_in_numbers',           'default',    'Binary in Numbers'],
     );
 }

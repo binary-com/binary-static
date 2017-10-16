@@ -1,0 +1,401 @@
+.container {
+    max-width: 960px !important;
+}
+
+body {
+    color: $COLOR_BLACK;
+    font-family: $FONT-STACK;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+fieldset legend, strong {
+    font-weight: 700;
+}
+
+p {
+    font-weight: 300;
+    margin: 1em 0;
+    line-height: 1.4em;
+    font-size: 18px;
+}
+
+section {
+    margin: 50px 0 20px;
+    text-align: center;
+    background-color: $COLOR_WHITE;
+}
+
+.intro {
+    background-color: $COLOR_BLUE;
+    color: $COLOR_WHITE;
+
+    h1 {
+        color: $COLOR_ORANGE;
+        line-height: 1.2em;
+        margin-top: 1rem;
+    }
+    p {
+        font-weight: 300;
+        margin: 1em 0;
+        line-height: 1.4em;
+        font-size: $FONT_SIZE_N;
+    }
+    &-bg {
+        background: url('../images/signup_landing_page/main/header-bg.png') 0 0/cover;
+    }
+    .signup-box {
+        border-radius: $BORDER_RADIUS;
+
+        .error-msg {
+            text-align: center;
+            margin-top: 5px;
+        }
+    }
+    .logo {
+        width: 250px;
+        margin-top: 10px;
+    }
+    button {
+        text-decoration: none;
+        text-align: center;
+        line-height: 100%;
+        text-transform: capitalize;
+        padding: 10px 25px;
+        display: inline-block;
+        font-weight: 400;
+        font-family: inherit;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 18px;
+        border: 0;
+        background: $COLOR_BLUE;
+        color: $COLOR_WHITE;
+    }
+    #frm_verify_email {
+        input {
+            width: 100%;
+            height: 3em;
+            margin: 5px 0;
+            font-size: $FONT_SIZE_S;
+        }
+        button {
+            margin: 5px 0;
+            height: 3rem;
+            width: 100%;
+        }
+    }
+    .error-msg {
+        font-style: italic;
+        font-size: 13px;
+        color: $COLOR_RED;
+    }
+    .error-field {
+        border-color: $COLOR_RED !important;
+        color: $COLOR_RED;
+    }
+    .hint {
+        font-size: 13px;
+        color: $COLOR_BLACK;
+        margin-top: 3px;
+    }
+    .sign-up-form {
+        margin-top: 2rem;
+    }
+}
+
+.hero-section {
+    .hero-icons {
+        img {
+            height: 96px;
+        }
+        margin-bottom: 2rem;
+    }
+    padding-bottom: 1.5rem;
+}
+
+.tab-markets {
+    .go-left, .go-right {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    h3 {
+        line-height: 30px;
+    }
+    .border-right {
+        border-right: 2px solid $COLOR_GRAY;
+    }
+    .light {
+        .tab-menu-wrap {
+            text-align: center;
+
+            ul.tm-ul {
+                display: inline-flex;
+
+                li.tm-li {
+                    background: none;
+                    margin: 0;
+                    padding: 0;
+                    font-size: $FONT_SIZE_XL;
+                    margin-bottom: -1px;
+                    border-bottom: 1px solid $COLOR_GRAY;
+
+                    &, a {
+                        color: $COLOR_BLUE;
+                    }
+                    > a, > span {
+                        display: block;
+                        padding: 0 20px;
+                    }
+                    &.tab-selector {
+                        height: 3px;
+                        background-color: $COLOR_BLUE;
+                        z-index: 1;
+                        position: absolute;
+                        margin-left: 0;
+                        top: 37px;
+                        border-radius: $BORDER_RADIUS;
+                        transition: margin-left 0.4s ease-in-out, width 0.2s 0.1s ease-in-out;
+                    }
+                }
+            }
+        }
+        &.full-width {
+            ul.tm-ul {
+                display: flex;
+
+                li.tm-li {
+                    flex: 1;
+                }
+            }
+        }
+    }
+    #market_tabs_selector, #account_tabs_selector {
+        height: 5px;
+        background-color: $COLOR_BLUE;
+        border-radius: $BORDER_RADIUS;
+        position: relative;
+        z-index: 1;
+        top: 41px;
+    }
+    #market_tabs_selector {
+        width: 20%;
+        height: 3px;
+        top: 44px;
+    }
+    #account_tabs_selector {
+        width: 50%;
+    }
+    .market-img {
+        height: 175px;
+    }
+}
+
+.payment {
+    h2 {
+        margin-top: 2.5rem;
+        color: $COLOR_ORANGE;
+        margin-bottom: 2rem;
+    }
+    .payment-icons {
+        width: 96px;
+    }
+    background-color: $COLOR_WHITE;
+    padding-bottom: 2.5rem;
+}
+
+.hero-text {
+    padding: 0px 15px;
+}
+
+.white-text {
+    color: $COLOR_WHITE;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.signup-box {
+    border-radius: 3px;
+}
+
+.secondary-bg-color {
+    background-color: $COLOR_ORANGE;
+}
+
+button:active, button:hover {
+    background-color: $COLOR_GREEN;
+    text-decoration: none;
+}
+
+.primary-bg-color {
+    background-color: $COLOR_BLUE;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-thin {
+    font-weight: 300;
+}
+
+.white-bg {
+    background: $COLOR_WHITE;
+    color: $COLOR_BLUE;
+    margin: -5px;
+    padding: 50px 0;
+}
+
+.button-outline {
+    width: 400px;
+    height: 65px;
+    border-radius: 5px;
+    border: 2px solid $COLOR_ORANGE;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 22px;
+    transition: all 0.3s;
+
+    &:hover {
+        background: $COLOR_ORANGE;
+        color: $COLOR_WHITE;
+        text-decoration: none;
+    }
+}
+
+.invisible {
+    display: none !important;
+}
+
+a {
+    text-decoration: none;
+    color: $COLOR_ORANGE;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.mt-4 {
+    margin-top: 4rem;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $COLOR_GRAY;
+    margin: 20px;
+    padding: 0;
+}
+
+.footer {
+    p {
+        font-size: $FONT_SIZE_N;
+    }
+    background-color: $COLOR_BLUE;
+}
+
+@media (max-width: 1199px) {
+    .intro {
+        height: 95%;
+        padding-top: 10px;
+
+        h1 {
+            font-size: 36px;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .tab-markets {
+        .light {
+            .tab-menu-wrap {
+                ul.tm-ul {
+                    li.tm-li {
+                        > a, > span {
+                            padding: 0;
+                            height: 2em;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .border-right {
+        border-right: none;
+    }
+    .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li {
+        font-size: $FONT_SIZE_S;
+    }
+    .tab-markets #market_tabs_selector, #account_tabs_selector {
+        top: 30px;
+    }
+    #frm_verify_email input {
+        width: calc(100% - 10px);
+    }
+    .market-footer-text {
+        h3 {
+            color: $COLOR_WHITE;
+        }
+        background-color: $COLOR_BLUE;
+    }
+}
