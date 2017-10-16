@@ -21,6 +21,7 @@
         [% WRAPPER section link_id='complaints-disputes' %][% PROCESS legal/tac_sections/complaints.html.tt %][% END %]
         [% WRAPPER section link_id='conflicts-policy' %][% PROCESS legal/tac_sections/conflicts_policy.html.tt %][% END %]
         [% WRAPPER section link_id='biel' %][% PROCESS legal/tac_sections/biel.html.tt %][% END %]
+        [% WRAPPER section link_id='payment-agents' %][% PROCESS legal/tac_sections/payment_agents.html.tt %][% END %]
         [% WRAPPER section id='tnc_accept' class='tnc_accept invisible' link_id='accept' %]
             <div class="gr-9 gr-12-m gr-centered center-text">
                 <p>[% l('By clicking OK, you confirm that you have read and accepted Terms & Conditions.') %]</p>
@@ -33,15 +34,16 @@
     <div class="gr-3 gr-hide-m gr-no-gutter-left sidebar-container">
         <div class="sidebar">
             [% INCLUDE list id='sidebar-nav' items=[
-                { id='sidebar-link-section-1', href='?section=tac',                 text=l("Terms and Conditions"), class='selected' },
-                { id='sidebar-link-section-2', href='?section=trading-rules',       text=l("Trading Rules") },
-                { id='sidebar-link-section-3', href='?section=deposit-bonus',       text=l("Deposit Bonus") },
-                { id='sidebar-link-section-4', href='?section=affiliate',           text=l("Affiliate Program") },
-                { id='sidebar-link-section-5', href='?section=api',                 text=l("API") },
-                { id='sidebar-link-section-6', href='?section=complaints-disputes', text=l("Complaints and Disputes") },
-                { id='sidebar-link-section-7', href='?section=conflicts-policy',    text=l("Conflicts Policy") },
-                { id='sidebar-link-section-8', href='?section=biel',                text=l("BIEL Terms") },
-                { id='sidebar-link-section-9', href='?section=accept',              text=l("Accept Terms and Conditions"), class='tnc_accept invisible' },
+                { id='sidebar-link-section-1',  href='?section=tac',                 text=l("Terms and Conditions"), class='selected' },
+                { id='sidebar-link-section-2',  href='?section=trading-rules',       text=l("Trading Rules") },
+                { id='sidebar-link-section-3',  href='?section=deposit-bonus',       text=l("Deposit Bonus") },
+                { id='sidebar-link-section-4',  href='?section=affiliate',           text=l("Affiliate Program") },
+                { id='sidebar-link-section-5',  href='?section=api',                 text=l("API") },
+                { id='sidebar-link-section-6',  href='?section=complaints-disputes', text=l("Complaints and Disputes") },
+                { id='sidebar-link-section-7',  href='?section=conflicts-policy',    text=l("Conflicts Policy") },
+                { id='sidebar-link-section-8',  href='?section=biel',                text=l("BIEL Terms") },
+                { id='sidebar-link-section-9',  href='?section=paymeny-agents',      text=l("Payment Agents") },
+                { id='sidebar-link-section-10', href='?section=accept',              text=l("Accept Terms and Conditions"), class='tnc_accept invisible' },
             ] %]
         </div>
     </div>
