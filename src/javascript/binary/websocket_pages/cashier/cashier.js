@@ -48,6 +48,9 @@ const Cashier = (() => {
                     $('#payment-agent-section').setVisibility(1);
                 }
                 $(is_crypto ? '.crypto_currency' : '.normal_currency').setVisibility(1);
+                if (/^BCH/.test(Client.get('currency'))) {
+                    document.getElementById('message_bitcoin_cash').setVisibility(1);
+                }
             });
         }
         showContent();

@@ -3,8 +3,8 @@
     [% withdraw_url = ja_hide ? '/cashier/forwardws#withdraw' : ja_show ? '/cashier/withdraw-jp' : '/paymentagent/withdrawws' %]
     <div class="gr-5 gr-12-m[% IF ja_hide %] ja-hide[% ELSIF ja_show %] invisible ja-show[% END %]">
         <div class="gr-padding-10 client_real invisible gr-parent">
-            <a class="toggle button client_real invisible" href="[% request.url_for(deposit_url) %]">
-                <span class="deposit"[% IF id %] id="[% id %]"[% END %]>[% l('Deposit') %]</span>
+            <a class="toggle button client_real invisible" href="[% request.url_for(deposit_url) %]"[% IF id %] id="[% id %]"[% END %]>
+                <span class="deposit">[% l('Deposit') %]</span>
             </a>
         </div>
         <div class="gr-padding-10 client_real invisible">
@@ -21,6 +21,12 @@
 [% END %]
 
 <h1>[% l('Cashier') %]</h1>
+
+<div class="invisible" id="message_bitcoin_cash">
+    <div class="notice-msg center-text">
+        <div class="gr-padding-10">[% l("This is a [_1]Bitcoin Cash[_2] (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin.", '<a href="https://www.bitcoincash.org" target="_blank" rel="noopener noreferrer">', '</a>') %]</div>
+    </div>
+</div>
 
 <div class="gr-padding-10 table-body client_virtual invisible gr-parent">
     <h3 class="gr-padding-10">[% l('Get more virtual money') %]</h3>
