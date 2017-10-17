@@ -8,7 +8,7 @@ const HomeBeta = (() => {
     };
 
     const onUnLoad = () => {
-        TabSelector.clean(['market_tabs', 'account_tabs'], true);
+        TabSelector.clean();
     };
 
     return {

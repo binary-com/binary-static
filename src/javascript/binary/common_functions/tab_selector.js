@@ -1,14 +1,16 @@
 const applyToAllElements = require('../base/utility').applyToAllElements;
 
 const TabSelector = (() => {
-    let current_tab_id;
+    let current_tab_id = '';
+    let has_arrows     = false;
+    let array_tab      = [];
 
     /**
      * @param {String|Array} tab_ids can be the ID of single set of tabs or an array of all elements
-     * @param {Boolean} has_arrows send true if .go-left and .go-right arrows need to work with tabs
+     * @param {Boolean} has_left_right_arrows send true if .go-left and .go-right arrows need to work with tabs
      */
-    const init = (tab_ids, has_arrows = false) => {
-        const array_tab = Array.isArray(tab_ids) ? tab_ids : [tab_ids];
+    const init = (tab_ids, has_left_right_arrows = false) => {
+        array_tab = Array.isArray(tab_ids) ? tab_ids : [tab_ids];
         // set initial width and margin-left of tab selector
         array_tab.forEach((tab_id) => {
             current_tab_id = tab_id;
@@ -20,6 +22,7 @@ const TabSelector = (() => {
             element.addEventListener('click', slideSelectorOnMenuClick);
         });
 
+        has_arrows = has_left_right_arrows;
         if (has_arrows) {
             applyToAllElements('.go-left', (element) => {
                 element.addEventListener('click', goLeft);
@@ -87,8 +90,7 @@ const TabSelector = (() => {
         }
     };
 
-    const clean = (tab_ids, has_arrows) => {
-        const array_tab = Array.isArray(tab_ids) ? tab_ids : [tab_ids];
+    const clean = () => {
         array_tab.forEach((tab_id) => {
             current_tab_id = tab_id;
             window.removeEventListener('resize', repositionSelector);
