@@ -1,3 +1,4 @@
+const tabListener = require('binary-style').tabListener;
 const localize    = require('../base/localize').localize;
 const urlParam    = require('../base/url').param;
 const Scroll      = require('../common_functions/scroll');
