@@ -130,7 +130,10 @@ const changeTab = (e, go_left) => {
 const selectTab = (e) => {
     const selector  = e.target.closest('ul').getAttribute('id');
     const new_index = Array.prototype.indexOf.call(e.target.closest('ul').childNodes, e.target.parentNode);
-    if(new_index !== -1) {
+    if(new_index === -1) {
+        SlideSelector(e, selector, new_index + 2);
+    }
+    else {
         SlideSelector(e, selector, new_index);
     }
 };

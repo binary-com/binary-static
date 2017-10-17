@@ -202,6 +202,9 @@
                 </div>
             </div>
         </div>
+
+        [% INCLUDE global/separator_line.html.tt class="gr-padding-20" invisible=1 show_mobile=1 %]
+
         <div class="payment">
             <div class="container">
                 <div class="gr-row gr-row-align-center">
@@ -248,7 +251,7 @@
             <div class="container">
                 <div class="gr-row gr-row-align-center">
                     <div class="gr-12 gr-centered">
-                        <p class="center-text white-text">Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about Responsible Trading.</p>
+                        [% INCLUDE global/separator_line.html.tt class="gr-padding-20" invisible=1 show_mobile=1 %]
                     </div>
                 </div>
             </div>
