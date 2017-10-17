@@ -52,8 +52,8 @@ const Header = (() => {
         }
 
         applyToAllElements('a.logout', (el) => {
-            el.removeEventListener('click', () => { Client.sendLogoutRequest(); });
-            el.addEventListener('click', () => { Client.sendLogoutRequest(); });
+            el.removeEventListener('click', logoutOnClick);
+            el.addEventListener('click', logoutOnClick);
         });
     };
 
@@ -65,6 +65,10 @@ const Header = (() => {
     const loginOnClick = (e) => {
         e.preventDefault();
         Login.redirectToLogin();
+    };
+
+    const logoutOnClick = () => {
+        Client.sendLogoutRequest();
     };
 
     const showOrHideLoginForm = () => {

@@ -1,38 +1,49 @@
 const applyToAllElements = require('../base/utility').applyToAllElements;
 
 const TabSelector = (() => {
+    let current_tab_id;
+
     /**
      * @param {String|Array} tab_ids can be the ID of single set of tabs or an array of all elements
      * @param {Boolean} has_arrows send true if .go-left and .go-right arrows need to work with tabs
      */
     const init = (tab_ids, has_arrows = false) => {
         const array_tab = Array.isArray(tab_ids) ? tab_ids : [tab_ids];
+        // set initial width and margin-left of tab selector
         array_tab.forEach((tab_id) => {
-            // set initial width and margin-left of tab selector
-            changeTab(undefined, undefined, tab_id);
-
-            window.removeEventListener('resize', () => {
-                changeTab(undefined, undefined, tab_id);
-            });
-            window.addEventListener('resize', () => {
-                changeTab(undefined, undefined, tab_id);
-            });
+            current_tab_id = tab_id;
+            repositionSelector();
+            window.addEventListener('resize', repositionSelector);
         });
+
         applyToAllElements('.tm-li', (element) => {
-            element.removeEventListener('click', (e) => { slideSelector(e.target.closest('ul').getAttribute('id'), e.target); });
-            element.addEventListener('click', (e) => { slideSelector(e.target.closest('ul').getAttribute('id'), e.target); });
+            element.addEventListener('click', slideSelectorOnMenuClick);
         });
 
         if (has_arrows) {
             applyToAllElements('.go-left', (element) => {
-                element.removeEventListener('click', (e) => { changeTab(e, true); });
-                element.addEventListener('click', (e) => { changeTab(e, true); });
+                element.addEventListener('click', goLeft);
             });
             applyToAllElements('.go-right', (element) => {
-                element.removeEventListener('click', (e) => { changeTab(e, false); });
-                element.addEventListener('click', (e) => { changeTab(e, false); });
+                element.addEventListener('click', goRight);
             });
         }
+    };
+
+    const repositionSelector = () => {
+        changeTab(undefined, undefined, current_tab_id);
+    };
+
+    const slideSelectorOnMenuClick = (e) => {
+        slideSelector(e.target.closest('ul').getAttribute('id'), e.target);
+    };
+
+    const goLeft = (e) => {
+        changeTab(e, true);
+    };
+
+    const goRight = (e) => {
+        changeTab(e, false);
     };
 
     const changeTab = (e, go_left, selector_id) => {
@@ -79,21 +90,20 @@ const TabSelector = (() => {
     const clean = (tab_ids, has_arrows) => {
         const array_tab = Array.isArray(tab_ids) ? tab_ids : [tab_ids];
         array_tab.forEach((tab_id) => {
-            window.removeEventListener('resize', () => {
-                changeTab(undefined, undefined, tab_id);
-            });
+            current_tab_id = tab_id;
+            window.removeEventListener('resize', repositionSelector);
         });
 
         applyToAllElements('.tm-li', (element) => {
-            element.removeEventListener('click', (e) => { slideSelector(e.target.closest('ul').getAttribute('id'), e.target); });
+            element.removeEventListener('click', slideSelectorOnMenuClick);
         });
 
         if (has_arrows) {
             applyToAllElements('.go-left', (element) => {
-                element.removeEventListener('click', (e) => { changeTab(e, true); });
+                element.removeEventListener('click', goLeft);
             });
             applyToAllElements('.go-right', (element) => {
-                element.removeEventListener('click', (e) => { changeTab(e, false); });
+                element.removeEventListener('click', goRight);
             });
         }
     };
