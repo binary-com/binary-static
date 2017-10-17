@@ -35,7 +35,7 @@
                 <li>[% l("The Agent thereinafter, shall transfer the requested sum to the Client. It is noted that these transactions fall out of the scope of this Agreement and as result the Company shall not be liable against the Agent and/or Client and/or any other person, under contract or tort law or any other applicable law, for any conflicts or potential conflicts arising out of or in connection with such transactions.") %]</li>
             </ul>
         </li>
-        <li>[% l("The Agent shall not be authorized to offer its services, under this Agreement, to Clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href=\"[_1]\">www.Binary.com.</a>", request.url_for('home')) %]</li>
+        <li>[% l("The Agent shall not be authorized to offer its services, under this Agreement, to Clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href=\"[_1]\">www.binary.com.</a>", request.url_for('home')) %]</li>
     </ol>
 
     <h2>E. [% l("Agent\'s Obligations") %]</h2>
@@ -115,7 +115,7 @@
         </li>
         <li>[% l("Information outlined in Paragraph 1 of this Section shall be submitted to <a href=\"mailto:[_1]\">[_1]</a>.", "affiliates@binary.com") %]</li>
         <li>[% l("The application shall be reviewed and assessed by our compliance and marketing departments. It is noted that our compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H.") %]</li>
-        <li>[% l("The Company, exercising its absolute discretion, may accept or reject Agent’s Application. Where Agent’s Application is accepted, we shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by such Agent in the Payment Agent list which is disclosed on our website, <a href=\"[_1]\">www.Binary.com</a>.", request.url_for('home')) %]</li>
+        <li>[% l("The Company, exercising its absolute discretion, may accept or reject Agent’s Application. Where Agent’s Application is accepted, we shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by such Agent in the Payment Agent list which is disclosed on our website, <a href=\"[_1]\">www.binary.com</a>.", request.url_for('home')) %]</li>
     </ol>
     <h2>J. [% l("Events of Default") %]</h2>
     <ol>
