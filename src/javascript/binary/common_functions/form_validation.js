@@ -110,7 +110,7 @@ const Validation = (() => {
         validators_map.req.message = field.type === 'checkbox' ? 'Please select the checkbox.' : 'This field is required.';
         return false;
     };
-    const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);
+    const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(typeof value === 'string' ? value.trim() : value);
     const validPassword     = (value, options, field) => {
         if (/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value)) {
             Password.checkPassword(field.selector);

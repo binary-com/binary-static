@@ -74,9 +74,9 @@ const FormManager = (() => {
                             if (!data[field.parent_node]) {
                                 data[field.parent_node] = {};
                             }
-                            data[field.parent_node][key] = value;
+                            data[field.parent_node][key] = typeof value === 'string' ? value.trim() : value;
                         } else {
-                            data[key] = value;
+                            data[key] = typeof value === 'string' ? value.trim() : value;
                         }
                     }
                 }
