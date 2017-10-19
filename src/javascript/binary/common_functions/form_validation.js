@@ -126,7 +126,7 @@ const Validation = (() => {
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
     const validEmailToken   = value => value.trim().length === 8;
-    const validTaxID        = value => /^[a-zA-Z\d-]*$/.test(value);
+    const validTaxID        = value => /^[\w-]*$/.test(value);
 
     const validCompare  = (value, options) => value === $(options.to).val();
     const validNotEqual = (value, options) => value !== $(options.to).val();
@@ -187,7 +187,7 @@ const Validation = (() => {
         length       : { func: validLength,       message: 'You should enter [_1] characters.' },
         number       : { func: validNumber,       message: '' },
         regular      : { func: validRegular,      message: '' },
-        tax_id       : { func: validTaxID,        message: 'Only letters and numbers are allowed.' },
+        tax_id       : { func: validTaxID,        message: 'Only letters, numbers, hyphen, and underscore are allowed.' },
     };
 
     const pass_length = type => ({ min: (/^mt$/.test(type) ? 8 : 6), max: 25 });
