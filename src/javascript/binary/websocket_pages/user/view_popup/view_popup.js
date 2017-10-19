@@ -13,8 +13,6 @@ const createElement        = require('../../../base/utility').createElement;
 const getPropertyValue     = require('../../../base/utility').getPropertyValue;
 const isEmptyObject        = require('../../../base/utility').isEmptyObject;
 const jpClient             = require('../../../common_functions/country_base').jpClient;
-const addComma             = require('../../../common_functions/currency').addComma;
-const formatMoney          = require('../../../common_functions/currency').formatMoney;
 
 const ViewPopup = (() => {
     let contract_id,
@@ -250,7 +248,8 @@ const ViewPopup = (() => {
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
         // don't show for japanese clients or contracts that are manually sold before starting
-        if (!jpClient() && (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
+        if (contract.audit_details && !jpClient() &&
+            (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
             initAuditTable(0);
         }
     };
@@ -303,11 +302,10 @@ const ViewPopup = (() => {
         tr.appendChild(createElement('th', { class: 'gr-8 gr-6-t gr-6-p gr-6-m', text: localize('Audit Page') }));
         tr.appendChild(createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' }));
         table.appendChild(tr);
-        populateAuditTable(show);
-
         div.appendChild(table);
-        showExplanation(div);
         div.insertAfter(document.getElementById('sell_details_chart_wrapper'));
+        populateAuditTable(show);
+        showExplanation(div);
     };
 
     const map_contract_type = {
@@ -347,53 +345,21 @@ const ViewPopup = (() => {
         xhttp.send();
     };
 
-    const parseTicksResponse = (table, response, tick_time, remark) => (
+    const parseAuditResponse = (table, array_audit_data) => (
         new Promise((resolve) => {
-            if (!response.history) {
-                return;
-            }
-            let has_start_time = !/entry/i.test(remark);
-            let has_end_time   = !/exit/i.test(remark);
+            const primary_classes   = ['secondary-bg-color', 'content-inverse-color'];
             const secondary_classes = ['fill-bg-color', 'secondary-time'];
-            const found = response.history.times.some((time, idx) => {
-                if (+time === +tick_time) {
-                    let i = idx - 3;
-                    for (i; i < idx + 4; i++) {
-                        const this_time     = response.history.times[i];
-                        const this_price    = response.history.prices[i];
-                        const is_start_time = +this_time === +contract.date_start;
-                        const is_end_time   = +this_time === +contract.date_expiry;
-
-                        if (!has_start_time && +this_time > +contract.date_start) {
-                            createAuditRow(table, contract.date_start, '', localize('Start Time'), secondary_classes);
-                            has_start_time = true;
-                        } else if (!has_end_time && +this_time > +contract.date_expiry) {
-                            createAuditRow(table, contract.date_expiry, '', localize('End Time'), secondary_classes);
-                            has_end_time = true;
-                        }
-
-                        let pre_remark = is_end_time ? 'End Time and' : '';
-                        if (is_start_time) {
-                            pre_remark = 'Start Time and';
-                        }
-
-                        if (i === idx) {
-                            createAuditRow(table, this_time, this_price, localize(`${pre_remark} ${remark}`), ['secondary-bg-color', 'content-inverse-color']);
-                        } else if (is_start_time) {
-                            createAuditRow(table, this_time, this_price, localize('Start Time'), secondary_classes);
-                            has_start_time = true;
-                        } else if (is_end_time) {
-                            createAuditRow(table, this_time, this_price, localize('End Time'), secondary_classes);
-                            has_end_time = true;
-                        } else {
-                            createAuditRow(table, this_time, this_price);
-                        }
-                    }
-                    return true;
+            array_audit_data.forEach((audit_data) => {
+                // TODO: replace audit_data.name with new untranslated field that back-end will add
+                if (/entry|exit/i.test(audit_data.name)) {
+                    createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, primary_classes);
+                } else if (/start|end/i.test(audit_data.name)) {
+                    createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, secondary_classes);
+                } else {
+                    createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name);
                 }
-                return false;
             });
-            resolve(found);
+            resolve();
         })
     );
 
@@ -452,45 +418,29 @@ const ViewPopup = (() => {
     };
 
     const populateAuditTable = (show_audit_table) => {
-        BinarySocket.send({
-            ticks_history: contract.underlying,
-            start        : +contract.entry_tick_time - (5 * 60),
-            end          : +contract.entry_tick_time + (5 * 60),
-        }).then((response_entry) => {
-            if (response_entry.error) {
-                return;
+        const contract_starts = createAuditTable('Starts');
+        parseAuditResponse(contract_starts.table, contract.audit_details.contract_start).then(() => {
+            if (contract.audit_details.contract_start) {
+                createAuditHeader(contract_starts.table);
+                appendAuditLink('trade_details_entry_spot');
+            } else {
+                contract_starts.div.remove();
             }
-            const contract_starts = createAuditTable('Starts');
-            parseTicksResponse(contract_starts.table, response_entry, contract.entry_tick_time, 'Entry Spot').then((found_entry) => {
-                if (found_entry) {
-                    createAuditHeader(contract_starts.table);
-                    appendAuditLink('trade_details_entry_spot');
-                } else {
-                    contract_starts.div.remove();
-                }
-                // don't show exit tick information if missing or manual sold
-                if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)) {
-                    BinarySocket.send({
-                        ticks_history: contract.underlying,
-                        start        : +contract.exit_tick_time - (5 * 60),
-                        end          : +contract.exit_tick_time + (5 * 60),
-                    }).then((response_exit) => {
-                        const contract_ends = createAuditTable('Ends');
-                        parseTicksResponse(contract_ends.table, response_exit, contract.exit_tick_time, 'Exit Spot').then((found_exit) => {
-                            if (found_exit) {
-                                createAuditHeader(contract_ends.table);
-                                appendAuditLink('trade_details_current_spot');
-                            } else {
-                                contract_ends.div.remove();
-                            }
-                        });
-                    }).then(() => {
-                        onAuditTableComplete(show_audit_table);
-                    });
-                } else {
+            // don't show exit tick information if missing or manual sold
+            if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)) {
+                const contract_ends = createAuditTable('Ends');
+                parseAuditResponse(contract_ends.table, contract.audit_details.contract_end).then(() => {
+                    if (contract.audit_details.contract_end) {
+                        createAuditHeader(contract_ends.table);
+                        appendAuditLink('trade_details_current_spot');
+                    } else {
+                        contract_ends.div.remove();
+                    }
                     onAuditTableComplete(show_audit_table);
-                }
-            });
+                });
+            } else {
+                onAuditTableComplete(show_audit_table);
+            }
         });
     };
 
@@ -717,5 +667,8 @@ const ViewPopup = (() => {
         viewButtonOnClick,
     };
 })();
+const addComma             = require('../../../common_functions/currency').addComma;
+
+const formatMoney          = require('../../../common_functions/currency').formatMoney;
 
 module.exports = ViewPopup;
