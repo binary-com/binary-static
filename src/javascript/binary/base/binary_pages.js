@@ -5,6 +5,7 @@ const Charity            = require('../static_pages/charity');
 const Contact            = require('../static_pages/contact');
 const Endpoint           = require('../static_pages/endpoint');
 const GetStarted         = require('../static_pages/get_started');
+const GetStartedBeta     = require('../static_pages/get_started_beta');
 const GetStartedJP       = require('../static_pages/get_started_jp');
 const Home               = require('../static_pages/home');
 const HomeJP             = require('../static_pages/home_jp');
@@ -114,13 +115,19 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
+    'binary-options'         : { module: GetStartedBeta.BinaryOptions },
+    'cfds'                   : { module: GetStartedBeta.CFDs },
+    'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
+    'forex'                  : { module: GetStartedBeta.Forex },
     'get-started'            : { module: GetStarted },
+    'get-started-beta'       : { module: GetStartedBeta.GetStartedBeta },
     'get-started-jp'         : { module: GetStartedJP },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
     'ico-info'               : { module: ICOInfo,                    is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
+    'metals'                 : { module: GetStartedBeta.Metals },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
