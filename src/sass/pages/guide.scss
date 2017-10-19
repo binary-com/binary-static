@@ -58,5 +58,8 @@
 #trading_socket_container {
     #guideBtn {
         float: if($LANGUAGE_DIRECTION == ltr, right, left);
+        height: 28px;
+        line-height: 28px;
+        margin-right: 10px;
     }
 }
