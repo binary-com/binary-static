@@ -132,13 +132,12 @@ const Header = (() => {
             const upgrade_msg     = document.getElementsByClassName('upgrademessage');
 
             const showUpgrade = (url, msg) => {
-                const span = createElement('span', { text: localize(msg) });
 
                 applyToAllElements(upgrade_msg, (el) => {
                     el.setVisibility(1);
                     applyToAllElements('a', (ele) => {
                         ele.setVisibility(1).setAttribute('href', Url.urlFor(url));
-                        ele.html(span);
+                        ele.html(createElement('span', { text: localize(msg) }));
                     }, '', el);
                 });
             };
