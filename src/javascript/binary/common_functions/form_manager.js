@@ -68,15 +68,19 @@ const FormManager = (() => {
                         value = val.join(',');
                     }
 
+                    if (field.$.attr('type') !== 'password' && typeof value === 'string') {
+                        value = value.trim();
+                    }
+
                     if (!(field.exclude_if_empty && val.length === 0)) {
                         key = key.replace(/lbl_|#|\./g, '');
                         if (field.parent_node) {
                             if (!data[field.parent_node]) {
                                 data[field.parent_node] = {};
                             }
-                            data[field.parent_node][key] = typeof value === 'string' ? value.trim() : value;
+                            data[field.parent_node][key] = value;
                         } else {
-                            data[key] = typeof value === 'string' ? value.trim() : value;
+                            data[key] = value;
                         }
                     }
                 }
