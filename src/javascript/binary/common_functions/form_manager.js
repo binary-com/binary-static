@@ -42,28 +42,26 @@ const FormManager = (() => {
         const fields = forms[form_selector].fields;
         if (!fields) return data;
         let key,
-            $selector,
             val,
             value;
 
         fields.forEach((field) => {
             if (!field.exclude_request) {
-                $selector = $(field.form).find(field.selector);
-                if ($selector.is(':visible') || field.value) {
-                    val = $selector.val();
+                if (field.$.is(':visible') || field.value) {
+                    val = field.$.val();
                     key = field.request_field || field.selector;
 
                     value = val || '';
                     if (field.value) {
                         value = typeof field.value === 'function' ? field.value() : field.value;
-                    } else if ($selector.attr('data-picker') === 'native') {
+                    } else if (field.$.attr('data-picker') === 'native') {
                         value = val;
-                    } else if ($selector.attr('data-value')) {
-                        value = $selector.attr('data-value');
+                    } else if (field.$.attr('data-value')) {
+                        value = field.$.attr('data-value');
                     } else if (/lbl_/.test(key)) {
-                        value = field.value || $selector.text();
-                    } else if ($selector.is(':checkbox')) {
-                        value = $selector.is(':checked') ? 1 : 0;
+                        value = field.value || field.$.text();
+                    } else if (field.$.is(':checkbox')) {
+                        value = field.$.is(':checked') ? 1 : 0;
                     } else if (Array.isArray(val)) {
                         value = val.join(',');
                     }
