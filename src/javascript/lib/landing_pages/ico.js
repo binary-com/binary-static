@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", function(){
         scrollTo(to);
     }
 
+    if (window.location.hash === '#faq') {
+        document.getElementById('faq').classList.remove('invisible');
+        document.getElementById('home').classList.add('invisible');
+    }
+
     // Set language fields
     const language = getLanguage();
     const el_langs = document.getElementsByClassName('frm-language');
