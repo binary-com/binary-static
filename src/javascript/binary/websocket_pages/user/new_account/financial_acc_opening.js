@@ -57,7 +57,7 @@ const FinancialAccOpening = (() => {
 
     const getValidations = () => (
         AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id), [
-            { selector: '#tax_identification_number', validations: ['req', 'postcode', ['length', { min: 1, max: 20 }]] },
+            { selector: '#tax_identification_number', validations: ['req', 'tax_id', ['length', { min: 1, max: 20 }]] },
         ])
     );
 

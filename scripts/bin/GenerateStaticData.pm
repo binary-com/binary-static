@@ -479,6 +479,7 @@ sub _texts {
         push @texts, localize('Hint: it would take approximately [_1][_2] to crack this password.');
         push @texts, localize('thousand');
         push @texts, localize('million');
+        push @texts, localize('Should start with letter or number, and may contain hyphen and underscore.');
 
         # strings for metatrader
         push @texts, localize('Congratulations! Your [_1] Account has been created.');
