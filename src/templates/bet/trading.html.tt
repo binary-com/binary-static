@@ -7,8 +7,10 @@
             [% l("Deposit") %]
         </span>
     </a>
-    <div id="upgrade_btn_trade" class="invisible upgrademessage gr-hide-m">
-        <a class="button"></a>
+    <div class="client_virtual invisible">
+        <div id="upgrade_btn_trade" class="invisible upgrademessage gr-hide-m">
+            <a class="button"></a>
+        </div>
     </div>
     <div class="client_virtual client_logged_out invisible" id="guideBtn"></div>
     <div class="row" id="contract_symbol_container">

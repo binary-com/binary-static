@@ -39,7 +39,9 @@ const TradePage = (() => {
         }
 
         BinarySocket.wait('authorize').then(() => {
-            Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
+            if (Client.get('virtual')) {
+                Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
+            }
             Client.activateByClientType('trading_socket_container');
             BinarySocket.send({ payout_currencies: 1 }).then(() => {
                 displayCurrencies();
