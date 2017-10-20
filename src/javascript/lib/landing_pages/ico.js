@@ -1,27 +1,36 @@
-// Handler when the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", function(){
+window.onload = function() {
+    toggleMobileMenu();
+
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
 
     const clients_country = getClientCountry();
 
-    // Handle form submission
-    if (window.location.hash === '#done') {
-        dataLayer.push({ bom_country_abbrev: clients_country || '' });
-        dataLayer.push({ event: 'ico_success' });
-        for (let i = 0; i < 2; i++) {
-            document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
-            document.getElementsByTagName('form')[i].classList.add('invisible');
-        }
-        clearHash();
-        let navbarHeight = checkWidth();
-        const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
-        scrollTo(to);
+    function switchView(path) {
+        document.getElementById('faq').classList[path === 'home' ? 'add' : 'remove']('invisible');
+        document.getElementById('home').classList[path === 'home' ? 'remove' : 'add']('invisible');
+        path === 'home' ? clearHash() : window.location.hash = '#faq';
     }
 
-    if (window.location.hash === '#faq') {
-        document.getElementById('faq').classList.remove('invisible');
-        document.getElementById('home').classList.add('invisible');
+    function hashRouter() {
+        const hash = window.location.hash.substr(1);
+
+        if (/done/.test(hash)) {
+            dataLayer.push({ bom_country_abbrev: clients_country || '' });
+            dataLayer.push({ event: 'ico_success' });
+            clearHash();
+            for (let i = 0; i < 2; i++) {
+                document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
+                document.getElementsByTagName('form')[i].classList.add('invisible');
+            }
+            let navbarHeight = checkWidth();
+            const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
+            scrollTo(to);
+        }
+
+        if (/faq/.test(hash)) {
+            switchView('faq');
+        }
     }
 
     // Set language fields
@@ -31,38 +40,31 @@ document.addEventListener("DOMContentLoaded", function(){
         el_langs[i].value = language;
     }
 
-    toggleMobileMenu();
-
     // Scroll to section
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('page-scroll')) {
-            clearHash();
-            document.getElementById('home').classList.remove('invisible');
-            document.getElementById('faq').classList.add('invisible');
+            e.preventDefault();
+            switchView('home');
             const target = e.target.getAttribute('href').substr(1);
             const offset = /who-we-are|page-top/.test(target) ? 55 : 0;
             const navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
             scrollTo(to);
-            e.preventDefault();
         }
     });
 
     const faqButtons = document.getElementsByClassName('faq-btn');
     for (let i = 0; i < faqButtons.length; i++) {
         faqButtons[i].addEventListener('click', function(e) {
-            document.getElementById('faq').classList.remove('invisible');
-            scrollTo(0);
-            e.stopPropagation();
-            document.getElementById('home').classList.add('invisible');
-            window.location.hash = '#faq'; // add faq has
+            e.preventDefault();
+            switchView('faq');
         });
     };
 
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
-    document.ready = collapseNavbar;
-});
+    window.addEventListener('hashchange', hashRouter);
+};
 
 function clearHash() {
     if (window.history.pushState) {
