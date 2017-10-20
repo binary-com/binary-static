@@ -12,6 +12,7 @@ const Cashier = (() => {
 
     const showContent = () => {
         Client.activateByClientType();
+        Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
     };
 
     const displayTopUpButton = () => {
@@ -38,7 +39,6 @@ const Cashier = (() => {
         }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
-                Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
                 const is_virtual = Client.get('is_virtual');
                 const is_crypto  = isCryptocurrency(Client.get('currency'));
                 if (is_virtual) {
