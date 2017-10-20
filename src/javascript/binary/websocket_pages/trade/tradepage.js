@@ -39,7 +39,7 @@ const TradePage = (() => {
         }
 
         BinarySocket.wait('authorize').then(() => {
-            if (Client.get('virtual')) {
+            if (Client.get('is_virtual')) {
                 Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
             }
             Client.activateByClientType('trading_socket_container');
