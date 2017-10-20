@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-16 21:46-0400\n"
+"PO-Revision-Date: 2017-10-20 05:01-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -172,7 +172,7 @@ msgid "%1 has earned an enviable reputation for our commitment to high ethical s
 msgstr "%1 ha guadagnato un'invidiabile reputazione grazie al nostro impegno nel fornire alti standard etici e un'alta qualità dell'esperienza di trading."
 
 msgid "%1 has entered into an agreement to list the tokens on the %2Lykke.com%3 cryptocurrency exchange. Lykke is a Swiss fintech company building a global blockchain-powered marketplace for securities-linked tokens."
-msgstr ""
+msgstr "%1 ha stipulato un contratto per elencare i token sullo scambio di criptovalute di %2Lykke.com%3. Lykke è una società di fintech svizzera che ha costruito un mercato mondiale sulla blockchain per i token legati ai valori mobiliari."
 
 msgid "%1 has over 800,000 clients in its database and reaches the US$ 2 billion milestone in our 15th year, making us one of the leading binary options providers."
 msgstr "%1 ha oltre 800.000 clienti nel suo database e raggiunge i 2 miliardi di dollari nel 15° anno, diventando uno dei migliori provider di trading in opzioni binarie."
@@ -358,13 +358,13 @@ msgid "%1 takes home first prize in the Financial Betting Operator category at t
 msgstr "%1 ottiene il primo premio nella categoria Financial Betting Operator durante la prestigiosa cerimonia degli EGR Operator Awards 2015, tenutasi a Londra."
 
 msgid "%1 was founded in 1999. Today, it is a well-established, and very successful, company. Like many successful companies, the growth of our business led us to consider an IPO."
-msgstr ""
+msgstr "%1 è stata fondata nel 1999. Oggi è una società consolidata e di grande successo. Come molte aziende di successo, la crescita della nostra attività ci ha portato a considerare un'IPO."
 
 msgid "%1 will issue a number of tokens during the ICO."
 msgstr "%1 emetterà un certo numero di token durante l'ICO."
 
 msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘ERC20’ tokens on the Ethereum blockchain."
-msgstr ""
+msgstr "%1 offrirà un numero di token di blockchain per gli investitori. Questi token possono essere emessi in varie forme su diverse blockchain, come i token \"ERC20\" sulla blockchain dell'Ethereum."
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "Il prelievo di %1 dall'account numero %2 su %3 è stato eseguito. ID della transazione: %4"
@@ -702,7 +702,7 @@ msgid "API token for third party applications."
 msgstr "Token APi per applicazioni di terze parti."
 
 msgid "ATM"
-msgstr ""
+msgstr "Bancomat"
 
 msgid "AUD 1 per point"
 msgstr "AUD 1 per punto"
@@ -861,7 +861,7 @@ msgid "Active clients"
 msgstr "Clienti attivi"
 
 msgid "Active trading clients"
-msgstr ""
+msgstr "Clienti di trading attivi"
 
 msgid "Adapt affiliate-marketing tactics and promotional materials as needed, to localise all content for maximum effectiveness"
 msgstr "Adattare tattiche di marketing d'affiliazione e materiale promozionale come necessario, per localizzare tutti i contenuti per una maggiore efficienza"
@@ -939,7 +939,7 @@ msgid "Agricultural, Forestry and Fishery Workers"
 msgstr "Lavoratori addetti all'agricoltura, alla foresteria e al settore ittico"
 
 msgid "All %1 %2front-end platforms and libraries%3 are eligible."
-msgstr ""
+msgstr "Sono ammissibili tutte le %1 %2piattaforme di front-end e le biblioteche%3."
 
 msgid "All %1 front-end projects are deployed using the Github pages facility. Please familiarize yourself with that facility, and read the deployment instructions in each relevant repository."
 msgstr ""
@@ -3584,6 +3584,9 @@ msgstr ""
 msgid "Group History"
 msgstr "Storia del gruppo"
 
+msgid "Guide"
+msgstr ""
+
 msgid "H. Monitoring and Review"
 msgstr "H. Monitoraggio e revisione"
 
@@ -5949,6 +5952,9 @@ msgstr "Apri un account demo"
 msgid "Open a Financial Account"
 msgstr "Apri un account finanziario"
 
+msgid "Open a Real Account"
+msgstr ""
+
 msgid "Open a free account"
 msgstr "Apri un account gratuito"
 
@@ -7291,6 +7297,9 @@ msgid "Should be less than %1"
 msgstr ""
 
 msgid "Should be more than %1"
+msgstr ""
+
+msgid "Should start with letter or number, and may contain hyphen and underscore."
 msgstr ""
 
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
@@ -8758,8 +8767,11 @@ msgstr "Limiti di trading e dei prelievi"
 msgid "Trading binary options is relatively easy, and you can purchase a trade in only three simple steps."
 msgstr "Il trading in opzioni binarie è relativamente facile, puoi acquistare un trade con solo tre semplici passi."
 
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\">Responsible Trading</a>.</span>"
-msgstr "Il trading in opzioni binarie può non essere adatto a tutti, quindi assicurati di aver compreso appieno i rischi connessi. Le tue perdite possono superare il deposito iniziale e non possiederai, ne avrai alcun interesse su alcun asset sottostante. In merito alle opzioni binarie, che sono prodotti d'azzardo, si ricorda che il gioco d'azzardo può creare dipendenza, gioca responsabilmente. <span class=\"ja-hide\">Leggi altro sul <a href=\"%1\">Trading responsabile</a>.</span>"
+msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
+msgstr ""
+
+msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href=\"%1\">Responsible Trading</a>."
+msgstr ""
 
 msgid "Trading forex and contracts for differences carries a high level of risk and %1 does not monitor the open positions of your account on your behalf. It is your responsibility to monitor your Open Positions and understand the exposure of your Open Positions whilst ensuring that your exposure commensurate with your risk appetite. Due to the cost associated with overnight open positions, you should consider investing in the market of the instrument in which you ordinarily transact in instead of investing in a CFD."
 msgstr ""
@@ -8992,12 +9004,6 @@ msgstr "Aggiorna impostazioni"
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "Aggiorna il Manuale anti-frode e gli altri documenti connessi"
 
-msgid "Upgrade to a Financial Account"
-msgstr "Passa a un account finanziario"
-
-msgid "Upgrade to a Real Account"
-msgstr "Passa a un account reale"
-
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr ""
 
@@ -9165,9 +9171,6 @@ msgstr "In attesa del tick d'ingresso."
 
 msgid "Waiting for exit tick."
 msgstr "In attesa del tick d'uscita."
-
-msgid "Walkthrough Guide"
-msgstr "Guida dettagliata"
 
 msgid "Want to fund your %1 Real Account? <a href=\"%2\">Go to the Cashier</a>"
 msgstr ""
@@ -11202,6 +11205,9 @@ msgstr "{JAPAN ONLY}Financial Instruments Business No. xxxx"
 
 msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 msgstr "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
+
+msgid "{JAPAN ONLY}Footer regulatory text"
+msgstr ""
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
