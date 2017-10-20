@@ -351,9 +351,9 @@ const ViewPopup = (() => {
             const secondary_classes = ['fill-bg-color', 'secondary-time'];
             array_audit_data.forEach((audit_data) => {
                 let color;
-                if (/entry|exit/i.test(audit_data.display_name)) {
+                if (audit_data.flag === 'highlight_tick') {
                     color = primary_classes;
-                } else if (/start|end/i.test(audit_data.display_name)) {
+                } else if (audit_data.flag === 'highlight_time') {
                     color = secondary_classes;
                 }
                 createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, color);
