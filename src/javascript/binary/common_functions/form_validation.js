@@ -187,7 +187,7 @@ const Validation = (() => {
         length       : { func: validLength,       message: 'You should enter [_1] characters.' },
         number       : { func: validNumber,       message: '' },
         regular      : { func: validRegular,      message: '' },
-        tax_id       : { func: validTaxID,        message: 'Only letters, numbers, hyphen, and underscore are allowed.' },
+        tax_id       : { func: validTaxID,        message: 'Should start with letter or number, and may contain hyphen and underscore.' },
     };
 
     const pass_length = type => ({ min: (/^mt$/.test(type) ? 8 : 6), max: 25 });
