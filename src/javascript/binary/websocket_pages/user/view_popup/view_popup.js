@@ -350,13 +350,13 @@ const ViewPopup = (() => {
             const primary_classes   = ['secondary-bg-color', 'content-inverse-color'];
             const secondary_classes = ['fill-bg-color', 'secondary-time'];
             array_audit_data.forEach((audit_data) => {
+                let color;
                 if (/entry|exit/i.test(audit_data.display_name)) {
-                    createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, primary_classes);
+                    color = primary_classes;
                 } else if (/start|end/i.test(audit_data.display_name)) {
-                    createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, secondary_classes);
-                } else {
-                    createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name);
+                    color = secondary_classes;
                 }
+                createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, color);
             });
             resolve();
         })
