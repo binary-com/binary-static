@@ -13,11 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
             document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
             document.getElementsByTagName('form')[i].classList.add('invisible');
         }
-        if (window.history.pushState) {
-            window.history.pushState('', '/', window.location.pathname)
-        } else {
-            window.location.hash = '';
-        }
+        clearHash();
         let navbarHeight = checkWidth();
         const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
         scrollTo(to);
@@ -40,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // Scroll to section
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('page-scroll')) {
+            clearHash();
             document.getElementById('home').classList.remove('invisible');
             document.getElementById('faq').classList.add('invisible');
             const target = e.target.getAttribute('href').substr(1);
@@ -58,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function(){
             scrollTo(0);
             e.stopPropagation();
             document.getElementById('home').classList.add('invisible');
+            window.location.hash = '#faq'; // add faq has
         });
     };
 
@@ -65,6 +63,14 @@ document.addEventListener("DOMContentLoaded", function(){
     window.onscroll = collapseNavbar;
     document.ready = collapseNavbar;
 });
+
+function clearHash() {
+    if (window.history.pushState) {
+        window.history.pushState('', '/', window.location.pathname)
+    } else {
+        window.location.hash = '';
+    }
+}
 
 function getClientCountry() {
     let clients_country = sessionStorage.getItem('clients_country');
