@@ -27,7 +27,7 @@ const Header = (() => {
         if (menu && Client.isLoggedIn()) {
             menu.classList.add('smaller-font');
             displayAccountStatus();
-            if (!Client.get('virtual')) {
+            if (!Client.get('is_virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
                     if (Client.canTransferFunds()) {
                         document.getElementById('user_menu_account_transfer').setVisibility(1);
@@ -173,7 +173,7 @@ const Header = (() => {
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    showUpgrade(upgrade_info.upgrade_link, `Upgrade to a ${toTitleCase(upgrade_info.type)} Account`);
+                    showUpgrade(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
                 } else {
                     applyToAllElements(upgrade_msg, (el) => {
                         applyToAllElements('a', (ele) => {
