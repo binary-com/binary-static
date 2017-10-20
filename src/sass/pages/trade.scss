@@ -708,9 +708,11 @@
 
 #deposit_btn_trade, #upgrade_btn_trade {
     float: right;
-    margin: 0;
+    margin: 0 0 0 10px;
 
     span {
+        height: 20px;
+        line-height: 20px;
         background-color: $COLOR_ORANGE;
 
         &:hover {
