@@ -252,11 +252,11 @@ sub _texts {
         push @texts, localize('Delete');
         push @texts, localize('Are you sure that you want to permanently delete token');
         push @texts, localize('Please select at least one scope');
-        #strings for Walkthrough Guide
-        push @texts, localize('Walkthrough Guide');
+        #strings for Guide
+        push @texts, localize('Guide');
         push @texts, localize('Finish');
         push @texts, localize('Step');
-        #strings for Walkthrough Guide -> trading page
+        #strings for Guide -> trading page
         push @texts, localize('Select your market');
         push @texts, localize('Select your underlying asset');
         push @texts, localize('Select your trade type');
