@@ -7,9 +7,9 @@ window.onload = function() {
     const clients_country = getClientCountry();
 
     function switchView(path) {
-        document.getElementById('faq').classList[path === 'home' ? 'add' : 'remove']('invisible');
-        document.getElementById('home').classList[path === 'home' ? 'remove' : 'add']('invisible');
-        path === 'home' ? clearHash() : window.location.hash = '#faq';
+        document.getElementById('faq').classList[path === 'faq' ? 'remove' : 'add']('invisible');
+        document.getElementById('home').classList[path === 'faq' ? 'add' : 'remove']('invisible');
+        path === 'faq' ? window.location.hash = '#faq' : clearHash();
     }
 
     function hashRouter() {
