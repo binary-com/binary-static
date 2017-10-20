@@ -350,10 +350,9 @@ const ViewPopup = (() => {
             const primary_classes   = ['secondary-bg-color', 'content-inverse-color'];
             const secondary_classes = ['fill-bg-color', 'secondary-time'];
             array_audit_data.forEach((audit_data) => {
-                // TODO: replace audit_data.name with new untranslated field that back-end will add
-                if (/entry|exit/i.test(audit_data.name)) {
+                if (/entry|exit/i.test(audit_data.display_name)) {
                     createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, primary_classes);
-                } else if (/start|end/i.test(audit_data.name)) {
+                } else if (/start|end/i.test(audit_data.display_name)) {
                     createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name, secondary_classes);
                 } else {
                     createAuditRow(table, audit_data.epoch, audit_data.tick, audit_data.name);
