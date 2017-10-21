@@ -171,7 +171,7 @@
                         <div class="gr-10 gr-push-1">
                             <h2>[% l('Trade your tokens on the Lykke Exchange') %]</h2>
                             <img src="[% request.url_for('images/ico/icons/lykke_logo.svg') %]"/>
-                            <p>[% l('We\'ve reached an agreement to list the tokens from our forthcoming ICO on the <a href="[_1]" target="_blank" rel="noreferrer noopener">Lykke Exchange</a>. Lykke is a fintech company that\'s building a global marketplace on the blockchain.', 'https://www.lykke.com/') %]</p>
+                            <p>[% l('We\'ve reached an agreement to list the tokens from our forthcoming ICO on the <a href="[_1]" target="_blank" rel="noreferrer noopener">Lykke Exchange</a>.', 'https://www.lykke.com/') %]</p>
                             <a class="button" href="https://www.lykke.com/company/news/binary" target="_blank" rel="noreferrer noopener">
                                 <span>[% l('Read the official press release') %]</span>
                             </a>
