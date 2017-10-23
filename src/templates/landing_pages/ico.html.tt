@@ -165,7 +165,21 @@
                     </p>
                 </div>
             </div>
-            <hr>
+            <div id="lykke-section" class="content-section center-text fill-bg-color">
+                <div class="container">
+                    <div class="gr-row">
+                        <div class="gr-10 gr-push-1">
+                            <h2>[% l('Trade your tokens on the Lykke Exchange') %]</h2>
+                            <img src="[% request.url_for('images/ico/icons/lykke_logo.svg') %]"/>
+                            <p>[% l('We\'ve reached an agreement to list the tokens on the <a href="[_1]" target="_blank" rel="noreferrer noopener">Lykke Exchange</a>.', 'https://www.lykke.com/') %]</p>
+                            <a class="button" href="https://www.lykke.com/company/news/binary" target="_blank" rel="noreferrer noopener">
+                                <span>[% l('Read the official press release') %]</span>
+                            </a>
+                            <p>[% l('As featured in [_1]', '<a href="https://www.financemagnates.com/cryptocurrency/exchange/binary-com-blockchain-ipo-tokens-list-lykke-vanuatu-exchange/" target="_blank" rel="noreferrer noopener">Finance Magnates</a>') %]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container content-section center-text">
                 <div class="gr-row">
                     <div class="gr-12">

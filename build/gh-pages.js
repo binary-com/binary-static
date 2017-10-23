@@ -14,7 +14,7 @@ module.exports = function (grunt) {
                 add    : true,
                 base   : 'dist',
                 branch : 'master',
-                repo   : 'git@github.com:binary-com/binary-static-ci.git',
+                repo   : 'git@github.com:binary-com/robot-framework.git',
                 message: 'Trigger tests',
             },
             src: grunt.option('staging') ? 'version' : '',
