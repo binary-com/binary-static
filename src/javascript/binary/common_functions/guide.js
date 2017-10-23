@@ -22,7 +22,7 @@ const Guide = (() => {
             script        : '',      // the script name in scripts
             autoStart     : false,   // false: start by button click
             guideBtnID    : '#guideBtn',
-            btnText       : localize('Walkthrough Guide'),  // guide start button's text
+            btnText       : localize('Guide'),  // guide start button's text
             blink_class   : 'highlight',
             blink_inDelay : 1000,
             blink_outDelay: 1000,

@@ -10,6 +10,9 @@ require('babel-polyfill');
 require('promise-polyfill');
 require('./lib/polyfills/nodelist.foreach');
 
+require('binary-style');
+require('binary-style/binary.more');
+
 // created for handling global onclick
 exportAllFunctions(require('./binary/common_functions/attach_dom/handle_click'));
 // used by gtm to update page after a new release

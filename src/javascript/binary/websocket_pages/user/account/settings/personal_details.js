@@ -187,7 +187,7 @@ const PersonalDetails = (() => {
                 { selector: '#place_of_birth', validations: Client.isAccountOfType('financial') ? ['req'] : '' },
                 { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
             ];
-            const tax_id_validation = { selector: '#tax_identification_number', validations: ['postcode', ['length', { min: 0, max: 20 }]] };
+            const tax_id_validation = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
             if (Client.isAccountOfType('financial')) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');

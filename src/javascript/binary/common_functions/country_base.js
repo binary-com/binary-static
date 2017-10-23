@@ -47,7 +47,6 @@ const checkLanguage = () => {
     if (jpClient()) {
         $('.ja-hide').setVisibility(0);
         $('.ja-show').setVisibility(1);
-        $('#regulatory-text').addClass('gr-12 gr-12-p').removeClass('gr-9 gr-7-p');
         if (!jpResidence()) {
             $('#topMenuCashier').hide();
         }

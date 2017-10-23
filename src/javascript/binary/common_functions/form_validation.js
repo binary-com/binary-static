@@ -105,7 +105,7 @@ const Validation = (() => {
     // ----- Validation Methods -----
     // ------------------------------
     const validRequired     = (value, options, field) => {
-        if ((typeof value === 'string' ? value.trim() : value).length) return true;
+        if (value.length) return true;
         // else
         validators_map.req.message = field.type === 'checkbox' ? 'Please select the checkbox.' : 'This field is required.';
         return false;
@@ -126,13 +126,14 @@ const Validation = (() => {
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
     const validEmailToken   = value => value.trim().length === 8;
+    const validTaxID        = value => /^[a-zA-Z0-9][\w-]*$/.test(value);
 
     const validCompare  = (value, options) => value === $(options.to).val();
     const validNotEqual = (value, options) => value !== $(options.to).val();
-    const validMin      = (value, options) => (options.min ? value.trim().length >= options.min : true);
+    const validMin      = (value, options) => (options.min ? value.length >= options.min : true);
     const validLength   = (value, options) => (
-        (options.min ? value.trim().length >= options.min : true) &&
-        (options.max ? value.trim().length <= options.max : true)
+        (options.min ? value.length >= options.min : true) &&
+        (options.max ? value.length <= options.max : true)
     );
 
     const validNumber = (value, options) => {
@@ -186,6 +187,7 @@ const Validation = (() => {
         length       : { func: validLength,       message: 'You should enter [_1] characters.' },
         number       : { func: validNumber,       message: '' },
         regular      : { func: validRegular,      message: '' },
+        tax_id       : { func: validTaxID,        message: 'Should start with letter or number, and may contain hyphen and underscore.' },
     };
 
     const pass_length = type => ({ min: (/^mt$/.test(type) ? 8 : 6), max: 25 });
@@ -197,6 +199,7 @@ const Validation = (() => {
         if (!field.$.is(':visible') || !field.validations) return true;
         let all_is_ok = true;
         let message   = '';
+        const field_type = field.$.attr('type');
 
         field.validations.some((valid) => {
             if (!valid) return false; // check next validation
@@ -216,7 +219,13 @@ const Validation = (() => {
                 options     = pass_length(options);
             } else {
                 const validator = (type === 'custom' ? options.func : validators_map[type].func);
-                field.is_ok = validator(getFieldValue(field, options), options, field);
+
+                let value = getFieldValue(field, options);
+                if (field_type !== 'password' && typeof value === 'string') {
+                    value = value.trim();
+                }
+
+                field.is_ok = validator(value, options, field);
             }
 
             if (!field.is_ok) {

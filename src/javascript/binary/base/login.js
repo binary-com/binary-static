@@ -20,7 +20,7 @@ const Login = (() => {
         );
     };
 
-    const isLoginPages = () => /logged_inws|redirect/i.test(document.URL);
+    const isLoginPages = () => /logged_inws|redirect/i.test(window.location.pathname);
 
     return {
         redirectToLogin,

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-16 21:47-0400\n"
+"PO-Revision-Date: 2017-10-23 02:09-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -3578,6 +3578,9 @@ msgstr "Laba kotor dan bersih"
 msgid "Group History"
 msgstr "Sejarah Grup"
 
+msgid "Guide"
+msgstr "Panduan"
+
 msgid "H. Monitoring and Review"
 msgstr "H. Monitoring dan Tinjauan"
 
@@ -5943,6 +5946,9 @@ msgstr "Mendaftar Akun Demo"
 msgid "Open a Financial Account"
 msgstr "Daftar Akun Finansial"
 
+msgid "Open a Real Account"
+msgstr "Daftar Akun Riil"
+
 msgid "Open a free account"
 msgstr "Daftar akun gratis"
 
@@ -7286,6 +7292,9 @@ msgstr "Harus kurang dari %1"
 
 msgid "Should be more than %1"
 msgstr "Harus lebih dari %1"
+
+msgid "Should start with letter or number, and may contain hyphen and underscore."
+msgstr "Harus dimulai dengan huruf atau angka, dan mungkin mengandung tanda hubung dan garis bawah."
 
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "Jika biaya ini tidak cukup ditutupi oleh sisa saldo pada akun Anda maka kami berhak untuk mencari alternatif untuk meneliti  pilihan lain untuk memperoleh pembayaran, seperti: jika akun Anda menghasilkan hasil komisi, maka kami akan menahan komisi tersebut untuk akun bersangkutan hingga kerugian habis tertutupi."
@@ -8753,8 +8762,11 @@ msgstr "Batasan Penarikan"
 msgid "Trading binary options is relatively easy, and you can purchase a trade in only three simple steps."
 msgstr "Trading opsi binary relatif mudah, dan Anda dapat membeli kontrak hanya dengan tiga langkah sederhana."
 
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\">Responsible Trading</a>.</span>"
-msgstr "Trading opsi Binary mungkin tidak cocok untuk semua orang, maka pastikan Anda sudah memahami risiko yang terlibat. Jumlah kerugian bisa lebih dari jumlah modal awal dan Anda tidak memperoleh bunga dari aset dasar yang Anda tradingkan."
+msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
+msgstr "Trading opsi binary mungkin tidak cocok untuk semua orang, maka pastikan Anda sudah memahami risiko yang terlibat. Jumlah kerugian Anda dapat melebihi modal awal dan Anda tidak memperoleh bunga dari aset dasar yang ditradingkan."
+
+msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href=\"%1\">Responsible Trading</a>."
+msgstr "Trading opsi binary mungkin tidak cocok untuk semua orang, maka pastikan Anda sudah memahami risiko yang terlibat. Jumlah kerugian Anda dapat melebihi modal awal dan Anda tidak memperoleh bunga dari aset dasar yang ditradingkan."
 
 msgid "Trading forex and contracts for differences carries a high level of risk and %1 does not monitor the open positions of your account on your behalf. It is your responsibility to monitor your Open Positions and understand the exposure of your Open Positions whilst ensuring that your exposure commensurate with your risk appetite. Due to the cost associated with overnight open positions, you should consider investing in the market of the instrument in which you ordinarily transact in instead of investing in a CFD."
 msgstr "Trading Forex dan kontrak berdasarkan selisih memiliki tingkat resiko yang tinggi dan %1 tidak memonitor posisi berjalan pada akun atas nama Anda. Hal ini merupakan tanggung jawab Anda untuk memonitor posisi berjalan dan memahami paparan Posisi Berjalan Anda sementara memastikan bahwa paparan Anda sepadan dengan risiko yang Anda inginkan. Berhubung biaya yang terkait dengan posisi menginap, Anda harus mempertimbangkan untuk berinvestasi pada pasar instrumen di mana Anda biasa bertransaksi dan bukan pada CFD."
@@ -8987,12 +8999,6 @@ msgstr "Perbaru Pengaturan"
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "Memperbarui panduan Anti-Penipuan dan dokumen terkait lainnya"
 
-msgid "Upgrade to a Financial Account"
-msgstr "Upgrade ke Akun Finansial"
-
-msgid "Upgrade to a Real Account"
-msgstr "Upgrade ke Akun Riil"
-
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr "Pada penutupan transaksi, profit yang dihasilkan (atau kerugian), yang mewakili selisih antara level pembukaan dan penutupan Transaksi dikalikan dengan jumlah lot (volume), yang perlu dibayarkan oleh kami kepada Anda (atau yang perlu Anda bayarkan kepada kami jika terjadi kerugian)."
 
@@ -9160,9 +9166,6 @@ msgstr "Menunggu tik masuk..."
 
 msgid "Waiting for exit tick."
 msgstr "Menunggu tik akhir."
-
-msgid "Walkthrough Guide"
-msgstr "Panduan Langsung"
 
 msgid "Want to fund your %1 Real Account? <a href=\"%2\">Go to the Cashier</a>"
 msgstr "Ingin mendanai Akun Riil %1 Anda? <a href=\"%2\">Kunjungi bagian Kasir</a>"
@@ -11197,6 +11200,9 @@ msgstr "{JAPAN ONLY}Financial Instruments Business No. xxxx"
 
 msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 msgstr "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
+
+msgid "{JAPAN ONLY}Footer regulatory text"
+msgstr "{JAPAN ONLY}Footer regulatory text"
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."

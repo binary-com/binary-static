@@ -1,6 +1,6 @@
 <div class="gr-12 gr-padding-10 center-text">
     <div class="gr-parent gr-padding-10">
-        <img src="https://style.binary.com/images/logo/binary_logo_dark.svg" alt="" style="max-height: 55px;" />
+        <img src="[% request.url_for('images/logo/binary_logo_dark.svg') %]" alt="" style="max-height: 55px;" />
     </div>
     <h2>[% l("{JAPAN ONLY}Welcome to the site of Binary KK.") %]</h2>
     <p class="justify-text">[% l("{JAPAN ONLY}Please note that the website that you have just visited is not our site. Information regarding the Company's financial instruments that have been posted on that site, any evaluation, impression, etc. are the sole responsibility of the administrators of that website, and has been created by them only. We can make no guarantee or accept any responsibility for their content.") %]</p>

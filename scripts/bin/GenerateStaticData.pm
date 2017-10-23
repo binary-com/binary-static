@@ -38,8 +38,7 @@ sub _texts {
         push @texts, localize('Sorry, an error occurred while processing your request.');
         push @texts, localize('Please <a href="[_1]">log in</a> to view this page.');
         # top bar
-        push @texts, localize('Upgrade to a Real Account');
-        push @texts, localize('Upgrade to a Financial Account');
+        push @texts, localize('Open a Real Account');
         push @texts, localize('Open a Financial Account');
         # menu items
         push @texts, localize('Trade');
@@ -253,11 +252,11 @@ sub _texts {
         push @texts, localize('Delete');
         push @texts, localize('Are you sure that you want to permanently delete token');
         push @texts, localize('Please select at least one scope');
-        #strings for Walkthrough Guide
-        push @texts, localize('Walkthrough Guide');
+        #strings for Guide
+        push @texts, localize('Guide');
         push @texts, localize('Finish');
         push @texts, localize('Step');
-        #strings for Walkthrough Guide -> trading page
+        #strings for Guide -> trading page
         push @texts, localize('Select your market');
         push @texts, localize('Select your underlying asset');
         push @texts, localize('Select your trade type');
@@ -480,6 +479,7 @@ sub _texts {
         push @texts, localize('Hint: it would take approximately [_1][_2] to crack this password.');
         push @texts, localize('thousand');
         push @texts, localize('million');
+        push @texts, localize('Should start with letter or number, and may contain hyphen and underscore.');
 
         # strings for metatrader
         push @texts, localize('Congratulations! Your [_1] Account has been created.');
