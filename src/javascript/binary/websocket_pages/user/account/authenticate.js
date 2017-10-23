@@ -1,10 +1,11 @@
-const Client              = require('../../../base/client');
-const BinarySocket        = require('../../socket');
 const DocumentUploader    = require('binary-document-uploader');
-const showLoadingImage    = require('../../../base/utility').showLoadingImage;
-const localize            = require('../../../base/localize').localize;
+const BinarySocket        = require('../../socket');
+const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
+const localize            = require('../../../base/localize').localize;
 const Url                 = require('../../../base/url');
+const showLoadingImage    = require('../../../base/utility').showLoadingImage;
+const toTitleCase         = require('../../../common_functions/string_util').toTitleCase;
 
 const Authenticate = (() => {
     const onLoad = () => {
@@ -12,16 +13,16 @@ const Authenticate = (() => {
             if (response.error) {
                 $('#error_message').setVisibility(1).text(response.error.message);
             } else {
-                const get_account_status = response.get_account_status;
+                const get_account_status  = response.get_account_status;
                 const should_authenticate = +get_account_status.prompt_client_to_authenticate;
                 if (should_authenticate) {
                     const status = get_account_status.status;
                     if (!/authenticated/.test(status)) {
+                        init();
                         $('#not_authenticated').setVisibility(1);
                         if (Client.isAccountOfType('financial')) {
                             $('#not_authenticated_financial').setVisibility(1);
                         }
-                        init();
                     } else if (!/age_verification/.test(status)) {
                         $('#needs_age_verification').setVisibility(1);
                     }
@@ -40,7 +41,7 @@ const Authenticate = (() => {
             active     : false,
         });
         // Setup Date picker
-        const tomorrow = new Date();
+        const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
         $('.date-picker').datepicker({
             dateFormat : 'yy-mm-dd',
@@ -49,10 +50,7 @@ const Authenticate = (() => {
             minDate    : tomorrow,
         });
 
-        // Submit button
-        let $button;
-
-        $('.file-picker').on('change', e => onFileSelected(e));
+        $('.file-picker').on('change', onFileSelected);
 
         /**
          * Listens for file changes.
@@ -82,10 +80,9 @@ const Authenticate = (() => {
 
         // Reset file-selector label
         const resetLabel = (event) => {
-            const default_text = event.target.id.split('_')[0]
-                .replace(/^\w/, w => w.toUpperCase());
-            $(event.target).val(''); // Remove previously selected file.
-            $(event.target).parent().find('label').text(default_text)
+            const default_text = toTitleCase(event.target.id.split('_')[0]);
+            // Remove previously selected file and set the label
+            $(event.target).val('').parent().find('label').text(default_text)
                 .append($('<span/>', { class: 'add' }));
             // Change submit button state
             showSubmit();
@@ -95,6 +92,7 @@ const Authenticate = (() => {
          * Enables the submit button if any file is selected, also adds the event handler for the button.
          * Disables the button if it no files are selected.
          */
+        let $button;
         const showSubmit = () => {
             let file_selected = false;
             const $ele = $('#authentication-message > div#not_authenticated');
@@ -116,9 +114,9 @@ const Authenticate = (() => {
                     .click(() => submitFiles($files));
             } else {
                 if ($button.hasClass('button-disabled')) return;
-                $button.off('click')
-                    .removeClass('button')
-                    .addClass('button-disabled');
+                $button.removeClass('button')
+                    .addClass('button-disabled')
+                    .off('click');
             }
         };
 
@@ -164,11 +162,7 @@ const Authenticate = (() => {
 
         const processFiles = (files) => {
             const promises = [];
-            const ws = BinarySocket.get();
-            const config = {
-                connection: ws,
-            };
-            const uploader = new DocumentUploader(config);
+            const uploader = new DocumentUploader({ connection: BinarySocket.get() });
 
             readFiles(files).then((objects) => {
                 objects.forEach(obj => promises.push(uploader.upload(obj)));
@@ -224,25 +218,22 @@ const Authenticate = (() => {
             };
 
             if (!(file.documentFormat || '').match(/^(PNG|JPG|JPEG|GIF|PDF)$/i)) {
-                return buildMessage('Invalid document format: "[_1]"', [file.documentFormat]);
+                return localize('Invalid document format: "[_1]"', [file.documentFormat]);
             }
-            if (file.buffer && file.buffer.byteLength > 3000000) {
-                return buildMessage('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB', [file.filename]);
+            if (file.buffer && file.buffer.byteLength >= 3 * 1024 * 1024) {
+                return localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB', [file.filename]);
             }
             if (!file.documentId && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
-                return buildMessage('ID number is required for [_1].', [doc_name[file.documentType]]);
+                return localize('ID number is required for [_1].', [doc_name[file.documentType]]);
             }
             if (file.documentId && !/^[\w\s-]{0,30}$/.test(file.documentId)) {
-                return buildMessage('Only letters, numbers, spaces, underscore (_), and dash (-) are allowed for ID number.', [doc_name[file.documentType]]);
+                return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number.', [doc_name[file.documentType]]);
             }
             if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
-                return buildMessage('Expiry date is required for [_1].', [doc_name[file.documentType]]);
+                return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
             }
             return null;
         };
-
-        // Build localize messages
-        const buildMessage = (m, arg) => ({ message: localize(m, arg) });
 
         const showError = (e) => {
             const $error = $('.error-msg');
@@ -253,11 +244,10 @@ const Authenticate = (() => {
         };
 
         const showSuccess = () => {
-            const msg = buildMessage('We are reviewing your account. For more details [_1]contact us[_2].',
+            const msg = localize('We are reviewing your documents. For more details [_1]contact us[_2].',
                 [`<a href="${Url.urlFor('contact')}">`, '</a>']);
-            displayNotification(msg.message, false, 'document_under_review');
-            $('#authentication-message > div#not_authenticated').setVisibility(0);
-            $('#authentication-message > div#not_authenticated_financial').setVisibility(0); // Just hide it. ✓ 
+            displayNotification(msg, false, 'document_under_review');
+            $('#not_authenticated, #not_authenticated_financial').setVisibility(0); // Just hide it
             $('#success-message').setVisibility(1);
         };
     };

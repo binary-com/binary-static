@@ -363,7 +363,7 @@ body #not_authenticated_financial ul.checked > li {
                     background: url('../images/pages/authenticate/add.svg') no-repeat;
                 }
                 &.remove {
-                    background: url('../images/pages/authenticate/remove.svg');
+                    background: url('../images/pages/authenticate/remove.svg') no-repeat;
                 }
             }
         }

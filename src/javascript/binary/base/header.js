@@ -264,27 +264,27 @@ const Header = (() => {
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
 
             const messages = {
-                authenticate         : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',     'user/authenticate'),
-                document_under_review: () => buildMessage('We are reviewing your account. For more details [_1]contact us[_2].',                                'contact'),
-                currency             : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                   'user/set-currency'),
-                financial_limit      : () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                            'user/security/self_exclusionws'),
-                residence            : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                  'user/settings/detailsws'),
-                risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',  'user/settings/assessmentws'),
-                tax                  : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',           'user/settings/detailsws'),
-                tnc                  : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.', 'user/tnc_approvalws'),
-                unwelcome            : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                'contact'),
+                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',     'user/authenticate'),
+                currency       : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                   'user/set-currency'),
+                document_review: () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                              'contact'),
+                financial_limit: () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                            'user/security/self_exclusionws'),
+                residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                  'user/settings/detailsws'),
+                risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',  'user/settings/assessmentws'),
+                tax            : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',           'user/settings/detailsws'),
+                tnc            : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.', 'user/tnc_approvalws'),
+                unwelcome      : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                'contact'),
             };
 
             const validations = {
-                authenticate         : () => +get_account_status.prompt_client_to_authenticate,
-                currency             : () => !Client.get('currency'),
-                financial_limit      : () => /ukrts_max_turnover_limit_not_set/.test(status),
-                residence            : () => !Client.get('residence'),
-                risk                 : () => riskAssessment(),
-                tax                  : () => Client.shouldCompleteTax(),
-                tnc                  : () => Client.shouldAcceptTnc(),
-                document_under_review: () => get_account_status.status.indexOf('document_under_review') !== -1,
-                unwelcome            : () => /unwelcome|(cashier|withdrawal)_locked/.test(status),
+                authenticate   : () => +get_account_status.prompt_client_to_authenticate,
+                currency       : () => !Client.get('currency'),
+                document_review: () => /document_under_review/.test(status),
+                financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
+                residence      : () => !Client.get('residence'),
+                risk           : () => riskAssessment(),
+                tax            : () => Client.shouldCompleteTax(),
+                tnc            : () => Client.shouldAcceptTnc(),
+                unwelcome      : () => /unwelcome|(cashier|withdrawal)_locked/.test(status),
             };
 
             // real account checks in order
@@ -294,7 +294,7 @@ const Header = (() => {
                 'risk',
                 'tax',
                 'currency',
-                'document_under_review',
+                'document_review',
                 'authenticate',
                 'unwelcome',
             ];
