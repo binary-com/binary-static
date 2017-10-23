@@ -10,8 +10,6 @@ window.onload = function() {
     function switchView(path) {
         document.getElementById('faq').classList[path === 'faq' ? 'remove' : 'add']('invisible');
         document.getElementById('home').classList[path === 'faq' ? 'add' : 'remove']('invisible');
-        scrollTo(0);
-        path === 'faq' ? window.location.hash = '#faq' : clearHash();
     }
 
     function hashRouter() {
@@ -32,6 +30,14 @@ window.onload = function() {
 
         if (/faq/.test(hash)) {
             switchView('faq');
+            scrollTo(0);
+            window.location.hash = '#faq';
+        }
+
+        if (!hash) {
+            switchView('home');
+            scrollTo(0);
+            clearHash();
         }
     }
 
@@ -47,6 +53,7 @@ window.onload = function() {
         if (e.target.classList.contains('page-scroll')) {
             e.preventDefault();
             switchView('home');
+            clearHash();
             const target = e.target.getAttribute('href').substr(1);
             const offset = /who-we-are|page-top/.test(target) ? 55 : 0;
             const navbarHeight = checkWidth();
@@ -62,7 +69,7 @@ window.onload = function() {
 
 function clearHash() {
     if (window.history.pushState) {
-        window.history.pushState('', '/', window.location.pathname)
+        window.history.pushState('', '/', window.location.pathname);
     } else {
         window.location.hash = '';
     }
