@@ -393,7 +393,8 @@ const ViewPopup = (() => {
 
     const createAuditRow = (table, date, tick, remark, td_class) => {
         // if we have already added this timestamp in first table, skip adding it again to second table
-        if (document.querySelector(`.audit-dates[data-value='${date}']`)) {
+        // unless it is a highlighted tick like entry or exit spot, or start or end time
+        if (document.querySelector(`.audit-dates[data-value='${date}']`) && !remark) {
             return;
         }
 
