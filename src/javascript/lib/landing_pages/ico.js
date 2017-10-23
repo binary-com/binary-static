@@ -1,6 +1,7 @@
 window.onload = function() {
     toggleMobileMenu();
     hashRouter();
+    collapseNavbar();
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
@@ -125,5 +126,5 @@ function getClientCountry() {
 // Collapse navbar on scroll
 function collapseNavbar() {
     const navbarFixedTopEl = document.getElementsByClassName('navbar-fixed-top');
-    navbarFixedTopEl[0].classList[window.scrollY > 50 ? 'add' : 'remove']('top-nav-collapse');
+    navbarFixedTopEl[0].classList[window.scrollY < 50 ? 'add' : 'remove']('top-nav-collapse');
 }
