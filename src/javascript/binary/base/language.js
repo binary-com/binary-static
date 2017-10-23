@@ -50,7 +50,9 @@ const Language = (() => {
             const crowdin_lang = Cookies.get('jipt_language_code_binary-static'); // selected language for in-context translation
             if (crowdin_lang) {
                 current_lang = crowdin_lang.toUpperCase().replace('-', '_').toUpperCase();
-                document.body.classList.add(current_lang); // set the body class removed by crowdin code
+                if (document.body) {
+                    document.body.classList.add(current_lang); // set the body class removed by crowdin code
+                }
             }
         }
         current_lang = (current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase());
@@ -66,8 +68,10 @@ const Language = (() => {
                 if (e.target.nodeName !== 'LI') return;
                 const lang = e.target.getAttribute('class');
                 if (getLanguage() === lang) return;
-                const display_language = document.getElementById('display_language').getElementsByClassName('language');
-                elementTextContent(display_language, e.target.textContent);
+                const display_language = document.getElementById('display_language');
+                if (display_language) {
+                    elementTextContent(display_language.getElementsByClassName('language'), e.target.textContent);
+                }
                 setCookieLanguage(lang);
                 document.location = urlForLanguage(lang);
             });
