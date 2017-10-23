@@ -99,15 +99,16 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
-        const final_price      = contract.sell_price || contract.bid_price;
-        const is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const user_sold        = contract.sell_time && contract.sell_time < contract.date_expiry;
-        const is_ended         = contract.is_settleable || contract.is_sold || user_sold;
-        const indicative_price = final_price && is_ended ? final_price : (contract.bid_price || null);
+        const final_price       = contract.sell_price || contract.bid_price;
+        const is_started        = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
+        const user_sold         = contract.sell_time && contract.sell_time < contract.date_expiry;
+        const is_ended          = contract.is_settleable || contract.is_sold || user_sold;
+        const indicative_price  = final_price && is_ended ? final_price : (contract.bid_price || null);
+        const sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
 
         if (contract.barrier_count > 1) {
-            containerSetText('trade_details_barrier', addComma(contract.high_barrier), '', true);
-            containerSetText('trade_details_barrier_low', addComma(contract.low_barrier), '', true);
+            containerSetText('trade_details_barrier', sold_before_start ? '-' : addComma(contract.high_barrier), '', true);
+            containerSetText('trade_details_barrier_low', sold_before_start ? '-' : addComma(contract.low_barrier), '', true);
         } else if (contract.barrier) {
             const formatted_barrier = addComma(contract.barrier);
             const mapping           = {
@@ -116,9 +117,10 @@ const ViewPopup = (() => {
             };
             const contract_text     = mapping[contract.contract_type];
             const barrier_prefix    = contract_text ? `${localize(contract_text)} ` : '';
+            // only show entry spot if available and contract was not sold before start time
             containerSetText(
                 'trade_details_barrier',
-                contract.entry_tick_time ? (barrier_prefix + formatted_barrier) : '-',
+                contract.entry_tick_time && sold_before_start ? '-' : (barrier_prefix + formatted_barrier),
                 '',
                 true);
         }
@@ -166,7 +168,8 @@ const ViewPopup = (() => {
             containerSetText('trade_details_message', localize('Contract has not started yet'));
         } else {
             if (contract.entry_spot > 0) {
-                containerSetText('trade_details_entry_spot > span', addComma(contract.entry_spot));
+                // only show entry spot if available and contract was not sold before start time
+                containerSetText('trade_details_entry_spot > span', sold_before_start ? '-' : addComma(contract.entry_spot));
             }
             containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
