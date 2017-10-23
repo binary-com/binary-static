@@ -130,9 +130,6 @@ sub css_files {
         push @css, root_url() . "css/binary.min.css?$static_hash";
     }
 
-    # Binary-style
-    push @css, "https://style.binary.com/binary.css?$static_hash";
-
     return @css;
 }
 
@@ -151,9 +148,6 @@ sub js_config {
     } else {
         push @libs, root_url . "js/binary.min.js?$static_hash";
     }
-
-    # Binary-style
-    push @libs, "https://style.binary.com/binary.js?$static_hash";
 
     return {
         libs => \@libs,

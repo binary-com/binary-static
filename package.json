@@ -43,7 +43,7 @@
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^19.0.0",
@@ -70,6 +70,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "binary-style": "0.1.0",
     "event-source-polyfill": "0.0.9",
     "highstock-release": "^5.0.12",
     "jquery": "^3.2.1",

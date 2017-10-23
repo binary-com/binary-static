@@ -1,10 +1,3 @@
-[% BLOCK link %]
-    [% FOREACH favicon IN favicons %]
-        [% sizes = favicon.size _ 'x' _ favicon.size %]
-    <link rel="[% (favicon.is_image ? '' : 'apple-touch-') _ 'icon' %]" sizes="[% sizes %]"[% IF favicon.is_image %] type="image/png"[% END %] href="https://style.binary.com/images/favicons/[% favicon.is_image ? 'fav' : 'apple-touch-' %]icon-[% sizes %].png">
-    [% END %]
-[% END %]
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,22 +18,7 @@
 
         [% PROCESS global/title.html.tt %]
 
-        [% INCLUDE link favicons=[
-            { size='57' },
-            { size='114' },
-            { size='72' },
-            { size='144' },
-            { size='60' },
-            { size='120' },
-            { size='76' },
-            { size='152' },
-            { size='180' },
-            { is_image=1, size='192' },
-            { is_image=1, size='160' },
-            { is_image=1, size='96' },
-            { is_image=1, size='16' },
-            { is_image=1, size='32' },
-        ] %]
+        [% PROCESS global/favicons.html.tt %]
 
         <link href="[% request.url_for('css/ico.css') _ '?' _ static_hash %]" rel="stylesheet" />
         <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
