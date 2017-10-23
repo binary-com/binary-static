@@ -1,5 +1,6 @@
 window.onload = function() {
     toggleMobileMenu();
+    hashRouter();
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
@@ -9,6 +10,7 @@ window.onload = function() {
     function switchView(path) {
         document.getElementById('faq').classList[path === 'faq' ? 'remove' : 'add']('invisible');
         document.getElementById('home').classList[path === 'faq' ? 'add' : 'remove']('invisible');
+        scrollTo(0);
         path === 'faq' ? window.location.hash = '#faq' : clearHash();
     }
 
@@ -52,14 +54,6 @@ window.onload = function() {
             scrollTo(to);
         }
     });
-
-    const faqButtons = document.getElementsByClassName('faq-btn');
-    for (let i = 0; i < faqButtons.length; i++) {
-        faqButtons[i].addEventListener('click', function(e) {
-            e.preventDefault();
-            switchView('faq');
-        });
-    };
 
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
