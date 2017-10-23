@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-16 21:45-0400\n"
+"PO-Revision-Date: 2017-10-20 05:00-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -3578,6 +3578,9 @@ msgstr "Bénéfice brut et net"
 msgid "Group History"
 msgstr "Histoire du groupe"
 
+msgid "Guide"
+msgstr ""
+
 msgid "H. Monitoring and Review"
 msgstr "H. Contrôle et révision"
 
@@ -5943,6 +5946,9 @@ msgstr "Ouvrir un compte démo"
 msgid "Open a Financial Account"
 msgstr "Ouvrir un compte financier"
 
+msgid "Open a Real Account"
+msgstr ""
+
 msgid "Open a free account"
 msgstr "Ouvrir un compte gratuit"
 
@@ -7286,6 +7292,9 @@ msgstr "La saisie doit être inférieure à %1"
 
 msgid "Should be more than %1"
 msgstr "Devrait être plus de %1"
+
+msgid "Should start with letter or number, and may contain hyphen and underscore."
+msgstr ""
 
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "Dans l'éventualité où ces dépenses ne pourraient être couvertes par les fonds disponibles sur votre compte, nous nous réservons le droit de rechercher d'autres moyens alternatifs d'obtenir le paiement, par exemplenbsp: si votre compte a généré des comptes d'achat, nous suspendrons le paiement des commissions associées à ces comptes, jusqu'à ce que le montant correspondant au préjudice ait été réglé."
@@ -8752,8 +8761,11 @@ msgstr "Limites de Trading et de Retrait"
 msgid "Trading binary options is relatively easy, and you can purchase a trade in only three simple steps."
 msgstr "Le trading d'options binaires est relativement simple et vous permet d'acheter une option en trois étapes seulement."
 
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\">Responsible Trading</a>.</span>"
-msgstr "Le trading d'options binaires ne convient pas nécessairement à tout le monde et vous devez vous assurer de bien comprendre les risques associés. Vos pertes peuvent excéder votre dépôt initial et vous ne détenez aucune partie de l'actif sous-jacent. Les options binaires sont des produits apparentés aux jeux d'argent. N'oubliez pas que ces derniers peuvent s'avérer addictifs : jouez de manière responsable. <span class=\"ja-hide\">Lisez notre article consacré au <a href=\"%1\">trading responsable</a>.</span>"
+msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
+msgstr ""
+
+msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href=\"%1\">Responsible Trading</a>."
+msgstr ""
 
 msgid "Trading forex and contracts for differences carries a high level of risk and %1 does not monitor the open positions of your account on your behalf. It is your responsibility to monitor your Open Positions and understand the exposure of your Open Positions whilst ensuring that your exposure commensurate with your risk appetite. Due to the cost associated with overnight open positions, you should consider investing in the market of the instrument in which you ordinarily transact in instead of investing in a CFD."
 msgstr "Les échanges forex et contrats pour différences contiennent un niveau de risque élevé et %1 ne contrôle pas les positions ouvertes de votre compte à votre place. Il est de votre responsabilité de contrôler vos Positions Ouvertes et comprendre l'exposition de vos Positions Ouvertes tout en vous assurant que votre exposition est proportionnel à votre appétit pour le risque. En raison du coût associé avec vos positions ouvertes de nuit, vous devriez considérer investir dans le marché de l'instrument dans lequel vous traitez ordinairement au lieu d'investir dans un CFD."
@@ -8986,12 +8998,6 @@ msgstr "Mise à jour des paramètres"
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "Mise à jour du manuel de lutte anti-fraude et d'autres documents pertinents"
 
-msgid "Upgrade to a Financial Account"
-msgstr "Ouvrir un compte financier"
-
-msgid "Upgrade to a Real Account"
-msgstr "Ouvrir un compte réel"
-
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr "A la fermeture d'une Transaction, le profit (ou perte) réalisé, qui est représenté par la différence entre le niveau d'ouverture et le niveau de fermeture de la Transaction multipliée par le nombre de lots (volume), devient dû et payable par nous à vous (ou dû et payable par vous à nous en cas de pertes réalisées)."
 
@@ -9159,9 +9165,6 @@ msgstr "En attente du tick d'entrée."
 
 msgid "Waiting for exit tick."
 msgstr "En attente du tick de sortie."
-
-msgid "Walkthrough Guide"
-msgstr "Guide interactif"
 
 msgid "Want to fund your %1 Real Account? <a href=\"%2\">Go to the Cashier</a>"
 msgstr "Vous voulez financer votre compte réel %1 ? <a href=\"%2\"> aller à la caisse</a>"
@@ -11196,6 +11199,9 @@ msgstr "{JAPAN ONLY}Financial Instruments Business No. xxxx"
 
 msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 msgstr "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
+
+msgid "{JAPAN ONLY}Footer regulatory text"
+msgstr ""
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."

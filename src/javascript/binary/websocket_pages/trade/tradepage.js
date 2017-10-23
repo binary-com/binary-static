@@ -10,6 +10,7 @@ const BinarySocket      = require('../socket');
 const ViewPopup         = require('../user/view_popup/view_popup');
 const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
+const Header            = require('../../base/header');
 const localize          = require('../../base/localize').localize;
 const State             = require('../../base/storage').State;
 const jpClient          = require('../../common_functions/country_base').jpClient;
@@ -38,6 +39,9 @@ const TradePage = (() => {
         }
 
         BinarySocket.wait('authorize').then(() => {
+            if (Client.get('is_virtual')) {
+                Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
+            }
             Client.activateByClientType('trading_socket_container');
             BinarySocket.send({ payout_currencies: 1 }).then(() => {
                 displayCurrencies();
