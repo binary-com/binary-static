@@ -9,15 +9,5 @@ module.exports = function (grunt) {
             },
             src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '!' + (global.branch_prefix || 'br_') + '*/**']
         },
-        trigger_tests: {
-            options: {
-                add    : true,
-                base   : 'dist',
-                branch : 'master',
-                repo   : 'git@github.com:binary-com/binary-static-ci.git',
-                message: 'Trigger tests',
-            },
-            src: grunt.option('staging') ? 'version' : '',
-        },
     }
 };
