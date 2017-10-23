@@ -17,6 +17,7 @@
             { id='order-execution-binary', text=l('Binary Options') },
             { id='order-execution-mt',     text=l('MetaTrader') },
         ]  },
+        { id='payment-agents',        text=l('Payment Agents') },
     ] %]
     <div class="tab-content gr-padding-10">
         [% WRAPPER tab_content_container %]
@@ -29,6 +30,7 @@
             [% WRAPPER tab_content id='risk-mt' %][% PROCESS legal/metatrader/risk_disclaimer.html.tt %][% END %]
             [% WRAPPER tab_content id='order-execution-binary' %][% PROCESS legal/order_execution.html.tt %][% END %]
             [% WRAPPER tab_content id='order-execution-mt' %][% PROCESS legal/metatrader/order_execution.html.tt %][% END %]
+            [% WRAPPER tab_content id='payment-agents' %][% PROCESS legal/payment_agents.html.tt %][% END %]
         [% END %]
     </div>
 [% END %]
