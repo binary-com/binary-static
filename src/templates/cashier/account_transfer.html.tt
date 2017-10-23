@@ -50,7 +50,8 @@
     <p>[% l('Note: You may only transfer funds between a fiat account and a cryptocurrency account.') %]</p>
     <p>[% l('Transfer funds between your fiat and cryptocurrency accounts for a fee:') %]</p>
     <ul class="bullet">
-        <li>[% l('From fiat to cryptocurrency: 1% transfer fee') %]</li>
-        <li>[% l('From cryptocurrency to fiat: 0.5% transfer fee') %]</li>
+        [% transfer_fee = '1%' %]
+        <li>[% l('From fiat to cryptocurrency: [_1] transfer fee', transfer_fee) %]</li>
+        <li>[% l('From cryptocurrency to fiat: [_1] transfer fee', transfer_fee) %]</li>
     </ul>
 </div>
