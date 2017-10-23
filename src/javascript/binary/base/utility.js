@@ -44,9 +44,11 @@ const downloadCSV = (csv_contents, filename = 'data.csv') => {
         const csv           = `data:text/csv;charset=utf-8,${csv_contents}`;
         const download_link = createElement('a', { href: encodeURI(csv), download: filename });
 
-        document.body.appendChild(download_link);
-        download_link.click();
-        document.body.removeChild(download_link);
+        if (document.body) {
+            document.body.appendChild(download_link);
+            download_link.click();
+            document.body.removeChild(download_link);
+        }
     }
 };
 
