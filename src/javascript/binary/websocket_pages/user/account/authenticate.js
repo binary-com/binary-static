@@ -56,7 +56,7 @@ const Authenticate = (() => {
          * Listens for file changes.
          * @param {*} event
          */
-        const onFileSelected = (event) => {
+        function onFileSelected (event) {
             if (!event.target.files || !event.target.files.length) {
                 resetLabel(event);
                 return;
