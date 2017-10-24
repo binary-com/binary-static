@@ -102,6 +102,16 @@ function setValidationStyle(element, has_error) {
     element.classList[has_error ? 'add' : 'remove'](error_class);
 }
 
+const closestByClass = (el, clazz) => {
+    while (el.className != clazz) {
+        el = el.parentNode;
+        if (!el) {
+            return null;
+        }
+    }
+    return el;
+}
+
 const changeTab = (e, go_left) => {
     const selector = e.target.getAttribute('data-parent');
     const el_parent = document.getElementById(selector);
@@ -128,14 +138,32 @@ const changeTab = (e, go_left) => {
 };
 
 const selectTab = (e) => {
-    const selector  = e.target.closest('ul').getAttribute('id');
-    const new_index = Array.prototype.indexOf.call(e.target.closest('ul').childNodes, e.target.parentNode);
-    if(new_index === -1) {
-        SlideSelector(e, selector, new_index + 2);
+    e.preventDefault();
+    const selector  = closestByClass(e.target, 'tm-ul').getAttribute('id');
+    const new_index = Array.prototype.indexOf.call(closestByClass(e.target, 'tm-ul').childNodes, e.target.parentNode);
+    const el_parent = document.getElementById(selector);
+    const elements = el_parent.getElementsByTagName('li');
+    for (let i = 0; i < elements.length; i++) {
+        if (/active/.test(elements[i].classList)) {
+            elements[i].classList.remove('active');
+            document.getElementById(`${elements[i].getAttribute('id')}-content`).classList.add('invisible');
+            let el_to_show;
+            let curr_index;
+            curr_index = new_index == 9 ? 4 : new_index == 7 ? 3 : new_index == 5 ? 2 : new_index == 3 ? 1 : 0;
+            el_to_show = elements[curr_index] ? elements[curr_index] : elements[0];
+            el_to_show.classList.add('active');
+            if(new_index === -1) {
+                SlideSelector(e, selector, new_index + 2);
+            }
+            else {
+                SlideSelector(e, selector, new_index);
+            }
+
+            document.getElementById(`${el_to_show.getAttribute('id')}-content`).classList.remove('invisible');
+            break;
+        }
     }
-    else {
-        SlideSelector(e, selector, new_index);
-    }
+
 };
 
 const SlideSelector = (e, selector, new_index) => {
@@ -144,5 +172,12 @@ const SlideSelector = (e, selector, new_index) => {
     }
     const selected_index = Math.floor(new_index / 2) + 1;
     const margin_left    = (selected_index - 1) * (100 / document.getElementById(selector).children.length);
-    $(`#${selector}_selector`).animate({ 'margin-left': `${margin_left}%` }, 300);
+    const element   =  document.getElementById(`${selector}_selector`);
+    const tab_width = (margin_left) * document.getElementById(`${selector}`).offsetWidth / 100;
+    window.setTimeout(() => {
+        element.style.transitionDuration = "0.3s";
+        element.style.transitionTimingFunction = "ease-out";
+        element.style.transform = `translate(${tab_width}px, 0)`;
+    }, 20);
+    // $(`#${selector}_selector`).animate({ 'margin-left': `${margin_left}%` }, 300);
 };

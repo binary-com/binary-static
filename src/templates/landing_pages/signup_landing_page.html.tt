@@ -71,8 +71,6 @@
         ] %]
         <link rel="stylesheet" href="https://style.binary.com/binary.css" />
         <link href="[% request.url_for('css/signup-landing.css') _ '?' _ static_hash %]" rel="stylesheet" />
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js" integrity="sha256-h0cGsrExGgcZtSZ/fRz4AwV+Nn6Urh/3v3jFRQ0w9dQ=" crossorigin="anonymous"></script>
-        <script src="https://style.binary.com/binary.js"></script>
         <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
         <script src="[% request.url_for('js/landing_pages/signup_landing_page.js') _ '?' _ static_hash %]"></script>
     </head>
