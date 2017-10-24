@@ -190,7 +190,7 @@ const Authenticate = (() => {
                         };
 
                         const error = { message: validate(obj) };
-                        if (error) reject(error);
+                        if (error && error.message) reject(error);
 
                         resolve(obj);
                     };
