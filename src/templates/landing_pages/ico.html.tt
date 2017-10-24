@@ -22,6 +22,7 @@
 
         <link href="[% request.url_for('css/ico.css') _ '?' _ static_hash %]" rel="stylesheet" />
         <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/tiny-slider.css" rel="stylesheet">
     </head>
 
     <body>
@@ -462,6 +463,52 @@
             </div>
         </div>
 
+        [% medias=[
+                { logo="leap-rate"              timestamp="Oct 23, 2017"    headlines="The Funding Benefits of the ICO (Initial Coin Offering)"                 url="https://www.leaprate.com/experts/jean-yves-sireau/funding-benefits-ico-initial-coin-offering/" },
+                { logo="finance-magnates"       timestamp="Oct 17, 2017"    headlines="Binary.com ‘Blockchain IPO’ Tokens to List on Lykke Vanuatu Exchange"    url="https://www.financemagnates.com/cryptocurrency/exchange/binary-com-blockchain-ipo-tokens-list-lykke-vanuatu-exchange/" },
+                { logo="btc-manager"            timestamp="Oct 17, 2017"    headlines="Binary.com Announces Initial Coin Offering (ICO)"                        url="https://btcmanager.com/binary-com-announces-initial-coin-offering/" },
+                { logo="coin-idol"              timestamp="Oct 17, 2017"    headlines="Online Trading Pioneer, Binary.com chooses ICO over IPO"                 url="https://coinidol.com/online-trading-pioneer-binary-com-chooses-ico/" },
+                { logo="coin-idol"              timestamp="Oct 16, 2017"    headlines="Binary.Com Announces Initial Coin Offering (ICO)"                        url="https://coinidol.com/binary-com-ico/" },
+                { logo="bitcoins-channel-news"  timestamp="Oct 10, 2017"    headlines="Binary.com Announces Initial Coin Offering (ICO)"                        url="http://bitcoinschannel.com/binary-com-announces-initial-coin-offering-ico" },
+                { logo="blockchain-news"        timestamp="Oct 6, 2017"     headlines="Binary.com Announces Initial Coin Offering (ICO)"                        url="http://www.the-blockchain.com/2017/10/06/binary-com-announces-initial-coin-offering-ico/" },
+                { logo="leap-rate"              timestamp="Sept 20, 2017"   headlines="Binary.com ICO provides a peek into the workings and finances of a Binary Options broker" url="https://www.leaprate.com/binary-options/broker/binary-com-ico-finances-binary-options-broker/" },
+                { logo="finance-magnates"       timestamp="Sept 15, 2017"   headlines="Exclusive: Binary.com ICO Info Shows Profits to Surpass \$20m in 2017"    url="https://www.financemagnates.com/binary-options/brokers/exclusive-binary-com-ico-shows-company-profits-surpass-20-mln-2017/" },
+                { logo="finance-magnates"       timestamp="Sept 13, 2017"   headlines="Exclusive: Binary.com Preparing an ICO, Looking for Blockchain Talent"   url="https://www.financemagnates.com/cryptocurrency/news/exclusive-binary-com-preparing-ico-looking-blockchain-talent/" },
+            ]
+        %]
+
+        <div id="media-coverage" class="fill-bg-color content-section center-text">
+            <div class="container">
+                <div class="gr-row">
+                    <div class="gr-12">
+                        <h3>[% l('Media Coverage') %]</h3>
+                    </div>
+                </div>
+                <div class="my-slider">
+                    [% FOREACH media IN medias %]
+                    <div>
+                        <div class="media">
+                            <span class="media__logo [% media.logo %]"></span>
+                            <a href="[% media.url %]" target="_blank">
+                                <p class="media__headlines">[% media.headlines %]</p>
+                                <span class="media__timestamp">[% media.timestamp %]</span>
+                            </a>
+                        </div>
+                    </div>
+                    [% END %]
+                </div>
+                <p>[% l("Join the conversation on our social channels for all news and updates related to our upcoming ICO.") %]</p>
+                <div class="gr-row gr-row-align-center">
+                    <a href="https://t.me/binarydotcom" target="_blank" class="gr-gutter-right">
+                        <img class="responsive" src="[% request.url_for("images/ico/icons/telegram.svg") %]" />
+                    </a>
+                    <a href="https://www.reddit.com/r/binarydotcom/" target="_blank">
+                        <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <div id="faq" class="invisible">
             <div class="intro">
                 <div class="center-text content-section intro-body">
@@ -628,15 +675,6 @@
                         <!-- /AWeber Web Form Generator 3.0.1 -->
                         <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
                     </div>
-                    <p class="margin-top-40">[% l("Join the conversation on our social channels for all news and updates related to our upcoming ICO.") %]</p>
-                    <div class="gr-row gr-row-align-center">
-                        <a href="https://t.me/binarydotcom" target="_blank" class="gr-gutter-right">
-                            <img class="responsive" src="[% request.url_for("images/ico/icons/telegram.svg") %]" />
-                        </a>
-                        <a href="https://www.reddit.com/r/binarydotcom/" target="_blank">
-                            <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -646,6 +684,8 @@
                 <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
             </div>
         </div>
+        <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js"></script>
         <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
         <script src="[% request.url_for('js/landing_pages/ico.js') _ '?' _ static_hash %]"></script>
     </body>

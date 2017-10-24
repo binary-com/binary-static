@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px;
 }
 
-h1, h2, h3 {
+h1, h2 {
     font-weight: 500 !important;
 }
 
@@ -535,10 +535,127 @@ input[type='text']:focus, input[type='submit']:focus {
     }
 }
 
-#ico_subscribe_section, #lykke-section {
+#ico_subscribe_section, #lykke-section, #media-coverage {
     padding: 50px 15px;
 
-    .margin-top-40 {
-        margin-top: 40px;
+    &#ico_subscribe_section {
+        background: url('../images/ico/images/subscribe.png') no-repeat bottom center scroll;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+
+        p {
+            color: $white;
+        }
     }
+}
+
+#media-coverage {
+    .container {
+        position: relative;
+
+        .tns-controls {
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            outline: none;
+        }
+    }
+    .media {
+        background: $white;
+        border: 1px solid $COLOR_DARK_WHITE;
+        border-radius: 3px;
+        text-align: left;
+        padding: 20px 10px;
+        height: 155px;
+
+        &__logo {
+            height: 50px;
+        }
+        &__headlines {
+            font-size: 14px;
+            font-weight: 400;
+            height: 55px;
+        }
+        &__timestamp {
+            font-size: 14px;
+            font-weight: 400;
+            color: $COLOR_ORANGE;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.tns-outer {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.tns-controls {
+    [data-controls='prev'], [data-controls='next'] {
+        position: absolute;
+        top: 30%;
+        background: none;
+        color: transparent;
+        width: 0;
+    }
+    [data-controls='prev'] {
+        left: -5%;
+
+        &:before {
+            content: url('../images/ico/icons/accordion_left.svg');
+        }
+    }
+    [data-controls='next'] {
+        right: -2%;
+
+        &:before {
+            content: url('../images/ico/icons/accordion_right.svg');
+        }
+    }
+}
+
+.tns-nav {
+    margin: 10px 0;
+    z-index: 1;
+
+    [aria-controls] {
+        width: 9px;
+        height: 9px;
+        padding: 0;
+        margin: 0 5px;
+        border-radius: 50%;
+        background: $COLOR_GRAY;
+        border: 0;
+    }
+    [aria-selected='true'] {
+        background: $COLOR_DARK_GRAY !important;
+    }
+}
+
+.bitcoins-channel-news {
+    content: url('../images/ico/icons/bitcoins_channel_news_outlet_logo.svg');
+}
+
+.blockchain-news {
+    content: url('../images/ico/icons/blockchain_news_logo.svg');
+}
+
+.btc-manager {
+    content: url('../images/ico/icons/btc_manager_logo.svg');
+}
+
+.coin-idol {
+    content: url('../images/ico/icons/coin_idol_logo.svg');
+}
+
+.finance-magnates {
+    content: url('../images/ico/icons/finance_magnates_logo.svg');
+}
+
+.leap-rate {
+    content: url('../images/ico/icons/leap_rate_online_trading_news_logo.svg');
 }

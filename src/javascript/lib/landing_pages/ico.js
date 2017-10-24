@@ -66,6 +66,27 @@ window.onload = function() {
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
     window.addEventListener('hashchange', hashRouter);
+
+    const slider = tns({
+        container: '.my-slider',
+        items: 1,
+        slideBy: 'page',
+        gutter: 30,
+        loop: false,
+        controls: false,
+        responsive: {
+            1200: {
+                items: 4,
+                controls: true,
+            },
+            1024: {
+                items: 3,
+            },
+            570: {
+                items: 2,
+            },
+        }
+    });
 };
 
 function clearHash() {
