@@ -103,6 +103,7 @@ const DepositWithdraw = (() => {
                 e.preventDefault();
                 if (Validation.validate(confirm_form_id)) {
                     document.getElementById('confirmation').remove();
+                    Client.set('cashier_confirmed', 1);
                     getCashierURL(1);
                 }
             });
@@ -112,7 +113,7 @@ const DepositWithdraw = (() => {
     };
 
     const getCashierURL = (bch_has_confirmed) => {
-        if (!/^BCH/.test(Client.get('currency')) || bch_has_confirmed) {
+        if (!/^BCH/.test(Client.get('currency')) || bch_has_confirmed || Client.get('cashier_confirmed')) {
             BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
         } else {
             showConfirmationPopup();
