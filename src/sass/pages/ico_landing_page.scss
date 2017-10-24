@@ -262,10 +262,16 @@ input[type='text']:focus, input[type='submit']:focus {
     top: 0;
     border-width: 0 0 1px;
     margin-bottom: 20px;
+    background: $COLOR_BLUE !important;
     -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     overflow: auto;
+
+    &.top-nav-collapse {
+        padding: 0;
+        background: none !important;
+    }
 }
 
 .navbar-brand {
@@ -301,11 +307,6 @@ input[type='text']:focus, input[type='submit']:focus {
     }
 }
 
-.navbar-fixed-top.top-nav-collapse {
-    padding: 0;
-    background: $COLOR_BLUE !important;
-}
-
 .navbar-toggle {
     position: relative;
     float: right;
@@ -337,7 +338,7 @@ input[type='text']:focus, input[type='submit']:focus {
     }
     .navbar-fixed-top {
         position: inherit;
-        background: $COLOR_BLUE;
+        background: $COLOR_BLUE !important;
         margin-bottom: 0;
         height: 50px;
         overflow: hidden;
@@ -351,9 +352,13 @@ input[type='text']:focus, input[type='submit']:focus {
         .navbar-header {
             padding: 10px;
         }
+        &.top-nav-collapse {
+            padding: 0;
+            background: $COLOR_BLUE !important;
+        }
     }
     .navbar-fixed-top.expand {
-        height: 220px;
+        height: 250px;
     }
     .navbar-brand {
         float: none;

@@ -28,12 +28,16 @@ const Menu = (() => {
     };
 
     const showMainMenu = () => {
-        main_menu.setVisibility(1);
+        if (main_menu) {
+            main_menu.setVisibility(1);
+        }
         activateMainMenu();
     };
 
     const hideMainMenu = () => {
-        main_menu.setVisibility(0);
+        if (main_menu) {
+            main_menu.setVisibility(0);
+        }
     };
 
     const activateMainMenu = () => {
@@ -55,7 +59,9 @@ const Menu = (() => {
     };
 
     const onUnload = () => {
-        main_menu.removeEventListener('mouseleave', onMouseLeave);
+        if (main_menu) {
+            main_menu.removeEventListener('mouseleave', onMouseLeave);
+        }
         applyToAllElements(items, (el) => { el.removeEventListener('mouseenter', onMouseEnter); });
     };
 
@@ -95,7 +101,16 @@ const Menu = (() => {
     const activeMainMenu = () => {
         let pathname = window.location.pathname;
         if (/cashier/i.test(pathname) && !(/cashier_password|payment_methods/.test(pathname))) {
-            pathname = document.getElementById('topMenuCashier').getElementsByTagName('a')[0].getAttribute('href');
+            const cashier = document.getElementById('topMenuCashier');
+            if (cashier) {
+                const link = cashier.getElementsByTagName('a')[0];
+                if (link) {
+                    pathname = link.getAttribute('href');
+                }
+            }
+        }
+        if (!main_menu) {
+            return {};
         }
         let subitem;
         let item = main_menu.querySelector(`a[href*="${pathname}"]`);
@@ -103,7 +118,7 @@ const Menu = (() => {
         if (item) {
             const parent = item.closest('li');
             // Is something selected in main items list
-            if (parent.classList.contains('sub_item')) {
+            if (parent && parent.classList.contains('sub_item')) {
                 subitem = item;
                 item    = subitem.closest('.item');
             } else {

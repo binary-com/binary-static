@@ -16,12 +16,15 @@ const Crowdin = (() => {
      */
     const init = () => {
         if (isInContextEnvironment()) {
-            document.querySelector('#topbar ul[id$="_language"]').setVisibility(0);
+            const lang = document.querySelector('#topbar ul[id$="_language"]');
+            if (lang) lang.setVisibility(0);
             /* eslint-disable no-underscore-dangle */
             window._jipt = [];
             window._jipt.push(['project', 'binary-static']);
             /* eslint-enable no-underscore-dangle */
-            document.body.appendChild(createElement('script', { type: 'text/javascript', src: `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js` }));
+            if (document.body) {
+                document.body.appendChild(createElement('script', { type: 'text/javascript', src: `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js` }));
+            }
         }
     };
 
