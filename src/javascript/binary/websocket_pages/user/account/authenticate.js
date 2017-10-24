@@ -189,7 +189,7 @@ const Authenticate = (() => {
                             expirationDate: f.exp_date || undefined,
                         };
 
-                        const error = validate(obj);
+                        const error = { message: validate(obj) };
                         if (error) reject(error);
 
                         resolve(obj);
@@ -227,7 +227,7 @@ const Authenticate = (() => {
                 return localize('ID number is required for [_1].', [doc_name[file.documentType]]);
             }
             if (file.documentId && !/^[\w\s-]{0,30}$/.test(file.documentId)) {
-                return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number.', [doc_name[file.documentType]]);
+                return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).', [doc_name[file.documentType]]);
             }
             if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
                 return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
