@@ -100,19 +100,20 @@ const BinaryPjax = (() => {
      * Load url from server
      */
     const load = (url, replace) => {
-        const lang    = getLanguage();
-        const xhttp   = new XMLHttpRequest();
+        const lang  = getLanguage();
+        const xhttp = new XMLHttpRequest();
 
         xhttp.onreadystatechange = function() {
             if (this.readyState !== 4 || this.status !== 200) {
                 return;
             }
-            const div = createElement('div', { html: this.responseText });
+            const div    = createElement('div', { html: this.responseText });
+            const result = { content: div.querySelector(params.content_selector) };
 
-            const result = {
-                title  : div.getElementsByTagName('title')[0].textContent.trim(),
-                content: div.querySelector(params.content_selector),
-            };
+            const title = div.getElementsByTagName('title')[0];
+            if (title) {
+                result.title = title.textContent.trim();
+            }
 
             // If failed to find title or content, load the page in traditional way
             if (!result.title || !result.content) {
@@ -144,7 +145,10 @@ const BinaryPjax = (() => {
         params.container.dispatchEvent(new Event('binarypjax:before'));
 
         document.title = content.title;
-        params.container.querySelector(params.content_selector).remove();
+        const content_selector = params.container.querySelector(params.content_selector);
+        if (content_selector) {
+            content_selector.remove();
+        }
         $(params.container).append($(content.content).clone());
 
         params.container.dispatchEvent(new CustomEvent('binarypjax:after', { detail: content.content }));

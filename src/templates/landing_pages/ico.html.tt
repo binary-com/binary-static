@@ -27,33 +27,31 @@
     <body>
         [% PROCESS global/gtm.html.tt %]
         <div class="navbar-fixed-top" role="navigation" id="navigation">
-            <div class="">
-                <div class="navbar-header">
-                    <span id="toggle-menu" href="button" class="navbar-toggle"></span>
-                    <a class="navbar-brand logo" href="[% request.url_for('home') %]"></a>
-                </div>
-                <div class="navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="invisible">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li>
-                            <a href="[% request.url_for('ico-disclaimer.html') %]">[% l("Information Memorandum") %]</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#how-ico-works">[% l("How the ICO works") %]</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#who-we-are">[% l("Who we are") %]</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#our-growth">[% l("Our growth") %]</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="faq-btn">[% l("FAQ") %]</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="navbar-header">
+                <span id="toggle-menu" href="button" class="navbar-toggle"></span>
+                <a class="navbar-brand logo" href="[% request.url_for('home') %]"></a>
+            </div>
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="invisible">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a href="[% request.url_for('ico-disclaimer.html') %]">[% l("Information Memorandum") %]</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#how-ico-works">[% l("How the ICO works") %]</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#who-we-are">[% l("Who we are") %]</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#our-growth">[% l("Our growth") %]</a>
+                    </li>
+                    <li>
+                        <a class="faq-btn" href="#faq">[% l("FAQ") %]</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div id="home">
@@ -218,7 +216,9 @@
                         <h2>[% l("Need more information on the ICO?") %]</h2>
                     </div>
                     <div class="gr-12">
-                        <button id="faq-btn" class="button faq-btn">[% l("Read our FAQ") %]</button>
+                        <a href="#faq" class="button faq-btn">
+                            <span>[% l("Read our FAQ") %]</span>
+                        </a>
                     </div>
                 </div>
             </div>

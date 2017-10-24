@@ -58,7 +58,10 @@ const Url = (() => {
 
     const urlForStatic = (path = '') => {
         if (!static_host || static_host.length === 0) {
-            static_host = document.querySelector('script[src*="binary.min.js"],script[src*="binary.js"]').getAttribute('src');
+            static_host = document.querySelector('script[src*="binary.min.js"],script[src*="binary.js"]');
+            if (static_host) {
+                static_host = static_host.getAttribute('src');
+            }
 
             if (static_host && static_host.length > 0) {
                 static_host = static_host.substr(0, static_host.indexOf('/js/') + 1);

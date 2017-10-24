@@ -1,26 +1,45 @@
-// Handler when the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", function(){
+window.onload = function() {
+    toggleMobileMenu();
+    hashRouter();
+    collapseNavbar();
+
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
 
     const clients_country = getClientCountry();
 
-    // Handle form submission
-    if (window.location.hash === '#done') {
-        dataLayer.push({ bom_country_abbrev: clients_country || '' });
-        dataLayer.push({ event: 'ico_success' });
-        for (let i = 0; i < 2; i++) {
-            document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
-            document.getElementsByTagName('form')[i].classList.add('invisible');
+    function switchView(path) {
+        document.getElementById('faq').classList[path === 'faq' ? 'remove' : 'add']('invisible');
+        document.getElementById('home').classList[path === 'faq' ? 'add' : 'remove']('invisible');
+    }
+
+    function hashRouter() {
+        const hash = window.location.hash.substr(1);
+
+        if (/done/.test(hash)) {
+            dataLayer.push({ bom_country_abbrev: clients_country || '' });
+            dataLayer.push({ event: 'ico_success' });
+            clearHash();
+            for (let i = 0; i < 2; i++) {
+                document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
+                document.getElementsByTagName('form')[i].classList.add('invisible');
+            }
+            let navbarHeight = checkWidth();
+            const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
+            scrollTo(to);
         }
-        if (window.history.pushState) {
-            window.history.pushState('', '/', window.location.pathname)
-        } else {
-            window.location.hash = '';
+
+        if (/faq/.test(hash)) {
+            switchView('faq');
+            scrollTo(0);
+            window.location.hash = '#faq';
         }
-        let navbarHeight = checkWidth();
-        const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
-        scrollTo(to);
+
+        if (!hash) {
+            switchView('home');
+            scrollTo(0);
+            clearHash();
+        }
     }
 
     // Set language fields
@@ -30,36 +49,32 @@ document.addEventListener("DOMContentLoaded", function(){
         el_langs[i].value = language;
     }
 
-    toggleMobileMenu();
-
     // Scroll to section
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('page-scroll')) {
-            document.getElementById('home').classList.remove('invisible');
-            document.getElementById('faq').classList.add('invisible');
+            e.preventDefault();
+            switchView('home');
+            clearHash();
             const target = e.target.getAttribute('href').substr(1);
             const offset = /who-we-are|page-top/.test(target) ? 55 : 0;
             const navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
             scrollTo(to);
-            e.preventDefault();
         }
     });
 
-    const faqButtons = document.getElementsByClassName('faq-btn');
-    for (let i = 0; i < faqButtons.length; i++) {
-        faqButtons[i].addEventListener('click', function(e) {
-            document.getElementById('faq').classList.remove('invisible');
-            scrollTo(0);
-            e.stopPropagation();
-            document.getElementById('home').classList.add('invisible');
-        });
-    };
-
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
-    document.ready = collapseNavbar;
-});
+    window.addEventListener('hashchange', hashRouter);
+};
+
+function clearHash() {
+    if (window.history.pushState) {
+        window.history.pushState('', '/', window.location.pathname);
+    } else {
+        window.location.hash = '';
+    }
+}
 
 function getClientCountry() {
     let clients_country = sessionStorage.getItem('clients_country');
@@ -111,5 +126,5 @@ function getClientCountry() {
 // Collapse navbar on scroll
 function collapseNavbar() {
     const navbarFixedTopEl = document.getElementsByClassName('navbar-fixed-top');
-    navbarFixedTopEl[0].classList[window.scrollY > 50 ? 'add' : 'remove']('top-nav-collapse');
+    navbarFixedTopEl[0].classList[window.scrollY < 50 ? 'add' : 'remove']('top-nav-collapse');
 }

@@ -230,14 +230,20 @@ const Client = (() => {
         if (!topbar) {
             return;
         }
-        const topbar_class          = topbar.classList;
-        const el_section            = section_id ? document.getElementById(section_id) : document.body;
+        const topbar_class = topbar.classList;
+        const el_section   = section_id ? document.getElementById(section_id) : document.body;
+        if (!el_section) {
+            return;
+        }
         const primary_bg_color_dark = 'primary-bg-color-dark';
         const secondary_bg_color    = 'secondary-bg-color';
 
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status').then(() => {
-                document.getElementById('client-logged-in').classList.add('gr-centered');
+                const client_logged_in = document.getElementById('client-logged-in');
+                if (client_logged_in) {
+                    client_logged_in.classList.add('gr-centered');
+                }
                 applyToAllElements('.client_logged_in', (el) => { el.setVisibility(1); });
                 if (get('is_virtual')) {
                     applyToAllElements('.client_virtual', (el) => { el.setVisibility(1); }, '', el_section);
