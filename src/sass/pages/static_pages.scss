@@ -286,6 +286,24 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.omnibus-content {
+    .box {
+        min-height: 156px;
+
+        img {
+            height: 48px;
+        }
+    }
+    .steps {
+        img {
+            height: 43px;
+        }
+    }
+    .center-text {
+        text-align: center;
+    }
+}
+
 .accounts-content {
     .table-container table {
         border: 1px solid $COLOR_LIGHT_GRAY;
