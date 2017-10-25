@@ -75,20 +75,16 @@ window.onload = function() {
         autoplay: true,
         autoplayHoverPause: true,
         speed: 600,
-        items: 2,
+        items: 2,   // start with mobile config
         gutter: 5,
         responsive: {
-            1024: {
+            900: {  // desktop config
                 items: 4,
                 gutter: 20,
             },
-            768: {
+            640: {  // tablet config
                 items: 3,
                 gutter: 15,
-            },
-            576: {
-                items: 2,
-                gutter: 10,
             },
         },
         onInit: function() {

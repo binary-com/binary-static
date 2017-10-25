@@ -625,14 +625,14 @@ input[type='text']:focus, input[type='submit']:focus {
         width: 0;
     }
     [data-controls='prev'] {
-        left: -40px;
+        left: -35px;
 
         &:before {
             content: url('../images/ico/icons/accordion_left.svg');
         }
     }
     [data-controls='next'] {
-        right: -20px;
+        right: -15px;
 
         &:before {
             content: url('../images/ico/icons/accordion_right.svg');
