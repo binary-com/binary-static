@@ -554,12 +554,6 @@ input[type='text']:focus, input[type='submit']:focus {
 #media-coverage {
     .slider-container {
         position: relative;
-
-        .tns-controls {
-            width: 95%;
-            height: 100%;
-            outline: none;
-        }
     }
     .media {
         background: $white;
@@ -576,7 +570,7 @@ input[type='text']:focus, input[type='submit']:focus {
             @media (max-width: 768px) {
                 height: 40px;
             }
-            @media (max-width: 570px) {
+            @media (max-width: 576px) {
                 height: 25px;
             }
             @media (max-width: 320px) {
@@ -619,20 +613,33 @@ input[type='text']:focus, input[type='submit']:focus {
 .tns-controls {
     [data-controls='prev'], [data-controls='next'] {
         position: absolute;
-        top: 30%;
+        top: 26%;
         background: none;
         color: transparent;
         width: 0;
+        padding: 0;
+
+        &:before {
+            display: inline-block;
+            padding: 15px;
+            width: 17px;
+            @media (max-width: 768px) {
+                width: 14px;
+            }
+            @media (max-width: 576px) {
+                width: 11px;
+            }
+        }
     }
     [data-controls='prev'] {
-        left: -35px;
+        left: -20px;
 
         &:before {
             content: url('../images/ico/icons/accordion_left.svg');
         }
     }
     [data-controls='next'] {
-        right: -15px;
+        right: 27px;
 
         &:before {
             content: url('../images/ico/icons/accordion_right.svg');
