@@ -587,6 +587,9 @@ input[type='text']:focus, input[type='submit']:focus {
             font-size: 14px;
             font-weight: 400;
             height: 55px;
+            @media (max-width: 576px) {
+                font-size: 12px;
+            }
             @media (max-width: 320px) {
                 font-size: 11px;
             }

@@ -78,7 +78,7 @@ window.onload = function() {
         items: 2,
         gutter: 5,
         responsive: {
-            1200: {
+            1024: {
                 items: 4,
                 gutter: 20,
             },
@@ -86,14 +86,16 @@ window.onload = function() {
                 items: 3,
                 gutter: 15,
             },
-            570: {
+            576: {
                 items: 2,
                 gutter: 10,
-            }
+            },
+        },
+        onInit: function() {
+            window.dispatchEvent(new Event('resize')); // trigger resize event
+            document.getElementsByClassName('slider-container')[0].classList.remove('invisible');
         }
     });
-
-    document.getElementsByClassName('slider-container')[0].classList.remove('invisible');
 };
 
 function clearHash() {
