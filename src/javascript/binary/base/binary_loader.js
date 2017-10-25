@@ -32,9 +32,11 @@ const BinaryLoader = (() => {
         BinarySocket.init(BinarySocketGeneral.initOptions());
 
         container = document.getElementById('content-holder');
-        container.addEventListener('binarypjax:before', beforeContentChange);
-        container.addEventListener('binarypjax:after',  afterContentChange);
-        BinaryPjax.init(container, '#content');
+        if (container) {
+            container.addEventListener('binarypjax:before', beforeContentChange);
+            container.addEventListener('binarypjax:after',  afterContentChange);
+            BinaryPjax.init(container, '#content');
+        }
     };
 
     const beforeContentChange = () => {
@@ -107,6 +109,10 @@ const BinaryLoader = (() => {
 
     const displayMessage = (message) => {
         const content       = container.querySelector('#content .container');
+        if (!content) {
+            return;
+        }
+
         const div_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
         const div_notice    = createElement('p', { class: 'center-text notice-msg', html: localize(message) });
 
