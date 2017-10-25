@@ -461,9 +461,11 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        [% medias=[
+            <!-- news order: latest to oldest -->
+            [% news=[
+                { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="BINARY.COM offers securities-backed tokens in ICO"                       url="http://www.profitf.com/news/binary-com-offers-securities-backed-tokens-initial-coin-offering-ico/" },
+                { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="Interview with Jean-Yves Sireau (CEO of Binary.com)"                     url="http://www.profitf.com/interviews/interview-jean-yves-sireau-ceo-binary-com/#History_and_background" },
                 { logo="leap-rate"              timestamp="Oct 23, 2017"    headlines="The Funding Benefits of the ICO (Initial Coin Offering)"                 url="https://www.leaprate.com/experts/jean-yves-sireau/funding-benefits-ico-initial-coin-offering/" },
                 { logo="finance-magnates"       timestamp="Oct 17, 2017"    headlines="Binary.com ‘Blockchain IPO’ Tokens to List on Lykke Vanuatu Exchange"    url="https://www.financemagnates.com/cryptocurrency/exchange/binary-com-blockchain-ipo-tokens-list-lykke-vanuatu-exchange/" },
                 { logo="btc-manager"            timestamp="Oct 17, 2017"    headlines="Binary.com Announces Initial Coin Offering (ICO)"                        url="https://btcmanager.com/binary-com-announces-initial-coin-offering/" },
@@ -472,39 +474,41 @@
                 { logo="bitcoins-channel-news"  timestamp="Oct 10, 2017"    headlines="Binary.com Announces Initial Coin Offering (ICO)"                        url="http://bitcoinschannel.com/binary-com-announces-initial-coin-offering-ico" },
                 { logo="blockchain-news"        timestamp="Oct 6, 2017"     headlines="Binary.com Announces Initial Coin Offering (ICO)"                        url="http://www.the-blockchain.com/2017/10/06/binary-com-announces-initial-coin-offering-ico/" },
                 { logo="leap-rate"              timestamp="Sept 20, 2017"   headlines="Binary.com ICO provides a peek into the workings and finances of a Binary Options broker" url="https://www.leaprate.com/binary-options/broker/binary-com-ico-finances-binary-options-broker/" },
-                { logo="finance-magnates"       timestamp="Sept 15, 2017"   headlines="Exclusive: Binary.com ICO Info Shows Profits to Surpass \$20m in 2017"    url="https://www.financemagnates.com/binary-options/brokers/exclusive-binary-com-ico-shows-company-profits-surpass-20-mln-2017/" },
+                { logo="finance-magnates"       timestamp="Sept 15, 2017"   headlines="Exclusive: Binary.com ICO Info Shows Profits to Surpass \$20m in 2017"   url="https://www.financemagnates.com/binary-options/brokers/exclusive-binary-com-ico-shows-company-profits-surpass-20-mln-2017/" },
                 { logo="finance-magnates"       timestamp="Sept 13, 2017"   headlines="Exclusive: Binary.com Preparing an ICO, Looking for Blockchain Talent"   url="https://www.financemagnates.com/cryptocurrency/news/exclusive-binary-com-preparing-ico-looking-blockchain-talent/" },
             ]
-        %]
+            %]
 
-        <div id="media-coverage" class="fill-bg-color content-section center-text">
-            <div class="container">
-                <div class="gr-row">
-                    <div class="gr-12">
-                        <h3>[% l('Media Coverage') %]</h3>
-                    </div>
-                </div>
-                <div class="my-slider">
-                    [% FOREACH media IN medias %]
-                    <div>
-                        <div class="media">
-                            <span class="media__logo [% media.logo %]"></span>
-                            <a href="[% media.url %]" target="_blank">
-                                <p class="media__headlines">[% media.headlines %]</p>
-                                <span class="media__timestamp">[% media.timestamp %]</span>
-                            </a>
+            <div id="media-coverage" class="fill-bg-color content-section center-text">
+                <div class="container">
+                    <div class="gr-row">
+                        <div class="gr-12">
+                            <h3>[% l('Media Coverage') %]</h3>
                         </div>
                     </div>
-                    [% END %]
-                </div>
-                <p>[% l("Join the conversation on our social channels for all news and updates related to our upcoming ICO.") %]</p>
-                <div class="gr-row gr-row-align-center">
-                    <a href="https://t.me/binarydotcom" target="_blank" class="gr-gutter-right">
-                        <img class="responsive" src="[% request.url_for("images/ico/icons/telegram.svg") %]" />
-                    </a>
-                    <a href="https://www.reddit.com/r/binarydotcom/" target="_blank">
-                        <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
-                    </a>
+                    <div class="slider-container invisible">
+                        <div class="my-slider">
+                            [% FOREACH media IN news %]
+                                <div>
+                                    <a href="[% media.url %]" target="_blank">
+                                        <div class="media">
+                                            <span class="media__logo [% media.logo %]"></span>
+                                            <p class="media__headlines">[% media.headlines %]</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            [% END %]
+                        </div>
+                    </div>
+                    <p>[% l("Join the conversation on our social channels for all news and updates related to our upcoming ICO.") %]</p>
+                    <div class="gr-row gr-row-align-center">
+                        <a href="https://t.me/binarydotcom" target="_blank" class="gr-gutter-right">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/telegram.svg") %]" />
+                        </a>
+                        <a href="https://www.reddit.com/r/binarydotcom/" target="_blank">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

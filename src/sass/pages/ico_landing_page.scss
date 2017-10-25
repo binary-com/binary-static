@@ -552,13 +552,12 @@ input[type='text']:focus, input[type='submit']:focus {
 }
 
 #media-coverage {
-    .container {
+    .slider-container {
         position: relative;
 
         .tns-controls {
-            position: absolute;
-            width: 100%;
-            height: 60%;
+            width: 95%;
+            height: 100%;
             outline: none;
         }
     }
@@ -568,30 +567,50 @@ input[type='text']:focus, input[type='submit']:focus {
         border-radius: 3px;
         text-align: left;
         padding: 20px 10px;
-        height: 155px;
+        height: 125px;
+        transition: all 0.3s;
 
         &__logo {
             height: 50px;
+            max-width: 100%;
+            @media (max-width: 768px) {
+                height: 40px;
+            }
+            @media (max-width: 570px) {
+                height: 25px;
+            }
+            @media (max-width: 320px) {
+                height: 20px;
+            }
         }
         &__headlines {
             font-size: 14px;
             font-weight: 400;
             height: 55px;
+            @media (max-width: 320px) {
+                font-size: 11px;
+            }
         }
-        &__timestamp {
-            font-size: 14px;
-            font-weight: 400;
-            color: $COLOR_ORANGE;
+    }
+    a:hover, a:active {
+        text-decoration: none;
+
+        .media {
+            border: 1px solid $COLOR_ORANGE;
         }
-        a:hover {
-            text-decoration: none;
-        }
+    }
+    [data-action='stop'], [data-action='start'] {
+        display: none;
     }
 }
 
 .tns-outer {
     display: flex;
     flex-direction: column-reverse;
+    margin: 0 30px;
+    @media (max-width: 320px) {
+        margin: 0 20px;
+    }
 }
 
 .tns-controls {
@@ -603,14 +622,14 @@ input[type='text']:focus, input[type='submit']:focus {
         width: 0;
     }
     [data-controls='prev'] {
-        left: -5%;
+        left: -40px;
 
         &:before {
             content: url('../images/ico/icons/accordion_left.svg');
         }
     }
     [data-controls='next'] {
-        right: -2%;
+        right: -20px;
 
         &:before {
             content: url('../images/ico/icons/accordion_right.svg');
@@ -619,7 +638,7 @@ input[type='text']:focus, input[type='submit']:focus {
 }
 
 .tns-nav {
-    margin: 10px 0;
+    margin-top: 10px;
     z-index: 1;
 
     [aria-controls] {
@@ -658,4 +677,8 @@ input[type='text']:focus, input[type='submit']:focus {
 
 .leap-rate {
     content: url('../images/ico/icons/leap_rate_online_trading_news_logo.svg');
+}
+
+.profit-f {
+    content: url('../images/ico/icons/profit_f_logo.svg');
 }

@@ -37,7 +37,6 @@ window.onload = function() {
 
         if (!hash) {
             switchView('home');
-            scrollTo(0);
             clearHash();
         }
     }
@@ -67,26 +66,34 @@ window.onload = function() {
     window.onscroll = collapseNavbar;
     window.addEventListener('hashchange', hashRouter);
 
+    // News slider configuration
     const slider = tns({
         container: '.my-slider',
-        items: 1,
         slideBy: 'page',
-        gutter: 30,
-        loop: false,
-        controls: false,
+        rewind: true,
+        controls: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        speed: 600,
+        items: 2,
+        gutter: 5,
         responsive: {
             1200: {
                 items: 4,
-                controls: true,
+                gutter: 20,
             },
-            1024: {
+            768: {
                 items: 3,
+                gutter: 15,
             },
             570: {
                 items: 2,
-            },
+                gutter: 10,
+            }
         }
     });
+
+    document.getElementsByClassName('slider-container')[0].classList.remove('invisible');
 };
 
 function clearHash() {
