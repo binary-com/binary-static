@@ -97,7 +97,7 @@ In order to remove the created folders from your gh-pages, you can use either:
   - `grunt shell:compile_dev --path=about-us` to re-compile only template(s) which serve about-us path in URL.
 
 
-## Release to Production
+## Release
 
 ```
 grunt release --staging=1|--production=1|--translations=1 [--cleanup] [--reset]
