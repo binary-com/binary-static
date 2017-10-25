@@ -353,6 +353,7 @@ body #not_authenticated_financial ul.checked > li {
             &.text-orange {
                 color: $COLOR_ORANGE;
                 font-size: $FONT_SIZE_XXL;
+                font-weight: 300;
             }
         }
     }
