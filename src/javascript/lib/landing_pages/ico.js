@@ -37,6 +37,7 @@ window.onload = function() {
 
         if (!hash) {
             switchView('home');
+            scrollTo(0);
             clearHash();
         }
     }
