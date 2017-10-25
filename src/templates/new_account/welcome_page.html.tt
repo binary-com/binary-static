@@ -15,10 +15,10 @@
                     <div>
                         <strong>[% l('Real Account') %]</strong>
                         <p class="payment-icons">
-                            <img src="[% request.url_for('images/pages/set_currency/usd.svg') %]">
-                            <img src="[% request.url_for('images/pages/set_currency/aud.svg') %]">
-                            <img src="[% request.url_for('images/pages/set_currency/eur.svg') %]">
-                            <img src="[% request.url_for('images/pages/set_currency/gbp.svg') %]">
+                            <img src="[% request.url_for('images/pages/set_currency/usd_icon.svg') %]">
+                            <img src="[% request.url_for('images/pages/set_currency/aud_icon.svg') %]">
+                            <img src="[% request.url_for('images/pages/set_currency/eur_icon.svg') %]">
+                            <img src="[% request.url_for('images/pages/set_currency/gbp_icon.svg') %]">
                             <img src="[% request.url_for('images/pages/set_currency/btc.svg') %]">
                             <img src="[% request.url_for('images/pages/set_currency/ltc.svg') %]">
                             <img src="[% request.url_for('images/pages/set_currency/bch.svg') %]"></p>
