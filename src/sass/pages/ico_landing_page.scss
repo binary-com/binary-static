@@ -39,6 +39,10 @@ button {
     padding: 100px 15px;
 }
 
+.content-section-sm {
+    padding: 50px 15px;
+}
+
 // Intro section
 .intro {
     height: auto;
@@ -535,19 +539,15 @@ input[type='text']:focus, input[type='submit']:focus {
     }
 }
 
-#ico_subscribe_section, #lykke-section, #media-coverage {
-    padding: 50px 15px;
+#ico_subscribe_section {
+    background: url('../images/ico/images/subscribe.png') no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 
-    &#ico_subscribe_section {
-        background: url('../images/ico/images/subscribe.png') no-repeat bottom center scroll;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-
-        p {
-            color: $white;
-        }
+    p {
+        color: $white;
     }
 }
 
@@ -558,7 +558,7 @@ input[type='text']:focus, input[type='submit']:focus {
     .media {
         background: $white;
         border: 1px solid $COLOR_DARK_WHITE;
-        border-radius: 3px;
+        border-radius: $BORDER_RADIUS;
         text-align: left;
         padding: 20px 10px;
         height: 125px;
