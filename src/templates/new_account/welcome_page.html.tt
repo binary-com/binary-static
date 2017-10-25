@@ -1,4 +1,4 @@
-<div id="welcome-new-account" class="center-text static_full">
+<div class="center-text static_full">
     <span class="account-created"></span>
 
     [% INCLUDE global/separator_line.html.tt class="gr-padding-5" invisible=1 %]
@@ -8,7 +8,7 @@
 
     [% INCLUDE global/separator_line.html.tt class="gr-padding-10" invisible=1 %]
 
-    <div class="box bordered gr-8 gr-centered">
+    <div class="box bordered gr-8 gr-12-p gr-centered">
         <div class="container gr-row box-grid">
             <div class="gr-7 gr-12-p gr-12-m gr-padding-30 gr-parent">
                 <div class="box border-gray gr-gutter gr-padding-10">
