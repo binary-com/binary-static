@@ -158,14 +158,16 @@ function collapseNavbar() {
 }
 
 function initCountdown(start_epoch, end_date) {
-    const el_countdown = document.getElementById('countdown');
-    const el_days      = el_countdown.querySelector('#cd_days');
-    const el_hours     = el_countdown.querySelector('#cd_hours');
-    const el_minutes   = el_countdown.querySelector('#cd_minutes');
-    const el_seconds   = el_countdown.querySelector('#cd_seconds');
+    const el_container = document.getElementById('countdown_container');
+    const el_days      = el_container.querySelector('#cd_days');
+    const el_hours     = el_container.querySelector('#cd_hours');
+    const el_minutes   = el_container.querySelector('#cd_minutes');
+    const el_seconds   = el_container.querySelector('#cd_seconds');
     const date_diff    = Date.parse(new Date()) - start_epoch * 1000;
 
     let countdownd_interval;
+
+    el_container.classList.remove('invisible');
 
     function updateCountdown() {
         const remaining = calcRemainingTime(end_date, date_diff);
@@ -177,6 +179,7 @@ function initCountdown(start_epoch, end_date) {
 
         if (remaining.total <= 0) {
             clearInterval(countdownd_interval);
+            el_container.classList.add('invisible');
         }
     }
 

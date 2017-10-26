@@ -71,14 +71,24 @@
                     <div id="coming-soon" class="content-section center-text transparent-dark-blue-bg">
                         <div class="gr-row">
                             <div class="gr-12">
-                                <h3 class="content-inverse-color">[% l("Coming soon") %]</h3>
-                                <div id="countdown" class="invisiblee">
-                                    <span id="cd_days"></span>
-                                    <span id="cd_hours"></span>
-                                    <span id="cd_minutes"></span>
-                                    <span id="cd_seconds"></span>
+                                <div id="countdown_container" class="invisible">
+                                    <h3 class="content-inverse-color">[% l("Token Sale Begins In") %]</h3>
+                                    <div id="countdown">
+                                        [% items=[
+                                            { id='days',    text=l("Days") },
+                                            { id='hours',   text=l("Hours") },
+                                            { id='minutes', text=l("Minutes") },
+                                            { id='seconds', text=l("Seconds") },
+                                        ] %]
+                                        [% FOREACH item IN items %]
+                                        <span class="cd-item">
+                                            <span class="cd-value" id="cd_[% item.id %]"></span>
+                                            <span class="cd-label">[% item.text %]</span>
+                                        </span>
+                                        [% END %]
+                                    </div>
+                                    <hr class="underline">
                                 </div>
-                                <hr class="underline">
                                 <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO, including the official launch date.") %]</p>
                                 <div class="form-container">
                                     <!-- AWeber Web Form Generator 3.0.1 -->

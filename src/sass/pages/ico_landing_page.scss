@@ -684,3 +684,28 @@ input[type='text']:focus, input[type='submit']:focus {
 .bittox {
     background-image: url('../images/ico/icons/bittox_logo.svg');
 }
+
+#countdown {
+    text-align: center;
+    margin-bottom: 20px;
+
+    .cd-item {
+        display: inline-block;
+        margin: 5px 15px;
+
+        .cd-value {
+            display: block;
+            margin-bottom: 10px;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 2.5rem;
+            color: $COLOR_DARK_ORANGE;
+            background: $COLOR_GRAY;
+            border-radius: 50%;
+        }
+    }
+    .cd-label {
+        font-size: $FONT_SIZE_XS;
+    }
+}
