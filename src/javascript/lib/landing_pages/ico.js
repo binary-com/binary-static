@@ -122,28 +122,29 @@ function getClientCountry() {
     }
 
     // Get required info from WebSocket
-    if (!clients_country || !residence_list) {
-        const ws = wsConnect();
+    const ws = wsConnect();
 
-        function sendRequests() {
-            if (!clients_country) wsSend(ws, { website_status: 1 });
-            if (!residence_list)  wsSend(ws, { residence_list: 1 });
-        }
+    function sendRequests() {
+        if (!clients_country) wsSend(ws, { website_status: 1 });
+        if (!residence_list)  wsSend(ws, { residence_list: 1 });
+        wsSend(ws, { time: 1 });
+    }
 
-        if (ws.readyState === 1) {
-            sendRequests();
-        } else {
-            ws.onopen = sendRequests;
-        }
+    if (ws.readyState === 1) {
+        sendRequests();
+    } else {
+        ws.onopen = sendRequests;
+    }
 
-        ws.onmessage = function (msg) {
-            const response = JSON.parse(msg.data);
-            if (response.website_status) {
-                clients_country = response.website_status.clients_country;
-                setSession('clients_country', clients_country);
-            } else if (response.residence_list) {
-                setSession('residence_list', JSON.stringify(response.residence_list));
-            }
+    ws.onmessage = function (msg) {
+        const response = JSON.parse(msg.data);
+        if (response.website_status) {
+            clients_country = response.website_status.clients_country;
+            setSession('clients_country', clients_country);
+        } else if (response.residence_list) {
+            setSession('residence_list', JSON.stringify(response.residence_list));
+        } else if (response.time) {
+            initCountdown(response.time, '2017-11-15');
         }
     }
 
@@ -154,4 +155,47 @@ function getClientCountry() {
 function collapseNavbar() {
     const navbarFixedTopEl = document.getElementsByClassName('navbar-fixed-top');
     navbarFixedTopEl[0].classList[window.scrollY < 50 ? 'add' : 'remove']('top-nav-collapse');
+}
+
+function initCountdown(start_epoch, end_date) {
+    const el_countdown = document.getElementById('countdown');
+    const el_days      = el_countdown.querySelector('#cd_days');
+    const el_hours     = el_countdown.querySelector('#cd_hours');
+    const el_minutes   = el_countdown.querySelector('#cd_minutes');
+    const el_seconds   = el_countdown.querySelector('#cd_seconds');
+    const date_diff    = Date.parse(new Date()) - start_epoch * 1000;
+
+    let countdownd_interval;
+
+    function updateCountdown() {
+        const remaining = calcRemainingTime(end_date, date_diff);
+
+        el_days.innerHTML    = remaining.days;
+        el_hours.innerHTML   = ('0' + remaining.hours).slice(-2);
+        el_minutes.innerHTML = ('0' + remaining.minutes).slice(-2);
+        el_seconds.innerHTML = ('0' + remaining.seconds).slice(-2);
+
+        if (remaining.total <= 0) {
+            clearInterval(countdownd_interval);
+        }
+    }
+
+    updateCountdown();
+    countdownd_interval = setInterval(updateCountdown, 1000);
+}
+
+function calcRemainingTime(end_date, date_diff) {
+    const total   = Math.floor(Date.parse(new Date(end_date)) - Date.parse(new Date()) + date_diff) / 1000;
+    const seconds = Math.floor(total % 60);
+    const minutes = Math.floor((total / 60) % 60);
+    const hours   = Math.floor((total / (60 * 60)) % 24);
+    const days    = Math.floor(total / (60 * 60 * 24));
+
+    return {
+        total  : total,
+        days   : days,
+        hours  : hours,
+        minutes: minutes,
+        seconds: seconds,
+    };
 }
