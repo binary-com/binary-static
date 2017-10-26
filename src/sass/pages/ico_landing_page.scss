@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px;
 }
 
-h1, h2, h3 {
+h1, h2 {
     font-weight: 500 !important;
 }
 
@@ -37,6 +37,10 @@ button {
 
 .content-section {
     padding: 100px 15px;
+}
+
+.content-section-sm {
+    padding: 50px 15px;
 }
 
 // Intro section
@@ -98,7 +102,6 @@ hr {
 .icon--sm {
     width: 32px;
     height: 32px;
-    margin: 20px;
 }
 
 .box {
@@ -506,18 +509,6 @@ input[type='text']:focus, input[type='submit']:focus {
     }
 }
 
-.social--linkedin {
-    content: url('../images/ico/icons/linkedin.svg');
-}
-
-.social--twitter {
-    content: url('../images/ico/icons/twitter.svg');
-}
-
-.social--youtube {
-    content: url('../images/ico/icons/youtube.svg');
-}
-
 .acquired-bg {
     position: relative;
     background: url('../images/ico/images/img5@2x.png') no-repeat bottom center scroll;
@@ -535,10 +526,161 @@ input[type='text']:focus, input[type='submit']:focus {
     }
 }
 
-#ico_subscribe_section, #lykke-section {
-    padding: 50px 15px;
+#ico_subscribe_section {
+    background: url('../images/ico/images/subscribe.png') no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 
-    .margin-top-40 {
-        margin-top: 40px;
+    p {
+        color: $white;
     }
+}
+
+#media-coverage {
+    .slider-container {
+        position: relative;
+    }
+    .media {
+        background: $white;
+        border: 1px solid $COLOR_DARK_WHITE;
+        border-radius: $BORDER_RADIUS;
+        text-align: left;
+        padding: 20px 10px;
+        height: 125px;
+        transition: all 0.3s;
+
+        &__logo {
+            height: 50px;
+            max-width: 100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            @media (max-width: 768px) {
+                height: 40px;
+            }
+            @media (max-width: 576px) {
+                height: 25px;
+            }
+            @media (max-width: 320px) {
+                height: 20px;
+            }
+        }
+        &__headlines {
+            font-size: 14px;
+            font-weight: 400;
+            height: 55px;
+            @media (max-width: 576px) {
+                font-size: 12px;
+            }
+            @media (max-width: 320px) {
+                font-size: 11px;
+            }
+        }
+    }
+    a:hover, a:active {
+        text-decoration: none;
+
+        .media {
+            border: 1px solid $COLOR_ORANGE;
+        }
+    }
+    [data-action='stop'], [data-action='start'] {
+        display: none;
+    }
+}
+
+.tns-outer {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 30px;
+    @media (max-width: 320px) {
+        margin: 0 20px;
+    }
+}
+
+.tns-controls {
+    [data-controls='prev'], [data-controls='next'] {
+        position: absolute;
+        top: 26%;
+        background: none;
+        color: transparent;
+        width: 20px;
+
+        &:before {
+            display: inline-block;
+            width: 17px;
+            @media (max-width: 768px) {
+                width: 14px;
+            }
+            @media (max-width: 576px) {
+                width: 11px;
+            }
+        }
+    }
+    [data-controls='prev'] {
+        left: -30px;
+
+        &:before {
+            content: url('../images/ico/icons/accordion_left.svg');
+        }
+    }
+    [data-controls='next'] {
+        right: -20px;
+
+        &:before {
+            content: url('../images/ico/icons/accordion_right.svg');
+        }
+    }
+}
+
+.tns-nav {
+    margin-top: 10px;
+    z-index: 1;
+
+    [aria-controls] {
+        width: 9px;
+        height: 9px;
+        padding: 0;
+        margin: 0 5px;
+        border-radius: 50%;
+        background: $COLOR_GRAY;
+        border: 0;
+    }
+    [aria-selected='true'] {
+        background: $COLOR_DARK_GRAY !important;
+    }
+}
+
+.bitcoins-channel-news {
+    background-image: url('../images/ico/icons/bitcoins_channel_news_outlet_logo.svg');
+}
+
+.blockchain-news {
+    background-image: url('../images/ico/icons/blockchain_news_logo.svg');
+}
+
+.btc-manager {
+    background-image: url('../images/ico/icons/btc_manager_logo.svg');
+}
+
+.coin-idol {
+    background-image: url('../images/ico/icons/coin_idol_logo.svg');
+}
+
+.finance-magnates {
+    background-image: url('../images/ico/icons/finance_magnates_logo.svg');
+}
+
+.leap-rate {
+    background-image: url('../images/ico/icons/leap_rate_online_trading_news_logo.svg');
+}
+
+.profit-f {
+    background-image: url('../images/ico/icons/profit_f_logo.svg');
+}
+
+.bittox {
+    background-image: url('../images/ico/icons/bittox_logo.svg');
 }
