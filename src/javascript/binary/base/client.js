@@ -324,7 +324,7 @@ const Client = (() => {
     const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status')) => {
         let type         = 'real';
         let can_upgrade  = false;
-        let upgrade_link = 'welcome';
+        let upgrade_link = 'realws';
         if (get('is_virtual')) {
             if (canUpgradeVirtualToFinancial(landing_company)) {
                 type         = 'financial';
