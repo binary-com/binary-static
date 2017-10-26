@@ -8,6 +8,9 @@ const getDecimalPlaces      = require('../../common_functions/currency').getDeci
 const formatMoney           = require('../../common_functions/currency').formatMoney;
 const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 const FormManager           = require('../../common_functions/form_manager');
+const Scroll                = require('../../common_functions/scroll');
+const getLanguage           = require('../../base/language').get;
+const Url                   = require('../../base/url');
 
 const ICOSubscribe = (() => {
     const form_id = '#frm_ico_bid';
@@ -18,10 +21,28 @@ const ICOSubscribe = (() => {
         $total;
 
     const onLoad = () => {
-        if (jpClient()) {
+        const landing_company = Client.get('landing_company_shortcode');
+        // Allow only Costarica landing company accounts to access the page.
+        if (jpClient() || !/^costarica$/.test(landing_company)) {
             BinaryPjax.loadPreviousUrl();
             return;
         }
+
+        // Turn off scroll listener
+        Scroll.offScroll();
+
+        const language = (getLanguage() || '').toLowerCase();
+        const image = language.match(/(ru|id)/gi)
+            ? Url.urlForStatic(`images/pages/ico/auction-${language}.svg`)
+            : Url.urlForStatic('images/pages/ico/auction.svg');
+        // Set image based on language.
+        $('.ico-auction')
+            .on('error', function () {
+                // Just in case of error.
+                $(this).attr('src',
+                    Url.urlForStatic('images/pages/ico/auction.svg'));
+            })
+            .attr('src', image);
 
         BinarySocket.wait('website_status').then((response) => {
             if (response.website_status.ico_status === 'closed') {

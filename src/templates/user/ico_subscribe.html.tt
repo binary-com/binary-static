@@ -6,7 +6,9 @@
     <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency.", website_name) %]</p>
     <div class="gr-row">
         <div class="gr-7 gr-12-p gr-12-m">
-            <img class="responsive" src="[% request.url_for('/images/pages/ico/auction.svg') %]" />
+            <a href="#auction" class="no-ajax">
+                <img class="responsive ico-auction" />
+            </a>
         </div>
         <div class="gr-5 gr-12-p gr-12-m border-gray border-radius">
             <form id="frm_ico_bid">
@@ -93,4 +95,9 @@
             <li>[% l('Unsuccessful bidders will receive a full refund.') %]</li>
         </ol>
     </div>
+    <a href="#_" class="no-ajax img-lightbox" id="auction">
+        <div>
+            <img class="responsive ico-auction" />
+        </div>
+    </a>
 </div>
