@@ -62,7 +62,7 @@
                     <div class="container center-text content-inverse-color">
                         <div class="gr-row">
                             <div class="gr-12">
-                                <h1 class="brand-heading">[% l("[_1] ICO <br /> Pre-announcement", broker_name) %]</h1>
+                                <h1 class="brand-heading">[% l("[_1] ICO", broker_name) %]</h1>
                                 <p class="intro-text">[% l("Invest in the world's premier platform for binary options trading") %]</p>
                                 <p class="intro-subtext">[% l("An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares.") %]</p>
                             </div>
@@ -89,7 +89,7 @@
                                     </div>
                                     <hr class="underline">
                                 </div>
-                                <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO, including the official launch date.") %]</p>
+                                <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO.") %]</p>
                                 <div class="form-container">
                                     <!-- AWeber Web Form Generator 3.0.1 -->
                                     <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
@@ -135,7 +135,7 @@
             <div id="how-ico-works" class="container content-section center-text">
                 <div class="gr-row">
                     <div class="gr-8 gr-push-2 gr-push-0-m gr-12-m">
-                        <h2>[% l("How will the ICO work") %]</h2>
+                        <h2>[% l("How does the ICO work") %]</h2>
                     </div>
                 </div>
                 <div class="gr-row">
@@ -578,7 +578,7 @@
                     </div>
                     <div class="gr-12">
                         <div class="faq">
-                            <h4>[% l("How will the ICO work?") %]</h4>
+                            <h4>[% l("How does the ICO work?") %]</h4>
                             <p>[% l("[_1] will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as \‘ERC20\’ tokens on the Ethereum blockchain.", broker_name) %]</p>
                             <p>[% l("Regardless of the type of token issued, each token will provide investors with two rights:") %]</p>
                             <ol>
@@ -603,8 +603,8 @@
                     </div>
                     <div class="gr-12">
                         <div class="faq">
-                            <h4>[% l("How will the tokens be offered?") %]</h4>
-                            <p>[% l("The tokens will be offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">', '</a>') %]</p>
+                            <h4>[% l("How are the tokens offered?") %]</h4>
+                            <p>[% l("The tokens are offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -674,7 +674,7 @@
             <div class="gr-row">
                 <div class="gr-12">
                     <h2>[% l("Subscribe to our mailing list") %]</h2>
-                    <p>[% l("for exclusive updates on the ICO, including the official launch date.") %]</p>
+                    <p>[% l("for exclusive updates on the ICO.") %]</p>
                     <div class="form-container">
                         <!-- AWeber Web Form Generator 3.0.1 -->
                         <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
