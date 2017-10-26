@@ -44,11 +44,11 @@
                                         <div class="gr-row form-row center-text-m">
                                             <div class="gr-6 gr-12-m">
                                                 <input id="front_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
-                                                <label for="front_file[% loop.count %]" class="button">[% l('Front') %] <span class="add" /></button>
+                                                <label for="front_file[% loop.count %]" class="button">[% l('Front Side') %] <span class="add" /></button>
                                             </div>
                                             <div class="gr-6 gr-12-m">
                                                 <input id="back_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
-                                                <label for="back_file[% loop.count %]" class="button">[% l('Back') %] <span class="add" /></button>
+                                                <label for="back_file[% loop.count %]" class="button">[% l('Reverse Side') %] <span class="add" /></button>
                                             </div>
                                         </div>
                                     [% END %]
