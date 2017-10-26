@@ -66,6 +66,33 @@ window.onload = function() {
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
     window.addEventListener('hashchange', hashRouter);
+
+    // News slider configuration
+    const slider = tns({
+        container: '.my-slider',
+        slideBy: 'page',
+        rewind: true,
+        controls: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        speed: 600,
+        items: 2,   // start with mobile config
+        gutter: 5,
+        responsive: {
+            900: {  // desktop config
+                items: 4,
+                gutter: 20,
+            },
+            640: {  // tablet config
+                items: 3,
+                gutter: 15,
+            },
+        },
+        onInit: function() {
+            window.dispatchEvent(new Event('resize')); // trigger resize event
+            document.getElementsByClassName('slider-container')[0].classList.remove('invisible');
+        }
+    });
 };
 
 function clearHash() {
