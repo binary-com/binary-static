@@ -98,7 +98,7 @@ In order to remove the created folders from your gh-pages, you can use either:
 - To fix eslint errors run `npm run eslint`
 
 
-## Release to Production
+## Release
 
 ```
 grunt release --staging=1|--production=1|--translations=1 [--cleanup] [--reset]
