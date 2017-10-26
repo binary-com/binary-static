@@ -466,6 +466,7 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="bittox"                 timestamp="Oct 25, 2017"    headlines="BINARY.COM ANNOUNCES INITIAL COIN OFFERING (ICO)"                        url="https://bittox.com/2017/10/25/binary-com-announces-initial-coin-offering-ico/" },
                 { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="BINARY.COM offers securities-backed tokens in ICO"                       url="http://www.profitf.com/news/binary-com-offers-securities-backed-tokens-initial-coin-offering-ico/" },
                 { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="Interview with Jean-Yves Sireau (CEO of Binary.com)"                     url="http://www.profitf.com/interviews/interview-jean-yves-sireau-ceo-binary-com/#History_and_background" },
                 { logo="leap-rate"              timestamp="Oct 23, 2017"    headlines="The Funding Benefits of the ICO (Initial Coin Offering)"                 url="https://www.leaprate.com/experts/jean-yves-sireau/funding-benefits-ico-initial-coin-offering/" },
