@@ -22,6 +22,7 @@
 
         <link href="[% request.url_for('css/ico.css') _ '?' _ static_hash %]" rel="stylesheet" />
         <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/tiny-slider.css" rel="stylesheet">
     </head>
 
     <body>
@@ -163,7 +164,8 @@
                     </p>
                 </div>
             </div>
-            <div id="lykke-section" class="content-section center-text fill-bg-color">
+
+            <div id="lykke-section" class="content-section-sm center-text fill-bg-color">
                 <div class="container">
                     <div class="gr-row">
                         <div class="gr-10 gr-push-1">
@@ -178,6 +180,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="container content-section center-text">
                 <div class="gr-row">
                     <div class="gr-12">
@@ -355,8 +358,12 @@
                             <div class="center-text">
                                 <img class="responsive" src="[% request.url_for('images/ico/images/jy@2x.png') %]" />
                                 <h4>Jean-Yves Sireau</h4>
-                                <a href="https://www.linkedin.com/in/jeanyvessireau/" target="_blank"><img class="icon--sm social--linkedin" /></a>
-                                <a href="https://twitter.com/jysireau" target="_blank"><img class="icon--sm social--twitter" /></a>
+                                <a href="https://www.linkedin.com/in/jeanyvessireau/" target="_blank">
+                                    <img class="icon--sm" src="[% request.url_for("images/ico/icons/linkedin.svg") %]" />
+                                </a>
+                                <a href="https://twitter.com/jysireau" target="_blank">
+                                    <img class="icon--sm" src="[% request.url_for("images/ico/icons/twitter.svg") %]" />
+                                </a>
                             </div>
                             <p>[% l('Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and [_1] (formerly known as Betonmarkets.com) in 1999.', broker_name) %]</p>
                         </div>
@@ -364,7 +371,9 @@
                             <div class="center-text">
                                 <img class="responsive" src="[% request.url_for('images/ico/images/joanna@2x.png') %]" />
                                 <h4>Joanna Frendo</h4>
-                                <a href="https://www.linkedin.com/in/joanna-frendo-prof-pgdip-fcc-4449975/" target="_blank"><img class="icon--sm social--linkedin" /></a>
+                                <a href="https://www.linkedin.com/in/joanna-frendo-prof-pgdip-fcc-4449975/" target="_blank">
+                                    <img class="icon--sm" src="[% request.url_for("images/ico/icons/linkedin.svg") %]" />
+                                </a>
                             </div>
                             <p>[% l('Joanna oversees the Group\'s procedural and regulatory compliance with the various licensing compliance jurisdictions of the [_1] Group, in addition to overseeing a number of the Group\'s key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association.', broker_name) %]</p>
                         </div>
@@ -372,8 +381,12 @@
                             <div class="center-text">
                                 <img class="responsive" src="[% request.url_for('images/ico/images/jm@2x.png') %]" />
                                 <h4>Jim Mellon</h4>
-                                <a href="https://twitter.com/jimmhk" target="_blank"><img class="icon--sm social--twitter" /></a>
-                                <a href="https://www.youtube.com/results?search_query=jim+mellon" target="_blank"><img class="icon--sm social--youtube" /></a>
+                                <a href="https://twitter.com/jimmhk" target="_blank">
+                                    <img class="icon--sm" src="[% request.url_for("images/ico/icons/twitter.svg") %]" />
+                                </a>
+                                <a href="https://www.youtube.com/results?search_query=jim+mellon" target="_blank">
+                                    <img class="icon--sm" src="[% request.url_for("images/ico/icons/youtube.svg") %]" />
+                                </a>
                             </div>
                             <p>[% l('Jim Mellon is a well-known and successful entrepreneur, starting his career in fund management and now including biopharma, property, mining, and information technology amongst his many investments. Jim is listed at number 140 on the Sunday Times Rich List with a net worth of &pound;920 million, and holds directorships in a number of publicly quoted companies. He is the founder and principal shareholder of the Regent Pacific Group, quoted on the Hong Kong Stock Exchange, who were the founding investor of Binary.com in 1999.') %]</p>
                         </div>
@@ -457,6 +470,60 @@
                     <div class="gr-4 gr-12-m">
                         <h4>[% l("Strategic customer acquisition strategy") %]</h4>
                         <p>[% l("We employ a wide range of unique marketing initiatives to acquire customers. We are focused primarily on untapped markets.") %]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- news order: latest to oldest -->
+            [% news=[
+                { logo="bittox"                 timestamp="Oct 25, 2017"    headlines="BINARY.COM ANNOUNCES INITIAL COIN OFFERING (ICO)"                        url="https://bittox.com/2017/10/25/binary-com-announces-initial-coin-offering-ico/" },
+                { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="BINARY.COM offers securities-backed tokens in ICO"                       url="http://www.profitf.com/news/binary-com-offers-securities-backed-tokens-initial-coin-offering-ico/" },
+                { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="Interview with Jean-Yves Sireau (CEO of Binary.com)"                     url="http://www.profitf.com/interviews/interview-jean-yves-sireau-ceo-binary-com/#History_and_background" },
+                { logo="leap-rate"              timestamp="Oct 23, 2017"    headlines="The Funding Benefits of the ICO (Initial Coin Offering)"                 url="https://www.leaprate.com/experts/jean-yves-sireau/funding-benefits-ico-initial-coin-offering/" },
+                { logo="finance-magnates"       timestamp="Oct 17, 2017"    headlines="Binary.com ‘Blockchain IPO’ Tokens to List on Lykke Vanuatu Exchange"    url="https://www.financemagnates.com/cryptocurrency/exchange/binary-com-blockchain-ipo-tokens-list-lykke-vanuatu-exchange/" },
+                { logo="btc-manager"            timestamp="Oct 17, 2017"    headlines="Binary.com Announces Initial Coin Offering (ICO)"                        url="https://btcmanager.com/binary-com-announces-initial-coin-offering/" },
+                { logo="coin-idol"              timestamp="Oct 17, 2017"    headlines="Online Trading Pioneer, Binary.com chooses ICO over IPO"                 url="https://coinidol.com/online-trading-pioneer-binary-com-chooses-ico/" },
+                { logo="coin-idol"              timestamp="Oct 16, 2017"    headlines="Binary.Com Announces Initial Coin Offering (ICO)"                        url="https://coinidol.com/binary-com-ico/" },
+                { logo="bitcoins-channel-news"  timestamp="Oct 10, 2017"    headlines="Binary.com Announces Initial Coin Offering (ICO)"                        url="http://bitcoinschannel.com/binary-com-announces-initial-coin-offering-ico" },
+                { logo="blockchain-news"        timestamp="Oct 6, 2017"     headlines="Binary.com Announces Initial Coin Offering (ICO)"                        url="http://www.the-blockchain.com/2017/10/06/binary-com-announces-initial-coin-offering-ico/" },
+                { logo="leap-rate"              timestamp="Sept 20, 2017"   headlines="Binary.com ICO provides a peek into the workings and finances of a Binary Options broker" url="https://www.leaprate.com/binary-options/broker/binary-com-ico-finances-binary-options-broker/" },
+                { logo="finance-magnates"       timestamp="Sept 15, 2017"   headlines="Exclusive: Binary.com ICO Info Shows Profits to Surpass \$20m in 2017"   url="https://www.financemagnates.com/binary-options/brokers/exclusive-binary-com-ico-shows-company-profits-surpass-20-mln-2017/" },
+                { logo="finance-magnates"       timestamp="Sept 13, 2017"   headlines="Exclusive: Binary.com Preparing an ICO, Looking for Blockchain Talent"   url="https://www.financemagnates.com/cryptocurrency/news/exclusive-binary-com-preparing-ico-looking-blockchain-talent/" },
+            ]
+            %]
+
+            <div id="media-coverage" class="fill-bg-color content-section-sm center-text">
+                <div class="container">
+                    <div class="gr-row">
+                        <div class="gr-12">
+                            <h3>[% l('Media Coverage') %]</h3>
+                        </div>
+                    </div>
+                    <div class="slider-container invisible">
+                        <div class="my-slider">
+                            [% FOREACH media IN news %]
+                                <div>
+                                    <a href="[% media.url %]" target="_blank">
+                                        <div class="media">
+                                            <span class="media__logo [% media.logo %]"></span>
+                                            <p class="media__headlines">[% media.headlines %]</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            [% END %]
+                        </div>
+                    </div>
+                    <p>[% l("Join the conversation on our social channels for all news and updates related to our upcoming ICO.") %]</p>
+                    <div class="gr-row gr-row-align-center">
+                        <a href="https://t.me/binarydotcom" target="_blank" class="gr-gutter-right">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/telegram.svg") %]" />
+                        </a>
+                        <a href="https://www.reddit.com/r/binarydotcom/" target="_blank" class="gr-gutter-right">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
+                        </a>
+                        <a href="https://www.facebook.com/mybinarycoin" target="_blank">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/facebook.svg") %]" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -587,7 +654,7 @@
             </div>
         </div>
         <!-- Subscribe section -->
-        <div class="fill-bg-color center-text" id="ico_subscribe_section">
+        <div class="fill-bg-color center-text content-section-sm" id="ico_subscribe_section">
             <div class="gr-row">
                 <div class="gr-12">
                     <h2>[% l("Subscribe to our mailing list") %]</h2>
@@ -628,15 +695,6 @@
                         <!-- /AWeber Web Form Generator 3.0.1 -->
                         <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
                     </div>
-                    <p class="margin-top-40">[% l("Join the conversation on our social channels for all news and updates related to our upcoming ICO.") %]</p>
-                    <div class="gr-row gr-row-align-center">
-                        <a href="https://t.me/binarydotcom" target="_blank" class="gr-gutter-right">
-                            <img class="responsive" src="[% request.url_for("images/ico/icons/telegram.svg") %]" />
-                        </a>
-                        <a href="https://www.reddit.com/r/binarydotcom/" target="_blank">
-                            <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -646,6 +704,8 @@
                 <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
             </div>
         </div>
+        <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js"></script>
         <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
         <script src="[% request.url_for('js/landing_pages/ico.js') _ '?' _ static_hash %]"></script>
     </body>
