@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-24 21:04-0400\n"
+"PO-Revision-Date: 2017-10-27 04:42-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -94,8 +94,8 @@ msgstr "当社アフィリエイトプログラム・利用規約"
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1アプリケーション・プログラム・インターフェース(\"API\") ご利用規約"
 
-msgid "%1 ICO <br /> Pre-announcement"
-msgstr "%1 ICO <br /> 事前告知"
+msgid "%1 ICO"
+msgstr ""
 
 msgid "%1 ICO Auction Bids"
 msgstr "%1 ICO オークションビット"
@@ -972,6 +972,9 @@ msgstr "クレジットカードの詳細情報は全て、金融機関の規定
 msgid "All customer funds are segregated and held with JSF Trust Bank."
 msgstr "お客様の預託金は全額、日証金信託銀行にて区分管理しております"
 
+msgid "All deposits and withdrawals are made through your omnibus master account"
+msgstr ""
+
 msgid "All durations:"
 msgstr "全取引期間："
 
@@ -1178,6 +1181,9 @@ msgstr "18歳以上です"
 
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr "お客さまは決済サービスエージェントですか？またはエージェントにご興味がありますか？"
+
+msgid "Are you a licensed and regulated broker with a large database of active traders? Manage your database more efficiently by consolidating all your client accounts under an omnibus master account. This allows you to keep their individual identities private at the same time."
+msgstr ""
 
 msgid "Are you an Investment professional?"
 msgstr "あなたは投資においてプロフェッショナルですか？"
@@ -2082,9 +2088,6 @@ msgstr "関連市場で利用できる実勢価格に基づいたオープンポ
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "ウェブサイトの機能とパフォーマンスを向上させる革新的な方法を特定するために、ITグループのメンバーと共同で作業を行います"
 
-msgid "Coming soon"
-msgstr "Coming soon"
-
 msgid "Commencement Date"
 msgstr "Commencement Date"
 
@@ -2388,8 +2391,14 @@ msgstr "様々なフォーマットで商品提供の促進につながる明確
 msgid "Create content to support our international marketing campaigns in a variety of different formats and languages"
 msgstr "異なるフォーマットと言語で国際マーケティングキャンペーンをサポートするコンテンツの作成"
 
+msgid "Create sub-accounts to record transactions you make on behalf of your clients"
+msgstr ""
+
 msgid "Create the graphics required to support our global marketing and advertising campaigns. The team's creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, tradeshows, special events, and promotional projects."
 msgstr "グローバルマーケティング及び広告キャンペーンに必要なグラフィックを作成します。チームの創造的な取り組みはオンラインマーケティング、アフィリエイトネットワーク、印刷広告、トレードショー、プロモーションプロジェクトなど多岐に及びます。"
+
+msgid "Create your own white-label application with the omnibus facility, plus all the features supported by our extensive API library. We won’t know who your clients are and vice versa"
+msgstr ""
 
 msgid "Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies"
 msgstr "市場情報、リアルタイム取引戦略と履歴分析にアクセスするインターフェースとツールの作成"
@@ -2442,6 +2451,9 @@ msgstr "カスタマーサポート担当"
 msgid "Customer Support"
 msgstr "カスタマーサポート"
 
+msgid "Customise individual access for clients who wish to trade for themselves"
+msgstr ""
+
 msgid "Cyberjaya Office"
 msgstr "サイバージャヤ（マレーシア）"
 
@@ -2486,6 +2498,9 @@ msgstr "生年月日"
 
 msgid "Day"
 msgstr "日"
+
+msgid "Days"
+msgstr ""
 
 msgid "Debt-free"
 msgstr "借入金なし"
@@ -3446,11 +3461,11 @@ msgstr "金曜日"
 msgid "Fridays"
 msgstr "金曜日"
 
-msgid "From cryptocurrency to fiat: 0.5% transfer fee"
-msgstr "From cryptocurrency to fiat: 0.5% transfer fee"
+msgid "From cryptocurrency to fiat: %1 transfer fee"
+msgstr ""
 
-msgid "From fiat to cryptocurrency: 1% transfer fee"
-msgstr "From fiat to cryptocurrency: 1% transfer fee"
+msgid "From fiat to cryptocurrency: %1 transfer fee"
+msgstr ""
 
 msgid "Front-End (Javascript) Development"
 msgstr "フロントエンド（Javascript）開発"
@@ -3704,11 +3719,17 @@ msgstr "セキュリティテストスキルを磨きましょう"
 msgid "Hour"
 msgstr "時間"
 
+msgid "Hours"
+msgstr ""
+
 msgid "Housewife / Househusband"
 msgstr "主婦/主夫"
 
 msgid "How and when will I receive my affiliate earnings?"
 msgstr "アフィリエイト報酬の受領方法と受領スケジュールについて教えて下さい。"
+
+msgid "How are the tokens offered?"
+msgstr ""
 
 msgid "How can I become an affiliate?"
 msgstr "アフィリエイトプログラムの参加方法について教えて下さい。"
@@ -3755,6 +3776,12 @@ msgstr "御社はどのようにして利益を得ているのですか？"
 msgid "How does it work?"
 msgstr "参加方法について"
 
+msgid "How does the ICO work"
+msgstr ""
+
+msgid "How does the ICO work?"
+msgstr ""
+
 msgid "How is margin calculated?"
 msgstr "マージンの算出方法は？"
 
@@ -3793,15 +3820,6 @@ msgstr "決済サービスのご利用方法"
 
 msgid "How will I get paid?"
 msgstr "どのように支払いを受け取れますか？"
-
-msgid "How will the ICO work"
-msgstr "ICOの仕組み"
-
-msgid "How will the ICO work?"
-msgstr "ICOの流れを教えてください"
-
-msgid "How will the tokens be offered?"
-msgstr "トークンはどのように提供されますか？"
 
 msgid "However, we believe that in the coming decade traditional stock exchanges will gradually be replaced by blockchain exchanges, and IPOs will gradually be replaced by ICOs. This is because blockchain technologies are much more performant than the legacy technologies of traditional stock exchanges, leading to lower transaction fees, faster settlement times, and error-free immutable audit trails. Hence, we decided to perform an ICO instead of an IPO."
 msgstr "However, we believe that in the coming decade traditional stock exchanges will gradually be replaced by blockchain exchanges, and IPOs will gradually be replaced by ICOs. This is because blockchain technologies are much more performant than the legacy technologies of traditional stock exchanges, leading to lower transaction fees, faster settlement times, and error-free immutable audit trails. Hence, we decided to perform an ICO instead of an IPO."
@@ -4382,6 +4400,9 @@ msgstr "MetaTrader 5のMAMツールにご興味がありますか？詳細は%1�
 
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Interested in our liquidity solutions? Contact us at %1 for more info."
+
+msgid "Interested in our omnibus account facility? %1Contact us now and apply as an omnibus broker%2."
+msgstr ""
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "ご興味がおありですか？当社がまだ提供していない特定のEキャッシュ方法またはローカル決済オプションの提供が可能で、市場で良い実績をお持ちでしたら是非我々に<a href='mailto:%2'>お話をお聞かせください。</a>"
@@ -5351,6 +5372,9 @@ msgstr "少額取引"
 msgid "Lower"
 msgstr "ラダーLOW"
 
+msgid "Lower fees"
+msgstr ""
+
 msgid "M"
 msgstr "ヶ月"
 
@@ -5374,6 +5398,9 @@ msgstr "正確な価格設定システムパラメーターの維持"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "十分な速度と出力量の維持"
+
+msgid "Maintain complete anonymity of your clients."
+msgstr ""
 
 msgid "Major Pairs"
 msgstr "1日あたりに購入できる限度額"
@@ -5413,6 +5440,9 @@ msgstr "仮想通貨口座の資金を管理します。"
 
 msgid "Manage your authorised applications."
 msgstr "承認済みアプリケーションを管理します。"
+
+msgid "Manage your client database more efficiently as an omnibus broker."
+msgstr ""
 
 msgid "Managers"
 msgstr "マネージャー"
@@ -5561,6 +5591,9 @@ msgstr "最大保有ポジション"
 msgid "May"
 msgstr "5"
 
+msgid "Media Coverage"
+msgstr ""
+
 msgid "Medium-sized changes – generally $250-750"
 msgstr "Medium-sized changes – generally $250-750"
 
@@ -5630,6 +5663,9 @@ msgstr "鉱業、建設、製造、運輸"
 msgid "Minute"
 msgstr "分"
 
+msgid "Minutes"
+msgstr ""
+
 msgid "Miss"
 msgstr "Miss"
 
@@ -5682,6 +5718,9 @@ msgstr "その他ツール"
 
 msgid "More benefits"
 msgstr "福利厚生について"
+
+msgid "More efficient"
+msgstr ""
 
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "すなわち、お客さまとバイナリーオプション取引に入る際（各\"契約\"）、当社にはお客さまに「最良執行」を提供させていただく義務があります。最良執行とは、お客さまへの可能な限り最良の結果を得られるよう適切な措置を取らせていただく必要があることを言います。この文書では当社の最良執行ポリシーの概要をご覧いただけます。"
@@ -5983,6 +6022,9 @@ msgstr "会社員"
 
 msgid "Old password is wrong."
 msgstr "旧パスワードの値が不正です。"
+
+msgid "Omnibus account"
+msgstr ""
 
 msgid "On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you."
 msgstr "知識や経験に関して提供いただいた情報に基づき、当ウェブサイトでの投資はお客さまには適していないと思います。"
@@ -6734,6 +6776,9 @@ msgstr "金融業界の知識と経験"
 msgid "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account's Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account's Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 
+msgid "Privacy"
+msgstr ""
+
 msgid "Privacy & Security"
 msgstr "個人情報の取り扱いについて"
 
@@ -6912,11 +6957,11 @@ msgstr "よくあるご質問を読む"
 msgid "Read our blog for the stories and ideas that inspire us"
 msgstr "魅力あるストーリーとアイディアが詰まった当社のブログを是非ご覧ください"
 
+msgid "Read the Information Memorandum for further information about the proposed offer."
+msgstr ""
+
 msgid "Read the answers to some common questions."
 msgstr "よくあるご質問事項に対する回答はこちらから"
-
-msgid "Read the draft Information Memorandum for further information about the proposed offer."
-msgstr "提案されたオファーの詳細はインフォメーション・メモランダムの原案でご確認ください。"
 
 msgid "Read the official press release"
 msgstr "Read the official press release"
@@ -6965,6 +7010,9 @@ msgstr "%1では常に購入・売却の価格を表示しているため、常�
 
 msgid "Receive your activation code by secure"
 msgstr "簡易書留にて口座認証コードを郵送"
+
+msgid "Reduce fees associated with deposits and withdrawals."
+msgstr ""
 
 msgid "Ref."
 msgstr "約定番号"
@@ -7244,6 +7292,9 @@ msgstr "Second, token holders will be able to freely trade their tokens. In cont
 
 msgid "Secondary"
 msgstr "第二"
+
+msgid "Seconds"
+msgstr ""
 
 msgid "Secret question"
 msgstr "秘密の質問"
@@ -7749,8 +7800,8 @@ msgstr "履歴書とカバーレターを提出してください"
 msgid "Subscribe to our mailing list"
 msgstr "Subscribe to our mailing list"
 
-msgid "Subscribe to our mailing list for exclusive updates on the ICO, including the official launch date."
-msgstr "メールリストに登録をして、公式ローンチの日程などICOに関する情報を受取りましょう。"
+msgid "Subscribe to our mailing list for exclusive updates on the ICO."
+msgstr ""
 
 msgid "Successful"
 msgstr "成功しました"
@@ -8327,8 +8378,8 @@ msgstr "当社は運用口座とは別に銀行口座に顧客の資金を保持
 msgid "The company reserves the right to cancel/prohibit the use of this promotion at its own discretion at any time."
 msgstr "当社はいつでもこのボーナスキャンペーンをキャンセルまたは禁止する権利を有します。"
 
-msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr "当社は12ヶ月以上のお取引履歴のない全クライアントの口座に6ヶ月毎にUSD/EUR/AUD/GBP 25までの休止状態口座手数料を請求する権利を留保しています。クライアントの口座がBinary (Europe) Ltdとの間に開設されたものであり、口座に30ヶ月の期間取引がなされていない、クライアントが位置になく、接続できない場合、当社はマルタギャンブル監督機関（Malta Gaming Authority）に口座の残高を送金しなければいけません。クライアントはアクティブ状態にない口座、閉鎖された口座、あるいはブロックされた口座から資金を取り戻すには当社ヘルプデスクまでお問い合わせいただく必要があります。"
+msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
+msgstr ""
 
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website, however, we do not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website."
 msgstr "当サイトのコンテンツは予告なしに変更される場合があり、トレーダー個人の判断に基づくお取引をサポートする唯一の目的で提供しています。%1では、ウェブサイトを介して送信される指示と通知の送受信の遅延、または失敗に起因するコンテンツまたはお客さまのウェブサイトへの不適切なアクセスから直接的、間接的に生じる可能性がある損失またはダメージの責任を負いません。その正確性を保証するこはできませんが、ウェブサイト上の情報精度を確証する適切な措置をとっています。"
@@ -8359,9 +8410,6 @@ msgstr "ご入力いただいたメールアドレスは既に他のログイン
 
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "取引時レートとは、購入時のレートのことです。"
-
-msgid "The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017."
-msgstr "ICOの日程はまだ確定していません。現在のところ、2017年度の第四半期を予定しております。"
 
 msgid "The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients."
 msgstr "The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients."
@@ -8578,11 +8626,14 @@ msgstr "「当社」「我々」「私達」「%1」はBinary (V) Ltdを示す�
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "「当社」、「私達」、「当社の」、「私達の」、「%1」という表記は、口座開設におけるサイトの手順に従って所属した管轄によってBinary (V) Ltd.またはBinary (C.R.) S.A.を示します。"
 
+msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
+msgstr ""
+
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 
-msgid "The tokens will be offered via an auction process. View our %1guide%2 to the token auction."
-msgstr "オークション方式でトークンは提供されます。詳細は%1ガイド%2からご確認いただけます。"
+msgid "The tokens will be offered from 15 November 2017 to 25 December 2017."
+msgstr ""
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
 msgstr "（取引内容の照会）\n"
@@ -8933,6 +8984,9 @@ msgstr "今日、我々はマーケットリーダーであり、世界で最も
 msgid "Token"
 msgstr "トークン"
 
+msgid "Token Sale Begins In"
+msgstr ""
+
 msgid "Token dividends"
 msgstr "トークンの配当"
 
@@ -9032,6 +9086,9 @@ msgstr "見やすく利便性の高いプラットフォームにてお取引を
 msgid "Trade in the world’s financial markets with a simple and user-friendly online platform."
 msgstr "見やすく利便性の高いプラットフォームにてお取引をお試しいただけます。"
 
+msgid "Trade on behalf of your clients through one account."
+msgstr ""
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "損を出しても納得のできる金額でのトレードのみ実行しましょう。借金をしてまでトレード資金を準備することは見合わせましょう。"
 
@@ -9127,6 +9184,9 @@ msgstr "送金元"
 
 msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
 msgstr "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+
+msgid "Transfer funds between your omnibus master account and sub-accounts"
+msgstr ""
 
 msgid "Transfer funds between your real money accounts."
 msgstr "リアル口座に口座振替"
@@ -10803,8 +10863,8 @@ msgstr "fairly and accurately describe its services to the Clients;"
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 msgstr "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 
-msgid "for exclusive updates on the ICO, including the official launch date."
-msgstr "公式発表日などICOに関する限定情報"
+msgid "for exclusive updates on the ICO."
+msgstr ""
 
 msgid "from $1 to $50,000."
 msgstr "ペイアウトは1ロット1,000円、最大100ロットまで選択可能です"
@@ -11395,7 +11455,7 @@ msgid "{JAPAN ONLY}7546677"
 msgstr "7546677"
 
 msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
-msgstr "120百万円（2017年5月15日現在）"
+msgstr "135百万円（2017年10月20日現在）"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "円以外の通貨ペアを原資産とする差金決済型の通貨オプションの場合、オプション料や権利行使時の決済は円により行われるため、対象となる通貨ペアは決済額を算出し、円転の計算をして金額を確定する仕組みとなっています。"
@@ -12735,6 +12795,9 @@ msgstr "複数アカウントマネージャー"
 
 msgid "Get Paid for Pull Requests"
 msgstr "Get Paid for Pull Requests"
+
+msgid "Omnibus"
+msgstr ""
 
 msgid "How to Trade Binary Options?"
 msgstr "バイナリーオプションの取引方法とは？"
