@@ -78,7 +78,7 @@ const ICOSubscribe = (() => {
                 const decimal_places = getDecimalPlaces(currency);
                 $form_error          = $('#form_error');
                 FormManager.init(form_id, [
-                    { selector: '#duration', validations: ['req', ['number', { min: 1, max: 1000000 }]], parent_node: 'parameters' },
+                    { selector: '#duration', validations: ['req', ['number', { min: 25, max: 1000000 }]], parent_node: 'parameters' },
                     { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places), max: 999999999999999 }]] },
 
                     { request_field: 'buy', value: 1 },
