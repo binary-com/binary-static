@@ -232,7 +232,7 @@
             <div id="read-im-section" class="content-section primary-bg-color center-text">
                 <div class="gr-row">
                     <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
-                        <h2 class="content-inverse-color">[% l("Read the draft Information Memorandum for further information about the proposed offer.") %]</h2>
+                        <h2 class="content-inverse-color">[% l("Read the Information Memorandum for further information about the proposed offer.") %]</h2>
                         <button onclick="window.location.href='[% request.url_for('ico-disclaimer.html') %]'" class="button">[% l("View memorandum") %]</button>
                     </div>
                 </div>
@@ -607,7 +607,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("When will the tokens be offered?") %]</h4>
-                            <p>[% l("The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017.") %]</p>
+                            <p>[% l("The tokens will be offered from 15 November 2017 to 25 December 2017.") %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
