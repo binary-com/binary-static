@@ -36,11 +36,11 @@ button {
 }
 
 .content-section {
-    padding: 100px 15px;
+    padding: 100px 30px;
 }
 
 .content-section-sm {
-    padding: 50px 15px;
+    padding: 50px 30px;
 }
 
 // Intro section
@@ -594,19 +594,16 @@ input[type='text']:focus, input[type='submit']:focus {
 .tns-outer {
     display: flex;
     flex-direction: column-reverse;
-    margin: 0 30px;
-    @media (max-width: 320px) {
-        margin: 0 20px;
-    }
 }
 
 .tns-controls {
     [data-controls='prev'], [data-controls='next'] {
         position: absolute;
-        top: 26%;
+        top: 30%;
         background: none;
         color: transparent;
         width: 20px;
+        padding: 0;
 
         &:before {
             display: inline-block;
@@ -627,7 +624,7 @@ input[type='text']:focus, input[type='submit']:focus {
         }
     }
     [data-controls='next'] {
-        right: -20px;
+        right: -30px;
 
         &:before {
             content: url('../images/ico/icons/accordion_right.svg');
