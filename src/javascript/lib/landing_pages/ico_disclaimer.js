@@ -66,7 +66,7 @@ window.onload = function() {
     frm_accept_disclaimer.addEventListener('submit', function (e) {
         e.preventDefault();
         var val = document.getElementById('checkbox').checked; // true or false
-        var url = 'https://ico_documents.binary.com/draft_im.pdf';
+        var url = 'https://ico_documents.binary.com/im.pdf';
         if (val) {
             window.open(url, '_self');
         } else {
@@ -84,7 +84,7 @@ window.onload = function() {
     frm_accept_second_notice.addEventListener('submit', function(e) {
         e.preventDefault();
         var val = document.getElementById('checkbox-2').checked; // true or false
-        var url = 'https://ico_documents.binary.com/draft_im.pdf';
+        var url = 'https://ico_documents.binary.com/im.pdf';
         if (val) {
             document.getElementById('notice_msg').classList.add('invisible');
             showDisclaimer(val);

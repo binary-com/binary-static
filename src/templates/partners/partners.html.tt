@@ -47,4 +47,8 @@
         [% INCLUDE column url=request.url_for('pull-requests') image='pull-requests' header=l("Pull Requests")
             text=l("Get paid for pull requests.") %]
     </div>
+    <div class="gr-row gr-clear">
+        [% INCLUDE column url=request.url_for('omnibus') image='omnibus' header=l("Omnibus account")
+            text=l("Manage your client database more efficiently as an omnibus broker.") %]
+    </div>
 </div>
