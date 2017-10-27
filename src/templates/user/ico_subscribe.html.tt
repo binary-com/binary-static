@@ -95,7 +95,7 @@
             <li>[% l('Unsuccessful bidders will receive a full refund.') %]</li>
         </ol>
     </div>
-    <a href="#_" class="no-ajax img-lightbox" id="auction">
+    <a href="#_" class="no-ajax img-lightbox popup" id="auction">
         <div>
             <img class="responsive ico-auction" />
         </div>

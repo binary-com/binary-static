@@ -23,13 +23,10 @@ const ICOSubscribe = (() => {
     const onLoad = () => {
         const landing_company = Client.get('landing_company_shortcode');
         // Allow only Costarica landing company accounts to access the page.
-        if (jpClient() || !/^costarica$/.test(landing_company)) {
+        if (!/^costarica$/.test(landing_company)) {
             BinaryPjax.loadPreviousUrl();
             return;
         }
-
-        // Turn off scroll listener
-        Scroll.offScroll();
 
         const language = (getLanguage() || '').toLowerCase();
         const image = language.match(/(ru|id)/gi)

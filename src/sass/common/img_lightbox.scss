@@ -36,13 +36,15 @@
         text-align: center;
         margin: 5% auto;
         box-shadow: -1px 1px 55px 0.5px $COLOR_DARK_GRAY;
-        transition: visibility 0s 0.3s, max-width 0.3s 0.5s, max-height 0.3s 0.5s;
 
         img {
             width: 90%;
             height: 90%;
             padding: 20px;
         }
+    }
+    &.popup > div {
+        transition: visibility 0s 0.3s, max-width 0.3s 0.5s, max-height 0.3s 0.5s;
     }
     &:target {
         visibility: visible;
