@@ -144,7 +144,7 @@ function getClientCountry() {
         } else if (response.residence_list) {
             setSession('residence_list', JSON.stringify(response.residence_list));
         } else if (response.time) {
-            initCountdown(response.time, '2017-11-15');
+            initCountdown(response.time, '2017-11-15T00:00:00Z');
         }
     }
 
@@ -161,7 +161,8 @@ function initCountdown(start_epoch, end_date) {
     const el_container = document.getElementById('countdown_container');
     const date_diff    = Date.parse(new Date()) - start_epoch * 1000;
     const elements     = {};
-    let countdownd_interval;
+    let remaining      = 0,
+        countdownd_interval;
 
     // Get all elements only once
     function getElements(id) {
@@ -174,9 +175,8 @@ function initCountdown(start_epoch, end_date) {
     }
     ['days', 'hours', 'minutes', 'seconds'].forEach(function(id) { getElements(id); });
 
-
     function updateCountdown() {
-        const remaining = calcRemainingTime(end_date, date_diff);
+        remaining = calcRemainingTime(end_date, date_diff);
 
         arc(elements.days,    remaining.days,    20);
         arc(elements.hours,   remaining.hours,   24);
@@ -190,9 +190,11 @@ function initCountdown(start_epoch, end_date) {
     }
 
     updateCountdown();
-    countdownd_interval = setInterval(updateCountdown, 1000);
 
-    el_container.classList.remove('invisible'); // make visible when everything set
+    if (remaining.total > 0) {
+        countdownd_interval = setInterval(updateCountdown, 1000);
+        el_container.classList.remove('invisible'); // make visible when everything set
+    }
 }
 
 function calcRemainingTime(end_date, date_diff) {
