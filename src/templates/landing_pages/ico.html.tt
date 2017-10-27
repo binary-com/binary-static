@@ -62,7 +62,7 @@
                     <div class="container center-text content-inverse-color">
                         <div class="gr-row">
                             <div class="gr-12">
-                                <h1 class="brand-heading">[% l("[_1] ICO <br /> Pre-announcement", broker_name) %]</h1>
+                                <h1 class="brand-heading">[% l("[_1] ICO", broker_name) %]</h1>
                                 <p class="intro-text">[% l("Invest in the world's premier platform for binary options trading") %]</p>
                                 <p class="intro-subtext">[% l("An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares.") %]</p>
                             </div>
@@ -71,9 +71,34 @@
                     <div id="coming-soon" class="content-section center-text transparent-dark-blue-bg">
                         <div class="gr-row">
                             <div class="gr-12">
-                                <h3 class="content-inverse-color">[% l("Coming soon") %]</h3>
-                                <hr class="underline">
-                                <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO, including the official launch date.") %]</p>
+                                <div id="countdown_container" class="invisible">
+                                    <h3 class="content-inverse-color">[% l("Token Sale Begins In") %]</h3>
+                                    <div id="countdown">
+                                        [% BLOCK arcs %]
+                                            <span class="arcs">
+                                                <span class="arc_q"></span>
+                                                <span class="arc_q"></span>
+                                                <span class="arc_q"></span>
+                                                <span class="arc_q"></span>
+                                                <span class="arc_cover"></span>
+                                            </span>
+                                        [% END %]
+                                        [% items=[
+                                            { id='days',    text=l("Days") },
+                                            { id='hours',   text=l("Hours") },
+                                            { id='minutes', text=l("Minutes") },
+                                            { id='seconds', text=l("Seconds") },
+                                        ] %]
+                                        [% FOREACH item IN items %]
+                                        <span class="cd-item" id="cd_[% item.id %]">
+                                            [% INCLUDE arcs %]
+                                            <span class="cd-value"></span>
+                                            <span class="cd-label">[% item.text %]</span>
+                                        </span>
+                                        [% END %]
+                                    </div>
+                                </div>
+                                <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO.") %]</p>
                                 <div class="form-container">
                                     <!-- AWeber Web Form Generator 3.0.1 -->
                                     <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
@@ -119,7 +144,7 @@
             <div id="how-ico-works" class="container content-section center-text">
                 <div class="gr-row">
                     <div class="gr-8 gr-push-2 gr-push-0-m gr-12-m">
-                        <h2>[% l("How will the ICO work") %]</h2>
+                        <h2>[% l("How does the ICO work") %]</h2>
                     </div>
                 </div>
                 <div class="gr-row">
@@ -207,7 +232,7 @@
             <div id="read-im-section" class="content-section primary-bg-color center-text">
                 <div class="gr-row">
                     <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
-                        <h2 class="content-inverse-color">[% l("Read the draft Information Memorandum for further information about the proposed offer.") %]</h2>
+                        <h2 class="content-inverse-color">[% l("Read the Information Memorandum for further information about the proposed offer.") %]</h2>
                         <button onclick="window.location.href='[% request.url_for('ico-disclaimer.html') %]'" class="button">[% l("View memorandum") %]</button>
                     </div>
                 </div>
@@ -563,7 +588,7 @@
                     </div>
                     <div class="gr-12">
                         <div class="faq">
-                            <h4>[% l("How will the ICO work?") %]</h4>
+                            <h4>[% l("How does the ICO work?") %]</h4>
                             <p>[% l("[_1] will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as \‘ERC20\’ tokens on the Ethereum blockchain.", broker_name) %]</p>
                             <p>[% l("Regardless of the type of token issued, each token will provide investors with two rights:") %]</p>
                             <ol>
@@ -583,13 +608,13 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("When will the tokens be offered?") %]</h4>
-                            <p>[% l("The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017.") %]</p>
+                            <p>[% l("The tokens will be offered from 15 November 2017 to 25 December 2017.") %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
-                            <h4>[% l("How will the tokens be offered?") %]</h4>
-                            <p>[% l("The tokens will be offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">', '</a>') %]</p>
+                            <h4>[% l("How are the tokens offered?") %]</h4>
+                            <p>[% l("The tokens are offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -659,7 +684,7 @@
             <div class="gr-row">
                 <div class="gr-12">
                     <h2>[% l("Subscribe to our mailing list") %]</h2>
-                    <p>[% l("for exclusive updates on the ICO, including the official launch date.") %]</p>
+                    <p>[% l("for exclusive updates on the ICO.") %]</p>
                     <div class="form-container">
                         <!-- AWeber Web Form Generator 3.0.1 -->
                         <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
