@@ -42,12 +42,6 @@
                 </div>
             </div>
         </div>
-        <div class='gr-6 gr-5-t gr-12-p gr-12-m invisible upgrademsg center-text'>
-            <span class='invisible'>
-                <span id='virtual-test'>[% l("You're using a Virtual Account.") %]</span>
-            </span>
-            <a class="invisible"></a>
-        </div>
     </div>
 
     [% INCLUDE global/separator_line.html.tt class="gr-padding-10" invisible=1 %]

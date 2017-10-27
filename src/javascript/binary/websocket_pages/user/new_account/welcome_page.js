@@ -13,14 +13,7 @@ const WelcomePage = (() => {
             const landing_company = State.getResponse('landing_company');
             const welcome_msg     = document.getElementsByClassName('show_welcome');
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
-
-            if (!welcome_msg) {
-                return;
-            }
-
-            console.log(landing_company);
-            console.log(jp_account_status);
-
+            
             const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
             const show_welcome_msg  = upgrade_info.can_upgrade;
 
@@ -36,11 +29,6 @@ const WelcomePage = (() => {
             if (Client.get('is_virtual')) {
                 applyToAllElements(welcome_msg, (el) => {
                     el.setVisibility(1);
-                    const span = el.getElementsByTagName('span')[0];
-                    if (span) {
-                        span.setVisibility(1);
-                    }
-                    applyToAllElements('a', (ele) => { ele.setVisibility(0); }, '', el);
                 });
 
                 if (jp_account_status) {
