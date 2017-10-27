@@ -73,8 +73,8 @@ window.onload = function() {
         slideBy: 'page',
         rewind: true,
         controls: true,
-        // autoplay: true,
-        // autoplayHoverPause: true,
+        autoplay: true,
+        autoplayHoverPause: true,
         speed: 600,
         items: 2,   // start with mobile config
         gutter: 5,
