@@ -159,23 +159,29 @@ function collapseNavbar() {
 
 function initCountdown(start_epoch, end_date) {
     const el_container = document.getElementById('countdown_container');
-    const el_days      = el_container.querySelector('#cd_days');
-    const el_hours     = el_container.querySelector('#cd_hours');
-    const el_minutes   = el_container.querySelector('#cd_minutes');
-    const el_seconds   = el_container.querySelector('#cd_seconds');
     const date_diff    = Date.parse(new Date()) - start_epoch * 1000;
-
+    const elements     = {};
     let countdownd_interval;
 
-    el_container.classList.remove('invisible');
+    // Get all elements only once
+    function getElements(id) {
+        const item = el_container.querySelector('#cd_' + id);
+        elements[id] = {
+            value    : item.querySelector('.cd-value'),
+            arcs     : item.querySelectorAll('.arc_q'),
+            arc_cover: item.querySelector('.arc_cover'),
+        };
+    }
+    ['days', 'hours', 'minutes', 'seconds'].forEach(function(id) { getElements(id); });
+
 
     function updateCountdown() {
         const remaining = calcRemainingTime(end_date, date_diff);
 
-        el_days.innerHTML    = remaining.days;
-        el_hours.innerHTML   = ('0' + remaining.hours).slice(-2);
-        el_minutes.innerHTML = ('0' + remaining.minutes).slice(-2);
-        el_seconds.innerHTML = ('0' + remaining.seconds).slice(-2);
+        arc(elements.days,    remaining.days,    20);
+        arc(elements.hours,   remaining.hours,   24);
+        arc(elements.minutes, remaining.minutes, 60);
+        arc(elements.seconds, remaining.seconds, 60);
 
         if (remaining.total <= 0) {
             clearInterval(countdownd_interval);
@@ -185,6 +191,8 @@ function initCountdown(start_epoch, end_date) {
 
     updateCountdown();
     countdownd_interval = setInterval(updateCountdown, 1000);
+
+    el_container.classList.remove('invisible'); // make visible when everything set
 }
 
 function calcRemainingTime(end_date, date_diff) {
@@ -201,4 +209,14 @@ function calcRemainingTime(end_date, date_diff) {
         minutes: minutes,
         seconds: seconds,
     };
+}
+
+function arc(el, value, scale) {
+    el.value.innerHTML = ('0' + value).slice(-2);
+
+    const angle = value * 360 / scale;
+    el.arcs.forEach(function(arc, idx) {
+        arc.style = 'transform: rotate(' + (Math.min((idx + 1) * 90, angle) - 135) + 'deg)';
+    });
+    el.arc_cover.classList[angle > 90 ? 'add' : 'remove']('invisible');
 }

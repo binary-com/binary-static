@@ -74,6 +74,15 @@
                                 <div id="countdown_container" class="invisible">
                                     <h3 class="content-inverse-color">[% l("Token Sale Begins In") %]</h3>
                                     <div id="countdown">
+                                        [% BLOCK arcs %]
+                                            <span class="arcs">
+                                                <span class="arc_q"></span>
+                                                <span class="arc_q"></span>
+                                                <span class="arc_q"></span>
+                                                <span class="arc_q"></span>
+                                                <span class="arc_cover"></span>
+                                            </span>
+                                        [% END %]
                                         [% items=[
                                             { id='days',    text=l("Days") },
                                             { id='hours',   text=l("Hours") },
@@ -81,8 +90,9 @@
                                             { id='seconds', text=l("Seconds") },
                                         ] %]
                                         [% FOREACH item IN items %]
-                                        <span class="cd-item">
-                                            <span class="cd-value" id="cd_[% item.id %]"></span>
+                                        <span class="cd-item" id="cd_[% item.id %]">
+                                            [% INCLUDE arcs %]
+                                            <span class="cd-value"></span>
                                             <span class="cd-label">[% item.text %]</span>
                                         </span>
                                         [% END %]
