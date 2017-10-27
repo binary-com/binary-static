@@ -552,7 +552,7 @@ input[type='text']:focus, input[type='submit']:focus {
         transition: all 0.3s;
 
         &__logo {
-            height: 50px;
+            height: 48px;
             max-width: 100%;
             background-repeat: no-repeat;
             background-size: contain;
@@ -568,7 +568,7 @@ input[type='text']:focus, input[type='submit']:focus {
             }
         }
         &__headlines {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 400;
             height: 55px;
             @media (max-width: 576px) {
@@ -602,33 +602,26 @@ input[type='text']:focus, input[type='submit']:focus {
         top: 30%;
         background: none;
         color: transparent;
-        width: 20px;
         padding: 0;
-
-        &:before {
-            display: inline-block;
-            width: 17px;
-            @media (max-width: 768px) {
-                width: 14px;
-            }
-            @media (max-width: 576px) {
-                width: 11px;
-            }
+        margin: 10px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 32px;
+        width: 17px;
+        @media (max-width: 768px) {
+            width: 14px;
+        }
+        @media (max-width: 576px) {
+            width: 11px;
         }
     }
     [data-controls='prev'] {
-        left: -30px;
-
-        &:before {
-            content: url('../images/ico/icons/accordion_left.svg');
-        }
+        left: -40px;
+        background-image: url('../images/ico/icons/arrow_left.svg');
     }
     [data-controls='next'] {
-        right: -30px;
-
-        &:before {
-            content: url('../images/ico/icons/accordion_right.svg');
-        }
+        right: -40px;
+        background-image: url('../images/ico/icons/arrow_right.svg');
     }
 }
 
