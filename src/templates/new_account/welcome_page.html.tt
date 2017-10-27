@@ -1,4 +1,4 @@
-<div class="center-text static_full">
+<div class="center-text static_full invisible show_welcome">
     <span class="account-created"></span>
 
     [% INCLUDE global/separator_line.html.tt class="gr-padding-5" invisible=1 %]
@@ -25,7 +25,7 @@
                         <p class="font-s">[% l('Upgrade to a real account and start trading using a wide range of crypto and fiat currencies.') %]</p>
                     </div>
                     <div class="box-item-end">
-                        <p><a class="button" href="[% request.url_for('realws.html') %]"><span>[% l('Upgrade now') %]</span></a></p>
+                        <p><a class="button virtual-btn"></a></p>
                     </div>
                 </div>
             </div>
