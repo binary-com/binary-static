@@ -50,6 +50,7 @@ const FinancialAccOpening  = require('../websocket_pages/user/new_account/financ
 const JapanAccOpening      = require('../websocket_pages/user/new_account/japan_acc_opening');
 const RealAccOpening       = require('../websocket_pages/user/new_account/real_acc_opening');
 const VirtualAccOpening    = require('../websocket_pages/user/new_account/virtual_acc_opening');
+const WelcomePage          = require('../websocket_pages/user/new_account/welcome_page');
 const ResetPassword        = require('../websocket_pages/user/reset_password');
 const SetCurrency          = require('../websocket_pages/user/set_currency');
 const TNCApproval          = require('../websocket_pages/user/tnc_approval');
@@ -109,7 +110,7 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
-    welcome                  : { module: StaticPages.LandingPage,    is_authenticated: true, only_virtual: true },
+    welcome                  : { module: WelcomePage,                is_authenticated: true, only_virtual: true },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },

@@ -14,7 +14,7 @@ const WelcomePage = (() => {
     };
 
     const landing_company = State.getResponse('landing_company');
-    const upgrade_msg     = document.getElementsByClassName('upgrademessage');
+    const upgrade_msg     = document.getElementsByClassName('upgrademsg');
 
     const showUpgrade = (url, msg) => {
         applyToAllElements(upgrade_msg, (el) => {
@@ -28,7 +28,7 @@ const WelcomePage = (() => {
     const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
     const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
     const show_upgrade_msg  = upgrade_info.can_upgrade;
-    const virtual_text      = document.getElementById('virtual-text');
+    const virtual_text      = document.getElementById('virtual-test');
 
     const checkIsVirtual = () => {
         if (Client.get('is_virtual')) {
