@@ -685,6 +685,11 @@ input[type='text']:focus, input[type='submit']:focus {
     background-image: url('../images/ico/icons/bittox_logo.svg');
 }
 
+#coming-soon {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 #countdown {
     $cd_size: 100px;
     $cd_border_width: 5px;
