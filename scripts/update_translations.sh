@@ -25,7 +25,7 @@ function message {
 }
 
 function confirm {
-    read -p "$(echo "\n"${WHITE}$1${YELLOW}) " -n 1 -r &&
+    read -p "$(echo "\n${WHITE}$1 ${RESET}(y/n)${YELLOW}") " -n 1 -r &&
     echo "${RESET}"
 }
 
