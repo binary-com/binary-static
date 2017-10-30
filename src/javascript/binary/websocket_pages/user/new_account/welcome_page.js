@@ -16,7 +16,7 @@ const WelcomePage = (() => {
             const show_welcome_msg  = upgrade_info.can_upgrade;
 
             const setButtonLink = (url, msg) => {
-                if(upgrade_btn) upgrade_btn.html(createElement('span', { text: localize(msg) })).setAttribute('href', Url.urlFor(url)); ;
+                upgrade_btn.html(createElement('span', { text: localize(msg) })).setAttribute('href', Url.urlFor(url));
             };
 
             const welcome_msg = document.getElementById('welcome_container');
