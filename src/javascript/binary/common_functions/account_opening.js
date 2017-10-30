@@ -11,17 +11,17 @@ const BinarySocket      = require('../websocket_pages/socket');
 require('select2');
 
 const AccountOpening = (() => {
-    const redirectAccount = () => { // eslint-disable-line consistent-return
+    const redirectAccount = (account_type_ico) => { // eslint-disable-line consistent-return
         const response_landing_company = State.getResponse('landing_company');
         const response_get_settings    = State.getResponse('get_settings');
         if (response_landing_company && response_get_settings) {
-            return redirect(response_landing_company, response_get_settings);
+            return redirect(account_type_ico, response_landing_company);
         }
-        BinarySocket.wait('landing_company', 'get_settings').then(() => redirect());
+        BinarySocket.wait('landing_company', 'get_settings').then(() => redirect(account_type_ico));
     };
 
-    const redirect = (response_landing_company) => {
-        const upgrade_info = Client.getUpgradeInfo(response_landing_company || State.getResponse('landing_company'));
+    const redirect = (account_type_ico, response_landing_company) => {
+        const upgrade_info = Client.getUpgradeInfo(response_landing_company || State.getResponse('landing_company'), undefined, account_type_ico);
 
         if (!upgrade_info.can_upgrade) {
             BinaryPjax.loadPreviousUrl();

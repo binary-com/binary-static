@@ -94,3 +94,19 @@
         </ol>
     </div>
 </div>
+
+<div class="invisible" id="ico_account_message">
+    <p>[% l("Please select your CR account to proceed.") %]</p>
+</div>
+
+<div class="invisible" id="ico_new_account_message">
+    <p>[% l("This feature is only available to CR clients. Please upgrade to proceed.") %]</p>
+    <div class="center-text">
+        <a href="javascript:;" class="button" id="ico_new_account"><span>[% l("Upgrade") %]</span></a>
+        <p class="error-msg invisible" id="new_account_error"></p>
+    </div>
+</div>
+
+<div class="invisible" id="feature_not_allowed">
+    <p class="center-text notice-msg">[% l("This feature is not available in your jurisdiction.") %]</p>
+</div>

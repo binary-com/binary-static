@@ -2,20 +2,29 @@ const BinaryPjax     = require('../../../base/binary_pjax');
 const Client         = require('../../../base/client');
 const AccountOpening = require('../../../common_functions/account_opening');
 const FormManager    = require('../../../common_functions/form_manager');
+const BinarySocket   = require('../../../websocket_pages/socket');
 
 const RealAccOpening = (() => {
 
     const onLoad = () => {
         if (Client.get('residence')) {
-            if (AccountOpening.redirectAccount()) return;
+            const account_type_ico = /ico/.test(window.location.hash);
 
-            const form_id = '#frm_real';
-            AccountOpening.populateForm(form_id,
-                () => AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id)));
-            FormManager.handleSubmit({
-                form_selector       : form_id,
-                obj_request         : { new_account_real: 1 },
-                fnc_response_handler: handleResponse,
+            if (AccountOpening.redirectAccount(account_type_ico)) return;
+
+            const updated_url = window.location.origin + window.location.pathname;
+            window.history.replaceState({ url: updated_url }, null, updated_url);
+
+            BinarySocket.wait('landing_company').then(() => {
+                const form_id = '#frm_real';
+                AccountOpening.populateForm(form_id,
+                    () => AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id)));
+
+                FormManager.handleSubmit({
+                    form_selector       : form_id,
+                    obj_request         : { new_account_real: 1, account_type: account_type_ico ? 'ico' : 'default' },
+                    fnc_response_handler: handleResponse,
+                });
             });
         } else {
             BinaryPjax.loadPreviousUrl();
