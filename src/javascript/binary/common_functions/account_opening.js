@@ -186,6 +186,10 @@ const AccountOpening = (() => {
             req.push({ request_field: 'affiliate_token', value: Cookies.getJSON('affiliate_tracking').t });
         }
 
+        if ($('#chk_professional').is(':checked')) {
+            req.push({ request_field: 'client_type', value: 'professional' });
+        }
+
         return req;
     };
 
