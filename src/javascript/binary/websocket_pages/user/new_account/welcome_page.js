@@ -34,7 +34,7 @@ const WelcomePage = (() => {
 
                 if (jp_account_status) {
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
-                        setButtonLink('/new_account/knowledge_testws', '{JAPAN ONLY}Upgrade now');
+                        setButtonLink('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     }
                 } else if (show_welcome_msg) {
                     setButtonLink(upgrade_info.upgrade_link, 'Upgrade now');
