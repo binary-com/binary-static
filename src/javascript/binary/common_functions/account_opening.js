@@ -39,6 +39,35 @@ const AccountOpening = (() => {
         getResidence();
         BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         generateBirthDate();
+        populateProfessionalCLient();
+    };
+
+    const populateProfessionalCLient = () => {
+        if (!/costarica|maltainvest/.test(State.getResponse('landing_company.financial_company.shortcode'))) return;
+
+        const $container        = $('#fs_professional');
+        const $chk_professional = $container.find('#chk_professional');
+        const $popup_contents   = $container.find('#popup');
+        const popup_selector    = '#professional_popup';
+
+        $container.setVisibility(1);
+
+        $container.find('#professional_info_toggle').off('click').on('click', () => {
+            $container.find('#professional_info').toggleClass('invisible');
+        });
+
+        $chk_professional.on('change', () => {
+            if ($chk_professional.is(':checked') && !$(popup_selector).length) {
+                $('body').append($('<div/>', { id: 'professional_popup', class: 'lightbox' }).append($popup_contents.clone().setVisibility(1)));
+
+                $(popup_selector).find('#btn_accept, #btn_decline').off('click').on('click dblclick', function() {
+                    if ($(this).attr('data-value') === 'decline') {
+                        $chk_professional.prop('checked', false);
+                    }
+                    $('#professional_popup').remove();
+                });
+            }
+        });
     };
 
     const getResidence = () => {
@@ -165,7 +194,7 @@ const AccountOpening = (() => {
             id;
         $(form_id).find('select, input[type=checkbox]').each(function () {
             id = $(this).attr('id');
-            if (!/^(tnc|address_state)$/.test(id)) {
+            if (!/^(tnc|address_state|chk_professional)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
                 if (id === 'not_pep') {
                     validation.exclude_request = 1;
