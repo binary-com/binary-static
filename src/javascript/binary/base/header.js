@@ -202,8 +202,9 @@ const Header = (() => {
 
     const showHideNewAccount = (can_upgrade) => {
         const landing_company = State.getResponse('landing_company');
+        const status          = State.getResponse('get_account_status.status');
         // only allow opening of multi account to costarica clients with remaining currency
-        if (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length)) {
+        if (!/ico_only/.test(status) && (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length))) {
             changeAccountsText(1, 'Create Account');
         } else {
             changeAccountsText(0, 'Accounts List');

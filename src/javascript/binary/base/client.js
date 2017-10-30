@@ -236,14 +236,27 @@ const Client = (() => {
                 if (client_logged_in) {
                     client_logged_in.classList.add('gr-centered');
                 }
-                applyToAllElements('.client_logged_in', (el) => { el.setVisibility(1); });
+
+                const is_ico_only = /ico_only/.test(State.getResponse('get_account_status.status'));
+                if (is_ico_only) {
+                    applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
+                }
+
+                applyToAllElements('.client_logged_in', (el) => {
+                    if (!/ico-only-hide/.test(el.classList) || !is_ico_only) {
+                        el.setVisibility(1);
+                    }
+                });
+
                 if (get('is_virtual')) {
                     applyToAllElements('.client_virtual', (el) => { el.setVisibility(1); }, '', el_section);
                     topbar_class.add(secondary_bg_color);
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
+                    const is_jp = jpClient();
                     applyToAllElements('.client_real', (el) => {
-                        if (!jpClient() || !/ja-hide/.test(el.classList)) {
+                        if ((!is_jp || !/ja-hide/.test(el.classList)) &&
+                            !/ico-only-hide/.test(el.classList) || !is_ico_only) {
                             el.setVisibility(1);
                         }}, '', el_section);
                     topbar_class.add(primary_bg_color_dark);
