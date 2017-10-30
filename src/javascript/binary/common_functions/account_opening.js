@@ -47,13 +47,14 @@ const AccountOpening = (() => {
 
         const $container        = $('#fs_professional');
         const $chk_professional = $container.find('#chk_professional');
+        const $info             = $container.find('#professional_info');
         const $popup_contents   = $container.find('#popup');
         const popup_selector    = '#professional_popup';
 
         $container.setVisibility(1);
 
         $container.find('#professional_info_toggle').off('click').on('click', () => {
-            $container.find('#professional_info').toggleClass('invisible');
+            $info.slideToggle();
         });
 
         $chk_professional.on('change', () => {

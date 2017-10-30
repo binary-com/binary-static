@@ -7,7 +7,7 @@
             [% l("I want to be treated as a professional client.") %]
         </label>
         <a id="professional_info_toggle" href="javascript:;">[% l("What is this?") %]</a>
-        <div id="professional_info" class="invisible">
+        <div id="professional_info" style="display: none;">
             <p>[% l("In order for us to be able to treat you as Professional Client, as a minimum, you have to satisfy two of the following criteria:") %]</p>
             <ul class="checked">
                 <li>[% l("a) You have carried out transactions, in significant size, on the relevant market that we are going to offer you, at an average frequency of 10 per quarter of the previous four quarters; and/or") %]</li>
