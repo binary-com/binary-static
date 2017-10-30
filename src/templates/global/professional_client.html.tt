@@ -6,7 +6,7 @@
         <label for="chk_professional">
             [% l("I want to be treated as a professional client.") %]
         </label>
-        <a id="professional_info_toggle" href="javascript:;">[% l("What is this?") %]</a>
+        <a id="professional_info_toggle" class="toggle-arrow" href="javascript:;">[% l("What is this?") %]</a>
         <div id="professional_info" style="display: none;">
             <p>[% l("In order for us to be able to treat you as Professional Client, as a minimum, you have to satisfy two of the following criteria:") %]</p>
             <ul class="checked">

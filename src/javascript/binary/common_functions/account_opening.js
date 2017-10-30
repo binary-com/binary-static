@@ -53,7 +53,8 @@ const AccountOpening = (() => {
 
         $container.setVisibility(1);
 
-        $container.find('#professional_info_toggle').off('click').on('click', () => {
+        $container.find('#professional_info_toggle').off('click').on('click', function() {
+            $(this).toggleClass('open');
             $info.slideToggle();
         });
 
