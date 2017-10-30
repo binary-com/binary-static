@@ -25,7 +25,7 @@ const WelcomePage = (() => {
             if (show_welcome_msg) {
                 setButtonLink(upgrade_info.upgrade_link, 'Upgrade now');
             } else {
-                upgrade_btn.setVisibility(0);
+                upgrade_btn.classList.add('button-disabled');
             }
         });
     };
