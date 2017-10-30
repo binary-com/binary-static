@@ -35,10 +35,43 @@ const AccountOpening = (() => {
         return false;
     };
 
-    const populateForm = (form_id, getValidations) => {
+    const populateForm = (form_id, getValidations, is_financial) => {
         getResidence();
         BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         generateBirthDate();
+        BinarySocket.wait('landing_company').then(() => { populateProfessionalClient(is_financial); });
+    };
+
+    const populateProfessionalClient = (is_financial) => {
+        const financial_company = State.getResponse('landing_company.financial_company.shortcode');
+        if (!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
+            (financial_company === 'maltainvest' && !is_financial)) return; // then it's not upgrading to financial
+
+        const $container        = $('#fs_professional');
+        const $chk_professional = $container.find('#chk_professional');
+        const $info             = $container.find('#professional_info');
+        const $popup_contents   = $container.find('#popup');
+        const popup_selector    = '#professional_popup';
+
+        $container.setVisibility(1);
+
+        $container.find('#professional_info_toggle').off('click').on('click', function() {
+            $(this).toggleClass('open');
+            $info.slideToggle();
+        });
+
+        $chk_professional.on('change', () => {
+            if ($chk_professional.is(':checked') && !$(popup_selector).length) {
+                $('body').append($('<div/>', { id: 'professional_popup', class: 'lightbox' }).append($popup_contents.clone().setVisibility(1)));
+
+                $(popup_selector).find('#btn_accept, #btn_decline').off('click').on('click dblclick', function() {
+                    if ($(this).attr('data-value') === 'decline') {
+                        $chk_professional.prop('checked', false);
+                    }
+                    $('#professional_popup').remove();
+                });
+            }
+        });
     };
 
     const getResidence = () => {
@@ -149,7 +182,8 @@ const AccountOpening = (() => {
             { selector: '#secret_answer',    validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
             { selector: '#tnc',              validations: [['req', { message: 'Please accept the terms and conditions.' }]], exclude_request: 1 },
 
-            { request_field: 'residence', value: Client.get('residence') },
+            { request_field: 'residence',   value: Client.get('residence') },
+            { request_field: 'client_type', value: () => ($('#chk_professional').is(':checked') ? 'professional' : 'retail') },
         ];
 
         if (Cookies.get('affiliate_tracking')) {
@@ -165,7 +199,7 @@ const AccountOpening = (() => {
             id;
         $(form_id).find('select, input[type=checkbox]').each(function () {
             id = $(this).attr('id');
-            if (!/^(tnc|address_state)$/.test(id)) {
+            if (!/^(tnc|address_state|chk_professional)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
                 if (id === 'not_pep') {
                     validation.exclude_request = 1;

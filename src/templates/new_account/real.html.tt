@@ -29,6 +29,8 @@
 
         [% PROCESS global/pep_declaration.html.tt %]
 
+        [% PROCESS global/professional_client.html.tt %]
+
         [% PROCESS tnc %]
     </form>
 
