@@ -29,6 +29,11 @@
     .table-container {
         overflow-x: auto;
     }
+    .welcome-content {
+        .box-grid:first-child div {
+            margin-bottom: 15px;
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
