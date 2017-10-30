@@ -35,15 +35,17 @@ const AccountOpening = (() => {
         return false;
     };
 
-    const populateForm = (form_id, getValidations) => {
+    const populateForm = (form_id, getValidations, is_financial) => {
         getResidence();
         BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         generateBirthDate();
-        populateProfessionalCLient();
+        BinarySocket.wait('landing_company').then(() => { populateProfessionalClient(is_financial); });
     };
 
-    const populateProfessionalCLient = () => {
-        if (!/costarica|maltainvest/.test(State.getResponse('landing_company.financial_company.shortcode'))) return;
+    const populateProfessionalClient = (is_financial) => {
+        const financial_company = State.getResponse('landing_company.financial_company.shortcode');
+        if (!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
+            (financial_company === 'maltainvest' && !is_financial)) return; // then it's not upgrading to financial
 
         const $container        = $('#fs_professional');
         const $chk_professional = $container.find('#chk_professional');
@@ -180,15 +182,12 @@ const AccountOpening = (() => {
             { selector: '#secret_answer',    validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
             { selector: '#tnc',              validations: [['req', { message: 'Please accept the terms and conditions.' }]], exclude_request: 1 },
 
-            { request_field: 'residence', value: Client.get('residence') },
+            { request_field: 'residence',   value: Client.get('residence') },
+            { request_field: 'client_type', value: () => ($('#chk_professional').is(':checked') ? 'professional' : 'retail') },
         ];
 
         if (Cookies.get('affiliate_tracking')) {
             req.push({ request_field: 'affiliate_token', value: Cookies.getJSON('affiliate_tracking').t });
-        }
-
-        if ($('#chk_professional').is(':checked')) {
-            req.push({ request_field: 'client_type', value: 'professional' });
         }
 
         return req;
