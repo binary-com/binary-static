@@ -121,8 +121,9 @@ const PersonalDetails = (() => {
                     if (el_key.type === 'checkbox') {
                         el_key.checked = !!data_key;
                     } else if (/select|text/i.test(el_key.type)) {
-                        el_key.value = data_key.split(',');
-                        $(el_key).trigger('change');
+                        $(el_key)
+                            .val(data_key.split(','))
+                            .trigger('change');
                     } else if (key !== 'country') {
                         elementInnerHtml(el_key, data_key ? localize(data_key) : '-');
                     }

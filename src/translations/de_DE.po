@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-24 21:04-0400\n"
+"PO-Revision-Date: 2017-10-31 05:13-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -93,8 +93,8 @@ msgstr "%1 Allgmeine Geschäftsbedingungen des Partnerprogramms"
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1 Allgmeine Geschäftsbedingungen des Applikationsprogramms Interface („API”)"
 
-msgid "%1 ICO <br /> Pre-announcement"
-msgstr "%1 ICO <br /> Voranmeldung"
+msgid "%1 ICO"
+msgstr "%1 ICO"
 
 msgid "%1 ICO Auction Bids"
 msgstr "%1 ICO Auktionsgebote"
@@ -936,6 +936,9 @@ msgstr "Vereinbarung für Dokumente"
 msgid "Agricultural, Forestry and Fishery Workers"
 msgstr "Landwirtschaftliche, Forstwirtschaftliche und Fischerei-Arbeiter"
 
+msgid "Alert"
+msgstr ""
+
 msgid "All %1 %2front-end platforms and libraries%3 are eligible."
 msgstr "Teilnahmeberechtigt sind alle %1 %2Front-End-Plattformen und Bibliotheken%3."
 
@@ -965,6 +968,9 @@ msgstr "Es werden alle Kreditkartendaten direkt an das Visa/Mastercard Netzwerk 
 
 msgid "All customer funds are segregated and held with JSF Trust Bank."
 msgstr "Alle Kundengelder sind getrennt und werden in der JSF Trust Bank gehalten."
+
+msgid "All deposits and withdrawals are made through your omnibus master account"
+msgstr "Alle Ein- und Auszahlungen erfolgen über Ihr Omnibus-Master-Konto"
 
 msgid "All durations:"
 msgstr "Alle Laufzeiten:"
@@ -1172,6 +1178,9 @@ msgstr "Sind über 18."
 
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr "Sind Sie ein Zahlungsagent oder möchten Sie einer werden?"
+
+msgid "Are you a licensed and regulated broker with a large database of active traders? Manage your database more efficiently by consolidating all your client accounts under an omnibus master account. This allows you to keep their individual identities private at the same time."
+msgstr "Sind Sie ein lizenzierter und regulierter Broker mit einer großen Datenbank von aktiven Tradern? Verwalten Sie Ihre Datenbank effizienter durch die Konsolidierung aller Ihrer Kundenkonten unter einem Omnibus-Master-Konto. Dies ermöglicht Ihnen, deren individuelle Identitäten gleichzeitig geheim zu halten."
 
 msgid "Are you an Investment professional?"
 msgstr "Sind Sie ein Anlageprofi?"
@@ -2065,11 +2074,8 @@ msgstr "Schließen, oder schließen Sie zum Teil alle, oder eine, Ihrer Offenen 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "Zusammenarbeit mit den Mitgliedern unserer IT-Gruppe, um innovative Wege zu finden, die die Fähigkeit und Leistung unserer Website verbessern"
 
-msgid "Coming soon"
-msgstr "Demnächst"
-
 msgid "Commencement Date"
-msgstr "Anfangsdatum"
+msgstr "Beginndatum"
 
 msgid "Commission Rates"
 msgstr "Provisionshöhen"
@@ -2371,9 +2377,15 @@ msgstr "Erstellung von eindeutigen, prägnanten und ansprechenden Inhalten, die 
 msgid "Create content to support our international marketing campaigns in a variety of different formats and languages"
 msgstr "Erstellung von Inhalten, um unsere internationalen Werbekampagnen in einer Vielzahl von unterschiedlichen Formaten und Sprachen zu unterstützen"
 
+msgid "Create sub-accounts to record transactions you make on behalf of your clients"
+msgstr "Erstellen Sie Unterkonten, um Transaktionen zu erfassen, die Sie im Auftrag Ihrer Kunden vornehmen"
+
 msgid "Create the graphics required to support our global marketing and advertising campaigns. The team's creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, tradeshows, special events, and promotional projects."
 msgstr "Erstellung von Graphiken, die erforderlich sind, unsere weltweiten Marketing- und Werbekampagnen zu unterstützen.\n"
 "Die kreativen Anstrenungen des Teams reichen über eine Anzahl von Kanälen, wie online Marketing, Geschäftspartner-Netzwerke, Druckwerbung, Messen, besondere Veranstaltungen und Werbeprojekte."
+
+msgid "Create your own white-label application with the omnibus facility, plus all the features supported by our extensive API library. We won’t know who your clients are and vice versa"
+msgstr "Erstellen Sie Ihre eigene Whitelabel-Anwendung mit der Omnibus-Anlage, sowie aller Funktionen die von unserer umfangreichen API-Bibliothek unterstützt werden. Wir werden nicht wissen, wer Ihre Kunden sind und umgekehrt"
 
 msgid "Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies"
 msgstr "Erstellung von Schnittstellen und Werkzeugen zum Zugriff auf Marktinformationen, Echtzeit- und historische Analyse von Tradingstrategien"
@@ -2426,6 +2438,9 @@ msgstr "Kundendienstmitarbeiter"
 msgid "Customer Support"
 msgstr "Kundendienst"
 
+msgid "Customise individual access for clients who wish to trade for themselves"
+msgstr "Passen Sie einen individuellen Zugang für Kunden an, die für sich selbst handeln möchten"
+
 msgid "Cyberjaya Office"
 msgstr "Niederlassung in Cyberjaya"
 
@@ -2470,6 +2485,9 @@ msgstr "Geburtsdatum"
 
 msgid "Day"
 msgstr "Tag"
+
+msgid "Days"
+msgstr "Tage"
 
 msgid "Debt-free"
 msgstr "Schuldenfrei"
@@ -3429,11 +3447,11 @@ msgstr "Freitag"
 msgid "Fridays"
 msgstr "Freitag"
 
-msgid "From cryptocurrency to fiat: 0.5% transfer fee"
-msgstr "Von Kryptowährung bis Fiat: 0,5 % Ablösesumme"
+msgid "From cryptocurrency to fiat: %1 transfer fee"
+msgstr "Von Kryptowährung bis Fiat: %1 Ablösesumme"
 
-msgid "From fiat to cryptocurrency: 1% transfer fee"
-msgstr "Von Fiat bis Kryptowährung: 1 % Ablösesumme"
+msgid "From fiat to cryptocurrency: %1 transfer fee"
+msgstr "Von Fiat bis Kryptowährung: %1 Ablösesumme"
 
 msgid "Front-End (Javascript) Development"
 msgstr "Front-End (Javascript) Entwicklung"
@@ -3687,11 +3705,17 @@ msgstr "Verfeinern Sie Ihre Sicherheitsprüfungs-Fähigkeiten."
 msgid "Hour"
 msgstr "Stunde"
 
+msgid "Hours"
+msgstr "Stunden"
+
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
 
 msgid "How and when will I receive my affiliate earnings?"
 msgstr "Wie und wann bekomme ich meine Geschäftspartner-Verdienste?"
+
+msgid "How are the tokens offered?"
+msgstr "Wie werden die Token angeboten?"
 
 msgid "How can I become an affiliate?"
 msgstr "Wie werde ich Geschäftspartner?"
@@ -3738,6 +3762,12 @@ msgstr "Wie verdient %1 Geld?"
 msgid "How does it work?"
 msgstr "Wie funktioniert es?"
 
+msgid "How does the ICO work"
+msgstr "Wie funktioniert die ICO"
+
+msgid "How does the ICO work?"
+msgstr "Wie funktioniert die ICO?"
+
 msgid "How is margin calculated?"
 msgstr "Wie wird Margin berechnet?"
 
@@ -3776,15 +3806,6 @@ msgstr "Wie verwendet man einen Zahlungsagenten?"
 
 msgid "How will I get paid?"
 msgstr "Wie werde ich bezahlt?"
-
-msgid "How will the ICO work"
-msgstr "Wie funktioniert die ICO"
-
-msgid "How will the ICO work?"
-msgstr "Wie funktioniert die ICO?"
-
-msgid "How will the tokens be offered?"
-msgstr "Wie werden die Token angeboten?"
 
 msgid "However, we believe that in the coming decade traditional stock exchanges will gradually be replaced by blockchain exchanges, and IPOs will gradually be replaced by ICOs. This is because blockchain technologies are much more performant than the legacy technologies of traditional stock exchanges, leading to lower transaction fees, faster settlement times, and error-free immutable audit trails. Hence, we decided to perform an ICO instead of an IPO."
 msgstr "Wir glauben jedoch, dass traditionelle Börsen im kommenden Jahrzehnt allmählich durch den Blockchain-Austausch, und dass Börseneinführungen allmählich von ICOs ersetzt werden werden. Und zwar deshalb, weil Blockchain Technologien viel leistungsfähiger als die älteren Technologien der traditionellen Börsen sind, was zu niedrigeren Transaktionskosten, zu schnelleren Abwicklungszeiten und zu fehlerfreien unveränderlichen Protokollen führt. Daher haben wir beschlossen, ein ICO anstelle eines Börsengangs durchzuführen."
@@ -4362,6 +4383,9 @@ msgstr "Interesse an unserem MAM Tool für MetaTrader 5? Kontaktieren Sie uns un
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Sie interessieren sich für unsere Liquiditätslösungen? Kontaktieren Sie uns unter %1 für weitere Informationen."
 
+msgid "Interested in our omnibus account facility? %1Contact us now and apply as an omnibus broker%2."
+msgstr "Sie interessieren sich für unsere Omnibus-Konto-Anlage? %1Kontaktieren Sie uns jetzt und bewerben Sie sich als ein Omnibus Broker%2."
+
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "Interessiert, was sollten Sie als nächstes tun? Wenn Sie unseren Kunden eine spezielle e-Cash Methode oder nationale Zahlungsoption anbieten können, die von %1 nicht schon angeboten wird, und Sie eine gute Erfolgsbilanz im Markt aufweisen können, würden wir gerne<a href='mailto:%2'> von Ihnen hören!</a>"
 
@@ -4459,7 +4483,7 @@ msgid "It is a condition of using the website that:"
 msgstr "Eine Bedingung die Webseite zu benützen ist, dass:"
 
 msgid "It is agreed and understood that the Commencement date of this Agreement means the date on which the Agent account is approved by the Company."
-msgstr "Es ist vereinbart und verstanden, dass das Anfangsdatum dieser Vereinbarung das Datum meint, zu dem das Agenten-Konto von dem Unternehmen gebilligt wird."
+msgstr "Es ist vereinbart und verstanden, dass das Beginndatum dieser Vereinbarung das Datum meint, zu dem das Agenten-Konto von dem Unternehmen gebilligt wird."
 
 msgid "It is agreed and understood that the Company may unilaterally terminate this Agreement if any of the events mentioned in the paragraphs above occurs. "
 msgstr "Es ist vereinbart und verstanden, dass das Unternehmen diese Vereinbarung einseitig kündigen kann, wenn eines der in den vorstehenden Absätzen genannten Ereignisse eintritt. "
@@ -4474,16 +4498,16 @@ msgid "It is agreed that any deposits through the Agent shall be made as follows
 msgstr "Es wird vereinbart, dass alle Einzahlungen über den Agenten wie folgt vorgenommen werden sollen:  "
 
 msgid "It is agreed that on the Commencement Date of this Agreement and on the date of each transaction as per Section B, the Agent represents and warrants that:"
-msgstr "Es wird vereinbart, dass zum Anfangsdatum dieser Vereinbarung und zum Datum der jeweiligen Transaktion gemäß Abschnitt B, der Agent darstellt und garantiert, dass:"
+msgstr "Es wird vereinbart, dass zum Beginndatum dieser Vereinbarung und zum Datum der jeweiligen Transaktion gemäß Abschnitt B, der Agent darstellt und garantiert, dass:"
 
 msgid "It is agreed that the Company shall not be responsible or liable for any matter arising out of or in relation to the use and/or operation whatsoever of any website owned or used whatsoever by the Agent. It is understood that the Agent shall indemnify the Company for all and any losses that the Company may suffer arising out of, or in relation to the use or operations of any website used or owned by the Agent."
-msgstr "Es wird vereinbart, dass das Unternehmen für jegliche Anliegen, die durch, oder im Zusammenhang mit der Nutzung und/oder dem Betrieb von jeglichen Websiten im Besitz oder in Verwendung durch den Agenten entstehen, weder verantwortlich noch haftbar ist. Es versteht sich, dass der Agent das Unternehmen für jegliche Verluste, die das Unternehmen durch, order im Zusammenhang in Bezug auf die Nutzung oder den Betrieb der Website in Verwendung oder Besitz des Agenten erleiden könnte, schadlos halten wird."
+msgstr "Es wird vereinbart, dass das Unternehmen für jegliche Anliegen, die durch, oder im Zusammenhang mit der Nutzung und/oder dem Betrieb von jeglichen Websiten im Besitz, oder in Verwendung durch den Agenten entstehen, weder verantwortlich noch haftbar ist. Es versteht sich, dass der Agent das Unternehmen für jegliche Verluste, die das Unternehmen durch, order im Zusammenhang mit, oder im Bezug auf die Nutzung, oder den Betrieb der Website, die sich im Besitz des Agenten befindet oder von diesem verwendet wird, erleiden könnte, schadlos halten wird."
 
 msgid "It is further agreed and understood that the Agent shall not use any domain name that includes the name, %1 and/or any derivation or variation of this name, able to give the impression to the average and/or reasonable Client that the Company and the Agent is the same Person."
 msgstr "Es wird weiter vereinbart und verstanden, dass der Agent keine Domain-Namen verwenden soll, die den Namen %1 und/oder Ableitungen oder Variationen dieses Namens enthalten, die dem durchschnittlichen und/oder vernünftigen Kunden den Eindruck vermitteln, dass das Unternehmen und der Agent dieselbe Person sind."
 
 msgid "It is further noted that the Company shall be the sole owner of all rights or titles or interests whatsoever of data and/or other information generated and/or produced and/or distributed by or through %1 electronic systems and other electronic systems used by %1, including any modifications."
-msgstr "Weiter ist anzumerken, dass das Unternehmen alleiniger Eigentümer aller Rechte, Titel oder Interessen von Daten und/oder anderer Informationen, die generiert und/oder hergestellt und/oder durch %1 elektronische Systeme und andere elektronische Systeme, die von %1 verwendet werden, sein soll, einschließlich jeglicher Änderungen."
+msgstr "Weiter ist anzumerken, dass das Unternehmen alleiniger Eigentümer aller Rechte, Titel oder Interessen von Daten und/oder anderen Informationen, die von oder durch %1 elektronische Systeme und andere elektronische Systeme, die von %1 verwendet werden, generiert und/oder hergestellt werden, einschließlich jeglicher Änderungen, sein soll."
 
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
 msgstr "Sie müssen alle Ihre Positionen zeitnah überwachen. Sie sind dafür zuständig, Ihre Positionen zu beobachten und Sie müssen während des Zeitraums, in dem Sie offene Kontrakte besitzen, immer die Möglichkeit des Zugriffs auf Ihre Konten haben."
@@ -5319,6 +5343,9 @@ msgstr "Niedrige minimale Einsätze"
 msgid "Lower"
 msgstr "Niedriger"
 
+msgid "Lower fees"
+msgstr "Niedrigere Gebühren"
+
 msgid "M"
 msgstr "M"
 
@@ -5342,6 +5369,9 @@ msgstr "Pflege von präzisen System-Kursgestaltungsparametern"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Aufrechterhaltung der adäquaten Geschwindigkeit und Ausgabemenge"
+
+msgid "Maintain complete anonymity of your clients."
+msgstr "Halten Sie eine völlige Anonymität Ihrer Kunden aufrecht."
 
 msgid "Major Pairs"
 msgstr "Wichtigste Paare"
@@ -5381,6 +5411,9 @@ msgstr "Verwalten Sie die Guthaben auf Ihrem Kryptowährungskonto."
 
 msgid "Manage your authorised applications."
 msgstr "Verwalten Sie Ihre genehmigten Anwendungen."
+
+msgid "Manage your client database more efficiently as an omnibus broker."
+msgstr "Verwalten Sie Ihre Kundendatenbank effizienter als Omnibus-Broker."
 
 msgid "Managers"
 msgstr "Manager"
@@ -5529,6 +5562,9 @@ msgstr "Maximale Anzahl offener Positionen"
 msgid "May"
 msgstr "Mai"
 
+msgid "Media Coverage"
+msgstr "Berichterstattung in den Medien"
+
 msgid "Medium-sized changes – generally $250-750"
 msgstr "Mittlere Veränderungen – in der Regel 250-750 $"
 
@@ -5598,6 +5634,9 @@ msgstr "Bergbau-, Bau-, Herstellungs- und Transport-Arbeiter"
 msgid "Minute"
 msgstr "Minute"
 
+msgid "Minutes"
+msgstr "Minuten"
+
 msgid "Miss"
 msgstr "Verpasst"
 
@@ -5648,6 +5687,9 @@ msgstr "Mehr Werkzeuge"
 
 msgid "More benefits"
 msgstr "Mehrere Vorteile"
+
+msgid "More efficient"
+msgstr "Effizienter"
 
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Konkret haben wir die Pflicht, Ihnen die „bestmögliche Ausführung” zu bieten, wenn wir einen Binäre Optionen Handel mit Ihnen eingehen (je \"Kontrakt\"). Die bestmögliche Ausführung bedeutet, dass wir die geeigneten Schritte unternehmen müssen, um für Sie das bestmögliche Ergebnis zu erreichen, wenn wir die Order für Sie ausführen. Dieses Dokument bietet eine Zusammenfassung unserer Regeln zur bestmöglichen Ausführung."
@@ -5812,7 +5854,7 @@ msgid "No hidden fees or commissions."
 msgstr "Keine versteckten Gebühren oder Provisionen."
 
 msgid "No modification or amendment of any or all clauses or provisions of this Agreement shall be valid unless the clear and unequivocal acceptance of such amendments by both Parties."
-msgstr "Keine Modifikation oder Änderung von einem oder allen Klauseln oder Bestimmungen dieser Vereinbarung sollen gelten, es sei denn es gibt eine klare und eindeutige Akzeptanz solcher Änderungen durch beide Parteien."
+msgstr "Keine Modifikation oder Änderung von einem oder allen Klauseln oder Bestimmungen dieser Vereinbarung sollen gelten, es sei denn, es gibt eine klare und eindeutige Akzeptanz solcher Änderungen durch beide Parteien."
 
 msgid "No open positions."
 msgstr "Keine offenen Positionen."
@@ -5948,6 +5990,9 @@ msgstr "Angestellte/r"
 
 msgid "Old password is wrong."
 msgstr "Altes Passwort ist falsch."
+
+msgid "Omnibus account"
+msgstr "Omnibus-Konto"
 
 msgid "On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you."
 msgstr "Auf der Grundlage der von Ihnen bezüglich Ihrer Kenntnis und Erfahrung zur Verfügung gestellten Informationen, sehen wir die über diese Website möglichen Anlagegeschäfte als für Sie als nicht geeignet an."
@@ -6696,6 +6741,9 @@ msgstr "Vorhandene Kenntnisse und Erfahrung in der Finanzdienstleistungsbranche"
 msgid "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account's Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "Bevor Sie eine Order platzieren, was zur Eröffnung einer Transaktion oder zur Steigerung einer existierenden offenen Position führt, erkennen Sie an, dass es in Ihrer Verantwortung liegt, dass das Freie Margin auf Ihrem Konto ausreicht, um das Margin abzudecken, das erforderlich ist, um eine Transaktion zu eröffnen (die \"Margin-Anforderung\"), und um die Margin-Anforderung kontinuierlich zu erfüllen."
 
+msgid "Privacy"
+msgstr "Datenschutz"
+
 msgid "Privacy & Security"
 msgstr "Datenschutz & Sicherheit"
 
@@ -6778,7 +6826,7 @@ msgid "Provide the customer support agent with the four-digit verification code 
 msgstr "Geben Sie dem Kunden-Support-Mitarbeiter den unten stehenden vierstelligen Bestätigungscode zur Bestätigung an."
 
 msgid "Provision of Services"
-msgstr "Leistungserringungen"
+msgstr "Dienstleistungserbringungen"
 
 msgid "Public and corporation bond"
 msgstr "Public and corporation bond"
@@ -6873,11 +6921,11 @@ msgstr "Lesen Sie unsere FAQ"
 msgid "Read our blog for the stories and ideas that inspire us"
 msgstr "Lesen Sie unseren Blog von Geschichten und Ideen, die uns inspirieren"
 
+msgid "Read the Information Memorandum for further information about the proposed offer."
+msgstr "Lesen Sie das Informationsmemorandum für weitere Informationen über das vorgeschlagene Angebot."
+
 msgid "Read the answers to some common questions."
 msgstr "Lesen Sie die Antworten auf häufige Fragen nach."
-
-msgid "Read the draft Information Memorandum for further information about the proposed offer."
-msgstr "Lesen Sie den Entwurf des Informationsmemorandums für weitere Informationen über das vorgeschlagene Angebot."
 
 msgid "Read the official press release"
 msgstr "Lesen Sie die offizielle Pressemitteilung"
@@ -6926,6 +6974,9 @@ msgstr "Erhalten Sie Notierungen für ein Geschäft und Gegengeschäft, so dass 
 
 msgid "Receive your activation code by secure"
 msgstr "Erhalten Sie Ihren Aktivierungscode durch sicheres"
+
+msgid "Reduce fees associated with deposits and withdrawals."
+msgstr "Reduzieren Sie Gebühren im Zusammenhang mit Ein- und Auszahlungen."
 
 msgid "Ref."
 msgstr "Ref."
@@ -7202,6 +7253,9 @@ msgstr "Zweitens, werden Tokeninhaber ihre Token frei handeln können. Im Gegens
 
 msgid "Secondary"
 msgstr "Sekundäre/r"
+
+msgid "Seconds"
+msgstr "Sekunden"
 
 msgid "Secret question"
 msgstr "Geheimfrage"
@@ -7687,10 +7741,10 @@ msgid "Subject to the law and the terms and/or conditions and/or provisions and/
 msgstr "Gemäß dem Gesetz und den Bedingungen und/oder Bestimmungen und/oder Klauseln dieser Vereinbarung haftet das Unternehmen an den Agenten für keine Angelegenheit, die sich aus, oder im Zusammenhang mit dieser Vereinbarung ergibt."
 
 msgid "Subject to the law, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to the Agent or Client for any loss, damage or debt whatsoever arising directly or indirectly out of, or in connection with this Agreement. The Agent agrees to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses including all and any legal fees incurred arising out of his failure to comply with any and all of his obligations set forth in this Agreement."
-msgstr "Dem Gesetz gemäß, unterliegt weder das Unternehmen noch irgendwelche seiner Leiter, leitenden Angestellten, Manager, Angestellten, oder Agenten dem Agenten oder Kunden für jeglichen Verlust, Schaden oder seine Schulden, die sich direkt oder indirekt aus dem, oder im Zusammenhang mit dieser Vereinbarung ergeben. Der Agent stimmt zu, dass das Unternehmen und seine Leiter, leitenden Angestellten, Manager, Angestellten, oder Agenten von und gegen alle Verpflichtungen, Verluste, Kosten und Ausgaben, einschließlich aller Rechtsgebühren, die durch sein Versäumnis erlitten wurden, mit allen seinen Verpflichtungen, die in dieser Vereinbarung dargelegt sind, schade- und klaglos zu halten."
+msgstr "Dem Gesetz gemäß, unterliegt weder das Unternehmen, noch irgendwelche seiner Leiter, leitenden Angestellten, Manager, Angestellten, oder Agenten dem Agenten oder Kunden für jeglichen Verlust, Schaden, oder seine Schulden, die sich direkt oder indirekt aus der Vereinbarung, oder im Zusammenhang mit dieser Vereinbarung ergeben. Der Agent stimmt zu, dass das Unternehmen und seine Leiter, leitenden Angestellten, Manager, Angestellten, oder Agenten von und gegen alle Verpflichtungen, Verluste, Kosten und Ausgaben, einschließlich aller Rechtsgebühren, die durch sein Versäumnis erlitten wurden, mit all seinen Verpflichtungen, die in dieser Vereinbarung dargelegt sind, schad- und klaglos zu halten."
 
 msgid "Subject to the provisions of Sections J and N of this Agreement, it is agreed and understood that any of the Parties may terminate this Agreement by giving 7 days written notice to the other Party."
-msgstr "Vorbehaltlich der Bestimmungen der Abschnitte J und N dieser Vereinbarung ist es vereinbart und verstanden, dass jede Partei diesen Vertrag kündigen kann, mittels 7-tägiger schriftlicher Kündigung an die andere Partei."
+msgstr "Vorbehaltlich der Bestimmungen der Abschnitte J und N dieser Vereinbarung ist es vereinbart und verstanden, dass jede Partei diese Vereinbarung mittels 7-tägiger schriftlicher Kündigung an die andere Partei kündigen kann."
 
 msgid "Submit"
 msgstr "Absenden"
@@ -7707,8 +7761,8 @@ msgstr "Senden Sie uns Ihr Bewerbungsschreiben und Ihren Lebenslauf zu"
 msgid "Subscribe to our mailing list"
 msgstr "Abonnieren Sie unsere Mailingliste"
 
-msgid "Subscribe to our mailing list for exclusive updates on the ICO, including the official launch date."
-msgstr "Abonnieren Sie unsere Mailingliste für exklusive Updates zur ICO, einschließlich des offiziellen Starttermins."
+msgid "Subscribe to our mailing list for exclusive updates on the ICO."
+msgstr "Abonnieren Sie unsere Mailingliste für exklusive Updates zur ICO."
 
 msgid "Successful"
 msgstr "Erfolgreich"
@@ -7900,37 +7954,37 @@ msgid "The Affiliate's Obligations"
 msgstr "Die Pflichten des Geschäftspartners"
 
 msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
-msgstr "Der Agent verpflichtet sich dazu das Unternehmen für alle Verluste zu entschädigen, die das Unternehmen aus oder im Zusammenhang mit seinen betrügerischen Handlungen oder Unterlassungen und/oder jede Art von Fahrlässigkeit und/oder Fehlverhalten und/oder vorsätzlichen Standard und/oder Verstoß gegen diese Vereinbarung, erleiden könnte."
+msgstr "Der Agent verpflichtet sich dazu das Unternehmen für alle Verluste zu entschädigen, die das Unternehmen aus, oder im Zusammenhang mit seinen betrügerischen Handlungen, oder Unterlassungen und/oder jede Art von Fahrlässigkeit und/oder Fehlverhalten und/oder vorsätzlichen Standard und/oder Verstoß gegen diese Vereinbarung, erleiden könnte."
 
 msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-cash or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
 msgstr "Der Agent kann Kunden des Unternehmens, die einzahlen und/oder mit dem Agenten Geld abheben wollen, seine Dienstleistungen anbieten. Insbesondere kann der Agent seine Dienstleistungen an Kunden anbieten, die beabsichtigen, e-Cash oder e-Payment-Methoden anders als die vom Unternehmen verwendeten (nachfolgend als \"e-Payments\" bezeichnet) und/oder lokalen Währungen anders als die vom Unternehmen anerkannten (im folgenden als die \"lokalen Währungen\" bezeichnet) und/oder lokale Banküberweisungen (nachfolgend als \"Banküberweisung\" bezeichnet) verwenden möchten."
 
 msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
-msgstr ""
+msgstr "Der Agent stellt dar und gewährleistet, dass er aktuell und zukünftig alle Gesetze, die im Zusammenhang mit Anti-Geldwäsche, sowie mit eventuellen finanziellen oder wirtschaftlichen Sanktionsprogrammen in dem Land einhält, in dem er tätig ist."
 
 msgid "The Agent shall not be authorized to offer its services, under this Agreement, to Clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href=\"%1\">www.binary.com.</a>"
-msgstr ""
+msgstr "Der Agent ist nicht ermächtigt, seine Dienste unter dieser Vereinbarung für Kunden anzubieten, die ihren Wohnsitz in einem der beschränkten Länder gemäß unserer Allgemeinen Geschäftsbedingungen (in der von Zeit zu Zeit jeweils gültigen Fassung), die auf unserer Website veröffentlicht werden, <a href=\"%1\"> www.binary.com</a> haben."
 
 msgid "The Agent shall not produce any copies of any Confidential Information and/or any content based on the concepts contained within the Confidential Information for personal use and/or for distribution, without the Company’s request."
-msgstr ""
+msgstr "Der Agent wird keine Kopien von vertraulichen Informationen und/oder Inhalten, basierend auf den Konzepten der vertraulichen Informationen für den persönlichen Gebrauch und/oder für den Vertrieb ohne einer Anfrage des Unternehmens produzieren."
 
 msgid "The Agent shall not:"
 msgstr "Der Agent wird nicht:"
 
 msgid "The Agent shall provide any and all information and documentation, required in the context of the due diligence that the Company shall conduct, from time to time. The Company, complying with the law and providing its services under this Agreement, shall be entitled, at any time, to request from the Agent to provide all and any due diligence information and documentation related to itself and any other person connected and/or associated with it for the purposes of this Agreement."
-msgstr ""
+msgstr "Der Agent stellt alle Informationen und Unterlagen im Zusammenhang mit der Sorgfaltspflicht, die das Unternehmen von Zeit zu Zeit durchführen soll, zur Verfügung. Das Unternehmen, in Einhaltung des Gesetzes und seine Dienstleistungen unter dieser Vereinbarung anbietend, ist berechtigt, den Agenten jederzeit dazu aufzufordern, alle Sorgfaltspflicht-Informationen und Dokumentation im Zusammenhang mit sich selbst und jeder anderen Person die für die Zwecke dieser Vereinbarung in Verbindung damit und/oder damit assoziiert ist, anzugeben."
 
 msgid "The Agent shall submit an application including the following information:"
 msgstr "Der Agent soll einen Antrag mit folgenden Angaben stellen:"
 
 msgid "The Agent shall treat all information related to the Company and Client including but not limited to Client identity, financial status, trading or transaction performance, as well as Company’s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the “Confidential Information”)."
-msgstr ""
+msgstr "Der Agent soll alle Informationen im Zusammenhang mit dem Unternehmen und Kunden einschließlich, aber nicht beschränkt auf Identität des Kunden, finanziellen Status, Handel oder Transaktionsleistung sowie Unternehmens-Business-Pläne, Preispunkte, Ideen, Konzepte, Formate, Anregungen, Entwicklungen, Regelungen, Programme, Techniken, Methoden, Know-how, Ausrüstung, als vertraulich (nachfolgend als \"Vertrauliche Informationen\" bezeichnet) behandeln."
 
 msgid "The Agent shall upon demand provide the Company with all requested information and/or documentation in regards with its operations and competence including but not limited to its registration and/or incorporation, memberships, authorisations, knowledge, expertise and experience."
-msgstr ""
+msgstr "Der Agent wird auf Verlangen des Unternehmens hin alle angeforderten Informationen und/oder Unterlagen in Bezug auf seine Aktivitäten und Kompetenzen, einschließlich aber nicht beschränkt auf seine Registrierung und/oder Aufnahme, Mitgliedschaften, Zulassungen, Wissen, Fachwissen und Erfahrung, mitteilen."
 
 msgid "The Agent thereinafter, shall transfer the requested sum to the Client. It is noted that these transactions fall out of the scope of this Agreement and as result the Company shall not be liable against the Agent and/or Client and/or any other person, under contract or tort law or any other applicable law, for any conflicts or potential conflicts arising out of or in connection with such transactions."
-msgstr ""
+msgstr "Der Agent wird nachstehend, die angeforderte Summe an den Kunden übertragen. Es wird darauf hingewiesen, dass diese Transaktionen aus dem Geltungsbereich dieser Vereinbarung fallen und als Ergebnis dessen, das Unternehmen nicht gegen den Agenten und/oder Kunden und/oder jede andere Person unter Vertrag oder Deliktsrecht, oder einem anderen anwendbaren Gesetz, für Konflikte, oder potentielle Konflikte, oder Streitigkeiten, die sich aus, oder im Zusammenhang mit solchen Transaktionen ergeben, haftet."
 
 msgid "The Agent will send you the withdrawal amount (minus the commission) via your preferred payment method."
 msgstr "Der Händler wird Ihnen den Auszahlungsbetrag (abzüglich der Provision) über Ihre angegebene Zahlungsmethode zukommen lassen."
@@ -7939,10 +7993,10 @@ msgid "The Average"
 msgstr "Der Mittelwert"
 
 msgid "The Client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his %1 Account (hereinafter referred to as the “%1 Agent Account”)."
-msgstr ""
+msgstr "Kunden die e-Payment und Bank-Überweisungen verwenden, können eine Einzahlung an den Agenten tätigen. Der Agent soll nach Erhalt der Einzahlung eine Einzahlung auf sein  %1 Konto (nachstehend als \"%1 Agenten-Konto\" bezeichnet) vornehmen."
 
 msgid "The Company and Agent (hereinafter referred to as “the Parties”) desire to enter into this Agreement whereby the Company will offer to its Clients local payment processing services through the Agent within a territory as specified in Section D of this Agreement."
-msgstr ""
+msgstr "Das Unternehmen und der Agent (im folgenden als \"die Parteien\" bezeichnet) wollen diese Vereinbarung eingehen, wonach das Unternehmen seinen Kunden lokale Zahlungsabwicklungen über den Agenten innerhalb eines Gebiets gemäß Abschnitt D dieser Vereinbarung anbieten wird."
 
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgstr "Das Unternehmen garantiert nicht, dass das von ihm zur Verfügung gestellte %1 API ohne Unterbrechung oder Fehler in seinen Funktionen ist. Insbesondere kann der Betrieb des %1 API wegen Wartung, Updates oder System- oder Netzwerkfehlern unterbrochen werden. Das Unternehmen übernimmt für Schäden, die durch solche Unterbrechungen oder Fehler der Funktion verursacht werden, keine Haftung."
@@ -7969,7 +8023,7 @@ msgid "The Company is not under any obligation of confidentiality with respect t
 msgstr "Das Unternehmen hat keine Geheimhaltungspflichten für Beiträge;"
 
 msgid "The Company is the sole owner of all rights or titles or interests whatsoever in and to all %1 electronic systems including but not limited to any and all software, e-mail and email management software, including any modifications."
-msgstr ""
+msgstr "Das Unternehmen ist der alleinige Eigentümer aller Rechte oder Titel oder Interessen in und um alle %1 elektronischen Systeme, einschließlich, aber nicht beschränkt auf jegliche Software, E-Mail- und E-Mail-Management-Software, einschließlich aller Änderungen."
 
 msgid "The Company makes no claims that the %1 website will be uninterrupted or provide an error free service, and will not be liable for the consequences of any such errors or interruptions."
 msgstr "Das Unternehmen sichert nicht zu, dass die %1 Website einen ununterbrochenen oder fehlerfreien Service zur Verfügung stellen wird und haftet nicht für die Folgen von Unterbrechungen oder Fehlern."
@@ -8038,13 +8092,13 @@ msgid "The Company shall not be liable to you in contract, or otherwise (includi
 msgstr "Das Unternehmen haftet Ihnen gegenüber weder vertraglich noch anderweitig (einschließlich Haftung wegen Fahrlässigkeit) für direkte oder indirekte Verluste des Geschäftspartnerunternehmens, für Umsatz oder Gewinne, erwartete Einsparungen oder unnötige Ausgaben, Beschädigung oder Vernichtung von Daten oder für andere indirekte oder Folgeschäden."
 
 msgid "The Company shall not be responsible or liable for any advice on financial services provided by the Agent to any Client."
-msgstr "Das Unternehmen soll für irgendwelche Ratschläge über die Erbringung von Finanzdienstleistungen des Agenten an jeglichen Kunden, weder verantwortlich noch haftbar sein."
+msgstr "Das Unternehmen soll für jegliche Ratschläge über die Erbringung von Finanzdienstleistungen des Agenten an jeglichen Kunden, weder verantwortlich noch haftbar sein."
 
 msgid "The Company shall not be responsible or liable to the Client for any fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default made by the Agent. Likewise, the Company shall not be responsible and/or liable to the Client if any terms and/or conditions and/or provisions of this Agreement are breached by the Agent."
-msgstr ""
+msgstr "Das Unternehmen wird gegenüber dem Kunden für keine betrügerischen Handlungen oder Unterlassungen und/oder jede Art von Fahrlässigkeit und/oder Fehlverhalten und/oder vorsätzlichen Standard durch den Agenten verantwortlich oder haftbar gemacht. Ebenso wird das Unternehmen dem Kunden gegenüber weder verantwortlich, noch haftbar gemacht, wenn Bedingungen und/oder Bestimmungen dieser Vereinbarung durch den Agenten verletzt werden."
 
 msgid "The Company shall not perform any supervisory function in regards with any financial services whatsoever provided by the Agent."
-msgstr ""
+msgstr "Das Unternehmen wird keine Aufsichtsfunktion in Bezug auf jegliche Erbringung von Finanzdienstleistungen durch den Agenten ausüben."
 
 msgid "The Company shall pay you the currently published percentage of net revenues (as detailed on the commission page of your affiliate account) received during the term of the Agreement. The affiliate commission payments due shall only be for bona fide client referrals and the Company reserves the right to disregard duplicate accounts or nominee accounts that the Company sees as non-bona fide clients, at its sole discretion."
 msgstr "Das Unternehmen zahlt Ihnen den aktuell veröffentlichten Prozentsatz vom Nettoumsatz (wie auf der Provisionsseite Ihres Geschäftspartner-Kontos näher erläutert), den das Unternehmen während der Vertragslaufzeit erzielt hat. Die im Rahmen dieses Vertrags fälligen Provisionszahlungen gelten nur für echte Kundenempfehlungen und das Unternehmen behält sich das Recht vor, doppelte Konten oder Konten von Strohmännern, die das Unternehmen im alleinigen eigenen Ermessen als keine echten Kunden ansieht, unberücksichtigt zu lassen."
@@ -8071,7 +8125,7 @@ msgid "The Company's Obligations"
 msgstr "Die Pflichten des Unternehmens"
 
 msgid "The Company, exercising its absolute discretion, may accept or reject Agent’s Application. Where Agent’s Application is accepted, we shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by such Agent in the Payment Agent list which is disclosed on our website, <a href=\"%1\">www.binary.com</a>."
-msgstr ""
+msgstr "Das Unternehmen, in Ausübung des freien Ermessens, kann die Agenten-Bewerbung annehmen oder ablehnen. Wenn die Agenten-Bewerbung akzeptiert wird, umfassen wir alle relevanten Informationen, einschließlich aber nicht beschränkt auf Name, Adresse, Website (wenn vorhanden), E-Mail-Adresse, Telefonnummer, Provisionen und Zahlungsmethoden, die von solchen Agenten in der Zahlungs-Agenten-Liste die auf unserer Website <a href=\"%1\"> www.binary.com</a> veröffentlicht ist, verwendet werden."
 
 msgid "The Data Protection laws and regulations place obligations on users of personal data and lay down principles for fair and lawful processing of this information. We are committed to safeguarding your privacy online. We only use your personal information to help us service your account, to improve our services to you, and to provide you with products you have requested. We do not sell your personal information to third parties, but we may provide your personal information to payment providers to facilitate transactions on your account."
 msgstr "Die Gesetze und Regulierungen zum Datenschutz sehen für Nutzer von personenbezogenen Daten Verpflichtungen vor und legen Prinzipien für eine faire und rechtmäßige Verarbeitung dieser Daten fest. Wir sind dazu verpflichtet, Ihre Online-Privatsphäre zu schützen. Wir verwenden Ihre personenbezogenen Daten nur zur Pflege Ihres Kontos, um Ihnen einen besseren Service zu bieten und um Ihnen Produkte zur Verfügung zu stellen, nach denen Sie gefragt haben. Wir verkaufen Ihre personenbezogenen Daten nicht an Dritte, aber wir dürfen Ihre personenbezogenen Daten an Zahlungsdienstleister weiterleiten, um die Transaktionen auf Ihrem Konto zu erleichtern."
@@ -8113,7 +8167,7 @@ msgid "The Margin Requirement is a percentage of the value of the Open Positions
 msgstr "Die Margin-Anforderung ist ein Prozentsatz des Wertes einer offenen Position und wird fortfahren, im Zusammenhang mit dem Wert der offenen Position während der Laufzeit der relevanten Kontrakte (der \"Kontraktwert\"), zu schwanken."
 
 msgid "The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall deprive of the right to released form any responsibility, under this Agreement where it fails to duly notify the other Party on time."
-msgstr ""
+msgstr "Die Partei, die nicht in der Lage ist, seinen Verpflichtungen aus dieser Vereinbarung aufgrund von Ereignissen höherer Gewalt nachzukommen, wird die andere Partei innerhalb von 5 Werktagen nachdem solch ein Ereignis eingetreten ist, in schriftlicher Form informieren. Der Partei soll unter dieser Vereinbarung das Recht entzogen werden, von dieser Verantwortung befreit zu werden, wenn sie versäumt die andere Partei ordnungsgemäß und rechtzeitig zu informieren."
 
 msgid "The Payment Agent facility is currently not available in your country."
 msgstr "In Ihrem Land ist derzeit kein Zahlungsagent vorhanden."
@@ -8194,7 +8248,7 @@ msgid "The anti-money laundering processes have the following effects on Clients
 msgstr "Die Verfahren gegen Geldwäsche haben folgende Auswirkungen auf Kunden:"
 
 msgid "The application shall be reviewed and assessed by our compliance and marketing departments. It is noted that our compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H."
-msgstr ""
+msgstr "Die Bewerbung wird von unseren Compliance- und Marketing-Abteilungen überprüft und bewertet. Es ist darauf hingewiesen, dass unsere Compliance-Abteilung der Anti-Geldwäschepolitik folgend und diese umsetzend und die Sorgfaltspflicht im Einklang mit den Gesetzen und Vorschriften durchführend, alle erforderlichen Informationen und Unterlagen gemäß Abschnitt H anfordern und sammeln wird."
 
 msgid "The average is the average of the ticks, including the first and the last tick."
 msgstr "Der Mittelwert ist der Durchschnitt der Ticks, einschließlich des ersten und letzten Ticks."
@@ -8247,8 +8301,8 @@ msgstr "Das Unternehmen unterhält Kundengelder auf von den betrieblichen Konten
 msgid "The company reserves the right to cancel/prohibit the use of this promotion at its own discretion at any time."
 msgstr "Das Unternehmen behält sich das Recht vor, die Anwendung dieser Werbeaktion jederzeit und auf eigenes Ermessen zu stornieren/untersagen."
 
-msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr "Das Unternehmen behält sich das Recht vor, für jedes Kundenkonto, für das über einen Zeitraum von 12 Monaten keine Transaktion verzeichnet wurde, alle 6 Monate eine Nichtnutzungsgebühr von bis zu 25 USD/EUR/AUD/GBP zu erheben. Wenn ein bei der Binary (Europe) Ltd. bestehendes Kundenkonto für einen Zeitraum von 30 Monaten inaktiv ist und der Kunde nicht gefunden oder kontaktiert werden kann, dann muss das Unternehmen das Kontoguthaben an die Maltesische Glücksspielbehörde auszahlen. Die Kunden müssen sich dann mit unserem Helpdesk in Verbindung setzen, um die Guthaben inaktiver, gesperrter oder ausgeschlossener Konten ausgezahlt zu bekommen."
+msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
+msgstr "Das Unternehmen behält sich das Recht vor, für jedes Kundenkonto, für das über einen Zeitraum von 12 Monaten keine Transaktion verzeichnet wurde, alle 6 Monate eine Nichtnutzungsgebühr von bis zu 25 USD/EUR/AUD/GBP, oder für Kryptowährungs-Konten, dem Equivalent von 25 USD, wie in Einhaltung mit dem aktuellen Wechselkurs errechnet, der von www.xe.com veröffentlicht wird, oder einem anderen anerkannten Datenprovider, zum Datum, an dem die Gebühr erhoben wird, zu erheben. Wenn ein bei der Binary (Europe) Ltd. bestehendes Kundenkonto für einen Zeitraum von 30 Monaten inaktiv ist und der Kunde nicht gefunden oder kontaktiert werden kann, dann muss das Unternehmen das Kontoguthaben an die Maltesische Glücksspielbehörde auszahlen. Die Kunden müssen sich dann mit unserem Helpdesk in Verbindung setzen, um die Guthaben inaktiver, gesperrter oder ausgeschlossener Konten ausgezahlt zu bekommen."
 
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website, however, we do not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website."
 msgstr "Der Inhalt dieser Website unterliegt Änderungen, die jederzeit und ohne vorige Mitteilung vorgenommen werden und einzig und allein dazu dienen, Tradern beim Treffen unabhängiger Investmententscheidungen zu helfen. %1 hat ausreichende Maßnahmen getroffen, um die Genauigkeit der Information auf der Website sicherzustellen. Allerdings können wir ihre Genauigkeit nicht garantieren und werden für Verluste oder Schäden nicht haftbar, die sich direkt oder indirekt aus dem Inhalt ergeben oder aus Ihrer Unfähigkeit, die Seite abrufen zu können, für Verzögerungen oder Fehler bei der Übermittlung von Anweisungen oder Benachrichtigungen, die über diese Website übertragen werden."
@@ -8279,9 +8333,6 @@ msgstr "Die angegebene E-Mail Adresse, ist bereits in Verwendung. Wenn Sie Ihr P
 
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Der Einstiegskurs ist der Startpreis eines von einem Händler gekauften Kontrakts."
-
-msgid "The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017."
-msgstr "Das genaue Datum des ICO ist noch nicht bestimmt, aber wir zielen das vierte Quartal 2017 an."
 
 msgid "The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients."
 msgstr "Die Ausführungsplätze werden regelmäßig beurteilt, damit sie das bestmögliche Ergebnis für unsere Kunden erbringen."
@@ -8444,7 +8495,7 @@ msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "Der Einsatz ist der Betrag, den ein Händler zahlen muss, um einen Kontrakt abzuschließen."
 
 msgid "The sum received in the %1 Agent Account shall be transferred by the Agent to the %1 Client Account."
-msgstr ""
+msgstr "Die Summe, die im %1 Agenten-Konto erhalten wird, wird vom Agenten auf das %1 Kundenkonto überwiesen."
 
 msgid "The swap rate will depend on the direction of the position you take:"
 msgstr "Der Swapsatz hängt von der Richtung der Position, die Sie einnehmen, ab:"
@@ -8461,11 +8512,14 @@ msgstr "Der Begriff \"wir\", \"uns\", \"unser\", \"unsere\", \"das Unternehmen\"
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "Der Begriff \"wir\", \"uns\", \"unser\", \"unsere\", \"das Unternehmen\", oder \"%1\" sollen entweder Binary (V) Ltd. oder Binary (C.R) S.A. bezeichnen, je nach Zuständigkeit, der das Konto des Kunden im Einklang mit den Kontoeröffnungs-Verfahren der Website angefügt wurde."
 
+msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
+msgstr "Die Token werden über ein Auktionsverfahren angeboten. Sehen Sie unseren %1Guide%2 für die Token-Auktion an."
+
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr "Die Token berechtigen den Inhaber dazu, mit Dividenden verbundene Zahlungen zu erhalten, und tragen wirtschaftliche Vorteile, die Stammaktien entsprechen. Somit gäbe es normalerweise keinen praktischen Grund für Tokeninhaber ihre Token in Aktien zu konvertieren."
 
-msgid "The tokens will be offered via an auction process. View our %1guide%2 to the token auction."
-msgstr "Die Token werden über ein Auktionsverfahren angeboten werden. Sehen Sie unseren %1Guide%2 für die Token-Auktion an."
+msgid "The tokens will be offered from 15 November 2017 to 25 December 2017."
+msgstr "Die Token werden vom 15. November 2017 bis zum 25. Dezember 2017 angeboten werden."
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
 msgstr "Die auf dieser Site ausgeführten Transaktionen und die Beziehung zwischen Kunden und dem Unternehmen unterliegen und werden nach den Gesetzen des Landes ausgelegt, in dem das Unternehmen gegründet wurde (Rechtsprechung), welches entweder die Isle of Man, Malta oder Costa Rica sein muss. Sie sind damit einverstanden, dass die Gerichte dieser Länder die alleinige Rechtsprechung bezüglich solcher Streitfälle haben und Sie sind damit einverstanden, dass jeglicher Anspruch, den Sie gegenüber dem Unternehmen haben könnten, nur vor diesen Gerichten verhandelt wird. Für weitere Informationen verweisen wir auf den Abschnitt über Beschwerden und Streitfälle mit dem Unternehmen."
@@ -8576,7 +8630,7 @@ msgid "These materials may not be copied or redistributed for commercial purpose
 msgstr "Diese Materialien dürfen nicht zu gewerblichen Zwecken oder zum Schadenersatz jeglicher Art, ohne vorherige schriftliche Genehmigung von einer Binary Konzerngesellschaft, kopiert oder umverteilt werden."
 
 msgid "This Agreement constitutes the entire Agreement between the Parties and no earlier representation or arrangement or agreement written or oral relating to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
-msgstr ""
+msgstr "Diese Vereinbarung stellt die gesamte Vereinbarung zwischen den Parteien und keine frühere Darstellung oder Anordnung oder Vereinbarung, weder schriftlich noch mündlich, in Bezug auf alle Angelegenheiten, die in dieser Vereinbarung zwischen den Parteien behandelt werden, dar und soll vor dem Beginndatum weder Kraft noch Wirkung haben."
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "Dieser Vertrag enthält hinsichtlich des Vertragsgegenstands die gesamte Vereinbarung zwischen den Parteien und ersetzt alle früheren Vereinbarungen und Übereinkünfte zwischen den Parteien, die bezüglich des Gegenstands der Vereinbarung getroffen wurden."
@@ -8585,10 +8639,10 @@ msgid "This Agreement governs your use of our API unless you have executed anoth
 msgstr "Dieser Vertrag gilt für Ihre Verwendung unseres API, es sei denn, Sie haben eine andere Vereinbarung mit dem Unternehmen getroffen, die ausdrücklich für Ihre Verwendung unseres API gilt."
 
 msgid "This Agreement is between Binary (C.R) S.A. (hereinafter referred to as “the Company” or “%1”, “we”, “us”, “our”, “ours”, “it”, “its”) and Payment Agent (hereinafter referred to as “the Agent”, “he”, “his”, “him”, “himself”, “it”, “its”, “itself”), both of whom agree to be bound by this Agreement."
-msgstr ""
+msgstr "Diese Vereinbarung ist zwischen Binary (C.R) S.A. (nachstehend als \"das Unternehmen\" oder \"%1\", \"wir\", \"uns\", \"unser\", \"unsere\", \"es\", \"seine\" bezeichnet) und dem Zahlungsagenten (nachstehend als \"Agent\", \"er\", \"sein\", \"ihn\", \"selbst\", \"er\", \"seine\", \"selbst\" bezeichnet), beide stimmen zu, durch diese Vereinbarung gebunden zu sein."
 
 msgid "This Agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy or misspelling and as a result by misunderstanding or misinterpretation of any of the terms and/or conditions and/or clauses and/or provisions of any translated versions of this Agreement."
-msgstr ""
+msgstr "Diese Vereinbarung wird dem Agenten auf Englisch bereitgestellt. Im Fall eines Unterschiedes zwischen der englischen Version und einer übersetzten Version dieses Dokuments, soll die englische Version maßgeblich sein. Das Unternehmen soll für keinen Schaden oder Verlust verantwortlich gemacht werden, der durch einen Fehler, einen Schreibfehler, oder ein Missverständnis, oder einen Rechtschreibfehler, oder eine Fehlinterpretation der Allgemeinen Geschäftsbedingungen und/oder Klauseln und/oder Regelungen jeglicher übersetzter Versionen dieser Vereinbarung, entstanden ist."
 
 msgid "This Agreement is supplied to you in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. We will not be made responsible for any damage or loss caused by an error, inaccuracy, misunderstanding or misspelling with regards to the translations."
 msgstr "Diese Vereinbarung wird Ihnen auf Englisch bereitgestellt. Im Fall eines Unterschiedes zwischen der englischen Version und einer übersetzten Version dieses Dokuments, soll die englische Version maßgeblich sein. Wir können für keinen Schaden oder Verlust verantwortlich gemacht werden, der durch einen Fehler, eine Ungenauigkeit, ein Missverständnis oder einen Rechtschreibfehler im Bezug auf die Übersetzungen, verursacht wird."
@@ -8806,6 +8860,9 @@ msgstr "Heute haben wir uns als ein Marktführer und als eine der beliebtesten o
 msgid "Token"
 msgstr "Token"
 
+msgid "Token Sale Begins In"
+msgstr "Token Verkauf beginnt in"
+
 msgid "Token dividends"
 msgstr "Token Dividenden"
 
@@ -8905,6 +8962,9 @@ msgstr "Handeln Sie auf den weltweiten Finanzmärkten auf einer einfachen, anwen
 msgid "Trade in the world’s financial markets with a simple and user-friendly online platform."
 msgstr "Handeln Sie auf den weltweiten Finanzmärkten mit einer einfachen und anwenderfreundlichen Onlineplattform."
 
+msgid "Trade on behalf of your clients through one account."
+msgstr "Handeln Sie im Auftrag Ihrer Kunden durch ein Konto."
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Handeln Sie nur mit Geld, das Sie sich leisten können, zu verlieren. Spielen Sie niemals mit geliehenem Geld."
 
@@ -8997,6 +9057,9 @@ msgstr "Überweisung von"
 
 msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
 msgstr "Überweisen Sie zwischen Ihren Fiat- und Kryptowährung-Konten gegen eine Gebühr:"
+
+msgid "Transfer funds between your omnibus master account and sub-accounts"
+msgstr "Überweisen Sie Gelder zwischen Ihrem Omnibus-Master-Konto und Ihren Unterkonten"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Überweisen Sie zwischen Ihren Echtgeld-Konten."
@@ -9698,7 +9761,7 @@ msgid "When the Affiliate's referred clients open an account with any member of 
 msgstr "Wenn von dem Geschäftspartner empfohlene Kunden ein Konto bei einem Mitglied der Binary Unternehmensgruppe eröffnet wird, übernehmen wir das Eigentum an der Datenbank mit Namen und Kontaktinformation und anderer Daten des vom Geschäftspartner empfohlenen Kunden."
 
 msgid "When the Client requests a withdrawal from his %1 Account, such request shall be automatically proceeded and as a result the requested sum shall be transferred from the %1 Client Account to %1 Agent Account. However, it is noted that where the Client reaches its withdrawal limits, a withdrawal request shall not automatically be proceeded before the required authentication process is conducted."
-msgstr ""
+msgstr "Wenn der Kunde eine Behebung von seinem %1 Konto anfordert, wird ein solcher Antrag automatisch erfolgen und als Ergebnis wird die angeforderte Summe vom %1 Kundenkonto auf das %1 Agenten-Konto übertragen werden. Allerdings ist anzumerken, dass wenn der Kunde seine Auszahlungsgrenzen erreicht hat, eine Auszahlung nicht automatisch fortgesetzt werden soll, bevor die erforderliche Authentifizierung durchgeführt worden ist."
 
 msgid "When there is a breakdown in the means of communication normally employed in determining the price or value of any of the financial contracts or where the price or value of any of the financial contracts cannot be promptly or accurately ascertained."
 msgstr "Wenn es eine Unterbrechung bei den normalerweise zur Feststellung des Kurses oder Werts von Finanzkontrakten eingesetzten Mittel gibt oder wo der Kurs oder der Wert von Finanzkontrakten nicht unmittelbar oder genau ermittelt werden kann."
@@ -9746,10 +9809,10 @@ msgid "Where an account is funded solely by means of a bonus code, the bonus amo
 msgstr "Wenn ein Konto ausschließlich mit Hilfe eines Bonuscodes finanziert ist, kann der Bonusbetrag plus eventueller Gewinne nicht abgehoben werden, bis Sie einen Kontoumsatz in Höhe des 25-fachen Wertes des Bonusbetrags überschritten haben. Der Höchstbetrag der erlaubten Gewinne auf solchen Konten ist das 25-fache des Betrags eines solchen Bonusbetrags."
 
 msgid "Where any law-suit, action or other legal or administrative proceedings whatsoever in connection to this Agreement are initiated for any execution, any attachment or garnishment, or distress against the Agent or where an encumbrance takes possession of, the entire or any part of the Agent’s property, undertakings or assets including tangible and intangible."
-msgstr ""
+msgstr "Wenn jede Klage, Maßnahme, oder andere Gerichts- oder Verwaltungsverfahren im Zusammenhang mit dieser Vereinbarung zur jeglichen Ausführung eingeleitet werden, für jeden Anhang oder jede Pfändung, oder Bedrängnis durch den Agenten, oder wenn eine Belastung Besitz vom gesamten Eigentum, oder einem Teil des Eigentums des Agenten, von Unternehmen oder auch von materiellen und immateriellen Vermögenswerten nimmt."
 
 msgid "Where any procedure is involuntarily initiated against the Agent seeking or proposing liquidation, reorganisation, restructuring, an arrangement or composition, a freeze or moratorium, whatsoever in relation to itself or its debts in accordance with the law."
-msgstr ""
+msgstr "Wenn ein Verfahren gegen den Auftragnehmer unfreiwillig initiiert wird, Liquidation, Reorganisation, Restrukturierung, eine Anordnung oder Zusammensetzung, ein Einfrieren oder Moratorium, in Bezug auf sich selbst oder seine Schulden im Einklang mit dem Gesetz gesucht oder vorgeschlagen wird."
 
 msgid "Where are they located?"
 msgstr "Wo befinden sie sich?"
@@ -9773,28 +9836,28 @@ msgid "Where teamwork and a collaborative culture form the platform for personal
 msgstr "Wo Teamarbeit und Gemeinschaftskultur die Plattform für persönliches und unternehmerisches Wachstum formen."
 
 msgid "Where the Agent acts in breach of any warranty or representation or promise made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
-msgstr ""
+msgstr "Wenn der Agent gegen eine Gewährleistung, Zusicherung oder Zusage verstößt, die unter dieser Vereinbarung gemacht wurde, und/oder wenn eine Information die an uns in Verbindung mit dieser Vereinbarung weitergegeben wurde, unwahr oder missverständlich ist, oder geworden ist;"
 
 msgid "Where the Agent becomes incapable to pay his debts as they fall due, or is bankrupt or insolvent, as defined under any and all applicable bankruptcy or insolvency law, where the Agent is an individual;"
-msgstr ""
+msgstr "Wenn der Agent nicht in der Lage ist, seine Schulden zu bezahlen, wie sie fällig werden, oder insolvent oder zahlungsunfähig, im Sinne aller Konkurs- oder Insolvenz-Gesetze ist, wo der Agent ein Individuum ist;"
 
 msgid "Where the Agent ceases to be competent and/or capable and/or adequate and/or qualified to effectively perform all its duties and/or obligations undertaken and agreed, under this Agreement, for any reason including but not limited to lack of knowledge, expertise, experience, skills and time shall immediately and/or without any delay notify the Company."
-msgstr ""
+msgstr "Wenn der Agent nicht mehr kompetent und/oder in der Lage und/oder angemessen und/oder qualifiziert ist, effektiv seine Pflichten und/oder Verpflichtungen, die unter dieser Vereinbarung unternommen und vereinbart sind, aus jedem Grund, einschließlich aber nicht beschränkt auf den Mangel an Wissen, Kompetenz, Erfahrung, Fähigkeiten und Zeit, zu erfüllen, soll er sofort und ohne Verzögerung das Unternehmen benachrichtigen."
 
 msgid "Where the Agent fails to comply with its obligations and/or fails to perform any of its duties or other provisions under this Agreement and such failure continues for at least one business day after the receipt of the non-performance notice given by the Company."
-msgstr ""
+msgstr "Wenn der Agent seinen Verpflichtungen nicht nachkommt und/oder bei der Durchführung seiner Aufgaben oder anderen Bestimmungen dieser Vereinbarung fehlschlägt, und solche Fehler weiterhin für mindestens einen Werktag nach Erhalt einer Nichterfüllungs-Nachricht durch das Unternehmen fortgesetzt werden."
 
 msgid "Where the Agent is dissolved, or deregistered from any records of a formal register whatsoever. Furthermore, where any procedure is initiated, seeking or intending or proposing the Agent’s dissolution or deregistration from any records of a formal register. "
-msgstr ""
+msgstr "Wenn der Agent von allen Datensätzen eines formalen Registers aufgelöst oder abgemeldet ist. Darüber hinaus, wenn ein Verfahren eingeleitet wird, das versucht, oder beabsichtigt, oder vorschlägt den Agenten von allen Datensätzen eines formalen Registers aufzulösen oder abzumelden. "
 
 msgid "Where the Agent omits or fails or refuse whatsoever to provide the Company with evidence of his identity or any other evidence as required by the law in relation to Anti-Money Laundering within a reasonable time, the Company reserve the right to cease to deal with him."
-msgstr ""
+msgstr "Wenn der Agent es unterlässt, fehlschlägt, oder verweigert Beweise für seine Identität oder andere Beweismittel wie gesetzlich in Bezug auf Anti-Geldwäsche innerhalb einer angemessenen Frist dem Unternehmen zur Verfügung zu stellen, behält sich das Unternehmen vor den Umgang mit ihm einzustellen."
 
 msgid "Where the Agent owns, or operates website/s, shall:"
-msgstr "Wo der Agent Website/n besitzt oder betreibt, gilt:"
+msgstr "Wo der Agent (eine) Website/n besitzt oder betreibt, gilt:"
 
 msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws.\n"
-msgstr "Wo das Unternehmen irgendwelche Fehler oder Mängel feststellt, die sich auf Einzahlungen oder Abhebungen vom oder zum %1 Agentenkonto oder %1 Kundenkonto beziehen, sollen innerhalb einer angemessenen Frist alle Korrekturmaßnahmen, solche Fehler oder Mängel zu korrigieren, ergriffen werden. "
+msgstr "Wo das Unternehmen irgendwelche Fehler oder Mängel feststellt, die sich auf Einzahlungen oder Abhebungen vom, oder zum %1 Agentenkonto oder %1 Kundenkonto beziehen, sollen innerhalb einer angemessenen Frist alle Korrekturmaßnahmen, solche Fehler oder Mängel zu korrigieren, ergriffen werden.\n"
 
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
 msgstr "Sofern wir auf der Grundlage der von Ihnen gemachten Angaben feststellen, dass Sie nicht das Wissen und die Erfahrung besitzen, die mit einer Investition in das vorgeschlagene Instrument verbundenen Risiken zu tragen, werden wir Sie warnen. Eine derartige Warnung muss auf der Website angezeigt werden."
@@ -10590,7 +10653,7 @@ msgid "any Client that is employed in the banking and/or finance sector must onl
 msgstr "jeder Kunde, der bei einer Bank und/oder im Finanzsektor angestellt ist, darf Geschäfte über die Website nur im Wissen des Arbeitgebers, und in Übereinstimmung mit den Vorschriften des Arbeitgebers, durchführen; und dass"
 
 msgid "any information which he provides or has provided to the Company in relation to his financial position, domicile or other matters whatsoever is accurate and not misleading."
-msgstr "alle Informationen, die er dem Unternehmen in Bezug auf seine finanzielle Lage, seinen Wohnsitz oder andere Fragen angibt oder angegeben hat, ist korrekt und nicht irreführend."
+msgstr "alle Informationen, die er dem Unternehmen in Bezug auf seine finanzielle Lage, seinen Wohnsitz oder andere Fragen angibt, oder angegeben hat, sind korrekt und nicht irreführend."
 
 msgid "any instance where the Company believes that person's activities at this site may be illegal in that person's country or state;"
 msgstr "jeder Vorgang, bei dem das Unternehmen vermutet, dass die Aktivitäten der Person auf dieser Site in dem Land oder Staat der Person illegal sein könnten;"
@@ -10602,7 +10665,7 @@ msgid "any instance where the Company may suffer any pecuniary, fiscal or regula
 msgstr "Vorgänge, angesichts derer das Unternehmen aufgrund der Aktivitäten der Person auf dieser Site eventuell finanzielle, steuerliche oder behördliche Nachteile erleiden könnte;"
 
 msgid "any other information as requested by the Company."
-msgstr "alle anderen Informationen, wie vom Unternehmen gefordert."
+msgstr "alle anderen Informationen wie vom Unternehmen gefordert."
 
 msgid "any restriction to its Clients from purchasing any contracts during certain hours."
 msgstr "Einschränkungen seinen Kunden gegenüber, zu gewissen Zeiten Kontrakte zu erwerben."
@@ -10653,10 +10716,10 @@ msgid "fairly and accurately describe its services to the Clients;"
 msgstr "beschreiben fair und genau die Dienstleistungen an den Kunden;"
 
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
-msgstr "folgen Sie und/oder implementieren Sie bzw. erfüllen Sie alle unternehmensbezogenen Richtungen und/oder Richtlinien oder Verfahren des Unternehmens als geänderte bzw. nachgestellt und/oder von Zeit zu Zeit ersetzt;"
+msgstr "folgen Sie und/oder implementieren Sie bzw. erfüllen Sie alle unternehmensbezogenen Richtungen und/oder Richtlinien oder Verfahren des Unternehmens als geändert bzw. nachgestellt und/oder von Zeit zu Zeit ersetzt;"
 
-msgid "for exclusive updates on the ICO, including the official launch date."
-msgstr "für exklusive Updates über das ICO, einschließlich des offiziellen Starttermins."
+msgid "for exclusive updates on the ICO."
+msgstr "für exklusive Updates zur ICO."
 
 msgid "from $1 to $50,000."
 msgstr "von 1$ bis 50.000$"
@@ -10674,7 +10737,7 @@ msgid "he takes all measures required to obtain and maintain in full force and e
 msgstr "er ergreift alle erforderlichen Maßnahmen, alle Autorität und/oder Befugnisse und/oder Zustimmungen und/oder Lizenzen und/oder Behörden, in voller Kraft und Wirkung zu erhalten und zu pflegen, um diese Vereinbarung eingehen und ausführen zu können;"
 
 msgid "he takes all reasonable steps to comply with the law or Rules whatsoever applicable to the jurisdiction in which he resides;"
-msgstr "er unternimmt alle angemessenen Maßnahmen zur Einhaltung der Gesetze oder Regeln, die anwendbar auf die Zuständigkeit in der er wohnt sind;"
+msgstr "er unternimmt alle angemessenen Maßnahmen zur Einhaltung der Gesetze oder Regeln, die anwendbar auf die Zuständigkeit in der er wohnt, sind;"
 
 msgid "hour"
 msgstr "Stunde"
@@ -10806,7 +10869,7 @@ msgid "the specific instructions that we receive from you;"
 msgstr "die spezifischen Anweisungen, die wir von Ihnen erhalten;"
 
 msgid "the terms and/or conditions and/or clauses and/or provisions of this Agreement, Orders whatsoever, the applicable law or any other law will not be breached or violated;"
-msgstr "die Bedingungen und/oder Klauseln und/oder Bestimmungen dieser Vereinbarung, alle Bestellungen, das anwendbare Recht oder ein anderes Gesetz werden nicht gebrochen oder verletzt werden;"
+msgstr "die Bedingungen und/oder Klauseln und/oder Bestimmungen dieser Vereinbarung, alle Bestellungen, das anwendbare Recht, oder ein anderes Gesetz werden nicht gebrochen oder verletzt werden;"
 
 msgid "this Agreement as well as any and all obligations and/or rights derive from this Agreement are binding and enforceable against him;"
 msgstr "diese Vereinbarung so gut wie alle Pflichten und/oder Rechte, die sich aus dieser Vereinbarung ableiten, sind gegen ihn verbindlich und durchsetzbar;"
@@ -10833,10 +10896,10 @@ msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "auf/ab, Ziel/kein Ziel, bleibt innerhalb/geht außerhalb."
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
-msgstr "auf unser Verlangen, bietet er dem Unternehmen alle vernünftigerweise erforderlichen Auskünfte an, um alle Anforderungen oder Wünsche oder Bestellungen oder die Anforderungen von einer Regierung oder einer anderen Behörde zu erfüllen;"
+msgstr "auf unser Verlangen hin, stellt er dem Unternehmen alle vernünftigerweise erforderlichen Auskünfte zur Verfügung, um alle Anforderungen, Wünsche, Bestellungen, oder die Anforderungen von einer Regierung oder einer anderen Behörde zu erfüllen;"
 
 msgid "use its best endeavours and diligence to transfer funds deposited to %1 Agent Account to %1 Client Account;"
-msgstr "nutzen die besten Bemühungen und Sorgfalt, um Gelder, die auf das %1 Agentenkonto %1 eingezahlt sind zum Kunden-Konto zu übertragen;"
+msgstr "nutzen die besten Bemühungen und Sorgfalt, um Gelder, die auf das %1 Agentenkonto %1 eingezahlt sind auf das Kunden-Konto zu übertragen;"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "Verwendung oder Reproduktion des %1 API, anders als nach diesen Bedingungen erlaubt, oder"
@@ -12577,6 +12640,9 @@ msgstr "Multiple Accounts Manager"
 
 msgid "Get Paid for Pull Requests"
 msgstr "Werden Sie für Pull-Anfragen bezahlt"
+
+msgid "Omnibus"
+msgstr "Omnibus"
 
 msgid "How to Trade Binary Options?"
 msgstr "Wie handelt man Binäre Optionen?"

@@ -529,7 +529,7 @@ sub _texts {
         push @texts, localize('Refund Bid');
         push @texts, localize('Claim Tokens');
         push @texts, localize('Ended');
-        push @texts, localize('The ICO auction is already closed.');
+        push @texts, localize('The ICO is currently unavailable.');
 
         # strings for accounts page
         push @texts, localize('Create');

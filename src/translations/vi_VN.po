@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-24 21:05-0400\n"
+"PO-Revision-Date: 2017-10-31 05:16-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -93,8 +93,8 @@ msgstr "Điều kiện và Điều khoản của chương trình hợp tác %1"
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Điều kiện và Điều khoản của %1 Giao Diện Chương Trình Ứng Dụng (API)"
 
-msgid "%1 ICO <br /> Pre-announcement"
-msgstr "%1 ICO <br /> Pre-announcement"
+msgid "%1 ICO"
+msgstr ""
 
 msgid "%1 ICO Auction Bids"
 msgstr "%1 Giá thầu ICO"
@@ -941,6 +941,9 @@ msgstr "Agreement for documents"
 msgid "Agricultural, Forestry and Fishery Workers"
 msgstr "Nông, Lâm, Ngư nghiệp"
 
+msgid "Alert"
+msgstr ""
+
 msgid "All %1 %2front-end platforms and libraries%3 are eligible."
 msgstr ""
 
@@ -970,6 +973,9 @@ msgstr "Mọi chi tiết thẻ tín dụng được chuyển trực tiếp đế
 
 msgid "All customer funds are segregated and held with JSF Trust Bank."
 msgstr "Tất cả tiền của khách hàng được tách biệt và giữ bởi ngân hàng JSF Trust."
+
+msgid "All deposits and withdrawals are made through your omnibus master account"
+msgstr ""
 
 msgid "All durations:"
 msgstr "Tất cả thời lượng:"
@@ -1177,6 +1183,9 @@ msgstr "Là trên 18 tuổi."
 
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr "Bạn là Đại lý Thanh toán, hay bạn thích hoạt động như một đại lý thanh toán?"
+
+msgid "Are you a licensed and regulated broker with a large database of active traders? Manage your database more efficiently by consolidating all your client accounts under an omnibus master account. This allows you to keep their individual identities private at the same time."
+msgstr ""
 
 msgid "Are you an Investment professional?"
 msgstr "Bạn có phải là chuyên gia Đầu tư?"
@@ -2070,9 +2079,6 @@ msgstr "Bán đóng hoặc đóng cửa tất cả hoặc bất kỳ một thế
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "Cộng tác với các thành viên của nhóm IT nhằm đưa ra những ý tưởng sáng tạo để cải thiện khả năng và hiệu suất của trang web của chúng tôi"
 
-msgid "Coming soon"
-msgstr "Sẽ có sớm"
-
 msgid "Commencement Date"
 msgstr ""
 
@@ -2376,8 +2382,14 @@ msgstr "Đưa ra nội dung rõ ràng, súc tích và hấp dẫn để quảng 
 msgid "Create content to support our international marketing campaigns in a variety of different formats and languages"
 msgstr "Tạo ra những nội dung để hỗ trợ các chiến dịch quảng bá toàn cầu của chúng ta bằng nhiều định dạng và ngôn ngữ khác nhau"
 
+msgid "Create sub-accounts to record transactions you make on behalf of your clients"
+msgstr ""
+
 msgid "Create the graphics required to support our global marketing and advertising campaigns. The team's creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, tradeshows, special events, and promotional projects."
 msgstr "Tạo nên những thiết kế đồ họa cần thiết để hộ trợ những chiến dịch tiếp thị và quảng cáo toàn cầu của chúng tôi. Những nố lực sáng tạo của đội ngủ phải trải rộng rất nhiều lĩnh vực, bao gồm cả tiếp thị trực tuyến, mạng lưới liên kết, in ấn quảng cáo, triển lãm, các sự kiện đặc biệt và các dự án quảng cáo."
+
+msgid "Create your own white-label application with the omnibus facility, plus all the features supported by our extensive API library. We won’t know who your clients are and vice versa"
+msgstr ""
 
 msgid "Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies"
 msgstr "Thiết kế giao diện và các công cụ để truy cập vào thông tin thị trường, phân tích thời gian thực và lịch sử của chiến lược kinh doanh"
@@ -2430,6 +2442,9 @@ msgstr "Đại Diện Dịch Vụ Khách Hàng"
 msgid "Customer Support"
 msgstr "Hỗ trợ Khách hàng"
 
+msgid "Customise individual access for clients who wish to trade for themselves"
+msgstr ""
+
 msgid "Cyberjaya Office"
 msgstr "Văn phòng Cyberjaya"
 
@@ -2474,6 +2489,9 @@ msgstr "Ngày sinh"
 
 msgid "Day"
 msgstr "Ngày"
+
+msgid "Days"
+msgstr ""
 
 msgid "Debt-free"
 msgstr "Không dư nợ"
@@ -3433,10 +3451,10 @@ msgstr "Thứ Sáu"
 msgid "Fridays"
 msgstr "Thứ Sáu"
 
-msgid "From cryptocurrency to fiat: 0.5% transfer fee"
+msgid "From cryptocurrency to fiat: %1 transfer fee"
 msgstr ""
 
-msgid "From fiat to cryptocurrency: 1% transfer fee"
+msgid "From fiat to cryptocurrency: %1 transfer fee"
 msgstr ""
 
 msgid "Front-End (Javascript) Development"
@@ -3691,11 +3709,17 @@ msgstr "Trau dồi các khả năng kiểm tra an ninh của bạn."
 msgid "Hour"
 msgstr "Giờ"
 
+msgid "Hours"
+msgstr ""
+
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
 
 msgid "How and when will I receive my affiliate earnings?"
 msgstr "Khi nào và như thế nào để nhận tiền cộng tác của tôi?"
+
+msgid "How are the tokens offered?"
+msgstr ""
 
 msgid "How can I become an affiliate?"
 msgstr "Làm thế nào để trở thành một cộng tác viên?"
@@ -3742,6 +3766,12 @@ msgstr "%1 kiếm tiền như thế nào?"
 msgid "How does it work?"
 msgstr "Nó hoạt động như thế nào?"
 
+msgid "How does the ICO work"
+msgstr ""
+
+msgid "How does the ICO work?"
+msgstr ""
+
 msgid "How is margin calculated?"
 msgstr "Giá lề được tính như thế nào?"
 
@@ -3779,15 +3809,6 @@ msgid "How to use a payment agent?"
 msgstr "Sử dụng đại lý thanh toán như thế nào?"
 
 msgid "How will I get paid?"
-msgstr ""
-
-msgid "How will the ICO work"
-msgstr ""
-
-msgid "How will the ICO work?"
-msgstr ""
-
-msgid "How will the tokens be offered?"
 msgstr ""
 
 msgid "However, we believe that in the coming decade traditional stock exchanges will gradually be replaced by blockchain exchanges, and IPOs will gradually be replaced by ICOs. This is because blockchain technologies are much more performant than the legacy technologies of traditional stock exchanges, leading to lower transaction fees, faster settlement times, and error-free immutable audit trails. Hence, we decided to perform an ICO instead of an IPO."
@@ -4364,6 +4385,9 @@ msgstr ""
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Quan tâm đến các giải pháp khả năng thanh toán của chúng tôi? Liên hệ với chúng tôi tại %1 để \n"
 "thêm thông tin."
+
+msgid "Interested in our omnibus account facility? %1Contact us now and apply as an omnibus broker%2."
+msgstr ""
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "Bạn thấy thú vị chứ, điều gì sẽ là kế tiếp? Nếu bạn có thể cung cấp cho khách hàng cách thức thanh toán cụ thể như tiền mặt điện tử hoặc một thanh toán theo cách của địa phương bạn mà cách thức đó không được cung cấp bởi %1,  và bạn có phản hồi tích cực từ thị trường, chúng tôi rất mong<a href='mailto:%2'>được nghe từ bạn!</a>"
@@ -5322,6 +5346,9 @@ msgstr ""
 msgid "Lower"
 msgstr "Thấp hơn"
 
+msgid "Lower fees"
+msgstr ""
+
 msgid "M"
 msgstr ""
 
@@ -5345,6 +5372,9 @@ msgstr "Giữ cho các thông số định giá hệ thống luôn chính xác"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Duy trì tốc độ và khối lượng thích hợp của sản phẩm"
+
+msgid "Maintain complete anonymity of your clients."
+msgstr ""
 
 msgid "Major Pairs"
 msgstr "Cặp tiền tệ chính"
@@ -5384,6 +5414,9 @@ msgstr ""
 
 msgid "Manage your authorised applications."
 msgstr "Quản lý các ứng dụng được cho phép của bạn."
+
+msgid "Manage your client database more efficiently as an omnibus broker."
+msgstr ""
 
 msgid "Managers"
 msgstr "Người quản lý"
@@ -5532,6 +5565,9 @@ msgstr "Số tối đa của vị thế mở"
 msgid "May"
 msgstr "Tháng Năm"
 
+msgid "Media Coverage"
+msgstr ""
+
 msgid "Medium-sized changes – generally $250-750"
 msgstr ""
 
@@ -5601,6 +5637,9 @@ msgstr "Công nhân khai khoáng, xây dựng, sản xuất và vận chuyển"
 msgid "Minute"
 msgstr "Phút"
 
+msgid "Minutes"
+msgstr ""
+
 msgid "Miss"
 msgstr "Cô"
 
@@ -5651,6 +5690,9 @@ msgstr "Thêm công cụ"
 
 msgid "More benefits"
 msgstr "Nhiều lợi nhuận hơn"
+
+msgid "More efficient"
+msgstr ""
 
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Một cách chi tiết hơn, khi chúng tôi giao dịch một Quyền chọn Nhị phân với bạn (mỗi, một \"Hợp đồng\"),chúng tôi phải có nghĩa vụ cung cấp cho bạn 'thực thi tốt nhất'. Thực thi tốt nhất có nghĩa là chúng tôi phải có các bước thích hợp để dành được kết quả tốt nhất có thể cho bạn khi bạn đặt lệnh với chúng tôi. Tài liệu này cung cấp bản tóm tắt chính sách thực thi tốt nhất của chúng tôi."
@@ -5951,6 +5993,9 @@ msgstr "Office worker"
 
 msgid "Old password is wrong."
 msgstr "Mật khẩu cũ không đúng."
+
+msgid "Omnibus account"
+msgstr ""
 
 msgid "On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you."
 msgstr "Dựa trên thông tin có liên quan tới kiến thức và kinh nghiệm bạn cung cấp, chúng tôi thấy rằng những dự án đầu tư sẵn có trên trang web này không thích hợp với bạn."
@@ -6699,6 +6744,9 @@ msgstr "Kiến thức và kinh nghiệm trong ngành công ngiệp tài chính"
 msgid "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account's Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "Trước khi đặt một lệnh mà kết quả trong việc mở một phiên giao dịch hoặc tăng phiên mở hiện tại, bạn thừa nhận rằng đó là trách nhiệm của bạn để đảm bảo rằng lề miễn phí tài khoản của bạn là đủ để trang trải các lề yêu cầu liên quan đến các giao dịch mở (\"lề điều kiện\"), và liên tục đáp ứng lề điều kiện."
 
+msgid "Privacy"
+msgstr ""
+
 msgid "Privacy & Security"
 msgstr "Riêng tư và Bảo mật"
 
@@ -6876,11 +6924,11 @@ msgstr ""
 msgid "Read our blog for the stories and ideas that inspire us"
 msgstr "Đọc blog của chúng tôi với câu chuyện và ý tưởng truyền cảm hứng cho chúng tôi"
 
+msgid "Read the Information Memorandum for further information about the proposed offer."
+msgstr ""
+
 msgid "Read the answers to some common questions."
 msgstr "Tìm hiểu câu trả lời của một số câu hỏi thường gặp."
-
-msgid "Read the draft Information Memorandum for further information about the proposed offer."
-msgstr ""
 
 msgid "Read the official press release"
 msgstr ""
@@ -6929,6 +6977,9 @@ msgstr ""
 
 msgid "Receive your activation code by secure"
 msgstr "Nhận mã kích hoạt của bạn theo cách an toàn"
+
+msgid "Reduce fees associated with deposits and withdrawals."
+msgstr ""
 
 msgid "Ref."
 msgstr "Tham khảo."
@@ -7205,6 +7256,9 @@ msgstr ""
 
 msgid "Secondary"
 msgstr "Thứ cấp"
+
+msgid "Seconds"
+msgstr ""
 
 msgid "Secret question"
 msgstr "Câu hỏi bí mật"
@@ -7710,7 +7764,7 @@ msgstr "Gửi Sơ yếu lý lịch và Đơn xin việc của bạn"
 msgid "Subscribe to our mailing list"
 msgstr ""
 
-msgid "Subscribe to our mailing list for exclusive updates on the ICO, including the official launch date."
+msgid "Subscribe to our mailing list for exclusive updates on the ICO."
 msgstr ""
 
 msgid "Successful"
@@ -8250,8 +8304,8 @@ msgstr "Công ty giữ tiền khách hàng trong tài khoản ngân hàng tách 
 msgid "The company reserves the right to cancel/prohibit the use of this promotion at its own discretion at any time."
 msgstr "Công ty có quyền hủy/ cấm sử dụng chương trình quảng cáo này bất cứ lúc nào theo ý riêng của mình."
 
-msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr "Công ty có quyền thu phí không hoạt động lên đến USD / EUR / AUD / GBP 25 6 tháng/ lần đối với mỗi tài khoản Khách hàng không có giao dịch được ghi nhận trong khoảng hơn 12 tháng. Nếu tài khoản của Khách hàng là của công ty TNHH Binary (Châu Âu), và tài khoản của khách hàng không hoạt động trong 30 tháng, và không thể liên hệ được với khách hàng, Công ty sẽ có trách nhiệm chuyển số dư của tài khoản cho Tổ chức Cá cược Malta. Khách hàng cần phải liên hệ với bộ phận hỗ trợ của chúng tôi để hồi lại số tiền từ việc tài khoản bị đóng, bị chặn và bị vô hiệu hóa."
+msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
+msgstr ""
 
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website, however, we do not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website."
 msgstr "Nội dung trên trang web này có thể thay đổi bất cứ lúc nào mà không cần thông báo trước và được cung cấp cho mục đích duy nhất là hỗ trợ nhà giao dịch đưa ra các quyết định đầu tư độc lập. %1 đã thực hiện các biện pháp hợp lý để đảm bảo tính chính xác của thông tin trên trang web, tuy nhiên, chúng tôi không đảm bảo tính chính xác và sẽ không chịu trách nhiệm đối với bất kỳ tổn thất hoặc thiệt hại nào phát sinh trực tiếp hoặc gián tiếp từ nội dung hoặc do không thể truy cập vào trang web, đối với bất kỳ sự chậm trễ hay thất bại trong việc truyền tải hoặc nhận chỉ dẫn hoặc thông báo được gửi qua trang web này."
@@ -8282,9 +8336,6 @@ msgstr "Địa chỉ thư điện tử cung cấp đang được sử dụng. N�
 
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Giá giao ngay nhập vào là giá bắt đầu của giao dịch được mua bởi người giao dịch."
-
-msgid "The exact date of the ICO is yet to be determined, but we are aiming for the fourth quarter of 2017."
-msgstr ""
 
 msgid "The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients."
 msgstr "Các điểm giao dịch được đánh giá, dựa theo cơ sở thường xuyên, cho dù họ cung cấp kết quả tốt nhất có thể cho các khách hàng của chúng tôi."
@@ -8464,10 +8515,13 @@ msgstr ""
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr ""
 
+msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
+msgstr ""
+
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr ""
 
-msgid "The tokens will be offered via an auction process. View our %1guide%2 to the token auction."
+msgid "The tokens will be offered from 15 November 2017 to 25 December 2017."
 msgstr ""
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
@@ -8809,6 +8863,9 @@ msgstr ""
 msgid "Token"
 msgstr "Mã Token"
 
+msgid "Token Sale Begins In"
+msgstr ""
+
 msgid "Token dividends"
 msgstr ""
 
@@ -8908,6 +8965,9 @@ msgstr "Giao dịch trên các thị trường tài chính trên thế giơ�
 msgid "Trade in the world’s financial markets with a simple and user-friendly online platform."
 msgstr "Giao dịch tại các thị trường tài chính trên thế giới với một sàn giao dịch online đơn giản và thân thiện."
 
+msgid "Trade on behalf of your clients through one account."
+msgstr ""
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Chỉ nên giao dịch với số tiền bạn có. Đừng giao dịch với tiền đi mượn."
 
@@ -8999,6 +9059,9 @@ msgid "Transfer from"
 msgstr "Chuyển từ"
 
 msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgstr ""
+
+msgid "Transfer funds between your omnibus master account and sub-accounts"
 msgstr ""
 
 msgid "Transfer funds between your real money accounts."
@@ -10655,7 +10718,7 @@ msgstr ""
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 msgstr ""
 
-msgid "for exclusive updates on the ICO, including the official launch date."
+msgid "for exclusive updates on the ICO."
 msgstr ""
 
 msgid "from $1 to $50,000."
@@ -12577,6 +12640,9 @@ msgstr "Quản lý nhiều tài khoản"
 
 msgid "Get Paid for Pull Requests"
 msgstr "Được trả tiền cho các yêu cầu kéo"
+
+msgid "Omnibus"
+msgstr ""
 
 msgid "How to Trade Binary Options?"
 msgstr "Làm thế nào để xử dụng giao dịch các tùy chọn nhị phân?"
