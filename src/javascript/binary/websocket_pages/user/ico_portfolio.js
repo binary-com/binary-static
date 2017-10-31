@@ -2,6 +2,7 @@ const Portfolio        = require('./account/portfolio').Portfolio;
 const ViewPopup        = require('./view_popup/view_popup');
 const BinarySocket     = require('../socket');
 const localize         = require('../../base/localize').localize;
+const State            = require('../../base/storage').State;
 const showLoadingImage = require('../../base/utility').showLoadingImage;
 const getPropertyValue = require('../../base/utility').getPropertyValue;
 const formatMoney      = require('../../common_functions/currency').formatMoney;
@@ -45,13 +46,19 @@ const ICOPortfolio = (() => {
         const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
         const shortcode    = data.shortcode.split('_');
         const $div         = $('<div/>');
+
+        const $button = $('<button/>', { class: `button ${button_class} nowrap`, contract_id: data.contract_id, action, text: localize(status) });
+        if (+State.getResponse('website_status.ico_info.final_price') === 0) {
+            $button.addClass('button-disabled');
+        }
+
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref', text: data.transaction_id }))
             .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: shortcode[2] })))
             .append($('<td/>', { class: 'bid' }).append($('<strong/>', { html: formatMoney(data.currency, shortcode[1]) })))
             .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price) })))
             .append($('<td/>', { class: 'details', text: long_code }))
-            .append($('<td/>', { class: 'button' }).append($('<button/>', { class: `button ${button_class} nowrap`, contract_id: data.contract_id, action, text: localize(status) }))))
+            .append($('<td/>', { class: 'button' }).append($button)))
             .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));
         $('#portfolio-body').prepend($div.html());
     };

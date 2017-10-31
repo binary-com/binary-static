@@ -26,8 +26,8 @@ const ICOSubscribe = (() => {
             return;
         }
 
-        BinarySocket.wait('website_status').then((response) => {
-            if (response.website_status.ico_status === 'closed') {
+        BinarySocket.wait('website_status', 'landing_company').then(() => {
+            if (State.getResponse('website_status.ico_status') === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO auction is already closed.') }));
                 ICOPortfolio.onLoad();
                 showContent();
@@ -50,7 +50,10 @@ const ICOSubscribe = (() => {
             $price    = $('#price');
             $total    = $('#total');
             calculateTotal();
-            showContent();
+            const to_show = showContent();
+            if (to_show !== 'ico_subscribe') {
+                return;
+            }
 
             const balance = response.balance.balance;
             if (+balance === 0) {
@@ -106,29 +109,28 @@ const ICOSubscribe = (() => {
     };
 
     const showContent = () => {
-        BinarySocket.wait('landing_company').then((response) => {
-            let to_show = 'feature_not_allowed';
-            if (Client.get('landing_company_shortcode') === 'costarica') {
-                if (/au|ca|ch|nz|sg/.test(Client.get('residence')) && /retail/.test(State.getResponse('get_account_status.status'))) {
-                    to_show = 'ico_professional_message';
-                } else {
-                    to_show = 'ico_subscribe';
-                }
-            } else if (Client.hasCostaricaAccount()) {
-                to_show = 'ico_account_message';
-            } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(response.landing_company)) {
-                to_show = 'ico_new_account_message';
-                const button_new_account = document.getElementById('ico_new_account');
-                if (button_new_account) {
-                    button_new_account.removeEventListener('click', newAccountOnClick);
-                    button_new_account.addEventListener('click', newAccountOnClick);
-                }
+        let to_show = 'feature_not_allowed';
+        if (Client.get('landing_company_shortcode') === 'costarica') {
+            if (/au|ca|ch|nz|sg/.test(Client.get('residence')) && /retail/.test(State.getResponse('get_account_status.status'))) {
+                to_show = 'ico_professional_message';
+            } else {
+                to_show = 'ico_subscribe';
             }
-            const el_to_show = document.getElementById(to_show);
-            if (el_to_show) {
-                el_to_show.setVisibility(1);
+        } else if (Client.hasCostaricaAccount()) {
+            to_show = 'ico_account_message';
+        } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
+            to_show = 'ico_new_account_message';
+            const button_new_account = document.getElementById('ico_new_account');
+            if (button_new_account) {
+                button_new_account.removeEventListener('click', newAccountOnClick);
+                button_new_account.addEventListener('click', newAccountOnClick);
             }
-        });
+        }
+        const el_to_show = document.getElementById(to_show);
+        if (el_to_show) {
+            el_to_show.setVisibility(1);
+        }
+        return to_show;
     };
 
     const newAccountOnClick = () => {
