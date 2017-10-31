@@ -93,17 +93,20 @@ const ICOSubscribe = (() => {
     };
 
     const icoCountDown = () => {
-        const start_time = 1510704000; 
-        const current_time = Math.round((new Date()).getTime()/1000); 
-        const time_left = start_time - current_time; 
-        if(time_left) { 
-            const s = time_left % 60; 
-            const m = Math.floor(time_left/ 60) % 60; 
-            const h = Math.floor(time_left / 3600) % 24; 
-            const days = Math.floor(time_left / (3600 * 24)); 
-            console.log(days, h, m, s);
-        } 
-        return;
+        const timer = window.setInterval(() => {
+            const start_time = 1510704000; 
+            const current_time = Math.round((new Date()).getTime()/1000); 
+            const time_left = start_time - current_time; 
+            if(time_left) { 
+                const s = time_left % 60; 
+                const m = Math.floor(time_left/ 60) % 60; 
+                const h = Math.floor(time_left / 3600) % 24; 
+                const days = Math.floor(time_left / (3600 * 24)); 
+                console.log(days, h, m, s);
+            } else {
+                window.clearInterval(timer);
+            }
+        }, 1000);
     };
 
     const handleResponse = (response) => {
