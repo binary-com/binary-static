@@ -215,6 +215,7 @@ sub menu {
         id         => 'topMenuResources',
         url        => url_for('/resources'),
         text       => localize('Resources'),
+        class      => 'client_logged_out client_logged_in invisible ico-only-hide'
     };
 
     my $asset_index_ref = {
