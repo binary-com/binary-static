@@ -191,7 +191,7 @@ sub menu {
         id         => 'topMenuProfitTable',
         url        => url_for('/user/profit_tablews'),
         text       => localize('Profit Table'),
-        class      => 'client_logged_in invisible ico-only-hide',
+        class      => 'client_logged_in invisible',
         };
 
     push @menu,
@@ -199,7 +199,7 @@ sub menu {
         id         => 'topMenuStatement',
         url        => url_for('/user/statementws'),
         text       => localize('Statement'),
-        class      => 'client_logged_in invisible ico-only-hide',
+        class      => 'client_logged_in invisible',
         };
 
     # cashier
