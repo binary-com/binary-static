@@ -2,6 +2,7 @@ window.onload = function() {
     toggleMobileMenu();
     hashRouter();
     collapseNavbar();
+    setLanguage(getLanguage());
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
@@ -49,8 +50,9 @@ window.onload = function() {
         el_langs[i].value = language;
     }
 
-    // Scroll to section
+    const el_language_dropdown = document.getElementsByClassName('language-dropdown')[0];
     document.addEventListener('click', function(e) {
+        // Scroll to section
         if (e.target.classList.contains('page-scroll')) {
             e.preventDefault();
             switchView('home');
@@ -60,7 +62,24 @@ window.onload = function() {
             const navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
             scrollTo(to);
+        } 
+
+        // Show / hide language dropdown
+        if (e.target.parentNode.id === 'lang') {
+            e.preventDefault();
+            e.target.parentNode.parentNode.classList.toggle('show');
+        } else if (/show/.test(el_language_dropdown.classList)) {
+            el_language_dropdown.classList.remove('show');
         }
+    });
+
+    el_language_dropdown.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (e.target.nodeName !== 'LI') return;
+        const lang = e.target.classList.value;
+        if (lang === getLanguage()) return;
+        setLanguage(lang);
+        document.location = urlForLanguage(lang);
     });
 
     window.onresize = checkWidth;
@@ -146,7 +165,7 @@ function getClientCountry() {
         } else if (response.time) {
             initCountdown(response.time, '2017-11-15');
         }
-    }
+    };
 
     return clients_country;
 }
@@ -219,4 +238,34 @@ function arc(el, value, scale) {
         arc.style = 'transform: rotate(' + (Math.min((idx + 1) * 90, angle) - 135) + 'deg)';
     });
     el.arc_cover.classList[angle > 90 ? 'add' : 'remove']('invisible');
+}
+
+function urlForLanguage(lang, url = window.location.href) {
+    return url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${lang.trim().toLowerCase()}/`);
+}
+
+function setLanguage(name) {
+    const el_language_container = document.getElementById('language');
+    const all_languages = {
+        ach  : 'Translations',
+        en   : 'English',
+        de   : 'Deutsch',
+        es   : 'Español',
+        fr   : 'Français',
+        id   : 'Indonesia',
+        it   : 'Italiano',
+        ja   : '日本語',
+        pl   : 'Polish',
+        pt   : 'Português',
+        ru   : 'Русский',
+        th   : 'Thai',
+        vi   : 'Tiếng Việt',
+        zh_cn: '简体中文',
+        zh_tw: '繁體中文',
+    };
+
+    document.getElementById('selected-lang').innerHTML = all_languages[name];
+    document.getElementsByClassName(name)[0].classList.add('invisible');
+
+    el_language_container.classList.remove('invisible');
 }
