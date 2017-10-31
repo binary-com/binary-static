@@ -41,7 +41,7 @@ const ICOSubscribe = (() => {
 
         BinarySocket.wait('website_status').then((response) => {
             if (response.website_status.ico_status === 'closed') {
-                $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO auction is already closed.') }));
+                $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOPortfolio.onLoad();
                 $('#ico_subscribe').setVisibility(1);
             } else {

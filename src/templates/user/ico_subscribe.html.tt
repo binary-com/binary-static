@@ -59,6 +59,7 @@
             </form>
         </div>
     </div>
+    [% INCLUDE global/separator_line.html.tt class='gr-padding-20' invisible=1 %]
     <div id="ico_bids">
         <h1>[% l('[_1] ICO Auction Bids', website_name) %]</h1>
         [% PROCESS components/elements.html.tt %]
