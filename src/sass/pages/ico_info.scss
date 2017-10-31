@@ -1,0 +1,27 @@
+#ico_info {
+    position: relative;
+    margin-top: 20px;
+
+    .caption {
+        color: $COLOR_WHITE;
+        background-color: $COLOR_BLUE;
+        position: absolute;
+        top: -10px;
+        padding: 10px;
+        font-size: 20px;
+    }
+    .x-label {
+        font-size: 13px;
+        color: $COLOR_BLUE;
+        position: absolute;
+        bottom: 0;
+    }
+    .y-label {
+        font-size: 13px;
+        color: $COLOR_BLUE;
+        position: absolute;
+        left: 0;
+        width: 100vh;
+        transform: rotate(90deg);
+    }
+}

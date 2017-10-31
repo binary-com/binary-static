@@ -94,15 +94,18 @@
         </ol>
     </div>
     <div id="ico_info">
-        <h1>[% l('[_1] ICO Info', website_name) %]</h1>
-        <div class="gr-row fill-bg-color gr-padding-10">
-            <h3 class="gr-5 no-margin">[% l('Histogram:') %]</h3>
-            <div class="gr-7 hint align-end">
-                <span class="currency"></span> [% l('Final Price:') %]
-                <strong class="finalPrice"></strong>
-            </div>
+        <div class="barChart"></div>
+        <div class="y-label">
+            <div class='arrow-left'></div>
+            <div>[% l('Number of tokens') %]</div>
+            <div class='arrow-right'></div>
         </div>
-        <div class="barChart">
+        <div class="x-label">
+            <div class='arrow-left'></div>
+            <div>[% l('Bid Price Per Token ($USD)') %]</div>
+            <div class='arrow-right'></div>
         </div>
+        <div class='caption'>[% l('Bidding Prices') %]</div>
+        <div class="loading"></div>
     </div>
 </div>

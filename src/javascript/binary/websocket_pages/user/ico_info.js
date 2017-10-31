@@ -1,23 +1,33 @@
 const BinarySocket     = require('../socket');
-// const localize         = require('../../base/localize').localize;
-// const Client           = require('../../base/client');
-// const showLoadingImage = require('../../base/utility').showLoadingImage;
-// const getPropertyValue = require('../../base/utility').getPropertyValue;
-// const formatMoney      = require('../../common_functions/currency').formatMoney;
+const showLoadingImage = require('../../base/utility').showLoadingImage;
 const getHighstock     = require('../../common_functions/common_functions').requireHighstock;
 
-const chartConfig = (keys, values) => ({
+const currencyFormatter = function () {
+    const value = this.axis.defaultLabelFormatter.call(this);
+    return `$${value}`;
+};
+const chartConfig = ({keys, values, callback}) => ({
     chart: {
-        type: 'column',
+        type  : 'column',
+        events: {
+            load: callback,
+        },
     },
     title: { text: '', enabled: false },
     xAxis: {
         categories: keys,
         crosshair : true,
+        labels    : {
+            formatter: currencyFormatter,
+            style    : { color: '#C2C2C2' },
+        },
     },
     yAxis: {
-        min  : 0,
-        title: { enabled: false },
+        min   : 0,
+        title : { enabled: false },
+        labels: {
+            style: { color: '#C2C2C2' },
+        },
     },
     tooltip: {
         shared : true,
@@ -25,7 +35,7 @@ const chartConfig = (keys, values) => ({
     },
     plotOptions: {
         column: {
-            color       : '#2A3052',
+            color       : '#E98024',
             pointPadding: 0,
             borderWidth : 0,
         },
@@ -38,28 +48,38 @@ const chartConfig = (keys, values) => ({
 });
 
 const ICOInfo = (() => {
-    // const currency = Client.get('currency') || '';
     let is_initialized,
         Highcharts,
+        $loading,
+        $root,
         chart;
 
     const init = (ico_info) => {
         if (is_initialized) return;
         is_initialized = true;
 
-        const $root = $('#ico_info');
         $root.find('.finalPrice').text(ico_info.final_price);
 
-        const $chart = $root.find('.barChart');
         const keys = Object.keys(ico_info.histogram).sort();
         const values = keys.map((key) => ico_info.histogram[key]);
-        const config = chartConfig(keys, values);
-        chart = Highcharts.chart($chart[0], config);
+        const config = chartConfig({
+            keys,
+            values,
+            callback: () => $loading.hide(),
+        });
+
+        const $chart = $root.find('.barChart');
+        chart = Highcharts.chart($chart[0],  config);
 
         console.warn(ico_info);
     };
 
     const onLoad = () => {
+        $root = $('#ico_info');
+        $loading = $root.find('> .loading');
+        $loading.show();
+        showLoadingImage($loading[0]);
+
         getHighstock((Highstock) => {
             Highcharts = Highstock;
             BinarySocket.wait('website_status').then((response) => {
