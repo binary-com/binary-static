@@ -1,8 +1,11 @@
+const moment                = require('moment');
 const ICOPortfolio          = require('./ico_portfolio');
 const BinarySocket          = require('../socket');
 const BinaryPjax            = require('../../base/binary_pjax');
 const Client                = require('../../base/client');
 const localize              = require('../../base/localize').localize;
+const State                 = require('../../base/storage').State;
+const urlFor                = require('../../base/url').urlFor;
 const jpClient              = require('../../common_functions/country_base').jpClient;
 const getDecimalPlaces      = require('../../common_functions/currency').getDecimalPlaces;
 const formatMoney           = require('../../common_functions/currency').formatMoney;
@@ -27,7 +30,7 @@ const ICOSubscribe = (() => {
             if (response.website_status.ico_status === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO auction is already closed.') }));
                 ICOPortfolio.onLoad();
-                $('#ico_subscribe').setVisibility(1);
+                showContent();
             } else {
                 init();
             }
@@ -47,7 +50,7 @@ const ICOSubscribe = (() => {
             $price    = $('#price');
             $total    = $('#total');
             calculateTotal();
-            $('#ico_subscribe').setVisibility(1);
+            showContent();
 
             const balance = response.balance.balance;
             if (+balance === 0) {
@@ -100,6 +103,74 @@ const ICOSubscribe = (() => {
             $('#duration, #price').val('');
             $.scrollTo($('#ico_bids'), 500, { offset: -10 });
         }
+    };
+
+    const showContent = () => {
+        BinarySocket.wait('landing_company').then((response) => {
+            let to_show = 'feature_not_allowed';
+            if (Client.get('landing_company_shortcode') === 'costarica') {
+                to_show = 'ico_subscribe';
+            } else if (Client.hasCostaricaAccount()) {
+                to_show = 'ico_account_message';
+            } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(response.landing_company)) {
+                to_show = 'ico_new_account_message';
+                const button_new_account = document.getElementById('ico_new_account');
+                if (button_new_account) {
+                    button_new_account.removeEventListener('click', newAccountOnClick);
+                    button_new_account.addEventListener('click', newAccountOnClick);
+                }
+            }
+            const el_to_show = document.getElementById(to_show);
+            if (el_to_show) {
+                el_to_show.setVisibility(1);
+            }
+        });
+    };
+
+    const newAccountOnClick = () => {
+        if (Client.hasAccountType('real')) {
+            BinarySocket.wait('get_settings').then((response) => {
+                BinarySocket.send(populateReq(response.get_settings)).then((response_new_account_real) => {
+                    if (response_new_account_real.error) {
+                        const el_error = document.getElementById('new_account_error');
+                        if (el_error) {
+                            el_error.setVisibility(1).textContent = response_new_account_real.error.message;
+                        }
+                    } else {
+                        window.location.href = urlFor('user/set-currency');
+                    }
+                });
+            });
+        } else {
+            BinaryPjax.load(urlFor('new_account/realws') + (Client.canUpgradeVirtualToReal(State.getResponse('landing_company')) ? '' : '#ico'));
+        }
+    };
+
+    const populateReq = (get_settings) => {
+        const dob = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
+        const req = {
+            new_account_real      : 1,
+            account_type          : 'ico',
+            date_of_birth         : dob,
+            salutation            : get_settings.salutation,
+            first_name            : get_settings.first_name,
+            last_name             : get_settings.last_name,
+            address_line_1        : get_settings.address_line_1,
+            address_line_2        : get_settings.address_line_2,
+            address_city          : get_settings.address_city,
+            address_state         : get_settings.address_state,
+            address_postcode      : get_settings.address_postcode,
+            phone                 : get_settings.phone,
+            account_opening_reason: get_settings.account_opening_reason,
+            residence             : Client.get('residence'),
+        };
+        if (get_settings.tax_identification_number) {
+            req.tax_identification_number = get_settings.tax_identification_number;
+        }
+        if (get_settings.tax_residence) {
+            req.tax_residence = get_settings.tax_residence;
+        }
+        return req;
     };
 
     const onUnload = () => {

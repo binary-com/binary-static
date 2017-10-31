@@ -33,9 +33,10 @@ const Accounts = (() => {
                 element_to_show = '#new_accounts_wrapper';
             }
 
+            const status     = State.getResponse('get_account_status.status');
             const currencies = getCurrencies(landing_company);
             // only allow opening of multi account to costarica clients with remaining currency
-            if (Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
+            if (!/ico_only/.test(status) && Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
                 populateMultiAccount(currencies);
             } else {
                 doneLoading(element_to_show);
