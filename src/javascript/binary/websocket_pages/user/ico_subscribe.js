@@ -109,7 +109,11 @@ const ICOSubscribe = (() => {
         BinarySocket.wait('landing_company').then((response) => {
             let to_show = 'feature_not_allowed';
             if (Client.get('landing_company_shortcode') === 'costarica') {
-                to_show = 'ico_subscribe';
+                if (/au|ca|ch|nz|sg/.test(Client.get('residence')) && /retail/.test(State.getResponse('get_account_status.status'))) {
+                    to_show = 'ico_professional_message';
+                } else {
+                    to_show = 'ico_subscribe';
+                }
             } else if (Client.hasCostaricaAccount()) {
                 to_show = 'ico_account_message';
             } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(response.landing_company)) {

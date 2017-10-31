@@ -73,15 +73,15 @@
 
                 [% INCLUDE table scroll=1 id='portfolio-table' tbody_id='portfolio-body' data={
                     thead=[
-                            [
-                                    { class='ref',               text=l('Ref.') },
-                                    { class='payout nowrap',     text=l('No. of Tokens') },
-                                    { class='bid',               text=l('Bid Price Per Token') },
-                                    { class='purchase',          text=l('Total Bid Price') },
-                                    { class='details',           text=l('Status') },
-                                    { class='button',            text='' },
-                                ],
+                        [
+                            { class='ref',           text=l('Ref.') },
+                            { class='payout nowrap', text=l('No. of Tokens') },
+                            { class='bid',           text=l('Bid Price Per Token') },
+                            { class='purchase',      text=l('Total Bid Price') },
+                            { class='details',       text=l('Status') },
+                            { class='button',        text='' },
                         ],
+                    ],
                 } %]
             </div>
         </div>
@@ -93,6 +93,10 @@
             <li>[% l('Unsuccessful bidders will receive a full refund.') %]</li>
         </ol>
     </div>
+</div>
+
+<div class="invisible" id="ico_professional_message">
+    <p>[% l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") %]</p>
 </div>
 
 <div class="invisible" id="ico_account_message">
