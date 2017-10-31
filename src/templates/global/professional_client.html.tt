@@ -27,7 +27,7 @@
             <ul class="bullet">
                 <li>[% l("The Company presumes that you possess the experience, knowledge and expertise to make your own investment decisions and properly assess the risks involved in relation to the requested transaction/s;") %]</li>
                 <li>[% l("The Company is neither obliged to conduct an appropriateness test, nor to provide you with any risk warnings.") %]</li>
-                <li id="hide_financial">[% l("You will not be eligible for any compensation under the Investor Compensation Scheme.") %]</li>
+                <li class="invisible" id="show_financial">[% l("You will not be eligible for any compensation under the Investor Compensation Scheme.") %]</li>
             </ul>
             <p>[% l("As a Professional Client, you are responsible for keeping the Company informed about any change which could affect your categorisation as a Professional Client. At any time, you may choose to be treated as a Retail Client, even if you would ordinarily fall within the definition of a Professional Client.") %]</p>
             <div class="center-text">

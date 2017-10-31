@@ -1,13 +1,14 @@
-const Cookies           = require('js-cookie');
-const generateBirthDate = require('./attach_dom/birth_date_picker');
-const BinaryPjax        = require('../base/binary_pjax');
-const Client            = require('../base/client');
-const localize          = require('../base/localize').localize;
-const State             = require('../base/storage').State;
-const urlFor            = require('../base/url').urlFor;
-const makeOption        = require('../common_functions/common_functions').makeOption;
-const FormManager       = require('../common_functions/form_manager');
-const BinarySocket      = require('../websocket_pages/socket');
+const Cookies            = require('js-cookie');
+const generateBirthDate  = require('./attach_dom/birth_date_picker');
+const BinaryPjax         = require('../base/binary_pjax');
+const Client             = require('../base/client');
+const localize           = require('../base/localize').localize;
+const State              = require('../base/storage').State;
+const urlFor             = require('../base/url').urlFor;
+const makeOption         = require('../common_functions/common_functions').makeOption;
+const FormManager        = require('../common_functions/form_manager');
+const BinarySocket       = require('../websocket_pages/socket');
+const professionalClient = require('../websocket_pages/user/account/settings/professional_client');
 require('select2');
 
 const AccountOpening = (() => {
@@ -39,42 +40,7 @@ const AccountOpening = (() => {
         getResidence();
         BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         generateBirthDate();
-        BinarySocket.wait('landing_company').then(() => { populateProfessionalClient(is_financial); });
-    };
-
-    const populateProfessionalClient = (is_financial) => {
-        const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-        if (!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
-            (financial_company === 'maltainvest' && !is_financial)) return; // then it's not upgrading to financial
-
-        const $container        = $('#fs_professional');
-        const $chk_professional = $container.find('#chk_professional');
-        const $info             = $container.find('#professional_info');
-        const $popup_contents   = $container.find('#popup');
-        const popup_selector    = '#professional_popup';
-
-        if (financial_company === 'maltainvest') {
-            $container.find('#hide_financial').setVisibility(0);
-        }
-        $container.setVisibility(1);
-
-        $container.find('#professional_info_toggle').off('click').on('click', function() {
-            $(this).toggleClass('open');
-            $info.slideToggle();
-        });
-
-        $chk_professional.on('change', () => {
-            if ($chk_professional.is(':checked') && !$(popup_selector).length) {
-                $('body').append($('<div/>', { id: 'professional_popup', class: 'lightbox' }).append($popup_contents.clone().setVisibility(1)));
-
-                $(popup_selector).find('#btn_accept, #btn_decline').off('click').on('click dblclick', function() {
-                    if ($(this).attr('data-value') === 'decline') {
-                        $chk_professional.prop('checked', false);
-                    }
-                    $('#professional_popup').remove();
-                });
-            }
-        });
+        professionalClient.init(is_financial);
     };
 
     const getResidence = () => {
