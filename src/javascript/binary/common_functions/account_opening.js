@@ -53,6 +53,9 @@ const AccountOpening = (() => {
         const $popup_contents   = $container.find('#popup');
         const popup_selector    = '#professional_popup';
 
+        if (financial_company === 'maltainvest') {
+            $container.find('#hide_financial').setVisibility(0);
+        }
         $container.setVisibility(1);
 
         $container.find('#professional_info_toggle').off('click').on('click', function() {
