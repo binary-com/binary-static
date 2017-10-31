@@ -63,12 +63,13 @@ const GTM = (() => {
         }
 
         const data = {
-            visitorId  : Client.get('loginid'),
-            bom_country: get_settings.country,
-            bom_email  : get_settings.email,
-            url        : window.location.href,
-            bom_today  : Math.floor(Date.now() / 1000),
-            event      : is_new_account ? 'new_account' : 'log_in',
+            visitorId   : Client.get('loginid'),
+            bom_currency: Client.get('currency'),
+            bom_country : get_settings.country,
+            bom_email   : get_settings.email,
+            url         : window.location.href,
+            bom_today   : Math.floor(Date.now() / 1000),
+            event       : is_new_account ? 'new_account' : 'log_in',
         };
         if (is_new_account) {
             data.bom_date_joined = data.bom_today;
