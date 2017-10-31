@@ -36,11 +36,11 @@ button {
 }
 
 .content-section {
-    padding: 100px 15px;
+    padding: 100px 30px;
 }
 
 .content-section-sm {
-    padding: 50px 15px;
+    padding: 50px 30px;
 }
 
 // Intro section
@@ -552,7 +552,7 @@ input[type='text']:focus, input[type='submit']:focus {
         transition: all 0.3s;
 
         &__logo {
-            height: 50px;
+            height: 48px;
             max-width: 100%;
             background-repeat: no-repeat;
             background-size: contain;
@@ -568,7 +568,7 @@ input[type='text']:focus, input[type='submit']:focus {
             }
         }
         &__headlines {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 400;
             height: 55px;
             @media (max-width: 576px) {
@@ -594,44 +594,34 @@ input[type='text']:focus, input[type='submit']:focus {
 .tns-outer {
     display: flex;
     flex-direction: column-reverse;
-    margin: 0 30px;
-    @media (max-width: 320px) {
-        margin: 0 20px;
-    }
 }
 
 .tns-controls {
     [data-controls='prev'], [data-controls='next'] {
         position: absolute;
-        top: 26%;
+        top: 30%;
         background: none;
         color: transparent;
-        width: 20px;
-
-        &:before {
-            display: inline-block;
-            width: 17px;
-            @media (max-width: 768px) {
-                width: 14px;
-            }
-            @media (max-width: 576px) {
-                width: 11px;
-            }
+        padding: 0;
+        margin: 10px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 32px;
+        width: 17px;
+        @media (max-width: 768px) {
+            width: 14px;
+        }
+        @media (max-width: 576px) {
+            width: 11px;
         }
     }
     [data-controls='prev'] {
-        left: -30px;
-
-        &:before {
-            content: url('../images/ico/icons/accordion_left.svg');
-        }
+        left: -40px;
+        background-image: url('../images/ico/icons/arrow_left.svg');
     }
     [data-controls='next'] {
-        right: -20px;
-
-        &:before {
-            content: url('../images/ico/icons/accordion_right.svg');
-        }
+        right: -40px;
+        background-image: url('../images/ico/icons/arrow_right.svg');
     }
 }
 
@@ -683,4 +673,89 @@ input[type='text']:focus, input[type='submit']:focus {
 
 .bittox {
     background-image: url('../images/ico/icons/bittox_logo.svg');
+}
+
+.crypto-martez {
+    background-image: url('../images/ico/icons/crypto_martez_logo.svg');
+}
+
+#coming-soon {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#countdown {
+    $cd_size: 100px;
+    $cd_border_width: 5px;
+    $cd_border_bg: rgb(86, 62, 47);
+    $cd_fix_color: rgb(24, 35, 52);
+    text-align: center;
+    margin: 30px auto 60px;
+
+    .cd-item {
+        display: inline-block;
+        margin: 5px 35px;
+        position: relative;
+
+        .cd-value {
+            display: block;
+            width: $cd_size;
+            height: $cd_size;
+            line-height: $cd_size;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: $COLOR_WHITE;
+            border: $cd_border_width solid $cd_border_bg;
+            border-radius: 50%;
+
+            &:before, &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                border-radius: 50%;
+                width: $cd_size + $cd_border_width * 2;
+                height: $cd_size + $cd_border_width * 2;
+                top: 0;
+                left: 0;
+                box-shadow: 0 0 2px 2px $cd_fix_color;
+            }
+            &:after {
+                width: $cd_size;
+                height: $cd_size;
+                top: $cd_border_width;
+                left: $cd_border_width;
+                box-shadow: inset 0 0 2px 2px $cd_fix_color;
+            }
+        }
+        .cd-label {
+            display: block;
+            margin: 20px auto;
+            @media (max-width: 480px) {
+                margin-top: 10px;
+            }
+        }
+    }
+    .arcs {
+        display: block;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+
+        .arc_q, .arc_cover {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid;
+            border-color: transparent $COLOR_ORANGE transparent transparent;
+            transform: rotate(-90deg);
+        }
+        .arc_cover {
+            border-color: transparent $cd_border_bg transparent transparent;
+            transform: rotate(-135deg);
+        }
+    }
 }
