@@ -32,6 +32,7 @@ const ICOSubscribe = (() => {
             : Url.urlForStatic('images/pages/ico/auction.svg');
         // Set image based on language.
         $('.ico-auction')
+            .off('error')
             .on('error', function () {
                 // Just in case of error.
                 $(this).attr('src',
