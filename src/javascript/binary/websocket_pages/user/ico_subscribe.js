@@ -137,7 +137,13 @@ const ICOSubscribe = (() => {
                             el_error.setVisibility(1).textContent = response_new_account_real.error.message;
                         }
                     } else {
-                        window.location.href = urlFor('user/set-currency');
+                        localStorage.setItem('is_new_account', 1);
+                        Client.processNewAccount({
+                            email       : Client.get('email'),
+                            loginid     : response_new_account_real.new_account_real.client_id,
+                            token       : response_new_account_real.new_account_real.oauth_token,
+                            redirect_url: urlFor('user/set-currency'),
+                        });
                     }
                 });
             });
