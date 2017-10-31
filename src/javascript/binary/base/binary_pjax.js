@@ -131,9 +131,9 @@ const BinaryPjax = (() => {
     };
 
     const handlePopstate = (e) => {
-        const url = e.state ? e.state.url : window.location.href;
+        const url = e.state && e.state.url;
         if (url) {
-            handleClick(url, true);
+            processUrl(url, true);
         }
         return false;
     };
