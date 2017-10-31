@@ -93,4 +93,16 @@
             <li>[% l('Unsuccessful bidders will receive a full refund.') %]</li>
         </ol>
     </div>
+    <div id="ico_info">
+        <h1>[% l('[_1] ICO Info', website_name) %]</h1>
+        <div class="gr-row fill-bg-color gr-padding-10">
+            <h3 class="gr-5 no-margin">[% l('Histogram:') %]</h3>
+            <div class="gr-7 hint align-end">
+                <span class="currency"></span> [% l('Final Price:') %]
+                <strong class="finalPrice"></strong>
+            </div>
+        </div>
+        <div class="barChart">
+        </div>
+    </div>
 </div>

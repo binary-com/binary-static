@@ -1,4 +1,5 @@
 const ICOPortfolio          = require('./ico_portfolio');
+const ICOInfo               = require('./ico_info');
 const BinarySocket          = require('../socket');
 const BinaryPjax            = require('../../base/binary_pjax');
 const Client                = require('../../base/client');
@@ -32,6 +33,7 @@ const ICOSubscribe = (() => {
                 init();
             }
         });
+        ICOInfo.onLoad();
     };
 
     const init = () => {
@@ -104,6 +106,7 @@ const ICOSubscribe = (() => {
 
     const onUnload = () => {
         ICOPortfolio.onUnload();
+        ICOInfo.onUnload();
     };
 
     return {
