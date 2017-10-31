@@ -3,12 +3,10 @@ const BinarySocket          = require('../socket');
 const BinaryPjax            = require('../../base/binary_pjax');
 const Client                = require('../../base/client');
 const localize              = require('../../base/localize').localize;
-const jpClient              = require('../../common_functions/country_base').jpClient;
 const getDecimalPlaces      = require('../../common_functions/currency').getDecimalPlaces;
 const formatMoney           = require('../../common_functions/currency').formatMoney;
 const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 const FormManager           = require('../../common_functions/form_manager');
-const Scroll                = require('../../common_functions/scroll');
 const getLanguage           = require('../../base/language').get;
 const Url                   = require('../../base/url');
 
@@ -29,7 +27,7 @@ const ICOSubscribe = (() => {
         }
 
         const language = (getLanguage() || '').toLowerCase();
-        const image = language.match(/(ru|id)/gi)
+        const image = language.match(/(ru|id|pt)/gi)
             ? Url.urlForStatic(`images/pages/ico/auction-${language}.svg`)
             : Url.urlForStatic('images/pages/ico/auction.svg');
         // Set image based on language.
