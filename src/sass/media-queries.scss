@@ -29,7 +29,7 @@
     .table-container {
         overflow-x: auto;
     }
-    .ico-banner .ico-box {
+    #ico_banner_container .ico-banner .ico-box {
         div:nth-child(1) {
             padding-left: unset;
         }
@@ -78,7 +78,7 @@
             background-position-x: 15%;
         }
     }
-    .ico-banner .ico-box {
+    #ico_banner_container .ico-banner .ico-box {
         p {
             padding-top: 10px;
             margin-bottom: 10px;
