@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </form>
-            [% INCLUDE global/separator_line.html.tt class='gr-padding-10' invisible=1 show_mobile=1 %]
+            [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-10' invisible=1 %]
             <div class="timer invisible center-text gr-gutter-left gr-no-gutter-right">
                 <h3 class="gr-gutter-right">[% l('Token Sale Begins In') %]</h3>
                 <div class="time gr-row">
@@ -107,7 +107,7 @@
             </div>
         </div>
     </div>
-    [% INCLUDE global/separator_line.html.tt class='gr-padding-20' invisible=1 %]
+    [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-20' invisible=1 %]
     <div id="ico_bids">
         <h1>[% l('[_1] ICO Auction Bids', website_name) %]</h1>
         [% PROCESS components/elements.html.tt %]
