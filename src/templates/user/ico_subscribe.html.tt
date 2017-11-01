@@ -57,9 +57,9 @@
                     </div>
                 </div>
             </form>
-            [% INCLUDE global/separator_line.html.tt class='gr-padding-10' invisible=1 %]
+            [% INCLUDE global/separator_line.html.tt class='gr-padding-10' invisible=1 show_mobile=1 %]
             <div class="timer invisible center-text gr-gutter-left gr-no-gutter-right">
-                <h3 class="gr-gutter-right">[% l('Token sale begins in') %]</h3>
+                <h3 class="gr-gutter-right">[% l('Token Sale Begins In') %]</h3>
                 <div class="time gr-row">
                     <div class="gr-2">
                         <h1 class="days">00</h1>
