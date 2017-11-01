@@ -76,7 +76,7 @@ window.onload = function() {
     el_language_dropdown.addEventListener('click', function(e) {
         e.preventDefault();
         if (e.target.nodeName !== 'LI') return;
-        const lang = e.target.classList.value;
+        const lang = e.target.getAttribute('class');
         if (lang === getLanguage()) return;
         setLanguage(lang);
         document.location = urlForLanguage(lang);
@@ -264,7 +264,7 @@ function setLanguage(name) {
         zh_tw: '繁體中文',
     };
 
-    document.getElementById('selected-lang').innerHTML = all_languages[name];
+    document.getElementById('selected-lang').textContent = all_languages[name];
     document.getElementsByClassName(name)[0].classList.add('invisible');
 
     el_language_container.classList.remove('invisible');
