@@ -63,3 +63,11 @@
         display: none !important;
     }
 }
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .center-text-t {
+        &, div:first-child label {
+            text-align: center;
+        }
+    }
+}
