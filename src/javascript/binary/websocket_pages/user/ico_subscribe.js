@@ -109,6 +109,7 @@ const ICOSubscribe = (() => {
             total = +duration_val * +price_val;
         }
         $total.html(formatMoney(currency, total));
+        if (!$form_error) $form_error = $('#form_error');
         $form_error.setVisibility(0);
     };
 
