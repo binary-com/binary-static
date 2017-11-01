@@ -15,12 +15,17 @@ const Settings = (() => {
                 $class_real.not((is_jp ? '.ja-hide' : '')).setVisibility(1);
             }
 
-            const status = getPropertyValue(response, ['get_account_status', 'status']);
+            const get_account_status = getPropertyValue(response, 'get_account_status');
+            const status             = getPropertyValue(get_account_status, 'status');
             if (!/social_signup/.test(status)) {
                 $('#change_password').setVisibility(1);
             }
             if (!is_jp && /retail/.test(status)) {
                 $('#professional_client').setVisibility(1);
+            }
+
+            if (!get_account_status.prompt_client_to_authenticate) {
+                $('#authenticate').setVisibility(0);
             }
 
             $('#settings_container').setVisibility(1);
