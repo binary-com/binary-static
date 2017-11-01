@@ -564,6 +564,9 @@ sub _texts {
         push @texts, localize('Passport');
         push @texts, localize('ID card');
         push @texts, localize('Driving licence');
+        push @texts, localize('Front Side');
+        push @texts, localize('Reverse Side');
+        push @texts, localize('Front and back side photos of [_1] are required.');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

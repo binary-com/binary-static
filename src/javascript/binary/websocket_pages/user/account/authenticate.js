@@ -42,6 +42,7 @@ const Authenticate = (() => {
         });
         // Setup Date picker
         const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
+        const file_checks = {};
         tomorrow.setDate(tomorrow.getDate() + 1);
         $('.date-picker').datepicker({
             dateFormat : 'yy-mm-dd',
@@ -63,9 +64,17 @@ const Authenticate = (() => {
             }
             // Change submit button state
             showSubmit();
+            const $e = $(event.target);
             const file_name = event.target.files[0].name || '';
             const display_name = file_name.length > 10 ? `${file_name.slice(0, 5)}..${file_name.slice(-5)}` : file_name;
-            $(event.target).parent()
+
+            // Keep track of front and back sides of files.
+            const doc_type = ($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase();
+            const file_type = ($e.attr('id').match(/\D+/g) || [])[0];
+            file_checks[doc_type] = file_checks[doc_type] || {};
+            file_checks[doc_type][file_type] = true;
+
+            $e.parent()
                 .find('label')
                 .off('click')
                 // Prevent opening file selector.
@@ -80,9 +89,16 @@ const Authenticate = (() => {
 
         // Reset file-selector label
         const resetLabel = (event) => {
-            const default_text = toTitleCase(event.target.id.split('_')[0]);
+            const $e = $(event.target);
+            let default_text = toTitleCase($e.attr('id').split('_')[0]);
+            default_text = default_text === 'Back' ? localize('Reverse Side')
+                : localize('Front Side');
+            // Keep track of front and back sides of files.
+            const doc_type = ($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase();
+            const file_type = ($e.attr('id').match(/\D+/g) || [])[0];
+            file_checks[doc_type][file_type] = false;
             // Remove previously selected file and set the label
-            $(event.target).val('').parent().find('label').text(default_text)
+            $e.val('').parent().find('label').text(default_text)
                 .append($('<span/>', { class: 'add' }));
             // Change submit button state
             showSubmit();
@@ -231,6 +247,13 @@ const Authenticate = (() => {
             }
             if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
                 return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
+            }
+            if(file_checks['proofid'] && (file_checks['proofid']['front_file'] ^ file_checks['proofid']['back_file'])) {
+                return localize('Front and back side photos of [_1] are required.', [doc_name['proofid']]);
+            }
+            if(file_checks['driverslicense'] &&
+                (file_checks['driverslicense']['front_file'] ^ file_checks['driverslicense']['back_file'])) {
+                return localize('Front and back side photos of [_1] are required.', [doc_name['driverslicense']]);
             }
             return null;
         };
