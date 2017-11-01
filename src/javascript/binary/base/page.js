@@ -83,8 +83,9 @@ const Page = (() => {
         Menu.init();
         Contents.onLoad();
 
-        if (!sessionStorage.getItem('icoBanner')) {
-            document.getElementById('ico_banner').classList.remove('invisible');
+        const ico_banner = document.getElementById('ico_banner');
+        if (!sessionStorage.getItem('icoBanner') && ico_banner) {
+            ico_banner.classList.remove('invisible');
         }
 
         const close_ico_banner = document.getElementById('close_ico_banner');

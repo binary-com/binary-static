@@ -20,15 +20,15 @@
     <a href="javascript:;" id="scrollup"></a>
 [% END %]
 [% IF layout %]
-        [% IF layout == 'default' %]
-            <div class="container">
-                [% PROCESS global/ico_banner.html.tt class='bottom-margin' %]
-            </div>
-        [% END %]
         <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
             [% IF layout == 'full_width' %]
                 <div class="container">
                     [% PROCESS global/ico_banner.html.tt class='top-margin' %]
+                </div>
+            [% END %]
+            [% IF layout == 'default' %]
+                <div class="container">
+                    [% PROCESS global/ico_banner.html.tt class='top-margin bottom-margin' %]
                 </div>
             [% END %]
             <div id="page_info" style="display:none;">
