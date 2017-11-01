@@ -21,7 +21,7 @@ const Accounts = (() => {
             // ask client to set residence first since cannot wait landing_company otherwise
             BinaryPjax.load(urlFor('user/settings/detailsws'));
         }
-        BinarySocket.wait('landing_company', 'get_settings').then(() => {
+        BinarySocket.wait('landing_company', 'get_settings', 'get_account_status').then(() => {
             landing_company = State.getResponse('landing_company');
 
             populateExistingAccounts();

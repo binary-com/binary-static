@@ -16,8 +16,8 @@ const MetaTrader = (() => {
         has_gaming_company;
 
     const onLoad = () => {
-        BinarySocket.wait('landing_company').then((response) => {
-            if (isEligible(response)) {
+        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
+            if (isEligible(State.get(['response', 'landing_company']))) {
                 updateEnabledStatus('gaming', has_gaming_company);
                 updateEnabledStatus('financial', has_financial_company);
                 getAllAccountsInfo();

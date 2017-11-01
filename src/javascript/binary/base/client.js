@@ -231,7 +231,7 @@ const Client = (() => {
         const secondary_bg_color    = 'secondary-bg-color';
 
         if (isLoggedIn()) {
-            BinarySocket.wait('authorize', 'website_status').then(() => {
+            BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 const client_logged_in = document.getElementById('client-logged-in');
                 if (client_logged_in) {
                     client_logged_in.classList.add('gr-centered');

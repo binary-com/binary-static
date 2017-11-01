@@ -109,10 +109,12 @@ const Header = (() => {
     };
 
     const metatraderMenuItemVisibility = (landing_company_response) => {
-        if (MetaTrader.isEligible(landing_company_response)) {
-            const metatrader = document.getElementById('user_menu_metatrader');
-            if (metatrader) metatrader.setVisibility(1);
-        }
+        BinarySocket.wait('get_account_status').then(() => {
+            if (MetaTrader.isEligible(landing_company_response)) {
+                const metatrader = document.getElementById('user_menu_metatrader');
+                if (metatrader) metatrader.setVisibility(1);
+            }
+        });
     };
 
     const switchLoginid = (loginid) => {
@@ -132,7 +134,7 @@ const Header = (() => {
     };
 
     const upgradeMessageVisibility = () => {
-        BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
+        BinarySocket.wait('authorize', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             const landing_company = State.getResponse('landing_company');
             const upgrade_msg     = document.getElementsByClassName('upgrademessage');
 
