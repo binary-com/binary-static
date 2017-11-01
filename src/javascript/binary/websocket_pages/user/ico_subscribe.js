@@ -6,6 +6,7 @@ const Client                = require('../../base/client');
 const localize              = require('../../base/localize').localize;
 const State                 = require('../../base/storage').State;
 const urlFor                = require('../../base/url').urlFor;
+const jpClient              = require('../../common_functions/country_base').jpClient;
 const getDecimalPlaces      = require('../../common_functions/currency').getDecimalPlaces;
 const formatMoney           = require('../../common_functions/currency').formatMoney;
 const onlyNumericOnKeypress = require('../../common_functions/event_handler');
@@ -22,9 +23,7 @@ const ICOSubscribe = (() => {
         $total;
 
     const onLoad = () => {
-        const landing_company = Client.get('landing_company_shortcode');
-        // Allow only Costarica landing company accounts to access the page.
-        if (!/^costarica$/.test(landing_company)) {
+        if (jpClient()) {
             BinaryPjax.loadPreviousUrl();
             return;
         }
