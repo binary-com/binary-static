@@ -117,10 +117,10 @@ const ICOSubscribe = (() => {
             const time_left = start_time - current_time; 
             if(time_left >= 0) {
                 $('.timer').removeClass('invisible'); // Make the timer visible.
-                const s = ('0' + time_left % 60).slice(-2); 
-                const m = ('0' + Math.floor(time_left/ 60) % 60).slice(-2); 
-                const h = ('0' + Math.floor(time_left / 3600) % 24).slice(-2); 
-                const d = ('0' + Math.floor(time_left / (3600 * 24))).slice(-2); 
+                const s = (`0${  time_left % 60}`).slice(-2); 
+                const m = (`0${  Math.floor(time_left/ 60) % 60}`).slice(-2); 
+                const h = (`0${  Math.floor(time_left / 3600) % 24}`).slice(-2); 
+                const d = (`0${  Math.floor(time_left / (3600 * 24))}`).slice(-2); 
                 $('.timer .time .days').text(d);
                 $('.timer .time .hours').text(h);
                 $('.timer .time .minutes').text(m);
