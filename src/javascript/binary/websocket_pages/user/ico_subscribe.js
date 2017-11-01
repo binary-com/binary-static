@@ -4,11 +4,12 @@ const BinarySocket          = require('../socket');
 const BinaryPjax            = require('../../base/binary_pjax');
 const Client                = require('../../base/client');
 const localize              = require('../../base/localize').localize;
-const jpClient              = require('../../common_functions/country_base').jpClient;
 const getDecimalPlaces      = require('../../common_functions/currency').getDecimalPlaces;
 const formatMoney           = require('../../common_functions/currency').formatMoney;
 const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 const FormManager           = require('../../common_functions/form_manager');
+const getLanguage           = require('../../base/language').get;
+const Url                   = require('../../base/url');
 
 const ICOSubscribe = (() => {
     const form_id = '#frm_ico_bid';
@@ -19,14 +20,30 @@ const ICOSubscribe = (() => {
         $total;
 
     const onLoad = () => {
-        if (jpClient()) {
+        const landing_company = Client.get('landing_company_shortcode');
+        // Allow only Costarica landing company accounts to access the page.
+        if (!/^costarica$/.test(landing_company)) {
             BinaryPjax.loadPreviousUrl();
             return;
         }
 
+        const language = (getLanguage() || '').toLowerCase();
+        const image = language.match(/(ru|id|pt)/gi)
+            ? Url.urlForStatic(`images/pages/ico/auction-${language}.svg`)
+            : Url.urlForStatic('images/pages/ico/auction.svg');
+        // Set image based on language.
+        $('.ico-auction')
+            .off('error')
+            .on('error', function () {
+                // Just in case of error.
+                $(this).attr('src',
+                    Url.urlForStatic('images/pages/ico/auction.svg'));
+            })
+            .attr('src', image);
+
         BinarySocket.wait('website_status').then((response) => {
             if (response.website_status.ico_status === 'closed') {
-                $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO auction is already closed.') }));
+                $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOPortfolio.onLoad();
                 $('#ico_subscribe').setVisibility(1);
             } else {
@@ -62,7 +79,7 @@ const ICOSubscribe = (() => {
                 const decimal_places = getDecimalPlaces(currency);
                 $form_error          = $('#form_error');
                 FormManager.init(form_id, [
-                    { selector: '#duration', validations: ['req', ['number', { min: 1, max: 1000000 }]], parent_node: 'parameters' },
+                    { selector: '#duration', validations: ['req', ['number', { min: 25, max: 1000000 }]], parent_node: 'parameters' },
                     { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places), max: 999999999999999 }]] },
 
                     { request_field: 'buy', value: 1 },

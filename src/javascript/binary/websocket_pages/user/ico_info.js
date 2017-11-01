@@ -74,23 +74,6 @@ const ICOInfo = (() => {
             },
         });
 
-        // --------------- DEBUGING --------------
-        const end = (Math.random() * 1000);
-        for(let i = 0; i < end; ++i) {
-            let key = (Math.random() * 5).toFixed(2);
-            key = Math.round(+key / .2) * .2;
-            const value = (Math.random() * 25).toFixed(2);
-            if(keys.indexOf(+key) === -1) {
-                keys.push(+key);
-                values.push(+(+value).toFixed(2));
-            }
-        }
-        keys.sort();
-        console.warn(values);
-        // --------------- DEBUGING END --------------
-
-        
-
         if (keys.length > 0) {
             const $chart = $root.find('.barChart');
             chart = Highcharts.chart($chart[0],  config);
