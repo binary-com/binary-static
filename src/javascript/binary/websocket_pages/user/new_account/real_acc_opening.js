@@ -12,9 +12,6 @@ const RealAccOpening = (() => {
 
             if (AccountOpening.redirectAccount(account_type_ico)) return;
 
-            const updated_url = window.location.origin + window.location.pathname;
-            window.history.replaceState({ url: updated_url }, null, updated_url);
-
             BinarySocket.wait('landing_company').then(() => {
                 const form_id = '#frm_real';
                 AccountOpening.populateForm(form_id,
