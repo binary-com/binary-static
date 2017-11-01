@@ -29,6 +29,28 @@
     .table-container {
         overflow-x: auto;
     }
+    .ico-banner .ico-box {
+        div:nth-child(1) {
+            padding-left: unset;
+        }
+        .ico-column {
+            min-height: unset;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            .learn-btn {
+                padding-top: unset;
+
+                a {
+                    text-align: center;
+                }
+            }
+        }
+        p {
+            text-align: center;
+            font-size: $FONT_SIZE_L;
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -54,6 +76,15 @@
     .home-jp-content {
         #banner {
             background-position-x: 15%;
+        }
+    }
+    .ico-banner .ico-box {
+        p {
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+        .ico-column .learn-btn a {
+            margin-bottom: 1em;
         }
     }
 }

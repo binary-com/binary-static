@@ -82,6 +82,17 @@ const Page = (() => {
         }
         Menu.init();
         Contents.onLoad();
+
+        if (!sessionStorage.getItem('icoBanner')) {
+            document.getElementById('ico_banner').classList.remove('invisible');
+        }
+
+        const close_ico_banner = document.getElementById('close_ico_banner');
+        if (close_ico_banner) {
+            close_ico_banner.removeEventListener('click', removeIcoBanner);
+            close_ico_banner.addEventListener('click', removeIcoBanner);
+        }
+
         if (sessionStorage.getItem('showLoginPage')) {
             sessionStorage.removeItem('showLoginPage');
             Login.redirectToLogin();
@@ -99,6 +110,11 @@ const Page = (() => {
 
     const onUnload = () => {
         Menu.onUnload();
+    };
+
+    const removeIcoBanner = () => {
+        document.getElementById('ico_banner').classList.add('invisible');
+        sessionStorage.setItem('icoBanner', true);
     };
 
     const recordAffiliateExposure = () => {
