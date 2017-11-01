@@ -268,13 +268,8 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
     .timer {
-        .time {
-            .colon {
-                color: $COLOR_BLUE;
-            }
-        }
         .text {
-            font-size: 13px;
+            font-size: $FONT_SIZE_XS;
             font-weight: bold;
         }
     }
