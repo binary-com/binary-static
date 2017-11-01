@@ -264,64 +264,64 @@ input[type='text']:focus, input[type='submit']:focus {
     z-index: 999;
     top: 0;
     border-width: 0 0 1px;
-    margin-bottom: 20px;
-    background: $COLOR_BLUE !important;
-    -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-    -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    background: $COLOR_BLUE;
+    -webkit-transition: background 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
 
     &.top-nav-collapse {
-        padding: 0;
-        background: none !important;
+        background: none;
     }
-}
-
-.navbar-brand {
-    float: left;
-}
-
-.logo {
-    background: url('../images/logo/binary_logo_light.svg') no-repeat;
-    width: 48vw !important;
-    height: 40px;
-    margin: 15px;
-}
-
-.navbar-nav {
-    display: flex;
-    justify-content: flex-end;
-
-    > li {
-        flex-grow: 1;
-        padding: 10px 15px;
-        white-space: nowrap;
+    .navbar-brand {
+        float: left;
     }
-    a, a:visited {
-        color: $COLOR_WHITE !important;
-        font-weight: 100 !important;
-        -webkit-transition: all 0.2s ease-in-out;
-        -moz-transition: all 0.2s ease-in-out;
-        transition: all 0.2s ease-in-out;
+    .logo {
+        background: url('../images/logo/binary_logo_light.svg') no-repeat;
+        width: 200px !important;
+        height: 40px;
+        margin: 15px;
     }
-    a:hover, a:focus {
-        text-decoration: none;
-        color: $COLOR_GREEN;
+    .navbar-collapse {
+        margin: auto;
+
+        .navbar-nav {
+            display: flex;
+
+            > li {
+                white-space: nowrap;
+                text-align: center;
+                margin: 0;
+                padding-right: 30px;
+            }
+            a, a:visited {
+                color: $COLOR_WHITE !important;
+                font-weight: 100 !important;
+                -webkit-transition: all 0.2s ease-in-out;
+                -moz-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
+            }
+            a:hover, a:focus {
+                text-decoration: none;
+                color: $COLOR_GREEN;
+            }
+        }
     }
-}
+    .navbar-toggle {
+        position: relative;
+        float: right;
+        background: url('../images/ico/icons/main_menu.svg') no-repeat;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        width: 36px;
+        height: 36px;
+        display: none; // hide on desktop
 
-.navbar-toggle {
-    position: relative;
-    float: right;
-    background: url('../images/ico/icons/main_menu.svg') no-repeat;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    width: 36px;
-    height: 36px;
-    display: none; // hide on desktop
-}
-
-.navbar-toggle:focus {
-    outline: 0;
+        &:focus {
+            outline: 0;
+        }
+    }
 }
 
 @media (max-width: 1199px) {
@@ -342,8 +342,9 @@ input[type='text']:focus, input[type='submit']:focus {
         position: inherit;
         background: $COLOR_BLUE !important;
         margin-bottom: 0;
-        padding: 0;
+        padding: 15px;
         overflow: hidden;
+        flex-direction: column;
         max-height: 50px;
         -webkit-transition: max-height 0.3s;
         -moz-transition: max-height 0.3s;
@@ -351,47 +352,48 @@ input[type='text']:focus, input[type='submit']:focus {
         -o-transition: max-height 0.3s;
         transition: max-height 0.3s;
 
+        &.expand {
+            max-height: 415px;
+            padding-bottom: 0;
+        }
         .navbar-header {
-            padding: 10px;
-        }
-        &.top-nav-collapse {
-            padding: 0;
-            background: $COLOR_BLUE !important;
-        }
-    }
-    .navbar-fixed-top.expand {
-        max-height: 430px;
-    }
-    .navbar-collapse {
-        height: 0;
-        -webkit-transition: height 0.3s;
-        -moz-transition: height 0.3s;
-        -ms-transition: height 0.3s;
-        -o-transition: height 0.3s;
-        transition: height 0.3s;
-    }
-    .navbar-collapse.expand {
-        height: 100%;
-        overflow: hidden;
-    }
-    .navbar-brand {
-        float: none;
-        margin: 0;
-        height: 30px;
-    }
-    .navbar-toggle {
-        display: block;
-        height: 30px;
-        width: 30px;
-    }
-    .navbar-nav {
-        background: transparent;
-        float: none;
-        display: block;
+            width: 100%;
 
-        > li {
-            padding: 0;
-            margin: 10px 15px;
+            .navbar-brand {
+                float: none;
+                margin: 0;
+                height: 30px;
+            }
+            .navbar-toggle {
+                display: block;
+                height: 30px;
+                width: 30px;
+            }
+        }
+        .navbar-collapse {
+            margin: 0;
+            width: 100%;
+            height: 0;
+            -webkit-transition: height 0.3s;
+            -moz-transition: height 0.3s;
+            -ms-transition: height 0.3s;
+            -o-transition: height 0.3s;
+            transition: height 0.3s;
+
+            .navbar-nav {
+                display: block;
+                padding-top: 5px;
+
+                > li {
+                    margin: 10px 0;
+                    padding: 0;
+                    text-align: left;
+                }
+            }
+            &.expand {
+                height: 100%;
+                overflow: hidden;
+            }
         }
     }
     input[type='text'] {
@@ -404,6 +406,11 @@ input[type='text']:focus, input[type='submit']:focus {
     .chart-heading-left, .chart-heading-right {
         font-size: 14px;
         min-width: 100px;
+    }
+    #faq {
+        .intro {
+            padding-top: 0;
+        }
     }
 }
 
@@ -772,103 +779,102 @@ input[type='text']:focus, input[type='submit']:focus {
 }
 
 #language {
-    min-width: 150px;
+    min-width: 200px;
 
-    a.selected {
-        width: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @media (max-width: 1199px) {
-            justify-content: flex-start;
-        }
-
-        .nav-caret {
-            margin-left: 15px;
-        }
-        .world {
-            margin-right: 15px;
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            background-image: url('../images/ico/icons/grid-world.svg');
-            background-repeat: no-repeat;
-        }
-    }
-}
-
-.language-dropdown {
-    position: fixed;
-    top: 0;
-    right: 10px;
-    margin: 0;
-    cursor: pointer;
-    color: $COLOR_WHITE;
-    font-weight: 300;
-    text-align: center;
-    overflow: hidden;
-    height: 50px;
-
-    a.selected {
-        padding-top: 20px;
-    }
-    &.show {
-        height: 420px;
-        padding-bottom: 20px;
-        background: $COLOR_LIGHT_GRAY;
-        border: 1px solid $COLOR_GRAY;
-        color: $COLOR_BLACK;
+    .language-dropdown {
+        position: fixed;
+        top: 0;
+        right: 10px;
+        margin: 0;
+        cursor: pointer;
+        color: $COLOR_WHITE;
+        font-weight: 300;
+        text-align: center;
+        overflow: hidden;
+        height: 50px;
+        font-size: 13px;
 
         a.selected {
-            color: $COLOR_BLACK !important;
-
-            .world {
-                background-image: url('../images/ico/icons/grid-world-black.svg') !important;
+            padding-top: 22px;
+            width: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media (max-width: 1199px) {
+                justify-content: flex-start;
             }
-        }
-    }
-    @media (max-width: 1199px) {
-        position: relative;
-        left: 0;
-        font-size: 14px;
-        padding: 10px 0;
-        text-align: left;
-        background: none;
-        border: none;
-        border-top: 1px solid $COLOR_LIGHT_GRAY;
-        transition: height 0.3s;
-        height: 15px;
 
-        li {
-            margin-left: 30px;
-            margin-top: 10px;
-        }
-        a.selected {
-            padding-top: 0;
-            color: $COLOR_WHITE;
-
+            .nav-caret {
+                margin-left: 10px;
+            }
             .world {
+                margin-right: 10px;
+                display: inline-block;
+                width: 13px;
+                height: 13px;
                 background-image: url('../images/ico/icons/grid-world.svg');
+                background-repeat: no-repeat;
             }
         }
         &.show {
-            columns: 2;
-            height: 100%;
-            padding-bottom: 10px;
+            height: 350px;
+            padding-bottom: 22px;
+            background: $COLOR_LIGHT_GRAY;
+            border: 1px solid $COLOR_GRAY;
+            color: $COLOR_BLACK;
+
+            li {
+                margin: 10px 0 0;
+            }
+            a.selected {
+                color: $COLOR_BLACK !important;
+
+                .world {
+                    background-image: url('../images/ico/icons/grid-world-black.svg') !important;
+                }
+            }
+        }
+        @media (max-width: 1199px) {
+            position: relative;
+            left: 0;
+            font-size: 14px;
+            padding: 10px 0;
+            text-align: left;
             background: none;
             border: none;
             border-top: 1px solid $COLOR_LIGHT_GRAY;
-            color: $COLOR_WHITE;
-            transition: none;
+            height: 15px;
 
             a.selected {
-                color: $COLOR_WHITE !important;
+                padding-top: 0;
+                color: $COLOR_WHITE;
 
                 .world {
-                    background-image: url('../images/ico/icons/grid-world.svg') !important;
+                    background-image: url('../images/ico/icons/grid-world.svg');
                 }
-                .nav-caret {
-                    display: none;
+            }
+            &.show {
+                columns: 2;
+                height: 180px;
+                padding-bottom: 10px;
+                background: none;
+                border: none;
+                border-top: 1px solid $COLOR_LIGHT_GRAY;
+                color: $COLOR_WHITE;
+                transition: none;
+
+                li {
+                    margin: 10px 23px 0;
+                }
+                a.selected {
+                    color: $COLOR_WHITE !important;
+
+                    .world {
+                        background-image: url('../images/ico/icons/grid-world.svg') !important;
+                    }
+                    .nav-caret {
+                        display: none;
+                    }
                 }
             }
         }

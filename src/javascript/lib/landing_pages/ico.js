@@ -1,8 +1,10 @@
 window.onload = function() {
+    const el_language_container = document.getElementById('language');
+
     toggleMobileMenu();
     hashRouter();
     collapseNavbar();
-    setLanguage(getLanguage());
+    setLanguage(el_language_container, getLanguage());
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
@@ -78,7 +80,7 @@ window.onload = function() {
         if (e.target.nodeName !== 'LI') return;
         const lang = e.target.getAttribute('class');
         if (lang === getLanguage()) return;
-        setLanguage(lang);
+        el_language_container.classList.add('invisible'); // hide on change
         document.location = urlForLanguage(lang);
     });
 
@@ -244,8 +246,7 @@ function urlForLanguage(lang, url = window.location.href) {
     return url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${lang.trim().toLowerCase()}/`);
 }
 
-function setLanguage(name) {
-    const el_language_container = document.getElementById('language');
+function setLanguage(el, name) {
     const all_languages = {
         ach  : 'Translations',
         en   : 'English',
@@ -267,5 +268,5 @@ function setLanguage(name) {
     document.getElementById('selected-lang').textContent = all_languages[name];
     document.getElementsByClassName(name)[0].classList.add('invisible');
 
-    el_language_container.classList.remove('invisible');
+    el.classList.remove('invisible');
 }
