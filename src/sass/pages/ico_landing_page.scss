@@ -343,14 +343,13 @@ input[type='text']:focus, input[type='submit']:focus {
         position: inherit;
         background: $COLOR_BLUE !important;
         margin-bottom: 0;
-        height: 50px;
-        overflow: hidden;
         padding: 0;
-        -webkit-transition: height 0.3s;
-        -moz-transition: height 0.3s;
-        -ms-transition: height 0.3s;
-        -o-transition: height 0.3s;
-        transition: height 0.3s;
+        max-height: 50px;
+        -webkit-transition: max-height 0.3s;
+        -moz-transition: max-height 0.3s;
+        -ms-transition: max-height 0.3s;
+        -o-transition: max-height 0.3s;
+        transition: max-height 0.3s;
 
         .navbar-header {
             padding: 10px;
@@ -361,7 +360,19 @@ input[type='text']:focus, input[type='submit']:focus {
         }
     }
     .navbar-fixed-top.expand {
-        height: 100%; // 300px; // 250px;
+        max-height: 430px;
+    }
+    .navbar-collapse {
+        height: 0;
+        -webkit-transition: height 0.3s;
+        -moz-transition: height 0.3s;
+        -ms-transition: height 0.3s;
+        -o-transition: height 0.3s;
+        transition: height 0.3s;
+    }
+    .navbar-collapse.expand {
+        height: 100%;
+        overflow: hidden;
     }
     .navbar-brand {
         float: none;

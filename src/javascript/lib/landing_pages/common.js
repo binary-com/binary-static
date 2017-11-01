@@ -7,8 +7,10 @@ function checkWidth() {
 function toggleMobileMenu() {
     const toggleButton = document.getElementById('toggle-menu');
     const navbar       = document.getElementById('navigation');
+    const navbar_item  = document.getElementsByClassName('navbar-collapse')[0];
     toggleButton.addEventListener('click', function (e) {
         navbar.classList[navbar.classList.contains('expand') ? 'remove' : 'add']('expand');
+        navbar_item.classList[navbar_item.classList.contains('expand') ? 'remove' : 'add']('expand');
         e.stopPropagation();
     });
 }
