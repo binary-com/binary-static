@@ -1,7 +1,7 @@
 
 <div class="container">
     <div class="static_full">
-        <h1>[% l("Professional Client") %]</h1>
+        <h1>[% l("Professional Trader") %]</h1>
 
         <div id="loading">[% PROCESS global/loading.html.tt %]</div>
 
