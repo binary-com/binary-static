@@ -22,14 +22,10 @@
 [% IF layout %]
         <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
             [% IF layout == 'full_width' %]
-                <div class="container">
-                    [% PROCESS global/ico_banner.html.tt class='top-margin' %]
-                </div>
+                [% PROCESS global/ico_banner.html.tt container="ico-banner-container" class='top-margin' %]
             [% END %]
             [% IF layout == 'default' %]
-                <div class="container">
-                    [% PROCESS global/ico_banner.html.tt class='top-margin bottom-margin' %]
-                </div>
+                [% PROCESS global/ico_banner.html.tt container="ico-banner-container" class='top-margin bottom-margin' %]
             [% END %]
             <div id="page_info" style="display:none;">
                 [% PROCESS global/title.html.tt %]

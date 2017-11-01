@@ -361,54 +361,63 @@ button .barspinner.white {
     }
 }
 
-.ico-banner {
-    border: 1px solid $COLOR_LIGHT_GRAY;
-    background: url('../images/ico/banner/white_background.png') 100% no-repeat / cover;
+#ico_banner_container {
+    .ico-banner {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+        background: url('../images/ico/banner/white_background.png') 100% no-repeat / cover;
 
-    .ico-box {
-        position: relative;
+        .ico-box {
+            position: relative;
 
-        div:nth-child(1) {
-            padding-left: 0;
-        }
-        .ico-column {
-            min-height: 80px;
-            justify-content: center;
-
-            .learn-btn {
-                display: flex;
+            div:nth-child(1) {
+                padding-left: 0;
+            }
+            .ico-column {
+                min-height: 80px;
                 justify-content: center;
-                padding-top: 10px;
 
-                a span {
-                    font-size: $FONT_SIZE_N;
+                .learn-btn {
+                    display: flex;
+                    justify-content: center;
+                    padding-top: 10px;
+
+                    a span {
+                        font-size: $FONT_SIZE_N;
+                    }
                 }
             }
+            .left-bg {
+                background: url('../images/ico/banner/image_left_area.png') 100% no-repeat / cover;
+            }
+            p {
+                text-transform: uppercase;
+                font-size: $FONT_SIZE_XL;
+                font-weight: 400;
+                color: $primaryBrandColor;
+            }
+            .close-btn {
+                content: url('../images/ico/banner/close_icon.svg');
+                width: 15px;
+                cursor: pointer;
+                padding: 5px;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
         }
-        .left-bg {
-            background: url('../images/ico/banner/image_left_area.png') 100% no-repeat / cover;
+        &.top-margin {
+            margin-top: 2.5em;
         }
-        p {
-            text-transform: uppercase;
-            font-size: $FONT_SIZE_XL;
-            font-weight: 400;
-            color: $primaryBrandColor;
-        }
-        .close-btn {
-            content: url('../images/ico/banner/close_icon.svg');
-            width: 15px;
-            cursor: pointer;
-            padding: 5px;
-            position: absolute;
-            top: 0;
-            right: 0;
+        &.bottom-margin {
+            margin-bottom: 2em;
         }
     }
-    &.top-margin {
-        margin-top: 2.5em;
-    }
-    &.bottom-margin {
-        margin-bottom: 2em;
+    &.ico-banner-container {
+        margin: 0 auto;
+        max-width: 960px;
+        padding-right: 10px;
+        padding-left: 10px;
+        box-sizing: border-box;
     }
 }
 
