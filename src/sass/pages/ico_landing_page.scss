@@ -805,11 +805,10 @@ input[type='text']:focus, input[type='submit']:focus {
                 justify-content: flex-start;
             }
 
-            .nav-caret {
-                margin-left: 10px;
+            #selected-lang {
+                padding: 0 10px;
             }
             .world {
-                margin-right: 10px;
                 display: inline-block;
                 width: 13px;
                 height: 13px;
