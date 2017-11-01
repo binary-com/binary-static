@@ -6,7 +6,8 @@
     "test": "grunt test",
     "start": "sudo -p 'enter password for sudo:' grunt custom",
     "livereload": "sudo -p 'enter password for sudo:' grunt livereload",
-    "serve": "sudo -p 'enter password for sudo:' grunt serve"
+    "serve": "sudo -p 'enter password for sudo:' grunt serve",
+    "eslint": "eslint --fix src/ build/"
   },
   "repository": {
     "type": "git",
@@ -71,6 +72,7 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "binary-style": "0.1.0",
+    "binary-document-uploader": "^1.0.23",
     "event-source-polyfill": "0.0.9",
     "highstock-release": "^5.0.12",
     "jquery": "^3.2.1",
