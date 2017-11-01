@@ -684,6 +684,14 @@ input[type='text']:focus, input[type='submit']:focus {
     padding-bottom: 50px;
 }
 
+#status_loading {
+    margin: 0 auto;
+
+    .barspinner {
+        margin: 0;
+    }
+}
+
 #countdown {
     $cd_size: 100px;
     $cd_border_width: 5px;

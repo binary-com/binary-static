@@ -163,6 +163,7 @@ function initCountdown(start_epoch) {
     const date_diff    = Date.parse(new Date()) - start_epoch * 1000;
 
     const el_container = document.getElementById('status_container');
+    const hidden_class = 'invisible';
     const elements     = {};
     let remaining      = 0,
         countdownd_interval,
@@ -177,13 +178,14 @@ function initCountdown(start_epoch) {
 
         const display_class = 'status-' + (is_before_start ? 'before-start' : is_started ? 'started' : 'ended');
         el_container.querySelectorAll('.status-toggle').forEach(function(el) {
-            el.classList[el.classList.contains(display_class) ? 'remove' : 'add']('invisible');
+            el.classList[el.classList.contains(display_class) ? 'remove' : 'add'](hidden_class);
         });
 
-        el_container.classList.remove('invisible');
+        document.getElementById('status_loading').classList.add(hidden_class);
+        el_container.classList.remove(hidden_class);
 
         if (!is_before_start) {
-            document.getElementById('ico_subscribe_section').classList.add('invisible');
+            document.getElementById('ico_subscribe_section').classList.add(hidden_class);
             if (!is_started) { // is_ended
                 clearInterval(countdownd_interval);
             }

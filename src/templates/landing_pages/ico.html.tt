@@ -70,6 +70,7 @@
                     </div>
                     <div id="coming-soon" class="content-section center-text transparent-dark-blue-bg">
                         <div class="gr-row">
+                            <div id="status_loading">[% INCLUDE global/loading.html.tt theme='white' %]</div>
                             <div id="status_container" class="gr-12 invisible">
                                 <div class="status-toggle status-before-start">
                                     <h3 class="content-inverse-color">[% l("Token Sale Begins In") %]</h3>
