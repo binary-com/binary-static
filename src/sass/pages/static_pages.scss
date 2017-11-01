@@ -267,6 +267,17 @@ body #not_authenticated_financial ul.checked > li {
             }
         }
     }
+    .timer {
+        .time {
+            .colon {
+                color: $COLOR_BLUE;
+            }
+        }
+        .text {
+            font-size: 13px;
+            font-weight: bold;
+        }
+    }
     #portfolio th.details {
         width: auto;
     }

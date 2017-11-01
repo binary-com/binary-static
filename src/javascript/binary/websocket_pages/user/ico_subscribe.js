@@ -43,6 +43,7 @@ const ICOSubscribe = (() => {
         BinarySocket.wait('website_status').then((response) => {
             if (response.website_status.ico_status === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
+                ICOcountDown();
                 ICOPortfolio.onLoad();
                 $('#ico_subscribe').setVisibility(1);
             } else {
@@ -109,17 +110,25 @@ const ICOSubscribe = (() => {
         $total.html(formatMoney(currency, total));
     };
 
-    const icoCountDown = () => {
+    const ICOcountDown = () => {
         const timer = window.setInterval(() => {
             const start_time = 1510704000; 
             const current_time = Math.round((new Date()).getTime()/1000); 
             const time_left = start_time - current_time; 
-            if(time_left) { 
-                const s = time_left % 60; 
-                const m = Math.floor(time_left/ 60) % 60; 
-                const h = Math.floor(time_left / 3600) % 24; 
-                const days = Math.floor(time_left / (3600 * 24)); 
-                console.log(days, h, m, s);
+            if(time_left >= 0) {
+                $('.timer').removeClass('invisible'); // Make the timer visible.
+                const s = ('0' + time_left % 60).slice(-2); 
+                const m = ('0' + Math.floor(time_left/ 60) % 60).slice(-2); 
+                const h = ('0' + Math.floor(time_left / 3600) % 24).slice(-2); 
+                const d = ('0' + Math.floor(time_left / (3600 * 24))).slice(-2); 
+                $('.timer .time .days').text(d);
+                $('.timer .time .hours').text(h);
+                $('.timer .time .minutes').text(m);
+                $('.timer .time .seconds').text(s);
+                // Force reload in case some-one's on the page and watching the timer.
+                if(time_left === 0) {
+                    setTimeout(() => window.location.reload(), 500);
+                }
             } else {
                 window.clearInterval(timer);
             }

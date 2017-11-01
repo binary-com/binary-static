@@ -57,11 +57,53 @@
                     </div>
                 </div>
             </form>
-            <div class="timer">
-                <h3>Token sale begins in</h3>
-                <div class="time gr-row center-text">
+            [% INCLUDE global/separator_line.html.tt class='gr-padding-10' invisible=1 %]
+            <div class="timer invisible center-text gr-gutter-left gr-no-gutter-right">
+                <h3 class="gr-gutter-right">Token sale begins in</h3>
+                <div class="time gr-row">
                     <div class="gr-2">
+                        <h1 class="days">00</h1>
+                    </div>
+                    <div class="gr-1">
+                        <h1 class="colon">:</h1>
+                    </div>
+                    <div class="gr-2">
+                        <h1 class="hours">00</h1>
+                    </div>
+                    <div class="gr-1">
+                        <h1 class="colon">:</h1>
+                    </div>
+                    <div class="gr-2">
+                        <h1 class="minutes">00</h1>
+                    </div>
+                    <div class="gr-1">
+                        <h1 class="colon">:</h1>
+                    </div>
+                    <div class="gr-2">
+                        <h1 class="seconds">00</h1>
+                    </div>
                 </div>
+                <div class="text gr-row">
+                    <div class="gr-2">
+                        <span>Days</span>
+                    </div>
+                    <div class="gr-1">
+                    </div>
+                    <div class="gr-2">
+                        <span>Hours</span>
+                    </div>
+                    <div class="gr-1">
+                    </div>
+                    <div class="gr-2">
+                        <span>Minutes</span>
+                    </div>
+                    <div class="gr-1">
+                    </div>
+                    <div class="gr-2">
+                        <span>Seconds</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
