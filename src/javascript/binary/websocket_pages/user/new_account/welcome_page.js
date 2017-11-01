@@ -18,6 +18,7 @@ const WelcomePage = (() => {
             const setButtonLink = (url, msg) => {
                 if(upgrade_btn) {
                     upgrade_btn.html(createElement('span', { text: localize(msg) })).setAttribute('href', Url.urlFor(url));
+                    upgrade_btn.classList.remove('button-disabled');
                 }
             };
 
@@ -26,10 +27,8 @@ const WelcomePage = (() => {
                 welcome_msg.setVisibility(1);
             }
 
-            if (show_welcome_msg && upgrade_btn) {
+            if (show_welcome_msg) {
                 setButtonLink(upgrade_info.upgrade_link, 'Upgrade now');
-            } else {
-                upgrade_btn.classList.add('button-disabled');
             }
         });
     };
