@@ -793,6 +793,7 @@ input[type='text']:focus, input[type='submit']:focus {
         overflow: hidden;
         height: 50px;
         font-size: 13px;
+        transition: none;
 
         a.selected {
             padding-top: 22px;
@@ -815,6 +816,7 @@ input[type='text']:focus, input[type='submit']:focus {
                 background-image: url('../images/ico/icons/grid-world.svg');
                 background-repeat: no-repeat;
             }
+            transition: none;
         }
         &.show {
             height: 350px;
@@ -861,7 +863,6 @@ input[type='text']:focus, input[type='submit']:focus {
                 border: none;
                 border-top: 1px solid $COLOR_LIGHT_GRAY;
                 color: $COLOR_WHITE;
-                transition: none;
 
                 li {
                     margin: 10px 23px 0;

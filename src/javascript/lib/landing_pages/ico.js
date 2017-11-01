@@ -1,10 +1,7 @@
 window.onload = function() {
-    const el_language_container = document.getElementById('language');
-
     toggleMobileMenu();
     hashRouter();
     collapseNavbar();
-    setLanguage(el_language_container, getLanguage());
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
@@ -53,6 +50,7 @@ window.onload = function() {
     }
 
     const el_language_dropdown = document.getElementsByClassName('language-dropdown')[0];
+    setLanguage(el_language_dropdown, getLanguage());
     document.addEventListener('click', function(e) {
         // Scroll to section
         if (e.target.classList.contains('page-scroll')) {
@@ -80,7 +78,7 @@ window.onload = function() {
         if (e.target.nodeName !== 'LI') return;
         const lang = e.target.getAttribute('class');
         if (lang === getLanguage()) return;
-        el_language_container.classList.add('invisible'); // hide on change
+        el_language_dropdown.classList.add('invisible'); // hide on change
         document.location = urlForLanguage(lang);
     });
 

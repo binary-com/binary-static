@@ -52,8 +52,8 @@
                     <li>
                         <a class="faq-btn" href="#faq">[% l("FAQ") %]</a>
                     </li>
-                    <li id="language" class="invisible">
-                        <ul class="language-dropdown">
+                    <li id="language">
+                        <ul class="language-dropdown invisible">
                             <a id="lang" class="selected" href="javascript:;">
                                 <span class="world"></span>
                                 <span id="selected-lang"></span>
