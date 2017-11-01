@@ -206,7 +206,7 @@ const BinarySocket = (() => {
 
         binary_socket.onmessage = (msg) => {
             clearTimeout(timeouts.connection_error);
-            const response = JSON.parse(msg.data);
+            const response = msg.data ? JSON.parse(msg.data) : undefined;
             if (response) {
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
                 if (passthrough) {
@@ -302,6 +302,7 @@ const BinarySocket = (() => {
         clearTimeouts,
         availability,
         sendBuffered      : sendBufferedRequests,
+        get               : () => binary_socket,
         setOnDisconnect   : (onDisconnect) => { config.onDisconnect = onDisconnect; },
         removeOnDisconnect: () => { delete config.onDisconnect; },
     };
