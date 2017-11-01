@@ -20,9 +20,10 @@ const Settings = (() => {
             if (!/social_signup/.test(status)) {
                 $('#change_password').setVisibility(1);
             }
-            if (!is_jp && /retail/.test(status)) {
-                $('#professional_client').setVisibility(1);
-            }
+            // TODO: uncomment this code if we allow clients to claim professional trader
+            // if (!is_jp && /retail/.test(status)) {
+            //     $('#professional_client').setVisibility(1);
+            // }
 
             if (!get_account_status.prompt_client_to_authenticate) {
                 $('#authenticate').setVisibility(0);

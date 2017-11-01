@@ -127,11 +127,13 @@ const ICOSubscribe = (() => {
     const showContent = () => {
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
-            if (/au|ca|ch|nz|sg/.test(Client.get('residence')) && /retail/.test(State.getResponse('get_account_status.status'))) {
-                to_show = 'ico_professional_message';
-            } else {
-                to_show = 'ico_subscribe';
-            }
+            // TODO: uncomment this code if we allow clients to claim professional trader
+            // if (/au|ca|ch|nz|sg/.test(Client.get('residence')) && /retail/.test(State.getResponse('get_account_status.status'))) {
+            //     to_show = 'ico_professional_message';
+            // } else {
+            //     to_show = 'ico_subscribe';
+            // }
+            to_show = 'ico_subscribe';
         } else if (Client.hasCostaricaAccount()) {
             to_show = 'ico_account_message';
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
