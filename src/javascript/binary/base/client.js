@@ -238,6 +238,10 @@ const Client = (() => {
                 }
 
                 const is_ico_only = /ico_only/.test(State.getResponse('get_account_status.status'));
+                if (is_ico_only) {
+                    applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
+                }
+
                 applyToAllElements('.client_logged_in', (el) => {
                     if (!/ico-only-hide/.test(el.classList) || !is_ico_only) {
                         el.setVisibility(1);
