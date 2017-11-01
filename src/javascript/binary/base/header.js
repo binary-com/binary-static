@@ -267,6 +267,7 @@ const Header = (() => {
             const messages = {
                 authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',     'user/authenticate'),
                 currency       : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                   'user/set-currency'),
+                document_review: () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                              'contact'),
                 financial_limit: () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                            'user/security/self_exclusionws'),
                 residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                  'user/settings/detailsws'),
                 risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',  'user/settings/assessmentws'),
@@ -278,6 +279,7 @@ const Header = (() => {
             const validations = {
                 authenticate   : () => +get_account_status.prompt_client_to_authenticate,
                 currency       : () => !Client.get('currency'),
+                document_review: () => /document_under_review/.test(status),
                 financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence      : () => !Client.get('residence'),
                 risk           : () => riskAssessment(),
@@ -293,6 +295,7 @@ const Header = (() => {
                 'risk',
                 'tax',
                 'currency',
+                'document_review',
                 'authenticate',
                 'unwelcome',
             ];
