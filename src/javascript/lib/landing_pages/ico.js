@@ -165,8 +165,8 @@ function initCountdown(start_epoch) {
     const el_container = document.getElementById('status_container');
     const hidden_class = 'invisible';
     const elements     = {};
-    let remaining      = 0,
-        countdownd_interval,
+    let remaining      = 0;
+    let countdownd_interval,
         is_before_start,
         is_started,
         end_date;
