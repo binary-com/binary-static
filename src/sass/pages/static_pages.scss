@@ -353,6 +353,42 @@ body #not_authenticated_financial ul.checked > li {
     margin-bottom: 3px;
 }
 
+.authenticate-content {
+    .fields > .gr-row > div {
+        > .button {
+            display: block;
+            text-align: center;
+            background: $COLOR_LIGHT_GRAY;
+            padding: 5px 0;
+            border-radius: $BORDER_RADIUS;
+            width: 100%;
+
+            > span {
+                position: relative;
+                top: 2px;
+                padding: 0;
+                display: inline-flex;
+                width: 1em;
+                height: 1em;
+                margin-left: 10px;
+
+                &.add {
+                    background: url('../images/pages/authenticate/add.svg') no-repeat;
+                }
+                &.remove {
+                    background: url('../images/pages/authenticate/remove.svg') no-repeat;
+                }
+            }
+        }
+        > input[type=file] {
+            display: none;
+        }
+    }
+    .center-text .button .barspinner {
+        margin: 0 auto;
+    }
+}
+
 .welcome-content {
     .box-grid .box {
         display: flex;
