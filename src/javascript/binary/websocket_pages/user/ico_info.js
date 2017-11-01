@@ -3,8 +3,10 @@ const showLoadingImage = require('../../base/utility').showLoadingImage;
 const getHighstock     = require('../../common_functions/common_functions').requireHighstock;
 
 const currencyFormatter = function () {
-    const value = this.axis.defaultLabelFormatter.call(this);
-    return `$${value}`;
+    return `$${this.value.toFixed(2)}`;
+};
+const tooltipFormatter = function () {
+    return `$${this.y.toFixed(2)}`;
 };
 const chartConfig = ({keys, values, callback}) => ({
     chart: {
@@ -30,8 +32,9 @@ const chartConfig = ({keys, values, callback}) => ({
         },
     },
     tooltip: {
-        shared : true,
-        useHTML: true,
+        formatter: tooltipFormatter,
+        shared   : true,
+        useHTML  : true,
     },
     plotOptions: {
         column: {
@@ -40,9 +43,9 @@ const chartConfig = ({keys, values, callback}) => ({
             borderWidth : 0,
         },
     },
+    legend : false,
     credits: false,
     series : [{
-        name: 'Name',
         data: values,
     }],
 });
@@ -51,25 +54,50 @@ const ICOInfo = (() => {
     let is_initialized,
         Highcharts,
         $loading,
+        $labels,
         $root,
         chart;
 
     const init = (ico_info) => {
         if (is_initialized) return;
-        is_initialized = true;
 
         $root.find('.finalPrice').text(ico_info.final_price);
 
-        const keys = Object.keys(ico_info.histogram).sort();
-        const values = keys.map((key) => ico_info.histogram[key]);
+        const keys = Object.keys(ico_info.histogram).map(key => +key).sort();
+        const values = keys.map((key) => ico_info.histogram[`${key}`]);
         const config = chartConfig({
             keys,
             values,
-            callback: () => $loading.hide(),
+            callback: () => {
+                $loading.hide();
+                $labels.setVisibility(1);
+            },
         });
 
-        const $chart = $root.find('.barChart');
-        chart = Highcharts.chart($chart[0],  config);
+        // --------------- DEBUGING --------------
+        const end = (Math.random() * 1000);
+        for(let i = 0; i < end; ++i) {
+            let key = (Math.random() * 5).toFixed(2);
+            key = Math.round(+key / .2) * .2;
+            const value = (Math.random() * 25).toFixed(2);
+            if(keys.indexOf(+key) === -1) {
+                keys.push(+key);
+                values.push(+(+value).toFixed(2));
+            }
+        }
+        keys.sort();
+        console.warn(values);
+        // --------------- DEBUGING END --------------
+
+        
+
+        if (keys.length > 0) {
+            const $chart = $root.find('.barChart');
+            chart = Highcharts.chart($chart[0],  config);
+            is_initialized = true;
+        } else {
+            $root.hide();
+        }
 
         console.warn(ico_info);
     };
@@ -77,6 +105,7 @@ const ICOInfo = (() => {
     const onLoad = () => {
         $root = $('#ico_info');
         $loading = $root.find('> .loading');
+        $labels = $root.find('.x-label,.y-label');
         $loading.show();
         showLoadingImage($loading[0]);
 
