@@ -38,7 +38,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a href="[% request.url_for('ico-disclaimer.html') %]">[% l("Information Memorandum") %]</a>
+                        <a href="[% request.url_for('ico-disclaimer') %]">[% l("Information Memorandum") %]</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#how-ico-works">[% l("How the ICO works") %]</a>
@@ -70,70 +70,87 @@
                     </div>
                     <div id="coming-soon" class="content-section center-text transparent-dark-blue-bg">
                         <div class="gr-row">
-                            <div class="gr-12">
-                                <div id="countdown_container" class="invisible">
+                            <div id="status_container" class="gr-12 invisible">
+                                <div class="status-toggle status-before-start">
                                     <h3 class="content-inverse-color">[% l("Token Sale Begins In") %]</h3>
-                                    <div id="countdown">
-                                        [% BLOCK arcs %]
-                                            <span class="arcs">
-                                                <span class="arc_q"></span>
-                                                <span class="arc_q"></span>
-                                                <span class="arc_q"></span>
-                                                <span class="arc_q"></span>
-                                                <span class="arc_cover"></span>
-                                            </span>
-                                        [% END %]
-                                        [% items=[
-                                            { id='days',    text=l("Days") },
-                                            { id='hours',   text=l("Hours") },
-                                            { id='minutes', text=l("Minutes") },
-                                            { id='seconds', text=l("Seconds") },
-                                        ] %]
-                                        [% FOREACH item IN items %]
-                                        <span class="cd-item" id="cd_[% item.id %]">
-                                            [% INCLUDE arcs %]
-                                            <span class="cd-value"></span>
-                                            <span class="cd-label">[% item.text %]</span>
-                                        </span>
-                                        [% END %]
-                                    </div>
                                 </div>
-                                <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO.") %]</p>
-                                <div class="form-container">
-                                    <!-- AWeber Web Form Generator 3.0.1 -->
-                                    <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
-                                        <div style="display: none;">
-                                            <input type="hidden" name="meta_web_form_id" value="713141817" />
-                                            <input type="hidden" name="meta_split_id" value="" />
-                                            <input type="hidden" name="listname" value="awlist4685103" />
-                                            <input type="hidden" name="redirect" value="" id="redirect_600c7e6a647457c51ede13e8b4d377e6" />
-                                            <input type="hidden" name="meta_adtracking" value="Binary_ICO" />
-                                            <input type="hidden" name="meta_message" value="1001" />
-                                            <input type="hidden" name="meta_required" value="email" />
-                                            <input type="hidden" name="meta_tooltip" value="" />
-                                            <input type="hidden" name="custom language" value="" class="frm-language" />
-                                        </div>
-                                        <div id="af-form-713141817" class="af-form">
-                                            <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
-                                                <div class="af-element gr-row">
-                                                    <div class="gr-8 gr-12-m">
-                                                        <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
-                                                    </div>
-                                                    <div class="gr-4 gr-12-m">
-                                                        <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit" />
+                                <div class="status-toggle status-started">
+                                    <h3 class="content-inverse-color">[% l("The [_1] Token Sale has started", broker_name) %]</h3>
+                                    <p class="intro-subtext">[% l("15 November – 25 December 2017") %]</p>
+                                    <p class="intro-text">[% l("Token Sale Ends In") %]</p>
+                                </div>
+                                <div class="status-toggle status-ended">
+                                    <h3 class="content-inverse-color">[% l("The [_1] Token Sale has ended", broker_name) %]</h3>
+                                    <p class="intro-subtext">[% l("See your winning bids and claim your tokens") %]</p>
+                                </div>
+                                <div class="status-toggle status-before-start status-started" id="countdown">
+                                    [% BLOCK arcs %]
+                                        <span class="arcs">
+                                            <span class="arc_q"></span>
+                                            <span class="arc_q"></span>
+                                            <span class="arc_q"></span>
+                                            <span class="arc_q"></span>
+                                            <span class="arc_cover"></span>
+                                        </span>
+                                    [% END %]
+                                    [% items=[
+                                        { id='days',    text=l("Days") },
+                                        { id='hours',   text=l("Hours") },
+                                        { id='minutes', text=l("Minutes") },
+                                        { id='seconds', text=l("Seconds") },
+                                    ] %]
+                                    [% FOREACH item IN items %]
+                                    <span class="cd-item" id="cd_[% item.id %]">
+                                        [% INCLUDE arcs %]
+                                        <span class="cd-value"></span>
+                                        <span class="cd-label">[% item.text %]</span>
+                                    </span>
+                                    [% END %]
+                                </div>
+                                <div class="status-toggle status-before-start">
+                                    <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO.") %]</p>
+                                    <div class="form-container">
+                                        <!-- AWeber Web Form Generator 3.0.1 -->
+                                        <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
+                                            <div style="display: none;">
+                                                <input type="hidden" name="meta_web_form_id" value="713141817" />
+                                                <input type="hidden" name="meta_split_id" value="" />
+                                                <input type="hidden" name="listname" value="awlist4685103" />
+                                                <input type="hidden" name="redirect" value="" id="redirect_600c7e6a647457c51ede13e8b4d377e6" />
+                                                <input type="hidden" name="meta_adtracking" value="Binary_ICO" />
+                                                <input type="hidden" name="meta_message" value="1001" />
+                                                <input type="hidden" name="meta_required" value="email" />
+                                                <input type="hidden" name="meta_tooltip" value="" />
+                                                <input type="hidden" name="custom language" value="" class="frm-language" />
+                                            </div>
+                                            <div id="af-form-713141817" class="af-form">
+                                                <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
+                                                    <div class="af-element gr-row">
+                                                        <div class="gr-8 gr-12-m">
+                                                            <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+                                                        </div>
+                                                        <div class="gr-4 gr-12-m">
+                                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit" />
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <div style="display: none;">
+                                                    <img src="https://forms.aweber.com/form/displays.htm?id=7IzMjCyMHIzs" alt="" />
+                                                </div>
                                             </div>
-                                            <div style="display: none;">
-                                                <img src="https://forms.aweber.com/form/displays.htm?id=7IzMjCyMHIzs" alt="" />
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <script type="text/javascript">
-                                        document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';
-                                    </script>
-                                    <!-- /AWeber Web Form Generator 3.0.1 -->
-                                    <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
+                                        </form>
+                                        <script type="text/javascript">
+                                            document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';
+                                        </script>
+                                        <!-- /AWeber Web Form Generator 3.0.1 -->
+                                        <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
+                                    </div>
+                                </div>
+                                <div class="status-toggle status-started">
+                                    <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Join the token sale") %]</span></a>
+                                </div>
+                                <div class="status-toggle status-ended">
+                                    <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Take me there") %]</span></a>
                                 </div>
                             </div>
                         </div>
