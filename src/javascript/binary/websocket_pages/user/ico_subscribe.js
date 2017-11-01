@@ -121,7 +121,6 @@ const ICOSubscribe = (() => {
             const current_time = window.time.unix(); 
             const time_left = start_time - current_time; 
             if(time_left >= 0) {
-                timer.removeClass('invisible'); // Make the timer visible.
                 const s = (`0${  time_left % 60}`).slice(-2); 
                 const m = (`0${  Math.floor(time_left/ 60) % 60}`).slice(-2); 
                 const h = (`0${  Math.floor(time_left / 3600) % 24}`).slice(-2); 
@@ -130,6 +129,7 @@ const ICOSubscribe = (() => {
                 hours.text(h);
                 minutes.text(m);
                 seconds.text(s);
+                timer.setVisibility(1); // Make the timer visible.
                 // Force reload in case some-one's on the page and watching the timer.
                 if(time_left === 0) {
                     setTimeout(() => window.location.reload(), 500);
