@@ -84,7 +84,7 @@ const Page = (() => {
         Contents.onLoad();
 
         const ico_banner = document.getElementById('ico_banner');
-        if (!sessionStorage.getItem('icoBanner') && ico_banner) {
+        if (!sessionStorage.getItem('hide_ico_banner') && ico_banner) {
             ico_banner.classList.remove('invisible');
         }
 
@@ -115,7 +115,7 @@ const Page = (() => {
 
     const removeIcoBanner = () => {
         document.getElementById('ico_banner').classList.add('invisible');
-        sessionStorage.setItem('icoBanner', true);
+        sessionStorage.setItem('hide_ico_banner', true);
     };
 
     const recordAffiliateExposure = () => {
