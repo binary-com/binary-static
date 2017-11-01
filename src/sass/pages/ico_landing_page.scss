@@ -269,7 +269,6 @@ input[type='text']:focus, input[type='submit']:focus {
     -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-    overflow: auto;
 
     &.top-nav-collapse {
         padding: 0;
@@ -344,6 +343,7 @@ input[type='text']:focus, input[type='submit']:focus {
         background: $COLOR_BLUE !important;
         margin-bottom: 0;
         padding: 0;
+        overflow: hidden;
         max-height: 50px;
         -webkit-transition: max-height 0.3s;
         -moz-transition: max-height 0.3s;
@@ -802,24 +802,25 @@ input[type='text']:focus, input[type='submit']:focus {
     top: 0;
     right: 10px;
     margin: 0;
-    padding-top: 20px;
     cursor: pointer;
     color: $COLOR_WHITE;
-    text-align: center;
     font-weight: 300;
+    text-align: center;
     overflow: hidden;
-    height: 25px;
+    height: 50px;
 
+    a.selected {
+        padding-top: 20px;
+    }
     &.show {
         height: 420px;
+        padding-bottom: 20px;
         background: $COLOR_LIGHT_GRAY;
         border: 1px solid $COLOR_GRAY;
         color: $COLOR_BLACK;
-        font-weight: 400;
 
         a.selected {
             color: $COLOR_BLACK !important;
-            font-weight: 400 !important;
 
             .world {
                 background-image: url('../images/ico/icons/grid-world-black.svg') !important;
@@ -830,17 +831,20 @@ input[type='text']:focus, input[type='submit']:focus {
         position: relative;
         left: 0;
         font-size: 14px;
-        padding-top: 10px;
+        padding: 10px 0;
         text-align: left;
         background: none;
         border: none;
         border-top: 1px solid $COLOR_LIGHT_GRAY;
         transition: height 0.3s;
+        height: 15px;
 
         li {
             margin-left: 30px;
+            margin-top: 10px;
         }
         a.selected {
+            padding-top: 0;
             color: $COLOR_WHITE;
 
             .world {
@@ -850,10 +854,12 @@ input[type='text']:focus, input[type='submit']:focus {
         &.show {
             columns: 2;
             height: 170px;
+            padding-bottom: 10px;
             background: none;
             border: none;
             border-top: 1px solid $COLOR_LIGHT_GRAY;
             color: $COLOR_WHITE;
+            transition: none;
 
             a.selected {
                 color: $COLOR_WHITE !important;
