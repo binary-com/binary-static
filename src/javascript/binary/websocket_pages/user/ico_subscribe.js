@@ -43,6 +43,7 @@ const ICOSubscribe = (() => {
         BinarySocket.wait('website_status').then((response) => {
             if (response.website_status.ico_status === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
+                ICOcountDown();
                 ICOPortfolio.onLoad();
                 $('#ico_subscribe').setVisibility(1);
             } else {
@@ -107,6 +108,36 @@ const ICOSubscribe = (() => {
             total = +duration_val * +price_val;
         }
         $total.html(formatMoney(currency, total));
+    };
+
+    const ICOcountDown = () => {
+        const timer = $('.timer');
+        const days = timer.find('.time .days');
+        const hours = timer.find('.time .hours');
+        const minutes = timer.find('.time .minutes');
+        const seconds = timer.find('.time .seconds');
+        const timerID = window.setInterval(() => {
+            const start_time = 1510704000; 
+            const current_time = window.time.unix(); 
+            const time_left = start_time - current_time; 
+            if(time_left >= 0) {
+                const s = (`0${  time_left % 60}`).slice(-2); 
+                const m = (`0${  Math.floor(time_left/ 60) % 60}`).slice(-2); 
+                const h = (`0${  Math.floor(time_left / 3600) % 24}`).slice(-2); 
+                const d = (`0${  Math.floor(time_left / (3600 * 24))}`).slice(-2); 
+                days.text(d);
+                hours.text(h);
+                minutes.text(m);
+                seconds.text(s);
+                timer.setVisibility(1); // Make the timer visible.
+                // Force reload in case some-one's on the page and watching the timer.
+                if(time_left === 0) {
+                    setTimeout(() => window.location.reload(), 500);
+                }
+            } else {
+                window.clearInterval(timerID);
+            }
+        }, 1000);
     };
 
     const handleResponse = (response) => {
