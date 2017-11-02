@@ -20,11 +20,11 @@ window.onload = function() {
             dataLayer.push({ bom_country_abbrev: clients_country || '' });
             dataLayer.push({ event: 'ico_success' });
             clearHash();
-            for (let i = 0; i < 2; i++) {
+            for (var i = 0; i < 2; i++) {
                 document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
                 document.getElementsByTagName('form')[i].classList.add('invisible');
             }
-            let navbarHeight = checkWidth();
+            var navbarHeight = checkWidth();
             const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
             scrollTo(to);
         }
@@ -45,7 +45,7 @@ window.onload = function() {
     // Set language fields
     const language = getLanguage();
     const el_langs = document.getElementsByClassName('frm-language');
-    for (let i = 0; i < el_langs.length; i++) {
+    for (var i = 0; i < el_langs.length; i++) {
         el_langs[i].value = language;
     }
 
@@ -123,8 +123,8 @@ function clearHash() {
 }
 
 function getClientCountry() {
-    let clients_country = sessionStorage.getItem('clients_country');
-    let residence_list  = sessionStorage.getItem('residence_list');
+    var clients_country = sessionStorage.getItem('clients_country');
+    var residence_list  = sessionStorage.getItem('residence_list');
 
     // Try to get residence from client's info if logged-in
     if (!clients_country) {
@@ -180,7 +180,7 @@ function initCountdown(start_epoch, end_date) {
     const el_container = document.getElementById('countdown_container');
     const date_diff    = Date.parse(new Date()) - start_epoch * 1000;
     const elements     = {};
-    let countdownd_interval;
+    var countdownd_interval;
 
     // Get all elements only once
     function getElements(id) {
@@ -240,8 +240,12 @@ function arc(el, value, scale) {
     el.arc_cover.classList[angle > 90 ? 'add' : 'remove']('invisible');
 }
 
-function urlForLanguage(lang, url = window.location.href) {
-    return url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${lang.trim().toLowerCase()}/`);
+function urlForLanguage(lang, url) {
+    if (url === undefined) {
+        url = window.location.href;
+    }
+    var curr_lang = getLanguage();
+    return url.replace(new RegExp('/' + curr_lang + '/', 'i'), '/' + lang.trim().toLowerCase() + '/');
 }
 
 function setLanguage(el, name) {

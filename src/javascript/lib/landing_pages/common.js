@@ -1,6 +1,6 @@
 // Check view width, add navbar height as offset if on desktop
 function checkWidth() {
-    let mq = window.matchMedia("(max-width: 1199px)");
+    var mq = window.matchMedia("(max-width: 1199px)");
     return (mq.matches ? 50 : document.getElementById('navigation').scrollHeight);
 }
 
@@ -25,14 +25,14 @@ function checkBrowser() {
 // - Gist reference: https://gist.github.com/andjosh/6764939
 function scrollTo(to, duration) {
     if (!duration) duration = 1000;
-    let start = window.pageYOffset,
+    var start = window.pageYOffset,
         change = to - start,
         currentTime = 0,
         increment = 20;
 
     const animateScroll = function(){
         currentTime += increment;
-        let val = Math.easeInOutQuad(currentTime, start, change, duration);
+        var val = Math.easeInOutQuad(currentTime, start, change, duration);
         document.body.scrollTop = val;
         document.documentElement.scrollTop = val;
         if(currentTime < duration) {
