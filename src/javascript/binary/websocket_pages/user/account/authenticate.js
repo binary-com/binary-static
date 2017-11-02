@@ -249,11 +249,11 @@ const Authenticate = (() => {
                 return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
             }
             if(file_checks.proofid && (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) {
-                return localize('Front and back side photos of [_1] are required.', [doc_name.proofid]);
+                return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
             }
             if(file_checks.driverslicense &&
                 (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) {
-                return localize('Front and back side photos of [_1] are required.', [doc_name.driverslicense]);
+                return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
             }
             return null;
         };

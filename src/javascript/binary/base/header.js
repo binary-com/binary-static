@@ -267,9 +267,9 @@ const Header = (() => {
             const messages = {
                 authenticate         : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',                                      'user/authenticate'),
                 currency             : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                                                    'user/set-currency'),
+                document_needs_action: () => buildMessage('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.', 'user/authenticate'),
                 document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
                 financial_limit      : () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                                             'user/security/self_exclusionws'),
-                document_needs_action: () => buildMessage('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.', 'user/authenticate'),
                 residence            : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                                                   'user/settings/detailsws'),
                 risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',                                   'user/settings/assessmentws'),
                 tax                  : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                                            'user/settings/detailsws'),
@@ -280,9 +280,9 @@ const Header = (() => {
             const validations = {
                 authenticate         : () => +get_account_status.prompt_client_to_authenticate,
                 currency             : () => !Client.get('currency'),
+                document_needs_action: () => /document_needs_action/.test(status),
                 document_review      : () => /document_under_review/.test(status),
                 financial_limit      : () => /ukrts_max_turnover_limit_not_set/.test(status),
-                document_needs_action: () => /document_needs_action/.test(status),
                 residence            : () => !Client.get('residence'),
                 risk                 : () => riskAssessment(),
                 tax                  : () => Client.shouldCompleteTax(),
