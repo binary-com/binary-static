@@ -94,11 +94,12 @@ const Client = (() => {
     };
 
     const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
-        const this_type = getAccountType(loginid);
+        const this_type   = getAccountType(loginid);
+        const is_ico_only = get('is_ico_only', loginid);
         return ((
             (type === 'virtual' && this_type === 'virtual') ||
             (type === 'real'    && this_type !== 'virtual') ||
-            type === this_type) &&
+            type === this_type) && !is_ico_only &&              // Account shouldn't be ICO_ONLY.
             (only_enabled ? !get('is_disabled', loginid) : true));
     };
 
@@ -238,6 +239,8 @@ const Client = (() => {
                 }
 
                 const is_ico_only = /ico_only/.test(State.getResponse('get_account_status.status'));
+                Client.set('is_ico_only', is_ico_only); // Set ico_only in Client object.
+
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
                 }
