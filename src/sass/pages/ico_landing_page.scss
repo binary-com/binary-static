@@ -288,12 +288,19 @@ input[type='text']:focus, input[type='submit']:focus {
 
         .navbar-nav {
             display: flex;
-            font-size: 16px;
+            align-items: center;
 
             > li {
                 white-space: nowrap;
                 text-align: center;
                 margin: 0 25px 0 0;
+            }
+            &.word-wrap {
+                > li {
+                    white-space: normal;
+                    width: 120px;
+                    font-size: 16px;
+                }
             }
             a, a:visited {
                 color: $COLOR_WHITE !important;
@@ -385,6 +392,13 @@ input[type='text']:focus, input[type='submit']:focus {
                     margin: 10px 0;
                     padding: 0;
                     text-align: left;
+                }
+                &.word-wrap {
+                    > li {
+                        white-space: nowrap;
+                        width: 100%;
+                        font-size: 18px;
+                    }
                 }
             }
             &.expand {

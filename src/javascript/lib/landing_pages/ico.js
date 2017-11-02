@@ -297,9 +297,15 @@ function setLanguage(el, name) {
         zh_cn: '简体中文',
         zh_tw: '繁體中文',
     };
+    const el_navbar_nav = document.getElementsByClassName('navbar-nav')[0];
+
+    if (/pt|vi|id/.test(name)) {
+        el_navbar_nav.classList.add('word-wrap'); // wrap long words
+    }
 
     document.getElementById('selected-lang').textContent = all_languages[name];
     document.getElementsByClassName(name)[0].classList.add('invisible');
 
+    el_navbar_nav.classList.remove('invisible');
     el.classList.remove('invisible');
 }

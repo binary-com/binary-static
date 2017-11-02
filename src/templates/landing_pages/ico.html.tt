@@ -33,7 +33,7 @@
                 <a class="navbar-brand logo" href="[% request.url_for('home') %]"></a>
             </div>
             <div class="navbar-collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav invisible">
                     <li class="invisible">
                         <a href="#page-top"></a>
                     </li>
