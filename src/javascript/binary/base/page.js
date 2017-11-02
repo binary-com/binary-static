@@ -113,7 +113,8 @@ const Page = (() => {
         Menu.onUnload();
     };
 
-    const removeIcoBanner = () => {
+    const removeIcoBanner = (e) => {
+        e.stopPropagation();
         document.getElementById('ico_banner').classList.add('invisible');
         sessionStorage.setItem('hide_ico_banner', true);
     };

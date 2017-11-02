@@ -363,6 +363,7 @@ button .barspinner.white {
 
 #ico_banner_container {
     .ico-banner {
+        cursor: pointer;
         border: 1px solid $COLOR_LIGHT_GRAY;
         background: url('../images/ico/banner/white_background.png') 100% no-repeat / cover;
 
