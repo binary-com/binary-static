@@ -25,7 +25,6 @@
         'one-var':               ['error', { initialized: 'never', uninitialized: 'always' }],
         'semi':                  ['error', 'always'],
         'camelcase':             0,
-        "no-bitwise":            1,
     },
     'extends': [
         'airbnb-base',
