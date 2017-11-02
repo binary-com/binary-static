@@ -267,6 +267,12 @@ body #not_authenticated_financial ul.checked > li {
             }
         }
     }
+    .timer {
+        .text {
+            font-size: $FONT_SIZE_XS;
+            font-weight: bold;
+        }
+    }
     #portfolio th.details {
         width: auto;
     }
