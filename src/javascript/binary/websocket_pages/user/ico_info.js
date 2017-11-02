@@ -2,13 +2,10 @@ const BinarySocket     = require('../socket');
 const showLoadingImage = require('../../base/utility').showLoadingImage;
 const getHighstock     = require('../../common_functions/common_functions').requireHighstock;
 
-const currencyFormatter = function () {
-    return `$${this.value.toFixed(2)}`;
-};
 const tooltipFormatter = function () {
     return `$${this.y.toFixed(2)}`;
 };
-const chartConfig = ({keys, values, callback}) => ({
+const chartConfig = ({categories, values, plotLineIndex, plotLineLabel, callback}) => ({
     chart: {
         type  : 'column',
         events: {
@@ -17,12 +14,18 @@ const chartConfig = ({keys, values, callback}) => ({
     },
     title: { text: '', enabled: false },
     xAxis: {
-        categories: keys,
-        crosshair : true,
-        labels    : {
-            formatter: currencyFormatter,
-            style    : { color: '#C2C2C2' },
+        categories,
+        crosshair: true,
+        labels   : {
+            style: { color: '#C2C2C2' },
         },
+        plotLines: !!plotLineIndex && [{
+            color    : '#E98024',
+            width    : 2,
+            dashStyle: 'ShortDash',
+            value    : plotLineIndex,
+            label    : { text: plotLineLabel },
+        }],
     },
     yAxis: {
         min   : 0,
@@ -62,13 +65,54 @@ const ICOInfo = (() => {
         if (is_initialized) return;
 
         $root.find('.finalPrice').text(ico_info.final_price);
+        const final_price = +ico_info.final_price;
+        let plotLineIndex = 0;
 
-        const keys = Object.keys(ico_info.histogram).map(key => +key).sort();
-        const values = keys.map((key) => ico_info.histogram[`${key}`]);
+        const BUCKET_COUNT = 40;;
+        const bucket_size = ico_info.histogram_bucket_size;
+
+        const keys = Object.keys(ico_info.histogram)
+                           .map(key => +key)
+                           .sort((a,b) => a - b);
+        const allKeys = [];
+        const allValues = [];
+        let categories = [];
+        if (keys.length > 0) {
+            const max = keys[keys.length - 1];
+            const min = Math.max(
+                +(max - BUCKET_COUNT * bucket_size).toFixed(2), 1
+            );
+            for(let key = max; key >= min; key -= bucket_size ) {
+                key = +key.toFixed(2);
+                allKeys.unshift(key);
+                const value = keys.indexOf(key) !== -1 ? ico_info.histogram[`${key}`] : 0;
+                const color = key >= final_price ? '#E98024' : '#C2C2C2';
+                allValues.unshift({ y: value, color });
+            }
+
+            const lessThanMin = keys.filter(key => key < min)
+                .map(key => ico_info.histogram[`${key}`])
+                .reduce((a,b) => a+b, 0);
+            if (lessThanMin !== 0) {
+                allKeys.unshift(0);
+                const color = min >= final_price ? '#E98024' : '#C2C2C2';
+                allValues.unshift({ y: lessThanMin, color});
+            }
+            for (let inx = 0; inx < allKeys.length; ++inx) {
+                if (final_price === allKeys[inx]) {
+                    plotLineIndex = inx;
+                } else if (final_price > allKeys[inx]) {
+                    plotLineIndex = inx + 0.5;
+                }
+            }
+            categories = allKeys.map(key => key ===  0 ? `< ${min}` : `$${key}`);
+        }
         const config = chartConfig({
-            keys,
-            values,
-            callback: () => {
+            categories,
+            plotLineIndex,
+            values       : allValues,
+            plotLineLabel: `Final Price ($${final_price})`,
+            callback     : () => {
                 $loading.hide();
                 $labels.setVisibility(1);
             },
@@ -81,8 +125,6 @@ const ICOInfo = (() => {
         } else {
             $root.hide();
         }
-
-        console.warn(ico_info);
     };
 
     const onLoad = () => {
