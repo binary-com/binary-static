@@ -116,8 +116,7 @@ sub all_pages {
         ['user/security/self_exclusionws',   'user/security/self_exclusion',         'default',    'Self Exclusion'],
         ['user/settings/assessmentws',       'user/settings/financial_assessment',   'default',    'Financial Assessment',    'ja'],
         ['user/settings/detailsws',          'user/settings/personal_details',       'default',    'Personal Details'],
-        # TODO: uncomment this code if we allow clients to claim professional trader
-        #['user/settings/professional',       'user/settings/professional',           'default',    'Professional Client'],
+        ['user/settings/professional',       'user/settings/professional',           'default',    'Professional Client'],
         ['user/set-currency',                'user/set_currency',                    'default',    'Set Currency',            'ja'],
         ['user/telegram-bot',                'user/telegram_bot',                    'default',    'Telegram Bot'],
 

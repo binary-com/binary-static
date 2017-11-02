@@ -14,7 +14,7 @@
                 <li>[% l("The size of your instrument portfolio (including Instruments &amp; Cash), with us or elsewhere, exceeds EUR500,000, or the equivalent; and/or") %]</li>
                 <li>[% l("You have worked in the financial sector for at least 1 year in a professional position that requires knowledge of the envisaged transactions.") %]</li>
             </ul>
-            <p>[% l("By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorisation meets the aforementioned criteria, including, but not limited to copies of:") %]</p>
+            <p>[% l("By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:") %]</p>
             <ul class="bullet">
                 <li>[% l("Statements reflecting your transactions of the previous four quarters;") %]</li>
                 <li>[% l("Portfolio held elsewhere;") %]</li>
@@ -27,9 +27,8 @@
             <ul class="bullet">
                 <li>[% l("The Company presumes that you possess the experience, knowledge and expertise to make your own investment decisions and properly assess the risks involved in relation to the requested transaction/s;") %]</li>
                 <li>[% l("The Company is neither obliged to conduct an appropriateness test, nor to provide you with any risk warnings.") %]</li>
-                <li class="invisible" id="show_financial">[% l("You will not be eligible for any compensation under the Investor Compensation Scheme.") %]</li>
             </ul>
-            <p>[% l("As a Professional Client, you are responsible for keeping the Company informed about any change which could affect your categorisation as a Professional Client. At any time, you may choose to be treated as a Retail Client, even if you would ordinarily fall within the definition of a Professional Client.") %]</p>
+            <p>[% l("As a Professional Client, you are responsible for keeping the Company informed about any change which could affect your categorization as a Professional Client. At any time, you may choose to be treated as a Retail Client, even if you would ordinarily fall within the definition of a Professional Client.") %]</p>
             <div class="center-text">
                 <a class="button" id="btn_accept" href="javascript:;"><span>[% l("ACCEPT") %]</span></a>
                 <a class="button" id="btn_decline" data-value="decline" href="javascript:;"><span>[% l("DECLINE") %]</span></a>
