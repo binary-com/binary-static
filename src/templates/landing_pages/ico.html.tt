@@ -73,15 +73,15 @@
                             <div id="status_loading">[% INCLUDE global/loading.html.tt theme='white' %]</div>
                             <div id="status_container" class="gr-12 invisible">
                                 <div class="status-toggle status-before-start">
-                                    <h3 class="content-inverse-color">[% l("Token Sale Begins In") %]</h3>
+                                    <h3 class="content-inverse-color">[% l("Token sale begins in") %]</h3>
                                 </div>
                                 <div class="status-toggle status-started">
-                                    <h3 class="content-inverse-color">[% l("The [_1] Token Sale has started", broker_name) %]</h3>
+                                    <h3 class="content-inverse-color">[% l("The [_1] token sale has started", broker_name) %]</h3>
                                     <p class="intro-subtext">[% l("15 November – 25 December 2017") %]</p>
-                                    <p class="intro-text">[% l("Token Sale Ends In") %]</p>
+                                    <p class="intro-text">[% l("Token sale ends in") %]</p>
                                 </div>
                                 <div class="status-toggle status-ended">
-                                    <h3 class="content-inverse-color">[% l("The [_1] Token Sale has ended", broker_name) %]</h3>
+                                    <h3 class="content-inverse-color">[% l("The [_1] token sale has ended", broker_name) %]</h3>
                                     <p class="intro-subtext">[% l("See your winning bids and claim your tokens") %]</p>
                                 </div>
                                 <div class="status-toggle status-before-start status-started" id="countdown">
@@ -392,7 +392,7 @@
             <div id="board-of-directors" class="content-section">
                 <div class="gr-row center-text">
                     <div class="gr-4">
-                        <h2 class="boxed-heading-center">[% l("Board of Directors") %]</h2>
+                        <h2 class="boxed-heading-center">[% l("Board of directors") %]</h2>
                     </div>
                 </div>
                 <div class="container">
@@ -540,7 +540,7 @@
                 <div class="container">
                     <div class="gr-row">
                         <div class="gr-12">
-                            <h3>[% l('Media Coverage') %]</h3>
+                            <h3>[% l('Media coverage') %]</h3>
                         </div>
                     </div>
                     <div class="slider-container invisible">
