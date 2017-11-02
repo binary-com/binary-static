@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-10-31 22:33-0400\n"
+"PO-Revision-Date: 2017-11-02 01:04-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -102,6 +102,9 @@ msgstr "%1 ICO オークションビット"
 
 msgid "%1 ICO FAQ"
 msgstr "%1 ICO よくあるご質問"
+
+msgid "%1 ICO starts on 15th November 2017"
+msgstr "%1ICOは2017年11月15日に開始"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO: 世界最高水準のバイナリーオプションプラットフォームでお取引"
@@ -417,6 +420,9 @@ msgstr "%1アカウントを認証%2して当社の機能を最大限活用し�
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1お問い合わせ%2よりビデオ通話の日時を調整いただくことができます。"
 
+msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
+msgstr "%1お客さまがご提示いただいた身分証明または住所証明%2は必要要件を満たしていませんでした。詳細またはその後の手順については、メールをご確認ください。"
+
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1の慈善活動では、地域社会においてプラスの影響を少しでも与えられるよう、世界中の小規模慈善団体や非営利団体に焦点を当てています。\n"
 "慈善団体の規模が大きいほど抱える間接費の負担を削減できるよう、当社の寄付は直接的に用いられます。"
@@ -476,10 +482,13 @@ msgid "1-3 years"
 msgstr "1〜3年"
 
 msgid "1. Proof of identity"
-msgstr ""
+msgstr "1. 身分証明"
 
 msgid "10-30 million JPY"
 msgstr "1,000〜3,000万円"
+
+msgid "15 November – 25 December 2017"
+msgstr "2017年11月15日 - 12月25日"
 
 msgid "2-3 years of applicable experience in a web application testing role"
 msgstr "Webアプリケーションテストの実施経験 2-3年"
@@ -488,7 +497,7 @@ msgid "2-way pricing"
 msgstr "2ウェイ・プライス（購入・売却）を表示"
 
 msgid "2. Proof of address"
-msgstr ""
+msgstr "2. 住所証明"
 
 msgid "3-5 million JPY"
 msgstr "300〜500万円"
@@ -880,7 +889,7 @@ msgid "Adapt tone of voice as appropriate to suit specified target audiences"
 msgstr "指定の対象者に合せて適切な声のトーンで対応します。"
 
 msgid "Add"
-msgstr ""
+msgstr "追加"
 
 msgid "Additional business exposure:"
 msgstr "Additional business exposure:"
@@ -1335,7 +1344,7 @@ msgid "Australia 200 Cash Index"
 msgstr "オーストラリア 200現物指数"
 
 msgid "Authenticate your account by verifying your identity and address."
-msgstr ""
+msgstr "お客さまの個人情報（身分と住所証明）を確認して、アカウントの認証を行います。"
 
 msgid "Authenticate your account by video conference call. Follow these steps to proceed:"
 msgstr "ビデオ通話での口座認証は、以下の手順に従ってください。"
@@ -1413,7 +1422,7 @@ msgid "Balance:"
 msgstr "口座残高："
 
 msgid "Bank statement"
-msgstr ""
+msgstr "銀行取引明細書"
 
 msgid "Bank wire/Money transfer"
 msgstr "銀行振込・送金"
@@ -1684,7 +1693,7 @@ msgstr "ビットコイン"
 msgid "Bitcoin Cash"
 msgstr "ビットコインキャッシュ"
 
-msgid "Board of Directors"
+msgid "Board of directors"
 msgstr "取締役会"
 
 msgid "Both the above"
@@ -2512,7 +2521,7 @@ msgid "Date of birth"
 msgstr "生年月日"
 
 msgid "Dated within the last three months"
-msgstr ""
+msgstr "過去三ヶ月以内"
 
 msgid "Day"
 msgstr "日"
@@ -2761,7 +2770,7 @@ msgid "Drive rapid growth from key areas of the world, applying a variety of onl
 msgstr "当社のアフィリエイトネットワーク展開へ、多様なオンライン/オフラインマーケティング能力を活用して世界の重要地域での急速な成長を推進します。"
 
 msgid "Driving licence"
-msgstr ""
+msgstr "運転免許証"
 
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "規制変更により、下記財務評価にご記入頂く必要があります。こちらが完了しない限り、お取引を引き続きご利用いただけませんのでご注意ください。"
@@ -3192,10 +3201,10 @@ msgid "Expertise in cloud solutions"
 msgstr "クラウドソリューション専門知識"
 
 msgid "Expiry date"
-msgstr ""
+msgstr "有効期限日"
 
 msgid "Expiry date is required for %1."
-msgstr ""
+msgstr "有効期限は%1である必要があります。"
 
 msgid "Expiry price"
 msgstr "終値"
@@ -3291,7 +3300,7 @@ msgid "Fifteen years on, and we're still innovating, growing and working on new 
 msgstr "創業１５年を迎えてもなお、当社は進化と成長を続けることで顧客目線の新たなサービスの提供に注力しています。短期間でのタッチ/ノータッチ・トレードの提供と新しいチャートアプリケーションを開発。個人向けのオプション取引にて他の追従を許さない、かつ理解しやすいシステムを提供しているという確かな自信と共にサービスを提供します。"
 
 msgid "File (%1) size exceeds the permitted limit. Maximum allowed file size: 3MB"
-msgstr ""
+msgstr "ファイルサイズ (%1) が制限を超えています。最大ファイルサイズ：3MB"
 
 msgid "File format."
 msgstr "ファイル・フォーマット"
@@ -3324,7 +3333,7 @@ msgid "Financial Risk approval is required. Please contact <a href=\"%1\">custom
 msgstr "金融リスクの商品が必要です。詳細については<a href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Financial assessment"
-msgstr ""
+msgstr "財務評価"
 
 msgid "Financial asset"
 msgstr "金融資産"
@@ -3501,7 +3510,10 @@ msgid "From fiat to cryptocurrency: %1 transfer fee"
 msgstr "不換紙幣口座から仮想通貨口座への振替手数料：%1 "
 
 msgid "Front Side"
-msgstr ""
+msgstr "表面"
+
+msgid "Front and reverse side photos of %1 are required."
+msgstr "写真付き%1の裏表面が必要です。"
 
 msgid "Front-End (Javascript) Development"
 msgstr "フロントエンド（Javascript）開発"
@@ -3916,13 +3928,13 @@ msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "(20010 - 20000) x 1 x 1 = USD 10"
 
 msgid "ID card"
-msgstr ""
+msgstr "身分証明書"
 
 msgid "ID number"
-msgstr ""
+msgstr "登録番号"
 
 msgid "ID number is required for %1."
-msgstr ""
+msgstr "登録番号は%1に必要となります。"
 
 msgid "IMPORTANT DISCLAIMER"
 msgstr "重要な免責事項"
@@ -3943,7 +3955,7 @@ msgid "Ideas"
 msgstr "アイディア"
 
 msgid "Identity card"
-msgstr ""
+msgstr "身分証明書"
 
 msgid "If a closing Transaction in the same market is entered into but with a higher number of lots, the original Open Position will be closed and a new Open Position will be entered into for the number of lots by which the new Transaction exceeds the Open Position."
 msgstr "If a closing Transaction in the same market is entered into but with a higher number of lots, the original Open Position will be closed and a new Open Position will be entered into for the number of lots by which the new Transaction exceeds the Open Position."
@@ -4484,7 +4496,7 @@ msgid "Invalid amount, minimum is"
 msgstr "無効な値です。最小"
 
 msgid "Invalid document format: \"%1\""
-msgstr ""
+msgstr "文書フォーマットが無効です：「%1」"
 
 msgid "Invalid email address"
 msgstr "無効なEメールアドレス"
@@ -4550,7 +4562,7 @@ msgid "Isle of Man"
 msgstr "マン島"
 
 msgid "Issued under your own name"
-msgstr ""
+msgstr "お客さまの氏名で発行されていること"
 
 msgid "It is a condition of using the website that:"
 msgstr "ウェブサイト使用条件："
@@ -5116,6 +5128,9 @@ msgstr "活気に満ちた有能なプロが揃う当チームに参加してみ
 msgid "Join the conversation on our social channels for all news and updates related to our upcoming ICO."
 msgstr "Join the conversation on our social channels for all news and updates related to our upcoming ICO."
 
+msgid "Join the token sale"
+msgstr "トークン販売に参加する"
+
 msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Joshua Cavallaro氏<span> （Markets And You Trader）</span>"
 
@@ -5204,7 +5219,7 @@ msgid "Last digit stats for the latest %1 ticks on %2"
 msgstr "%2の最新%1 tickの下一桁統計"
 
 msgid "Latest bank statement or any government-issued letter which contains your name and address"
-msgstr ""
+msgstr "最新の銀行取引明細書または氏名と住所が確認できる政府発行の手紙"
 
 msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of persons accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, persons accessing this site are required to inform themselves about and to observe such restrictions."
 msgstr "（決済方法）\n"
@@ -5646,12 +5661,12 @@ msgid "Maximum number of open positions"
 msgstr "最大保有ポジション"
 
 msgid "Maximum upload size for each file is 3MB"
-msgstr ""
+msgstr "各ファイルの最大アップロードサイズは 3MBです"
 
 msgid "May"
 msgstr "5"
 
-msgid "Media Coverage"
+msgid "Media coverage"
 msgstr "メディアの報道"
 
 msgid "Medium-sized changes – generally $250-750"
@@ -5825,7 +5840,7 @@ msgid "Multiple trading opportunities"
 msgstr "多様な取引機会"
 
 msgid "Must be a clear, colour photo or scanned image"
-msgstr ""
+msgstr "鮮明なカラー写真またはそのコピー"
 
 msgid "N. Force Majeure Events"
 msgstr "N. 不可抗力事象"
@@ -5843,7 +5858,7 @@ msgid "Name:"
 msgstr "氏名:"
 
 msgid "National ID card or any government issued document which contains a photo, your name, and date of birth"
-msgstr ""
+msgstr "写真、氏名、生年月日が確認できる身分証明書"
 
 msgid "Need more information on the ICO?"
 msgstr "ICOのより詳しい情報がご必要ですか？"
@@ -6141,7 +6156,7 @@ msgid "Only %1 decimal points are allowed."
 msgstr "小数点以下%1桁のみご利用いただけます。"
 
 msgid "Only JPG, JPEG, GIF, PNG and PDF formats are accepted"
-msgstr ""
+msgstr "JPG・JPEG・GIF・PNG・PDF 形式のみご利用いただけます"
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "サービス開始からわずか5年にて、当社のオンライントレードサービスに対しこのような主要な賞を受賞。この賞では、BetOnMarkets.com’が信頼できる迅速で安全なオンライントレードの機会をトレード初心者をはじめ、上級者にも提供していることが評価され、この時点で当社の口座数は1,500万以上となりました。"
@@ -6156,7 +6171,7 @@ msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed.
 msgstr "文字、数字、スペース、ハイフン(-)、ピリオド(.)、アポストロフィ(')のみご利用いただけます。"
 
 msgid "Only letters, numbers, space, underscore, and hyphen are allowed for ID number."
-msgstr ""
+msgstr "登録番号欄には英数字、スペース、アンダーライン、ハイフンでご入力ください。"
 
 msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
 msgstr "文字、スペース、ハイフン、ピリオド、アポストロフィのみご利用いただけます。"
@@ -6441,7 +6456,7 @@ msgid "Pass our Knowledge Test"
 msgstr "知識確認テストの受験"
 
 msgid "Passport"
-msgstr ""
+msgstr "パスポート"
 
 msgid "Password"
 msgstr "パスワード"
@@ -6531,7 +6546,7 @@ msgid "Personal Wealth Awards 2017"
 msgstr "Personal Wealth Awards 2017を受賞"
 
 msgid "Personal details"
-msgstr ""
+msgstr "お客さま登録情報"
 
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgstr "金融市場や金融商品の内部情報を知る方による当ウェブサイトでのお取引は禁止されています。"
@@ -7183,7 +7198,7 @@ msgid "Represents the maximum volume of contracts that you may purchase in any g
 msgstr "購入可能な１日あたりのトレードの総額を示します。"
 
 msgid "Requirements"
-msgstr ""
+msgstr "必須項目"
 
 msgid "Requirements:"
 msgstr "必須項目："
@@ -7246,7 +7261,7 @@ msgid "Returns above 1000% on <a href='%1'>higher/lower</a> and <a href='%2'>tou
 msgstr "<a href='%1'>ラダーHIGH/ラダーLOW</a>、<a href='%2'>TOUCH/NO-TOUCH</a>オプションで多様な収益機会を提供"
 
 msgid "Reverse Side"
-msgstr ""
+msgstr "裏面"
 
 msgid "Review suspicious account transactions"
 msgstr "不正アカウントの取引を確認"
@@ -7400,6 +7415,9 @@ msgstr "口座開設時確認書類"
 
 msgid "Security testing opportunities"
 msgstr "セキュリティテストの機会"
+
+msgid "See your winning bids and claim your tokens"
+msgstr "入札状況とクレームトークンを確認"
 
 msgid "Segregated Funds"
 msgstr "資産の保全(区分管理)"
@@ -7777,7 +7795,7 @@ msgid "Step 3: Make your trade"
 msgstr "ステップ３：取引を実行"
 
 msgid "Still valid"
-msgstr ""
+msgstr "有効であるもの"
 
 msgid "Stock market indices measure the value of a selection of companies in the stock market."
 msgstr "株式市場インデックスは、株式市場での企業の選択値を測定します。"
@@ -7876,10 +7894,10 @@ msgid "Submit a report on HackerOne of any potential security issue you found, a
 msgstr "潜在的なセキュリティ問題を発見されましたら、問題解決の提案と共にHackerOneにて報告をお願いします。"
 
 msgid "Submit for review"
-msgstr ""
+msgstr "レビューとして送信"
 
 msgid "Submit one of the documents below"
-msgstr ""
+msgstr "下記文書のうち一つを提出してください"
 
 msgid "Submit your CV and Cover Letter"
 msgstr "履歴書とカバーレターを提出してください"
@@ -7928,6 +7946,9 @@ msgstr "Suspending your Real Account and refusing to execute any Orders to enter
 
 msgid "Symbol"
 msgstr "通貨シンボル"
+
+msgid "Take me there"
+msgstr "参加する"
 
 msgid "Talk to us"
 msgstr "お問い合わせ"
@@ -8020,7 +8041,7 @@ msgid "Thank you for signing up! Please check your email to complete the registr
 msgstr "口座開設ありがとうございます。ご登録頂いたメールアドレスに【認証専用のURL】を送信致しましたのでご確認下さい。"
 
 msgid "Thank you for submitting the required documents"
-msgstr ""
+msgstr "必要文書をご提出いただきありがとうございます"
 
 msgid "Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO."
 msgstr "hanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO."
@@ -8042,6 +8063,12 @@ msgstr "店頭バイナリーオプション取引約款"
 
 msgid "The %1 team"
 msgstr "%1チーム"
+
+msgid "The %1 token sale has ended"
+msgstr "%1トークン販売は終了しました"
+
+msgid "The %1 token sale has started"
+msgstr "%1トークン販売が開始しました"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1のウェブサイトは特定の著作権で保護されています。"
@@ -8287,7 +8314,7 @@ msgid "The GBP Index is a weighted Index, measuring the British Pound's value ag
 msgstr "GBPインデックスとは、5グローバル通貨(USD, EUR, AUD, JPY, CAD)のバスケットに対する英国ポンドの価値を計る各荷重20％の荷重インデックスです。"
 
 msgid "The ICO is currently unavailable."
-msgstr ""
+msgstr "現在ICOはご利用いただけません"
 
 msgid "The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions. In particular, the ICO is not available to US investors."
 msgstr "ICOは管轄区域の規制及び規則に従い、特定の地域の対象の投資家またはプロの投資家に制限されます。特に、アメリカにお住まいの投資家の皆様はご利用いただけませんのでご注意ください。"
@@ -9080,6 +9107,12 @@ msgstr "トークンの販売開始まであと"
 msgid "Token dividends"
 msgstr "トークンの配当"
 
+msgid "Token sale begins in"
+msgstr "トークンの販売開始まであと"
+
+msgid "Token sale ends in"
+msgstr "トークン販売終了まであと"
+
 msgid "Tokens"
 msgstr "トークン"
 
@@ -9522,10 +9555,10 @@ msgid "Utilise a variety of tactics - both online and offline - to grow and supp
 msgstr "戦略の多様性を活用– オンラインでもオフラインでも –自身で指定した市場でパートナーの当ネットワークをサポート"
 
 msgid "Utility bill"
-msgstr ""
+msgstr "公共料金領収書"
 
 msgid "Utility bills (gas, electricity, and phone)"
-msgstr ""
+msgstr "公共料金領収書（ガス・電気・電話）"
 
 msgid "Variable spreads"
 msgstr "Variable spreads"
@@ -9576,10 +9609,10 @@ msgid "View all the information you need to manage your client list – includin
 msgstr "View all the information you need to manage your client list – including login ID, group, leverage, balance, equity, and margin"
 
 msgid "View and edit your financial information."
-msgstr ""
+msgstr "財務情報を確認する"
 
 msgid "View and edit your personal information."
-msgstr ""
+msgstr "お客さま登録情報を確認する"
 
 msgid "View available payment methods"
 msgstr "ご利用できる決済方法を確認する"
@@ -9606,7 +9639,7 @@ msgid "View the operating hours of the markets you can trade."
 msgstr "こちらから取引可能時間を参照しましょう。"
 
 msgid "View your account's authentication status."
-msgstr ""
+msgstr "アカウント承認ステータスを確認する"
 
 msgid "View your login history."
 msgstr "ログイン履歴を表示する"
@@ -9681,7 +9714,7 @@ msgid "We"
 msgstr "水"
 
 msgid "We accept"
-msgstr ""
+msgstr "承認"
 
 msgid "We aim to establish and maintain and operate effective organisational and administrative arrangements with a view to taking all reasonable steps to prevent conflicts of interest from constituting or giving rise to a material risk of damage to the interests of our clients."
 msgstr "当社は確立と維持を目的としており、構成からによる利益相反を防止するために、すべての合理的な措置をとりことを視野にいれ効果的な組織や管理構成を操作します。"
@@ -9735,10 +9768,10 @@ msgid "We are required to take a number of factors into account when considering
 msgstr "当社はお客さまへ最高執行をさせていただく方法を検討する際に、多くの要因を踏まえる必要があります。価格を見積もる上で最も重要となる項目は次の通りです。(a)費用 (b)サイズ (c)基礎となる市場の流動性 (d)スピード (e)実行と決済の見込み　お客さまが最良執行をお受け取りいただけることを保証できる主な方法は、お客さまの契約に関する基礎となる参照商品の市場価格に十分に考慮させていただいたビッド価格とオファー価格の計算の確実性です。一定の距離があるお客さまにご利用いただけるビッドとオファーの我々の客観的視点からみた市場価格を確認するために多くの異なるデータソースにアクセスします。"
 
 msgid "We are reviewing your documents and will get back to you within one working day."
-msgstr ""
+msgstr "現在書類確認を行っております。1営業日以内にご連絡致します。"
 
 msgid "We are reviewing your documents. For more details %1contact us%2."
-msgstr ""
+msgstr "現在書類確認を行っております。詳細を確認されたい場合は、%1お問い合わせ%2ください。"
 
 msgid "We charge a 2% fee on top of market rates."
 msgstr "長期間の取引期間をご指定して頂いたトレードは、最新の市場価格で売ることができる場合があります。"
@@ -12904,7 +12937,7 @@ msgid "Get Paid for Pull Requests"
 msgstr "Get Paid for Pull Requests"
 
 msgid "Omnibus"
-msgstr ""
+msgstr "オムニバス"
 
 msgid "How to Trade Binary Options?"
 msgstr "バイナリーオプションの取引方法とは？"

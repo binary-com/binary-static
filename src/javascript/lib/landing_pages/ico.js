@@ -144,7 +144,7 @@ function getClientCountry() {
         } else if (response.residence_list) {
             setSession('residence_list', JSON.stringify(response.residence_list));
         } else if (response.time) {
-            initCountdown(response.time, '2017-11-15');
+            initCountdown(response.time);
         }
     }
 
@@ -157,46 +157,77 @@ function collapseNavbar() {
     navbarFixedTopEl[0].classList[window.scrollY < 50 ? 'add' : 'remove']('top-nav-collapse');
 }
 
-function initCountdown(start_epoch, end_date) {
-    const el_container = document.getElementById('countdown_container');
+function initCountdown(start_epoch) {
+    const ico_start    = Date.parse(new Date('2017-11-15T00:00:00Z'));
+    const ico_end      = Date.parse(new Date('2017-12-25T00:00:00Z'));
     const date_diff    = Date.parse(new Date()) - start_epoch * 1000;
+
+    const el_container = document.getElementById('status_container');
+    const hidden_class = 'invisible';
     const elements     = {};
-    let countdownd_interval;
+    let remaining      = 0;
+    let countdownd_interval,
+        is_before_start,
+        is_started,
+        end_date;
+
+    function updateStatus() {
+        is_before_start = calcRemainingTime(ico_start, date_diff).total > 0;
+        is_started      = calcRemainingTime(ico_end,   date_diff).total > 0 && !is_before_start;
+        end_date        = is_before_start ? ico_start : ico_end;
+
+        const display_class = 'status-' + (is_before_start ? 'before-start' : is_started ? 'started' : 'ended');
+        el_container.querySelectorAll('.status-toggle').forEach(function(el) {
+            el.classList[el.classList.contains(display_class) ? 'remove' : 'add'](hidden_class);
+        });
+
+        document.getElementById('status_loading').classList.add(hidden_class);
+        el_container.classList.remove(hidden_class);
+
+        if (!is_before_start) {
+            document.getElementById('ico_subscribe_section').classList.add(hidden_class);
+            if (!is_started) { // is_ended
+                clearInterval(countdownd_interval);
+            }
+        }
+    }
+
+    updateStatus();
+
+    if (!is_before_start && !is_started) return; // no countdown when already ended
 
     // Get all elements only once
-    function getElements(id) {
+    ['days', 'hours', 'minutes', 'seconds'].forEach(function (id) {
         const item = el_container.querySelector('#cd_' + id);
         elements[id] = {
             value    : item.querySelector('.cd-value'),
             arcs     : item.querySelectorAll('.arc_q'),
             arc_cover: item.querySelector('.arc_cover'),
         };
-    }
-    ['days', 'hours', 'minutes', 'seconds'].forEach(function(id) { getElements(id); });
-
+    });
 
     function updateCountdown() {
-        const remaining = calcRemainingTime(end_date, date_diff);
+        remaining = calcRemainingTime(end_date, date_diff);
 
-        arc(elements.days,    remaining.days,    20);
+        arc(elements.days,    remaining.days,    is_before_start ? 20 : 40);
         arc(elements.hours,   remaining.hours,   24);
         arc(elements.minutes, remaining.minutes, 60);
         arc(elements.seconds, remaining.seconds, 60);
 
         if (remaining.total <= 0) {
-            clearInterval(countdownd_interval);
-            el_container.classList.add('invisible');
+            updateStatus();
         }
     }
 
     updateCountdown();
-    countdownd_interval = setInterval(updateCountdown, 1000);
 
-    el_container.classList.remove('invisible'); // make visible when everything set
+    if (remaining.total > 0) {
+        countdownd_interval = setInterval(updateCountdown, 1000);
+    }
 }
 
 function calcRemainingTime(end_date, date_diff) {
-    const total   = Math.floor(Date.parse(new Date(end_date)) - Date.parse(new Date()) + date_diff) / 1000;
+    const total   = Math.floor(end_date - Date.parse(new Date()) + date_diff) / 1000;
     const seconds = Math.floor(total % 60);
     const minutes = Math.floor((total / 60) % 60);
     const hours   = Math.floor((total / (60 * 60)) % 24);
