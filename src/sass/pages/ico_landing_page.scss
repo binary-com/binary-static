@@ -279,7 +279,7 @@ input[type='text']:focus, input[type='submit']:focus {
     }
     .logo {
         background: url('../images/logo/binary_logo_light.svg') no-repeat;
-        width: 200px !important;
+        width: 180px !important;
         height: 40px;
         margin: 15px;
     }
@@ -288,23 +288,20 @@ input[type='text']:focus, input[type='submit']:focus {
 
         .navbar-nav {
             display: flex;
+            font-size: 16px;
 
             > li {
                 white-space: nowrap;
                 text-align: center;
-                margin: 0;
-                padding-right: 30px;
+                margin: 0 25px 0 0;
             }
             a, a:visited {
                 color: $COLOR_WHITE !important;
                 font-weight: 100 !important;
-                -webkit-transition: all 0.2s ease-in-out;
-                -moz-transition: all 0.2s ease-in-out;
-                transition: all 0.2s ease-in-out;
+                padding: 15px 0;
             }
             a:hover, a:focus {
                 text-decoration: none;
-                color: $COLOR_GREEN;
             }
         }
     }
@@ -353,7 +350,7 @@ input[type='text']:focus, input[type='submit']:focus {
         transition: max-height 0.3s;
 
         &.expand {
-            max-height: 415px;
+            max-height: 400px;
             padding-bottom: 0;
         }
         .navbar-header {
@@ -779,7 +776,7 @@ input[type='text']:focus, input[type='submit']:focus {
 }
 
 #language {
-    min-width: 200px;
+    min-width: 90px;
 
     .language-dropdown {
         position: fixed;
@@ -796,7 +793,8 @@ input[type='text']:focus, input[type='submit']:focus {
         transition: none;
 
         a.selected {
-            padding-top: 22px;
+            padding-top: 25px;
+            padding-bottom: 0;
             width: 120px;
             display: flex;
             align-items: center;
@@ -819,7 +817,7 @@ input[type='text']:focus, input[type='submit']:focus {
         }
         &.show {
             height: 350px;
-            padding-bottom: 22px;
+            padding-bottom: 25px;
             background: $COLOR_LIGHT_GRAY;
             border: 1px solid $COLOR_GRAY;
             color: $COLOR_BLACK;
@@ -838,7 +836,6 @@ input[type='text']:focus, input[type='submit']:focus {
         @media (max-width: 1199px) {
             position: relative;
             left: 0;
-            font-size: 14px;
             padding: 10px 0;
             text-align: left;
             background: none;
@@ -847,7 +844,7 @@ input[type='text']:focus, input[type='submit']:focus {
             height: 15px;
 
             a.selected {
-                padding-top: 0;
+                padding: 0;
                 color: $COLOR_WHITE;
 
                 .world {
@@ -855,6 +852,8 @@ input[type='text']:focus, input[type='submit']:focus {
                 }
             }
             &.show {
+                -webkit-columns: 2;
+                -moz-columns: 2;
                 columns: 2;
                 height: 180px;
                 padding-bottom: 10px;
