@@ -4,6 +4,10 @@ module.exports = function (grunt){
             files: ['src/sass/**/*.scss'],
             tasks: ['stylelint', 'css']
         },
+        landing_pages: {
+            files: ['src/javascript/lib/landing_pages/*.js'],
+            tasks: ['babel:landing_pages']
+        },
         options: {
             spawn        : false,
             interrupt    : true,
