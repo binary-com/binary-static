@@ -9,7 +9,6 @@ const RealAccOpening = (() => {
     const onLoad = () => {
         if (Client.get('residence')) {
             const account_type_ico = /ico/.test(window.location.hash);
-            console.log(AccountOpening.redirectAccount(account_type_ico));
 
             if (AccountOpening.redirectAccount(account_type_ico)) return;
 
