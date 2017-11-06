@@ -109,42 +109,20 @@
                                     [% END %]
                                 </div>
                                 <div class="status-toggle status-before-start">
-                                    <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO.") %]</p>
-                                    <div class="form-container">
-                                        <!-- AWeber Web Form Generator 3.0.1 -->
-                                        <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
-                                            <div style="display: none;">
-                                                <input type="hidden" name="meta_web_form_id" value="713141817" />
-                                                <input type="hidden" name="meta_split_id" value="" />
-                                                <input type="hidden" name="listname" value="awlist4685103" />
-                                                <input type="hidden" name="redirect" value="" id="redirect_600c7e6a647457c51ede13e8b4d377e6" />
-                                                <input type="hidden" name="meta_adtracking" value="Binary_ICO" />
-                                                <input type="hidden" name="meta_message" value="1001" />
-                                                <input type="hidden" name="meta_required" value="email" />
-                                                <input type="hidden" name="meta_tooltip" value="" />
-                                                <input type="hidden" name="custom language" value="" class="frm-language" />
-                                            </div>
-                                            <div id="af-form-713141817" class="af-form">
-                                                <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
-                                                    <div class="af-element gr-row">
-                                                        <div class="gr-8 gr-12-m">
-                                                            <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
-                                                        </div>
-                                                        <div class="gr-4 gr-12-m">
-                                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit" />
-                                                        </div>
+                                    <div id="sign-up-section">
+                                        <div class="signup-desc">
+                                            <p>[% l("Investors need to open a [_1] real money account and complete our account authentication process to take part in the ICO.", broker_name) %]</p>
+                                            <p>[% l("Sign up for a free [_1] account to get started and subscribed to our mailing list for exclusive updates on the ICO:", broker_name) %]</p>
+                                        </div>
+                                        <div class="signup-container gr-9 gr-12-p gr-12-m gr-centered">
+                                            [% WRAPPER global/form_verify_email.html.tt class='secondary-bg-color' dark_button=1 text=l('Create Free Account') %]
+                                                <div class="invisible" id="success">
+                                                    <div class="gr-padding-10 center-text hint gr-12 align-self-center">
+                                                        [% l('Thank you for signing up! Please check your email to complete the registration process.') %]
                                                     </div>
                                                 </div>
-                                                <div style="display: none;">
-                                                    <img src="https://forms.aweber.com/form/displays.htm?id=7IzMjCyMHIzs" alt="" />
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <script type="text/javascript">
-                                            document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';
-                                        </script>
-                                        <!-- /AWeber Web Form Generator 3.0.1 -->
-                                        <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
+                                            [% END %]
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="status-toggle status-started">

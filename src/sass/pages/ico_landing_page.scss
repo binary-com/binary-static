@@ -767,3 +767,68 @@ input[type='text']:focus, input[type='submit']:focus {
         }
     }
 }
+
+#sign-up-section {
+    .signup-desc {
+        p {
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.4em;
+            margin: 0;
+        }
+    }
+    .signup-container {
+        margin-top: 2em;
+    }
+    .signup-box {
+        margin-top: auto;
+        margin-bottom: auto;
+        border-radius: 6px;
+
+        #signup {
+            padding: 5px;
+        }
+    }
+    #frm_verify_email {
+        input {
+            width: 100%;
+            height: 3em;
+            margin: 5px 0;
+            font-size: $FONT_SIZE_S;
+        }
+        button {
+            margin: 5px 0;
+            height: 3rem;
+            width: 100%;
+        }
+        button:active, button:hover {
+            background-color: $COLOR_GREEN;
+            text-decoration: none;
+        }
+        #btn_verify_email {
+            font-size: $FONT_SIZE_L;
+            padding: 0;
+
+            @media (max-width: 480px) {
+                font-size: $FONT_SIZE_N;
+            }
+        }
+        .hint {
+            font-size: $FONT_SIZE_XS;
+            color: $COLOR_WHITE;
+            margin-top: 3px;
+        }
+        .error-msg {
+            font-style: italic;
+            font-size: $FONT_SIZE_XS;
+            color: $COLOR_RED;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .error-field {
+            border: 1px solid $COLOR_RED !important;
+            box-shadow: 0 0 10px $COLOR_RED;
+            color: $COLOR_RED;
+        }
+    }
+}
