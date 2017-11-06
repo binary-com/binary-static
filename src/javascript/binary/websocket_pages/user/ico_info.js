@@ -2,22 +2,14 @@ const BinarySocket     = require('../socket');
 const showLoadingImage = require('../../base/utility').showLoadingImage;
 const getHighstock     = require('../../common_functions/common_functions').requireHighstock;
 
-const tooltipFormatter = function () {
-    return `$${this.y.toFixed(2)}`;
-};
-const chartDefs = ({color}) => `
-<linearGradient id="gradient-0" x1="0" x2="1" y2="0" y1="0">
-  <stop offset="0%" stop-opacity="0" stop-color="${color}"></stop>
-  <stop offset="70%" stop-color="${color}" stop-opacity="1"></stop>
-</linearGradient>
-`;
-// svg:   the owning <svg> element
-// id:    an id="..." attribute for the gradient
-// stops: an array of objects with <stop> attributes
+const COLOR_ORANGE = '#E98024';
+const COLOR_GRAY = '#C2C2C2';
+
 function createGradient(svg, id, stops) {
     const namespace = svg.namespaceURI;
     const grad = document.createElementNS(namespace, 'linearGradient');
     grad.setAttribute('id', id);
+
     for (let i = 0; i < stops.length; i++) {
         const attrs = stops[i];
         const stop = document.createElementNS(namespace, 'stop');
@@ -31,15 +23,29 @@ function createGradient(svg, id, stops) {
         svg.insertBefore(document.createElementNS(namespace, 'defs'), svg.firstChild);
     return defs.appendChild(grad);
 }
-const chartConfig = ({categories, values, plotLineIndex, plotLineLabel, callback}) => ({
+
+const tooltipFormatter = function () {
+    return `
+    <span>Total Bids: <b>$${this.y.toFixed(2)}</b></span><br/>
+    <span>Unit Price: <b>$${this.x.toFixed(2)}</b></span><br/>
+    `;
+};
+const labelFormatter = function () {
+    return `$${this.value}`;
+};
+const chartConfig = ({min, values, finalPrice, finalPriceLabel, callback}) => ({
     chart: {
         type  : 'column',
         events: {
             load: () => {
                 const $svg = $('#ico_info .highcharts-container > svg');
                 createGradient($svg[0],'gradient-0', [
-                    {offset: '0%', 'stop-opacity': 0, 'stop-color': '#E98024'},
-                    {offset: '75%', 'stop-opacity': 1, 'stop-color': '#E98024'},
+                    {offset: '0%', 'stop-opacity': 0, 'stop-color': COLOR_ORANGE},
+                    {offset: '100%', 'stop-opacity': .8, 'stop-color': COLOR_ORANGE},
+                ]);
+                createGradient($svg[0],'gradient-1', [
+                    {offset: '0%', 'stop-opacity': 0, 'stop-color': COLOR_GRAY},
+                    {offset: '100%', 'stop-opacity': .8, 'stop-color': COLOR_GRAY},
                 ]);
                 callback();
             },
@@ -47,36 +53,39 @@ const chartConfig = ({categories, values, plotLineIndex, plotLineLabel, callback
     },
     title: { text: '', enabled: false },
     xAxis: {
-        categories,
         crosshair: true,
+        min,
         labels   : {
-            style: { color: '#C2C2C2' },
+            style    : { color: COLOR_GRAY },
+            formatter: labelFormatter,
         },
-        plotLines: !!plotLineIndex && [{
-            color    : '#E98024',
+        plotLines: !!finalPrice && [{
+            color    : '#000000',
             width    : 2,
             dashStyle: 'ShortDash',
-            value    : plotLineIndex,
-            label    : { text: plotLineLabel },
+            zIndex   : 5,
+            value    : finalPrice,
+            label    : { text: finalPriceLabel },
         }],
     },
     yAxis: {
-        min   : 0,
         title : { enabled: false },
         labels: {
-            style: { color: '#C2C2C2' },
+            style: { color: COLOR_GRAY },
         },
     },
     tooltip: {
         formatter: tooltipFormatter,
         shared   : true,
-        useHTML  : true,
+        useHTML  : false,
     },
     plotOptions: {
         column: {
-            color       : '#E98024',
+            color       : COLOR_ORANGE,
             pointPadding: 0,
             borderWidth : 0,
+            groupPadding: 0.05,
+            pointRange  : 0.2,
         },
     },
     legend : false,
@@ -97,19 +106,15 @@ const ICOInfo = (() => {
     const init = (ico_info) => {
         if (is_initialized) return;
 
-        $root.find('.finalPrice').text(ico_info.final_price);
-        const final_price = 3;// +ico_info.final_price;
-        let plotLineIndex = 0;
+        const final_price = +ico_info.final_price;
 
         const BUCKET_COUNT = 40;;
-        const bucket_size = ico_info.histogram_bucket_size;
+        const bucket_size = +ico_info.histogram_bucket_size;
 
         const keys = Object.keys(ico_info.histogram)
                            .map(key => +key)
                            .sort((a,b) => a - b);
-        const allKeys = [];
         const allValues = [];
-        let categories = [];
         if (keys.length > 0) {
             const max = keys[keys.length - 1];
             const min = Math.max(
@@ -117,42 +122,33 @@ const ICOInfo = (() => {
             );
             for(let key = max; key >= min; key -= bucket_size ) {
                 key = +key.toFixed(2);
-                allKeys.unshift(key);
                 const value = keys.indexOf(key) !== -1 ? ico_info.histogram[`${key}`] : 0;
-                const color = key >= final_price ? '#E98024' : '#C2C2C2';
-                allValues.unshift({ y: value, color });
+                if (value !== 0) {
+                    const color = key >= final_price ? COLOR_ORANGE : COLOR_GRAY;
+                    allValues.unshift({ y: value, x: key, color });
+                }
             }
 
             const lessThanMin = keys.filter(key => key < min)
                 .map(key => ico_info.histogram[`${key}`])
                 .reduce((a,b) => a+b, 0);
             if (lessThanMin !== 0) {
-                allKeys.unshift(0);
-                const color = min >= final_price ? 'url(#gradient-0)' : '#C2C2C2';
-                allValues.unshift({ y: lessThanMin, color});
+                const color = min >= final_price ? 'url(#gradient-0)' : 'url(#gradient-1)';
+                allValues.unshift({ y: lessThanMin, x: min - bucket_size, color});
             }
-            let inx = lessThanMin !== 0 ? 1 : 0;
-            for (; inx < allKeys.length; ++inx) {
-                if (final_price === allKeys[inx]) {
-                    plotLineIndex = inx;
-                } else if (final_price > allKeys[inx]) {
-                    plotLineIndex = inx + 0.5;
-                }
-            }
-            categories = allKeys.map(key => key ===  0 ? `< ${min}` : `$${key}`);
-        }
-        const config = chartConfig({
-            categories,
-            plotLineIndex,
-            values       : allValues,
-            plotLineLabel: `Final Price ($${final_price})`,
-            callback     : () => {
-                $loading.hide();
-                $labels.setVisibility(1);
-            },
-        });
 
-        if (keys.length > 0) {
+            const chartMin = lessThanMin !== 0 ? (min - 2 * bucket_size) : (min - bucket_size);
+            const config = chartConfig({
+                min            : chartMin,
+                finalPrice     : final_price,
+                values         : allValues,
+                finalPriceLabel: `Final Price ($${final_price})`,
+                callback       : () => {
+                    $loading.hide();
+                    $labels.setVisibility(1);
+                },
+            });
+
             const $chart = $root.find('.barChart');
             chart = Highcharts.chart($chart[0],  config);
             is_initialized = true;

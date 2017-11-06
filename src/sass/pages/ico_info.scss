@@ -71,4 +71,8 @@
         left: -3px;
         transform: rotate(180deg);
     }
+    rect[fill='url(#gradient-0)'], rect[fill='url(#gradient-1)'] {
+        transform: scaleX(1.5);
+        transform-origin: 100%;
+    }
 }
