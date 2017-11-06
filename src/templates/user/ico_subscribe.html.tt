@@ -6,7 +6,9 @@
     <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency.", website_name) %]</p>
     <div class="gr-row">
         <div class="gr-7 gr-12-p gr-12-m">
-            <img class="responsive" src="[% request.url_for('/images/pages/ico/auction.svg') %]" />
+            <a href="#auction" class="no-ajax">
+                <img class="responsive ico-auction" />
+            </a>
         </div>
         <div class="gr-5 gr-12-p gr-12-m border-gray border-radius">
             <form id="frm_ico_bid">
@@ -55,8 +57,57 @@
                     </div>
                 </div>
             </form>
+            [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-10' invisible=1 %]
+            <div class="timer invisible center-text gr-gutter-left gr-no-gutter-right">
+                <h3 class="gr-gutter-right">[% l('Token Sale Begins In') %]</h3>
+                <div class="time gr-row">
+                    <div class="gr-2">
+                        <h1 class="days">00</h1>
+                    </div>
+                    <div class="gr-1">
+                        <h1 class="primary-color">:</h1>
+                    </div>
+                    <div class="gr-2">
+                        <h1 class="hours">00</h1>
+                    </div>
+                    <div class="gr-1">
+                        <h1 class="primary-color">:</h1>
+                    </div>
+                    <div class="gr-2">
+                        <h1 class="minutes">00</h1>
+                    </div>
+                    <div class="gr-1">
+                        <h1 class="primary-color">:</h1>
+                    </div>
+                    <div class="gr-2">
+                        <h1 class="seconds">00</h1>
+                    </div>
+                </div>
+                <div class="text gr-row">
+                    <div class="gr-2">
+                        <span>[% l('Days') %]</span>
+                    </div>
+                    <div class="gr-1">
+                    </div>
+                    <div class="gr-2">
+                        <span>[% l('Hours') %]</span>
+                    </div>
+                    <div class="gr-1">
+                    </div>
+                    <div class="gr-2">
+                        <span>[% l('Minutes') %]</span>
+                    </div>
+                    <div class="gr-1">
+                    </div>
+                    <div class="gr-2">
+                        <span>[% l('Seconds') %]</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
+    [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-20' invisible=1 %]
     <div id="ico_bids">
         <h1>[% l('[_1] ICO Auction Bids', website_name) %]</h1>
         [% PROCESS components/elements.html.tt %]
@@ -93,4 +144,9 @@
             <li>[% l('Unsuccessful bidders will receive a full refund.') %]</li>
         </ol>
     </div>
+    <a href="#_" class="no-ajax img-lightbox popup" id="auction">
+        <div>
+            <img class="responsive ico-auction" />
+        </div>
+    </a>
 </div>
