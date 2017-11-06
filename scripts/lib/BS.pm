@@ -164,7 +164,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuTrading',
-        class      => 'ja-hide gr-hide-m gr-hide-p',
+        class      => 'ja-hide gr-hide-m gr-hide-p ico-only-hide',
         url        => url_for('/trading'),
         text       => localize('Trade'),
         };
@@ -183,7 +183,7 @@ sub menu {
         id         => 'topMenuPortfolio',
         url        => url_for('/user/portfoliows'),
         text       => localize('Portfolio'),
-        class      => 'client_logged_in invisible',
+        class      => 'client_logged_in invisible ico-only-hide',
         };
 
     push @menu,
@@ -215,6 +215,7 @@ sub menu {
         id         => 'topMenuResources',
         url        => url_for('/resources'),
         text       => localize('Resources'),
+        class      => 'client_logged_out client_logged_in invisible ico-only-hide'
     };
 
     my $asset_index_ref = {
