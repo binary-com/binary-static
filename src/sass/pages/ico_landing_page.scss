@@ -684,13 +684,21 @@ input[type='text']:focus, input[type='submit']:focus {
     padding-bottom: 50px;
 }
 
+#status_loading {
+    margin: 0 auto;
+
+    .barspinner {
+        margin: 0;
+    }
+}
+
 #countdown {
     $cd_size: 100px;
     $cd_border_width: 5px;
     $cd_border_bg: rgb(86, 62, 47);
     $cd_fix_color: rgb(24, 35, 52);
     text-align: center;
-    margin: 30px auto 60px;
+    margin: 30px auto;
 
     .cd-item {
         display: inline-block;
@@ -751,10 +759,12 @@ input[type='text']:focus, input[type='submit']:focus {
             border-radius: 50%;
             border: 5px solid;
             border-color: transparent $COLOR_ORANGE transparent transparent;
+            -webkit-transform: rotate(-90deg);
             transform: rotate(-90deg);
         }
         .arc_cover {
             border-color: transparent $cd_border_bg transparent transparent;
+            -webkit-transform: rotate(-135deg);
             transform: rotate(-135deg);
         }
     }
