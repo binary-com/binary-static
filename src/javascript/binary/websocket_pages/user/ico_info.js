@@ -1,6 +1,7 @@
 const BinarySocket     = require('../socket');
 const showLoadingImage = require('../../base/utility').showLoadingImage;
 const getHighstock     = require('../../common_functions/common_functions').requireHighstock;
+const localize         = require('../../base/localize').localize;
 
 const COLOR_ORANGE = '#E98024';
 const COLOR_GRAY = '#C2C2C2';
@@ -31,9 +32,11 @@ const tooltipFormatter = function () {
         band = [a.toFixed(2), b.toFixed(2)];
     }
     band = band.map(e => `$${e}`);
+    const totalBids = localize('Total Bids');
+    const priceBand = localize('Price Band');
     return `
-    <span>Total Bids: <b>$${this.y.toFixed(2)}</b></span><br/>
-    <span>Price Band: <b>${band.join(' - ')}</b></span><br/>
+    <span>${totalBids}: <b>$${this.y.toFixed(2)}</b></span><br/>
+    <span>${priceBand}: <b>${band.join(' - ')}</b></span><br/>
     `;
 };
 const labelFormatter = function () {
@@ -158,7 +161,7 @@ const ICOInfo = (() => {
                 min            : chartMin,
                 finalPrice     : final_price,
                 values         : allValues,
-                finalPriceLabel: `Final Price ($${final_price})`,
+                finalPriceLabel: `${localize('Final Price')} ($${final_price})`,
                 callback       : () => {
                     $loading.hide();
                     $labels.setVisibility(1);

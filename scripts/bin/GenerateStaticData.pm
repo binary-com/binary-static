@@ -531,6 +531,11 @@ sub _texts {
         push @texts, localize('Ended');
         push @texts, localize('The ICO is currently unavailable.');
 
+        # binaryico histogram chart
+        push @texts, localize('Final Price');
+        push @texts, localize('Total Bids');
+        push @texts, localize('Price Band');
+
         # strings for accounts page
         push @texts, localize('Create');
         push @texts, localize('Commodities');
