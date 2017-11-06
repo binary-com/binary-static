@@ -9,13 +9,15 @@ const RealAccOpening = (() => {
     const onLoad = () => {
         if (Client.get('residence')) {
             const account_type_ico = /ico/.test(window.location.hash);
+            console.log(AccountOpening.redirectAccount(account_type_ico));
 
             if (AccountOpening.redirectAccount(account_type_ico)) return;
 
             BinarySocket.wait('landing_company').then(() => {
                 const form_id = '#frm_real';
                 AccountOpening.populateForm(form_id,
-                    () => AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id)));
+                    () => AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id))
+                        , account_type_ico);
 
                 FormManager.handleSubmit({
                     form_selector       : form_id,
