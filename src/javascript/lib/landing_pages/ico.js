@@ -20,11 +20,11 @@ window.onload = function() {
             dataLayer.push({ bom_country_abbrev: clients_country || '' });
             dataLayer.push({ event: 'ico_success' });
             clearHash();
-            for (var i = 0; i < 2; i++) {
+            for (let i = 0; i < 2; i++) {
                 document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
                 document.getElementsByTagName('form')[i].classList.add('invisible');
             }
-            var navbarHeight = checkWidth();
+            let navbarHeight = checkWidth();
             const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
             scrollTo(to);
         }
@@ -45,7 +45,7 @@ window.onload = function() {
     // Set language fields
     const language = getLanguage();
     const el_langs = document.getElementsByClassName('frm-language');
-    for (var i = 0; i < el_langs.length; i++) {
+    for (let i = 0; i < el_langs.length; i++) {
         el_langs[i].value = language;
     }
 
@@ -62,7 +62,7 @@ window.onload = function() {
             const navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
             scrollTo(to);
-        } 
+        }
 
         // Show / hide language dropdown
         if (e.target.parentNode.id === 'lang') {
@@ -123,8 +123,8 @@ function clearHash() {
 }
 
 function getClientCountry() {
-    var clients_country = sessionStorage.getItem('clients_country');
-    var residence_list  = sessionStorage.getItem('residence_list');
+    let clients_country = sessionStorage.getItem('clients_country');
+    let residence_list  = sessionStorage.getItem('residence_list');
 
     // Try to get residence from client's info if logged-in
     if (!clients_country) {
@@ -184,8 +184,8 @@ function initCountdown(start_epoch) {
     const el_container = document.getElementById('status_container');
     const hidden_class = 'invisible';
     const elements     = {};
-    var remaining      = 0;
-    var countdownd_interval,
+    let remaining      = 0;
+    let countdownd_interval,
         is_before_start,
         is_started,
         end_date;
@@ -275,7 +275,7 @@ function urlForLanguage(lang, url) {
     if (url === undefined) {
         url = window.location.href;
     }
-    var curr_lang = getLanguage();
+    let curr_lang = getLanguage();
     return url.replace(new RegExp('/' + curr_lang + '/', 'i'), '/' + lang.trim().toLowerCase() + '/');
 }
 
