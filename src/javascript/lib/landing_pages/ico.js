@@ -1,12 +1,12 @@
 window.onload = function() {
+    const clients_country = getClientCountry();
+
     toggleMobileMenu();
     hashRouter();
     collapseNavbar();
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
-
-    const clients_country = getClientCountry();
 
     function switchView(path) {
         document.getElementById('faq').classList[path === 'faq' ? 'remove' : 'add']('invisible');
