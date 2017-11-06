@@ -21,7 +21,9 @@ const Settings = (() => {
                 $('#change_password').setVisibility(1);
             }
 
-            if (!is_jp && /retail/.test(status)) {
+            // Professional Client menu should only be shown to MF and CR accounts.
+            if (!is_jp && !/professional_requested/.test(status)
+                && !Client.isAccountOfType('gaming')) {
                 $('#professional_client').setVisibility(1);
             }
 
