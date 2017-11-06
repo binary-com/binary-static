@@ -1,3 +1,8 @@
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 h1 {
     font-size: 64px;
 }
@@ -343,7 +348,7 @@ input[type='text']:focus, input[type='submit']:focus {
         }
     }
     .navbar-fixed-top {
-        position: inherit;
+        position: relative;
         background: $COLOR_BLUE !important;
         margin-bottom: 0;
         padding: 15px;
@@ -357,7 +362,8 @@ input[type='text']:focus, input[type='submit']:focus {
         transition: max-height 0.3s;
 
         &.expand {
-            max-height: 400px;
+            max-height: 415px;
+            height: 100%;
             padding-bottom: 0;
         }
         .navbar-header {
@@ -387,6 +393,7 @@ input[type='text']:focus, input[type='submit']:focus {
             .navbar-nav {
                 display: block;
                 padding-top: 5px;
+                width: 100%;
 
                 > li {
                     margin: 10px 0;
@@ -403,7 +410,6 @@ input[type='text']:focus, input[type='submit']:focus {
             }
             &.expand {
                 height: 100%;
-                overflow: hidden;
             }
         }
     }
