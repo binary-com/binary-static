@@ -1,0 +1,19 @@
+[% PROCESS components/forms.html.tt %]
+
+<h1>[% l('[_1] Bidding Prices Histogram (ICO)', website_name) %]</h1>
+
+<div id="ico_info" class="invisible">
+    <div class="barChart"></div>
+    <div class="y-label invisible">
+        <div class='arrow-left'></div>
+        <div>[% l('Total Bids In USD') %]</div>
+        <div class='arrow-right'></div>
+    </div>
+    <div class="x-label invisible">
+        <div class='arrow-left'></div>
+        <div>[% l('Bid Price Per Token ($USD)') %]</div>
+        <div class='arrow-right'></div>
+    </div>
+    <div class='caption'>[% l('Bidding Prices') %]</div>
+    <div class="loading"></div>
+</div>

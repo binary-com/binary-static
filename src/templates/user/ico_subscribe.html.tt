@@ -149,19 +149,4 @@
             <img class="responsive ico-auction" />
         </div>
     </a>
-    <div id="ico_info">
-        <div class="barChart"></div>
-        <div class="y-label invisible">
-            <div class='arrow-left'></div>
-            <div>[% l('Total Bids In USD') %]</div>
-            <div class='arrow-right'></div>
-        </div>
-        <div class="x-label invisible">
-            <div class='arrow-left'></div>
-            <div>[% l('Bid Price Per Token ($USD)') %]</div>
-            <div class='arrow-right'></div>
-        </div>
-        <div class='caption'>[% l('Bidding Prices') %]</div>
-        <div class="loading"></div>
-    </div>
 </div>

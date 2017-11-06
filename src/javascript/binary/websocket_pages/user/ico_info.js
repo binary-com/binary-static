@@ -180,6 +180,7 @@ const ICOInfo = (() => {
         $root = $('#ico_info');
         $loading = $root.find('> .loading');
         $labels = $root.find('.x-label,.y-label');
+        $root.setVisibility(1);
         $loading.show();
         showLoadingImage($loading[0]);
 
