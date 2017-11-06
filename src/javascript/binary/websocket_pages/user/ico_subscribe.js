@@ -45,6 +45,7 @@ const ICOSubscribe = (() => {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOcountDown();
                 ICOPortfolio.onLoad();
+                $('#view_ico_info').setVisibility(1);
                 $('#ico_subscribe').setVisibility(1);
             } else {
                 init();
@@ -55,6 +56,7 @@ const ICOSubscribe = (() => {
     const init = () => {
         BinarySocket.wait('balance').then((response) => {
             ICOPortfolio.onLoad();
+            $('#view_ico_info').setVisibility(1);
             currency = Client.get('currency') || '';
             if (currency) {
                 $('.currency').text(currency);

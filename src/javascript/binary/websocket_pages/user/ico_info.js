@@ -5,6 +5,7 @@ const localize         = require('../../base/localize').localize;
 
 const COLOR_ORANGE = '#E98024';
 const COLOR_GRAY = '#C2C2C2';
+const MAX_BID_PRICE = 10;
 
 function createGradient(svg, id, stops) {
     const namespace = svg.namespaceURI;
@@ -26,6 +27,9 @@ function createGradient(svg, id, stops) {
 }
 
 const tooltipFormatter = function () {
+    if (!this.y) {
+        return false;
+    }
     let band = [this.x.toFixed(2)];
     if (this.points[0] && this.points[0].point && this.points[0].point.band) {
         const [a, b] = this.points[0].point.band;
@@ -49,12 +53,12 @@ const chartConfig = ({min, values, finalPrice, finalPriceLabel, callback}) => ({
             load: () => {
                 const $svg = $('#ico_info .highcharts-container > svg');
                 createGradient($svg[0],'gradient-0', [
-                    {offset: '0%', 'stop-color': 'white'},
-                    {offset: '100%', 'stop-color': COLOR_ORANGE},
+                    {offset: '0%', 'stop-color': COLOR_ORANGE},
+                    {offset: '100%', 'stop-color': 'white'},
                 ]);
                 createGradient($svg[0],'gradient-1', [
-                    {offset: '0%', 'stop-color': 'white'},
-                    {offset: '100%', 'stop-color': COLOR_GRAY},
+                    {offset: '0%', 'stop-color': COLOR_GRAY},
+                    {offset: '100%', 'stop-color': 'white'},
                 ]);
                 callback();
             },
@@ -117,7 +121,6 @@ const ICOInfo = (() => {
 
         const final_price = +ico_info.final_price;
 
-        const BUCKET_COUNT = 40;;
         const bucket_size = +ico_info.histogram_bucket_size;
 
         const keys = Object.keys(ico_info.histogram)
@@ -125,40 +128,36 @@ const ICOInfo = (() => {
                            .sort((a,b) => a - b);
         const allValues = [];
         if (keys.length > 0) {
-            const max = keys[keys.length - 1];
-            const min = Math.max(
-                +(max - BUCKET_COUNT * bucket_size).toFixed(2), 1
-            );
-            for(let key = max; key >= min; key -= bucket_size ) {
+            const max = Math.min(keys[keys.length - 1] + 1, MAX_BID_PRICE);
+            const min = Math.max(keys[0] - 1, 1);
+            for(let key = max - bucket_size; key >= min; key -= bucket_size ) {
                 key = +key.toFixed(2);
                 const value = keys.indexOf(key) !== -1 ? ico_info.histogram[`${key}`] : 0;
-                if (value !== 0) {
-                    const color = key >= final_price ? COLOR_ORANGE : COLOR_GRAY;
-                    allValues.unshift({
-                        y   : value,
-                        x   : key,
-                        band: [key, key + bucket_size],
-                        color,
-                    });
-                }
-            }
-
-            const lessThanMin = keys.filter(key => key < min)
-                .map(key => ico_info.histogram[`${key}`])
-                .reduce((a,b) => a+b, 0);
-            if (lessThanMin !== 0) {
-                const color = min >= final_price ? 'url(#gradient-0)' : 'url(#gradient-1)';
+                const color = key >= final_price ? COLOR_ORANGE : COLOR_GRAY;
                 allValues.unshift({
-                    y   : lessThanMin,
-                    x   : min - bucket_size,
-                    band: [1, min],
+                    y   : value,
+                    x   : key,
+                    band: [key, key + bucket_size],
                     color,
                 });
             }
 
-            const chartMin = allValues[0].x;
+            const aboveMaxPrice = keys.filter(key => key > MAX_BID_PRICE)
+                    .map(key => ico_info.histogram[`${key}`])
+                    .reduce((a,b) => a + b, 0);
+            if (aboveMaxPrice !== 0) {
+                const maxKey = keys[keys.length - 1];
+                const color = MAX_BID_PRICE >= final_price ? 'url(#gradient-0)' : 'url(#gradient-1)';
+                allValues.push({
+                    y   : aboveMaxPrice,
+                    x   : MAX_BID_PRICE,
+                    band: [MAX_BID_PRICE, maxKey],
+                    color,
+                });
+            }
+
             const config = chartConfig({
-                min            : chartMin,
+                min            : min - bucket_size,
                 finalPrice     : final_price,
                 values         : allValues,
                 finalPriceLabel: `${localize('Final Price')} ($${final_price})`,

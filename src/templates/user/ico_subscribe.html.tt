@@ -112,6 +112,11 @@
         <h1>[% l('[_1] ICO Auction Bids', website_name) %]</h1>
         [% PROCESS components/elements.html.tt %]
 
+        <div class="invisible" id="view_ico_info">
+            <a href="[% request.url_for('user/ico-info') %]">
+                <p>[% l('View bidding prices histogram') %]</p>
+            </a>
+        </div>
         <div id="portfolio">
             <p class="notice-msg center-text invisible" id="error-msg"></p>
 
