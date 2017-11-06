@@ -2,6 +2,7 @@ const BinarySocket     = require('../../../socket');
 const BinaryPjax       = require('../../../../base/binary_pjax');
 const State            = require('../../../../base/storage').State;
 const getPropertyValue = require('../../../../base/utility').getPropertyValue;
+const Client           = require('../../../../base/client');
 
 
 const professionalClient = (() => {
@@ -13,7 +14,7 @@ const professionalClient = (() => {
                 BinaryPjax.loadPreviousUrl();
                 return;
             }
-            init(true, true);
+            init(true, true, Client.get('is_ico_only'));
         });
     };
 
