@@ -5,11 +5,44 @@ const getHighstock     = require('../../common_functions/common_functions').requ
 const tooltipFormatter = function () {
     return `$${this.y.toFixed(2)}`;
 };
+const chartDefs = ({color}) => `
+<linearGradient id="gradient-0" x1="0" x2="1" y2="0" y1="0">
+  <stop offset="0%" stop-opacity="0" stop-color="${color}"></stop>
+  <stop offset="70%" stop-color="${color}" stop-opacity="1"></stop>
+</linearGradient>
+`;
+// svg:   the owning <svg> element
+// id:    an id="..." attribute for the gradient
+// stops: an array of objects with <stop> attributes
+function createGradient(svg, id, stops) {
+    const namespace = svg.namespaceURI;
+    const grad = document.createElementNS(namespace, 'linearGradient');
+    grad.setAttribute('id', id);
+    for (let i = 0; i < stops.length; i++) {
+        const attrs = stops[i];
+        const stop = document.createElementNS(namespace, 'stop');
+        Object.keys(attrs).forEach(attr => {
+            stop.setAttribute(attr, attrs[attr]);
+        });
+        grad.appendChild(stop);
+    }
+
+    const defs = svg.querySelector('defs') ||
+        svg.insertBefore(document.createElementNS(namespace, 'defs'), svg.firstChild);
+    return defs.appendChild(grad);
+}
 const chartConfig = ({categories, values, plotLineIndex, plotLineLabel, callback}) => ({
     chart: {
         type  : 'column',
         events: {
-            load: callback,
+            load: () => {
+                const $svg = $('#ico_info .highcharts-container > svg');
+                createGradient($svg[0],'gradient-0', [
+                    {offset: '0%', 'stop-opacity': 0, 'stop-color': '#E98024'},
+                    {offset: '75%', 'stop-opacity': 1, 'stop-color': '#E98024'},
+                ]);
+                callback();
+            },
         },
     },
     title: { text: '', enabled: false },
@@ -65,7 +98,7 @@ const ICOInfo = (() => {
         if (is_initialized) return;
 
         $root.find('.finalPrice').text(ico_info.final_price);
-        const final_price = +ico_info.final_price;
+        const final_price = 3;// +ico_info.final_price;
         let plotLineIndex = 0;
 
         const BUCKET_COUNT = 40;;
@@ -95,10 +128,11 @@ const ICOInfo = (() => {
                 .reduce((a,b) => a+b, 0);
             if (lessThanMin !== 0) {
                 allKeys.unshift(0);
-                const color = min >= final_price ? '#E98024' : '#C2C2C2';
+                const color = min >= final_price ? 'url(#gradient-0)' : '#C2C2C2';
                 allValues.unshift({ y: lessThanMin, color});
             }
-            for (let inx = 0; inx < allKeys.length; ++inx) {
+            let inx = lessThanMin !== 0 ? 1 : 0;
+            for (; inx < allKeys.length; ++inx) {
                 if (final_price === allKeys[inx]) {
                     plotLineIndex = inx;
                 } else if (final_price > allKeys[inx]) {
