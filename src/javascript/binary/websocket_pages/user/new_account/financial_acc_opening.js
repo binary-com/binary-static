@@ -19,7 +19,7 @@ const FinancialAccOpening = (() => {
         }
 
         if (AccountOpening.redirectAccount()) return;
-        AccountOpening.populateForm(form_id, getValidations);
+        AccountOpening.populateForm(form_id, getValidations, true);
 
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
             if (!isEmptyObject(response.get_financial_assessment)) {

@@ -3,6 +3,7 @@ const MetaTraderUI     = require('./metatrader.ui');
 const BinarySocket     = require('../../socket');
 const Client           = require('../../../base/client');
 const localize         = require('../../../base/localize').localize;
+const State            = require('../../../base/storage').State;
 const getPropertyValue = require('../../../base/utility').getPropertyValue;
 const Validation       = require('../../../common_functions/form_validation');
 
@@ -15,8 +16,8 @@ const MetaTrader = (() => {
         has_gaming_company;
 
     const onLoad = () => {
-        BinarySocket.wait('landing_company').then((response) => {
-            if (isEligible(response)) {
+        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
+            if (isEligible(State.get(['response', 'landing_company']))) {
                 updateEnabledStatus('gaming', has_gaming_company);
                 updateEnabledStatus('financial', has_financial_company);
                 getAllAccountsInfo();
@@ -31,9 +32,10 @@ const MetaTrader = (() => {
         let is_eligible = false;
         if (!landing_company_response.error) {
             const lc              = landing_company_response.landing_company;
+            const status          = State.getResponse('get_account_status.status');
             has_financial_company = getPropertyValue(lc, ['mt_financial_company', 'shortcode']) === 'vanuatu';
             has_gaming_company    = getPropertyValue(lc, ['mt_gaming_company', 'shortcode']) === 'costarica';
-            if (getPropertyValue(lc, ['financial_company', 'shortcode']) === 'costarica' &&
+            if (!/ico_only/.test(status) && getPropertyValue(lc, ['financial_company', 'shortcode']) === 'costarica' &&
                 (has_financial_company || has_gaming_company)) {
                 is_eligible = true;
             }

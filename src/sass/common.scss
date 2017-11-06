@@ -442,3 +442,20 @@ ul.bullet.gr-row > li {
 .pull-requests-content {
     margin-bottom: 0 !important;
 }
+
+.toggle-arrow {
+    &:after {
+        content: '';
+        display: inline-block;
+        margin-left: 7px;
+        border-left: 4px dashed;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+    }
+    &.open:after {
+        border-top: 4px dashed;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        border-bottom: 0;
+    }
+}
