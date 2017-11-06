@@ -25,9 +25,15 @@ function createGradient(svg, id, stops) {
 }
 
 const tooltipFormatter = function () {
+    let band = [this.x.toFixed(2)];
+    if (this.points[0] && this.points[0].point && this.points[0].point.band) {
+        const [a, b] = this.points[0].point.band;
+        band = [a.toFixed(2), b.toFixed(2)];
+    }
+    band = band.map(e => `$${e}`);
     return `
     <span>Total Bids: <b>$${this.y.toFixed(2)}</b></span><br/>
-    <span>Unit Price: <b>$${this.x.toFixed(2)}</b></span><br/>
+    <span>Price Band: <b>${band.join(' - ')}</b></span><br/>
     `;
 };
 const labelFormatter = function () {
@@ -40,12 +46,12 @@ const chartConfig = ({min, values, finalPrice, finalPriceLabel, callback}) => ({
             load: () => {
                 const $svg = $('#ico_info .highcharts-container > svg');
                 createGradient($svg[0],'gradient-0', [
-                    {offset: '0%', 'stop-opacity': 0, 'stop-color': COLOR_ORANGE},
-                    {offset: '100%', 'stop-opacity': .8, 'stop-color': COLOR_ORANGE},
+                    {offset: '0%', 'stop-color': 'white'},
+                    {offset: '100%', 'stop-color': COLOR_ORANGE},
                 ]);
                 createGradient($svg[0],'gradient-1', [
-                    {offset: '0%', 'stop-opacity': 0, 'stop-color': COLOR_GRAY},
-                    {offset: '100%', 'stop-opacity': .8, 'stop-color': COLOR_GRAY},
+                    {offset: '0%', 'stop-color': 'white'},
+                    {offset: '100%', 'stop-color': COLOR_GRAY},
                 ]);
                 callback();
             },
@@ -125,7 +131,12 @@ const ICOInfo = (() => {
                 const value = keys.indexOf(key) !== -1 ? ico_info.histogram[`${key}`] : 0;
                 if (value !== 0) {
                     const color = key >= final_price ? COLOR_ORANGE : COLOR_GRAY;
-                    allValues.unshift({ y: value, x: key, color });
+                    allValues.unshift({
+                        y   : value,
+                        x   : key,
+                        band: [key, key + bucket_size],
+                        color,
+                    });
                 }
             }
 
@@ -134,10 +145,15 @@ const ICOInfo = (() => {
                 .reduce((a,b) => a+b, 0);
             if (lessThanMin !== 0) {
                 const color = min >= final_price ? 'url(#gradient-0)' : 'url(#gradient-1)';
-                allValues.unshift({ y: lessThanMin, x: min - bucket_size, color});
+                allValues.unshift({
+                    y   : lessThanMin,
+                    x   : min - bucket_size,
+                    band: [1, min],
+                    color,
+                });
             }
 
-            const chartMin = lessThanMin !== 0 ? (min - 2 * bucket_size) : (min - bucket_size);
+            const chartMin = allValues[0].x;
             const config = chartConfig({
                 min            : chartMin,
                 finalPrice     : final_price,
