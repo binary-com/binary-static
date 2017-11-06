@@ -5,6 +5,7 @@ css:
 
 js:
   - 'webpack:build'
+  - 'babel:landing_pages'
 
 test:
   - 'stylelint'

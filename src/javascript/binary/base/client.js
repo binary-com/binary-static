@@ -94,11 +94,12 @@ const Client = (() => {
     };
 
     const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
-        const this_type = getAccountType(loginid);
+        const this_type   = getAccountType(loginid);
+        const is_ico_only = get('is_ico_only', loginid);
         return ((
             (type === 'virtual' && this_type === 'virtual') ||
             (type === 'real'    && this_type !== 'virtual') ||
-            type === this_type) &&
+            type === this_type) && !is_ico_only &&              // Account shouldn't be ICO_ONLY.
             (only_enabled ? !get('is_disabled', loginid) : true));
     };
 
@@ -217,14 +218,6 @@ const Client = (() => {
         window.location.href = options.redirect_url || defaultRedirectUrl();
     };
 
-    const hasShortCode = (data, code) => ((data || {}).shortcode === code);
-
-    const canUpgradeGamingToFinancial = data => (hasShortCode(data.financial_company, 'maltainvest'));
-
-    const canUpgradeVirtualToFinancial = data => (!data.gaming_company && hasShortCode(data.financial_company, 'maltainvest'));
-
-    const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'japan'));
-
     const activateByClientType = (section_id) => {
         const topbar = document.getElementById('topbar');
         if (!topbar) {
@@ -239,19 +232,34 @@ const Client = (() => {
         const secondary_bg_color    = 'secondary-bg-color';
 
         if (isLoggedIn()) {
-            BinarySocket.wait('authorize', 'website_status').then(() => {
+            BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 const client_logged_in = document.getElementById('client-logged-in');
                 if (client_logged_in) {
                     client_logged_in.classList.add('gr-centered');
                 }
-                applyToAllElements('.client_logged_in', (el) => { el.setVisibility(1); });
+
+                const is_ico_only = /ico_only/.test(State.getResponse('get_account_status.status'));
+                Client.set('is_ico_only', is_ico_only); // Set ico_only in Client object.
+
+                if (is_ico_only) {
+                    applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
+                }
+
+                applyToAllElements('.client_logged_in', (el) => {
+                    if (!/ico-only-hide/.test(el.classList) || !is_ico_only) {
+                        el.setVisibility(1);
+                    }
+                });
+
                 if (get('is_virtual')) {
                     applyToAllElements('.client_virtual', (el) => { el.setVisibility(1); }, '', el_section);
                     topbar_class.add(secondary_bg_color);
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
+                    const is_jp = jpClient();
                     applyToAllElements('.client_real', (el) => {
-                        if (!jpClient() || !/ja-hide/.test(el.classList)) {
+                        if ((!is_jp || !/ja-hide/.test(el.classList)) &&
+                            !/ico-only-hide/.test(el.classList) || !is_ico_only) {
                             el.setVisibility(1);
                         }}, '', el_section);
                     topbar_class.add(primary_bg_color_dark);
@@ -321,11 +329,23 @@ const Client = (() => {
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
-    const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status')) => {
+    const hasShortCode = (data, code) => ((data || {}).shortcode === code);
+
+    const canUpgradeGamingToFinancial = data => (hasShortCode(data.financial_company, 'maltainvest'));
+
+    const canUpgradeVirtualToFinancial = data => (!data.gaming_company && hasShortCode(data.financial_company, 'maltainvest'));
+
+    const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'japan'));
+
+    const canUpgradeVirtualToReal = data => (hasShortCode(data.financial_company, 'costarica'));
+
+    const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status'), account_type_ico = false) => {
         let type         = 'real';
         let can_upgrade  = false;
         let upgrade_link = 'realws';
-        if (get('is_virtual')) {
+        if (account_type_ico) {
+            can_upgrade = !hasCostaricaAccount();
+        } else if (get('is_virtual')) {
             if (canUpgradeVirtualToFinancial(landing_company)) {
                 type         = 'financial';
                 upgrade_link = 'maltainvestws';
@@ -370,6 +390,12 @@ const Client = (() => {
         (Client.hasAccountType('financial', true) && Client.hasAccountType('gaming', true)) ||
         (hasCurrencyType('crypto') && hasCurrencyType('fiat'));
 
+    const hasCostaricaAccount = () => getAllLoginids().find(loginid => /^CR/.test(loginid));
+
+    const canOpenICO = () =>
+        /malta|iom/.test(State.getResponse('landing_company.financial_company.shortcode')) ||
+        /malta|iom/.test(State.getResponse('landing_company.gaming_company.shortcode'));
+
     return {
         init,
         validateLoginid,
@@ -392,11 +418,14 @@ const Client = (() => {
         shouldCompleteTax,
         getMT5AccountType,
         getUpgradeInfo,
+        canUpgradeVirtualToReal,
         getAccountTitle,
         activateByClientType,
         currentLandingCompany,
         getLandingCompanyValue,
         canTransferFunds,
+        hasCostaricaAccount,
+        canOpenICO,
     };
 })();
 

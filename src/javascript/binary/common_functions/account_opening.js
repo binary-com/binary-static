@@ -1,27 +1,28 @@
-const Cookies           = require('js-cookie');
-const generateBirthDate = require('./attach_dom/birth_date_picker');
-const BinaryPjax        = require('../base/binary_pjax');
-const Client            = require('../base/client');
-const localize          = require('../base/localize').localize;
-const State             = require('../base/storage').State;
-const urlFor            = require('../base/url').urlFor;
-const makeOption        = require('../common_functions/common_functions').makeOption;
-const FormManager       = require('../common_functions/form_manager');
-const BinarySocket      = require('../websocket_pages/socket');
+const Cookies            = require('js-cookie');
+const generateBirthDate  = require('./attach_dom/birth_date_picker');
+const BinaryPjax         = require('../base/binary_pjax');
+const Client             = require('../base/client');
+const localize           = require('../base/localize').localize;
+const State              = require('../base/storage').State;
+const urlFor             = require('../base/url').urlFor;
+const makeOption         = require('../common_functions/common_functions').makeOption;
+const FormManager        = require('../common_functions/form_manager');
+const BinarySocket       = require('../websocket_pages/socket');
+const professionalClient = require('../websocket_pages/user/account/settings/professional_client');
 require('select2');
 
 const AccountOpening = (() => {
-    const redirectAccount = () => { // eslint-disable-line consistent-return
+    const redirectAccount = (account_type_ico) => { // eslint-disable-line consistent-return
         const response_landing_company = State.getResponse('landing_company');
         const response_get_settings    = State.getResponse('get_settings');
         if (response_landing_company && response_get_settings) {
-            return redirect(response_landing_company, response_get_settings);
+            return redirect(account_type_ico, response_landing_company);
         }
-        BinarySocket.wait('landing_company', 'get_settings').then(() => redirect());
+        BinarySocket.wait('landing_company', 'get_settings').then(() => redirect(account_type_ico));
     };
 
-    const redirect = (response_landing_company) => {
-        const upgrade_info = Client.getUpgradeInfo(response_landing_company || State.getResponse('landing_company'));
+    const redirect = (account_type_ico, response_landing_company) => {
+        const upgrade_info = Client.getUpgradeInfo(response_landing_company || State.getResponse('landing_company'), undefined, account_type_ico);
 
         if (!upgrade_info.can_upgrade) {
             BinaryPjax.loadPreviousUrl();
@@ -35,10 +36,11 @@ const AccountOpening = (() => {
         return false;
     };
 
-    const populateForm = (form_id, getValidations) => {
+    const populateForm = (form_id, getValidations, is_financial) => {
         getResidence();
         BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         generateBirthDate();
+        professionalClient.init(is_financial);
     };
 
     const getResidence = () => {
@@ -149,7 +151,8 @@ const AccountOpening = (() => {
             { selector: '#secret_answer',    validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
             { selector: '#tnc',              validations: [['req', { message: 'Please accept the terms and conditions.' }]], exclude_request: 1 },
 
-            { request_field: 'residence', value: Client.get('residence') },
+            { request_field: 'residence',   value: Client.get('residence') },
+            { request_field: 'client_type', value: () => ($('#chk_professional').is(':checked') ? 'professional' : 'retail') },
         ];
 
         if (Cookies.get('affiliate_tracking')) {
@@ -165,7 +168,7 @@ const AccountOpening = (() => {
             id;
         $(form_id).find('select, input[type=checkbox]').each(function () {
             id = $(this).attr('id');
-            if (!/^(tnc|address_state)$/.test(id)) {
+            if (!/^(tnc|address_state|chk_professional)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
                 if (id === 'not_pep') {
                     validation.exclude_request = 1;
