@@ -1,6 +1,6 @@
 // Check view width, add navbar height as offset if on desktop
 function checkWidth() {
-    var mq = window.matchMedia("(max-width: 1199px)");
+    let mq = window.matchMedia("(max-width: 1199px)");
     return (mq.matches ? 50 : document.getElementById('navigation').scrollHeight);
 }
 
@@ -25,14 +25,14 @@ function checkBrowser() {
 // - Gist reference: https://gist.github.com/andjosh/6764939
 function scrollTo(to, duration) {
     if (!duration) duration = 1000;
-    var start = window.pageYOffset,
+    let start = window.pageYOffset,
         change = to - start,
         currentTime = 0,
         increment = 20;
 
     const animateScroll = function(){
         currentTime += increment;
-        var val = Math.easeInOutQuad(currentTime, start, change, duration);
+        let val = Math.easeInOutQuad(currentTime, start, change, duration);
         document.body.scrollTop = val;
         document.documentElement.scrollTop = val;
         if(currentTime < duration) {
@@ -50,15 +50,15 @@ Math.easeInOutQuad = function (current_time, start_value, change_in_value, durat
 };
 
 function getParamValue(url, key) {
-    var regex   = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
-    var results = regex.exec(url);
+    let regex   = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
+    let results = regex.exec(url);
     if (!results || !results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
 function getLanguage() {
-    var all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
-    var language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return all_languages.indexOf(l) >= 0; });
+    let all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
+    let language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return all_languages.indexOf(l) >= 0; });
     return language || 'en';
 }
 
@@ -87,7 +87,7 @@ function setSession(key, value) {
 if (window.NodeList && !NodeList.prototype.forEach) {
     NodeList.prototype.forEach = function (callback, thisArg) {
         thisArg = thisArg || window;
-        for (var i = 0; i < this.length; i++) {
+        for (let i = 0; i < this.length; i++) {
             callback.call(thisArg, this[i], i, this);
         }
     };
