@@ -542,6 +542,7 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="hype-codes"             timestamp="Nov 03, 2017"    headlines="The future of IPOs is blockchain" url="https://hype.codes/future-ipos-blockchain" },
                 { logo="crypto-martez"          timestamp="Oct 27, 2017"    headlines="PR: Binary.com Announces Initial Coin Offering (ICO)"                        url="https://www.cryptomartez.com/2017/10/pr-binary-com-announces-ico.html" },
                 { logo="bittox"                 timestamp="Oct 25, 2017"    headlines="BINARY.COM ANNOUNCES INITIAL COIN OFFERING (ICO)"                        url="https://bittox.com/2017/10/25/binary-com-announces-initial-coin-offering-ico/" },
                 { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="BINARY.COM offers securities-backed tokens in ICO"                       url="http://www.profitf.com/news/binary-com-offers-securities-backed-tokens-initial-coin-offering-ico/" },
