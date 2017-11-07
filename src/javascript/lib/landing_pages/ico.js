@@ -50,8 +50,10 @@ window.onload = function() {
         el_langs[i].value = language;
     }
 
-    // Scroll to section
+    const el_language_dropdown = document.getElementsByClassName('language-dropdown')[0];
+    setLanguage(el_language_dropdown, getLanguage());
     document.addEventListener('click', function(e) {
+        // Scroll to section
         if (e.target.classList.contains('page-scroll')) {
             e.preventDefault();
             switchView('home');
@@ -62,6 +64,23 @@ window.onload = function() {
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
             scrollTo(to);
         }
+
+        // Show / hide language dropdown
+        if (e.target.parentNode.id === 'lang') {
+            e.preventDefault();
+            e.target.parentNode.parentNode.classList.toggle('show');
+        } else if (/show/.test(el_language_dropdown.classList)) {
+            el_language_dropdown.classList.remove('show');
+        }
+    });
+
+    el_language_dropdown.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (e.target.nodeName !== 'LI') return;
+        const lang = e.target.getAttribute('class');
+        if (lang === getLanguage()) return;
+        el_language_dropdown.classList.add('invisible'); // hide on change
+        document.location = urlForLanguage(lang);
     });
 
     window.onresize = checkWidth;
@@ -211,7 +230,7 @@ function getClientCountry() {
         } else if (response.time) {
             initCountdown(response.time);
         }
-    }
+    };
 
     return clients_country;
 }
@@ -316,4 +335,43 @@ function arc(el, value, scale) {
         arc.setAttribute('style', ['-webkit-', '-moz-', '-o-', '-ms-', '', ''].join('transform: rotate(' + arc_angle + 'deg); '));
     });
     el.arc_cover.classList[angle > 90 ? 'add' : 'remove']('invisible');
+}
+
+function urlForLanguage(lang, url) {
+    if (url === undefined) {
+        url = window.location.href;
+    }
+    let curr_lang = getLanguage();
+    return url.replace(new RegExp('/' + curr_lang + '/', 'i'), '/' + lang.trim().toLowerCase() + '/');
+}
+
+function setLanguage(el, name) {
+    const all_languages = {
+        ach  : 'Translations',
+        en   : 'English',
+        de   : 'Deutsch',
+        es   : 'Español',
+        fr   : 'Français',
+        id   : 'Indonesia',
+        it   : 'Italiano',
+        ja   : '日本語',
+        pl   : 'Polish',
+        pt   : 'Português',
+        ru   : 'Русский',
+        th   : 'Thai',
+        vi   : 'Tiếng Việt',
+        zh_cn: '简体中文',
+        zh_tw: '繁體中文',
+    };
+    const el_navbar_nav = document.getElementsByClassName('navbar-nav')[0];
+
+    if (/pt|vi|id/.test(name)) {
+        el_navbar_nav.classList.add('word-wrap'); // wrap long words
+    }
+
+    document.getElementById('selected-lang').textContent = all_languages[name];
+    document.getElementsByClassName(name)[0].classList.add('invisible');
+
+    el_navbar_nav.classList.remove('invisible');
+    el.classList.remove('invisible');
 }
