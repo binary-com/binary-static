@@ -10,8 +10,8 @@ function toggleMobileMenu() {
     const navbar_item  = document.getElementsByClassName('navbar-collapse')[0];
     toggleButton.addEventListener('click', function (e) {
         e.stopPropagation();
-        navbar.classList[navbar.classList.contains('expand') ? 'remove' : 'add']('expand');
-        navbar_item.classList[navbar_item.classList.contains('expand') ? 'remove' : 'add']('expand');
+        navbar.classList.toggle('expand');
+        navbar_item.classList.toggle('expand');
     });
 }
 
