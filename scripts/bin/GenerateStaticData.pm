@@ -359,6 +359,7 @@ sub _texts {
         #strings for paymentagent
         push @texts, localize('Amount');
         push @texts, localize('Deposit');
+        push @texts, localize('Withdrawal');
         push @texts, localize('Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.');
         #strings for iphistory
         push @texts, localize('Date and Time');
