@@ -109,10 +109,12 @@ const Header = (() => {
     };
 
     const metatraderMenuItemVisibility = (landing_company_response) => {
-        if (MetaTrader.isEligible(landing_company_response)) {
-            const metatrader = document.getElementById('user_menu_metatrader');
-            if (metatrader) metatrader.setVisibility(1);
-        }
+        BinarySocket.wait('get_account_status').then(() => {
+            if (MetaTrader.isEligible(landing_company_response)) {
+                const metatrader = document.getElementById('user_menu_metatrader');
+                if (metatrader) metatrader.setVisibility(1);
+            }
+        });
     };
 
     const switchLoginid = (loginid) => {
@@ -132,7 +134,7 @@ const Header = (() => {
     };
 
     const upgradeMessageVisibility = () => {
-        BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
+        BinarySocket.wait('authorize', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             const landing_company = State.getResponse('landing_company');
             const upgrade_msg     = document.getElementsByClassName('upgrademessage');
 
@@ -150,7 +152,9 @@ const Header = (() => {
             };
 
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
-            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
+            const status            = State.getResponse('get_account_status.status');
+            const is_ico_account    = /ico_only/.test(status);
+            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status, is_ico_account);
             const show_upgrade_msg  = upgrade_info.can_upgrade;
             const virtual_text      = document.getElementById('virtual-text');
 
@@ -202,8 +206,9 @@ const Header = (() => {
 
     const showHideNewAccount = (can_upgrade) => {
         const landing_company = State.getResponse('landing_company');
+        const status          = State.getResponse('get_account_status.status');
         // only allow opening of multi account to costarica clients with remaining currency
-        if (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length)) {
+        if (!/ico_only/.test(status) && (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length))) {
             changeAccountsText(1, 'Create Account');
         } else {
             changeAccountsText(0, 'Accounts List');
@@ -265,25 +270,29 @@ const Header = (() => {
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
 
             const messages = {
-                authenticate   : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',     'user/authenticate'),
-                currency       : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                   'user/set-currency'),
-                financial_limit: () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                            'user/security/self_exclusionws'),
-                residence      : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                  'user/settings/detailsws'),
-                risk           : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',  'user/settings/assessmentws'),
-                tax            : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',           'user/settings/detailsws'),
-                tnc            : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.', 'user/tnc_approvalws'),
-                unwelcome      : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                'contact'),
+                authenticate         : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',                                      'user/authenticate'),
+                currency             : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                                                    'user/set-currency'),
+                document_needs_action: () => buildMessage('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.', 'user/authenticate'),
+                document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
+                financial_limit      : () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                                             'user/security/self_exclusionws'),
+                residence            : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                                                   'user/settings/detailsws'),
+                risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',                                   'user/settings/assessmentws'),
+                tax                  : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                                            'user/settings/detailsws'),
+                tnc                  : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',                                  'user/tnc_approvalws'),
+                unwelcome            : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                                                 'contact'),
             };
 
             const validations = {
-                authenticate   : () => +get_account_status.prompt_client_to_authenticate,
-                currency       : () => !Client.get('currency'),
-                financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
-                residence      : () => !Client.get('residence'),
-                risk           : () => riskAssessment(),
-                tax            : () => Client.shouldCompleteTax(),
-                tnc            : () => Client.shouldAcceptTnc(),
-                unwelcome      : () => /unwelcome|(cashier|withdrawal)_locked/.test(status),
+                authenticate         : () => +get_account_status.prompt_client_to_authenticate,
+                currency             : () => !Client.get('currency'),
+                document_needs_action: () => /document_needs_action/.test(status),
+                document_review      : () => /document_under_review/.test(status),
+                financial_limit      : () => /ukrts_max_turnover_limit_not_set/.test(status),
+                residence            : () => !Client.get('residence'),
+                risk                 : () => riskAssessment(),
+                tax                  : () => Client.shouldCompleteTax(),
+                tnc                  : () => Client.shouldAcceptTnc(),
+                unwelcome            : () => /unwelcome|(cashier|withdrawal)_locked/.test(status),
             };
 
             // real account checks in order
@@ -293,6 +302,8 @@ const Header = (() => {
                 'risk',
                 'tax',
                 'currency',
+                'document_review',
+                'document_needs_action',
                 'authenticate',
                 'unwelcome',
             ];

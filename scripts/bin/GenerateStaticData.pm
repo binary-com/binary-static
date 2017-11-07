@@ -519,6 +519,7 @@ sub _texts {
         push @texts, localize('Connection error: Please check your internet connection.');
         push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
         push @texts, localize('[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.');
+        push @texts, localize('We are reviewing your documents. For more details [_1]contact us[_2].');
         # browser-update message
         push @texts, localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]');
 
@@ -529,7 +530,7 @@ sub _texts {
         push @texts, localize('Refund Bid');
         push @texts, localize('Claim Tokens');
         push @texts, localize('Ended');
-        push @texts, localize('The ICO auction is already closed.');
+        push @texts, localize('The ICO is currently unavailable.');
 
         # strings for accounts page
         push @texts, localize('Create');
@@ -554,6 +555,20 @@ sub _texts {
         push @texts, localize('Ether');
         push @texts, localize('Ether Classic');
         push @texts, localize('Litecoin');
+
+        # Authentication errors
+        push @texts, localize('Invalid document format: "[_1]"');
+        push @texts, localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB');
+        push @texts, localize('ID number is required for [_1].');
+        push @texts, localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number.');
+        push @texts, localize('Expiry date is required for [_1].');
+        push @texts, localize('Passport');
+        push @texts, localize('ID card');
+        push @texts, localize('Driving licence');
+        push @texts, localize('Front Side');
+        push @texts, localize('Reverse Side');
+        push @texts, localize('Front and reverse side photos of [_1] are required.');
+        push @texts, localize('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
