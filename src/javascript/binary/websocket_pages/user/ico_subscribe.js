@@ -122,14 +122,14 @@ const ICOSubscribe = (() => {
         const minutes = timer.find('.time .minutes');
         const seconds = timer.find('.time .seconds');
         const timerID = window.setInterval(() => {
-            const start_time = 1510704000; 
-            const current_time = window.time.unix(); 
-            const time_left = start_time - current_time; 
+            const start_time = 1510704000;
+            const current_time = window.time.unix();
+            const time_left = start_time - current_time;
             if(time_left >= 0) {
-                const s = (`0${  time_left % 60}`).slice(-2); 
-                const m = (`0${  Math.floor(time_left/ 60) % 60}`).slice(-2); 
-                const h = (`0${  Math.floor(time_left / 3600) % 24}`).slice(-2); 
-                const d = (`0${  Math.floor(time_left / (3600 * 24))}`).slice(-2); 
+                const s = (`0${  time_left % 60}`).slice(-2);
+                const m = (`0${  Math.floor(time_left/ 60) % 60}`).slice(-2);
+                const h = (`0${  Math.floor(time_left / 3600) % 24}`).slice(-2);
+                const d = (`0${  Math.floor(time_left / (3600 * 24))}`).slice(-2);
                 days.text(d);
                 hours.text(h);
                 minutes.text(m);
@@ -159,7 +159,7 @@ const ICOSubscribe = (() => {
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
             if (/au|ca|ch|nz|sg/.test(Client.get('residence'))
-                && !/professional_requested/.test(State.getResponse('get_account_status.status'))) {
+                && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
                 to_show = 'ico_professional_message';
             } else {
                 to_show = 'ico_subscribe';

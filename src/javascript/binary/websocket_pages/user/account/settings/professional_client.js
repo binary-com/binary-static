@@ -2,6 +2,7 @@ const BinarySocket     = require('../../../socket');
 const BinaryPjax       = require('../../../../base/binary_pjax');
 const State            = require('../../../../base/storage').State;
 const getPropertyValue = require('../../../../base/utility').getPropertyValue;
+const Client           = require('../../../../base/client');
 
 
 const professionalClient = (() => {
@@ -9,11 +10,11 @@ const professionalClient = (() => {
 
     const onLoad = () => {
         BinarySocket.wait('get_account_status').then((response) => {
-            if (/professional_requested/.test(getPropertyValue(response, ['get_account_status', 'status']))) {
+            if (/professional_requested|professional/.test(getPropertyValue(response, ['get_account_status', 'status']))) {
                 BinaryPjax.loadPreviousUrl();
                 return;
             }
-            init(true, true);
+            init(Client.isAccountOfType('financial'), true, Client.get('is_ico_only'));
         });
     };
 
@@ -25,8 +26,12 @@ const professionalClient = (() => {
     const populateProfessionalClient = (is_financial, is_ico_only) => {
         const financial_company = State.getResponse('landing_company.financial_company.shortcode');
         if ((!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
-            (financial_company === 'maltainvest' && !is_financial)) && !is_ico_only) return; // then it's not upgrading to financial
-
+            (financial_company === 'maltainvest' && !is_financial)) && !is_ico_only) { // then it's not upgrading to financial
+            if(is_in_page) {
+                BinaryPjax.loadPreviousUrl();
+            }
+            return;
+        }
         const $container        = $('#fs_professional');
         const $chk_professional = $container.find('#chk_professional');
         const $info             = $container.find('#professional_info');
