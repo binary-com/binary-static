@@ -116,10 +116,13 @@ const ICOInfo = (() => {
         $root,
         chart;
 
-    const init = (ico_info) => {
+    const init = (website_status) => {
         if (is_initialized) return;
 
-        const final_price = +ico_info.final_price;
+        const ico_info = website_status.ico_info;
+        const ico_status = website_status.ico_status;
+
+        const final_price = ico_status !== 'open' ? +ico_info.final_price : 0;
 
         const bucket_size = +ico_info.histogram_bucket_size;
 
@@ -185,8 +188,8 @@ const ICOInfo = (() => {
 
         getHighstock((Highstock) => {
             Highcharts = Highstock;
-            BinarySocket.wait('website_status').then((response) => {
-                init(response.website_status.ico_info);
+            BinarySocket.send({website_status: 1}, {forced: true}).then((response) => {
+                init(response.website_status);
             });
         });
     };
