@@ -168,7 +168,14 @@ const ICOSubscribe = (() => {
         } else if (Client.hasCostaricaAccount()) {
             to_show = 'ico_account_message';
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
-            to_show = 'ico_new_account_message';
+            const account_type = Client.getAccountType();
+            if (/financial/.test(account_type)) {
+                to_show = 'mf';
+            } else if (/maltainvest/.test(account_type)) {
+                to_show = 'mlt';
+            } else if (/iom/.test(State.getResponse('landing_company.financial_company.shortcode'))) {
+                to_show = 'mx';
+            }
             const button_new_account = document.getElementById('ico_new_account');
             if (button_new_account) {
                 button_new_account.removeEventListener('click', newAccountOnClick);
@@ -178,6 +185,7 @@ const ICOSubscribe = (() => {
         const el_to_show = document.getElementById(to_show);
         if (el_to_show) {
             el_to_show.setVisibility(1);
+            document.getElementById('ico_new_account_message').setVisibility(1);
         }
         return to_show;
     };
