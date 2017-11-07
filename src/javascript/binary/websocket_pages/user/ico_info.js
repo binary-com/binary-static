@@ -132,7 +132,7 @@ const ICOInfo = (() => {
         const allValues = [];
         if (keys.length > 0) {
             const max = Math.min(keys[keys.length - 1] + 1, MAX_BID_PRICE);
-            const min = Math.max(keys[0] - 1, 1);
+            const min = final_price ? Math.max(Math.min(keys[0], final_price) - 1, 1) : Math.max(keys[0] - 1, 1);
             for(let key = max - bucket_size; key >= min; key -= bucket_size ) {
                 key = +key.toFixed(2);
                 const value = keys.indexOf(key) !== -1 ? ico_info.histogram[`${key}`] : 0;
@@ -145,7 +145,7 @@ const ICOInfo = (() => {
                 });
             }
 
-            const aboveMaxPrice = keys.filter(key => key > MAX_BID_PRICE)
+            const aboveMaxPrice = keys.filter(key => key >= MAX_BID_PRICE)
                     .map(key => ico_info.histogram[`${key}`])
                     .reduce((a,b) => a + b, 0);
             if (aboveMaxPrice !== 0) {
@@ -174,6 +174,7 @@ const ICOInfo = (() => {
             chart = Highcharts.chart($chart[0],  config);
             is_initialized = true;
         } else {
+            $('#no_bids_to_show').setVisibility(1);
             $root.hide();
         }
     };
