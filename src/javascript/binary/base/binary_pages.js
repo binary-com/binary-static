@@ -40,6 +40,7 @@ const Limits               = require('../websocket_pages/user/account/settings/l
 const Settings             = require('../websocket_pages/user/account/settings');
 const SelfExclusion        = require('../websocket_pages/user/account/settings/self_exclusion');
 const PersonalDetails      = require('../websocket_pages/user/account/settings/personal_details');
+const professionalClient   = require('../websocket_pages/user/account/settings/professional_client');
 const Statement            = require('../websocket_pages/user/account/statement/statement.init');
 const TopUpVirtual         = require('../websocket_pages/user/account/top_up_virtual');
 const Accounts             = require('../websocket_pages/user/accounts');
@@ -93,7 +94,8 @@ const pages_config = {
     platforms                : { module: Platforms },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
-    realws                   : { module: RealAccOpening,             is_authenticated: true, only_virtual: true },
+    professional             : { module: professionalClient,         is_authenticated: true, only_real: true },
+    realws                   : { module: RealAccOpening,             is_authenticated: true },
     redirect                 : { module: Redirect },
     regulation               : { module: Regulation },
     reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
@@ -113,7 +115,7 @@ const pages_config = {
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
-    'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, only_real: true, needs_currency: true },
+    'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },

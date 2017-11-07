@@ -323,7 +323,7 @@
                             <div class="gr-row">
                                 <div class="gr-6 gr-12-m">
                                     <h4>[% l("Sharp prices") %]</h4>
-                                    <p>[% l("Our cutting-edge pricing technology gives you the same rates of return as the interbank market.") %]</p>
+                                    <p>[% l("Our cutting-edge pricing technology benchmarks our prices against interbank market rates wherever possible.") %]</p>
                                 </div>
                                 <div class="gr-6 gr-12-m">
                                     <h4>[% l("Patented technology") %]</h4>
@@ -471,7 +471,7 @@
                         <h4 class="secondary-color">[% l("Low minimum collateral") %]</h4>
                         <p>[% l("Deposit as little as USD 5 and start trading from USD 5 per contract.") %]</p>
                         <h4 class="secondary-color">[% l("Multiple trading opportunities") %]</h4>
-                        <p>[% l("Trade short-term or long-term contracts, from ticks to days.") %]</p>
+                        <p>[% l("Trade short-term or long-term contracts, from 10 seconds to 365 days.") %]</p>
                     </div>
                 </div>
             </div>
@@ -706,7 +706,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I learn more about ICOs and cryptocurrencies?") %]</h4>
-                            <p>[% l("To learn more about Bitcoin, we recommend that you open a Bitcoin wallet with [_1][_2]\’s simple bitcoin wallet[_3], and purchase bitcoins using a local exchange in your country.", '<a href="https://bitcoin-wallet.binary.com/" target="_blank">', broker_name, '</a>') %]</p>
+                            <p>[% l("Head over to our <a href=[_1] target='_blank'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business.", 'https://www.youtube.com/user/BinaryTradingVideos') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">

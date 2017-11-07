@@ -1,12 +1,12 @@
 window.onload = function() {
+    const clients_country = getClientCountry();
+
     toggleMobileMenu();
     hashRouter();
     collapseNavbar();
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
-
-    const clients_country = getClientCountry();
 
     function switchView(path) {
         document.getElementById('faq').classList[path === 'faq' ? 'remove' : 'add']('invisible');
@@ -266,7 +266,8 @@ function arc(el, value, scale) {
 
     const angle = value * 360 / scale;
     el.arcs.forEach(function(arc, idx) {
-        arc.style = 'transform: rotate(' + (Math.min((idx + 1) * 90, angle) - 135) + 'deg)';
+        const arc_angle = Math.min((idx + 1) * 90, angle) - 135;
+        arc.setAttribute('style', ['-webkit-', '-moz-', '-o-', '-ms-', '', ''].join('transform: rotate(' + arc_angle + 'deg); '));
     });
     el.arc_cover.classList[angle > 90 ? 'add' : 'remove']('invisible');
 }
