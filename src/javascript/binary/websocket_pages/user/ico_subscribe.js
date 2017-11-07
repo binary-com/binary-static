@@ -157,22 +157,24 @@ const ICOSubscribe = (() => {
 
     const showContent = () => {
         let to_show = 'feature_not_allowed';
-        if (Client.get('landing_company_shortcode') === 'costarica') {
-            if (/au|ca|ch|nz|sg/.test(Client.get('residence'))
-                && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
-                to_show = 'ico_professional_message';
-            } else {
-                to_show = 'ico_subscribe';
-            }
-            to_show = 'ico_subscribe';
+        if (Client.get('landing_company_shortcode') === 'costarica'
+            && /au|ca|ch|nz|sg/.test(Client.get('residence'))
+            && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
+            to_show = 'ico_professional_message';
         } else if (Client.hasCostaricaAccount()) {
             to_show = 'ico_account_message';
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
             to_show = 'ico_new_account_message';
-            const button_new_account = document.getElementById('ico_new_account');
-            if (button_new_account) {
-                button_new_account.removeEventListener('click', newAccountOnClick);
-                button_new_account.addEventListener('click', newAccountOnClick);
+            if(Client.isAccountOfType('virtual') &&
+                (Client.hasAccountType('gaming') || Client.hasAccountType('real')
+                    || Client.hasAccountType('financial'))) {
+                to_show = 'ico_virtual_message';
+            } else {
+                const button_new_account = document.getElementById('ico_new_account');
+                if (button_new_account) {
+                    button_new_account.removeEventListener('click', newAccountOnClick);
+                    button_new_account.addEventListener('click', newAccountOnClick);
+                }
             }
         }
         const el_to_show = document.getElementById(to_show);
