@@ -14,7 +14,7 @@ const professionalClient = (() => {
                 BinaryPjax.loadPreviousUrl();
                 return;
             }
-            init(true, true, Client.get('is_ico_only'));
+            init(Client.isAccountOfType('financial'), true, Client.get('is_ico_only'));
         });
     };
 
@@ -26,8 +26,12 @@ const professionalClient = (() => {
     const populateProfessionalClient = (is_financial, is_ico_only) => {
         const financial_company = State.getResponse('landing_company.financial_company.shortcode');
         if ((!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
-            (financial_company === 'maltainvest' && !is_financial)) && !is_ico_only) return; // then it's not upgrading to financial
-
+            (financial_company === 'maltainvest' && !is_financial)) && !is_ico_only) { // then it's not upgrading to financial
+            if(is_in_page) {
+                BinaryPjax.loadPreviousUrl();
+            }
+            return;
+        }
         const $container        = $('#fs_professional');
         const $chk_professional = $container.find('#chk_professional');
         const $info             = $container.find('#professional_info');
