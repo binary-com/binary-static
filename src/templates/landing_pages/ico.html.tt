@@ -112,7 +112,7 @@
                                     <div id="sign-up-section">
                                         <div class="signup-desc">
                                             <p>[% l("Investors need to open a [_1] real money account to take part in the ICO.", broker_name) %]</p>
-                                            <p>[% l("Sign up now for a free.") %]</p>
+                                            <p>[% l("Sign up now for free.") %]</p>
                                         </div>
                                         <div class="signup-container gr-9 gr-12-p gr-12-m gr-centered">
                                             [% WRAPPER global/form_verify_email.html.tt class='secondary-bg-color' dark_button=1 text=l('Create Free Account') %]
