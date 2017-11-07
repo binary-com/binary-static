@@ -165,11 +165,19 @@ const ICOSubscribe = (() => {
             to_show = 'ico_account_message';
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
             to_show = 'ico_new_account_message';
-            if(Client.isAccountOfType('virtual') &&
-                (Client.hasAccountType('gaming') || Client.hasAccountType('real')
-                    || Client.hasAccountType('financial'))) {
-                to_show = 'ico_virtual_message';
-            } else {
+            if(Client.isAccountOfType('virtual')) {
+                if(Client.hasAccountType('gaming') && Client.hasAccountType('financial')) {
+                    to_show = 'ico_virtual_message_mlt_mf';
+                } else if(Client.hasAccountType('gaming')) {
+                    to_show = 'ico_virtual_message_mlt';
+                } else if(Client.hasAccountType('financial')) {
+                    to_show = 'ico_virtual_message_mf';
+                } else if(Client.hasAccountType('real')
+                    && State.getResponse('landing_company.financial_company.shortcode') === 'iom') {
+                    to_show = 'ico_virtual_message_mx';
+                }
+            }
+            if(to_show === 'ico_new_account_message') {
                 const button_new_account = document.getElementById('ico_new_account');
                 if (button_new_account) {
                     button_new_account.removeEventListener('click', newAccountOnClick);

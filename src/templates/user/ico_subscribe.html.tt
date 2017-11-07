@@ -155,8 +155,19 @@
     <p>[% l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") %]</p>
 </div>
 
-<div class="invisible" id="ico_virtual_message">
-    <p>[% l("Unable to create CR account while virtual account is selected. Please select your MLT/MF/MX account and try again.") %]</p>
+<div>
+    <div class="invisible" id="ico_virtual_message_mlt_mf">
+        <p>[% l("Unable to create CR account while virtual account is selected. Please select your MLT/MF account and try again.") %]</p>
+    </div>
+    <div class="invisible" id="ico_virtual_message_mlt">
+        <p>[% l("Unable to create CR account while virtual account is selected. Please select your MLT account and try again.") %]</p>
+    </div>
+    <div class="invisible" id="ico_virtual_message_mf">
+        <p>[% l("Unable to create CR account while virtual account is selected. Please select your MF account and try again.") %]</p>
+    </div>
+    <div class="invisible" id="ico_virtual_message_mx">
+        <p>[% l("Unable to create CR account while virtual account is selected. Please select your MX account and try again.") %]</p>
+    </div>
 </div>
 
 <div class="invisible" id="ico_account_message">
