@@ -26,7 +26,9 @@ const Settings = (() => {
             const is_ico_only       = Client.get('is_ico_only');
             // Professional Client menu should only be shown to MF and CR accounts.
             if (!is_jp && !/professional_requested/.test(status) &&
-                (Client.isAccountOfType('financial') || /costarica/.test(financial_company) || is_ico_only)) {
+                (Client.isAccountOfType('financial')
+                    || (/costarica/.test(financial_company) && Client.isAccountOfType('real'))
+                    || is_ico_only)) {
                 $('#professional_client').setVisibility(1);
             }
 
