@@ -783,9 +783,9 @@ input[type='text']:focus, input[type='submit']:focus {
         margin-top: 2em;
     }
     .signup-box {
-        margin-top: auto;
-        margin-bottom: auto;
+        margin: auto;
         border-radius: 6px;
+        max-width: 600px;
 
         #signup {
             padding: 5px;
