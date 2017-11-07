@@ -146,7 +146,6 @@ function signUpInit() {
     ws.onmessage = function(msg) {
         var response = JSON.parse(msg.data);
         setValidationStyle(el_email, response.error);
-        console.log(response);
         if (!response.error) {
             el_signup.classList.add('invisible');
             el_success.classList.remove('invisible');
