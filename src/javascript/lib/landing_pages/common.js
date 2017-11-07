@@ -50,8 +50,8 @@ Math.easeInOutQuad = function (current_time, start_value, change_in_value, durat
 };
 
 function getParamValue(url, key) {
-    let regex   = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
-    let results = regex.exec(url);
+    const regex   = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
+    const results = regex.exec(url);
     if (!results || !results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
