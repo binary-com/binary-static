@@ -396,11 +396,11 @@ button .barspinner.white {
                 font-weight: 400;
                 color: $primaryBrandColor;
             }
-            .close-btn {
-                content: url('../images/ico/banner/close_icon.svg');
-                width: 15px;
+            .close-btn:after {
+                content: '';
+                background: no-repeat 100% / cover url('../images/ico/banner/close_icon.svg');
                 cursor: pointer;
-                padding: 5px;
+                padding: 10px;
                 position: absolute;
                 top: 0;
                 right: 0;
