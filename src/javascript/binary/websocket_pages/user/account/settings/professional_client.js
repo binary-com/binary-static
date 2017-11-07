@@ -17,15 +17,15 @@ const professionalClient = (() => {
         });
     };
 
-    const init = (is_financial, is_page) => {
+    const init = (is_financial, is_page, is_ico_only) => {
         is_in_page = !!is_page;
-        BinarySocket.wait('landing_company').then(() => { populateProfessionalClient(is_financial); });
+        BinarySocket.wait('landing_company').then(() => { populateProfessionalClient(is_financial, is_ico_only); });
     };
 
-    const populateProfessionalClient = (is_financial) => {
+    const populateProfessionalClient = (is_financial, is_ico_only) => {
         const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-        if (!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
-            (financial_company === 'maltainvest' && !is_financial)) return; // then it's not upgrading to financial
+        if ((!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
+            (financial_company === 'maltainvest' && !is_financial)) && !is_ico_only) return; // then it's not upgrading to financial
 
         const $container        = $('#fs_professional');
         const $chk_professional = $container.find('#chk_professional');

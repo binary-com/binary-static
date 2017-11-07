@@ -66,7 +66,7 @@
         <div class="gr-5 gr-12-m">
             <span class="invisible normal_currency client_logged_out">[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</span>
             <span class="invisible crypto_currency">[% l('Manage the funds in your cryptocurrency account.') %]</span>
-            <a class="ja-hide invisible normal_currency client_logged_out ico-only-hide" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
+            <a class="ja-hide invisible normal_currency client_logged_out" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
                 <p>[% l('View available payment methods') %]</p>
             </a>
         </div>
@@ -77,7 +77,7 @@
 
 <div class="gr-padding-10"></div>
 
-<div class="gr-padding-10 table-body ja-hide payment-agent invisible" id="payment-agent-section">
+<div class="gr-padding-10 table-body ja-hide payment-agent invisible ico-only-hide" id="payment-agent-section">
     <h3 class="gr-padding-10">[% l('Payment Agent') %]</h3>
     <div class="gr-row">
         <div class="gr-2 gr-4-m">
