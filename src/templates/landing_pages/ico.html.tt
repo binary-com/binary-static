@@ -588,8 +588,11 @@
                         <a href="https://www.reddit.com/r/binarydotcom/" target="_blank" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
                         </a>
-                        <a href="https://www.facebook.com/mybinarycoin" target="_blank">
+                        <a href="https://www.facebook.com/mybinarycoin" target="_blank" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/facebook.svg") %]" />
+                        </a>
+                        <a href="https://bitcointalk.org/index.php?topic=2368998.0" target="_blank">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/bitcoin_talk.svg") %]" />
                         </a>
                     </div>
                 </div>
