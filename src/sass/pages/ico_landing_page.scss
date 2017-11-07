@@ -942,15 +942,13 @@ input[type='text']:focus, input[type='submit']:focus {
             margin: 5px 0;
             height: 3rem;
             width: 100%;
-        }
-        button:active, button:hover {
-            background-color: $COLOR_GREEN;
-            text-decoration: none;
-        }
-        #btn_verify_email {
             font-size: $FONT_SIZE_L;
             padding: 0;
 
+            &:active, &:hover {
+                background-color: $COLOR_GREEN;
+                text-decoration: none;
+            }
             @media (max-width: 480px) {
                 font-size: $FONT_SIZE_N;
             }
