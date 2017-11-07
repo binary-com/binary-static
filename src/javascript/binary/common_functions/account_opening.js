@@ -36,11 +36,11 @@ const AccountOpening = (() => {
         return false;
     };
 
-    const populateForm = (form_id, getValidations, is_financial) => {
+    const populateForm = (form_id, getValidations, is_financial, is_ico_only) => {
         getResidence();
         BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         generateBirthDate();
-        professionalClient.init(is_financial);
+        professionalClient.init(is_financial, false, is_ico_only);
     };
 
     const getResidence = () => {
