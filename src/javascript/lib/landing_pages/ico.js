@@ -112,6 +112,8 @@ window.onload = function() {
             document.getElementsByClassName('slider-container')[0].classList.remove('invisible');
         }
     });
+
+    setupCrowdin();
 };
 
 function clearHash() {
@@ -309,4 +311,25 @@ function setLanguage(el, name) {
 
     el_navbar_nav.classList.remove('invisible');
     el.classList.remove('invisible');
+}
+
+function setupCrowdin() {
+    const isInContextEnvironment = () => (
+        /^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href) &&
+        /ach/i.test(getLanguage())
+    );
+
+    if (isInContextEnvironment()) {
+        document.getElementById('language').style.display = 'none';
+        /* eslint-disable no-underscore-dangle */
+        window._jipt = [];
+        window._jipt.push(['project', 'binary-static']);
+        /* eslint-enable no-underscore-dangle */
+        if (document.body) {
+            const crowdinScript = document.createElement('script');
+            crowdinScript.setAttribute('src', `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`);
+            crowdinScript.setAttribute('type', 'text/javascript');
+            document.body.appendChild(crowdinScript);
+        }
+    }
 }
