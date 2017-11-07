@@ -160,11 +160,11 @@
 </div>
 
 <div class="invisible" id="ico_new_account_message">
-    <p id="mf" class="invisible">[% l("To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held by Binary Investments (Europe) Ltd, regulated by the Malta Financial Services Authority.") %]</p>
+    <p id="ico_new_account_financial" class="invisible">[% l("To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held by Binary Investments (Europe) Ltd, regulated by the Malta Financial Services Authority.") %]</p>
 
-    <p id="mx" class="invisible">[% l("To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held by Binary (IOM) Ltd, regulated by the Isle of Man Gambling Supervision Commission.") %]</p>
+    <p id="ico_new_account_mx" class="invisible">[% l("To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held by Binary (IOM) Ltd, regulated by the Isle of Man Gambling Supervision Commission.") %]</p>
 
-    <p id="mlt" class="invisible">[% l("To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held by Binary (Europe) Ltd, regulated by the Malta Gaming Authority.") %]</p>
+    <p id="ico_new_account_gaming" class="invisible">[% l("To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held by Binary (Europe) Ltd, regulated by the Malta Gaming Authority.") %]</p>
 
     <div class="center-text">
         <a href="javascript:;" class="button" id="ico_new_account"><span>[% l("Sign up") %]</span></a>
