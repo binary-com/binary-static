@@ -6,6 +6,7 @@ const State            = require('../../base/storage').State;
 const showLoadingImage = require('../../base/utility').showLoadingImage;
 const getPropertyValue = require('../../base/utility').getPropertyValue;
 const formatMoney      = require('../../common_functions/currency').formatMoney;
+const Validation       = require('../../common_functions/form_validation');
 
 const ICOPortfolio = (() => {
     let values,
@@ -94,17 +95,45 @@ const ICOPortfolio = (() => {
             $('#portfolio-table').setVisibility(0);
         } else {
             $('a[action="cancel"]:not(.button-disabled)').on('click', function () {
-                BinarySocket.send({
-                    sell : $(this).attr('contract_id'),
-                    price: 0,
-                });
+                const contract_id = $(this).attr('contract_id');
+                cancelBid(contract_id);
             });
+
             $('#portfolio-table').setVisibility(1);
         }
         // ready to show portfolio table
         $('#portfolio-loading').hide();
         $('#portfolio-content').setVisibility(1);
         is_first_response = false;
+    };
+
+    const cancelBid = (contract_id) => {
+        const lightbox = $('#cancel_bid_confirmation');
+        document.body.appendChild(lightbox[0]);
+        lightbox.setVisibility(1);
+        lightbox.find('.error-msg').addClass('invisible');
+        lightbox.find('#chk_confirm').prop('checked', false);
+
+        const confirm_form_id = '#frm_confirm';
+        if (!lightbox.find(confirm_form_id).hasClass('validation_initialized')) {
+            Validation.init(confirm_form_id, [
+                { selector: '#chk_confirm', validations: [['req', { hide_asterisk: true }]] },
+            ]);
+            lightbox.find(confirm_form_id).addClass('validation_initialized');
+        }
+        lightbox.find('#cancel').off('click').on('click', () => lightbox.setVisibility(0));
+        lightbox.find(confirm_form_id)
+            .off('submit')
+            .on('submit', (e) => {
+                e.preventDefault();
+                if (Validation.validate(confirm_form_id)) {
+                    lightbox.setVisibility(0);
+                    BinarySocket.send({
+                        sell : contract_id,
+                        price: 0,
+                    });
+                }
+            });
     };
 
     const transactionResponseHandler = (response) => {
