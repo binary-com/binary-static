@@ -94,11 +94,17 @@ const ICOSubscribe = (() => {
                     { request_field: 'currency',      parent_node: 'parameters', value: currency },
                     { request_field: 'duration_unit', parent_node: 'parameters', value: 'c' },
                 ]);
-                FormManager.handleSubmit({
-                    form_selector       : form_id,
-                    enable_button       : 1,
-                    fnc_response_handler: handleResponse,
-                });
+                if (+State.getResponse('website_status.ico_info.final_price') === 0) {
+                    $(form_id)
+                        .on('submit', (evt) => { evt.preventDefault(); })
+                        .find('button').addClass('inactive');
+                } else {
+                    FormManager.handleSubmit({
+                        form_selector       : form_id,
+                        enable_button       : 1,
+                        fnc_response_handler: handleResponse,
+                    });
+                }
                 $(`${form_id} input`).on('keypress', onlyNumericOnKeypress)
                     .on('input change', calculateTotal);
             }
