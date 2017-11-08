@@ -170,25 +170,45 @@ const ICOSubscribe = (() => {
         $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
-            if (/au|ca|ch|nz|sg/.test(Client.get('residence'))
+            if(/au|ca|ch|nz|sg/.test(Client.get('residence'))
                 && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
                 to_show = 'ico_professional_message';
             } else {
                 to_show = 'ico_subscribe';
             }
-            to_show = 'ico_subscribe';
         } else if (Client.hasCostaricaAccount()) {
             to_show = 'ico_account_message';
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
-            to_show = 'ico_new_account_message';
-            const button_new_account = document.getElementById('ico_new_account');
-            if(!State.getResponse('get_settings.account_opening_reason')
-                && !Client.isAccountOfType('virtual')) {
-                askForAccountOpeningReason();
-            }
-            if (button_new_account) {
-                button_new_account.removeEventListener('click', newAccountOnClick);
-                button_new_account.addEventListener('click', newAccountOnClick);
+            if(Client.isAccountOfType('virtual') && (Client.hasAccountType('gaming')
+                || Client.hasAccountType('financial') || Client.hasAccountType('real'))){
+                to_show = 'ico_virtual_message';
+            } else {
+                to_show = 'ico_new_account_message';
+                let message_show = 'message_common';
+                const landing_company = (Client.currentLandingCompany() || {}).shortcode;
+                // Show message to user based on landing_company
+                if(/^malta$/.test(landing_company)) {
+                    message_show = 'message_gaming';
+                } else if(/^maltainvest$/.test(landing_company)) {
+                    message_show = 'message_financial';
+                } else if (/^iom$/.test(landing_company)) {
+                    message_show = 'message_iom';
+                }
+
+                // Check if user has account_opening_reason
+                if(!State.getResponse('get_settings.account_opening_reason')
+                    && !Client.isAccountOfType('virtual')) {
+                    askForAccountOpeningReason();
+                }
+
+                // Show message to client.
+                document.getElementById(message_show).setVisibility(1);
+
+                const button_new_account = document.getElementById('ico_new_account');
+                if (button_new_account) {
+                    button_new_account.removeEventListener('click', newAccountOnClick);
+                    button_new_account.addEventListener('click', newAccountOnClick);
+                }
             }
         }
         const el_to_show = document.getElementById(to_show);
