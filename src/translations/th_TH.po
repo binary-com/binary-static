@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-07 02:38-0500\n"
+"PO-Revision-Date: 2017-11-08 02:55-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -107,6 +107,9 @@ msgstr "%1 จะเริ่ม ICO ในวันที่ 15 พฤศจิ
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO ลงทุนในแพลตฟอร์มที่ดีที่สุดของโลกสำหรับการซื้อขายไบนารีออปชั่น"
+
+msgid "%1 ICO: Histogram of Active Bids"
+msgstr ""
 
 msgid "%1 Initial Coin Offering (ICO)"
 msgstr "%1 การเสนอขายเหรียญในระยะเริ่มต้น หรือ ICO (Initial Coin Offering)"
@@ -240,8 +243,8 @@ msgstr "%1 ไม่ได้เข้าร่วมเป็นพันธม
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1ไม่มีอยู่ในคอสตาริกา และไม่ได้รับการกำกับดูแล หรือตรวจตราโดยเจ้าหน้าที่ที่มีอำนาจทางกฎหมายในระบบการเงินของคอสตาริกา"
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
-msgstr "%1 เสนอโทเค่นสูงถึง <strong>10,000,000</strong> ในการประมูลแบบเปิด คุณสามารถวางราคาที่เสนอโดยใช้แบบฟอร์มด้านล่าง ราคาขั้นต่ำคือ <strong>1 ดอลลาร์สหรัฐ</strong> หรือเทียบเท่าในเงินสกุลอื่น"
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1.35</strong> or its equivalent in another currency."
+msgstr ""
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 เป็นเจ้าของและดำเนินการโดยกลุ่มบริษัท Binary Group Ltd สามารถหาข้อมูลเพิ่มเติมได้โดย <a href='%2'>เยี่ยมชมหน้าประวัติของเรา</a>"
@@ -705,7 +708,7 @@ msgid "A. Spot FX"
 msgstr "A. Spot FX"
 
 msgid "ACCEPT"
-msgstr ""
+msgstr "ยอมรับ"
 
 msgid "AM"
 msgstr "น."
@@ -1528,6 +1531,9 @@ msgstr "ประมูล"
 
 msgid "Bid Price Per Token"
 msgstr "ราคาประมูลต่อโทเค่น"
+
+msgid "Bid Price Per Token ($USD)"
+msgstr ""
 
 msgid "Bid on the ICO:"
 msgstr "คำเสนอซื้อ ICO:"
@@ -2494,7 +2500,7 @@ msgid "D. Client Instructions"
 msgstr "D. วิธีการใช้งาน"
 
 msgid "DECLINE"
-msgstr ""
+msgstr "ปฏิเสธ"
 
 msgid "Daily Earnings:"
 msgstr "รายได้รายวัน:"
@@ -3316,6 +3322,9 @@ msgstr "การควบคุมตัวกรอง"
 msgid "Filtering Stray Ticks"
 msgstr "การกรอง Stray Ticks"
 
+msgid "Final Price"
+msgstr ""
+
 msgid "Final price"
 msgstr "ราคาสุดท้าย"
 
@@ -3766,6 +3775,9 @@ msgstr "ไฮไลท์"
 
 msgid "Hint: it would take approximately %1%2 to crack this password."
 msgstr "คำแนะนำ: จะใช้เวลาประมาณ %1%2 เพื่อเจาะรหัสผ่านนี้"
+
+msgid "Histogram of Active Bids"
+msgstr ""
 
 msgid "Hone your security testing skills."
 msgstr "ขัดเกลาทักษะในการทดสอบความปลอดภัยของท่าน"
@@ -4551,6 +4563,9 @@ msgstr "รหัสผ่านของผู้ลงทุน"
 
 msgid "Investor password (read-only access)"
 msgstr "รหัสผ่านผู้ลงทุน (อ่านอย่างเดียว)"
+
+msgid "Investors need to open a %1 real money account to take part in the ICO."
+msgstr ""
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "เกี่ยวข้องในการประเมินการปฏิบัติตามกฎเกณฑ์และการบริหารความเสี่ยง ทำงานกับหัวหน้าแผนกเพื่อปรับปรุงกระบวนการทางธุรกิจ"
@@ -5941,6 +5956,9 @@ msgstr "จะไม่มีคู่สัญญาฝ่ายใดที่
 msgid "No Touch trades"
 msgstr "การซื้อขายแบบไม่แตะเส้น"
 
+msgid "No bids to show"
+msgstr ""
+
 msgid "No commission"
 msgstr "ไม่มีค่าตอบแทน"
 
@@ -6320,7 +6338,7 @@ msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million histo
 msgstr "เราเป็นที่นิยมชมชอบของลูกค้า ในกลางปี 2557 (ค.ศ. 2014) %1 มีธุรกรรมมากกว่า 100 ล้านระเบียน และมีธุรกรรมใหม่ที่เกิดขึ้นรายวันกว่า 130,000 ธุรกรรม"
 
 msgid "Our cutting-edge pricing technology benchmarks our prices against interbank market rates wherever possible."
-msgstr ""
+msgstr "เทคโนโลยีในการกำหนดราคาล้ำสมัยของเราเปรียบเทียบราคาของเรากับอัตราตามตลาดระหว่างธนาคารเมื่อเป็นไปได้"
 
 msgid "Our data feed is designed to be one of the best and most robust available for a trading environment."
 msgstr "ฟีดข้อมูลของเราถูกออกแบบเพื่อการทำงานที่ดีที่สุด เร็วที่สุด มีศักยภาพสูงสูงในการซื้อขายของท่าน"
@@ -6706,6 +6724,9 @@ msgstr "โปรดระบุเวลาที่ถูกต้อง"
 msgid "Please select a value"
 msgstr "โปรดระบุค่า"
 
+msgid "Please select a value for account_opening_reason."
+msgstr ""
+
 msgid "Please select at least one scope"
 msgstr "โปรดระบุค่าอย่างน้อยหนึ่งขอบเขต"
 
@@ -6850,6 +6871,9 @@ msgstr "ราคา"
 msgid "Price - the price at which the transaction in relation to your order is executed at."
 msgstr "Price - ราคาที่เกิดขึ้นในการทำธุรกรรมและสัมพันธ์กับคำสั่งของท่านที่ได้ดำเนินการ"
 
+msgid "Price Band"
+msgstr ""
+
 msgid "Price/Prices &mdash; Bid and Offer Price/Prices."
 msgstr "Price/Prices &mdash; ราคาเสนอซื้อ และ ราคาเสนอขาย / ราคา"
 
@@ -6902,13 +6926,13 @@ msgid "Product Disclosure Statement"
 msgstr "ข้อตกลงการสงวนสิทธิ์ด้านผลิตภัณฑ์"
 
 msgid "Professional Client"
-msgstr ""
+msgstr "ลูกค้าที่มีความเชี่ยวชาญ"
 
 msgid "Professional Clients"
 msgstr "อาชีพของลูกค้า"
 
 msgid "Professional Trader"
-msgstr ""
+msgstr "นักลงทุนอาชีพ"
 
 msgid "Professionals"
 msgstr "ผู้เชี่ยวชาญ"
@@ -6938,7 +6962,7 @@ msgid "Prohibited Trades"
 msgstr "การซื้อขายต้องห้าม"
 
 msgid "Proof of your employment position."
-msgstr ""
+msgstr "หลักฐานของตำแหน่งการจ้างงาน"
 
 msgid "Proofread and correct the content appearing on the company's website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "พิสูจน์อักษรและแก้ไขความสละสลวยของเนื้อหาที่ปรากฏในเว็บไซต์ บล็อก สื่อสังคมต่างๆ และสื่อการตลาดต่างๆ ของบริษัทฯ จากภาษาอังกฤษไปเป็นภาษาที่ใช้ตามภูมิภาค"
@@ -7620,6 +7644,12 @@ msgstr "ลงทะเบียน / สมัครใช้งาน"
 msgid "Sign out"
 msgstr "ออกจากระบบ"
 
+msgid "Sign up"
+msgstr "ลงทะเบียน"
+
+msgid "Sign up now for free."
+msgstr ""
+
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "มีประสบการณ์และผลงานในการสร้างสื่อสังคมออนไลน์ ด้านการตลาด และ/หรือ การโฆษณา"
 
@@ -7917,9 +7947,6 @@ msgstr "ส่งประวัติและจดหมายแนะนำ
 
 msgid "Subscribe to our mailing list"
 msgstr "สมัครสมาชิกรายการจดหมายของเรา"
-
-msgid "Subscribe to our mailing list for exclusive updates on the ICO."
-msgstr "สมัครเป็นสมาชิกของเราเพื่อรับข้อมูลสุดพิเศษล่าสุดของ ICO"
 
 msgid "Successful"
 msgstr "เรียบร้อยแล้ว"
@@ -8880,7 +8907,7 @@ msgstr ""
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "ฟังก์ชันนี้ไม่สัมพันธ์กับบัญชีเงินเสมือน"
 
-msgid "This feature is only available to CR clients. Please upgrade to proceed."
+msgid "This feature is only available to CR clients. Please sign up to proceed."
 msgstr ""
 
 msgid "This feature is only relevant to payment agent accounts."
@@ -9022,6 +9049,15 @@ msgstr ""
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "ในการเปิดบัญชีซื้อขาย ลูกค้าของเราต้องยืนยันว่า พวกเขามีความเข้าใจในกลไกและความเสี่ยงของธุรกรรมอย่างสมบูรณ์ โปรดตอบรับความเข้าใจและแสดงความยินยอมในแต่ละข้อต่อไปนี้ โดยการทำเครื่องหมายหน้าข้อ"
 
+msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (Europe) Ltd, regulated by the Malta Gaming Authority."
+msgstr ""
+
+msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (IOM) Ltd, regulated by the Isle of Man Gambling Supervision Commission."
+msgstr ""
+
+msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary Investments (Europe) Ltd, regulated by the Malta Financial Services Authority."
+msgstr ""
+
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "เพื่อดำเนินการ โปรด <a href=\"%1\"> อัพเกรดเป็น %2 บัญชีจริง</a>"
 
@@ -9075,6 +9111,12 @@ msgstr "ผลรวม"
 
 msgid "Total Bid Price"
 msgstr "ราคาประมูลทั้งหมด"
+
+msgid "Total Bids"
+msgstr ""
+
+msgid "Total Bids ($USD)"
+msgstr ""
 
 msgid "Total Cost"
 msgstr "ราคารวม"
@@ -9161,7 +9203,7 @@ msgid "Trade only with money you can afford to lose. Do not trade with borrowed 
 msgstr "ซื้อขายด้วยเงินที่ท่านจะยอมขาดทุนได้เท่านั้น อย่านำเงินยืมมาเทรด"
 
 msgid "Trade short-term or long-term contracts, from 10 seconds to 365 days."
-msgstr ""
+msgstr "ซื้อขายในรูปแบบสัญญาระยะสั้นหรือระยะยาว ตั้งแต่ 10 วินาทีถึง 365 วัน"
 
 msgid "Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!"
 msgstr ""
@@ -9379,6 +9421,9 @@ msgstr "ประสบการณ์ในการออกแบบและ
 msgid "Ultra fast on-the-go trading"
 msgstr "การซื้อขายที่เร็วยิ่งยวด"
 
+msgid "Unable to create ICO account while virtual account is selected. Please select your real money account and try again."
+msgstr ""
+
 msgid "Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button."
 msgstr "ภายใต้<strong>การตั้งค่าขั้นสูง</strong> คลิกที่ปุ่ม<strong>ดูการตั้งค่าขั้นสูง</strong>"
 
@@ -9453,9 +9498,6 @@ msgstr "การปรับปรุงการตั้งค่า"
 
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "การปรับปรุงคู่มือการปราบปรามการทุจริตและเอกสารที่เกี่ยวข้อง"
-
-msgid "Upgrade"
-msgstr ""
 
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr ""
@@ -12904,6 +12946,9 @@ msgstr "ยืนยันตัวตน"
 msgid "Subscribe to ICO"
 msgstr "สมัคร ICO"
 
+msgid "ICO Histogram"
+msgstr ""
+
 msgid "Settings"
 msgstr "การตั้งค่า"
 
@@ -12924,7 +12969,4 @@ msgstr "ข้อสงวนสิทธิ์การนำเสนอขา
 
 msgid "Hackathon Competition"
 msgstr "การแข่งขัน Hackathon"
-
-msgid "Sign up"
-msgstr "ลงทะเบียน"
 
