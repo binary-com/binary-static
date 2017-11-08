@@ -1,12 +1,12 @@
 window.onload = function() {
+    const clients_country = getClientCountry();
+
     toggleMobileMenu();
     hashRouter();
     collapseNavbar();
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
-
-    const clients_country = getClientCountry();
 
     function switchView(path) {
         document.getElementById('faq').classList[path === 'faq' ? 'remove' : 'add']('invisible');
@@ -49,8 +49,10 @@ window.onload = function() {
         el_langs[i].value = language;
     }
 
-    // Scroll to section
+    const el_language_dropdown = document.getElementsByClassName('language-dropdown')[0];
+    setLanguage(el_language_dropdown, getLanguage());
     document.addEventListener('click', function(e) {
+        // Scroll to section
         if (e.target.classList.contains('page-scroll')) {
             e.preventDefault();
             switchView('home');
@@ -61,6 +63,23 @@ window.onload = function() {
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
             scrollTo(to);
         }
+
+        // Show / hide language dropdown
+        if (e.target.parentNode.id === 'lang') {
+            e.preventDefault();
+            e.target.parentNode.parentNode.classList.toggle('show');
+        } else if (/show/.test(el_language_dropdown.classList)) {
+            el_language_dropdown.classList.remove('show');
+        }
+    });
+
+    el_language_dropdown.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (e.target.nodeName !== 'LI') return;
+        const lang = e.target.getAttribute('class');
+        if (lang === getLanguage()) return;
+        el_language_dropdown.classList.add('invisible'); // hide on change
+        document.location = urlForLanguage(lang);
     });
 
     window.onresize = checkWidth;
@@ -93,6 +112,8 @@ window.onload = function() {
             document.getElementsByClassName('slider-container')[0].classList.remove('invisible');
         }
     });
+
+    setupCrowdin();
 };
 
 function clearHash() {
@@ -144,9 +165,9 @@ function getClientCountry() {
         } else if (response.residence_list) {
             setSession('residence_list', JSON.stringify(response.residence_list));
         } else if (response.time) {
-            initCountdown(response.time, '2017-11-15');
+            initCountdown(response.time);
         }
-    }
+    };
 
     return clients_country;
 }
@@ -157,46 +178,77 @@ function collapseNavbar() {
     navbarFixedTopEl[0].classList[window.scrollY < 50 ? 'add' : 'remove']('top-nav-collapse');
 }
 
-function initCountdown(start_epoch, end_date) {
-    const el_container = document.getElementById('countdown_container');
+function initCountdown(start_epoch) {
+    const ico_start    = Date.parse(new Date('2017-11-15T00:00:00Z'));
+    const ico_end      = Date.parse(new Date('2017-12-25T00:00:00Z'));
     const date_diff    = Date.parse(new Date()) - start_epoch * 1000;
+
+    const el_container = document.getElementById('status_container');
+    const hidden_class = 'invisible';
     const elements     = {};
-    let countdownd_interval;
+    let remaining      = 0;
+    let countdownd_interval,
+        is_before_start,
+        is_started,
+        end_date;
+
+    function updateStatus() {
+        is_before_start = calcRemainingTime(ico_start, date_diff).total > 0;
+        is_started      = calcRemainingTime(ico_end,   date_diff).total > 0 && !is_before_start;
+        end_date        = is_before_start ? ico_start : ico_end;
+
+        const display_class = 'status-' + (is_before_start ? 'before-start' : is_started ? 'started' : 'ended');
+        el_container.querySelectorAll('.status-toggle').forEach(function(el) {
+            el.classList[el.classList.contains(display_class) ? 'remove' : 'add'](hidden_class);
+        });
+
+        document.getElementById('status_loading').classList.add(hidden_class);
+        el_container.classList.remove(hidden_class);
+
+        if (!is_before_start) {
+            document.getElementById('ico_subscribe_section').classList.add(hidden_class);
+            if (!is_started) { // is_ended
+                clearInterval(countdownd_interval);
+            }
+        }
+    }
+
+    updateStatus();
+
+    if (!is_before_start && !is_started) return; // no countdown when already ended
 
     // Get all elements only once
-    function getElements(id) {
+    ['days', 'hours', 'minutes', 'seconds'].forEach(function (id) {
         const item = el_container.querySelector('#cd_' + id);
         elements[id] = {
             value    : item.querySelector('.cd-value'),
             arcs     : item.querySelectorAll('.arc_q'),
             arc_cover: item.querySelector('.arc_cover'),
         };
-    }
-    ['days', 'hours', 'minutes', 'seconds'].forEach(function(id) { getElements(id); });
-
+    });
 
     function updateCountdown() {
-        const remaining = calcRemainingTime(end_date, date_diff);
+        remaining = calcRemainingTime(end_date, date_diff);
 
-        arc(elements.days,    remaining.days,    20);
+        arc(elements.days,    remaining.days,    is_before_start ? 20 : 40);
         arc(elements.hours,   remaining.hours,   24);
         arc(elements.minutes, remaining.minutes, 60);
         arc(elements.seconds, remaining.seconds, 60);
 
         if (remaining.total <= 0) {
-            clearInterval(countdownd_interval);
-            el_container.classList.add('invisible');
+            updateStatus();
         }
     }
 
     updateCountdown();
-    countdownd_interval = setInterval(updateCountdown, 1000);
 
-    el_container.classList.remove('invisible'); // make visible when everything set
+    if (remaining.total > 0) {
+        countdownd_interval = setInterval(updateCountdown, 1000);
+    }
 }
 
 function calcRemainingTime(end_date, date_diff) {
-    const total   = Math.floor(Date.parse(new Date(end_date)) - Date.parse(new Date()) + date_diff) / 1000;
+    const total   = Math.floor(end_date - Date.parse(new Date()) + date_diff) / 1000;
     const seconds = Math.floor(total % 60);
     const minutes = Math.floor((total / 60) % 60);
     const hours   = Math.floor((total / (60 * 60)) % 24);
@@ -216,7 +268,79 @@ function arc(el, value, scale) {
 
     const angle = value * 360 / scale;
     el.arcs.forEach(function(arc, idx) {
-        arc.style = 'transform: rotate(' + (Math.min((idx + 1) * 90, angle) - 135) + 'deg)';
+        const arc_angle = Math.min((idx + 1) * 90, angle) - 135;
+        arc.setAttribute('style', ['-webkit-', '-moz-', '-o-', '-ms-', '', ''].join('transform: rotate(' + arc_angle + 'deg); '));
     });
     el.arc_cover.classList[angle > 90 ? 'add' : 'remove']('invisible');
+}
+
+function urlForLanguage(lang, url) {
+    if (url === undefined) {
+        url = window.location.href;
+    }
+    let curr_lang = getLanguage();
+    return url.replace(new RegExp('/' + curr_lang + '/', 'i'), '/' + lang.trim().toLowerCase() + '/');
+}
+
+function setLanguage(el, name) {
+    const all_languages = {
+        ach  : 'Translations',
+        en   : 'English',
+        de   : 'Deutsch',
+        es   : 'Español',
+        fr   : 'Français',
+        id   : 'Indonesia',
+        it   : 'Italiano',
+        ja   : '日本語',
+        pl   : 'Polish',
+        pt   : 'Português',
+        ru   : 'Русский',
+        th   : 'Thai',
+        vi   : 'Tiếng Việt',
+        zh_cn: '简体中文',
+        zh_tw: '繁體中文',
+    };
+    const el_navbar_nav = document.getElementsByClassName('navbar-nav')[0];
+
+    if (/pt|vi|id/.test(name)) {
+        el_navbar_nav.classList.add('word-wrap'); // wrap long words
+    }
+
+    document.getElementById('selected-lang').textContent = all_languages[name];
+    document.getElementsByClassName(name)[0].classList.add('invisible');
+
+    el_navbar_nav.classList.remove('invisible');
+    el.classList.remove('invisible');
+}
+
+function setupCrowdin() {
+    const all_languages = [
+        'ACH', 'EN', 'DE', 'ES',
+        'FR', 'ID', 'IT', 'JA',
+        'PL', 'PT', 'RU', 'TH',
+        'VI', 'ZH_CN', 'ZH_TW',
+    ];
+
+    const isInContextEnvironment = () => {
+        const lang_regex = new RegExp(`^(${all_languages.join('|')})$`, 'i');
+        const url_params = window.location.href.split('/').slice(3);
+        const language   = (url_params.find(lang => lang_regex.test(lang)) || '');
+
+        return /^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href) &&
+        /ach/i.test(language)
+    };
+
+    if (isInContextEnvironment()) {
+        document.getElementById('language').style.display = 'none';
+        /* eslint-disable no-underscore-dangle */
+        window._jipt = [];
+        window._jipt.push(['project', 'binary-static']);
+        /* eslint-enable no-underscore-dangle */
+        if (document.body) {
+            const crowdinScript = document.createElement('script');
+            crowdinScript.setAttribute('src', `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`);
+            crowdinScript.setAttribute('type', 'text/javascript');
+            document.body.appendChild(crowdinScript);
+        }
+    }
 }

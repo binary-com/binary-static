@@ -1,0 +1,18 @@
+<div id="ico_banner_container" [% IF container %] class="[% container %]"[% END %]>
+    <div id="ico_banner" class="ico-banner invisible ja-hide [% class %]" onclick="window.open('[% request.url_for('ico') %]', '_blank');">
+        <div class="gr-row gr-centered">
+            <div class="gr-12">
+                <div class="gr-row gr-no-gutter ico-box">
+                    <div class="gr-3 gr-padding-10 ico-column left-bg"></div>
+                    <div class="gr-9 gr-padding-10 ico-column">
+                        <div class="gr-row gr-no-gutter">
+                            <div class="gr-9 gr-12-p gr-12-m"><p>[% l('[_1] ICO starts on 15th November 2017', website_name) %]</p></div>
+                            <div class="gr-3 gr-12-p gr-12-m learn-btn"><a class="button" target="_blank" href="[% request.url_for('ico') %]"><span>[% l('Learn more') %]</span></a></div>
+                        </div>
+                    </div>
+                    <div id="close_ico_banner" class="close-btn"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

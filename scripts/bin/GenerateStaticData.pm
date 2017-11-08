@@ -359,6 +359,7 @@ sub _texts {
         #strings for paymentagent
         push @texts, localize('Amount');
         push @texts, localize('Deposit');
+        push @texts, localize('Withdrawal');
         push @texts, localize('Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.');
         #strings for iphistory
         push @texts, localize('Date and Time');
@@ -564,6 +565,10 @@ sub _texts {
         push @texts, localize('Passport');
         push @texts, localize('ID card');
         push @texts, localize('Driving licence');
+        push @texts, localize('Front Side');
+        push @texts, localize('Reverse Side');
+        push @texts, localize('Front and reverse side photos of [_1] are required.');
+        push @texts, localize('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
