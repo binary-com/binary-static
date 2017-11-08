@@ -1,4 +1,5 @@
 [% PROCESS components/forms.html.tt %]
+[% PROCESS components/forms_common_rows.html.tt %]
 
 <h1>[% l('[_1] Initial Coin Offering (ICO)', website_name) %]</h1>
 
@@ -154,20 +155,8 @@
 <div class="invisible" id="ico_professional_message">
     <p>[% l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") %]</p>
 </div>
-
-<div>
-    <div class="invisible" id="ico_virtual_message_mlt_mf">
-        <p>[% l("Unable to create CR account while virtual account is selected. Please select your MLT/MF account and try again.") %]</p>
-    </div>
-    <div class="invisible" id="ico_virtual_message_mlt">
-        <p>[% l("Unable to create CR account while virtual account is selected. Please select your MLT account and try again.") %]</p>
-    </div>
-    <div class="invisible" id="ico_virtual_message_mf">
-        <p>[% l("Unable to create CR account while virtual account is selected. Please select your MF account and try again.") %]</p>
-    </div>
-    <div class="invisible" id="ico_virtual_message_mx">
-        <p>[% l("Unable to create CR account while virtual account is selected. Please select your MX account and try again.") %]</p>
-    </div>
+<div class="invisible" id="ico_virtual_message">
+    <p>[% l("Unable to create ICO account while virtual account is selected. Please select your real money account and try again.") %]</p>
 </div>
 
 <div class="invisible" id="ico_account_message">
@@ -176,6 +165,7 @@
 
 <div class="invisible" id="ico_new_account_message">
     <p>[% l("This feature is only available to CR clients. Please upgrade to proceed.") %]</p>
+    [% INCLUDE account_opening_reason row_id='row_account_opening_reason' row_class='gr-padding-20 invisible' %]
     <div class="center-text">
         <a href="javascript:;" class="button" id="ico_new_account"><span>[% l("Upgrade") %]</span></a>
         <p class="error-msg invisible" id="new_account_error"></p>
