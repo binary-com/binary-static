@@ -621,6 +621,9 @@ input[type='text']:focus, input[type='submit']:focus {
             border: 1px solid $COLOR_ORANGE;
         }
     }
+    a, a:visited {
+        outline: none !important;
+    }
     [data-action='stop'], [data-action='start'] {
         display: none;
     }
