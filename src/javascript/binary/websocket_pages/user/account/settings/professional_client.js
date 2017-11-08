@@ -3,6 +3,8 @@ const BinaryPjax       = require('../../../../base/binary_pjax');
 const State            = require('../../../../base/storage').State;
 const getPropertyValue = require('../../../../base/utility').getPropertyValue;
 const Client           = require('../../../../base/client');
+const localize         = require('../../../../base/localize').localize;
+const Url              = require('../../../../base/url');
 
 
 const professionalClient = (() => {
@@ -37,6 +39,7 @@ const professionalClient = (() => {
         const $info             = $container.find('#professional_info');
         const $popup_contents   = $container.find('#popup');
         const popup_selector    = '#professional_popup';
+        const $error             = $('#form_message');
 
         $container.find('#professional_info_toggle').off('click').on('click', function() {
             $(this).toggleClass('open');
@@ -66,21 +69,39 @@ const professionalClient = (() => {
             $('#loading').remove();
             $('#frm_professional')
                 .off('submit')
-                .on('submit', () => {
+                .on('submit', (e) => {
+                    e.preventDefault();
                     if ($chk_professional.is(':checked')) {
-                        // TODO: add the call to send when back-end adds it
-                        BinarySocket.send({}).then((response) => {
-                            if (response.error) {
-                                $('#form_message').text(response.error.message);
-                            } else {
-                                BinaryPjax.loadPreviousUrl();
-                            }
+                        BinarySocket.wait('get_settings').then((response) =>{
+                            BinarySocket.send(populateReq(response)).then((response) => {
+                                if (response.error) {
+                                    $error.text(response.error.message).removeClass('invisible');
+                                } else {
+                                    BinarySocket.send({get_account_status: 1}).then(() => {
+                                        if(Client.get('is_ico_only')){
+                                            BinaryPjax.load(Url.urlFor('user/ico-subscribe'));
+                                        } else {
+                                            BinaryPjax.loadPreviousUrl();
+                                        }
+                                    });
+                                }
+                            });
                         });
+                    } else {
+                        $error.text(localize('This field is required.')).removeClass('invisible');
                     }
                 })
                 .setVisibility(1);
 
         }
+    };
+
+    const populateReq = (get_settings) => {
+        const req = {
+            set_settings           : 1,
+            request_professional_status: 1,
+        };
+        return req;
     };
 
     return {
