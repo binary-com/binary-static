@@ -3,7 +3,7 @@ const Client         = require('../../../base/client');
 const AccountOpening = require('../../../common_functions/account_opening');
 const FormManager    = require('../../../common_functions/form_manager');
 const BinarySocket   = require('../../../websocket_pages/socket');
-const localize         = require('../../../base/localize').localize;
+const localize       = require('../../../base/localize').localize;
 
 const RealAccOpening = (() => {
 
@@ -11,7 +11,7 @@ const RealAccOpening = (() => {
         if (Client.get('residence')) {
             const account_type_ico = /ico/.test(window.location.hash);
 
-            if (account_type_ico) $('h1').text(localize('ICO Account Opening'));
+            if (account_type_ico) $('h1').html(localize('ICO Account Opening'));
 
             if (AccountOpening.redirectAccount(account_type_ico)) return;
 
