@@ -82,6 +82,11 @@ window.onload = function() {
         document.location = urlForLanguage(lang);
     });
 
+    document.getElementById('howto-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open(getDocumentUrl(getLanguage().toLowerCase()), '_blank');
+    });
+
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
     window.addEventListener('hashchange', hashRouter);
@@ -343,4 +348,11 @@ function setupCrowdin() {
             document.body.appendChild(crowdinScript);
         }
     }
+}
+
+function getDocumentUrl(lang = 'en') {
+    if (lang === 'en') {
+        return 'https://ico_documents.binary.com/howto_ico.pdf';
+    }
+    return `https://ico_documents.binary.com/howto_ico_${lang}.pdf`;
 }
