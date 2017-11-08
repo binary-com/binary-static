@@ -2,7 +2,7 @@
 [% PROCESS components/forms_common_rows.html.tt %]
 
 <div class='gr-12 static_full'>
-    <h1 id="acc_type_title">[% l('Real Money Account Opening') %]</h1>
+    <h1>[% l('Real Money Account Opening') %]</h1>
     <form id="frm_real" class="gr-padding-10">
         [% WRAPPER fieldset legend=l('Details') %]
             [% INCLUDE salutation %]
