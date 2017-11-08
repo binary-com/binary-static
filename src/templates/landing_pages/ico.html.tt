@@ -132,42 +132,42 @@
                                     [% END %]
                                 </div>
                                 <div class="status-toggle status-before-start">
-                                    <div id="sign-up-section">
-                                        <div class="signup-desc">
-                                            <p>[% l("Investors need to open a [_1] real money account to take part in the ICO.", broker_name) %]</p>
-                                            <p>[% l("Sign up now for free.") %]</p>
-                                        </div>
-                                        <div class="signup-container gr-9 gr-12-p gr-12-m gr-centered">
-                                            <form id="frm_verify_email">
-                                                <div class="gr-row gr-row-align-center">
-                                                    <div class="signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
-                                                        <div class="gr-row gr-padding-10" id="signup">
-                                                            <div class="gr-7 gr-10-m gr-centered">
-                                                                <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
-                                                                <div id="error_validate_email" class="invisible error-msg">[% l('Invalid email address') %]</div>
-                                                                <div id="error_no_email" class="invisible error-msg">[% l('This field is required.') %]</div>
-                                                            </div>
-                                                            <div class="gr-5 gr-8-m gr-centered">
-                                                                <button class="primary-bg-color" id="btn_verify_email" type="submit">[% l("Create Free Account") %]</button>
-                                                            </div>
-                                                            <span class="gr-12 gr-padding-10 error-msg hint color-white center-text invisible" id="signup_error"></span>
-                                                        </div>
-                                                        <div class="invisible" id="success">
-                                                            <div class="gr-padding-10 center-text hint gr-12 align-self-center">
-                                                                <p>[% l('Thank you for signing up! Please check your email to complete the registration process.') %]</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="status-toggle status-started">
                                     <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Join the token sale") %]</span></a>
                                 </div>
                                 <div class="status-toggle status-ended">
                                     <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Take me there") %]</span></a>
+                                </div>
+                                <div id="sign-up-section">
+                                    <div class="signup-desc">
+                                        <p>[% l("Investors need to open a [_1] real money account to take part in the ICO.", broker_name) %]</p>
+                                        <p>[% l("Sign up now for free.") %]</p>
+                                    </div>
+                                    <div class="signup-container gr-9 gr-12-p gr-12-m gr-centered">
+                                        <form id="frm_verify_email">
+                                            <div class="gr-row gr-row-align-center">
+                                                <div class="signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
+                                                    <div class="gr-row gr-padding-10" id="signup">
+                                                        <div class="gr-7 gr-10-m gr-centered">
+                                                            <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
+                                                            <div id="error_validate_email" class="invisible error-msg">[% l('Invalid email address') %]</div>
+                                                            <div id="error_no_email" class="invisible error-msg">[% l('This field is required.') %]</div>
+                                                        </div>
+                                                        <div class="gr-5 gr-8-m gr-centered">
+                                                            <button class="primary-bg-color" id="btn_verify_email" type="submit">[% l("Create Free Account") %]</button>
+                                                        </div>
+                                                        <span class="gr-12 gr-padding-10 error-msg hint color-white center-text invisible" id="signup_error"></span>
+                                                    </div>
+                                                    <div class="invisible" id="success">
+                                                        <div class="gr-padding-10 center-text hint gr-12 align-self-center">
+                                                            <p>[% l('Thank you for signing up! Please check your email to complete the registration process.') %]</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
