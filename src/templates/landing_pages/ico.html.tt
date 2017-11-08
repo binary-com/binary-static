@@ -144,20 +144,22 @@
                                                         <div class="gr-row gr-padding-10" id="signup">
                                                             <div class="gr-7 gr-10-m gr-centered">
                                                                 <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
+                                                                <div id="error_validate_email" class="invisible error-msg">[% l('Invalid email address') %]</div>
+                                                                <div id="error_no_email" class="invisible error-msg">[% l('This field is required.') %]</div>
                                                             </div>
                                                             <div class="gr-5 gr-8-m gr-centered">
                                                                 <button class="primary-bg-color" id="btn_verify_email" type="submit">[% l("Create Free Account") %]</button>
                                                             </div>
                                                             <span class="gr-12 gr-padding-10 error-msg hint color-white center-text invisible" id="signup_error"></span>
                                                         </div>
+                                                        <div class="invisible" id="success">
+                                                            <div class="gr-padding-10 center-text hint gr-12 align-self-center">
+                                                                <p>[% l('Thank you for signing up! Please check your email to complete the registration process.') %]</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div class="invisible" id="success">
-                                                <div class="gr-padding-10 center-text hint gr-12 align-self-center">
-                                                    [% l('Thank you for signing up! Please check your email to complete the registration process.') %]
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -579,11 +581,8 @@
                         <a href="https://www.reddit.com/r/binarydotcom/" target="_blank" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
                         </a>
-                        <a href="https://www.facebook.com/mybinarycoin" target="_blank" class="gr-gutter-right">
+                        <a href="https://www.facebook.com/mybinarycoin" target="_blank">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/facebook.svg") %]" />
-                        </a>
-                        <a href="https://bitcointalk.org/index.php?topic=2368998.0" target="_blank">
-                            <img class="responsive" src="[% request.url_for("images/ico/icons/bitcoin_talk.svg") %]" />
                         </a>
                     </div>
                 </div>
@@ -764,9 +763,6 @@
                 <p>[% l("This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of [_1]. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum.", broker_name) %]</p>
                 <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
             </div>
-        </div>
-        <div class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
-            <span>Binary Group Ltd., P.O. Box 173, Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
         </div>
         <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js"></script>

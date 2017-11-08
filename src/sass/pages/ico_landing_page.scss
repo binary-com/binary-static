@@ -954,9 +954,14 @@ input[type='text']:focus, input[type='submit']:focus {
             }
         }
         .hint {
-            font-size: $FONT_SIZE_XS;
-            color: $COLOR_WHITE;
-            margin-top: 3px;
+            margin-bottom: 3px;
+
+            p {
+                font-size: $FONT_SIZE_L;
+                color: $COLOR_WHITE;
+                line-height: 1.4em;
+                text-align: center;
+            }
         }
         .error-msg {
             font-style: italic;
@@ -964,6 +969,7 @@ input[type='text']:focus, input[type='submit']:focus {
             color: $COLOR_RED;
             text-align: center;
             margin-top: 5px;
+            padding-bottom: 5px;
         }
         .error-field {
             border: 1px solid $COLOR_RED !important;

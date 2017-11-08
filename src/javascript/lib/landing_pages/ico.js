@@ -186,7 +186,20 @@ function validateEmail(email) {
 
 function setValidationStyle(element, has_error) {
     var error_class = 'error-field';
+    var invisible_class = 'invisible';
     element.classList[has_error ? 'add' : 'remove'](error_class);
+    if (element.value.length < 1) {
+        document.getElementById('error_no_email').classList[has_error ? 'remove' : 'add'](invisible_class);
+        document.getElementById('error_validate_email').classList[has_error ? 'add' : 'remove'](invisible_class);
+    }
+    else if (element.value.length >= 1) {
+        document.getElementById('error_validate_email').classList[has_error ? 'remove' : 'add'](invisible_class);
+        document.getElementById('error_no_email').classList[has_error ? 'add' : 'remove'](invisible_class);
+    }
+    if (!has_error) {
+        document.getElementById('error_validate_email').classList.add(invisible_class);
+        document.getElementById('error_no_email').classList.add(invisible_class);
+    }
 }
 
 function getClientCountry() {
