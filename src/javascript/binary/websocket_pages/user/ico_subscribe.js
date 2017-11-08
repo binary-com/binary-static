@@ -47,6 +47,7 @@ const ICOSubscribe = (() => {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOcountDown();
                 ICOPortfolio.onLoad();
+                $('#ico_subscribe').setVisibility(1);
                 showContent();
             } else {
                 init();
@@ -57,6 +58,7 @@ const ICOSubscribe = (() => {
     const init = () => {
         BinarySocket.wait('balance').then((response) => {
             ICOPortfolio.onLoad();
+            $('#view_ico_info').setVisibility(1);
             currency = Client.get('currency') || '';
             if (currency) {
                 $('.currency').text(currency);
@@ -120,6 +122,8 @@ const ICOSubscribe = (() => {
             total = +duration_val * +price_val;
         }
         $total.html(formatMoney(currency, total));
+        if (!$form_error) $form_error = $('#form_error');
+        $form_error.setVisibility(0);
     };
 
     const ICOcountDown = () => {
@@ -163,6 +167,7 @@ const ICOSubscribe = (() => {
     };
 
     const showContent = () => {
+        $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
             if (/au|ca|ch|nz|sg/.test(Client.get('residence'))

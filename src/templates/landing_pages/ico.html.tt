@@ -749,10 +749,10 @@
                                 <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
                                     <div class="af-element gr-row">
                                         <div class="gr-8 gr-12-m">
-                                            <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+                                            <input class="text" placeholder="[% l('Enter your email') %]" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
                                         </div>
                                         <div class="gr-4 gr-12-m">
-                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit"/>
+                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="[% l('Submit') %]"/>
                                         </div>
                                     </div>
                                 </div>
