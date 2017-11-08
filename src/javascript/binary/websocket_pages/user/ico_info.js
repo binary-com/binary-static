@@ -140,7 +140,7 @@ const ICOInfo = (() => {
                 allValues.unshift({
                     y   : value,
                     x   : key,
-                    band: [key, key + bucket_size],
+                    band: [key, key + bucket_size - 0.01],
                     color,
                 });
             }
