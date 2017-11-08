@@ -171,7 +171,8 @@ const ICOSubscribe = (() => {
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
             to_show = 'ico_new_account_message';
             const button_new_account = document.getElementById('ico_new_account');
-            if(!State.getResponse('get_settings.account_opening_reason')) {
+            if(!State.getResponse('get_settings.account_opening_reason')
+                && !Client.isAccountOfType('virtual')) {
                 askForAccountOpeningReason();
             }
             if (button_new_account) {
