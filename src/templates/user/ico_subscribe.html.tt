@@ -1,4 +1,5 @@
 [% PROCESS components/forms.html.tt %]
+[% PROCESS components/forms_common_rows.html.tt %]
 
 <h1>[% l('[_1] Initial Coin Offering (ICO)', website_name) %]</h1>
 
@@ -109,7 +110,17 @@
     </div>
     [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-20' invisible=1 %]
     <div id="ico_bids">
-        <h1>[% l('[_1] ICO Auction Bids', website_name) %]</h1>
+        <h1>
+            <span>[% l('[_1] ICO Auction Bids', website_name) %]</span>
+            <div class="invisible" id="view_ico_info">
+                <a class="button" href="[% request.url_for('user/ico-info') %]">
+                    <span>
+                        <img src="[% request.url_for('images/ico/icons/bar_chart.svg') %]">
+                        [% l('Histogram of Active Bids') %]
+                    </span>
+                </a>
+            </div>
+        </h1>
         [% PROCESS components/elements.html.tt %]
 
         <div id="portfolio">
@@ -161,6 +172,7 @@
 
 <div class="invisible" id="ico_new_account_message">
     <p>[% l("This feature is only available to CR clients. Please upgrade to proceed.") %]</p>
+    [% INCLUDE account_opening_reason row_id='row_account_opening_reason' row_class='gr-padding-20 invisible' %]
     <div class="center-text">
         <a href="javascript:;" class="button" id="ico_new_account"><span>[% l("Upgrade") %]</span></a>
         <p class="error-msg invisible" id="new_account_error"></p>

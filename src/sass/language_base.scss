@@ -210,6 +210,15 @@ body.ZH_CN, body.ZH_TW {
     }
 }
 
+body.PL {
+    a, button, .button, span, input {
+        text-transform: initial !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-transform: initial !important;
+    }
+}
+
 $list:
     ('EN', 'en'),
     ('DE', 'de'),
