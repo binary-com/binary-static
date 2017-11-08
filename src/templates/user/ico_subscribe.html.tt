@@ -182,3 +182,26 @@
 <div class="invisible" id="feature_not_allowed">
     <p class="center-text notice-msg">[% l("This feature is not available in your jurisdiction.") %]</p>
 </div>
+
+<div id="cancel_bid_confirmation" class="lightbox invisible">
+    <div class="gr-padding-30 gr-gutter">
+        <div class="gr-gutter">
+            <div class="gr-gutter">
+                <h1>[% l("Cancel bid?") %]</h1>
+                <p class="gr-padding-10 gr-child no-margin">[% l("You will be subject to a 2% cancellation fee.") %]</p>
+                <form id="frm_confirm">
+                    <div class="gr-row ">
+                        <div class="gr-12-m gr-padding-20 gr-centered">
+                            <input id="chk_confirm" type="checkbox">
+                            <label for="chk_confirm">[% l("I agree to the cancellation fee stated above") %]</label>
+                        <div class="error-msg invisible"></div></div>
+                    </div>
+                    <div class="center-text gr-centered">
+                        <button class="button" type="submit">[% l("Yes, cancel my bid") %]</button>
+                        <a class="button-secondary" id="cancel" href="javascript:;"><span>[% l("No, return to the ICO auction page") %]</span></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
