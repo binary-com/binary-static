@@ -42,15 +42,16 @@ const ICOPortfolio = (() => {
 
         const new_class    = is_first ? '' : 'new';
         const status       = status_text;
-        const button_class = /cancel|end/i.test(status) ? 'button-secondary' : '';
+        let button_class = /cancel|end/i.test(status) ? 'button-secondary' : 'button';
         const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
         const shortcode    = data.shortcode.split('_');
         const $div         = $('<div/>');
-
-        const $button = $('<button/>', { class: `button ${button_class} nowrap`, contract_id: data.contract_id, action, text: localize(status) });
         if (+State.getResponse('website_status.ico_info.final_price') === 0) {
-            $button.addClass('button-disabled');
+            button_class = 'button-disabled';
         }
+
+        const $button = $('<a/>', { class: `${button_class} nowrap`, contract_id: data.contract_id, action});
+        $button.append($(`<span>${localize(status)}</span>`));
 
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref', text: data.transaction_id }))
@@ -92,7 +93,7 @@ const ICOPortfolio = (() => {
             $('#portfolio-no-contract').show();
             $('#portfolio-table').setVisibility(0);
         } else {
-            $('button[action="cancel"]').on('click', function () {
+            $('a[action="cancel"]:not(.button-disabled)').on('click', function () {
                 BinarySocket.send({
                     sell : $(this).attr('contract_id'),
                     price: 0,

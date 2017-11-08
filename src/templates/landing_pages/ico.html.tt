@@ -542,6 +542,8 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="cryptogo"               timestamp="Nov 07, 2017"    headlines="ICO Analyse - Binary.com"                                               url="https://cryptogo.de/binary-analyse/" },
+                { logo="hype-codes"             timestamp="Nov 03, 2017"    headlines="The future of IPOs is blockchain" url="https://hype.codes/future-ipos-blockchain" },
                 { logo="crypto-martez"          timestamp="Oct 27, 2017"    headlines="PR: Binary.com Announces Initial Coin Offering (ICO)"                        url="https://www.cryptomartez.com/2017/10/pr-binary-com-announces-ico.html" },
                 { logo="bittox"                 timestamp="Oct 25, 2017"    headlines="BINARY.COM ANNOUNCES INITIAL COIN OFFERING (ICO)"                        url="https://bittox.com/2017/10/25/binary-com-announces-initial-coin-offering-ico/" },
                 { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="BINARY.COM offers securities-backed tokens in ICO"                       url="http://www.profitf.com/news/binary-com-offers-securities-backed-tokens-initial-coin-offering-ico/" },
@@ -747,10 +749,10 @@
                                 <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
                                     <div class="af-element gr-row">
                                         <div class="gr-8 gr-12-m">
-                                            <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+                                            <input class="text" placeholder="[% l('Enter your email') %]" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
                                         </div>
                                         <div class="gr-4 gr-12-m">
-                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit"/>
+                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="[% l('Submit') %]"/>
                                         </div>
                                     </div>
                                 </div>
@@ -775,7 +777,7 @@
             </div>
         </div>
         <div class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
-            <span>Binary Group Ltd., P.O. Box 173, Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
+            <span>Binary Group Ltd., Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
         </div>
         <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js"></script>

@@ -531,6 +531,12 @@ sub _texts {
         push @texts, localize('Claim Tokens');
         push @texts, localize('Ended');
         push @texts, localize('The ICO is currently unavailable.');
+        push @texts, localize('Please select a value for account_opening_reason.');
+
+        # binaryico histogram chart
+        push @texts, localize('Final Price');
+        push @texts, localize('Total Bids');
+        push @texts, localize('Price Band');
 
         # strings for accounts page
         push @texts, localize('Create');
