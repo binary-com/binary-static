@@ -542,6 +542,7 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="cryptogo"               timestamp="Nov 07, 2017"    headlines="ICO Analyse - Binary.com"                                                          url="https://cryptogo.de/binary-analyse/" },
                 { logo="crypto-martez"          timestamp="Oct 27, 2017"    headlines="PR: Binary.com Announces Initial Coin Offering (ICO)"                        url="https://www.cryptomartez.com/2017/10/pr-binary-com-announces-ico.html" },
                 { logo="bittox"                 timestamp="Oct 25, 2017"    headlines="BINARY.COM ANNOUNCES INITIAL COIN OFFERING (ICO)"                        url="https://bittox.com/2017/10/25/binary-com-announces-initial-coin-offering-ico/" },
                 { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="BINARY.COM offers securities-backed tokens in ICO"                       url="http://www.profitf.com/news/binary-com-offers-securities-backed-tokens-initial-coin-offering-ico/" },
