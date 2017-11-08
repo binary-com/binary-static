@@ -133,8 +133,9 @@ function signUpInit() {
     var ws = wsConnect();
 
     function sendVerifyEmail() {
+        var trimmed_email = el_email.value.trim();
         wsSend(ws, {
-            verify_email: el_email.value,
+            verify_email: trimmed_email,
             type        : 'account_opening'
         });
     }
@@ -161,6 +162,14 @@ function signUpInit() {
             sendVerifyEmail();
         } else {
             ws.onopen = sendVerifyEmail;
+            ws.onmessage = function(msg) {
+                var response = JSON.parse(msg.data);
+                setValidationStyle(el_email, response.error);
+                if (!response.error) {
+                    el_signup.classList.add('invisible');
+                    el_success.classList.remove('invisible');
+                }
+            }
         }
     });
 
@@ -171,6 +180,18 @@ function signUpInit() {
             el_signup.classList.add('invisible');
             el_success.classList.remove('invisible');
         }
+    };
+
+    ws.onclose = function(e) {
+        setTimeout(function() {
+            // console.log('websocket connection dropped. connect in 1 seconds');
+            ws = wsConnect();
+        }, 1000);
+    };
+
+    ws.onerror = function(err) {
+        // console.error('Socket encountered error: ', err.message, 'Closing socket');
+        ws.close();
     };
 
     // Store gclid
