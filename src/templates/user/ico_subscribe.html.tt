@@ -110,7 +110,17 @@
     </div>
     [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-20' invisible=1 %]
     <div id="ico_bids">
-        <h1>[% l('[_1] ICO Auction Bids', website_name) %]</h1>
+        <h1>
+            <span>[% l('[_1] ICO Auction Bids', website_name) %]</span>
+            <div class="invisible" id="view_ico_info">
+                <a class="button" href="[% request.url_for('user/ico-info') %]">
+                    <span>
+                        <img src="[% request.url_for('images/ico/icons/bar_chart.svg') %]">
+                        [% l('Histogram of Active Bids') %]
+                    </span>
+                </a>
+            </div>
+        </h1>
         [% PROCESS components/elements.html.tt %]
 
         <div id="portfolio">
