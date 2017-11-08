@@ -145,6 +145,8 @@ function signUpInit() {
     document.getElementById('frm_verify_email').addEventListener('submit', function (evt) {
         evt.preventDefault();
 
+        ws = wsConnect();
+
         if (!validateEmail(el_email.value)) {
             if (!validation_set) {
                 ['input', 'change'].forEach(function (evt) {
