@@ -42,7 +42,7 @@ const ICOSubscribe = (() => {
             })
             .attr('src', image);
 
-        BinarySocket.wait('website_status', 'landing_company').then(() => {
+        BinarySocket.wait('website_status', 'landing_company', 'get_settings').then(() => {
             if (State.getResponse('website_status.ico_status') === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOcountDown();
@@ -84,6 +84,7 @@ const ICOSubscribe = (() => {
             } else {
                 const decimal_places = getDecimalPlaces(currency);
                 $form_error          = $('#form_error');
+
                 FormManager.init(form_id, [
                     { selector: '#duration', validations: ['req', ['number', { min: 25, max: 1000000 }]], parent_node: 'parameters' },
                     { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places), max: 999999999999999 }]] },
@@ -175,6 +176,10 @@ const ICOSubscribe = (() => {
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
             to_show = 'ico_new_account_message';
             const button_new_account = document.getElementById('ico_new_account');
+            if(!State.getResponse('get_settings.account_opening_reason')
+                && !Client.isAccountOfType('virtual')) {
+                askForAccountOpeningReason();
+            }
             if (button_new_account) {
                 button_new_account.removeEventListener('click', newAccountOnClick);
                 button_new_account.addEventListener('click', newAccountOnClick);
@@ -188,11 +193,25 @@ const ICOSubscribe = (() => {
     };
 
     const newAccountOnClick = () => {
+        const el_account_opening_reason = document.getElementById('account_opening_reason');
+        const el_error = document.getElementById('new_account_error');
         if (Client.hasAccountType('real')) {
             BinarySocket.wait('get_settings').then((response) => {
-                BinarySocket.send(populateReq(response.get_settings)).then((response_new_account_real) => {
+                const req = populateReq(response.get_settings);
+
+                // Check if client has account_opening_reason set.
+                if($(el_account_opening_reason).is(':visible') && !req.account_opening_reason) {
+                    const value = el_account_opening_reason.value;
+                    if(value) {
+                        req.account_opening_reason = value;
+                    } else {
+                        el_error.setVisibility(1).textContent = localize('Please select a value for account_opening_reason.');
+                        return;
+                    }
+                }
+
+                BinarySocket.send(req).then((response_new_account_real) => {
                     if (response_new_account_real.error) {
-                        const el_error = document.getElementById('new_account_error');
                         if (el_error) {
                             el_error.setVisibility(1).textContent = response_new_account_real.error.message;
                         }
@@ -237,6 +256,11 @@ const ICOSubscribe = (() => {
             req.tax_residence = get_settings.tax_residence;
         }
         return req;
+    };
+
+    const askForAccountOpeningReason = () => {
+        const el_to_show = document.getElementById('row_account_opening_reason');
+        el_to_show.setVisibility(1);
     };
 
     const onUnload = () => {
