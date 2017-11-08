@@ -133,11 +133,24 @@ function signUpInit() {
     var ws = wsConnect();
 
     function sendVerifyEmail() {
-        var trimmed_email = el_email.value.trim();
+        var trimmed_email = trimEmail(el_email.value);
         wsSend(ws, {
             verify_email: trimmed_email,
             type        : 'account_opening'
         });
+    }
+
+    function verifySubmit(msg) {
+        var response = JSON.parse(msg.data);
+        setValidationStyle(el_email, response.error);
+        if (!response.error) {
+            el_signup.classList.add('invisible');
+            el_success.classList.remove('invisible');
+        }
+    }
+
+    function trimEmail(str) {
+        return str.replace(/\s/g, "");
     }
 
     var validation_set = false; // To prevent validating before submit
@@ -145,16 +158,14 @@ function signUpInit() {
     document.getElementById('frm_verify_email').addEventListener('submit', function (evt) {
         evt.preventDefault();
 
-        ws = wsConnect();
-
-        if (!validateEmail(el_email.value)) {
+        if (!validateEmail(trimEmail(el_email.value))) {
             if (!validation_set) {
                 ['input', 'change'].forEach(function (evt) {
                     el_email.addEventListener(evt, function () {
-                        setValidationStyle(el_email, !validateEmail(el_email.value));
+                        setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
                     });
                 });
-                setValidationStyle(el_email, !validateEmail(el_email.value));
+                setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
                 validation_set = true;
             }
             return false;
@@ -163,38 +174,13 @@ function signUpInit() {
         if (ws.readyState === 1) {
             sendVerifyEmail();
         } else {
+            ws = wsConnect();
             ws.onopen = sendVerifyEmail;
-            ws.onmessage = function(msg) {
-                var response = JSON.parse(msg.data);
-                setValidationStyle(el_email, response.error);
-                if (!response.error) {
-                    el_signup.classList.add('invisible');
-                    el_success.classList.remove('invisible');
-                }
-            }
+            ws.onmessage = verifySubmit;
         }
     });
 
-    ws.onmessage = function(msg) {
-        var response = JSON.parse(msg.data);
-        setValidationStyle(el_email, response.error);
-        if (!response.error) {
-            el_signup.classList.add('invisible');
-            el_success.classList.remove('invisible');
-        }
-    };
-
-    ws.onclose = function(e) {
-        setTimeout(function() {
-            // console.log('websocket connection dropped. connect in 1 seconds');
-            ws = wsConnect();
-        }, 1000);
-    };
-
-    ws.onerror = function(err) {
-        // console.error('Socket encountered error: ', err.message, 'Closing socket');
-        ws.close();
-    };
+    ws.onmessage = verifySubmit;
 
     // Store gclid
     var gclid = getParamValue(document.referrer, 'gclid');
