@@ -365,7 +365,7 @@ button .barspinner.white {
     .ico-banner {
         cursor: pointer;
         border: 1px solid $COLOR_LIGHT_GRAY;
-        background: url('../images/ico/banner/white_background.png') 100% no-repeat / cover;
+        background: no-repeat 100% / cover url('../images/ico/banner/white_background.png');
 
         .ico-box {
             position: relative;
@@ -388,7 +388,7 @@ button .barspinner.white {
                 }
             }
             .left-bg {
-                background: url('../images/ico/banner/image_left_area.png') 100% no-repeat / cover;
+                background: no-repeat 100% / cover url('../images/ico/banner/image_left_area.png');
             }
             p {
                 text-transform: uppercase;
@@ -396,11 +396,11 @@ button .barspinner.white {
                 font-weight: 400;
                 color: $primaryBrandColor;
             }
-            .close-btn {
-                content: url('../images/ico/banner/close_icon.svg');
-                width: 15px;
+            .close-btn:after {
+                content: '';
+                background: no-repeat 100% / cover url('../images/ico/banner/close_icon.svg');
                 cursor: pointer;
-                padding: 5px;
+                padding: 10px;
                 position: absolute;
                 top: 0;
                 right: 0;

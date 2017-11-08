@@ -589,8 +589,11 @@
                         <a href="https://www.reddit.com/r/binarydotcom/" target="_blank" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
                         </a>
-                        <a href="https://www.facebook.com/mybinarycoin" target="_blank">
+                        <a href="https://www.facebook.com/mybinarycoin" target="_blank" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/facebook.svg") %]" />
+                        </a>
+                        <a href="https://bitcointalk.org/index.php?topic=2368998.0" target="_blank">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/bitcoin_talk.svg") %]" />
                         </a>
                     </div>
                 </div>
@@ -773,7 +776,7 @@
             </div>
         </div>
         <div class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
-            <span>Binary Group Ltd., P.O. Box 173, Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
+            <span>Binary Group Ltd., Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
         </div>
         <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js"></script>
