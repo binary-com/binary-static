@@ -438,8 +438,5 @@ function setupCrowdin() {
 }
 
 function getDocumentUrl(lang = 'en') {
-    if (/^(ru)$/i.test(lang)) {
-        return `https://ico_documents.binary.com/howto_ico_${lang}.pdf`;
-    }
-    return 'https://ico_documents.binary.com/howto_ico.pdf';
+    return `https://marketing.binary.com/crypto/${lang}/Binary.com_HowToParticipateInICO.pdf`;
 }
