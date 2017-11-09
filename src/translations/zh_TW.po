@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-08 02:54-0500\n"
+"PO-Revision-Date: 2017-11-08 22:24-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -109,7 +109,7 @@ msgid "%1 ICO, Invest in the world's premier platform for binary options trading
 msgstr "%1 ICO。在全球領先的二元期權交易平台投資"
 
 msgid "%1 ICO: Histogram of Active Bids"
-msgstr ""
+msgstr "%1 ICO: 主動出價的長條圖"
 
 msgid "%1 Initial Coin Offering (ICO)"
 msgstr "%1首次代幣發售 (ICO)"
@@ -244,7 +244,7 @@ msgid "%1 is not available in Costa Rica and is not regulated or supervised by a
 msgstr "%1在哥斯大黎加還不可使用，並不受哥斯大黎加金融體系任何監管機構的監管或監督。"
 
 msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1.35</strong> or its equivalent in another currency."
-msgstr ""
+msgstr "%1將在公開拍賣中發行高達<strong>10,000,000</strong>個代幣。您可使用下面的表格出價。最低出價金額是<strong>1.35 美元</strong>或其他貨幣的等值。"
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 由 Binary 集團有限公司擁有和經營。欲了解更多資訊，請 <a href='%2'>參閱我們的歷史頁面</a>。"
@@ -1528,7 +1528,7 @@ msgid "Bid Price Per Token"
 msgstr "每個代幣的投標報價"
 
 msgid "Bid Price Per Token ($USD)"
-msgstr ""
+msgstr "每個代幣的投標報價(美元)"
 
 msgid "Bid on the ICO:"
 msgstr "在 ICO 出價："
@@ -1830,6 +1830,9 @@ msgstr "取消"
 
 msgid "Cancel Bid"
 msgstr "取消出價"
+
+msgid "Cancel bid?"
+msgstr ""
 
 msgid "Career opportunities for Americans"
 msgstr "美國居民的工作機會"
@@ -3318,7 +3321,7 @@ msgid "Filtering Stray Ticks"
 msgstr "過濾離散價位"
 
 msgid "Final Price"
-msgstr ""
+msgstr "最終價格"
 
 msgid "Final price"
 msgstr "最終價格"
@@ -3771,7 +3774,7 @@ msgid "Hint: it would take approximately %1%2 to crack this password."
 msgstr "提示： 破解這個密碼需要大約 %1%2 。"
 
 msgid "Histogram of Active Bids"
-msgstr ""
+msgstr "主動出價的長條圖"
 
 msgid "Hone your security testing skills."
 msgstr "磨練您的安全測試技能。"
@@ -3902,6 +3905,9 @@ msgstr "我聲明本人不是政治公眾人士(PEP)。"
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
+msgid "I agree to the cancellation fee stated above"
+msgstr ""
+
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "我確認同意以下所有文件的內容:"
 
@@ -3940,6 +3946,9 @@ msgstr "九、 報價"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "即 (20010 - 20000) x 1 x 1 = 10 美元"
+
+msgid "ICO Account Opening"
+msgstr ""
 
 msgid "ID card"
 msgstr "身分證"
@@ -4541,7 +4550,7 @@ msgid "Investment Solicitation Policy"
 msgstr "Investment Solicitation Policy"
 
 msgid "Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum."
-msgstr "我們所推薦的代幣投資含高度風險，也不保証投入資金的代幣持有人將獲得利潤或回本。潛在投資者須仔細了解資訊備忘錄上列出的風險因素。"
+msgstr "我們推薦的代幣投資含高度風險，也不保証投入資金的代幣持有人將獲得利潤或回本。潛在代幣投資者須仔細了解資訊備忘錄上列出的風險因素。"
 
 msgid "Investment trust"
 msgstr "Investment trust"
@@ -4559,7 +4568,7 @@ msgid "Investor password (read-only access)"
 msgstr "投資者密碼 （唯讀存取權限）"
 
 msgid "Investors need to open a %1 real money account to take part in the ICO."
-msgstr ""
+msgstr "要參與 ICO，投資者必須開立%1 真實資金帳戶。"
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "參與法務和風險管理評估。與各部門主管協作改進業務流程。"
@@ -5951,7 +5960,7 @@ msgid "No Touch trades"
 msgstr "「未觸及」交易"
 
 msgid "No bids to show"
-msgstr ""
+msgstr "沒有出價顯示"
 
 msgid "No commission"
 msgstr "不收佣金"
@@ -5985,6 +5994,9 @@ msgstr "任何人都不得以洗錢為目的濫用本網站。公司採用最佳
 
 msgid "No risk, $10K virtual money account"
 msgstr "無任何風險，獲得一萬美元虛擬資金帳戶"
+
+msgid "No, return to the ICO auction page"
+msgstr ""
 
 msgid "No. Once your pull request is merged into master by our development team, and you have been paid, you have effectively handed over the rights to the code. It then becomes part of the master %1 codebase under the open-source license of the relevant repository."
 msgstr "不。一旦我們的開發團隊將您的拉動請求合併到主程式內，以及您已獲取報酬後，表示您已有效交付代碼的權利。它將按照有關存儲庫的開放源許可證成為主程式%1 代碼庫的一部分 。"
@@ -6719,7 +6731,7 @@ msgid "Please select a value"
 msgstr "請選擇一個數值"
 
 msgid "Please select a value for account_opening_reason."
-msgstr ""
+msgstr "請為 account_opening_reason 選擇一個值。"
 
 msgid "Please select at least one scope"
 msgstr "請選擇至少一個範圍"
@@ -6866,7 +6878,7 @@ msgid "Price - the price at which the transaction in relation to your order is e
 msgstr "價格 - 您的訂單相關的交易執行價格。"
 
 msgid "Price Band"
-msgstr ""
+msgstr "價格帶"
 
 msgid "Price/Prices &mdash; Bid and Offer Price/Prices."
 msgstr "價格 &mdash; 出價和要價。"
@@ -7640,7 +7652,7 @@ msgid "Sign up"
 msgstr "註冊"
 
 msgid "Sign up now for free."
-msgstr ""
+msgstr "立刻免費註冊。"
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "卓越的社交媒體、市場營銷和/或廣告經驗"
@@ -8895,7 +8907,7 @@ msgid "This feature is not relevant to virtual-money accounts."
 msgstr "此功能不適用於虛擬資金帳戶。"
 
 msgid "This feature is only available to CR clients. Please sign up to proceed."
-msgstr ""
+msgstr "此功能僅 CR 客戶可用。請註冊以繼續。"
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "此功能僅適用於支付代理帳戶。"
@@ -8940,7 +8952,7 @@ msgid "This symbol is not active. Please try another symbol."
 msgstr "這是個非活躍符號。請試用另一符號。"
 
 msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of %1. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
-msgstr "網站與推薦的ICO並不構成對所述任何管轄區內的代幣出價或邀約購入為非法出價或購入。代幣僅對%1的註冊客戶出價。美國證券交易委員會以及任何國家，省份或地區的證券委員會以及任何國家或管轄地區的任何其他監管機構均未批准或不批准代幣的建議出價。關於歐洲經濟區管轄地區內的代幣出價將根據歐盟指令2003/71/EC（及修訂版，包括2010/73/EU指令）的豁免範圍，特別是對合格投資者的豁免範圍內執行。代幣出價對其他一些管轄區的合格或專業投資者也將受限制。這些限制的細節將在報價訊息備忘錄中詳細說明。"
+msgstr "網站與建議的ICO並不構成對所述任何管轄區內的代幣發行或邀約購入為非法出價或銷售。代幣僅對%1的註冊客戶發行。美國證券交易委員會以及任何州、省份或地區的證券委員會以及任何國家或管轄地區的任何其他監管機構均未批准或不批准代幣的建議發行。關於歐洲經濟區管轄地區內的代幣發行將根據歐盟指令2003/71/EC（及修訂版，包括2010/73/EU指令）的豁免範圍，特別是對合格投資者的豁免範圍內執行。代幣發行對其他一些管轄區的合格或專業投資者也將受限制。這些限制的細節將在發行訊息備忘錄中詳細說明。"
 
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "本網站含有其他網站連結，且可能含有第三方網站的橫幅或圖示廣告。這些網站及廣告可能會向您的網頁瀏覽器寫入 cookies，因此不在我們所能控制的範圍內。我們並不對這些網站的隱私規範和內容負責。由於他們的隱私政策可能與我們並不相同，所以我們建議您了解他們的隱私政策。"
@@ -9036,13 +9048,13 @@ msgid "To open a trading account, our customers must confirm they fully understa
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 
 msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (Europe) Ltd, regulated by the Malta Gaming Authority."
-msgstr ""
+msgstr "要参与Binary.com首次代币發行, 您必須另外開立一個帳戶。繼續此操作的同時，您確認離開受馬爾他博彩管理局監管的Binary (歐洲) 有限公司帳戶 。"
 
 msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (IOM) Ltd, regulated by the Isle of Man Gambling Supervision Commission."
-msgstr ""
+msgstr "要参与Binary.com首次代币發行, 您必須另外開立一個帳戶。繼續此操作的同時，您確認離開受曼島賭博監督委員會監管的Binary (IOM) 有限公司帳戶 。"
 
 msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary Investments (Europe) Ltd, regulated by the Malta Financial Services Authority."
-msgstr ""
+msgstr "要参与Binary.com首次代币發行, 您必須另外開立一個帳戶。繼續此操作的同時，您確認離開受馬爾他金融服務管理局監管的Binary投資 (歐洲) 有限公司帳戶 。"
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "如要執行此操作，請<a href=\"%1\">升級到 %2 真實帳戶</a>。"
@@ -9099,10 +9111,10 @@ msgid "Total Bid Price"
 msgstr "總出價"
 
 msgid "Total Bids"
-msgstr ""
+msgstr "出價總金額"
 
 msgid "Total Bids ($USD)"
-msgstr ""
+msgstr "出價總金額 (美元)"
 
 msgid "Total Cost"
 msgstr "成本總計"
@@ -9408,7 +9420,7 @@ msgid "Ultra fast on-the-go trading"
 msgstr "超快旅途中交易服務"
 
 msgid "Unable to create ICO account while virtual account is selected. Please select your real money account and try again."
-msgstr ""
+msgstr "選擇虛擬帳戶時無法開立 ICO 帳戶。請選擇真實資金帳戶並重試。"
 
 msgid "Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button."
 msgstr "前往<strong>進階設定</strong>，點擊<strong>檢視進階設定</strong>按鈕。"
@@ -10316,6 +10328,9 @@ msgstr "是的, 我明白"
 msgid "Yes, but we'd prefer you to submit security vulnerabilities via our %1bug bounty%2 program."
 msgstr "是的。但我們寧願您通過我們的%1bug賞金%2項目提交安全漏洞。"
 
+msgid "Yes, cancel my bid"
+msgstr ""
+
 msgid "Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:"
 msgstr "是的。如果您需要自訂橫幅，請跟帳戶管理員聯繫，並提供以下資料:"
 
@@ -10675,6 +10690,9 @@ msgstr "在該時間後您將自動退出登入。"
 
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "我們將向您提供所有工具，將您的流量轉化為可觀的收入"
+
+msgid "You will be subject to a 2% cancellation fee."
+msgstr ""
 
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "23:59:59 GMT過後仍未平倉的頭寸須付掉期利率。"
@@ -12933,7 +12951,7 @@ msgid "Subscribe to ICO"
 msgstr "ICO 訂閱"
 
 msgid "ICO Histogram"
-msgstr ""
+msgstr "ICO 長條圖"
 
 msgid "Settings"
 msgstr "設定"
