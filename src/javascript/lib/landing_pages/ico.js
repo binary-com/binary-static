@@ -21,12 +21,12 @@ window.onload = function() {
             dataLayer.push({ bom_country_abbrev: clients_country || '' });
             dataLayer.push({ event: 'ico_success' });
             clearHash();
+            document.getElementById('subscribe_success').classList.remove('invisible');
             for (let i = 0; i < 2; i++) {
-                document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
                 document.getElementsByTagName('form')[i].classList.add('invisible');
             }
             let navbarHeight = checkWidth();
-            const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
+            const to = document.getElementById('ico_subscribe_section').offsetTop - navbarHeight;
             scrollTo(to);
         }
 
@@ -154,10 +154,6 @@ function signUpInit() {
         }
     }
 
-    function trimEmail(str) {
-        return str.replace(/\s/g, "");
-    }
-
     var validation_set = false; // To prevent validating before submit
 
     document.getElementById('frm_verify_email').addEventListener('submit', function (evt) {
@@ -192,6 +188,10 @@ function signUpInit() {
     if (gclid) {
         localStorage.setItem('gclid', gclid);
     }
+}
+
+function trimEmail(str) {
+    return str.replace(/\s/g, "");
 }
 
 function validateEmail(email) {

@@ -730,7 +730,7 @@
                     <p>[% l("for exclusive updates on the ICO.") %]</p>
                     <div class="form-container">
                         <!-- AWeber Web Form Generator 3.0.1 -->
-                        <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
+                        <form id="binary_ico_subscribe" method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
                             <div style="display: none;">
                                 <input type="hidden" name="meta_web_form_id" value="713141817" />
                                 <input type="hidden" name="meta_split_id" value="" />
@@ -762,7 +762,9 @@
                             document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';
                         </script>
                         <!-- /AWeber Web Form Generator 3.0.1 -->
-                        <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
+                        <div id="subscribe_success" class="gr-8 gr-12-m gr-centered invisible">
+                            <p class="notice-msg">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
+                      </div>
                     </div>
                 </div>
             </div>
