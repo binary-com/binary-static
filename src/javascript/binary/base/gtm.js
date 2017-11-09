@@ -91,7 +91,7 @@ const GTM = (() => {
                 pushDataLayer(data);
             });
         } else if (is_new_account){
-            BinarySocket.send({get_account_status:1}, {forced: true}).then((res) => {
+            BinarySocket.send({get_account_status: 1}, {forced: true}).then((res) => {
                 data.bom_date_joined            = data.bom_today;
                 data.bom_professional_requested = res.status.indexOf('professional_requested') !== -1;
                 pushDataLayer(data);
