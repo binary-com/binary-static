@@ -82,10 +82,15 @@ const Accounts = (() => {
                     account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
                 }
 
+                const check_account_type_prop = () => {
+                    if(!Client.get('is_ico_only')) return account_type_prop;
+                    return localize(`${account_type_prop}ICO`);
+                };
+                console.log(check_account_type_prop());
                 $('#existing_accounts').find('tbody')
                     .append($('<tr/>', { id: loginid })
                         .append($('<td/>', { text: loginid }))
-                        .append($('<td/>').html($('<span/>', account_type_prop)))
+                        .append($('<td/>').html($('<span/>', check_account_type_prop())))
                         .append($('<td/>', { text: getAvailableMarkets(loginid) }))
                         .append($('<td/>')
                             .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
