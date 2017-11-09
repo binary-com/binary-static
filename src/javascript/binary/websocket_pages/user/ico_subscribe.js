@@ -42,7 +42,7 @@ const ICOSubscribe = (() => {
             })
             .attr('src', image);
 
-        BinarySocket.wait('website_status', 'landing_company', 'get_settings').then(() => {
+        BinarySocket.wait('website_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             if (State.getResponse('website_status.ico_status') === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOcountDown();
