@@ -72,18 +72,20 @@ const professionalClient = (() => {
                 .on('submit', (e) => {
                     e.preventDefault();
                     if ($chk_professional.is(':checked')) {
-                        BinarySocket.send(populateReq()).then((response) => {
-                            if (response.error) {
-                                $error.text(response.error.message).removeClass('invisible');
-                            } else {
-                                BinarySocket.send({get_account_status: 1}).then(() => {
-                                    if(Client.get('is_ico_only')){
-                                        BinaryPjax.load(Url.urlFor('user/ico-subscribe'));
-                                    } else {
-                                        BinaryPjax.loadPreviousUrl();
-                                    }
-                                });
-                            }
+                        BinarySocket.wait('get_settings').then((res) => {
+                            BinarySocket.send(populateReq(res.get_settings)).then((response) => {
+                                if (response.error) {
+                                    $error.text(response.error.message).removeClass('invisible');
+                                } else {
+                                    BinarySocket.send({get_account_status: 1}).then(() => {
+                                        if(Client.get('is_ico_only')){
+                                            BinaryPjax.load(Url.urlFor('user/ico-subscribe'));
+                                        } else {
+                                            BinaryPjax.loadPreviousUrl();
+                                        }
+                                    });
+                                }
+                            });
                         });
                     } else {
                         $error.text(localize('This field is required.')).removeClass('invisible');
@@ -94,11 +96,19 @@ const professionalClient = (() => {
         }
     };
 
-    const populateReq = () => {
+    const populateReq = (get_settings) => {
         const req = {
             set_settings               : 1,
             request_professional_status: 1,
         };
+
+        if (get_settings.tax_identification_number) {
+            req.tax_identification_number = get_settings.tax_identification_number;
+        }
+        if (get_settings.tax_residence) {
+            req.tax_residence = get_settings.tax_residence;
+        }
+
         return req;
     };
 
