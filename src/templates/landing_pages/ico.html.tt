@@ -535,6 +535,7 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="coinist"                 timestamp="Nov 08, 2017"    headlines="Binary.com’s Explosive Growth & Their Upcoming ICO"                     url="https://www.coinist.io/binary-com-explosive-growth-ico/" },
                 { logo="chipin"                 timestamp="Nov 08, 2017"    headlines="Introducing the Binary ICO – Redefining the Future of IPOs"             url="https://www.chipin.com/binary-ico-redefining-future-ipos/" },
                 { logo="cryptogo"               timestamp="Nov 07, 2017"    headlines="ICO Analyse - Binary.com"                                               url="https://cryptogo.de/binary-analyse/" },
                 { logo="hype-codes"             timestamp="Nov 03, 2017"    headlines="The future of IPOs is blockchain" url="https://hype.codes/future-ipos-blockchain" },
