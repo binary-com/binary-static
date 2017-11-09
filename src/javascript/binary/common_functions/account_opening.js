@@ -37,9 +37,9 @@ const AccountOpening = (() => {
     };
 
     const residenceSupportsProfessional = (residence) => {
-      /* Austria, Italy, Belgium, Latvia, Bulgaria,	Lithuania, Croatia, Luxembourg, Cyprus, Malta, Czech Republic,	Netherlands, Denmark, Poland, Estonia, Portugal, Finland, Romania, France, Slovakia, Germany, Slovenia, Greece, Spain, Hungary, Sweden, Ireland, United Kingdom, Australia, New Zealand, Singapore, Canada, Switzerland */
-      const countries = [ "at", "it",  "be",  "lv",  "bg",  "lt",  "hr",  "lu",  "cy",  "mt",  "cf",  "nl",  "dk",  "pl",  "ee",  "pt",  "fi",  "ro",  "fr",  "sk",  "de",  "si",  "gr",  "es",  "hu",  "se",  "ie",  "gb",  "au",  "nz",  "sg",  "ca",  "ch" ];
-      return countries.indexOf(residence.toLowerCase()) !== -1;
+        /* Austria, Italy, Belgium, Latvia, Bulgaria,	Lithuania, Croatia, Luxembourg, Cyprus, Malta, Czech Republic,	Netherlands, Denmark, Poland, Estonia, Portugal, Finland, Romania, France, Slovakia, Germany, Slovenia, Greece, Spain, Hungary, Sweden, Ireland, United Kingdom, Australia, New Zealand, Singapore, Canada, Switzerland */
+        const countries = ['at', 'it', 'be', 'lv', 'bg', 'lt', 'hr', 'lu', 'cy', 'mt', 'cf', 'nl', 'dk', 'pl', 'ee', 'pt', 'fi', 'ro', 'fr', 'sk', 'de', 'si', 'gr', 'es', 'hu', 'se', 'ie', 'gb', 'au', 'nz', 'sg', 'ca', 'ch'];
+        return countries.indexOf(residence.toLowerCase()) !== -1;
 
     };
 
@@ -48,7 +48,7 @@ const AccountOpening = (() => {
         BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         generateBirthDate();
         if (residenceSupportsProfessional(Client.get('residence'))) {
-          professionalClient.init(is_financial, false, is_ico_only);
+            professionalClient.init(is_financial, false, is_ico_only);
         }
     };
 
