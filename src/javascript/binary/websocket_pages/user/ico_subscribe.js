@@ -47,7 +47,6 @@ const ICOSubscribe = (() => {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOcountDown();
                 ICOPortfolio.onLoad();
-                $('#ico_subscribe').setVisibility(1);
                 showContent();
             } else {
                 init();
