@@ -71,9 +71,7 @@ const GTM = (() => {
             bom_today   : Math.floor(Date.now() / 1000),
             event       : is_new_account ? 'new_account' : 'log_in',
         };
-        if (is_new_account) {
-            data.bom_date_joined = data.bom_today;
-        }
+
         if (!Client.get('is_virtual')) {
             data.bom_age       = parseInt((moment().unix() - get_settings.date_of_birth) / 31557600);
             data.bom_firstname = get_settings.first_name;
@@ -90,6 +88,12 @@ const GTM = (() => {
                         data[`mt5_${acc_type}_id`] = obj.login;
                     }
                 });
+                pushDataLayer(data);
+            });
+        } else if (is_new_account){
+            BinarySocket.send({get_account_status:1}, {forced: true}).then((res) => {
+                data.bom_date_joined            = data.bom_today;
+                data.bom_professional_requested = res.status.indexOf('professional_requested') !== -1;
                 pushDataLayer(data);
             });
         } else {
