@@ -22,7 +22,7 @@ window.onload = function() {
 
     var country_names = [
         { code: 'ca', name: 'Canada' },
-        { code: 'uk', name: 'the United Kingdom' },
+        { code: 'gb', name: 'the United Kingdom' },
         { code: 'eu', name: 'the European Economic Area' },
         { code: 'hk', name: 'Hong Kong' },
         { code: 'jp', name: 'Japan' },
