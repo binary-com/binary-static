@@ -41,14 +41,12 @@ const Authenticate = (() => {
             active     : false,
         });
         // Setup Date picker
-        const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
         const file_checks = {};
-        tomorrow.setDate(tomorrow.getDate() + 1);
         $('.date-picker').datepicker({
             dateFormat : 'yy-mm-dd',
             changeMonth: true,
             changeYear : true,
-            minDate    : tomorrow,
+            minDate    : '+6m',
         });
 
         $('.file-picker').on('change', onFileSelected);

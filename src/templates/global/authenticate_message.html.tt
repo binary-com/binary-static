@@ -97,7 +97,7 @@
         l('Latest bank statement or any government-issued letter which contains your name and address')]
     instructions=[
         l('Must be a clear, colour photo or scanned image'),
-        l('Issued under your own name'), l('Dated within the last three months'), 
+        l('Issued under your own name'), l('Dated within the last six months'),
         l('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'), 
         l('Maximum upload size for each file is 3MB')
     ]
