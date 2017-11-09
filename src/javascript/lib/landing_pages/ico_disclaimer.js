@@ -49,7 +49,7 @@ window.onload = function() {
                 val = 'eu';
             }
 
-            if (/^(ca|jp|sg|hk|uk|ch|eu)$/.test(val)) {
+            if (/^(ca|jp|sg|hk|gb|ch|eu)$/.test(val)) {
                 showSecondNotice(val);
             } else {
                 document.getElementById('access_denied_msg').classList.remove('invisible');
