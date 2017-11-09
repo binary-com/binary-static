@@ -438,8 +438,8 @@ function setupCrowdin() {
 }
 
 function getDocumentUrl(lang = 'en') {
-    if (lang === 'ru') {
-        return 'https://ico_documents.binary.com/howto_ico_ru.pdf';
+    if (/^(ru)$/i.test(lang)) {
+        return `https://ico_documents.binary.com/howto_ico_${lang}.pdf`;
     }
-    return `https://ico_documents.binary.com/howto_ico.pdf`;
+    return 'https://ico_documents.binary.com/howto_ico.pdf';
 }
