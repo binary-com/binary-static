@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <p class="gr-12">
-                        <a class="button" href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">
+                        <a class="button" id="howto-btn" href="javascript:;">
                             <span>[% l('How to participate in the [_1] ICO', broker_name) %]</span>
                         </a>
                     </p>
