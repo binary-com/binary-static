@@ -154,6 +154,10 @@ function signUpInit() {
         }
     }
 
+    function trimEmail(str) {
+        return str.replace(/\s/g, "");
+    }
+
     var validation_set = false; // To prevent validating before submit
 
     document.getElementById('frm_verify_email').addEventListener('submit', function (evt) {
@@ -188,10 +192,6 @@ function signUpInit() {
     if (gclid) {
         localStorage.setItem('gclid', gclid);
     }
-}
-
-function trimEmail(str) {
-    return str.replace(/\s/g, "");
 }
 
 function validateEmail(email) {
