@@ -94,7 +94,8 @@ const ICOPortfolio = (() => {
             $('#portfolio-no-contract').show();
             $('#portfolio-table').setVisibility(0);
         } else {
-            $('a[action="cancel"]:not(.button-disabled)').on('click', function () {
+            $('a[action="cancel"]:not(.button-disabled)').on('click', function (e) {
+                e.preventDefault();
                 const contract_id = $(this).attr('contract_id');
                 cancelBid(contract_id);
             });
