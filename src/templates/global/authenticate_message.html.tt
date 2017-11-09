@@ -17,6 +17,9 @@
                                 <li>[% instruction %]</li>
                             [% END %]
                         </ul>
+                        <p>
+                            <a href="https://marketing.binary.com/authentication/2017_Authentication_Process.pdf" target="_blank">[% l('View sample') %]</a>
+                        </p>
                     </div>
                     <div class="gr-5 gr-12-m">
                         <p class="font-s">[% l('Submit one of the documents below') %]:</p>            
@@ -78,7 +81,7 @@
     allowed_documents=[l('Passport'), l('Driving licence'), 
         l('National ID card or any government issued document which contains a photo, your name, and date of birth')]
     instructions=[
-        l('Must be a clear, colour photo or scanned image'), l('Still valid'), 
+        l('Must be a clear, colour photo or scanned image'), l('Minimum of six months validity'), 
         l('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'), 
         l('Maximum upload size for each file is 3MB')
     ]
@@ -93,7 +96,7 @@
 [% INCLUDE global/separator_line.html.tt invisible=1 class="gr-padding-10" %]
 
 [% INCLUDE file_selector heading=l("2. Proof of address")
-    allowed_documents=[l('Utility bills (gas, electricity, and phone)'), 
+    allowed_documents=[l('Utility bills (electricity, water, gas, broadband and landline)'), 
         l('Latest bank statement or any government-issued letter which contains your name and address')]
     instructions=[
         l('Must be a clear, colour photo or scanned image'),
