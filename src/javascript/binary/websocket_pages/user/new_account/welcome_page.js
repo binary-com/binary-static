@@ -9,11 +9,23 @@ const WelcomePage = (() => {
     const onLoad = () => {
 
         BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
+            if (Client.hasAccountType('real')) {
+                Url.defaultRedirectUrl();
+            }
+
             const landing_company   = State.getResponse('landing_company');
+            const account_type      = Client.getAccountType();
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
+            const crypto_icon       = document.getElementById('crypto_icons');
             const upgrade_btn       = document.getElementById('upgrade_btn');
             const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
             const show_welcome_msg  = upgrade_info.can_upgrade;
+
+            if(/^virtual/.test(account_type) || /^real/.test(account_type)) {
+                if(crypto_icon) {
+                    crypto_icon.setVisibility(1);
+                }
+            }
 
             const setButtonLink = (url, msg) => {
                 if(upgrade_btn) {
