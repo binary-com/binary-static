@@ -25,7 +25,7 @@ const LimitsInit = (() => {
             let txt_withdraw_lim           = 'Your withdrawal limit is [_1] [_2] (or equivalent in other currency).';
             let txt_withdraw_amt           = 'You have already withdrawn the equivalent of [_1] [_2].';
             let txt_current_max_withdrawal = 'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).';
-            let currency                   = 'EUR';
+            const currency                 = Client.get('currency') || Client.currentLandingCompany().legal_default_currency;
             const days_limit               = formatMoney(currency, limits.num_of_days_limit, 1);
             // no need for formatMoney since it is already string like "1,000"
             const withdrawn                = limits.withdrawal_since_inception_monetary;
@@ -43,7 +43,6 @@ const LimitsInit = (() => {
                     txt_withdraw_lim           = 'Your withdrawal limit is [_1] [_2].';
                     txt_withdraw_amt           = 'You have already withdrawn [_1] [_2].';
                     txt_current_max_withdrawal = 'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].';
-                    currency                   = Client.get('currency') || Client.currentLandingCompany().legal_default_currency;
                 }
                 elementInnerHtml(el_withdraw_limit, localize(txt_withdraw_lim, [currency, days_limit]));
                 elementTextContent(el_withdrawn, localize(txt_withdraw_amt, [currency, withdrawn]));
