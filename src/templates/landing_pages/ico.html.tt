@@ -721,7 +721,7 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Where can I view the source code of the tokens?") %]</h4>
-                            <p>[% l("Binary.com intends to deploy the Mini Me token. Please view our blog post detailing our reasons for choosing this token.") %]</p>
+                            <p>[% l("Binary.com intends to deploy the <a href='[_1]' target='_blank'>Mini Me</a> token. Please view our <a href='[_2]' target='_blank'>blog post</a> detailing our reasons for choosing this token.", 'https://github.com/Giveth/minime', 'https://tech.binary.com/an-erc20-securities-token/') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
