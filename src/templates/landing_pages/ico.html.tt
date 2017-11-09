@@ -682,7 +682,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Who can purchase the tokens?") %]</h4>
-                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account. Please visit <a href='[_1]' target='_blank'>www.binary.com</a> to open an account.", broker_name, 'www.binary.com') %]</p>
+                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account. Please visit [_2]www.binary.com[_3] to open an account.", broker_name, '<a href="' _ request.url_for('home') _ '">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
