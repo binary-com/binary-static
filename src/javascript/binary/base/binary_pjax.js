@@ -131,9 +131,12 @@ const BinaryPjax = (() => {
     };
 
     const handlePopstate = (e) => {
-        const url = e.state && e.state.url;
+        const url = e.state && e.state.url ? e.state.url         // eslint-disable-line no-nested-ternary
+            : !window.location.hash ? window.location.href : '';
         if (url) {
             processUrl(url, true);
+        } else {
+            window.history.replaceState({}, document.title, window.location.pathname);
         }
         return false;
     };

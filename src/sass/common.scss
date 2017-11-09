@@ -365,7 +365,7 @@ button .barspinner.white {
     .ico-banner {
         cursor: pointer;
         border: 1px solid $COLOR_LIGHT_GRAY;
-        background: url('../images/ico/banner/white_background.png') 100% no-repeat / cover;
+        background: no-repeat 100% / cover url('../images/ico/banner/white_background.png');
 
         .ico-box {
             position: relative;
@@ -388,7 +388,7 @@ button .barspinner.white {
                 }
             }
             .left-bg {
-                background: url('../images/ico/banner/image_left_area.png') 100% no-repeat / cover;
+                background: no-repeat 100% / cover url('../images/ico/banner/image_left_area.png');
             }
             p {
                 text-transform: uppercase;
@@ -396,11 +396,11 @@ button .barspinner.white {
                 font-weight: 400;
                 color: $primaryBrandColor;
             }
-            .close-btn {
-                content: url('../images/ico/banner/close_icon.svg');
-                width: 15px;
+            .close-btn:after {
+                content: '';
+                background: no-repeat 100% / cover url('../images/ico/banner/close_icon.svg');
                 cursor: pointer;
-                padding: 5px;
+                padding: 10px;
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -441,4 +441,21 @@ ul.bullet.gr-row > li {
 
 .pull-requests-content {
     margin-bottom: 0 !important;
+}
+
+.toggle-arrow {
+    &:after {
+        content: '';
+        display: inline-block;
+        margin-left: 7px;
+        border-left: 4px dashed;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+    }
+    &.open:after {
+        border-top: 4px dashed;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        border-bottom: 0;
+    }
 }

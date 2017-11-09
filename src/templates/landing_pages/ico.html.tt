@@ -33,7 +33,7 @@
                 <a class="navbar-brand logo" href="[% request.url_for('home') %]"></a>
             </div>
             <div class="navbar-collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav invisible">
                     <li class="invisible">
                         <a href="#page-top"></a>
                     </li>
@@ -51,6 +51,29 @@
                     </li>
                     <li>
                         <a class="faq-btn" href="#faq">[% l("FAQ") %]</a>
+                    </li>
+                    <li id="language">
+                        <ul class="language-dropdown invisible">
+                            <a id="lang" class="selected" href="javascript:;">
+                                <span class="world"></span>
+                                <span id="selected-lang"></span>
+                                <span class="nav-caret"></span>
+                            </a>
+                            <li class="en">English</li>
+                            <li class="de">Deutsch</li>
+                            <li class="es">Español</li>
+                            <li class="fr">Français</li>
+                            <li class="id">Indonesia</li>
+                            <li class="it">Italiano</li>
+                            <!--li class="ja">日本語</li-->
+                            <li class="pl">Polish</li>
+                            <li class="pt">Português</li>
+                            <li class="ru">Русский</li>
+                            <li class="th">Thai</li>
+                            <li class="vi">Tiếng Việt</li>
+                            <li class="zh_cn">简体中文</li>
+                            <li class="zh_tw">繁體中文</li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -109,49 +132,42 @@
                                     [% END %]
                                 </div>
                                 <div class="status-toggle status-before-start">
-                                    <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO.") %]</p>
-                                    <div class="form-container">
-                                        <!-- AWeber Web Form Generator 3.0.1 -->
-                                        <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
-                                            <div style="display: none;">
-                                                <input type="hidden" name="meta_web_form_id" value="713141817" />
-                                                <input type="hidden" name="meta_split_id" value="" />
-                                                <input type="hidden" name="listname" value="awlist4685103" />
-                                                <input type="hidden" name="redirect" value="" id="redirect_600c7e6a647457c51ede13e8b4d377e6" />
-                                                <input type="hidden" name="meta_adtracking" value="Binary_ICO" />
-                                                <input type="hidden" name="meta_message" value="1001" />
-                                                <input type="hidden" name="meta_required" value="email" />
-                                                <input type="hidden" name="meta_tooltip" value="" />
-                                                <input type="hidden" name="custom language" value="" class="frm-language" />
-                                            </div>
-                                            <div id="af-form-713141817" class="af-form">
-                                                <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
-                                                    <div class="af-element gr-row">
-                                                        <div class="gr-8 gr-12-m">
-                                                            <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
-                                                        </div>
-                                                        <div class="gr-4 gr-12-m">
-                                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div style="display: none;">
-                                                    <img src="https://forms.aweber.com/form/displays.htm?id=7IzMjCyMHIzs" alt="" />
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <script type="text/javascript">
-                                            document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';
-                                        </script>
-                                        <!-- /AWeber Web Form Generator 3.0.1 -->
-                                        <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
-                                    </div>
                                 </div>
                                 <div class="status-toggle status-started">
                                     <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Join the token sale") %]</span></a>
                                 </div>
                                 <div class="status-toggle status-ended">
                                     <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Take me there") %]</span></a>
+                                </div>
+                                <div id="sign-up-section">
+                                    <div class="signup-desc">
+                                        <p>[% l("Investors need to open a [_1] real money account to take part in the ICO.", broker_name) %]</p>
+                                        <p>[% l("Sign up now for free.") %]</p>
+                                    </div>
+                                    <div class="signup-container gr-9 gr-12-p gr-12-m gr-centered">
+                                        <form id="frm_verify_email">
+                                            <div class="gr-row gr-row-align-center">
+                                                <div class="signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
+                                                    <div class="gr-row gr-padding-10" id="signup">
+                                                        <div class="gr-7 gr-10-m gr-centered">
+                                                            <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
+                                                            <div id="error_validate_email" class="invisible error-msg">[% l('Invalid email address') %]</div>
+                                                            <div id="error_no_email" class="invisible error-msg">[% l('This field is required.') %]</div>
+                                                        </div>
+                                                        <div class="gr-5 gr-8-m gr-centered">
+                                                            <button class="primary-bg-color" id="btn_verify_email" type="submit">[% l("Create Free Account") %]</button>
+                                                        </div>
+                                                        <span class="gr-12 gr-padding-10 error-msg hint color-white center-text invisible" id="signup_error"></span>
+                                                    </div>
+                                                    <div class="invisible" id="success">
+                                                        <div class="gr-padding-10 center-text hint gr-12 align-self-center">
+                                                            <p>[% l('Thank you for signing up! Please check your email to complete the registration process.') %]</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -201,7 +217,7 @@
                         </div>
                     </div>
                     <p class="gr-12">
-                        <a class="button" href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">
+                        <a class="button" id="howto-btn" href="javascript:;">
                             <span>[% l('How to participate in the [_1] ICO', broker_name) %]</span>
                         </a>
                     </p>
@@ -301,7 +317,7 @@
                             <div class="gr-row">
                                 <div class="gr-6 gr-12-m">
                                     <h4>[% l("Sharp prices") %]</h4>
-                                    <p>[% l("Our cutting-edge pricing technology gives you the same rates of return as the interbank market.") %]</p>
+                                    <p>[% l("Our cutting-edge pricing technology benchmarks our prices against interbank market rates wherever possible.") %]</p>
                                 </div>
                                 <div class="gr-6 gr-12-m">
                                     <h4>[% l("Patented technology") %]</h4>
@@ -449,7 +465,7 @@
                         <h4 class="secondary-color">[% l("Low minimum collateral") %]</h4>
                         <p>[% l("Deposit as little as USD 5 and start trading from USD 5 per contract.") %]</p>
                         <h4 class="secondary-color">[% l("Multiple trading opportunities") %]</h4>
-                        <p>[% l("Trade short-term or long-term contracts, from ticks to days.") %]</p>
+                        <p>[% l("Trade short-term or long-term contracts, from 10 seconds to 365 days.") %]</p>
                     </div>
                 </div>
             </div>
@@ -519,6 +535,10 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="coinist"                 timestamp="Nov 08, 2017"    headlines="Binary.com’s Explosive Growth & Their Upcoming ICO"                     url="https://www.coinist.io/binary-com-explosive-growth-ico/" },
+                { logo="chipin"                 timestamp="Nov 08, 2017"    headlines="Introducing the Binary ICO – Redefining the Future of IPOs"             url="https://www.chipin.com/binary-ico-redefining-future-ipos/" },
+                { logo="cryptogo"               timestamp="Nov 07, 2017"    headlines="ICO Analyse - Binary.com"                                               url="https://cryptogo.de/binary-analyse/" },
+                { logo="hype-codes"             timestamp="Nov 03, 2017"    headlines="The future of IPOs is blockchain" url="https://hype.codes/future-ipos-blockchain" },
                 { logo="crypto-martez"          timestamp="Oct 27, 2017"    headlines="PR: Binary.com Announces Initial Coin Offering (ICO)"                        url="https://www.cryptomartez.com/2017/10/pr-binary-com-announces-ico.html" },
                 { logo="bittox"                 timestamp="Oct 25, 2017"    headlines="BINARY.COM ANNOUNCES INITIAL COIN OFFERING (ICO)"                        url="https://bittox.com/2017/10/25/binary-com-announces-initial-coin-offering-ico/" },
                 { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="BINARY.COM offers securities-backed tokens in ICO"                       url="http://www.profitf.com/news/binary-com-offers-securities-backed-tokens-initial-coin-offering-ico/" },
@@ -565,8 +585,11 @@
                         <a href="https://www.reddit.com/r/binarydotcom/" target="_blank" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
                         </a>
-                        <a href="https://www.facebook.com/mybinarycoin" target="_blank">
+                        <a href="https://www.facebook.com/mybinarycoin" target="_blank" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/facebook.svg") %]" />
+                        </a>
+                        <a href="https://bitcointalk.org/index.php?topic=2368998.0" target="_blank">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/bitcoin_talk.svg") %]" />
                         </a>
                     </div>
                 </div>
@@ -684,7 +707,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I learn more about ICOs and cryptocurrencies?") %]</h4>
-                            <p>[% l("To learn more about Bitcoin, we recommend that you open a Bitcoin wallet with [_1][_2]\’s simple bitcoin wallet[_3], and purchase bitcoins using a local exchange in your country.", '<a href="https://bitcoin-wallet.binary.com/" target="_blank">', broker_name, '</a>') %]</p>
+                            <p>[% l("Head over to our <a href=[_1] target='_blank'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business.", 'https://www.youtube.com/user/BinaryTradingVideos') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -721,10 +744,10 @@
                                 <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
                                     <div class="af-element gr-row">
                                         <div class="gr-8 gr-12-m">
-                                            <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+                                            <input class="text" placeholder="[% l('Enter your email') %]" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
                                         </div>
                                         <div class="gr-4 gr-12-m">
-                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit"/>
+                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="[% l('Submit') %]"/>
                                         </div>
                                     </div>
                                 </div>
@@ -747,6 +770,9 @@
                 <p>[% l("This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of [_1]. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum.", broker_name) %]</p>
                 <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
             </div>
+        </div>
+        <div class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
+            <span>Binary Group Ltd., Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
         </div>
         <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js"></script>

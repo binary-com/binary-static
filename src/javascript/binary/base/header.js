@@ -58,7 +58,11 @@ const Header = (() => {
     };
 
     const logoOnClick = () => {
-        BinaryPjax.load(Client.isLoggedIn() ? Url.defaultRedirectUrl() : Url.urlFor(''));
+        const is_ico = Client.get('is_ico_only');
+        const url    = Client.isLoggedIn() && !is_ico ? Url.defaultRedirectUrl() // eslint-disable-line no-nested-ternary
+            : Client.isLoggedIn() && is_ico ? Url.urlFor('user/ico-subscribe')
+            : Url.urlFor('');
+        BinaryPjax.load(url);
     };
 
     const loginOnClick = (e) => {
@@ -109,10 +113,12 @@ const Header = (() => {
     };
 
     const metatraderMenuItemVisibility = (landing_company_response) => {
-        if (MetaTrader.isEligible(landing_company_response)) {
-            const metatrader = document.getElementById('user_menu_metatrader');
-            if (metatrader) metatrader.setVisibility(1);
-        }
+        BinarySocket.wait('get_account_status').then(() => {
+            if (MetaTrader.isEligible(landing_company_response)) {
+                const metatrader = document.getElementById('user_menu_metatrader');
+                if (metatrader) metatrader.setVisibility(1);
+            }
+        });
     };
 
     const switchLoginid = (loginid) => {
@@ -132,7 +138,7 @@ const Header = (() => {
     };
 
     const upgradeMessageVisibility = () => {
-        BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
+        BinarySocket.wait('authorize', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             const landing_company = State.getResponse('landing_company');
             const upgrade_msg     = document.getElementsByClassName('upgrademessage');
 
@@ -150,7 +156,9 @@ const Header = (() => {
             };
 
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
-            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
+            const status            = State.getResponse('get_account_status.status');
+            const is_ico_account    = /ico_only/.test(status);
+            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status, is_ico_account);
             const show_upgrade_msg  = upgrade_info.can_upgrade;
             const virtual_text      = document.getElementById('virtual-text');
 
@@ -202,8 +210,9 @@ const Header = (() => {
 
     const showHideNewAccount = (can_upgrade) => {
         const landing_company = State.getResponse('landing_company');
+        const status          = State.getResponse('get_account_status.status');
         // only allow opening of multi account to costarica clients with remaining currency
-        if (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length)) {
+        if (!/ico_only/.test(status) && (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length))) {
             changeAccountsText(1, 'Create Account');
         } else {
             changeAccountsText(0, 'Accounts List');

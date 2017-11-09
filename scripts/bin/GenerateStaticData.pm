@@ -215,6 +215,7 @@ sub _texts {
         push @texts, localize('Invalid email address');
         push @texts, localize('Thank you for signing up! Please check your email to complete the registration process.');
         #strings for real account opening page
+        push @texts, localize('ICO Account Opening');
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
         push @texts, localize('Minimum of [_1] characters required.');
@@ -359,6 +360,7 @@ sub _texts {
         #strings for paymentagent
         push @texts, localize('Amount');
         push @texts, localize('Deposit');
+        push @texts, localize('Withdrawal');
         push @texts, localize('Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.');
         #strings for iphistory
         push @texts, localize('Date and Time');
@@ -530,6 +532,12 @@ sub _texts {
         push @texts, localize('Claim Tokens');
         push @texts, localize('Ended');
         push @texts, localize('The ICO is currently unavailable.');
+        push @texts, localize('Please select a value for account_opening_reason.');
+
+        # binaryico histogram chart
+        push @texts, localize('Final Price');
+        push @texts, localize('Total Bids');
+        push @texts, localize('Price Band');
 
         # strings for accounts page
         push @texts, localize('Create');

@@ -97,6 +97,7 @@ sub all_pages {
         ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/video-facility',              'user/video_facility',                  'default',    'Video Room Facility'],
         ['user/ico-subscribe',               'user/ico_subscribe',                   'default',    'Subscribe to ICO',        'ja'],
+        ['user/ico-info',                    'user/ico_info',                        'default',    'ICO Histogram',      'ja'],
         ['user/lost_passwordws',             'user/lost_password',                   'default',    'Password Reset'],
         ['user/metatrader',                  'user/metatrader',                      'full_width', 'MetaTrader account management'],
         ['user/portfoliows',                 'user/portfolio',                       'default',    'Portfolio'],
@@ -117,6 +118,7 @@ sub all_pages {
         ['user/security/self_exclusionws',   'user/security/self_exclusion',         'default',    'Self Exclusion'],
         ['user/settings/assessmentws',       'user/settings/financial_assessment',   'default',    'Financial Assessment',    'ja'],
         ['user/settings/detailsws',          'user/settings/personal_details',       'default',    'Personal Details'],
+        ['user/settings/professional',       'user/settings/professional',           'default',    'Professional Client'],
         ['user/set-currency',                'user/set_currency',                    'default',    'Set Currency',            'ja'],
         ['user/telegram-bot',                'user/telegram_bot',                    'default',    'Telegram Bot'],
 

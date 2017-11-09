@@ -2,9 +2,11 @@ const Portfolio        = require('./account/portfolio').Portfolio;
 const ViewPopup        = require('./view_popup/view_popup');
 const BinarySocket     = require('../socket');
 const localize         = require('../../base/localize').localize;
+const State            = require('../../base/storage').State;
 const showLoadingImage = require('../../base/utility').showLoadingImage;
 const getPropertyValue = require('../../base/utility').getPropertyValue;
 const formatMoney      = require('../../common_functions/currency').formatMoney;
+const Validation       = require('../../common_functions/form_validation');
 
 const ICOPortfolio = (() => {
     let values,
@@ -41,17 +43,24 @@ const ICOPortfolio = (() => {
 
         const new_class    = is_first ? '' : 'new';
         const status       = status_text;
-        const button_class = /cancel|end/i.test(status) ? 'button-secondary' : '';
+        let button_class = /cancel|end/i.test(status) ? 'button-secondary' : 'button';
         const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
         const shortcode    = data.shortcode.split('_');
         const $div         = $('<div/>');
+        if (+State.getResponse('website_status.ico_info.final_price') === 0) {
+            button_class = 'button-disabled';
+        }
+
+        const $button = $('<a/>', { class: `${button_class} nowrap`, contract_id: data.contract_id, action});
+        $button.append($(`<span>${localize(status)}</span>`));
+
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref', text: data.transaction_id }))
             .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: shortcode[2] })))
             .append($('<td/>', { class: 'bid' }).append($('<strong/>', { html: formatMoney(data.currency, shortcode[1]) })))
             .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price) })))
             .append($('<td/>', { class: 'details', text: long_code }))
-            .append($('<td/>', { class: 'button' }).append($('<button/>', { class: `button ${button_class} nowrap`, contract_id: data.contract_id, action, text: localize(status) }))))
+            .append($('<td/>', { class: 'button' }).append($button)))
             .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));
         $('#portfolio-body').prepend($div.html());
     };
@@ -85,18 +94,47 @@ const ICOPortfolio = (() => {
             $('#portfolio-no-contract').show();
             $('#portfolio-table').setVisibility(0);
         } else {
-            $('button[action="cancel"]').on('click', function () {
-                BinarySocket.send({
-                    sell : $(this).attr('contract_id'),
-                    price: 0,
-                });
+            $('a[action="cancel"]:not(.button-disabled)').on('click', function (e) {
+                e.preventDefault();
+                const contract_id = $(this).attr('contract_id');
+                cancelBid(contract_id);
             });
+
             $('#portfolio-table').setVisibility(1);
         }
         // ready to show portfolio table
         $('#portfolio-loading').hide();
         $('#portfolio-content').setVisibility(1);
         is_first_response = false;
+    };
+
+    const cancelBid = (contract_id) => {
+        const lightbox = $('#cancel_bid_confirmation');
+        document.body.appendChild(lightbox[0]);
+        lightbox.setVisibility(1);
+        lightbox.find('.error-msg').addClass('invisible');
+        lightbox.find('#chk_confirm').prop('checked', false);
+
+        const confirm_form_id = '#frm_confirm';
+        if (!lightbox.find(confirm_form_id).hasClass('validation_initialized')) {
+            Validation.init(confirm_form_id, [
+                { selector: '#chk_confirm', validations: [['req', { hide_asterisk: true }]] },
+            ]);
+            lightbox.find(confirm_form_id).addClass('validation_initialized');
+        }
+        lightbox.find('#cancel').off('click').on('click', () => lightbox.setVisibility(0));
+        lightbox.find(confirm_form_id)
+            .off('submit')
+            .on('submit', (e) => {
+                e.preventDefault();
+                if (Validation.validate(confirm_form_id)) {
+                    lightbox.setVisibility(0);
+                    BinarySocket.send({
+                        sell : contract_id,
+                        price: 0,
+                    });
+                }
+            });
     };
 
     const transactionResponseHandler = (response) => {

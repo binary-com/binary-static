@@ -1,12 +1,13 @@
 window.onload = function() {
+    const clients_country = getClientCountry();
+
     toggleMobileMenu();
     hashRouter();
     collapseNavbar();
+    signUpInit();
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
-
-    const clients_country = getClientCountry();
 
     function switchView(path) {
         document.getElementById('faq').classList[path === 'faq' ? 'remove' : 'add']('invisible');
@@ -49,8 +50,10 @@ window.onload = function() {
         el_langs[i].value = language;
     }
 
-    // Scroll to section
+    const el_language_dropdown = document.getElementsByClassName('language-dropdown')[0];
+    setLanguage(el_language_dropdown, getLanguage());
     document.addEventListener('click', function(e) {
+        // Scroll to section
         if (e.target.classList.contains('page-scroll')) {
             e.preventDefault();
             switchView('home');
@@ -61,6 +64,28 @@ window.onload = function() {
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
             scrollTo(to);
         }
+
+        // Show / hide language dropdown
+        if (e.target.parentNode.id === 'lang') {
+            e.preventDefault();
+            e.target.parentNode.parentNode.classList.toggle('show');
+        } else if (/show/.test(el_language_dropdown.classList)) {
+            el_language_dropdown.classList.remove('show');
+        }
+    });
+
+    el_language_dropdown.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (e.target.nodeName !== 'LI') return;
+        const lang = e.target.getAttribute('class');
+        if (lang === getLanguage()) return;
+        el_language_dropdown.classList.add('invisible'); // hide on change
+        document.location = urlForLanguage(lang);
+    });
+
+    document.getElementById('howto-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open(getDocumentUrl(getLanguage().toLowerCase()), '_blank');
     });
 
     window.onresize = checkWidth;
@@ -93,6 +118,8 @@ window.onload = function() {
             document.getElementsByClassName('slider-container')[0].classList.remove('invisible');
         }
     });
+
+    setupCrowdin();
 };
 
 function clearHash() {
@@ -100,6 +127,92 @@ function clearHash() {
         window.history.pushState('', '/', window.location.pathname);
     } else {
         window.location.hash = '';
+    }
+}
+
+function signUpInit() {
+    var el_email   = document.getElementById('email');
+    var el_signup  = document.getElementById('signup');
+    var el_success = document.getElementById('success');
+
+    var ws = wsConnect();
+
+    function sendVerifyEmail() {
+        var trimmed_email = trimEmail(el_email.value);
+        wsSend(ws, {
+            verify_email: trimmed_email,
+            type        : 'account_opening'
+        });
+    }
+
+    function verifySubmit(msg) {
+        var response = JSON.parse(msg.data);
+        setValidationStyle(el_email, response.error);
+        if (!response.error) {
+            el_signup.classList.add('invisible');
+            el_success.classList.remove('invisible');
+        }
+    }
+
+    function trimEmail(str) {
+        return str.replace(/\s/g, "");
+    }
+
+    var validation_set = false; // To prevent validating before submit
+
+    document.getElementById('frm_verify_email').addEventListener('submit', function (evt) {
+        evt.preventDefault();
+
+        if (!validateEmail(trimEmail(el_email.value))) {
+            if (!validation_set) {
+                ['input', 'change'].forEach(function (evt) {
+                    el_email.addEventListener(evt, function () {
+                        setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
+                    });
+                });
+                setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
+                validation_set = true;
+            }
+            return false;
+        }
+
+        if (ws.readyState === 1) {
+            sendVerifyEmail();
+        } else {
+            ws = wsConnect();
+            ws.onopen = sendVerifyEmail;
+            ws.onmessage = verifySubmit;
+        }
+    });
+
+    ws.onmessage = verifySubmit;
+
+    // Store gclid
+    var gclid = getParamValue(document.referrer, 'gclid');
+    if (gclid) {
+        localStorage.setItem('gclid', gclid);
+    }
+}
+
+function validateEmail(email) {
+    return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(email);
+}
+
+function setValidationStyle(element, has_error) {
+    var error_class = 'error-field';
+    var invisible_class = 'invisible';
+    element.classList[has_error ? 'add' : 'remove'](error_class);
+    if (element.value.length < 1) {
+        document.getElementById('error_no_email').classList[has_error ? 'remove' : 'add'](invisible_class);
+        document.getElementById('error_validate_email').classList[has_error ? 'add' : 'remove'](invisible_class);
+    }
+    else if (element.value.length >= 1) {
+        document.getElementById('error_validate_email').classList[has_error ? 'remove' : 'add'](invisible_class);
+        document.getElementById('error_no_email').classList[has_error ? 'add' : 'remove'](invisible_class);
+    }
+    if (!has_error) {
+        document.getElementById('error_validate_email').classList.add(invisible_class);
+        document.getElementById('error_no_email').classList.add(invisible_class);
     }
 }
 
@@ -146,7 +259,7 @@ function getClientCountry() {
         } else if (response.time) {
             initCountdown(response.time);
         }
-    }
+    };
 
     return clients_country;
 }
@@ -247,7 +360,86 @@ function arc(el, value, scale) {
 
     const angle = value * 360 / scale;
     el.arcs.forEach(function(arc, idx) {
-        arc.style = 'transform: rotate(' + (Math.min((idx + 1) * 90, angle) - 135) + 'deg)';
+        const arc_angle = Math.min((idx + 1) * 90, angle) - 135;
+        arc.setAttribute('style', ['-webkit-', '-moz-', '-o-', '-ms-', '', ''].join('transform: rotate(' + arc_angle + 'deg); '));
     });
     el.arc_cover.classList[angle > 90 ? 'add' : 'remove']('invisible');
+}
+
+function urlForLanguage(lang, url) {
+    if (url === undefined) {
+        url = window.location.href;
+    }
+    let curr_lang = getLanguage();
+    return url.replace(new RegExp('/' + curr_lang + '/', 'i'), '/' + lang.trim().toLowerCase() + '/');
+}
+
+function setLanguage(el, name) {
+    const all_languages = {
+        ach  : 'Translations',
+        en   : 'English',
+        de   : 'Deutsch',
+        es   : 'Español',
+        fr   : 'Français',
+        id   : 'Indonesia',
+        it   : 'Italiano',
+        ja   : '日本語',
+        pl   : 'Polish',
+        pt   : 'Português',
+        ru   : 'Русский',
+        th   : 'Thai',
+        vi   : 'Tiếng Việt',
+        zh_cn: '简体中文',
+        zh_tw: '繁體中文',
+    };
+    const el_navbar_nav = document.getElementsByClassName('navbar-nav')[0];
+
+    if (/pt|vi|id/.test(name)) {
+        el_navbar_nav.classList.add('word-wrap'); // wrap long words
+    }
+
+    document.getElementById('selected-lang').textContent = all_languages[name];
+    document.getElementsByClassName(name)[0].classList.add('invisible');
+
+    el_navbar_nav.classList.remove('invisible');
+    el.classList.remove('invisible');
+}
+
+function setupCrowdin() {
+    const all_languages = [
+        'ACH', 'EN', 'DE', 'ES',
+        'FR', 'ID', 'IT', 'JA',
+        'PL', 'PT', 'RU', 'TH',
+        'VI', 'ZH_CN', 'ZH_TW',
+    ];
+
+    const isInContextEnvironment = () => {
+        const lang_regex = new RegExp(`^(${all_languages.join('|')})$`, 'i');
+        const url_params = window.location.href.split('/').slice(3);
+        const language   = (url_params.find(lang => lang_regex.test(lang)) || '');
+
+        return /^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href) &&
+        /ach/i.test(language)
+    };
+
+    if (isInContextEnvironment()) {
+        document.getElementById('language').style.display = 'none';
+        /* eslint-disable no-underscore-dangle */
+        window._jipt = [];
+        window._jipt.push(['project', 'binary-static']);
+        /* eslint-enable no-underscore-dangle */
+        if (document.body) {
+            const crowdinScript = document.createElement('script');
+            crowdinScript.setAttribute('src', `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`);
+            crowdinScript.setAttribute('type', 'text/javascript');
+            document.body.appendChild(crowdinScript);
+        }
+    }
+}
+
+function getDocumentUrl(lang = 'en') {
+    if (/^(ru)$/i.test(lang)) {
+        return `https://ico_documents.binary.com/howto_ico_${lang}.pdf`;
+    }
+    return 'https://ico_documents.binary.com/howto_ico.pdf';
 }
