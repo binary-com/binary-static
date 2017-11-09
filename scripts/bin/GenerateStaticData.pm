@@ -215,6 +215,7 @@ sub _texts {
         push @texts, localize('Invalid email address');
         push @texts, localize('Thank you for signing up! Please check your email to complete the registration process.');
         #strings for real account opening page
+        push @texts, localize('ICO Account Opening');
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
         push @texts, localize('Minimum of [_1] characters required.');
