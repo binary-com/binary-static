@@ -682,14 +682,14 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Who can purchase the tokens?") %]</h4>
-                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account. Please visit [_2]www.binary.com[_3] to open an account.", broker_name, '<a href="' _ request.url_for('home') _ '">', '</a>') %]</p>
+                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account. Please visit [_2]www.binary.com[_3] to open an account.", broker_name, '<a href="' _ request.url_for('home') _ '" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Is the ICO available in all jurisdictions?") %]</h4>
                             <p>[% l("The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions. In particular, the ICO is not available to US investors.") %]</p>
-                            <p>[% l("To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the [_1]Information Memorandum[_2] page.", '<a href="' _ request.url_for('ico-disclaimer') _ '">', '</a>') %]</p>
+                            <p>[% l("To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the [_1]Information Memorandum[_2] page.", '<a href="' _ request.url_for('ico-disclaimer') _ '" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -729,7 +729,7 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("What are the risks of purchasing tokens?") %]</h4>
-                            <p>[% l("Although [_1] has been a successful company since its inception in 1999, the tokens should be considered a high risk investment. The [_1] business is subject to a number of risks which could adversely affect the company and hence affect the future value of the tokens. These risks are detailed in the [_2]Information Memorandum[_3] and should be considered very carefully before proceeding with any investment in the tokens.", broker_name, '<a href="' _ request.url_for('ico-disclaimer') _ '">', '</a>') %]</p>
+                            <p>[% l("Although [_1] has been a successful company since its inception in 1999, the tokens should be considered a high risk investment. The [_1] business is subject to a number of risks which could adversely affect the company and hence affect the future value of the tokens. These risks are detailed in the [_2]Information Memorandum[_3] and should be considered very carefully before proceeding with any investment in the tokens.", broker_name, '<a href="' _ request.url_for('ico-disclaimer') _ '" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
