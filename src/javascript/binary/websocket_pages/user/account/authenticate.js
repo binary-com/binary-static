@@ -20,9 +20,14 @@ const Authenticate = (() => {
                     if (!/authenticated/.test(status)) {
                         init();
                         $('#not_authenticated').setVisibility(1);
+                        let link = 'https://marketing.binary.com/authentication/2017_Authentication_Process.pdf';
                         if (Client.isAccountOfType('financial')) {
                             $('#not_authenticated_financial').setVisibility(1);
+                            link = 'https://marketing.binary.com/authentication/2017_MF_Authentication_Process.pdf';
                         }
+                        $('#not_authenticated').find('.learn_more a').attr('href', link);
+                        $('#not_authenticated').find('.learn_more').setVisibility(1);
+
                     } else if (!/age_verification/.test(status)) {
                         $('#needs_age_verification').setVisibility(1);
                     }
@@ -41,14 +46,12 @@ const Authenticate = (() => {
             active     : false,
         });
         // Setup Date picker
-        const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
         const file_checks = {};
-        tomorrow.setDate(tomorrow.getDate() + 1);
         $('.date-picker').datepicker({
             dateFormat : 'yy-mm-dd',
             changeMonth: true,
             changeYear : true,
-            minDate    : tomorrow,
+            minDate    : '+6m',
         });
 
         $('.file-picker').on('change', onFileSelected);
