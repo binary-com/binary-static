@@ -625,7 +625,7 @@
                             <h4>[% l("Why is [_1] performing an ICO?", broker_name) %]</h4>
                             <p>[% l("[_1] was founded in 1999. Today, it is a well-established, and very successful, company. Like many successful companies, the growth of our business led us to consider an IPO.", broker_name) %]</p>
                             <p>[% l("However, we believe that in the coming decade traditional stock exchanges will gradually be replaced by blockchain exchanges, and IPOs will gradually be replaced by ICOs. This is because blockchain technologies are much more performant than the legacy technologies of traditional stock exchanges, leading to lower transaction fees, faster settlement times, and error-free immutable audit trails. Hence, we decided to perform an ICO instead of an IPO.") %]</p>
-                            <p>[% l("For further background information please read our blog post, Why we are doing an ICO (and not an IPO).") %]</p>
+                            <p>[% l("For further background information please read our blog post, <a href='[_1]' target='_blank'>Why we are doing an ICO (and not an IPO)</a>.", 'https://blog.binary.com/ipo-or-ico/') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
