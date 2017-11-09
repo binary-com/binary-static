@@ -11,7 +11,7 @@ window.onload = function() {
     function isRestrictedCountry(val) {
         // restricted countries code
         var regex = new RegExp(['^(',
-            'as|af|at|au|be|bg|ca|ch|cy|cz|de|dk|ee|es|fi|fr|gg|gr|gu|hk|hr|hu|ie|il|im|it|',
+            'as|af|at|au|be|bg|ca|ch|cy|cz|de|dk|ee|es|fi|fr|gg|gb|gr|gu|hk|hr|hu|ie|il|im|it|',
             'iq|ir|je|jp|kp|lt|lu|lv|mp|mt|my|nl|nz|pl|pt|pr|ro|se|sg|si|sk|sy|sz|us|vi|vg|vu',
             ')$'].join(''));
         if (regex.test(val)) {
