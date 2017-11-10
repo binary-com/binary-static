@@ -42,12 +42,11 @@ const ICOSubscribe = (() => {
             })
             .attr('src', image);
 
-        BinarySocket.wait('website_status', 'landing_company', 'get_settings').then(() => {
+        BinarySocket.wait('website_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             if (State.getResponse('website_status.ico_status') === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOcountDown();
                 ICOPortfolio.onLoad();
-                $('#ico_subscribe').setVisibility(1);
                 showContent();
             } else {
                 init();
@@ -86,8 +85,8 @@ const ICOSubscribe = (() => {
                 $form_error          = $('#form_error');
 
                 FormManager.init(form_id, [
-                    { selector: '#duration', validations: ['req', ['number', { min: 25, max: 1000000 }]], parent_node: 'parameters' },
-                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places), max: 999999999999999 }]] },
+                    { selector: '#duration', validations: ['req', ['number', { min: 25, max: 10000000 }]], parent_node: 'parameters' },
+                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]] },
 
                     { request_field: 'buy', value: 1 },
                     { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
@@ -163,6 +162,7 @@ const ICOSubscribe = (() => {
             $form_error.setVisibility(0);
             $('#duration, #price').val('');
             $.scrollTo($('#ico_bids'), 500, { offset: -10 });
+            calculateTotal();
         }
     };
 

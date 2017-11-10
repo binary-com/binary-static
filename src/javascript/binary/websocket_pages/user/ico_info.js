@@ -160,7 +160,7 @@ const ICOInfo = (() => {
             }
 
             const config = chartConfig({
-                min            : min - bucket_size,
+                min            : Math.min(min - bucket_size, MAX_BID_PRICE - 1),
                 finalPrice     : final_price,
                 values         : allValues,
                 finalPriceLabel: `${localize('Final Price')} ($${final_price})`,
