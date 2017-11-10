@@ -29,7 +29,10 @@ const Settings = (() => {
                 (Client.isAccountOfType('financial')
                     || (/costarica/.test(financial_company) && Client.isAccountOfType('real'))
                     || is_ico_only)) {
-                $('#professional_client').setVisibility(1);
+                    
+                if (Client.canRequestProfessional()) {
+                    $('#professional_client').setVisibility(1);
+                }
             }
 
             if (!get_account_status.prompt_client_to_authenticate) {
