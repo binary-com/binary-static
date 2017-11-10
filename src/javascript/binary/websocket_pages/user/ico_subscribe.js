@@ -17,6 +17,9 @@ const Url                   = require('../../base/url');
 const ICOSubscribe = (() => {
     const form_id = '#frm_ico_bid';
     let currency,
+        min_bid,
+        unit_price,
+        min_bid_usd,
         $form_error,
         $duration,
         $price,
@@ -42,8 +45,8 @@ const ICOSubscribe = (() => {
             })
             .attr('src', image);
 
-        BinarySocket.wait('website_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
-            if (State.getResponse('website_status.ico_status') === 'closed') {
+        BinarySocket.wait('ico_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
+            if (State.getResponse('ico_status.ico_status') === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOcountDown();
                 ICOPortfolio.onLoad();
@@ -52,6 +55,13 @@ const ICOSubscribe = (() => {
                 init();
             }
         });
+        const ico_req = {
+            ico_status: 1,
+            currency  : Client.get('currency') || 'USD',
+            subscribe : 1,
+        };
+        // get update on client currency.
+        BinarySocket.send(ico_req, {callback: updateMinimumBid});
     };
 
     const init = () => {
@@ -117,10 +127,16 @@ const ICOSubscribe = (() => {
         const duration_val = $duration.val();
         const price_val    = $price.val();
         let total          = 0;
+        let usd_total      = 0;
         if (duration_val && price_val) {
             total = +duration_val * +price_val;
         }
-        $total.html(formatMoney(currency, total));
+        let content = `${formatMoney(currency, total)}`;
+        if(unit_price && unit_price < Infinity) {
+            usd_total = +unit_price * total;
+            content   = `${content} / ${formatMoney('USD', usd_total)}`;
+        }
+        $total.html(content);
         if (!$form_error) $form_error = $('#form_error');
         $form_error.setVisibility(0);
     };
@@ -287,6 +303,21 @@ const ICOSubscribe = (() => {
     const askForAccountOpeningReason = () => {
         const el_to_show = document.getElementById('row_account_opening_reason');
         el_to_show.setVisibility(1);
+    };
+
+    const updateMinimumBid = (ico_status) => {
+        const status      = ico_status.ico_status || {};
+        const el_min_bid  = document.getElementById('minimum_bid');
+        const res_currency    = (status.currency || '').toUpperCase();
+        min_bid     = status.minimum_bid || 0;
+        min_bid_usd = status.minimum_bid_usd || 1.35;
+        unit_price = min_bid_usd/min_bid;
+        let text = `${localize('Minimum bid')} = ${formatMoney('USD', min_bid_usd)}`; // Fallback value.
+        // Show bid in client currency.
+        if(min_bid_usd && min_bid && res_currency && res_currency !== 'USD'){
+            text = `${localize('Minimum bid')} = ${formatMoney(res_currency, min_bid)} / ${formatMoney('USD', min_bid_usd)}`;
+        }
+        el_min_bid.innerHTML = text;
     };
 
     const onUnload = () => {
