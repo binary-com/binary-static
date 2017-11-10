@@ -312,10 +312,10 @@ const ICOSubscribe = (() => {
         min_bid     = status.minimum_bid || 0;
         min_bid_usd = status.minimum_bid_usd || 1.35;
         unit_price = min_bid_usd/min_bid;
-        let text = `Minimum bid = ${formatMoney('USD', min_bid_usd)}`; // Fallback value.
+        let text = `${localize('Minimum bid')} = ${formatMoney('USD', min_bid_usd)}`; // Fallback value.
         // Show bid in client currency.
         if(min_bid_usd && min_bid && res_currency && res_currency !== 'USD'){
-            text = localize(`Minimum bid = ${formatMoney(res_currency, min_bid)} / ${formatMoney('USD', min_bid_usd)}`);
+            text = `${localize('Minimum bid')} = ${formatMoney(res_currency, min_bid)} / ${formatMoney('USD', min_bid_usd)}`;
         }
         el_min_bid.innerHTML = text;
     };
