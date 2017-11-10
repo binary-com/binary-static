@@ -58,7 +58,7 @@ const ICOSubscribe = (() => {
         const ico_req = {
             ico_status: 1,
             currency  : Client.get('currency') || 'USD',
-            subscribe : 1
+            subscribe : 1,
         };
         // get update on client currency.
         BinarySocket.send(ico_req, {callback: updateMinimumBid});
@@ -308,14 +308,14 @@ const ICOSubscribe = (() => {
     const updateMinimumBid = (ico_status) => {
         const status      = ico_status.ico_status || {};
         const el_min_bid  = document.getElementById('minimum_bid');
-        const currency    = (status.currency || '').toUpperCase();
+        const res_currency    = (status.currency || '').toUpperCase();
         min_bid     = status.minimum_bid || 0;
         min_bid_usd = status.minimum_bid_usd || 1.35;
         unit_price = min_bid_usd/min_bid;
         let text = `Minimum bid = ${formatMoney('USD', min_bid_usd)}`; // Fallback value.
         // Show bid in client currency.
-        if(min_bid_usd && min_bid && currency && currency !== 'USD'){
-            text = localize(`Minimum bid = ${formatMoney(currency, min_bid)} / ${formatMoney('USD', min_bid_usd)}`);
+        if(min_bid_usd && min_bid && res_currency && res_currency !== 'USD'){
+            text = localize(`Minimum bid = ${formatMoney(res_currency, min_bid)} / ${formatMoney('USD', min_bid_usd)}`);
         }
         el_min_bid.innerHTML = text;
     };
