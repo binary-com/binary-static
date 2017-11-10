@@ -26,7 +26,7 @@ window.onload = function() {
                 document.getElementsByTagName('form')[i].classList.add('invisible');
             }
             let navbarHeight = checkWidth();
-            const to = document.getElementById('ico_subscribe_section').offsetTop - navbarHeight;
+            const to = document.getElementById('subscribe_success').offsetTop - navbarHeight;
             scrollTo(to);
         }
 
