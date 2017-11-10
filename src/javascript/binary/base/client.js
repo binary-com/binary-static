@@ -396,6 +396,14 @@ const Client = (() => {
         /malta|iom/.test(State.getResponse('landing_company.financial_company.shortcode')) ||
         /malta|iom/.test(State.getResponse('landing_company.gaming_company.shortcode'));
 
+    const canRequestProfessional = () => {
+        const residence = get('residence');
+        /* Austria, Italy, Belgium, Latvia, Bulgaria,	Lithuania, Croatia, Luxembourg, Cyprus, Malta, Czech Republic,	Netherlands, Denmark, Poland, Estonia, Portugal, Finland, Romania, France, Slovakia, Germany, Slovenia, Greece, Spain, Hungary, Sweden, Ireland, United Kingdom, Australia, New Zealand, Singapore, Canada, Switzerland */
+        const countries = ['at', 'it', 'be', 'lv', 'bg', 'lt', 'hr', 'lu', 'cy', 'mt', 'cf', 'nl', 'dk', 'pl', 'ee', 'pt', 'fi', 'ro', 'fr', 'sk', 'de', 'si', 'gr', 'es', 'hu', 'se', 'ie', 'gb', 'au', 'nz', 'sg', 'ca', 'ch'];
+        return countries.indexOf(residence.toLowerCase()) !== -1;
+
+    };
+
     return {
         init,
         validateLoginid,
@@ -426,6 +434,7 @@ const Client = (() => {
         canTransferFunds,
         hasCostaricaAccount,
         canOpenICO,
+        canRequestProfessional,
     };
 })();
 
