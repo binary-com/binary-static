@@ -81,7 +81,6 @@ const Accounts = (() => {
                     const company_name = getCompanyName(loginid);
                     account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
                 }
-
                 $('#existing_accounts').find('tbody')
                     .append($('<tr/>', { id: loginid })
                         .append($('<td/>', { text: loginid }))
@@ -93,6 +92,9 @@ const Accounts = (() => {
     };
 
     const getAvailableMarkets = (loginid) => {
+        if (Client.get('is_ico_only', loginid)) {
+            return [localize('None')];
+        }
         let legal_allowed_markets = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_markets') || '';
         if (Array.isArray(legal_allowed_markets) && legal_allowed_markets.length) {
             legal_allowed_markets =
