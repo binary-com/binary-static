@@ -2,6 +2,9 @@ const BinarySocket     = require('../../../socket');
 const BinaryPjax       = require('../../../../base/binary_pjax');
 const State            = require('../../../../base/storage').State;
 const getPropertyValue = require('../../../../base/utility').getPropertyValue;
+const Client           = require('../../../../base/client');
+const localize         = require('../../../../base/localize').localize;
+const Url              = require('../../../../base/url');
 
 
 const professionalClient = (() => {
@@ -9,29 +12,34 @@ const professionalClient = (() => {
 
     const onLoad = () => {
         BinarySocket.wait('get_account_status').then((response) => {
-            if (/professional_requested/.test(getPropertyValue(response, ['get_account_status', 'status']))) {
+            if (/professional_requested|professional/.test(getPropertyValue(response, ['get_account_status', 'status']))) {
                 BinaryPjax.loadPreviousUrl();
                 return;
             }
-            init(true, true);
+            init(Client.isAccountOfType('financial'), true, Client.get('is_ico_only'));
         });
     };
 
-    const init = (is_financial, is_page) => {
+    const init = (is_financial, is_page, is_ico_only) => {
         is_in_page = !!is_page;
-        BinarySocket.wait('landing_company').then(() => { populateProfessionalClient(is_financial); });
+        BinarySocket.wait('landing_company').then(() => { populateProfessionalClient(is_financial, is_ico_only); });
     };
 
-    const populateProfessionalClient = (is_financial) => {
+    const populateProfessionalClient = (is_financial, is_ico_only) => {
         const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-        if (!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
-            (financial_company === 'maltainvest' && !is_financial)) return; // then it's not upgrading to financial
-
+        if ((!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
+            (financial_company === 'maltainvest' && !is_financial)) && !is_ico_only) { // then it's not upgrading to financial
+            if(is_in_page) {
+                BinaryPjax.loadPreviousUrl();
+            }
+            return;
+        }
         const $container        = $('#fs_professional');
         const $chk_professional = $container.find('#chk_professional');
         const $info             = $container.find('#professional_info');
         const $popup_contents   = $container.find('#popup');
         const popup_selector    = '#professional_popup';
+        const $error             = $('#form_message');
 
         $container.find('#professional_info_toggle').off('click').on('click', function() {
             $(this).toggleClass('open');
@@ -61,21 +69,47 @@ const professionalClient = (() => {
             $('#loading').remove();
             $('#frm_professional')
                 .off('submit')
-                .on('submit', () => {
+                .on('submit', (e) => {
+                    e.preventDefault();
                     if ($chk_professional.is(':checked')) {
-                        // TODO: add the call to send when back-end adds it
-                        BinarySocket.send({}).then((response) => {
-                            if (response.error) {
-                                $('#form_message').text(response.error.message);
-                            } else {
-                                BinaryPjax.loadPreviousUrl();
-                            }
+                        BinarySocket.wait('get_settings').then((res) => {
+                            BinarySocket.send(populateReq(res.get_settings)).then((response) => {
+                                if (response.error) {
+                                    $error.text(response.error.message).removeClass('invisible');
+                                } else {
+                                    BinarySocket.send({get_account_status: 1}).then(() => {
+                                        if(Client.get('is_ico_only')){
+                                            BinaryPjax.load(Url.urlFor('user/ico-subscribe'));
+                                        } else {
+                                            BinaryPjax.loadPreviousUrl();
+                                        }
+                                    });
+                                }
+                            });
                         });
+                    } else {
+                        $error.text(localize('This field is required.')).removeClass('invisible');
                     }
                 })
                 .setVisibility(1);
 
         }
+    };
+
+    const populateReq = (get_settings) => {
+        const req = {
+            set_settings               : 1,
+            request_professional_status: 1,
+        };
+
+        if (get_settings.tax_identification_number) {
+            req.tax_identification_number = get_settings.tax_identification_number;
+        }
+        if (get_settings.tax_residence) {
+            req.tax_residence = get_settings.tax_residence;
+        }
+
+        return req;
     };
 
     return {

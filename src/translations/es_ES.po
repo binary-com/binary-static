@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-06 01:56-0500\n"
+"PO-Revision-Date: 2017-11-09 22:13-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -107,6 +107,9 @@ msgstr "La ICO de %1 comienza el día 15 de noviembre de 2017"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "ICO de %1, invierta en la plataforma para la operación de opciones binarias"
+
+msgid "%1 ICO: Histogram of Active Bids"
+msgstr ""
 
 msgid "%1 Initial Coin Offering (ICO)"
 msgstr "Oferta Inicial de Monedas (ICO) de %1"
@@ -240,7 +243,7 @@ msgstr ""
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr ""
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1.35</strong> or its equivalent in another currency."
 msgstr ""
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
@@ -366,8 +369,8 @@ msgstr "%1 fue fundada en 1999. En la actualidad, es una empresa bien establecid
 msgid "%1 will issue a number of tokens during the ICO."
 msgstr "%1 emitirá un número de tokens durante la ICO."
 
-msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘ERC20’ tokens on the Ethereum blockchain."
-msgstr "%1 ofrecerá una serie de tokens de blockchain a los inversionistas. Estos tokens se pueden emitir en diferentes formas y cadenas de bloques, como los tokens \"ERC20\" de Ethereum."
+msgid "%1 will offer a number of blockchain tokens to investors. These tokens will be ‘ERC20’ tokens on the Ethereum blockchain, however the Company may issue tokens on other blockchains if there is sufficient investor demand for different token types."
+msgstr ""
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr ""
@@ -785,6 +788,9 @@ msgstr "El acceso a los datos personales"
 
 msgid "Access to STP trading"
 msgstr "Acceda a operaciones STP"
+
+msgid "Access to electronic versions of these materials is being made available by Binary Group Ltd. (“Company”) in good faith and for information purposes only. It does not constitute an offer of, or an invitation to purchase, the tokens or any securities.  Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the tokens or any other securities. Further, it does not constitute a recommendation by the Company or any other party to sell or buy tokens or any other securities."
+msgstr ""
 
 msgid "Access to electronic versions of these materials is being made available on this webpage by Binary Group Ltd. in good faith and for information purposes only. Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the Tokens. Further, it does not constitute a recommendation by Binary Group Ltd. or any other party to sell or buy Tokens or any other securities."
 msgstr "El acceso a las versiones electrónicas de estos materiales es puesto a disposición en esta página web por Binary Group Ltd. de buena fe y con fines informativos únicamente. Disponibilizar anuncios de prensa y otros documentos en formato electrónico no constituye o no se considerará que constituya (o que forme parte de) una oferta para vender o la solicitud de oferta para comprar o de otro modo negociar los Tokens. Del mismo modo, no constituye una recomendación por parte de Binary Group Ltd. o de cualquier otra parte para vender o comprar Tokens o cualquier otro tipo de valores."
@@ -1531,6 +1537,9 @@ msgstr ""
 msgid "Bid Price Per Token"
 msgstr ""
 
+msgid "Bid Price Per Token ($USD)"
+msgstr ""
+
 msgid "Bid on the ICO:"
 msgstr ""
 
@@ -1695,6 +1704,9 @@ msgstr "La filial maltesa de Binary, Binary Investments (Europe) Ltd. recibe una
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr ""
 
+msgid "Binary.com intends to deploy the <a href='%1' target='_blank'>Mini Me</a> token. Please view our <a href='%2' target='_blank'>blog post</a> detailing our reasons for choosing this token."
+msgstr ""
+
 msgid "Bitcoin"
 msgstr ""
 
@@ -1831,6 +1843,9 @@ msgid "Cancel"
 msgstr ""
 
 msgid "Cancel Bid"
+msgstr ""
+
+msgid "Cancel bid?"
 msgstr ""
 
 msgid "Career opportunities for Americans"
@@ -2530,7 +2545,7 @@ msgstr "Fecha de Nacimiento"
 msgid "Date of birth"
 msgstr "Fecha de nacimiento"
 
-msgid "Dated within the last three months"
+msgid "Dated within the last six months"
 msgstr ""
 
 msgid "Day"
@@ -3320,6 +3335,9 @@ msgstr "Controles de filtrado"
 msgid "Filtering Stray Ticks"
 msgstr "Filtrado de intervalos erróneos"
 
+msgid "Final Price"
+msgstr ""
+
 msgid "Final price"
 msgstr ""
 
@@ -3422,10 +3440,16 @@ msgstr "Para las cotizaciones forex, las horas de cierre son definidas por la Co
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "Para forex: el mercado de forex es un mercado Over The Counter (OTC, por sus siglas en inglés: sobre el mostrador), donde los bancos y otras instituciones financieras importantes intercambian divisas entre sí sin la presencia de una cámara de compensación central. En consecuencia, no hay una fuente de precios 'oficial' para las cotizaciones de forex. Los diferentes flujos de datos contendrán cotizaciones de diferentes subconjuntos de bancos internacionales. Por consiguiente, los precios pueden variar entre proveedores, dependiendo del(los) banco(s) del(los) que obtienen los precios."
 
+msgid "For further background information please read our blog post, <a href='%1' target='_blank'>Why we are doing an ICO (and not an IPO)</a>."
+msgstr ""
+
 msgid "For general support:"
 msgstr ""
 
 msgid "For payments-related queries:"
+msgstr ""
+
+msgid "For the avoidance of doubt (and notwithstanding anything to the contrary), these materials are not an offer for tokens; they are an invitation to treat.  Tokens will may only be offered by the Company pursuant to an auction in the manner more particularly described in the ‘token auction process’ section of the materials."
 msgstr ""
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
@@ -3719,6 +3743,9 @@ msgstr ""
 msgid "Have not previously been a %1 customer."
 msgstr ""
 
+msgid "Head over to our <a href=%1 target='_blank'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business."
+msgstr ""
+
 msgid "Health"
 msgstr "Salud"
 
@@ -3765,6 +3792,9 @@ msgid "Highlights"
 msgstr ""
 
 msgid "Hint: it would take approximately %1%2 to crack this password."
+msgstr ""
+
+msgid "Histogram of Active Bids"
 msgstr ""
 
 msgid "Hone your security testing skills."
@@ -3836,10 +3866,16 @@ msgstr "¿Cómo funciona la ICO?"
 msgid "How does the ICO work?"
 msgstr "¿Cómo funciona la ICO?"
 
+msgid "How high should I bid?"
+msgstr ""
+
 msgid "How is margin calculated?"
 msgstr ""
 
 msgid "How it works"
+msgstr ""
+
+msgid "How many tokens are available?"
 msgstr ""
 
 msgid "How much dividend will I receive?"
@@ -3896,6 +3932,9 @@ msgstr ""
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "Estoy de acuerdo que negociaré las opciones binarias extrabursátiles usando mi propio juicio y aceptaré la responsabilidad por cualquier pérdida que pueda ocurrir a partir de la transacción, y que esta pérdida está dentro de un rango aceptable en relación con el valor total de mis activos financieros."
 
+msgid "I agree to the cancellation fee stated above"
+msgstr ""
+
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "Confirmo mi acuerdo con respecto al contenido de todos los documentos indicados a continuación:"
 
@@ -3933,6 +3972,9 @@ msgid "I. Quotes"
 msgstr ""
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
+msgstr ""
+
+msgid "ICO Account Opening"
 msgstr ""
 
 msgid "ID card"
@@ -4299,6 +4341,9 @@ msgstr ""
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "En la prestación de estos servicios, estamos regulados por la ley, los reglamentos aplicables, estatutos, condiciones de la licencia, lineamientos, requisitos de cambio y otras disposiciones o prácticas del mercado (el \"Reglamento\"). En caso de divergencias entre las CTS y el Reglamento, este último debe prevalecer."
 
+msgid "In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
+msgstr ""
+
 msgid "In relation to Contracts that you enter into with us, we act as principal and not as agent on your behalf and we therefore act as the sole execution venue for the execution of your Contracts."
 msgstr "En relación a los contratos de que compra que realiza con nosotros, actuamos como principal y no como agente en su nombre y por lo tanto actuamos como el único centro de ejecución para la ejecución de sus contratos."
 
@@ -4508,7 +4553,7 @@ msgid "Invalid email address"
 msgstr "Correo electrónico no válido"
 
 msgid "Invest in the world's premier platform for binary options trading"
-msgstr ""
+msgstr "Invierta en la plataforma líder a nivel mundial para la negociación de opciones binarias"
 
 msgid "Investigate and reproduce client-reported issues"
 msgstr "Investigar y reproducir los problemas comunicados por clientes"
@@ -4531,7 +4576,7 @@ msgstr "Productos de inversión para los residentes del EEE son proporcionados p
 msgid "Investment Solicitation Policy"
 msgstr "Investment Solicitation Policy"
 
-msgid "Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum."
+msgid "Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the materials."
 msgstr ""
 
 msgid "Investment trust"
@@ -4547,6 +4592,9 @@ msgid "Investor password"
 msgstr ""
 
 msgid "Investor password (read-only access)"
+msgstr ""
+
+msgid "Investors need to open a %1 real money account to take part in the ICO."
 msgstr ""
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
@@ -5728,6 +5776,9 @@ msgstr "Mínimo de %1 caracteres requeridos."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Un mínimo de seis letras minúsculas y mayúsculas con los números"
 
+msgid "Minimum of six months validity"
+msgstr ""
+
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr ""
 
@@ -5866,6 +5917,9 @@ msgstr "Necesidad de vigilar posiciones"
 msgid "Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of, or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney's fees) incurred arising out of your failure to comply with any and all of your obligations set forth in this Agreement and/or the Company's enforcement against you of any and all of its rights under this Agreement."
 msgstr ""
 
+msgid "Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens."
+msgstr ""
+
 msgid "Neither this Information Memorandum nor any other offering or marketing material relating to the offering, the Company or the Tokens have been or will be filed with or approved by any Swiss regulatory authority. In particular, this Information Memorandum will not be filed with, and the offer of Tokens will not be supervised by, the Swiss Financial Market Supervisory Authority FINMA, and the offer of Tokens has not been and will not be authorized under the Swiss Federal Act on Collective Investment Schemes (the “CISA”). The investor protection afforded to acquirers of interests in collective investment schemes under the CISA does not extend to acquirers of Tokens.\n"
 msgstr ""
 
@@ -5938,6 +5992,9 @@ msgstr ""
 msgid "No Touch trades"
 msgstr "Contratos Sin toque"
 
+msgid "No bids to show"
+msgstr ""
+
 msgid "No commission"
 msgstr ""
 
@@ -5970,6 +6027,9 @@ msgstr "Nadie usará este sitio con el fin de blanquear dinero. La Compañía em
 
 msgid "No risk, $10K virtual money account"
 msgstr "Sin riesgos, una cuenta con $10,000 de dinero virtual"
+
+msgid "No, return to the ICO auction page"
+msgstr ""
 
 msgid "No. Once your pull request is merged into master by our development team, and you have been paid, you have effectively handed over the rights to the code. It then becomes part of the master %1 codebase under the open-source license of the relevant repository."
 msgstr ""
@@ -6316,8 +6376,8 @@ msgstr ""
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "Nuestros clientes claramente confían en nosotros. A mediados de 2014, %1 tiene más de 100 millones de transacciones históricas y más de 130.000 nuevas transacciones diarias."
 
-msgid "Our cutting-edge pricing technology gives you the same rates of return as the interbank market."
-msgstr "Nuestra tecnología de precios de última generación le ofrece las mismas tasas de rentabilidad que el mercado interbancario."
+msgid "Our cutting-edge pricing technology benchmarks our prices against interbank market rates wherever possible."
+msgstr ""
 
 msgid "Our data feed is designed to be one of the best and most robust available for a trading environment."
 msgstr "Nuestro sistema de flujo de datos está diseñado para ser el mejor y más contundente para el entorno del comercio."
@@ -6335,7 +6395,7 @@ msgid "Our fast organic growth is supplemented by the acquisition of the client 
 msgstr "Nuestro crecimiento rápido se complementa con la adquisición de la cartera de clientes de BetsForTraders, uno de nuestros principales competidores."
 
 msgid "Our growth"
-msgstr ""
+msgstr "Nuestro crecimiento"
 
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "Nuestras políticas de seguridad de información se basan en las mejores prácticas de la industria en control de acceso y continuidad empresarial."
@@ -6703,6 +6763,9 @@ msgstr ""
 msgid "Please select a value"
 msgstr ""
 
+msgid "Please select a value for account_opening_reason."
+msgstr ""
+
 msgid "Please select at least one scope"
 msgstr ""
 
@@ -6845,6 +6908,9 @@ msgid "Price"
 msgstr "Precio"
 
 msgid "Price - the price at which the transaction in relation to your order is executed at."
+msgstr ""
+
+msgid "Price Band"
 msgstr ""
 
 msgid "Price/Prices &mdash; Bid and Offer Price/Prices."
@@ -7384,8 +7450,8 @@ msgstr "Los operadores experimentados pueden utilizar la plataforma de %1 para b
 msgid "Second line of home address"
 msgstr "Segunda línea de domicilio"
 
-msgid "Second, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares."
-msgstr "En segundo lugar, los propietarios de tokens podrán negociarlos libremente. En contraste, las acciones comunes no están enlistadas y, por lo tanto, no se pueden negociar en ninguna bolsa. En ese sentido, los tokens serán una inversión superior a las acciones comunes."
+msgid "Second, tokens may be converted into Ordinary Shares of the Company (subject to certain conditions, as described in the Information Memorandum), thereby providing the legal link between tokens and Ordinary Shares."
+msgstr ""
 
 msgid "Secondary"
 msgstr "Secundario"
@@ -7615,6 +7681,12 @@ msgstr "Registrarme"
 msgid "Sign out"
 msgstr "Cerrar sesión"
 
+msgid "Sign up"
+msgstr ""
+
+msgid "Sign up now for free."
+msgstr ""
+
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "Experiencia importante con los Medios Sociales, el Marketing y/o la Publicidad"
 
@@ -7801,9 +7873,6 @@ msgstr ""
 msgid "Step 3: Make your trade"
 msgstr "Paso 3: Realice su transacción"
 
-msgid "Still valid"
-msgstr ""
-
 msgid "Stock market indices measure the value of a selection of companies in the stock market."
 msgstr "Los índices bursátiles miden el valor de una selección de las compañías en el mercado bursátil."
 
@@ -7911,9 +7980,6 @@ msgstr "Envíe su currículum y carta de presentación"
 
 msgid "Subscribe to our mailing list"
 msgstr "Suscríbase a nuestra lista de correo"
-
-msgid "Subscribe to our mailing list for exclusive updates on the ICO."
-msgstr "Suscríbase a nuestra lista de correo para actualizaciones exclusivas sobre la ICO."
 
 msgid "Successful"
 msgstr "Exitoso"
@@ -8473,6 +8539,9 @@ msgstr "La compañía se reserva el derecho a cancelar/prohibir el uso de esta p
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
 msgstr ""
 
+msgid "The content of this Information Memorandum has not been approved by an authorised person and such approval is, save where this Information Memorandum is directed at or issued to the types of person referred to above, required by Section 21 of the Act. Acquiring Tokens may expose an investor to a significant risk of losing all of the amount invested. Any person who is in any doubt about investing in the Company should consult an authorised person specialising in advising on such investments."
+msgstr ""
+
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website, however, we do not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website."
 msgstr "El contenido de este sitio web está sujeto a cambios en cualquier momento sin aviso previo y se brinda con el único propósito de asesorar a los comerciantes para tomar decisiones independientes sobre inversiones. %1 ha tomado medidas razonables para asegurar la precisión de la información del sitio web. Sin embargo, no podemos garantizar su precisión y no nos haremos responsables por la pérdida o daños por causa directa o indirecta del contenido o por su imposibilidad de acceder al sitio web, cualquier demora o falla en la transmisión o recepción de cualquier instrucción o notificación que se haya enviado a través de este sitio web."
 
@@ -8537,6 +8606,9 @@ msgstr "El primer intervalo es el primer intervalo después de que el contrato h
 msgid "The full version of our best execution policy is available on request."
 msgstr ""
 
+msgid "The higher you bid, the more your chances of being successful in the auction. However irrespective of how high you bid, at the end of the auction all winning bids will receive the same final price, which is the lowest winning bid."
+msgstr ""
+
 msgid "The hours of closure of the market (for e.g., the hours over the weekend during which trading of certain transactions are not possible);"
 msgstr ""
 
@@ -8592,6 +8664,9 @@ msgstr "Las pérdidas máximas en las que puede incurrir un Cliente es la cantid
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "El máximo número de tokens (%1) ha sido alcanzado."
 
+msgid "The minimum bid is USD 1.35/token or equivalent in other currency/cryptocurrency."
+msgstr ""
+
 msgid "The minimum duration is"
 msgstr ""
 
@@ -8630,6 +8705,9 @@ msgstr "La plataforma de primera calidad para el comercio con opciones binarias 
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "El beneficio es la diferencia entre el pago y el precio de compra (la apuesta) de un contrato ganador."
+
+msgid "The promotion of the Company and the distribution of this Information Memorandum in the United Kingdom is restricted by Financial Services and Markets Act 2000 of the United Kingdom (the \"Act\")."
+msgstr ""
 
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr ""
@@ -8752,8 +8830,8 @@ msgstr ""
 msgid "There will be no public offering of the Tokens in the United States. If you are not permitted to view materials on this webpage or are in any doubt as to whether you are permitted to view these materials, please exit this webpage."
 msgstr "No habrá ninguna oferta pública de Tokens en Estados Unidos. Si no se le permite ver los materiales presentes en esta página web o tiene dudas sobre si puede verlos, por favor salga de esta página web."
 
-msgid "There will be two main benefits of purchasing tokens."
-msgstr "Habrá dos beneficios principales de comprar tokens."
+msgid "There will be three main benefits of purchasing tokens."
+msgstr ""
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
 msgstr "Por lo tanto, la cantidad máxima que puede retirar de forma inmediata (sujeta a la existencia de fondos suficientes en su cuenta) es %1 %2 (o su equivalente en otra divisa)."
@@ -8800,7 +8878,16 @@ msgstr "Estos son los contratos en los que que el comerciante selecciona un prec
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "Estas métricas fundamentales le mostrarán cómo es el crecimiento y el éxito de una premiada plataforma de negociación de opciones binarias."
 
+msgid "These materials and the proposed ICO do not constitute an offer of, or an invitation to purchase, the tokens or any securities in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens or any securities should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction."
+msgstr ""
+
 msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
+msgstr ""
+
+msgid "These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens."
+msgstr ""
+
+msgid "Third, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares."
 msgstr ""
 
 msgid "This Agreement constitutes the entire Agreement between the Parties and no earlier representation or arrangement or agreement written or oral relating to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
@@ -8836,7 +8923,10 @@ msgstr "El presente Documento"
 msgid "This Information Memorandum has not been and will not be registered as a prospectus with the Monetary Authority of Singapore. Accordingly, this Information Memorandum and any other document or material in connection with the offer or sale, or invitation for subscription or purchase, of the Tokens may not be circulated or distributed, nor may the Tokens be offered or sold, or be made the subject of an invitation for subscription or purchase, whether directly or indirectly, to persons in Singapore other than (i) to an institutional investor under Section 274 of the Securities and Futures Act, Chapter 289 of Singapore (the “SFA”), (ii) to a relevant person, or any person pursuant to Section 275(1A), and in accordance with the conditions, specified in Section 275 of the SFA, (iii) where the transfer is by operation of law; (iv) as specified in Section 276(7) of the SFA or (v) pursuant to, and in accordance with the conditions of, any other applicable provisions of the SFA."
 msgstr ""
 
-msgid "This Information Memorandum is only being distributed to, and is only directed at, persons in the United Kingdom that are “qualified investors” within the meaning of Article 2(1)(e) of the Prospectus Directive that are also: (i) investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (the “Order”); or (ii) high net worth entities, and other persons to whom it may lawfully be communicated, falling within Article 49(2)(a) to (d) of the Order (each such person being referred to as a “relevant person”). This document and its contents are confidential and should not be distributed, published or reproduced (in whole or in part) or disclosed by recipients to any other persons in the United Kingdom. Any person in the United Kingdom that is not a relevant person should not act or rely on this document or any of its contents. Any investment or investment activity to which this document relates is available only in the United Kingdom to relevant persons, and will be engaged in only with such persons."
+msgid "This Information Memorandum is an invitation to treat and may only be received by authorised persons. If an authorised person wishes to bid for Tokens he may do so if he has a binary.com account, by which method the Company shall be able to verify his qualifications as an authorised person. The prospective investor who wishes to acquire Tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the offer at the Auction.  At the Auction the Company will make an offer for the Tokens, which offer will be accepted (by the process explained below) by the bids, and the consideration for the purchase of such Tokens offered and accepted will be settled by credit in the prospective investor's Binary.com account, which evidences the contract for sale and purchase of the respective Tokens."
+msgstr ""
+
+msgid "This Information Memorandum is being issued in the United Kingdom by the Company to, and/or is directed at, persons to whom it may lawfully be issued or directed at under The Financial Services and Markets Act 2000 (Financial Promotion) Order 2001 including persons who are authorised under the Act (\"authorised persons\"), certain persons having professional experience in matters relating to investments, high net worth companies, high net worth unincorporated associations or partnerships, trustees of high value trusts and persons who qualify as certified sophisticated investors. The Tokens are only available to such persons in the United Kingdom and this Information Memorandum must not be relied or acted upon by any other persons in the United Kingdom. In order to qualify as a certified sophisticated investor a person must: (a) have a certificate in writing or other legible form signed by an authorised person to the effect that he is sufficiently knowledgeable to understand the risks associated with participating in such investments; and (b) have signed, within the last 12 months, a statement in a prescribed form declaring, amongst other things, that he qualifies as a sophisticated investor in relation to such investments. This Information Memorandum is exempt from the general restriction in Section 21 of the Act on the communication of invitations or inducements to engage in investment activity on the grounds that it is being issued to and/or directed at only the types of person referred to above."
 msgstr ""
 
 msgid "This Policy applies to retail and professional clients of %1 dealing in financial products offered by %1."
@@ -8872,7 +8962,7 @@ msgstr ""
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Esta característica no es relevante para cuentas de dinero virtual."
 
-msgid "This feature is only available to CR clients. Please upgrade to proceed."
+msgid "This feature is only available to CR clients. Please sign up to proceed."
 msgstr ""
 
 msgid "This feature is only relevant to payment agent accounts."
@@ -8915,9 +9005,6 @@ msgid "This section on Force Majeure Events does not apply to Volatility Indices
 msgstr ""
 
 msgid "This symbol is not active. Please try another symbol."
-msgstr ""
-
-msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of %1. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
 msgstr ""
 
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
@@ -8998,9 +9085,6 @@ msgstr "Para averiguar si la ICO está disponible en su jurisdicción y, si en t
 msgid "To find out more about %1, you can read about our %2group history%3, %4regulatory status%3, and %5company culture%3. You can also read the %6company blog%3."
 msgstr "Para obtener más información sobre %1, puede leer acerca de nuestra %2historia del grupo%3, %4situación reglamentaria%3 y %5cultura empresarial%3. También puede leer el %6blog de la empresa%3."
 
-msgid "To learn more about Bitcoin, we recommend that you open a Bitcoin wallet with %1%2’s simple bitcoin wallet%3, and purchase bitcoins using a local exchange in your country."
-msgstr "Para aprender más acerca de Bitcoin, le recomendamos que abra un %2monedero simple de bitcoins%3 con %1 y que compre bitcoins usando su moneda local."
-
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
 msgstr ""
 
@@ -9015,6 +9099,15 @@ msgstr ""
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
+
+msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (Europe) Ltd, regulated by the Malta Gaming Authority."
+msgstr ""
+
+msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (IOM) Ltd, regulated by the Isle of Man Gambling Supervision Commission."
+msgstr ""
+
+msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary Investments (Europe) Ltd, regulated by the Malta Financial Services Authority."
+msgstr ""
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr ""
@@ -9044,7 +9137,7 @@ msgid "Token Sale Begins In"
 msgstr "La venta de tokens comienza en"
 
 msgid "Token dividends"
-msgstr ""
+msgstr "Dividendos de tokens"
 
 msgid "Token sale begins in"
 msgstr "La venta de tokens comienza en"
@@ -9058,8 +9151,8 @@ msgstr ""
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
 msgstr "Los tokens le dan derecho a un valor equivalente a dividendos en acciones comunes de Binary.com."
 
-msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our %2account authentication/KYC process%3."
-msgstr "Los tokens sólo serán ofrecidos a clientes de %1 que tengan una cuenta de dinero real y que hayan completado nuestro %2proceso de autenticación o de KYC de su cuenta%3."
+msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
+msgstr ""
 
 msgid "Top-tier liquidity"
 msgstr ""
@@ -9068,6 +9161,12 @@ msgid "Total"
 msgstr "Total"
 
 msgid "Total Bid Price"
+msgstr ""
+
+msgid "Total Bids"
+msgstr ""
+
+msgid "Total Bids ($USD)"
 msgstr ""
 
 msgid "Total Cost"
@@ -9154,8 +9253,8 @@ msgstr ""
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Solo opere con dinero que puede perder. No opere con dinero prestado."
 
-msgid "Trade short-term or long-term contracts, from ticks to days."
-msgstr "Opere contratos a corto o largo plazo, desde intérvalos hasta días."
+msgid "Trade short-term or long-term contracts, from 10 seconds to 365 days."
+msgstr ""
 
 msgid "Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!"
 msgstr ""
@@ -9373,6 +9472,9 @@ msgstr "Experiencia UX / UI"
 msgid "Ultra fast on-the-go trading"
 msgstr ""
 
+msgid "Unable to create ICO account while virtual account is selected. Please select your real money account and try again."
+msgstr ""
+
 msgid "Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button."
 msgstr ""
 
@@ -9433,6 +9535,9 @@ msgstr ""
 msgid "Up - Predict that the market will end higher than the average price"
 msgstr ""
 
+msgid "Up to 10 million tokens are available via the auction."
+msgstr ""
+
 msgid "Up/Down"
 msgstr "Arriba/Abajo"
 
@@ -9447,9 +9552,6 @@ msgstr "Actualizar configuración"
 
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "Actualizar el Manual de Lucha contra el Fraude y otros documentos relacionados"
-
-msgid "Upgrade"
-msgstr ""
 
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr ""
@@ -9496,7 +9598,7 @@ msgstr "Utilizar una variedad de tácticas, tanto online como offline, para hace
 msgid "Utility bill"
 msgstr ""
 
-msgid "Utility bills (gas, electricity, and phone)"
+msgid "Utility bills (electricity, water, gas, broadband and landline)"
 msgstr ""
 
 msgid "Variable spreads"
@@ -9589,8 +9691,8 @@ msgstr "Vea su extracto"
 msgid "View your trading and withdrawal limits."
 msgstr "Vea sus límites de operar y retirar."
 
-msgid "Viewing the materials available hereafter may not be lawful in certain jurisdictions. In other jurisdictions, only certain categories of person may be allowed to view such materials. Any person who wishes to view these materials must first satisfy themselves that they are not subject to any local requirements that prohibit or restrict them from doing so. In particular, unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, it is not intended that any offering of the tokens mentioned in such materials (the \"Tokens\") by Binary Group Ltd. should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, New Zealand, Singapore, Switzerland, the USA (each, a “Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction."
-msgstr "La visualización de los materiales disponibles a continuación puede ser ilegal en algunas jurisdicciones. En otras jurisdicciones, sólo ciertas categorías de personas están autorizadas a ver tales materiales. Cualquier persona que desee acceder estos materiales debe asegurarse primero de no estar sujeto a ninguna normativa local que les prohíba o restrinja hacerlo. En particular, a menos que Binary Group Ltd. determine lo contrario y que esté permitido por las leyes y normativas aplicables, no se pretende que ninguna oferta de los tokens mencionados en dichos materiales (en adelante los \"Tokens\") por Binary Group Ltd. se realice, o que cualquier documentación sea enviada, directa o indirectamente, en o hacia Australia, las Islas Vírgenes Británicas, Canadá, la Unión Europea, Hong Kong, Japón, Nueva Zelanda, Singapur, Suiza, Estados Unidos (en adelante y de manera individual, \"Territorio restringido\"). Del mismo modo tampoco, ningún ciudadano o residente de un Territorio restringido, incluyendo sociedades, asociaciones u otras entidades creadas u organizadas en cualquiera de dichas jurisdicciones pueden acceder a dichas ofertas."
+msgid "Viewing the materials available hereafter may not be lawful in certain jurisdictions. In other jurisdictions, only certain categories of person may be allowed to view such materials. Any person who wishes to view these materials must first satisfy themselves that they are not subject to any local requirements that prohibit or restrict them from doing so. In particular, unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, it is not intended that any offering of the tokens mentioned in such materials (the \"Tokens\") by Binary Group Ltd. should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, New Zealand, Singapore, Switzerland, the USA (each, a “Restricted Territory”) unless under an exemption under applicable laws, and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction, except under such available exemption."
+msgstr ""
 
 msgid "Virtual"
 msgstr ""
@@ -9749,6 +9851,9 @@ msgid "We have the ability to adapt and scale to meet the demands of new clients
 msgstr "Tenemos la capacidad de adaptarnos y escalar nuestros servicios para satisfacer las demandas de los nuevos clientes, gracias a los equipos y procesos que hemos formado a lo largo de los años."
 
 msgid "We have the right and obligation not to accept the information provided by you if we know or have a reason to believe that it is incorrect, inaccurate or incomplete. In such case, we may ask you to clarify or correct the details provided."
+msgstr ""
+
+msgid "We intend to apply for the token symbol BINARY."
 msgstr ""
 
 msgid "We look forward to hearing from you."
@@ -9943,6 +10048,9 @@ msgstr "¿Qué es el programa de afiliados de %1?"
 msgid "What is the definition of a 'client'?"
 msgstr "¿Cuál es la definición de \"cliente\"?"
 
+msgid "What is the minimum bid price?"
+msgstr ""
+
 msgid "What is this?"
 msgstr ""
 
@@ -9957,6 +10065,9 @@ msgstr "¿Qué otros informes puedo generar?"
 
 msgid "What our clients are saying"
 msgstr "Lo que dicen nuestros clientes"
+
+msgid "What will be the token symbol?"
+msgstr ""
 
 msgid "What's a margin call and how do we apply it?"
 msgstr ""
@@ -10026,6 +10137,9 @@ msgstr "¿Dónde están ubicados?"
 
 msgid "Where can I send my questions, comments and suggestions?"
 msgstr "¿Dónde puedo enviar mis preguntas, comentarios y sugerencias?"
+
+msgid "Where can I view the source code of the tokens?"
+msgstr ""
 
 msgid "Where does %1 hold my funds?"
 msgstr ""
@@ -10119,7 +10233,7 @@ msgid "Who is %1"
 msgstr "Quién es %1"
 
 msgid "Who we are"
-msgstr ""
+msgstr "Quiénes somos"
 
 msgid "Why Choose Binary Trading?"
 msgstr "¿Por qué elegir contratos binarios?"
@@ -10202,6 +10316,9 @@ msgstr "Retirar: %1 día(s) laborable(s)"
 msgid "Withdraw: Not applicable"
 msgstr "Retirar: No disponible"
 
+msgid "Withdrawal"
+msgstr ""
+
 msgid "Withdrawal Limits"
 msgstr "Límites de retiro"
 
@@ -10278,6 +10395,9 @@ msgid "Yes, I understand"
 msgstr ""
 
 msgid "Yes, but we'd prefer you to submit security vulnerabilities via our %1bug bounty%2 program."
+msgstr ""
+
+msgid "Yes, cancel my bid"
 msgstr ""
 
 msgid "Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:"
@@ -10490,9 +10610,6 @@ msgstr ""
 msgid "You may also %1open a free %2 account%3."
 msgstr "También puede %1abrir una cuenta gratuita de%3 %2."
 
-msgid "You may also read about the ICO on %1FinanceMagnates%2 and %3Leaprate%2."
-msgstr "También puede leer sobre la ICO en %1FinanceMagnates%2 y %3Leaprate%2."
-
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "Puede almacenar en caché el Contenido hasta 24 horas de una solicitud para ese contenido a través de la API de %1."
 
@@ -10628,8 +10745,9 @@ msgstr "Tiene que leer estos TCS con mucha atención, así como el resumen de la
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
 msgstr ""
 
-msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
-msgstr "Usted podrá comprar tokens con los fondos de su cuenta en %1. Puede utilizar cualquiera de las divisas disponibles en nuestro %2sistema de caja%3. Si decide hacer una oferta en una moneda que no sea dólar, el monto de la oferta se convertirá a dólares según el tipo de cambio vigente al momento de terminada la subasta."
+msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including\n"
+"cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
+msgstr ""
 
 msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr ""
@@ -10639,6 +10757,9 @@ msgstr "Usted será automáticamente desconectado después de ese tiempo."
 
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "Le brindaremos todas las herramientas para convertir el tránsito en un flujo de rentabilidad"
+
+msgid "You will be subject to a 2% cancellation fee."
+msgstr ""
 
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr ""
@@ -12896,6 +13017,9 @@ msgstr "Autenticar"
 msgid "Subscribe to ICO"
 msgstr "Suscribirse a la ICO"
 
+msgid "ICO Histogram"
+msgstr ""
+
 msgid "Settings"
 msgstr "Configuración"
 
@@ -12915,8 +13039,5 @@ msgid "Initial Coin Offering Disclaimer"
 msgstr ""
 
 msgid "Hackathon Competition"
-msgstr ""
-
-msgid "Sign up"
 msgstr ""
 

@@ -33,7 +33,7 @@
                 <a class="navbar-brand logo" href="[% request.url_for('home') %]"></a>
             </div>
             <div class="navbar-collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav invisible">
                     <li class="invisible">
                         <a href="#page-top"></a>
                     </li>
@@ -51,6 +51,29 @@
                     </li>
                     <li>
                         <a class="faq-btn" href="#faq">[% l("FAQ") %]</a>
+                    </li>
+                    <li id="language">
+                        <ul class="language-dropdown invisible">
+                            <a id="lang" class="selected" href="javascript:;">
+                                <span class="world"></span>
+                                <span id="selected-lang"></span>
+                                <span class="nav-caret"></span>
+                            </a>
+                            <li class="en">English</li>
+                            <li class="de">Deutsch</li>
+                            <li class="es">Español</li>
+                            <li class="fr">Français</li>
+                            <li class="id">Indonesia</li>
+                            <li class="it">Italiano</li>
+                            <!--li class="ja">日本語</li-->
+                            <li class="pl">Polish</li>
+                            <li class="pt">Português</li>
+                            <li class="ru">Русский</li>
+                            <li class="th">Thai</li>
+                            <li class="vi">Tiếng Việt</li>
+                            <li class="zh_cn">简体中文</li>
+                            <li class="zh_tw">繁體中文</li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -109,49 +132,42 @@
                                     [% END %]
                                 </div>
                                 <div class="status-toggle status-before-start">
-                                    <p class="intro-subtext">[% l("Subscribe to our mailing list for exclusive updates on the ICO.") %]</p>
-                                    <div class="form-container">
-                                        <!-- AWeber Web Form Generator 3.0.1 -->
-                                        <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
-                                            <div style="display: none;">
-                                                <input type="hidden" name="meta_web_form_id" value="713141817" />
-                                                <input type="hidden" name="meta_split_id" value="" />
-                                                <input type="hidden" name="listname" value="awlist4685103" />
-                                                <input type="hidden" name="redirect" value="" id="redirect_600c7e6a647457c51ede13e8b4d377e6" />
-                                                <input type="hidden" name="meta_adtracking" value="Binary_ICO" />
-                                                <input type="hidden" name="meta_message" value="1001" />
-                                                <input type="hidden" name="meta_required" value="email" />
-                                                <input type="hidden" name="meta_tooltip" value="" />
-                                                <input type="hidden" name="custom language" value="" class="frm-language" />
-                                            </div>
-                                            <div id="af-form-713141817" class="af-form">
-                                                <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
-                                                    <div class="af-element gr-row">
-                                                        <div class="gr-8 gr-12-m">
-                                                            <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
-                                                        </div>
-                                                        <div class="gr-4 gr-12-m">
-                                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div style="display: none;">
-                                                    <img src="https://forms.aweber.com/form/displays.htm?id=7IzMjCyMHIzs" alt="" />
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <script type="text/javascript">
-                                            document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';
-                                        </script>
-                                        <!-- /AWeber Web Form Generator 3.0.1 -->
-                                        <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
-                                    </div>
                                 </div>
                                 <div class="status-toggle status-started">
                                     <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Join the token sale") %]</span></a>
                                 </div>
                                 <div class="status-toggle status-ended">
                                     <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Take me there") %]</span></a>
+                                </div>
+                                <div id="sign-up-section">
+                                    <div class="signup-desc">
+                                        <p>[% l("Investors need to open a [_1] real money account to take part in the ICO.", broker_name) %]</p>
+                                        <p>[% l("Sign up now for free.") %]</p>
+                                    </div>
+                                    <div class="signup-container gr-9 gr-12-p gr-12-m gr-centered">
+                                        <form id="frm_verify_email">
+                                            <div class="gr-row gr-row-align-center">
+                                                <div class="signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
+                                                    <div class="gr-row gr-padding-10" id="signup">
+                                                        <div class="gr-7 gr-10-m gr-centered">
+                                                            <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
+                                                            <div id="error_validate_email" class="invisible error-msg">[% l('Invalid email address') %]</div>
+                                                            <div id="error_no_email" class="invisible error-msg">[% l('This field is required.') %]</div>
+                                                        </div>
+                                                        <div class="gr-5 gr-8-m gr-centered">
+                                                            <button class="primary-bg-color" id="btn_verify_email" type="submit">[% l("Create Free Account") %]</button>
+                                                        </div>
+                                                        <span class="gr-12 gr-padding-10 error-msg hint color-white center-text invisible" id="signup_error"></span>
+                                                    </div>
+                                                    <div class="invisible" id="success">
+                                                        <div class="gr-padding-10 center-text hint gr-12 align-self-center">
+                                                            <p>[% l('Thank you for signing up! Please check your email to complete the registration process.') %]</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -201,7 +217,7 @@
                         </div>
                     </div>
                     <p class="gr-12">
-                        <a class="button" href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">
+                        <a class="button" id="howto-btn" href="javascript:;">
                             <span>[% l('How to participate in the [_1] ICO', broker_name) %]</span>
                         </a>
                     </p>
@@ -301,7 +317,7 @@
                             <div class="gr-row">
                                 <div class="gr-6 gr-12-m">
                                     <h4>[% l("Sharp prices") %]</h4>
-                                    <p>[% l("Our cutting-edge pricing technology gives you the same rates of return as the interbank market.") %]</p>
+                                    <p>[% l("Our cutting-edge pricing technology benchmarks our prices against interbank market rates wherever possible.") %]</p>
                                 </div>
                                 <div class="gr-6 gr-12-m">
                                     <h4>[% l("Patented technology") %]</h4>
@@ -449,7 +465,7 @@
                         <h4 class="secondary-color">[% l("Low minimum collateral") %]</h4>
                         <p>[% l("Deposit as little as USD 5 and start trading from USD 5 per contract.") %]</p>
                         <h4 class="secondary-color">[% l("Multiple trading opportunities") %]</h4>
-                        <p>[% l("Trade short-term or long-term contracts, from ticks to days.") %]</p>
+                        <p>[% l("Trade short-term or long-term contracts, from 10 seconds to 365 days.") %]</p>
                     </div>
                 </div>
             </div>
@@ -519,6 +535,12 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="ico1"                   timestamp="Nov 08, 2017"    headlines="BINARY.COM 宣布开展ICO"                                                  url="http://www.ico1.com/a/jiangkaishi/1277.html" },
+                { logo="binguru"                timestamp="Nov 08, 2017"    headlines="Binary выходит на ICO: памятка инвестору"                               url="https://binguru.net/binary-vyxodit-na-ico-pamyatka-investoru-5371" },
+                { logo="coinist"                timestamp="Nov 08, 2017"    headlines="Binary.com’s Explosive Growth & Their Upcoming ICO"                     url="https://www.coinist.io/binary-com-explosive-growth-ico/" },
+                { logo="chipin"                 timestamp="Nov 08, 2017"    headlines="Introducing the Binary ICO – Redefining the Future of IPOs"             url="https://www.chipin.com/binary-ico-redefining-future-ipos/" },
+                { logo="cryptogo"               timestamp="Nov 07, 2017"    headlines="ICO Analyse - Binary.com"                                               url="https://cryptogo.de/binary-analyse/" },
+                { logo="hype-codes"             timestamp="Nov 03, 2017"    headlines="The future of IPOs is blockchain" url="https://hype.codes/future-ipos-blockchain" },
                 { logo="crypto-martez"          timestamp="Oct 27, 2017"    headlines="PR: Binary.com Announces Initial Coin Offering (ICO)"                        url="https://www.cryptomartez.com/2017/10/pr-binary-com-announces-ico.html" },
                 { logo="bittox"                 timestamp="Oct 25, 2017"    headlines="BINARY.COM ANNOUNCES INITIAL COIN OFFERING (ICO)"                        url="https://bittox.com/2017/10/25/binary-com-announces-initial-coin-offering-ico/" },
                 { logo="profit-f"               timestamp="Oct 23, 2017"    headlines="BINARY.COM offers securities-backed tokens in ICO"                       url="http://www.profitf.com/news/binary-com-offers-securities-backed-tokens-initial-coin-offering-ico/" },
@@ -565,8 +587,11 @@
                         <a href="https://www.reddit.com/r/binarydotcom/" target="_blank" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
                         </a>
-                        <a href="https://www.facebook.com/mybinarycoin" target="_blank">
+                        <a href="https://www.facebook.com/mybinarycoin" target="_blank" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/facebook.svg") %]" />
+                        </a>
+                        <a href="https://bitcointalk.org/index.php?topic=2368998.0" target="_blank">
+                            <img class="responsive" src="[% request.url_for("images/ico/icons/bitcoin_talk.svg") %]" />
                         </a>
                     </div>
                 </div>
@@ -602,12 +627,13 @@
                             <h4>[% l("Why is [_1] performing an ICO?", broker_name) %]</h4>
                             <p>[% l("[_1] was founded in 1999. Today, it is a well-established, and very successful, company. Like many successful companies, the growth of our business led us to consider an IPO.", broker_name) %]</p>
                             <p>[% l("However, we believe that in the coming decade traditional stock exchanges will gradually be replaced by blockchain exchanges, and IPOs will gradually be replaced by ICOs. This is because blockchain technologies are much more performant than the legacy technologies of traditional stock exchanges, leading to lower transaction fees, faster settlement times, and error-free immutable audit trails. Hence, we decided to perform an ICO instead of an IPO.") %]</p>
+                            <p>[% l("For further background information please read our blog post, <a href='[_1]' target='_blank'>Why we are doing an ICO (and not an IPO)</a>.", 'https://blog.binary.com/ipo-or-ico/') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How does the ICO work?") %]</h4>
-                            <p>[% l("[_1] will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as \‘ERC20\’ tokens on the Ethereum blockchain.", broker_name) %]</p>
+                            <p>[% l("[_1] will offer a number of blockchain tokens to investors. These tokens will be \‘ERC20\’ tokens on the Ethereum blockchain, however the Company may issue tokens on other blockchains if there is sufficient investor demand for different token types.", broker_name) %]</p>
                             <p>[% l("Regardless of the type of token issued, each token will provide investors with two rights:") %]</p>
                             <ol>
                                 <li>[% l("The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares; and") %]</li>
@@ -637,21 +663,40 @@
                     </div>
                     <div class="gr-12">
                         <div class="faq">
+                            <h4>[% l("How many tokens are available?") %]</h4>
+                            <p>[% l("Up to 10 million tokens are available via the auction.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("What is the minimum bid price?") %]</h4>
+                            <p>[% l("The minimum bid is USD 1.35/token or equivalent in other currency/cryptocurrency.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("How high should I bid?") %]</h4>
+                            <p>[% l("The higher you bid, the more your chances of being successful in the auction. However irrespective of how high you bid, at the end of the auction all winning bids will receive the same final price, which is the lowest winning bid.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
                             <h4>[% l("Who can purchase the tokens?") %]</h4>
-                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account, and who have completed our [_2]account authentication/KYC process[_3].", broker_name, '<a href="https://ico_documents.binary.com/2017_Authentication_Process.pdf" target="_blank">', '</a>') %]</p>
+                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account. Please visit [_2]www.binary.com[_3] to open an account.", broker_name, '<a href="' _ request.url_for('home') _ '" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Is the ICO available in all jurisdictions?") %]</h4>
                             <p>[% l("The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions. In particular, the ICO is not available to US investors.") %]</p>
-                            <p>[% l("To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the [_1]Information Memorandum[_2] page.", '<a href="' _ request.url_for('ico-disclaimer') _ '">', '</a>') %]</p>
+                            <p>[% l("To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the [_1]Information Memorandum[_2] page.", '<a href="' _ request.url_for('ico-disclaimer') _ '" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I purchase tokens?") %]</h4>
-                            <p>[% l("You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.", broker_name, '<a href="' _ request.url_for('/cashier/payment_methods') _ '" target="_blank">', '</a>') %]</p>
+                            <p>[% l("You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies (including
+cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.", broker_name, '<a href="' _ request.url_for('/cashier/payment_methods') _ '" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -662,29 +707,41 @@
                     </div>
                     <div class="gr-12">
                         <div class="faq">
+                            <h4>[% l("What will be the token symbol?") %]</h4>
+                            <p>[% l("We intend to apply for the token symbol BINARY.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
                             <h4>[% l("What are the benefits of purchasing tokens?") %]</h4>
-                            <p>[% l("There will be two main benefits of purchasing tokens.") %]</p>
+                            <p>[% l("There will be three main benefits of purchasing tokens.") %]</p>
                             <p>[% l("First, token holders will receive dividend-linked payments equivalent to the dividends paid by the Company on its Ordinary Shares. Therefore, token holders will share in the future success of the Company in the same way as do shareholders.") %]</p>
-                            <p>[% l("Second, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares.") %]</p>
+                            <p>[% l("Second, tokens may be converted into Ordinary Shares of the Company (subject to certain conditions, as described in the Information Memorandum), thereby providing the legal link between tokens and Ordinary Shares.") %]</p>
+                            <p>[% l("Third, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Where can I view the source code of the tokens?") %]</h4>
+                            <p>[% l("Binary.com intends to deploy the <a href='[_1]' target='_blank'>Mini Me</a> token. Please view our <a href='[_2]' target='_blank'>blog post</a> detailing our reasons for choosing this token.", 'https://github.com/Giveth/minime', 'https://tech.binary.com/an-erc20-securities-token/') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("What are the risks of purchasing tokens?") %]</h4>
-                            <p>[% l("Although [_1] has been a successful company since its inception in 1999, the tokens should be considered a high risk investment. The [_1] business is subject to a number of risks which could adversely affect the company and hence affect the future value of the tokens. These risks are detailed in the [_2]Information Memorandum[_3] and should be considered very carefully before proceeding with any investment in the tokens.", broker_name, '<a href="' _ request.url_for('ico-disclaimer') _ '">', '</a>') %]</p>
+                            <p>[% l("Although [_1] has been a successful company since its inception in 1999, the tokens should be considered a high risk investment. The [_1] business is subject to a number of risks which could adversely affect the company and hence affect the future value of the tokens. These risks are detailed in the [_2]Information Memorandum[_3] and should be considered very carefully before proceeding with any investment in the tokens.", broker_name, '<a href="' _ request.url_for('ico-disclaimer') _ '" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I find out more about [_1]?", broker_name) %]</h4>
                             <p>[% l("To find out more about [_1], you can read about our [_2]group history[_3], [_4]regulatory status[_3], and [_5]company culture[_3]. You can also read the [_6]company blog[_3].", broker_name, '<a href="' _ request.url_for('group-history') _ '" target="_blank">', '</a>', '<a href="' _ request.url_for('regulation') _ '" target="_blank">', '<a href="' _ request.url_for('careers') _ '" target="_blank">', '<a href="https://blog.binary.com/" target="_blank">') %]</p>
-                            <p>[% l("You may also read about the ICO on [_1]FinanceMagnates[_2] and [_3]Leaprate[_2].", '<a href="https://www.financemagnates.com/binary-options/brokers/exclusive-binary-com-ico-shows-company-profits-surpass-20-mln-2017/" target="_blank">', '</a>', '<a href="https://www.leaprate.com/binary-options/broker/binary-com-ico-finances-binary-options-broker/" target="_blank">') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I learn more about ICOs and cryptocurrencies?") %]</h4>
-                            <p>[% l("To learn more about Bitcoin, we recommend that you open a Bitcoin wallet with [_1][_2]\’s simple bitcoin wallet[_3], and purchase bitcoins using a local exchange in your country.", '<a href="https://bitcoin-wallet.binary.com/" target="_blank">', broker_name, '</a>') %]</p>
+                            <p>[% l("Head over to our <a href=[_1] target='_blank'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business.", 'https://www.youtube.com/user/BinaryTradingVideos') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -705,7 +762,7 @@
                     <p>[% l("for exclusive updates on the ICO.") %]</p>
                     <div class="form-container">
                         <!-- AWeber Web Form Generator 3.0.1 -->
-                        <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
+                        <form id="binary_ico_subscribe" method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
                             <div style="display: none;">
                                 <input type="hidden" name="meta_web_form_id" value="713141817" />
                                 <input type="hidden" name="meta_split_id" value="" />
@@ -721,10 +778,10 @@
                                 <div id="af-body-713141817" class="gr-12 gr-12-m af-body af-standards">
                                     <div class="af-element gr-row">
                                         <div class="gr-8 gr-12-m">
-                                            <input class="text" placeholder="Enter your email" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+                                            <input class="text" placeholder="[% l('Enter your email') %]" id="awf_field-90867273" type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
                                         </div>
                                         <div class="gr-4 gr-12-m">
-                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="Submit"/>
+                                            <input name="submit" id="af-submit-image-713141817" type="submit" class="image" alt="Submit" tabindex="501" value="[% l('Submit') %]"/>
                                         </div>
                                     </div>
                                 </div>
@@ -737,16 +794,26 @@
                             document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';
                         </script>
                         <!-- /AWeber Web Form Generator 3.0.1 -->
-                        <p class="notice-msg gr-8 gr-push-2 gr-push-0-m gr-12-m invisible">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
+                        <div id="subscribe_success" class="gr-8 gr-12-m gr-centered invisible">
+                            <p class="notice-msg">[% l("Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.") %]</p>
+                      </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="primary-bg-color content-inverse-color center-text">
             <div class="footnote">
-                <p>[% l("This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of [_1]. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum.", broker_name) %]</p>
-                <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum.") %]</p>
+                <p>[% l("Access to electronic versions of these materials is being made available by Binary Group Ltd. (“Company”) in good faith and for information purposes only. It does not constitute an offer of, or an invitation to purchase, the tokens or any securities.  Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the tokens or any other securities. Further, it does not constitute a recommendation by the Company or any other party to sell or buy tokens or any other securities.") %]</p>
+                <p>[% l("These materials and the proposed ICO do not constitute an offer of, or an invitation to purchase, the tokens or any securities in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens or any securities should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction.") %]</p>
+                <p>[% l("These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens.") %]</p>
+                <p>[% l("For the avoidance of doubt (and notwithstanding anything to the contrary), these materials are not an offer for tokens; they are an invitation to treat.  Tokens will may only be offered by the Company pursuant to an auction in the manner more particularly described in the ‘token auction process’ section of the materials.") %]</p>
+                <p>[% l("Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens.") %]</p>
+                <p>[% l("In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum.") %]</p>
+                <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the materials.") %]</p>
             </div>
+        </div>
+        <div class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
+            <span>Binary Group Ltd., Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
         </div>
         <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js"></script>

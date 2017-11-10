@@ -86,6 +86,12 @@ const Page = (() => {
         const ico_banner = document.getElementById('ico_banner');
         if (!sessionStorage.getItem('hide_ico_banner') && ico_banner) {
             ico_banner.classList.remove('invisible');
+            const ico_banner_btn = document.getElementById('ico_link_button');
+            if (ico_banner_btn) {
+                ico_banner_btn.removeEventListener('click', clickIcoBannerButton);
+                ico_banner_btn.addEventListener('click', clickIcoBannerButton);
+            }
+
         }
 
         const close_ico_banner = document.getElementById('close_ico_banner');
@@ -111,6 +117,11 @@ const Page = (() => {
 
     const onUnload = () => {
         Menu.onUnload();
+    };
+
+    const clickIcoBannerButton = (e) => {
+        e.stopPropagation();
+        window.open(Url.urlFor('ico'), '_blank');
     };
 
     const removeIcoBanner = (e) => {

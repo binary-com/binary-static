@@ -3,13 +3,15 @@ const Client         = require('../../../base/client');
 const AccountOpening = require('../../../common_functions/account_opening');
 const FormManager    = require('../../../common_functions/form_manager');
 const BinarySocket   = require('../../../websocket_pages/socket');
+const localize       = require('../../../base/localize').localize;
 
 const RealAccOpening = (() => {
 
     const onLoad = () => {
         if (Client.get('residence')) {
             const account_type_ico = /ico/.test(window.location.hash);
-            console.log(AccountOpening.redirectAccount(account_type_ico));
+
+            if (account_type_ico) $('h1').html(localize('ICO Account Opening'));
 
             if (AccountOpening.redirectAccount(account_type_ico)) return;
 
@@ -17,7 +19,7 @@ const RealAccOpening = (() => {
                 const form_id = '#frm_real';
                 AccountOpening.populateForm(form_id,
                     () => AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id))
-                        , account_type_ico);
+                        , false, account_type_ico);
 
                 FormManager.handleSubmit({
                     form_selector       : form_id,

@@ -58,7 +58,11 @@ const Header = (() => {
     };
 
     const logoOnClick = () => {
-        BinaryPjax.load(Client.isLoggedIn() ? Url.defaultRedirectUrl() : Url.urlFor(''));
+        const is_ico = Client.get('is_ico_only');
+        const url    = Client.isLoggedIn() && !is_ico ? Url.defaultRedirectUrl() // eslint-disable-line no-nested-ternary
+            : Client.isLoggedIn() && is_ico ? Url.urlFor('user/ico-subscribe')
+            : Url.urlFor('');
+        BinaryPjax.load(url);
     };
 
     const loginOnClick = (e) => {
