@@ -965,6 +965,17 @@ input[type='text']:focus, input[type='submit']:focus {
             height: 3em;
             margin: 5px 0;
             font-size: $FONT_SIZE_S;
+
+            @media (max-width: 480px) {
+                width: 99%;
+                padding: 0;
+            }
+
+        }
+        input[placeholder] {
+            @media (max-width: 480px) {
+                text-align: center;
+            }
         }
         button {
             margin: 5px 0;
