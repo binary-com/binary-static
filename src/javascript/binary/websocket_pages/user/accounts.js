@@ -92,7 +92,7 @@ const Accounts = (() => {
     };
 
     const getAvailableMarkets = (loginid) => {
-        if(Client.get('is_ico_only', loginid)) {
+        if (Client.get('is_ico_only', loginid)) {
             return [localize('None')];
         }
         let legal_allowed_markets = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_markets') || '';
