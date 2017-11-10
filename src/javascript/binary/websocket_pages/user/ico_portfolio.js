@@ -30,14 +30,15 @@ const ICOPortfolio = (() => {
     };
 
     const createPortfolioRow = (data, is_first) => {
-        const long_code = data.longcode;
-
+        const long_code  = data.longcode;
+        const ico_status = (State.getResponse('website_status.ico_status') || '').toLowerCase();
+        // Default to cancel bid. Ended on a button doesn't make sense.
         let status_text = 'Ended';
         if (/unsuccessful/i.test(long_code)) {
             status_text = 'Refund Bid';
         } else if (/successful/i.test(long_code)) {
             status_text = 'Claim Tokens';
-        } else if (/bid/i.test(long_code)) {
+        } else if (ico_status === 'open') {
             status_text = 'Cancel Bid';
         }
 

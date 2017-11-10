@@ -11,7 +11,7 @@ window.onload = function() {
     function isRestrictedCountry(val) {
         // restricted countries code
         var regex = new RegExp(['^(',
-            'as|af|at|au|be|bg|ca|ch|cy|cz|de|dk|ee|es|fi|fr|gb|gg|gr|gu|hk|hr|hu|ie|il|im|it|',
+            'as|af|at|au|be|bg|ca|ch|cy|cz|de|dk|ee|es|fi|fr|gg|gb|gr|gu|hk|hr|hu|ie|il|im|it|',
             'iq|ir|je|jp|kp|lt|lu|lv|mp|mt|my|nl|nz|pl|pt|pr|ro|se|sg|si|sk|sy|sz|us|vi|vg|vu',
             ')$'].join(''));
         if (regex.test(val)) {
@@ -22,7 +22,7 @@ window.onload = function() {
 
     var country_names = [
         { code: 'ca', name: 'Canada' },
-        { code: 'uk', name: 'the United Kingdom' },
+        { code: 'gb', name: 'the United Kingdom' },
         { code: 'eu', name: 'the European Economic Area' },
         { code: 'hk', name: 'Hong Kong' },
         { code: 'jp', name: 'Japan' },
@@ -49,7 +49,7 @@ window.onload = function() {
                 val = 'eu';
             }
 
-            if (/^(ca|jp|sg|hk|uk|ch|eu)$/.test(val)) {
+            if (/^(ca|jp|sg|hk|gb|ch|eu)$/.test(val)) {
                 showSecondNotice(val);
             } else {
                 document.getElementById('access_denied_msg').classList.remove('invisible');
