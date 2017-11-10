@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-08 23:55-0500\n"
+"PO-Revision-Date: 2017-11-10 01:06-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -243,8 +243,8 @@ msgstr "%1 tidak berafiliasi dengan agen pembayaran manapun. Setiap agen pembaya
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 tidak tersedia di Costa Rica dan tidak diatur atau diawasi oleh badan pengawas keuangan di Costa Rica."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1.35</strong> or its equivalent in another currency."
-msgstr "%1 menawarkan hingga <strong>10.000.000</strong> token pada lelang terbuka. Anda dapat menempatkan tawaran Anda menggunakan formulir di bawah ini. Tawaran minimum adalah <strong>USD 1.35</strong> atau setara dalam mata uang lainnya."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
+msgstr ""
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 dimiliki dan dioperasikan oleh grup perusahaan Binary Ltd. Untuk informasi lanjut, <a href='%2'>kunjungi halaman sejarah kami</a>."
@@ -369,8 +369,8 @@ msgstr "%1 didirikan pada tahun 1999. Saat ini, merupakan perusahaan yang mapan 
 msgid "%1 will issue a number of tokens during the ICO."
 msgstr "%1 akan mengeluarkan sejumlah token selama ICO berlangsung."
 
-msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘ERC20’ tokens on the Ethereum blockchain."
-msgstr "%1 akan menawarkan sejumlah token blockchain kepada para investor. Token ini bisa dikeluarkan dalam berbagai bentuk dari beragam jenis blockchain, seperti token ‘ERC20’ pada blockchain Ethereum."
+msgid "%1 will offer a number of blockchain tokens to investors. These tokens will be ‘ERC20’ tokens on the Ethereum blockchain, however the Company may issue tokens on other blockchains if there is sufficient investor demand for different token types."
+msgstr "%1 akan menawarkan sejumlah token blockchain kepada para investor. Token ini adalah 'ERC20' pada blockchain Ethereum, namun Perusahaan mungkin akan mengeluarkan token pada blockchain lainnya berdasarkan permintaan investor bagi jenis token lainnya."
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "%1 penarikan dari akun %2 ke %3 telah berhasil. ID Transaksi: %4"
@@ -782,6 +782,9 @@ msgstr "Akses ke Data Pribadi"
 
 msgid "Access to STP trading"
 msgstr "Akses ke trading STP"
+
+msgid "Access to electronic versions of these materials is being made available by Binary Group Ltd. (“Company”) in good faith and for information purposes only. It does not constitute an offer of, or an invitation to purchase, the tokens or any securities.  Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the tokens or any other securities. Further, it does not constitute a recommendation by the Company or any other party to sell or buy tokens or any other securities."
+msgstr "Akses ke dalam versi elektronik dari materi ini disediakan oleh Binary Group Ltd. (\"Perusahaan\") dengan itikad baik dan untuk tujuan informasi saja. Hal ini bukan merupakan penawaran, atau undangan untuk membeli, token atau sekuritas apa pun. Membuat pengumuman pers dan dokumen lainnya yang tersedia dalam format elektronik bukan merupakan, atau tidak dianggap sebagai, atau merupakan bagian dari, suatu penawaran untuk menjual atau permintaan dari suatu penawaran untuk membeli atau menangani token atau sekuritas lainnya. Selanjutnya, hal ini juga bukan merupakan rekomendasi dari Perusahaan atau pihak lain untuk menjual atau membeli token atau sekuritas lainnya."
 
 msgid "Access to electronic versions of these materials is being made available on this webpage by Binary Group Ltd. in good faith and for information purposes only. Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the Tokens. Further, it does not constitute a recommendation by Binary Group Ltd. or any other party to sell or buy Tokens or any other securities."
 msgstr "Akses ke dalam versi elektronik dari materi yang tersedia pada halaman web ini disediakan oleh Binary Group Ltd. dengan itikad baik dan untuk tujuan informasi saja. Pengumuman pers dan dokumen lain yang tersedia dalam format elektronik bukan merupakan, atau tidak dianggap sebagai, atau merupakan bagian dari, tawaran untuk menjual atau permintaan dari suatu penawaran untuk membeli atau menangani Token. Selanjutnya, hal ini bukan merupakan rekomendasi dari Binary Group Ltd. atau pihak lain untuk menjual atau membeli Token atau sekuritas lainnya."
@@ -1693,6 +1696,9 @@ msgstr "Cabang Binary Malta yaitu Binary Investments (Europe) Ltd. diberikan seb
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Platform Binary memproses rata-rata %1 %2transaksi%3 per detik, 24/7"
 
+msgid "Binary.com intends to deploy the <a href='%1' target='_blank'>Mini Me</a> token. Please view our <a href='%2' target='_blank'>blog post</a> detailing our reasons for choosing this token."
+msgstr "Binary.com bermaksud untuk menyebarkan token <a href='%1' target='_blank'>Mini Me</a>. Silakan lihat <a href='%2' target='_blank'>postingan blog</a> kami mengenai rincian alasan kami memilih token ini."
+
 msgid "Bitcoin"
 msgstr "Bitcoin"
 
@@ -1832,7 +1838,7 @@ msgid "Cancel Bid"
 msgstr "Membatalkan Bid"
 
 msgid "Cancel bid?"
-msgstr ""
+msgstr "Membatalkan bid?"
 
 msgid "Career opportunities for Americans"
 msgstr "Peluang karir bagi Amerika"
@@ -2530,8 +2536,8 @@ msgstr "Tanggal Lahir"
 msgid "Date of birth"
 msgstr "Tanggal lahir"
 
-msgid "Dated within the last three months"
-msgstr "Tidak melebihi tiga bulan dari tanggal cetak"
+msgid "Dated within the last six months"
+msgstr "Tertanggal selama enam bulan terakhir"
 
 msgid "Day"
 msgstr "Hari"
@@ -3425,11 +3431,17 @@ msgstr "Untuk forex harga penutupan adalah ditentukan oleh Perusahaan seperti ya
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "Untuk forex: Pasar forex adalah pasar OTC (over the counter yaitu diselesaikan melalui bagian kasir) dimana bank-bank dan beberapa institusi keuangan besar lainnya melakukan trading mata uang antara mereka sendiri tanpa adanya lembaga kliring. Maka secara langsung tidak akan ada penentuan harga resmi pada tawaran harga forex. Setiap data feed terdiri tawaran atau quote yang berasal dari sub-set Bank internasional yang berbeda. Sehingga harga yang ditawarkan akan berbeda-beda tergantung pada penawar dari bank mana mereka mengambil harga tersebut."
 
+msgid "For further background information please read our blog post, <a href='%1' target='_blank'>Why we are doing an ICO (and not an IPO)</a>."
+msgstr "Untuk informasi latar belakang lebih lanjut silahkan baca postingan blog kami <a href='%1' target='_blank'>Mengapa kami melakukan ICO (dan bukan IPO)</a>."
+
 msgid "For general support:"
 msgstr "Untuk bantuan umum:"
 
 msgid "For payments-related queries:"
 msgstr "Untuk bantuan pembayaran:"
+
+msgid "For the avoidance of doubt (and notwithstanding anything to the contrary), these materials are not an offer for tokens; they are an invitation to treat.  Tokens will may only be offered by the Company pursuant to an auction in the manner more particularly described in the ‘token auction process’ section of the materials."
+msgstr "Untuk menghindari keraguan (dan terlepas dari hal yang sebaliknya), materi ini bukan merupakan penawaran token; materi ini merupakan undangan untuk mengatasi. Token hanya dapat ditawarkan oleh Perusahaan sesuai dengan pelelangan dengan cara yang lebih khusus yang dijelaskan pada bagian 'proses lelang token' pada materi."
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "Tiga kali berturut-turut, BetOnMarkets.com dinobatkan sebagai 'Penyedia Trading Financial Fixed-Odds Terbaik' oleh Shares Magazine UK."
@@ -3845,11 +3857,17 @@ msgstr "Bagaimana cara kerja ICO"
 msgid "How does the ICO work?"
 msgstr "Bagaimana cara kerja ICO?"
 
+msgid "How high should I bid?"
+msgstr "Seberapa tinggi saya harus membidding?"
+
 msgid "How is margin calculated?"
 msgstr "Bagaimana cara menghitung margin?"
 
 msgid "How it works"
 msgstr "Cara kerja"
+
+msgid "How many tokens are available?"
+msgstr "Berapa banyak token yang tersedia?"
 
 msgid "How much dividend will I receive?"
 msgstr "Berapa dividen yang akan saya terima?"
@@ -3906,7 +3924,7 @@ msgid "I agree that I will trade OTC binary options using my own judgment and ac
 msgstr "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
 msgid "I agree to the cancellation fee stated above"
-msgstr ""
+msgstr "Saya setuju dengan biaya pembatalan yang disebutkan di atas"
 
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "Saya mengkonfirmasi kesepakatan pada isi dari semua dokumentasi berikut:"
@@ -3948,7 +3966,7 @@ msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "Yaitu: (20010 - 20000) x 1 x 1 = USD 10"
 
 msgid "ICO Account Opening"
-msgstr ""
+msgstr "Pendaftaran Akun ICO"
 
 msgid "ID card"
 msgstr "Kartu identitas"
@@ -4313,6 +4331,9 @@ msgstr "Dalam memberikan layanannya, Agen harus:"
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "Dalam memberikan layanan ini, kami terikat pada Undang-Undang, peraturan yang berlaku, hukum, kondisi lisensi, pedoman, persyaratan pertukaran dan ketentuan lain atau praktek umum (\"Aturan\"). Jika terjadi konflik antara Terma dan Kondisi serta Aturan, yang terkini adalah benar."
 
+msgid "In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
+msgstr "Sehubungan dengan yurisdiksi EEA, dimaksudkan bahwa penawaran token akan dilakukan sesuai dengan pengecualian berdasarkan perintah Uni Eropa 2003/71/EC (sebagaimana telah diubah, termasuk dengan perintah 2010/73/EU), yang mencakup, namun tidak terbatas, pembebasan yang berkaitan dengan investor yang memenuhi syarat, tawaran token serupa juga diharapkan terbatas pada investor berkualitas atau profesional di sejumlah yurisdiksi lain; rincian lebih lanjut dari pembatasan tersebut akan dirinci dalam memorandum informasi penawaran."
+
 msgid "In relation to Contracts that you enter into with us, we act as principal and not as agent on your behalf and we therefore act as the sole execution venue for the execution of your Contracts."
 msgstr "Berhubungan dengan Kontrak yang Anda beli, kami berfungsi sebagai perusahaan dan bukan sebagai agen yang mewakili Anda dan kami berfungsi sebagai media eksekusi Kontrak Anda."
 
@@ -4545,8 +4566,8 @@ msgstr "Produk investasi untuk Warga EEA disediakan oleh Binary Investments (Eur
 msgid "Investment Solicitation Policy"
 msgstr "Investment Solicitation Policy"
 
-msgid "Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum."
-msgstr "Investasi pada token yang diusulkan diharapkan akan melibatkan tingkat risiko yang tinggi, tidak akan ada jaminan bahwa para pemegang token akan dapat menerima pengembalian modal mereka atau pengembalian atas investasinya. Calon investor pada token tersebut perlu berhati-hati dalam mempertimbangkan faktor risiko yang akan dijelaskan secara terperinci dalam memorandum informasi."
+msgid "Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the materials."
+msgstr "Investasi pada token yang diusulkan diharapkan akan melibatkan tingkat risiko yang tinggi, tidak akan ada jaminan bahwa para pemegang token akan dapat menerima pengembalian modal mereka atau pengembalian atas investasinya. Calon investor pada token tersebut perlu berhati-hati dalam mempertimbangkan faktor risiko yang akan dijelaskan secara terperinci dalam berbagai material."
 
 msgid "Investment trust"
 msgstr "Investment trust"
@@ -5736,6 +5757,9 @@ msgstr "Kenaikan Minimal (Volume)"
 msgid "Minimum Volume<br>(Trade Size)"
 msgstr "Volume Minimal <br>(Ukuran Trading)"
 
+msgid "Minimum bid"
+msgstr ""
+
 msgid "Minimum eight characters. Must contain numbers, and mix of upper and lower case letters."
 msgstr "Minimal delapan karakter. Harus berisi angka, dan campuran huruf besar dan kecil."
 
@@ -5744,6 +5768,9 @@ msgstr "Minimal %1 karakter diperlukan."
 
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimal enam huruf kecil dan huruf besar beserta angka"
+
+msgid "Minimum of six months validity"
+msgstr "Minimal enam bulan validitasnya"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Pekerja Pertambangan, Konstruksi, Manufaktur dan Transportasi"
@@ -5883,6 +5910,9 @@ msgstr "Perlu Memantau Kontrak"
 msgid "Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of, or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney's fees) incurred arising out of your failure to comply with any and all of your obligations set forth in this Agreement and/or the Company's enforcement against you of any and all of its rights under this Agreement."
 msgstr "Perusahaan maupun direktur Perusahaan, pegawai, manajer, pekerja atau agen tidak dapat bertanggung jawab atas kerugian, kerusakan atau hutang yang Anda hasilkan baik secara langsung atau tidak langsung, berhubungan dengan Perjanjian ini. Anda bersetuju untuk menghindarkan Perusahaan beserta direktur, pegawai, manajer, pekerja atau agen dari gugatan kewajiban, kerugian, kerusakan, biaya, dan pengeluaran (termasuk biaya pengacara yang wajar) yang dihasilkan dari kegagalan Anda untuk mematuhi setiap dan semua kewajibannya yang diatur dalam Perjanjian ini dan/atau desakan Perusahaan bagi setiap dan semua hak berdasarkan Perjanjian ini."
 
+msgid "Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens."
+msgstr "Baik sekuritas dan komisi pertukaran Amerika Serikat maupun komisi sekuritas negara bagian, provinsi atau teritorial atau otoritas pengatur lainnya dari negara atau yurisdiksi manapun telah menyetujui atau menolak tawaran token yang diajukan."
+
 msgid "Neither this Information Memorandum nor any other offering or marketing material relating to the offering, the Company or the Tokens have been or will be filed with or approved by any Swiss regulatory authority. In particular, this Information Memorandum will not be filed with, and the offer of Tokens will not be supervised by, the Swiss Financial Market Supervisory Authority FINMA, and the offer of Tokens has not been and will not be authorized under the Swiss Federal Act on Collective Investment Schemes (the “CISA”). The investor protection afforded to acquirers of interests in collective investment schemes under the CISA does not extend to acquirers of Tokens.\n"
 msgstr "Baik Memorandum Informasi ini atau penawaran lain atau materi pemasaran yang berhubungan dengan penawaran, Perusahaan atau Token telah atau akan diajukan dengan atau disetujui oleh otoritas pengatur Swiss manapun. Secara khusus, Informasi Memorandum ini tidak akan diajukan dan penawaran Token tidak akan diawasi oleh Otoritas Pengawas Pasar Keuangan Swiss FINMA, dan tawaran Token belum dan tidak akan diberi wewenang berdasarkan Undang-Undang Federal tentang Skema Investasi Kolektif Swiss (\"CISA\"). Perlindungan investor yang diberikan untuk mengakuisisi kepentingan dalam skema investasi kolektif di bawah CISA tidak mencakup pengakuisisi Token.\n"
 
@@ -5992,7 +6022,7 @@ msgid "No risk, $10K virtual money account"
 msgstr "Bebas risiko, $10K akun uang virtual"
 
 msgid "No, return to the ICO auction page"
-msgstr ""
+msgstr "Tidak, kembali ke halaman pelelangan ICO"
 
 msgid "No. Once your pull request is merged into master by our development team, and you have been paid, you have effectively handed over the rights to the code. It then becomes part of the master %1 codebase under the open-source license of the relevant repository."
 msgstr "Tidak. Begitu permintaan pull Anda digabungkan ke dalam master oleh tim pengembang kami, dan Anda telah dibayar, Anda telah secara efektif menyerahkan hak atas kode tersebut. Yang kemudian menjadi bagian dari basis kode master %1 di bawah lisensi open-source dari repositori yang relevan."
@@ -7413,8 +7443,8 @@ msgstr "Trader berpengalaman dapat menggunakan platform %1 untuk keuntungan maks
 msgid "Second line of home address"
 msgstr "R.T/R.W"
 
-msgid "Second, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares."
-msgstr "Kedua, pemegang token akan dapat dengan bebas menukar token mereka. Sebaliknya, Saham Biasa tidak terdaftar dan oleh karena itu tidak dapat diperdagangkan di bursa manapun. Dalam hal ini, token tersebut akan menjadi investasi unggulan bagi Saham Biasa."
+msgid "Second, tokens may be converted into Ordinary Shares of the Company (subject to certain conditions, as described in the Information Memorandum), thereby providing the legal link between tokens and Ordinary Shares."
+msgstr "Kedua, token dapat dikonversi menjadi Saham Biasa Perusahaan (sesuai dengan kondisi tertentu, seperti yang dijelaskan dalam Memorandum Informasi), sehingga memberikan hubungan hukum antara token dan Saham Biasa."
 
 msgid "Secondary"
 msgstr "Sekunder"
@@ -7835,9 +7865,6 @@ msgstr "Langkah 2: Dapatkan harga kontrak Anda"
 
 msgid "Step 3: Make your trade"
 msgstr "Langkah 3: Lakukan Trading"
-
-msgid "Still valid"
-msgstr "Masih berlaku"
 
 msgid "Stock market indices measure the value of a selection of companies in the stock market."
 msgstr "Indeks bursa saham mengukur nilai beberapa perusahaan pada bursa saham."
@@ -8506,6 +8533,9 @@ msgstr "Perusahaan berhak melarang/membatalkan penggunaan promosi ini tanpa pemb
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
 msgstr "Perusahaan berhak untuk membebankan biaya pada akun yang tidak aktif hingga USD/EUR/AUD/GBP25 atau untuk akun mata uang kripto, setara dengan USD25 yang dihitung sesuai dengan kurs terkini yang dipublikasikan oleh www.xe.com, atau penyedia data lain yang diakui, seperti pada tanggal pendebitan biaya, setiap 6 bulan bagi setiap akun Klien yang tidak memiliki transaksi yang tercatat selama lebih dari 12 bulan. Jika akun Klien didaftarkan pada Binary (Europe) Ltd. dan akun tidak memiliki aktifitas selama tiga puluh bulan, dan tidak dapat dihubungi, Perusahaan dapat melakukan pemindahan saldo. Klien perlu menghubungi helpdesk kami untuk mengaktifkan, menutup atau memblokir dan mengecualikan akun mereka."
 
+msgid "The content of this Information Memorandum has not been approved by an authorised person and such approval is, save where this Information Memorandum is directed at or issued to the types of person referred to above, required by Section 21 of the Act. Acquiring Tokens may expose an investor to a significant risk of losing all of the amount invested. Any person who is in any doubt about investing in the Company should consult an authorised person specialising in advising on such investments."
+msgstr "Isi dari Memorandum Informasi ini belum mendapat persetujuan dari pihak berwenang dan persetujuan tersebut adalah aman dimana Memorandum Informasi ini diarahkan atau dikeluarkan untuk jenis orang yang telah disebutkan di atas, yang diwajibkan oleh akta 21 dari undang-undang tersebut. Perolehan Token dapat mengekspos investor pada risiko signifikan kehilangan semua jumlah yang diinvestasikan. Setiap orang yang ragu berinvestasi di Perusahaan harus berkonsultasi dengan orang yang berwenang yang mengkhususkan diri untuk memberi saran mengenai investasi serupa."
+
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website, however, we do not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website."
 msgstr "Isi dari website ini dapat dirubah sewaktu waktu tanpa pemberitahuan dan hanya disediakan untuk membantu para trader untuk mengambil keputusan melakukan investasi. %1 akan memastikan keakuratan informasi yang terdapat pada website namun demikian Perusahaan tidak menjamin keakuratan tersebut dan tidak akan menanggung kerugian atau kerusakan yang ditimbulkan oleh informasi tersebut atau jika anda mengalami masalah didalam mengakses website baik itu berhubung penundaan atau keterlambatan transmisi atau penerimaan berita atau instruksi yang dikirimkan melalui website ini."
 
@@ -8569,6 +8599,9 @@ msgstr "Tik awal adalah tik pertama setelah kontrak diproses oleh server kami."
 msgid "The full version of our best execution policy is available on request."
 msgstr "Versi lengkap dari kebijakan eksekusi terbaik tersedia berdasarkan permintaan."
 
+msgid "The higher you bid, the more your chances of being successful in the auction. However irrespective of how high you bid, at the end of the auction all winning bids will receive the same final price, which is the lowest winning bid."
+msgstr "Semakin tinggi bid Anda, semakin besar peluang Anda untuk sukses dalam pelelangan. Namun terlepas dari seberapa tinggi bid Anda, pada akhir lelang, semua tawaran yang berhasil akan menerima harga akhir yang sama, yaitu harga bit berhasil terendah."
+
 msgid "The hours of closure of the market (for e.g., the hours over the weekend during which trading of certain transactions are not possible);"
 msgstr "Jam penutupan pasar (misalnya, jam selama akhir pekan di mana trading transaksi tertentu adalah tidak mungkin);"
 
@@ -8624,6 +8657,9 @@ msgstr "Kerugian maksimal yang mungkin ditanggung oleh klien adalah sejumlah dan
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Jumlah maksimum token (%1) telah tercapai."
 
+msgid "The minimum bid is USD 1.35/token or equivalent in other currency/cryptocurrency."
+msgstr "Bid minimum adalah USD 1,35/token atau setara dalam mata uang/kriptocurrency lainnya."
+
 msgid "The minimum duration is"
 msgstr "Durasi minimum adalah"
 
@@ -8662,6 +8698,9 @@ msgstr "Platform utama untuk trading opsi binary pada pasar finansial dunia"
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "Keuntungan adalah selisih antara harga beli (modal) dengan hasil pada kontrak yang memberi untung."
+
+msgid "The promotion of the Company and the distribution of this Information Memorandum in the United Kingdom is restricted by Financial Services and Markets Act 2000 of the United Kingdom (the \"Act\")."
+msgstr "Promosi Perusahaan dan pendistribusian Memorandum Informasi ini di Inggris terbatas oleh Financial Services and Markets Act 2000 Inggris (\"Akta\")."
 
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr "Penyediaan jasa rading margin yang dijelaskan dalam Perjanjian ini tidak tersedia di Uni Eropa."
@@ -8783,8 +8822,8 @@ msgstr "Tidak akan ada biaya untuk mentransfer dana dari Akun Riil Opsi Binary k
 msgid "There will be no public offering of the Tokens in the United States. If you are not permitted to view materials on this webpage or are in any doubt as to whether you are permitted to view these materials, please exit this webpage."
 msgstr "Penawaran umum Token tidak tersedia di Amerika Serikat. Jika Anda tidak diizinkan melihat materi pada halaman situs ini atau memiliki keraguan apakah Anda diizinkan untuk melihat materi ini, silahkan tinggalkan halaman situs ini."
 
-msgid "There will be two main benefits of purchasing tokens."
-msgstr "Akan ada dua manfaat utama dari pembelian token."
+msgid "There will be three main benefits of purchasing tokens."
+msgstr "Akan ada tiga manfaat utama dari token pembelian."
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
 msgstr "Maka dengan itu jumlah maksimal yang dapat Anda tarik (tergantung pada saldo tunai yang tersedia) adalah %1 %2 (atau setara dengan mata uang lainnya)."
@@ -8831,8 +8870,17 @@ msgstr "Ini adalah kontrak dimana trader memilih target harga dan menganalisa ap
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "Metrik utama ini akan menunjukkan kepada Anda seperti apa pertumbuhan dan kesuksesan pemenang penghargaan platform trading opsi binary."
 
+msgid "These materials and the proposed ICO do not constitute an offer of, or an invitation to purchase, the tokens or any securities in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens or any securities should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction."
+msgstr "Berbagai material dan ICO yang diusulkan ini bukan merupakan penawaran atau undangan untuk membeli, token atau sekuritas apa pun di wilayah hukum manapun di mana penawaran atau penjualan tersebut melanggar hukum. Secara khusus, kecuali jika ditentukan lain oleh Perusahaan, dan diizinkan oleh peraturan perundang-undangan yang berlaku, tidak dimaksudkan bahwa setiap penawaran token atau sekuritas harus dibuat, atau dokumentasi apapun dikirim, secara langsung atau tidak langsung, ke dalam atau di dalam, Australia, British Virgin Islands, Kanada, Jepang, Jersey, Selandia Baru, Singapura, Afrika Selatan, Swiss, atau Amerika Serikat (\"Wilayah yang Dibatasi\") dan juga tidak boleh diakses oleh orang yang merupakan warga negara atau penduduk Wilayah Terbatas, termasuk perusahaan, kemitraan, atau entitas lain yang dibuat atau diatur dalam yurisdiksi tersebut."
+
 msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
 msgstr "Materi ini tidak dapat disalin atau disebarkan untuk tujuan komersial atau kompensasi dalam bentuk apapun tanpa izin tertulis dari perusahaan Binary Group."
+
+msgid "These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens."
+msgstr ""
+
+msgid "Third, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares."
+msgstr ""
 
 msgid "This Agreement constitutes the entire Agreement between the Parties and no earlier representation or arrangement or agreement written or oral relating to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
 msgstr "Persetujuan ini merupakan keseluruhan Perjanjian antara Kedua Belah Pihak dan tidak ada perwakilan atau pengaturan atau kesepakatan sebelumnya yang tertulis atau lisan yang berkaitan dengan masalah yang diatur dalam Perjanjian ini antara Kedua Belah Pihak harus diselesaikan sebelum Tanggal Mulai."
@@ -8867,8 +8915,11 @@ msgstr "Dokumen ini"
 msgid "This Information Memorandum has not been and will not be registered as a prospectus with the Monetary Authority of Singapore. Accordingly, this Information Memorandum and any other document or material in connection with the offer or sale, or invitation for subscription or purchase, of the Tokens may not be circulated or distributed, nor may the Tokens be offered or sold, or be made the subject of an invitation for subscription or purchase, whether directly or indirectly, to persons in Singapore other than (i) to an institutional investor under Section 274 of the Securities and Futures Act, Chapter 289 of Singapore (the “SFA”), (ii) to a relevant person, or any person pursuant to Section 275(1A), and in accordance with the conditions, specified in Section 275 of the SFA, (iii) where the transfer is by operation of law; (iv) as specified in Section 276(7) of the SFA or (v) pursuant to, and in accordance with the conditions of, any other applicable provisions of the SFA."
 msgstr "Memorandum Informasi ini belum dan tidak akan terdaftar sebagai prospektus dengan Otoritas Moneter di Singapura. Oleh karena itu, Memorandum Informasi ini dan dokumen atau materi lainnya sehubungan dengan penawaran atau penjualan, atau undangan untuk berlangganan atau pembelian, Token tidak boleh diedarkan atau didistribusikan, atau Token ditawarkan atau dijual, atau dijadikan subjek undangan untuk berlangganan atau membeli baik secara langsung maupun tidak langsung kepada orang-orang yang berada di Singapura selain (i) kepada investor institusional berdasarkan Bagian 274 dari Akta Sekuritas dan Future, Bab 289 Singapura (\"SFA\"), (ii) kepada orang yang relevan, atau orang lain sesuai dengan Bagian 275 (1A), dan sesuai dengan persyaratan, yang ditentukan dalam Bagian 275 SFA, (iii) di mana pengalihan dilakukan dengan operasi hukum; (iv) sebagaimana ditentukan dalam Bagian 276 (7) SFA atau (v) sesuai dengan, dan sesuai dengan kondisi, ketentuan SFA lainnya yang berlaku."
 
-msgid "This Information Memorandum is only being distributed to, and is only directed at, persons in the United Kingdom that are “qualified investors” within the meaning of Article 2(1)(e) of the Prospectus Directive that are also: (i) investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (the “Order”); or (ii) high net worth entities, and other persons to whom it may lawfully be communicated, falling within Article 49(2)(a) to (d) of the Order (each such person being referred to as a “relevant person”). This document and its contents are confidential and should not be distributed, published or reproduced (in whole or in part) or disclosed by recipients to any other persons in the United Kingdom. Any person in the United Kingdom that is not a relevant person should not act or rely on this document or any of its contents. Any investment or investment activity to which this document relates is available only in the United Kingdom to relevant persons, and will be engaged in only with such persons."
-msgstr "Memorandum Informasi ini hanya dibagikan kepada, dan hanya ditujukan kepada orang-orang di Inggris yang merupakan \"investor berkualitas\" sesuai dengan Pasal 2 (1) (e) Petunjuk Prospektus yang juga: (i) investor profesional yang termasuk dalam Pasal 19 (5) dari Financial Services and Markets Act 2000 (Promosi Keuangan) Order 2005 (\"Order\"); atau (ii) entitas bernilai bersih tinggi, dan orang lain yang dengannya boleh dikomunikasikan secara hukum, termasuk dalam Pasal 49 (2) (a) sampai (d) Order (masing-masing orang tersebut disebut sebagai \"orang yang bersangkutan\"). Dokumen dan isinya adalah rahasia dan tidak boleh didistribusikan, diterbitkan atau diproduksi ulang (seluruhnya atau sebagian) atau diungkapkan oleh penerima kepada orang lain di Inggris Raya. Setiap orang di Inggris yang bukan orang yang relevan tidak boleh bertindak atau mengandalkan dokumen ini atau isinya. Aktivitas investasi atau investasi yang hanya berkaitan dengan dokumen ini hanya tersedia di Inggris kepada orang-orang yang relevan, dan hanya akan terlibat dengan orang-orang tersebut."
+msgid "This Information Memorandum is an invitation to treat and may only be received by authorised persons. If an authorised person wishes to bid for Tokens he may do so if he has a binary.com account, by which method the Company shall be able to verify his qualifications as an authorised person. The prospective investor who wishes to acquire Tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the offer at the Auction.  At the Auction the Company will make an offer for the Tokens, which offer will be accepted (by the process explained below) by the bids, and the consideration for the purchase of such Tokens offered and accepted will be settled by credit in the prospective investor's Binary.com account, which evidences the contract for sale and purchase of the respective Tokens."
+msgstr ""
+
+msgid "This Information Memorandum is being issued in the United Kingdom by the Company to, and/or is directed at, persons to whom it may lawfully be issued or directed at under The Financial Services and Markets Act 2000 (Financial Promotion) Order 2001 including persons who are authorised under the Act (\"authorised persons\"), certain persons having professional experience in matters relating to investments, high net worth companies, high net worth unincorporated associations or partnerships, trustees of high value trusts and persons who qualify as certified sophisticated investors. The Tokens are only available to such persons in the United Kingdom and this Information Memorandum must not be relied or acted upon by any other persons in the United Kingdom. In order to qualify as a certified sophisticated investor a person must: (a) have a certificate in writing or other legible form signed by an authorised person to the effect that he is sufficiently knowledgeable to understand the risks associated with participating in such investments; and (b) have signed, within the last 12 months, a statement in a prescribed form declaring, amongst other things, that he qualifies as a sophisticated investor in relation to such investments. This Information Memorandum is exempt from the general restriction in Section 21 of the Act on the communication of invitations or inducements to engage in investment activity on the grounds that it is being issued to and/or directed at only the types of person referred to above."
+msgstr ""
 
 msgid "This Policy applies to retail and professional clients of %1 dealing in financial products offered by %1."
 msgstr "Kebijakan ini berlaku untuk pelanggan ritel dan kien profesional %1 yang berhubungan dengan produk keuangan yang ditawarkan oleh %1."
@@ -8947,9 +8998,6 @@ msgstr "Bagian Keadaan Memaksa ini tidak berlaku untuk Indeks Volatilitas."
 
 msgid "This symbol is not active. Please try another symbol."
 msgstr "Simbol ini tidak aktif. Silakan coba simbol lain."
-
-msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of %1. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
-msgstr "Situs web ini dan ICO yang diusulkan bukan merupakan tawaran atau undangan untuk membeli token tersebut pada yurisdiksi manapun dimana penawaran atau penjualan tersebut mungkin adalah melanggar hukum. Token akan hanya ditawarkan kepada klien yang terdaftar pada %1. Tidak ada sekuritas dan komisi pertukaran Amerika Serikat maupun komisi sekuritas negara bagian, provinsi atau teritori atau otoritas pengatur lainnya dari negara atau yurisdiksi manapun telah menyetujui atau menolak tawaran token yang diajukan. Sehubungan dengan yurisdiksi EEA, dimaksudkan bahwa penawaran token akan dibuat sesuai dengan pengecualian berdasarkan arahan Uni Eropa 2003/71 / EC (sebagaimana telah diubah, termasuk dalam arahan 2010/73/ EU), terutama pengecualian yang berkaitan dengan kualifikasi investor, penawaran token juga terbatas pada investor berkualitas atau profesional pada beberapa yurisdiksi; rincian lebih lanjut dari pembatasan tersebut akan dirinci dalam memorandum informasi penawaran."
 
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "Website ini berisikan berbagai link yang mengarah kepada website lain dan juga banner atau iklan layanan pihak ketiga. Website tersebut dan iklannya mungkin memberikan cookies pada browser Anda dan hal ini merupakan diluar kendali kami. Kami tidak bertnggung jawab jika kegiatan dan keberadaan website tersebut. Kami menyarankan Anda untuk membaca kegiatan website tersebut berhubung kegiatan mereka mungkin berbeda dari kami."
@@ -9095,8 +9143,8 @@ msgstr "Token"
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
 msgstr "Token memberi Anda jumlah yang setara dengan dividen sebagai Saham Binary Biasa."
 
-msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our %2account authentication/KYC process%3."
-msgstr "Token hanya akan ditawarkan kepada klien %1 yang memiliki akun Uang Riil, dan yang telah melengkapi %2otentikasi akun/proses KYC%3."
+msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
+msgstr ""
 
 msgid "Top-tier liquidity"
 msgstr "Likuiditas teratas"
@@ -9479,6 +9527,9 @@ msgstr "Penawar yang gagal akan menerima pengembalian penuh."
 msgid "Up - Predict that the market will end higher than the average price"
 msgstr "Up - Menganalisa pasar akan berakhir lebih tinggi dari harga rata-rata"
 
+msgid "Up to 10 million tokens are available via the auction."
+msgstr ""
+
 msgid "Up/Down"
 msgstr "Up/Down"
 
@@ -9539,8 +9590,8 @@ msgstr "Memanfaatkan berbagai taktik - baik online dan offline - untuk tumbuh da
 msgid "Utility bill"
 msgstr "Tagihan utilitas"
 
-msgid "Utility bills (gas, electricity, and phone)"
-msgstr "Tagihan utilitas (air, listrik, dan telepon)"
+msgid "Utility bills (electricity, water, gas, broadband and landline)"
+msgstr ""
 
 msgid "Variable spreads"
 msgstr "Variabel spread"
@@ -9632,8 +9683,8 @@ msgstr "Lihat pernyataan Anda"
 msgid "View your trading and withdrawal limits."
 msgstr "Lihat batas trading dan penarikan Anda."
 
-msgid "Viewing the materials available hereafter may not be lawful in certain jurisdictions. In other jurisdictions, only certain categories of person may be allowed to view such materials. Any person who wishes to view these materials must first satisfy themselves that they are not subject to any local requirements that prohibit or restrict them from doing so. In particular, unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, it is not intended that any offering of the tokens mentioned in such materials (the \"Tokens\") by Binary Group Ltd. should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, New Zealand, Singapore, Switzerland, the USA (each, a “Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction."
-msgstr "Dengan melihat materi yang tersedia mungkin tidak sesuai dengan hukum pada yurisdiksi tertentu. Pada yurisdiksi lain, hanya orang dengan kategori tertentu dibenarkan untuk melihat materi tersebut. Setiap orang yang ingin melihat materi ini harus terlebih dahulu memastikan sendiri dimana mereka tidak tunduk pada persyaratan lokal yang melarang atau membatasi mereka untuk melakukannya. Secara khusus, kecuali jika ditentukan lain oleh Binary Group Ltd. dan diizinkan oleh undang-undang dan peraturan yang berlaku, tidak bermaksud bahwa penawaran token yang disebutkan dalam materi tersebut (\"Token\") oleh Binary Group Ltd. harus dilakukan, atau dokumentasi apapun yang perlu dikirim, secara langsung atau tidak langsung, di atau ke dalam, Australia, British Virgin Island, Kanada, Uni Eropa, Hong Kong, Jepang, Selandia Baru, Singapura, Swiss, Amerika Serikat (masing-masing, \"Wilayah Terbatas\") dan atau harus diakses oleh orang yang merupakan warga negara nasional atau penduduk dari Wilayah Terbatas, termasuk perusahaan, kemitraan, atau entitas lain yang dibuat atau diatur dalam yurisdiksi tersebut."
+msgid "Viewing the materials available hereafter may not be lawful in certain jurisdictions. In other jurisdictions, only certain categories of person may be allowed to view such materials. Any person who wishes to view these materials must first satisfy themselves that they are not subject to any local requirements that prohibit or restrict them from doing so. In particular, unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, it is not intended that any offering of the tokens mentioned in such materials (the \"Tokens\") by Binary Group Ltd. should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, New Zealand, Singapore, Switzerland, the USA (each, a “Restricted Territory”) unless under an exemption under applicable laws, and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction, except under such available exemption."
+msgstr ""
 
 msgid "Virtual"
 msgstr "Virtual"
@@ -9793,6 +9844,9 @@ msgstr "Kami memiliki kemampuan untuk menyesuaikan dan mengukur dalam memenuhi p
 
 msgid "We have the right and obligation not to accept the information provided by you if we know or have a reason to believe that it is incorrect, inaccurate or incomplete. In such case, we may ask you to clarify or correct the details provided."
 msgstr "Kami memiliki hak dan kewajiban untuk tidak menerima informasi yang Anda berikan jika kami mengetahui atau memiliki alasan untuk percaya bahwa itu tidak benar, tidak akurat atau tidak lengkap. Jika demikian, kami mungkin meminta Anda untuk mengklarifikasi atau memperbaiki rincian yang diberikan."
+
+msgid "We intend to apply for the token symbol BINARY."
+msgstr ""
 
 msgid "We look forward to hearing from you."
 msgstr "Kami menunggu berita baik Anda."
@@ -9986,6 +10040,9 @@ msgstr "Apa itu program afiliasi %1?"
 msgid "What is the definition of a 'client'?"
 msgstr "Apa definisi dari 'klien'?"
 
+msgid "What is the minimum bid price?"
+msgstr ""
+
 msgid "What is this?"
 msgstr "Apa ini?"
 
@@ -10000,6 +10057,9 @@ msgstr "Laporan lain apakah yang bisa saya peroleh?"
 
 msgid "What our clients are saying"
 msgstr "Apa kata pelanggan kami"
+
+msgid "What will be the token symbol?"
+msgstr ""
 
 msgid "What's a margin call and how do we apply it?"
 msgstr "Apa itu margin call dan cara penggunaannya?"
@@ -10069,6 +10129,9 @@ msgstr "Dimana mereka berada?"
 
 msgid "Where can I send my questions, comments and suggestions?"
 msgstr "Kemana saya dapat mengirimkan pertanyaan, komentar dan saran?"
+
+msgid "Where can I view the source code of the tokens?"
+msgstr ""
 
 msgid "Where does %1 hold my funds?"
 msgstr "Dimanakah %1 menyimpan dana saya?"
@@ -10326,7 +10389,7 @@ msgid "Yes, but we'd prefer you to submit security vulnerabilities via our %1bug
 msgstr "Ya, tapi kami lebih memilih Anda mengirimkan kerentanan keamanan melalui program %1bug bounty%2."
 
 msgid "Yes, cancel my bid"
-msgstr ""
+msgstr "Ya, batalkan bid saya"
 
 msgid "Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:"
 msgstr "Ya. Silahkan hubungi akun manajer Anda jika Anda memerlukan banner khusus dan sampaikan informasi berikut ini:"
@@ -10538,9 +10601,6 @@ msgstr "Dengan menyetujui Perjanjian ini, Anda membuat pernyataan dan jaminan da
 msgid "You may also %1open a free %2 account%3."
 msgstr "Anda juga bisa %1mendaftar %2akun%3 gratis."
 
-msgid "You may also read about the ICO on %1FinanceMagnates%2 and %3Leaprate%2."
-msgstr "Anda juga bisa membaca tentang ICO pada %1FinanceMagnates%2 dan %3Leaprate%2."
-
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "Anda mungkin dapat menyimpan Konten hingga 24 jam dari permintaan melalui API %1."
 
@@ -10676,8 +10736,9 @@ msgstr "Anda perlu membaca Ketentuan Lanjutan secara berhati hati termasuk Ringk
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
 msgstr "Anda mengerti bahwa produk tersebut adalah berdasarkan angka acak yang dihasilkan (\"Indeks Volatilitas\") yang bukan merupakan produk berdasarkan indeks pasar finansial seperti (forex, saham dan komoditas) yang merupakan instrumen finansial."
 
-msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
-msgstr "Anda dapat membeli token menggunakan dana pada akun %1 Anda. Anda dapat menggunakan mata uang yang tersedia pada %2sistem kasir%3 kami. Jika Anda memilih untuk melakukan penawaran dalam mata uang selain USD, jumlah tawaran harus dikonversi ke dalam USD pada kurs yang berlaku pada saat pelelangan berakhir."
+msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including\n"
+"cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
+msgstr ""
 
 msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr "Anda akan diminta untuk membuktikan bahwa Anda adalah pemilik akun yang diautentikasi."
@@ -10689,7 +10750,7 @@ msgid "You will be provided with all the tools, to turn your traffic into a lucr
 msgstr "Anda akan memperoleh semua peralatan, untuk merubah trafik menjadi aliran pendapatan yang menguntungkan"
 
 msgid "You will be subject to a 2% cancellation fee."
-msgstr ""
+msgstr "Anda akan dikenakan biaya pembatalan 2%."
 
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "Anda akan dikenakan suku bunga swap bagi posisi berjalan diatas pukul 23:59:59 GMT."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-08 23:55-0500\n"
+"PO-Revision-Date: 2017-11-10 01:05-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -243,8 +243,8 @@ msgstr "%1 与上述所有支付代理不存在附属关系。各支付代理均
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1在哥斯达黎加还不可使用，并不受哥斯达黎加金融体系任何监管机构的监管或监督。"
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1.35</strong> or its equivalent in another currency."
-msgstr "%1将在公开拍卖中发售高达<strong>10,000,000</strong>个代币。您可使用下面的表格出价。最低出价金额是<strong>1.35 美元</strong> 或其他货币的等值。"
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
+msgstr ""
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 由 Binary 集团有限公司拥有和经营。欲了解更多信息，请 <a href='%2'>参阅我们的历史页面</a>。"
@@ -369,8 +369,8 @@ msgstr "%1 成立于 1999 年。如今是实力雄厚、非常成功的公司。
 msgid "%1 will issue a number of tokens during the ICO."
 msgstr "首次公开发行(ICO) 期内，%1将发布多个代币。"
 
-msgid "%1 will offer a number of blockchain tokens to investors. These tokens may be issued in various forms on different blockchains, such as ‘ERC20’ tokens on the Ethereum blockchain."
-msgstr "%1将为投资者发售一些区块链代币。 这些代币可以各种形式在不同的区块链上发售，例如以太坊区块链上的“ERC20”代币。"
+msgid "%1 will offer a number of blockchain tokens to investors. These tokens will be ‘ERC20’ tokens on the Ethereum blockchain, however the Company may issue tokens on other blockchains if there is sufficient investor demand for different token types."
+msgstr ""
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "已完成从账号%2至%3的%1提款。交易编号: %4交易编号：%4"
@@ -782,6 +782,9 @@ msgstr "个人数据访问"
 
 msgid "Access to STP trading"
 msgstr "STP 交易访问"
+
+msgid "Access to electronic versions of these materials is being made available by Binary Group Ltd. (“Company”) in good faith and for information purposes only. It does not constitute an offer of, or an invitation to purchase, the tokens or any securities.  Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the tokens or any other securities. Further, it does not constitute a recommendation by the Company or any other party to sell or buy tokens or any other securities."
+msgstr ""
 
 msgid "Access to electronic versions of these materials is being made available on this webpage by Binary Group Ltd. in good faith and for information purposes only. Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the Tokens. Further, it does not constitute a recommendation by Binary Group Ltd. or any other party to sell or buy Tokens or any other securities."
 msgstr "Binary集团有限公司真诚地将这些材料的电子版本在此网页上公开允许用户使用，但仅限于提供信息用途。以电子格式提供新闻公告及其他文件并不构成、或不应视为构成、或构成代币出售卖出或征求报价买入或其它处置方式的一部分。此外，它并不构成Binary集团有限公司或任何另一方出售或购买代币或任何其他证券的建议。"
@@ -1694,6 +1697,9 @@ msgstr "Binary 的马耳他附属公司 Binary Investments (Europe) Ltd. 由 Mal
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Binary 平台平均每秒钟进行 %1宗%2交易%3，全天候提供服务，整年无休"
 
+msgid "Binary.com intends to deploy the <a href='%1' target='_blank'>Mini Me</a> token. Please view our <a href='%2' target='_blank'>blog post</a> detailing our reasons for choosing this token."
+msgstr ""
+
 msgid "Bitcoin"
 msgstr "比特币"
 
@@ -2532,8 +2538,8 @@ msgstr "出生日期"
 msgid "Date of birth"
 msgstr "出生日期"
 
-msgid "Dated within the last three months"
-msgstr "过去三个月内的日期"
+msgid "Dated within the last six months"
+msgstr ""
 
 msgid "Day"
 msgstr "天"
@@ -3427,11 +3433,17 @@ msgstr "对于外汇报价的收盘时间，公司在本网站“市场开放时
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "关于外汇交易：外汇市场是银行和其他大型金融机构相互交易外汇的场外交易（OTC）市场，没有中央结算行。因此，外汇交易报价也没有“官方”价格来源。不同的数据源包含不同类型国际银行的报价。因此，根据其获得价格的银行不同，各外汇报价提供者的价格也不相同。"
 
+msgid "For further background information please read our blog post, <a href='%1' target='_blank'>Why we are doing an ICO (and not an IPO)</a>."
+msgstr ""
+
 msgid "For general support:"
 msgstr "一般支持："
 
 msgid "For payments-related queries:"
 msgstr "付款相关的查询："
+
+msgid "For the avoidance of doubt (and notwithstanding anything to the contrary), these materials are not an offer for tokens; they are an invitation to treat.  Tokens will may only be offered by the Company pursuant to an auction in the manner more particularly described in the ‘token auction process’ section of the materials."
+msgstr ""
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "连续第三年，BetOnMarkets.com被英国财经杂志《Shares Magazine》评为“最佳固定赔率金融交易提供商”。这是我们最后一次获奖，因为该杂志已停止颁发这一类奖项。"
@@ -3847,11 +3859,17 @@ msgstr "ICO如何运作"
 msgid "How does the ICO work?"
 msgstr "ICO如何运作?"
 
+msgid "How high should I bid?"
+msgstr ""
+
 msgid "How is margin calculated?"
 msgstr "保证金如何计算？"
 
 msgid "How it works"
 msgstr "如何操作"
+
+msgid "How many tokens are available?"
+msgstr ""
 
 msgid "How much dividend will I receive?"
 msgstr "我可获得多少分红？"
@@ -4315,6 +4333,9 @@ msgstr "提供服务时，代理须："
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "提供此类服务时，我们受法律、一切适用的规则、地方法规、准证条款、纲领、证卷市场细则和其他规定或市场惯例（“规则”）等约束。当这些补充条款和条件跟规则发生冲突时，当以后者为准。"
 
+msgid "In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
+msgstr ""
+
 msgid "In relation to Contracts that you enter into with us, we act as principal and not as agent on your behalf and we therefore act as the sole execution venue for the execution of your Contracts."
 msgstr "关于您与我们共同修订的合同，我们是委托人，而不是您的代理人，因此我们是您的合同的唯一执行者。"
 
@@ -4551,8 +4572,8 @@ msgstr "想进行产品投资的EEA居民由Binary投资 (欧洲) 有限公司 (
 msgid "Investment Solicitation Policy"
 msgstr "Investment Solicitation Policy"
 
-msgid "Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the information memorandum."
-msgstr "我们建议的代币投资含高度风险，也不保证投入资金的代币持有人将获得利润或回本。潜在代币投资者须仔细了解信息备忘录上列出的风险因素。"
+msgid "Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the materials."
+msgstr ""
 
 msgid "Investment trust"
 msgstr "Investment trust"
@@ -5742,6 +5763,9 @@ msgstr "最小交易增额"
 msgid "Minimum Volume<br>(Trade Size)"
 msgstr "最小交易额<br>(交易量)"
 
+msgid "Minimum bid"
+msgstr ""
+
 msgid "Minimum eight characters. Must contain numbers, and mix of upper and lower case letters."
 msgstr "最少 8 个字符。必须同时包含数字和大小写字母。"
 
@@ -5750,6 +5774,9 @@ msgstr "需至少%1 个字符。"
 
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "至少6个大小写字母和数字"
+
+msgid "Minimum of six months validity"
+msgstr ""
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "矿业、建筑业、制造业和运输工人"
@@ -5888,6 +5915,9 @@ msgstr "必须监控头寸"
 
 msgid "Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of, or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney's fees) incurred arising out of your failure to comply with any and all of your obligations set forth in this Agreement and/or the Company's enforcement against you of any and all of its rights under this Agreement."
 msgstr "无论是公司或其任何董事、职员、经理、雇员或代理人都不须对本协议对您直接或间接引起的或有关的任何损失、损害或债务负责。您同意赔偿由于您未能遵守您在本协议项下的任何和所有义务和/或公司向您执行在本协议项下的任何和所有权利，导致公司和其董事、职员、经理、雇员或代理人遭受或产生的任何和所有负债、损失、损害、费用和开支（包括合理的法律费用）。"
+
+msgid "Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens."
+msgstr ""
 
 msgid "Neither this Information Memorandum nor any other offering or marketing material relating to the offering, the Company or the Tokens have been or will be filed with or approved by any Swiss regulatory authority. In particular, this Information Memorandum will not be filed with, and the offer of Tokens will not be supervised by, the Swiss Financial Market Supervisory Authority FINMA, and the offer of Tokens has not been and will not be authorized under the Swiss Federal Act on Collective Investment Schemes (the “CISA”). The investor protection afforded to acquirers of interests in collective investment schemes under the CISA does not extend to acquirers of Tokens.\n"
 msgstr "此信息备忘录以及任何其他发售或与发售、公司或代币有关的促销材料都未曾获得或向任何瑞士监管当局提出批准。尤其是，此信息备忘录将不会向瑞士金融市场监督管理局 FINMA提交，而发售的代币也不会由其监管。发售的代币未曾也将不会根据瑞士联邦法获得集体投资计划（CISA）授权。受CISA集体投资计划的收购方利益保护的投资者权益不适用于代币的收购。\n"
@@ -7419,8 +7449,8 @@ msgstr "经验丰富的交易者可充分利用%1平台的广泛交易类型和�
 msgid "Second line of home address"
 msgstr "家庭地址第二行"
 
-msgid "Second, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares."
-msgstr "其次，代币持有人将能够自由交易代币。相比之下，普通股票没有被公开发行，因此不能在任何交易所交易。因此，代币是比普通股票更加优越的投资。"
+msgid "Second, tokens may be converted into Ordinary Shares of the Company (subject to certain conditions, as described in the Information Memorandum), thereby providing the legal link between tokens and Ordinary Shares."
+msgstr ""
 
 msgid "Secondary"
 msgstr "次要"
@@ -7841,9 +7871,6 @@ msgstr "步骤 2：获取合约报价"
 
 msgid "Step 3: Make your trade"
 msgstr "步骤 3：执行交易"
-
-msgid "Still valid"
-msgstr "仍然有效"
 
 msgid "Stock market indices measure the value of a selection of companies in the stock market."
 msgstr "股市指数衡量股市中部分公司的价值。"
@@ -8511,6 +8538,9 @@ msgstr "公司有权在任何时候自行取消/禁止使用本推广。"
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
 msgstr "对每个超过12个月没有交易记录的客户账户，公司保留从收费日算起每6个月收取最高为25美元/欧元/澳元/英镑或如果是加密货币账户，则根据www.xe.com或另一家受认可的数据提供商发布的当前货币兑换率换算相等于25美元的账户休眠费的权利。如果客户账户在 Binary（欧洲）有限公司开立，且在30个月内没有进行任何活动，而公司无法联系到客户本人，账户中的余款将被汇给马耳他博彩机构。客户必须与客服联系，以取回休眠、关闭、封闭或隔离账户的资金。"
 
+msgid "The content of this Information Memorandum has not been approved by an authorised person and such approval is, save where this Information Memorandum is directed at or issued to the types of person referred to above, required by Section 21 of the Act. Acquiring Tokens may expose an investor to a significant risk of losing all of the amount invested. Any person who is in any doubt about investing in the Company should consult an authorised person specialising in advising on such investments."
+msgstr ""
+
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website, however, we do not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website."
 msgstr "网站内容可在不发出通知的情况下随时修改，提供这些内容的唯一目的是帮助交易者做出独立投资决策。%1 已采取合理措施确保网站信息的准确性，但是我们并不对其准确性进行担保。因网站内容或您无法登录网站导致的任何直接或间接的损失或损害，以及因传输问题导致的通知延迟或失败，公司不承担任何责任。"
 
@@ -8574,6 +8604,9 @@ msgstr "首个跳动点指在我们服务器处理合约后的第一个跳动点
 msgid "The full version of our best execution policy is available on request."
 msgstr "如果需要，我们可随时提供最佳执行策略的完整版本。"
 
+msgid "The higher you bid, the more your chances of being successful in the auction. However irrespective of how high you bid, at the end of the auction all winning bids will receive the same final price, which is the lowest winning bid."
+msgstr ""
+
 msgid "The hours of closure of the market (for e.g., the hours over the weekend during which trading of certain transactions are not possible);"
 msgstr "市场关闭时间（例如，某些交易无法在周末期间进行）;"
 
@@ -8629,6 +8662,9 @@ msgstr "客户可能蒙受的最大损失就是其向本公司支付的金额。
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "已达代币 (%1) 最大限数。"
 
+msgid "The minimum bid is USD 1.35/token or equivalent in other currency/cryptocurrency."
+msgstr ""
+
 msgid "The minimum duration is"
 msgstr "最小持续时间是"
 
@@ -8667,6 +8703,9 @@ msgstr "全世界金融市场二元期权交易的首选平台"
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "利润即盈利交易中所得赔付金额与购买价格（成本）之间的差额。"
+
+msgid "The promotion of the Company and the distribution of this Information Memorandum in the United Kingdom is restricted by Financial Services and Markets Act 2000 of the United Kingdom (the \"Act\")."
+msgstr ""
 
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr "欧洲联盟国家不可用本协议所述的保证金交易服务。"
@@ -8788,8 +8827,8 @@ msgstr "将基金从您的二元期权真实账户转到您的真实账户，不
 msgid "There will be no public offering of the Tokens in the United States. If you are not permitted to view materials on this webpage or are in any doubt as to whether you are permitted to view these materials, please exit this webpage."
 msgstr "代币将不会在美国公开发布。如果您不受允许在此网页上查看材料，或对是否受允许查看这些材料有任何疑问，请退出此网页。"
 
-msgid "There will be two main benefits of purchasing tokens."
-msgstr "购买代币将有两个主要的好处。"
+msgid "There will be three main benefits of purchasing tokens."
+msgstr ""
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
 msgstr "因此您当前的即时最高取款额（要求您的账户有充足资金）为%1 %2（或其他等值货币）。"
@@ -8836,8 +8875,17 @@ msgstr "交易者选择一个目标价并预测市场在合约到期前将会触
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "这些关键指标将显示一个屡获殊荣的二元期权交易平台增长与成功的一面。"
 
+msgid "These materials and the proposed ICO do not constitute an offer of, or an invitation to purchase, the tokens or any securities in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens or any securities should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction."
+msgstr ""
+
 msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
 msgstr "在未得到 Binary Group 公司书面许可的情况下，用户不得因商业目的以其他任何有偿方式复制或者传播这些材料。"
+
+msgid "These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens."
+msgstr ""
+
+msgid "Third, token holders will be able to freely trade their tokens. In contrast, Ordinary Shares are not listed and therefore cannot be traded on any exchange. In that sense, the tokens will be a superior investment to Ordinary Shares."
+msgstr ""
 
 msgid "This Agreement constitutes the entire Agreement between the Parties and no earlier representation or arrangement or agreement written or oral relating to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
 msgstr "本协议构成双方之间的全部协议, 本协议中之前的书面或口头陈述或安排或协议涉及的任何有关事项, 均不得在开始日期前生效或施行。"
@@ -8872,8 +8920,11 @@ msgstr "本文件"
 msgid "This Information Memorandum has not been and will not be registered as a prospectus with the Monetary Authority of Singapore. Accordingly, this Information Memorandum and any other document or material in connection with the offer or sale, or invitation for subscription or purchase, of the Tokens may not be circulated or distributed, nor may the Tokens be offered or sold, or be made the subject of an invitation for subscription or purchase, whether directly or indirectly, to persons in Singapore other than (i) to an institutional investor under Section 274 of the Securities and Futures Act, Chapter 289 of Singapore (the “SFA”), (ii) to a relevant person, or any person pursuant to Section 275(1A), and in accordance with the conditions, specified in Section 275 of the SFA, (iii) where the transfer is by operation of law; (iv) as specified in Section 276(7) of the SFA or (v) pursuant to, and in accordance with the conditions of, any other applicable provisions of the SFA."
 msgstr "此信息备忘录未曾，也不会向新加坡货币局注册为章程。因此，此信息备忘录和任何与代币的报价或销售，或邀请订阅或购买有关的其他文件或材料，不得被传阅或分发。代币也不可直接或间接对新加坡内的个人提供报价或出售，或作为邀请订购或购买的主题，除了是 (i) 向符合新加坡证券及期货条例(SFA) 289章274节的机构投资者（ii）向符合SFA 275(1A) 节的有关人士或任何人士，以及符合SFA 275节指定的条件者，(iii) 转移是根据法律实行的;(iv) 根据SFA 276(7) 节的指定，或 (v) 根据与符合SFA任何其他适用条款的条件。"
 
-msgid "This Information Memorandum is only being distributed to, and is only directed at, persons in the United Kingdom that are “qualified investors” within the meaning of Article 2(1)(e) of the Prospectus Directive that are also: (i) investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (the “Order”); or (ii) high net worth entities, and other persons to whom it may lawfully be communicated, falling within Article 49(2)(a) to (d) of the Order (each such person being referred to as a “relevant person”). This document and its contents are confidential and should not be distributed, published or reproduced (in whole or in part) or disclosed by recipients to any other persons in the United Kingdom. Any person in the United Kingdom that is not a relevant person should not act or rely on this document or any of its contents. Any investment or investment activity to which this document relates is available only in the United Kingdom to relevant persons, and will be engaged in only with such persons."
-msgstr "此信息备忘录仅发给，和仅针对，在英国的\"合格的投资者\"，其必须符合章程指令 2(1)(e) 条款的内容，并必须是: (i) 符合2005 金融服务及市场法 2000 （金融促进） 法令（\"法令\"）第 19（5）条款内容的投资专业人员; 或者是 (ii) 符合法令第49(2)(a) 至 (d) 条款的高净值实体和其他合法人士（每个此类人士被称为\"有关人士\"）。此文档及其内容均属于机密，不可分发、发布或转载 （整体或部分） 或透露给在英国的任何其他人士。任何在英国的非相关人士不可对此文档或它的任何内容采取行动或使用。任何与本文档有关的投资或投资活动仅对在英国的有关人士适用，且将只可用于该等人士。"
+msgid "This Information Memorandum is an invitation to treat and may only be received by authorised persons. If an authorised person wishes to bid for Tokens he may do so if he has a binary.com account, by which method the Company shall be able to verify his qualifications as an authorised person. The prospective investor who wishes to acquire Tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the offer at the Auction.  At the Auction the Company will make an offer for the Tokens, which offer will be accepted (by the process explained below) by the bids, and the consideration for the purchase of such Tokens offered and accepted will be settled by credit in the prospective investor's Binary.com account, which evidences the contract for sale and purchase of the respective Tokens."
+msgstr ""
+
+msgid "This Information Memorandum is being issued in the United Kingdom by the Company to, and/or is directed at, persons to whom it may lawfully be issued or directed at under The Financial Services and Markets Act 2000 (Financial Promotion) Order 2001 including persons who are authorised under the Act (\"authorised persons\"), certain persons having professional experience in matters relating to investments, high net worth companies, high net worth unincorporated associations or partnerships, trustees of high value trusts and persons who qualify as certified sophisticated investors. The Tokens are only available to such persons in the United Kingdom and this Information Memorandum must not be relied or acted upon by any other persons in the United Kingdom. In order to qualify as a certified sophisticated investor a person must: (a) have a certificate in writing or other legible form signed by an authorised person to the effect that he is sufficiently knowledgeable to understand the risks associated with participating in such investments; and (b) have signed, within the last 12 months, a statement in a prescribed form declaring, amongst other things, that he qualifies as a sophisticated investor in relation to such investments. This Information Memorandum is exempt from the general restriction in Section 21 of the Act on the communication of invitations or inducements to engage in investment activity on the grounds that it is being issued to and/or directed at only the types of person referred to above."
+msgstr ""
 
 msgid "This Policy applies to retail and professional clients of %1 dealing in financial products offered by %1."
 msgstr "此政策适用于在买卖%1提供的金融产品的%1零售和专业客户。"
@@ -8952,9 +9003,6 @@ msgstr "此不可抗力事件章节不适用于波动率指数。"
 
 msgid "This symbol is not active. Please try another symbol."
 msgstr "这是个非活跃符号。请试另一符号。"
-
-msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. The tokens will be offered solely to registered clients of %1. Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens. In regards to EEA jurisdictions, it is intended that the token offering will be made pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), notably the exemption relating to qualified investors, the offer of tokens is similarly expected to be restricted to qualified or professional investors in a number of other jurisdictions; further details of such restrictions will be detailed in the offer information memorandum."
-msgstr "网站与建议的ICO并不构成对所述任何管辖区内的代币发行或邀约购入为非法发售或出售。代币仅对%1的注册客户发售。美国证券交易委员会以及任何州、省份或地区的证券委员会以及任何国家或管辖地区的任何其他监管机构均未批准或不批准代币的建议发售。关于欧洲经济区管辖地区内的代币发售将根据欧盟指令2003/71/EC（及修订版，包括2010/73/EU指令）的豁免范围，特别是对合格投资者的豁免范围内执行。代币发售对其他一些管辖区的合格或专业投资者也将受限制。这些限制的细节将在发售信息备忘录中详细说明。"
 
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "本网站包含其他网站链接，并可能含有第三方网站的横幅或图标广告。这些网站及广告可能会向您的网页浏览器写入cookies，因此不在我们的控制范围内。我们不对这些网站的隐私规范和内容负责。由于他们的隐私政策可能有所不同，我们建议您进行相关了解。"
@@ -9100,8 +9148,8 @@ msgstr "代币"
 msgid "Tokens entitle you to an equivalent amount of dividends as Binary Ordinary Shares."
 msgstr "代币可转换为等值的Binary普通股作为红利。"
 
-msgid "Tokens will only be offered to %1 clients who have a Real Money account, and who have completed our %2account authentication/KYC process%3."
-msgstr "代币仅售予拥有真实资金账户，并已完成%2账户验证/KYC程序%3的%1客户。"
+msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
+msgstr ""
 
 msgid "Top-tier liquidity"
 msgstr "顶级流动性"
@@ -9484,6 +9532,9 @@ msgstr "竞标失败者将获得全额退款。"
 msgid "Up - Predict that the market will end higher than the average price"
 msgstr "高于 - 预测市价在收盘时高于平均价格"
 
+msgid "Up to 10 million tokens are available via the auction."
+msgstr ""
+
 msgid "Up/Down"
 msgstr "涨/跌"
 
@@ -9544,8 +9595,8 @@ msgstr "在您指定的市场利用各种在线和离线策略帮助公司合作
 msgid "Utility bill"
 msgstr "水电煤账单"
 
-msgid "Utility bills (gas, electricity, and phone)"
-msgstr "水电煤账单 (煤气、电气和电话)"
+msgid "Utility bills (electricity, water, gas, broadband and landline)"
+msgstr ""
 
 msgid "Variable spreads"
 msgstr "变数点差"
@@ -9637,8 +9688,8 @@ msgstr "查看您的账单"
 msgid "View your trading and withdrawal limits."
 msgstr "查看您的交易和取款限额。"
 
-msgid "Viewing the materials available hereafter may not be lawful in certain jurisdictions. In other jurisdictions, only certain categories of person may be allowed to view such materials. Any person who wishes to view these materials must first satisfy themselves that they are not subject to any local requirements that prohibit or restrict them from doing so. In particular, unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, it is not intended that any offering of the tokens mentioned in such materials (the \"Tokens\") by Binary Group Ltd. should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, New Zealand, Singapore, Switzerland, the USA (each, a “Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction."
-msgstr "查看以下提供的材料在某些司法管辖区可能不合法。在其他司法管辖区，只有某些类别的人士可能获准查看此类材料。任何人士如欲查看这些材料必须首先确认自己不是属于任何禁止或限制如此做的区域的人士。尤其是，除非经由Binary集团有限公司确定并受适用的法律和法规允许，这些材料中所述的任何由Binary集团有限公司发售的代币 （\"代币\"） 、或任何文档不可直接或间接在澳大利亚、英属维尔京群岛、加拿大、欧盟、香港、日本、新西兰、新加坡、瑞士，美国 （每个简称为\"受限制领土\"）等区域使用或发送进入，也不应由任何受限制领土的国民或居民，包括在任何所述管辖区内开设的公司、合伙企业或其他实体访问。"
+msgid "Viewing the materials available hereafter may not be lawful in certain jurisdictions. In other jurisdictions, only certain categories of person may be allowed to view such materials. Any person who wishes to view these materials must first satisfy themselves that they are not subject to any local requirements that prohibit or restrict them from doing so. In particular, unless otherwise determined by Binary Group Ltd. and permitted by applicable law and regulation, it is not intended that any offering of the tokens mentioned in such materials (the \"Tokens\") by Binary Group Ltd. should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, New Zealand, Singapore, Switzerland, the USA (each, a “Restricted Territory”) unless under an exemption under applicable laws, and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction, except under such available exemption."
+msgstr ""
 
 msgid "Virtual"
 msgstr "虚拟"
@@ -9798,6 +9849,9 @@ msgstr "基于我们多年来组合的团队和流程，我们具备适应和扩
 
 msgid "We have the right and obligation not to accept the information provided by you if we know or have a reason to believe that it is incorrect, inaccurate or incomplete. In such case, we may ask you to clarify or correct the details provided."
 msgstr "如果我们知道或有理由相信您所提供的信息是不正确、不准确或不完整的，我们有权利和义务不接受此信息。在此情况下，我们可要求您对所提供的详细信息作出澄清或纠正。"
+
+msgid "We intend to apply for the token symbol BINARY."
+msgstr ""
 
 msgid "We look forward to hearing from you."
 msgstr "欢迎联系我们。"
@@ -9991,6 +10045,9 @@ msgstr "什么是 %1 联盟计划？"
 msgid "What is the definition of a 'client'?"
 msgstr "“客户”的定义是什么？"
 
+msgid "What is the minimum bid price?"
+msgstr ""
+
 msgid "What is this?"
 msgstr "这是什么？"
 
@@ -10005,6 +10062,9 @@ msgstr "我还可以生成哪些报告？"
 
 msgid "What our clients are saying"
 msgstr "客户评语"
+
+msgid "What will be the token symbol?"
+msgstr ""
 
 msgid "What's a margin call and how do we apply it?"
 msgstr "什么是追加保证金要求，我们如何使用它？"
@@ -10074,6 +10134,9 @@ msgstr "他们在哪里？"
 
 msgid "Where can I send my questions, comments and suggestions?"
 msgstr "在哪里提交问题、评论和建议？"
+
+msgid "Where can I view the source code of the tokens?"
+msgstr ""
 
 msgid "Where does %1 hold my funds?"
 msgstr "%1将我的基金保留在哪里？"
@@ -10544,9 +10607,6 @@ msgstr "签订本协议时，您向我们提出以下陈述和保证，并同意
 msgid "You may also %1open a free %2 account%3."
 msgstr "您也可以 %1开立免费 %2账户%3。"
 
-msgid "You may also read about the ICO on %1FinanceMagnates%2 and %3Leaprate%2."
-msgstr "您还可以在 %1FinanceMagnates%2 和 %3Leaprate%2 阅读关于ICO的详情。"
-
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "通过%1 API对指定内容提出请求后可保留该内容缓存为时24小时。"
 
@@ -10682,8 +10742,9 @@ msgstr "您必须谨慎的阅读这些补充条款、条件、订单执行政策
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
 msgstr "您了解基于随机数字生成器 （\"波动率指数\"）的产品属于博彩产品，而基于金融市场指数（外汇、股票、大宗商品）的产品属于金融工具。"
 
-msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
-msgstr "您可使用 %1 账户中的资金购买代币。您可使用我们 %2收银台系统%3内的任何适用货币。如果您选择以美元以外的货币出价，买入金额须在拍卖结束时按照现行汇率转换成美元。"
+msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including\n"
+"cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
+msgstr ""
 
 msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr "您须证明您是通过验证的账户拥有人。"

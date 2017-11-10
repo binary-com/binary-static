@@ -21,13 +21,20 @@ window.onload = function() {
             dataLayer.push({ bom_country_abbrev: clients_country || '' });
             dataLayer.push({ event: 'ico_success' });
             clearHash();
+            document.getElementById('subscribe_success').classList.remove('invisible');
             for (let i = 0; i < 2; i++) {
-                document.querySelectorAll('.notice-msg')[i].classList.remove('invisible');
                 document.getElementsByTagName('form')[i].classList.add('invisible');
             }
-            let navbarHeight = checkWidth();
-            const to = document.getElementById('coming-soon').offsetTop - navbarHeight;
-            scrollTo(to);
+            // wait countdown is finished loading before scroll to section
+            var checkIfFinished = setInterval(function(){
+                var finished_loading = document.getElementById('status_loading').classList.contains('invisible');
+                if (finished_loading == true){
+                    let navbarHeight = checkWidth();
+                    const to = document.getElementById('ico_subscribe_section').offsetTop - navbarHeight;
+                    scrollTo(to);
+                    clearInterval(checkIfFinished);
+                }
+            }, 500);
         }
 
         if (/faq/.test(hash)) {
