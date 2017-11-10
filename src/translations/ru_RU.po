@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-06 22:45-0500\n"
+"PO-Revision-Date: 2017-11-08 23:55-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -107,6 +107,9 @@ msgstr "ICO от %1 будет запущено 15 ноября 2017 г."
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "ICO от %1: инвестируйте в ведущую платформу для торговли бинарными опционами"
+
+msgid "%1 ICO: Histogram of Active Bids"
+msgstr ""
 
 msgid "%1 Initial Coin Offering (ICO)"
 msgstr " Первичное предложение средств (ICO) от %1"
@@ -240,8 +243,8 @@ msgstr "%1 не является представителем никакого �
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 не работает в Коста-Рике, а также не регулируется и не контролируется финансовыми органами Коста-Рики."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1</strong> or its equivalent in another currency."
-msgstr "В рамках открытого аукциона %1 предоставляет до <strong>10,000,000</strong> токенов. Вы можете сделать ставки, воспользовавшись формой ниже. Минимальный размер ставки составляет <strong>USD 1</strong> или эквивалентную сумму в другой валюте."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1.35</strong> or its equivalent in another currency."
+msgstr ""
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 принадлежит и находится под управлением группы компаний Binary Group Ltd. Для получения дополнительной информации, пожалуйста, <a href='%2'>посетите страницу нашей истории</a>."
@@ -996,7 +999,7 @@ msgid "All customer funds are segregated and held with JSF Trust Bank."
 msgstr "Средства клиентов отделены и находятся в банке JSF Trust Bank."
 
 msgid "All deposits and withdrawals are made through your omnibus master account"
-msgstr ""
+msgstr "Любое пополнение и вывод средств производится через Ваш универсальный основной счёт"
 
 msgid "All durations:"
 msgstr "Любая длительность:"
@@ -1206,7 +1209,7 @@ msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr "Вы являетесь или хотите стать Платежным агентом?"
 
 msgid "Are you a licensed and regulated broker with a large database of active traders? Manage your database more efficiently by consolidating all your client accounts under an omnibus master account. This allows you to keep their individual identities private at the same time."
-msgstr ""
+msgstr "Вы являетесь лицензированным и регулируемым брокером с большой базой активных трейдеров? Управляйте своей базой более эффективно, контролируя все счета клиентов в рамках одного Универсального счёта. Это позволит Вам сохранять конфиденциальность клиентов."
 
 msgid "Are you an Investment professional?"
 msgstr "Вы профессиональный инвестор?"
@@ -1529,6 +1532,9 @@ msgstr "Ставка"
 msgid "Bid Price Per Token"
 msgstr "Ставка за токен"
 
+msgid "Bid Price Per Token ($USD)"
+msgstr ""
+
 msgid "Bid on the ICO:"
 msgstr "Сделать ставку на ICO:"
 
@@ -1831,6 +1837,9 @@ msgstr "Отмена"
 
 msgid "Cancel Bid"
 msgstr "Отменить ставку"
+
+msgid "Cancel bid?"
+msgstr ""
 
 msgid "Career opportunities for Americans"
 msgstr "Вакансии для американцев"
@@ -2427,7 +2436,7 @@ msgid "Create the graphics required to support our global marketing and advertis
 msgstr "Создание графических материалов для поддержки наших маркетинговых и рекламных кампаний всемирного масштаба. Творческая работа нашей команды охватывает несколько направлений, включая онлайн маркетинг, партнерские сети, печатную рекламу, выставки, особые мероприятия и рекламные проекты."
 
 msgid "Create your own white-label application with the omnibus facility, plus all the features supported by our extensive API library. We won’t know who your clients are and vice versa"
-msgstr ""
+msgstr "Создайте собственное приложение по схеме \"White Label\" в рамках универсального счёта, пользуясь всеми преимуществами нашей обширной библиотеки API. Мы никогда не узнаем имён Ваших клиентов"
 
 msgid "Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies"
 msgstr "Создание интерфейсов и инструментов для доступа к данным рынка, анализа в режиме реального времени и исторического анализа торговых стратегий"
@@ -2861,7 +2870,7 @@ msgid "Each of the following event constitutes an \"Event of Default\":"
 msgstr "Каждая из нижеперечисленных ситуаций является \"случаем невыполнения обязательств\":"
 
 msgid "Each of the following event constitutes an “Event of Default”:"
-msgstr ""
+msgstr "Каждая из нижеперечисленных ситуаций является \"случаем невыполнения обязательств”:"
 
 msgid "Each option transaction has a specified expiry time and date, known as the judgment time."
 msgstr "Each option transaction has a specified expiry time and date, known as the judgment time."
@@ -3080,7 +3089,7 @@ msgid "Event &mdash; Event examples include circumstances whereby the type of Tr
 msgstr "Обстоятельства &mdash; обстоятельства могут включать события, ввиду которых перестанет предлагаться тип контракта, к которому относится Ваш ордер, а также корпоративные мероприятия или неплатежеспособность Компании (акции которой являются объектом ордера) и другие ситуации."
 
 msgid "Events of Default"
-msgstr ""
+msgstr "Случаи невыполения обязательств"
 
 msgid "Everyone"
 msgstr "Каждый"
@@ -3319,6 +3328,9 @@ msgstr "Контроль фильтрации"
 msgid "Filtering Stray Ticks"
 msgstr "Фильтрация случайных котировок"
 
+msgid "Final Price"
+msgstr ""
+
 msgid "Final price"
 msgstr "Итоговая цена"
 
@@ -3431,10 +3443,10 @@ msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds F
 msgstr "Третий год подряд BetOnMarkets.com становится лучшей компанией в номинации 'Лучший поставщик услуг в торговле опционами с фиксированным коэффициентом прибыли' по версии британского журнала Shares Magazine. Это последний раз, когда мы выиграли этот приз, так как Shares Magazine перестал предлагать эту категорию номинаций."
 
 msgid "Force Majeure Event"
-msgstr ""
+msgstr "Форс-мажорные обстоятельства"
 
 msgid "Force majeure events must be confirmed by an authority and/or government authority of the Party’s residence."
-msgstr ""
+msgstr "Форс-мажорные обстоятельства должны быть подтверждены официальными властями и/или правительством в стране проживания Стороны."
 
 msgid "Foreign currency deposit"
 msgstr "Foreign currency deposit"
@@ -3509,16 +3521,16 @@ msgid "Fridays"
 msgstr "пятница"
 
 msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr ""
+msgstr "Комиссия за перевод из криптовалют в фидуциарные валюты: %1"
 
 msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr ""
+msgstr "Комиссия за перевод из фидуциарных валют в криптовалюты: %1"
 
 msgid "Front Side"
-msgstr ""
+msgstr "Лицевая сторона"
 
 msgid "Front and reverse side photos of %1 are required."
-msgstr ""
+msgstr "Необходимы фотографии лицевой и обратной стороны %1."
 
 msgid "Front-End (Javascript) Development"
 msgstr "Разработка Front-End (Javascript)"
@@ -3719,7 +3731,7 @@ msgid "Have not previously been a %1 customer."
 msgstr "Ранее не являлся клиентом %1."
 
 msgid "Head over to our <a href=%1 target='_blank'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business."
-msgstr ""
+msgstr "Откройте наш канал <a href=%1 target='_blank'>YouTube</a>, чтобы больше узнать об ICO, популярных криптовалютах и технологии блокчейн. Мы покажем Вам, как они действуют и меняют наши методы ведения бизнеса."
 
 msgid "Health"
 msgstr "Здоровье"
@@ -3769,6 +3781,9 @@ msgstr "Основные моменты"
 msgid "Hint: it would take approximately %1%2 to crack this password."
 msgstr "Подсказка: на взламывание пароля уйдёт примерно %1%2."
 
+msgid "Histogram of Active Bids"
+msgstr ""
+
 msgid "Hone your security testing skills."
 msgstr "Усовершенствуйте свои навыки тестирования безопасности."
 
@@ -3785,7 +3800,7 @@ msgid "How and when will I receive my affiliate earnings?"
 msgstr "Как и когда я получу свои комиссионные?"
 
 msgid "How are the tokens offered?"
-msgstr ""
+msgstr "На каких условиях будут предлагаться токены?"
 
 msgid "How can I become an affiliate?"
 msgstr "Как стать партнером?"
@@ -3898,6 +3913,9 @@ msgstr "Настоящим я заявляю, что не являюсь пол�
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
+msgid "I agree to the cancellation fee stated above"
+msgstr ""
+
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "I confirm my agreement to the contents of all the documents listed below:"
 
@@ -3926,7 +3944,7 @@ msgid "I understand and agree that, with regard to over-the-counter binary optio
 msgstr "I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction."
 
 msgid "I want to be treated as a professional client."
-msgstr ""
+msgstr "Я хочу стать профессиональным клиентом."
 
 msgid "I'm new to binaries, where do I start?"
 msgstr "Я новичок в торговле бинарными опционам, с чего начать?"
@@ -3937,14 +3955,17 @@ msgstr "I. Котировки"
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "Например, (20010 - 20000) x 1 x 1 = USD 10"
 
-msgid "ID card"
+msgid "ICO Account Opening"
 msgstr ""
+
+msgid "ID card"
+msgstr "ID-карта"
 
 msgid "ID number"
-msgstr ""
+msgstr "Номер ID"
 
 msgid "ID number is required for %1."
-msgstr ""
+msgstr "Номер ID необходим для %1."
 
 msgid "IMPORTANT DISCLAIMER"
 msgstr "ВАЖНАЯ ИНФОРМАЦИЯ"
@@ -3965,7 +3986,7 @@ msgid "Ideas"
 msgstr "Идеи"
 
 msgid "Identity card"
-msgstr ""
+msgstr "Удостоверение личности"
 
 msgid "If a closing Transaction in the same market is entered into but with a higher number of lots, the original Open Position will be closed and a new Open Position will be entered into for the number of lots by which the new Transaction exceeds the Open Position."
 msgstr "Если закрывающий контракт на том же активе заключён на большее количество лотов, первоначальная открытая позиция будет закрыта, а новая позиция будет открыта для того количества лотов, на которое новый контракт превышает ранее открытый."
@@ -4458,7 +4479,7 @@ msgid "Insufficient balance."
 msgstr "Недостаточно средств на счете."
 
 msgid "Intellectual Property Rights"
-msgstr ""
+msgstr "Интеллектуальная собственность"
 
 msgid "Intellectual property"
 msgstr "Интеллектуальная собственность"
@@ -4470,7 +4491,7 @@ msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Хотите больше узнать о нашей ликвидности? Свяжитесь с нами по адресу %1, чтобы получить дополнительную информацию."
 
 msgid "Interested in our omnibus account facility? %1Contact us now and apply as an omnibus broker%2."
-msgstr ""
+msgstr "Хотите получит больше информации о нашем Универсальном счёте? %1Свяжитесь с нами сейчас и станьте универсальным брокером%2."
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "Хотите узнать, что дальше? Если у Вас хороший послужной список на рынке и Вы можете предложить своим Клиентам конкретный метод расчета электронными деньгами или местный способ оплаты, ещё не представленный на %1, будем рады <a href='mailto:%2'>познакомиться!</a>"
@@ -4503,7 +4524,7 @@ msgid "Invalid amount, minimum is"
 msgstr "Неправильная сумма. Минимум:"
 
 msgid "Invalid document format: \"%1\""
-msgstr ""
+msgstr "Недопустимый формат документа: \"%1\""
 
 msgid "Invalid email address"
 msgstr "Недействительный e-mail"
@@ -4550,6 +4571,9 @@ msgstr "Пароль инвестора"
 msgid "Investor password (read-only access)"
 msgstr "Пароль инвестора (только для чтения)"
 
+msgid "Investors need to open a %1 real money account to take part in the ICO."
+msgstr ""
+
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "Оценка соответствия нормативно-правовым требованиям, управление риском. Работа с главами отделов над улучшением бизнес-процессов."
 
@@ -4569,7 +4593,7 @@ msgid "Isle of Man"
 msgstr "Остров Мэн"
 
 msgid "Issued under your own name"
-msgstr ""
+msgstr "Выпущенный на Ваше имя"
 
 msgid "It is a condition of using the website that:"
 msgstr "Условия использования сайта:"
@@ -5103,7 +5127,7 @@ msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
 msgid "Jean-Yves Sireau is the founder of the Company. A serial entrepreneur at heart, he founded his first company in 1991. His achievements at only 21 years old saw him awarded the prestigious Foundation Jacques Dounce prize for young entrepreneurs by the French prime minister Edith Cresson, and the Neuilly Professions prize by a future French president Nicolas Sarkozy. Jean-Yves founded Fortitude Fund Management, a hedge fund management group, in 1993, and %1 (formerly known as Betonmarkets.com) in 1999."
-msgstr "Жан-Ив Серо – основатель компании. Будучи серийным предпринимателем, он основал свою первую компанию в 1991 году. В возрасте 21 года он был удостоен престижной награды от Фонда Жака Доунса для молодых предпринимателей, который был вручён премьер-министром Франции Эдит Крессон, а также премии Neuilly Professions от будущего президента Франции Николя Саркози. В 1993 году Жан-Ив основал Fortitude Fund Management (группу управления хедж-фондами), а в 1999 году появился %1 (который раньше носил название Betonmarkets.com)."
+msgstr "Жан-Ив Серо – основатель компании. Будучи талантливым предпринимателем, он основал свою первую компанию в 1991 году. В возрасте 21 года Жан-Ив получил престижную награду от Фонда Жака Доунса для молодых предпринимателей (которая была вручена премьер-министром Франции Эдит Крессон), а также премию Neuilly Professions от будущего президента Франции Николя Саркози. В 1993 году Жан-Ив основал Fortitude Fund Management (группу управления хедж-фондами), а в 1999 году появился %1 (который раньше носил название Betonmarkets.com)."
 
 msgid "Jim Mellon is a well-known and successful entrepreneur, starting his career in fund management and now including biopharma, property, mining, and information technology amongst his many investments. Jim is listed at number 140 on the Sunday Times Rich List with a net worth of &pound;920 million, and holds directorships in a number of publicly quoted companies. He is the founder and principal shareholder of the Regent Pacific Group, quoted on the Hong Kong Stock Exchange, who were the founding investor of Binary.com in 1999."
 msgstr "Джим Меллон — успешный и всемирно-известный предприниматель, начавший свою трудовую деятельность в области управления финансами. В данное время сферы его инвестиций включают биофавматический бизнес, недвижимость, горное дело и информационные технологии. Имя Джима занимает 140-ю строчку в списке богатейших людей по версии Sunday Times. Его чистый капитал составляет &pound;920 млн. и он также является руководителем нескольких акционерных компаний. Джим является основателем и главным акционером компании Regent Pacific Group, акции которой продают на Гонконгской фондовой бирже и которая, в свою очередь, является инвестором и основателем Binary.com в 1999 году."
@@ -5127,7 +5151,7 @@ msgid "Join the conversation on our social channels for all news and updates rel
 msgstr "Присоединитесь к обсуждению по нашим социальным каналам всех новостей и информационных публикаций, относящихся к предстоящему ICO."
 
 msgid "Join the token sale"
-msgstr ""
+msgstr "Поучаствуйте в продаже токенов"
 
 msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Джошуа Кавалларо <span> Markets And You Trader</span>"
@@ -5442,7 +5466,7 @@ msgid "Lower"
 msgstr "Ниже"
 
 msgid "Lower fees"
-msgstr ""
+msgstr "Более низкая комиссия"
 
 msgid "M"
 msgstr "М"
@@ -5469,7 +5493,7 @@ msgid "Maintain adequate speed and volume of output"
 msgstr "Поддержание адекватной скорости и объёма работы"
 
 msgid "Maintain complete anonymity of your clients."
-msgstr ""
+msgstr "Сохраняйте полную анонимность Ваших клиентов."
 
 msgid "Major Pairs"
 msgstr "Основные пары"
@@ -5511,7 +5535,7 @@ msgid "Manage your authorised applications."
 msgstr "Управление доступными приложениями."
 
 msgid "Manage your client database more efficiently as an omnibus broker."
-msgstr ""
+msgstr "Эффективно управляйте клиентской базой, будучи общим брокером."
 
 msgid "Managers"
 msgstr "Менеджеры"
@@ -5658,7 +5682,7 @@ msgid "Maximum number of open positions"
 msgstr "Максимальное количество открытых позиций"
 
 msgid "Maximum upload size for each file is 3MB"
-msgstr ""
+msgstr "Максимальный размер каждого файла: 3MB"
 
 msgid "May"
 msgstr "Май"
@@ -5745,7 +5769,7 @@ msgid "Mo"
 msgstr "Пн"
 
 msgid "Modification/Amendment"
-msgstr ""
+msgstr "Изменения/поправки"
 
 msgid "Monday"
 msgstr "Понедельник"
@@ -5790,7 +5814,7 @@ msgid "More benefits"
 msgstr "Дополнительные преимущества"
 
 msgid "More efficient"
-msgstr ""
+msgstr "Более эффективно"
 
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Более конкретно, когда мы заключаем с Вами договор бинарного контракта (\"Контракт\"), мы обязаны предоставить Вам условия \"лучшего исполнения\". Лучшее исполнение означает, что мы должны принять разумные меры для получения наилучшего результата при выполнении Вашего ордера. Этот документ содержит резюме нашей политики лучшего исполнения."
@@ -5835,7 +5859,7 @@ msgid "Multiple trading opportunities"
 msgstr "Множество торговых возможностей"
 
 msgid "Must be a clear, colour photo or scanned image"
-msgstr ""
+msgstr "Чёткая цветная фотография или отсканированное изображение"
 
 msgid "N. Force Majeure Events"
 msgstr "N. Форс-мажорные обстоятельства"
@@ -5853,7 +5877,7 @@ msgid "Name:"
 msgstr "Имя:"
 
 msgid "National ID card or any government issued document which contains a photo, your name, and date of birth"
-msgstr ""
+msgstr "Национальное удостоверение личности или любой документ, выпущенный государством и содержащий фотографию, Ваше имя и дату рождения"
 
 msgid "Need more information on the ICO?"
 msgstr "Хотите получить больше информации об ICO?"
@@ -5939,6 +5963,9 @@ msgstr ""
 msgid "No Touch trades"
 msgstr "Контракты Нет касания"
 
+msgid "No bids to show"
+msgstr ""
+
 msgid "No commission"
 msgstr "Никаких комиссий"
 
@@ -5971,6 +5998,9 @@ msgstr "Запрещается использовать данный сайт с
 
 msgid "No risk, $10K virtual money account"
 msgstr "Без риска, виртуальные $10,000"
+
+msgid "No, return to the ICO auction page"
+msgstr ""
 
 msgid "No. Once your pull request is merged into master by our development team, and you have been paid, you have effectively handed over the rights to the code. It then becomes part of the master %1 codebase under the open-source license of the relevant repository."
 msgstr "Нет. Как только Ваш запрос на внесение улучшений будет включён в основную систему нашей командой разработчиков, а вы получите оплату, Вы передадите нам права на данный код. Он станет частью основной кодовой базы %1 в рамках лицензия на программное обеспечение с открытым исходным кодом соответствующего репозитория."
@@ -6102,7 +6132,7 @@ msgid "Old password is wrong."
 msgstr "Старый пароль неверный."
 
 msgid "Omnibus account"
-msgstr ""
+msgstr "Универсальный счёт"
 
 msgid "On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you."
 msgstr "На основе информации, предоставленной в отношении Ваших знаний и опыта, мы считаем, что инвестиции, доступные через этот сайт, не подходят для Вас."
@@ -6153,7 +6183,7 @@ msgid "Only %1 decimal points are allowed."
 msgstr "Разрешенное количество десятичных: %1."
 
 msgid "Only JPG, JPEG, GIF, PNG and PDF formats are accepted"
-msgstr ""
+msgstr "Принимаются только следующие форматы: JPG, JPEG, GIF, PNG и PDF"
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "Уже через пять лет после создания сайта мы получили этот крупный приз за свои услуги онлайн трейдинга. Награда признает надежный, быстрый и безопасный трейдинг, предлагаемый BetOnMarkets.com как новичкам, так и опытным трейдерам. На тот момент на сайте было выполнено более 15 миллионов сделок."
@@ -6207,7 +6237,7 @@ msgid "Open a Financial Account"
 msgstr "Открыть финансовый счет"
 
 msgid "Open a Real Account"
-msgstr ""
+msgstr "Открыть реальный счёт"
 
 msgid "Open a free account"
 msgstr "Открыть бесплатный счет"
@@ -6450,7 +6480,7 @@ msgid "Pass our Knowledge Test"
 msgstr "Пройдите наш тест на проверку знаний"
 
 msgid "Passport"
-msgstr ""
+msgstr "Паспорт"
 
 msgid "Password"
 msgstr "Пароль"
@@ -6624,7 +6654,7 @@ msgid "Please complete the tax information before proceeding."
 msgstr "Пожалуйста, внесите информацию о налогах, прежде чем продолжить."
 
 msgid "Please confirm that you are a %1professional trader%2 to proceed."
-msgstr ""
+msgstr "Чтобы продолжить, пожалуйста, подтвердите, что Вы являетесь %1профессиональным трейдером%2."
 
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Пожалуйста подтвердите, что Вы не являетесь политически-значимым лицом."
@@ -6703,6 +6733,9 @@ msgstr "Пожалуйста, выберите правильное время."
 
 msgid "Please select a value"
 msgstr "Пожалуйста, выберите значение"
+
+msgid "Please select a value for account_opening_reason."
+msgstr ""
 
 msgid "Please select at least one scope"
 msgstr "Пожалуйста, выберите минимум один параметр"
@@ -6848,6 +6881,9 @@ msgstr "Цена"
 msgid "Price - the price at which the transaction in relation to your order is executed at."
 msgstr "Цена – цена, по которой будет исполнен контракт, заключенный по Вашему ордеру."
 
+msgid "Price Band"
+msgstr ""
+
 msgid "Price/Prices &mdash; Bid and Offer Price/Prices."
 msgstr "Цена/цены &mdash; цена/цены бид и цена/цены предложения."
 
@@ -6870,7 +6906,7 @@ msgid "Prior to placing an Order which results in opening a Transaction or incre
 msgstr "До размещения ордера (что приводит к открытию контракта или увеличению числа текущих открытых позиций) Вы обязуетесь удостовериться в том, что на Вашем счету достаточно свободной маржи для покрытия маржевых требований по открытым контрактам (см. \"Маржевые требования\"), а также для дальнейшего соблюдения Маржевых требований."
 
 msgid "Privacy"
-msgstr ""
+msgstr "Конфиденциальность"
 
 msgid "Privacy & Security"
 msgstr "Защита информации"
@@ -6900,13 +6936,13 @@ msgid "Product Disclosure Statement"
 msgstr "Заявление о риске использования продукции"
 
 msgid "Professional Client"
-msgstr ""
+msgstr "Профессиональный клиент"
 
 msgid "Professional Clients"
 msgstr "Клиенты-профессионалы"
 
 msgid "Professional Trader"
-msgstr ""
+msgstr "Профессиональный трейдер"
 
 msgid "Professionals"
 msgstr "Специалисты"
@@ -6936,7 +6972,7 @@ msgid "Prohibited Trades"
 msgstr "Запрещённые сделки"
 
 msgid "Proof of your employment position."
-msgstr ""
+msgstr "Доказательство Вашей занятости."
 
 msgid "Proofread and correct the content appearing on the company's website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "Вычитка и внесение правок в контент, отображаемый на сайте компании, в блоге, социальных сетях и маркетинговых материалах (в переводе с английского на региональные языки и наоборот)"
@@ -7206,7 +7242,7 @@ msgid "Represents the maximum volume of contracts that you may purchase in any g
 msgstr "Представляет собой максимальный объём контрактов, который Вы можете приобрести в течение любого торгового дня."
 
 msgid "Requirements"
-msgstr ""
+msgstr "Требования"
 
 msgid "Requirements:"
 msgstr "Требования:"
@@ -7616,6 +7652,12 @@ msgstr "Открыть счет"
 msgid "Sign out"
 msgstr "Выход"
 
+msgid "Sign up"
+msgstr "Регистрация"
+
+msgid "Sign up now for free."
+msgstr ""
+
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "Хороший опыт работы в социальных сетях, маркетинге и / или в сфере рекламы"
 
@@ -7905,16 +7947,13 @@ msgid "Submit for review"
 msgstr ""
 
 msgid "Submit one of the documents below"
-msgstr ""
+msgstr "Отправьте один из документов, указанных ниже"
 
 msgid "Submit your CV and Cover Letter"
 msgstr "Отправьте своё резюме и сопроводительное письмо"
 
 msgid "Subscribe to our mailing list"
 msgstr "Подпишитесь на нашу рассылку"
-
-msgid "Subscribe to our mailing list for exclusive updates on the ICO."
-msgstr "Подпишитесь на информационную рассылку для получения эксклюзивных новостей о нашем ICO."
 
 msgid "Successful"
 msgstr "Успешно"
@@ -7956,7 +7995,7 @@ msgid "Symbol"
 msgstr "Символ"
 
 msgid "Take me there"
-msgstr ""
+msgstr "Перейти по ссылке"
 
 msgid "Talk to us"
 msgstr "Пообщайтесь с нами"
@@ -8049,7 +8088,7 @@ msgid "Thank you for signing up! Please check your email to complete the registr
 msgstr "Спасибо за регистрацию! Теперь проверьте электронную почту, чтобы завершить процесс."
 
 msgid "Thank you for submitting the required documents"
-msgstr ""
+msgstr "Спасибо за предоставление необходимых документов"
 
 msgid "Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO."
 msgstr "Спасибо за подписку! Регулярно проверяйте почту и следите за последними новостями о нашем ICO."
@@ -8073,10 +8112,10 @@ msgid "The %1 team"
 msgstr "Команда %1"
 
 msgid "The %1 token sale has ended"
-msgstr ""
+msgstr "Продажа токенов %1 закончилась"
 
 msgid "The %1 token sale has started"
-msgstr ""
+msgstr "Продажа токенов %1 началась"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Сайт %1 защищен авторскими правами."
@@ -8687,13 +8726,13 @@ msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote e
 msgstr "Термины “мы”, “нас”, “наш (наша)”, “наши”, “Компания” и “%1” обозначают компанию Binary (V) Ltd. или компанию Binary (C.R.) S.A., в зависимости от юрисдикции, к которой относится счёт Клиента, открытый в рамках процедур, действующих на сайте."
 
 msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
-msgstr ""
+msgstr "Токены будут предложены в рамках аукциона. Ознакомтесь с нашим %1экскурсом%2 по аукциону токенов."
 
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr "Токены позволяют их владельцу получать выплаты на основе дивидендов, а также получать экономическую выгоду, эквивалентную обыкновенным акциям. Таким образом, для владельцев токенов не будет никакой практической пользы переводить данные токены в акции."
 
 msgid "The tokens will be offered from 15 November 2017 to 25 December 2017."
-msgstr ""
+msgstr "Токены будут предложены в период с 15 ноября по 25 декабря 2017 г."
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
 msgstr "Транзакции, производимые на данном сайте, а также отношения между Клиентами и Компанией регулируются и толкуются в соответствии с законодательством страны регистрации Компании (\"Юрисдикции\"), которой является Остров Мэн, Мальта или Коста-Рика. Вы соглашаетесь, что суды данных стран будут единственными инстанциями, которые имеют право регулировать любые споры и несогласия, которые могут возникнуть между сторонами. С этой целью Вы обязуетесь безоговорочно подчиняться решению суда определенной Юрисдикции относительного любого иска и соглашаетесь, что любая претензия, которую Вы можете иметь к Компании, будет решаться в суде Юрисдикции. Для дальнейшей информации по жалобам и искам смотрите секцию Компании \"Жалобы и иски\"."
@@ -8872,7 +8911,7 @@ msgstr ""
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Данная функция недоступна на демо-счетах."
 
-msgid "This feature is only available to CR clients. Please upgrade to proceed."
+msgid "This feature is only available to CR clients. Please sign up to proceed."
 msgstr ""
 
 msgid "This feature is only relevant to payment agent accounts."
@@ -9013,6 +9052,15 @@ msgstr "Чтобы открыть текущий Реальный счёт, Вы
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 
+msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (Europe) Ltd, regulated by the Malta Gaming Authority."
+msgstr ""
+
+msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (IOM) Ltd, regulated by the Isle of Man Gambling Supervision Commission."
+msgstr ""
+
+msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary Investments (Europe) Ltd, regulated by the Malta Financial Services Authority."
+msgstr ""
+
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "Чтобы выполнить данное действие, <a href=\"%1\">откройте Реальный счет %2</a>."
 
@@ -9066,6 +9114,12 @@ msgstr "Total"
 
 msgid "Total Bid Price"
 msgstr "Общая цена ставки"
+
+msgid "Total Bids"
+msgstr ""
+
+msgid "Total Bids ($USD)"
+msgstr ""
 
 msgid "Total Cost"
 msgstr "Общая стоимость"
@@ -9242,7 +9296,7 @@ msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
 msgstr "Переводите средства с фидуциарного на криптовалютный счёт за следующую комиссию:"
 
 msgid "Transfer funds between your omnibus master account and sub-accounts"
-msgstr ""
+msgstr "Переводите средства между универсальным основным счётом и субсчетами"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Перевод средств между реальными счетами."
@@ -9370,6 +9424,9 @@ msgstr "Опыт в области дизайна интерфейсов UX / UI
 msgid "Ultra fast on-the-go trading"
 msgstr "Мгновенная торговля на ходу"
 
+msgid "Unable to create ICO account while virtual account is selected. Please select your real money account and try again."
+msgstr ""
+
 msgid "Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button."
 msgstr "Во вкладке <strong>Дополнительные настройки</strong> нажмите кнопку <strong>Просмотреть дополнительные настройки</strong>."
 
@@ -9444,9 +9501,6 @@ msgstr "Обновить настройки"
 
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "Обновление руководства по борьбе с мошенничеством и других документов по данной тематике"
-
-msgid "Upgrade"
-msgstr ""
 
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr "После закрытия контракта полученная прибыль (или убыток), представляющая собой разницу между уровнем открытия и уровнем закрытия контракта помноженную на количество лотов (объём), должна быть незамедлительно выплачена Вам (или нам, в случае, если контракт принёс убыток)."
@@ -9569,16 +9623,16 @@ msgid "View the operating hours of the markets you can trade."
 msgstr "Узнайте время открытия и закрытия всех рынков, на которых можно работать."
 
 msgid "View your account's authentication status."
-msgstr ""
+msgstr "Просмотреть статус аутентификации счёта."
 
 msgid "View your financial assessment settings."
-msgstr ""
+msgstr "Просмотрите настройки финансовой оценки."
 
 msgid "View your login history."
 msgstr "Просмотрите свою историю входа в систему."
 
 msgid "View your personal information."
-msgstr ""
+msgstr "Посмотрите свои личные данные."
 
 msgid "View your statement"
 msgstr "Смотрите свою историю счета"
@@ -10199,7 +10253,7 @@ msgid "Withdraw: Not applicable"
 msgstr "Вывод: не предлагается"
 
 msgid "Withdrawal"
-msgstr ""
+msgstr "Вывод"
 
 msgid "Withdrawal Limits"
 msgstr "Лимиты на вывод"
@@ -10278,6 +10332,9 @@ msgstr "Да, я понимаю"
 
 msgid "Yes, but we'd prefer you to submit security vulnerabilities via our %1bug bounty%2 program."
 msgstr "Да, но мы предпочитаем, чтобы Вы сообщали об уязвимостях системы безопасности через нашу программу %1обнаружения багов%2."
+
+msgid "Yes, cancel my bid"
+msgstr ""
 
 msgid "Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:"
 msgstr "Да. Пожалуйста свяжитесь с менеджером Вашего счёта, если Вы хотите заказать отдельный баннер и предоставьте ему/ей следующую информацию:"
@@ -10638,6 +10695,9 @@ msgstr "Вы автоматически будете выходить с сай�
 
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "Вам будут предоставлены все необходимые инструменты, чтобы Ваш трафик приносил доход"
+
+msgid "You will be subject to a 2% cancellation fee."
+msgstr ""
 
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "Курс своп взимается, если Вы сохраняете позицию открытой после 23:59:59 GMT."
@@ -12851,7 +12911,7 @@ msgid "Get Paid for Pull Requests"
 msgstr "Получайте деньги за улучшения"
 
 msgid "Omnibus"
-msgstr ""
+msgstr "Универсальный"
 
 msgid "How to Trade Binary Options?"
 msgstr "Как торговать бинарными опционами?"
@@ -12895,6 +12955,9 @@ msgstr "Авторизация"
 msgid "Subscribe to ICO"
 msgstr "Подпишитесь на ICO"
 
+msgid "ICO Histogram"
+msgstr ""
+
 msgid "Settings"
 msgstr "Настройки"
 
@@ -12915,7 +12978,4 @@ msgstr "Отказ от ответственности в связи с Перв
 
 msgid "Hackathon Competition"
 msgstr "Соревнование Hackathon"
-
-msgid "Sign up"
-msgstr "Регистрация"
 

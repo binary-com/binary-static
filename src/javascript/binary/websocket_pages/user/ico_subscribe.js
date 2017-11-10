@@ -45,7 +45,7 @@ const ICOSubscribe = (() => {
             })
             .attr('src', image);
 
-        BinarySocket.wait('ico_status', 'landing_company').then(() => {
+        BinarySocket.wait('ico_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             if (State.getResponse('ico_status.ico_status') === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOcountDown();
@@ -67,6 +67,7 @@ const ICOSubscribe = (() => {
     const init = () => {
         BinarySocket.wait('balance').then((response) => {
             ICOPortfolio.onLoad();
+            $('#view_ico_info').setVisibility(1);
             currency = Client.get('currency') || '';
             if (currency) {
                 $('.currency').text(currency);
@@ -92,9 +93,10 @@ const ICOSubscribe = (() => {
             } else {
                 const decimal_places = getDecimalPlaces(currency);
                 $form_error          = $('#form_error');
+
                 FormManager.init(form_id, [
-                    { selector: '#duration', validations: ['req', ['number', { min: 25, max: 1000000 }]], parent_node: 'parameters' },
-                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places), max: 999999999999999 }]] },
+                    { selector: '#duration', validations: ['req', ['number', { min: 25, max: 10000000 }]], parent_node: 'parameters' },
+                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]] },
 
                     { request_field: 'buy', value: 1 },
                     { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
@@ -104,11 +106,17 @@ const ICOSubscribe = (() => {
                     { request_field: 'currency',      parent_node: 'parameters', value: currency },
                     { request_field: 'duration_unit', parent_node: 'parameters', value: 'c' },
                 ]);
-                FormManager.handleSubmit({
-                    form_selector       : form_id,
-                    enable_button       : 1,
-                    fnc_response_handler: handleResponse,
-                });
+                if (+State.getResponse('website_status.ico_info.final_price') === 0) {
+                    $(form_id)
+                        .on('submit', (evt) => { evt.preventDefault(); })
+                        .find('button').addClass('inactive');
+                } else {
+                    FormManager.handleSubmit({
+                        form_selector       : form_id,
+                        enable_button       : 1,
+                        fnc_response_handler: handleResponse,
+                    });
+                }
                 $(`${form_id} input`).on('keypress', onlyNumericOnKeypress)
                     .on('input change', calculateTotal);
             }
@@ -121,7 +129,7 @@ const ICOSubscribe = (() => {
         let total          = 0;
         let usd_total      = 0;
         if (duration_val && price_val) {
-            total     = +duration_val * +price_val;
+            total = +duration_val * +price_val;
         }
         let content = `${formatMoney(currency, total)}`;
         if(unit_price && unit_price < Infinity) {
@@ -129,6 +137,8 @@ const ICOSubscribe = (() => {
             content   = `${content} / ${formatMoney('USD', usd_total)}`;
         }
         $total.html(content);
+        if (!$form_error) $form_error = $('#form_error');
+        $form_error.setVisibility(0);
     };
 
     const ICOcountDown = () => {
@@ -168,27 +178,53 @@ const ICOSubscribe = (() => {
             $form_error.setVisibility(0);
             $('#duration, #price').val('');
             $.scrollTo($('#ico_bids'), 500, { offset: -10 });
+            calculateTotal();
         }
     };
 
     const showContent = () => {
+        $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
-            if (/au|ca|ch|nz|sg/.test(Client.get('residence'))
+            if(/au|ca|ch|nz|sg/.test(Client.get('residence'))
                 && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
                 to_show = 'ico_professional_message';
             } else {
                 to_show = 'ico_subscribe';
             }
-            to_show = 'ico_subscribe';
         } else if (Client.hasCostaricaAccount()) {
             to_show = 'ico_account_message';
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
-            to_show = 'ico_new_account_message';
-            const button_new_account = document.getElementById('ico_new_account');
-            if (button_new_account) {
-                button_new_account.removeEventListener('click', newAccountOnClick);
-                button_new_account.addEventListener('click', newAccountOnClick);
+            if(Client.isAccountOfType('virtual') && (Client.hasAccountType('gaming')
+                || Client.hasAccountType('financial') || Client.hasAccountType('real'))){
+                to_show = 'ico_virtual_message';
+            } else {
+                to_show = 'ico_new_account_message';
+                let message_show = 'message_common';
+                const landing_company = (Client.currentLandingCompany() || {}).shortcode;
+                // Show message to user based on landing_company
+                if(/^malta$/.test(landing_company)) {
+                    message_show = 'message_gaming';
+                } else if(/^maltainvest$/.test(landing_company)) {
+                    message_show = 'message_financial';
+                } else if (/^iom$/.test(landing_company)) {
+                    message_show = 'message_iom';
+                }
+
+                // Check if user has account_opening_reason
+                if(!State.getResponse('get_settings.account_opening_reason')
+                    && !Client.isAccountOfType('virtual')) {
+                    askForAccountOpeningReason();
+                }
+
+                // Show message to client.
+                document.getElementById(message_show).setVisibility(1);
+
+                const button_new_account = document.getElementById('ico_new_account');
+                if (button_new_account) {
+                    button_new_account.removeEventListener('click', newAccountOnClick);
+                    button_new_account.addEventListener('click', newAccountOnClick);
+                }
             }
         }
         const el_to_show = document.getElementById(to_show);
@@ -199,11 +235,25 @@ const ICOSubscribe = (() => {
     };
 
     const newAccountOnClick = () => {
+        const el_account_opening_reason = document.getElementById('account_opening_reason');
+        const el_error = document.getElementById('new_account_error');
         if (Client.hasAccountType('real')) {
             BinarySocket.wait('get_settings').then((response) => {
-                BinarySocket.send(populateReq(response.get_settings)).then((response_new_account_real) => {
+                const req = populateReq(response.get_settings);
+
+                // Check if client has account_opening_reason set.
+                if($(el_account_opening_reason).is(':visible') && !req.account_opening_reason) {
+                    const value = el_account_opening_reason.value;
+                    if(value) {
+                        req.account_opening_reason = value;
+                    } else {
+                        el_error.setVisibility(1).textContent = localize('Please select a value for account_opening_reason.');
+                        return;
+                    }
+                }
+
+                BinarySocket.send(req).then((response_new_account_real) => {
                     if (response_new_account_real.error) {
-                        const el_error = document.getElementById('new_account_error');
                         if (el_error) {
                             el_error.setVisibility(1).textContent = response_new_account_real.error.message;
                         }

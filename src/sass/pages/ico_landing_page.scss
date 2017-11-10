@@ -234,7 +234,7 @@ input[type='text'] {
 }
 
 input[type='submit'] {
-    width: 100px;
+    min-width: 100px;
     padding: 10px;
     margin: 5px 0;
     background: $COLOR_GREEN;
@@ -621,6 +621,9 @@ input[type='text']:focus, input[type='submit']:focus {
             border: 1px solid $COLOR_ORANGE;
         }
     }
+    a, a:visited {
+        outline: none !important;
+    }
     [data-action='stop'], [data-action='start'] {
         display: none;
     }
@@ -712,6 +715,30 @@ input[type='text']:focus, input[type='submit']:focus {
 
 .crypto-martez {
     background-image: url('../images/ico/icons/crypto_martez_logo.svg');
+}
+
+.hype-codes {
+    background-image: url('../images/ico/icons/hype_codes_logo.svg');
+}
+
+.cryptogo {
+    background-image: url('../images/ico/icons/cryptogo_logo.svg');
+}
+
+.chipin {
+    background-image: url('../images/ico/icons/chipin_logo.svg');
+}
+
+.coinist {
+    background-image: url('../images/ico/icons/coinist_logo.svg');
+}
+
+.binguru {
+    background-image: url('../images/ico/icons/binguru_logo.svg');
+}
+
+.ico1 {
+    background-image: url('../images/ico/icons/ico1_logo.svg');
 }
 
 #coming-soon {
@@ -906,6 +933,75 @@ input[type='text']:focus, input[type='submit']:focus {
                     }
                 }
             }
+        }
+    }
+}
+
+#sign-up-section {
+    .signup-desc {
+        p {
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.4em;
+            margin: 0;
+        }
+    }
+    .signup-container {
+        margin-top: 2em;
+    }
+    .signup-box {
+        margin: auto;
+        border-radius: 6px;
+        max-width: 600px;
+
+        #signup {
+            padding: 5px;
+        }
+    }
+    #frm_verify_email {
+        input {
+            width: 100%;
+            height: 3em;
+            margin: 5px 0;
+            font-size: $FONT_SIZE_S;
+        }
+        button {
+            margin: 5px 0;
+            height: 3rem;
+            width: 100%;
+            font-size: $FONT_SIZE_L;
+            padding: 0;
+
+            &:active, &:hover {
+                background-color: $COLOR_GREEN;
+                text-decoration: none;
+            }
+            @media (max-width: 480px) {
+                font-size: $FONT_SIZE_N;
+            }
+        }
+        .hint {
+            margin-bottom: 3px;
+
+            p {
+                font-size: $FONT_SIZE_L;
+                color: $COLOR_WHITE;
+                line-height: 1.4em;
+                text-align: center;
+            }
+        }
+        .error-msg {
+            font-style: italic;
+            font-size: $FONT_SIZE_XS;
+            color: $COLOR_RED;
+            text-align: center;
+            margin-top: 5px;
+            padding-bottom: 5px;
+        }
+        .error-field {
+            border: 1px solid $COLOR_RED !important;
+            box-shadow: 0 0 10px $COLOR_RED;
+            color: $COLOR_RED;
         }
     }
 }
