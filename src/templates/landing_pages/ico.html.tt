@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <p class="gr-12">
-                        <a class="button" id="howto-btn" href="javascript:;">
+                        <a class="button howto-btn" href="javascript:;">
                             <span>[% l('How to participate in the [_1] ICO', broker_name) %]</span>
                         </a>
                     </p>
@@ -659,7 +659,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How are the tokens offered?") %]</h4>
-                            <p>[% l("The tokens are offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">', '</a>') %]</p>
+                            <p>[% l("The tokens are offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a class="howto-btn" href="javascript:;" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
