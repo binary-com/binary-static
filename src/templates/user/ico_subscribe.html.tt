@@ -4,7 +4,8 @@
 <h1>[% l('[_1] Initial Coin Offering (ICO)', website_name) %]</h1>
 
 <div id="ico_subscribe" class="invisible">
-    <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. The minimum bid is <strong>USD 1.35</strong> or its equivalent in another currency.", website_name) %]</p>
+    <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below.", website_name) %]</p>
+    <p id="minimum_bid"></p>
     <div class="gr-row">
         <div class="gr-7 gr-12-p gr-12-m">
             <a href="#auction" class="no-ajax">
