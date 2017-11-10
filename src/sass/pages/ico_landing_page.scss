@@ -219,9 +219,10 @@ hr {
 }
 
 .footnote {
-    font-size: 16px;
-    text-transform: uppercase;
+    font-size: 14px;
     padding: 15px;
+    text-align: justify;
+    color: $COLOR_LIGHT_GRAY;
 }
 
 // Aweber form
@@ -731,6 +732,14 @@ input[type='text']:focus, input[type='submit']:focus {
 
 .coinist {
     background-image: url('../images/ico/icons/coinist_logo.svg');
+}
+
+.binguru {
+    background-image: url('../images/ico/icons/binguru_logo.svg');
+}
+
+.ico1 {
+    background-image: url('../images/ico/icons/ico1_logo.svg');
 }
 
 #coming-soon {
