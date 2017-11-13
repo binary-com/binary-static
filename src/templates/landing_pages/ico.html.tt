@@ -287,6 +287,41 @@
                 </div>
             </div>
 
+            <div id="reports-section" class="center-text">
+                <div class="gr-row">
+                    <div class="gr-12">
+                        <h2>[% l("Independent analysis") %]</h2>
+                    </div>
+                    <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
+                        <p>[% l("Need a different perspective? Read these independent third-party reports for unbiased insights and opinions on Binary.com and our token offering.") %]</p>
+                    </div>
+                </div>
+                <div class="gr-row content-section-sm">
+                    <div class="gr-6 gr-12-m lykke-mask">
+                        <div class="gr-row">
+                            <div class="gr-8 gr-push-4 gr-10-m gr-push-1-m gr-12-p gr-push-0-p">
+                                <h4>Lykke</h4>
+                                <p>[% l("This equity research report by Lykke Accelerator gives you an overview of our company structure, financial performance, forecasts of future revenue, and more.") %]</p>
+                                <a href="https://ico_documents.binary.com/research/lykke/lykke_research_report.pdf" target="_blank" class="button">
+                                    <span>[% l("View Lykke report") %]</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gr-6 gr-12-m token-mask">
+                        <div class="gr-row">
+                            <div class="gr-8 gr-10-m gr-push-1-m gr-12-p">
+                                <h4>TokenRating</h4>
+                                <p>[% l("This research report by India-based TokenRating analyses the structure of our token offering and the potential impact of our convertible tokens with dividend rights.") %]</p>
+                                <a href="https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report.pdf" target="_blank" class="button">
+                                    <span>[% l("View TokenRating report") %]</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Who We Are section -->
             <div id="who-we-are" class="content-section who-we-are-bg">
                 <div class="gr-row center-text">
