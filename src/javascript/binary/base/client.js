@@ -238,9 +238,7 @@ const Client = (() => {
                     client_logged_in.classList.add('gr-centered');
                 }
 
-                const is_ico_only = /ico_only/.test(State.getResponse('get_account_status.status'));
-                Client.set('is_ico_only', is_ico_only); // Set ico_only in Client object.
-
+                const is_ico_only = get('is_ico_only');
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
                 }
