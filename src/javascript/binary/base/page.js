@@ -120,7 +120,7 @@ const Page = (() => {
 
     const clickIcoBannerButton = (e) => {
         e.stopPropagation();
-        window.open(Url.urlFor('ico-subscribe'), '_blank');
+        window.open(Url.urlFor('user/ico-subscribe'), '_blank');
     };
 
     const removeIcoBanner = (e) => {
