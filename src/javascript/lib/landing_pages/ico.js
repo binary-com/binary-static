@@ -90,11 +90,12 @@ window.onload = function() {
         document.location = urlForLanguage(lang);
     });
 
-    document.getElementById('howto-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        window.open(getDocumentUrl(getLanguage().toLowerCase()), '_blank');
-    });
-
+    for (let i = 0; i < 2; i++) {
+        document.getElementsByClassName('howto-btn')[i].addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(getDocumentUrl(getLanguage().toLowerCase()), '_blank');
+        });
+    }
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
     window.addEventListener('hashchange', hashRouter);

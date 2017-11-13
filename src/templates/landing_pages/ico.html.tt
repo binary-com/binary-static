@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <p class="gr-12">
-                        <a class="button" id="howto-btn" href="javascript:;">
+                        <a class="button howto-btn" href="javascript:;">
                             <span>[% l('How to participate in the [_1] ICO', broker_name) %]</span>
                         </a>
                     </p>
@@ -535,6 +535,7 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="coinist"                timestamp="Nov 10, 2017"    headlines="Binary.com spearheads a new wave of ICOs with its 'IPO on the blockchain'"  url="https://www.coinist.io/binary-com-and-its-ipo-on-the-blockchain/" },
                 { logo="ico1"                   timestamp="Nov 08, 2017"    headlines="BINARY.COM 宣布开展ICO"                                                  url="http://www.ico1.com/a/jiangkaishi/1277.html" },
                 { logo="binguru"                timestamp="Nov 08, 2017"    headlines="Binary выходит на ICO: памятка инвестору"                               url="https://binguru.net/binary-vyxodit-na-ico-pamyatka-investoru-5371" },
                 { logo="coinist"                timestamp="Nov 08, 2017"    headlines="Binary.com’s Explosive Growth & Their Upcoming ICO"                     url="https://www.coinist.io/binary-com-explosive-growth-ico/" },
@@ -658,7 +659,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How are the tokens offered?") %]</h4>
-                            <p>[% l("The tokens are offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a href="https://ico_documents.binary.com/howto_ico.pdf" target="_blank">', '</a>') %]</p>
+                            <p>[% l("The tokens are offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a class="howto-btn" href="javascript:;" target="_blank">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
