@@ -253,6 +253,7 @@ sub menu {
 
     # push @{$menu}, $self->_main_menu_trading();
 
+    # Link to ico-subscribe, ICO Bids.
     push @menu,
         {
         id         => 'topMenuIcoBids',
@@ -260,7 +261,7 @@ sub menu {
         url        => url_for('/user/ico-subscribe'),
         text       => localize('ICO Bids'),
         };
-    # Link to ico-subscribe, ICO Bids.
+
     return \@menu;
 }
 
