@@ -366,7 +366,7 @@ const Client = (() => {
         };
     };
 
-    const getLandingCompanyValue = (loginid, landing_company, key) => {
+    const getLandingCompanyValue = (loginid, landing_company, key, is_ico_only) => {
         let landing_company_object;
         if (loginid.financial || isAccountOfType('financial', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
@@ -383,7 +383,7 @@ const Client = (() => {
             landing_company_object  = financial_company.concat(gaming_company);
             return landing_company_object;
         }
-        return (landing_company_object || {})[key];
+        return (is_ico_only ? 'Binary (C.R.) S.A.' : (landing_company_object || {})[key]);
     };
 
     const canTransferFunds = () =>

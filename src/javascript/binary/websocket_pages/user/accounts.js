@@ -13,7 +13,8 @@ const FormManager        = require('../../common_functions/form_manager');
 const toTitleCase        = require('../../common_functions/string_util').toTitleCase;
 
 const Accounts = (() => {
-    let landing_company;
+    let landing_company,
+        is_ico_only;
     const form_id = '#new_accounts';
 
     const onLoad = () => {
@@ -23,21 +24,20 @@ const Accounts = (() => {
         }
         BinarySocket.wait('landing_company', 'get_settings', 'get_account_status').then(() => {
             landing_company = State.getResponse('landing_company');
+            is_ico_only     = Client.get('is_ico_only');
 
             populateExistingAccounts();
 
-            let element_to_show  = '#no_new_accounts_wrapper';
-            const account_type_ico = Client.get('is_ico_only');
-            const upgrade_info   = Client.getUpgradeInfo(landing_company, undefined, account_type_ico);
+            let element_to_show = '#no_new_accounts_wrapper';
+            const upgrade_info  = Client.getUpgradeInfo(landing_company, undefined, is_ico_only);
             if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            const status     = State.getResponse('get_account_status.status');
             const currencies = getCurrencies(landing_company);
             // only allow opening of multi account to costarica clients with remaining currency
-            if (!/ico_only/.test(status) && Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
+            if (Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
                 populateMultiAccount(currencies);
             } else {
                 doneLoading(element_to_show);
@@ -51,7 +51,7 @@ const Accounts = (() => {
         $('#accounts_wrapper').setVisibility(1);
     };
 
-    const getCompanyName = account => Client.getLandingCompanyValue(account, landing_company, 'name');
+    const getCompanyName = (account, account_is_ico_only) => Client.getLandingCompanyValue(account, landing_company, 'name', account_is_ico_only);
 
     const populateNewAccounts = (upgrade_info) => {
         const new_account = upgrade_info;
@@ -62,7 +62,7 @@ const Accounts = (() => {
 
         $(form_id).find('tbody')
             .append($('<tr/>')
-                .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account)}` })))
+                .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account, is_ico_only)}` })))
                 .append($('<td/>', { text: getAvailableMarkets(account) }))
                 .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', ') }))
                 .append($('<td/>')
@@ -78,7 +78,7 @@ const Accounts = (() => {
                 const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
 
                 if (!Client.isAccountOfType('virtual', loginid)) {
-                    const company_name = getCompanyName(loginid);
+                    const company_name = getCompanyName(loginid , Client.get('is_ico_only', loginid));
                     account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
                 }
                 $('#existing_accounts').find('tbody')
@@ -119,7 +119,7 @@ const Accounts = (() => {
     const populateMultiAccount = (currencies) => {
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
-                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 })}` })))
+                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 }, is_ico_only)}` })))
                 .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
@@ -180,6 +180,7 @@ const Accounts = (() => {
         const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
         const req          = [
             { request_field: 'new_account_real',       value: 1 },
+            { request_field: 'account_type',           value: is_ico_only ? 'ico' : 'default' },
             { request_field: 'date_of_birth',          value: dob },
             { request_field: 'salutation',             value: get_settings.salutation },
             { request_field: 'first_name',             value: get_settings.first_name },
