@@ -1009,12 +1009,7 @@ input[type='text']:focus, input[type='submit']:focus {
             }
         }
         .error-msg {
-            font-style: italic;
-            font-size: $FONT_SIZE_XS;
-            color: $COLOR_RED;
             text-align: center;
-            margin-top: 5px;
-            padding-bottom: 5px;
         }
         .error-field {
             border: 1px solid $COLOR_RED !important;
@@ -1022,4 +1017,13 @@ input[type='text']:focus, input[type='submit']:focus {
             color: $COLOR_RED;
         }
     }
+}
+
+.error-msg {
+    display: block;
+    font-style: italic;
+    font-size: $FONT_SIZE_XS;
+    color: $COLOR_RED;
+    margin-top: 5px;
+    padding-bottom: 5px;
 }
