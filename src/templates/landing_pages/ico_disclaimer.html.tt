@@ -45,7 +45,7 @@
                     <select id="residence_list">
                         <option value="0" selected disabled>[% l('Please select') %]</option>
                     </select>
-                    <span class="error-msg invisible">[% l('Please select a value') %]</span>
+                    <span class="error-msg invisible">[% l('Please select a country') %]</span>
                     <div>
                         <button id="btn-select-residence">[% l('Submit') %]</button>
                     </div>
