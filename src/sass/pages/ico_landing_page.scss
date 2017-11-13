@@ -755,6 +755,12 @@ input[type='text']:focus, input[type='submit']:focus {
     }
 }
 
+#status_container {
+    .ico-subscribe-btn {
+        margin-bottom: 2em;
+    }
+}
+
 #countdown {
     $cd_size: 100px;
     $cd_border_width: 5px;
@@ -965,6 +971,17 @@ input[type='text']:focus, input[type='submit']:focus {
             height: 3em;
             margin: 5px 0;
             font-size: $FONT_SIZE_S;
+
+            @media (max-width: 480px) {
+                width: 99%;
+                padding: 0;
+            }
+
+        }
+        input[placeholder] {
+            @media (max-width: 480px) {
+                text-align: center;
+            }
         }
         button {
             margin: 5px 0;
@@ -992,12 +1009,7 @@ input[type='text']:focus, input[type='submit']:focus {
             }
         }
         .error-msg {
-            font-style: italic;
-            font-size: $FONT_SIZE_XS;
-            color: $COLOR_RED;
             text-align: center;
-            margin-top: 5px;
-            padding-bottom: 5px;
         }
         .error-field {
             border: 1px solid $COLOR_RED !important;
@@ -1005,4 +1017,13 @@ input[type='text']:focus, input[type='submit']:focus {
             color: $COLOR_RED;
         }
     }
+}
+
+.error-msg {
+    display: block;
+    font-style: italic;
+    font-size: $FONT_SIZE_XS;
+    color: $COLOR_RED;
+    margin-top: 5px;
+    padding-bottom: 5px;
 }
