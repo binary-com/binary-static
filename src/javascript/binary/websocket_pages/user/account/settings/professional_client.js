@@ -44,6 +44,7 @@ const professionalClient = (() => {
         $container.find('#professional_info_toggle').off('click').on('click', function() {
             $(this).toggleClass('open');
             $info.slideToggle();
+            $(`#${Client.get('residence') === 'gb' ? '' : 'non_'}uk`).toggleClass('invisible');
         });
 
         $chk_professional.on('change', () => {
