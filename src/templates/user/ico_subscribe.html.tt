@@ -48,6 +48,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="gr-12 align-end hint">[% l("Price per unit:") %] <span id="price_unit"></span></div>
                 <div class="gr-12 align-end hint">[% l("Total:") %] <span id="total"></span></div>
                 <div class="center-text">
                     <div id="form_error" class="error-msg invisible"></div>
