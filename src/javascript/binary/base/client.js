@@ -234,6 +234,7 @@ const Client = (() => {
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 const client_logged_in = document.getElementById('client-logged-in');
+                const is_jp = jpClient();
                 if (client_logged_in) {
                     client_logged_in.classList.add('gr-centered');
                 }
@@ -246,7 +247,8 @@ const Client = (() => {
                 }
 
                 applyToAllElements('.client_logged_in', (el) => {
-                    if (!/ico-only-hide/.test(el.classList) || !is_ico_only) {
+                    if (!/ico-only-hide/.test(el.classList) || !is_ico_only ||
+                        !is_jp || !/ja-hide/.test(el.classList)) {
                         el.setVisibility(1);
                     }
                 });
@@ -256,7 +258,6 @@ const Client = (() => {
                     topbar_class.add(secondary_bg_color);
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
-                    const is_jp = jpClient();
                     applyToAllElements('.client_real', (el) => {
                         if ((!is_jp || !/ja-hide/.test(el.classList)) &&
                             !/ico-only-hide/.test(el.classList) || !is_ico_only) {
