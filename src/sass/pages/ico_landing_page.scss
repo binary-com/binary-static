@@ -1040,6 +1040,9 @@ input[type='text']:focus, input[type='submit']:focus {
     -o-background-size: cover;
     border: 1px solid $COLOR_GRAY;
     padding: 50px 30px !important;
+    min-height: 340px;
+    display: flex !important;
+    justify-content: center;
 
     &.lykke-mask {
         background: url('../images/ico/images/lykke-mask.svg') no-repeat bottom left scroll;

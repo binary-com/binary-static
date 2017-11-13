@@ -290,8 +290,8 @@
                     <div class="gr-12">
                         <h2>[% l("Independent analysis") %]</h2>
                     </div>
-                    <div class="gr-6 gr-push-3">
-                        <span>[% l("Need a different perspective? Read these independent third-party reports for unbiased insights and opinions on Binary.com and our token offering.") %]</span>
+                    <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
+                        <p>[% l("Need a different perspective? Read these independent third-party reports for unbiased insights and opinions on Binary.com and our token offering.") %]</p>
                     </div>
                 </div>
                 <div class="gr-row content-section-sm">
@@ -299,7 +299,7 @@
                         <div class="gr-row">
                             <div class="gr-8 gr-push-4 gr-10-m gr-push-1-m gr-12-p gr-push-0-p">
                                 <h4>Lykke</h4>
-                                <p>[% l("This equity research report by Lykke Accelerator gives you a quick overview of our company structure, financial performance, forecasts of future revenue, and more.") %]</p>
+                                <p>[% l("This equity research report by Lykke Accelerator gives you an overview of our company structure, financial performance, forecasts of future revenue, and more.") %]</p>
                                 <a href="javascript:;" class="button">
                                     <span>[% l("View Lykke report") %]</span>
                                 </a>
