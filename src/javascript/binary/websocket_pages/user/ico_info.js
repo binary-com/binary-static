@@ -3,7 +3,7 @@ const showLoadingImage = require('../../base/utility').showLoadingImage;
 const getHighstock     = require('../../common_functions/common_functions').requireHighstock;
 const localize         = require('../../base/localize').localize;
 
-const COLOR_ORANGE = '#E98024';
+const BLUE_ORANGE = '#2A3052';
 const COLOR_GRAY = '#C2C2C2';
 const MAX_BID_PRICE = 10;
 
@@ -53,7 +53,7 @@ const chartConfig = ({min, values, finalPrice, finalPriceLabel, callback}) => ({
             load: () => {
                 const $svg = $('#ico_info .highcharts-container > svg');
                 createGradient($svg[0],'gradient-0', [
-                    {offset: '0%', 'stop-color': COLOR_ORANGE},
+                    {offset: '0%', 'stop-color': BLUE_ORANGE},
                     {offset: '100%', 'stop-color': 'white'},
                 ]);
                 createGradient($svg[0],'gradient-1', [
@@ -94,11 +94,10 @@ const chartConfig = ({min, values, finalPrice, finalPriceLabel, callback}) => ({
     },
     plotOptions: {
         column: {
-            color       : COLOR_ORANGE,
+            color       : BLUE_ORANGE,
             pointPadding: 0,
             borderWidth : 0,
             groupPadding: 0.05,
-            pointRange  : 0.2,
         },
     },
     legend : false,
@@ -116,37 +115,41 @@ const ICOInfo = (() => {
         $root,
         chart;
 
-    const init = (website_status) => {
+    const init = (ico_status) => {
         if (is_initialized) return;
+        ico_status.ico_status = ico_status.ico_status || 'open'; // backend will add this field.
+        const final_price = ico_status.ico_status !== 'open' ? +ico_status.final_price_usd : 0;
+        const bucket_size = +ico_status.histogram_bucket_size;
+        const minimum_bid = ico_status.minimum_bid_usd;
 
-        const ico_info = website_status.ico_info;
-        const ico_status = website_status.ico_status;
-
-        const final_price = ico_status !== 'open' ? +ico_info.final_price : 0;
-
-        const bucket_size = +ico_info.histogram_bucket_size;
-
-        const keys = Object.keys(ico_info.histogram)
+        const keys = Object.keys(ico_status.histogram)
                            .map(key => +key)
                            .sort((a,b) => a - b);
         const allValues = [];
         if (keys.length > 0) {
             const max = Math.min(keys[keys.length - 1] + 1, MAX_BID_PRICE);
-            const min = final_price ? Math.max(Math.min(keys[0], final_price) - 1, 1) : Math.max(keys[0] - 1, 1);
+            const min = final_price ?
+                        Math.max(Math.min(keys[0], final_price) - bucket_size, 1) :
+                        Math.max(keys[0] - 1, 1);
+
             for(let key = max - bucket_size; key >= min; key -= bucket_size ) {
                 key = +key.toFixed(2);
-                const value = keys.indexOf(key) !== -1 ? ico_info.histogram[`${key}`] : 0;
-                const color = key >= final_price ? COLOR_ORANGE : COLOR_GRAY;
+                const value = keys.indexOf(key) !== -1 ? ico_status.histogram[`${key}`] : 0;
+                const color = key >= final_price ? BLUE_ORANGE : COLOR_GRAY;
+
                 allValues.unshift({
                     y   : value,
-                    x   : key,
-                    band: [key, key + bucket_size - 0.01],
+                    x   : Math.max(key, minimum_bid),
+                    band: [Math.max(key, minimum_bid), key + bucket_size - 0.01],
                     color,
                 });
+                if (key < minimum_bid) {
+                    break;
+                }
             }
 
             const aboveMaxPrice = keys.filter(key => key >= MAX_BID_PRICE)
-                    .map(key => ico_info.histogram[`${key}`])
+                    .map(key => ico_status.histogram[`${key}`])
                     .reduce((a,b) => a + b, 0);
             if (aboveMaxPrice !== 0) {
                 const maxKey = keys[keys.length - 1];
@@ -160,7 +163,7 @@ const ICOInfo = (() => {
             }
 
             const config = chartConfig({
-                min            : Math.min(min - bucket_size, MAX_BID_PRICE - 1),
+                min            : Math.max(Math.min(min - bucket_size, MAX_BID_PRICE - 1), minimum_bid),
                 finalPrice     : final_price,
                 values         : allValues,
                 finalPriceLabel: `${localize('Final Price')} ($${final_price})`,
@@ -189,8 +192,8 @@ const ICOInfo = (() => {
 
         getHighstock((Highstock) => {
             Highcharts = Highstock;
-            BinarySocket.send({website_status: 1}, {forced: true}).then((response) => {
-                init(response.website_status);
+            BinarySocket.send({ico_status: 1}, {forced: true}).then((response) => {
+                init(response.ico_status);
             });
         });
     };
