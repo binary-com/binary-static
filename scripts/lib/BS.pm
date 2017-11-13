@@ -257,7 +257,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuIcoBids',
-        class      => 'ja-hide client_logged_in',
+        class      => 'ja-hide invisible client_logged_in',
         url        => url_for('/user/ico-subscribe'),
         text       => localize('ICO Bids'),
         };
