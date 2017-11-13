@@ -133,8 +133,8 @@ const ICOSubscribe = (() => {
         if (duration_val && price_val) {
             total = +duration_val * +price_val;
         }
-        let content = `${formatMoney(currency, total)}`,
-            content_unit_price = `${formatMoney(currency, +price_val)}`;
+        let content = `${formatMoney(currency, total)}`;
+        let content_unit_price = `${formatMoney(currency, +price_val)}`;
         if(unit_price && unit_price < Infinity && currency.toUpperCase() !== 'USD') {
             usd_total          = +unit_price * total;
             content            = `${content} / ${formatMoney('USD', usd_total)}`;
