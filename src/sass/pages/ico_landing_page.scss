@@ -1027,3 +1027,24 @@ input[type='text']:focus, input[type='submit']:focus {
     margin-top: 5px;
     padding-bottom: 5px;
 }
+
+#reports-section {
+    padding: 50px 0;
+}
+
+.lykke-mask, .token-mask {
+    background-color: $COLOR_WHITE;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    border: 1px solid $COLOR_GRAY;
+    padding: 50px 30px !important;
+
+    &.lykke-mask {
+        background: url('../images/ico/images/lykke-mask.svg') no-repeat bottom left scroll;
+    }
+    &.token-mask {
+        background: url('../images/ico/images/token-mask.svg') no-repeat bottom right scroll;
+    }
+}
