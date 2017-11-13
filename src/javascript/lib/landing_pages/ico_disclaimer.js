@@ -74,9 +74,21 @@ window.onload = function() {
         }
     });
 
+    var validation_set = false; // To prevent validating before submit
+
     frm_select_residence.addEventListener('submit', function (e) {
         e.preventDefault();
         var val = document.getElementById('residence_list').value;
+        if (!validateResidence(this)) {
+            if (!validation_set) {
+                this.addEventListener('change', function (evt) {
+                    evt.preventDefault();
+                    validateResidence(this);
+                    validation_set = true;
+                })
+            }
+            return false;
+        }
         hideForm();
         showDisclaimer(val);
     });
@@ -93,6 +105,17 @@ window.onload = function() {
         }
     })
 };
+
+function validateResidence(el) {
+    var val      = document.getElementById('residence_list').value;
+    var el_error = el.getElementsByClassName('error-msg')[0];
+    if (val === '0') {
+        el_error.classList.remove('invisible');
+        return false;
+    }
+    el_error.classList.add('invisible');
+    return true;
+}
 
 function getResidenceList() {
     var residence_list = JSON.parse(sessionStorage.getItem('residence_list') || null);

@@ -42,7 +42,10 @@
                 <h1>[% l('Disclaimer') %]</h1>
                 <p>[% l('Access to these materials is restricted in certain jurisdictions. Please indicate your country of residence. By clicking the “Submit” button below you certify that you are an individual resident in the country you stipulated.') %]</p>
                 <form id="frm_select_residence">
-                    <select id="residence_list"></select>
+                    <select id="residence_list">
+                        <option value="0" selected disabled>[% l('Please select') %]</option>
+                    </select>
+                    <span class="error-msg invisible">[% l('Please select a value') %]</span>
                     <div>
                         <button id="btn-select-residence">[% l('Submit') %]</button>
                     </div>
