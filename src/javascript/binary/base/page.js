@@ -82,20 +82,15 @@ const Page = (() => {
         }
         Menu.init();
         Contents.onLoad();
-        if (/ico-subscribe/.test(self.location.href)) {
-            console.log('is ico-subscribe');
-        }
-
 
         const ico_banner = document.getElementById('ico_banner');
-        if (!sessionStorage.getItem('hide_ico_banner') && ico_banner) {
+        if (!sessionStorage.getItem('hide_ico_banner') && ico_banner && !/(ico-subscribe)/.test(window.location.href)) {
             ico_banner.classList.remove('invisible');
             const ico_banner_btn = document.getElementById('ico_link_button');
             if (ico_banner_btn) {
                 ico_banner_btn.removeEventListener('click', clickIcoBannerButton);
                 ico_banner_btn.addEventListener('click', clickIcoBannerButton);
             }
-
         }
 
         const close_ico_banner = document.getElementById('close_ico_banner');
