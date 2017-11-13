@@ -551,6 +551,7 @@ sub _texts {
         push @texts, localize('Create Account');
         push @texts, localize('Accounts List');
         push @texts, localize('[_1] Account');
+        push @texts, localize('None');
         push @texts, localize('Investment');
         push @texts, localize('Gaming');
         push @texts, localize('Virtual');

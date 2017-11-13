@@ -17,3 +17,13 @@
     </div>
     <div class="loading"></div>
 </div>
+<div>
+    <p>
+        <a class="button-secondary" href="[% request.url_for('user/ico-subscribe') %]">
+            <span>
+                <img src="[% request.url_for('images/ico/icons/arrow_back.svg') %]">
+                [% l('Back') %]
+            </span>
+        </a>
+    </p>
+</div>
