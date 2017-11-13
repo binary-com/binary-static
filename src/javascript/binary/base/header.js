@@ -80,7 +80,7 @@ const Header = (() => {
                     const is_real        = /real/i.test(account_title);
                     const currency       = Client.get('currency', loginid);
                     let localized_type = localize('[_1] Account', [is_real && currency ? currency : account_title]);
-                    if (Client.get('is_ico_only')) {
+                    if (Client.get('is_ico_only', loginid)) {
                         localized_type += ' (ICO)';
                     }
                     if (loginid === Client.get('loginid')) { // default account
