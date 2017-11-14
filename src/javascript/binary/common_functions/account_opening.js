@@ -40,7 +40,9 @@ const AccountOpening = (() => {
         getResidence();
         BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         generateBirthDate();
-        professionalClient.init(is_financial, false, is_ico_only);
+        if (Client.canRequestProfessional()) {
+            professionalClient.init(is_financial, false, is_ico_only);
+        }
     };
 
     const getResidence = () => {

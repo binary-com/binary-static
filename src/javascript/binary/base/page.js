@@ -84,8 +84,16 @@ const Page = (() => {
         Contents.onLoad();
 
         const ico_banner = document.getElementById('ico_banner');
-        if (!sessionStorage.getItem('hide_ico_banner') && ico_banner) {
+        if (!sessionStorage.getItem('hide_ico_banner') && ico_banner && !/(ico-subscribe)/.test(window.location.pathname)) {
+            ico_banner.removeEventListener('click', clickIcoBannerButton);
+            ico_banner.addEventListener('click', clickIcoBannerButton);
             ico_banner.classList.remove('invisible');
+            const ico_banner_btn = document.getElementById('ico_link_button');
+            if (ico_banner_btn) {
+                ico_banner_btn.removeEventListener('click', clickIcoBannerButton);
+                ico_banner_btn.addEventListener('click', clickIcoBannerButton);
+            }
+
         }
 
         const close_ico_banner = document.getElementById('close_ico_banner');
@@ -111,6 +119,13 @@ const Page = (() => {
 
     const onUnload = () => {
         Menu.onUnload();
+    };
+
+    const clickIcoBannerButton = (e) => {
+        e.stopPropagation();
+        const open_link = window.open();
+        open_link.opener = null;
+        open_link.location = Url.urlFor('user/ico-subscribe');
     };
 
     const removeIcoBanner = (e) => {

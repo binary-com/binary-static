@@ -85,6 +85,7 @@ sub all_pages {
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening', 'NOT-ja,en'],
         ['new_account/maltainvestws',    'new_account/financial',       'default', 'Financial Account Opening'],
         ['new_account/realws',           'new_account/real',            'default', 'Real Money Account Opening'],
+        ['new_account/account_type',     'new_account/account_type',    'default', 'Account Type Selection',     'ja'],
         ['new_account/virtualws',        'new_account/virtual',         'default', 'Create New Account'],
         ['new_account/landing_page',     'new_account/landing_page',    'default', 'Welcome to Binary.com',      'NOT-ja,en'],
 
@@ -96,6 +97,7 @@ sub all_pages {
         ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/video-facility',              'user/video_facility',                  'default',    'Video Room Facility'],
         ['user/ico-subscribe',               'user/ico_subscribe',                   'default',    'Subscribe to ICO',        'ja'],
+        ['user/ico-info',                    'user/ico_info',                        'default',    'ICO Histogram',      'ja'],
         ['user/lost_passwordws',             'user/lost_password',                   'default',    'Password Reset'],
         ['user/metatrader',                  'user/metatrader',                      'full_width', 'MetaTrader account management'],
         ['user/portfoliows',                 'user/portfolio',                       'default',    'Portfolio'],

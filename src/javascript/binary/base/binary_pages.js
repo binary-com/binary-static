@@ -45,12 +45,14 @@ const Statement            = require('../websocket_pages/user/account/statement/
 const TopUpVirtual         = require('../websocket_pages/user/account/top_up_virtual');
 const Accounts             = require('../websocket_pages/user/accounts');
 const ICOSubscribe         = require('../websocket_pages/user/ico_subscribe');
+const ICOInfo              = require('../websocket_pages/user/ico_info');
 const LostPassword         = require('../websocket_pages/user/lost_password');
 const MetaTrader           = require('../websocket_pages/user/metatrader/metatrader');
 const FinancialAccOpening  = require('../websocket_pages/user/new_account/financial_acc_opening');
 const JapanAccOpening      = require('../websocket_pages/user/new_account/japan_acc_opening');
 const RealAccOpening       = require('../websocket_pages/user/new_account/real_acc_opening');
 const VirtualAccOpening    = require('../websocket_pages/user/new_account/virtual_acc_opening');
+const AccountTypeSelection = require('../websocket_pages/user/new_account/account_type');
 const ResetPassword        = require('../websocket_pages/user/reset_password');
 const SetCurrency          = require('../websocket_pages/user/set_currency');
 const TNCApproval          = require('../websocket_pages/user/tnc_approval');
@@ -62,6 +64,7 @@ const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test'
 /* eslint-disable max-len */
 const pages_config = {
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true, needs_currency: true },
+    account_type             : { module: AccountTypeSelection,       is_authenticated: true },
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
@@ -116,6 +119,7 @@ const pages_config = {
     'get-started-jp'         : { module: GetStartedJP },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
+    'ico-info'               : { module: ICOInfo,                    is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
