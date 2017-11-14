@@ -193,12 +193,13 @@ const ICOSubscribe = (() => {
         $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
-            if(/au|ca|ch|nz|sg/.test(Client.get('residence'))
-                && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
-                to_show = 'ico_professional_message';
-            } else {
-                to_show = 'ico_subscribe';
-            }
+            // TODO: replace hardcoded list with ico_professional_countries list when API changes are done
+            // if(/au|ca|ch|nz|sg/.test(Client.get('residence'))
+            //     && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
+            //     to_show = 'ico_professional_message';
+            // } else {
+            to_show = 'ico_subscribe';
+            // }
         } else if (Client.hasCostaricaAccount()) {
             to_show = 'ico_account_message';
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
