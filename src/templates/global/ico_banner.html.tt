@@ -1,5 +1,5 @@
 <div id="ico_banner_container" [% IF container %] class="[% container %]"[% END %]>
-    <div id="ico_banner" class="ico-banner invisible ja-hide [% class %]" onclick="window.open('[% request.url_for('user/ico-subscribe') %]', '_blank');">
+    <div id="ico_banner" class="ico-banner invisible ja-hide [% class %]">
         <div class="gr-row gr-centered">
             <div class="gr-12">
                 <div class="gr-row gr-no-gutter ico-box">
@@ -10,7 +10,6 @@
                             <div class="gr-4 gr-12-p gr-12-m learn-btn"><a id="ico_link_button" class="button"><span>[% l('Participate now') %]</span></a></div>
                         </div>
                     </div>
-                    <!-- <div id="close_ico_banner" class="close-btn"></div> -->
                 </div>
             </div>
         </div>
