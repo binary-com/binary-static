@@ -313,7 +313,7 @@
                             <div class="gr-8 gr-10-m gr-push-1-m gr-12-p">
                                 <h4>TokenRating</h4>
                                 <p>[% l("This research report by India-based TokenRating analyses the structure of our token offering and the potential impact of our convertible tokens with dividend rights.") %]</p>
-                                <a href="https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report.pdf" target="_blank" rel="noopener noreferrer" class="button">
+                                <a id="token-btn" href="javascript:;" target="_blank" class="button">
                                     <span>[% l("View TokenRating report") %]</span>
                                 </a>
                             </div>
