@@ -469,15 +469,9 @@ function openSubscribeLink(link) {
 }
 
 function getDocumentUrl(lang = 'en') {
-    if (/^(ru|id)$/i.test(lang)) {
-        return `https://ico_documents.binary.com/howto_ico_${lang}.pdf`;
-    }
-    return 'https://ico_documents.binary.com/howto_ico.pdf';
+    return `https://ico_documents.binary.com/howto_ico${/^(ru|id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }
 
 function getTokenRatingReportUrl(lang = 'en') {
-    if (/^(id)$/i.test(lang)) {
-        return `https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report_${lang}.pdf`;
-    }
-    return 'https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report.pdf';
+    return `https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }
