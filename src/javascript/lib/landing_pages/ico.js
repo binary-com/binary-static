@@ -81,8 +81,6 @@ window.onload = function() {
                 toggleAllSiblings(parent, filterById, 'invisible');
             }
             el_language_dropdown.classList.toggle('show');
-        } else if (/show/.test(el_language_dropdown.classList)) {
-            el_language_dropdown.classList.remove('show');
         }
     });
 

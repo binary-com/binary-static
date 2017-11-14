@@ -921,7 +921,11 @@ input[type='text']:focus, input[type='submit']:focus {
             a.selected {
                 padding: 0;
                 color: $COLOR_WHITE;
+                width: 100%;
 
+                #selected-lang {
+                    width: 100%;
+                }
                 .world {
                     background-image: url('../images/ico/icons/grid-world.svg');
                 }
