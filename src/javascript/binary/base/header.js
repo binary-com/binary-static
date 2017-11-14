@@ -135,7 +135,6 @@ const Header = (() => {
         Client.set('cashier_confirmed', 0);
         Client.set('loginid', loginid);
         Client.get('is_ico_only', loginid) ? window.location.assign(Client.defaultRedirectUrl()) : window.location.reload();
-
     };
 
     const upgradeMessageVisibility = () => {
