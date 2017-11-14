@@ -248,7 +248,7 @@ const Client = (() => {
 
                 applyToAllElements('.client_logged_in', (el) => {
                     if ((!is_jp || !/ja-hide/.test(el.classList)) &&
-                        !/ico-only-hide/.test(el.classList) || !is_ico_only) {
+                        (!/ico-only-hide/.test(el.classList) || !is_ico_only)) {
                         el.setVisibility(1);
                     }
                 });
