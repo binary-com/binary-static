@@ -365,7 +365,10 @@ const Client = (() => {
         };
     };
 
-    const getLandingCompanyValue = (loginid, landing_company, key) => {
+    const getLandingCompanyValue = (loginid, landing_company, key, is_ico_only) => {
+        if (is_ico_only) {
+            return 'Binary (C.R.) S.A.';
+        }
         let landing_company_object;
         if (loginid.financial || isAccountOfType('financial', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
