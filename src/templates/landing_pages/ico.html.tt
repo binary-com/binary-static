@@ -302,7 +302,7 @@
                             <div class="gr-8 gr-push-4 gr-10-m gr-push-1-m gr-12-p gr-push-0-p">
                                 <h4>Lykke</h4>
                                 <p>[% l("This equity research report by Lykke Accelerator gives you an overview of our company structure, financial performance, forecasts of future revenue, and more.") %]</p>
-                                <a href="https://ico_documents.binary.com/research/lykke/lykke_research_report.pdf" target="_blank" class="button">
+                                <a href="https://ico_documents.binary.com/research/lykke/lykke_research_report.pdf" target="_blank" rel="noopener noreferrer" class="button">
                                     <span>[% l("View Lykke report") %]</span>
                                 </a>
                             </div>
@@ -313,7 +313,7 @@
                             <div class="gr-8 gr-10-m gr-push-1-m gr-12-p">
                                 <h4>TokenRating</h4>
                                 <p>[% l("This research report by India-based TokenRating analyses the structure of our token offering and the potential impact of our convertible tokens with dividend rights.") %]</p>
-                                <a href="https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report.pdf" target="_blank" class="button">
+                                <a id="token-btn" href="javascript:;" target="_blank" class="button">
                                     <span>[% l("View TokenRating report") %]</span>
                                 </a>
                             </div>
@@ -435,7 +435,7 @@
                     <div class="gr-row">
                         <div class="gr-6 gr-push-3 gr-12-m gr-push-0-m">
                             <h2 class="content-inverse-color">[% l("Binary Group Ltd. acquired 100% of Binary Ltd. in August 2017 for the purposes of the ICO.") %]</h2>
-                            <a class="button" href="https://ico_documents.binary.com/binary_ltd_2016_annual_report.pdf" target="_blank">
+                            <a class="button" href="https://ico_documents.binary.com/binary_ltd_2016_annual_report.pdf" target="_blank" rel="noopener noreferrer">
                                 <span>[% l('View Binary Ltd.\'s 2016 annual report') %]</span>
                             </a>
                         </div>
@@ -454,10 +454,10 @@
                             <div class="center-text">
                                 <img class="responsive" src="[% request.url_for('images/ico/images/jy@2x.png') %]" />
                                 <h4>Jean-Yves Sireau</h4>
-                                <a href="https://www.linkedin.com/in/jeanyvessireau/" target="_blank">
+                                <a href="https://www.linkedin.com/in/jeanyvessireau/" target="_blank" rel="noopener noreferrer">
                                     <img class="icon--sm" src="[% request.url_for("images/ico/icons/linkedin.svg") %]" />
                                 </a>
-                                <a href="https://twitter.com/jysireau" target="_blank">
+                                <a href="https://twitter.com/jysireau" target="_blank" rel="noopener noreferrer">
                                     <img class="icon--sm" src="[% request.url_for("images/ico/icons/twitter.svg") %]" />
                                 </a>
                             </div>
@@ -467,7 +467,7 @@
                             <div class="center-text">
                                 <img class="responsive" src="[% request.url_for('images/ico/images/joanna@2x.png') %]" />
                                 <h4>Joanna Frendo</h4>
-                                <a href="https://www.linkedin.com/in/joanna-frendo-prof-pgdip-fcc-4449975/" target="_blank">
+                                <a href="https://www.linkedin.com/in/joanna-frendo-prof-pgdip-fcc-4449975/" target="_blank" rel="noopener noreferrer">
                                     <img class="icon--sm" src="[% request.url_for("images/ico/icons/linkedin.svg") %]" />
                                 </a>
                             </div>
@@ -477,10 +477,10 @@
                             <div class="center-text">
                                 <img class="responsive" src="[% request.url_for('images/ico/images/jm@2x.png') %]" />
                                 <h4>Jim Mellon</h4>
-                                <a href="https://twitter.com/jimmhk" target="_blank">
+                                <a href="https://twitter.com/jimmhk" target="_blank" rel="noopener noreferrer">
                                     <img class="icon--sm" src="[% request.url_for("images/ico/icons/twitter.svg") %]" />
                                 </a>
-                                <a href="https://www.youtube.com/results?search_query=jim+mellon" target="_blank">
+                                <a href="https://www.youtube.com/results?search_query=jim+mellon" target="_blank" rel="noopener noreferrer">
                                     <img class="icon--sm" src="[% request.url_for("images/ico/icons/youtube.svg") %]" />
                                 </a>
                             </div>
@@ -611,7 +611,7 @@
                         <div class="my-slider">
                             [% FOREACH media IN news %]
                                 <div>
-                                    <a href="[% media.url %]" target="_blank">
+                                    <a href="[% media.url %]" target="_blank" rel="noopener noreferrer">
                                         <div class="media">
                                             <span class="media__logo [% media.logo %]"></span>
                                             <p class="media__headlines">[% media.headlines %]</p>
@@ -623,16 +623,16 @@
                     </div>
                     <p>[% l("Join the conversation on our social channels for all news and updates related to our upcoming ICO.") %]</p>
                     <div class="gr-row gr-row-align-center">
-                        <a href="https://t.me/binarydotcom" target="_blank" class="gr-gutter-right">
+                        <a href="https://t.me/binarydotcom" target="_blank" rel="noopener noreferrer" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/telegram.svg") %]" />
                         </a>
-                        <a href="https://www.reddit.com/r/binarydotcom/" target="_blank" class="gr-gutter-right">
+                        <a href="https://www.reddit.com/r/binarydotcom/" target="_blank" rel="noopener noreferrer" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/reddit.svg") %]" />
                         </a>
-                        <a href="https://www.facebook.com/mybinarycoin" target="_blank" class="gr-gutter-right">
+                        <a href="https://www.facebook.com/mybinarycoin" target="_blank" rel="noopener noreferrer" class="gr-gutter-right">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/facebook.svg") %]" />
                         </a>
-                        <a href="https://bitcointalk.org/index.php?topic=2368998.0" target="_blank">
+                        <a href="https://bitcointalk.org/index.php?topic=2368998.0" target="_blank" rel="noopener noreferrer">
                             <img class="responsive" src="[% request.url_for("images/ico/icons/bitcoin_talk.svg") %]" />
                         </a>
                     </div>
@@ -669,7 +669,7 @@
                             <h4>[% l("Why is [_1] performing an ICO?", broker_name) %]</h4>
                             <p>[% l("[_1] was founded in 1999. Today, it is a well-established, and very successful, company. Like many successful companies, the growth of our business led us to consider an IPO.", broker_name) %]</p>
                             <p>[% l("However, we believe that in the coming decade traditional stock exchanges will gradually be replaced by blockchain exchanges, and IPOs will gradually be replaced by ICOs. This is because blockchain technologies are much more performant than the legacy technologies of traditional stock exchanges, leading to lower transaction fees, faster settlement times, and error-free immutable audit trails. Hence, we decided to perform an ICO instead of an IPO.") %]</p>
-                            <p>[% l("For further background information please read our blog post, <a href='[_1]' target='_blank'>Why we are doing an ICO (and not an IPO)</a>.", 'https://blog.binary.com/ipo-or-ico/') %]</p>
+                            <p>[% l("For further background information please read our blog post, <a href='[_1]' target='_blank' rel='noopener noreferrer'>Why we are doing an ICO (and not an IPO)</a>.", 'https://blog.binary.com/ipo-or-ico/') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -700,7 +700,7 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How are the tokens offered?") %]</h4>
-                            <p>[% l("The tokens are offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a class="howto-btn" href="javascript:;" target="_blank">', '</a>') %]</p>
+                            <p>[% l("The tokens are offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a class="howto-btn" href="javascript:;" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -724,27 +724,27 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Who can purchase the tokens?") %]</h4>
-                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account. Please visit [_2]www.binary.com[_3] to open an account.", broker_name, '<a href="' _ request.url_for('home') _ '" target="_blank">', '</a>') %]</p>
+                            <p>[% l("Tokens will only be offered to [_1] clients who have a Real Money account. Please visit [_2]www.binary.com[_3] to open an account.", broker_name, '<a href="' _ request.url_for('home') _ '" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Is the ICO available in all jurisdictions?") %]</h4>
                             <p>[% l("The ICO will be restricted in a number of jurisdictions to qualified or professional investors, in accordance with the rules and regulations of such jurisdictions. In particular, the ICO is not available to US investors.") %]</p>
-                            <p>[% l("To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the [_1]Information Memorandum[_2] page.", '<a href="' _ request.url_for('ico-disclaimer') _ '" target="_blank">', '</a>') %]</p>
+                            <p>[% l("To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the [_1]Information Memorandum[_2] page.", '<a href="' _ request.url_for('ico-disclaimer') _ '" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I purchase tokens?") %]</h4>
                             <p>[% l("You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies (including
-cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.", broker_name, '<a href="' _ request.url_for('/cashier/payment_methods') _ '" target="_blank">', '</a>') %]</p>
+cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.", broker_name, '<a href="' _ request.url_for('/cashier/payment_methods') _ '" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Where will the tokens be listed?") %]</h4>
-                            <p>[% l("[_1] has entered into an agreement to list the tokens on the [_2]Lykke.com[_3] cryptocurrency exchange. Lykke is a Swiss fintech company building a global blockchain-powered marketplace for securities-linked tokens.", broker_name, '<a href="https://www.lykke.com" target="_blank">', '</a>') %]</p>
+                            <p>[% l("[_1] has entered into an agreement to list the tokens on the [_2]Lykke.com[_3] cryptocurrency exchange. Lykke is a Swiss fintech company building a global blockchain-powered marketplace for securities-linked tokens.", broker_name, '<a href="https://www.lykke.com" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -765,32 +765,32 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("Where can I view the source code of the tokens?") %]</h4>
-                            <p>[% l("Binary.com intends to deploy the <a href='[_1]' target='_blank'>Mini Me</a> token. Please view our <a href='[_2]' target='_blank'>blog post</a> detailing our reasons for choosing this token.", 'https://github.com/Giveth/minime', 'https://tech.binary.com/an-erc20-securities-token/') %]</p>
+                            <p>[% l("Binary.com intends to deploy the <a href='[_1]' target='_blank' rel='noopener noreferrer'>Mini Me</a> token. Please view our <a href='[_2]' target='_blank' rel='noopener noreferrer'>blog post</a> detailing our reasons for choosing this token.", 'https://github.com/Giveth/minime', 'https://tech.binary.com/an-erc20-securities-token/') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("What are the risks of purchasing tokens?") %]</h4>
-                            <p>[% l("Although [_1] has been a successful company since its inception in 1999, the tokens should be considered a high risk investment. The [_1] business is subject to a number of risks which could adversely affect the company and hence affect the future value of the tokens. These risks are detailed in the [_2]Information Memorandum[_3] and should be considered very carefully before proceeding with any investment in the tokens.", broker_name, '<a href="' _ request.url_for('ico-disclaimer') _ '" target="_blank">', '</a>') %]</p>
+                            <p>[% l("Although [_1] has been a successful company since its inception in 1999, the tokens should be considered a high risk investment. The [_1] business is subject to a number of risks which could adversely affect the company and hence affect the future value of the tokens. These risks are detailed in the [_2]Information Memorandum[_3] and should be considered very carefully before proceeding with any investment in the tokens.", broker_name, '<a href="' _ request.url_for('ico-disclaimer') _ '" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I find out more about [_1]?", broker_name) %]</h4>
-                            <p>[% l("To find out more about [_1], you can read about our [_2]group history[_3], [_4]regulatory status[_3], and [_5]company culture[_3]. You can also read the [_6]company blog[_3].", broker_name, '<a href="' _ request.url_for('group-history') _ '" target="_blank">', '</a>', '<a href="' _ request.url_for('regulation') _ '" target="_blank">', '<a href="' _ request.url_for('careers') _ '" target="_blank">', '<a href="https://blog.binary.com/" target="_blank">') %]</p>
+                            <p>[% l("To find out more about [_1], you can read about our [_2]group history[_3], [_4]regulatory status[_3], and [_5]company culture[_3]. You can also read the [_6]company blog[_3].", broker_name, '<a href="' _ request.url_for('group-history') _ '" target="_blank" rel="noopener noreferrer">', '</a>', '<a href="' _ request.url_for('regulation') _ '" target="_blank" rel="noopener noreferrer">', '<a href="' _ request.url_for('careers') _ '" target="_blank" rel="noopener noreferrer">', '<a href="https://blog.binary.com/" target="_blank" rel="noopener noreferrer">') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I learn more about ICOs and cryptocurrencies?") %]</h4>
-                            <p>[% l("Head over to our <a href=[_1] target='_blank'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business.", 'https://www.youtube.com/user/BinaryTradingVideos') %]</p>
+                            <p>[% l("Head over to our <a href=[_1] target='_blank'  rel='noopener noreferrer'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business.", 'https://www.youtube.com/user/BinaryTradingVideos') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How do I stay informed on the [_1] ICO?", broker_name) %]</h4>
                             <p>[% l("Please subscribe to our mailing list using the form below for occasional announcements relating to the ICO.") %]</p>
-                            <p>[% l("You may also [_1]open a free [_2] account[_3].", '<a href="' _ request.url_for('home') _ '" target="_blank">', broker_name, '</a>') %]</p>
+                            <p>[% l("You may also [_1]open a free [_2] account[_3].", '<a href="' _ request.url_for('home') _ '" target="_blank" rel="noopener noreferrer">', broker_name, '</a>') %]</p>
                         </div>
                     </div>
                 </div>
@@ -857,7 +857,7 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
         <div class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
             <span>Binary Group Ltd., Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
         </div>
-        <div id="ico-bottom-banner" class="gr-hide gr-show-m gr-12-m invisible" onclick="window.open('[% request.url_for('user/ico-subscribe') %]', '_blank');">
+        <div id="ico-bottom-banner" class="gr-hide gr-show-m gr-12-m invisible" onclick="openSubscribeLink('[% request.url_for('user/ico-subscribe') %]');">
             <p class="center-text">[% l("The [_1] ICO is now live. Participate now!", broker_name) %]</p>
         </div>
         <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
