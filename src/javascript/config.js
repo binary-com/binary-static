@@ -45,7 +45,7 @@ const getSocketURL = () => {
         // }
 
         // server_url = `${server}.binaryws.com`;
-        server_url = 'blue.binaryws.com';
+        server_url = 'frontend.binaryws.com';
     }
     return `wss://${server_url}/websockets/v3`;
 };
