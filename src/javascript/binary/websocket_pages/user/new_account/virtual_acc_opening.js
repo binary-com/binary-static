@@ -112,7 +112,7 @@ const VirtualAccOpening = (() => {
                     loginid     : new_account.client_id,
                     token       : new_account.oauth_token,
                     is_virtual  : true,
-                    redirect_url: jp_client ? urlFor('new_account/landing_page') : urlFor(Client.getUpgradeInfo(response_lc).upgrade_link),
+                    redirect_url: jp_client ? urlFor('new_account/landing_page') : urlFor('new_account/account_type'),
                 });
             });
             return true;
