@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-13 22:06-0500\n"
+"PO-Revision-Date: 2017-11-14 00:41-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1697,8 +1697,8 @@ msgstr "Công ty Đầu tư Binary (Châu Âu) chi nhánh Malta được câ�
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Nền tảng giao dịch của Binary trung bình vào khoảng %1 %2giao dịch%3 mỗi giây, 24/7"
 
-msgid "Binary.com intends to deploy the <a href='%1' target='_blank'>Mini Me</a> token. Please view our <a href='%2' target='_blank'>blog post</a> detailing our reasons for choosing this token."
-msgstr "Binary.com dự định để triển khai các <a href='%1' target='_blank'> Mini Me</a> token. Xin vui lòng xem của chúng tôi <a href='%2' target='_blank'> blog đăng</a> chi tiết lý do chúng tôi chọn mã thông báo này."
+msgid "Binary.com intends to deploy the <a href='%1' target='_blank' rel='noopener noreferrer'>Mini Me</a> token. Please view our <a href='%2' target='_blank' rel='noopener noreferrer'>blog post</a> detailing our reasons for choosing this token."
+msgstr ""
 
 msgid "Bitcoin"
 msgstr "Bitcoin"
@@ -3434,8 +3434,8 @@ msgstr "Đối với báo giá ngoại tệ tại thời điểm đóng 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "Đối với thị trường ngoại tệ: Thị trường ngoại hối là thị trường OTC (không chính thức), nơi mà ngân hàng và những thể chế tài chính lớn khác giao dịch tiền tệ với nhau mà không cần phải có nhà thanh toán bù trừ trung ương. Theo đó, sẽ không có nguồn giá \"chính thức\" đối với báo giá ngoại tệ. Nguồn dữ liệu khác nhau sẽ tập hợp từ chuỗi các ngân hàng quốc tế. Theo đó, giá có thể khác nhau giữa các nhà cung cấp, phụ thuộc vào ngân hàng mà họ lấy giá từ đó."
 
-msgid "For further background information please read our blog post, <a href='%1' target='_blank'>Why we are doing an ICO (and not an IPO)</a>."
-msgstr "Để biết thêm thông tin lai lịch xin vui lòng đọc bài blog của chúng tôi, <a href='%1' target='_blank'> tại sao chúng tôi đang làm một ICO (và không phải là một IPO)</a>."
+msgid "For further background information please read our blog post, <a href='%1' target='_blank' rel='noopener noreferrer'>Why we are doing an ICO (and not an IPO)</a>."
+msgstr ""
 
 msgid "For general support:"
 msgstr "Hỗ trợ chung:"
@@ -3743,8 +3743,8 @@ msgstr "Đã thực hiện các khoản tiền gửi tối thiểu."
 msgid "Have not previously been a %1 customer."
 msgstr "Trước đó đã không là một khách hàng của %1."
 
-msgid "Head over to our <a href=%1 target='_blank'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business."
-msgstr "Người đứng đầu trên kênh <a href=%1 target='_blank'> YouTube</a> của chúng tôi để tìm hiểu thêm về ICOs, phổ biến cryptocurrencies và blockchain công nghệ. Chúng tôi sẽ cho bạn thấy làm thế nào họ làm việc và làm thế nào họ đang thay đổi cách chúng ta làm kinh doanh."
+msgid "Head over to our <a href=%1 target='_blank'  rel='noopener noreferrer'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business."
+msgstr ""
 
 msgid "Health"
 msgstr "Sức khỏe"
@@ -3978,7 +3978,7 @@ msgid "ICO Account Opening"
 msgstr "Mở tài khoản ICO"
 
 msgid "ICO is live, participate now!"
-msgstr ""
+msgstr "ICO đã hoạt động, tham gia ngay!"
 
 msgid "ID card"
 msgstr "ID thẻ"
@@ -6509,7 +6509,7 @@ msgid "PM"
 msgstr "PM"
 
 msgid "Participate now"
-msgstr ""
+msgstr "Tham gia ngay"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Bạn muốn tham gia vào thị trường ngoại hối, thị trường chứng khoán và thị trường hàng hóa?"
@@ -6697,9 +6697,6 @@ msgstr "Xin vui lòng hoàn tất mẫu đánh giá tài chính %1 %2 để nân
 msgid "Please complete the tax information before proceeding."
 msgstr "Vui lòng hoàn thành thông tin thuế trước khi tiếp tục."
 
-msgid "Please confirm that you are a %1professional trader%2 to proceed."
-msgstr ""
-
 msgid "Please confirm that you are not a politically exposed person."
 msgstr ""
 
@@ -6793,7 +6790,7 @@ msgstr "Vui lòng chọn hộp tích."
 msgid "Please select the currency of this account:"
 msgstr ""
 
-msgid "Please select your CR account to proceed."
+msgid "Please select your ICO account to proceed."
 msgstr ""
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
@@ -8144,7 +8141,7 @@ msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing 
 msgstr "%1 API có giới hạn sử dụng thực thi để ngăn chặn lạm dụng  %1 API. Các giới hạn sử dụng có thể thay đổi trong tương lai mà không báo trước. Nếu bạn liên tục vượt quá giới hạn sử dụng hoặc lạm dụng dịch vụ, chúng tôi có thể ngăn chặn truy cập của bạn vào %1 API."
 
 msgid "The %1 ICO is now live. Participate now!"
-msgstr ""
+msgstr "%1 ICO đã hoạt động. Tham gia ngay!"
 
 msgid "The %1 Order Execution Policy."
 msgstr "%1 vi phạm chính sách đặt hàng."
@@ -9134,13 +9131,13 @@ msgid "To open a trading account, our customers must confirm they fully understa
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 
 msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (Europe) Ltd, regulated by the Malta Gaming Authority."
-msgstr ""
+msgstr "Để tham gia vào ICO của Binary.com, bạn phải mở thêm một tài khoản riêng. Bằng cách tiếp tục, bạn công nhận rằng bạn đang thoát khỏi tài khoản của bạn ở Binary (Europe)Ltd, quy định bởi cơ quan thẩm quyền trò chơi tại Malta."
 
 msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (IOM) Ltd, regulated by the Isle of Man Gambling Supervision Commission."
-msgstr ""
+msgstr "Để tham gia vào ICO của Binary.com, bạn phải mở thêm một tài khoản riêng. Bằng cách tiếp tục, bạn công nhận rằng bạn đang thoát khỏi tài khoản của bạn ở Binary (IOM)Ltd, quy định bởi hội cá độ Đảo Man."
 
 msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary Investments (Europe) Ltd, regulated by the Malta Financial Services Authority."
-msgstr ""
+msgstr "Để tham gia vào ICO của Binary.com, bạn phải mở thêm một tài khoản riêng. Bằng cách tiếp tục, bạn công nhận rằng bạn đang thoát khỏi tài khoản của bạn ở Binary Investments (Europe)Ltd, quy định bởi cơ quan thẩm quyền tài chính tại Malta."
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "Để thực hiện hành động này, xin vui lòng <a href=\"%1\"> nâng cấp lên %2 tài khoản thực</a>."
