@@ -93,13 +93,17 @@ window.onload = function() {
     for (let i = 0; i < 2; i++) {
         document.getElementsByClassName('howto-btn')[i].addEventListener('click', function(e) {
             e.preventDefault();
-            window.open(getDocumentUrl(getLanguage().toLowerCase()), '_blank');
+            const open_link    = window.open();
+            open_link.opener   = null;
+            open_link.location = getDocumentUrl(getLanguage().toLowerCase());
         });
     }
 
     document.getElementById('token-btn').addEventListener('click', function(e) {
         e.preventDefault();
-        window.open(getTokenRatingReportUrl(getLanguage().toLowerCase()));
+        const open_link    = window.open();
+        open_link.opener   = null;
+        open_link.location = getTokenRatingReportUrl(getLanguage().toLowerCase());
     });
 
     window.onresize = checkWidth;
