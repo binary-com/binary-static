@@ -123,9 +123,9 @@ const Page = (() => {
 
     const clickIcoBannerButton = (e) => {
         e.stopPropagation();
-        const openLink = window.open();
-        openLink.opener = null;
-        openLink.location = Url.urlFor('ico');
+        const open_link = window.open();
+        open_link.opener = null;
+        open_link.location = Url.urlFor('ico');
     };
 
     const removeIcoBanner = (e) => {

@@ -453,9 +453,9 @@ function setupCrowdin() {
 }
 
 function openSubscribeLink(link) {
-    var openLink = window.open();
-    openLink.opener = null;
-    openLink.location = link;
+    var open_link = window.open();
+    open_link.opener = null;
+    open_link.location = link;
 }
 
 function getDocumentUrl(lang = 'en') {
