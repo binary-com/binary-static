@@ -5,7 +5,7 @@ window.onload = function() {
     hashRouter();
     collapseNavbar();
     signUpInit();
-    checkUserEmail();
+    checkUserSession();
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
@@ -453,19 +453,9 @@ function setupCrowdin() {
     }
 }
 
-function checkUserEmail() {
+function checkUserSession() {
     var signUpForm = document.getElementById('sign-up-section');
-    var participate_now_msg = document.getElementById('participate_msg');
-    if (localStorage.getItem('client.accounts')) {
-        var account_details = JSON.parse(localStorage.getItem('client.accounts'));
-        console.log(account_details);
-
-        if (participate_now_msg) {
-            participate_now_msg.classList.remove('invisible');
-        }
-    }
-    else {
-        console.log('not logged in');
+    if (!localStorage.getItem('active_loginid')) {
         if (signUpForm) {
             signUpForm.classList.remove('invisible');
         }
