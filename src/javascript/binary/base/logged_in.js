@@ -70,6 +70,7 @@ const LoggedInHandler = (() => {
                 Client.set('email',      email,     loginid);
                 Client.set('residence',  residence, loginid);
                 Client.set('is_virtual', +Client.isAccountOfType('virtual', loginid), loginid);
+                Client.set('is_ico_only', isIcoOnly(loginid_list, loginid), loginid);
                 if (isDisabled(loginid_list, loginid)) {
                     Client.set('is_disabled', 1, loginid);
                 }
@@ -85,6 +86,8 @@ const LoggedInHandler = (() => {
     };
 
     const isDisabled = (loginid_list, loginid) => (loginid_list ? +(new RegExp(`${loginid}:[VR]:D`)).test(loginid_list) : 0);
+
+    const isIcoOnly = (loginid_list, loginid) => (loginid_list ? +(new RegExp(`${loginid}:[VR]:[DE]:I`)).test(loginid_list) : 0);
 
     return {
         onLoad,
