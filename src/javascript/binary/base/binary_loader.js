@@ -7,7 +7,6 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const Page                = require('./page');
 const isStorageSupported  = require('./storage').isStorageSupported;
-const defaultRedirectUrl  = require('./url').defaultRedirectUrl;
 const createElement       = require('./utility').createElement;
 const BinarySocket        = require('../websocket_pages/socket');
 const BinarySocketGeneral = require('../websocket_pages/socket_general');
@@ -87,7 +86,7 @@ const BinaryLoader = (() => {
                     });
             }
         } else if (config.not_authenticated && Client.isLoggedIn()) {
-            BinaryPjax.load(defaultRedirectUrl(), true);
+            BinaryPjax.load(Client.defaultRedirectUrl(), true);
         } else {
             loadActiveScript(config);
         }

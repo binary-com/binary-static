@@ -1,3 +1,4 @@
+const defaultRedirectUrl = require('./client').defaultRedirectUrl;
 const getLanguage        = require('./language').get;
 const State              = require('./storage').State;
 const Url                = require('./url');
@@ -175,7 +176,7 @@ const BinaryPjax = (() => {
         if (window.location.href === previous_url) {
             previous_url = '';
         }
-        processUrl(previous_url || Url.defaultRedirectUrl());
+        processUrl(previous_url || defaultRedirectUrl());
     };
 
     return {

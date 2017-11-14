@@ -1,4 +1,5 @@
 const Cookies          = require('js-cookie');
+const BinaryPjax       = require('./binary_pjax');
 const Client           = require('./client');
 const Contents         = require('./contents');
 const Crowdin          = require('./crowdin');
@@ -84,7 +85,7 @@ const Page = (() => {
         Contents.onLoad();
 
         const ico_banner = document.getElementById('ico_banner');
-        if (!sessionStorage.getItem('hide_ico_banner') && ico_banner) {
+        if (!sessionStorage.getItem('hide_ico_banner') && ico_banner && !/(ico-subscribe)/.test(window.location.pathname)) {
             ico_banner.removeEventListener('click', clickIcoBannerButton);
             ico_banner.addEventListener('click', clickIcoBannerButton);
             ico_banner.classList.remove('invisible');
@@ -123,9 +124,7 @@ const Page = (() => {
 
     const clickIcoBannerButton = (e) => {
         e.stopPropagation();
-        const open_link = window.open();
-        open_link.opener = null;
-        open_link.location = Url.urlFor('ico');
+        BinaryPjax.load(Url.urlFor('user/ico-subscribe'));
     };
 
     const removeIcoBanner = (e) => {

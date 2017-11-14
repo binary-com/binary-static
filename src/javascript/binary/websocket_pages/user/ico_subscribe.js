@@ -13,6 +13,7 @@ const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 const FormManager           = require('../../common_functions/form_manager');
 const getLanguage           = require('../../base/language').get;
 const Url                   = require('../../base/url');
+const getPropertyValue      = require('../../base/utility').getPropertyValue;
 
 const ICOSubscribe = (() => {
     const form_id = '#frm_ico_bid';
@@ -272,6 +273,7 @@ const ICOSubscribe = (() => {
                             loginid     : response_new_account_real.new_account_real.client_id,
                             token       : response_new_account_real.new_account_real.oauth_token,
                             redirect_url: urlFor('user/set-currency'),
+                            is_ico_only : getPropertyValue(response_new_account_real, ['echo_req', 'account_type']) === 'ico',
                         });
                     }
                 });

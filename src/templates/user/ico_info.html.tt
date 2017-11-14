@@ -2,6 +2,9 @@
 
 <h1>[% l('[_1] ICO: Histogram of Active Bids', website_name) %]</h1>
 <p class="center-text notice-msg invisible" id="no_bids_to_show">[% l('No bids to show') %]</p>
+<p class="center-text notice-msg invisible" id="ico_status_error"></p>
+
+<div id="ico_info_loading" class="loading"></div>
 
 <div id="ico_info" class="invisible">
     <div class="barChart"></div>
@@ -15,7 +18,6 @@
         <div>[% l('Bid Price Per Token ($USD)') %]</div>
         <div class='arrow-right'></div>
     </div>
-    <div class="loading"></div>
 </div>
 <div>
     <p>
