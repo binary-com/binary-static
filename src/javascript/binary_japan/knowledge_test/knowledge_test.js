@@ -5,7 +5,6 @@ const Client              = require('../../binary/base/client');
 const toJapanTimeIfNeeded = require('../../binary/base/clock').toJapanTimeIfNeeded;
 const Header              = require('../../binary/base/header');
 const localize            = require('../../binary/base/localize').localize;
-const Url                 = require('../../binary/base/url');
 const BinarySocket        = require('../../binary/websocket_pages/socket');
 
 const KnowledgeTest = (() => {
@@ -58,7 +57,7 @@ const KnowledgeTest = (() => {
                     break;
                 }
                 default: {
-                    window.location.href = Url.defaultRedirectUrl(); // needs to be loaded without pjax
+                    window.location.href = Client.defaultRedirectUrl(); // needs to be loaded without pjax
                 }
             }
         });

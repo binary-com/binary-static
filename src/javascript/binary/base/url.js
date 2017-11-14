@@ -1,6 +1,5 @@
 const urlLang        = require('./language').urlLang;
 const urlForLanguage = require('./language').urlFor;
-const jpClient       = require('../common_functions/country_base').jpClient;
 const isEmptyObject  = require('./utility').isEmptyObject;
 const createElement  = require('./utility').createElement;
 require('url-polyfill');
@@ -73,8 +72,6 @@ const Url = (() => {
         return static_host + path.replace(/(^\/)/g, '');
     };
 
-    const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');
-
     return {
         init,
         reset,
@@ -83,7 +80,6 @@ const Url = (() => {
         paramsHashToString,
         urlFor,
         urlForStatic,
-        defaultRedirectUrl,
 
         param     : name => paramsHash()[name],
         websiteUrl: () => 'https://www.binary.com/',
