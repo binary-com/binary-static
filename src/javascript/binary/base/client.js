@@ -209,10 +209,11 @@ const Client = (() => {
 
         localStorage.setItem('GTM_new_account', '1');
 
-        set('token',      options.token,       options.loginid);
-        set('email',      options.email,       options.loginid);
-        set('is_virtual', +options.is_virtual, options.loginid);
-        set('loginid',    options.loginid);
+        set('token',       options.token,       options.loginid);
+        set('email',       options.email,       options.loginid);
+        set('is_virtual',  +options.is_virtual, options.loginid);
+        set('loginid',     options.loginid);
+        set('is_ico_only', options.is_ico_only);
 
         // need to redirect not using pjax
         window.location.href = options.redirect_url || defaultRedirectUrl();

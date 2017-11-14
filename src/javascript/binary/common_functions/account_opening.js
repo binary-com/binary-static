@@ -5,6 +5,7 @@ const Client             = require('../base/client');
 const localize           = require('../base/localize').localize;
 const State              = require('../base/storage').State;
 const urlFor             = require('../base/url').urlFor;
+const getPropertyValue   = require('../base/utility').getPropertyValue;
 const makeOption         = require('../common_functions/common_functions').makeOption;
 const FormManager        = require('../common_functions/form_manager');
 const BinarySocket       = require('../websocket_pages/socket');
@@ -133,6 +134,7 @@ const AccountOpening = (() => {
                 loginid     : response[message_type].client_id,
                 token       : response[message_type].oauth_token,
                 redirect_url: urlFor('user/set-currency'),
+                is_ico_only : getPropertyValue(response, ['echo_req', 'account_type']) === 'ico',
             });
         }
     };
