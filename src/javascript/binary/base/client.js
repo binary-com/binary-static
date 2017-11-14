@@ -2,7 +2,7 @@ const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
-const defaultRedirectUrl = require('./url').defaultRedirectUrl;
+const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
 const getPropertyValue   = require('./utility').getPropertyValue;
 const isEmptyObject      = require('./utility').isEmptyObject;
@@ -239,9 +239,7 @@ const Client = (() => {
                     client_logged_in.classList.add('gr-centered');
                 }
 
-                const is_ico_only = /ico_only/.test(State.getResponse('get_account_status.status'));
-                Client.set('is_ico_only', is_ico_only); // Set ico_only in Client object.
-
+                const is_ico_only = get('is_ico_only');
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
                 }
@@ -367,7 +365,10 @@ const Client = (() => {
         };
     };
 
-    const getLandingCompanyValue = (loginid, landing_company, key) => {
+    const getLandingCompanyValue = (loginid, landing_company, key, is_ico_only) => {
+        if (is_ico_only) {
+            return 'Binary (C.R.) S.A.';
+        }
         let landing_company_object;
         if (loginid.financial || isAccountOfType('financial', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
@@ -405,6 +406,8 @@ const Client = (() => {
 
     };
 
+    const defaultRedirectUrl = () => Url.urlFor(jpClient() ? 'multi_barriers_trading' : get('is_ico_only') ? 'user/ico-subscribe' : 'trading');
+
     return {
         init,
         validateLoginid,
@@ -436,6 +439,7 @@ const Client = (() => {
         hasCostaricaAccount,
         canOpenICO,
         canRequestProfessional,
+        defaultRedirectUrl,
     };
 })();
 

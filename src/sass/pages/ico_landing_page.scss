@@ -349,7 +349,6 @@ input[type='text']:focus, input[type='submit']:focus {
         }
     }
     .navbar-fixed-top {
-        position: relative;
         background: $COLOR_BLUE !important;
         margin-bottom: 0;
         padding: 15px;
@@ -364,7 +363,6 @@ input[type='text']:focus, input[type='submit']:focus {
 
         &.expand {
             max-height: 440px;
-            height: 100%;
             padding-bottom: 0;
         }
         .navbar-header {
@@ -923,7 +921,11 @@ input[type='text']:focus, input[type='submit']:focus {
             a.selected {
                 padding: 0;
                 color: $COLOR_WHITE;
+                width: 100%;
 
+                #selected-lang {
+                    width: 100%;
+                }
                 .world {
                     background-image: url('../images/ico/icons/grid-world.svg');
                 }
@@ -949,7 +951,7 @@ input[type='text']:focus, input[type='submit']:focus {
                         background-image: url('../images/ico/icons/grid-world.svg') !important;
                     }
                     .nav-caret {
-                        display: none;
+                        transform: rotateX(180deg);
                     }
                 }
             }

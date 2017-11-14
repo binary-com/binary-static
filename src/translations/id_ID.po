@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-13 22:07-0500\n"
+"PO-Revision-Date: 2017-11-14 04:39-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -101,9 +101,6 @@ msgstr "Tawaran Lelang ICO %1"
 
 msgid "%1 ICO FAQ"
 msgstr "Pertanyaan Umum ICO %1"
-
-msgid "%1 ICO starts on 15th November 2017"
-msgstr "ICO %1 dimulai pada tanggal 15 November 2017"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "ICO %1, Berinvestasi pada platform trading opsi binary utama dunia"
@@ -1692,8 +1689,8 @@ msgstr "Cabang Binary Malta yaitu Binary Investments (Europe) Ltd. diberikan seb
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Platform Binary memproses rata-rata %1 %2transaksi%3 per detik, 24/7"
 
-msgid "Binary.com intends to deploy the <a href='%1' target='_blank'>Mini Me</a> token. Please view our <a href='%2' target='_blank'>blog post</a> detailing our reasons for choosing this token."
-msgstr "Binary.com bermaksud untuk menyebarkan token <a href='%1' target='_blank'>Mini Me</a>. Silakan lihat <a href='%2' target='_blank'>postingan blog</a> kami mengenai rincian alasan kami memilih token ini."
+msgid "Binary.com intends to deploy the <a href='%1' target='_blank' rel='noopener noreferrer'>Mini Me</a> token. Please view our <a href='%2' target='_blank' rel='noopener noreferrer'>blog post</a> detailing our reasons for choosing this token."
+msgstr "Binary.com bermaksud untuk menyebarkan token <a href='%1' target='_blank' rel='noopener noreferrer'>Mini Me</a>. Silahkan lihat <a href='%2' target='_blank' rel='noopener noreferrer'>postingan blog</a> kami mengenai rincian alasan kami memilih token ini."
 
 msgid "Bitcoin"
 msgstr "Bitcoin"
@@ -2417,6 +2414,12 @@ msgstr "Daftar Akun Baru"
 
 msgid "Create New Token"
 msgstr "Membuat Token Baru"
+
+msgid "Create a standard real money account to trade on %1"
+msgstr "Daftar akun uang riil standar untuk bertrading di %1"
+
+msgid "Create an ICO account to take part in our token sale only. <a href=\"%1\" target=\"_blank\">Learn more</a>"
+msgstr "Daftar akun ICO untuk mengambil bagian dalam penjualan token saja. <a href=\"%1\" target=\"_blank\">Pelajari lebih lanjut</a>"
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Membuat konten yang jelas, ringkas dan menarik untuk ditampilkan pada website perusahaan, blog, media sosial dan materi pemasaran"
@@ -3429,8 +3432,8 @@ msgstr "Untuk forex harga penutupan adalah ditentukan oleh Perusahaan seperti ya
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "Untuk forex: Pasar forex adalah pasar OTC (over the counter yaitu diselesaikan melalui bagian kasir) dimana bank-bank dan beberapa institusi keuangan besar lainnya melakukan trading mata uang antara mereka sendiri tanpa adanya lembaga kliring. Maka secara langsung tidak akan ada penentuan harga resmi pada tawaran harga forex. Setiap data feed terdiri tawaran atau quote yang berasal dari sub-set Bank internasional yang berbeda. Sehingga harga yang ditawarkan akan berbeda-beda tergantung pada penawar dari bank mana mereka mengambil harga tersebut."
 
-msgid "For further background information please read our blog post, <a href='%1' target='_blank'>Why we are doing an ICO (and not an IPO)</a>."
-msgstr "Untuk informasi latar belakang lebih lanjut silahkan baca postingan blog kami <a href='%1' target='_blank'>Mengapa kami melakukan ICO (dan bukan IPO)</a>."
+msgid "For further background information please read our blog post, <a href='%1' target='_blank' rel='noopener noreferrer'>Why we are doing an ICO (and not an IPO)</a>."
+msgstr "Untuk informasi latar belakang lebih lanjut silahkan baca postingan blog kami <a href='%1' target='_blank' rel='noopener noreferrer'>Mengapa kami melakukan ICO (dan bukan IPO)</a>."
 
 msgid "For general support:"
 msgstr "Untuk bantuan umum:"
@@ -3738,8 +3741,8 @@ msgstr "Telah melakukan deposit minimal."
 msgid "Have not previously been a %1 customer."
 msgstr "Belum pernah menjadi konsumen %1."
 
-msgid "Head over to our <a href=%1 target='_blank'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business."
-msgstr "Kunjungi saluran <a href=%1 target='_blank'>YouTube</a> kami untuk mempelajari lebih lanjut tentang ICO, mata uang kripto populer, dan teknologi blockchain. Kami akan menunjukkan cara kerjanya dan bagaimana mereka mengubah cara berbisnis kami."
+msgid "Head over to our <a href=%1 target='_blank'  rel='noopener noreferrer'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business."
+msgstr "Kunjungi saluran <a href=%1 target='_blank'  rel='noopener noreferrer'>YouTube</a> kami untuk mempelajari lebih lanjut tentang ICO, mata uang kripto populer, dan teknologi blockchain. Kami akan menunjukkan cara kerjanya dan bagaimana mereka mengubah cara berbisnis kami."
 
 msgid "Health"
 msgstr "Kesehatan"
@@ -3972,8 +3975,11 @@ msgstr "Yaitu: (20010 - 20000) x 1 x 1 = USD 10"
 msgid "ICO Account Opening"
 msgstr "Pendaftaran Akun ICO"
 
+msgid "ICO Bids"
+msgstr "Bid ICO"
+
 msgid "ICO is live, participate now!"
-msgstr "ICO sudah dimulai, berpartisipasi sekarang!"
+msgstr "ICO sudah dimulai, ikuti sekarang!"
 
 msgid "ID card"
 msgstr "Kartu identitas"
@@ -5922,9 +5928,6 @@ msgstr "Perusahaan maupun direktur Perusahaan, pegawai, manajer, pekerja atau ag
 msgid "Neither the United States securities and exchange commission nor any state, provincial or territorial securities commission nor any other regulatory authority of any country or jurisdiction has approved or disapproved of the proposed offer of tokens."
 msgstr "Baik sekuritas dan komisi pertukaran Amerika Serikat maupun komisi sekuritas negara bagian, provinsi atau teritorial atau otoritas pengatur lainnya dari negara atau yurisdiksi manapun telah menyetujui atau menolak tawaran token yang diajukan."
 
-msgid "Neither this Information Memorandum nor any other offering or marketing material relating to the offering, the Company or the Tokens have been or will be filed with or approved by any Swiss regulatory authority. In particular, this Information Memorandum will not be filed with, and the offer of Tokens will not be supervised by, the Swiss Financial Market Supervisory Authority FINMA, and the offer of Tokens has not been and will not be authorized under the Swiss Federal Act on Collective Investment Schemes (the “CISA”). The investor protection afforded to acquirers of interests in collective investment schemes under the CISA does not extend to acquirers of Tokens.\n"
-msgstr "Baik Memorandum Informasi ini atau penawaran lain atau materi pemasaran yang berhubungan dengan penawaran, Perusahaan atau Token telah atau akan diajukan dengan atau disetujui oleh otoritas pengatur Swiss manapun. Secara khusus, Informasi Memorandum ini tidak akan diajukan dan penawaran Token tidak akan diawasi oleh Otoritas Pengawas Pasar Keuangan Swiss FINMA, dan tawaran Token belum dan tidak akan diberi wewenang berdasarkan Undang-Undang Federal tentang Skema Investasi Kolektif Swiss (\"CISA\"). Perlindungan investor yang diberikan untuk mengakuisisi kepentingan dalam skema investasi kolektif di bawah CISA tidak mencakup pengakuisisi Token.\n"
-
 msgid "Neither you, your direct relatives, or any persons you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled persons."
 msgstr "Anda, anggota keluarga atau orang yang dapat Anda kontrol tidak berhak untuk menjadi klien, dan Anda tidak akan mendapatkan bagian dari pendapatan bersih atau imbalan lainnya dari Perusahaan sehubungan dengan hubungan kerabat tersebut seperti, teman, atau orang yang dapat Anda kendalikan."
 
@@ -6502,7 +6505,7 @@ msgid "PM"
 msgstr "PM"
 
 msgid "Participate now"
-msgstr "Berpartisipasi"
+msgstr "Ikuti sekarang"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Berpartisipasi dalam pasar forex, saham atau komoditas?"
@@ -6690,9 +6693,6 @@ msgstr "Silahkan lengkapi %1formulir penilaian finansial%2 untuk meningkatkan ba
 msgid "Please complete the tax information before proceeding."
 msgstr "Mohon lengkapi informasi pajak sebelum melanjutkan."
 
-msgid "Please confirm that you are a %1professional trader%2 to proceed."
-msgstr "Mohon konfirmasikan bahwa Anda adalah seorang %1trader profesional%2 untuk melanjutkan."
-
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Mohon konfirmasikan bahwa Anda bukanlah orang yang terlibat dalam politik."
 
@@ -6786,8 +6786,11 @@ msgstr "Silakan pilih kotak centang."
 msgid "Please select the currency of this account:"
 msgstr "Silahkan pilih mata uang pada akun ini:"
 
-msgid "Please select your CR account to proceed."
-msgstr "Silahkan pilih akun CR Anda untuk melanjutkan."
+msgid "Please select the type of account you wish to create."
+msgstr "Pilih jenis akun yang ingin Anda daftar."
+
+msgid "Please select your ICO account to proceed."
+msgstr "Silahkan pilih akun ICO Anda untuk melanjutkan."
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "Silahkan pilih %1negara domisili%2 sebelum mengupgrade ke dalam akun riil."
@@ -7518,6 +7521,9 @@ msgstr "Pilih <strong>Ijinkan pemasangan data lokal (direkomendasikan)</strong>.
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "Pilih<strong>Cookies</strong> dari kolom kiri."
 
+msgid "Select account type"
+msgstr "Pilih jenis akun"
+
 msgid "Select currency"
 msgstr "Pilih mata uang"
 
@@ -8136,8 +8142,11 @@ msgstr "Terima kasih telah berlangganan! Pantau email Anda untuk mendapatkan inf
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "API %1 memiliki batas penggunaan untuk mencegah penyalahgunaan dan/atau pengusulan kembali API %1. Batas penggunaan ini dapat berubah di masa depan tanpa pemberitahuan. Jika Anda secara konsisten melebihi batas penggunaan atau menyalahgunaan layanan maka kami dapat memblokir akses Anda ke dalam API %1."
 
+msgid "The %1 ICO is now live"
+msgstr "ICO %1 dimulai sekarang"
+
 msgid "The %1 ICO is now live. Participate now!"
-msgstr "ICO %1 sudah dimulai. Berpartisipasi!"
+msgstr "ICO %1 sudah dimulai. Ikuti sekarang!"
 
 msgid "The %1 Order Execution Policy."
 msgstr "Kebijakan Eksekusi Order %1."
@@ -8440,17 +8449,11 @@ msgstr "Pusat Penampungan Komunitas Belajar 3 adalah komunitas sekolah untuk ana
 msgid "The Stop Out Level applicable to your Real Account may differ from the default Stop Out Level published on our website."
 msgstr "Level Stop Out yang tersedia pada Akun Riil Anda mungkin berbeda dengan Level Stop Out yang ditampilkan pada website kami."
 
-msgid "The Tokens have not been and will not be registered under the Financial Instruments and Exchange Act, as amended (the “FIEA”). This document is not an offer of securities for sale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan (which term as used herein means any person resident in Japan, including any corporation or entity organized under the laws of Japan) or to others for reoffer or resale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan, except pursuant to an exemption from the securities registration requirements under the FIEA and otherwise in compliance with such law and any other applicable laws, regulations, and ministerial guidelines of Japan.\n"
-msgstr "Token belum dan tidak akan didaftarkan berdasarkan Undang-Undang Instrumen Keuangan dan Pertukaran, sebagaimana telah diubah (\"FIEA\"). Dokumen ini bukan merupakan penawaran sekuritas yang dijual, baik secara langsung maupun tidak langsung, di Jepang atau untuk, atau untuk kepentingan setiap penduduk Jepang (yang istilahnya digunakan disini berarti setiap orang yang tinggal di Jepang, termasuk perusahaan atau badan yang diatur dalam hukum Jepang) atau kepada orang lain untuk ditawarkan kembali atau dijual kembali, secara langsung atau tidak langsung, di Jepang atau untuk, atau untuk kepentingan setiap penduduk Jepang, kecuali berdasarkan pengecualian persyaratan registrasi surat berharga di bawah FIEA dan jika tidak sesuai dengan undang-undang tersebut dan hukum, peraturan, dan pedoman menteri lainnya yang berlaku di Jepang.\n"
-
-msgid "The Tokens have not been nor will they be qualified for sale to the public under applicable Canadian securities laws and, accordingly, any offer and sale of the Tokens in Canada will be made on a basis which is exempt from the prospectus requirements of Canadian securities laws. Any resale of the Tokens must be made in accordance with, or pursuant to an exemption from, or in a transaction not subject to, the prospectus requirements of those laws. In addition, in order to comply with the dealer registration requirements of Canadian securities laws, any resale of the Tokens must be made either by a person not required to register as a dealer under applicable Canadian securities laws, or through an appropriately registered dealer or in accordance with an exemption from the dealer registration requirements. Purchasers of Tokens are advised to seek Canadian legal advice prior to any resale of Tokens.\n"
-msgstr "Token belum atau tidak akan memenuhi syarat untuk dijual ke pada umum berdasarkan undang-undang sekuritas yang berlaku di Kanada dan oleh karena itu, setiap penawaran dan penjualan Token di Kanada akan dibuat atas dasar pembebasan dari persyaratan prospektus undang-undang sekuritas Kanada. Setiap penjualan kembali Token harus dibuat sesuai dengan, atau berdasarkan pengecualian dari, atau dalam transaksi yang tidak tunduk pada, persyaratan prospektus dari undang-undang tersebut. Selain itu, untuk memenuhi persyaratan registrasi agen undang-undang sekuritas Kanada, penjualan kembali Token harus dilakukan oleh seseorang yang tidak diminta untuk mendaftar sebagai dealer berdasarkan undang-undang sekuritas yang berlaku di Kanada, atau melalui dealer terdaftar yang tepat atau sesuai dengan pembebasan dari persyaratan registrasi dealer. Pembeli Token disarankan untuk mencari saran hukum di Kanada sebelum melakukan penjualan kembali Token.\n"
+msgid "The Tokens have not been and will not be registered under the Financial Instruments and Exchange Act, as amended (the “FIEA”). This document is not an offer of securities for sale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan (which term as used herein means any person resident in Japan, including any corporation or entity organized under the laws of Japan) or to others for reoffer or resale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan, except pursuant to an exemption from the securities registration requirements under the FIEA and otherwise in compliance with such law and any other applicable laws, regulations, and ministerial guidelines of Japan."
+msgstr "Token belum dan tidak akan didaftarkan berdasarkan Undang-Undang Instrumen Keuangan dan Pertukaran, sebagaimana telah diubah (\"FIEA\"). Dokumen ini bukan merupakan penawaran sekuritas yang dijual, baik secara langsung maupun tidak langsung, di Jepang atau untuk, atau untuk kepentingan setiap penduduk Jepang (yang istilahnya digunakan disini berarti setiap orang yang tinggal di Jepang, termasuk perusahaan atau badan yang diatur dalam hukum Jepang) atau kepada orang lain untuk ditawarkan kembali atau dijual kembali, secara langsung atau tidak langsung, di Jepang atau untuk, atau untuk kepentingan setiap penduduk Jepang, kecuali berdasarkan pengecualian persyaratan registrasi surat berharga di bawah FIEA dan jika tidak sesuai dengan undang-undang tersebut dan hukum, peraturan, dan pedoman menteri lainnya yang berlaku di Jepang."
 
 msgid "The Tokens may not be offered or sold in Hong Kong by means of any document other than (i) in circumstances which do not constitute an offer to the public within the meaning of the Companies Ordinance (Cap.32, Laws of Hong Kong), or (ii) to “professional investors” within the meaning of the Securities and Futures Ordinance (Cap.571, Laws of Hong Kong) and any rules made thereunder, or (iii) in other circumstances which do not result in the document being a “prospectus” within the meaning of the Companies Ordinance (Cap.32, Laws of Hong Kong), and no advertisement, invitation or document relating to the tokens may be issued or may be in the possession of any person for the purpose of issue (in each case whether in Hong Kong or elsewhere), which is directed at, or the contents of which are likely to be accessed or read by, the public in Hong Kong (except if permitted to do so under the laws of Hong Kong) other than with respect to Tokens which are or are intended to be disposed of only to persons outside Hong Kong or only to “professional investors” within the meaning of the Securities and Futures Ordinance (Cap. 571, Laws of Hong Kong) and any rules made thereunder."
 msgstr "Token mungkin tidak ditawarkan atau dijual di Hong Kong dengan menggunakan dokumen selain (i) dalam keadaan yang tidak merupakan tawaran kepada publik sesuai dengan Ordonansi Perusahaan (Cap.32, Hukum Hong Kong), atau (ii) kepada \"investor profesional\" dalam arti dari Ordonansi Sekuritas dan Berjangka (Cap.571, Law of Hong Kong) dan peraturan yang dibuat di bawahnya, atau (iii) dalam keadaan lain yang tidak mengakibatkan dokumen menjadi \"Prospektus\" dalam pengertian Ordonansi Perusahaan (Cap.32, Hukum Hong Kong), dan tidak ada iklan, undangan atau dokumen yang berkaitan dengan token dapat dikeluarkan atau mungkin dimiliki oleh seseorang untuk tujuan penerbitan ( dalam setiap kasus apakah di Hong Kong atau di tempat lain), yang diarahkan, atau isinya kemungkinan diakses atau dibaca oleh publik di Hong Kong (kecuali jika diizinkan melakukannya di bawah hukum Hong Kong) lainnya daripada berkenaan dengan Token yang atau dimaksudkan untuk orang-orang di luar Hong Kong atau hanya untuk \"investor profesional\" sebagaimana terdapat dalam arti Securities and Futures Ordinance (Cap. 571, Hukum Hong Kong) dan peraturan yang dibuat di bawahnya."
-
-msgid "The Tokens may not be publicly offered in Switzerland and will not be listed on the SIX Swiss Exchange, or SIX, or on any other stock exchange or regulated trading facility in Switzerland. This Information Memorandum has been prepared without regard to the disclosure standards for issuance prospectuses under art. 652a or art. 1156 of the Swiss Code of Obligations or the disclosure standards for listing prospectuses under art. 27 ff. of the SIX Listing Rules or the listing rules of any other stock exchange or regulated trading facility in Switzerland. Neither this Information Memorandum nor any other offering or marketing material relating to the Tokens or the offering may be publicly distributed or otherwise made publicly available in Switzerland."
-msgstr "Token mungkin tidak dapat ditawarkan secara umum di Swiss dan tidak akan terdaftar pada Bursa Swiss SIX, atau SIX, atau di bursa efek lain atau fasilitas trading yang diatur di negara Swiss. Memorandum Informasi ini telah disiapkan tanpa memperhatikan standar pengungkapan bagi penerbitan prospektus dibawah art. 652a atau art. 1156 pada Kode Etik Swiss atau standar pengungkapan untuk mencantumkan prospektus berdasarkan art. 27 ff. dari Aturan Tetapkan SIX atau peraturan pencatatan dari bursa efek lain atau fasilitas trading yang diatur di negara Swiss. Baik Memorandum Informasi maupun materi penawaran atau pemasaran lainnya yang berkaitan dengan Token atau penawaran mungkin dapat didistribusikan secara umum atau disediakan untuk umum di Swiss."
 
 msgid "The URL of the site on which the banner is going to appear."
 msgstr "URL situs dimana banner akan dimunculkan."
@@ -8937,9 +8940,6 @@ msgstr "Perjanjian ini akan dimulai per tanggal dimana Anda menerima Akun Riil A
 
 msgid "This Document"
 msgstr "Dokumen ini"
-
-msgid "This Information Memorandum has not been and will not be registered as a prospectus with the Monetary Authority of Singapore. Accordingly, this Information Memorandum and any other document or material in connection with the offer or sale, or invitation for subscription or purchase, of the Tokens may not be circulated or distributed, nor may the Tokens be offered or sold, or be made the subject of an invitation for subscription or purchase, whether directly or indirectly, to persons in Singapore other than (i) to an institutional investor under Section 274 of the Securities and Futures Act, Chapter 289 of Singapore (the “SFA”), (ii) to a relevant person, or any person pursuant to Section 275(1A), and in accordance with the conditions, specified in Section 275 of the SFA, (iii) where the transfer is by operation of law; (iv) as specified in Section 276(7) of the SFA or (v) pursuant to, and in accordance with the conditions of, any other applicable provisions of the SFA."
-msgstr "Memorandum Informasi ini belum dan tidak akan terdaftar sebagai prospektus dengan Otoritas Moneter di Singapura. Oleh karena itu, Memorandum Informasi ini dan dokumen atau materi lainnya sehubungan dengan penawaran atau penjualan, atau undangan untuk berlangganan atau pembelian, Token tidak boleh diedarkan atau didistribusikan, atau Token ditawarkan atau dijual, atau dijadikan subjek undangan untuk berlangganan atau membeli baik secara langsung maupun tidak langsung kepada orang-orang yang berada di Singapura selain (i) kepada investor institusional berdasarkan Bagian 274 dari Akta Sekuritas dan Future, Bab 289 Singapura (\"SFA\"), (ii) kepada orang yang relevan, atau orang lain sesuai dengan Bagian 275 (1A), dan sesuai dengan persyaratan, yang ditentukan dalam Bagian 275 SFA, (iii) di mana pengalihan dilakukan dengan operasi hukum; (iv) sebagaimana ditentukan dalam Bagian 276 (7) SFA atau (v) sesuai dengan, dan sesuai dengan kondisi, ketentuan SFA lainnya yang berlaku."
 
 msgid "This Information Memorandum is an invitation to treat and may only be received by authorised persons. If an authorised person wishes to bid for Tokens he may do so if he has a binary.com account, by which method the Company shall be able to verify his qualifications as an authorised person. The prospective investor who wishes to acquire Tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the offer at the Auction.  At the Auction the Company will make an offer for the Tokens, which offer will be accepted (by the process explained below) by the bids, and the consideration for the purchase of such Tokens offered and accepted will be settled by credit in the prospective investor's Binary.com account, which evidences the contract for sale and purchase of the respective Tokens."
 msgstr "Memorandum Informasi ini hanya dapat diterima oleh orang yang berhak. Jika Pihak Berhak tersebut ingin mengajukan bid untuk token maka pihak tersebut dapat melakukannya jika memiliki akun Binary.com dimana Perusahaan akan dapat memverifikasi lebih lanjut kualifikasi sebagai Pihak Berhak. Calon investor yang ingin membeli token akan membuat bid. Perusahaan akan menyusun dan menilai biddingnya. Perusahaan dapat meminta agar bid tersebut dikonfirmasikan kembali sebelum dianggap sah untuk tujuan bid Perusahaan pada saat Pelelangan. Pada Lelang tersebut, Perusahaan akan mengajukan penawaran Token, tawaran mana yang akan diterima (seperti yang sudah dijelaskan pada proses lelang pada material) dan pertimbangan untuk pembelian token tersebut akan diselesaikan dengan mengkreditkan pada akun Binary.com milik Pihak Berhak, yang membuktikan kontrak penjualan dan pembelian token masing-masing."
@@ -11070,7 +11070,7 @@ msgid "details"
 msgstr "perincian"
 
 msgid "e.g. frontend.binaryws.com"
-msgstr ""
+msgstr "misalnya frontend.binaryws.com"
 
 msgid "email address"
 msgstr "alamat email"
@@ -13042,6 +13042,9 @@ msgstr "Transfer Agen Pembayaran"
 
 msgid "Trusted by traders since 2000"
 msgstr "Dipercaya oleh trader sejak 2000"
+
+msgid "Account Type Selection"
+msgstr ""
 
 msgid "Welcome to Binary.com"
 msgstr "Selamat datang di Binary.com"

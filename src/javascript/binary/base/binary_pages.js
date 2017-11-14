@@ -52,6 +52,7 @@ const FinancialAccOpening  = require('../websocket_pages/user/new_account/financ
 const JapanAccOpening      = require('../websocket_pages/user/new_account/japan_acc_opening');
 const RealAccOpening       = require('../websocket_pages/user/new_account/real_acc_opening');
 const VirtualAccOpening    = require('../websocket_pages/user/new_account/virtual_acc_opening');
+const AccountTypeSelection = require('../websocket_pages/user/new_account/account_type');
 const ResetPassword        = require('../websocket_pages/user/reset_password');
 const SetCurrency          = require('../websocket_pages/user/set_currency');
 const TNCApproval          = require('../websocket_pages/user/tnc_approval');
@@ -63,6 +64,7 @@ const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test'
 /* eslint-disable max-len */
 const pages_config = {
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true, needs_currency: true },
+    account_type             : { module: AccountTypeSelection,       is_authenticated: true },
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
