@@ -96,6 +96,12 @@ window.onload = function() {
             window.open(getDocumentUrl(getLanguage().toLowerCase()), '_blank');
         });
     }
+
+    document.getElementById('token-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open(getTokenRatingReportUrl(getLanguage().toLowerCase()));
+    });
+
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
     window.addEventListener('hashchange', hashRouter);
@@ -457,4 +463,11 @@ function getDocumentUrl(lang = 'en') {
         return `https://ico_documents.binary.com/howto_ico_${lang}.pdf`;
     }
     return 'https://ico_documents.binary.com/howto_ico.pdf';
+}
+
+function getTokenRatingReportUrl(lang = 'en') {
+    if (/^(id)$/i.test(lang)) {
+        return `https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report_${lang}.pdf`;
+    }
+    return 'https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report.pdf';
 }
