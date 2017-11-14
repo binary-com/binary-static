@@ -454,6 +454,12 @@ function setupCrowdin() {
     }
 }
 
+function openSubscribeLink(link) {
+    var open_link = window.open();
+    open_link.opener = null;
+    open_link.location = link;
+}
+
 function getDocumentUrl(lang = 'en') {
     if (/^(ru|id)$/i.test(lang)) {
         return `https://ico_documents.binary.com/howto_ico_${lang}.pdf`;
