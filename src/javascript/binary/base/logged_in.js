@@ -4,7 +4,7 @@ const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
 const urlLang            = require('./language').urlLang;
 const isStorageSupported = require('./storage').isStorageSupported;
-const defaultRedirectUrl = require('./url').defaultRedirectUrl;
+const defaultRedirectUrl = require('./client').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
 const paramsHash         = require('./url').paramsHash;
 

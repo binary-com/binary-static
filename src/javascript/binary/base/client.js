@@ -2,7 +2,7 @@ const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
-const defaultRedirectUrl = require('./url').defaultRedirectUrl;
+const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
 const getPropertyValue   = require('./utility').getPropertyValue;
 const isEmptyObject      = require('./utility').isEmptyObject;
@@ -403,6 +403,8 @@ const Client = (() => {
 
     };
 
+    const defaultRedirectUrl = () => Url.urlFor(jpClient() ? 'multi_barriers_trading' : get('is_ico_only') ? 'user/ico-subscribe' : 'trading');
+
     return {
         init,
         validateLoginid,
@@ -434,6 +436,7 @@ const Client = (() => {
         hasCostaricaAccount,
         canOpenICO,
         canRequestProfessional,
+        defaultRedirectUrl
     };
 })();
 
