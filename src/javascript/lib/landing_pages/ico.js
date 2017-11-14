@@ -39,6 +39,7 @@ window.onload = function() {
             switchView('faq');
             scrollTo(0);
             window.location.hash = '#faq';
+            collapseMenu();
         }
 
         if (!hash) {
@@ -68,14 +69,18 @@ window.onload = function() {
             const navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
             scrollTo(to);
+            collapseMenu();
         }
 
         // Show / hide language dropdown
         if (e.target.parentNode.id === 'lang') {
             e.preventDefault();
-            e.target.parentNode.parentNode.classList.toggle('show');
-        } else if (/show/.test(el_language_dropdown.classList)) {
-            el_language_dropdown.classList.remove('show');
+            const parent    = el_language_dropdown.parentNode;
+            const is_mobile = window.matchMedia("(max-width: 1199px)").matches;
+            if (is_mobile) {
+                toggleAllSiblings(parent, filterById, 'invisible');
+            }
+            el_language_dropdown.classList.toggle('show');
         }
     });
 
