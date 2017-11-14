@@ -947,7 +947,7 @@ input[type='text']:focus, input[type='submit']:focus {
                         background-image: url('../images/ico/icons/grid-world.svg') !important;
                     }
                     .nav-caret {
-                        display: none;
+                        transform: rotateX(180deg);
                     }
                 }
             }
