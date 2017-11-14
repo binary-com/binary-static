@@ -22,13 +22,11 @@ window.onload = function() {
             dataLayer.push({ event: 'ico_success' });
             clearHash();
             document.getElementById('subscribe_success').classList.remove('invisible');
-            for (let i = 0; i < 2; i++) {
-                document.getElementsByTagName('form')[i].classList.add('invisible');
-            }
+            document.getElementById('binary_ico_subscribe').classList.add('invisible');
             // wait countdown is finished loading before scroll to section
             var checkIfFinished = setInterval(function(){
                 var finished_loading = document.getElementById('status_loading').classList.contains('invisible');
-                if (finished_loading == true){
+                if (finished_loading == true) {
                     let navbarHeight = checkWidth();
                     const to = document.getElementById('ico_subscribe_section').offsetTop - navbarHeight;
                     scrollTo(to);
@@ -93,9 +91,19 @@ window.onload = function() {
     for (let i = 0; i < 2; i++) {
         document.getElementsByClassName('howto-btn')[i].addEventListener('click', function(e) {
             e.preventDefault();
-            window.open(getDocumentUrl(getLanguage().toLowerCase()), '_blank');
+            const open_link    = window.open();
+            open_link.opener   = null;
+            open_link.location = getDocumentUrl(language.toLowerCase());
         });
     }
+
+    document.getElementById('token-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const open_link    = window.open();
+        open_link.opener   = null;
+        open_link.location = getTokenRatingReportUrl(language.toLowerCase());
+    });
+
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
     window.addEventListener('hashchange', hashRouter);
@@ -311,6 +319,13 @@ function initCountdown(start_epoch) {
                 clearInterval(countdownd_interval);
             }
         }
+
+        if (is_started) {
+            const ico_bottom_banner = document.getElementById('ico-bottom-banner');
+            if(ico_bottom_banner){
+                ico_bottom_banner.classList.remove(hidden_class);
+            }
+        }
     }
 
     updateStatus();
@@ -445,9 +460,16 @@ function setupCrowdin() {
     }
 }
 
+function openSubscribeLink(link) {
+    var open_link = window.open();
+    open_link.opener = null;
+    open_link.location = link;
+}
+
 function getDocumentUrl(lang = 'en') {
-    if (/^(ru|id)$/i.test(lang)) {
-        return `https://ico_documents.binary.com/howto_ico_${lang}.pdf`;
-    }
-    return 'https://ico_documents.binary.com/howto_ico.pdf';
+    return `https://ico_documents.binary.com/howto_ico${/^(ru|id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+}
+
+function getTokenRatingReportUrl(lang = 'en') {
+    return `https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }

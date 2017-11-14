@@ -6,6 +6,7 @@
 <div id="ico_subscribe" class="invisible">
     <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below.", website_name) %]</p>
     <p id="minimum_bid"></p>
+    <p><a class="button" href="[% request.url_for('ico') %]" target="_blank"><span>[% l('Learn more') %]</span></a></p>
     <div class="gr-row">
         <div class="gr-7 gr-12-p gr-12-m">
             <a href="#auction" class="no-ajax">
@@ -47,6 +48,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="gr-12 align-end hint">[% l("Price per unit:") %] <span id="price_unit"></span></div>
                 <div class="gr-12 align-end hint">[% l("Total:") %] <span id="total"></span></div>
                 <div class="center-text">
                     <div id="form_error" class="error-msg invisible"></div>
@@ -163,15 +165,15 @@
     </a>
 </div>
 
-<div class="invisible" id="ico_professional_message">
-    <p>[% l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") %]</p>
-</div>
+[% #<div class="invisible" id="ico_professional_message">
+    #<p>[ % l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") % ]</p>
+#</div> %]
 <div class="invisible" id="ico_virtual_message">
     <p>[% l("Unable to create ICO account while virtual account is selected. Please select your real money account and try again.") %]</p>
 </div>
 
 <div class="invisible" id="ico_account_message">
-    <p>[% l("Please select your CR account to proceed.") %]</p>
+    <p>[% l("Please select your ICO account to proceed.") %]</p>
 </div>
 
 <div class="invisible" id="ico_new_account_message">

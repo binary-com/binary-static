@@ -23,7 +23,8 @@ const ICOSubscribe = (() => {
         $form_error,
         $duration,
         $price,
-        $total;
+        $total,
+        $price_per_unit;
 
     const onLoad = () => {
         if (jpClient()) {
@@ -74,9 +75,10 @@ const ICOSubscribe = (() => {
             } else {
                 $(form_id).find('.topMenuBalance').html(formatMoney(currency, 0));
             }
-            $duration = $('#duration');
-            $price    = $('#price');
-            $total    = $('#total');
+            $duration       = $('#duration');
+            $price          = $('#price');
+            $total          = $('#total');
+            $price_per_unit = $('#price_unit');
             calculateTotal();
             const to_show = showContent();
             if (to_show !== 'ico_subscribe') {
@@ -132,10 +134,15 @@ const ICOSubscribe = (() => {
             total = +duration_val * +price_val;
         }
         let content = `${formatMoney(currency, total)}`;
-        if(unit_price && unit_price < Infinity) {
-            usd_total = +unit_price * total;
-            content   = `${content} / ${formatMoney('USD', usd_total)}`;
+        let content_unit_price = `${formatMoney(currency, +price_val)}`;
+        if(unit_price && unit_price < Infinity && currency.toUpperCase() !== 'USD') {
+            usd_total          = +unit_price * total;
+            content            = `${content} / ${formatMoney('USD', usd_total)}`;
+            // Price per unit
+            content_unit_price = `${content_unit_price} / ${formatMoney('USD', unit_price * +price_val)}`;
         }
+
+        $price_per_unit.html(content_unit_price);
         $total.html(content);
         if (!$form_error) $form_error = $('#form_error');
         $form_error.setVisibility(0);
@@ -186,12 +193,13 @@ const ICOSubscribe = (() => {
         $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
-            if(/au|ca|ch|nz|sg/.test(Client.get('residence'))
-                && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
-                to_show = 'ico_professional_message';
-            } else {
-                to_show = 'ico_subscribe';
-            }
+            // TODO: replace hardcoded list with ico_professional_countries list when API changes are done
+            // if(/au|ca|ch|nz|sg/.test(Client.get('residence'))
+            //     && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
+            //     to_show = 'ico_professional_message';
+            // } else {
+            to_show = 'ico_subscribe';
+            // }
         } else if (Client.hasCostaricaAccount()) {
             to_show = 'ico_account_message';
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
