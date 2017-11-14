@@ -97,7 +97,7 @@ const DepositWithdraw = (() => {
             ]);
             document.getElementById('cancel').addEventListener('click', () => {
                 document.getElementById('confirmation').remove();
-                BinaryPjax.load(Url.defaultRedirectUrl());
+                BinaryPjax.load(Client.defaultRedirectUrl());
             });
             document.getElementById(confirm_form_id.slice(1)).addEventListener('submit', (e) => {
                 e.preventDefault();
