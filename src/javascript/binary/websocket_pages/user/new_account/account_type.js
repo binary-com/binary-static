@@ -1,7 +1,7 @@
-const Client           = require('../../../base/client');
-const BinaryPjax       = require('../../../base/binary_pjax');
-const urlFor           = require('../../../base/url').urlFor;
-const BinarySocket     = require('../../socket');
+const BinaryPjax   = require('../../../base/binary_pjax');
+const BinarySocket = require('../../socket');
+const Client       = require('../../../base/client');
+const urlFor       = require('../../../base/url').urlFor;
 
 const AccountType = (() => {
     let url_real,
@@ -13,7 +13,7 @@ const AccountType = (() => {
             url_real = urlFor(Client.getUpgradeInfo(response_lc).upgrade_link);
             container = document.getElementById('account_type_container');
 
-            if(Client.canOpenICO()) {
+            if(Client.canOpenICO() && container) {
                 container.setVisibility(1);
                 addEventListener();
             } else {
@@ -22,21 +22,20 @@ const AccountType = (() => {
         });
 
         const addEventListener = () => {
+            const $radio_button = $(container).find('input[type=radio]');
             $(container)
                 .find('#btn_submit')
                 .off('click')
                 .on('click', () => {
-                    $(container)
-                        .find('input[type=radio]')
-                        .each((i, ele) => {
-                            if(ele.checked) {
-                                if(ele.value === 'ico') {
-                                    BinaryPjax.load(url_ico);
-                                } else {
-                                    BinaryPjax.load(url_real);
-                                }
+                    $radio_button.each((i, ele) => {
+                        if(ele.checked) {
+                            if(ele.value === 'ico') {
+                                BinaryPjax.load(url_ico);
+                            } else {
+                                BinaryPjax.load(url_real);
                             }
-                        });
+                        }
+                    });
                 });
         };
     };
