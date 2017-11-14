@@ -116,17 +116,14 @@ const ICOInfo = (() => {
         $root,
         chart;
 
-    const init = (website_status) => {
+    const init = (ico_status) => {
         if (is_initialized) return;
 
-        const ico_info = website_status.ico_info;
-        const ico_status = website_status.ico_status;
+        const final_price = ico_status.ico_status !== 'open' ? +ico_status.final_price : 0;
 
-        const final_price = ico_status !== 'open' ? +ico_info.final_price : 0;
+        const bucket_size = +ico_status.histogram_bucket_size;
 
-        const bucket_size = +ico_info.histogram_bucket_size;
-
-        const keys = Object.keys(ico_info.histogram)
+        const keys = Object.keys(ico_status.histogram)
                            .map(key => +key)
                            .sort((a,b) => a - b);
         const allValues = [];
@@ -135,7 +132,7 @@ const ICOInfo = (() => {
             const min = final_price ? Math.max(Math.min(keys[0], final_price) - 1, 1) : Math.max(keys[0] - 1, 1);
             for(let key = max - bucket_size; key >= min; key -= bucket_size ) {
                 key = +key.toFixed(2);
-                const value = keys.indexOf(key) !== -1 ? ico_info.histogram[`${key}`] : 0;
+                const value = keys.indexOf(key) !== -1 ? ico_status.histogram[`${key}`] : 0;
                 const color = key >= final_price ? COLOR_ORANGE : COLOR_GRAY;
                 allValues.unshift({
                     y   : value,
@@ -146,7 +143,7 @@ const ICOInfo = (() => {
             }
 
             const aboveMaxPrice = keys.filter(key => key >= MAX_BID_PRICE)
-                    .map(key => ico_info.histogram[`${key}`])
+                    .map(key => ico_status.histogram[`${key}`])
                     .reduce((a,b) => a + b, 0);
             if (aboveMaxPrice !== 0) {
                 const maxKey = keys[keys.length - 1];
@@ -189,8 +186,8 @@ const ICOInfo = (() => {
 
         getHighstock((Highstock) => {
             Highcharts = Highstock;
-            BinarySocket.send({website_status: 1}, {forced: true}).then((response) => {
-                init(response.website_status);
+            BinarySocket.send({ico_status: 1}, {forced: true}).then((response) => {
+                init(response.ico_status);
             });
         });
     };
