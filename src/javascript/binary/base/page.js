@@ -85,6 +85,8 @@ const Page = (() => {
 
         const ico_banner = document.getElementById('ico_banner');
         if (!sessionStorage.getItem('hide_ico_banner') && ico_banner) {
+            ico_banner.removeEventListener('click', clickIcoBannerButton);
+            ico_banner.addEventListener('click', clickIcoBannerButton);
             ico_banner.classList.remove('invisible');
             const ico_banner_btn = document.getElementById('ico_link_button');
             if (ico_banner_btn) {
@@ -121,7 +123,9 @@ const Page = (() => {
 
     const clickIcoBannerButton = (e) => {
         e.stopPropagation();
-        window.open(Url.urlFor('ico'), '_blank');
+        const open_link = window.open();
+        open_link.opener = null;
+        open_link.location = Url.urlFor('ico');
     };
 
     const removeIcoBanner = (e) => {
