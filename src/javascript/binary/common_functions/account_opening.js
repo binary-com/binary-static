@@ -129,14 +129,12 @@ const AccountOpening = (() => {
                 .setVisibility(1);
         } else {
             localStorage.setItem('is_new_account', 1);
-            if (getPropertyValue(response, ['echo_req', 'account_type']) === 'ico') {
-                Client.set('is_ico_only', 1, response[message_type].client_id);
-            }
             Client.processNewAccount({
                 email       : Client.get('email'),
                 loginid     : response[message_type].client_id,
                 token       : response[message_type].oauth_token,
                 redirect_url: urlFor('user/set-currency'),
+                is_ico_only : getPropertyValue(response, ['echo_req', 'account_type']) === 'ico',
             });
         }
     };
