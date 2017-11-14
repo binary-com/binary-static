@@ -77,7 +77,12 @@ window.onload = function() {
         // Show / hide language dropdown
         if (e.target.parentNode.id === 'lang') {
             e.preventDefault();
-            e.target.parentNode.parentNode.classList.toggle('show');
+            const parent    = el_language_dropdown.parentNode;
+            const is_mobile = window.matchMedia("(max-width: 1199px)").matches;
+            if (is_mobile) {
+                toggleAllSiblings(parent, filterById, 'invisible');
+            }
+            el_language_dropdown.classList.toggle('show');
         } else if (/show/.test(el_language_dropdown.classList)) {
             el_language_dropdown.classList.remove('show');
         }
@@ -465,4 +470,18 @@ function getDocumentUrl(lang = 'en') {
         return `https://ico_documents.binary.com/howto_ico_${lang}.pdf`;
     }
     return 'https://ico_documents.binary.com/howto_ico.pdf';
+}
+
+function filterById(elem) {
+    return !((/^(language)$/i.test(elem.id)));
+}
+
+function toggleAllSiblings(elem, filter, class_name) {
+    elem = elem.parentNode.firstChild;
+    do {
+        if (elem.nodeType === 3) continue; // text node
+        if (!filter || filter(elem)) {
+            elem.classList.toggle(class_name);
+        }
+    } while (elem = elem.nextSibling)
 }
