@@ -41,6 +41,7 @@ window.onload = function() {
             switchView('faq');
             scrollTo(0);
             window.location.hash = '#faq';
+            collapseMenu();
         }
 
         if (!hash) {
@@ -70,6 +71,7 @@ window.onload = function() {
             const navbarHeight = checkWidth();
             const to = document.getElementById(target).offsetTop - navbarHeight - offset;
             scrollTo(to);
+            collapseMenu();
         }
 
         // Show / hide language dropdown

@@ -15,6 +15,11 @@ function toggleMobileMenu() {
     });
 }
 
+function collapseMenu() {
+    document.getElementById('navigation').classList.remove('expand');
+    document.getElementsByClassName('navbar-collapse')[0].classList.remove('expand');
+}
+
 function checkBrowser() {
     const isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
     const isIE = /*@cc_on!@*/false || !!document.documentMode; // Internet Explorer 6-11
