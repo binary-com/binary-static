@@ -95,7 +95,7 @@ window.onload = function() {
             e.preventDefault();
             const open_link    = window.open();
             open_link.opener   = null;
-            open_link.location = getDocumentUrl(getLanguage().toLowerCase());
+            open_link.location = getDocumentUrl(language.toLowerCase());
         });
     }
 
@@ -103,7 +103,7 @@ window.onload = function() {
         e.preventDefault();
         const open_link    = window.open();
         open_link.opener   = null;
-        open_link.location = getTokenRatingReportUrl(getLanguage().toLowerCase());
+        open_link.location = getTokenRatingReportUrl(language.toLowerCase());
     });
 
     window.onresize = checkWidth;
