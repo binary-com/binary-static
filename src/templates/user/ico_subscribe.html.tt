@@ -6,6 +6,7 @@
 <div id="ico_subscribe" class="invisible">
     <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below.", website_name) %]</p>
     <p id="minimum_bid"></p>
+    <p><a class="button" href="[% request.url_for('ico') %]" target="_blank"><span>[% l('Learn more') %]</span></a></p>
     <div class="gr-row">
         <div class="gr-7 gr-12-p gr-12-m">
             <a href="#auction" class="no-ajax">
@@ -47,6 +48,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="gr-12 align-end hint">[% l("Price per unit:") %] <span id="price_unit"></span></div>
                 <div class="gr-12 align-end hint">[% l("Total:") %] <span id="total"></span></div>
                 <div class="center-text">
                     <div id="form_error" class="error-msg invisible"></div>

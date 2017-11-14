@@ -6,7 +6,7 @@
         <form id="frm_endpoint">
             [% WRAPPER fieldset legend=l('Details') %]
                 [% INCLUDE form_row id='server_url' label=l('Server') type='text' attributes='maxlength="30"'
-                    hint=l('e.g. blue.binaryws.com') %]
+                    hint=l('e.g. frontend.binaryws.com') %]
                 [% INCLUDE form_row id='app_id' label=l('OAuth App ID') type='text' attributes='maxlength="5"'
                     hint=l('You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/.') %]
             [% END %]

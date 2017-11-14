@@ -311,6 +311,13 @@ function initCountdown(start_epoch) {
                 clearInterval(countdownd_interval);
             }
         }
+
+        if (is_started) {
+            const ico_bottom_banner = document.getElementById('ico-bottom-banner');
+            if(ico_bottom_banner){
+                ico_bottom_banner.classList.remove(hidden_class);
+            }
+        }
     }
 
     updateStatus();

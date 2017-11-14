@@ -63,7 +63,7 @@ function getLanguage() {
 }
 
 function wsConnect() {
-    return new WebSocket('wss://blue.binaryws.com/websockets/v3?app_id=1&l=' + getLanguage());
+    return new WebSocket('wss://frontend.binaryws.com/websockets/v3?app_id=1&l=' + getLanguage());
 }
 
 function wsSend(ws, request) {
