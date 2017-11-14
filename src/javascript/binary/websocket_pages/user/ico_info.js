@@ -172,6 +172,7 @@ const ICOInfo = (() => {
             is_initialized = true;
         } else {
             $('#no_bids_to_show').setVisibility(1);
+            $loading.hide();
             $root.hide();
         }
     };
