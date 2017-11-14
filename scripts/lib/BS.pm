@@ -253,6 +253,15 @@ sub menu {
 
     # push @{$menu}, $self->_main_menu_trading();
 
+    # Link to ico-subscribe, ICO Bids.
+    push @menu,
+        {
+        id         => 'topMenuIcoBids',
+        class      => 'ja-hide invisible client_logged_in',
+        url        => url_for('/user/ico-subscribe'),
+        text       => localize('ICO Bids'),
+        };
+
     return \@menu;
 }
 
