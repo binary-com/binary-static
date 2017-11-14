@@ -572,7 +572,8 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
-                { logo="hype-codes"       timestamp="Nov 12, 2017"    headlines="Top upcoming ICO 12th - 18th November (with voting)"                    url="https://hype.codes/top-upcoming-ico-12th-18th-november-voting" },
+                { logo="coinstaker"             timestamp="Nov 13, 2017"    headlines="ICO: Binary.com – the Initial Coin Offering"                            url="https://www.coinstaker.com/binary.com-ico" },
+                { logo="hype-codes"             timestamp="Nov 12, 2017"    headlines="Top upcoming ICO 12th - 18th November (with voting)"                    url="https://hype.codes/top-upcoming-ico-12th-18th-november-voting" },
                 { logo="portal-do-branco"       timestamp="Nov 12, 2017"    headlines="A Binary.com anuncia lançamento de uma Oferta Inicial de Moedas (OIM)"  url="https://portaldobitcoin.com/binary-com-anuncia-lancamento-de-uma-oferta-inicial-de-moedas-oim/" },
                 { logo="coinist"                timestamp="Nov 12, 2017"    headlines="Binary Options & An ICO That Gives The House Advantage"                 url="https://www.coinist.io/binary-ico-that-gives-you-the-house-advantage/" },
                 { logo="coinist"                timestamp="Nov 10, 2017"    headlines="Binary.com spearheads a new wave of ICOs with its 'IPO on the blockchain'"  url="https://www.coinist.io/binary-com-and-its-ipo-on-the-blockchain/" },
