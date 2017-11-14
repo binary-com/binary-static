@@ -471,17 +471,3 @@ function getDocumentUrl(lang = 'en') {
     }
     return 'https://ico_documents.binary.com/howto_ico.pdf';
 }
-
-function filterById(elem) {
-    return !((/^(language)$/i.test(elem.id)));
-}
-
-function toggleAllSiblings(elem, filter, class_name) {
-    elem = elem.parentNode.firstChild;
-    do {
-        if (elem.nodeType === 3) continue; // text node
-        if (!filter || filter(elem)) {
-            elem.classList.toggle(class_name);
-        }
-    } while (elem = elem.nextSibling)
-}
