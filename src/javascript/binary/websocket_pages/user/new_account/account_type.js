@@ -22,20 +22,16 @@ const AccountType = (() => {
         });
 
         const addEventListener = () => {
-            const $radio_button = $(container).find('input[type=radio]');
             $(container)
                 .find('#btn_submit')
                 .off('click')
                 .on('click', () => {
-                    $radio_button.each((i, ele) => {
-                        if(ele.checked) {
-                            if(ele.value === 'ico') {
-                                BinaryPjax.load(url_ico);
-                            } else {
-                                BinaryPjax.load(url_real);
-                            }
-                        }
-                    });
+                    const value = $(container).find('input[type=radio]:checked').val();
+                    if (value === 'ico') {
+                        BinaryPjax.load(url_ico);
+                    } else {
+                        BinaryPjax.load(url_real);
+                    }
                 });
         };
     };
