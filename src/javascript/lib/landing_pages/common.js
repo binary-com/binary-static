@@ -16,8 +16,12 @@ function toggleMobileMenu() {
 }
 
 function collapseMenu() {
-    document.getElementById('navigation').classList.remove('expand');
-    document.getElementsByClassName('navbar-collapse')[0].classList.remove('expand');
+    const navbar      = document.getElementById('navigation');
+    const navbar_item = document.getElementsByClassName('navbar-collapse')[0];
+    if (navbar && navbar_item) {
+        navbar.classList.remove('expand');
+        navbar_item.classList.remove('expand');
+    }
 }
 
 function checkBrowser() {
