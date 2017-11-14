@@ -436,7 +436,7 @@ const Client = (() => {
         hasCostaricaAccount,
         canOpenICO,
         canRequestProfessional,
-        defaultRedirectUrl
+        defaultRedirectUrl,
     };
 })();
 

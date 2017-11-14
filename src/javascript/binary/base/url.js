@@ -1,6 +1,5 @@
 const urlLang        = require('./language').urlLang;
 const urlForLanguage = require('./language').urlFor;
-const jpClient       = require('../common_functions/country_base').jpClient;
 const isEmptyObject  = require('./utility').isEmptyObject;
 const createElement  = require('./utility').createElement;
 require('url-polyfill');

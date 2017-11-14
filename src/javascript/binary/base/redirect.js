@@ -1,5 +1,5 @@
-const Url                = require('./url');
 const defaultRedirectUrl = require('./client').defaultRedirectUrl;
+const Url                = require('./url');
 
 const Redirect = (() => {
     const onLoad = () => {
