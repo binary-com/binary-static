@@ -93,9 +93,19 @@ window.onload = function() {
     for (let i = 0; i < 2; i++) {
         document.getElementsByClassName('howto-btn')[i].addEventListener('click', function(e) {
             e.preventDefault();
-            window.open(getDocumentUrl(getLanguage().toLowerCase()), '_blank');
+            const open_link    = window.open();
+            open_link.opener   = null;
+            open_link.location = getDocumentUrl(language.toLowerCase());
         });
     }
+
+    document.getElementById('token-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const open_link    = window.open();
+        open_link.opener   = null;
+        open_link.location = getTokenRatingReportUrl(language.toLowerCase());
+    });
+
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
     window.addEventListener('hashchange', hashRouter);
@@ -459,8 +469,9 @@ function openSubscribeLink(link) {
 }
 
 function getDocumentUrl(lang = 'en') {
-    if (/^(ru|id)$/i.test(lang)) {
-        return `https://ico_documents.binary.com/howto_ico_${lang}.pdf`;
-    }
-    return 'https://ico_documents.binary.com/howto_ico.pdf';
+    return `https://ico_documents.binary.com/howto_ico${/^(ru|id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+}
+
+function getTokenRatingReportUrl(lang = 'en') {
+    return `https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }

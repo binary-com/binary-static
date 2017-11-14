@@ -65,7 +65,7 @@ window.onload = function() {
         var val = document.getElementById('checkbox').checked; // true or false
         var url = 'https://ico_documents.binary.com/im.pdf';
         if (val) {
-            window.open(url, '_self');
+            window.location.href = url;
         } else {
             document.getElementById('frm_accept_disclaimer_error').classList.remove('invisible');
         }
