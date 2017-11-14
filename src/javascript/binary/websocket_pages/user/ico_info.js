@@ -178,16 +178,21 @@ const ICOInfo = (() => {
 
     const onLoad = () => {
         $root = $('#ico_info');
-        $loading = $root.find('> .loading');
+        $loading = $('#ico_info_loading');
         $labels = $root.find('.x-label,.y-label');
-        $root.setVisibility(1);
-        $loading.show();
         showLoadingImage($loading[0]);
 
         getHighstock((Highstock) => {
             Highcharts = Highstock;
-            BinarySocket.send({ico_status: 1}, {forced: true}).then((response) => {
-                init(response.ico_status);
+            BinarySocket.send({ico_status: 1}).then((response) => {
+                if(response.error) {
+                    $('#ico_status_error').setVisibility(1).text(response.error.message);
+                    $loading.hide();
+                    $root.setVisibility(0);
+                } else {
+                    $root.setVisibility(1);
+                    init(response.ico_status);
+                }
             });
         });
     };
