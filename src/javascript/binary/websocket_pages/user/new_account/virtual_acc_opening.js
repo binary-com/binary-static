@@ -106,7 +106,7 @@ const VirtualAccOpening = (() => {
             const residence   = response.echo_req.residence;
             Client.set('residence', residence, new_account.client_id);
             LocalStore.remove('gclid');
-            BinarySocket.send({ landing_company: residence }).then((response_lc) => {
+            BinarySocket.send({ landing_company: residence }).then(() => {
                 Client.processNewAccount({
                     email       : new_account.email,
                     loginid     : new_account.client_id,

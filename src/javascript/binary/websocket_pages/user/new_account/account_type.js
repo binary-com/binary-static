@@ -1,7 +1,6 @@
 const Client           = require('../../../base/client');
 const BinaryPjax       = require('../../../base/binary_pjax');
 const urlFor           = require('../../../base/url').urlFor;
-const jpClient         = require('../../../common_functions/country_base').jpClient;
 const BinarySocket     = require('../../socket');
 
 const AccountType = (() => {
@@ -10,8 +9,8 @@ const AccountType = (() => {
         container;
     const onLoad = () => {
         BinarySocket.wait('landing_company').then((response_lc) => {
+            url_ico  = `${urlFor('new_account/realws')  }#ico`;
             url_real = urlFor(Client.getUpgradeInfo(response_lc).upgrade_link);
-            url_ico  = urlFor('new_account/realws') + '#ico';
             container = document.getElementById('account_type_container');
 
             if(Client.canOpenICO()) {
@@ -26,7 +25,7 @@ const AccountType = (() => {
             $(container)
                 .find('#btn_submit')
                 .off('click')
-                .on('click', (e) => {
+                .on('click', () => {
                     $(container)
                         .find('input[type=radio]')
                         .each((i, ele) => {
@@ -39,12 +38,12 @@ const AccountType = (() => {
                             }
                         });
                 });
-        }
-    }
+        };
+    };
 
     return {
         onLoad,
-    }
+    };
 })();
 
 module.exports = AccountType;
