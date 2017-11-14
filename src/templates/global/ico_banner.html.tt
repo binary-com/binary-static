@@ -1,5 +1,5 @@
 <div id="ico_banner_container" [% IF container %] class="[% container %]"[% END %]>
-    <div id="ico_banner" class="ico-banner invisible ja-hide [% class %]" onclick="window.open('[% request.url_for('ico') %]', '_blank');">
+    <div id="ico_banner" class="ico-banner invisible ja-hide [% class %]">
         <div class="gr-row gr-centered">
             <div class="gr-12">
                 <div class="gr-row gr-no-gutter ico-box">
