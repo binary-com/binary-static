@@ -4,7 +4,6 @@ const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
 const urlLang            = require('./language').urlLang;
 const isStorageSupported = require('./storage').isStorageSupported;
-const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
 const paramsHash         = require('./url').paramsHash;
 
@@ -33,7 +32,7 @@ const LoggedInHandler = (() => {
         if (set_default) {
             const lang_cookie = urlLang(redirect_url) || Cookies.get('language');
             const language    = getLanguage();
-            redirect_url      = defaultRedirectUrl();
+            redirect_url      = Client.defaultRedirectUrl();
             if (lang_cookie && lang_cookie !== language) {
                 redirect_url = redirect_url.replace(new RegExp(`/${language}/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
             }
@@ -70,6 +69,7 @@ const LoggedInHandler = (() => {
                 Client.set('email',      email,     loginid);
                 Client.set('residence',  residence, loginid);
                 Client.set('is_virtual', +Client.isAccountOfType('virtual', loginid), loginid);
+                Client.set('is_ico_only', isIcoOnly(loginid_list, loginid), loginid);
                 if (isDisabled(loginid_list, loginid)) {
                     Client.set('is_disabled', 1, loginid);
                 }
@@ -85,6 +85,8 @@ const LoggedInHandler = (() => {
     };
 
     const isDisabled = (loginid_list, loginid) => (loginid_list ? +(new RegExp(`${loginid}:[VR]:D`)).test(loginid_list) : 0);
+
+    const isIcoOnly = (loginid_list, loginid) => (loginid_list ? +(new RegExp(`${loginid}:[VR]:[DE]:I`)).test(loginid_list) : 0);
 
     return {
         onLoad,

@@ -51,6 +51,7 @@ sub _texts {
         push @texts, localize('Trading Times');
         push @texts, localize('Shop');
         push @texts, localize('Payment Agent');
+        push @texts, localize('ICO Bids');
         # account drop down
         push @texts, localize('Virtual Account');
         push @texts, localize('Real Account');

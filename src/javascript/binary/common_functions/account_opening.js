@@ -5,6 +5,7 @@ const Client             = require('../base/client');
 const localize           = require('../base/localize').localize;
 const State              = require('../base/storage').State;
 const urlFor             = require('../base/url').urlFor;
+const getPropertyValue   = require('../base/utility').getPropertyValue;
 const makeOption         = require('../common_functions/common_functions').makeOption;
 const FormManager        = require('../common_functions/form_manager');
 const BinarySocket       = require('../websocket_pages/socket');
@@ -128,6 +129,9 @@ const AccountOpening = (() => {
                 .setVisibility(1);
         } else {
             localStorage.setItem('is_new_account', 1);
+            if (getPropertyValue(response, ['echo_req', 'account_type']) === 'ico') {
+                Client.set('is_ico_only', 1, response[message_type].client_id);
+            }
             Client.processNewAccount({
                 email       : Client.get('email'),
                 loginid     : response[message_type].client_id,
