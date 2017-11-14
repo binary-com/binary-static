@@ -15,13 +15,13 @@ const AccountType = (() => {
 
             if(Client.canOpenICO() && container) {
                 container.setVisibility(1);
-                addEventListener();
+                onSubmit();
             } else {
                 BinaryPjax.load(url_real);
             }
         });
 
-        const addEventListener = () => {
+        const onSubmit = () => {
             $(container)
                 .find('#btn_submit')
                 .off('click')
