@@ -467,14 +467,14 @@ function setupCrowdin() {
 }
 
 function checkUserSession() {
-    var signUpForm       = document.getElementById('sign-up-section');
-    var accountExistsMsg = document.getElementById('account_exists_message');
+    var signup_form        = document.getElementById('sign-up-section');
+    var account_exists_msg = document.getElementById('account_exists_message');
     if (!localStorage.getItem('active_loginid')) {
-        if (signUpForm) {
-            signUpForm.classList.remove('invisible');
+        if (signup_form) {
+            signup_form.classList.remove('invisible');
         }
-        if (accountExistsMsg) {
-            accountExistsMsg.classList.remove('invisible');
+        if (account_exists_msg) {
+            account_exists_msg.classList.remove('invisible');
         }
     }
 }
