@@ -243,6 +243,7 @@ const Client = (() => {
                 const is_ico_only = get('is_ico_only');
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
+                    applyToAllElements('.ico-only-show', (el) => { el.setVisibility(1); });
                 }
 
                 applyToAllElements('.client_logged_in', (el) => {
