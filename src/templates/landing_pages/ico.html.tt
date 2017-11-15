@@ -163,7 +163,7 @@
                                     </div>
                                 </div>
                                 <div class="status-toggle status-started ico-subscribe-btn">
-                                    <div class="center-text gr-12 align-self-center">
+                                    <div id="account_exists_message" class="center-text gr-12 align-self-center invisible">
                                         <p>[% l('Already have an account?') %]</p>
                                     </div>
                                     <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Participate now") %]</span></a>

@@ -467,10 +467,14 @@ function setupCrowdin() {
 }
 
 function checkUserSession() {
-    var signUpForm = document.getElementById('sign-up-section');
+    var signUpForm       = document.getElementById('sign-up-section');
+    var accountExistsMsg = document.getElementById('account_exists_message');
     if (!localStorage.getItem('active_loginid')) {
         if (signUpForm) {
             signUpForm.classList.remove('invisible');
+        }
+        if (accountExistsMsg) {
+            accountExistsMsg.classList.remove('invisible');
         }
     }
 }
