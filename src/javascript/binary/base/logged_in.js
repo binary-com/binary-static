@@ -60,7 +60,7 @@ const LoggedInHandler = (() => {
             const is_ico_only = isIcoOnly(loginid_list, loginid);
             if (loginid && token) {
                 if (!is_ico_only && !is_loginid_set && !default_loginid) {
-                    default_loginid = loginid; // assume the first account as default if cookie is not available
+                    default_loginid = loginid; // assume the first non-ico account as default if cookie is not available
                     is_loginid_set  = true;
                 }
                 if (loginid === default_loginid) {
