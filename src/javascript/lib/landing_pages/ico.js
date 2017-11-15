@@ -476,8 +476,8 @@ function setupCrowdin() {
 function checkUserSession() {
 
     const getAllAccountsObject = () => JSON.parse(localStorage.getItem('client.accounts'));
-    const client_object = getAllAccountsObject();
-    const current_loginid = localStorage.getItem('active_loginid');
+    const client_object        = getAllAccountsObject();
+    const current_loginid      = localStorage.getItem('active_loginid');
 
     const isEmptyObject = (obj) => {
         let is_empty = true;
