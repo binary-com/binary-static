@@ -2,7 +2,7 @@ const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
-const defaultRedirectUrl = require('./url').defaultRedirectUrl;
+const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
 const getPropertyValue   = require('./utility').getPropertyValue;
 const isEmptyObject      = require('./utility').isEmptyObject;
@@ -209,10 +209,11 @@ const Client = (() => {
 
         localStorage.setItem('GTM_new_account', '1');
 
-        set('token',      options.token,       options.loginid);
-        set('email',      options.email,       options.loginid);
-        set('is_virtual', +options.is_virtual, options.loginid);
-        set('loginid',    options.loginid);
+        set('token',       options.token,       options.loginid);
+        set('email',       options.email,       options.loginid);
+        set('is_virtual',  +options.is_virtual, options.loginid);
+        set('loginid',     options.loginid);
+        set('is_ico_only', options.is_ico_only);
 
         // need to redirect not using pjax
         window.location.href = options.redirect_url || defaultRedirectUrl();
@@ -234,19 +235,22 @@ const Client = (() => {
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 const client_logged_in = document.getElementById('client-logged-in');
+                const is_jp = jpClient();
                 if (client_logged_in) {
                     client_logged_in.classList.add('gr-centered');
                 }
 
-                const is_ico_only = /ico_only/.test(State.getResponse('get_account_status.status'));
-                Client.set('is_ico_only', is_ico_only); // Set ico_only in Client object.
-
+                const is_ico_only = get('is_ico_only');
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
                 }
+                if (is_ico_only || Client.get('landing_company_shortcode') === 'costarica') {
+                    applyToAllElements('.ico-only-show', (el) => { el.setVisibility(1); });
+                }
 
                 applyToAllElements('.client_logged_in', (el) => {
-                    if (!/ico-only-hide/.test(el.classList) || !is_ico_only) {
+                    if ((!is_jp || !/ja-hide/.test(el.classList)) &&
+                        (!/ico-only-hide/.test(el.classList) || !is_ico_only)) {
                         el.setVisibility(1);
                     }
                 });
@@ -256,7 +260,6 @@ const Client = (() => {
                     topbar_class.add(secondary_bg_color);
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
-                    const is_jp = jpClient();
                     applyToAllElements('.client_real', (el) => {
                         if ((!is_jp || !/ja-hide/.test(el.classList)) &&
                             !/ico-only-hide/.test(el.classList) || !is_ico_only) {
@@ -366,7 +369,10 @@ const Client = (() => {
         };
     };
 
-    const getLandingCompanyValue = (loginid, landing_company, key) => {
+    const getLandingCompanyValue = (loginid, landing_company, key, is_ico_only) => {
+        if (is_ico_only) {
+            return 'Binary (C.R.) S.A.';
+        }
         let landing_company_object;
         if (loginid.financial || isAccountOfType('financial', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
@@ -395,6 +401,16 @@ const Client = (() => {
     const canOpenICO = () =>
         /malta|iom/.test(State.getResponse('landing_company.financial_company.shortcode')) ||
         /malta|iom/.test(State.getResponse('landing_company.gaming_company.shortcode'));
+
+    const canRequestProfessional = () => {
+        const residence = get('residence');
+        /* Austria, Italy, Belgium, Latvia, Bulgaria,	Lithuania, Croatia, Luxembourg, Cyprus, Malta, Czech Republic,	Netherlands, Denmark, Poland, Estonia, Portugal, Finland, Romania, France, Slovakia, Germany, Slovenia, Greece, Spain, Hungary, Sweden, Ireland, United Kingdom, Australia, New Zealand, Singapore, Canada, Switzerland */
+        const countries = ['at', 'it', 'be', 'lv', 'bg', 'lt', 'hr', 'lu', 'cy', 'mt', 'cf', 'nl', 'dk', 'pl', 'ee', 'pt', 'fi', 'ro', 'fr', 'sk', 'de', 'si', 'gr', 'es', 'hu', 'se', 'ie', 'gb', 'au', 'nz', 'sg', 'ca', 'ch'];
+        return countries.indexOf(residence.toLowerCase()) !== -1;
+
+    };
+
+    const defaultRedirectUrl = () => Url.urlFor(jpClient() ? 'multi_barriers_trading' : get('is_ico_only') ? 'user/ico-subscribe' : 'trading');
 
     return {
         init,
@@ -426,6 +442,8 @@ const Client = (() => {
         canTransferFunds,
         hasCostaricaAccount,
         canOpenICO,
+        canRequestProfessional,
+        defaultRedirectUrl,
     };
 })();
 

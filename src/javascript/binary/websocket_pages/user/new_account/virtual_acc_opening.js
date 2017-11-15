@@ -106,12 +106,14 @@ const VirtualAccOpening = (() => {
             const residence   = response.echo_req.residence;
             Client.set('residence', residence, new_account.client_id);
             LocalStore.remove('gclid');
-            Client.processNewAccount({
-                email       : new_account.email,
-                loginid     : new_account.client_id,
-                token       : new_account.oauth_token,
-                is_virtual  : true,
-                redirect_url: jp_client ? urlFor('new_account/landing_page') : urlFor('new_account/welcome'),
+            BinarySocket.send({ landing_company: residence }).then(() => {
+                Client.processNewAccount({
+                    email       : new_account.email,
+                    loginid     : new_account.client_id,
+                    token       : new_account.oauth_token,
+                    is_virtual  : true,
+                    redirect_url: urlFor(`new_account/${jp_client ? 'landing_page' : 'account_type'}`),
+                });
             });
             return true;
         }

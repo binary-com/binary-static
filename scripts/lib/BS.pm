@@ -191,7 +191,7 @@ sub menu {
         id         => 'topMenuProfitTable',
         url        => url_for('/user/profit_tablews'),
         text       => localize('Profit Table'),
-        class      => 'client_logged_in invisible',
+        class      => 'client_logged_in invisible ico-only-hide',
         };
 
     push @menu,
@@ -237,7 +237,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuShop',
-        class      => 'ja-hide',
+        class      => 'ja-hide ico-only-hide',
         url        => 'https://shop.binary.com',
         text       => localize('Shop'),
         target     => '_blank'
@@ -252,6 +252,15 @@ sub menu {
         };
 
     # push @{$menu}, $self->_main_menu_trading();
+
+    # Link to ico-subscribe, ICO Bids.
+    push @menu,
+        {
+        id         => 'topMenuIcoBids',
+        class      => 'invisible ico-only-show',
+        url        => url_for('/user/ico-subscribe'),
+        text       => localize('ICO Bids'),
+        };
 
     return \@menu;
 }
