@@ -132,7 +132,7 @@
                                 </div>
                                 <div class="status-toggle status-before-start">
                                 </div>
-                                <div id="sign-up-section">
+                                <div id="sign-up-section" class="invisible">
                                     <div class="signup-desc">
                                         <p>[% l("Investors need to open a [_1] real money account to take part in the ICO.", broker_name) %]</p>
                                         <p>[% l("Sign up now for free.") %]</p>
@@ -161,15 +161,15 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="status-toggle status-started ico-subscribe-btn">
-                                        <div class="center-text gr-12 align-self-center">
-                                            <p>[% l('Already have an account?') %]</p>
-                                        </div>
-                                        <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Participate now") %]</span></a>
+                                </div>
+                                <div class="status-toggle status-started ico-subscribe-btn">
+                                    <div id="account_exists_message" class="center-text gr-12 align-self-center invisible">
+                                        <p>[% l('Already have an account?') %]</p>
                                     </div>
-                                    <div class="status-toggle status-ended ico-subscribe-btn">
-                                        <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Take me there") %]</span></a>
-                                    </div>
+                                    <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Participate now") %]</span></a>
+                                </div>
+                                <div class="status-toggle status-ended ico-subscribe-btn">
+                                    <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Take me there") %]</span></a>
                                 </div>
                             </div>
                         </div>
