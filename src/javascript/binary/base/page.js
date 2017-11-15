@@ -1,4 +1,5 @@
 const Cookies          = require('js-cookie');
+const BinaryPjax       = require('./binary_pjax');
 const Client           = require('./client');
 const Contents         = require('./contents');
 const Crowdin          = require('./crowdin');
@@ -123,9 +124,7 @@ const Page = (() => {
 
     const clickIcoBannerButton = (e) => {
         e.stopPropagation();
-        const open_link = window.open();
-        open_link.opener = null;
-        open_link.location = Url.urlFor('user/ico-subscribe');
+        BinaryPjax.load(Url.urlFor('user/ico-subscribe'));
     };
 
     const removeIcoBanner = (e) => {
