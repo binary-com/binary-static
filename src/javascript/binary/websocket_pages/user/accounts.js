@@ -91,8 +91,8 @@ const Accounts = (() => {
             });
     };
 
-    const getAvailableMarkets = (loginid) => {
-        if (Client.get('is_ico_only', loginid)) {
+    const getAvailableMarkets = (loginid, is_type_ico_only) => {
+        if (Client.get('is_ico_only', loginid) || is_type_ico_only) {
             return [localize('None')];
         }
         let legal_allowed_markets = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_markets') || '';
@@ -120,7 +120,7 @@ const Accounts = (() => {
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
                 .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 }, is_ico_only)}` })))
-                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
+                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }, is_ico_only) }))
                 .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
 
