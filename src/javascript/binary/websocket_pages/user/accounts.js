@@ -166,6 +166,7 @@ const Accounts = (() => {
                 loginid     : new_account.client_id,
                 token       : new_account.oauth_token,
                 redirect_url: urlFor('user/set-currency'),
+                is_ico_only : getPropertyValue(response, ['echo_req', 'account_type']) === 'ico',
             });
         }
     };
