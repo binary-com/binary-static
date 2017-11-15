@@ -18,8 +18,9 @@ const TermsAndConditions = (() => {
     };
 
     const handleActiveTab = () => {
-        const hash        = window.location.hash.split('&')[0] || '#legal';
-        const sub_content = window.location.hash.split('&')[1];
+        const params      = window.location.hash.split('&');
+        const hash        = params[0] || '#legal';
+        const sub_content = params[1];
         const menu        = '.tab-menu-wrap';
         const content     = '.tab-content-wrapper';
 
