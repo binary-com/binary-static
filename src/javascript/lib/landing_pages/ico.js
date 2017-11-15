@@ -327,7 +327,6 @@ function initCountdown(start_epoch) {
         el_container.classList.remove(hidden_class);
 
         if (!is_before_start) {
-            document.getElementById('ico_subscribe_section').classList.add(hidden_class);
             if (!is_started) { // is_ended
                 clearInterval(countdownd_interval);
             }
