@@ -5,6 +5,7 @@ window.onload = function() {
     hashRouter();
     collapseNavbar();
     signUpInit();
+    checkUserSession();
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
@@ -326,7 +327,6 @@ function initCountdown(start_epoch) {
         el_container.classList.remove(hidden_class);
 
         if (!is_before_start) {
-            document.getElementById('ico_subscribe_section').classList.add(hidden_class);
             if (!is_started) { // is_ended
                 clearInterval(countdownd_interval);
             }
@@ -468,6 +468,56 @@ function setupCrowdin() {
             crowdinScript.setAttribute('src', `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`);
             crowdinScript.setAttribute('type', 'text/javascript');
             document.body.appendChild(crowdinScript);
+        }
+    }
+}
+
+function checkUserSession() {
+
+    const getAllAccountsObject = () => JSON.parse(localStorage.getItem('client.accounts'));
+    const client_object        = getAllAccountsObject();
+    const current_loginid      = localStorage.getItem('active_loginid');
+
+    const isEmptyObject = (obj) => {
+        let is_empty = true;
+        if (obj && obj instanceof Object) {
+            Object.keys(obj).forEach((key) => {
+                if (Object.prototype.hasOwnProperty.call(obj, key)) is_empty = false;
+            });
+        }
+        return is_empty;
+    };
+
+    const get = (key, loginid = current_loginid) => {
+        let value;
+        if (key === 'loginid') {
+            value = loginid || localStorage.getItem('active_loginid');
+        } else {
+            const current_client = client_object[loginid] || getAllAccountsObject()[loginid] || {};
+
+            value = key ? current_client[key] : current_client;
+        }
+        if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
+            value = JSON.parse(value || false);
+        }
+        return value;
+    };
+
+    const isLoggedIn = () => (
+        !isEmptyObject(getAllAccountsObject()) &&
+        get('loginid') &&
+        get('token')
+    );
+
+    const signup_form        = document.getElementById('sign-up-section');
+    const account_exists_msg = document.getElementById('account_exists_message');
+
+    if (!isLoggedIn()) {
+        if (signup_form) {
+            signup_form.classList.remove('invisible');
+        }
+        if (account_exists_msg) {
+            account_exists_msg.classList.remove('invisible');
         }
     }
 }
