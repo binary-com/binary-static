@@ -5,6 +5,7 @@ window.onload = function() {
     hashRouter();
     collapseNavbar();
     signUpInit();
+    checkUserSession();
 
     dataLayer.push({ language: getLanguage().toUpperCase() });
     dataLayer.push({ event: 'page_load' });
@@ -107,6 +108,13 @@ window.onload = function() {
         const open_link    = window.open();
         open_link.opener   = null;
         open_link.location = getTokenRatingReportUrl(language.toLowerCase());
+    });
+
+    document.getElementById('lykke-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const open_link    = window.open();
+        open_link.opener   = null;
+        open_link.location = getLykkeReport(language.toLowerCase());
     });
 
     window.onresize = checkWidth;
@@ -319,7 +327,6 @@ function initCountdown(start_epoch) {
         el_container.classList.remove(hidden_class);
 
         if (!is_before_start) {
-            document.getElementById('ico_subscribe_section').classList.add(hidden_class);
             if (!is_started) { // is_ended
                 clearInterval(countdownd_interval);
             }
@@ -465,6 +472,56 @@ function setupCrowdin() {
     }
 }
 
+function checkUserSession() {
+
+    const getAllAccountsObject = () => JSON.parse(localStorage.getItem('client.accounts'));
+    const client_object        = getAllAccountsObject();
+    const current_loginid      = localStorage.getItem('active_loginid');
+
+    const isEmptyObject = (obj) => {
+        let is_empty = true;
+        if (obj && obj instanceof Object) {
+            Object.keys(obj).forEach((key) => {
+                if (Object.prototype.hasOwnProperty.call(obj, key)) is_empty = false;
+            });
+        }
+        return is_empty;
+    };
+
+    const get = (key, loginid = current_loginid) => {
+        let value;
+        if (key === 'loginid') {
+            value = loginid || localStorage.getItem('active_loginid');
+        } else {
+            const current_client = client_object[loginid] || getAllAccountsObject()[loginid] || {};
+
+            value = key ? current_client[key] : current_client;
+        }
+        if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
+            value = JSON.parse(value || false);
+        }
+        return value;
+    };
+
+    const isLoggedIn = () => (
+        !isEmptyObject(getAllAccountsObject()) &&
+        get('loginid') &&
+        get('token')
+    );
+
+    const signup_form        = document.getElementById('sign-up-section');
+    const account_exists_msg = document.getElementById('account_exists_message');
+
+    if (!isLoggedIn()) {
+        if (signup_form) {
+            signup_form.classList.remove('invisible');
+        }
+        if (account_exists_msg) {
+            account_exists_msg.classList.remove('invisible');
+        }
+    }
+}
+
 function openSubscribeLink(link) {
     var open_link = window.open();
     open_link.opener = null;
@@ -477,4 +534,8 @@ function getDocumentUrl(lang = 'en') {
 
 function getTokenRatingReportUrl(lang = 'en') {
     return `https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+}
+
+function getLykkeReport(lang = 'en') {
+    return `https://ico_documents.binary.com/research/lykke/lykke_research_report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }

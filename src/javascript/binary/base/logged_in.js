@@ -46,20 +46,22 @@ const LoggedInHandler = (() => {
         const residence     = Cookies.get('residence') || '';
         const loginid_list  = Cookies.get('loginid_list');
         let default_loginid = Cookies.get('loginid');
+        let is_loginid_set  = false;
 
         // Parse url for loginids, tokens, and currencies returned by OAuth
         const params = paramsHash(window.location.href);
+        // Clear all accounts before entering the loop
+        Client.clearAllAccounts();
         let i = 1;
         while (params[`acct${i}`]) {
-            const loginid  = params[`acct${i}`];
-            const token    = params[`token${i}`];
-            const currency = params[`cur${i}`] || '';
+            const loginid     = params[`acct${i}`];
+            const token       = params[`token${i}`];
+            const currency    = params[`cur${i}`] || '';
+            const is_ico_only = isIcoOnly(loginid_list, loginid);
             if (loginid && token) {
-                if (i === 1) {
-                    Client.clearAllAccounts();
-                    if (!default_loginid) {
-                        default_loginid = loginid; // assume the first account as default if cookie is not available
-                    }
+                if (!is_ico_only && !is_loginid_set && !default_loginid) {
+                    default_loginid = loginid; // assume the first non-ico account as default if cookie is not available
+                    is_loginid_set  = true;
                 }
                 if (loginid === default_loginid) {
                     Client.set('loginid', loginid);
@@ -69,7 +71,7 @@ const LoggedInHandler = (() => {
                 Client.set('email',      email,     loginid);
                 Client.set('residence',  residence, loginid);
                 Client.set('is_virtual', +Client.isAccountOfType('virtual', loginid), loginid);
-                Client.set('is_ico_only', isIcoOnly(loginid_list, loginid), loginid);
+                Client.set('is_ico_only', is_ico_only, loginid);
                 if (isDisabled(loginid_list, loginid)) {
                     Client.set('is_disabled', 1, loginid);
                 }
