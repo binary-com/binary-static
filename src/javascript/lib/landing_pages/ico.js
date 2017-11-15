@@ -110,6 +110,13 @@ window.onload = function() {
         open_link.location = getTokenRatingReportUrl(language.toLowerCase());
     });
 
+    document.getElementById('lykke-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const open_link    = window.open();
+        open_link.opener   = null;
+        open_link.location = getLykkeReport(language.toLowerCase());
+    });
+
     window.onresize = checkWidth;
     window.onscroll = collapseNavbar;
     window.addEventListener('hashchange', hashRouter);
@@ -528,4 +535,8 @@ function getDocumentUrl(lang = 'en') {
 
 function getTokenRatingReportUrl(lang = 'en') {
     return `https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+}
+
+function getLykkeReport(lang = 'en') {
+    return `https://ico_documents.binary.com/research/lykke/lykke_research_report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }
