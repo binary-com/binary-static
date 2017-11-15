@@ -244,6 +244,9 @@ const Client = (() => {
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
                 }
+                if (is_ico_only || Client.get('landing_company_shortcode') === 'costarica') {
+                    applyToAllElements('.ico-only-show', (el) => { el.setVisibility(1); });
+                }
 
                 applyToAllElements('.client_logged_in', (el) => {
                     if ((!is_jp || !/ja-hide/.test(el.classList)) &&
