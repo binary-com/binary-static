@@ -134,7 +134,12 @@ const Header = (() => {
         GTM.setLoginFlag();
         Client.set('cashier_confirmed', 0);
         Client.set('loginid', loginid);
-        window.location.reload();
+        // Load page based on account type.
+        if(Client.get('is_ico_only', loginid)) {
+            window.location.assign(Client.defaultRedirectUrl());
+        } else {
+            window.location.reload();
+        }
     };
 
     const upgradeMessageVisibility = () => {
