@@ -109,7 +109,7 @@ const ICOSubscribe = (() => {
                     { request_field: 'currency',      parent_node: 'parameters', value: currency },
                     { request_field: 'duration_unit', parent_node: 'parameters', value: 'c' },
                 ]);
-                if (+State.getResponse('website_status.ico_info.final_price') === 0) {
+                if (+State.getResponse('ico_status.final_price') === 0) {
                     $(form_id)
                         .on('submit', (evt) => { evt.preventDefault(); })
                         .find('button').addClass('inactive');
