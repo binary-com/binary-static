@@ -54,6 +54,10 @@
         <span class="invisible normal_currency client_logged_out">[% l('Bank-wire, credit card, e-cash wallet') %]</span>
         <span class="invisible crypto_currency">[% l('Cryptocurrency') %]</span>
     </h3>
+    <div class="notice-msg invisible eu-only gr-padding-20">
+        [% l('If you’d like to participate in the [_1] ICO, please fund your ICO account instead of your trading account.', website_name) %]
+    </div>
+    <div class="gr-padding-10 invisible eu-only"></div>
     <div class="gr-row">
         <div class="gr-2 gr-4-m">
             <a class="ja-hide" href="[% request.url_for('/cashier/forwardws#deposit') %]" id="payment_methods">

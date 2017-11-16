@@ -45,7 +45,7 @@ const LoggedInHandler = (() => {
         const email         = Cookies.get('email') || '';
         const residence     = Cookies.get('residence') || '';
         const loginid_list  = Cookies.get('loginid_list');
-        let default_loginid = Cookies.get('loginid');
+        let default_loginid = '';
         let is_loginid_set  = false;
 
         // Parse url for loginids, tokens, and currencies returned by OAuth
