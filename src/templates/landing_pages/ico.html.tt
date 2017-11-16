@@ -99,8 +99,7 @@
                                     <h3 class="content-inverse-color">[% l("Token sale begins in") %]</h3>
                                 </div>
                                 <div class="status-toggle status-started">
-                                    <h3 class="content-inverse-color">[% l("The [_1] token sale has started", broker_name) %]</h3>
-                                    <p class="intro-subtext">[% l("15 November – 25 December 2017") %]</p>
+                                    <h2 class="content-inverse-color text-uppercase">[% l("ICO is live, participate now!") %]</h2>
                                     <p class="intro-text">[% l("Token sale ends in") %]</p>
                                 </div>
                                 <div class="status-toggle status-ended">
@@ -133,12 +132,6 @@
                                 </div>
                                 <div class="status-toggle status-before-start">
                                 </div>
-                                <div class="status-toggle status-started ico-subscribe-btn">
-                                    <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Join the token sale") %]</span></a>
-                                </div>
-                                <div class="status-toggle status-ended ico-subscribe-btn">
-                                    <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Take me there") %]</span></a>
-                                </div>
                                 <div id="sign-up-section">
                                     <div class="signup-desc">
                                         <p>[% l("Investors need to open a [_1] real money account to take part in the ICO.", broker_name) %]</p>
@@ -167,6 +160,15 @@
                                                 </div>
                                             </div>
                                         </form>
+                                    </div>
+                                    <div class="status-toggle status-started ico-subscribe-btn">
+                                        <div class="center-text gr-12 align-self-center">
+                                            <p>[% l('Already have an account?') %]</p>
+                                        </div>
+                                        <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Participate now") %]</span></a>
+                                    </div>
+                                    <div class="status-toggle status-ended ico-subscribe-btn">
+                                        <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Take me there") %]</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -816,6 +818,9 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
         </div>
         <div class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
             <span>Binary Group Ltd., Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
+        </div>
+        <div id="ico-bottom-banner" class="gr-hide gr-show-m gr-12-m" onclick="window.open('[% request.url_for('user/ico-subscribe') %]', '_blank');">
+            <p class="center-text">[% l("The [_1] ICO is now live. Participate now!", broker_name) %]</p>
         </div>
         <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js"></script>
