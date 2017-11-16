@@ -263,6 +263,9 @@ body #not_authenticated_financial ul.checked > li {
                 cursor: auto;
             }
         }
+        .error-msg {
+            padding-top: 5px;
+        }
     }
     .timer {
         .text {

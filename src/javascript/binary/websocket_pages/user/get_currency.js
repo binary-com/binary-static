@@ -5,9 +5,10 @@ const GetCurrency = (() => {
     const getCurrenciesOfOtherAccounts = () => {
         const all_loginids     = Client.getAllLoginids();
         const other_currencies = [];
+        const is_ico_only      = Client.get('is_ico_only');
         all_loginids.forEach((loginid) => {
             // if it's not current client or virtual client, consider the currency
-            if (Client.get('loginid') !== loginid && Client.getAccountType(loginid) !== 'virtual') {
+            if (Client.get('loginid') !== loginid && Client.getAccountType(loginid) !== 'virtual' && (!is_ico_only || Client.get('is_ico_only', loginid))) {
                 const currency = Client.get('currency', loginid);
                 if (currency) {
                     other_currencies.push(currency);
@@ -42,12 +43,17 @@ const GetCurrency = (() => {
         const client_currency = Client.get('currency');
         const is_crypto       = Currency.isCryptocurrency(client_currency);
         const currency_values = getCurrencyValues();
-        const currencies      = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
 
         const available_crypto =
               currency_values.cryptocurrencies.filter(c =>
                   currency_values.other_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0);
         const can_open_crypto  = available_crypto.length;
+
+        let currencies = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
+        // allow ico only accounts to choose crypto even though legal allowed currencies doesn't include them
+        if (Client.get('is_ico_only') && can_open_crypto) {
+            currencies = currencies.concat(available_crypto);
+        }
 
         let currencies_to_show = [];
         // only allow client to open more sub accounts if the last currency is not to be reserved for master account
