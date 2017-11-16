@@ -31,7 +31,7 @@ const ICOPortfolio = (() => {
 
     const createPortfolioRow = (data, is_first) => {
         const long_code  = data.longcode;
-        const ico_status = (State.getResponse('website_status.ico_status') || '').toLowerCase();
+        const ico_status = (State.getResponse('ico_status.ico_status') || '').toLowerCase();
         // Default to cancel bid. Ended on a button doesn't make sense.
         let status_text = 'Ended';
         if (/unsuccessful/i.test(long_code)) {
@@ -48,7 +48,7 @@ const ICOPortfolio = (() => {
         const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
         const shortcode    = data.shortcode.split('_');
         const $div         = $('<div/>');
-        if (+State.getResponse('website_status.ico_info.final_price') === 0) {
+        if (+State.getResponse('ico_status.final_price') === 0) {
             button_class = 'button-disabled';
         }
 
