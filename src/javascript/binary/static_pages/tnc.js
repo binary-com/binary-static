@@ -18,9 +18,11 @@ const TermsAndConditions = (() => {
     };
 
     const handleActiveTab = () => {
-        const hash    = window.location.hash || '#legal';
-        const menu    = '.tab-menu-wrap';
-        const content = '.tab-content-wrapper';
+        const params      = window.location.hash.split('&');
+        const hash        = params[0] || '#legal';
+        const sub_content = params[1];
+        const menu        = '.tab-menu-wrap';
+        const content     = '.tab-content-wrapper';
 
         const parent_active = 'active';
         const child_active  = 'a-active';
@@ -59,8 +61,11 @@ const TermsAndConditions = (() => {
         if (section) {
             const $section = $content.find(`a#${section}`);
             if ($section.length) setTimeout(() => { $.scrollTo($section, 0, { offset: -5 }); }, 500);
-        } else if (window.location.hash) {
+        } else if (hash) {
             setTimeout(() => { $.scrollTo($content.find('.tab-menu'), 0, { offset: -10 }); }, 500);
+        }
+        if (sub_content) {
+            setTimeout(() => { $.scrollTo($content.find(`#${sub_content}`), 500, { offset: -10 }); }, 500);
         }
     };
 
