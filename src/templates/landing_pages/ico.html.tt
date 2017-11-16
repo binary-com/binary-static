@@ -133,10 +133,10 @@
                                 </div>
                                 <div class="status-toggle status-before-start">
                                 </div>
-                                <div class="status-toggle status-started">
+                                <div class="status-toggle status-started ico-subscribe-btn">
                                     <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Join the token sale") %]</span></a>
                                 </div>
-                                <div class="status-toggle status-ended">
+                                <div class="status-toggle status-ended ico-subscribe-btn">
                                     <a class="button" href="[% request.url_for('user/ico-subscribe') %]"><span>[% l("Take me there") %]</span></a>
                                 </div>
                                 <div id="sign-up-section">
