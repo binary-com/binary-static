@@ -82,6 +82,10 @@ const Page = (() => {
         }
         Menu.init();
         Contents.onLoad();
+        if (/ico-subscribe/.test(self.location.href)) {
+            console.log('is ico-subscribe');
+        }
+
 
         const ico_banner = document.getElementById('ico_banner');
         if (!sessionStorage.getItem('hide_ico_banner') && ico_banner) {
@@ -121,7 +125,7 @@ const Page = (() => {
 
     const clickIcoBannerButton = (e) => {
         e.stopPropagation();
-        window.open(Url.urlFor('ico'), '_blank');
+        window.open(Url.urlFor('ico-subscribe'), '_blank');
     };
 
     const removeIcoBanner = (e) => {
