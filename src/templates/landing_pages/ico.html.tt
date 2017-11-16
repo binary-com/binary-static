@@ -572,6 +572,7 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="portal-do-branco"       timestamp="Nov 14, 2017"    headlines="ICO da Binary.com Começará em Poucas Horas"  url="https://portaldobitcoin.com/ico-da-binary-com-comecara-em-poucas-horas/" },
                 { logo="cripto"                 timestamp="Nov 14, 2017"    headlines="Binary.com: anuncia o lançamento da sua oferta inicial de moedas (ICO) em novembro"  url="https://www.criptomoedasfacil.com/binary-com-anuncia-o-lancamento-da-sua-oferta-inicial-de-moedas-ico-em-novembro/" },
                 { logo="coinstaker"             timestamp="Nov 13, 2017"    headlines="ICO: Binary.com – the Initial Coin Offering"                            url="https://www.coinstaker.com/binary.com-ico" },
                 { logo="hype-codes"             timestamp="Nov 12, 2017"    headlines="Top upcoming ICO 12th - 18th November (with voting)"                    url="https://hype.codes/top-upcoming-ico-12th-18th-november-voting" },

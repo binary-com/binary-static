@@ -255,6 +255,13 @@ const Client = (() => {
                     }
                 });
 
+                // Show to eu clients only
+                if(/^malta|maltainvest|iom$/.test(get('landing_company_shortcode'))) {
+                    applyToAllElements('.eu-only', (el) => {
+                        el.setVisibility(1);
+                    });
+                }
+
                 if (get('is_virtual')) {
                     applyToAllElements('.client_virtual', (el) => { el.setVisibility(1); }, '', el_section);
                     topbar_class.add(secondary_bg_color);

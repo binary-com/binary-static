@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-14 17:31-0500\n"
+"PO-Revision-Date: 2017-11-16 01:31-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -4254,6 +4254,9 @@ msgstr ""
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
 msgstr ""
 
+msgid "If you’d like to participate in the %1 ICO, please fund your ICO account instead of your trading account."
+msgstr ""
+
 msgid "If:"
 msgstr "Si:"
 
@@ -4445,7 +4448,7 @@ msgid "Indemnity and Liability"
 msgstr "Indemnidad y obligación"
 
 msgid "Independent analysis"
-msgstr ""
+msgstr "Análisis independiente"
 
 msgid "India 50 Cash Index"
 msgstr ""
@@ -5921,7 +5924,7 @@ msgid "National ID card or any government issued document which contains a photo
 msgstr ""
 
 msgid "Need a different perspective? Read these independent third-party reports for unbiased insights and opinions on Binary.com and our token offering."
-msgstr ""
+msgstr "¿Necesita una perspectiva diferente? Lea estos informes independientes para obtener información imparcial y opiniones sobre Binary. com y nuestra oferta de tokens."
 
 msgid "Need more information on the ICO?"
 msgstr "¿Necesita más información sobre la ICO?"
@@ -8153,7 +8156,7 @@ msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing 
 msgstr "La API de %1 tiene límites de uso que se aplican para prevenir el abuso y/o la reasignación de la API de %1. Estos límites de uso pueden ser cambiados en el futuro sin aviso. Si excede constantemente los límites de uso o abusa del servicio, podemos bloquear su acceso a la API de %1."
 
 msgid "The %1 ICO is now live"
-msgstr ""
+msgstr "La ICO de %1 ya está disponible"
 
 msgid "The %1 ICO is now live. Participate now!"
 msgstr "La ICO de %1 ya está disponible. ¡Participe ahora!"
@@ -9138,14 +9141,14 @@ msgstr ""
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 
-msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (Europe) Ltd, regulated by the Malta Gaming Authority."
-msgstr "Para participar en la oferta inicial de moneda de Binary.com es necesario abrir una cuenta diferente. Al continuar, usted reconoce que está saliendo de la cuenta de Binary (Europe) Ltd, la cual está regulada por la Autoridad de Juegos de Azar de Malta."
+msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission."
+msgstr ""
 
-msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (IOM) Ltd, regulated by the Isle of Man Gambling Supervision Commission."
-msgstr "Para participar en la oferta inicial de moneda de Binary.com es necesario abrir una cuenta diferente. Al continuar, usted reconoce que está saliendo de la cuenta de Binary (IOM) Ltd, la cual está regulada por la Comisión de Supervisión de Juegos de Azar de la Isla de Man."
+msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Financial Services Authority."
+msgstr ""
 
-msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary Investments (Europe) Ltd, regulated by the Malta Financial Services Authority."
-msgstr "Para participar en la oferta inicial de moneda de Binary.com es necesario abrir una cuenta diferente. Al continuar, usted reconoce que está saliendo de la cuenta de Binary Investments (Europe) Ltd, la cual está regulada por la Autoridad de Servicios Financieros de Malta."
+msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Gaming Authority."
+msgstr ""
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr ""
@@ -10354,12 +10357,6 @@ msgstr "Retirar"
 msgid "Withdraw from"
 msgstr "Retirar de"
 
-msgid "Withdraw: %1 working day"
-msgstr "Retirar: %1 día(s) laborable(s)"
-
-msgid "Withdraw: Not applicable"
-msgstr "Retirar: No disponible"
-
 msgid "Withdrawal"
 msgstr ""
 
@@ -10376,6 +10373,15 @@ msgid "Withdrawal of Funds from Real Account"
 msgstr ""
 
 msgid "Withdrawal of funds from your Real Account must be made in the same currency maintained in your Binary Options Real Account."
+msgstr ""
+
+msgid "Withdrawal: %1 working day"
+msgstr ""
+
+msgid "Withdrawal: Not Applicable"
+msgstr ""
+
+msgid "Withdrawal: Not applicable"
 msgstr ""
 
 msgid "Without prejudice to any other terms of this Agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to you in relation to any loss that you incurred whether directly or indirectly by any cause beyond our control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 Trading Platform or any systems or network links."
@@ -12929,8 +12935,8 @@ msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to 
 msgid "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 
-msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
-msgstr "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
+msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=%1>opens and trades a real money account.</a>"
+msgstr "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=%1>opens and trades a real money account.</a>"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."

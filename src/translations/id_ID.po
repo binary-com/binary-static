@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-14 17:32-0500\n"
+"PO-Revision-Date: 2017-11-16 01:32-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -4245,6 +4245,9 @@ msgstr "Jika level margin Anda masih di bawah level stop out, kami akan menutup 
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
 msgstr "Jika level margin Anda masih dibawah level stop out, order selanjutnya akan dihapus. Namun, order tanpa margin tidak akan dihapus."
 
+msgid "If you’d like to participate in the %1 ICO, please fund your ICO account instead of your trading account."
+msgstr "Jika Anda ingin berpartisipasi dalam ICO %1, silahkan danai akun ICO Anda dan bukan akun trading Anda."
+
 msgid "If:"
 msgstr "Jika:"
 
@@ -8143,7 +8146,7 @@ msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing 
 msgstr "API %1 memiliki batas penggunaan untuk mencegah penyalahgunaan dan/atau pengusulan kembali API %1. Batas penggunaan ini dapat berubah di masa depan tanpa pemberitahuan. Jika Anda secara konsisten melebihi batas penggunaan atau menyalahgunaan layanan maka kami dapat memblokir akses Anda ke dalam API %1."
 
 msgid "The %1 ICO is now live"
-msgstr "ICO %1 dimulai sekarang"
+msgstr "ICO %1 sudah dimulai"
 
 msgid "The %1 ICO is now live. Participate now!"
 msgstr "ICO %1 sudah dimulai. Ikuti sekarang!"
@@ -9127,14 +9130,14 @@ msgstr "Untuk mendaftar Akun Riil, Anda harus memiliki Akun Riil %1 yang sudah m
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 
-msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (Europe) Ltd, regulated by the Malta Gaming Authority."
-msgstr "Untuk berpartisipasi dalam initial coin offering Binary.com Anda perlu mendaftar akun secara terpisah. Dengan melanjutkan berarti Anda mengetahui bahwa Anda akan meninggalkan akun yang didaftar pada Binary (Europe) Ltd, yang diatur oleh Malta Gaming Authority."
+msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission."
+msgstr "Untuk berpartisipasi dalam ICO Binary.com, Anda perlu mendaftar akun baru. Dengan melanjutkan, Anda mengetahui bahwa Anda akan mendaftar akun lain diluar jurisdiksi Isle of Man Gambling Supervision Commission."
 
-msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary (IOM) Ltd, regulated by the Isle of Man Gambling Supervision Commission."
-msgstr "Untuk berpartisipasi dalam initial coin offering Binary.com Anda perlu mendaftar akun secara terpisah. Dengan melanjutkan berarti Anda mengetahui bahwa Anda akan meninggalkan akun yang didaftar pada Binary (IOM) Ltd, yang diatur Isle of Man Gambling Supervision Commission."
+msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Financial Services Authority."
+msgstr "Untuk berpartisipasi dalam ICO Binary.com, Anda perlu mendaftar akun baru. Dengan melanjutkan, Anda mengetahui bahwa Anda akan mendaftar akun lain diluar jurisdiksi Malta Financial Services Authority."
 
-msgid "To participate in the Binary.com initial coin offering you are required to open a separate account. By proceeding you acknowledge that you are leaving the account held with Binary Investments (Europe) Ltd, regulated by the Malta Financial Services Authority."
-msgstr "Untuk berpartisipasi dalam initial coin offering Binary.com Anda perlu mendaftar akun secara terpisah. Dengan melanjutkan berarti Anda mengetahui bahwa Anda akan meninggalkan akun yang didaftar pada Binary (Europe) Ltd, yang diatur oleh Malta Financial Services Authority."
+msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Gaming Authority."
+msgstr "Untuk berpartisipasi dalam ICO Binary.com, Anda perlu mendaftar akun baru. Dengan melanjutkan, Anda mengetahui bahwa Anda akan mendaftar akun lain diluar jurisdiksi Malta Gaming Authority."
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "Untuk melakukan tindakan ini, silakan <a href=\"%1\">upgrade ke Akun Riil %2</a>."
@@ -10342,12 +10345,6 @@ msgstr "Pencairan"
 msgid "Withdraw from"
 msgstr "Pencairan dari"
 
-msgid "Withdraw: %1 working day"
-msgstr "Penarikan: %1 hari kerja"
-
-msgid "Withdraw: Not applicable"
-msgstr "Penarikan: Tidak tersedia"
-
 msgid "Withdrawal"
 msgstr "Penarikan"
 
@@ -10365,6 +10362,15 @@ msgstr "Penarikan dana dari Akun Riil"
 
 msgid "Withdrawal of funds from your Real Account must be made in the same currency maintained in your Binary Options Real Account."
 msgstr "Penarikan dana dari Akun Riil Anda harus menggunakan mata uang yang sama pada Akun Riil Opsi Binary Anda."
+
+msgid "Withdrawal: %1 working day"
+msgstr "Penarikan: %1 hari kerja"
+
+msgid "Withdrawal: Not Applicable"
+msgstr "Penarikan: Tidak Tersedia"
+
+msgid "Withdrawal: Not applicable"
+msgstr "Penarikan: Tidak tersedia"
 
 msgid "Without prejudice to any other terms of this Agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to you in relation to any loss that you incurred whether directly or indirectly by any cause beyond our control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 Trading Platform or any systems or network links."
 msgstr "Tanpa berprasangka pada syarat lain yang disebutkan dalam Perjanjian ini, baik itu Perusahaan atau Direktur Perusahaan, pegawai, manajer, atau agen lain bertanggungjawab kepada Anda pada setiap kerugian yang dihasilkan baik secara langsung atau tidak yang terjadi diluar kekuasaan, termasuk dan tidak terbatas kepada penundaan atau kerusakan atau kegagalan pada semua atau sebagian dari Platform Trading MT5 atau sistem manapun atau link jaringan."
@@ -12917,8 +12923,8 @@ msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to 
 msgid "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 
-msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
-msgstr "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
+msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=%1>opens and trades a real money account.</a>"
+msgstr "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=%1>opens and trades a real money account.</a>"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
