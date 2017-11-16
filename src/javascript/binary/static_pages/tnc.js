@@ -7,6 +7,7 @@ const TNCApproval = require('../websocket_pages/user/tnc_approval');
 const TermsAndConditions = (() => {
     const onLoad = () => {
         handleActiveTab();
+        handleSidebar();
         TNCApproval.requiresTNCApproval(
             $('#btn_accept'),
             () => { $('.tnc_accept').setVisibility(1); },
@@ -62,6 +63,25 @@ const TermsAndConditions = (() => {
         } else if (window.location.hash) {
             setTimeout(() => { $.scrollTo($content.find('.tab-menu'), 0, { offset: -10 }); }, 500);
         }
+    };
+
+    const handleSidebar = () => {
+        $('.sidebar-collapsible').find('a').first().trigger('click');
+
+        $('#legal-binary-content').setVisibility(1);
+
+        $('.sidebar-collapsible a').click((e) => {
+            e.preventDefault();
+            const selected = e.target;
+            const submenu  = selected.nextElementSibling;
+            const target   = submenu ? submenu.firstElementChild.id : selected.getAttribute('href').substr(1);
+            $('.tnc-content-wrapper')
+                .find('> div')
+                .setVisibility(0)
+                .end()
+                .find(`#${target}-content`)
+                .setVisibility(1);
+        });
     };
 
     const onUnload = () => {
