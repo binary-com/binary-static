@@ -85,13 +85,7 @@ const Page = (() => {
         Contents.onLoad();
 
         const ico_banner = document.getElementById('ico_banner');
-        const page_allows_banner = () => {
-            const path_name = window.location.pathname;
-            if (/(ico-subscribe)/.test(path_name) || /(ico-info)/.test(path_name)) {
-                return false;
-            }
-            return true;
-        };
+        const page_allows_banner = () => (!/(ico-subscribe|ico-info)/.test(window.location.pathname));
 
         if (!sessionStorage.getItem('hide_ico_banner') && ico_banner && page_allows_banner()) {
             ico_banner.removeEventListener('click', clickIcoBannerButton);
