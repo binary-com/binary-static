@@ -819,10 +819,8 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
         <div class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
             <span>Binary Group Ltd., Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
         </div>
-        <div class="status-toggle status-started">
-            <div id="ico-bottom-banner" class="gr-hide gr-show-m gr-12-m" onclick="window.open('[% request.url_for('user/ico-subscribe') %]', '_blank');">
-                <p class="center-text">[% l("The [_1] ICO is now live. Participate now!", broker_name) %]</p>
-            </div>
+        <div id="ico-bottom-banner" class="gr-hide gr-show-m gr-12-m invisible" onclick="window.open('[% request.url_for('user/ico-subscribe') %]', '_blank');">
+            <p class="center-text">[% l("The [_1] ICO is now live. Participate now!", broker_name) %]</p>
         </div>
         <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js"></script>
