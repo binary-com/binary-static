@@ -755,6 +755,12 @@ input[type='text']:focus, input[type='submit']:focus {
     }
 }
 
+#status_container {
+    .ico-subscribe-btn {
+        margin-bottom: 2em;
+    }
+}
+
 #countdown {
     $cd_size: 100px;
     $cd_border_width: 5px;
