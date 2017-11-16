@@ -11,8 +11,8 @@ window.onload = function() {
     function isRestrictedCountry(val) {
         // restricted countries code
         var regex = new RegExp(['^(',
-            'as|af|at|au|be|bg|ca|ch|cy|cz|de|dk|ee|es|fi|fr|gg|gb|gr|gu|hk|hr|hu|ie|il|im|it|',
-            'iq|ir|je|jp|kp|lt|lu|lv|mp|mt|my|nl|nz|pl|pt|pr|ro|se|sg|si|sk|sy|sz|us|vi|vg|vu',
+            'as|af|at|be|bg|cy|cz|de|dk|ee|es|fi|fr|gg|gb|gr|gu|hk|hr|hu|ie|il|im|it|',
+            'iq|ir|je|jp|kp|lt|lu|lv|mp|mt|my|nl|pl|pt|pr|ro|se|si|sk|sy|sz|us|vi|vg|vu',
             ')$'].join(''));
         if (regex.test(val)) {
             return true;
@@ -21,13 +21,10 @@ window.onload = function() {
     }
 
     var country_names = [
-        { code: 'ca', name: 'Canada' },
         { code: 'gb', name: 'the United Kingdom' },
         { code: 'eu', name: 'the European Economic Area' },
         { code: 'hk', name: 'Hong Kong' },
         { code: 'jp', name: 'Japan' },
-        { code: 'sg', name: 'Singapore' },
-        { code: 'ch', name: 'Switzerland' },
     ]
 
     function showSecondNotice(val) {
@@ -68,15 +65,27 @@ window.onload = function() {
         var val = document.getElementById('checkbox').checked; // true or false
         var url = 'https://ico_documents.binary.com/im.pdf';
         if (val) {
-            window.open(url, '_self');
+            window.location.href = url;
         } else {
             document.getElementById('frm_accept_disclaimer_error').classList.remove('invisible');
         }
     });
 
+    var validation_set = false; // To prevent validating before submit
+
     frm_select_residence.addEventListener('submit', function (e) {
         e.preventDefault();
         var val = document.getElementById('residence_list').value;
+        if (!validateResidence(this)) {
+            if (!validation_set) {
+                this.addEventListener('change', function (evt) {
+                    evt.preventDefault();
+                    validateResidence(this);
+                    validation_set = true;
+                })
+            }
+            return false;
+        }
         hideForm();
         showDisclaimer(val);
     });
@@ -93,6 +102,17 @@ window.onload = function() {
         }
     })
 };
+
+function validateResidence(el) {
+    var val      = document.getElementById('residence_list').value;
+    var el_error = el.getElementsByClassName('error-msg')[0];
+    if (val === '0') {
+        el_error.classList.remove('invisible');
+        return false;
+    }
+    el_error.classList.add('invisible');
+    return true;
+}
 
 function getResidenceList() {
     var residence_list = JSON.parse(sessionStorage.getItem('residence_list') || null);

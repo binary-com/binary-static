@@ -1,4 +1,5 @@
-const Url = require('./url');
+const defaultRedirectUrl = require('./client').defaultRedirectUrl;
+const Url                = require('./url');
 
 const Redirect = (() => {
     const onLoad = () => {
@@ -14,7 +15,7 @@ const Redirect = (() => {
         // need to redirect not using pjax
         window.location.href = config && params.code ?
             Url.urlFor(config.path, `token=${params.code}${config.hash || ''}`, params.lang || '') :
-            Url.defaultRedirectUrl();
+            defaultRedirectUrl();
     };
 
     return {

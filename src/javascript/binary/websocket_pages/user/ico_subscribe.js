@@ -13,14 +13,19 @@ const onlyNumericOnKeypress = require('../../common_functions/event_handler');
 const FormManager           = require('../../common_functions/form_manager');
 const getLanguage           = require('../../base/language').get;
 const Url                   = require('../../base/url');
+const getPropertyValue      = require('../../base/utility').getPropertyValue;
 
 const ICOSubscribe = (() => {
     const form_id = '#frm_ico_bid';
     let currency,
+        min_bid,
+        unit_price,
+        min_bid_usd,
         $form_error,
         $duration,
         $price,
-        $total;
+        $total,
+        $price_per_unit;
 
     const onLoad = () => {
         if (jpClient()) {
@@ -42,8 +47,8 @@ const ICOSubscribe = (() => {
             })
             .attr('src', image);
 
-        BinarySocket.wait('website_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
-            if (State.getResponse('website_status.ico_status') === 'closed') {
+        BinarySocket.wait('ico_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
+            if (State.getResponse('ico_status.ico_status') === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
                 ICOcountDown();
                 ICOPortfolio.onLoad();
@@ -52,6 +57,13 @@ const ICOSubscribe = (() => {
                 init();
             }
         });
+        const ico_req = {
+            ico_status: 1,
+            currency  : Client.get('currency') || 'USD',
+            subscribe : 1,
+        };
+        // get update on client currency.
+        BinarySocket.send(ico_req, {callback: updateMinimumBid});
     };
 
     const init = () => {
@@ -64,9 +76,10 @@ const ICOSubscribe = (() => {
             } else {
                 $(form_id).find('.topMenuBalance').html(formatMoney(currency, 0));
             }
-            $duration = $('#duration');
-            $price    = $('#price');
-            $total    = $('#total');
+            $duration       = $('#duration');
+            $price          = $('#price');
+            $total          = $('#total');
+            $price_per_unit = $('#price_unit');
             calculateTotal();
             const to_show = showContent();
             if (to_show !== 'ico_subscribe') {
@@ -117,10 +130,21 @@ const ICOSubscribe = (() => {
         const duration_val = $duration.val();
         const price_val    = $price.val();
         let total          = 0;
+        let usd_total      = 0;
         if (duration_val && price_val) {
             total = +duration_val * +price_val;
         }
-        $total.html(formatMoney(currency, total));
+        let content = `${formatMoney(currency, total)}`;
+        let content_unit_price = `${formatMoney(currency, +price_val)}`;
+        if(unit_price && unit_price < Infinity && currency.toUpperCase() !== 'USD') {
+            usd_total          = +unit_price * total;
+            content            = `${content} / ${formatMoney('USD', usd_total)}`;
+            // Price per unit
+            content_unit_price = `${content_unit_price} / ${formatMoney('USD', unit_price * +price_val)}`;
+        }
+
+        $price_per_unit.html(content_unit_price);
+        $total.html(content);
         if (!$form_error) $form_error = $('#form_error');
         $form_error.setVisibility(0);
     };
@@ -170,12 +194,13 @@ const ICOSubscribe = (() => {
         $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
-            if(/au|ca|ch|nz|sg/.test(Client.get('residence'))
-                && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
-                to_show = 'ico_professional_message';
-            } else {
-                to_show = 'ico_subscribe';
-            }
+            // TODO: replace hardcoded list with ico_professional_countries list when API changes are done
+            // if(/au|ca|ch|nz|sg/.test(Client.get('residence'))
+            //     && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
+            //     to_show = 'ico_professional_message';
+            // } else {
+            to_show = 'ico_subscribe';
+            // }
         } else if (Client.hasCostaricaAccount()) {
             to_show = 'ico_account_message';
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
@@ -248,6 +273,7 @@ const ICOSubscribe = (() => {
                             loginid     : response_new_account_real.new_account_real.client_id,
                             token       : response_new_account_real.new_account_real.oauth_token,
                             redirect_url: urlFor('user/set-currency'),
+                            is_ico_only : getPropertyValue(response_new_account_real, ['echo_req', 'account_type']) === 'ico',
                         });
                     }
                 });
@@ -287,6 +313,21 @@ const ICOSubscribe = (() => {
     const askForAccountOpeningReason = () => {
         const el_to_show = document.getElementById('row_account_opening_reason');
         el_to_show.setVisibility(1);
+    };
+
+    const updateMinimumBid = (ico_status) => {
+        const status      = ico_status.ico_status || {};
+        const el_min_bid  = document.getElementById('minimum_bid');
+        const res_currency    = (status.currency || '').toUpperCase();
+        min_bid     = status.minimum_bid || 0;
+        min_bid_usd = status.minimum_bid_usd || 1.35;
+        unit_price = min_bid_usd/min_bid;
+        let text = `${localize('Minimum bid')} = ${formatMoney('USD', min_bid_usd)}`; // Fallback value.
+        // Show bid in client currency.
+        if(min_bid_usd && min_bid && res_currency && res_currency !== 'USD'){
+            text = `${localize('Minimum bid')} = ${formatMoney(res_currency, min_bid)} / ${formatMoney('USD', min_bid_usd)}`;
+        }
+        el_min_bid.innerHTML = text;
     };
 
     const onUnload = () => {

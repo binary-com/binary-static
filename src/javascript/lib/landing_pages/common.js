@@ -8,11 +8,25 @@ function toggleMobileMenu() {
     const toggleButton = document.getElementById('toggle-menu');
     const navbar       = document.getElementById('navigation');
     const navbar_item  = document.getElementsByClassName('navbar-collapse')[0];
+    const el_language_dropdown = document.getElementsByClassName('language-dropdown')[0];
     toggleButton.addEventListener('click', function (e) {
         e.stopPropagation();
         navbar.classList.toggle('expand');
         navbar_item.classList.toggle('expand');
+        if (/show/.test(el_language_dropdown.classList)) {
+            toggleAllSiblings(el_language_dropdown.parentNode, filterById, 'invisible');
+            el_language_dropdown.classList.remove('show');
+        }
     });
+}
+
+function collapseMenu() {
+    const navbar      = document.getElementById('navigation');
+    const navbar_item = document.getElementsByClassName('navbar-collapse')[0];
+    if (navbar && navbar_item) {
+        navbar.classList.remove('expand');
+        navbar_item.classList.remove('expand');
+    }
 }
 
 function checkBrowser() {
@@ -63,7 +77,7 @@ function getLanguage() {
 }
 
 function wsConnect() {
-    return new WebSocket('wss://blue.binaryws.com/websockets/v3?app_id=1&l=' + getLanguage());
+    return new WebSocket('wss://frontend.binaryws.com/websockets/v3?app_id=1&l=' + getLanguage());
 }
 
 function wsSend(ws, request) {
@@ -92,3 +106,18 @@ if (window.NodeList && !NodeList.prototype.forEach) {
         }
     };
 }
+
+function filterById(elem) {
+    return !((/^(language)$/i.test(elem.id)));
+}
+
+function toggleAllSiblings(elem, filter, class_name) {
+    elem = elem.parentNode.firstChild;
+    do {
+        if (elem.nodeType === 3) continue; // text node
+        if (!filter || filter(elem)) {
+            elem.classList.toggle(class_name);
+        }
+    } while (elem = elem.nextSibling)
+}
+
