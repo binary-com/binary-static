@@ -313,7 +313,10 @@ function initCountdown(start_epoch) {
         }
 
         if (is_started) {
-            document.getElementById('ico-bottom-banner').classList.remove(hidden_class);
+            const ico_bottom_banner = document.getElementById('ico-bottom-banner');
+            if(ico_bottom_banner){
+                ico_bottom_banner.classList.remove(hidden_class);
+            }
         }
     }
 
