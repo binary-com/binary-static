@@ -33,7 +33,7 @@
 
 <div class="gr-padding-20">
     <h2>[% l('{JAPAN ONLY}Generous Commission Structure') %]</h2>
-    <p>[% l('{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account.') %]</p>
+    <p>[% l('{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=[_1]>opens and trades a real money account.</a>', request.url_for('/terms-and-conditions-jp') _ '#affiliates&section-8') %]</p>
 </div>
 
 <div class="gr-padding-20">

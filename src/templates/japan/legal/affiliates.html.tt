@@ -1,5 +1,5 @@
 [% BLOCK li_p %]
-<li class="gr-padding-10">
+<li id="[% id %]" class="gr-padding-10">
     <strong>[% header %]</strong>
     [% FOREACH p IN paragraphs %]
         <p>[% p %]</p>
@@ -58,7 +58,7 @@
             l('{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 1')
             l('{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 2')
         ] %]
-        [% WRAPPER li_p header=l('{JAPAN ONLY} Affiliate Program T&C Section 8 Title') paragraphs=[l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 1')] %]
+        [% WRAPPER li_p id="section-8" header=l('{JAPAN ONLY} Affiliate Program T&C Section 8 Title') paragraphs=[l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 1')] %]
             <ul class="gr-padding-10">
                 <li>[% l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 2') %]</li>
                 <li>[% l('{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 3') %]</li>
