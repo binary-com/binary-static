@@ -4,6 +4,7 @@ const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
 const urlLang            = require('./language').urlLang;
 const isStorageSupported = require('./storage').isStorageSupported;
+const State              = require('./storage').State;
 const urlFor             = require('./url').urlFor;
 const paramsHash         = require('./url').paramsHash;
 
@@ -11,8 +12,9 @@ const LoggedInHandler = (() => {
     const onLoad = () => {
         parent.window.is_logging_in = 1; // this flag is used in base.js to prevent auto-reloading this page
         let redirect_url;
-        if (isStorageSupported(localStorage) && isStorageSupported(sessionStorage)) {
-            storeClientAccounts();
+        const account_list = State.getResponse('authorize.account_list');
+        if (isStorageSupported(localStorage) && isStorageSupported(sessionStorage) && account_list) {
+            storeClientAccounts(account_list);
             // redirect url
             redirect_url = sessionStorage.getItem('redirect_url');
             sessionStorage.removeItem('redirect_url');
@@ -24,7 +26,7 @@ const LoggedInHandler = (() => {
         let set_default = true;
         if (redirect_url) {
             const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', 'home-jp', '404'];
-            const reg            = new RegExp(do_not_redirect.join('|'), 'i');
+            const reg             = new RegExp(do_not_redirect.join('|'), 'i');
             if (!reg.test(redirect_url) && urlFor('') !== redirect_url) {
                 set_default = false;
             }
@@ -41,54 +43,46 @@ const LoggedInHandler = (() => {
         window.location.href = redirect_url; // need to redirect not using pjax
     };
 
-    const storeClientAccounts = () => {
-        const email         = Cookies.get('email') || '';
-        const residence     = Cookies.get('residence') || '';
-        const loginid_list  = Cookies.get('loginid_list');
-        let default_loginid = '';
-        let is_loginid_set  = false;
-
+    const storeClientAccounts = (account_list) => {
         // Parse url for loginids, tokens, and currencies returned by OAuth
         const params = paramsHash(window.location.href);
+
         // Clear all accounts before entering the loop
         Client.clearAllAccounts();
+
+        let is_loginid_set = false;
         let i = 1;
         while (params[`acct${i}`]) {
-            const loginid     = params[`acct${i}`];
-            const token       = params[`token${i}`];
-            const currency    = params[`cur${i}`] || '';
-            const is_ico_only = isIcoOnly(loginid_list, loginid);
+            const loginid  = params[`acct${i}`];
+            const token    = params[`token${i}`];
+            const currency = params[`cur${i}`] || '';
             if (loginid && token) {
-                if (!is_ico_only && !is_loginid_set && !default_loginid) {
-                    default_loginid = loginid; // assume the first non-ico account as default if cookie is not available
-                    is_loginid_set  = true;
-                }
-                if (loginid === default_loginid) {
+                // set the first non-ico account as default loginid
+                if (!is_loginid_set && !account_list[loginid].is_ico_only) {
                     Client.set('loginid', loginid);
+                    is_loginid_set = true;
                 }
-                Client.set('token',      token,     loginid);
-                Client.set('currency',   currency,  loginid);
-                Client.set('email',      email,     loginid);
-                Client.set('residence',  residence, loginid);
-                Client.set('is_virtual', +Client.isAccountOfType('virtual', loginid), loginid);
-                Client.set('is_ico_only', is_ico_only, loginid);
-                if (isDisabled(loginid_list, loginid)) {
-                    Client.set('is_disabled', 1, loginid);
-                }
+                Client.set('token',    token,    loginid);
+                Client.set('currency', currency, loginid);
             }
             i++;
         }
 
+        Object.keys(account_list).forEach((loginid) => {
+            Client.set('residence',      account_list[loginid].country,        loginid);
+            Client.set('email',          account_list[loginid].email,          loginid);
+            Client.set('excluded_until', account_list[loginid].excluded_until, loginid);
+            Client.set('is_disabled',    account_list[loginid].is_disabled,    loginid);
+            Client.set('is_ico_only',    account_list[loginid].is_ico_only,    loginid);
+            Client.set('is_virtual',     account_list[loginid].is_virtual,     loginid);
+        });
+
         if (Client.isLoggedIn()) {
             GTM.setLoginFlag();
-            // Remove cookies to prevent conflicts between sub-domains
+            // Remove cookies that were set from the old code
             Client.cleanupCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
         }
     };
-
-    const isDisabled = (loginid_list, loginid) => (loginid_list ? +(new RegExp(`${loginid}:[VR]:D`)).test(loginid_list) : 0);
-
-    const isIcoOnly = (loginid_list, loginid) => (loginid_list ? +(new RegExp(`${loginid}:[VR]:[DE]:I`)).test(loginid_list) : 0);
 
     return {
         onLoad,
