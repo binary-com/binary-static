@@ -162,6 +162,11 @@ const ICOInfo = (() => {
                 values         : allValues,
                 finalPriceLabel: `${localize('Final Price')} ($${final_price})`,
                 callback       : () => {
+                    const $bars = $root.find('.barChart svg .highcharts-column-series > rect');
+                    $bars.each((inx, bar) => {
+                        const y = +$(bar).attr('y');
+                        $(bar).attr('y', `${y-1}`);
+                    });
                     $loading.hide();
                     $labels.setVisibility(1);
                 },
