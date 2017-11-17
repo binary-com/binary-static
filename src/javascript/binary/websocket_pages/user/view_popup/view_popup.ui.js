@@ -137,7 +137,7 @@ const ViewPopupUI = (() => {
             new_y;
         if (x === undefined) {
             new_x = Math
-                    .max(Math.floor(($window.width() - $window.scrollLeft() - con.width()) / 2), x_min)
+                .max(Math.floor(($window.width() - $window.scrollLeft() - con.width()) / 2), x_min)
                 + $window.scrollLeft();
         }
         if (y === undefined) {
