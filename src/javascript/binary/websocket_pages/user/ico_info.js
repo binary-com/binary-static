@@ -124,8 +124,8 @@ const ICOInfo = (() => {
         const bucket_size = +ico_status.histogram_bucket_size;
 
         const keys = Object.keys(ico_status.histogram)
-                           .map(key => +key)
-                           .sort((a,b) => a - b);
+            .map(key => +key)
+            .sort((a,b) => a - b);
         const allValues = [];
         if (keys.length > 0) {
             const max = Math.min(keys[keys.length - 1] + 1, MAX_BID_PRICE);
@@ -143,8 +143,8 @@ const ICOInfo = (() => {
             }
 
             const aboveMaxPrice = keys.filter(key => key >= MAX_BID_PRICE)
-                    .map(key => ico_status.histogram[`${key}`])
-                    .reduce((a,b) => a + b, 0);
+                .map(key => ico_status.histogram[`${key}`])
+                .reduce((a,b) => a + b, 0);
             if (aboveMaxPrice !== 0) {
                 const maxKey = keys[keys.length - 1];
                 const color = MAX_BID_PRICE >= final_price ? 'url(#gradient-0)' : 'url(#gradient-1)';
