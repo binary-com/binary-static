@@ -194,8 +194,7 @@ const TradingEvents = (() => {
         if (expiry_type_element) {
             expiry_type_element.addEventListener('change', (e) => {
                 Defaults.set('expiry_type', e.target.value);
-                Process.onExpiryTypeChange(e.target.value);
-                if (expiry_type_element.value !== 'endtime') Price.processPriceRequest();
+                if (Process.onExpiryTypeChange(e.target.value)) Price.processPriceRequest();
             });
         }
 
