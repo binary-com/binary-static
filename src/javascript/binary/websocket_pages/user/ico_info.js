@@ -165,7 +165,7 @@ const ICOInfo = (() => {
                     const $bars = $root.find('.barChart svg .highcharts-column-series > rect');
                     $bars.each((inx, bar) => {
                         const y = +$(bar).attr('y');
-                        $(bar).attr('y', `${y-1}`);
+                        $(bar).attr('y', `${+y - 1}`);
                     });
                     $loading.hide();
                     $labels.setVisibility(1);
