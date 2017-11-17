@@ -202,7 +202,11 @@ const ICOSubscribe = (() => {
             to_show = 'ico_subscribe';
             // }
         } else if (Client.hasCostaricaAccount()) {
-            to_show = 'ico_account_message';
+            if(Client.canOpenICO()) {
+                to_show = 'ico_account_message';
+            } else {
+                to_show = 'ico_account_message_real';
+            }
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
             if(Client.isAccountOfType('virtual') && (Client.hasAccountType('gaming')
                 || Client.hasAccountType('financial') || Client.hasAccountType('real'))){
