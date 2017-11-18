@@ -10,25 +10,25 @@
  */
 
 const getAppId = () => {
-  let appId;
-  const userAppId = '2445';
-  const configAppId = window.localStorage.getItem('config.app_id');
-  if (configAppId) {
-    appId = configAppId;
-  } else if (/staging\.binary\.com/i.test(window.location.hostname)) {
-    appId = 1098;
-  } else {
-    if (userAppId.length) {
-      window.localStorage.setItem('config.default_app_id', userAppId);
+    let appId = null;
+    const userAppId = '';
+    const configAppId = window.localStorage.getItem('config.app_id');
+    if (configAppId) {
+        appId = configAppId;
+    } else if (/staging\.binary\.com/i.test(window.location.hostname)) {
+        appId = 1098;
+    } else {
+        if (userAppId.length) {
+            window.localStorage.setItem('config.default_app_id', userAppId);
+        }
+        appId = userAppId.length ? userAppId : 1;
     }
-    appId = userAppId.length ? userAppId : 1;
-  }
-  return appId;
+    return appId;
 };
 
 const getSocketURL = () => {
-  let server_url = window.localStorage.getItem('config.server_url');
-  if (!server_url) {
+    let server_url = window.localStorage.getItem('config.server_url');
+    if (!server_url) {
     // const toGreenPercent = { real: 100, virtual: 0, logged_out: 0 }; // default percentage
     // const categoryMap    = ['real', 'virtual', 'logged_out'];
     // const percentValues  = Cookies.get('connection_setup'); // set by GTM
@@ -58,12 +58,12 @@ const getSocketURL = () => {
     // }
 
     // server_url = `${server}.binaryws.com`;
-    server_url = 'frontend.binaryws.com';
-  }
-  return `wss://${server_url}/websockets/v3`;
+        server_url = 'frontend.binaryws.com';
+    }
+    return `wss://${server_url}/websockets/v3`;
 };
 
 module.exports = {
-  getAppId,
-  getSocketURL,
+    getAppId,
+    getSocketURL,
 };
