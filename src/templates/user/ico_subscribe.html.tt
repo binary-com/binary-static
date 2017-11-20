@@ -5,7 +5,7 @@
 
 <div id="ico_subscribe" class="invisible">
     <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='[_2]' target='_blank'>Learn more</a>", website_name, request.url_for('ico')) %]</p>
-    <p>[% l('You\'re only required to deposit <span class="initial_deposit_percent"></span>% of the value of the bid. At the end of the auction, once the final price of the auction is determined, you will be given 2 weeks to pay the balance up to the final price. Bids can be canceled at any time before the end of auction, without any penalty.') %]</p>
+    <p>[% l('You\'re only required to deposit <span class="initial_deposit_percent"></span>% of the total bid value for each bid. At the end of the auction, once the final price of the token is determined, you will be given two (2) weeks to pay the balance up to the final price. Bids can be cancelled at any time before the end of auction, without any penalty.') %]</p>
     <div class="gr-row">
         <div class="gr-7 gr-12-p gr-12-m">
             <a href="#auction" class="no-ajax">
@@ -62,7 +62,7 @@
                         <button id="btn_submit" type="submit">[% l('Place bid') %]</button>
                         <div class="gr-row invisible hint" id="topup_wrapper">
                             <div class="gr-8 align-start error-msg">[% l('You have insufficient funds in your account.') %]</div>
-                            <div class="gr-4 align-end"><a href="[% request.url_for('/cashier/forwardws') %]#deposit">[% l('top up in cashier') %]</a></div>
+                            <div class="gr-4 align-end"><a href="[% request.url_for('/cashier/forwardws') %]#deposit">[% l('Top up in cashier') %]</a></div>
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
     <div class="faded">
         <p class="no-margin">[% l('Notes:') %]</p>
         <ol>
-            <li>[% l('Bids can be canceled at any time before the end of the auction at no cost.') %]</li>
+            <li>[% l('Bids can be cancelled at any time before the end of the auction at no cost.') %]</li>
             <li>[% l('Unsuccessful bidders will receive a full refund.') %]</li>
         </ol>
     </div>
