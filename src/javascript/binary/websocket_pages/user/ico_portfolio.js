@@ -32,9 +32,6 @@ const ICOPortfolio = (() => {
     const createPortfolioRow = (data, is_first) => {
         const long_code          = data.longcode;
         const ico_status         = (State.getResponse('ico_status.ico_status') || '').toLowerCase();
-        const deposit_percentage = +((data.shortcode || '').split('_')[2] || State.getResponse('ico_status.initial_deposit_percentage'));
-        const deposit_factor     = deposit_percentage / 100;
-
         let status_text = 'Ended';
         if (/unsuccessful/i.test(long_code)) {
             status_text = 'Refund Bid';
@@ -49,6 +46,10 @@ const ICOPortfolio = (() => {
         let button_class = /cancel|end/i.test(status) ? 'button-secondary' : 'button';
         const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
         const shortcode    = data.shortcode.split('_');
+
+        const deposit_percentage = +(shortcode[3] || 100);
+        const total_factor     = 100 / deposit_percentage;
+
         const $div         = $('<div/>');
         if (+State.getResponse('ico_status.final_price') === 0) {
             button_class = 'button-disabled';
@@ -60,9 +61,9 @@ const ICOPortfolio = (() => {
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref', text: data.transaction_id }))
             .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: shortcode[2] })))
-            .append($('<td/>', { class: 'bid' }).append($('<strong/>', { html: formatMoney(data.currency, shortcode[1]) })))
-            .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price) })))
-            .append($('<td/>', { class: 'deposit' }).append($('<strong/>', { html: formatMoney(data.currency, +data.buy_price * deposit_factor) })))
+            .append($('<td/>', { class: 'bid' }).append($('<strong/>', { html: formatMoney(data.currency, +shortcode[1] * total_factor) })))
+            .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, +data.buy_price * total_factor) })))
+            .append($('<td/>', { class: 'deposit' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price) })))
             .append($('<td/>', { class: 'details', text: long_code }))
             .append($('<td/>', { class: 'button' }).append($button)))
             .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));
