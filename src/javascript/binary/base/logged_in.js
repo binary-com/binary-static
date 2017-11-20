@@ -1,4 +1,5 @@
 const Cookies            = require('js-cookie');
+const moment             = require('moment');
 const Client             = require('./client');
 const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
@@ -69,17 +70,19 @@ const LoggedInHandler = (() => {
         }
 
         Object.keys(account_list).forEach((loginid) => {
-            Client.set('residence',      account_list[loginid].country,        loginid);
-            Client.set('email',          account_list[loginid].email,          loginid);
-            Client.set('excluded_until', account_list[loginid].excluded_until, loginid);
-            Client.set('is_disabled',    account_list[loginid].is_disabled,    loginid);
-            Client.set('is_ico_only',    account_list[loginid].is_ico_only,    loginid);
-            Client.set('is_virtual',     account_list[loginid].is_virtual,     loginid);
+            Client.set('residence',                 account_list[loginid].country,              loginid);
+            Client.set('email',                     account_list[loginid].email,                loginid);
+            Client.set('excluded_until',            account_list[loginid].excluded_until,       loginid);
+            Client.set('is_disabled',               account_list[loginid].is_disabled,          loginid);
+            Client.set('is_ico_only',               account_list[loginid].is_ico_only,          loginid);
+            Client.set('is_virtual',                account_list[loginid].is_virtual,           loginid);
+            Client.set('landing_company_shortcode', account_list[loginid].landing_company_name, loginid);
         });
 
         if (Client.isLoggedIn()) {
             GTM.setLoginFlag();
-            // Remove cookies that were set from the old code
+            Client.set('session_start', parseInt(moment().valueOf() / 1000));
+            // Remove cookies that were set by the old code
             Client.cleanupCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
         }
     };

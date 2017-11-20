@@ -47,20 +47,18 @@ const BinarySocketGeneral = (() => {
                     Client.sendLogoutRequest(is_active_tab);
                 } else if (response.authorize.loginid !== Client.get('loginid') && !Login.isLoginPages()) {
                     Client.sendLogoutRequest(true);
-                } else {
+                } else if (!Login.isLoginPages()) {
                     Client.responseAuthorize(response);
+                    BinarySocket.send({ balance: 1, subscribe: 1 });
+                    BinarySocket.send({ get_settings: 1 });
+                    BinarySocket.send({ get_account_status: 1 });
+                    BinarySocket.send({ payout_currencies: 1 });
+                    BinarySocket.send({ mt5_login_list: 1 });
                     setResidence(response.authorize.country || Client.get('residence'));
-                    if (!Login.isLoginPages()) {
-                        BinarySocket.send({ balance: 1, subscribe: 1 });
-                        BinarySocket.send({ get_settings: 1 });
-                        BinarySocket.send({ get_account_status: 1 });
-                        BinarySocket.send({ payout_currencies: 1 });
-                        BinarySocket.send({ mt5_login_list: 1 });
-                        if (!Client.get('is_virtual')) {
-                            BinarySocket.send({ get_self_exclusion: 1 });
-                        }
-                        BinarySocket.sendBuffered();
+                    if (!Client.get('is_virtual')) {
+                        BinarySocket.send({ get_self_exclusion: 1 });
                     }
+                    BinarySocket.sendBuffered();
                 }
                 break;
             case 'balance':
@@ -95,9 +93,7 @@ const BinarySocketGeneral = (() => {
     const setResidence = (residence) => {
         if (residence) {
             Client.set('residence', residence);
-            if (!Login.isLoginPages()) {
-                BinarySocket.send({ landing_company: residence });
-            }
+            BinarySocket.send({ landing_company: residence });
         }
     };
 
