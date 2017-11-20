@@ -567,6 +567,8 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="bitcoin-com"            timestamp="Nov 18, 2017"    headlines="PR: Binary.com Options Trading to Launch Initial Coin Offering (ICO) in q4 2017"  url="https://news.bitcoin.com/pr-binary-com-options-trading-announces-initial-coin-offering/" },
+                { logo="enews"                  timestamp="Nov 17, 2017"    headlines="Binary.com lanza su ICO"                     url="http://emprendedoresnews.com/criptomonedas/binary-com-lanza-ico.html" },
                 { logo="portal-do-branco"       timestamp="Nov 14, 2017"    headlines="ICO da Binary.com Começará em Poucas Horas"  url="https://portaldobitcoin.com/ico-da-binary-com-comecara-em-poucas-horas/" },
                 { logo="cripto"                 timestamp="Nov 14, 2017"    headlines="Binary.com: anuncia o lançamento da sua oferta inicial de moedas (ICO) em novembro"  url="https://www.criptomoedasfacil.com/binary-com-anuncia-o-lancamento-da-sua-oferta-inicial-de-moedas-ico-em-novembro/" },
                 { logo="coinstaker"             timestamp="Nov 13, 2017"    headlines="ICO: Binary.com – the Initial Coin Offering"                            url="https://www.coinstaker.com/binary.com-ico" },
