@@ -704,7 +704,14 @@
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How are the tokens offered?") %]</h4>
-                            <p>[% l("The tokens are offered via an auction process. View our [_1]guide[_2] to the token auction.", '<a class="howto-btn" href="javascript:;" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
+                            <p>[% l("The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price.") %]</p>
+                            <p>[% l("This means that you won’t have to tie up important funds in order to keep your bids active.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Do I need to pay a penalty for cancelling a bid?") %]</h4>
+                            <p>[% l("Not at all. You can cancel a bid at any time before the auction ends at no cost.") %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
