@@ -30,9 +30,11 @@ const ICOPortfolio = (() => {
     };
 
     const createPortfolioRow = (data, is_first) => {
-        const long_code  = data.longcode;
-        const ico_status = (State.getResponse('ico_status.ico_status') || '').toLowerCase();
-        // Default to cancel bid. Ended on a button doesn't make sense.
+        const long_code          = data.longcode;
+        const ico_status         = (State.getResponse('ico_status.ico_status') || '').toLowerCase();
+        const deposit_percentage = +((data.shortcode || '').split('_')[2] || State.getResponse('ico_status.initial_deposit_percentage'));
+        const deposit_factor     = (deposit_percentage || 5) / 100;
+
         let status_text = 'Ended';
         if (/unsuccessful/i.test(long_code)) {
             status_text = 'Refund Bid';
@@ -60,6 +62,7 @@ const ICOPortfolio = (() => {
             .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: shortcode[2] })))
             .append($('<td/>', { class: 'bid' }).append($('<strong/>', { html: formatMoney(data.currency, shortcode[1]) })))
             .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price) })))
+            .append($('<td/>', { class: 'deposit' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price * deposit_factor) })))
             .append($('<td/>', { class: 'details', text: long_code }))
             .append($('<td/>', { class: 'button' }).append($button)))
             .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));

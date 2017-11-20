@@ -21,11 +21,13 @@ const ICOSubscribe = (() => {
         min_bid,
         unit_price,
         min_bid_usd,
+        initial_deposit_percent,
         $form_error,
         $duration,
         $price,
         $total,
-        $price_per_unit;
+        $price_per_unit,
+        $payable_amount;
 
     const onLoad = () => {
         if (jpClient()) {
@@ -54,6 +56,7 @@ const ICOSubscribe = (() => {
                 ICOPortfolio.onLoad();
                 showContent();
             } else {
+                initial_deposit_percent = State.getResponse('ico_status.initial_deposit_percentage') || 5; // or 5%;
                 init();
             }
         });
@@ -80,6 +83,11 @@ const ICOSubscribe = (() => {
             $price          = $('#price');
             $total          = $('#total');
             $price_per_unit = $('#price_unit');
+            $payable_amount = $('#payable_amount');
+
+            //Set initial_deposit_percentage
+            $('.initial_deposit_percent').text(initial_deposit_percent);
+
             calculateTotal();
             const to_show = showContent();
             if (to_show !== 'ico_subscribe') {
@@ -102,7 +110,7 @@ const ICOSubscribe = (() => {
                     { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]], no_scroll: 1 },
 
                     { request_field: 'buy', value: 1 },
-                    { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
+                    { request_field: 'amount',        parent_node: 'parameters', value: () => `${document.getElementById('price').value}/${initial_deposit_percent}` },
                     { request_field: 'contract_type', parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'symbol',        parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'basis',         parent_node: 'parameters', value: 'stake' },
@@ -131,18 +139,22 @@ const ICOSubscribe = (() => {
         const price_val    = $price.val();
         let total          = 0;
         let usd_total      = 0;
+        let deposit_factor = initial_deposit_percent/100;
         if (duration_val && price_val) {
             total = +duration_val * +price_val;
         }
-        let content = `${formatMoney(currency, total)}`;
-        let content_unit_price = `${formatMoney(currency, +price_val)}`;
+        let content                = `${formatMoney(currency, total)}`;
+        let content_unit_price     = `${formatMoney(currency, +price_val)}`;
+        let content_payable_amount = `${formatMoney(currency, total * deposit_factor)}`
         if(unit_price && unit_price < Infinity && currency.toUpperCase() !== 'USD') {
             usd_total          = +unit_price * total;
             content            = `${content} / ${formatMoney('USD', usd_total)}`;
             // Price per unit
             content_unit_price = `${content_unit_price} / ${formatMoney('USD', unit_price * +price_val)}`;
+            content_payable_amount = `${content_payable_amount} / ${formatMoney('USD', usd_total * deposit_factor)}`
         }
 
+        $payable_amount.html(content_payable_amount);
         $price_per_unit.html(content_unit_price);
         $total.html(content);
         if (!$form_error) $form_error = $('#form_error');
