@@ -316,7 +316,7 @@ function initCountdown(start_epoch) {
         is_started      = calcRemainingTime(ico_end,   date_diff).total > 0 && !is_before_start;
         end_date        = is_before_start ? ico_start : ico_end;
 
-        const display_class = 'status-' + (is_before_start ? 'before-start' : is_started ? 'started' : 'ended');
+        const display_class = 'status-' + (is_started ? 'started' : 'ended');
         el_container.querySelectorAll('.status-toggle').forEach(function(el) {
             el.classList[el.classList.contains(display_class) ? 'remove' : 'add'](hidden_class);
         });

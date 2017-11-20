@@ -95,9 +95,6 @@
                         <div class="gr-row">
                             <div id="status_loading">[% INCLUDE global/loading.html.tt theme='white' %]</div>
                             <div id="status_container" class="gr-12 invisible">
-                                <div class="status-toggle status-before-start">
-                                    <h3 class="content-inverse-color">[% l("Token sale begins in") %]</h3>
-                                </div>
                                 <div class="status-toggle status-started">
                                     <h2 class="content-inverse-color text-uppercase">[% l("ICO is live, participate now!") %]</h2>
                                     <p class="intro-text">[% l("Token sale ends in") %]</p>
@@ -106,7 +103,7 @@
                                     <h3 class="content-inverse-color">[% l("The [_1] token sale has ended", broker_name) %]</h3>
                                     <p class="intro-subtext">[% l("See your winning bids and claim your tokens") %]</p>
                                 </div>
-                                <div class="status-toggle status-before-start status-started" id="countdown">
+                                <div class="status-toggle status-started" id="countdown">
                                     [% BLOCK arcs %]
                                         <span class="arcs">
                                             <span class="arc_q"></span>
@@ -129,8 +126,6 @@
                                         <span class="cd-label">[% item.text %]</span>
                                     </span>
                                     [% END %]
-                                </div>
-                                <div class="status-toggle status-before-start">
                                 </div>
                                 <div id="sign-up-section" class="invisible">
                                     <div class="signup-desc">
