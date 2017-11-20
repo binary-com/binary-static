@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-19 20:19-0500\n"
+"PO-Revision-Date: 2017-11-20 02:28-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: th\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: th_TH\n"
+
+msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
+msgstr ""
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API ของ %1\" หมายถึง ระบบของ %1 ที่ประกอบด้วย ชุดคำสั่งต่างๆ โปรโตคอลต่างๆ เครื่องมือต่างๆ และทรัพยากรต่างๆ ที่ถูกพัฒนาขึ้นและดำเนินการโดย %1 ซึ่งท่านสามารถใช้งานแอพพลิเคชันได้เพื่อเชื่อมต่อกับแพลตฟอร์มการซื้อขายของ %1"
@@ -240,8 +243,8 @@ msgstr "%1 ไม่ได้เข้าร่วมเป็นพันธม
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1ไม่มีอยู่ในคอสตาริกา และไม่ได้รับการกำกับดูแล หรือตรวจตราโดยเจ้าหน้าที่ที่มีอำนาจทางกฎหมายในระบบการเงินของคอสตาริกา"
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
-msgstr "%1 เสนอขาย <strong>10,000,000</strong> โทเค่นสำหรับการเปิดการประมูล ท่านสามารถเริ่มการเสนอราคาของท่านได้จากแบบฟอร์มด้านล่าง"
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='%2' target='_blank'>Learn more</a>"
+msgstr ""
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 เป็นเจ้าของและดำเนินการโดยกลุ่มบริษัท Binary Group Ltd สามารถหาข้อมูลเพิ่มเติมได้โดย <a href='%2'>เยี่ยมชมหน้าประวัติของเรา</a>"
@@ -1223,6 +1226,9 @@ msgstr "ท่านแน่ใจใช่ไหมที่จะลบโท
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "ท่านแน่ใจใช่ไหมที่จะยกเลิกการเข้าใช้ระบบถาวร"
 
+msgid "Are you sure you want to cancel the bid?"
+msgstr ""
+
 msgid "Are your site visitors interested in:"
 msgstr "ผู้เยี่ยมชมเว็บของท่านสนใจใน:"
 
@@ -1537,6 +1543,9 @@ msgstr "ราคาเสนอซื้อของโทเค่น (รา�
 
 msgid "Bid on the ICO:"
 msgstr "คำเสนอซื้อ ICO:"
+
+msgid "Bids can be cancelled at any time before the end of the auction at no cost."
+msgstr ""
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -2726,6 +2735,9 @@ msgstr "ข้อตกลงการหย่า"
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "ฉันต้องฝากเงินเพื่อเปิดบัญชีหรือไม่?"
 
+msgid "Do I need to pay a penalty for cancelling a bid?"
+msgstr ""
+
 msgid "Do I retain ownership of the code?"
 msgstr "ฉันยังคงมีกรรมสิทธิ์ในโปรแกรมหรือไม่?"
 
@@ -2860,9 +2872,6 @@ msgstr "1 EUR ต่อหน่วย"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "แต่ละฝ่ายจะต้องปฏิบัติในสิ่งที่เรียกร้องโดยอีกฝ่ายอย่างสมควรเพื่อให้เกิดผลตามข้อกำหนด และ/หรือเงื่อนไข และ/หรือข้อความในสัญญานี้"
-
-msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr "การยกเลิกการเสนอซื้อทุกครั้งจะมีค่าธรรมเนียมการยกเลิก 2%"
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "แต่ละสัญญาของไบนารีออปชั่นจะมีอายุระยะเวลาหนึ่ง – กับ %1 ท่านสามารถกำหนดระยะเวลาสัญญาระหว่าง 10 วินาที ไปถึง 365 วัน"
@@ -3936,9 +3945,6 @@ msgstr "ข้าพเจ้าแสดงเจตนารมณ์ ข้�
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "ข้าพเจ้ายินยอมว่า ข้าพเจ้าจะซื้อขายไบนารีออปชั่นโดยตรงโดยใช้การตัดสินใจของตัวเองและรับผิดชอบต่อผลขาดทุนซึ่งอาจจะเกิดขึ้นในธุรกรรม และอยู่ในขอบเขตที่ยอมรับได้ตามผลรวมของสินทรัพย์ทางการเงินของข้าพเจ้า"
 
-msgid "I agree to the cancellation fee stated above"
-msgstr "ฉันยินยอมต่อรายการค่าธรรมเนียมการยกเลิกที่ระบุไว้ข้างต้น"
-
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "ฉันยอมรับในข้อตกลงตามรายการเอกสารต่อไปนี้:"
 
@@ -4499,6 +4505,9 @@ msgstr "มรดก"
 
 msgid "Initial Coin Offering (ICO)"
 msgstr "การเสนอขายเหรียญครั้งแรก หรือ Initial Coin Offering (ICO)"
+
+msgid "Initial deposit required: "
+msgstr ""
 
 msgid "Input personal information"
 msgstr "ใส่ข้อมูลส่วนบุคคล"
@@ -6066,6 +6075,9 @@ msgstr "ไม่"
 msgid "Not FATCA*"
 msgstr "ไม่ใช่ FATCA*"
 
+msgid "Not at all. You can cancel a bid at any time before the auction ends at no cost."
+msgstr ""
+
 msgid "Note"
 msgstr "บันทึก"
 
@@ -6701,6 +6713,9 @@ msgstr "โปรดบันทึกผล %1แบบฟอร์มการ
 
 msgid "Please complete the tax information before proceeding."
 msgstr "โปรดบันทึกข้อมูลภาษีของท่านก่อนการดำเนินการต่อไป"
+
+msgid "Please confirm that you are a %1professional trader%2 to proceed."
+msgstr ""
 
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "กรุณายืนยันว่าคุณไม่ใช่บุคคลที่เกี่ยวข้องกับการเมือง"
@@ -8803,8 +8818,8 @@ msgstr "คำว่า 'เรา' 'ของเรา' 'บริษัท' �
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "คำว่า 'เรา' 'ของเรา' 'บริษัท' หรือ '%1' จะหมายถึง Binary (V) Ltd. หรือ Binary (C.R.) S.A. ขึ้นอยู่กับเขตพื้นที่ของบัญชีของลูกค้าที่ถูกแนบมาตามวิธีการเปิดบัญชีของเว็บไซต์"
 
-msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
-msgstr "โทเค่นจะถูกนำเสนอผ่านทางกระบวนการประมูล ดู%1แนวทาง%2สู่การประมูลโทเค่นของเรา"
+msgid "The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price."
+msgstr ""
 
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr "โทเค่นให้สิทธิ์แก่ผู้ถือที่จะรับเงินที่เชื่อมกับเงินปันผล และได้รับผลประโยชน์ทางเศรษฐกิจที่เทียบเท่ากับหุ้นสามัญ ดังนั้นจึงไม่มีเหตุผลที่สมเหตุสมผลใดๆ ที่ผู้ถือโทเค่นจะเปลี่ยนโทเค่นไปเป็นหุ้น"
@@ -9029,6 +9044,9 @@ msgstr "นี้ก็ผลงานชิ้นใหญ่อีกอัน
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "นี้คือราคาปัจจุบันที่ผลิตภัณฑ์อ้างอิงสามารถถูกซื้อ หรือ ขาย ณ เวลาใดๆ"
 
+msgid "This means that you won’t have to tie up important funds in order to keep your bids active."
+msgstr ""
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "ข้อสังเกตนี้ไม่ได้ชี้แจงความเสี่ยงที่เกี่ยวข้องทั้งหมดในการลงทุน หรือ ในผลิตภัณฑ์ที่ใกล้เคียงกัน หรือ ความเสี่ยงเหล่านั้นมีความสัมพันธ์อย่างไรกับกรณีของท่าน มันเป็นสิ่งสำคัญที่ท่านต้องมีความเข้าใจในความเสี่ยงต่างๆ อย่างถ่องแท้ ก่อนที่จะตัดสินใจในการซื้อ หรือ ขายผลิตภัณฑ์การลงทุนใดๆ หรือ ผลิตภัณฑ์เสี่ยงโชคกับเรา หากท่านมีข้อสงสัยใดๆ เกี่ยวกับความเสี่ยงในผลิตภัณฑ์เพื่อการลงทุนต่างๆ หรือ ผลิตภัณฑ์เสี่ยงโชคต่างๆ โปรดศึกษาข้อมูลและขอคำแนะนำจากผู้เชี่ยวชาญ"
 
@@ -9180,14 +9198,8 @@ msgstr "วันนี้ เราได้สร้างตัวเอง�
 msgid "Token"
 msgstr "โทเค่น"
 
-msgid "Token Sale Begins In"
-msgstr "การขายโทเค่นเริ่มใน"
-
 msgid "Token dividends"
 msgstr "เงินปันผลโทเค่น"
-
-msgid "Token sale begins in"
-msgstr "เริ่มระดมทุนเมื่อ"
 
 msgid "Token sale ends in"
 msgstr "สิ้นสุดการระดมทุนเมื่อ "
@@ -9200,6 +9212,9 @@ msgstr "โทเค่นให้สิทธิ์แก่ท่านที
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
 msgstr "โทเค่นได้ถูกนำเสนอให้กับลูกค้าของ %1 ผู้ที่มีบัญชีเงินจริงเท่านั้น โปรดเยี่ยมชม %2 www.binary.com %3 เพื่อเปิดบัญชี"
+
+msgid "Top up in cashier"
+msgstr ""
 
 msgid "Top-tier liquidity"
 msgstr "สภาพคล่องในระดับสูง"
@@ -10819,9 +10834,6 @@ msgstr "ท่านออกจากระบบโดยอัตโนมั
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "ท่านจะได้รับเครื่องมือทั้งหมดเพื่อแปลงธุรกรรมของท่านให้เป็นสายธารรายได้และกำไรแสนงาม"
 
-msgid "You will be subject to a 2% cancellation fee."
-msgstr "ท่านจะมีค่าธรรมเนียม 2% ในการยกเลิก"
-
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "อัตราแลกเปลี่ยนที่ท่านใช้จะเป็นไปตามโพซิชั่นเปิดไว้ถึง 23:59:59 GMT"
 
@@ -10857,6 +10869,9 @@ msgstr "ท่านได้กำไรเมื่อราคาตลาด
 
 msgid "You won't lose your shirt"
 msgstr "ท่านจะไม่เสียเสื้อเชิ้ตของท่าน"
+
+msgid "You're only required to deposit <span class=\"initial_deposit_percent\"></span>% of the total bid value for each bid. At the end of the auction, once the final price of the token is determined, you will be given two (2) weeks to pay the balance up to the final price. Bids can be cancelled at any time before the end of auction, without any penalty."
+msgstr ""
 
 msgid "You're using a Virtual Account."
 msgstr "ท่านกำลังใช้บัญชีเสมือน หรือ บัญชีทดลองใช้"
@@ -11280,9 +11295,6 @@ msgstr "วันนี้"
 
 msgid "today, Fridays"
 msgstr "วันนี้วันศุกร์"
-
-msgid "top up in cashier"
-msgstr "เติมเงิน"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "ขึ้น/ลง สัมผัส/ไม่สัมผัส อยู่ใน/อยู่นอก"
