@@ -38,10 +38,10 @@ const getSocketURL = () => {
         //         client_type = /^VRT/.test(loginid) ? categoryMap[1] : categoryMap[0];
         //     }
 
-            // const randomPercent = Math.random() * 100;
-            // if (randomPercent < toGreenPercent[client_type]) {
-            //     server = 'green';
-            // }
+        // const randomPercent = Math.random() * 100;
+        // if (randomPercent < toGreenPercent[client_type]) {
+        //     server = 'green';
+        // }
         // }
 
         // server_url = `${server}.binaryws.com`;

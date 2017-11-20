@@ -35,10 +35,9 @@ const Accounts = (() => {
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            const status     = State.getResponse('get_account_status.status');
             const currencies = getCurrencies(landing_company);
             // only allow opening of multi account to costarica clients with remaining currency
-            if (!/ico_only/.test(status) && Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
+            if (Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
                 populateMultiAccount(currencies);
             } else {
                 doneLoading(element_to_show);
@@ -92,8 +91,8 @@ const Accounts = (() => {
             });
     };
 
-    const getAvailableMarkets = (loginid) => {
-        if (Client.get('is_ico_only', loginid)) {
+    const getAvailableMarkets = (loginid, is_type_ico_only) => {
+        if (Client.get('is_ico_only', loginid) || is_type_ico_only) {
             return [localize('None')];
         }
         let legal_allowed_markets = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_markets') || '';
@@ -121,7 +120,7 @@ const Accounts = (() => {
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
                 .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 }, is_ico_only)}` })))
-                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
+                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }, is_ico_only) }))
                 .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
 
@@ -167,6 +166,7 @@ const Accounts = (() => {
                 loginid     : new_account.client_id,
                 token       : new_account.oauth_token,
                 redirect_url: urlFor('user/set-currency'),
+                is_ico_only : getPropertyValue(response, ['echo_req', 'account_type']) === 'ico',
             });
         }
     };
@@ -181,6 +181,7 @@ const Accounts = (() => {
         const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
         const req          = [
             { request_field: 'new_account_real',       value: 1 },
+            { request_field: 'account_type',           value: is_ico_only ? 'ico' : 'default' },
             { request_field: 'date_of_birth',          value: dob },
             { request_field: 'salutation',             value: get_settings.salutation },
             { request_field: 'first_name',             value: get_settings.first_name },

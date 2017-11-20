@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-15 03:11-0500\n"
+"PO-Revision-Date: 2017-11-19 20:19-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -4245,6 +4245,9 @@ msgstr "crwdns38723:0crwdne38723:0"
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
 msgstr "crwdns38724:0crwdne38724:0"
 
+msgid "If you’d like to participate in the %1 ICO, please fund your ICO account instead of your trading account."
+msgstr "crwdns41938:0%1crwdne41938:0"
+
 msgid "If:"
 msgstr "crwdns38725:0crwdne38725:0"
 
@@ -6791,6 +6794,9 @@ msgstr "crwdns41927:0crwdne41927:0"
 
 msgid "Please select your ICO account to proceed."
 msgstr "crwdns41922:0crwdne41922:0"
+
+msgid "Please select your real money account to proceed."
+msgstr "crwdns41939:0crwdne41939:0"
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "crwdns39503:0%1ccrwdnd39503:0%2crwdne39503:0"
@@ -12919,8 +12925,8 @@ msgstr "crwdns41380:0{JAPAN ONLY}crwdne41380:0"
 msgid "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "crwdns41381:0{JAPAN ONLY}crwdne41381:0"
 
-msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
-msgstr "crwdns41382:0{JAPAN ONLY}crwdne41382:0"
+msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=%1>opens and trades a real money account.</a>"
+msgstr "crwdns41937:0{JAPAN ONLY}crwdnd41937:0%1crwdne41937:0"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr "crwdns41383:0{JAPAN ONLY}crwdne41383:0"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-15 03:09-0500\n"
+"PO-Revision-Date: 2017-11-19 20:17-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -4246,6 +4246,9 @@ msgstr "Wir werden eine offene Position mit dem größten Verlust schließen, we
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
 msgstr "Ihre nächste Order wird gelöscht, wenn sich Ihr Margin Level noch immer unter dem Stop Out Level befindet. Allerdings werden Order ohne Margin Anforderungen nicht gelöscht."
 
+msgid "If you’d like to participate in the %1 ICO, please fund your ICO account instead of your trading account."
+msgstr "Wenn Sie am %1 ICO teilnehmen möchten, zahlen Sie bitte auf Ihr ICO-Konto anstatt auf Ihr Handelskonto ein."
+
 msgid "If:"
 msgstr "Wenn:"
 
@@ -6793,6 +6796,9 @@ msgstr "Bitte wählen Sie die Art des Kontos, das Sie erstellen möchten."
 msgid "Please select your ICO account to proceed."
 msgstr "Bitte wählen Sie Ihr ICO-Konto um fortzufahren."
 
+msgid "Please select your real money account to proceed."
+msgstr ""
+
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "Bitte legen Sie ein %1Wohnsitzland%2 fest, bevor Sie auf ein Echtgeldkonto aufrüsten."
 
@@ -9128,13 +9134,13 @@ msgid "To open a trading account, our customers must confirm they fully understa
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 
 msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission."
-msgstr ""
+msgstr "Zur Teilnahme am Binary.com ICO, müssen Sie ein separates Konto eröffnen. Indem Sie fortfahren bestätigen Sie, dass Sie ein anderes Konto erstellen, das nicht unter der Jurisdiktion der Isle of Man Gambling Supervision Commission ist."
 
 msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Financial Services Authority."
-msgstr ""
+msgstr "Zur Teilnahme am Binary.com ICO, müssen Sie ein separates Konto eröffnen. Indem Sie fortfahren bestätigen Sie, dass Sie ein anderes Konto erstellen, das nicht unter der Jurisdiktion der Malta Financial Services Authority ist."
 
 msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Gaming Authority."
-msgstr ""
+msgstr "Zur Teilnahme am Binary.com ICO, müssen Sie ein separates Konto eröffnen. Indem Sie fortfahren bestätigen Sie, dass Sie ein anderes Konto erstellen, das nicht unter der Jurisdiktion der Malta Gaming Authority ist."
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "Um diese Aktion durchzuführen, bessern Sie bitte <a href=\"%1\">auf ein %2 Echtes Konto</a> auf."
@@ -10361,13 +10367,13 @@ msgid "Withdrawal of funds from your Real Account must be made in the same curre
 msgstr "Abhebungen von Geldern von Ihrem Echtgeldkonto, müssen in der selben Währung durchgeführt werden, die in Ihrem Binären Optionen Echtgeldkonto beibehalten wird."
 
 msgid "Withdrawal: %1 working day"
-msgstr ""
+msgstr "Behebung: %1 Werktag"
 
 msgid "Withdrawal: Not Applicable"
-msgstr ""
+msgstr "Behebung: Nicht Anwendbar"
 
 msgid "Withdrawal: Not applicable"
-msgstr ""
+msgstr "Behebung: Nicht anwendbar"
 
 msgid "Without prejudice to any other terms of this Agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to you in relation to any loss that you incurred whether directly or indirectly by any cause beyond our control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 Trading Platform or any systems or network links."
 msgstr "Ohne Vorurteil gegen eine Bedingung in dieser Vereinbarung, soll(en) weder das Unternehmen noch seine Direktoren, leitenden Angestellten, Manager, Angestellten oder Agenten Ihnen gegenüber in Verbindung mit jeglichem Verlust, den Sie erleiden, ob direkt oder indirekt von einer Ursache außerhalb unserer Kontrolle, einschließlich aber nicht ausschließlich durch Verzug, oder Mangel, oder durch Ausfall der gesamten, oder eines Teils der MT5 Handelsplattform, oder der Systeme, oder der Netzwerklinks, haftbar sein."
@@ -12924,8 +12930,8 @@ msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to 
 msgid "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 
-msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
-msgstr "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
+msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=%1>opens and trades a real money account.</a>"
+msgstr "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=%1>opens and trades a real money account.</a>"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."

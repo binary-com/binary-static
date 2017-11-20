@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-15 03:10-0500\n"
+"PO-Revision-Date: 2017-11-19 20:18-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -4247,6 +4247,9 @@ msgstr "如果您的保证金水平仍处于强制平仓水平，我们将对损
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
 msgstr "如果您的保证金水平仍处于强制平仓水平，您的下一个订单将被删除。然而，没有保证金要求的订单将不会被删除。"
 
+msgid "If you’d like to participate in the %1 ICO, please fund your ICO account instead of your trading account."
+msgstr "如要参与 %1 ICO, 请把资金存入您的 ICO账户, 而不是交易账户。"
+
 msgid "If:"
 msgstr "如："
 
@@ -6794,6 +6797,9 @@ msgstr "请选择您要开立的账户类型。"
 msgid "Please select your ICO account to proceed."
 msgstr "请选择您的ICO账户继续操作。"
 
+msgid "Please select your real money account to proceed."
+msgstr "请选择您的真实资金账户继续操作。"
+
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "升级到真实资金账户前请先设置%1居住国%2。"
 
@@ -9129,13 +9135,13 @@ msgid "To open a trading account, our customers must confirm they fully understa
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 
 msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission."
-msgstr ""
+msgstr "要参与Binary.com ICO, 您必须另外开立一个账户。继续此操作的同时，您确认开立一个不受马恩岛赌博监督委员会监管的账户 。"
 
 msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Financial Services Authority."
-msgstr ""
+msgstr "要参与Binary.com ICO, 您必须另外开立一个账户。继续此操作的同时，您确认开立一个不受马耳他金融服务管理局监管的账户 。"
 
 msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Gaming Authority."
-msgstr ""
+msgstr "要参与Binary.com ICO, 您必须另外开立一个账户。继续此操作的同时，您确认开立一个不受马耳他博彩管理局监管的账户 。"
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "如要执行此操作，请<a href=\"%1\">升级到 %2 真实账户</a>。"
@@ -12922,8 +12928,8 @@ msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to 
 msgid "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 
-msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
-msgstr "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
+msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=%1>opens and trades a real money account.</a>"
+msgstr "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=%1>opens and trades a real money account.</a>"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
