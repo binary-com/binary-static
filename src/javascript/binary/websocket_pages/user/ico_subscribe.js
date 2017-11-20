@@ -84,7 +84,7 @@ const ICOSubscribe = (() => {
             $price_per_unit = $('#price_unit');
             $payable_amount = $('#payable_amount');
 
-            //Set initial_deposit_percentage
+            // Set initial_deposit_percentage
             $('.initial_deposit_percent').text(initial_deposit_percent);
 
             calculateTotal();
@@ -138,19 +138,19 @@ const ICOSubscribe = (() => {
         const price_val    = $price.val();
         let total          = 0;
         let usd_total      = 0;
-        let deposit_factor = initial_deposit_percent/100;
+        const deposit_factor = initial_deposit_percent/100;
         if (duration_val && price_val) {
             total = +duration_val * +price_val;
         }
         let content                = `${formatMoney(currency, total)}`;
         let content_unit_price     = `${formatMoney(currency, +price_val)}`;
-        let content_payable_amount = `${formatMoney(currency, total * deposit_factor)}`
+        let content_payable_amount = `${formatMoney(currency, total * deposit_factor)}`;
         if(unit_price && unit_price < Infinity && currency.toUpperCase() !== 'USD') {
             usd_total          = +unit_price * total;
             content            = `${content} / ${formatMoney('USD', usd_total)}`;
             // Price per unit
             content_unit_price = `${content_unit_price} / ${formatMoney('USD', unit_price * +price_val)}`;
-            content_payable_amount = `${content_payable_amount} / ${formatMoney('USD', usd_total * deposit_factor)}`
+            content_payable_amount = `${content_payable_amount} / ${formatMoney('USD', usd_total * deposit_factor)}`;
         }
 
         $payable_amount.html(content_payable_amount);
