@@ -52,7 +52,6 @@ const ICOSubscribe = (() => {
         BinarySocket.wait('ico_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             if (State.getResponse('ico_status.ico_status') === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
-                ICOcountDown();
                 ICOPortfolio.onLoad();
                 showContent();
             } else {
@@ -159,36 +158,6 @@ const ICOSubscribe = (() => {
         $total.html(content);
         if (!$form_error) $form_error = $('#form_error');
         $form_error.setVisibility(0);
-    };
-
-    const ICOcountDown = () => {
-        const timer = $('.timer');
-        const days = timer.find('.time .days');
-        const hours = timer.find('.time .hours');
-        const minutes = timer.find('.time .minutes');
-        const seconds = timer.find('.time .seconds');
-        const timerID = window.setInterval(() => {
-            const start_time = 1510704000;
-            const current_time = window.time.unix();
-            const time_left = start_time - current_time;
-            if(time_left >= 0) {
-                const s = (`0${  time_left % 60}`).slice(-2);
-                const m = (`0${  Math.floor(time_left/ 60) % 60}`).slice(-2);
-                const h = (`0${  Math.floor(time_left / 3600) % 24}`).slice(-2);
-                const d = (`0${  Math.floor(time_left / (3600 * 24))}`).slice(-2);
-                days.text(d);
-                hours.text(h);
-                minutes.text(m);
-                seconds.text(s);
-                timer.setVisibility(1); // Make the timer visible.
-                // Force reload in case some-one's on the page and watching the timer.
-                if(time_left === 0) {
-                    setTimeout(() => window.location.reload(), 500);
-                }
-            } else {
-                window.clearInterval(timerID);
-            }
-        }, 1000);
     };
 
     const handleResponse = (response) => {
