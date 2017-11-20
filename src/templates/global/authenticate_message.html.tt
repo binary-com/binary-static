@@ -47,11 +47,11 @@
                                         <div class="gr-row form-row center-text-m">
                                             <div class="gr-6 gr-12-m">
                                                 <input id="front_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
-                                                <label for="front_file[% loop.count %]" class="button">[% l('Front Side') %] </button>
+                                                <label for="front_file[% loop.count %]" class="button">[% l('Front Side') %] <span class="add" /></button>
                                             </div>
                                             <div class="gr-6 gr-12-m">
                                                 <input id="back_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
-                                                <label for="back_file[% loop.count %]" class="button">[% l('Reverse Side') %] </button>
+                                                <label for="back_file[% loop.count %]" class="button">[% l('Reverse Side') %] <span class="add" /></button>
                                             </div>
                                         </div>
                                     [% END %]
@@ -59,7 +59,7 @@
                                         <div class="gr-row form-row gr-centered">
                                             <div class="gr-12">
                                                 <input id="add_file[% loop.count %]" class="file-picker" type="file" accept=".jpg, .jpeg, .gif, .png, .pdf" data-type="[% document.value %]">
-                                                <label for="add_file[% loop.count %]" class="button">[% l('Add') %] </button>
+                                                <label for="add_file[% loop.count %]" class="button">[% l('Add') %] <span class="add" /></button>
                                             </div>
                                         </div>
                                     [% END %]
