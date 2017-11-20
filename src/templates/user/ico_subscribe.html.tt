@@ -165,9 +165,9 @@
     </a>
 </div>
 
-[% #<div class="invisible" id="ico_professional_message">
-    #<p>[ % l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") % ]</p>
-#</div> %]
+<div class="invisible" id="ico_professional_message">
+    <p>[% l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") %]</p>
+</div>
 <div class="invisible" id="ico_virtual_message">
     <p>[% l("Unable to create ICO account while virtual account is selected. Please select your real money account and try again.") %]</p>
 </div>
