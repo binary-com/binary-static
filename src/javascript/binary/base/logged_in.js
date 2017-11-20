@@ -1,5 +1,6 @@
 const Cookies            = require('js-cookie');
 const moment             = require('moment');
+const BinaryPjax         = require('./binary_pjax');
 const Client             = require('./client');
 const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
@@ -41,7 +42,7 @@ const LoggedInHandler = (() => {
             }
         }
         document.getElementById('loading_link').setAttribute('href', redirect_url);
-        window.location.href = redirect_url; // need to redirect not using pjax
+        BinaryPjax.load(redirect_url);
     };
 
     const storeClientAccounts = (account_list) => {
@@ -73,10 +74,10 @@ const LoggedInHandler = (() => {
             Client.set('residence',                 account_list[loginid].country,              loginid);
             Client.set('email',                     account_list[loginid].email,                loginid);
             Client.set('excluded_until',            account_list[loginid].excluded_until,       loginid);
+            Client.set('landing_company_shortcode', account_list[loginid].landing_company_name, loginid);
             Client.set('is_disabled',               account_list[loginid].is_disabled,          loginid);
             Client.set('is_ico_only',               account_list[loginid].is_ico_only,          loginid);
             Client.set('is_virtual',                account_list[loginid].is_virtual,           loginid);
-            Client.set('landing_company_shortcode', account_list[loginid].landing_company_name, loginid);
         });
 
         if (Client.isLoggedIn()) {
