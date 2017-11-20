@@ -94,14 +94,12 @@ window.onload = function() {
         document.location = urlForLanguage(lang);
     });
 
-    for (let i = 0; i < 2; i++) {
-        document.getElementsByClassName('howto-btn')[i].addEventListener('click', function(e) {
-            e.preventDefault();
-            const open_link    = window.open();
-            open_link.opener   = null;
-            open_link.location = getDocumentUrl(language.toLowerCase());
-        });
-    }
+    document.getElementsByClassName('howto-btn')[0].addEventListener('click', function(e) {
+        e.preventDefault();
+        const open_link    = window.open();
+        open_link.opener   = null;
+        open_link.location = getDocumentUrl(language.toLowerCase());
+    });
 
     document.getElementById('token-btn').addEventListener('click', function(e) {
         e.preventDefault();
@@ -318,7 +316,7 @@ function initCountdown(start_epoch) {
         is_started      = calcRemainingTime(ico_end,   date_diff).total > 0 && !is_before_start;
         end_date        = is_before_start ? ico_start : ico_end;
 
-        const display_class = 'status-' + (is_before_start ? 'before-start' : is_started ? 'started' : 'ended');
+        const display_class = 'status-' + (is_started ? 'started' : 'ended');
         el_container.querySelectorAll('.status-toggle').forEach(function(el) {
             el.classList[el.classList.contains(display_class) ? 'remove' : 'add'](hidden_class);
         });
