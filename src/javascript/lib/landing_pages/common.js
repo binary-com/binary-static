@@ -77,7 +77,10 @@ function getLanguage() {
 }
 
 function wsConnect() {
-    return new WebSocket('wss://frontend.binaryws.com/websockets/v3?app_id=1&l=' + getLanguage());
+    const app_id     = localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
+    const server_url = localStorage.getItem('config.server_url') || 'frontend.binaryws.com';
+
+    return new WebSocket(`wss://${server_url}/websockets/v3?app_id=${app_id}&l=${getLanguage()}`);
 }
 
 function wsSend(ws, request) {
