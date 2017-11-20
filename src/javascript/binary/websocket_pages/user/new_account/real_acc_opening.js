@@ -19,7 +19,7 @@ const RealAccOpening = (() => {
                 const form_id = '#frm_real';
                 AccountOpening.populateForm(form_id,
                     () => AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id))
-                        , false, account_type_ico);
+                    , false, account_type_ico);
 
                 FormManager.handleSubmit({
                     form_selector       : form_id,
