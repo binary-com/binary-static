@@ -386,9 +386,6 @@ body #not_authenticated_financial ul.checked > li {
                 height: 1em;
                 margin-left: 10px;
 
-                &.add {
-                    background: url('../images/pages/authenticate/add.svg') no-repeat;
-                }
                 &.remove {
                     background: url('../images/pages/authenticate/remove.svg') no-repeat;
                 }
