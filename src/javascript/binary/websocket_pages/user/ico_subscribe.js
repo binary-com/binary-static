@@ -21,11 +21,13 @@ const ICOSubscribe = (() => {
         min_bid,
         unit_price,
         min_bid_usd,
+        initial_deposit_percent,
         $form_error,
         $duration,
         $price,
         $total,
-        $price_per_unit;
+        $price_per_unit,
+        $payable_amount;
 
     const onLoad = () => {
         if (jpClient()) {
@@ -50,10 +52,10 @@ const ICOSubscribe = (() => {
         BinarySocket.wait('ico_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             if (State.getResponse('ico_status.ico_status') === 'closed') {
                 $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
-                ICOcountDown();
                 ICOPortfolio.onLoad();
                 showContent();
             } else {
+                initial_deposit_percent = +(State.getResponse('ico_status.initial_deposit_percentage'));
                 init();
             }
         });
@@ -80,6 +82,11 @@ const ICOSubscribe = (() => {
             $price          = $('#price');
             $total          = $('#total');
             $price_per_unit = $('#price_unit');
+            $payable_amount = $('#payable_amount');
+
+            // Set initial_deposit_percentage
+            $('.initial_deposit_percent').text(initial_deposit_percent);
+
             calculateTotal();
             const to_show = showContent();
             if (to_show !== 'ico_subscribe') {
@@ -98,11 +105,11 @@ const ICOSubscribe = (() => {
                 $form_error          = $('#form_error');
 
                 FormManager.init(form_id, [
-                    { selector: '#duration', validations: ['req', ['number', { min: 25, max: 10000000 }]], parent_node: 'parameters' },
-                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]] },
+                    { selector: '#duration', validations: ['req', ['number', { min: 25, max: 10000000 }]], parent_node: 'parameters', no_scroll: 1 },
+                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]], no_scroll: 1 },
 
                     { request_field: 'buy', value: 1 },
-                    { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
+                    { request_field: 'amount',        parent_node: 'parameters', value: () => +document.getElementById('price').value * (initial_deposit_percent / 100) },
                     { request_field: 'contract_type', parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'symbol',        parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'basis',         parent_node: 'parameters', value: 'stake' },
@@ -131,52 +138,26 @@ const ICOSubscribe = (() => {
         const price_val    = $price.val();
         let total          = 0;
         let usd_total      = 0;
+        const deposit_factor = initial_deposit_percent/100;
         if (duration_val && price_val) {
             total = +duration_val * +price_val;
         }
-        let content = `${formatMoney(currency, total)}`;
-        let content_unit_price = `${formatMoney(currency, +price_val)}`;
+        let content                = `${formatMoney(currency, total)}`;
+        let content_unit_price     = `${formatMoney(currency, +price_val)}`;
+        let content_payable_amount = `${formatMoney(currency, total * deposit_factor)}`;
         if(unit_price && unit_price < Infinity && currency.toUpperCase() !== 'USD') {
             usd_total          = +unit_price * total;
             content            = `${content} / ${formatMoney('USD', usd_total)}`;
             // Price per unit
             content_unit_price = `${content_unit_price} / ${formatMoney('USD', unit_price * +price_val)}`;
+            content_payable_amount = `${content_payable_amount} / ${formatMoney('USD', usd_total * deposit_factor)}`;
         }
 
+        $payable_amount.html(content_payable_amount);
         $price_per_unit.html(content_unit_price);
         $total.html(content);
         if (!$form_error) $form_error = $('#form_error');
         $form_error.setVisibility(0);
-    };
-
-    const ICOcountDown = () => {
-        const timer = $('.timer');
-        const days = timer.find('.time .days');
-        const hours = timer.find('.time .hours');
-        const minutes = timer.find('.time .minutes');
-        const seconds = timer.find('.time .seconds');
-        const timerID = window.setInterval(() => {
-            const start_time = 1510704000;
-            const current_time = window.time.unix();
-            const time_left = start_time - current_time;
-            if(time_left >= 0) {
-                const s = (`0${  time_left % 60}`).slice(-2);
-                const m = (`0${  Math.floor(time_left/ 60) % 60}`).slice(-2);
-                const h = (`0${  Math.floor(time_left / 3600) % 24}`).slice(-2);
-                const d = (`0${  Math.floor(time_left / (3600 * 24))}`).slice(-2);
-                days.text(d);
-                hours.text(h);
-                minutes.text(m);
-                seconds.text(s);
-                timer.setVisibility(1); // Make the timer visible.
-                // Force reload in case some-one's on the page and watching the timer.
-                if(time_left === 0) {
-                    setTimeout(() => window.location.reload(), 500);
-                }
-            } else {
-                window.clearInterval(timerID);
-            }
-        }, 1000);
     };
 
     const handleResponse = (response) => {
@@ -194,15 +175,19 @@ const ICOSubscribe = (() => {
         $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
-            // TODO: replace hardcoded list with ico_professional_countries list when API changes are done
-            // if(/au|ca|ch|nz|sg/.test(Client.get('residence'))
-            //     && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
-            //     to_show = 'ico_professional_message';
-            // } else {
-            to_show = 'ico_subscribe';
-            // }
+            const arr_professional_required_countries = State.getResponse('ico_status.ico_countries_config.professional');
+            if (arr_professional_required_countries && arr_professional_required_countries.indexOf(Client.get('residence')) > -1
+                && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
+                to_show = 'ico_professional_message';
+            } else {
+                to_show = 'ico_subscribe';
+            }
         } else if (Client.hasCostaricaAccount()) {
-            to_show = 'ico_account_message';
+            if(Client.canOpenICO()) {
+                to_show = 'ico_account_message';
+            } else {
+                to_show = 'ico_account_message_real';
+            }
         } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
             if(Client.isAccountOfType('virtual') && (Client.hasAccountType('gaming')
                 || Client.hasAccountType('financial') || Client.hasAccountType('real'))){

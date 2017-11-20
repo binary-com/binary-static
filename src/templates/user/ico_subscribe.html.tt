@@ -4,9 +4,8 @@
 <h1>[% l('[_1] Initial Coin Offering (ICO)', website_name) %]</h1>
 
 <div id="ico_subscribe" class="invisible">
-    <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below.", website_name) %]</p>
-    <p id="minimum_bid"></p>
-    <p><a class="button" href="[% request.url_for('ico') %]" target="_blank"><span>[% l('Learn more') %]</span></a></p>
+    <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='[_2]' target='_blank'>Learn more</a>", website_name, request.url_for('ico')) %]</p>
+    <p>[% l('You\'re only required to deposit <span class="initial_deposit_percent"></span>% of the total bid value for each bid. At the end of the auction, once the final price of the token is determined, you will be given two (2) weeks to pay the balance up to the final price. Bids can be cancelled at any time before the end of auction, without any penalty.') %]</p>
     <div class="gr-row">
         <div class="gr-7 gr-12-p gr-12-m">
             <a href="#auction" class="no-ajax">
@@ -15,11 +14,10 @@
         </div>
         <div class="gr-5 gr-12-p gr-12-m border-gray border-radius">
             <form id="frm_ico_bid">
-                <div class="gr-row fill-bg-color gr-padding-10 border-radius">
-                    <h3 class="gr-5 no-margin">[% l('Bid on the ICO:') %]</h3>
-                    <div class="gr-7 hint align-end">
-                        <span class="currency"></span> [% l('Balance:') %]
-                        <strong class="topMenuBalance"></strong>
+                <div class="gr-row fill-bg-color border-radius">
+                    <div class="gr-12 gr-padding-10">
+                        <h3 class="no-margin">[% l('Bid on the ICO:') %]</h3>
+                        <p class="no-margin" id="minimum_bid"></p>
                     </div>
                 </div>
                 <div class="gr-row center-text-m">
@@ -48,74 +46,34 @@
                         </div>
                     </div>
                 </div>
-                <div class="gr-12 align-end hint">[% l("Price per unit:") %] <span id="price_unit"></span></div>
-                <div class="gr-12 align-end hint">[% l("Total:") %] <span id="total"></span></div>
+                <div class="gr-12 align-start hint no-padding">[% l("Price per unit:") %] <span id="price_unit"></span></div>
+                <div class="gr-12 align-start hint no-padding">[% l("Total:") %] <span id="total"></span></div>
+                [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-10' invisible=1 %]
+                <div class="gr-12 align-start hint no-padding">
+                    [% l('Initial deposit required: ') %]
+                    <strong id="payable_amount"></strong>
+                    <span class="deposit">
+                        [% l(' (<span class="initial_deposit_percent"></span>% of total amount)') %]
+                    </span>
+                </div>
                 <div class="center-text">
                     <div id="form_error" class="error-msg invisible"></div>
                     <div class="gr-padding-10">
                         <button id="btn_submit" type="submit">[% l('Place bid') %]</button>
                         <div class="gr-row invisible hint" id="topup_wrapper">
                             <div class="gr-8 align-start error-msg">[% l('You have insufficient funds in your account.') %]</div>
-                            <div class="gr-4 align-end"><a href="[% request.url_for('/cashier/forwardws') %]#deposit">[% l('top up in cashier') %]</a></div>
+                            <div class="gr-4 align-end"><a href="[% request.url_for('/cashier/forwardws') %]#deposit">[% l('Top up in cashier') %]</a></div>
                         </div>
                     </div>
                 </div>
             </form>
-            [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-10' invisible=1 %]
-            <div class="timer invisible center-text gr-gutter-left gr-no-gutter-right">
-                <h3 class="gr-gutter-right">[% l('Token Sale Begins In') %]</h3>
-                <div class="time gr-row">
-                    <div class="gr-2">
-                        <h1 class="days">00</h1>
-                    </div>
-                    <div class="gr-1">
-                        <h1 class="primary-color">:</h1>
-                    </div>
-                    <div class="gr-2">
-                        <h1 class="hours">00</h1>
-                    </div>
-                    <div class="gr-1">
-                        <h1 class="primary-color">:</h1>
-                    </div>
-                    <div class="gr-2">
-                        <h1 class="minutes">00</h1>
-                    </div>
-                    <div class="gr-1">
-                        <h1 class="primary-color">:</h1>
-                    </div>
-                    <div class="gr-2">
-                        <h1 class="seconds">00</h1>
-                    </div>
-                </div>
-                <div class="text gr-row">
-                    <div class="gr-2">
-                        <span>[% l('Days') %]</span>
-                    </div>
-                    <div class="gr-1">
-                    </div>
-                    <div class="gr-2">
-                        <span>[% l('Hours') %]</span>
-                    </div>
-                    <div class="gr-1">
-                    </div>
-                    <div class="gr-2">
-                        <span>[% l('Minutes') %]</span>
-                    </div>
-                    <div class="gr-1">
-                    </div>
-                    <div class="gr-2">
-                        <span>[% l('Seconds') %]</span>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
     [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-20' invisible=1 %]
     <div id="ico_bids">
-        <h1>
-            <span>[% l('[_1] ICO Auction Bids', website_name) %]</span>
-            <div class="invisible" id="view_ico_info">
+        <div class="gr-row">
+            <h1 class="gr-7">[% l('[_1] ICO Auction Bids', website_name) %]</h1>
+            <div class="gr-5 align-end invisible" id="view_ico_info">
                 <a class="button" href="[% request.url_for('user/ico-info') %]">
                     <span>
                         <img src="[% request.url_for('images/ico/icons/bar_chart.svg') %]">
@@ -123,7 +81,7 @@
                     </span>
                 </a>
             </div>
-        </h1>
+        </div>
         [% PROCESS components/elements.html.tt %]
 
         <div id="portfolio">
@@ -143,6 +101,7 @@
                             { class='payout nowrap', text=l('No. of Tokens') },
                             { class='bid',           text=l('Bid Price Per Token') },
                             { class='purchase',      text=l('Total Bid Price') },
+                            { class='deposit',      text=l('Deposit') },
                             { class='details',       text=l('Status') },
                             { class='button',        text='' },
                         ],
@@ -151,10 +110,11 @@
             </div>
         </div>
     </div>
+    [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-10' invisible=1 %]
     <div class="faded">
-        <p>[% l('Notes:') %]</p>
+        <p class="no-margin">[% l('Notes:') %]</p>
         <ol>
-            <li>[% l('Each bid cancellation will be subject to a 2% cancellation fee.') %]</li>
+            <li>[% l('Bids can be cancelled at any time before the end of the auction at no cost.') %]</li>
             <li>[% l('Unsuccessful bidders will receive a full refund.') %]</li>
         </ol>
     </div>
@@ -165,15 +125,19 @@
     </a>
 </div>
 
-[% #<div class="invisible" id="ico_professional_message">
-    #<p>[ % l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") % ]</p>
-#</div> %]
+<div class="invisible" id="ico_professional_message">
+    <p>[% l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") %]</p>
+</div>
 <div class="invisible" id="ico_virtual_message">
     <p>[% l("Unable to create ICO account while virtual account is selected. Please select your real money account and try again.") %]</p>
 </div>
 
 <div class="invisible" id="ico_account_message">
     <p>[% l("Please select your ICO account to proceed.") %]</p>
+</div>
+
+<div class="invisible" id="ico_account_message_real">
+    <p>[% l("Please select your real money account to proceed.") %]</p>
 </div>
 
 <div class="invisible" id="ico_new_account_message">
@@ -197,14 +161,8 @@
         <div class="gr-gutter">
             <div class="gr-gutter">
                 <h1>[% l("Cancel bid?") %]</h1>
-                <p class="gr-padding-10 gr-child no-margin">[% l("You will be subject to a 2% cancellation fee.") %]</p>
+                <p class="gr-padding-10 gr-child">[% l("Are you sure you want to cancel the bid?") %]</p>
                 <form id="frm_confirm">
-                    <div class="gr-row ">
-                        <div class="gr-12-m gr-padding-20 gr-centered">
-                            <input id="chk_confirm" type="checkbox">
-                            <label for="chk_confirm">[% l("I agree to the cancellation fee stated above") %]</label>
-                        <div class="error-msg invisible"></div></div>
-                    </div>
                     <div class="center-text gr-centered">
                         <button class="button" type="submit">[% l("Yes, cancel my bid") %]</button>
                         <a class="button-secondary" id="cancel" href="javascript:;"><span>[% l("No, return to the ICO auction page") %]</span></a>

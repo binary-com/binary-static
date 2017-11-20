@@ -15,8 +15,8 @@ const Authenticate = (() => {
             } else {
                 const get_account_status  = response.get_account_status;
                 const should_authenticate = +get_account_status.prompt_client_to_authenticate;
+                const status = get_account_status.status;
                 if (should_authenticate) {
-                    const status = get_account_status.status;
                     if (!/authenticated/.test(status)) {
                         init();
                         $('#not_authenticated').setVisibility(1);
@@ -31,8 +31,10 @@ const Authenticate = (() => {
                     } else if (!/age_verification/.test(status)) {
                         $('#needs_age_verification').setVisibility(1);
                     }
-                } else {
+                } else if (/authenticated/.test(status)) {
                     $('#fully_authenticated').setVisibility(1);
+                } else {
+                    window.location.href = Client.defaultRedirectUrl();
                 }
             }
         });

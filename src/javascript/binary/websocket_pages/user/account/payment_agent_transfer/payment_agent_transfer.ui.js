@@ -36,16 +36,16 @@ const PaymentAgentTransferUI = (() => {
     const updateConfirmView = (username, loginid, amount, currency) => {
         $confirm_transfer
             .find('#user_name')
-                .empty()
-                .text(username)
+            .empty()
+            .text(username)
             .end()
             .find('#loginid')
-                .empty()
-                .text(loginid)
+            .empty()
+            .text(loginid)
             .end()
             .find('#confirm_amount')
-                .empty()
-                .text(`${currency} ${amount}`);
+            .empty()
+            .text(`${currency} ${amount}`);
     };
 
     const updateDoneView = (from_id, to_id, amount, currency) => {
