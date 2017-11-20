@@ -55,7 +55,7 @@ const ICOSubscribe = (() => {
                 ICOPortfolio.onLoad();
                 showContent();
             } else {
-                initial_deposit_percent = State.getResponse('ico_status.initial_deposit_percentage') || 5; // or 5%;
+                initial_deposit_percent = +(State.getResponse('ico_status.initial_deposit_percentage'));
                 init();
             }
         });
