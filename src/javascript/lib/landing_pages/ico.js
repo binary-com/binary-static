@@ -529,11 +529,11 @@ function openSubscribeLink(link) {
 }
 
 function getDocumentUrl(lang = 'en') {
-    return `https://ico_documents.binary.com/howto_ico${/^(ru|id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+    return `https://ico_documents.binary.com/howto_ico${/^(ru|id|pt)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }
 
 function getTokenRatingReportUrl(lang = 'en') {
-    return `https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+    return `https://ico_documents.binary.com/research/tokenrating/tokenrating_research_report${/^(id|de)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }
 
 function getLykkeReport(lang = 'en') {

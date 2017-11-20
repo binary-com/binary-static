@@ -218,7 +218,7 @@ const Durations_Beta = (() => {
         let unit_value       = Defaults.get('duration_amount') || unit_min_value;
         unit.value           = Defaults.get('duration_units') &&
             document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
-                Defaults.get('duration_units') : unit.value;
+            Defaults.get('duration_units') : unit.value;
         elementTextContent(document.getElementById('duration_minimum'), unit_min_value);
         elementTextContent(document.getElementById('duration_maximum'), unit_max_value);
         if (selected_duration.amount && selected_duration.unit > unit_value) {
