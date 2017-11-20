@@ -49,7 +49,6 @@ const ICOPortfolio = (() => {
 
         const buy_price          = +shortcode[1] * +shortcode[2];
         const deposit_percentage = +(shortcode[3] || 100);
-        const deposit_factor     = deposit_percentage / 100;
 
         const $div         = $('<div/>');
         if (+State.getResponse('ico_status.final_price') === 0) {
