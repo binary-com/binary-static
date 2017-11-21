@@ -312,7 +312,14 @@ const ICOSubscribe = (() => {
         if(min_bid_usd && min_bid && res_currency && res_currency !== 'USD'){
             text = `${localize('Minimum bid')} = ${formatMoney(res_currency, min_bid)} / ${formatMoney('USD', min_bid_usd)}`;
         }
+
+        const minBidOnClick = () => {
+            $price.val(min_bid);
+        };
+
         el_min_bid.innerHTML = text;
+        el_min_bid.removeEventListener('click', minBidOnClick, false);
+        el_min_bid.addEventListener('click', minBidOnClick, false);
     };
 
     const onUnload = () => {
