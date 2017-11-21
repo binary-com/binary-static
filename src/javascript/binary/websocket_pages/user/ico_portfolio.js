@@ -1,8 +1,10 @@
 const Portfolio        = require('./account/portfolio').Portfolio;
 const ViewPopup        = require('./view_popup/view_popup');
 const BinarySocket     = require('../socket');
+const loadUrl       = require('../../base/binary_pjax').load;
 const localize         = require('../../base/localize').localize;
 const State            = require('../../base/storage').State;
+const urlFor           = require('../../base/url').urlFor;
 const showLoadingImage = require('../../base/utility').showLoadingImage;
 const getPropertyValue = require('../../base/utility').getPropertyValue;
 const formatMoney      = require('../../common_functions/currency').formatMoney;
@@ -36,7 +38,7 @@ const ICOPortfolio = (() => {
         let status_text = 'Ended';
         if (/unsuccessful/i.test(long_code)) {
             status_text = 'Refund Bid';
-        } else if (/successful/i.test(long_code)) {
+        } else if (/ successful/i.test(long_code)) {
             status_text = 'Claim Tokens';
         } else if (ico_status === 'open') {
             status_text = 'Cancel Bid';
@@ -45,7 +47,7 @@ const ICOPortfolio = (() => {
         const new_class    = is_first ? '' : 'new';
         const status       = status_text;
         let button_class = /cancel|end/i.test(status) ? 'button-secondary' : 'button';
-        const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
+        const action       = /\w/i.test(long_code) ? 'claim' : 'cancel';
         const shortcode    = data.shortcode.split('_');
         const $div         = $('<div/>');
         if (+State.getResponse('ico_status.final_price') === 0) {
@@ -95,11 +97,22 @@ const ICOPortfolio = (() => {
             $('#portfolio-no-contract').show();
             $('#portfolio-table').setVisibility(0);
         } else {
-            $('a[action="cancel"]:not(.button-disabled)').on('click', function (e) {
-                e.preventDefault();
-                const contract_id = $(this).attr('contract_id');
-                cancelBid(contract_id);
-            });
+            $('a[action="cancel"]:not(.button-disabled)')
+                .off('click')
+                .on('click', function (e) {
+                    e.preventDefault();
+                    const contract_id = $(this).attr('contract_id');
+                    cancelBid(contract_id);
+                });
+
+            $('a[action="claim"]:not(.button-disabled)')
+                .off('click')
+                .on('click', (e) => {
+                    e.preventDefault();
+                    const url = urlFor('user/ico-claim-form');
+                    loadUrl(url);
+                });
+
 
             $('#portfolio-table').setVisibility(1);
         }

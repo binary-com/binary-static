@@ -44,6 +44,7 @@ const professionalClient   = require('../websocket_pages/user/account/settings/p
 const Statement            = require('../websocket_pages/user/account/statement/statement.init');
 const TopUpVirtual         = require('../websocket_pages/user/account/top_up_virtual');
 const Accounts             = require('../websocket_pages/user/accounts');
+const ICOClaimForm         = require('../websocket_pages/user/ico_claim_form');
 const ICOSubscribe         = require('../websocket_pages/user/ico_subscribe');
 const ICOInfo              = require('../websocket_pages/user/ico_info');
 const LostPassword         = require('../websocket_pages/user/lost_password');
@@ -120,6 +121,7 @@ const pages_config = {
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
     'ico-info'               : { module: ICOInfo,                    is_authenticated: true, only_real: true, needs_currency: true },
+    'ico-claim-form'         : { module: ICOClaimForm,               is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
