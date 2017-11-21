@@ -76,9 +76,18 @@ function getLanguage() {
     return language || 'en';
 }
 
+function urlFor (path) {
+    const lang = getLanguage();
+    const url  = window.location.href;
+    return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${path}.html`;
+}
+
 function wsConnect() {
-    const app_id     = localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
-    const server_url = localStorage.getItem('config.server_url') || 'frontend.binaryws.com';
+    const config_server = localStorage.getItem('config.server_url');
+    const server_url    = config_server || 'frontend.binaryws.com';
+    endpointNotification(config_server);
+
+    const app_id        = localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
 
     return new WebSocket(`wss://${server_url}/websockets/v3?app_id=${app_id}&l=${getLanguage()}`);
 }
@@ -86,6 +95,16 @@ function wsConnect() {
 function wsSend(ws, request) {
     if (ws && request && typeof request === 'object') {
         ws.send(JSON.stringify(request));
+    }
+}
+
+function endpointNotification (config_server) {
+    if (config_server && config_server.length > 0 && !document.getElementById('end_note')) {
+        const el_end_note = document.createElement('div');
+        el_end_note.setAttribute('id', 'end_note');
+        el_end_note.innerHTML = `The server <a href="${urlFor('endpoint')}">endpoint</a> is: ${config_server}`;
+        document.body.appendChild(el_end_note);
+        document.body.style['padding-bottom'] = `${el_end_note.offsetHeight}px`;
     }
 }
 
