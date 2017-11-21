@@ -12,7 +12,7 @@ const ICOClaimForm = () => {
     return {
         onLoad,
         onUnload,
-    }
+    };
 
 };
 
