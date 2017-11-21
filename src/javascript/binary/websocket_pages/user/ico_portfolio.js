@@ -47,9 +47,7 @@ const ICOPortfolio = (() => {
         const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
         const shortcode    = data.shortcode.split('_');
 
-        const buy_price           = +shortcode[1] * +shortcode[2];
-        const deposit_percentage = +(shortcode[3] || 100);
-        const total_factor       = 100 / deposit_percentage;
+        const buy_price          = +shortcode[1] * +shortcode[2];
 
         const $div         = $('<div/>');
         if (+State.getResponse('ico_status.final_price') === 0) {
@@ -62,9 +60,9 @@ const ICOPortfolio = (() => {
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref', text: data.transaction_id }))
             .append($('<td/>', { class: 'payout' }).append($('<strong/>', { text: shortcode[2] })))
-            .append($('<td/>', { class: 'bid' }).append($('<strong/>', { html: formatMoney(data.currency, +shortcode[1] * total_factor) })))
-            .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, buy_price * total_factor) })))
-            .append($('<td/>', { class: 'deposit' }).append($('<strong/>', { html: formatMoney(data.currency, buy_price) })))
+            .append($('<td/>', { class: 'bid' }).append($('<strong/>', { html: formatMoney(data.currency, +shortcode[1]) })))
+            .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, buy_price) })))
+            .append($('<td/>', { class: 'deposit' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price) })))
             .append($('<td/>', { class: 'details', text: long_code }))
             .append($('<td/>', { class: 'button' }).append($button)))
             .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));

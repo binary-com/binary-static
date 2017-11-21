@@ -5,7 +5,8 @@
 
 <div id="ico_subscribe" class="invisible">
     <p>[% l("[_1] is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='[_2]' target='_blank'>Learn more</a>", website_name, request.url_for('ico')) %]</p>
-    <p>[% l('You\'re only required to deposit <span class="initial_deposit_percent"></span>% of the total bid value for each bid. At the end of the auction, once the final price of the token is determined, you will be given two (2) weeks to pay the balance up to the final price. Bids can be cancelled at any time before the end of auction, without any penalty.') %]</p>
+    <p>[% l('To place a bid, you only need to deposit 5% of the total bid value. At the end of the auction, the final price of the token will be decided and you will have two weeks to settle the remaining balance that’s due on each active bid.') %]</p>
+    <p>[% l('Bids can be cancelled at any time before the end of the auction without any penalty.') %]</p>
     <div class="gr-row">
         <div class="gr-7 gr-12-p gr-12-m">
             <a href="#auction" class="no-ajax">
