@@ -1,7 +1,7 @@
 const onlyNumericOnKeypress = (ev, optional_value) => {
     const key         = ev.which;
     const char        = String.fromCharCode(key);
-    let array_of_char = [8, 37, 39, 46]; // delete, backspace, arrow keys
+    let array_of_char = [0, 8, 37, 39, 46]; // special keypresses (tab, esc), delete, backspace, arrow keys
     if (optional_value && optional_value.length > 0) {
         array_of_char = array_of_char.concat(optional_value);
     }
