@@ -24,6 +24,7 @@
                                 <img src="[% request.url_for('images/pages/set_currency/ltc.svg') %]">
                                 <img src="[% request.url_for('images/pages/set_currency/bch.svg') %]">
                                 <img src="[% request.url_for('images/pages/set_currency/eth_icon.svg') %]">
+                                <img src="[% request.url_for('images/pages/set_currency/etc_icon.svg') %]">
                             </span>
                         </p>
                         <p class="font-s">[% l('Upgrade to a real account and start trading using a wide range of crypto and fiat currencies.') %]</p>
