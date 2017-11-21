@@ -17,9 +17,9 @@ module.exports = {
             { expand: true, cwd: 'src/javascript/lib/pushwooshSDK/',                src: ['**'],    dest: global.dist }, /* serves pushwoosh sdks from root */
 
             // binary-style
-            { expand: true, cwd: 'node_modules/binary-style/fonts',           src: ['**/*.woff'], dest: global.dist + '/fonts/', },
-            { expand: true, cwd: 'node_modules/binary-style/images/favicons', src: ['**'],        dest: global.dist + '/images/favicons/', },
-            { expand: true, cwd: 'node_modules/binary-style/images/logo',     src: ['**'],        dest: global.dist + '/images/logo/', },
+            { expand: true, cwd: 'node_modules/binary-style/src/fonts',           src: ['**/*.woff'], dest: global.dist + '/fonts/', },
+            { expand: true, cwd: 'node_modules/binary-style/src/images/favicons', src: ['**'],        dest: global.dist + '/images/favicons/', },
+            { expand: true, cwd: 'node_modules/binary-style/src/images/logo',     src: ['**'],        dest: global.dist + '/images/logo/', },
         ]
     }
 };
