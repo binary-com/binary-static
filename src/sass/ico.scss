@@ -4,7 +4,8 @@ $LANGUAGE_DIRECTION : ltr;
 
 /* common styles */
 @import 'reset';
-@import 'pages/ico_landing_page';
+@import 'pages/landing_pages/common';
+@import 'pages/landing_pages/ico';
 
 /* Grid layout system */
 @import 'external/grid';
