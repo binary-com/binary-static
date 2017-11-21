@@ -21,7 +21,7 @@ const WelcomePage = (() => {
             const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
             const show_welcome_msg  = upgrade_info.can_upgrade;
 
-            if(/^virtual/.test(account_type) || /^real/.test(account_type)) {
+            if(/^virtual|^real/.test(account_type)) {
                 if(crypto_icon) {
                     crypto_icon.setVisibility(1);
                 }
