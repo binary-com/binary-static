@@ -432,7 +432,10 @@ function setLanguage(el, name) {
     }
 
     document.getElementById('selected-lang').textContent = all_languages[name];
-    document.getElementsByClassName(name)[0].classList.add('invisible');
+    const el_name = document.getElementsByClassName(name)[0];
+    if (el_name) {
+        el_name.classList.add('invisible');
+    }
 
     el_navbar_nav.classList.remove('invisible');
     el.classList.remove('invisible');
