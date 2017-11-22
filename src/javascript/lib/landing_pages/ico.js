@@ -96,30 +96,22 @@ window.onload = function() {
 
     document.getElementsByClassName('howto-btn')[0].addEventListener('click', function(e) {
         e.preventDefault();
-        const open_link    = window.open();
-        open_link.opener   = null;
-        open_link.location = getDocumentUrl(language.toLowerCase());
+        openLink(getDocumentUrl(language.toLowerCase()));
     });
 
     document.getElementById('token-btn').addEventListener('click', function(e) {
         e.preventDefault();
-        const open_link    = window.open();
-        open_link.opener   = null;
-        open_link.location = getTokenRatingReportUrl(language.toLowerCase());
+        openLink(getTokenRatingReportUrl(language.toLowerCase()));
     });
 
     document.getElementById('lykke-btn').addEventListener('click', function(e) {
         e.preventDefault();
-        const open_link    = window.open();
-        open_link.opener   = null;
-        open_link.location = getLykkeReport(language.toLowerCase());
+        openLink(getLykkeReport(language.toLowerCase()));
     });
 
     document.getElementById('nishant-btn').addEventListener('click', function(e) {
         e.preventDefault();
-        const open_link    = window.open();
-        open_link.opener   = null;
-        open_link.location = getNishantReport();
+        openLink(getNishantReport());
     });
 
     window.onresize = checkWidth;
@@ -530,7 +522,7 @@ function checkUserSession() {
     }
 }
 
-function openSubscribeLink(link) {
+function openLink(link) {
     var open_link = window.open();
     open_link.opener = null;
     open_link.location = link;
