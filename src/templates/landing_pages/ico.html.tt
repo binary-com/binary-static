@@ -863,7 +863,7 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
                 <p>[% l("Investment in the proposed tokens is expected to involve a high degree of risk, there will be no assurance that tokenholders will be able to receive a return of their capital or any returns on their investment. Prospective investors in the tokens should carefully consider the risk factors that will be detailed in the materials.") %]</p>
             </div>
         </div>
-        <div class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
+        <div id="address" class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
             <span>Binary Group Ltd., Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
         </div>
         <div id="ico-bottom-banner" class="gr-hide gr-show-m gr-12-m invisible" onclick="openSubscribeLink('[% request.url_for('user/ico-subscribe') %]');">
