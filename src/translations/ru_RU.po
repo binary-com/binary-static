@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-19 20:18-0500\n"
+"PO-Revision-Date: 2017-11-21 20:48-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: ru\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: ru_RU\n"
+
+msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
+msgstr ""
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API %1\" означает набор программ, протоколов, инструментов и ресурсов %1, созданных и поддерживаемых сайтом %1, а также позволяющих Вам пользоваться доступным приложением для работы на торговой платформе %1."
@@ -240,8 +243,8 @@ msgstr "%1 не является представителем никакого �
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 не работает в Коста-Рике, а также не регулируется и не контролируется финансовыми органами Коста-Рики."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
-msgstr "%1 предлагает до <strong>10 000 000</strong> токенов в рамках открытого аукциона. Вы можете сделать ставки, воспользовавшись формой ниже."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='%2' target='_blank'>Learn more</a>"
+msgstr ""
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 принадлежит и находится под управлением группы компаний Binary Group Ltd. Для получения дополнительной информации, пожалуйста, <a href='%2'>посетите страницу нашей истории</a>."
@@ -1223,6 +1226,9 @@ msgstr "Вы уверены, что хотите навсегда удалить
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Вы уверены, что хотите навсегда отказаться от доступа к приложению"
 
+msgid "Are you sure you want to cancel the bid?"
+msgstr ""
+
 msgid "Are your site visitors interested in:"
 msgstr "Посетителям Вашего сайта может быть интересно:"
 
@@ -1537,6 +1543,12 @@ msgstr "Ставка за токен ($USD)"
 
 msgid "Bid on the ICO:"
 msgstr "Ставка на ICO:"
+
+msgid "Bids can be cancelled at any time before the end of the auction at no cost."
+msgstr ""
+
+msgid "Bids can be cancelled at any time before the end of the auction without any penalty."
+msgstr ""
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -2727,6 +2739,9 @@ msgstr "Раздел имущества"
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "Нужно ли мне вносить средства, чтобы открыть счет?"
 
+msgid "Do I need to pay a penalty for cancelling a bid?"
+msgstr ""
+
 msgid "Do I retain ownership of the code?"
 msgstr "Буду ли я владеть кодом?"
 
@@ -2861,9 +2876,6 @@ msgstr "EUR 1 за пункт"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "Каждая Сторона должна предпринять все разумные меры, заявленные другой Стороной для соблюдения всех положений и условий данного Соглашения."
-
-msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr "При отмене ставки взимается комиссия в размере 2%."
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "Каждый бинарный опцион имеет определенную длительность – на %1 вы можете выбрать период от 10 секунд до 365 дней."
@@ -3936,9 +3948,6 @@ msgstr "Настоящим я заявляю, что не являюсь пол�
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
-msgid "I agree to the cancellation fee stated above"
-msgstr "Я согласен с вышеуказанной комиссией за отмену"
-
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "I confirm my agreement to the contents of all the documents listed below:"
 
@@ -4499,6 +4508,9 @@ msgstr "Наследование"
 
 msgid "Initial Coin Offering (ICO)"
 msgstr "Первичное предложение средств (ICO)"
+
+msgid "Initial deposit required: "
+msgstr ""
 
 msgid "Input personal information"
 msgstr "Ввод личных данных"
@@ -6066,6 +6078,9 @@ msgstr "Не"
 msgid "Not FATCA*"
 msgstr "Not FATCA*"
 
+msgid "Not at all. You can cancel a bid at any time before the auction ends at no cost."
+msgstr ""
+
 msgid "Note"
 msgstr "Примечание"
 
@@ -6701,6 +6716,9 @@ msgstr "Прежде, чем продолжить, пожалуйста, зап�
 
 msgid "Please complete the tax information before proceeding."
 msgstr "Пожалуйста, внесите информацию о налогах, прежде чем продолжить."
+
+msgid "Please confirm that you are a %1professional trader%2 to proceed."
+msgstr ""
 
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Пожалуйста подтвердите, что Вы не являетесь политически-значимым лицом."
@@ -8796,8 +8814,8 @@ msgstr "Термин \"мы\", \"наш\", \"наши\", \"нас\", \"нами\
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "Термины “мы”, “нас”, “наш (наша)”, “наши”, “Компания” и “%1” обозначают компанию Binary (V) Ltd. или компанию Binary (C.R.) S.A., в зависимости от юрисдикции, к которой относится счёт Клиента, открытый в рамках процедур, действующих на сайте."
 
-msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
-msgstr "Токены будут предложены в рамках аукциона. Ознакомьтесь с нашим %1gэкскурсом%2 по аукциону токенов."
+msgid "The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price."
+msgstr ""
 
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr "Токены позволяют их владельцу получать выплаты на основе дивидендов, а также получать экономическую выгоду, эквивалентную обыкновенным акциям. Таким образом, для владельцев токенов не будет никакой практической пользы переводить данные токены в акции."
@@ -9021,6 +9039,9 @@ msgstr "Одна из наших важнейших наград – двойн�
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "Это текущая цена, по которой актив может быть приобретен или продан."
 
+msgid "This means that you won’t have to tie up important funds in order to keep your bids active."
+msgstr ""
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Данное положение не объясняет все возможные риски в инвестициях или подобных продуктах, а также соответствие данных рисков Вашим личным обстоятельствам. Важно, чтобы Вы полностью понимали возможные риски перед принятием решения, приобретением или продажей инвестиционного продукта. а также игрового продукта у нас. Если у Вас есть сомнения относительно рисков, сопряженных с инвестиционными продуктами или игровыми продуктами, рекомендуем получить квалифицированную юридическую консультацию."
 
@@ -9153,6 +9174,9 @@ msgstr "Чтобы выполнить данное действие, <a href=\"%
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Чтобы выполнить данное действие, перейдите на Реальный счет %1."
 
+msgid "To place a bid, you only need to deposit 5% of the total bid value. At the end of the auction, the final price of the token will be decided and you will have two weeks to settle the remaining balance that’s due on each active bid."
+msgstr ""
+
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Чтобы претендовать на эту должность, вы должны иметь высшее образование в области физики, финансовой инженерии или математики"
 
@@ -9171,14 +9195,8 @@ msgstr "На сегодняшний день мы являемся призна�
 msgid "Token"
 msgstr "Ключ"
 
-msgid "Token Sale Begins In"
-msgstr "Продажа токенов начнётся через"
-
 msgid "Token dividends"
 msgstr "Дивиденды по токенам"
-
-msgid "Token sale begins in"
-msgstr "Продажа токенов начнётся через"
 
 msgid "Token sale ends in"
 msgstr "До конца продажи токенов осталось"
@@ -9191,6 +9209,9 @@ msgstr "Токены дают Вам право на получение соот
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
 msgstr "Токены будут предложены лишь клиентам %1, владеющим реальным счётом. Пожалуйста, посетите сайт %2www.binary.com%3, чтобы открыть счёт."
+
+msgid "Top up in cashier"
+msgstr ""
 
 msgid "Top-tier liquidity"
 msgstr "Первоклассная ликвидность"
@@ -10810,9 +10831,6 @@ msgstr "Вы автоматически будете выходить с сай�
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "Вам будут предоставлены все необходимые инструменты, чтобы Ваш трафик приносил доход"
 
-msgid "You will be subject to a 2% cancellation fee."
-msgstr "Вы должны будете выплатить комиссию за отмену: 2%."
-
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "Курс своп взимается, если Вы сохраняете позицию открытой после 23:59:59 GMT."
 
@@ -11271,9 +11289,6 @@ msgstr "сегодня"
 
 msgid "today, Fridays"
 msgstr "сегодня, по пятницам"
-
-msgid "top up in cashier"
-msgstr "пополнить через кассу"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "вверх/вниз, касание/нет касания, внутри/вне."

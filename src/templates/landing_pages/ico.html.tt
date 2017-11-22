@@ -61,10 +61,10 @@
                             </a>
                             <li class="en">English</li>
                             <li class="de">Deutsch</li>
-                            <li class="es">Español</li>
+                            <!--li class="es">Español</li-->
                             <li class="fr">Français</li>
                             <li class="id">Indonesia</li>
-                            <li class="it">Italiano</li>
+                            <!--li class="it">Italiano</li-->
                             <!--li class="ja">日本語</li-->
                             <li class="pl">Polish</li>
                             <li class="pt">Português</li>
@@ -569,6 +569,7 @@
             [% news=[
                 { logo="the-merkle"             timestamp="Nov 19, 2017"    headlines="Binary.com Launches World’s First ICO with 18 Years of History"        url="https://themerkle.com/binary-com-launches-worlds-first-ico-with-18-years-of-history/" },
                 { logo="bitcoin-com"            timestamp="Nov 18, 2017"    headlines="PR: Binary.com Options Trading to Launch Initial Coin Offering (ICO) in q4 2017"  url="https://news.bitcoin.com/pr-binary-com-options-trading-announces-initial-coin-offering/" },
+                { logo="ituber"                 timestamp="Nov 17, 2017"    headlines="Зачем компании с оборотом в миллиард долларов ICO?"        url="https://ituber.me/zachem-kompanii-s-oborotom-v-milliard-dollarov-ico/" },
                 { logo="enews"                  timestamp="Nov 17, 2017"    headlines="Binary.com lanza su ICO"                     url="http://emprendedoresnews.com/criptomonedas/binary-com-lanza-ico.html" },
                 { logo="portal-do-branco"       timestamp="Nov 14, 2017"    headlines="ICO da Binary.com Começará em Poucas Horas"  url="https://portaldobitcoin.com/ico-da-binary-com-comecara-em-poucas-horas/" },
                 { logo="cripto"                 timestamp="Nov 14, 2017"    headlines="Binary.com: anuncia o lançamento da sua oferta inicial de moedas (ICO) em novembro"  url="https://www.criptomoedasfacil.com/binary-com-anuncia-o-lancamento-da-sua-oferta-inicial-de-moedas-ico-em-novembro/" },
