@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-19 20:17-0500\n"
+"PO-Revision-Date: 2017-11-21 20:47-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: de\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: de_DE\n"
+
+msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
+msgstr " (<span class=\"initial_deposit_percent\"></span>% des Gesamtbetrages)"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "„%1 API“ bedeutet von %1 selbst entwickelte Programmroutinen, Protokolle, Werkzeuge und Mittel, die von %1 erstellt und gepflegt werden, die es Ihnen ermöglichen, eine genehmigte Anwendung zu verwenden, um sich in die %1 Handelsplattform zu integrieren."
@@ -240,8 +243,8 @@ msgstr "%1 ist kein Geschäftspartner einer der oben aufgeführten Zahlungsagent
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 steht in Costa Rica nicht zur Verfügung und wird auch nicht von einer Überwachungsbehörde im Costa Ricanischen Finanzsystem überwacht und kontrolliert."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
-msgstr "%1 bietet bis zu <strong>10.000.000</strong> Token in einer offenen Auktion an. Sie können Ihre Gebote mit dem unten stehenden Formular platzieren."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='%2' target='_blank'>Learn more</a>"
+msgstr "%1 bietet bis zu <strong>10.000.000</strong> Token in einer offenen Auktion an. Sie können Ihre Gebote mit dem unten stehenden Formular platzieren.<a href='%2' target='_blank'>Mehr erfahren</a>"
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 ist Eigentum der Binary Group Ltd. Firmengruppe und wird von dieser betrieben. Weitere Infrormationen finden Sie auf <a href=\"%2\">auf unserer Geschichtsseite</a>."
@@ -1218,6 +1221,9 @@ msgstr "Sind Sie sicher, dass Sie den Token endgültig löschen möchten?"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Sind Sie sicher, dass Sie den Zugang endgültig widerrufen möchten"
 
+msgid "Are you sure you want to cancel the bid?"
+msgstr "Sind Sie sicher, dass Sie das Angebot stornieren möchten?"
+
 msgid "Are your site visitors interested in:"
 msgstr "Haben die Besucher Ihrer Webseite Interesse an:"
 
@@ -1532,6 +1538,12 @@ msgstr "Gebotspreis pro Token ($USD)"
 
 msgid "Bid on the ICO:"
 msgstr "Die ICO ersteigern:"
+
+msgid "Bids can be cancelled at any time before the end of the auction at no cost."
+msgstr "Gebote können jederzeit vor Ablauf der Auktion ohne Kosten storniert werden."
+
+msgid "Bids can be cancelled at any time before the end of the auction without any penalty."
+msgstr "Gebote können jederzeit vor Ablauf der Auktion ohne Geldbuße storniert werden."
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -2722,6 +2734,9 @@ msgstr "Scheidungsvereinbarung"
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "Muss ich, um ein Konto zu eröffnen, Geld einzahlen?"
 
+msgid "Do I need to pay a penalty for cancelling a bid?"
+msgstr "Muss ich eine Strafe für die Stornierung eines Angebots zahlen?"
+
 msgid "Do I retain ownership of the code?"
 msgstr "Bleibt der Code mein Eigentum?"
 
@@ -2856,9 +2871,6 @@ msgstr "1 EUR je Punkt"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "Jede Partei soll alles machen, was angemessener Weise von der anderen Partei gefordert wird, um den Bestimmungen und/oder Bedingungen und/oder Klauseln dieser Vereinbarung Wirkung zu verleihen."
-
-msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr "Jede Gebots-Stornierung wird gemäß mit einer 2% Stornogebühr versehen."
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "Jeder Kontrakt für eine Binäre Option hat eine begrenzte Laufzeit - bei %1 können Sie für einen Kontrakt eine Laufzeit ab 10 Sekunden bis zu 365 Tagen auswählen."
@@ -3931,9 +3943,6 @@ msgstr "Ich bestätige hiermit, dass ich keine politisch exponierte Person (PEP)
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
-msgid "I agree to the cancellation fee stated above"
-msgstr "Ja, ich stimme der oben genannten Stornogebühr zu"
-
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "I confirm my agreement to the contents of all the documents listed below:"
 
@@ -4494,6 +4503,9 @@ msgstr "Vererbung"
 
 msgid "Initial Coin Offering (ICO)"
 msgstr "Initial Coin Offering (ICO)"
+
+msgid "Initial deposit required: "
+msgstr "Erste Einzahlung erforderlich: "
 
 msgid "Input personal information"
 msgstr "Personenbezogene Daten angeben"
@@ -6061,6 +6073,9 @@ msgstr "Nicht"
 msgid "Not FATCA*"
 msgstr "Not FATCA*"
 
+msgid "Not at all. You can cancel a bid at any time before the auction ends at no cost."
+msgstr "Überhaupt nicht. Sie können ein Gebot jederzeit vor Auktionsende ohne Kosten stornieren."
+
 msgid "Note"
 msgstr "Anmerkung"
 
@@ -6697,6 +6712,9 @@ msgstr "Füllen Sie bitte das %1finanzielle Beurteilungsformular%2 aus, um Ihre 
 msgid "Please complete the tax information before proceeding."
 msgstr "Bevor Sie fortfahren, füllen Sie bitte die Steuerinformationen aus."
 
+msgid "Please confirm that you are a %1professional trader%2 to proceed."
+msgstr "Bitte bestätigen Sie, dass Sie ein %1professioneller Trader%2 sind, um fortzufahren."
+
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Bitte bestätigen Sie, dass Sie keine politisch exponierte Person sind."
 
@@ -6797,7 +6815,7 @@ msgid "Please select your ICO account to proceed."
 msgstr "Bitte wählen Sie Ihr ICO-Konto um fortzufahren."
 
 msgid "Please select your real money account to proceed."
-msgstr ""
+msgstr "Bitte wählen Sie Ihr Echtgeldkonto um fortzufahren."
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "Bitte legen Sie ein %1Wohnsitzland%2 fest, bevor Sie auf ein Echtgeldkonto aufrüsten."
@@ -8791,8 +8809,8 @@ msgstr "Der Begriff \"wir\", \"uns\", \"unser\", \"unsere\", \"das Unternehmen\"
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "Der Begriff \"wir\", \"uns\", \"unser\", \"unsere\", \"das Unternehmen\", oder \"%1\" sollen entweder Binary (V) Ltd. oder Binary (C.R) S.A. bezeichnen, je nach Zuständigkeit, der das Konto des Kunden im Einklang mit den Kontoeröffnungs-Verfahren der Website angefügt wurde."
 
-msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
-msgstr "Die Token werden über ein Auktionsverfahren angeboten. Sehen Sie unseren %1Guide%2 für die Token-Auktion an."
+msgid "The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price."
+msgstr "Die Token werden über ein Auktionsverfahren angeboten. Um ein Gebot abzugeben, müssen Sie nur 5 % des gesamten Gebotspreises im Voraus einzahlen. Nachdem die Auktion vorüber ist, und der endgültige Preis bestimmt ist, haben Sie zwei Wochen, um den zu zahlenden Rest, abhängig vom Endpreis des Tokens, zu hinterlegen."
 
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr "Die Token berechtigen den Inhaber dazu, mit Dividenden verbundene Zahlungen zu erhalten, und tragen wirtschaftliche Vorteile, die Stammaktien entsprechen. Somit gäbe es normalerweise keinen praktischen Grund für Tokeninhaber ihre Token in Aktien zu konvertieren."
@@ -9016,6 +9034,9 @@ msgstr "Dies ist riesig. Wir haben eine doppelte Auszeichnung von der Financial 
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "Dies ist der aktuelle Kurs, zu dem ein Basiswert zu einem bestimmten Zeitpunkt gekauft oder verkauft werden kann."
 
+msgid "This means that you won’t have to tie up important funds in order to keep your bids active."
+msgstr "Dies bedeutet, dass Sie keine wichtigen Mittel binden müssen, um Ihre Gebote aktiv zu halten."
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Dieser Hinweis erklärt nicht alle mit Anlage- oder ähnlichen Produkten verbundenen Risikien und wie solche Risiken sich auf Ihre persönlichen Umstände auswirken. Bevor Sie sich entscheiden, bei uns Anlage- oder Glücksspielprodukte zu erwerben oder zu verkaufen, müssen Sie die damit verbundenen Risiken vollständig verstehen. Wenn Sie Zweifel über die mit Anlage- oder Glücksspielprodukten verbunden Risiken haben, sollten Sie sich professionellen Rat einholen."
 
@@ -9148,6 +9169,9 @@ msgstr "Um diese Aktion durchzuführen, bessern Sie bitte <a href=\"%1\">auf ein
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Um diese Aktion durchzuführen, wechseln Sie bitte zu Ihrem %1 Echtgeldkonto."
 
+msgid "To place a bid, you only need to deposit 5% of the total bid value. At the end of the auction, the final price of the token will be decided and you will have two weeks to settle the remaining balance that’s due on each active bid."
+msgstr "Um ein Gebot abzugeben, müssen Sie nur 5 % des gesamten Angebotswertes einzahlen. Am Ende der Auktion entscheidet sich der Endpreis des Tokens und Sie haben zwei Wochen, um den Restbetrag zu begleichen, der bei jedem aktiven Angebot fällig ist."
+
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Um angenommen zu werden, benötigen Sie einen Hochschulabschluss in Physik, Finanztechnik oder Mathematik"
 
@@ -9166,14 +9190,8 @@ msgstr "Heute haben wir uns als ein Marktführer und als eine der beliebtesten o
 msgid "Token"
 msgstr "Token"
 
-msgid "Token Sale Begins In"
-msgstr "Token Verkauf beginnt in"
-
 msgid "Token dividends"
 msgstr "Token Dividenden"
-
-msgid "Token sale begins in"
-msgstr "Tokenverkauf beginnt in"
 
 msgid "Token sale ends in"
 msgstr "Tokenverkauf endet in"
@@ -9186,6 +9204,9 @@ msgstr "Token berechtigen Sie zu einer entsprechenden Menge an Dividenden sowie 
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
 msgstr "Token werden nur an %1 Kunden angeboten werden, die ein Echtgeld-Konto haben. Bitte besuchen Sie %2 www.binary.com%3 um ein Konto zu eröffnen."
+
+msgid "Top up in cashier"
+msgstr "In Kasse auffüllen"
 
 msgid "Top-tier liquidity"
 msgstr "Erstklassige Liquidität"
@@ -10809,9 +10830,6 @@ msgstr "Sie werden nach einer bestimmten Zeit automatisch abgemeldet."
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "Ihnen werden alle Mittel zur Verfügung gestellt, mit denen Sie Ihren Traffic in eine lukrative Einnahmequelle verwandeln können"
 
-msgid "You will be subject to a 2% cancellation fee."
-msgstr "Es werden 2 % Stornogebühren erhoben werden."
-
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "Wenn Sie eine Position nach 23:59:59 GMT eröffnen, sind Sie Swapsätzen ausgesetzt."
 
@@ -11270,9 +11288,6 @@ msgstr "heute"
 
 msgid "today, Fridays"
 msgstr "heute, Freitage"
-
-msgid "top up in cashier"
-msgstr "in Kasse auffüllen"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "auf/ab, Ziel/kein Ziel, bleibt innerhalb/geht außerhalb."
