@@ -34,7 +34,7 @@ const Authenticate = (() => {
                 } else if (/authenticated/.test(status)) {
                     $('#fully_authenticated').setVisibility(1);
                 } else {
-                    window.location.href = Url.defaultRedirectUrl();
+                    window.location.href = Client.defaultRedirectUrl();
                 }
             }
         });

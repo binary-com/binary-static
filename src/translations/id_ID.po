@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-16 23:51-0500\n"
+"PO-Revision-Date: 2017-11-21 20:49-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: id\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: id_ID\n"
+
+msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
+msgstr " (<span class=\"initial_deposit_percent\"></span>% dari jumlah total)"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program, protokol, alat dan sumber daya %1 yang diciptakan dan dikelola oleh %1 yang memungkinkan Anda menggunakan Aplikasi yang terdaftar untuk berinteraksi dengan platform perdagangan %1."
@@ -240,8 +243,8 @@ msgstr "%1 tidak berafiliasi dengan agen pembayaran manapun. Setiap agen pembaya
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 tidak tersedia di Costa Rica dan tidak diatur atau diawasi oleh badan pengawas keuangan di Costa Rica."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
-msgstr "%1 menawarkan hingga <strong>10.000.000</strong> token pada lelang terbuka. Anda dapat mengajukan bid Anda menggunakan formulir di bawah ini."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='%2' target='_blank'>Learn more</a>"
+msgstr "%1 menawarkan hingga <strong>10.000.000</strong> token pada lelang terbuka. Anda dapat mengajukan bid Anda menggunakan formulir di bawah ini. <a href='%2' target='_blank'>Pelajari lebih lanjut</a>"
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 dimiliki dan dioperasikan oleh grup perusahaan Binary Ltd. Untuk informasi lanjut, <a href='%2'>kunjungi halaman sejarah kami</a>."
@@ -1218,6 +1221,9 @@ msgstr "Apakah Anda yakin untuk menghapus token secara permanen"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Apakah Anda yakin bahwa Anda ingin secara permanen mencabut akses ke aplikasi"
 
+msgid "Are you sure you want to cancel the bid?"
+msgstr "Apakah Anda yakin untuk membatalkan bid?"
+
 msgid "Are your site visitors interested in:"
 msgstr "Apakah pengunjung website Anda tertarik untuk:"
 
@@ -1532,6 +1538,12 @@ msgstr "Harga Bid Per Token ($USD)"
 
 msgid "Bid on the ICO:"
 msgstr "Bid pada ICO:"
+
+msgid "Bids can be cancelled at any time before the end of the auction at no cost."
+msgstr "Bid dapat dibatalkan kapan saja sebelum lelang berakhir tanpa biaya."
+
+msgid "Bids can be cancelled at any time before the end of the auction without any penalty."
+msgstr "Bid dapat dibatalkan kapan saja sebelum lelang berakhir tanpa biaya."
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -2721,6 +2733,9 @@ msgstr "Penyelesaian Perceraian"
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "Apakah saya perlu mendeposit dana untuk mendaftar akun?"
 
+msgid "Do I need to pay a penalty for cancelling a bid?"
+msgstr "Apakah saya perlu membayar denda karena membatalkan bid?"
+
 msgid "Do I retain ownership of the code?"
 msgstr "Apakah saya perlu mempertahankan kepemilikan kode?"
 
@@ -2855,9 +2870,6 @@ msgstr "1 EUR per poin"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "Setiap Pihak harus melakukan apa pun yang secara wajar diminta oleh Pihak lain untuk memberlakukan ketentuan dan/atau persyaratan dan/atau klausul Perjanjian ini."
-
-msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr "Setiap pembatalan bid dikenakan biaya pembatalan sebesar 2%."
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "Setiap kontrak opsi binary memiliki periode waktu tertentu – dengan %1 Anda dapat memilih kontrak dengan durasi antara 10 detik hingga 365 hari."
@@ -3930,9 +3942,6 @@ msgstr "Saya menyatakan bahwa saya bukan orang yang terlibat dengan politik (PEP
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
-msgid "I agree to the cancellation fee stated above"
-msgstr "Saya setuju dengan biaya pembatalan yang disebutkan di atas"
-
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "Saya mengkonfirmasi kesepakatan pada isi dari semua dokumentasi berikut:"
 
@@ -4493,6 +4502,9 @@ msgstr "Warisan"
 
 msgid "Initial Coin Offering (ICO)"
 msgstr "Initial Coin Offering (ICO)"
+
+msgid "Initial deposit required: "
+msgstr "Deposit awal yang diperlukan: "
 
 msgid "Input personal information"
 msgstr "Masukkan informasi pribadi"
@@ -6060,6 +6072,9 @@ msgstr "Bukan"
 msgid "Not FATCA*"
 msgstr "Bukan FATCA*"
 
+msgid "Not at all. You can cancel a bid at any time before the auction ends at no cost."
+msgstr "Tidak sama sekali. Anda dapat membatalkan bid kapan pun sebelum lelang berakhir tanpa biaya."
+
 msgid "Note"
 msgstr "Catatan"
 
@@ -6696,6 +6711,9 @@ msgstr "Silahkan lengkapi %1formulir penilaian finansial%2 untuk meningkatkan ba
 msgid "Please complete the tax information before proceeding."
 msgstr "Mohon lengkapi informasi pajak sebelum melanjutkan."
 
+msgid "Please confirm that you are a %1professional trader%2 to proceed."
+msgstr "Mohon konfirmasikan bahwa Anda adalah seorang %1trader profesional%2 untuk melanjutkan."
+
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Mohon konfirmasikan bahwa Anda bukanlah orang yang terlibat dalam politik."
 
@@ -6796,7 +6814,7 @@ msgid "Please select your ICO account to proceed."
 msgstr "Silahkan pilih akun ICO Anda untuk melanjutkan."
 
 msgid "Please select your real money account to proceed."
-msgstr ""
+msgstr "Silahkan pilih akun uang riil Anda untuk melanjutkan."
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "Silahkan pilih %1negara domisili%2 sebelum mengupgrade ke dalam akun riil."
@@ -8791,8 +8809,8 @@ msgstr "Istilah 'kita', 'kami', 'milik kami', 'Perusahaan', atau '%1' adalah men
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "Istilah 'kita', 'kami', 'milik kami', 'Perusahaan', atau '%1' adalah menunjukkan pada Binary (V) Ltd. atau Binary (C.R.) S.A., tergantung pada jurisdiksi dimana Klien terdaftar sesuai dengan prosedur pendaftaran akun pada website."
 
-msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
-msgstr "Token adalah ditawarkan melalui proses lelang. Lihat %1panduan%2 mengenai lelang token."
+msgid "The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price."
+msgstr "Token ditawarkan melalui proses lelang. Untuk melakukan bid, Anda hanya perlu menyetorkan 5% dari total harga bid Anda. Setelah pelelangan selesai dan harga akhir ditentukan, Anda akan memiliki waktu selama dua minggu untuk menyetorkan sisa jumah bid yang perlu Anda bayar berdasarkan harga token akhir."
 
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr "Token memberi hak kepada pemegangnya untuk menerima pembayaran dividen, dan membawa manfaat ekonomi yang setara dengan Saham Biasa. Dengan demikian, biasanya tidak ada alasan praktis bagi pemegang token untuk mengubah token mereka menjadi saham."
@@ -9016,6 +9034,9 @@ msgstr "Ini sangat luar biasa. Kami memperoleh penghargaan ganda dari Financial 
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "Ini adalah harga pasar terkini dimana pasar dapat dibeli atau dijual pada waktu tertentu."
 
+msgid "This means that you won’t have to tie up important funds in order to keep your bids active."
+msgstr "Hal ini berarti Anda tidak perlu mengikat dana Anda untuk tetap mengaktifkan bid."
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Pemberitahuan ini tidak menjelaskan seluruh risiko yang terlibat dalam investasi atau produk sejenisnya atau bagaimana risiko tersebut berhubungan dengan situasi pribadi Anda. Adalah penting bagi Anda untuk memahami berbagai risiko yang terlibat sebelum memutuskan untuk bertrading pada produk investasi atau gaming bersama kami. Jika Anda memiliki pertanyaan mengenai produk Investasi atau Produk Gaming, Anda harus mencari nasihat profesional."
 
@@ -9148,6 +9169,9 @@ msgstr "Untuk melakukan tindakan ini, silakan <a href=\"%1\">upgrade ke Akun Rii
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Untuk melanjutkan, silahkan tukar ke dalam Akun Riil %1 Anda."
 
+msgid "To place a bid, you only need to deposit 5% of the total bid value. At the end of the auction, the final price of the token will be decided and you will have two weeks to settle the remaining balance that’s due on each active bid."
+msgstr "Untuk melakukan bid, Anda hanya perlu mendeposit sebesar 5% dari total nilai bid. Pada akhir lelang, harga akhir token akan ditentukan dan Anda memiliki waktu selama dua minggu untuk melunasi sisa jumlah yang perlu Anda bayarkan bagi setiap bid yang aktif."
+
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Untuk memenuhi syarat, Anda membutuhkan gelar sarjana pada bidang Fisika, Rekayasa Keuangan atau Matematika"
 
@@ -9166,14 +9190,8 @@ msgstr "Hari ini, kami telah menetapkan diri sebagai pemimpin pasar dan salah sa
 msgid "Token"
 msgstr "Token"
 
-msgid "Token Sale Begins In"
-msgstr "Penjualan Token Dimulai Dalam"
-
 msgid "Token dividends"
 msgstr "Dividen token"
-
-msgid "Token sale begins in"
-msgstr "Penjualan token dimulai dalam"
 
 msgid "Token sale ends in"
 msgstr "Penjualan token berakhir dalam"
@@ -9186,6 +9204,9 @@ msgstr "Token memberi Anda jumlah yang setara dengan dividen sebagai Saham Binar
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
 msgstr "Token hanya akan ditawarkan kepada %1 klien yang memiliki akun Uang Riil. Silahkan kunjungi %2www.binary.com%3 untuk mendaftar akun."
+
+msgid "Top up in cashier"
+msgstr "Isi ulang pada kasir"
 
 msgid "Top-tier liquidity"
 msgstr "Likuiditas teratas"
@@ -10805,9 +10826,6 @@ msgstr "Anda akan secara otomatis keluar setelah waktu tersebut."
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "Anda akan memperoleh semua peralatan, untuk merubah trafik menjadi aliran pendapatan yang menguntungkan"
 
-msgid "You will be subject to a 2% cancellation fee."
-msgstr "Anda akan dikenakan biaya pembatalan 2%."
-
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "Anda akan dikenakan suku bunga swap bagi posisi berjalan diatas pukul 23:59:59 GMT."
 
@@ -11266,9 +11284,6 @@ msgstr "hari ini"
 
 msgid "today, Fridays"
 msgstr "hari ini, Jumat"
-
-msgid "top up in cashier"
-msgstr "isi ulang pada kasir"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "up/down, touch/no-touch, stays in/goes out."
