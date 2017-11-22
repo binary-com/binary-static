@@ -15,17 +15,15 @@
                     <div>
                         <strong>[% l('Real Account') %]</strong>
                         <p class="payment-icons">
-                            <img src="[% request.url_for('images/pages/set_currency/usd_icon.svg') %]">
-                            <img src="[% request.url_for('images/pages/set_currency/aud_icon.svg') %]">
-                            <img src="[% request.url_for('images/pages/set_currency/eur_icon.svg') %]">
-                            <img src="[% request.url_for('images/pages/set_currency/gbp_icon.svg') %]">
-                            <span id="crypto_icons" class="invisible">
-                                <img src="[% request.url_for('images/pages/set_currency/btc.svg') %]">
-                                <img src="[% request.url_for('images/pages/set_currency/ltc.svg') %]">
-                                <img src="[% request.url_for('images/pages/set_currency/bch.svg') %]">
-                                <img src="[% request.url_for('images/pages/set_currency/eth_icon.svg') %]">
-                                <img src="[% request.url_for('images/pages/set_currency/etc_icon.svg') %]">
-                            </span>
+                            <img id="USD" class="invisible" src="[% request.url_for('images/pages/set_currency/usd_icon.svg') %]">
+                            <img id="AUD" class="invisible" src="[% request.url_for('images/pages/set_currency/aud_icon.svg') %]">
+                            <img id="EUR" class="invisible" src="[% request.url_for('images/pages/set_currency/eur_icon.svg') %]">
+                            <img id="GBP" class="invisible" src="[% request.url_for('images/pages/set_currency/gbp_icon.svg') %]">
+                            <img id="BTC" class="invisible" src="[% request.url_for('images/pages/set_currency/btc.svg') %]">
+                            <img id="LTC" class="invisible" src="[% request.url_for('images/pages/set_currency/ltc.svg') %]">
+                            <img id="BCH" class="invisible" src="[% request.url_for('images/pages/set_currency/bch.svg') %]">
+                            <img id="ETH" class="invisible" src="[% request.url_for('images/pages/set_currency/eth_icon.svg') %]">
+                            <img id="ETC" class="invisible" src="[% request.url_for('images/pages/set_currency/etc_icon.svg') %]">
                         </p>
                         <p class="font-s">[% l('Upgrade to a real account and start trading using a wide range of crypto and fiat currencies.') %]</p>
                     </div>
