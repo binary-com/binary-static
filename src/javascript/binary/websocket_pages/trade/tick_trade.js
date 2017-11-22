@@ -18,7 +18,6 @@ const TickDisplay = (() => {
         abs_barrier,
         display_decimals,
         show_contract_result,
-        contract_sentiment,
         price,
         payout,
         ticks_needed,
@@ -39,7 +38,8 @@ const TickDisplay = (() => {
         tick_shortcode,
         tick_init,
         subscribe,
-        responseID;
+        response_id,
+        status;
 
     const initialize = (data, options) => {
         // setting up globals
@@ -54,9 +54,8 @@ const TickDisplay = (() => {
         show_contract_result = data.show_contract_result;
 
         if (data.show_contract_result) {
-            contract_sentiment = data.contract_sentiment;
-            price              = parseFloat(data.price);
-            payout             = parseFloat(data.payout);
+            price  = parseFloat(data.price);
+            payout = parseFloat(data.payout);
         }
 
         const minimize = data.show_contract_result;
@@ -156,26 +155,6 @@ const TickDisplay = (() => {
         }
     };
 
-    const applyChartBackgroundColor = (tick) => {
-        if (!show_contract_result) {
-            return;
-        }
-        const chart_container = $('#tick_chart');
-        if (contract_sentiment === 'up') {
-            if (tick.quote > contract_barrier) {
-                chart_container.css('background-color', 'rgba(46,136,54,0.198039)');
-            } else {
-                chart_container.css('background-color', 'rgba(204,0,0,0.098039)');
-            }
-        } else if (contract_sentiment === 'down') {
-            if (tick.quote < contract_barrier) {
-                chart_container.css('background-color', 'rgba(46,136,54,0.198039)');
-            } else {
-                chart_container.css('background-color', 'rgba(204,0,0,0.098039)');
-            }
-        }
-    };
-
     const addBarrier = () => {
         if (!set_barrier) {
             return;
@@ -249,34 +228,17 @@ const TickDisplay = (() => {
     };
 
     const evaluateContractOutcome = () => {
-        if (!contract_barrier) {
-            return; // can't do anything without barrier
-        }
-
-        const exit_tick_index = applicable_ticks.length - 1;
-        const exit_spot       = applicable_ticks[exit_tick_index].quote;
-
-        if (contract_sentiment === 'up') {
-            if (exit_spot > contract_barrier) {
-                win();
-            } else {
-                lose();
+        if (status === 'won') {
+            if (show_contract_result) {
+                $('#tick_chart').css('background-color', 'rgba(46,136,54,0.198039)');
             }
-        } else if (contract_sentiment === 'down') {
-            if (exit_spot < contract_barrier) {
-                win();
-            } else {
-                lose();
+            updatePurchaseStatus(payout, price, localize('This contract won'), status);
+        } else if (status === 'lost') {
+            if (show_contract_result) {
+                $('#tick_chart').css('background-color', 'rgba(204,0,0,0.098039)');
             }
+            updatePurchaseStatus(0, -price, localize('This contract lost'), status);
         }
-    };
-
-    const win = () => {
-        updatePurchaseStatus(payout, price, localize('This contract won'));
-    };
-
-    const lose = () => {
-        updatePurchaseStatus(0, -price, localize('This contract lost'));
     };
 
     const plot = () => {
@@ -293,8 +255,8 @@ const TickDisplay = (() => {
         }
 
         if (subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-            responseID = data.tick.id;
-            ViewPopupUI.storeSubscriptionID(responseID);
+            response_id = data.tick.id;
+            ViewPopupUI.storeSubscriptionID(response_id);
         }
 
         let epoches,
@@ -343,8 +305,8 @@ const TickDisplay = (() => {
 
         if (applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed) {
             evaluateContractOutcome();
-            if (responseID) {
-                BinarySocket.send({ forget: responseID });
+            if (response_id) {
+                BinarySocket.send({ forget: response_id });
             }
         } else {
             for (let d = 0; d < epoches.length; d++) {
@@ -373,7 +335,6 @@ const TickDisplay = (() => {
                     }
 
                     addBarrier();
-                    applyChartBackgroundColor(tick);
                     counter++;
                 }
             }
@@ -391,6 +352,7 @@ const TickDisplay = (() => {
             absolute_barrier  = contract.barrier;
             tick_shortcode    = contract.shortcode;
             tick_init         = '';
+            status            = contract.status;
             const request     = {
                 ticks_history: contract.underlying,
                 start        : contract.date_start,
@@ -411,7 +373,8 @@ const TickDisplay = (() => {
     return {
         updateChart,
         init      : initialize,
-        resetSpots: () => { spots_list = {}; },
+        resetSpots: () => { spots_list = {}; $('#tick_chart').css('background-color', '#F2F2F2'); },
+        setStatus : (status_update) => { status = status_update; },
     };
 })();
 

@@ -99,12 +99,12 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
-        const final_price       = contract.sell_price || contract.bid_price;
-        const is_started        = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const user_sold         = contract.sell_time && contract.sell_time < contract.date_expiry;
-        const is_ended          = contract.is_settleable || contract.is_sold || user_sold;
-        const indicative_price  = final_price && is_ended ? final_price : (contract.bid_price || null);
-        const sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
+        const final_price        = contract.sell_price || contract.bid_price;
+        const is_started         = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
+        const sold_before_expiry = contract.status === 'sold' || (contract.sell_time && contract.sell_time < contract.date_expiry);
+        const is_ended           = contract.status !== 'open';
+        const indicative_price   = final_price && is_ended ? final_price : (contract.bid_price || null);
+        const sold_before_start  = contract.sell_time && contract.sell_time < contract.date_start;
 
         if (contract.barrier_count > 1) {
             containerSetText('trade_details_barrier', sold_before_start ? '-' : addComma(contract.high_barrier), '', true);
@@ -128,8 +128,8 @@ const ViewPopup = (() => {
         let current_spot      = contract.current_spot;
         let current_spot_time = contract.current_spot_time;
         if (is_ended) {
-            current_spot      = user_sold ? '' : contract.exit_tick;
-            current_spot_time = user_sold ? '' : contract.exit_tick_time;
+            current_spot      = sold_before_expiry ? '' : contract.exit_tick;
+            current_spot_time = sold_before_expiry ? '' : contract.exit_tick_time;
         }
 
         if (current_spot) {
@@ -157,10 +157,16 @@ const ViewPopup = (() => {
         if (final_price) {
             profit_loss = final_price - contract.buy_price;
             percentage  = addComma((profit_loss * 100) / contract.buy_price, 2);
+            let profit_loss_class;
+            if (contract.status === 'won') {
+                profit_loss_class = 'profit';
+            } else if (contract.status === 'lost') {
+                profit_loss_class = 'loss';
+            }
             containerSetText('trade_details_profit_loss',
-                `${formatMoney(contract.currency, profit_loss)}<span class="percent">(${(percentage > 0 ? '+' : '')}${percentage}%)</span>`, { class: (profit_loss >= 0 ? 'profit' : 'loss') });
+                `${formatMoney(contract.currency, profit_loss)}<span class="percent">(${(percentage > 0 ? '+' : '')}${percentage}%)</span>`, { class: profit_loss_class });
         } else {
-            containerSetText('trade_details_profit_loss', '-', { class: 'loss' });
+            containerSetText('trade_details_profit_loss', '-');
         }
 
         if (!is_started) {
@@ -188,12 +194,12 @@ const ViewPopup = (() => {
             chart_updated = true;
         }
 
-        if (!is_sold && user_sold) {
+        if (!is_sold && sold_before_expiry) {
             is_sold = true;
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
         }
         if (is_ended) {
-            contractEnded(parseFloat(profit_loss) >= 0);
+            contractEnded();
             if (contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !is_sell_clicked) {
                 ViewPopupUI.forgetStreams();
                 BinarySocket.send({ sell_expired: 1 }).then((response) => {
@@ -219,8 +225,8 @@ const ViewPopup = (() => {
         showLocalTimeOnHover('#trade_details_live_date');
 
         const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const is_ended   = contract.is_settleable || contract.is_sold;
-        if ((!is_started || is_ended || now >= contract.date_expiry) && document.getElementById('trade_details_live_remaining')) {
+        const is_ended   = contract.status !== 'open';
+        if ((!is_started || is_ended) && document.getElementById('trade_details_live_remaining')) {
             containerSetText('trade_details_live_remaining', '-');
         } else {
             let remained = contract.date_expiry - now;
@@ -239,7 +245,7 @@ const ViewPopup = (() => {
     };
 
     const contractEnded = () => {
-        containerSetText('trade_details_current_title', localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
+        containerSetText('trade_details_current_title', localize(contract.status === 'sold' || (contract.sell_spot_time < contract.date_expiry) ? 'Contract Sold' : 'Contract Expiry'));
         containerSetText('trade_details_spot_label', localize('Exit Spot'));
         containerSetText('trade_details_spottime_label', localize('Exit Spot Time'));
         containerSetText('trade_details_indicative_label', localize('Price'));
@@ -251,7 +257,7 @@ const ViewPopup = (() => {
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
         // don't show for japanese clients or contracts that are manually sold before starting
-        if (contract.audit_details && !jpClient() &&
+        if (contract.audit_details && !jpClient() && contract.status !== 'sold' &&
             (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
             initAuditTable(0);
         }
@@ -430,7 +436,7 @@ const ViewPopup = (() => {
                 contract_starts.div.remove();
             }
             // don't show exit tick information if missing or manual sold
-            if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)) {
+            if (contract.exit_tick_time && !(contract.status === 'sold' || (contract.sell_time && contract.sell_time < contract.date_expiry))) {
                 const contract_ends = createAuditTable('Ends');
                 parseAuditResponse(contract_ends.table, contract.audit_details.contract_end).then(() => {
                     if (contract.audit_details.contract_end) {

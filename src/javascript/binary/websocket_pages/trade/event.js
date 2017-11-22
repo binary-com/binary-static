@@ -387,6 +387,7 @@ const TradingEvents = (() => {
         $('#close_confirmation_container').on('click dblclick', (e) => {
             if (e.target && isVisible(document.getElementById('confirmation_message_container'))) {
                 e.preventDefault();
+                BinarySocket.send({ forget_all: 'proposal_open_contract' });
                 commonTrading.hideOverlayContainer();
                 Price.processPriceRequest();
             }

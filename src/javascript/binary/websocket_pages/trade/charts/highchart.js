@@ -133,7 +133,7 @@ const Highchart = (() => {
             decimals  : history ? history.prices[0] : candles[0].open,
             entry_time: entry_tick_time ? entry_tick_time * 1000 : start_time * 1000,
             exit_time : exit_time ? exit_time * 1000 : null,
-            user_sold : userSold(),
+            user_sold : soldBeforeExpiry(),
         });
         return getHighstock((Highcharts) => {
             Highcharts.setOptions(HighchartUI.getHighchartOptions(JPClient));
@@ -149,7 +149,7 @@ const Highchart = (() => {
     // type 'y' is used to draw lines such as barrier
     const addPlotLine = (params, type) => {
         chart[(`${type}Axis`)][0].addPlotLine(HighchartUI.getPlotlineOptions(params, type));
-        if (userSold()) {
+        if (soldBeforeExpiry()) {
             HighchartUI.replaceExitLabelWithSell(chart.subtitle.element);
         }
     };
@@ -347,7 +347,7 @@ const Highchart = (() => {
     };
 
     const updateZone = (type) => {
-        if (chart && type && !userSold()) {
+        if (chart && type && !soldBeforeExpiry()) {
             const value = type === 'entry' ? entry_tick_time : exit_time;
             chart.series[0].zones[(type === 'entry' ? 0 : 1)].value = value * 1000;
         }
@@ -505,7 +505,7 @@ const Highchart = (() => {
     const endContract = () => {
         if (chart && !stop_streaming) {
             drawLineX({
-                value     : (userSold() ? sell_time : end_time),
+                value     : (soldBeforeExpiry() ? sell_time : end_time),
                 text_left : 'textLeft',
                 dash_style: 'Dash',
             });
@@ -538,7 +538,7 @@ const Highchart = (() => {
                 stop_streaming = true;
             } else {
                 // add a null point if the last tick is before end time to bring end time line into view
-                const time = userSold() ? (sell_time || sell_spot_time) : end_time;
+                const time = soldBeforeExpiry() ? (sell_time || sell_spot_time) : end_time;
                 chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
             }
         }
@@ -596,7 +596,7 @@ const Highchart = (() => {
         }
     };
 
-    const userSold = () => (
+    const soldBeforeExpiry = () => (
         (sell_time && sell_time < end_time) || (!sell_time && sell_spot_time && sell_spot_time < end_time)
     );
 
