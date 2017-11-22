@@ -41,3 +41,10 @@
 </p>
 <p>[% l('Subscriber') %]</p>
 <p>[% l('Date: ') %] <input type="text" disabled="disabled" class="center-text" id="date_today" placeholder="[% l('Date') %]"></p>
+
+[% INCLUDE global/separator_line.html.tt class="gr-padding-10" invisible=1 show_mobile=1 %]
+
+<div class="center-text gr-centered">
+    <button class="button" type="submit">[% l("Agree") %]</button>
+    <a class="button-secondary" id="cancel" href="javascript:;"><span>[% l("Return") %]</span></a>
+</div>

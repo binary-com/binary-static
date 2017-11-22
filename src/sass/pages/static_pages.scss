@@ -302,6 +302,20 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.ico-claim-form-content {
+    p {
+        font-size: $FONT_SIZE_S;
+    }
+    ol li {
+        font-size: $FONT_SIZE_S;
+    }
+    input[disabled='disabled'] {
+        background: $COLOR_LIGHT_GRAY;
+        font-weight: 900;
+        width: 200px;
+    }
+}
+
 .liquidity-solutions-content {
     .box {
         border: 1px solid $COLOR_GRAY_SHADE;

@@ -46,7 +46,7 @@ const ICOPortfolio = (() => {
         const new_class    = is_first ? '' : 'new';
         const status       = status_text;
         let button_class = /cancel|end/i.test(status) ? 'button-secondary' : 'button';
-        const action       = /\w/i.test(long_code) ? 'claim' : 'cancel';
+        const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
         const shortcode    = data.shortcode.split('_');
 
         const buy_price          = +shortcode[1] * +shortcode[2];
@@ -56,7 +56,7 @@ const ICOPortfolio = (() => {
             button_class = 'button-disabled';
         }
 
-        const $button = $('<a/>', { class: `${button_class} nowrap`, contract_id: data.contract_id, action});
+        const $button = $('<a/>', { class: `${button_class} nowrap`, contract_id: data.contract_id, tokens: shortcode[2], action});
         $button.append($(`<span>${localize(status)}</span>`));
 
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
@@ -113,6 +113,11 @@ const ICOPortfolio = (() => {
                 .on('click', (e) => {
                     e.preventDefault();
                     const url = urlFor('user/ico-claim-form');
+                    // set the contract id for ico-claim-form page.
+                    const contract_id = $(e.target).parent().attr('contract_id');
+                    const tokens      = $(e.target).parent().attr('tokens');
+                    State.set('ico_contract_id', contract_id);
+                    State.set('ico_token_count', tokens);
                     loadUrl(url);
                 });
 
