@@ -1,4 +1,4 @@
-[% PROCESS components/elements.html.tt %]
+[% PROCESS common/components/elements.html.tt %]
 
 [% BLOCK platform %]
 <div class="gr-6 gr-12-m gr-12-p">

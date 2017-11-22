@@ -120,7 +120,8 @@ foreach my $m (@m) {
         my $output = tt2_handle($file, %stash);
 
         ## pjax is using layout/$layout/content
-        my $layout_file = "global/layout.html.tt";
+        my $layout_file = (split /\//, $tpl_path)[0] . '/_layout/layout.html.tt';
+        $layout_file = 'app/_layout/layout.html.tt' unless (-e "$root_path/src/templates/$layout_file");
         $stash{is_pjax_request} = 1;
         $stash{content}         = $output;
         my $layout_output = tt2_handle($layout_file, %stash);

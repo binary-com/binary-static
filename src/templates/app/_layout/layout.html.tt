@@ -1,0 +1,34 @@
+[% UNLESS is_pjax_request %]
+    [% PROCESS app/_layout/head.html.tt %]
+[% END %]
+
+[% UNLESS is_pjax_request %]
+    <body[% IF lang %] class="[% language %]"[% END %]>
+        [% PROCESS app/_layout/header.html.tt %]
+        [% PROCESS app/_layout/main_menu.html.tt %]
+        [% PROCESS app/_layout/mobile_menu.html.tt %]
+        [% PROCESS common/includes/gtm.html.tt %]
+    <!-- FlushHead -->
+    <a href="javascript:;" id="scrollup"></a>
+[% END %]
+[% IF layout %]
+        <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
+            [% IF layout == 'full_width' %]
+                [% PROCESS common/includes/ico_banner.html.tt container='ico-banner-container' class='top-margin' %]
+            [% ELSIF layout == 'default' %]
+                [% PROCESS common/includes/ico_banner.html.tt container='ico-banner-container' class='top-margin bottom-margin' %]
+            [% END %]
+            <div id="page_info" style="display:none;">
+                [% PROCESS common/components/title.html.tt %]
+                <div id="content_class">[% current_route %]-content</div>
+            </div>
+            [% IF layout != 'full_width' %]
+                <div class="container">
+            [% END %]
+[% END %]
+
+[% content %]
+
+[% UNLESS is_pjax_request %]
+  [% PROCESS app/_layout/footer.html.tt %]
+[% END %]

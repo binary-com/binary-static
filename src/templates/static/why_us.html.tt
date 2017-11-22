@@ -1,4 +1,4 @@
-[% PROCESS components/elements.html.tt %]
+[% PROCESS common/components/elements.html.tt %]
 
 [% BLOCK section %]
 <div class="section [% class %]">
