@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-19 20:19-0500\n"
+"PO-Revision-Date: 2017-11-21 20:49-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: vi\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: vi_VN\n"
+
+msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
+msgstr ""
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" có nghĩa là một bộ chương trình lập trình độc quyền, các lệnh, các công cụ và nguồn lực được tạo ra và duy trì bởi %1 cái mà cho phép bạn sử dụng Ứng dụng đã được đăng ký để giao dịch trên sàn giao dịch %1."
@@ -240,8 +243,8 @@ msgstr "không liên kết với bất kỳ Đại Lý Thanh Toán nào được
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "là không có sẵn ở Costa Rica và không quy định hoặc giám sát bởi bất kỳ cơ quan quy định trong hệ thống tài chính Costa Rica."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
-msgstr "%1 đang cung cấp đến <strong>10.000.000</strong> thẻ trong một phiên đấu giá mở cửa. Bạn có thể đặt giá thầu của bạn bằng cách sử dụng mẫu dưới đây."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='%2' target='_blank'>Learn more</a>"
+msgstr ""
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 thuộc quyền sở hữu và được điều hành bởi tập đoàn Binary Ltd. Để biết thêm thông tin, <a href='%2'>ghé thăm trang lịch sử của chúng tôi</a> 2."
@@ -1223,6 +1226,9 @@ msgstr "Bạn có chắc chắn muốn xóa vĩnh viễn token"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Bạn có chắc chắn muốn thu hồi quyền truy cập vào ứng dụng vĩnh viễn"
 
+msgid "Are you sure you want to cancel the bid?"
+msgstr ""
+
 msgid "Are your site visitors interested in:"
 msgstr "Khách đến thăm trang của bạn có hứng thú với:"
 
@@ -1537,6 +1543,12 @@ msgstr "Giá thầu cho một thẻ ($USD)"
 
 msgid "Bid on the ICO:"
 msgstr "Giá thầu trên các ICO:"
+
+msgid "Bids can be cancelled at any time before the end of the auction at no cost."
+msgstr ""
+
+msgid "Bids can be cancelled at any time before the end of the auction without any penalty."
+msgstr ""
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -2726,6 +2738,9 @@ msgstr "Khu định cư ly hôn"
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "Tôi có cần nạp tiền để mở tài khoản không?"
 
+msgid "Do I need to pay a penalty for cancelling a bid?"
+msgstr ""
+
 msgid "Do I retain ownership of the code?"
 msgstr "Tôi có giữ lại quyền sở hữu của mã?"
 
@@ -2860,9 +2875,6 @@ msgstr "1 EUR cho mỗi điểm"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "Mỗi bên phải làm bất cứ điều gì hợp lý theo yêu cầu của bên kia để cho có hiệu lực đến quy định và/hoặc điều khoản và/hoặc các điều khoản của thỏa thuận này."
-
-msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr "Hủy bỏ giá thầu mỗi sẽ phải chịu một khoản phí hủy bỏ 2%."
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "Mỗi hợp đồng quyền chọn đều hoạt động trong khoảng thời gian được thiết lập - với %1 bạn có thể chọn một hợp đồng hoạt động từ 10 giây đến 365 ngày."
@@ -3935,9 +3947,6 @@ msgstr "Tôi thừa nhận rằng tôi không phải là một người tiếp x
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
-msgid "I agree to the cancellation fee stated above"
-msgstr "Tôi đồng ý với khoản phí hủy đã nêu ở trên"
-
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "I confirm my agreement to the contents of all the documents listed below:"
 
@@ -4498,6 +4507,9 @@ msgstr "Di sản thừa kế"
 
 msgid "Initial Coin Offering (ICO)"
 msgstr "Initial Coin Offering (ICO)"
+
+msgid "Initial deposit required: "
+msgstr ""
 
 msgid "Input personal information"
 msgstr "Nhập thông tin cá nhân"
@@ -6066,6 +6078,9 @@ msgstr "Không"
 msgid "Not FATCA*"
 msgstr "Not FATCA*"
 
+msgid "Not at all. You can cancel a bid at any time before the auction ends at no cost."
+msgstr ""
+
 msgid "Note"
 msgstr "Chú ý"
 
@@ -6702,6 +6717,9 @@ msgstr "Xin vui lòng hoàn tất mẫu đánh giá tài chính %1 %2 để nân
 
 msgid "Please complete the tax information before proceeding."
 msgstr "Vui lòng hoàn thành thông tin thuế trước khi tiếp tục."
+
+msgid "Please confirm that you are a %1professional trader%2 to proceed."
+msgstr ""
 
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Xin vui lòng xác nhận rằng bạn không là một người tiếp xúc với chính trị."
@@ -8797,8 +8815,8 @@ msgstr "Thuật ngữ 'chúng ta', 'chúng tôi', 'chúng tôi', 'chúng ta', 'c
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "Thuật ngữ 'chúng ta', 'chúng tôi', 'chúng tôi', 'chúng ta', 'công ty', hay '%1' thì biểu thị Binary (V) Ltd. hoặc Binary (C.R.) S.A., tùy thuộc vào thẩm quyền mà tài khoản của khách hàng đã được đính kèm theo các tài khoản mở các thủ tục của trang web."
 
-msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
-msgstr "Các thẻ được cung cấp thông qua một quá trình đấu giá. Xem của chúng tôi %1guide%2 để mã thông báo bán đấu giá."
+msgid "The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price."
+msgstr ""
 
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr ""
@@ -9022,6 +9040,9 @@ msgstr "Điều này có ý nghĩa thật lớn lao. Chúng tôi nhận được
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "Đây là giá hiện tại tại đó mà tài sản cơ sở có thể được mua hoặc bán tại một thời điểm cụ thể."
 
+msgid "This means that you won’t have to tie up important funds in order to keep your bids active."
+msgstr ""
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Thông báo này không giải thích tất cả các rủi ro có trong đầu tư hoặc các sản phẩm tương tự hoặc những rủi ro liên quan đến trường hợp cá nhân của bạn. Điều quan trọng là bạn hiểu đầy đủ về các rủi ro liên quan trước khi đưa ra quyết định nhập vào hoặc bán một sản phẩm đầu tư hay sản phẩm cá cược với chúng tôi. Nếu bạn có nghi ngờ về những rủi ro liên quan đến Sản phẩm Đầu tư hoặc Sản phẩm Cá cược, bạn nên tìm kiếm tư vấn chuyên nghiệp."
 
@@ -9154,6 +9175,9 @@ msgstr "Để thực hiện hành động này, xin vui lòng <a href=\"%1\"> n�
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Để thực hiện hành động này, xin vui lòng chuyển sang tài khoản thật của bạn %1."
 
+msgid "To place a bid, you only need to deposit 5% of the total bid value. At the end of the auction, the final price of the token will be decided and you will have two weeks to settle the remaining balance that’s due on each active bid."
+msgstr ""
+
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Để đủ điều kiện, bạn cần phải tốt nghiệp với văn bằng khá chuyên ngành Vật lý, Kỹ thuật Tài chính hay Toán học"
 
@@ -9172,14 +9196,8 @@ msgstr "Hiện nay, chúng tôi đã đưa bản thân thành một nhà tiên p
 msgid "Token"
 msgstr "Mã Token"
 
-msgid "Token Sale Begins In"
-msgstr "Phiên giao dịch tiền ảo bắt đầu trong"
-
 msgid "Token dividends"
 msgstr "Cổ tức thẻ"
-
-msgid "Token sale begins in"
-msgstr "Phiên giao dịch tiền ảo bắt đầu trong"
 
 msgid "Token sale ends in"
 msgstr "Đợt bán Token kết thúc trong"
@@ -9192,6 +9210,9 @@ msgstr "Thẻ sẽ mang lại cho bạn một số lượng cổ tức tương �
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
 msgstr "Thẻ sẽ chỉ được cung cấp cho khách hàng %1 mà có tài khoản tiền thật. Vui lòng truy cập %2 www.binary.com%3 để mở một tài khoản."
+
+msgid "Top up in cashier"
+msgstr ""
 
 msgid "Top-tier liquidity"
 msgstr "Thanh khoản hàng đầu"
@@ -10814,9 +10835,6 @@ msgstr "Bạn sẽ bị tự động đăng thoát sau khoảng thời gian 
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "Bạn sẽ được cung cấp tất cả các công cụ để biến hệ thống của bạn thành một nguồn thu nhập hấp dẫn"
 
-msgid "You will be subject to a 2% cancellation fee."
-msgstr "Bạn sẽ phải chịu một khoản phí hủy bỏ 2%."
-
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "Bạn sẽ phải chịu sự trao đổi tỷ lệ nếu bạn giữ một vị trí mở qua 23:59:59 GMT."
 
@@ -11275,9 +11293,6 @@ msgstr "hôm nay"
 
 msgid "today, Fridays"
 msgstr "hôm nay, Thứ Sáu"
-
-msgid "top up in cashier"
-msgstr "trên cùng ở quầy thu ngân"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "lên/xuống, chạm/không chạm, giữ trong/đẩy ra."
