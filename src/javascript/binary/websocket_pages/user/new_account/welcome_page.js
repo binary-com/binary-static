@@ -21,13 +21,11 @@ const WelcomePage = (() => {
             const show_welcome_msg  = upgrade_info.can_upgrade;
 
             if (/^virtual/.test(account_type)) {
+                const allowed_currencies = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
 
-                const arr_landing_company = Object.keys(landing_company).map(key => landing_company[key]);
-                const allowed_currency = arr_landing_company[0].legal_allowed_currencies;
-
-                if (allowed_currency && allowed_currency.length > 0) {
-                    for (let i=0; i < allowed_currency.length; i++) {
-                        const el = document.getElementById(allowed_currency[i]);
+                if (allowed_currencies && allowed_currencies.length > 0) {
+                    for (let i=0; i < allowed_currencies.length; i++) {
+                        const el = document.getElementById(allowed_currencies[i]);
                         if (el) {
                             el.classList.remove('invisible');
                         }
