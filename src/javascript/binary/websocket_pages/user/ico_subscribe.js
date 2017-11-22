@@ -109,7 +109,7 @@ const ICOSubscribe = (() => {
                     { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]], no_scroll: 1 },
 
                     { request_field: 'buy', value: 1 },
-                    { request_field: 'amount',        parent_node: 'parameters', value: () => +document.getElementById('price').value * (initial_deposit_percent / 100) },
+                    { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
                     { request_field: 'contract_type', parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'symbol',        parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'basis',         parent_node: 'parameters', value: 'stake' },
@@ -312,7 +312,14 @@ const ICOSubscribe = (() => {
         if(min_bid_usd && min_bid && res_currency && res_currency !== 'USD'){
             text = `${localize('Minimum bid')} = ${formatMoney(res_currency, min_bid)} / ${formatMoney('USD', min_bid_usd)}`;
         }
+
+        const minBidOnClick = () => {
+            $price.val(min_bid);
+        };
+
         el_min_bid.innerHTML = text;
+        el_min_bid.removeEventListener('click', minBidOnClick, false);
+        el_min_bid.addEventListener('click', minBidOnClick, false);
     };
 
     const onUnload = () => {

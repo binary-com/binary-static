@@ -51,7 +51,7 @@ How to work with this project
 1. Register your application [here](https://developers.binary.com/applications/). This will give you the ability to redirect back to your github pages after login.
 Use `https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/logged_inws.html` for Redirect URL.
 
-2. In `src/javascript/config.js`: Replace the number `1` in `getAppId()` function with the `Application ID` of your registered application.
+2. In `src/javascript/config.js`: Insert the `Application ID` of your registered application in `user_app_id`.
   * **NOTE:** In order to avoid accidentally committing personal changes to this file, use `git update-index --assume-unchanged src/javascript/config.js`
 
 3. Run `grunt dev`

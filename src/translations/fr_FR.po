@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-19 20:16-0500\n"
+"PO-Revision-Date: 2017-11-21 20:47-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: fr\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: fr_FR\n"
+
+msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
+msgstr ""
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "« L'API %1 » désigne l'ensemble des produits propriétaires de %1, notamment les routines, protocoles, outils et ressources de programmation créés et mis en service par %1, vous permettant d'utiliser une Application enregistrée pour communiquer avec la plateforme de trading %1."
@@ -240,8 +243,8 @@ msgstr "%1 n'est affiliée à aucun des agents de paiement listés ci-dessus. Ch
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 n'est pas disponible au Costa Rica et n'est soumise à la réglementation ou à la supervision d'aucun organisme de réglementation dans le système financier du Costa Rica."
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
-msgstr "%1 offre jusqu'à <strong>10 000 000</strong> jetons dans une vente aux enchères ouverte. Vous pouvez placer vos offres en utilisant le formulaire ci-dessous."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='%2' target='_blank'>Learn more</a>"
+msgstr ""
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 appartient et est exploité par le groupe d'entreprises Binary Group Ltd. Pour obtenir des informations supplémentaires, <a href='%2'>consultez notre historique</a>."
@@ -1218,6 +1221,9 @@ msgstr "Voulez-vous vraiment supprimer ce jeton de façon permanente ?"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Voulez-vous vraiment révoquer l'accès à cette application de façon permanente ?"
 
+msgid "Are you sure you want to cancel the bid?"
+msgstr ""
+
 msgid "Are your site visitors interested in:"
 msgstr "Les visiteurs de votre site souhaitent-ils :"
 
@@ -1532,6 +1538,12 @@ msgstr "Prix de la Mise Par Jeton ($USD)"
 
 msgid "Bid on the ICO:"
 msgstr "Enchérissez sur l’ICO :"
+
+msgid "Bids can be cancelled at any time before the end of the auction at no cost."
+msgstr ""
+
+msgid "Bids can be cancelled at any time before the end of the auction without any penalty."
+msgstr ""
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -2721,6 +2733,9 @@ msgstr "Règlement de divorce"
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "Dois-je déposer une certaine somme pour ouvrir un compte ?"
 
+msgid "Do I need to pay a penalty for cancelling a bid?"
+msgstr ""
+
 msgid "Do I retain ownership of the code?"
 msgstr "Est ce que je conserve la propriété du code ?"
 
@@ -2855,9 +2870,6 @@ msgstr "1 EUR par point de base"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "Chacune des parties feront tout ce qui est raisonnablement requis par l’autre partie pour mettre en œuvre des dispositions et/ou termes et/ou clauses du présent contrat."
-
-msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr "Chaque annulation d’enchérissement sera soumise à des frais d’annulation de 2 %."
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "Chaque contrat d'option binaire est actif pendant une période prédéfinie. Avec %1, vous pouvez sélectionner une période de 10 secondes à 365 jours."
@@ -3930,9 +3942,6 @@ msgstr "Je déclare que je ne suis pas une personne politiquement exposée (PEP)
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "Je confirme que je négocierai les options binaires de gré à gré sur la base de mon propre jugement et j'endosse la responsabilité de toute perte susceptible de résulter d'une transaction, dans les limites permises par la valeur totale de mes actifs financiers."
 
-msgid "I agree to the cancellation fee stated above"
-msgstr "Je suis d’accord pour les frais d’annulation indiqués ci-dessus"
-
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "I confirm my agreement to the contents of all the documents listed below:"
 
@@ -4493,6 +4502,9 @@ msgstr "Héritage"
 
 msgid "Initial Coin Offering (ICO)"
 msgstr "Offre de Pièces Initiale (ICO)"
+
+msgid "Initial deposit required: "
+msgstr ""
 
 msgid "Input personal information"
 msgstr "Renseigner vos information personnelles"
@@ -6060,6 +6072,9 @@ msgstr "Pas"
 msgid "Not FATCA*"
 msgstr "Not FATCA*"
 
+msgid "Not at all. You can cancel a bid at any time before the auction ends at no cost."
+msgstr ""
+
 msgid "Note"
 msgstr "Remarque"
 
@@ -6695,6 +6710,9 @@ msgstr "Veuillez remplir le %1formulaire d'évaluation financière%2 pour lever 
 
 msgid "Please complete the tax information before proceeding."
 msgstr "Veuillez fournir les informations fiscales requises avant de continuer."
+
+msgid "Please confirm that you are a %1professional trader%2 to proceed."
+msgstr ""
 
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Veuillez confirmer que vous n’êtes pas une personne politiquement exposée."
@@ -8790,8 +8808,8 @@ msgstr "Le terme « nous », « nous », « notre », « nôtre », « 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "Le terme « nous », « nous », « notre », « nôtre », « la société », ou « %1 » désigne soit binaire (V) Ltd. ou binaire (C.R.) S.A., selon la juridiction du compte Client conformément aux procédures d’ouverture de compte du site internet."
 
-msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
-msgstr "Les jetons sont offerts via un processus d’enchères. Découvrez notre %1guide%2 pour la vente aux enchères de jeton."
+msgid "The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price."
+msgstr ""
 
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr "Les jetons donne droit au détenteur de recevoir des paiements de dividendes et portent des avantages économiques qui sont assimilables à des actions ordinaires. Ainsi, il n'y aurait aucune raison pratique pour les détenteurs de jeton à convertir leurs jetons en actions."
@@ -9015,6 +9033,9 @@ msgstr "Événement marquant : nous recevons un double prix octroyé par le Fina
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "Il s'agit du prix actuel auquel un sous-jacent peut être acheté ou vendu à un moment donné."
 
+msgid "This means that you won’t have to tie up important funds in order to keep your bids active."
+msgstr ""
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Cet avertissement n'explique pas tous les risques liés aux investissements ou produits associés, et ne permet pas d'évaluer ces risques en fonction de votre situation personnelle. Il est important que vous compreniez pleinement les risques auxquels vous vous exposez avant de prendre la décision de négocier ou de vendre un produit d'investissement par l'intermédiaire de Binary.com. En cas de doutes concernant les risques associés aux produits d'investissement, il convient de faire appel à un professionnel pour obtenir des conseils adaptés."
 
@@ -9147,6 +9168,9 @@ msgstr "Pour effectuer cette action, veuillez <a href=\"%1\">ouvrir un compte r�
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Pour effectuer cette action, veuillez vous connecter à votre compte réel %1."
 
+msgid "To place a bid, you only need to deposit 5% of the total bid value. At the end of the auction, the final price of the token will be decided and you will have two weeks to settle the remaining balance that’s due on each active bid."
+msgstr ""
+
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Un diplôme d'études supérieures en physique, en ingénierie financière ou en mathématiques"
 
@@ -9165,14 +9189,8 @@ msgstr "Aujourd'hui, nous nous sommes établis comme un leader de marché et l�
 msgid "Token"
 msgstr "Jeton"
 
-msgid "Token Sale Begins In"
-msgstr "La vente de jeton commence dans"
-
 msgid "Token dividends"
 msgstr "Dividendes de jeton"
-
-msgid "Token sale begins in"
-msgstr "La vente de jeton commence dans"
 
 msgid "Token sale ends in"
 msgstr "La vente de jeton se termine dans"
@@ -9185,6 +9203,9 @@ msgstr "Les jetons vous donnent droit à une quantité de dividendes équivalent
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
 msgstr "Les jetons seront offerts uniquement aux clients de %1 qui ont un compte en argent réel. Veuillez visiter %2www.binary.com%3 pour ouvrir un compte."
+
+msgid "Top up in cashier"
+msgstr ""
 
 msgid "Top-tier liquidity"
 msgstr "Haut niveau de liquidité"
@@ -10804,9 +10825,6 @@ msgstr "Vous compte sera automatiquement déconnecté à l'issue de ce délai."
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "Nous vous fournirons l'ensemble des outils nécessaires pour que votre trafic devienne une source de revenus lucrative"
 
-msgid "You will be subject to a 2% cancellation fee."
-msgstr "Vous devrez payer les frais d’annulation de 2%."
-
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "Vous serez sujet à des taux swap si vous gardez une position ouverte après 23:59:59 GMT."
 
@@ -11265,9 +11283,6 @@ msgstr "aujourd'hui"
 
 msgid "today, Fridays"
 msgstr "aujourd'hui, vendredis"
-
-msgid "top up in cashier"
-msgstr "rajouter des fonds à la caisse"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "- haut/bas, touche/sans touche, reste dans/sort de."
