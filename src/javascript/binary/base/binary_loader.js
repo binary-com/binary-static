@@ -69,7 +69,7 @@ const BinaryLoader = (() => {
 
     const loadHandler = (config) => {
         active_script = config.module;
-        if (Login.isLoginPages()) {
+        if (/logged_inws/i.test(window.location.pathname)) {
             const params = paramsHash(window.location.href);
             BinarySocket.send({ authorize: params.token1 }).then(() => {
                 loadActiveScript(config);

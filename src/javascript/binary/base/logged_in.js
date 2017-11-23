@@ -52,28 +52,31 @@ const LoggedInHandler = (() => {
         Client.clearAllAccounts();
 
         let is_loginid_set = false;
+        account_list.forEach((account) => {
+            Object.keys(account).forEach((param) => {
+                if (param === 'loginid') {
+                    // set the first non-ico account as default loginid
+                    if (!is_loginid_set && !account.is_ico_only) {
+                        Client.set(param, account[param]);
+                        is_loginid_set = true;
+                    }
+                } else {
+                    const param_to_set = param === 'country' ? 'residence' : param;
+                    const value_to_set = typeof account[param] === 'undefined' ? '' : account[param];
+                    Client.set(param_to_set, value_to_set, account.loginid);
+                }
+            });
+        });
+
         let i = 1;
         while (params[`acct${i}`]) {
-            const loginid  = params[`acct${i}`];
-            const token    = params[`token${i}`];
-            const currency = params[`cur${i}`] || '';
+            const loginid = params[`acct${i}`];
+            const token   = params[`token${i}`];
             if (loginid && token) {
-                // set the first non-ico account as default loginid
-                if (!is_loginid_set && !account_list[loginid].is_ico_only) {
-                    Client.set('loginid', loginid);
-                    is_loginid_set = true;
-                }
-                Client.set('token',    token,    loginid);
-                Client.set('currency', currency, loginid);
+                Client.set('token', token, loginid);
             }
             i++;
         }
-
-        Object.keys(account_list).forEach((loginid) => {
-            Object.keys(account_list[loginid]).forEach((param) => {
-                Client.set(param === 'country' ? 'residence' : param, account_list[loginid][param], loginid);
-            });
-        });
 
         if (Client.isLoggedIn()) {
             GTM.setLoginFlag();
