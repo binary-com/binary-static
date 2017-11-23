@@ -292,9 +292,9 @@
                     </div>
                 </div>
                 <div class="gr-row content-section-sm">
-                    <div class="gr-6 gr-12-m lykke-mask">
+                    <div class="gr-4 gr-12-p gr-12-m lykke-mask">
                         <div class="gr-row">
-                            <div class="gr-8 gr-push-4 gr-10-m gr-push-1-m gr-12-p gr-push-0-p">
+                            <div class="gr-8 gr-push-2 gr-10-m gr-push-1-m gr-12-p gr-push-0-p">
                                 <h4>Lykke</h4>
                                 <p>[% l("This equity research report by Lykke Accelerator gives you an overview of our company structure, financial performance, forecasts of future revenue, and more.") %]</p>
                                 <a id="lykke-btn" href="javascript:;" target="_blank" rel="noopener noreferrer" class="button">
@@ -303,13 +303,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="gr-6 gr-12-m token-mask">
+                    <div class="gr-4 gr-12-p gr-12-m token-mask">
                         <div class="gr-row">
-                            <div class="gr-8 gr-10-m gr-push-1-m gr-12-p">
+                            <div class="gr-8 gr-push-2 gr-10-m gr-push-1-m gr-12-p gr-push-0-p">
                                 <h4>TokenRating</h4>
                                 <p>[% l("This research report by India-based TokenRating analyses the structure of our token offering and the potential impact of our convertible tokens with dividend rights.") %]</p>
                                 <a id="token-btn" href="javascript:;" target="_blank" rel="noopener noreferrer" class="button">
                                     <span>[% l("View TokenRating report") %]</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gr-4 gr-12-p gr-12-m nishant-mask">
+                        <div class="gr-row">
+                            <div class="gr-8 gr-push-2 gr-10-m gr-push-1-m gr-12-p gr-push-0-p">
+                                <h4>Nishant Sah</h4>
+                                <p>[% l("This value analysis by an experienced investor, Nishant Sah studies the risk, benefits, and valuations of our token offering based on our past and projected growth.") %]</p>
+                                <a id="nishant-btn" href="javascript:;" target="_blank" rel="noopener noreferrer" class="button">
+                                    <span>[% l("View Nishant's report") %]</span>
                                 </a>
                             </div>
                         </div>
@@ -867,7 +878,7 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
         <div id="address" class="primary-bg-color-dark content-inverse-color center-text gr-padding-20">
             <span>Binary Group Ltd., Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
         </div>
-        <div id="ico-bottom-banner" class="gr-hide gr-show-m gr-12-m invisible" onclick="openSubscribeLink('[% request.url_for('user/ico-subscribe') %]');">
+        <div id="ico-bottom-banner" class="gr-hide gr-show-m gr-12-m invisible" onclick="openLink('[% request.url_for('user/ico-subscribe') %]');">
             <p class="center-text">[% l("The [_1] ICO is now live. Participate now!", broker_name) %]</p>
         </div>
         <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
