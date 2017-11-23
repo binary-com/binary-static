@@ -71,7 +71,7 @@ const ICOSubscribe = (() => {
     const init = () => {
         BinarySocket.wait('balance').then((response) => {
             ICOPortfolio.onLoad();
-            $('.view_ico_info').setVisibility(1);
+            $('#view_ico_info').setVisibility(1);
             currency = Client.get('currency') || '';
             if (currency) {
                 $('.currency').text(currency);
