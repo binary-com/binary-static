@@ -73,8 +73,16 @@
     [% INCLUDE global/separator_line.html.tt show_mobile=1 class='gr-padding-20' invisible=1 %]
     <div id="ico_bids">
         <div class="gr-row">
-            <h1 class="gr-7">[% l('[_1] ICO Auction Bids', website_name) %]</h1>
-            <div class="gr-5 align-end invisible" id="view_ico_info">
+            <div class="gr-12-m gr-hide gr-show-m gr-padding-10 view_ico_info">
+                <a class="button" href="[% request.url_for('user/ico-info') %]">
+                    <span>
+                        <img src="[% request.url_for('images/ico/icons/bar_chart.svg') %]">
+                        [% l('Histogram of Active Bids') %]
+                    </span>
+                </a>
+            </div>
+            <h1 class="gr-7 gr-12-m">[% l('[_1] ICO Auction Bids', website_name) %]</h1>
+            <div class="gr-5 align-end invisible gr-hide-m view_ico_info">
                 <a class="button" href="[% request.url_for('user/ico-info') %]">
                     <span>
                         <img src="[% request.url_for('images/ico/icons/bar_chart.svg') %]">
