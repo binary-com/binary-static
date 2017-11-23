@@ -14,21 +14,18 @@ const WelcomePage = (() => {
             }
 
             const landing_company   = State.getResponse('landing_company');
-            const account_type      = Client.getAccountType();
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
             const upgrade_btn       = document.getElementById('upgrade_btn');
             const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
             const show_welcome_msg  = upgrade_info.can_upgrade;
 
-            if (/^virtual/.test(account_type)) {
-                const allowed_currencies = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
+            const allowed_currencies = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
 
-                if (allowed_currencies && allowed_currencies.length > 0) {
-                    for (let i=0; i < allowed_currencies.length; i++) {
-                        const el = document.getElementById(allowed_currencies[i]);
-                        if (el) {
-                            el.classList.remove('invisible');
-                        }
+            if (allowed_currencies && allowed_currencies.length > 0) {
+                for (let i=0; i < allowed_currencies.length; i++) {
+                    const el = document.getElementById(allowed_currencies[i]);
+                    if (el) {
+                        el.classList.remove('invisible');
                     }
                 }
             }
