@@ -166,7 +166,7 @@ const Purchase = (() => {
     };
 
     const updateSpotList = () => {
-        const duration = +getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']);
+        let duration = +getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']);
         if ($('#contract_purchase_spots:hidden').length || !duration) {
             return;
         }
@@ -176,7 +176,6 @@ const Purchase = (() => {
         const epoches = Object.keys(spots2).sort((a, b) => a - b);
         if (spots) spots.textContent = '';
 
-        let counter = 0;
         if (!status) {
             const request = {
                 proposal_open_contract: 1,
@@ -192,10 +191,6 @@ const Purchase = (() => {
                     } else if (status === 'lost') {
                         updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
                     }
-
-                    if (counter === duration - 1) {
-                        purchase_data.echo_req.passthrough.duration = 0;
-                    }
                 }
             } });
         }
@@ -207,7 +202,7 @@ const Purchase = (() => {
                 quote: spots2[epoches[s]],
             };
 
-            if (isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time && counter < duration) {
+            if (isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
                 const fragment = createElement('div', { class: 'row' });
                 const el1      = createElement('div', { class: 'col', text: `${localize('Tick')} ${(spots.getElementsByClassName('row').length + 1)}` });
                 fragment.appendChild(el1);
@@ -227,7 +222,11 @@ const Purchase = (() => {
 
                 spots.appendChild(fragment);
                 spots.scrollTop = spots.scrollHeight;
-                counter++;
+
+                duration--;
+                if (!duration) {
+                    purchase_data.echo_req.passthrough.duration = 0;
+                }
             }
         }
     };
