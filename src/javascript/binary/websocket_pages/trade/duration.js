@@ -399,7 +399,7 @@ const Durations = (() => {
         target.appendChild(fragment);
     };
 
-    const isNow = date_start => (date_start || document.getElementById('date_start').value) === 'now';
+    const isNow = (date_start = 'now') => (date_start || document.getElementById('date_start').value) === 'now';
 
     const isSameDay = () => {
         let date_start     = document.getElementById('date_start');
