@@ -3,10 +3,12 @@ module.exports = {
         options: {
             style: 'expanded'
         },
-        files: [
-            { src: 'src/sass/binary.scss',    dest: global.dist + '/css/binary.css' },
-            { src: 'src/sass/ico.scss',       dest: global.dist + '/css/ico.css' },
-            { src: 'src/sass/hackathon.scss', dest: global.dist + '/css/hackathon.css' },
-        ]
+        files: [{
+            expand: true,
+            cwd   : 'src/sass',
+            src   : ['*.scss'],
+            dest  : global.dist + '/css',
+            ext   : '.css',
+        }]
     }
 };

@@ -1,8 +1,11 @@
 @at-root {
     @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic');
 }
-@import '../../node_modules/binary-style/src/sass/colors';
-@import '../../node_modules/binary-style/src/sass/constants';
+@import '../../../../node_modules/binary-style/src/sass/colors';
+@import '../../../../node_modules/binary-style/src/sass/constants';
+
+$LANGUAGE_DIRECTION : ltr;
+$IS_LTR : true;
 
 // Brand colors and derivatives
 /* stylelint-disable color-no-hex */

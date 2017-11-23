@@ -108,9 +108,22 @@ our $static_hash = join('', map{('a'..'z',0..9)[rand 36]} 0..7);
 sub get_static_hash { return $static_hash; }
 sub set_static_hash { $static_hash = shift; }
 
+sub sections {
+    return ('app', 'static');
+}
+
 ## css/js/menu
 sub css_files {
-    return (root_url() . "css/binary.min.css?$static_hash");
+    my $section = shift;
+    my @css;
+
+    push @css, root_url() . "css/common.min.css?$static_hash";
+
+    if (grep { $_ eq $section } sections()) {
+        push @css, root_url() . "css/$section.min.css?$static_hash";
+    }
+
+    return @css;
 }
 
 my $vendor_checksum;

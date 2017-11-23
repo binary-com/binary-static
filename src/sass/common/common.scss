@@ -1,0 +1,461 @@
+/* DO NOT include any rules for specific pages in this file. */
+/* theme elements */
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    background: repeat-x bottom;
+    overflow-x: hidden;
+
+    .ui-widget {
+        font-size: $FONT_SIZE_N;
+    }
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+select, input, button, textarea {
+    background: $COLOR_WHITE;
+    border: 1px solid $COLOR_GRAY;
+    padding: 2px 3px;
+}
+
+select {
+    max-width: 100%;
+}
+
+button {
+    vertical-align: top;
+}
+
+button:focus, input[type='submit']:focus {
+    background: $COLOR_GREEN;
+    outline: none;
+}
+
+button::-moz-focus-inner, input[type='submit']::-moz-focus-inner {
+    border: 0;
+}
+
+a.button:hover {
+    text-decoration: none;
+}
+
+input, button, textarea, select, optgroup, option, xmp {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+input, textarea {
+    vertical-align: middle;
+    border-radius: $BORDER_RADIUS;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+fieldset {
+    position: relative;
+    border: 1px solid $COLOR_GRAY;
+    padding: 5px;
+    margin-bottom: 10px;
+
+    legend {
+        color: $COLOR_DARK_GRAY;
+        padding: 0 0.8em;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+    .text-display { /* TODO: replace all occurrences of id with the class */
+        line-height: 25px;
+    }
+    .error-msg {
+        width: 100%;
+        text-align: left;
+        margin-top: 5px;
+    }
+}
+
+textarea {
+    height: 8em;
+    width: 25em;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* form styles */
+label {
+    line-height: 25px;
+}
+
+/* used for form label in grid structure */
+.form_label {
+    @include BIDIR_VALUE(text-align, right, left);
+    line-height: 25px;
+}
+
+.form-row {
+    padding: 10px 0;
+
+    div:first-child label {
+        display: block;
+        text-align: right;
+    }
+}
+
+.input {
+    width: 45%;
+}
+
+*, .no-margin, .errorfield {
+    margin: 0;
+}
+
+.errorfield {
+    margin-top: 8px;
+    color: $COLOR_RED;
+}
+
+.comment, .errorfield {
+    font-size: $FONT_SIZE_N;
+    font-style: italic;
+}
+
+/* global styles */
+.required_field_asterisk {
+    position: absolute;
+    margin: -3px 3px;
+    font-size: $FONT_SIZE_S;
+    color: $COLOR_RED;
+
+    &.no-margin {
+        position: relative;
+        margin: 0;
+    }
+}
+
+.inpage_popup_container {
+    position: fixed;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    border: solid 1px $COLOR_ORANGE;
+    background: $COLOR_LIGHT_GRAY;
+    z-index: 1000;
+    max-width: 90%;
+
+    .drag-handle {
+        cursor: pointer;
+    }
+    .inpage_popup_content {
+        margin: 30px 10px 10px;
+        padding: 0;
+    }
+    .inpage_popup_content_box {
+        padding: 0;
+        margin: 0;
+        background: $COLOR_WHITE;
+        border: solid 2px $COLOR_GRAY;
+        text-align: center;
+    }
+}
+
+/* Coche icon, AKA tick */
+#content {
+    margin-bottom: 20px;
+}
+
+#page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#content-holder {
+    flex: 1 1 auto;
+}
+
+.popup_page_overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+_:-ms-fullscreen, :root #content-holder {
+    height: 100%;
+}
+
+.color-white {
+    color: $COLOR_WHITE;
+}
+
+.half-sized-picture {
+    width: 50px;
+    height: 50px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.border-light-gray {
+    border: 1px solid $COLOR_LIGHT_GRAY;
+}
+
+.border-gray {
+    border: 1px solid $COLOR_GRAY;
+}
+
+.border-dark-gray {
+    border: 1px solid $COLOR_GRAY_SHADE;
+}
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+input[type=checkbox] {
+    margin-top: -5px;
+
+    &#email_consent {
+        margin-top: 5px;
+    }
+}
+
+.no-scroll, .no-scroll body {
+    overflow: hidden;
+}
+
+.logged_out_title_container {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+button .barspinner.white {
+    height: 13px;
+    margin: 3px auto;
+}
+
+#msg_notification {
+    &, &:after {
+        font-size: $FONT_SIZE_S;
+        padding: 3px 0;
+        min-height: 20px;
+        line-height: 20px;
+        display: none;
+    }
+    &.error:after {
+        display: block;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        content: attr(data-message);
+        background: $COLOR_YELLOW;
+        color: $COLOR_RED;
+        border-bottom: 1px solid $COLOR_RED;
+    }
+}
+
+#scrollup {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background: url('../../images/common/scrollup_icon.svg') no-repeat;
+    z-index: 999;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.invisible {
+    display: none !important;
+    visibility: hidden;
+}
+
+.center-align {
+    align-items: center;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.align-start {
+    @include BIDIR_VALUE (text-align, left, right);
+}
+
+.align-end {
+    @include BIDIR_VALUE (text-align, right, left);
+}
+
+.clear {
+    clear: both;
+}
+
+.sidebar-container {
+    position: relative;
+}
+
+.sidebar {
+    @include menu-left;
+}
+
+.static_full {
+    margin-top: 40px;
+
+    .section:first-child {
+        padding-bottom: 50px;
+    }
+    .section:not(:first-child) {
+        padding: 20px 0 50px;
+    }
+    .section:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    .section {
+        display: block;
+        overflow: hidden;
+    }
+    .sidebar-button {
+        background: $COLOR_LIGHT_GRAY;
+        padding: 20px;
+
+        a {
+            @include link-button;
+            display: block;
+        }
+    }
+}
+
+#ico_banner_container {
+    .ico-banner {
+        cursor: pointer;
+        border: 1px solid $COLOR_LIGHT_GRAY;
+        background: no-repeat 100% / cover url('../../images/ico/banner/white_background.png');
+
+        .ico-box {
+            position: relative;
+
+            div:nth-child(1) {
+                padding-left: 0;
+            }
+            .ico-column {
+                min-height: 80px;
+                justify-content: center;
+
+                .learn-btn {
+                    display: flex;
+                    justify-content: center;
+                    padding-top: 10px;
+
+                    a span {
+                        font-size: $FONT_SIZE_N;
+                    }
+                }
+            }
+            .left-bg {
+                background: no-repeat 100% / cover url('../../images/ico/banner/image_left_area.png');
+            }
+            p {
+                text-transform: uppercase;
+                font-size: $FONT_SIZE_XL;
+                font-weight: 400;
+                color: $primaryBrandColor;
+            }
+            .close-btn:after {
+                content: '';
+                background: no-repeat 100% / cover url('../../images/ico/banner/close_icon.svg');
+                cursor: pointer;
+                padding: 10px;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+        &.top-margin {
+            margin-top: 2.5em;
+        }
+        &.bottom-margin {
+            margin-bottom: 2em;
+        }
+    }
+    &.ico-banner-container {
+        margin: 0 auto;
+        max-width: 960px;
+        padding-right: 10px;
+        padding-left: 10px;
+        box-sizing: border-box;
+    }
+}
+
+.days_to_crack {
+    width: fit-content;
+    padding: 5px;
+    margin-top: 5px;
+
+    &.red {
+        color: $COLOR_RED;
+    }
+    &.green {
+        color: $COLOR_GREEN;
+    }
+}
+
+ul.bullet.gr-row > li {
+    display: list-item;
+}
+
+.pull-requests-content {
+    margin-bottom: 0 !important;
+}
+
+.toggle-arrow {
+    &:after {
+        content: '';
+        display: inline-block;
+        margin-left: 7px;
+        border-left: 4px dashed;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+    }
+    &.open:after {
+        border-top: 4px dashed;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        border-bottom: 0;
+    }
+}

@@ -96,11 +96,14 @@ foreach my $m (@m) {
         my $current_route = $save_as;
         $current_route =~ s{^(.+)/}{}sg;
 
+        my $section = (split /\//, $tpl_path)[0];
+
         my %stash = (
             website_name    => $request->website->display_name,
             browser_title   => $title ? localize($title).' | ' : '',
             request         => $request,
             layout          => $layout,
+            section         => $section,
             language        => uc $lang,
             root_url        => root_url(),
             static_hash     => get_static_hash(),
@@ -120,7 +123,7 @@ foreach my $m (@m) {
         my $output = tt2_handle($file, %stash);
 
         ## pjax is using layout/$layout/content
-        my $layout_file = (split /\//, $tpl_path)[0] . '/_layout/layout.html.tt';
+        my $layout_file = "$section/_layout/layout.html.tt";
         $layout_file = 'app/_layout/layout.html.tt' unless (-e "$root_path/src/templates/$layout_file");
         $stash{is_pjax_request} = 1;
         $stash{content}         = $output;
@@ -160,7 +163,7 @@ sub tt2_handle {
     my $request = $stash{request};
 
     $stash{javascript}       = js_config($dist_path);
-    $stash{css_files}        = [css_files()];
+    $stash{css_files}        = [css_files($stash{section})];
     $stash{iso639a_language} = $request->language;
     $stash{lang}             = $request->language;
     $stash{menu}             = menu();
