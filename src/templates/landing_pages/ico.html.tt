@@ -578,6 +578,7 @@
 
             <!-- news order: latest to oldest -->
             [% news=[
+                { logo="cryptoreader"           timestamp="Nov 22, 2017"    headlines="Binary.com launches world’s first ICO with 18 years of history"       url="https://cryptoreader.com/press_release/binary-com-launches-worlds-first-ico-18-years-history/" },
                 { logo="coinspeaker"            timestamp="Nov 21, 2017"    headlines="Binary.com Aims to Disrupt Traditional Stock Exchanges with an “IPO on the Blockchain”"       url="https://www.coinspeaker.com/2017/11/10/binary-com-aims-disrupt-traditional-stock-exchanges-ipo-blockchain/" },
                 { logo="ico-panic"              timestamp="Nov 21, 2017"    headlines="BINARY.COM OPTIONS TRADING TO LAUNCH ICO IN Q4 2017"       url="https://icopanic.com/binary-com-options-trading-to-launch-ico-in-q4-2017/" },
                 { logo="the-merkle"             timestamp="Nov 19, 2017"    headlines="Binary.com Launches World’s First ICO with 18 Years of History"        url="https://themerkle.com/binary-com-launches-worlds-first-ico-with-18-years-of-history/" },
