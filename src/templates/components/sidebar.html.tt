@@ -1,5 +1,5 @@
 [% BLOCK sidebar_content_container %]
-<div class="tnc-content-wrapper" id="[% id %]">
+<div class="sidebar-collapsible-content" id="[% id %]">
     [% content %]
 </div>
 [% END %]

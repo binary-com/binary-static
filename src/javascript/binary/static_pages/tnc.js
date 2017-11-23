@@ -1,4 +1,5 @@
 const tabListener = require('binary-style').tabListener;
+const sidebar     = require('binary-style').sidebarCollapsible;
 const localize    = require('../base/localize').localize;
 const urlParam    = require('../base/url').param;
 const Scroll      = require('../common_functions/scroll');
@@ -7,14 +8,14 @@ const TNCApproval = require('../websocket_pages/user/tnc_approval');
 const TermsAndConditions = (() => {
     const onLoad = () => {
         handleActiveTab();
-        handleSidebar();
         TNCApproval.requiresTNCApproval(
             $('#btn_accept'),
             () => { $('.tnc_accept').setVisibility(1); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
         Scroll.sidebarScroll($('.tac-binary'));
         tabListener();
-
+        sidebar();
+        handleSidebar();
         $('.currentYear').text(new Date().getFullYear());
     };
 
@@ -71,22 +72,8 @@ const TermsAndConditions = (() => {
     };
 
     const handleSidebar = () => {
-        $('.sidebar-collapsible').find('a').first().trigger('click');
-
-        $('#legal-binary-content').setVisibility(1);
-
-        $('.sidebar-collapsible a').click((e) => {
-            e.preventDefault();
-            const selected = e.target;
-            const submenu  = selected.nextElementSibling;
-            const target   = submenu ? submenu.firstElementChild.id : selected.getAttribute('href').substr(1);
-            $('.tnc-content-wrapper')
-                .find('> div')
-                .setVisibility(0)
-                .end()
-                .find(`#${target}-content`)
-                .setVisibility(1);
-        });
+        const hash = window.location.hash;
+        $('.sidebar-collapsible').find(hash ? `${hash} a` : 'a:first').trigger('click');
     };
 
     const onUnload = () => {
