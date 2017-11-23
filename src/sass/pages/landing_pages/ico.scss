@@ -428,6 +428,9 @@ input[type='text']:focus, input[type='submit']:focus {
             padding-top: 0;
         }
     }
+    #address {
+        padding-bottom: 60px;
+    }
 }
 
 #faq-section {
@@ -768,6 +771,14 @@ input[type='text']:focus, input[type='submit']:focus {
     background-image: url('../images/ico/icons/ituber_logo.svg');
 }
 
+.ico-panic {
+    background-image: url('../images/ico/icons/ico_panic_logo.svg');
+}
+
+.coinspeaker {
+    background-image: url('../images/ico/icons/coinspeaker_logo.svg');
+}
+
 #coming-soon {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -1104,4 +1115,8 @@ input[type='text']:focus, input[type='submit']:focus {
     &.token-mask {
         background: url('../images/ico/images/token-mask.svg') no-repeat bottom right scroll;
     }
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
 }
