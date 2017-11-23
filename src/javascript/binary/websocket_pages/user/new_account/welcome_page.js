@@ -1,8 +1,8 @@
 const Client             = require('../../../base/client');
 const localize           = require('../../../base/localize').localize;
+const State              = require('../../../base/storage').State;
 const createElement      = require('../../../base/utility').createElement;
 const Url                = require('../../../base/url');
-const State              = require('../../../base/storage').State;
 const BinarySocket       = require('../../../websocket_pages/socket');
 
 const WelcomePage = (() => {
