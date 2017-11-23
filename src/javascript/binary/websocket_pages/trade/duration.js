@@ -301,7 +301,7 @@ const Durations = (() => {
     const changeExpiryTimeType = () => {
         if (document.getElementById('expiry_type').value === 'endtime') {
             let $expiry_date     = $('#expiry_date');
-            const date_start_val = document.getElementById('date_start').value;
+            const date_start_val = document.getElementById('date_start').value || 'now';
             const is_now         = isNow(date_start_val);
             const is_risefall    = /risefall/.test(Defaults.get('formname')) || false;
 
