@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-23 20:19-0500\n"
+"PO-Revision-Date: 2017-11-24 03:58-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -6765,11 +6765,17 @@ msgstr "เว็บไซต์ของเรามีการบันทึ
 msgid "Please note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices, however these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push up or down prices). To avoid settling prices based on such artificial prices, it is %1's policy not to count weekend prices towards contract settlement values (except for the volatility indices, which are open during weekends)."
 msgstr "โปรดทราบว่า ราคาในช่วงวันหยุดจะไม่ถูกนำไปสู่การชำระมูลค่า ระหว่างวันหยุดสุดสัปดาห์ ตลาดฟอเร็กซ์ หรือ ตลาดค้าสกุลเงินอาจจะมีการกำหนดราคาเป็นครั้งคราว อย่างไรก็ตามราคาดังกล่าวจะเป็นราคาไม่แท้จริง (บางครั้งนักลงทุนจะใช้ประโยชน์ของตลาดที่ไร้สภาพคล่องในช่วงวันหยุดเพื่อผลักดันราคา หรือ กดดันราคา) เพื่อหลีกเลี่ยงการชำระราคาบนพื้นฐานราคาเทียม นโยบายของ %1 จะไม่นับราคาในวันหยุดในการทำการชำระราคาของสัญญา (ยกเว้น ดัชนีแปรปรวน ซึ่งเปิดทำการในวันหยุดสุดสัปดาห์)"
 
+msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
+msgstr ""
+
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "ท่านสามารถปรับปรุงข้อมูลส่วนตัวของท่านได้ตามต้องการ โดยการแก้ไขจากเมนู \"การตั้งค่า (Settings)\" ในบัญชีของท่าน และเป็นความรับผิดชอบของท่านเพื่อทำให้แน่ใจว่า %1 มีการปรับปรุงข้อมูลส่วนบุคคลของท่านมีการแจ้งให้ทราบทันทีและสม่ำเสมอ"
 
 msgid "Please provide us with the following information:"
 msgstr "กรุณาให้ข้อมูลดังต่อไปนี้"
+
+msgid "Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission."
+msgstr ""
 
 msgid "Please read this notice carefully - it applies to all persons who view this webpage. Please note that the disclaimer set out below may be altered or updated, at any time in whole or in part at the sole discretion of Binary Group Ltd. (“Company”). You should read it in full each time you visit the site."
 msgstr "กรุณาอ่านประกาศนี้อย่างรอบคอบ ประกาศนี้ใช้กับทุกคนที่ดูเว็บเพจนี้ การสงวนสิทธิ์ด้านล่างนี้อาจจะถูกเปลี่ยนหรือปรับปรุงเมื่อใดก็ได้ ทั้งหมดหรือบางส่วน ขึ้นอยู่กับดุลยพินิจของ Binary Group Ltd. (\"บริษัท\") คุณควรจะอ่านทั้งหมดทุกครั้งที่คุณเข้าเยี่ยมชมเว็บไซต์"
@@ -6839,6 +6845,9 @@ msgstr "กรุณาระบุเหตุผลของการเปิ
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "โปรดระบุช่วงเวลาการตรวจสอบสภาพความเป็นจริงที่ท่านต้องการเป็นหน่วยนาทีที่จะเกิดขึ้นจริงระหว่างการซื้อขาย"
+
+msgid "Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional."
+msgstr ""
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "โปรดส่งข้อมูลข้างต้นมาที่ <a href='mailto:%1'>%1</a>"
@@ -9029,9 +9038,6 @@ msgstr "ฟังก์ชันนี้สัมพันธ์กับบั
 msgid "This field is required."
 msgstr "ข้อมูลในช่องนี้จำเป็นต้องมี"
 
-msgid "This is a %1Bitcoin Cash%2 (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin."
-msgstr "นี่คือบัญชี %2 บิตคอยน์เงินสด (BCH) %1 โปรดทราบว่า เงินสดบิตคอยน์ ต่างจากเงินบิตคอยน์"
-
 msgid "This is a staging server - For testing purposes only"
 msgstr "นี่คือ เซิร์ฟเวอร์สำหรับพัก เพื่อใช้ในการทดสอบเท่านั้น"
 
@@ -10577,6 +10583,9 @@ msgstr "ท่านไม่ได้รับสิทธิ์ในการ
 
 msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "คุณไม่ใช่ผู้อยู่อาศัยในประเทศที่ถูกจำกัดเช่น อัฟกานิสถาน บอสเนียและเฮอร์เซโกวีนา คอสตาริกา และประเทศในสหภาพยุโรป ลาว ซีเรีย อูรกันดา วานูอาตู เยเมน สหรัฐอเมริกา ญี่ปุ่น ฮ่องกง มาเลเซีย มอลตา อิหร่าน เกาหลีเหนือ เจอร์ซี อิรัก อิสราแอล และประเทศที่ถูกจำกัดอื่นๆที่บริษัทอาจจะตัดสินใจบางครั้งบางคราวด้วยดุลยพินิจของบริษัท"
+
+msgid "You are now using your %1Bitcoin Cash%2 account. Please fund your account in %1Bitcoin Cash%2, and not Bitcoin."
+msgstr ""
 
 msgid "You are over 18 years of age;"
 msgstr "ท่านอายุมากกว่า 18 ปี"
@@ -13114,6 +13123,9 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Account Limits"
 msgstr "วงเงินในบัญชี"
+
+msgid "Warning"
+msgstr ""
 
 msgid "Redirecting..."
 msgstr "กำลังเปลี่ยนเส้นทาง..."

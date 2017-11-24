@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-23 20:17-0500\n"
+"PO-Revision-Date: 2017-11-24 03:56-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -6769,10 +6769,16 @@ msgstr "Tenga en cuenta que nuestro sitio Web genera archivos de registro que gu
 msgid "Please note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices, however these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push up or down prices). To avoid settling prices based on such artificial prices, it is %1's policy not to count weekend prices towards contract settlement values (except for the volatility indices, which are open during weekends)."
 msgstr "Tenga en cuenta que las cotizaciones de ese fin de semana se ignoran con el propósito de liquidar el contrato. Durante los fines de semana, los mercados de divisas pueden generar precios. Sin embargo, estos precios son por lo general artificiales (los comerciantes a veces aprovechan la iliquidez de los mercados durante los fines de semana para impulsar hacia arriba o hacia abajo los precios). Para evitar establecer los precios en base a los precios artificiales, la política de %1 es no contar los precios de los fines de semana para los valores de liquidación del contrato (excepto los índices de volatilidad, que están abiertos los fines de semana)."
 
+msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
+msgstr ""
+
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "Tenga en cuenta que puede actualizar su información personal en cualquier momento al ingresar a la sección \"Configuración\" en su cuenta. Es su responsabilidad asegurar que %1 esté siempre informado de cualquier cambio en su información personal."
 
 msgid "Please provide us with the following information:"
+msgstr ""
+
+msgid "Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission."
 msgstr ""
 
 msgid "Please read this notice carefully - it applies to all persons who view this webpage. Please note that the disclaimer set out below may be altered or updated, at any time in whole or in part at the sole discretion of Binary Group Ltd. (“Company”). You should read it in full each time you visit the site."
@@ -6843,6 +6849,9 @@ msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Por favor indique su intervalo de verificacón de realidad preferido en minutos"
+
+msgid "Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional."
+msgstr ""
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "Por favor, envíe la información anterior a <a href='mailto:%1'>%1</a>."
@@ -9027,9 +9036,6 @@ msgstr "Esta característica sólo es relevante para las cuentas de los agentes 
 msgid "This field is required."
 msgstr "Este campo es obligatorio."
 
-msgid "This is a %1Bitcoin Cash%2 (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin."
-msgstr ""
-
 msgid "This is a staging server - For testing purposes only"
 msgstr ""
 
@@ -9070,7 +9076,7 @@ msgid "This symbol is not active. Please try another symbol."
 msgstr ""
 
 msgid "This value analysis by an experienced investor, Nishant Sah studies the risk, benefits, and valuations of our token offering based on our past and projected growth."
-msgstr ""
+msgstr "Este análisis llevado a cabo por Nishant Sah, un inversionista experimentado, estudia los riesgos, beneficios y valoraciones de nuestra oferta de tokens con base en nuestro pasado y en nuestras proyecciones de crecimiento."
 
 msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction"
 msgstr ""
@@ -9712,7 +9718,7 @@ msgid "View Lykke report"
 msgstr ""
 
 msgid "View Nishant's report"
-msgstr ""
+msgstr "Ver el informe de Nishant"
 
 msgid "View Statement"
 msgstr ""
@@ -10574,6 +10580,9 @@ msgid "You are not entitled to any compensation or reimbursement of any kind fro
 msgstr "Usted no tiene derecho a recibir ninguna compensación o reembolso de ningún tipo de la Compañía bajo ninguna circunstancia."
 
 msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgstr ""
+
+msgid "You are now using your %1Bitcoin Cash%2 account. Please fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr ""
 
 msgid "You are over 18 years of age;"
@@ -13112,11 +13121,14 @@ msgstr "Acuerdo con los términos y condiciones"
 msgid "Account Limits"
 msgstr "Límites de la cuenta"
 
+msgid "Warning"
+msgstr ""
+
 msgid "Redirecting..."
 msgstr ""
 
 msgid "Initial Coin Offering"
-msgstr ""
+msgstr "Oferta Inicial de Monedas"
 
 msgid "Initial Coin Offering Disclaimer"
 msgstr ""
