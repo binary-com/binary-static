@@ -7,7 +7,6 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const Page                = require('./page');
 const isStorageSupported  = require('./storage').isStorageSupported;
-const paramsHash          = require('./url').paramsHash;
 const createElement       = require('./utility').createElement;
 const BinarySocket        = require('../websocket_pages/socket');
 const BinarySocketGeneral = require('../websocket_pages/socket_general');
@@ -69,12 +68,7 @@ const BinaryLoader = (() => {
 
     const loadHandler = (config) => {
         active_script = config.module;
-        if (/logged_inws/i.test(window.location.pathname)) {
-            const params = paramsHash(window.location.href);
-            BinarySocket.send({ authorize: params.token1 }).then(() => {
-                loadActiveScript(config);
-            });
-        } else if (config.is_authenticated) {
+        if (config.is_authenticated) {
             if (!Client.isLoggedIn()) {
                 displayMessage(error_messages.login());
             } else {

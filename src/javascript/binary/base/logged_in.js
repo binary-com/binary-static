@@ -5,43 +5,47 @@ const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
 const urlLang            = require('./language').urlLang;
 const isStorageSupported = require('./storage').isStorageSupported;
-const State              = require('./storage').State;
 const urlFor             = require('./url').urlFor;
 const paramsHash         = require('./url').paramsHash;
+const getPropertyValue   = require('./utility').getPropertyValue;
+const BinarySocket       = require('../websocket_pages/socket');
 
 const LoggedInHandler = (() => {
     const onLoad = () => {
         parent.window.is_logging_in = 1; // this flag is used in base.js to prevent auto-reloading this page
         let redirect_url;
-        const account_list = State.getResponse('authorize.account_list');
-        if (isStorageSupported(localStorage) && isStorageSupported(sessionStorage) && account_list) {
-            storeClientAccounts(account_list);
-            // redirect url
-            redirect_url = sessionStorage.getItem('redirect_url');
-            sessionStorage.removeItem('redirect_url');
-        } else {
-            Client.doLogout({ logout: 1 });
-        }
+        const params = paramsHash(window.location.href);
+        BinarySocket.send({ authorize: params.token1 }).then((response) => {
+            const account_list = getPropertyValue(response, ['authorize', 'account_list']);
+            if (isStorageSupported(localStorage) && isStorageSupported(sessionStorage) && account_list) {
+                storeClientAccounts(account_list);
+                // redirect url
+                redirect_url = sessionStorage.getItem('redirect_url');
+                sessionStorage.removeItem('redirect_url');
+            } else {
+                Client.doLogout({ logout: 1 });
+            }
 
-        // redirect back
-        let set_default = true;
-        if (redirect_url) {
-            const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', 'home-jp', '404'];
-            const reg             = new RegExp(do_not_redirect.join('|'), 'i');
-            if (!reg.test(redirect_url) && urlFor('') !== redirect_url) {
-                set_default = false;
+            // redirect back
+            let set_default = true;
+            if (redirect_url) {
+                const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', 'home-jp', '404'];
+                const reg             = new RegExp(do_not_redirect.join('|'), 'i');
+                if (!reg.test(redirect_url) && urlFor('') !== redirect_url) {
+                    set_default = false;
+                }
             }
-        }
-        if (set_default) {
-            const lang_cookie = urlLang(redirect_url) || Cookies.get('language');
-            const language    = getLanguage();
-            redirect_url      = Client.defaultRedirectUrl();
-            if (lang_cookie && lang_cookie !== language) {
-                redirect_url = redirect_url.replace(new RegExp(`/${language}/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
+            if (set_default) {
+                const lang_cookie = urlLang(redirect_url) || Cookies.get('language');
+                const language    = getLanguage();
+                redirect_url      = Client.defaultRedirectUrl();
+                if (lang_cookie && lang_cookie !== language) {
+                    redirect_url = redirect_url.replace(new RegExp(`/${language}/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
+                }
             }
-        }
-        document.getElementById('loading_link').setAttribute('href', redirect_url);
-        window.location.href = redirect_url; // need to redirect not using pjax
+            document.getElementById('loading_link').setAttribute('href', redirect_url);
+            window.location.href = redirect_url; // need to redirect not using pjax
+        });
     };
 
     const storeClientAccounts = (account_list) => {
