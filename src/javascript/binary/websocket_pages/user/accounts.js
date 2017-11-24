@@ -94,10 +94,10 @@ const Accounts = (() => {
                 }
 
                 $('#existing_accounts').find('tbody')
-                    .append($('<tr/>', { id: loginid })
+                    .append($('<tr/>', { id: loginid, class: ((is_disabled || excluded_until) ? 'fill-bg-color' : '') })
                         .append($('<td/>', { text: loginid }))
                         .append($('<td/>').html($('<span/>', account_type_prop)))
-                        .append($('<td/>', { text: txt_markets, class: ((is_disabled || excluded_until) ? 'fill-bg-color' : '') }))
+                        .append($('<td/>', { text: txt_markets }))
                         .append($('<td/>')
                             .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
 
