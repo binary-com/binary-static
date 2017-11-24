@@ -75,7 +75,7 @@ const LoggedInHandler = (() => {
 
         // if didn't find any login ID that matched the above condition, set the first one at the end of the loop
         if (!is_loginid_set) {
-            Client.set('loginid', account_list[0].loginid);
+            Client.set('loginid', params.acct1 || account_list[0].loginid);
             is_loginid_set = true;
         }
 
