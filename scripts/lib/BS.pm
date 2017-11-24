@@ -119,9 +119,8 @@ sub css_files {
 
     push @css, root_url() . "css/common.min.css?$static_hash";
 
-    if (grep { $_ eq $section } sections()) {
-        push @css, root_url() . "css/$section.min.css?$static_hash";
-    }
+    push @css, root_url() . "css/$_.min.css?$static_hash" for sections(); # TODO: replace with next line for split the release process
+    # push @css, root_url() . "css/$section.min.css?$static_hash" if (grep { $_ eq $section } sections());
 
     return @css;
 }
