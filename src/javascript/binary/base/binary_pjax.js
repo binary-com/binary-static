@@ -77,6 +77,11 @@ const BinaryPjax = (() => {
             return;
         }
 
+        // browse a page in another section
+        if (Url.getSection() !== Url.getSection(url)) {
+            return;
+        }
+
         event.preventDefault();
         // check if url is not same as current
         if (location.href !== url) {
