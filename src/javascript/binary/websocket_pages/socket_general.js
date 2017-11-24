@@ -5,7 +5,9 @@ const Clock                = require('../base/clock');
 const GTM                  = require('../base/gtm');
 const Header               = require('../base/header');
 const Login                = require('../base/login');
+const urlFor               = require('../base/url').urlFor;
 const getPropertyValue     = require('../base/utility').getPropertyValue;
+const showPopup            = require('../common_functions/attach_dom/popup');
 const setCurrencies        = require('../common_functions/currency').setCurrencies;
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
 
@@ -61,6 +63,15 @@ const BinarySocketGeneral = (() => {
                         }
                     }
                     BinarySocket.sendBuffered();
+                    if (/bch/i.test(response.authorize.currency) && !Client.get('accepted_bch')) {
+                        showPopup({
+                            url        : urlFor('user/warning'),
+                            form_id    : '#frm_warning',
+                            content_id : '#warning_content',
+                            validations: [{ selector: '#chk_accept', validations: [['req', { hide_asterisk: true }]] }],
+                            onAccept   : () => { Client.set('accepted_bch', 1); },
+                        });
+                    }
                 }
                 break;
             case 'balance':

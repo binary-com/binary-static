@@ -4,7 +4,6 @@ const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
 const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
-const createElement      = require('./utility').createElement;
 const getPropertyValue   = require('./utility').getPropertyValue;
 const isEmptyObject      = require('./utility').isEmptyObject;
 const jpClient           = require('../common_functions/country_base').jpClient;
@@ -140,38 +139,6 @@ const Client = (() => {
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
-
-        if (/bch/i.test(authorize.currency) && !get('accepted_bch')) {
-            showWarningPopup();
-        }
-    };
-
-    const showWarningPopup = () => {
-        const xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState !== 4 || this.status !== 200) {
-                return;
-            }
-
-            const div      = createElement('div', { html: this.responseText });
-            const lightbox = createElement('div', { id: 'warning', class: 'lightbox' });
-            lightbox.append(div.querySelector('#warning_content'));
-            document.body.appendChild(lightbox);
-
-            const el_warning = document.getElementById('warning');
-            const el_accept  = document.getElementById('accept');
-            if (el_accept) {
-                el_accept.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (el_warning) {
-                        el_warning.remove();
-                    }
-                    set('accepted_bch', 1);
-                });
-            }
-        };
-        xhttp.open('GET', Url.urlFor('user/warning'), true);
-        xhttp.send();
     };
 
     const shouldAcceptTnc = () => {
