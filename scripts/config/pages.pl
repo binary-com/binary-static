@@ -121,6 +121,7 @@ sub all_pages {
         ['user/settings/professional',       'user/settings/professional',           'default',    'Professional Client'],
         ['user/set-currency',                'user/set_currency',                    'default',    'Set Currency',            'ja'],
         ['user/telegram-bot',                'user/telegram_bot',                    'default',    'Telegram Bot'],
+        ['user/warning',                     'user/warning',                         'default',    'Warning'],
 
         ['logged_inws',                'global/logged_in',       undef],
         ['redirect',                   'global/logged_in',       undef, 'Redirecting...'],
