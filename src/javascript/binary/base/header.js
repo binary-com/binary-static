@@ -72,7 +72,7 @@ const Header = (() => {
         BinarySocket.wait('authorize').then(() => {
             const loginid_select = document.createElement('div');
             Client.getAllLoginids().forEach((loginid) => {
-                if (!Client.get('is_disabled', loginid)) {
+                if (!Client.get('is_disabled', loginid) && !Client.get('excluded_until', loginid)) {
                     const account_title  = Client.getAccountTitle(loginid);
                     const is_real        = /real/i.test(account_title);
                     const currency       = Client.get('currency', loginid);

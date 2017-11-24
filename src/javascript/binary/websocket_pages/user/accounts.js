@@ -81,11 +81,23 @@ const Accounts = (() => {
                     const company_name = getCompanyName(loginid , Client.get('is_ico_only', loginid));
                     account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
                 }
+
+                const is_disabled    = Client.get('is_disabled', loginid);
+                const excluded_until = Client.get('excluded_until', loginid);
+                let txt_markets = '';
+                if (is_disabled) {
+                    txt_markets = localize('This account is disabled');
+                } else if (excluded_until) {
+                    txt_markets = localize('This account is excluded until [_1]', [moment(+excluded_until * 1000).format('YYYY-MM-DD HH:mm:ss Z')]);
+                } else {
+                    txt_markets = getAvailableMarkets(loginid);
+                }
+
                 $('#existing_accounts').find('tbody')
                     .append($('<tr/>', { id: loginid })
                         .append($('<td/>', { text: loginid }))
                         .append($('<td/>').html($('<span/>', account_type_prop)))
-                        .append($('<td/>', { text: getAvailableMarkets(loginid) }))
+                        .append($('<td/>', { text: txt_markets, class: ((is_disabled || excluded_until) ? 'fill-bg-color' : '') }))
                         .append($('<td/>')
                             .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
             });
