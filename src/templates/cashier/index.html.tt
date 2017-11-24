@@ -24,7 +24,7 @@
 
 <div class="invisible" id="message_bitcoin_cash">
     <div class="notice-msg center-text">
-        <div class="gr-padding-10">[% l("This is a [_1]Bitcoin Cash[_2] (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin.", '<a href="https://www.bitcoincash.org" target="_blank" rel="noopener noreferrer">', '</a>') %]</div>
+        <div class="gr-padding-10">[% l("Please note that you are currently using your [_1]Bitcoin Cash[_2] account. You can only fund your account in [_1]Bitcoin Cash[_2], and not Bitcoin.", '<a href="https://www.bitcoincash.org" target="_blank" rel="noopener noreferrer">', '</a>') %]</div>
     </div>
 </div>
 

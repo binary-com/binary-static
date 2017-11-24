@@ -133,6 +133,7 @@ const Header = (() => {
         // set local storage
         GTM.setLoginFlag();
         Client.set('cashier_confirmed', 0);
+        Client.set('accepted_bch', 0);
         Client.set('loginid', loginid);
         // Load page based on account type.
         if(Client.get('is_ico_only', loginid)) {
