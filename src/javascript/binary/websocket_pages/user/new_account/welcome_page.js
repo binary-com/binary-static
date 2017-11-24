@@ -3,7 +3,6 @@ const localize           = require('../../../base/localize').localize;
 const State              = require('../../../base/storage').State;
 const createElement      = require('../../../base/utility').createElement;
 const Url                = require('../../../base/url');
-const urlFor             = require('../../../base/url').urlFor;
 const BinarySocket       = require('../../../websocket_pages/socket');
 
 const WelcomePage = (() => {
@@ -44,7 +43,8 @@ const WelcomePage = (() => {
             }
 
             if (show_welcome_msg) {
-                setButtonLink(urlFor('new_account/account_type'), 'Upgrade now');
+
+                setButtonLink('new_account/account_type', 'Upgrade now');
                 // revert to upgrade_info.upgrade_link after ICO
             }
         });
