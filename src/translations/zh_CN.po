@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-19 20:18-0500\n"
+"PO-Revision-Date: 2017-11-23 20:18-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: zh_CN\n"
+
+msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
+msgstr " (<span class=\"initial_deposit_percent\"></span>总金额的百分比)"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" 是由%1创建和维护的编程例程、议定书、工具和资源集。您可通过%1交易平台使用已经注册的应用程序接口。"
@@ -240,8 +243,8 @@ msgstr "%1 与上述所有支付代理不存在附属关系。各支付代理均
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1在哥斯达黎加还不可使用，并不受哥斯达黎加金融体系任何监管机构的监管或监督。"
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
-msgstr "%1 将公开拍卖发售多达 <strong> 1千万 </strong> 个代币。您可使用下面的表格出价。"
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='%2' target='_blank'>Learn more</a>"
+msgstr "%1 将公开拍卖发售多达 <strong> 1千万 </strong> 个代币。您可使用下面的表格出价。<a href='%2' target='_blank'>了解详情</a>"
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "%1 由 Binary 集团有限公司拥有和经营。欲了解更多信息，请 <a href='%2'>参阅我们的历史页面</a>。"
@@ -1219,6 +1222,9 @@ msgstr "确定要永久删除代币吗"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "确定要永久废除应用程序访问权限吗"
 
+msgid "Are you sure you want to cancel the bid?"
+msgstr "确认取消出价？"
+
 msgid "Are your site visitors interested in:"
 msgstr "您的网站访问者是否有兴趣："
 
@@ -1533,6 +1539,12 @@ msgstr "每个代币的投标报价（美元）"
 
 msgid "Bid on the ICO:"
 msgstr "在 ICO 出价："
+
+msgid "Bids can be cancelled at any time before the end of the auction at no cost."
+msgstr "拍卖结束前随时可以免费取消出价。"
+
+msgid "Bids can be cancelled at any time before the end of the auction without any penalty."
+msgstr "拍卖结束前随时可以取消出价，不需付任何罚款。"
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -2723,6 +2735,9 @@ msgstr "离婚协议"
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "我需要入金才能开户吗？"
 
+msgid "Do I need to pay a penalty for cancelling a bid?"
+msgstr "取消出价需要付罚款吗？"
+
 msgid "Do I retain ownership of the code?"
 msgstr "我是否保留代码的所有权？"
 
@@ -2857,9 +2872,6 @@ msgstr "每点 1 欧元"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "任一缔约方须按照本协议的规定和/或条款对另一方合理要求给予充分合作。"
-
-msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr "每次取消投标须支付2%取消费。"
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "每个二元期权合约都有固定期限- 在 %1，您可选择从10秒至365天之间的任何期限。"
@@ -3932,9 +3944,6 @@ msgstr "我声明本人不是政治公众人士(PEP)。"
 msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 
-msgid "I agree to the cancellation fee stated above"
-msgstr "我同意以上的取消费用"
-
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "我确认同意以下所有文件的内容:"
 
@@ -4495,6 +4504,9 @@ msgstr "继承"
 
 msgid "Initial Coin Offering (ICO)"
 msgstr "首次代币发售 (ICO)"
+
+msgid "Initial deposit required: "
+msgstr "所需初期存款: "
 
 msgid "Input personal information"
 msgstr "输入个人信息"
@@ -6062,6 +6074,9 @@ msgstr "不"
 msgid "Not FATCA*"
 msgstr "Not FATCA*"
 
+msgid "Not at all. You can cancel a bid at any time before the auction ends at no cost."
+msgstr "不需要。拍卖结束前您可以随时免费取消出价。"
+
 msgid "Note"
 msgstr "附注"
 
@@ -6697,6 +6712,9 @@ msgstr "请完成%1财务评估表格%2，以便提升您的取款和交易限�
 
 msgid "Please complete the tax information before proceeding."
 msgstr "继续执行之前，请填写完整税务信息。"
+
+msgid "Please confirm that you are a %1professional trader%2 to proceed."
+msgstr "请确认您是%1专业交易者%2以便继续操作。"
 
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "请确认您不是政治公众人士。"
@@ -8792,8 +8810,8 @@ msgstr "“我们”、“我们的”、“公司”、或 “%1” 等词指 B
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "“我们”、“我们的”、“公司”、或 “%1” 等词指 Binary (V) 有限公司或Binary (C.R.) S.A.，根据网站开户程序中客户账户的司法管辖而定 。"
 
-msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
-msgstr "代币通过拍卖程序发行。请到我们的 %1指南%2 查看代币拍卖。"
+msgid "The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price."
+msgstr "这些代币是通过拍卖过程发售的。如要出价, 您只需要预先存入总出价的5% 作为订金。拍卖结束及最终价格确定后, 您将有两周时间根据最终代币价格存入余额。"
 
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr "代币授权持有人收取红利相关款项，并拥有相当于普通股的经济利益。因此，通常代币持有人不会将代币转换为股票。"
@@ -9017,6 +9035,9 @@ msgstr "这是件大事。我们获得英国《金融时报》和《Investors Ch
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "这是标的资产在特定时间可以买入或卖出的即时价格。"
 
+msgid "This means that you won’t have to tie up important funds in order to keep your bids active."
+msgstr "这意味着您不需要为了使标价生效而把重要的资金滞住。"
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "此通知并不解释投资或同类产品的风险，以及这些风险如何与您的个人情况关联。重要的是，在决定进入我们的市场、出售投资产品或进行博彩活动前，您必须对相关风险有充分的了解。如果您对相关投资产品或博彩产品的风险有任何疑问，应寻求专业协助。"
 
@@ -9037,6 +9058,9 @@ msgstr "此不可抗力事件章节不适用于波动率指数。"
 
 msgid "This symbol is not active. Please try another symbol."
 msgstr "这是个非活跃符号。请试另一符号。"
+
+msgid "This value analysis by an experienced investor, Nishant Sah studies the risk, benefits, and valuations of our token offering based on our past and projected growth."
+msgstr ""
 
 msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction"
 msgstr "代币或任何证券的发售或销售在任何司法管辖区属于非法的话，此网页和提议的 ICO 不构成上述代币的发售或邀约购入。特别是, 除非公司另有规定, 并经适用的法律和法规允许, 否则公司无意将任何代币发售或任何文件直接或间接发送到澳大利亚、英属维尔京群岛、加拿大、日本、泽西岛、新西兰、新加坡、南非、瑞士或美国 (\"限制领土\"), 也不应由任何身为限制领土的本国公民或居民，包括在任何所述管辖区内设立或组织的公司、合伙企业或其他实体也不可访问以上发售信息或文件"
@@ -9149,6 +9173,9 @@ msgstr "如要执行此操作，请<a href=\"%1\">升级到 %2 真实账户</a>�
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "如要执行此操作，请切换到 %1 真实账户。"
 
+msgid "To place a bid, you only need to deposit 5% of the total bid value. At the end of the auction, the final price of the token will be decided and you will have two weeks to settle the remaining balance that’s due on each active bid."
+msgstr "若要出价, 您只需要预先存入总出价额的5%。拍卖结束时将决定代币的最终价格, 您有两周的时间支付每个赢取标价所应付的余额。"
+
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "要获得录取资格，您必须拥有物理、金融工程或数学专业的本科学历"
 
@@ -9167,14 +9194,8 @@ msgstr "今天我们已成为市场的先驱者，也是全球最受欢迎的在
 msgid "Token"
 msgstr "代币"
 
-msgid "Token Sale Begins In"
-msgstr "代币销售开始日期剩下"
-
 msgid "Token dividends"
 msgstr "代币红利"
-
-msgid "Token sale begins in"
-msgstr "代币销售开始日期剩下"
 
 msgid "Token sale ends in"
 msgstr "代币销售结束日期剩下"
@@ -9187,6 +9208,9 @@ msgstr "代币可转换为等值的Binary普通股作为红利。"
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
 msgstr "代币仅对拥有真实资金账户的%1 客户发售。请访问%2www.binary.com%3 开立账户。"
+
+msgid "Top up in cashier"
+msgstr "通过收银台存款"
 
 msgid "Top-tier liquidity"
 msgstr "顶级流动性"
@@ -9676,6 +9700,9 @@ msgstr "查看日文网站"
 
 msgid "View Lykke report"
 msgstr "查看 Lykke 报告"
+
+msgid "View Nishant's report"
+msgstr ""
 
 msgid "View Statement"
 msgstr "查看报表"
@@ -10807,9 +10834,6 @@ msgstr "在该时间后您将自动退出登录。"
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "我们将向您提供所有工具，将您的流量转化为可观的收入"
 
-msgid "You will be subject to a 2% cancellation fee."
-msgstr "您需付2%取消费用。"
-
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "23:59:59 GMT过后仍未平仓的头寸须付掉期利率。"
 
@@ -11268,9 +11292,6 @@ msgstr "今天"
 
 msgid "today, Fridays"
 msgstr "今天、周五"
-
-msgid "top up in cashier"
-msgstr "存款入收银台"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "上涨/下跌，触及/未触及，范围内/范围外。"

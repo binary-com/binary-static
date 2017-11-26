@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-19 20:17-0500\n"
+"PO-Revision-Date: 2017-11-23 20:18-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: ja_JP\n"
+
+msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
+msgstr " (<span class=\"initial_deposit_percent\"></span>合計金額の%)"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
@@ -241,8 +244,8 @@ msgstr "%1は上記の決済サービス会社と提携していません。各�
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "コスタリカの金融システムを監督する金融機関または規制機関がないため、コスタリカではBinay.com (バイナリードットコム)をご利用いただけません。"
 
-msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
-msgstr "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below."
+msgid "%1 is offering up to <strong>10,000,000</strong> tokens in an open auction. You may place your bids using the form below. <a href='%2' target='_blank'>Learn more</a>"
+msgstr "%1のオークションでは<strong>10,000,000</strong>までのトークンを提供しています。下のフォームを利用して入札いただけます。<a href='%2' target='_blank'>詳細をみる</a>"
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
 msgstr "Binary 株式会社はBinary Group Ltdの子会社です。詳細は<a href='%2'>グループの沿革</a>よりご確認いただけます。"
@@ -1224,6 +1227,9 @@ msgstr "トークンを完全に削除してもよろしいですか？"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "アプリケーションへのアクセスを完全に削除してもよろしいですか？"
 
+msgid "Are you sure you want to cancel the bid?"
+msgstr "この入札をキャンセルして本当によろしいですか？"
+
 msgid "Are your site visitors interested in:"
 msgstr "お客さまのサイト訪問者は以下の内容に興味がありますか？"
 
@@ -1540,6 +1546,12 @@ msgstr "トークンごとの入札価格（$USD）"
 
 msgid "Bid on the ICO:"
 msgstr "ICOに入札する："
+
+msgid "Bids can be cancelled at any time before the end of the auction at no cost."
+msgstr "オークション終了前でしたら、費用無しで入札をいつでもキャンセルいただけます。"
+
+msgid "Bids can be cancelled at any time before the end of the auction without any penalty."
+msgstr "オークション終了前でしたら、違約金無しで入札をいつでもキャンセルいただけます。"
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -2738,6 +2750,9 @@ msgstr "離婚調停"
 msgid "Do I need to deposit any funds to open an account?"
 msgstr "口座を開設するにあたり入金は必須でしょうか？"
 
+msgid "Do I need to pay a penalty for cancelling a bid?"
+msgstr "入札のキャンセルには違約金が発生しますか？"
+
 msgid "Do I retain ownership of the code?"
 msgstr "コードの所有権を保持することになりますか？"
 
@@ -2872,9 +2887,6 @@ msgstr "1ポイント＝EUR 1"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
-
-msgid "Each bid cancellation will be subject to a 2% cancellation fee."
-msgstr "キャンセルには2%のキャンセル手数料がかかります。"
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "通貨バイナリーオプション取引は、期間を設定して取引頂けます。"
@@ -3948,9 +3960,6 @@ msgid "I agree that I will trade OTC binary options using my own judgment and ac
 msgstr "本取引に関し、その対象となる金融指標等を含む基本的なスキームについて、十分な説明を受け、理解したこと。\n"
 "（契約締結前交付書面「店頭バイナリーオプション取引のリスクについての説明」参照）"
 
-msgid "I agree to the cancellation fee stated above"
-msgstr "I agree to the cancellation fee stated above"
-
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "以下の書面を熟読し、十分理解した上で異議なく承諾します。"
 
@@ -4512,6 +4521,9 @@ msgstr "相続"
 
 msgid "Initial Coin Offering (ICO)"
 msgstr "イニシャル・コイン・オファリング（ICO) 日本を除く"
+
+msgid "Initial deposit required: "
+msgstr "初回入金が必要です："
 
 msgid "Input personal information"
 msgstr "口座開設申込みフォームに記入"
@@ -6093,6 +6105,9 @@ msgstr "ない"
 msgid "Not FATCA*"
 msgstr "外国口座税務コンプライアンス法（米国FATCA）に該当しない"
 
+msgid "Not at all. You can cancel a bid at any time before the auction ends at no cost."
+msgstr "いいえ！費用無しでいつでも入札をキャンセルいただけます。"
+
 msgid "Note"
 msgstr "注意"
 
@@ -6731,6 +6746,9 @@ msgstr "取引上限と出金限度額を引き上げるには下記財務評価
 
 msgid "Please complete the tax information before proceeding."
 msgstr "続行する前に、税務情報を入力してください。"
+
+msgid "Please confirm that you are a %1professional trader%2 to proceed."
+msgstr "続行するにはお客様が%1プロの投資家%2である必要があります。"
 
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Please confirm that you are not a politically exposed person."
@@ -8905,8 +8923,8 @@ msgstr "「当社」「我々」「私達」「%1」はBinary (V) Ltdを示す�
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "「当社」、「私達」、「当社の」、「私達の」、「%1」という表記は、口座開設におけるサイトの手順に従って所属した管轄によってBinary (V) Ltd.またはBinary (C.R.) S.A.を示します。"
 
-msgid "The tokens are offered via an auction process. View our %1guide%2 to the token auction."
-msgstr "オークション方式でトークンは提供されます。詳細は%1ガイド%2からご確認いただけます。"
+msgid "The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price."
+msgstr "トークンはオークション形式で提供しています。入札するには、事前に入札合計金額の5％を入金頂く必要があります。オークションの終了または最終価格の決定後、最終トークン価格に応じた残高を2週間以内にご入金ください。"
 
 msgid "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
 msgstr "The tokens entitle the holder to receive dividend-linked payments, and carry economic benefits that are equivalent to Ordinary Shares. Thus, there would ordinarily be no practical reason for token holders to convert their tokens to shares."
@@ -9140,6 +9158,9 @@ msgstr "”the Financial Times”と”Investors Chronicle”の両誌から、�
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "特定の時間にて、とある取引対象を売買できる現在の価格のことです。"
 
+msgid "This means that you won’t have to tie up important funds in order to keep your bids active."
+msgstr "これは、入札を保持するのにお客様の資金が全額拘束されることはないとうことを意味します。"
+
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "この通知は投資、類似商品、またはお客さま個人に関するリスクの程度など全てのリスクを説明しているものではありません。当社と投資商品またはギャンブル商品のお取引の締結、売却の決断を下す前に、関連するリスクを十分に理解しておくことが大切です。投資商品やギャンブル商品に関するリスクについてご不明な点がある場合、専門家の助言を求めることをおすすめします。"
 
@@ -9160,6 +9181,9 @@ msgstr "不可抗力によるこのセクションは、ボラティリティ・
 
 msgid "This symbol is not active. Please try another symbol."
 msgstr "このシンボルは現在ご利用いただけません。他のシンボルでお試しください。"
+
+msgid "This value analysis by an experienced investor, Nishant Sah studies the risk, benefits, and valuations of our token offering based on our past and projected growth."
+msgstr ""
 
 msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction"
 msgstr "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction"
@@ -9272,6 +9296,9 @@ msgstr "このアクションを実行するには、<a href=\"%1\">%2リアル�
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "このアクションを実行するには、お客さまの%1リアル口座に切り替えてください。"
 
+msgid "To place a bid, you only need to deposit 5% of the total bid value. At the end of the auction, the final price of the token will be decided and you will have two weeks to settle the remaining balance that’s due on each active bid."
+msgstr "入札するには、入札合計金額の5％だけを支払っていただきます。トークンの最終価格が決定しましたら、2週間以内に各入札価格に応じた残高をお支払いください。"
+
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "物理学、金融工学、数学の大学上級学位が必要となります。"
 
@@ -9290,14 +9317,8 @@ msgstr "今日、我々はマーケットリーダーであり、世界で最も
 msgid "Token"
 msgstr "トークン"
 
-msgid "Token Sale Begins In"
-msgstr "トークンの販売開始まであと"
-
 msgid "Token dividends"
 msgstr "トークンの配当"
-
-msgid "Token sale begins in"
-msgstr "トークンの販売開始まであと"
 
 msgid "Token sale ends in"
 msgstr "トークン販売終了まであと"
@@ -9310,6 +9331,9 @@ msgstr "Binaryの普通株の配当と同額がトークン保持者に付与さ
 
 msgid "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
 msgstr "Tokens will only be offered to %1 clients who have a Real Money account. Please visit %2www.binary.com%3 to open an account."
+
+msgid "Top up in cashier"
+msgstr "入出金で入金を行う"
 
 msgid "Top-tier liquidity"
 msgstr "Top-tier liquidity"
@@ -9802,6 +9826,9 @@ msgstr "日本版サイトを表示"
 
 msgid "View Lykke report"
 msgstr "Lykkeレポートを見る"
+
+msgid "View Nishant's report"
+msgstr ""
 
 msgid "View Statement"
 msgstr "取引履歴を表示する"
@@ -10938,9 +10965,6 @@ msgstr "設定時間を過ぎると自動的にログアウトします。（例
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr "サイト訪問数を収入に転化するツールを提供"
 
-msgid "You will be subject to a 2% cancellation fee."
-msgstr "You will be subject to a 2% cancellation fee."
-
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "23:59:59 GMT以降にポジションをオープンのままにされますと、スワップレートの対象となりますのでご注意ください。"
 
@@ -11416,9 +11440,6 @@ msgstr "本日"
 
 msgid "today, Fridays"
 msgstr "本日：金曜日"
-
-msgid "top up in cashier"
-msgstr "入出金で入金を行う"
 
 msgid "up/down, touch/no-touch, stays in/goes out."
 msgstr "ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
