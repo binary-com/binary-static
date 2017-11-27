@@ -361,7 +361,7 @@ const TickDisplay = (() => {
                     };
                 }
 
-                if (tick.epoch > contract_start_moment.unix() && !spots_list[tick.epoch]) {
+                if (contract_start_moment && tick.epoch > contract_start_moment.unix() && !spots_list[tick.epoch]) {
                     if (!chart || !chart.series) return;
                     chart.series[0].addPoint([counter, tick.quote], true, false);
                     applicable_ticks.push(tick);

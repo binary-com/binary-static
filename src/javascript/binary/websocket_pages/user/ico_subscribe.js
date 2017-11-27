@@ -303,6 +303,7 @@ const ICOSubscribe = (() => {
     const updateMinimumBid = (ico_status) => {
         const status      = ico_status.ico_status || {};
         const el_min_bid  = document.getElementById('minimum_bid');
+        if (!el_min_bid) return;
         const res_currency    = (status.currency || '').toUpperCase();
         min_bid     = status.minimum_bid || 0;
         min_bid_usd = status.minimum_bid_usd || 1.35;

@@ -293,7 +293,7 @@ const Durations = (() => {
             } else {
                 selected_value = this.getAttribute('data-value');
             }
-            Durations.selectEndDate(moment(selected_value));
+            selectEndDate(moment(selected_value));
             return true;
         });
     };
@@ -428,7 +428,7 @@ const Durations = (() => {
             if (isNow()) {
                 hideExpiryTime(expiry_time);
                 processTradingTimesRequest(end_date_iso);
-                return 0;
+                return 1;
             } // else
             return showExpiryTime(expiry_time);
         } // else
@@ -538,7 +538,6 @@ const Durations = (() => {
         let make_price_request = 1;
         const $expiry_time     = $('#expiry_time');
         if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
-            make_price_request = -1;
             const end_time     = moment(parseInt(value) * 1000).add(5, 'minutes').utc();
             setTime(Defaults.get('expiry_time') ? Defaults.get('expiry_time') : end_time.format('HH:mm'));
             let expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : '';
@@ -549,7 +548,10 @@ const Durations = (() => {
                     expiry_date = end_time;
                 }
             }
-            selectEndDate(expiry_date || end_time);
+            const requested = selectEndDate(expiry_date || end_time);
+            if (requested) {
+                make_price_request = -1;
+            }
         } else {
             const requested = hideExpiryTime(document.getElementById('expiry_time_row'));
             if (requested) {
