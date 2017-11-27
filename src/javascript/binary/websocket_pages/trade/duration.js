@@ -225,7 +225,7 @@ const Durations = (() => {
 
     const durationPopulate = () => {
         const unit = document.getElementById('duration_units');
-        if (!unit.options[unit.selectedIndex]) return;
+        if (!unit.options[unit.selectedIndex]) return false;
         const unit_min_value = unit.options[unit.selectedIndex].getAttribute('data-minimum');
         const unit_max_value = unit.options[unit.selectedIndex].getAttribute('data-maximum');
         let unit_value       = Defaults.get('duration_amount') || unit_min_value;
@@ -274,11 +274,13 @@ const Durations = (() => {
             DatePicker.hide(duration_id);
         }
 
-        changeExpiryTimeType();
+        const requested = changeExpiryTimeType();
 
         validateMinDurationAmount();
         // we need to call it here as for days we need to show absolute barriers
         Barriers.display();
+
+        return requested;
     };
 
     const expiryDateOnChange = ($expiry_date) => {
@@ -299,6 +301,7 @@ const Durations = (() => {
     };
 
     const changeExpiryTimeType = () => {
+        let requested = -1;
         if (document.getElementById('expiry_type').value === 'endtime') {
             let $expiry_date     = $('#expiry_date');
             const date_start_val = document.getElementById('date_start').value;
@@ -347,9 +350,10 @@ const Durations = (() => {
                 if (max_date) {
                     appendExpiryDateValues($expiry_date, max_date);
                 }
-                selectEndDate(min_date);
+                requested = selectEndDate(min_date);
             }
         }
+        return requested;
     };
 
     const appendExpiryDateValues = ($expiry_date, date) => {
@@ -435,6 +439,9 @@ const Durations = (() => {
                 Defaults.set('expiry_time', '');
                 processTradingTimesRequest(end_date_iso);
                 return 1;
+            } else if (document.getElementById('time_start').getAttribute('data-value') === '00:00' && !isSameDay()) {
+                showExpiryTime(expiry_time, '00:00');
+                return 1;
             } // else
             return showExpiryTime(expiry_time);
         } // else
@@ -449,9 +456,9 @@ const Durations = (() => {
         return requested;
     };
 
-    const showExpiryTime = (expiry_time) => {
+    const showExpiryTime = (expiry_time, set_time) => {
         const is_same_day    = isSameDay();
-        let expiry_time_val  = expiry_time.value;
+        let expiry_time_val  = set_time || expiry_time.value;
         const time_start_val = document.getElementById('time_start').getAttribute('data-value');
         let new_time,
             time_changed;
@@ -459,26 +466,30 @@ const Durations = (() => {
             new_time        = moment(window.time);
             expiry_time_val = new_time.format('HH:mm');
         }
-        if (!is_same_day && expiry_time_val >= time_start_val) {
-            const time_start = time_start_val.split(':');
-            new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]).add(-10, 'minutes');
-        } else if (is_same_day && expiry_time_val <= time_start_val) {
-            const time_start = time_start_val.split(':');
-            new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]);
-        }
-        if (is_same_day && expiry_time_val < time_start_val) {
-            const time = time_start_val.split(':');
-            new_time   = moment(window.time).hour(time[0]).minute(time[1]);
+        if (!set_time) {
+            if (!is_same_day && expiry_time_val >= time_start_val) {
+                const time_start = time_start_val.split(':');
+                new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]).add(-10, 'minutes');
+            } else if (is_same_day && expiry_time_val <= time_start_val) {
+                const time_start = time_start_val.split(':');
+                new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]);
+            }
+            if (is_same_day && expiry_time_val < time_start_val) {
+                const time = time_start_val.split(':');
+                new_time   = moment(window.time).hour(time[0]).minute(time[1]);
+            }
         }
         if (new_time) {
-            new_time          = new_time.add(5, 'minutes').utc().format('HH:mm');
-            expiry_time.value = new_time;
-            expiry_time.setAttribute('data-value', new_time);
-            time_changed = setTime(expiry_time.value, 1);
+            new_time = new_time.add(5, 'minutes').utc().format('HH:mm');
         } else {
-            time_changed = setTime(Defaults.get('expiry_time') || expiry_time.value);
+            time_changed = setTime(set_time || Defaults.get('expiry_time') || expiry_time.value);
         }
-        Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
+        if (new_time || set_time) {
+            expiry_time.value = new_time || set_time;
+            expiry_time.setAttribute('data-value', new_time || set_time);
+            time_changed = setTime(expiry_time.value, 1);
+        }
+        Defaults.set('expiry_time', set_time || Defaults.get('expiry_time') || expiry_time.value);
         expiry_time.show();
         Barriers.display();
         return time_changed;
@@ -542,8 +553,10 @@ const Durations = (() => {
         }
 
         let make_price_request = 1;
-        const $expiry_time     = $('#expiry_time');
-        if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
+        const displayed = displayDurations(time_start.value);
+        if (displayed) {
+            make_price_request = -1;
+        } else if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
             const end_time     = moment(parseInt(value) * 1000).add(5, 'minutes').utc();
             setTime(Defaults.get('expiry_time') ? Defaults.get('expiry_time') : end_time.format('HH:mm'));
             let expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : '';
@@ -564,8 +577,7 @@ const Durations = (() => {
                 make_price_request = -1;
             }
         }
-        commonTrading.timeIsValid($expiry_time);
-        displayDurations(time_start.value);
+        commonTrading.timeIsValid($('#expiry_time'));
         return make_price_request;
     };
 
