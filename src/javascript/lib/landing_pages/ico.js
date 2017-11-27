@@ -111,7 +111,7 @@ window.onload = function() {
 
     document.getElementById('nishant-btn').addEventListener('click', function(e) {
         e.preventDefault();
-        openLink(getNishantReport());
+        openLink(getNishantReport(language.toLowerCase()));
     });
 
     window.onresize = checkWidth;
@@ -540,6 +540,6 @@ function getLykkeReport(lang = 'en') {
     return `https://ico_documents.binary.com/research/lykke/lykke_research_report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }
 
-function getNishantReport() {
-    return `https://ico_documents.binary.com/research/nishantsah/report.pdf`
+function getNishantReport(lang = 'en') {
+    return `https://ico_documents.binary.com/research/nishantsah/report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }
