@@ -419,12 +419,14 @@ const Durations = (() => {
         const end_date_readable = toReadableFormat(end_date);
         const end_date_iso      = toISOFormat(end_date);
         const $expiry_date      = $('#expiry_date');
+        const now               = moment();
         if ($expiry_date.is('input')) {
             $expiry_date.val(end_date_readable)
                 .attr('data-value', end_date_iso);
         }
         Defaults.set('expiry_date', end_date_iso);
-        if (end_date.isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
+        end_date.hour(now.hour()).minute(now.add(10, 'minutes').minute());
+        if (end_date.utc().isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
             if (isNow()) {
                 hideExpiryTime(expiry_time);
                 processTradingTimesRequest(end_date_iso);
