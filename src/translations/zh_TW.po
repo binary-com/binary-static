@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-22 21:27-0500\n"
+"PO-Revision-Date: 2017-11-27 00:38-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -6759,11 +6759,17 @@ msgstr "請注意，本網站會產生記錄您帳戶登入IP地址的記錄檔�
 msgid "Please note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices, however these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push up or down prices). To avoid settling prices based on such artificial prices, it is %1's policy not to count weekend prices towards contract settlement values (except for the volatility indices, which are open during weekends)."
 msgstr "請注意，為進行合約結算，週末報價將忽略不計。週末，外匯交易市場也許會偶爾產生價格，但這些價格只是人為的（交易商有時會利用周末市場缺乏流動性而抬高或壓低價格）。為了避免結算價格基於這些人為價格，%1的政策就是在合約結算時不計算週末報價（波動率指數除外，因為這些指數週末也開放）。"
 
+msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
+msgstr ""
+
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "請注意，您可以隨時登入帳戶的「設定」部份更新您的個人資料。您應確保始終及時向%1告知您個人資料的任何變化。"
 
 msgid "Please provide us with the following information:"
 msgstr "請提供以下資訊："
+
+msgid "Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission."
+msgstr ""
 
 msgid "Please read this notice carefully - it applies to all persons who view this webpage. Please note that the disclaimer set out below may be altered or updated, at any time in whole or in part at the sole discretion of Binary Group Ltd. (“Company”). You should read it in full each time you visit the site."
 msgstr "請仔細閱讀本通知，適用於所有瀏覽此網頁的人。請注意以下的免責聲明可能隨時由Binary集團有限公司(「公司」) 自主決定完全或部分改變或更新。每次存取此網站時您應該閱讀全文。"
@@ -6833,6 +6839,9 @@ msgstr "繼續操作前請設定開立帳戶的原因。"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "請指定您的優選實況調查間隔時間分鐘數"
+
+msgid "Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional."
+msgstr ""
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "請將以上資訊傳到<a href='mailto:%1'>%1</a>。"
@@ -9015,9 +9024,6 @@ msgstr "此功能僅適用於支付代理帳戶。"
 msgid "This field is required."
 msgstr "此為必填欄位。"
 
-msgid "This is a %1Bitcoin Cash%2 (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin."
-msgstr "這是 %1比特幣現金%2 (BCH) 帳戶。請注意，比特幣現金和比特幣不相同。"
-
 msgid "This is a staging server - For testing purposes only"
 msgstr "這是分期伺服器，僅用於測試目的"
 
@@ -10562,6 +10568,9 @@ msgstr "您無權在任何情況下獲取公司任何補償或支付。"
 
 msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "您不是阿富汗、波斯尼亞和黑塞哥維那、哥斯大黎加、任何歐盟國家、老撾人民民主共和國、敘利亞、烏干達、瓦努阿圖、也門、美國、日本、香港、馬來西亞、馬爾他、伊朗、朝鮮、澤西島、伊拉克、以色列或其它由公司隨時自行決定為受限制國家的居民；"
+
+msgid "You are now using your %1Bitcoin Cash%2 account. Please fund your account in %1Bitcoin Cash%2, and not Bitcoin."
+msgstr ""
 
 msgid "You are over 18 years of age;"
 msgstr "您的年齡在18歲以上；"
@@ -13098,6 +13107,9 @@ msgstr "條款和條件審批"
 
 msgid "Account Limits"
 msgstr "帳戶限額"
+
+msgid "Warning"
+msgstr "警告"
 
 msgid "Redirecting..."
 msgstr "正在重新導向\t"

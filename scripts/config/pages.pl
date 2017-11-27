@@ -66,6 +66,7 @@ sub all_pages {
         ['user/settings/professional',         'app/user/settings/professional',            'default',    'Professional Client'],
         ['user/set-currency',                  'app/user/set_currency',                     'default',    'Set Currency',                   'ja'],
         ['user/telegram-bot',                  'app/user/telegram_bot',                     'default',    'Telegram Bot'],
+        ['user/warning',                       'app/user/warning',                          'default',    'Warning'],
 
         ['endpoint',                           'app/endpoint',                              'default',    'Endpoint'],
 

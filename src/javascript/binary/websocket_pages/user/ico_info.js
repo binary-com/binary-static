@@ -9,6 +9,7 @@ const BAR_HAS_VALUE = 'bar-has-value';
 const MAX_BID_PRICE = 10;
 
 function createGradient(svg, id, stops) {
+    if (!svg) return false;
     const namespace = svg.namespaceURI;
     const grad = document.createElementNS(namespace, 'linearGradient');
     grad.setAttribute('id', id);
