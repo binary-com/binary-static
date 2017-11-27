@@ -5,7 +5,7 @@ module.exports = function (grunt){
             tasks: ['stylelint', 'css']
         },
         landing_pages: {
-            files: ['src/javascript/lib/landing_pages/*.js'],
+            files: ['src/landing_pages/*.js'],
             tasks: ['babel:landing_pages']
         },
         options: {
