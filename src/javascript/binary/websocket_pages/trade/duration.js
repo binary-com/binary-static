@@ -428,7 +428,7 @@ const Durations = (() => {
             if (isNow()) {
                 hideExpiryTime(expiry_time);
                 processTradingTimesRequest(end_date_iso);
-                return 0;
+                return 1;
             } // else
             return showExpiryTime(expiry_time);
         } // else
@@ -548,8 +548,8 @@ const Durations = (() => {
                     expiry_date = end_time;
                 }
             }
-            const not_requested = selectEndDate(expiry_date || end_time);
-            if (!not_requested) {
+            const requested = selectEndDate(expiry_date || end_time);
+            if (requested) {
                 make_price_request = -1;
             }
         } else {
