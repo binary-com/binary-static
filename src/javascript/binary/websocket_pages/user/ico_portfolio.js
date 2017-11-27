@@ -1,7 +1,7 @@
 const Portfolio        = require('./account/portfolio').Portfolio;
 const ViewPopup        = require('./view_popup/view_popup');
 const BinarySocket     = require('../socket');
-const loadUrl       = require('../../base/binary_pjax').load;
+const loadUrl          = require('../../base/binary_pjax').load;
 const localize         = require('../../base/localize').localize;
 const State            = require('../../base/storage').State;
 const urlFor           = require('../../base/url').urlFor;
@@ -114,8 +114,9 @@ const ICOPortfolio = (() => {
                     e.preventDefault();
                     const url = urlFor('user/ico-claim-form');
                     // set the contract id for ico-claim-form page.
-                    const contract_id = $(e.target).parent().attr('contract_id');
-                    const tokens      = $(e.target).parent().attr('tokens');
+                    const $col        = $(e.target).parent();
+                    const contract_id = $col.attr('contract_id');
+                    const tokens      = $col.attr('tokens');
                     State.set('ico_contract_id', contract_id);
                     State.set('ico_token_count', tokens);
                     loadUrl(url);

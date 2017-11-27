@@ -1,3 +1,4 @@
+const moment           = require('moment');
 const BinarySocket     = require('../socket');
 const loadPreviousUrl  = require('../../base/binary_pjax').loadPreviousUrl;
 const Client           = require('../../base/client');
@@ -21,7 +22,7 @@ const ICOClaimForm = (() => {
             const full_name      = `${first_name} ${last_name}`;
             const decimal_places = getDecimalPlaces(currency);
             const final_price    = (State.getResponse('ico_status.final_price')).toFixed(decimal_places);
-            const date_today     = window.time.format('DD MMM YYYY');
+            const date_today     = (window.time || moment()).format('DD MMM YYYY');
             const tokens         = State.get('ico_token_count');
             // Set input values for form.
             $('.claimer_name').val(full_name);
