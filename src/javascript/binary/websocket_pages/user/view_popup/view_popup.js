@@ -258,11 +258,14 @@ const ViewPopup = (() => {
     };
 
     const appendAuditLink = (element_id) => {
+        const el = document.getElementById(element_id);
+        if (!el) return;
+
         const link = createElement('a', { href: `${'java'}${'script:;'}`, class: 'link-audit button-secondary' });
         const span = createElement('span', { text: localize('Audit') });
         link.appendChild(span);
         link.addEventListener('click', () => { initAuditTable(1); });
-        document.getElementById(element_id).appendChild(link);
+        el.appendChild(link);
     };
 
     // by default shows audit table and hides chart
