@@ -75,13 +75,14 @@ const ProfitTableUI = (() => {
 
         const jp_client = jpClient();
 
+
         const data = [
-            jp_client ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate,
+            jp_client ? toJapanTimeIfNeeded(parseInt(transaction.purchase_time)) : profit_table_data.buyDate,
             `<span ${showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id])}>${profit_table_data.ref}</span>`,
             /binaryico/i.test(profit_table_data.shortcode) ? '-' : profit_table_data.payout,
             '',
             profit_table_data.buyPrice,
-            jp_client ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate,
+            jp_client ? toJapanTimeIfNeeded(parseInt(transaction.sell_time)) : profit_table_data.sellDate,
             profit_table_data.sellPrice,
             profit_table_data.pl,
             '',
