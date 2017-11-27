@@ -2,7 +2,6 @@ const tabListener = require('binary-style').tabListener;
 const sidebar     = require('binary-style').sidebarCollapsible;
 const localize    = require('../base/localize').localize;
 const urlParam    = require('../base/url').param;
-const Scroll      = require('../common_functions/scroll');
 const TNCApproval = require('../websocket_pages/user/tnc_approval');
 
 const TermsAndConditions = (() => {
@@ -12,7 +11,6 @@ const TermsAndConditions = (() => {
             $('#btn_accept'),
             () => { $('.tnc_accept').setVisibility(1); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
-        Scroll.sidebarScroll($('.tac-binary'));
         tabListener();
         sidebar();
         handleSidebar();
@@ -77,7 +75,7 @@ const TermsAndConditions = (() => {
     };
 
     const onUnload = () => {
-        Scroll.offScroll();
+        $('.sidebar-collapsible a').off('click');
     };
 
     return {
