@@ -1,0 +1,28 @@
+@{
+    html.form_verify_email = ({
+        _class = '',
+        padding = 8,
+        email_padding = 7,
+        button_padding = 5,
+        dark_button,
+        content,
+        text,
+    }) => {
+        <form id="frm_verify_email">
+            <div class="gr-row gr-row-align-center">
+                <div class="signup-box gr-@padding gr-10-p gr-12-m gr-no-gutter @_class">
+                    <div class="gr-row gr-padding-10" id="signup">
+                        <div class="gr-@email_padding gr-10-m gr-centered">
+                            <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="@html.L('Enter your email')" />
+                        </div>
+                        <div class="gr-@button_padding gr-8-m gr-centered">
+                            <button @html.class(dark_button && 'primary-bg-color') id="btn_verify_email" type="submit">@text</button>
+                        </div>
+                        <span class="gr-12 gr-padding-10 error-msg hint color-white center-text invisible" id="signup_error"></span>
+                    </div>
+                    @content
+                </div>
+            </div>
+        </form>
+    }
+}

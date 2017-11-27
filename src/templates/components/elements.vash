@@ -1,0 +1,36 @@
+@{
+    html.li = ({ _class, id, href, param = '', target, text, header, p }) => {
+        const content = () => {
+            if(p) {
+                <p> @text </p>
+            } else {
+                @text
+            }
+        }
+        <li @html.id(id) @html.class(_class) >
+            @if(header) {
+                if(text) {
+                    <strong> @header </strong>
+                } else {
+                    <h3> @header </h3>
+                }
+            }
+            @if(href) {
+                let attrs = `href="${href}${param}"`;
+                /^http/.test(href) && (attrs += ` rel="noopener noreferrer"`);
+
+                <a @html.raw(attrs) > @content() </a>
+            } else {
+                @content()
+            }
+        </li>
+    }
+
+    html.list = ({ items, id, _class }) => {
+        <ul @html.id(id) @html.class(_class) >
+            @items.forEach(item => {
+                html.li(item)
+            })
+        </ul>
+    }
+}
