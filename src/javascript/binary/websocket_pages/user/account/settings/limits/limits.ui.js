@@ -2,6 +2,7 @@ const Table            = require('../../../../../common_functions/attach_dom/tab
 const localize         = require('../../../../../base/localize').localize;
 const Client           = require('../../../../../base/client');
 const urlForStatic     = require('../../../../../base/url').urlForStatic;
+const findParent       = require('../../../../../base/utility').findParent;
 const elementInnerHtml = require('../../../../../common_functions/common_functions').elementInnerHtml;
 const jpClient         = require('../../../../../common_functions/country_base').jpClient;
 const formatMoney      = require('../../../../../common_functions/currency').formatMoney;
@@ -70,7 +71,10 @@ const LimitsUI = (() => {
                 }
             });
         } else {
-            document.getElementById('payout-per-symbol').closest('tr').setVisibility(0);
+            const tr = findParent(document.getElementById('payout-per-symbol'), 'tr');
+            if (tr) {
+                tr.setVisibility(0);
+            }
         }
 
         Object.keys(limits.market_specific).forEach((key) => {

@@ -5,8 +5,9 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
 const Url                 = require('./url');
-const createElement       = require('./utility').createElement;
 const applyToAllElements  = require('./utility').applyToAllElements;
+const createElement       = require('./utility').createElement;
+const findParent          = require('./utility').findParent;
 const elementInnerHtml    = require('../common_functions/common_functions').elementInnerHtml;
 const elementTextContent  = require('../common_functions/common_functions').elementTextContent;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
@@ -105,7 +106,7 @@ const Header = (() => {
 
     const loginIDOnClick =  (e) => {
         e.preventDefault();
-        const el_loginid = e.target.closest('A');
+        const el_loginid = findParent(e.target, 'a');
         if (el_loginid) {
             el_loginid.setAttribute('disabled', 'disabled');
             switchLoginid(el_loginid.getAttribute('data-value'));
