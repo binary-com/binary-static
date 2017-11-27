@@ -13,15 +13,16 @@ const getAppId = () => {
     let app_id = null;
     const user_app_id = ''; // you can insert Application ID of your registered application here
     const config_app_id = window.localStorage.getItem('config.app_id');
-    window.localStorage.removeItem('config.default_app_id');
     if (config_app_id) {
         app_id = config_app_id;
     } else if (/staging\.binary\.com/i.test(window.location.hostname)) {
+        window.localStorage.removeItem('config.default_app_id');
         app_id = 1098;
     } else if (user_app_id.length) {
         window.localStorage.setItem('config.default_app_id', user_app_id); // it's being used in endpoint chrome extension - please do not remove
         app_id = user_app_id;
     } else {
+        window.localStorage.removeItem('config.default_app_id');
         app_id = 1;
     }
     return app_id;
