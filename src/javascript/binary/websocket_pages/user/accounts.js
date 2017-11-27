@@ -107,7 +107,7 @@ const Accounts = (() => {
         }
 
         $('#existing_accounts').find('tbody')
-            .append($('<tr/>', { id: loginid, class: ((is_disabled || excluded_until) ? 'fill-bg-color' : '') })
+            .append($('<tr/>', { id: loginid, class: ((is_disabled || excluded_until) ? 'color-dark-white' : '') })
                 .append($('<td/>', { text: loginid }))
                 .append($('<td/>').html($('<span/>', account_type_prop)))
                 .append($('<td/>', { text: txt_markets }))
