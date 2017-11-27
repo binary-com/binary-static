@@ -49,7 +49,7 @@ const Durations = (() => {
         if (durations === false) {
             document.getElementById('expiry_row').style.display = 'none';
             Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time');
-            return;
+            return false;
         }
 
         const target             = document.getElementById('duration_units');
@@ -133,7 +133,7 @@ const Durations = (() => {
             }
         }
 
-        durationPopulate();
+        return durationPopulate();
     };
 
     const makeDurationOption = (map_min, map_max, is_selected) => {
@@ -428,7 +428,11 @@ const Durations = (() => {
         end_date.hour(now.hour()).minute(now.add(10, 'minutes').minute());
         if (end_date.utc().isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
             if (isNow()) {
-                hideExpiryTime(expiry_time);
+                Defaults.remove('expiry_time');
+                expiry_time.hide();
+                Barriers.display();
+                $(expiry_time).val('').attr('data-value', '');
+                Defaults.set('expiry_time', '');
                 processTradingTimesRequest(end_date_iso);
                 return 1;
             } // else
