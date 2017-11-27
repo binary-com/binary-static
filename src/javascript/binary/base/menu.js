@@ -1,5 +1,6 @@
 const Client             = require('./client');
 const applyToAllElements = require('./utility').applyToAllElements;
+const findParent         = require('./utility').findParent;
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 const Menu = (() => {
@@ -92,7 +93,7 @@ const Menu = (() => {
         const link_menu_top = menu_top.getElementsByTagName('a');
         for (let i = 0; i < link_menu_top.length; i++) {
             if (path.indexOf(link_menu_top[i].pathname.replace(/\.html/i, '')) >= 0) {
-                active = link_menu_top[i].closest('li');
+                active = findParent(link_menu_top[i], 'li');
             }
         }
         return active;
@@ -116,11 +117,11 @@ const Menu = (() => {
         let item = main_menu.querySelector(`a[href*="${pathname}"]`);
 
         if (item) {
-            const parent = item.closest('li');
+            const parent = findParent(item, 'li');
             // Is something selected in main items list
             if (parent && parent.classList.contains('sub_item')) {
                 subitem = item;
-                item    = subitem.closest('.item');
+                item    = findParent(subitem, '.item');
             } else {
                 item = parent;
             }
