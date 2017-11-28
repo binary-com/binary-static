@@ -558,8 +558,6 @@ sub _texts {
         push @texts, localize('Virtual');
         push @texts, localize('Real');
         push @texts, localize('Counterparty');
-        push @texts, localize('This account is disabled');
-        push @texts, localize('This account is excluded until [_1]');
 
         # currency names
         push @texts, localize('Bitcoin');

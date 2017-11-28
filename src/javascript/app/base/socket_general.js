@@ -47,10 +47,10 @@ const BinarySocketGeneral = (() => {
                         window.alert(response.error.message);
                     }
                     Client.sendLogoutRequest(is_active_tab);
-                } else if (!Login.isLoginPages()) {
-                    if (response.authorize.loginid !== Client.get('loginid')) {
-                        Client.sendLogoutRequest(true);
-                    } else {
+                } else if (response.authorize.loginid !== Client.get('loginid')) {
+                    Client.sendLogoutRequest(true);
+                } else {
+                    if (!Login.isLoginPages()) {
                         Client.responseAuthorize(response);
                         BinarySocket.send({ balance: 1, subscribe: 1 });
                         BinarySocket.send({ get_settings: 1 });
@@ -61,16 +61,16 @@ const BinarySocketGeneral = (() => {
                         if (!Client.get('is_virtual')) {
                             BinarySocket.send({ get_self_exclusion: 1 });
                         }
-                        BinarySocket.sendBuffered();
-                        if (/bch/i.test(response.authorize.currency) && !Client.get('accepted_bch')) {
-                            showPopup({
-                                url        : urlFor('user/warning'),
-                                form_id    : '#frm_warning',
-                                content_id : '#warning_content',
-                                validations: [{ selector: '#chk_accept', validations: [['req', { hide_asterisk: true }]] }],
-                                onAccept   : () => { Client.set('accepted_bch', 1); },
-                            });
-                        }
+                    }
+                    BinarySocket.sendBuffered();
+                    if (/bch/i.test(response.authorize.currency) && !Client.get('accepted_bch')) {
+                        showPopup({
+                            url        : urlFor('user/warning'),
+                            form_id    : '#frm_warning',
+                            content_id : '#warning_content',
+                            validations: [{ selector: '#chk_accept', validations: [['req', { hide_asterisk: true }]] }],
+                            onAccept   : () => { Client.set('accepted_bch', 1); },
+                        });
                     }
                 }
                 break;
