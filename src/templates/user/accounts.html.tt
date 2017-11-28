@@ -31,11 +31,6 @@
     thead=[
         [{ text=l("Account") }, { text=l("Type") }, { text=l("Available Markets") }, { text=l("Currency") }],
     ]} %]
-    <div id="note_support" class="invisible fill-bg-color gr-padding-10 gr-gutter">
-        <div class="gr-gutter hint">
-            [% l("Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"[_1]\">Customer Support</a>.", request.url_for('contact')) %]
-        </div>
-    </div>
 
     [% INCLUDE global/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]
 </div>
