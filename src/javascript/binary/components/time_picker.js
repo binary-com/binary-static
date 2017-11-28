@@ -59,7 +59,7 @@ const TimePicker = (() => {
 
             if (!(hour === 0 && minute === 0)) {
                 hour   = minute < 5 ? hour - 1 : hour;
-                minute = minute < 5 ? 55 : minute - 5;
+                minute = minute < 5 ? 55 : Math.ceil((minute - 5) / 5) * 5;
             }
 
             obj_config.maxTime = { hour, minute };

@@ -54,8 +54,8 @@ const TradingEvents = (() => {
                         minTime = 0;
                         maxTime = endTime.utc().hour(start_time_val[0]).minute(start_time_val[1]);
                     } else {
-                        // if expiry time is same as today, min time should be the selected start time
-                        minTime = minTime.hour(start_time_val[0]).minute(start_time_val[1]);
+                        // if expiry time is same as today, min time should be the selected start time plus five minutes
+                        minTime = minTime.hour(start_time_val[0]).minute(start_time_val[1]).add(5, 'minutes');
                     }
                 }
             }
