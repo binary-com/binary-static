@@ -65,6 +65,7 @@ const BinarySocketGeneral = (() => {
                         if (/bch/i.test(response.authorize.currency) && !Client.get('accepted_bch')) {
                             showPopup({
                                 url        : urlFor('user/warning'),
+                                popup_id   : 'warning_popup',
                                 form_id    : '#frm_warning',
                                 content_id : '#warning_content',
                                 validations: [{ selector: '#chk_accept', validations: [['req', { hide_asterisk: true }]] }],

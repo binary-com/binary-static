@@ -84,12 +84,13 @@ const DepositWithdraw = (() => {
         } else {
             showPopup({
                 url               : Url.urlFor('cashier/confirmation'),
+                popup_id          : 'confirm_popup',
                 form_id           : '#frm_confirm',
                 content_id        : '#confirm_content',
                 validations       : [{ selector: '#chk_confirm', validations: [['req', { hide_asterisk: true }]] }],
                 additionalFunction: () => {
                     const el_cancel = document.getElementById('cancel');
-                    const el_popup  = document.getElementById('popup');
+                    const el_popup  = document.getElementById('confirm_popup');
                     if (el_cancel) {
                         el_cancel.addEventListener('click', () => {
                             if (el_popup) {
