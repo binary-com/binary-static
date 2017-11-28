@@ -333,11 +333,9 @@ body #not_authenticated_financial ul.checked > li {
     .table-container table {
         border: 1px solid $COLOR_LIGHT_GRAY;
 
-        th {
-            background-color: $COLOR_WHITE;
-        }
         th, td {
             text-align: center !important;
+            background-color: $COLOR_WHITE;
             padding: 20px;
             border-bottom: 1px solid $COLOR_LIGHT_GRAY;
         }
