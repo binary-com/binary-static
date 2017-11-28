@@ -71,24 +71,52 @@ const Accounts = (() => {
     };
 
     const populateExistingAccounts = () => {
-        Client.getAllLoginids()
+        const all_login_ids = Client.getAllLoginids();
+        all_login_ids
+            .filter(loginid => !Client.get('is_disabled', loginid) && !Client.get('excluded_until', loginid))
             .sort((a, b) => a > b)
             .forEach((loginid) => {
-                const account_currency  = Client.get('currency', loginid);
-                const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
-
-                if (!Client.isAccountOfType('virtual', loginid)) {
-                    const company_name = getCompanyName(loginid , Client.get('is_ico_only', loginid));
-                    account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
-                }
-                $('#existing_accounts').find('tbody')
-                    .append($('<tr/>', { id: loginid })
-                        .append($('<td/>', { text: loginid }))
-                        .append($('<td/>').html($('<span/>', account_type_prop)))
-                        .append($('<td/>', { text: getAvailableMarkets(loginid) }))
-                        .append($('<td/>')
-                            .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
+                appendExistingAccounts(loginid);
             });
+        all_login_ids
+            .filter(loginid => Client.get('is_disabled', loginid) || Client.get('excluded_until', loginid))
+            .sort((a, b) => a > b)
+            .forEach((loginid) => {
+                appendExistingAccounts(loginid);
+            });
+    };
+
+    const appendExistingAccounts = (loginid) => {
+        const account_currency  = Client.get('currency', loginid);
+        const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
+
+        if (!Client.isAccountOfType('virtual', loginid)) {
+            const company_name = getCompanyName(loginid , Client.get('is_ico_only', loginid));
+            account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
+        }
+
+        const is_disabled    = Client.get('is_disabled', loginid);
+        const excluded_until = Client.get('excluded_until', loginid);
+        let txt_markets = '';
+        if (is_disabled) {
+            txt_markets = localize('This account is disabled');
+        } else if (excluded_until) {
+            txt_markets = localize('This account is excluded until [_1]', [moment(+excluded_until * 1000).format('YYYY-MM-DD HH:mm:ss Z')]);
+        } else {
+            txt_markets = getAvailableMarkets(loginid);
+        }
+
+        $('#existing_accounts').find('tbody')
+            .append($('<tr/>', { id: loginid, class: ((is_disabled || excluded_until) ? 'color-dark-white' : '') })
+                .append($('<td/>', { text: loginid }))
+                .append($('<td/>').html($('<span/>', account_type_prop)))
+                .append($('<td/>', { text: txt_markets }))
+                .append($('<td/>')
+                    .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
+
+        if (is_disabled || excluded_until) {
+            $('#note_support').setVisibility(1);
+        }
     };
 
     const getAvailableMarkets = (loginid, is_type_ico_only) => {
