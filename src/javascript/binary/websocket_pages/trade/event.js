@@ -33,8 +33,7 @@ const TimePicker            = require('../../components/time_picker');
 const TradingEvents = (() => {
     const initiate = () => {
         const attachTimePicker = (selector, checkEndTime) => {
-            let keepMinMax = false;
-            let minTime    = window.time || moment.utc();
+            let minTime = window.time || moment.utc();
             let maxTime;
             if ($date_start && $date_start.val()) {
                 const date_start_val = $date_start.val();
@@ -52,9 +51,6 @@ const TradingEvents = (() => {
                     // if expiry time is one day after start time, minTime can be 0
                     // but maxTime should be 24 hours after start time, so exact value of start time
                     if (endTime.isAfter(compare.format('YYYY-MM-DD HH:mm'), 'day')) {
-                        if (+start_time_val[0] === 0 && +start_time_val[1] === 0 ) {
-                            keepMinMax = true;
-                        }
                         minTime = 0;
                         maxTime = endTime.utc().hour(start_time_val[0]).minute(start_time_val[1]);
                     } else {
@@ -65,7 +61,6 @@ const TradingEvents = (() => {
             }
             const initObj = {
                 selector,
-                keepMinMax,
                 minTime,
                 maxTime: maxTime || null,
             };
