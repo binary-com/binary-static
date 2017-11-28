@@ -43,7 +43,7 @@ const TradingEvents = (() => {
                 maxTime = minMaxTime.maxTime;
 
                 // if date_start is not 'now'
-                if (checkEndTime && !Durations.isNow(date_start_val)) {
+                if (checkEndTime && !Durations.isNow(date_start_val) && $('#date_start_row').is(':visible')) {
                     const $expiry_date   = $('#expiry_date');
                     const endTime        = moment($expiry_date.attr('data-value'));
                     const start_time_val = $time_start.val().split(':');
@@ -55,7 +55,10 @@ const TradingEvents = (() => {
                         maxTime = endTime.utc().hour(start_time_val[0]).minute(start_time_val[1]);
                     } else {
                         // if expiry time is same as today, min time should be the selected start time plus five minutes
-                        minTime = minTime.hour(start_time_val[0]).minute(start_time_val[1]).add(5, 'minutes');
+                        minTime = minTime.hour(start_time_val[0]).minute(start_time_val[1]);
+                        if (!(+start_time_val[0] === 23 && +start_time_val[1] === 55)) {
+                            minTime = minTime.add(5, 'minutes');
+                        }
                     }
                 }
             }

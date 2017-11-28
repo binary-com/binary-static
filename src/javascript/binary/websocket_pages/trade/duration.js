@@ -459,15 +459,18 @@ const Durations = (() => {
             return false;
         }
 
-        const is_same_day    = isSameDay();
-        let expiry_time_val  = el_expiry_time.value;
-        const time_start_val = el_time_start.value;
+        const is_same_day   = isSameDay();
+        let expiry_time_val = el_expiry_time.value;
+        let time_start_val  = el_time_start.value;
         let new_time,
             time_changed,
             keep_time_unchanged;
         if (!expiry_time_val) {
             new_time        = moment(window.time);
             expiry_time_val = new_time.format('HH:mm');
+        }
+        if (!time_start_val) {
+            time_start_val = moment(window.time).format('HH:mm');
         }
         if (!is_same_day && expiry_time_val >= time_start_val) {
             const time_start = time_start_val.split(':');

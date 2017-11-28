@@ -614,7 +614,8 @@ const commonTrading = (() => {
 
     const timeIsValid = ($element) => {
         let end_date_value   = document.getElementById('expiry_date').getAttribute('data-value');
-        let start_date_value = document.getElementById('date_start').value;
+        const date_start     = document.getElementById('date_start');
+        let start_date_value = date_start.value;
         let end_time_value   = document.getElementById('expiry_time').value;
         const $invalid_time  = $('#invalid-time');
 
@@ -625,6 +626,10 @@ const commonTrading = (() => {
                 $('#expiry_type_endtime').parent().append($('<p>', { class: 'error-msg', id: 'invalid-time', text: localize('Time is in the wrong format.') }));
             }
             return false;
+        }
+
+        if ($(date_start).is(':hidden')) {
+            start_date_value = 'now';
         }
 
         $element.removeClass('error-field');

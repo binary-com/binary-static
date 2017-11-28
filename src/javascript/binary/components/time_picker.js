@@ -57,7 +57,7 @@ const TimePicker = (() => {
             let minute      = parseInt(options.maxTime.minute());
             let hour        = parseInt(options.maxTime.hour());
 
-            if (!(hour === 0 && minute === 0)) {
+            if (!(hour === 0 && minute === 0) && !(hour === 23 && minute === 55)) {
                 hour   = minute < 5 ? hour - 1 : hour;
                 minute = minute < 5 ? 55 : Math.ceil((minute - 5) / 5) * 5;
             }
