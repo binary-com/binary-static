@@ -1,5 +1,5 @@
 const Symbols      = require('../symbols');
-const BinarySocket = require('../../socket');
+const BinarySocket = require('../../../base/socket');
 const localize     = require('../../../../_common/localize').localize;
 const getHighstock = require('../../../../_common/common_functions').requireHighstock;
 

@@ -1,6 +1,6 @@
 const MetaTraderConfig = require('./metatrader.config');
 const MetaTraderUI     = require('./metatrader.ui');
-const BinarySocket     = require('../../socket');
+const BinarySocket     = require('../../../base/socket');
 const Client           = require('../../../base/client');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;

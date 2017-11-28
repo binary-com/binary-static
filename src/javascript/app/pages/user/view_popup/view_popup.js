@@ -1,6 +1,6 @@
 const moment               = require('moment');
 const ViewPopupUI          = require('./view_popup.ui');
-const BinarySocket         = require('../../socket');
+const BinarySocket         = require('../../../base/socket');
 const Highchart            = require('../../trade/charts/highchart');
 const TickDisplay          = require('../../trade/tick_trade');
 const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;

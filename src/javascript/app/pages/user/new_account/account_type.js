@@ -1,4 +1,4 @@
-const BinarySocket = require('../../socket');
+const BinarySocket = require('../../../base/socket');
 const BinaryPjax   = require('../../../base/binary_pjax');
 const Client       = require('../../../base/client');
 const urlFor       = require('../../../../_common/url').urlFor;

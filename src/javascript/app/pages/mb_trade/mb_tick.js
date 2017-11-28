@@ -1,6 +1,6 @@
 const MBDefaults       = require('./mb_defaults');
 const MBNotifications  = require('./mb_notifications');
-const BinarySocket     = require('../socket');
+const BinarySocket     = require('../../base/socket');
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
 /*

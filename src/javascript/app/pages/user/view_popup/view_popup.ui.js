@@ -1,4 +1,4 @@
-const BinarySocket      = require('../../socket');
+const BinarySocket      = require('../../../base/socket');
 const getHighestZIndex  = require('../../../../_common/utility').getHighestZIndex;
 const setViewPopupTimer = require('../../../base/clock').setViewPopupTimer;
 

@@ -8,7 +8,7 @@ const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 const isEmptyObject      = require('../../_common/utility').isEmptyObject;
 const jpClient           = require('../common/country_base').jpClient;
 const isCryptocurrency   = require('../common/currency').isCryptocurrency;
-const BinarySocket       = require('../pages/socket');
+const BinarySocket       = require('./socket');
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 
 const Client = (() => {

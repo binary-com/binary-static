@@ -8,7 +8,7 @@ const isStorageSupported = require('../../_common/storage').isStorageSupported;
 const urlFor             = require('../../_common/url').urlFor;
 const paramsHash         = require('../../_common/url').paramsHash;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
-const BinarySocket       = require('../pages/socket');
+const BinarySocket       = require('./socket');
 
 const LoggedInHandler = (() => {
     const onLoad = () => {

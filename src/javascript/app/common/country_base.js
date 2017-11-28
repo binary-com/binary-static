@@ -2,7 +2,7 @@ const Crowdin                = require('../../_common/crowdin');
 const Language               = require('../../_common/language');
 const LocalStore             = require('../../_common/storage').LocalStore;
 const createLanguageDropDown = require('.//attach_dom/language_dropdown');
-const BinarySocket           = require('../pages/socket');
+const BinarySocket           = require('../base/socket');
 
 const checkClientsCountry = () => {
     if (Crowdin.isInContext()) return;

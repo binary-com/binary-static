@@ -1,7 +1,7 @@
 const urlFor       = require('../../_common/url').urlFor;
 const Client       = require('../../app/base/client');
 const jpClient     = require('../../app/common/country_base').jpClient;
-const BinarySocket = require('../../app/pages/socket');
+const BinarySocket = require('../../app/base/socket');
 
 const AffiliatePopup = (() => {
     const container_id = 'affiliate_disclaimer_popup';

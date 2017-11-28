@@ -1,5 +1,5 @@
 const DocumentUploader    = require('binary-document-uploader');
-const BinarySocket        = require('../../socket');
+const BinarySocket        = require('../../../base/socket');
 const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
 const localize            = require('../../../../_common/localize').localize;

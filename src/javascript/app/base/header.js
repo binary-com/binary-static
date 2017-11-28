@@ -13,7 +13,7 @@ const elementTextContent  = require('../../_common/common_functions').elementTex
 const checkClientsCountry = require('../common/country_base').checkClientsCountry;
 const jpClient            = require('../common/country_base').jpClient;
 const toTitleCase         = require('../../_common/string_util').toTitleCase;
-const BinarySocket        = require('../pages/socket');
+const BinarySocket        = require('./socket');
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
 const getCurrencies       = require('../pages/user/get_currency').getCurrencies;
 

@@ -1,5 +1,5 @@
 const moment               = require('moment');
-const BinarySocket         = require('../../../socket');
+const BinarySocket         = require('../../../../base/socket');
 const BinaryPjax           = require('../../../../base/binary_pjax');
 const Client               = require('../../../../base/client');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;

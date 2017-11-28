@@ -1,5 +1,5 @@
 const AssetIndex             = require('../asset_index');
-const BinarySocket           = require('../../socket');
+const BinarySocket           = require('../../../base/socket');
 const BinaryPjax             = require('../../../base/binary_pjax');
 const showLoadingImage       = require('../../../../_common/utility').showLoadingImage;
 const Table                  = require('../../../common/attach_dom/table');

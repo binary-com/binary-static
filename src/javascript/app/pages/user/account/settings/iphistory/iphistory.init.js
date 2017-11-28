@@ -1,6 +1,6 @@
 const IPHistoryData = require('./iphistory.data');
 const IPHistoryUI   = require('./iphistory.ui');
-const BinarySocket  = require('../../../../socket');
+const BinarySocket  = require('../../../../../base/socket');
 
 const IPHistoryInit = (() => {
     const responseHandler = (response) => {

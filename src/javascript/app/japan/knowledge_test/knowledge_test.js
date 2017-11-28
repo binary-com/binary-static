@@ -5,7 +5,7 @@ const Client              = require('../../base/client');
 const toJapanTimeIfNeeded = require('../../base/clock').toJapanTimeIfNeeded;
 const Header              = require('../../base/header');
 const localize            = require('../../../_common/localize').localize;
-const BinarySocket        = require('../../pages/socket');
+const BinarySocket        = require('../../base/socket');
 
 const KnowledgeTest = (() => {
     const submitted        = {};

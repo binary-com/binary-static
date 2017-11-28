@@ -1,4 +1,4 @@
-const BinarySocket      = require('../socket');
+const BinarySocket      = require('../../base/socket');
 const setShouldRedirect = require('../user/account/settings/cashier_password').setShouldRedirect;
 const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');

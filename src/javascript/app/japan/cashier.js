@@ -5,7 +5,7 @@ const State        = require('../../_common/storage').State;
 const template     = require('../../_common/utility').template;
 const jpClient     = require('../common/country_base').jpClient;
 const jpResidence  = require('../common/country_base').jpResidence;
-const BinarySocket = require('../pages/socket');
+const BinarySocket = require('../base/socket');
 
 const CashierJP = (() => {
     const onLoad = (action) => {

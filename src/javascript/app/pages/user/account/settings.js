@@ -1,4 +1,4 @@
-const BinarySocket     = require('../../socket');
+const BinarySocket     = require('../../../base/socket');
 const Client           = require('../../../base/client');
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const jpClient         = require('../../../common/country_base').jpClient;

@@ -8,8 +8,8 @@ const Login               = require('./login');
 const Page                = require('./page');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const createElement       = require('../../_common/utility').createElement;
-const BinarySocket        = require('../pages/socket');
-const BinarySocketGeneral = require('../pages/socket_general');
+const BinarySocket        = require('./socket');
+const BinarySocketGeneral = require('./socket_general');
 
 const BinaryLoader = (() => {
     let container;

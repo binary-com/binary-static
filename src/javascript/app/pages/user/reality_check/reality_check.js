@@ -1,6 +1,6 @@
 const RealityCheckData = require('./reality_check.data');
 const RealityCheckUI   = require('./reality_check.ui');
-const BinarySocket     = require('../../socket');
+const BinarySocket     = require('../../../base/socket');
 const Client           = require('../../../base/client');
 
 const RealityCheck = (() => {

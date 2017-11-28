@@ -1,6 +1,6 @@
 const Portfolio           = require('../portfolio').Portfolio;
 const ViewPopup           = require('../../view_popup/view_popup');
-const BinarySocket        = require('../../../socket');
+const BinarySocket        = require('../../../../base/socket');
 const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const localize            = require('../../../../../_common/localize').localize;

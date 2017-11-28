@@ -5,7 +5,7 @@ const getLanguage  = require('../../_common/language').get;
 const Login        = require('./login');
 const State        = require('../../_common/storage').State;
 const isVisible    = require('../../_common/common_functions').isVisible;
-const BinarySocket = require('../pages/socket');
+const BinarySocket = require('./socket');
 const getAppId     = require('../../config').getAppId;
 
 const GTM = (() => {

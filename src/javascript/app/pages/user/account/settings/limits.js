@@ -1,4 +1,4 @@
-const BinarySocket = require('../../../socket');
+const BinarySocket = require('../../../../base/socket');
 const LimitsInit   = require('./limits/limits.init');
 
 const Limits = (() => {

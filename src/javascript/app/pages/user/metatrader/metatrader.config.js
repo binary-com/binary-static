@@ -1,4 +1,4 @@
-const BinarySocket = require('../../socket');
+const BinarySocket = require('../../../base/socket');
 const Client       = require('../../../base/client');
 const GTM          = require('../../../base/gtm');
 const localize     = require('../../../../_common/localize').localize;

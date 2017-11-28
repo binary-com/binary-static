@@ -1,6 +1,6 @@
 const Portfolio        = require('./account/portfolio').Portfolio;
 const ViewPopup        = require('./view_popup/view_popup');
-const BinarySocket     = require('../socket');
+const BinarySocket     = require('../../base/socket');
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const showLoadingImage = require('../../../_common/utility').showLoadingImage;

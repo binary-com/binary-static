@@ -1,7 +1,7 @@
 const BinaryPjax   = require('../../base/binary_pjax');
 const Client       = require('../../base/client');
 const localize     = require('../../../_common/localize').localize;
-const BinarySocket = require('../socket');
+const BinarySocket = require('../../base/socket');
 
 const VideoFacility = (() => {
     const onLoad = () => {

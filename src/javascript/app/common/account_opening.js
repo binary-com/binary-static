@@ -8,7 +8,7 @@ const urlFor             = require('../../_common/url').urlFor;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 const makeOption         = require('../../_common/common_functions').makeOption;
 const FormManager        = require('.//form_manager');
-const BinarySocket       = require('../pages/socket');
+const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
 require('select2');
 

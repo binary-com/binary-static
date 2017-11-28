@@ -1,4 +1,4 @@
-const BinarySocket     = require('../socket');
+const BinarySocket     = require('../../base/socket');
 const showLoadingImage = require('../../../_common/utility').showLoadingImage;
 const getHighstock     = require('../../../_common/common_functions').requireHighstock;
 const localize         = require('../../../_common/localize').localize;

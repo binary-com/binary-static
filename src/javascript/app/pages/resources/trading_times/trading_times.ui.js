@@ -1,6 +1,6 @@
 const moment                 = require('moment');
 const TradingTimes           = require('../trading_times');
-const BinarySocket           = require('../../socket');
+const BinarySocket           = require('../../../base/socket');
 const localize               = require('../../../../_common/localize').localize;
 const showLoadingImage       = require('../../../../_common/utility').showLoadingImage;
 const Table                  = require('../../../common/attach_dom/table');

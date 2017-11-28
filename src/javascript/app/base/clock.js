@@ -1,7 +1,7 @@
 const moment           = require('moment');
 const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
 const jpClient         = require('../common/country_base').jpClient;
-const BinarySocket     = require('../pages/socket');
+const BinarySocket     = require('./socket');
 
 const Clock = (() => {
     let clock_started = false;

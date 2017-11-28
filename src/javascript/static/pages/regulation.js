@@ -1,6 +1,6 @@
 const Client       = require('../../app/base/client');
 const urlFor       = require('../../_common/url').urlFor;
-const BinarySocket = require('../../app/pages/socket');
+const BinarySocket = require('../../app/base/socket');
 
 const Regulation = (() => {
     const onLoad = () => {
