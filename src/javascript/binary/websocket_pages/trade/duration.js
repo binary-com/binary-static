@@ -295,7 +295,11 @@ const Durations = (() => {
             } else {
                 selected_value = this.getAttribute('data-value');
             }
-            selectEndDate(moment(selected_value));
+            const requested = selectEndDate(moment(selected_value));
+            if (requested < 1) {
+                commonTrading.timeIsValid($('#expiry_time'));
+                Price.processPriceRequest();
+            }
             return true;
         });
     };
