@@ -1,4 +1,4 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 [% BLOCK footer_column %]
 <div class="gr-4">

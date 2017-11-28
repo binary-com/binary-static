@@ -1,4 +1,4 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 [% BLOCK timeline_first %]
     <div class="gr-1 gr-2-m gr-centered">
@@ -43,7 +43,7 @@
     <div class="gr-parent gr-padding-30">
         <p class="center-text">[% l("[_1] is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements.", website_name) %]</p>
 
-        [% INCLUDE common/components/separator_line.html.tt class='gr-parent gr-padding-20' invisible=1 %]
+        [% INCLUDE _common/components/separator_line.html.tt class='gr-parent gr-padding-20' invisible=1 %]
     </div>
 
     [% WRAPPER box header=l("Binary Group Ltd.") first=1 %]

@@ -1,4 +1,4 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 [% BLOCK info %]
 <div class="gr-parent gr-padding-10">
     <h2>[% header %]</h2>

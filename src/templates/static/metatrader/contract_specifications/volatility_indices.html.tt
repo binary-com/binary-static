@@ -1,4 +1,4 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 [% usd = { text=l('USD 1 per point') }; txt_100 = { text='100' }; txt_01 = { text='0.01' };
     percentage = { text='0.2%' }; high_frequency = l('High frequency (2 ticks per second)') %]
 

@@ -1,7 +1,7 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 <div id="accounts_loading">
-    [% PROCESS common/components/loading.html.tt %]
+    [% PROCESS _common/components/loading.html.tt %]
 </div>
 
 <div class="invisible" id="accounts_wrapper">
@@ -24,7 +24,7 @@
         <p class="center-text gr-padding-30">[% l("You have created all accounts available to you.") %]</p>
     </div>
 
-    [% INCLUDE common/components/separator_line.html.tt show_mobile=1 class="gr-padding-20" invisible=1 %]
+    [% INCLUDE _common/components/separator_line.html.tt show_mobile=1 class="gr-padding-20" invisible=1 %]
 
     <h1>[% l("Your Existing Accounts") %]</h1>
     [% INCLUDE table scroll=1 id='existing_accounts' data={
@@ -32,5 +32,5 @@
         [{ text=l("Account") }, { text=l("Type") }, { text=l("Available Markets") }, { text=l("Currency") }],
     ]} %]
 
-    [% INCLUDE common/components/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]
+    [% INCLUDE _common/components/separator_line.html.tt show_mobile=1 class="gr-padding-30" sub_class="gr-padding-10" invisible=1 %]
 </div>

@@ -93,7 +93,7 @@
     ]
 %]
 
-[% INCLUDE common/components/separator_line.html.tt invisible=1 class="gr-padding-10" %]
+[% INCLUDE _common/components/separator_line.html.tt invisible=1 class="gr-padding-10" %]
 
 [% INCLUDE file_selector heading=l("2. Proof of address")
     allowed_documents=[l('Utility bills (electricity, water, gas, broadband and landline)'),

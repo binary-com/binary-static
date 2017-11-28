@@ -22,7 +22,7 @@
                 <p>[% l("With a CFD (which is a leveraged product), you can purchase 100 units of the same asset at a fraction of the cost.") %]</p>
             </div>
 
-            [% INCLUDE common/components/separator_line.html.tt %]
+            [% INCLUDE _common/components/separator_line.html.tt %]
         </div>
 
 
@@ -38,7 +38,7 @@
                 [% PROCESS mt_box text=l("If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:") %]
             </div>
 
-            [% INCLUDE common/components/separator_line.html.tt %]
+            [% INCLUDE _common/components/separator_line.html.tt %]
         </div>
 
 

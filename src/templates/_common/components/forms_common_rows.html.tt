@@ -1,4 +1,4 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 
 [% BLOCK salutation %]
     [% WRAPPER form_row type='select' id='salutation' class label=l('Title') %]

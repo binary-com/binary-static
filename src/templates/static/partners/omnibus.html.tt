@@ -5,7 +5,7 @@
     </div>
 </div>
 
-[% INCLUDE common/components/separator_line.html.tt class='gr-parent gr-padding-20' invisible=1 %]
+[% INCLUDE _common/components/separator_line.html.tt class='gr-parent gr-padding-20' invisible=1 %]
 
 <div class="fill-bg-color center-text gr-padding-20">
     <h2 class="gr-padding-20 gr-child">[% l('Key features') %]</h2>
@@ -27,7 +27,7 @@
 
 <div class="container gr-padding-30 gr-child">
     <h2 class="center-text">[% l('How it works') %]</h2>
-    [% INCLUDE common/components/separator_line.html.tt class='gr-parent' invisible=1 %]
+    [% INCLUDE _common/components/separator_line.html.tt class='gr-parent' invisible=1 %]
     [% BLOCK steps %]
         <div class="steps gr-12 gr-12-p gr-12-m gr-parent">
             <p class="center-text">[% text %]</p>
@@ -45,5 +45,5 @@
 
 <div class="container">
     <p class="center-text">[% l('Interested in our omnibus account facility? [_1]Contact us now and apply as an omnibus broker[_2].', '<a href="mailto:marketing@binary.com">', '</a>') %]</p>
-    [% INCLUDE common/components/separator_line.html.tt class='gr-parent gr-padding-20' invisible=1 %]
+    [% INCLUDE _common/components/separator_line.html.tt class='gr-parent gr-padding-20' invisible=1 %]
 </div>

@@ -1,4 +1,4 @@
-[% PROCESS common/components/tabs.html.tt %]
+[% PROCESS _common/components/tabs.html.tt %]
 
 [% WRAPPER tab_container class='static_full tab-with-subsection' %]
     [% INCLUDE tabs_subtabs id='legal-menu' items=[

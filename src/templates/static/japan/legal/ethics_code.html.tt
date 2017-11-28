@@ -1,4 +1,4 @@
-[% PROCESS common/components/list_multiline.html.tt %]
+[% PROCESS _common/components/list_multiline.html.tt %]
 
 <div class="gr-12 gr-padding-30 gr-no-gutter">
     <h2>[% l("Ethics Code") %]</h2>

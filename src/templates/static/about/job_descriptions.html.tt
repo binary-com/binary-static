@@ -24,7 +24,7 @@
     </div>
 
     [% UNLESS last %]
-        [% INCLUDE common/components/separator_line.html.tt %]
+        [% INCLUDE _common/components/separator_line.html.tt %]
     [% END %]
 [% END %]
 

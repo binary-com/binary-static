@@ -1,4 +1,4 @@
-[% PROCESS common/components/tabs.html.tt %]
+[% PROCESS _common/components/tabs.html.tt %]
 
 <div class="invisible ja-show">
     [% WRAPPER tab_container class='static_full tab-with-subsection' %]

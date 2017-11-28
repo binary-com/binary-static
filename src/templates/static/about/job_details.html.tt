@@ -1,4 +1,4 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 [% BLOCK invisible_heading %]
     <div class="center-text" id="title">

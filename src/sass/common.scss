@@ -1,24 +1,24 @@
-@import 'common/common_import';
+@import '_common/common_import';
 
 /* common styles */
-@import 'common/base/reset';
-@import 'common/common';
+@import '_common/base/reset';
+@import '_common/common';
 
 /* main style */
-@import 'common/components';
-@import 'common/footer';
-@import 'common/header';
-@import 'common/jquery_elements';
-@import 'common/table';
-@import 'common/img_lightbox';
+@import '_common/components';
+@import '_common/footer';
+@import '_common/header';
+@import '_common/jquery_elements';
+@import '_common/table';
+@import '_common/img_lightbox';
 
 /* language based rules */
-@import 'common/base/language_base';
+@import '_common/base/language_base';
 
 /* media queries */
-@import 'common/base/media-queries';
+@import '_common/base/media-queries';
 
 /* external stylesheets */
-@import 'common/external/grid'; /* grid layout system */
-@import 'common/external/mmenu/jquery.mmenu.all';
-@import 'common/external/select2';
+@import '_common/external/grid'; /* grid layout system */
+@import '_common/external/mmenu/jquery.mmenu.all';
+@import '_common/external/select2';

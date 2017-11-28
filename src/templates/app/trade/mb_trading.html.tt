@@ -1,5 +1,5 @@
 <div id="main_loading" class="center-text">
-    [% INCLUDE common/components/loading.html.tt %]
+    [% INCLUDE _common/components/loading.html.tt %]
 </div>
 <div id="mb-trading-wrapper" class="mb-trading-wrapper gr-centered gr-12-p gr-12-m invisible">
     <div class="gr-row">
@@ -118,7 +118,7 @@
                 </div>
                 <div class="price-rows"></div>
             </div>
-            <div id="loading-overlay" class="invisible">[% INCLUDE common/components/loading.html.tt %]</div>
+            <div id="loading-overlay" class="invisible">[% INCLUDE _common/components/loading.html.tt %]</div>
         </div>
     </div>
     </div>

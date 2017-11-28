@@ -1,6 +1,6 @@
 <div class="gr-12">
     <h1>[% l('Give Me More Money!') %]</h1>
-    <div class="loading">[% PROCESS common/components/loading.html.tt %]</div>
+    <div class="loading">[% PROCESS _common/components/loading.html.tt %]</div>
     <div id="topup_virtual" class="center-text">
         <div id="viewError" class="viewItem invisible">
             <p class="notice-msg"></p>

@@ -1,4 +1,4 @@
-[% PROCESS common/components/tabs.html.tt %]
+[% PROCESS _common/components/tabs.html.tt %]
 <div id="trading_analysis_content">
     [% WRAPPER tab_container class='page-section' %]
         [% INCLUDE tabs id='analysis_tab_container' id_ul='analysis_tabs' tabs=[

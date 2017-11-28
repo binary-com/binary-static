@@ -37,7 +37,7 @@
                 <img class="responsive" src="[% request.url_for('images/pages/liquidity_solutions/' _ image _ '.svg') %]" />
             </div>
         </div>
-        [% INCLUDE common/components/separator_line.html.tt show_mobile=1 class='gr-padding-30' %]
+        [% INCLUDE _common/components/separator_line.html.tt show_mobile=1 class='gr-padding-30' %]
     [% END %]
     [% INCLUDE text_image image='one_zero' header=l('One Zero') text=l('MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins.') %]
     [% INCLUDE text_image image='fix_api'  header=l('FIX API')  text=l('Everyone else can use the FIX API to connect to our One Zero bridge – subject to a conformance test.') %]

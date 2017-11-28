@@ -1,4 +1,4 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 
 <div id='account_type_container' class='invisible'>
     <h1>[% l('Select account type') %]</h1>

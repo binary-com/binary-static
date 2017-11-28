@@ -4,5 +4,5 @@
         <p id="description">[% l("Keep track of your authorised applications.") %]</p>
         <p class="error-msg" id="applications_error"></p>
     </div>
-    <div id="applications_loading">[% PROCESS common/components/loading.html.tt %]</div>
+    <div id="applications_loading">[% PROCESS _common/components/loading.html.tt %]</div>
 </div>

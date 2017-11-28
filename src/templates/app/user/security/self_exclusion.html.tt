@@ -1,4 +1,4 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 
 <div class="invisible" id="description">
     <h1>[% l('Self-Exclusion Facilities') %]</h1>
@@ -11,7 +11,7 @@
 
 <p id="msg_error" class="center-text notice-msg invisible"></p>
 
-<div id="loading">[% PROCESS common/components/loading.html.tt %]</div>
+<div id="loading">[% PROCESS _common/components/loading.html.tt %]</div>
 
 <form id="frm_self_exclusion" class="invisible">
     [% WRAPPER fieldset %]

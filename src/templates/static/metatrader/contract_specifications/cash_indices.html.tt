@@ -1,4 +1,4 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 [% percentage = { text='0.2%' } %]
 
 <div id="cash-specs" class="gr-row">

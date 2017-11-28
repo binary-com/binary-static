@@ -1,4 +1,4 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 [% BLOCK box %]
 <div class="gr-row center-text">
     [% FOREACH box IN boxes %]

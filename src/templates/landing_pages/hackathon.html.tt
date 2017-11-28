@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        [% INCLUDE common/includes/anti_clickjack.html.tt %]
+        [% INCLUDE _common/includes/anti_clickjack.html.tt %]
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
         <meta name="description" content="[%= broker_name _ ' Hackathon Competition' =%]" />
@@ -14,9 +14,9 @@
         <meta property="og:type" content="website" />
         <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
 
-        [% PROCESS common/components/title.html.tt %]
+        [% PROCESS _common/components/title.html.tt %]
 
-        [% PROCESS common/includes/favicons.html.tt %]
+        [% PROCESS _common/includes/favicons.html.tt %]
 
         <link href="[% request.url_for('css/hackathon.css') _ '?' _ static_hash %]" rel="stylesheet" />
     </head>

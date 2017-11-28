@@ -1,9 +1,9 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 
 <div>
     <h1 id="heading">[% l("Financial Assessment") %]</h1>
 
-    <div id="assessment_loading">[% PROCESS common/components/loading.html.tt %]</div>
+    <div id="assessment_loading">[% PROCESS _common/components/loading.html.tt %]</div>
 
     <div id="msg_main" class="invisible">
         <p>[% l('Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5.') %]</p>

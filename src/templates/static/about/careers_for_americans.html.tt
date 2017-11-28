@@ -1,4 +1,4 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 [% BLOCK lg_column_link %]
     <div class="gr-6 gr-12-m">

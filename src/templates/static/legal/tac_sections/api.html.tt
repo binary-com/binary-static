@@ -1,4 +1,4 @@
-[% PROCESS common/components/list_nested.html.tt %]
+[% PROCESS _common/components/list_nested.html.tt %]
 
 <div>
     <h2>[% l("[_1] Application Program Interface (\"API\") Terms and Conditions" , website_name) %]</h2>

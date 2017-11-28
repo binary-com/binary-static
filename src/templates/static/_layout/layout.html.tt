@@ -15,19 +15,19 @@
         [% PROCESS static/_layout/header.html.tt %]
         [% PROCESS static/_layout/main_menu.html.tt %]
         [% PROCESS static/_layout/mobile_menu.html.tt %]
-        [% PROCESS common/includes/gtm.html.tt %]
+        [% PROCESS _common/includes/gtm.html.tt %]
     <!-- FlushHead -->
     <a href="javascript:;" id="scrollup"></a>
 [% END %]
 [% IF layout %]
         <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
             [% IF layout == 'full_width' %]
-                [% PROCESS common/includes/ico_banner.html.tt container='ico-banner-container' class='top-margin' %]
+                [% PROCESS _common/includes/ico_banner.html.tt container='ico-banner-container' class='top-margin' %]
             [% ELSIF layout == 'default' %]
-                [% PROCESS common/includes/ico_banner.html.tt container='ico-banner-container' class='top-margin bottom-margin' %]
+                [% PROCESS _common/includes/ico_banner.html.tt container='ico-banner-container' class='top-margin bottom-margin' %]
             [% END %]
             <div id="page_info" style="display:none;">
-                [% PROCESS common/components/title.html.tt %]
+                [% PROCESS _common/components/title.html.tt %]
                 <div id="content_class">[% current_route %]-content</div>
             </div>
             [% IF layout != 'full_width' %]
@@ -36,7 +36,7 @@
 [% END %]
 
 [% IF layout == 'get_started' %]
-[% PROCESS common/includes/ico_banner.html.tt class='top-margin' %]
+[% PROCESS _common/includes/ico_banner.html.tt class='top-margin' %]
 <div class="get-started static_full">
     <div class="gr-row">
         <div class="gr-3 gr-hide-m">

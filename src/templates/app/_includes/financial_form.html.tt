@@ -1,4 +1,4 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 
 [% BLOCK experience %]
     <option value="">[% l("Please select") %]</option>

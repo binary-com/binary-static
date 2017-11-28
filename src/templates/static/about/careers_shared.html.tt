@@ -1,11 +1,11 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 <div class="gr-padding-30">
     [% INCLUDE fill_box image='images/pages/careers/view-positions-icon.svg' center=1 padding='4'
         href=request.url_for('/open-positions') text=l("View open positions") %]
 </div>
 
-[% INCLUDE common/components/separator_line.html.tt %]
+[% INCLUDE _common/components/separator_line.html.tt %]
 
 <div class="gr-padding-30">
     <h1>[% l("Are you ready?") %]</h1>

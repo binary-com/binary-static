@@ -1,10 +1,10 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 <div class="container">
     <div>
         <h1>[% l('MetaTrader account management') %]</h1>
     </div>
     <p id="page_msg" class="notice-msg center-text invisible"></p>
-    <div id="mt_loading">[% PROCESS common/components/loading.html.tt %]</div>
+    <div id="mt_loading">[% PROCESS _common/components/loading.html.tt %]</div>
     <div id="mt_account_management" class="gr-row fill-bg-color invisible">
         <div id="mt_left_panel" class="mt-panel gr-3 gr-4-t gr-12-p gr-12-m gr-no-gutter">
             <div class="top gr-hide-p gr-hide-m">

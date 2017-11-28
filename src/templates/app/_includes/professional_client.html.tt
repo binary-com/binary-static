@@ -1,4 +1,4 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 
 [% WRAPPER fieldset legend=l('Professional Client') id='fs_professional' class="invisible" %]
     <div class="gr-padding-10 gr-12">

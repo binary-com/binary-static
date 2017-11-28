@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    [% INCLUDE common/components/separator_line.html.tt no_wrapper=1 %]
+    [% INCLUDE _common/components/separator_line.html.tt no_wrapper=1 %]
 
     <div class="gr-padding-20">
         <div class="gr-row">
@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    [% INCLUDE common/components/separator_line.html.tt no_wrapper=1 %]
+    [% INCLUDE _common/components/separator_line.html.tt no_wrapper=1 %]
 
     <div class="gr-padding-20">
         <div class="gr-row">

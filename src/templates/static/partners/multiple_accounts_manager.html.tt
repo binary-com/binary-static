@@ -26,7 +26,7 @@
         <div class="gr-padding-30 center-text container">
             <h2>[% l('Key features') %]</h2>
 
-            [% INCLUDE common/components/separator_line.html.tt class='gr-parent gr-padding-20' invisible=1 %]
+            [% INCLUDE _common/components/separator_line.html.tt class='gr-parent gr-padding-20' invisible=1 %]
 
             [% WRAPPER box class='border-bottom' %]
                 [% INCLUDE box_inner class='border-right-top' image='deposit'
@@ -67,7 +67,7 @@
 <div class="container">
     <h2 class="center-text">[% l('How it works') %]</h2>
 
-    [% INCLUDE common/components/separator_line.html.tt class='gr-parent gr-padding-30' invisible=1 %]
+    [% INCLUDE _common/components/separator_line.html.tt class='gr-parent gr-padding-30' invisible=1 %]
 
     [% circle_no = 1 %]
     [% BLOCK step %]

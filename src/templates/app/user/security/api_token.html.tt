@@ -1,4 +1,4 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 
 <div id="api_token" class="api_token">
     <h1>[% l('API Token') %]</h1>
@@ -37,5 +37,5 @@
         <p></p>
     </div>
 
-    <div id="tokens_list" class="gr-12 gr-parent gr-padding-10">[% PROCESS common/components/loading.html.tt %]</div>
+    <div id="tokens_list" class="gr-12 gr-parent gr-padding-10">[% PROCESS _common/components/loading.html.tt %]</div>
 </div>

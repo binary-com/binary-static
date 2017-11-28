@@ -217,5 +217,5 @@
 <div id="all_prices"></div>
 [% PROCESS app/trade/analysis.html.tt %]
 <div id="trading_init_progress">
-    [% PROCESS common/components/loading.html.tt %]
+    [% PROCESS _common/components/loading.html.tt %]
 </div>

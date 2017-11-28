@@ -1,10 +1,10 @@
-@import 'common/base/constants';
+@import '_common/base/constants';
 
 /* common styles */
-@import 'common/base/reset';
+@import '_common/base/reset';
 @import 'landing_pages/common';
 
 @import 'landing_pages/ico';
 
 /* Grid layout system */
-@import 'common/external/grid';
+@import '_common/external/grid';

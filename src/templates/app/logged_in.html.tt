@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    [% INCLUDE common/includes/anti_clickjack.html.tt %]
+    [% INCLUDE _common/includes/anti_clickjack.html.tt %]
     [%= FOREACH js IN javascript.libs =%]
         <script src='[%= js =%]'></script>
     [%= END =%]
@@ -25,7 +25,7 @@
         <div id="content">
             <div id="login_loading">
                 <a href="[% request.url_for('/') %]" id="loading_link">
-                    [% PROCESS common/components/loading.html.tt %]
+                    [% PROCESS _common/components/loading.html.tt %]
                 </a>
             </div>
         </div>

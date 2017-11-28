@@ -1,4 +1,4 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 [% BLOCK steps %]
 <div class="gr-6 gr-12-m gr-padding-30">
     <div class="gr-row align-center">
@@ -16,7 +16,7 @@
             <h1 class="center-text gr-padding-20">[% l("First-Class FX Binary Options Trading Platform") %]</h1>
             <h3 class="center-text gr-padding-20 gr-child">[% l("Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform.") %]</h3>
 
-            [% INCLUDE common/includes/form_verify_email.html.tt padding='8' email_padding='8' button_padding=4 text=l('Get started') %]
+            [% INCLUDE _common/includes/form_verify_email.html.tt padding='8' email_padding='8' button_padding=4 text=l('Get started') %]
         </div>
     </div>
 
@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        [% INCLUDE common/components/separator_line.html.tt no_wrapper=1 %]
+        [% INCLUDE _common/components/separator_line.html.tt no_wrapper=1 %]
     </div>
 </div>
 
@@ -73,7 +73,7 @@
             <span>[% l("Try our trading page") %]</span>
         </a>
     </div>
-    [% INCLUDE common/components/separator_line.html.tt no_wrapper=1 %]
+    [% INCLUDE _common/components/separator_line.html.tt no_wrapper=1 %]
 </div>
 
 [% id_no = 1 %]

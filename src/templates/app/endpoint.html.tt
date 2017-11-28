@@ -1,4 +1,4 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 
 <div class="endpoint-config static_full">
     <h1>[% l('Change API Endpoint') %]</h1>

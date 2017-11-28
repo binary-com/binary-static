@@ -1,5 +1,5 @@
-[% PROCESS common/components/forms.html.tt %]
-[% PROCESS common/components/forms_common_rows.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
+[% PROCESS _common/components/forms_common_rows.html.tt %]
 
 <h1>[% l('[_1] Initial Coin Offering (ICO)', website_name) %]</h1>
 
@@ -49,7 +49,7 @@
                 </div>
                 <div class="gr-12 align-start hint no-padding">[% l("Price per unit:") %] <span id="price_unit"></span></div>
                 <div class="gr-12 align-start hint no-padding">[% l("Total:") %] <span id="total"></span></div>
-                [% INCLUDE common/components/separator_line.html.tt show_mobile=1 class='gr-padding-10' invisible=1 %]
+                [% INCLUDE _common/components/separator_line.html.tt show_mobile=1 class='gr-padding-10' invisible=1 %]
                 <div class="gr-12 align-start hint no-padding">
                     [% l('Initial deposit required: ') %]
                     <strong id="payable_amount"></strong>
@@ -70,7 +70,7 @@
             </form>
         </div>
     </div>
-    [% INCLUDE common/components/separator_line.html.tt show_mobile=1 class='gr-padding-20' invisible=1 %]
+    [% INCLUDE _common/components/separator_line.html.tt show_mobile=1 class='gr-padding-20' invisible=1 %]
     <div id="ico_bids">
         <div class="gr-row">
             <h1 class="gr-7 gr-12-m gr-order-2-m">[% l('[_1] ICO Auction Bids', website_name) %]</h1>
@@ -83,7 +83,7 @@
                 </a>
             </div>
         </div>
-        [% PROCESS common/components/elements.html.tt %]
+        [% PROCESS _common/components/elements.html.tt %]
 
         <div id="portfolio">
             <p class="notice-msg center-text invisible" id="error-msg"></p>
@@ -111,7 +111,7 @@
             </div>
         </div>
     </div>
-    [% INCLUDE common/components/separator_line.html.tt show_mobile=1 class='gr-padding-10' invisible=1 %]
+    [% INCLUDE _common/components/separator_line.html.tt show_mobile=1 class='gr-padding-10' invisible=1 %]
     <div class="faded">
         <p class="no-margin">[% l('Notes:') %]</p>
         <ol>

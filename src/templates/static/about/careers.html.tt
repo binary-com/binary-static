@@ -1,9 +1,9 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 [% BLOCK column_sm %]
     <div class="gr-3 gr-12-m">
         <h4><strong>[% header %]</strong></h4>
-        [% INCLUDE common/components/separator_line.html.tt no_wrapper=1 %]
+        [% INCLUDE _common/components/separator_line.html.tt no_wrapper=1 %]
         <p>[% paragraph %]</p>
     </div>
 [% END %]
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        [% INCLUDE common/components/separator_line.html.tt %]
+        [% INCLUDE _common/components/separator_line.html.tt %]
 
         <div class="gr-row gr-padding-30">
             [% INCLUDE column_md header=l("Want to telecommute?") paragraph=l("[_1] is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it.", website_name) %]
@@ -100,7 +100,7 @@
             [% INCLUDE fill_box center=1 padding='4' href=request.url_for('/careers-for-americans') text=l("Learn more") %]
         </div>
 
-        [% INCLUDE common/components/separator_line.html.tt %]
+        [% INCLUDE _common/components/separator_line.html.tt %]
 
         <div class="gr-padding-30 center-text">
             <h1>[% l("Open positions") %]</h1>

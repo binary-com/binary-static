@@ -1,5 +1,5 @@
-[% PROCESS common/components/forms.html.tt %]
-[% PROCESS common/components/forms_common_rows.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
+[% PROCESS _common/components/forms_common_rows.html.tt %]
 
 <div id="deposit_withdraw">
     <h1 id="heading"></h1>

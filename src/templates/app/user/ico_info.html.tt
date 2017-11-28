@@ -1,4 +1,4 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 
 <h1>[% l('[_1] ICO: Histogram of Active Bids', website_name) %]</h1>
 <p class="center-text notice-msg invisible" id="no_bids_to_show">[% l('No bids to show') %]</p>

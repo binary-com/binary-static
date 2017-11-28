@@ -1,4 +1,4 @@
-[% PROCESS common/components/forms.html.tt %]
+[% PROCESS _common/components/forms.html.tt %]
 
 [% WRAPPER fieldset legend=l('PEP Declaration') %]
     <div class="gr-12">

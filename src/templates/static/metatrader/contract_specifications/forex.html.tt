@@ -1,4 +1,4 @@
-[% PROCESS common/components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 [% txt_100000 = { text='100,000' }; txt_01 = { text='0.01' }; txt_1000 = { text='1000:1' }
     txt_5000 = { text='5000' }; txt_100 = { text='100' };
 %]
