@@ -9,7 +9,7 @@ const showPopup = (options) => {
         }
 
         const div      = createElement('div', { html: this.responseText });
-        const lightbox = createElement('div', { id: 'popup', class: 'lightbox' });
+        const lightbox = createElement('div', { id: options.popup_id, class: 'lightbox' });
         lightbox.append(div.querySelector(options.content_id));
         document.body.appendChild(lightbox);
 
