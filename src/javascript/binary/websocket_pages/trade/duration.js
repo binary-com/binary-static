@@ -433,7 +433,7 @@ const Durations = (() => {
                 .attr('data-value', end_date_iso);
         }
         Defaults.set('expiry_date', end_date_iso);
-        if (isNow()) {
+        if (isNow() && !isSameDay()) {
             Defaults.remove('expiry_time');
             expiry_time_row.hide();
             Barriers.display();
@@ -453,7 +453,7 @@ const Durations = (() => {
         return requested;
     };
 
-    const showExpiryTime = (el_expiry_time, el_expiry_time_row) => {
+    const showExpiryTime = (el_expiry_time = document.getElementById('expiry_time'), el_expiry_time_row = document.getElementById('expiry_time_row')) => {
         const el_time_start = document.getElementById('time_start');
         if (!el_expiry_time || !el_expiry_time_row || !el_time_start) {
             return false;
@@ -560,6 +560,7 @@ const Durations = (() => {
         }
 
         let make_price_request = 1;
+        let requested;
         const displayed = displayDurations(time_start.value);
         if (+displayed > 0) {
             make_price_request = -1;
@@ -574,15 +575,24 @@ const Durations = (() => {
                     expiry_date = end_time;
                 }
             }
-            const requested = selectEndDate(expiry_date || end_time);
-            if (requested) {
-                make_price_request = -1;
+            requested = selectEndDate(expiry_date || end_time);
+        } else if (value === 'now' && isSameDay() && Defaults.get('expiry_type') === 'endtime') {
+            let expiry_time = Defaults.get('expiry_time') || moment().utc().add(5, 'minutes');
+            const times = expiry_time.split(':');
+            if (times.length > 1) {
+                let moment_expiry_time = moment.utc();
+                moment_expiry_time = moment_expiry_time.hour(times[0]).minute(times[1]);
+                const now = moment.utc();
+                if (moment_expiry_time.isBefore(now)) {
+                    expiry_time = now.add(5, 'minutes');
+                }
             }
+            requested = setTime(expiry_time.format('HH:mm'));
         } else {
-            const requested = hideExpiryTime(document.getElementById('expiry_time_row'));
-            if (requested) {
-                make_price_request = -1;
-            }
+            requested = hideExpiryTime(document.getElementById('expiry_time_row'));
+        }
+        if (requested) {
+            make_price_request = -1;
         }
         commonTrading.timeIsValid($('#expiry_time'));
         return make_price_request;
