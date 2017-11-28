@@ -1,6 +1,6 @@
 const expect          = require('chai').expect;
 const jsdom           = require("jsdom");
-const CommonFunctions = require('../../../_common/common_functions');
+const CommonFunctions = require('../common_functions');
 
 describe('CommonFunctions', () => {
     let date_element,

@@ -1,6 +1,6 @@
 const expect            = require('chai').expect;
 const moment            = require('moment');
-const shouldForceReload = require('../../../_common/check_new_release').shouldForceReload;
+const shouldForceReload = require('../check_new_release').shouldForceReload;
 
 describe('checkNewRelease', () => {
     describe('.shouldForceReload()', () => {
