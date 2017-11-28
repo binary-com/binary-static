@@ -410,16 +410,15 @@ const Durations = (() => {
     const isNow = date_start => (date_start || document.getElementById('date_start').value) === 'now';
 
     const isSameDay = () => {
-        let date_start     = document.getElementById('date_start');
-        let date_start_val = date_start.value;
+        let date_start_val = document.getElementById('date_start').value;
         // if 'now' is selected, take first option's value
         if (isNaN(+date_start_val)) {
-            date_start     = date_start.options[1];
-            date_start_val = date_start.value;
+            date_start_val = window.time;
+        } else {
+            date_start_val = moment(+date_start_val * 1000);
         }
-        date_start_val        = moment(+date_start_val * 1000).utc();
-        const expiry_date_day = moment(document.getElementById('expiry_date').getAttribute('data-value')).format('ddd');
-        return expiry_date_day === date_start_val.format('ddd');
+        const expiry_date_day = moment(document.getElementById('expiry_date').getAttribute('data-value'));
+        return expiry_date_day.format('DDD') === date_start_val.format('DDD');
     };
 
     const selectEndDate = (end_date) => {
@@ -574,7 +573,7 @@ const Durations = (() => {
             if (expiry_date) {
                 const date_start = moment(+$date_start_select.val() * 1000);
                 // if chosen end date is not start date or one day after start date, reset its value
-                if (expiry_date.format('ddd') !== date_start.format('ddd') && expiry_date.format('ddd') !== date_start.add(1, 'day').format('ddd')) {
+                if (expiry_date.format('DDD') !== date_start.format('DDD') && expiry_date.format('DDD') !== date_start.add(1, 'day').format('DDD')) {
                     expiry_date = end_time;
                 }
             }
@@ -587,9 +586,8 @@ const Durations = (() => {
                 moment_expiry_time = moment_expiry_time.hour(times[0]).minute(times[1]);
                 const now = moment.utc();
                 if (moment_expiry_time.isBefore(now)) {
-                    expiry_time = now.add(5, 'minutes');
+                    expiry_time = now.add(5, 'minutes').format('HH:mm');
                 }
-                expiry_time = expiry_time.format('HH:mm');
             }
             requested = setTime(expiry_time);
         } else {
