@@ -3,11 +3,12 @@ const Client             = require('../../../../../base/client');
 const localize           = require('../../../../../../_common/localize').localize;
 const elementTextContent = require('../../../../../../_common/common_functions').elementTextContent;
 const elementInnerHtml   = require('../../../../../../_common/common_functions').elementInnerHtml;
+const getPropertyValue   = require('../../../../../../_common/utility').getPropertyValue;
 const jpClient           = require('../../../../../common/country_base').jpClient;
 const formatMoney        = require('../../../../../common/currency').formatMoney;
 
 const LimitsInit = (() => {
-    const limitsHandler = (response) => {
+    const limitsHandler = (response, response_get_account_status) => {
         const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);
 
@@ -19,7 +20,7 @@ const LimitsInit = (() => {
         const el_withdrawn          = document.getElementById('already-withdraw');
         const el_withdraw_limit_agg = document.getElementById('withdrawal-limit-aggregate');
 
-        if (+limits.lifetime_limit === 99999999 && +limits.num_of_days_limit === 99999999) {
+        if (/authenticated/.test(getPropertyValue(response_get_account_status, ['get_account_status', 'status']))) {
             elementTextContent(el_withdraw_limit, localize('Your account is fully authenticated and your withdrawal limits have been lifted.'));
         } else {
             let txt_withdraw_lim           = 'Your withdrawal limit is [_1] [_2] (or equivalent in other currency).';
