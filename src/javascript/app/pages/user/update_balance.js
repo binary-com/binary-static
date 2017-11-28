@@ -1,9 +1,9 @@
 const PortfolioInit         = require('./account/portfolio/portfolio.init');
 const updateContractBalance = require('../trade/update_values').updateContractBalance;
 const Client                = require('../../base/client');
-const getPropertyValue      = require('../../../_common/utility').getPropertyValue;
+const BinarySocket          = require('../../base/socket');
 const formatMoney           = require('../../common/currency').formatMoney;
-const BinarySocket          = require('..//socket');
+const getPropertyValue      = require('../../../_common/utility').getPropertyValue;
 
 const updateBalance = (response) => {
     if (getPropertyValue(response, 'error')) {

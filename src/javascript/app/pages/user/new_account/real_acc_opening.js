@@ -1,8 +1,8 @@
 const BinaryPjax     = require('../../../base/binary_pjax');
 const Client         = require('../../../base/client');
+const BinarySocket   = require('../../../base/socket');
 const AccountOpening = require('../../../common/account_opening');
 const FormManager    = require('../../../common/form_manager');
-const BinarySocket   = require('../..//socket');
 const localize       = require('../../../../_common/localize').localize;
 
 const RealAccOpening = (() => {
