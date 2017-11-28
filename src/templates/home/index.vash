@@ -8,7 +8,7 @@
         })
     }
     function rawL(text) {
-       return html.raw(model.L(text));
+       return html.raw(html.L(text));
     }
 }
 
@@ -19,7 +19,7 @@
 
         @html.form_verify_email({
             _class      : 'secondary-bg-color',
-            text        : model.L('Create Free Account'),
+            text        : html.L('Create Free Account'),
             dark_button : true,
         })
     </div>
@@ -27,21 +27,21 @@
 
 <div class="container">
     <div class="gr-parent">
-        <h2 class="center-text gr-padding-10">@model.L("The easiest way to get started in the financial markets")</h2>
-        <p class="center-text">@model.L("Trade in the world's financial markets in a simple, user-friendly platform.")</p>
+        <h2 class="center-text gr-padding-10">@html.L("The easiest way to get started in the financial markets")</h2>
+        <p class="center-text">@html.L("Trade in the world's financial markets in a simple, user-friendly platform.")</p>
 
         <div class="gr-row gr-row-align-middle">
             <div class="gr-7 gr-12-m gr-parent">
-                <img class="responsive" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
+                <img class="responsive" src="@html.url_for('images/pages/tour/trade-tutorial_1.svg')" />
             </div>
 
             <div class="gr-5 gr-12-m gr-parent">
                 @html.list({
                     items: [
-                        { header:model.L("All markets:"),           text:model.L("currencies, stocks, indices, and commodities.") },
-                        { header:model.L("All market conditions:"), text:model.L("up/down, touch/no-touch, stays in/goes out.") },
-                        { header:model.L("All durations:"),         text:model.L("from 10 seconds to 365 days.") },
-                        { header:model.L("All payouts:"),           text:model.L("from $1 to $50,000.") },
+                        { header:html.L("All markets:"),           text:html.L("currencies, stocks, indices, and commodities.") },
+                        { header:html.L("All market conditions:"), text:html.L("up/down, touch/no-touch, stays in/goes out.") },
+                        { header:html.L("All durations:"),         text:html.L("from 10 seconds to 365 days.") },
+                        { header:html.L("All payouts:"),           text:html.L("from $1 to $50,000.") },
                     ],
                 })
             </div>
@@ -51,25 +51,28 @@
 
 <div class="gr-padding-10 fill-bg-color">
     <div class="container gr-padding-20">
-        <h2 class="center-text">[% l("Why choose us") %]</h2>
+        <h2 class="center-text">@html.L("Why choose us")</h2>
         <div class="center-text">
             <p>[% l("[_1] is the award-winning industry pioneer in online options trading.", website_name) %]</p>
 
             <div class="gr-3 gr-8-m gr-centered">
-                <img class="responsive" src="[% request.url_for('images/pages/home/awards-opwa.svg') %]"/>
+                <img class="responsive" src="@html.url_for('images/pages/home/awards-opwa.svg')"/>
             </div>
             <div class="gr-padding-10">
-                <img class="small-image" src="[% request.url_for('images/pages/home/awards-t2w.png') %]"/>
-                <img class="small-image" src="[% request.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg') %]"/>
-                <img class="small-image" src="[% request.url_for('images/pages/home/awards-egr.png') %]"/>
-                <img class="mena" src="[% request.url_for('images/pages/home/awards-mena.png') %]"/>
+                <img class="small-image" src="@html.url_for('images/pages/home/awards-t2w.png')"/>
+                <img class="small-image" src="@html.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg')"/>
+                <img class="small-image" src="@html.url_for('images/pages/home/awards-egr.png')"/>
+                <img class="mena" src="@html.url_for('images/pages/home/awards-mena.png')"/>
             </div>
 
-            [% INCLUDE list class='gr-row gr-row-align-center' items=[
-                { header=l("Sharp prices"),           class='xlist1' },
-                { header=l("Trade your way"),         class='xlist3' },
-                { header=l("Licensed and regulated"), class='xlist2' },
-            ] %]
+            @html.list({
+                items: [
+                    { header:html.L("Sharp prices"),           _class:'xlist1' },
+                    { header:html.L("Trade your way"),         _class:'xlist3' },
+                    { header:html.L("Licensed and regulated"), _class:'xlist2' },
+                ],
+                _class: 'gr-row gr-row-align-center',
+            })
         </div>
     </div>
 </div>
@@ -82,7 +85,7 @@
     </div>
 
     <div class="gr-row gr-row-align-center">
-        <div class="gr-3 gr-12-m gr-6-p"><img class="responsive" src="[% request.url_for('images/pages/home/academy-icon.svg') %]"/></div>
+        <div class="gr-3 gr-12-m gr-6-p"><img class="responsive" src="@html.url_for('images/pages/home/academy-icon.svg')"/></div>
         <div class="gr-4 gr-12-m gr-6-p">
             <ul class="checked">
                 <li>[% l("Free webinars") %]</li>
@@ -126,7 +129,7 @@
         <h2 class="center-text">[% l("Payment methods") %]</h2>
 
         <div class="gr-12">
-            <a href="[% request.url_for('/cashier/payment_methods') %]">
+            <a href="@html.url_for('/cashier/payment_methods')">
                 <div class="gr-row gr-row-align-center">
                     @payment_logo({
                         items: [

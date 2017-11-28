@@ -1,7 +1,8 @@
 /* eslint-disable */
-const vash = require('vash');
+const Vash = require('vash');
 const fs = require('fs');
-const path = require('path');
+const Path = require('path');
+const Url = require('url');
 
 const pages = require('./config/pages.json').map(p => ({
     save_as  : p[0],
@@ -12,12 +13,12 @@ const pages = require('./config/pages.json').map(p => ({
     only_ja  : p[4] && /^NOT-ja,en$/.test(p[4]),
 }));
 
-vash.helpers.attr = (key, value) => {
+Vash.helpers.attr = (key, value) => {
     if (!value) { return undefined; }
-    return vash.helpers.raw(`${key}="${value}"`);
+    return Vash.helpers.raw(`${key}="${value}"`);
 }
-vash.helpers.class = value =>  vash.helpers.attr('class', value);
-vash.helpers.id    = value =>  vash.helpers.attr('id', value);
+Vash.helpers.class = value =>  Vash.helpers.attr('class', value);
+Vash.helpers.id    = value =>  Vash.helpers.attr('id', value);
 
 function getConfig() {
     const config = {
@@ -25,7 +26,7 @@ function getConfig() {
         path      : '',
         is_dev    : true,
         languages : ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW'],
-        root_path : path.join(__dirname, '..'),
+        root_path : Path.join(__dirname, '..'),
     }
     for (let i = 2; i < process.argv.length; i++) {
         const arg = process.argv[i];
@@ -39,7 +40,7 @@ function getConfig() {
     if (config.branch === 'translations') {
         config.languages = ['ACH'];
     }
-    config.dist_path = path.join(config.root_path, 'dist');
+    config.dist_path = Path.join(config.root_path, 'dist');
     config.root_url  = `/${config.is_dev ? 'binary-static/' : ''}${config.branch ? `${config.branch}/` : ''}`;
     return config;
 }
@@ -49,14 +50,36 @@ function create_directories() {
     const mkdir = path => fs.existsSync(path) || fs.mkdirSync(path);
 
     console.log(`Target: ${config.dist_path}`.cyan);
-    mkdir(path.join(config.dist_path));
+    mkdir(Path.join(config.dist_path));
     config.languages.forEach(lang => {
-        mkdir(path.join(config.dist_path, lang));
-        mkdir(path.join(config.dist_path, `${lang}/pjax`));
+        mkdir(Path.join(config.dist_path, lang));
+        mkdir(Path.join(config.dist_path, `${lang}/pjax`));
     });
 }
 
 const createTranslator = lang => text => text; // TODO
+const createUrlFinder  = lang => {
+    lang = lang.toLowerCase();
+    const config = getConfig();
+    return (url) => {
+        if(url === '' || url === '/') {
+            url = '/home';
+        }
+
+        if(/^\/?(images|js|css|scripts|download)/.test(url)) {
+            return Path.join(config.root_url, url);
+        }
+
+        const p = Url.parse(url, true);
+        const pathname = p.pathname.replace(/^\//, '');
+        if(pages.filter(p => p.save_as === pathname).length) {
+            p.pathname = Path.join(config.root_url, `${lang}/${pathname}.html`)
+            return Url.format(p);
+        }
+
+        throw new TypeError(`Invalid url ${url}`);
+    }
+}
 
 function should_compile(excludes, lang) {
     console.warn(excludes, lang);
@@ -76,10 +99,12 @@ function compile(page) {
     const languages = config.languages.filter(lang => should_compile(page.excludes, lang));
 
     languages.forEach(lang => {
-        const L = createTranslator(lang);
+        Vash.helpers.L = createTranslator(lang);
+        Vash.helpers.url_for = createUrlFinder(lang);
+
         const model = {
             website_name : 'Binary.com',
-            browser_title: page.title ? `${L(page.title)} | ` : '',
+            browser_title: page.title ? `${Vash.helpers.L(page.title)} | ` : '',
             layout       : page.layout,
             language     : lang.toUpperCase(),
             root_url     : config.root_url,
@@ -89,16 +114,13 @@ function compile(page) {
             current_route: 'TODO', // TODO
             affiliate_email : 'affiliates@binary.com',
             japan_docs_url  : 'https://japan-docs.binary.com',
-            L: L
         }
 
-        vash.helpers.L = L;
-
-        const input_file = path.join(config.root_path, `src/templates/${page.tpl_path}.vash`);
-        const output_file = path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`);
+        const input_file = Path.join(config.root_path, `src/templates/${page.tpl_path}.vash`);
+        const output_file = Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`);
 
         const input_content = fs.readFileSync(input_file, 'utf8');
-        const template = vash.compile(input_content);
+        const template = Vash.compile(input_content);
         const output_content = template(model);
 
         fs.writeFileSync(output_file, output_content, 'utf8');
@@ -108,9 +130,7 @@ function compile(page) {
     });
 }
 
-console.warn(getConfig());
-console.warn(pages[0]);
 compile(pages[0]);
 // create_directories();
-// var tpl = vash.compile('<p>I am a @model.t!</p>');
+// var tpl = Vash.compile('<p>I am a @model.t!</p>');
 // var out = tpl({ t: 'template' });
