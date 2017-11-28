@@ -2,7 +2,7 @@ const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
-const Url                = require('./url');
+const urlFor             = require('./url').urlFor;
 const applyToAllElements = require('./utility').applyToAllElements;
 const getPropertyValue   = require('./utility').getPropertyValue;
 const isEmptyObject      = require('./utility').isEmptyObject;
@@ -417,7 +417,15 @@ const Client = (() => {
 
     };
 
-    const defaultRedirectUrl = () => Url.urlFor(jpClient() ? 'multi_barriers_trading' : get('is_ico_only') ? 'user/ico-subscribe' : 'trading');
+    const defaultRedirectUrl = () => {
+        let redirect_url = 'trading';
+        if (jpClient()) {
+            redirect_url = 'multi_barriers_trading';
+        } else if (get('is_ico_only')) {
+            redirect_url = 'user/ico-subscribe';
+        }
+        return urlFor(redirect_url);
+    };
 
     return {
         init,
