@@ -89,11 +89,12 @@ const TimePicker = (() => {
                 $this.val(new_time);
             }
             $this.attr('data-value', new_time || time);
-            $(this_selector).trigger('change', [new_time || time]);
 
             if ($this.hasClass('clearable')) {
                 clearable($this);
             }
+
+            $(this_selector).trigger('change', [new_time || time]);
 
             return true;
         };

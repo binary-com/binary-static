@@ -419,7 +419,8 @@ const Durations = (() => {
     };
 
     const selectEndDate = (end_date) => {
-        const expiry_time       = document.getElementById('expiry_time_row');
+        const expiry_time       = document.getElementById('expiry_time');
+        const expiry_time_row   = document.getElementById('expiry_time_row');
         const end_date_readable = toReadableFormat(end_date);
         const end_date_iso      = toISOFormat(end_date);
         const $expiry_date      = $('#expiry_date');
@@ -433,19 +434,19 @@ const Durations = (() => {
         if (end_date.utc().isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
             if (isNow()) {
                 Defaults.remove('expiry_time');
-                expiry_time.hide();
+                expiry_time_row.hide();
                 Barriers.display();
                 $(expiry_time).val('').attr('data-value', '');
                 Defaults.set('expiry_time', '');
                 processTradingTimesRequest(end_date_iso);
                 return 1;
             } else if (document.getElementById('time_start').getAttribute('data-value') === '00:00' && !isSameDay()) {
-                showExpiryTime(expiry_time, '00:00');
+                showExpiryTime(expiry_time, expiry_time_row, '00:00');
                 return 1;
             } // else
-            return showExpiryTime(expiry_time);
+            return showExpiryTime(expiry_time, expiry_time_row);
         } // else
-        return showExpiryTime(expiry_time);
+        return showExpiryTime(expiry_time, expiry_time_row);
     };
 
     const hideExpiryTime = (expiry_time) => {
@@ -456,12 +457,18 @@ const Durations = (() => {
         return requested;
     };
 
-    const showExpiryTime = (expiry_time, set_time) => {
+    const showExpiryTime = (el_expiry_time, el_expiry_time_row, set_time) => {
+        const el_time_start = document.getElementById('time_start');
+        if (!el_expiry_time || !el_expiry_time_row || !el_time_start) {
+            return false;
+        }
+
         const is_same_day    = isSameDay();
-        let expiry_time_val  = set_time || expiry_time.value;
-        const time_start_val = document.getElementById('time_start').getAttribute('data-value');
+        let expiry_time_val  = set_time || el_expiry_time.value;
+        const time_start_val = el_time_start.value;
         let new_time,
-            time_changed;
+            time_changed,
+            keep_time_unchanged;
         if (!expiry_time_val) {
             new_time        = moment(window.time);
             expiry_time_val = new_time.format('HH:mm');
@@ -469,7 +476,12 @@ const Durations = (() => {
         if (!set_time) {
             if (!is_same_day && expiry_time_val >= time_start_val) {
                 const time_start = time_start_val.split(':');
-                new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]).add(-10, 'minutes');
+                new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]);
+                if (+time_start[0] === 0 && +time_start[1] === 0) {
+                    keep_time_unchanged = true;
+                } else {
+                    new_time = new_time.add(-10, 'minutes');
+                }
             } else if (is_same_day && expiry_time_val <= time_start_val) {
                 const time_start = time_start_val.split(':');
                 new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]);
@@ -480,17 +492,20 @@ const Durations = (() => {
             }
         }
         if (new_time) {
-            new_time = new_time.add(5, 'minutes').utc().format('HH:mm');
+            if (!keep_time_unchanged) {
+                new_time = new_time.add(5, 'minutes');
+            }
+            new_time = new_time.utc().format('HH:mm');
         } else {
-            time_changed = setTime(set_time || Defaults.get('expiry_time') || expiry_time.value);
+            time_changed = setTime(set_time || Defaults.get('expiry_time') || el_expiry_time.value);
         }
         if (new_time || set_time) {
-            expiry_time.value = new_time || set_time;
-            expiry_time.setAttribute('data-value', new_time || set_time);
-            time_changed = setTime(expiry_time.value, 1);
+            el_expiry_time.value = new_time || set_time;
+            el_expiry_time.setAttribute('data-value', new_time || set_time);
+            time_changed = setTime(el_expiry_time.value, 1);
         }
-        Defaults.set('expiry_time', set_time || Defaults.get('expiry_time') || expiry_time.value);
-        expiry_time.show();
+        Defaults.set('expiry_time', set_time || Defaults.get('expiry_time') || el_expiry_time.value);
+        el_expiry_time_row.show();
         Barriers.display();
         return time_changed;
     };
