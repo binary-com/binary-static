@@ -417,7 +417,7 @@ const Durations = (() => {
             date_start     = date_start.options[1];
             date_start_val = date_start.value;
         }
-        date_start_val        = moment(+date_start_val * 1000);
+        date_start_val        = moment(+date_start_val * 1000).utc();
         const expiry_date_day = moment(document.getElementById('expiry_date').getAttribute('data-value')).format('ddd');
         return expiry_date_day === date_start_val.format('ddd');
     };
@@ -580,7 +580,7 @@ const Durations = (() => {
             }
             requested = selectEndDate(expiry_date || end_time);
         } else if (value === 'now' && isSameDay() && Defaults.get('expiry_type') === 'endtime') {
-            let expiry_time = Defaults.get('expiry_time') || moment().utc().add(5, 'minutes');
+            let expiry_time = Defaults.get('expiry_time') || moment().utc().add(5, 'minutes').format('HH:mm');
             const times = expiry_time.split(':');
             if (times.length > 1) {
                 let moment_expiry_time = moment.utc();
@@ -589,8 +589,9 @@ const Durations = (() => {
                 if (moment_expiry_time.isBefore(now)) {
                     expiry_time = now.add(5, 'minutes');
                 }
+                expiry_time = expiry_time.format('HH:mm');
             }
-            requested = setTime(expiry_time.format('HH:mm'));
+            requested = setTime(expiry_time);
         } else {
             requested = hideExpiryTime(document.getElementById('expiry_time_row'));
         }
