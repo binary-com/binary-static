@@ -440,9 +440,6 @@ const Durations = (() => {
                 Defaults.set('expiry_time', '');
                 processTradingTimesRequest(end_date_iso);
                 return 1;
-            } else if (document.getElementById('time_start').getAttribute('data-value') === '00:00' && !isSameDay()) {
-                showExpiryTime(expiry_time, expiry_time_row, '00:00');
-                return 1;
             } // else
             return showExpiryTime(expiry_time, expiry_time_row);
         } // else
@@ -457,14 +454,14 @@ const Durations = (() => {
         return requested;
     };
 
-    const showExpiryTime = (el_expiry_time, el_expiry_time_row, set_time) => {
+    const showExpiryTime = (el_expiry_time, el_expiry_time_row) => {
         const el_time_start = document.getElementById('time_start');
         if (!el_expiry_time || !el_expiry_time_row || !el_time_start) {
             return false;
         }
 
         const is_same_day    = isSameDay();
-        let expiry_time_val  = set_time || el_expiry_time.value;
+        let expiry_time_val  = el_expiry_time.value;
         const time_start_val = el_time_start.value;
         let new_time,
             time_changed,
@@ -473,38 +470,34 @@ const Durations = (() => {
             new_time        = moment(window.time);
             expiry_time_val = new_time.format('HH:mm');
         }
-        if (!set_time) {
-            if (!is_same_day && expiry_time_val >= time_start_val) {
-                const time_start = time_start_val.split(':');
-                new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]);
-                if (+time_start[0] === 0 && +time_start[1] === 0) {
-                    keep_time_unchanged = true;
-                } else {
-                    new_time = new_time.add(-10, 'minutes');
-                }
-            } else if (is_same_day && expiry_time_val <= time_start_val) {
-                const time_start = time_start_val.split(':');
-                new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]);
+        if (!is_same_day && expiry_time_val >= time_start_val) {
+            const time_start = time_start_val.split(':');
+            new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]);
+            if (+time_start[0] === 0 && +time_start[1] === 0) {
+                keep_time_unchanged = true;
+            } else {
+                new_time = new_time.add(-10, 'minutes');
             }
-            if (is_same_day && expiry_time_val < time_start_val) {
-                const time = time_start_val.split(':');
-                new_time   = moment(window.time).hour(time[0]).minute(time[1]);
-            }
+        } else if (is_same_day && expiry_time_val <= time_start_val) {
+            const time_start = time_start_val.split(':');
+            new_time         = moment(window.time).hour(time_start[0]).minute(time_start[1]);
+        }
+        if (is_same_day && expiry_time_val < time_start_val) {
+            const time = time_start_val.split(':');
+            new_time   = moment(window.time).hour(time[0]).minute(time[1]);
         }
         if (new_time) {
             if (!keep_time_unchanged) {
                 new_time = new_time.add(5, 'minutes');
             }
             new_time = new_time.utc().format('HH:mm');
-        } else {
-            time_changed = setTime(set_time || Defaults.get('expiry_time') || el_expiry_time.value);
-        }
-        if (new_time || set_time) {
-            el_expiry_time.value = new_time || set_time;
-            el_expiry_time.setAttribute('data-value', new_time || set_time);
+            el_expiry_time.value = new_time;
+            el_expiry_time.setAttribute('data-value', new_time);
             time_changed = setTime(el_expiry_time.value, 1);
+        } else {
+            time_changed = setTime(Defaults.get('expiry_time') || el_expiry_time.value);
         }
-        Defaults.set('expiry_time', set_time || Defaults.get('expiry_time') || el_expiry_time.value);
+        Defaults.set('expiry_time', Defaults.get('expiry_time') || el_expiry_time.value);
         el_expiry_time_row.show();
         Barriers.display();
         return time_changed;
