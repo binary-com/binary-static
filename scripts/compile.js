@@ -3,6 +3,8 @@ const Vash = require('vash');
 const fs = require('fs');
 const Path = require('path');
 const Url = require('url');
+const Gettext = require('./gettext');
+const colors = require('colors');
 
 const pages = require('./config/pages.json').map(p => ({
     save_as  : p[0],
@@ -13,12 +15,12 @@ const pages = require('./config/pages.json').map(p => ({
     only_ja  : p[4] && /^NOT-ja,en$/.test(p[4]),
 }));
 
-Vash.helpers.attr = (key, value) => {
-    if (!value) { return undefined; }
-    return Vash.helpers.raw(`${key}="${value}"`);
+Vash.helpers.when = (condition, value) => {
+    if(!condition) { return undefined; }
+    return Vash.helpers.raw(value);
 }
-Vash.helpers.class = value =>  Vash.helpers.attr('class', value);
-Vash.helpers.id    = value =>  Vash.helpers.attr('id', value);
+Vash.helpers.class = value =>  Vash.helpers.when(value, `class="${value}"`);
+Vash.helpers.id    = value =>  Vash.helpers.when(value, `id="${value}"`);
 
 function getConfig() {
     const config = {
@@ -49,7 +51,7 @@ function create_directories() {
     const config = getConfig();
     const mkdir = path => fs.existsSync(path) || fs.mkdirSync(path);
 
-    console.log(`Target: ${config.dist_path}`.cyan);
+    console.log(`Target: ${config.dist_path}`.yellow);
     mkdir(Path.join(config.dist_path));
     config.languages.forEach(lang => {
         mkdir(Path.join(config.dist_path, lang));
@@ -57,7 +59,12 @@ function create_directories() {
     });
 }
 
-const createTranslator = lang => text => text; // TODO
+const gettext = Gettext.createGettextInstance({record: true});
+const createTranslator = lang => {
+    lang = lang.toLowerCase(lang);
+    gettext.setLang(lang);
+    return (text, ...args) => gettext.gettext(text, ...args);
+}
 const createUrlFinder  = lang => {
     lang = lang.toLowerCase();
     const config = getConfig();
@@ -82,7 +89,6 @@ const createUrlFinder  = lang => {
 }
 
 function should_compile(excludes, lang) {
-    console.warn(excludes, lang);
     if (excludes && !/^ACH$/i.test(lang)) {
 
         excludes = excludes.toUpperCase();
@@ -94,12 +100,19 @@ function should_compile(excludes, lang) {
     }
     return true;
 }
+
+const print = (text) => {
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    process.stdout.write(text);
+};
 function compile(page) {
     const config = getConfig();
     const languages = config.languages.filter(lang => should_compile(page.excludes, lang));
 
     languages.forEach(lang => {
         Vash.helpers.L = createTranslator(lang);
+        Vash.helpers.rawL = (text, ...args) => Vash.helpers.raw(Vash.helpers.L(text, ...args));
         Vash.helpers.url_for = createUrlFinder(lang);
 
         const model = {
@@ -125,12 +138,12 @@ function compile(page) {
 
         fs.writeFileSync(output_file, output_content, 'utf8');
 
-        console.warn(input_file);
-        console.warn(output_file);
+        print(`Compiling ${output_file.replace(config.root_path, '')}`.green);
     });
+    process.stdout.write('\n');
 }
 
+create_directories();
 compile(pages[0]);
-// create_directories();
 // var tpl = Vash.compile('<p>I am a @model.t!</p>');
 // var out = tpl({ t: 'template' });

@@ -33,4 +33,39 @@
             })
         </ul>
     }
+
+    html.fill_box = ({ padding, center, _class, align_left, color, border, image, href, target, download, em, text, content }) => {
+        let classes1 = '';
+        classes1 += padding ? 'gr-12-m gr-6-p gr-padding-10 ' : '';
+        classes1 += padding && center ? `gr-${padding || 9} gr-centered` : '';
+        classes1 += padding && !center ? `gr-${padding || 6}` : '';
+
+        let classes2 = '';
+        classes2 += align_left ? '' : 'center-text ';
+        classes2 += 'gr-gutter gr-padding-20 ';
+        classes2 += color === 'dark' ? 'primary-bg-color ' : 'fill-bg-color ';
+        classes2 += `${border || ''}`;
+
+        <div class="@classes1 @_class">
+            <div class="@classes2">
+                <div class="inline-flex center-align gr-gutter">
+                    @if(image) {
+                        <img class="half-sized-picture gr-gutter-right" src="@html.url_for(image)"/>
+                    }
+                    @if(href) {
+                        <a href="@href" @html.when(target, `target="${target}"`) @html.when(download, 'download') @html.when(color === 'dark', `class="content-inverse-color"`) @html.when(/^http/.test(href), `rel="noopener noreferrer"`) >
+                            @if(em) { <em> @text </em> }
+                            else { @text }
+                        </a>
+                    } else {
+                        <p class="gr-gutter">
+                            @if(em) { <em> @text </em> }
+                            else { @text }
+                        </p>
+                    }
+                </div>
+            </div>
+            @content()
+        </div>
+    }
 }

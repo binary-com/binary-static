@@ -1,5 +1,6 @@
 @html.include('./src/templates/components/elements.vash')
 @html.include('./src/templates/global/form_verify_email.vash')
+@html.include('./src/templates/global/separator_line.vash')
 @{
     function payment_logo({ items }) {
         items.forEach(item => {
@@ -7,15 +8,12 @@
             </div>
         })
     }
-    function rawL(text) {
-       return html.raw(html.L(text));
-    }
 }
 
 <div id="banner">
     <div class="container gr-padding-30">
-        <h1 class="dark center-text gr-padding-10">@rawL("The <strong>Premier Platform</strong> for Binary Options Trading")</h1>
-        <p class="center-text gr-padding-10">@rawL("Trade <strong>24/7</strong>, even on weekends.")</p>
+        <h1 class="dark center-text gr-padding-10">@html.rawL("The <strong>Premier Platform</strong> for Binary Options Trading")</h1>
+        <p class="center-text gr-padding-10">@html.rawL("Trade <strong>24/7</strong>, even on weekends.")</p>
 
         @html.form_verify_email({
             _class      : 'secondary-bg-color',
@@ -38,10 +36,10 @@
             <div class="gr-5 gr-12-m gr-parent">
                 @html.list({
                     items: [
-                        { header:html.L("All markets:"),           text:html.L("currencies, stocks, indices, and commodities.") },
-                        { header:html.L("All market conditions:"), text:html.L("up/down, touch/no-touch, stays in/goes out.") },
-                        { header:html.L("All durations:"),         text:html.L("from 10 seconds to 365 days.") },
-                        { header:html.L("All payouts:"),           text:html.L("from $1 to $50,000.") },
+                        { header: html.L("All markets:"),           text: html.L("currencies, stocks, indices, and commodities.") },
+                        { header: html.L("All market conditions:"), text: html.L("up/down, touch/no-touch, stays in/goes out.") },
+                        { header: html.L("All durations:"),         text: html.L("from 10 seconds to 365 days.") },
+                        { header: html.L("All payouts:"),           text: html.L("from $1 to $50,000.") },
                     ],
                 })
             </div>
@@ -53,7 +51,7 @@
     <div class="container gr-padding-20">
         <h2 class="center-text">@html.L("Why choose us")</h2>
         <div class="center-text">
-            <p>[% l("[_1] is the award-winning industry pioneer in online options trading.", website_name) %]</p>
+            <p>@html.L("[_1] is the award-winning industry pioneer in online options trading.", model.website_name)</p>
 
             <div class="gr-3 gr-8-m gr-centered">
                 <img class="responsive" src="@html.url_for('images/pages/home/awards-opwa.svg')"/>
@@ -78,20 +76,20 @@
 </div>
 
 <div class="container gr-padding-30">
-    <h2 class="center-text">[% l("[_1] academy", website_name) %]</h2>
+    <h2 class="center-text">@html.L("[_1] academy", model.website_name)</h2>
 
     <div class="gr-12 gr-6-p center-text gr-centered">
-        <p>[% l("Improve your trading skills with our free educational & training resources.") %]</p>
+        <p>@html.L("Improve your trading skills with our free educational & training resources.")</p>
     </div>
 
     <div class="gr-row gr-row-align-center">
         <div class="gr-3 gr-12-m gr-6-p"><img class="responsive" src="@html.url_for('images/pages/home/academy-icon.svg')"/></div>
         <div class="gr-4 gr-12-m gr-6-p">
             <ul class="checked">
-                <li>[% l("Free webinars") %]</li>
-                <li>[% l("Free daily market report") %]</li>
-                <li>[% l("Free E-books") %]</li>
-                <li>[% l("Free trading charts") %]</li>
+                <li>@html.L("Free webinars")</li>
+                <li>@html.L("Free daily market report")</li>
+                <li>@html.L("Free E-books")</li>
+                <li>@html.L("Free trading charts")</li>
             </ul>
         </div>
     </div>
@@ -99,34 +97,50 @@
     <div class="gr-12 gr-6-p gr-centered">
         <div class="gr-row gr-row-align-center gr-padding-10">
             <a class="button" href="https://academy.binary.com" target="_blank">
-                <span>[% l("Start learning") %]</span>
+                <span>@html.L("Start learning")</span>
             </a>
         </div>
     </div>
 
-    [% INCLUDE global/separator_line.html.tt no_wrapper=1 %]
+    @html.separator_line({
+        no_wrapper: true
+    })
 </div>
 
 <div class="container gr-padding-30 gr-parent">
-    <h2 class="center-text">[% l("What our clients are saying") %]</h2>
+    <h2 class="center-text">@html.L("What our clients are saying")</h2>
 
     <div class="gr-row">
-        [% WRAPPER fill_box padding='6' em=1 align_left=1 text=l("\"We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.\"") %]
-            <div class="xbubble-left"></div>
-            <div class="xquoter-left"><p>[% l("Joshua Cavallaro <span> Markets And You Trader</span>") %]</p></div>
-        [% END %]
-        [% WRAPPER fill_box padding='6' em=1 align_left=1 text=l("\"[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years.\"", website_name) %]
-            <div class="xbubble-right"></div>
-            <div class="xquoter-right"><p>[% l("Andrei Asavei <span>Top Binary Options Brokers</span>") %]</p></div>
-        [% END %]
+        @html.fill_box({
+            padding: '6',
+            align_left: true,
+            em: true,
+            text: html.rawL(`"We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide."`),
+            content: function() {
+                <div class="xbubble-left"></div>
+                <div class="xquoter-left"><p>@html.rawL("Joshua Cavallaro <span> Markets And You Trader</span>")</p></div>
+            }
+        })
+        @html.fill_box({
+            padding: '6',
+            em: true,
+            align_left: true,
+            text: html.rawL(`"[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years."`, model.website_name),
+            content: function() {
+                <div class="xbubble-right"></div>
+                <div class="xquoter-right"><p>@html.rawL("Andrei Asavei <span>Top Binary Options Brokers</span>")</p></div>
+            }
+        })
     </div>
 
-    [% INCLUDE global/separator_line.html.tt no_wrapper=1 %]
+    @html.separator_line({
+        no_wrapper: true
+    })
 </div>
 
 <div class="container" id="payment_methods">
     <div class="gr-12 gr-padding-30 gr-parent">
-        <h2 class="center-text">[% l("Payment methods") %]</h2>
+        <h2 class="center-text">@html.L("Payment methods")</h2>
 
         <div class="gr-12">
             <a href="@html.url_for('/cashier/payment_methods')">
@@ -147,7 +161,7 @@
                     })
                 </div>
             </a>
-            <p class="center-text">[% l("Hundreds of deposit and withdrawal options.") %]</p>
+            <p class="center-text">@html.L("Hundreds of deposit and withdrawal options.")</p>
         </div>
     </div>
 </div>
