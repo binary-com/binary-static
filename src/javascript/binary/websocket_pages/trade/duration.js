@@ -554,7 +554,7 @@ const Durations = (() => {
 
         let make_price_request = 1;
         const displayed = displayDurations(time_start.value);
-        if (displayed) {
+        if (+displayed > 0) {
             make_price_request = -1;
         } else if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
             const end_time     = moment(parseInt(value) * 1000).add(5, 'minutes').utc();
