@@ -415,10 +415,10 @@ const Durations = (() => {
         if (isNaN(+date_start_val)) {
             date_start_val = window.time;
         } else {
-            date_start_val = moment(+date_start_val * 1000);
+            date_start_val = moment.utc(+date_start_val * 1000);
         }
-        const expiry_date_day = moment(document.getElementById('expiry_date').getAttribute('data-value'));
-        return expiry_date_day.format('DDD') === date_start_val.format('DDD');
+        const expiry_date_day = moment.utc(document.getElementById('expiry_date').getAttribute('data-value'));
+        return date_start_val.isSame(expiry_date_day, 'day');
     };
 
     const selectEndDate = (end_date) => {

@@ -102,6 +102,7 @@ const StartDates = (() => {
         } else {
             State.remove('is_start_dates_displayed');
             document.getElementById('date_start_row').style.display = 'none';
+            document.getElementById('date_start').value = 'now';
             Defaults.remove('date_start');
         }
     };

@@ -43,7 +43,7 @@ const TradingEvents = (() => {
                 maxTime = minMaxTime.maxTime;
 
                 // if date_start is not 'now'
-                if (checkEndTime && !Durations.isNow(date_start_val) && $('#date_start_row').is(':visible')) {
+                if (checkEndTime && !Durations.isNow(date_start_val)) {
                     const $expiry_date   = $('#expiry_date');
                     const endTime        = moment($expiry_date.attr('data-value'));
                     const start_time_val = $time_start.val().split(':');

@@ -628,10 +628,6 @@ const commonTrading = (() => {
             return false;
         }
 
-        if ($(date_start).is(':hidden')) {
-            start_date_value = 'now';
-        }
-
         $element.removeClass('error-field');
         $invalid_time.remove();
 
