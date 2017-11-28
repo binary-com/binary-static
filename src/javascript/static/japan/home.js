@@ -1,4 +1,4 @@
-const Home = require('./home');
+const Home = require('../pages/home');
 
 const HomeJP = (() => {
     const visible_product = 'product_visible';
