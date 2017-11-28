@@ -96,23 +96,22 @@ window.onload = function() {
 
     document.getElementsByClassName('howto-btn')[0].addEventListener('click', function(e) {
         e.preventDefault();
-        const open_link    = window.open();
-        open_link.opener   = null;
-        open_link.location = getDocumentUrl(language.toLowerCase());
+        openLink(getDocumentUrl(language.toLowerCase()));
     });
 
     document.getElementById('token-btn').addEventListener('click', function(e) {
         e.preventDefault();
-        const open_link    = window.open();
-        open_link.opener   = null;
-        open_link.location = getTokenRatingReportUrl(language.toLowerCase());
+        openLink(getTokenRatingReportUrl(language.toLowerCase()));
     });
 
     document.getElementById('lykke-btn').addEventListener('click', function(e) {
         e.preventDefault();
-        const open_link    = window.open();
-        open_link.opener   = null;
-        open_link.location = getLykkeReport(language.toLowerCase());
+        openLink(getLykkeReport(language.toLowerCase()));
+    });
+
+    document.getElementById('nishant-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        openLink(getNishantReport(language.toLowerCase()));
     });
 
     window.onresize = checkWidth;
@@ -523,7 +522,7 @@ function checkUserSession() {
     }
 }
 
-function openSubscribeLink(link) {
+function openLink(link) {
     var open_link = window.open();
     open_link.opener = null;
     open_link.location = link;
@@ -539,4 +538,8 @@ function getTokenRatingReportUrl(lang = 'en') {
 
 function getLykkeReport(lang = 'en') {
     return `https://ico_documents.binary.com/research/lykke/lykke_research_report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+}
+
+function getNishantReport(lang = 'en') {
+    return `https://ico_documents.binary.com/research/nishantsah/report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }

@@ -41,7 +41,9 @@ const StartDates = (() => {
                 $duplicated_option,
                 duplicated_length;
 
-            row.style.display = 'flex';
+            if (row) {
+                row.style.display = 'flex';
+            }
 
             while (target && target.firstChild) {
                 target.removeChild(target.firstChild);

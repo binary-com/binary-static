@@ -4,10 +4,9 @@ const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
 const localize          = require('../../base/localize').localize;
 const Url               = require('../../base/url');
-const createElement     = require('../../base/utility').createElement;
 const template          = require('../../base/utility').template;
+const showPopup         = require('../../common_functions/attach_dom/popup');
 const FormManager       = require('../../common_functions/form_manager');
-const Validation        = require('../../common_functions/form_validation');
 const isCryptocurrency  = require('../../common_functions/currency').isCryptocurrency;
 const validEmailToken   = require('../../common_functions/form_validation').validEmailToken;
 
@@ -79,44 +78,33 @@ const DepositWithdraw = (() => {
         return req;
     };
 
-    const showConfirmationPopup = () => {
-        const confirm_form_id = '#frm_confirm';
-        const xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState !== 4 || this.status !== 200) {
-                return;
-            }
-
-            const div      = createElement('div', { html: this.responseText });
-            const lightbox = createElement('div', { id: 'confirmation', class: 'lightbox' });
-            lightbox.append(div.querySelector('#confirm_content'));
-            document.body.appendChild(lightbox);
-
-            Validation.init(confirm_form_id, [
-                { selector: '#chk_confirm', validations: [['req', { hide_asterisk: true }]] },
-            ]);
-            document.getElementById('cancel').addEventListener('click', () => {
-                document.getElementById('confirmation').remove();
-                BinaryPjax.load(Client.defaultRedirectUrl());
-            });
-            document.getElementById(confirm_form_id.slice(1)).addEventListener('submit', (e) => {
-                e.preventDefault();
-                if (Validation.validate(confirm_form_id)) {
-                    document.getElementById('confirmation').remove();
-                    Client.set('cashier_confirmed', 1);
-                    getCashierURL(1);
-                }
-            });
-        };
-        xhttp.open('GET', Url.urlFor('cashier/confirmation'), true);
-        xhttp.send();
-    };
-
     const getCashierURL = (bch_has_confirmed) => {
         if (!/^BCH/.test(Client.get('currency')) || bch_has_confirmed || Client.get('cashier_confirmed')) {
             BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
         } else {
-            showConfirmationPopup();
+            showPopup({
+                url               : Url.urlFor('cashier/confirmation'),
+                popup_id          : 'confirm_popup',
+                form_id           : '#frm_confirm',
+                content_id        : '#confirm_content',
+                validations       : [{ selector: '#chk_confirm', validations: [['req', { hide_asterisk: true }]] }],
+                additionalFunction: () => {
+                    const el_cancel = document.getElementById('cancel');
+                    const el_popup  = document.getElementById('confirm_popup');
+                    if (el_cancel) {
+                        el_cancel.addEventListener('click', () => {
+                            if (el_popup) {
+                                el_popup.remove();
+                            }
+                            BinaryPjax.load(Client.defaultRedirectUrl());
+                        });
+                    }
+                },
+                onAccept: () => {
+                    Client.set('cashier_confirmed', 1);
+                    getCashierURL(1);
+                },
+            });
         }
     };
 

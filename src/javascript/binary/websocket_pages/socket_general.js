@@ -5,7 +5,9 @@ const Clock                = require('../base/clock');
 const GTM                  = require('../base/gtm');
 const Header               = require('../base/header');
 const Login                = require('../base/login');
+const urlFor               = require('../base/url').urlFor;
 const getPropertyValue     = require('../base/utility').getPropertyValue;
+const showPopup            = require('../common_functions/attach_dom/popup');
 const setCurrencies        = require('../common_functions/currency').setCurrencies;
 const SessionDurationLimit = require('../common_functions/session_duration_limit');
 
@@ -47,20 +49,28 @@ const BinarySocketGeneral = (() => {
                     Client.sendLogoutRequest(is_active_tab);
                 } else if (response.authorize.loginid !== Client.get('loginid')) {
                     Client.sendLogoutRequest(true);
-                } else {
-                    if (!Login.isLoginPages()) {
-                        Client.responseAuthorize(response);
-                        BinarySocket.send({ balance: 1, subscribe: 1 });
-                        BinarySocket.send({ get_settings: 1 });
-                        BinarySocket.send({ get_account_status: 1 });
-                        BinarySocket.send({ payout_currencies: 1 });
-                        BinarySocket.send({ mt5_login_list: 1 });
-                        setResidence(response.authorize.country || Client.get('residence'));
-                        if (!Client.get('is_virtual')) {
-                            BinarySocket.send({ get_self_exclusion: 1 });
-                        }
+                } else if (!Login.isLoginPages()) {
+                    Client.responseAuthorize(response);
+                    BinarySocket.send({ balance: 1, subscribe: 1 });
+                    BinarySocket.send({ get_settings: 1 });
+                    BinarySocket.send({ get_account_status: 1 });
+                    BinarySocket.send({ payout_currencies: 1 });
+                    BinarySocket.send({ mt5_login_list: 1 });
+                    setResidence(response.authorize.country || Client.get('residence'));
+                    if (!Client.get('is_virtual')) {
+                        BinarySocket.send({ get_self_exclusion: 1 });
                     }
                     BinarySocket.sendBuffered();
+                    if (/bch/i.test(response.authorize.currency) && !Client.get('accepted_bch')) {
+                        showPopup({
+                            url        : urlFor('user/warning'),
+                            popup_id   : 'warning_popup',
+                            form_id    : '#frm_warning',
+                            content_id : '#warning_content',
+                            validations: [{ selector: '#chk_accept', validations: [['req', { hide_asterisk: true }]] }],
+                            onAccept   : () => { Client.set('accepted_bch', 1); },
+                        });
+                    }
                 }
                 break;
             case 'balance':
