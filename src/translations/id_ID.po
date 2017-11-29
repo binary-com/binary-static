@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-23 20:19-0500\n"
+"PO-Revision-Date: 2017-11-29 01:52-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -6759,11 +6759,17 @@ msgstr "Mohon diketahui bahwa website kami akan mencatat alamat IP yang digunaka
 msgid "Please note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices, however these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push up or down prices). To avoid settling prices based on such artificial prices, it is %1's policy not to count weekend prices towards contract settlement values (except for the volatility indices, which are open during weekends)."
 msgstr "Mohon diketahui bahwa kutipan akhir pekan adalah tidak dipertimbangkan dalam menyelesaikan kontrak. Pada akhir pekan, pasar forex mungkin dapat menghasilkan kutipan, namun demikian harga ini merupakan harga tiruan (para trader terkadang mempergunakan kesempatan pada pasar likuiditas di akhir pekan untuk mendorong harga naik atau turun). Untuk menghindari penyelesaian kontrak berdasarkan harga tiruan tersebut, maka merupakan kebijaksanaan %1 untuk tidak mempergunakan harga akhir pekan bagi penyelesaian kontrak (kecuali indeks volatilitas, yang dibuka pada akhir pekan)."
 
+msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
+msgstr "Mohon diketahui bahwa saat ini Anda sedang menggunakan akun %1Bitcoin Cash%2. Anda hanya dapat mendanai akun Anda dalam %1Bitcoin Cash%2, dan bukan Bitcoin."
+
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "Anda dapat melakukan perbaikan data dengan mengakses bagian \"Pengaturan\" pada akun Anda. Merupakan tanggung jawab Anda untuk memastikan %1 mengetahui tentang perubahan yang Anda lakukan pada data pribadi Anda."
 
 msgid "Please provide us with the following information:"
 msgstr "Mohon berikan kepada kami informasi berikut ini:"
+
+msgid "Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission."
+msgstr "Mohon informasikan NPWP Anda untuk tujuan pengenalan wajib pajak. Nomor ini perlu diberikan terlepas dari pembebasan pajak apa pun atau pembebasan pajak yang mungkin Anda nikmati dengan alasan apapun. Jika Anda memiliki npwn pada lebih dari satu juridiksi silahkan informasikan NPWP bagi setiap juridiksi yang bersangkutan. Jika Anda tidak dapat menginformasikan NPWP Anda (Berhubung negara Anda tidak mengeluarkan NPWP), silahkan hubungi customer support untuk menjelaskan alasan yang tepat."
 
 msgid "Please read this notice carefully - it applies to all persons who view this webpage. Please note that the disclaimer set out below may be altered or updated, at any time in whole or in part at the sole discretion of Binary Group Ltd. (“Company”). You should read it in full each time you visit the site."
 msgstr "Mohon baca pemberitahuan ini dengan saksama - hal ini berlaku untuk semua orang yang mengunjungi halaman situs ini. Mohon diperhatikan bahwa penafian yang disebutkan di bawah ini dapat diubah atau diperbarui setiap saat secara keseluruhan atau sebagian atas pertimbangan tunggal Binary Group Ltd. (“Perusahaan”). Anda harus membaca seluruhnya setiap kali Anda mengunjungi situs ini."
@@ -6833,6 +6839,9 @@ msgstr "Silahkan informasikan alasan pendaftaran akun Anda sebelum melanjutkan."
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Silahkan tentukan interval cek-realitas pilihan Anda dalam menit"
+
+msgid "Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional."
+msgstr "Mohon informasikan negara (berbagai negara) dimana Anda memiliki nomor pokok wajib pajak. Mohon diketahui bahwa Anda dapat dianggap sebagai pembayar pajak di lebih dari satu juridiksi. Jika demikian silahkan pilih semua negara tempat Anda membayar pajak. Jika Anda ragu mengenai hal ini Anda disarankan untuk berkonsultasi dengan profesional pajak atau hukum."
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "Silahkan kirim informasi diatas ke <a href='mailto:%1'>%1</a>."
@@ -9016,9 +9025,6 @@ msgstr "Fitur ini hanya relevan untuk akun agen pembayaran."
 msgid "This field is required."
 msgstr "Bagian ini diperlukan."
 
-msgid "This is a %1Bitcoin Cash%2 (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin."
-msgstr "Ini adalah akun %1Bitcoin Cash%2 (BCH). Mohon diketahui bahwa Bitcoin Cash tidak sama dengan Bitcoin."
-
 msgid "This is a staging server - For testing purposes only"
 msgstr "Ini adalah staging server - Untuk tujuan pengujian saja"
 
@@ -10563,6 +10569,9 @@ msgstr "Anda tidak berhak atas kompensasi atau penggantian dalam bentuk apapun d
 
 msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Anda bukan penduduk dari negara terbatas seperti Afghanistan; Bosnia dan Herzegovina; Costa Rica; Negara Uni Eropa; Lao PDR; Suriah; Uganda; Vanuatu; Yaman; Amerika Serikat; Jepang, Hong Kong, Malaysia, Malta; Iran; Korea Utara; Jersey; Irak; Israel; atau negara terbatas lainnya dimana Perusahaan dapat memutuskan dari waktu ke waktu atas kebijakannya sendiri;"
+
+msgid "You are now using your %1Bitcoin Cash%2 account. Please fund your account in %1Bitcoin Cash%2, and not Bitcoin."
+msgstr "Saat ini Anda sedang menggunakan akun %1Bitcoin Cash%2. Silahkan danai akun Anda dalam %1Bitcoin Cash%2, dan bukan Bitcoin."
 
 msgid "You are over 18 years of age;"
 msgstr "Anda berumur lebih dari 18 tahun;"
@@ -12998,69 +13007,6 @@ msgstr "{JAPANY ONLY}Touch Options"
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
 
-msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
-msgstr "Platform Trading Online untuk opsi binary pada Forex, Indeks, Komoditas dan Indeks Smart"
-
-msgid "404"
-msgstr "404"
-
-msgid "Why Us"
-msgstr "Mengapa Kami"
-
-msgid "Regulation"
-msgstr "Regulasi"
-
-msgid "Endpoint"
-msgstr "PoinAkhir"
-
-msgid "Careers For Americans"
-msgstr "Karir Untuk Amerika"
-
-msgid "Charity"
-msgstr "Amal"
-
-msgid "Company Profile"
-msgstr "Profil Perusahaan"
-
-msgid "Job Details"
-msgstr "Rincian Pekerjaan"
-
-msgid "Service Announcements"
-msgstr "Pengumuman Layanan"
-
-msgid "Multi-asset Liquidity Solutions"
-msgstr "Solusi Likuiditas Berbagai Aset"
-
-msgid "Open-Source Projects"
-msgstr "Proyek Open-Source"
-
-msgid "Multiple Accounts Manager"
-msgstr "Multi Akun Manager"
-
-msgid "Get Paid for Pull Requests"
-msgstr "Dibayar untuk Permintaan Pull"
-
-msgid "Omnibus"
-msgstr "Omnibus"
-
-msgid "How to Trade Binary Options?"
-msgstr "Bagaimana Cara Bertrading Opsi Binary?"
-
-msgid "What Are OTC Indices and Stocks?"
-msgstr "Apakah Indeks dan Saham OTC?"
-
-msgid "Types of Trades"
-msgstr "Jenis Kontrak"
-
-msgid "Why Trade with Binary.com"
-msgstr "Mengapa Bertrading dengan Binary.com"
-
-msgid "Contract Specifications"
-msgstr "Spesifikasi Kontrak"
-
-msgid "MetaTrader Margin Policy"
-msgstr "Kebijakan Margin MetaTrader"
-
 msgid "Payment Agent Deposit"
 msgstr "Deposit Agen Pembayaran"
 
@@ -13100,8 +13046,74 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 msgid "Account Limits"
 msgstr "Batasan rekening"
 
+msgid "Warning"
+msgstr "Peringatan"
+
+msgid "Endpoint"
+msgstr "PoinAkhir"
+
 msgid "Redirecting..."
 msgstr "Mengarahkan kembali..."
+
+msgid "404"
+msgstr "404"
+
+msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
+msgstr "Platform Trading Online untuk opsi binary pada Forex, Indeks, Komoditas dan Indeks Smart"
+
+msgid "Why Us"
+msgstr "Mengapa Kami"
+
+msgid "Careers For Americans"
+msgstr "Karir Untuk Amerika"
+
+msgid "Job Details"
+msgstr "Rincian Pekerjaan"
+
+msgid "Charity"
+msgstr "Amal"
+
+msgid "Company Profile"
+msgstr "Profil Perusahaan"
+
+msgid "Regulation"
+msgstr "Regulasi"
+
+msgid "Service Announcements"
+msgstr "Pengumuman Layanan"
+
+msgid "Multi-asset Liquidity Solutions"
+msgstr "Solusi Likuiditas Berbagai Aset"
+
+msgid "Multiple Accounts Manager"
+msgstr "Multi Akun Manager"
+
+msgid "Omnibus"
+msgstr "Omnibus"
+
+msgid "Open-Source Projects"
+msgstr "Proyek Open-Source"
+
+msgid "Get Paid for Pull Requests"
+msgstr "Dibayar untuk Permintaan Pull"
+
+msgid "How to Trade Binary Options?"
+msgstr "Bagaimana Cara Bertrading Opsi Binary?"
+
+msgid "What Are OTC Indices and Stocks?"
+msgstr "Apakah Indeks dan Saham OTC?"
+
+msgid "Types of Trades"
+msgstr "Jenis Kontrak"
+
+msgid "Why Trade with Binary.com"
+msgstr "Mengapa Bertrading dengan Binary.com"
+
+msgid "Contract Specifications"
+msgstr "Spesifikasi Kontrak"
+
+msgid "MetaTrader Margin Policy"
+msgstr "Kebijakan Margin MetaTrader"
 
 msgid "Initial Coin Offering"
 msgstr "Penawaran Koin Perdana"
