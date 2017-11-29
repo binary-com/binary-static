@@ -6,16 +6,16 @@ const Contract           = require('./contract');
 const Defaults           = require('./defaults');
 const Price              = require('./price');
 const BinarySocket       = require('../../base/socket');
-const localize           = require('../../../_common/localize').localize;
-const State              = require('../../../_common/storage').State;
-const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
-const createElement      = require('../../../_common/utility').createElement;
+const DatePicker         = require('../../components/date_picker');
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const dateValueChanged   = require('../../../_common/common_functions').dateValueChanged;
 const isVisible          = require('../../../_common/common_functions').isVisible;
+const localize           = require('../../../_common/localize').localize;
+const State              = require('../../../_common/storage').State;
 const toISOFormat        = require('../../../_common/string_util').toISOFormat;
 const toReadableFormat   = require('../../../_common/string_util').toReadableFormat;
-const DatePicker         = require('../../components/date_picker');
+const createElement      = require('../../../_common/utility').createElement;
+const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 /*
  * Handles duration processing display

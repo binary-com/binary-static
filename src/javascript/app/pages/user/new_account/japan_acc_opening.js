@@ -1,8 +1,8 @@
 const BinaryPjax     = require('../../../base/binary_pjax');
 const Client         = require('../../../base/client');
 const AccountOpening = require('../../../common/account_opening');
-const detectHedging  = require('../../../../_common/common_functions').detectHedging;
 const FormManager    = require('../../../common/form_manager');
+const detectHedging  = require('../../../../_common/common_functions').detectHedging;
 
 const JapanAccOpening = (() => {
     const onLoad = () => {

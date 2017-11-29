@@ -1,7 +1,7 @@
-const Url           = require('../../../_common/url');
-const isEmptyObject = require('../../../_common/utility').isEmptyObject;
 const isVisible     = require('../../../_common/common_functions').isVisible;
 const State         = require('../../../_common/storage').State;
+const Url           = require('../../../_common/url');
+const isEmptyObject = require('../../../_common/utility').isEmptyObject;
 
 /*
  * Handles trading page default values

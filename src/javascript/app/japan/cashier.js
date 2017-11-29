@@ -1,11 +1,11 @@
 const BinaryPjax   = require('../base/binary_pjax');
 const Client       = require('../base/client');
+const BinarySocket = require('../base/socket');
+const jpClient     = require('../common/country_base').jpClient;
+const jpResidence  = require('../common/country_base').jpResidence;
 const localize     = require('../../_common/localize').localize;
 const State        = require('../../_common/storage').State;
 const template     = require('../../_common/utility').template;
-const jpClient     = require('../common/country_base').jpClient;
-const jpResidence  = require('../common/country_base').jpResidence;
-const BinarySocket = require('../base/socket');
 
 const CashierJP = (() => {
     const onLoad = (action) => {

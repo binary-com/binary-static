@@ -1,17 +1,17 @@
 const moment               = require('moment');
 const StatementUI          = require('./statement.ui');
 const ViewPopup            = require('../../view_popup/view_popup');
-const BinarySocket         = require('../../../../base/socket');
-const getLanguage          = require('../../../../../_common/language').get;
-const localize             = require('../../../../../_common/localize').localize;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
+const BinarySocket         = require('../../../../base/socket');
 const addTooltip           = require('../../../../common/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common/get_app_details').buildOauthApps;
-const dateValueChanged     = require('../../../../../_common/common_functions').dateValueChanged;
 const jpClient             = require('../../../../common/country_base').jpClient;
 const jpResidence          = require('../../../../common/country_base').jpResidence;
-const toISOFormat          = require('../../../../../_common/string_util').toISOFormat;
 const DatePicker           = require('../../../../components/date_picker');
+const dateValueChanged     = require('../../../../../_common/common_functions').dateValueChanged;
+const getLanguage          = require('../../../../../_common/language').get;
+const localize             = require('../../../../../_common/localize').localize;
+const toISOFormat          = require('../../../../../_common/string_util').toISOFormat;
 
 const StatementInit = (() => {
     // Batch refer to number of data get from ws service per request

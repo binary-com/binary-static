@@ -1,11 +1,11 @@
 const moment        = require('moment');
 const MBDefaults    = require('./mb_defaults');
 const Client        = require('../../base/client');
+const jpClient      = require('../../common/country_base').jpClient;
 const getLanguage   = require('../../../_common/language').get;
 const localize      = require('../../../_common/localize').localize;
-const isEmptyObject = require('../../../_common/utility').isEmptyObject;
-const jpClient      = require('../../common/country_base').jpClient;
 const padLeft       = require('../../../_common/string_util').padLeft;
+const isEmptyObject = require('../../../_common/utility').isEmptyObject;
 
 /*
  * Contract object mocks the trading form we have on our website

@@ -1,6 +1,6 @@
 const Client      = require('../../base/client');
-const localize    = require('../../../_common/localize').localize;
 const formatMoney = require('../../common/currency').formatMoney;
+const localize    = require('../../../_common/localize').localize;
 
 const updatePurchaseStatus = (final_price, pnl, contract_status) => {
     $('#contract_purchase_heading').text(localize(contract_status));

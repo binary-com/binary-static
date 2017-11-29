@@ -1,11 +1,11 @@
-const Table            = require('../../../../../common/attach_dom/table');
-const localize         = require('../../../../../../_common/localize').localize;
 const Client           = require('../../../../../base/client');
-const urlForStatic     = require('../../../../../../_common/url').urlForStatic;
-const findParent       = require('../../../../../../_common/utility').findParent;
-const elementInnerHtml = require('../../../../../../_common/common_functions').elementInnerHtml;
+const Table            = require('../../../../../common/attach_dom/table');
 const jpClient         = require('../../../../../common/country_base').jpClient;
 const formatMoney      = require('../../../../../common/currency').formatMoney;
+const elementInnerHtml = require('../../../../../../_common/common_functions').elementInnerHtml;
+const localize         = require('../../../../../../_common/localize').localize;
+const urlForStatic     = require('../../../../../../_common/url').urlForStatic;
+const findParent       = require('../../../../../../_common/utility').findParent;
 
 const LimitsUI = (() => {
     const map = {

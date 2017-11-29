@@ -1,12 +1,12 @@
-const Portfolio        = require('./account/portfolio').Portfolio;
+const Portfolio        = require('./account/portfolio/portfolio').Portfolio;
 const ViewPopup        = require('./view_popup/view_popup');
 const BinarySocket     = require('../../base/socket');
-const localize         = require('../../../_common/localize').localize;
-const State            = require('../../../_common/storage').State;
-const showLoadingImage = require('../../../_common/utility').showLoadingImage;
-const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 const formatMoney      = require('../../common/currency').formatMoney;
 const Validation       = require('../../common/form_validation');
+const localize         = require('../../../_common/localize').localize;
+const State            = require('../../../_common/storage').State;
+const getPropertyValue = require('../../../_common/utility').getPropertyValue;
+const showLoadingImage = require('../../../_common/utility').showLoadingImage;
 
 const ICOPortfolio = (() => {
     let values,

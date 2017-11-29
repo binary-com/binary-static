@@ -1,11 +1,11 @@
 const moment        = require('moment');
 const commonTrading = require('../common');
 const Tick          = require('../tick');
-const BinarySocket  = require('../../../base/socket');
 const ViewPopupUI   = require('../../user/view_popup/view_popup.ui');
-const localize      = require('../../../../_common/localize').localize;
+const BinarySocket  = require('../../../base/socket');
 const isVisible     = require('../../../../_common/common_functions').isVisible;
 const getHighstock  = require('../../../../_common/common_functions').requireHighstock;
+const localize      = require('../../../../_common/localize').localize;
 
 const TickDisplay_Beta = (() => {
     let number_of_ticks,

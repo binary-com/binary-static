@@ -1,15 +1,15 @@
-const BinarySocket         = require('./socket');
-const updateBalance        = require('../pages/user/update_balance');
 const Client               = require('./client');
 const Clock                = require('./clock');
 const GTM                  = require('./gtm');
 const Header               = require('./header');
 const Login                = require('./login');
-const urlFor               = require('../../_common/url').urlFor;
-const getPropertyValue     = require('../../_common/utility').getPropertyValue;
+const BinarySocket         = require('./socket');
 const showPopup            = require('../common/attach_dom/popup');
 const setCurrencies        = require('../common/currency').setCurrencies;
 const SessionDurationLimit = require('../common/session_duration_limit');
+const updateBalance        = require('../pages/user/update_balance');
+const urlFor               = require('../../_common/url').urlFor;
+const getPropertyValue     = require('../../_common/utility').getPropertyValue;
 
 const BinarySocketGeneral = (() => {
     const onOpen = (is_ready) => {

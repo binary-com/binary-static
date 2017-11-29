@@ -1,10 +1,10 @@
-const BinarySocket         = require('../../../../base/socket');
 const BinaryPjax           = require('../../../../base/binary_pjax');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
-const localize             = require('../../../../../_common/localize').localize;
+const BinarySocket         = require('../../../../base/socket');
 const FlexTableUI          = require('../../../../common/attach_dom/flextable');
 const jpClient             = require('../../../../common/country_base').jpClient;
 const FormManager          = require('../../../../common/form_manager');
+const localize             = require('../../../../../_common/localize').localize;
 const toTitleCase          = require('../../../../../_common/string_util').toTitleCase;
 
 const APIToken = (() => {

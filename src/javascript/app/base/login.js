@@ -1,7 +1,7 @@
 const Client             = require('./client');
 const getLanguage        = require('../../_common/language').get;
-const getAppId           = require('../../config').getAppId;
 const isStorageSupported = require('../../_common/storage').isStorageSupported;
+const getAppId           = require('../../config').getAppId;
 
 const Login = (() => {
     const redirectToLogin = () => {

@@ -1,9 +1,9 @@
-const AssetIndex             = require('../asset_index');
-const BinarySocket           = require('../../../base/socket');
+const AssetIndex             = require('./asset_index');
 const BinaryPjax             = require('../../../base/binary_pjax');
-const showLoadingImage       = require('../../../../_common/utility').showLoadingImage;
+const BinarySocket           = require('../../../base/socket');
 const Table                  = require('../../../common/attach_dom/table');
 const jpClient               = require('../../../common/country_base').jpClient;
+const showLoadingImage       = require('../../../../_common/utility').showLoadingImage;
 
 const AssetIndexUI = (() => {
     let $container,

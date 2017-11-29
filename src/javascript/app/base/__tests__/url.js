@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
-const Url    = require('../../../_common/url');
 const setURL = require('./tests_common').setURL;
+const Url    = require('../../../_common/url');
 
 describe('Url', () => {
     const language     = 'en';

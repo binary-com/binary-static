@@ -1,17 +1,17 @@
 const moment               = require('moment');
-const getStartDateNode     = require('./common_independent').getStartDateNode;
 const commonTrading        = require('./common');
 const displayPriceMovement = require('./common_independent').displayPriceMovement;
+const getStartDateNode     = require('./common_independent').getStartDateNode;
 const getTradingTimes      = require('./common_independent').getTradingTimes;
 const Contract             = require('./contract');
 const Defaults             = require('./defaults');
 const BinarySocket         = require('../../base/socket');
+const formatMoney          = require('../../common/currency').formatMoney;
+const elementInnerHtml     = require('../../../_common/common_functions').elementInnerHtml;
+const elementTextContent   = require('../../../_common/common_functions').elementTextContent;
+const isVisible            = require('../../../_common/common_functions').isVisible;
 const localize             = require('../../../_common/localize').localize;
 const getPropertyValue     = require('../../../_common/utility').getPropertyValue;
-const elementTextContent   = require('../../../_common/common_functions').elementTextContent;
-const elementInnerHtml     = require('../../../_common/common_functions').elementInnerHtml;
-const isVisible            = require('../../../_common/common_functions').isVisible;
-const formatMoney          = require('../../common/currency').formatMoney;
 
 /*
  * Price object handles all the functions we need to display prices

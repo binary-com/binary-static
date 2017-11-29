@@ -1,7 +1,7 @@
-const BinarySocket = require('../../../../base/socket');
 const BinaryPjax   = require('../../../../base/binary_pjax');
-const localize     = require('../../../../../_common/localize').localize;
+const BinarySocket = require('../../../../base/socket');
 const FormManager  = require('../../../../common/form_manager');
+const localize     = require('../../../../../_common/localize').localize;
 
 const CashierPassword = (() => {
     const form_id = '#frm_cashier_password';

@@ -1,5 +1,5 @@
-const Client       = require('../../app/base/client');
 const urlFor       = require('../../_common/url').urlFor;
+const Client       = require('../../app/base/client');
 const BinarySocket = require('../../app/base/socket');
 
 const Regulation = (() => {

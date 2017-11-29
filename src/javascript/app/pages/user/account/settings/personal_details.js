@@ -1,15 +1,15 @@
-const BinarySocket     = require('../../../../base/socket');
+const moment           = require('moment');
 const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
 const Header           = require('../../../../base/header');
-const localize         = require('../../../../../_common/localize').localize;
-const State            = require('../../../../../_common/storage').State;
+const BinarySocket     = require('../../../../base/socket');
+const formatMoney      = require('../../../../common/currency').formatMoney;
+const FormManager      = require('../../../../common/form_manager');
 const detectHedging    = require('../../../../../_common/common_functions').detectHedging;
 const elementInnerHtml = require('../../../../../_common/common_functions').elementInnerHtml;
 const makeOption       = require('../../../../../_common/common_functions').makeOption;
-const formatMoney      = require('../../../../common/currency').formatMoney;
-const FormManager      = require('../../../../common/form_manager');
-const moment           = require('moment');
+const localize         = require('../../../../../_common/localize').localize;
+const State            = require('../../../../../_common/storage').State;
 require('select2');
 
 const PersonalDetails = (() => {

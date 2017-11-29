@@ -1,6 +1,6 @@
+const setViewPopupTimer = require('../../../base/clock').setViewPopupTimer;
 const BinarySocket      = require('../../../base/socket');
 const getHighestZIndex  = require('../../../../_common/utility').getHighestZIndex;
-const setViewPopupTimer = require('../../../base/clock').setViewPopupTimer;
 
 const ViewPopupUI = (() => {
     let $container,

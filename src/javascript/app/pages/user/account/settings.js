@@ -1,8 +1,8 @@
-const BinarySocket     = require('../../../base/socket');
 const Client           = require('../../../base/client');
-const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
+const BinarySocket     = require('../../../base/socket');
 const jpClient         = require('../../../common/country_base').jpClient;
 const State            = require('../../../../_common/storage').State;
+const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const Settings = (() => {
     const onLoad = () => {

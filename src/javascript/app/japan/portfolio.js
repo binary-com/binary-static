@@ -1,6 +1,6 @@
 const Client        = require('../base/client');
-const State         = require('../../_common/storage').State;
 const PortfolioInit = require('../pages/user/account/portfolio/portfolio.init');
+const State         = require('../../_common/storage').State;
 
 const JapanPortfolio = (() => {
     let $portfolio;

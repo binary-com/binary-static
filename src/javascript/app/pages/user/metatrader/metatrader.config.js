@@ -1,10 +1,10 @@
-const BinarySocket = require('../../../base/socket');
 const Client       = require('../../../base/client');
 const GTM          = require('../../../base/gtm');
+const BinarySocket = require('../../../base/socket');
+const formatMoney  = require('../../../common/currency').formatMoney;
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
 const urlFor       = require('../../../../_common/url').urlFor;
-const formatMoney  = require('../../../common/currency').formatMoney;
 
 const MetaTraderConfig = (() => {
     const types_info = {

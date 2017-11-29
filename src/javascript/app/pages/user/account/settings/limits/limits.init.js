@@ -1,11 +1,11 @@
 const LimitsUI           = require('./limits.ui');
 const Client             = require('../../../../../base/client');
-const localize           = require('../../../../../../_common/localize').localize;
-const elementTextContent = require('../../../../../../_common/common_functions').elementTextContent;
-const elementInnerHtml   = require('../../../../../../_common/common_functions').elementInnerHtml;
-const getPropertyValue   = require('../../../../../../_common/utility').getPropertyValue;
 const jpClient           = require('../../../../../common/country_base').jpClient;
 const formatMoney        = require('../../../../../common/currency').formatMoney;
+const elementInnerHtml   = require('../../../../../../_common/common_functions').elementInnerHtml;
+const elementTextContent = require('../../../../../../_common/common_functions').elementTextContent;
+const localize           = require('../../../../../../_common/localize').localize;
+const getPropertyValue   = require('../../../../../../_common/utility').getPropertyValue;
 
 const LimitsInit = (() => {
     const limitsHandler = (response, response_get_account_status) => {

@@ -1,6 +1,6 @@
-const IPHistoryInit = require('./iphistory/iphistory.init');
-const BinaryPjax    = require('../../../../base/binary_pjax');
-const jpClient      = require('../../../../common/country_base').jpClient;
+const IPHistoryInit = require('./iphistory.init');
+const BinaryPjax    = require('../../../../../base/binary_pjax');
+const jpClient      = require('../../../../../common/country_base').jpClient;
 
 const IPHistory = (() => {
     const onLoad = () => {

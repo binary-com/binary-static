@@ -1,7 +1,7 @@
 const Cookies            = require('js-cookie');
+const elementTextContent = require('./common_functions').elementTextContent;
 const CookieStorage      = require('./storage').CookieStorage;
 const applyToAllElements = require('./utility').applyToAllElements;
-const elementTextContent = require('./common_functions').elementTextContent;
 
 const Language = (() => {
     const all_languages = {

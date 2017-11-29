@@ -1,11 +1,11 @@
 const Cookies      = require('js-cookie');
 const moment       = require('moment');
 const Client       = require('./client');
-const getLanguage  = require('../../_common/language').get;
 const Login        = require('./login');
-const State        = require('../../_common/storage').State;
-const isVisible    = require('../../_common/common_functions').isVisible;
 const BinarySocket = require('./socket');
+const isVisible    = require('../../_common/common_functions').isVisible;
+const getLanguage  = require('../../_common/language').get;
+const State        = require('../../_common/storage').State;
 const getAppId     = require('../../config').getAppId;
 
 const GTM = (() => {

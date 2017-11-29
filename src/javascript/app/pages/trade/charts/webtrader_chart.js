@@ -1,9 +1,9 @@
 const MBDefaults       = require('../../mb_trade/mb_defaults');
+const jpClient         = require('../../../common/country_base').jpClient;
 const getLanguage      = require('../../../../_common/language').get;
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
-const jpClient         = require('../../../common/country_base').jpClient;
 const Config           = require('../../../../config');
 
 const WebtraderChart = (() => {

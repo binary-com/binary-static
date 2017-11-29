@@ -1,15 +1,15 @@
-const Portfolio           = require('../portfolio').Portfolio;
+const Portfolio           = require('./portfolio').Portfolio;
 const ViewPopup           = require('../../view_popup/view_popup');
-const BinarySocket        = require('../../../../base/socket');
 const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
-const localize            = require('../../../../../_common/localize').localize;
-const urlParam            = require('../../../../../_common/url').param;
-const showLoadingImage    = require('../../../../../_common/utility').showLoadingImage;
-const getPropertyValue    = require('../../../../../_common/utility').getPropertyValue;
+const BinarySocket        = require('../../../../base/socket');
 const jpClient            = require('../../../../common/country_base').jpClient;
 const formatMoney         = require('../../../../common/currency').formatMoney;
 const GetAppDetails       = require('../../../../common/get_app_details');
+const localize            = require('../../../../../_common/localize').localize;
+const urlParam            = require('../../../../../_common/url').param;
+const getPropertyValue    = require('../../../../../_common/utility').getPropertyValue;
+const showLoadingImage    = require('../../../../../_common/utility').showLoadingImage;
 
 const PortfolioInit = (() => {
     let values,

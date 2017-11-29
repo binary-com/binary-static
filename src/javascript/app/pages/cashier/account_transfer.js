@@ -1,12 +1,12 @@
-const BinarySocket       = require('../../base/socket');
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
-const localize           = require('../../../_common/localize').localize;
-const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
-const createElement      = require('../../../_common/utility').createElement;
-const elementTextContent = require('../../../_common/common_functions').elementTextContent;
+const BinarySocket       = require('../../base/socket');
 const isCryptocurrency   = require('../../common/currency').isCryptocurrency;
 const FormManager        = require('../../common/form_manager');
+const elementTextContent = require('../../../_common/common_functions').elementTextContent;
+const localize           = require('../../../_common/localize').localize;
+const createElement      = require('../../../_common/utility').createElement;
+const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const AccountTransfer = (() => {
     const form_id       = 'frm_account_transfer';

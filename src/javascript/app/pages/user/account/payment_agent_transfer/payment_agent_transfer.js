@@ -1,9 +1,9 @@
-const PaymentAgentTransferUI = require('./payment_agent_transfer/payment_agent_transfer.ui');
-const BinarySocket           = require('../../../base/socket');
-const Client                 = require('../../../base/client');
-const localize               = require('../../../../_common/localize').localize;
-const State                  = require('../../../../_common/storage').State;
-const FormManager            = require('../../../common/form_manager');
+const PaymentAgentTransferUI = require('./payment_agent_transfer.ui');
+const Client                 = require('../../../../base/client');
+const BinarySocket           = require('../../../../base/socket');
+const FormManager            = require('../../../../common/form_manager');
+const localize               = require('../../../../../_common/localize').localize;
+const State                  = require('../../../../../_common/storage').State;
 
 const PaymentAgentTransfer = (() => {
     let balance,

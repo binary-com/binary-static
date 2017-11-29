@@ -1,11 +1,11 @@
-const BinarySocket     = require('../../base/socket');
 const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
-const localize         = require('../../../_common/localize').localize;
-const urlParam         = require('../../../_common/url').param;
+const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const FormManager      = require('../../common/form_manager');
 const validEmailToken  = require('../../common/form_validation').validEmailToken;
+const localize         = require('../../../_common/localize').localize;
+const urlParam         = require('../../../_common/url').param;
 
 const PaymentAgentWithdraw = (() => {
     const view_ids  = {

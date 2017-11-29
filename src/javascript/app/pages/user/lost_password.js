@@ -1,5 +1,5 @@
-const localize    = require('../../../_common/localize').localize;
 const FormManager = require('../../common/form_manager');
+const localize    = require('../../../_common/localize').localize;
 
 const LostPassword = (() => {
     const form_id = '#frm_lost_password';

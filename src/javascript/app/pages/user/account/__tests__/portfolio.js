@@ -1,4 +1,4 @@
-const portfolio                    = require('../portfolio').Portfolio;
+const portfolio                    = require('../portfolio/portfolio').Portfolio;
 const { api, expect, getApiToken } = require('../../../../base/__tests__/tests_common');
 
 const portfolio_mock_data = {

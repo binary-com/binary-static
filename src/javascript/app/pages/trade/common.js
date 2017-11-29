@@ -4,15 +4,15 @@ const Notifications      = require('./notifications');
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
 const Client             = require('../../base/client');
+const formatMoney        = require('../../common/currency').formatMoney;
+const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
+const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const localize           = require('../../../_common/localize').localize;
+const toISOFormat        = require('../../../_common/string_util').toISOFormat;
 const urlFor             = require('../../../_common/url').urlFor;
 const createElement      = require('../../../_common/utility').createElement;
 const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 const isEmptyObject      = require('../../../_common/utility').isEmptyObject;
-const formatMoney        = require('../../common/currency').formatMoney;
-const toISOFormat        = require('../../../_common/string_util').toISOFormat;
-const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
-const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 
 /*
  * This contains common functions we need for processing the response

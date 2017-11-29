@@ -2,17 +2,17 @@ const TradingAnalysis_Beta = require('./analysis');
 const TradingEvents_Beta   = require('./event');
 const Price_Beta           = require('./price');
 const Process_Beta         = require('./process');
-const commonTrading        = require('../common');
 const cleanupChart         = require('../charts/webtrader_chart').cleanupChart;
+const commonTrading        = require('../common');
 const displayCurrencies    = require('../currency');
 const Defaults             = require('../defaults');
-const BinarySocket         = require('../../../base/socket');
 const PortfolioInit        = require('../../user/account/portfolio/portfolio.init');
 const ViewPopup            = require('../../user/view_popup/view_popup');
 const BinaryPjax           = require('../../../base/binary_pjax');
-const State                = require('../../../../_common/storage').State;
+const BinarySocket         = require('../../../base/socket');
 const jpClient             = require('../../../common/country_base').jpClient;
 const Guide                = require('../../../common/guide');
+const State                = require('../../../../_common/storage').State;
 
 const TradePage_Beta = (() => {
     let events_initialized = 0;

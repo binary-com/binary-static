@@ -1,16 +1,16 @@
 const MBContract      = require('./mb_contract');
 const MBDefaults      = require('./mb_defaults');
 const MBNotifications = require('./mb_notifications');
-const BinarySocket    = require('../../base/socket');
 const TradingAnalysis = require('../trade/analysis');
-const ViewPopup       = require('../user/view_popup/view_popup');
 const redrawChart     = require('../trade/charts/webtrader_chart').redrawChart;
+const ViewPopup       = require('../user/view_popup/view_popup');
 const Client          = require('../../base/client');
 const GTM             = require('../../base/gtm');
-const localize        = require('../../../_common/localize').localize;
-const isEmptyObject   = require('../../../_common/utility').isEmptyObject;
+const BinarySocket    = require('../../base/socket');
 const jpClient        = require('../../common/country_base').jpClient;
 const formatMoney     = require('../../common/currency').formatMoney;
+const localize        = require('../../../_common/localize').localize;
+const isEmptyObject   = require('../../../_common/utility').isEmptyObject;
 
 /*
  * Price object handles all the functions we need to display prices

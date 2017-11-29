@@ -1,15 +1,15 @@
 const Cookies            = require('js-cookie');
 const generateBirthDate  = require('./attach_dom/birth_date_picker');
+const FormManager        = require('./form_manager');
 const BinaryPjax         = require('../base/binary_pjax');
 const Client             = require('../base/client');
+const BinarySocket       = require('../base/socket');
+const professionalClient = require('../pages/user/account/settings/professional_client');
+const makeOption         = require('../../_common/common_functions').makeOption;
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
-const makeOption         = require('../../_common/common_functions').makeOption;
-const FormManager        = require('.//form_manager');
-const BinarySocket       = require('../base/socket');
-const professionalClient = require('../pages/user/account/settings/professional_client');
 require('select2');
 
 const AccountOpening = (() => {

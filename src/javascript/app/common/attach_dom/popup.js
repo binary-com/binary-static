@@ -1,5 +1,5 @@
-const createElement = require('../../../_common/utility').createElement;
 const Validation    = require('../form_validation');
+const createElement = require('../../../_common/utility').createElement;
 
 const showPopup = (options) => {
     const xhttp = new XMLHttpRequest();

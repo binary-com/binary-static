@@ -1,12 +1,12 @@
-const BinarySocket     = require('../../../../base/socket');
 const BinaryPjax       = require('../../../../base/binary_pjax');
 const Header           = require('../../../../base/header');
+const BinarySocket     = require('../../../../base/socket');
+const jpClient         = require('../../../../common/country_base').jpClient;
+const Validation       = require('../../../../common/form_validation');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const isEmptyObject    = require('../../../../../_common/utility').isEmptyObject;
 const showLoadingImage = require('../../../../../_common/utility').showLoadingImage;
-const jpClient         = require('../../../../common/country_base').jpClient;
-const Validation       = require('../../../../common/form_validation');
 
 const FinancialAssessment = (() => {
     let financial_assessment = {};

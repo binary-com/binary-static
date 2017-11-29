@@ -1,18 +1,18 @@
 const moment               = require('moment');
 const ViewPopupUI          = require('./view_popup.ui');
-const BinarySocket         = require('../../../base/socket');
 const Highchart            = require('../../trade/charts/highchart');
 const TickDisplay          = require('../../trade/tick_trade');
+const setViewPopupTimer    = require('../../../base/clock').setViewPopupTimer;
 const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
 const toJapanTimeIfNeeded  = require('../../../base/clock').toJapanTimeIfNeeded;
-const setViewPopupTimer    = require('../../../base/clock').setViewPopupTimer;
+const BinarySocket         = require('../../../base/socket');
+const jpClient             = require('../../../common/country_base').jpClient;
 const localize             = require('../../../../_common/localize').localize;
 const State                = require('../../../../_common/storage').State;
 const urlFor               = require('../../../../_common/url').urlFor;
 const createElement        = require('../../../../_common/utility').createElement;
 const getPropertyValue     = require('../../../../_common/utility').getPropertyValue;
 const isEmptyObject        = require('../../../../_common/utility').isEmptyObject;
-const jpClient             = require('../../../common/country_base').jpClient;
 
 const ViewPopup = (() => {
     let contract_id,

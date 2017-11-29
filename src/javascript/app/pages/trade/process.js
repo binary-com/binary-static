@@ -11,12 +11,12 @@ const StartDates       = require('./starttime').StartDates;
 const Symbols          = require('./symbols');
 const Tick             = require('./tick');
 const BinarySocket     = require('../../base/socket');
+const getMinPayout     = require('../../common/currency').getMinPayout;
+const isCryptocurrency = require('../../common/currency').isCryptocurrency;
+const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
-const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
-const isCryptocurrency = require('../../common/currency').isCryptocurrency;
-const getMinPayout     = require('../../common/currency').getMinPayout;
 
 const Process = (() => {
     /*

@@ -1,8 +1,8 @@
 const Validation       = require('./form_validation');
+const BinarySocket     = require('../base/socket');
 const urlParam         = require('../../_common/url').param;
 const isEmptyObject    = require('../../_common/utility').isEmptyObject;
 const showLoadingImage = require('../../_common/utility').showLoadingImage;
-const BinarySocket     = require('../base/socket');
 
 const FormManager = (() => {
     const forms = {};

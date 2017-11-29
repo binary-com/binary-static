@@ -6,15 +6,15 @@ const Defaults          = require('./defaults');
 const TradingEvents     = require('./event');
 const Price             = require('./price');
 const Process           = require('./process');
-const BinarySocket      = require('../../base/socket');
 const ViewPopup         = require('../user/view_popup/view_popup');
 const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
 const Header            = require('../../base/header');
-const localize          = require('../../../_common/localize').localize;
-const State             = require('../../../_common/storage').State;
+const BinarySocket      = require('../../base/socket');
 const jpClient          = require('../../common/country_base').jpClient;
 const Guide             = require('../../common/guide');
+const localize          = require('../../../_common/localize').localize;
+const State             = require('../../../_common/storage').State;
 
 const TradePage = (() => {
     let events_initialized = 0;

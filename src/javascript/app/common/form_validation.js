@@ -1,9 +1,9 @@
-const Password              = require('../../_common/check_password');
 const addComma              = require('./currency').addComma;
 const getDecimalPlaces      = require('./currency').getDecimalPlaces;
-const compareBigUnsignedInt = require('../../_common/string_util').compareBigUnsignedInt;
 const Client                = require('../base/client');
+const Password              = require('../../_common/check_password');
 const localize              = require('../../_common/localize').localize;
+const compareBigUnsignedInt = require('../../_common/string_util').compareBigUnsignedInt;
 const urlParam              = require('../../_common/url').param;
 const isEmptyObject         = require('../../_common/utility').isEmptyObject;
 

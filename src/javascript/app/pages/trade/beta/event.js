@@ -12,14 +12,14 @@ const Tick                  = require('../tick');
 const commonTrading         = require('../common');
 const getStartDateNode      = require('../common_independent').getStartDateNode;
 const Notifications         = require('../notifications');
-const BinarySocket          = require('../../../base/socket');
 const BinaryPjax            = require('../../../base/binary_pjax');
 const GTM                   = require('../../../base/gtm');
-const dateValueChanged      = require('../../../../_common/common_functions').dateValueChanged;
-const isVisible             = require('../../../../_common/common_functions').isVisible;
+const BinarySocket          = require('../../../base/socket');
 const formatMoney           = require('../../../common/currency').formatMoney;
 const onlyNumericOnKeypress = require('../../../common/event_handler');
 const TimePicker            = require('../../../components/time_picker');
+const dateValueChanged      = require('../../../../_common/common_functions').dateValueChanged;
+const isVisible             = require('../../../../_common/common_functions').isVisible;
 
 /*
  * TradingEvents object contains all the event handler function for

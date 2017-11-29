@@ -1,18 +1,18 @@
 const moment                = require('moment');
 const ICOPortfolio          = require('./ico_portfolio');
-const BinarySocket          = require('../../base/socket');
 const BinaryPjax            = require('../../base/binary_pjax');
 const Client                = require('../../base/client');
-const localize              = require('../../../_common/localize').localize;
-const State                 = require('../../../_common/storage').State;
-const urlFor                = require('../../../_common/url').urlFor;
+const BinarySocket          = require('../../base/socket');
 const jpClient              = require('../../common/country_base').jpClient;
 const getDecimalPlaces      = require('../../common/currency').getDecimalPlaces;
 const formatMoney           = require('../../common/currency').formatMoney;
 const onlyNumericOnKeypress = require('../../common/event_handler');
 const FormManager           = require('../../common/form_manager');
 const getLanguage           = require('../../../_common/language').get;
+const localize              = require('../../../_common/localize').localize;
+const State                 = require('../../../_common/storage').State;
 const Url                   = require('../../../_common/url');
+const urlFor                = require('../../../_common/url').urlFor;
 const getPropertyValue      = require('../../../_common/utility').getPropertyValue;
 
 const ICOSubscribe = (() => {

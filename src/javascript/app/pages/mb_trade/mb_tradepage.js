@@ -4,12 +4,12 @@ const MBDefaults          = require('./mb_defaults');
 const MBTradingEvents     = require('./mb_event');
 const MBPrice             = require('./mb_price');
 const MBProcess           = require('./mb_process');
-const BinarySocket        = require('../../base/socket');
 const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupChart;
-const localize            = require('../../../_common/localize').localize;
-const State               = require('../../../_common/storage').State;
+const BinarySocket        = require('../../base/socket');
 const jpClient            = require('../../common/country_base').jpClient;
 const JapanPortfolio      = require('../../japan/portfolio');
+const localize            = require('../../../_common/localize').localize;
+const State               = require('../../../_common/storage').State;
 
 const MBTradePage = (() => {
     let events_initialized = 0;

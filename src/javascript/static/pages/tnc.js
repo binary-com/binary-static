@@ -1,7 +1,7 @@
 const tabListener = require('binary-style').tabListener;
 const localize    = require('../../_common/localize').localize;
-const urlParam    = require('../../_common/url').param;
 const Scroll      = require('../../_common/scroll');
+const urlParam    = require('../../_common/url').param;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
 
 const TermsAndConditions = (() => {

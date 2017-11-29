@@ -1,16 +1,16 @@
 const moment             = require('moment');
 const setIsForNewAccount = require('./account/settings/personal_details').setIsForNewAccount;
 const getCurrencies      = require('./get_currency').getCurrencies;
-const BinarySocket       = require('../../base/socket');
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
-const localize           = require('../../../_common/localize').localize;
-const State              = require('../../../_common/storage').State;
-const urlFor             = require('../../../_common/url').urlFor;
-const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
+const BinarySocket       = require('../../base/socket');
 const getCurrencyList    = require('../../common/currency').getCurrencyList;
 const FormManager        = require('../../common/form_manager');
+const localize           = require('../../../_common/localize').localize;
+const State              = require('../../../_common/storage').State;
 const toTitleCase        = require('../../../_common/string_util').toTitleCase;
+const urlFor             = require('../../../_common/url').urlFor;
+const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const Accounts = (() => {
     let landing_company,

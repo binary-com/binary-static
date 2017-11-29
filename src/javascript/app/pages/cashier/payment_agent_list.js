@@ -1,6 +1,6 @@
+const Client       = require('../../base/client');
 const BinarySocket = require('../../base/socket');
 const urlForStatic = require('../../../_common/url').urlForStatic;
-const Client       = require('../../base/client');
 
 const PaymentAgentList = (() => {
     let $pa_list_container,

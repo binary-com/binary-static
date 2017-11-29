@@ -4,8 +4,8 @@ const GTM                = require('./gtm');
 const getLanguage        = require('../../_common/language').get;
 const urlLang            = require('../../_common/language').urlLang;
 const isStorageSupported = require('../../_common/storage').isStorageSupported;
-const urlFor             = require('../../_common/url').urlFor;
 const paramsHash         = require('../../_common/url').paramsHash;
+const urlFor             = require('../../_common/url').urlFor;
 
 const LoggedInHandler = (() => {
     const onLoad = () => {

@@ -1,6 +1,6 @@
 const expect      = require('chai').expect;
-const Clock       = require('../clock');
 const setJPClient = require('./tests_common').setJPClient;
+const Clock       = require('../clock');
 
 describe('Clock', () => {
     describe('.toJapanTimeIfNeeded()', () => {

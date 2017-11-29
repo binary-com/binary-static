@@ -1,12 +1,12 @@
-const BinarySocket     = require('../../base/socket');
 const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const Header           = require('../../base/header');
+const BinarySocket     = require('../../base/socket');
+const getCurrencyName  = require('../../common/currency').getCurrencyName;
+const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const Url              = require('../../../_common/url');
-const isCryptocurrency = require('../../common/currency').isCryptocurrency;
-const getCurrencyName  = require('../../common/currency').getCurrencyName;
 
 const SetCurrency = (() => {
     let is_new_account;

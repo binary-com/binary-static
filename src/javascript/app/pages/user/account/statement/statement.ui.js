@@ -1,11 +1,11 @@
-const Statement           = require('../statement');
+const Statement           = require('./statement');
 const Client              = require('../../../../base/client');
-const downloadCSV         = require('../../../../../_common/utility').downloadCSV;
-const localize            = require('../../../../../_common/localize').localize;
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
+const Table               = require('../../../../common/attach_dom/table');
 const jpClient            = require('../../../../common/country_base').jpClient;
 const showTooltip         = require('../../../../common/get_app_details').showTooltip;
-const Table               = require('../../../../common/attach_dom/table');
+const localize            = require('../../../../../_common/localize').localize;
+const downloadCSV         = require('../../../../../_common/utility').downloadCSV;
 
 const StatementUI = (() => {
     let all_data   = [];

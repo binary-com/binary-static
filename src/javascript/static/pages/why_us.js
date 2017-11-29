@@ -1,5 +1,5 @@
-const Client = require('../../app/base/client');
 const Scroll = require('../../_common/scroll');
+const Client = require('../../app/base/client');
 
 const WhyUs = (() => {
     const onLoad = () => {

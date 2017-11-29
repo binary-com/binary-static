@@ -1,7 +1,7 @@
-const urlLang        = require('./language').urlLang;
 const urlForLanguage = require('./language').urlFor;
-const isEmptyObject  = require('./utility').isEmptyObject;
+const urlLang        = require('./language').urlLang;
 const createElement  = require('./utility').createElement;
+const isEmptyObject  = require('./utility').isEmptyObject;
 require('url-polyfill');
 
 const Url = (() => {

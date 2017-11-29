@@ -1,14 +1,14 @@
 const Cookies          = require('js-cookie');
-const BinarySocket     = require('../../../base/socket');
 const Client           = require('../../../base/client');
+const BinarySocket     = require('../../../base/socket');
+const jpClient         = require('../../../common/country_base').jpClient;
+const FormManager      = require('../../../common/form_manager');
+const TrafficSource    = require('../../../common/traffic_source');
+const makeOption       = require('../../../../_common/common_functions').makeOption;
 const localize         = require('../../../../_common/localize').localize;
 const LocalStore       = require('../../../../_common/storage').LocalStore;
 const urlFor           = require('../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
-const makeOption       = require('../../../../_common/common_functions').makeOption;
-const jpClient         = require('../../../common/country_base').jpClient;
-const FormManager      = require('../../../common/form_manager');
-const TrafficSource    = require('../../../common/traffic_source');
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';

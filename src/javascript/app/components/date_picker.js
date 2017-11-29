@@ -1,10 +1,10 @@
 const moment           = require('moment');
-const localize         = require('../../_common/localize').localize;
-const isEmptyObject    = require('../../_common/utility').isEmptyObject;
-const clearable        = require('../../_common/utility').clearable;
 const checkInput       = require('../../_common/common_functions').checkInput;
-const toReadableFormat = require('../../_common/string_util').toReadableFormat;
+const localize         = require('../../_common/localize').localize;
 const padLeft          = require('../../_common/string_util').padLeft;
+const toReadableFormat = require('../../_common/string_util').toReadableFormat;
+const clearable        = require('../../_common/utility').clearable;
+const isEmptyObject    = require('../../_common/utility').isEmptyObject;
 
 const DatePicker = (() => {
     const date_pickers = {};

@@ -1,8 +1,8 @@
 const RealityCheckData     = require('./reality_check.data');
-const BinarySocket         = require('../../../base/socket');
 const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
-const urlFor               = require('../../../../_common/url').urlFor;
+const BinarySocket         = require('../../../base/socket');
 const FormManager          = require('../../../common/form_manager');
+const urlFor               = require('../../../../_common/url').urlFor;
 require('../../../../_common/lib/polyfills/array.includes');
 require('../../../../_common/lib/polyfills/string.includes');
 

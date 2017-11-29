@@ -7,10 +7,10 @@ const MBTick                = require('./mb_tick');
 const TradingAnalysis       = require('../trade/analysis');
 const debounce              = require('../trade/common').debounce;
 const Client                = require('../../base/client');
-const localize              = require('../../../_common/localize').localize;
 const jpClient              = require('../../common/country_base').jpClient;
 const Currency              = require('../../common/currency');
 const onlyNumericOnKeypress = require('../../common/event_handler');
+const localize              = require('../../../_common/localize').localize;
 
 /*
  * TradingEvents object contains all the event handler function required for

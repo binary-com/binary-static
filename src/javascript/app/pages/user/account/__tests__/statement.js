@@ -1,4 +1,4 @@
-const statement                    = require('../statement');
+const statement                    = require('../statement/statement');
 const { api, expect, getApiToken } = require('../../../../base/__tests__/tests_common');
 
 describe('Statement', () => {

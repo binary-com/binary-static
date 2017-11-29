@@ -1,14 +1,14 @@
-const BinarySocket      = require('../../base/socket');
 const setShouldRedirect = require('../user/account/settings/cashier_password').setShouldRedirect;
 const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
+const BinarySocket      = require('../../base/socket');
+const showPopup         = require('../../common/attach_dom/popup');
+const isCryptocurrency  = require('../../common/currency').isCryptocurrency;
+const FormManager       = require('../../common/form_manager');
+const validEmailToken   = require('../../common/form_validation').validEmailToken;
 const localize          = require('../../../_common/localize').localize;
 const Url               = require('../../../_common/url');
 const template          = require('../../../_common/utility').template;
-const showPopup         = require('../../common/attach_dom/popup');
-const FormManager       = require('../../common/form_manager');
-const isCryptocurrency  = require('../../common/currency').isCryptocurrency;
-const validEmailToken   = require('../../common/form_validation').validEmailToken;
 
 const DepositWithdraw = (() => {
     let cashier_type,

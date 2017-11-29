@@ -4,17 +4,17 @@ const MBNotifications  = require('./mb_notifications');
 const MBPrice          = require('./mb_price');
 const MBSymbols        = require('./mb_symbols');
 const MBTick           = require('./mb_tick');
-const BinarySocket     = require('../../base/socket');
 const commonTrading    = require('../trade/common');
 const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
+const BinarySocket     = require('../../base/socket');
+const jpClient         = require('../../common/country_base').jpClient;
+const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getLanguage      = require('../../../_common/language').get;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const urlForStatic     = require('../../../_common/url').urlForStatic;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
-const jpClient         = require('../../common/country_base').jpClient;
-const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 
 const MBProcess = (() => {
     let market_status = '';

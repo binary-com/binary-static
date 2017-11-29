@@ -1,9 +1,9 @@
 const MBContract     = require('./mb_contract');
 const MBDefaults     = require('./mb_defaults');
-const localize       = require('../../../_common/localize').localize;
-const State          = require('../../../_common/storage').State;
 const jpClient       = require('../../common/country_base').jpClient;
 const formatCurrency = require('../../common/currency').formatCurrency;
+const localize       = require('../../../_common/localize').localize;
+const State          = require('../../../_common/storage').State;
 
 /*
  * Handles currency display

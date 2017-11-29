@@ -1,10 +1,10 @@
 const moment         = require('moment');
-const BinarySocket   = require('../../../base/socket');
 const BinaryPjax     = require('../../../base/binary_pjax');
 const Client         = require('../../../base/client');
-const isEmptyObject  = require('../../../../_common/utility').isEmptyObject;
+const BinarySocket   = require('../../../base/socket');
 const AccountOpening = require('../../../common/account_opening');
 const FormManager    = require('../../../common/form_manager');
+const isEmptyObject  = require('../../../../_common/utility').isEmptyObject;
 const toISOFormat    = require('../../../../_common/string_util').toISOFormat;
 
 const FinancialAccOpening = (() => {

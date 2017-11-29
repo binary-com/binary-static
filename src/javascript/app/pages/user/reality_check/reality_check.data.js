@@ -1,7 +1,7 @@
 const moment      = require('moment');
+const formatMoney = require('../../../common/currency').formatMoney;
 const localize    = require('../../../../_common/localize').localize;
 const LocalStore  = require('../../../../_common/storage').LocalStore;
-const formatMoney = require('../../../common/currency').formatMoney;
 
 const RealityCheckData = (() => {
     const reality_object = {};

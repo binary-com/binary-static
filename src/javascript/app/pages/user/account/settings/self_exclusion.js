@@ -1,16 +1,16 @@
 const moment              = require('moment');
-const BinarySocket        = require('../../../../base/socket');
 const BinaryPjax          = require('../../../../base/binary_pjax');
 const Client              = require('../../../../base/client');
 const Header              = require('../../../../base/header');
-const localize            = require('../../../../../_common/localize').localize;
-const dateValueChanged    = require('../../../../../_common/common_functions').dateValueChanged;
+const BinarySocket        = require('../../../../base/socket');
 const jpClient            = require('../../../../common/country_base').jpClient;
 const Currency            = require('../../../../common/currency');
 const FormManager         = require('../../../../common/form_manager');
-const scrollToHashSection = require('../../../../../_common/scroll').scrollToHashSection;
 const DatePicker          = require('../../../../components/date_picker');
 const TimePicker          = require('../../../../components/time_picker');
+const dateValueChanged    = require('../../../../../_common/common_functions').dateValueChanged;
+const localize            = require('../../../../../_common/localize').localize;
+const scrollToHashSection = require('../../../../../_common/scroll').scrollToHashSection;
 
 const SelfExclusion = (() => {
     let $form,

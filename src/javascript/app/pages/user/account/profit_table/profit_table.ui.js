@@ -1,11 +1,11 @@
-const ProfitTable         = require('../profit_table');
+const ProfitTable         = require('./profit_table');
 const Client              = require('../../../../base/client');
-const localize            = require('../../../../../_common/localize').localize;
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
+const Table               = require('../../../../common/attach_dom/table');
 const jpClient            = require('../../../../common/country_base').jpClient;
 const formatMoney         = require('../../../../common/currency').formatMoney;
 const showTooltip         = require('../../../../common/get_app_details').showTooltip;
-const Table               = require('../../../../common/attach_dom/table');
+const localize            = require('../../../../../_common/localize').localize;
 
 const ProfitTableUI = (() => {
     let oauth_apps   = {};

@@ -1,6 +1,6 @@
 const localize     = require('../../_common/localize').localize;
-const FormManager  = require('../../app/common/form_manager');
 const BinarySocket = require('../../app/base/socket');
+const FormManager  = require('../../app/common/form_manager');
 
 const Home = (() => {
     let clients_country;

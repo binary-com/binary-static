@@ -1,8 +1,8 @@
 const moment     = require('moment');
-const localize   = require('../../_common/localize').localize;
-const clearable  = require('../../_common/utility').clearable;
 const checkInput = require('../../_common/common_functions').checkInput;
+const localize   = require('../../_common/localize').localize;
 const padLeft    = require('../../_common/string_util').padLeft;
+const clearable  = require('../../_common/utility').clearable;
 
 const TimePicker = (() => {
     const time_pickers = {};

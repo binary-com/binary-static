@@ -1,13 +1,13 @@
 const moment               = require('moment');
-const BinarySocket         = require('../../../../base/socket');
 const BinaryPjax           = require('../../../../base/binary_pjax');
 const Client               = require('../../../../base/client');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
+const BinarySocket         = require('../../../../base/socket');
+const FlexTableUI          = require('../../../../common/attach_dom/flextable');
+const jpClient             = require('../../../../common/country_base').jpClient;
+const elementTextContent   = require('../../../../../_common/common_functions').elementTextContent;
 const localize             = require('../../../../../_common/localize').localize;
 const State                = require('../../../../../_common/storage').State;
-const FlexTableUI          = require('../../../../common/attach_dom/flextable');
-const elementTextContent   = require('../../../../../_common/common_functions').elementTextContent;
-const jpClient             = require('../../../../common/country_base').jpClient;
 const toTitleCase          = require('../../../../../_common/string_util').toTitleCase;
 
 const AuthorisedApps = (() => {

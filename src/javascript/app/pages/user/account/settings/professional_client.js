@@ -1,10 +1,10 @@
-const BinarySocket     = require('../../../../base/socket');
 const BinaryPjax       = require('../../../../base/binary_pjax');
-const State            = require('../../../../../_common/storage').State;
-const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 const Client           = require('../../../../base/client');
+const BinarySocket     = require('../../../../base/socket');
 const localize         = require('../../../../../_common/localize').localize;
+const State            = require('../../../../../_common/storage').State;
 const Url              = require('../../../../../_common/url');
+const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 
 const professionalClient = (() => {

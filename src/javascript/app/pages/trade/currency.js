@@ -1,6 +1,6 @@
 const Defaults = require('./defaults');
-const State    = require('../../../_common/storage').State;
 const Currency = require('../../common/currency');
+const State    = require('../../../_common/storage').State;
 
 /*
  * Handles currency display

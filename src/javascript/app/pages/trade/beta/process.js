@@ -10,13 +10,13 @@ const GetTicks             = require('../get_ticks');
 const Notifications        = require('../notifications');
 const Symbols              = require('../symbols');
 const Tick                 = require('../tick');
-const BinarySocket         = require('../../../base/socket');
 const AssetIndexUI         = require('../../resources/asset_index/asset_index.ui');
 const TradingTimesUI       = require('../../resources/trading_times/trading_times.ui');
+const BinarySocket         = require('../../../base/socket');
+const elementInnerHtml     = require('../../../../_common/common_functions').elementInnerHtml;
 const localize             = require('../../../../_common/localize').localize;
 const State                = require('../../../../_common/storage').State;
 const getPropertyValue     = require('../../../../_common/utility').getPropertyValue;
-const elementInnerHtml     = require('../../../../_common/common_functions').elementInnerHtml;
 
 const Process_Beta = (() => {
     /*

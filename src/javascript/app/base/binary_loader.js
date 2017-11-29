@@ -3,13 +3,13 @@ const pages_config        = require('./binary_pages');
 const Client              = require('./client');
 const GTM                 = require('./gtm');
 const Header              = require('./header');
-const localize            = require('../../_common/localize').localize;
 const Login               = require('./login');
 const Page                = require('./page');
-const isStorageSupported  = require('../../_common/storage').isStorageSupported;
-const createElement       = require('../../_common/utility').createElement;
 const BinarySocket        = require('./socket');
 const BinarySocketGeneral = require('./socket_general');
+const localize            = require('../../_common/localize').localize;
+const isStorageSupported  = require('../../_common/storage').isStorageSupported;
+const createElement       = require('../../_common/utility').createElement;
 
 const BinaryLoader = (() => {
     let container;

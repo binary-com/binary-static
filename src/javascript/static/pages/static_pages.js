@@ -1,10 +1,10 @@
 const tabListener = require('binary-style').tabListener;
 const GetStarted  = require('./get_started');
+const Scroll      = require('../../_common/scroll');
+const handleHash  = require('../../_common/utility').handleHash;
 const BinaryPjax  = require('../../app/base/binary_pjax');
 const Client      = require('../../app/base/client');
 const Header      = require('../../app/base/header');
-const handleHash  = require('../../_common/utility').handleHash;
-const Scroll      = require('../../_common/scroll');
 
 module.exports = {
     OpenPositions: {

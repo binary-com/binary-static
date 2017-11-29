@@ -1,8 +1,8 @@
+const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
-const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 const formatMoney      = require('../../../common/currency').formatMoney;
 const Validation       = require('../../../common/form_validation');
-const MetaTraderConfig = require('./metatrader.config');
+const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 
 const MetaTraderUI = (() => {
     let $container,

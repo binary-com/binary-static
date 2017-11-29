@@ -1,10 +1,10 @@
 const moment              = require('moment');
-const Client              = require('../../../base/client');
-const localize            = require('../../../../_common/localize').localize;
-const toJapanTimeIfNeeded = require('../../../base/clock').toJapanTimeIfNeeded;
-const formatCurrency      = require('../../../common/currency').formatCurrency;
-const formatMoney         = require('../../../common/currency').formatMoney;
-const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
+const Client              = require('../../../../base/client');
+const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
+const formatCurrency      = require('../../../../common/currency').formatCurrency;
+const formatMoney         = require('../../../../common/currency').formatMoney;
+const localize            = require('../../../../../_common/localize').localize;
+const toTitleCase         = require('../../../../../_common/string_util').toTitleCase;
 
 const Statement = (() => {
     const getStatementData = (statement, currency, jp_client) => {

@@ -1,15 +1,15 @@
 const Cookies            = require('js-cookie');
 const moment             = require('moment');
+const BinarySocket       = require('./socket');
+const jpClient           = require('../common/country_base').jpClient;
+const isCryptocurrency   = require('../common/currency').isCryptocurrency;
+const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 const LocalStore         = require('../../_common/storage').LocalStore;
 const State              = require('../../_common/storage').State;
 const Url                = require('../../_common/url');
 const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 const isEmptyObject      = require('../../_common/utility').isEmptyObject;
-const jpClient           = require('../common/country_base').jpClient;
-const isCryptocurrency   = require('../common/currency').isCryptocurrency;
-const BinarySocket       = require('./socket');
-const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 
 const Client = (() => {
     const storage_key = 'client.accounts';

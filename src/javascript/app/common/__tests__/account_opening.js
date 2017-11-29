@@ -1,8 +1,8 @@
 const AccountOpening                       = require('../account_opening');
+const { api, expect, getApiToken, setURL } = require('../../base/__tests__/tests_common');
 const Client                               = require('../../base/client');
 const State                                = require('../../../_common/storage').State;
 const Url                                  = require('../../../_common/url');
-const { api, expect, getApiToken, setURL } = require('../../base/__tests__/tests_common');
 global.$                                   = require('jquery');
 
 

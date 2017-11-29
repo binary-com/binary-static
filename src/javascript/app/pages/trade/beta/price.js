@@ -6,12 +6,12 @@ const getStartDateNode     = require('../common_independent').getStartDateNode;
 const getTradingTimes      = require('../common_independent').getTradingTimes;
 const Defaults             = require('../defaults');
 const BinarySocket         = require('../../../base/socket');
-const localize             = require('../../../../_common/localize').localize;
-const getPropertyValue     = require('../../../../_common/utility').getPropertyValue;
+const formatMoney          = require('../../../common/currency').formatMoney;
 const elementTextContent   = require('../../../../_common/common_functions').elementTextContent;
 const elementInnerHtml     = require('../../../../_common/common_functions').elementInnerHtml;
 const isVisible            = require('../../../../_common/common_functions').isVisible;
-const formatMoney          = require('../../../common/currency').formatMoney;
+const localize             = require('../../../../_common/localize').localize;
+const getPropertyValue     = require('../../../../_common/utility').getPropertyValue;
 
 /*
  * Price object handles all the functions we need to display prices

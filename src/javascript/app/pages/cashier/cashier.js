@@ -1,11 +1,11 @@
-const BinarySocket     = require('../../base/socket');
 const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const Header           = require('../../base/header');
-const urlFor           = require('../../../_common/url').urlFor;
+const BinarySocket     = require('../../base/socket');
 const jpClient         = require('../../common/country_base').jpClient;
 const jpResidence      = require('../../common/country_base').jpResidence;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
+const urlFor           = require('../../../_common/url').urlFor;
 
 const Cashier = (() => {
     let href = '';

@@ -4,14 +4,14 @@ const Tick               = require('./tick');
 const TickDisplay        = require('./tick_trade');
 const updateValues       = require('./update_values');
 const Client             = require('../../base/client');
-const localize           = require('../../../_common/localize').localize;
-const urlFor             = require('../../../_common/url').urlFor;
-const createElement      = require('../../../_common/utility').createElement;
+const formatMoney        = require('../../common/currency').formatMoney;
 const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const isVisible          = require('../../../_common/common_functions').isVisible;
-const formatMoney        = require('../../common/currency').formatMoney;
+const localize           = require('../../../_common/localize').localize;
 const padLeft            = require('../../../_common/string_util').padLeft;
+const urlFor             = require('../../../_common/url').urlFor;
+const createElement      = require('../../../_common/utility').createElement;
 
 /*
  * Purchase object that handles all the functions related to

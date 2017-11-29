@@ -1,6 +1,6 @@
-const BinarySocket = require('../../../base/socket');
 const BinaryPjax   = require('../../../base/binary_pjax');
 const Client       = require('../../../base/client');
+const BinarySocket = require('../../../base/socket');
 const urlFor       = require('../../../../_common/url').urlFor;
 
 const AccountType = (() => {

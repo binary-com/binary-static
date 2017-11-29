@@ -1,7 +1,7 @@
 const moment               = require('moment');
 const showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeOnHover;
-const localize             = require('../../../../../../_common/localize').localize;
 const FlexTableUI          = require('../../../../../common/attach_dom/flextable');
+const localize             = require('../../../../../../_common/localize').localize;
 
 const IPHistoryUI = (() => {
     const container_selector = '#login-history-container';

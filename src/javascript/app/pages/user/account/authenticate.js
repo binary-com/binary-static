@@ -1,11 +1,11 @@
 const DocumentUploader    = require('binary-document-uploader');
-const BinarySocket        = require('../../../base/socket');
 const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
+const BinarySocket        = require('../../../base/socket');
 const localize            = require('../../../../_common/localize').localize;
+const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
 const Url                 = require('../../../../_common/url');
 const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
-const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
 
 const Authenticate = (() => {
     const onLoad = () => {

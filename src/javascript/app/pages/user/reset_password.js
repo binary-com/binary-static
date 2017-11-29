@@ -1,7 +1,7 @@
-const localize          = require('../../../_common/localize').localize;
 const Login             = require('../../base/login');
 const generateBirthDate = require('../../common/attach_dom/birth_date_picker');
 const FormManager       = require('../../common/form_manager');
+const localize          = require('../../../_common/localize').localize;
 
 const ResetPassword = (() => {
     const responseHandler = (response) => {

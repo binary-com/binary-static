@@ -1,7 +1,7 @@
 const moment      = require('moment');
-const Client      = require('../../../base/client');
-const jpClient    = require('../../../common/country_base').jpClient;
-const formatMoney = require('../../../common/currency').formatMoney;
+const Client      = require('../../../../base/client');
+const jpClient    = require('../../../../common/country_base').jpClient;
+const formatMoney = require('../../../../common/currency').formatMoney;
 
 const ProfitTable = (() => {
     const getProfitTabletData = (transaction) => {

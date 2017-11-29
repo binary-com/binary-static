@@ -1,4 +1,4 @@
-const profitTable                  = require('../profit_table');
+const profitTable                  = require('../profit_table/profit_table');
 const { api, expect, getApiToken } = require('../../../../base/__tests__/tests_common');
 
 describe('Profit Table', () => {

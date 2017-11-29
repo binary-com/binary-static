@@ -1,4 +1,4 @@
-const trading_times   = require('../trading_times');
+const trading_times   = require('../trading_times/trading_times');
 const { api, expect } = require('../../../base/__tests__/tests_common');
 
 describe('Trading Times', () => {
