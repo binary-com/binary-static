@@ -1,8 +1,8 @@
 const tabListener = require('binary-style').tabListener;
 const sidebar     = require('binary-style').sidebarCollapsible;
-const localize    = require('../base/localize').localize;
-const urlParam    = require('../base/url').param;
-const TNCApproval = require('../websocket_pages/user/tnc_approval');
+const localize    = require('../../_common/localize').localize;
+const urlParam    = require('../../_common/url').param;
+const TNCApproval = require('../../app/pages/user/tnc_approval');
 
 const TermsAndConditions = (() => {
     const onLoad = () => {
