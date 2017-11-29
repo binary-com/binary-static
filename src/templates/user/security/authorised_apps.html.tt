@@ -1,8 +1,0 @@
-<div id="applications-container">
-    <div class="page-title" id="applications-title">
-        <h1>[% l("Applications") %]</h1>
-        <p id="description">[% l("Keep track of your authorised applications.") %]</p>
-        <p class="error-msg" id="applications_error"></p>
-    </div>
-    <div id="applications_loading">[% PROCESS global/loading.html.tt %]</div>
-</div>
