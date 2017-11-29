@@ -53,11 +53,15 @@ const TimePicker = (() => {
         }
 
         if (options.maxTime) {
-            options.maxTime    = moment.utc(options.maxTime);
-            let minute         = parseInt(options.maxTime.minute());
-            let hour           = parseInt(options.maxTime.hour());
-            hour               = minute < 5 ? hour - 1 : hour;
-            minute             = minute < 5 ? 55 : minute - 5;
+            options.maxTime = moment.utc(options.maxTime);
+            let minute      = parseInt(options.maxTime.minute());
+            let hour        = parseInt(options.maxTime.hour());
+
+            if (!(hour === 0 && minute === 0) && !(hour === 23 && minute === 55)) {
+                hour   = minute < 5 ? hour - 1 : hour;
+                minute = minute < 5 ? 55 : Math.ceil((minute - 5) / 5) * 5;
+            }
+
             obj_config.maxTime = { hour, minute };
         }
 
@@ -87,11 +91,12 @@ const TimePicker = (() => {
                 $this.val(new_time);
             }
             $this.attr('data-value', new_time || time);
-            $(this_selector).trigger('change', [new_time || time]);
 
             if ($this.hasClass('clearable')) {
                 clearable($this);
             }
+
+            $(this_selector).trigger('change', [new_time || time]);
 
             return true;
         };
