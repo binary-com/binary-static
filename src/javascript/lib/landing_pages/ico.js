@@ -96,7 +96,7 @@ window.onload = function() {
 
     document.getElementsByClassName('howto-btn')[0].addEventListener('click', function(e) {
         e.preventDefault();
-        openLink(getDocumentUrl(language.toLowerCase()));
+        openLink(getHowToIcoDocumentUrl(language.toLowerCase()));
     });
 
     document.getElementById('token-btn').addEventListener('click', function(e) {
@@ -528,7 +528,7 @@ function openLink(link) {
     open_link.location = link;
 }
 
-function getDocumentUrl(lang = 'en') {
+function getHowToIcoDocumentUrl(lang = 'en') {
     return `https://ico_documents.binary.com/howto_ico${/^(ru|id|pt|vi)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }
 
