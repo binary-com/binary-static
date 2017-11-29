@@ -529,7 +529,7 @@ function openLink(link) {
 }
 
 function getDocumentUrl(lang = 'en') {
-    return `https://ico_documents.binary.com/howto_ico${/^(ru|id|pt)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+    return `https://ico_documents.binary.com/howto_ico${/^(ru|id|pt|vi)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }
 
 function getTokenRatingReportUrl(lang = 'en') {
