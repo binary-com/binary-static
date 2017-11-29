@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-22 21:26-0500\n"
+"PO-Revision-Date: 2017-11-29 01:50-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -6759,11 +6759,17 @@ msgstr "N.B. Notre site web génère des fichiers journaux qui enregistrent les 
 msgid "Please note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices, however these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push up or down prices). To avoid settling prices based on such artificial prices, it is %1's policy not to count weekend prices towards contract settlement values (except for the volatility indices, which are open during weekends)."
 msgstr "N.B. Les cotations du weekend ne sont pas prises en compte afin de permettre le règlement des contrats. Durant les weekends, les marchés du Forex génèrent occasionnellement des cotations. Cependant, celles-ci sont souvent artificielles (les opérateurs tirent parfois profit de l'illiquidité des marchés pendant les weekends pour faire fluctuer les cours à la hausse ou à la baisse). Pour éviter de baser les prix de règlement sur des cotations artificielles, la politique de %1 implique que les cotations du weekend ne soient pas prises en compte dans le calcul des valeurs de règlement des contrats (sauf dans le cas des indices de volatilité qui restent ouverts le weekend)."
 
+msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
+msgstr ""
+
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "Sachez que vous pouvez actualiser vos informations personnelles à tout moment en vous connectant à la section « Paramètres » de votre compte. Il est de votre responsabilité de veiller à ce que %1 soit informée sans délai de tout changement concernant vos informations personnelles."
 
 msgid "Please provide us with the following information:"
 msgstr "Veuillez nous fournir les informations suivantes:"
+
+msgid "Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission."
+msgstr ""
 
 msgid "Please read this notice carefully - it applies to all persons who view this webpage. Please note that the disclaimer set out below may be altered or updated, at any time in whole or in part at the sole discretion of Binary Group Ltd. (“Company”). You should read it in full each time you visit the site."
 msgstr "Veuillez lire cet avis avec attention - elle s’applique à toutes les personnes qui consultent cette page Web. Veuillez noter que l’avertissement ci-après peut-être être modifié ou mis à jour, à tout moment, en tout ou en partie, à la seule discrétion de Binary Group Ltd. (\"la Société\"). Vous devriez le lire en entier chaque fois que vous visitez le site."
@@ -6833,6 +6839,9 @@ msgstr "Veuillez définir la raison de l'ouverture de compte avant de procéder.
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Veuillez indiquer la périodicité souhaitée en minutes pour les avertissements de connexion"
+
+msgid "Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional."
+msgstr ""
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "Veuillez envoyer les informations listées ci-dessus à <a href='mailto:%1'>%1</a>."
@@ -9015,9 +9024,6 @@ msgstr "Cette fonction s'applique uniquement aux comptes des agents de paiement.
 msgid "This field is required."
 msgstr "Ce champ est requis."
 
-msgid "This is a %1Bitcoin Cash%2 (BCH) account. Please note that Bitcoin Cash is not the same as Bitcoin."
-msgstr "Il s’agit d’un compte de %1Bitcoin Cash%2 (BCH). Veuillez noter que Bitcoin Cash n’est pas la même chose que Bitcoin."
-
 msgid "This is a staging server - For testing purposes only"
 msgstr "Il s'agit d'un serveur intermédiaire, utilisé uniquement à des fins de test"
 
@@ -10562,6 +10568,9 @@ msgstr "Vous ne pouvez prétendre à aucune forme de compensation ou de rembours
 
 msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Vous n’êtes pas résident d’un pays faisant l'objet de restrictions comme l’Afghanistan ; la Bosnie-Herzégovine ; le Costa Rica ; n’importe quel pays de l’Union européenne ; la République Démocratique Populaire du Laos ; la Syrie ; l’Ouganda ; le Vanuatu ; le Yémen ; les É.-U. ; le Japon ; Hong Kong ; la Malaisie ; Malte ; l’Iran ; la Corée du Nord ; Jersey ; l’Irak ; Israël ; ou tout autre pays faisant l'objet de restrictions que la société peut décider d'ajouter à cette liste à tout moment et à sa seule discrétion ;"
+
+msgid "You are now using your %1Bitcoin Cash%2 account. Please fund your account in %1Bitcoin Cash%2, and not Bitcoin."
+msgstr ""
 
 msgid "You are over 18 years of age;"
 msgstr "Vous êtes âgé de plus de 18 ans;"
@@ -12998,69 +13007,6 @@ msgstr "{JAPANY ONLY}Touch Options"
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
 
-msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
-msgstr "Plate-forme de Trading en ligne pour les options binaires sur les Taux de Change, les Indices, les Matières premières et les Indices Intelligents"
-
-msgid "404"
-msgstr "404"
-
-msgid "Why Us"
-msgstr "Pourquoi nous ?"
-
-msgid "Regulation"
-msgstr "Réglementation"
-
-msgid "Endpoint"
-msgstr "Point terminal"
-
-msgid "Careers For Americans"
-msgstr "Carrière pour les Américains"
-
-msgid "Charity"
-msgstr "Association caritative"
-
-msgid "Company Profile"
-msgstr "Profil de la société"
-
-msgid "Job Details"
-msgstr "Informations sur le poste"
-
-msgid "Service Announcements"
-msgstr "Messages publics"
-
-msgid "Multi-asset Liquidity Solutions"
-msgstr "Solutions de liquidité multi-actifs"
-
-msgid "Open-Source Projects"
-msgstr "Projets open source"
-
-msgid "Multiple Accounts Manager"
-msgstr "Gestionnaire de comptes multiples"
-
-msgid "Get Paid for Pull Requests"
-msgstr "Soyez payé pour les demandes de tirage"
-
-msgid "Omnibus"
-msgstr "Omnibus"
-
-msgid "How to Trade Binary Options?"
-msgstr "Comment négocier les options binaires ?"
-
-msgid "What Are OTC Indices and Stocks?"
-msgstr "Présentation des indices et actions de gré à gré (OTC)"
-
-msgid "Types of Trades"
-msgstr "Types d'options"
-
-msgid "Why Trade with Binary.com"
-msgstr "Pourquoi choisir Binary.com ?"
-
-msgid "Contract Specifications"
-msgstr "Spécifications du contrat"
-
-msgid "MetaTrader Margin Policy"
-msgstr "Politique de marge MetaTrader"
-
 msgid "Payment Agent Deposit"
 msgstr "Dépôt à un Agent de Paiement"
 
@@ -13100,8 +13046,74 @@ msgstr "Acceptation des conditions générales"
 msgid "Account Limits"
 msgstr "Limites du Compte"
 
+msgid "Warning"
+msgstr "Avertissement"
+
+msgid "Endpoint"
+msgstr "Point terminal"
+
 msgid "Redirecting..."
 msgstr "Redirection..."
+
+msgid "404"
+msgstr "404"
+
+msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
+msgstr "Plate-forme de Trading en ligne pour les options binaires sur les Taux de Change, les Indices, les Matières premières et les Indices Intelligents"
+
+msgid "Why Us"
+msgstr "Pourquoi nous ?"
+
+msgid "Careers For Americans"
+msgstr "Carrière pour les Américains"
+
+msgid "Job Details"
+msgstr "Informations sur le poste"
+
+msgid "Charity"
+msgstr "Association caritative"
+
+msgid "Company Profile"
+msgstr "Profil de la société"
+
+msgid "Regulation"
+msgstr "Réglementation"
+
+msgid "Service Announcements"
+msgstr "Messages publics"
+
+msgid "Multi-asset Liquidity Solutions"
+msgstr "Solutions de liquidité multi-actifs"
+
+msgid "Multiple Accounts Manager"
+msgstr "Gestionnaire de comptes multiples"
+
+msgid "Omnibus"
+msgstr "Omnibus"
+
+msgid "Open-Source Projects"
+msgstr "Projets open source"
+
+msgid "Get Paid for Pull Requests"
+msgstr "Soyez payé pour les demandes de tirage"
+
+msgid "How to Trade Binary Options?"
+msgstr "Comment négocier les options binaires ?"
+
+msgid "What Are OTC Indices and Stocks?"
+msgstr "Présentation des indices et actions de gré à gré (OTC)"
+
+msgid "Types of Trades"
+msgstr "Types d'options"
+
+msgid "Why Trade with Binary.com"
+msgstr "Pourquoi choisir Binary.com ?"
+
+msgid "Contract Specifications"
+msgstr "Spécifications du contrat"
+
+msgid "MetaTrader Margin Policy"
+msgstr "Politique de marge MetaTrader"
 
 msgid "Initial Coin Offering"
 msgstr "Offre de Devises Initiale"

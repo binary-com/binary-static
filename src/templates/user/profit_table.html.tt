@@ -1,8 +1,0 @@
-<div id="profit-table-container">
-    <div class="page-title" id="profit-table-title">
-        <h1>[% l('Profit Table') %]</h1>
-        <div class="loading">[% PROCESS global/loading.html.tt %]</div>
-        <br>
-        <p class="notice-msg center-text invisible" id="error-msg"></p>
-    </div>
-</div>
