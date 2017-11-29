@@ -1,5 +1,5 @@
-[% PROCESS components/elements.html.tt %]
-[% PROCESS components/tabs.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
+[% PROCESS _common/components/tabs.html.tt %]
 
 [% BLOCK platform %]
 <div class="gr-5 gr-12-m gr-12-p">
@@ -12,15 +12,12 @@
         <p>[% text %]</p>
         [% IF url %]
         <p>
-            <a class="button" href="[% url %]"[% IF target %] target="[% target %]"[% END %]><span>[% button_text %]</span></a>
+            <a class="button" href="[% url %]"[% IF target %] target="[% target %]"[% END %][% IF url.search('^http') %] rel="noopener noreferrer"[% END %]><span>[% button_text %]</span></a>
         </p>
         [% END %]
-        [% IF app_store_url and google_play_url %]
+        [% IF google_play_url %]
             <div class="gr-row">
-                <a class="gr-5 gr-6-m" href="[% app_store_url %]" target="_blank">
-                    <div class="app-store-badge"></div>
-                </a>
-                <a class="gr-5 gr-6-m" href="[% google_play_url %]" target="_blank">
+                <a class="gr-5 gr-6-m" href="[% google_play_url %]" target="_blank" rel="noopener noreferrer">
                     <div class="google-play-badge"></div>
                 </a>
             </div>

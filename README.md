@@ -1,4 +1,4 @@
-Binary-Static
+Binary-Static 
 =============
 
 This repository contains the static HTML, Javascript, CSS, and images content of the [Binary.com](http://www.binary.com) website.
@@ -51,7 +51,7 @@ How to work with this project
 1. Register your application [here](https://developers.binary.com/applications/). This will give you the ability to redirect back to your github pages after login.
 Use `https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/logged_inws.html` for Redirect URL.
 
-2. In `src/javascript/config.js`: Replace the number `1` in `getAppId()` function with the `Application ID` of your registered application.
+2. In `src/javascript/config.js`: Insert the `Application ID` of your registered application in `user_app_id`.
   * **NOTE:** In order to avoid accidentally committing personal changes to this file, use `git update-index --assume-unchanged src/javascript/config.js`
 
 3. Run `grunt dev`
@@ -95,9 +95,10 @@ In order to remove the created folders from your gh-pages, you can use either:
 - To test changes made to templates, you need to re-compile them:
   - `grunt shell:compile_dev` to re-compile all templates.
   - `grunt shell:compile_dev --path=about-us` to re-compile only template(s) which serve about-us path in URL.
+- To fix eslint errors run `npm run eslint`
 
 
-## Release to Production
+## Release
 
 ```
 grunt release --staging=1|--production=1|--translations=1 [--cleanup] [--reset]
