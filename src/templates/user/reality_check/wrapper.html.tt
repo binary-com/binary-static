@@ -1,5 +1,0 @@
-<div id="reality_check_content" class="gr-padding-10 gr-gutter">
-    <h1>[% l("Reality Check") %]</h1>
-    [% content %]
-    [% PROCESS user/reality_check/form.html.tt %]
-</div>

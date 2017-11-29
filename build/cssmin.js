@@ -5,8 +5,19 @@ module.exports = {
         },
         files: [
             {
-                src: [global.dist + '/css/binary.css'],
-                dest: global.dist + '/css/binary.min.css',
+                src: [
+                    global.dist + '/css/common.css',
+                    process.cwd() + '/node_modules/binary-style/binary.css',
+                    process.cwd() + '/node_modules/binary-style/binary.more.css',
+                ],
+                dest: global.dist + '/css/common.min.css',
+            },
+            {
+                expand: true,
+                cwd   : global.dist + '/css',
+                src   : ['app.css', 'static.css'],
+                dest  : global.dist + '/css',
+                ext   : '.min.css',
             },
         ],
     },

@@ -1,5 +1,6 @@
 #!/bin/sh
 
+RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 WHITE='\033[1;37m'
@@ -14,12 +15,17 @@ if ! [ -x "$(command -v crowdin)" ]; then
     fi
 fi
 
+if [[ $(git config --get remote.origin.url) =~ (binary-com|binary-static-deployed)/binary-static ]]; then
+    echo ${RED}"  > ERROR: "${RESET}"remote 'origin' should be your fork."
+    exit 1
+fi
+
 function message {
     echo ${GREEN}"  >"${RESET} $1
 }
 
 function confirm {
-    read -p "$(echo "\n"${WHITE}$1${YELLOW}) " -n 1 -r &&
+    read -p "$(echo "\n${WHITE}$1 ${RESET}(y/n)${YELLOW}") " -n 1 -r &&
     echo "${RESET}"
 }
 
