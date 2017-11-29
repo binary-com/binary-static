@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-27 22:20-0500\n"
+"PO-Revision-Date: 2017-11-29 01:51-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -6114,9 +6114,6 @@ msgstr "注意"
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "注：2017年の数字は8月の中間決済からの予測を含みます"
 
-msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
-msgstr ""
-
 msgid "Note: If you decline to be treated as a professional, you can continue with the application to be treated as a retail client."
 msgstr "Note: If you decline to be treated as a professional, you can continue with the application to be treated as a retail client."
 
@@ -6799,7 +6796,7 @@ msgid "Please note that weekend quotes are ignored for the purpose of contract s
 msgstr "トレードを確定する目的で週末の価格が適用されないことをご理解下さい。週末にも外国為替市場にて価格変動が発生する場合がありますが、このような価格は恣意的に発生させられたものである（週末の市場硬直性から利益を得ようとするトレーダーが存在します。）ことが殆どですので、このような恣意的な価格に基づく価格設定を避けるために週末も開場しているボラティリティ指数を除き、%1では週末の価格をトレードの確定要素として採用することはありません。日本国内では週末にお取引はできません"
 
 msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
-msgstr ""
+msgstr "ご注意：現在お客さまは%1ビットコインキャッシュ%2口座を利用しています。ご口座への入金はビットコインではなく%1ビットコインキャッシュ%2のみとなっています。"
 
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "お客さまの個人情報はいつでも各種設定ページから変更して頂くことが可能です。お客さまの個人情報を適切、かつ継続的に%1に更新して頂くことはお客さまの義務になります。"
@@ -6808,7 +6805,7 @@ msgid "Please provide us with the following information:"
 msgstr "次の情報をご提供ください："
 
 msgid "Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission."
-msgstr ""
+msgstr "マイナンバーをご提出ください。税務局による納税者の識別を目的としています。この番号は免税対象に関わらずご提出頂く必要があります。2つ以上の地域または国に納税をされている場合、それぞれの納税者番号をご提出ください。納税者番号を提出いただけない場合は（例：お客さまの国で納税者番号を発行していないなど）、提出頂けない理由をカスタマーサポートまでご連絡ください。"
 
 msgid "Please read this notice carefully - it applies to all persons who view this webpage. Please note that the disclaimer set out below may be altered or updated, at any time in whole or in part at the sole discretion of Binary Group Ltd. (“Company”). You should read it in full each time you visit the site."
 msgstr "Please read this notice carefully - it applies to all persons who view this webpage. Please note that the disclaimer set out below may be altered or updated, at any time in whole or in part at the sole discretion of Binary Group Ltd. (“Company”). You should read it in full each time you visit the site."
@@ -6880,7 +6877,8 @@ msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "ご希望のリアリティチェック間隔を分単位で指定してください"
 
 msgid "Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional."
-msgstr ""
+msgstr "個人所得税を納める義務のある国を明示してください。ご注意：2つ以上の国に納税をされている場合、全ての国名を選択してください\n"
+"。納税に関して疑問がある場合は、税金や法律の専門家に相談されることをお勧めします。"
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "<a href='mailto:%1'>%1</a>まで上記の情報をご提出ください。"
@@ -9113,12 +9111,6 @@ msgstr "このポリシーは%1が提供する金融商品を扱う%1のリテ�
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 
-msgid "This account is disabled"
-msgstr ""
-
-msgid "This account is excluded until %1"
-msgstr ""
-
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "このボーナスは、新たなお客さまに限り有効です。すでにご口座をお持ちのお客さまには適用されません。新たなお客さまに限り当ボーナスが一度限り適用されます。このボーナスは１世帯あたり一回のみ適用されます。"
 
@@ -9198,7 +9190,7 @@ msgid "This symbol is not active. Please try another symbol."
 msgstr "このシンボルは現在ご利用いただけません。他のシンボルでお試しください。"
 
 msgid "This value analysis by an experienced investor, Nishant Sah studies the risk, benefits, and valuations of our token offering based on our past and projected growth."
-msgstr ""
+msgstr "経験ある投資家Nishant Sah氏によってこの値は分析されています。Nishant Sah氏は、リスク、利益そしてこれまでの当社のプロジエクトを基にしたトークンオファリングの評価などを研究してきました。"
 
 msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction"
 msgstr "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction"
@@ -9843,7 +9835,7 @@ msgid "View Lykke report"
 msgstr "Lykkeレポートを見る"
 
 msgid "View Nishant's report"
-msgstr ""
+msgstr "Nishantレポートをみる"
 
 msgid "View Statement"
 msgstr "取引履歴を表示する"
@@ -10710,7 +10702,7 @@ msgid "You are not resident in a restricted country such as Afghanistan; Bosnia 
 msgstr "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 
 msgid "You are now using your %1Bitcoin Cash%2 account. Please fund your account in %1Bitcoin Cash%2, and not Bitcoin."
-msgstr ""
+msgstr "現在お客さまは%1ビットコインキャッシュ%2口座を利用しています。ビットコインではなく%1ビットコインキャッシュ%2でご入金ください。"
 
 msgid "You are over 18 years of age;"
 msgstr "わたしは18歳以上です"
@@ -12353,19 +12345,19 @@ msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if 
 msgstr "２つのオプションを用い、バリア価格の高いバイナリーコールオプションとバリア価格の低いバイナリープットオプションを購入すれば、判定レートが２つのオプションのバリア価格で作られた価格帯の外となった場合に収益が得られ、判定レートが所定の価格帯の外であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができます。"
 
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "2017/11/10"
+msgstr "2017/11/30"
 
 msgid "{JAPAN ONLY}JSA_Date_2"
-msgstr "2017/10/30"
+msgstr "11/10/2017"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "取引概要　改定のお知らせ"
+msgstr "契約締結前交付書面の改定のお知らせ"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "2017年10月12日（木）付で取引制限設定に全顧客のペイアウト合計額を新設いたしました。<br>全顧客のペイアウト合計額　500万円　（新設）"
+msgstr "2017年11月29日付けで契約締結前交付書面を改定いたします。契約締結前交付書面を必ずご確認いただく必要がございます。<br>店頭通貨バイナリーオプション取引の概要と仕組みについて(P16)<br>当社の概要について"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
-msgstr "取引期間変更のお知らせ"
+msgstr "取引概要　改定のお知らせ"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
 msgstr "2017年10月30日（月）より、2時間と5時間の取引期間が変更（2時間15分が2時間、5時間15分が6時間に）されました。詳しくは、契約締結前交付書面をご確認いただきますようお願い申し上げます。<br>店頭通貨バイナリーオプション取引の概要と仕組みについて(P9)<br> 店頭バイナリーオプション取引概要（P38)"
@@ -13175,69 +13167,6 @@ msgstr "タッチオプション"
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "店頭バイナリーオプション取引約款"
 
-msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
-msgstr "FXバイナリーオプションオンライン取引"
-
-msgid "404"
-msgstr "404"
-
-msgid "Why Us"
-msgstr "サービス概要"
-
-msgid "Regulation"
-msgstr "規制"
-
-msgid "Endpoint"
-msgstr "ポイント"
-
-msgid "Careers For Americans"
-msgstr "採用情報（アメリカ出身の方）"
-
-msgid "Charity"
-msgstr "チャリティー"
-
-msgid "Company Profile"
-msgstr "会社概要"
-
-msgid "Job Details"
-msgstr "職務内容"
-
-msgid "Service Announcements"
-msgstr "サービス情報"
-
-msgid "Multi-asset Liquidity Solutions"
-msgstr "複数資産流動性ソリューション"
-
-msgid "Open-Source Projects"
-msgstr "オープンソースプロジェクト"
-
-msgid "Multiple Accounts Manager"
-msgstr "複数アカウントマネージャー"
-
-msgid "Get Paid for Pull Requests"
-msgstr "Get Paid for Pull Requests"
-
-msgid "Omnibus"
-msgstr "オムニバス"
-
-msgid "How to Trade Binary Options?"
-msgstr "バイナリーオプションの取引方法とは？"
-
-msgid "What Are OTC Indices and Stocks?"
-msgstr "店頭インデックス・店頭株とは？"
-
-msgid "Types of Trades"
-msgstr "トレードの種類"
-
-msgid "Why Trade with Binary.com"
-msgstr "Binary.com (バイナリードットコム)が選ばれる理由"
-
-msgid "Contract Specifications"
-msgstr "トレード詳細"
-
-msgid "MetaTrader Margin Policy"
-msgstr "MetaTrader証拠金取引ポリシー"
-
 msgid "Payment Agent Deposit"
 msgstr "決済サービスでのご入金"
 
@@ -13278,10 +13207,73 @@ msgid "Account Limits"
 msgstr "ご利用制限額"
 
 msgid "Warning"
-msgstr ""
+msgstr "警告"
+
+msgid "Endpoint"
+msgstr "ポイント"
 
 msgid "Redirecting..."
 msgstr "リダイレクト中…"
+
+msgid "404"
+msgstr "404"
+
+msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
+msgstr "FXバイナリーオプションオンライン取引"
+
+msgid "Why Us"
+msgstr "サービス概要"
+
+msgid "Careers For Americans"
+msgstr "採用情報（アメリカ出身の方）"
+
+msgid "Job Details"
+msgstr "職務内容"
+
+msgid "Charity"
+msgstr "チャリティー"
+
+msgid "Company Profile"
+msgstr "会社概要"
+
+msgid "Regulation"
+msgstr "規制"
+
+msgid "Service Announcements"
+msgstr "サービス情報"
+
+msgid "Multi-asset Liquidity Solutions"
+msgstr "複数資産流動性ソリューション"
+
+msgid "Multiple Accounts Manager"
+msgstr "複数アカウントマネージャー"
+
+msgid "Omnibus"
+msgstr "オムニバス"
+
+msgid "Open-Source Projects"
+msgstr "オープンソースプロジェクト"
+
+msgid "Get Paid for Pull Requests"
+msgstr "Get Paid for Pull Requests"
+
+msgid "How to Trade Binary Options?"
+msgstr "バイナリーオプションの取引方法とは？"
+
+msgid "What Are OTC Indices and Stocks?"
+msgstr "店頭インデックス・店頭株とは？"
+
+msgid "Types of Trades"
+msgstr "トレードの種類"
+
+msgid "Why Trade with Binary.com"
+msgstr "Binary.com (バイナリードットコム)が選ばれる理由"
+
+msgid "Contract Specifications"
+msgstr "トレード詳細"
+
+msgid "MetaTrader Margin Policy"
+msgstr "MetaTrader証拠金取引ポリシー"
 
 msgid "Initial Coin Offering"
 msgstr "イニシャル・コイン・オファリング（IPO）"
