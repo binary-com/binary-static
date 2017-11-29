@@ -407,12 +407,12 @@ const Durations = (() => {
         target.appendChild(fragment);
     };
 
-    const isNow = date_start => (date_start || document.getElementById('date_start').value) === 'now';
+    const isNow = date_start => (date_start ? date_start === 'now' : (!State.get('is_start_dates_displayed') || document.getElementById('date_start').value === 'now'));
 
     const isSameDay = () => {
         let date_start_val = document.getElementById('date_start').value;
         // if 'now' is selected, take first option's value
-        if (isNaN(+date_start_val)) {
+        if (!date_start_val || isNaN(+date_start_val)) {
             date_start_val = window.time;
         } else {
             date_start_val = moment.utc(+date_start_val * 1000);
@@ -438,8 +438,7 @@ const Durations = (() => {
             Barriers.display();
             $(expiry_time).val('').attr('data-value', '');
             Defaults.set('expiry_time', '');
-            processTradingTimesRequest(end_date_iso);
-            return 1;
+            return processTradingTimesRequest(end_date_iso);
         } // else
         return showExpiryTime(expiry_time, expiry_time_row);
     };
@@ -507,7 +506,7 @@ const Durations = (() => {
     let old_date;
     const processTradingTimesRequest = (date) => {
         if (old_date === date) {
-            return;
+            return false;
         }
         old_date            = date;
         const trading_times = commonIndependent.getTradingTimes();
@@ -520,6 +519,7 @@ const Durations = (() => {
                 Price.processPriceRequest();
             });
         }
+        return true;
     };
 
     const validateMinDurationAmount = () => {
