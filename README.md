@@ -1,4 +1,4 @@
-Binary-Static
+Binary-Static 
 =============
 
 This repository contains the static HTML, Javascript, CSS, and images content of the [Binary.com](http://www.binary.com) website.
@@ -26,9 +26,11 @@ sudo carton install
 ```
 
 #### Note: 
-You need to have the latest `node` & `npm` versions 
+You need to have:
 
-Make sure to use `Perl 5.18.2`
+- The latest version of `node`
+- Version 4.x.x of `npm` (`npm install npm@4 -g`)
+- `Perl v5.18.2`
 
 In Mac systems, the safest way to install an old version of Perl is: 
 
@@ -46,23 +48,10 @@ How to work with this project
 
 ### Deploy to your gh-pages for the first time
 
-1. You need to have your own application registered at Binary.com because it should redirect client to your github pages after login. There is no UI for it yet, so you can send the following request for now (change *YOUR_APP_NAME* and *YOUR_GITHUB_USERNAME* as well):
+1. Register your application [here](https://developers.binary.com/applications/). This will give you the ability to redirect back to your github pages after login.
+Use `https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/logged_inws.html` for Redirect URL.
 
-    ```json
-    {
-      "app_register": 1,
-      "name": "YOUR_APP_NAME",
-      "scopes": [
-        "read",
-        "admin",
-        "trade",
-        "payments"
-      ],
-      "redirect_uri": "https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/logged_inws.html"
-    }
-    ```
-
-2. Put the `app_id` returned by WebSocket in `src/javascript/config.js`
+2. In `src/javascript/config.js`: Insert the `Application ID` of your registered application in `user_app_id`.
   * **NOTE:** In order to avoid accidentally committing personal changes to this file, use `git update-index --assume-unchanged src/javascript/config.js`
 
 3. Run `grunt dev`
@@ -90,9 +79,15 @@ grunt dev --path=about-us
 
 
 ### Using sub-folders
-There are times that you're working on various branches at the same time, and you want to deploy/test each branch separately on your gh-pages, you can simply use `--branch=branchname` for grunt commands:
+There are times that you are working on various branches at the same time, and you want to deploy/test each branch separately on your gh-pages, you can simply use `--branch=branchname` for grunt commands:
 - `grunt dev --branch=branchname`
 This will deploy your changes to a sub-folder named: `br_branchname` and it can be browsed at: https://YOUR_GITHUB_USERNAME.github.io/binary-static/br_branchname/
+
+In order to remove the created folders from your gh-pages, you can use either:
+- `grunt dev --cleanup`: removes all `br_*` folders and deploys to the root folder.
+
+  or
+- `grunt shell:remove_folder --folder=br_branchname1,br_branchname2,...`: only removes the specified folder(s) from your gh-pages.
 
 ### Preview on your local machine
 - To preview your changes locally, run `sudo grunt serve`
@@ -100,19 +95,23 @@ This will deploy your changes to a sub-folder named: `br_branchname` and it can 
 - To test changes made to templates, you need to re-compile them:
   - `grunt shell:compile_dev` to re-compile all templates.
   - `grunt shell:compile_dev --path=about-us` to re-compile only template(s) which serve about-us path in URL.
+- To fix eslint errors run `npm run eslint`
 
 
-## Release to Production
+## Release
 
 ```
-grunt release --staging=1|--production=1 [--cleanup]
+grunt release --staging=1|--production=1|--translations=1 [--cleanup] [--reset]
 ```
 (The value is needed when more than one option is used)
 
-###Parameters:
-- `--staging` or `--production` (mandatory)
+### Parameters:
+- `--staging` or `--production` or `--translations` (mandatory)
   - In order to prevent accidentally releasing to the wrong target, it is mandatory to provide one of these parameters.
   - Your remote origin will be checked to be the correct target of the given parameter.
+  - Your current branch will be checked to be the correct branch of the given parameter.
 - `--cleanup` [optional]
   - Create CNAME file with proper value according to remote origin
   - Deploy to gh-pages with the option `add: false`
+- `--reset` [optional]
+  - Removes all commits from `gh-pages` branch before release (staging only)

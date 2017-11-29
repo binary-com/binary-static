@@ -7,10 +7,10 @@ module.exports = function (grunt){
         livereload: {
             options: {
                 hostname: '127.0.0.1',
-                port: 443,
+                port    : 443,
                 protocol: 'https',
-                base: 'dist',
-                open: 'https://localhost.localdomain',
+                base    : 'dist',
+                open    : 'https://localhost.localdomain',
                 middleware: function (connect, options) {
                     var middlewares = [
                         require('connect-livereload')()
@@ -38,12 +38,12 @@ module.exports = function (grunt){
         },
         all: {
             options: {
-                hostname: '127.0.0.1',
-                port: 443,
-                protocol: 'https',
-                base: 'dist',
+                hostname : '127.0.0.1',
+                port     : 443,
+                protocol : 'https',
+                base     : 'dist',
                 keepalive: true,
-                open: 'https://localhost.localdomain',
+                open     : 'https://localhost.localdomain',
                 middleware: function (connect, options) {
                     var middlewares = [];
 

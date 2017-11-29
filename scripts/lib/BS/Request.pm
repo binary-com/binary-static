@@ -22,12 +22,16 @@ sub url_for {
 
     # alias
     $url = '/home' if $url eq '' or $url eq '/';
+    # Converts url of form /abc/../def/xyz to /def/xyz
+    while ($url =~ /\.\.\//) {
+        $url =~ s/\w+\/\.\.\///;
+    }
 
     %HTML_URLS = map { '/' . $_ => 1 } @HTML_URLS unless keys %HTML_URLS;
     my $root_url = root_url();
     $root_url =~ s{/$}{};
 
-    if ($url =~ m{^/?(images|css|scripts|download)/}) {
+    if ($url =~ m{^/?(images|js|css|scripts|download)/}) {
         $url =~ s/^\///;
         return Mojo::URL->new(root_url() . $url);
     }

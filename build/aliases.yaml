@@ -4,11 +4,11 @@ css:
   - 'cssmin'
 
 js:
-  - 'webpack'
+  - 'webpack:build'
+  - 'babel:landing_pages'
 
 test:
   - 'stylelint'
-  - 'jshint'
   - 'eslint'
   - 'mochaTest'
 
@@ -19,24 +19,27 @@ default:
   - 'copy'
 
 dev:
+  - 'shell:check_origin'
   - 'clean'
   - 'default'
   - 'shell:compile_dev'
   - 'gh-pages:main'
 
 deploy:
+  - 'shell:check_origin'
   - 'default'
   - 'gh-pages:main'
 
 serve:
-  - 'webpack'
   - 'connect:livereload'
-  - 'watch'
+  - 'concurrent:serve'
 
 livereload:
-  - 'default'
+  - 'test'
+  - 'css'
+  - 'copy'
   - 'connect:livereload'
-  - 'watch'
+  - 'concurrent:serve'
 
 custom:
   - 'clean'
@@ -46,9 +49,11 @@ custom:
 
 release:
   - 'shell:check_origin'
+  - 'shell:check_branch'
   - 'clean'
   - 'default'
   - 'shell:compile_production'
+  - 'shell:reset_ghpages'
   - 'shell:make_cname'
   - 'gh-pages:main'
   - 'shell:trigger_tests'

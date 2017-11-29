@@ -71,11 +71,12 @@ foreach my $m (@m) {
     my $layout   = $m->[2];
     my $title    = $m->[3];
     my $excludes = $m->[4];
+    my $only_ja  = $excludes and $excludes =~ /^NOT-ja,en$/;
 
     $index++;
 
     foreach my $lang (@langs) {
-        if ($excludes) {
+        if ($excludes and uc $lang ne 'ACH') { # Do not exclude if it's in-context translation (ach)
             if ($excludes =~ /^NOT-/) {
                 next if ($excludes !~ $lang); # exclude all languages except this
             } else {
@@ -95,17 +96,21 @@ foreach my $m (@m) {
         my $current_route = $save_as;
         $current_route =~ s{^(.+)/}{}sg;
 
+        my $section = (split /\//, $tpl_path)[0];
+
         my %stash = (
             website_name    => $request->website->display_name,
             browser_title   => $title ? localize($title).' | ' : '',
             request         => $request,
+            layout          => $layout,
+            section         => $section,
             language        => uc $lang,
             root_url        => root_url(),
+            static_hash     => get_static_hash(),
             current_path    => $save_as,
             current_route   => $current_route,
+            only_ja         => $only_ja,
             affiliate_email => 'affiliates@binary.com',
-            full_width      => $layout && $layout eq 'full_width',
-            get_started     => $layout && $layout eq 'get_started',
             japan_docs_url  => 'https://japan-docs.binary.com'
         );
 
@@ -118,7 +123,8 @@ foreach my $m (@m) {
         my $output = tt2_handle($file, %stash);
 
         ## pjax is using layout/$layout/content
-        my $layout_file = "global/layout.html.tt";
+        my $layout_file = "$section/_layout/layout.html.tt";
+        $layout_file = 'app/_layout/layout.html.tt' unless (-e "$root_path/src/templates/$layout_file");
         $stash{is_pjax_request} = 1;
         $stash{content}         = $output;
         my $layout_output = tt2_handle($layout_file, %stash);
@@ -156,8 +162,8 @@ sub tt2_handle {
 
     my $request = $stash{request};
 
-    $stash{javascript}       = js_config();
-    $stash{css_files}        = [css_files()];
+    $stash{javascript}       = js_config($dist_path);
+    $stash{css_files}        = [css_files($stash{section})];
     $stash{iso639a_language} = $request->language;
     $stash{lang}             = $request->language;
     $stash{menu}             = menu();

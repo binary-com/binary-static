@@ -8,23 +8,24 @@
         'use strict';
         return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
     }
+
+    var langs = {
+        'ar': 'dz|bh|km|dj|eg|iq|jo|kw|lb|ly|mr|ma|om|ps|qa|sa|so|sd|sy|tn|ae|ye',
+        'de': 'de|at|li',
+        'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
+        'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
+        'id': 'id',
+        'it': 'it',
+        'ja': 'jp',
+        'pl': 'po',
+        'pt': 'br|mz|ao|pt|gw|pg|cv|st',
+        'ru': 'ru|ua|by|kz',
+        'th': 'th',
+        'vi': 'vn',
+        'zh_tw': 'tw|mo',
+        'zh_cn': 'cn|sg',
+    };
     function getLanguage(country) {
-        var langs = {
-            'ar': 'dz|bh|km|dj|eg|iq|jo|kw|lb|ly|mr|ma|om|ps|qa|sa|so|sd|sy|tn|ae|ye',
-            'de': 'de|at|li',
-            'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
-            'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
-            'id': 'id',
-            'it': 'it',
-            'ja': 'jp',
-            'pl': 'po',
-            'pt': 'br|mz|ao|pt|gw|pg|cv|st',
-            'ru': 'ru|ua|by|kz',
-            'th': 'th',
-            'vi': 'vn',
-            'zh_tw': 'tw|mo',
-            'zh_cn': 'cn|sg',
-        };
         var conLang = 'en';
         if (country) {
             var keys = Object.keys(langs);
@@ -46,12 +47,40 @@
             origin;
     }
 
+    const all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
     function redirect() {
-        window.location = getRoot() + '/' + (lang || 'en').toLowerCase() + '/404.html';
+        var alternative_pages = ['home', 'why-us', 'tour', 'terms-and-conditions', 'signup', 'get-started'];
+        var redirect_to;
+        var alt_regex = new RegExp('(' + alternative_pages.map(function(page) { return page + '.html|' + page + '-jp.html' }).join('|') + ')', 'i');
+        if (alt_regex.test(href)) {
+            href = href.replace(alt_regex, function(match) {
+                if (/-jp/.test(match) && !/ja/i.test(lang)) {
+                    redirect_to = match.replace(/-jp/i, '');
+                } else if (!/-jp/.test(match) && /ja/i.test(lang)) {
+                    redirect_to = match.replace(/\.html/i, '-jp.html');
+                }
+                return redirect_to || match;
+            });
+        }
+
+        // if language is wrong, we need to rebuild the url
+        var lang_regex = new RegExp('/(' + all_languages.join('|') + ')/', 'i');
+        if (!lang_regex.test(href)) {
+            redirect_to = redirect_to || '404';
+            href = getRoot() + '/' + lang.toLowerCase() + '/' + redirect_to.replace(/\.html/i, '') + '.html';
+        }
+
+        // if not alternate page, redirect to 404 page
+        if (!redirect_to) {
+            href = href.replace(new RegExp('(/' + lang + '/).*', 'i'), '$1404.html');
+        }
+
+        window.location = href;
     }
 
-    var lang = getCookieItem('language');
-    if (lang) {
+    var href = window.location.href;
+    var lang = href.split('/').slice(3).find(function(language) { return all_languages.indexOf(language.toLowerCase()) > -1 }) || getCookieItem('language');
+    if (lang && all_languages.indexOf(lang.toLowerCase()) > -1) {
         redirect();
     } else {
         var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');

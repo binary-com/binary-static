@@ -7,17 +7,17 @@ module.exports = function (grunt) {
                 branch : 'gh-pages',
                 message: global.release_target ? 'Release to ' + global.release_target : 'Auto-generated commit',
             },
-            src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '!' + global.branch_prefix + '*/**']
+            src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '!' + (global.branch_prefix || 'br_') + '*/**']
         },
         trigger_tests: {
             options: {
                 add    : true,
                 base   : 'dist',
                 branch : 'master',
-                repo   : 'git@github.com:binary-com/binary-static-ci.git',
+                repo   : 'git@github.com:binary-com/robot-framework.git',
                 message: 'Trigger tests',
             },
-            src: 'version',
+            src: grunt.option('staging') ? 'version' : '',
         },
     }
 };
