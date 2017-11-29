@@ -72,10 +72,17 @@ module.exports = function (grunt) {
                     if(!err) {
                         var origin = stdout.replace('\n', '');
                         grunt.log.ok(`Remote origin: ${origin}`);
-                        if (!global.release_target) {
-                            grunt.fail.fatal(error_missing_target);
-                        } else if (origin !== global.release_info.origin) {
-                            grunt.fail.fatal(`Your remote origin does not match the ${global.release_target.toUpperCase()} repository.`);
+                        if (grunt.cli.tasks[0] === 'release') {
+                            if (!global.release_target) {
+                                grunt.fail.fatal(error_missing_target);
+                            } else if (origin !== global.release_info.origin) {
+                                grunt.fail.fatal(`Your remote origin does not match the ${global.release_target.toUpperCase()} repository.`);
+                            }
+                        } else {
+                            // origin cannot be one of release targets, when it's not a release
+                            if (Object.keys(global.release_config).some(target => global.release_config[target].origin === origin)) {
+                                grunt.fail.fatal(`Your remote origin should be your fork.`);
+                            }
                         }
                     }
                     cb();

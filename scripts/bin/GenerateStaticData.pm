@@ -38,8 +38,7 @@ sub _texts {
         push @texts, localize('Sorry, an error occurred while processing your request.');
         push @texts, localize('Please <a href="[_1]">log in</a> to view this page.');
         # top bar
-        push @texts, localize('Upgrade to a Real Account');
-        push @texts, localize('Upgrade to a Financial Account');
+        push @texts, localize('Open a Real Account');
         push @texts, localize('Open a Financial Account');
         # menu items
         push @texts, localize('Trade');
@@ -52,6 +51,7 @@ sub _texts {
         push @texts, localize('Trading Times');
         push @texts, localize('Shop');
         push @texts, localize('Payment Agent');
+        push @texts, localize('ICO Bids');
         # account drop down
         push @texts, localize('Virtual Account');
         push @texts, localize('Real Account');
@@ -216,6 +216,7 @@ sub _texts {
         push @texts, localize('Invalid email address');
         push @texts, localize('Thank you for signing up! Please check your email to complete the registration process.');
         #strings for real account opening page
+        push @texts, localize('ICO Account Opening');
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
         push @texts, localize('Minimum of [_1] characters required.');
@@ -253,11 +254,11 @@ sub _texts {
         push @texts, localize('Delete');
         push @texts, localize('Are you sure that you want to permanently delete token');
         push @texts, localize('Please select at least one scope');
-        #strings for Walkthrough Guide
-        push @texts, localize('Walkthrough Guide');
+        #strings for Guide
+        push @texts, localize('Guide');
         push @texts, localize('Finish');
         push @texts, localize('Step');
-        #strings for Walkthrough Guide -> trading page
+        #strings for Guide -> trading page
         push @texts, localize('Select your market');
         push @texts, localize('Select your underlying asset');
         push @texts, localize('Select your trade type');
@@ -360,6 +361,7 @@ sub _texts {
         #strings for paymentagent
         push @texts, localize('Amount');
         push @texts, localize('Deposit');
+        push @texts, localize('Withdrawal');
         push @texts, localize('Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.');
         #strings for iphistory
         push @texts, localize('Date and Time');
@@ -480,6 +482,7 @@ sub _texts {
         push @texts, localize('Hint: it would take approximately [_1][_2] to crack this password.');
         push @texts, localize('thousand');
         push @texts, localize('million');
+        push @texts, localize('Should start with letter or number, and may contain hyphen and underscore.');
 
         # strings for metatrader
         push @texts, localize('Congratulations! Your [_1] Account has been created.');
@@ -518,6 +521,7 @@ sub _texts {
         push @texts, localize('Connection error: Please check your internet connection.');
         push @texts, localize('You have reached the rate limit of requests per second. Please try later.');
         push @texts, localize('[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.');
+        push @texts, localize('We are reviewing your documents. For more details [_1]contact us[_2].');
         # browser-update message
         push @texts, localize('Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]');
 
@@ -528,7 +532,14 @@ sub _texts {
         push @texts, localize('Refund Bid');
         push @texts, localize('Claim Tokens');
         push @texts, localize('Ended');
-        push @texts, localize('The ICO auction is already closed.');
+        push @texts, localize('The ICO is currently unavailable.');
+        push @texts, localize('Please select a value for account_opening_reason.');
+        push @texts, localize('Minimum bid');
+
+        # binaryico histogram chart
+        push @texts, localize('Final Price');
+        push @texts, localize('Total Bids');
+        push @texts, localize('Price Band');
 
         # strings for accounts page
         push @texts, localize('Create');
@@ -541,6 +552,7 @@ sub _texts {
         push @texts, localize('Create Account');
         push @texts, localize('Accounts List');
         push @texts, localize('[_1] Account');
+        push @texts, localize('None');
         push @texts, localize('Investment');
         push @texts, localize('Gaming');
         push @texts, localize('Virtual');
@@ -553,6 +565,20 @@ sub _texts {
         push @texts, localize('Ether');
         push @texts, localize('Ether Classic');
         push @texts, localize('Litecoin');
+
+        # Authentication errors
+        push @texts, localize('Invalid document format: "[_1]"');
+        push @texts, localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB');
+        push @texts, localize('ID number is required for [_1].');
+        push @texts, localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number.');
+        push @texts, localize('Expiry date is required for [_1].');
+        push @texts, localize('Passport');
+        push @texts, localize('ID card');
+        push @texts, localize('Driving licence');
+        push @texts, localize('Front Side');
+        push @texts, localize('Reverse Side');
+        push @texts, localize('Front and reverse side photos of [_1] are required.');
+        push @texts, localize('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

@@ -1,0 +1,14 @@
+#end_note {
+    line-height: 25px;
+    background: $COLOR_RED;
+    font-size: $FONT_SIZE_XS;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+
+    &, & a {
+        color: $COLOR_WHITE;
+    }
+}

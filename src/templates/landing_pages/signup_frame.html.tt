@@ -19,9 +19,9 @@
     <script src="[% request.url_for('js/landing_pages/signup_frame.js') _ '?' _ static_hash %]"></script>
 </head>
 <body>
-    [% PROCESS global/gtm.html.tt %]
+    [% PROCESS _common/includes/gtm.html.tt %]
     <div class="home-content">
-        [% WRAPPER global/form_verify_email.html.tt class='secondary-bg-color' dark_button=1 text=l('Create Free Account') %]
+        [% WRAPPER _common/includes/form_verify_email.html.tt class='secondary-bg-color' dark_button=1 text=l('Create Free Account') %]
             <div class="invisible" id="success">
                 <div class="gr-padding-10 center-text hint gr-12 align-self-center">
                     [% l('Thank you for signing up! Please check your email to complete the registration process.') %]
