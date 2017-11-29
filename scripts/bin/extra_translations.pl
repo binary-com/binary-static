@@ -5,7 +5,7 @@ package ExtraTranslator;
 use IO::File;
 use Locale::Maketext::Extract;
 
-my $pot_filename = '../src/config/locales/messages.pot';
+my $pot_filename = '../src/translations/messages.pot';
 die "Unable to open $pot_filename for writing" if (not -w $pot_filename);
 
 my @file_container = get_file_container();

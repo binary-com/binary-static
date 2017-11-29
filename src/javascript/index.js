@@ -8,18 +8,22 @@ window.$ = window.jQuery = require('jquery');
 
 require('babel-polyfill');
 require('promise-polyfill');
+require('./_common/lib/polyfills/nodelist.foreach');
+
+require('binary-style');
+require('binary-style/binary.more');
 
 // created for handling global onclick
-exportAllFunctions(require('./binary/common_functions/attach_dom/handle_click'));
+exportAllFunctions(require('./app/common/attach_dom/handle_click'));
 // used by gtm to update page after a new release
-exportAllFunctions(require('./binary/common_functions/check_new_release'));
+exportAllFunctions(require('./_common/check_new_release'));
 
 require('event-source-polyfill');
-require('./lib/jquery.sparkline.js');
-require('./lib/plugins');
+require('./_common/lib/jquery.sparkline.js');
+require('./_common/lib/plugins');
 require('jquery.scrollto');
 
-const BinaryLoader = require('./binary/base/binary_loader');
+const BinaryLoader = require('./app/base/binary_loader');
 
 $(window).on('load', BinaryLoader.init);
 $(window).on('pageshow', (e) => { // Safari doesn't fire load event when using back button

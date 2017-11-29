@@ -63,11 +63,6 @@ sub all_languages {
     return $BRANCH eq 'translations' ? ('ACH') : ('EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW');
 }
 
-sub rtl_languages {
-#    return ('AR');
-    return ();
-}
-
 ## url_for
 sub root_url {
     return '/'.(is_dev() ? 'binary-static/' : '').($BRANCH ? $BRANCH.'/' : '');
@@ -113,25 +108,19 @@ our $static_hash = join('', map{('a'..'z',0..9)[rand 36]} 0..7);
 sub get_static_hash { return $static_hash; }
 sub set_static_hash { $static_hash = shift; }
 
+sub sections {
+    return ('app', 'static');
+}
+
 ## css/js/menu
 sub css_files {
+    my $section = shift;
     my @css;
 
-    # if (is_dev()) {
-    #     if (grep { $_ eq uc $LANG } rtl_languages()) {
-    #         push @css, root_url() . "css/binary_rtl.css?$static_hash";
-    #     } else {
-    #         push @css, root_url() . "css/binary.css?$static_hash";
-    #     }
-    # } else {
-    if (grep { $_ eq uc $LANG } rtl_languages()) {
-        push @css, root_url() . "css/binary_rtl.min.css?$static_hash";
-    } else {
-        push @css, root_url() . "css/binary.min.css?$static_hash";
-    }
+    push @css, root_url() . "css/common.min.css?$static_hash";
 
-    # Binary-style
-    push @css, "https://style.binary.com/binary.css?$static_hash";
+    push @css, root_url() . "css/$_.min.css?$static_hash" for sections(); # TODO: replace with next line for split the release process
+    # push @css, root_url() . "css/$section.min.css?$static_hash" if (grep { $_ eq $section } sections());
 
     return @css;
 }
@@ -152,9 +141,6 @@ sub js_config {
         push @libs, root_url . "js/binary.min.js?$static_hash";
     }
 
-    # Binary-style
-    push @libs, "https://style.binary.com/binary.js?$static_hash";
-
     return {
         libs => \@libs,
     };
@@ -170,7 +156,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuTrading',
-        class      => 'ja-hide gr-hide-m gr-hide-p',
+        class      => 'ja-hide gr-hide-m gr-hide-p ico-only-hide',
         url        => url_for('/trading'),
         text       => localize('Trade'),
         };
@@ -189,7 +175,7 @@ sub menu {
         id         => 'topMenuPortfolio',
         url        => url_for('/user/portfoliows'),
         text       => localize('Portfolio'),
-        class      => 'client_logged_in invisible',
+        class      => 'client_logged_in invisible ico-only-hide',
         };
 
     push @menu,
@@ -197,7 +183,7 @@ sub menu {
         id         => 'topMenuProfitTable',
         url        => url_for('/user/profit_tablews'),
         text       => localize('Profit Table'),
-        class      => 'client_logged_in invisible',
+        class      => 'client_logged_in invisible ico-only-hide',
         };
 
     push @menu,
@@ -221,6 +207,7 @@ sub menu {
         id         => 'topMenuResources',
         url        => url_for('/resources'),
         text       => localize('Resources'),
+        class      => 'client_logged_out client_logged_in invisible ico-only-hide'
     };
 
     my $asset_index_ref = {
@@ -242,7 +229,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuShop',
-        class      => 'ja-hide',
+        class      => 'ja-hide ico-only-hide',
         url        => 'https://shop.binary.com',
         text       => localize('Shop'),
         target     => '_blank'
@@ -257,6 +244,15 @@ sub menu {
         };
 
     # push @{$menu}, $self->_main_menu_trading();
+
+    # Link to ico-subscribe, ICO Bids.
+    push @menu,
+        {
+        id         => 'topMenuIcoBids',
+        class      => 'invisible ico-only-show',
+        url        => url_for('/user/ico-subscribe'),
+        text       => localize('ICO Bids'),
+        };
 
     return \@menu;
 }

@@ -5,6 +5,7 @@ css:
 
 js:
   - 'webpack:build'
+  - 'babel:landing_pages'
 
 test:
   - 'stylelint'
@@ -18,12 +19,14 @@ default:
   - 'copy'
 
 dev:
+  - 'shell:check_origin'
   - 'clean'
   - 'default'
   - 'shell:compile_dev'
   - 'gh-pages:main'
 
 deploy:
+  - 'shell:check_origin'
   - 'default'
   - 'gh-pages:main'
 
