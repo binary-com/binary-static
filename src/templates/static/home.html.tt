@@ -69,8 +69,8 @@
     </div>
 
     <div class="gr-row gr-row-align-center">
-        <div class="gr-3 gr-12-m gr-6-p"><img class="responsive" src="[% request.url_for('images/pages/home/academy-icon.svg') %]"/></div>
-        <div class="gr-4 gr-12-m gr-6-p">
+        <div class="gr-2 gr-12-m gr-6-p"><img class="responsive" src="[% request.url_for('images/pages/home/academy-icon.svg') %]"/></div>
+        <div class="gr-3 gr-12-m gr-6-p">
             <ul class="checked">
                 <li>[% l("Free webinars") %]</li>
                 <li>[% l("Free daily market report") %]</li>

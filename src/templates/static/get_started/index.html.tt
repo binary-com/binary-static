@@ -1,7 +1,8 @@
 [% BLOCK box %]
 <div class="gr-row">
+    <div class="gr-1"></div>
     [% FOREACH box IN boxes %]
-    <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+    <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
             <a href="[% request.url_for('/get-started/' _ box.id) %]">
                 <div id="[% box.id %]"></div>
@@ -11,6 +12,7 @@
         </div>
     </div>
     [% END %]
+    <div class="gr-1"></div>
 </div>
 [% END %]
 
