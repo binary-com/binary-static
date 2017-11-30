@@ -163,11 +163,7 @@ const applyToAllElements = (selector, funcToRun, func_selector, el_parent) => {
  * @param {Element} el      : element to check
  * @param {String}  selector: selector to check against, e.g. '.class', '#id', 'tag', or a combination of them
  */
-const isMatch = (el, selector) => {
-    const div = document.createElement('div');
-    div.innerHTML = el.outerHTML;
-    return !!div.querySelector(selector);
-};
+const isMatch = (el, selector) => !!(el.parentNode && el.parentNode.querySelector(selector));
 
 /**
  * Returns the first parent element that matches the selector (including el itself)
