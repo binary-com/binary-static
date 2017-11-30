@@ -128,6 +128,13 @@ sub all_pages {
         ['get-started/what-is-binary-trading', 'static/get_started/what_is_binary_trading', 'get_started', 'Why Choose Binary Trading?',       'ja'],
         ['get-started/why-trade-with-us',      'static/get_started/why_trade_with_us',      'get_started', 'Why Trade with Binary.com',        'ja'],
 
+        ['get-started-beta',                  'static/get_started_beta/index',            'default', 'Get Started',      'ja'],
+        ['get-started-beta/binary-options',   'static/get_started_beta/binary_options',   'default', 'Binary Options',   'ja'],
+        ['get-started-beta/cfds',             'static/get_started_beta/cfds',             'default', 'CFDs',             'ja'],
+        ['get-started-beta/cryptocurrencies', 'static/get_started_beta/cryptocurrencies', 'default', 'Cryptocurrencies', 'ja'],
+        ['get-started-beta/metals',           'static/get_started_beta/metals',           'default', 'Metals',           'ja'],
+        ['get-started-beta/forex',            'static/get_started_beta/forex',            'default', 'Forex',            'ja'],
+
         ['get-started-jp',                     'static/japan/get_started',                  'default',     'Get Started',                      'NOT-ja,en'],
 
         ['metatrader/contract-specifications', 'static/metatrader/contract_specifications', 'default',     'Contract Specifications'],
