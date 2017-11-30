@@ -158,14 +158,6 @@ const applyToAllElements = (selector, funcToRun, func_selector, el_parent) => {
 };
 
 /**
- * Checks if the element matches the selector - equivalent to jquery is()
- *
- * @param {Element} el      : element to check
- * @param {String}  selector: selector to check against, e.g. '.class', '#id', 'tag', or a combination of them
- */
-const isMatch = (el, selector) => !!(el.parentNode && el.parentNode.querySelector(selector));
-
-/**
  * Returns the first parent element that matches the selector (including el itself)
  *
  * @param {Element} el      : element to start looking for parent
@@ -173,7 +165,7 @@ const isMatch = (el, selector) => !!(el.parentNode && el.parentNode.querySelecto
  */
 const findParent = (el, selector) => {
     if (el && el.nodeName !== 'BODY') {
-        return isMatch(el, selector) ? el : findParent(el.parentNode, selector);
+        return el.matches(selector) ? el : findParent(el.parentNode, selector);
     }
     return null;
 };
