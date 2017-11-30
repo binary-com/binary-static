@@ -68,8 +68,10 @@
             [% INCLUDE column_md header=l("Where you can go")     paragraph=l("Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.") %]
             [% INCLUDE column_md header=l("More benefits")        paragraph=l("We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, Malaysia, or Japan.") %]
 
-            [% INCLUDE fill_box image='images/pages/careers/blog.svg' href='https://blog.binary.com' center=1 padding='9'
-                text=l("Read our blog for the stories and ideas that inspire us") target='_blank' %]
+            [% INCLUDE fill_box image='images/pages/careers/bb-icon.svg' href='https://blog.binary.com' padding='6'
+                text=l("Read the Binary.com company blog") target='_blank' %]
+            [% INCLUDE fill_box image='images/pages/careers/tb-icon.svg' href='https://tech.binary.com' padding='6'
+                text=l("Read the Binary.com tech blog") target='_blank' %]
         </div>
     </div>
 
