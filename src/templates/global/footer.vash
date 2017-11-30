@@ -1,6 +1,19 @@
-@html.include('./src/components/elements.vash')
+@html.include('./src/templates/components/elements.vash')
 
 @{
+    const regulatory_text =  html.rawL(
+        "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - [_1]view license[_2]. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - [_3]view license[_2], and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.",
+        "<a href='https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172' target='_blank' rel='noopener noreferrer'>",
+        "</a>",
+        "<a href='https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495' target='_blank' rel='noopener noreferrer'>"
+    )
+
+    const gambling_text = html.rawL(
+        `Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about [_1]Responsible Trading[_2].`,
+        '<a href="' + html.url_for('responsible-trading') + '">',
+        `</a>`
+    )
+
     const footer_column = ({header, items}) => {
         <div class="gr-4">
             <h4 class="secondary-color"><strong>@header</strong></h4>
@@ -27,9 +40,9 @@
                             <div class="gr-row">
                                 @footer_column({
                                     header: html.L('Our Company'),
-                                    items:[
+                                    items: [
                                         { text: html.L('About Us'),               href: html.url_for('about-us') },
-                                        { text: html.L("Contact Us"),             href: html.url_for('contact'),           class: 'gr-hide gr-show-m' },
+                                        { text: html.L("Contact Us"),             href: html.url_for('contact'),           _class: 'gr-hide gr-show-m' },
                                         { text: html.L('Regulatory Information'), href: html.url_for('regulation') },
                                         { text: html.L('Group History'),          href: html.url_for('group-history') },
                                         { text: html.L('Binary in Numbers'),      href: html.url_for('binary-in-numbers') },
@@ -99,7 +112,7 @@
                     <div class="gr-padding-10">
                         <p class="gambling content-inverse-color no-para-margin">
                             @html.rawL(
-                                'Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href="[_1]">Responsible Trading</a>.',
+                                `Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href="[_1]">Responsible Trading</a>.`,
                                 html.url_for('responsible-trading')
                             )
                         </p>
@@ -121,12 +134,12 @@
                                     header: html.L('Our Company'),
                                     items: [
                                         { text: html.L('About Us'),               href: html.url_for('about-us') },
-                                        { text: html.L("Contact Us"),             href: html.url_for('contact'),           class: 'gr-hide gr-show-m' },
-                                        { text: html.L('Regulatory Information'), href: html.url_for('regulation'),        class: 'id-hide ar-hide' },
+                                        { text: html.L("Contact Us"),             href: html.url_for('contact'),           _class: 'gr-hide gr-show-m' },
+                                        { text: html.L('Regulatory Information'), href: html.url_for('regulation'),        _class: 'id-hide ar-hide' },
                                         { text: html.L('Group History'),          href: html.url_for('group-history') },
                                         { text: html.L('Binary in Numbers'),      href: html.url_for('binary-in-numbers') },
                                         { text: html.L('Careers'),                href: html.url_for('careers') },
-                                        { text: html.L('Patents'),                href: html.url_for('/legal/us_patents'), class: 'id-hide' },
+                                        { text: html.L('Patents'),                href: html.url_for('/legal/us_patents'), _class: 'id-hide' },
                                     ],
                                 })
 
@@ -136,9 +149,9 @@
                                         { text: html.L('Why Us?'),            href: html.url_for('why-us') },
                                         { text: html.L('Getting Started'),    href: html.url_for('get-started') },
                                         { text: html.L('Platform Tour'),      href: html.url_for('tour') },
-                                        { text: html.L('GamCare'),            href: 'http://www.gamcare.org.uk/',  class: 'id-hide', target: '_blank' },
-                                        { text: html.L('Academy'),            href: 'https://academy.binary.com',  class: 'academy', target: '_blank' },
-                                        { text: html.L('Webinars'),           href: 'https://academy.binary.com/en/events/',  class: 'id-hide', target: '_blank' },
+                                        { text: html.L('GamCare'),            href: 'http://www.gamcare.org.uk/',  _class: 'id-hide', target: '_blank' },
+                                        { text: html.L('Academy'),            href: 'https://academy.binary.com',  _class: 'academy', target: '_blank' },
+                                        { text: html.L('Webinars'),           href: 'https://academy.binary.com/en/events/',  _class: 'id-hide', target: '_blank' },
                                     ]
                                 })
 
@@ -157,7 +170,7 @@
                                     header: html.L('Legal'),
                                     items: [
                                         { text: html.L('Terms and Conditions'), href: html.url_for('terms-and-conditions') },
-                                        { text: html.L('Security and Privacy'), href: html.url_for('terms-and-conditions'), param='?#privacy' },
+                                        { text: html.L('Security and Privacy'), href: html.url_for('terms-and-conditions'), param: '?#privacy' },
                                         { text: html.L('Responsible Trading'),  href: html.url_for('responsible-trading') },
                                         { text: html.L('Complaints'),           href: html.url_for('terms-and-conditions?section=complaints-disputes') },
                                     ]
@@ -173,7 +186,7 @@
                                 })
 
                                 @footer_column({
-                                    header: html.L('Partner With Us')
+                                    header: html.L('Partner With Us'),
                                     items: [
                                         { text: html.L('Affiliate Program'),       href: html.url_for('affiliate/signup') },
                                         { text: html.L('API'),                     href: "https://developers.binary.com",    target: '_blank' },
@@ -191,11 +204,7 @@
                 <div class="container">
                     <div class="gr-row">
                         <p id="regulatory-text" class="gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color no-margin">
-                            @html.L(
-                                "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - [_1]view license[_2]. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - [_3]view license[_2], and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.",
-                                `<a href='https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172' target='_blank' rel='noopener noreferrer'>`, `</a>`,
-                                `<a href='https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495' target='_blank' rel='noopener noreferrer'>`
-                            )
+                            @regulatory_text
                         </p>
                         <div class="gr-3 gr-12-m gr-5-p center-text" id="social-networks">
                             <div class="gr-row id-hide">
@@ -230,11 +239,7 @@
                 <div class="container">
                     <div class="gr-padding-10">
                         <p class="gambling content-inverse-color no-para-margin">
-                            @html.L(
-                                'Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about [_1]Responsible Trading[_2].',
-                                `<a href="${html.url_for('responsible-trading')}">`,
-                                `</a>`
-                            )
+                            @gambling_text
                         </p>
                     </div>
                 </div>

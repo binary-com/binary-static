@@ -14,7 +14,6 @@
             </li>
         </ul>
     }
-
     const account = () => {
         <a href="javascript:;">
             <div class="main-account">
@@ -26,7 +25,7 @@
         </a>
     }
 
-    view.header = () => {
+    const topbar = () => {
         <div id="topbar" class="no-print primary-bg-color-dark">
             <div class="container">
                 <div class="gr-row">
@@ -53,6 +52,10 @@
                 </div>
             </div>
         </div>
+    }
+
+    view.header = () => {
+        topbar()
 
         <div id="header" class="no-print">
             <div class='container'>
@@ -73,17 +76,17 @@
                         <div class='gr-6 gr-hide-m gr-hide-p gr-padding-10'>
                             <div id='main-navigation'>
                                 @view.list({
-                                    id: 'menu-top'
-                                    class: "center-text nowrap"
+                                    id: 'menu-top',
+                                    _class: "center-text nowrap",
                                     items: [
-                                        { text: html.L('Why Us?'),     href: html.url_for('why-us'),                 class: 'ja-hide' },
-                                        { text: html.L('Why Us?'),     href: html.url_for('why-us-jp'),              class: 'invisible ja-show' },
-                                        { text: html.L("Get Started"), href: html.url_for('get-started'),            class: 'ja-hide' },
-                                        { text: html.L("Get Started"), href: html.url_for('get-started-jp'),         class: 'invisible ja-show' },
-                                        { text: html.L('Tour'),        href: html.url_for('tour'),                   class: 'ja-hide' },
-                                        { text: html.L('Tour'),        href: html.url_for('tour-jp'),                class: 'invisible ja-show' },
-                                        { text: html.L("Platforms"),   href: html.url_for('platforms'),              class: 'ja-hide',           id: 'main-navigation-trading' },
-                                        { text: html.L("Trade"),       href: html.url_for('multi_barriers_trading'), class: 'invisible ja-show', id: 'main-navigation-jptrading' },
+                                        { text: html.L('Why Us?'),     href: html.url_for('why-us'),                 _class: 'ja-hide' },
+                                        { text: html.L('Why Us?'),     href: html.url_for('why-us-jp'),              _class: 'invisible ja-show' },
+                                        { text: html.L("Get Started"), href: html.url_for('get-started'),            _class: 'ja-hide' },
+                                        { text: html.L("Get Started"), href: html.url_for('get-started-jp'),         _class: 'invisible ja-show' },
+                                        { text: html.L('Tour'),        href: html.url_for('tour'),                   _class: 'ja-hide' },
+                                        { text: html.L('Tour'),        href: html.url_for('tour-jp'),                _class: 'invisible ja-show' },
+                                        { text: html.L("Platforms"),   href: html.url_for('platforms'),              _class: 'ja-hide',           id: 'main-navigation-trading' },
+                                        { text: html.L("Trade"),       href: html.url_for('multi_barriers_trading'), _class: 'invisible ja-show', id: 'main-navigation-jptrading' },
                                     ]
                                 })
                             </div>
@@ -140,4 +143,3 @@
         </div>
     }
 }
-

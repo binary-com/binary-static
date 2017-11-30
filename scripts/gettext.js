@@ -43,11 +43,11 @@ exports.createGettextInstance = ({record = false} = {}) => {
         },
         gettext: (text, ...args) => {
             for(let inx = 1; inx <= args.length; ++inx) {
-                text = text.replace(`[_${inx}]`, `%${inx}`)
+                text = text.split(`[_${inx}]`).join(`%${inx}`);
             }
             let translation = gt.gettext(text);
             for(let inx = 1; inx <= args.length; ++inx) {
-                translation = translation.replace(`%${inx}`, args[inx-1]);
+                translation = translation.split(`%${inx}`).join(args[inx-1]);
             }
             return translation;
         }

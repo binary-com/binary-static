@@ -9,7 +9,7 @@
                             <div class="gr-9 gr-padding-10 ico-column">
                                 <div class="gr-row gr-no-gutter">
                                     <div class="gr-8 gr-12-p gr-12-m"><p>@html.L('The [_1] ICO is now live', model.website_name)</p></div>
-                                    <div class="gr-4 gr-12-p gr-12-m learn-btn"><a id="ico_link_button" class="button"><span>@model.L('Participate now')</span></a></div>
+                                    <div class="gr-4 gr-12-p gr-12-m learn-btn"><a id="ico_link_button" class="button"><span>@html.L('Participate now')</span></a></div>
                                 </div>
                             </div>
                             <div id="close_ico_banner" class="close-btn"></div>
@@ -19,4 +19,4 @@
             </div>
         </div>
     }
-}
+} 

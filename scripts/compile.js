@@ -208,6 +208,7 @@ const createBuilder = async () => {
         ],
         languages: config.languages,
         broker_name: 'Binary.com',
+        static_hash: static_hash
     }
 
     return {
@@ -250,20 +251,23 @@ async function compile(page) {
             root_url     : config.root_url,
             only_ja      : page.only_ja,
             current_path : page.save_as,
-            static_hash  : 'TODO', // TODO
-            current_route: 'TODO', // TODO
+            current_route: page.current_route,
             affiliate_email : 'affiliates@binary.com',
             japan_docs_url  : 'https://japan-docs.binary.com',
+            is_pjax_request : true,
         }
 
-
         const input_file = Path.join(config.root_path, `src/templates/${page.tpl_path}.vash`);
-        const output_file = Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`);
 
         const template = builder.build_template_for(input_file);
-        const output_content = builder.run_template({template, model});
 
-        fs.writeFileSync(output_file, output_content, 'utf8');
+        const output = builder.run_template({template, model});
+
+        const layout_model = Object.assign({}, model, { children: () => Vash.helpers.raw(output) });
+        const layout_output = builder.run_template({template: layout_template, model: layout_model});
+
+        const output_file = Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`);
+        fs.writeFileSync(output_file, layout_output, 'utf8');
 
         print(`Compiling ${output_file.replace(config.root_path, '')}`.green);
     });
