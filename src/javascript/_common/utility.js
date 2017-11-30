@@ -1,3 +1,5 @@
+require('./lib/polyfills/element.matches');
+
 /**
  * Write loading image to a container for ajax request
  *
