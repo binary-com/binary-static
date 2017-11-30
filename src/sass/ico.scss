@@ -1,11 +1,10 @@
-$LANGUAGE_DIRECTION : ltr;
-
-@import 'constants';
+@import '_common/base/constants';
 
 /* common styles */
-@import 'reset';
-@import 'pages/landing_pages/common';
-@import 'pages/landing_pages/ico';
+@import '_common/base/reset';
+@import 'landing_pages/common';
+
+@import 'landing_pages/ico';
 
 /* Grid layout system */
-@import 'external/grid';
+@import '_common/external/grid';

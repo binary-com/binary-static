@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-11-27 00:37-0500\n"
+"PO-Revision-Date: 2017-11-29 19:30-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -6086,6 +6086,9 @@ msgstr "Uwaga"
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "Uwaga: Wartości liczbowe dla 2017 r. są prognozowanymi wartościami śródrocznymi z sierpnia"
 
+msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
+msgstr ""
+
 msgid "Note: If you decline to be treated as a professional, you can continue with the application to be treated as a retail client."
 msgstr "Uwaga: Jeśli nie chcesz być traktowany/-a jako klient profesjonalny, możesz kontynuować aplikację i wybrać opcję traktowania jako klienta indywidualnego."
 
@@ -8989,6 +8992,12 @@ msgstr "Polityka odnosi się zarówno do indywidualnych, jak i profesjonalnych k
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "Oświadczenie dot. ujawnienia ryzyka nie jest wyczerpujące i nie stanowi pełnego oświadczenia o wszelkich rodzajach ryzyka, na które możesz być narażony lub narażona i nie opisuje wszystkich istniejących i moących wystąpić w przyszłości ryzyk związanych z kontraktami forex i kontraktami na różnice kursowe. Celem oświadczenia jest zapewnienie Ci informacji umożliwiających zrozumienie ryzyk związanych z kontraktami forex i kontraktami na różnice kursowe oferowanych przez %1 w naszym interesie, by zapewnić Ci najlepsze możliwe doświadczenie związane z handlowaniem."
+
+msgid "This account is disabled"
+msgstr ""
+
+msgid "This account is excluded until %1"
+msgstr ""
 
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "Ten bonus dostępny jest tylko dla nowych klientów. Obecni i dawni klienci nie kwalifikują się do bonusu. Nowi klienci mogą skorzystać z tego bonusu tylko raz. Jest on dostępna tylko raz dla każdego gospodarstwa domowego."
@@ -13011,69 +13020,6 @@ msgstr "{JAPANY ONLY}Touch Options"
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
 
-msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
-msgstr "Internetowa platforma handlowa umożliwiająca handel opcjami binarnymi różnego rodzaju: forex, wskaźniki, towary i inteligentne wskaźniki"
-
-msgid "404"
-msgstr "404"
-
-msgid "Why Us"
-msgstr "Dlaczego my"
-
-msgid "Regulation"
-msgstr "Przepisy regulacyjne"
-
-msgid "Endpoint"
-msgstr "punkt końcowy"
-
-msgid "Careers For Americans"
-msgstr "Oferty pracy dla obywateli USA"
-
-msgid "Charity"
-msgstr "Działalność charytatywna"
-
-msgid "Company Profile"
-msgstr "Profil firmy"
-
-msgid "Job Details"
-msgstr "Opis stanowiska"
-
-msgid "Service Announcements"
-msgstr "Ogłoszenia dotyczące usług"
-
-msgid "Multi-asset Liquidity Solutions"
-msgstr "Zarządzanie płynności przy wykorzystaniu wielu aktywów"
-
-msgid "Open-Source Projects"
-msgstr "Projekty open-source"
-
-msgid "Multiple Accounts Manager"
-msgstr "Menedżer wielu kont"
-
-msgid "Get Paid for Pull Requests"
-msgstr "Zarabiaj, wysyłając żądania typu „pull”"
-
-msgid "Omnibus"
-msgstr "Wszechstronne"
-
-msgid "How to Trade Binary Options?"
-msgstr "Jak handlować opcjami binarnymi?"
-
-msgid "What Are OTC Indices and Stocks?"
-msgstr "Czym są wskaźniki i akcje OTC?"
-
-msgid "Types of Trades"
-msgstr "Rodzaje zakładów"
-
-msgid "Why Trade with Binary.com"
-msgstr "Dlaczego warto handlować z Binary.com"
-
-msgid "Contract Specifications"
-msgstr "Szczegóły kontraktu"
-
-msgid "MetaTrader Margin Policy"
-msgstr "Polityka dot. depozytu zabezpieczającego w przypadku MetaTrader"
-
 msgid "Payment Agent Deposit"
 msgstr "Wpłata dla pośrednika płatności"
 
@@ -13116,8 +13062,71 @@ msgstr "Limity na koncie"
 msgid "Warning"
 msgstr "Ostrzeżenie"
 
+msgid "Endpoint"
+msgstr "punkt końcowy"
+
 msgid "Redirecting..."
 msgstr "Przekierowywanie..."
+
+msgid "404"
+msgstr "404"
+
+msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
+msgstr "Internetowa platforma handlowa umożliwiająca handel opcjami binarnymi różnego rodzaju: forex, wskaźniki, towary i inteligentne wskaźniki"
+
+msgid "Why Us"
+msgstr "Dlaczego my"
+
+msgid "Careers For Americans"
+msgstr "Oferty pracy dla obywateli USA"
+
+msgid "Job Details"
+msgstr "Opis stanowiska"
+
+msgid "Charity"
+msgstr "Działalność charytatywna"
+
+msgid "Company Profile"
+msgstr "Profil firmy"
+
+msgid "Regulation"
+msgstr "Przepisy regulacyjne"
+
+msgid "Service Announcements"
+msgstr "Ogłoszenia dotyczące usług"
+
+msgid "Multi-asset Liquidity Solutions"
+msgstr "Zarządzanie płynności przy wykorzystaniu wielu aktywów"
+
+msgid "Multiple Accounts Manager"
+msgstr "Menedżer wielu kont"
+
+msgid "Omnibus"
+msgstr "Wszechstronne"
+
+msgid "Open-Source Projects"
+msgstr "Projekty open-source"
+
+msgid "Get Paid for Pull Requests"
+msgstr "Zarabiaj, wysyłając żądania typu „pull”"
+
+msgid "How to Trade Binary Options?"
+msgstr "Jak handlować opcjami binarnymi?"
+
+msgid "What Are OTC Indices and Stocks?"
+msgstr "Czym są wskaźniki i akcje OTC?"
+
+msgid "Types of Trades"
+msgstr "Rodzaje zakładów"
+
+msgid "Why Trade with Binary.com"
+msgstr "Dlaczego warto handlować z Binary.com"
+
+msgid "Contract Specifications"
+msgstr "Szczegóły kontraktu"
+
+msgid "MetaTrader Margin Policy"
+msgstr "Polityka dot. depozytu zabezpieczającego w przypadku MetaTrader"
 
 msgid "Initial Coin Offering"
 msgstr "Initial Coin Offering (ICO)"

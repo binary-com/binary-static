@@ -63,11 +63,6 @@ sub all_languages {
     return $BRANCH eq 'translations' ? ('ACH') : ('EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW');
 }
 
-sub rtl_languages {
-#    return ('AR');
-    return ();
-}
-
 ## url_for
 sub root_url {
     return '/'.(is_dev() ? 'binary-static/' : '').($BRANCH ? $BRANCH.'/' : '');
@@ -113,22 +108,19 @@ our $static_hash = join('', map{('a'..'z',0..9)[rand 36]} 0..7);
 sub get_static_hash { return $static_hash; }
 sub set_static_hash { $static_hash = shift; }
 
+sub sections {
+    return ('app', 'static');
+}
+
 ## css/js/menu
 sub css_files {
+    my $section = shift;
     my @css;
 
-    # if (is_dev()) {
-    #     if (grep { $_ eq uc $LANG } rtl_languages()) {
-    #         push @css, root_url() . "css/binary_rtl.css?$static_hash";
-    #     } else {
-    #         push @css, root_url() . "css/binary.css?$static_hash";
-    #     }
-    # } else {
-    if (grep { $_ eq uc $LANG } rtl_languages()) {
-        push @css, root_url() . "css/binary_rtl.min.css?$static_hash";
-    } else {
-        push @css, root_url() . "css/binary.min.css?$static_hash";
-    }
+    push @css, root_url() . "css/common.min.css?$static_hash";
+
+    push @css, root_url() . "css/$_.min.css?$static_hash" for sections(); # TODO: replace with next line for split the release process
+    # push @css, root_url() . "css/$section.min.css?$static_hash" if (grep { $_ eq $section } sections());
 
     return @css;
 }
