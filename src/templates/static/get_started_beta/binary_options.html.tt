@@ -78,7 +78,6 @@
                     { id='range-of-markets',        href='#range-of-markets',        text=l("Range of markets")},
                     { id='types-of-trades',         href='#types-of-trades',         text=l("Types of trades")},
                     { id='how-to-trade-binary',     href='#how-to-trade-binary',     text=l("How to trade binary options")},
-                    { id='trading-specification',   href='#trading-specification',   text=l("Trading specifications")},
                 ] %]
             </div>
         </div>
@@ -244,8 +243,6 @@
                     <img class="responsive" src="[% request.url_for('images/pages/get-started-beta/binary-options/how-to-trade-binary/step-3.svg') %]" />
                 </div>
                 <p>[% l("When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there's no risk of 'slippage' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions.") %]</p>
-            [% END %]
-            [% WRAPPER section id='trading-specification' header=l("Trading specifications") %]
             [% END %]
 
             [% PROCESS nav_buttons parent='binary' %]
