@@ -15,7 +15,7 @@
         <h1 class="dark center-text gr-padding-10">@html.rawL("The <strong>Premier Platform</strong> for Binary Options Trading")</h1>
         <p class="center-text gr-padding-10">@html.rawL("Trade <strong>24/7</strong>, even on weekends.")</p>
 
-        @html.form_verify_email({
+        @view.form_verify_email({
             _class      : 'secondary-bg-color',
             text        : html.L('Create Free Account'),
             dark_button : true,
@@ -34,7 +34,7 @@
             </div>
 
             <div class="gr-5 gr-12-m gr-parent">
-                @html.list({
+                @view.list({
                     items: [
                         { header: html.L("All markets:"),           text: html.L("currencies, stocks, indices, and commodities.") },
                         { header: html.L("All market conditions:"), text: html.L("up/down, touch/no-touch, stays in/goes out.") },
@@ -63,7 +63,7 @@
                 <img class="mena" src="@html.url_for('images/pages/home/awards-mena.png')"/>
             </div>
 
-            @html.list({
+            @view.list({
                 items: [
                     { header:html.L("Sharp prices"),           _class:'xlist1' },
                     { header:html.L("Trade your way"),         _class:'xlist3' },
@@ -102,7 +102,7 @@
         </div>
     </div>
 
-    @html.separator_line({
+    @view.separator_line({
         no_wrapper: true
     })
 </div>
@@ -111,29 +111,29 @@
     <h2 class="center-text">@html.L("What our clients are saying")</h2>
 
     <div class="gr-row">
-        @html.fill_box({
+        @view.fill_box({
             padding: '6',
             align_left: true,
             em: true,
             text: html.rawL(`"We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide."`),
-            content: function() {
+            children: function() {
                 <div class="xbubble-left"></div>
                 <div class="xquoter-left"><p>@html.rawL("Joshua Cavallaro <span> Markets And You Trader</span>")</p></div>
             }
         })
-        @html.fill_box({
+        @view.fill_box({
             padding: '6',
             em: true,
             align_left: true,
             text: html.rawL(`"[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years."`, model.website_name),
-            content: function() {
+            children: function() {
                 <div class="xbubble-right"></div>
                 <div class="xquoter-right"><p>@html.rawL("Andrei Asavei <span>Top Binary Options Brokers</span>")</p></div>
             }
         })
     </div>
 
-    @html.separator_line({
+    @view.separator_line({
         no_wrapper: true
     })
 </div>

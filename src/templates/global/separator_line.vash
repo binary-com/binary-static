@@ -1,5 +1,5 @@
 @{
-    html.separator_line = ({no_wrapper, show_mobile, _class, sub_class, invisible}) => {
+    view.separator_line = ({no_wrapper, show_mobile, _class, sub_class, invisible}) => {
         const _classes1 = `${show_mobile ? '' : 'gr-hide-m'} ${_class || ''}`.trim();
         const _classes2 = `separator-line ${sub_class || ''} ${invisible ? '' : 'border-bottom'}`;
 

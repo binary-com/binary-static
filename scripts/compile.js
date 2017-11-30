@@ -4,7 +4,8 @@ const fs = require('fs');
 const Path = require('path');
 const Url = require('url');
 const Gettext = require('./gettext');
-const colors = require('colors');
+const Colors = require('colors');
+const Crypto = require('crypto');
 
 const pages = require('./config/pages.json').map(p => ({
     save_as  : p[0],
@@ -13,8 +14,14 @@ const pages = require('./config/pages.json').map(p => ({
     title    : p[3],
     excludes : p[4],
     only_ja  : p[4] && /^NOT-ja,en$/.test(p[4]),
+    current_route: p[0].replace(/^(.+)\//, ''),
 }));
 
+/**********************************************************************
+ * Vash helpers
+ **********************************************************************/
+
+global.view = { };
 Vash.helpers.when = (condition, value) => {
     if(!condition) { return undefined; }
     return Vash.helpers.raw(value);
@@ -22,6 +29,9 @@ Vash.helpers.when = (condition, value) => {
 Vash.helpers.class = value =>  Vash.helpers.when(value, `class="${value}"`);
 Vash.helpers.id    = value =>  Vash.helpers.when(value, `id="${value}"`);
 
+/**********************************************************************
+ * Common functions
+ **********************************************************************/
 function getConfig() {
     const config = {
         branch    : '',
@@ -59,6 +69,44 @@ function create_directories() {
     });
 }
 
+function should_compile(excludes, lang) {
+    if (excludes && !/^ACH$/i.test(lang)) {
+
+        excludes = excludes.toUpperCase();
+        lang = lang.toUpperCase();
+
+        if (/^NOT-/.test(excludes))
+            return excludes.indexOf(lang) !== -1;
+        return excludes.indexOf(lang) === -1;
+    }
+    return true;
+}
+
+const print = (text) => {
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    process.stdout.write(text);
+};
+function file_hash_async(path, cb) {
+    return new Promise((res, rej) => {
+        var fd = fs.createReadStream(path);
+        var hash = Crypto.createHash('sha1');
+        hash.setEncoding('hex');
+
+        fd.on('end', function () {
+            hash.end();
+            res(hash.read());
+        });
+
+        fd.pipe(hash);
+    });
+};
+
+
+/**********************************************************************
+ * Factory functions
+ **********************************************************************/
+
 const gettext = Gettext.createGettextInstance({record: true});
 const createTranslator = lang => {
     lang = lang.toLowerCase(lang);
@@ -66,9 +114,9 @@ const createTranslator = lang => {
     return (text, ...args) => gettext.gettext(text, ...args);
 }
 const createUrlFinder  = lang => {
-    lang = lang.toLowerCase();
+    default_lang = lang.toLowerCase();
     const config = getConfig();
-    return (url) => {
+    return (url, lang = default_lang) => {
         if(url === '' || url === '/') {
             url = '/home';
         }
@@ -88,27 +136,106 @@ const createUrlFinder  = lang => {
     }
 }
 
-function should_compile(excludes, lang) {
-    if (excludes && !/^ACH$/i.test(lang)) {
+const createBuilder = async () => {
+    const config = getConfig();
 
-        excludes = excludes.toUpperCase();
-        lang = lang.toUpperCase();
+    const static_hash = Math.random().toString(36).substring(2, 10);
+    const vendor_hash = await file_hash_async(Path.join(config.dist_path, 'js/vendor.min.js'))
+    fs.writeFileSync(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
 
-        if (/^NOT-/.test(excludes))
-            return excludes.indexOf(lang) !== -1;
-        return excludes.indexOf(lang) === -1;
+    const html = Vash.helpers;
+
+    const extra = {
+        js_files: [
+            `${config.root_url}js/texts/{PLACEHOLDER_FOR_LANG}.js?${static_hash}`,
+            `${config.root_url}js/manifest.js?${static_hash}`,
+            `${config.root_url}js/vendor.min.js?${vendor_hash}`,
+            `${config.root_url}js/binary.js?${static_hash}`,
+            `${config.root_url}js/binary.min.js?${static_hash}`,
+        ],
+        css_files: [
+            `${config.root_url}css/binary.min.css?${static_hash}`
+        ],
+        menu: [
+            {
+                id: 'topMenuTrading', url: '/trading', text: 'Trade',
+                _class: 'ja-hide gr-hide-m gr-hide-p ico-only-hide',
+            },
+            {
+                id: 'topMenuJPTrading', url: '/multi_barriers_trading', text: 'Trade',
+                _class: 'invisible ja-show gr-hide-m gr-hide-p'
+            },
+            {
+                id: 'topMenuPortfolio', url: '/user/portfoliows', text: 'Portfolio',
+                class: 'client_logged_in invisible ico-only-hide',
+            },
+            {
+                id: 'topMenuProfitTable', url: '/user/profit_tablews', text: 'Profit Table',
+                _class: 'client_logged_in invisible ico-only-hide',
+            },
+            {
+                id: 'topMenuStatement', url: '/user/statementws', text: 'Statement',
+                _class: 'client_logged_in invisible',
+            },
+            { // cashier
+                id: 'topMenuCashier', url: '/cashier', text: 'Cashier',
+            },
+            { // resources
+                id: 'topMenuResources', url: '/resources', text: 'Resources',
+                _class: 'client_logged_out client_logged_in invisible ico-only-hide',
+                sub_items: [
+                    {
+                        id: 'topMenuAssetIndex', url: '/resources/asset_indexws', text: 'Asset Index',
+                        _class: 'ja-hide'
+                    },
+                    {
+                        id: 'topMenuTradingTimes', url: '/resources/market_timesws', text: 'Trading Times'
+                    },
+                ]
+            },
+            {
+                id: 'topMenuShop', text: 'Shop', absolute_url: 'https://shop.binary.com',
+                _class: 'ja-hide ico-only-hide', target: '_blank'
+            },
+            {
+                id: 'topMenuPaymentAgent', url: '/paymentagent/transferws', text: 'Payment Agent',
+                _class: 'invisible',
+            },
+            { // Link to ico-subscribe, ICO Bids.
+                id: 'topMenuIcoBids', url: '/user/ico-subscribe', text: 'ICO Bids',
+                _class: 'invisible ico-only-show',
+            },
+        ],
+        languages: config.languages,
+        broker_name: 'Binary.com',
     }
-    return true;
+
+    return {
+        build_template_for: (input_file) => {
+            const input_content = fs.readFileSync(input_file, 'utf8');
+            const template = Vash.compile(input_content);
+            return template
+        },
+        run_template: ({template, model}) => {
+            const merged = Object.assign({ }, model, extra);
+            const output_content = template(merged);
+
+            return output_content;
+        }
+    }
 }
 
-const print = (text) => {
-    process.stdout.clearLine();
-    process.stdout.cursorTo(0);
-    process.stdout.write(text);
-};
-function compile(page) {
+/**********************************************************************
+ * Compile
+ **********************************************************************/
+
+async function compile(page) {
     const config = getConfig();
     const languages = config.languages.filter(lang => should_compile(page.excludes, lang));
+    const builder = await createBuilder();
+
+    const layout_file = Path.join(config.root_path, `src/templates/global/layout.vash`);
+    const layout_template = builder.build_template_for(layout_file);
 
     languages.forEach(lang => {
         Vash.helpers.L = createTranslator(lang);
@@ -129,12 +256,12 @@ function compile(page) {
             japan_docs_url  : 'https://japan-docs.binary.com',
         }
 
+
         const input_file = Path.join(config.root_path, `src/templates/${page.tpl_path}.vash`);
         const output_file = Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`);
 
-        const input_content = fs.readFileSync(input_file, 'utf8');
-        const template = Vash.compile(input_content);
-        const output_content = template(model);
+        const template = builder.build_template_for(input_file);
+        const output_content = builder.run_template({template, model});
 
         fs.writeFileSync(output_file, output_content, 'utf8');
 

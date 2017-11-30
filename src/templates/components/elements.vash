@@ -1,6 +1,6 @@
 @{
-    html.li = ({ _class, id, href, param = '', target, text, header, p }) => {
-        const content = () => {
+    view.li = ({ _class, id, href, param = '', target, text, header, p }) => {
+        const children = () => {
             if(p) {
                 <p> @text </p>
             } else {
@@ -19,22 +19,36 @@
                 let attrs = `href="${href}${param}"`;
                 /^http/.test(href) && (attrs += ` rel="noopener noreferrer"`);
 
-                <a @html.raw(attrs) > @content() </a>
+                <a @html.raw(attrs) > @children() </a>
             } else {
-                @content()
+                @children()
             }
         </li>
     }
 
-    html.list = ({ items, id, _class }) => {
+    view.list = ({ items, id, _class }) => {
         <ul @html.id(id) @html.class(_class) >
             @items.forEach(item => {
-                html.li(item)
+                view.li(item)
             })
         </ul>
     }
 
-    html.fill_box = ({ padding, center, _class, align_left, color, border, image, href, target, download, em, text, content }) => {
+    view.fill_box = ({
+        padding,
+        center,
+        _class,
+        align_left,
+        color,
+        border,
+        image,
+        href,
+        target,
+        download,
+        em,
+        text,
+        children = () => '',
+    }) => {
         let classes1 = '';
         classes1 += padding ? 'gr-12-m gr-6-p gr-padding-10 ' : '';
         classes1 += padding && center ? `gr-${padding || 9} gr-centered` : '';
@@ -65,7 +79,7 @@
                     }
                 </div>
             </div>
-            @content()
+            @children()
         </div>
     }
 }

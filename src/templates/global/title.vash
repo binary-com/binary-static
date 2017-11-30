@@ -1,0 +1,7 @@
+@{
+    view.title = () => {
+        const is_ja = model.language.toLowerCase() === 'ja';
+        const title = `${model.browser_title}${is_ja ? html.L('{JAPAN ONLY}Binary.com page title') : model.website_name}`;
+        <title>@title</title>
+    }
+}

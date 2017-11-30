@@ -1,11 +1,11 @@
 @{
-    html.form_verify_email = ({
+    view.form_verify_email = ({
         _class = '',
         padding = 8,
         email_padding = 7,
         button_padding = 5,
         dark_button,
-        content,
+        children = () => '',
         text,
     }) => {
         <form id="frm_verify_email">
@@ -20,7 +20,7 @@
                         </div>
                         <span class="gr-12 gr-padding-10 error-msg hint color-white center-text invisible" id="signup_error"></span>
                     </div>
-                    @content
+                    @children()
                 </div>
             </div>
         </form>
