@@ -109,7 +109,7 @@ sub get_static_hash { return $static_hash; }
 sub set_static_hash { $static_hash = shift; }
 
 sub sections {
-    return ('app', 'static');
+    return ('app', 'static', 'app_2');
 }
 
 ## css/js/menu

@@ -1,0 +1,38 @@
+[% UNLESS is_pjax_request =%]
+<!DOCTYPE html>
+<html lang="[% language.lower %]">
+    [% PROCESS app_2/_layout/head.html.tt %]
+[%= END %]
+
+[% UNLESS is_pjax_request =%]
+    <body[% IF lang %] class="[% language %]"[% END %]>
+        [% PROCESS app_2/_layout/header.html.tt %]
+        [% PROCESS app_2/_layout/menu.html.tt %]
+        [% PROCESS _common/includes/gtm.html.tt %]
+[%= END %]
+
+[% IF layout =%]
+    <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
+        <div id="page_info" class="invisible">
+            [% PROCESS _common/components/title.html.tt %]
+            <div id="content_class">[% current_route %]-content</div>
+        </div>
+        [% IF layout != 'full_width' =%]
+        <div class="container">
+        [%= END %]
+[%= END %]
+
+[% content %]
+
+[% IF layout =%]
+    [% IF layout != 'full_width' =%]
+        </div>
+    [%= END %]
+    </div>
+[%= END %]
+
+[% UNLESS is_pjax_request =%]
+    [% PROCESS app_2/_layout/footer.html.tt %]
+    </body>
+</html>
+[%= END %]
