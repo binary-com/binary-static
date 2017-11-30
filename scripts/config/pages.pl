@@ -75,6 +75,10 @@ sub all_pages {
         ['explanation',                        'app/trade/explanation',                     undef],
 
 
+        # ==================== Section: "app_2" ====================
+        ['app_2/trade',                        'app_2/trading/trading',                     'full_width', 'Trusted by traders since 2000'],
+
+
         # ==================== Section: "static" ====================
         ['404',                                'static/404',                                'full_width', '404'],
         ['home',                               'static/home',                               'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'ja'],
