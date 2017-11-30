@@ -54,8 +54,11 @@ const TradingEvents = (() => {
                         minTime = 0;
                         maxTime = endTime.utc().hour(start_time_val[0]).minute(start_time_val[1]);
                     } else {
-                        // if expiry time is same as today, min time should be the selected start time
+                        // if expiry time is same as today, min time should be the selected start time plus five minutes
                         minTime = minTime.hour(start_time_val[0]).minute(start_time_val[1]);
+                        if (!(+start_time_val[0] === 23 && +start_time_val[1] === 55)) {
+                            minTime = minTime.add(5, 'minutes');
+                        }
                     }
                 }
             }
@@ -270,7 +273,14 @@ const TradingEvents = (() => {
                         return false;
                     }
                     Defaults.set('time_start', time_start_element.value);
-                    Price.processPriceRequest();
+                    let make_price_request = 1;
+                    if (Defaults.get('expiry_date')) {
+                        // if time changed, proposal will be sent there if not we should send it here
+                        make_price_request = Durations.selectEndDate(moment(Defaults.get('expiry_date'))) ? -1 : 1;
+                    }
+                    if (make_price_request > 0) {
+                        Price.processPriceRequest();
+                    }
                     return true;
                 });
         };
