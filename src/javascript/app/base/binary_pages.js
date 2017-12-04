@@ -53,7 +53,9 @@ const HomeJP             = require('../../static/japan/home');
 const Charity            = require('../../static/pages/charity');
 const Contact            = require('../../static/pages/contact');
 const GetStarted         = require('../../static/pages/get_started');
+const GetStartedBeta     = require('../../static/pages/get_started_beta');
 const Home               = require('../../static/pages/home');
+const HomeBeta           = require('../../static/pages/home_beta');
 const JobDetails         = require('../../static/pages/job_details');
 const Platforms          = require('../../static/pages/platforms');
 const Regulation         = require('../../static/pages/regulation');
@@ -114,13 +116,20 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
+    'binary-options'         : { module: GetStartedBeta.BinaryOptions },
+    'cfds'                   : { module: GetStartedBeta.CFDs },
+    'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
+    'forex'                  : { module: GetStartedBeta.Forex },
     'get-started'            : { module: GetStarted },
+    'get-started-beta'       : { module: GetStartedBeta.GetStartedBeta },
     'get-started-jp'         : { module: GetStartedJP },
+    'home-beta'              : { module: HomeBeta,                   not_authenticated: true },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
     'ico-info'               : { module: ICOInfo,                    is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
+    'metals'                 : { module: GetStartedBeta.Metals },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
