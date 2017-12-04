@@ -201,7 +201,7 @@
                                 { type='vanuatu_stp'      desc='STP' },
                                 { type='costarica'        desc='Volatility' },
                             ] %]
-                                <a class="hint" href="[% request.url_for('metatrader/types-of-accounts.html') %]">[% l('Which one suits me?') %]</a>
+                                <a class="hint" href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Which one suits me?') %]</a>
                             [% END %]
                         </div>
                         <p id="new_account_msg" class="notice-msg center-text invisible"></p>
