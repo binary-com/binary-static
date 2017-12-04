@@ -221,10 +221,6 @@ label {
 }
 
 /* Coche icon, AKA tick */
-#content {
-    margin-bottom: 20px;
-}
-
 #page-wrapper {
     display: flex;
     flex-direction: column;
@@ -502,6 +498,56 @@ ul.bullet.gr-row > li {
         border-right: 4px solid transparent;
         border-left: 4px solid transparent;
         border-bottom: 0;
+    }
+}
+
+#content {
+    margin-bottom: 20px;
+
+    .light {
+        .tab-menu-wrap {
+            text-align: center;
+
+            ul.tm-ul {
+                display: inline-flex;
+
+                li.tm-li {
+                    background: none;
+                    margin: 0;
+                    padding: 0;
+                    font-size: $FONT_SIZE_XL;
+                    margin-bottom: -1px;
+                    border-bottom: 1px solid $COLOR_GRAY;
+
+                    &, a {
+                        color: $COLOR_BLUE;
+                    }
+                    > a, > span {
+                        display: block;
+                        padding: 0 20px;
+                    }
+                    &.tab-selector {
+                        height: 3px;
+                        background-color: $COLOR_BLUE;
+                        z-index: 1;
+                        position: absolute;
+                        margin-left: 0;
+                        top: 37px;
+                        border-radius: $BORDER_RADIUS;
+                        transition: margin-left 0.4s ease-in-out, width 0.2s 0.1s ease-in-out;
+                    }
+                }
+            }
+        }
+        &.full-width {
+            ul.tm-ul {
+                display: flex;
+
+                li.tm-li {
+                    flex: 1;
+                }
+            }
+        }
     }
 }
 
