@@ -17,7 +17,7 @@
     const footer_column = ({header, items}) => {
         <div class="gr-4">
             <h4 class="secondary-color"><strong>@header</strong></h4>
-            @view.list(items)
+            @view.list({items})
         </div>
     }
 
@@ -25,7 +25,7 @@
         <div class="gr-padding-10 gr-row @html.when(is_centered, 'gr-row-align-center')">
             @networks.forEach(net => {
                 <a href="@net.href" target="_blank" class="@(is_centered ? 'gr-2 gr-1-m' : 'gr-3') gr-no-gutter-right" rel="noopener noreferrer">
-                    <img class="responsive" src="@html.url_for(`images/pages/footer/${media}.svg`)"/>
+                    <img class="responsive" src="@html.url_for(`images/pages/footer/${net.media}.svg`)"/>
                 </a>
             })
         </div>

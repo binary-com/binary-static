@@ -3,9 +3,9 @@
         favicons.forEach(fav => {
             const sizes = `${fav.size}x${fav.size}`;
             const rel = fav.is_image ? 'icon' : 'apple-touch-icon';
-            const url = `images/favicons/${favicon.is_image ? 'fav' : 'apple-touch-'}'icon-'${sizes}.png`;
+            const url = `images/favicons/${fav.is_image ? 'fav' : 'apple-touch-'}icon-${sizes}.png`;
 
-            <link rel="@rel" sizes="@sizes" @html.when(fav.is_image, `type="image/png"`) href="@html.url_for(url) %]" />
+            <link rel="@rel" sizes="@sizes" @html.when(fav.is_image, `type="image/png"`) href="@html.url_for(url)" />
         });
     };
 

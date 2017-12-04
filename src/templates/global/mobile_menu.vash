@@ -8,26 +8,26 @@
                     @view.li({
                         text: html.L('Why Us?'),    href: html.url_for('why-us'),         _class: 'ja-hide',
                     })
-                    @html.li({
+                    @view.li({
                         text: html.L('Why Us?'),    href: html.url_for('why-us-jp'),      _class: 'invisible ja-show',
                     })
-                    @html.li({
+                    @view.li({
                         text: html.L("Get Started"), href: html.url_for('get-started'),    _class: 'ja-hide',
                     })
-                    @html.li({
+                    @view.li({
                         text: html.L("Get Started"), href: html.url_for('get-started-jp'), _class: 'invisible ja-show',
                     })
-                    @html.li({
+                    @view.li({
                         text: html.L('Tour'),        href: html.url_for('tour'),           _class: 'ja-hide',
                     })
-                    @html.li({
+                    @view.li({
                         text: html.L('Tour'),        href: html.url_for('tour-jp'),        _class: 'invisible ja-show',
                     })
                     @model.menu.forEach(item => {
                         const url = item.url ? html.url_for(item.url) : item.absolute_url;
 
                         <li id="@item.id" class="item @item._class">
-                            <a class="link" href="@url">@htm.L(item.text)</a>
+                            <a class="link" href="@url">@html.L(item.text)</a>
                             @if(item.sub_items) {
                                 <ul class="sub_items">
                                     @item.sub_items.forEach(sub_item => {

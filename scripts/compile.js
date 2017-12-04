@@ -7,6 +7,8 @@ const Gettext = require('./gettext');
 const Colors = require('colors');
 const Crypto = require('crypto');
 
+const CONTENT_PLACEHOLDER = "CONTENT_PLACEHOLDER"; // used in layout.vash
+
 const pages = require('./config/pages.json').map(p => ({
     save_as  : p[0],
     tpl_path : p[1],
@@ -235,9 +237,15 @@ async function compile(page) {
     const languages = config.languages.filter(lang => should_compile(page.excludes, lang));
     const builder = await createBuilder();
 
-    const layout_file = Path.join(config.root_path, `src/templates/global/layout.vash`);
-    const layout_template = builder.build_template_for(layout_file);
+    const layout = {
+        file: Path.join(config.root_path, `src/templates/global/layout.vash`),
+        model: null,
+        template: null,
+    };
+    layout.template = builder.build_template_for(layout.file);
 
+
+    console.time(page.save_as);
     languages.forEach(lang => {
         Vash.helpers.L = createTranslator(lang);
         Vash.helpers.rawL = (text, ...args) => Vash.helpers.raw(Vash.helpers.L(text, ...args));
@@ -257,24 +265,46 @@ async function compile(page) {
             is_pjax_request : true,
         }
 
-        const input_file = Path.join(config.root_path, `src/templates/${page.tpl_path}.vash`);
+        const input = {
+            file: Path.join(config.root_path, `src/templates/${page.tpl_path}.vash`),
+            model: model,
+            template: null,
+            result: null
+        };
+        input.template = builder.build_template_for(input.file);
+        input.result = builder.run_template({template: input.template, model: input.model});
 
-        const template = builder.build_template_for(input_file);
+        layout.model = model;
+        layout.result = builder.run_template({template: layout.template, model: layout.model})
 
-        const output = builder.run_template({template, model});
+        const pjax = {
+            file: Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`),
+            result: layout.result.replace(CONTENT_PLACEHOLDER, input.result)
+        };
+        fs.writeFileSync(pjax.file, pjax.result, 'utf8');
 
-        const layout_model = Object.assign({}, model, { children: () => Vash.helpers.raw(output) });
-        const layout_output = builder.run_template({template: layout_template, model: layout_model});
+        layout.model.is_pjax_request = false;
+        layout.result = builder.run_template({template: layout.template, model: layout.model})
 
-        const output_file = Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`);
-        fs.writeFileSync(output_file, layout_output, 'utf8');
+        const normal = {
+            file: Path.join(config.dist_path, `${lang}/${page.save_as}.html`),
+            result: layout.result.replace(CONTENT_PLACEHOLDER, input.result)
+        }
+        fs.writeFileSync(normal.file, normal.result, 'utf8');
 
-        print(`Compiling ${output_file.replace(config.root_path, '')}`.green);
+        print(`Compiling ${pjax.file.replace(config.root_path, '')}`.green);
     });
     process.stdout.write('\n');
+    console.timeEnd(page.save_as);
 }
 
 create_directories();
-compile(pages[0]);
+(async () => {
+    try {
+        await compile(pages[0]);
+    } catch(e) {
+        console.log(e);
+    }
+})();
 // var tpl = Vash.compile('<p>I am a @model.t!</p>');
 // var out = tpl({ t: 'template' });

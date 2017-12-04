@@ -7,6 +7,7 @@
 @html.include('./src/templates/global/gtm.vash')
 @html.include('./src/templates/global/head.vash')
 @{
+    const CONTENT_PLACEHOLDER = "CONTENT_PLACEHOLDER";
     const nav = ({items}) => {
         <ul class="nav">
             @items.forEach(item => {
@@ -15,9 +16,7 @@
         </ul>
     }
 
-    const get_started = ({
-        children = () => ''
-    }) => {
+    const get_started = () => {
         view.ico_banner({_class: 'top-margin'})
         <div class="get-started static_full">
             <div class="gr-row">
@@ -41,7 +40,7 @@
                 </div>
 
                 <div class="gr-6 gr-12-m gr-parent">
-                    @children()
+                    @CONTENT_PLACEHOLDER
                 </div>
 
                 @view.signup_tour()
@@ -72,12 +71,12 @@
             }
         </div>
     }
-    const inner_content = function(children) {
+    const inner_content = function() {
         const wrap_children = function() {
             if(model.layout === 'get_started') {
-                @get_started({children: children})
+                @get_started()
             } else {
-                @children()
+                @CONTENT_PLACEHOLDER
             }
         }
         if(model.layout) {
@@ -89,7 +88,7 @@
 
     // Render content
     if(model.is_pjax_request) {
-        inner_content(model.children)
+        inner_content()
     } else {
         html.raw(`<!DOCTYPE html>`)
         <html>

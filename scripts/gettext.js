@@ -6,15 +6,17 @@ const { po } = require('gettext-parser');
 const colors = require('colors');
 
 exports.createGettextInstance = ({record = false} = {}) => {
+    console.time("Loading .po files")
+
     const translations_dir = './src/translations/'
     const locales = [
         'en', 'ach_UG', 'fr_FR', 'it_IT', 'pt_PT', 'th_TH', 'zh_CN',
         'de_DE', 'es_ES', 'id_ID', 'ja_JP', 'pl_PL', 'ru_RU', 'vi_VN', 'zh_TW'
     ]
 
+    process.stdout.write("Loading .po files ".cyan);
     const gt = new Gettext()
 
-    process.stdout.write("Loading .po files ".cyan);
     locales.forEach((locale) => {
         const po_file = Path.join(translations_dir, `${locale}.po`);
         const po_content = fs.readFileSync(po_file, 'utf8');
@@ -33,6 +35,7 @@ exports.createGettextInstance = ({record = false} = {}) => {
         });
     }
 
+   console.timeEnd("Loading .po files");
     return {
         setLang: lang => {
             const [locale]  = locales.filter(l => l.toLocaleLowerCase().startsWith(lang));
