@@ -65,25 +65,31 @@ const MetaTrader = (() => {
                 getAccountDetails(obj.login, acc_type);
             });
 
-            Client.set('mt5_account', getDefaultAccount(mt5_login_list));
+            Client.set('mt5_account', getDefaultAccount());
 
             // Update types with no account
-            Object.keys(types_info).forEach((acc_type) => {
-                if (!types_info[acc_type].account_info) {
-                    MetaTraderUI.updateAccount(acc_type);
-                }
-            });
+            Object.keys(types_info)
+                .filter(acc_type => !hasAccount(acc_type))
+                .forEach((acc_type) => { MetaTraderUI.updateAccount(acc_type); });
         });
     };
 
-    const getDefaultAccount = login_list => (
-        Object.keys(types_info).indexOf(location.hash.substring(1)) >= 0 ? location.hash.substring(1) :
-            ((types_info[Client.get('mt5_account')] || {}).account_info && Client.get('mt5_account')) ||
-            (login_list && login_list.length ?
-                Client.getMT5AccountType(
-                    ((login_list.find(login => /real/.test(login.group)) || login_list.find(login => /demo/.test(login.group))) || {}).group) :
-                'demo_vanuatu_cent')
-    );
+    const getDefaultAccount = () => {
+        let default_account = '';
+        if (hasAccount(location.hash.substring(1))) {
+            default_account = location.hash.substring(1);
+            MetaTraderUI.removeUrlHash();
+        } else if (hasAccount(Client.get('mt5_account'))) {
+            default_account = Client.get('mt5_account');
+        } else {
+            default_account = Object.keys(types_info)
+                .filter(acc_type => hasAccount(acc_type))
+                .sort(acc_type => (types_info[acc_type].is_demo ? 1 : -1))[0] || ''; // real first
+        }
+        return default_account;
+    };
+
+    const hasAccount = acc_type => (types_info[acc_type] || {}).account_info;
 
     const getAccountDetails = (login, acc_type) => {
         BinarySocket.send({

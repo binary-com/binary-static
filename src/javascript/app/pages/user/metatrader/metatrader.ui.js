@@ -112,7 +112,7 @@ const MetaTraderUI = (() => {
     };
 
     const setCurrentAccount = (acc_type) => {
-        if (acc_type !== Client.get('mt5_account')) return;
+        if (Client.get('mt5_account') && Client.get('mt5_account') !== acc_type) return;
 
         $detail.find('#acc_icon').attr('class', types_info[acc_type].mt5_account_type || 'volatility');
         displayAccountDescription(acc_type);
@@ -314,6 +314,11 @@ const MetaTraderUI = (() => {
             new Promise(resolve => resolve(true));
     };
 
+    const removeUrlHash = () => {
+        const url = location.href.split('#')[0];
+        window.history.replaceState({ url }, document.title, url);
+    };
+
     const hideFormMessage = (action) => {
         actions_info[action].$form.find('#msg_form').html('').setVisibility(0);
     };
@@ -359,6 +364,7 @@ const MetaTraderUI = (() => {
         loadAction,
         updateAccount,
         postValidate,
+        removeUrlHash,
         hideFormMessage,
         displayFormMessage,
         displayMainMessage,
