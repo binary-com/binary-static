@@ -1,19 +1,11 @@
+const MenuSelector = require('../../_common/menu_selector');
+
 const Platforms = (() => {
     let sections = [];
 
     const onLoad = () => {
-        sections = ['more-tools', 'trading-platforms'];
-
-        const sidebar_list_item = $('.sidebar-nav li');
-        sidebar_list_item.click(function () {
-            sidebar_list_item.removeClass('selected');
-            $(this).addClass('selected');
-        });
-
-        $(window).on('hashchange', () => {
-            showSelectedDiv();
-        });
-
+        sections = ['trading-platforms', 'more-tools'];
+        MenuSelector.init(sections, false);
         checkWidth();
         $(window).resize(checkWidth);
         // $('.inner').scroll(checkScroll);
@@ -43,30 +35,16 @@ const Platforms = (() => {
 
     const checkWidth = () => {
         if ($('.sidebar').is(':visible')) {
-            showSelectedDiv();
+            MenuSelector.showSelectedDiv(sections);
         } else {
             $('.sections').setVisibility(1);
         }
         // $('.inner th').hide().fadeIn(1); // force to refresh in order to maintain correct positions
     };
 
-    const getHash = () => {
-        const hash = window.location.hash;
-        return hash && $.inArray(hash.substring(1), sections) !== -1 ? hash : '#trading-platforms';
-    };
-
-    const showSelectedDiv = () => {
-        const $sections_with_hash = $(`.sections[id="${getHash().substring(1)}"]`);
-        if ($sections_with_hash.is(':visible') && $('.sections:visible').length === 1) {
-            return;
-        }
-        $('.sections').setVisibility(0);
-        $sections_with_hash.setVisibility(1);
-        $(`.sidebar-nav a[href="${getHash()}"]`).parent().addClass('selected');
-    };
-
     const onUnload = () => {
-        $(window).off('resize hashchange');
+        $(window).off('resize');
+        MenuSelector.clean();
     };
 
     return {
