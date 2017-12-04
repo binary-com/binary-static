@@ -1,4 +1,4 @@
-[% PROCESS components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 [% BLOCK box %]
     <div class="gr-padding-10">

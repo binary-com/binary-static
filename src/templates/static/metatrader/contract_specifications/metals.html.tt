@@ -1,4 +1,4 @@
-[% PROCESS components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 <div id="metals_specs" class="gr-row">
     <div class="gr-12 gr-padding-10">

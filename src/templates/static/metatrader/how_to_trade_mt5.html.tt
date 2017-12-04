@@ -1,4 +1,4 @@
-[% PROCESS components/tabs.html.tt %]
+[% PROCESS _common/components/tabs.html.tt %]
 
 <div id="how_to_trade_mt5" class="static_full">
     <h1>[% l('How to Trade in MetaTrader 5') %]</h1>
@@ -10,9 +10,9 @@
         ] %]
         <div class="tab-content">
             [% WRAPPER tab_content_container %]
-                [% WRAPPER tab_content id='forex' visible=1 %][% PROCESS how_to_trade_mt5/forex.html.tt %][% END %]
-                [% WRAPPER tab_content id='volatility' %][% PROCESS how_to_trade_mt5/volatility_indices.html.tt %][% END %]
-                [% WRAPPER tab_content id='metals' %][% PROCESS how_to_trade_mt5/metals.html.tt %][% END %]
+                [% WRAPPER tab_content id='forex' visible=1 %][% PROCESS static/metatrader/how_to_trade_mt5/forex.html.tt %][% END %]
+                [% WRAPPER tab_content id='volatility' %][% PROCESS static/metatrader/how_to_trade_mt5/volatility_indices.html.tt %][% END %]
+                [% WRAPPER tab_content id='metals' %][% PROCESS static/metatrader/how_to_trade_mt5/metals.html.tt %][% END %]
             [% END %]
         </div>
     [% END %]

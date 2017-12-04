@@ -1,10 +1,10 @@
-[% PROCESS components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 [% BLOCK step %]
     <div class="gr-row">
         <div class="gr-9 gr-push-3">
             [% UNLESS is_first %]
-                [% INCLUDE global/separator_line.html.tt class='gr-padding-30' %]
+                [% INCLUDE _common/components/separator_line.html.tt class='gr-padding-30' %]
             [% END %]
             <h2>[% title %]</h2>
         </div>
@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    [% INCLUDE global/separator_line.html.tt class='gr-padding-30' %]
+    [% INCLUDE _common/components/separator_line.html.tt class='gr-padding-30' %]
 
     [% WRAPPER step title=l("Learn to read currency pairs") step=l("Step 1") number=1 is_first=1 %]
         <div>[% l("Can't make heads or tails of currency pairs? Here is a simple way of looking at it:") %]</div>

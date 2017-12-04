@@ -1,4 +1,4 @@
-[% PROCESS components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 <div id="forex_how_to">
     <div class="gr-row">
@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    [% INCLUDE global/separator_line.html.tt class='gr-padding-30' %]
+    [% INCLUDE _common/components/separator_line.html.tt class='gr-padding-30' %]
 
     <div class="center-text">
         <h2>[% l("When to buy and sell?") %]</h2>
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    [% INCLUDE global/separator_line.html.tt class='gr-padding-30' %]
+    [% INCLUDE _common/components/separator_line.html.tt class='gr-padding-30' %]
 
     <div class="gr-row">
         <div class="gr-10 gr-push-1 center-text">
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    [% INCLUDE global/separator_line.html.tt class='gr-padding-30' %]
+    [% INCLUDE _common/components/separator_line.html.tt class='gr-padding-30' %]
 
     <div class="gr-row">
         <div class="gr-10 gr-push-1 center-text">
