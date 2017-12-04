@@ -2,11 +2,12 @@
 
 <div id="how_to_trade_mt5" class="static_full">
     <h1>[% l('How to Trade in MetaTrader 5') %]</h1>
-    [% WRAPPER tab_container class='how-to-content' theme='light full-width' %]
-        [% INCLUDE tabs_subtabs id='how_to_menu' items=[
+    [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light full-width' %]
+        [% INCLUDE tabs_subtabs id='how_to_tabs' items=[
             { id='forex',      text=l('Forex'), class='active' },
             { id='volatility', text=l('Volatility Indices') },
             { id='metals',     text=l('Metals') },
+            { id='how_to_tabs_selector', class='tab-selector' },
         ] %]
         <div class="tab-content">
             [% WRAPPER tab_content_container %]

@@ -27,6 +27,10 @@ module.exports = {
         onLoad  : () => { TabSelector.init('platforms_tabs', false, ['binary', 'mt5']); },
         onUnload: () => { TabSelector.clean(); },
     },
+    HowToTradeMT5: {
+        onLoad  : () => { TabSelector.init('how_to_tabs', false, ['forex', 'volatility', 'metals']); },
+        onUnload: () => { TabSelector.clean(); },
+    },
     handleTab: {
         onLoad: () => { tabListener(); handleHash(); },
     },
