@@ -1,4 +1,3 @@
-const tabListener  = require('binary-style').tabListener;
 const localize     = require('../../_common/localize').localize;
 const BinarySocket = require('../../app/base/socket');
 const FormManager  = require('../../app/common/form_manager');
@@ -7,7 +6,6 @@ const Home = (() => {
     let clients_country;
 
     const onLoad = () => {
-        tabListener();
         BinarySocket.wait('website_status').then((response) => {
             clients_country = response.website_status.clients_country;
             const form_id   = '#frm_verify_email';
