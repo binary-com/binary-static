@@ -78,6 +78,7 @@ sub all_pages {
         # ==================== Section: "static" ====================
         ['404',                                'static/404',                                'full_width', '404'],
         ['home',                               'static/home',                               'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'ja'],
+        ['home-beta',                          'static/home_beta',                          'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'ja'],
         ['home-jp',                            'static/japan/home',                         'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
         ['tour',                               'static/tour',                               'full_width', 'Tour',                 'ja'],
         ['tour-jp',                            'static/japan/tour',                         'full_width', 'Tour',                 'NOT-ja,en'],
@@ -126,6 +127,13 @@ sub all_pages {
         ['get-started/volidx-markets',         'static/get_started/volidx_markets',         'get_started', 'Volatility Index Markets',         'ja'],
         ['get-started/what-is-binary-trading', 'static/get_started/what_is_binary_trading', 'get_started', 'Why Choose Binary Trading?',       'ja'],
         ['get-started/why-trade-with-us',      'static/get_started/why_trade_with_us',      'get_started', 'Why Trade with Binary.com',        'ja'],
+
+        ['get-started-beta',                  'static/get_started_beta/index',            'default', 'Get Started',      'ja'],
+        ['get-started-beta/binary-options',   'static/get_started_beta/binary_options',   'default', 'Binary Options',   'ja'],
+        ['get-started-beta/cfds',             'static/get_started_beta/cfds',             'default', 'CFDs',             'ja'],
+        ['get-started-beta/cryptocurrencies', 'static/get_started_beta/cryptocurrencies', 'default', 'Cryptocurrencies', 'ja'],
+        ['get-started-beta/metals',           'static/get_started_beta/metals',           'default', 'Metals',           'ja'],
+        ['get-started-beta/forex',            'static/get_started_beta/forex',            'default', 'Forex',            'ja'],
 
         ['get-started-jp',                     'static/japan/get_started',                  'default',     'Get Started',                      'NOT-ja,en'],
 
