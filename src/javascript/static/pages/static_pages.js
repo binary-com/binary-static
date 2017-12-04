@@ -1,6 +1,7 @@
 const tabListener = require('binary-style').tabListener;
 const GetStarted  = require('./get_started');
 const Scroll      = require('../../_common/scroll');
+const TabSelector = require('../../_common/tab_selector');
 const handleHash  = require('../../_common/utility').handleHash;
 const BinaryPjax  = require('../../app/base/binary_pjax');
 const Client      = require('../../app/base/client');
@@ -21,6 +22,10 @@ module.exports = {
     PaymentAgent: {
         onLoad  : () => { Scroll.sidebarScroll($('.payment-agent')); },
         onUnload: () => { Scroll.offScroll(); },
+    },
+    Platforms: {
+        onLoad  : () => { TabSelector.init('platforms_tabs', false, ['binary', 'mt5']); },
+        onUnload: () => { TabSelector.clean(); },
     },
     handleTab: {
         onLoad: () => { tabListener(); handleHash(); },
