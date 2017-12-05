@@ -2,6 +2,7 @@ const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
 const formatMoney      = require('../../../common/currency').formatMoney;
 const Validation       = require('../../../common/form_validation');
+const urlForStatic     = require('../../../../_common/url').urlForStatic;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 const template         = require('../../../../_common/utility').template;
 
@@ -34,13 +35,13 @@ const MetaTraderUI = (() => {
         $main_msg    = $container.find('#main_msg');
         $container.find('[class*="act_"]').click(populateForm);
 
+        populateAccountTypes();
         populateAccountList();
     };
 
     const populateAccountList = () => {
         const $acc_name = $templates.find('> .acc-name');
         Object.keys(accounts_info)
-            .sort((a, b) => accounts_info[a].order > accounts_info[b].order) // TODO
             .forEach((acc_type) => {
                 if ($list.find(`[value="${acc_type}"]`).length === 0) {
                     const $acc_item = $acc_name.clone();
@@ -101,7 +102,7 @@ const MetaTraderUI = (() => {
             if (acc_type === Client.get('mt5_account')) {
                 $acc_item.find('.mt-balance').html(formatMoney(mt5_currency, +accounts_info[acc_type].info.balance));
             }
-            if (Object.keys(accounts_info).every(type => accounts_info[type].info.login)) {
+            if (Object.keys(accounts_info).every(type => accounts_info[type].info)) {
                 $container.find('.act_new_account').remove();
             }
         } else {
@@ -306,8 +307,26 @@ const MetaTraderUI = (() => {
             .forEach((acc_type) => {
                 const class_name = accounts_info[acc_type].info ? 'existed' : '';
                 $form.find(`.step-2 #${acc_type.replace(type, 'rbtn')}`)
-                    .removeClass('existed disabled selected')
+                    .removeClass('existed selected')
                     .addClass(class_name);
+            });
+    };
+
+    const populateAccountTypes = () => {
+        const $acc_template = $templates.find('#rbtn_template').parent().remove();
+        const $parent       = $templates.find('#view_1 .step-2 .type-group');
+        if (!$acc_template.length || !$parent.length) return;
+
+        Object.keys(accounts_info)
+            .filter(acc_type => !accounts_info[acc_type].is_demo)
+            .forEach((acc_type) => {
+                const $acc  = $acc_template.clone();
+                const type  = acc_type.split('_').slice(1).join('_');
+                const title = accounts_info[acc_type].short_title;
+                $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
+                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase()}.svg`));
+                $acc.find('p').text(title);
+                $parent.append($acc);
             });
     };
 

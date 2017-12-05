@@ -55,6 +55,7 @@ const MetaTrader = (() => {
                     mt5_account_type,
                     account_type: is_demo ? 'demo' : company,
                     max_leverage: company_info.max_leverage,
+                    short_title : company_info.title,
                 };
             });
         });

@@ -179,7 +179,7 @@
                         [% content %]
                     </div>
                 [% FOREACH box IN types %]
-                    <div class="[% box.title ? 'gr-6' : 'gr-3 gr-6-p gr-6-m' %]">
+                    <div class="[% box.title ? 'gr-6' : 'gr-3 gr-6-p gr-6-m gr-centered' %]">
                         <div id="[% box.id || 'rbtn_' _ box.type %]" class="mt5_type_box" data-acc-type="[% box.type %]">
                             [% IF box.title %]
                                 <div>[% box.title %]</div>
@@ -204,11 +204,7 @@
                         <div class="step-2 invisible">
                             <div class="separator-line gr-padding-10"></div>
                             [% WRAPPER type_group title=l('Step 2 : Choose types of accounts') types=[
-                                { type='vanuatu_cent'     desc='Cent' },
-                                { type='vanuatu_standard' desc='Standard' },
-                                { type='vanuatu_stp'      desc='STP' },
-                                { type='costarica'        desc='Volatility' },
-                                { type='malta'            desc='Volatility' },
+                                { type='template' desc='Cent' },
                             ] %]
                                 <a class="hint" href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Which one suits me?') %]</a>
                             [% END %]
