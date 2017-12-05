@@ -17,7 +17,7 @@ const MetaTrader = (() => {
 
     const onLoad = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-            if (isEligible(State.get(['response', 'landing_company']))) {
+            if (isEligible(State.getResponse('landing_company'))) {
                 updateEnabledStatus('gaming', has_gaming_company);
                 updateEnabledStatus('financial', has_financial_company);
                 getAllAccountsInfo();
@@ -28,14 +28,15 @@ const MetaTrader = (() => {
         });
     };
 
-    const isEligible = (landing_company_response) => {
+    const isEligible = (landing_company) => {
         let is_eligible = false;
-        if (!landing_company_response.error) {
-            const lc              = landing_company_response.landing_company;
-            const status          = State.getResponse('get_account_status.status');
-            has_financial_company = getPropertyValue(lc, ['mt_financial_company', 'shortcode']) === 'vanuatu';
-            has_gaming_company    = getPropertyValue(lc, ['mt_gaming_company', 'shortcode']) === 'costarica';
-            if (!/ico_only/.test(status) && getPropertyValue(lc, ['financial_company', 'shortcode']) === 'costarica' &&
+        if (landing_company) {
+            has_financial_company = /^vanuatu$/.test(getPropertyValue(landing_company, ['mt_financial_company', 'shortcode']));
+            has_gaming_company    = /^(costarica|malta)$/.test(getPropertyValue(landing_company, ['mt_gaming_company', 'shortcode']));
+            const is_ico_only     = /ico_only/.test(State.getResponse('get_account_status.status'));
+
+            if (!is_ico_only &&
+                (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'costarica' || getPropertyValue(landing_company, ['gaming_company', 'shortcode']) === 'malta') &&
                 (has_financial_company || has_gaming_company)) {
                 is_eligible = true;
             }

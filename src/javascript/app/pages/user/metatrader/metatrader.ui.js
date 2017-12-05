@@ -97,8 +97,10 @@ const MetaTraderUI = (() => {
         $acc_item.find('.mt-type').text(`${types_info[acc_type].title}`);
         if (types_info[acc_type].account_info) {
             $acc_item.find('.mt-login').text(types_info[acc_type].account_info.login);
-            $acc_item.find('.mt-balance').html(formatMoney(mt5_currency, +types_info[acc_type].account_info.balance));
             $acc_item.setVisibility(1);
+            if (acc_type === Client.get('mt5_account')) {
+                $acc_item.find('.mt-balance').html(formatMoney(mt5_currency, +types_info[acc_type].account_info.balance));
+            }
             if (Object.keys(types_info).every(type => types_info[type].account_info || !types_info[type].is_enabled)) {
                 $container.find('.act_new_account').remove();
             }
@@ -160,6 +162,7 @@ const MetaTraderUI = (() => {
         if ($target.prop('tagName').toLowerCase() !== 'a') {
             $target = $target.parents('a');
         }
+        $main_msg.setVisibility(0);
 
         const acc_type = Client.get('mt5_account');
         const action   = $target.attr('class').split(' ').find(c => /^act_/.test(c)).replace('act_', '');
@@ -240,7 +243,11 @@ const MetaTraderUI = (() => {
         $form = actions_info[action].$form;
 
         // Navigation buttons: cancel, next, back
-        $form.find('#btn_cancel').click(() => { loadAction(null, acc_type); });
+        $form.find('#btn_cancel').click(() => {
+            loadAction(null, acc_type);
+            displayAccountDescription(acc_type);
+            $.scrollTo($container, 300, { offset: -10 });
+        });
         const displayStep = (step) => {
             $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
             $form.find(`#view_${step}`).setVisibility(1);
@@ -297,11 +304,13 @@ const MetaTraderUI = (() => {
         Object.keys(types_info)
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
+                let class_name = 'existed';
+                if (!types_info[acc_type].account_info) {
+                    class_name = !types_info[acc_type].is_enabled ? 'disabled' : '';
+                }
                 $form.find(`.step-2 #${acc_type.replace(type, 'rbtn')}`)
                     .removeClass('existed disabled selected')
-                    .addClass(
-                        types_info[acc_type].account_info ? 'existed' :
-                        (type === 'real' && (!types_info[acc_type].is_enabled || Client.get('is_virtual')))  ? 'disabled' : '');
+                    .addClass(class_name);
             });
     };
 

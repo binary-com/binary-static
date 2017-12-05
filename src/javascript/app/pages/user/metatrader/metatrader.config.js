@@ -16,6 +16,8 @@ const MetaTraderConfig = (() => {
         real_vanuatu_stp     : { account_type: 'financial', mt5_account_type: 'stp',      title: localize('Real STP'),        order: 6, max_leverage: 100 },
         demo_costarica       : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 7, max_leverage: 500,  is_demo: true },
         real_costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 8, max_leverage: 500 },
+        demo_malta           : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 9, max_leverage: 500,  is_demo: true },
+        real_malta           : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 10, max_leverage: 500 },
     };
 
     const needsRealMessage = () => $(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();

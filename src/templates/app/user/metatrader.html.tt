@@ -114,7 +114,15 @@
             </div>
 
             [% BLOCK account_desc %]
-                <div class="[% account_type ? 'demo_' _ account_type _ ' real_' _ account_type : 'new_account' %]">
+                [% types = '' %]
+                [% IF account_type %]
+                    [% FOREACH type IN account_type %]
+                        [% types = types _ (' demo_' _ type _ ' real_' _ type) %]
+                    [% END %]
+                [% ELSE %]
+                    [% types = 'new_account' %]
+                [% END %]
+                <div class="[% types %]">
                     <h3>[% title %]</h3>
                     <p>[% description %]</p>
                     <ul class="checked small no-padding">
@@ -130,7 +138,7 @@
             <div class="account-desc">
                 [% INCLUDE account_desc title=l('Choose an account')
                     description=l('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out.', website_name) %]
-                [% INCLUDE account_desc account_type='vanuatu_cent' title=l('Cent Account')
+                [% INCLUDE account_desc account_type=['vanuatu_cent'] title=l('Cent Account')
                     description=l('Our MetaTrader 5 Cent account is ideal for new traders who want to start trading with a smaller capital.')
                     items=[
                             l('Offers the highest leverage – up to 1:1,000'),
@@ -138,7 +146,7 @@
                             l('Instant execution'),
                             l('No commission'),
                         ] %]
-                [% INCLUDE account_desc account_type='vanuatu_standard' title=l('Standard Account')
+                [% INCLUDE account_desc account_type=['vanuatu_standard'] title=l('Standard Account')
                     description=l('Our MetaTrader 5 Standard account comes with mid-range leverage and variable spreads suitable for a wide range of traders.')
                     items=[
                             l('Leverage up to 1:300'),
@@ -146,7 +154,7 @@
                             l('Market execution'),
                             l('No commission'),
                         ] %]
-                [% INCLUDE account_desc account_type='vanuatu_stp' title=l('STP Account')
+                [% INCLUDE account_desc account_type=['vanuatu_stp'] title=l('STP Account')
                     description=l('Our MetaTrader 5 STP account provides you with the tightest spreads and connects you directly to the market.')
                     items=[
                             l('Leverage up to 1:100'),
@@ -154,10 +162,10 @@
                             l('Market execution'),
                             l('No commission'),
                         ] %]
-                [% INCLUDE account_desc account_type='costarica' title=l('Volatility Account')
+                [% INCLUDE account_desc account_type=['costarica', 'malta'] title=l('Volatility Account')
                     description=l('The Volatility account allows you to profit by speculating on the rise or fall of an instrument.')
                     items=[
-                            l('Leverage up to 1:100'),
+                            l('Leverage up to 1:500'),
                             l('Variable spreads'),
                             l('Market execution'),
                             l('No commission'),
@@ -200,6 +208,7 @@
                                 { type='vanuatu_standard' desc='Standard' },
                                 { type='vanuatu_stp'      desc='STP' },
                                 { type='costarica'        desc='Volatility' },
+                                { type='malta'            desc='Volatility' },
                             ] %]
                                 <a class="hint" href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Which one suits me?') %]</a>
                             [% END %]
